@@ -1,0 +1,29 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://malkashacham.github.io/maaneh-ledorot/data/schemas/staging-item.schema.json",
+  "title":"Maaneh LeDorot Staging Item",
+  "type":"object",
+  "required":["staging_id","discovery_source","source_url","source_class","collection_status","verification_status","ingested_at"],
+  "properties":{
+    "staging_id":{"type":"string"},
+    "external_id":{"type":["string","null"]},
+    "title_raw":{"type":["string","null"]},
+    "date_raw":{"type":["string","null"]},
+    "source_class":{"type":"string"},
+    "discovery_source":{"type":"string"},
+    "source_url":{"type":"string"},
+    "source_line_or_locator":{"type":["string","null"]},
+    "ingested_at":{"type":"string"},
+    "collection_status":{"enum":["collected","normalized","dedup-candidate","promotion-candidate","blocked"]},
+    "verification_status":{"enum":["unverified","metadata-checked","witness-pending","verified"]},
+    "context_status":{"enum":["complete","partial","unknown"]},
+    "rights_status":{"enum":["open","link-only","permission-required","unknown"]},
+    "raw_metadata":{"type":"object"},
+    "normalized":{"type":"object"},
+    "duplicate_candidates":{"type":"array","items":{"type":"object","properties":{"target_id":{"type":"string"},"basis":{"type":"string"},"confidence":{"type":"number","minimum":0,"maximum":1}}}},
+    "taxonomy_candidates":{"type":"array","items":{"type":"string"}},
+    "response_case_candidate":{"type":"boolean"},
+    "promotion_blockers":{"type":"array","items":{"type":"string"}},
+    "notes":{"type":["string","null"]}
+  }
+}
