@@ -3,78 +3,45 @@
   "visual_space": "יקום הרבי",
   "canonical_since": "2026-09-17",
   "last_updated": "2026-09-17",
-  "merged_streams": [
-    "עדכון פרויקט מודל הרבי",
-    "מענה לדורות",
-    "יקום הרבי"
-  ],
+  "merged_streams": ["עדכון פרויקט מודל הרבי", "מענה לדורות", "יקום הרבי"],
   "source_of_truth": "PROJECT_CANON.md",
   "pipeline": ["Discovered", "Indexed", "Parsed", "Linked", "Verified"],
   "current_counts": {
     "corpus_records_total": 7,
-    "corpus_status": {
-      "Discovered": 1,
-      "Indexed": 6,
-      "Parsed": 0,
-      "Linked": 0,
-      "Verified": 0
-    },
-    "item_level_records_total": 2,
-    "item_level_status": {
-      "Discovered": 0,
-      "Indexed": 2,
-      "Parsed": 0,
-      "Linked": 0,
-      "Verified": 0
-    },
+    "corpus_status": {"Discovered": 1, "Indexed": 6, "Parsed": 0, "Linked": 0, "Verified": 0},
+    "item_level_records_total": 5,
+    "item_level_status": {"Discovered": 0, "Indexed": 3, "Parsed": 0, "Linked": 2, "Verified": 0},
     "item_level_verified_records": 0,
+    "evidence_family_candidates": 2,
     "provenance_fields_defined": 9,
     "relationship_types_defined": 4,
     "source_classes_defined": 11
   },
   "legacy_pending_reconciliation": [
-    {
-      "claim": "4 verified primary sources",
-      "origin": "earlier dashboard/workstream",
-      "status": "not counted",
-      "reason": "supporting item-level records are not yet present in the canonical repository"
-    },
-    {
-      "claim": "3 coded response cases",
-      "origin": "earlier dashboard/workstream",
-      "status": "not counted",
-      "reason": "case records and provenance have not yet been migrated into the canonical repository"
-    },
-    {
-      "claim": "3 represented content domains",
-      "origin": "earlier dashboard/workstream",
-      "status": "not counted",
-      "reason": "taxonomy records have not yet been migrated and reconciled"
-    }
+    {"claim": "4 verified primary sources", "origin": "earlier dashboard/workstream", "status": "not counted", "reason": "supporting item-level records are not yet present in the canonical repository"},
+    {"claim": "3 coded response cases", "origin": "earlier dashboard/workstream", "status": "not counted", "reason": "case records and provenance have not yet been migrated into the canonical repository"},
+    {"claim": "3 represented content domains", "origin": "earlier dashboard/workstream", "status": "not counted", "reason": "taxonomy records have not yet been migrated and reconciled"}
   ],
-  "known_indexed_corpora": [
-    "igrot-kodesh",
-    "torat-menachem",
-    "likkutei-sichos",
-    "reshimos",
-    "sefer-hamaamarim-melukat",
-    "jem"
-  ],
+  "known_indexed_corpora": ["igrot-kodesh", "torat-menachem", "likkutei-sichos", "reshimos", "sefer-hamaamarim-melukat", "jem"],
   "item_level_seed_records": [
     "torat-menachem-5742-17-tammuz",
-    "torat-menachem-5742-yud-shevat"
+    "torat-menachem-5742-yud-shevat",
+    "jem-yud-shevat-5736-missing-audio",
+    "jem-purim-5727-five-recordings",
+    "jem-hodakov-private-yechidus-reels"
   ],
   "active_blocks": [
     "No permission for bulk copying of protected corpora.",
     "Some audio/video/archive holdings require membership, permission or research requests for full access.",
+    "Exact audio files/timestamps for newly indexed JEM witnesses are not yet available in the canonical repository.",
     "Legacy counts require evidence-backed migration before they can be treated as current metrics."
   ],
   "next_work": [
-    "Expand item-level indexing across multiple source classes, not only Torat Menachem.",
-    "Map exact access endpoints and rights status for JEM audio, video, photo and interview witnesses.",
-    "Create the first Evidence Families only where two or more documented records can be linked with an explicit basis.",
-    "Migrate legacy response cases if their original source records can be recovered and checked.",
-    "Develop research taxonomy from documented cases only.",
+    "Index exact item-level letters from Igrot Kodesh using authoritative pages/witnesses.",
+    "Resolve exact dates and event endpoints for the JEM audio witness records.",
+    "Map individual Hodakov yechidus recordings only when exact event-level sources are accessible.",
+    "Expand Evidence Families with transcript/publication counterparts and explicit relation bases.",
+    "Develop response-case taxonomy only from documented item-level cases.",
     "Make the visual dashboard data-driven from canonical JSON rather than manually typed metrics."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words."
