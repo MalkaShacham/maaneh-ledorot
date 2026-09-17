@@ -7,40 +7,38 @@
   "source_of_truth": "PROJECT_CANON.md",
   "pipeline": ["Discovered", "Indexed", "Parsed", "Linked", "Verified"],
   "current_counts": {
-    "corpus_records_total": 7,
-    "corpus_status": {"Discovered": 1, "Indexed": 6, "Parsed": 0, "Linked": 0, "Verified": 0},
-    "item_level_records_total": 5,
-    "item_level_status": {"Discovered": 0, "Indexed": 3, "Parsed": 0, "Linked": 2, "Verified": 0},
+    "corpus_records_total": 8,
+    "corpus_status": {"Discovered": 1, "Indexed": 7, "Parsed": 0, "Linked": 0, "Verified": 0},
+    "item_level_records_total": 7,
+    "item_level_status": {"Discovered": 0, "Indexed": 4, "Parsed": 0, "Linked": 3, "Verified": 0},
     "item_level_verified_records": 0,
+    "response_case_candidates": 3,
     "evidence_family_candidates": 2,
     "provenance_fields_defined": 9,
     "relationship_types_defined": 4,
     "source_classes_defined": 11
   },
   "legacy_pending_reconciliation": [
-    {"claim": "4 verified primary sources", "origin": "earlier dashboard/workstream", "status": "not counted", "reason": "supporting item-level records are not yet present in the canonical repository"},
-    {"claim": "3 coded response cases", "origin": "earlier dashboard/workstream", "status": "not counted", "reason": "case records and provenance have not yet been migrated into the canonical repository"},
-    {"claim": "3 represented content domains", "origin": "earlier dashboard/workstream", "status": "not counted", "reason": "taxonomy records have not yet been migrated and reconciled"}
+    {"claim":"4 verified primary sources","origin":"earlier dashboard/workstream","status":"not counted","reason":"supporting item-level records are not yet present in the canonical repository"},
+    {"claim":"3 coded response cases","origin":"earlier dashboard/workstream","status":"not counted","reason":"case records and provenance have not yet been migrated into the canonical repository"},
+    {"claim":"3 represented content domains","origin":"earlier dashboard/workstream","status":"not counted","reason":"taxonomy records have not yet been migrated and reconciled"}
   ],
-  "known_indexed_corpora": ["igrot-kodesh", "torat-menachem", "likkutei-sichos", "reshimos", "sefer-hamaamarim-melukat", "jem"],
-  "item_level_seed_records": [
-    "torat-menachem-5742-17-tammuz",
-    "torat-menachem-5742-yud-shevat",
-    "jem-yud-shevat-5736-missing-audio",
-    "jem-purim-5727-five-recordings",
-    "jem-hodakov-private-yechidus-reels"
-  ],
+  "known_indexed_corpora": ["igrot-kodesh","torat-menachem","likkutei-sichos","reshimos","sefer-hamaamarim-melukat","jem","igros-kodesh-english-letters"],
+  "item_level_seed_records": ["torat-menachem-5742-17-tammuz","torat-menachem-5742-yud-shevat","jem-yud-shevat-5736-missing-audio","jem-purim-5727-five-recordings","jem-hodakov-private-yechidus-reels","igrot-kodesh-letter-926","igrot-kodesh-letter-937"],
   "active_blocks": [
     "No permission for bulk copying of protected corpora.",
     "Some audio/video/archive holdings require membership, permission or research requests for full access.",
     "Exact audio files/timestamps for newly indexed JEM witnesses are not yet available in the canonical repository.",
+    "Incoming correspondence is absent from the two newly indexed Igrot Kodesh response pages, so their initiating contexts remain partial.",
+    "The newly announced English Letters project is strategically important but the underlying archive is not assumed to be openly accessible.",
     "Legacy counts require evidence-backed migration before they can be treated as current metrics."
   ],
   "next_work": [
-    "Index exact item-level letters from Igrot Kodesh using authoritative pages/witnesses.",
+    "Continue item-level Igrot Kodesh indexing from authoritative publication pages, prioritizing explicit response triggers and editorial cross-references.",
+    "Locate Letter No. 872 referenced explicitly by Letter No. 937 and link it only after exact item-level source identification.",
+    "Track the English Letters series and seek metadata/research access because recipient replies and related documents could create unusually strong Evidence Families.",
     "Resolve exact dates and event endpoints for the JEM audio witness records.",
     "Map individual Hodakov yechidus recordings only when exact event-level sources are accessible.",
-    "Expand Evidence Families with transcript/publication counterparts and explicit relation bases.",
     "Develop response-case taxonomy only from documented item-level cases.",
     "Make the visual dashboard data-driven from canonical JSON rather than manually typed metrics."
   ],
