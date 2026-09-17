@@ -9,10 +9,10 @@
   "current_counts": {
     "corpus_records_total": 8,
     "corpus_status": {"Discovered": 1, "Indexed": 7, "Parsed": 0, "Linked": 0, "Verified": 0},
-    "item_level_records_total": 8,
-    "item_level_status": {"Discovered": 0, "Indexed": 4, "Parsed": 0, "Linked": 4, "Verified": 0},
+    "item_level_records_total": 9,
+    "item_level_status": {"Discovered": 0, "Indexed": 5, "Parsed": 0, "Linked": 4, "Verified": 0},
     "item_level_verified_records": 0,
-    "response_case_candidates": 4,
+    "response_case_candidates": 5,
     "evidence_family_candidates": 3,
     "provenance_fields_defined": 9,
     "relationship_types_defined": 4,
@@ -24,22 +24,22 @@
     {"claim":"3 represented content domains","origin":"earlier dashboard/workstream","status":"not counted","reason":"taxonomy records have not yet been migrated and reconciled"}
   ],
   "known_indexed_corpora": ["igrot-kodesh","torat-menachem","likkutei-sichos","reshimos","sefer-hamaamarim-melukat","jem","igros-kodesh-english-letters"],
-  "item_level_seed_records": ["torat-menachem-5742-17-tammuz","torat-menachem-5742-yud-shevat","jem-yud-shevat-5736-missing-audio","jem-purim-5727-five-recordings","jem-hodakov-private-yechidus-reels","igrot-kodesh-letter-926","igrot-kodesh-letter-937","igrot-kodesh-letter-872"],
+  "item_level_seed_records": ["torat-menachem-5742-17-tammuz","torat-menachem-5742-yud-shevat","jem-yud-shevat-5736-missing-audio","jem-purim-5727-five-recordings","jem-hodakov-private-yechidus-reels","igrot-kodesh-letter-926","igrot-kodesh-letter-937","igrot-kodesh-letter-872","igrot-kodesh-vol12-p130-shidduch-interlude"],
   "active_blocks": [
     "No permission for bulk copying of protected corpora.",
     "Some audio/video/archive holdings require membership, permission or research requests for full access.",
     "Exact audio files/timestamps for newly indexed JEM witnesses are not yet available in the canonical repository.",
-    "Incoming correspondence is absent from Letters 872, 926 and 937, so their initiating contexts remain partial.",
+    "Incoming correspondence is absent from currently indexed Igrot Kodesh response cases, so initiating contexts remain partial.",
     "The newly announced English Letters project is strategically important but the underlying archive is not assumed to be openly accessible.",
     "Legacy counts require evidence-backed migration before they can be treated as current metrics."
   ],
   "next_work": [
-    "Continue item-level Igrot Kodesh indexing from authoritative publication pages, prioritizing explicit response triggers and editorial cross-references.",
+    "Continue item-level Igrot Kodesh indexing from authoritative publication pages, deliberately broadening beyond medical topics into family, education, livelihood, spiritual life and decision-making.",
     "Build the first text-based Evidence Family around Letters 872 and 937, preserving that their relationship is editorial/thematic rather than evidence that they answer the same incoming case.",
     "Track the English Letters series and seek metadata/research access because recipient replies and related documents could create unusually strong Evidence Families.",
     "Resolve exact dates and event endpoints for the JEM audio witness records.",
     "Map individual Hodakov yechidus recordings only when exact event-level sources are accessible.",
-    "Develop response-case taxonomy only from documented item-level cases.",
+    "Develop response-case taxonomy with separate problem-domain and response-method dimensions, promoting categories only after multiple independently documented cases.",
     "Make the visual dashboard data-driven from canonical JSON rather than manually typed metrics."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words."
