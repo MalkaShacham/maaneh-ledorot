@@ -1,0 +1,15 @@
+{
+  "project": "מענה לדורות",
+  "space": "יקום הרבי",
+  "updated": "2026-09-17",
+  "method": {"pipeline":["Discovered","Indexed","Parsed","Linked","Verified"],"rule":"No inference is presented as the Rebbe's words."},
+  "corpora":[
+    {"id":"igrot-kodesh","title":"אגרות קודש","type":"letters","status":"Discovered","notes":"Index at item level only after exact source verification; preserve textual witness and editorial apparatus."},
+    {"id":"torat-menachem","title":"תורת מנחם – התוועדויות","type":"talks-maamarim","status":"Indexed","source_url":"https://he.chabad.org/library/article_cdo/aid/3195479","verified_metadata":"Chabad.org page identifies the series as including maamarim, public talks and public letters; publisher identified as Vaad Hanachos B'Lahak.","accessed":"2026-09-17"},
+    {"id":"likkutei-sichos","title":"לקוטי שיחות","type":"talks","status":"Discovered","notes":"Publisher/editorial indexes must remain distinct from research taxonomy."},
+    {"id":"jem","title":"JEM audiovisual and testimony collections","type":"audio-video-testimony","status":"Discovered","notes":"Recording Witness modeled separately for each recording; rights/access to be checked at item level."},
+    {"id":"chabad-library","title":"ספריית אגודת חסידי חב״ד","type":"archive-library","status":"Discovered","notes":"Archive holdings are not treated as item-level indexed without direct item access."}
+  ],
+  "provenance_fields":["authorship_status","signature_status","source_witness","transmission_type","textual_status","editorial_scope","verification_status","source_url","accessed"],
+  "relation_types":["explicit_by_rebbe","editorial_cross_reference","same_evidence_family","researcher/model_link"]
+}
