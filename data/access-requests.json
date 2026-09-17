@@ -3,94 +3,15 @@
   "purpose": "Track important sources that are discovered but not yet accessible at the level needed for research, together with lawful permission routes.",
   "statuses": ["not_requested","draft_ready","requested","follow_up","granted_limited","granted","denied","no_response","resolved_publicly"],
   "requests": [
-    {
-      "id": "access-jem-yud-shevat-5736",
-      "organization": "Jewish Educational Media (JEM)",
-      "source_target": "Yud Shevat 5736 parallel audio witnesses and recovered missing segment",
-      "related_item_ids": ["jem-yud-shevat-5736-missing-audio"],
-      "need": ["recording identifiers","exact timestamp","identity of base and supplement witnesses","transcript edition used in comparison","research/reuse terms"],
-      "status": "not_requested",
-      "priority": "high",
-      "official_request_url": "https://jemcentral.org/request/",
-      "recommended_roles": ["Research Director","Archive Requests","Senior Archivist","Archivist"],
-      "notes": "Ask for metadata first if audio itself cannot be released."
-    },
-    {
-      "id": "access-jem-purim-5727",
-      "organization": "Jewish Educational Media (JEM)",
-      "source_target": "Purim 5727 five recording witnesses",
-      "related_item_ids": ["jem-purim-5727-five-recordings"],
-      "need": ["inventory IDs","durations","overlap map","unique segments","restoration methodology","research/reuse terms"],
-      "status": "not_requested",
-      "priority": "high",
-      "official_request_url": "https://jemcentral.org/request/",
-      "recommended_roles": ["Research Director","Archive Requests","Senior Archivist","Archivist"]
-    },
-    {
-      "id": "access-jem-hodakov-reels",
-      "organization": "Jewish Educational Media (JEM)",
-      "source_target": "Rabbi Sholom Yisroel Hodakov reel collection containing private yechidus and small-group talks",
-      "related_item_ids": ["jem-hodakov-private-yechidus-reels"],
-      "need": ["reel/event inventory","publishable dates and event IDs","which yechidus are research-accessible","witness provenance","privacy restrictions","metadata-only access where audio cannot be shared"],
-      "status": "not_requested",
-      "priority": "high",
-      "official_request_url": "https://jemcentral.org/request/",
-      "recommended_roles": ["Research Director","Archive Requests","Senior Archivist","Archivist"]
-    },
-    {
-      "id": "access-chabad-library-archival-holdings",
-      "organization": "Library of Agudas Chassidei Chabad — Ohel Yosef Yitzchak Lubavitch",
-      "source_target": "Item-level archival holdings relevant to the Rebbe: manuscripts, secretariat copies, archival documents, unpublished/early witnesses",
-      "related_corpus_id": "chabad-library",
-      "need": ["finding aids","collection/fonds map","internal inventory availability","item identifiers and metadata","scan/reading request procedure","citation and publication rules"],
-      "status": "not_requested",
-      "priority": "high",
-      "official_url": "https://www.chabadlibrary.org/",
-      "public_contact": {
-        "role_name": "Rabbi Shalom Dovber Levine — Library Director",
-        "email": "library@chabad.org",
-        "phone": "+1-718-493-1537",
-        "address": "770 Eastern Parkway, Brooklyn, NY 11213"
-      }
-    },
-    {
-      "id": "access-chabad-org-corpus-permission",
-      "organization": "Chabad.org",
-      "source_target": "Permission for broad noncommercial research indexing/full-text corpus use beyond normal page-by-page access",
-      "need": ["authorized corpus/API/export options","research indexing permission","full-text storage conditions","snippet/search display rules"],
-      "status": "not_requested",
-      "priority": "medium",
-      "official_policy_url": "https://www.chabad.org/library/article_cdo/aid/77062/jewish/Copyright-Policy.htm",
-      "notes": "Do not perform bulk ingestion or automated crawling beyond authorized use."
-    },
-    {
-      "id": "access-kehot-rights",
-      "organization": "Kehot Publication Society",
-      "source_target": "Rights/licensing for relevant Kehot-published editions if future full-text storage is required",
-      "need": ["rights holder per series","noncommercial research license","index/search-only license","quotation/snippet/deep-linking terms"],
-      "status": "not_requested",
-      "priority": "medium",
-      "public_contact": {
-        "phone": "+1-718-778-0226",
-        "alternate_phone": "877-4-MERKOS",
-        "address": "291 Kingston Avenue, Brooklyn, NY 11213"
-      },
-      "notes": "Confirm the actual rights holder for each corpus before requesting permission; do not assume Kehot controls all relevant works."
-    }
+    {"id":"access-jem-yud-shevat-5736","organization":"Jewish Educational Media (JEM)","source_target":"Yud Shevat 5736 parallel audio witnesses and recovered missing segment","related_item_ids":["jem-yud-shevat-5736-missing-audio"],"need":["recording identifiers","exact timestamp","identity of base and supplement witnesses","transcript edition used in comparison","research/reuse terms"],"status":"not_requested","priority":"high","official_request_url":"https://jemcentral.org/request/","recommended_roles":["Research Director","Archive Requests","Senior Archivist","Archivist"],"notes":"Ask for metadata first if audio itself cannot be released."},
+    {"id":"access-jem-purim-5727","organization":"Jewish Educational Media (JEM)","source_target":"Purim 5727 five recording witnesses","related_item_ids":["jem-purim-5727-five-recordings"],"need":["inventory IDs","durations","overlap map","unique segments","restoration methodology","research/reuse terms"],"status":"not_requested","priority":"high","official_request_url":"https://jemcentral.org/request/","recommended_roles":["Research Director","Archive Requests","Senior Archivist","Archivist"]},
+    {"id":"access-jem-hodakov-reels","organization":"Jewish Educational Media (JEM)","source_target":"Rabbi Sholom Yisroel Hodakov reel collection containing private yechidus and small-group talks","related_item_ids":["jem-hodakov-private-yechidus-reels"],"need":["reel/event inventory","publishable dates and event IDs","which yechidus are research-accessible","witness provenance","privacy restrictions","metadata-only access where audio cannot be shared"],"status":"not_requested","priority":"high","official_request_url":"https://jemcentral.org/request/","recommended_roles":["Research Director","Archive Requests","Senior Archivist","Archivist"]},
+    {"id":"access-chabad-library-archival-holdings","organization":"Library of Agudas Chassidei Chabad — Ohel Yosef Yitzchak Lubavitch","source_target":"Item-level archival holdings relevant to the Rebbe: manuscripts, secretariat copies, archival documents, unpublished/early witnesses","related_corpus_id":"chabad-library","need":["finding aids","collection/fonds map","internal inventory availability","item identifiers and metadata","scan/reading request procedure","citation and publication rules"],"status":"not_requested","priority":"high","official_url":"https://www.chabadlibrary.org/","public_contact":{"role_name":"Rabbi Shalom Dovber Levine — Library Director","email":"library@chabad.org","phone":"+1-718-493-1537","address":"770 Eastern Parkway, Brooklyn, NY 11213"}},
+    {"id":"access-chabad-org-corpus-permission","organization":"Chabad.org","source_target":"Permission for broad noncommercial research indexing/full-text corpus use beyond normal page-by-page access","need":["authorized corpus/API/export options","research indexing permission","full-text storage conditions","snippet/search display rules"],"status":"not_requested","priority":"medium","official_policy_url":"https://www.chabad.org/library/article_cdo/aid/77062/jewish/Copyright-Policy.htm","notes":"Do not perform bulk ingestion or automated crawling beyond authorized use."},
+    {"id":"access-kehot-rights","organization":"Kehot Publication Society","source_target":"Rights/licensing for relevant Kehot-published editions if future full-text storage is required","need":["rights holder per series","noncommercial research license","index/search-only license","quotation/snippet/deep-linking terms"],"status":"not_requested","priority":"medium","public_contact":{"phone":"+1-718-778-0226","alternate_phone":"877-4-MERKOS","address":"291 Kingston Avenue, Brooklyn, NY 11213"},"notes":"Confirm the actual rights holder for each corpus before requesting permission; do not assume Kehot controls all relevant works."},
+    {"id":"access-sie-english-letters-archive","organization":"Sichos in English / Kehot Publication Society","source_target":"Igros Kodesh — The English Letters: underlying English-language correspondence archive and editorial metadata","related_corpus_id":"igros-kodesh-english-letters","need":["machine-readable or research metadata","stable letter identifiers","date/recipient/redaction fields","availability of incoming letters and related documents","research access before/alongside volume publication","citation and noncommercial indexing terms"],"status":"not_requested","priority":"high","official_announcement_url":"https://www.chabad.org/news/article_cdo/aid/7403003/jewish/For-the-First-Time-Archive-of-the-Rebbes-English-Language-Correspondence-is-Being-Published.htm","recommended_roles":["Sichos in English director/editorial team","Kehot rights/publication contact"],"notes":"The June 17, 2026 announcement says the initiative may publish more than 10,000 letters in about 50 volumes and, when possible, recipients' replies and related documents. This makes it strategically important for Evidence Families and response-case reconstruction, but no broad archive access is assumed."}
   ],
   "organization_contacts": {
-    "JEM": {
-      "research_request": "https://jemcentral.org/request/",
-      "contact_form": "https://jemcentral.org/contact-us/",
-      "ashreinu_email": "ashreinu@jemedia.org",
-      "support_email": "support@jemedia.org",
-      "public_team_roles": [
-        "Rabbi Choli Mishulovin — Research Director",
-        "Ezra Wiemer — Archive Requests",
-        "Rabbi Sholom Ber Eber — Archivist",
-        "Rabbi Motti Hazan — Senior Archivist",
-        "Rabbi Elkanah Shmotkin — Executive Director"
-      ]
-    }
+    "JEM":{"research_request":"https://jemcentral.org/request/","contact_form":"https://jemcentral.org/contact-us/","ashreinu_email":"ashreinu@jemedia.org","support_email":"support@jemedia.org","public_team_roles":["Rabbi Choli Mishulovin — Research Director","Ezra Wiemer — Archive Requests","Rabbi Sholom Ber Eber — Archivist","Rabbi Motti Hazan — Senior Archivist","Rabbi Elkanah Shmotkin — Executive Director"]}
   }
 }
