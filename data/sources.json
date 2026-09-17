@@ -2,14 +2,84 @@
   "project": "מענה לדורות",
   "space": "יקום הרבי",
   "updated": "2026-09-17",
-  "method": {"pipeline":["Discovered","Indexed","Parsed","Linked","Verified"],"rule":"No inference is presented as the Rebbe's words."},
-  "corpora":[
-    {"id":"igrot-kodesh","title":"אגרות קודש","type":"letters","status":"Discovered","notes":"Index at item level only after exact source verification; preserve textual witness and editorial apparatus."},
-    {"id":"torat-menachem","title":"תורת מנחם – התוועדויות","type":"talks-maamarim","status":"Indexed","source_url":"https://he.chabad.org/library/article_cdo/aid/3195479","verified_metadata":"Chabad.org page identifies the series as including maamarim, public talks and public letters; publisher identified as Vaad Hanachos B'Lahak.","accessed":"2026-09-17"},
-    {"id":"likkutei-sichos","title":"לקוטי שיחות","type":"talks","status":"Discovered","notes":"Publisher/editorial indexes must remain distinct from research taxonomy."},
-    {"id":"jem","title":"JEM audiovisual and testimony collections","type":"audio-video-testimony","status":"Discovered","notes":"Recording Witness modeled separately for each recording; rights/access to be checked at item level."},
-    {"id":"chabad-library","title":"ספריית אגודת חסידי חב״ד","type":"archive-library","status":"Discovered","notes":"Archive holdings are not treated as item-level indexed without direct item access."}
+  "method": {
+    "pipeline": ["Discovered", "Indexed", "Parsed", "Linked", "Verified"],
+    "rule": "No inference is presented as the Rebbe's words. Corpus-level metadata verification does not imply item-level verification."
+  },
+  "corpora": [
+    {
+      "id": "igrot-kodesh",
+      "title": "אגרות קודש",
+      "type": "letters",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/470201/jewish/-.htm",
+      "verified_metadata": "Public Chabad.org series page describes Igrot Kodesh as a chronologically arranged collection of the Rebbe's letters and gives series-level scope information.",
+      "accessed": "2026-09-17",
+      "notes": "Item-level verification requires exact letter pages or authoritative textual witnesses; preserve edition apparatus and witness status."
+    },
+    {
+      "id": "torat-menachem",
+      "title": "תורת מנחם – התוועדויות",
+      "type": "talks-maamarim-public-letters",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/3195479",
+      "verified_metadata": "Chabad.org identifies the series as including maamarim, public talks and public letters; publisher identified as Vaad Hanachos B'Lahak.",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "likkutei-sichos",
+      "title": "לקוטי שיחות",
+      "type": "edited-talks",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/470199/jewish/-.htm",
+      "verified_metadata": "Public Chabad.org series page describes Likkutei Sichos as edited talks reviewed by the Rebbe and published over the years.",
+      "accessed": "2026-09-17",
+      "notes": "Publisher/editorial indexes must remain distinct from research taxonomy."
+    },
+    {
+      "id": "reshimos",
+      "title": "רשימות",
+      "type": "notes-writings",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2988653",
+      "verified_metadata": "Chabad.org exposes a dedicated Reshimos series page with booklet-level navigation and publisher metadata.",
+      "accessed": "2026-09-17",
+      "notes": "Item-level entries should retain booklet identity and edition/witness distinctions."
+    },
+    {
+      "id": "sefer-hamaamarim-melukat",
+      "title": "ספר המאמרים מלוקט",
+      "type": "maamarim",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/3139961/jewish/page.htm",
+      "verified_metadata": "Chabad.org describes the series as maamarim edited/reviewed by the Rebbe and published in individual booklets; publisher identified as Vaad Hanachos B'Lahak.",
+      "accessed": "2026-09-17",
+      "notes": "Textual status such as מוגה/הנחה/בלתי מוגה must be retained at item level where stated."
+    },
+    {
+      "id": "jem",
+      "title": "JEM / The Living Archive",
+      "type": "audio-video-photo-testimony",
+      "status": "Indexed",
+      "source_url": "https://videos.jem.tv/dedication?type=the-living-archive",
+      "access_points": {
+        "platform": "https://landing.jem.tv/",
+        "research_request": "https://jemcentral.org/request/"
+      },
+      "verified_metadata": "JEM describes The Living Archive as an effort to restore, preserve and provide access to video, audio and photo archives of the Rebbe. JEM's research request page separately identifies video, photo, audio and written-interview access points.",
+      "accessed": "2026-09-17",
+      "notes": "Recording Witness must be modeled separately for each recording; access and reuse rights must be checked per item."
+    },
+    {
+      "id": "chabad-library",
+      "title": "ספריית אגודת חסידי חב״ד",
+      "type": "archive-library",
+      "status": "Discovered",
+      "source_url": "https://www.chabadlibrary.org/",
+      "accessed": "2026-09-17",
+      "notes": "Archive holdings are not treated as item-level indexed without direct item access. A public PDF/books area exists, but archive-level and item-level scope still require further mapping."
+    }
   ],
-  "provenance_fields":["authorship_status","signature_status","source_witness","transmission_type","textual_status","editorial_scope","verification_status","source_url","accessed"],
-  "relation_types":["explicit_by_rebbe","editorial_cross_reference","same_evidence_family","researcher/model_link"]
+  "provenance_fields": ["authorship_status", "signature_status", "source_witness", "transmission_type", "textual_status", "editorial_scope", "verification_status", "source_url", "accessed"],
+  "relation_types": ["explicit_by_rebbe", "editorial_cross_reference", "same_evidence_family", "researcher/model_link"]
 }
