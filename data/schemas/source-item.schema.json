@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://malkashacham.github.io/maaneh-ledorot/data/schemas/source-item.schema.json",
+  "title": "Maaneh LeDorot Source Item",
+  "type": "object",
+  "required": ["id", "title", "source_class", "pipeline_status", "provenance", "access"],
+  "properties": {
+    "id": {"type": "string"},
+    "title": {"type": "string"},
+    "source_class": {
+      "enum": ["Igrot Kodesh", "Sichos", "Maamarim", "Torat Menachem", "Yechidus", "Written responses", "Audio", "Video", "Photographs", "Manuscripts", "Testimonies"]
+    },
+    "pipeline_status": {"enum": ["Discovered", "Indexed", "Parsed", "Linked", "Verified"]},
+    "date_original": {"type": ["string", "null"]},
+    "date_precision": {"enum": ["exact", "approximate", "range", "unknown"]},
+    "language": {"type": ["string", "null"]},
+    "context_status": {"enum": ["complete", "partial", "unknown"]},
+    "summary_researcher": {"type": ["string", "null"]},
+    "provenance": {
+      "type": "object",
+      "required": ["authorship_status", "source_witness", "verification_status", "source_url"],
+      "properties": {
+        "authorship_status": {"type": ["string", "null"]},
+        "signature_status": {"type": ["string", "null"]},
+        "source_witness": {"type": ["string", "null"]},
+        "transmission_type": {"type": ["string", "null"]},
+        "textual_status": {"type": ["string", "null"]},
+        "editorial_scope": {"type": ["string", "null"]},
+        "verification_status": {"type": "string"},
+        "source_url": {"type": ["string", "null"]},
+        "accessed": {"type": ["string", "null"]}
+      }
+    },
+    "witness": {
+      "type": ["object", "null"],
+      "properties": {
+        "kind": {"enum": ["text", "recording", "image", "other"]},
+        "state": {"type": ["string", "null"]},
+        "complete_partial": {"enum": ["complete", "partial", "unknown"]},
+        "notes": {"type": ["string", "null"]}
+      }
+    },
+    "access": {
+      "type": "object",
+      "required": ["access_level", "rights_status"],
+      "properties": {
+        "access_level": {"enum": ["open", "limited", "metadata-only", "unknown"]},
+        "rights_status": {"enum": ["public-domain", "licensed", "copyrighted-link-only", "permission-required", "unknown"]},
+        "reuse_notes": {"type": ["string", "null"]}
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "target_id"],
+        "properties": {
+          "type": {"enum": ["explicit_by_rebbe", "editorial_cross_reference", "same_evidence_family", "researcher/model_link"]},
+          "target_id": {"type": "string"},
+          "basis": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "taxonomy": {
+      "type": "object",
+      "properties": {
+        "publisher_index_terms": {"type": "array", "items": {"type": "string"}},
+        "research_terms": {"type": "array", "items": {"type": "string"}},
+        "response_case_candidate": {"type": "boolean"}
+      }
+    },
+    "epistemic_level": {"enum": [1, 2, 3]},
+    "notes": {"type": ["string", "null"]}
+  }
+}
