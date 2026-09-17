@@ -1,0 +1,20 @@
+{
+  "manifest_id":"2026-09-17-chabad-org-rebbe-video-inventory",
+  "source_corpus_id":"chabad-org-rebbe-video",
+  "source_url":"https://www.chabad.org/video/default_cdo/channels/true",
+  "accessed":"2026-09-17",
+  "status":"external_inventory_only",
+  "reported_inventory":{"the_rebbe_collection_videos":3901,"living_torah_category_reported":3288,"my_encounter_category_reported":713},
+  "counting_rule":"Only the 3,901 parent The Rebbe collection count is recorded as an external discovery inventory. Child/category counts are not summed because overlap or containment has not been resolved.",
+  "item_level_locator_pattern":"Individual Chabad.org pages use stable aid-based URLs; Living Torah pages may expose event date, disc/program locator, topics and related-text metadata.",
+  "sample_observations":[
+    {"title":"The Tune of Ashreinu","event_date":"1977-09-01","hebrew_date":"18 Elul 5737","locator":"Disc 14, Program 56","source_url":"https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/310862/jewish/The-Tune-of-Ashreinu.htm","verification_status":"Indexed-candidate","context_status":"partial"},
+    {"title":"Tune of Ashreinu","event_date":"1988-02-03","hebrew_date":"15 Shevat 5748","locator":"Disc 11, Program 41","source_url":"https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/291222/jewish/Tune-of-Ashreinu.htm","verification_status":"Indexed-candidate","context_status":"partial"},
+    {"title":"Tune of Ashreinu","event_date":"1970-12-17","hebrew_date":"19 Kislev 5731","locator":"Disc 13, Program 52","source_url":"https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/302778/jewish/Tune-of-Ashreinu.htm","verification_status":"Indexed-candidate","context_status":"partial"}
+  ],
+  "rights_status":"publicly viewable metadata; copyrighted audiovisual content; no bulk media/transcript copying assumed permitted",
+  "provenance_note":"Chabad.org pages identify Living Torah/Jewish Educational Media where applicable. Item-level source witness and completeness require per-page inspection.",
+  "dedup_strategy":"Use event date + aid URL + disc/program + title as candidate keys. Treat repeated niggun titles on different dates as distinct event witnesses unless evidence establishes otherwise.",
+  "promotion_queue":"Prioritize pages with exact event date, stable aid URL, disc/program locator and related-text link; then link to matching Torat Menachem/sicha witnesses by date without assuming textual identity.",
+  "canonical_items_added":0
+}
