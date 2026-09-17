@@ -2,6 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "יקום הרבי",
   "canonical_since": "2026-09-17",
+  "last_updated": "2026-09-17",
   "merged_streams": [
     "עדכון פרויקט מודל הרבי",
     "מענה לדורות",
@@ -10,10 +11,18 @@
   "source_of_truth": "PROJECT_CANON.md",
   "pipeline": ["Discovered", "Indexed", "Parsed", "Linked", "Verified"],
   "current_counts": {
-    "corpus_records_total": 5,
+    "corpus_records_total": 7,
     "corpus_status": {
-      "Discovered": 4,
-      "Indexed": 1,
+      "Discovered": 1,
+      "Indexed": 6,
+      "Parsed": 0,
+      "Linked": 0,
+      "Verified": 0
+    },
+    "item_level_records_total": 2,
+    "item_level_status": {
+      "Discovered": 0,
+      "Indexed": 2,
       "Parsed": 0,
       "Linked": 0,
       "Verified": 0
@@ -43,23 +52,28 @@
       "reason": "taxonomy records have not yet been migrated and reconciled"
     }
   ],
-  "known_verified_metadata": [
-    {
-      "id": "torat-menachem",
-      "level": "corpus metadata",
-      "status": "Indexed",
-      "note": "Metadata-level verification does not equal item-level Verified status."
-    }
+  "known_indexed_corpora": [
+    "igrot-kodesh",
+    "torat-menachem",
+    "likkutei-sichos",
+    "reshimos",
+    "sefer-hamaamarim-melukat",
+    "jem"
+  ],
+  "item_level_seed_records": [
+    "torat-menachem-5742-17-tammuz",
+    "torat-menachem-5742-yud-shevat"
   ],
   "active_blocks": [
     "No permission for bulk copying of protected corpora.",
-    "Some audio/video/archive holdings do not expose item-level open access.",
+    "Some audio/video/archive holdings require membership, permission or research requests for full access.",
     "Legacy counts require evidence-backed migration before they can be treated as current metrics."
   ],
   "next_work": [
-    "Expand legal/open corpus registry with precise source URLs and access notes.",
-    "Create item-level source schema and first evidence-backed records.",
-    "Build Evidence Families and duplicate/parallel-source links.",
+    "Expand item-level indexing across multiple source classes, not only Torat Menachem.",
+    "Map exact access endpoints and rights status for JEM audio, video, photo and interview witnesses.",
+    "Create the first Evidence Families only where two or more documented records can be linked with an explicit basis.",
+    "Migrate legacy response cases if their original source records can be recovered and checked.",
     "Develop research taxonomy from documented cases only.",
     "Make the visual dashboard data-driven from canonical JSON rather than manually typed metrics."
   ],
