@@ -1,0 +1,32 @@
+{
+  "batch_id": "2026-09-17-rebbesletters-inventory",
+  "batch_type": "external_inventory_registration",
+  "discovery_source": "The Rebbe's Letters",
+  "source_url": "https://rebbesletters.com/igros%20search.dc",
+  "accessed": "2026-09-17",
+  "rights_status": "publicly searchable derivative archive; bulk reuse permission not established",
+  "verification_status": "external_inventory_only",
+  "canonical_item_records_created": 0,
+  "staging_item_records_created": 0,
+  "external_inventory": {
+    "total_searchable_records_reported": 17305,
+    "printed_igros_letters_reported": 12727,
+    "teshura_records_reported": 4578,
+    "printed_volume_coverage_reported": "volumes 1-32 held; later volumes still being added",
+    "teshura_source_booklets_reported": 1502,
+    "reported_teshura_near_verbatim_matches_to_igros_1_32": "about 170"
+  },
+  "segmentation": {
+    "printed_igros": {"hebrew_yiddish": 11938, "english": 789},
+    "teshura": {"letters": 1471, "written_responses_maanos": 3107}
+  },
+  "ingestion_decision": "Do not copy the external archive wholesale. Register inventory and use the public interface as a discovery layer; create item-level staging records only when stable item locators/source lines can be preserved and reuse is lawful.",
+  "blockers": [
+    "The browser-rendered public page exposes aggregate inventory but not the underlying item dataset as stable item-level records in this run.",
+    "Bulk reuse permission for the derivative archive has not been established.",
+    "OCR-derived teshura text can contain scan damage and is not a primary witness.",
+    "AI-generated translations on the source site are not witnesses."
+  ],
+  "deduplication_note": "The source reports approximately 170 near-verbatim teshura-to-Igros matches. Treat these only as duplicate candidates until independently reconciled against printed/direct witnesses.",
+  "provenance_note": "Counts are claims of the discovery archive, not independently verified item counts in Maaneh Ledorot."
+}
