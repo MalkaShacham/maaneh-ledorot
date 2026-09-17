@@ -1,0 +1,28 @@
+{
+  "project": "מענה לדורות",
+  "visual_space": "יקום הרבי",
+  "updated": "2026-09-17",
+  "pipeline": ["Discovered","Indexed","Parsed","Linked","Verified"],
+  "source_classes": ["Igrot Kodesh","Sichos","Maamarim","Torat Menachem","Yechidus","Written responses","Audio","Video","Photographs","Manuscripts","Testimonies"],
+  "provenance_fields": ["authorship_status","signature_status","source_witness","transmission_type","textual_status","editorial_scope","verification_status","source_url"],
+  "relationship_types": ["explicit_by_rebbe","editorial_cross_reference","same_evidence_family","researcher/model_link"],
+  "entities": {
+    "EvidenceFamily": ["event_or_problem","written_response","related_talk","testimony","audio_video","later_publication","primary_secondary_status"],
+    "RecordingWitness": ["provenance","complete_partial","restored","newly_discovered","overlap"],
+    "TextWitness": ["manuscript_photo","secretariat_copy","other_copy","prior_publication","completed_from_other_source","unknown"],
+    "Edition": [], "Unit": [], "PublisherIndex": [], "ResearchTaxonomy": [], "CrossReferences": []
+  },
+  "epistemic_levels": {
+    "1": "Direct documented words or guidance of the Rebbe",
+    "2": "Pattern supported by multiple documented cases",
+    "3": "Research/model inference applied to a new case; never represented as the Rebbe's words"
+  },
+  "rules": [
+    "Never invent missing context.",
+    "Mark partial sources as partial.",
+    "Preserve provenance and exact source links.",
+    "Separate publisher/editorial taxonomy from research taxonomy.",
+    "Do not infer absence from omission in an edition.",
+    "Do not reproduce protected material beyond permitted scope."
+  ]
+}
