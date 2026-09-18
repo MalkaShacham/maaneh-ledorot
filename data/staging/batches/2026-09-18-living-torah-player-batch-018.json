@@ -1,0 +1,123 @@
+{
+  "manifest": {
+    "batch_id": "2026-09-18-living-torah-player-batch-018",
+    "ingested_at": "2026-09-18",
+    "discovery_source": "Chabad.org Living Torah public player pages / JEM publisher metadata",
+    "record_count": 5,
+    "method": "breadth-first bounded metadata ingestion; no media or transcript copied",
+    "rights_status": "public_metadata_only; audiovisual content copyrighted; no bulk reuse assumed",
+    "verification_scope": "stable player URL, aid, publisher title, event date and Disc/Program; audiovisual content not independently verified",
+    "event_cluster": "26 Cheshvan 5752 / 1991-11-03"
+  },
+  "records": [
+    {
+      "staging_id": "lt-player-4596807",
+      "title": "The Right Kind of Clients",
+      "event_date": "1991-11-03",
+      "hebrew_date_publisher": "26 Cheshvan 5752",
+      "source_class": "Video",
+      "segment_type": "Eye to Eye",
+      "discovery_source": "Chabad.org Living Torah / Jewish Educational Media",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4596807/jewish/The-Right-Kind-of-Clients.htm",
+      "locator": {"aid":4596807,"disc":200,"program":800},
+      "collection_status": "Indexed-candidate",
+      "context_status": "partial",
+      "rights_status": "public_metadata_only",
+      "verification_status": "metadata-checked",
+      "response_case_candidate": true,
+      "research_taxonomy_candidates": ["livelihood","lawyers","peaceful dispute prevention","blessing"],
+      "duplicate_candidates": [],
+      "promotion_queue": true
+    },
+    {
+      "staging_id": "lt-player-1317518",
+      "title": "Noahide Law",
+      "event_date": "1991-11-03",
+      "hebrew_date_publisher": "26 Cheshvan 5752",
+      "source_class": "Video",
+      "segment_type": "Eye to Eye",
+      "discovery_source": "Chabad.org Living Torah / Jewish Educational Media",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1317518/jewish/Noahide-Law.htm",
+      "locator": {"aid":1317518,"disc":80,"program":319},
+      "collection_status": "Indexed-candidate",
+      "context_status": "partial",
+      "rights_status": "public_metadata_only",
+      "verification_status": "metadata-checked",
+      "response_case_candidate": true,
+      "research_taxonomy_candidates": ["Seven Noahide Laws","public leadership","global outreach"],
+      "duplicate_candidates": [],
+      "promotion_queue": true
+    },
+    {
+      "staging_id": "lt-player-712300",
+      "title": "Seek the Positive",
+      "event_date": "1991-11-03",
+      "hebrew_date_publisher": "26 Cheshvan 5752",
+      "source_class": "Video",
+      "segment_type": "Eye to Eye",
+      "discovery_source": "Chabad.org Living Torah / Jewish Educational Media",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/712300/jewish/Seek-the-Positive.htm",
+      "locator": {"aid":712300,"disc":52,"program":205},
+      "collection_status": "Indexed-candidate",
+      "context_status": "partial",
+      "rights_status": "public_metadata_only",
+      "verification_status": "metadata-checked",
+      "response_case_candidate": true,
+      "research_taxonomy_candidates": ["non-Jews","positive framing","peace","public speech"],
+      "duplicate_candidates": [],
+      "promotion_queue": true
+    },
+    {
+      "staging_id": "lt-player-372597",
+      "title": "I Remember You",
+      "event_date": "1991-11-03",
+      "hebrew_date_publisher": "26 Cheshvan 5752",
+      "source_class": "Video",
+      "segment_type": "Eye to Eye",
+      "discovery_source": "Chabad.org Living Torah / Jewish Educational Media",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/372597/jewish/I-Remember-You.htm",
+      "locator": {"aid":372597,"disc":21,"program":84},
+      "collection_status": "Indexed-candidate",
+      "context_status": "partial",
+      "rights_status": "public_metadata_only",
+      "verification_status": "metadata-checked",
+      "response_case_candidate": true,
+      "research_taxonomy_candidates": ["military chaplaincy","correspondence","memory","blessing"],
+      "duplicate_candidates": [],
+      "promotion_queue": true,
+      "notes": "Publisher metadata explicitly references an earlier letter from the recipient; the earlier correspondence witness has not yet been located."
+    },
+    {
+      "staging_id": "lt-player-297061",
+      "title": "Publishing The Rebbe’s Works",
+      "event_date": "1991-11-03",
+      "hebrew_date_publisher": "26 Cheshvan 5752",
+      "source_class": "Video",
+      "segment_type": "Eye to Eye",
+      "discovery_source": "Chabad.org Living Torah / Jewish Educational Media",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/297061/jewish/Publishing-The-Rebbes-Works.htm",
+      "locator": {"aid":297061,"disc":12,"program":45},
+      "collection_status": "Indexed-candidate",
+      "context_status": "partial",
+      "rights_status": "public_metadata_only",
+      "verification_status": "metadata-checked",
+      "response_case_candidate": true,
+      "research_taxonomy_candidates": ["publishing","Kehot","permissions","Torah publication"],
+      "duplicate_candidates": [],
+      "promotion_queue": true
+    }
+  ],
+  "dedup_review": {
+    "same_date_cluster": ["lt-player-4596807","lt-player-1317518","lt-player-712300","lt-player-372597","lt-player-297061"],
+    "status": "distinct publisher titles and stable player locators; no duplicate asserted; audiovisual comparison not performed"
+  },
+  "link_candidates": [
+    {
+      "from": "lt-player-372597",
+      "relation": "references_prior_correspondence",
+      "target": "unlocated earlier letter to Chaplain Jacob Goldstein",
+      "status": "researcher/model_link; unresolved; not an Evidence Family"
+    }
+  ],
+  "promotion_queue": ["lt-player-4596807","lt-player-1317518","lt-player-712300","lt-player-372597","lt-player-297061"]
+}
