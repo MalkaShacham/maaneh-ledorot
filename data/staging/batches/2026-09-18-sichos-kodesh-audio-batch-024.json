@@ -1,0 +1,29 @@
+{
+  "manifest": {
+    "batch_id": "2026-09-18-sichos-kodesh-audio-batch-024",
+    "ingested_at": "2026-09-18",
+    "discovery_source": "Chabad.org Sichos Kodesh Audio / Jewish Educational Media public item pages and 5751 year index",
+    "record_count": 6,
+    "method": "breadth-first bounded metadata ingestion; no audio or transcript copied",
+    "rights_status": "public_metadata_only; audio copyrighted; no bulk reuse assumed",
+    "verification_scope": "stable Chabad.org item URL/aid and publisher title/date/duration metadata where exposed; audio content not independently verified",
+    "coverage": "selected 5751 item-level witnesses: Iyar, Menachem-Av Day Camps cluster, and Elul"
+  },
+  "records": [
+    {"staging_id":"ska-555023","title":"15 Iyar 5751 - Sicha","event_date":"1991-04-29","hebrew_date_publisher":"15 Iyar 5751","source_class":"Audio","discovery_source":"Chabad.org Sichos Kodesh Audio / JEM","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555023/jewish/15-Iyar-5751-Sicha.htm","locator":{"aid":555023,"duration_publisher":"33:09"},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"metadata-checked","response_case_candidate":false,"research_taxonomy_candidates":["public address","sicha"],"duplicate_candidates":[],"promotion_queue":true},
+    {"staging_id":"ska-555044","title":"13 Menachem-Av 5751 - Sicha 1 (Day Camps)","event_date":"1991-07-24","hebrew_date_publisher":"13 Menachem-Av 5751","source_class":"Audio","discovery_source":"Chabad.org Sichos Kodesh Audio / JEM","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555044/jewish/13-Menachem-Av-5751-Sicha-1-Day-Camps.htm","locator":{"aid":555044,"duration_publisher":"9:24"},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"metadata-checked","response_case_candidate":false,"research_taxonomy_candidates":["public address","sicha","day camps"],"duplicate_candidates":[],"promotion_queue":true},
+    {"staging_id":"ska-555045","title":"13 Menachem-Av 5751 - Sicha 2 (Day Camps)","event_date":"1991-07-24","hebrew_date_publisher":"13 Menachem-Av 5751","source_class":"Audio","discovery_source":"Chabad.org Sichos Kodesh Audio / JEM","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555045/jewish/13-Menachem-Av-5751-Sicha-2-Day-Camps.htm","locator":{"aid":555045,"duration_publisher":"15:49"},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"metadata-checked","response_case_candidate":false,"research_taxonomy_candidates":["public address","sicha","day camps"],"duplicate_candidates":[],"promotion_queue":true},
+    {"staging_id":"ska-555046","title":"13 Menachem-Av 5751 - Sicha 3 (Day Camps)","event_date":"1991-07-24","hebrew_date_publisher":"13 Menachem-Av 5751","source_class":"Audio","discovery_source":"Chabad.org Sichos Kodesh Audio / JEM","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555046/jewish/13-Menachem-Av-5751-Sicha-3-Day-Camps.htm","locator":{"aid":555046,"duration_publisher":"15:30"},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"metadata-checked","response_case_candidate":false,"research_taxonomy_candidates":["public address","sicha","day camps"],"duplicate_candidates":[],"promotion_queue":true},
+    {"staging_id":"ska-555047","title":"13 Menachem-Av 5751 - Sicha 4 (Day Camps)","event_date":"1991-07-24","hebrew_date_publisher":"13 Menachem-Av 5751","source_class":"Audio","discovery_source":"Chabad.org Sichos Kodesh Audio / JEM","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555047/jewish/13-Menachem-Av-5751-Sicha-4-Day-Camps.htm","locator":{"aid":555047,"duration_publisher":"10:39"},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"metadata-checked","response_case_candidate":false,"research_taxonomy_candidates":["public address","sicha","day camps"],"duplicate_candidates":[],"promotion_queue":true},
+    {"staging_id":"ska-555054","title":"15 Elul 5751 - Sicha","event_date":"1991-08-25","hebrew_date_publisher":"15 Elul 5751","source_class":"Audio","discovery_source":"Chabad.org Sichos Kodesh Audio / JEM","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555054/jewish/15-Elul-5751-Sicha.htm","locator":{"aid":555054,"duration_publisher":"49:46"},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"metadata-checked","response_case_candidate":false,"research_taxonomy_candidates":["public address","sicha"],"duplicate_candidates":[],"promotion_queue":true}
+  ],
+  "dedup_review": {
+    "same_date_clusters": [["ska-555044","ska-555045","ska-555046","ska-555047"]],
+    "duplicate_or_overlap_candidates": [],
+    "status": "The four 13 Menachem-Av 5751 items are explicitly numbered by the publisher as Sicha 1-4 and are retained as distinct manifestations within one event cluster; no duplication is inferred."
+  },
+  "link_candidates": [
+    {"from":"ska-555044","to":["ska-555045","ska-555046","ska-555047"],"relationship":"same_publisher_event_cluster","basis":"same date, Day Camps label, publisher sequence Sicha 1-4","verification_status":"metadata-linked"}
+  ],
+  "promotion_queue": ["ska-555023","ska-555044","ska-555045","ska-555046","ska-555047","ska-555054"]
+}
