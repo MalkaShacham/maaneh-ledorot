@@ -1,0 +1,24 @@
+{
+  "manifest": {
+    "batch_id": "2026-09-18-sichos-kodesh-audio-batch-023",
+    "ingested_at": "2026-09-18",
+    "discovery_source": "Chabad.org Sichos Kodesh Audio / Jewish Educational Media public item pages and 5752 year index",
+    "record_count": 2,
+    "method": "breadth-first bounded metadata ingestion; no audio or transcript copied",
+    "rights_status": "public_metadata_only; audio copyrighted; no bulk reuse assumed",
+    "verification_scope": "stable Chabad.org item URL/aid and publisher title/date metadata; audio content not independently verified",
+    "coverage": "Adar I 5752; resolves previously unresolved second 7 Adar I manifestation and adds 16 Adar I witness"
+  },
+  "records": [
+    {"staging_id":"ska-555083","title":"7 Adar I 5752 - Sicha","event_date":"1992-02-11","hebrew_date_publisher":"7 Adar I 5752","source_class":"Audio","discovery_source":"Chabad.org Sichos Kodesh Audio / JEM","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555083/jewish/7-Adar-I-5752-Sicha.htm","locator":{"aid":555083,"duration_publisher":"2:22","parent_event_aid":556706},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"metadata-checked","response_case_candidate":false,"research_taxonomy_candidates":["public address","sicha"],"duplicate_candidates":["ska-555084"],"promotion_queue":false,"notes":"Publisher parent event page exposes two same-title audio items on 7 Adar I 5752, durations 12:53 and 2:22. This resolves the previously unknown sibling aid as 555083; identity, containment or overlap with aid 555084 is not asserted."},
+    {"staging_id":"ska-555091","title":"16 Adar I 5752 - Sicha","event_date":"1992-02-20","hebrew_date_publisher":"16 Adar I 5752","source_class":"Audio","discovery_source":"Chabad.org Sichos Kodesh Audio / JEM","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555091/jewish/16-Adar-I-5752-Sicha.htm","locator":{"aid":555091,"duration_publisher":"10:34","parent_event_aid":556713},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"metadata-checked","response_case_candidate":false,"research_taxonomy_candidates":["public address","sicha"],"duplicate_candidates":[],"promotion_queue":true}
+  ],
+  "dedup_review": {
+    "same_date_clusters": [["ska-555083","ska-555084"]],
+    "duplicate_or_overlap_candidates": [["ska-555083","ska-555084"]],
+    "resolved_manifestation_candidates": [{"date":"1992-02-11","title":"7 Adar I 5752 - Sicha","previously_known_item":"ska-555084","resolved_sibling":"ska-555083","publisher_parent_event_aid":556706,"status":"both item aids now resolved; relationship remains unverified"}],
+    "status": "The previously unresolved second 7 Adar I same-title manifestation is now resolved to aid 555083. Publisher metadata distinguishes durations 2:22 and 12:53, but identity, containment or overlap is not asserted."
+  },
+  "link_candidates": [{"from":"ska-555083","to":"ska-555084","relationship":"duplicate_or_overlap_candidate","basis":"same publisher title/date; distinct stable aids and durations","verification_status":"unverified"}],
+  "promotion_queue": ["ska-555091"]
+}
