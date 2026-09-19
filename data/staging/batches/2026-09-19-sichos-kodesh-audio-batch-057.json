@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "batch_id": "sichos-kodesh-audio-batch-057",
+    "ingested_at": "2026-09-19",
+    "record_count": 7,
+    "collection": "Sichos Kodesh Audio",
+    "publisher": "Jewish Educational Media / Chabad.org",
+    "event": "6 Tishrei 5728 - Oct 10 1967",
+    "event_url": "https://www.chabad.org/therebbe/article_cdo/aid/555734/jewish/6-Tishrei-5728-Oct-10-1967.htm",
+    "year_index_url": "https://www.chabad.org/therebbe/article_cdo/aid/551381/jewish/5728-1967-1968.htm",
+    "rights_status": "public_metadata_only",
+    "notes": "Metadata-only breadth-first ingestion. No audio or transcript copied. Individual item URLs were independently located for Sichos 1-4 and 7; Sichos 5-6 remain event-level locators only. Publisher also exposes a related Sichos Kodesh text page for this date; relationship retained as editorial cross-reference candidate, not identity/full-transcript claim."
+  },
+  "normalization": {
+    "hebrew_year": 5728,
+    "hebrew_date": "6 Tishrei 5728",
+    "gregorian_date": "1967-10-10",
+    "source_class": "audio",
+    "event_key": "5728-07-06-sichos-kodesh-audio",
+    "publisher_index": "Sichos Kodesh Audio"
+  },
+  "items": [
+    {"staging_id":"sk-audio-5728-06-tishrei-sicha-01","title":"6 Tishrei 5728 - Sicha 1","duration":"46:19","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551402/jewish/6-Tishrei-5728-Sicha-1.htm","locator":{"type":"chabad_aid","value":"551402"},"source_class":"audio","collection_status":"indexed","verification_status":"metadata-checked","context_status":"partial","rights_status":"public_metadata_only","ingested_at":"2026-09-19"},
+    {"staging_id":"sk-audio-5728-06-tishrei-sicha-02","title":"6 Tishrei 5728 - Sicha 2","duration":"23:12","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551403/jewish/6-Tishrei-5728-Sicha-2.htm","locator":{"type":"chabad_aid","value":"551403"},"source_class":"audio","collection_status":"indexed","verification_status":"metadata-checked","context_status":"partial","rights_status":"public_metadata_only","ingested_at":"2026-09-19"},
+    {"staging_id":"sk-audio-5728-06-tishrei-sicha-03","title":"6 Tishrei 5728 - Sicha 3","duration":"38:02","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551404/jewish/6-Tishrei-5728-Sicha-3.htm","locator":{"type":"chabad_aid","value":"551404"},"source_class":"audio","collection_status":"indexed","verification_status":"metadata-checked","context_status":"partial","rights_status":"public_metadata_only","ingested_at":"2026-09-19"},
+    {"staging_id":"sk-audio-5728-06-tishrei-sicha-04","title":"6 Tishrei 5728 - Sicha 4","duration":"14:48","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551405/jewish/6-Tishrei-5728-Sicha-4.htm","locator":{"type":"chabad_aid","value":"551405"},"source_class":"audio","collection_status":"indexed","verification_status":"metadata-checked","context_status":"partial","rights_status":"public_metadata_only","ingested_at":"2026-09-19"},
+    {"staging_id":"sk-audio-5728-06-tishrei-sicha-05","title":"6 Tishrei 5728 - Sicha 5","duration":"22:48","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555734/jewish/6-Tishrei-5728-Oct-10-1967.htm","locator":{"type":"event_component","value":"aid:555734#sicha-5"},"source_class":"audio","collection_status":"indexed","verification_status":"metadata-checked-index","context_status":"partial","rights_status":"public_metadata_only","ingested_at":"2026-09-19"},
+    {"staging_id":"sk-audio-5728-06-tishrei-sicha-06","title":"6 Tishrei 5728 - Sicha 6","duration":"24:17","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555734/jewish/6-Tishrei-5728-Oct-10-1967.htm","locator":{"type":"event_component","value":"aid:555734#sicha-6"},"source_class":"audio","collection_status":"indexed","verification_status":"metadata-checked-index","context_status":"partial","rights_status":"public_metadata_only","ingested_at":"2026-09-19"},
+    {"staging_id":"sk-audio-5728-06-tishrei-sicha-07","title":"6 Tishrei 5728 - Sicha 7","duration":"31:36","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551408/jewish/6-Tishrei-5728-Sicha-7.htm","locator":{"type":"chabad_aid","value":"551408"},"source_class":"audio","collection_status":"indexed","verification_status":"metadata-checked","context_status":"partial","rights_status":"public_metadata_only","ingested_at":"2026-09-19"}
+  ],
+  "deduplication": {"status":"reviewed-within-batch","duplicate_candidates":[],"rule":"Distinct numbered components remain separate witnesses/items; common event is not duplication."},
+  "links": [{"type":"same_publisher_event_cluster","target":"5728-07-06-sichos-kodesh-audio","applies_to":"all"},{"type":"editorial_cross_reference_candidate","target_url":"https://www.chabad.org/torah-texts/7127840","label":"Sichos Kodesh - 6 Tishrei 5728","caution":"Publisher-linked/parallel text context; equivalence, completeness and segment alignment not verified."}],
+  "promotion_queue": ["sk-audio-5728-06-tishrei-sicha-01","sk-audio-5728-06-tishrei-sicha-02","sk-audio-5728-06-tishrei-sicha-03","sk-audio-5728-06-tishrei-sicha-04","sk-audio-5728-06-tishrei-sicha-07"],
+  "not_promotion_ready": ["sk-audio-5728-06-tishrei-sicha-05","sk-audio-5728-06-tishrei-sicha-06"]
+}
