@@ -1,0 +1,47 @@
+{
+  "manifest": {
+    "batch_id": "sichos-kodesh-audio-batch-058",
+    "ingested_at": "2026-09-19",
+    "record_count": 9,
+    "discovery_source": "Chabad.org / Jewish Educational Media — Sichos Kodesh Audio",
+    "event_source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555725/jewish/6-Tishrei-5727-Sep-20-1966.htm",
+    "event_locator": "aid:555725",
+    "rights_status": "public_metadata_only",
+    "verification_scope": "publisher metadata only; audio content and recording completeness not verified",
+    "notes": "Bounded breadth-first ingestion of the nine audio components listed on the publisher event page. No audio or transcript copied. Stable component aids were independently exposed by publisher item pages/search results and are not inferred from sequence."
+  },
+  "records": [
+    [1,"551318","19:39"],[2,"551319","16:39"],[3,"551320","13:37"],[4,"551321","24:39"],[5,"551322","18:22"],[6,"551323","17:29"],[7,"551324","15:57"],[8,"551325","10:55"],[9,"551326","11:25"]
+  ].map_placeholder,
+  "normalized_records": [
+    {"staging_id":"ska-5727-06-tishrei-sicha-01","title":"6 Tishrei 5727 - Sicha 1","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551318/jewish/6-Tishrei-5727-Sicha-1.htm","locator":"aid:551318","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"19:39"},
+    {"staging_id":"ska-5727-06-tishrei-sicha-02","title":"6 Tishrei 5727 - Sicha 2","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551319/jewish/6-Tishrei-5727-Sicha-2.htm","locator":"aid:551319","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"16:39"},
+    {"staging_id":"ska-5727-06-tishrei-sicha-03","title":"6 Tishrei 5727 - Sicha 3","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551320/jewish/6-Tishrei-5727-Sicha-3.htm","locator":"aid:551320","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"13:37"},
+    {"staging_id":"ska-5727-06-tishrei-sicha-04","title":"6 Tishrei 5727 - Sicha 4","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551321/jewish/6-Tishrei-5727-Sicha-4.htm","locator":"aid:551321","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"24:39"},
+    {"staging_id":"ska-5727-06-tishrei-sicha-05","title":"6 Tishrei 5727 - Sicha 5","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551322/jewish/6-Tishrei-5727-Sicha-5.htm","locator":"aid:551322","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"18:22"},
+    {"staging_id":"ska-5727-06-tishrei-sicha-06","title":"6 Tishrei 5727 - Sicha 6","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551323/jewish/6-Tishrei-5727-Sicha-6.htm","locator":"aid:551323","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"17:29"},
+    {"staging_id":"ska-5727-06-tishrei-sicha-07","title":"6 Tishrei 5727 - Sicha 7","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551324/jewish/6-Tishrei-5727-Sicha-7.htm","locator":"aid:551324","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"15:57"},
+    {"staging_id":"ska-5727-06-tishrei-sicha-08","title":"6 Tishrei 5727 - Sicha 8","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551325/jewish/6-Tishrei-5727-Sicha-8.htm","locator":"aid:551325","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"10:55"},
+    {"staging_id":"ska-5727-06-tishrei-sicha-09","title":"6 Tishrei 5727 - Sicha 9","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551326/jewish/6-Tishrei-5727-Sicha-9.htm","locator":"aid:551326","event_locator":"aid:555725","date_hebrew":"6 Tishrei 5727","date_gregorian":"1966-09-20","duration":"11:25"}
+  ],
+  "common_provenance": {
+    "authorship_status":"publisher-attributed-to-rebbe",
+    "signature_status":"not_applicable",
+    "source_witness":"publisher-hosted audio manifestation",
+    "transmission_type":"audio_recording",
+    "textual_status":"not_transcribed_in_batch",
+    "editorial_scope":"publisher metadata",
+    "collection_status":"Indexed",
+    "verification_status":"metadata-checked",
+    "context_status":"partial",
+    "rights_status":"public_metadata_only",
+    "ingested_at":"2026-09-19"
+  },
+  "normalization": {"event_key":"5727-01-06-sichos-kodesh-audio","component_numbering":"publisher title","date_normalized":true},
+  "deduplication": {"duplicate_candidates":[],"note":"Distinct publisher component aids retained as separate recording manifestations; no identity/overlap inferred."},
+  "link_candidates": [
+    {"from":"event:5727-01-06-sichos-kodesh-audio","to":"living-torah:Repentance-with-Joy:aid-4127343","relationship":"researcher/model_link","basis":"Living Torah publisher metadata gives Event Date 6 Tishrei 5727 / September 20, 1966; exact source component and edit boundaries not established.","status":"candidate"}
+  ],
+  "promotion_queue": ["ska-5727-06-tishrei-sicha-01","ska-5727-06-tishrei-sicha-02","ska-5727-06-tishrei-sicha-03","ska-5727-06-tishrei-sicha-04","ska-5727-06-tishrei-sicha-05","ska-5727-06-tishrei-sicha-06","ska-5727-06-tishrei-sicha-07","ska-5727-06-tishrei-sicha-08","ska-5727-06-tishrei-sicha-09"],
+  "promotion_note":"Eligible for canonical review because each record has a stable publisher item locator and basic provenance; not promoted or Verified in this batch."
+}
