@@ -1,0 +1,55 @@
+{
+  "manifest": {
+    "batch_id": "2026-09-20-sichos-kodesh-audio-batch-118",
+    "ingested_at": "2026-09-20",
+    "discovery_source": "Chabad.org / Jewish Educational Media Sichos Kodesh Audio 5716 year index and event page",
+    "record_count": 1,
+    "method": "breadth-first bounded metadata ingestion; event metadata checked; no audio or transcript copied",
+    "rights_status": "public_metadata_only; audio copyrighted; no bulk reuse assumed",
+    "verification_scope": "publisher event title/date/component title/duration checked; component-level stable aid not established in this pass; audio content and recording completeness not independently verified",
+    "coverage": "5716: 29 Kislev event cluster"
+  },
+  "records": [
+    {
+      "staging_id": "ska-5716-29-kislev-sicha-tmimim",
+      "title": "29 Kislev 5716 - Sicha (Tmimim)",
+      "event_date": "1955-12-14",
+      "source_class": "Audio",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555629/jewish/29-Kislev-5716-Dec-14-1955.htm",
+      "locator": {
+        "event_aid": 555629,
+        "duration_publisher": "04:03",
+        "component_position": 1
+      },
+      "collection_status": "Indexed-candidate",
+      "context_status": "partial_context; publisher knowledge-base page identifies this as a talk to Tomchei Tmimim students and exposes related printed witnesses; exact audio/text equivalence not established",
+      "rights_status": "public_metadata_only",
+      "verification_status": "event-metadata-checked",
+      "response_case_candidate": false,
+      "taxonomy_candidates": ["students", "Tomchei Tmimim", "Chanukah"],
+      "duplicate_candidates": [],
+      "link_candidates": [
+        {
+          "relationship": "editorial_cross_reference",
+          "target": "שיחות קודש: להתלמידים, נר ה' דחנוכה תשט''ז",
+          "status": "candidate_only"
+        },
+        {
+          "relationship": "editorial_cross_reference",
+          "target": "תורת מנחם: שיחת אור ליום ד' פ' מקץ, ליל נר ה' דחנוכה, ה'תשט\"ז",
+          "status": "candidate_only"
+        }
+      ],
+      "evidence_family_candidate": "5716-29-kislev-tmimim-chanukah",
+      "promotion_queue": false,
+      "promotion_block": "stable component-level aid not established; exact relationship to printed witnesses remains unverified",
+      "provenance": {
+        "publisher": "Jewish Educational Media / Chabad.org",
+        "year_index_aid": 550529,
+        "event_aid": 555629,
+        "checked_at": "2026-09-20",
+        "notes": "5716 year index lists this as the sole audio component for 29 Kislev; event page gives duration 04:03. Knowledge-base topic page exposes an audio result and printed Sichos Kodesh/Torat Menachem results for the same topic/date cluster."
+      }
+    }
+  ]
+}
