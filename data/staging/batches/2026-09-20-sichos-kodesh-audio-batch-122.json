@@ -1,0 +1,54 @@
+{
+  "manifest": {
+    "batch_id": "2026-09-20-sichos-kodesh-audio-batch-122",
+    "ingested_at": "2026-09-20",
+    "discovery_source": "Chabad.org Sichos Kodesh Audio / Jewish Educational Media public event page and stable item page",
+    "record_count": 1,
+    "method": "breadth-first bounded metadata ingestion; publisher event and stable item page checked; no audio or transcript copied",
+    "rights_status": "public_metadata_only; audio copyrighted; no bulk reuse assumed",
+    "verification_scope": "publisher title/date/duration and stable item URL/aid; audio content and recording completeness not independently verified",
+    "coverage": "5717: 29 Kislev event cluster"
+  },
+  "records": [
+    {
+      "staging_id": "ska-550632",
+      "title": "29 Kislev 5717 - Sicha (Tmimim)",
+      "event_date": "1956-12-03",
+      "source_class": "Audio",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/550632/jewish/29-Kislev-5717-Sicha-Tmimim.htm",
+      "locator": {
+        "aid": 550632,
+        "event_aid": 555636,
+        "duration_publisher": "15:57"
+      },
+      "collection_status": "Indexed-candidate",
+      "context_status": "unknown",
+      "rights_status": "public_metadata_only",
+      "verification_status": "metadata-checked",
+      "response_case_candidate": false,
+      "duplicate_candidates": [],
+      "promotion_queue": true
+    }
+  ],
+  "dedup_review": {
+    "same_date_clusters": [],
+    "duplicate_or_overlap_candidates": [],
+    "status": "Publisher presents one component for this event; no duplicate candidate identified in this pass."
+  },
+  "link_candidates": [
+    {
+      "from": "ska-550632",
+      "relationship": "same_publisher_event_cluster",
+      "basis": "publisher event page aid 555636",
+      "verification_status": "metadata-linked"
+    }
+  ],
+  "promotion_queue": ["ska-550632"],
+  "normalization_notes": [
+    "Gregorian date normalized from publisher event page: 1956-12-03.",
+    "Stable component locator aid 550632 is exposed by the publisher item page.",
+    "No response-case candidacy assigned because publisher metadata identifies a public Sicha for Tmimim, not a personal response exchange.",
+    "No Related Text equivalence is asserted in this pass."
+  ],
+  "epistemic_note": "Staging metadata only; not Verified. Recording completeness, content and exact correspondence with any printed witness remain unverified."
+}
