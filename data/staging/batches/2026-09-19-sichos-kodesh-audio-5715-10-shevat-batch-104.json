@@ -1,0 +1,66 @@
+{
+  "manifest": {
+    "batch_id": "sichos-kodesh-audio-5715-10-shevat-batch-104",
+    "ingested_at": "2026-09-19",
+    "record_count": 8,
+    "collection": "Sichos Kodesh Audio",
+    "publisher": "Jewish Educational Media / Chabad.org",
+    "year_index_url": "https://www.chabad.org/therebbe/article_cdo/aid/550485/jewish/5715-1954-1955.htm",
+    "event_url": "https://www.chabad.org/therebbe/article_cdo/aid/555623/jewish/10-Shevat-5715-Feb-2-1955.htm",
+    "event_locator": "aid:555623",
+    "rights_status": "publicly_viewable_copyrighted_metadata_only",
+    "verification_scope": "Publisher event page checked for component titles and durations; item content and recording completeness not verified.",
+    "canonical_status": "staging_only"
+  },
+  "normalization": {
+    "hebrew_date": "10 Shevat 5715",
+    "gregorian_date": "1955-02-02",
+    "event_key": "5715-11-10-shevat-farbrengen",
+    "source_class": "Audio",
+    "transmission_type": "recording"
+  },
+  "records": [
+    {"staging_id":"sk-audio-5715-10-shevat-sicha-1","title":"10 Shevat 5715 - Sicha 1","duration":"11:39"},
+    {"staging_id":"sk-audio-5715-10-shevat-maamar","title":"10 Shevat 5715 - Maamar","duration":"44:14"},
+    {"staging_id":"sk-audio-5715-10-shevat-sicha-2","title":"10 Shevat 5715 - Sicha 2","duration":"17:03"},
+    {"staging_id":"sk-audio-5715-10-shevat-sicha-3","title":"10 Shevat 5715 - Sicha 3","duration":"40:23"},
+    {"staging_id":"sk-audio-5715-10-shevat-sicha-4","title":"10 Shevat 5715 - Sicha 4","duration":"13:36"},
+    {"staging_id":"sk-audio-5715-10-shevat-sicha-5","title":"10 Shevat 5715 - Sicha 5","duration":"24:10"},
+    {"staging_id":"sk-audio-5715-10-shevat-sicha-6","title":"10 Shevat 5715 - Sicha 6","duration":"01:12","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550506/jewish/10-Shevat-5715-Sicha-6.htm","locator":"aid:550506"},
+    {"staging_id":"sk-audio-5715-10-shevat-sicha-7","title":"10 Shevat 5715 - Sicha 7","duration":"02:23","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550507/jewish/10-Shevat-5715-Sicha-7.htm","locator":"aid:550507"}
+  ],
+  "record_defaults": {
+    "discovery_source": "publisher_event_page",
+    "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555623/jewish/10-Shevat-5715-Feb-2-1955.htm",
+    "source_locator": "aid:555623",
+    "source_class": "Audio",
+    "collection_status": "Indexed",
+    "verification_status": "metadata_checked_not_verified",
+    "context_status": "unknown_recording_completeness",
+    "rights_status": "publicly_viewable_copyrighted_metadata_only",
+    "authorship_status": "Rebbe public address per publisher attribution",
+    "source_witness": "publisher-hosted audio manifestation; audio not copied or content-verified",
+    "editorial_scope": "publisher component segmentation",
+    "ingested_at": "2026-09-19"
+  },
+  "deduplication": {
+    "status": "initial_review",
+    "event_cluster": "same_event_candidate_only",
+    "duplicate_candidates": [],
+    "note": "Components are retained as distinct publisher manifestations; no identity with printed, video, or alternate audio witnesses is asserted."
+  },
+  "links": [
+    {"type":"same_evidence_family","target":"10 Shevat 5715 event cluster","status":"candidate"},
+    {"type":"editorial_cross_reference","target":"Related Text exposed on item pages","status":"candidate_unresolved"}
+  ],
+  "promotion_queue": {
+    "ready_for_canonical_review": ["sk-audio-5715-10-shevat-sicha-6","sk-audio-5715-10-shevat-sicha-7"],
+    "hold_for_item_locator": ["sk-audio-5715-10-shevat-sicha-1","sk-audio-5715-10-shevat-maamar","sk-audio-5715-10-shevat-sicha-2","sk-audio-5715-10-shevat-sicha-3","sk-audio-5715-10-shevat-sicha-4","sk-audio-5715-10-shevat-sicha-5"],
+    "verified": []
+  },
+  "research_notes": [
+    "The 5715 publisher year index also exposes clusters for 19 Kislev, 14 Adar, 13 Tammuz and 15 Tammuz, providing a bounded breadth-first continuation map.",
+    "Do not reconstruct missing item-level aids from numerical adjacency.",
+    "Related Text is an editorial cross-reference candidate, not proof of transcript identity."
+  ]
+}
