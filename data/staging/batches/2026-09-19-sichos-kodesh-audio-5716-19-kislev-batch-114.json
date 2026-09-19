@@ -1,0 +1,21 @@
+{
+  "batch_id": "batch-114",
+  "ingested_at": "2026-09-19",
+  "collection": "Sichos Kodesh Audio",
+  "publisher": "Jewish Educational Media / Chabad.org",
+  "event": {"hebrew_date":"19 Kislev 5716","gregorian_date":"1955-12-04","event_aid":"555628","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555628/jewish/19-Kislev-5716-Dec-4-1955.htm"},
+  "source_class": "audio_recording_index",
+  "rights_status": "copyrighted_metadata_only",
+  "context_status": "unknown_recording_completeness",
+  "verification_status": "metadata_checked_not_verified",
+  "evidence_family_candidate": "event:5716-09-19-kislev",
+  "duplicate_check": "no repository hit for event_aid 555628 before ingestion",
+  "items": [
+    ["Beginning","03:05"],["Nigun (Podoh Besholom)","05:55"],["Sicha 1","12:53"],["Nigun (Ovinu Malkeinu)","05:22"],["Nigun (Ani Maamin)","03:52"],["Nigun","02:31"],["Maamar","30:29"],["Nigun","04:03"],["Sicha 3","05:42"],["Chalukas Hashas (Nigun)","16:46"],["Sicha 4","17:02"],["Darkecho","07:24"],["Sicha 5","10:21"],["Nigunim","07:18"],["Sicha 6","09:36"],["Nigun","07:27"],["Sicha 7","06:56"],["Nigunim","12:35"],["Sicha 8","13:06"],["Nigun","06:01"],["Sicha 9","02:36"],["Conversation (Nigunim)","54:28"],["Sicha 10","08:44"],["Nigunim","17:45"]
+  ],
+  "item_locator_rule": "event_aid 555628 + publisher component title + ordinal position on event page; individual aid not asserted unless independently checked",
+  "normalization_notes": ["Publisher event page contains no component titled Sicha 2; omission preserved without inference.","All 24 components remain separate recording witnesses/segments until overlap or identity is established."],
+  "linkage_candidates": [{"type":"same_evidence_family","target":"all components of event 555628"},{"type":"editorial_cross_reference","target":"Related Text links on component pages","status":"not_resolved"}],
+  "promotion_queue": {"eligible_now":[],"held":24,"reason":"event-level locator is stable, but component-level aid has not been independently checked for every component"},
+  "verified_count": 0
+}
