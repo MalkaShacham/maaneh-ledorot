@@ -1,0 +1,51 @@
+{
+  "manifest": {
+    "batch_id": "sichos-kodesh-audio-5714-10-shevat-batch-137",
+    "ingested_at": "2026-09-20",
+    "collection": "Sichos Kodesh Audio",
+    "hebrew_year": 5714,
+    "event": "10 Shevat 5714",
+    "record_count": 8,
+    "source_index_url": "https://www.chabad.org/therebbe/article_cdo/aid/550452/jewish/5714-1953-1954.htm",
+    "rights_status": "publicly_viewable_copyrighted_metadata_only",
+    "verification_scope": "publisher year index and direct component pages checked for stable item locators; audio content, completeness and equivalence not verified",
+    "notes": "Breadth-first metadata ingestion only. No audio or transcript copied. Same-date Living Torah material is a cross-media Evidence Family candidate only."
+  },
+  "records": [
+    {"staging_id":"ska-5714-10-shevat-maamar","title":"10 Shevat 5714 - Maamar","duration":"38:17","aid":"550466","unit_type":"maamar"},
+    {"staging_id":"ska-5714-10-shevat-sicha-1","title":"10 Shevat 5714 - Sicha 1","duration":"37:02","aid":"550467","unit_type":"sicha"},
+    {"staging_id":"ska-5714-10-shevat-sicha-2","title":"10 Shevat 5714 - Sicha 2","duration":"27:47","aid":"550468","unit_type":"sicha"},
+    {"staging_id":"ska-5714-10-shevat-sicha-3","title":"10 Shevat 5714 - Sicha 3","duration":"15:24","aid":"550469","unit_type":"sicha"},
+    {"staging_id":"ska-5714-10-shevat-sicha-4","title":"10 Shevat 5714 - Sicha 4","duration":"12:41","aid":"550470","unit_type":"sicha"},
+    {"staging_id":"ska-5714-10-shevat-sicha-5","title":"10 Shevat 5714 - Sicha 5","duration":"40:44","aid":"550471","unit_type":"sicha"},
+    {"staging_id":"ska-5714-10-shevat-sicha-6","title":"10 Shevat 5714 - Sicha 6","duration":"18:57","aid":"550472","unit_type":"sicha"},
+    {"staging_id":"ska-5714-10-shevat-sicha-7","title":"10 Shevat 5714 - Sicha 7","duration":"1:13","aid":"550473","unit_type":"sicha"}
+  ],
+  "record_defaults": {
+    "date_hebrew": "10 Shevat 5714",
+    "date_gregorian": "1954-01-14",
+    "source_class": "Audio",
+    "discovery_source": "Chabad.org / Jewish Educational Media — Sichos Kodesh Audio",
+    "source_url_template": "https://www.chabad.org/therebbe/article_cdo/aid/{aid}/jewish/",
+    "locator": {"type":"component_page_aid_plus_year_index","year_index_aid":"550452"},
+    "collection_status": "Indexed",
+    "context_status": "unknown",
+    "rights_status": "publicly_viewable_copyrighted_metadata_only",
+    "verification_status": "metadata_checked_publisher_component_pages_nonverified_content",
+    "provenance": {"publisher":"Jewish Educational Media","platform":"Chabad.org","source_witness":"recording manifestation listed by publisher","transmission_type":"audio","editorial_scope":"publisher item metadata"},
+    "normalization": {"year":5714,"event_key":"5714-10-shevat"},
+    "duplicate_candidates": [],
+    "link_candidates": [
+      {"relation":"same_publisher_event_cluster","target":"10 Shevat 5714","status":"metadata_supported"},
+      {"relation":"same_evidence_family","target":"Living Torah 10 Shevat 5714 including aid 574981 and edited segments","status":"researcher_model_candidate_only"},
+      {"relation":"same_evidence_family","target":"printed/textual witnesses for 10 Shevat 5714","status":"researcher_model_candidate_only"}
+    ],
+    "promotion_queue": "eligible_for_canonical_indexed_review"
+  },
+  "deduplication_review": {
+    "within_batch": "No duplicate asserted; eight publisher item manifestations retained separately.",
+    "cross_corpus": "Same-date Living Torah footage/edited segments and printed texts are linkage candidates only; no equivalence asserted."
+  },
+  "promotion_summary": {"eligible_for_review":8,"hold":0,"promoted":0,"verified":0},
+  "epistemic_note": "Staging metadata is not Verified knowledge. Duration values are publisher metadata; audio content was not copied or transcribed."
+}
