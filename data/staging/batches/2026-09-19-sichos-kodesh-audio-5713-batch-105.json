@@ -2,13 +2,14 @@
   "manifest": {
     "batch_id": "sichos-kodesh-audio-5713-batch-105",
     "ingested_at": "2026-09-19",
+    "last_checked": "2026-09-20",
     "collection": "Sichos Kodesh Audio",
     "hebrew_year": 5713,
     "record_count": 2,
     "source_index_url": "https://www.chabad.org/therebbe/article_cdo/aid/550447/jewish/5713-1952-1953.htm",
     "rights_status": "publicly_viewable_copyrighted_metadata_only",
-    "verification_scope": "publisher metadata checked; audio content and completeness not verified",
-    "notes": "Bounded breadth-first ingestion of the complete publisher year index for 5713. No audio or transcript copied. One component-level stable aid was established; the other remains event-locator only."
+    "verification_scope": "publisher metadata and stable component locators checked for both records; audio content and completeness not verified",
+    "notes": "Bounded breadth-first ingestion of the complete publisher year index for 5713. No audio or transcript copied. Stable component-level aids are now established for both records."
   },
   "records": [
     {
@@ -19,17 +20,18 @@
       "duration": "5:29",
       "source_class": "Audio",
       "discovery_source": "Chabad.org / Jewish Educational Media — Sichos Kodesh Audio",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555616/jewish/1-Kislev-5713-Nov-19-1952.htm",
-      "locator": {"type":"event_page","aid":"555616"},
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/550449/jewish/1-Kislev-5713-Sicha.htm",
+      "event_source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555616/jewish/1-Kislev-5713-Nov-19-1952.htm",
+      "locator": {"type":"component_page","aid":"550449","event_aid":"555616"},
       "collection_status": "Indexed",
       "context_status": "unknown",
       "rights_status": "publicly_viewable_copyrighted_metadata_only",
-      "verification_status": "metadata_checked_event_page_nonverified_content",
-      "provenance": {"publisher":"Jewish Educational Media","platform":"Chabad.org","source_witness":"recording manifestation listed by publisher","transmission_type":"audio","textual_status":"not_applicable","editorial_scope":"publisher event metadata"},
+      "verification_status": "metadata_checked_component_and_event_pages_nonverified_content",
+      "provenance": {"publisher":"Jewish Educational Media","platform":"Chabad.org","source_witness":"recording manifestation listed by publisher","transmission_type":"audio","textual_status":"not_applicable","editorial_scope":"publisher item metadata"},
       "normalization": {"year":5713,"event_key":"5713-09-01-kislev","unit_type":"sicha"},
       "duplicate_candidates": [],
       "link_candidates": [{"relation":"same_evidence_family","target":"Torat Menachem / Sichos Kodesh textual witnesses for 1 Kislev 5713","status":"researcher_model_candidate_only"}],
-      "promotion_queue": "hold_until_component_level_locator_or_additional_item_identity_check"
+      "promotion_queue": "eligible_for_canonical_indexed_review"
     },
     {
       "staging_id": "ska-5713-18-iyar-sicha-tmimim",
@@ -54,6 +56,6 @@
     }
   ],
   "deduplication_review": {"within_batch":"No duplicate asserted; distinct dates and titles.","cross_corpus":"Exact-date textual witnesses are linkage candidates only; no audio/text equivalence asserted."},
-  "promotion_summary": {"eligible_for_review":1,"hold":1,"promoted":0,"verified":0},
+  "promotion_summary": {"eligible_for_review":2,"hold":0,"promoted":0,"verified":0},
   "epistemic_note": "Staging metadata is not Verified knowledge. Missing context is not reconstructed."
 }
