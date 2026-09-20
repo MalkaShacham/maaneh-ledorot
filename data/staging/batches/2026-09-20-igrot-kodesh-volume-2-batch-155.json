@@ -1,0 +1,81 @@
+{
+  "manifest": {
+    "batch_id": "2026-09-20-igrot-kodesh-volume-2-batch-155",
+    "ingested_at": "2026-09-20",
+    "discovery_source": "Chabad.org/TheRebbe.org authorized Igrot Kodesh Volume 2 item pages",
+    "record_count": 3,
+    "method": "breadth-first bounded item-metadata ingestion; direct item pages inspected; no bulk protected text copied",
+    "rights_status": "public_metadata_and_page_access; Kehot-published text protected; no bulk reuse assumed",
+    "verification_scope": "stable item URL/aid, publisher letter identifier, displayed Hebrew date, explicit response framing and publisher witness notes where exposed",
+    "coverage": "Igrot Kodesh volume 2 letters 178-180"
+  },
+  "records": [
+    {
+      "staging_id": "ik-v2-178-aid4666217",
+      "title": "אגרות קודש - מכתב קעח",
+      "event_date_hebrew": "כ\"ג טבת, תש\"ה",
+      "source_class": "Igrot Kodesh",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666217/jewish/page.htm",
+      "locator": {"aid": 4666217, "volume": 2, "letter": "קעח"},
+      "collection_status": "Indexed",
+      "context_status": "partial",
+      "rights_status": "public_metadata_and_page_access",
+      "verification_status": "metadata-and-response-framing-checked",
+      "response_case_candidate": true,
+      "response_basis": "Publisher page states that a condolence letter was received and discusses the delayed response.",
+      "witness_note": "Publisher note says the text was printed in Toldot Levi Yitzchak and completed from a secretariat copy; underlying copy not inspected.",
+      "promotion_queue": true
+    },
+    {
+      "staging_id": "ik-v2-179-aid4666218",
+      "title": "אגרות קודש - מכתב קעט",
+      "event_date_hebrew": "כ\"ג טבת, תש\"ה",
+      "source_class": "Igrot Kodesh",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666218/jewish/page.htm",
+      "locator": {"aid": 4666218, "volume": 2, "letter": "קעט"},
+      "collection_status": "Indexed",
+      "context_status": "partial",
+      "rights_status": "public_metadata_and_page_access",
+      "verification_status": "metadata-and-response-framing-checked",
+      "response_case_candidate": true,
+      "response_basis": "Publisher page explicitly says the recipient's letter was received and answers questions from that and earlier letters.",
+      "witness_note": "Publisher page states מהעתק המזכירות; underlying copy not inspected.",
+      "promotion_queue": true
+    },
+    {
+      "staging_id": "ik-v2-180-aid4666219",
+      "title": "אגרות קודש - מכתב קפ",
+      "event_date_hebrew": "כ\"ו טבת, תש\"ה",
+      "source_class": "Igrot Kodesh",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666219/jewish/page.htm",
+      "locator": {"aid": 4666219, "volume": 2, "letter": "קפ"},
+      "collection_status": "Indexed",
+      "context_status": "partial",
+      "rights_status": "public_metadata_and_page_access",
+      "verification_status": "metadata-and-response-framing-checked",
+      "response_case_candidate": true,
+      "response_basis": "Publisher page explicitly states that the recipients' letter of 3 Kislev arrived and responds with an update.",
+      "witness_note": "Publisher note says the letter was completed from a secretariat copy and identifies later/earlier publication manifestations; underlying copy not inspected.",
+      "promotion_queue": true
+    }
+  ],
+  "dedup_review": {
+    "status": "Distinct stable aids and letter numbers; letters 178 and 180 share recipient/institution context but are not duplicates.",
+    "duplicate_or_overlap_candidates": []
+  },
+  "link_candidates": [
+    {
+      "from": "ik-v2-178-aid4666217",
+      "to": "ik-v2-170-aid4666207",
+      "relationship_type": "editorial_cross_reference",
+      "basis": "Publisher note on letter 178 explicitly says its content also appears in letter 170. This does not establish textual identity."
+    },
+    {
+      "from": "ik-v2-178-aid4666217",
+      "to": "ik-v2-180-aid4666219",
+      "relationship_type": "same_evidence_family_candidate",
+      "basis": "Same institutional addressee is exposed by publisher pages; retained as a candidate family pending fuller correspondence mapping."
+    }
+  ],
+  "promotion_queue": ["ik-v2-178-aid4666217", "ik-v2-179-aid4666218", "ik-v2-180-aid4666219"]
+}
