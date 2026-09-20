@@ -1,0 +1,60 @@
+{
+  "batch_id": "batch-135",
+  "ingested_at": "2026-09-20",
+  "collection": "Living Torah",
+  "publisher": "Jewish Educational Media / Chabad.org",
+  "purpose": "Breadth-first cross-media discovery for 5712 events already represented by Sichos Kodesh audio staging records.",
+  "record_count": 2,
+  "rights_status": "publicly_viewable_copyrighted_metadata_indexing_only",
+  "verification_status": "metadata_checked_non_verified",
+  "records": [
+    {
+      "staging_id": "lt-5712-24-tevet-3902044",
+      "title": "The Mystical Meaning of the Name Schneur",
+      "source_class": "video",
+      "segment_type": "Talk",
+      "event_date_hebrew": "24 Tevet 5712",
+      "event_date_gregorian": "1952-01-22",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/3902044/jewish/The-Mystical-Meaning-of-the-Name-Schneur.htm",
+      "locator": {"aid": 3902044, "disc": 174, "program": 696},
+      "discovery_source": "Living Torah date index and item page",
+      "provenance": {"publisher": "Jewish Educational Media", "publisher_item_page_checked": true, "direct_media_content_checked": false},
+      "collection_status": "Indexed",
+      "verification_status": "metadata_checked_non_verified",
+      "context_status": "partial",
+      "rights_status": "publicly_viewable_copyrighted_metadata_indexing_only",
+      "duplicate_candidates": [],
+      "link_candidates": [
+        {"relationship_type": "same_evidence_family", "target": "Sichos Kodesh Audio cluster: 24 Teves 5712", "confidence": "date-level-candidate", "note": "Same publisher ecosystem and exact event date; no assertion yet which audio component, if any, corresponds to this edited Living Torah segment."}
+      ],
+      "promotion_queue": "eligible_for_canonical_indexed_review",
+      "notes": "Publisher page identifies this as Living Torah Disc 174, Program 696. Publisher summary is metadata/editorial description, not treated as verbatim transcript."
+    },
+    {
+      "staging_id": "lt-5712-10-shevat-618965",
+      "title": "2nd Yahrtzeit of the Previous Rebbe",
+      "source_class": "video",
+      "segment_type": "Timeless Moment",
+      "event_date_hebrew": "10 Shevat 5712",
+      "event_date_gregorian": "1952-02-06",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/618965/jewish/2nd-Yahrtzeit-of-the-Previous-Rebbe.htm",
+      "locator": {"aid": 618965, "disc": 44, "program": 173},
+      "discovery_source": "Living Torah date index and item page",
+      "provenance": {"publisher": "Jewish Educational Media", "publisher_item_page_checked": true, "publisher_labels_material_vintage_film_footage": true, "direct_media_content_checked": false},
+      "collection_status": "Indexed",
+      "verification_status": "metadata_checked_non_verified",
+      "context_status": "partial",
+      "rights_status": "publicly_viewable_copyrighted_metadata_indexing_only",
+      "duplicate_candidates": [],
+      "link_candidates": [
+        {"relationship_type": "same_evidence_family", "target": "Sichos Kodesh Audio cluster: 10 Shevat 5712", "confidence": "event-level-candidate", "note": "Publisher identifies vintage film footage of the farbrengen at 770 on the same date; exact synchronization/coverage relative to the six staged audio components is unverified."}
+      ],
+      "promotion_queue": "eligible_for_canonical_indexed_review",
+      "notes": "Retained as a separate edited visual witness. No claim that footage covers the whole farbrengen or corresponds to a particular audio component."
+    }
+  ],
+  "normalization": {"dates_normalized": true, "stable_aids_checked": true, "publisher_program_locators_preserved": true},
+  "deduplication": {"within_batch_duplicate_candidates": 0, "cross_media_candidates": 2, "rule": "Exact-date linkage does not establish textual/audio-video identity."},
+  "promotion_queue_count": 2,
+  "verified_count": 0
+}
