@@ -13,9 +13,9 @@
     "notes": "Breadth-first metadata ingestion only. No audio or transcript copied. Publisher lists ten numbered sichos, one maamar, and two additional items explicitly labeled Kabolas Ponim-Althois; labels are preserved without interpreting the event relationship."
   },
   "records": [
-    {"staging_id":"ska-5714-19-kislev-sicha-1","title":"19 Kislev 5714 - Sicha 1","duration":"26:31","aid":"550453","unit_type":"sicha"},
-    {"staging_id":"ska-5714-19-kislev-maamar","title":"19 Kislev 5714 - Maamar","duration":"40:20","aid":"550454","unit_type":"maamar","editorial_cross_reference":"Torat Menachem: א״ר אושעיא כו׳ צדקת פרזונו, י\"ט כסלו, ה'תשי\"ד"},
-    {"staging_id":"ska-5714-19-kislev-sicha-2","title":"19 Kislev 5714 - Sicha 2","duration":"25:50","aid":"550455","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-1","title":"19 Kislev 5714 - Sicha 1","duration":"26:31","aid":"550453","unit_type":"sicha","promotion_status":"promoted_canonical_indexed","canonical_id":"sichos-kodesh-audio-aid-550453"},
+    {"staging_id":"ska-5714-19-kislev-maamar","title":"19 Kislev 5714 - Maamar","duration":"40:20","aid":"550454","unit_type":"maamar","editorial_cross_reference":"Torat Menachem: א״ר אושעיא כו׳ צדקת פרזונו, י\"ט כסלו, ה'תשי\"ד","promotion_status":"promoted_canonical_indexed","canonical_id":"sichos-kodesh-audio-aid-550454"},
+    {"staging_id":"ska-5714-19-kislev-sicha-2","title":"19 Kislev 5714 - Sicha 2","duration":"25:50","aid":"550455","unit_type":"sicha","promotion_status":"promoted_canonical_indexed","canonical_id":"sichos-kodesh-audio-aid-550455"},
     {"staging_id":"ska-5714-19-kislev-sicha-3","title":"19 Kislev 5714 - Sicha 3","duration":"7:46","aid":"550456","unit_type":"sicha"},
     {"staging_id":"ska-5714-19-kislev-sicha-4","title":"19 Kislev 5714 - Sicha 4","duration":"22:25","aid":"550457","unit_type":"sicha"},
     {"staging_id":"ska-5714-19-kislev-sicha-5","title":"19 Kislev 5714 - Sicha 5","duration":"13:07","aid":"550458","unit_type":"sicha"},
@@ -49,6 +49,6 @@
     "within_batch": "No duplicate asserted. The two Kabolas Ponim-Althois items are retained as distinct publisher manifestations; relationship to numbered sichos is unverified.",
     "cross_corpus": "Exact-date textual witnesses are linkage candidates only; no audio/text equivalence asserted."
   },
-  "promotion_summary": {"eligible_for_review":13,"hold":0,"promoted":0,"verified":0},
-  "epistemic_note": "Staging metadata is not Verified knowledge. Publisher labels are preserved without reconstructing missing event context."
+  "promotion_summary": {"eligible_for_review_remaining":10,"hold":0,"promoted":3,"verified":0},
+  "epistemic_note": "Three records are now canonical Indexed items after direct locator checks; none is Verified. Remaining staging metadata is not canonical item-level knowledge."
 }
