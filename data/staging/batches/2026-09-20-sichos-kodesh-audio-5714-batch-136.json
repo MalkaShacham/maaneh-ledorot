@@ -1,0 +1,54 @@
+{
+  "manifest": {
+    "batch_id": "sichos-kodesh-audio-5714-batch-136",
+    "ingested_at": "2026-09-20",
+    "collection": "Sichos Kodesh Audio",
+    "hebrew_year": 5714,
+    "event": "19 Kislev 5714",
+    "record_count": 13,
+    "source_index_url": "https://www.chabad.org/therebbe/article_cdo/aid/550452/jewish/5714-1953-1954.htm",
+    "event_source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555619/jewish/19-Kislev-5714-Nov-26-1953.htm",
+    "rights_status": "publicly_viewable_copyrighted_metadata_only",
+    "verification_scope": "publisher event metadata and stable component locators checked; audio content, completeness, and witness equivalence not verified",
+    "notes": "Breadth-first metadata ingestion only. No audio or transcript copied. Publisher lists ten numbered sichos, one maamar, and two additional items explicitly labeled Kabolas Ponim-Althois; labels are preserved without interpreting the event relationship."
+  },
+  "records": [
+    {"staging_id":"ska-5714-19-kislev-sicha-1","title":"19 Kislev 5714 - Sicha 1","duration":"26:31","aid":"550453","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-maamar","title":"19 Kislev 5714 - Maamar","duration":"40:20","aid":"550454","unit_type":"maamar","editorial_cross_reference":"Torat Menachem: א״ר אושעיא כו׳ צדקת פרזונו, י\"ט כסלו, ה'תשי\"ד"},
+    {"staging_id":"ska-5714-19-kislev-sicha-2","title":"19 Kislev 5714 - Sicha 2","duration":"25:50","aid":"550455","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-3","title":"19 Kislev 5714 - Sicha 3","duration":"7:46","aid":"550456","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-4","title":"19 Kislev 5714 - Sicha 4","duration":"22:25","aid":"550457","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-5","title":"19 Kislev 5714 - Sicha 5","duration":"13:07","aid":"550458","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-6","title":"19 Kislev 5714 - Sicha 6","duration":"19:17","aid":"550459","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-7","title":"19 Kislev 5714 - Sicha 7","duration":"21:36","aid":"550460","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-8","title":"19 Kislev 5714 - Sicha 8","duration":"35:11","aid":"550461","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-9","title":"19 Kislev 5714 - Sicha 9","duration":"12:01","aid":"550462","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-sicha-10","title":"19 Kislev 5714 - Sicha 10","duration":"8:24","aid":"550463","unit_type":"sicha"},
+    {"staging_id":"ska-5714-19-kislev-kabolas-ponim-althois-1","title":"19 Kislev 5714 - Sicha 1 (Kabolas Ponim-Althois)","duration":"14:24","aid":"550464","unit_type":"sicha","publisher_label":"Kabolas Ponim-Althois"},
+    {"staging_id":"ska-5714-19-kislev-kabolas-ponim-althois-2","title":"19 Kislev 5714 - Sicha 2 (Kabolas Ponim-Althois)","duration":"16:06","aid":"550465","unit_type":"sicha","publisher_label":"Kabolas Ponim-Althois"}
+  ],
+  "record_defaults": {
+    "date_hebrew": "19 Kislev 5714",
+    "date_gregorian": "1953-11-26",
+    "source_class": "Audio",
+    "discovery_source": "Chabad.org / Jewish Educational Media — Sichos Kodesh Audio",
+    "source_url_template": "https://www.chabad.org/therebbe/article_cdo/aid/{aid}/jewish/",
+    "event_source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555619/jewish/19-Kislev-5714-Nov-26-1953.htm",
+    "locator": {"type":"component_page_aid_plus_event_page","event_aid":"555619"},
+    "collection_status": "Indexed",
+    "context_status": "unknown",
+    "rights_status": "publicly_viewable_copyrighted_metadata_only",
+    "verification_status": "metadata_checked_component_and_event_pages_nonverified_content",
+    "provenance": {"publisher":"Jewish Educational Media","platform":"Chabad.org","source_witness":"recording manifestation listed by publisher","transmission_type":"audio","editorial_scope":"publisher item metadata"},
+    "normalization": {"year":5714,"event_key":"5714-19-kislev"},
+    "duplicate_candidates": [],
+    "link_candidates": [{"relation":"same_publisher_event_cluster","target":"19 Kislev 5714 / event aid 555619","status":"metadata_supported"},{"relation":"same_evidence_family","target":"printed/textual witnesses for 19 Kislev 5714","status":"researcher_model_candidate_only"}],
+    "promotion_queue": "eligible_for_canonical_indexed_review"
+  },
+  "deduplication_review": {
+    "within_batch": "No duplicate asserted. The two Kabolas Ponim-Althois items are retained as distinct publisher manifestations; relationship to numbered sichos is unverified.",
+    "cross_corpus": "Exact-date textual witnesses are linkage candidates only; no audio/text equivalence asserted."
+  },
+  "promotion_summary": {"eligible_for_review":13,"hold":0,"promoted":0,"verified":0},
+  "epistemic_note": "Staging metadata is not Verified knowledge. Publisher labels are preserved without reconstructing missing event context."
+}
