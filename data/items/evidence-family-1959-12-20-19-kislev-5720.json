@@ -1,0 +1,27 @@
+{
+  "id":"evidence-family-1959-12-20-19-kislev-5720",
+  "type":"EvidenceFamily",
+  "event":"19 Kislev 5720 farbrengen audio",
+  "date":"1959-12-20",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-page-checked; three direct item pages/navigation checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555660/jewish/19-Kislev-5720-Dec-20-1959.htm",
+  "members":[
+    {"aid":550826,"role":"sicha","title":"19 Kislev 5720 - Sicha 1","duration":"31:16","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550826/jewish/19-Kislev-5720-Sicha-1.htm","status":"Linked"},
+    {"aid":550827,"role":"sicha","title":"19 Kislev 5720 - Sicha 2","duration":"11:04","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550827/jewish/19-Kislev-5720-Sicha-2.htm","status":"Linked"},
+    {"aid":550828,"role":"sicha","title":"19 Kislev 5720 - Sicha 3","duration":"17:34","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550828/jewish/19-Kislev-5720-Sicha-3.htm","status":"Linked"}
+  ],
+  "relationships":[{"type":"same_evidence_family","members":[550826,550827,550828],"basis":"publisher groups the items under the 19 Kislev 5720 event; direct item navigation confirms Sicha 1 -> Sicha 2 -> Sicha 3 -> Sicha 4"}],
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title","duration"],"result":"three distinct publisher item manifestations; no duplicate asserted"},
+  "ux_summary":{"what_found":"Three directly located audio components from the 19 Kislev 5720 farbrengen, within a publisher event containing 15 components.","basis":"JEM/Chabad.org year index, direct event page, and stable item pages/navigation.","trust":"Linked, not Verified: identity, date, durations and sequence are publisher-supported; audio content and recording completeness were not independently listened through or compared with another witness."},
+  "research_notes":[
+    "The publisher event page lists fifteen components: fourteen numbered sichos and one maamar recording.",
+    "Only the three item-level records checked in this promotion pass are canonical members here; remaining event components are not silently promoted.",
+    "No textual equivalence to a printed sicha or maamar is inferred.",
+    "No transcript or audio was copied; metadata and source links only.",
+    "Verified is intentionally withheld because content/completeness was not checked against a direct recording witness through listening or a second authoritative witness."
+  ]
+}
