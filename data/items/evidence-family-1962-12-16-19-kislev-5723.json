@@ -1,0 +1,22 @@
+{
+  "id":"evidence-family-1962-12-16-19-kislev-5723",
+  "type":"EvidenceFamily",
+  "event":"19 Kislev 5723 farbrengen audio",
+  "date":"1962-12-16",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-page-checked; direct stable item pages for aids 551065, 551066 and 551067 checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555691/jewish/19-Kislev-5723-Dec-16-1962.htm",
+  "members":[
+    {"aid":551065,"role":"sicha","title":"19 Kislev 5723 - Sicha 1","duration":"33:54","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551065/jewish/19-Kislev-5723-Sicha-1.htm","status":"Linked","witness_check":"direct publisher item page checked"},
+    {"aid":551066,"role":"sicha","title":"19 Kislev 5723 - Sicha 2","duration":"21:01","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551066/jewish/19-Kislev-5723-Sicha-2.htm","status":"Linked","witness_check":"direct publisher item page checked"},
+    {"aid":551067,"role":"sicha","title":"19 Kislev 5723 - Sicha 3","duration":"14:11","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551067/jewish/19-Kislev-5723-Sicha-3.htm","status":"Linked","witness_check":"direct publisher item page checked"}
+  ],
+  "event_inventory":{"publisher_component_count":10,"components_visible_on_event_page":["Sicha 1","Sicha 2","Sicha 3","Sicha 4","Sicha 5","Maamar","Sicha 6","Sicha 7","Sicha 8","Sicha 9"],"note":"Only three members are promoted in this pass; the remaining seven are event-family inventory, not silently promoted canonical members."},
+  "relationships":[{"type":"same_evidence_family","members":[551065,551066,551067],"basis":"same publisher event/date; direct navigation confirms Sicha 1 -> Sicha 2 -> Sicha 3 -> Sicha 4"}],
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title","duration"],"result":"three distinct stable publisher item manifestations; no duplicate identity asserted"},
+  "ux_summary":{"what_found":"Three directly located opening audio components of the 19 Kislev 5723 farbrengen, within a publisher event containing ten components.","basis":"JEM/Chabad.org event page plus direct stable item pages and navigation.","trust":"Linked, not Verified: identity, date, sequence and publisher durations are supported; audio content and completeness were not independently listened through or compared with a second witness."},
+  "research_notes":["Publisher item pages expose Related Text on at least Sicha 1 and Sicha 2; this is retained as an editorial-link signal only, not textual equivalence.","Do not infer equivalence between the event's Maamar recording and a printed maamar until direct comparison.","No audio or transcript was copied.","Verified intentionally withheld because content/completeness witness comparison has not been performed."]
+}
