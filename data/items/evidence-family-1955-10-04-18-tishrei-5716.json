@@ -1,0 +1,38 @@
+{
+  "id":"evidence-family-1955-10-04-18-tishrei-5716",
+  "type":"EvidenceFamily",
+  "event":"18 Tishrei 5716 audio farbrengen",
+  "date":"1955-10-04",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-year-index-event-page-and-item-pages-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "year_index_source":"https://www.chabad.org/therebbe/article_cdo/aid/550529/jewish/5716-1955-1956.htm",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555627/jewish/18-Tishrei-5716-Oct-4-1955.htm",
+  "members":[
+    {"aid":550530,"role":"sicha","sequence":1,"title":"18 Tishrei 5716 - Sicha 1","duration":"24:32","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550530/jewish/18-Tishrei-5716-Sicha-1.htm","status":"Linked"},
+    {"aid":550531,"role":"sicha","sequence":2,"title":"18 Tishrei 5716 - Sicha 2","duration":"11:47","status":"Indexed"},
+    {"aid":550532,"role":"sicha","sequence":3,"title":"18 Tishrei 5716 - Sicha 3","duration":"13:01","status":"Indexed"},
+    {"aid":550533,"role":"sicha","sequence":4,"title":"18 Tishrei 5716 - Sicha 4","duration":"13:23","status":"Indexed"},
+    {"aid":550534,"role":"sicha","sequence":5,"title":"18 Tishrei 5716 - Sicha 5","duration":"15:22","status":"Indexed"},
+    {"aid":550535,"role":"sicha","sequence":6,"title":"18 Tishrei 5716 - Sicha 6","duration":"11:22","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550535/jewish/18-Tishrei-5716-Sicha-6.htm","status":"Linked"},
+    {"aid":550536,"role":"sicha","sequence":7,"title":"18 Tishrei 5716 - Sicha 7","duration":"12:37","status":"Indexed"},
+    {"aid":550537,"role":"sicha","sequence":8,"title":"18 Tishrei 5716 - Sicha 8","duration":"17:33","status":"Indexed"},
+    {"aid":550538,"role":"sicha","sequence":9,"title":"18 Tishrei 5716 - Sicha 9","duration":"23:55","status":"Indexed"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550530,550531,550532,550533,550534,550535,550536,550537,550538],"basis":"publisher groups all nine audio items under the 18 Tishrei 5716 event"},
+    {"type":"publisher_related_text_signal","members":[550530,550535],"basis":"direct item pages expose a Related Text field","identity_status":"not_verified","note":"Do not assert transcript identity or completeness until the linked text target and audio are directly compared."}
+  ],
+  "taxonomy_candidates":["farbrengen/public-address","Sukkot/Chol-Hamoed","multi-part-sicha-event"],
+  "response_case_candidate":{"status":"not-established","basis":"publisher metadata identifies public sicha segments; no question/answer or personal-response structure has been verified","do_not_infer":"Do not classify as yechidus, personal response, or answer to a question without source evidence."},
+  "deduplication":{"checked_keys":["aid","date","publisher_title","event_source"],"result":"nine distinct publisher-indexed audio segments retained separately"},
+  "research_notes":[
+    "The JEM event page lists exactly nine audio segments and their durations.",
+    "Direct item pages checked for Sicha 1 and Sicha 6 support the internal navigation sequence.",
+    "Related Text is treated only as a publisher linkage signal; no textual identity is inferred.",
+    "No audio or transcript was copied; metadata and source links only.",
+    "Verified is withheld because the recordings were not independently listened to in full."
+  ]
+}
