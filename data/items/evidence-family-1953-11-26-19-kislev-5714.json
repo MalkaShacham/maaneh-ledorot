@@ -1,0 +1,27 @@
+{
+  "id":"evidence-family-1953-11-26-19-kislev-5714",
+  "type":"EvidenceFamily",
+  "event":"19 Kislev 5714 farbrengen audio",
+  "date":"1953-11-26",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-and-item-pages-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555619/jewish/19-Kislev-5714-Nov-26-1953.htm",
+  "members":[
+    {"aid":550453,"role":"sicha","title":"19 Kislev 5714 - Sicha 1","duration":"26:31","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550453/jewish/19-Kislev-5714-Sicha-1.htm","status":"Linked"},
+    {"aid":550454,"role":"maamar-recording-witness","title":"19 Kislev 5714 - Maamar","duration":"40:20","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550454/jewish/19-Kislev-5714-Maamar.htm","status":"Linked"},
+    {"aid":550455,"role":"sicha","title":"19 Kislev 5714 - Sicha 2","duration":"25:50","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550455/jewish/19-Kislev-5714-Sicha-2.htm","status":"Linked"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550453,550454,550455],"basis":"publisher groups all three under the 19 Kislev 5714 event; direct item navigation confirms sequence"}
+  ],
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title"],"result":"three distinct publisher item manifestations; no duplicate assertion"},
+  "ux_summary":{"what_found":"Three directly identified audio components from the 19 Kislev 5714 event.","basis":"JEM/Chabad.org event page plus direct stable item pages.","trust":"Linked, not Verified: identity and event relationship are supported by publisher witnesses; audio content and completeness were not independently listened through."},
+  "research_notes":[
+    "The publisher event page exposes thirteen audio components; only these three are promoted in this pass.",
+    "Do not infer textual equivalence between the Maamar recording and any printed edition until a direct comparison is performed.",
+    "Verified is intentionally withheld because audio content/completeness was not independently checked."
+  ]
+}
