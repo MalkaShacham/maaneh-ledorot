@@ -1,0 +1,23 @@
+{
+  "id":"evidence-family-1960-12-08-19-kislev-5721",
+  "type":"EvidenceFamily",
+  "event":"19 Kislev 5721 farbrengen audio",
+  "date":"1960-12-08",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-page-checked; three direct item pages/navigation checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555670/jewish/19-Kislev-5721-Dec-8-1960.htm",
+  "members":[
+    {"aid":550901,"role":"sicha","title":"19 Kislev 5721 - Sicha 1","duration":"30:43","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550901/jewish/19-Kislev-5721-Sicha-1.htm","status":"Linked"},
+    {"aid":550902,"role":"sicha","title":"19 Kislev 5721 - Sicha 2","duration":"19:32","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550902/jewish/19-Kislev-5721-Sicha-2.htm","status":"Linked"},
+    {"aid":550903,"role":"sicha","title":"19 Kislev 5721 - Sicha 3","duration":"11:47","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550903/jewish/19-Kislev-5721-Sicha-3.htm","status":"Linked"}
+  ],
+  "event_inventory":{"publisher_components":11,"composition":"10 numbered sicha recordings plus one maamar recording","count_type":"event-page publisher inventory"},
+  "relationships":[{"type":"same_evidence_family","members":[550901,550902,550903],"basis":"publisher groups these items under the same dated event; direct item navigation establishes Sicha 1 -> Sicha 2 -> Sicha 3"}],
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title","duration"],"result":"three distinct publisher item manifestations; no duplicate asserted"},
+  "ux_summary":{"what_found":"Three directly identified opening audio components of the 19 Kislev 5721 event, within an event page listing eleven components.","basis":"JEM/Chabad.org direct event page and direct stable item pages/navigation.","trust":"Linked, not Verified: publisher identity, event membership, sequence and durations are supported; audio content and completeness were not independently listened through or compared to another witness."},
+  "research_notes":["The event page lists Sicha 1-4, Maamar, and Sicha 5-10, eleven components total.","Do not infer textual equivalence between the Maamar recording and a printed maamar without direct comparison.","No transcript or audio copied; metadata and source links only.","Verified is intentionally withheld because audio content/completeness was not independently checked."],
+  "promotion":{"from_staging":"jem-5721-19-kislev","promoted_at":"2026-09-21","promotion_ready_left_in_staging_reason":"event-level staging record is retained as ingestion provenance; item-level canonical family is now present"}
+}
