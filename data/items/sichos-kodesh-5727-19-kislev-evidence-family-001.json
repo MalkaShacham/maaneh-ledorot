@@ -1,0 +1,25 @@
+{
+  "evidence_family_id":"sichos-kodesh-5727-19-kislev-001",
+  "event_or_problem":"Publisher-labeled 19 Kislev 5727 farbrengen audio sequence",
+  "source_class":"Audio",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "pipeline_status":"Linked",
+  "verification_status":"Linked",
+  "verified":false,
+  "context_status":"partial",
+  "rights_status":"publicly_viewable_copyrighted_metadata_only",
+  "date_status":"publisher_metadata_conflict",
+  "date_note":"The dedicated year/event index labels the cluster 19 Kislev 5727 / Dec 2 1966; a general audio day-index currently displays these components as 18 Kislev 5727 / Dec 1 1966. No correction is inferred.",
+  "items":[
+    {"id":"jem-sk-551328","aid":551328,"title":"19 Kislev 5727 - Sicha 1","duration":"28:02","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551328/jewish/19-Kislev-5727-Sicha-1.htm","source_witness":"publisher item page for audio recording","transmission_type":"audio recording","textual_status":"not transcribed in this record","editorial_scope":"publisher item segmentation","context_status":"unknown","verification_status":"Linked","item_page_checked":"2026-09-21"},
+    {"id":"jem-sk-551329","aid":551329,"title":"19 Kislev 5727 - Sicha 2","duration":"23:29","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551329/jewish/19-Kislev-5727-Sicha-2.htm","source_witness":"publisher item page for audio recording","transmission_type":"audio recording","textual_status":"not transcribed in this record","editorial_scope":"publisher item segmentation","context_status":"unknown","verification_status":"Linked","item_page_checked":"2026-09-21"},
+    {"id":"jem-sk-551330","aid":551330,"title":"19 Kislev 5727 - Sicha 3","duration":"17:05","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551330/jewish/19-Kislev-5727-Sicha-3.htm","source_witness":"publisher item page for audio recording","transmission_type":"audio recording","textual_status":"not transcribed in this record","editorial_scope":"publisher item segmentation","context_status":"unknown","verification_status":"Linked","item_page_checked":"2026-09-21"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":["jem-sk-551328","jem-sk-551329","jem-sk-551330"],"basis":"publisher sequence/navigation and shared event cluster"},
+    {"type":"editorial_cross_reference","target":"https://www.chabad.org/torah-texts/4385752","note":"Torat Menachem page exposes the same event and an audio class list; textual/audio equivalence has not been established."}
+  ],
+  "deduplication":{"checked_keys":["aid","source_url","publisher title","event sequence"],"result":"three distinct stable item manifestations; no duplicate assertion"},
+  "verification_block":"Direct publisher item pages, stable AIDs, durations and sequence navigation checked. Audio content/completeness was not listened through or compared against an independent witness, so Verified is not assigned.",
+  "provenance":{"year_index":"https://www.chabad.org/therebbe/article_cdo/aid/551317/jewish/5727-1966-1967.htm","checked":"2026-09-21"}
+}
