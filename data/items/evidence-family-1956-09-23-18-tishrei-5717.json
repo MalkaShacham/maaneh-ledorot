@@ -1,0 +1,53 @@
+{
+  "record_type": "evidence_family",
+  "event": {
+    "hebrew_date": "18 Tishrei 5717",
+    "gregorian_date": "1956-09-23",
+    "label": "18 Tishrei 5717 farbrengen/audio event"
+  },
+  "overall_status": "Linked",
+  "sources": [
+    {
+      "publisher": "Jewish Educational Media / Chabad.org",
+      "collection": "Sichos Kodesh Audio",
+      "event_url": "https://www.chabad.org/therebbe/article_cdo/aid/555634/jewish/18-Tishrei-5717-Sep-23-1956.htm",
+      "status": "Linked"
+    }
+  ],
+  "witnesses": [
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 1","aid":550608,"duration":"16:58","url":"https://www.chabad.org/therebbe/article_cdo/aid/550608/jewish/18-Tishrei-5717-Sicha-1.htm","status":"Linked"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 2","aid":550609,"duration":"14:27","status":"Indexed"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 3","aid":550610,"duration":"23:03","status":"Indexed"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 4","aid":550611,"duration":"15:14","status":"Indexed"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 5","aid":550612,"duration":"22:55","url":"https://www.chabad.org/therebbe/article_cdo/aid/550612/jewish/18-Tishrei-5717-Sicha-5.htm","status":"Linked"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 6","aid":550613,"duration":"22:54","status":"Indexed"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 7","aid":550614,"duration":"26:02","url":"https://www.chabad.org/therebbe/article_cdo/aid/550614/jewish/18-Tishrei-5717-Sicha-7.htm","status":"Linked"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 8","aid":550615,"duration":"32:03","status":"Indexed"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 9","aid":550616,"duration":"08:28","status":"Indexed"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 10","aid":550617,"duration":"18:20","url":"https://www.chabad.org/therebbe/article_cdo/aid/550617/jewish/18-Tishrei-5717-Sicha-10.htm","status":"Linked"},
+    {"type":"audio_sicha","title":"18 Tishrei 5717 - Sicha 11","aid":550618,"duration":"09:57","url":"https://www.chabad.org/therebbe/article_cdo/aid/550618/jewish/18-Tishrei-5717-Sicha-11.htm","status":"Linked"}
+  ],
+  "linkage": [
+    {
+      "relation": "publisher_navigation_sequence",
+      "from": "Sicha 1",
+      "to": "Sicha 11",
+      "status": "Linked",
+      "limits": "Only directly inspected item pages are individually Linked; remaining witnesses are Indexed from the official event page."
+    },
+    {
+      "relation": "event_boundary",
+      "from": "18 Tishrei 5717 - Sicha 11",
+      "to": "19 Kislev 5717 event",
+      "status": "Linked",
+      "evidence": "Publisher Next navigation on aid 550618."
+    }
+  ],
+  "taxonomy_candidates": ["Sukkot/Chol Hamoed","farbrengen","public address","multi-part audio event"],
+  "verification": {
+    "verified": ["publisher event date","eleven-item event structure","titles and durations from official event page","aid range 550608-550618","publisher navigation from Sicha 11 to 19 Kislev 5717"],
+    "not_verified": ["full audio content","topic segmentation within each Sicha","identity or completeness of Related Text links","question-answer or yechidus status"]
+  },
+  "rights": {"policy":"metadata_and_links_only","copied_protected_content":false},
+  "provenance_note": "Metadata indexed from official JEM/Chabad.org pages. Related Text signals are not treated as transcript identity without direct comparison. No missing context has been reconstructed and no AI inference is presented as the Rebbe's words."
+}
