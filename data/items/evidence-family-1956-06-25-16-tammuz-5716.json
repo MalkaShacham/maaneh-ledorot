@@ -1,0 +1,37 @@
+{
+  "id":"evidence-family-1956-06-25-16-tammuz-5716",
+  "type":"EvidenceFamily",
+  "event":"16 Tammuz 5716 Camp Gan Yisroel audio",
+  "date":"1956-06-25",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-page-and-selected-item-pages-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555633/jewish/16-Tammuz-5716-Jun-25-1956.htm",
+  "members":[
+    {"aid":550601,"role":"context-audio","title":"16 Tammuz 5716 - Lechayim (Before Sicha)","duration":"15:02","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550601/jewish/16-Tammuz-5716-Lechayim-Before-Sicha.htm","status":"Linked"},
+    {"aid":550602,"role":"sicha","title":"16 Tammuz 5716 - Sicha 1 (In Camp Gan Yisroel)","duration":"21:20","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550602/jewish/16-Tammuz-5716-Sicha-1-In-Camp-Gan-Yisroel.htm","status":"Linked"},
+    {"aid":550603,"role":"maamar-recording-witness","title":"16 Tammuz 5716 - Maamar","duration":"16:49","status":"Indexed"},
+    {"aid":550604,"role":"sicha","title":"16 Tammuz 5716 - Sicha 2","duration":"05:21","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550604/jewish/16-Tammuz-5716-Sicha-2.htm","status":"Linked"},
+    {"aid":550605,"role":"sicha","title":"16 Tammuz 5716 - Sicha 3","duration":"08:41","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550605/jewish/16-Tammuz-5716-Sicha-3.htm","status":"Linked"},
+    {"aid":550606,"role":"context-audio","title":"16 Tammuz 5716 - Birchas Hamazon","duration":"06:23","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550606/jewish/16-Tammuz-5716-Birchas-Hamazon.htm","status":"Linked"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550601,550602,550603,550604,550605,550606],"basis":"publisher event page groups all six audio components under 16 Tammuz 5716"},
+    {"type":"sequence_boundary","previous_event":"12 Tammuz 5716","basis":"direct publisher 12 Tammuz Sicha 9 page points next to 16 Tammuz 5716"},
+    {"type":"sequence_boundary","next_year":"5717","basis":"direct publisher Birchas Hamazon page points next to 5717"},
+    {"type":"publisher_related_text_signal","members":[550601,550602,550604,550605,550606],"basis":"checked direct item pages expose a Related Text field","identity_status":"not_verified","note":"Targets were not content-compared; do not infer verbatim identity or completeness."}
+  ],
+  "taxonomy_candidates":["Camp Gan Yisroel","youth-camp","sicha","maamar","public-address","event-context","lechayim","birchas-hamazon"],
+  "response_case_candidate":{"status":"not-established","basis":"publisher metadata identifies a camp event/public addresses; no question/answer or personal-response structure verified","do_not_infer":"Do not classify any component as a personal response or yechidus without source evidence."},
+  "deduplication":{"checked_keys":["aid","date","publisher_title","duration"],"result":"six distinct publisher-indexed components retained separately; contextual audio not collapsed into adjacent sichot"},
+  "ux_summary":{"what_found":"Complete publisher inventory for 16 Tammuz 5716: Lechayim context, three sichot, one maamar, and Birchas Hamazon; Sicha 1 is explicitly labeled In Camp Gan Yisroel.","basis":"JEM/Chabad.org event page plus direct item pages and navigation.","trust":"Linked/Indexed, not Verified: metadata and sequence are publisher-supported; recordings were not listened through and related text was not compared."},
+  "research_notes":[
+    "Preserve Lechayim and Birchas Hamazon as independent contextual witnesses because the publisher catalogs them separately.",
+    "Sicha 1 is explicitly labeled by the publisher as In Camp Gan Yisroel; no broader claim about the physical setting of every component is inferred.",
+    "The Maamar recording is not asserted equivalent to any printed edition without direct comparison.",
+    "Birchas Hamazon points next to 5717, supporting this as the terminal audio event boundary for the publisher's 5716 sequence.",
+    "No audio or transcript was copied; metadata and source links only."
+  ]
+}
