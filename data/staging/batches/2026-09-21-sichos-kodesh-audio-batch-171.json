@@ -1,0 +1,26 @@
+{
+  "manifest": {
+    "batch_id": "2026-09-21-sichos-kodesh-audio-batch-171",
+    "ingested_at": "2026-09-21",
+    "discovery_source": "Chabad.org Sichos Kodesh Audio / Jewish Educational Media public 5723 year index",
+    "record_count": 7,
+    "method": "breadth-first event-level metadata ingestion; no audio or transcript copied",
+    "rights_status": "public_metadata_only; audio copyrighted; no bulk reuse assumed",
+    "verification_scope": "publisher year/event metadata only; component content and recording completeness not independently verified",
+    "external_inventory_reported": 68,
+    "external_inventory_counted_as_canonical": false,
+    "coverage": "5723 (1962-1963) seven publisher event clusters"
+  },
+  "records": [
+    {"staging_id":"ska-5723-event-18-tishrei","title":"18 Tishrei 5723 - Oct 16 1962","event_date":"1962-10-16","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551054/jewish/5723-1962-1963.htm","locator":{"year_aid":551054,"publisher_component_count":10},"collection_status":"Indexed-candidate","context_status":"unknown","rights_status":"public_metadata_only","verification_status":"publisher-index-checked","promotion_queue":false,"promotion_blocker":"event-level discovery record; promote component items only after stable item locator checks"},
+    {"staging_id":"ska-5723-event-19-kislev","title":"19 Kislev 5723 - Dec 16 1962","event_date":"1962-12-16","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555691/jewish/19-Kislev-5723-Dec-16-1962.htm","locator":{"event_aid":555691,"publisher_component_count":10},"collection_status":"Indexed-candidate","context_status":"partial","rights_status":"public_metadata_only","verification_status":"publisher-event-page-checked","promotion_queue":true},
+    {"staging_id":"ska-5723-event-24-tevet","title":"24 Tevet 5723 - Jan 20 1963","event_date":"1963-01-20","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555692/jewish/24-Tevet-5723-Jan-20-1963.htm","locator":{"event_aid":555692,"publisher_component_count":5},"collection_status":"Indexed-candidate","context_status":"unknown","rights_status":"public_metadata_only","verification_status":"publisher-event-page-checked","promotion_queue":false,"promotion_blocker":"component stable locators not checked in this pass"},
+    {"staging_id":"ska-5723-event-25-tevet","title":"25 Tevet 5723 - Jan 21 1963","event_date":"1963-01-21","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551054/jewish/5723-1962-1963.htm","locator":{"year_aid":551054,"publisher_component_count":7},"collection_status":"Indexed-candidate","context_status":"unknown","rights_status":"public_metadata_only","verification_status":"publisher-index-checked","promotion_queue":false,"promotion_blocker":"component stable locators not checked in this pass"},
+    {"staging_id":"ska-5723-event-10-shevat","title":"10 Shevat 5723 - Feb 4 1963","event_date":"1963-02-04","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551054/jewish/5723-1962-1963.htm","locator":{"year_aid":551054,"publisher_index_visible_components":11},"collection_status":"Indexed-candidate","context_status":"unknown","rights_status":"public_metadata_only","verification_status":"publisher-index-checked","promotion_queue":false,"promotion_blocker":"component stable locators not checked in this pass"},
+    {"staging_id":"ska-5723-event-14-adar","title":"14 Adar 5723 - Mar 10 1963","event_date":"1963-03-10","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551054/jewish/5723-1962-1963.htm","locator":{"year_aid":551054,"publisher_index_visible_components":11},"collection_status":"Indexed-candidate","context_status":"unknown","rights_status":"public_metadata_only","verification_status":"publisher-index-checked","promotion_queue":false,"promotion_blocker":"component stable locators not checked in this pass"},
+    {"staging_id":"ska-5723-event-12-tammuz","title":"12 Tammuz 5723 - Jul 4 1963","event_date":"1963-07-04","source_class":"Audio","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551054/jewish/5723-1962-1963.htm","locator":{"year_aid":551054,"publisher_index_visible_components":14},"collection_status":"Indexed-candidate","context_status":"unknown","rights_status":"public_metadata_only","verification_status":"publisher-index-checked","promotion_queue":false,"promotion_blocker":"component stable locators not checked in this pass; mixed labels including nigun/conversation require item-level attribution review"}
+  ],
+  "dedup_review": {"status":"event dates/titles distinct in publisher index; no event-level duplicates asserted"},
+  "normalization_notes": ["68 is external publisher inventory and is not a staging, canonical or Verified count.","Event-level records are not treated as canonical item-level records.","Nigun, conversation and similar component labels are not automatically attributed as words of the Rebbe without item-level evidence."],
+  "epistemic_note":"Staging only. Discovered/Indexed event coverage is distinct from item-level Linked/Verified status."
+}
