@@ -1,0 +1,91 @@
+{
+  "record_type": "evidence_family",
+  "event": {
+    "hebrew_date": "18 Iyar 5717",
+    "gregorian_date": "1957-05-19",
+    "label": "Lag BaOmer Parade",
+    "location": "770, Brooklyn",
+    "location_status": "publisher_attested_for_video_witness"
+  },
+  "overall_status": "Linked",
+  "sources": [
+    {
+      "publisher": "Jewish Educational Media / Chabad.org",
+      "collection": "Sichos Kodesh Audio",
+      "event_url": "https://www.chabad.org/therebbe/article_cdo/aid/555639/jewish/18-Iyar-5717-May-19-1957.htm",
+      "status": "Linked"
+    },
+    {
+      "publisher": "Jewish Educational Media / Chabad.org",
+      "collection": "Living Torah",
+      "url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1827342/jewish/Lag-Bomer-Parade.htm",
+      "status": "Linked"
+    }
+  ],
+  "witnesses": [
+    {
+      "type": "audio_context",
+      "title": "18 Iyar 5717 - Music-Intro to Rebbe (Parade)",
+      "aid": 550657,
+      "duration": "28:18",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/550657/jewish/18-Iyar-5717-Music-Intro-to-Rebbe-Parade.htm",
+      "status": "Linked",
+      "notes": "Contextual audio witness; do not treat as Rebbe speech without content verification. Publisher navigation leads to the Sicha (Parade)."
+    },
+    {
+      "type": "audio_sicha",
+      "title": "18 Iyar 5717 - Sicha (Parade)",
+      "aid": 550658,
+      "duration": "29:04",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/550658/jewish/18-Iyar-5717-Sicha-Parade.htm",
+      "status": "Linked",
+      "notes": "Publisher labels this as Sicha (Parade). Full audio-content verification not yet performed."
+    },
+    {
+      "type": "edited_video",
+      "title": "Lag B’omer Parade",
+      "aid": 1827342,
+      "collection": "Living Torah",
+      "url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1827342/jewish/Lag-Bomer-Parade.htm",
+      "status": "Linked",
+      "notes": "Publisher describes this as vintage footage of the 1957 Lag B’Omer Parade in front of 770 and gives event date 18 Iyar 5717 / May 19 1957. Treat as an edited audiovisual witness, not as proof of completeness or identity with the full audio Sicha."
+    }
+  ],
+  "linkage": [
+    {
+      "from": "audio event family",
+      "to": "Living Torah video aid 1827342",
+      "relation": "same_publisher_same_event_date_cross_media_candidate",
+      "status": "Linked",
+      "limits": "Event-level linkage only. No claim that the edited video contains the complete 29:04 Sicha or that its soundtrack is identical to the audio witness until direct comparison is performed."
+    }
+  ],
+  "taxonomy_candidates": [
+    "Lag BaOmer",
+    "parade",
+    "public address",
+    "children/youth event",
+    "cross-media witness"
+  ],
+  "verification": {
+    "verified": [
+      "publisher event date",
+      "two-item audio event structure",
+      "audio titles and durations",
+      "audio aid locators",
+      "Living Torah event date and publisher description of vintage footage at 770"
+    ],
+    "not_verified": [
+      "full audio content",
+      "full video content",
+      "audio-video temporal alignment",
+      "completeness of video relative to Sicha",
+      "identity of any Related Text with the audio recording"
+    ]
+  },
+  "rights": {
+    "policy": "metadata_and_links_only",
+    "copied_protected_content": false
+  },
+  "provenance_note": "Metadata indexed from official JEM/Chabad.org publisher pages. No missing context has been reconstructed and no AI inference is presented as the Rebbe's words."
+}
