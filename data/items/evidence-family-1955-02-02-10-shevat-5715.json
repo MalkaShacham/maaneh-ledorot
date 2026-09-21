@@ -1,0 +1,28 @@
+{
+  "id":"evidence-family-1955-02-02-10-shevat-5715",
+  "type":"EvidenceFamily",
+  "event":"10 Shevat 5715 farbrengen audio",
+  "date":"1955-02-02",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-and-item-pages-checked; audio-content-and-completeness-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555623/jewish/10-Shevat-5715-Feb-2-1955.htm",
+  "members":[
+    {"aid":550500,"role":"sicha","title":"10 Shevat 5715 - Sicha 1","duration":"11:39","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550500/jewish/10-Shevat-5715-Sicha-1.htm","status":"Linked","witness_check":"direct publisher item page checked"},
+    {"aid":550501,"role":"maamar-recording-witness","title":"10 Shevat 5715 - Maamar","duration":"44:14","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550501/jewish/10-Shevat-5715-Maamar.htm","status":"Linked","witness_check":"direct publisher item page checked"},
+    {"aid":550502,"role":"sicha","title":"10 Shevat 5715 - Sicha 2","duration":"17:03","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550502/jewish/10-Shevat-5715-Sicha-2.htm","status":"Linked","witness_check":"direct publisher item page checked"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550500,550501,550502],"basis":"publisher groups the components under event aid 555623; direct item Previous/Next navigation confirms sequence between Sicha 1, Maamar and Sicha 2"}
+  ],
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title"],"result":"three distinct stable publisher item manifestations; no duplicate assertion"},
+  "ux_summary":{"what_found":"Three directly identified recording components from the 10 Shevat 5715 event.","basis":"JEM/Chabad.org direct event page and stable item pages, including item-to-item navigation.","trust":"Linked, not Verified. Publisher identity, date, duration and event sequence are directly supported; the recordings were not listened through and no independent recording/text witness was compared."},
+  "research_notes":[
+    "The publisher event page lists eight audio components for 10 Shevat 5715; only three are promoted in this pass.",
+    "Do not infer textual equivalence between the Maamar recording and any printed Maamar/Torat Menachem witness until direct comparison.",
+    "Verified is intentionally withheld: direct pages verify item metadata/relationship, not the full audible content or recording completeness.",
+    "No promotion-ready record selected in this pass is left in staging without disposition: these three are promoted; the remaining event components require their direct item locators/checks before promotion."
+  ]
+}
