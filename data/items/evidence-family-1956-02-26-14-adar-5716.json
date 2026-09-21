@@ -1,0 +1,46 @@
+{
+  "id":"evidence-family-1956-02-26-14-adar-5716",
+  "type":"EvidenceFamily",
+  "event":"14 Adar 5716 farbrengen audio",
+  "date":"1956-02-26",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-page-and-selected-item-pages-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555631/jewish/14-Adar-5716-Feb-26-1956.htm",
+  "members":[
+    {"aid":550574,"role":"sicha","title":"14 Adar 5716 - Sicha 1","duration":"09:40","status":"Indexed"},
+    {"aid":550575,"role":"sicha","title":"14 Adar 5716 - Sicha 2","duration":"09:47","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550575/jewish/14-Adar-5716-Sicha-2.htm","status":"Linked"},
+    {"aid":550576,"role":"sicha","title":"14 Adar 5716 - Sicha 3","duration":"36:39","status":"Indexed"},
+    {"aid":550577,"role":"sicha","title":"14 Adar 5716 - Sicha 4","duration":"23:42","status":"Indexed"},
+    {"aid":550578,"role":"maamar-recording-witness","title":"14 Adar 5716 - Maamar","duration":"50:20","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550578/jewish/14-Adar-5716-Maamar.htm","status":"Linked"},
+    {"aid":550579,"role":"sicha","title":"14 Adar 5716 - Sicha 5","duration":"45:49","status":"Indexed"},
+    {"aid":550580,"role":"sicha","title":"14 Adar 5716 - Sicha 6","duration":"19:37","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550580/jewish/14-Adar-5716-Sicha-6.htm","status":"Linked"},
+    {"aid":550581,"role":"conversation-context-witness","title":"14 Adar 5716 - Conversation (Between Sichos)","duration":"28:37","status":"Indexed","context_note":"Retained as an independent publisher-indexed context witness; content and speakers not independently verified."},
+    {"aid":550582,"role":"sicha","title":"14 Adar 5716 - Sicha 7","duration":"10:42","status":"Indexed"},
+    {"aid":550583,"role":"sicha","title":"14 Adar 5716 - Sicha 8","duration":"06:45","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550583/jewish/14-Adar-5716-Sicha-8.htm","status":"Linked"},
+    {"aid":550584,"role":"sicha","title":"14 Adar 5716 - Sicha 9","duration":"09:30","status":"Indexed"},
+    {"aid":550585,"role":"sicha","title":"14 Adar 5716 - Sicha 10","duration":"15:05","status":"Indexed"},
+    {"aid":550586,"role":"sicha","title":"14 Adar 5716 - Sicha 11","duration":"07:02","status":"Indexed"},
+    {"aid":550587,"role":"sicha","title":"14 Adar 5716 - Sicha 12","duration":"08:23","status":"Indexed"},
+    {"aid":550588,"role":"sicha","title":"14 Adar 5716 - Sicha 13","duration":"20:00","status":"Indexed"},
+    {"aid":550590,"role":"sicha","title":"14 Adar 5716 - Sicha 14","duration":"07:01","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550590/jewish/14-Adar-5716-Sicha-14.htm","status":"Linked"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550574,550575,550576,550577,550578,550579,550580,550581,550582,550583,550584,550585,550586,550587,550588,550590],"basis":"publisher event page groups all sixteen audio components under 14 Adar 5716"},
+    {"type":"sequence_boundary","next_event":"12 Tammuz 5716","basis":"direct publisher Sicha 14 page points next to 12 Tammuz 5716"},
+    {"type":"publisher_related_text_signal","members":[550575,550578,550580,550583,550590],"basis":"selected direct item pages expose a Related Text field","identity_status":"not_verified","note":"Targets were not content-compared; do not infer verbatim identity or completeness."}
+  ],
+  "catalog_anomalies":[{"type":"aid-gap","detail":"Publisher sequence represented here jumps from AID 550588 (Sicha 13) to 550590 (Sicha 14). AID 550589 is not assigned or interpreted here without source evidence."}],
+  "taxonomy_candidates":["farbrengen","Purim","14 Adar","sicha","maamar","between-sichos-context"],
+  "response_case_candidate":{"status":"not-established","basis":"public-address event; no question/answer or personal-response structure verified","do_not_infer":"Do not classify Conversation (Between Sichos), any sicha, or the event as a personal response/yechidus without source evidence."},
+  "deduplication":{"checked_keys":["aid","date","publisher_title","duration"],"result":"sixteen distinct publisher-indexed components retained separately"},
+  "ux_summary":{"what_found":"Complete publisher inventory for 14 Adar 5716: fourteen numbered sichot, one maamar, and one separately indexed Conversation (Between Sichos).","basis":"JEM/Chabad.org event page plus selected direct item pages and navigation.","trust":"Linked/Indexed, not Verified: metadata and sequence are publisher-supported; recordings were not listened through and related text was not compared."},
+  "research_notes":[
+    "The Conversation (Between Sichos) is preserved rather than collapsed into an adjacent sicha because the publisher indexes it separately.",
+    "Selected direct pages confirm internal navigation, including Sicha 6 -> Conversation (Between Sichos), and the terminal boundary from Sicha 14 to 12 Tammuz 5716.",
+    "The Maamar recording is not asserted equivalent to any printed edition without direct comparison.",
+    "No audio or transcript was copied; metadata and source links only."
+  ]
+}
