@@ -1,0 +1,39 @@
+{
+  "id":"evidence-family-1956-06-21-12-tammuz-5716",
+  "type":"EvidenceFamily",
+  "event":"12 Tammuz 5716 farbrengen audio",
+  "date":"1956-06-21",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-page-and-selected-item-pages-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555632/jewish/12-Tammuz-5716-Jun-21-1956.htm",
+  "members":[
+    {"aid":550591,"role":"sicha","title":"12 Tammuz 5716 - Sicha 1","duration":"29:27","status":"Indexed"},
+    {"aid":550592,"role":"sicha","title":"12 Tammuz 5716 - Sicha 2","duration":"20:59","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550592/jewish/12-Tammuz-5716-Sicha-2.htm","status":"Linked"},
+    {"aid":550593,"role":"maamar-recording-witness","title":"12 Tammuz 5716 - Maamar","duration":"43:55","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550593/jewish/12-Tammuz-5716-Maamar.htm","status":"Linked"},
+    {"aid":550594,"role":"sicha","title":"12 Tammuz 5716 - Sicha 3","duration":"28:15","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550594/jewish/12-Tammuz-5716-Sicha-3.htm","status":"Linked"},
+    {"aid":550595,"role":"sicha","title":"12 Tammuz 5716 - Sicha 4","duration":"47:30","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550595/jewish/12-Tammuz-5716-Sicha-4.htm","status":"Linked"},
+    {"aid":550596,"role":"sicha","title":"12 Tammuz 5716 - Sicha 5","duration":"30:25","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550596/jewish/12-Tammuz-5716-Sicha-5.htm","status":"Linked"},
+    {"aid":550597,"role":"sicha","title":"12 Tammuz 5716 - Sicha 6","duration":"14:17","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550597/jewish/12-Tammuz-5716-Sicha-6.htm","status":"Linked"},
+    {"aid":550598,"role":"sicha","title":"12 Tammuz 5716 - Sicha 7","duration":"27:19","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550598/jewish/12-Tammuz-5716-Sicha-7.htm","status":"Linked"},
+    {"aid":550599,"role":"sicha","title":"12 Tammuz 5716 - Sicha 8","duration":"19:26","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550599/jewish/12-Tammuz-5716-Sicha-8.htm","status":"Linked"},
+    {"aid":550600,"role":"sicha","title":"12 Tammuz 5716 - Sicha 9","duration":"19:36","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550600/jewish/12-Tammuz-5716-Sicha-9.htm","status":"Linked"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550591,550592,550593,550594,550595,550596,550597,550598,550599,550600],"basis":"publisher event page groups all ten audio components under 12 Tammuz 5716"},
+    {"type":"sequence_boundary","next_event":"16 Tammuz 5716","basis":"direct publisher Sicha 9 page points next to 16 Tammuz 5716"},
+    {"type":"publisher_related_text_signal","members":[550592,550593,550594,550595,550596,550597,550598,550599,550600],"basis":"checked direct item pages expose a Related Text field","identity_status":"not_verified","note":"Targets were not content-compared; do not infer verbatim identity or completeness."}
+  ],
+  "taxonomy_candidates":["farbrengen","12 Tammuz","sicha","maamar","public-address"],
+  "response_case_candidate":{"status":"not-established","basis":"public-address event; no question/answer or personal-response structure verified","do_not_infer":"Do not classify any component as a personal response or yechidus without source evidence."},
+  "deduplication":{"checked_keys":["aid","date","publisher_title","duration"],"result":"ten distinct publisher-indexed components retained separately"},
+  "ux_summary":{"what_found":"Complete publisher inventory for 12 Tammuz 5716: nine numbered sichot and one maamar.","basis":"JEM/Chabad.org event page plus direct item pages and navigation.","trust":"Linked/Indexed, not Verified: metadata and sequence are publisher-supported; recordings were not listened through and related text was not compared."},
+  "research_notes":[
+    "Direct item navigation supports the internal sequence Sicha 2 -> Maamar -> Sicha 3 and later links through Sicha 9.",
+    "Sicha 9 points next to the 16 Tammuz 5716 event, establishing the terminal event boundary.",
+    "The Maamar recording is not asserted equivalent to any printed edition without direct comparison.",
+    "No audio or transcript was copied; metadata and source links only."
+  ]
+}
