@@ -1,0 +1,28 @@
+{
+  "id":"evidence-family-1956-01-23-10-shevat-5716",
+  "type":"EvidenceFamily",
+  "event":"10 Shevat 5716 farbrengen audio",
+  "date":"1956-01-23",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-event-and-item-pages-checked; audio-content-and-completeness-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555630/jewish/10-Shevat-5716-Jan-23-1956.htm",
+  "members":[
+    {"aid":550564,"role":"sicha","title":"10 Shevat 5716 - Sicha 1","duration":"14:16","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550564/jewish/10-Shevat-5716-Sicha-1.htm","status":"Linked","witness_check":"direct publisher item page checked"},
+    {"aid":550566,"role":"maamar-recording-witness","title":"10 Shevat 5716 - Maamar","duration":"48:37","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550566/jewish/10-Shevat-5716-Maamar.htm","status":"Linked","witness_check":"direct publisher item page checked; Previous/Next confirms placement between Sicha 2 and Sicha 3"},
+    {"aid":550573,"role":"sicha","title":"10 Shevat 5716 - Sicha 9","duration":"03:58","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550573/jewish/10-Shevat-5716-Sicha-9.htm","status":"Linked","witness_check":"direct publisher item page checked; Previous points to Sicha 8 and Next to next event"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550564,550566,550573],"basis":"publisher groups all three under event aid 555630; direct item pages and navigation support event membership"}
+  ],
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title","duration"],"result":"three distinct stable publisher item manifestations; no duplicate assertion"},
+  "ux_summary":{"what_found":"Three directly identified recording components spanning the beginning, central Maamar and final Sicha of the 10 Shevat 5716 publisher event sequence.","basis":"JEM/Chabad.org direct event page plus stable item pages and item navigation.","trust":"Linked, not Verified. Publisher identity, date, duration and event membership are directly supported; recordings were not listened through and no independent recording/text witness was compared."},
+  "research_notes":[
+    "The publisher event page lists ten audio components for 10 Shevat 5716; three are promoted in this pass.",
+    "The Maamar recording is not asserted textually equivalent to any printed Maamar/Torat Menachem witness without direct comparison.",
+    "Verified is intentionally withheld: item pages establish publisher metadata and relationships, not complete audible content or recording completeness.",
+    "Remaining event components are not treated as promotion-ready until stable item locators are individually checked; this disposition is recorded in batch 165."
+  ]
+}
