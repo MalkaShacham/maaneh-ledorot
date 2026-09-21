@@ -1,0 +1,22 @@
+{
+  "id":"evidence-family-1964-11-24-19-kislev-5725",
+  "type":"EvidenceFamily",
+  "event":"19 Kislev 5725 farbrengen audio",
+  "date":"1964-11-24",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct publisher event page and stable item pages for aids 551192, 551193 and 551194 checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555703/jewish/19-Kislev-5725-Nov-24-1964.htm",
+  "members":[
+    {"aid":551192,"role":"sicha","title":"19 Kislev 5725 - Sicha 1","duration":"30:13","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551192/jewish/19-Kislev-5725-Sicha-1.htm","status":"Linked","witness_check":"direct publisher item page checked; navigation points to Sicha 2"},
+    {"aid":551193,"role":"sicha","title":"19 Kislev 5725 - Sicha 2","duration":"28:04","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551193/jewish/19-Kislev-5725-Sicha-2.htm","status":"Linked","witness_check":"direct publisher item page checked; navigation points back to Sicha 1 and forward to Sicha 3"},
+    {"aid":551194,"role":"sicha","title":"19 Kislev 5725 - Sicha 3","duration":"28:55","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/551194/jewish/19-Kislev-5725-Sicha-3.htm","status":"Linked","witness_check":"direct publisher item page checked; navigation points back to Sicha 2 and forward to Maamar"}
+  ],
+  "event_inventory":{"publisher_component_count":9,"note":"Event page lists nine audio components. Only Sicha 1-3 are promoted in this pass. The event page contains two entries labeled Sicha 6 with distinct durations; these are retained as distinct manifestations pending witness comparison, not treated as a duplicate."},
+  "relationships":[{"type":"same_evidence_family","members":[551192,551193,551194],"basis":"same publisher event/date and direct adjacent item navigation"}],
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title","duration"],"result":"three distinct stable publisher item manifestations; no duplicate identity asserted"},
+  "ux_summary":{"what_found":"Three directly identifiable consecutive audio components from the 19 Kislev 5725 farbrengen, within a nine-component publisher event.","basis":"JEM/Chabad.org event page plus three stable item pages and direct publisher navigation.","trust":"Linked, not Verified: identity, event membership, durations and adjacency are supported by direct publisher witnesses; audio content, completeness and equivalence to printed texts have not been independently compared."},
+  "research_notes":["Do not infer equivalence between these recordings and printed Sichos/Torat Menachem without direct comparison.","No audio or transcript copied.","Verified intentionally withheld because content/completeness witness comparison has not been performed.","The duplicate-looking Sicha 6 labels in the event inventory require separate witness comparison before any deduplication or containment claim."]
+}
