@@ -1,0 +1,27 @@
+{
+  "id":"jem-sichos-kodesh-5718-10-shevat-promotion-001",
+  "entity_type":"EvidenceFamily",
+  "event_or_problem":"Publisher event cluster: 10 Shevat 5718 / Feb 1 1958",
+  "source_class":"Audio",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "pipeline_status":"Linked",
+  "verification_status":"Linked-not-Verified",
+  "primary_secondary_status":"primary recording manifestations as publisher-presented; content not independently verified",
+  "context_status":"partial",
+  "rights_status":"copyrighted-metadata-and-links-only",
+  "source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555644/jewish/10-Shevat-5718-Feb-1-1958.htm",
+  "accessed":"2026-09-21",
+  "items":[
+    {"item_id":"jem-sk-aid-550695","aid":550695,"title":"10 Shevat 5718 - Sicha 1","duration":"18:22","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550695/jewish/10-Shevat-5718-Sicha-1.htm","source_witness":"direct publisher item page","transmission_type":"audio recording","textual_status":"not transcribed in project","verification_status":"Linked","context_status":"partial"},
+    {"item_id":"jem-sk-aid-550696","aid":550696,"title":"10 Shevat 5718 - Sicha 2","duration":"07:29","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550696/jewish/10-Shevat-5718-Sicha-2.htm","source_witness":"direct publisher item page","transmission_type":"audio recording","textual_status":"not transcribed in project","verification_status":"Linked","context_status":"partial"},
+    {"item_id":"jem-sk-aid-550697","aid":550697,"title":"10 Shevat 5718 - Sicha 3","duration":"18:32","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550697/jewish/10-Shevat-5718-Sicha-3.htm","source_witness":"direct publisher item page","transmission_type":"audio recording","textual_status":"not transcribed in project","verification_status":"Linked","context_status":"partial"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","from":"jem-sk-aid-550695","to":"jem-sk-aid-550696","basis":"same publisher event cluster and direct next navigation"},
+    {"type":"same_evidence_family","from":"jem-sk-aid-550696","to":"jem-sk-aid-550697","basis":"same publisher event cluster and direct previous/next navigation"}
+  ],
+  "deduplication":{"keys_checked":["aid","source_url","publisher title","event date","duration"],"result":"three distinct stable publisher items; no duplicate assertion"},
+  "metadata_conflict":{"field":"Hebrew event date","publisher_event_and_titles":"10 Shevat 5718","publisher_category_filter":"11 Shevat 5718","gregorian_date":"1958-02-01","disposition":"preserve both publisher assertions; do not infer correction until reconciled against an authoritative calendar/event witness"},
+  "verification_blocker":"Direct item pages verify item identity, sequence and publisher metadata, but the audio was not fully listened to and compared with an independent/direct parallel witness. Therefore no content-level Verified status is assigned.",
+  "ux":{"what_found":"Three consecutive audio items from the publisher's Feb 1 1958 event cluster.","basis":"Direct JEM/Chabad.org item pages plus the publisher event page and previous/next sequence.","trust":"Linked: stable item identity and event linkage are supported; recording content/completeness is not independently Verified.","researcher_note":"Expose the 10/11 Shevat metadata conflict rather than silently normalizing it."}
+}
