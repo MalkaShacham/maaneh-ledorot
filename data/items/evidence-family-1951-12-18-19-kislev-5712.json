@@ -1,0 +1,33 @@
+{
+  "id":"evidence-family-1951-12-18-19-kislev-5712",
+  "type":"EvidenceFamily",
+  "event":"19 Kislev 5712 farbrengen audio",
+  "date":"1951-12-18",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-item-pages-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555611/jewish/19-Kislev-5712-Dec-18-1951.htm",
+  "members":[
+    {"aid":550417,"role":"sicha","title":"Sicha 1 (Hakdama to Maamar)","duration":"02:27","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550417/jewish/19-Kislev-5712-Sicha-1-Hakdama-to-Maamar.htm"},
+    {"aid":550418,"role":"maamar-recording-witness","title":"Maamar (more complete less clear)","duration":"30:07","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550418/jewish/19-Kislev-5712-Maamar-more-complete-less-clear.htm"},
+    {"aid":550419,"role":"maamar-recording-witness","title":"Maamar (more clear less complete)","duration":"25:20","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550419/jewish/19-Kislev-5712-Maamar-more-clear-less-complete.htm"},
+    {"aid":550420,"role":"sicha","title":"Sicha 2","duration":"09:19","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550420/jewish/19-Kislev-5712-Sicha-2.htm"},
+    {"aid":550421,"role":"sicha","title":"Sicha 3","duration":"00:36","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550421/jewish/19-Kislev-5712-Sicha-3.htm"},
+    {"aid":550422,"role":"partial-sicha-recording","title":"Sicha 4 (Part)","duration":"01:22","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550422/jewish/19-Kislev-5712-Sicha-4-Part.htm","context_status":"partial"},
+    {"aid":550423,"role":"sicha","title":"Sicha 5","duration":"10:04","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550423/jewish/19-Kislev-5712-Sicha-5.htm"},
+    {"aid":550424,"role":"sicha","title":"Sicha 6","duration":"04:53","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550424/jewish/19-Kislev-5712-Sicha-6.htm"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550417,550418,550419,550420,550421,550422,550423,550424],"basis":"publisher event grouping"},
+    {"type":"parallel_recording_witnesses","members":[550418,550419],"basis":"publisher presents two differently characterized recordings of the Maamar","certainty":"high at metadata level; overlap/content not independently compared"},
+    {"type":"editorial_cross_reference","from":550417,"to":"Sichos Kodesh: 19 Kislev 5712","basis":"Related Text on publisher item page"},
+    {"type":"editorial_cross_reference","from":550417,"to":"Torat Menachem: Sicha 19 Kislev 5712","basis":"Related Text on publisher item page"}
+  ],
+  "research_notes":[
+    "Do not collapse aids 550418 and 550419: they are separate recording witnesses with different completeness/clarity labels.",
+    "Sicha 4 is explicitly labelled Part and must remain partial.",
+    "Linked, not Verified: direct item metadata and publisher relationships were checked, but recordings were not listened through and completeness/content was not independently verified."
+  ]
+}
