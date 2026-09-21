@@ -1,0 +1,28 @@
+{
+  "id":"evidence-family-1958-12-01-19-kislev-5719",
+  "type":"EvidenceFamily",
+  "event":"19 Kislev 5719 farbrengen audio",
+  "date":"1958-12-01",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-year-and-item-pages-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/550734/jewish/5719-1958-1959.htm",
+  "members":[
+    {"aid":550745,"role":"sicha","title":"19 Kislev 5719 - Sicha 1","duration":"22:19","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550745/jewish/19-Kislev-5719-Sicha-1.htm","status":"Linked"},
+    {"aid":550746,"role":"sicha","title":"19 Kislev 5719 - Sicha 2","duration":"14:17","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550746/jewish/19-Kislev-5719-Sicha-2.htm","status":"Linked"},
+    {"aid":550747,"role":"sicha","title":"19 Kislev 5719 - Sicha 3","duration":"07:49","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550747/jewish/19-Kislev-5719-Sicha-3.htm","status":"Linked"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550745,550746,550747],"basis":"publisher groups all three under the 19 Kislev 5719 event; direct item navigation confirms Sicha 1 → Sicha 2 → Sicha 3"}
+  ],
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title","duration"],"result":"three distinct stable publisher item manifestations; no duplicate assertion"},
+  "ux_summary":{"what_found":"Three directly identified consecutive audio components from the 19 Kislev 5719 event.","basis":"JEM/Chabad.org year index plus direct stable item pages and publisher navigation.","trust":"Linked, not Verified: identity, date, duration and event sequence are supported by publisher witnesses; audio content and completeness were not independently listened through or compared with another witness."},
+  "research_notes":[
+    "The publisher year index exposes fifteen components for the 19 Kislev 5719 event; only these three are promoted in this pass.",
+    "Direct pages establish stable aids 550745, 550746 and 550747 and the navigation sequence among them.",
+    "No textual equivalence to Related Text or printed editions is asserted without direct comparison.",
+    "Verified is intentionally withheld because the recording content/completeness has not been independently checked against a direct or second authorized witness."
+  ]
+}
