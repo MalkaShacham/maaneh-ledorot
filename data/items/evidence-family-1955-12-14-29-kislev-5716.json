@@ -1,0 +1,31 @@
+{
+  "id":"evidence-family-1955-12-14-29-kislev-5716",
+  "type":"EvidenceFamily",
+  "event":"29 Kislev 5716 Tmimim talk audio",
+  "date":"1955-12-14",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-year-index-event-page-and-item-page-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "year_index_source":"https://www.chabad.org/therebbe/article_cdo/aid/550529/jewish/5716-1955-1956.htm",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555629/jewish/29-Kislev-5716-Dec-14-1955.htm",
+  "members":[
+    {"aid":550563,"role":"sicha","audience":"Tmimim","title":"29 Kislev 5716 - Sicha (Tmimim)","duration":"04:03","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550563/jewish/29-Kislev-5716-Sicha-Tmimim.htm","status":"Linked"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550563],"basis":"publisher groups this single audio item under the 29 Kislev 5716 event"},
+    {"type":"publisher_related_text","member":550563,"title":"שיחת אור ליום ד' פ' מקץ, ליל נר ה' דחנוכה, ה'תשט\"ז","basis":"direct audio item page explicitly labels this as Related Text","identity_status":"not_verified","note":"Do not assert verbatim identity or completeness without direct comparison."},
+    {"type":"sequence_boundary","next_event":"10 Shevat 5716","basis":"direct publisher item page points next to 10 Shevat 5716"}
+  ],
+  "taxonomy_candidates":["students/yeshiva (Tmimim)","Chanukah","direct-address-to-defined-audience"],
+  "response_case_candidate":{"status":"candidate-only","basis":"publisher metadata identifies the audience as Tmimim and links a related text; no question/answer structure has been verified","do_not_infer":"Do not classify as a personal response, yechidus, or answer to a question without source evidence."},
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title"],"result":"single distinct publisher audio item; related text retained as a separate textual witness rather than merged"},
+  "ux_summary":{"what_found":"Complete publisher-indexed 29 Kislev 5716 audio event: one 4:03 talk to Tmimim, with an explicit publisher Related Text link.","basis":"JEM/Chabad.org 5716 year index, event page, and direct item page.","trust":"Linked, not Verified: publisher metadata and text linkage are supported; audio/text identity and audio content were not independently compared."},
+  "research_notes":[
+    "The JEM/Chabad.org 5716 year index lists seven audio events: 18 Tishrei, 19 Kislev, 29 Kislev, 10 Shevat, 14 Adar, 12 Tammuz, and 16 Tammuz.",
+    "The year/topic index also exposes the corresponding Hebrew topic as a talk on the eve of the fifth Chanukah light, to students of Tomchei Tmimim in the Rebbe's room; this is useful discovery metadata but content identity remains unverified.",
+    "No transcript or audio was copied; metadata and source links only.",
+    "Verified is intentionally withheld because audio content and correspondence with the related text were not independently checked."
+  ]
+}
