@@ -6,8 +6,8 @@
     "record_count": 3,
     "method": "breadth-first bounded metadata ingestion from public authorized index; no protected video/transcript copied",
     "rights_status": "public_metadata_and_page_access; copyrighted-link-only",
-    "verification_scope": "index-level title, segment type and displayed event date only; item-level witness not yet inspected",
-    "coverage": "three Living Torah education talk segments"
+    "verification_scope": "index-level metadata for all three; Standing Up for Our Future additionally checked against its direct authorized item page and promoted",
+    "coverage": "three Living Torah education segments"
   },
   "records": [
     {
@@ -33,14 +33,14 @@
       "event_date_gregorian": "1963-03-10",
       "source_class": "Video",
       "discovery_source": "Chabad.org / JEM Living Torah education topic index",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/topicid/235",
-      "locator": {"publisher_index":"Living Torah Education topic","segment_type":"Talk","title":"Standing Up for Our Future"},
-      "collection_status": "Indexed-candidate",
-      "verification_status": "index-metadata-only; item-level witness pending",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/3908661/jewish/Standing-Up-for-Our-Future.htm",
+      "locator": {"aid":3908661,"disc":175,"program":697,"segment_type":"Talk","title":"Standing Up for Our Future"},
+      "collection_status": "Promoted",
+      "verification_status": "Verified item-level authorized witness; canonical: data/items/jem-living-torah-3908661.json",
       "context_status": "partial",
       "rights_status": "public_metadata_and_page_access; copyrighted-link-only",
       "promotion_queue": false,
-      "promotion_blocker": "Stable item-level page/aid and direct video witness have not yet been inspected."
+      "promotion_blocker": null
     },
     {
       "staging_id": "living-torah-education-higher-education-ehrenreich",
@@ -59,7 +59,8 @@
       "promotion_blocker": "Index describes a 1968 audience but does not expose an exact event date in the inspected metadata; item-level testimony witness pending."
     }
   ],
-  "dedup_review": {"status":"Titles/segment types checked as distinct within this bounded batch; canonical collision must be checked at item-level promotion."},
+  "dedup_review": {"status":"Titles/segment types checked as distinct within this bounded batch; Standing Up for Our Future checked for intended AID-based canonical collision before promotion."},
   "promotion_queue": [],
-  "blocked_for_promotion": ["living-torah-education-30-av-5742-best","living-torah-education-14-adar-5723-future","living-torah-education-higher-education-ehrenreich"]
+  "blocked_for_promotion": ["living-torah-education-30-av-5742-best","living-torah-education-higher-education-ehrenreich"],
+  "promoted": ["living-torah-education-14-adar-5723-future"]
 }
