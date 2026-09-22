@@ -1,0 +1,33 @@
+{
+  "record_type": "source_year_index",
+  "hebrew_year": 5718,
+  "gregorian_span": "1957-1958",
+  "status": "Indexed",
+  "source_family": "JEM / Chabad.org Sichos Kodesh Audio",
+  "provenance": {
+    "publisher": "Jewish Educational Media",
+    "year_index_url": "https://www.chabad.org/therebbe/article_cdo/aid/550673/jewish/5718-1957-1958.htm",
+    "accessed": "2026-09-22",
+    "copyright_note": "Metadata and links only; no audio or protected transcript copied."
+  },
+  "publisher_item_count": 60,
+  "events": [
+    {"hebrew_date":"18 Tishrei 5718","gregorian_date":"1957-10-13","event_url":"https://www.chabad.org/therebbe/article_cdo/aid/555642/jewish/18-Tishrei-5718-Oct-13-1957.htm","audio_components":10,"composition":"10 sichot","status":"Indexed"},
+    {"hebrew_date":"19 Kislev 5718","gregorian_date":"1957-12-12","audio_components":11,"composition":"publisher event listing includes sichot and a maamar","status":"Discovered"},
+    {"hebrew_date":"10 Shevat 5718","gregorian_date":"1958-02-01","event_url":"https://www.chabad.org/therebbe/article_cdo/aid/555644/jewish/10-Shevat-5718-Feb-1-1958.htm","audio_components":9,"composition":"8 sichot + 1 maamar","status":"Indexed"},
+    {"hebrew_date":"14 Adar 5718","gregorian_date":"1958-03-06","event_url":"https://www.chabad.org/therebbe/article_cdo/aid/555645/jewish/14-Adar-5718-Mar-6-1958.htm","audio_components":14,"composition":"12 sichot + 1 maamar + 1 Conversation-Nigunim","status":"Indexed"},
+    {"hebrew_date":"12 Tammuz 5718","gregorian_date":"1958-06-30","event_url":"https://www.chabad.org/therebbe/article_cdo/aid/555646/jewish/12-Tammuz-5718-Jun-30-1958.htm","audio_components":12,"composition":"10 numbered sichot + 1 maamar + 1 Sicha (Talmidim-Newark)","status":"Indexed"},
+    {"hebrew_date":"20 Av 5718","gregorian_date":"1958-08-06","event_url":"https://www.chabad.org/therebbe/article_cdo/aid/555647/jewish/20-Av-5718-Aug-6-1958.htm","audio_components":4,"composition":"4 sichot","status":"Indexed"}
+  ],
+  "sum_event_components": 60,
+  "taxonomy_candidates": ["sicha","maamar","conversation-nigunim","direct-address-to-defined-audience","students","talmidim-newark"],
+  "priority_candidates": [
+    {"event":"12 Tammuz 5718","reason":"contains separately publisher-labelled Sicha (Talmidim-Newark), useful for audience-specific response taxonomy"},
+    {"event":"14 Adar 5718","reason":"contains separately publisher-labelled Conversation-Nigunim, useful for contextual/interpersonal witness taxonomy"}
+  ],
+  "verification": {
+    "verified_metadata": ["publisher year index states 60 items","six event groups account for 60 audio components","18 Tishrei event count and durations available","10 Shevat event count and durations available","14 Adar event count and durations available","12 Tammuz event count and durations available","20 Av event count and durations available"],
+    "not_verified": ["full audio content","audio-text identity","question-response cases","whether audience labels imply personal response","all direct item pages","19 Kislev component-level metadata in this run"],
+    "partial_source_note": "This is a year-level map. Event/component records must be promoted independently from Discovered/Indexed to Linked/Verified only after direct source checks."
+  }
+}
