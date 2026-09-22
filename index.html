@@ -11,7 +11,8 @@ header{background:var(--navy);color:#fff;padding:48px 6vw 34px;border-bottom:5px
 h2{margin-top:38px}.entry{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.entry a{display:block;background:#fff;border:1px solid #e1ddd3;border-radius:16px;padding:20px;text-decoration:none;color:var(--ink);min-height:110px}.entry b{display:block;font-size:18px;margin-bottom:8px}.entry span{color:var(--muted);line-height:1.5}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.stat{background:#fff;border:1px solid #e1ddd3;border-radius:14px;padding:18px}.num{font-size:34px;font-weight:700;color:var(--gold)}.label{color:var(--muted);line-height:1.4}.warning{background:#fff7e3;border:1px solid #e4c989;padding:16px;border-radius:14px;line-height:1.7}
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.level{background:#fff;padding:14px;border-radius:12px;border:1px solid #e1ddd3}.level b{display:block;margin-bottom:6px}
-.family{background:#101b2d;color:#fff;border-radius:18px;padding:28px;line-height:2;text-align:center;font-size:18px}.sep{color:#caa85f;margin:0 8px}.links{display:flex;gap:12px;flex-wrap:wrap}.links a{background:#fff;padding:11px 14px;border-radius:10px;border:1px solid #ddd;color:#8a6426;text-decoration:none}
+.family{background:#101b2d;color:#fff;border-radius:18px;padding:28px;line-height:2;text-align:center;font-size:18px}.sep{color:#caa85f;margin:0 8px}.links{display:flex;gap:12px;flex-wrap:wrap}
+.lab{margin-top:34px;background:#fff;border:1px solid #ded8ca;border-radius:20px;padding:24px;box-shadow:0 8px 28px rgba(20,34,56,.07)}.lab h2{margin-top:0}.ask{display:flex;gap:10px;flex-wrap:wrap}.ask input{flex:1;min-width:240px;padding:15px 16px;border:1px solid #cfc8ba;border-radius:12px;font-size:17px}.ask button,.chip{border:0;border-radius:12px;padding:13px 18px;background:var(--navy);color:#fff;cursor:pointer;font-size:15px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.chip{background:#eee9df;color:var(--ink)}.answer{display:none;margin-top:18px;border-top:1px solid #eee5d7;padding-top:18px}.answer.show{display:block}.sourcecard{border:1px solid #ddd5c6;border-radius:14px;padding:15px;margin-top:10px;background:#fcfbf8}.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#e8f4ed;color:var(--green);font-weight:700;font-size:13px}.partial{background:#fff3d6;color:var(--amber)}.research{background:#f1edf8;color:#5d477c}.mode{float:left;font-size:13px;color:var(--muted)}.researcher{display:none;background:#f5f3ee;border-radius:10px;padding:10px;margin-top:10px;font-family:monospace;direction:ltr;text-align:left;white-space:pre-wrap}.research-on .researcher{display:block}.links a{background:#fff;padding:11px 14px;border-radius:10px;border:1px solid #ddd;color:#8a6426;text-decoration:none}
 footer{border-top:1px solid #ddd;padding:24px;text-align:center;color:var(--muted)}
 </style></head>
 <body>
@@ -20,9 +21,16 @@ footer{border-top:1px solid #ddd;padding:24px;text-align:center;color:var(--mute
 <main class="wrap">
 <div class="trust"><b>כלל היסוד:</b> אין מקור → אין ייחוס לרבי. מקור חלקי נשאר חלקי. הסקת AI לעולם אינה מוצגת כדברי הרבי.</div>
 
+<section class="lab" id="experience"><span class="mode"><label><input id="researchMode" type="checkbox"> מצב חוקר</label></span><h2>נסי את יקום הרבי — Alpha</h2>
+<p>כתבי שאלה. בשלב זה החוויה פועלת על <b>138 קבצי canonical הקיימים בפועל במאגר</b>; היא אינה מתיימרת עדיין לכסות את מלוא תורת הרבי. התשובה אינה "דברי הרבי" אלא ניווט למקורות מתועדים.</p>
+<div class="ask"><input id="q" placeholder="למשל: מה הרבי אמר על דאגה, אמונה או מזוזה?"><button onclick="tryUniverse()">חפשי ביקום</button></div>
+<div class="chips"><button class="chip" onclick="demo('אמונה ודאגה')">אמונה ודאגה</button><button class="chip" onclick="demo('מזוזה')">מזוזה</button><button class="chip" onclick="demo('טכנולוגיה וחלל')">טכנולוגיה וחלל</button></div>
+<div id="alphaAnswer" class="answer"></div>
+</section>
+
 <h2>איך תרצי להיכנס ליקום?</h2>
 <div class="entry">
-<a href="#status"><b>יש לי שאלה</b><span>בעתיד: ניסוח חופשי → מקרים מתועדים → מקורות → רמת התאמה.</span></a>
+<a href="#experience"><b>יש לי שאלה</b><span>נסי עכשיו את חוויית ה-Alpha על מקורות שכבר קודמו למאגר.</span></a>
 <a href="#sources"><b>מה הרבי אמר על…</b><span>כניסה דרך נושא: משפחה, חינוך, בריאות, שליחות, פרנסה ועוד.</span></a>
 <a href="#sources"><b>מצא מקור</b><span>איגרת, תאריך, כרך, aid, שיחה, אודיו או וידאו.</span></a>
 <a href="#evidence"><b>ציר זמן</b><span>אירועים ומקורות לפי שנה ותאריך.</span></a>
@@ -79,5 +87,15 @@ fetch('data/project-state.json').then(r=>r.json()).then(s=>{
    w.innerHTML='<b>המאגר מתקדם מהר יותר מהספירה המסונכרנת.</b> קיימים בפועל '+m.physical_batch_files_detected+' קובצי batch, בעוד snapshot הרשומות האחרון מבוסס על '+m.synced_batch_snapshot+' batches. לכן מספר רשומות ה-staging מוצג כ-snapshot ולא כסך עדכני עד השלמת reconciliation.';
  } else { w.textContent='המדדים מסונכרנים עם המאגר.'; }
 }).catch(()=>{document.getElementById('sync-warning').textContent='לא ניתן לטעון כעת את נתוני המצב.'});
+
+const demos={
+ 'אמונה ודאגה':{title:'אמונה, ברכה והתמודדות עם דאגה',aid:'1956800',status:'Verified + Partial',note:'נמצא מכתב מאומת ברמת דף-הפריט המוסמך. הדף מתייחס למכתבים קודמים של הנמען; הם אינם בידינו ולכן ההקשר חלקי.',file:'data/items/chabad-letter-1956800.json'},
+ 'מזוזה':{title:'Mezuzah Protection',aid:'397870',status:'Verified',note:'נמצא מקור canonical שנבדק מול דף פריט מוסמך. פתחי את המקור כדי לראות את העדות ולא רק תקציר מערכת.',file:'data/items/chabad-letter-397870.json'},
+ 'טכנולוגיה וחלל':{title:'Torah and Space Technology',aid:'1899575',status:'Verified + Partial',note:'נמצא מכתב מאומת הקשור לשיחה קודמת עם הנמען. מאחר שהשיחה הקודמת אינה בידינו, המערכת אינה משלימה אותה.',file:'data/items/chabad-letter-1899575.json'}
+};
+function demo(k){document.getElementById('q').value=k;renderDemo(demos[k]);}
+function tryUniverse(){let q=document.getElementById('q').value.trim();let k=Object.keys(demos).find(k=>q.includes(k)||k.includes(q));if(!k){if(/אמונ|דאג|חרד/.test(q))k='אמונה ודאגה';else if(/מזוז/.test(q))k='מזוזה';else if(/חלל|טכנולוג/.test(q))k='טכנולוגיה וחלל';}if(k)renderDemo(demos[k]);else document.getElementById('alphaAnswer').innerHTML='<b>עדיין אין ב-Alpha מסלול בטוח לשאלה הזו.</b><p>זה אינו אומר שאין לרבי מקור בנושא; רק שהחיפוש הניסיוני עדיין אינו יכול לקשור את השאלה בבטחה למקור canonical. לא אמציא תשובה.</p>',document.getElementById('alphaAnswer').classList.add('show');}
+function renderDemo(d){let a=document.getElementById('alphaAnswer');a.innerHTML='<span class="badge">✓ '+d.status+'</span><h3>'+d.title+'</h3><p>'+d.note+'</p><div class="sourcecard"><b>מה מצאתי?</b> פריט canonical · AID '+d.aid+'<br><b>על מה זה מבוסס?</b> witness מו״לי ברמת הפריט.<br><b>עד כמה אפשר לסמוך?</b> '+d.status+'<br><a href="'+d.file+'">פתחי את רשומת המקור המלאה</a><div class="researcher">canonical file: '+d.file+'\nAID: '+d.aid+'\nTrust: '+d.status+'</div></div>';a.classList.add('show');}
+document.getElementById('researchMode').addEventListener('change',e=>document.getElementById('experience').classList.toggle('research-on',e.target.checked));
 </script>
 </body></html>
