@@ -1,0 +1,33 @@
+{
+  "id":"evidence-family-1956-12-03-29-kislev-5717",
+  "type":"EvidenceFamily",
+  "event":"29 Kislev 5717 Tmimim talk audio",
+  "date":"1956-12-03",
+  "publisher":"Jewish Educational Media / Chabad.org",
+  "status":"Linked",
+  "context_status":"partial",
+  "verification_status":"direct-publisher-year-index-event-page-and-item-page-checked; audio-content-not-verified",
+  "rights_status":"copyrighted-link-and-metadata-only",
+  "year_index_source":"https://www.chabad.org/therebbe/article_cdo/aid/550607/jewish/5717-1956-1957.htm",
+  "event_source":"https://www.chabad.org/therebbe/article_cdo/aid/555636/jewish/29-Kislev-5717-Dec-3-1956.htm",
+  "members":[
+    {"aid":550632,"role":"sicha","audience":"Tmimim","title":"29 Kislev 5717 - Sicha (Tmimim)","duration":"15:57","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/550632/jewish/29-Kislev-5717-Sicha-Tmimim.htm","status":"Linked"}
+  ],
+  "relationships":[
+    {"type":"same_evidence_family","members":[550632],"basis":"publisher groups this single audio item under the 29 Kislev 5717 event"},
+    {"type":"publisher_related_text_signal","member":550632,"basis":"direct audio item page exposes a Related Text field","target_status":"not_resolved_in_this_run","identity_status":"not_verified","note":"Do not assert verbatim identity, completeness, or a specific text target until the linked target is directly resolved and compared."},
+    {"type":"sequence_boundary","previous_event":"19 Kislev 5717","basis":"publisher page for 19 Kislev Sicha 15 points next to the 29 Kislev event"},
+    {"type":"sequence_boundary","next_event":"10 Shevat 5717","basis":"direct publisher item page points next to 10 Shevat 5717 - Jan 12 1957"}
+  ],
+  "taxonomy_candidates":["students/yeshiva (Tmimim)","Chanukah","direct-address-to-defined-audience"],
+  "response_case_candidate":{"status":"candidate-only","basis":"publisher metadata identifies the audience as Tmimim; no question/answer structure has been verified","do_not_infer":"Do not classify as a personal response, yechidus, or answer to a question without source evidence."},
+  "deduplication":{"checked_keys":["aid","source_url","date","publisher_title"],"result":"single distinct publisher audio item; no duplicate merged"},
+  "ux_summary":{"what_found":"Complete publisher-indexed 29 Kislev 5717 audio event: one 15:57 talk identified as Sicha (Tmimim).","basis":"JEM/Chabad.org 5717 year index, event page, and direct item page.","trust":"Linked, not Verified: publisher metadata and event boundaries are supported; audio content and any related-text identity were not independently checked."},
+  "research_notes":[
+    "The 5717 year index lists this event as a single audio item and associates the Hebrew topic with a talk on the eve of Monday, the fifth night of Chanukah, 5717.",
+    "The direct item page identifies the next event as 10 Shevat 5717; the final 19 Kislev item identifies this event as its next event, supporting both sequence boundaries.",
+    "The Related Text field is recorded only as a publisher linkage signal because the target was not resolved in this run.",
+    "No transcript or audio was copied; metadata and source links only.",
+    "Verified is intentionally withheld because audio content and correspondence with any related text were not independently checked."
+  ]
+}
