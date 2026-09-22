@@ -1,0 +1,65 @@
+{
+  "manifest": {
+    "batch_id": "2026-09-23-living-torah-education-batch-110",
+    "ingested_at": "2026-09-23",
+    "discovery_source": "Chabad.org / JEM Living Torah public education topic index",
+    "record_count": 3,
+    "method": "breadth-first bounded metadata ingestion from public authorized index; no protected video/transcript copied",
+    "rights_status": "public_metadata_and_page_access; copyrighted-link-only",
+    "verification_scope": "index-level title, segment type and displayed event date only; item-level witness not yet inspected",
+    "coverage": "three Living Torah education talk segments"
+  },
+  "records": [
+    {
+      "staging_id": "living-torah-education-30-av-5742-best",
+      "title": "For My Children? Only the Best!",
+      "event_date_hebrew": "30 Av 5742",
+      "event_date_gregorian": "1982-08-19",
+      "source_class": "Video",
+      "discovery_source": "Chabad.org / JEM Living Torah education topic index",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/topicid/235",
+      "locator": {"publisher_index":"Living Torah Education topic","segment_type":"Talk","title":"For My Children? Only the Best!"},
+      "collection_status": "Indexed-candidate",
+      "verification_status": "index-metadata-only; item-level witness pending",
+      "context_status": "partial",
+      "rights_status": "public_metadata_and_page_access; copyrighted-link-only",
+      "promotion_queue": false,
+      "promotion_blocker": "Stable item-level page/aid and direct video witness have not yet been inspected."
+    },
+    {
+      "staging_id": "living-torah-education-14-adar-5723-future",
+      "title": "Standing Up for Our Future",
+      "event_date_hebrew": "14 Adar 5723",
+      "event_date_gregorian": "1963-03-10",
+      "source_class": "Video",
+      "discovery_source": "Chabad.org / JEM Living Torah education topic index",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/topicid/235",
+      "locator": {"publisher_index":"Living Torah Education topic","segment_type":"Talk","title":"Standing Up for Our Future"},
+      "collection_status": "Indexed-candidate",
+      "verification_status": "index-metadata-only; item-level witness pending",
+      "context_status": "partial",
+      "rights_status": "public_metadata_and_page_access; copyrighted-link-only",
+      "promotion_queue": false,
+      "promotion_blocker": "Stable item-level page/aid and direct video witness have not yet been inspected."
+    },
+    {
+      "staging_id": "living-torah-education-higher-education-ehrenreich",
+      "title": "Higher Education",
+      "event_date_hebrew": null,
+      "event_date_gregorian": "1968",
+      "source_class": "Video/Testimony",
+      "discovery_source": "Chabad.org / JEM Living Torah education topic index",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/topicid/235",
+      "locator": {"publisher_index":"Living Torah Education topic","segment_type":"My Encounter","title":"Higher Education","interviewee":"Rabbi Osher Ehrenreich"},
+      "collection_status": "Indexed-candidate",
+      "verification_status": "index-metadata-only; item-level witness pending",
+      "context_status": "partial",
+      "rights_status": "public_metadata_and_page_access; copyrighted-link-only",
+      "promotion_queue": false,
+      "promotion_blocker": "Index describes a 1968 audience but does not expose an exact event date in the inspected metadata; item-level testimony witness pending."
+    }
+  ],
+  "dedup_review": {"status":"Titles/segment types checked as distinct within this bounded batch; canonical collision must be checked at item-level promotion."},
+  "promotion_queue": [],
+  "blocked_for_promotion": ["living-torah-education-30-av-5742-best","living-torah-education-14-adar-5723-future","living-torah-education-higher-education-ehrenreich"]
+}
