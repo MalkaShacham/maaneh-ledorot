@@ -1,0 +1,35 @@
+{
+  "record_type": "evidence_family",
+  "event": {
+    "hebrew_date": "15 Tammuz 5717",
+    "gregorian_date": "1957-07-14",
+    "publisher_label": "15 Tammuz 5717 - Jul 14 1957"
+  },
+  "status": "Linked",
+  "source_family": "JEM / Chabad.org Sichos Kodesh Audio",
+  "provenance": {
+    "publisher": "Jewish Educational Media",
+    "year_index_url": "https://www.chabad.org/therebbe/article_cdo/aid/550607/jewish/5717-1956-1957.htm",
+    "event_url": "https://www.chabad.org/therebbe/article_cdo/aid/555641/jewish/15-Tammuz-5717-Jul-14-1957.htm",
+    "entry_url": "https://www.chabad.org/therebbe/article_cdo/aid/550670/jewish/15-Tammuz-5717-Sicha-1-In-Camp-Gan-Yisroel.htm",
+    "accessed": "2026-09-22",
+    "copyright_note": "Metadata and links only; no audio or protected transcript copied."
+  },
+  "witnesses": [
+    {"aid":550670,"label":"Sicha 1 (In Camp Gan Yisroel)","duration":"14:31","status":"Linked","url":"https://www.chabad.org/therebbe/article_cdo/aid/550670/jewish/15-Tammuz-5717-Sicha-1-In-Camp-Gan-Yisroel.htm"},
+    {"aid":550671,"label":"Sicha 2 (In Camp Gan Yisroel)","duration":"21:37","status":"Linked","url":"https://www.chabad.org/therebbe/article_cdo/aid/550671/jewish/15-Tammuz-5717-Sicha-2-In-Camp-Gan-Yisroel.htm"},
+    {"aid":550672,"label":"Maamar","duration":"29:25","status":"Linked","url":"https://www.chabad.org/therebbe/article_cdo/aid/550672/jewish/15-Tammuz-5717-Maamar.htm"}
+  ],
+  "links": {
+    "previous_event": {"label":"12 Tammuz 5717","evidence":"publisher/year sequence; prior-family boundary"},
+    "next_event": {"label":"5718 (1957-1958)","evidence":"publisher navigation from Maamar"}
+  },
+  "taxonomy_candidates": ["camp-gan-yisroel","direct-address-to-defined-audience","sicha","maamar"],
+  "scope_note": "The publisher explicitly labels Sicha 1 and Sicha 2 as 'In Camp Gan Yisroel'. The Maamar page itself does not carry that parenthetical label, so the location/context is not propagated to the Maamar by inference.",
+  "related_text_policy": "Publisher pages expose Related Text fields, but no audio-text identity is asserted until direct comparison.",
+  "verification": {
+    "verified_metadata": ["event date as publisher-labelled","3 audio components","component order","durations","aid range 550670-550672","Sicha 1 and Sicha 2 publisher-labelled In Camp Gan Yisroel","next boundary to 5718"],
+    "not_verified": ["audio content by full listening","audio-to-related-text identity","whether Maamar occurred in the same Camp Gan Yisroel setting","topic segmentation","question-response cases"],
+    "partial_source_note": "All three direct item pages and the event/year index were located; content-level verification still requires listening/text comparison."
+  }
+}
