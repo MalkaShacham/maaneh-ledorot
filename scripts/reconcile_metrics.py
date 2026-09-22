@@ -60,8 +60,12 @@ for fp in batches:
     elif isinstance(obj,dict):
         m=obj.get("manifest") or {}
         if isinstance(m,dict) and isinstance(m.get("record_count"),int): staging_records+=m["record_count"]
-state=json.loads((ROOT/"data/project-state.json").read_text(encoding="utf-8"))
-external=((state.get("current_counts") or {}).get("external_discovery_records_reported_nonoverlap_minimum"))
+state_path=ROOT/"data/project-state.json"
+state=json.loads(state_path.read_text(encoding="utf-8"))
+counts=state.get("current_counts") or {}
+external=counts.get("external_inventory_mapped_minimum")
+if external is None:
+    external=counts.get("external_discovery_records_reported_nonoverlap_minimum")
 out={
  "generated":"2026-09-22",
  "external_inventory_mapped_minimum":external,
@@ -77,4 +81,20 @@ out={
  "counting_note":"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately."
 }
 (ROOT/"data/public-metrics.json").write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+# Keep the canonical project-state snapshot synchronized with the same physical count.
+state["current_counts"]={
+ "external_inventory_mapped_minimum":external,
+ "staging_batch_files":out["staging_batch_files"],
+ "staging_manifest_files":out["staging_manifest_files"],
+ "staging_records_physical_sum":out["staging_records_physical_sum"],
+ "promotion_ready_records":out["promotion_ready_records"],
+ "canonical_json_files":out["canonical_json_files"],
+ "canonical_unique_item_keys":out["canonical_unique_item_keys"],
+ "evidence_family_files":out["evidence_family_files"],
+ "verified_unique_item_keys":out["verified_unique_item_keys"],
+ "status_counts_unique_keys":out["status_counts_unique_keys"]
+}
+if isinstance(state.get("verification_surge"),dict):
+    state["verification_surge"]["current_promotion_ready_backlog"]=promotion_ready
+state_path.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print(json.dumps(out,ensure_ascii=False))
