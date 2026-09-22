@@ -98,3 +98,81 @@ if isinstance(state.get("verification_surge"),dict):
     state["verification_surge"]["current_promotion_ready_backlog"]=promotion_ready
 state_path.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print(json.dumps(out,ensure_ascii=False))
+
+
+# Build a rights-safe public search index from canonical metadata only.
+search_entries={}
+def flatten_terms(v):
+    if v is None: return []
+    if isinstance(v,str): return [v]
+    if isinstance(v,(int,float)): return [str(v)]
+    if isinstance(v,list):
+        out=[]
+        for x in v: out.extend(flatten_terms(x))
+        return out
+    if isinstance(v,dict):
+        out=[]
+        for x in v.values(): out.extend(flatten_terms(x))
+        return out
+    return []
+def candidate_dicts(obj):
+    out=[]
+    stack=[obj]
+    while stack:
+        x=stack.pop()
+        if isinstance(x,dict):
+            if stable_key(x) and (x.get("title") or x.get("summary_researcher") or x.get("source_url") or isinstance(x.get("provenance"),dict)):
+                out.append(x)
+            for v in x.values():
+                if isinstance(v,(dict,list)): stack.append(v)
+        elif isinstance(x,list):
+            stack.extend(x)
+    return out
+rank={"Discovered":1,"Indexed":2,"Parsed":3,"Linked":4,"Verified":5,None:0}
+for fp in items:
+    try: obj=json.loads(fp.read_text(encoding="utf-8"))
+    except Exception: continue
+    if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"):
+        continue
+    for x in candidate_dicts(obj):
+        key=stable_key(x)
+        if not key: continue
+        st=status_of(x)
+        prov=x.get("provenance") if isinstance(x.get("provenance"),dict) else {}
+        access=x.get("access") if isinstance(x.get("access"),dict) else {}
+        tax=x.get("taxonomy") if isinstance(x.get("taxonomy"),dict) else {}
+        loc=x.get("locator") if isinstance(x.get("locator"),dict) else {}
+        entry={
+          "key":key,
+          "id":x.get("id"),
+          "title":x.get("title") or x.get("id") or key,
+          "summary":x.get("summary_researcher") or x.get("summary") or x.get("description") or "",
+          "source_class":x.get("source_class") or x.get("collection") or x.get("type"),
+          "status":st or x.get("pipeline_status") or x.get("verification_status") or "unknown",
+          "context_status":x.get("context_status") or "unknown",
+          "date":x.get("date_original") or x.get("event_date") or x.get("event_date_hebrew"),
+          "language":x.get("language") or "unknown",
+          "source_url":x.get("source_url") or prov.get("source_url"),
+          "aid":x.get("aid") or loc.get("aid"),
+          "locator":loc or x.get("locator"),
+          "rights_status":x.get("rights_status") or access.get("rights_status"),
+          "publisher_terms":tax.get("publisher_index_terms") or [],
+          "research_terms":tax.get("research_terms") or [],
+          "relations":x.get("relations") if isinstance(x.get("relations"),list) else [],
+          "canonical_file":str(fp.relative_to(ROOT))
+        }
+        searchable=" ".join(flatten_terms([
+          entry["title"],entry["summary"],entry["source_class"],entry["date"],entry["language"],
+          entry["publisher_terms"],entry["research_terms"],entry["aid"],entry["locator"]
+        ]))
+        entry["search_text"]=searchable
+        old=search_entries.get(key)
+        if old is None or rank.get(entry["status"],0)>=rank.get(old.get("status"),0):
+            search_entries[key]=entry
+search_index={
+  "generated":"2026-09-22",
+  "count":len(search_entries),
+  "entries":sorted(search_entries.values(), key=lambda e:(0 if e.get("status")=="Verified" else 1, str(e.get("date") or ""), str(e.get("title") or "")))
+}
+(ROOT/"data/public-search-index.json").write_text(json.dumps(search_index,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+print("search_index_count", len(search_entries))
