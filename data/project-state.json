@@ -1,54 +1,22 @@
 {
-  "project": "מענה לדורות",
-  "visual_space": "וחי בהם",
-  "canonical_since": "2026-09-17",
-  "last_updated": "2026-09-22",
-  "source_of_truth": "PROJECT_CANON.md",
-  "operating_model": "breadth-first collection with mandatory promotion/verification lane",
-  "pipeline": ["Discovered","Indexed","Parsed","Linked","Verified"],
-  "current_counts": {
-    "corpus_records_total": 14,
-    "item_level_records_total_snapshot_2026_09_19": 26,
-    "new_verified_promotions_2026_09_22_this_run": 3,
-    "staging_batches_snapshot_2026_09_19": 96,
-    "new_staging_batches_2026_09_22_this_run": 1,
-    "new_staging_records_2026_09_22_this_run": 3,
-    "external_discovery_records_reported_nonoverlap_minimum": 25906
-  },
-  "counting_note": "Repository-wide canonical and staging totals remain reconciliation-required. This run adds exactly three new canonical Verified item files (aids 4666213, 4666215, 4666216) and one bounded staging batch with three records (aids 4666217-4666219). These deltas are evidence-backed; no unreconciled grand total is asserted.",
-  "verified_promotions_this_run": [
-    {"id":"chabad-letter-4666213","locator":"Igrot Kodesh vol. 2 letter קעד / aid 4666213","status":"Verified","context_status":"partial","witness":"authorized publisher item page; publisher identifies secretariat-copy provenance"},
-    {"id":"chabad-letter-4666215","locator":"Igrot Kodesh vol. 2 letter קעו / aid 4666215","status":"Verified","context_status":"partial","witness":"authorized publisher item page; underlying photograph reported by publisher metadata not independently inspected"},
-    {"id":"chabad-letter-4666216","locator":"Igrot Kodesh vol. 2 letter קעז / aid 4666216","status":"Verified","context_status":"partial","witness":"authorized publisher item page; underlying secretariat copy not independently inspected"}
+  "project":"מענה לדורות",
+  "visual_space":"וחי בהם",
+  "canonical_since":"2026-09-17",
+  "last_updated":"2026-09-22",
+  "source_of_truth":"PROJECT_CANON.md",
+  "operating_model":"breadth-first collection with mandatory promotion/verification lane",
+  "pipeline":["Discovered","Indexed","Parsed","Linked","Verified"],
+  "current_counts":{"corpus_records_total":14,"item_level_records_total_snapshot_2026_09_19":26,"verified_promotions_2026_09_22_evidence_backed_delta":6,"staging_batches_snapshot_2026_09_19":96,"new_staging_batches_2026_09_22_evidence_backed_delta":2,"new_staging_records_2026_09_22_evidence_backed_delta":6,"external_discovery_records_reported_nonoverlap_minimum":25906},
+  "counting_note":"Repository-wide canonical and staging totals remain reconciliation-required. On 2026-09-22, six canonical Verified item files are evidenced as new promotions across the recorded runs (aids 4666213, 4666215, 4666216, 4666217, 4666218, 4666219), plus two bounded staging batches containing six records total (aids 4666217-4666222). These are deltas only; no unreconciled grand total is asserted.",
+  "verified_promotions_latest_run":[
+    {"id":"chabad-letter-4666217","locator":"Igrot Kodesh vol. 2 letter קעח / aid 4666217","status":"Verified","context_status":"partial","witness":"authorized publisher item page; publisher states completion from secretariat copy"},
+    {"id":"chabad-letter-4666218","locator":"Igrot Kodesh vol. 2 letter קעט / aid 4666218","status":"Verified","context_status":"partial","witness":"authorized publisher item page; publisher identifies secretariat-copy provenance"},
+    {"id":"chabad-letter-4666219","locator":"Igrot Kodesh vol. 2 letter קפ / aid 4666219","status":"Verified","context_status":"partial","witness":"authorized publisher item page; publisher states completion from secretariat copy"}
   ],
-  "latest_staging_batch": {
-    "path":"data/staging/batches/2026-09-22-igrot-kodesh-volume-2-batch-097.json",
-    "record_count":3,
-    "coverage":"Igrot Kodesh volume 2 letters 178-180",
-    "rights_status":"public metadata/page access; copyrighted-link-only"
-  },
-  "active_blocks": [
-    "No permission for bulk copying of protected corpora.",
-    "Incoming correspondence is absent from the newly verified Igrot Kodesh response cases, so context remains Partial.",
-    "Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness.",
-    "Repository-wide staging/canonical counts require reconciliation before a new grand total is displayed."
-  ],
-  "next_work": [
-    "Promote/verify letters 178-180 where item-level evidence supports promotion, preserving partial/unknown context.",
-    "Continue bounded Igrot Kodesh volume 2 ingestion after letter 180.",
-    "Reconcile physical staging batches and canonical item directory before updating grand totals/dashboard.",
-    "Build Evidence Families only where publisher cross-references or independently corroborated same-case evidence support the relation."
-  ],
-  "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
-  "metrics_integrity": {
-    "status":"reconciliation_required",
-    "last_reconciled_physical_batch_snapshot":96,
-    "known_delta_since_snapshot":1,
-    "rule":"Do not derive a repository-wide total from the old snapshot plus deltas unless intervening files have been exhaustively reconciled."
-  },
-  "ux": {
-    "principles":"UX_PRINCIPLES.md",
-    "primary_user_question":["מה מצאתי?","על מה זה מבוסס?","עד כמה אפשר לסמוך על זה?"],
-    "default_experience":"human question/topic first; technical provenance progressively disclosed; original source opens directly where lawful"
-  }
+  "latest_staging_batch":{"path":"data/staging/batches/2026-09-22-igrot-kodesh-volume-2-batch-098.json","record_count":3,"coverage":"Igrot Kodesh volume 2 letters 181-183","rights_status":"public metadata/page access; copyrighted-link-only"},
+  "active_blocks":["No permission for bulk copying of protected corpora.","Incoming correspondence is absent from the newly verified Igrot Kodesh response cases, so context remains Partial.","Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness.","Repository-wide staging/canonical counts require reconciliation before a new grand total is displayed."],
+  "next_work":["Promote/verify letters 181-183 where item-level evidence supports promotion, preserving partial context.","Continue bounded Igrot Kodesh volume 2 ingestion after letter 183.","Reconcile physical staging batches and canonical item directory before updating grand totals/dashboard.","Use explicit publisher cross-references (e.g. 178↔180, 183↔176) as candidates for Evidence Families, preserving relation type."],
+  "epistemic_rule":"No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
+  "metrics_integrity":{"status":"reconciliation_required","last_reconciled_physical_batch_snapshot":96,"known_evidence_backed_delta_since_snapshot":2,"rule":"Do not derive a repository-wide total from the old snapshot plus deltas unless intervening files have been exhaustively reconciled."},
+  "ux":{"principles":"UX_PRINCIPLES.md","primary_user_question":["מה מצאתי?","על מה זה מבוסס?","עד כמה אפשר לסמוך על זה?"],"default_experience":"human question/topic first; technical provenance progressively disclosed; original source opens directly where lawful"}
 }
