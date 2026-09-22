@@ -1,199 +1,54 @@
 {
   "project": "מענה לדורות",
-  "visual_space": "יקום הרבי",
+  "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-09-19",
+  "last_updated": "2026-09-22",
   "source_of_truth": "PROJECT_CANON.md",
-  "operating_model": "breadth-first collection, staged verification",
-  "pipeline": [
-    "Discovered",
-    "Indexed",
-    "Parsed",
-    "Linked",
-    "Verified"
-  ],
+  "operating_model": "breadth-first collection with mandatory promotion/verification lane",
+  "pipeline": ["Discovered","Indexed","Parsed","Linked","Verified"],
   "current_counts": {
     "corpus_records_total": 14,
-    "corpus_status": {
-      "Discovered": 2,
-      "Indexed": 12,
-      "Parsed": 0,
-      "Linked": 0,
-      "Verified": 0
-    },
-    "item_level_records_total": 26,
-    "item_level_status": {
-      "Discovered": 7,
-      "Indexed": 15,
-      "Parsed": 0,
-      "Linked": 4,
-      "Verified": 0
-    },
-    "item_level_verified_records": 0,
-    "response_case_candidates": 22,
-    "evidence_family_candidates": 3,
-    "provenance_fields_defined": 9,
-    "relationship_types_defined": 4,
-    "source_classes_defined": 11,
-    "staging_batches": 52,
-    "staging_records": 390,
-    "staging_metadata_checked": 390,
-    "staging_response_case_candidates": 302,
-    "staging_dedup_candidates": 14,
-    "staging_compound_candidates": 5,
-    "staging_secondary_witness_records": 12,
-    "staging_link_candidates": 92,
-    "external_inventory_manifests": 3,
+    "item_level_records_total_snapshot_2026_09_19": 26,
+    "new_verified_promotions_2026_09_22_this_run": 3,
+    "staging_batches_snapshot_2026_09_19": 96,
+    "new_staging_batches_2026_09_22_this_run": 1,
+    "new_staging_records_2026_09_22_this_run": 3,
     "external_discovery_records_reported_nonoverlap_minimum": 25906
   },
-  "external_discovery_inventory": {
-    "rebbesletters": {
-      "reported_total_searchable_records": 17305,
-      "status": "external_inventory_only",
-      "counted_as_canonical_items": false,
-      "manifest": "data/staging/manifests/2026-09-17-rebbesletters-inventory.json"
-    },
-    "chabad_org_rebbe_video": {
-      "reported_parent_collection_videos": 3901,
-      "reported_living_torah_category": 3288,
-      "reported_my_encounter_category": 713,
-      "status": "external_inventory_only",
-      "counted_as_canonical_items": false,
-      "manifest": "data/staging/manifests/2026-09-17-chabad-org-rebbe-video-inventory.json",
-      "counting_note": "Only parent collection count contributes to minimum non-overlap external inventory total; category counts are not added."
-    },
-    "sichos_kodesh_audio": {
-      "reported_minimum_recordings": 4700,
-      "publisher_wording": "more than 4,700 audio recordings",
-      "coverage": "1951-1992 public addresses",
-      "status": "external_inventory_only_plus_bounded_item_ingestion",
-      "counted_as_canonical_items": false,
-      "manifest": "data/staging/manifests/2026-09-18-sichos-kodesh-audio-inventory.json",
-      "item_batches": [
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-019.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-020.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-021.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-022.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-023.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-024.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-025.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-026.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-027.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-036.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-037.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-038.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-039.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-040.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-041.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-042.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-043.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-044.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-045.json",
-        "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-046.json",
-        "data/staging/batches/2026-09-19-sichos-kodesh-audio-batch-047.json",
-        "data/staging/batches/2026-09-19-sichos-kodesh-audio-batch-048.json",
-        "data/staging/batches/2026-09-19-sichos-kodesh-audio-batch-049.json",
-        "data/staging/batches/2026-09-19-sichos-kodesh-audio-batch-050.json",
-        "data/staging/batches/2026-09-19-sichos-kodesh-audio-batch-051.json",
-        "data/staging/batches/2026-09-19-sichos-kodesh-audio-batch-052.json"
-      ],
-      "counting_note": "4,700 is a conservative floor because the publisher says more than 4,700. One hundred eighty-seven item-level audio metadata records are staged and remain non-Verified; they are not added again to the external inventory floor."
-    }
+  "counting_note": "Repository-wide canonical and staging totals remain reconciliation-required. This run adds exactly three new canonical Verified item files (aids 4666213, 4666215, 4666216) and one bounded staging batch with three records (aids 4666217-4666219). These deltas are evidence-backed; no unreconciled grand total is asserted.",
+  "verified_promotions_this_run": [
+    {"id":"chabad-letter-4666213","locator":"Igrot Kodesh vol. 2 letter קעד / aid 4666213","status":"Verified","context_status":"partial","witness":"authorized publisher item page; publisher identifies secretariat-copy provenance"},
+    {"id":"chabad-letter-4666215","locator":"Igrot Kodesh vol. 2 letter קעו / aid 4666215","status":"Verified","context_status":"partial","witness":"authorized publisher item page; underlying photograph reported by publisher metadata not independently inspected"},
+    {"id":"chabad-letter-4666216","locator":"Igrot Kodesh vol. 2 letter קעז / aid 4666216","status":"Verified","context_status":"partial","witness":"authorized publisher item page; underlying secretariat copy not independently inspected"}
+  ],
+  "latest_staging_batch": {
+    "path":"data/staging/batches/2026-09-22-igrot-kodesh-volume-2-batch-097.json",
+    "record_count":3,
+    "coverage":"Igrot Kodesh volume 2 letters 178-180",
+    "rights_status":"public metadata/page access; copyrighted-link-only"
   },
-  "counting_note": "Canonical item-level counts include only promoted records. Staging is separately counted. Fifty-two bounded metadata batches contain 390 records: 167 direct/edited Living Torah metadata records, 12 My Encounter retrospective secondary-witness records, 187 Sichos Kodesh item-level audio metadata records, and 24 Igrot Kodesh item-metadata records; all remain non-Verified. External inventory remains at least 25,906 source records/manifestations; staged records drawn from already indexed corpora are not added again to that inventory floor.",
-  "legacy_pending_reconciliation": [
-    {
-      "claim": "4 verified primary sources",
-      "status": "not counted"
-    },
-    {
-      "claim": "3 coded response cases",
-      "status": "not counted"
-    },
-    {
-      "claim": "3 represented content domains",
-      "status": "not counted"
-    }
-  ],
-  "known_indexed_corpora": [
-    "igrot-kodesh",
-    "torat-menachem",
-    "likkutei-sichos",
-    "reshimos",
-    "sefer-hamaamarim-melukat",
-    "jem",
-    "igros-kodesh-english-letters",
-    "torah-recordings-igrot-audio-text",
-    "halacha-brura-igrot-catalog",
-    "rebbesletters-teshura-archive",
-    "chabad-org-rebbe-video",
-    "sichos-kodesh-audio"
-  ],
   "active_blocks": [
     "No permission for bulk copying of protected corpora.",
-    "Some archive holdings require permission or research requests for full access.",
-    "Incoming correspondence is absent from currently indexed Igrot Kodesh response cases.",
-    "The Rebbe's Letters stable item-level dataset/bulk reuse permission is not established.",
-    "Chabad.org/JEM audiovisual material is publicly viewable but copyrighted; discovery metadata can be indexed while bulk media/transcript reuse is not assumed permitted.",
-    "Living Torah segment pages may represent excerpts or compound dates/guidance units; publisher summaries are not treated as verbatim transcripts.",
-    "Sichos Kodesh Audio item-level metadata is being ingested, but recording completeness and relations to printed/video witnesses require checking.",
-    "My Encounter records are retrospective secondary testimony and must not be represented as direct/verbatim Rebbe witnesses without a contemporaneous source.",
-    "Letter of Approbation (aid 796411) exposes conflicting Hebrew-date metadata and remains staging-only until resolved.",
-    "They Bear Your Name has two Living Torah player manifestations and remains a dedup/manifestation candidate.",
-    "24 Kislev 5752 Sicha 2 (Chanukah Live) has two audio item manifestations, aids 555115 and 555116, with the same publisher title/date but different durations (33:53 and 19:37); identity, containment or overlap must not be asserted before witness comparison.",
-    "1 Teves 5752 - Sicha has two audio item manifestations, aids 555119 and 555120, with the same publisher title/date; identity, containment or overlap must not be asserted before witness comparison.",
-    "1 Adar I 5752 - Sicha has two stable audio item manifestations, aids 555079 and 555080, with the same publisher title/date; identity, containment or overlap must not be asserted before witness comparison.",
-    "7 Adar I 5752 - Sicha now has both publisher item manifestations resolved, aids 555083 and 555084, with durations 2:22 and 12:53; identity, containment or overlap remains unverified.",
-    "15 Shevat 5752 - Sicha (aid 555134) is explicitly labeled by the publisher 'Missing beginning' and remains context-partial; missing content must not be reconstructed.",
-    "15 Sivan 5751 - Sicha (aid 555030) is explicitly labeled by the publisher 'missing beg and end', duration 0:48, and remains context-partial; missing content must not be reconstructed.",
-    "26 Adar I 5752 Living Torah items Three Millimeters Off (aid 541729) and Model of the Holy Temple (aid 263347) appear to concern the same presentation/topic cluster but are retained as separate edited manifestations pending witness comparison.",
-    "Igrot Kodesh public item pages expose stable letter identifiers and text, but incoming correspondence and manuscript/secretariat witnesses are generally not established by page access alone; response context therefore remains partial unless separately sourced.",
-    "5749 event pages used in batch 038 expose exact component titles and durations but component-level stable aids were not established in that pass; those ten records remain staging-only until component locators are resolved.",
-    "5748 through 5742 bounded yechidus item pages expose stable aids for the clusters ingested in batches 039-046; content and recording completeness remain unverified.",
-    "5745 and 5744 audio plus Sichos in English expose possible parallel yechidus witnesses; exact event, textual and witness equivalence remains unverified and is recorded only as researcher/model-link candidates.",
-    "5742 contains same-date, same-title audio manifestations with distinct stable aids and durations (including 16 Shevat Hebrew and Yiddish pairs); they remain duplicate/overlap candidates, not asserted duplicates.",
-    "5734 batch 047 has four event-level components without stable component aids; they remain staging-only and outside promotion queue until locators are resolved.",
-    "Legacy counts require evidence-backed migration."
+    "Incoming correspondence is absent from the newly verified Igrot Kodesh response cases, so context remains Partial.",
+    "Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness.",
+    "Repository-wide staging/canonical counts require reconciliation before a new grand total is displayed."
   ],
   "next_work": [
-    "Reconcile all 96 physical staging batch files and regenerate exact staging counts before presenting a single total as current.",
-    "Update index.html and docs/progress-dashboard.svg to distinguish external mapped inventory, physical staging batches, synced staging snapshot, canonical items and Verified items.",
-    "Implement UX principles from UX_PRINCIPLES.md: question-first entry, visible trust levels, evidence-family navigation and visitor/researcher modes.",
-    "Continue bounded item-level Igrot Kodesh volume 2 ingestion using stable aid/volume/letter locators, prioritizing letters explicitly framed as responses and publisher notes exposing manuscript/secretariat witness provenance.",
-    "Normalize the Shanghai/Kehot correspondence cluster now including Letters 208, 211, 213, 223, 227 and 232 plus editorial targets 214, 236, 239, 245, 277 and 282; preserve editorial links separately from inferred Evidence Families.",
-    "Resolve Letter 209 editorial references to Letters 193, 200 and English-collection Letter 85 without assuming edition equivalence.",
-    "Continue bounded item-level Sichos Kodesh Audio ingestion using publisher year indexes as coverage maps; 5711 now has all six publisher-listed event clusters represented in staging.",
-    "Resolve component-level stable aids for batch 038 (30 Tishrei, 9 Sivan and 14 Tammuz 5749) and batch 047 (13 Tishrei 5734) before promotion.",
-    "Compare 5745 and 5744 audio yechidus clusters against Sichos in English pages as candidate parallel witnesses without assuming equivalence.",
-    "Compare 26 Adar I 5752 Living Torah aids 541729 and 263347 for possible overlap/alternate edit without assuming duplication.",
-    "Normalize publisher-exposed related-text links from audio to Torat Menachem and Sichos in English as editorial cross-references.",
-    "Resolve stable player IDs for earlier Living Torah batches and first My Encounter batch; promote only records meeting canonical provenance minimums.",
-    "Expand My Encounter secondary-witness discovery while separating retrospective testimony from direct witnesses.",
-    "Prioritize reported 1981 private-audience audio underlying My Encounter item Seeing Potential.",
-    "Link exact-date audiovisual/audio candidates to Torat Menachem and other printed witnesses only as candidate relationships until corroborated.",
-    "Prioritize 3,107 reported teshura maanos for item-level discovery when source-line/scan provenance is exposed."
+    "Promote/verify letters 178-180 where item-level evidence supports promotion, preserving partial/unknown context.",
+    "Continue bounded Igrot Kodesh volume 2 ingestion after letter 180.",
+    "Reconcile physical staging batches and canonical item directory before updating grand totals/dashboard.",
+    "Build Evidence Families only where publisher cross-references or independently corroborated same-case evidence support the relation."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciliation_required",
-    "physical_batch_files_detected": 96,
-    "synced_batch_snapshot": 52,
-    "synced_staging_records_snapshot": 390,
-    "rule": "Do not treat the synced staging snapshot as the full current repository total until all physical batch files are reconciled.",
-    "checked_at": "2026-09-19",
-    "ux_note": "User-facing dashboards must label mapped external inventory, physical staging batches, synced staging records, canonical items and Verified items separately."
+    "status":"reconciliation_required",
+    "last_reconciled_physical_batch_snapshot":96,
+    "known_delta_since_snapshot":1,
+    "rule":"Do not derive a repository-wide total from the old snapshot plus deltas unless intervening files have been exhaustively reconciled."
   },
   "ux": {
-    "principles": "UX_PRINCIPLES.md",
-    "primary_user_question": [
-      "מה מצאתי?",
-      "על מה זה מבוסס?",
-      "עד כמה אפשר לסמוך על זה?"
-    ],
-    "future_modes": [
-      "visitor",
-      "researcher"
-    ],
-    "default_experience": "human question/topic first; technical provenance progressively disclosed"
+    "principles":"UX_PRINCIPLES.md",
+    "primary_user_question":["מה מצאתי?","על מה זה מבוסס?","עד כמה אפשר לסמוך על זה?"],
+    "default_experience":"human question/topic first; technical provenance progressively disclosed; original source opens directly where lawful"
   }
 }
