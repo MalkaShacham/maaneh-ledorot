@@ -1,20 +1,20 @@
 {
   "generated": "2026-09-22",
-  "external_inventory_mapped_minimum": 25906,
+  "external_inventory_mapped_minimum": null,
   "staging_batch_files": 192,
   "staging_manifest_files": 75,
   "staging_records_physical_sum": 1294,
   "promotion_ready_records": 533,
-  "canonical_json_files": 174,
-  "canonical_unique_item_keys": 211,
+  "canonical_json_files": 175,
+  "canonical_unique_item_keys": 212,
   "evidence_family_files": 50,
   "status_counts_unique_keys": {
+    "Verified": 165,
+    "Linked": 11,
     "Discovered": 3,
-    "Verified": 164,
-    "Parsed": 0,
     "Indexed": 24,
-    "Linked": 11
+    "Parsed": 0
   },
-  "verified_unique_item_keys": 164,
+  "verified_unique_item_keys": 165,
   "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately."
 }
