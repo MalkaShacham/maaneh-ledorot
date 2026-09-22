@@ -1,22 +1,104 @@
 {
-  "project":"מענה לדורות",
-  "visual_space":"וחי בהם",
-  "canonical_since":"2026-09-17",
-  "last_updated":"2026-09-22",
-  "source_of_truth":"PROJECT_CANON.md",
-  "operating_model":"breadth-first collection with mandatory promotion/verification lane",
-  "pipeline":["Discovered","Indexed","Parsed","Linked","Verified"],
-  "current_counts":{"corpus_records_total":14,"item_level_records_total_snapshot_2026_09_19":26,"verified_promotions_2026_09_22_evidence_backed_delta":15,"indexed_promotions_2026_09_22_evidence_backed_delta":0,"staging_batches_snapshot_2026_09_19":96,"new_staging_batches_2026_09_22_evidence_backed_delta":5,"new_staging_records_2026_09_22_evidence_backed_delta":15,"external_discovery_records_reported_nonoverlap_minimum":25906},
-  "counting_note":"Repository-wide canonical and staging totals remain reconciliation-required. Evidence-backed deltas recorded on 2026-09-22 now include fifteen Verified promotions (aids 4666213, 4666215-4666228) and five bounded staging batches containing fifteen records total (aids 4666217-4666231). These are deltas only; no unreconciled grand total is asserted.",
-  "verified_promotions_latest_run":[
-    {"id":"chabad-letter-4666226","locator":"Igrot Kodesh vol. 2 letter קפז / aid 4666226","status":"Verified","context_status":"partial","witness":"authorized publisher item page; publisher states completion from secretariat copy"},
-    {"id":"chabad-letter-4666227","locator":"Igrot Kodesh vol. 2 letter קפח / aid 4666227","status":"Verified","context_status":"partial","witness":"authorized publisher item page; publisher states completion from photograph of letter"},
-    {"id":"chabad-letter-4666228","locator":"Igrot Kodesh vol. 2 letter קפט / aid 4666228","status":"Verified","context_status":"partial","witness":"authorized publisher item page; publisher identifies secretariat-copy provenance; English enclosure not independently inspected"}
+  "project": "מענה לדורות",
+  "visual_space": "וחי בהם",
+  "canonical_since": "2026-09-17",
+  "last_updated": "2026-09-22",
+  "source_of_truth": "PROJECT_CANON.md",
+  "operating_model": "verification-surge: breadth-first discovery continues, but promotion/verification backlog is the dominant lane",
+  "pipeline": [
+    "Discovered",
+    "Indexed",
+    "Parsed",
+    "Linked",
+    "Verified"
   ],
-  "latest_staging_batch":{"path":"data/staging/batches/2026-09-22-igrot-kodesh-volume-2-batch-101.json","record_count":3,"coverage":"Igrot Kodesh volume 2 letters 190-192","rights_status":"public metadata/page access; copyrighted-link-only"},
-  "active_blocks":["No permission for bulk copying of protected corpora.","Incoming correspondence is absent from many Igrot Kodesh response cases, so context remains Partial.","Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness.","Repository-wide staging/canonical counts require reconciliation before a new grand total is displayed."],
-  "next_work":["Promote/verify letters 190-192 after individual dedup checks.","Build/finalize Evidence Family links for explicit editorial cross-references including 185↔191 and 178↔192, preserving relation type.","Continue bounded Igrot Kodesh volume 2 ingestion after letter 192.","Reconcile physical staging batches and canonical item directory before updating grand totals/dashboard."],
-  "epistemic_rule":"No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
-  "metrics_integrity":{"status":"reconciliation_required","last_reconciled_physical_batch_snapshot":96,"known_evidence_backed_delta_since_snapshot":5,"rule":"Do not derive a repository-wide total from the old snapshot plus deltas unless intervening files have been exhaustively reconciled."},
-  "ux":{"principles":"UX_PRINCIPLES.md","primary_user_question":["מה מצאתי?","על מה זה מבוסס?","עד כמה אפשר לסמוך על זה?"],"default_experience":"human question/topic first; technical provenance progressively disclosed; original source opens directly where lawful"}
+  "current_counts": {
+    "external_inventory_mapped_minimum": 25906,
+    "staging_batch_files": 192,
+    "staging_manifest_files": 75,
+    "staging_records_physical_sum": 1294,
+    "promotion_ready_records": 533,
+    "canonical_json_files": 174,
+    "canonical_unique_item_keys": 211,
+    "evidence_family_files": 50,
+    "verified_unique_item_keys": 164,
+    "status_counts_unique_keys": {
+      "Discovered": 3,
+      "Verified": 164,
+      "Parsed": 0,
+      "Indexed": 24,
+      "Linked": 11
+    }
+  },
+  "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics are regenerated automatically from the repository after relevant pushes.",
+  "verified_promotions_latest_run": [
+    {
+      "id": "chabad-letter-4666226",
+      "locator": "Igrot Kodesh vol. 2 letter קפז / aid 4666226",
+      "status": "Verified",
+      "context_status": "partial",
+      "witness": "authorized publisher item page; publisher states completion from secretariat copy"
+    },
+    {
+      "id": "chabad-letter-4666227",
+      "locator": "Igrot Kodesh vol. 2 letter קפח / aid 4666227",
+      "status": "Verified",
+      "context_status": "partial",
+      "witness": "authorized publisher item page; publisher states completion from photograph of letter"
+    },
+    {
+      "id": "chabad-letter-4666228",
+      "locator": "Igrot Kodesh vol. 2 letter קפט / aid 4666228",
+      "status": "Verified",
+      "context_status": "partial",
+      "witness": "authorized publisher item page; publisher identifies secretariat-copy provenance; English enclosure not independently inspected"
+    }
+  ],
+  "latest_staging_batch": {
+    "path": "data/staging/batches/2026-09-22-igrot-kodesh-volume-2-batch-101.json",
+    "record_count": 3,
+    "coverage": "Igrot Kodesh volume 2 letters 190-192",
+    "rights_status": "public metadata/page access; copyrighted-link-only"
+  },
+  "active_blocks": [
+    "No permission for bulk copying of protected corpora.",
+    "Incoming correspondence is absent from many Igrot Kodesh response cases, so context remains Partial.",
+    "Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness.",
+    "Repository-wide staging/canonical counts require reconciliation before a new grand total is displayed."
+  ],
+  "next_work": [
+    "Drain promotion-ready backlog in 10-25 item homogeneous batches, prioritizing direct authorized witnesses.",
+    "Use same-run staging -> witness check -> dedup -> canonical promotion whenever requirements are met.",
+    "Continue breadth ingestion at lower share so discovery does not outpace verification.",
+    "Expand public Alpha search from hard-coded demos to canonical metadata/index.",
+    "Keep data/public-metrics.json and public dashboard automatically reconciled."
+  ],
+  "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
+  "metrics_integrity": {
+    "status": "automated_reconciliation_active",
+    "source": "data/public-metrics.json",
+    "generated": "2026-09-22",
+    "rule": "Public dashboard uses physical repository reconciliation, not stale snapshots."
+  },
+  "ux": {
+    "principles": "UX_PRINCIPLES.md",
+    "primary_user_question": [
+      "מה מצאתי?",
+      "על מה זה מבוסס?",
+      "עד כמה אפשר לסמוך על זה?"
+    ],
+    "default_experience": "human question/topic first; technical provenance progressively disclosed; original source opens directly where lawful"
+  },
+  "verification_surge": {
+    "active": true,
+    "effort_target": "70-80% promotion/verification until backlog is materially reduced; 20-30% breadth expansion",
+    "homogeneous_batch_target": "10-25 records when direct authorized item witnesses are stable and rights permit",
+    "same_run_promotion": true,
+    "current_promotion_ready_backlog": 533,
+    "blocking_reasons": [
+      "missing direct/authorized item witness",
+      "rights/access restriction",
+      "metadata ambiguity or unresolved identity/dedup conflict"
+    ]
+  }
 }
