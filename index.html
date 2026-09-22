@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>מענה לדורות | יקום הרבי</title>
+<title>מענה לדורות | וחי בהם</title>
 <style>
 :root{--ink:#172238;--navy:#142238;--gold:#b58a3b;--paper:#f7f4ed;--card:#fff;--muted:#667085;--green:#246b4a;--amber:#9a6a16;--red:#8b3636}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans Hebrew",sans-serif}
@@ -17,24 +17,24 @@ footer{border-top:1px solid #ddd;padding:24px;text-align:center;color:var(--mute
 </style></head>
 <body>
 <header><small>MAANEH LEDOROT · SOURCE-GROUNDED</small><h1>מענה לדורות | יקום הרבי</h1>
-<p class="lead">מרחב מחקר אינטראקטיבי מתפתח של תורתו, הדרכותיו, מעניו והתיעוד ההיסטורי של הרבי מנחם מענדל שניאורסון. המערכת נבנית כך שתמיד יהיה ברור מה מתועד, מה מקושר מחקרית ומה עדיין לא אומת.</p></header>
+<p class="lead">מרחב מחקר אינטראקטיבי מתפתח של תורתו, הדרכותיו, מעניו והתיעוד ההיסטורי של הרבי מנחם מענדל שניאורסון שליט״א. המערכת נבנית כך שתמיד יהיה ברור מה מתועד, מה מקושר מחקרית ומה עדיין לא אומת.</p></header>
 <main class="wrap">
 <div class="trust"><b>כלל היסוד:</b> אין מקור → אין ייחוס לרבי. מקור חלקי נשאר חלקי. הסקת AI לעולם אינה מוצגת כדברי הרבי.</div>
 
-<section class="lab" id="experience"><span class="mode"><label><input id="researchMode" type="checkbox"> מצב חוקר</label></span><h2>נסי את יקום הרבי — Alpha</h2>
-<p>כתבי שאלה. בשלב זה החוויה פועלת על <b>138 קבצי canonical הקיימים בפועל במאגר</b>; היא אינה מתיימרת עדיין לכסות את מלוא תורת הרבי. התשובה אינה "דברי הרבי" אלא ניווט למקורות מתועדים.</p>
-<div class="ask"><input id="q" placeholder="למשל: מה הרבי אמר על דאגה, אמונה או מזוזה?"><button onclick="tryUniverse()">חפשי ביקום</button></div>
+<section class="lab" id="experience"><span class="mode"><label><input id="researchMode" type="checkbox"> מצב חוקר</label></span><h2>נסי את וחי בהם — Alpha</h2>
+<p>כתבי שאלה. בשלב זה החוויה פועלת על <b>138 קבצי canonical הקיימים בפועל במאגר</b>; היא אינה מתיימרת עדיין לכסות את מלוא תורת הרבי. התשובה אינה "דברי הרבי" אלא ניווט למקורות מתועדים. לחיצה על כפתור המקור פותחת את דף המקור המקורי, ולא קובץ נתונים פנימי.</p>
+<div class="ask"><input id="q" placeholder="למשל: מה הרבי אמר על דאגה, אמונה או מזוזה?"><button onclick="tryUniverse()">חפשי במרחב</button></div>
 <div class="chips"><button class="chip" onclick="demo('אמונה ודאגה')">אמונה ודאגה</button><button class="chip" onclick="demo('מזוזה')">מזוזה</button><button class="chip" onclick="demo('טכנולוגיה וחלל')">טכנולוגיה וחלל</button></div>
 <div id="alphaAnswer" class="answer"></div>
 </section>
 
-<h2>איך תרצי להיכנס ליקום?</h2>
+<h2>איך תרצי להיכנס למרחב?</h2>
 <div class="entry">
 <a href="#experience"><b>יש לי שאלה</b><span>נסי עכשיו את חוויית ה-Alpha על מקורות שכבר קודמו למאגר.</span></a>
 <a href="#sources"><b>מה הרבי אמר על…</b><span>כניסה דרך נושא: משפחה, חינוך, בריאות, שליחות, פרנסה ועוד.</span></a>
 <a href="#sources"><b>מצא מקור</b><span>איגרת, תאריך, כרך, aid, שיחה, אודיו או וידאו.</span></a>
 <a href="#evidence"><b>ציר זמן</b><span>אירועים ומקורות לפי שנה ותאריך.</span></a>
-<a href="#evidence"><b>יקום הקשרים</b><span>מעבר בין מענה, אגרת, שיחה, הקלטה, וידאו ועדות.</span></a>
+<a href="#evidence"><b>מרחב הקשרים</b><span>מעבר בין מענה, אגרת, שיחה, הקלטה, וידאו ועדות.</span></a>
 </div>
 
 <h2 id="status">מצב הפרויקט — נתונים חיים</h2>
@@ -72,7 +72,7 @@ footer{border-top:1px solid #ddd;padding:24px;text-align:center;color:var(--mute
 <a href="docs/progress-dashboard.svg">דשבורד מחקרי</a>
 </div>
 </main>
-<footer>מענה לדורות · יקום הרבי · מקור אמת אחד · 2026</footer>
+<footer>מענה לדורות · וחי בהם · מקור אמת אחד · 2026</footer>
 <script>
 fetch('data/project-state.json').then(r=>r.json()).then(s=>{
  const c=s.current_counts||{}, m=s.metrics_integrity||{};
@@ -95,7 +95,7 @@ const demos={
 };
 function demo(k){document.getElementById('q').value=k;renderDemo(demos[k]);}
 function tryUniverse(){let q=document.getElementById('q').value.trim();let k=Object.keys(demos).find(k=>q.includes(k)||k.includes(q));if(!k){if(/אמונ|דאג|חרד/.test(q))k='אמונה ודאגה';else if(/מזוז/.test(q))k='מזוזה';else if(/חלל|טכנולוג/.test(q))k='טכנולוגיה וחלל';}if(k)renderDemo(demos[k]);else document.getElementById('alphaAnswer').innerHTML='<b>עדיין אין ב-Alpha מסלול בטוח לשאלה הזו.</b><p>זה אינו אומר שאין לרבי מקור בנושא; רק שהחיפוש הניסיוני עדיין אינו יכול לקשור את השאלה בבטחה למקור canonical. לא אמציא תשובה.</p>',document.getElementById('alphaAnswer').classList.add('show');}
-function renderDemo(d){let a=document.getElementById('alphaAnswer');a.innerHTML='<span class="badge">✓ '+d.status+'</span><h3>'+d.title+'</h3><p>'+d.note+'</p><div class="sourcecard"><b>מה מצאתי?</b> פריט canonical · AID '+d.aid+'<br><b>על מה זה מבוסס?</b> witness מו״לי ברמת הפריט.<br><b>עד כמה אפשר לסמוך?</b> '+d.status+'<br><a href="'+d.source+'" target="_blank" rel="noopener">פתחי את המקור המלא באתר המקור</a><div class="researcher">canonical file: <a href="'+d.file+'">'+d.file+'</a>\nAID: '+d.aid+'\nTrust: '+d.status+'\nOriginal witness: '+d.source+'</div></div>';a.classList.add('show');}
+function renderDemo(d){let a=document.getElementById('alphaAnswer');a.innerHTML='<span class="badge">✓ '+d.status+'</span><h3>'+d.title+'</h3><p>'+d.note+'</p><div class="sourcecard"><b>מה מצאתי?</b> פריט canonical · AID '+d.aid+'<br><b>על מה זה מבוסס?</b> witness מו״לי ברמת הפריט.<br><b>עד כמה אפשר לסמוך?</b> '+d.status+'<br><a href="'+d.source+'" target="_blank" rel="noopener">למקור המלא ↗</a><div class="researcher">canonical file: '+d.file+'\nAID: '+d.aid+'\nTrust: '+d.status+'\nOriginal witness: '+d.source+'</div></div>';a.classList.add('show');}
 document.getElementById('researchMode').addEventListener('change',e=>document.getElementById('experience').classList.toggle('research-on',e.target.checked));
 </script>
 </body></html>
