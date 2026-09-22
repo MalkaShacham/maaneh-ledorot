@@ -16,8 +16,8 @@ h2{margin-top:38px}.entry{display:grid;grid-template-columns:repeat(auto-fit,min
 footer{border-top:1px solid #ddd;padding:24px;text-align:center;color:var(--muted)}
 </style></head>
 <body>
-<header><small>MAANEH LEDOROT · SOURCE-GROUNDED</small><h1>מענה לדורות | יקום הרבי</h1>
-<p class="lead">מרחב מחקר אינטראקטיבי מתפתח של תורתו, הדרכותיו, מעניו והתיעוד ההיסטורי של הרבי מנחם מענדל שניאורסון שליט״א. המערכת נבנית כך שתמיד יהיה ברור מה מתועד, מה מקושר מחקרית ומה עדיין לא אומת.</p></header>
+<header><small>MAANEH LEDOROT · SOURCE-GROUNDED</small><h1>מענה לדורות | וחי בהם</h1>
+<p class="lead"><b>רבי מנחם מענדל שניאורסון שליט״א</b><br>מרחב מחקר אינטראקטיבי מתפתח של תורתו, הדרכותיו, מעניו והתיעוד ההיסטורי. תמיד יהיה ברור מה מתועד, מה מקושר מחקרית ומה עדיין לא אומת.</p></header>
 <main class="wrap">
 <div class="trust"><b>כלל היסוד:</b> אין מקור → אין ייחוס לרבי. מקור חלקי נשאר חלקי. הסקת AI לעולם אינה מוצגת כדברי הרבי.</div>
 
@@ -37,16 +37,17 @@ footer{border-top:1px solid #ddd;padding:24px;text-align:center;color:var(--mute
 <a href="#evidence"><b>מרחב הקשרים</b><span>מעבר בין מענה, אגרת, שיחה, הקלטה, וידאו ועדות.</span></a>
 </div>
 
-<h2 id="status">מצב הפרויקט — נתונים חיים</h2>
-<div id="sync-warning" class="warning">טוען מצב קנוני…</div>
+<h2 id="status">התקדמות הפרויקט — נתונים חיים</h2>
+<div id="sync-warning" class="warning">טוען ספירה פיזית מהמאגר…</div>
 <div class="stats" style="margin-top:12px">
-<div class="stat"><div class="num" id="corpora">—</div><div class="label">קורפוסים רשומים</div></div>
-<div class="stat"><div class="num" id="physical-batches">—</div><div class="label">קובצי batch שקיימים בפועל</div></div>
-<div class="stat"><div class="num" id="synced-staging">—</div><div class="label">רשומות staging בספירה המסונכרנת האחרונה</div></div>
-<div class="stat"><div class="num" id="canonical">—</div><div class="label">פריטי canonical</div></div>
-<div class="stat"><div class="num" id="verified">—</div><div class="label">Verified</div></div>
-<div class="stat"><div class="num" id="external">—</div><div class="label">מופעי מקור חיצוניים שמופו לפחות</div></div>
+<div class="stat"><div class="num" id="external">—</div><div class="label">מופעי מקור שמופו במאגרים חיצוניים</div></div>
+<div class="stat"><div class="num" id="staging-records">—</div><div class="label">רשומות שנקלטו בפועל ל־staging</div></div>
+<div class="stat"><div class="num" id="canonical">—</div><div class="label">פריטי canonical ייחודיים במאגר</div></div>
+<div class="stat"><div class="num" id="verified">—</div><div class="label">פריטים ייחודיים בסטטוס Verified</div></div>
+<div class="stat"><div class="num" id="evidence-count">—</div><div class="label">קובצי Evidence Family</div></div>
+<div class="stat"><div class="num" id="promotion-ready">—</div><div class="label">רשומות שממתינות עדיין לקידום/אימות</div></div>
 </div>
+<p class="warning" style="margin-top:12px"><b>איך לקרוא את המספרים:</b> „מופה” אינו „נקלט”, ו„נקלט” אינו „אומת”. הספירה כאן מחושבת אוטומטית מקבצי המאגר אחרי כל push, כדי שלא יוצגו snapshots ישנים.</p>
 
 <h2>איך יודעים עד כמה אפשר לסמוך?</h2>
 <div class="levels">
@@ -74,19 +75,22 @@ footer{border-top:1px solid #ddd;padding:24px;text-align:center;color:var(--mute
 </main>
 <footer>מענה לדורות · וחי בהם · מקור אמת אחד · 2026</footer>
 <script>
-fetch('data/project-state.json').then(r=>r.json()).then(s=>{
- const c=s.current_counts||{}, m=s.metrics_integrity||{};
- document.getElementById('corpora').textContent=c.corpus_records_total ?? '—';
- document.getElementById('physical-batches').textContent=m.physical_batch_files_detected ?? c.staging_batches ?? '—';
- document.getElementById('synced-staging').textContent=c.staging_records ?? '—';
- document.getElementById('canonical').textContent=c.item_level_records_total ?? '—';
- document.getElementById('verified').textContent=c.item_level_verified_records ?? '—';
- document.getElementById('external').textContent=(c.external_discovery_records_reported_nonoverlap_minimum ?? '—').toLocaleString?.() || c.external_discovery_records_reported_nonoverlap_minimum;
- const w=document.getElementById('sync-warning');
- if(m.status==='reconciliation_required'){
-   w.innerHTML='<b>המאגר מתקדם מהר יותר מהספירה המסונכרנת.</b> קיימים בפועל '+m.physical_batch_files_detected+' קובצי batch, בעוד snapshot הרשומות האחרון מבוסס על '+m.synced_batch_snapshot+' batches. לכן מספר רשומות ה-staging מוצג כ-snapshot ולא כסך עדכני עד השלמת reconciliation.';
- } else { w.textContent='המדדים מסונכרנים עם המאגר.'; }
-}).catch(()=>{document.getElementById('sync-warning').textContent='לא ניתן לטעון כעת את נתוני המצב.'});
+fetch('data/public-metrics.json').then(r=>{if(!r.ok) throw new Error('metrics'); return r.json();}).then(m=>{
+ const fmt=v=>typeof v==='number'?v.toLocaleString('he-IL'):'—';
+ document.getElementById('external').textContent=fmt(m.external_inventory_mapped_minimum);
+ document.getElementById('staging-records').textContent=fmt(m.staging_records_physical_sum);
+ document.getElementById('canonical').textContent=fmt(m.canonical_unique_item_keys);
+ document.getElementById('verified').textContent=fmt(m.verified_unique_item_keys);
+ document.getElementById('evidence-count').textContent=fmt(m.evidence_family_files);
+ document.getElementById('promotion-ready').textContent=fmt(m.promotion_ready_records);
+ document.getElementById('sync-warning').innerHTML='<b>ספירה אוטומטית פעילה.</b> '+fmt(m.staging_batch_files)+' קובצי batch ו־'+fmt(m.canonical_json_files)+' קובצי data/items נסרקו פיזית. עודכן: '+(m.generated||'—')+'.';
+}).catch(()=>{
+ fetch('data/project-state.json').then(r=>r.json()).then(s=>{
+  const c=s.current_counts||{};
+  document.getElementById('external').textContent=(c.external_discovery_records_reported_nonoverlap_minimum||'—').toLocaleString?.()||'—';
+  document.getElementById('sync-warning').textContent='הספירה האוטומטית עדיין נבנית; מוצג בינתיים רק המלאי החיצוני הממופה.';
+ }).catch(()=>document.getElementById('sync-warning').textContent='לא ניתן לטעון כעת את נתוני המצב.');
+});
 
 const demos={
  'אמונה ודאגה':{title:'אמונה, ברכה והתמודדות עם דאגה',aid:'1956800',status:'Verified + Partial',note:'נמצא מכתב מאומת ברמת דף-הפריט המוסמך. הדף מתייחס למכתבים קודמים של הנמען; הם אינם בידינו ולכן ההקשר חלקי.',file:'data/items/chabad-letter-1956800.json',source:'https://www.chabad.org/therebbe/letters/default_cdo/aid/1956800/jewish/Faith-Brings-G-ds-Blessings-and-Dispells-Anxiety.htm'},
