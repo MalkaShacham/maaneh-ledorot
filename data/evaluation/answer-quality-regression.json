@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "purpose": "Regression suite for evidence-grounded question answering. Precision is preferred to recall; insufficient evidence must produce an explicit insufficiency response.",
+  "modes": ["regular", "researcher"],
+  "dimensions": {
+    "relevance": "Every returned source must materially support the question or a clearly identified sub-question.",
+    "answerability": "The answer must not exceed what retrieved evidence can support.",
+    "citation_entailment": "Each numbered citation must support the proposition to which it is attached.",
+    "source_diversity": "Do not count translations, republications or duplicate witnesses as independent corroboration.",
+    "hallucination": "No reconstructed circumstance, wording, identity, date or intention may be attributed to the Rebbe.",
+    "researcher_depth_differential": "Researcher mode must add evidence-level analysis, context completeness, witness/provenance distinctions, Evidence Family relationships, tensions/limits and unanswered aspects; it must not merely restyle the regular answer."
+  },
+  "cases": [
+    {"id":"education-001","question":"מה הרבי הדריך בנוגע לחינוך ילדים?","expected_topics":["חינוך","ילדים"],"reject_if":"generic items match only the word child without an educational proposition"},
+    {"id":"anxiety-001","question":"מה הרבי הציע לאדם שסובל מדאגה או חרדה?","expected_topics":["דאגה","חרדה","בטחון"],"reject_if":"source does not document advice relevant to worry/anxiety"},
+    {"id":"health-001","question":"כיצד התייחס הרבי לפנייה בענייני בריאות ורפואה?","expected_topics":["בריאות","רפואה"],"reject_if":"source merely contains a doctor/health token without a documented response"},
+    {"id":"mezuzah-001","question":"באילו נסיבות המליץ הרבי לבדוק מזוזות?","expected_topics":["מזוזה","בדיקה"],"reject_if":"source mentions mezuzah but does not support the circumstances asked about"},
+    {"id":"women-001","question":"מה ניתן ללמוד מן המקורות על הדרכות הרבי לנשים?","expected_topics":["נשים"],"reject_if":"source is only biographical metadata with no relevant guidance"},
+    {"id":"parnassa-001","question":"אילו קווים חוזרים יש במענים בענייני פרנסה?","expected_topics":["פרנסה"],"reject_if":"fewer than two independent evidence families support a claimed recurring pattern"},
+    {"id":"shlichus-001","question":"מהם השיקולים המתועדים במענים על יציאה לשליחות?","expected_topics":["שליחות"],"reject_if":"source only uses mission/shliach as a title"},
+    {"id":"marriage-001","question":"מה הרבי כתב בענייני שלום בית?","expected_topics":["נישואין","שלום בית"],"reject_if":"generic wedding metadata is returned as substantive guidance"},
+    {"id":"kislev-001","question":"מה נאמר בשיחות י״ט כסלו על משמעות היום?","expected_topics":["י״ט כסלו"],"reject_if":"audio title alone is synthesized as content when no proposition/summary is available"},
+    {"id":"unsupported-001","question":"מה הרבי אמר על נושא שאין עליו עדיין חומר מאומת במאגר?","expected_topics":[],"expected_behavior":"state insufficient canonical evidence; do not fabricate or pad with weak matches"}
+  ],
+  "regular_mode_requirements":["answer-first","concise synthesis","numbered inline citations","matching numbered source list","explicit synthesis label","insufficiency when threshold is not met"],
+  "researcher_mode_requirements":["answer-first extended synthesis","claim/subtopic decomposition","documented historical/bibliographic context only","period/audience/circumstance/source-type distinctions when supported","patterns plus exceptions/tensions","witness-level provenance","pipeline status and verification scope","context completeness","original language and derived-translation distinction","Evidence Family/parallel/duplicate relations","primary vs later publication/processing distinction","answered vs unanswered aspects","broader evidence list or evidence map when useful"]
+}
