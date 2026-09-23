@@ -19,7 +19,8 @@ REQUIRED_ENTRY_FIELDS = {
 }
 REQUIRED_DIMENSIONS = {
     "relevance", "answerability", "citation_entailment", "source_diversity",
-    "hallucination", "researcher_depth_differential"
+    "hallucination", "researcher_depth_differential", "entity_fidelity",
+    "comparative_coverage", "context_boundary"
 }
 REQUIRED_REGULAR = {
     "answer-first", "proposition-level numbered inline citations",
@@ -28,8 +29,17 @@ REQUIRED_REGULAR = {
 REQUIRED_RESEARCHER = {
     "answer-first extended synthesis", "witness-level provenance",
     "context completeness", "answered vs unanswered aspects",
-    "material depth beyond regular mode"
+    "material depth beyond regular mode", "field-level uncertainty preservation",
+    "comparative coverage by requested side"
 }
+CRITICAL_CASES = {
+    "unsupported-001", "citation-proposition-001", "circumstance-boundary-001",
+    "translation-independence-001", "researcher-depth-001",
+    "comparative-missing-side-001", "entity-fidelity-001", "date-boundary-001",
+    "audience-boundary-001", "qualification-boundary-001", "tension-negation-001",
+    "verified-scope-001", "derived-witness-001", "researcher-unanswered-001"
+}
+MIN_REGRESSION_CASES = 26
 
 def arr(v):
     if v is None: return []
@@ -52,16 +62,21 @@ def main() -> int:
             failures.append(f"{key}: content-evidence entry missing fields: {', '.join(missing)}")
         if not arr(e.get("response_propositions")):
             failures.append(f"{key}: has_content_evidence=true but response_propositions is empty")
-        if e.get("status") == "Verified" and not (e.get("witness_type") or e.get("source_witness") or e.get("witness_provenance")):
-            failures.append(f"{key}: Verified content evidence lacks witness provenance")
+        if e.get("status") == "Verified":
+            if not (e.get("witness_type") or e.get("source_witness") or e.get("witness_provenance")):
+                failures.append(f"{key}: Verified content evidence lacks witness provenance")
+            if not e.get("verification_scope"):
+                failures.append(f"{key}: Verified content evidence lacks explicit verification_scope")
+        if e.get("context_status") not in {"complete", "partial", "unknown"}:
+            failures.append(f"{key}: invalid context_status {e.get('context_status')!r}")
 
     dims = set(suite.get("dimensions", {}))
     if REQUIRED_DIMENSIONS - dims:
         failures.append("regression suite missing dimensions: " + ", ".join(sorted(REQUIRED_DIMENSIONS-dims)))
     if set(suite.get("modes", [])) != {"regular", "researcher"}:
         failures.append("regression suite must test both regular and researcher modes")
-    if len(suite.get("cases", [])) < 18:
-        failures.append("regression suite unexpectedly shrank below 18 cases")
+    if len(suite.get("cases", [])) < MIN_REGRESSION_CASES:
+        failures.append(f"regression suite unexpectedly shrank below {MIN_REGRESSION_CASES} cases")
 
     regular = set(suite.get("regular_mode_requirements", []))
     researcher = set(suite.get("researcher_mode_requirements", []))
@@ -71,9 +86,13 @@ def main() -> int:
     ids = [c.get("id") for c in suite.get("cases", [])]
     if len(ids) != len(set(ids)):
         failures.append("duplicate regression case ids")
-    critical = {"unsupported-001","citation-proposition-001","circumstance-boundary-001","translation-independence-001","researcher-depth-001"}
-    absent = critical-set(ids)
+    absent = CRITICAL_CASES-set(ids)
     if absent: failures.append("critical adversarial cases missing: " + ", ".join(sorted(absent)))
+
+    # Every adversarial case must declare the failure mode it guards against.
+    for case in suite.get("cases", []):
+        if case.get("id") in CRITICAL_CASES and not (case.get("reject_if") or case.get("expected_behavior")):
+            failures.append(f"{case.get('id')}: critical case lacks reject_if/expected_behavior")
 
     # Readiness metrics are descriptive, not a substitute for semantic evaluation.
     families = {e.get("evidence_family_id") for e in content_entries if e.get("evidence_family_id")}
@@ -83,7 +102,7 @@ def main() -> int:
         warnings.append("fewer than two content-evidence entries: pattern synthesis will usually be unavailable")
 
     report = {
-        "gate":"answer-quality-structural-v1",
+        "gate":"answer-quality-structural-v2",
         "index_generated":idx.get("generated"),
         "entries_total":len(entries),
         "content_evidence_entries":len(content_entries),
@@ -91,6 +110,9 @@ def main() -> int:
         "content_evidence_families":len(families),
         "partial_context_content_entries":len(partial),
         "regression_cases":len(suite.get("cases", [])),
+        "required_regression_cases_floor":MIN_REGRESSION_CASES,
+        "required_dimensions":sorted(REQUIRED_DIMENSIONS),
+        "critical_cases_enforced":len(CRITICAL_CASES),
         "failures":failures,
         "warnings":warnings,
         "passed":not failures,
