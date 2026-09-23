@@ -1,16 +1,98 @@
 {
-  "project":"מענה לדורות","visual_space":"וחי בהם","canonical_since":"2026-09-17","last_updated":"2026-09-23","source_of_truth":"PROJECT_CANON.md","operating_model":"verification-surge: promotion/verification backlog is dominant; breadth continues at lower share","pipeline":["Discovered","Indexed","Parsed","Linked","Verified"],
-  "current_counts":{"external_inventory_mapped_minimum":25906,"staging_batch_files":199,"staging_manifest_files":75,"staging_records_physical_sum":1319,"promotion_ready_records":530,"canonical_json_files":222,"canonical_unique_item_keys":269,"evidence_family_files":55,"verified_unique_item_keys":218,"status_counts_unique_keys":{"Discovered":3,"Indexed":24,"Verified":218,"Parsed":0,"Linked":11}},
-  "counting_note":"Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
-  "verified_promotions_latest_run":[
-    {"id":"chabad-letter-4666202","locator":"Igrot Kodesh vol. 2 letter קסט / aid 4666202","status":"Verified","context_status":"partial","witness":"authorized Kehot/Chabad.org item-level publisher page"},
-    {"id":"chabad-letter-4666207","locator":"Igrot Kodesh vol. 2 letter קע / aid 4666207","status":"Verified","context_status":"partial","witness":"authorized Kehot/Chabad.org item-level publisher page"},
-    {"id":"chabad-letter-4666210","locator":"Igrot Kodesh vol. 2 letter קעא / aid 4666210","status":"Verified","context_status":"partial","witness":"authorized Kehot/Chabad.org item-level publisher page"}
+  "project": "מענה לדורות",
+  "visual_space": "וחי בהם",
+  "canonical_since": "2026-09-17",
+  "last_updated": "2026-09-23",
+  "source_of_truth": "PROJECT_CANON.md",
+  "operating_model": "verification-surge: promotion/verification backlog is dominant; breadth continues at lower share",
+  "pipeline": [
+    "Discovered",
+    "Indexed",
+    "Parsed",
+    "Linked",
+    "Verified"
   ],
-  "active_blocks":["No permission for bulk copying of protected corpora.","Incoming correspondence is absent from many Igrot Kodesh response cases, so context remains Partial.","Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness."],
-  "next_work":["Drain promotion-ready backlog in large homogeneous batches where stable direct/authorized witnesses permit.","Expand Evidence Families and event/witness dedup.","Continue rights-safe multilingual canonical search and multi-source synthesis improvements.","Continue breadth ingestion at lower share so discovery does not outpace verification."],
-  "epistemic_rule":"No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
-  "metrics_integrity":{"status":"reconciled","source":"data/public-metrics.json","generated":"2026-09-23","rule":"Public dashboard uses physical repository reconciliation, not stale snapshots."},
-  "ux":{"principles":"UX_PRINCIPLES.md","primary_user_question":["מה מצאתי?","על מה זה מבוסס?","עד כמה אפשר לסמוך על זה?"],"default_experience":"human question/topic first; technical provenance progressively disclosed; original source opens directly where lawful","answer_model":"multi-source synthesis first; source cards below; single-source answers explicitly labeled","language_policy":"cross-language retrieval across Hebrew, Yiddish, English and any additional direct/authorized source languages; translations are derived, not independent witnesses"},
-  "verification_surge":{"active":true,"effort_target":"75-85% promotion/verification until backlog is materially reduced; 15-25% breadth expansion","homogeneous_batch_target":"20-50 records when direct authorized item witnesses are stable and rights permit","same_run_promotion":true,"current_promotion_ready_backlog":530,"blocking_reasons":["missing direct/authorized item witness","rights/access restriction","metadata ambiguity or unresolved identity/dedup conflict"]}
+  "current_counts": {
+    "external_inventory_mapped_minimum": 25906,
+    "staging_batch_files": 199,
+    "staging_manifest_files": 75,
+    "staging_records_physical_sum": 1319,
+    "promotion_ready_records": 533,
+    "canonical_json_files": 220,
+    "canonical_unique_item_keys": 267,
+    "evidence_family_files": 55,
+    "verified_unique_item_keys": 216,
+    "status_counts_unique_keys": {
+      "Verified": 216,
+      "Linked": 11,
+      "Indexed": 24,
+      "Discovered": 3,
+      "Parsed": 0
+    }
+  },
+  "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
+  "verified_promotions_latest_run": [
+    {
+      "id": "chabad-letter-4666202",
+      "locator": "Igrot Kodesh vol. 2 letter קסט / aid 4666202",
+      "status": "Verified",
+      "context_status": "partial",
+      "witness": "authorized Kehot/Chabad.org item-level publisher page"
+    },
+    {
+      "id": "chabad-letter-4666207",
+      "locator": "Igrot Kodesh vol. 2 letter קע / aid 4666207",
+      "status": "Verified",
+      "context_status": "partial",
+      "witness": "authorized Kehot/Chabad.org item-level publisher page"
+    },
+    {
+      "id": "chabad-letter-4666210",
+      "locator": "Igrot Kodesh vol. 2 letter קעא / aid 4666210",
+      "status": "Verified",
+      "context_status": "partial",
+      "witness": "authorized Kehot/Chabad.org item-level publisher page"
+    }
+  ],
+  "active_blocks": [
+    "No permission for bulk copying of protected corpora.",
+    "Incoming correspondence is absent from many Igrot Kodesh response cases, so context remains Partial.",
+    "Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness."
+  ],
+  "next_work": [
+    "Drain promotion-ready backlog in large homogeneous batches where stable direct/authorized witnesses permit.",
+    "Expand Evidence Families and event/witness dedup.",
+    "Continue rights-safe multilingual canonical search and multi-source synthesis improvements.",
+    "Continue breadth ingestion at lower share so discovery does not outpace verification."
+  ],
+  "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
+  "metrics_integrity": {
+    "status": "reconciled",
+    "source": "data/public-metrics.json",
+    "generated": "2026-09-23",
+    "rule": "Public dashboard uses physical repository reconciliation, not stale snapshots."
+  },
+  "ux": {
+    "principles": "UX_PRINCIPLES.md",
+    "primary_user_question": [
+      "מה מצאתי?",
+      "על מה זה מבוסס?",
+      "עד כמה אפשר לסמוך על זה?"
+    ],
+    "default_experience": "human question/topic first; technical provenance progressively disclosed; original source opens directly where lawful",
+    "answer_model": "multi-source synthesis first; source cards below; single-source answers explicitly labeled",
+    "language_policy": "cross-language retrieval across Hebrew, Yiddish, English and any additional direct/authorized source languages; translations are derived, not independent witnesses"
+  },
+  "verification_surge": {
+    "active": true,
+    "effort_target": "75-85% promotion/verification until backlog is materially reduced; 15-25% breadth expansion",
+    "homogeneous_batch_target": "20-50 records when direct authorized item witnesses are stable and rights permit",
+    "same_run_promotion": true,
+    "current_promotion_ready_backlog": 533,
+    "blocking_reasons": [
+      "missing direct/authorized item witness",
+      "rights/access restriction",
+      "metadata ambiguity or unresolved identity/dedup conflict"
+    ]
+  }
 }
