@@ -1,0 +1,32 @@
+name: Answer quality gate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'ANSWER_ENGINE_SPEC.md'
+      - 'data/public-search-index.json'
+      - 'data/items/**'
+      - 'data/evidence-families/**'
+      - 'data/evaluation/**'
+      - 'scripts/evaluate_answer_quality.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: answer-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  evidence-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit answer-engine evidence contract
+        run: python scripts/evaluate_answer_quality.py
