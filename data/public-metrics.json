@@ -11,11 +11,11 @@
   "canonical_unique_item_keys": 279,
   "evidence_family_files": 55,
   "status_counts_unique_keys": {
-    "Verified": 227,
-    "Indexed": 24,
     "Discovered": 3,
+    "Parsed": 0,
     "Linked": 11,
-    "Parsed": 0
+    "Indexed": 24,
+    "Verified": 227
   },
   "verified_unique_item_keys": 227,
   "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately."
