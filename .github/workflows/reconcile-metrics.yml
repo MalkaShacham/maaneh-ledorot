@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Bulk-promote up to 150 actionable staging records safely to Indexed
+      - name: Bulk-promote up to 200 actionable staging records safely to Indexed
         run: python scripts/bulk_promote_indexed.py
       - name: Reconcile metrics, backlog and public search index
         run: python scripts/reconcile_metrics.py
