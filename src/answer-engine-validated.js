@@ -1,6 +1,7 @@
 /* Validation layer for the evidence-grounded answer engine.
    Comparative claims require proposition-level evidence for every detected side.
-   Absence of evidence on one side is never converted into evidence of difference. */
+   Evidence-integrity normalization prevents unscoped Verified labels and derived
+   translations from being counted as independent witnesses/families. */
 import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js';
 
 const TOPIC_ALIASES={
@@ -21,6 +22,34 @@ const topicSupported=(sources,topic)=>{
   const aliases=TOPIC_ALIASES[topic]||[topic];
   return sources.some(e=>{const body=propositionText(e);return aliases.some(a=>body.includes(norm(a)));});
 };
+const isDerived=e=>/translation|תרגום|derived/.test(norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' ')));
+
+/* Canonical evidence invariants are enforced at query time as a last safety barrier.
+   The source record is not mutated: a normalized copy is passed to the core engine.
+   - "Verified" without an explicit verification_scope is demoted to Linked.
+   - a derived/translation witness inherits its parent Evidence Family when that
+     relation is known, so it cannot manufacture source diversity.
+   - an orphan derived witness remains usable as derived evidence but is explicitly
+     marked non-independent for researcher inspection. */
+export function normalizeEvidenceIntegrity(index=[]){
+  return index.map(source=>{
+    const e={...source};
+    const issues=[];
+    if(e.status==='Verified'&&!e.verification_scope){
+      e.status='Linked';
+      e._reported_status='Verified';
+      issues.push('verified_without_scope_demoted');
+    }
+    if(isDerived(e)){
+      const parent=e.parent_evidence_family_id||e.derived_from_evidence_family_id||e.translation_of_evidence_family_id||null;
+      if(parent)e.evidence_family_id=parent;
+      else issues.push('derived_witness_parent_family_unknown');
+      e._independent_witness=false;
+    }else e._independent_witness=true;
+    if(issues.length)e._evidence_integrity_issues=issues;
+    return e;
+  });
+}
 
 export function comparativeCoverage(model){
   if(model?.understanding?.intent!=='comparative')return null;
@@ -36,7 +65,13 @@ export function comparativeCoverage(model){
 }
 
 export function buildAnswerModel(index,q,options={}){
-  const model=buildCoreAnswerModel(index,q,options);
+  const normalized=normalizeEvidenceIntegrity(index);
+  const model=buildCoreAnswerModel(normalized,q,options);
+  const integrityIssues=(model.sources||[]).flatMap((e,i)=>arr(e._evidence_integrity_issues).map(issue=>({source_number:i+1,issue,reported_status:e._reported_status||null})));
+  if(options.mode==='researcher'){
+    model.research=model.research||{};
+    model.research.evidence_integrity={issues:integrityIssues,independent_witnesses:(model.sources||[]).filter(e=>e._independent_witness!==false).length,derived_non_independent:(model.sources||[]).filter(e=>e._independent_witness===false).length};
+  }
   const coverage=comparativeCoverage(model);
   if(!coverage)return model;
   model.comparative_coverage=coverage;
