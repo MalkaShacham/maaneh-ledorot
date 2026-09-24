@@ -4,16 +4,22 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 ITEMS=ROOT/'data/items'; BATCHES=ROOT/'data/staging/batches'
 LIMIT=250
 
-def stable_key(d):
-    if not isinstance(d,dict): return None
+def identity_keys(d):
+    if not isinstance(d,dict): return []
+    keys=[]
     loc=d.get('locator') or {}
     aid=d.get('aid') or (loc.get('aid') if isinstance(loc,dict) else None)
-    if aid: return 'aid:'+str(aid)
+    if aid: keys.append('aid:'+str(aid))
     url=d.get('source_url')
     if not url and isinstance(d.get('provenance'),dict): url=d['provenance'].get('source_url')
-    if url: return 'url:'+url
-    if d.get('id'): return 'id:'+str(d['id'])
-    return None
+    if url: keys.append('url:'+url)
+    if d.get('staging_stable_key'): keys.append(str(d['staging_stable_key']))
+    if d.get('id'): keys.append('id:'+str(d['id']))
+    return list(dict.fromkeys(keys))
+
+def stable_key(d):
+    ks=identity_keys(d)
+    return ks[0] if ks else None
 
 def walk(x):
     if isinstance(x,dict):
@@ -26,9 +32,7 @@ canonical=set()
 for fp in ITEMS.glob('*.json'):
     try: obj=json.loads(fp.read_text(encoding='utf-8'))
     except Exception: continue
-    for x in walk(obj):
-        k=stable_key(x)
-        if k: canonical.add(k)
+    for x in walk(obj): canonical.update(identity_keys(x))
 
 candidates=[]
 for fp in sorted(BATCHES.glob('*.json')):
@@ -39,9 +43,9 @@ for fp in sorted(BATCHES.glob('*.json')):
     manifest=obj.get('manifest') if isinstance(obj.get('manifest'),dict) else {}
     for r in recs:
         if not isinstance(r,dict) or r.get('promotion_queue') is not True: continue
-        k=stable_key(r)
-        if not k or k in canonical: continue
-        candidates.append((fp,r,manifest,k))
+        keys=identity_keys(r); k=keys[0] if keys else None
+        if not k or any(x in canonical for x in keys): continue
+        candidates.append((fp,r,manifest,k,keys))
 
 selected=candidates[:LIMIT]
 if not selected:
@@ -52,13 +56,14 @@ existing=sorted(ITEMS.glob(f'bulk-indexed-{today}-*.json'))
 seq=len(existing)+1
 outpath=ITEMS/f'bulk-indexed-{today}-{seq:03d}.json'
 out=[]
-for fp,r,m,k in selected:
+for fp,r,m,k,keys in selected:
     loc=r.get('locator') if isinstance(r.get('locator'),dict) else {}
     aid=r.get('aid') or loc.get('aid')
     sid=r.get('staging_id') or r.get('id') or (str(aid) if aid else re.sub(r'\W+','-',k)[:60])
     source_class=r.get('source_class') or m.get('source_class') or 'Unknown'
-    out.append({
+    item={
       'id':'canonical-'+str(sid),
+      'staging_stable_key':k,
       'title':r.get('title') or str(sid),
       'source_class':source_class,
       'pipeline_status':'Indexed',
@@ -82,8 +87,10 @@ for fp,r,m,k in selected:
       },
       'relations':[{'type':'staging_origin','target':str(fp.relative_to(ROOT))}],
       'notes':'Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold.'
-    })
-    canonical.add(k)
+    }
+    if aid is not None: item['aid']=aid
+    out.append(item)
+    canonical.update(keys)
 
 payload={'type':'bulk-canonical-index','generated':today,'promotion_policy':'metadata-safe bulk promotion to Indexed only','record_count':len(out),'items':out}
 outpath.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
