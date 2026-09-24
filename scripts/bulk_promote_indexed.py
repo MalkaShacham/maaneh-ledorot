@@ -2,7 +2,7 @@
 import json, pathlib, datetime, re
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 ITEMS=ROOT/'data/items'; BATCHES=ROOT/'data/staging/batches'
-LIMIT=150
+LIMIT=200
 
 def stable_key(d):
     if not isinstance(d,dict): return None
