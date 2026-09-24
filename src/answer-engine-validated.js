@@ -38,11 +38,23 @@ export function citationEntailment(model){
   });
 }
 
-/* Context is witness-local. A date/audience/condition/circumstance may be shown beside a
-   claim only if at least one entailing witness itself carries that field. */
+/* Context is witness-local and value-local. Every circumstance, qualification and audience
+   value attached to a synthesized claim must occur on at least one witness that independently
+   entails that claim. Merely having some value in the same field is not enough. */
 export function contextBoundary(model,entailment){
   const sources=model?.sources||[];
-  return (model?.claims||[]).map((claim,i)=>{const supporting=new Set(entailment[i]?.entailed_source_numbers||[]);const local=[...supporting].map(n=>sources[n-1]).filter(Boolean);const has=(field)=>local.some(e=>arr(e[field]).filter(Boolean).length>0);const leaks=[];if(arr(claim.documented_circumstances).length&&!has('documented_circumstances'))leaks.push('documented_circumstances');if(arr(claim.conditions_or_qualifications).length&&!has('conditions_or_qualifications'))leaks.push('conditions_or_qualifications');if(arr(claim.audiences).length&&!local.some(e=>arr(e.audience).filter(Boolean).length))leaks.push('audience');return {claim_number:i+1,valid:leaks.length===0,possible_context_leakage:leaks};});
+  return (model?.claims||[]).map((claim,i)=>{
+    const supporting=new Set(entailment[i]?.entailed_source_numbers||[]);
+    const local=[...supporting].map(n=>sources[n-1]).filter(Boolean);
+    const missingValues=(claimField,sourceField=claimField)=>arr(claim[claimField]).filter(Boolean).filter(value=>!local.some(e=>arr(e[sourceField]).filter(Boolean).some(v=>norm(v)===norm(value))));
+    const missing={
+      documented_circumstances:missingValues('documented_circumstances'),
+      conditions_or_qualifications:missingValues('conditions_or_qualifications'),
+      audiences:missingValues('audiences','audience')
+    };
+    const leaks=Object.entries(missing).filter(([,values])=>values.length).map(([field])=>field);
+    return {claim_number:i+1,valid:leaks.length===0,possible_context_leakage:leaks,unsupported_context_values:missing};
+  });
 }
 
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const sources=model.sources||[],supported=requested.filter(t=>topicSupported(sources,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing};}
