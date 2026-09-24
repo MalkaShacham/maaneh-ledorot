@@ -7,6 +7,7 @@ on:
       - 'data/staging/batches/**'
       - 'data/staging/manifests/**'
       - 'scripts/reconcile_metrics.py'
+      - 'scripts/reconcile_identity_aliases.py'
       - 'scripts/bulk_promote_indexed.py'
       - '.github/workflows/reconcile-metrics.yml'
 permissions:
@@ -23,6 +24,8 @@ jobs:
         run: python scripts/bulk_promote_indexed.py
       - name: Reconcile metrics, backlog and public search index
         run: python scripts/reconcile_metrics.py
+      - name: Reconcile promotion backlog across alternate stable identities
+        run: python scripts/reconcile_identity_aliases.py
       - name: Commit bulk promotion and reconciled state if changed
         run: |
           if [ -z "$(git status --porcelain -- data/items data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json)" ]; then exit 0; fi
