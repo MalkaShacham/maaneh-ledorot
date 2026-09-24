@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-09-23",
+  "last_updated": "2026-09-24",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -18,16 +18,16 @@
     "staging_manifest_files": 75,
     "staging_records_physical_sum": 1319,
     "promotion_ready_records": 533,
-    "canonical_json_files": 224,
-    "canonical_unique_item_keys": 272,
+    "canonical_json_files": 228,
+    "canonical_unique_item_keys": 276,
     "evidence_family_files": 55,
-    "verified_unique_item_keys": 220,
+    "verified_unique_item_keys": 224,
     "status_counts_unique_keys": {
-      "Indexed": 24,
-      "Parsed": 0,
       "Linked": 11,
+      "Indexed": 24,
+      "Verified": 224,
       "Discovered": 3,
-      "Verified": 220
+      "Parsed": 0
     }
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
