@@ -21,9 +21,9 @@ jobs:
       - run: python scripts/reconcile_metrics.py
       - name: Commit reconciled state if changed
         run: |
-          if [ -z "$(git status --porcelain -- data/public-metrics.json data/public-search-index.json data/project-state.json)" ]; then exit 0; fi
+          if [ -z "$(git status --porcelain -- data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json)" ]; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add data/public-metrics.json data/public-search-index.json data/project-state.json
+          git add data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json
           git commit -m "Reconcile public project metrics and state"
           git push
