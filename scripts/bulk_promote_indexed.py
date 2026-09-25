@@ -42,7 +42,9 @@ for fp in sorted(BATCHES.glob('*.json')):
     if not isinstance(recs,list): continue
     manifest=obj.get('manifest') if isinstance(obj.get('manifest'),dict) else {}
     for r in recs:
-        if not isinstance(r,dict) or r.get('promotion_queue') is not True: continue
+        if not isinstance(r,dict): continue
+        promotion_eligible = (r.get('promotion_queue') is True) or (str(r.get('verification_status') or '').strip().lower() == 'indexed') or (str(r.get('collection_status') or '').strip().lower() == 'indexed')
+        if not promotion_eligible: continue
         keys=identity_keys(r); k=keys[0] if keys else None
         if not k or any(x in canonical for x in keys): continue
         candidates.append((fp,r,manifest,k,keys))
