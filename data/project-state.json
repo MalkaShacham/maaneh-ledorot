@@ -15,21 +15,21 @@
   "current_counts": {
     "external_inventory_mapped_minimum": 25906,
     "staging_batch_files": 202,
-    "staging_manifest_files": 77,
+    "staging_manifest_files": 78,
     "staging_records_physical_sum": 1820,
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 297,
-    "canonical_unique_item_keys": 1472,
+    "canonical_json_files": 298,
+    "canonical_unique_item_keys": 1611,
     "evidence_family_files": 55,
     "verified_unique_item_keys": 279,
     "status_counts_unique_keys": {
-      "Verified": 279,
-      "Parsed": 0,
-      "Indexed": 811,
       "Discovered": 3,
-      "Linked": 11
+      "Indexed": 950,
+      "Parsed": 0,
+      "Linked": 11,
+      "Verified": 279
     }
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
