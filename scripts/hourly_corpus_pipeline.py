@@ -57,7 +57,8 @@ def main():
         k: (a[k] - b[k]) if isinstance(a.get(k), int) and isinstance(b.get(k), int) else None
         for k in a
     }
-    status = "failed" if failed else ("progress" if any((v or 0) > 0 for v in delta.values()) else "no_actionable_change")
+    productive = any((delta.get(k) or 0) > 0 for k in ("verified", "canonical", "indexed"))
+    status = "failed" if failed else ("progress" if productive else "no_actionable_change")
     finished = dt.datetime.now(dt.timezone.utc)
     record = {
         "schema": "maaneh-ledorot-hourly-run-v1",
