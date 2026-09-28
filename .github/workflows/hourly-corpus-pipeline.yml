@@ -1,6 +1,11 @@
 name: Hourly corpus production pipeline
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/hourly_corpus_pipeline.py'
+      - '.github/workflows/hourly-corpus-pipeline.yml'
   schedule:
     - cron: '7 * * * *'
   workflow_dispatch:
