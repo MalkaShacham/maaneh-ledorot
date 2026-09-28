@@ -5,17 +5,22 @@ items=list((ROOT/"data/items").glob("*.json"))
 batches=list((ROOT/"data/staging/batches").glob("*.json"))
 manifests=list((ROOT/"data/staging/manifests").glob("*.json"))
 PIPE={"Discovered","Indexed","Parsed","Linked","Verified"}
-def stable_key(d):
-    if not isinstance(d,dict): return None
+def identity_keys(d):
+    if not isinstance(d,dict): return []
+    out=[]
     loc=d.get("locator") or {}
-    aid=d.get("aid") or (loc.get("aid") if isinstance(loc,dict) else None)
-    if aid: return "aid:"+str(aid)
     prov=d.get("provenance") or {}
+    aid=d.get("aid") or (loc.get("aid") if isinstance(loc,dict) else None)
     url=d.get("source_url") or (prov.get("source_url") if isinstance(prov,dict) else None)
-    if url: return "url:"+url
-    i=d.get("id")
-    if i: return "id:"+str(i)
-    return None
+    if aid: out.append("aid:"+str(aid))
+    if url: out.append("url:"+str(url))
+    if d.get("staging_stable_key"): out.append(str(d["staging_stable_key"]))
+    if d.get("id"): out.append("id:"+str(d["id"]))
+    return list(dict.fromkeys(out))
+
+def stable_key(d):
+    ks=identity_keys(d)
+    return ks[0] if ks else None
 def status_of(d):
     vals=[d.get("pipeline_status"),d.get("verification_status")]
     p=d.get("provenance")
@@ -43,6 +48,19 @@ for fp in items:
             for v in x.values():
                 if isinstance(v,(dict,list)): stack.append(v)
         elif isinstance(x,list): stack.extend(x)
+canonical_identity_keys=set()
+for fp in items:
+    try: obj=json.loads(fp.read_text(encoding="utf-8"))
+    except Exception: continue
+    stack=[obj]
+    while stack:
+        x=stack.pop()
+        if isinstance(x,dict):
+            canonical_identity_keys.update(identity_keys(x))
+            for v in x.values():
+                if isinstance(v,(dict,list)): stack.append(v)
+        elif isinstance(x,list): stack.extend(x)
+
 status_counts={k:0 for k in PIPE}
 for st in seen.values():
     if st in status_counts: status_counts[st]+=1
@@ -61,8 +79,9 @@ for fp in batches:
         for r in recs:
             if not isinstance(r,dict) or r.get("promotion_queue") is not True: continue
             promotion_queue_physical+=1
-            key=stable_key(r)
-            if key and key in seen:
+            keys=identity_keys(r)
+            key=keys[0] if keys else None
+            if any(k in canonical_identity_keys for k in keys):
                 already_canonical_queued+=1
                 continue
             promotion_ready+=1
