@@ -18,18 +18,18 @@
     "staging_manifest_files": 79,
     "staging_records_physical_sum": 2070,
     "promotion_queue_physical_records": 526,
-    "promotion_queue_already_canonical": 526,
-    "promotion_ready_records": 0,
+    "promotion_queue_already_canonical": 327,
+    "promotion_ready_records": 199,
     "canonical_json_files": 308,
     "canonical_unique_item_keys": 1924,
     "evidence_family_files": 55,
     "verified_unique_item_keys": 373,
     "status_counts_unique_keys": {
+      "Linked": 11,
+      "Parsed": 0,
       "Discovered": 3,
       "Verified": 373,
-      "Indexed": 1169,
-      "Linked": 11,
-      "Parsed": 0
+      "Indexed": 1169
     }
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
@@ -98,7 +98,7 @@
     "effort_target": "75-85% promotion/verification until backlog is materially reduced; 15-25% breadth expansion",
     "homogeneous_batch_target": "20-50 records when direct authorized item witnesses are stable and rights permit",
     "same_run_promotion": true,
-    "current_promotion_ready_backlog": 0,
+    "current_promotion_ready_backlog": 199,
     "blocking_reasons": [
       "missing direct/authorized item witness",
       "rights/access restriction",
