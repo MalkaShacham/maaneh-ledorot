@@ -1,7 +1,7 @@
 {
   "schema": "maaneh-ledorot-hourly-run-v1",
-  "run_started_utc": "2026-09-29T03:24:08.532476+00:00",
-  "run_finished_utc": "2026-09-29T03:24:09.895163+00:00",
+  "run_started_utc": "2026-09-29T04:23:53.416363+00:00",
+  "run_finished_utc": "2026-09-29T04:23:54.148248+00:00",
   "status": "no_actionable_change",
   "before": {
     "verified": 1957,
@@ -32,7 +32,7 @@
     {
       "command": "/home/runner/work/maaneh-ledorot/maaneh-ledorot/scripts/reconcile_metrics.py",
       "returncode": 0,
-      "stdout": "{\"generated\": \"2026-09-29\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 79, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 314, \"canonical_unique_item_keys\": 3508, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Linked\": 11, \"Discovered\": 3, \"Verified\": 1957, \"Parsed\": 0, \"Indexed\": 1169}, \"verified_unique_item_keys\": 1957, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 3508\n",
+      "stdout": "{\"generated\": \"2026-09-29\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 79, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 314, \"canonical_unique_item_keys\": 3508, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Parsed\": 0, \"Discovered\": 3, \"Linked\": 11, \"Indexed\": 1169, \"Verified\": 1957}, \"verified_unique_item_keys\": 1957, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 3508\n",
       "stderr": ""
     },
     {
@@ -44,7 +44,7 @@
     {
       "command": "/home/runner/work/maaneh-ledorot/maaneh-ledorot/scripts/reconcile_metrics.py",
       "returncode": 0,
-      "stdout": "{\"generated\": \"2026-09-29\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 79, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 314, \"canonical_unique_item_keys\": 3508, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Discovered\": 3, \"Verified\": 1957, \"Indexed\": 1169, \"Parsed\": 0, \"Linked\": 11}, \"verified_unique_item_keys\": 1957, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 3508\n",
+      "stdout": "{\"generated\": \"2026-09-29\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 79, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 314, \"canonical_unique_item_keys\": 3508, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Verified\": 1957, \"Linked\": 11, \"Parsed\": 0, \"Discovered\": 3, \"Indexed\": 1169}, \"verified_unique_item_keys\": 1957, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 3508\n",
       "stderr": ""
     }
   ]
