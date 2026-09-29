@@ -7,16 +7,16 @@
   "promotion_queue_physical_records": 526,
   "promotion_queue_already_canonical": 526,
   "promotion_ready_records": 0,
-  "canonical_json_files": 315,
-  "canonical_unique_item_keys": 3704,
+  "canonical_json_files": 316,
+  "canonical_unique_item_keys": 4053,
   "evidence_family_files": 55,
   "status_counts_unique_keys": {
-    "Verified": 2153,
-    "Indexed": 1169,
     "Parsed": 0,
+    "Discovered": 3,
+    "Verified": 2502,
     "Linked": 11,
-    "Discovered": 3
+    "Indexed": 1169
   },
-  "verified_unique_item_keys": 2153,
+  "verified_unique_item_keys": 2502,
   "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately."
 }
