@@ -1,17 +1,17 @@
 {
   "schema": "maaneh-ledorot-hourly-run-v1",
-  "run_started_utc": "2026-10-01T10:25:55.278079+00:00",
-  "run_finished_utc": "2026-10-01T10:25:57.181656+00:00",
+  "run_started_utc": "2026-10-01T11:24:15.579683+00:00",
+  "run_finished_utc": "2026-10-01T11:24:16.641015+00:00",
   "status": "no_actionable_change",
   "before": {
-    "verified": 3325,
-    "canonical": 5024,
+    "verified": 3621,
+    "canonical": 5320,
     "indexed": 1169,
     "promotion_ready": 0
   },
   "after": {
-    "verified": 3325,
-    "canonical": 5024,
+    "verified": 3621,
+    "canonical": 5320,
     "indexed": 1169,
     "promotion_ready": 0
   },
@@ -32,7 +32,7 @@
     {
       "command": "/home/runner/work/maaneh-ledorot/maaneh-ledorot/scripts/reconcile_metrics.py",
       "returncode": 0,
-      "stdout": "{\"generated\": \"2026-10-01\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 79, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 325, \"canonical_unique_item_keys\": 5024, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Verified\": 3325, \"Linked\": 11, \"Indexed\": 1169, \"Discovered\": 3, \"Parsed\": 0}, \"verified_unique_item_keys\": 3325, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 5173\n",
+      "stdout": "{\"generated\": \"2026-10-01\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 79, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 326, \"canonical_unique_item_keys\": 5320, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Linked\": 11, \"Parsed\": 0, \"Discovered\": 3, \"Indexed\": 1169, \"Verified\": 3621}, \"verified_unique_item_keys\": 3621, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 5469\n",
       "stderr": ""
     },
     {
@@ -44,7 +44,7 @@
     {
       "command": "/home/runner/work/maaneh-ledorot/maaneh-ledorot/scripts/reconcile_metrics.py",
       "returncode": 0,
-      "stdout": "{\"generated\": \"2026-10-01\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 79, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 325, \"canonical_unique_item_keys\": 5024, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Discovered\": 3, \"Indexed\": 1169, \"Linked\": 11, \"Parsed\": 0, \"Verified\": 3325}, \"verified_unique_item_keys\": 3325, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 5173\n",
+      "stdout": "{\"generated\": \"2026-10-01\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 79, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 326, \"canonical_unique_item_keys\": 5320, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Verified\": 3621, \"Linked\": 11, \"Discovered\": 3, \"Parsed\": 0, \"Indexed\": 1169}, \"verified_unique_item_keys\": 3621, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 5469\n",
       "stderr": ""
     }
   ]
