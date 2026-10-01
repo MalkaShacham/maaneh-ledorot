@@ -7,16 +7,16 @@
   "promotion_queue_physical_records": 526,
   "promotion_queue_already_canonical": 526,
   "promotion_ready_records": 0,
-  "canonical_json_files": 328,
-  "canonical_unique_item_keys": 5488,
+  "canonical_json_files": 327,
+  "canonical_unique_item_keys": 5404,
   "evidence_family_files": 55,
   "status_counts_unique_keys": {
-    "Linked": 11,
-    "Verified": 3789,
-    "Indexed": 1169,
     "Parsed": 0,
-    "Discovered": 3
+    "Linked": 11,
+    "Discovered": 3,
+    "Verified": 3705,
+    "Indexed": 1169
   },
-  "verified_unique_item_keys": 3789,
-  "counting_note": "Reconciled after schema-compatible Igrot Kodesh v16 INDEX-FIRST batch; unique item counts deduplicate by AID, then source URL, then stable id. Full deterministic reconcile_metrics.py remains authoritative and will re-derive these values on the next pipeline run."
+  "verified_unique_item_keys": 3705,
+  "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately."
 }
