@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/hourly_corpus_pipeline.py'
+      - 'scripts/reconcile_metrics.py'
+      - 'scripts/reconcile_identity_aliases.py'
       - '.github/workflows/hourly-corpus-pipeline.yml'
   schedule:
     - cron: '7 * * * *'
