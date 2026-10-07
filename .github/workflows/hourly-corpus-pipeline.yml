@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: hourly-corpus-production
+  group: corpus-writes-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
