@@ -40,6 +40,7 @@ CRITICAL_CASES = {
     "verified-scope-001", "derived-witness-001", "researcher-unanswered-001"
 }
 MIN_REGRESSION_CASES = 26
+MIN_CONTENT_EVIDENCE = 20
 
 def arr(v):
     if v is None: return []
@@ -55,6 +56,8 @@ def main() -> int:
         failures.append("public search index is empty")
 
     content_entries = [e for e in entries if e.get("has_content_evidence")]
+    if len(content_entries) < MIN_CONTENT_EVIDENCE:
+        failures.append(f"answer index has only {len(content_entries)} content-evidence entries; minimum operational floor is {MIN_CONTENT_EVIDENCE}")
     for e in content_entries:
         key = e.get("key") or e.get("aid") or e.get("title") or "<unknown>"
         missing = sorted(f for f in REQUIRED_ENTRY_FIELDS if f not in e)
@@ -62,6 +65,10 @@ def main() -> int:
             failures.append(f"{key}: content-evidence entry missing fields: {', '.join(missing)}")
         if not arr(e.get("response_propositions")):
             failures.append(f"{key}: has_content_evidence=true but response_propositions is empty")
+        if not e.get("proposition_origin"):
+            failures.append(f"{key}: content evidence lacks proposition_origin")
+        if e.get("proposition_origin") == "editorial_summary_derived" and e.get("proposition_verbatim") is not False:
+            failures.append(f"{key}: derived editorial proposition must be explicitly non-verbatim")
         if e.get("status") == "Verified":
             if not (e.get("witness_type") or e.get("source_witness") or e.get("witness_provenance")):
                 failures.append(f"{key}: Verified content evidence lacks witness provenance")
@@ -100,12 +107,16 @@ def main() -> int:
     partial = [e for e in content_entries if e.get("context_status") == "partial"]
     if len(content_entries) < 2:
         warnings.append("fewer than two content-evidence entries: pattern synthesis will usually be unavailable")
+    if content_entries and not any(e.get("evidence_family_id") for e in content_entries):
+        warnings.append("content evidence currently has no explicit Evidence Family assignments; pattern claims must rely on conservative witness-level dedup only")
 
     report = {
         "gate":"answer-quality-structural-v2",
         "index_generated":idx.get("generated"),
         "entries_total":len(entries),
         "content_evidence_entries":len(content_entries),
+        "explicit_proposition_entries":sum(1 for e in content_entries if e.get("proposition_origin")=="explicit_proposition_field"),
+        "derived_editorial_proposition_entries":sum(1 for e in content_entries if e.get("proposition_origin")=="editorial_summary_derived"),
         "verified_content_evidence_entries":len(verified_content),
         "content_evidence_families":len(families),
         "partial_context_content_entries":len(partial),
