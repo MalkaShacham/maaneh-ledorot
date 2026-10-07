@@ -11,6 +11,10 @@ on:
       - 'data/evidence-families/**'
       - 'data/evaluation/**'
       - 'scripts/evaluate_answer_quality.py'
+      - 'scripts/reconcile_metrics.py'
+      - 'src/answer-engine.js'
+      - 'src/answer-engine-validated.js'
+      - '.github/workflows/answer-quality-gate.yml'
   workflow_dispatch:
 
 permissions:
