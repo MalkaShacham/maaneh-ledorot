@@ -1,38 +1,45 @@
-/* Conservative question-specific evidence gate.
- * Designed for integration before proposition synthesis. Never uses titles,
- * publisher tags or search metadata as evidence of a specific circumstance.
- * Aliases are retrieval equivalences, not proof of a claim.
+/* Conservative, witness-local question specificity filter.
+ * An alias is a retrieval equivalence, NEVER a quotation or an inferred teaching.
+ * Only recognized focus concepts are enforced: unknown query words must not
+ * silently become a brittle, universal lexical gate.
  */
 const normalize = value => String(value ?? '').toLowerCase()
   .replace(/[?.,!״׳:'"()[\]]/g, ' ').replace(/\s+/g, ' ').trim();
 const asArray = value => Array.isArray(value) ? value : value == null ? [] : [value];
-const FILLER = new Set(('מה הרבי אמר אומר הדריך הדרכה כתב הציע בנוגע נוגע לגבי על של את עם או וגם '+
- 'מליובאוויטש קשיי כיצד מהם מהן מהו האם כאשר מתוך בנושא בעניין '+
- 'the a an of to and or on about what how did does is are').split(' '));
-const EQUIVALENCES = [
- ['קשב','adhd','attention','attention deficit','הפרעת קשב'],
- ['שינה','sleep'],
- ['התמכרות','addiction']
+const FOCUS_GROUPS = [
+  ['קשב','adhd','attention deficit','הפרעת קשב','קשיי קשב'],
+  ['שינה','sleep','sleeping','נדודי שינה'],
+  ['התמכרות','addiction','addicted','מכור']
 ];
+const contains = (body, phrase) => {
+  const escaped = normalize(phrase).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  // Latin tokens need word boundaries; Hebrew morphological prefixes are allowed.
+  return /[a-z]/i.test(phrase)
+    ? new RegExp('(?:^|[^a-z])'+escaped+'(?:$|[^a-z])','i').test(body)
+    : body.includes(normalize(phrase));
+};
 export function extractSpecificFocus(question, topicTerms=[]) {
- const excluded = new Set([...FILLER,...topicTerms.map(normalize)]);
- return [...new Set(normalize(question).split(/\s+/)
-  .filter(term=>term.length>1&&!excluded.has(term)))];
+  const q=normalize(question);
+  const excluded=new Set(topicTerms.map(normalize));
+  return FOCUS_GROUPS.filter(group =>
+    !group.every(term=>excluded.has(normalize(term))) &&
+    group.some(alias=>contains(q,alias))
+  ).map(group=>group[0]);
 }
 export function hasDocumentedFocus(source, focusTerms=[]) {
- if (!focusTerms.length) return true;
- // This is witness-local content. Metadata cannot satisfy a specificity test.
- const content = normalize([
-   ...asArray(source?.response_propositions),
-   ...asArray(source?.question_or_problem),
-   ...asArray(source?.documented_circumstances),
-   ...asArray(source?.conditions_or_qualifications),
-   ...asArray(source?.audience)
- ].join(' '));
- if (!content) return false;
- return focusTerms.some(term => {
-   const t=normalize(term);
-   const group=EQUIVALENCES.find(xs=>xs.some(x=>normalize(x)===t));
-   return (group||[t]).some(alias=>content.includes(normalize(alias)));
- });
+  if (!focusTerms.length) return true;
+  // Titles, tags, keywords, editorial search text and dates are NOT evidence.
+  const content=normalize([
+    ...asArray(source?.response_propositions),
+    ...asArray(source?.question_or_problem),
+    ...asArray(source?.documented_circumstances),
+    ...asArray(source?.conditions_or_qualifications),
+    ...asArray(source?.audience)
+  ].join(' '));
+  if (!content) return false;
+  // All independent specific constraints must be documented on this witness.
+  return focusTerms.every(term=>{
+    const group=FOCUS_GROUPS.find(g=>g.includes(normalize(term)));
+    return (group||[term]).some(alias=>contains(content,alias));
+  });
 }
