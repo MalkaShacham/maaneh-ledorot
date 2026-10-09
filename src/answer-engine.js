@@ -60,7 +60,7 @@ export function retrieveEvidence(index,q,{limit=36,threshold=6}={}){const unders
 const seen=new Set(),hits=[],remaining=reranked.slice();
 const typeCount=new Map(),periodCount=new Map();
 const sourceType=e=>norm(e.source_class||e.witness_type||'unknown');
-const sourcePeriod=e=>{const m=String(e.date||'').match(/(?:18|19|20)\\d{2}/);return m?String(Math.floor(Number(m[0])/10)*10):null;};
+const sourcePeriod=e=>{const m=String(e.date||'').match(/(?:18|19|20)\d{2}/);return m?String(Math.floor(Number(m[0])/10)*10):null;};
 while(hits.length<limit&&remaining.length){
  let best=-1,bestUtility=-Infinity;
  for(let i=0;i<remaining.length;i++){
@@ -77,7 +77,45 @@ while(hits.length<limit&&remaining.length){
  hits.push({...e,_relevance:r.score,_support:r.support,_supporting_propositions:r.supportingProps||[]});
 }
 return{understanding,hits};}
-function synthesizeClaims(selected,u,limit){const groups=[];for(let sourceIndex=0;sourceIndex<selected.length;sourceIndex++){const e=selected[sourceIndex],props=(e._supporting_propositions?.length?e._supporting_propositions:arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u)));for(const p of props){const key=propositionKey(p);if(!key)continue;let g=groups.find(x=>sameClaim(x.text,String(p)));if(!g){g={key,text:String(p),source_numbers:[],families:new Set(),statuses:new Set(),contexts:new Set(),circumstances:new Set(),conditions:new Set(),audiences:new Set(),witnesses:[]};groups.push(g);}g.source_numbers.push(sourceIndex+1);g.families.add(familyKey(e));g.statuses.add(e.status);g.contexts.add(e.context_status);arr(e.documented_circumstances).filter(Boolean).forEach(x=>g.circumstances.add(String(x)));arr(e.conditions_or_qualifications).filter(Boolean).forEach(x=>g.conditions.add(String(x)));arr(e.audience).filter(Boolean).forEach(x=>g.audiences.add(String(x)));g.witnesses.push({source_number:sourceIndex+1,family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,status:e.status||null,context_status:e.context_status||'unknown',language:e.language||null});}}return groups.slice(0,limit).map(g=>({text:g.text,source_numbers:[...new Set(g.source_numbers)],evidence_family_ids:[...g.families],verification_status:[...g.statuses],context_status:[...g.contexts],documented_circumstances:[...g.circumstances],conditions_or_qualifications:[...g.conditions],audiences:[...g.audiences],witnesses:g.witnesses}));}
+/* Preserve distinct source-grounded propositions and their circumstances.
+   Round-robin extraction prevents a single verbose witness from monopolizing the
+   answer budget. Only identical normalized propositions with identical documented
+   context are grouped; lexical similarity is NOT semantic entailment. */
+function synthesizeClaims(selected,u,limit){
+ const grouped=new Map(),ordered=[];
+ const perSource=selected.map(e=>(e._supporting_propositions?.length
+  ?e._supporting_propositions:arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u)))
+  .map(p=>String(p).trim()).filter(Boolean));
+ const maxDepth=Math.max(0,...perSource.map(p=>p.length));
+ for(let depth=0;depth<maxDepth;depth++){
+  for(let sourceIndex=0;sourceIndex<selected.length;sourceIndex++){
+   const p=perSource[sourceIndex][depth];if(!p)continue;
+   const e=selected[sourceIndex];
+   const contextKey=fields=>arr(fields).map(x=>norm(x)).filter(Boolean).sort().join('|');
+   const key=JSON.stringify([norm(p),contextKey(e.documented_circumstances),
+    contextKey(e.conditions_or_qualifications),contextKey(e.audience)]);
+   let g=grouped.get(key);
+   if(!g){g={text:p,source_numbers:[],families:new Set(),statuses:new Set(),
+    contexts:new Set(),circumstances:new Set(),conditions:new Set(),
+    audiences:new Set(),witnesses:[]};grouped.set(key,g);ordered.push(g);}
+   g.source_numbers.push(sourceIndex+1);g.families.add(familyKey(e));
+   g.statuses.add(e.status);g.contexts.add(e.context_status);
+   arr(e.documented_circumstances).filter(Boolean).forEach(x=>g.circumstances.add(String(x)));
+   arr(e.conditions_or_qualifications).filter(Boolean).forEach(x=>g.conditions.add(String(x)));
+   arr(e.audience).filter(Boolean).forEach(x=>g.audiences.add(String(x)));
+   g.witnesses.push({source_number:sourceIndex+1,family:familyKey(e),
+    provenance:e.witness_provenance||e.source_witness||e.witness_type||null,
+    verification_scope:e.verification_scope||null,status:e.status||null,
+    context_status:e.context_status||'unknown',language:e.language||null});
+  }
+ }
+ return ordered.slice(0,limit).map(g=>({text:g.text,
+  source_numbers:[...new Set(g.source_numbers)],
+  evidence_family_ids:[...g.families],verification_status:[...g.statuses],
+  context_status:[...g.contexts],documented_circumstances:[...g.circumstances],
+  conditions_or_qualifications:[...g.conditions],audiences:[...g.audiences],
+  witnesses:g.witnesses}));
+}
 function findTensions(claims){const out=[];for(let i=0;i<claims.length;i++)for(let j=i+1;j<claims.length;j++){const a=claims[i],b=claims[j],similarity=jaccard(a.text,b.text);if(similarity>=0.45&&negationSignature(a.text)!==negationSignature(b.text)){out.push({claim_numbers:[i+1,j+1],similarity:Number(similarity.toFixed(2)),type:'possible_directional_tension',note:'Lexically related propositions differ in negation/direction; review witness context before synthesizing as consensus.'});}}return out;}
 function classifyWitness(e){const s=norm([e.primary_secondary_status,e.source_class,e.witness_type].join(' '));return /primary|ראשוני|direct/.test(s)?'primary':/translation|תרגום|derived/.test(s)?'derived':/secondary|מאוחר|עיבוד/.test(s)?'secondary':'unspecified';}
 function coverageFor(selected,u){const covered=[],missing=[];if(selected.length)covered.push('תוכן המענה');if(u.intent==='circumstances')(selected.some(e=>text(e.documented_circumstances)||text(e.conditions_or_qualifications)||text(e.audience))?covered:missing).push('נסיבות/תנאים/קהל');if(u.intent==='historical')(selected.some(e=>e.date||text(e.documented_circumstances))?covered:missing).push('תאריך/תקופה');if(u.intent==='bibliographic')(selected.some(e=>e.source_url||e.provenance||e.witness_provenance)?covered:missing).push('provenance ביבליוגרפי');if(u.intent==='pattern')(new Set(selected.map(familyKey)).size>=2?covered:missing).push('דפוס בין משפחות ראיות עצמאיות');return{covered,missing};}
