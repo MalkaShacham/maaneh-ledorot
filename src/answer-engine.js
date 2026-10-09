@@ -55,7 +55,28 @@ export function propositionRelevance(e,u){
  if(u.intent==='circumstances')score+=3;if(u.intent==='guidance'&&supportingProps.length)score+=3;if(u.intent==='historical'&&e.date)score+=2;if(u.intent==='bibliographic'&&(e.source_url||e.provenance||e.witness_provenance))score+=2;
  return{score,support:score>=6?'direct_support':'contextual_support',reasons:[`topic=${topicHit}`,`specific=${rawHit}`,`supporting_propositions=${supportingProps.length}`],supportingProps};
 }
-export function retrieveEvidence(index,q,{limit=36,threshold=6}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed).slice(0,Math.min(index.length,1200));const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);const seen=new Set(),hits=[];for(const r of reranked){const k=familyKey(r.e);if(seen.has(k))continue;seen.add(k);hits.push({...r.e,_relevance:r.score,_support:r.support,_supporting_propositions:r.supportingProps||[]});if(hits.length>=limit)break;}return{understanding,hits};}
+export function retrieveEvidence(index,q,{limit=36,threshold=6}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed).slice(0,Math.min(index.length,1200));const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
+   proposition-level relevance. Novelty cannot rescue a lexical-only result. */
+const seen=new Set(),hits=[],remaining=reranked.slice();
+const typeCount=new Map(),periodCount=new Map();
+const sourceType=e=>norm(e.source_class||e.witness_type||'unknown');
+const sourcePeriod=e=>{const m=String(e.date||'').match(/(?:18|19|20)\\d{2}/);return m?String(Math.floor(Number(m[0])/10)*10):null;};
+while(hits.length<limit&&remaining.length){
+ let best=-1,bestUtility=-Infinity;
+ for(let i=0;i<remaining.length;i++){
+  const r=remaining[i],e=r.e,k=familyKey(e);if(seen.has(k))continue;
+  const type=sourceType(e),period=sourcePeriod(e);
+  const utility=r.score+(typeCount.has(type)?-Math.min(5,1.5*typeCount.get(type)):3)
+   +(period?(periodCount.has(period)?-Math.min(2,0.5*periodCount.get(period)):1):0);
+  if(utility>bestUtility){bestUtility=utility;best=i;}
+ }
+ if(best<0)break;
+ const [r]=remaining.splice(best,1),e=r.e,k=familyKey(e),type=sourceType(e),period=sourcePeriod(e);
+ seen.add(k);typeCount.set(type,(typeCount.get(type)||0)+1);
+ if(period)periodCount.set(period,(periodCount.get(period)||0)+1);
+ hits.push({...e,_relevance:r.score,_support:r.support,_supporting_propositions:r.supportingProps||[]});
+}
+return{understanding,hits};}
 function synthesizeClaims(selected,u,limit){const groups=[];for(let sourceIndex=0;sourceIndex<selected.length;sourceIndex++){const e=selected[sourceIndex],props=(e._supporting_propositions?.length?e._supporting_propositions:arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u)));for(const p of props){const key=propositionKey(p);if(!key)continue;let g=groups.find(x=>sameClaim(x.text,String(p)));if(!g){g={key,text:String(p),source_numbers:[],families:new Set(),statuses:new Set(),contexts:new Set(),circumstances:new Set(),conditions:new Set(),audiences:new Set(),witnesses:[]};groups.push(g);}g.source_numbers.push(sourceIndex+1);g.families.add(familyKey(e));g.statuses.add(e.status);g.contexts.add(e.context_status);arr(e.documented_circumstances).filter(Boolean).forEach(x=>g.circumstances.add(String(x)));arr(e.conditions_or_qualifications).filter(Boolean).forEach(x=>g.conditions.add(String(x)));arr(e.audience).filter(Boolean).forEach(x=>g.audiences.add(String(x)));g.witnesses.push({source_number:sourceIndex+1,family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,status:e.status||null,context_status:e.context_status||'unknown',language:e.language||null});}}return groups.slice(0,limit).map(g=>({text:g.text,source_numbers:[...new Set(g.source_numbers)],evidence_family_ids:[...g.families],verification_status:[...g.statuses],context_status:[...g.contexts],documented_circumstances:[...g.circumstances],conditions_or_qualifications:[...g.conditions],audiences:[...g.audiences],witnesses:g.witnesses}));}
 function findTensions(claims){const out=[];for(let i=0;i<claims.length;i++)for(let j=i+1;j<claims.length;j++){const a=claims[i],b=claims[j],similarity=jaccard(a.text,b.text);if(similarity>=0.45&&negationSignature(a.text)!==negationSignature(b.text)){out.push({claim_numbers:[i+1,j+1],similarity:Number(similarity.toFixed(2)),type:'possible_directional_tension',note:'Lexically related propositions differ in negation/direction; review witness context before synthesizing as consensus.'});}}return out;}
 function classifyWitness(e){const s=norm([e.primary_secondary_status,e.source_class,e.witness_type].join(' '));return /primary|ראשוני|direct/.test(s)?'primary':/translation|תרגום|derived/.test(s)?'derived':/secondary|מאוחר|עיבוד/.test(s)?'secondary':'unspecified';}
