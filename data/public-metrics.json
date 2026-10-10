@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "external_inventory_mapped_minimum": 25906,
   "staging_batch_files": 203,
   "staging_manifest_files": 83,
@@ -11,11 +11,11 @@
   "canonical_unique_item_keys": 9926,
   "evidence_family_files": 55,
   "status_counts_unique_keys": {
-    "Linked": 11,
     "Parsed": 0,
     "Indexed": 1169,
     "Discovered": 3,
-    "Verified": 8228
+    "Verified": 8228,
+    "Linked": 11
   },
   "verified_unique_item_keys": 8228,
   "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately."
