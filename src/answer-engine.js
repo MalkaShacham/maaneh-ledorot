@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד אילו איזה the a an of to and or on about what how did does is are'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד אילו איזה the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 const TOPICS={
  חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch','קינדער'],
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
