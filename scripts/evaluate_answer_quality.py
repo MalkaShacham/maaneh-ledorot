@@ -56,6 +56,9 @@ def main() -> int:
         failures.append("public search index is empty")
 
     content_entries = [e for e in entries if e.get("has_content_evidence")]
+    answer_eligible = [e for e in content_entries
+                       if e.get("proposition_origin") != "editorial_summary_derived"
+                       and e.get("proposition_verbatim") is not False]
     if len(content_entries) < MIN_CONTENT_EVIDENCE:
         failures.append(f"answer index has only {len(content_entries)} content-evidence entries; minimum operational floor is {MIN_CONTENT_EVIDENCE}")
     for e in content_entries:
@@ -109,12 +112,15 @@ def main() -> int:
         warnings.append("fewer than two content-evidence entries: pattern synthesis will usually be unavailable")
     if content_entries and not any(e.get("evidence_family_id") for e in content_entries):
         warnings.append("content evidence currently has no explicit Evidence Family assignments; pattern claims must rely on conservative witness-level dedup only")
+    if not answer_eligible:
+        warnings.append("no answer-eligible source propositions are available; editorial summaries remain searchable but are blocked from answer synthesis")
 
     report = {
         "gate":"answer-quality-structural-v2",
         "index_generated":idx.get("generated"),
         "entries_total":len(entries),
         "content_evidence_entries":len(content_entries),
+        "answer_eligible_content_evidence_entries":len(answer_eligible),
         "explicit_proposition_entries":sum(1 for e in content_entries if e.get("proposition_origin")=="explicit_proposition_field"),
         "derived_editorial_proposition_entries":sum(1 for e in content_entries if e.get("proposition_origin")=="editorial_summary_derived"),
         "verified_content_evidence_entries":len(verified_content),
