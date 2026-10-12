@@ -30,13 +30,27 @@ function sourceCard(e,i){
   (e.source_url?'<br><a href="'+esc(e.source_url)+'" target="_blank" rel="noopener">למקור המלא ↗</a>':'')+'</div>';
 }
 function sources(model){return (model.sources||[]).map(sourceCard).join('');}
+function catalogCard(e){
+ const canonical=e.canonical_status&&e.canonical_status!==e.status?' · סטטוס קנוני: '+esc(e.canonical_status):'';
+ return '<div class="sourcecard"><b>'+esc(e.title)+'</b><br><span class="smallnote">'+
+  esc(e.source_class||'רשומת קטלוג')+' · '+esc(e.date||'ללא תאריך')+' · '+esc(e.language||'שפה לא סומנה')+
+  ' · סטטוס רשומה: '+esc(e.status||'unknown')+canonical+' · הקשר: '+esc(e.context_status||'unknown')+
+  '<br>היקף אימות: '+esc(e.verification_scope||'לא צוין')+' · כשירות לתשובה: לא — אין טענת מקור מאומתת</span>'+
+  (e.source_url?'<br><a href="'+esc(e.source_url)+'" target="_blank" rel="noopener">לרשומת המקור ↗</a>':'')+'</div>';
+}
+function catalogMatches(model){
+ const matches=arr(model.catalog_matches);
+ if(!matches.length)return'';
+ return '<h3>רשומות קטלוג שעשויות לסייע להמשך העיון</h3><p class="warning"><b>חשוב:</b> אלו הפניות לאיתור מקורות בלבד. הן אינן ראיות לתוכן, אינן תומכות בתשובה ואינן מוצגות כדברי הרבי.</p>'+matches.map(catalogCard).join('');
+}
 function insufficiency(model){
  const why=arr(model.insufficient_evidence).filter(Boolean);
  const supported=arr(model.answered_well).filter(Boolean);
  return '<b>אין כרגע די ראיות קנוניות רלוונטיות כדי להשיב בביטחון על מלוא השאלה.</b>'+
   (supported.length?'<p><b>מה כן נתמך:</b> '+supported.map(esc).join(' · ')+'</p>':'')+
   (why.length?'<p class="smallnote"><b>הפערים:</b> '+why.map(esc).join(' · ')+'</p>':'')+
-  ((model.sources||[]).length?'<h3>מקורות רלוונטיים שנבדקו</h3>'+sources(model):'');
+  ((model.sources||[]).length?'<h3>מקורות רלוונטיים שנבדקו</h3>'+sources(model):'')+
+  catalogMatches(model);
 }
 function claimHtml(c){
  const refs=arr(c.source_numbers).map(n=>'['+n+']').join(' ');

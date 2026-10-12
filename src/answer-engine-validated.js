@@ -27,6 +27,25 @@ const isLocatorOnly=e=>/bibliographic_locator_verified_only|identity\/locator|bi
 const isEditorialSummaryOnly=e=>e?.proposition_origin==='editorial_summary_derived'||e?.proposition_verbatim===false;
 const tokens=s=>new Set(norm(s).split(/\s+/).filter(x=>x.length>1));
 const overlapRatio=(a,b)=>{const A=tokens(a),B=tokens(b);if(!A.size||!B.size)return 0;let n=0;A.forEach(x=>{if(B.has(x))n++;});return n/Math.min(A.size,B.size);};
+const CATALOG_STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו בנושא בעניין רוצה לדעת the a an of to and or on about what how did does is are rebbe say says said'.split(' '));
+
+/* Catalog matches are discovery leads, never answer evidence. Ranking may use
+   publisher metadata or an editorial summary, but the returned object deliberately
+   omits summaries and propositions so downstream renderers cannot quote them. */
+export function retrieveCatalogMatches(index=[],q,{limit=6}={}){
+  const query=norm(q),raw=query.split(/\s+/).filter(t=>t.length>1&&!CATALOG_STOP.has(t));
+  const topicAliases=Object.values(TOPIC_ALIASES).filter(group=>group.some(a=>query.includes(norm(a)))).flat().map(norm);
+  const terms=[...new Set([...raw,...topicAliases])];if(!terms.length)return[];
+  const score=e=>{const metadata=norm([e.title,e.source_class,e.date,e.language,arr(e.publisher_terms).join(' '),arr(e.research_terms).join(' '),JSON.stringify(e.locator||'')].join(' '));const discovery=norm([metadata,e.summary,arr(e.response_propositions).join(' ')].join(' '));const hits=terms.filter(t=>discovery.includes(t));return{value:hits.length*2+terms.filter(t=>metadata.includes(t)).length+(e.status==='Verified'?1:0),hits};};
+  const seen=new Set();return index.map(e=>({e,...score(e)})).filter(x=>x.hits.length>0).sort((a,b)=>b.value-a.value).filter(x=>{const k=x.e.source_url||x.e.key||x.e.id;if(!k||seen.has(k))return false;seen.add(k);return true;}).slice(0,limit).map(({e,hits})=>({
+    key:e.key||e.id||null,title:e.title||e.id||'רשומה ללא כותרת',source_url:e.source_url||null,
+    source_class:e.source_class||null,date:e.date||null,language:e.language||null,
+    status:e.status||null,canonical_status:e.canonical_status||null,context_status:e.context_status||'unknown',
+    verification_scope:e.verification_scope||null,locator:e.locator||null,
+    matched_terms:hits,match_basis:'catalog_metadata_or_editorial_summary',
+    answer_evidence:false,content_claims_excluded:true
+  }));
+}
 
 export function normalizeEvidenceIntegrity(index=[]){
   return index.map(source=>{const e={...source},issues=[];if(e.status==='Verified'&&!e.verification_scope){e.status='Linked';e._reported_status='Verified';issues.push('verified_without_scope_demoted');}if(isLocatorOnly(e)){if(e.has_content_evidence||arr(e.response_propositions).length)issues.push('locator_only_content_blocked');e.has_content_evidence=false;e.response_propositions=[];e._supporting_propositions=[];}if(isEditorialSummaryOnly(e)){if(e.has_content_evidence||arr(e.response_propositions).length)issues.push('editorial_summary_answer_evidence_blocked');e._content_evidence_status='editorial_summary_only';e.has_content_evidence=false;e.response_propositions=[];e._supporting_propositions=[];}if(isDerived(e)){const parent=e.parent_evidence_family_id||e.derived_from_evidence_family_id||e.translation_of_evidence_family_id||null;if(parent)e.evidence_family_id=parent;else issues.push('derived_witness_parent_family_unknown');e._independent_witness=false;}else e._independent_witness=true;if(issues.length)e._evidence_integrity_issues=issues;return e;});
@@ -67,6 +86,7 @@ export function comparativeCoverage(model){if(model?.understanding?.intent!=='co
 
 export function buildAnswerModel(index,q,options={}){
   const normalized=normalizeEvidenceIntegrity(index);let model=buildCoreAnswerModel(normalized,q,options);
+  model.catalog_matches=retrieveCatalogMatches(index,q);
   const integrityIssues=(model.sources||[]).flatMap((e,i)=>arr(e._evidence_integrity_issues).map(issue=>({source_number:i+1,issue,reported_status:e._reported_status||null})));
   const entailment=citationEntailment(model),boundaries=contextBoundary(model,entailment);
   const citationFailures=entailment.filter(x=>!x.valid),contextFailures=boundaries.filter(x=>!x.valid);

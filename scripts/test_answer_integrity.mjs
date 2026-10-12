@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {buildAnswerModel,citationEntailment,normalizeEvidenceIntegrity,contextBoundary} from '../src/answer-engine-validated.js';
+import {buildAnswerModel,citationEntailment,normalizeEvidenceIntegrity,contextBoundary,retrieveCatalogMatches} from '../src/answer-engine-validated.js';
 const p='חינוך ילדים מחייב הקשבה לפני החלטה';
 const s={id:'fixture',title:'חינוך ילדים',evidence_family_id:'family-one',status:'Verified',verification_scope:'published wording inspected',has_content_evidence:true,source_witness:'test witness',response_propositions:[p],language:'he',context_status:'partial'};
 assert.equal(citationEntailment({claims:[{text:p,source_numbers:[1]}],sources:[s]})[0].valid,true);
@@ -17,10 +17,19 @@ assert.equal(normalizedEditorial.has_content_evidence,false,'editorial summary i
 assert.deepEqual(normalizedEditorial.response_propositions,[]);
 assert.equal(normalizedEditorial._content_evidence_status,'editorial_summary_only');
 assert.ok(normalizedEditorial._evidence_integrity_issues.includes('editorial_summary_answer_evidence_blocked'));
-assert.equal(buildAnswerModel([editorial],'מה הרבי אמר על חינוך ילדים?').answerable,false);
+const editorialModel=buildAnswerModel([editorial],'מה הרבי אמר על חינוך ילדים?');
+assert.equal(editorialModel.answerable,false);
+assert.equal(editorialModel.catalog_matches.length,1,'blocked summary remains available as a catalog lead');
+assert.equal(editorialModel.catalog_matches[0].answer_evidence,false);
+assert.equal('response_propositions' in editorialModel.catalog_matches[0],false,'catalog lead must not expose proposition text');
+assert.equal('summary' in editorialModel.catalog_matches[0],false,'catalog lead must not expose editorial summary text');
+assert.equal(retrieveCatalogMatches([{...editorial,title:'בריאות'}],'חינוך ילדים').length,1,
+ 'editorial discovery text may rank a lead without becoming answer evidence');
+assert.equal(retrieveCatalogMatches([{...editorial,title:'בריאות',summary:'רפואה בלבד',response_propositions:[]}],'חינוך ילדים').length,0,
+ 'unrelated catalog records must not be shown');
 const derived=normalizeEvidenceIntegrity([{...s,source_class:'derived translation',parent_evidence_family_id:'original-family'}])[0];
 assert.equal(derived._independent_witness,false);
 assert.equal(derived.evidence_family_id,'original-family');
 const model={claims:[{text:p,source_numbers:[1],audiences:['הורים']}],sources:[s]};
 assert.equal(contextBoundary(model,citationEntailment(model))[0].valid,false);
-console.log('PASS: exact citations, evidence scope, editorial-summary block, derived family and context boundary');
+console.log('PASS: exact citations, evidence scope, safe catalog leads, derived family and context boundary');
