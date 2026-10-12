@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {buildAnswerModel,citationEntailment,normalizeEvidenceIntegrity,contextBoundary} from '../src/answer-engine-validated.js';
+const p='חינוך ילדים מחייב הקשבה לפני החלטה';
+const s={id:'fixture',title:'חינוך ילדים',evidence_family_id:'family-one',status:'Verified',verification_scope:'published wording inspected',has_content_evidence:true,source_witness:'test witness',response_propositions:[p],language:'he',context_status:'partial'};
+assert.equal(citationEntailment({claims:[{text:p,source_numbers:[1]}],sources:[s]})[0].valid,true);
+assert.equal(citationEntailment({claims:[{text:'חינוך ילדים לא מחייב הקשבה לפני החלטה',source_numbers:[1]}],sources:[s]})[0].valid,false);
+assert.equal(citationEntailment({claims:[{text:'חינוך ילדים מחייב הקשבה אחרי החלטה',source_numbers:[1]}],sources:[s]})[0].valid,false);
+const locator={...s,verification_scope:'bibliographic identity/locator only; full wording not inspected',context_status:'bibliographic_locator_verified_only'};
+const [normalized]=normalizeEvidenceIntegrity([locator]);
+assert.equal(normalized.has_content_evidence,false);
+assert.deepEqual(normalized.response_propositions,[]);
+assert.equal(buildAnswerModel([locator],'מה הרבי אמר על חינוך ילדים?').answerable,false);
+const derived=normalizeEvidenceIntegrity([{...s,source_class:'derived translation',parent_evidence_family_id:'original-family'}])[0];
+assert.equal(derived._independent_witness,false);
+assert.equal(derived.evidence_family_id,'original-family');
+const model={claims:[{text:p,source_numbers:[1],audiences:['הורים']}],sources:[s]};
+assert.equal(contextBoundary(model,citationEntailment(model))[0].valid,false);
+console.log('PASS: exact citations, evidence scope, derived family and context boundary');
