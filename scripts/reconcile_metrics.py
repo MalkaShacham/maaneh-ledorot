@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import json, pathlib, re, datetime
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-items=list((ROOT/"data/items").glob("*.json"))
-batches=list((ROOT/"data/staging/batches").glob("*.json"))
-manifests=list((ROOT/"data/staging/manifests").glob("*.json"))
+items=sorted((ROOT/"data/items").glob("*.json"))
+batches=sorted((ROOT/"data/staging/batches").glob("*.json"))
+manifests=sorted((ROOT/"data/staging/manifests").glob("*.json"))
 # Ordered highest-to-lowest so reconciliation and serialized metrics are
 # deterministic across Python processes (a set's iteration order is randomized).
 PIPE=("Verified","Linked","Parsed","Indexed","Discovered")
@@ -98,7 +98,7 @@ external=counts.get("external_inventory_mapped_minimum") or counts.get("external
 today=datetime.date.today().isoformat()
 out={"generated":today,"external_inventory_mapped_minimum":external,"staging_batch_files":len(batches),"staging_manifest_files":len(manifests),"staging_records_physical_sum":staging_records,"promotion_queue_physical_records":promotion_queue_physical,"promotion_queue_already_canonical":already_canonical_queued,"promotion_ready_records":promotion_ready,"canonical_json_files":len(items),"canonical_unique_item_keys":len(seen),"evidence_family_files":evidence_files,"status_counts_unique_keys":status_counts,"verified_unique_item_keys":status_counts["Verified"],"counting_note":"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately."}
 (ROOT/"data/public-metrics.json").write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-(ROOT/"data/promotion-ready-reconciled.json").write_text(json.dumps({"generated":today,"actionable_count":promotion_ready,"already_canonical_queued":already_canonical_queued,"batches":sorted(promotion_ready_by_batch,key=lambda x:(-x["count"],x["batch"]))},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+(ROOT/"data/promotion-ready-reconciled.json").write_text(json.dumps({"generated":today,"identity_policy":"match any stable AID, source URL, staging stable key, or ID","actionable_count":promotion_ready,"already_canonical_queued":already_canonical_queued,"batches":sorted(promotion_ready_by_batch,key=lambda x:(-x["count"],x["batch"]))},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 state["current_counts"]={"external_inventory_mapped_minimum":external,"staging_batch_files":out["staging_batch_files"],"staging_manifest_files":out["staging_manifest_files"],"staging_records_physical_sum":out["staging_records_physical_sum"],"promotion_queue_physical_records":promotion_queue_physical,"promotion_queue_already_canonical":already_canonical_queued,"promotion_ready_records":out["promotion_ready_records"],"canonical_json_files":out["canonical_json_files"],"canonical_unique_item_keys":out["canonical_unique_item_keys"],"evidence_family_files":out["evidence_family_files"],"verified_unique_item_keys":out["verified_unique_item_keys"],"status_counts_unique_keys":out["status_counts_unique_keys"]}
 if isinstance(state.get("verification_surge"),dict): state["verification_surge"]["current_promotion_ready_backlog"]=promotion_ready
 state["last_updated"]=today

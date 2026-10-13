@@ -20,4 +20,13 @@ assert "if: always()" not in hourly, "hourly commit must not run after a failed 
 assert "run-log-only changes are not committed" in hourly, "log-only commit guard missing"
 assert "git pull --rebase origin main" not in hourly, "post-mutation rebase can conflict on generated files"
 
-print("Workflow write safety: 7 checks passed")
+policy = "match any stable AID, source URL, staging stable key, or ID"
+for script in ["reconcile_metrics.py", "reconcile_identity_aliases.py"]:
+    text = (ROOT / "scripts" / script).read_text(encoding="utf-8")
+    assert policy in text, f"{script}: promotion-ready identity policy schema drift"
+
+metrics = (ROOT / "scripts/reconcile_metrics.py").read_text(encoding="utf-8")
+assert 'items=sorted(' in metrics, "canonical item traversal must be deterministic"
+assert 'batches=sorted(' in metrics, "staging batch traversal must be deterministic"
+
+print("Workflow write safety: 11 checks passed")
