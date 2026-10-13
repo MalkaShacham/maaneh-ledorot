@@ -54,4 +54,18 @@ assert.equal(anxietyModel.answerable,true,'inspected anxiety proposition should 
 assert.ok(anxietyModel.sources.some(x=>x.id==='chabad-letter-1956800'));
 assert.equal(anxietyModel.claims.length,1,'anxiety answer must exclude the education proposition from the same letter');
 assert.match(anxietyModel.claims[0].text,/anxiety and worry/);
-console.log('PASS: exact citations, evidence scope, inspected paraphrases, multi-family education retrieval, safe catalog leads, derived family and context boundary');
+const educationPattern=buildAnswerModel(liveIndex,'What pattern did the Rebbe teach about education?',{mode:'researcher'});
+assert.equal(educationPattern.understanding.intent,'pattern');
+assert.deepEqual(educationPattern.understanding.subtopic,[],
+ 'pattern framing must not become a source-content qualifier');
+assert.equal(educationPattern.answerable,true,
+ 'a pattern question is answerable when independently grounded families exist');
+assert.ok(educationPattern.research.evidence_families>=2);
+assert.ok(educationPattern.claims.length>=2);
+const hebrewEducationPattern=buildAnswerModel(liveIndex,'איזה דפוס חוזר בהדרכות הרבי על חינוך?',{mode:'researcher'});
+assert.equal(hebrewEducationPattern.answerable,true,'Hebrew pattern framing must be handled equivalently');
+assert.deepEqual(hebrewEducationPattern.understanding.subtopic,[]);
+const anxietyPattern=buildAnswerModel(liveIndex,'What pattern did the Rebbe teach about anxiety?',{mode:'researcher'});
+assert.equal(anxietyPattern.answerable,false,'one family must never be presented as a recurring pattern');
+assert.equal(anxietyPattern.reason,'single_evidence_family');
+console.log('PASS: exact citations, evidence scope, inspected paraphrases, multi-family pattern retrieval, safe catalog leads, derived family and context boundary');
