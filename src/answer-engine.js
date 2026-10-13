@@ -28,6 +28,10 @@ const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return fa
 const isIntentFramingTerm=(term,intent)=>{
  const t=norm(term);
  if(intent==='pattern')return /^(?:pattern|patterns|recurring|usually|approach|approaches|דפוס|דפוסים|חוזר|חוזרת|חוזרים|בדרך|כלל|גישה|גישות|הדרכה|הדרכות|בהדרכה|בהדרכות)$/.test(t);
+ if(intent==='comparative')return /^(?:compare|comparison|comparisons|difference|differences|versus|vs|between|השווה|השוו|השוואה|השוואת|הבדל|הבדלים|לעומת|בין)$/.test(t);
+ if(intent==='historical')return /^(?:when|date|dates|period|periods|year|years|time|מתי|תאריך|תאריכים|תקופה|תקופות|שנה|שנים|כתב|כותב|דיבר|לימד|הדריך)$/.test(t);
+ if(intent==='bibliographic')return /^(?:source|sources|bibliographic|bibliography|citation|citations|where|published|publication|מקור|מקורות|ביבליוגרפיה|ביבליוגרפי|איפה|פורסם|פרסום)$/.test(t);
+ if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי)$/.test(t);
  return false;
 };
 
@@ -39,7 +43,8 @@ export function understandQuestion(q){
  const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent));
  const expanded=[...semanticRaw];topics.forEach(k=>expanded.push(...TOPICS[k]));
  const topicTokens=new Set(topics.flatMap(k=>(TOPICS[k]||[]).map(norm)));
- return {query,query_script:scriptOf(query),topic:topics[0]||null,topics,intent,entities,subtopic:semanticRaw.filter(t=>!topicTokens.has(t)).slice(0,8),terms:[...new Set(expanded.map(norm))]};
+ const isTopicToken=t=>topicTokens.has(t)||[...topicTokens].some(alias=>containsTerm(t,alias));
+ return {query,query_script:scriptOf(query),topic:topics[0]||null,topics,intent,entities,subtopic:semanticRaw.filter(t=>!isTopicToken(t)).slice(0,8),terms:[...new Set(expanded.map(norm))]};
 }
 function evidenceText(e){return norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));}
 function metadataText(e){return norm([e.title,e.search_text,e.source_class,e.date,e.language,e.topic,e.subtopic].join(' '));}
