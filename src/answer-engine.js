@@ -132,7 +132,16 @@ function synthesizeClaims(selected,u,limit){
     context_status:e.context_status||'unknown',language:e.language||null});
   }
  }
- return ordered.slice(0,limit).map(g=>({text:g.text,
+ // A comparison is useful only when the displayed claim budget contains evidence
+ // for every detected side. Reserve the first slots for one proposition per side;
+ // otherwise a verbose first witness can consume the entire regular-mode budget.
+ const prioritized=[];
+ if(u.intent==='comparative')for(const topic of u.topics){
+  const aliases=(TOPICS[topic]||[]).map(norm),match=ordered.find(g=>!prioritized.includes(g)&&aliases.some(alias=>containsTerm(g.text,alias)));
+  if(match)prioritized.push(match);
+ }
+ const withinBudget=[...prioritized,...ordered.filter(g=>!prioritized.includes(g))].slice(0,limit);
+ return withinBudget.map(g=>({text:g.text,
   source_numbers:[...new Set(g.source_numbers)],
   evidence_family_ids:[...g.families],verification_status:[...g.statuses],
   context_status:[...g.contexts],documented_circumstances:[...g.circumstances],

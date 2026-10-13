@@ -18,7 +18,7 @@ const TOPIC_ALIASES={
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
 const propositionText=e=>norm(arr(e?._supporting_propositions).concat(arr(e?.response_propositions)).join(' '));
-const topicSupported=(sources,topic)=>{const aliases=TOPIC_ALIASES[topic]||[topic];return sources.some(e=>{const body=propositionText(e);return aliases.some(a=>body.includes(norm(a)));});};
+const topicSupported=(claims,topic)=>{const aliases=TOPIC_ALIASES[topic]||[topic];return claims.some(claim=>{const body=norm(claim?.text);return aliases.some(a=>body.includes(norm(a)));});};
 const isDerived=e=>/translation|תרגום|derived/.test(norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' ')));
 // An index entry establishes the letter's identity/locator, not what the Rebbe said.
 const isLocatorOnly=e=>/bibliographic_locator_verified_only|identity\/locator|bibliographic identity|index[- ]first|metadata[_ -]and[_ -]locator[_ -]only/.test(norm([e?.context_status,e?.verification_scope,e?.rights_status].join(' ')));
@@ -84,7 +84,7 @@ export function contextBoundary(model,entailment){
   });
 }
 
-export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const sources=model.sources||[],supported=requested.filter(t=>topicSupported(sources,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing};}
+export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}
 
 export function buildAnswerModel(index,q,options={}){
   const normalized=normalizeEvidenceIntegrity(index);let model=buildCoreAnswerModel(normalized,q,options);

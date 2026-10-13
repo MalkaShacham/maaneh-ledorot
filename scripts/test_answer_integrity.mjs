@@ -103,4 +103,14 @@ assert.deepEqual(comparativeModel.comparative_coverage.missing_topics,[]);
 assert.equal(comparativeModel.comparative_coverage.supported_topics.length,2);
 const hebrewComparative=buildAnswerModel(liveIndex,'השווה בין חינוך וחרדה',{mode:'researcher'});
 assert.equal(hebrewComparative.answerable,true,'Hebrew comparison framing must be handled equivalently');
+const crowdedComparison={...groundedParaphrase,id:'crowded-comparison',evidence_family_id:'crowded-family',
+ response_propositions:[...Array.from({length:6},(_,i)=>`education guidance case ${i+1}`),'anxiety guidance case']};
+const conciseComparison=buildAnswerModel([crowdedComparison],'Compare education and anxiety');
+assert.equal(conciseComparison.answerable,true,
+ 'claim budget must reserve proposition-level evidence for both comparison sides');
+assert.deepEqual(conciseComparison.comparative_coverage.missing_topics,[]);
+assert.equal(conciseComparison.comparative_coverage.scope,'displayed_claims');
+assert.ok(conciseComparison.claims.some(c=>/education/.test(c.text)));
+assert.ok(conciseComparison.claims.some(c=>/anxiety/.test(c.text)),
+ 'a side present only after the regular claim limit must be promoted into the displayed answer');
 console.log('PASS: exact citations, evidence scope, inspected paraphrases, intent-aware retrieval, safe catalog leads, derived family and context boundary');
