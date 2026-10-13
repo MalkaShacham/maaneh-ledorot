@@ -17,8 +17,14 @@ const regular=buildAnswerModel(corpus,question);
 const researcher=buildAnswerModel(corpus,question,{mode:'researcher'});
 assert.equal(regular.answerable,true);
 assert.equal(researcher.answerable,true);
-assert.equal(regular.claims.length,12);
+assert.equal(regular.claims.length,5);
+assert.equal(regular.sources.length,5);
 assert.equal(researcher.claims.length,25);
+assert.equal(regular.presentation.answer_style,'concise_answer_first');
+assert.equal(regular.presentation.claim_limit,5);
+assert.equal(researcher.presentation.answer_style,'extended_evidence_analysis');
+assert.equal(researcher.presentation.claim_limit,32);
+assert.equal(regular.research,undefined,'regular mode must not expose researcher analysis');
 assert.equal(researcher.research.evidence_families,5);
 assert.equal(new Set(researcher.sources.map(s=>s.source_class)).size,5);
 assert.equal(new Set(regular.claims.slice(0,5).map(c=>c.source_numbers[0])).size,5,
@@ -33,4 +39,9 @@ const opposed=buildAnswerModel([make(0,['חינוך ילדים מחייב דוג
 assert.equal(opposed.claims.length,2,'negated claims must not collapse');
 const metadataOnly=buildAnswerModel([make(0,[],{title:'חינוך ילדים',search_text:'חינוך ילדים'})],question);
 assert.equal(metadataOnly.answerable,false,'metadata must not be treated as source evidence');
-console.log('PASS: 12 regular / 25 researcher claims; 5 families; source balance, context, citations and metadata gate');
+assert.equal(researcher.research.cases.length,5);
+assert.deepEqual(researcher.research.cases[0].supported_claim_numbers,[1,6,11,16,21]);
+assert.equal(researcher.research.distinctions.periods.length,5);
+assert.deepEqual(researcher.research.distinctions.source_classes.find(x=>x.value==='letter').source_numbers,[1]);
+assert.ok(researcher.research.cases.every(c=>c.verification_scope==='synthetic publisher witness'));
+console.log('PASS: 5 concise regular / 25 researcher claims; 5 cases mapped to claims and comparison axes');

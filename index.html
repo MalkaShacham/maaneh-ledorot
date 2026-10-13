@@ -67,13 +67,15 @@ function regular(model){
 function researcher(model){
  if(!model.answerable)return insufficiency(model);
  const r=model.research||{},coverage=r.coverage||{};
- const rows=(model.sources||[]).map((e,i)=>'<tr><td>['+(i+1)+']</td><td>'+esc(e.title)+'</td><td>'+esc(e.status||'unknown')+'</td><td>'+esc(e.verification_scope||'לא צוין')+'</td><td>'+esc(e.context_status||'unknown')+'</td><td>'+esc(e.language||'unknown')+'</td><td>'+esc(e.evidence_family_id||'לא שויך')+'</td></tr>').join('');
+ const rows=arr(r.cases).map((c,i)=>'<tr><td>['+c.source_number+']</td><td>'+esc((model.sources[i]||{}).title)+'</td><td>'+arr(c.supported_claim_numbers).map(n=>'#'+n).join(', ')+'</td><td>'+esc(c.pipeline_status||'unknown')+'</td><td>'+esc(c.verification_scope||'לא צוין')+'</td><td>'+esc(c.context_status||'unknown')+'</td><td>'+esc(c.language||'unknown')+'</td><td>'+esc(c.evidence_family_id||'לא שויך')+'</td></tr>').join('');
+ const axis=(label,values)=>arr(values).length?'<b>'+esc(label)+':</b> '+arr(values).map(x=>esc(x.value)+' ['+arr(x.source_numbers).join(', ')+']').join(' · ')+'<br>':'';
  const tensions=arr(r.tensions);
  return '<h3>סקירה מחקרית מבוססת ראיות</h3>'+
   '<p>לאחר relevance gate, dedup ובדיקת entailment נשארו '+(model.sources||[]).length+' מקורות כשירים. משפחות ראיות מפורשות: '+esc(r.evidence_families??0)+'. אין השלמת פערי הקשר בהשערה.</p>'+
   '<h3>ממצאים</h3><ol>'+model.claims.map(claimHtml).join('')+'</ol>'+
   (tensions.length?'<h3>הבדלים או מתחים המחייבים עיון</h3><p>'+tensions.map(x=>esc(x.note||x.type)).join('<br>')+'</p>':'')+
-  '<h3>Evidence map</h3><table><thead><tr><th>#</th><th>מקור</th><th>כשירות</th><th>היקף אימות</th><th>הקשר</th><th>שפה</th><th>Evidence Family</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+  '<h3>צירי השוואה מתועדים</h3><p class="smallnote">'+axis('תקופות',r.distinctions?.periods)+axis('קהלים',r.distinctions?.audiences)+axis('נסיבות',r.distinctions?.circumstances)+axis('תנאים והסתייגויות',r.distinctions?.conditions)+axis('סוגי מקור',r.distinctions?.source_classes)+'</p>'+
+  '<h3>Evidence map</h3><table><thead><tr><th>#</th><th>מקור</th><th>טענות נתמכות</th><th>כשירות</th><th>היקף אימות</th><th>הקשר</th><th>שפה</th><th>Evidence Family</th></tr></thead><tbody>'+rows+'</tbody></table>'+
   '<h3>גבולות הידע</h3><p class="smallnote">כיסוי: '+arr(coverage.covered).map(esc).join(' · ')+(arr(coverage.missing).length?' | חסר: '+arr(coverage.missing).map(esc).join(' · '):'')+'. תרגום נגזר אינו נספר כעד עצמאי; context=partial אינו מורחב; Verified אינו חורג מ-verification_scope.</p>'+
   '<h3>מקורות ו-provenance</h3>'+sources(model);
 }
