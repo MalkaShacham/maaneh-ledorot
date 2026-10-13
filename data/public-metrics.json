@@ -7,16 +7,19 @@
   "promotion_queue_physical_records": 526,
   "promotion_queue_already_canonical": 526,
   "promotion_ready_records": 0,
-  "canonical_json_files": 346,
-  "canonical_unique_item_keys": 9926,
+  "canonical_json_files": 356,
+  "canonical_unique_item_keys": 9936,
   "evidence_family_files": 55,
   "status_counts_unique_keys": {
-    "Verified": 8228,
+    "Verified": 8238,
     "Linked": 11,
     "Parsed": 0,
     "Indexed": 1169,
     "Discovered": 3
   },
-  "verified_unique_item_keys": 8228,
-  "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately."
+  "verified_unique_item_keys": 8238,
+  "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.",
+  "answer_eligible_unique_sources": 17,
+  "answer_eligible_propositions": 53,
+  "content_readiness_note": "Only evidence accepted by the answer engine; bibliographic verification and editorial summaries do not count."
 }
