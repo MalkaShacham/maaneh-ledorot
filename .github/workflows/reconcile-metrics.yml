@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      - name: Sync latest main before mutation
+        run: git pull --ff-only origin main
       - name: Optional live discovery of up to 250 Sichos Kodesh audio records
         id: live_discovery
         continue-on-error: true

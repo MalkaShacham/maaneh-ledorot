@@ -17,6 +17,9 @@ on:
       - 'src/answer-engine.js'
       - 'src/answer-engine-validated.js'
       - '.github/workflows/answer-quality-gate.yml'
+      - '.github/workflows/hourly-corpus-pipeline.yml'
+      - '.github/workflows/reconcile-metrics.yml'
+      - 'scripts/test_workflow_write_safety.py'
   workflow_dispatch:
 
 permissions:
@@ -45,3 +48,5 @@ jobs:
         run: node scripts/test_answer_integrity.mjs
       - name: Audit answer-engine evidence contract
         run: python scripts/evaluate_answer_quality.py
+      - name: Test serialized workflow write safety
+        run: python scripts/test_workflow_write_safety.py
