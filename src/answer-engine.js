@@ -18,6 +18,10 @@ const NEGATION=new Set(['לא','אין','אינו','אינה','אינם','אינ
 const tokenSet=s=>new Set(contentWords(s));
 const jaccard=(a,b)=>{const A=tokenSet(a),B=tokenSet(b);if(!A.size||!B.size)return 0;let i=0;A.forEach(x=>{if(B.has(x))i++;});return i/(A.size+B.size-i);};
 const negationSignature=s=>contentWords(s).some(x=>NEGATION.has(x));
+// Latin query terms must match whole tokens/phrases: substring matching made
+// `fear` incorrectly match `G-d-fearing`. Hebrew aliases intentionally include
+// productive stems (for example דאג), so Hebrew keeps conservative substring matching.
+const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return false;if(/[a-z]/i.test(t)){if(t.includes(' '))return ` ${b} `.includes(` ${t} `);return b.split(/\s+/).includes(t);}return b.includes(t);};
 
 export function understandQuestion(q){
  const original=String(q||''),query=norm(original),raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
@@ -30,7 +34,7 @@ export function understandQuestion(q){
 }
 function evidenceText(e){return norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));}
 function metadataText(e){return norm([e.title,e.search_text,e.source_class,e.date,e.language,e.topic,e.subtopic].join(' '));}
-function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&t.includes(norm(x))?1:0),0);}
+function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&containsTerm(t,x)?1:0),0);}
 function familyKey(e){return e.evidence_family_id||e.aid||e.source_url||e.key;}
 function propositionKey(p){return contentWords(p).sort().join(' ');}
 function sameClaim(a,b){if(propositionKey(a)===propositionKey(b))return true;if(negationSignature(a)!==negationSignature(b))return false;return jaccard(a,b)>=0.72;}
@@ -48,7 +52,7 @@ export function propositionRelevance(e,u){
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.
- if(raw.length && raw.some(t=>!body.includes(t)))return{score:0,support:'insufficient_specific_evidence',reasons:['question-specific qualifier absent from evidence']};
+ if(raw.length && raw.some(t=>!containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['question-specific qualifier absent from evidence']};
  const supportingProps=arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u));
  if(u.topics.length&&topicHit===0)return{score:0,support:'lexical_only',reasons:['topic absent from evidence']};
  if(!supportingProps.length&&u.intent==='guidance')return{score:1,support:'contextual_support',reasons:['no proposition entails guidance query']};
