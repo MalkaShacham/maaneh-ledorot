@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import {buildAnswerModel,citationEntailment,normalizeEvidenceIntegrity,contextBoundary,retrieveCatalogMatches} from '../src/answer-engine-validated.js';
 const p='חינוך ילדים מחייב הקשבה לפני החלטה';
 const s={id:'fixture',title:'חינוך ילדים',evidence_family_id:'family-one',status:'Verified',verification_scope:'published wording inspected',has_content_evidence:true,source_witness:'test witness',response_propositions:[p],language:'he',context_status:'partial'};
@@ -41,4 +42,16 @@ assert.equal(derived._independent_witness,false);
 assert.equal(derived.evidence_family_id,'original-family');
 const model={claims:[{text:p,source_numbers:[1],audiences:['הורים']}],sources:[s]};
 assert.equal(contextBoundary(model,citationEntailment(model))[0].valid,false);
-console.log('PASS: exact citations, evidence scope, inspected paraphrases, safe catalog leads, derived family and context boundary');
+const liveIndex=JSON.parse(fs.readFileSync(new URL('../data/public-search-index.json',import.meta.url),'utf8')).entries;
+const educationModel=buildAnswerModel(liveIndex,'What did the Rebbe say about education?');
+assert.equal(educationModel.answerable,true,'grounded education evidence should remain answerable');
+assert.ok(new Set(educationModel.sources.map(x=>x.evidence_family_id)).size>=2,
+ 'education retrieval must include at least two independent evidence families');
+assert.ok(educationModel.sources.some(x=>x.id==='chabad-letter-1273740'),
+ 'inspected parental-priority excerpt must be retrieved for education');
+const anxietyModel=buildAnswerModel(liveIndex,'What did the Rebbe say about anxiety?');
+assert.equal(anxietyModel.answerable,true,'inspected anxiety proposition should be answerable');
+assert.ok(anxietyModel.sources.some(x=>x.id==='chabad-letter-1956800'));
+assert.equal(anxietyModel.claims.length,1,'anxiety answer must exclude the education proposition from the same letter');
+assert.match(anxietyModel.claims[0].text,/anxiety and worry/);
+console.log('PASS: exact citations, evidence scope, inspected paraphrases, multi-family education retrieval, safe catalog leads, derived family and context boundary');
