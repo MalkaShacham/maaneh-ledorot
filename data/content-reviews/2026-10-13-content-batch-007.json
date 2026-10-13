@@ -1,0 +1,43 @@
+{
+  "schema": "content-review-batch-v1",
+  "date": "2026-10-13",
+  "batch_id": "2026-10-13-content-batch-007",
+  "purpose": "Inspect authorized item-level letter texts and convert already-canonical bibliographic witnesses into answer-eligible, claim-level evidence.",
+  "source_policy": "Authorized Kehot/Chabad.org item-level pages only. Store bounded non-verbatim research paraphrases and exact locators; do not copy protected full text.",
+  "reviewed_items": 13,
+  "new_canonical_identities": 0,
+  "existing_verified_identities_enriched": 13,
+  "added_response_propositions": 38,
+  "before": {
+    "verified_unique_item_keys": 8251,
+    "answer_eligible_unique_sources": 85,
+    "content_verified_unique_sources": 82,
+    "answer_eligible_propositions": 237,
+    "pending_online_items": 1006
+  },
+  "after": {
+    "verified_unique_item_keys": 8251,
+    "answer_eligible_unique_sources": 98,
+    "content_verified_unique_sources": 95,
+    "answer_eligible_propositions": 275,
+    "pending_online_items": 993
+  },
+  "verification_scope": "Thirteen Hebrew/Yiddish letter texts on authorized Kehot/Chabad.org item pages were inspected. Stored propositions are bounded Hebrew research paraphrases. Incoming correspondence, physical manuscripts, photographs and secretariat copies referenced by publisher notes were not independently inspected.",
+  "items": [
+    {"id":"chabad-letter-4666241","aid":4666241,"letter":"רב"},
+    {"id":"chabad-letter-4666271","aid":4666271,"letter":"רלב"},
+    {"id":"chabad-letter-4666272","aid":4666272,"letter":"רלג"},
+    {"id":"chabad-letter-4666273","aid":4666273,"letter":"רלד"},
+    {"id":"chabad-letter-4666274","aid":4666274,"letter":"רלה"},
+    {"id":"chabad-letter-4666275","aid":4666275,"letter":"רלו"},
+    {"id":"chabad-letter-4666276","aid":4666276,"letter":"רלז"},
+    {"id":"chabad-letter-4754683","aid":4754683,"letter":"א׳ריח"},
+    {"id":"chabad-letter-4754684","aid":4754684,"letter":"א׳ריט"},
+    {"id":"chabad-letter-4754685","aid":4754685,"letter":"א׳רכ"},
+    {"id":"chabad-letter-4754686","aid":4754686,"letter":"א׳רכא"},
+    {"id":"chabad-letter-4754687","aid":4754687,"letter":"א׳רכב"},
+    {"id":"chabad-letter-4754688","aid":4754688,"letter":"א׳רכג"}
+  ],
+  "blocked_alternative": "Adjacent guessed AIDs 4754689-4754695 were not accessible through the inspection tool and were not ingested or counted; the run immediately continued with verified queue items 4754686-4754688 instead.",
+  "rights": "Metadata, links and bounded non-verbatim research paraphrases only. No protected full text stored."
+}
