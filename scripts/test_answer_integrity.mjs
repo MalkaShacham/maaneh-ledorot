@@ -58,13 +58,23 @@ const educationPattern=buildAnswerModel(liveIndex,'What pattern did the Rebbe te
 assert.equal(educationPattern.understanding.intent,'pattern');
 assert.deepEqual(educationPattern.understanding.subtopic,[],
  'pattern framing must not become a source-content qualifier');
-assert.equal(educationPattern.answerable,true,
- 'a pattern question is answerable when independently grounded families exist');
-assert.ok(educationPattern.research.evidence_families>=2);
-assert.ok(educationPattern.claims.length>=2);
+assert.equal(educationPattern.answerable,false,
+ 'different propositions from independent families must not be presented as a shared pattern');
+assert.equal(educationPattern.reason,'no_cross_family_pattern');
+assert.ok(new Set(educationPattern.sources.map(x=>x.evidence_family_id)).size>=2,
+ 'documented cases remain visible even though no recurring claim was established');
 const hebrewEducationPattern=buildAnswerModel(liveIndex,'איזה דפוס חוזר בהדרכות הרבי על חינוך?',{mode:'researcher'});
-assert.equal(hebrewEducationPattern.answerable,true,'Hebrew pattern framing must be handled equivalently');
+assert.equal(hebrewEducationPattern.answerable,false,'Hebrew pattern questions require the same cross-family support');
+assert.equal(hebrewEducationPattern.reason,'no_cross_family_pattern');
 assert.deepEqual(hebrewEducationPattern.understanding.subtopic,[]);
+const recurringA={...groundedParaphrase,id:'recurring-a',evidence_family_id:'recurring-family-a'};
+const recurringB={...groundedParaphrase,id:'recurring-b',evidence_family_id:'recurring-family-b'};
+const supportedPattern=buildAnswerModel([recurringA,recurringB],
+ 'What pattern did the Rebbe teach about education?',{mode:'researcher'});
+assert.equal(supportedPattern.answerable,true,'a genuinely recurring proposition remains answerable');
+assert.equal(supportedPattern.research.evidence_families,2);
+assert.deepEqual(supportedPattern.claims[0].evidence_family_ids.sort(),
+ ['recurring-family-a','recurring-family-b']);
 const anxietyPattern=buildAnswerModel(liveIndex,'What pattern did the Rebbe teach about anxiety?',{mode:'researcher'});
 assert.equal(anxietyPattern.answerable,false,'one family must never be presented as a recurring pattern');
 assert.equal(anxietyPattern.reason,'single_evidence_family');

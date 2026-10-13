@@ -140,13 +140,35 @@ function synthesizeClaims(selected,u,limit){
   witnesses:g.witnesses}));
 }
 function findTensions(claims){const out=[];for(let i=0;i<claims.length;i++)for(let j=i+1;j<claims.length;j++){const a=claims[i],b=claims[j],similarity=jaccard(a.text,b.text);if(similarity>=0.45&&negationSignature(a.text)!==negationSignature(b.text)){out.push({claim_numbers:[i+1,j+1],similarity:Number(similarity.toFixed(2)),type:'possible_directional_tension',note:'Lexically related propositions differ in negation/direction; review witness context before synthesizing as consensus.'});}}return out;}
+// Multiple witnesses on one topic do not by themselves establish a pattern.
+// Keep only propositions that recur (exactly or with high lexical agreement)
+// across independent evidence families. This conservative gate avoids turning
+// unrelated education cases into a general rule attributed to the Rebbe.
+function crossFamilyPatternEvidence(selected,u){
+ const rows=selected.map((e,index)=>({e,index,family:familyKey(e),
+  props:(e._supporting_propositions?.length?e._supporting_propositions:
+   arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u))).map(String)}));
+ const matched=new Map(),add=(index,p)=>{if(!matched.has(index))matched.set(index,new Set());matched.get(index).add(p);};
+ for(let i=0;i<rows.length;i++)for(let j=i+1;j<rows.length;j++){
+  const a=rows[i],b=rows[j];
+  if(a.e._independent_witness===false||b.e._independent_witness===false||!a.family||a.family===b.family)continue;
+  for(const pa of a.props)for(const pb of b.props)if(sameClaim(pa,pb)){add(a.index,pa);add(b.index,pb);}
+ }
+ return rows.filter(r=>matched.has(r.index)).map(r=>({...r.e,_supporting_propositions:[...matched.get(r.index)]}));
+}
 function classifyWitness(e){const s=norm([e.primary_secondary_status,e.source_class,e.witness_type].join(' '));return /primary|ראשוני|direct/.test(s)?'primary':/translation|תרגום|derived/.test(s)?'derived':/secondary|מאוחר|עיבוד/.test(s)?'secondary':'unspecified';}
 function coverageFor(selected,u){const covered=[],missing=[];if(selected.length)covered.push('תוכן המענה');if(u.intent==='circumstances')(selected.some(e=>text(e.documented_circumstances)||text(e.conditions_or_qualifications)||text(e.audience))?covered:missing).push('נסיבות/תנאים/קהל');if(u.intent==='historical')(selected.some(e=>e.date)?covered:missing).push('תאריך/תקופה');if(u.intent==='bibliographic')(selected.some(e=>e.source_url||e.provenance||e.witness_provenance)?covered:missing).push('provenance ביבליוגרפי');if(u.intent==='pattern')(new Set(selected.map(familyKey)).size>=2?covered:missing).push('דפוס בין משפחות ראיות עצמאיות');return{covered,missing};}
 export function buildAnswerModel(index,q,{mode='regular'}={}){
  const{understanding,hits}=retrieveEvidence(index,q),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean));
  if(!usable.length)return{mode,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&families.size<2)return{mode,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
- const cap=mode==='researcher'?24:12,selected=usable.slice(0,cap),claims=synthesizeClaims(selected,understanding,mode==='researcher'?32:12),coverage=coverageFor(selected,understanding);
+ let answerEvidence=usable;
+ if(understanding.intent==='pattern'){
+  answerEvidence=crossFamilyPatternEvidence(usable,understanding);
+  const recurringFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
+  if(recurringFamilies.size<2)return{mode,understanding,answerable:false,reason:'no_cross_family_pattern',claims:[],sources:usable.slice(0,4),answered_well:['נמצאו כמה מקרים מתועדים בנושא'],insufficient_evidence:['לא נמצאה טענה חוזרת דומה בשתי משפחות ראיות עצמאיות; אין לייחס דפוס רוחבי.']};
+ }
+ const cap=mode==='researcher'?24:12,selected=answerEvidence.slice(0,cap),claims=synthesizeClaims(selected,understanding,mode==='researcher'?32:12),coverage=coverageFor(selected,understanding);
  if(!claims.length)return{mode,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:selected,answered_well:coverage.covered,insufficient_evidence:[...coverage.missing,q]};
  const base={mode,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};
  if(mode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean));base.research={evidence_families:selectedIndependentFamilies.size,verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
