@@ -7,6 +7,7 @@ on:
       - 'data/staging/batches/**'
       - 'data/staging/manifests/**'
       - 'scripts/reconcile_metrics.py'
+      - 'scripts/content_readiness.py'
       - 'scripts/reconcile_identity_aliases.py'
       - 'scripts/bulk_promote_indexed.py'
       - 'scripts/bulk_ingest_sichos_kodesh_audio.py'
@@ -44,10 +45,10 @@ jobs:
         run: python scripts/reconcile_identity_aliases.py
       - name: Commit bulk ingestion, promotion and reconciled state if changed
         run: |
-          if [ -z "$(git status --porcelain -- data/items data/staging/batches data/staging/manifests data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json)" ]; then exit 0; fi
+          if [ -z "$(git status --porcelain -- data/items data/staging/batches data/staging/manifests data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json data/content-review-queue.json)" ]; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add data/items data/staging/batches data/staging/manifests data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json
+          git add data/items data/staging/batches data/staging/manifests data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json data/content-review-queue.json
           git commit -m "Bulk-ingest and promote records"
           git pull --rebase origin main
           git push origin HEAD:main

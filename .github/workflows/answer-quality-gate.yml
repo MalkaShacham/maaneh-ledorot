@@ -14,6 +14,8 @@ on:
       - 'scripts/test_answer_*.mjs'
       - 'scripts/test_question_specificity_gate.mjs'
       - 'scripts/reconcile_metrics.py'
+      - 'scripts/content_readiness.py'
+      - 'scripts/test_content_readiness.mjs'
       - 'src/answer-engine.js'
       - 'src/answer-engine-validated.js'
       - '.github/workflows/answer-quality-gate.yml'
@@ -40,6 +42,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Generate evidence index for this exact source revision
+        run: python scripts/reconcile_metrics.py
       - name: Test question-specific retrieval
         run: node scripts/test_question_specificity_gate.mjs
       - name: Test answer synthesis
@@ -50,3 +54,5 @@ jobs:
         run: python scripts/evaluate_answer_quality.py
       - name: Test serialized workflow write safety
         run: python scripts/test_workflow_write_safety.py
+      - name: Test measured content readiness and real-corpus answers
+        run: node scripts/test_content_readiness.mjs

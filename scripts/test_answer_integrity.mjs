@@ -43,18 +43,22 @@ assert.equal(derived.evidence_family_id,'original-family');
 const model={claims:[{text:p,source_numbers:[1],audiences:['הורים']}],sources:[s]};
 assert.equal(contextBoundary(model,citationEntailment(model))[0].valid,false);
 const liveIndex=JSON.parse(fs.readFileSync(new URL('../data/public-search-index.json',import.meta.url),'utf8')).entries;
-const educationModel=buildAnswerModel(liveIndex,'What did the Rebbe say about education?');
+// These regressions deliberately exercise the original three inspected cases.
+// Their single-family/one-claim assertions must not depend on the growing corpus.
+const initialInspectedIndex=liveIndex.filter(e=>['chabad-letter-1273740','chabad-letter-1899575','chabad-letter-1956800'].includes(e.id));
+assert.equal(initialInspectedIndex.length,3,'original inspected witnesses must remain available');
+const educationModel=buildAnswerModel(initialInspectedIndex,'What did the Rebbe say about education?');
 assert.equal(educationModel.answerable,true,'grounded education evidence should remain answerable');
 assert.ok(new Set(educationModel.sources.map(x=>x.evidence_family_id)).size>=2,
  'education retrieval must include at least two independent evidence families');
 assert.ok(educationModel.sources.some(x=>x.id==='chabad-letter-1273740'),
  'inspected parental-priority excerpt must be retrieved for education');
-const anxietyModel=buildAnswerModel(liveIndex,'What did the Rebbe say about anxiety?');
+const anxietyModel=buildAnswerModel(initialInspectedIndex,'What did the Rebbe say about anxiety?');
 assert.equal(anxietyModel.answerable,true,'inspected anxiety proposition should be answerable');
 assert.ok(anxietyModel.sources.some(x=>x.id==='chabad-letter-1956800'));
 assert.equal(anxietyModel.claims.length,1,'anxiety answer must exclude the education proposition from the same letter');
 assert.match(anxietyModel.claims[0].text,/anxiety and worry/);
-const educationPattern=buildAnswerModel(liveIndex,'What pattern did the Rebbe teach about education?',{mode:'researcher'});
+const educationPattern=buildAnswerModel(initialInspectedIndex,'What pattern did the Rebbe teach about education?',{mode:'researcher'});
 assert.equal(educationPattern.understanding.intent,'pattern');
 assert.deepEqual(educationPattern.understanding.subtopic,[],
  'pattern framing must not become a source-content qualifier');
@@ -63,7 +67,7 @@ assert.equal(educationPattern.answerable,false,
 assert.equal(educationPattern.reason,'no_cross_family_pattern');
 assert.ok(new Set(educationPattern.sources.map(x=>x.evidence_family_id)).size>=2,
  'documented cases remain visible even though no recurring claim was established');
-const hebrewEducationPattern=buildAnswerModel(liveIndex,'איזה דפוס חוזר בהדרכות הרבי על חינוך?',{mode:'researcher'});
+const hebrewEducationPattern=buildAnswerModel(initialInspectedIndex,'איזה דפוס חוזר בהדרכות הרבי על חינוך?',{mode:'researcher'});
 assert.equal(hebrewEducationPattern.answerable,false,'Hebrew pattern questions require the same cross-family support');
 assert.equal(hebrewEducationPattern.reason,'no_cross_family_pattern');
 assert.deepEqual(hebrewEducationPattern.understanding.subtopic,[]);
@@ -75,7 +79,7 @@ assert.equal(supportedPattern.answerable,true,'a genuinely recurring proposition
 assert.equal(supportedPattern.research.evidence_families,2);
 assert.deepEqual(supportedPattern.claims[0].evidence_family_ids.sort(),
  ['recurring-family-a','recurring-family-b']);
-const anxietyPattern=buildAnswerModel(liveIndex,'What pattern did the Rebbe teach about anxiety?',{mode:'researcher'});
+const anxietyPattern=buildAnswerModel(initialInspectedIndex,'What pattern did the Rebbe teach about anxiety?',{mode:'researcher'});
 assert.equal(anxietyPattern.answerable,false,'one family must never be presented as a recurring pattern');
 assert.equal(anxietyPattern.reason,'single_evidence_family');
 const historicalModel=buildAnswerModel(liveIndex,'When did the Rebbe teach about education?',{mode:'researcher'});

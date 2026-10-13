@@ -1,4 +1,4 @@
-name: Hourly corpus production pipeline
+name: Hourly corpus maintenance
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
       - 'scripts/hourly_corpus_pipeline.py'
       - 'scripts/reconcile_metrics.py'
       - 'scripts/reconcile_identity_aliases.py'
+      - 'scripts/content_readiness.py'
       - '.github/workflows/hourly-corpus-pipeline.yml'
   schedule:
     - cron: '7 * * * *'
@@ -34,11 +35,31 @@ jobs:
         run: git pull --ff-only origin main
       - name: Run deterministic corpus maintenance
         run: python scripts/hourly_corpus_pipeline.py
+      - name: Publish measured run outcome
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          r=json.loads(Path('data/run-logs/latest.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write('### Corpus maintenance outcome\n\n')
+              f.write('Status: **'+r['status']+'**\n\n')
+              f.write('This job reconciles local data; it does not discover sources or inspect content.\n\n')
+              f.write('| Measure | Before | After | Delta |\n|---|---:|---:|---:|\n')
+              for key in r['after']:
+                  f.write(f"| {key} | {r['before'].get(key)} | {r['after'][key]} | {r['delta'].get(key)} |\n")
+              if r.get('next_action'): f.write('\nRequired next action: '+r['next_action']+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: corpus-maintenance-run-${{ github.run_id }}
+          path: data/run-logs/latest.json
+          retention-days: 7
       - name: Commit actionable corpus changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          ACTIONABLE_PATHS=(data/items data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json)
+          ACTIONABLE_PATHS=(data/items data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json data/content-review-queue.json)
           if git diff --quiet -- "${ACTIONABLE_PATHS[@]}"; then
             echo "No actionable corpus change; run-log-only changes are not committed."
             exit 0

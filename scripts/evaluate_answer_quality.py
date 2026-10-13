@@ -7,6 +7,7 @@ and audits the regression suite for the required two-mode contract.
 """
 from __future__ import annotations
 import json, pathlib, sys
+from content_readiness import answer_eligible as is_answer_eligible
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 INDEX = ROOT / "data/public-search-index.json"
@@ -56,15 +57,6 @@ def main() -> int:
         failures.append("public search index is empty")
 
     content_entries = [e for e in entries if e.get("has_content_evidence")]
-    def is_answer_eligible(e):
-        if e.get("proposition_origin") == "editorial_summary_derived":
-            return False
-        if e.get("proposition_verbatim") is not False:
-            return True
-        return (e.get("proposition_origin") == "source_grounded_paraphrase"
-                and e.get("proposition_verification") == "source_text_inspected"
-                and bool(e.get("proposition_source_locator")))
-
     answer_eligible = [e for e in content_entries if is_answer_eligible(e)]
     if len(content_entries) < MIN_CONTENT_EVIDENCE:
         failures.append(f"answer index has only {len(content_entries)} content-evidence entries; minimum operational floor is {MIN_CONTENT_EVIDENCE}")

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json, pathlib, re, datetime
+from content_readiness import answer_eligible, summarize
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 items=sorted((ROOT/"data/items").glob("*.json"))
 batches=sorted((ROOT/"data/staging/batches").glob("*.json"))
@@ -180,3 +181,26 @@ search_index={"generated":today,"count":len(search_entries),"entries":sorted(sea
 # deployment transfer size without changing any record or field.
 (ROOT/"data/public-search-index.json").write_text(json.dumps(search_index,ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf-8")
 print("search_index_count",len(search_entries))
+
+# Measure the evidence that can actually answer questions, not index summaries.
+out.update(summarize(search_index["entries"]))
+state["current_counts"].update({k:out[k] for k in
+                              ("answer_eligible_unique_sources","answer_eligible_propositions")})
+ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}
+review_candidates=[e for e in search_index["entries"]
+                   if e.get("id") and e.get("source_url") and e["key"] not in ready_keys]
+queue={"schema":"content-review-queue-v1","generated":today,
+       "pending_online_items":len(review_candidates),
+       "policy":"Navigation only. Open and inspect the authorized item text before adding "
+                "propositions; never infer content from a title or scan index. "
+                "A blocked source must be recorded and another candidate tried.",
+       "records":[{k:e.get(k) for k in
+                   ("key","id","title","source_url","aid","language","canonical_file",
+                    "evidence_family_id","verification_scope")}
+                  for e in sorted(review_candidates,key=lambda e:(
+                      0 if str(e.get("language","")).lower() in {"hebrew","he"} else 1,
+                      str(e.get("canonical_file")),str(e["key"])))]}
+(ROOT/"data/content-review-queue.json").write_text(json.dumps(queue,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+(ROOT/"data/public-metrics.json").write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+state_path.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+print("answer_eligible_unique_sources",out["answer_eligible_unique_sources"])

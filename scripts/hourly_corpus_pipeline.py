@@ -30,6 +30,8 @@ def counts(m):
         "canonical": m.get("canonical_unique_item_keys"),
         "indexed": (m.get("status_counts_unique_keys") or {}).get("Indexed"),
         "promotion_ready": m.get("promotion_ready_records"),
+        "answer_eligible": m.get("answer_eligible_unique_sources"),
+        "source_propositions": m.get("answer_eligible_propositions"),
     }
 
 def run(script, *args):
@@ -57,7 +59,7 @@ def main():
         k: (a[k] - b[k]) if isinstance(a.get(k), int) and isinstance(b.get(k), int) else None
         for k in a
     }
-    productive = any((delta.get(k) or 0) > 0 for k in ("verified", "canonical", "indexed"))
+    productive = any((delta.get(k) or 0) > 0 for k in ("verified", "canonical", "indexed", "answer_eligible", "source_propositions"))
     status = "failed" if failed else ("progress" if productive else "no_actionable_change")
     finished = dt.datetime.now(dt.timezone.utc)
     record = {
@@ -65,6 +67,8 @@ def main():
         "run_started_utc": started.isoformat(),
         "run_finished_utc": finished.isoformat(),
         "status": status,
+        "work_type": "deterministic_maintenance; no source acquisition or content inspection",
+        "next_action": "Agent must inspect new authorized item texts from data/content-review-queue.json or ingest a new accessible corpus batch" if not productive else None,
         "before": b,
         "after": a,
         "delta": delta,

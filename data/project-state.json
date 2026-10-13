@@ -20,17 +20,19 @@
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 346,
-    "canonical_unique_item_keys": 9926,
+    "canonical_json_files": 356,
+    "canonical_unique_item_keys": 9936,
     "evidence_family_files": 55,
-    "verified_unique_item_keys": 8228,
+    "verified_unique_item_keys": 8238,
     "status_counts_unique_keys": {
-      "Verified": 8228,
+      "Verified": 8238,
       "Linked": 11,
       "Parsed": 0,
       "Indexed": 1169,
       "Discovered": 3
-    }
+    },
+    "answer_eligible_unique_sources": 17,
+    "answer_eligible_propositions": 53
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -63,6 +65,8 @@
     "Current Alpha retrieval is token/substring based and lacks proposition-level semantic reranking; researcher mode currently exposes metadata rather than a genuinely deeper evidence analysis."
   ],
   "next_work": [
+    "Inspect next accessible item-level texts from data/content-review-queue.json and enrich existing identities in place.",
+    "Expand new accessible corpus batches, preserving content vs bibliographic verification scope.",
     "Implement proposition-level relevance gate and reranking before synthesis; reject lexical-only matches.",
     "Implement genuinely distinct regular and researcher answer renderers according to ANSWER_ENGINE_SPEC.md.",
     "Populate canonical items with source-grounded proposition fields where the authorized witness supports them.",
@@ -104,5 +108,14 @@
       "rights/access restriction",
       "metadata ambiguity or unresolved identity/dedup conflict"
     ]
+  },
+  "development_recovery": {
+    "diagnosed": "2026-10-13",
+    "maintenance_is_not_development": true,
+    "stalled_runs_2026_10_06_to_12": 170,
+    "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
+    "content_review_queue": "data/content-review-queue.json",
+    "current_batch": "data/content-reviews/2026-10-13-recovery-batch.json",
+    "required_agent_action": "Inspect authorized item-level content, add bounded source-grounded propositions with locators, expand accessible corpus, and verify live content readiness after publication."
   }
 }
