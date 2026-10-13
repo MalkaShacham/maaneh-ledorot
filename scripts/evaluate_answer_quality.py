@@ -56,9 +56,16 @@ def main() -> int:
         failures.append("public search index is empty")
 
     content_entries = [e for e in entries if e.get("has_content_evidence")]
-    answer_eligible = [e for e in content_entries
-                       if e.get("proposition_origin") != "editorial_summary_derived"
-                       and e.get("proposition_verbatim") is not False]
+    def is_answer_eligible(e):
+        if e.get("proposition_origin") == "editorial_summary_derived":
+            return False
+        if e.get("proposition_verbatim") is not False:
+            return True
+        return (e.get("proposition_origin") == "source_grounded_paraphrase"
+                and e.get("proposition_verification") == "source_text_inspected"
+                and bool(e.get("proposition_source_locator")))
+
+    answer_eligible = [e for e in content_entries if is_answer_eligible(e)]
     if len(content_entries) < MIN_CONTENT_EVIDENCE:
         failures.append(f"answer index has only {len(content_entries)} content-evidence entries; minimum operational floor is {MIN_CONTENT_EVIDENCE}")
     for e in content_entries:
@@ -72,6 +79,8 @@ def main() -> int:
             failures.append(f"{key}: content evidence lacks proposition_origin")
         if e.get("proposition_origin") == "editorial_summary_derived" and e.get("proposition_verbatim") is not False:
             failures.append(f"{key}: derived editorial proposition must be explicitly non-verbatim")
+        if e.get("proposition_origin") == "source_grounded_paraphrase" and not is_answer_eligible(e):
+            failures.append(f"{key}: source-grounded paraphrase lacks inspected-text verification or source locator")
         if e.get("status") == "Verified":
             if not (e.get("witness_type") or e.get("source_witness") or e.get("witness_provenance")):
                 failures.append(f"{key}: Verified content evidence lacks witness provenance")
@@ -122,6 +131,7 @@ def main() -> int:
         "content_evidence_entries":len(content_entries),
         "answer_eligible_content_evidence_entries":len(answer_eligible),
         "explicit_proposition_entries":sum(1 for e in content_entries if e.get("proposition_origin")=="explicit_proposition_field"),
+        "source_grounded_paraphrase_entries":sum(1 for e in content_entries if e.get("proposition_origin")=="source_grounded_paraphrase"),
         "derived_editorial_proposition_entries":sum(1 for e in content_entries if e.get("proposition_origin")=="editorial_summary_derived"),
         "verified_content_evidence_entries":len(verified_content),
         "content_evidence_families":len(families),

@@ -4,7 +4,9 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 items=list((ROOT/"data/items").glob("*.json"))
 batches=list((ROOT/"data/staging/batches").glob("*.json"))
 manifests=list((ROOT/"data/staging/manifests").glob("*.json"))
-PIPE={"Discovered","Indexed","Parsed","Linked","Verified"}
+# Ordered highest-to-lowest so reconciliation and serialized metrics are
+# deterministic across Python processes (a set's iteration order is randomized).
+PIPE=("Verified","Linked","Parsed","Indexed","Discovered")
 def identity_keys(d):
     if not isinstance(d,dict): return []
     out=[]
@@ -147,7 +149,7 @@ for fp in items:
         # It is never represented as a verbatim quotation or independent witness.
         if explicit_props:
             response_props=explicit_props
-            proposition_origin="explicit_proposition_field"
+            proposition_origin=x.get("proposition_origin") or prop.get("proposition_origin") or "explicit_proposition_field"
             proposition_verbatim=x.get("proposition_verbatim") if "proposition_verbatim" in x else prop.get("proposition_verbatim")
         elif summary and verification_scope and witness_provenance:
             response_props=[summary]
@@ -167,9 +169,14 @@ for fp in items:
             if not witness_provenance: integrity_issues.append("verified_content_missing_witness_provenance")
             if integrity_issues: search_status="Linked"
         entry={"key":key,"id":x.get("id"),"title":x.get("title") or x.get("id") or key,"summary":summary,"source_class":x.get("source_class") or x.get("collection") or x.get("type"),"status":search_status,"canonical_status":st or x.get("pipeline_status") or x.get("verification_status") or "unknown","context_status":context_status,"context_status_raw":raw_context if str(raw_context).lower()!=context_status else None,"date":x.get("date_original") or x.get("event_date") or x.get("event_date_hebrew"),"language":x.get("language") or "unknown","source_url":x.get("source_url") or prov.get("source_url"),"aid":x.get("aid") or loc.get("aid"),"locator":loc or x.get("locator"),"rights_status":x.get("rights_status") or access.get("rights_status"),"publisher_terms":tax.get("publisher_index_terms") or [],"research_terms":tax.get("research_terms") or [],"relations":x.get("relations") if isinstance(x.get("relations"),list) else [],"canonical_file":str(fp.relative_to(ROOT)),"documented_circumstances":x.get("documented_circumstances") or prop.get("documented_circumstances"),"question_or_problem":x.get("question_or_problem") or prop.get("question_or_problem"),"response_propositions":response_props,"conditions_or_qualifications":x.get("conditions_or_qualifications") or prop.get("conditions_or_qualifications") or [],"audience":x.get("audience") or prop.get("audience"),"verification_scope":verification_scope,"witness_provenance":witness_provenance,"evidence_family_id":x.get("evidence_family_id") or prop.get("evidence_family_id"),"primary_secondary_status":x.get("primary_secondary_status") or prop.get("primary_secondary_status"),"has_content_evidence":bool(response_props),"proposition_origin":proposition_origin,"proposition_verbatim":proposition_verbatim,"evidence_integrity_issues":integrity_issues}
+        if proposition_origin == "source_grounded_paraphrase":
+            entry["proposition_verification"]=x.get("proposition_verification") or prop.get("proposition_verification")
+            entry["proposition_source_locator"]=x.get("proposition_source_locator") or prop.get("proposition_source_locator")
         entry["search_text"]=" ".join(flatten_terms([entry["title"],entry["summary"],entry["source_class"],entry["date"],entry["language"],entry["publisher_terms"],entry["research_terms"],entry["question_or_problem"],entry["response_propositions"],entry["conditions_or_qualifications"],entry["audience"],entry["aid"],entry["locator"]]))
         old=search_entries.get(key)
         if old is None or rank.get(entry["status"],0)>=rank.get(old.get("status"),0):search_entries[key]=entry
 search_index={"generated":today,"count":len(search_entries),"entries":sorted(search_entries.values(),key=lambda e:(0 if e.get("status")=="Verified" else 1,str(e.get("date") or ""),str(e.get("title") or "")))}
-(ROOT/"data/public-search-index.json").write_text(json.dumps(search_index,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+# This generated index is shipped to browsers; compact JSON cuts repository and
+# deployment transfer size without changing any record or field.
+(ROOT/"data/public-search-index.json").write_text(json.dumps(search_index,ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf-8")
 print("search_index_count",len(search_entries))

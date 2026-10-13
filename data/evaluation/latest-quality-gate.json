@@ -2,13 +2,14 @@
   "gate": "answer-quality-structural-v2",
   "index_generated": "2026-10-12",
   "entries_total": 9590,
-  "content_evidence_entries": 126,
-  "answer_eligible_content_evidence_entries": 0,
+  "content_evidence_entries": 122,
+  "answer_eligible_content_evidence_entries": 1,
   "explicit_proposition_entries": 0,
-  "derived_editorial_proposition_entries": 126,
-  "verified_content_evidence_entries": 93,
-  "content_evidence_families": 0,
-  "partial_context_content_entries": 111,
+  "source_grounded_paraphrase_entries": 1,
+  "derived_editorial_proposition_entries": 121,
+  "verified_content_evidence_entries": 89,
+  "content_evidence_families": 1,
+  "partial_context_content_entries": 107,
   "regression_cases": 27,
   "required_regression_cases_floor": 26,
   "required_dimensions": [
@@ -24,10 +25,7 @@
   ],
   "critical_cases_enforced": 14,
   "failures": [],
-  "warnings": [
-    "content evidence currently has no explicit Evidence Family assignments; pattern claims must rely on conservative witness-level dedup only",
-    "no answer-eligible source propositions are available; editorial summaries remain searchable but are blocked from answer synthesis"
-  ],
+  "warnings": [],
   "passed": true,
   "note": "Structural gate only. Semantic relevance and citation entailment still require per-question evaluation; lexical overlap is not accepted as semantic proof."
 }

@@ -22,9 +22,11 @@ const topicSupported=(sources,topic)=>{const aliases=TOPIC_ALIASES[topic]||[topi
 const isDerived=e=>/translation|תרגום|derived/.test(norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' ')));
 // An index entry establishes the letter's identity/locator, not what the Rebbe said.
 const isLocatorOnly=e=>/bibliographic_locator_verified_only|identity\/locator|bibliographic identity|index[- ]first|metadata[_ -]and[_ -]locator[_ -]only/.test(norm([e?.context_status,e?.verification_scope,e?.rights_status].join(' ')));
-// Editorial summaries are discovery aids. They are not inspected source wording and
-// must never be copied into an answer as if they were a documented proposition.
-const isEditorialSummaryOnly=e=>e?.proposition_origin==='editorial_summary_derived'||e?.proposition_verbatim===false;
+// Non-verbatim text is answer evidence only when it is an explicit source-grounded
+// paraphrase whose source text was inspected and whose location was recorded.
+const isInspectedSourceParaphrase=e=>e?.proposition_origin==='source_grounded_paraphrase'&&e?.proposition_verbatim===false&&e?.proposition_verification==='source_text_inspected'&&Boolean(e?.proposition_source_locator);
+// Editorial summaries and unverified paraphrases remain discovery aids only.
+const isEditorialSummaryOnly=e=>e?.proposition_origin==='editorial_summary_derived'||(e?.proposition_verbatim===false&&!isInspectedSourceParaphrase(e));
 const tokens=s=>new Set(norm(s).split(/\s+/).filter(x=>x.length>1));
 const overlapRatio=(a,b)=>{const A=tokens(a),B=tokens(b);if(!A.size||!B.size)return 0;let n=0;A.forEach(x=>{if(B.has(x))n++;});return n/Math.min(A.size,B.size);};
 const CATALOG_STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו בנושא בעניין רוצה לדעת the a an of to and or on about what how did does is are rebbe say says said'.split(' '));

@@ -27,9 +27,18 @@ assert.equal(retrieveCatalogMatches([{...editorial,title:'בריאות'}],'חי�
  'editorial discovery text may rank a lead without becoming answer evidence');
 assert.equal(retrieveCatalogMatches([{...editorial,title:'בריאות',summary:'רפואה בלבד',response_propositions:[]}],'חינוך ילדים').length,0,
  'unrelated catalog records must not be shown');
+const groundedParaphrase={...s,proposition_origin:'source_grounded_paraphrase',proposition_verbatim:false,
+ proposition_verification:'source_text_inspected',proposition_source_locator:'published letter, paragraph 4'};
+const [normalizedParaphrase]=normalizeEvidenceIntegrity([groundedParaphrase]);
+assert.equal(normalizedParaphrase.has_content_evidence,true,'located source-grounded paraphrase remains answer evidence');
+assert.equal(buildAnswerModel([groundedParaphrase],'מה הרבי אמר על חינוך ילדים?').answerable,true);
+const unverifiedParaphrase={...groundedParaphrase,proposition_source_locator:null};
+const [normalizedUnverified]=normalizeEvidenceIntegrity([unverifiedParaphrase]);
+assert.equal(normalizedUnverified.has_content_evidence,false,'unlocated paraphrase is blocked');
+assert.ok(normalizedUnverified._evidence_integrity_issues.includes('editorial_summary_answer_evidence_blocked'));
 const derived=normalizeEvidenceIntegrity([{...s,source_class:'derived translation',parent_evidence_family_id:'original-family'}])[0];
 assert.equal(derived._independent_witness,false);
 assert.equal(derived.evidence_family_id,'original-family');
 const model={claims:[{text:p,source_numbers:[1],audiences:['הורים']}],sources:[s]};
 assert.equal(contextBoundary(model,citationEntailment(model))[0].valid,false);
-console.log('PASS: exact citations, evidence scope, safe catalog leads, derived family and context boundary');
+console.log('PASS: exact citations, evidence scope, inspected paraphrases, safe catalog leads, derived family and context boundary');
