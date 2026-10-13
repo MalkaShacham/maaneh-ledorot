@@ -31,8 +31,13 @@ def summarize(entries):
     identity = lambda e: str(e.get("evidence_family_id") or e.get("aid")
                              or e.get("source_url") or e["key"])
     unique = {identity(e): e for e in usable}
+    content_verified = {
+        key: entry for key, entry in unique.items()
+        if (entry.get("canonical_status") or entry.get("status")) == "Verified"
+    }
     return {
         "answer_eligible_unique_sources": len(unique),
+        "content_verified_unique_sources": len(content_verified),
         "answer_eligible_propositions": sum(len(e["response_propositions"])
                                             for e in unique.values()),
         "content_readiness_note": "Only evidence accepted by the answer engine; "

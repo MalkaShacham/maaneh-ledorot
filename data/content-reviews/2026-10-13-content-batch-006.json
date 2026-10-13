@@ -1,0 +1,48 @@
+{
+  "schema": "content-review-batch-v1",
+  "date": "2026-10-13",
+  "batch_id": "2026-10-13-content-batch-006",
+  "purpose": "Promote genuinely inspected Indexed item pages so content work increases both content-readiness and canonical Verified counts.",
+  "source_policy": "Authorized Chabad.org / TheRebbe.org item-level pages only. Store bounded non-verbatim research paraphrases and exact locators; do not copy protected full text.",
+  "reviewed_items": 14,
+  "new_canonical_identities": 0,
+  "indexed_identities_promoted_to_verified": 13,
+  "existing_verified_identities_enriched": 1,
+  "added_response_propositions": 29,
+  "before": {
+    "verified_unique_item_keys": 8238,
+    "answer_eligible_unique_sources": 71,
+    "content_verified_unique_sources": 68,
+    "answer_eligible_propositions": 208,
+    "pending_online_items": 1020
+  },
+  "after": {
+    "verified_unique_item_keys": 8251,
+    "answer_eligible_unique_sources": 85,
+    "content_verified_unique_sources": 82,
+    "answer_eligible_propositions": 237,
+    "pending_online_items": 1006
+  },
+  "verification_scope": {
+    "living_torah": "Nine authorized item-page attributed synopses/short excerpts and event metadata were inspected. The audiovisual recordings were not independently played or transcribed, so the stored Hebrew propositions are derived research paraphrases and not transcript witnesses.",
+    "letters": "Five authorized Chabad.org / Sichos in English item-level translations were inspected. The Hebrew originals, incoming correspondence, manuscripts and secretariat copies were not independently inspected; the English translations are derived witnesses, not independent additional sources."
+  },
+  "items": [
+    {"id": "canonical-lt-player-1052375", "aid": 1052375, "result": "promoted_to_verified"},
+    {"id": "canonical-lt-player-1317518", "aid": 1317518, "result": "promoted_to_verified", "limitation": "documents the report to the Rebbe, not a detailed Rebbe response"},
+    {"id": "canonical-lt-player-297061", "aid": 297061, "result": "promoted_to_verified"},
+    {"id": "canonical-lt-player-372597", "aid": 372597, "result": "promoted_to_verified"},
+    {"id": "canonical-lt-player-3914305", "aid": 3914305, "result": "promoted_to_verified"},
+    {"id": "canonical-lt-player-4592176", "aid": 4592176, "result": "promoted_to_verified"},
+    {"id": "canonical-lt-player-4596807", "aid": 4596807, "result": "promoted_to_verified"},
+    {"id": "canonical-lt-player-712300", "aid": 712300, "result": "promoted_to_verified"},
+    {"id": "canonical-lt-player-759717", "aid": 759717, "result": "promoted_to_verified"},
+    {"id": "chabad-letter-2283000", "aid": 2283000, "result": "enriched_existing_verified_identity", "dedup_note": "the separate Indexed alias was not promoted or counted as an independent witness"},
+    {"id": "canonical-ik-v2-letter-211-aid-2283003", "aid": 2283003, "result": "promoted_to_verified"},
+    {"id": "canonical-ik-v2-letter-212-aid-2283009", "aid": 2283009, "result": "promoted_to_verified"},
+    {"id": "canonical-ik-v2-letter-213-aid-2283011", "aid": 2283011, "result": "promoted_to_verified"},
+    {"id": "canonical-ik-v2-letter-232-aid-2294977", "aid": 2294977, "result": "promoted_to_verified"}
+  ],
+  "code_change": "Metrics now publish content_verified_unique_sources separately and the hourly productivity snapshot tracks it, preventing content inspection from being hidden behind the broader bibliographic Verified total.",
+  "rights": "Metadata, links and bounded non-verbatim research paraphrases only. No protected full text stored."
+}

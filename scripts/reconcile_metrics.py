@@ -185,7 +185,8 @@ print("search_index_count",len(search_entries))
 # Measure the evidence that can actually answer questions, not index summaries.
 out.update(summarize(search_index["entries"]))
 state["current_counts"].update({k:out[k] for k in
-                              ("answer_eligible_unique_sources","answer_eligible_propositions")})
+                              ("answer_eligible_unique_sources","content_verified_unique_sources",
+                               "answer_eligible_propositions")})
 ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}
 review_candidates=[e for e in search_index["entries"]
                    if e.get("id") and e.get("source_url") and e["key"] not in ready_keys]

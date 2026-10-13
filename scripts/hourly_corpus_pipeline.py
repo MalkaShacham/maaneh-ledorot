@@ -31,6 +31,7 @@ def counts(m):
         "indexed": (m.get("status_counts_unique_keys") or {}).get("Indexed"),
         "promotion_ready": m.get("promotion_ready_records"),
         "answer_eligible": m.get("answer_eligible_unique_sources"),
+        "content_verified": m.get("content_verified_unique_sources"),
         "source_propositions": m.get("answer_eligible_propositions"),
     }
 
@@ -59,7 +60,7 @@ def main():
         k: (a[k] - b[k]) if isinstance(a.get(k), int) and isinstance(b.get(k), int) else None
         for k in a
     }
-    productive = any((delta.get(k) or 0) > 0 for k in ("verified", "canonical", "indexed", "answer_eligible", "source_propositions"))
+    productive = any((delta.get(k) or 0) > 0 for k in ("verified", "canonical", "indexed", "answer_eligible", "content_verified", "source_propositions"))
     status = "failed" if failed else ("progress" if productive else "no_actionable_change")
     finished = dt.datetime.now(dt.timezone.utc)
     record = {
