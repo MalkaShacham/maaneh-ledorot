@@ -185,6 +185,15 @@ function researcherAnalysis(selected,claims){
   distinctions:{periods:groupSourceValues(selected,'date'),audiences:groupSourceValues(selected,'audience'),circumstances:groupSourceValues(selected,'documented_circumstances'),conditions:groupSourceValues(selected,'conditions_or_qualifications'),source_classes:groupSourceValues(selected,'source_class'),context_statuses:groupSourceValues(selected,e=>e.context_status||'unknown')}
  };
 }
+function retainCitedSources(selected,claims){
+ const used=new Set(claims.flatMap(claim=>claim.source_numbers)),oldToNew=new Map(),sources=[];
+ selected.forEach((source,index)=>{const oldNumber=index+1;if(used.has(oldNumber)){oldToNew.set(oldNumber,sources.length+1);sources.push(source);}});
+ const remap=number=>oldToNew.get(number);
+ return{sources,claims:claims.map(claim=>({...claim,
+  source_numbers:claim.source_numbers.map(remap).filter(Boolean),
+  witnesses:arr(claim.witnesses).filter(w=>oldToNew.has(w.source_number)).map(w=>({...w,source_number:remap(w.source_number)}))
+ }))};
+}
 export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
  const{understanding,hits}=retrieveEvidence(index,q),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean));
@@ -196,8 +205,9 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   const recurringFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(recurringFamilies.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_cross_family_pattern',claims:[],sources:usable.slice(0,4),answered_well:['נמצאו כמה מקרים מתועדים בנושא'],insufficient_evidence:['לא נמצאה טענה חוזרת דומה בשתי משפחות ראיות עצמאיות; אין לייחס דפוס רוחבי.']};
  }
- const selected=answerEvidence.slice(0,budget.sources),claims=synthesizeClaims(selected,understanding,budget.claims),coverage=coverageFor(selected,understanding);
- if(!claims.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:selected,answered_well:coverage.covered,insufficient_evidence:[...coverage.missing,q]};
+ const candidates=answerEvidence.slice(0,budget.sources),synthesized=synthesizeClaims(candidates,understanding,budget.claims),initialCoverage=coverageFor(candidates,understanding);
+ if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
+ const retained=retainCitedSources(candidates,synthesized),selected=retained.sources,claims=retained.claims,coverage=coverageFor(selected,understanding);
  const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};
  if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims);base.research={evidence_families:selectedIndependentFamilies.size,verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;

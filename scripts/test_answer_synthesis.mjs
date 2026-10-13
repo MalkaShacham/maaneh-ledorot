@@ -29,6 +29,15 @@ assert.equal(researcher.research.evidence_families,5);
 assert.equal(new Set(researcher.sources.map(s=>s.source_class)).size,5);
 assert.equal(new Set(regular.claims.slice(0,5).map(c=>c.source_numbers[0])).size,5,
  'first synthesis round must cover five different sources');
+const sixSourceRegular=buildAnswerModel(Array.from({length:6},(_,i)=>make(i,[
+ `חינוך ילדים דורש מענה מתועד למקרה ${i+1}`])),question);
+const citedSources=new Set(sixSourceRegular.claims.flatMap(c=>c.source_numbers));
+assert.equal(sixSourceRegular.sources.length,5,'uncited sixth source must be removed from a five-claim answer');
+assert.equal(citedSources.size,5);
+assert.ok(sixSourceRegular.sources.every((_,i)=>citedSources.has(i+1)),
+ 'every displayed source must support at least one displayed claim');
+assert.ok(sixSourceRegular.claims.every(c=>c.source_numbers.every(n=>n>=1&&n<=sixSourceRegular.sources.length)),
+ 'claim citations must be remapped after uncited sources are removed');
 const p='חינוך ילדים מחייב דוגמה אישית';
 const same=buildAnswerModel([make(0,[p]),make(1,[p])],question);
 assert.equal(same.claims.length,1);
