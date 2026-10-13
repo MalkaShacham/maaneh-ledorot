@@ -7,6 +7,21 @@
   "date_precision": "exact_as_publisher",
   "language": "Hebrew",
   "context_status": "partial",
+  "response_propositions": [
+    "האיגרת מסבירה את מספר מאה ועשרים הצירופים של שם אלקים באמצעות מספר הסידורים האפשריים של חמש אותיות.",
+    "לפי ההסבר, שינוי סדר האותיות מבטא שינוי באופן הפעולה, והאות הראשונה בצירוף נתפסת ככוח הדומיננטי בו.",
+    "המשך התשובה מקשר בין צירופים של גילוי והסתר, ומסביר מדוע ארבעים ושמונה צירופים מסוימים מתוארים כמקור יניקה לקליפות לאחר ירידה והשתלשלות."
+  ],
+  "proposition_language": "Hebrew",
+  "proposition_origin": "source_grounded_paraphrase",
+  "proposition_verbatim": false,
+  "proposition_verification": "source_text_inspected",
+  "proposition_source_locator": "סעיף א על מאה ועשרים ומ״ח צירופי שם אלקים; דף המו״ל שורות 250-262",
+  "verification_scope": "נוסח האיגרת בעברית בדף הפריט המוסמך נבדק. התמציות מוגבלות לסעיף א ואינן מסכמות את כל שלושת נושאי האיגרת; העתק המזכירות והמקור הפיזי לא נבדקו.",
+  "documented_circumstances": "מכתב קעז, ט׳ טבת תש״ה, לר׳ מנחם מענדל מרגלית; תשובה למספר שאלות בקבלה ובחסידות.",
+  "evidence_family_id": "original-letter-aid-4666216",
+  "primary_secondary_status": "authorized publisher original-language Hebrew letter witness; independent published witness; publisher reports later completion from a secretariat copy",
+  "rights_status": "copyrighted-source; bounded research paraphrases and link only; no protected full text copied",
   "summary_researcher": "Published letter explicitly structured as answers to questions in the recipient's letter, including questions on the 120 permutations of the Divine name and other textual/Chassidic issues. The incoming letter is not present.",
   "provenance": {
     "authorship_status": "publisher-attributed to Rabbi Menachem Schneerson",
@@ -15,20 +30,58 @@
     "transmission_type": "published correspondence",
     "textual_status": "authorized publisher presentation; staging metadata reports a later portion completed from a secretariat copy, not independently inspected",
     "editorial_scope": "item-level page",
-    "verification_status": "verified_against_direct_authorized_publisher_item_witness_2026-09-22",
+    "verification_status": "source_text_inspected",
     "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666216/jewish/page.htm",
-    "accessed": "2026-09-22"
+    "accessed": "2026-10-13"
   },
-  "locator": {"aid":4666216,"volume":2,"letter":"קעז"},
-  "witness": {"kind":"text","state":"published item witness","complete_partial":"unknown","notes":"Incoming questions and underlying secretariat copy were not independently inspected."},
-  "access": {"access_level":"open","rights_status":"copyrighted-link-only","reuse_notes":"Metadata and research summary only; protected full text not stored."},
+  "locator": {
+    "aid": 4666216,
+    "volume": 2,
+    "letter": "קעז"
+  },
+  "witness": {
+    "kind": "text",
+    "state": "published item witness",
+    "complete_partial": "unknown",
+    "notes": "Incoming questions and underlying secretariat copy were not independently inspected."
+  },
+  "access": {
+    "access_level": "open",
+    "rights_status": "copyrighted-link-only",
+    "reuse_notes": "Metadata and research summary only; protected full text not stored."
+  },
   "relations": [
-    {"target_locator":"Igrot Kodesh letter קפא","relationship_type":"editorial_cross_reference","status":"publisher-exposed"},
-    {"target_locator":"Igrot Kodesh letter רכא","relationship_type":"editorial_cross_reference","status":"publisher-exposed"},
-    {"target_locator":"Igrot Kodesh letter שכה","relationship_type":"editorial_cross_reference","status":"publisher-exposed"},
-    {"target_locator":"Igrot Kodesh letter שע","relationship_type":"editorial_cross_reference","status":"publisher-exposed"}
+    {
+      "target_locator": "Igrot Kodesh letter קפא",
+      "relationship_type": "editorial_cross_reference",
+      "status": "publisher-exposed"
+    },
+    {
+      "target_locator": "Igrot Kodesh letter רכא",
+      "relationship_type": "editorial_cross_reference",
+      "status": "publisher-exposed"
+    },
+    {
+      "target_locator": "Igrot Kodesh letter שכה",
+      "relationship_type": "editorial_cross_reference",
+      "status": "publisher-exposed"
+    },
+    {
+      "target_locator": "Igrot Kodesh letter שע",
+      "relationship_type": "editorial_cross_reference",
+      "status": "publisher-exposed"
+    }
   ],
-  "taxonomy": {"publisher_index_terms":[],"research_terms":["correspondence","questions and answers","Chassidut","Divine names"],"response_case_candidate":true},
+  "taxonomy": {
+    "publisher_index_terms": [],
+    "research_terms": [
+      "correspondence",
+      "questions and answers",
+      "Chassidut",
+      "Divine names"
+    ],
+    "response_case_candidate": true
+  },
   "epistemic_level": 1,
   "notes": "Dedup review by stable aid/letter locator found no canonical match before promotion. Verified applies to the publisher item witness; context remains Partial."
 }

@@ -7,6 +7,21 @@
   "date_precision": "exact_as_publisher",
   "language": "Hebrew",
   "context_status": "partial",
+  "response_propositions": [
+    "האיגרת עוסקת במחלוקת אם חילול שבת לצורך חולה שיש בו סכנה הוא בגדר דחייה או היתר, ומפרידה בין נוסח השאלה לבין הערות התשובה.",
+    "בהערות נדחית הראיה שלפיה הרמב״ם בהכרח חזר בו, ומודגש שפשט לשונו הובן בידי פוסקים רבים כשבת דחויה אצל פיקוח נפש.",
+    "גם לשיטה המדברת על היתר, האיגרת מסייגת שאין להתעלם מחלופה מותרת כאשר אפשר לבצע את הצורך בדרך היתר."
+  ],
+  "proposition_language": "Hebrew",
+  "proposition_origin": "source_grounded_paraphrase",
+  "proposition_verbatim": false,
+  "proposition_verification": "source_text_inspected",
+  "proposition_source_locator": "גוף האיגרת והערות א-ד לאחר המפריד; דף המו״ל שורות 250-266",
+  "verification_scope": "הפרסום העברי המוסמך נבדק, תוך הבחנה בין נוסח המכתב שהועתק לבין הערות המחבר. התמציות אינן פסק הלכה ואינן תחליף לעיון במקורות; הצילום הפיזי והמכתב הנכנס המקורי לא נבדקו.",
+  "documented_circumstances": "מכתב קעו, ח׳ טבת תש״ה, תשובה למכתב מנר שלישי של חנוכה; הדף מציג טיעון הלכתי מצוטט ולאחריו הערות מפורטות.",
+  "evidence_family_id": "original-letter-aid-4666215",
+  "primary_secondary_status": "authorized publisher original-language Hebrew letter witness; independent published witness; publisher reports completion from a photograph",
+  "rights_status": "copyrighted-source; bounded research paraphrases and link only; no protected full text copied",
   "summary_researcher": "Published response to a Chanukah-period letter containing a halakhic inquiry concerning Shabbat and a dangerously ill patient. The page preserves the response framing; the incoming letter itself is not independently available in this record.",
   "provenance": {
     "authorship_status": "publisher-attributed to Rabbi Menachem Schneerson",
@@ -15,15 +30,43 @@
     "transmission_type": "published correspondence",
     "textual_status": "authorized publisher presentation; staging metadata reports publisher note that the letter was completed from a photograph, but the photograph itself was not inspected",
     "editorial_scope": "item-level page",
-    "verification_status": "verified_against_direct_authorized_publisher_item_witness_2026-09-22",
+    "verification_status": "source_text_inspected",
     "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666215/jewish/page.htm",
-    "accessed": "2026-09-22"
+    "accessed": "2026-10-13"
   },
-  "locator": {"aid":4666215,"volume":2,"letter":"קעו"},
-  "witness": {"kind":"text","state":"published item witness","complete_partial":"unknown","notes":"Underlying photograph and incoming inquiry were not independently inspected."},
-  "access": {"access_level":"open","rights_status":"copyrighted-link-only","reuse_notes":"Metadata and research summary only; protected full text not stored."},
-  "relations": [{"target_locator":"Igrot Kodesh volume 1 letter קלב","relationship_type":"editorial_cross_reference","status":"publisher-exposed; target equivalence not independently checked in this run"}],
-  "taxonomy": {"publisher_index_terms":[],"research_terms":["correspondence","halacha","Shabbat","dangerously ill patient"],"response_case_candidate":true},
+  "locator": {
+    "aid": 4666215,
+    "volume": 2,
+    "letter": "קעו"
+  },
+  "witness": {
+    "kind": "text",
+    "state": "published item witness",
+    "complete_partial": "unknown",
+    "notes": "Underlying photograph and incoming inquiry were not independently inspected."
+  },
+  "access": {
+    "access_level": "open",
+    "rights_status": "copyrighted-link-only",
+    "reuse_notes": "Metadata and research summary only; protected full text not stored."
+  },
+  "relations": [
+    {
+      "target_locator": "Igrot Kodesh volume 1 letter קלב",
+      "relationship_type": "editorial_cross_reference",
+      "status": "publisher-exposed; target equivalence not independently checked in this run"
+    }
+  ],
+  "taxonomy": {
+    "publisher_index_terms": [],
+    "research_terms": [
+      "correspondence",
+      "halacha",
+      "Shabbat",
+      "dangerously ill patient"
+    ],
+    "response_case_candidate": true
+  },
   "epistemic_level": 1,
   "notes": "Dedup review by stable aid/letter locator found no canonical match before promotion. Verified applies to the publisher item witness; context remains Partial."
 }
