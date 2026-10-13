@@ -72,6 +72,15 @@ const historicalModel=buildAnswerModel(liveIndex,'When did the Rebbe teach about
 assert.equal(historicalModel.answerable,true,'date intent must not require the word when in source text');
 assert.deepEqual(historicalModel.understanding.subtopic,[]);
 assert.ok(historicalModel.answered_well.includes('תאריך/תקופה'));
+assert.ok(historicalModel.sources.every(x=>Boolean(x.date)),
+ 'historical answers must exclude witnesses with circumstances but no date');
+assert.equal(historicalModel.sources.some(x=>x.id==='chabad-letter-1273740'),false,
+ 'the undated parental-priority excerpt must not answer a when question');
+const undatedHistorical=buildAnswerModel([{...groundedParaphrase,
+ documented_circumstances:['A parent described a current education decision.']}],
+ 'When did the Rebbe teach about education?',{mode:'researcher'});
+assert.equal(undatedHistorical.answerable,false,
+ 'non-temporal circumstances cannot substitute for date/period evidence');
 const bibliographicModel=buildAnswerModel(liveIndex,'What is the source about education?',{mode:'researcher'});
 assert.equal(bibliographicModel.answerable,true,'source intent must use provenance rather than require source in proposition text');
 assert.ok(bibliographicModel.answered_well.includes('provenance ביבליוגרפי'));
