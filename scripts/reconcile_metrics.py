@@ -175,7 +175,10 @@ for fp in items:
             entry["proposition_source_locator"]=x.get("proposition_source_locator") or prop.get("proposition_source_locator")
         entry["search_text"]=" ".join(flatten_terms([entry["title"],entry["summary"],entry["source_class"],entry["date"],entry["language"],entry["publisher_terms"],entry["research_terms"],entry["question_or_problem"],entry["response_propositions"],entry["conditions_or_qualifications"],entry["audience"],entry["aid"],entry["locator"]]))
         old=search_entries.get(key)
-        if old is None or rank.get(entry["status"],0)>=rank.get(old.get("status"),0):search_entries[key]=entry
+        # Prefer inspected answer evidence over a duplicate catalog-only record.
+        # Keep the entire witness together; never mix propositions/context fields.
+        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
+        if old is None or priority(entry)>priority(old):search_entries[key]=entry
 search_index={"generated":today,"count":len(search_entries),"entries":sorted(search_entries.values(),key=lambda e:(0 if e.get("status")=="Verified" else 1,str(e.get("date") or ""),str(e.get("title") or "")))}
 # This generated index is shipped to browsers; compact JSON cuts repository and
 # deployment transfer size without changing any record or field.

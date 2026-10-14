@@ -14,6 +14,14 @@ assert.equal(metrics.answer_eligible_propositions,[...unique.values()].reduce((n
 const queue=JSON.parse(await readFile(new URL('data/content-review-queue.json',root)));
 assert.equal(new Set(queue.records.map(e=>e.key)).size,queue.records.length);
 const ready=new Set(eligible.map(e=>e.key));
+// These letters also occur in metadata-only promotion batches. Reconciliation
+// must retain the inspected witness, including its context and source locator.
+for(const aid of [4666202,4666207,4666210]){
+  const e=idx.entries.find(e=>e.key===`aid:${aid}`);
+  assert(e && ready.has(e.key),`duplicate metadata must not hide inspected letter ${aid}`);
+  assert.equal(e.canonical_file,`data/items/chabad-letter-${aid}.json`);
+  assert(e.proposition_source_locator && e.documented_circumstances);
+}
 assert(queue.records.every(e=>e.source_url&&!ready.has(e.key)),'review queue must exclude inspected content');
 for(const q of ['מה הרבי אמר על חינוך ילדים?','מה הרבי אמר על דאגה?','מה הרבי אמר על בטחון?']){
   for(const mode of ['regular','researcher']){

@@ -35,6 +35,15 @@ jobs:
         run: git pull --ff-only origin main
       - name: Run deterministic corpus maintenance
         run: python scripts/hourly_corpus_pipeline.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate the reconciled answer evidence before publication
+        run: |
+          python scripts/evaluate_answer_quality.py
+          node scripts/test_content_readiness.mjs
+          node scripts/test_answer_integrity.mjs
+          node scripts/test_question_specificity_gate.mjs
       - name: Publish measured run outcome
         run: |
           python - <<'PY'
@@ -49,6 +58,8 @@ jobs:
               for key in r['after']:
                   f.write(f"| {key} | {r['before'].get(key)} | {r['after'][key]} | {r['delta'].get(key)} |\n")
               if r.get('next_action'): f.write('\nRequired next action: '+r['next_action']+'\n')
+          if r['status']=='no_actionable_change':
+              print('::warning title=No corpus progress::Maintenance finished without adding inspected content or sources. Content acquisition and review are still required.')
           PY
       - uses: actions/upload-artifact@v4
         with:
@@ -59,7 +70,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          ACTIONABLE_PATHS=(data/items data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json data/content-review-queue.json)
+          ACTIONABLE_PATHS=(data/items data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json data/content-review-queue.json data/evaluation/latest-quality-gate.json)
           if git diff --quiet -- "${ACTIONABLE_PATHS[@]}"; then
             echo "No actionable corpus change; run-log-only changes are not committed."
             exit 0
