@@ -1,25 +1,36 @@
 {
   "schema": "maaneh-ledorot-hourly-run-v1",
-  "run_started_utc": "2026-10-13T01:11:05.712592+00:00",
-  "run_finished_utc": "2026-10-13T01:11:07.825769+00:00",
+  "run_started_utc": "2026-10-14T00:46:21.490178+00:00",
+  "run_finished_utc": "2026-10-14T00:46:24.568468+00:00",
   "status": "no_actionable_change",
+  "work_type": "deterministic_maintenance; no source acquisition or content inspection",
+  "next_action": "Agent must inspect new authorized item texts from data/content-review-queue.json or ingest a new accessible corpus batch",
   "before": {
-    "verified": 8228,
-    "canonical": 9926,
-    "indexed": 1169,
-    "promotion_ready": 0
+    "verified": 8251,
+    "canonical": 9936,
+    "indexed": 1156,
+    "promotion_ready": 0,
+    "answer_eligible": 98,
+    "content_verified": 95,
+    "source_propositions": 275
   },
   "after": {
-    "verified": 8228,
-    "canonical": 9926,
-    "indexed": 1169,
-    "promotion_ready": 0
+    "verified": 8251,
+    "canonical": 9936,
+    "indexed": 1156,
+    "promotion_ready": 0,
+    "answer_eligible": 98,
+    "content_verified": 95,
+    "source_propositions": 275
   },
   "delta": {
     "verified": 0,
     "canonical": 0,
     "indexed": 0,
-    "promotion_ready": 0
+    "promotion_ready": 0,
+    "answer_eligible": 0,
+    "content_verified": 0,
+    "source_propositions": 0
   },
   "epistemic_guardrail": "This deterministic runner never promotes to Verified. Verified requires an inspected direct/authorized item-level witness.",
   "steps": [
@@ -32,7 +43,7 @@
     {
       "command": "/home/runner/work/maaneh-ledorot/maaneh-ledorot/scripts/reconcile_metrics.py",
       "returncode": 0,
-      "stdout": "{\"generated\": \"2026-10-13\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 83, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 346, \"canonical_unique_item_keys\": 9926, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Verified\": 8228, \"Linked\": 11, \"Parsed\": 0, \"Indexed\": 1169, \"Discovered\": 3}, \"verified_unique_item_keys\": 8228, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 9590\n",
+      "stdout": "{\"generated\": \"2026-10-14\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 83, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 369, \"canonical_unique_item_keys\": 9936, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Verified\": 8251, \"Linked\": 11, \"Parsed\": 0, \"Indexed\": 1156, \"Discovered\": 3}, \"verified_unique_item_keys\": 8251, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 9600\nanswer_eligible_unique_sources 98\n",
       "stderr": ""
     },
     {
@@ -44,7 +55,7 @@
     {
       "command": "/home/runner/work/maaneh-ledorot/maaneh-ledorot/scripts/reconcile_metrics.py",
       "returncode": 0,
-      "stdout": "{\"generated\": \"2026-10-13\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 83, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 346, \"canonical_unique_item_keys\": 9926, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Verified\": 8228, \"Linked\": 11, \"Parsed\": 0, \"Indexed\": 1169, \"Discovered\": 3}, \"verified_unique_item_keys\": 8228, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 9590\n",
+      "stdout": "{\"generated\": \"2026-10-14\", \"external_inventory_mapped_minimum\": 25906, \"staging_batch_files\": 203, \"staging_manifest_files\": 83, \"staging_records_physical_sum\": 2070, \"promotion_queue_physical_records\": 526, \"promotion_queue_already_canonical\": 526, \"promotion_ready_records\": 0, \"canonical_json_files\": 369, \"canonical_unique_item_keys\": 9936, \"evidence_family_files\": 55, \"status_counts_unique_keys\": {\"Verified\": 8251, \"Linked\": 11, \"Parsed\": 0, \"Indexed\": 1156, \"Discovered\": 3}, \"verified_unique_item_keys\": 8251, \"counting_note\": \"Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.\"}\nsearch_index_count 9600\nanswer_eligible_unique_sources 98\n",
       "stderr": ""
     }
   ]
