@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Deterministic hourly corpus maintenance runner.
+"""Hourly bounded acquisition and corpus maintenance runner.
 
-This runner intentionally does NOT promote content to Verified. Verification
-requires an inspected item-level witness. It drains metadata-safe staging into
+Acquisition verifies bounded exact excerpts on previously Verified publisher
+witnesses; it never verifies inferred summaries or newly discovered identities. It drains metadata-safe staging into
 Indexed, reconciles identities/metrics, and writes an auditable run log even
 when there is no actionable work.
 """
@@ -49,6 +49,7 @@ def main():
     started = dt.datetime.now(dt.timezone.utc)
     before = read_metrics()
     steps = []
+    steps.append(run("acquire_source_content.py", "--limit", "12"))
     steps.append(run("bulk_promote_indexed.py"))
     steps.append(run("reconcile_metrics.py"))
     steps.append(run("reconcile_identity_aliases.py"))
@@ -68,8 +69,9 @@ def main():
         "run_started_utc": started.isoformat(),
         "run_finished_utc": finished.isoformat(),
         "status": status,
-        "work_type": "deterministic_maintenance; no source acquisition or content inspection",
-        "next_action": "Agent must inspect new authorized item texts from data/content-review-queue.json or ingest a new accessible corpus batch" if not productive else None,
+        "work_type": "bounded_publisher_acquisition_and_exact_excerpt_verification; then deterministic maintenance",
+        "acquisition": json.loads((DATA / "acquisition/latest.json").read_text()) if (DATA / "acquisition/latest.json").exists() else None,
+        "next_action": "Inspect data/acquisition/latest.json for access blockers or unsupported source formats; semantic synthesis still requires inspected paraphrases" if not productive else None,
         "before": b,
         "after": a,
         "delta": delta,
