@@ -147,6 +147,7 @@ def main():
     queue=json.loads((ROOT/'data/content-review-queue.json').read_text())['records']
     statepath=ROOT/'data/acquisition/state.json'
     state=json.loads(statepath.read_text()) if statepath.exists() else {'sources':{}}
+    state.setdefault('hosts', {})
     report={'started_at':stamp,'attempted':0,'enriched':0,'discovered':0,'blocked':[], 'skipped':0}
     seen=set(); discoveries=[]
     index=json.loads((ROOT/'data/public-search-index.json').read_text())['entries']
@@ -154,6 +155,8 @@ def main():
     for r in queue:
         url=r.get('source_url') or ''; key=aid(url)
         if not allowed(url) or key in seen: continue
+        host=urllib.parse.urlsplit(url).hostname
+        if state['hosts'].get(host,{}).get('retry_after','') > stamp: continue
         seen.add(key)
         previous=state['sources'].get(key,{})
         if previous.get('outcome') == 'exact_excerpt_verified' or previous.get('retry_after','') > stamp: continue
@@ -183,7 +186,10 @@ def main():
                     if len(discoveries)>=24:break
             state['sources'][key]={'outcome':'exact_excerpt_verified','checked_at':stamp}
         except (ValueError,urllib.error.URLError,TimeoutError,UnicodeError,OSError) as exc:
-            reason=str(exc)[:240];report['blocked'].append({'aid':key,'url':url,'reason':reason})
+            reason=str(exc)[:240]
+            if isinstance(exc,urllib.error.HTTPError) and exc.code in (403,429):
+                state['hosts'][host]={'reason':reason,'retry_after':(now+dt.timedelta(hours=24)).isoformat()}
+            report['blocked'].append({'aid':key,'url':url,'reason':reason})
             state['sources'][key]={'outcome':'blocked','reason':reason,'checked_at':stamp,
                 'retry_after':(now+dt.timedelta(hours=24)).isoformat()}
         if report['attempted']>=max(1,min(args.limit,24)):break
