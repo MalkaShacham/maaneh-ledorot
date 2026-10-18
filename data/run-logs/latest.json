@@ -1,23 +1,17 @@
 {
   "schema": "maaneh-ledorot-hourly-run-v1",
-  "run_started_utc": "2026-10-18T18:02:54.641255+00:00",
-  "run_finished_utc": "2026-10-18T18:02:59.198046+00:00",
+  "run_started_utc": "2026-10-18T20:35:47.568034+00:00",
+  "run_finished_utc": "2026-10-18T20:35:50.871896+00:00",
   "status": "no_actionable_change",
   "work_type": "bounded_publisher_acquisition_and_exact_excerpt_verification; then deterministic maintenance",
   "acquisition": {
-    "started_at": "2026-10-18T18:02:54.722507+00:00",
-    "attempted": 1,
+    "started_at": "2026-10-18T20:35:47.644316+00:00",
+    "attempted": 0,
     "enriched": 0,
     "discovered": 0,
-    "blocked": [
-      {
-        "aid": "4666226",
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666226/jewish/page.htm",
-        "reason": "HTTP Error 403: Forbidden"
-      }
-    ],
+    "blocked": [],
     "skipped": 2,
-    "status": "blocked"
+    "status": "no_candidates"
   },
   "next_action": "Inspect data/acquisition/latest.json for access blockers or unsupported source formats; semantic synthesis still requires inspected paraphrases",
   "before": {
@@ -52,7 +46,7 @@
     {
       "command": "/home/runner/work/maaneh-ledorot/maaneh-ledorot/scripts/acquire_source_content.py --limit 12",
       "returncode": 0,
-      "stdout": "{\"started_at\": \"2026-10-18T18:02:54.722507+00:00\", \"attempted\": 1, \"enriched\": 0, \"discovered\": 0, \"blocked\": [{\"aid\": \"4666226\", \"url\": \"https://www.chabad.org/therebbe/article_cdo/aid/4666226/jewish/page.htm\", \"reason\": \"HTTP Error 403: Forbidden\"}], \"skipped\": 2, \"status\": \"blocked\"}\n",
+      "stdout": "{\"started_at\": \"2026-10-18T20:35:47.644316+00:00\", \"attempted\": 0, \"enriched\": 0, \"discovered\": 0, \"blocked\": [], \"skipped\": 2, \"status\": \"no_candidates\"}\n",
       "stderr": ""
     },
     {
