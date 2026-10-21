@@ -13,4 +13,10 @@ assert.equal(buildAnswerModel([source('education for children and teachers')],en
 assert.equal(buildAnswerModel([source('education for children and teachers')],
  'What did the Rebbe say about education and ADHD?').answerable,false,
  'a real question-specific qualifier must still require content evidence');
-console.log('Question specificity evidence gate: 6 checks passed');
+const naturalHebrewQuestion='מהו הלימוד המוסרי מפרה אדומה באיגרת?';
+assert.deepEqual(understandQuestion(naturalHebrewQuestion).subtopic,
+ ['לימוד','מוסרי','פרה','אדומה','איגרת'],
+ 'Hebrew articles and prepositions must not turn ordinary question phrasing into unsupported qualifiers');
+assert.equal(buildAnswerModel([source('האיגרת מציגה לימוד מוסרי על פרה אדומה')],naturalHebrewQuestion).answerable,true,
+ 'a natural Hebrew question with prefixes must retrieve a proposition that directly supports its terms');
+console.log('Question specificity evidence gate: 8 checks passed');
