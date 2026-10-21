@@ -34,6 +34,9 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='historical')return /^(?:when|date|dates|period|periods|year|years|time|מתי|תאריך|תאריכים|תקופה|תקופות|שנה|שנים|כתב|כותב|דיבר|לימד|הדריך)$/.test(t);
  if(intent==='bibliographic')return /^(?:source|sources|bibliographic|bibliography|citation|citations|where|published|publication|מקור|מקורות|ביבליוגרפיה|ביבליוגרפי|איפה|פורסם|פרסום)$/.test(t);
  if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי)$/.test(t);
+ // General wording that asks for a source's lesson or moral takeaway is framing,
+ // while the concrete subject (for example, פרה אדומה) remains query-specific.
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters)$/.test(t);
  return false;
 };
 
