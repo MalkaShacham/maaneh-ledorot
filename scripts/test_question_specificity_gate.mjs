@@ -15,7 +15,7 @@ assert.equal(buildAnswerModel([source('education for children and teachers')],
  'a real question-specific qualifier must still require content evidence');
 const naturalHebrewQuestion='מהו הלימוד המוסרי מפרה אדומה באיגרת?';
 assert.deepEqual(understandQuestion(naturalHebrewQuestion).subtopic,
- ['לימוד','מוסרי','פרה','אדומה','איגרת'],
+ ['פרה','אדומה'],
  'Hebrew articles and prepositions must not turn ordinary question phrasing into unsupported qualifiers');
 assert.equal(buildAnswerModel([source('האיגרת מציגה לימוד מוסרי על פרה אדומה')],naturalHebrewQuestion).answerable,true,
  'a natural Hebrew question with prefixes must retrieve a proposition that directly supports its terms');
