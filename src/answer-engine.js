@@ -1,5 +1,7 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד אילו איזה the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד אילו איזה מהו מהי מהם מהן מי מתי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+// Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
+const queryToken=s=>{if(!/^[א-ת]+$/.test(s))return s;let t=s;while(t.length>3&&/^[ובכלמשה]$/.test(t[0]))t=t.slice(1);return t;};
 const TOPICS={
  חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch','קינדער'],
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
@@ -36,7 +38,7 @@ const isIntentFramingTerm=(term,intent)=>{
 };
 
 export function understandQuestion(q){
- const original=String(q||''),query=norm(original),raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
+ const original=String(q||''),query=norm(original),raw=query.split(/\s+/).map(queryToken).filter(x=>x.length>1&&!STOP.has(x));
  const topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>query.includes(norm(v)))).map(([k])=>k);
  const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/מתי|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|למי|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  const entities=(original.match(/(?:[A-Z][\w-]+(?:\s+[A-Z][\w-]+)*)|(?:[א-ת]{2,}(?:\s+[א-ת]{2,}){1,2})/g)||[]).map(norm).filter(x=>!STOP.has(x)).slice(0,8);
