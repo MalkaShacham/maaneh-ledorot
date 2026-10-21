@@ -38,11 +38,12 @@ const isIntentFramingTerm=(term,intent)=>{
 };
 
 export function understandQuestion(q){
- const original=String(q||''),query=norm(original),raw=query.split(/\s+/).map(queryToken).filter(x=>x.length>1&&!STOP.has(x));
+ const original=String(q||''),query=norm(original);
  const topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>query.includes(norm(v)))).map(([k])=>k);
  const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/מתי|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|למי|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
+ const raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
  const entities=(original.match(/(?:[A-Z][\w-]+(?:\s+[A-Z][\w-]+)*)|(?:[א-ת]{2,}(?:\s+[א-ת]{2,}){1,2})/g)||[]).map(norm).filter(x=>!STOP.has(x)).slice(0,8);
- const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent));
+ const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent)).map(queryToken);
  const expanded=[...semanticRaw];topics.forEach(k=>expanded.push(...TOPICS[k]));
  const topicTokens=new Set(topics.flatMap(k=>(TOPICS[k]||[]).map(norm)));
  const isTopicToken=t=>topicTokens.has(t)||[...topicTokens].some(alias=>containsTerm(t,alias));
