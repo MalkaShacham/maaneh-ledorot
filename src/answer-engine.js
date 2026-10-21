@@ -1,7 +1,7 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
 const STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד אילו איזה מהו מהי מהם מהן מי מתי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
-const queryToken=s=>{if(!/^[א-ת]+$/.test(s))return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
+const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s))return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
  חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch','קינדער'],
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
