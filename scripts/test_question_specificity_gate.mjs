@@ -19,4 +19,9 @@ assert.deepEqual(understandQuestion(naturalHebrewQuestion).subtopic,
  'Hebrew articles and prepositions must not turn ordinary question phrasing into unsupported qualifiers');
 assert.equal(buildAnswerModel([source('האיגרת מציגה לימוד מוסרי על פרה אדומה')],naturalHebrewQuestion).answerable,true,
  'a natural Hebrew question with prefixes must retrieve a proposition that directly supports its terms');
-console.log('Question specificity evidence gate: 8 checks passed');
+const naturalGuidanceQuestion='מה הרבי הדריך בנוגע לחינוך ילדים?';
+assert.deepEqual(understandQuestion(naturalGuidanceQuestion).subtopic,[],
+ 'common Hebrew guidance verbs and connective phrasing must not become evidence requirements');
+assert.equal(buildAnswerModel([source('חינוך ילדים דורש תשומת לב חינוכית כבר בגיל הרך')],naturalGuidanceQuestion).answerable,true,
+ 'a natural Hebrew guidance question must retrieve direct education evidence');
+console.log('Question specificity evidence gate: 10 checks passed');
