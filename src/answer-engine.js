@@ -36,7 +36,7 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי)$/.test(t);
  // General wording that asks for a source's lesson or moral takeaway is framing,
  // while the concrete subject (for example, פרה אדומה) remains query-specific.
- if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters)$/.test(t);
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|ייעץ|יעץ|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
  return false;
 };
 
