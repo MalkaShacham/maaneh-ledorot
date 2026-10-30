@@ -1,0 +1,30 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-014",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "89-99"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 3,
+  "enriched_existing_canonical_records": 7,
+  "identity_relation": "Three identities were absent from canonical records or present only among conservative index exceptions: ד׳שכ, ד׳שכד and ד׳שכח. Six correctly indexed identities are enriched in place. Letter ד׳שכג enriches the existing same-page legacy OCR identity ד׳שבג rather than creating a duplicate. The index and inspected body text are one publisher witness, not independent corroboration.",
+  "propositions_added": 33,
+  "letters": ["ד׳שכ","ד׳שכא","ד׳שכב","ד׳שכג","ד׳שכד","ד׳שכה","ד׳שכו","ד׳שכז","ד׳שכח","ד׳שכט"],
+  "evidence_family_dedup": {
+    "family_id": "lag-baomer-1956-outreach-campaign",
+    "member_letters": ["ד׳שכ","ד׳שכו","ד׳שכח"],
+    "counting_rule": "Three local letters are distinct item witnesses in one coordinated seasonal outreach campaign. They are retained with their local circumstances but do not inflate the count as three independent campaign families."
+  },
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and aid 4666234",
+      "result": "Previously documented HTTP 403/item-shell failures; data/acquisition/latest.json still reports no candidates and no enriched records.",
+      "action": "Known blocked routes were not retried; the user-supplied publisher scan was used as the accessible source."
+    }
+  ],
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}
