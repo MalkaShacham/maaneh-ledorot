@@ -48,7 +48,15 @@ for(const mode of ['regular','researcher']){
   assert(m.sources.length<=3,`${mode}: generic single-token overlap must not flood the private-fast answer`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every private-fast claim needs a proposition-level citation`);
 }
+const practicalHalachaQuestion='מה כתב הרבי על לימוד הלכה מעשית בבית הכנסת?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,practicalHalachaQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected practical-halacha evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-296'),`${mode}: the inspected practical-halacha letter must be retrieved`);
+  assert(!m.sources.some(e=>String(e.aid)==='4202219'),`${mode}: a synagogue phobia response must not match a practical-halacha query solely on location words`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every practical-halacha claim needs a proposition-level citation`);
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; ten real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; twelve real-corpus answer checks passed`);
 
