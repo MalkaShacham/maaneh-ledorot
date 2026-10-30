@@ -56,7 +56,16 @@ for(const mode of ['regular','researcher']){
   assert(!m.sources.some(e=>String(e.aid)==='4202219'),`${mode}: a synagogue phobia response must not match a practical-halacha query solely on location words`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every practical-halacha claim needs a proposition-level citation`);
 }
+const kfarRecoveryQuestion='מה הציע הרבי לשיקום כפר חב״ד אחרי הפיגוע?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,kfarRecoveryQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected Kfar Chabad recovery evidence must answer the query`);
+  assert(m.sources.some(e=>e.evidence_family_id==='kfar-chabad-1956-attack-recovery'),`${mode}: the event-level recovery family must be retrieved`);
+  assert(!m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-297'),`${mode}: a Kfar Chabad interpersonal dispute must not match the attack-recovery query`);
+  assert(!m.sources.some(e=>e.evidence_family_id==='american-rabbinic-organizations-1956'),`${mode}: a letter whose main family is rabbinic-organization policy must not match solely on Kfar metadata`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every Kfar recovery claim needs a proposition-level citation`);
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; twelve real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; fourteen real-corpus answer checks passed`);
 

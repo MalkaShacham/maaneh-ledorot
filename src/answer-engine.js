@@ -10,6 +10,7 @@ const TOPICS={
  פרנסה:['פרנסה','עסק','livelihood','business','parnassa'], שליחות:['שליח','שליחות','shliach','shlichus','mission'],
  נישואין:['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
  'לימוד הלכה':['הלכה','הלכות','קיצור שולחן ערוך','לימוד הלכה','practical halacha','halacha','halachic study'],
+ 'שיקום לאחר פיגוע':['שיקום','פיגוע','אחרי הפיגוע','לאחר הפיגוע','recovery after attack','attack recovery'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
