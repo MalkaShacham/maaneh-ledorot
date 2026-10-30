@@ -1,0 +1,31 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-30-content-batch-013",
+  "generated": "2026-10-30",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "78-88"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 8,
+  "enriched_existing_canonical_records": 2,
+  "identity_relation": "Eight identities were absent from the canonical index or present only among conservative index exceptions. Letters ד׳שיז and ד׳שיח already had bibliographic identities and are enriched in place. The index and inspected body text are one publisher witness, not independent corroboration. Letters ד׳שיב, ד׳שיח and ד׳שיט are linked to the existing Kfar Chabad attack-and-recovery Evidence Family; other letters retain distinct primary families when their main documented problem differs.",
+  "propositions_added": 31,
+  "letters": ["ד׳שי","ד׳שיא","ד׳שיב","ד׳שיג","ד׳שיד","ד׳שטו","ד׳שטז","ד׳שיז","ד׳שיח","ד׳שיט"],
+  "evidence_family_dedup": {
+    "family_id": "kfar-chabad-1956-attack-recovery",
+    "member_letters_in_batch": ["ד׳שיב","ד׳שיח","ד׳שיט"],
+    "related_letters_with_other_primary_families": ["ד׳שי","ד׳שיא"],
+    "counting_rule": "Distinct item witnesses may address one recovery event; they are not counted as independent corroborating events. A letter with a separate principal problem retains that primary family and records the recovery family only as related."
+  },
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and aid 4666234",
+      "result": "Previously documented HTTP 403/item-shell failures; data/acquisition/latest.json reports no candidates and no enriched records.",
+      "action": "Known blocked routes were not retried; the user-supplied publisher scan was used as the accessible source."
+    }
+  ],
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}

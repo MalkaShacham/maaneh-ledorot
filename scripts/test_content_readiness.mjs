@@ -65,7 +65,16 @@ for(const mode of ['regular','researcher']){
   assert(!m.sources.some(e=>e.evidence_family_id==='american-rabbinic-organizations-1956'),`${mode}: a letter whose main family is rabbinic-organization policy must not match solely on Kfar metadata`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every Kfar recovery claim needs a proposition-level citation`);
 }
+const yeshivaEnrollmentQuestion='כיצד הציע הרבי להגדיל את מספר התלמידים בישיבה?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,yeshivaEnrollmentQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected yeshiva-enrollment evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-319'),`${mode}: letter ד׳שיט must support the enrollment answer`);
+  assert(m.sources.length<=3,`${mode}: broad education evidence must not flood a specific enrollment-policy answer`);
+  assert(m.sources.every(e=>['id:igrot-scan-v13-letter-4-284','id:igrot-scan-v13-letter-4-292','id:igrot-scan-v13-letter-4-319'].includes(e.key)),`${mode}: only inspected enrollment propositions may enter the answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every enrollment claim needs a proposition-level citation`);
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; fourteen real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; sixteen real-corpus answer checks passed`);
 

@@ -11,6 +11,7 @@ const TOPICS={
  נישואין:['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
  'לימוד הלכה':['הלכה','הלכות','קיצור שולחן ערוך','לימוד הלכה','practical halacha','halacha','halachic study'],
  'שיקום לאחר פיגוע':['שיקום','פיגוע','אחרי הפיגוע','לאחר הפיגוע','recovery after attack','attack recovery'],
+ 'הרחבת ישיבה':['מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','yeshiva enrollment','increase yeshiva enrollment'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -39,14 +40,18 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי)$/.test(t);
  // General wording that asks for a source's lesson or moral takeaway is framing,
  // while the concrete subject (for example, פרה אדומה) remains query-specific.
- if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|ייעץ|יעץ|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הצעה|ייעץ|יעץ|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
  return false;
 };
 
 export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
- const topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>query.includes(norm(v)))).map(([k])=>k);
- const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/מתי|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|למי|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
+ let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>query.includes(norm(v)))).map(([k])=>k);
+ // A specific institutional-enrollment question must not inherit the much
+ // broader education topic. Otherwise any proposition mentioning a school or
+ // teacher can outrank the inspected source about yeshiva enrollment policy.
+ if(topics.includes('הרחבת ישיבה'))topics=topics.filter(t=>t!=='חינוך');
+ const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/מתי|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  const raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
  const entities=(original.match(/(?:[A-Z][\w-]+(?:\s+[A-Z][\w-]+)*)|(?:[א-ת]{2,}(?:\s+[א-ת]{2,}){1,2})/g)||[]).map(norm).filter(x=>!STOP.has(x)).slice(0,8);
  const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent)&&!isIntentFramingTerm(queryToken(t),intent)).map(queryToken);
