@@ -9,7 +9,7 @@ const TOPICS={
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אם','woman','women','mother','פרוי','פרויען'],
  פרנסה:['פרנסה','עסק','livelihood','business','parnassa'], שליחות:['שליח','שליחות','shliach','shlichus','mission'],
  נישואין:['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
- 'הפצת ספרים':['מימון ספרים','הפצת ספרים','הדפסת ספרים','הוצאה לאור','מימון','ספר','ספרים','ספרי','הדפס','הדפסה','הדפסת','הפצ','הפצה','הפצת','publication','publishing','printing','books','dissemination'],
+ 'הפצת ספרים':['מימון','ספר','הדפס','הוצאה לאור','הפצת ספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
