@@ -1,0 +1,41 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-30-content-batch-011",
+  "generated": "2026-10-30",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "57-67"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 10,
+  "enriched_existing_canonical_records": 0,
+  "identity_relation": "The ten letter numbers previously appeared only in the v13 index batch exceptions list because their index locators were ambiguous. Direct body-page inspection now establishes their identity, location and bounded content; they are promoted as item-level content records rather than inferred from the index. Each letter retains its own evidence family; thematic similarity among the peace-and-unity letters is not treated as proof of a shared event.",
+  "propositions_added": 30,
+  "letters": [
+    "ד׳רצ",
+    "ד׳רצא",
+    "ד׳רצב",
+    "ד׳רצג",
+    "ד׳רצד",
+    "ד׳רצה",
+    "ד׳רצו",
+    "ד׳רצז",
+    "ד׳רחצ",
+    "ד׳רצט"
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "public item-level web retrieval for adjacent queue items",
+      "result": "The immediately preceding run found no inspectable item text through search/open.",
+      "action": "Not repeated in this run; no content inferred. Used the authorized user-supplied publisher scan instead."
+    },
+    {
+      "source": "aid 4666234 and scripts/acquire_source_content.py",
+      "result": "Previously documented item shell/redirect and HTTP 403 crawler failures.",
+      "action": "Known blocked routes were not retried."
+    }
+  ],
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}
