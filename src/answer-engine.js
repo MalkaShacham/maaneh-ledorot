@@ -9,7 +9,7 @@ const TOPICS={
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אם','woman','women','mother','פרוי','פרויען'],
  פרנסה:['פרנסה','עסק','livelihood','business','parnassa'], שליחות:['שליח','שליחות','shliach','shlichus','mission'],
  נישואין:['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
- 'הפצת ספרים':['מימון','ספר','הדפס','הוצאה לאור','הפצת ספר','פרסומים תורניים','publication','publishing','printing','book'],
+ 'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -37,7 +37,7 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי)$/.test(t);
  // General wording that asks for a source's lesson or moral takeaway is framing,
  // while the concrete subject (for example, פרה אדומה) remains query-specific.
- if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|ייעץ|יעץ|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|ייעץ|יעץ|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
  return false;
 };
 
@@ -59,7 +59,7 @@ function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&containsTerm(t,x)?1:0
 function familyKey(e){return e.evidence_family_id||e.aid||e.source_url||e.key;}
 function propositionKey(p){return contentWords(p).sort().join(' ');}
 function sameClaim(a,b){if(propositionKey(a)===propositionKey(b))return true;if(negationSignature(a)!==negationSignature(b))return false;return jaccard(a,b)>=0.72;}
-function propositionSupportsQuery(p,u){const body=norm(p),raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms);if(u.topics.length&&topical===0)return false;return specific>0||topical>=2||(!raw.length&&topical>0);}
+function propositionSupportsQuery(p,u){const body=norm(p),raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?1:Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
 function intentEvidenceGate(e,u){
  if(u.intent==='circumstances'&&!text(e.documented_circumstances)&&!text(e.conditions_or_qualifications)&&!text(e.audience))return 'missing documented circumstances/conditions/audience';
  // Circumstances are not temporal evidence. A historical answer may only use a
@@ -76,11 +76,12 @@ export function propositionRelevance(e,u){
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.
- // Natural questions often combine several near-synonymous qualifiers (for
- // example, funding + publishing + dissemination). A witness must ground at
- // least one remaining qualifier; requiring every token made genuine thematic
- // synthesis impossible even after topic aliases had been recognized.
- if(raw.length && !raw.some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['question-specific qualifiers absent from evidence']};
+ // Known topics already provide a semantic anchor, so one remaining qualifier
+ // is sufficient. An uncatalogued natural-language question has no such anchor
+ // and must match at least two meaningful terms in the same evidence body;
+ // otherwise generic words such as "person" or "wrote" create false positives.
+ const requiredRawHits=u.topics.length?1:Math.min(2,raw.length);
+ if(raw.length && rawHit<requiredRawHits)return{score:0,support:'insufficient_specific_evidence',reasons:[`question-specific evidence below threshold (${rawHit}/${requiredRawHits})`]};
  const supportingProps=arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u));
  if(u.topics.length&&topicHit===0)return{score:0,support:'lexical_only',reasons:['topic absent from evidence']};
  if(!supportingProps.length&&u.intent==='guidance')return{score:1,support:'contextual_support',reasons:['no proposition entails guidance query']};

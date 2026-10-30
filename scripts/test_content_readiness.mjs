@@ -38,8 +38,17 @@ for(const mode of ['regular','researcher']){
   assert(m.sources.length>=3,`${mode}: publication synthesis must use at least three independent evidence families`);
   assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,`${mode}: translations or duplicate witnesses must not inflate publication synthesis`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every publication claim needs a proposition-level citation`);
+  assert(!m.sources.some(e=>['id:igrot-scan-v13-letter-4-282','id:igrot-scan-v13-letter-4-284'].includes(e.key)),`${mode}: מספר/הפצה כללית must not masquerade as book-publication evidence`);
+}
+const privateFastQuestion='מה כתב הרבי על תעניות שאדם מוסיף מדעתו?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,privateFastQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected private-fast evidence must answer the uncatalogued query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-287'),`${mode}: the inspected volume XIII witness must be retrieved`);
+  assert(m.sources.length<=3,`${mode}: generic single-token overlap must not flood the private-fast answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every private-fast claim needs a proposition-level citation`);
 }
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; eight real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; ten real-corpus answer checks passed`);
 
