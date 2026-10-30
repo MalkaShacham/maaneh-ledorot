@@ -9,6 +9,7 @@ const TOPICS={
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אם','woman','women','mother','פרוי','פרויען'],
  פרנסה:['פרנסה','עסק','livelihood','business','parnassa'], שליחות:['שליח','שליחות','shliach','shlichus','mission'],
  נישואין:['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
+ 'הפצת ספרים':['מימון ספרים','הפצת ספרים','הדפסת ספרים','הוצאה לאור','מימון','ספר','ספרים','ספרי','הדפס','הדפסה','הדפסת','הפצ','הפצה','הפצת','publication','publishing','printing','books','dissemination'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -75,7 +76,11 @@ export function propositionRelevance(e,u){
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.
- if(raw.length && raw.some(t=>!containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['question-specific qualifier absent from evidence']};
+ // Natural questions often combine several near-synonymous qualifiers (for
+ // example, funding + publishing + dissemination). A witness must ground at
+ // least one remaining qualifier; requiring every token made genuine thematic
+ // synthesis impossible even after topic aliases had been recognized.
+ if(raw.length && !raw.some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['question-specific qualifiers absent from evidence']};
  const supportingProps=arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u));
  if(u.topics.length&&topicHit===0)return{score:0,support:'lexical_only',reasons:['topic absent from evidence']};
  if(!supportingProps.length&&u.intent==='guidance')return{score:1,support:'contextual_support',reasons:['no proposition entails guidance query']};
@@ -218,3 +223,4 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims);base.research={evidence_families:selectedIndependentFamilies.size,verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;
 }
+

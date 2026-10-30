@@ -31,6 +31,15 @@ for(const q of ['מה הרבי אמר על חינוך ילדים?','מה הרב�
     assert(m.claims.every(c=>c.source_numbers.length),'each real content claim needs a citation');
   }
 }
+const publicationQuestion='מה עולה מהאיגרות על מימון והפצת ספרי חסידות?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,publicationQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected publication evidence must answer the natural-language query`);
+  assert(m.sources.length>=3,`${mode}: publication synthesis must use at least three independent evidence families`);
+  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,`${mode}: translations or duplicate witnesses must not inflate publication synthesis`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every publication claim needs a proposition-level citation`);
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; six real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; eight real-corpus answer checks passed`);
+

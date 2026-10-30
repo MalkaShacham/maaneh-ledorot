@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261022-natural-query';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261030-publication-retrieval';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -13,6 +13,7 @@ const TOPIC_ALIASES={
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אם','woman','women','mother'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'], 'שליחות':['שליח','שליחות','shliach','shlichus','mission'],
   'נישואין':['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
+  'הפצת ספרים':['מימון ספרים','הפצת ספרים','הדפסת ספרים','הוצאה לאור','מימון','ספר','ספרים','ספרי','הדפס','הדפסה','הדפסת','הפצ','הפצה','הפצת','publication','publishing','printing','books','dissemination'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -100,3 +101,4 @@ export function buildAnswerModel(index,q,options={}){
   if(coverage.missing_topics.length)return {...model,answerable:false,reason:'comparative_missing_side',claims:[],answered_well:coverage.supported_topics.map(t=>`נמצאו ראיות לצד: ${t}`),insufficient_evidence:[...(model.insufficient_evidence||[]),...coverage.missing_topics.map(t=>`אין די ראיות ברמת proposition לצד: ${t}`)]};
   if(options.mode==='researcher'){model.research=model.research||{};model.research.comparative_coverage=coverage;}return model;
 }
+
