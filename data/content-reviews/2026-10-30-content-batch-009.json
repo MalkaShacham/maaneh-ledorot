@@ -1,0 +1,118 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-30-content-batch-009",
+  "reviewed_on": "2026-10-30",
+  "purpose": "Item-level semantic content inspection and bounded answer evidence enrichment",
+  "before": {
+    "answer_eligible_unique_sources": 114,
+    "answer_eligible_propositions": 309,
+    "verified_unique_item_keys": 8253
+  },
+  "reviewed_records": [
+    {
+      "id": "igrot-kodesh-v2-letter-251-aid-4666290",
+      "canonical_file": "data/items/igrot-kodesh-v2-letter-251-aid-4666290.json",
+      "aid": 4666290,
+      "letter_number": "רנא",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666290/jewish/page.htm",
+      "action": "enriched_existing_identity",
+      "proposition_count": 2,
+      "source_text_inspected": true,
+      "evidence_family_id": "igrot-kodesh-original-letter-aid-4666290"
+    },
+    {
+      "id": "igrot-kodesh-v2-letter-265-aid-4666304",
+      "canonical_file": "data/items/igrot-kodesh-v2-letter-265-aid-4666304.json",
+      "aid": 4666304,
+      "letter_number": "רסה",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666304/jewish/page.htm",
+      "action": "enriched_existing_identity",
+      "proposition_count": 3,
+      "source_text_inspected": true,
+      "evidence_family_id": "igrot-kodesh-original-letter-aid-4666304"
+    },
+    {
+      "id": "chabad-letter-4666311",
+      "canonical_file": "data/items/igrot-kodesh-vol2-4666311.json",
+      "aid": 4666311,
+      "letter_number": "רעב",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666311/jewish/page.htm",
+      "action": "enriched_existing_identity",
+      "proposition_count": 2,
+      "source_text_inspected": true,
+      "evidence_family_id": "igrot-kodesh-original-letter-aid-4666311"
+    },
+    {
+      "id": "chabad-letter-4666312",
+      "canonical_file": "data/items/igrot-kodesh-vol2-4666312.json",
+      "aid": 4666312,
+      "letter_number": "רעג",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666312/jewish/page.htm",
+      "action": "enriched_existing_identity",
+      "proposition_count": 3,
+      "source_text_inspected": true,
+      "evidence_family_id": "igrot-kodesh-original-letter-aid-4666312"
+    },
+    {
+      "id": "chabad-letter-4666313",
+      "canonical_file": "data/items/igrot-kodesh-vol2-4666313.json",
+      "aid": 4666313,
+      "letter_number": "עדר",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666313/jewish/page.htm",
+      "action": "enriched_existing_identity",
+      "proposition_count": 2,
+      "source_text_inspected": true,
+      "evidence_family_id": "igrot-kodesh-original-letter-aid-4666313"
+    },
+    {
+      "id": "chabad-letter-4666314",
+      "canonical_file": "data/items/igrot-kodesh-vol2-4666314.json",
+      "aid": 4666314,
+      "letter_number": "ערה",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666314/jewish/page.htm",
+      "action": "enriched_existing_identity",
+      "proposition_count": 3,
+      "source_text_inspected": true,
+      "evidence_family_id": "igrot-kodesh-original-letter-aid-4666314"
+    },
+    {
+      "id": "chabad-letter-4666315",
+      "canonical_file": "data/items/igrot-kodesh-vol2-4666315.json",
+      "aid": 4666315,
+      "letter_number": "רעו",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666315/jewish/page.htm",
+      "action": "enriched_existing_identity",
+      "proposition_count": 3,
+      "source_text_inspected": true,
+      "evidence_family_id": "igrot-kodesh-original-letter-aid-4666315"
+    },
+    {
+      "id": "chabad-letter-4666320",
+      "canonical_file": "data/items/igrot-kodesh-vol2-4666320.json",
+      "aid": 4666320,
+      "letter_number": "רפא",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666320/jewish/page.htm",
+      "action": "enriched_existing_identity",
+      "proposition_count": 3,
+      "source_text_inspected": true,
+      "evidence_family_id": "igrot-kodesh-original-letter-aid-4666320"
+    }
+  ],
+  "new_canonical_sources": 0,
+  "enriched_existing_identities": 8,
+  "added_propositions": 21,
+  "verification_scope": "Authorized publisher item texts were inspected. Incoming correspondence, physical manuscripts/photographs, source copies named in publisher notes, and cited works were not independently inspected.",
+  "blocked_alternatives": [
+    {
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666234/jewish/page.htm",
+      "reason": "current open redirected to a shell page without item text; not used for semantic verification"
+    },
+    {
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666318/jewish/page.htm",
+      "reason": "current open redirected to a shell page without item text; not used for semantic verification"
+    }
+  ],
+  "rights": "No full protected text retained; only bounded non-verbatim research paraphrases, metadata, locators, and links.",
+  "epistemic_note": "No proposition was inferred from a title or index. Each proposition is marked source_grounded_paraphrase and source_text_inspected."
+}
+
