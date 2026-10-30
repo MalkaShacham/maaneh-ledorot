@@ -1,0 +1,30 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-30-content-batch-012",
+  "generated": "2026-10-30",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "67-78"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 9,
+  "enriched_existing_canonical_records": 1,
+  "identity_relation": "Nine letter identities were previously present only as conservative index exceptions. Letter ד׳שא collides with a legacy index-OCR key at an incompatible distant locator and is treated as an enrichment/correction signal rather than a second independent witness. Sequential body-page inspection normalizes the legacy exception ד׳דש to letter ד׳שד. Six distinct letters responding to the May 1956 Kfar Chabad attack are linked to one Evidence Family and do not inflate independent-source counts.",
+  "propositions_added": 31,
+  "letters": ["ד׳ש","ד׳שא","ד׳שב","ד׳שג","ד׳שד","ד׳שה","ד׳שו","ד׳שז","ד׳שח","ד׳שט"],
+  "evidence_family_dedup": {
+    "family_id": "kfar-chabad-1956-attack-recovery",
+    "member_letters": ["ד׳שג","ד׳שד","ד׳שה","ד׳שז","ד׳שח","ד׳שט"],
+    "counting_rule": "Distinct item witnesses, one event-level Evidence Family; they are not independent corroborating events."
+  },
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and aid 4666234",
+      "result": "Previously documented HTTP 403/item-shell failures; the latest acquisition report has no candidates and no enriched records.",
+      "action": "Known blocked routes were not retried; the user-supplied publisher scan was used as the lawful accessible source."
+    }
+  ],
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}
