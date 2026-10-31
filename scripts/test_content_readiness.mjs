@@ -226,5 +226,21 @@ for(const [question,key] of batch020Checks){
 }
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; fifty-two real-corpus answer checks passed`);
+const batch021Checks=[
+  ['האם לימוד נגלה פוטר מלימוד חסידות?','id:igrot-scan-v13-letter-4-392'],
+  ['לימודי חול בחצי יום הראשון בבית רבקה','id:igrot-scan-v13-letter-4-397'],
+  ['כתבי היד של החסיד משה יצחק מיאס','id:igrot-scan-v13-letter-4-399'],
+  ['כיצד הוצע לפתור את שאלת המניין ליד הדירות החדשות בכפר חב״ד?','id:igrot-kodesh-v13-דתג'],
+  ['משמרות אמירת תהלים ולימוד חסידות בכפר חב״ד','id:igrot-kodesh-v13-דתד']
+];
+for(const [question,key] of batch021Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-021 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-021 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-021 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-021 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; fifty-seven real-corpus answer checks passed`);
 

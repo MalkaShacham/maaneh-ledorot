@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch020';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch021';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -33,6 +33,10 @@ const TOPIC_ALIASES={
   'רופאים מומחים והתאמת לימוד':['טיפול רופאים מומחים והתקשה בלימוד','רופאים מומחים והתקשה בלימוד','רופאים מומחים','לשמוע להנחיותיהם','לימוד לגירסא','לימוד בקיאותי','expert doctors study adjustment'],
   'בית מרקחת ושם כפר חב״ד':['בית מרקחת ושם כפר חב״ד','פתיחת בית מרקחת בכפר חב״ד','השם שפריר','כפר חב״ד א׳ וב׳','kfar chabad pharmacy and name'],
   'סניף נשי חב״ד מונטריאול':['סניף נשי חב״ד במונטריאול','סניף מונטריאול של אגודת נשי','סניף מונטריאול','נשי ובנות חב״ד','הרחבת הפעילות','פעילות הסניף','להתרחב','montreal nshei chabad branch'],
+  'בית רבקה סדר בוקר':['בית רבקה לימודי חול','בית רבקה להתחיל את היום','בית רבקה מחצית הראשונה','להתחיל את היום בלימודי חול','לימודי חול בחצי יום הראשון','לימודי חול','beis rivka morning secular studies'],
+  'כתבי יד משה יצחק מיאס':['כתבי היד של החסיד משה יצחק מיאס','משה יצחק מיאס','כתבי יד','מיאס','moshe yitzchak mias manuscripts'],
+  'מניין דירות חדשות כפר חב״ד':['המניין ליד הדירות החדשות','מנין ליד הדירות החדשות','מקום תפילה ליד הדירות החדשות','דירות החדשות','מניין','מנין','new housing minyan kfar chabad'],
+  'משמרות שבועות כפר חב״ד':['תכנית המשמרות בחג השבועות בכפר חב״ד','משמרות אמירת תהלים ולימוד חסידות','משמרות','shavuot shifts kfar chabad'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

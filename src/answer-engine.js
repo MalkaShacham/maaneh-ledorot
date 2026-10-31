@@ -34,6 +34,10 @@ const TOPICS={
  'רופאים מומחים והתאמת לימוד':['טיפול רופאים מומחים והתקשה בלימוד','רופאים מומחים והתקשה בלימוד','רופאים מומחים','לשמוע להנחיותיהם','לימוד לגירסא','לימוד בקיאותי','expert doctors study adjustment'],
  'בית מרקחת ושם כפר חב״ד':['בית מרקחת ושם כפר חב״ד','פתיחת בית מרקחת בכפר חב״ד','השם שפריר','כפר חב״ד א׳ וב׳','kfar chabad pharmacy and name'],
  'סניף נשי חב״ד מונטריאול':['סניף נשי חב״ד במונטריאול','סניף מונטריאול של אגודת נשי','סניף מונטריאול','נשי ובנות חב״ד','הרחבת הפעילות','פעילות הסניף','להתרחב','montreal nshei chabad branch'],
+ 'בית רבקה סדר בוקר':['בית רבקה לימודי חול','בית רבקה להתחיל את היום','בית רבקה מחצית הראשונה','להתחיל את היום בלימודי חול','לימודי חול בחצי יום הראשון','לימודי חול','beis rivka morning secular studies'],
+ 'כתבי יד משה יצחק מיאס':['כתבי היד של החסיד משה יצחק מיאס','משה יצחק מיאס','כתבי יד','מיאס','moshe yitzchak mias manuscripts'],
+ 'מניין דירות חדשות כפר חב״ד':['המניין ליד הדירות החדשות','מנין ליד הדירות החדשות','מקום תפילה ליד הדירות החדשות','דירות החדשות','מניין','מנין','new housing minyan kfar chabad'],
+ 'משמרות שבועות כפר חב״ד':['תכנית המשמרות בחג השבועות בכפר חב״ד','משמרות אמירת תהלים ולימוד חסידות','משמרות','shavuot shifts kfar chabad'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -78,6 +82,7 @@ export function understandQuestion(q){
  if(topics.includes('מסחר ולימוד יום שלם'))topics=topics.filter(t=>t!=='פרנסה');
  if(topics.includes('רופאים מומחים והתאמת לימוד'))topics=topics.filter(t=>t!=='בריאות');
  if(topics.includes('סניף נשי חב״ד מונטריאול'))topics=topics.filter(t=>t!=='נשים');
+ if(topics.includes('בית רבקה סדר בוקר'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('הערות שוליים בספר'))topics=topics.filter(t=>t!=='הפצת ספרים');
  const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  const raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
@@ -114,6 +119,10 @@ export function propositionRelevance(e,u){
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
  if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['personal-study side of the combined query is absent']};
  if(u.topics.includes('סניף נשי חב״ד מונטריאול')&&!containsTerm(body,'מונטריאול'))return{score:0,support:'insufficient_specific_evidence',reasons:['Montreal branch is absent from the evidence body']};
+ if(u.topics.includes('בית רבקה סדר בוקר')&&(!containsTerm(body,'בית רבקה')||!['לימודי חול','מחצית הראשונה','התחלת היום','שעות הבוקר'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Beis Rivka morning-schedule decision is absent from the evidence body']};
+ if(u.topics.includes('כתבי יד משה יצחק מיאס')&&!containsTerm(body,'משה יצחק מיאס'))return{score:0,support:'insufficient_specific_evidence',reasons:['named manuscript holder is absent from the evidence body']};
+ if(u.topics.includes('מניין דירות חדשות כפר חב״ד')&&!containsTerm(body,'דירות החדשות'))return{score:0,support:'insufficient_specific_evidence',reasons:['new-housing minyan setting is absent from the evidence body']};
+ if(u.topics.includes('משמרות שבועות כפר חב״ד')&&!containsTerm(body,'משמרות'))return{score:0,support:'insufficient_specific_evidence',reasons:['Shavuot shift plan is absent from the evidence body']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

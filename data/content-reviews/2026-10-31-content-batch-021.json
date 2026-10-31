@@ -1,0 +1,10 @@
+{
+  "schema":"content-review-batch-v1","batch_id":"2026-10-31-content-batch-021","generated":"2026-10-31","method":"Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source":{"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"160-172"},
+  "reviewed_items":13,"new_content_records":8,"enriched_existing_canonical_records":5,"propositions_added":43,
+  "identity_relation":"Letters ד׳שצב–ד׳שצט establish eight item-level identities absent from the conservative index records. Letters ד׳ת–ד׳תד enrich five existing volume-index identities. OCR headings ד׳שאג and ד׳וגג resolve to printed letters ד׳שצג and ד׳תב, not separate witnesses.",
+  "letters":["ד׳שצב","ד׳שצג","ד׳שצד","ד׳שצה","ד׳שצו","ד׳שצז","ד׳שצח","ד׳שצט","ד׳ת","ד׳תא","ד׳תב","ד׳תג","ד׳תד"],
+  "evidence_family_dedup":[{"family_id":"kfar-chabad-1956-attack-recovery","member_letters_in_batch":["ד׳ת","ד׳תא","ד׳תב","ד׳תד"],"counting_rule":"Four distinct letter witnesses document fundraising, educational support, a student mission and a Shavuot strengthening program in the same post-attack recovery sequence; they are not four independent events. Hebrew paraphrases of Yiddish letters are not separate witnesses."},{"family_id":"kfar-chabad-new-housing-minyan-compromise","member_letters_in_batch":["ד׳תג"],"counting_rule":"The minyan decision is a separate local governance case. Its appended prior-Rebbe excerpt is explicitly attributed and not counted as a direct proposition of the current author."}],
+  "blocked_alternatives":[{"source":"scripts/acquire_source_content.py and aid 4666234","result":"Previously documented HTTP 403/item-shell failures; data/acquisition/latest.json reports no candidates and zero attempts.","action":"Known blocked routes were not retried; the user-supplied publisher scan was used as the accessible source."}],
+  "rights_boundary":"No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}
