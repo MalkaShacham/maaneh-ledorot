@@ -258,5 +258,21 @@ for(const [question,key] of batch022Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-022 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; sixty-two real-corpus answer checks passed`);
+const batch023Checks=[
+  ['מה כתב הרבי על דחיית חתונה בגלל הוצאות דירה מופרזות?','id:igrot-kodesh-v13-דתכג'],
+  ['מה מקור המנהג להרכין את הראש בקדיש ולגעת בתחילת ובסוף מקום הקריאה?','id:igrot-kodesh-v13-דתכה'],
+  ['האם לענות לשאלות באותו מפגש או במפגש הבא בעבודת נשים?','id:igrot-kodesh-v13-דתכח'],
+  ['מדוע צריך לנקוב בסכום מסוים כשמתחייבים לצדקה?','id:igrot-kodesh-v13-דתל'],
+  ['מתי אומרים תהלים בלילה והאם לבטל שיעורים קבועים לשם כך?','id:igrot-kodesh-v13-דתלג']
+];
+for(const [question,key] of batch023Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-023 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-023 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-023 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-023 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; sixty-seven real-corpus answer checks passed`);
 

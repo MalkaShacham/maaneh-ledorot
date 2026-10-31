@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר כתב כותב על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר כתב כותב על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s))return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
@@ -38,6 +38,9 @@ const TOPICS={
  'כתבי יד משה יצחק מיאס':['כתבי היד של החסיד משה יצחק מיאס','משה יצחק מיאס','כתבי יד','מיאס','moshe yitzchak mias manuscripts'],
  'מניין דירות חדשות כפר חב״ד':['המניין ליד הדירות החדשות','מנין ליד הדירות החדשות','מקום תפילה ליד הדירות החדשות','דירות החדשות','מניין','מנין','new housing minyan kfar chabad'],
  'משמרות שבועות כפר חב״ד':['תכנית המשמרות בחג השבועות בכפר חב״ד','משמרות אמירת תהלים ולימוד חסידות','משמרות','shavuot shifts kfar chabad'],
+ 'זוהר לפני חסידות':['ללמוד זוהר לפני שמתחילים ללמוד חסידות','זוהר לפני חסידות','לימוד הזוהר לפני חסידות','זוהר','zohar','study zohar before chassidus'],
+ 'מקור מנהגי תפילה':['הרכנת הראש בקדיש','להרכין את הראש בקדיש','לגעת בתחילת ובסוף מקום הקריאה','נגיעה בתחילת מקום הקריאה','prayer custom source attribution'],
+ 'מענה לשאלות במפגש נשים':['לענות לשאלות במפגש הבא','שאלות במפגש הבא','מפגש הבא בעבודת נשים','מפגש הבא','women questions next meeting'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -87,7 +90,7 @@ export function understandQuestion(q){
  const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  const raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
  const entities=(original.match(/(?:[A-Z][\w-]+(?:\s+[A-Z][\w-]+)*)|(?:[א-ת]{2,}(?:\s+[א-ת]{2,}){1,2})/g)||[]).map(norm).filter(x=>!STOP.has(x)).slice(0,8);
- const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent)&&!isIntentFramingTerm(queryToken(t),intent)).map(queryToken);
+ const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent)&&!isIntentFramingTerm(queryToken(t),intent)).map(queryToken).filter(t=>t&&!STOP.has(t));
  const expanded=[...semanticRaw];topics.forEach(k=>expanded.push(...TOPICS[k]));
  const topicTokens=new Set(topics.flatMap(k=>(TOPICS[k]||[]).map(norm)));
  // A natural-language query often splits a multi-word topic alias into its
@@ -123,6 +126,9 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('כתבי יד משה יצחק מיאס')&&!containsTerm(body,'משה יצחק מיאס'))return{score:0,support:'insufficient_specific_evidence',reasons:['named manuscript holder is absent from the evidence body']};
  if(u.topics.includes('מניין דירות חדשות כפר חב״ד')&&!containsTerm(body,'דירות החדשות'))return{score:0,support:'insufficient_specific_evidence',reasons:['new-housing minyan setting is absent from the evidence body']};
  if(u.topics.includes('משמרות שבועות כפר חב״ד')&&!containsTerm(body,'משמרות'))return{score:0,support:'insufficient_specific_evidence',reasons:['Shavuot shift plan is absent from the evidence body']};
+ if(u.topics.includes('זוהר לפני חסידות')&&!containsTerm(body,'זוהר'))return{score:0,support:'insufficient_specific_evidence',reasons:['Zohar prerequisite is absent from the evidence body']};
+ if(u.topics.includes('מקור מנהגי תפילה')&&!['הרכנת הראש','תחילת מקום הקריאה'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['specific prayer customs are absent from the evidence body']};
+ if(u.topics.includes('מענה לשאלות במפגש נשים')&&!containsTerm(body,'מפגש הבא'))return{score:0,support:'insufficient_specific_evidence',reasons:['delayed-answer meeting method is absent from the evidence body']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

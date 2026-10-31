@@ -1,0 +1,24 @@
+{
+  "schema":"content-review-batch-v1",
+  "batch_id":"2026-10-31-content-batch-023",
+  "generated":"2026-10-31",
+  "method":"Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source":{"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"190-202"},
+  "reviewed_items":15,
+  "new_content_records":2,
+  "enriched_existing_canonical_records":13,
+  "propositions_added":50,
+  "identity_relation":"Thirteen letters enrich existing volume-index identities. Letters ד׳תלג and ד׳תלה establish two directly inspected canonical identities omitted from the conservative index records. OCR headings ד׳תבא, ד׳תפג, ד׳תבד, ד׳מכה, ד׳תפו and ד׳תבט resolve to the printed sequence letters ד׳תכא, ד׳תכב, ד׳תכד, ד׳תכה, ד׳תכו and ד׳תכט. The running header resolves the first OCR ד׳תלג to ד׳תלב; none of these variants is a separate witness.",
+  "letters":["ד׳תכא","ד׳תכב","ד׳תכג","ד׳תכד","ד׳תכה","ד׳תכו","ד׳תכז","ד׳תכח","ד׳תכט","ד׳תל","ד׳תלא","ד׳תלב","ד׳תלג","ד׳תלד","ד׳תלה"],
+  "evidence_family_dedup":[
+    {"family_id":"kfar-chabad-1956-attack-recovery","member_letters_in_batch":["ד׳תכז"],"related_prior_letters":["ד׳ת","ד׳תא","ד׳תב","ד׳תד","ד׳תה"],"counting_rule":"Letter ד׳תכז adds a distinct estate-and-education witness within the same post-attack recovery sequence. It is not an independent witness for every underlying event or an additional Evidence Family."},
+    {"family_id":"london-womens-outreach-differentiated-study","member_letters_in_batch":["ד׳תכח"],"counting_rule":"The inspected witness is Yiddish. Its bounded Hebrew research paraphrases are derived access aids and are not independent witnesses."},
+    {"family_id":"night-psalms-daily-lessons-and-farbrengen","member_letters_in_batch":["ד׳תלג"],"counting_rule":"The inspected witness is Yiddish. Hebrew paraphrases retain the same identity and Evidence Family."}
+  ],
+  "blocked_alternatives":[
+    {"source":"scripts/acquire_source_content.py and aid 4666234","result":"The latest authorized hourly acquisition report is no_candidates with attempted=0; the previously blocked item was not retried.","fallback":"Used the user-supplied Kehot publisher scan and inspected the next continuous item-level batch."}
+  ],
+  "verification_scope":"Fifteen item bodies were read across thirteen PDF pages. Identity, printed locator and bounded propositions are verified to this publisher scan only. Incoming letters, attached publications, photographs, cheques, medical, financial, estate, institutional and later outcome records were not independently inspected.",
+  "rights_note":"Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note":"All propositions are source-grounded paraphrases. Medical, financial, causal and legal implications are explicitly bounded. Cited works and editorial notes are not silently promoted to independent evidence."
+}
