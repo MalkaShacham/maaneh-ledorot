@@ -1,0 +1,24 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-022",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"173-189"},
+  "reviewed_items": 15,
+  "new_content_records": 3,
+  "enriched_existing_canonical_records": 12,
+  "propositions_added": 53,
+  "identity_relation": "Twelve letters enrich existing volume-index identities. Letters ד׳תי, ד׳תיד and ד׳תיח establish three directly inspected canonical identities omitted from the conservative index records. OCR headings ד׳מה, ז״תיא, ד׳תשז and ך׳תטו resolve to printed sequence letters ד׳תה, ד׳תיא, ד׳תטז and ד׳תטו; they are not separate witnesses.",
+  "letters": ["ד׳תה","ד׳תו","ד׳תז","ד׳תח","ד׳תט","ד׳תי","ד׳תיא","ד׳תיב","ד׳תיג","ד׳תיד","ד׳תטו","ד׳תטז","ד׳תיז","ד׳תיח","ד׳תיט"],
+  "evidence_family_dedup": [
+    {"family_id":"creation-age-science-correspondence-1956","member_letters_in_batch":["ד׳תט","ד׳תיד"],"counting_rule":"Two distinct letter witnesses present related arguments about creation, chronology and scientific inference. They are not two independent scientific validations, and the cited literature was not inspected."},
+    {"family_id":"student-welfare-discipline-and-educator-sacrifice","member_letters_in_batch":["ד׳תי","ד׳תיא"],"counting_rule":"Two adjacent partial letters address student welfare, discipline and educators' self-interest. Missing openings prevent proving whether they concern the same institution or episode; synthesis must not count them as mutually corroborating event evidence."},
+    {"family_id":"kfar-chabad-1956-attack-recovery","member_letters_in_batch":["ד׳תה"],"related_prior_letters":["ד׳ת","ד׳תא","ד׳תב","ד׳תד"],"counting_rule":"The letter continues the post-attack Kfar Chabad recovery sequence. It is a distinct letter witness but not an independent witness for every underlying event in that sequence."}
+  ],
+  "blocked_alternatives": [
+    {"source":"scripts/acquire_source_content.py and aid 4666234","result":"Previously documented HTTP 403/item-shell failures; not retried in this run.","fallback":"Used the user-supplied Kehot publisher scan and inspected the next continuous item-level batch."}
+  ],
+  "verification_scope": "Fifteen letter bodies were read across seventeen PDF pages. Identity, printed locator and bounded propositions are verified to this publisher scan only. Incoming letters, referenced photographs, telegrams, manuscripts, publications, institutional, medical, political and scientific records, cited works and outcomes were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Scientific, medical, security and causal assertions are explicitly scoped as positions expressed in the letters, not independently established facts. Translated phrases are not counted as independent witnesses."
+}

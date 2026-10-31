@@ -242,5 +242,21 @@ for(const [question,key] of batch021Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-021 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; fifty-seven real-corpus answer checks passed`);
+const batch022Checks=[
+  ['מה כתב הרבי על תצלום התנאים, סופי השורות וקנס?','id:igrot-kodesh-v13-דתו'],
+  ['כיצד הציע הרבי להתמודד עם מחשבות בלתי רצויות?','id:igrot-kodesh-v13-דתח'],
+  ['האם משמעת תקיפה מחייבת להקל ולרחם?','id:igrot-kodesh-v13-דתי'],
+  ['מה כתב הרבי לרב הרצוג על רדיואקטיביות והסקה על גיל העולם?','id:igrot-kodesh-v13-דתיד'],
+  ['מדוע הודגש הידור חיצוני בחוברת בטורונטו?','id:igrot-kodesh-v13-דתיז']
+];
+for(const [question,key] of batch022Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-022 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-022 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-022 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-022 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; sixty-two real-corpus answer checks passed`);
 

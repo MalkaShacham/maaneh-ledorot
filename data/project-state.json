@@ -20,20 +20,20 @@
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 383,
-    "canonical_unique_item_keys": 10013,
+    "canonical_json_files": 384,
+    "canonical_unique_item_keys": 10016,
     "evidence_family_files": 55,
-    "verified_unique_item_keys": 8328,
+    "verified_unique_item_keys": 8331,
     "status_counts_unique_keys": {
-      "Verified": 8328,
+      "Verified": 8331,
       "Linked": 11,
       "Parsed": 0,
       "Indexed": 1156,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 221,
-    "content_verified_unique_sources": 218,
-    "answer_eligible_propositions": 664
+    "answer_eligible_unique_sources": 233,
+    "content_verified_unique_sources": 230,
+    "answer_eligible_propositions": 707
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -116,7 +116,7 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "data/content-reviews/2026-10-31-content-batch-019.json",
+    "current_batch": "data/content-reviews/2026-10-31-content-batch-022.json",
     "required_agent_action": "Inspect authorized item-level content, add bounded source-grounded propositions with locators, expand accessible corpus, and verify live content readiness after publication."
   }
 }
