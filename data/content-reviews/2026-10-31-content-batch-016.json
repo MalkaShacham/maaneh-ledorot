@@ -1,0 +1,54 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-016",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "108-118"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 3,
+  "enriched_existing_canonical_records": 7,
+  "identity_relation": "Letters ד׳שמא, ד׳שמח and ד׳שמט were absent from canonical content records (ד׳שמא was a conservative index exception) and are added as canonical records. Six correctly indexed identities are enriched in place. Letter ד׳שמד enriches the existing same-page legacy OCR identity ד׳שדמ rather than creating a duplicate. The index and inspected body pages are one publisher witness, not independent corroboration.",
+  "propositions_added": 38,
+  "letters": [
+    "ד׳שמ",
+    "ד׳שמא",
+    "ד׳שמב",
+    "ד׳שמג",
+    "ד׳שמד",
+    "ד׳שמה",
+    "ד׳שמו",
+    "ד׳שמז",
+    "ד׳שמח",
+    "ד׳שמט"
+  ],
+  "evidence_family_dedup": [
+    {
+      "family_id": "kfar-chabad-1956-attack-recovery",
+      "member_letters_in_batch": ["ד׳שמא"],
+      "related_existing_letters": ["ד׳שיט"],
+      "counting_rule": "Letter ד׳שמא explicitly continues the enrollment and institutional policy discussion in ד׳שיט. It is a distinct item witness but not an independent recovery campaign."
+    },
+    {
+      "family_id": "family-religious-encouragement",
+      "member_letters_in_batch": ["ד׳שמה"],
+      "counting_rule": "The family guidance joins the existing thematic family. Its Kfar Chabad donation paragraph is related context and does not become a separate recovery witness."
+    },
+    {
+      "family_id": "sefer-harikma-marginalia-publication-plan",
+      "member_letters_in_batch": ["ד׳שמד"],
+      "counting_rule": "Hebrew propositions paraphrase the inspected Yiddish letter. They are not a translation witness and do not increase independent-source counts."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and aid 4666234",
+      "result": "Previously documented HTTP 403/item-shell failures; data/acquisition/latest.json reports no candidates and no enriched records in the latest run.",
+      "action": "Known blocked routes were not retried; the user-supplied publisher scan was used as the accessible source."
+    }
+  ],
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}

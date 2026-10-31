@@ -114,7 +114,39 @@ for(const mode of ['regular','researcher']){
   assert(m.sources.length<=3,`${mode}: generic mission language must not flood the unique-role answer`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every unique-role claim needs a proposition-level citation`);
 }
+const marginaliaQuestion='האם צריך להדפיס מחדש ספר כדי לפרסם הערות שוליים?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,marginaliaQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected book-marginalia evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשדמ'),`${mode}: letter ד׳שמד must support the marginalia answer through its legacy canonical identity`);
+  assert(m.sources.length===1,`${mode}: generic book-publication evidence must not enter the specific marginalia answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every marginalia claim needs a proposition-level citation`);
+}
+const dentalQuestion='מה כתב הרבי על עקירת שיניים וחוות דעת נוספת?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,dentalQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected dental evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-349'),`${mode}: letter ד׳שמט must support the dental answer`);
+  assert(m.sources.length===1,`${mode}: generic health evidence must not enter the specific dental answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every dental claim needs a proposition-level citation`);
+}
+const repetitionMemoryQuestion='איך לחזור על חסידות ולשפר זיכרון?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,repetitionMemoryQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected repetition-and-memory evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשמו'),`${mode}: letter ד׳שמו must support the repetition-and-memory answer`);
+  assert(m.sources.length<=2,`${mode}: generic study or forgetfulness evidence must not flood the combined query`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every repetition-and-memory claim needs a proposition-level citation`);
+}
+const mikvehPeaceQuestion='האם צריך להמתין לשלום לפני שמקדמים בניית מקווה?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,mikvehPeaceQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected mikveh-and-peace evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-348'),`${mode}: letter ד׳שמח must support the mikveh-and-peace answer`);
+  assert(m.sources.length===1,`${mode}: generic mikveh or dispute evidence must not enter the specific answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every mikveh-and-peace claim needs a proposition-level citation`);
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; twenty-six real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; thirty-four real-corpus answer checks passed`);
 

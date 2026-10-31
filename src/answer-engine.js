@@ -1,12 +1,12 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד אילו איזה מהו מהי מהם מהן מי מתי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s))return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
  חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch','קינדער'],
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
  בריאות:['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
- מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אם','woman','women','mother','פרוי','פרויען'],
+ מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אמא','אם המשפחה','woman','women','mother','פרוי','פרויען'],
  פרנסה:['פרנסה','עסק','livelihood','business','parnassa'], שליחות:['שליח','שליחות','shliach','shlichus','mission'],
  נישואין:['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
  'לימוד הלכה':['הלכה','הלכות','קיצור שולחן ערוך','לימוד הלכה','practical halacha','halacha','halachic study'],
@@ -17,6 +17,10 @@ const TOPICS={
  'שכחה וחלומות':['שכחה וחלומות','שכחה','חיזוק הזכרון','חלומות מטרידים','forgetfulness and dreams','memory and disturbing dreams'],
  'צדקה ולימוד':['צדקה מחליפה לימוד','צדקה מתוארת כמזככת','צדקה מגדילה את פירות העבודה','charity replace study','charity and study effort'],
  'תפקיד דתי ייחודי':['תפקיד ייחודי בענייני דת','תפקיד המסוים שנמסר','משימה שאחרים אינם יכולים למלא','unique religious role','task others cannot fulfill'],
+ 'הערות שוליים בספר':['הערות שוליים','הדפסה מחודשת','להדפיס מחדש ספר','לפרסם הערות שוליים','הערות השוליים שהותיר','פרסום מוקדם של ההערות','book marginalia','reprint a book for marginal notes'],
+ 'עקירת שיניים וחוות דעת':['עקירת שיניים','חוות דעת נוספת','לעקור את כל השיניים','מומחים נוספים','dental extraction second opinion','extract all teeth'],
+ 'חזרה בחסידות וזיכרון':['לשפר זיכרון','לחזור על חסידות','חזרה בחסידות','חזרה מרובה','כוח הזיכרון','review chassidus memory','repetition and memory'],
+ 'מקווה בלי המתנה לשלום':['בניית מקווה','לקדם בניית מקווה','מקדמים בניית מקווה','להמתין לשלום','אין לעכב בגללה פעולות אחרות','לקידום מקווה','מקווה בקיבוץ מפלסים','mikveh without waiting for peace'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -57,13 +61,18 @@ export function understandQuestion(q){
  // teacher can outrank the inspected source about yeshiva enrollment policy.
  if(topics.includes('הרחבת ישיבה'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('בית רבקה בראונסוויל'))topics=topics.filter(t=>t!=='חינוך');
- const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/מתי|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
+ if(topics.includes('הערות שוליים בספר'))topics=topics.filter(t=>t!=='הפצת ספרים');
+ const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  const raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
  const entities=(original.match(/(?:[A-Z][\w-]+(?:\s+[A-Z][\w-]+)*)|(?:[א-ת]{2,}(?:\s+[א-ת]{2,}){1,2})/g)||[]).map(norm).filter(x=>!STOP.has(x)).slice(0,8);
  const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent)&&!isIntentFramingTerm(queryToken(t),intent)).map(queryToken);
  const expanded=[...semanticRaw];topics.forEach(k=>expanded.push(...TOPICS[k]));
  const topicTokens=new Set(topics.flatMap(k=>(TOPICS[k]||[]).map(norm)));
- const isTopicToken=t=>topicTokens.has(t)||[...topicTokens].some(alias=>containsTerm(t,alias));
+ // A natural-language query often splits a multi-word topic alias into its
+ // component tokens. Those components are topic anchors, not extra qualifiers.
+ // Testing in both directions prevents generic words from being mistaken for
+ // evidence-specific constraints after a phrase topic has already matched.
+ const isTopicToken=t=>topicTokens.has(t)||[...topicTokens].some(alias=>containsTerm(t,alias)||containsTerm(alias,t));
  return {query,query_script:scriptOf(query),topic:topics[0]||null,topics,intent,entities,subtopic:semanticRaw.filter(t=>!isTopicToken(t)).slice(0,8),terms:[...new Set(expanded.map(norm))]};
 }
 function evidenceText(e){return norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));}
