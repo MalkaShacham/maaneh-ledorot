@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch026';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch027';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -52,6 +52,11 @@ const TOPIC_ALIASES={
   'יחס פוגע והתמדה בישיבה':['בחור ישיבה צריך להפסיק ללמוד בגלל יחס','יחס לא ראוי בישיבה','יחס בלתי ראוי','יחס פוגע בישיבה','להפסיק ללמוד בגלל יחס','להפחית בלימוד','התמדה לפני חיפוש חברותא','poor treatment yeshiva persistence study'],
   'נשי חבד לונדון ופעילות קיץ':['סניף נשי חב״ד בלונדון','חב״ד בלונדון','לנצל את הקיץ','נשי ובנות חב״ד בלונדון','סניף לונדון','פעילות קיץ לילדים','נופשים ממקומות שונים','london chabad women summer outreach'],
   'מקום בניין ישיבה ליד בתי ספר למלאכה':['לבחור מקום לבניין ישיבה','בחירת מקום לבניין הישיבה','מקום לבניין ישיבה ליד בתי ספר למלאכה','בניין ישיבה ליד בתי ספר למלאכה','בתי ספר למלאכה','בתי הספר למלאכה','yeshiva building near vocational schools'],
+  'פרסום יוזמת מצה שמורה':['לפרסם מי יזם חלוקת מצה שמורה','יוזם חלוקת מצה שמורה','יוזמת חלוקת מצה שמורה','ענווה שאינה במקומה','public credit shmurah matzah distribution'],
+  'תיאום שני רופאים מומחים':['לתאם בין שני רופאים מומחים','שני רופאים מומחים שנותנים חוות דעת','שתי חוות הדעת לרופא המשפחה','coordinate two expert doctors'],
+  'מיקרופון בסידור קידושין':['מיקרופון בסידור קידושין','מיקרופון בחופה','מיקרופון בחצר','microphone at kiddushin'],
+  'נשי חבד טורונטו ופעילות קיץ':['סניף נשי חב״ד בטורונטו','נשי ובנות חב״ד בטורונטו','אסיפת הסיום לפני החופשה','עבודה עם הנוער בחופשה','toronto chabad women summer youth work'],
+  'עטיפת טלית עיניים ולא פה':['עטיפת טלית גדול','לכסות את העיניים והפה בטלית','מכסים את העיניים ולא את הפה','טלית עיניים פה','tallit cover eyes not mouth'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

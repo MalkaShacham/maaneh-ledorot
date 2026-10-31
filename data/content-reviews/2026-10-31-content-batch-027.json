@@ -1,0 +1,22 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-027",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {"library_filename": "אגרות קודש יג.pdf", "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390", "pdf_pages": "251-266"},
+  "reviewed_items": 15,
+  "new_content_records": 3,
+  "enriched_existing_canonical_records": 12,
+  "propositions_added": 57,
+  "identity_relation": "Twelve letters enrich existing conservative volume-index identities. Three directly inspected identities were absent from the canonical records: ד׳תפט, ד׳תצב and ד׳תצד. OCR headings ד׳תסה and ד׳תאה resolve by visual inspection, running sequence and printed context to ד׳תפה and ד׳תצה; neither is a separate witness.",
+  "letters": ["ד׳תפא", "ד׳תפב", "ד׳תפג", "ד׳תפד", "ד׳תפה", "ד׳תפו", "ד׳תפז", "ד׳תפח", "ד׳תפט", "ד׳תצ", "ד׳תצא", "ד׳תצב", "ד׳תצג", "ד׳תצד", "ד׳תצה"],
+  "evidence_family_dedup": [
+    {"family_id": "chabad-women-europe-summer-children-and-vacation-outreach-1956", "member_letters": ["ד׳תפ", "ד׳תפא"], "counting_rule": "The London and France branch letters are distinct item witnesses but parallel versions of the same summer-outreach campaign. They are linked to one Evidence Family rather than counted as independent source families."},
+    {"family_id": "chicago-farbrengen-practical-synagogue-strengthening-and-mikdash-meat", "member_letters_in_batch": ["ד׳תפה"], "counting_rule": "The inspected witness is Yiddish; Hebrew research paraphrases are derived access aids. The farbrengen maxim remains explicitly attributed through the Previous Rebbe to the Alter Rebbe."},
+    {"family_id": "chabad-tallit-cover-eyes-not-mouth-and-kiddush-text-continuity", "member_letters_in_batch": ["ד׳תצג"], "counting_rule": "The publisher's editorial completion and cited books were not separately inspected and are not promoted as independent witnesses."}
+  ],
+  "blocked_alternatives": [{"source": "scripts/acquire_source_content.py and prior GitHub-hosted references", "result": "The previously blocked crawler path was not retried; latest acquisition state remains no_candidates with attempted=0.", "fallback": "Used the authorized user-supplied Kehot publisher scan and inspected the next continuous item-level batch."}],
+  "verification_scope": "Fifteen item bodies were read across sixteen PDF pages. Identity, printed locator and bounded propositions are verified to this publisher scan only. Incoming letters, cited works, medical, institutional, acoustic and later outcome records were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Medical, educational, relational, acoustic and halakhic implications are explicitly bounded. OCR variants, translations, editorial completions and cited works are not silently promoted to independent evidence."
+}

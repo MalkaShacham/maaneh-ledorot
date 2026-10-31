@@ -56,6 +56,11 @@ const TOPICS={
  'יחס פוגע והתמדה בישיבה':['בחור ישיבה צריך להפסיק ללמוד בגלל יחס','יחס לא ראוי בישיבה','יחס בלתי ראוי','יחס פוגע בישיבה','להפסיק ללמוד בגלל יחס','להפחית בלימוד','התמדה לפני חיפוש חברותא','poor treatment yeshiva persistence study'],
  'נשי חבד לונדון ופעילות קיץ':['סניף נשי חב״ד בלונדון','חב״ד בלונדון','לנצל את הקיץ','נשי ובנות חב״ד בלונדון','סניף לונדון','פעילות קיץ לילדים','נופשים ממקומות שונים','london chabad women summer outreach'],
  'מקום בניין ישיבה ליד בתי ספר למלאכה':['לבחור מקום לבניין ישיבה','בחירת מקום לבניין הישיבה','מקום לבניין ישיבה ליד בתי ספר למלאכה','בניין ישיבה ליד בתי ספר למלאכה','בתי ספר למלאכה','בתי הספר למלאכה','yeshiva building near vocational schools'],
+ 'פרסום יוזמת מצה שמורה':['לפרסם מי יזם חלוקת מצה שמורה','יוזם חלוקת מצה שמורה','יוזמת חלוקת מצה שמורה','ענווה שאינה במקומה','public credit shmurah matzah distribution'],
+ 'תיאום שני רופאים מומחים':['לתאם בין שני רופאים מומחים','שני רופאים מומחים שנותנים חוות דעת','שתי חוות הדעת לרופא המשפחה','coordinate two expert doctors'],
+ 'מיקרופון בסידור קידושין':['מיקרופון בסידור קידושין','מיקרופון בחופה','מיקרופון בחצר','microphone at kiddushin'],
+ 'נשי חבד טורונטו ופעילות קיץ':['סניף נשי חב״ד בטורונטו','נשי ובנות חב״ד בטורונטו','אסיפת הסיום לפני החופשה','עבודה עם הנוער בחופשה','toronto chabad women summer youth work'],
+ 'עטיפת טלית עיניים ולא פה':['עטיפת טלית גדול','לכסות את העיניים והפה בטלית','מכסים את העיניים ולא את הפה','טלית עיניים פה','tallit cover eyes not mouth'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -106,6 +111,8 @@ export function understandQuestion(q){
  if(topics.includes('הודעה מסודרת להנהלת בית ספר'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('נשי חבד לונדון ופעילות קיץ'))topics=topics.filter(t=>!['נשים','חינוך'].includes(t));
  if(topics.includes('מקום בניין ישיבה ליד בתי ספר למלאכה'))topics=topics.filter(t=>!['חינוך','הרחבת ישיבה'].includes(t));
+ if(topics.includes('תיאום שני רופאים מומחים'))topics=topics.filter(t=>!['בריאות','רופאים מומחים והתאמת לימוד','ניתוח שקדים ושני מומחים'].includes(t));
+ if(topics.includes('נשי חבד טורונטו ופעילות קיץ'))topics=topics.filter(t=>!['נשים','חינוך'].includes(t));
  let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
  if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
@@ -167,6 +174,11 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('יחס פוגע והתמדה בישיבה')&&(!containsTerm(body,'יחס')||!['התמדה','להפסיק בלימוד','להפחית בלימוד'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['yeshiva treatment-and-persistence setting is absent']};
  if(u.topics.includes('נשי חבד לונדון ופעילות קיץ')&&(!containsTerm(body,'לונדון')||!containsTerm(body,'קיץ')))return{score:0,support:'insufficient_specific_evidence',reasons:['London branch summer-outreach setting is absent']};
  if(u.topics.includes('מקום בניין ישיבה ליד בתי ספר למלאכה')&&(!['בתי ספר למלאכה','בתי הספר למלאכה'].some(t=>containsTerm(body,t))||!['מקום','בניין'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['yeshiva-building location near vocational schools is absent']};
+ if(u.topics.includes('פרסום יוזמת מצה שמורה')&&(!containsTerm(body,'מצה שמורה')||!['יוזם','יוזמה','ענווה'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['shmurah-matzah initiative and public credit are absent']};
+ if(u.topics.includes('תיאום שני רופאים מומחים')&&(!containsTerm(body,'שני רופאים')||!['לתאם','חוות הדעת','רופא המשפחה'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['two-doctor coordination setting is absent']};
+ if(u.topics.includes('מיקרופון בסידור קידושין')&&(!containsTerm(body,'מיקרופון')||!containsTerm(body,'קידושין')))return{score:0,support:'insufficient_specific_evidence',reasons:['microphone-at-kiddushin setting is absent']};
+ if(u.topics.includes('נשי חבד טורונטו ופעילות קיץ')&&(!containsTerm(body,'טורונטו')||!containsTerm(body,'חופשה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Toronto branch summer-youth setting is absent']};
+ if(u.topics.includes('עטיפת טלית עיניים ולא פה')&&(!containsTerm(body,'טלית')||!containsTerm(body,'עיניים')||!containsTerm(body,'פה')))return{score:0,support:'insufficient_specific_evidence',reasons:['tallit eyes-not-mouth custom is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

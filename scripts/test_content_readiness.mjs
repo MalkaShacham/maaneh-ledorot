@@ -322,5 +322,21 @@ for(const [question,key] of batch026Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-026 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; eighty-two real-corpus answer checks passed`);
+const batch027Checks=[
+  ['האם לפרסם מי יזם חלוקת מצה שמורה?','id:igrot-kodesh-v13-דתפז'],
+  ['כיצד לתאם בין שני רופאים מומחים שנותנים חוות דעת?','id:igrot-kodesh-v13-דתפז'],
+  ['האם צריך מיקרופון בסידור קידושין בחצר?','id:igrot-kodesh-v13-דתפח'],
+  ['כיצד לנצל את חופשת הקיץ בסניף נשי חב״ד בטורונטו?','id:igrot-kodesh-v13-דתצב'],
+  ['כיצד מכסים את העיניים והפה בעטיפת טלית גדול?','id:igrot-kodesh-v13-דתצג']
+];
+for(const [question,key] of batch027Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-027 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-027 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-027 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-027 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; eighty-seven real-corpus answer checks passed`);
 
