@@ -1,0 +1,44 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-019",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "139-148"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 2,
+  "enriched_existing_canonical_records": 8,
+  "identity_relation": "Letters ד׳שע and ד׳שעא promote conservative index exceptions after direct body inspection. The other eight enrich existing volume-index identities. OCR headings ד׳שעך and ז״שעה resolve to printed letters ד׳שעד and ד׳שעה and are not counted as witnesses.",
+  "propositions_added": 39,
+  "letters": ["ד׳שע", "ד׳שעא", "ד׳שעב", "ד׳שעג", "ד׳שעד", "ד׳שעה", "ד׳שעו", "ד׳שעז", "ד׳שעח", "ד׳שעט"],
+  "evidence_family_dedup": [
+    {
+      "family_id": "kfar-chabad-1956-attack-recovery",
+      "member_letters_in_batch": ["ד׳שעז", "ד׳שעח"],
+      "counting_rule": "Both letters concern educational strengthening in Kfar Chabad in the same documented recovery setting and join the existing event-level family; they are distinct letter witnesses, not independent recovery events."
+    },
+    {
+      "family_id": "neshai-chabad-convention-internal-and-external-growth",
+      "member_letters_in_batch": ["ד׳שעט"],
+      "related_existing_letters": ["ד׳שנה"],
+      "counting_rule": "The Montreal branch letter refers to delegates at the same general Nshei Chabad convention already documented in ד׳שנה. Its Yiddish witness is distinct, but the convention is not counted twice; Hebrew paraphrases are not independent translations."
+    },
+    {
+      "family_id": "kfar-chabad-pharmacy-expansion-and-name",
+      "member_letters_in_batch": ["ד׳שעו"],
+      "related_family": "kfar-chabad-1956-attack-recovery",
+      "counting_rule": "The pharmacy and naming letter is linked to the broader Kfar Chabad recovery context but remains a distinct institutional decision case because the inspected letter does not itself describe the attack."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and aid 4666234",
+      "result": "Previously documented HTTP 403/item-shell failures; data/acquisition/latest.json continues to report no candidates and no enriched records.",
+      "action": "Known blocked routes were not retried; the user-supplied publisher scan was used as the accessible source."
+    }
+  ],
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}

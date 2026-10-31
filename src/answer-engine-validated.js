@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch018';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch019';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -29,6 +29,10 @@ const TOPIC_ALIASES={
   'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
   'סניף תלמוד תורה ומחנה יום':['סניף תלמוד תורה שאינו מצליח','לסגור סניף תלמוד תורה','חיסול הסניף','מחנה יום','בסיס לרכישת תלמידים','failing talmud torah branch','day camp student recruitment'],
   'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','לימוד אישי','הלימוד האישי','בלי להזניח לימוד אישי','פוטר','פוטרת','increase class participants','personal study obligation'],
+  'כיסוי ראש והשפעה עקיפה':['כיסוי ראש כששכנוע ישיר לא מצליח','כיסוי ראש והשפעה עקיפה','להשפיע בעקיפין על כיסוי ראש','כיסוי הראש','השפעה ישירה','בעקיפין','hair covering indirect influence'],
+  'רופאים מומחים והתאמת לימוד':['טיפול רופאים מומחים והתקשה בלימוד','רופאים מומחים והתקשה בלימוד','רופאים מומחים','לשמוע להנחיותיהם','לימוד לגירסא','לימוד בקיאותי','expert doctors study adjustment'],
+  'בית מרקחת ושם כפר חב״ד':['בית מרקחת ושם כפר חב״ד','פתיחת בית מרקחת בכפר חב״ד','השם שפריר','כפר חב״ד א׳ וב׳','kfar chabad pharmacy and name'],
+  'סניף נשי חב״ד מונטריאול':['סניף נשי חב״ד במונטריאול','סניף מונטריאול של אגודת נשי','סניף מונטריאול','נשי ובנות חב״ד','הרחבת הפעילות','פעילות הסניף','להתרחב','montreal nshei chabad branch'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

@@ -193,7 +193,22 @@ for(const [question,key] of newBatchChecks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-018 claim needs a proposition-level citation`);
   }
 }
+const batch019Checks=[
+  ['האם צריך ללמוד זוהר לפני שמתחילים ללמוד חסידות?','id:igrot-scan-v13-letter-4-371'],
+  ['כיצד להשפיע על כיסוי ראש כששכנוע ישיר לא מצליח?','id:igrot-kodesh-v13-דשעב'],
+  ['מה כתב הרבי לאדם שנמצא בטיפול רופאים מומחים והתקשה בלימוד?','id:igrot-kodesh-v13-דשעג'],
+  ['מה הציע הרבי לגבי בית מרקחת ושם כפר חב״ד?','id:igrot-kodesh-v13-דשעו'],
+  ['מה כתב הרבי לסניף נשי חב״ד במונטריאול על הרחבת הפעילות?','id:igrot-kodesh-v13-דשעט']
+];
+for(const [question,key] of batch019Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-019 evidence must answer ${question}`);
+    assert.deepEqual(m.sources.map(e=>e.key),[key],`${mode}: the specific batch-019 query must retrieve only its inspected evidence family`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-019 claim needs a proposition-level citation`);
+  }
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; forty-two real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; forty-seven real-corpus answer checks passed`);
 
