@@ -26,6 +26,10 @@ const TOPICS={
  'עזיבת פרנסה לפעילות':['לעזוב מקור פרנסה','יעזוב ענין שפרנסתו','פעילות חב״ד ופרנסה','quit livelihood for chabad work'],
  'אהבת התורה':['אהבת התורה','אהבת ההשגה השכלית','הישג השכלי','הנאת הלומד','love of torah','intellectual satisfaction'],
  'אהבת ה׳':['אהבת ה׳','אהבת המקום','גדולת הבורא','ביטול ולשפלות','love of god','love of g-d'],
+ 'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד','מסחר בזמן לימוד בישיבה','ישיבה עד הצהריים','לימוד כל היום','חסרון בהתרכזות','business during yeshiva study','full-day yeshiva study'],
+ 'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
+ 'סניף תלמוד תורה ומחנה יום':['סניף תלמוד תורה שאינו מצליח','לסגור סניף תלמוד תורה','חיסול הסניף','מחנה יום','בסיס לרכישת תלמידים','failing talmud torah branch','day camp student recruitment'],
+ 'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','לימוד אישי','הלימוד האישי','בלי להזניח לימוד אישי','פוטר','פוטרת','increase class participants','personal study obligation'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -66,6 +70,8 @@ export function understandQuestion(q){
  // teacher can outrank the inspected source about yeshiva enrollment policy.
  if(topics.includes('הרחבת ישיבה'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('בית רבקה בראונסוויל'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('סניף תלמוד תורה ומחנה יום'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('מסחר ולימוד יום שלם'))topics=topics.filter(t=>t!=='פרנסה');
  if(topics.includes('הערות שוליים בספר'))topics=topics.filter(t=>t!=='הפצת ספרים');
  const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  const raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
@@ -100,6 +106,7 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['personal-study side of the combined query is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

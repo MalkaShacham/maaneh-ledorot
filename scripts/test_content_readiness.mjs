@@ -52,7 +52,7 @@ const practicalHalachaQuestion='מה כתב הרבי על לימוד הלכה מ
 for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,practicalHalachaQuestion,{mode});
   assert(m.answerable,`${mode}: inspected practical-halacha evidence must answer the query`);
-  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-296'),`${mode}: the inspected practical-halacha letter must be retrieved`);
+  assert(m.sources.some(e=>e.evidence_family_id==='igrot-kodesh-v13-letter-4296'),`${mode}: the inspected practical-halacha correspondence family must be retrieved`);
   assert(!m.sources.some(e=>String(e.aid)==='4202219'),`${mode}: a synagogue phobia response must not match a practical-halacha query solely on location words`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every practical-halacha claim needs a proposition-level citation`);
 }
@@ -179,7 +179,21 @@ for(const mode of ['regular','researcher']){
   assert.deepEqual(new Set(m.comparative_coverage.supported_topics),new Set(['אהבת התורה','אהבת ה׳']),`${mode}: both comparison sides need proposition-level coverage`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every love comparison claim needs a proposition-level citation`);
 }
+const newBatchChecks=[
+  ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
+  ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
+  ['כיצד להגדיל משתתפים בכיתות לימוד בלי להזניח לימוד אישי?','id:igrot-scan-v13-letter-4-368'],
+  ['מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
+];
+for(const [question,key] of newBatchChecks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-018 evidence must answer ${question}`);
+    assert.deepEqual(m.sources.map(e=>e.key),[key],`${mode}: the specific batch-018 query must retrieve only its inspected evidence family`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-018 claim needs a proposition-level citation`);
+  }
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; thirty-eight real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; forty-two real-corpus answer checks passed`);
 
