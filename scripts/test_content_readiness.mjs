@@ -208,7 +208,23 @@ for(const [question,key] of batch019Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-019 claim needs a proposition-level citation`);
   }
 }
+const batch020Checks=[
+  ['האם לחכות לידיעה שלמה לפני הפצת המעיינות?','id:igrot-scan-v13-letter-4-380'],
+  ['מה כתב הרבי על שתילי אתרוגי קלבריה שניטעו בארץ?','id:igrot-scan-v13-letter-4-381'],
+  ['כיצד לנהוג כשכוח הזיכרון מתעייף בזמן הלימוד?','id:igrot-kodesh-v13-דשפט'],
+  ['כיצד לבחור מקום לבניין ישיבה ליד בתי ספר למלאכה?','id:igrot-scan-v13-letter-4-385'],
+  ['מה כתב הרבי על ניטל לפי הלוח היוליאני או הגרגוריאני?','id:igrot-scan-v13-letter-4-391']
+];
+for(const [question,key] of batch020Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-020 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-020 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?10:5),`${mode}: the specific batch-020 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-020 claim needs a proposition-level citation`);
+  }
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; forty-seven real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; fifty-two real-corpus answer checks passed`);
 
