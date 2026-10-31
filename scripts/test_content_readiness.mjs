@@ -290,5 +290,21 @@ for(const [question,key] of batch024Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-024 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; seventy-two real-corpus answer checks passed`);
+const batch025Checks=[
+  ['מה כתב הרבי על ניתוח להסרת שקדים וחוות דעת של שני מומחים?','id:igrot-kodesh-v13-דתנג'],
+  ['כיצד הוצע לממן פתיחת בית ספר לבנות במלבורן?','id:igrot-kodesh-v13-דתנו'],
+  ['האם הבדל אשכנזי ספרדי הוא סיבה לדחות שידוך?','id:igrot-kodesh-v13-דתנז'],
+  ['מה הציע הרבי לאיגוד הרבנים לגבי צמצום שעות לימודי חול?','id:igrot-kodesh-v13-דתנח'],
+  ['מה כתב הרבי על נסיעה עם תינוק בן פחות משנה ועל קבלת עצה רוחנית?','id:igrot-kodesh-v13-דתסד']
+];
+for(const [question,key] of batch025Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-025 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-025 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-025 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-025 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; seventy-seven real-corpus answer checks passed`);
 

@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר אומרים כתב כותב על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר אומרים כתב כותב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s))return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
@@ -45,6 +45,11 @@ const TOPICS={
  'ביקור אוריאל צימר':['ביקורו של אוריאל צימר','אוריאל צימר בארץ','לתאם פעילות להפצת חסידות','zimmer israel visit'],
  'ייסורים ומבט מוגבל':['להבין ייסורים וחסרונות של אנשים','קושי להבין ייסורים','ייסורים וחסרונות','חלק מוגבל','מבט אנושי','חסרונות אפשריים','suffering limited perspective'],
  'יוזמה לחיזוק היהדות':['להמתין להזדמנות כדי לפעול לחיזוק היהדות','הזדמנות לפעול לחיזוק היהדות','פעולות לחיזוק היהדות','תופיע הזדמנות','wait for an opportunity to strengthen judaism'],
+ 'ניתוח שקדים ושני מומחים':['ניתוח להסרת שקדים','הסרת שקדים','שני רופאים מומחים','tonsil surgery two specialists'],
+ 'בית ספר לבנות במלבורן':['בית ספר לבנות במלבורן','פתיחת בית ספר לבנות במלבורן','שני חדשים הראשונים','melbourne girls school funding'],
+ 'שידוך אשכנזי ספרדי':['שידוך אשכנזי ספרדי','הבדל אשכנזי ספרדי','שילוב אשכנזי־ספרדי','לזווג אשכנזי וספרדי','סיבה לדחות שידוך','ashkenazi sephardi match'],
+ 'איגוד הרבנים ושעות חול':['איגוד הרבנים','צמצום שעות לימודי חול','ינכו מספר שעות','rabbinical union secular school hours'],
+ 'נסיעת תינוק ועצה רוחנית':['נסיעה עם תינוק בן פחות משנה','נסיעה עם תינוק','עד מלאת לתינוק שנה','עד גיל שנה','קבלת עצה רוחנית','הדרכה בענייני תורה ומצוות','infant travel spiritual advice'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -73,7 +78,7 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי)$/.test(t);
  // General wording that asks for a source's lesson or moral takeaway is framing,
  // while the concrete subject (for example, פרה אדומה) remains query-specific.
- if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הצעה|ייעץ|יעץ|להתמודד|תמודד|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הוצע|וצע|הצעה|ייעץ|יעץ|להתמודד|תמודד|לממן|ממן|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
  return false;
 };
 
@@ -90,8 +95,11 @@ export function understandQuestion(q){
  if(topics.includes('רופאים מומחים והתאמת לימוד'))topics=topics.filter(t=>t!=='בריאות');
  if(topics.includes('סניף נשי חב״ד מונטריאול'))topics=topics.filter(t=>t!=='נשים');
  if(topics.includes('בית רבקה סדר בוקר'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('איגוד הרבנים ושעות חול'))topics=topics.filter(t=>t!=='בית רבקה סדר בוקר');
  if(topics.includes('הערות שוליים בספר'))topics=topics.filter(t=>t!=='הפצת ספרים');
- const intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
+ let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
+ if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
+ if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
  const raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
  const entities=(original.match(/(?:[A-Z][\w-]+(?:\s+[A-Z][\w-]+)*)|(?:[א-ת]{2,}(?:\s+[א-ת]{2,}){1,2})/g)||[]).map(norm).filter(x=>!STOP.has(x)).slice(0,8);
  const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent)&&!isIntentFramingTerm(queryToken(t),intent)).map(queryToken).filter(t=>t&&!STOP.has(t));
@@ -139,6 +147,11 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('ביקור אוריאל צימר')&&!containsTerm(body,'אוריאל צימר'))return{score:0,support:'insufficient_specific_evidence',reasons:['Uriel Zimmer visit is absent from the evidence body']};
  if(u.topics.includes('ייסורים ומבט מוגבל')&&!['חלק מוגבל','חסרונות אפשריים','קושי להבין'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['limited-perspective response to suffering is absent from the evidence body']};
  if(u.topics.includes('יוזמה לחיזוק היהדות')&&(!containsTerm(body,'הזדמנות')||!containsTerm(body,'חיזוק היהדות')))return{score:0,support:'insufficient_specific_evidence',reasons:['proactive Jewish-strengthening opportunity is absent from the evidence body']};
+ if(u.topics.includes('ניתוח שקדים ושני מומחים')&&!containsTerm(body,'שקדים'))return{score:0,support:'insufficient_specific_evidence',reasons:['tonsil-surgery setting is absent from the evidence body']};
+ if(u.topics.includes('בית ספר לבנות במלבורן')&&(!containsTerm(body,'מלבורן')||!containsTerm(body,'בית ספר לבנות')))return{score:0,support:'insufficient_specific_evidence',reasons:['Melbourne girls-school launch is absent from the evidence body']};
+ if(u.topics.includes('שידוך אשכנזי ספרדי')&&(!containsTerm(body,'אשכנזי')||!containsTerm(body,'ספרדי')))return{score:0,support:'insufficient_specific_evidence',reasons:['Ashkenazi-Sephardi match setting is absent from the evidence body']};
+ if(u.topics.includes('איגוד הרבנים ושעות חול')&&(!containsTerm(body,'איגוד הרבנים')||!containsTerm(body,'שעות')))return{score:0,support:'insufficient_specific_evidence',reasons:['rabbinical-union school-hours proposal is absent from the evidence body']};
+ if(u.topics.includes('נסיעת תינוק ועצה רוחנית')&&(!containsTerm(body,'תינוק')||!containsTerm(body,'שנה')))return{score:0,support:'insufficient_specific_evidence',reasons:['infant-under-one travel setting is absent from the evidence body']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

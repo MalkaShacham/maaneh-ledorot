@@ -1,0 +1,22 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-025",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {"library_filename": "אגרות קודש יג.pdf", "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390", "pdf_pages": "221-236"},
+  "reviewed_items": 15,
+  "new_content_records": 8,
+  "enriched_existing_canonical_records": 7,
+  "propositions_added": 62,
+  "identity_relation": "Seven letters enrich existing conservative volume-index identities: ד׳תנא, ד׳תנב, ד׳תנג, ד׳תנד, ד׳תנה, ד׳תנז and ד׳תנט. Eight directly inspected identities were absent from that index: ד׳תנו, ד׳תנח, ד׳תס, ד׳תסא, ד׳תסב, ד׳תסג, ד׳תסד and ד׳תסה. OCR variants ד׳תגג, ד׳וונד, ד׳תט, ד׳תטב, ד׳תטד and ד׳ווסה resolve by visual inspection, running headers, footnotes and sequence; none is a separate witness.",
+  "letters": ["ד׳תנא", "ד׳תנב", "ד׳תנג", "ד׳תנד", "ד׳תנה", "ד׳תנו", "ד׳תנז", "ד׳תנח", "ד׳תנט", "ד׳תס", "ד׳תסא", "ד׳תסב", "ד׳תסג", "ד׳תסד", "ד׳תסה"],
+  "evidence_family_dedup": [
+    {"family_id": "yiddish-financial-loss-purpose-and-action-without-complete-explanation", "member_letters_in_batch": ["ד׳תנה"], "counting_rule": "The inspected witness is Yiddish. Its bounded Hebrew research paraphrases are derived access aids and are not independent witnesses."},
+    {"family_id": "yiddish-travel-to-daughters-jerusalem-wedding-spiritual-visa", "member_letters_in_batch": ["ד׳תסב"], "counting_rule": "The inspected witness is Yiddish. Its bounded Hebrew research paraphrases are derived access aids and are not independent witnesses."},
+    {"family_id": "infant-international-travel-and-previous-rebbe-spiritual-advice-story", "member_letters_in_batch": ["ד׳תסד"], "counting_rule": "The embedded merchant story is explicitly attributed to the Previous Rebbe. It remains an attributed sub-witness inside this published letter and is not reattributed to the current Rebbe or counted as a newly inspected independent item."}
+  ],
+  "blocked_alternatives": [{"source": "scripts/acquire_source_content.py and aid 4666234", "result": "The latest authorized hourly acquisition report is no_candidates with attempted=0; the previously blocked item was not retried.", "fallback": "Used the user-supplied Kehot publisher scan and inspected the next continuous item-level batch."}],
+  "verification_scope": "Fifteen item bodies were read across sixteen PDF pages. Identity, printed locator and bounded propositions are verified to this publisher scan only. Incoming letters, cited publications, medical, institutional and later outcome records were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Medical, marital, financial, historical and halakhic implications are explicitly bounded. OCR variants, translations, editorial completions and cited works are not silently promoted to independent evidence; embedded Previous Rebbe material remains explicitly attributed."
+}
