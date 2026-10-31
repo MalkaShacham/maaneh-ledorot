@@ -156,10 +156,17 @@ def main():
         url=r.get('source_url') or ''; key=aid(url)
         if not allowed(url) or key in seen: continue
         host=urllib.parse.urlsplit(url).hostname
-        if state['hosts'].get(host,{}).get('retry_after','') > stamp: continue
+        host_state=state['hosts'].get(host,{})
+        # HTTP 403 from this publisher is a known runner-level access block. Do not
+        # schedule repeated network attempts; researchers must use an accessible
+        # authorized witness instead. HTTP 429 remains transient and retryable.
+        if host_state.get('permanent_block') or '403' in host_state.get('reason',''): continue
+        if host_state.get('retry_after','') > stamp: continue
         seen.add(key)
         previous=state['sources'].get(key,{})
-        if previous.get('outcome') == 'exact_excerpt_verified' or previous.get('retry_after','') > stamp: continue
+        if previous.get('outcome') in {'exact_excerpt_verified','permanent_access_block'}: continue
+        if previous.get('permanent_block') or '403' in previous.get('reason',''): continue
+        if previous.get('retry_after','') > stamp: continue
         p=(ROOT/r['canonical_file']).resolve()
         if not p.is_relative_to((ROOT/'data/items').resolve()): continue
         entry=json.loads(p.read_text())
@@ -187,11 +194,16 @@ def main():
             state['sources'][key]={'outcome':'exact_excerpt_verified','checked_at':stamp}
         except (ValueError,urllib.error.URLError,TimeoutError,UnicodeError,OSError) as exc:
             reason=str(exc)[:240]
-            if isinstance(exc,urllib.error.HTTPError) and exc.code in (403,429):
+            permanent_403=isinstance(exc,urllib.error.HTTPError) and exc.code == 403
+            if permanent_403:
+                state['hosts'][host]={'reason':reason,'permanent_block':True}
+            elif isinstance(exc,urllib.error.HTTPError) and exc.code == 429:
                 state['hosts'][host]={'reason':reason,'retry_after':(now+dt.timedelta(hours=24)).isoformat()}
             report['blocked'].append({'aid':key,'url':url,'reason':reason})
-            state['sources'][key]={'outcome':'blocked','reason':reason,'checked_at':stamp,
-                'retry_after':(now+dt.timedelta(hours=24)).isoformat()}
+            state['sources'][key]={'outcome':'permanent_access_block' if permanent_403 else 'blocked',
+                'reason':reason,'checked_at':stamp,
+                **({'permanent_block':True} if permanent_403 else
+                   {'retry_after':(now+dt.timedelta(hours=24)).isoformat()})}
         if report['attempted']>=max(1,min(args.limit,24)):break
         time.sleep(1)
     if discoveries:
