@@ -50,6 +50,12 @@ const TOPICS={
  'שידוך אשכנזי ספרדי':['שידוך אשכנזי ספרדי','הבדל אשכנזי ספרדי','שילוב אשכנזי־ספרדי','לזווג אשכנזי וספרדי','סיבה לדחות שידוך','ashkenazi sephardi match'],
  'איגוד הרבנים ושעות חול':['איגוד הרבנים','צמצום שעות לימודי חול','ינכו מספר שעות','rabbinical union secular school hours'],
  'נסיעת תינוק ועצה רוחנית':['נסיעה עם תינוק בן פחות משנה','נסיעה עם תינוק','עד מלאת לתינוק שנה','עד גיל שנה','קבלת עצה רוחנית','הדרכה בענייני תורה ומצוות','infant travel spiritual advice'],
+ 'גלגול נשמות ולימוד למי שאינו שומר מצוות':['גלגול נשמות','ללמד תורה למי שאינו שומר מצוות','אינו שומר מצוות','שאינו שומר מצוות','צעירים ושאלות אמונה','reincarnation teaching nonobservant jews'],
+ 'הודעה מסודרת להנהלת בית ספר':['להודיע להנהלת בית ספר','הנהלת בית ספר','עניין מוסדי','באופן מסודר ומפורש','הודעה מסודרת להנהלה','למסור למשרד','שיחה מקרית עם ההנהלה','formal notice school administration'],
+ 'התנגדות הורים ללימוד חסידות':['מה לעשות כשהורים מתנגדים ללימוד חסידות','הורים מתנגדים ללימוד חסידות','התנגדות הורים ללימוד חסידות','התנגדות הורים לחסידות','מפריעים ללמוד חסידות','כיבוד הורים ולימוד חסידות','parental opposition chassidus study'],
+ 'יחס פוגע והתמדה בישיבה':['בחור ישיבה צריך להפסיק ללמוד בגלל יחס','יחס לא ראוי בישיבה','יחס בלתי ראוי','יחס פוגע בישיבה','להפסיק ללמוד בגלל יחס','להפחית בלימוד','התמדה לפני חיפוש חברותא','poor treatment yeshiva persistence study'],
+ 'נשי חבד לונדון ופעילות קיץ':['סניף נשי חב״ד בלונדון','חב״ד בלונדון','לנצל את הקיץ','נשי ובנות חב״ד בלונדון','סניף לונדון','פעילות קיץ לילדים','נופשים ממקומות שונים','london chabad women summer outreach'],
+ 'מקום בניין ישיבה ליד בתי ספר למלאכה':['לבחור מקום לבניין ישיבה','בחירת מקום לבניין הישיבה','מקום לבניין ישיבה ליד בתי ספר למלאכה','בניין ישיבה ליד בתי ספר למלאכה','בתי ספר למלאכה','בתי הספר למלאכה','yeshiva building near vocational schools'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -97,6 +103,9 @@ export function understandQuestion(q){
  if(topics.includes('בית רבקה סדר בוקר'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('איגוד הרבנים ושעות חול'))topics=topics.filter(t=>t!=='בית רבקה סדר בוקר');
  if(topics.includes('הערות שוליים בספר'))topics=topics.filter(t=>t!=='הפצת ספרים');
+ if(topics.includes('הודעה מסודרת להנהלת בית ספר'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('נשי חבד לונדון ופעילות קיץ'))topics=topics.filter(t=>!['נשים','חינוך'].includes(t));
+ if(topics.includes('מקום בניין ישיבה ליד בתי ספר למלאכה'))topics=topics.filter(t=>!['חינוך','הרחבת ישיבה'].includes(t));
  let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
  if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
@@ -142,7 +151,7 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('מקור מנהגי תפילה')&&!['הרכנת הראש','תחילת מקום הקריאה'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['specific prayer customs are absent from the evidence body']};
  if(u.topics.includes('מענה לשאלות במפגש נשים')&&!containsTerm(body,'מפגש הבא'))return{score:0,support:'insufficient_specific_evidence',reasons:['delayed-answer meeting method is absent from the evidence body']};
  if(u.topics.includes('עזיבת פרנסה לפעילות')&&!['לעזוב מקור פרנסה','יעזוב ענין שפרנסתו','quit livelihood'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['leaving an existing livelihood is absent from the evidence body']};
- if(u.topics.includes('כיסוי ראש והשפעה עקיפה')&&!containsTerm(body,'כיסוי הראש'))return{score:0,support:'insufficient_specific_evidence',reasons:['hair-covering setting is absent from the evidence body']};
+ if(u.topics.includes('כיסוי ראש והשפעה עקיפה')&&(!containsTerm(body,'כיסוי הראש')||!['בעקיפין','השפעה ישירה','שכנוע ישיר'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['indirect hair-covering influence setting is absent from the evidence body']};
  if(u.topics.includes('תהלים בלילה ושיעורים קבועים')&&(!containsTerm(body,'תהלים')||!containsTerm(body,'לילה')))return{score:0,support:'insufficient_specific_evidence',reasons:['nighttime Psalms setting is absent from the evidence body']};
  if(u.topics.includes('ביקור אוריאל צימר')&&!containsTerm(body,'אוריאל צימר'))return{score:0,support:'insufficient_specific_evidence',reasons:['Uriel Zimmer visit is absent from the evidence body']};
  if(u.topics.includes('ייסורים ומבט מוגבל')&&!['חלק מוגבל','חסרונות אפשריים','קושי להבין'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['limited-perspective response to suffering is absent from the evidence body']};
@@ -152,6 +161,12 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('שידוך אשכנזי ספרדי')&&(!containsTerm(body,'אשכנזי')||!containsTerm(body,'ספרדי')))return{score:0,support:'insufficient_specific_evidence',reasons:['Ashkenazi-Sephardi match setting is absent from the evidence body']};
  if(u.topics.includes('איגוד הרבנים ושעות חול')&&(!containsTerm(body,'איגוד הרבנים')||!containsTerm(body,'שעות')))return{score:0,support:'insufficient_specific_evidence',reasons:['rabbinical-union school-hours proposal is absent from the evidence body']};
  if(u.topics.includes('נסיעת תינוק ועצה רוחנית')&&(!containsTerm(body,'תינוק')||!containsTerm(body,'שנה')))return{score:0,support:'insufficient_specific_evidence',reasons:['infant-under-one travel setting is absent from the evidence body']};
+ if(u.topics.includes('גלגול נשמות ולימוד למי שאינו שומר מצוות')&&(!containsTerm(body,'גלגול נשמות')||!['אינו שומר מצוות','שאינו שומר מצוות'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['reincarnation discussion with a nonobservant audience is absent']};
+ if(u.topics.includes('הודעה מסודרת להנהלת בית ספר')&&(!containsTerm(body,'הנהלת בית ספר')||!['באופן מסודר','למשרד','שיחה מקרית'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['formal school-administration notice setting is absent']};
+ if(u.topics.includes('התנגדות הורים ללימוד חסידות')&&(!containsTerm(body,'הורים')||!containsTerm(body,'חסידות')))return{score:0,support:'insufficient_specific_evidence',reasons:['parental opposition to Chassidus study is absent']};
+ if(u.topics.includes('יחס פוגע והתמדה בישיבה')&&(!containsTerm(body,'יחס')||!['התמדה','להפסיק בלימוד','להפחית בלימוד'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['yeshiva treatment-and-persistence setting is absent']};
+ if(u.topics.includes('נשי חבד לונדון ופעילות קיץ')&&(!containsTerm(body,'לונדון')||!containsTerm(body,'קיץ')))return{score:0,support:'insufficient_specific_evidence',reasons:['London branch summer-outreach setting is absent']};
+ if(u.topics.includes('מקום בניין ישיבה ליד בתי ספר למלאכה')&&(!['בתי ספר למלאכה','בתי הספר למלאכה'].some(t=>containsTerm(body,t))||!['מקום','בניין'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['yeshiva-building location near vocational schools is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

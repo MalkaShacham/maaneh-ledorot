@@ -1,0 +1,24 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-026",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {"library_filename": "אגרות קודש יג.pdf", "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390", "pdf_pages": "236-250"},
+  "reviewed_items": 15,
+  "new_content_records": 2,
+  "enriched_existing_canonical_records": 13,
+  "propositions_added": 53,
+  "identity_relation": "Thirteen letters enrich existing conservative volume-index identities. Two directly inspected identities were absent from the canonical records: ד׳תסו and ד׳תעז (the latter appeared only in the index file's unresolved list, not as a canonical record). OCR variants ד׳תשז, ד׳תיגד, ד׳מעוז and ד׳וזעו resolve by visual inspection, running headers, footnotes and sequence; none is a separate witness.",
+  "letters": ["ד׳תסו", "ד׳תסז", "ד׳תסח", "ד׳תסט", "ד׳תע", "ד׳תעא", "ד׳תעב", "ד׳תעג", "ד׳תעד", "ד׳תעה", "ד׳תעו", "ד׳תעז", "ד׳תעח", "ד׳תעט", "ד׳תפ"],
+  "evidence_family_dedup": [
+    {"family_id": "kfar-chabad-girls-seminary-expansion-1956", "member_letters_in_batch": ["ד׳תסז"], "related_prior_letter": "ד׳תנא", "counting_rule": "This follow-up is a distinct letter witness about the same institutional episode and is linked to the existing Evidence Family rather than counted as an independent source family."},
+    {"family_id": "yiddish-simplicity-over-schemes-in-new-country-livelihood", "member_letters_in_batch": ["ד׳תסט"], "counting_rule": "The inspected witness is Yiddish/mixed-language. Its bounded Hebrew research paraphrases are derived access aids and are not independent witnesses."},
+    {"family_id": "michigan-synagogue-mechitza-continuing-effort-1956", "member_letters_in_batch": ["ד׳תעו"], "counting_rule": "The inspected witness is Yiddish. The later litigation described only in the publisher note was not independently inspected or promoted as a witness."},
+    {"family_id": "yeshiva-student-poor-treatment-persistence-self-review-and-study", "member_letters_in_batch": ["ד׳תעז"], "counting_rule": "The inspected witness is Yiddish; the Hebrew propositions are derived and do not create a second witness."},
+    {"family_id": "london-chabad-women-summer-children-and-vacation-outreach-1956", "member_letters_in_batch": ["ד׳תפ"], "counting_rule": "The inspected witness is Yiddish and secretary-signed; Hebrew paraphrases are derived. A parallel France branch letter begins on the next page but was not inspected in this batch."}
+  ],
+  "blocked_alternatives": [{"source": "scripts/acquire_source_content.py and aid 4666234", "result": "The latest authorized hourly acquisition report remains no_candidates with attempted=0; the previously blocked item was not retried.", "fallback": "Used the user-supplied Kehot publisher scan and inspected the next continuous item-level batch."}],
+  "verification_scope": "Fifteen item bodies were read across fifteen PDF pages. Identity, printed locator and bounded propositions are verified to this publisher scan only. Incoming letters, cited works, institutional, legal, mental-health and later outcome records were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Financial, educational, relational, legal, mental-health and halakhic implications are explicitly bounded. OCR variants, translations, editorial completions and publisher notes are not silently promoted to independent evidence."
+}

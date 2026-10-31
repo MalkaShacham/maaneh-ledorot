@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch025';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch026';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -46,6 +46,12 @@ const TOPIC_ALIASES={
   'שידוך אשכנזי ספרדי':['שידוך אשכנזי ספרדי','הבדל אשכנזי ספרדי','שילוב אשכנזי־ספרדי','לזווג אשכנזי וספרדי','סיבה לדחות שידוך','ashkenazi sephardi match'],
   'איגוד הרבנים ושעות חול':['איגוד הרבנים','צמצום שעות לימודי חול','ינכו מספר שעות','rabbinical union secular school hours'],
   'נסיעת תינוק ועצה רוחנית':['נסיעה עם תינוק בן פחות משנה','נסיעה עם תינוק','עד מלאת לתינוק שנה','עד גיל שנה','קבלת עצה רוחנית','הדרכה בענייני תורה ומצוות','infant travel spiritual advice'],
+  'גלגול נשמות ולימוד למי שאינו שומר מצוות':['גלגול נשמות','ללמד תורה למי שאינו שומר מצוות','אינו שומר מצוות','שאינו שומר מצוות','צעירים ושאלות אמונה','reincarnation teaching nonobservant jews'],
+  'הודעה מסודרת להנהלת בית ספר':['להודיע להנהלת בית ספר','הנהלת בית ספר','עניין מוסדי','באופן מסודר ומפורש','הודעה מסודרת להנהלה','למסור למשרד','שיחה מקרית עם ההנהלה','formal notice school administration'],
+  'התנגדות הורים ללימוד חסידות':['מה לעשות כשהורים מתנגדים ללימוד חסידות','הורים מתנגדים ללימוד חסידות','התנגדות הורים ללימוד חסידות','התנגדות הורים לחסידות','מפריעים ללמוד חסידות','כיבוד הורים ולימוד חסידות','parental opposition chassidus study'],
+  'יחס פוגע והתמדה בישיבה':['בחור ישיבה צריך להפסיק ללמוד בגלל יחס','יחס לא ראוי בישיבה','יחס בלתי ראוי','יחס פוגע בישיבה','להפסיק ללמוד בגלל יחס','להפחית בלימוד','התמדה לפני חיפוש חברותא','poor treatment yeshiva persistence study'],
+  'נשי חבד לונדון ופעילות קיץ':['סניף נשי חב״ד בלונדון','חב״ד בלונדון','לנצל את הקיץ','נשי ובנות חב״ד בלונדון','סניף לונדון','פעילות קיץ לילדים','נופשים ממקומות שונים','london chabad women summer outreach'],
+  'מקום בניין ישיבה ליד בתי ספר למלאכה':['לבחור מקום לבניין ישיבה','בחירת מקום לבניין הישיבה','מקום לבניין ישיבה ליד בתי ספר למלאכה','בניין ישיבה ליד בתי ספר למלאכה','בתי ספר למלאכה','בתי הספר למלאכה','yeshiva building near vocational schools'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };
