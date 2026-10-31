@@ -90,7 +90,31 @@ for(const mode of ['regular','researcher']){
   assert(!m.sources.some(e=>['aid:4666207','url:https://www.chabad.org/therebbe/article_cdo/aid/4666217/jewish/page.htm'].includes(e.key)),`${mode}: consolation letters must not match a Lag BaOmer query through generic action words`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every Lag BaOmer claim needs a proposition-level citation`);
 }
+const forgetfulnessDreamsQuestion='מה כתב הרבי על שכחה וחלומות?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,forgetfulnessDreamsQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected forgetfulness-and-dreams evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשלג'),`${mode}: letter ד׳שלג must support the forgetfulness-and-dreams answer`);
+  assert(m.sources.length<=2,`${mode}: generic mezuzah or health evidence must not flood the specific query`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every forgetfulness-and-dreams claim needs a proposition-level citation`);
+}
+const charityStudyQuestion='האם צדקה מחליפה לימוד ויגיעה?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,charityStudyQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected charity-and-study evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשלא'),`${mode}: letter ד׳שלא must support the charity-and-study answer`);
+  assert(m.sources.length<=2,`${mode}: generic charity evidence must not enter the specific study-effort answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every charity-and-study claim needs a proposition-level citation`);
+}
+const uniqueRoleQuestion='מה נדרש ממי שיש לו תפקיד ייחודי בענייני דת?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,uniqueRoleQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected unique-role evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-330'),`${mode}: letter ד׳של must support the unique-role answer`);
+  assert(m.sources.length<=3,`${mode}: generic mission language must not flood the unique-role answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every unique-role claim needs a proposition-level citation`);
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; twenty real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; twenty-six real-corpus answer checks passed`);
 

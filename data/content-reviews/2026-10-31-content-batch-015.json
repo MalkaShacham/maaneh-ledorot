@@ -1,0 +1,48 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-015",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "99-108"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 2,
+  "enriched_existing_canonical_records": 8,
+  "identity_relation": "Letters ד׳של and ד׳שלח were previously retained only among conservative index exceptions and are added as canonical content records. Letters ד׳שלא through ד׳שלז (except ד׳של, which precedes them) and ד׳שלט enrich eight existing bibliographic identities. The inspected index/body pages are one publisher witness, not independent corroboration.",
+  "propositions_added": 34,
+  "letters": [
+    "ד׳של",
+    "ד׳שלא",
+    "ד׳שלב",
+    "ד׳שלג",
+    "ד׳שלד",
+    "ד׳שלה",
+    "ד׳שלו",
+    "ד׳שלז",
+    "ד׳שלח",
+    "ד׳שלט"
+  ],
+  "evidence_family_dedup": [
+    {
+      "family_id": "kfar-chabad-recovery-expansion-after-1956-attack",
+      "member_letters_in_batch": ["ד׳שלא", "ד׳שלה", "ד׳שלו"],
+      "counting_rule": "Three distinct letters address local recipients after the same Kfar Chabad event and repeat a shared expansion response. They remain separate item witnesses but count as one event/campaign family for independent-evidence synthesis."
+    },
+    {
+      "family_id": "sde-eliyahu-room-fire-local-review-and-recovery",
+      "member_letters_in_batch": ["ד׳שלד"],
+      "counting_rule": "The Sde Eliyahu room fire is a separate documented circumstance from the Kfar Chabad event, although both appear in one letter. It is not treated as corroboration of the Kfar Chabad event."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and aid 4666234",
+      "result": "Previously documented HTTP 403/item-shell failures; data/acquisition/latest.json reports no candidates and no enriched records in the latest run.",
+      "action": "Known blocked routes were not retried; the user-supplied publisher scan was used as the accessible source."
+    }
+  ],
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}
