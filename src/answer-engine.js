@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר כתב כותב על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s))return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
@@ -21,6 +21,11 @@ const TOPICS={
  'עקירת שיניים וחוות דעת':['עקירת שיניים','חוות דעת נוספת','לעקור את כל השיניים','מומחים נוספים','dental extraction second opinion','extract all teeth'],
  'חזרה בחסידות וזיכרון':['לשפר זיכרון','לחזור על חסידות','חזרה בחסידות','חזרה מרובה','כוח הזיכרון','review chassidus memory','repetition and memory'],
  'מקווה בלי המתנה לשלום':['בניית מקווה','לקדם בניית מקווה','מקדמים בניית מקווה','להמתין לשלום','אין לעכב בגללה פעולות אחרות','לקידום מקווה','מקווה בקיבוץ מפלסים','mikveh without waiting for peace'],
+ 'נוסח תפילה באיחוד בתי כנסת':['נוסח התפילה באיחוד בתי כנסת','איחוד בתי כנסת','התאחדות שני בתי כנסיות','שני בתי כנסת','נוסח האריז״ל','נוסח האריזל','synagogue union prayer rite'],
+ 'עולים ממרוקו ושפת ההתוועדות':['עולים ממרוקו','אינם מבינים יידיש','אין מבינים אידית','התוועדויות בעברית','התוועדויות תכופות בעברית','moroccan immigrants hebrew farbrengen'],
+ 'עזיבת פרנסה לפעילות':['לעזוב מקור פרנסה','יעזוב ענין שפרנסתו','פעילות חב״ד ופרנסה','quit livelihood for chabad work'],
+ 'אהבת התורה':['אהבת התורה','אהבת ההשגה השכלית','הישג השכלי','הנאת הלומד','love of torah','intellectual satisfaction'],
+ 'אהבת ה׳':['אהבת ה׳','אהבת המקום','גדולת הבורא','ביטול ולשפלות','love of god','love of g-d'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -36,7 +41,7 @@ const negationSignature=s=>contentWords(s).some(x=>NEGATION.has(x));
 // Latin query terms must match whole tokens/phrases: substring matching made
 // `fear` incorrectly match `G-d-fearing`. Hebrew aliases intentionally include
 // productive stems (for example דאג), so Hebrew keeps conservative substring matching.
-const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return false;if(/[a-z]/i.test(t)){if(t.includes(' '))return ` ${b} `.includes(` ${t} `);return b.split(/\s+/).includes(t);}return b.includes(t);};
+const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return false;if(t==='אהבת ה')return ` ${b} `.includes(' אהבת ה ');if(/[a-z]/i.test(t)){if(t.includes(' '))return ` ${b} `.includes(` ${t} `);return b.split(/\s+/).includes(t);}return b.includes(t);};
 // Intent markers describe the requested analysis, not facts that must occur in a
 // source proposition. Keeping `pattern`/`דפוס` as a content qualifier made every
 // pattern question fail even when multiple independent evidence families existed.

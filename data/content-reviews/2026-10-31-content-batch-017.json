@@ -1,0 +1,57 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-017",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "119-130"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 4,
+  "enriched_existing_canonical_records": 6,
+  "identity_relation": "Letters ד׳שנא, ד׳שנב, ד׳שנד and ד׳שנט were absent from canonical content records and are restored from inspected body pages. Letters ד׳שנ, ד׳שנג and ד׳שנה through ד׳שנח promote existing conservative index exceptions to content-inspected canonical records. The index and inspected body pages are one publisher witness, not independent corroboration.",
+  "propositions_added": 40,
+  "letters": [
+    "ד׳שנ",
+    "ד׳שנא",
+    "ד׳שנב",
+    "ד׳שנג",
+    "ד׳שנד",
+    "ד׳שנה",
+    "ד׳שנו",
+    "ד׳שנז",
+    "ד׳שנח",
+    "ד׳שנט"
+  ],
+  "evidence_family_dedup": [
+    {
+      "family_id": "neshai-chabad-convention-internal-and-external-growth",
+      "member_letters_in_batch": ["ד׳שנה"],
+      "counting_rule": "The Hebrew propositions paraphrase the inspected Yiddish convention letter. They are not a translation witness and do not increase independent-source counts."
+    },
+    {
+      "family_id": "chabad-service-livelihood-and-moroccan-immigrant-integration",
+      "member_letters_in_batch": ["ד׳שנט"],
+      "related_families": [
+        "kfar-chabad-teacher-training-development",
+        "moroccan-immigrant-hebrew-language-access-and-nusach"
+      ],
+      "counting_rule": "The delayed-dispatch paragraphs are part of the same printed letter witness. The employment, teacher-course and immigrant-integration themes remain claim-level facets, not additional sources."
+    },
+    {
+      "family_id": "synagogue-union-prayer-nusach-and-daily-effect",
+      "member_letters_in_batch": ["ד׳שנ"],
+      "counting_rule": "Cited responsa and the tradition concerning multiple siddur witnesses were not inspected and therefore are not counted as corroborating sources."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and aid 4666234",
+      "result": "Previously documented HTTP 403/item-shell failures; data/acquisition/latest.json reports no candidates and no enriched records in the latest run.",
+      "action": "Known blocked routes were not retried; the user-supplied publisher scan was used as the accessible source."
+    }
+  ],
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+}

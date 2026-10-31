@@ -146,7 +146,40 @@ for(const mode of ['regular','researcher']){
   assert(m.sources.length===1,`${mode}: generic mikveh or dispute evidence must not enter the specific answer`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every mikveh-and-peace claim needs a proposition-level citation`);
 }
+const synagogueUnionQuestion='מה כתב הרבי על נוסח התפילה באיחוד בתי כנסת?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,synagogueUnionQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected synagogue-union evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-350'),`${mode}: letter ד׳שנ must support the synagogue-union answer`);
+  assert(m.sources.length===1,`${mode}: generic synagogue or rabbinic-organization evidence must not enter the union-and-nusach answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every synagogue-union claim needs a proposition-level citation`);
+}
+const moroccanLanguageQuestion='כיצד המליץ הרבי לפעול עם עולים ממרוקו שאינם מבינים יידיש?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,moroccanLanguageQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected Moroccan-immigrant language evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-359'),`${mode}: letter ד׳שנט must support the Moroccan-immigrant answer`);
+  assert(m.sources.length===1,`${mode}: generic Yiddish or immigration evidence must not enter the language-access answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every Moroccan-immigrant claim needs a proposition-level citation`);
+}
+const livelihoodExitQuestion='האם כדאי לעזוב מקור פרנסה כדי לפעול בחב״ד?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,livelihoodExitQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected livelihood-exit evidence must answer the query`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-359'),`${mode}: letter ד׳שנט must support the livelihood-exit answer`);
+  assert(m.sources.length===1,`${mode}: generic livelihood evidence must not enter the specific exit decision`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every livelihood-exit claim needs a proposition-level citation`);
+}
+const torahLoveComparison='מה כתב הרבי על אהבת התורה לעומת אהבת ה׳?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,torahLoveComparison,{mode});
+  assert(m.answerable,`${mode}: inspected comparison must cover both love-of-Torah and love-of-G-d`);
+  assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-354'),`${mode}: letter ד׳שנד must support the comparison`);
+  assert(m.sources.length===1,`${mode}: generic Torah or love evidence must not enter the specific comparison`);
+  assert.deepEqual(new Set(m.comparative_coverage.supported_topics),new Set(['אהבת התורה','אהבת ה׳']),`${mode}: both comparison sides need proposition-level coverage`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every love comparison claim needs a proposition-level citation`);
+}
 const draft=eligible.find(e=>String(e.aid)==='4422914');
 assert(draft && /draft/.test(draft.primary_secondary_status),'publisher draft limitation must be preserved');
-console.log(`Content readiness: ${unique.size} usable sources; thirty-four real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; thirty-eight real-corpus answer checks passed`);
 
