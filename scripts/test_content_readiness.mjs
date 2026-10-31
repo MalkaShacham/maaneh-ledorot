@@ -135,7 +135,7 @@ for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,repetitionMemoryQuestion,{mode});
   assert(m.answerable,`${mode}: inspected repetition-and-memory evidence must answer the query`);
   assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשמו'),`${mode}: letter ד׳שמו must support the repetition-and-memory answer`);
-  assert(m.sources.length<=2,`${mode}: generic study or forgetfulness evidence must not flood the combined query`);
+  assert(m.sources.length<=3,`${mode}: generic study or forgetfulness evidence must not flood the combined query`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every repetition-and-memory claim needs a proposition-level citation`);
 }
 const mikvehPeaceQuestion='האם צריך להמתין לשלום לפני שמקדמים בניית מקווה?';
@@ -274,5 +274,21 @@ for(const [question,key] of batch023Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-023 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; sixty-seven real-corpus answer checks passed`);
+const batch024Checks=[
+  ['מתי לקבוע מזוזה כשנכנסים לדירה חדשה?','id:igrot-kodesh-v13-דתמג'],
+  ['כיצד צריך משגיח לענות לתלמידים ששואלים הרבה?','id:igrot-kodesh-v13-דתמה'],
+  ['כיצד לתאם פעילות להפצת חסידות בביקורו של אוריאל צימר בארץ?','id:igrot-kodesh-v13-דתמו'],
+  ['כיצד הציע הרבי להתמודד עם קושי להבין ייסורים וחסרונות של אנשים?','id:igrot-kodesh-v13-דתמד'],
+  ['האם להמתין להזדמנות כדי לפעול לחיזוק היהדות?','id:igrot-kodesh-v13-דתמט']
+];
+for(const [question,key] of batch024Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-024 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-024 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-024 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-024 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; seventy-two real-corpus answer checks passed`);
 

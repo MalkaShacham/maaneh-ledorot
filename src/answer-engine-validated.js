@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch023';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch024';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -37,6 +37,10 @@ const TOPIC_ALIASES={
   'כתבי יד משה יצחק מיאס':['כתבי היד של החסיד משה יצחק מיאס','משה יצחק מיאס','כתבי יד','מיאס','moshe yitzchak mias manuscripts'],
   'מניין דירות חדשות כפר חב״ד':['המניין ליד הדירות החדשות','מנין ליד הדירות החדשות','מקום תפילה ליד הדירות החדשות','דירות החדשות','מניין','מנין','new housing minyan kfar chabad'],
   'משמרות שבועות כפר חב״ד':['תכנית המשמרות בחג השבועות בכפר חב״ד','משמרות אמירת תהלים ולימוד חסידות','משמרות','shavuot shifts kfar chabad'],
+  'תהלים בלילה ושיעורים קבועים':['תהלים בלילה','אמירת תהלים בלילה','לבטל שיעורים קבועים','psalms at night','cancel regular lessons'],
+  'ביקור אוריאל צימר':['ביקורו של אוריאל צימר','אוריאל צימר בארץ','לתאם פעילות להפצת חסידות','zimmer israel visit'],
+  'ייסורים ומבט מוגבל':['להבין ייסורים וחסרונות של אנשים','קושי להבין ייסורים','ייסורים וחסרונות','חלק מוגבל','מבט אנושי','חסרונות אפשריים','suffering limited perspective'],
+  'יוזמה לחיזוק היהדות':['להמתין להזדמנות כדי לפעול לחיזוק היהדות','הזדמנות לפעול לחיזוק היהדות','פעולות לחיזוק היהדות','תופיע הזדמנות','wait for an opportunity to strengthen judaism'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

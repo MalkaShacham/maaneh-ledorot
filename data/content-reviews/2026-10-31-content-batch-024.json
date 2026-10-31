@@ -1,0 +1,22 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-10-31-content-batch-024",
+  "generated": "2026-10-31",
+  "method": "Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source": {"library_filename": "אגרות קודש יג.pdf", "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390", "pdf_pages": "202-221"},
+  "reviewed_items": 15,
+  "new_content_records": 8,
+  "enriched_existing_canonical_records": 7,
+  "propositions_added": 54,
+  "identity_relation": "Seven letters enrich existing conservative volume-index identities: ד׳תלו, ד׳תלז, ד׳תלח, ד׳תמד, ד׳תמה, ד׳תמו and ד׳תמח. Eight directly inspected identities were absent from that index: ד׳תלט, ד׳תמ, ד׳תמא, ד׳תמב, ד׳תמג, ד׳תמז, ד׳תמט and ד׳תנ. OCR variants ד׳חלו, spaced ד׳ ת מ, duplicated ד׳תמג for the preceding ד׳תמב, and ך׳תנ are resolved by visual page inspection, running headers, footnotes and the printed sequence; none is a separate witness.",
+  "letters": ["ד׳תלו", "ד׳תלז", "ד׳תלח", "ד׳תלט", "ד׳תמ", "ד׳תמא", "ד׳תמב", "ד׳תמג", "ד׳תמד", "ד׳תמה", "ד׳תמו", "ד׳תמז", "ד׳תמח", "ד׳תמט", "ד׳תנ"],
+  "evidence_family_dedup": [
+    {"family_id": "kfar-chabad-1956-attack-recovery", "member_letters_in_batch": ["ד׳תמא"], "related_prior_letters": ["ד׳ת", "ד׳תא", "ד׳תב", "ד׳תד", "ד׳תה", "ד׳תכז"], "counting_rule": "Letter ד׳תמא is a distinct bereaved-family and cornerstone witness in the established recovery sequence. It is not an additional independent witness for the attack itself."},
+    {"family_id": "zimmer-israel-visit-coordinated-chassidic-outreach", "member_letters_in_batch": ["ד׳תמו", "ד׳תמז"], "counting_rule": "The two letters are distinct outgoing witnesses within one visit-and-outreach sequence. They do not independently verify the same incoming field conditions."},
+    {"family_id": "yiddish-response-to-suffering-limited-perspective-and-self-education", "member_letters_in_batch": ["ד׳תמד"], "counting_rule": "The inspected witness is Yiddish. Its bounded Hebrew research paraphrases are derived access aids and are not independent witnesses."}
+  ],
+  "blocked_alternatives": [{"source": "scripts/acquire_source_content.py and aid 4666234", "result": "The latest authorized hourly acquisition report is no_candidates with attempted=0; the previously blocked item was not retried.", "fallback": "Used the user-supplied Kehot publisher scan and inspected the next continuous item-level batch."}],
+  "verification_scope": "Fifteen item bodies were read across twenty PDF pages. Identity, printed locator and bounded propositions are verified to this publisher scan only. Incoming letters, cited publications, medical, institutional and later outcome records were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Medical, emotional, halakhic and causal implications are explicitly bounded. OCR variants, translations, editorial completions and cited works are not silently promoted to independent evidence."
+}

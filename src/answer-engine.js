@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר כתב כותב על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר אומרים כתב כותב על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s))return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
@@ -41,6 +41,10 @@ const TOPICS={
  'זוהר לפני חסידות':['ללמוד זוהר לפני שמתחילים ללמוד חסידות','זוהר לפני חסידות','לימוד הזוהר לפני חסידות','זוהר','zohar','study zohar before chassidus'],
  'מקור מנהגי תפילה':['הרכנת הראש בקדיש','להרכין את הראש בקדיש','לגעת בתחילת ובסוף מקום הקריאה','נגיעה בתחילת מקום הקריאה','prayer custom source attribution'],
  'מענה לשאלות במפגש נשים':['לענות לשאלות במפגש הבא','שאלות במפגש הבא','מפגש הבא בעבודת נשים','מפגש הבא','women questions next meeting'],
+ 'תהלים בלילה ושיעורים קבועים':['תהלים בלילה','אמירת תהלים בלילה','לבטל שיעורים קבועים','psalms at night','cancel regular lessons'],
+ 'ביקור אוריאל צימר':['ביקורו של אוריאל צימר','אוריאל צימר בארץ','לתאם פעילות להפצת חסידות','zimmer israel visit'],
+ 'ייסורים ומבט מוגבל':['להבין ייסורים וחסרונות של אנשים','קושי להבין ייסורים','ייסורים וחסרונות','חלק מוגבל','מבט אנושי','חסרונות אפשריים','suffering limited perspective'],
+ 'יוזמה לחיזוק היהדות':['להמתין להזדמנות כדי לפעול לחיזוק היהדות','הזדמנות לפעול לחיזוק היהדות','פעולות לחיזוק היהדות','תופיע הזדמנות','wait for an opportunity to strengthen judaism'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -56,7 +60,7 @@ const negationSignature=s=>contentWords(s).some(x=>NEGATION.has(x));
 // Latin query terms must match whole tokens/phrases: substring matching made
 // `fear` incorrectly match `G-d-fearing`. Hebrew aliases intentionally include
 // productive stems (for example דאג), so Hebrew keeps conservative substring matching.
-const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return false;if(t==='אהבת ה')return ` ${b} `.includes(' אהבת ה ');if(/[a-z]/i.test(t)){if(t.includes(' '))return ` ${b} `.includes(` ${t} `);return b.split(/\s+/).includes(t);}return b.includes(t);};
+const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return false;if(t==='אהבת ה')return ` ${b} `.includes(' אהבת ה ');if(t==='נשים')return b.split(/\s+/).includes(t);if(/[a-z]/i.test(t)){if(t.includes(' '))return ` ${b} `.includes(` ${t} `);return b.split(/\s+/).includes(t);}return b.includes(t);};
 // Intent markers describe the requested analysis, not facts that must occur in a
 // source proposition. Keeping `pattern`/`דפוס` as a content qualifier made every
 // pattern question fail even when multiple independent evidence families existed.
@@ -69,13 +73,13 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי)$/.test(t);
  // General wording that asks for a source's lesson or moral takeaway is framing,
  // while the concrete subject (for example, פרה אדומה) remains query-specific.
- if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הצעה|ייעץ|יעץ|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הצעה|ייעץ|יעץ|להתמודד|תמודד|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
  return false;
 };
 
 export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
- let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>query.includes(norm(v)))).map(([k])=>k);
+ let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.
@@ -129,6 +133,12 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('זוהר לפני חסידות')&&!containsTerm(body,'זוהר'))return{score:0,support:'insufficient_specific_evidence',reasons:['Zohar prerequisite is absent from the evidence body']};
  if(u.topics.includes('מקור מנהגי תפילה')&&!['הרכנת הראש','תחילת מקום הקריאה'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['specific prayer customs are absent from the evidence body']};
  if(u.topics.includes('מענה לשאלות במפגש נשים')&&!containsTerm(body,'מפגש הבא'))return{score:0,support:'insufficient_specific_evidence',reasons:['delayed-answer meeting method is absent from the evidence body']};
+ if(u.topics.includes('עזיבת פרנסה לפעילות')&&!['לעזוב מקור פרנסה','יעזוב ענין שפרנסתו','quit livelihood'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['leaving an existing livelihood is absent from the evidence body']};
+ if(u.topics.includes('כיסוי ראש והשפעה עקיפה')&&!containsTerm(body,'כיסוי הראש'))return{score:0,support:'insufficient_specific_evidence',reasons:['hair-covering setting is absent from the evidence body']};
+ if(u.topics.includes('תהלים בלילה ושיעורים קבועים')&&(!containsTerm(body,'תהלים')||!containsTerm(body,'לילה')))return{score:0,support:'insufficient_specific_evidence',reasons:['nighttime Psalms setting is absent from the evidence body']};
+ if(u.topics.includes('ביקור אוריאל צימר')&&!containsTerm(body,'אוריאל צימר'))return{score:0,support:'insufficient_specific_evidence',reasons:['Uriel Zimmer visit is absent from the evidence body']};
+ if(u.topics.includes('ייסורים ומבט מוגבל')&&!['חלק מוגבל','חסרונות אפשריים','קושי להבין'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['limited-perspective response to suffering is absent from the evidence body']};
+ if(u.topics.includes('יוזמה לחיזוק היהדות')&&(!containsTerm(body,'הזדמנות')||!containsTerm(body,'חיזוק היהדות')))return{score:0,support:'insufficient_specific_evidence',reasons:['proactive Jewish-strengthening opportunity is absent from the evidence body']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.
