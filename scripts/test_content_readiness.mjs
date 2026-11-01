@@ -338,5 +338,21 @@ for(const [question,key] of batch027Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-027 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; eighty-seven real-corpus answer checks passed`);
+const batch028Checks=[
+  ['באיזה סדר הוצע ללמוד חסידות, מאיגרת התשובה ואילך?','id:igrot-kodesh-v13-דתצט'],
+  ['האם מרחק ממקום שיעור חסידות הוא סיבה לא להשתתף?','id:igrot-kodesh-v13-דתקב'],
+  ['מה כתב הרבי על הקשר בין שמחה לשינויים הורמונליים וחומרנות?','id:igrot-kodesh-v13-דתקא'],
+  ['האם אפשר להסביר את הפיגוע בכפר חב״ד לפי האיגרת?','id:igrot-kodesh-v13-דתקו'],
+  ['מה קודם בכפר חב״ד: בית הטבילה או בית הכנסת?','id:igrot-kodesh-v13-דתקח-star']
+];
+for(const [question,key] of batch028Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-028 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-028 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-028 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-028 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; ninety-two real-corpus answer checks passed`);
 

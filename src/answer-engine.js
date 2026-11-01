@@ -61,6 +61,12 @@ const TOPICS={
  'מיקרופון בסידור קידושין':['מיקרופון בסידור קידושין','מיקרופון בחופה','מיקרופון בחצר','microphone at kiddushin'],
  'נשי חבד טורונטו ופעילות קיץ':['סניף נשי חב״ד בטורונטו','נשי ובנות חב״ד בטורונטו','אסיפת הסיום לפני החופשה','עבודה עם הנוער בחופשה','toronto chabad women summer youth work'],
  'עטיפת טלית עיניים ולא פה':['עטיפת טלית גדול','לכסות את העיניים והפה בטלית','מכסים את העיניים ולא את הפה','טלית עיניים פה','tallit cover eyes not mouth'],
+ 'סדר לימוד חסידות למתחיל':['סדר לימוד חסידות','באיזה סדר ללמוד חסידות','ללמוד חסידות מאיגרת התשובה','מאיגרת התשובה ואילך','איגרת התשובה שער היחוד והאמונה','להתחיל באיגרת התשובה','chassidus study sequence'],
+ 'מרחק לשיעור חסידות':['מרחק ממקום שיעור חסידות','רחוק משיעור חסידות','להשתתף בשיעור חסידות למרות המרחק','distance to chassidus class'],
+ 'שמחה הורמונים וחומרנות':['שמחה והורמונים','קשר בין שמחה לשינויים הורמונליים','שמחה חומרנות גוף ונפש','joy hormones materialism body soul'],
+ 'הסבר הפיגוע בכפר חבד':['האם אפשר להסביר את הפיגוע בכפר חב״ד לפי האיגרת','האם אפשר להסביר את הפיגוע בכפר חב״ד','הסבר הפיגוע בכפר חב״ד','להסביר את המאורע בכפר חב״ד','פיגוע בכפר חב״ד','שתיקה במקום הסבר','explain kfar chabad attack tragedy'],
+ 'קדימות מקווה לבית כנסת כפר חבד':['מה קודם בכפר חב״ד בית הטבילה או בית הכנסת','בית הטבילה או בית הכנסת','להקדים בית טבילה לבית כנסת בכפר חב״ד','קדימות מקווה לבית כנסת בכפר חב״ד','בית הטבילה ובית הכנסת בכפר חב״ד','קדימות על פני בית הכנסת','kfar chabad mikveh priority synagogue'],
+ 'תעניות פרטיות':['תעניות שאדם מוסיף מדעתו','תעניות פרטיות','הוספת תעניות','private fasts','self-imposed fasts'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -113,6 +119,8 @@ export function understandQuestion(q){
  if(topics.includes('מקום בניין ישיבה ליד בתי ספר למלאכה'))topics=topics.filter(t=>!['חינוך','הרחבת ישיבה'].includes(t));
  if(topics.includes('תיאום שני רופאים מומחים'))topics=topics.filter(t=>!['בריאות','רופאים מומחים והתאמת לימוד','ניתוח שקדים ושני מומחים'].includes(t));
  if(topics.includes('נשי חבד טורונטו ופעילות קיץ'))topics=topics.filter(t=>!['נשים','חינוך'].includes(t));
+ if(topics.includes('שמחה הורמונים וחומרנות'))topics=topics.filter(t=>t!=='בריאות');
+ if(topics.includes('הסבר הפיגוע בכפר חבד'))topics=topics.filter(t=>t!=='שיקום לאחר פיגוע');
  let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
  if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
@@ -179,6 +187,12 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('מיקרופון בסידור קידושין')&&(!containsTerm(body,'מיקרופון')||!containsTerm(body,'קידושין')))return{score:0,support:'insufficient_specific_evidence',reasons:['microphone-at-kiddushin setting is absent']};
  if(u.topics.includes('נשי חבד טורונטו ופעילות קיץ')&&(!containsTerm(body,'טורונטו')||!containsTerm(body,'חופשה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Toronto branch summer-youth setting is absent']};
  if(u.topics.includes('עטיפת טלית עיניים ולא פה')&&(!containsTerm(body,'טלית')||!containsTerm(body,'עיניים')||!containsTerm(body,'פה')))return{score:0,support:'insufficient_specific_evidence',reasons:['tallit eyes-not-mouth custom is absent']};
+ if(u.topics.includes('סדר לימוד חסידות למתחיל')&&(!containsTerm(body,'איגרת התשובה')||!containsTerm(body,'שער היחוד והאמונה')))return{score:0,support:'insufficient_specific_evidence',reasons:['specific Chassidus study sequence is absent']};
+ if(u.topics.includes('מרחק לשיעור חסידות')&&(!containsTerm(body,'מרחק')||!containsTerm(body,'שיעור חסידות')))return{score:0,support:'insufficient_specific_evidence',reasons:['distance-to-Chassidus-class setting is absent']};
+ if(u.topics.includes('שמחה הורמונים וחומרנות')&&(!containsTerm(body,'שמחה')||!containsTerm(body,'הורמונ')||!containsTerm(body,'חומרנות')))return{score:0,support:'insufficient_specific_evidence',reasons:['joy-hormone-materialism discussion is absent']};
+ if(u.topics.includes('הסבר הפיגוע בכפר חבד')&&(!containsTerm(body,'הפיגוע בכפר חב״ד')||!['להסביר','הסבר','שתיקה'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Kfar Chabad tragedy explanation boundary is absent']};
+ if(u.topics.includes('קדימות מקווה לבית כנסת כפר חבד')&&(!containsTerm(body,'בית הטבילה')||!containsTerm(body,'בית הכנסת')||!containsTerm(body,'קדימות')))return{score:0,support:'insufficient_specific_evidence',reasons:['Kfar Chabad mikveh-priority setting is absent']};
+ if(u.topics.includes('תעניות פרטיות')&&(!containsTerm(body,'תעניות')||!['פרטיות','מוסיף מדעתו'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['self-imposed private fast setting is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

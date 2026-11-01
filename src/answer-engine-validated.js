@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch027';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch028';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -57,6 +57,12 @@ const TOPIC_ALIASES={
   'מיקרופון בסידור קידושין':['מיקרופון בסידור קידושין','מיקרופון בחופה','מיקרופון בחצר','microphone at kiddushin'],
   'נשי חבד טורונטו ופעילות קיץ':['סניף נשי חב״ד בטורונטו','נשי ובנות חב״ד בטורונטו','אסיפת הסיום לפני החופשה','עבודה עם הנוער בחופשה','toronto chabad women summer youth work'],
   'עטיפת טלית עיניים ולא פה':['עטיפת טלית גדול','לכסות את העיניים והפה בטלית','מכסים את העיניים ולא את הפה','טלית עיניים פה','tallit cover eyes not mouth'],
+  'סדר לימוד חסידות למתחיל':['סדר לימוד חסידות','באיזה סדר ללמוד חסידות','ללמוד חסידות מאיגרת התשובה','מאיגרת התשובה ואילך','איגרת התשובה שער היחוד והאמונה','להתחיל באיגרת התשובה','chassidus study sequence'],
+  'מרחק לשיעור חסידות':['מרחק ממקום שיעור חסידות','רחוק משיעור חסידות','להשתתף בשיעור חסידות למרות המרחק','distance to chassidus class'],
+  'שמחה הורמונים וחומרנות':['שמחה והורמונים','קשר בין שמחה לשינויים הורמונליים','שמחה חומרנות גוף ונפש','joy hormones materialism body soul'],
+  'הסבר הפיגוע בכפר חבד':['האם אפשר להסביר את הפיגוע בכפר חב״ד לפי האיגרת','האם אפשר להסביר את הפיגוע בכפר חב״ד','הסבר הפיגוע בכפר חב״ד','להסביר את המאורע בכפר חב״ד','פיגוע בכפר חב״ד','שתיקה במקום הסבר','explain kfar chabad attack tragedy'],
+  'קדימות מקווה לבית כנסת כפר חבד':['מה קודם בכפר חב״ד בית הטבילה או בית הכנסת','בית הטבילה או בית הכנסת','להקדים בית טבילה לבית כנסת בכפר חב״ד','קדימות מקווה לבית כנסת בכפר חב״ד','בית הטבילה ובית הכנסת בכפר חב״ד','קדימות על פני בית הכנסת','kfar chabad mikveh priority synagogue'],
+  'תעניות פרטיות':['תעניות שאדם מוסיף מדעתו','תעניות פרטיות','הוספת תעניות','private fasts','self-imposed fasts'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

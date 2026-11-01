@@ -1,0 +1,22 @@
+{
+  "schema":"content-review-batch-v1",
+  "batch_id":"2026-10-31-content-batch-028",
+  "generated":"2026-10-31",
+  "method":"Direct inspection of user-supplied Kehot publisher scan; page images and extracted text checked together. No blocked crawler was used.",
+  "source":{"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"267-281"},
+  "reviewed_items":15,
+  "new_content_records":1,
+  "enriched_existing_canonical_records":14,
+  "propositions_added":55,
+  "identity_relation":"Fourteen letters enrich existing conservative volume-index identities. The separately starred publisher item ד׳תקח* was absent from the canonical records and is added as a new identity distinct from ד׳תקח.",
+  "letters":["ד׳תצו","ד׳תצז","ד׳תצח","ד׳תצט","ד׳תק","ד׳תקא","ד׳תקב","ד׳תקג","ד׳תקד","ד׳תקה","ד׳תקו","ד׳תקז","ד׳תקח","ד׳תקח*","ד׳תקט"],
+  "evidence_family_dedup":[
+    {"family_id":"kfar-chabad-1956-attack-recovery","member_letters_in_batch":["ד׳תקו","ד׳תקז"],"counting_rule":"Both letters are distinct inspected witnesses in the established post-attack recovery sequence. They remain linked to one Evidence Family and do not create two new independent recovery events."},
+    {"family_id":"yiddish-daily-jewish-influence-as-everyones-spiritual-livelihood","member_letters_in_batch":["ד׳תקג"],"counting_rule":"The inspected witness is Yiddish. Hebrew paraphrases are derived access aids and not independent evidence."},
+    {"family_id":"kfar-chabad-mikveh-priority-beauty-and-synagogue-construction-reporting","member_letters_in_batch":["ד׳תקח*"],"counting_rule":"The asterisk is the publisher's distinct item numbering, not a translation or duplicate of ד׳תקח; the item is separately inspected and canonically identified."}
+  ],
+  "blocked_alternatives":[{"source":"scripts/acquire_source_content.py and prior GitHub-hosted references","result":"Latest authorized acquisition report remains no_candidates with attempted=0; the known blocked crawler path was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan and inspected the next continuous item-level batch."}],
+  "verification_scope":"Fifteen item bodies were read across fifteen PDF pages. Identity, printed locator and bounded propositions are verified to this publisher scan only. Incoming letters, cited works, medical, institutional, building and later outcome records were not independently inspected.",
+  "rights_note":"Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note":"All propositions are source-grounded paraphrases. Medical, educational, emotional, theological and halakhic implications are explicitly bounded. Yiddish translation, editorial completions, prior-Rebbe attributions and cited works are not silently promoted to independent evidence."
+}
