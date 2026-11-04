@@ -1,0 +1,99 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-04-content-batch-035",
+  "generated": "2026-11-04",
+  "method": "Direct visual and textual inspection of fifteen consecutive item bodies in the user-supplied Kehot publisher scan. OCR was used only for navigation and checked against rendered pages; no blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "370-389"
+  },
+  "reviewed_items": 15,
+  "new_content_records": 5,
+  "enriched_existing_canonical_records": 10,
+  "propositions_added": 54,
+  "identity_relation": "Five identities (ד׳תקצד, ד׳תקצה, ד׳תקצז, ד׳תקצט, ד׳תרד) were established directly from item bodies after conservative index omissions were resolved; ten existing locator-only identities were enriched in place.",
+  "letters": [
+    "ד׳תקצד",
+    "ד׳תקצה",
+    "ד׳תקצו",
+    "ד׳תקצז",
+    "ד׳תקצח",
+    "ד׳תקצט",
+    "ד׳תר",
+    "ד׳תרא",
+    "ד׳תרב",
+    "ד׳תרג",
+    "ד׳תרד",
+    "ד׳תרה",
+    "ד׳תרו",
+    "ד׳תרז",
+    "ד׳תרח"
+  ],
+  "evidence_family_dedup": [
+    {
+      "family_id": "israeli-ships-shabbat-1956",
+      "member_letters_in_batch": [
+        "ד׳תקצו"
+      ],
+      "related_prior_letters": [
+        "ד׳תקנה",
+        "ד׳תקנו",
+        "ד׳תקפ",
+        "ד׳תקפג",
+        "ד׳תקפד"
+      ],
+      "counting_rule": "Separate response in the same controversy; not independent proof of repeated technical, testimonial or halachic assertions."
+    },
+    {
+      "family_id": "kfar-chabad-mikveh-priority-beauty-and-synagogue-construction-reporting",
+      "member_letters_in_batch": [
+        "ד׳תקצח"
+      ],
+      "related_prior_letters": [
+        "ד׳תקח*"
+      ],
+      "counting_rule": "Continuation of the same construction and reporting sequence; supports its conditional fundraising proposal but not a second building event."
+    },
+    {
+      "family_id": "tammuz-5716-student-emissary-visits-and-local-followup",
+      "member_letters_in_batch": [
+        "ד׳תרג"
+      ],
+      "related_prior_letters": [
+        "ד׳תקפא",
+        "ד׳תקפב",
+        "ד׳תקפה",
+        "ד׳תקפו",
+        "ד׳תקצ"
+      ],
+      "counting_rule": "Separate telegram in the same tour family; not independent proof of the visits or results."
+    }
+  ],
+  "related_not_deduplicated": [
+    {
+      "letters": [
+        "ד׳תרד",
+        "ד׳תסג"
+      ],
+      "relation": "editorial cross-reference and related principle; distinct recipients and events"
+    },
+    {
+      "letters": [
+        "ד׳תקצז",
+        "ד׳תרג"
+      ],
+      "relation": "both mention students traveling to Israel, but the text does not establish one group"
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate path",
+      "result": "Latest acquisition report is no_candidates with attempted=0; the known HTTP 403 crawler route was not retried.",
+      "fallback": "Used the authorized user-supplied Kehot publisher scan."
+    }
+  ],
+  "verification_scope": "Fifteen letter bodies were inspected across PDF pages 370-389. Incoming correspondence, early editions, manuscripts, cited works, ship records, press reports, construction files, employment agreements, school and camp records, financial records and later outcomes were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Fragmentary items, copy and secretariat status, Yiddish-derived paraphrases, secretary signatures, conditional commitments, health and legal limits, and shared Evidence Families are preserved."
+}

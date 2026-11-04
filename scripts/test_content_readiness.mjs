@@ -454,5 +454,25 @@ for(const [question,key] of batch034Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-034 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and twenty-seven real-corpus answer checks passed`);
+const batch035Checks=[
+  ['כיצד יכולה מורה לנצל גם מקצוע שאינו דתי לחינוך לאמונה?','id:igrot-kodesh-v13-דתקצה'],
+  ['כיצד הבחין בין מקורות שונים למנהגי פורים?','id:igrot-kodesh-v13-דתקצז'],
+  ['מה היו התנאים להצעת גיוס הכסף להשלמת המקווה בכפר חב״ד?','id:igrot-kodesh-v13-דתקצח'],
+  ['מה נכתב למי שביקש לעזוב משרה במוסד חב״ד בגלל תלונות?','id:igrot-kodesh-v13-דתקצט'],
+  ['מה לעשות כשהתנגדות מונעת השתתפות בהתוועדות?','id:igrot-kodesh-v13-דתר'],
+  ['כיצד להשלים פיגור בהכנת קייטנה שהתחילה מאוחר?','id:igrot-kodesh-v13-דתרה'],
+  ['האם לדחות תלמידות בקיץ בגלל מחסור במקום?','id:igrot-kodesh-v13-דתרו'],
+  ['האם אפשר לחזור מהסכמה בכתב למשרת הוראה?','id:igrot-kodesh-v13-דתרז'],
+  ['איך מתחילים ללמוד חסידות כשקשה להבין?','id:igrot-kodesh-v13-דתרח']
+];
+for(const [question,key] of batch035Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-035 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-035 source must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?6:3),`${mode}: the specific batch-035 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-035 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and thirty-six real-corpus answer checks passed`);
 
