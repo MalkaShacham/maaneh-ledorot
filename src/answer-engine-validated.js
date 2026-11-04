@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261104-volume13-batch030';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261104-volume13-batch031';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -74,6 +74,12 @@ const TOPIC_ALIASES={
   'ביטול הפלגה בשבת והחזר':['מה נכתב על נוסעים שביטלו הפלגה בשבת וקבלת החזר כספי','ביטלו הפלגה בשבת','החזר כספי לנוסעים','להחזיר כסף למי שביטלו','shabbat voyage cancellation refund'],
   'לימוד לפני חידושים בחסידות':['האם להתחיל בחידושים בלימוד חסידות לפני לימוד והבנה','חידושים בלימוד חסידות','תחילה לימוד ואחר כך חידושים','לימוד חסידות אינו אמור להתחיל ביצירת חידושים','תחילה נדרשים לימוד','learn before chassidus innovations'],
   'שינוי נוסח אשכנז ספרד ארי':['האם מותר לשנות מנוסח אשכנז לספרד ומספרד לנוסח הארי','נוסח אשכנז לספרד','נוסח ספרד לנוסח הארי','נוסח אשכנז','נוסח ספרד','נוסח הארי','change prayer rite ashkenaz sefard ari'],
+  'ריכוז בלימוד וספר פתוח':['קושי בריכוז בלימוד','להתרכז בלימוד','ספר פתוח לפניו','האותיות מקשרות ומחכימות','study concentration open book'],
+  'לימוד חסידות בלי חבר':['העדר חבר לימוד','אין חבר לימוד','חבר לימוד בחסידות','לימוד חסידות לבד','chassidus without study partner'],
+  'דואר כפר חבד ושבת':['סניף דואר בכפר חב״ד','פתיחת דואר בכפר חב״ד','סניף דואר','דואר סגור בשבת','מברקים בשבת','kfar chabad post office shabbat'],
+  'פעילות נוער לפי תנאי המקום':['אמצעי פעילות נוער השנויים במחלוקת','פעילות נוער במחלוקת','תנאי המקום והזמן','תגובת הציבור המקומי','אנשי סוד המכירים את התנאים','youth outreach local conditions consultation'],
+  'רופא מצליח וגאווה':['רופא מצליח על גאווה','רופא מצליח והצלחה','אתרוג וגאווה','כוחו האישי בלבד','successful doctor arrogance esrog'],
+  'מחשבה בארץ ישראל והשפעה בגולה':['מחשבה על ארץ ישראל','מחשבתו בארץ ישראל','להמשיך מקדושת הארץ','השפעה בגולה','thoughts in israel influence diaspora'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

@@ -78,6 +78,12 @@ const TOPICS={
  'ביטול הפלגה בשבת והחזר':['מה נכתב על נוסעים שביטלו הפלגה בשבת וקבלת החזר כספי','ביטלו הפלגה בשבת','החזר כספי לנוסעים','להחזיר כסף למי שביטלו','shabbat voyage cancellation refund'],
  'לימוד לפני חידושים בחסידות':['האם להתחיל בחידושים בלימוד חסידות לפני לימוד והבנה','חידושים בלימוד חסידות','תחילה לימוד ואחר כך חידושים','לימוד חסידות אינו אמור להתחיל ביצירת חידושים','תחילה נדרשים לימוד','learn before chassidus innovations'],
  'שינוי נוסח אשכנז ספרד ארי':['האם מותר לשנות מנוסח אשכנז לספרד ומספרד לנוסח הארי','נוסח אשכנז לספרד','נוסח ספרד לנוסח הארי','נוסח אשכנז','נוסח ספרד','נוסח הארי','change prayer rite ashkenaz sefard ari'],
+ 'ריכוז בלימוד וספר פתוח':['קושי בריכוז בלימוד','להתרכז בלימוד','ספר פתוח לפניו','האותיות מקשרות ומחכימות','study concentration open book'],
+ 'לימוד חסידות בלי חבר':['העדר חבר לימוד','אין חבר לימוד','חבר לימוד בחסידות','לימוד חסידות לבד','chassidus without study partner'],
+ 'דואר כפר חבד ושבת':['סניף דואר בכפר חב״ד','פתיחת דואר בכפר חב״ד','סניף דואר','דואר סגור בשבת','מברקים בשבת','kfar chabad post office shabbat'],
+ 'פעילות נוער לפי תנאי המקום':['אמצעי פעילות נוער השנויים במחלוקת','פעילות נוער במחלוקת','תנאי המקום והזמן','תגובת הציבור המקומי','אנשי סוד המכירים את התנאים','youth outreach local conditions consultation'],
+ 'רופא מצליח וגאווה':['רופא מצליח על גאווה','רופא מצליח והצלחה','אתרוג וגאווה','כוחו האישי בלבד','successful doctor arrogance esrog'],
+ 'מחשבה בארץ ישראל והשפעה בגולה':['מחשבה על ארץ ישראל','מחשבתו בארץ ישראל','להמשיך מקדושת הארץ','השפעה בגולה','thoughts in israel influence diaspora'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -103,10 +109,10 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='comparative')return /^(?:compare|comparison|comparisons|difference|differences|versus|vs|between|השווה|השוו|השוואה|השוואת|הבדל|הבדלים|לעומת|בין)$/.test(t);
  if(intent==='historical')return /^(?:when|date|dates|period|periods|year|years|time|מתי|תאריך|תאריכים|תקופה|תקופות|שנה|שנים|כתב|כותב|דיבר|לימד|הדריך)$/.test(t);
  if(intent==='bibliographic')return /^(?:source|sources|bibliographic|bibliography|citation|citations|where|published|publication|מקור|מקורות|ביבליוגרפיה|ביבליוגרפי|איפה|פורסם|פרסום)$/.test(t);
- if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי)$/.test(t);
+ if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי|לפתוח|פתוח)$/.test(t);
  // General wording that asks for a source's lesson or moral takeaway is framing,
  // while the concrete subject (for example, פרה אדומה) remains query-specific.
- if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הוצע|וצע|הצעה|ייעץ|יעץ|להתמודד|תמודד|לממן|ממן|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הוצע|וצע|הצעה|ייעץ|יעץ|להתמודד|תמודד|לממן|ממן|להכריע|כריע|לחבר|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
  return false;
 };
 
@@ -133,6 +139,10 @@ export function understandQuestion(q){
  if(topics.includes('שמחה הורמונים וחומרנות'))topics=topics.filter(t=>t!=='בריאות');
  if(topics.includes('הסבר הפיגוע בכפר חבד'))topics=topics.filter(t=>t!=='שיקום לאחר פיגוע');
  if(topics.includes('מחנה קיץ ללא לימודי חול'))topics=topics.filter(t=>!['בית רבקה סדר בוקר','חינוך'].includes(t));
+ if(topics.includes('ריכוז בלימוד וספר פתוח'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('דואר כפר חבד ושבת'))topics=topics.filter(t=>t!=='שיקום לאחר פיגוע');
+ if(topics.includes('פעילות נוער לפי תנאי המקום'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('רופא מצליח וגאווה'))topics=topics.filter(t=>t!=='בריאות');
  let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
  if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
@@ -217,6 +227,12 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('ביטול הפלגה בשבת והחזר')&&(!containsTerm(body,'ביטלו')||!containsTerm(body,'להחזיר כסף')||!containsTerm(body,'שבת')))return{score:0,support:'insufficient_specific_evidence',reasons:['cancelled Sabbath voyage and refund evidence is absent']};
  if(u.topics.includes('לימוד לפני חידושים בחסידות')&&(!containsTerm(body,'חידושים')||!containsTerm(body,'לימוד חסידות')||!containsTerm(body,'תחילה')))return{score:0,support:'insufficient_specific_evidence',reasons:['study-before-Chassidus-innovations sequence is absent']};
  if(u.topics.includes('שינוי נוסח אשכנז ספרד ארי')&&(!containsTerm(body,'נוסח אשכנז')||!containsTerm(body,'נוסח ספרד')||!containsTerm(body,'נוסח האר״י')))return{score:0,support:'insufficient_specific_evidence',reasons:['Ashkenaz-Sefard-Ari prayer-rite change evidence is absent']};
+ if(u.topics.includes('ריכוז בלימוד וספר פתוח')&&(!containsTerm(body,'ריכוז')||!containsTerm(body,'הספר פתוח')))return{score:0,support:'insufficient_specific_evidence',reasons:['open-book concentration method is absent']};
+ if(u.topics.includes('לימוד חסידות בלי חבר')&&(!containsTerm(body,'חבר')||!containsTerm(body,'אינו מוצג כפטור')))return{score:0,support:'insufficient_specific_evidence',reasons:['Chassidus study without an available partner is absent']};
+ if(u.topics.includes('דואר כפר חבד ושבת')&&(!containsTerm(body,'סניף דואר')||!containsTerm(body,'סגירה מוחלטת בשבת')))return{score:0,support:'insufficient_specific_evidence',reasons:['Kfar Chabad post-office Sabbath condition is absent']};
+ if(u.topics.includes('פעילות נוער לפי תנאי המקום')&&(!containsTerm(body,'תנאי המקום והזמן')||!containsTerm(body,'אנשי סוד')))return{score:0,support:'insufficient_specific_evidence',reasons:['local youth-outreach conditions and consultation are absent']};
+ if(u.topics.includes('רופא מצליח וגאווה')&&(!containsTerm(body,'רופא מצליח')||!containsTerm(body,'גאווה')))return{score:0,support:'insufficient_specific_evidence',reasons:['successful-doctor humility segment is absent']};
+ if(u.topics.includes('מחשבה בארץ ישראל והשפעה בגולה')&&(!containsTerm(body,'מחשבתו בארץ ישראל')||!containsTerm(body,'גולה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Israel-thought and Diaspora-influence segment is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

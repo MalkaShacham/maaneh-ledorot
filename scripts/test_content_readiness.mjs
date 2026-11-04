@@ -386,5 +386,21 @@ for(const [question,key] of batch030Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-030 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and two real-corpus answer checks passed`);
+const batch031Checks=[
+  ['כיצד הציע הרבי להתמודד עם קושי בריכוז בלימוד?','id:igrot-kodesh-v13-דתקמג'],
+  ['האם העדר חבר לימוד פוטר מלימוד חסידות?','id:igrot-kodesh-v13-דתקמה'],
+  ['באיזה תנאי כדאי לפתוח סניף דואר בכפר חב״ד?','id:igrot-kodesh-v13-דתקמו'],
+  ['כיצד להכריע באמצעי פעילות נוער השנויים במחלוקת?','id:igrot-kodesh-v13-דתקנ'],
+  ['מה אמר הרבי לרופא מצליח על גאווה והצלחה?','url:https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1638122/jewish/Cure-for-Arrogance.htm'],
+  ['כיצד לחבר מחשבה על ארץ ישראל להשפעה בגולה?','url:https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1775208/jewish/Home-is-Where-the-Heart-Is.htm']
+];
+for(const [question,key] of batch031Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-031 evidence must answer ${question}`);
+    assert.deepEqual(m.sources.map(e=>e.key),[key],`${mode}: the specific batch-031 query must retrieve only its inspected evidence family`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-031 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and eight real-corpus answer checks passed`);
 

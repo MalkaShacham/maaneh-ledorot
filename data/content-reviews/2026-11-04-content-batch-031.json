@@ -1,0 +1,35 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-04-content-batch-031",
+  "generated": "2026-11-04",
+  "method": "Direct visual and textual inspection of fifteen consecutive item bodies in the user-supplied Kehot publisher scan, plus inspection of two accessible authorized English Living Torah publisher pages. OCR and search snippets were navigation aids only; no blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "308-322",
+    "public_pages": [
+      "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1638122/jewish/Cure-for-Arrogance.htm",
+      "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1775208/jewish/Home-is-Where-the-Heart-Is.htm"
+    ]
+  },
+  "reviewed_items": 17,
+  "new_content_records": 4,
+  "enriched_existing_canonical_records": 13,
+  "propositions_added": 60,
+  "identity_relation": "Four scan identities (ד׳תקלט, ד׳תקמד, ד׳תקמט, ד׳תקנ) were previously withheld as ambiguous index rows and are now established from their item bodies. Eleven existing letter identities and two indexed Living Torah identities were enriched in place.",
+  "letters": ["ד׳תקלט", "ד׳תקמ", "ד׳תקמא", "ד׳תקמב", "ד׳תקמג", "ד׳תקמד", "ד׳תקמה", "ד׳תקמו", "ד׳תקמז", "ד׳תקמח", "ד׳תקמט", "ד׳תקנ", "ד׳תקנא", "ד׳תקנב", "ד׳תקנג"],
+  "additional_public_items": ["living-torah-aid-1638122", "living-torah-aid-1775208"],
+  "evidence_family_dedup": [
+    {"family_id": "prayer-rite-ashkenaz-sefard-to-ari-and-increasing-study", "member_letters_in_batch": ["ד׳תקמד"], "related_existing_letters": ["ד׳תקלז"], "counting_rule": "The letters are distinct item witnesses but share the prayer-rite doctrine family; neither is treated as corroboration independent of the printed correspondence corpus."},
+    {"family_id": "kfar-chabad-recovery-expansion-after-1956-attack", "member_letters_in_batch": ["ד׳תקמו", "ד׳תקמז"], "counting_rule": "Two distinct committee letters join the existing recovery/expansion family and are not synthesized as independent historical events."},
+    {"family_id": "unwanted-thought-redirection-and-disciplined-outreach", "member_letters_in_batch": ["ד׳תקמח"], "counting_rule": "The concealed subject remains concealed; no medical or moral context is inferred."},
+    {"family_id": "yeshiva-students-israel-flight-funding-and-kfar-chabad-encouragement", "member_letters_in_batch": ["ד׳תקנב"], "counting_rule": "This item joins the established emissary journey family rather than creating a new journey event."},
+    {"family_id": "zimmer-israel-visit-coordinated-chassidic-outreach", "member_letters_in_batch": ["ד׳תקנג"], "counting_rule": "The shipping reference is a request for a progress report and is not counted as an independent maritime ruling witness."}
+  ],
+  "blocked_alternatives": [
+    {"source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate path", "result": "Latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 crawler route was not retried.", "fallback": "Used the authorized user-supplied Kehot publisher scan and two accessible Chabad.org Living Torah publisher pages."}
+  ],
+  "verification_scope": "Fifteen letter bodies were inspected across PDF pages 308-322. Two public Living Torah pages were inspected for their publisher textual summaries. Incoming correspondence, cited works, audiovisual recordings, institutional files, medical facts and later outcomes were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter or transcript was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Secretary signatures, partial/omitted context, concealed subjects, publisher editorial summaries and Evidence Family links are preserved. The two English pages are verified only to the accessible publisher text, not to full audiovisual review."
+}
