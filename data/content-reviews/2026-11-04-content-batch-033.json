@@ -1,0 +1,23 @@
+{
+  "schema":"content-review-batch-v1",
+  "batch_id":"2026-11-04-content-batch-033",
+  "generated":"2026-11-04",
+  "method":"Direct visual and textual inspection of fifteen consecutive item bodies in the user-supplied Kehot publisher scan. OCR was used only for navigation and checked against rendered pages; no blocked crawler was used.",
+  "source":{"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"339-353"},
+  "reviewed_items":15,
+  "new_content_records":3,
+  "enriched_existing_canonical_records":12,
+  "propositions_added":50,
+  "identity_relation":"Three identities (ד׳תקסד, ד׳תקעב, ד׳תקעה) were established directly from their item bodies; the remaining twelve locator-only identities were enriched in place.",
+  "letters":["ד׳תקסד","ד׳תקסה","ד׳תקסו","ד׳תקסז","ד׳תקסח","ד׳תקסט","ד׳תקע","ד׳תקעא","ד׳תקעב","ד׳תקעג","ד׳תקעד","ד׳תקעה","ד׳תקעו","ד׳תקעז","ד׳תקעח"],
+  "evidence_family_dedup":[
+    {"family_id":"yeshiva-students-israel-flight-funding-and-kfar-chabad-encouragement","related_batch_letters":["ד׳תקסה","ד׳תקסו","ד׳תקעג"],"counting_rule":"References to the same visiting student delegation are contextual links, not independent proof of the journey or its effects."},
+    {"family_id":"synagogue-mechitza-litigation-individual-potential-and-experts","member_letters_in_batch":["ד׳תקעה"],"counting_rule":"The Hebrew propositions are a research translation of the Yiddish item and not a second witness."},
+    {"family_id":"melbourne-oholei-yosef-yitzchak-yeshiva-support","member_letters_in_batch":["ד׳תקסד"],"counting_rule":"The Hebrew propositions are a research translation of the Yiddish item and not a second witness."},
+    {"family_id":"institutional-discipline-dispute-local-board-hearing-and-majority","member_letters_in_batch":["ד׳תקעד"],"counting_rule":"The response is scoped to the concealed institution and one-sided incoming report; it is not generalized as a universal disciplinary rule."}
+  ],
+  "blocked_alternatives":[{"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate path","result":"Latest acquisition report is no_candidates with attempted=0; the known HTTP 403 crawler route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan."}],
+  "verification_scope":"Fifteen letter bodies were inspected across PDF pages 339-353. Incoming correspondence, cited works, institutional, medical, legal and financial records, program records and later outcomes were not independently inspected.",
+  "rights_note":"Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter was copied in full.",
+  "quality_note":"All propositions are source-grounded paraphrases. Secretary signatures, fragments, later addenda, editorial completion notes, Yiddish translation status, sensitive medical/legal/marital boundaries and Evidence Family links are preserved."
+}

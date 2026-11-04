@@ -419,5 +419,22 @@ for(const [question,key] of batch032Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-032 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and fourteen real-corpus answer checks passed`);
+const batch033Checks=[
+  ['כיצד להכריע במחלוקת הנהלה על ענישת תלמידים?','id:igrot-kodesh-v13-דתקעד'],
+  ['לקיחת מדריך והצלחתו עם התלמידים','id:igrot-kodesh-v13-דתקעא'],
+  ['קל להשפיע על יחידים וקשה לפעול על ציבור','id:igrot-kodesh-v13-דתקעז'],
+  ['מה נכתב על המשך משפט מחיצה בבית הכנסת?','id:igrot-kodesh-v13-דתקעה'],
+  ['מה הקשר בין התעוררות מהתוועדות לשינוי מעשי ולדחיית לימוד?','id:igrot-kodesh-v13-דתקעב'],
+  ['כיצד להשפיע על צעירים דרך ברית הסטודנטים הדתיים יבנה?','id:igrot-kodesh-v13-דתקסט']
+];
+for(const [question,key] of batch033Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-033 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-033 source must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?5:3),`${mode}: the specific batch-033 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-033 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and twenty real-corpus answer checks passed`);
 

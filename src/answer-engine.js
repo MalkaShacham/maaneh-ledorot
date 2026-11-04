@@ -90,6 +90,12 @@ const TOPICS={
  'משל קטר דיזל בעבודת השם':['תאונת קטר דיזל בעבודת השם','קטר דיזל','משל קטר דיזל','משל קטר הדיזל','קטר וקרונות בעבודת האדם','diesel locomotive spiritual metaphor'],
  'שליחות חינוכית למרוקו':['נסיעה למרוקו לעבוד בחינוך','נסיעתו למרוקו','שליחות חינוכית למרוקו','תלמיד תומכי תמימים במרוקו','morocco education emissary'],
  'סתימת פתח בצינור מתכת':['סתימת פתח בצינור מתכת','סתימת חלון בצינור','צינור מתכת','צינור מתכת בתוך הסתימה','sealed opening metal tube'],
+ 'מחלוקת הנהלה על משמעת תלמידים':['מחלוקת הנהלה על ענישת תלמידים','משמעת תלמידים בהנהלת מוסד','אסיפת כל חברי ההנהלה','הכרעה ברוב דעות','student discipline board majority'],
+ 'בחירת מדריך לפי הצלחה בתלמידים':['בחירת מדריך לישיבת אחי תמימים','לקיחת מדריך','הצלחתו עם התלמידים','counselor student success'],
+ 'השפעה על יחיד וציבור':['להשפיע על יחיד וקשה על ציבור','להשפיע על יחידים וקשה לפעול על ציבור','קל להשפיע על יחידים וקשה לפעול על ציבור','יחיד וציבור','השפעה ציבורית','יחיד עשוי להשפיע על רבים','individual and public outreach'],
+ 'משפט מחיצה בבית כנסת':['משפט מחיצה בבית הכנסת','סכסוך מחיצה','מומחים למשפט המחיצה','synagogue mechitza litigation'],
+ 'התוועדות לשינוי מעשי ולימוד':['התוועדות לשינוי מעשי','התעוררות מהתוועדות','דחיית לימוד','להוסיף בכמות הלימוד','farbrengen practical change study delay'],
+ 'ברית הסטודנטים יבנה והשפעה':['ברית הסטודנטים הדתיים יבנה','בוגר ברית הסטודנטים','השפעה על צעירים בתחילת דרכם','yavneh student network influence'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -187,6 +193,12 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('אהבת התורה')&&u.topics.includes('אהבת ה׳')&&(!containsTerm(body,'אהבת ההשגה השכלית')||!containsTerm(body,'גדולת הבורא')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-love versus G-d-love distinction is absent']};
  if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['personal-study side of the combined query is absent']};
  if(u.topics.includes('שליחות חינוכית למרוקו')&&(!containsTerm(body,'נסיעתו למרוקו')||!containsTerm(body,'חינוך')))return{score:0,support:'insufficient_specific_evidence',reasons:['Morocco educational-emissary setting is absent']};
+ if(u.topics.includes('מחלוקת הנהלה על משמעת תלמידים')&&(!containsTerm(body,'הנהלת')||!containsTerm(body,'תלמידים')||!containsTerm(body,'רוב דעות')))return{score:0,support:'insufficient_specific_evidence',reasons:['local board student-discipline hearing is absent']};
+ if(u.topics.includes('בחירת מדריך לפי הצלחה בתלמידים')&&(!containsTerm(body,'מדריך')||!containsTerm(body,'הצלחתו עם התלמידים')))return{score:0,support:'insufficient_specific_evidence',reasons:['counselor evaluation by student success is absent']};
+ if(u.topics.includes('השפעה על יחיד וציבור')&&(!containsTerm(body,'יחיד')||!containsTerm(body,'ציבור')))return{score:0,support:'insufficient_specific_evidence',reasons:['individual-versus-public outreach setting is absent']};
+ if(u.topics.includes('משפט מחיצה בבית כנסת')&&(!containsTerm(body,'מחיצה')||!containsTerm(body,'משפט')))return{score:0,support:'insufficient_specific_evidence',reasons:['synagogue mechitza litigation setting is absent']};
+ if(u.topics.includes('התוועדות לשינוי מעשי ולימוד')&&(!containsTerm(body,'התוועדות')||!containsTerm(body,'שינוי המעשי')))return{score:0,support:'insufficient_specific_evidence',reasons:['farbrengen-to-practical-change setting is absent']};
+ if(u.topics.includes('ברית הסטודנטים יבנה והשפעה')&&!containsTerm(body,'ברית הסטודנטים'))return{score:0,support:'insufficient_specific_evidence',reasons:['Yavneh student-network setting is absent']};
  if(u.topics.includes('סניף נשי חב״ד מונטריאול')&&!containsTerm(body,'מונטריאול'))return{score:0,support:'insufficient_specific_evidence',reasons:['Montreal branch is absent from the evidence body']};
  if(u.topics.includes('בית רבקה סדר בוקר')&&(!containsTerm(body,'בית רבקה')||!['לימודי חול','מחצית הראשונה','התחלת היום','שעות הבוקר'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Beis Rivka morning-schedule decision is absent from the evidence body']};
  if(u.topics.includes('כתבי יד משה יצחק מיאס')&&!containsTerm(body,'משה יצחק מיאס'))return{score:0,support:'insufficient_specific_evidence',reasons:['named manuscript holder is absent from the evidence body']};
