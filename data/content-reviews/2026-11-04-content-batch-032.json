@@ -1,0 +1,30 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-04-content-batch-032",
+  "generated": "2026-11-04",
+  "method": "Direct visual and textual inspection of ten consecutive item bodies in the user-supplied Kehot publisher scan. OCR was a navigation aid only; the scan pages were rendered and checked, and no blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "323-338"
+  },
+  "reviewed_items": 10,
+  "new_content_records": 0,
+  "enriched_existing_canonical_records": 10,
+  "propositions_added": 37,
+  "identity_relation": "All ten letters were existing locator-only bibliographic identities and were enriched in place from their inspected bodies. The index form ד׳תקם is preserved for the letter commonly rendered numerically as 560.",
+  "letters": ["ד׳תקנד","ד׳תקנה","ד׳תקנו","ד׳תקנז","ד׳תקנח","ד׳תקנט","ד׳תקם","ד׳תקסא","ד׳תקסב","ד׳תקסג"],
+  "evidence_family_dedup": [
+    {"family_id":"yeshiva-students-israel-flight-funding-and-kfar-chabad-encouragement","member_letters_in_batch":["ד׳תקנד"],"related_existing_letters":["ד׳תקמו","ד׳תקנב"],"counting_rule":"Distinct correspondence items about one emissary journey; they are not counted as independent proof of the journey's effects."},
+    {"family_id":"israeli-ships-shabbat-1956","member_letters_in_batch":["ד׳תקנה","ד׳תקנו"],"related_existing_letters":["ד׳תקנג"],"counting_rule":"The two letters are distinct documents in one controversy and substantially cross-reference the same technical-halakhic argument; they are not independent corroboration for repeated claims."},
+    {"family_id":"prayer-rite-ashkenaz-sefard-to-ari-and-increasing-study","member_letters_in_batch":["ד׳תקסג"],"related_existing_letters":["ד׳תקלז","ד׳תקמד"],"counting_rule":"A distinct response sharing the same prayer-rite doctrine family; repeated doctrine is synthesized without multiplying independent authority."},
+    {"family_id":"montevideo-mikveh-completion-local-responsibility-and-grant","member_letters_in_batch":["ד׳תקנט"],"counting_rule":"The Hebrew propositions are a research translation of the Yiddish item and not a second witness."},
+    {"family_id":"diesel-locomotive-accident-metaphor-for-gradual-self-discipline","member_letters_in_batch":["ד׳תקם"],"counting_rule":"The Hebrew propositions are a research translation of the Yiddish item and not a second witness."}
+  ],
+  "blocked_alternatives": [
+    {"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate path","result":"Latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 crawler route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan."}
+  ],
+  "verification_scope": "Ten letter bodies were inspected across PDF pages 323-338. Incoming correspondence, cited works, telegrams, engineering evidence, institutional and medical files, financial records and later outcomes were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Secretary signatures, fragments, historical technical scope, medical and halakhic limitations, Yiddish translation status and Evidence Family links are preserved."
+}

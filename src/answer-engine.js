@@ -84,6 +84,12 @@ const TOPICS={
  'פעילות נוער לפי תנאי המקום':['אמצעי פעילות נוער השנויים במחלוקת','פעילות נוער במחלוקת','תנאי המקום והזמן','תגובת הציבור המקומי','אנשי סוד המכירים את התנאים','youth outreach local conditions consultation'],
  'רופא מצליח וגאווה':['רופא מצליח על גאווה','רופא מצליח והצלחה','אתרוג וגאווה','כוחו האישי בלבד','successful doctor arrogance esrog'],
  'מחשבה בארץ ישראל והשפעה בגולה':['מחשבה על ארץ ישראל','מחשבתו בארץ ישראל','להמשיך מקדושת הארץ','השפעה בגולה','thoughts in israel influence diaspora'],
+ 'אוניות ישראליות ושבת':['אוניות ישראליות בשבת','אונייה ישראלית','הפלגת אוניות בשבת','להעמיד אונייה בנמל בשבת','הפעלה אוטומטית של אונייה','israeli ships shabbat'],
+ 'בדיקה חוזרת לקביעת טיפול':['בדיקה חוזרת לקביעת טיפול','בדיקה נוספת','בדיקה נוספת מיד אחרי בדיקה','רופא מומחה דורש בדיקה נוספת','repeat test treatment planning'],
+ 'השלמת מקווה במונטווידאו':['השלמת המקווה במונטווידאו','מקווה במונטווידאו','מונטווידאו','אחריות הקהילה להשלמת מקווה','montevideo mikveh completion'],
+ 'משל קטר דיזל בעבודת השם':['תאונת קטר דיזל בעבודת השם','קטר דיזל','משל קטר דיזל','משל קטר הדיזל','קטר וקרונות בעבודת האדם','diesel locomotive spiritual metaphor'],
+ 'שליחות חינוכית למרוקו':['נסיעה למרוקו לעבוד בחינוך','נסיעתו למרוקו','שליחות חינוכית למרוקו','תלמיד תומכי תמימים במרוקו','morocco education emissary'],
+ 'סתימת פתח בצינור מתכת':['סתימת פתח בצינור מתכת','סתימת חלון בצינור','צינור מתכת','צינור מתכת בתוך הסתימה','sealed opening metal tube'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -180,6 +186,7 @@ export function propositionRelevance(e,u){
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
  if(u.topics.includes('אהבת התורה')&&u.topics.includes('אהבת ה׳')&&(!containsTerm(body,'אהבת ההשגה השכלית')||!containsTerm(body,'גדולת הבורא')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-love versus G-d-love distinction is absent']};
  if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['personal-study side of the combined query is absent']};
+ if(u.topics.includes('שליחות חינוכית למרוקו')&&(!containsTerm(body,'נסיעתו למרוקו')||!containsTerm(body,'חינוך')))return{score:0,support:'insufficient_specific_evidence',reasons:['Morocco educational-emissary setting is absent']};
  if(u.topics.includes('סניף נשי חב״ד מונטריאול')&&!containsTerm(body,'מונטריאול'))return{score:0,support:'insufficient_specific_evidence',reasons:['Montreal branch is absent from the evidence body']};
  if(u.topics.includes('בית רבקה סדר בוקר')&&(!containsTerm(body,'בית רבקה')||!['לימודי חול','מחצית הראשונה','התחלת היום','שעות הבוקר'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Beis Rivka morning-schedule decision is absent from the evidence body']};
  if(u.topics.includes('כתבי יד משה יצחק מיאס')&&!containsTerm(body,'משה יצחק מיאס'))return{score:0,support:'insufficient_specific_evidence',reasons:['named manuscript holder is absent from the evidence body']};

@@ -402,5 +402,22 @@ for(const [question,key] of batch031Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-031 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and eight real-corpus answer checks passed`);
+const batch032Checks=[
+  ['מה האחריות באונייה ישראלית לקבוע הפלגה המחייבת הפעלת מערכות בשבת?','id:igrot-kodesh-v13-דתקנה'],
+  ['מתי רופא מומחה ביקש בדיקה נוספת לקביעת דרך הטיפול?','id:igrot-kodesh-v13-דתקנז'],
+  ['מה האחריות של מונטווידאו להשלמת המקווה?','id:igrot-kodesh-v13-דתקנט'],
+  ['כיצד משמש משל קטר הדיזל לעבודת האדם?','id:igrot-kodesh-v13-דתקם'],
+  ['באילו תנאים אושרה נסיעתו למרוקו לעבודה בחינוך?','id:igrot-kodesh-v13-דתקסב'],
+  ['כיצד משאירים צינור מתכת בתוך סתימת פתח?','id:igrot-kodesh-v13-דתקסא']
+];
+for(const [question,key] of batch032Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-032 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-032 source must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?5:3),`${mode}: the specific batch-032 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-032 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and fourteen real-corpus answer checks passed`);
 
