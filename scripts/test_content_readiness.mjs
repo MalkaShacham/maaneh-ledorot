@@ -436,5 +436,23 @@ for(const [question,key] of batch033Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-033 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and twenty real-corpus answer checks passed`);
+const batch034Checks=[
+  ['אילו מערכות באונייה אינן יכולות לפעול באוטומציה מלאה במשך שבת?','id:igrot-kodesh-v13-דתקפ'],
+  ['למה מכתב חברת צים לא הספיק בלי בדיקת יומני האונייה?','id:igrot-kodesh-v13-דתקפג'],
+  ['מה האחריות של מי שנבחר למשלחת לשמש דוגמה חיה?','id:igrot-kodesh-v13-דתקפו'],
+  ['כיצד הוצע להגדיל את מספר התלמידים בימי החופש במרוקו?','id:igrot-kodesh-v13-דתקפט'],
+  ['מתי דברי התעוררות נעשים דברים בטלים במקום להביא למעשה?','id:igrot-kodesh-v13-דתקצא'],
+  ['מה נכתב על קירוב אנשים לתורה בלי לשנות את התורה כדי להתאימה?','id:igrot-kodesh-v13-דתקצג'],
+  ['מה נכתב על סדר השלמת שיעורי חת״ת?','id:igrot-kodesh-v13-דתקצג']
+];
+for(const [question,key] of batch034Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-034 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-034 source must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?6:3),`${mode}: the specific batch-034 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-034 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and twenty-seven real-corpus answer checks passed`);
 

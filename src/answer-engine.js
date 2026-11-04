@@ -1,7 +1,7 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר אומרים כתב כותב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
-const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s))return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
+const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s)||s==='מספר')return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
  חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch','קינדער'],
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
@@ -96,6 +96,12 @@ const TOPICS={
  'משפט מחיצה בבית כנסת':['משפט מחיצה בבית הכנסת','סכסוך מחיצה','מומחים למשפט המחיצה','synagogue mechitza litigation'],
  'התוועדות לשינוי מעשי ולימוד':['התוועדות לשינוי מעשי','התעוררות מהתוועדות','דחיית לימוד','להוסיף בכמות הלימוד','farbrengen practical change study delay'],
  'ברית הסטודנטים יבנה והשפעה':['ברית הסטודנטים הדתיים יבנה','בוגר ברית הסטודנטים','השפעה על צעירים בתחילת דרכם','yavneh student network influence'],
+ 'מערכות אונייה ואוטומציה בשבת':['אילו מערכות באונייה אינן אוטומטיות','אילו מערכות באונייה אינן יכולות לפעול באוטומציה מלאה','מערכות אונייה אינן אוטומטיות','אוטומציה מלאה במשך שבת','מכונות ההנעה','לאוטומציה','מערכות האנרגיה','היגוי','מערכות הרדיו','שירותי הנוסעים','ship systems full automation shabbat'],
+ 'מכתב צים ויומני אונייה':['למה מכתב צים אינו מספיק','מכתב חברת צים','יומני האונייה','חילוף משמרות כל ארבע שעות','zim letter ship logs'],
+ 'שליח כדוגמה חיה':['שליח לשמש דוגמה חיה','דוגמה חיה בהתנהגותו','אחריות מי שנבחר למשלחת','emissary living example conduct'],
+ 'תלמידי חופש במרוקו':['להגדיל תלמידים בימי החופש במרוקו','תלמידים בימי החופש','להרחיב את האכסניה','מדריכים מבני המקום במרוקו','morocco vacation students local staff'],
+ 'דברי התעוררות ומעשה':['מתי דברי התעוררות נעשים דברים בטלים','דברי התעוררות בלי מעשה','דברי התעוררות','פעולות שיבואו אחריו','תכליתם','לא המדרש עיקר אלא המעשה','arousal words without action'],
+ 'קירוב לתורה והשלמת חתת':['לקרב אנשים לתורה ולא את התורה לאנשים','קירוב אנשים לתורה','לשנות את התורה כדי להתאימה','סדר השלמת שיעורי חת״ת','השלמת שיעורי חת״ת','השיעור המוקדם קודם','bring people to torah chitas order'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -190,6 +196,7 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('מקווה בלי המתנה לשלום')&&(!containsTerm(body,'מקווה')||!['להמתין לשלום','אין לעכב','שלום'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['mikveh-without-waiting-for-peace setting is absent']};
  if(u.topics.includes('אהבת התורה')&&u.topics.includes('אהבת ה׳')&&(!containsTerm(body,'אהבת ההשגה השכלית')||!containsTerm(body,'גדולת הבורא')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-love versus G-d-love distinction is absent']};
  if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['personal-study side of the combined query is absent']};
  if(u.topics.includes('שליחות חינוכית למרוקו')&&(!containsTerm(body,'נסיעתו למרוקו')||!containsTerm(body,'חינוך')))return{score:0,support:'insufficient_specific_evidence',reasons:['Morocco educational-emissary setting is absent']};
@@ -199,6 +206,12 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('משפט מחיצה בבית כנסת')&&(!containsTerm(body,'מחיצה')||!containsTerm(body,'משפט')))return{score:0,support:'insufficient_specific_evidence',reasons:['synagogue mechitza litigation setting is absent']};
  if(u.topics.includes('התוועדות לשינוי מעשי ולימוד')&&(!containsTerm(body,'התוועדות')||!containsTerm(body,'שינוי המעשי')))return{score:0,support:'insufficient_specific_evidence',reasons:['farbrengen-to-practical-change setting is absent']};
  if(u.topics.includes('ברית הסטודנטים יבנה והשפעה')&&!containsTerm(body,'ברית הסטודנטים'))return{score:0,support:'insufficient_specific_evidence',reasons:['Yavneh student-network setting is absent']};
+ if(u.topics.includes('מערכות אונייה ואוטומציה בשבת')&&(!containsTerm(body,'מכונות')||!containsTerm(body,'אוטומ')))return{score:0,support:'insufficient_specific_evidence',reasons:['ship-system automation analysis is absent']};
+ if(u.topics.includes('מכתב צים ויומני אונייה')&&(!containsTerm(body,'צים')||!containsTerm(body,'יומני')))return{score:0,support:'insufficient_specific_evidence',reasons:['Zim-letter and ship-log analysis is absent']};
+ if(u.topics.includes('שליח כדוגמה חיה')&&!containsTerm(body,'דוגמה חיה'))return{score:0,support:'insufficient_specific_evidence',reasons:['emissary-as-living-example evidence is absent']};
+ if(u.topics.includes('תלמידי חופש במרוקו')&&(!containsTerm(body,'ימי החופש')||!containsTerm(body,'מרוקו')))return{score:0,support:'insufficient_specific_evidence',reasons:['Morocco vacation-study expansion is absent']};
+ if(u.topics.includes('דברי התעוררות ומעשה')&&(!containsTerm(body,'דברי התעוררות')||!containsTerm(body,'מעשה')))return{score:0,support:'insufficient_specific_evidence',reasons:['arousal-to-action distinction is absent']};
+ if(u.topics.includes('קירוב לתורה והשלמת חתת')&&(!containsTerm(body,'קירוב אנשים לתורה')||!containsTerm(body,'חת״ת')))return{score:0,support:'insufficient_specific_evidence',reasons:['bring-people-to-Torah and Chitas-order evidence is absent']};
  if(u.topics.includes('סניף נשי חב״ד מונטריאול')&&!containsTerm(body,'מונטריאול'))return{score:0,support:'insufficient_specific_evidence',reasons:['Montreal branch is absent from the evidence body']};
  if(u.topics.includes('בית רבקה סדר בוקר')&&(!containsTerm(body,'בית רבקה')||!['לימודי חול','מחצית הראשונה','התחלת היום','שעות הבוקר'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Beis Rivka morning-schedule decision is absent from the evidence body']};
  if(u.topics.includes('כתבי יד משה יצחק מיאס')&&!containsTerm(body,'משה יצחק מיאס'))return{score:0,support:'insufficient_specific_evidence',reasons:['named manuscript holder is absent from the evidence body']};

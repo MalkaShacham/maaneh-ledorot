@@ -1,0 +1,22 @@
+{
+  "schema":"content-review-batch-v1",
+  "batch_id":"2026-11-04-content-batch-034",
+  "generated":"2026-11-04",
+  "method":"Direct visual and textual inspection of fifteen consecutive item bodies in the user-supplied Kehot publisher scan. OCR was used only for navigation and checked against rendered pages; no blocked crawler was used.",
+  "source":{"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"353-370"},
+  "reviewed_items":15,
+  "new_content_records":2,
+  "enriched_existing_canonical_records":13,
+  "propositions_added":52,
+  "identity_relation":"Two identities (ד׳תקפב, ד׳תקצג) were established directly from their item bodies; the remaining thirteen locator-only identities were enriched in place.",
+  "letters":["ד׳תקעט","ד׳תקפ","ד׳תקפא","ד׳תקפב","ד׳תקפג","ד׳תקפד","ד׳תקפה","ד׳תקפו","ד׳תקפז","ד׳תקפח","ד׳תקפט","ד׳תקצ","ד׳תקצא","ד׳תקצב","ד׳תקצג"],
+  "evidence_family_dedup":[
+    {"family_id":"israeli-ships-shabbat-1956","member_letters_in_batch":["ד׳תקפ","ד׳תקפג","ד׳תקפד"],"related_prior_letters":["ד׳תקנה","ד׳תקנו"],"counting_rule":"The letters are separate response documents in one controversy and are not treated as independent proof of repeated technical or halachic assertions."},
+    {"family_id":"tammuz-5716-student-emissary-visits-and-local-followup","member_letters_in_batch":["ד׳תקפא","ד׳תקפב","ד׳תקפה","ד׳תקפו","ד׳תקצ"],"counting_rule":"References to the same emissary journey and visits are linked as one event family; each letter supports only its own response and local follow-up."},
+    {"family_id":"manchester-emissary-followup-and-mikveh-description","member_letters_in_batch":["ד׳תקצא"],"counting_rule":"The emissary visit is event-linked to the tour family, while the Manchester mikveh description remains a separate local situation and is not merged with other mikveh projects."}
+  ],
+  "blocked_alternatives":[{"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate path","result":"Latest acquisition report is no_candidates with attempted=0; the known HTTP 403 crawler route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan."}],
+  "verification_scope":"Fifteen letter bodies were inspected across PDF pages 353-370. Incoming correspondence, cited works, ship logs, engineering and legal records, institutional reports, medical records, building plans and later outcomes were not independently inspected.",
+  "rights_note":"Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter was copied in full.",
+  "quality_note":"All propositions are source-grounded paraphrases. Editorial revision/completion, handwritten-note status, secretary signatures, fragments, medical and halachic limits, and shared Evidence Families are preserved."
+}

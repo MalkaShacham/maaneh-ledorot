@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261104-volume13-batch031';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261104-volume13-batch034';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -86,6 +86,12 @@ const TOPIC_ALIASES={
   'משפט מחיצה בבית כנסת':['משפט מחיצה בבית הכנסת','סכסוך מחיצה','מומחים למשפט המחיצה','synagogue mechitza litigation'],
   'התוועדות לשינוי מעשי ולימוד':['התוועדות לשינוי מעשי','התעוררות מהתוועדות','דחיית לימוד','להוסיף בכמות הלימוד','farbrengen practical change study delay'],
   'ברית הסטודנטים יבנה והשפעה':['ברית הסטודנטים הדתיים יבנה','בוגר ברית הסטודנטים','השפעה על צעירים בתחילת דרכם','yavneh student network influence'],
+  'מערכות אונייה ואוטומציה בשבת':['אילו מערכות באונייה אינן אוטומטיות','אילו מערכות באונייה אינן יכולות לפעול באוטומציה מלאה','מערכות אונייה אינן אוטומטיות','אוטומציה מלאה במשך שבת','מכונות ההנעה','לאוטומציה','מערכות האנרגיה','היגוי','מערכות הרדיו','שירותי הנוסעים','ship systems full automation shabbat'],
+  'מכתב צים ויומני אונייה':['למה מכתב צים אינו מספיק','מכתב חברת צים','יומני האונייה','חילוף משמרות כל ארבע שעות','zim letter ship logs'],
+  'שליח כדוגמה חיה':['שליח לשמש דוגמה חיה','דוגמה חיה בהתנהגותו','אחריות מי שנבחר למשלחת','emissary living example conduct'],
+  'תלמידי חופש במרוקו':['להגדיל תלמידים בימי החופש במרוקו','תלמידים בימי החופש','להרחיב את האכסניה','מדריכים מבני המקום במרוקו','morocco vacation students local staff'],
+  'דברי התעוררות ומעשה':['מתי דברי התעוררות נעשים דברים בטלים','דברי התעוררות בלי מעשה','דברי התעוררות','פעולות שיבואו אחריו','תכליתם','לא המדרש עיקר אלא המעשה','arousal words without action'],
+  'קירוב לתורה והשלמת חתת':['לקרב אנשים לתורה ולא את התורה לאנשים','קירוב אנשים לתורה','לשנות את התורה כדי להתאימה','סדר השלמת שיעורי חת״ת','השלמת שיעורי חת״ת','השיעור המוקדם קודם','bring people to torah chitas order'],
   'ריכוז בלימוד וספר פתוח':['קושי בריכוז בלימוד','להתרכז בלימוד','ספר פתוח לפניו','האותיות מקשרות ומחכימות','study concentration open book'],
   'לימוד חסידות בלי חבר':['העדר חבר לימוד','אין חבר לימוד','חבר לימוד בחסידות','לימוד חסידות לבד','chassidus without study partner'],
   'דואר כפר חבד ושבת':['סניף דואר בכפר חב״ד','פתיחת דואר בכפר חב״ד','סניף דואר','דואר סגור בשבת','מברקים בשבת','kfar chabad post office shabbat'],
