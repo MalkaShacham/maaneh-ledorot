@@ -354,5 +354,21 @@ for(const [question,key] of batch028Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-028 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; ninety-two real-corpus answer checks passed`);
+const batch029Checks=[
+  ['מה הקשר בין קושי להתרכז בתפילה לבין קביעות בלימוד תורה?','id:igrot-kodesh-v13-דתקי'],
+  ['מה הובהר על מכתב קודם שנחתם בידי המזכירות?','id:igrot-kodesh-v13-דתקיא'],
+  ['מה קודם בתפילין של ראש: הידוק במקום או יישור הבתים?','id:igrot-kodesh-v13-דתקיז'],
+  ['כיצד הוצע להשפיע על חבר ילדות שהתרחק מן הסביבה החרדית?','id:igrot-kodesh-v13-דתקיט'],
+  ['למה מחנה קיץ מתאים במיוחד לחינוך כשאין לימודי חול?','id:igrot-kodesh-v13-דתקכג']
+];
+for(const [question,key] of batch029Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-029 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-029 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-029 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-029 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; ninety-seven real-corpus answer checks passed`);
 

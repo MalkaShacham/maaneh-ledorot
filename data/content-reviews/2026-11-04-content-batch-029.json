@@ -1,0 +1,23 @@
+{
+  "schema":"content-review-batch-v1",
+  "batch_id":"2026-11-04-content-batch-029",
+  "generated":"2026-11-04",
+  "method":"Direct visual and textual inspection of the next continuous item-level batch in the user-supplied Kehot publisher scan. OCR was used only as an aid; no blocked crawler was used.",
+  "source":{"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"283-295"},
+  "reviewed_items":15,
+  "new_content_records":4,
+  "enriched_existing_canonical_records":11,
+  "propositions_added":49,
+  "identity_relation":"Eleven records enrich existing volume-index identities. Four missing identities are added for ד׳תקיד, ד׳תקטו, ד׳תקטז and ד׳תקכג. Three index OCR errors are corrected in place: ד׳תקיט* had duplicated ד׳תקיט, ד׳תקכ was read as ד׳תקב, and ד׳תקכב as ד׳תקבב.",
+  "letters":["ד׳תקי","ד׳תקיא","ד׳תקיב","ד׳תקיג","ד׳תקיד","ד׳תקטו","ד׳תקטז","ד׳תקיז","ד׳תקיח","ד׳תקיט","ד׳תקיט*","ד׳תקכ","ד׳תקכא","ד׳תקכב","ד׳תקכג"],
+  "evidence_family_dedup":[
+    {"family_id":"kfar-chabad-1956-attack-recovery","member_letters_in_batch":["ד׳תקיב"],"counting_rule":"The letter is a distinct inspected witness in the already established post-attack sequence, not a new independent attack event."},
+    {"family_id":"israeli-ships-shabbat-1956","member_letters_in_batch":["ד׳תקיט*"],"counting_rule":"The separately starred telegram starts an evidence family that later correspondence may join; the asterisk is publisher item numbering, not a translation."},
+    {"family_id":"yiddish-designated-charity-times-and-secretariat-dictation-confirmation","member_letters_in_batch":["ד׳תקיא"],"counting_rule":"Hebrew paraphrases are derived from the inspected Yiddish witness and do not create an independent source."},
+    {"family_id":"yiddish-gratitude-total-balance-delayed-good-and-family-joy","member_letters_in_batch":["ד׳תקטו"],"counting_rule":"Hebrew paraphrases are derived from the inspected Yiddish witness and do not create an independent source."}
+  ],
+  "blocked_alternatives":[{"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate path","result":"Latest acquisition report is no_candidates with attempted=0; the known HTTP 403 crawler route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan and inspected fifteen consecutive item bodies."}],
+  "verification_scope":"Fifteen item bodies were inspected across PDF pages 283-295. Identity, printed locator and bounded propositions are verified to the publisher scan only. Incoming correspondence, cited works, medical facts, institutional records and later outcomes were not independently inspected.",
+  "rights_note":"Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note":"All propositions are source-grounded paraphrases. Yiddish translation is derived, medical and safety implications are bounded, secretary signatures and publisher completions are preserved, and a reported rabbinical ruling remains explicitly unverified."
+}

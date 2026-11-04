@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261031-volume13-batch028';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261104-volume13-batch029';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -63,6 +63,11 @@ const TOPIC_ALIASES={
   'הסבר הפיגוע בכפר חבד':['האם אפשר להסביר את הפיגוע בכפר חב״ד לפי האיגרת','האם אפשר להסביר את הפיגוע בכפר חב״ד','הסבר הפיגוע בכפר חב״ד','להסביר את המאורע בכפר חב״ד','פיגוע בכפר חב״ד','שתיקה במקום הסבר','explain kfar chabad attack tragedy'],
   'קדימות מקווה לבית כנסת כפר חבד':['מה קודם בכפר חב״ד בית הטבילה או בית הכנסת','בית הטבילה או בית הכנסת','להקדים בית טבילה לבית כנסת בכפר חב״ד','קדימות מקווה לבית כנסת בכפר חב״ד','בית הטבילה ובית הכנסת בכפר חב״ד','קדימות על פני בית הכנסת','kfar chabad mikveh priority synagogue'],
   'תעניות פרטיות':['תעניות שאדם מוסיף מדעתו','תעניות פרטיות','הוספת תעניות','private fasts','self-imposed fasts'],
+  'ריכוז בתפילה וקביעות תורה':['מה הקשר בין קושי להתרכז בתפילה לבין קביעות בלימוד תורה','קושי להתרכז בתפילה','קשה להתרכז בתפילה','ריכוז בתפילה וקביעות תורה','קביעות בלימוד תורה ושמירת מצוות','prayer concentration fixed torah study'],
+  'חתימת מזכירות והכתבה':['מכתב שנחתם בידי המזכירות','חתימת המזכירות','נחתם בידי המזכירות','הכתבה מילה במילה','secretariat signature word for word dictation'],
+  'הידוק תפילין מול יישור בתים':['מה קודם בתפילין של ראש הידוק במקום או יישור הבתים','הידוק תפילין או יישור הבתים','הידוק תפילין של ראש','אצבעים על אצבעים','יישור הבתים בתפילין','tefillin tightness box alignment'],
+  'השפעה על חבר שהתרחק':['חבר ילדות שהתרחק','להשפיע על חבר שהתרחק','חבר שהתרחק מהסביבה החרדית','התייעצות עם אנשים מקומיים','help childhood friend return judaism'],
+  'מחנה קיץ ללא לימודי חול':['למה מחנה קיץ מתאים במיוחד לחינוך כשאין לימודי חול','מחנה קיץ ללא לימודי חול','למה מחנה קיץ מתאים לחינוך','מחנה קיץ יראת שמים','לימודי החול אינם מסיחים','summer camp without secular studies'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };
