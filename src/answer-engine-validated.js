@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261104-volume13-batch029';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261104-volume13-batch030';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -68,6 +68,12 @@ const TOPIC_ALIASES={
   'הידוק תפילין מול יישור בתים':['מה קודם בתפילין של ראש הידוק במקום או יישור הבתים','הידוק תפילין או יישור הבתים','הידוק תפילין של ראש','אצבעים על אצבעים','יישור הבתים בתפילין','tefillin tightness box alignment'],
   'השפעה על חבר שהתרחק':['חבר ילדות שהתרחק','להשפיע על חבר שהתרחק','חבר שהתרחק מהסביבה החרדית','התייעצות עם אנשים מקומיים','help childhood friend return judaism'],
   'מחנה קיץ ללא לימודי חול':['למה מחנה קיץ מתאים במיוחד לחינוך כשאין לימודי חול','מחנה קיץ ללא לימודי חול','למה מחנה קיץ מתאים לחינוך','מחנה קיץ יראת שמים','לימודי החול אינם מסיחים','summer camp without secular studies'],
+  'ידיעה שלמה לפני הפצת המעיינות':['האם לחכות לידיעה שלמה לפני הפצת המעיינות','להשהות הפצת חסידות עד שהידיעה תהיה שלמה','הפצת המעיינות לפני ידיעה שלמה','wait for complete knowledge before outreach'],
+  'אנגלית וכימיה מול לימודי קודש':['למה הומלץ לבחור ללמוד עוד שלוש או ארבע שנים לימודי קודש במקום אנגלית וכימיה','אנגלית וכימיה במקום לימודי קודש','לימודי אנגלית וכימיה','שלוש או ארבע שנים ללימודי קודש','english chemistry versus sacred study'],
+  'בית ספר לבנות סגל מול בניין':['מה קודם בהקמת בית ספר לבנות בכפר חב״ד שיפור הבניין או סגל המורים ורמת הלימודים','בית ספר לבנות סגל מורים לפני בניין','קדימות לסגל מורים','לפני השקעה גדולה בשיפור הבניין','girls school teachers before building'],
+  'ביטול הפלגה בשבת והחזר':['מה נכתב על נוסעים שביטלו הפלגה בשבת וקבלת החזר כספי','ביטלו הפלגה בשבת','החזר כספי לנוסעים','להחזיר כסף למי שביטלו','shabbat voyage cancellation refund'],
+  'לימוד לפני חידושים בחסידות':['האם להתחיל בחידושים בלימוד חסידות לפני לימוד והבנה','חידושים בלימוד חסידות','תחילה לימוד ואחר כך חידושים','לימוד חסידות אינו אמור להתחיל ביצירת חידושים','תחילה נדרשים לימוד','learn before chassidus innovations'],
+  'שינוי נוסח אשכנז ספרד ארי':['האם מותר לשנות מנוסח אשכנז לספרד ומספרד לנוסח הארי','נוסח אשכנז לספרד','נוסח ספרד לנוסח הארי','נוסח אשכנז','נוסח ספרד','נוסח הארי','change prayer rite ashkenaz sefard ari'],
   'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

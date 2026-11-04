@@ -370,5 +370,21 @@ for(const [question,key] of batch029Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-029 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; ninety-seven real-corpus answer checks passed`);
+const batch030Checks=[
+  ['למה הומלץ לבחור ללמוד עוד שלוש או ארבע שנים לימודי קודש במקום אנגלית וכימיה?','id:igrot-kodesh-v13-דתקכד'],
+  ['מה קודם בהקמת בית ספר לבנות בכפר חב״ד: שיפור הבניין או סגל המורים ורמת הלימודים?','id:igrot-kodesh-v13-דתקכו'],
+  ['מה נכתב על נוסעים שביטלו הפלגה בשבת וקבלת החזר כספי?','id:igrot-kodesh-v13-דתקלא'],
+  ['האם להתחיל בחידושים בלימוד חסידות לפני לימוד והבנה?','id:igrot-kodesh-v13-דתקלד'],
+  ['האם מותר לשנות מנוסח אשכנז לספרד ומספרד לנוסח האר״י?','id:igrot-kodesh-v13-דתקלז']
+];
+for(const [question,key] of batch030Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-030 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-030 witness must be retrieved for ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-030 query must not be flooded by generic evidence`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-030 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and two real-corpus answer checks passed`);
 

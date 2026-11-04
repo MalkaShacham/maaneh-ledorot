@@ -72,6 +72,12 @@ const TOPICS={
  'הידוק תפילין מול יישור בתים':['מה קודם בתפילין של ראש הידוק במקום או יישור הבתים','הידוק תפילין או יישור הבתים','הידוק תפילין של ראש','אצבעים על אצבעים','יישור הבתים בתפילין','tefillin tightness box alignment'],
  'השפעה על חבר שהתרחק':['חבר ילדות שהתרחק','להשפיע על חבר שהתרחק','חבר שהתרחק מהסביבה החרדית','התייעצות עם אנשים מקומיים','help childhood friend return judaism'],
  'מחנה קיץ ללא לימודי חול':['למה מחנה קיץ מתאים במיוחד לחינוך כשאין לימודי חול','מחנה קיץ ללא לימודי חול','למה מחנה קיץ מתאים לחינוך','מחנה קיץ יראת שמים','לימודי החול אינם מסיחים','summer camp without secular studies'],
+ 'ידיעה שלמה לפני הפצת המעיינות':['האם לחכות לידיעה שלמה לפני הפצת המעיינות','להשהות הפצת חסידות עד שהידיעה תהיה שלמה','הפצת המעיינות לפני ידיעה שלמה','wait for complete knowledge before outreach'],
+ 'אנגלית וכימיה מול לימודי קודש':['למה הומלץ לבחור ללמוד עוד שלוש או ארבע שנים לימודי קודש במקום אנגלית וכימיה','אנגלית וכימיה במקום לימודי קודש','לימודי אנגלית וכימיה','שלוש או ארבע שנים ללימודי קודש','english chemistry versus sacred study'],
+ 'בית ספר לבנות סגל מול בניין':['מה קודם בהקמת בית ספר לבנות בכפר חב״ד שיפור הבניין או סגל המורים ורמת הלימודים','בית ספר לבנות סגל מורים לפני בניין','קדימות לסגל מורים','לפני השקעה גדולה בשיפור הבניין','girls school teachers before building'],
+ 'ביטול הפלגה בשבת והחזר':['מה נכתב על נוסעים שביטלו הפלגה בשבת וקבלת החזר כספי','ביטלו הפלגה בשבת','החזר כספי לנוסעים','להחזיר כסף למי שביטלו','shabbat voyage cancellation refund'],
+ 'לימוד לפני חידושים בחסידות':['האם להתחיל בחידושים בלימוד חסידות לפני לימוד והבנה','חידושים בלימוד חסידות','תחילה לימוד ואחר כך חידושים','לימוד חסידות אינו אמור להתחיל ביצירת חידושים','תחילה נדרשים לימוד','learn before chassidus innovations'],
+ 'שינוי נוסח אשכנז ספרד ארי':['האם מותר לשנות מנוסח אשכנז לספרד ומספרד לנוסח הארי','נוסח אשכנז לספרד','נוסח ספרד לנוסח הארי','נוסח אשכנז','נוסח ספרד','נוסח הארי','change prayer rite ashkenaz sefard ari'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -162,6 +168,7 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('אהבת התורה')&&u.topics.includes('אהבת ה׳')&&(!containsTerm(body,'אהבת ההשגה השכלית')||!containsTerm(body,'גדולת הבורא')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-love versus G-d-love distinction is absent']};
  if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['personal-study side of the combined query is absent']};
  if(u.topics.includes('סניף נשי חב״ד מונטריאול')&&!containsTerm(body,'מונטריאול'))return{score:0,support:'insufficient_specific_evidence',reasons:['Montreal branch is absent from the evidence body']};
  if(u.topics.includes('בית רבקה סדר בוקר')&&(!containsTerm(body,'בית רבקה')||!['לימודי חול','מחצית הראשונה','התחלת היום','שעות הבוקר'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Beis Rivka morning-schedule decision is absent from the evidence body']};
@@ -204,6 +211,12 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('הידוק תפילין מול יישור בתים')&&(!containsTerm(body,'תפילין של ראש')||!containsTerm(body,'הידוק במקומו')||!containsTerm(body,'אצבעים על אצבעים')))return{score:0,support:'insufficient_specific_evidence',reasons:['head-tefillin tightness versus box-alignment evidence is absent']};
  if(u.topics.includes('השפעה על חבר שהתרחק')&&(!containsTerm(body,'חבר ילדות')||!containsTerm(body,'אנשים מקומיים')))return{score:0,support:'insufficient_specific_evidence',reasons:['childhood-friend and local-consultation evidence is absent']};
  if(u.topics.includes('מחנה קיץ ללא לימודי חול')&&(!containsTerm(body,'מחנה קיץ')||!containsTerm(body,'לימודי החול')))return{score:0,support:'insufficient_specific_evidence',reasons:['summer-camp without secular-study distraction evidence is absent']};
+ if(u.topics.includes('ידיעה שלמה לפני הפצת המעיינות')&&(!containsTerm(body,'להשהות הפצת חסידות')||!containsTerm(body,'הידיעה תהיה שלמה')))return{score:0,support:'insufficient_specific_evidence',reasons:['complete-knowledge-before-outreach evidence is absent']};
+ if(u.topics.includes('אנגלית וכימיה מול לימודי קודש')&&(!containsTerm(body,'אנגלית')||!containsTerm(body,'כימיה')||!['שלוש או ארבע שנים','שלוש','ארבע שנים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['English-chemistry versus additional sacred-study plan is absent']};
+ if(u.topics.includes('בית ספר לבנות סגל מול בניין')&&(!containsTerm(body,'בית הספר לבנות')||!containsTerm(body,'סגל מורים')||!containsTerm(body,'בניין')))return{score:0,support:'insufficient_specific_evidence',reasons:['girls-school teachers-versus-building priority is absent']};
+ if(u.topics.includes('ביטול הפלגה בשבת והחזר')&&(!containsTerm(body,'ביטלו')||!containsTerm(body,'להחזיר כסף')||!containsTerm(body,'שבת')))return{score:0,support:'insufficient_specific_evidence',reasons:['cancelled Sabbath voyage and refund evidence is absent']};
+ if(u.topics.includes('לימוד לפני חידושים בחסידות')&&(!containsTerm(body,'חידושים')||!containsTerm(body,'לימוד חסידות')||!containsTerm(body,'תחילה')))return{score:0,support:'insufficient_specific_evidence',reasons:['study-before-Chassidus-innovations sequence is absent']};
+ if(u.topics.includes('שינוי נוסח אשכנז ספרד ארי')&&(!containsTerm(body,'נוסח אשכנז')||!containsTerm(body,'נוסח ספרד')||!containsTerm(body,'נוסח האר״י')))return{score:0,support:'insufficient_specific_evidence',reasons:['Ashkenaz-Sefard-Ari prayer-rite change evidence is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

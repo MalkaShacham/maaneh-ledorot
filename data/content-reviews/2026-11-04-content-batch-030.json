@@ -1,0 +1,22 @@
+{
+  "schema":"content-review-batch-v1",
+  "batch_id":"2026-11-04-content-batch-030",
+  "generated":"2026-11-04",
+  "method":"Direct visual and textual inspection of the next continuous item-level batch in the user-supplied Kehot publisher scan. OCR was used only as an aid; no blocked crawler was used.",
+  "source":{"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"295-307"},
+  "reviewed_items":15,
+  "new_content_records":14,
+  "enriched_existing_canonical_records":1,
+  "propositions_added":52,
+  "identity_relation":"Fourteen directly inspected identities were absent from the conservative index batch. ד׳תקכו enriches and corrects the sole page-260 index identity, whose letter number was OCR-corrupted as ד׳תקבג.",
+  "letters":["ד׳תקכד","ד׳תקכה","ד׳תקכו","ד׳תקכז","ד׳תקכח","ד׳תקכט","ד׳תקל","ד׳תקלא","ד׳תקלב","ד׳תקלג","ד׳תקלד","ד׳תקלה","ד׳תקלו","ד׳תקלז","ד׳תקלח"],
+  "evidence_family_dedup":[
+    {"family_id":"israeli-ships-shabbat-1956","member_letters_in_batch":["ד׳תקלא","ד׳תקלה"],"related_existing_letters":["ד׳תקיט*"],"counting_rule":"The telegram and later clarification are distinct inspected witnesses in one historical controversy; they are not treated as three independent events."},
+    {"family_id":"yeshiva-student-study-will-effort-and-shared-response","member_letters_in_batch":["ד׳תקלח"],"related_existing_letters":["ד׳תקיד"],"counting_rule":"The later letter is a distinct item witness but joins the existing thematic family on study difficulty, will and effort."},
+    {"family_id":"yiddish-yeshiva-student-secular-career-plan-versus-three-years-sacred-study","member_letters_in_batch":["ד׳תקכד"],"counting_rule":"Hebrew paraphrases are derived from the inspected Yiddish witness and do not create an independent source."}
+  ],
+  "blocked_alternatives":[{"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate path","result":"Latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 crawler route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan and inspected fifteen consecutive item bodies."}],
+  "verification_scope":"Fifteen item bodies were inspected across PDF pages 295-307. Identity, printed locator and bounded propositions are verified to the publisher scan only. Incoming correspondence, cited works, medical facts, institutional records, engineering claims and later outcomes were not independently inspected.",
+  "rights_note":"Only bounded non-verbatim research paraphrases and locators were recorded; no protected letter text was copied in full.",
+  "quality_note":"All propositions are source-grounded paraphrases. Yiddish translation is derived, medical and maritime claims are bounded, secretary signatures and partial excerpts are preserved, and linked evidence families are not treated as independent events."
+}
