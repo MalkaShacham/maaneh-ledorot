@@ -1,0 +1,44 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-05-content-batch-037",
+  "generated": "2026-11-05",
+  "method": "Direct item-body inspection of fifteen consecutive letters in the user-supplied Kehot publisher scan. PDF pages 410-424 were rendered and visually checked, and page-resolved extracted text was used for bounded research paraphrases. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "410-424"
+  },
+  "reviewed_items": 15,
+  "new_content_records": 3,
+  "enriched_existing_canonical_records": 12,
+  "propositions_added": 45,
+  "identity_relation": "Three identities (ד׳תרכו, ד׳תרלד, ד׳תרלה) were established directly from visible page headings where the conservative index omitted them; twelve existing locator-only identities were enriched in place.",
+  "letters": ["ד׳תרכד", "ד׳תרכה", "ד׳תרכו", "ד׳תרכז", "ד׳תרכח", "ד׳תרכט", "ד׳תרל", "ד׳תרלא", "ד׳תרלב", "ד׳תרלג", "ד׳תרלד", "ד׳תרלה", "ד׳תרלו", "ד׳תרלז", "ד׳תרלח"],
+  "evidence_family_dedup": [
+    {
+      "family_id": "israeli-ships-shabbat-1956",
+      "member_letters_in_batch": ["ד׳תרכד", "ד׳תרלד"],
+      "counting_rule": "Both letters belong to the same continuing controversy. Their overlapping economic, technical and public-Sabbath claims are not counted as independent corroboration."
+    },
+    {
+      "family_id": "melbourne-chabad-girls-school-1956",
+      "member_letters_in_batch": ["ד׳תרלא"],
+      "counting_rule": "Linked to the earlier Melbourne girls-school correspondence; this item adds a direct instruction on necessity, governance and use of available funds, not a separate school project."
+    },
+    {
+      "family_id": "educational-visits-no-institutional-harm-and-local-benefit",
+      "member_letters_in_batch": ["ד׳תרכח"],
+      "counting_rule": "The proposed visit is counted as one case; later descriptions or translations of the same visit would not be independent witnesses."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate route",
+      "result": "The latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.",
+      "fallback": "Used the authorized user-supplied Kehot publisher scan."
+    }
+  ],
+  "verification_scope": "Fifteen letter bodies were inspected across PDF pages 410-424. Incoming letters, cited works, ship logs, technical records, press reports, institutional files, medical or personal records, and later outcomes were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and exact locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Shared Evidence Families, secretary signatures, anonymous recipients, excerpts, inferred recipient context and uninspected cross-references remain explicitly limited."
+}

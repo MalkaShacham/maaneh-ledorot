@@ -118,6 +118,12 @@ const TOPICS={
  'נוער ברחובות בימי החופש':['בני נוער המסתובבים ברחובות בחופש','נוער ברחובות בימי החופש','בני נוער המסתובבים ללא מטרה ברחובות','קבוצות מתאימות ולהעניק לפעילות תוכן','לארגן קבוצות לנוער בחופש','summer youth street groups'],
  'קביעות חסידות ותוספת משנה חיים':['למה קביעות בלימוד חסידות אינה מספיקה','קביעות קיימת בלימוד חסידות מוצגת כבלתי מספקת','עקרון העלייה בקודש מחייב תוספת מתמשכת','לימוד חסידות לשנות את היום הבא','fixed chassidus study transform next day'],
  'זכירת חסדים מול קשיי חיים':['לחזק אמונה וביטחון מול קשיי חיים באמצעות זכירת חסדים','זכירת חסדים מול קשיי חיים','להביט בעזרה שכבר קיבלה ובילדים','gratitude hardship faith trust'],
+ 'לחץ ציבורי באוניות שבת':['כיצד נוסעים יכולים להשפיע על הפסקת חילול שבת באוניות','לחץ כלכלי מצד נוסעים','נוסעים ושולחי סחורות באוניות','מים חשמל מטבח וקירור באונייה בשבת','passenger economic pressure ships shabbat'],
+ 'מכירת בניין ישיבה בעת קושי':['האם למכור בניין ישיבה בגלל המצב','מכירת בניין הישיבה','לא למכור בניין ישיבה','צמצום מוסד חינוך בתקופה קשה','sell yeshiva building difficult conditions'],
+ 'קונגרס קהילות לפעולה':['האם להשתתף בקונגרס קהילות שאין לו הישגים קודמים','קונגרס הקהילות','מפגש עם עסקנים לחיזוק היהדות','אי השתתפות לא תשפר','community congress jewish action'],
+ 'משרת חזן בנוסח האריזל':['באיזה בית כנסת להשתדל לקבל משרת חזן לימים הנוראים','משרת חזן לימים הנוראים','בית כנסת בנוסח האריזל','סדר הסליחות','high holiday cantor nusach ari'],
+ 'תוצאות חלשות אינן מפסיקות עבודה':['מה לעשות כשהעבודה אינה מניבה תוצאות','התוצאות אינן כדבעי','מחשבות המחלישות את העבודה','עבודה מתוך שמחה למרות תוצאות','poor results continue joyful work'],
+ 'מעבר מלוד לארצות הברית בתנאי':['באיזה תנאי אושרה נסיעה מתומכי תמימים לוד לארצות הברית','לעבור מתומכי תמימים לוד לארצות הברית','שנה של התנהגות ראויה לתמים','נסיעה לראש השנה תשי״ח','lod student us transfer condition'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -180,6 +186,8 @@ export function understandQuestion(q){
  if(topics.includes('סמינר כפר חבד בחירת מורות'))topics=topics.filter(t=>!['חינוך','נשים'].includes(t));
  if(topics.includes('נוער ברחובות בימי החופש'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('זכירת חסדים מול קשיי חיים'))topics=topics.filter(t=>!['אמונה','דאגה','בריאות'].includes(t));
+ if(topics.includes('מכירת בניין ישיבה בעת קושי'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('משרת חזן בנוסח האריזל'))topics=topics.filter(t=>t!=='נוסח תפילה באיחוד בתי כנסת');
  let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
  if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
@@ -215,6 +223,7 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('נוסח תפילה באיחוד בתי כנסת')&&!['איחוד בתי כנסת','התאחדות שני בתי כנסיות','שני בתי כנסת'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['synagogue-union setting is absent']};
  if(u.topics.includes('מקווה בלי המתנה לשלום')&&(!containsTerm(body,'מקווה')||!['להמתין לשלום','אין לעכב','שלום'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['mikveh-without-waiting-for-peace setting is absent']};
  if(u.topics.includes('אהבת התורה')&&u.topics.includes('אהבת ה׳')&&(!containsTerm(body,'אהבת ההשגה השכלית')||!containsTerm(body,'גדולת הבורא')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-love versus G-d-love distinction is absent']};
  if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['personal-study side of the combined query is absent']};
