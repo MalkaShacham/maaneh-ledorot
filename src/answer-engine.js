@@ -8,7 +8,7 @@ const TOPICS={
  בריאות:['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אמא','אם המשפחה','woman','women','mother','פרוי','פרויען'],
  פרנסה:['פרנסה','עסק','livelihood','business','parnassa'], שליחות:['שליח','שליחות','shliach','shlichus','mission'],
- נישואין:['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
+ נישואין:['שלום בית','נישוא','חתונ','אשה','marriage','wedding','husband','wife','sholom bayis'],
  'לימוד הלכה':['הלכה','הלכות','קיצור שולחן ערוך','לימוד הלכה','practical halacha','halacha','halachic study'],
  'שיקום לאחר פיגוע':['שיקום','פיגוע','אחרי הפיגוע','לאחר הפיגוע','recovery after attack','attack recovery'],
  'הרחבת ישיבה':['מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','yeshiva enrollment','increase yeshiva enrollment'],
@@ -29,11 +29,11 @@ const TOPICS={
  'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד','מסחר בזמן לימוד בישיבה','ישיבה עד הצהריים','לימוד כל היום','חסרון בהתרכזות','business during yeshiva study','full-day yeshiva study'],
  'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
  'סניף תלמוד תורה ומחנה יום':['סניף תלמוד תורה שאינו מצליח','לסגור סניף תלמוד תורה','חיסול הסניף','מחנה יום','בסיס לרכישת תלמידים','failing talmud torah branch','day camp student recruitment'],
- 'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','לימוד אישי','הלימוד האישי','בלי להזניח לימוד אישי','פוטר','פוטרת','increase class participants','personal study obligation'],
+ 'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','לימוד אישי','הלימוד האישי','בלי להזניח לימוד אישי','increase class participants','personal study obligation'],
  'כיסוי ראש והשפעה עקיפה':['כיסוי ראש כששכנוע ישיר לא מצליח','כיסוי ראש והשפעה עקיפה','להשפיע בעקיפין על כיסוי ראש','כיסוי הראש','השפעה ישירה','בעקיפין','hair covering indirect influence'],
  'רופאים מומחים והתאמת לימוד':['טיפול רופאים מומחים והתקשה בלימוד','רופאים מומחים והתקשה בלימוד','רופאים מומחים','לשמוע להנחיותיהם','לימוד לגירסא','לימוד בקיאותי','expert doctors study adjustment'],
  'בית מרקחת ושם כפר חב״ד':['בית מרקחת ושם כפר חב״ד','פתיחת בית מרקחת בכפר חב״ד','השם שפריר','כפר חב״ד א׳ וב׳','kfar chabad pharmacy and name'],
- 'סניף נשי חב״ד מונטריאול':['סניף נשי חב״ד במונטריאול','סניף מונטריאול של אגודת נשי','סניף מונטריאול','נשי ובנות חב״ד','הרחבת הפעילות','פעילות הסניף','להתרחב','montreal nshei chabad branch'],
+ 'סניף נשי חב״ד מונטריאול':['סניף נשי חב״ד במונטריאול','סניף מונטריאול של אגודת נשי','סניף מונטריאול','הרחבת הפעילות','פעילות הסניף','להתרחב','montreal nshei chabad branch'],
  'בית רבקה סדר בוקר':['בית רבקה לימודי חול','בית רבקה להתחיל את היום','בית רבקה מחצית הראשונה','להתחיל את היום בלימודי חול','לימודי חול בחצי יום הראשון','לימודי חול','beis rivka morning secular studies'],
  'כתבי יד משה יצחק מיאס':['כתבי היד של החסיד משה יצחק מיאס','משה יצחק מיאס','כתבי יד','מיאס','moshe yitzchak mias manuscripts'],
  'מניין דירות חדשות כפר חב״ד':['המניין ליד הדירות החדשות','מנין ליד הדירות החדשות','מקום תפילה ליד הדירות החדשות','דירות החדשות','מניין','מנין','new housing minyan kfar chabad'],
@@ -134,11 +134,21 @@ const TOPICS={
  'ועד רוחני כפר חבד דוגמה חיה':['חברי הוועד הרוחני','ועד הרוחני בכפר חב״ד','חברי הועד הרוחני','kfar chabad spiritual committee living example'],
  'ברונא בלי חבר לימוד':['לעזוב את ברונא','ישיבת תומכי תמימים בברונא','תלמידים צעירים ממרוקו','brunoy without study partner'],
  'נסיעה לעבודה ושיעורי חתת':['נסיעה למקום העבודה ובחזרה','נסיעה לעבודה וחזרה','חת״ת בזמן הנסיעה','chitas work commute'],
- 'דברי התעוררות בימים נוראים':['לא לייגע את השומעים','שקלא וטריא ושיחה','ראש השנה ויום הכיפורים','ראש השנה וביום הכיפורים בלי לייגע','high holidays talks without tiring listeners'],
+ 'דברי התעוררות בימים נוראים':['לא לייגע את השומעים','שקלא וטריא ושיחה','ראש השנה וביום הכיפורים בלי לייגע','high holidays talks without tiring listeners'],
  'מעשה בראשית וקבלה מגושמת':['הספר מעשה בראשית','להפשיטם מגשמיות','פירוש מילולי של מושגי קבלה','maaseh bereshit kabbalah abstraction'],
  'מלבורן בית ספר בלי להמתין לבניין':['בלי להמתין לבניין ייעודי','להמתין לבניין ייעודי לפני פתיחת','חדר פנוי בבניין הישיבה','עזרת נשים בעלת כניסה נפרדת','melbourne girls school without waiting for building'],
  'מלבורן מוסדות אחרים ומרות חבד':['חב״די לבנות במלבורן למרות מוסדות','למרות מוסדות אחרים במלבורן','מוסד לבנות במרות חב״ד','melbourne girls school despite other institutions'],
  'קדיש אזור זמן מקום הפטירה':['סיום אחד עשר חודשי קדיש','זמן מקום הפטירה','פטירה בוונקובר','kaddish time zone place of death'],
+ 'זריעה רחבה בהשפעה מסופקת':['ספק בהצלחת ההשפעה','אי ודאות בהצלחה','לזרוע הרבה גרעינים','השפעה על אברכים','wide sowing despite uncertain outreach'],
+ 'חינוך נשים ספרדיות ושיתוף מתנדבות':['חינוך נשים ובנות ספרדיות','חינוך הבנות אצל הספרדים','לשתף נשים רבות בפעילות','sephardic women education volunteers'],
+ 'פעילות נשי חבד עם מגבלה רפואית':['פעילות נשי ובנות חב״ד עם מגבלה רפואית','מגבלה רפואית המונעת עלייה במדרגות','מגבלה הרפואית','להימנע מעלייה במדרגות','להתייעץ עם הרופא על פעילות','health bounded volunteering avoid stairs'],
+ 'שליח ציבור פירוש המלות לפני ימים נוראים':['שליח ציבור ללמוד פירוש המלות','לעבור על פירוש המלות לפני ראש השנה','פירוש המלות והפיוטים','פיוטים שאינם שגורים','high holiday prayer leader review meaning'],
+ 'מדריך גן ישראל השפעה לטווח ארוך':['השפעת מדריך גן ישראל','שינוי בילד לאורך שבועות חודשים ושנים','מדריך שמשנה את עצמו','gan israel counselor long term influence'],
+ 'משרת רבנות וסייגי עצמאות':['משרת רבנות','תנאים לקבל משרת רבנות','עצמאות בענייני יראת שמים','לא להשתמש בשם כהכשר','rabbinic position religious autonomy safeguards'],
+ 'לימוד חסידות יומי ומקווה רפואי':['זמן קצר בכל יום ללימוד חסידות','טבילה במקווה ומצב בריאותי','אטם רטוב באוזן','daily chassidus mikveh medical consultation'],
+ 'שנים מקרא מול חומש יומי וציצית מכונה':['שנים מקרא אינו מחליף חומש יומי','חומש עם רש״י בכל יום','ציצית שנטוותה במכונה','shnayim mikra daily chumash machine tzitzit'],
+ 'חזרה מלב או מתוך הכתב':['לחזור מאמרים בעל פה או בפנים','דברים היוצאים מן הלב','חזרה מתוך הכתב','review talks by heart or from text'],
+ 'נגלה אינו פוטר מחסידות':['לימוד נגלה פוטר מלימוד חסידות','עיסוק נרחב בנגלה','נגלה אינו פוטר מחסידות','revealed torah does not exempt chassidus'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -241,7 +251,7 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('נוסח תפילה באיחוד בתי כנסת')&&!['איחוד בתי כנסת','התאחדות שני בתי כנסיות','שני בתי כנסת'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['synagogue-union setting is absent']};
  if(u.topics.includes('מקווה בלי המתנה לשלום')&&(!containsTerm(body,'מקווה')||!['להמתין לשלום','אין לעכב','שלום'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['mikveh-without-waiting-for-peace setting is absent']};
  if(u.topics.includes('אהבת התורה')&&u.topics.includes('אהבת ה׳')&&(!containsTerm(body,'אהבת ההשגה השכלית')||!containsTerm(body,'גדולת הבורא')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-love versus G-d-love distinction is absent']};
- if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['personal-study side of the combined query is absent']};
+ if(u.topics.includes('הגדלת כיתות ולימוד אישי')&&(!['לימוד אישי','הלימוד האישי','פוטר','פוטרת','personal study obligation'].some(t=>containsTerm(body,t))||!['כיתות הלימוד','מספר המשתתפים','קבוצה גדולה'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['combined class-growth and personal-study evidence is absent']};
  if(u.topics.includes('שליחות חינוכית למרוקו')&&(!containsTerm(body,'נסיעתו למרוקו')||!containsTerm(body,'חינוך')))return{score:0,support:'insufficient_specific_evidence',reasons:['Morocco educational-emissary setting is absent']};
  if(u.topics.includes('מחלוקת הנהלה על משמעת תלמידים')&&(!containsTerm(body,'הנהלת')||!containsTerm(body,'תלמידים')||!containsTerm(body,'רוב דעות')))return{score:0,support:'insufficient_specific_evidence',reasons:['local board student-discipline hearing is absent']};
  if(u.topics.includes('בחירת מדריך לפי הצלחה בתלמידים')&&(!containsTerm(body,'מדריך')||!containsTerm(body,'הצלחתו עם התלמידים')))return{score:0,support:'insufficient_specific_evidence',reasons:['counselor evaluation by student success is absent']};
@@ -332,6 +342,16 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('מלבורן בית ספר בלי להמתין לבניין')&&(!containsTerm(body,'מלבורן')||!containsTerm(body,'בית ספר')||!containsTerm(body,'להמתין')))return{score:0,support:'insufficient_specific_evidence',reasons:['Melbourne immediate girls-school launch without waiting is absent']};
  if(u.topics.includes('מלבורן מוסדות אחרים ומרות חבד')&&(!containsTerm(body,'מלבורן')||!containsTerm(body,'מוסדות אחרים')||!containsTerm(body,'מרות חב״ד')))return{score:0,support:'insufficient_specific_evidence',reasons:['Melbourne other-institutions and Chabad-governance distinction is absent']};
  if(u.topics.includes('קדיש אזור זמן מקום הפטירה')&&(!containsTerm(body,'קדיש')||!containsTerm(body,'מקום הפטירה')||!containsTerm(body,'וונקובר')))return{score:0,support:'insufficient_specific_evidence',reasons:['Kaddish, place of death and time-zone setting are absent']};
+ if(u.topics.includes('זריעה רחבה בהשפעה מסופקת')&&(!containsTerm(body,'זריעה')||!containsTerm(body,'ספק')||!containsTerm(body,'אברכים')))return{score:0,support:'insufficient_specific_evidence',reasons:['uncertain outreach and wide-sowing analogy are absent']};
+ if(u.topics.includes('חינוך נשים ספרדיות ושיתוף מתנדבות')&&(!containsTerm(body,'ספרדיות')||!containsTerm(body,'נשים')||!containsTerm(body,'חינוך')))return{score:0,support:'insufficient_specific_evidence',reasons:['Sephardic women education and volunteer setting are absent']};
+ if(u.topics.includes('פעילות נשי חבד עם מגבלה רפואית')&&(!containsTerm(body,'נשי ובנות חב״ד')||!containsTerm(body,'רופא')||!containsTerm(body,'מדרגות')))return{score:0,support:'insufficient_specific_evidence',reasons:['health-bounded women activity and stairs accommodation are absent']};
+ if(u.topics.includes('שליח ציבור פירוש המלות לפני ימים נוראים')&&(!containsTerm(body,'שליח ציבור')||!containsTerm(body,'פירושן הפשוט')||!containsTerm(body,'פיוטים')))return{score:0,support:'insufficient_specific_evidence',reasons:['High Holiday prayer-leader wording preparation is absent']};
+ if(u.topics.includes('מדריך גן ישראל השפעה לטווח ארוך')&&(!containsTerm(body,'גן ישראל')||!containsTerm(body,'שבועות')||!containsTerm(body,'מדריכים')))return{score:0,support:'insufficient_specific_evidence',reasons:['Gan Israel counselor and long-horizon child influence are absent']};
+ if(u.topics.includes('משרת רבנות וסייגי עצמאות')&&(!containsTerm(body,'משרת רבנות')||!containsTerm(body,'יראת שמים')||!containsTerm(body,'הכשר')))return{score:0,support:'insufficient_specific_evidence',reasons:['rabbinic-position autonomy and name-use safeguards are absent']};
+ if(u.topics.includes('לימוד חסידות יומי ומקווה רפואי')&&(!containsTerm(body,'בכל יום')||!containsTerm(body,'מקווה')||!containsTerm(body,'רופא מומחה')))return{score:0,support:'insufficient_specific_evidence',reasons:['daily Chassidus and medically bounded mikveh question are absent']};
+ if(u.topics.includes('שנים מקרא מול חומש יומי וציצית מכונה')&&(!containsTerm(body,'שנים מקרא')||!containsTerm(body,'חומש עם פירוש רש״י')||!containsTerm(body,'ציצית')))return{score:0,support:'insufficient_specific_evidence',reasons:['daily Chumash versus Shnayim Mikra and machine tzitzit setting is absent']};
+ if(u.topics.includes('חזרה מלב או מתוך הכתב')&&(!containsTerm(body,'בעל פה')||!containsTerm(body,'מתוך הכתב')||!containsTerm(body,'מן הלב')))return{score:0,support:'insufficient_specific_evidence',reasons:['heartfelt oral-versus-text review setting is absent']};
+ if(u.topics.includes('נגלה אינו פוטר מחסידות')&&(!containsTerm(body,'עיסוק נרחב בנגלה')||!containsTerm(body,'אינו פוטר')))return{score:0,support:'insufficient_specific_evidence',reasons:['explicit extensive-Nigleh non-exemption evidence is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

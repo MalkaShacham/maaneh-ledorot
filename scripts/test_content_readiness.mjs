@@ -554,5 +554,25 @@ for(const mode of ['regular','researcher']){
   assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,m.sources.length,`${mode}: repeated letters in one evidence family must not inflate the answer`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every open-book claim needs a proposition-level citation`);
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and sixty-five real-corpus answer checks passed`);
+const batch040Checks=[
+  ['למה ספק בהצלחת ההשפעה על אברכים אינו סיבה להימנע מלזרוע הרבה גרעינים?','id:igrot-kodesh-v13-דתרע'],
+  ['מה נכתב על חינוך נשים ובנות ספרדיות?','id:igrot-kodesh-v13-דתרעב'],
+  ['מה נכתב על פעילות נשי ובנות חב״ד עם מגבלה רפואית?','id:igrot-kodesh-v13-דתרעג'],
+  ['מה צריך שליח ציבור ללמוד לפני ראש השנה ויום הכיפורים לגבי פירוש המלות והפיוטים?','id:igrot-kodesh-v13-דתרעד'],
+  ['מה נכתב על השפעת מדריך גן ישראל ושינוי בילד לאורך שבועות חודשים ושנים?','id:igrot-kodesh-v13-דתרעו'],
+  ['מהם התנאים לקבל משרת רבנות?','id:igrot-kodesh-v13-דתרעז'],
+  ['מה נכתב על זמן קצר בכל יום ללימוד חסידות ועל טבילה במקווה במצב בריאותי?','id:igrot-kodesh-v13-דתרעח'],
+  ['האם שנים מקרא ואחד תרגום מחליפים חומש עם רש״י בכל יום, ומה ידוע על ציצית שנטוותה במכונה?','id:igrot-kodesh-v13-דתרפב'],
+  ['מה נכתב על דברים היוצאים מן הלב בחזרת מאמרים?','id:igrot-kodesh-v13-דתרפג']
+];
+for(const [question,key] of batch040Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-040 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-040 source must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-040 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-040 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and seventy-four real-corpus answer checks passed`);
 

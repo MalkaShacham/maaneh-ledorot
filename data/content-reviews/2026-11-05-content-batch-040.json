@@ -1,0 +1,22 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-05-content-batch-040",
+  "generated": "2026-11-05",
+  "method": "Direct item-body inspection of fifteen consecutive letters in the user-supplied Kehot publisher scan. PDF pages 450-466 were rendered and visually checked; page-resolved extracted text supported bounded research paraphrases. No blocked crawler was used.",
+  "source": {"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"450-466"},
+  "reviewed_items": 15,
+  "new_content_records": 3,
+  "enriched_existing_canonical_records": 12,
+  "propositions_added": 45,
+  "identity_relation": "Three identities (ד׳תרעב, ד׳תרעז, ד׳תרעח) were established from visible page headings where the conservative index omitted or quarantined them. Twelve existing identities were enriched in place. Three older OCR keys (ד׳עתר, ד׳תרדע, ד׳תרם) were corrected to ד׳תרע, ד׳תרעד, ד׳תרפ rather than retained as duplicate identities.",
+  "letters": ["ד׳תרסט","ד׳תרע","ד׳תרעא","ד׳תרעב","ד׳תרעג","ד׳תרעד","ד׳תרעה","ד׳תרעו","ד׳תרעז","ד׳תרעח","ד׳תרעט","ד׳תרפ","ד׳תרפא","ד׳תרפב","ד׳תרפג"],
+  "evidence_family_dedup": [
+    {"family_id":"melbourne-chabad-girls-school-1956","member_letters_in_batch":["ד׳תרעא"],"counting_rule":"The participation and physical-effort instructions continue the already inspected Melbourne girls-school correspondence and are not counted as a separate school project."},
+    {"family_id":"sephardic-women-girls-education-and-broad-volunteer-participation","member_letters_in_batch":["ד׳תרעב"],"counting_rule":"The Hebrew propositions are derived research paraphrases of the inspected Yiddish witness, not independent translated testimony."},
+    {"family_id":"health-bounded-volunteering-with-physician-and-accessibility-accommodation","member_letters_in_batch":["ד׳תרעג"],"counting_rule":"The Hebrew propositions are derived research paraphrases of the inspected Yiddish witness, not independent translated testimony."}
+  ],
+  "blocked_alternatives": [{"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate route","result":"The latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan."}],
+  "verification_scope": "Fifteen letter bodies were inspected across PDF pages 450-466. Incoming letters, cited works, institutional and financial records, clinical records, school and camp outcomes, visa records, machinery, halachic sources and later events were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and exact locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Secretary signatures, Yiddish language, anonymous recipients, fragments, medical limitations, uncertain historical recollection and uninspected cross-references remain explicit."
+}
