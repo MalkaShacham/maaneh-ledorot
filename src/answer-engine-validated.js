@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261104-volume13-batch034';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261105-volume13-batch036';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -107,7 +107,14 @@ const TOPIC_ALIASES={
   'פעילות נוער לפי תנאי המקום':['אמצעי פעילות נוער השנויים במחלוקת','פעילות נוער במחלוקת','תנאי המקום והזמן','תגובת הציבור המקומי','אנשי סוד המכירים את התנאים','youth outreach local conditions consultation'],
   'רופא מצליח וגאווה':['רופא מצליח על גאווה','רופא מצליח והצלחה','אתרוג וגאווה','כוחו האישי בלבד','successful doctor arrogance esrog'],
   'מחשבה בארץ ישראל והשפעה בגולה':['מחשבה על ארץ ישראל','מחשבתו בארץ ישראל','להמשיך מקדושת הארץ','השפעה בגולה','thoughts in israel influence diaspora'],
-  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
+ 'סמינר כפר חבד בחירת מורות':['כיצד לבחור מורות לסמינר בכפר חב״ד','בחירת מורות לסמינר','סגל מורות לסמינר','יראת שמים והתנהגות המורות','kfar chabad seminary teacher selection'],
+ 'פעולה מול אנחות':['פעולה אחת טובה מאלף אנחות','פעולה מעשית במקום אנחות','אלף אנחות','action instead of sighs'],
+ 'תעניות פרטיות ובריאות העבודה':['למה נדחו תעניות פרטיות בקיץ','תעניות פרטיות בקיץ','תענית שמבטלת מתורה ועבודה','להחליף תענית בהפצת תורה','private fast health study outreach'],
+ 'מגביות חופפות ותזמון':['לא לערוך מגביות חופפות','מגביות חופפות','הכרזה על מגבית אחרת באותו זמן','לפגוע בשתי המגבות','מגבית סמוכה להנחת אבן הפינה','מכתב אינו תחליף לביקור בגיוס','overlapping fundraising timing visit'],
+ 'נוער ברחובות בימי החופש':['בני נוער המסתובבים ברחובות בחופש','נוער ברחובות בימי החופש','בני נוער המסתובבים ללא מטרה ברחובות','קבוצות מתאימות ולהעניק לפעילות תוכן','לארגן קבוצות לנוער בחופש','summer youth street groups'],
+ 'קביעות חסידות ותוספת משנה חיים':['למה קביעות בלימוד חסידות אינה מספיקה','קביעות קיימת בלימוד חסידות מוצגת כבלתי מספקת','עקרון העלייה בקודש מחייב תוספת מתמשכת','לימוד חסידות לשנות את היום הבא','fixed chassidus study transform next day'],
+ 'זכירת חסדים מול קשיי חיים':['לחזק אמונה וביטחון מול קשיי חיים באמצעות זכירת חסדים','זכירת חסדים מול קשיי חיים','להביט בעזרה שכבר קיבלה ובילדים','gratitude hardship faith trust'],
+ 'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();

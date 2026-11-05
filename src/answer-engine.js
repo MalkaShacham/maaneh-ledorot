@@ -111,6 +111,13 @@ const TOPICS={
  'קבלת תלמידות למרות מחסור מקום':['האם לדחות תלמידות בקיץ בגלל מחסור במקום','אין מקום לקבל עוד תלמידות','פתרון מקום לתלמידות החופש','תלמידות הקיץ יישארו במוסד','summer girls admission space solution'],
  'הסכמה בכתב למשרת הוראה':['האם אפשר לחזור מהסכמה בכתב למשרת הוראה','הסכמה בכתב למשרה','לחזור מהסכמתו','הסכמת מנהל המוסד','written teaching job commitment'],
  'התחלת לימוד חסידות מותאמת':['איך מתחילים ללמוד חסידות כשקשה להבין','מתחיל בלימוד חסידות','קבלת עול ויגיעה בלימוד חסידות','סדר הלימוד תלוי בידיעותיו ובכשרונותיו','beginning chassidus personalized guidance'],
+ 'סמינר כפר חבד בחירת מורות':['כיצד לבחור מורות לסמינר בכפר חב״ד','בחירת מורות לסמינר','סגל מורות לסמינר','יראת שמים והתנהגות המורות','kfar chabad seminary teacher selection'],
+ 'פעולה מול אנחות':['פעולה אחת טובה מאלף אנחות','פעולה מעשית במקום אנחות','אלף אנחות','action instead of sighs'],
+ 'תעניות פרטיות ובריאות העבודה':['למה נדחו תעניות פרטיות בקיץ','תעניות פרטיות בקיץ','תענית שמבטלת מתורה ועבודה','להחליף תענית בהפצת תורה','private fast health study outreach'],
+ 'מגביות חופפות ותזמון':['לא לערוך מגביות חופפות','מגביות חופפות','הכרזה על מגבית אחרת באותו זמן','לפגוע בשתי המגבות','מגבית סמוכה להנחת אבן הפינה','מכתב אינו תחליף לביקור בגיוס','overlapping fundraising timing visit'],
+ 'נוער ברחובות בימי החופש':['בני נוער המסתובבים ברחובות בחופש','נוער ברחובות בימי החופש','בני נוער המסתובבים ללא מטרה ברחובות','קבוצות מתאימות ולהעניק לפעילות תוכן','לארגן קבוצות לנוער בחופש','summer youth street groups'],
+ 'קביעות חסידות ותוספת משנה חיים':['למה קביעות בלימוד חסידות אינה מספיקה','קביעות קיימת בלימוד חסידות מוצגת כבלתי מספקת','עקרון העלייה בקודש מחייב תוספת מתמשכת','לימוד חסידות לשנות את היום הבא','fixed chassidus study transform next day'],
+ 'זכירת חסדים מול קשיי חיים':['לחזק אמונה וביטחון מול קשיי חיים באמצעות זכירת חסדים','זכירת חסדים מול קשיי חיים','להביט בעזרה שכבר קיבלה ובילדים','gratitude hardship faith trust'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -170,6 +177,9 @@ export function understandQuestion(q){
  if(topics.includes('דואר כפר חבד ושבת'))topics=topics.filter(t=>t!=='שיקום לאחר פיגוע');
  if(topics.includes('פעילות נוער לפי תנאי המקום'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('רופא מצליח וגאווה'))topics=topics.filter(t=>t!=='בריאות');
+ if(topics.includes('סמינר כפר חבד בחירת מורות'))topics=topics.filter(t=>!['חינוך','נשים'].includes(t));
+ if(topics.includes('נוער ברחובות בימי החופש'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('זכירת חסדים מול קשיי חיים'))topics=topics.filter(t=>!['אמונה','דאגה','בריאות'].includes(t));
  let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
  if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
