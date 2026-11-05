@@ -510,5 +510,23 @@ for(const [question,key] of batch037Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-037 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and fifty real-corpus answer checks passed`);
+const batch038Checks=[
+  ['למה אין לצמצם את בית הספר לנערות באגאדיר בימי החופש?','id:igrot-kodesh-v13-דתרלט'],
+  ['למה להאמין להבטחות הבת במקום לשלוח לה מכתב התעוררות?','id:igrot-kodesh-v13-דתרמה'],
+  ['האם נער צריך לחזור למרוקו כדי לעזור לאביו בפרנסה?','id:igrot-kodesh-v13-דתרמח'],
+  ['כיצד להפוך נסיעה לשליחות מצווה אחרי תאונת דרכים?','id:igrot-kodesh-v13-דתרמט'],
+  ['כיצד מוסברת שמינית שבשמינית בלי להפוך אותה לגסות הרוח?','id:igrot-kodesh-v13-דתרנ'],
+  ['מה הקשר בין המקווה, בית התפילה והעירוב בכפר חב״ד?','id:igrot-kodesh-v13-דתרנא'],
+  ['מה מלמדת הגהת ספר תורה על אהבת ישראל?','id:igrot-kodesh-v13-דתרנב']
+];
+for(const [question,key] of batch038Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-038 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-038 source must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-038 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-038 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and fifty-seven real-corpus answer checks passed`);
 

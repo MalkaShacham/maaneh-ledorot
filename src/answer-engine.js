@@ -124,6 +124,13 @@ const TOPICS={
  'משרת חזן בנוסח האריזל':['באיזה בית כנסת להשתדל לקבל משרת חזן לימים הנוראים','משרת חזן לימים הנוראים','בית כנסת בנוסח האריזל','סדר הסליחות','high holiday cantor nusach ari'],
  'תוצאות חלשות אינן מפסיקות עבודה':['מה לעשות כשהעבודה אינה מניבה תוצאות','התוצאות אינן כדבעי','מחשבות המחלישות את העבודה','עבודה מתוך שמחה למרות תוצאות','poor results continue joyful work'],
  'מעבר מלוד לארצות הברית בתנאי':['באיזה תנאי אושרה נסיעה מתומכי תמימים לוד לארצות הברית','לעבור מתומכי תמימים לוד לארצות הברית','שנה של התנהגות ראויה לתמים','נסיעה לראש השנה תשי״ח','lod student us transfer condition'],
+ 'בית ספר לנערות אגאדיר בחופש':['אגאדיר','איחוד כיתות באגאדיר','לימודים סדירים בחופש באגאדיר','agadir girls school vacation classes'],
+ 'אמון בהבטחות לפני מכתב התעוררות':['הבטחות הבת','הבטיחה','אמון מלא בהבטחות','אחריות לקיום ההבטחה','trust daughter promises unsolicited admonition'],
+ 'נער במרוקו לימוד מול פרנסת האב':['בן שבע עשרה','לחזור למרוקו','פרנסת האב','להפסיק את לימוד התורה','seventeen year old return morocco father income'],
+ 'נסיעה כשליחות מצווה לאחר תאונה':['כיצד להפוך נסיעה לשליחות מצווה אחרי תאונת דרכים','תאונת דרכים סידור תהילים תניא ברכב','חוברות יהדות בשפת המדינה בנסיעה','car travel mitzvah mission after accident'],
+ 'שמינית שבשמינית מול גסות הרוח':['שמינית שבשמינית','גסות הרוח','מעלת התורה','גאווה במעלת עצמו','eighth of eighth torah recognition arrogance'],
+ 'מקווה בית תפילה ועירוב בכפר חבד':['העירוב','גמר העירוב','השלמת העירוב','kfar chabad mikveh synagogue eruv'],
+ 'הגהת ספר תורה ואהבת ישראל':['הגהת','ספרי תורה','אות יתרה','אות חסרה','torah scroll proofreading love every jew'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -152,7 +159,7 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי|לפתוח|פתוח)$/.test(t);
  // General wording that asks for a source's lesson or moral takeaway is framing,
  // while the concrete subject (for example, פרה אדומה) remains query-specific.
- if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הוצע|וצע|הצעה|ייעץ|יעץ|להתמודד|תמודד|לממן|ממן|להכריע|כריע|לחבר|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|למדת|מלמדת|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הוצע|וצע|הצעה|ייעץ|יעץ|להתמודד|תמודד|לממן|ממן|להכריע|כריע|לחבר|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
  return false;
 };
 
@@ -302,6 +309,13 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('פעילות נוער לפי תנאי המקום')&&(!containsTerm(body,'תנאי המקום והזמן')||!containsTerm(body,'אנשי סוד')))return{score:0,support:'insufficient_specific_evidence',reasons:['local youth-outreach conditions and consultation are absent']};
  if(u.topics.includes('רופא מצליח וגאווה')&&(!containsTerm(body,'רופא מצליח')||!containsTerm(body,'גאווה')))return{score:0,support:'insufficient_specific_evidence',reasons:['successful-doctor humility segment is absent']};
  if(u.topics.includes('מחשבה בארץ ישראל והשפעה בגולה')&&(!containsTerm(body,'מחשבתו בארץ ישראל')||!containsTerm(body,'גולה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Israel-thought and Diaspora-influence segment is absent']};
+ if(u.topics.includes('בית ספר לנערות אגאדיר בחופש')&&(!containsTerm(body,'אגאדיר')||!containsTerm(body,'בית הספר לנערות')||!containsTerm(body,'חופש')))return{score:0,support:'insufficient_specific_evidence',reasons:['Agadir girls-school vacation setting is absent']};
+ if(u.topics.includes('אמון בהבטחות לפני מכתב התעוררות')&&(!containsTerm(body,'הבטיחה')||!containsTerm(body,'אמון מלא')))return{score:0,support:'insufficient_specific_evidence',reasons:['daughter-promises and trust setting is absent']};
+ if(u.topics.includes('נער במרוקו לימוד מול פרנסת האב')&&(!containsTerm(body,'שבע')||!containsTerm(body,'מרוקו')||!containsTerm(body,'פרנסת האב')))return{score:0,support:'insufficient_specific_evidence',reasons:['seventeen-year-old Morocco and father-income setting is absent']};
+ if(u.topics.includes('נסיעה כשליחות מצווה לאחר תאונה')&&(!containsTerm(body,'תאונת דרכים')||!containsTerm(body,'שליחות מצווה')))return{score:0,support:'insufficient_specific_evidence',reasons:['post-accident mitzvah-travel setting is absent']};
+ if(u.topics.includes('שמינית שבשמינית מול גסות הרוח')&&(!containsTerm(body,'שמינית שבשמינית')||!containsTerm(body,'גסות הרוח')))return{score:0,support:'insufficient_specific_evidence',reasons:['eighth-of-eighth versus arrogance setting is absent']};
+ if(u.topics.includes('מקווה בית תפילה ועירוב בכפר חבד')&&(!containsTerm(body,'המקווה')||!containsTerm(body,'בית התפילה')||!containsTerm(body,'העירוב')))return{score:0,support:'insufficient_specific_evidence',reasons:['Kfar Chabad mikveh-synagogue-eruv setting is absent']};
+ if(u.topics.includes('הגהת ספר תורה ואהבת ישראל')&&(!containsTerm(body,'הגהת')||!containsTerm(body,'ספרי תורה')||!containsTerm(body,'אהבת ישראל')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-scroll proofreading and love-of-Israel setting is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

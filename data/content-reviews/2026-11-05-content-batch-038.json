@@ -1,0 +1,44 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-05-content-batch-038",
+  "generated": "2026-11-05",
+  "method": "Direct item-body inspection of fifteen consecutive letters in the user-supplied Kehot publisher scan. PDF pages 424-437 were rendered and visually checked, and page-resolved extracted text was used for bounded research paraphrases. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "424-437"
+  },
+  "reviewed_items": 15,
+  "new_content_records": 1,
+  "enriched_existing_canonical_records": 14,
+  "propositions_added": 45,
+  "identity_relation": "One identity (ד׳תרמב) was established directly from the visible page heading where the conservative index omitted it; fourteen existing locator-only identities were enriched in place.",
+  "letters": ["ד׳תרלט", "ד׳תרמ", "ד׳תרמא", "ד׳תרמב", "ד׳תרמג", "ד׳תרמד", "ד׳תרמה", "ד׳תרמו", "ד׳תרמז", "ד׳תרמח", "ד׳תרמט", "ד׳תרנ", "ד׳תרנא", "ד׳תרנב", "ד׳תרנג"],
+  "evidence_family_dedup": [
+    {
+      "family_id": "agadir-education-mikveh-and-travel-permission",
+      "member_letters_in_batch": ["ד׳תרלט"],
+      "counting_rule": "Linked to the earlier inspected Agadir education letter. The vacation and girls-school instructions are a later item in the same institutional correspondence, not an independent school project."
+    },
+    {
+      "family_id": "kfar-chabad-mikveh-priority-beauty-and-synagogue-construction-reporting",
+      "member_letters_in_batch": ["ד׳תרנא"],
+      "counting_rule": "Linked to the earlier Kfar Chabad mikveh and synagogue correspondence; this follow-up adds the urgent-meeting and completed-eruv context but is not an independent witness to the project."
+    },
+    {
+      "family_id": "achi-temimim-rishon-building-development",
+      "member_letters_in_batch": ["ד׳תרנג"],
+      "counting_rule": "The dedication telegram belongs to the continuing Achi Temimim Rishon LeZion building family; it is not counted as a separate institutional development."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate route",
+      "result": "The latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.",
+      "fallback": "Used the authorized user-supplied Kehot publisher scan."
+    }
+  ],
+  "verification_scope": "Fifteen letter bodies were inspected across PDF pages 424-437. Incoming letters, cited works, institutional records, school reports, financial records, medical or accident records, halachic sources and later outcomes were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and exact locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Shared Evidence Families, secretary signatures, anonymous recipients, excerpts, editorial identifications and uninspected cross-references remain explicitly limited."
+}
