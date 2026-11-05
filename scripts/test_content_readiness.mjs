@@ -528,5 +528,31 @@ for(const [question,key] of batch038Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-038 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and fifty-seven real-corpus answer checks passed`);
+const batch039Checks=[
+  ['למה חברי הוועד הרוחני בכפר חב״ד צריכים להיות דוגמה חיה?','id:igrot-kodesh-v13-דתרנד'],
+  ['האם לעזוב את ברונא מפני שאין תלמיד מתאים להתקשרות בלימוד?','id:igrot-kodesh-v13-דתרנה'],
+  ['כיצד לנצל נסיעה למקום העבודה ובחזרה לשיעורי חת״ת?','id:igrot-kodesh-v13-דתרנו'],
+  ['כיצד לדבר בראש השנה וביום הכיפורים בלי לייגע את השומעים?','id:igrot-kodesh-v13-דתרנט'],
+  ['מה הבעיה בפירוש מילולי של מושגי קבלה בלי להפשיטם מגשמיות?','id:igrot-kodesh-v13-דתרס'],
+  ['האם להמתין לבניין ייעודי לפני פתיחת בית ספר לבנות במלבורן?','id:igrot-kodesh-v13-דתרסה'],
+  ['לפי איזה מקום מחשבים סיום אחד עשר חודשי קדיש כשמקום הפטירה באזור זמן אחר?','id:igrot-kodesh-v13-דתרסז']
+];
+for(const [question,key] of batch039Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-039 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-039 source must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-039 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-039 claim needs a proposition-level citation`);
+  }
+}
+const openBookQuestion='מה לעשות כשהמחשבה משוטטת בזמן לימוד ותפילה?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,openBookQuestion,{mode});
+  assert(m.answerable,`${mode}: inspected open-book evidence must answer the batch-039 query`);
+  assert(m.sources.some(e=>e.evidence_family_id==='study-concentration-open-book-and-chassidic-practice'),`${mode}: the shared open-book evidence family must support the answer`);
+  assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,m.sources.length,`${mode}: repeated letters in one evidence family must not inflate the answer`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every open-book claim needs a proposition-level citation`);
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and sixty-five real-corpus answer checks passed`);
 

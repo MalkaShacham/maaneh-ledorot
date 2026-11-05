@@ -1,0 +1,21 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-05-content-batch-039",
+  "generated": "2026-11-05",
+  "method": "Direct item-body inspection of fifteen consecutive letters in the user-supplied Kehot publisher scan. PDF pages 438-450 were rendered and visually checked; page 451 was additionally checked to confirm the boundary after the fifteenth letter. Page-resolved extracted text supported bounded research paraphrases. No blocked crawler was used.",
+  "source": {"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"438-450"},
+  "reviewed_items": 15,
+  "new_content_records": 1,
+  "enriched_existing_canonical_records": 14,
+  "propositions_added": 45,
+  "identity_relation": "One identity (ד׳תרנו) was established directly from the visible page heading where the conservative index omitted it; fourteen existing locator-only identities were enriched in place.",
+  "letters": ["ד׳תרנד","ד׳תרנה","ד׳תרנו","ד׳תרנז","ד׳תרנח","ד׳תרנט","ד׳תרס","ד׳תרסא","ד׳תרסב","ד׳תרסג","ד׳תרסד","ד׳תרסה","ד׳תרסו","ד׳תרסז","ד׳תרסח"],
+  "evidence_family_dedup": [
+    {"family_id":"study-concentration-open-book-and-chassidic-practice","member_letters_in_batch":["ד׳תרסג","ד׳תרסד"],"counting_rule":"Both letters repeat the previously inspected open-book concentration method. They add contextual witnesses but are not counted as independent methods or independent evidence families."},
+    {"family_id":"melbourne-chabad-girls-school-1956","member_letters_in_batch":["ד׳תרסה"],"counting_rule":"The immediate-launch instructions continue the already inspected Melbourne girls-school correspondence and are not counted as a separate school project."}
+  ],
+  "blocked_alternatives": [{"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate route","result":"The latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan."}],
+  "verification_scope": "Fifteen letter bodies were inspected across PDF pages 438-450. Incoming letters, cited works, institutional records, school reports, financial records, clinical contexts, halachic sources and later outcomes were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and exact locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Shared Evidence Families, secretary signatures, anonymous recipients, fragments, editorial completions, manuscript-note status, telegram layers and uninspected cross-references remain explicitly limited."
+}

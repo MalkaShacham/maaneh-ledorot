@@ -78,7 +78,7 @@ const TOPICS={
  'ביטול הפלגה בשבת והחזר':['מה נכתב על נוסעים שביטלו הפלגה בשבת וקבלת החזר כספי','ביטלו הפלגה בשבת','החזר כספי לנוסעים','להחזיר כסף למי שביטלו','shabbat voyage cancellation refund'],
  'לימוד לפני חידושים בחסידות':['האם להתחיל בחידושים בלימוד חסידות לפני לימוד והבנה','חידושים בלימוד חסידות','תחילה לימוד ואחר כך חידושים','לימוד חסידות אינו אמור להתחיל ביצירת חידושים','תחילה נדרשים לימוד','learn before chassidus innovations'],
  'שינוי נוסח אשכנז ספרד ארי':['האם מותר לשנות מנוסח אשכנז לספרד ומספרד לנוסח הארי','נוסח אשכנז לספרד','נוסח ספרד לנוסח הארי','נוסח אשכנז','נוסח ספרד','נוסח הארי','change prayer rite ashkenaz sefard ari'],
- 'ריכוז בלימוד וספר פתוח':['קושי בריכוז בלימוד','להתרכז בלימוד','ספר פתוח לפניו','האותיות מקשרות ומחכימות','study concentration open book'],
+ 'ריכוז בלימוד וספר פתוח':['קושי בריכוז בלימוד','להתרכז בלימוד','המחשבה משוטטת בזמן לימוד ותפילה','ספר פתוח לפניו','האותיות מקשרות ומחכימות','study concentration open book'],
  'לימוד חסידות בלי חבר':['העדר חבר לימוד','אין חבר לימוד','חבר לימוד בחסידות','לימוד חסידות לבד','chassidus without study partner'],
  'דואר כפר חבד ושבת':['סניף דואר בכפר חב״ד','פתיחת דואר בכפר חב״ד','סניף דואר','דואר סגור בשבת','מברקים בשבת','kfar chabad post office shabbat'],
  'פעילות נוער לפי תנאי המקום':['אמצעי פעילות נוער השנויים במחלוקת','פעילות נוער במחלוקת','תנאי המקום והזמן','תגובת הציבור המקומי','אנשי סוד המכירים את התנאים','youth outreach local conditions consultation'],
@@ -131,6 +131,14 @@ const TOPICS={
  'שמינית שבשמינית מול גסות הרוח':['שמינית שבשמינית','גסות הרוח','מעלת התורה','גאווה במעלת עצמו','eighth of eighth torah recognition arrogance'],
  'מקווה בית תפילה ועירוב בכפר חבד':['העירוב','גמר העירוב','השלמת העירוב','kfar chabad mikveh synagogue eruv'],
  'הגהת ספר תורה ואהבת ישראל':['הגהת','ספרי תורה','אות יתרה','אות חסרה','torah scroll proofreading love every jew'],
+ 'ועד רוחני כפר חבד דוגמה חיה':['חברי הוועד הרוחני','ועד הרוחני בכפר חב״ד','חברי הועד הרוחני','kfar chabad spiritual committee living example'],
+ 'ברונא בלי חבר לימוד':['לעזוב את ברונא','ישיבת תומכי תמימים בברונא','תלמידים צעירים ממרוקו','brunoy without study partner'],
+ 'נסיעה לעבודה ושיעורי חתת':['נסיעה למקום העבודה ובחזרה','נסיעה לעבודה וחזרה','חת״ת בזמן הנסיעה','chitas work commute'],
+ 'דברי התעוררות בימים נוראים':['לא לייגע את השומעים','שקלא וטריא ושיחה','ראש השנה ויום הכיפורים','ראש השנה וביום הכיפורים בלי לייגע','high holidays talks without tiring listeners'],
+ 'מעשה בראשית וקבלה מגושמת':['הספר מעשה בראשית','להפשיטם מגשמיות','פירוש מילולי של מושגי קבלה','maaseh bereshit kabbalah abstraction'],
+ 'מלבורן בית ספר בלי להמתין לבניין':['בלי להמתין לבניין ייעודי','להמתין לבניין ייעודי לפני פתיחת','חדר פנוי בבניין הישיבה','עזרת נשים בעלת כניסה נפרדת','melbourne girls school without waiting for building'],
+ 'מלבורן מוסדות אחרים ומרות חבד':['חב״די לבנות במלבורן למרות מוסדות','למרות מוסדות אחרים במלבורן','מוסד לבנות במרות חב״ד','melbourne girls school despite other institutions'],
+ 'קדיש אזור זמן מקום הפטירה':['סיום אחד עשר חודשי קדיש','זמן מקום הפטירה','פטירה בוונקובר','kaddish time zone place of death'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -316,6 +324,14 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('שמינית שבשמינית מול גסות הרוח')&&(!containsTerm(body,'שמינית שבשמינית')||!containsTerm(body,'גסות הרוח')))return{score:0,support:'insufficient_specific_evidence',reasons:['eighth-of-eighth versus arrogance setting is absent']};
  if(u.topics.includes('מקווה בית תפילה ועירוב בכפר חבד')&&(!containsTerm(body,'המקווה')||!containsTerm(body,'בית התפילה')||!containsTerm(body,'העירוב')))return{score:0,support:'insufficient_specific_evidence',reasons:['Kfar Chabad mikveh-synagogue-eruv setting is absent']};
  if(u.topics.includes('הגהת ספר תורה ואהבת ישראל')&&(!containsTerm(body,'הגהת')||!containsTerm(body,'ספרי תורה')||!containsTerm(body,'אהבת ישראל')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-scroll proofreading and love-of-Israel setting is absent']};
+ if(u.topics.includes('ועד רוחני כפר חבד דוגמה חיה')&&(!containsTerm(body,'הוועד הרוחני')||!containsTerm(body,'דוגמה חיה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Kfar Chabad spiritual committee and living-example setting is absent']};
+ if(u.topics.includes('ברונא בלי חבר לימוד')&&(!containsTerm(body,'ברונא')||!containsTerm(body,'חבר')||!containsTerm(body,'מרוקו')))return{score:0,support:'insufficient_specific_evidence',reasons:['Brunoy, missing study partner and younger Moroccan students are absent']};
+ if(u.topics.includes('נסיעה לעבודה ושיעורי חתת')&&(!containsTerm(body,'נסיעה')||!containsTerm(body,'עבודה')||!containsTerm(body,'חת״ת')))return{score:0,support:'insufficient_specific_evidence',reasons:['work commute and Chitas setting is absent']};
+ if(u.topics.includes('דברי התעוררות בימים נוראים')&&(!containsTerm(body,'ראש השנה')||!containsTerm(body,'יום הכיפורים')||!containsTerm(body,'לייגע')))return{score:0,support:'insufficient_specific_evidence',reasons:['High Holidays talks and listener-fatigue boundary are absent']};
+ if(u.topics.includes('מעשה בראשית וקבלה מגושמת')&&(!containsTerm(body,'מעשה בראשית')||!containsTerm(body,'קבלה')||!containsTerm(body,'גשמ')))return{score:0,support:'insufficient_specific_evidence',reasons:['Maaseh Bereshit critique and Kabbalah abstraction are absent']};
+ if(u.topics.includes('מלבורן בית ספר בלי להמתין לבניין')&&(!containsTerm(body,'מלבורן')||!containsTerm(body,'בית ספר')||!containsTerm(body,'להמתין')))return{score:0,support:'insufficient_specific_evidence',reasons:['Melbourne immediate girls-school launch without waiting is absent']};
+ if(u.topics.includes('מלבורן מוסדות אחרים ומרות חבד')&&(!containsTerm(body,'מלבורן')||!containsTerm(body,'מוסדות אחרים')||!containsTerm(body,'מרות חב״ד')))return{score:0,support:'insufficient_specific_evidence',reasons:['Melbourne other-institutions and Chabad-governance distinction is absent']};
+ if(u.topics.includes('קדיש אזור זמן מקום הפטירה')&&(!containsTerm(body,'קדיש')||!containsTerm(body,'מקום הפטירה')||!containsTerm(body,'וונקובר')))return{score:0,support:'insufficient_specific_evidence',reasons:['Kaddish, place of death and time-zone setting are absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

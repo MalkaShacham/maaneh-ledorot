@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261105-volume13-batch036';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261105-volume13-batch039';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -101,7 +101,7 @@ const TOPIC_ALIASES={
   'קבלת תלמידות למרות מחסור מקום':['האם לדחות תלמידות בקיץ בגלל מחסור במקום','אין מקום לקבל עוד תלמידות','פתרון מקום לתלמידות החופש','תלמידות הקיץ יישארו במוסד','summer girls admission space solution'],
   'הסכמה בכתב למשרת הוראה':['האם אפשר לחזור מהסכמה בכתב למשרת הוראה','הסכמה בכתב למשרה','לחזור מהסכמתו','הסכמת מנהל המוסד','written teaching job commitment'],
   'התחלת לימוד חסידות מותאמת':['איך מתחילים ללמוד חסידות כשקשה להבין','מתחיל בלימוד חסידות','קבלת עול ויגיעה בלימוד חסידות','סדר הלימוד תלוי בידיעותיו ובכשרונותיו','beginning chassidus personalized guidance'],
-  'ריכוז בלימוד וספר פתוח':['קושי בריכוז בלימוד','להתרכז בלימוד','ספר פתוח לפניו','האותיות מקשרות ומחכימות','study concentration open book'],
+  'ריכוז בלימוד וספר פתוח':['קושי בריכוז בלימוד','להתרכז בלימוד','המחשבה משוטטת בזמן לימוד ותפילה','ספר פתוח לפניו','האותיות מקשרות ומחכימות','study concentration open book'],
   'לימוד חסידות בלי חבר':['העדר חבר לימוד','אין חבר לימוד','חבר לימוד בחסידות','לימוד חסידות לבד','chassidus without study partner'],
   'דואר כפר חבד ושבת':['סניף דואר בכפר חב״ד','פתיחת דואר בכפר חב״ד','סניף דואר','דואר סגור בשבת','מברקים בשבת','kfar chabad post office shabbat'],
   'פעילות נוער לפי תנאי המקום':['אמצעי פעילות נוער השנויים במחלוקת','פעילות נוער במחלוקת','תנאי המקום והזמן','תגובת הציבור המקומי','אנשי סוד המכירים את התנאים','youth outreach local conditions consultation'],
@@ -127,6 +127,14 @@ const TOPIC_ALIASES={
  'שמינית שבשמינית מול גסות הרוח':['שמינית שבשמינית','גסות הרוח','מעלת התורה'],
  'מקווה בית תפילה ועירוב בכפר חבד':['העירוב','גמר העירוב','השלמת העירוב'],
  'הגהת ספר תורה ואהבת ישראל':['הגהת','ספרי תורה','אות יתרה','אות חסרה'],
+ 'ועד רוחני כפר חבד דוגמה חיה':['חברי הוועד הרוחני','ועד הרוחני בכפר חב״ד','חברי הועד הרוחני','kfar chabad spiritual committee living example'],
+ 'ברונא בלי חבר לימוד':['לעזוב את ברונא','ישיבת תומכי תמימים בברונא','תלמידים צעירים ממרוקו','brunoy without study partner'],
+ 'נסיעה לעבודה ושיעורי חתת':['נסיעה למקום העבודה ובחזרה','נסיעה לעבודה וחזרה','חת״ת בזמן הנסיעה','chitas work commute'],
+ 'דברי התעוררות בימים נוראים':['לא לייגע את השומעים','שקלא וטריא ושיחה','ראש השנה ויום הכיפורים','ראש השנה וביום הכיפורים בלי לייגע','high holidays talks without tiring listeners'],
+ 'מעשה בראשית וקבלה מגושמת':['הספר מעשה בראשית','להפשיטם מגשמיות','פירוש מילולי של מושגי קבלה','maaseh bereshit kabbalah abstraction'],
+ 'מלבורן בית ספר בלי להמתין לבניין':['בלי להמתין לבניין ייעודי','להמתין לבניין ייעודי לפני פתיחת','חדר פנוי בבניין הישיבה','עזרת נשים בעלת כניסה נפרדת','melbourne girls school without waiting for building'],
+ 'מלבורן מוסדות אחרים ומרות חבד':['חב״די לבנות במלבורן למרות מוסדות','למרות מוסדות אחרים במלבורן','מוסד לבנות במרות חב״ד','melbourne girls school despite other institutions'],
+ 'קדיש אזור זמן מקום הפטירה':['סיום אחד עשר חודשי קדיש','זמן מקום הפטירה','פטירה בוונקובר','kaddish time zone place of death'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };
