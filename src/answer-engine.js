@@ -146,7 +146,7 @@ const TOPICS={
  'מדריך גן ישראל השפעה לטווח ארוך':['השפעת מדריך גן ישראל','שינוי בילד לאורך שבועות חודשים ושנים','מדריך שמשנה את עצמו','gan israel counselor long term influence'],
  'משרת רבנות וסייגי עצמאות':['משרת רבנות','תנאים לקבל משרת רבנות','עצמאות בענייני יראת שמים','לא להשתמש בשם כהכשר','rabbinic position religious autonomy safeguards'],
  'לימוד חסידות יומי ומקווה רפואי':['זמן קצר בכל יום ללימוד חסידות','טבילה במקווה ומצב בריאותי','אטם רטוב באוזן','daily chassidus mikveh medical consultation'],
- 'שנים מקרא מול חומש יומי וציצית מכונה':['שנים מקרא אינו מחליף חומש יומי','חומש עם רש״י בכל יום','ציצית שנטוותה במכונה','shnayim mikra daily chumash machine tzitzit'],
+ 'שנים מקרא מול חומש יומי וציצית מכונה':['שנים מקרא','חומש עם פירוש רש״י','חומש עם רש״י','שנים מקרא אינו מחליף חומש יומי','חומש עם רש״י בכל יום','ציצית','ציצית שנטוותה במכונה','shnayim mikra daily chumash machine tzitzit'],
  'חזרה מלב או מתוך הכתב':['לחזור מאמרים בעל פה או בפנים','דברים היוצאים מן הלב','חזרה מתוך הכתב','review talks by heart or from text'],
  'נגלה אינו פוטר מחסידות':['לימוד נגלה פוטר מלימוד חסידות','עיסוק נרחב בנגלה','נגלה אינו פוטר מחסידות','revealed torah does not exempt chassidus'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
@@ -349,7 +349,11 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('מדריך גן ישראל השפעה לטווח ארוך')&&(!containsTerm(body,'גן ישראל')||!containsTerm(body,'שבועות')||!containsTerm(body,'מדריכים')))return{score:0,support:'insufficient_specific_evidence',reasons:['Gan Israel counselor and long-horizon child influence are absent']};
  if(u.topics.includes('משרת רבנות וסייגי עצמאות')&&(!containsTerm(body,'משרת רבנות')||!containsTerm(body,'יראת שמים')||!containsTerm(body,'הכשר')))return{score:0,support:'insufficient_specific_evidence',reasons:['rabbinic-position autonomy and name-use safeguards are absent']};
  if(u.topics.includes('לימוד חסידות יומי ומקווה רפואי')&&(!containsTerm(body,'בכל יום')||!containsTerm(body,'מקווה')||!containsTerm(body,'רופא מומחה')))return{score:0,support:'insufficient_specific_evidence',reasons:['daily Chassidus and medically bounded mikveh question are absent']};
- if(u.topics.includes('שנים מקרא מול חומש יומי וציצית מכונה')&&(!containsTerm(body,'שנים מקרא')||!containsTerm(body,'חומש עם פירוש רש״י')||!containsTerm(body,'ציצית')))return{score:0,support:'insufficient_specific_evidence',reasons:['daily Chumash versus Shnayim Mikra and machine tzitzit setting is absent']};
+ if(u.topics.includes('שנים מקרא מול חומש יומי וציצית מכונה')){
+  const asksTzitzit=containsTerm(u.query,'ציצית')||containsTerm(u.query,'מכונה');
+  const lacksDailyStudy=!containsTerm(body,'שנים מקרא')||!containsTerm(body,'חומש עם פירוש רש״י');
+  if(lacksDailyStudy||(asksTzitzit&&!containsTerm(body,'ציצית')))return{score:0,support:'insufficient_specific_evidence',reasons:['requested daily-study or machine-tzitzit evidence is absent']};
+ }
  if(u.topics.includes('חזרה מלב או מתוך הכתב')&&(!containsTerm(body,'בעל פה')||!containsTerm(body,'מתוך הכתב')||!containsTerm(body,'מן הלב')))return{score:0,support:'insufficient_specific_evidence',reasons:['heartfelt oral-versus-text review setting is absent']};
  if(u.topics.includes('נגלה אינו פוטר מחסידות')&&(!containsTerm(body,'עיסוק נרחב בנגלה')||!containsTerm(body,'אינו פוטר')))return{score:0,support:'insufficient_specific_evidence',reasons:['explicit extensive-Nigleh non-exemption evidence is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
@@ -361,7 +365,8 @@ export function propositionRelevance(e,u){
  // otherwise generic words such as "person" or "wrote" create false positives.
  const requiredRawHits=u.topics.length?1:Math.min(2,raw.length);
  if(raw.length && rawHit<requiredRawHits)return{score:0,support:'insufficient_specific_evidence',reasons:[`question-specific evidence below threshold (${rawHit}/${requiredRawHits})`]};
- const supportingProps=arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u));
+ let supportingProps=arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u));
+ if(u.topics.includes('שנים מקרא מול חומש יומי וציצית מכונה')&&!containsTerm(u.query,'ציצית')&&!containsTerm(u.query,'מכונה'))supportingProps=supportingProps.filter(p=>!containsTerm(p,'ציצית'));
  if(u.topics.length&&topicHit===0)return{score:0,support:'lexical_only',reasons:['topic absent from evidence']};
  if(!supportingProps.length&&u.intent==='guidance')return{score:1,support:'contextual_support',reasons:['no proposition entails guidance query']};
  if(raw.length&&rawHit===0&&topicHit<2)return{score:1,support:'contextual_support',reasons:['topic context without question-specific support']};
