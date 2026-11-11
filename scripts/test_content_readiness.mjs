@@ -646,5 +646,33 @@ for(const [question,key] of batch043Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-043 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; two hundred and thirty-eight real-corpus answer checks passed`);
+const batch044Checks=[
+  ['כיצד מבחינים בין אמת תורנית ללא פשרה לבין התאמת הדרך והקצב לאדם מסוים?','family:torah-truth-without-compromise-personalized-path-to-observance-5716'],
+  ['מה נכתב על קביעת זמן יומי להתבוננות קודם התפילה ועל המעבר ללימוד תורה?','id:igrot-kodesh-v13-דתשלא'],
+  ['מהם היסודות העמידים לבניין בית בישראל מול שינויי העולם?','id:igrot-kodesh-v13-דתשלב'],
+  ['כיצד הוצע לתזמן הפלגת עולים מצפון אפריקה כדי להימנע מהפלגה בשבת?','family:israeli-ships-shabbat-1956'],
+  ['האם להמתין לכל תקציב שתי המקוואות או להתחיל מיד במקווה לנשים?','id:igrot-kodesh-v13-דתשלד'],
+  ['כיצד צד אחד יכול להתחיל לתקן פירוד בהנהלה ומה נדרש לתיקון העבר?','family:kfar-chabad-mikveh-lighting-language-access-and-management-peace-5716'],
+  ['איזה פתרון ציבורי הוצע כשדמי מפתח גבוהים מעכבים שידוכים ונישואין?','id:igrot-kodesh-v13-דתשלו'],
+  ['מה הוצע לאשה במצב רוח ירוד לגבי צעדים פעילים, המשך לימודים ועבודה בחינוך?','id:igrot-kodesh-v13-דתשלז'],
+  ['כיצד יכול רופא לתרום לשכונה ולדבר על רפואת הנפש בשפה המתאימה למטופל?','id:igrot-kodesh-v13-דתשלח'],
+  ['כיצד לערוך חשבון נפש בסוף השנה בלי להגדיל כישלונות ובלי ליפול לייאוש?','id:igrot-kodesh-v13-דתשלט'],
+  ['מה האחריות המיוחדת של חייל לקדושת המחנה ולהשפעה על חבריו?','id:igrot-kodesh-v13-דתשמ'],
+  ['האם חשש שפעילות ופרסום יולידו תחושת ישות הוא סיבה להפסיק לפעול?','id:igrot-kodesh-v13-דתשמא'],
+  ['מה הקושיה על הסברת חיוב מזונות אשת עבד בדרך הארץ לפי הרמב״ן והריטב״א?','id:igrot-kodesh-v13-דתשמב'],
+  ['האם הזכרת לחם הפנים בפיוטי העבודה מספיקה בלי פסוקי המוספים?','id:igrot-kodesh-v13-דתשמג']
+];
+for(const [question,key] of batch044Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-044 evidence must answer ${question}`);
+    const intended=key.startsWith('family:')
+      ? m.sources.some(e=>e.evidence_family_id===key.slice(7))
+      : m.sources.some(e=>e.key===key);
+    assert(intended,`${mode}: the intended batch-044 source or evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-044 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-044 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; two hundred and sixty-six real-corpus answer checks passed`);
 

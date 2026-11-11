@@ -180,6 +180,20 @@ const TOPICS={
  'התלהבות עם התייעצות':['התלהבות אינה עיניים סגורות','התייעצות עם עוד אחדים','תשועה ברוב יועץ','לתת מקום לחוות דעת אחרים','enthusiasm consultation openness'],
  'נוער אמריקאי והחלשה מפעולה':['מצב הרוחני של הצעירים בארצות הברית','צעירים בארצות הברית','בקל יותר לפעול מאשר לפנים','טענה שאין תועלת בפעילות','אינה סיבה להפסיק','באדרת משי','american youth outreach discouragement'],
  'נוער ישראלי כיוון מחומריות לרוחניות':['דיווחי השלוחים על הנוער בארץ','דירה נאה ורהיטים נאים','מרוחניות אל הגשמיות והחומריות','כיוון והדרך בה הולכים','israeli youth materialism spiritual direction'],
+ 'אמת בלי פשרה ודרך אישית':['אמת התורנית במלואה','הכרה באמת בלי פשרה','התאמת הדרך והקצב לאדם','קיום חלקי כאילו הוא שלמות','truth without compromise personalized path'],
+ 'התבוננות יומית לפני תפילה':['זמן יומי להתבוננות קודם התפילה','התבוננות קודם התפילה ובתפילה','התפילה כחוט שדרה','מבית הכנסת לבית המדרש','daily contemplation before prayer'],
+ 'יסודות תורה ומצוות לבית':['בנין עדי עד','חוזק יסודות הבית','יסודות התורה והמצוות לבית','בית בישראל מול שינויים','durable torah mitzvot home foundations'],
+ 'אונייה בשבת ועלייה מצפון אפריקה':['הפלגת עולים מצפון אפריקה','תזמון הפלגת עולים','העלאת יהודי צפון אפריקה','תזמון הפלגה ביום ראשון','בתוך שישה ימים','הפלגה ביום ראשון מצפון אפריקה','עלייה מצפון אפריקה באוניות','מסע בתוך שישה ימים','אונייה ישראלית בשבת שרגאי','north africa aliyah ship sunday departure'],
+ 'מקווה נשים תקציב קיים ונגישות':['להתחיל מיד במקווה לנשים','הסכום שכבר נאסף למקווה','מקווה הגברים הישן','ספרדים שאינם מבינים יידיש','women mikveh existing budget language access'],
+ 'שלום הנהלה ותיקון העבר':['פירוד בין מנהלים','צד אחד מתחיל בשלום','להכפיל מאמץ לתיקון העבר','תחרות בין חברי הנהלה','management peace repair past conflict'],
+ 'דיור יקר מעכב נישואין':['דמי מפתח מעכבים נישואין','דיור יקר מעכב שידוכים','להעביר ישיבות למקום זול','קושי ציבורי במקום יחיד','housing costs delay marriage yeshiva relocation'],
+ 'צעדים פעילים במצב רוח ירוד':['מצב רוח עובר','צעד ראשון לחיים פעילים','להמשיך בלימודים ולעסוק בחינוך','כיתות ילדות ומסיבות שבת','stepwise active life study education low mood'],
+ 'רופא ורפואת הנפש בשכונה':['רופא בשכונה וחיי תורה','שפה מתאימה למטופל','רפואת הנפש מתוך תורה','בריאות הגוף ומנוחת הנפש','physician neighborhood spiritual health language'],
+ 'חשבון נפש בלי ייאוש':['חשבון נפש בלי ייאוש','לא להגדיל חסרונות וכישלונות','הטוב קיים והרעות זמניות','סוף השנה חרטה והחלטה','year end accounting without despair'],
+ 'קדושת מחנה חייל והשפעה':['והיה מחניך קדוש','קדושת המחנה בצבא','חייל בארץ ישראל משפיע על חבריו','soldier camp holiness peer influence'],
+ 'פעולה למרות חשש מישות':['פעולות ופרסום גורמים ישות','להמשיך לפעול למרות חשש מגאווה','ישות בלי פעולות','action despite ego risk'],
+ 'מזונות אשת עבד וקושיית הילפותא':['מזונות אשת עבד עברי','הרמב״ן והריטב״א מזונות אשה','דרך הארץ לפרנס אשתו','קושיה על ביטול ילפותות','wife support ramban ritva methodological question'],
+ 'לחם הפנים ופסוקי המוספים':['הזכרת לחם הפנים בפיוטי העבודה','ונשלמה פרים שפתינו לחם הפנים','פסוקי המוספים','lechem hapanim mussaf verses'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -225,6 +239,12 @@ export function understandQuestion(q){
  if(topics.includes('דיאטה רפואית בהיתר רב'))topics=topics.filter(t=>t!=='בריאות');
  if(topics.includes('נוער אמריקאי והחלשה מפעולה'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('נוער ישראלי כיוון מחומריות לרוחניות'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&!containsTerm(query,'צפון אפריקה'))topics=topics.filter(t=>t!=='אונייה בשבת ועלייה מצפון אפריקה');
+ if(topics.includes('יסודות תורה ומצוות לבית'))topics=topics.filter(t=>t!=='נישואין');
+ if(topics.includes('מקווה נשים תקציב קיים ונגישות'))topics=topics.filter(t=>t!=='נשים');
+ if(topics.includes('דיור יקר מעכב נישואין'))topics=topics.filter(t=>!['נישואין','חינוך'].includes(t));
+ if(topics.includes('צעדים פעילים במצב רוח ירוד'))topics=topics.filter(t=>!['חינוך','נשים'].includes(t));
+ if(topics.includes('רופא ורפואת הנפש בשכונה'))topics=topics.filter(t=>t!=='בריאות');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.
@@ -266,7 +286,8 @@ export function understandQuestion(q){
  // component tokens. Those components are topic anchors, not extra qualifiers.
  // Testing in both directions prevents generic words from being mistaken for
  // evidence-specific constraints after a phrase topic has already matched.
- const isTopicToken=t=>topicTokens.has(t)||[...topicTokens].some(alias=>containsTerm(t,alias)||containsTerm(alias,t));
+ const isTopicToken=t=>topicTokens.has(t)||[...topicTokens].some(alias=>containsTerm(t,alias)||containsTerm(alias,t))
+  ||(topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&['תזמן','ימנע'].includes(t));
  return {query,query_script:scriptOf(query),topic:topics[0]||null,topics,intent,entities,subtopic:semanticRaw.filter(t=>!isTopicToken(t)).slice(0,8),terms:[...new Set(expanded.map(norm))]};
 }
 function evidenceText(e){return norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));}
@@ -289,6 +310,20 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&(!containsTerm(body,'צפון אפריקה')||!containsTerm(body,'יום ראשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['North-Africa Sunday-departure setting is absent']};
+ if(u.topics.includes('אמת בלי פשרה ודרך אישית')&&(!containsTerm(body,'אמת')||!containsTerm(body,'פשרה')))return{score:0,support:'insufficient_specific_evidence',reasons:['truth-without-compromise setting is absent']};
+ if(u.topics.includes('התבוננות יומית לפני תפילה')&&(!containsTerm(body,'התבוננות')||!containsTerm(body,'תפילה')))return{score:0,support:'insufficient_specific_evidence',reasons:['daily contemplation-before-prayer setting is absent']};
+ if(u.topics.includes('יסודות תורה ומצוות לבית')&&(!containsTerm(body,'בית בישראל')||!containsTerm(body,'יסודות')))return{score:0,support:'insufficient_specific_evidence',reasons:['durable Jewish-home foundations are absent']};
+ if(u.topics.includes('מקווה נשים תקציב קיים ונגישות')&&(!containsTerm(body,'מקווה לנשים')||!containsTerm(body,'סכום')))return{score:0,support:'insufficient_specific_evidence',reasons:['women-mikveh existing-budget setting is absent']};
+ if(u.topics.includes('שלום הנהלה ותיקון העבר')&&(!containsTerm(body,'מנהלים')||!containsTerm(body,'פירוד')))return{score:0,support:'insufficient_specific_evidence',reasons:['management-conflict reconciliation setting is absent']};
+ if(u.topics.includes('דיור יקר מעכב נישואין')&&(!containsTerm(body,'דמי מפתח')||!['נישואין','שידוכים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['housing-cost marriage-delay setting is absent']};
+ if(u.topics.includes('צעדים פעילים במצב רוח ירוד')&&(!containsTerm(body,'מצב רוח')||!containsTerm(body,'לימודים')))return{score:0,support:'insufficient_specific_evidence',reasons:['low-mood study-and-active-life setting is absent']};
+ if(u.topics.includes('רופא ורפואת הנפש בשכונה')&&(!containsTerm(body,'מקצוע הרפואה')||!containsTerm(body,'רפואת הנפש')))return{score:0,support:'insufficient_specific_evidence',reasons:['physician spiritual-health setting is absent']};
+ if(u.topics.includes('חשבון נפש בלי ייאוש')&&(!containsTerm(body,'חשבון')||!containsTerm(body,'ייאוש')))return{score:0,support:'insufficient_specific_evidence',reasons:['year-end accounting without despair is absent']};
+ if(u.topics.includes('קדושת מחנה חייל והשפעה')&&(!containsTerm(body,'חייל')||!containsTerm(body,'קדושת המחנה')))return{score:0,support:'insufficient_specific_evidence',reasons:['soldier camp-holiness setting is absent']};
+ if(u.topics.includes('פעולה למרות חשש מישות')&&(!containsTerm(body,'תחושת ישות')||!containsTerm(body,'פעולות')))return{score:0,support:'insufficient_specific_evidence',reasons:['action despite ego-risk setting is absent']};
+ if(u.topics.includes('מזונות אשת עבד וקושיית הילפותא')&&(!containsTerm(body,'מזונות אשת')||!containsTerm(body,'הרמב״ן')))return{score:0,support:'insufficient_specific_evidence',reasons:['wife-support Ramban methodological question is absent']};
+ if(u.topics.includes('לחם הפנים ופסוקי המוספים')&&(!containsTerm(body,'לחם הפנים')||!containsTerm(body,'פסוקי המוספים')))return{score:0,support:'insufficient_specific_evidence',reasons:['lechem-hapanim and Mussaf-verses setting is absent']};
  if(u.topics.includes('נוסח תפילה באיחוד בתי כנסת')&&!['איחוד בתי כנסת','התאחדות שני בתי כנסיות','שני בתי כנסת'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['synagogue-union setting is absent']};
  if(u.topics.includes('מקווה בלי המתנה לשלום')&&(!containsTerm(body,'מקווה')||!['להמתין לשלום','אין לעכב','שלום'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['mikveh-without-waiting-for-peace setting is absent']};
  if(u.topics.includes('אהבת התורה')&&u.topics.includes('אהבת ה׳')&&(!containsTerm(body,'אהבת ההשגה השכלית')||!containsTerm(body,'גדולת הבורא')))return{score:0,support:'insufficient_specific_evidence',reasons:['Torah-love versus G-d-love distinction is absent']};

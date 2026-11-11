@@ -1,0 +1,23 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-11-content-batch-044",
+  "generated": "2026-11-11",
+  "method": "Direct item-body inspection of fifteen consecutive letters in the user-supplied Kehot publisher scan. PDF pages 516-532 were rendered and visually checked; page-resolved extracted text supported bounded research paraphrases. No blocked crawler was used.",
+  "source": {"library_filename": "אגרות קודש יג.pdf", "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390", "pdf_pages": "516-532"},
+  "reviewed_items": 15,
+  "new_content_records": 1,
+  "enriched_existing_canonical_records": 14,
+  "propositions_added": 45,
+  "identity_relation": "Fourteen visible letter identities already had bibliographic records and were enriched. The older conservative index left ד׳תשלט unresolved; the visible heading, complete public-letter body and printed location establish a new scan-confirmed canonical identity.",
+  "letters": ["ד׳תשכט", "ד׳תשל", "ד׳תשלא", "ד׳תשלב", "ד׳תשלג", "ד׳תשלד", "ד׳תשלה", "ד׳תשלו", "ד׳תשלז", "ד׳תשלח", "ד׳תשלט", "ד׳תשמ", "ד׳תשמא", "ד׳תשמב", "ד׳תשמג"],
+  "evidence_family_dedup": [
+    {"family_id": "torah-truth-without-compromise-personalized-path-to-observance-5716", "member_letters_in_batch": ["ד׳תשכט", "ד׳תשל"], "counting_rule": "The second item is a forwarding/follow-up letter for the first and is not independent evidence for the enclosed text."},
+    {"family_id": "israeli-ships-shabbat-1956", "member_letters_in_batch": ["ד׳תשלג"], "counting_rule": "This letter belongs to the already established shipping correspondence family; it adds a distinct letter witness but not independent confirmation of ship operations or halachic facts."},
+    {"family_id": "kfar-chabad-mikveh-lighting-language-access-and-management-peace-5716", "member_letters_in_batch": ["ד׳תשלד", "ד׳תשלה"], "counting_rule": "The two letters overlap in the same management conflict and are one evidence family for reconciliation claims."},
+    {"family_id": "selichot-5716-year-end-accounting-without-despair", "member_letters_in_batch": ["ד׳תשלט"], "counting_rule": "The Hebrew research paraphrases derive from one Yiddish public-letter witness; translation is not an independent witness."}
+  ],
+  "blocked_alternatives": [{"source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate route", "result": "The latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.", "fallback": "Used the authorized user-supplied Kehot publisher scan."}],
+  "verification_scope": "Fifteen letter bodies or preserved fragments were inspected across PDF pages 516-532. Incoming correspondence, enclosures, later reprints, press reports, maritime records, budgets, construction records, medical and mental-health records, military records and cited rabbinic works were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and exact locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Mixed Hebrew/Yiddish witnesses, office signatures, editorial completion notes, fragments, medical and mental-health limitations, halachic non-rulings, uninspected cross-references and shared evidence families remain explicit."
+}
