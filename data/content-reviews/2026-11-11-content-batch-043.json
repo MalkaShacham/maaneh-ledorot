@@ -1,0 +1,22 @@
+{
+  "schema":"content-review-batch-v1",
+  "batch_id":"2026-11-11-content-batch-043",
+  "generated":"2026-11-11",
+  "method":"Direct item-body inspection of fifteen consecutive letters in the user-supplied Kehot publisher scan. PDF pages 500-515 were rendered and visually checked; page-resolved extracted text supported bounded research paraphrases. No blocked crawler was used.",
+  "source":{"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"500-515"},
+  "reviewed_items":15,
+  "new_content_records":1,
+  "enriched_existing_canonical_records":14,
+  "propositions_added":45,
+  "identity_relation":"Fourteen visible letter identities already had correct bibliographic records and were enriched. The scan confirms ד׳תשכ, while the old index record misread the same printed position as a duplicate ד׳תשב; a corrected canonical identity was added and the erroneous index row was not treated as an independent witness.",
+  "letters":["ד׳תשיד","ד׳תשטו","ד׳תשטז","ד׳תשיז","ד׳תשיח","ד׳תשיט","ד׳תשכ","ד׳תשכא","ד׳תשכב","ד׳תשכג","ד׳תשכד","ד׳תשכה","ד׳תשכו","ד׳תשכז","ד׳תשכח"],
+  "evidence_family_dedup":[
+    {"family_id":"jerusalem-public-chassidus-study-response-to-opposition-5716","member_letters_in_batch":["ד׳תשכג","ד׳תשכד"],"counting_rule":"The two addressed letters advance one coordinated public-study initiative in overlapping circumstances. They remain separate letter witnesses but are one evidence family for implementation claims."},
+    {"family_id":"tammuz-5716-shluchim-reports-on-israeli-youth-spiritual-direction","member_letters_in_batch":["ד׳תשכח"],"counting_rule":"The letter reports what the emissaries conveyed; the emissary reports themselves were not inspected and are not counted as additional witnesses."},
+    {"family_id":"harari-copied-discourses-not-original-and-editorial-use","member_letters_in_batch":["ד׳תשיט"],"counting_rule":"The copied manuscripts named in the letter were not inspected and are not independent evidence in this batch."}
+  ],
+  "blocked_alternatives":[{"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate route","result":"The latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan."}],
+  "verification_scope":"Fifteen letter bodies were inspected across PDF pages 500-515. Incoming correspondence, cited books and rulings, physical manuscripts and photographs, institutional minutes, curricula, budgets, medical records, emissary reports and later outcomes were not independently inspected.",
+  "rights_note":"Only bounded non-verbatim research paraphrases and exact locators were recorded; no protected letter was copied in full.",
+  "quality_note":"All propositions are source-grounded paraphrases. Secretary signatures, mixed Hebrew/Yiddish witnesses, editorial completion notes, anonymous recipients, medical and halachic limitations, uninspected cross-references and shared evidence families remain explicit."
+}

@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך לפי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה למה מדוע הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך לפי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s)||s==='מספר')return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
@@ -167,6 +167,19 @@ const TOPICS={
  'צעירי אגודת ישראל דוגמה חיה':['ועידת צעירי אגודת ישראל','צעירי אגודת ישראל','צעירים דוגמה חיה בבית ומחוצה לו','משבר הדור הצעיר','young agudath israel living example'],
  'מסורת מוסמכת ללימוד פנימיות התורה':['מסירה מרב לרב בפנימיות התורה','מסירה מרב לרב','מרב לרב','מסורת מוסמכת מרב לרב','מעיינות הבעש״ט ואדמו״ר הזקן','סדר לימוד בנגלה ובחסידות','authorized chain inner torah study'],
  'סכסוך לפרנסה דין תורה ולא קללה':['סכסוך לפרנסה דין תורה','סכסוך הנוגע לפרנסה','בוררות מוסכמת או דין תורה','לשון פוגענית בחודש אלול','livelihood dispute rabbinic adjudication not abuse'],
+ 'מאבק רוחני תניא תפילין ציצית וצדקה':['מצב בלימוד וביראת שמים','מלחמת היצר','שלושים ושלושה פרקים','בדיקת תפילין וטלית קטן','צדקה לפני תפילת שחרית','spiritual struggle tanya tefillin tzitzit charity'],
+ 'תשובה מתקנת כל עבירה':['אין עבירה שאין תשובה','אין דבר העומד בפני התשובה','אין כל התשובות שוות','איגרת התשובה וזקני אנש','repentance repairs every transgression'],
+ 'רשת תשרי ארבעת המינים בבתים':['רשת אהלי יוסף יצחק לקראת תשרי','שיעורים מיוחדים בקשר לימי תשרי','שמחת בית השואבה עם התלמידים','ארבעת המינים בבתי התלמידים','reshet tishrei lulav home outreach'],
+ 'להישאר בארץ לעבודה חינוכית':['לנסוע ללמוד לכאן','לנסוע ללמוד בברוקלין','להישאר בארץ','חינוך הכשר','רבה העבודה בכרם חבד בארץ','פרי טוב בעמלו בחינוך הכשר','להישאר בארץ לעבודה חינוכית','remain israel urgent educational work'],
+ 'הודיה על נס בתורה ומצוות':['מאורע בעת חתונת בתו','חתונת בת','אירע בעת חתונת בת','כיצד מבטאים הודיה על נס','הודיה על נס גלוי','נס גלוי','קרבן תודה להוסיף בתורה ובמצוות','הוספה בחסדי השם עם בעל הנס','visible miracle gratitude torah mitzvot'],
+ 'כתבי יד העתקות ולא חיבורים מקוריים':['כתבי היד לא של אביו','מאמרים שהעתיק','לא נכון להדפיסם כמו שהם','להבהיר מאמרים אחרים','copied manuscripts not original works'],
+ 'תעניות מזיקות ושמירת החושים':['תעניות מזיקות לבריאות','להחליף תענית בשמירת החושים','בולם פיו אוטם אזנו עוצם עינו','להרבות השלום','replace harmful fasts sensory restraint'],
+ 'סמינר תקציב חלקי ויראת שמים בצוות':['חלק חשוב מהתקציב','להקים את המוסד בלי להתרשם מהקשיים','מורות מדריכות בסמינר','לא לוותר בענייני יראת שמים','seminary partial budget staff standards'],
+ 'לימוד חסידות פומבי מול התנגדות':['שיעור תניא בבתי כנסת של המתנגדים','מחאה אינה התכלית','לימוד חסידות ברבים','לקבל את האמת ממי שאמרו','public chassidus study opposition'],
+ 'דיאטה רפואית בהיתר רב':['מאכלים שהרופא אומר לאכול','מאכל שהרופא דורש','רב מורה הוראה מתיר','רב מורה הוראה מתירם','אכילה ושתיה בכלל רפואה','doctor prescribed diet rabbinic permission'],
+ 'התלהבות עם התייעצות':['התלהבות אינה עיניים סגורות','התייעצות עם עוד אחדים','תשועה ברוב יועץ','לתת מקום לחוות דעת אחרים','enthusiasm consultation openness'],
+ 'נוער אמריקאי והחלשה מפעולה':['מצב הרוחני של הצעירים בארצות הברית','צעירים בארצות הברית','בקל יותר לפעול מאשר לפנים','טענה שאין תועלת בפעילות','אינה סיבה להפסיק','באדרת משי','american youth outreach discouragement'],
+ 'נוער ישראלי כיוון מחומריות לרוחניות':['דיווחי השלוחים על הנוער בארץ','דירה נאה ורהיטים נאים','מרוחניות אל הגשמיות והחומריות','כיוון והדרך בה הולכים','israeli youth materialism spiritual direction'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -206,6 +219,12 @@ export function understandQuestion(q){
  if(topics.includes('צעירי אגודת ישראל דוגמה חיה')&&!['צעירי אגודת ישראל','ועידת צעירי','משבר הדור הצעיר'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='צעירי אגודת ישראל דוגמה חיה');
  if(topics.includes('צעירי אגודת ישראל דוגמה חיה'))topics=topics.filter(t=>t!=='שליח כדוגמה חיה');
  if(topics.includes('סכסוך לפרנסה דין תורה ולא קללה'))topics=topics.filter(t=>t!=='פרנסה');
+ if(topics.includes('להישאר בארץ לעבודה חינוכית'))topics=topics.filter(t=>!['חינוך','שליחות'].includes(t));
+ if(topics.includes('הודיה על נס בתורה ומצוות'))topics=topics.filter(t=>t!=='נישואין');
+ if(topics.includes('סמינר תקציב חלקי ויראת שמים בצוות'))topics=topics.filter(t=>!['חינוך','נשים'].includes(t));
+ if(topics.includes('דיאטה רפואית בהיתר רב'))topics=topics.filter(t=>t!=='בריאות');
+ if(topics.includes('נוער אמריקאי והחלשה מפעולה'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('נוער ישראלי כיוון מחומריות לרוחניות'))topics=topics.filter(t=>t!=='חינוך');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.

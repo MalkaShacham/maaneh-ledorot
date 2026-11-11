@@ -620,5 +620,31 @@ for(const [question,key] of batch042Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-042 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; two hundred and fourteen real-corpus answer checks passed`);
+const batch043Checks=[
+  ['מה הוצע למי שמתמודד עם מצב חלש בלימוד, ביראת שמים ובמלחמת היצר?','id:igrot-kodesh-v13-דתשיד'],
+  ['האם יש עבירה שאין תשובה יכולה לתקן, והאם כל דרכי התשובה שוות?','id:igrot-kodesh-v13-דתשטו'],
+  ['למה צעיר שהצליח בחינוך הכשר התבקש להישאר בארץ ולא לנסוע ללמוד בברוקלין?','id:igrot-kodesh-v13-דתשיז'],
+  ['כיצד מבטאים הודיה על נס גלוי שאירע בעת חתונת בת?','id:igrot-kodesh-v13-דתשיח'],
+  ['מדוע כתבי היד שהעתיק האב לא נחשבו לחיבורים מקוריים שלו ולא הודפסו כפי שהם?','id:igrot-kodesh-v13-דתשיט'],
+  ['מה הוצע במקום תעניות המזיקות לבריאות ולמה הודגש ריבוי שלום?','id:igrot-kodesh-v13-דתשכ'],
+  ['האם להתחיל בהקמת סמינר כשיש רק חלק חשוב מהתקציב, ואיך לבחור מורות?','id:igrot-kodesh-v13-דתשכב'],
+  ['כיצד להגיב להתנגדות פומבית ללימוד חסידות: במחאה בלבד או בלימוד פומבי?','family:jerusalem-public-chassidus-study-response-to-opposition-5716'],
+  ['האם חולה צריך לאכול מאכל שהרופא דורש ורב מורה הוראה מתיר?','id:igrot-kodesh-v13-דתשכה'],
+  ['האם התלהבות בפעילות חינוכית פוטרת מהתייעצות וממתן מקום לחוות דעת אחרים?','id:igrot-kodesh-v13-דתשכו'],
+  ['מדוע טענה שאין תועלת בפעילות עם צעירים בארצות הברית אינה סיבה להפסיק?','id:igrot-kodesh-v13-דתשכז'],
+  ['מה דיווחו השלוחים על הכיוון מחיים רוחניים אל חומריות בקרב הנוער בארץ?','id:igrot-kodesh-v13-דתשכח']
+];
+for(const [question,key] of batch043Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-043 evidence must answer ${question}`);
+    const intended=key.startsWith('family:')
+      ? m.sources.some(e=>e.evidence_family_id===key.slice(7))
+      : m.sources.some(e=>e.key===key);
+    assert(intended,`${mode}: the intended batch-043 source or evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-043 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-043 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; two hundred and thirty-eight real-corpus answer checks passed`);
 
