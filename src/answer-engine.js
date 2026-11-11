@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך לפי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s)||s==='מספר')return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
@@ -149,6 +149,14 @@ const TOPICS={
  'שנים מקרא מול חומש יומי וציצית מכונה':['שנים מקרא','חומש עם פירוש רש״י','חומש עם רש״י','שנים מקרא אינו מחליף חומש יומי','חומש עם רש״י בכל יום','ציצית','ציצית שנטוותה במכונה','shnayim mikra daily chumash machine tzitzit'],
  'חזרה מלב או מתוך הכתב':['לחזור מאמרים בעל פה או בפנים','דברים היוצאים מן הלב','חזרה מתוך הכתב','review talks by heart or from text'],
  'נגלה אינו פוטר מחסידות':['לימוד נגלה פוטר מלימוד חסידות','עיסוק נרחב בנגלה','נגלה אינו פוטר מחסידות','revealed torah does not exempt chassidus'],
+ 'חיפוש והצלת ספרים וכתבי יד':['לחפש ספרים וכתבי יד','להציל ספרים מכליה','ספרים וכתבי יד של חסידות חב״ד','search rescue books manuscripts'],
+ 'ביקור השלוחים חרישה זריעה והמשך':['ביקור השלוחים חרישה וזריעה','אחרי ביקור השלוחים','אדם אחד או שניים שירכזו','אחריות משותפת אינה מביאה לפעולה','emissary visit plowing sowing followup'],
+ 'שיחות לנוער וספרות חסידית':['חוברת שיחות לנוער','ספרות לנוער בארץ','תורת נשיאי חב״ד לנוער','youth talks booklet chassidic literature'],
+ 'עבודת חינוך זכות ולא כורח':['עבודה במוסד חינוכי ככורח לפרנסה','עבודת חינוך זכות ולא כורח','ביסוס הגדלת והרחבת המוסד','education work privilege not forced livelihood'],
+ 'שמש מאיר את בית הכנסת':['שמש בבית הכנסת','השמש','להאיר את בית הכנסת','מקום מואר מבחינה רוחנית','חוזה עבודה עם בית הכנסת','synagogue shamash illuminate contract'],
+ 'בית ספר עיקרי יהדות והלכות יום יום':['עיקרי היהדות','הלכות יום יום ומנהגים','בית ספר חרדי לא רק ללמד תורה','religious school basic judaism daily law'],
+ 'ישיבה עדיפה על חזרה הביתה':['יראת שמים בבית מאשר בישיבה','להישאר בישיבה','לימוד בחברת חברים','remain in yeshiva instead of home'],
+ 'שמירת עיניים ולשון הדרכה אישית':['שמירת העיניים והלשון','פרק מ״א בתניא','הותאמה ההדרכה','לאופי השואל ולסביבתו','תלויה באופי השואל ובסביבתו','eyes speech personalized guidance tanya 41'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -184,6 +192,7 @@ const isIntentFramingTerm=(term,intent)=>{
 export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
  let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
+ if(topics.includes('כתבי יד משה יצחק מיאס')&&!['מיאס','משה יצחק'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='כתבי יד משה יצחק מיאס');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.
@@ -356,6 +365,14 @@ export function propositionRelevance(e,u){
  }
  if(u.topics.includes('חזרה מלב או מתוך הכתב')&&(!containsTerm(body,'בעל פה')||!containsTerm(body,'מתוך הכתב')||!containsTerm(body,'מן הלב')))return{score:0,support:'insufficient_specific_evidence',reasons:['heartfelt oral-versus-text review setting is absent']};
  if(u.topics.includes('נגלה אינו פוטר מחסידות')&&(!containsTerm(body,'עיסוק נרחב בנגלה')||!containsTerm(body,'אינו פוטר')))return{score:0,support:'insufficient_specific_evidence',reasons:['explicit extensive-Nigleh non-exemption evidence is absent']};
+ if(u.topics.includes('חיפוש והצלת ספרים וכתבי יד')&&!['מקומות נסתרים','התפוררות'].some(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['hidden-location or preservation evidence is absent']};
+ if(u.topics.includes('ביקור השלוחים חרישה זריעה והמשך')&&(!containsTerm(body,'חרישה')||!containsTerm(body,'זריעה')))return{score:0,support:'insufficient_specific_evidence',reasons:['emissary plowing-and-sowing follow-up evidence is absent']};
+ if(u.topics.includes('שיחות לנוער וספרות חסידית')&&(!containsTerm(body,'חוברת')||!containsTerm(body,'לנוער')))return{score:0,support:'insufficient_specific_evidence',reasons:['youth booklet evidence is absent']};
+ if(u.topics.includes('עבודת חינוך זכות ולא כורח')&&(!containsTerm(body,'מוסד חינוכי')||!containsTerm(body,'כורח')))return{score:0,support:'insufficient_specific_evidence',reasons:['education-work privilege versus compulsion evidence is absent']};
+ if(u.topics.includes('שמש מאיר את בית הכנסת')&&(!containsTerm(body,'שמש')||!containsTerm(body,'בית הכנסת')))return{score:0,support:'insufficient_specific_evidence',reasons:['synagogue shamash evidence is absent']};
+ if(u.topics.includes('בית ספר עיקרי יהדות והלכות יום יום')&&(!containsTerm(body,'עיקרי היהדות')||!containsTerm(body,'הלכות יום')))return{score:0,support:'insufficient_specific_evidence',reasons:['basic Judaism and daily-law curriculum evidence is absent']};
+ if(u.topics.includes('ישיבה עדיפה על חזרה הביתה')&&(!containsTerm(body,'יראת השמים')||!containsTerm(body,'ישיבה')))return{score:0,support:'insufficient_specific_evidence',reasons:['home-versus-yeshiva spiritual setting is absent']};
+ if(u.topics.includes('שמירת עיניים ולשון הדרכה אישית')&&(!containsTerm(body,'עיניים')||!containsTerm(body,'לשון')||!containsTerm(body,'אופי')))return{score:0,support:'insufficient_specific_evidence',reasons:['personalized eyes-and-speech guidance is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

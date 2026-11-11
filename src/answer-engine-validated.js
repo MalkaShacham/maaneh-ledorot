@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261105-volume13-batch040-retrievalfix';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261111-volume13-batch041';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -145,6 +145,14 @@ const TOPIC_ALIASES={
  'שנים מקרא מול חומש יומי וציצית מכונה':['שנים מקרא אינו מחליף חומש יומי','חומש עם רש״י בכל יום','ציצית שנטוותה במכונה','shnayim mikra daily chumash machine tzitzit'],
  'חזרה מלב או מתוך הכתב':['לחזור מאמרים בעל פה או בפנים','דברים היוצאים מן הלב','חזרה מתוך הכתב','review talks by heart or from text'],
  'נגלה אינו פוטר מחסידות':['לימוד נגלה פוטר מלימוד חסידות','עיסוק נרחב בנגלה','נגלה אינו פוטר מחסידות','revealed torah does not exempt chassidus'],
+  'חיפוש והצלת ספרים וכתבי יד':['לחפש ספרים וכתבי יד','להציל ספרים מכליה','ספרים וכתבי יד של חסידות חב״ד','search rescue books manuscripts'],
+  'ביקור השלוחים חרישה זריעה והמשך':['ביקור השלוחים חרישה וזריעה','אחרי ביקור השלוחים','אדם אחד או שניים שירכזו','אחריות משותפת אינה מביאה לפעולה','emissary visit plowing sowing followup'],
+  'שיחות לנוער וספרות חסידית':['חוברת שיחות לנוער','ספרות לנוער בארץ','תורת נשיאי חב״ד לנוער','youth talks booklet chassidic literature'],
+  'עבודת חינוך זכות ולא כורח':['עבודה במוסד חינוכי ככורח לפרנסה','עבודת חינוך זכות ולא כורח','ביסוס הגדלת והרחבת המוסד','education work privilege not forced livelihood'],
+  'שמש מאיר את בית הכנסת':['שמש בבית הכנסת','השמש','להאיר את בית הכנסת','מקום מואר מבחינה רוחנית','חוזה עבודה עם בית הכנסת','synagogue shamash illuminate contract'],
+  'בית ספר עיקרי יהדות והלכות יום יום':['עיקרי היהדות','הלכות יום יום ומנהגים','בית ספר חרדי לא רק ללמד תורה','religious school basic judaism daily law'],
+  'ישיבה עדיפה על חזרה הביתה':['יראת שמים בבית מאשר בישיבה','להישאר בישיבה','לימוד בחברת חברים','remain in yeshiva instead of home'],
+  'שמירת עיניים ולשון הדרכה אישית':['שמירת העיניים והלשון','פרק מ״א בתניא','הותאמה ההדרכה','לאופי השואל ולסביבתו','תלויה באופי השואל ובסביבתו','eyes speech personalized guidance tanya 41'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

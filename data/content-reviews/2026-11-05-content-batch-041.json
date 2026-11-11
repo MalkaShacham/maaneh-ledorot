@@ -1,0 +1,22 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-05-content-batch-041",
+  "generated": "2026-11-05",
+  "method": "Direct item-body inspection of fifteen consecutive letters in the user-supplied Kehot publisher scan. PDF pages 466-481 were rendered and visually checked; page-resolved extracted text supported bounded research paraphrases. No blocked crawler was used.",
+  "source": {"library_filename":"אגרות קודש יג.pdf","library_file_id":"libfile_6d038a3f8bdc8191a28d62c5fc0db390","pdf_pages":"466-481"},
+  "reviewed_items": 15,
+  "new_content_records": 2,
+  "enriched_existing_canonical_records": 13,
+  "propositions_added": 45,
+  "identity_relation": "Two identities (ד׳תרפה and ד׳תרצד) were established from visible page headings where the conservative index omitted them. Thirteen existing identities were enriched in place. The legacy OCR key ד׳תרחצ was corrected to the visible heading ד׳תרצח rather than retained as a duplicate identity.",
+  "letters": ["ד׳תרפד","ד׳תרפה","ד׳תרפו","ד׳תרפז","ד׳תרפח","ד׳תרפט","ד׳תרצ","ד׳תרצא","ד׳תרצב","ד׳תרצג","ד׳תרצד","ד׳תרצה","ד׳תרצו","ד׳תרצז","ד׳תרצח"],
+  "evidence_family_dedup": [
+    {"family_id":"tammuz-5716-student-emissary-visits-and-local-followup","member_letters_in_batch":["ד׳תרפז","ד׳תרפח","ד׳תרצח"],"counting_rule":"The three letters document planning or reports around the same 5716 emissary tour and are not counted as three independent proofs of the tour's results."},
+    {"family_id":"sefer-harikma-marginalia-publication-plan","member_letters_in_batch":["ד׳תרצז"],"counting_rule":"This Yiddish follow-up belongs to the already inspected correspondence with Mary Wilensky (ד׳שמד); the Hebrew propositions are derived research paraphrases, not an independent translation witness."},
+    {"family_id":"israeli-ships-shabbat-1956","member_letters_in_batch":["ד׳תרצו"],"counting_rule":"The long letter continues the established ships correspondence and is not counted as independent confirmation of repeated technical claims."}
+  ],
+  "blocked_alternatives": [{"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate route","result":"The latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.","fallback":"Used the authorized user-supplied Kehot publisher scan."}],
+  "verification_scope": "Fifteen letter bodies were inspected across PDF pages 466-481. Incoming letters, cited publications, books and manuscripts, institutional records, ship logs, engineering evidence, rabbinic deliberations, employment contracts, medical or educational outcomes and later events were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and exact locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Secretary signatures, Yiddish language, fragments, anonymous recipients, medical limitations, uninspected cross-references and shared evidence families remain explicit."
+}

@@ -575,5 +575,29 @@ for(const [question,key] of batch040Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-040 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and seventy-four real-corpus answer checks passed`);
+const batch041Checks=[
+  ['כיצד לחפש ולהציל ספרים וכתבי יד של חסידות חב״ד מהתפוררות?','id:igrot-kodesh-v13-דתרפה'],
+  ['מדוע ביקור השלוחים נחשב רק חרישה וזריעה ומי צריך לרכז את ההמשך?','family:tammuz-5716-student-emissary-visits-and-local-followup'],
+  ['מה הייתה מטרת החוברת הראשונה של שיחות לנוער?','id:igrot-kodesh-v13-דתרפט'],
+  ['מדוע עבודה במוסד חינוכי אינה רק כורח לפרנסה?','id:igrot-kodesh-v13-דתרצא'],
+  ['מה תפקידו הרוחני של שמש בבית הכנסת לאחר חתימת חוזה העבודה?','id:igrot-kodesh-v13-דתרצב'],
+  ['מה צריך בית ספר חרדי ללמד לצד תורה מבחינת עיקרי יהדות והלכות יום יום?','id:igrot-kodesh-v13-דתרצג'],
+  ['האם תלמיד שטוען שמצב יראת השמים שלו טוב יותר בבית צריך לעזוב את הישיבה?','id:igrot-kodesh-v13-דתרצד'],
+  ['כיצד הותאמה ההדרכה לשמירת העיניים והלשון לאופי השואל ולסביבתו?','id:igrot-kodesh-v13-דתרצה'],
+  ['מה נכתב על בדיקת יומן האונייה ולחץ מצד נוסעים ורבנים בעניין הפלגה בשבת?','id:igrot-kodesh-v13-דתרצו'],
+  ['אם הדפסה מחודשת של ספר הרקמה יקרה ומתעכבת, האם לפרסם רק את התוספות?','family:sefer-harikma-marginalia-publication-plan']
+];
+for(const [question,key] of batch041Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-041 evidence must answer ${question}`);
+    const intended=key.startsWith('family:')
+      ? m.sources.some(e=>e.evidence_family_id===key.slice(7))
+      : m.sources.some(e=>e.key===key);
+    assert(intended,`${mode}: the intended batch-041 source or evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-041 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-041 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; one hundred and ninety-four real-corpus answer checks passed`);
 
