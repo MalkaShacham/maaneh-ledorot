@@ -4,9 +4,11 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261111-volume13-batch044b';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261111-mixed-batch045';
 
 const TOPIC_ALIASES={
+  'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
+  'מעכה לפי הספורנו':['לפי הספורנו','הספורנו','מעכה יכולה להיקרא אשה','sforno maacah'],
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
   'דאגה':['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],

@@ -674,5 +674,25 @@ for(const [question,key] of batch044Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-044 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; two hundred and sixty-six real-corpus answer checks passed`);
+const batch045Checks=[
+  ['מתי הוצע לחלוץ תפילין בראש חודש ביחס לקדיש שלאחר עלינו?','original-letter-aid-4666234'],
+  ['כיצד מוסברת ברכת תפילין של ראש כשמפסיקים בין תפילין של יד לתפילין של ראש?','original-letter-aid-4666235'],
+  ['כיצד ביקשו להעביר מסרים רוחניים לחיילים יהודים ולאירופה המשוחררת?','original-letter-aid-4666236'],
+  ['מדוע ראש השנה נקרא ראש וכיצד שבת קשורה להתפתחות רוחנית לאורך השנה?','original-letter-aid-4666237'],
+  ['כיצד חישב המענה את שווי הצדקה במקום יום תענית במטבע בן הזמן?','original-letter-aid-4666238'],
+  ['מדוע תכלית תחיית המתים מתוארת כנשמה בגוף דווקא?','original-letter-aid-4666239'],
+  ['האם מעכה שבבית נחור היה בן או בת לפי רש״י והמדרש לעומת הספורנו?','original-letter-aid-4666240'],
+  ['האם שבת אצל חולה שיש בו סכנה הותרה או רק נדחית?','original-letter-aid-4666215'],
+  ['לאילו מקורות הופנה הנמען בבירור שתי הבחינות בקריאת שמע?','shema-two-aspects-source-referral-and-chassidic-review-5716']
+];
+for(const [question,family] of batch045Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-045 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: the intended batch-045 evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-045 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-045 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; two hundred and eighty-four real-corpus answer checks passed`);
 

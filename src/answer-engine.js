@@ -194,6 +194,17 @@ const TOPICS={
  'פעולה למרות חשש מישות':['פעולות ופרסום גורמים ישות','להמשיך לפעול למרות חשש מגאווה','ישות בלי פעולות','action despite ego risk'],
  'מזונות אשת עבד וקושיית הילפותא':['מזונות אשת עבד עברי','הרמב״ן והריטב״א מזונות אשה','דרך הארץ לפרנס אשתו','קושיה על ביטול ילפותות','wife support ramban ritva methodological question'],
  'לחם הפנים ופסוקי המוספים':['הזכרת לחם הפנים בפיוטי העבודה','ונשלמה פרים שפתינו לחם הפנים','פסוקי המוספים','lechem hapanim mussaf verses'],
+ 'חליצת תפילין בראש חודש וקדיש':['חליצת תפילין בראש חודש','לחלוץ תפילין בראש חודש','לפני הקדיש שלאחר עלינו','קדיש שלפני מוסף','tefillin removal rosh chodesh kaddish'],
+ 'ברכת תפילין של ראש ואור מקיף':['ברכת תפילין של ראש','תפילין של ראש ואור מקיף','האור המקיף','הפסק בין תפילין של יד לתפילין של ראש','כשמפסיקים בין תפילין של יד לתפילין של ראש','head tefillin blessing encompassing light'],
+ 'מסרים לחיילים יהודים ואירופה המשוחררת':['חיילים יהודים בצבא הבריטי','יהודי אירופה','אירופה המשוחררת','ארצות משוחררות','מסרים רוחניים לחיילים','ביקשו להעביר מסרים רוחניים לחיילים יהודים ולאירופה המשוחררת','jewish soldiers liberated europe'],
+ 'ראש השנה כראש ושבת':['ראש השנה נקרא ראש','ראש השנה כראש','להנהיג את השנה כולה','שבת והתפתחות רוחנית','rosh hashanah head of year shabbat'],
+ 'פדיון תענית בשווי צדקה':['פדיון תענית','צדקה במקום יום תענית','שווי הצדקה','שני שלישים מסלע','מטבע בן הזמן','חישב המענה את שווי הצדקה במקום יום תענית במטבע בן הזמן','fast redemption charity valuation'],
+ 'תחיית המתים נשמה בגוף':['תחיית המתים','נשמה בגוף','עולם התחייה','תכלית תחיית המתים','תכלית תחיית המתים מתוארת כנשמה בגוף דווקא','resurrection soul in body'],
+ 'מעכה בן או בת':['מעכה בן או בת','מעכה שבבית נחור','מעכה בן נחור','מעכה היה בן נחור','מעכה היתה בת','מעכה שבבית נחור היה בן או בת לפי רש״י והמדרש לעומת הספורנו','maacah son or daughter'],
+ 'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','לפי רש״י והמדרש','rashi and midrash maacah'],
+ 'מעכה לפי הספורנו':['לפי הספורנו','הספורנו','sforno maacah'],
+ 'שבת חולה דחויה או הותרה':['חולה שיש בו סכנה','שבת הותרה או נדחית','שבת דחויה או הותרה','הותרה או רק נדחית','shabbat dangerously ill permitted deferred'],
+ 'שתי בחינות קריאת שמע':['שתי בחינות בקריאת שמע','שתי הבחינות בקריאת שמע','בחינות קריאת שמע','שער התפילה לאדמו״ר האמצעי','אמרי בינה','two aspects shema'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -222,7 +233,7 @@ const isIntentFramingTerm=(term,intent)=>{
  if(intent==='circumstances')return /^(?:under|circumstance|circumstances|condition|conditions|audience|recommended|recommend|when|באילו|נסיבות|תנאי|תנאים|קהל|למי|המליץ|המלצה|מתי|לפתוח|פתוח)$/.test(t);
  // General wording that asks for a source's lesson or moral takeaway is framing,
  // while the concrete subject (for example, פרה אדומה) remains query-specific.
- if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|למדת|מלמדת|מוסר|מוסרי|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הוצע|וצע|הצעה|ייעץ|יעץ|להתמודד|תמודד|לממן|ממן|להכריע|כריע|לחבר|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
+ if(intent==='guidance')return /^(?:lesson|moral|takeaway|teaching|advice|advise|guidance|regarding|about|wrote|write|לימוד|למדת|מלמדת|מוסר|מוסרי|מוסברת|וסברת|איגרת|אגרות|letter|letters|כתב|כותב|הדריך|דריך|מדריך|הדרכה|להדריך|המליץ|המלצה|הציע|הוצע|וצע|הצעה|ייעץ|יעץ|להתמודד|תמודד|לממן|ממן|להכריע|כריע|לחבר|בנוגע|לגבי|בהקשר|בעניין)$/.test(t);
  return false;
 };
 
@@ -246,6 +257,12 @@ export function understandQuestion(q){
  if(topics.includes('צעדים פעילים במצב רוח ירוד'))topics=topics.filter(t=>!['חינוך','נשים'].includes(t));
  if(topics.includes('רופא ורפואת הנפש בשכונה'))topics=topics.filter(t=>t!=='בריאות');
  if(topics.includes('חשבון נפש בלי ייאוש')&&!containsTerm(query,'חשבון'))topics=topics.filter(t=>t!=='חשבון נפש בלי ייאוש');
+ if(topics.includes('חליצת תפילין בראש חודש וקדיש'))topics=topics.filter(t=>t!=='נוסח תפילה באיחוד בתי כנסת');
+ if(topics.includes('ברכת תפילין של ראש ואור מקיף'))topics=topics.filter(t=>t!=='אהבת ה׳');
+ if(topics.includes('מסרים לחיילים יהודים ואירופה המשוחררת'))topics=topics.filter(t=>!['חינוך','קדושת מחנה חייל והשפעה'].includes(t));
+ if(topics.includes('ראש השנה כראש ושבת'))topics=topics.filter(t=>t!=='אמונה');
+ if(topics.includes('שבת חולה דחויה או הותרה'))topics=topics.filter(t=>t!=='בריאות');
+ if(topics.includes('מעכה לפי רש״י והמדרש')&&topics.includes('מעכה לפי הספורנו'))topics=topics.filter(t=>t!=='מעכה בן או בת');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.
@@ -322,6 +339,15 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('צעדים פעילים במצב רוח ירוד')&&(!containsTerm(body,'מצב רוח')||!containsTerm(body,'לימודים')))return{score:0,support:'insufficient_specific_evidence',reasons:['low-mood study-and-active-life setting is absent']};
  if(u.topics.includes('רופא ורפואת הנפש בשכונה')&&(!containsTerm(body,'מקצוע הרפואה')||!containsTerm(body,'רפואת הנפש')))return{score:0,support:'insufficient_specific_evidence',reasons:['physician spiritual-health setting is absent']};
  if(u.topics.includes('חשבון נפש בלי ייאוש')&&(!containsTerm(body,'חשבון')||!containsTerm(body,'ייאוש')))return{score:0,support:'insufficient_specific_evidence',reasons:['year-end accounting without despair is absent']};
+ if(u.topics.includes('חליצת תפילין בראש חודש וקדיש')&&(!['חלוץ','חליצת','לחלוץ'].some(t=>containsTerm(body,t))||!containsTerm(body,'קדיש')))return{score:0,support:'insufficient_specific_evidence',reasons:['Rosh-Chodesh tefillin-removal and Kaddish setting is absent']};
+ if(u.topics.includes('ברכת תפילין של ראש ואור מקיף')&&(!containsTerm(body,'תפילין של ראש')||!containsTerm(body,'אור המקיף')))return{score:0,support:'insufficient_specific_evidence',reasons:['head-tefillin blessing and encompassing-light setting is absent']};
+ if(u.topics.includes('מסרים לחיילים יהודים ואירופה המשוחררת')&&(!containsTerm(body,'חיילים')||!['אירופה','ארצות משוחררות'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Jewish-soldier and liberated-Europe distribution setting is absent']};
+ if(u.topics.includes('ראש השנה כראש ושבת')&&(!containsTerm(body,'ראש השנה')||!containsTerm(body,'ראש')||!['להנהיג את השנה','השנה כולה'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Rosh-Hashanah-as-head governing the year is absent']};
+ if(u.topics.includes('פדיון תענית בשווי צדקה')&&(!containsTerm(body,'תענית')||!containsTerm(body,'סלע')))return{score:0,support:'insufficient_specific_evidence',reasons:['fast-redemption and sela valuation setting is absent']};
+ if(u.topics.includes('תחיית המתים נשמה בגוף')&&(!containsTerm(body,'תחיית המתים')||!containsTerm(body,'נשמה בגוף')))return{score:0,support:'insufficient_specific_evidence',reasons:['resurrection and soul-in-body purpose is absent']};
+ if(u.topics.some(t=>['מעכה בן או בת','מעכה לפי רש״י והמדרש','מעכה לפי הספורנו'].includes(t))&&(!containsTerm(body,'מעכה')||!['בן','בת'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Maacah son-or-daughter interpretation is absent']};
+ if(u.topics.includes('שבת חולה דחויה או הותרה')&&(!containsTerm(body,'חולה שיש בו סכנה')||!['דחייה','נדחית','הותרה','היתר'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['dangerously-ill Shabbat deferred-or-permitted analysis is absent']};
+ if(u.topics.includes('שתי בחינות קריאת שמע')&&(!containsTerm(body,'קריאת שמע')||!containsTerm(body,'שתי בחינות')))return{score:0,support:'insufficient_specific_evidence',reasons:['two aspects of Shema source discussion is absent']};
  if(u.topics.includes('קדושת מחנה חייל והשפעה')&&(!containsTerm(body,'חייל')||!containsTerm(body,'קדושת המחנה')))return{score:0,support:'insufficient_specific_evidence',reasons:['soldier camp-holiness setting is absent']};
  if(u.topics.includes('פעולה למרות חשש מישות')&&(!containsTerm(body,'תחושת ישות')||!containsTerm(body,'פעולות')))return{score:0,support:'insufficient_specific_evidence',reasons:['action despite ego-risk setting is absent']};
  if(u.topics.includes('מזונות אשת עבד וקושיית הילפותא')&&(!containsTerm(body,'מזונות אשת')||!containsTerm(body,'הרמב״ן')))return{score:0,support:'insufficient_specific_evidence',reasons:['wife-support Ramban methodological question is absent']};

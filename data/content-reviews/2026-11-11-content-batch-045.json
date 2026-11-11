@@ -1,0 +1,37 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-11-content-batch-045",
+  "generated": "2026-11-11",
+  "method": "Direct public search inspection of eight accessible Kehot/Chabad.org item bodies plus page 533 of the authorized user-supplied Kehot volume XIII scan. The known blocked crawler was not used.",
+  "source": {
+    "authorized_online_items": [4666215, 4666234, 4666235, 4666236, 4666237, 4666238, 4666239, 4666240],
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "533"
+  },
+  "reviewed_items": 9,
+  "new_content_records": 1,
+  "enriched_existing_canonical_records": 8,
+  "propositions_added": 27,
+  "metric_delta": {
+    "answer_eligible_unique_sources_before": 507,
+    "answer_eligible_unique_sources_after": 511,
+    "content_verified_unique_sources_before": 504,
+    "content_verified_unique_sources_after": 508,
+    "answer_eligible_propositions_before": 1614,
+    "answer_eligible_propositions_after": 1626,
+    "note": "Net eligibility is +4: three pre-existing metadata-only publisher identities gained inspected content and one scan-confirmed identity was added. Five already-answer-eligible identities were enriched without being counted again."
+  },
+  "identity_relation": "Eight online items reused existing canonical URL identities. The older conservative volume-XIII extraction left ד׳תשמה unresolved; its visible heading and body on scan page 533 establish one new scan-confirmed identity.",
+  "letters": ["קעו", "קצה", "קצו", "קצז", "קצח", "קצט", "ר", "רא", "ד׳תשמה"],
+  "evidence_family_dedup": [
+    {"family_id": "original-letter-aid-4666237", "member_letters_in_batch": ["קצח"], "counting_rule": "The Hebrew propositions are derived from one Yiddish witness and are not independent testimony."},
+    {"family_id": "original-letter-aid-4666215", "member_letters_in_batch": ["קעו"], "counting_rule": "The copied inquiry and the printed annotations are retained as one correspondence witness, not separate independent sources."}
+  ],
+  "blocked_alternatives": [
+    {"source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted route", "result": "The latest report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.", "fallback": "Used accessible authorized publisher pages through public search and the user-supplied scan."}
+  ],
+  "verification_scope": "Nine source bodies or preserved fragments were inspected. Incoming correspondence, physical originals, cited works, enclosures, distribution outcomes, monetary-history sources and practical halachic application were not independently verified.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and exact locators were stored; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. The Yiddish translation is derived; halachic discussions are not presented as individualized rulings; the final volume-XIII letter remains explicitly partial."
+}
