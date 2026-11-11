@@ -1,0 +1,49 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-11-content-batch-042",
+  "generated": "2026-11-11",
+  "method": "Direct item-body inspection of fifteen consecutive letters in the user-supplied Kehot publisher scan. PDF pages 481-500 were rendered and visually checked; page-resolved extracted text supported bounded research paraphrases. No blocked crawler was used.",
+  "source": {
+    "library_filename": "אגרות קודש יג.pdf",
+    "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
+    "pdf_pages": "481-500"
+  },
+  "reviewed_items": 15,
+  "new_content_records": 0,
+  "enriched_existing_canonical_records": 15,
+  "propositions_added": 45,
+  "identity_relation": "All fifteen visible letter identities (ד׳תרצט through ד׳תשיג) already had bibliographic records and were enriched in place. Visual inspection corrected OCR readings of ד׳תרצט and ד׳תשב; no duplicate identities were created.",
+  "letters": ["ד׳תרצט", "ד׳תש", "ד׳תשא", "ד׳תשב", "ד׳תשג", "ד׳תשד", "ד׳תשה", "ד׳תשו", "ד׳תשז", "ד׳תשח", "ד׳תשט", "ד׳תשי", "ד׳תשיא", "ד׳תשיב", "ד׳תשיג"],
+  "evidence_family_dedup": [
+    {
+      "family_id": "israeli-ships-shabbat-1956",
+      "member_letters_in_batch": ["ד׳תשז", "ד׳תשט"],
+      "counting_rule": "The technical warning to a parent and the urgent request to a rabbi belong to the established ships correspondence. They document different functions but are not independent confirmation of the same engineering or halakhic claims."
+    },
+    {
+      "family_id": "melbourne-beit-rivkah-founding-and-family-support",
+      "member_letters_in_batch": ["ד׳תשח"],
+      "counting_rule": "The letter continues the already documented Melbourne Beit Rivkah correspondence and is not counted as independent proof of the school's later development."
+    },
+    {
+      "family_id": "tomchei-temimim-america-emergency-financial-appeal-5716",
+      "member_letters_in_batch": ["ד׳תשי"],
+      "counting_rule": "Hebrew research propositions are derived from the one inspected Yiddish appeal and are not an independent translation witness."
+    },
+    {
+      "family_id": "tzemach-tzedek-piskei-din-typesetter-interpolation",
+      "member_letters_in_batch": ["ד׳תשג"],
+      "counting_rule": "The letter reports a textual history and names manuscript and print witnesses; those witnesses were not inspected and are not promoted as separate evidence."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted candidate route",
+      "result": "The latest acquisition report remains no_candidates with attempted=0; the known HTTP 403 route was not retried.",
+      "fallback": "Used the authorized user-supplied Kehot publisher scan."
+    }
+  ],
+  "verification_scope": "Fifteen letter bodies were inspected across PDF pages 481-500. Incoming correspondence, cited rabbinic letters and rulings, books, print editions and manuscripts, excavation records, educational or institutional records, budgets, ship logs and engineering systems, conference proceedings and later outcomes were not independently inspected.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and exact locators were recorded; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Secretary signatures, Yiddish language, copied or completed textual witnesses, anonymous recipients, legal and halakhic limitations, uninspected cross-references and shared evidence families remain explicit."
+}

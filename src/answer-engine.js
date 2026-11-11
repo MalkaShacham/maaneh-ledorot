@@ -157,6 +157,16 @@ const TOPICS={
  'בית ספר עיקרי יהדות והלכות יום יום':['עיקרי היהדות','הלכות יום יום ומנהגים','בית ספר חרדי לא רק ללמד תורה','religious school basic judaism daily law'],
  'ישיבה עדיפה על חזרה הביתה':['יראת שמים בבית מאשר בישיבה','להישאר בישיבה','לימוד בחברת חברים','remain in yeshiva instead of home'],
  'שמירת עיניים ולשון הדרכה אישית':['שמירת העיניים והלשון','פרק מ״א בתניא','הותאמה ההדרכה','לאופי השואל ולסביבתו','תלויה באופי השואל ובסביבתו','eyes speech personalized guidance tanya 41'],
+ 'כישורי חינוך והסטת רושם שלילי':['כישורים להדרכה ולחינוך','התאמה להדרכה וחינוך','רושם שלילי מהסביבה','מחשבה טובה פרק מא','educational aptitude redirect negative impressions'],
+ 'נוסח אדמו״ר הזקן וקשר תפילין':['נוסח התפילה שקבע אדמו״ר הזקן','נוסח אדמו״ר הזקן וקשר תפילין','קשר של תפילין ונוסח התפילה','alter rebbe prayer rite tefillin knot'],
+ 'תלונות מחלישות ופעולה ישירה':['תלונות על חוסר הצלחה','התלונות מחלישות','לא להתווכח עם היצר','פעולה ישירה בתורה ובמצוות','discouragement direct positive action'],
+ 'פסקי דינים תוספת סדר דפוס':['פסקי דינים תוספת סדר דפוס','פסקי דינים','סדר דפוס','שורות שהוסיף סדר הדפוס','כתב יד מעתיק בלי השורות','typesetter interpolation piskei din manuscript'],
+ 'תניא מקומי וחסידות בסעודה שלישית':['שיעור תניא מקומי','להחליף התוועדות בשיחה מוסרית','חסידות בסעודה שלישית','שבת מסוגלת ללימוד פנימיות התורה','local tanya class shabbat chassidus farbrengen'],
+ 'אונייה התפלת מים בשבת':['התפלת מי ים','התפלת מי ים בשבת','התפלת מי ים באונייה','מים מתוקים באונייה','נוסעים משפיעים על מלאכות האונייה','ship desalination passengers shabbat'],
+ 'תומכי תמימים קריאת סיוע':['גירעון ישיבות תומכי תמימים','תרומה מיידית לתומכי תמימים','קריאת סיוע לישיבות','קריאת סיוע מיידית','ישיבות תומכי תמימים','tomchei temimim emergency financial appeal'],
+ 'צעירי אגודת ישראל דוגמה חיה':['ועידת צעירי אגודת ישראל','צעירי אגודת ישראל','צעירים דוגמה חיה בבית ומחוצה לו','משבר הדור הצעיר','young agudath israel living example'],
+ 'מסורת מוסמכת ללימוד פנימיות התורה':['מסירה מרב לרב בפנימיות התורה','מסירה מרב לרב','מרב לרב','מסורת מוסמכת מרב לרב','מעיינות הבעש״ט ואדמו״ר הזקן','סדר לימוד בנגלה ובחסידות','authorized chain inner torah study'],
+ 'סכסוך לפרנסה דין תורה ולא קללה':['סכסוך לפרנסה דין תורה','סכסוך הנוגע לפרנסה','בוררות מוסכמת או דין תורה','לשון פוגענית בחודש אלול','livelihood dispute rabbinic adjudication not abuse'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
@@ -193,6 +203,9 @@ export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
  let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
  if(topics.includes('כתבי יד משה יצחק מיאס')&&!['מיאס','משה יצחק'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='כתבי יד משה יצחק מיאס');
+ if(topics.includes('צעירי אגודת ישראל דוגמה חיה')&&!['צעירי אגודת ישראל','ועידת צעירי','משבר הדור הצעיר'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='צעירי אגודת ישראל דוגמה חיה');
+ if(topics.includes('צעירי אגודת ישראל דוגמה חיה'))topics=topics.filter(t=>t!=='שליח כדוגמה חיה');
+ if(topics.includes('סכסוך לפרנסה דין תורה ולא קללה'))topics=topics.filter(t=>t!=='פרנסה');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.
@@ -270,7 +283,7 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('ברית הסטודנטים יבנה והשפעה')&&!containsTerm(body,'ברית הסטודנטים'))return{score:0,support:'insufficient_specific_evidence',reasons:['Yavneh student-network setting is absent']};
  if(u.topics.includes('מערכות אונייה ואוטומציה בשבת')&&(!containsTerm(body,'מכונות')||!containsTerm(body,'אוטומ')))return{score:0,support:'insufficient_specific_evidence',reasons:['ship-system automation analysis is absent']};
  if(u.topics.includes('מכתב צים ויומני אונייה')&&(!containsTerm(body,'צים')||!containsTerm(body,'יומני')))return{score:0,support:'insufficient_specific_evidence',reasons:['Zim-letter and ship-log analysis is absent']};
- if(u.topics.includes('שליח כדוגמה חיה')&&!containsTerm(body,'דוגמה חיה'))return{score:0,support:'insufficient_specific_evidence',reasons:['emissary-as-living-example evidence is absent']};
+ if(u.topics.includes('שליח כדוגמה חיה')&&(!containsTerm(body,'דוגמה חיה')||!['משלחת','שליח'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['emissary-as-living-example evidence is absent']};
  if(u.topics.includes('תלמידי חופש במרוקו')&&(!containsTerm(body,'ימי החופש')||!containsTerm(body,'מרוקו')))return{score:0,support:'insufficient_specific_evidence',reasons:['Morocco vacation-study expansion is absent']};
  if(u.topics.includes('דברי התעוררות ומעשה')&&(!containsTerm(body,'דברי התעוררות')||!containsTerm(body,'מעשה')))return{score:0,support:'insufficient_specific_evidence',reasons:['arousal-to-action distinction is absent']};
  if(u.topics.includes('קירוב לתורה והשלמת חתת')&&(!containsTerm(body,'קירוב אנשים לתורה')||!containsTerm(body,'חת״ת')))return{score:0,support:'insufficient_specific_evidence',reasons:['bring-people-to-Torah and Chitas-order evidence is absent']};
@@ -373,6 +386,16 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('בית ספר עיקרי יהדות והלכות יום יום')&&(!containsTerm(body,'עיקרי היהדות')||!containsTerm(body,'הלכות יום')))return{score:0,support:'insufficient_specific_evidence',reasons:['basic Judaism and daily-law curriculum evidence is absent']};
  if(u.topics.includes('ישיבה עדיפה על חזרה הביתה')&&(!containsTerm(body,'יראת השמים')||!containsTerm(body,'ישיבה')))return{score:0,support:'insufficient_specific_evidence',reasons:['home-versus-yeshiva spiritual setting is absent']};
  if(u.topics.includes('שמירת עיניים ולשון הדרכה אישית')&&(!containsTerm(body,'עיניים')||!containsTerm(body,'לשון')||!containsTerm(body,'אופי')))return{score:0,support:'insufficient_specific_evidence',reasons:['personalized eyes-and-speech guidance is absent']};
+ if(u.topics.includes('כישורי חינוך והסטת רושם שלילי')&&(!containsTerm(body,'כישור')||!containsTerm(body,'מחשבה טובה')))return{score:0,support:'insufficient_specific_evidence',reasons:['educational aptitude and thought-redirection evidence is absent']};
+ if(u.topics.includes('נוסח אדמו״ר הזקן וקשר תפילין')&&(!containsTerm(body,'נוסח')||!containsTerm(body,'קשר התפילין')))return{score:0,support:'insufficient_specific_evidence',reasons:['Alter Rebbe rite and tefillin-knot evidence is absent']};
+ if(u.topics.includes('תלונות מחלישות ופעולה ישירה')&&(!containsTerm(body,'תלונות')||!['פעולה ישירה','לא להתווכח','במקום להתווכח'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['discouragement and direct-positive-action evidence is absent']};
+ if(u.topics.includes('פסקי דינים תוספת סדר דפוס')&&(!containsTerm(body,'פסקי דינים')||!containsTerm(body,'סדר דפוס')||!containsTerm(body,'כתב')))return{score:0,support:'insufficient_specific_evidence',reasons:['typesetter interpolation and manuscript-control evidence is absent']};
+ if(u.topics.includes('תניא מקומי וחסידות בסעודה שלישית')&&(!containsTerm(body,'תניא מקומי')||!containsTerm(body,'סעודה שלישית')))return{score:0,support:'insufficient_specific_evidence',reasons:['local Tanya and third-meal Chassidus setting is absent']};
+ if(u.topics.includes('אונייה התפלת מים בשבת')&&(!containsTerm(body,'התפלת מי ים')||!['נוסעים','לנוסעים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['ship desalination and passenger-enablement evidence is absent']};
+ if(u.topics.includes('תומכי תמימים קריאת סיוע')&&(!containsTerm(body,'תומכי תמימים')||!containsTerm(body,'גירעון')))return{score:0,support:'insufficient_specific_evidence',reasons:['Tomchei Temimim deficit appeal evidence is absent']};
+ if(u.topics.includes('צעירי אגודת ישראל דוגמה חיה')&&(!containsTerm(body,'צעירי אגודת ישראל')||!containsTerm(body,'דוגמה חיה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Young Agudath Israel living-example evidence is absent']};
+ if(u.topics.includes('מסורת מוסמכת ללימוד פנימיות התורה')&&(!containsTerm(body,'מרב לרב')||!containsTerm(body,'פנימיות התורה')))return{score:0,support:'insufficient_specific_evidence',reasons:['authorized transmission chain for inner Torah is absent']};
+ if(u.topics.includes('סכסוך לפרנסה דין תורה ולא קללה')&&(!containsTerm(body,'דין תורה')||!containsTerm(body,'פרנסה')||!containsTerm(body,'לשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['livelihood dispute, adjudication and speech boundary are absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261111-volume13-batch041';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261111-volume13-batch042';
 
 const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
@@ -153,6 +153,16 @@ const TOPIC_ALIASES={
   'בית ספר עיקרי יהדות והלכות יום יום':['עיקרי היהדות','הלכות יום יום ומנהגים','בית ספר חרדי לא רק ללמד תורה','religious school basic judaism daily law'],
   'ישיבה עדיפה על חזרה הביתה':['יראת שמים בבית מאשר בישיבה','להישאר בישיבה','לימוד בחברת חברים','remain in yeshiva instead of home'],
   'שמירת עיניים ולשון הדרכה אישית':['שמירת העיניים והלשון','פרק מ״א בתניא','הותאמה ההדרכה','לאופי השואל ולסביבתו','תלויה באופי השואל ובסביבתו','eyes speech personalized guidance tanya 41'],
+  'כישורי חינוך והסטת רושם שלילי':['כישורים להדרכה ולחינוך','התאמה להדרכה וחינוך','רושם שלילי מהסביבה','מחשבה טובה פרק מא','educational aptitude redirect negative impressions'],
+  'נוסח אדמו״ר הזקן וקשר תפילין':['נוסח התפילה שקבע אדמו״ר הזקן','נוסח אדמו״ר הזקן וקשר תפילין','קשר של תפילין ונוסח התפילה','alter rebbe prayer rite tefillin knot'],
+  'תלונות מחלישות ופעולה ישירה':['תלונות על חוסר הצלחה','התלונות מחלישות','לא להתווכח עם היצר','פעולה ישירה בתורה ובמצוות','discouragement direct positive action'],
+  'פסקי דינים תוספת סדר דפוס':['פסקי דינים תוספת סדר דפוס','פסקי דינים','סדר דפוס','שורות שהוסיף סדר הדפוס','כתב יד מעתיק בלי השורות','typesetter interpolation piskei din manuscript'],
+  'תניא מקומי וחסידות בסעודה שלישית':['שיעור תניא מקומי','להחליף התוועדות בשיחה מוסרית','חסידות בסעודה שלישית','שבת מסוגלת ללימוד פנימיות התורה','local tanya class shabbat chassidus farbrengen'],
+  'אונייה התפלת מים בשבת':['התפלת מי ים','התפלת מי ים בשבת','התפלת מי ים באונייה','מים מתוקים באונייה','נוסעים משפיעים על מלאכות האונייה','ship desalination passengers shabbat'],
+  'תומכי תמימים קריאת סיוע':['גירעון ישיבות תומכי תמימים','תרומה מיידית לתומכי תמימים','קריאת סיוע לישיבות','קריאת סיוע מיידית','ישיבות תומכי תמימים','tomchei temimim emergency financial appeal'],
+  'צעירי אגודת ישראל דוגמה חיה':['ועידת צעירי אגודת ישראל','צעירי אגודת ישראל','צעירים דוגמה חיה בבית ומחוצה לו','משבר הדור הצעיר','young agudath israel living example'],
+  'מסורת מוסמכת ללימוד פנימיות התורה':['מסירה מרב לרב בפנימיות התורה','מסירה מרב לרב','מרב לרב','מסורת מוסמכת מרב לרב','מעיינות הבעש״ט ואדמו״ר הזקן','סדר לימוד בנגלה ובחסידות','authorized chain inner torah study'],
+  'סכסוך לפרנסה דין תורה ולא קללה':['סכסוך לפרנסה דין תורה','סכסוך הנוגע לפרנסה','בוררות מוסכמת או דין תורה','לשון פוגענית בחודש אלול','livelihood dispute rabbinic adjudication not abuse'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
 };

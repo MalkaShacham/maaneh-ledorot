@@ -599,5 +599,26 @@ for(const [question,key] of batch041Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-041 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; one hundred and ninety-four real-corpus answer checks passed`);
+const batch042Checks=[
+  ['כיצד להעריך כישורים להדרכה ולחינוך ולהסיט רושם שלילי מן הסביבה?','id:igrot-kodesh-v13-דתרצט'],
+  ['מה נכתב על נוסח התפילה שקבע אדמו״ר הזקן ועל קשר התפילין?','id:igrot-kodesh-v13-דתש'],
+  ['מה נכתב על תלונות על חוסר הצלחה?','id:igrot-kodesh-v13-דתשא'],
+  ['מה נכתב על בית רבקה במלבורן ועל משפחת המייסדים?','id:igrot-kodesh-v13-דתשח'],
+  ['האם לעזוב שיעור תניא מקומי ולהחליף התוועדות חסידית בשיחה מוסרית בסעודה שלישית?','id:igrot-kodesh-v13-דתשו'],
+  ['מה נכתב על התפלת מי ים בשבת?','id:igrot-kodesh-v13-דתשז'],
+  ['מה נכתב על גירעון ישיבות תומכי תמימים ועל תרומה מיידית?','id:igrot-kodesh-v13-דתשי'],
+  ['מה תפקידם של צעירי אגודת ישראל לשמש דוגמה חיה בתקופת משבר?','id:igrot-kodesh-v13-דתשיא'],
+  ['מה נכתב על מסירה מרב לרב בפנימיות התורה?','id:igrot-kodesh-v13-דתשיב'],
+  ['כיצד יש לפתור סכסוך הנוגע לפרנסה בלי קללה ולשון פוגענית?','id:igrot-kodesh-v13-דתשיג']
+];
+for(const [question,key] of batch042Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-042 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-042 source must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-042 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-042 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; two hundred and fourteen real-corpus answer checks passed`);
 
