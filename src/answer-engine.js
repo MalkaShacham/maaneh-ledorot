@@ -189,7 +189,7 @@ const TOPICS={
  'דיור יקר מעכב נישואין':['דמי מפתח מעכבים נישואין','דיור יקר מעכב שידוכים','להעביר ישיבות למקום זול','קושי ציבורי במקום יחיד','housing costs delay marriage yeshiva relocation'],
  'צעדים פעילים במצב רוח ירוד':['מצב רוח עובר','צעד ראשון לחיים פעילים','להמשיך בלימודים ולעסוק בחינוך','כיתות ילדות ומסיבות שבת','stepwise active life study education low mood'],
  'רופא ורפואת הנפש בשכונה':['רופא בשכונה וחיי תורה','שפה מתאימה למטופל','רפואת הנפש מתוך תורה','בריאות הגוף ומנוחת הנפש','physician neighborhood spiritual health language'],
- 'חשבון נפש בלי ייאוש':['חשבון נפש בלי ייאוש','לא להגדיל חסרונות וכישלונות','הטוב קיים והרעות זמניות','סוף השנה חרטה והחלטה','year end accounting without despair'],
+ 'חשבון נפש בלי ייאוש':['חשבון נפש בלי ייאוש','סוף השנה','ליפול לייאוש','להגדיל כישלונות','לא להגדיל חסרונות וכישלונות','הטוב קיים והרעות זמניות','סוף השנה חרטה והחלטה','year end accounting without despair'],
  'קדושת מחנה חייל והשפעה':['והיה מחניך קדוש','קדושת המחנה בצבא','חייל בארץ ישראל משפיע על חבריו','soldier camp holiness peer influence'],
  'פעולה למרות חשש מישות':['פעולות ופרסום גורמים ישות','להמשיך לפעול למרות חשש מגאווה','ישות בלי פעולות','action despite ego risk'],
  'מזונות אשת עבד וקושיית הילפותא':['מזונות אשת עבד עברי','הרמב״ן והריטב״א מזונות אשה','דרך הארץ לפרנס אשתו','קושיה על ביטול ילפותות','wife support ramban ritva methodological question'],
@@ -245,6 +245,7 @@ export function understandQuestion(q){
  if(topics.includes('דיור יקר מעכב נישואין'))topics=topics.filter(t=>!['נישואין','חינוך'].includes(t));
  if(topics.includes('צעדים פעילים במצב רוח ירוד'))topics=topics.filter(t=>!['חינוך','נשים'].includes(t));
  if(topics.includes('רופא ורפואת הנפש בשכונה'))topics=topics.filter(t=>t!=='בריאות');
+ if(topics.includes('חשבון נפש בלי ייאוש')&&!containsTerm(query,'חשבון'))topics=topics.filter(t=>t!=='חשבון נפש בלי ייאוש');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.
@@ -287,7 +288,8 @@ export function understandQuestion(q){
  // Testing in both directions prevents generic words from being mistaken for
  // evidence-specific constraints after a phrase topic has already matched.
  const isTopicToken=t=>topicTokens.has(t)||[...topicTokens].some(alias=>containsTerm(t,alias)||containsTerm(alias,t))
-  ||(topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&['תזמן','ימנע'].includes(t));
+  ||(topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&['תזמן','ימנע'].includes(t))
+  ||(topics.includes('חשבון נפש בלי ייאוש')&&t==='ערוך');
  return {query,query_script:scriptOf(query),topic:topics[0]||null,topics,intent,entities,subtopic:semanticRaw.filter(t=>!isTopicToken(t)).slice(0,8),terms:[...new Set(expanded.map(norm))]};
 }
 function evidenceText(e){return norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));}
