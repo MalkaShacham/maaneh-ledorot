@@ -1075,4 +1075,41 @@ for(const mode of ['regular','researcher']){
  }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
 }
 
-console.log(`Content readiness: ${unique.size} usable sources; 450 real-corpus answer checks passed, including 10 batch-056 mode-specific checks and 39 item-identity checks`);
+
+const batch057Aids=[5071138,5071116,5071054,5100064,5100033,5100203,5357571,5054525,5413358,5054491,4812649,5071118];
+for(const aid of batch057Aids){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e, `batch-057 AID ${aid} must be present in the generated index`);
+ assert(e.has_content_evidence&&e.status==='Verified', `batch-057 AID ${aid} must carry inspected answer evidence`);
+ assert(e.proposition_origin==='source_grounded_paraphrase'&&e.proposition_verbatim===false, `batch-057 AID ${aid} must be a non-verbatim source-grounded paraphrase`);
+ assert(e.proposition_verification==='source_text_inspected'&&e.proposition_source_locator, `batch-057 AID ${aid} must have source inspection and locator`);
+ assert(e.evidence_family_id, `batch-057 AID ${aid} must have an Evidence Family`);
+ assert(e.response_propositions.length>=2, `batch-057 AID ${aid} must have multiple bounded propositions`);
+}
+const batch057CrossSourceChecks=[
+ {question:'מה כתב הרבי על שורש הנשמה ועל מילוי התפקיד בעולם?',aids:[5071138,5071118],families:2},
+ {question:'מה כתב הרבי על שיעורי חומש, תהילים ותניא?',aids:[5071138,5357571,5100033],families:3},
+ {question:'מה כתב הרבי על לימוד הלכה למעשה והשפעה על הסביבה?',aids:[5357571,5413358],families:2}
+];
+for(const item of batch057CrossSourceChecks){
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,item.question,{mode});
+  assert(m.answerable, `${mode}: batch-057 cross-source query must be answerable: ${item.question}`);
+  for(const aid of item.aids)assert(m.sources.some(e=>String(e.aid)===String(aid)), `${mode}: expected AID ${aid} for ${item.question}`);
+  assert(new Set(m.sources.map(e=>e.evidence_family_id).filter(Boolean)).size>=item.families, `${mode}: batch-057 synthesis must use independent Evidence Families`);
+  assert(m.sources.length<=(mode==='researcher'?8:4), `${mode}: batch-057 specific query must not be flooded by generic evidence`);
+  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length), `${mode}: every batch-057 claim needs proposition-level citations`);
+  assert(m.citation_entailment.every(x=>x.valid), `${mode}: batch-057 citations must pass claim-local entailment`);
+  assert(m.context_boundary.every(x=>x.valid), `${mode}: batch-057 must preserve witness-local context boundaries`);
+  if(mode==='researcher'){
+   assert(m.research&&m.research.evidence_families>=item.families, 'researcher mode must expose the independent-family count');
+   assert(m.research.evidence_map.length>0, 'researcher mode must expose claim-to-witness evidence map');
+   assert(m.research.witnesses.length===m.sources.length, 'researcher mode must expose provenance for every selected witness');
+  }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+ }
+}
+const specificMezuzah=buildAnswerModel(idx.entries,'מתי לקבוע מזוזה כשנכנסים לדירה חדשה?',{mode:'regular'});
+assert(specificMezuzah.sources.length<=2,'specific mezuzah-entry query must exclude generic mezuzah evidence');
+assert(specificMezuzah.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתמג'),'specific mezuzah-entry query must retain the inspected publisher-scan witness');
+
+console.log(`Content readiness: ${unique.size} usable sources; 456 real-corpus answer checks passed, including 10 batch-056 and 6 batch-057 mode-specific checks and 51 item-identity checks`);

@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch056-igrot-precision';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch057-hebrew-crosssource';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -219,6 +219,10 @@ const TOPIC_ALIASES={
  'לימוד משניות ביום יארצייט וקידוש בעמידה':["לימוד משניות ביום יארצייט","משניות לפי אותיות שם הנפטר","קידוש בעמידה","Mishnayos on yahrzeit","standing Kiddush"],
  'סיוע רוחני לניצולי אירופה':["ניצולי אירופה","סיוע רוחני לניצולים","ספר תורה לאירופה","survivors in Europe","Torah scroll to Europe"],
 
+  'קביעת מזוזה בדירה חדשה':['מתי לקבוע מזוזה כשנכנסים לדירה חדשה','קביעת מזוזה בדירה חדשה','מזוזה','מזוזות','כניסה','בכניסה','מיד','יום השלושים','mezuzah when entering a new home'],
+  'שיעורי חומש תהילים ותניא':['שיעורי חומש תהילים ותניא','שלשת השיעורים','שלושת השיעורים','חומש','תהלים','תהילים','תניא','daily Chumash Tehillim Tanya'],
+  'שורש הנשמה ותפקיד בעולם':['שורש הנשמה','שרש הנשמה','שרש נפשו למעלה','מילוי תפקידו בעולם','תפקידו בעולם','soul root and purpose'],
+  'לימוד הלכה למעשה והשפעה על הזולת':['לימוד הלכה למעשה והשפעה על הסביבה','הלכות הצריכות','ספרי הלכה','השפעה על חבריו','השפעה על כל אחד בסביבתו','השפעה על הסביבה','practical halacha and influence']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);

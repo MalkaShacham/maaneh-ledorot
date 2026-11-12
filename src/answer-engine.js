@@ -260,6 +260,10 @@ const TOPICS={
  'לימוד משניות ביום יארצייט וקידוש בעמידה':["לימוד משניות ביום יארצייט","משניות לפי אותיות שם הנפטר","קידוש בעמידה","Mishnayos on yahrzeit","standing Kiddush"],
  'סיוע רוחני לניצולי אירופה':["ניצולי אירופה","סיוע רוחני לניצולים","ספר תורה לאירופה","survivors in Europe","Torah scroll to Europe"],
 
+ 'קביעת מזוזה בדירה חדשה':['מתי לקבוע מזוזה כשנכנסים לדירה חדשה','קביעת מזוזה בדירה חדשה','מזוזה','מזוזות','כניסה','בכניסה','מיד','יום השלושים','mezuzah when entering a new home'],
+ 'שיעורי חומש תהילים ותניא':['שיעורי חומש תהילים ותניא','שלשת השיעורים','שלושת השיעורים','חומש','תהלים','תהילים','תניא','daily Chumash Tehillim Tanya'],
+ 'שורש הנשמה ותפקיד בעולם':['שורש הנשמה','שרש הנשמה','שרש נפשו למעלה','מילוי תפקידו בעולם','תפקידו בעולם','soul root and purpose'],
+ 'לימוד הלכה למעשה והשפעה על הזולת':['לימוד הלכה למעשה והשפעה על הסביבה','הלכות הצריכות','ספרי הלכה','השפעה על חבריו','השפעה על כל אחד בסביבתו','השפעה על הסביבה','practical halacha and influence']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -318,6 +322,8 @@ export function understandQuestion(q){
  if(topics.includes('ראש השנה כראש ושבת'))topics=topics.filter(t=>t!=='אמונה');
  if(topics.includes('שבת חולה דחויה או הותרה'))topics=topics.filter(t=>t!=='בריאות');
  if(topics.includes('מעכה לפי רש״י והמדרש')&&topics.includes('מעכה לפי הספורנו'))topics=topics.filter(t=>t!=='מעכה בן או בת');
+ if(topics.includes('קביעת מזוזה בדירה חדשה'))topics=topics.filter(t=>t!=='מזוזה');
+ if(topics.includes('לימוד הלכה למעשה והשפעה על הזולת'))topics=topics.filter(t=>t!=='לימוד הלכה');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.
@@ -355,6 +361,7 @@ export function understandQuestion(q){
  let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
  if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
+ if(topics.includes('קביעת מזוזה בדירה חדשה'))intent='guidance';
  const raw=query.split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
  const entities=(original.match(/(?:[A-Z][\w-]+(?:\s+[A-Z][\w-]+)*)|(?:[א-ת]{2,}(?:\s+[א-ת]{2,}){1,2})/g)||[]).map(norm).filter(x=>!STOP.has(x)).slice(0,8);
  const semanticRaw=raw.filter(t=>!isIntentFramingTerm(t,intent)&&!isIntentFramingTerm(queryToken(t),intent)).map(queryToken).filter(t=>t&&!STOP.has(t));
@@ -389,6 +396,10 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('קביעת מזוזה בדירה חדשה')){
+  const exactTiming=arr(e.response_propositions).some(p=>containsTerm(p,'מזוזה')&&containsTerm(p,'כניסה')&&(containsTerm(p,'מיד')||containsTerm(p,'יום השלושים')||containsTerm(p,'שלושים')));
+  if(!exactTiming)return{score:0,support:'insufficient_specific_evidence',reasons:['A source must explicitly connect mezuzah placement with entering the residence and an immediate/day-thirty timing detail.']};
+ }
  if(u.topics.includes('התחייבות לצדקה בסכום נקוב')){const pledgeProp=arr(e.response_propositions).find(p=>containsTerm(p,'צדקה')&&containsTerm(p,'סכום')&&containsTerm(p,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(p,t)));if(!pledgeProp)return{score:0,support:'insufficient_specific_evidence',reasons:['A single inspected proposition must state an amount, an explicit instruction to name it, and a charity-pledge context.']};const intentGate=intentEvidenceGate(e,u);if(intentGate)return{score:0,support:'insufficient_intent_evidence',reasons:[intentGate]};return{score:8,support:'direct_support',reasons:['single proposition explicitly links a charity pledge, a specified amount and the instruction to name it'],supportingProps:[pledgeProp]};}
  if(u.topics.includes('שבת כמקור ברכה לפני י״ב תמוז')&&(!containsTerm(body,'שבת')||!containsTerm(body,'תמוז')||!containsTerm(body,'ברכה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Shabbat-before-12-Tammuz blessing setting is absent']};
  if(u.topics.includes('העלאת ימי השבוע בשבת')&&(!containsTerm(body,'ויכולו')||!containsTerm(body,'שבת')||!containsTerm(body,'עונג')))return{score:0,support:'insufficient_specific_evidence',reasons:['Vayechulu elevation-and-delight setting is absent']};
@@ -566,6 +577,7 @@ export function propositionRelevance(e,u){
  const requiredRawHits=u.topics.length?1:Math.min(2,raw.length);
  if(raw.length && rawHit<requiredRawHits)return{score:0,support:'insufficient_specific_evidence',reasons:[`question-specific evidence below threshold (${rawHit}/${requiredRawHits})`]};
  let supportingProps=arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u));
+ if(u.topics.includes('קביעת מזוזה בדירה חדשה'))supportingProps=supportingProps.filter(p=>containsTerm(p,'מזוזה')&&containsTerm(p,'כניסה')&&(containsTerm(p,'מיד')||containsTerm(p,'יום השלושים')||containsTerm(p,'שלושים')));
  if(u.topics.includes('שנים מקרא מול חומש יומי וציצית מכונה')&&!containsTerm(u.query,'ציצית')&&!containsTerm(u.query,'מכונה'))supportingProps=supportingProps.filter(p=>!containsTerm(p,'ציצית'));
  if(u.topics.length&&topicHit===0)return{score:0,support:'lexical_only',reasons:['topic absent from evidence']};
  if(!supportingProps.length&&u.intent==='guidance')return{score:1,support:'contextual_support',reasons:['no proposition entails guidance query']};
