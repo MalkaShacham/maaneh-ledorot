@@ -1,0 +1,209 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-12-content-batch-052",
+  "generated": "2026-11-12",
+  "method": "Direct public web search/open inspection of selected visible body passages from eleven new authorized Chabad.org/TheRebbe.org Sichos in English item pages, plus five additional passages used to enrich three already indexed identities. Known blocked crawler route was not retried.",
+  "source": {
+    "publisher": "Chabad.org / TheRebbe.org",
+    "collection": "Sichos in English Collection",
+    "new_authorized_online_items": [
+      2514926,
+      2515488,
+      2515614,
+      2515622,
+      2514211,
+      2537520,
+      2512199,
+      2658261,
+      2512365,
+      2537523,
+      2513844
+    ],
+    "enriched_existing_items": [
+      2515477,
+      2515007,
+      2514886
+    ],
+    "reviewed_items_total": 14
+  },
+  "reviewed_items": 14,
+  "new_content_records": 11,
+  "enriched_existing_canonical_records": 3,
+  "duplicate_or_continuity_checks_without_new_propositions": 0,
+  "propositions_added": 27,
+  "metric_delta": {
+    "answer_eligible_unique_sources_before": 566,
+    "answer_eligible_unique_sources_after": 577,
+    "content_verified_unique_sources_before": 563,
+    "content_verified_unique_sources_after": 574,
+    "answer_eligible_propositions_before": 1776,
+    "answer_eligible_propositions_after": 1803,
+    "note": "Confirmed by the main-branch reconciliation commits ceae7b8 and 7048bb8; public-metrics.json and project-state.json both show 577 answer-eligible sources, 574 content-verified sources and 1,803 propositions."
+  },
+  "evidence_family_dedup": [
+    {
+      "member_ids": [
+        "sie-talk-balak-7-tammuz-5744-aid-2514926"
+      ],
+      "evidence_family_id": "shabbos-balak-7-tammuz-5744",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-yisro-17-shevat-5744-aid-2515488"
+      ],
+      "evidence_family_id": "shabbos-yisro-17-shevat-5744",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-haazinu-3-tishrei-5744-1st-farbrengen-aid-2515614"
+      ],
+      "evidence_family_id": "shabbos-haazinu-shabbos-shuvah-3-tishrei-5744-1st-farbrengen",
+      "counting_rule": "first farbrengen; separate event family"
+    },
+    {
+      "member_ids": [
+        "sie-talk-haazinu-3-tishrei-5744-2nd-farbrengen-aid-2515622"
+      ],
+      "evidence_family_id": "shabbos-haazinu-shabbos-shuvah-3-tishrei-5744-2nd-farbrengen",
+      "counting_rule": "second farbrengen; separate event family despite same date"
+    },
+    {
+      "member_ids": [
+        "sie-talk-eikev-20-menachem-av-5744-aid-2514211"
+      ],
+      "evidence_family_id": "shabbos-eikev-20-menachem-av-5744",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-3-tammuz-5742-aid-2537520"
+      ],
+      "evidence_family_id": "third-day-tammuz-5742",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-erev-yom-kippur-5746-aid-2512199"
+      ],
+      "evidence_family_id": "erev-yom-kippur-5746",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-chof-menachem-av-5742-aid-2658261"
+      ],
+      "evidence_family_id": "chof-menachem-av-5742",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-12-tammuz-5745-aid-2512365"
+      ],
+      "evidence_family_id": "12-tammuz-5745",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-13-tammuz-5742-aid-2537523"
+      ],
+      "evidence_family_id": "13-tammuz-5742",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-purim-5745-aid-2513844"
+      ],
+      "evidence_family_id": "purim-5745",
+      "counting_rule": "new event; translated witness only"
+    },
+    {
+      "member_ids": [
+        "sie-talk-yechidus-13-shevat-5744-aid-2515477"
+      ],
+      "evidence_family_id": "yechidus-eve-13-shevat-5744",
+      "counting_rule": "existing identity enriched in place; family preserved"
+    },
+    {
+      "member_ids": [
+        "sie-talk-yechidus-17-adar-ii-5744-aid-2515007"
+      ],
+      "evidence_family_id": "yechidus-eve-17-adar-ii-5744",
+      "counting_rule": "existing identity enriched in place; family preserved"
+    },
+    {
+      "member_ids": [
+        "sie-talk-yechidus-11-sivan-5744-aid-2514886"
+      ],
+      "evidence_family_id": "yechidus-eve-11-sivan-5744",
+      "counting_rule": "existing identity enriched in place; family preserved"
+    }
+  ],
+  "blocked_sources": [
+    {
+      "source": "Chabad.org AID 4666220 (Hebrew letter page)",
+      "result": "Redirected to a publisher shell with navigation and no visible letter body.",
+      "fallback": "No content proposition was inferred; the run moved to separate fully visible Sichos in English item pages."
+    },
+    {
+      "source": "Chabad.org AID 4666280 (Hebrew Igrot Kodesh)",
+      "result": "Item page exposed publisher shell/metadata but no inspectable letter body.",
+      "fallback": "No content proposition was inferred; used visible translated public-talk bodies."
+    },
+    {
+      "source": "Chabad.org AID 4666216 (Hebrew Igrot Kodesh)",
+      "result": "Item page exposed publisher shell/metadata but no inspectable letter body.",
+      "fallback": "No content proposition was inferred; used visible translated public-talk bodies."
+    },
+    {
+      "source": "Chabad.org AID 4666232 (Hebrew Igrot Kodesh)",
+      "result": "Item page exposed publisher shell/metadata but no inspectable letter body.",
+      "fallback": "No content proposition was inferred; used visible translated public-talk bodies."
+    },
+    {
+      "source": "Hebrew Torat Menachem AID 5996765",
+      "result": "Visible page exposed title, series information and a PDF link, but not body text.",
+      "fallback": "No proposition was inferred from title or key; used accessible item-level English body text."
+    },
+    {
+      "source": "Hebrew Torat Menachem AID 5996725",
+      "result": "Visible page exposed title, series information and a PDF link, but not body text.",
+      "fallback": "No proposition was inferred from title or key; used accessible item-level English body text."
+    },
+    {
+      "source": "Sichos Kodesh AID 553671 (French)",
+      "result": "Audio page exposed title/recording metadata and related links but no transcript body.",
+      "fallback": "No proposition was inferred from metadata; used text-published dated talks."
+    },
+    {
+      "source": "Sichos Kodesh AID 553673 (Yiddish)",
+      "result": "Audio page exposed title/recording metadata and related links but no transcript body.",
+      "fallback": "No proposition was inferred from metadata; used text-published dated talks."
+    },
+    {
+      "source": "Sichos Kodesh AID 553692 (Hebrew)",
+      "result": "Audio page exposed title/recording metadata and related links but no transcript body.",
+      "fallback": "No proposition was inferred from metadata; used text-published dated talks."
+    },
+    {
+      "source": "Sichos Kodesh AID 553738 (Hebrew)",
+      "result": "Audio page exposed title/recording metadata and related links but no transcript body.",
+      "fallback": "No proposition was inferred from metadata; used text-published dated talks."
+    },
+    {
+      "source": "Sichos Kodesh AID 554098 (Orchim)",
+      "result": "Audio page exposed title/recording metadata and related links but no transcript body.",
+      "fallback": "No proposition was inferred from metadata; used text-published dated talks."
+    }
+  ],
+  "verification_scope": "Eleven new item-level publisher pages were opened and selected visible body passages inspected; three existing translated-talk identities were reopened and additional body passages inspected. All 14 records are English translated presentations. Verification is limited to the specified published English passages; original Hebrew/Yiddish transcripts, recordings, complete surrounding context, incoming questions, cited works and later outcomes were not independently inspected. The two 3 Tishrei 5744 farbrengens are separate sessions explicitly identified as first and second by the publisher and remain separate Evidence Families.",
+  "rights_note": "Only concise non-verbatim Hebrew research paraphrases and precise body locators are stored; no protected letter or talk is copied in full.",
+  "quality_note": "Every proposition is bounded to visible body passages and attributed to the publisher's English translation, not represented as an AI inference or as an independently inspected original-language transcript.",
+  "duplicate_audit_scope": "The eleven new AIDs were checked against the current content-review queue and reviewed manifests 049–051; none appears in the queue or those manifests. The three AIDs 2515477, 2515007 and 2514886 were found in batch 050 and deliberately enriched in place, preserving their IDs and Evidence Families. The full public-search-index could not be retrieved through the connected GitHub file reader because of its size, so no corpus-wide semantic duplicate audit is claimed. Translations remain derived witnesses.",
+  "reconciliation_commits": [
+    "ceae7b8350181ce51e6270b2ff5f1ba217746a04",
+    "7048bb8a5e35d6401da88abdecfcb3c0be8ced55"
+  ],
+  "reconciled_at": "2026-11-12"
+}
