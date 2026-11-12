@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch058-source-grounded-v6';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch058-source-grounded-v7';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -233,6 +233,9 @@ const TOPIC_ALIASES={
  'מרה שחורה וחששות ללא יסוד':['מרה שחורה','חששות שאין להן יסוד','חששות שאין להם יסוד','לימוד נגלה וחסידות','melancholy baseless fears'],
  'יחס למכחישי תורה ולימוד הלכה':['מכחישים וכופרים','תורה שבכתב','תורה שבעל פה','הלכות הצריכות בחיי היום יום','לימוד הלכה למעשה','deniers of written and oral Torah','practical halacha'],
  'התכתבות עם הוצאה לאור וספרים':['ילדותנו','ספרי ילדותנו','הוצאה לאור בירושלים','הוצאת ספרים בירושלים','קבלת ספרים','publication correspondence books']
+,
+ 'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
+ 'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
