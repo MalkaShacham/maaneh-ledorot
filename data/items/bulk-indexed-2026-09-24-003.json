@@ -168,7 +168,11 @@
       "language": "unknown",
       "context_status": "partial",
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666214/jewish/page.htm",
-      "locator": {},
+      "locator": {
+        "aid": 4666214,
+        "volume": 2,
+        "letter": "קעה"
+      },
       "provenance": {
         "source_witness": "staging source metadata",
         "transmission_type": "publisher/item metadata only",
@@ -186,9 +190,26 @@
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-22-igrot-kodesh-volume-2-batch-181.json"
+        },
+        {
+          "type": "same_evidence_family",
+          "target_id": "chabad-letter-4666214",
+          "basis": "Same AID 4666214, letter קעה and publisher URL as the answer-eligible canonical item; this staging record is not an independent witness."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold. Duplicate staging metadata for AID 4666214; linked to the same Evidence Family as chabad-letter-4666214 and excluded as an independent source.",
+      "evidence_family_id": "igrot-letter-5705-3-chanukah-letter-175-aid4666214",
+      "has_content_evidence": false,
+      "independent_witness": false,
+      "translation_status": "Not a translation; duplicate staging metadata for the same publisher item, not an independent witness.",
+      "primary_secondary_status": "Duplicate metadata record of the same published correspondence; not a separate source witness.",
+      "witness_type": "duplicate staging metadata record",
+      "dedup": {
+        "checked_on": "2026-11-12",
+        "stable_key": "aid:4666214",
+        "evidence_family_id": "igrot-letter-5705-3-chanukah-letter-175-aid4666214",
+        "result": "Linked to chabad-letter-4666214 by identical AID, letter number and publisher URL; metadata-only duplicate, not a separate source identity."
+      }
     }
   ]
 }
