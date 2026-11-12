@@ -202,6 +202,14 @@ for(const mode of ['regular','researcher']){
   assert.deepEqual(new Set(m.comparative_coverage.supported_topics),new Set(['אהבת התורה','אהבת ה׳']),`${mode}: both comparison sides need proposition-level coverage`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every love comparison claim needs a proposition-level citation`);
 }
+const focusedClassQuestion='מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,focusedClassQuestion,{mode});
+ assert(m.answerable,`${mode}: focused class-expansion query must be answerable`);
+ assert.deepEqual(m.sources.map(e=>e.key),['id:igrot-kodesh-v13-דתרפא'],`${mode}: class-expansion query must exclude generic livelihood/business letters`);
+ assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every focused class-expansion claim needs a proposition citation`);
+}
+
 const newBatchChecks=[
   ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
   ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
