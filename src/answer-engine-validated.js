@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch051-morocco-science-guard';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch052-event-family-retrieval';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -176,6 +176,20 @@ const TOPIC_ALIASES={
  'שליחות בתנאי מדבר':["מדבר","חיי תורה","מציאות קשה","העולם המעשי","live in the desert torah" ],
  'יחידות קבוצתית':["יחידות קבוצתית","יחידות אישית","מעלת הציבור","group yechidus" ],
  'הודיה על שחרור בי״ב תמוז':["י״ב תמוז","הכרת תודה","שחרור הרבי הריי״צ","ממשלת ארצות הברית","gratitude 12th tammuz" ]
+
+ 'שבת כמקור ברכה לפני י״ב תמוז':['השבת שלפני י״ב תמוז','שבת שלפני י״ב תמוז','ברכה לשבוע של י״ב תמוז','לכתחילה אריבער','lechatchilah ariber','shabbos before 12 tammuz blessing'],
+ 'העלאת ימי השבוע בשבת':['ויכולו העלאה ועונג','שבת מעלה את ענייני השבוע','העלאת השבוע בשבת','הכנות ימי החול לשבת ועונג','shabbat elevates the preceding week','vayechulu elevation delight'],
+ 'שבת שובה ותשובה':['שבת שובה ושבת תשובה','ההבדל בין שבת שובה לשבת תשובה','עשרת ימי תשובה ושבת שובה','shabbos shuvah shabbos teshuvah'],
+ 'ראש השנה כיום ארוך':['שני ימי ראש השנה כיום אחד ארוך','ראש השנה יום אחד ארוך','שהחיינו ביום השני של ראש השנה','rosh hashanah one long day'],
+ 'אחדות בשבת והתוועדות':['אחדות יהודים בסעודת שבת','התוועדות שבת ואחדות','סעודת שבת מאחדת','shabbat meal farbrengen unity'],
+ 'ג׳ תמוז תחילת הגאולה':['ג׳ תמוז תחילת הגאולה','ג תמוז תחילת הגאולה','יציאה מהכלא תחילת הגאולה','הפצת חסידות לאחר השחרור','third of tammuz beginning redemption'],
+ 'ערב יום הכיפורים ויחידה':['ערב יום הכיפורים ודרגת היחידה','חמש התפילות ויחידה','חמש דרגות הנשמה יחידה','erev yom kippur yechidah five prayers'],
+ 'הילולא מצער לשמחה ולפעולה':['צער יום הילולא לשמחה','הילולא מצער לשמחה','יום הילולא מעורר מעשים טובים בשמחה','yahrzeit sorrow to joy deeds'],
+ 'ברכה ליחיד ואחדות הציבור':['ברכה ליחיד ולציבור','ברכה ליחיד ואחדות ישראל','היחיד חלק מהציבור בברכה','individual blessing community unity'],
+ 'זיכרון יום הגאולה מחייב פעולה':['זיכרון אירוע מחייב מעשה','זיכרון ושמירה מתורגמים למעשה','זיכרון יום הגאולה והפצת תורה','remembering liberation into action'],
+ 'אחדות בפורים':['אחדות יהודים בפורים','מפגש פורים ואחדות','משלוח מנות ומתנות לאביונים אחדות','purim unity gathering'],
+ 'מבצע פורים נמשך לפסח ולצדקה':['מבצע פורים נמשך לפסח','הכנות לפסח מתחילות מפורים','מצות לעניים ממבצע פורים','purim campaign continues after purim pesach charity'],
+ 'לימוד רמב״ם ואחדות מרחבית':['לימוד רמב״ם משותף במקומות שונים','אחדות בלימוד רמב״ם מרחוק','לימוד אותו קטע ברמב״ם ואחדות','shared rambam study unity across distance']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
