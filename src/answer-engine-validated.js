@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch053e-specific-communal-study';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch054-tammuz-elul-fastday';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -199,7 +199,17 @@ const TOPIC_ALIASES={
  'זיכרון יום הגאולה מחייב פעולה':['זיכרון אירוע מחייב מעשה','זיכרון ושמירה מתורגמים למעשה','זיכרון יום הגאולה והפצת תורה','remembering liberation into action'],
  'אחדות בפורים':['אחדות יהודים בפורים','מפגש פורים ואחדות','משלוח מנות ומתנות לאביונים אחדות','purim unity gathering'],
  'מבצע פורים נמשך לפסח ולצדקה':['מבצע פורים נמשך לפסח','הכנות לפסח מתחילות מפורים','מצות לעניים ממבצע פורים','purim campaign continues after purim pesach charity'],
- 'לימוד רמב״ם ואחדות מרחבית':['לימוד רמב״ם משותף במקומות שונים','אחדות בלימוד רמב״ם מרחוק','לימוד אותו קטע ברמב״ם ואחדות','shared rambam study unity across distance']
+ 'לימוד רמב״ם ואחדות מרחבית':['לימוד רמב״ם משותף במקומות שונים','אחדות בלימוד רמב״ם מרחוק','לימוד אותו קטע ברמב״ם ואחדות','shared rambam study unity across distance'],
+
+ 'סיום מסכת בט״ו באב':['סיום מסכת בט״ו באב','סיום מסכת תענית בט״ו באב','ט״ו באב וסיום מסכת','15th of Av tractate completion','siyum Taanis 15 Av'],
+ 'עבודת אלול ותשובה':['עבודת חודש אלול','חשבון נפש באלול','תשובה בחודש אלול','תורה תפילה וצדקה באלול','Elul repentance Torah prayer charity'],
+ 'צדקה רוחנית ביום צום':['צדקה רוחנית ביום צום','הפצת תורה ויהדות ביום צום','שבע מצוות בני נח ביום צום','spiritual charity on fast day','Noahide laws fast day'],
+ 'צומות יהפכו לשמחה':['צומות יהפכו לשמחה','ימי הצום לעתיד לבוא','צומות בימות המשיח','fast days become festivals','fast days transformed to joy'],
+ 'י״ט כסלו והפצת חסידות':['י״ט כסלו והפצת חסידות','ברכת שלום בי״ט כסלו','שחרור אדמו״ר הזקן','Yud-Tes Kislev blessing of peace','dissemination of Chassidus'],
+ 'התוועדות שבת מברכים והחלטות בפועל':['התוועדות שבת מברכים','החלטות טובות בהתוועדות','מעשה בפועל אחרי התוועדות','Shabbos Mevarchim farbrengen good resolutions'],
+ 'לימוד הלכה משותף ופרידה':['לימוד הלכה משותף לפני פרידה','לימוד הלכה לפני חזרה לבתים','אחדות דרך לימוד משותף','shared halachah before parting','unity through shared study'],
+ 'חינוך יהודי ולימוד תורה בחופשה':['חינוך יהודי לילדים','לימוד תורה בחופשת הקיץ','אין הפסקה מלימוד תורה בחופש','Jewish education summer vacation Torah study'],
+ 'חופש רוחני בגלות':['חופש יהודי בגלות','חופש רוחני תחת שלטון זר','לא להיכנע להשפעה זרה','Jewish spiritual freedom in exile']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);

@@ -908,14 +908,93 @@ for(const [question,aids] of batch053DirectChecks){
 }
 
 const batch053IndexIdentityChecks=[5996841,5996843,5996844,5996845,5996846,3140096,5989601,5989546,5989547,5989548,5989569,5989549,2515477,2515007,2514886];
-assert.equal(metrics.answer_eligible_unique_sources,589,'batch-053 answer-eligible source metric must reconcile to 589');
+assert.equal(metrics.answer_eligible_unique_sources,598,'batch-054 answer-eligible source metric must reconcile to 598');
 assert.equal(metrics.content_verified_unique_sources,586,'batch-053 content-verified metric must reconcile to 586');
-assert.equal(metrics.answer_eligible_propositions,1831,'batch-053 source-grounded proposition count must reconcile to 1831');
+assert.equal(metrics.answer_eligible_propositions,1857,'batch-054 source-grounded proposition count must reconcile to 1857');
 for(const aid of batch053IndexIdentityChecks){
   const matches=idx.entries.filter(e=>String(e.aid)===String(aid));
   assert.equal(matches.length,1,`AID ${aid} must have exactly one item-shaped public-index entry`);
   assert.equal(matches[0].key,`aid:${aid}`,`AID ${aid} must use the preferred stable identity key`);
   assert.equal(idx.entries.some(e=>e.key===`url:${matches[0].source_url}`),false,`AID ${aid} must not create a duplicate URL-only provenance entry`);
 }
-console.log(`Content readiness: ${unique.size} usable sources; 408 real-corpus answer checks passed, including 22 batch-053 mode-specific checks and 15 item-identity checks`);
+
+const batch054DirectChecks=[
+ ['מה מלמדת השיחה על ג׳ תמוז לגבי תחילת הגאולה וההעברה לגלות?',2512354,'shabbos-korach-3-tammuz-5745'],
+ ['כיצד מתוארת חשיבות מעשיו של היחיד והמעבר לברכת הציבור בי״ב תמוז?',2512365,'12-tammuz-5745'],
+ ['מדוע יש להתחיל בלימוד מאמרי הגאולה בנאום של ג׳ תמוז?',2512403,'15-tammuz-5745-discourse-study'],
+ ['כיצד השבת מגלה את העונג שהיה נסתר בימי המעשה?',2512405,'shabbos-balak-17-tammuz-5745'],
+ ['מה תכלית ההתוועדות בשבת מברכים וכיצד נבחנת הצלחתה?',2512413,'shabbos-pinchas-24-tammuz-5745'],
+ ['מהי צדקה רוחנית ביום צום ומה הקשר לשבע מצוות בני נח?',2507435,'17-tammuz-5746-fast-and-spiritual-charity'],
+ ['מדוע מסיימים מסכת תענית בט״ו באב?',2507446,'15-menachem-av-5746-siyum-taanis'],
+ ['כיצד עבודת אלול מחברת חשבון נפש, תורה, תפילה וצדקה?',2507456,'elul-5746-torah-prayer-tzedakah-teshuvah'],
+ ['מה הקשר בין ברכת שלום בי״ט כסלו להפצת חסידות?',2512084,'19-kislev-5746-benediction-peace-torah'],
+ ['מה יישאר מהלקחים של ימי הצום בימות המשיח?',2512137,'10-teves-5746-fast-days-to-joy'],
+ ['כיצד לימוד הלכה משותף מחזק אחדות אחרי פרידה?',2514886,'yechidus-eve-11-sivan-5744'],
+ ['כיצד מתוארת התגברות על ספק ומכשולים בהשפעה על יהודים?',2515477,'yechidus-eve-13-shevat-5744'],
+ ['מה מוצע לעשות במקום נסיעה לרבי בי״א ניסן וכיצד נשמרת האחדות?',2515007,'yechidus-eve-17-adar-ii-5744']
+];
+for(const [question,aid,family] of batch054DirectChecks){
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,question,{mode});
+  assert(m.answerable,`${mode}: batch-054 inspected evidence must answer ${question}`);
+  assert(m.sources.some(e=>String(e.aid)===String(aid)),`${mode}: batch-054 must cite AID ${aid} for ${question}`);
+  assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: batch-054 must retain family ${family}`);
+  assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: batch-054 evidence budget must be respected`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-054 claim needs proposition-level citations`);
+  assert(citationEntailment(m).every(c=>c.valid),`${mode}: batch-054 claim-level citation entailment must pass`);
+  if(mode==='researcher'){
+   assert(m.research&&m.research.evidence_map.length===m.claims.length,`researcher: batch-054 needs a claim-level evidence map`);
+   assert.equal(m.research.cases.length,m.sources.length,`researcher: every batch-054 source needs a case record`);
+   assert.equal(m.research.witnesses.length,m.sources.length,`researcher: every batch-054 source needs a witness record`);
+   assert(m.presentation.detail_level==='witness_level',`researcher: batch-054 must expose witness-level detail`);
+   const w=m.research.witnesses.find(x=>x.family===family);
+   assert(w&&w.witness_class==='derived',`researcher: translated batch-054 witness must remain derived`);
+  }else{
+   assert(!m.research&&m.presentation.detail_level==='summary',`regular: batch-054 must retain concise rendering`);
+  }
+ }
+}
+const batch054SynthesisChecks=[
+ ['כיצד מתוארת אחדות ישראל לאחר מפגש משותף גם כשהמשתתפים חוזרים לבתיהם?',['yechidus-eve-13-shevat-5744','yechidus-eve-11-sivan-5744','yechidus-eve-17-adar-ii-5744']],
+ ['כיצד מועדי י״ב תמוז, י״ז תמוז וט״ו באב נקשרים לגאולה, לצדקה ולשמחה?',['12-tammuz-5745','17-tammuz-5746-fast-and-spiritual-charity','15-menachem-av-5746-siyum-taanis']],
+ ['כיצד עבודת אלול והלקחים מימי הצום מחברים תורה, תפילה, צדקה ותשובה?',['elul-5746-torah-prayer-tzedakah-teshuvah','10-teves-5746-fast-days-to-joy','17-tammuz-5746-fast-and-spiritual-charity']]
+];
+for(const [question,families] of batch054SynthesisChecks){
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,question,{mode});
+  assert(m.answerable,`${mode}: batch-054 multi-source synthesis must be answerable`);
+  assert(families.filter(f=>m.sources.some(e=>e.evidence_family_id===f)).length>=2,`${mode}: batch-054 synthesis must retain at least two intended families`);
+  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2,`${mode}: batch-054 synthesis must not collapse distinct event families`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: batch-054 synthesis claims need source maps`);
+  assert(citationEntailment(m).every(c=>c.valid),`${mode}: batch-054 synthesis claim citations must pass entailment`);
+  assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: batch-054 synthesis evidence budget must be respected`);
+  if(mode==='researcher'){
+   assert(m.research&&m.research.evidence_map.length===m.claims.length,`researcher: batch-054 synthesis needs a claim-level evidence map`);
+   assert.equal(m.research.witnesses.length,m.sources.length,`researcher: batch-054 synthesis needs a witness record for each source`);
+   assert(m.research.witnesses.filter(w=>families.includes(w.family)).every(w=>w.witness_class==='derived'),`researcher: translated batch-054 witnesses must remain derived`);
+  }else{
+   assert(!m.research&&m.presentation.detail_level==='summary',`regular: batch-054 synthesis must retain concise rendering`);
+  }
+ }
+}
+const batch054IndexIdentityChecks=[2512354,2512403,2512405,2512413,2507435,2507446,2507456,2512084,2512137,2512365,2515477,2515007,2514886];
+for(const aid of batch054IndexIdentityChecks){
+ const matches=idx.entries.filter(e=>String(e.aid)===String(aid));
+ assert.equal(matches.length,1,`AID ${aid} must have exactly one item-shaped public-index entry after batch 054`);
+ assert.equal(matches[0].key,`aid:${aid}`,`AID ${aid} must use the preferred stable identity key`);
+ assert.equal(idx.entries.some(e=>e.key===`url:${matches[0].source_url}`),false,`AID ${aid} must not create a duplicate URL-only entry`);
+}
+const batch054NewAids=[2512354,2512403,2512405,2512413,2507435,2507446,2507456,2512084,2512137];
+for(const aid of batch054NewAids){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert.equal(e.canonical_file,'data/items/sie-translated-talks-5745-5746-2026-11-12-054.json',`AID ${aid} must resolve to the batch-054 canonical item file`);
+ assert.equal(e.response_propositions.length,2,`AID ${aid} must have two inspected propositions`);
+}
+const batch054EnrichedCounts={2512365:4,2515477:6,2515007:7,2514886:7};
+for(const [aid,count] of Object.entries(batch054EnrichedCounts)){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e.response_propositions.length>=count,`AID ${aid} must preserve prior propositions and include batch-054 enrichment`);
+}
+
+console.log(`Content readiness: ${unique.size} usable sources; 440 real-corpus answer checks passed, including 32 batch-054 mode-specific checks and 28 item-identity checks`);
 
