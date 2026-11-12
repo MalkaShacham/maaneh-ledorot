@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch053b-record-only-index';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch053c-topic-syntax-fix';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -185,7 +185,7 @@ const TOPIC_ALIASES={
  'ספירת העומר ושלמות העולם':["ספירת העומר","שבעה שבועות מלאים","השלמת העולם","זיכוך המידות","sefirah completion world" ],
  'שליחות בתנאי מדבר':["מדבר","חיי תורה","מציאות קשה","העולם המעשי","live in the desert torah" ],
  'יחידות קבוצתית':["יחידות קבוצתית","יחידות אישית","מעלת הציבור","group yechidus" ],
- 'הודיה על שחרור בי״ב תמוז':["י״ב תמוז","הכרת תודה","שחרור הרבי הריי״צ","ממשלת ארצות הברית","gratitude 12th tammuz" ]
+ 'הודיה על שחרור בי״ב תמוז':["י״ב תמוז","הכרת תודה","שחרור הרבי הריי״צ","ממשלת ארצות הברית","gratitude 12th tammuz" ],
 
  'שבת כמקור ברכה לפני י״ב תמוז':['השבת שלפני י״ב תמוז','שבת שלפני י״ב תמוז','ברכה לשבוע של י״ב תמוז','לכתחילה אריבער','lechatchilah ariber','shabbos before 12 tammuz blessing'],
  'העלאת ימי השבוע בשבת':['ויכולו העלאה ועונג','שבת מעלה את ענייני השבוע','העלאת השבוע בשבת','הכנות ימי החול לשבת ועונג','shabbat elevates the preceding week','vayechulu elevation delight'],
