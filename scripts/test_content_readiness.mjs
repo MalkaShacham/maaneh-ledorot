@@ -23,6 +23,20 @@ for(const aid of [4666202,4666207,4666210]){
   assert(e.proposition_source_locator && e.documented_circumstances);
 }
 assert(queue.records.every(e=>e.source_url&&!ready.has(e.key)),'review queue must exclude inspected content');
+const batch055Required=[
+ [2513915,2],[2513926,2],[2513933,5],[2512360,2],[2513548,2],[2513585,2],[2512155,2],[2513564,2],
+ [5996764,2],[5996765,4],[5996725,4],[2512365,5],[2512137,4]
+];
+for(const [aid,minProps] of batch055Required){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,`batch-055 source ${aid} must have inspected content evidence`);
+ assert.equal(e.status,'Verified',`batch-055 source ${aid} must retain its scoped Verified status`);
+ assert(e.response_propositions.length>=minProps,`batch-055 source ${aid} must expose its inspected propositions`);
+ assert(e.proposition_source_locator&&e.verification_scope,`batch-055 source ${aid} must expose precise locator and scope`);
+ assert.equal(e.context_status,'partial',`batch-055 source ${aid} must preserve partial context`);
+}
+assert.equal(idx.entries.filter(e=>e.evidence_family_id==='10-kislev-5745-farbrengen').length,1,
+ 'the separately published first sicha of 10 Kislev must remain inside one event-level Evidence Family');
 for(const q of ['מה הרבי אמר על חינוך ילדים?','מה הרבי אמר על דאגה?','מה הרבי אמר על בטחון?']){
   for(const mode of ['regular','researcher']){
     const m=buildAnswerModel(idx.entries,q,{mode});
