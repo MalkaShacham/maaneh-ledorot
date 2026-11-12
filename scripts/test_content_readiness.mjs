@@ -89,6 +89,7 @@ for(const mode of ['regular','researcher']){
 const yeshivaEnrollmentQuestion='כיצד הציע הרבי להגדיל את מספר התלמידים בישיבה?';
 for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,yeshivaEnrollmentQuestion,{mode});
+  if(!m.answerable) console.log('YESHIVA_DEBUG',JSON.stringify({mode,reason:m.reason,understanding:m.understanding,source_keys:m.sources.map(e=>e.key),source_aids:m.sources.map(e=>e.aid),source_families:m.sources.map(e=>e.evidence_family_id),insufficient:m.insufficient_evidence}));
   assert(m.answerable,`${mode}: inspected yeshiva-enrollment evidence must answer the query`);
   assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-319'),`${mode}: letter ד׳שיט must support the enrollment answer`);
   assert(m.sources.length<=3,`${mode}: broad education evidence must not flood a specific enrollment-policy answer`);
