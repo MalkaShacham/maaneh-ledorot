@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-mixed-batch048';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch050';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -167,6 +167,15 @@ const TOPIC_ALIASES={
   'סכסוך לפרנסה דין תורה ולא קללה':['סכסוך לפרנסה דין תורה','סכסוך הנוגע לפרנסה','בוררות מוסכמת או דין תורה','לשון פוגענית בחודש אלול','livelihood dispute rabbinic adjudication not abuse'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
   'אמונה':['אמונה','בטחון','faith','belief','trust','emunah','bitachon']
+,
+ 'אחדות לאחר מפגש':["אחדות","מפגש משותף","פרידה","חוזרים לבתים","unity after gathering","unity after parting" ],
+ 'המשך השפעת חג':["השפעת החג","חזרה הביתה","הימים הבאים","להמשיך את ההשפעה","festival influence after returning home" ],
+ 'הפצת חסידות בשפות':["תרגום חסידות","שפות רבות","יידיש","עברית קלאסית","מקומות המרוחקים","spread chassidus in many languages","translation into many languages" ],
+ 'יום הילולא ותוספת תורה':["יום ההילולא","תוספת בעבודת התורה","להוסיף בתורה ומצוות","yahrzeit increase torah mitzvos" ],
+ 'ספירת העומר ושלמות העולם':["ספירת העומר","שבעה שבועות מלאים","השלמת העולם","זיכוך המידות","sefirah completion world" ],
+ 'שליחות בתנאי מדבר':["מדבר","חיי תורה","מציאות קשה","העולם המעשי","live in the desert torah" ],
+ 'יחידות קבוצתית':["יחידות קבוצתית","יחידות אישית","מעלת הציבור","group yechidus" ],
+ 'הודיה על שחרור בי״ב תמוז':["י״ב תמוז","הכרת תודה","שחרור הרבי הריי״צ","ממשלת ארצות הברית","gratitude 12th tammuz" ]
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
