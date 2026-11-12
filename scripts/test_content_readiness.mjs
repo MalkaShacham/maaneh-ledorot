@@ -780,10 +780,10 @@ for(const [question,family] of batch049Checks){
 const batch050Checks=[
   ['מה נאמר על תרגום חסידות לשפות רבות עבור מי שאינם מבינים עברית קלאסית?','shabbos-ki-seitzei-14-elul-5745'],
   ['מה הקשר בין ספירת העומר להשלמת העולם ולזיכוך המידות?','erev-shavuos-5743-sefirah-completion'],
-  ['כיצד הפצת חסידות למקומות רחוקים נקשרת להכנה לגאולה?','motzaei-tzav-13-nissan-5743-tzemach-tzedek-yahrzeit'],
+  ['מה הקשר בין הפצת המעיינות של חסידות למקומות המרוחקים ביותר לבין ההכנה לגאולה?','motzaei-tzav-13-nissan-5743-tzemach-tzedek-yahrzeit'],
   ['מה נדרש במציאות קשה המתוארת כמדבר?','shabbos-bamidbar-5-sivan-5745-life-in-desert'],
   ['מה הקשר בין י״ב תמוז, אחדות והכרת תודה על השחרור?','12-tammuz-5743-unity-and-gratitude'],
-  ['מה נאמר על תוספת תורה ומצוות ביום הילולא?','yechidus-eve-13-shevat-5744'],
+  ['מה נאמר על יום ההילולא של הרבי הקודם והוספה בתורה ובמצוות?','yechidus-eve-13-shevat-5744'],
   ['מה נאמר על יחידות קבוצתית אחרי פורים?','yechidus-eve-17-adar-ii-5744'],
   ['כיצד לשמר את השפעת המפגש לאחר החזרה הביתה?','yechidus-eve-25-nissan-5744']
 ];
