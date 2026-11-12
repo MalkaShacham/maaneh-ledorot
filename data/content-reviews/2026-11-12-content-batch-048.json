@@ -1,0 +1,20 @@
+{
+  "schema":"content-review-batch-v1","batch_id":"2026-11-12-content-batch-048","generated":"2026-11-12",
+  "method":"Direct public search/open inspection of eight item-level correspondence bodies on authorized Chabad.org/TheRebbe.org and Sichos in English pages. The known blocked crawler was not used.",
+  "source":{"authorized_online_items":[2278228,3905895,4243257,5920864,1272,1264,1273740,3566500]},
+  "reviewed_items":8,"new_content_records":7,"enriched_existing_canonical_records":1,"duplicate_or_continuity_checks_without_new_propositions":0,"propositions_added":23,
+  "metric_delta":{"answer_eligible_unique_sources_before":531,"answer_eligible_unique_sources_after":538,"content_verified_unique_sources_before":528,"content_verified_unique_sources_after":535,"answer_eligible_propositions_before":1686,"answer_eligible_propositions_after":1709,"note":"Net eligibility is +7 source families and +23 propositions. Aid 1273740 was enriched in place rather than duplicated. Translations, excerpts and secretarial drafts are tied to their underlying letter or draft family and must not become additional witnesses if another manifestation is later added."},
+  "evidence_family_dedup":[
+    {"member_ids":["sie-letter-634-aid-2278228","sie-letter-1029-aid-3905895","sie-letter-72-aid-5920864"],"counting_rule":"Each English translation is one manifestation of its numbered-letter family, not an independent witness from the original-language letter."},
+    {"member_ids":["chabad-letter-excerpt-aid-4243257","chabad-letter-1273740"],"counting_rule":"Each published excerpt is linked to its underlying letter family; later full or original-language witnesses must be merged rather than counted as unrelated evidence."},
+    {"member_ids":["chabad-original-draft-aid-1272","chabad-original-draft-aid-1264"],"counting_rule":"Each is explicitly a secretarial draft whose final sent version may have changed; a later final letter must be compared and linked to the same family."}
+  ],
+  "blocked_alternatives":[
+    {"source":"Direct open of shortened Chabad.org AID URLs 2278228, 3905877, 4243257 and 5920864","result":"The shortened URLs were not accessible through direct open.","fallback":"Used public search to resolve the complete canonical publisher URLs, then opened and inspected the full exposed bodies."},
+    {"source":"Requested candidate aid 3905877","result":"Search did not resolve that number to the expected item body; the verified guarantors letter was aid 3905895.","fallback":"Used the canonical publisher result for aid 3905895 and preserved its exact identity rather than inferring from the earlier candidate number."},
+    {"source":"scripts/acquire_source_content.py and the previously blocked GitHub-hosted route","result":"Not retried; the known HTTP 403 route remained outside this run.","fallback":"Used public search/open access to authorized item bodies."}
+  ],
+  "verification_scope":"Eight complete visible publisher items were inspected. Two are explicitly secretarial drafts, two are published excerpts, three are publisher translations and one is a publisher-presented signed letter. Original-language witnesses, incoming letters, cited works, conference records, donation records and outcomes were not independently verified.",
+  "rights_note":"Only bounded non-verbatim Hebrew research paraphrases and precise item/line locators were stored; no protected letter was copied in full.",
+  "quality_note":"All propositions are source-grounded paraphrases. Historical emergency rhetoric and social claims remain scoped to their dates; individual family and donation guidance is not generalized into professional or universal advice."
+}

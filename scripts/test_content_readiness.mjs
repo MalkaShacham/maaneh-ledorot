@@ -737,5 +737,24 @@ for(const [question,family] of batch047Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-047 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; three hundred twenty real-corpus answer checks passed`);
+const batch048Checks=[
+  ['מה נדרש מוועידה ציבורית לעשות למען חינוך ילדי עולים וילדים יהודים באמריקה מעבר להבעת דאגה?','letter-no-634-immigrant-and-american-jewish-education'],
+  ['מדוע האחריות לחינוך ילדים לקראת שבועות אינה מוגבלת לילדי המשפחה?','letter-no-1029-children-guarantors-education'],
+  ['מדוע חינוך ילדה למצוות לפני בת מצווה אינו רק הכנה לגיל החיוב?','igrot-kodesh-v30-p60-girl-education-shabbat-candle'],
+  ['מדוע אין למחנך להתייאש גם מול הרגל עמוק התנגדות או קושי להסביר?','letter-no-72-educator-not-despair'],
+  ['האם החסידות מבקשת לפרוש מן העולם או להתעניין בכל תחומי המציאות?','original-draft-aid-1272-chassidism-world-engagement'],
+  ['מתי מוצע לדחות דיון מופשט ולתת קדימות לפעולה חינוכית מיידית?','original-draft-aid-1264-education-emergency-priority'],
+  ['מדוע עזרה בבית אינה בהכרח תחליף לתשומת לב אישית לילדים כששוקלים לנהל חנות?','chabad-letter-1273740'],
+  ['מהם שני הטעמים שניתנו למדיניות של הימנעות מגיוס כספים ישיר?','letter-aid-3566500-fundraising-policy-donor-capacity']
+];
+for(const [question,family] of batch048Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-048 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: the intended batch-048 evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-048 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-048 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; three hundred twenty-eight real-corpus answer checks passed`);
 
