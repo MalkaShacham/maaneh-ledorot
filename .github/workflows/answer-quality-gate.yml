@@ -22,6 +22,8 @@ on:
       - '.github/workflows/hourly-corpus-pipeline.yml'
       - '.github/workflows/reconcile-metrics.yml'
       - 'scripts/test_workflow_write_safety.py'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
