@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch055c-charity-amount-precision';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch056-igrot-precision';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -210,7 +210,15 @@ const TOPIC_ALIASES={
  'התוועדות שבת מברכים והחלטות בפועל':['התוועדות שבת מברכים','החלטות טובות בהתוועדות','מעשה בפועל אחרי התוועדות','Shabbos Mevarchim farbrengen good resolutions'],
  'לימוד הלכה משותף ופרידה':['לימוד הלכה משותף לפני פרידה','לימוד הלכה לפני חזרה לבתים','אחדות דרך לימוד משותף','shared halachah before parting','unity through shared study'],
  'חינוך יהודי ולימוד תורה בחופשה':['חינוך יהודי לילדים','לימוד תורה בחופשת הקיץ','אין הפסקה מלימוד תורה בחופש','Jewish education summer vacation Torah study'],
- 'חופש רוחני בגלות':['חופש יהודי בגלות','חופש רוחני תחת שלטון זר','לא להיכנע להשפעה זרה','Jewish spiritual freedom in exile']
+ 'חופש רוחני בגלות':['חופש יהודי בגלות','חופש רוחני תחת שלטון זר','לא להיכנע להשפעה זרה','Jewish spiritual freedom in exile'],
+ 'מנהגי אבלות לאחר פטירת הורה':["מנהגי אבלות","פטירת אם","פטירת הורה","יזכור בשנה הראשונה","שלושים","קדיש","mourning customs","mourning after parent","parent's passing"],
+ 'שליחות חינוכית במרוקו':["שליחות במרוקו","חינוך בצפון אפריקה","מיכאל ליפסקר","ליפסקר","מרוקו","Morocco","North Africa","education shlichus"],
+ 'איסוף כתבי הרש״ב והדפסת חסידות':["כתבי הרש״ב","מכתבי הרש״ב","מאמרי הרש״ב","איסוף כתבי יד","העתקת כתבי יד","הדפסת חסידות","הפצת כתבי חסידות","Rebbe Rashab manuscripts","collecting letters","copying manuscripts"],
+ 'תרומה למעמד והפצת חומרי חסידות':["מעמד","ניפנה","תרומה למעמד","תמיכה בעבודת הרבי","הפצת חומר מודפס","maamad","nifneh","printed matter","donor"],
+ 'קביעת שבת ביום ארוך':["שבת בקוטב","יום ארוך מ־24 שעות","יממה של 24 שעות","קו אורך","אופק","שבת במקום שאין שקיעה","Shabbos where daylight is longer than 24 hours","North Pole Shabbos","24-hour days"],
+ 'לימוד משניות ביום יארצייט וקידוש בעמידה':["לימוד משניות ביום יארצייט","משניות לפי אותיות שם הנפטר","קידוש בעמידה","Mishnayos on yahrzeit","standing Kiddush"],
+ 'סיוע רוחני לניצולי אירופה':["ניצולי אירופה","סיוע רוחני לניצולים","ספר תורה לאירופה","survivors in Europe","Torah scroll to Europe"],
+
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
