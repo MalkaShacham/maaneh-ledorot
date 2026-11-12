@@ -217,6 +217,20 @@ const TOPICS={
  'שליחות בתנאי מדבר':["מדבר","חיי תורה","מציאות קשה","העולם המעשי","live in the desert torah" ],
  'יחידות קבוצתית':["יחידות קבוצתית","יחידות אישית","מעלת הציבור","group yechidus" ],
  'הודיה על שחרור בי״ב תמוז':["י״ב תמוז","הכרת תודה","שחרור הרבי הריי״צ","ממשלת ארצות הברית","gratitude 12th tammuz" ]
+
+ 'שבת כמקור ברכה לפני י״ב תמוז':['השבת שלפני י״ב תמוז','שבת שלפני י״ב תמוז','ברכה לשבוע של י״ב תמוז','לכתחילה אריבער','lechatchilah ariber','shabbos before 12 tammuz blessing'],
+ 'העלאת ימי השבוע בשבת':['ויכולו העלאה ועונג','שבת מעלה את ענייני השבוע','העלאת השבוע בשבת','הכנות ימי החול לשבת ועונג','shabbat elevates the preceding week','vayechulu elevation delight'],
+ 'שבת שובה ותשובה':['שבת שובה ושבת תשובה','ההבדל בין שבת שובה לשבת תשובה','עשרת ימי תשובה ושבת שובה','shabbos shuvah shabbos teshuvah'],
+ 'ראש השנה כיום ארוך':['שני ימי ראש השנה כיום אחד ארוך','ראש השנה יום אחד ארוך','שהחיינו ביום השני של ראש השנה','rosh hashanah one long day'],
+ 'אחדות בשבת והתוועדות':['אחדות יהודים בסעודת שבת','התוועדות שבת ואחדות','סעודת שבת מאחדת','shabbat meal farbrengen unity'],
+ 'ג׳ תמוז תחילת הגאולה':['ג׳ תמוז תחילת הגאולה','ג תמוז תחילת הגאולה','יציאה מהכלא תחילת הגאולה','הפצת חסידות לאחר השחרור','third of tammuz beginning redemption'],
+ 'ערב יום הכיפורים ויחידה':['ערב יום הכיפורים ודרגת היחידה','חמש התפילות ויחידה','חמש דרגות הנשמה יחידה','erev yom kippur yechidah five prayers'],
+ 'הילולא מצער לשמחה ולפעולה':['צער יום הילולא לשמחה','הילולא מצער לשמחה','יום הילולא מעורר מעשים טובים בשמחה','yahrzeit sorrow to joy deeds'],
+ 'ברכה ליחיד ואחדות הציבור':['ברכה ליחיד ולציבור','ברכה ליחיד ואחדות ישראל','היחיד חלק מהציבור בברכה','individual blessing community unity'],
+ 'זיכרון יום הגאולה מחייב פעולה':['זיכרון אירוע מחייב מעשה','זיכרון ושמירה מתורגמים למעשה','זיכרון יום הגאולה והפצת תורה','remembering liberation into action'],
+ 'אחדות בפורים':['אחדות יהודים בפורים','מפגש פורים ואחדות','משלוח מנות ומתנות לאביונים אחדות','purim unity gathering'],
+ 'מבצע פורים נמשך לפסח ולצדקה':['מבצע פורים נמשך לפסח','הכנות לפסח מתחילות מפורים','מצות לעניים ממבצע פורים','purim campaign continues after purim pesach charity'],
+ 'לימוד רמב״ם ואחדות מרחבית':['לימוד רמב״ם משותף במקומות שונים','אחדות בלימוד רמב״ם מרחוק','לימוד אותו קטע ברמב״ם ואחדות','shared rambam study unity across distance']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -345,6 +359,19 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('שבת כמקור ברכה לפני י״ב תמוז')&&(!containsTerm(body,'שבת')||!containsTerm(body,'תמוז')||!containsTerm(body,'ברכה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Shabbat-before-12-Tammuz blessing setting is absent']};
+ if(u.topics.includes('העלאת ימי השבוע בשבת')&&(!containsTerm(body,'ויכולו')||!containsTerm(body,'שבת')||!containsTerm(body,'עונג')))return{score:0,support:'insufficient_specific_evidence',reasons:['Vayechulu elevation-and-delight setting is absent']};
+ if(u.topics.includes('שבת שובה ותשובה')&&(!containsTerm(body,'שבת שובה')||!containsTerm(body,'שבת תשובה')||!containsTerm(body,'תשרי')))return{score:0,support:'insufficient_specific_evidence',reasons:['Shabbos Shuvah/Teshuvah and Tishrei setting is absent']};
+ if(u.topics.includes('ראש השנה כיום ארוך')&&(!containsTerm(body,'ראש השנה')||!containsTerm(body,'יום אחד ארוך')||!containsTerm(body,'שהחיינו')))return{score:0,support:'insufficient_specific_evidence',reasons:['Rosh Hashanah one-long-day and Shehecheyanu setting is absent']};
+ if(u.topics.includes('אחדות בשבת והתוועדות')&&(!containsTerm(body,'שבת')||!containsTerm(body,'התוועדות')||!containsTerm(body,'אחדות')))return{score:0,support:'insufficient_specific_evidence',reasons:['Shabbat farbrengen unity setting is absent']};
+ if(u.topics.includes('ג׳ תמוז תחילת הגאולה')&&(!containsTerm(body,'תמוז')||!containsTerm(body,'תחילת')||!containsTerm(body,'גאולה')))return{score:0,support:'insufficient_specific_evidence',reasons:['third-of-Tammuz beginning-of-redemption setting is absent']};
+ if(u.topics.includes('ערב יום הכיפורים ויחידה')&&(!containsTerm(body,'ערב יום הכיפורים')||!containsTerm(body,'יחידה')||!containsTerm(body,'חמש')))return{score:0,support:'insufficient_specific_evidence',reasons:['Erev Yom Kippur and Yechidah setting is absent']};
+ if(u.topics.includes('הילולא מצער לשמחה ולפעולה')&&(!containsTerm(body,'הילולא')||!containsTerm(body,'שמחה')||!containsTerm(body,'תורה')||!containsTerm(body,'מצוות')))return{score:0,support:'insufficient_specific_evidence',reasons:['yahrzeit sorrow-to-joy and Torah/mitzvot setting is absent']};
+ if(u.topics.includes('ברכה ליחיד ואחדות הציבור')&&(!containsTerm(body,'ברכה')||!containsTerm(body,'יחיד')||!containsTerm(body,'ציבור')))return{score:0,support:'insufficient_specific_evidence',reasons:['individual-to-community blessing setting is absent']};
+ if(u.topics.includes('זיכרון יום הגאולה מחייב פעולה')&&(!containsTerm(body,'זיכרון')||!containsTerm(body,'מעשה')||!containsTerm(body,'תורה')))return{score:0,support:'insufficient_specific_evidence',reasons:['liberation remembrance-to-action setting is absent']};
+ if(u.topics.includes('אחדות בפורים')&&(!containsTerm(body,'פורים')||!containsTerm(body,'אחדות')||!['משלוח מנות','מתנות לאביונים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Purim unity and mitzvah setting is absent']};
+ if(u.topics.includes('מבצע פורים נמשך לפסח ולצדקה')&&(!containsTerm(body,'פורים')||!containsTerm(body,'פסח')||!['צדקה','מצות'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Purim-to-Pesach charity campaign setting is absent']};
+ if(u.topics.includes('לימוד רמב״ם ואחדות מרחבית')&&(!containsTerm(body,'רמב״ם')||!containsTerm(body,'אחדות')||!['מקומות','מרוחקים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['shared Rambam study across locations setting is absent']};
  if(u.topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&(!containsTerm(body,'צפון אפריקה')||!containsTerm(body,'יום ראשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['North-Africa Sunday-departure setting is absent']};
  if(u.topics.includes('עולים ממרוקו ושפת ההתוועדות')&&!['עולים ממרוקו','התוועדויות','יידיש','עברית'].every(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['Moroccan immigrant Hebrew-farbrengen language-access setting is absent']};
  if(u.topics.includes('גיל העולם ורדיואקטיביות')&&(!containsTerm(body,'גיל העולם')||!containsTerm(body,'רדיואקטיביות')))return{score:0,support:'insufficient_specific_evidence',reasons:['radioactivity and world-age correspondence setting is absent']};
