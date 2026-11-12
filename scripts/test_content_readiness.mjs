@@ -271,7 +271,7 @@ for(const [question,key] of batch023Checks){
     const m=buildAnswerModel(idx.entries,question,{mode});
     assert(m.answerable,`${mode}: inspected batch-023 evidence must answer ${question}`);
     assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-023 witness must be retrieved for ${question}`);
-    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-023 query must not be flooded by generic evidence`);
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-023 query must not be flooded by generic evidence: ${question}; sources=${m.sources.map(e=>e.key).join(',')}`);
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-023 claim needs a proposition-level citation`);
   }
 }
