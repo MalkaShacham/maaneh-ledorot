@@ -207,7 +207,16 @@ const TOPICS={
  'שבת חולה דחויה או הותרה':['חולה שיש בו סכנה','שבת הותרה או נדחית','שבת דחויה או הותרה','הותרה או רק נדחית','shabbat dangerously ill permitted deferred'],
  'שתי בחינות קריאת שמע':['שתי בחינות בקריאת שמע','שתי הבחינות בקריאת שמע','בחינות קריאת שמע','שער התפילה לאדמו״ר האמצעי','אמרי בינה','two aspects shema'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
- אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon']};
+ אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon'],
+ 'אחדות לאחר מפגש':["אחדות","מפגש משותף","פרידה","חוזרים לבתים","unity after gathering","unity after parting" ],
+ 'המשך השפעת חג':["השפעת החג","חזרה הביתה","הימים הבאים","להמשיך את ההשפעה","festival influence after returning home" ],
+ 'הפצת חסידות בשפות':["תרגום חסידות","שפות רבות","יידיש","עברית קלאסית","מקומות המרוחקים","spread chassidus in many languages","translation into many languages" ],
+ 'יום הילולא ותוספת תורה':["יום ההילולא","תוספת בעבודת התורה","להוסיף בתורה ומצוות","yahrzeit increase torah mitzvos" ],
+ 'ספירת העומר ושלמות העולם':["ספירת העומר","שבעה שבועות מלאים","השלמת העולם","זיכוך המידות","sefirah completion world" ],
+ 'שליחות בתנאי מדבר':["מדבר","חיי תורה","מציאות קשה","העולם המעשי","live in the desert torah" ],
+ 'יחידות קבוצתית':["יחידות קבוצתית","יחידות אישית","מעלת הציבור","group yechidus" ],
+ 'הודיה על שחרור בי״ב תמוז':["י״ב תמוז","הכרת תודה","שחרור הרבי הריי״צ","ממשלת ארצות הברית","gratitude 12th tammuz" ]
+};
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
 const text=v=>arr(v).map(x=>typeof x==='string'?x:JSON.stringify(x)).join(' ');
