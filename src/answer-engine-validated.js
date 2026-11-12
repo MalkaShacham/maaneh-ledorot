@@ -241,6 +241,8 @@ const TOPIC_ALIASES={
  'העתק שיחות סוכות':['העתק שיחות סוכות','העתקה של שיחות סוכות','שיחות סוכות','Sukkot talks copy'],
  'מחלקת קה״ת בשנגהי':['מחלקת קה״ת בשנגהי','מחלקת קה״ת','הקמת מחלקת קה״ת','שנגהי','300 עותקים','Shanghai Kehot department','Kehot publishing department'],
  'לימוד יומי תחת עומס עבודה':['לימוד יומי תחת עומס עבודה','לימוד חומש וחק לישראל','חומש וחק לישראל','חלוקת הלימוד לפסקאות','חלוקת שיעורי חומש במהלך היום','לימוד בימי החורף הקצרים','טרדת העבודה ולימוד','לימוד בחנות','daily Torah study under work constraints','Chumash and Chok L’Yisrael during work'],
+  'הדפסת ספרי חסידות ותיקוני מהדורות':['הדפסת ספרי חסידות ותיקוני מהדורות','הדפסת ספרי חסידות','הדפסת כתבי רבותינו','קרן להדפסה','הפצת הנדפסים','השמטות ושינויי נוסח','מילואים ותיקונים לספר השיחות','publishing chassidic texts and editorial corrections','printing fund and distribution']
+
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
