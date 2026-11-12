@@ -240,6 +240,35 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher')assert(m.research&&m.research.evidence_families>=2&&m.research.evidence_map.length>0,`${mode}: researcher comparison must expose both families and claim-to-witness map`);
  else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
 }
+const freeChoiceQuestion='כיצד הסביר הרבי את היחס בין ידיעת ה׳ לבחירה חופשית?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,freeChoiceQuestion,{mode});
+ assert(m.answerable,`${mode}: inspected foreknowledge/free-choice letter must answer`);
+ assert(m.sources.some(e=>e.key==='aid:5100487'),`${mode}: letter ו׳תשמא must support the free-choice answer`);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: every free-choice claim needs a proposition-level citation`);
+ assert(m.citation_entailment.every(x=>x.valid),`${mode}: free-choice citations must pass entailment`);
+}
+const providenceQuestion='מה מתארת איגרת 94 על השגחה פרטית בדומם, בצומח ובבעלי חיים?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,providenceQuestion,{mode});
+ assert(m.answerable,`${mode}: inspected English translation of Letter 94 must answer`);
+ const translated=m.sources.find(e=>e.key==='aid:5920877');
+ assert(translated,`${mode}: Letter 94 translation must be retrieved`);
+ assert.equal(translated._independent_witness,false,`${mode}: translated Letter 94 must not be treated as an independent witness`);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: every providence claim needs a proposition-level citation`);
+ if(mode==='researcher')assert(m.research?.evidence_integrity?.derived_non_independent>=1&&m.research.evidence_map.length>0,'researcher mode must expose the translation as derived evidence');
+}
+const providenceFreeChoiceComparison='השווה בין מכתב ו׳תשמא לבין איגרת 94: ידיעת ה׳ ובחירה חופשית לעומת השגחה פרטית על פרטי הבריאה';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,providenceFreeChoiceComparison,{mode});
+ assert(m.answerable,`${mode}: free-choice/providence cross-source comparison must be answerable`);
+ assert(m.sources.some(e=>e.key==='aid:5100487'),`${mode}: comparison must include the Hebrew letter on foreknowledge and free choice`);
+ assert(m.sources.some(e=>e.key==='aid:5920877'),`${mode}: comparison must include the English translated correspondence brief on Divine Providence`);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: every comparative claim needs proposition-level citations`);
+ assert(m.citation_entailment.every(x=>x.valid),`${mode}: comparison citations must pass entailment`);
+ assert(m.comparative_coverage.supported_topics.includes('ידיעה ובחירה חופשית')&&m.comparative_coverage.supported_topics.includes('השגחה פרטית'),`${mode}: both requested conceptual sides need claim-level coverage`);
+ if(mode==='researcher')assert(m.research?.evidence_map?.length>0&&m.research.evidence_families>=2,'researcher mode must expose both Evidence Families and the claim-to-witness map');
+}
 const batch019Checks=[
   ['האם צריך ללמוד זוהר לפני שמתחילים ללמוד חסידות?','id:igrot-scan-v13-letter-4-371'],
   ['כיצד להשפיע על כיסוי ראש כששכנוע ישיר לא מצליח?','id:igrot-kodesh-v13-דשעב'],

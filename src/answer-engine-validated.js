@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-sprint1-topic-gate-v8';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-batch059-multisource-v9';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -235,7 +235,9 @@ const TOPIC_ALIASES={
  'התכתבות עם הוצאה לאור וספרים':['ילדותנו','ספרי ילדותנו','הוצאה לאור בירושלים','הוצאת ספרים בירושלים','קבלת ספרים','publication correspondence books']
 ,
  'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
- 'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence']
+ 'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence'],
+  'ידיעה ובחירה חופשית':['ידיעת ה׳','ידיעת השם','היחס בין ידיעת ה׳ לבחירה','בחירה חופשית','free choice','divine foreknowledge'],
+  'השגחה פרטית':['השגחה פרטית','השגחה על כל פרט','השגחה על דומם צומח וחי','דומם','צומח','בעלי חיים','Divine Providence','Hashgachah Peratis']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);

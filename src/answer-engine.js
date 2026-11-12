@@ -7,7 +7,10 @@ const TOPICS={
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
  בריאות:['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אמא','אם המשפחה','woman','women','mother','פרוי','פרויען'],
- פרנסה:['פרנסה','עסק','livelihood','business','parnassa'], שליחות:['שליח','שליחות','shliach','shlichus','mission'],
+ פרנסה:['פרנסה','עסק','livelihood','business','parnassa'],
+ 'ידיעה ובחירה חופשית':['ידיעת ה׳','ידיעת השם','ידיעה ובחירה','בחירה חופשית','free choice','divine foreknowledge','foreknowledge'],
+ 'השגחה פרטית':['השגחה פרטית','השגחה על כל פרט','השגחה על דומם צומח וחי','דומם','צומח','בעלי חיים','divine providence','hashgachah peratis'],
+ שליחות:['שליח','שליחות','shliach','shlichus','mission'],
  נישואין:['שלום בית','נישוא','חתונ','אשה','marriage','wedding','husband','wife','sholom bayis'],
  'לימוד הלכה':['הלכה','הלכות','קיצור שולחן ערוך','לימוד הלכה','practical halacha','halacha','halachic study'],
  'שיקום לאחר פיגוע':['שיקום','פיגוע','אחרי הפיגוע','לאחר הפיגוע','recovery after attack','attack recovery'],
@@ -41,7 +44,7 @@ const TOPICS={
  'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד בישיבה','מסחר בזמן לימוד בישיבה','עסק בזמן לימוד בישיבה','מסחר בזמן סדרי הלימוד בישיבה'],
  'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
  'סניף תלמוד תורה ומחנה יום':['סניף תלמוד תורה שאינו מצליח','לסגור סניף תלמוד תורה','חיסול הסניף','מחנה יום','בסיס לרכישת תלמידים','failing talmud torah branch','day camp student recruitment'],
- 'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','לימוד אישי','הלימוד האישי','בלי להזניח לימוד אישי','increase class participants','personal study obligation'],
+ 'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','בלי להזניח לימוד אישי','increase class participants'],
  'כיסוי ראש והשפעה עקיפה':['כיסוי ראש כששכנוע ישיר לא מצליח','כיסוי ראש והשפעה עקיפה','להשפיע בעקיפין על כיסוי ראש','כיסוי הראש','השפעה ישירה','בעקיפין','hair covering indirect influence'],
  'רופאים מומחים והתאמת לימוד':['טיפול רופאים מומחים והתקשה בלימוד','רופאים מומחים והתקשה בלימוד','רופאים מומחים','לשמוע להנחיותיהם','לימוד לגירסא','לימוד בקיאותי','expert doctors study adjustment'],
  'בית מרקחת ושם כפר חב״ד':['בית מרקחת ושם כפר חב״ד','פתיחת בית מרקחת בכפר חב״ד','השם שפריר','כפר חב״ד א׳ וב׳','kfar chabad pharmacy and name'],
@@ -427,8 +430,14 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('מרה שחורה וחששות ללא יסוד')&&!arr(e.response_propositions).some(p=>containsTerm(p,'מרה שחורה')&&containsTerm(p,'חששות')))return{score:0,support:'insufficient_specific_evidence',reasons:['melancholy answer requires the explicit personal-context terms, not generic worry evidence']};
  if(u.topics.includes('התכתבות עם הוצאה לאור וספרים')&&!arr(e.response_propositions).some(p=>containsTerm(p,'ילדותנו')&&containsTerm(p,'הוצאה לאור')))return{score:0,support:'insufficient_specific_evidence',reasons:['publication-correspondence answer requires both the named book and publisher exchange in one witness']};
  if(u.topics.includes('נוסח תפילה באיחוד בתי כנסת')&&containsTerm(u.query,'ושמרו')&&!arr(e.response_propositions).some(p=>containsTerm(p,'ושמרו')&&containsTerm(p,'לפני התיבה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Veshamru question requires the specific leading-prayer context, not a generic prayer-rite mention']};
- if(u.topics.includes('הרחבת שיעור חסידות')&&!arr(e.response_propositions).some(p=>containsTerm(p,'תוספת אברכים בשיעור חסידות')&&containsTerm(p,'הפצת המעיינות')))return{score:0,support:'insufficient_specific_evidence',reasons:['class-expansion answer requires the inspected proposition about adding participants to a Chassidus class and its stated purpose']};
- if(u.topics.includes('מדריך מחנה גן ישראל והשפעה')&&(!containsTerm(body,'מחנה גן ישראל')||!containsTerm(body,'לימוד אישי')))return{score:0,support:'insufficient_specific_evidence',reasons:['camp-counselor answer requires both the named camp setting and the personal-study qualification']};
+ const focusedProps=arr(e.response_propositions);
+ const focusedWitnessGates=[
+  {topic:'הרחבת שיעור חסידות',ok:focusedProps.some(p=>containsTerm(p,'תוספת אברכים בשיעור חסידות')&&containsTerm(p,'הפצת המעיינות'))},
+  {topic:'מדריך מחנה גן ישראל והשפעה',ok:focusedProps.some(p=>containsTerm(p,'מחנה גן ישראל'))&&focusedProps.some(p=>containsTerm(p,'לימוד אישי'))},
+  {topic:'ידיעה ובחירה חופשית',ok:focusedProps.some(p=>containsTerm(p,'ידיעה')&&containsTerm(p,'בחירה')&&containsTerm(p,'חופשית'))},
+  {topic:'השגחה פרטית',ok:focusedProps.some(p=>containsTerm(p,'השגחה פרטית')&&['דומם','צומח','בעלי חיים'].some(t=>containsTerm(p,t)))}
+ ].filter(g=>u.topics.includes(g.topic));
+ if(focusedWitnessGates.length&&!focusedWitnessGates.some(g=>g.ok))return{score:0,support:'insufficient_specific_evidence',reasons:[`No single witness satisfied any requested focused evidence gate: ${focusedWitnessGates.map(g=>g.topic).join(', ')}`]};
  if(u.topics.includes('הרחבת ישיבה')){
   const explicitRecruitment=arr(e.response_propositions).some(p=>['לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
   if(!explicitRecruitment)return{score:0,support:'insufficient_specific_evidence',reasons:['A yeshiva-enrollment answer requires an inspected proposition with an explicit recruitment/expansion action or target; decline and perseverance alone are not a recruitment plan.']};
