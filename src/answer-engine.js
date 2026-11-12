@@ -213,6 +213,7 @@ const TOPICS={
  'הפצת חסידות בשפות':["תרגום חסידות","שפות רבות","יידיש","עברית קלאסית","מקומות המרוחקים","spread chassidus in many languages","translation into many languages" ],
  'יום הילולא ותוספת תורה':["יום ההילולא","תוספת בעבודת התורה","להוסיף בתורה ומצוות","yahrzeit increase torah mitzvos" ],
  'ספירת העומר ושלמות העולם':["ספירת העומר","שבעה שבועות מלאים","השלמת העולם","זיכוך המידות","sefirah completion world" ],
+ 'גיל העולם ורדיואקטיביות':['גיל העולם','רדיואקטיביות','קרינה רדיואקטיבית','radioactivity age of world'],
  'שליחות בתנאי מדבר':["מדבר","חיי תורה","מציאות קשה","העולם המעשי","live in the desert torah" ],
  'יחידות קבוצתית':["יחידות קבוצתית","יחידות אישית","מעלת הציבור","group yechidus" ],
  'הודיה על שחרור בי״ב תמוז':["י״ב תמוז","הכרת תודה","שחרור הרבי הריי״צ","ממשלת ארצות הברית","gratitude 12th tammuz" ]
@@ -302,6 +303,7 @@ export function understandQuestion(q){
  if(topics.includes('זכירת חסדים מול קשיי חיים'))topics=topics.filter(t=>!['אמונה','דאגה','בריאות'].includes(t));
  if(topics.includes('מכירת בניין ישיבה בעת קושי'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('משרת חזן בנוסח האריזל'))topics=topics.filter(t=>t!=='נוסח תפילה באיחוד בתי כנסת');
+ if(topics.includes('גיל העולם ורדיואקטיביות'))topics=topics.filter(t=>t!=='ספירת העומר ושלמות העולם');
  // A specific Moroccan-immigrant language-access question must not inherit generic
  // language-dissemination, Yiddish, or unrelated Morocco topics. The answer gate below
  // also requires the actual immigrant/farbrengen setting in the inspected proposition body.
@@ -345,6 +347,7 @@ export function propositionRelevance(e,u){
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
  if(u.topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&(!containsTerm(body,'צפון אפריקה')||!containsTerm(body,'יום ראשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['North-Africa Sunday-departure setting is absent']};
  if(u.topics.includes('עולים ממרוקו ושפת ההתוועדות')&&!['עולים ממרוקו','התוועדויות','יידיש','עברית'].every(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['Moroccan immigrant Hebrew-farbrengen language-access setting is absent']};
+ if(u.topics.includes('גיל העולם ורדיואקטיביות')&&(!containsTerm(body,'גיל העולם')||!containsTerm(body,'רדיואקטיביות')))return{score:0,support:'insufficient_specific_evidence',reasons:['radioactivity and world-age correspondence setting is absent']};
  if(u.topics.includes('אמת בלי פשרה ודרך אישית')&&(!containsTerm(body,'אמת')||!containsTerm(body,'פשרה')))return{score:0,support:'insufficient_specific_evidence',reasons:['truth-without-compromise setting is absent']};
  if(u.topics.includes('התבוננות יומית לפני תפילה')&&(!containsTerm(body,'התבוננות')||!containsTerm(body,'תפילה')))return{score:0,support:'insufficient_specific_evidence',reasons:['daily contemplation-before-prayer setting is absent']};
  if(u.topics.includes('יסודות תורה ומצוות לבית')&&(!containsTerm(body,'בית בישראל')||!containsTerm(body,'יסודות')))return{score:0,support:'insufficient_specific_evidence',reasons:['durable Jewish-home foundations are absent']};
