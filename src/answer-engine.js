@@ -280,7 +280,8 @@ const TOPICS={
  'התכתבות עם הוצאה לאור וספרים':['ילדותנו','ספרי ילדותנו','הוצאה לאור בירושלים','הוצאת ספרים בירושלים','קבלת ספרים','publication correspondence books']
 ,
  'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
- 'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence']
+ 'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence'],
+ 'לימוד יומי תחת עומס עבודה':['לימוד יומי תחת עומס עבודה','לימוד חומש וחק לישראל','חומש וחק לישראל','חלוקת הלימוד לפסקאות','חלוקת שיעורי חומש במהלך היום','לימוד בימי החורף הקצרים','טרדת העבודה ולימוד','לימוד בחנות','daily Torah study under work constraints','Chumash and Chok L’Yisrael during work'],
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
