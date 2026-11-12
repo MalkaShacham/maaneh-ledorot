@@ -1305,7 +1305,7 @@ for(const aid of [4666211,4666215,4666216,4666232]){
  assert.equal(matches.length,1,`AID ${aid} duplicate aliases must collapse to one stable source identity`);
  assert(matches[0].evidence_family_id,`AID ${aid} must retain one Evidence Family`);
  assert(matches[0].has_content_evidence,`AID ${aid} must resolve to the content-inspected canonical witness`);
- assert(!queue.records.some(q=>String(q.key)===`aid:${aid}`),`AID ${aid} must not remain in the content-review queue`);
+ assert(!queue.records.some(q=>String(q.aid)===String(aid)||String(q.key)===`aid:${aid}`||String(q.source_url||'').includes(`/aid/${aid}/`)),`AID ${aid} must not remain in the content-review queue`);
 }
 const dailyStudyQuestion='כיצד הציע הרבי ללמוד חומש וחק לישראל כשהעבודה וימי החורף הקצרים מקשים להספיק את השיעורים?';
 for(const mode of ['regular','researcher']){
