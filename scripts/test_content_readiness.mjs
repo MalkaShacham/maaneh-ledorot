@@ -1,7 +1,7 @@
 // Check corpus counts against the same normalization used by the live answers.
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {normalizeEvidenceIntegrity,buildAnswerModel} from '../src/answer-engine-validated.js';
+import {normalizeEvidenceIntegrity,buildAnswerModel,citationEntailment} from '../src/answer-engine-validated.js';
 const root=new URL('../',import.meta.url);
 const idx=JSON.parse(await readFile(new URL('data/public-search-index.json',root)));
 const metrics=JSON.parse(await readFile(new URL('data/public-metrics.json',root)));
@@ -774,6 +774,50 @@ for(const [question,family] of batch049Checks){
     assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: the intended batch-049 evidence family must support ${question}`);
     assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-049 query must stay within the mode's evidence budget`);
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-049 claim needs a proposition-level citation`);
+  }
+}
+
+const batch050Checks=[
+  ['מה נאמר על תרגום חסידות לשפות רבות עבור מי שאינם מבינים עברית קלאסית?','shabbos-ki-seitzei-14-elul-5745'],
+  ['מה הקשר בין ספירת העומר להשלמת העולם ולזיכוך המידות?','erev-shavuos-5743-sefirah-completion'],
+  ['כיצד הפצת חסידות למקומות רחוקים נקשרת להכנה לגאולה?','motzaei-tzav-13-nissan-5743-tzemach-tzedek-yahrzeit'],
+  ['מה נדרש במציאות קשה המתוארת כמדבר?','shabbos-bamidbar-5-sivan-5745-life-in-desert'],
+  ['מה הקשר בין י״ב תמוז, אחדות והכרת תודה על השחרור?','12-tammuz-5743-unity-and-gratitude'],
+  ['מה נאמר על תוספת תורה ומצוות ביום הילולא?','yechidus-eve-13-shevat-5744'],
+  ['מה נאמר על יחידות קבוצתית אחרי פורים?','yechidus-eve-17-adar-ii-5744'],
+  ['כיצד לשמר את השפעת המפגש לאחר החזרה הביתה?','yechidus-eve-25-nissan-5744']
+];
+for(const [question,family] of batch050Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-050 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: intended batch-050 evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?24:6),`${mode}: batch-050 query must stay within the mode evidence budget`);
+    const entailed=citationEntailment(m);
+    assert.equal(entailed.length,m.claims.length,`${mode}: every batch-050 claim must be checked for citation entailment`);
+    assert(entailed.every(c=>c.valid&&c.unsupported_source_numbers.length===0),`${mode}: batch-050 claims must cite only propositions that entail them`);
+    if(mode==='researcher'){
+      assert(m.research&&m.research.evidence_map.length===m.claims.length,`researcher: batch-050 must expose a claim-level evidence map`);
+      assert.equal(m.research.cases.length,m.sources.length,`researcher: every retained source needs a case-level record`);
+      assert.equal(m.research.witnesses.length,m.sources.length,`researcher: every retained source needs a witness record`);
+      assert(m.presentation.detail_level==='witness_level',`researcher: batch-050 must use witness-level detail`);
+    }else{
+      assert(!m.research&&m.presentation.detail_level==='summary',`regular: batch-050 must retain the concise renderer`);
+    }
+  }
+}
+const unityQuestion='כיצד נשמרת אחדות יהודים אחרי מפגש משותף ופרידה לבתים?';
+for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,unityQuestion,{mode});
+  assert(m.answerable,`${mode}: multi-event unity question must be answerable`);
+  const unityFamilies=['yechidus-eve-25-nissan-5744','yechidus-eve-11-sivan-5744','yechidus-16-tammuz-5744'];
+  assert(unityFamilies.filter(f=>m.sources.some(e=>e.evidence_family_id===f)).length>=2,`${mode}: unity synthesis must retain at least two distinct event families`);
+  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2,`${mode}: unity synthesis must not collapse distinct events into one family`);
+  assert(citationEntailment(m).every(c=>c.valid),`${mode}: every unity synthesis claim needs claim-level citation entailment`);
+  if(mode==='researcher'){
+    assert(m.research.evidence_families>=2,`researcher: unity analysis must report independent event-family coverage`);
+    assert(m.research.evidence_map.every(c=>c.source_numbers.length),`researcher: every unity claim needs a source map`);
+    assert(m.research.witness_classes.derived>=2,`researcher: translated witnesses must be classified as derived, not independent originals`);
   }
 }
 console.log(`Content readiness: ${unique.size} usable sources; three hundred thirty-six real-corpus answer checks passed`);

@@ -1,0 +1,133 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-12-content-batch-050",
+  "generated": "2026-11-12",
+  "method": "Public web search/open inspection of selected body passages from ten authorized Chabad.org/TheRebbe.org Sichos in English item pages. The known GitHub-hosted crawler route was not retried.",
+  "source": {
+    "publisher": "Chabad.org / TheRebbe.org",
+    "collection": "Sichos in English Collection",
+    "authorized_online_items": [
+      2515477,
+      2512476,
+      2515046,
+      2515007,
+      2514886,
+      2515791,
+      2515753,
+      2513269,
+      2514160,
+      2515815
+    ]
+  },
+  "reviewed_items": 10,
+  "new_content_records": 10,
+  "enriched_existing_canonical_records": 0,
+  "duplicate_or_continuity_checks_without_new_propositions": 0,
+  "propositions_added": 20,
+  "metric_delta": {
+    "answer_eligible_unique_sources_before": 545,
+    "answer_eligible_unique_sources_after": 555,
+    "content_verified_unique_sources_before": 542,
+    "content_verified_unique_sources_after": 552,
+    "answer_eligible_propositions_before": 1733,
+    "answer_eligible_propositions_after": 1753,
+    "note": "Expected delta assumes ten distinct dated event families. Each English page is one translated manifestation of its event, not an independent witness from a future Hebrew/Yiddish transcript or audio recording. Final counts must be reconciled against the live index."
+  },
+  "evidence_family_dedup": [
+    {
+      "member_ids": [
+        "sie-talk-yechidus-13-shevat-5744-aid-2515477"
+      ],
+      "evidence_family_id": "yechidus-eve-13-shevat-5744",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-ki-seitzei-14-elul-5745-aid-2512476"
+      ],
+      "evidence_family_id": "shabbos-ki-seitzei-14-elul-5745",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-yechidus-25-nissan-5744-aid-2515046"
+      ],
+      "evidence_family_id": "yechidus-eve-25-nissan-5744",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-yechidus-17-adar-ii-5744-aid-2515007"
+      ],
+      "evidence_family_id": "yechidus-eve-17-adar-ii-5744",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-yechidus-11-sivan-5744-aid-2514886"
+      ],
+      "evidence_family_id": "yechidus-eve-11-sivan-5744",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-erev-shavuos-5743-aid-2515791"
+      ],
+      "evidence_family_id": "erev-shavuos-5743-sefirah-completion",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-motzaei-tzav-13-nissan-5743-aid-2515753"
+      ],
+      "evidence_family_id": "motzaei-tzav-13-nissan-5743-tzemach-tzedek-yahrzeit",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-bamidbar-5-sivan-5745-aid-2513269"
+      ],
+      "evidence_family_id": "shabbos-bamidbar-5-sivan-5745-life-in-desert",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-yechidus-16-tammuz-5744-aid-2514160"
+      ],
+      "evidence_family_id": "yechidus-16-tammuz-5744",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    },
+    {
+      "member_ids": [
+        "sie-talk-12-tammuz-5743-aid-2515815"
+      ],
+      "evidence_family_id": "12-tammuz-5743-unity-and-gratitude",
+      "counting_rule": "One authorized English translation for one distinct dated event; future original-language transcript, audio or video of the same event must join this family and must not count as an independent witness."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "Chabad.org Igrot Kodesh item pages aid 4666280, 4666216 and 4666232",
+      "result": "The public open view exposed the publisher shell/title and bibliographic framing but not body text adequate for semantic review.",
+      "fallback": "No content proposition was inferred; switched to complete visible Sichos in English publisher passages."
+    },
+    {
+      "source": "Sichos Kodesh audio-only pages aids 553671–553675",
+      "result": "The accessible pages exposed recording metadata/durations but no transcript body.",
+      "fallback": "No content proposition was inferred from title or duration; selected text-published dated talks instead."
+    },
+    {
+      "source": "Hebrew Torat Menachem item pages aids 5996725 and 5996765",
+      "result": "The open view exposed item titles, series information and a PDF link but not the body text.",
+      "fallback": "No content proposition was inferred from metadata; selected accessible English publisher text pages."
+    },
+    {
+      "source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted route",
+      "result": "Not retried because the route is already known to return HTTP 403.",
+      "fallback": "Used public web search/open access to authorized publisher pages."
+    }
+  ],
+  "verification_scope": "Selected visible publisher body passages from ten item pages were inspected. The batch contains English translations, not independent original-language witnesses. Context remains partial; the complete source texts, original-language transcripts, recordings, incoming correspondence, cited works and later outcomes were not independently inspected.",
+  "rights_note": "Only concise non-verbatim Hebrew research paraphrases and precise body-line locators were stored; no protected letter or talk was copied in full.",
+  "quality_note": "Each proposition is bounded to the specified visible passage. No missing audience, incoming question, participant identity or historical outcome was reconstructed."
+}

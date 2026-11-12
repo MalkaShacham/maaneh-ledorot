@@ -31,9 +31,9 @@
       "Indexed": 1156,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 545,
-    "content_verified_unique_sources": 542,
-    "answer_eligible_propositions": 1733
+    "answer_eligible_unique_sources": 555,
+    "content_verified_unique_sources": 552,
+    "answer_eligible_propositions": 1753
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -60,20 +60,18 @@
     }
   ],
   "active_blocks": [
-    "No permission for bulk copying of protected corpora.",
-    "Incoming correspondence is absent from many Igrot Kodesh response cases, so context remains Partial.",
+    "No permission for bulk copying of protected corpora; only bounded non-verbatim paraphrases and locators are stored.",
+    "Incoming correspondence is absent from many Igrot Kodesh response cases, so context remains Partial where the incoming question is unavailable.",
     "Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness.",
-    "Current Alpha retrieval is token/substring based and lacks proposition-level semantic reranking; researcher mode currently exposes metadata rather than a genuinely deeper evidence analysis."
+    "Retrieval now has proposition-level relevance gates, topic aliases, claim-local citation entailment checks and a separate researcher evidence map, but ranking remains deterministic and lexical/topic-based rather than a semantic entailment model.",
+    "Translated public talks are one manifestation of their dated event; original-language transcripts and recordings must join the same Evidence Family."
   ],
   "next_work": [
-    "Inspect next accessible item-level texts from data/content-review-queue.json and enrich existing identities in place.",
-    "Expand new accessible corpus batches, preserving content vs bibliographic verification scope.",
-    "Implement proposition-level relevance gate and reranking before synthesis; reject lexical-only matches.",
-    "Implement genuinely distinct regular and researcher answer renderers according to ANSWER_ENGINE_SPEC.md.",
-    "Populate canonical items with source-grounded proposition fields where the authorized witness supports them.",
-    "Run and expand data/evaluation/answer-quality-regression.json against both answer modes.",
-    "Drain promotion-ready backlog in homogeneous batches where stable direct/authorized witnesses permit.",
-    "Expand Evidence Families and event/witness dedup while preserving multilingual provenance."
+    "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
+    "Expand the event-level Evidence Family links when original-language transcripts, audio or video of already indexed talks become available.",
+    "Adversarially test proposition relevance, claim-local citation entailment, context boundaries and researcher-mode witness distinctions on both answer modes.",
+    "Add new sources only after direct body inspection; keep context partial where incoming questions, omitted sections or original-language witnesses are unavailable.",
+    "Continue reconciling the live public-search index, metrics and content-readiness test after each content batch."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
@@ -116,7 +114,7 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "data/content-reviews/2026-11-12-content-batch-049.json",
-    "required_agent_action": "Inspect authorized item-level content, add bounded source-grounded propositions with locators, expand accessible corpus, and verify live content readiness after publication."
+    "current_batch": "data/content-reviews/2026-11-12-content-batch-050.json",
+    "required_agent_action": "Continue item-level source inspection across Hebrew, Yiddish and English; add bounded source-grounded propositions with precise locators; keep translated manifestations linked to event Evidence Families; run live content readiness and both answer modes."
   }
 }
