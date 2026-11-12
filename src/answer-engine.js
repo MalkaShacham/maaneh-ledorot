@@ -37,7 +37,7 @@ const TOPICS={
  'תענית תשעה באב והוראת רופא':['תענית תשעה באב','צום תשעה באב','רופא הורה שלא להתענות','הוראת רופא ותענית','Tisha B’Av fast medical advice'],
  'ברכת אתרוגים והדסים':['מסירת האתרוגים','אתרוג','הדסים','הדסים ואתרוג','ריבוי הדסים','ברכת חג הסוכות','etrog myrtle branches','Sukkot etrog blessing'],
  'מאמר אתה אחד':['אתה אחד','שמך אחד','גוי אחד בארץ','אחד ויחיד','Ata Echad','one and unique Israel'],
- 'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד','מסחר בזמן לימוד בישיבה','ישיבה עד הצהריים','לימוד כל היום','חסרון בהתרכזות','business during yeshiva study','full-day yeshiva study'],
+ 'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד בישיבה','מסחר בזמן לימוד בישיבה','עסק בזמן לימוד בישיבה','מסחר בזמן סדרי הלימוד בישיבה'],
  'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
  'סניף תלמוד תורה ומחנה יום':['סניף תלמוד תורה שאינו מצליח','לסגור סניף תלמוד תורה','חיסול הסניף','מחנה יום','בסיס לרכישת תלמידים','failing talmud torah branch','day camp student recruitment'],
  'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','לימוד אישי','הלימוד האישי','בלי להזניח לימוד אישי','increase class participants','personal study obligation'],
@@ -392,6 +392,7 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('אחדות בפורים')&&(!containsTerm(body,'פורים')||!containsTerm(body,'אחדות')||!['משלוח מנות','מתנות לאביונים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Purim unity and mitzvah setting is absent']};
  if(u.topics.includes('מבצע פורים נמשך לפסח ולצדקה')&&(!containsTerm(body,'פורים')||!containsTerm(body,'פסח')||!['צדקה','מצות'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Purim-to-Pesach charity campaign setting is absent']};
  if(u.topics.includes('לימוד רמב״ם ואחדות מרחבית')&&(!containsTerm(body,'רמב״ם')||!containsTerm(body,'אחדות')||!['מקומות','מרוחקים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['shared Rambam study across locations setting is absent']};
+ if(u.topics.includes('מסחר ולימוד יום שלם')&&(!containsTerm(body,'מסחר')||!containsTerm(body,'ישיבה')||!containsTerm(body,'לימוד')))return{score:0,support:'insufficient_specific_evidence',reasons:['business activity during yeshiva study must be explicit in the inspected proposition']};
  if(u.topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&(!containsTerm(body,'צפון אפריקה')||!containsTerm(body,'יום ראשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['North-Africa Sunday-departure setting is absent']};
  if(u.topics.includes('עולים ממרוקו ושפת ההתוועדות')&&!['עולים ממרוקו','התוועדויות','יידיש','עברית'].every(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['Moroccan immigrant Hebrew-farbrengen language-access setting is absent']};
  if(u.topics.includes('גיל העולם ורדיואקטיביות')&&(!containsTerm(body,'גיל העולם')||!containsTerm(body,'רדיואקטיביות')))return{score:0,support:'insufficient_specific_evidence',reasons:['radioactivity and world-age correspondence setting is absent']};
