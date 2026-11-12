@@ -1,0 +1,33 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-12-content-batch-049",
+  "generated": "2026-11-12",
+  "method": "Direct public search/open inspection of eight complete visible item bodies on authorized Chabad.org/TheRebbe.org and Sichos in English pages. The known blocked crawler was not used.",
+  "source": {"authorized_online_items": [2283000, 2516693, 2516706, 2516709, 2516720, 2516721, 2516734, 2516739]},
+  "reviewed_items": 8,
+  "new_content_records": 7,
+  "enriched_existing_canonical_records": 1,
+  "duplicate_or_continuity_checks_without_new_propositions": 0,
+  "propositions_added": 24,
+  "metric_delta": {
+    "answer_eligible_unique_sources_before": 538,
+    "answer_eligible_unique_sources_after": 545,
+    "content_verified_unique_sources_before": 535,
+    "content_verified_unique_sources_after": 542,
+    "answer_eligible_propositions_before": 1709,
+    "answer_eligible_propositions_after": 1733,
+    "note": "Net eligibility is +7 source families and +24 propositions. Aid 2283000 was enriched in place rather than duplicated. Every English translation or excerpt is one manifestation of its underlying letter or talk event, not an independent witness from the original language or audio."
+  },
+  "evidence_family_dedup": [
+    {"member_ids": ["chabad-letter-2283000"], "counting_rule": "The existing English translation was enriched in place; a Hebrew printed letter, manuscript or incoming letter must be linked to Letter 209 rather than counted as unrelated evidence."},
+    {"member_ids": ["sie-talk-yud-shevat-5743-aid-2516706", "sie-talk-beshallach-15-shevat-5743-aid-2516709", "sie-talk-terumah-6-adar-5743-aid-2516720", "sie-talk-taanis-esther-5743-aid-2516721", "sie-talk-purim-5743-aid-2516734", "sie-talk-tzivos-hashem-16-adar-5743-aid-2516739"], "counting_rule": "Each item is a distinct dated event, but its English translation is not independent of future audio or original-language transcripts of that same event."}
+  ],
+  "blocked_alternatives": [
+    {"source": "Direct Torah Texts redirects for aids 4666216 and 4666232", "result": "The public open view exposed the publisher shell but not a complete body suitable for a new semantic review.", "fallback": "Recorded no content claims from those pages and switched to complete accessible Sichos in English item bodies."},
+    {"source": "Sichos Kodesh audio-only pages aids 553671–553675", "result": "The pages exposed recording metadata and durations but no transcript body.", "fallback": "Did not infer content from titles or audio metadata; selected text publications with full visible bodies."},
+    {"source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted route", "result": "Not retried because the route is already known to return HTTP 403.", "fallback": "Used public search/open access to authorized publisher pages."}
+  ],
+  "verification_scope": "Eight complete visible publisher presentations were inspected. Aid 2283000 and aid 2516693 are letter translations; the other six are translated public talks or translated excerpts. Original-language transcripts, audio, incoming correspondence, cited texts, statistics and later outcomes were not independently verified.",
+  "rights_note": "Only bounded non-verbatim Hebrew research paraphrases and precise item/line locators were stored; no protected letter or talk was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Calendar-specific guidance, historical claims and audience-specific instructions remain bounded to their documented context."
+}

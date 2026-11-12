@@ -757,5 +757,24 @@ for(const [question,family] of batch048Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-048 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; three hundred twenty-eight real-corpus answer checks passed`);
+const batch049Checks=[
+  ['כיצד יום הילולא אמור לעבור מהנצחה היסטורית לפעולה יומיומית בהפצת יהדות?','public-letter-24-teves-5743-commemoration-to-action'],
+  ['מדוע מי שקיבל יכולת להבין ולחדש אינו צריך להשאיר את הידע לקבוצה מצומצמת?','yud-shevat-5743-farbrengen-mission-and-public-knowledge'],
+  ['כיצד הגיבו לגזירה על קריאת התורה בלי לסגת מן התורה?','beshallach-15-shevat-5743-steadfastness-song-noahide-outreach'],
+  ['מה משמעות השלמת שליחותו של צדיק כשיום פטירתו חל ביום הולדתו?','terumah-6-adar-5743-moshe-life-completion-menorah-effort'],
+  ['מדוע תענית אסתר המוקדמת בתשמ״ג הרחיבה את ההכנה לפורים לשלושה ימים?','taanis-esther-5743-threefold-preparation-unity'],
+  ['מדוע מאמץ החינוך בפורים צריך להגיע גם לילדים שעדיין אינם בבתי ספר יהודיים?','purim-5743-blessing-education-pesach-preparation'],
+  ['מה נדרש מילדי צבאות השם מעבר להנהגה האישית שלהם?','tzivos-hashem-16-adar-5743-children-steadfastness-peer-influence'],
+  ['כיצד מתחלקת הנשמה בין גופים שונים בתחיית המתים לפי מכתב 209?','letter-no-209-resurrection-reincarnation-polar-time']
+];
+for(const [question,family] of batch049Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-049 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: the intended batch-049 evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-049 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-049 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; three hundred thirty-six real-corpus answer checks passed`);
 
