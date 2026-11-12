@@ -129,7 +129,33 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "data/content-reviews/2026-11-12-content-batch-050.json",
-    "required_agent_action": "Continue item-level source inspection across Hebrew, Yiddish and English; add bounded source-grounded propositions with precise locators; keep translated manifestations linked to event Evidence Families; run live content readiness and both answer modes."
+    "current_batch": "data/content-reviews/2026-11-12-content-batch-054.json",
+    "required_agent_action": "Continue item-level source inspection across Hebrew, Yiddish and English; add bounded source-grounded propositions with precise locators; keep translated manifestations linked to event Evidence Families; run live content readiness and both answer modes.",
+    "last_completed_batch": "2026-11-12-content-batch-054",
+    "last_batch_summary": {
+      "reviewed_items": 13,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 4,
+      "response_propositions_added": 26,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 589,
+        "content_verified_unique_sources": 586,
+        "answer_eligible_propositions": 1831,
+        "canonical_unique_item_keys": 9769,
+        "verified_unique_item_keys": 8449,
+        "canonical_json_files": 415,
+        "evidence_family_files": 55
+      },
+      "expected_metrics_after": {
+        "answer_eligible_unique_sources": 598,
+        "content_verified_unique_sources": 595,
+        "answer_eligible_propositions": 1857,
+        "canonical_unique_item_keys": 9778,
+        "verified_unique_item_keys": 8458,
+        "canonical_json_files": 416,
+        "evidence_family_files": 55
+      }
+    },
+    "last_run_note": "Nine new authorized English translated talks were inspected; four existing translated-talk identities were enriched in place. Known blocked letter shell was not used for content; GitHub-runner crawler was not retried."
   }
 }
