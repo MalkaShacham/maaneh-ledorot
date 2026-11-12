@@ -603,7 +603,7 @@ const batch042Checks=[
   ['כיצד להעריך כישורים להדרכה ולחינוך ולהסיט רושם שלילי מן הסביבה?','id:igrot-kodesh-v13-דתרצט'],
   ['מה נכתב על נוסח התפילה שקבע אדמו״ר הזקן ועל קשר התפילין?','id:igrot-kodesh-v13-דתש'],
   ['מה נכתב על תלונות על חוסר הצלחה?','id:igrot-kodesh-v13-דתשא'],
-  ['מה נכתב על בית רבקה במלבורן ועל משפחת המייסדים?','id:igrot-kodesh-v13-דתשח'],
+  ['מה נכתב על בית רבקה במלבורן ועל משפחת המייסדים?','family:melbourne-beit-rivkah-founding-and-family-support'],
   ['האם לעזוב שיעור תניא מקומי ולהחליף התוועדות חסידית בשיחה מוסרית בסעודה שלישית?','id:igrot-kodesh-v13-דתשו'],
   ['מה נכתב על התפלת מי ים בשבת?','id:igrot-kodesh-v13-דתשז'],
   ['מה נכתב על גירעון ישיבות תומכי תמימים ועל תרומה מיידית?','id:igrot-kodesh-v13-דתשי'],
@@ -615,7 +615,10 @@ for(const [question,key] of batch042Checks){
   for(const mode of ['regular','researcher']){
     const m=buildAnswerModel(idx.entries,question,{mode});
     assert(m.answerable,`${mode}: inspected batch-042 evidence must answer ${question}`);
-    assert(m.sources.some(e=>e.key===key),`${mode}: the intended batch-042 source must support ${question}`);
+    const intended=key.startsWith('family:')
+      ? m.sources.some(e=>e.evidence_family_id===key.slice(7))
+      : m.sources.some(e=>e.key===key);
+    assert(intended,`${mode}: the intended batch-042 source or evidence family must support ${question}`);
     assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-042 query must stay within the mode's evidence budget`);
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-042 claim needs a proposition-level citation`);
   }
@@ -694,5 +697,24 @@ for(const [question,family] of batch045Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-045 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; two hundred and eighty-four real-corpus answer checks passed`);
+const batch046Checks=[
+  ['לפי מכתב רמג, מהו ניקוד ״לרצות״ בפרקי אבות ומה שונה בתפילת טל?','original-letter-aid-4666282'],
+  ['האם אהבת הזולת תלויה בכך שמאמץ הקירוב הצליח?','original-letter-aid-4666283'],
+  ['לפי מה מסווג המענה עבירה: סוג המעשה בלבד או גם המניע והקביעות?','original-letter-aid-4666306'],
+  ['מדוע יציאת מצרים נזכרת במתן תורה במקום בריאת העולם?','original-letter-aid-4666228'],
+  ['כיצד נדרשה תחושת אחריות של נוער חרדי לעבור ממחשבה ודיבור למעשה?','original-letter-aid-5019148'],
+  ['כיצד הובעה שותפות בהקמת בית רבקה במלבורן מעבר לברכה כללית?','melbourne-beit-rivkah-founding-and-family-support'],
+  ['האם נכון להשתמט מהזמנה לרב מורה הוראה במקום להציג לפניו את הטענות והמצב?','original-letter-aid-5019150'],
+  ['כיצד הוסברה חומרת הנהגת מנהג מנוגד בתוך בית הכנסת עצמו?','original-letter-aid-5019453']
+];
+for(const [question,family] of batch046Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-046 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: the intended batch-046 evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-046 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-046 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; three hundred real-corpus answer checks passed`);
 

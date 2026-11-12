@@ -1,0 +1,26 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-12-content-batch-046",
+  "generated": "2026-11-12",
+  "method": "Direct public search inspection of ten accessible Kehot/Chabad.org item bodies. Eight records received bounded source-grounded propositions; two already-enriched records were inspected only for duplicate and continuity checks. The known blocked crawler was not used.",
+  "source": {"authorized_online_items": [4666218, 4666228, 4666261, 4666282, 4666283, 4666306, 5019148, 5019149, 5019150, 5019453]},
+  "reviewed_items": 10,
+  "new_content_records": 5,
+  "enriched_existing_canonical_records": 3,
+  "duplicate_or_continuity_checks_without_new_propositions": 2,
+  "propositions_added": 24,
+  "metric_delta": {"answer_eligible_unique_sources_before": 511, "answer_eligible_unique_sources_after": 518, "content_verified_unique_sources_before": 508, "content_verified_unique_sources_after": 515, "answer_eligible_propositions_before": 1626, "answer_eligible_propositions_after": 1647, "note": "Net eligibility is +7 sources and +21 propositions after evidence-family dedup. The new Melbourne letter is linked to an already-counted family, and three overlapping proposition themes were not counted again."},
+  "letters": ["קעט", "קפט", "רכב", "רמג", "רמד", "רסז", "ד׳תשמו", "ד׳תשמז", "ד׳תשמח", "ה׳מט"],
+  "evidence_family_dedup": [
+    {"family_id": "melbourne-beit-rivkah-founding-and-family-support", "member_letters_in_batch": ["ד׳תשמז"], "linked_existing_letters": ["ד׳תשח"], "counting_rule": "The new Yiddish letter is a distinct correspondence item but not independent confirmation of the school's finances, opening or outcomes; the Hebrew paraphrase is derived from the same witness."},
+    {"family_id": "original-letter-aid-4666228", "member_letters_in_batch": ["קפט"], "counting_rule": "Hebrew research paraphrases derive from the one Yiddish item and are not a translation witness."},
+    {"relationship": "same_correspondence_thread", "member_letters_in_batch": ["רמד", "רסז"], "counting_rule": "Two distinct dated letters to Dr. A. Hillman are linked for continuity but retain separate evidence families; neither is treated as a duplicate manifestation of the other."}
+  ],
+  "blocked_alternatives": [
+    {"source": "Five sequential official pages, aids 4666285–4666289", "result": "Browser and open views returned publisher chrome only, with no letter body.", "fallback": "Switched to other authorized publisher items whose bodies were publicly accessible in the same run."},
+    {"source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted route", "result": "Not retried; the known HTTP 403 route remained outside this run.", "fallback": "Used public search/open access to authorized publisher bodies."}
+  ],
+  "verification_scope": "Ten publisher bodies were inspected. Eight were materially enriched; two were used for duplicate and continuity review. Incoming correspondence, archival originals, cited books, institutional records, health outcomes and practical halachic rulings were not independently verified.",
+  "rights_note": "Only bounded non-verbatim research paraphrases and precise item/section locators were stored; no protected letter was copied in full.",
+  "quality_note": "All added propositions are source-grounded paraphrases. Yiddish-to-Hebrew paraphrases are marked derived, the partial public extract is scoped explicitly, health statements are not treated as medical evidence, and halachic discussions are not individualized rulings."
+}
