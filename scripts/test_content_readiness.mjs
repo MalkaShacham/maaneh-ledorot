@@ -1021,7 +1021,7 @@ for(const [aid,count] of Object.entries(batch054EnrichedCounts)){
  assert(e.response_propositions.length>=count,`AID ${aid} must preserve prior propositions and include batch-054 enrichment`);
 }
 
-console.log(`Content readiness: ${unique.size} usable sources; 440 real-corpus answer checks passed, including 32 batch-054 mode-specific checks and 28 item-identity checks`);
+console.log(`Content readiness: ${unique.size} usable sources; 450 real-corpus answer checks passed, including 10 batch-056 mode-specific checks and 39 item-identity checks`);
 
 
 
