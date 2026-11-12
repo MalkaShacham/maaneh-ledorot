@@ -1226,4 +1226,58 @@ for(const item of batch058CrossSourceChecks){
  }
 }
 
-console.log(`Content readiness: ${unique.size} usable sources; 478 real-corpus answer checks passed, including 10 batch-056, 6 batch-057, 18 batch-058 mode-specific checks, 4 batch-058 cross-source mode checks and 60 item-identity checks`);
+
+const batch060Required=[[4666213,2],[4666214,5],[4666218,5],[4666219,2],[4666234,3],[4666235,3],[4666266,2],[4666272,6],[4731128,3]];
+for(const [aid,minProps] of batch060Required){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence, `batch-060 AID ${aid} must have inspected content evidence`);
+ assert.equal(e.status,'Verified', `batch-060 AID ${aid} must retain scoped publisher-text verification`);
+ assert(e.evidence_family_id, `batch-060 AID ${aid} must have one Evidence Family`);
+ assert(e.response_propositions.length>=minProps, `batch-060 AID ${aid} must expose its reviewed propositions`);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase', `batch-060 AID ${aid} must remain a source-grounded paraphrase`);
+ assert.equal(e.proposition_verbatim,false, `batch-060 AID ${aid} must not be represented as verbatim`);
+ assert.equal(e.proposition_verification,'source_text_inspected', `batch-060 AID ${aid} must retain text-inspection status`);
+ assert(e.proposition_source_locator&&e.verification_scope, `batch-060 AID ${aid} must expose locator and scope`);
+ assert.equal(e.context_status,'partial', `batch-060 AID ${aid} must preserve partial context`);
+}
+const batch060Checks=[
+ ['מה נכתב במכתב קעט על מצב הבריאות, משלוחי הספרים והדיווח על ביקוש?','aid:4666218'],
+ ['מה נכתב במכתב קפ לכולל חב״ד בביירות על אמירת תהילים?','aid:4666219'],
+ ['כיצד הוסבר מועד חליצת תפילין בראש חודש לפי סדר התפילה של אדמו״ר הזקן?','aid:4666234'],
+ ['כיצד מוסברת המחלוקת על הברכה לתפילין של ראש בין ספרדים לאשכנזים?','aid:4666235'],
+ ['מה נכתב על הקמת מחלקת קה״ת בשנגהי ועל הדפסת 300 עותקים?','aid:4666266'],
+ ['מה כתב הרבי על שני ההיבטים בירידת הנשמה לעולם הזה?','aid:4731128']
+];
+for(const [question,key] of batch060Checks){
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,question,{mode});
+  assert(m.answerable,`${mode}: batch-060 inspected evidence must answer ${question}`);
+  assert(m.sources.some(e=>e.key===key),`${mode}: expected batch-060 witness ${key} for ${question}`);
+  assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: batch-060 query must not be flooded by generic matches`);
+  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: each batch-060 claim needs proposition-level citations`);
+  assert(m.citation_entailment.every(x=>x.valid),`${mode}: batch-060 citations must pass claim-local entailment`);
+  assert(m.context_boundary.every(x=>x.valid),`${mode}: batch-060 must preserve witness-local context boundaries`);
+  if(mode==='researcher'){
+   assert(m.research&&m.research.evidence_map.length>0,`${mode}: batch-060 researcher mode must expose an evidence map`);
+   assert(m.research.witnesses.length===m.sources.length,`${mode}: batch-060 researcher mode must expose provenance for every witness`);
+  }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+ }
+}
+const batch060Comparison='השווה בין שליחת העתק שיחות סוכות במכתב קעד לבין הקמת מחלקת קה״ת בשנגהי במכתב רכז';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch060Comparison,{mode});
+ assert(m.answerable,`${mode}: batch-060 cross-source comparison must be answerable`);
+ assert(m.sources.some(e=>String(e.aid)==='4666213'),`${mode}: comparison must include the Sukkot-talks letter`);
+ assert(m.sources.some(e=>String(e.aid)==='4666266'),`${mode}: comparison must include the Shanghai Kehot letter`);
+ assert(new Set(m.sources.map(e=>e.evidence_family_id).filter(Boolean)).size>=2,`${mode}: comparison must preserve two distinct Evidence Families`);
+ assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: comparison must not be flooded by generic matches`);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: comparison claims need claim-local citations`);
+ assert(m.citation_entailment.every(x=>x.valid),`${mode}: comparison citations must pass entailment`);
+ assert(m.context_boundary.every(x=>x.valid),`${mode}: comparison must preserve witness-local context`);
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=2,`${mode}: researcher comparison must expose two Evidence Families`);
+  assert(m.research.evidence_map.length>0&&m.research.witnesses.length===m.sources.length,`${mode}: researcher comparison must expose claim-to-witness and provenance maps`);
+  assert(m.research.comparative_coverage&&m.research.comparative_coverage.supported_topics.length>=2,`${mode}: researcher comparison must report both supported topics`);
+ }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+}
+console.log(`Content readiness: ${unique.size} usable sources; real-corpus answer checks passed, including batch-056 through batch-060 source, comparison, citation and researcher-mode checks`);

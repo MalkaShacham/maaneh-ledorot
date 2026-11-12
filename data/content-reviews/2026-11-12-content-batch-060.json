@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-12-content-batch-060",
+  "generated": "2026-11-12T22:28:00+02:00",
+  "status": "content_reviewed_reconciliation_pending",
+  "reviewed_items": 9,
+  "new_source_identities": 1,
+  "existing_identities_enriched": 8,
+  "response_propositions_added": 25,
+  "evidence_family_count": 9,
+  "sources": [
+    {
+      "aid": 4666213,
+      "id": "chabad-letter-4666213",
+      "identity_status": "existing",
+      "action": "enriched_in_place",
+      "propositions_added": 2,
+      "evidence_family_id": "igrot-letter-5705-19-kislev-letter-174-aid4666213",
+      "locator": "Chabad.org AID 4666213, מכתב קעד, גוף האיגרת ביידיש, שורות 242–252; הערת מקור בשורה 252."
+    },
+    {
+      "aid": 4666214,
+      "id": "chabad-letter-4666214",
+      "identity_status": "existing",
+      "action": "extended_in_place",
+      "propositions_added": 2,
+      "evidence_family_id": "igrot-letter-5705-3-chanukah-letter-175-aid4666214",
+      "locator": "Chabad.org AID 4666214, גוף האיגרת והפוסט־סקריפטום, שורות 254–272."
+    },
+    {
+      "aid": 4666218,
+      "id": "canonical-ik-v2-179-aid4666218",
+      "identity_status": "existing",
+      "action": "promoted_and_enriched_in_place",
+      "propositions_added": 5,
+      "evidence_family_id": "igrot-letter-5705-23-tevet-letter-179-aid4666218",
+      "locator": "Chabad.org AID 4666218, מכתב קעט, גוף הטקסט המלא כפי שהופיע בתוצאת החיפוש הציבורית; דף הקורא לא סיפק שורות ממוספרות.",
+      "duplicate_staging_copies": 3
+    },
+    {
+      "aid": 4666219,
+      "id": "canonical-ik-v2-180-aid4666219",
+      "identity_status": "existing",
+      "action": "promoted_and_enriched_in_place",
+      "propositions_added": 2,
+      "evidence_family_id": "igrot-letter-5705-26-tevet-letter-180-aid4666219",
+      "locator": "Chabad.org AID 4666219, מכתב קפ, גוף הטקסט הציבורי המלא בתוצאת החיפוש; דף הקורא לא סיפק שורות ממוספרות.",
+      "duplicate_staging_copies": 3
+    },
+    {
+      "aid": 4666234,
+      "id": "canonical-ik-v2-195-aid4666234",
+      "identity_status": "existing",
+      "action": "enriched_in_place",
+      "propositions_added": 3,
+      "evidence_family_id": "igrot-letter-5705-12-elul-letter-195-aid4666234",
+      "locator": "Chabad.org AID 4666234, מכתב קצה, החלק העוסק בסדר התפילה בראש חודש ובחליצת תפילין; גוף הטקסט הציבורי בתוצאת החיפוש, ללא מספרי שורות."
+    },
+    {
+      "aid": 4666235,
+      "id": "canonical-ik-v2-196-aid4666235",
+      "identity_status": "existing",
+      "action": "enriched_in_place",
+      "propositions_added": 3,
+      "evidence_family_id": "igrot-letter-5705-19-elul-letter-196-aid4666235",
+      "locator": "Chabad.org AID 4666235, מכתב קצו, גוף השאלה והתשובה על ברכת תפילין של ראש; תוצאת החיפוש הציבורית, ללא מספרי שורות."
+    },
+    {
+      "aid": 4666266,
+      "id": "canonical-ik-v2-227-aid4666266",
+      "identity_status": "existing",
+      "action": "enriched_in_place",
+      "propositions_added": 2,
+      "evidence_family_id": "igrot-letter-5706-27-nisan-letter-227-aid4666266",
+      "locator": "Chabad.org AID 4666266, מכתב רכז, גוף האיגרת לשנגהי, שורות 252–260; הערות המו״ל וההקשר העורכי בשורות 276–284."
+    },
+    {
+      "aid": 4666272,
+      "id": "chabad-letter-4666272",
+      "identity_status": "existing",
+      "action": "extended_in_place",
+      "propositions_added": 3,
+      "evidence_family_id": "igrot-letter-5706-22-sivan-letter-233-aid4666272",
+      "locator": "Chabad.org AID 4666272, מכתב רלג, גוף הטקסט הציבורי המלא כפי שהופיע בתוצאת החיפוש; דף הקורא לא סיפק שורות ממוספרות."
+    },
+    {
+      "aid": 4731128,
+      "id": "chabad-letter-4731128",
+      "identity_status": "new",
+      "action": "new_identity_added",
+      "propositions_added": 3,
+      "evidence_family_id": "igrot-letter-5706-20-tammuz-letter-241-star-aid4731128",
+      "locator": "Chabad.org AID 4731128, body lines 288–312; publisher provenance footnote lines 314–316."
+    }
+  ],
+  "blocked_or_excluded": [
+    {
+      "aid": 4666220,
+      "reason": "Public reader returned an internal-error/shell rather than inspectable body text; no proposition was inferred from its title or identifier.",
+      "alternative_used": [
+        4666213,
+        4666214,
+        4666218,
+        4666219
+      ]
+    },
+    {
+      "aid": 4666211,
+      "reason": "The public reader/search path did not expose inspectable body text in this run; excluded.",
+      "alternative_used": [
+        4666213,
+        4666218,
+        4666219
+      ]
+    },
+    {
+      "aid": 4666280,
+      "reason": "Public reader exposed a shell without body text; not used as evidence. AID 4731128 is linked by a publisher footnote as an enclosure but remains a distinct identity.",
+      "alternative_used": [
+        4731128
+      ]
+    },
+    {
+      "aid": 4666265,
+      "reason": "Public reader/search did not expose body text; not promoted.",
+      "alternative_used": [
+        4666266
+      ]
+    },
+    {
+      "aid": 4666267,
+      "reason": "Public reader/search did not expose body text; not promoted.",
+      "alternative_used": [
+        4666266
+      ]
+    },
+    {
+      "aid": 4666268,
+      "reason": "Public reader/search did not expose body text; not promoted.",
+      "alternative_used": [
+        4666266
+      ]
+    },
+    {
+      "aid": 4666270,
+      "reason": "Public reader/search did not expose body text; not promoted.",
+      "alternative_used": [
+        4666272
+      ]
+    },
+    {
+      "aid": 553673,
+      "reason": "Yechidus page exposed media/metadata but no inspectable transcript; not used as text evidence."
+    },
+    {
+      "aid": 553692,
+      "reason": "Yechidus page exposed media/metadata but no inspectable transcript; not used as text evidence."
+    }
+  ],
+  "dedup_review": {
+    "stable_keys": [
+      "aid:4666213",
+      "aid:4666214",
+      "aid:4666218",
+      "aid:4666219",
+      "aid:4666234",
+      "aid:4666235",
+      "aid:4666266",
+      "aid:4666272",
+      "aid:4731128"
+    ],
+    "duplicates": "AID 4666218 and AID 4666219 each appeared three times in one bulk-indexed file from separate staging origins. One copy per AID was promoted; the other copies remain metadata-only and do not create additional identities or Evidence Families.",
+    "translations": "No translation was counted as an independent witness.",
+    "cross_reference": "AID 4731128 is the enclosed letter mentioned in the preceding letter according to the publisher note. It remains a distinct text identity and Evidence Family from AID 4666280."
+  },
+  "retrieval_changes": {
+    "files": [
+      "src/answer-engine.js",
+      "src/answer-engine-validated.js",
+      "scripts/test_content_readiness.mjs",
+      "index.html"
+    ],
+    "topics_added": [
+      "העתק שיחות סוכות",
+      "מחלקת קה״ת בשנגהי"
+    ],
+    "comparison_question": "השווה בין שליחת העתק שיחות סוכות במכתב קעד לבין הקמת מחלקת קה״ת בשנגהי במכתב רכז",
+    "checks": "Specific retrieval, two Evidence Families, claim-local citations, context boundaries and researcher-mode evidence map are asserted in regular and researcher modes."
+  },
+  "metrics_before": {
+    "answer_eligible_unique_sources": 645,
+    "content_verified_unique_sources": 642,
+    "answer_eligible_propositions": 1974,
+    "canonical_unique_item_keys": 8951,
+    "verified_unique_item_keys": 7632,
+    "canonical_json_files": 421,
+    "content_review_queue_records": 1068
+  },
+  "expected_metrics_after": {
+    "answer_eligible_unique_sources": 652,
+    "content_verified_unique_sources": 645,
+    "answer_eligible_propositions": 1999,
+    "canonical_unique_item_keys": 8952,
+    "verified_unique_item_keys": 7635,
+    "canonical_json_files": 422,
+    "content_review_queue_records": 1062
+  },
+  "reconciliation": {
+    "status": "pending",
+    "script": "scripts/reconcile_metrics.py",
+    "expected_outputs": [
+      "data/public-metrics.json",
+      "data/public-search-index.json",
+      "data/content-review-queue.json",
+      "data/project-state.json"
+    ]
+  },
+  "quality_gate": {
+    "workflow": ".github/workflows/answer-quality-gate.yml",
+    "status": "not_yet_verified_for_this_commit",
+    "test": "node scripts/test_content_readiness.mjs"
+  },
+  "publication": {
+    "github_pages_status": "not independently verified in this run",
+    "url": "https://malkashacham.github.io/maaneh-ledorot/"
+  },
+  "safeguards": {
+    "known_http_403_crawler_retried": false,
+    "access_controls_bypassed": false,
+    "full_copyrighted_text_copied": false,
+    "schedule_changed": false,
+    "audience_or_permissions_changed": false
+  }
+}
