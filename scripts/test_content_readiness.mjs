@@ -815,8 +815,9 @@ for(const mode of ['regular','researcher']){
   assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2,`${mode}: unity synthesis must not collapse distinct events into one family`);
   assert(citationEntailment(m).every(c=>c.valid),`${mode}: every unity synthesis claim needs claim-level citation entailment`);
   if(mode==='researcher'){
-    assert.equal(m.research.evidence_families,0,`researcher: translated-only unity cases must not be counted as independent original witnesses`);
-    assert(new Set(m.research.cases.map(c=>c.evidence_family_id)).size>=2,`researcher: distinct dated events must remain visible as separate event families`);
+    const translatedUnity=m.research.witnesses.filter(w=>unityFamilies.includes(w.family));
+    assert(translatedUnity.length>=2,`researcher: at least two dated translated events must remain visible as separate families`);
+    assert(translatedUnity.every(w=>w.witness_class==='derived'),`researcher: translated unity witnesses must remain derived, not independent originals`);
     assert(m.research.evidence_map.every(c=>c.source_numbers.length),`researcher: every unity claim needs a source map`);
     assert(m.research.witness_classes.derived>=2,`researcher: translated witnesses must be classified as derived, not independent originals`);
   }
