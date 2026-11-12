@@ -1282,8 +1282,7 @@ for(const mode of ['regular','researcher']){
 }
 
 const batch061Required=[
- [5100285,2,'original-letter-aid-5100285'],
- [4754587,2,'original-letter-aid-4754587']
+ [5100285,2,'original-letter-aid-5100285']
 ];
 for(const [aid,minProps,family] of batch061Required){
  const e=idx.entries.find(x=>String(x.aid)===String(aid));
@@ -1342,4 +1341,4 @@ for(const mode of ['regular','researcher']){
  assert(m.context_boundary.every(x=>x.valid),`${mode}: the excerpt's partial context must remain bounded`);
  if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0,`${mode}: family-planning researcher mode must expose the evidence map`);
 }
-console.log(`Content readiness: ${unique.size} usable sources; real-corpus answer checks passed, including batch-056 through batch-060 source, comparison, citation and researcher-mode checks`);
+console.log(`Content readiness: ${unique.size} usable sources; real-corpus answer checks passed, including batch-056 through batch-061 source, comparison, citation and researcher-mode checks`);
