@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch054b-specific-commerce';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch055-charity-amount-precision';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -17,6 +17,7 @@ const TOPIC_ALIASES={
   'נישואין':['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
   'שכחה וחלומות':['שכחה וחלומות','שכחה','חיזוק הזכרון','חלומות מטרידים','forgetfulness and dreams','memory and disturbing dreams'],
   'צדקה ולימוד':['צדקה מחליפה לימוד','צדקה מתוארת כמזככת','צדקה מגדילה את פירות העבודה','charity replace study','charity and study effort'],
+  'התחייבות לצדקה בסכום נקוב':['לנקוב בסכום מסוים','נודבים לצדקה','סכום מסוים לצדקה','מתחייבים לצדקה','specific amount charity pledge','state a specific amount when pledging charity'],
   'תפקיד דתי ייחודי':['תפקיד ייחודי בענייני דת','תפקיד המסוים שנמסר','משימה שאחרים אינם יכולים למלא','unique religious role','task others cannot fulfill'],
   'הערות שוליים בספר':['הערות שוליים','הדפסה מחודשת','להדפיס מחדש ספר','לפרסם הערות שוליים','הערות השוליים שהותיר','פרסום מוקדם של ההערות','book marginalia','reprint a book for marginal notes'],
   'עקירת שיניים וחוות דעת':['עקירת שיניים','חוות דעת נוספת','לעקור את כל השיניים','מומחים נוספים','dental extraction second opinion','extract all teeth'],

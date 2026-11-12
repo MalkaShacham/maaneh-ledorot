@@ -16,6 +16,7 @@ const TOPICS={
  'בית רבקה בראונסוויל':['בית רבקה בבראונסוויל','בתי הספר בית רבקה בבראונסוויל','בראונסוויל','brownsville','east new york beis rivka'],
  'שכחה וחלומות':['שכחה וחלומות','שכחה','חיזוק הזכרון','חלומות מטרידים','forgetfulness and dreams','memory and disturbing dreams'],
  'צדקה ולימוד':['צדקה מחליפה לימוד','צדקה מתוארת כמזככת','צדקה מגדילה את פירות העבודה','charity replace study','charity and study effort'],
+ 'התחייבות לצדקה בסכום נקוב':['לנקוב בסכום מסוים','נודבים לצדקה','סכום מסוים לצדקה','מתחייבים לצדקה','specific amount charity pledge','state a specific amount when pledging charity'],
  'מדיניות הימנעות מגיוס כספים ישיר':['מדיניות הימנעות מגיוס כספים','מדיניות של הימנעות מגיוס כספים','הימנעות מגיוס כספים ישיר','שני הטעמים למדיניות הימנעות','שני הטעמים שניתנו למדיניות','why the rebbe does not fundraise'],
  'תפקיד דתי ייחודי':['תפקיד ייחודי בענייני דת','תפקיד המסוים שנמסר','משימה שאחרים אינם יכולים למלא','unique religious role','task others cannot fulfill'],
  'הערות שוליים בספר':['הערות שוליים','הדפסה מחודשת','להדפיס מחדש ספר','לפרסם הערות שוליים','הערות השוליים שהותיר','פרסום מוקדם של ההערות','book marginalia','reprint a book for marginal notes'],
@@ -285,6 +286,7 @@ const isIntentFramingTerm=(term,intent)=>{
 export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
  let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
+ if(topics.includes('התחייבות לצדקה בסכום נקוב'))topics=topics.filter(t=>t!=='צדקה ולימוד');
  if(topics.includes('כתבי יד משה יצחק מיאס')&&!['מיאס','משה יצחק'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='כתבי יד משה יצחק מיאס');
  if(topics.includes('צעירי אגודת ישראל דוגמה חיה')&&!['צעירי אגודת ישראל','ועידת צעירי','משבר הדור הצעיר'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='צעירי אגודת ישראל דוגמה חיה');
  if(topics.includes('צעירי אגודת ישראל דוגמה חיה'))topics=topics.filter(t=>t!=='שליח כדוגמה חיה');
@@ -379,6 +381,7 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('התחייבות לצדקה בסכום נקוב')&&!arr(e.response_propositions).some(p=>containsTerm(p,'צדקה')&&containsTerm(p,'סכום')&&containsTerm(p,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(p,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['A single inspected proposition must state an amount, an explicit instruction to name it, and a charity-pledge context.']};
  if(u.topics.includes('שבת כמקור ברכה לפני י״ב תמוז')&&(!containsTerm(body,'שבת')||!containsTerm(body,'תמוז')||!containsTerm(body,'ברכה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Shabbat-before-12-Tammuz blessing setting is absent']};
  if(u.topics.includes('העלאת ימי השבוע בשבת')&&(!containsTerm(body,'ויכולו')||!containsTerm(body,'שבת')||!containsTerm(body,'עונג')))return{score:0,support:'insufficient_specific_evidence',reasons:['Vayechulu elevation-and-delight setting is absent']};
  if(u.topics.includes('שבת שובה ותשובה')&&(!containsTerm(body,'שבת שובה')||!containsTerm(body,'שבת תשובה')||!containsTerm(body,'תשרי')))return{score:0,support:'insufficient_specific_evidence',reasons:['Shabbos Shuvah/Teshuvah and Tishrei setting is absent']};

@@ -38,6 +38,13 @@ for(const mode of ['regular','researcher']){
   assert(m.sources.length>=3,`${mode}: publication synthesis must use at least three independent evidence families`);
   assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,`${mode}: translations or duplicate witnesses must not inflate publication synthesis`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every publication claim needs a proposition-level citation`);
+  if(mode==='researcher'){
+    assert(m.research&&m.research.evidence_families>=3,`${mode}: researcher mode must expose independent-family depth`);
+    assert.equal(m.research.witnesses.length,m.sources.length,`${mode}: researcher mode must expose witness-level provenance for every source`);
+    assert(m.research.evidence_map.length>0,`${mode}: researcher mode must expose a claim-to-witness evidence map`);
+    assert(m.research.citation_entailment.every(x=>x.valid),`${mode}: researcher claims must pass claim-local citation entailment`);
+    assert(m.research.context_boundary.every(x=>x.valid),`${mode}: researcher mode must preserve witness-local context boundaries`);
+  }else assert.equal(m.research,undefined,'regular mode must not be padded with researcher-only evidence analysis');
   assert(!m.sources.some(e=>['id:igrot-scan-v13-letter-4-282','id:igrot-scan-v13-letter-4-284'].includes(e.key)),`${mode}: מספר/הפצה כללית must not masquerade as book-publication evidence`);
 }
 const privateFastQuestion='מה כתב הרבי על תעניות שאדם מוסיף מדעתו?';
@@ -272,6 +279,10 @@ for(const [question,key] of batch023Checks){
     assert(m.answerable,`${mode}: inspected batch-023 evidence must answer ${question}`);
     assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-023 witness must be retrieved for ${question}`);
     assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-023 query must not be flooded by generic evidence: ${question}; sources=${m.sources.map(e=>e.key).join(',')}`);
+    if(question.includes('סכום מסוים')){
+      assert.equal(m.sources.length,1,`${mode}: the fixed-amount charity pledge query must return only its directly supporting witness`);
+      assert.equal(m.sources[0].key,key,`${mode}: generic charity or amount mentions must not displace the specific pledge letter`);
+    }
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-023 claim needs a proposition-level citation`);
   }
 }

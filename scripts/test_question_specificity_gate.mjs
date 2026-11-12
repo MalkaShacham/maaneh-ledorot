@@ -13,6 +13,10 @@ assert.equal(buildAnswerModel([source('education for children and teachers')],en
 assert.equal(buildAnswerModel([source('education for children and teachers')],
  'What did the Rebbe say about education and ADHD?').answerable,false,
  'a real question-specific qualifier must still require content evidence');
+const pledgeQuestion=understandQuestion('מדוע צריך לנקוב בסכום מסוים כשמתחייבים לצדקה?');
+assert(pledgeQuestion.topics.includes('התחייבות לצדקה בסכום נקוב'),'a fixed-amount charity pledge must be parsed as a dedicated topic');
+assert.notEqual(propositionRelevance(source('כשנודבים לצדקה מתבקש הנמען לנקוב בסכום מסוים'),pledgeQuestion).support,'insufficient_specific_evidence','the directly inspected pledge instruction must pass the proposition gate');
+assert.equal(propositionRelevance(source('נתינת סכום קטן לצדקה בכל יום חול לפני תפילת הבוקר'),pledgeQuestion).support,'insufficient_specific_evidence','generic daily charity and amount references must not satisfy a specific pledge instruction');
 const naturalHebrewQuestion='מהו הלימוד המוסרי מפרה אדומה באיגרת?';
 assert.deepEqual(understandQuestion(naturalHebrewQuestion).subtopic,
  ['פרה','אדומה'],
@@ -24,4 +28,4 @@ assert.deepEqual(understandQuestion(naturalGuidanceQuestion).subtopic,[],
  'common Hebrew guidance verbs and connective phrasing must not become evidence requirements');
 assert.equal(buildAnswerModel([source('חינוך ילדים דורש תשומת לב חינוכית כבר בגיל הרך')],naturalGuidanceQuestion).answerable,true,
  'a natural Hebrew guidance question must retrieve direct education evidence');
-console.log('Question specificity evidence gate: 10 checks passed');
+console.log('Question specificity evidence gate: 13 checks passed');
