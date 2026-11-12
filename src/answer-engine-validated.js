@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch057-hebrew-crosssource-v3';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch058-source-grounded-v4';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -23,7 +23,7 @@ const TOPIC_ALIASES={
   'עקירת שיניים וחוות דעת':['עקירת שיניים','חוות דעת נוספת','לעקור את כל השיניים','מומחים נוספים','dental extraction second opinion','extract all teeth'],
   'חזרה בחסידות וזיכרון':['לשפר זיכרון','לחזור על חסידות','חזרה בחסידות','חזרה מרובה','כוח הזיכרון','review chassidus memory','repetition and memory'],
   'מקווה בלי המתנה לשלום':['בניית מקווה','לקדם בניית מקווה','מקדמים בניית מקווה','להמתין לשלום','אין לעכב בגללה פעולות אחרות','לקידום מקווה','מקווה בקיבוץ מפלסים','mikveh without waiting for peace'],
-  'נוסח תפילה באיחוד בתי כנסת':['נוסח התפילה באיחוד בתי כנסת','איחוד בתי כנסת','התאחדות שני בתי כנסיות','שני בתי כנסת','נוסח האריז״ל','נוסח האריזל','synagogue union prayer rite'],
+  'נוסח תפילה באיחוד בתי כנסת':['נוסח התפילה באיחוד בתי כנסת','איחוד בתי כנסת','התאחדות שני בתי כנסיות','שני בתי כנסת','נוסח האריז״ל','נוסח האריזל','ושמרו','לפני התיבה','לא יאמר ושמרו','חשש להפסק','veshamru','synagogue union prayer rite'],
   'עולים ממרוקו ושפת ההתוועדות':['עולים ממרוקו','אינם מבינים יידיש','אין מבינים אידית','התוועדויות בעברית','התוועדויות תכופות בעברית','moroccan immigrants hebrew farbrengen'],
   'עזיבת פרנסה לפעילות':['לעזוב מקור פרנסה','יעזוב ענין שפרנסתו','פעילות חב״ד ופרנסה','quit livelihood for chabad work'],
   'אהבת התורה':['אהבת התורה','אהבת ההשגה השכלית','הישג השכלי','הנאת הלומד','love of torah','intellectual satisfaction'],
@@ -224,6 +224,15 @@ const TOPIC_ALIASES={
   'שורש הנשמה ותפקיד בעולם':['שורש הנשמה','שרש הנשמה','שרש נפשו למעלה','מילוי תפקידו בעולם','תפקידו בעולם','soul root and purpose'],
   'לימוד הלכה למעשה והשפעה על הזולת':['לימוד הלכה למעשה והשפעה על הסביבה','הלכות הצריכות','ספרי הלכה','השפעה על חבריו','השפעה על כל אחד בסביבתו','השפעה על הסביבה','practical halacha and influence']
   , 'הרחבת ישיבה':['מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','להגדיל','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים','להקל במידת ההתאמה','yeshiva enrollment','increase yeshiva enrollment']
+,
+ 'בריאות בחופשה וחיזוק הנשמה':['נאות דשא','הבראת הגוף','חיזוק הנשמה','ימי החופש','שיעור לימוד מיוחד','vacation health recovery and soul'],
+ 'מניעת הריון בסיכון רפואי':['מניעת הריון','סכנה בהריון','סכנה שתתעבר','רופאים קובעים סכנה','אישה שהיריון מסוכן לה','contraception medical risk pregnancy'],
+ 'פרויקט תניא והפצת המעיינות':['פרויקט תניא','פראיעקט תניא','הפצת המעיינות','הרחבת פרויקט תניא','פרויקטים להפצת המעיינות','Tanya project','spreading wellsprings'],
+ 'דאגה רפואית ומחשבות על רפואה':['מחשבות בענייני רפואה','פלפול בענייני רפואה','הוראות הרופאים','עיסוק מחשבתי ברפואה','medical rumination','follow doctors instructions'],
+ 'חנוכת הבית ומזוזה':['חנוכת הבית','חינוך הבית','מעבר לדירה חדשה','קביעת מזוזות','בדיקת מזוזה לאחר שלושים יום','housewarming mezuzah'],
+ 'מרה שחורה וחששות ללא יסוד':['מרה שחורה','חששות שאין להן יסוד','חששות שאין להם יסוד','לימוד נגלה וחסידות','melancholy baseless fears'],
+ 'יחס למכחישי תורה ולימוד הלכה':['מכחישים וכופרים','תורה שבכתב','תורה שבעל פה','הלכות הצריכות בחיי היום יום','לימוד הלכה למעשה','deniers of written and oral Torah','practical halacha'],
+ 'התכתבות עם הוצאה לאור וספרים':['ילדותנו','ספרי ילדותנו','הוצאה לאור בירושלים','הוצאת ספרים בירושלים','קבלת ספרים','publication correspondence books']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
