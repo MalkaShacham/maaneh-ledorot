@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch052-event-family-retrieval';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch053-hebrew-text-synthesis';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -27,6 +27,16 @@ const TOPIC_ALIASES={
   'עזיבת פרנסה לפעילות':['לעזוב מקור פרנסה','יעזוב ענין שפרנסתו','פעילות חב״ד ופרנסה','quit livelihood for chabad work'],
   'אהבת התורה':['אהבת התורה','אהבת ההשגה השכלית','הישג השכלי','הנאת הלומד','love of torah','intellectual satisfaction'],
   'אהבת ה׳':['אהבת ה׳','אהבת המקום','גדולת הבורא','ביטול ולשפלות','love of god','love of g-d'],
+  'תורה ברבים ותפילת רבים':['תורה ברבים','לימוד תורה ברבים','עשרה שיושבין','תפילת רבים','תפלת רבים','לימוד בעשרה','תפילה של רבים','communal torah study','group torah study','prayer of the many'],
+  'אחדות ישראל במפגשים':['אחדות ישראל','אחדות יהודים','אחדות בין יהודים','מפגש משותף','יחידות קבוצתית','אחדות גם לאחר הפרידה','unity among Jews','Jewish unity','group yechidus'],
+  'דירה בתחתונים והשראת השכינה':['דירה בתחתונים','השראת השכינה','שכינה בתחתונים','המשכת השכינה','עשיית העולם דירה','dwelling for G-d in the lower worlds','divine presence in the lower worlds'],
+  'תשובה מתוך שמחה':['תשובה אמיתית','תשובה עילאה','תשובה מתוך שמחה','חרטה על העבר','קבלה טובה להבא','repentance with joy'],
+  'הכנה לגאולה':['הכנה לגאולה','זכירת הגאולה','גאולה עתידה','קיבוץ גלויות','בניין בית המקדש','prepare for redemption','future redemption'],
+  'שבת שירה ומתן תורה':['שבת שירה','מלווה מלכה','סעודת מלווה מלכה','מתן תורה','מן','Shabbat Shirah','Melaveh Malkah','giving of the Torah'],
+  'רחמים עליונים':['רחמים שלמעלה','מידת הרחמים','רחמי נשר','כנשר יעיר קנו','higher divine compassion'],
+  'תענית תשעה באב והוראת רופא':['תענית תשעה באב','צום תשעה באב','רופא הורה שלא להתענות','הוראת רופא ותענית','Tisha B’Av fast medical advice'],
+  'ברכת כפר חב״ד ואתרוג':['כפר חב״ד','מסירת האתרוגים','הדסים ואתרוג','ריבוי הדסים','Kfar Chabad etrog myrtle'],
+  'מאמר אתה אחד':['אתה אחד','שמך אחד','גוי אחד בארץ','אחד ויחיד','Ata Echad','one and unique Israel']
   'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד','מסחר בזמן לימוד בישיבה','ישיבה עד הצהריים','לימוד כל היום','חסרון בהתרכזות','business during yeshiva study','full-day yeshiva study'],
   'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
   'סניף תלמוד תורה ומחנה יום':['סניף תלמוד תורה שאינו מצליח','לסגור סניף תלמוד תורה','חיסול הסניף','מחנה יום','בסיס לרכישת תלמידים','failing talmud torah branch','day camp student recruitment'],

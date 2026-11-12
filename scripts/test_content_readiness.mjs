@@ -878,5 +878,33 @@ for(const [question,families] of batch052SynthesisChecks){
   }
 }
 
-console.log(`Content readiness: ${unique.size} usable sources; 386 real-corpus answer checks passed, including 32 batch-052 mode-specific and multi-source checks`);
+
+const batch053DirectChecks=[
+ ['מה מתואר במאמר כנשר יעיר קנו על רחמים שלמעלה ממידת הרחמים?',[5996841]],
+ ['מהם שני הפירושים במאמר כימי צאתך לגבי הגאולה העתידה?',[5996844]],
+ ['כיצד מתוארת דירה בתחתונים במאמר באתי לגני תש״ל?',[3140096]],
+ ['מה נכתב בברכת ערב יום הכיפורים על תשובה אמיתית ותשובה עילאה?',[5989546]],
+ ['מה מתועד ברשימה הפרטית על תענית תשעה באב והוראת רופא?',[5989548]],
+ ['מה נאמר בהתוועדות מוצאי שבת שירה על המן ומתן תורה?',[5989569]],
+ ['מה נאמר בברכה לאנשי כפר חב״ד על אתרוג והדסים?',[5989549]],
+ ['כיצד המאמר אתה אחד תשכ״ט מבאר את ההבחנה בין אחד ליחיד?',[5989601]],
+ ['מה הקשר בין תפילת רבים ללימוד תורה ברבים?',[5996845,5996846]],
+ ['כיצד מפגש משותף, תפילה ולימוד מחזקים אחדות יהודים?',[2515477,2514886]],
+ ['מה הקשר בין דירה בתחתונים לבין לימוד תורה ומצוות?',[3140096,5989547]]
+];
+for(const [question,aids] of batch053DirectChecks){
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,question,{mode});
+  assert(m.answerable,`${mode}: batch-053 question must be answerable: ${question}`);
+  for(const aid of aids)assert(m.sources.some(e=>String(e.aid)===String(aid)),`${mode}: batch-053 must cite AID ${aid} for ${question}`);
+  assert(citationEntailment(m).every(c=>c.valid),`${mode}: batch-053 claim-level citation entailment must pass`);
+  if(mode==='researcher'){
+   assert(m.research.evidence_map.every(c=>c.source_numbers.length),`researcher: batch-053 every claim needs an evidence-map source`);
+   assert.equal(m.research.witnesses.length,m.sources.length,`researcher: batch-053 every displayed source needs a witness record`);
+  }else{
+   assert(!m.research&&m.presentation.detail_level==='summary',`regular: batch-053 must retain concise rendering`);
+  }
+ }
+}
+console.log(`Content readiness: ${unique.size} usable sources; 408 real-corpus answer checks passed, including 22 batch-053 mode-specific and multi-source checks`);
 
