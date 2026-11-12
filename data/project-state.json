@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-12",
+  "last_updated": "2026-11-13",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -82,27 +82,27 @@
     "search_index_refresh_commit": null,
     "answer_readiness": {
       "answer_eligible_unique_sources": {
-        "before": 645,
-        "expected_after": 652
+        "before": 653,
+        "expected_after": 663
       },
       "content_verified_unique_sources": {
-        "before": 642,
-        "expected_after": 645
+        "before": 650,
+        "expected_after": 660
       },
       "answer_eligible_propositions": {
-        "before": 1974,
-        "expected_after": 1999
+        "before": 2002,
+        "expected_after": 2022
       }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
-      "trigger": "push to main; changed paths include index.html, data/items/**, src/answer-engine*.js and scripts/test_content_readiness.mjs",
-      "run_status": "pending_commit_bound_verification",
+      "trigger": "pull_request to main and push to main; changed paths include source items, answer engine and readiness tests",
+      "run_status": "pending_pull_request_run",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
-      "latest_saved_report_passed": null,
-      "latest_saved_report_regression_cases": null,
+      "latest_saved_report_passed": true,
+      "latest_saved_report_regression_cases": 31,
       "commit_binding": false,
-      "note": "Batch-060 source and comparison assertions were added. Do not report them as passed until a run bound to the merge commit is independently inspected."
+      "note": "The saved 2026-11-12 structural report is not bound to batch 062. Do not report a pass until the batch-062 pull-request run is inspected."
     }
   },
   "ux": {
@@ -139,39 +139,39 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "data/content-reviews/2026-11-12-content-batch-060.json",
+    "current_batch": "2026-11-13-content-batch-062",
     "required_agent_action": "Continue direct public-body inspection across Hebrew, Yiddish and English; prioritize pending AIDs whose publisher pages expose body text, preserve Evidence Family identity and translation dependency, run reconciliation and both answer modes, and do not retry the known 403 crawler.",
-    "last_completed_batch": "2026-11-12-content-batch-060",
+    "last_completed_batch": "2026-11-13-content-batch-062",
     "last_batch_summary": {
-      "reviewed_items": 9,
-      "new_source_identities": 1,
-      "existing_identities_enriched": 8,
-      "response_propositions_added": 25,
+      "reviewed_items": 10,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 1,
+      "response_propositions_added": 20,
       "metrics_before": {
-        "answer_eligible_unique_sources": 645,
-        "content_verified_unique_sources": 642,
-        "answer_eligible_propositions": 1974,
-        "canonical_unique_item_keys": 8951,
-        "verified_unique_item_keys": 7632,
-        "canonical_json_files": 421,
+        "answer_eligible_unique_sources": 653,
+        "content_verified_unique_sources": 650,
+        "answer_eligible_propositions": 2002,
+        "canonical_unique_item_keys": 8950,
+        "verified_unique_item_keys": 7633,
+        "canonical_json_files": 423,
         "evidence_family_files": 55,
-        "content_review_queue_records": 1068
+        "content_review_queue_records": 1060
       },
       "expected_metrics_after": {
-        "answer_eligible_unique_sources": 652,
-        "content_verified_unique_sources": 645,
-        "answer_eligible_propositions": 1999,
-        "canonical_unique_item_keys": 8952,
-        "verified_unique_item_keys": 7635,
-        "canonical_json_files": 422,
+        "answer_eligible_unique_sources": 663,
+        "content_verified_unique_sources": 660,
+        "answer_eligible_propositions": 2022,
+        "canonical_unique_item_keys": 8959,
+        "verified_unique_item_keys": 7642,
+        "canonical_json_files": 432,
         "evidence_family_files": 55,
-        "content_review_queue_records": 1062
+        "content_review_queue_records": 1059
       },
       "metrics_after": null,
       "reconciliation_commit": null,
       "merge_commit": null,
       "search_index_refresh_commit": null
     },
-    "last_run_note": "Batch 060 reviewed nine source bodies, enriched eight existing AID identities and added one new Hebrew letter identity. Twenty-five source-grounded non-verbatim propositions were added. Reconciliation and commit-bound Actions results are pending; the expected metrics are recorded separately and must not be reported as actual until the generated metrics are read. Known HTTP 403 crawler was not retried; schedule, audience and permissions were unchanged. GitHub Pages deployment status is not yet independently verified."
+    "last_run_note": "Batch 062 manually inspected ten public publisher letter bodies, enriched one existing AID identity and added nine new Hebrew/Yiddish letter identities with twenty source-grounded non-verbatim propositions. The known 403 crawler was not retried; blocked reader shells were documented and replaced by accessible publisher bodies. Reconciliation, commit-bound quality checks and live publication verification are pending."
   }
 }
