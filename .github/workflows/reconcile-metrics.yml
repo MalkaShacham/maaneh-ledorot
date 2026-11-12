@@ -30,7 +30,10 @@ jobs:
           python-version: '3.x'
       - name: Sync latest main before mutation
         run: git pull --ff-only origin main
+      # Do not repeat runner-side HTTP 403 discovery during deterministic push reconciliation.
+      # Manual dispatch remains available for a separately authorized discovery review.
       - name: Optional live discovery of up to 250 Sichos Kodesh audio records
+        if: github.event_name == 'workflow_dispatch'
         id: live_discovery
         continue-on-error: true
         run: python scripts/bulk_ingest_sichos_kodesh_audio.py --limit 250
