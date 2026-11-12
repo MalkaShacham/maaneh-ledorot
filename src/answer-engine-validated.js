@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch053d-specificity';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch053e-specific-communal-study';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -27,7 +27,7 @@ const TOPIC_ALIASES={
   'עזיבת פרנסה לפעילות':['לעזוב מקור פרנסה','יעזוב ענין שפרנסתו','פעילות חב״ד ופרנסה','quit livelihood for chabad work'],
   'אהבת התורה':['אהבת התורה','אהבת ההשגה השכלית','הישג השכלי','הנאת הלומד','love of torah','intellectual satisfaction'],
   'אהבת ה׳':['אהבת ה׳','אהבת המקום','גדולת הבורא','ביטול ולשפלות','love of god','love of g-d'],
-  'תורה ברבים ותפילת רבים':['תורה ברבים','לימוד תורה ברבים','עשרה שיושבין','תפילת רבים','תפלת רבים','לימוד בעשרה','תפילה של רבים','communal torah study','group torah study','prayer of the many'],
+  'תורה ברבים ותפילת רבים':['תורה ברבים','עשרה שיושבין','תפילת רבים','תפלת רבים','תפילה של רבים','Torah study among ten','communal prayer','prayer of the many'],
   'אחדות ישראל במפגשים':['אחדות ישראל','אחדות יהודים','אחדות בין יהודים','מפגש משותף','יחידות קבוצתית','אחדות גם לאחר הפרידה','unity among Jews','Jewish unity','group yechidus'],
   'דירה בתחתונים והשראת השכינה':['דירה בתחתונים','השראת השכינה','שכינה בתחתונים','המשכת השכינה','עשיית העולם דירה','dwelling for G-d in the lower worlds','divine presence in the lower worlds'],
   'תשובה מתוך שמחה':['תשובה אמיתית','תשובה עילאה','תשובה מתוך שמחה','חרטה על העבר','קבלה טובה להבא','repentance with joy'],
