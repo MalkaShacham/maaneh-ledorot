@@ -254,7 +254,8 @@ for(const [question,key] of batch022Checks){
     const m=buildAnswerModel(idx.entries,question,{mode});
     assert(m.answerable,`${mode}: inspected batch-022 evidence must answer ${question}`);
     assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-022 witness must be retrieved for ${question}`);
-    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-022 query must not be flooded by generic evidence`);
+    if(m.sources.length>(mode==='researcher'?8:4)) console.log('BATCH022_OVERRETRIEVAL',JSON.stringify({mode,question,source_keys:m.sources.map(e=>e.key),source_titles:m.sources.map(e=>e.title)}));
+    assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: the specific batch-022 query must not be flooded by generic evidence: ${question}; sources=${m.sources.map(e=>e.key).join(',')}`);
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-022 claim needs a proposition-level citation`);
   }
 }
