@@ -205,16 +205,32 @@ for(const mode of ['regular','researcher']){
 const newBatchChecks=[
   ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
   ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
-  ['כיצד להגדיל משתתפים בכיתות לימוד בלי להזניח לימוד אישי?','id:igrot-scan-v13-letter-4-368'],
+  ['מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?','id:igrot-kodesh-v13-דתרפא'],
+  ['מה כתב הרבי למדריך במחנה גן ישראל על הרחבת ההשפעה ועל לימוד אישי?','id:igrot-kodesh-v13-דתרעו'],
   ['מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
 ];
 for(const [question,key] of newBatchChecks){
   for(const mode of ['regular','researcher']){
     const m=buildAnswerModel(idx.entries,question,{mode});
+    if(!m.answerable) console.log('BATCH018_DEBUG',JSON.stringify({question,mode,reason:m.reason,understanding:m.understanding,source_keys:m.sources.map(e=>e.key),insufficient:m.insufficient_evidence}));
     assert(m.answerable,`${mode}: inspected batch-018 evidence must answer ${question}`);
     assert.deepEqual(m.sources.map(e=>e.key),[key],`${mode}: the specific batch-018 query must retrieve only its inspected evidence family`);
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-018 claim needs a proposition-level citation`);
   }
+}
+
+const batch018Comparison='השווה בין האיגרת על הוספת אברכים לשיעור חסידות לבין האיגרת למדריך במחנה גן ישראל על הרחבת ההשפעה ועל לימוד אישי';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch018Comparison,{mode});
+ if(!m.answerable) console.log('BATCH018_COMPARE_DEBUG',JSON.stringify({mode,reason:m.reason,understanding:m.understanding,source_keys:m.sources.map(e=>e.key),insufficient:m.insufficient_evidence,coverage:m.comparative_coverage}));
+ assert(m.answerable,`${mode}: batch-018 class/camp comparison must be answerable`);
+ for(const key of ['id:igrot-kodesh-v13-דתרפא','id:igrot-kodesh-v13-דתרעו'])assert(m.sources.some(e=>e.key===key),`${mode}: comparison must include ${key}`);
+ assert(new Set(m.sources.map(e=>e.evidence_family_id).filter(Boolean)).size>=2,`${mode}: class/camp comparison must retain two independent Evidence Families`);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: every class/camp comparison claim needs proposition citations`);
+ assert(m.citation_entailment.every(x=>x.valid),`${mode}: class/camp comparison citations must pass entailment`);
+ assert(m.context_boundary.every(x=>x.valid),`${mode}: class/camp comparison must preserve witness-local context`);
+ if(mode==='researcher')assert(m.research&&m.research.evidence_families>=2&&m.research.evidence_map.length>0,`${mode}: researcher comparison must expose both families and claim-to-witness map`);
+ else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
 }
 const batch019Checks=[
   ['האם צריך ללמוד זוהר לפני שמתחילים ללמוד חסידות?','id:igrot-scan-v13-letter-4-371'],
