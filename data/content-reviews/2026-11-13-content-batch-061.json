@@ -4,9 +4,9 @@
   "reviewed_at": "2026-11-13",
   "review_method": "Manual public-source inspection through web search/open. No runner-side crawler or access-control bypass.",
   "source_bodies_reviewed": 9,
-  "new_source_identities": 2,
+  "new_source_identities": 1,
   "existing_identities_enriched": 5,
-  "source_grounded_propositions_added": 5,
+  "source_grounded_propositions_added": 3,
   "new_sources": [
     {
       "aid": 5100285,
@@ -16,16 +16,6 @@
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100285/jewish/page.htm",
       "locator": "publisher body lines 244-256",
       "scope": "Visible item-level letter body and publisher note inspected; incoming letter and underlying manuscript not inspected; context partial.",
-      "propositions": 2
-    },
-    {
-      "aid": 4754587,
-      "id": "chabad-letter-4754587",
-      "evidence_family_id": "original-letter-aid-4754587",
-      "language": "Hebrew",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4754587/jewish/page.htm",
-      "locator": "publisher body lines 288-296",
-      "scope": "Partial excerpt begins with ellipsis; only visible excerpt inspected; incoming question and underlying manuscript not inspected; context partial.",
       "propositions": 2
     }
   ],
@@ -64,6 +54,11 @@
       "aid": 5357571,
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
       "scope": "Publisher body lines 244-257 opened and inspected; existing propositions used as a separate dated Evidence Family for cross-letter daily-study synthesis."
+    },
+    {
+      "aid": 4754587,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4754587/jewish/page.htm",
+      "scope": "Publisher excerpt lines 288-296 inspected. Reconciliation showed the stable AID already existed in the corpus; the duplicate candidate file created in this batch was removed rather than counted as a second identity. The exact pre-existing item path was not exposed by the available file API."
     }
   ],
   "duplicate_resolution": [
@@ -105,7 +100,7 @@
     "new_topic": "לימוד יומי תחת עומס עבודה",
     "query": "כיצד הציע הרבי ללמוד חומש וחק לישראל כשהעבודה וימי החורף הקצרים מקשים להספיק את השיעורים?",
     "cross_source_comparison": "השווה בין ההדרכה על חלוקת שיעורי חומש וחק לישראל בימי החורף הקצרים לבין המענה על סדרי לימוד, חומש, תהלים, תניא והנחת תפילין",
-    "second_topic": "מניעת הריון בסיכון רפואי",
+    "second_topic": "Existing topic alias exercised: מניעת הריון בסיכון רפואי. AID 4754587 was already present in the corpus and is not counted as a new source.",
     "note": "The new daily-study topic links two distinct Evidence Families (AID 5100285 and AID 5357571). The family-planning item remains a partial historical excerpt and is explicitly not medical advice. Researcher mode is tested for witness-level provenance, claim-to-source mapping, entailment and context boundaries."
   },
   "metrics_before": {
@@ -123,16 +118,19 @@
     "answer_eligible_propositions": 2004
   },
   "reconciliation": {
-    "status": "pending_merge_and_workflow",
-    "script": "scripts/reconcile_metrics.py"
+    "status": "completed_before_duplicate_cleanup; cleanup commit pending",
+    "script": "scripts/reconcile_metrics.py",
+    "bot_commit": "176028b8f9d16081dd013ed03783057e433f67df"
   },
   "quality_gate": {
-    "status": "pending_merge_and_workflow",
-    "test": "node scripts/test_content_readiness.mjs"
+    "status": "not_independently_verified",
+    "test": "node scripts/test_content_readiness.mjs",
+    "note": "No commit-bound run details or check statuses were exposed by the available GitHub connector; stored latest-quality-gate.json is dated 2026-11-12 and is not bound to this commit."
   },
   "publication": {
-    "status": "pending_merge_and_pages_check",
-    "url": "https://malkashacham.github.io/maaneh-ledorot/"
+    "status": "repository_artifacts_updated_live_pages_not_independently_verified",
+    "url": "https://malkashacham.github.io/maaneh-ledorot/",
+    "note": "The available page reader could not open the Pages URL or its public data files."
   },
   "safeguards": {
     "crawler_retried": false,
@@ -140,6 +138,32 @@
     "full_copyrighted_text_copied": false,
     "translations_counted_as_independent": false,
     "schedule_changed": false,
-    "audience_or_permissions_changed": false
+    "audience_or_permissions_changed": false,
+    "duplicate_candidate_removed": true
+  },
+  "duplicate_candidates_removed": [
+    {
+      "aid": 4754587,
+      "candidate_id": "chabad-letter-4754587",
+      "action": "Removed after reconciliation revealed an existing stable AID identity. No second source or Evidence Family was created; exact canonical path remains unresolved."
+    }
+  ],
+  "metrics_after_reconciliation": {
+    "answer_eligible_unique_sources": 653,
+    "content_verified_unique_sources": 650,
+    "answer_eligible_propositions": 2002,
+    "canonical_unique_item_keys": 8950,
+    "verified_unique_item_keys": 7633,
+    "canonical_json_files": 424,
+    "content_review_queue_records": 1060
+  },
+  "expected_metrics_after_duplicate_cleanup": {
+    "answer_eligible_unique_sources": 653,
+    "content_verified_unique_sources": 650,
+    "answer_eligible_propositions": 2002,
+    "canonical_unique_item_keys": 8950,
+    "verified_unique_item_keys": 7633,
+    "canonical_json_files": 423,
+    "content_review_queue_records": 1060
   }
 }
