@@ -79,20 +79,30 @@
     "source": "data/public-metrics.json",
     "generated": "2026-11-12",
     "rule": "Public dashboard uses physical repository reconciliation, not stale snapshots.",
-    "reconciliation_commit": "d3fcaec6b3f4354dae0b227ee0a1bd5bfa403698",
+    "reconciliation_commit": "10c6d451b3207c25eb184cfcc2800372678a0001",
     "answer_readiness": {
       "answer_eligible_unique_sources": {
-        "before": 545,
-        "after": 555
+        "before": 609,
+        "after": 620
       },
       "content_verified_unique_sources": {
-        "before": 542,
-        "after": 552
+        "before": 606,
+        "after": 617
       },
       "answer_eligible_propositions": {
-        "before": 1733,
-        "after": 1753
+        "before": 1889,
+        "after": 1917
       }
+    },
+    "quality_gate": {
+      "workflow": ".github/workflows/answer-quality-gate.yml",
+      "trigger": "push to main; changed paths include index.html, data/items/**, src/answer-engine*.js and scripts/test_content_readiness.mjs",
+      "run_status": "not_independently_verified_in_this_execution",
+      "latest_saved_report": "data/evaluation/latest-quality-gate.json",
+      "latest_saved_report_passed": true,
+      "latest_saved_report_regression_cases": 31,
+      "commit_binding": false,
+      "note": "The stored report is structural and not bound to merge commit bb9c6a9; do not treat it as proof that the new batch-056 regressions passed."
     }
   },
   "ux": {
@@ -154,8 +164,19 @@
         "verified_unique_item_keys": 8478,
         "canonical_json_files": 418,
         "evidence_family_files": 55
-      }
+      },
+      "metrics_after": {
+        "answer_eligible_unique_sources": 620,
+        "content_verified_unique_sources": 617,
+        "answer_eligible_propositions": 1917,
+        "canonical_unique_item_keys": 9797,
+        "verified_unique_item_keys": 8478,
+        "canonical_json_files": 418,
+        "evidence_family_files": 55
+      },
+      "reconciliation_commit": "10c6d451b3207c25eb184cfcc2800372678a0001",
+      "merge_commit": "bb9c6a9841ba21c9e536a5a90067cc81eb297e22"
     },
-    "last_run_note": "Ten new English translated letter identities were added from selected visible publisher body passages; existing AID 2283000 was enriched in place. Hebrew/Yiddish Yechidus and Hebrew letter candidates were blocked at shell/media-only level; alternate public letter pages were inspected. Full public-index audit remains limited by connector response size; AID-first reconciliation and batch regressions are required."
+    "last_run_note": "Batch 056 was merged to main in bb9c6a9 and reconciled by github-actions[bot] in 10c6d45. Public metrics now confirm 620 answer-eligible unique sources, 617 content-verified unique sources and 1,917 propositions; the review queue fell from 1,069 to 1,068 and AID 2283000 left the queue. The answer-quality workflow is configured to run test_content_readiness.mjs on the changed main paths, but its run result is not retrievable through the available connector; the latest stored structural report is passed but not commit-bound. Live Pages deployment remains unverified."
   }
 }
