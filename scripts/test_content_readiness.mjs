@@ -1113,4 +1113,63 @@ const specificMezuzah=buildAnswerModel(idx.entries,'מתי לקבוע מזוזה
 assert(specificMezuzah.sources.length<=2,'specific mezuzah-entry query must exclude generic mezuzah evidence');
 assert(specificMezuzah.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתמג'),'specific mezuzah-entry query must retain the inspected publisher-scan witness');
 
-console.log(`Content readiness: ${unique.size} usable sources; 456 real-corpus answer checks passed, including 10 batch-056 and 6 batch-057 mode-specific checks and 51 item-identity checks`);
+
+const batch058Aids=[4731005,4754587,5071046,4812666,5357409,5100253,4754283,5100299,5357154];
+for(const aid of batch058Aids){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e, `batch-058 AID ${aid} must be present in the generated index`);
+ assert(e.has_content_evidence&&e.status==='Verified', `batch-058 AID ${aid} must carry inspected answer evidence`);
+ assert(e.proposition_origin==='source_grounded_paraphrase'&&e.proposition_verbatim===false, `batch-058 AID ${aid} must be a non-verbatim source-grounded paraphrase`);
+ assert(e.proposition_verification==='source_text_inspected'&&e.proposition_source_locator, `batch-058 AID ${aid} must have source inspection and locator`);
+ assert(e.evidence_family_id, `batch-058 AID ${aid} must have an Evidence Family`);
+ assert(e.context_status==='partial'&&e.verification_scope, `batch-058 AID ${aid} must retain its bounded verification scope`);
+ assert(e.response_propositions.length>=(aid===5357154?1:2), `batch-058 AID ${aid} must retain its reviewed propositions`);
+}
+const batch058Checks=[
+ ['מה כתב הרבי על ניצול חופשה בנאות דשא להבראת הגוף ולחיזוק הנשמה?','aid:4731005'],
+ ['מה כתב הרבי על מניעת הריון כאשר הרופאים קובעים סכנה?','aid:4754587'],
+ ['מה כתב הרבי על פרויקט תניא והפצת המעיינות?','aid:5071046'],
+ ['מה כתב הרבי על מחשבות בענייני רפואה ועל שמירת הוראות הרופאים?','aid:4812666'],
+ ['מה כתב הרבי על חנוכת הבית וקביעת מזוזות?','aid:5357409'],
+ ['מה כתב הרבי על נוסח האריז״ל ואמירת ושמרו לפני התיבה?','aid:5100253'],
+ ['מה כתב הרבי על מרה שחורה וחששות שאין להם יסוד?','aid:4754283'],
+ ['מה כתב הרבי על היחס למכחישי תורה ולימוד הלכה למעשה?','aid:5100299'],
+ ['מה מתועד במכתב ז׳תשפח על ספרי ילדותנו והוצאה לאור בירושלים?','aid:5357154']
+];
+for(const [question,key] of batch058Checks){
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,question,{mode});
+  assert(m.answerable,`${mode}: batch-058 inspected evidence must answer ${question}`);
+  assert(m.sources.some(e=>e.key===key),`${mode}: the specific batch-058 witness ${key} must be retrieved`);
+  assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: batch-058 query must not be flooded by generic evidence: ${question}`);
+  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-058 claim needs a proposition-level citation`);
+  assert(m.citation_entailment.every(x=>x.valid),`${mode}: batch-058 citations must pass claim-local entailment`);
+  assert(m.context_boundary.every(x=>x.valid),`${mode}: batch-058 must preserve witness-local context boundaries`);
+  if(mode==='researcher'){
+   assert(m.research&&m.research.evidence_map.length>0,`${mode}: batch-058 researcher mode must expose a claim-to-witness map`);
+   assert(m.research.witnesses.length===m.sources.length,`${mode}: batch-058 researcher mode must expose provenance for every witness`);
+  }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+ }
+}
+const batch058CrossSourceChecks=[
+ {question:'השווה בין האיגרת על הבראה בנאות דשא לבין האיגרת על מחשבות בענייני רפואה והוראות הרופאים',[4731005,4812666]},
+ {question:'השווה בין המברק על פרויקט תניא ברומא לבין המכתב על ספרי ילדותנו והוצאה לאור בירושלים',[5071046,5357154]}
+];
+for(const item of batch058CrossSourceChecks){
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,item.question,{mode});
+  assert(m.answerable,`${mode}: batch-058 cross-source comparison must be answerable: ${item.question}`);
+  for(const aid of item[1])assert(m.sources.some(e=>String(e.aid)===String(aid)),`${mode}: comparison must include AID ${aid}`);
+  assert(new Set(m.sources.map(e=>e.evidence_family_id).filter(Boolean)).size>=2,`${mode}: comparison must retain two independent Evidence Families`);
+  assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: comparison must not be flooded by generic evidence`);
+  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: every comparison claim needs proposition-level citations`);
+  assert(m.citation_entailment.every(x=>x.valid),`${mode}: comparison citations must pass claim-local entailment`);
+  assert(m.context_boundary.every(x=>x.valid),`${mode}: comparison must preserve witness-local context`);
+  if(mode==='researcher'){
+   assert(m.research&&m.research.evidence_families>=2,`${mode}: researcher comparison must expose two Evidence Families`);
+   assert(m.research.evidence_map.length>0&&m.research.witnesses.length===m.sources.length,`${mode}: researcher comparison must expose claim-to-witness and provenance maps`);
+  }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+ }
+}
+
+console.log(`Content readiness: ${unique.size} usable sources; 478 real-corpus answer checks passed, including 10 batch-056, 6 batch-057, 18 batch-058 mode-specific checks, 4 batch-058 cross-source mode checks and 60 item-identity checks`);
