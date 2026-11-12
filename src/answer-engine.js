@@ -16,6 +16,7 @@ const TOPICS={
  'בית רבקה בראונסוויל':['בית רבקה בבראונסוויל','בתי הספר בית רבקה בבראונסוויל','בראונסוויל','brownsville','east new york beis rivka'],
  'שכחה וחלומות':['שכחה וחלומות','שכחה','חיזוק הזכרון','חלומות מטרידים','forgetfulness and dreams','memory and disturbing dreams'],
  'צדקה ולימוד':['צדקה מחליפה לימוד','צדקה מתוארת כמזככת','צדקה מגדילה את פירות העבודה','charity replace study','charity and study effort'],
+ 'מדיניות הימנעות מגיוס כספים ישיר':['מדיניות הימנעות מגיוס כספים','מדיניות של הימנעות מגיוס כספים','הימנעות מגיוס כספים ישיר','שני הטעמים למדיניות הימנעות','שני הטעמים שניתנו למדיניות','why the rebbe does not fundraise'],
  'תפקיד דתי ייחודי':['תפקיד ייחודי בענייני דת','תפקיד המסוים שנמסר','משימה שאחרים אינם יכולים למלא','unique religious role','task others cannot fulfill'],
  'הערות שוליים בספר':['הערות שוליים','הדפסה מחודשת','להדפיס מחדש ספר','לפרסם הערות שוליים','הערות השוליים שהותיר','פרסום מוקדם של ההערות','book marginalia','reprint a book for marginal notes'],
  'עקירת שיניים וחוות דעת':['עקירת שיניים','חוות דעת נוספת','לעקור את כל השיניים','מומחים נוספים','dental extraction second opinion','extract all teeth'],
@@ -478,6 +479,7 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('צעירי אגודת ישראל דוגמה חיה')&&(!containsTerm(body,'צעירי אגודת ישראל')||!containsTerm(body,'דוגמה חיה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Young Agudath Israel living-example evidence is absent']};
  if(u.topics.includes('מסורת מוסמכת ללימוד פנימיות התורה')&&(!containsTerm(body,'מרב לרב')||!containsTerm(body,'פנימיות התורה')))return{score:0,support:'insufficient_specific_evidence',reasons:['authorized transmission chain for inner Torah is absent']};
  if(u.topics.includes('סכסוך לפרנסה דין תורה ולא קללה')&&(!containsTerm(body,'דין תורה')||!containsTerm(body,'פרנסה')||!containsTerm(body,'לשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['livelihood dispute, adjudication and speech boundary are absent']};
+ if(u.topics.includes('מדיניות הימנעות מגיוס כספים ישיר')&&(!containsTerm(body,'מדיניות')||!containsTerm(body,'הימנעות מגיוס כספים')))return{score:0,support:'insufficient_specific_evidence',reasons:['direct-fundraising abstention policy is absent']};
  const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
  const raw=u.subtopic.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm),rawHit=overlap(body,raw),topicHit=overlap(body,topicTerms);
  // Specific qualifiers must be grounded in evidence text, not in publisher metadata.

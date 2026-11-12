@@ -753,6 +753,7 @@ for(const [question,family] of batch048Checks){
     assert(m.answerable,`${mode}: inspected batch-048 evidence must answer ${question}`);
     assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: the intended batch-048 evidence family must support ${question}`);
     assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-048 query must stay within the mode's evidence budget`);
+    if(family==='letter-aid-3566500-fundraising-policy-donor-capacity')assert(m.sources.length===1,`${mode}: the direct-fundraising-policy query must exclude unrelated charity, medical and meeting sources`);
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-048 claim needs a proposition-level citation`);
   }
 }
