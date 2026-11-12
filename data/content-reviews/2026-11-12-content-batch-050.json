@@ -107,6 +107,11 @@
   ],
   "blocked_alternatives": [
     {
+      "source": "Chabad.org Igrot Kodesh aid 4666220",
+      "result": "The web view redirected to the Torah Texts publisher shell and exposed only navigation/bibliographic framing; no body text was available to inspect in this run.",
+      "fallback": "No proposition was inferred from the title or shell; switched to ten publisher-hosted Sichos in English pages with visible body passages."
+    },
+    {
       "source": "Chabad.org Igrot Kodesh item pages aid 4666280, 4666216 and 4666232",
       "result": "The public open view exposed the publisher shell/title and bibliographic framing but not body text adequate for semantic review.",
       "fallback": "No content proposition was inferred; switched to complete visible Sichos in English publisher passages."
@@ -127,7 +132,7 @@
       "fallback": "Used public web search/open access to authorized publisher pages."
     }
   ],
-  "verification_scope": "Selected visible publisher body passages from ten item pages were inspected. The batch contains English translations, not independent original-language witnesses. Context remains partial; the complete source texts, original-language transcripts, recordings, incoming correspondence, cited works and later outcomes were not independently inspected.",
+  "verification_scope": "Selected visible publisher body passages from ten item pages were inspected. The batch contains English translations, not independent original-language witnesses. Context remains partial; the complete source texts, original-language transcripts, recordings, incoming correspondence, cited works and later outcomes were not independently inspected. Aid 4666220 was explicitly rechecked; the tool returned the publisher shell only, so it contributed no content evidence.",
   "rights_note": "Only concise non-verbatim Hebrew research paraphrases and precise body-line locators were stored; no protected letter or talk was copied in full.",
   "quality_note": "Each proposition is bounded to the specified visible passage. No missing audience, incoming question, participant identity or historical outcome was reconstructed.",
   "reconciled_at": "2026-11-12",
