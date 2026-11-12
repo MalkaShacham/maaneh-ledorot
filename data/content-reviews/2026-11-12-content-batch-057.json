@@ -248,5 +248,12 @@
     "line": 92,
     "diagnosis": "The new AID 4812649 letter discusses declining enrollment and perseverance but does not provide a recruitment/expansion plan. The query about how to increase enrollment must remain anchored to the inspected letter ד׳שיט, which explicitly describes recruitment actions and a numerical target.",
     "remediation": "Expanded the yeshiva-enrollment topic aliases to the source's actual action language, added a proposition-level gate requiring explicit expansion/recruitment phrases, and added a regression excluding AID 4812649 from that specific answer."
+  },
+  "second_follow_up_quality_gate": {
+    "run_id": 43283882013,
+    "conclusion": "failure",
+    "failed_step": "node scripts/test_answer_integrity.mjs",
+    "diagnosis": "A missing comma in the newly appended TOPIC_ALIASES object caused a module parse error after question-specific retrieval and synthesis had passed.",
+    "remediation": "Inserted the separator and bumped the validated-engine and index.html cache-busters to v3. No content metrics or source records changed."
   }
 }
