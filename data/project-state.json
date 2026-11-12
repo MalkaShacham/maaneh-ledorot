@@ -38,25 +38,25 @@
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
     {
-      "id": "chabad-letter-4666202",
-      "locator": "Igrot Kodesh vol. 2 letter קסט / aid 4666202",
+      "id": "canonical-ik-v2-179-aid4666218",
+      "locator": "Igrot Kodesh vol. 2 letter קעט / AID 4666218",
       "status": "Verified",
       "context_status": "partial",
-      "witness": "authorized Kehot/Chabad.org item-level publisher page"
+      "witness": "public publisher body inspected; duplicate staging copies consolidated to one identity"
     },
     {
-      "id": "chabad-letter-4666207",
-      "locator": "Igrot Kodesh vol. 2 letter קע / aid 4666207",
+      "id": "canonical-ik-v2-180-aid4666219",
+      "locator": "Igrot Kodesh vol. 2 letter קפ / AID 4666219",
       "status": "Verified",
       "context_status": "partial",
-      "witness": "authorized Kehot/Chabad.org item-level publisher page"
+      "witness": "public publisher body inspected; duplicate staging copies consolidated to one identity"
     },
     {
-      "id": "chabad-letter-4666210",
-      "locator": "Igrot Kodesh vol. 2 letter קעא / aid 4666210",
+      "id": "chabad-letter-4731128",
+      "locator": "Igrot Kodesh vol. 2 letter רמא* / AID 4731128",
       "status": "Verified",
       "context_status": "partial",
-      "witness": "authorized Kehot/Chabad.org item-level publisher page"
+      "witness": "public publisher body and publisher handwritten-copy/date note inspected"
     }
   ],
   "active_blocks": [
@@ -68,43 +68,42 @@
   ],
   "next_work": [
     "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
-    "Expand the event-level Evidence Family links when original-language transcripts, audio or video of already indexed talks become available.",
+    "Inspect remaining pending AIDs 4666211, 4666265, 4666267, 4666268 and 4666270 only if a public body becomes available; do not infer from title or ID.",
+    "Expand event-level Evidence Family links when original-language transcripts, audio or video of already indexed talks become available.",
     "Adversarially test proposition relevance, claim-local citation entailment, context boundaries and researcher-mode witness distinctions on both answer modes.",
-    "Add new sources only after direct body inspection; keep context partial where incoming questions, omitted sections or original-language witnesses are unavailable.",
     "Continue reconciling the live public-search index, metrics and content-readiness test after each content batch."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled",
+    "status": "pending_reconciliation",
     "source": "data/public-metrics.json",
     "generated": "2026-11-12",
-    "rule": "Public dashboard uses physical repository reconciliation, not stale snapshots.",
-    "reconciliation_commit": "10c6d451b3207c25eb184cfcc2800372678a0001",
+    "reconciliation_commit": null,
+    "search_index_refresh_commit": null,
     "answer_readiness": {
       "answer_eligible_unique_sources": {
-        "before": 609,
-        "after": 620
+        "before": 645,
+        "expected_after": 652
       },
       "content_verified_unique_sources": {
-        "before": 606,
-        "after": 617
+        "before": 642,
+        "expected_after": 645
       },
       "answer_eligible_propositions": {
-        "before": 1889,
-        "after": 1917
+        "before": 1974,
+        "expected_after": 2000
       }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main; changed paths include index.html, data/items/**, src/answer-engine*.js and scripts/test_content_readiness.mjs",
-      "run_status": "not_independently_verified_in_this_execution",
+      "run_status": "pending_commit_bound_verification",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
-      "latest_saved_report_passed": true,
-      "latest_saved_report_regression_cases": 31,
+      "latest_saved_report_passed": null,
+      "latest_saved_report_regression_cases": null,
       "commit_binding": false,
-      "note": "The stored report is structural and not bound to merge commit bb9c6a9; do not treat it as proof that the new batch-056 regressions passed."
-    },
-    "search_index_refresh_commit": "da53a97961a570e6ac05ecf20001a53466e68c80"
+      "note": "Batch-060 source and comparison assertions were added. Do not report them as passed until a run bound to the merge commit is independently inspected."
+    }
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -140,45 +139,39 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "data/content-reviews/2026-11-12-content-batch-056.json",
-    "required_agent_action": "Continue item-level source inspection across Hebrew, Yiddish and English; add bounded source-grounded propositions with precise locators; keep translated manifestations linked to event Evidence Families; run live content readiness and both answer modes.",
-    "last_completed_batch": "2026-11-12-content-batch-056",
+    "current_batch": "data/content-reviews/2026-11-12-content-batch-060.json",
+    "required_agent_action": "Continue direct public-body inspection across Hebrew, Yiddish and English; prioritize pending AIDs whose publisher pages expose body text, preserve Evidence Family identity and translation dependency, run reconciliation and both answer modes, and do not retry the known 403 crawler.",
+    "last_completed_batch": "2026-11-12-content-batch-060",
     "last_batch_summary": {
-      "reviewed_items": 11,
-      "new_source_identities": 10,
-      "existing_identities_enriched": 1,
-      "response_propositions_added": 28,
+      "reviewed_items": 9,
+      "new_source_identities": 1,
+      "existing_identities_enriched": 8,
+      "response_propositions_added": 26,
       "metrics_before": {
-        "answer_eligible_unique_sources": 609,
-        "content_verified_unique_sources": 606,
-        "answer_eligible_propositions": 1889,
-        "canonical_unique_item_keys": 9787,
-        "verified_unique_item_keys": 8467,
-        "canonical_json_files": 417,
-        "evidence_family_files": 55
+        "answer_eligible_unique_sources": 645,
+        "content_verified_unique_sources": 642,
+        "answer_eligible_propositions": 1974,
+        "canonical_unique_item_keys": 8951,
+        "verified_unique_item_keys": 7632,
+        "canonical_json_files": 421,
+        "evidence_family_files": 55,
+        "content_review_queue_records": 1068
       },
       "expected_metrics_after": {
-        "answer_eligible_unique_sources": 620,
-        "content_verified_unique_sources": 617,
-        "answer_eligible_propositions": 1917,
-        "canonical_unique_item_keys": 9797,
-        "verified_unique_item_keys": 8478,
-        "canonical_json_files": 418,
-        "evidence_family_files": 55
+        "answer_eligible_unique_sources": 652,
+        "content_verified_unique_sources": 645,
+        "answer_eligible_propositions": 2000,
+        "canonical_unique_item_keys": 8952,
+        "verified_unique_item_keys": 7635,
+        "canonical_json_files": 422,
+        "evidence_family_files": 55,
+        "content_review_queue_records": 1062
       },
-      "metrics_after": {
-        "answer_eligible_unique_sources": 620,
-        "content_verified_unique_sources": 617,
-        "answer_eligible_propositions": 1917,
-        "canonical_unique_item_keys": 9797,
-        "verified_unique_item_keys": 8478,
-        "canonical_json_files": 418,
-        "evidence_family_files": 55
-      },
-      "reconciliation_commit": "10c6d451b3207c25eb184cfcc2800372678a0001",
-      "merge_commit": "bb9c6a9841ba21c9e536a5a90067cc81eb297e22",
-      "search_index_refresh_commit": "da53a97961a570e6ac05ecf20001a53466e68c80"
+      "metrics_after": null,
+      "reconciliation_commit": null,
+      "merge_commit": null,
+      "search_index_refresh_commit": null
     },
-    "last_run_note": "Batch 056 was merged to main in bb9c6a9. Metrics and queue were reconciled by github-actions[bot] in 10c6d45; the later Merkos transliteration correction was propagated into the public search index by github-actions[bot] in da53a97. Public metrics remain 620 answer-eligible unique sources, 617 content-verified unique sources and 1,917 propositions; AID 2283000 is no longer pending. The answer-quality workflow is configured to run test_content_readiness.mjs on changed main paths, but its run result is not retrievable through the available connector; the latest saved structural report is passed but not commit-bound. Live Pages deployment remains unverified."
+    "last_run_note": "Batch 060 reviewed nine source bodies, enriched eight existing AID identities and added one new Hebrew letter identity. Twenty-six source-grounded non-verbatim propositions were added. Reconciliation and commit-bound Actions results are pending; the expected metrics are recorded separately and must not be reported as actual until the generated metrics are read. Known HTTP 403 crawler was not retried; schedule, audience and permissions were unchanged. GitHub Pages deployment status is not yet independently verified."
   }
 }
