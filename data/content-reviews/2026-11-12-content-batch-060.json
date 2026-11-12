@@ -25,7 +25,8 @@
       "action": "extended_in_place",
       "propositions_added": 2,
       "evidence_family_id": "igrot-letter-5705-3-chanukah-letter-175-aid4666214",
-      "locator": "Chabad.org AID 4666214, גוף האיגרת והפוסט־סקריפטום, שורות 254–272."
+      "locator": "Chabad.org AID 4666214, גוף האיגרת והפוסט־סקריפטום, שורות 254–272.",
+      "duplicate_staging_copies": 2
     },
     {
       "aid": 4666218,
@@ -169,7 +170,7 @@
       "aid:4666272",
       "aid:4731128"
     ],
-    "duplicates": "AID 4666218 and AID 4666219 each appeared three times in one bulk-indexed file from separate staging origins. One copy per AID was promoted; the other copies remain metadata-only and do not create additional identities or Evidence Families.",
+    "duplicates": "AID 4666218 and AID 4666219 each appeared three times in bulk-indexed-2026-09-24-002; one copy per AID was promoted, the other staging copies remain metadata-only. AID 4666214 also appeared as metadata-only staging records in bulk-indexed-2026-09-24-002 and -003; both were linked by locator.aid and the same_evidence_family relation to chabad-letter-4666214. All copies resolve to one source identity and one Evidence Family; no staging copy is an independent witness.",
     "translations": "No translation was counted as an independent witness.",
     "cross_reference": "AID 4731128 is the enclosed letter mentioned in the preceding letter according to the publisher note. It remains a distinct text identity and Evidence Family from AID 4666280."
   },
@@ -206,9 +207,29 @@
     "content_review_queue_records": 1062
   },
   "reconciliation": {
-    "status": "pending",
+    "status": "first_reconciliation_completed_followup_pending",
     "script": "scripts/reconcile_metrics.py",
-    "expected_outputs": [
+    "first_commit": "6cc3d7e63c9c5aa5f62c4b927351171755275f44",
+    "first_search_index_refresh_commit": "6cc3d7e63c9c5aa5f62c4b927351171755275f44",
+    "metrics_after_first_reconciliation": {
+      "answer_eligible_unique_sources": 652,
+      "content_verified_unique_sources": 649,
+      "answer_eligible_propositions": 1999,
+      "canonical_unique_item_keys": 8953,
+      "verified_unique_item_keys": 7635,
+      "canonical_json_files": 422,
+      "content_review_queue_records": 1063
+    },
+    "expected_final_metrics_after_dedup": {
+      "answer_eligible_unique_sources": 652,
+      "content_verified_unique_sources": 649,
+      "answer_eligible_propositions": 1999,
+      "canonical_unique_item_keys": 8952,
+      "verified_unique_item_keys": 7635,
+      "canonical_json_files": 422,
+      "content_review_queue_records": 1062
+    },
+    "outputs": [
       "data/public-metrics.json",
       "data/public-search-index.json",
       "data/content-review-queue.json",
@@ -217,12 +238,13 @@
   },
   "quality_gate": {
     "workflow": ".github/workflows/answer-quality-gate.yml",
-    "status": "not_yet_verified_for_this_commit",
+    "status": "not_independently_verified_for_merge_commit",
     "test": "node scripts/test_content_readiness.mjs"
   },
   "publication": {
     "github_pages_status": "not independently verified in this run",
-    "url": "https://malkashacham.github.io/maaneh-ledorot/"
+    "url": "https://malkashacham.github.io/maaneh-ledorot/",
+    "github_repository_artifacts_refreshed": true
   },
   "safeguards": {
     "known_http_403_crawler_retried": false,
