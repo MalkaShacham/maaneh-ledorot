@@ -11,20 +11,12 @@
   "metrics_before": {
     "answer_eligible_unique_sources": 577,
     "content_verified_unique_sources": 574,
-    "answer_eligible_propositions": 1803,
-    "canonical_unique_item_keys": 10194,
-    "verified_unique_item_keys": 8511,
-    "canonical_json_files": 414,
-    "evidence_family_files": 55
+    "answer_eligible_propositions": 1803
   },
   "expected_metrics_after": {
     "answer_eligible_unique_sources": 589,
     "content_verified_unique_sources": 586,
-    "answer_eligible_propositions": 1831,
-    "canonical_unique_item_keys": 10206,
-    "verified_unique_item_keys": 8523,
-    "canonical_json_files": 415,
-    "evidence_family_files": 55
+    "answer_eligible_propositions": 1831
   },
   "evidence_family_manifest": [
     {
@@ -321,7 +313,8 @@
         "result": "existing Evidence Family identifiers preserved during enrichment"
       }
     ],
-    "translation_policy": "AID 5989547 is a Hebrew rendering of a Yiddish text edited by the Rebbe; any Yiddish edition is a derivative manifestation of the same event and must not be counted independently."
+    "translation_policy": "AID 5989547 is a Hebrew rendering of a Yiddish text edited by the Rebbe; any Yiddish edition is a derivative manifestation of the same event and must not be counted independently.",
+    "index_identity_rule": "Each item is indexed once by its preferred AID key; nested provenance.source_url is metadata and must not create a second URL-only search entry."
   },
   "blocked_sources": [
     {
@@ -424,5 +417,6 @@
   ],
   "acquisition": "scripts/acquire_source_content.py was not rerun; known GitHub runner HTTP 403 path was not retried. data/acquisition/latest.json remains unchanged.",
   "rights_note": "No protected source text copied in full; only short non-verbatim research paraphrases, locators, provenance and limitations stored.",
-  "reconciliation_status": "pending GitHub reconciliation workflow; metrics_before and expected_metrics_after will be checked against generated public metrics."
+  "reconciliation_status": "pending corrected record-only reconciliation; answer-eligible metrics are expected to remain 589/586/1831.",
+  "generic_metric_reconciliation": "The reconciliation script now counts item-shaped records only and excludes nested provenance dictionaries as standalone URL-only records. Generic canonical/Verified totals are recalculated under this corrected identity policy and are not compared directly with the pre-fix raw totals."
 }

@@ -906,5 +906,16 @@ for(const [question,aids] of batch053DirectChecks){
   }
  }
 }
-console.log(`Content readiness: ${unique.size} usable sources; 408 real-corpus answer checks passed, including 22 batch-053 mode-specific and multi-source checks`);
+
+const batch053IndexIdentityChecks=[5996841,5996843,5996844,5996845,5996846,3140096,5989601,5989546,5989547,5989548,5989569,5989549,2515477,2515007,2514886];
+assert.equal(metrics.answer_eligible_unique_sources,589,'batch-053 answer-eligible source metric must reconcile to 589');
+assert.equal(metrics.content_verified_unique_sources,586,'batch-053 content-verified metric must reconcile to 586');
+assert.equal(metrics.answer_eligible_propositions,1831,'batch-053 source-grounded proposition count must reconcile to 1831');
+for(const aid of batch053IndexIdentityChecks){
+  const matches=idx.entries.filter(e=>String(e.aid)===String(aid));
+  assert.equal(matches.length,1,`AID ${aid} must have exactly one item-shaped public-index entry`);
+  assert.equal(matches[0].key,`aid:${aid}`,`AID ${aid} must use the preferred stable identity key`);
+  assert.equal(idx.entries.some(e=>e.key===`url:${matches[0].source_url}`),false,`AID ${aid} must not create a duplicate URL-only provenance entry`);
+}
+console.log(`Content readiness: ${unique.size} usable sources; 408 real-corpus answer checks passed, including 22 batch-053 mode-specific checks and 15 item-identity checks`);
 

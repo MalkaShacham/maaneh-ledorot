@@ -21,6 +21,13 @@ def identity_keys(d):
     if d.get("id"): out.append("id:"+str(d["id"]))
     return list(dict.fromkeys(out))
 
+def is_source_record(d):
+    # Nested provenance/access/taxonomy dictionaries are metadata, not separate source identities.
+    # Count only item-shaped records with a stable item marker.
+    if not isinstance(d,dict): return False
+    markers=("id","aid","title","summary_researcher","pipeline_status","source_class","evidence_family_id","response_propositions")
+    return any(d.get(k) not in (None,"",[]) for k in markers) or isinstance(d.get("locator"),dict)
+
 def stable_key(d):
     ks=identity_keys(d)
     return ks[0] if ks else None
@@ -44,10 +51,11 @@ for fp in items:
     while stack:
         x=stack.pop()
         if isinstance(x,dict):
-            st=status_of(x); key=stable_key(x)
-            if key and (st or x.get("source_url") or x.get("aid") or isinstance(x.get("locator"),dict)):
-                old=seen.get(key); rank={"Discovered":1,"Indexed":2,"Parsed":3,"Linked":4,"Verified":5,None:0}
-                if old is None or rank.get(st,0)>rank.get(old,0): seen[key]=st
+            if is_source_record(x):
+                st=status_of(x); key=stable_key(x)
+                if key and (st or x.get("source_url") or x.get("aid") or isinstance(x.get("locator"),dict)):
+                    old=seen.get(key); rank={"Discovered":1,"Indexed":2,"Parsed":3,"Linked":4,"Verified":5,None:0}
+                    if old is None or rank.get(st,0)>rank.get(old,0): seen[key]=st
             for v in x.values():
                 if isinstance(v,(dict,list)): stack.append(v)
         elif isinstance(x,list): stack.extend(x)
@@ -59,7 +67,8 @@ for fp in items:
     while stack:
         x=stack.pop()
         if isinstance(x,dict):
-            canonical_identity_keys.update(identity_keys(x))
+            if is_source_record(x):
+                canonical_identity_keys.update(identity_keys(x))
             for v in x.values():
                 if isinstance(v,(dict,list)): stack.append(v)
         elif isinstance(x,list): stack.extend(x)
@@ -125,7 +134,7 @@ def candidate_dicts(obj):
     while stack:
         x=stack.pop()
         if isinstance(x,dict):
-            if stable_key(x) and (x.get("title") or x.get("summary_researcher") or x.get("source_url") or isinstance(x.get("provenance"),dict)):out.append(x)
+            if is_source_record(x) and stable_key(x) and (x.get("title") or x.get("summary_researcher") or x.get("source_url") or isinstance(x.get("provenance"),dict)):out.append(x)
             for v in x.values():
                 if isinstance(v,(dict,list)):stack.append(v)
         elif isinstance(x,list):stack.extend(x)
