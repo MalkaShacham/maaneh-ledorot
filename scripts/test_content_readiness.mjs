@@ -287,6 +287,7 @@ for(const [aid,minProps,family] of batch062Required){
 const publishingQuestion='מה נכתב באגרות על הדפסת ספרי חסידות, איסוף תיקונים והפצתם?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,publishingQuestion,{mode});
+ if(!m.answerable)console.log('BATCH062_PUBLICATION_DEBUG',JSON.stringify({mode,reason:m.reason,understanding:m.understanding,sources:m.sources.map(e=>({key:e.key,aid:e.aid,family:e.evidence_family_id,props:e.response_propositions})),insufficient:m.insufficient_evidence,coverage:m.comparative_coverage}));
  assert(m.answerable,mode+': inspected publication and editorial evidence must answer');
  assert(m.sources.length>=3,mode+': publication synthesis must use at least three source families');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': duplicate witnesses must not inflate publication synthesis');
