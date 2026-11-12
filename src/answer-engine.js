@@ -273,6 +273,9 @@ const TOPICS={
  'מרה שחורה וחששות ללא יסוד':['מרה שחורה','חששות שאין להן יסוד','חששות שאין להם יסוד','לימוד נגלה וחסידות','melancholy baseless fears'],
  'יחס למכחישי תורה ולימוד הלכה':['מכחישים וכופרים','תורה שבכתב','תורה שבעל פה','הלכות הצריכות בחיי היום יום','לימוד הלכה למעשה','deniers of written and oral Torah','practical halacha'],
  'התכתבות עם הוצאה לאור וספרים':['ילדותנו','ספרי ילדותנו','הוצאה לאור בירושלים','הוצאת ספרים בירושלים','קבלת ספרים','publication correspondence books']
+,
+ 'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
+ 'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -341,6 +344,8 @@ export function understandQuestion(q){
  if(topics.includes('יחס למכחישי תורה ולימוד הלכה'))topics=topics.filter(t=>t!=='לימוד הלכה');
  if(topics.includes('פרויקט תניא והפצת המעיינות'))topics=topics.filter(t=>t!=='שליחות');
  if(topics.includes('התכתבות עם הוצאה לאור וספרים'))topics=topics.filter(t=>!['הפצת ספרים','הערות שוליים בספר'].includes(t));
+ if(topics.includes('הרחבת שיעור חסידות'))topics=topics.filter(t=>!['חינוך','לימוד חסידות'].includes(t));
+ if(topics.includes('מדריך מחנה גן ישראל והשפעה'))topics=topics.filter(t=>t!=='חינוך');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
  // teacher can outrank the inspected source about yeshiva enrollment policy.
@@ -420,6 +425,8 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('מרה שחורה וחששות ללא יסוד')&&!arr(e.response_propositions).some(p=>containsTerm(p,'מרה שחורה')&&containsTerm(p,'חששות')))return{score:0,support:'insufficient_specific_evidence',reasons:['melancholy answer requires the explicit personal-context terms, not generic worry evidence']};
  if(u.topics.includes('התכתבות עם הוצאה לאור וספרים')&&!arr(e.response_propositions).some(p=>containsTerm(p,'ילדותנו')&&containsTerm(p,'הוצאה לאור')))return{score:0,support:'insufficient_specific_evidence',reasons:['publication-correspondence answer requires both the named book and publisher exchange in one witness']};
  if(u.topics.includes('נוסח תפילה באיחוד בתי כנסת')&&containsTerm(u.query,'ושמרו')&&!arr(e.response_propositions).some(p=>containsTerm(p,'ושמרו')&&containsTerm(p,'לפני התיבה')))return{score:0,support:'insufficient_specific_evidence',reasons:['Veshamru question requires the specific leading-prayer context, not a generic prayer-rite mention']};
+ if(u.topics.includes('הרחבת שיעור חסידות')&&!arr(e.response_propositions).some(p=>containsTerm(p,'תוספת אברכים בשיעור חסידות')&&containsTerm(p,'הפצת המעיינות')))return{score:0,support:'insufficient_specific_evidence',reasons:['class-expansion answer requires the inspected proposition about adding participants to a Chassidus class and its stated purpose']};
+ if(u.topics.includes('מדריך מחנה גן ישראל והשפעה')&&(!containsTerm(body,'מחנה גן ישראל')||!containsTerm(body,'לימוד אישי')))return{score:0,support:'insufficient_specific_evidence',reasons:['camp-counselor answer requires both the named camp setting and the personal-study qualification']};
  if(u.topics.includes('הרחבת ישיבה')){
   const explicitRecruitment=arr(e.response_propositions).some(p=>['לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
   if(!explicitRecruitment)return{score:0,support:'insufficient_specific_evidence',reasons:['A yeshiva-enrollment answer requires an inspected proposition with an explicit recruitment/expansion action or target; decline and perseverance alone are not a recruitment plan.']};
