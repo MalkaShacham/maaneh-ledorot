@@ -89,7 +89,7 @@
   ],
   "access_blockers": {
     "direct_reader": "Several Chabad.org reader routes returned a page shell without body text in the web parser. For AIDs 4666210, 4666211, 4666215, 4666231 and 4666232, publisher-indexed body excerpts were available and were used with excerpt-limited scope; AID 4666239 was limited to its opening excerpt.",
-    "prior_acquisition": "data/acquisition/latest.json records the prior runner-side HTTP 403 on 12 publisher references. The blocked crawler was not retried.",
+    "prior_acquisition": "The current data/acquisition/latest.json records no_candidates with attempted=0 and blocked=[]. The earlier runner-side 12-reference HTTP 403 is documented in the prior recovery record/run context. The blocked crawler was not retried.",
     "fallback_used": [
       "AID 5100285: direct publisher body lines 244-256 inspected",
       "AID 4754587: direct publisher excerpt lines 288-296 inspected",
@@ -113,9 +113,9 @@
     "content_review_queue_records": 1063
   },
   "expected_metrics_after_reconciliation": {
-    "answer_eligible_unique_sources": 654,
-    "content_verified_unique_sources": 651,
-    "answer_eligible_propositions": 2004
+    "answer_eligible_unique_sources": 653,
+    "content_verified_unique_sources": 650,
+    "answer_eligible_propositions": 2002
   },
   "reconciliation": {
     "status": "completed",
