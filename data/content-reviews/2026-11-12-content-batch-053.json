@@ -86,7 +86,7 @@
       "parallel_policy": "translations/reprints/recordings of this event join this family; not independent"
     },
     {
-      "evidence_family_id": "ef-blessing-kfar-chabad-14-tishrei-5728",
+      "evidence_family_id": "ef-blessing-etrogim-14-tishrei-5728",
       "aid": 5989549,
       "event": "14 Tishrei 5728 — eve of Sukkot, Kfar Chabad",
       "parallel_policy": "translations/reprints/recordings of this event join this family; not independent"
@@ -240,10 +240,10 @@
     },
     {
       "aid": 5989549,
-      "id": "torat-menachem-blessing-kfar-chabad-eve-sukkot-14-tishrei-5728-aid-5989549",
-      "title": "ערב חג הסוכות — לאנשי כפר חב״ד, ה׳תשכ״ח",
+      "id": "torat-menachem-blessing-etrogim-eve-sukkot-14-tishrei-5728-aid-5989549",
+      "title": "ברכה בעת מסירת האתרוגים בערב חג הסוכות, י״ד תשרי תשכ״ח",
       "event": "14 Tishrei 5728 — eve of Sukkot, Kfar Chabad",
-      "evidence_family_id": "ef-blessing-kfar-chabad-14-tishrei-5728",
+      "evidence_family_id": "ef-blessing-etrogim-14-tishrei-5728",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/5989549",
       "propositions": 2,
       "locators": [
@@ -418,5 +418,6 @@
   "acquisition": "scripts/acquire_source_content.py was not rerun; known GitHub runner HTTP 403 path was not retried. data/acquisition/latest.json remains unchanged.",
   "rights_note": "No protected source text copied in full; only short non-verbatim research paraphrases, locators, provenance and limitations stored.",
   "reconciliation_status": "pending corrected record-only reconciliation; answer-eligible metrics are expected to remain 589/586/1831.",
-  "generic_metric_reconciliation": "The reconciliation script now counts item-shaped records only and excludes nested provenance dictionaries as standalone URL-only records. Generic canonical/Verified totals are recalculated under this corrected identity policy and are not compared directly with the pre-fix raw totals."
+  "generic_metric_reconciliation": "The reconciliation script now counts item-shaped records only and excludes nested provenance dictionaries as standalone URL-only records. Generic canonical/Verified totals are recalculated under this corrected identity policy and are not compared directly with the pre-fix raw totals.",
+  "retrieval_specificity_correction": "The Kfar Chabad etrog blessing is indexed by its event-specific content (etrogim, hadassim, Sukkot blessing), not by the location name alone; the publisher's original heading remains in publisher_title and documented_circumstances. This prevents location-only retrieval from confusing it with unrelated Kfar Chabad incidents."
 }

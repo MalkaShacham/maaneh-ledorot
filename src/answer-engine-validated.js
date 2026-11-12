@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch053c-topic-syntax-fix';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch053d-specificity';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -35,7 +35,7 @@ const TOPIC_ALIASES={
   'שבת שירה ומתן תורה':['שבת שירה','מלווה מלכה','סעודת מלווה מלכה','מתן תורה','מן','Shabbat Shirah','Melaveh Malkah','giving of the Torah'],
   'רחמים עליונים':['רחמים שלמעלה','מידת הרחמים','רחמי נשר','כנשר יעיר קנו','higher divine compassion'],
   'תענית תשעה באב והוראת רופא':['תענית תשעה באב','צום תשעה באב','רופא הורה שלא להתענות','הוראת רופא ותענית','Tisha B’Av fast medical advice'],
-  'ברכת כפר חב״ד ואתרוג':['כפר חב״ד','מסירת האתרוגים','הדסים ואתרוג','ריבוי הדסים','Kfar Chabad etrog myrtle'],
+  'ברכת אתרוגים והדסים':['מסירת האתרוגים','אתרוג','הדסים','הדסים ואתרוג','ריבוי הדסים','ברכת חג הסוכות','etrog myrtle branches','Sukkot etrog blessing'],
   'מאמר אתה אחד':['אתה אחד','שמך אחד','גוי אחד בארץ','אחד ויחיד','Ata Echad','one and unique Israel'],
   'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד','מסחר בזמן לימוד בישיבה','ישיבה עד הצהריים','לימוד כל היום','חסרון בהתרכזות','business during yeshiva study','full-day yeshiva study'],
   'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
