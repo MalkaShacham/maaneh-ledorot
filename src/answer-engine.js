@@ -302,6 +302,10 @@ export function understandQuestion(q){
  if(topics.includes('זכירת חסדים מול קשיי חיים'))topics=topics.filter(t=>!['אמונה','דאגה','בריאות'].includes(t));
  if(topics.includes('מכירת בניין ישיבה בעת קושי'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('משרת חזן בנוסח האריזל'))topics=topics.filter(t=>t!=='נוסח תפילה באיחוד בתי כנסת');
+ // A specific Moroccan-immigrant language-access question must not inherit generic
+ // language-dissemination, Yiddish, or unrelated Morocco topics. The answer gate below
+ // also requires the actual immigrant/farbrengen setting in the inspected proposition body.
+ if(topics.includes('עולים ממרוקו ושפת ההתוועדות'))topics=topics.filter(t=>!['הפצת חסידות בשפות','מקווה נשים תקציב קיים ונגישות','שליחות חינוכית למרוקו','תלמידי חופש במרוקו','נער במרוקו לימוד מול פרנסת האב','ברונא בלי חבר לימוד'].includes(t));
  let intent=/דפוס|חוזר|בדרך כלל|גישה|pattern|usually/.test(query)?'pattern':/הבדל|לעומת|השוו|השווא|compare|difference/.test(query)?'comparative':/(?:^|\s)מתי(?:\s|$)|תאריך|תקופה|שנה|when|date|period/.test(query)?'historical':/מקור|ביבליוגר|איפה פורסם|source|bibliograph/.test(query)?'bibliographic':/באילו נסיבות|נסיבות|מתי המליץ|תנאי|(?:^|\s)למי(?:\s|$)|circumstance|condition|audience/.test(query)?'circumstances':'guidance';
  if(topics.includes('נסיעת תינוק ועצה רוחנית'))intent='guidance';
  if(topics.includes('שידוך אשכנזי ספרדי'))intent='guidance';
@@ -340,6 +344,7 @@ export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
  if(u.topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&(!containsTerm(body,'צפון אפריקה')||!containsTerm(body,'יום ראשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['North-Africa Sunday-departure setting is absent']};
+ if(u.topics.includes('עולים ממרוקו ושפת ההתוועדות')&&!['עולים ממרוקו','התוועדויות','יידיש','עברית'].every(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['Moroccan immigrant Hebrew-farbrengen language-access setting is absent']};
  if(u.topics.includes('אמת בלי פשרה ודרך אישית')&&(!containsTerm(body,'אמת')||!containsTerm(body,'פשרה')))return{score:0,support:'insufficient_specific_evidence',reasons:['truth-without-compromise setting is absent']};
  if(u.topics.includes('התבוננות יומית לפני תפילה')&&(!containsTerm(body,'התבוננות')||!containsTerm(body,'תפילה')))return{score:0,support:'insufficient_specific_evidence',reasons:['daily contemplation-before-prayer setting is absent']};
  if(u.topics.includes('יסודות תורה ומצוות לבית')&&(!containsTerm(body,'בית בישראל')||!containsTerm(body,'יסודות')))return{score:0,support:'insufficient_specific_evidence',reasons:['durable Jewish-home foundations are absent']};
