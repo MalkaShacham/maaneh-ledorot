@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch054b-specific-commerce';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch054c-charity-pledge-specific';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -204,6 +204,7 @@ const TOPIC_ALIASES={
  'סיום מסכת בט״ו באב':['סיום מסכת בט״ו באב','סיום מסכת תענית בט״ו באב','ט״ו באב וסיום מסכת','15th of Av tractate completion','siyum Taanis 15 Av'],
  'עבודת אלול ותשובה':['עבודת חודש אלול','חשבון נפש באלול','תשובה בחודש אלול','תורה תפילה וצדקה באלול','Elul repentance Torah prayer charity'],
  'צדקה רוחנית ביום צום':['צדקה רוחנית ביום צום','הפצת תורה ויהדות ביום צום','שבע מצוות בני נח ביום צום','spiritual charity on fast day','Noahide laws fast day'],
+ 'התחייבות לצדקה בסכום מוגדר':['לנקוב בסכום מסוים כשמתחייבים לצדקה','התחייבות לצדקה בסכום מסוים','סכום מסוים לצדקה','specific charity pledge amount'],
  'צומות יהפכו לשמחה':['צומות יהפכו לשמחה','ימי הצום לעתיד לבוא','צומות בימות המשיח','fast days become festivals','fast days transformed to joy'],
  'י״ט כסלו והפצת חסידות':['י״ט כסלו והפצת חסידות','ברכת שלום בי״ט כסלו','שחרור אדמו״ר הזקן','Yud-Tes Kislev blessing of peace','dissemination of Chassidus'],
  'התוועדות שבת מברכים והחלטות בפועל':['התוועדות שבת מברכים','החלטות טובות בהתוועדות','מעשה בפועל אחרי התוועדות','Shabbos Mevarchim farbrengen good resolutions'],
