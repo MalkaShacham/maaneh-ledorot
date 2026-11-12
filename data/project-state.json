@@ -103,7 +103,8 @@
       "latest_saved_report_regression_cases": 31,
       "commit_binding": false,
       "note": "The stored report is structural and not bound to merge commit bb9c6a9; do not treat it as proof that the new batch-056 regressions passed."
-    }
+    },
+    "search_index_refresh_commit": "da53a97961a570e6ac05ecf20001a53466e68c80"
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -175,8 +176,9 @@
         "evidence_family_files": 55
       },
       "reconciliation_commit": "10c6d451b3207c25eb184cfcc2800372678a0001",
-      "merge_commit": "bb9c6a9841ba21c9e536a5a90067cc81eb297e22"
+      "merge_commit": "bb9c6a9841ba21c9e536a5a90067cc81eb297e22",
+      "search_index_refresh_commit": "da53a97961a570e6ac05ecf20001a53466e68c80"
     },
-    "last_run_note": "Batch 056 was merged to main in bb9c6a9 and reconciled by github-actions[bot] in 10c6d45. Public metrics now confirm 620 answer-eligible unique sources, 617 content-verified unique sources and 1,917 propositions; the review queue fell from 1,069 to 1,068 and AID 2283000 left the queue. The answer-quality workflow is configured to run test_content_readiness.mjs on the changed main paths, but its run result is not retrievable through the available connector; the latest stored structural report is passed but not commit-bound. Live Pages deployment remains unverified."
+    "last_run_note": "Batch 056 was merged to main in bb9c6a9. Metrics and queue were reconciled by github-actions[bot] in 10c6d45; the later Merkos transliteration correction was propagated into the public search index by github-actions[bot] in da53a97. Public metrics remain 620 answer-eligible unique sources, 617 content-verified unique sources and 1,917 propositions; AID 2283000 is no longer pending. The answer-quality workflow is configured to run test_content_readiness.mjs on changed main paths, but its run result is not retrievable through the available connector; the latest saved structural report is passed but not commit-bound. Live Pages deployment remains unverified."
   }
 }
