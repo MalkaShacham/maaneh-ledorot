@@ -129,33 +129,33 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "data/content-reviews/2026-11-12-content-batch-054.json",
+    "current_batch": "data/content-reviews/2026-11-12-content-batch-056.json",
     "required_agent_action": "Continue item-level source inspection across Hebrew, Yiddish and English; add bounded source-grounded propositions with precise locators; keep translated manifestations linked to event Evidence Families; run live content readiness and both answer modes.",
-    "last_completed_batch": "2026-11-12-content-batch-054",
+    "last_completed_batch": "2026-11-12-content-batch-056",
     "last_batch_summary": {
-      "reviewed_items": 13,
-      "new_source_identities": 9,
-      "existing_identities_enriched": 4,
-      "response_propositions_added": 26,
+      "reviewed_items": 11,
+      "new_source_identities": 10,
+      "existing_identities_enriched": 1,
+      "response_propositions_added": 28,
       "metrics_before": {
-        "answer_eligible_unique_sources": 589,
-        "content_verified_unique_sources": 586,
-        "answer_eligible_propositions": 1831,
-        "canonical_unique_item_keys": 9769,
-        "verified_unique_item_keys": 8449,
-        "canonical_json_files": 415,
+        "answer_eligible_unique_sources": 609,
+        "content_verified_unique_sources": 606,
+        "answer_eligible_propositions": 1889,
+        "canonical_unique_item_keys": 9787,
+        "verified_unique_item_keys": 8467,
+        "canonical_json_files": 417,
         "evidence_family_files": 55
       },
       "expected_metrics_after": {
-        "answer_eligible_unique_sources": 598,
-        "content_verified_unique_sources": 595,
-        "answer_eligible_propositions": 1857,
-        "canonical_unique_item_keys": 9778,
-        "verified_unique_item_keys": 8458,
-        "canonical_json_files": 416,
+        "answer_eligible_unique_sources": 620,
+        "content_verified_unique_sources": 617,
+        "answer_eligible_propositions": 1917,
+        "canonical_unique_item_keys": 9797,
+        "verified_unique_item_keys": 8478,
+        "canonical_json_files": 418,
         "evidence_family_files": 55
       }
     },
-    "last_run_note": "Nine new authorized English translated talks were inspected; four existing translated-talk identities were enriched in place. Known blocked letter shell was not used for content; GitHub-runner crawler was not retried."
+    "last_run_note": "Ten new English translated letter identities were added from selected visible publisher body passages; existing AID 2283000 was enriched in place. Hebrew/Yiddish Yechidus and Hebrew letter candidates were blocked at shell/media-only level; alternate public letter pages were inspected. Full public-index audit remains limited by connector response size; AID-first reconciliation and batch regressions are required."
   }
 }
