@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch054-tammuz-elul-fastday';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-content-batch054b-specific-commerce';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -37,7 +37,7 @@ const TOPIC_ALIASES={
   'תענית תשעה באב והוראת רופא':['תענית תשעה באב','צום תשעה באב','רופא הורה שלא להתענות','הוראת רופא ותענית','Tisha B’Av fast medical advice'],
   'ברכת אתרוגים והדסים':['מסירת האתרוגים','אתרוג','הדסים','הדסים ואתרוג','ריבוי הדסים','ברכת חג הסוכות','etrog myrtle branches','Sukkot etrog blessing'],
   'מאמר אתה אחד':['אתה אחד','שמך אחד','גוי אחד בארץ','אחד ויחיד','Ata Echad','one and unique Israel'],
-  'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד','מסחר בזמן לימוד בישיבה','ישיבה עד הצהריים','לימוד כל היום','חסרון בהתרכזות','business during yeshiva study','full-day yeshiva study'],
+  'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד בישיבה','מסחר בזמן לימוד בישיבה','עסק בזמן לימוד בישיבה','מסחר בזמן סדרי הלימוד בישיבה'],
   'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
   'סניף תלמוד תורה ומחנה יום':['סניף תלמוד תורה שאינו מצליח','לסגור סניף תלמוד תורה','חיסול הסניף','מחנה יום','בסיס לרכישת תלמידים','failing talmud torah branch','day camp student recruitment'],
  'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','לימוד אישי','הלימוד האישי','בלי להזניח לימוד אישי','increase class participants','personal study obligation'],
