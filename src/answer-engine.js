@@ -245,6 +245,7 @@ const TOPICS={
  'סיום מסכת בט״ו באב':['סיום מסכת בט״ו באב','סיום מסכת תענית בט״ו באב','ט״ו באב וסיום מסכת','15th of Av tractate completion','siyum Taanis 15 Av'],
  'עבודת אלול ותשובה':['עבודת חודש אלול','חשבון נפש באלול','תשובה בחודש אלול','תורה תפילה וצדקה באלול','Elul repentance Torah prayer charity'],
  'צדקה רוחנית ביום צום':['צדקה רוחנית ביום צום','הפצת תורה ויהדות ביום צום','שבע מצוות בני נח ביום צום','spiritual charity on fast day','Noahide laws fast day'],
+ 'התחייבות לצדקה בסכום מוגדר':['לנקוב בסכום מסוים כשמתחייבים לצדקה','התחייבות לצדקה בסכום מסוים','סכום מסוים לצדקה','specific charity pledge amount'],
  'צומות יהפכו לשמחה':['צומות יהפכו לשמחה','ימי הצום לעתיד לבוא','צומות בימות המשיח','fast days become festivals','fast days transformed to joy'],
  'י״ט כסלו והפצת חסידות':['י״ט כסלו והפצת חסידות','ברכת שלום בי״ט כסלו','שחרור אדמו״ר הזקן','Yud-Tes Kislev blessing of peace','dissemination of Chassidus'],
  'התוועדות שבת מברכים והחלטות בפועל':['התוועדות שבת מברכים','החלטות טובות בהתוועדות','מעשה בפועל אחרי התוועדות','Shabbos Mevarchim farbrengen good resolutions'],
@@ -393,6 +394,7 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('מבצע פורים נמשך לפסח ולצדקה')&&(!containsTerm(body,'פורים')||!containsTerm(body,'פסח')||!['צדקה','מצות'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Purim-to-Pesach charity campaign setting is absent']};
  if(u.topics.includes('לימוד רמב״ם ואחדות מרחבית')&&(!containsTerm(body,'רמב״ם')||!containsTerm(body,'אחדות')||!['מקומות','מרוחקים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['shared Rambam study across locations setting is absent']};
  if(u.topics.includes('מסחר ולימוד יום שלם')&&(!containsTerm(body,'מסחר')||!containsTerm(body,'ישיבה')||!containsTerm(body,'לימוד')))return{score:0,support:'insufficient_specific_evidence',reasons:['business activity during yeshiva study must be explicit in the inspected proposition']};
+ if(u.topics.includes('התחייבות לצדקה בסכום מוגדר')&&(!containsTerm(body,'סכום')||!['התחייבות','מתחייב','נדר'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['a specific amount and an explicit pledge must be present in the inspected proposition']};
  if(u.topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&(!containsTerm(body,'צפון אפריקה')||!containsTerm(body,'יום ראשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['North-Africa Sunday-departure setting is absent']};
  if(u.topics.includes('עולים ממרוקו ושפת ההתוועדות')&&!['עולים ממרוקו','התוועדויות','יידיש','עברית'].every(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['Moroccan immigrant Hebrew-farbrengen language-access setting is absent']};
  if(u.topics.includes('גיל העולם ורדיואקטיביות')&&(!containsTerm(body,'גיל העולם')||!containsTerm(body,'רדיואקטיביות')))return{score:0,support:'insufficient_specific_evidence',reasons:['radioactivity and world-age correspondence setting is absent']};
