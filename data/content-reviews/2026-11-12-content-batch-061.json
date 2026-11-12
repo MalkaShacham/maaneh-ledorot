@@ -1,0 +1,211 @@
+{
+  "batch_id": "2026-11-12-content-batch-061",
+  "generated": "2026-11-12",
+  "status": "content_reviewed_reconciliation_pending",
+  "records_reviewed": 13,
+  "new_source_identities": 3,
+  "existing_identities_enriched": 10,
+  "response_propositions_added": 21,
+  "new_record_file_paths": [
+    "data/items/chabad-letter-4666355.json",
+    "data/items/chabad-letter-4666356.json",
+    "data/items/chabad-talk-2334890.json"
+  ],
+  "languages": {
+    "Hebrew": 11,
+    "Yiddish": 1,
+    "English": 1
+  },
+  "source_classes": {
+    "Igrot Kodesh": 12,
+    "Sichos": 1
+  },
+  "original_language_records": 11,
+  "derived_translations": 2,
+  "evidence_families_represented": 13,
+  "review_method": "Public web search/open of authorized publisher body excerpts. Direct reader opens for most letter pages returned navigation shells, so each verification_scope names only the text actually inspected. AID 2334890 section 11 and footnote 1 were inspected directly at publisher page lines 315–317 and 341–344. No full copyrighted text copied.",
+  "reviewed_sources": [
+    {
+      "aid": 4666210,
+      "id": "chabad-letter-4666210",
+      "action": "enriched_existing_identity",
+      "propositions_added": 1,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666210"
+    },
+    {
+      "aid": 4666215,
+      "id": "igrot-kodesh-v2-letter-176-aid4666215",
+      "action": "enriched_existing_identity",
+      "propositions_added": 2,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666215"
+    },
+    {
+      "aid": 4666216,
+      "id": "igrot-kodesh-v2-letter-177-aid4666216",
+      "action": "enriched_existing_identity",
+      "propositions_added": 2,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666216"
+    },
+    {
+      "aid": 4666231,
+      "id": "igrot-kodesh-v2-letter-192-aid-4666231",
+      "action": "enriched_existing_identity",
+      "propositions_added": 2,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666231"
+    },
+    {
+      "aid": 4666232,
+      "id": "igrot-kodesh-v2-letter-193-aid-4666232",
+      "action": "enriched_existing_identity",
+      "propositions_added": 2,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666232"
+    },
+    {
+      "aid": 4666239,
+      "id": "chabad-letter-4666239",
+      "action": "enriched_existing_identity",
+      "propositions_added": 1,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666239"
+    },
+    {
+      "aid": 4666255,
+      "id": "igrot-kodesh-v2-letter-216-aid-4666255",
+      "action": "enriched_existing_identity",
+      "propositions_added": 1,
+      "language": "Yiddish",
+      "family": "original-letter-aid-4666254",
+      "independent_witness": false
+    },
+    {
+      "aid": 4666281,
+      "id": "igrot-kodesh-v2-letter-242-aid-4666281",
+      "action": "enriched_existing_identity",
+      "propositions_added": 1,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666281"
+    },
+    {
+      "aid": 4666282,
+      "id": "igrot-kodesh-v2-letter-243-aid-4666282",
+      "action": "enriched_existing_identity",
+      "propositions_added": 2,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666282"
+    },
+    {
+      "aid": 4666283,
+      "id": "igrot-kodesh-v2-letter-244-aid-4666283",
+      "action": "enriched_existing_identity",
+      "propositions_added": 2,
+      "language": "Hebrew",
+      "family": "original-letter-aid-4666283"
+    },
+    {
+      "aid": 4666355,
+      "id": "chabad-letter-4666355",
+      "action": "new_source_identity",
+      "propositions_added": 2,
+      "language": "Hebrew",
+      "evidence_family_id": "original-letter-aid-4666355",
+      "independent_witness": true,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666355/jewish/page.htm"
+    },
+    {
+      "aid": 4666356,
+      "id": "chabad-letter-4666356",
+      "action": "new_source_identity",
+      "propositions_added": 2,
+      "language": "Hebrew",
+      "evidence_family_id": "original-letter-aid-4666356",
+      "independent_witness": true,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666356/jewish/page.htm"
+    },
+    {
+      "aid": 2334890,
+      "id": "chabad-talk-2334890",
+      "action": "new_source_identity",
+      "propositions_added": 1,
+      "language": "English",
+      "evidence_family_id": "original-talk-5711-13-shevat",
+      "independent_witness": false,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2334890/jewish/Parshas-Beshalach-and-Yud-Gimmel-Shvat.htm"
+    }
+  ],
+  "blocked_or_excluded": [
+    {
+      "aid": 4666220,
+      "url": "https://www.chabad.org/torah-texts/4666220/page/default.htm",
+      "outcome": "No body text surfaced through the public reader/search path in this run; only a navigation/shell response was available.",
+      "action": "No proposition added; substituted other inspectable publisher body excerpts.",
+      "status": "body_unavailable_through_current_reader"
+    }
+  ],
+  "dedup_review": {
+    "translations": [
+      {
+        "aid": 4666255,
+        "evidence_family_id": "original-letter-aid-4666254",
+        "independent_witness": false,
+        "relation": "Yiddish rendering of Hebrew AID 4666254; same Evidence Family."
+      },
+      {
+        "aid": 2334890,
+        "evidence_family_id": "original-talk-5711-13-shevat",
+        "independent_witness": false,
+        "relation": "English free translation of a talk; original Hebrew publication cited as Toras Menachem 5711, vol. 2, p. 217, not inspected."
+      }
+    ],
+    "cross_reference": {
+      "from_aid": 2334890,
+      "to_aid": 4666239,
+      "type": "editorial_cross_reference",
+      "same_evidence_family": false,
+      "basis": "Publisher text cites Igrot Kodesh letter 200, Vol. 2, p. 71 and To Live and Live Again, p. 141ff."
+    },
+    "new_identity_checks": "AIDs 4666355, 4666356 and 2334890 were not found in the canonical item paths, bulk-indexed inventories, data/sources.json or data/content-review-queue.json. The two new volume-2 letter AIDs were also checked against the relevant late-September volume-2 staging batches."
+  },
+  "retrieval_changes": {
+    "status": "included_in_same_batch_commit",
+    "planned_changes": [
+      "New proposition-specific topics and focused witness gates for the reviewed source content.",
+      "Fix batch-018 comparison parsing for both 'תוספת אברכים' and 'הוספת אברכים', preserving both the Chassidus-class and camp-guide sides.",
+      "Regression tests for regular/researcher mode, claim-local citations, context boundaries, three-family publishing synthesis and letter/talk resurrection comparison."
+    ]
+  },
+  "metrics_before": {
+    "answer_eligible_unique_sources": 652,
+    "content_verified_unique_sources": 649,
+    "answer_eligible_propositions": 1999,
+    "canonical_unique_item_keys": 8953,
+    "verified_unique_item_keys": 7635,
+    "canonical_json_files": 422,
+    "review_queue_items": 1063
+  },
+  "reconciliation": {
+    "status": "pending",
+    "after": null
+  },
+  "quality_gate": {
+    "status": "pending",
+    "run_id": null,
+    "passed": null
+  },
+  "publication": {
+    "url": "https://malkashacham.github.io/maaneh-ledorot/",
+    "status": "pending"
+  },
+  "safeguards": {
+    "runner_side_403_crawler_retried": false,
+    "access_controls_bypassed": false,
+    "full_copyrighted_text_copied": false,
+    "hourly_cron_changed": false,
+    "audience_changed": false,
+    "permissions_changed": false
+  }
+}
