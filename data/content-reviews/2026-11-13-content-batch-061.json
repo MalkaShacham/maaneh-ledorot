@@ -118,9 +118,11 @@
     "answer_eligible_propositions": 2004
   },
   "reconciliation": {
-    "status": "completed_before_duplicate_cleanup; cleanup commit pending",
+    "status": "completed",
     "script": "scripts/reconcile_metrics.py",
-    "bot_commit": "176028b8f9d16081dd013ed03783057e433f67df"
+    "content_merge_commit": "31810e4871cfc6b7797bbecd99c04284dfce9c82",
+    "duplicate_cleanup_merge_commit": "c5193ccadfb95aa9292e842fc12a5652037e8bf0",
+    "final_reconciliation_bot_commit": "0f134c1f330a60cd0ac4fd29247f9a3bc1568fa8"
   },
   "quality_gate": {
     "status": "not_independently_verified",
@@ -154,16 +156,16 @@
     "answer_eligible_propositions": 2002,
     "canonical_unique_item_keys": 8950,
     "verified_unique_item_keys": 7633,
-    "canonical_json_files": 424,
-    "content_review_queue_records": 1060
-  },
-  "expected_metrics_after_duplicate_cleanup": {
-    "answer_eligible_unique_sources": 653,
-    "content_verified_unique_sources": 650,
-    "answer_eligible_propositions": 2002,
-    "canonical_unique_item_keys": 8950,
-    "verified_unique_item_keys": 7633,
     "canonical_json_files": 423,
     "content_review_queue_records": 1060
+  },
+  "metrics_delta": {
+    "answer_eligible_unique_sources": 1,
+    "content_verified_unique_sources": 1,
+    "answer_eligible_propositions": 3,
+    "canonical_unique_item_keys": -3,
+    "verified_unique_item_keys": -2,
+    "canonical_json_files": 1,
+    "content_review_queue_records": -3
   }
 }
