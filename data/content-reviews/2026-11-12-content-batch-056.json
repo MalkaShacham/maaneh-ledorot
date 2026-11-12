@@ -430,6 +430,14 @@
     "latest_saved_report_passed": true,
     "latest_saved_report_regression_cases": 31,
     "commit_binding": false,
-    "note": "Latest saved structural report has no merge-commit binding; batch-056-specific tests must not be marked passed on this basis."
-  }
+    "note": "The answer-quality workflow is configured to run on the changed main paths, but the run result for batch 056 was not independently retrievable. The latest saved structural report is passed and has 31 regression cases, but is not commit-bound; batch-specific tests remain unverified."
+  },
+  "index_refresh_commit": "da53a97961a570e6ac05ecf20001a53466e68c80",
+  "corrections": [
+    {
+      "aid": 2278439,
+      "commit": "bcf8cb8096a7b9b896364d74334ff8714968beb2",
+      "detail": "Corrected Merkos L’Inyonei Chinuch as the organization named in Letter 416, not a personal name; public search index refreshed in da53a97."
+    }
+  ]
 }
