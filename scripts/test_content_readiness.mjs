@@ -1023,3 +1023,57 @@ for(const [aid,count] of Object.entries(batch054EnrichedCounts)){
 
 console.log(`Content readiness: ${unique.size} usable sources; 440 real-corpus answer checks passed, including 32 batch-054 mode-specific checks and 28 item-identity checks`);
 
+
+
+const batch056Required=[
+ [2281850,3],[2278232,2],[2277888,2],[2277935,2],[2278439,3],
+ [2279259,3],[2278430,3],[2294957,2],[2293270,3],[2279210,2],[2283000,3]
+];
+for(const [aid,minProps] of batch056Required){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,`batch-056 source ${aid} must have inspected content evidence`);
+ assert.equal(e.status,'Verified',`batch-056 source ${aid} must retain scoped publisher-text verification`);
+ assert(e.response_propositions.length>=minProps,`batch-056 source ${aid} must expose its inspected propositions`);
+ assert(e.proposition_source_locator&&e.verification_scope,`batch-056 source ${aid} must expose precise locator and scope`);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase',`batch-056 source ${aid} must remain a source-grounded paraphrase`);
+ assert.equal(e.proposition_verbatim,false,`batch-056 source ${aid} must not be represented as verbatim`);
+ assert.equal(e.proposition_verification,'source_text_inspected',`batch-056 source ${aid} must retain text-inspection status`);
+ assert.equal(e.context_status,'partial',`batch-056 source ${aid} must preserve partial context`);
+}
+const batch056Checks=[
+ ['מה כתב הרבי על מנהגי אבלות לאחר פטירת הורה?',[2278430]],
+ ['כיצד הוצעה שליחות חינוכית במרוקו ומה נדרש מהשליח?',[2277935,2278232]],
+ ['מה כתב הרבי על איסוף מכתבי ומאמרי הריי״צ?',[2294957,2279210]],
+ ['כיצד נוהגים בשבת במקום שבו היום נמשך יותר מ־24 שעות?',[2283000]]
+];
+for(const [question,aids] of batch056Checks){
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,question,{mode});
+  assert(m.answerable,`${mode}: batch-056 evidence must answer ${question}`);
+  for(const aid of aids) assert(m.sources.some(e=>String(e.aid)===String(aid)),`${mode}: expected AID ${aid} for ${question}`);
+  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: each batch-056 claim needs proposition-level citation`);
+  assert(m.sources.length<=(mode==='researcher'?10:5),`${mode}: batch-056 query must not be flooded with generic matches`);
+  if(mode==='researcher'){
+   assert(m.research&&m.research.evidence_map.length>0,`${mode}: batch-056 researcher mode must expose an evidence map`);
+   assert(m.research.citation_entailment.every(x=>x.valid),`${mode}: batch-056 citations must pass claim-local entailment`);
+   assert(m.research.context_boundary.every(x=>x.valid),`${mode}: batch-056 must preserve witness-local context boundaries`);
+  }
+ }
+}
+const letterSynthesisQuestion='מה עולה מהאיגרות על איסוף, הדפסה והפצה של כתבי חסידות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,letterSynthesisQuestion,{mode});
+ assert(m.answerable,`${mode}: letter-publication synthesis must be answerable from inspected correspondence`);
+ assert(m.sources.length>=3,`${mode}: letter-publication synthesis must use at least three letters`);
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,`${mode}: letter-publication synthesis must use at least three independent Evidence Families`);
+ assert(m.claims.every(c=>c.source_numbers.length),`${mode}: each letter-publication claim needs a citation`);
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=3,`${mode}: synthesis must expose at least three Evidence Families`);
+  assert.equal(m.research.witnesses.length,m.sources.length,`${mode}: researcher mode must expose provenance for every witness`);
+  assert(m.research.evidence_map.length>0,`${mode}: researcher mode must expose a claim-to-witness map`);
+  assert(m.research.citation_entailment.every(x=>x.valid),`${mode}: synthesis citations must pass entailment`);
+  assert(m.research.context_boundary.every(x=>x.valid),`${mode}: synthesis must preserve context boundaries`);
+ }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+}
+
+console.log('Batch-056: 11 inspected letter identities and 10 new retrieval/synthesis mode checks passed');
