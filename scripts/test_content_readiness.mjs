@@ -1280,4 +1280,66 @@ for(const mode of ['regular','researcher']){
   assert(m.research.comparative_coverage&&m.research.comparative_coverage.supported_topics.length>=2,`${mode}: researcher comparison must report both supported topics`);
  }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
 }
+
+const batch061Required=[
+ [5100285,2,'original-letter-aid-5100285'],
+ [4754587,2,'original-letter-aid-4754587']
+];
+for(const [aid,minProps,family] of batch061Required){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,`batch-061 AID ${aid} must have inspected source content`);
+ assert.equal(e.status,'Verified',`batch-061 AID ${aid} must retain scoped publisher-text verification`);
+ assert.equal(e.evidence_family_id,family,`batch-061 AID ${aid} must have one distinct Evidence Family`);
+ assert(e.response_propositions.length>=minProps,`batch-061 AID ${aid} must expose its inspected paraphrases`);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.context_status,'partial');
+}
+const enrichedYahrzeit=idx.entries.find(e=>String(e.aid)==='4666231');
+assert(enrichedYahrzeit&&enrichedYahrzeit.response_propositions.some(p=>p.includes('בריאות אמו')),
+ 'AID 4666231 must retain the newly inspected closing prayer request');
+for(const aid of [4666211,4666215,4666216,4666232]){
+ const matches=idx.entries.filter(e=>String(e.aid)===String(aid));
+ assert.equal(matches.length,1,`AID ${aid} duplicate aliases must collapse to one stable source identity`);
+ assert(matches[0].evidence_family_id,`AID ${aid} must retain one Evidence Family`);
+ assert(matches[0].has_content_evidence,`AID ${aid} must resolve to the content-inspected canonical witness`);
+ assert(!queue.records.some(q=>String(q.aid)===String(aid)||String(q.key)===`aid:${aid}`||String(q.source_url||'').includes(`/aid/${aid}/`)),`AID ${aid} must not remain in the content-review queue`);
+}
+const dailyStudyQuestion='כיצד הציע הרבי ללמוד חומש וחק לישראל כשהעבודה וימי החורף הקצרים מקשים להספיק את השיעורים?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,dailyStudyQuestion,{mode});
+ assert(m.answerable,`${mode}: inspected daily-study-under-work evidence must answer`);
+ assert(m.sources.some(e=>String(e.aid)==='5100285'),`${mode}: AID 5100285 must support the daily-study answer`);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: each daily-study claim needs a proposition-level citation`);
+ assert(m.citation_entailment.every(x=>x.valid),`${mode}: daily-study citations must pass claim-local entailment`);
+ assert(m.context_boundary.every(x=>x.valid),`${mode}: daily-study answer must preserve context boundaries`);
+ if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0&&m.research.witnesses.length===m.sources.length,`${mode}: daily-study researcher mode must expose witness and claim maps`);
+ else assert.equal(m.research,undefined,'regular daily-study answer must not include researcher-only analysis');
+}
+const dailyStudyComparison='השווה בין ההדרכה על חלוקת שיעורי חומש וחק לישראל בימי החורף הקצרים לבין המענה על סדרי לימוד, חומש, תהלים, תניא והנחת תפילין';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,dailyStudyComparison,{mode});
+ assert(m.answerable,`${mode}: daily-study cross-letter synthesis must be answerable`);
+ for(const aid of [5100285,5357571])assert(m.sources.some(e=>String(e.aid)===String(aid)),`${mode}: comparison must include AID ${aid}`);
+ assert(new Set(m.sources.map(e=>e.evidence_family_id).filter(Boolean)).size>=2,`${mode}: daily-study comparison must retain two independent Evidence Families`);
+ assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: daily-study comparison must not be flooded by generic matches`);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: every comparison claim needs claim-local citations`);
+ assert(m.citation_entailment.every(x=>x.valid),`${mode}: comparison citations must pass entailment`);
+ assert(m.context_boundary.every(x=>x.valid),`${mode}: comparison must preserve witness-local context`);
+ if(mode==='researcher')assert(m.research&&m.research.evidence_families>=2&&m.research.evidence_map.length>0,`${mode}: researcher comparison must expose both families and the evidence map`);
+ else assert.equal(m.research,undefined,'regular comparison must not include researcher-only analysis');
+}
+const familyPlanningQuestion='מה נכתב באיגרת על מניעת הריון כאשר הרופאים מעריכים שהריון עלול לסכן את האישה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,familyPlanningQuestion,{mode});
+ assert(m.answerable,`${mode}: inspected partial family-planning excerpt must answer its bounded question`);
+ assert(m.sources.some(e=>String(e.aid)==='4754587'),`${mode}: AID 4754587 must support the bounded historical answer`);
+ assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: family-planning retrieval must not be flooded`);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: each family-planning claim needs a proposition-level citation`);
+ assert(m.citation_entailment.every(x=>x.valid),`${mode}: family-planning citations must pass entailment`);
+ assert(m.context_boundary.every(x=>x.valid),`${mode}: the excerpt's partial context must remain bounded`);
+ if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0,`${mode}: family-planning researcher mode must expose the evidence map`);
+}
 console.log(`Content readiness: ${unique.size} usable sources; real-corpus answer checks passed, including batch-056 through batch-060 source, comparison, citation and researcher-mode checks`);

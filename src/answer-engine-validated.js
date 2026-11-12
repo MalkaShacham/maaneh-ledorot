@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-batch059-multisource-v9';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch061-work-study-v1';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -239,7 +239,8 @@ const TOPIC_ALIASES={
   'ידיעה ובחירה חופשית':['ידיעת ה׳','ידיעת השם','היחס בין ידיעת ה׳ לבחירה','בחירה חופשית','free choice','divine foreknowledge'],
   'השגחה פרטית':['השגחה פרטית','השגחה על כל פרט','השגחה על דומם צומח וחי','דומם','צומח','בעלי חיים','Divine Providence','Hashgachah Peratis'],
  'העתק שיחות סוכות':['העתק שיחות סוכות','העתקה של שיחות סוכות','שיחות סוכות','Sukkot talks copy'],
- 'מחלקת קה״ת בשנגהי':['מחלקת קה״ת בשנגהי','מחלקת קה״ת','הקמת מחלקת קה״ת','שנגהי','300 עותקים','Shanghai Kehot department','Kehot publishing department']
+ 'מחלקת קה״ת בשנגהי':['מחלקת קה״ת בשנגהי','מחלקת קה״ת','הקמת מחלקת קה״ת','שנגהי','300 עותקים','Shanghai Kehot department','Kehot publishing department'],
+ 'לימוד יומי תחת עומס עבודה':['לימוד יומי תחת עומס עבודה','לימוד חומש וחק לישראל','חומש וחק לישראל','חלוקת הלימוד לפסקאות','חלוקת שיעורי חומש במהלך היום','לימוד בימי החורף הקצרים','טרדת העבודה ולימוד','לימוד בחנות','daily Torah study under work constraints','Chumash and Chok L’Yisrael during work'],
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);

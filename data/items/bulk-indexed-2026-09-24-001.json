@@ -132,7 +132,7 @@
       "id": "canonical-ik-v2-172-aid4666211",
       "title": "אגרות קודש - כרך ב - מכתב קעב",
       "source_class": "Igrot Kodesh",
-      "pipeline_status": "Indexed",
+      "pipeline_status": "Linked",
       "event_date": null,
       "language": "unknown",
       "context_status": "partial",
@@ -147,7 +147,7 @@
         "transmission_type": "publisher/item metadata only",
         "textual_status": "content_not_inspected",
         "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
+        "verification_status": "linked_same_aid_to_canonical_item",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666211/jewish/page.htm",
         "accessed": "2026-09-24"
       },
@@ -159,9 +159,15 @@
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-igrot-kodesh-volume-2-batch-029.json"
+        },
+        {
+          "type": "same_evidence_family",
+          "target_id": "chabad-letter-4666211",
+          "basis": "Same stable AID 4666211 and publisher URL; this bulk-indexed record is metadata-only and not an independent witness."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Metadata-only bulk index alias linked to the content-inspected canonical item AID 4666211. It is not an independent witness and contributes no answer proposition.",
+      "evidence_family_id": "original-letter-aid-4666211"
     },
     {
       "id": "canonical-ik-v2-209-aid2283000",

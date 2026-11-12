@@ -1,0 +1,145 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "061",
+  "reviewed_at": "2026-11-13",
+  "review_method": "Manual public-source inspection through web search/open. No runner-side crawler or access-control bypass.",
+  "source_bodies_reviewed": 9,
+  "new_source_identities": 2,
+  "existing_identities_enriched": 5,
+  "source_grounded_propositions_added": 5,
+  "new_sources": [
+    {
+      "aid": 5100285,
+      "id": "chabad-letter-5100285",
+      "evidence_family_id": "original-letter-aid-5100285",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100285/jewish/page.htm",
+      "locator": "publisher body lines 244-256",
+      "scope": "Visible item-level letter body and publisher note inspected; incoming letter and underlying manuscript not inspected; context partial.",
+      "propositions": 2
+    },
+    {
+      "aid": 4754587,
+      "id": "chabad-letter-4754587",
+      "evidence_family_id": "original-letter-aid-4754587",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4754587/jewish/page.htm",
+      "locator": "publisher body lines 288-296",
+      "scope": "Partial excerpt begins with ellipsis; only visible excerpt inspected; incoming question and underlying manuscript not inspected; context partial.",
+      "propositions": 2
+    }
+  ],
+  "inspected_existing_identities": [
+    {
+      "aid": 4666210,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666210/jewish/page.htm",
+      "scope": "Publisher-indexed Hebrew body excerpt inspected; direct reader parser exposed shell; existing propositions retained without duplication."
+    },
+    {
+      "aid": 4666211,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666211/jewish/page.htm",
+      "scope": "Publisher-indexed Hebrew body excerpt inspected; direct reader parser exposed shell; existing propositions retained; canonical AID locator normalized."
+    },
+    {
+      "aid": 4666215,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666215/jewish/page.htm",
+      "scope": "Publisher-indexed Hebrew body excerpt inspected; existing halakhic propositions retained; duplicate metadata alias linked to the same family."
+    },
+    {
+      "aid": 4666231,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666231/jewish/page.htm",
+      "scope": "Publisher-indexed Hebrew body excerpt inspected; added one proposition for the closing request to pray for the writer's mother's health; direct reader parser exposed shell."
+    },
+    {
+      "aid": 4666232,
+      "source_url": "https://www.chabad.org/torah-texts/4666232",
+      "scope": "Publisher-indexed Hebrew body excerpt inspected; existing propositions retained; alternate URL alias linked to the same family."
+    },
+    {
+      "aid": 4666239,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666239/jewish/page.htm",
+      "scope": "Opening portion of the long publisher-indexed Hebrew response inspected; existing propositions were not expanded beyond the inspected scope."
+    },
+    {
+      "aid": 5357571,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+      "scope": "Publisher body lines 244-257 opened and inspected; existing propositions used as a separate dated Evidence Family for cross-letter daily-study synthesis."
+    }
+  ],
+  "duplicate_resolution": [
+    {
+      "aid": 4666211,
+      "canonical_id": "chabad-letter-4666211",
+      "alias_id": "canonical-ik-v2-172-aid4666211",
+      "action": "normalized canonical locator and linked metadata-only bulk alias by same_evidence_family; alias status Linked"
+    },
+    {
+      "aid": 4666215,
+      "canonical_id": "chabad-letter-4666215",
+      "alias_id": "igrot-kodesh-v2-letter-176-aid4666215",
+      "action": "added stable AID locator and same_evidence_family relation; alias status Linked"
+    },
+    {
+      "aid": 4666216,
+      "canonical_id": "chabad-letter-4666216",
+      "alias_id": "igrot-kodesh-v2-letter-177-aid4666216",
+      "action": "added stable AID locator and same_evidence_family relation; alias status Linked"
+    },
+    {
+      "aid": 4666232,
+      "canonical_id": "chabad-letter-4666232",
+      "alias_id": "igrot-kodesh-v2-letter-193-aid-4666232",
+      "action": "normalized canonical and alternate URL locators; linked alias to same_evidence_family; alias status Linked"
+    }
+  ],
+  "access_blockers": {
+    "direct_reader": "Several Chabad.org reader routes returned a page shell without body text in the web parser. For AIDs 4666210, 4666211, 4666215, 4666231 and 4666232, publisher-indexed body excerpts were available and were used with excerpt-limited scope; AID 4666239 was limited to its opening excerpt.",
+    "prior_acquisition": "data/acquisition/latest.json records the prior runner-side HTTP 403 on 12 publisher references. The blocked crawler was not retried.",
+    "fallback_used": [
+      "AID 5100285: direct publisher body lines 244-256 inspected",
+      "AID 4754587: direct publisher excerpt lines 288-296 inspected",
+      "AID 5357571: direct publisher body lines 244-257 inspected"
+    ]
+  },
+  "retrieval_changes": {
+    "new_topic": "לימוד יומי תחת עומס עבודה",
+    "query": "כיצד הציע הרבי ללמוד חומש וחק לישראל כשהעבודה וימי החורף הקצרים מקשים להספיק את השיעורים?",
+    "cross_source_comparison": "השווה בין ההדרכה על חלוקת שיעורי חומש וחק לישראל בימי החורף הקצרים לבין המענה על סדרי לימוד, חומש, תהלים, תניא והנחת תפילין",
+    "second_topic": "מניעת הריון בסיכון רפואי",
+    "note": "The new daily-study topic links two distinct Evidence Families (AID 5100285 and AID 5357571). The family-planning item remains a partial historical excerpt and is explicitly not medical advice. Researcher mode is tested for witness-level provenance, claim-to-source mapping, entailment and context boundaries."
+  },
+  "metrics_before": {
+    "answer_eligible_unique_sources": 652,
+    "content_verified_unique_sources": 649,
+    "answer_eligible_propositions": 1999,
+    "canonical_unique_item_keys": 8953,
+    "verified_unique_item_keys": 7635,
+    "canonical_json_files": 422,
+    "content_review_queue_records": 1063
+  },
+  "expected_metrics_after_reconciliation": {
+    "answer_eligible_unique_sources": 654,
+    "content_verified_unique_sources": 651,
+    "answer_eligible_propositions": 2004
+  },
+  "reconciliation": {
+    "status": "pending_merge_and_workflow",
+    "script": "scripts/reconcile_metrics.py"
+  },
+  "quality_gate": {
+    "status": "pending_merge_and_workflow",
+    "test": "node scripts/test_content_readiness.mjs"
+  },
+  "publication": {
+    "status": "pending_merge_and_pages_check",
+    "url": "https://malkashacham.github.io/maaneh-ledorot/"
+  },
+  "safeguards": {
+    "crawler_retried": false,
+    "access_controls_bypassed": false,
+    "full_copyrighted_text_copied": false,
+    "translations_counted_as_independent": false,
+    "schedule_changed": false,
+    "audience_or_permissions_changed": false
+  }
+}
