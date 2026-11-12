@@ -11,7 +11,7 @@ const TOPICS={
  נישואין:['שלום בית','נישוא','חתונ','אשה','marriage','wedding','husband','wife','sholom bayis'],
  'לימוד הלכה':['הלכה','הלכות','קיצור שולחן ערוך','לימוד הלכה','practical halacha','halacha','halachic study'],
  'שיקום לאחר פיגוע':['שיקום','פיגוע','אחרי הפיגוע','לאחר הפיגוע','recovery after attack','attack recovery'],
- 'הרחבת ישיבה':['מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','yeshiva enrollment','increase yeshiva enrollment'],
+ 'הרחבת ישיבה':['מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','להגדיל','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים','להקל במידת ההתאמה','yeshiva enrollment','increase yeshiva enrollment'],
  'ל״ג בעומר':['ל״ג בעומר','לג בעומר','מירון','lag baomer','lag b omer'],
  'בית רבקה בראונסוויל':['בית רבקה בבראונסוויל','בתי הספר בית רבקה בבראונסוויל','בראונסוויל','brownsville','east new york beis rivka'],
  'שכחה וחלומות':['שכחה וחלומות','שכחה','חיזוק הזכרון','חלומות מטרידים','forgetfulness and dreams','memory and disturbing dreams'],
@@ -396,6 +396,10 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('הרחבת ישיבה')){
+  const explicitRecruitment=arr(e.response_propositions).some(p=>['לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
+  if(!explicitRecruitment)return{score:0,support:'insufficient_specific_evidence',reasons:['A yeshiva-enrollment answer requires an inspected proposition with an explicit recruitment/expansion action or target; decline and perseverance alone are not a recruitment plan.']};
+ }
  if(u.topics.includes('קביעת מזוזה בדירה חדשה')){
   const exactTiming=arr(e.response_propositions).some(p=>containsTerm(p,'מזוזה')&&containsTerm(p,'כניסה')&&(containsTerm(p,'מיד')||containsTerm(p,'יום השלושים')||containsTerm(p,'שלושים')));
   if(!exactTiming)return{score:0,support:'insufficient_specific_evidence',reasons:['A source must explicitly connect mezuzah placement with entering the residence and an immediate/day-thirty timing detail.']};

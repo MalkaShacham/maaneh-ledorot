@@ -7,8 +7,8 @@
   "counts": {
     "items_inspected": 12,
     "new_answer_eligible_source_identities": 12,
-    "existing_identities_enriched": 1,
-    "existing_identity_enrichment_kind": "researcher/model_link only; no new proposition added to the existing identity",
+    "existing_identities_enriched": 2,
+    "existing_identity_enrichment_kind": "two researcher/model cross-references only; no new propositions added to existing identities",
     "response_propositions_added": 25,
     "evidence_families_added": 12
   },
@@ -220,5 +220,33 @@
     "hourly_cron_preserved": "7 * * * *",
     "audience_or_permissions_changed": false,
     "new_automations_created": false
+  },
+  "existing_identity_enrichments": [
+    {
+      "id": "igrot-kodesh-v13-דתמג",
+      "canonical_file": "data/items/library-igrot-kodesh-v13-content-2026-10-31-016.json",
+      "relation_target": "chabad-letter-5100064",
+      "relation_type": "researcher/model_link",
+      "same_evidence_family": false,
+      "reason": "Shared mention of mezuzot but different contexts: affixing on entering a residence versus checking existing mezuzot in a sofer's home.",
+      "new_response_propositions": 0
+    },
+    {
+      "id": "igrot-scan-v13-letter-4-319",
+      "canonical_file": "data/items/library-igrot-kodesh-v13-content-2026-10-30-005.json",
+      "relation_target": "chabad-letter-4812649",
+      "relation_type": "researcher/model_link",
+      "same_evidence_family": false,
+      "reason": "Both address yeshiva enrollment in different letters: one gives an explicit recruitment/expansion plan; the other addresses decline, obstacles and persistence.",
+      "new_response_propositions": 0
+    }
+  ],
+  "follow_up_quality_gate": {
+    "run_id": 43282923148,
+    "conclusion": "failure",
+    "failed_step": "node scripts/test_content_readiness.mjs",
+    "line": 92,
+    "diagnosis": "The new AID 4812649 letter discusses declining enrollment and perseverance but does not provide a recruitment/expansion plan. The query about how to increase enrollment must remain anchored to the inspected letter ד׳שיט, which explicitly describes recruitment actions and a numerical target.",
+    "remediation": "Expanded the yeshiva-enrollment topic aliases to the source's actual action language, added a proposition-level gate requiring explicit expansion/recruitment phrases, and added a regression excluding AID 4812649 from that specific answer."
   }
 }
