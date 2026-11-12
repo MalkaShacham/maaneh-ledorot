@@ -1021,7 +1021,6 @@ for(const [aid,count] of Object.entries(batch054EnrichedCounts)){
  assert(e.response_propositions.length>=count,`AID ${aid} must preserve prior propositions and include batch-054 enrichment`);
 }
 
-console.log(`Content readiness: ${unique.size} usable sources; 450 real-corpus answer checks passed, including 10 batch-056 mode-specific checks and 39 item-identity checks`);
 
 
 
@@ -1076,4 +1075,4 @@ for(const mode of ['regular','researcher']){
  }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
 }
 
-console.log('Batch-056: 11 inspected letter identities and 10 new retrieval/synthesis mode checks passed');
+console.log(`Content readiness: ${unique.size} usable sources; 450 real-corpus answer checks passed, including 10 batch-056 mode-specific checks and 39 item-identity checks`);
