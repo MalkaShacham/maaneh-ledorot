@@ -1152,14 +1152,14 @@ for(const [question,key] of batch058Checks){
  }
 }
 const batch058CrossSourceChecks=[
- {question:'השווה בין האיגרת על הבראה בנאות דשא לבין האיגרת על מחשבות בענייני רפואה והוראות הרופאים',[4731005,4812666]},
- {question:'השווה בין המברק על פרויקט תניא ברומא לבין המכתב על ספרי ילדותנו והוצאה לאור בירושלים',[5071046,5357154]}
+ {question:'השווה בין האיגרת על הבראה בנאות דשא לבין האיגרת על מחשבות בענייני רפואה והוראות הרופאים',aids:[4731005,4812666]},
+ {question:'השווה בין המברק על פרויקט תניא ברומא לבין המכתב על ספרי ילדותנו והוצאה לאור בירושלים',aids:[5071046,5357154]}
 ];
 for(const item of batch058CrossSourceChecks){
  for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,item.question,{mode});
   assert(m.answerable,`${mode}: batch-058 cross-source comparison must be answerable: ${item.question}`);
-  for(const aid of item[1])assert(m.sources.some(e=>String(e.aid)===String(aid)),`${mode}: comparison must include AID ${aid}`);
+  for(const aid of item.aids)assert(m.sources.some(e=>String(e.aid)===String(aid)),`${mode}: comparison must include AID ${aid}`);
   assert(new Set(m.sources.map(e=>e.evidence_family_id).filter(Boolean)).size>=2,`${mode}: comparison must retain two independent Evidence Families`);
   assert(m.sources.length<=(mode==='researcher'?8:4),`${mode}: comparison must not be flooded by generic evidence`);
   assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),`${mode}: every comparison claim needs proposition-level citations`);
