@@ -1,0 +1,58 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "2026-11-12-content-batch-047",
+  "generated": "2026-11-12",
+  "method": "Direct public search/open inspection of thirteen complete item-level correspondence bodies on authorized Chabad.org/TheRebbe.org and Sichos in English pages. The known blocked crawler was not used.",
+  "source": {
+    "authorized_online_items": [1273962, 2276717, 2282989, 2243666, 821810, 821811, 827413, 3905757, 5920889, 3906812, 3905723, 3905782, 3907531]
+  },
+  "reviewed_items": 13,
+  "new_content_records": 13,
+  "enriched_existing_canonical_records": 0,
+  "duplicate_or_continuity_checks_without_new_propositions": 0,
+  "propositions_added": 39,
+  "metric_delta": {
+    "answer_eligible_unique_sources_before": 518,
+    "answer_eligible_unique_sources_after": 531,
+    "content_verified_unique_sources_before": 515,
+    "content_verified_unique_sources_after": 528,
+    "answer_eligible_propositions_before": 1647,
+    "answer_eligible_propositions_after": 1686,
+    "note": "Net eligibility is +13 source families and +39 propositions. Translations, secretarial drafts and the authorized adaptation are each tied to their underlying letter or draft family and must not become additional witnesses if another language manifestation is later added."
+  },
+  "evidence_family_dedup": [
+    {
+      "member_ids": ["sie-letter-767-aid-2276717", "sie-letter-204-aid-2282989", "sie-letter-871-aid-2243666", "sie-letter-1006-aid-3905757", "sie-letter-108-aid-5920889", "sie-letter-1051-aid-3906812", "sie-letter-997-aid-3905723", "sie-letter-1016-aid-3905782", "sie-letter-1105-aid-3907531"],
+      "counting_rule": "Each English translation is one manifestation of its numbered-letter family, not an independent witness from the original-language letter."
+    },
+    {
+      "member_ids": ["chabad-original-draft-aid-821810", "chabad-original-draft-aid-821811"],
+      "counting_rule": "Each is explicitly a secretarial draft whose final sent version may have changed; a later final letter must be linked to the same family and compared before counting."
+    },
+    {
+      "member_ids": ["chabad-adaptation-aid-827413"],
+      "family_id": "igrot-kodesh-v7-p337-charity-business",
+      "counting_rule": "The adapted English page derives from the underlying Igrot Kodesh letter and is not a separate witness."
+    }
+  ],
+  "blocked_alternatives": [
+    {
+      "source": "Priority queue pages aids 4666280, 4666216 and 4666232",
+      "result": "Direct open returned publisher navigation chrome without the letter body in the accessible view.",
+      "fallback": "Switched to other authorized publisher letter pages whose complete bodies were exposed to public search/open."
+    },
+    {
+      "source": "Torat Menachem aid 5996765",
+      "result": "The page exposed bibliographic metadata and a PDF link but no inspectable discourse body in the public text view.",
+      "fallback": "Did not infer content from the title or index; used complete correspondence bodies instead."
+    },
+    {
+      "source": "scripts/acquire_source_content.py and the previously blocked GitHub-hosted route",
+      "result": "Not retried; the known HTTP 403 route remained outside this run.",
+      "fallback": "Used public search/open access to authorized item bodies."
+    }
+  ],
+  "verification_scope": "Thirteen complete visible publisher bodies were inspected. Two are explicitly secretarial drafts, one is an authorized adaptation, and ten are publisher translations or presentations. Original-language witnesses, incoming letters, cited works, contracts, financial records and outcomes were not independently verified.",
+  "rights_note": "Only bounded non-verbatim Hebrew research paraphrases and precise item/paragraph locators were stored; no protected letter was copied in full.",
+  "quality_note": "All propositions are source-grounded paraphrases. Financial and business statements are contextual historical guidance, not current professional advice; the Shabbos partnership item is not generalized into an individualized ruling; blessings are not treated as empirical outcome evidence."
+}

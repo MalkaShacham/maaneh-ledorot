@@ -716,5 +716,26 @@ for(const [question,family] of batch046Checks){
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-046 claim needs a proposition-level citation`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; three hundred real-corpus answer checks passed`);
+const batch047Checks=[
+  ['האם סכסוך של הורה עם הנהלת מוסד מצדיק להפסיק את החינוך היהודי של הילדה?','letter-no-767-parent-school-dispute'],
+  ['מדוע גם שיפור קטן בסביבת החינוך של ילד עשוי להיות חשוב?','letter-no-204-educational-environment'],
+  ['מה צריך לברר לפני אירוסין בנוגע ליסודות הבית ולקביעות עתים לתורה?','letter-no-871-marriage-partner'],
+  ['מדוע הטיוטה מסתייגת מהשקעה במניות ומציעה אפיק רגוע יותר?','original-draft-aid-821810-stock-investing'],
+  ['כיצד הוצע להתמודד עם הפסד בעסק שמימן פעילות חינוכית וציבורית?','original-draft-aid-821811-business-loss'],
+  ['מהם שני מוקדי המעלה של איש עסקים לפי מכתב 1006?','letter-no-1006-businessman-torah-study'],
+  ['מה אחריות ההורים בחופשת הקיץ וכיצד לנצל את השעות הפנויות ללימוד תורה?','letter-no-1051-summer-education'],
+  ['האם להיכנס לשותפות בעסק שיפעל בשבת בחלקו של השותף האחר?','letter-no-997-business-shabbos-partnership'],
+  ['מה הוצע לבעל עסק מודאג מחובות במקום להמתין ללקוחות?','letter-no-1016-economic-confidence'],
+  ['כיצד מיושם לכתחילה אריבער בהחלטה לפתוח עסק סיטונאי?','letter-no-1105-opening-wholesale-business']
+];
+for(const [question,family] of batch047Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-047 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: the intended batch-047 evidence family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: the specific batch-047 query must stay within the mode's evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-047 claim needs a proposition-level citation`);
+  }
+}
+console.log(`Content readiness: ${unique.size} usable sources; three hundred twenty real-corpus answer checks passed`);
 
