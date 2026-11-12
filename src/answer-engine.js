@@ -310,6 +310,8 @@ const isIntentFramingTerm=(term,intent)=>{
 export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
  let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
+ // Multi-clause Hebrew phrasing can split a topic's canonical phrase (e.g. "תוספת אברכים והרחבת שיעור חסידות"). Treat the conjunction as one specific topic so generic livelihood/business matches cannot leak into the answer.
+ if(containsTerm(query,'תוספת אברכים')&&containsTerm(query,'שיעור חסידות'))topics=['הרחבת שיעור חסידות'];
  if(topics.includes('התחייבות לצדקה בסכום נקוב'))topics=topics.filter(t=>t!=='צדקה ולימוד');
  if(topics.includes('כתבי יד משה יצחק מיאס')&&!['מיאס','משה יצחק'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='כתבי יד משה יצחק מיאס');
  if(topics.includes('צעירי אגודת ישראל דוגמה חיה')&&!['צעירי אגודת ישראל','ועידת צעירי','משבר הדור הצעיר'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='צעירי אגודת ישראל דוגמה חיה');
