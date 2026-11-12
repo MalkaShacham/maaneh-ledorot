@@ -823,5 +823,60 @@ for(const mode of ['regular','researcher']){
     assert(m.research.witness_classes.derived>=2,`researcher: translated witnesses must be classified as derived, not independent originals`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; 354 real-corpus answer checks passed, including 18 batch-050 mode-specific and multi-source checks`);
+
+const batch052Checks=[
+  ['מה נאמר על השבת שלפני י״ב תמוז ועל לכתחילה אריבער?','shabbos-balak-7-tammuz-5744'],
+  ['כיצד השבת מעלה את ענייני השבוע הקודם דרך ויכולו ועונג?','shabbos-yisro-17-shevat-5744'],
+  ['מה ההבדל בין שבת שובה לשבת תשובה ומה הקשר לתשרי?','shabbos-haazinu-shabbos-shuvah-3-tishrei-5744-1st-farbrengen'],
+  ['מדוע שני ימי ראש השנה נחשבים יום אחד ארוך?','shabbos-haazinu-shabbos-shuvah-3-tishrei-5744-2nd-farbrengen'],
+  ['כיצד סעודת שבת והתוועדות שבת מבטאות אחדות יהודים?','shabbos-eikev-20-menachem-av-5744'],
+  ['מה משמעות ג׳ תמוז כתחילת הגאולה וכיצד התרחבה הפצת החסידות?','third-day-tammuz-5742'],
+  ['מה הקשר בין ערב יום הכיפורים, חמש התפילות ודרגת היחידה?','erev-yom-kippur-5746'],
+  ['כיצד צער של יום הילולא אמור להפוך לשמחה ולפעולה?','chof-menachem-av-5742'],
+  ['כיצד ברכה ליחיד הופכת לברכה של הציבור ומאחדת את הקהילה?','12-tammuz-5745'],
+  ['מדוע זיכרון יום הגאולה מחייב מעשה והוספה בהפצת תורה?','13-tammuz-5742'],
+  ['כיצד אחדות בפורים מתבטאת במפגש, משלוח מנות ומתנות לאביונים?','purim-5745'],
+  ['מה נאמר על הרחבת הכלי לברכה באמצעות תוספת תורה ומצוות ביום ההילולא?','yechidus-eve-13-shevat-5744'],
+  ['כיצד מבצע פורים נמשך אחרי החג להכנות לפסח ולמתן מצות לעניים?','yechidus-eve-17-adar-ii-5744'],
+  ['כיצד לימוד רמב״ם משותף ותפילה בכיוון אחד מבטאים אחדות בין יהודים מרוחקים?','yechidus-eve-11-sivan-5744']
+];
+for(const [question,family] of batch052Checks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: inspected batch-052 evidence must answer ${question}`);
+    assert(m.sources.some(e=>e.evidence_family_id===family),`${mode}: intended batch-052 family must support ${question}`);
+    assert(m.sources.length<=(mode==='researcher'?25:6),`${mode}: batch-052 query must stay within the mode evidence budget`);
+    assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-052 claim needs a proposition-level citation`);
+    assert(citationEntailment(m).every(c=>c.valid),`${mode}: every batch-052 claim must pass citation entailment`);
+    if(mode==='researcher'){
+      assert(m.research&&m.research.evidence_map.length===m.claims.length,`researcher: batch-052 needs a claim-level evidence map`);
+      assert.equal(m.research.cases.length,m.sources.length,`researcher: every batch-052 source needs a case record`);
+      assert.equal(m.research.witnesses.length,m.sources.length,`researcher: every batch-052 source needs a witness record`);
+      assert(m.presentation.detail_level==='witness_level',`researcher: batch-052 must expose witness-level detail`);
+      const w=m.research.witnesses.find(x=>x.family===family);
+      assert(w&&w.witness_class==='derived',`researcher: translated batch-052 witness must remain derived`);
+    }else{
+      assert(!m.research&&m.presentation.detail_level==='summary',`regular: batch-052 must retain concise rendering`);
+    }
+  }
+}
+const batch052SynthesisChecks=[
+  ['כיצד מפגש משותף מחזק אחדות גם אחרי שחוזרים לבתים?',['shabbos-eikev-20-menachem-av-5744','purim-5745','yechidus-eve-11-sivan-5744']],
+  ['כיצד יום הילולא קשור לתוספת תורה ומצוות ולשמחה?',['yechidus-eve-13-shevat-5744','chof-menachem-av-5742']]
+];
+for(const [question,families] of batch052SynthesisChecks){
+  for(const mode of ['regular','researcher']){
+    const m=buildAnswerModel(idx.entries,question,{mode});
+    assert(m.answerable,`${mode}: batch-052 multi-source synthesis must be answerable`);
+    assert(families.filter(f=>m.sources.some(e=>e.evidence_family_id===f)).length>=2,`${mode}: synthesis must retain at least two intended distinct event families`);
+    assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2,`${mode}: synthesis must not collapse distinct event families`);
+    assert(citationEntailment(m).every(c=>c.valid),`${mode}: every synthesis claim needs claim-level citation entailment`);
+    if(mode==='researcher'){
+      assert(m.research.evidence_map.every(c=>c.source_numbers.length),`researcher: every synthesis claim needs a source map`);
+      assert.equal(m.research.witnesses.length,m.sources.length,`researcher: every synthesis witness needs a record`);
+    }
+  }
+}
+
+console.log(`Content readiness: ${unique.size} usable sources; 386 real-corpus answer checks passed, including 32 batch-052 mode-specific and multi-source checks`);
 
