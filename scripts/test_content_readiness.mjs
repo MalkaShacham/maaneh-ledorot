@@ -820,5 +820,5 @@ for(const mode of ['regular','researcher']){
     assert(m.research.witness_classes.derived>=2,`researcher: translated witnesses must be classified as derived, not independent originals`);
   }
 }
-console.log(`Content readiness: ${unique.size} usable sources; three hundred thirty-six real-corpus answer checks passed`);
+console.log(`Content readiness: ${unique.size} usable sources; 354 real-corpus answer checks passed, including 18 batch-050 mode-specific and multi-source checks`);
 
