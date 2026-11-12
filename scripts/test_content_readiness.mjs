@@ -1342,3 +1342,49 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0,`${mode}: family-planning researcher mode must expose the evidence map`);
 }
 console.log(`Content readiness: ${unique.size} usable sources; real-corpus answer checks passed, including batch-056 through batch-061 source, comparison, citation and researcher-mode checks`);
+
+
+// Batch 062: nine new Hebrew/Yiddish letters and one in-place enrichment.
+const batch062Required=[
+ [4666289,2,'original-letter-aid-4666289'],
+ [4666291,2,'original-letter-aid-4666291'],
+ [4666292,2,'original-letter-aid-4666292'],
+ [4666293,2,'original-letter-aid-4666293'],
+ [4666294,2,'original-letter-aid-4666294'],
+ [4666296,2,'original-letter-aid-4666296'],
+ [4666297,2,'original-letter-aid-4666297'],
+ [4666300,2,'original-letter-aid-4666300'],
+ [4666301,2,'original-letter-aid-4666301'],
+ [4666305,2,'original-letter-aid-4666305']
+];
+for(const [aid,minProps,family] of batch062Required){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-062 AID '+aid+' must have inspected publisher text');
+ assert.equal(e.status,'Verified','batch-062 AID '+aid+' must retain scoped publisher-text verification');
+ assert.equal(e.evidence_family_id,family,'batch-062 AID '+aid+' must have one distinct Evidence Family');
+ assert(e.response_propositions.length>=minProps,'batch-062 AID '+aid+' must expose its inspected paraphrases');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.context_status,'partial');
+ assert(!queue.records.some(q=>String(q.key||'').includes('/aid/'+aid+'/')||String(q.source_url||'').includes('/aid/'+aid+'/')),'batch-062 AID '+aid+' must not remain in the review queue');
+}
+const publishingQuestion='מה נכתב באגרות על הדפסת ספרי חסידות, איסוף תיקונים והפצתם?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,publishingQuestion,{mode});
+ assert(m.answerable,mode+': inspected publication and editorial evidence must answer');
+ assert(m.sources.length>=3,mode+': publication synthesis must use at least three source families');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': duplicate witnesses must not inflate publication synthesis');
+ for(const aid of [4666289,4666300,4666301]) assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+': AID '+aid+' must support publication synthesis');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every publication claim needs claim-local citations');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': publication citations must pass proposition entailment');
+ assert(m.context_boundary.every(x=>x.valid),mode+': publication synthesis must preserve witness-local context');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=3,mode+': researcher mode must expose at least three independent families');
+  assert(m.research.witnesses.length===m.sources.length,mode+': researcher mode must expose every witness');
+  assert(m.research.evidence_map.length>0,mode+': researcher mode must expose a claim-to-witness map');
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid),mode+': researcher mode must expose valid claim-local checks');
+  assert.equal(m.research.evidence_integrity.derived_non_independent,0,mode+': no translation may be counted as an independent witness');
+ }else assert.equal(m.research,undefined,'regular publication mode must not include researcher-only analysis');
+}
