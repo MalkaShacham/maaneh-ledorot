@@ -279,8 +279,15 @@ const TOPICS={
  'יחס למכחישי תורה ולימוד הלכה':['מכחישים וכופרים','תורה שבכתב','תורה שבעל פה','הלכות הצריכות בחיי היום יום','לימוד הלכה למעשה','deniers of written and oral Torah','practical halacha'],
  'התכתבות עם הוצאה לאור וספרים':['ילדותנו','ספרי ילדותנו','הוצאה לאור בירושלים','הוצאת ספרים בירושלים','קבלת ספרים','publication correspondence books']
 ,
- 'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
- 'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence']
+ 'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','הוספת אברכים לשיעור חסידות','להוסיף אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
+ 'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence'],
+ 'שבת אצל חולה שיש בו סכנה — דחויה או הותרה':['חולה שיש בו סכנה דחויה או הותרה','שבת אצל חולה שיב״ס','דחויה היא שבת אצל סכנת נפשות','life-threatening patient shabbat dechuya hutrah'],
+ 'מאה ועשרים צירופי שם אלקים':['מאה ועשרים צירופי שם אלקים','ק״כ צירופים של שם אלקים','120 permutations of the name Elokim','ספר יצירה צירופי אותיות'],
+ 'תחיית המתים בגוף':['תחיית המתים בגוף','תחיית המתים בגוף גשמי','מעלת תחיית המתים בגוף','resurrection in a physical body'],
+ 'סדר הגאולה והתחייה':['סדר ביאת המשיח ובניין בית המקדש וקיבוץ גלויות ותחיית המתים','סדר הגאולה והתחייה','תחיית המתים לפני תחיית המתים','resurrection before the resurrection','messianic sequence resurrection'],
+ 'פדיון הבן והצלת ילדים':['פדיון הבן והצלת ילדים','הצלת ילדי ישראל מהיטמעות','בני בכורי ישראל','תורת חיים','pidyon haben rescue Jewish children'],
+ 'נוסח אבינו מלכנו בתענית ציבור':['נוסח אבינו מלכנו בתענית ציבור','זכרנו לחיים טובים בספר','השמטת תיבת בספר','Avinu Malkeinu wording communal fast'],
+ 'אהבת ישראל בתניא פרק לב':['אהבת ישראל בתניא פרק לב','מינים ואפיקורסים בתניא','ההבחנה בין מינים ואפיקורסים למשומדים','Tanya chapter 32 love and heretics']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -316,7 +323,7 @@ export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
  let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
  // Multi-clause Hebrew phrasing can split a topic's canonical phrase (e.g. "תוספת אברכים והרחבת שיעור חסידות"). Treat the conjunction as one specific topic so generic livelihood/business matches cannot leak into the answer.
- if(containsTerm(query,'תוספת אברכים')&&containsTerm(query,'שיעור חסידות'))topics=['הרחבת שיעור חסידות'];
+ if((containsTerm(query,'תוספת אברכים')||containsTerm(query,'הוספת אברכים'))&&containsTerm(query,'שיעור חסידות')){const hasCamp=topics.includes('מדריך מחנה גן ישראל והשפעה')||containsTerm(query,'מחנה גן ישראל');topics=hasCamp?['הרחבת שיעור חסידות','מדריך מחנה גן ישראל והשפעה']:['הרחבת שיעור חסידות'];}
  if(topics.includes('התחייבות לצדקה בסכום נקוב'))topics=topics.filter(t=>t!=='צדקה ולימוד');
  if(topics.includes('כתבי יד משה יצחק מיאס')&&!['מיאס','משה יצחק'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='כתבי יד משה יצחק מיאס');
  if(topics.includes('צעירי אגודת ישראל דוגמה חיה')&&!['צעירי אגודת ישראל','ועידת צעירי','משבר הדור הצעיר'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='צעירי אגודת ישראל דוגמה חיה');
@@ -437,7 +444,14 @@ export function propositionRelevance(e,u){
   {topic:'הרחבת שיעור חסידות',ok:focusedProps.some(p=>containsTerm(p,'תוספת אברכים בשיעור חסידות')&&containsTerm(p,'הפצת המעיינות'))},
   {topic:'מדריך מחנה גן ישראל והשפעה',ok:focusedProps.some(p=>containsTerm(p,'מחנה גן ישראל'))&&focusedProps.some(p=>containsTerm(p,'לימוד אישי'))},
   {topic:'ידיעה ובחירה חופשית',ok:focusedProps.some(p=>containsTerm(p,'ידיעה')&&containsTerm(p,'בחירה')&&containsTerm(p,'חופשית'))},
-  {topic:'השגחה פרטית',ok:focusedProps.some(p=>containsTerm(p,'השגחה פרטית')&&['דומם','צומח','בעלי חיים'].some(t=>containsTerm(p,t)))}
+  {topic:'השגחה פרטית',ok:focusedProps.some(p=>containsTerm(p,'השגחה פרטית')&&['דומם','צומח','בעלי חיים'].some(t=>containsTerm(p,t)))},
+  {topic:'שבת אצל חולה שיש בו סכנה — דחויה או הותרה',ok:focusedProps.some(p=>containsTerm(p,'שבת')&&(['חולה שיש בו סכנה','סכנת נפשות','חולה שיב״ס'].some(t=>containsTerm(p,t)))&&(['דחויה','הותרה'].some(t=>containsTerm(p,t))))},
+  {topic:'מאה ועשרים צירופי שם אלקים',ok:focusedProps.some(p=>containsTerm(p,'מאה ועשרים')&&containsTerm(p,'שם אלקים')&&containsTerm(p,'ספר יצירה')&&containsTerm(p,'אותיות'))},
+  {topic:'תחיית המתים בגוף',ok:focusedProps.some(p=>containsTerm(p,'תחיית המתים')&&containsTerm(p,'גוף גשמי')&&(containsTerm(p,'שלמות מין האדם')||containsTerm(p,'קבלת שכר')))},
+  {topic:'סדר הגאולה והתחייה',ok:focusedProps.some(p=>containsTerm(p,'ביאת המשיח')&&containsTerm(p,'בית המקדש')&&containsTerm(p,'קיבוץ גלויות')&&containsTerm(p,'תחיית המתים'))},
+  {topic:'פדיון הבן והצלת ילדים',ok:focusedProps.some(p=>containsTerm(p,'פדיון הבן')&&containsTerm(p,'ילדי ישראל')&&containsTerm(p,'להיטמע')&&containsTerm(p,'תורת חיים'))},
+  {topic:'נוסח אבינו מלכנו בתענית ציבור',ok:focusedProps.some(p=>containsTerm(p,'אבינו מלכנו')&&containsTerm(p,'תענית ציבור')&&containsTerm(p,'זכרנו לחיים טובים')&&containsTerm(p,'בספר'))},
+  {topic:'אהבת ישראל בתניא פרק לב',ok:focusedProps.some(p=>containsTerm(p,'פרק לב בתניא')&&containsTerm(p,'אהבת ישראל')&&containsTerm(p,'מינים ואפיקורסים')&&containsTerm(p,'להכעיס'))}
  ].filter(g=>u.topics.includes(g.topic));
  if(focusedWitnessGates.length&&!focusedWitnessGates.some(g=>g.ok))return{score:0,support:'insufficient_specific_evidence',reasons:[`No single witness satisfied any requested focused evidence gate: ${focusedWitnessGates.map(g=>g.topic).join(', ')}`]};
  if(u.topics.includes('הרחבת ישיבה')){

@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-batch059-multisource-v9';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261112-batch061-evidence-v10';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -239,7 +239,15 @@ const TOPIC_ALIASES={
   'ידיעה ובחירה חופשית':['ידיעת ה׳','ידיעת השם','היחס בין ידיעת ה׳ לבחירה','בחירה חופשית','free choice','divine foreknowledge'],
   'השגחה פרטית':['השגחה פרטית','השגחה על כל פרט','השגחה על דומם צומח וחי','דומם','צומח','בעלי חיים','Divine Providence','Hashgachah Peratis'],
  'העתק שיחות סוכות':['העתק שיחות סוכות','העתקה של שיחות סוכות','שיחות סוכות','Sukkot talks copy'],
- 'מחלקת קה״ת בשנגהי':['מחלקת קה״ת בשנגהי','מחלקת קה״ת','הקמת מחלקת קה״ת','שנגהי','300 עותקים','Shanghai Kehot department','Kehot publishing department']
+ 'מחלקת קה״ת בשנגהי':['מחלקת קה״ת בשנגהי','מחלקת קה״ת','הקמת מחלקת קה״ת','שנגהי','300 עותקים','Shanghai Kehot department','Kehot publishing department'],
+  'שבת אצל חולה שיש בו סכנה — דחויה או הותרה':['חולה שיש בו סכנה דחויה או הותרה','שבת אצל חולה שיב״ס','דחויה היא שבת אצל סכנת נפשות','life-threatening patient shabbat dechuya hutrah'],
+  'מאה ועשרים צירופי שם אלקים':['מאה ועשרים צירופי שם אלקים','ק״כ צירופים של שם אלקים','120 permutations of the name Elokim','ספר יצירה צירופי אותיות'],
+  'תחיית המתים בגוף':['תחיית המתים בגוף','תחיית המתים בגוף גשמי','מעלת תחיית המתים בגוף','resurrection in a physical body'],
+  'סדר הגאולה והתחייה':['סדר ביאת המשיח ובניין בית המקדש וקיבוץ גלויות ותחיית המתים','סדר הגאולה והתחייה','תחיית המתים לפני תחיית המתים','resurrection before the resurrection','messianic sequence resurrection'],
+  'פדיון הבן והצלת ילדים':['פדיון הבן והצלת ילדים','הצלת ילדי ישראל מהיטמעות','בני בכורי ישראל','תורת חיים','pidyon haben rescue Jewish children'],
+  'נוסח אבינו מלכנו בתענית ציבור':['נוסח אבינו מלכנו בתענית ציבור','זכרנו לחיים טובים בספר','השמטת תיבת בספר','Avinu Malkeinu wording communal fast'],
+  'אהבת ישראל בתניא פרק לב':['אהבת ישראל בתניא פרק לב','מינים ואפיקורסים בתניא','ההבחנה בין מינים ואפיקורסים למשומדים','Tanya chapter 32 love and heretics'],
+  'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','הוספת אברכים לשיעור חסידות','להוסיף אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);

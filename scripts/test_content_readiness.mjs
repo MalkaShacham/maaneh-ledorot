@@ -1280,4 +1280,77 @@ for(const mode of ['regular','researcher']){
   assert(m.research.comparative_coverage&&m.research.comparative_coverage.supported_topics.length>=2,`${mode}: researcher comparison must report both supported topics`);
  }else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
 }
-console.log(`Content readiness: ${unique.size} usable sources; real-corpus answer checks passed, including batch-056 through batch-060 source, comparison, citation and researcher-mode checks`);
+const batch061Required=[[4666210,3],[4666215,2],[4666216,2],[4666231,2],[4666232,2],[4666239,4],[4666255,4],[4666281,1],[4666282,2],[4666283,2],[4666355,2],[4666356,2],[2334890,1]];
+for(const pair of batch061Required){
+ const aid=pair[0],minProps=pair[1],e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-061 AID '+aid+' must have inspected content evidence');
+ assert.equal(e.status,'Verified','batch-061 AID '+aid+' must retain scoped publisher-text verification');
+ assert(e.evidence_family_id,'batch-061 AID '+aid+' must have one Evidence Family');
+ assert(e.response_propositions.length>=minProps,'batch-061 AID '+aid+' must expose reviewed propositions');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase','batch-061 AID '+aid+' must remain a source-grounded paraphrase');
+ assert.equal(e.proposition_verbatim,false,'batch-061 AID '+aid+' must not be represented as verbatim');
+ assert.equal(e.proposition_verification,'source_text_inspected','batch-061 AID '+aid+' must retain text-inspection status');
+ assert(e.proposition_source_locator&&e.verification_scope,'batch-061 AID '+aid+' must expose locator and scope');
+ assert.equal(e.context_status,'partial','batch-061 AID '+aid+' must preserve partial context');
+}
+const batch061Yiddish=idx.entries.find(e=>String(e.aid)==='4666255');
+assert(batch061Yiddish&&batch061Yiddish.independent_witness===false,'AID 4666255 Yiddish rendering must not be counted as an independent witness');
+assert.equal(batch061Yiddish.evidence_family_id,'original-letter-aid-4666254','AID 4666255 must share the Hebrew predecessor Evidence Family');
+const batch061English=idx.entries.find(e=>String(e.aid)==='2334890');
+assert(batch061English&&batch061English.independent_witness===false,'AID 2334890 English talk translation must not be treated as an independent witness');
+assert(batch061English.translation_status.includes('not an independent witness'),'AID 2334890 must declare its derived translation status');
+assert(batch061English.response_propositions.some(p=>p.includes('ביאת המשיח')&&p.includes('קיבוץ גלויות')&&p.includes('תחיית המתים')),'AID 2334890 must preserve the inspected sequence proposition');
+assert(idx.entries.find(e=>String(e.aid)==='4666355').response_propositions.some(p=>p.includes('אדמו״ר הריי״צ')),'AID 4666355 must preserve attribution of the quoted teaching to the Previous Rebbe');
+const batch061Checks=[
+ ['האם שבת אצל חולה שיש בו סכנה דחויה או הותרה?','4666215'],
+ ['כיצד מוסבר החשבון של מאה ועשרים צירופי שם אלקים?','4666216'],
+ ['מהי המעלה בתחיית המתים בגוף גשמי לפי האיגרת?','4666239'],
+ ['מה הקשר בין פדיון הבן להצלת ילדי ישראל מהיטמעות בין הגויים?','4666281'],
+ ['מה נכתב על נוסח אבינו מלכנו בתענית ציבור והאם אומרים בספר?','4666282'],
+ ['מה ההבחנה באיגרת רמד בין מינים ואפיקורסים לבין מי שנקרא משומד?','4666283'],
+ ['מה כתב הרבי על הפצת קונטרס י״ט כסלו וקירוב הרחוקים?','4666355'],
+ ['מה כתב הרבי על שליחת ההגדה והפצת כתב העת בספריות המל״ח?','4666356'],
+ ['מה כתב הרבי לכולל חב״ד בביירות על הוצאות יום היארצייט?','4666231'],
+ ['מה הייתה מטרת התרומה להדפסת שיחות אדמו״ר הרש״ב?','4666232']
+];
+for(const pair of batch061Checks){
+ const question=pair[0],aid=pair[1];
+ for(const mode of ['regular','researcher']){
+  const m=buildAnswerModel(idx.entries,question,{mode});
+  assert(m.answerable,mode+': batch-061 inspected evidence must answer '+question);
+  assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+': batch-061 query must retrieve AID '+aid);
+  assert(m.sources.length<=(mode==='researcher'?8:4),mode+': batch-061 query must not be flooded by generic evidence');
+  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every batch-061 claim needs proposition-level citations');
+  assert(m.citation_entailment.every(x=>x.valid),mode+': batch-061 citations must pass claim-local entailment');
+  assert(m.context_boundary.every(x=>x.valid),mode+': batch-061 must preserve witness-local context boundaries');
+  if(mode==='researcher'){assert(m.research&&m.research.evidence_map.length>0,mode+': researcher mode must expose a claim-to-witness map');assert(m.research.witnesses.length===m.sources.length,mode+': researcher mode must expose provenance for every witness');}
+  else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+ }
+}
+const batch061PublishingSynthesis='מה המשותף בין שלוש האיגרות על הוצאות הדפוס של המרכז לענייני חינוך, הדפסת שיחות אדמו״ר הרש״ב והפצת כתבי עת בספריות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch061PublishingSynthesis,{mode});
+ assert(m.answerable,mode+': batch-061 three-source publishing synthesis must be answerable');
+ for(const aid of ['4666210','4666232','4666356'])assert(m.sources.some(e=>String(e.aid)===aid),mode+': publishing synthesis must include AID '+aid);
+ assert(new Set(m.sources.map(e=>e.evidence_family_id).filter(Boolean)).size>=3,mode+': publishing synthesis must preserve three distinct Evidence Families');
+ assert(m.sources.length<=(mode==='researcher'?8:4),mode+': publishing synthesis must not be flooded by generic evidence');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every publishing claim needs proposition-level citations');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': publishing citations must pass claim-local entailment');
+ assert(m.context_boundary.every(x=>x.valid),mode+': publishing synthesis must preserve witness-local context');
+ if(mode==='researcher'){assert(m.research&&m.research.evidence_families>=3,mode+': researcher publishing synthesis must expose three Evidence Families');assert(m.research.evidence_map.length>0&&m.research.witnesses.length===m.sources.length,mode+': researcher publishing synthesis must expose claim-to-witness and provenance maps');}
+ else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+}
+const batch061ResurrectionComparison='השווה בין מכתב ר על מעלת תחיית המתים בגוף לבין שיחת י״ג שבט תשי״א על סדר הגאולה והתחייה';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch061ResurrectionComparison,{mode});
+ assert(m.answerable,mode+': batch-061 letter/talk comparison must be answerable');
+ assert(m.sources.some(e=>String(e.aid)==='4666239'),mode+': resurrection comparison must include letter AID 4666239');
+ assert(m.sources.some(e=>String(e.aid)==='2334890'),mode+': resurrection comparison must include English talk AID 2334890');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id).filter(Boolean)).size>=2,mode+': resurrection comparison must preserve two distinct Evidence Families');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every resurrection comparison claim needs proposition-level citations');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': resurrection comparison citations must pass claim-local entailment');
+ assert(m.context_boundary.every(x=>x.valid),mode+': resurrection comparison must preserve witness-local context');
+ if(mode==='researcher'){assert(m.research&&m.research.evidence_families>=2&&m.research.evidence_map.length>0,mode+': researcher resurrection comparison must expose both families and claim-to-witness map');assert(m.research.witnesses.length===m.sources.length,mode+': researcher resurrection comparison must expose provenance for every witness');}
+ else assert.equal(m.research,undefined,'regular mode must not include researcher-only evidence analysis');
+}
+console.log(`Content readiness: ${unique.size} usable sources; real-corpus answer checks passed, including batch-056 through batch-061 source, comparison, citation and researcher-mode checks`);
