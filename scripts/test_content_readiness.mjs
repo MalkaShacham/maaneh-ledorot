@@ -300,11 +300,15 @@ for(const mode of ['regular','researcher']){
  assert(m.citation_entailment.every(x=>x.valid),mode+': publication citations must pass proposition entailment');
  assert(m.context_boundary.every(x=>x.valid),mode+': publication synthesis must preserve witness-local context');
  if(mode==='researcher'){
-  console.log('BATCH062_RESEARCH_SOURCES',JSON.stringify({sources:m.sources.map(e=>({aid:e.aid,key:e.key,family:e.evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,primary_secondary_status:e.primary_secondary_status,parent:e.parent_evidence_family_id,independent:e._independent_witness})),integrity:m.research.evidence_integrity}));
   assert(m.research&&m.research.evidence_families>=3,mode+': researcher mode must expose at least three independent families');
   assert(m.research.witnesses.length===m.sources.length,mode+': researcher mode must expose every witness');
   assert(m.research.evidence_map.length>0,mode+': researcher mode must expose a claim-to-witness map');
   assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid),mode+': researcher mode must expose valid claim-local checks');
-  assert.equal(m.research.evidence_integrity.derived_non_independent,0,mode+': no translation may be counted as an independent witness');
+  const derivedSources=m.sources.filter(e=>e._independent_witness===false);
+  const independentSources=m.sources.filter(e=>e._independent_witness!==false);
+  assert.equal(m.research.evidence_integrity.independent_witnesses,independentSources.length,mode+': derived translations must not be counted as independent witnesses');
+  assert.equal(m.research.evidence_integrity.derived_non_independent,derivedSources.length,mode+': every derived translation must remain explicitly non-independent');
+  assert(independentSources.length>=3,mode+': synthesis must retain at least three independent original-language Evidence Families');
+  assert(derivedSources.every(e=>/translation|derived/i.test(String(e.primary_secondary_status||''))),mode+': non-independent sources must be explicitly identified as translations/derived witnesses');
  }else assert.equal(m.research,undefined,'regular publication mode must not include researcher-only analysis');
 }
