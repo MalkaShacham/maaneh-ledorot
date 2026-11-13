@@ -106,7 +106,7 @@
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "The first gate exposed two issues: generic publisher-transcription wording incorrectly demoted original-language letters, now fixed without promoting explicit copies/translations; and AIDs 553672/553673 were catalog-only audio listings carrying editorial-summary text as content evidence. Those two records are now metadata-only (no response propositions, has_content_evidence=false). Rerun the commit-bound gate before merge.",
+      "note": "The prior gate identified that the reconciliation script derives an editorial proposition from summary_researcher when response_propositions is empty. For metadata-only Yechidus AIDs 553672/553673, the correction now removes summary/description fields as well as response propositions and has_content_evidence, preventing the fallback from turning a catalogue note into answer evidence. Original-language publisher transcriptions remain primary text witnesses; translations and explicitly transcribed copies remain non-independent. Rerun the commit-bound gate.",
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": null
