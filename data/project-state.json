@@ -177,7 +177,30 @@
         "content_verified_unique_sources": 839,
         "answer_eligible_propositions": 2724
       },
-      "status": "pending_reconciliation"
+      "status": "pending_reconciliation",
+      "current_access_recheck": {
+        "checked_at": "2026-11-14T01:55:56+02:00",
+        "aids": [
+          5019502,
+          4831629,
+          5287569,
+          4754445,
+          5071128,
+          5357059,
+          4854534,
+          5099896,
+          5357093
+        ],
+        "direct_publisher_open_result": "All nine current article_cdo URLs now resolve to rewritten unavailable summary/navigation shells; no propositions were derived from those shells.",
+        "source_bodies_rechecked": 0,
+        "new_content_claims_added": 0,
+        "alternative_source_attempted": true,
+        "alternative_source_result": "A public Pnimi Igrot Kodesh index and a transcription page for a different letter were inspected; the exact nine AID bodies were not located there. A search result for AID 4754445 exposed a cached excerpt, but its full open also resolved to an unavailable shell, so no new proposition was based on that snippet.",
+        "historical_inspection_status": "The batch-083 source_text_inspected provenance records the earlier 2026-11-14 01:28 body inspections. This later recheck records current unavailability only; it does not replace the earlier body locators or claim that the shells contain the letter text.",
+        "crawler_retried": false,
+        "access_control_bypassed": false,
+        "full_text_copied": false
+      }
     },
     "last_run_note": "Batch 082: ten Hebrew publisher bodies inspected; six new Evidence Families, 16 non-verbatim propositions, two existing secretariat reclassifications and two rechecks. Reconciliation is pending.",
     "last_batch_blocked_count": 35,

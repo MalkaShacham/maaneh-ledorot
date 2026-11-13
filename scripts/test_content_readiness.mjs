@@ -871,7 +871,7 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretaryLowVitalityQuestion,{mode});
  assert(m.answerable,mode+': the secretary-signed response must answer a neutral secretariat question about low vitality in study');
  assert(m.sources.some(e=>String(e.aid)==='4854525'&&e._independent_witness===false));
- assert(m.sources.find(e=>sourceAID(e)==='5071128')&&/secretariat/i.test(m.sources.find(e=>sourceAID(e)==='5071128').witness_type||''));
+ assert(!m.sources.some(e=>sourceAID(e)==='5071128'),'AID 5071128 concerns study motivation and health, not low vitality in study');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.witnesses.length>=1);
@@ -1101,7 +1101,8 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretariatClassQ,{mode});
  assert(m.answerable,mode+': secretary-signed class-expansion response must be retrievable when asked neutrally');
  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרפא'));
- assert(m.sources.find(e=>sourceAID(e)==='5071128')&&/secretariat/i.test(m.sources.find(e=>sourceAID(e)==='5071128').witness_type||''));
+ const locatorIdentity=m.sources.find(e=>e.key==='id:igrot-kodesh-v13-דתרפא');assert(locatorIdentity&&locatorIdentity.has_content_evidence===false&&(!Array.isArray(locatorIdentity.response_propositions)||locatorIdentity.response_propositions.length===0),'printed index identity must remain locator-only, not content evidence');
+ assert(!m.sources.some(e=>sourceAID(e)==='5071128'),'AID 5071128 is about study motivation, not class expansion');
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?',{mode});
  assert.equal(direct.answerable,false);
  assert.equal(direct.reason,'secretariat_authorship_boundary');
