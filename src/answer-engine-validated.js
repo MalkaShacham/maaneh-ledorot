@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch072-source-grounded-v2';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch072-source-grounded-v3';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -299,7 +299,7 @@ const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').re
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
 const propositionText=e=>norm(arr(e?._supporting_propositions).concat(arr(e?.response_propositions)).join(' '));
 const topicSupported=(claims,topic)=>{const aliases=TOPIC_ALIASES[topic]||[topic];return claims.some(claim=>{const body=norm(claim?.text);return aliases.some(a=>body.includes(norm(a)));});};
-const isDerived=e=>/translation|תרגום|derived|transcrib|transcription|copy of original/.test(norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' ')));
+const isDerived=e=>{const s=norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' '));return /translation|תרגום|derived|copy of original|transcribed copy|transcription of (?:a )?copy|העתק של|מעתק/.test(s);};
 // An index entry establishes the letter's identity/locator, not what the Rebbe said.
 const isLocatorOnly=e=>/bibliographic_locator_verified_only|identity\/locator|bibliographic identity|index[- ]first|metadata[_ -]and[_ -]locator[_ -]only/.test(norm([e?.context_status,e?.verification_scope,e?.rights_status].join(' ')));
 // Non-verbatim text is answer evidence only when it is an explicit source-grounded
