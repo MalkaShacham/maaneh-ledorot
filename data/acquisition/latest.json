@@ -7,6 +7,86 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "reviewed_at": "2026-11-13T16:35:00+02:00",
+    "status": "completed",
+    "batch_id": "074",
+    "reviewed_item_count": 14,
+    "source_bodies_inspected": 10,
+    "new_source_identities": 9,
+    "new_rebbe_letter_identities": 9,
+    "new_secretariat_document_identities": 0,
+    "secretariat_signed_letter_count": 3,
+    "new_metadata_only_identities": 0,
+    "duplicate_alias_identities": 0,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 1,
+    "existing_identities_canonicalized": 0,
+    "new_paraphrase_entries": 26,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 27,
+    "answer_eligible_source_families_added": 9,
+    "blocked_candidate_count": 4,
+    "blocked_candidates": [
+      {
+        "aid": 5413764,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413764/jewish/page.htm",
+        "reason": "Redirected to a rewritten Torah Texts summary shell; no item-level letter body."
+      },
+      {
+        "aid": 5054497,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5054497/jewish/page.htm",
+        "reason": "Redirected to a rewritten Torah Texts summary shell; no item-level letter body."
+      },
+      {
+        "aid": 4754352,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4754352/jewish/page.htm",
+        "reason": "Redirected to a rewritten Torah Texts summary shell; no item-level letter body."
+      },
+      {
+        "aid": 4666220,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "alternate_url": "https://www.chabad.org/torah-texts/4666220/page/default.htm",
+        "reason": "Redirected to a rewritten summary/navigation shell without the letter body; excluded from content evidence."
+      }
+    ],
+    "method": "Manual public web search/open of item-level Kehot/Chabad.org pages. Nine new Hebrew/Yiddish source bodies and one existing Hebrew identity were inspected. Four candidates redirected to rewritten summary shells and were excluded. No crawler retry, access-control bypass or full-text copying.",
+    "deduplication_check": "The nine AIDs were checked against the 1,054-record review queue and batch 073; no exact AID/URL match was found there. The oversized public-search-index file returned an empty response through the connector, so repository-wide uniqueness is subject to deterministic reconciliation. AID 5357369 was enriched in place in its existing Evidence Family. No translation or reprint was counted as an independent witness.",
+    "source_languages": [
+      "Hebrew",
+      "Yiddish"
+    ],
+    "source_types": [
+      "published Hebrew correspondence",
+      "published Yiddish correspondence",
+      "secretariat-signed correspondence",
+      "letter transcribed from photograph"
+    ],
+    "limitations": [
+      "Incoming letters are not displayed; context_status remains partial for all nine new identities.",
+      "Three letters are signed by a secretary in the Rebbe's name; no autograph authentication is claimed.",
+      "AID 4731080 is explicitly a secretariat copy; the physical copy was not inspected.",
+      "AID 5357253 is marked by the publisher as copied from a photograph; the photograph itself was not inspected.",
+      "AIDs 4812647, 4929255 and 5054364 are secretary-signed in the Rebbe's name; the visible publisher text, not an autograph, is the inspected witness.",
+      "Health-related personal correspondence is not medical advice or a general clinical conclusion.",
+      "AID 5287606 concerns a family-specific insurance-compensation case and is not general investment advice.",
+      "AID 4929255 explicitly states that mikveh immersion before prayer was not fixed as a general obligation.",
+      "No full copyrighted text was copied."
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 764,
+      "content_verified_unique_sources": 761,
+      "answer_eligible_propositions": 2559
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 773,
+      "content_verified_unique_sources": 770,
+      "answer_eligible_propositions": 2586
+    }
+  },
+  "previous_manual_web_review": {
     "reviewed_at": "2026-11-13T14:29:52+02:00",
     "status": "completed",
     "batch_id": "073",
@@ -79,219 +159,78 @@
       "answer_eligible_propositions": 2556
     }
   },
-  "previous_manual_web_review": {
-    "reviewed_at": "2026-11-13T14:02:34+02:00",
-    "status": "completed",
-    "batch_id": "072",
-    "reviewed_item_count": 9,
-    "source_bodies_inspected": 9,
-    "new_source_identities": 8,
-    "new_metadata_only_identities": 0,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
-    "existing_identities_canonicalized": 0,
-    "new_paraphrase_entries": 17,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 18,
-    "answer_eligible_source_families_added": 8,
-    "blocked_candidate_count": 19,
-    "blocked_candidates": [
-      {
-        "aid": 4666240,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666240/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 4666241,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666241/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 4646121,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4646121/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 4646123,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4646123/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 4646126,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4646126/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 4646127,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4646127/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 4646128,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4646128/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 4646129,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4646129/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 4666316,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666316/jewish/page.htm",
-        "reason": "הופנה למעטפת Torah Texts ללא גוף איגרת קריא; לא נוצרה תמצית."
-      },
-      {
-        "aid": 2308526,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2308526/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 4855474,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4855474/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 5413720,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5413720/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 5287861,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5287861/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 5054354,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5054354/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 2306904,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2306904/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 2307741,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2307741/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 2307902,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2307902/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 2308550,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2308550/jewish/page.htm",
-        "reason": "לא נגיש דרך הקורא הציבורי; גוף המקור לא נבדק."
-      },
-      {
-        "aid": 2278266,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278266/jewish/Birthday-blessings-to-a-chassid-importance-of-putting-on-Rabbeinu-Tams-tefillin-importance-of-reciting-kapitle-of-the-Rebbe-Rayatz.htm",
-        "reason": "HTTP 429 Too Many Requests; לא בוצע ניסיון חוזר."
-      }
-    ],
-    "excluded_candidates": [],
-    "method": "Manual public web search/open. Eight new full publisher letter bodies (Letters 642–649) and one existing letter body (AID 2187392) were inspected. The eight new pages explicitly credit Eli Touger as translator and are recorded as non-independent, one Evidence Family per underlying letter. Nine shell redirects, nine inaccessible pages and one HTTP 429 were excluded; alternative direct publisher pages were inspected in the same run. No crawler retry, access-control bypass or full-text copying.",
-    "deduplication_check": "Exact AID searches in the repository and review queue found no matches for the eight new AIDs; the review queue contained no matching AID/URL. Existing AID 2187392 was found in batch 070 and enriched in place, not counted as new. The public-search-index file returned an empty oversized response through the connector, so final index-level reconciliation remains authoritative for duplicate detection.",
-    "source_languages": [
-      "English"
-    ],
-    "source_types": [
-      "published English translated correspondence",
-      "pastoral letters",
-      "educational and communal correspondence"
-    ],
-    "limitations": [
-      "כל שמונת המקורות החדשים הם תרגומים אנגליים מאת Eli Touger; המקור העברי/יידי והאוטוגרף לא נבדקו. כל תרגום סומן כעד לא עצמאי, והמשפחה הוגדרה לפי המכתב המקורי.",
-      "המכתבים הנכנסים אינם מוצגים; בחלק מהפריטים גם מכתב מצורף אינו זמין.",
-      "AID 2278259 כולל תשובה מאוחרת לאחר מכתב נוסף; נשמר הרצף בין ההנחיה הראשונית לתוספת המותנית.",
-      "AID 2278260 ו-AID 2278265 מתארים נוסחים שנשלחו לכמה נמענים בנפרד; אין להניח זהות מלאה בין כל העותקים.",
-      "AID 2278262 עוסק בהריון ובשאלה אישית; אין להציגו כפסק הלכה כללי בנושא כיסוי ראש.",
-      "AID 2278254 כולל דיון בצדקה בלילה המפנה למקור קודם; לא נוסחה ממנו מסקנה הלכתית עצמאית.",
-      "AID 2278261 מפנה למכתב מצורף שאינו מוצג; פרטי תכנית החינוך אינם ניתנים לשחזור מהפריט הזה.",
-      "לא הועתק טקסט מוגן במלואו; נרשמו תמציות לא-מילוליות בלבד."
-    ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false
-  },
   "earlier_manual_web_review": {
-    "reviewed_at": "2026-11-13T12:44:25+02:00",
+    "reviewed_at": "2026-11-13T14:29:52+02:00",
     "status": "completed",
-    "batch_id": "071",
-    "reviewed_item_count": 11,
-    "source_bodies_inspected": 11,
-    "new_source_identities": 10,
+    "batch_id": "073",
+    "reviewed_item_count": 13,
+    "source_bodies_inspected": 13,
+    "new_source_identities": 11,
+    "new_rebbe_letter_identities": 10,
+    "new_secretariat_document_identities": 1,
     "new_metadata_only_identities": 0,
+    "duplicate_alias_identities": 1,
     "existing_identities_enriched": 1,
     "existing_identities_rechecked": 1,
     "existing_identities_canonicalized": 0,
-    "new_paraphrase_entries": 23,
-    "answer_eligible_source_families_added": 10,
-    "blocked_candidate_count": 5,
+    "new_paraphrase_entries": 28,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 29,
+    "answer_eligible_source_families_added": 11,
+    "blocked_candidate_count": 2,
     "blocked_candidates": [
       {
         "aid": 4666220,
         "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-        "reason": "העמוד הופנה למעטפת Torah Texts מסוכמת ללא גוף האיגרת הניתן לבדיקה; לא נוצרה ממנו תמצית."
+        "alternate_url": "https://www.chabad.org/torah-texts/4666220/page/default.htm",
+        "reason": "Both direct public-reader attempts returned an internal error; no body text was available. No access-control bypass or crawler retry was attempted."
       },
       {
-        "aid": 5054489,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5054489/jewish/page.htm",
-        "reason": "הפניה למעטפת Torah Texts/ניווט ללא גוף מכתב קריא; לא הוכנס כעד תוכן."
-      },
-      {
-        "aid": 5100603,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100603/jewish/page.htm",
-        "reason": "הפניה למעטפת Torah Texts ללא גוף מכתב קריא; נבדקו במקומה פריטי פרסום אחרים עם גוף נגיש."
-      },
-      {
-        "aid": 5100244,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100244/jewish/page.htm",
-        "reason": "הפניה למעטפת Torah Texts/ניווט ללא גוף מכתב קריא; לא הוכנס כעד תוכן."
-      },
-      {
-        "aid": 5071021,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5071021/jewish/page.htm",
-        "reason": "הפניה למעטפת Torah Texts ללא גוף מכתב קריא; נבחרו פריטי מכתב אחרים שניתן היה לבדוק ישירות."
+        "aid": 5357139,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5357139/jewish/page.htm",
+        "reason": "Only a short continuation fragment and editorial note were visible; the excerpt did not support a substantive bounded proposition and was excluded."
       }
     ],
-    "excluded_candidates": [
-      {
-        "aid": 63794,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/63794/jewish/Art.htm",
-        "reason": "העמוד מציין במפורש שזהו קטע בתרגום חופשי ממכתב בכרך ד׳ עמ׳ 222–224; המקור העברי לא נבדק, ולכן לא נרשם כעד עצמאי ולא נוסף למניין המשפחות."
-      }
-    ],
-    "method": "Manual public web search/open. Ten new source identities were inspected at item-body level (eight Hebrew, one Yiddish, one English); one existing Hebrew identity (AID 5100487) was re-inspected and enriched with one additional proposition. No crawler retry, access-control bypass or full-text copying.",
-    "deduplication_check": "עשרת ה-AIDs החדשים נבדקו מול 9,028 מפתחות המקור במדד הציבורי, 1,050 פריטי תור ההמתנה, קבצי הפריטים והאצוות 055–070; לא נמצא AID/URL כפול. לכל מכתב חדש הוקצתה Evidence Family נפרדת. AID 63794 הוצא משום שהוא קטע מתורגם חופשי ממכתב בכרך ד׳, עמ׳ 222–224, והמקור העברי לא נבדק. AID 5100487 הועשר באותה משפחה קיימת ולא נספר כמקור חדש.",
+    "excluded_candidates": [],
+    "method": "Manual public web search/open. Ten new Hebrew/Yiddish Rebbe-attributed letter bodies and one separate secretariat letter were inspected; one duplicate reprint and one existing Hebrew letter were also inspected. No crawler retry, access-control bypass or full-text copying.",
+    "deduplication_check": "The ten new Rebbe-letter AIDs and the secretariat document were checked against recent content batches 055–072, bulk-indexed item files, the review queue and relevant volume indexes (volumes 1, 3, 4, 9, 18 and 21). No AID/URL duplicate was found for the ten new Rebbe letters. AID 5413573 was discovered to be a publisher-identified duplicate of AID 4854544 and linked to the same Evidence Family. The public-search-index file itself could not be read directly because the connector returned an empty oversized-file response; post-commit reconciliation is the authoritative final dedup check.",
     "source_languages": [
       "Hebrew",
-      "Yiddish",
-      "English"
+      "Yiddish"
     ],
     "source_types": [
       "published Hebrew correspondence",
       "published Yiddish correspondence",
-      "published English public letter",
-      "secretary-signed response",
-      "letter completed from photograph",
-      "administrative/archival correspondence"
+      "secretariat correspondence",
+      "letter transcribed from photograph",
+      "circular letter",
+      "duplicate reprint alias"
     ],
     "limitations": [
-      "המכתבים הנכנסים אינם מוצגים; הקשר השאלות חלקי גם כאשר גוף האיגרת המפורסם שלם.",
-      "לא נבדקו אוטוגרפים או עותקי מזכירות פיזיים; באיגרת 4645967 המו״ל מציין שמקורה בכתב יד, ובאיגרות 5071052 ו-5054461 מצוין שהנוסח הושלם מצילום, אך התמונות לא נבדקו.",
-      "AID 5054240: המו״ל מציין שטופס דומה נשלח לכמה; אין לראות בו מכתב אישי ייחודי לכל פרט.",
-      "AID 4731105: ההערכה שלא צפויה מלחמה היא היסטורית ומתוארכת לשנת תש״י בלבד.",
-      "AID 4783876: הייחוס של הניגון לר׳ אברהם המלאך מובא כדיווח הנמען ולא אומת עצמאית.",
-      "AID 6429866: גוף המכתב האנגלי נבדק, אך מכתב הנשיא המקורי והאוטוגרף לא נבדקו.",
-      "AID 63794 הוא תרגום חופשי של קטע ממכתב אחר, ולכן הוצא ולא נספר כעד עצמאי."
+      "Incoming correspondence is absent from these pages; context_status remains partial.",
+      "No autograph, physical photograph or original secretariat copy was independently inspected; Verified is limited to the visible publisher text.",
+      "AID 5413029 and AID 4872259 are signed by a secretary in the Rebbe's name; the publisher attribution is recorded, but no autograph authentication is claimed.",
+      "AID 5357369, AID 4731085 and AID 5357544 are identified by the publisher as transcribed from photographs; the photographs were not inspected.",
+      "AID 4730903 contains copied prior instructions attributed to the Previous Rebbe; only the current Rebbe's own comments are paraphrased.",
+      "AID 4731008 was sent to multiple recipients at different dates; identical copies must join one Evidence Family.",
+      "AID 5357574 contains a separate secretariat letter; it is indexed as a separate source and none of its propositions are attributed to the Rebbe.",
+      "AID 5413573 is a duplicate reprint of AID 4854544; its conflicting displayed date is retained as publisher metadata, not a second event.",
+      "AID 4994478 is a historical analysis of one ship-operation scenario and is not a general contemporary halachic ruling.",
+      "Health-related passages in AID 5357369 and AID 5357544 are historical personal correspondence, not medical advice."
     ],
     "crawler_retry": false,
     "access_control_bypassed": false,
-    "full_text_copied": false
+    "full_text_copied": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 752,
+      "content_verified_unique_sources": 749,
+      "answer_eligible_propositions": 2527
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 763,
+      "content_verified_unique_sources": 760,
+      "answer_eligible_propositions": 2556
+    }
   },
   "earlier_manual_web_review_2": {
     "reviewed_at": "2026-11-13T12:15:00+02:00",
@@ -563,5 +502,6 @@
     "source_languages": [
       "Hebrew"
     ]
-  }
+  },
+  "manual_web_review_note": "Manual public-source review completed; the blocked runner crawler was not run."
 }
