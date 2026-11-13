@@ -319,3 +319,6 @@ Inspected **12 public Hebrew publisher body pages** through web search/open. Add
 Twelve attempted candidates (including AID 4666220) redirected to rewritten summary/navigation shells and were excluded. Alternative item-level bodies were inspected in the same run. No blocked crawler retry, access-control bypass, scan-only content verification, full-text copying or system-synthesis attribution to the Rebbe was used.
 
 Expected readiness pending reconciliation: **789 → 792** answer-eligible Evidence Families, **786 → 789** content-verified Evidence Families, and **2,622 → 2,630** answer-eligible propositions. Reconciliation now writes actual counts and variance back to the reviewed batch and acquisition record. The existing hourly cron is unchanged; a push path for manual content-research batches invokes the existing deterministic reconciliation workflow.
+
+
+Publication verification: GitHub Pages deployment completed successfully for main commit `3f4b63215d3700daf07ec8ca027b40569ce6e1cd` on 2026-11-13. The browser/search retrieval tool could not fetch the site URL directly, so publication status is based on the successful Pages deployment job and its reported environment URL.

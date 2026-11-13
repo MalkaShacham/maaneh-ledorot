@@ -215,16 +215,18 @@
         "answer_eligible_propositions": 8
       },
       "blocked_candidates": 12,
-      "status": "reconciled"
+      "status": "reconciled",
+      "reconciliation_commit": "b363a8ba0782bb4bd18527ae6e5c0636d389ca42",
+      "publication_commit": "3f4b63215d3700daf07ec8ca027b40569ce6e1cd"
     },
-    "last_run_note": "Batch 077 inspected 12 public Hebrew publisher body pages through web/search/open. Added three distinct original-language letter identities (AIDs 5100681, 5054399, 5413166) with eight non-verbatim source-grounded propositions and exact body locators. Enriched AID 5357409 with a non-duplicate cross-family link to AID 5100681; rechecked eight existing identities without duplicating propositions. Twelve candidate pages including AID 4666220 redirected to summary/navigation shells and were excluded; alternate bodies were inspected in the same run. No crawler retry, access-control bypass, scan-only content verification, full-text copying or Rebbe attribution of system synthesis. Expected readiness 789→792 families, 786→789 verified families, 2622→2630 propositions; actual counts pending reconciliation.",
+    "last_run_note": "Batch 077 fully reconciled and published. Inspected 12 public Hebrew publisher body pages; added three distinct original-language letter identities (AIDs 5100681, 5054399, 5413166) with eight non-verbatim source-grounded propositions and exact body locators. Enriched AID 5357409 with a non-duplicate cross-family link to AID 5100681; rechecked eight existing identities without duplicate propositions. Twelve other candidates redirected to summary/navigation shells and were excluded. No crawler retry, access-control bypass, scan-only content verification, full-text copying, or Rebbe attribution of system synthesis. Actual readiness: 792 answer-eligible families, 789 content-verified families, 2630 propositions; zero reconciliation variance. Answer-quality gate, hourly maintenance and GitHub Pages deployment succeeded.",
     "last_batch_blocked_count": 12,
     "last_batch_blocked_reason": "Twelve candidate AIDs (4666220, 4831207, 5100603, 5054489, 5100285, 5071021, 4812846, 5100376, 5100468, 5019426, 5100487, 5100014) redirected to rewritten summary/navigation shells without inspectable item-level bodies. No crawler retry or bypass; twelve alternate Hebrew publisher bodies were inspected.",
     "next_work": [
-      "Verify batch-077 reconciliation and commit-bound answer-quality Actions.",
-      "Confirm the new tzedakah-allocation synthesis cites three new Evidence Families in regular and researcher modes.",
-      "Verify GitHub Pages deployment and public-search-index refresh.",
-      "Continue Hebrew/Yiddish and other documentation types; exclude publisher shells, translations and scan-only locators from independent content evidence."
+      "Continue manual inspection of 8–15 accessible primary-source bodies per run, expanding to Yiddish and English and to distinct documentary classes where public bodies are available.",
+      "Extend claim-level multi-source synthesis and researcher-mode evidence maps to additional high-priority topics, preserving item-local context and limitations.",
+      "Keep inaccessible summary/navigation shells excluded and use alternative public publisher items rather than retrying the blocked crawler.",
+      "Maintain the existing hourly cron and verify every batch through reconciliation, content-readiness tests and Pages deployment."
     ],
     "last_reconciliation": {
       "batch_id": "2026-11-13-content-batch-077",
@@ -597,7 +599,9 @@
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 0
       },
-      "reconciliation_status": "reconciled"
+      "reconciliation_status": "reconciled",
+      "reconciliation_commit": "b363a8ba0782bb4bd18527ae6e5c0636d389ca42",
+      "publication_commit": "3f4b63215d3700daf07ec8ca027b40569ce6e1cd"
     }
   }
 }
