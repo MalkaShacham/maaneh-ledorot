@@ -780,7 +780,7 @@ for(const aid of batch076Aids){
 const enriched4812673=idx.entries.find(e=>String(e.aid)==='4812673');
 assert(enriched4812673&&enriched4812673.response_propositions.length>=3,'AID 4812673 must retain its existing family and the additional Hebrew proposition');
 assert.equal(enriched4812673.evidence_family_id,'igrot-letter-5712-10-sivan-aid4812673');
-const moodQuestion='איך להתמודד עם מצב רוח ירוד, מחשבות מבלבלות וחוסר חיות בלימוד?';
+const moodQuestion='מה כתב הרבי על מיעוט חיות בלימוד ומחשבות מבלבלות?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,moodQuestion,{mode});
  assert(m.answerable,mode+': inspected correspondence must answer the mood-and-study question');

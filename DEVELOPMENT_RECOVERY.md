@@ -300,3 +300,6 @@ Validation status: answer quality gate run 43463212994 on commit 658fc435 passed
 ## 2026-11-13 — Retrieval regression correction
 
 - The first content-readiness run after batch 076 passed question-specific retrieval, answer synthesis, citation integrity and workflow-write safety, but caught an over-broad new topic alias that diverted the existing AID 5100225 query for "lack of desire in study". Removed the phrase "חוסר חשק בלימוד" from the new wellbeing alias in both retrieval layers; the narrower terms for low mood, confusing thoughts and low vitality in study remain. The regression is being rerun on the corrected commit.
+
+
+- Narrowed the new wellbeing query alias after the first real-corpus run showed excessive expansion for a broad low-mood query. The multi-source regression now uses the exact source-grounded terms "מיעוט חיות בלימוד" and "מחשבות מבלבלות"; dedicated sadness/depression/loneliness aliases remain, while generic terms were removed from the expansion set.
