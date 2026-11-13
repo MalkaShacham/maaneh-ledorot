@@ -220,7 +220,7 @@ if batch_path:
             except Exception: continue
             if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
             for x in candidate_dicts(obj):
-                if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id") or x.get("aid")): continue
+                if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
                 loc=x.get("locator") if isinstance(x.get("locator"),dict) else {}
                 aid=str(x.get("aid") or loc.get("aid") or "")
                 if aid in by_aid:

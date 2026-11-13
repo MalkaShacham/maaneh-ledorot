@@ -10,7 +10,7 @@
     "batch_id": "076",
     "batch_file": "data/items/content-research-batch-076-2026-11-13.json",
     "reviewed_at": "2026-11-13T18:35:35+02:00",
-    "status": "completed_pending_reconciliation",
+    "status": "reconciled",
     "reviewed_item_count": 11,
     "source_bodies_inspected": 11,
     "new_source_identities": 10,
@@ -115,7 +115,27 @@
       "content_verified_unique_sources": 786,
       "answer_eligible_propositions": 2622
     },
-    "reconciliation_status": "pending"
+    "reconciliation_status": "reconciled",
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 789,
+      "content_verified_unique_sources": 786,
+      "answer_eligible_propositions": 2622
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
+    "reconciliation_commit": "5cff5731a10c80971e33f89628b6daa37f5c3476",
+    "runner_invocation_after_previous_403": {
+      "run_id": 43466512615,
+      "step": "Acquire bounded publisher content and reconcile corpus",
+      "step_conclusion": "success",
+      "individual_http_statuses_visible": false,
+      "request_count_verified": false,
+      "artifact_committed": false,
+      "note": "This pre-guardrail run used the old pipeline definition. The step returned success, but the available job log did not expose individual HTTP responses or a request count; later answer validation failed, so its run artifact was not committed. Whether it reissued the 12 requests cannot be verified."
+    }
   },
   "previous_manual_web_review": {
     "batch_id": "2026-11-13-content-batch-075",
@@ -666,6 +686,23 @@
       "reconcile_metrics.py",
       "reconcile_identity_aliases.py"
     ],
-    "no_access_control_bypass": true
+    "no_access_control_bypass": true,
+    "pre_guardrail_run": {
+      "run_id": 43466512615,
+      "step": "Acquire bounded publisher content and reconcile corpus",
+      "step_conclusion": "success",
+      "individual_http_statuses_visible": false,
+      "request_count_verified": false,
+      "artifact_committed": false,
+      "note": "This pre-guardrail run used the old pipeline definition. The step returned success, but the available job log did not expose individual HTTP responses or a request count; later answer validation failed, so its run artifact was not committed. Whether it reissued the 12 requests cannot be verified."
+    },
+    "last_skip_run": {
+      "run_id": 43467322106,
+      "step": "Run deterministic maintenance; blocked live crawler remains disabled",
+      "step_conclusion": "success",
+      "acquisition_boundary_test": "success",
+      "live_crawler_skipped": true,
+      "later_validation": "failed on the AID 5100225 exact-topic regression; corrected in commit eb7a5f5b9ad6aa32941ca4ce800de98adcd5873c"
+    }
   }
 }

@@ -3,7 +3,7 @@
   "generated": "2026-11-13",
   "batch_id": "2026-11-13-content-batch-076",
   "reviewed_at": "2026-11-13T18:35:35+02:00",
-  "status": "completed_pending_reconciliation",
+  "status": "reconciled",
   "review_method": "Manual public web search/open of publisher pages; 10 new item-level English bodies and one reinspection of an existing Hebrew letter. No GitHub-runner crawler retry.",
   "reviewed_item_count": 11,
   "source_bodies_inspected": 11,
@@ -1229,5 +1229,25 @@
     "content_verified_unique_sources": 786,
     "answer_eligible_propositions": 2622
   },
-  "reconciliation_status": "pending"
+  "reconciliation_status": "reconciled",
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 789,
+    "content_verified_unique_sources": 786,
+    "answer_eligible_propositions": 2622
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
+  "reconciliation_commit": "5cff5731a10c80971e33f89628b6daa37f5c3476",
+  "runner_invocation_after_previous_403": {
+    "run_id": 43466512615,
+    "step": "Acquire bounded publisher content and reconcile corpus",
+    "step_conclusion": "success",
+    "individual_http_statuses_visible": false,
+    "request_count_verified": false,
+    "artifact_committed": false,
+    "note": "This pre-guardrail run used the old pipeline definition. The step returned success, but the available job log did not expose individual HTTP responses or a request count; later answer validation failed, so its run artifact was not committed. Whether it reissued the 12 requests cannot be verified."
+  }
 }

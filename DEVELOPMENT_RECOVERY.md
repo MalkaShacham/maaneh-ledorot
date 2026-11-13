@@ -303,3 +303,10 @@ Validation status: answer quality gate run 43463212994 on commit 658fc435 passed
 
 
 - Narrowed the new wellbeing query alias after the first real-corpus run showed excessive expansion for a broad low-mood query. The multi-source regression now uses the exact source-grounded terms "מיעוט חיות בלימוד" and "מחשבות מבלבלות"; dedicated sadness/depression/loneliness aliases remain, while generic terms were removed from the expansion set.
+
+
+## 2026-11-13 — Reconciliation and runner invocation audit
+
+- Batch 076 reconciliation completed with zero variance: answer-eligible unique Evidence Families 779 → 789; content-verified unique Evidence Families 776 → 786; answer-eligible propositions 2601 → 2622. The reconciliation audit selected all 10 new identities plus the enriched AID 4812673 identity; all 11 were answer-eligible and each had a top-level verification scope. Ten English renderings remain non-independent witnesses.
+- Correction on the pre-guardrail hourly run 43466512615: its old pipeline step did execute and returned success. The available job log did not expose individual HTTP responses or a request count, and later answer validation failed before the run artifact was committed. It is therefore not possible to verify whether that one invocation reissued the prior 12 HTTP requests. No further live-crawler invocation is intended; the next hourly run used the skip policy and passed the acquisition-boundary test.
+- The answer-quality gate on commit eb7a5f5b9ad6aa32941ca4ce800de98adcd5873c passed after narrowing the over-broad wellbeing alias. A subsequent commit narrows the regression query further without changing the source metrics.
