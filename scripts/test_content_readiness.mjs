@@ -878,3 +878,84 @@ for(const mode of ['regular','researcher']){
  assert(m.claims.every(c=>c.source_numbers.length));
  if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
 }
+
+ 
+// Batch 079: fifteen publisher bodies inspected; nine candidate identities, two in-place enrichments and four rechecks.
+const batch079Path='data/items/content-research-batch-079-2026-11-13.json';
+const batch079Data=JSON.parse(await readFile(new URL(batch079Path,root)));
+assert.equal(batch079Data.records_reviewed,15);
+assert.equal(batch079Data.source_bodies_inspected,15);
+assert.equal(batch079Data.records.length,9);
+assert.equal(batch079Data.new_source_identities,9);
+assert.equal(batch079Data.existing_identities_enriched,2);
+assert.equal(batch079Data.existing_identities_rechecked,4);
+assert.equal(batch079Data.new_response_propositions,18);
+assert.equal(batch079Data.existing_response_propositions_added,2);
+assert.equal(batch079Data.response_propositions_added,20);
+assert.equal(batch079Data.answer_eligible_source_families_added,9);
+assert.equal(batch079Data.blocked_candidate_count,5);
+assert.equal(batch079Data.crawler_retry,false);
+assert.equal(batch079Data.access_control_bypassed,false);
+assert.equal(batch079Data.full_text_copied,false);
+assert.equal(new Set(batch079Data.records.map(e=>e.evidence_family_id)).size,9);
+assert.equal(batch079Data.records.filter(e=>e.language==='Yiddish').length,1);
+const batch079Required=[[4831007,2,'igrot-public-letter-5713-15-kislev-aid4831007','Hebrew'],[4831137,2,'igrot-public-letter-5713-11-nisan-aid4831137','Hebrew'],[4831186,2,'igrot-letter-5713-b-kig-aid4831186','Hebrew'],[4831187,3,'igrot-letter-5713-23-iyar-aid4831187','Yiddish'],[4831315,2,'igrot-public-letter-5713-first-selichot-aid4831315','Hebrew'],[5357370,1,'igrot-letter-excerpt-5714-28-shevat-aid5357370','Hebrew'],[5100610,2,'igrot-letter-5719-16-iyar-aid5100610','Hebrew'],[5100451,2,'igrot-letter-5719-1-adar-rishon-aid5100451','Hebrew'],[5100615,2,'igrot-letter-5719-18-iyar-aid5100615','Hebrew']];
+for(const [aid,minProps,family,language] of batch079Required){
+ const e=idx.entries.find(x=>sourceAID(x)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-079 AID '+aid+' must have inspected publisher body text');
+ assert.equal(e.status,'Verified');
+ assert.equal(e.evidence_family_id,family);
+ assert(e.response_propositions.length>=minProps);
+ assert.equal(e.language,language);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.translation_of_evidence_family_id,null);
+ assert.equal(e.canonical_file,batch079Path,'AID '+aid+' must be a distinct canonical identity, not a duplicate alias');
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
+}
+const enriched4812708=idx.entries.find(e=>sourceAID(e)==='4812708');
+assert(enriched4812708&&enriched4812708.response_propositions.some(p=>p.includes('זיכוך העולם')&&p.includes('משיח')));
+assert.equal(enriched4812708.evidence_family_id,'igrot-letter-5712-25-sivan-aid4812708');
+assert.equal(enriched4812708.canonical_file,'data/items/content-research-batch-065-2026-11-13.json');
+const enriched5071118=idx.entries.find(e=>sourceAID(e)==='5071118');
+assert(enriched5071118&&enriched5071118.response_propositions.some(p=>p.includes('שולחן ערוך')&&p.includes('תועלת המעשית')));
+assert.equal(enriched5071118.evidence_family_id,'igrot-letter-5718-7-adar-v16-aid5071118');
+assert.equal(enriched5071118.canonical_file,'data/items/content-research-batch-057-2026-11-12.json');
+const communityActivityQ='מה עולה מן האיגרות על התוועדויות ופעילות קהילתית, לימוד ומעשה בפועל?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,communityActivityQ,{mode});
+ assert(m.answerable,mode+': distinct community activity correspondence must support a bounded synthesis');
+ assert(m.sources.some(e=>sourceAID(e)==='4831007'),mode+': holiday farbrengen letter must be retrieved');
+ assert(m.sources.some(e=>sourceAID(e)==='5357370')||m.sources.some(e=>sourceAID(e)==='4831187'),mode+': a second distinct gathering/communal responsibility source must be retrieved');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ assert(m.synthesis&&m.synthesis.topic==='community_gatherings_and_shared_responsibility');
+ assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');
+ assert(m.synthesis.claims.length>=2&&m.synthesis.claims.every(c=>c.source_locators.length));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=2);
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
+ }else assert.equal(m.research,undefined);
+}
+const freedomQ='מה מתארת האיגרת על יציאת מצרים יומיומית וחירות רוחנית ממגבלות הגוף?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,freedomQ,{mode});
+ assert(m.answerable,mode+': the inspected public Pesach letter must be retrievable');
+ assert(m.sources.some(e=>sourceAID(e)==='4831137'));
+ assert(m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid));
+}
+const microcosmQ='מה נכתב על האדם כעולם קטן, דומם צומח חי ומדבר וקידוש ממדי החיים?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,microcosmQ,{mode});
+ assert(m.answerable,mode+': the inspected Rosh Hashanah letter must be retrievable');
+ assert(m.sources.some(e=>sourceAID(e)==='4831315'));
+ assert(m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid));
+}
