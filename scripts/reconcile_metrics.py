@@ -319,6 +319,7 @@ if isinstance(state.get("metrics_integrity"),dict):
     integrity["last_reconciled_at"]=today
 
 actual_metrics={k:out[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
+print("answer_readiness_actual_metrics",json.dumps(actual_metrics,ensure_ascii=False))
 if batch_path and isinstance(batch_data,dict):
     expected=batch_data.get("metrics_expected_after") or {}
     variance={k:actual_metrics[k]-int(expected.get(k,actual_metrics[k])) for k in actual_metrics}
@@ -327,6 +328,7 @@ if batch_path and isinstance(batch_data,dict):
     batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
     batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
     batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print("latest_manual_batch_reconciliation",json.dumps({"batch_id":batch_data.get("batch_id"),"expected":expected,"actual":actual_metrics,"variance":variance,"status":batch_data["reconciliation_status"]},ensure_ascii=False))
     dev=state.setdefault("development_recovery",{})
     summary=dev.get("last_batch_summary")
     if isinstance(summary,dict) and summary.get("batch_id")==batch_data.get("batch_id"):
