@@ -356,7 +356,9 @@ assert.equal(new Set(duplicate073.map(e=>e.evidence_family_id)).size,1,'publishe
 assert.equal(duplicate073.find(e=>String(e.aid)==='5413573').status,'Linked','duplicate reprint must not be an independent answer source');
 const enriched073=idx.entries.find(e=>String(e.aid)==='5071138');
 assert(enriched073&&enriched073.response_propositions.length>=3,'existing AID 5071138 must retain the added source-grounded proposition');
-const singleDifficultyFamily=buildAnswerModel(idx.entries.filter(e=>String(e.aid)==='4096309'),'מה הדפוס החוזר באגרות על התמודדות עם קשיים ומכשולים?',{mode:'researcher'});
+const singleDifficultyEntries=idx.entries.filter(e=>String(e.aid)==='4096309');
+const singleDifficultyFamily=buildAnswerModel(singleDifficultyEntries,'מה הדפוס החוזר באגרות על התמודדות עם קשיים ומכשולים?',{mode:'researcher'});
+console.log('SINGLE_DIFFICULTY_DEBUG',{input_count:singleDifficultyEntries.length,input_families:[...new Set(singleDifficultyEntries.map(e=>e.evidence_family_id))],answerable:singleDifficultyFamily.answerable,reason:singleDifficultyFamily.reason,intent:singleDifficultyFamily.understanding?.intent,topics:singleDifficultyFamily.understanding?.topics,sources:singleDifficultyFamily.sources?.map(e=>({aid:e.aid,family:e.evidence_family_id}))});
 assert.equal(singleDifficultyFamily.answerable,false,'one Evidence Family cannot establish a cross-family pattern');
 assert.equal(singleDifficultyFamily.reason,'single_evidence_family');
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,'מה נכתב במכתבים בעברית על אחריות תלמידי הישיבות להשפיע על הזולת ולחנך?',{mode});assert(m.answerable,mode+': Hebrew education letters');for(const aid of [2989328,4279887])assert(m.sources.some(e=>String(e.aid)===String(aid)));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher')assert(m.research.evidence_families>=2);}
