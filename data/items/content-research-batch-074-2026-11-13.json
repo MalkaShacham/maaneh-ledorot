@@ -899,7 +899,7 @@
   "crawler_retry": false,
   "access_control_bypassed": false,
   "full_text_copied": false,
-  "reconciliation_status": "pending",
+  "reconciliation_status": "reconciled",
   "metrics_before": {
     "answer_eligible_unique_sources": 764,
     "content_verified_unique_sources": 761,
@@ -916,5 +916,17 @@
   },
   "limits": [
     "AID 4731080 and AID 4812666 were existing canonical identities; duplicate batch-074 records were removed and both were kept in their original Evidence Families."
-  ]
+  ],
+  "reconciled_at": "2026-11-13",
+  "metrics_after_actual": {
+    "answer_eligible_unique_sources": 771,
+    "content_verified_unique_sources": 768,
+    "answer_eligible_propositions": 2580
+  },
+  "reconciled_metrics": {
+    "answer_eligible_unique_sources": 771,
+    "content_verified_unique_sources": 768,
+    "answer_eligible_propositions": 2580
+  },
+  "metric_note": "Reconciled against data/public-metrics.json and data/project-state.json. Seven new unique source families and 21 answer-eligible propositions match the measured delta; duplicate AIDs 4731080 and 4812666 remain linked to existing families, not counted as new."
 }

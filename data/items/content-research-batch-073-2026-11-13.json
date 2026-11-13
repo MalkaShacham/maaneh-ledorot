@@ -401,7 +401,7 @@
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5357369, body lines 297–310; re-inspected 2026-11-13.",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5357369, added proposition body lines 301–302.",
       "response_proposition_locators": [
         "Chabad.org AID 5357369, body lines 297–298.",
         "Chabad.org AID 5357369, body lines 298–299.",
@@ -482,7 +482,13 @@
       "identity_note": "One dated letter identity. Any scan, reprint or translation of this same letter must join Evidence Family igrot-letter-5714-24-shevat-het-aleph-aid5357369; a translation is not an independent witness.",
       "epistemic_level": 1,
       "notes": "No full copyrighted text copied. Verified applies only to the inspected published body and the exact scope recorded above; context remains partial. Re-inspected on 2026-11-13; added one additional non-verbatim proposition from body lines 301–302 concerning the enclosed official letter and its planned publication. The photograph and enclosed letter remain uninspected.",
-      "summary_researcher": "במענה לשאלה רפואית שלא פורטה בעמוד, המכתב מפנה להוראות רופאים מומחים ומזכיר שהתורה מכירה בסמכות הרופא לרפא; לא נמסרים אבחון או טיפול מסוים. בנוגע למשמעת ולשמירת זמן בבית המדרש, המכתב מטיל את האחריות על אנשים ממונים בהנהלת המוסד, ולא על כך שהרבי ימלא את תפקיד המשגיח או כל בעל תפקיד אחר. במקרה של תלמיד שקיבל תשובה מפורשת שלא להפסיק לימוד מסוים, המכתב קובע שאין מקום לספק ביחס להמשך. האיגרת מציינת שנשלח לנמען גם העתק של מכתב רשמי שהועבר לר׳ ל׳ קרעמער, ומבקשת לנצל את העתקו ככל האפשר; לפי התיאור, צפוי היה להתפרסם בשבת מברכים הקרובה."
+      "summary_researcher": "במענה לשאלה רפואית שלא פורטה בעמוד, המכתב מפנה להוראות רופאים מומחים ומזכיר שהתורה מכירה בסמכות הרופא לרפא; לא נמסרים אבחון או טיפול מסוים. בנוגע למשמעת ולשמירת זמן בבית המדרש, המכתב מטיל את האחריות על אנשים ממונים בהנהלת המוסד, ולא על כך שהרבי ימלא את תפקיד המשגיח או כל בעל תפקיד אחר. במקרה של תלמיד שקיבל תשובה מפורשת שלא להפסיק לימוד מסוים, המכתב קובע שאין מקום לספק ביחס להמשך. האיגרת מציינת שנשלח לנמען גם העתק של מכתב רשמי שהועבר לר׳ ל׳ קרעמער, ומבקשת לנצל את העתקו ככל האפשר; לפי התיאור, צפוי היה להתפרסם בשבת מברכים הקרובה.",
+      "current_access_recheck": {
+        "checked_at": "2026-11-13",
+        "method": "public web open",
+        "status": "summary_shell_redirect",
+        "note": "The current public page opens as a Torah Texts summary shell. The paraphrase remains grounded in the previously inspected body text; its exact added-passage locator is lines 301–302. No new body verification is claimed in this recheck."
+      }
     },
     {
       "id": "chabad-letter-4731085",
@@ -1912,9 +1918,13 @@
   "crawler_retry": false,
   "access_control_bypassed": false,
   "full_text_copied": false,
-  "reconciliation_status": "pending",
-  "reconciled_metrics": null,
-  "metric_note": "Expected after reconciliation: 752→764 answer-eligible unique sources, 749→761 content-verified unique sources, 2527→2559 answer-eligible propositions. AID 4783983 is a linked mirror of existing AID 4279887 and does not add a family. AID 4279854 adds one independent talk family. AID 4096303 is a linked English translation manifestation; the original Hebrew identity is metadata-only.",
+  "reconciliation_status": "reconciled",
+  "reconciled_metrics": {
+    "answer_eligible_unique_sources": 764,
+    "content_verified_unique_sources": 761,
+    "answer_eligible_propositions": 2559
+  },
+  "metric_note": "Reconciled against data/public-metrics.json and data/project-state.json. The 12 added unique source families and 32 answer-eligible propositions match the measured delta; two aliases and three translation observations are not counted as independent source families.",
   "new_talk_identities": 1,
   "new_translation_manifestations": 1,
   "limits": [
@@ -1930,5 +1940,24 @@
     "content_verified_unique_sources": 761,
     "answer_eligible_propositions": 2559
   },
-  "translation_observations_added": 3
+  "translation_observations_added": 3,
+  "reconciled_at": "2026-11-13",
+  "metrics_after_actual": {
+    "answer_eligible_unique_sources": 764,
+    "content_verified_unique_sources": 761,
+    "answer_eligible_propositions": 2559
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 764,
+    "content_verified_unique_sources": 761,
+    "answer_eligible_propositions": 2559
+  },
+  "current_access_recheck": {
+    "checked_at": "2026-11-13",
+    "method": "public web open",
+    "summary_shell_aids": [
+      "5357369"
+    ],
+    "note": "AID 5357369 currently redirects to a summary shell. Prior inspected body text and the proposition-level locator are retained."
+  }
 }

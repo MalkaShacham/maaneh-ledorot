@@ -247,3 +247,33 @@ The multi-source regression distinguishes two underlying letter Evidence Familie
 ### Batch 072 retrieval regression correction
 
 A further readiness run showed that the established three-letter pattern test for difficulties/obstacles did not recognize the exact Hebrew query phrase `קשיים ומכשולים`, although the topic already contained narrower variants. The topic alias set now includes the exact query phrase and its word-order variant in both the core retriever and validated comparison layer. This is a bounded synonym correction; the test still requires the three named source families and claim-local citation/context checks.
+
+ 
+## 2026-11-13 — content batches 073–075, reconciliation and retrieval regressions
+
+Measured corpus progress across the three reviewed batches:
+- `answer_eligible_unique_sources`: 752 → 779 (+27).
+- `content_verified_unique_sources`: 749 → 776 (+27).
+- `answer_eligible_propositions`: 2,527 → 2,601 (+74).
+- 41 source bodies/segments recorded as inspected across the batches: 17 (073), 10 (074), 14 (075). The latest batch reviewed 15 items, including 14 body/segment inspections.
+
+Batch detail:
+- 073: 12 new unique source families; 2 duplicate aliases linked to canonical families; 2 existing identities enriched and 2 rechecked; 31 new paraphrases plus 1 proposition added to an existing identity; 3 translation observations retained as non-independent; 3 blocked candidates.
+- 074: 7 new unique source families; 1 existing identity enriched and 2 rechecked; 20 new paraphrases plus 1 existing proposition; duplicate AIDs 4731080 and 4812666 were linked to existing families rather than counted as new; 4 blocked candidates.
+- 075: 8 new unique source families (7 correspondence identities and 1 secondary narrative); 6 existing identities enriched and 1 rechecked; 16 new paraphrases plus 5 existing-identity propositions; 3 blocked candidates. The AID 79705 item is explicitly a secondary narrative, not primary correspondence or an independent Rebbe witness.
+
+All three batch manifests and the acquisition summary are reconciled against `data/public-metrics.json` and `data/project-state.json`. Current metrics are 779 answer-eligible unique sources, 776 content-verified unique sources, and 2,601 answer-eligible propositions. The content-review queue still contains 1,054 pending items; no unreviewed item was promoted merely to reach a target.
+
+Public-source rechecks:
+- AID 6429866 (English letter to President Gerald Ford) body lines 261–292 and AID 4783876 (Yiddish melody correspondence) body lines 251–261 were accessible and inspected.
+- AID 79705 (Eli Touger, “A Miraculous Release”) was accessible as a secondary narrative; its locator was corrected to article body lines 254–269, replacing the erroneous footer-range locator 280–303.
+- AID 4812673 was accessible at body lines 290–302.
+- The current recheck of AIDs 4783853, 4812732, 5100383, 5100452, 5100585 and 5100260 returned summary shells. AID 5357369 also currently returns a summary shell; its previously inspected added passage is specifically located at lines 301–302. These are documented access limitations, not fresh body inspections.
+- The hourly content crawler's earlier 12 HTTP 403 responses remain documented. It was not retried, no access controls were bypassed, and no full copyrighted text was copied.
+
+Retrieval and researcher-mode work:
+- Added source-specific retrieval for non-Jewish shemitah produce and referral to local halachic authorities; the partial Lod yeshiva study/travel excerpt; the Yiddish melody letter; the English Ford letter; and the education/influence question across distinct translated letter families.
+- Added multi-source daily-study/prayer and tzedakah synthesis with claim-level source locators, context and limitations.
+- Researcher mode now distinguishes total underlying Evidence Families from independent witness families. English translations can be shown as non-independent manifestations without being counted as independent witnesses; secondary narratives are not treated as translations.
+
+Validation status at this checkpoint: the last `test_content_readiness.mjs` run reached the AID 5357369 locator assertion after passing the preceding source-specific regressions. This update corrects that proposition locator to lines 301–302; the next quality-gate run must verify the correction. The prior Pages build/deploy completed successfully; the website itself was not readable through the web reader during this run.
