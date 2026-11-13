@@ -1,6 +1,6 @@
 {
   "project": "מענה לדורות",
-  "space": "יקום הרבי",
+  "space": "וחי בהם",
   "updated": "2026-11-13",
   "method": {
     "pipeline": [
@@ -27,7 +27,8 @@
       "type": "talks-maamarim-public-letters",
       "status": "Indexed",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/3195479",
-      "accessed": "2026-09-17"
+      "accessed": "2026-09-17",
+      "notes": "Corpus-level Indexed status only. On 2026-11-13, Hebrew letter bodies at BeitChabad.com AIDs 2989328, 2989329 and 4279887 were inspected. Linked PDFs were used only for printed pagination/identity, not semantic verification; autographs were not inspected."
     },
     {
       "id": "likkutei-sichos",
@@ -68,7 +69,7 @@
       "status": "Indexed",
       "source_url": "https://www.chabadlibrary.org/",
       "accessed": "2026-11-13",
-      "notes": "On 2026-11-13, five public Igrot Kodesh item pages were reviewed through search-visible Hebrew body excerpts. Direct page opens returned zero readable lines, so item-level records remain context_status=partial and claims are restricted to visible excerpts. One item is explicitly a free Hebrew translation of a Russian letter and is marked non-independent. Corpus-level Indexed status does not imply that all items or full page bodies are verified."
+      "notes": "On 2026-11-13, five public Igrot Kodesh item pages were reviewed through search-visible Hebrew body excerpts. Direct page opens returned zero readable lines, so item-level records remain context_status=partial and claims are restricted to visible excerpts. One item is explicitly a free Hebrew translation of a Russian letter and is marked non-independent. Corpus-level Indexed status does not imply that all items or full page bodies are verified. On 2026-11-13, the direct Yiddish original-letter link /admur/ig/8/2480 returned zero readable lines; no access-control bypass was attempted. An English translated excerpt AID 2313660 was inspected and linked to the Yiddish Evidence Family as non-independent."
     },
     {
       "id": "igros-kodesh-english-letters",
@@ -130,6 +131,42 @@
       "verified_metadata": "The public Chabad.org/JEM index describes more than 4,700 audio recordings of the Rebbe's public addresses spanning 1951 through 1992, organized by year/date with stable item pages.",
       "accessed": "2026-09-18",
       "notes": "External inventory only until bounded item-level ingestion. Preserve audio witness identity separately from edited/printed texts and Living Torah video excerpts; same-date records are linkage candidates, not assumed equivalents. Copyrighted audio is not bulk-copied."
+    },
+    {
+      "id": "pastoral-letters-chabad-org",
+      "title": "Pastoral Letters from the Lubavitcher Rebbe — Chabad.org",
+      "type": "published-english-letters-and-excerpts",
+      "status": "Indexed",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4096309/jewish/All-Beginnings-Are-Difficult.htm",
+      "accessed": "2026-11-13",
+      "notes": "Ten English item pages inspected in batch 070. AIDs 4096316, 1858362 and 1861674 are excerpts; AID 2190037 is a transcribed copy with original unavailable. Other pages do not label the English body as a translation; original language/autographs not independently established."
+    },
+    {
+      "id": "torat-menachem-hebrew-public-letters",
+      "title": "תורת מנחם — מכתבים בעברית בגוף הפרסום",
+      "type": "published-hebrew-letters-and-printed-pdf-manifestations",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989328",
+      "accessed": "2026-11-13",
+      "notes": "Hebrew bodies at AIDs 2989328, 2989329 and 4279887 inspected in batch 070. PDFs used only for printed pagination/identity; HTML bodies support paraphrases; autographs not inspected."
+    },
+    {
+      "id": "sichos-in-english-yiddish-letter-excerpts",
+      "title": "Sichos in English — excerpts from Yiddish letters",
+      "type": "published-translations-of-yiddish-letter-excerpts",
+      "status": "Indexed",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2313660/jewish/68-Through-the-Zohar-G-d-opened-up-a-new-wellspring-that-provides-a-profounder-G-dly-understanding-and-faith-and-trust.htm",
+      "accessed": "2026-11-13",
+      "notes": "AID 2313660 is an English excerpt; publisher identifies the underlying Yiddish letter to the Women's Organization of Brownsville and East New York, Igros Kodesh Vol. 19 p.299. Original Yiddish not inspected; translation is non-independent."
+    },
+    {
+      "id": "reagan-rebbe-correspondence-dossier",
+      "title": "The Rebbe and President Ronald Reagan — correspondence dossier",
+      "type": "multi-document-correspondence-and-official-public-records",
+      "status": "Indexed",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/142535/jewish/The-Rebbe-and-President-Reagan.htm",
+      "accessed": "2026-11-13",
+      "notes": "AID 142535 contains Rebbe letters, presidential correspondence and U.S. proclamations. Batch 070 paraphrases only Rebbe-authored passages; presidential texts remain third-party context."
     }
   ],
   "provenance_fields": [

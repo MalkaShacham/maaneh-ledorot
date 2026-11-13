@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch069-retrieval-v3';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch070-source-grounded-v1';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -14,7 +14,15 @@ const TOPIC_ALIASES={
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
- 'פרנסה ושמירת שבת':['קושי בפרנסה','קושי להתפרנס','להתפרנס','מקור פרנסה','עבודה בשבת','עבודה אסורה בשבת','שמירת שבת','פרנסה מותרת וכשרה','livelihood and Shabbat observance','work on Shabbat','kosher livelihood'],
+  'התמודדות עם קשיים ומכשולים':['קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','obstacles','challenges','overcoming difficulties'],
+  'ייעוד האדם והשפעה על העולם':['ייעוד האדם','תפקיד האדם בעולם','השפעה על העולם','אדם אחד יכול להשפיע','אדם אחד','whole world','purpose in life','mission in life','one individual','conquer the world'],
+  'ניצול הזמן והתגברות על עצלות':['ניצול הזמן','בזבוז זמן','עצלות','מתנת הזמן','זמן ויכולת שכלית','overcome laziness','waste time','gift of time'],
+  'ניהול מחשבות והסחת הדעת':['ניהול מחשבות','הסחת דעת','להסיח דעת','מחשבות מטרידות','חזרה לבעיה בבהירות','rumination','dismiss problems from the mind','fresh mind'],
+  'השקעה בלימוד מקצוע ובעתיד':['לימוד מקצוע','השקעה בעתיד','השקעה ארוכת טווח','לימוד מקצועי','תכנון עתיד','professional training','investment in future','greater achievement'],
+  'אחריות חינוכית והשפעה על הזולת':['אחריות תלמידי הישיבות','חינוך בני נוער','השפעה על הזולת','לקרב ולחזק','חינוך כשר','בן חכם ובן רשע','spiritual charity','influence others','education of children'],
+  'חינוך וערכים ציבוריים':['ערכים מוסריים','ערכים אתיים','חינוך ציבורי','חינוך אזרחי','education and moral values','moral and ethical values'],
+  'ראש השנה וערך הזמן':['לייקר את הזמן','זמן בראש השנה','ראש השנה כולל בתוכו','חיות כל ימות השנה','value of time','Rosh Hashanah and time'],
+  'פרנסה ושמירת שבת':['קושי בפרנסה','קושי להתפרנס','להתפרנס','מקור פרנסה','עבודה בשבת','עבודה אסורה בשבת','שמירת שבת','פרנסה מותרת וכשרה','livelihood and Shabbat observance','work on Shabbat','kosher livelihood'],
  'שותפות והרחבת עסק':['שותפות במסחר','צירוף שותף למסחר','שותף למסחר','הרחבת העסק בכוחות עצמו','הרחבה בכוחות עצמו','העסק זקוק להתרחבות','business partnership','expand the business independently'],
  'הרצאה ושיחה בענייני חסידות':['הרצאה על חסידות','לדבר עניני חסידות בדרך הרצאה ושיחה','chassidus lecture'],
  'שיעור קונטרס החלצו ברבים':['קונטרס החלצו','שיעור ציבורי בקונטרס החלצו','שיעורים הנלמדים ברבים','לכלול בשיעורים הנלמדים ברבים','לקבוע זמן נוח להשתתפות','להסבירו באופן מובן לכל השומעים','העדר קירוב לבבות','העדר קירוב הלבבות'],
@@ -278,7 +286,7 @@ const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').re
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
 const propositionText=e=>norm(arr(e?._supporting_propositions).concat(arr(e?.response_propositions)).join(' '));
 const topicSupported=(claims,topic)=>{const aliases=TOPIC_ALIASES[topic]||[topic];return claims.some(claim=>{const body=norm(claim?.text);return aliases.some(a=>body.includes(norm(a)));});};
-const isDerived=e=>/translation|תרגום|derived/.test(norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' ')));
+const isDerived=e=>/translation|תרגום|derived|transcrib|transcription|copy of original/.test(norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' ')));
 // An index entry establishes the letter's identity/locator, not what the Rebbe said.
 const isLocatorOnly=e=>/bibliographic_locator_verified_only|identity\/locator|bibliographic identity|index[- ]first|metadata[_ -]and[_ -]locator[_ -]only/.test(norm([e?.context_status,e?.verification_scope,e?.rights_status].join(' ')));
 // Non-verbatim text is answer evidence only when it is an explicit source-grounded
@@ -309,7 +317,7 @@ export function retrieveCatalogMatches(index=[],q,{limit=6}={}){
 }
 
 export function normalizeEvidenceIntegrity(index=[]){
-  return index.map(source=>{const e={...source},issues=[];if(e.status==='Verified'&&!e.verification_scope){e.status='Linked';e._reported_status='Verified';issues.push('verified_without_scope_demoted');}if(isLocatorOnly(e)){if(e.has_content_evidence||arr(e.response_propositions).length)issues.push('locator_only_content_blocked');e.has_content_evidence=false;e.response_propositions=[];e._supporting_propositions=[];}if(isEditorialSummaryOnly(e)){if(e.has_content_evidence||arr(e.response_propositions).length)issues.push('editorial_summary_answer_evidence_blocked');e._content_evidence_status='editorial_summary_only';e.has_content_evidence=false;e.response_propositions=[];e._supporting_propositions=[];}if(isDerived(e)){const parent=e.parent_evidence_family_id||e.derived_from_evidence_family_id||e.translation_of_evidence_family_id||null;if(parent)e.evidence_family_id=parent;else issues.push('derived_witness_parent_family_unknown');e._independent_witness=false;}else e._independent_witness=true;if(issues.length)e._evidence_integrity_issues=issues;return e;});
+  return index.map(source=>{const e={...source},issues=[];if(e.status==='Verified'&&!e.verification_scope){e.status='Linked';e._reported_status='Verified';issues.push('verified_without_scope_demoted');}if(isLocatorOnly(e)){if(e.has_content_evidence||arr(e.response_propositions).length)issues.push('locator_only_content_blocked');e.has_content_evidence=false;e.response_propositions=[];e._supporting_propositions=[];}if(isEditorialSummaryOnly(e)){if(e.has_content_evidence||arr(e.response_propositions).length)issues.push('editorial_summary_answer_evidence_blocked');e._content_evidence_status='editorial_summary_only';e.has_content_evidence=false;e.response_propositions=[];e._supporting_propositions=[];}if(isDerived(e)||e.independent_witness===false){const parent=e.parent_evidence_family_id||e.derived_from_evidence_family_id||e.translation_of_evidence_family_id||null;if(parent)e.evidence_family_id=parent;else if(isDerived(e))issues.push('derived_witness_parent_family_unknown');e._independent_witness=false;}else e._independent_witness=true;if(issues.length)e._evidence_integrity_issues=issues;return e;});
 }
 
 /* The core engine copies source proposition wording into a claim (no paraphrase).
