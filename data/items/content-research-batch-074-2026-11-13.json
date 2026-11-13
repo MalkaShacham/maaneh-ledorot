@@ -5,31 +5,29 @@
   "review_method": "Manual public web search/open of item-level Kehot/Chabad.org publisher pages. Nine new Hebrew/Yiddish source bodies and one existing Hebrew identity were inspected. Four candidate pages were rewritten to summary shells and excluded. Only bounded non-verbatim paraphrases with exact body locators were stored; no crawler retry, access-control bypass or full-text reproduction.",
   "reviewed_item_count": 14,
   "source_bodies_inspected": 10,
-  "new_source_identities": 9,
-  "new_rebbe_letter_identities": 9,
+  "new_source_identities": 7,
+  "new_rebbe_letter_identities": 7,
   "new_secretariat_document_identities": 0,
   "secretariat_signed_letter_count": 3,
   "new_metadata_only_identities": 0,
   "duplicate_alias_identities": 0,
   "existing_identities_enriched": 1,
-  "existing_identities_rechecked": 1,
+  "existing_identities_rechecked": 2,
   "existing_identities_canonicalized": 0,
-  "new_response_propositions": 26,
+  "new_response_propositions": 20,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 27,
-  "answer_eligible_source_families_added": 9,
-  "record_count": 9,
+  "total_new_paraphrase_entries": 21,
+  "answer_eligible_source_families_added": 7,
+  "record_count": 7,
   "language_distribution": {
-    "Hebrew": 8,
-    "Yiddish": 1
+    "Hebrew": 7
   },
   "source_type_distribution": {
-    "published_hebrew_correspondence": 8,
-    "published_yiddish_correspondence": 1,
+    "published_hebrew_correspondence": 7,
     "secretariat_signed_letters": 3,
     "transcription_from_photograph": 1
   },
-  "dedup_policy": "The nine AIDs were checked against the 1,054-record content-review queue and batch 073; no exact AID/URL match was found there. The 4731080 letter (תשכ, 11 Elul) is distinct from AID 4731085 (תשכה, 12 Elul); AIDs 4812647 (א׳תר) and 4812666 (א׳תריט) are distinct dated letters. The large public-search-index file returned an empty oversized response through the GitHub connector, so repository-wide dedup remains subject to the deterministic reconciliation. AID 5357369 was enriched in its existing Evidence Family; no translation or reprint was counted as an independent witness.",
+  "dedup_policy": "AID 4731080 was already present in data/items/content-research-batch-059-2026-11-12.json under the same dated Yiddish letter (תשכ, 11 Elul) and existing Evidence Family igrot-letter-5710-11-elul-תשכ-aid4731080; AID 4812666 was already present in batch 058 under the same dated Hebrew letter and existing Evidence Family igrot-letter-5712-3-sivan-aid4812666. Both were re-inspected and retained in their original files/families; duplicate batch-074 records were removed. Seven genuinely new AIDs remain. AID 5357369 was enriched in place. No translation or reprint was counted as an independent witness.",
   "records": [
     {
       "id": "chabad-letter-4783989",
@@ -141,117 +139,6 @@
       "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation of this same letter must join Evidence Family igrot-letter-5712-13-nissan-aid4783989; a translation is not an independent witness.",
       "epistemic_level": 1,
       "summary_researcher": "המכתב מודה לקהילת בית הכנסת בשיקגו על השתתפותה בקופת מעות חיטים לקראת פסח ומברך את התורמים; ההקשר הוא תרומה קהילתית מוגדרת. הוא מרחיב את מושג הצדקה מעבר לתרומה חד-פעמית לפסח: יש להמשיך לתת צדקה לאורך השנה, הן בכסף והן בזמן ובמאמץ, ולעודד אחרים להצטרף. המכתב מציג גם סיוע רוחני—לימוד תורה ועידוד קיום מצוות—כצורה של עזרה לאדם שמחסורו הוא רוחני."
-    },
-    {
-      "id": "chabad-letter-4731080",
-      "canonical_key": "aid:4731080",
-      "aid": 4731080,
-      "type": "letter",
-      "collection": "Igrot Kodesh",
-      "source_class": "Igrot Kodesh",
-      "source_class_detail": "עמוד פריט יידי של אגרות קודש ב-Chabad.org/TheRebbe.org; הגוף היידי נבדק והעמוד מציין 'מהעתק המזכירות'.",
-      "title": "אגרות קודש - מכתב תשכ",
-      "volume": null,
-      "date_original": "י״א אלול, השי״ת",
-      "event_date": "י״א אלול, השי״ת",
-      "date_precision": "exact_as_publisher",
-      "language": "Yiddish",
-      "original_language": "Yiddish",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731080/jewish/page.htm",
-      "pipeline_status": "Verified",
-      "status": "Verified",
-      "canonical_status": "Verified",
-      "verification_status": "Verified",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "response_propositions": [
-        "המכתב מאשר קבלת תרומה שנועדה להדפסת קונטרס לראש השנה ומעודד הגדלה של מעשי הצדקה בהתאם ליכולת הנמען.",
-        "הוא מציג שתי דרכי נתינה: הפרשה לפי שיעור מתוך ההכנסה, או נתינה מעבר לאומדן הראשוני של היכולת, תוך שימוש בדימוי של מעשר וחומש.",
-        "הטקסט קושר את הנכונות להרחיב צדקה גם לשאיפה לפרנסה ולעשייה ציבורית, ומציין ציפייה לעדכונים על מצב הקהילה, העסקים והצעת בניין; אין בכך הבטחה כלכלית."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4731080, אגרות קודש - מכתב תשכ; body lines 244–265. Body inspected on 2026-11-13.",
-      "response_proposition_locators": [
-        "Chabad.org AID 4731080, body lines 244–250.",
-        "Chabad.org AID 4731080, body lines 251–252.",
-        "Chabad.org AID 4731080, body lines 253–255."
-      ],
-      "evidence_family_id": "igrot-letter-5710-11-elul-tashkha-aid4731080",
-      "primary_secondary_status": "Published Yiddish secretariat copy of correspondence attributed by the publisher to the Rebbe; not an autograph witness.",
-      "witness_type": "published_yiddish_secretariat_copy",
-      "independent_witness": true,
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "translation_status": "Not a translation; the original-language Hebrew/Yiddish publisher body was inspected.",
-      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4731080, אגרות קודש - מכתב תשכ; body lines 244–265. Body inspected on 2026-11-13.",
-      "witness": {
-        "kind": "published correspondence text",
-        "state": "published Yiddish secretariat-copy body inspected",
-        "publisher": "Kehot Publication Society",
-        "platform": "Chabad.org/TheRebbe.org",
-        "language": "Yiddish",
-        "scope": "body lines 244–265",
-        "complete_partial": "complete_published_body",
-        "notes": "העמוד מציין במפורש 'מהעתק המזכירות'; לא נבדקו האוטוגרף או עותק המזכירות הפיזי."
-      },
-      "provenance": {
-        "source_witness": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4731080, אגרות קודש - מכתב תשכ; body lines 244–265. Body inspected on 2026-11-13.",
-        "authorship_status": "המו״ל מציג את המכתב כהתכתבות של הרבי; הפרסום מציין שזהו העתק מזכירות, ולכן אין לטעון לאימות אוטוגרפי.",
-        "signature_status": "הנוסח המפורסם נושא את שם מנחם שניאורסאהן אך מצוין בו 'מהעתק המזכירות'; האוטוגרף לא נבדק.",
-        "transmission_type": "נוסח יידי שפורסם כהעתק מזכירות; לא תרגום.",
-        "textual_status": "Visible publisher body lines 244–265 inspected on 2026-11-13; no full text copied.",
-        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
-        "verification_status": "Verified at the published-body level on 2026-11-13; body lines 244–265.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731080/jewish/page.htm",
-        "accessed": "2026-11-13",
-        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט היידי המפורסם בעמוד Chabad.org/TheRebbe.org, AID 4731080, שורות 244–265. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. העתק המזכירות והמכתב הנכנס לא נבדקו; ההקשר של סכום התרומה, העסק והצעת הבניין חלקי. הדברים אינם הבטחה כלכלית או כלל השקעה. ההקשר מסווג חלקי; כתב היד/האוטוגרף לא נבדקו."
-      },
-      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט היידי המפורסם בעמוד Chabad.org/TheRebbe.org, AID 4731080, שורות 244–265. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. העתק המזכירות והמכתב הנכנס לא נבדקו; ההקשר של סכום התרומה, העסק והצעת הבניין חלקי. הדברים אינם הבטחה כלכלית או כלל השקעה. ההקשר מסווג חלקי; כתב היד/האוטוגרף לא נבדקו.",
-      "documented_circumstances": "מענה למכתב מראש חודש אלול, המאשר קבלת תרומה להדפסת קונטרס לראש השנה; בהמשך נזכרים מצב העסק והצעה לבניין.",
-      "question_or_problem": "עידוד להרחבת מעשי צדקה, לרבות נתינה מעבר לאומדן היכולת הראשוני, בהקשר של תרומה להדפסת קונטרס.",
-      "conditions_or_qualifications": [
-        "העמוד מציין 'מהעתק המזכירות'; לא נבדקו העתק המקור או האוטוגרף.",
-        "המכתב הנכנס אינו מוצג ולכן סכום התרומה והנסיבות הכלכליות המלאות אינם ידועים.",
-        "הדיון במעשר ובחומש הוא חלק ממענה אישי; אין לנסחו כהבטחה לתשואה או להבטחת פרנסה."
-      ],
-      "audience": "ר׳ י׳ הכהן, המזוהה בהערת המו״ל ככ״ץ; הנמען מתואר בגוף המכתב.",
-      "rights_status": "Copyrighted publisher text; source link and bounded non-verbatim research paraphrases only; no full text copied.",
-      "access": {
-        "access_level": "open",
-        "status": "public_publisher_page_opened_and_body_inspected",
-        "rights_status": "copyrighted-link-only",
-        "full_text_reproduced": false
-      },
-      "locator": {
-        "aid": 4731080,
-        "volume": null,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731080/jewish/page.htm",
-        "body_locator": "body lines 244–265"
-      },
-      "taxonomy": {
-        "publisher_index_terms": [
-          "אגרות קודש",
-          "מכתבי הרבי"
-        ],
-        "research_terms": [
-          "צדקה",
-          "מעשר",
-          "חומש",
-          "קונטרס לראש השנה",
-          "פרנסה",
-          "הרחבת הנתינה",
-          "עסק"
-        ],
-        "response_case_candidate": true
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "One dated Yiddish letter identity. Any scan, reprint or translation of this same letter must join Evidence Family igrot-letter-5710-11-elul-tashkha-aid4731080; a translation is not an independent witness.",
-      "epistemic_level": 1,
-      "summary_researcher": "המכתב מאשר קבלת תרומה שנועדה להדפסת קונטרס לראש השנה ומעודד הגדלה של מעשי הצדקה בהתאם ליכולת הנמען. הוא מציג שתי דרכי נתינה: הפרשה לפי שיעור מתוך ההכנסה, או נתינה מעבר לאומדן הראשוני של היכולת, תוך שימוש בדימוי של מעשר וחומש. הטקסט קושר את הנכונות להרחיב צדקה גם לשאיפה לפרנסה ולעשייה ציבורית, ומציין ציפייה לעדכונים על מצב הקהילה, העסקים והצעת בניין; אין בכך הבטחה כלכלית."
     },
     {
       "id": "chabad-letter-4754323",
@@ -589,117 +476,6 @@
       "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation of this same letter must join Evidence Family igrot-letter-5715-18-elul-aid4929255; a translation is not an independent witness.",
       "epistemic_level": 1,
       "summary_researcher": "המכתב דוחה קביעת מתכון אחיד לעבודת התשובה באלול; הוא מדגיש התאמה לאופי ולמצבו של כל אדם וממליץ להיפגש כמה פעמים עם משפיעים מנוסים. לימוד ספרי חסידות מוצג כמתאים לתקופה, אך המכתב מדגיש שלימוד אישי ושמיעה ישירה ממשפיע אינם מעוררים כל אדם באותו אופן. בנושא הטבילה במקווה, המכתב דוחה טענה שטבילה קבועה חסרת ערך מפני שהיא נעשית מתוך הרגל; הוא מבחין בין עצם המעשה לבין כוונה, ומסביר את הקשר האפשרי לטבילה לפני תפילה. לגבי התוועדות, המכתב מבהיר שהמטרה אינה שתייה כשלעצמה אלא התעוררות לתורה ומצוות מתוך חיות, שמחה ומרירות, תוך זהירות מתאימה."
-    },
-    {
-      "id": "chabad-letter-4812666",
-      "canonical_key": "aid:4812666",
-      "aid": 4812666,
-      "type": "letter",
-      "collection": "Igrot Kodesh",
-      "source_class": "Igrot Kodesh",
-      "source_class_detail": "עמוד פריט בעברית של אגרות קודש ב-Chabad.org/TheRebbe.org, כרך ו; גוף המכתב והערות המו״ל נבדקו.",
-      "title": "אגרות קודש - מכתב א’תריט",
-      "volume": 6,
-      "date_original": "ג׳ סיון, תשי״ב",
-      "event_date": "ג׳ סיון, תשי״ב",
-      "date_precision": "exact_as_publisher",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812666/jewish/page.htm",
-      "pipeline_status": "Verified",
-      "status": "Verified",
-      "canonical_status": "Verified",
-      "verification_status": "Verified",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "response_propositions": [
-        "המכתב מתייחס לשני מכתבים שבהם הנמען תיאר מצב בריאות ומצב רוח ירוד, וממליץ לבטוח בה׳ ובמקביל לפעול בדרך הטבע ולשמור על הוראות הרופאים.",
-        "הוא מבחין בין פעולה מעשית בענייני רפואה לבין השקעת מחשבה ופלפול רפואי של מי שאינו רופא; את הכוחות השכליים הוא מכוון ללימוד תורה ומצוות.",
-        "המכתב מעודד את הנמען לנצל את זמנו ללימוד תורה ולחיזוק סביבתו באמצעות מצוות ותורת החסידות, תוך ברכה לבריאותו ולמשפחתו."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812666, אגרות קודש - מכתב א’תריט; body lines 244–256. Body inspected on 2026-11-13.",
-      "response_proposition_locators": [
-        "Chabad.org AID 4812666, body lines 248–249.",
-        "Chabad.org AID 4812666, body lines 249.",
-        "Chabad.org AID 4812666, body lines 249–250."
-      ],
-      "evidence_family_id": "igrot-letter-5712-3-sivan-aid4812666",
-      "primary_secondary_status": "Published Hebrew personal correspondence text attributed by the publisher to the Rebbe; autograph not independently inspected.",
-      "witness_type": "published_hebrew_letter_text",
-      "independent_witness": true,
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "translation_status": "Not a translation; the original-language Hebrew/Yiddish publisher body was inspected.",
-      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812666, אגרות קודש - מכתב א’תריט; body lines 244–256. Body inspected on 2026-11-13.",
-      "witness": {
-        "kind": "published correspondence text",
-        "state": "published Hebrew body inspected",
-        "publisher": "Kehot Publication Society",
-        "platform": "Chabad.org/TheRebbe.org",
-        "language": "Hebrew",
-        "scope": "body lines 244–256",
-        "complete_partial": "complete_published_body",
-        "notes": "העמוד מתייחס לשני מכתבים קודמים של הנמען; המכתבים עצמם אינם מוצגים."
-      },
-      "provenance": {
-        "source_witness": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812666, אגרות קודש - מכתב א’תריט; body lines 244–256. Body inspected on 2026-11-13.",
-        "authorship_status": "המו״ל מציג את הפריט כמכתב של הרבי; האוטוגרף לא נבדק.",
-        "signature_status": "חתימה מקורית/אוטוגרף לא נבדקו.",
-        "transmission_type": "נוסח עברי שפורסם בפרסום המו״ל; אין מדובר בתרגום.",
-        "textual_status": "Visible publisher body lines 244–256 inspected on 2026-11-13; no full text copied.",
-        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
-        "verification_status": "Verified at the published-body level on 2026-11-13; body lines 244–256.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812666/jewish/page.htm",
-        "accessed": "2026-11-13",
-        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי המפורסם בעמוד Chabad.org/TheRebbe.org, AID 4812666, שורות 244–256. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. שני המכתבים הנכנסים אינם מוצגים; זהו מענה אישי על מצב בריאות ומצב רוח. אין לראות בו ייעוץ רפואי או תחליף להוראות רופא. ההקשר מסווג חלקי; כתב היד/האוטוגרף לא נבדקו."
-      },
-      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי המפורסם בעמוד Chabad.org/TheRebbe.org, AID 4812666, שורות 244–256. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. שני המכתבים הנכנסים אינם מוצגים; זהו מענה אישי על מצב בריאות ומצב רוח. אין לראות בו ייעוץ רפואי או תחליף להוראות רופא. ההקשר מסווג חלקי; כתב היד/האוטוגרף לא נבדקו.",
-      "documented_circumstances": "מענה לשני מכתבים שבהם הנמען תיאר את מצב בריאותו ואת מצב רוחו.",
-      "question_or_problem": "כיצד להתמודד עם דאגה סביב מצב בריאותי ועם מחשבות רפואיות חוזרות.",
-      "conditions_or_qualifications": [
-        "המכתבים הנכנסים אינם מוצגים וההקשר חלקי.",
-        "המכתב עצמו מורה לשמור על הוראות הרופאים; אין להשתמש בו כייעוץ רפואי.",
-        "ההמלצה להתמקד בלימוד תורה היא מענה אישי לנמען מסוים."
-      ],
-      "audience": "נמען יחיד שדיווח על מצב בריאות ומצב רוח; זהותו אינה מוצגת.",
-      "rights_status": "Copyrighted publisher text; source link and bounded non-verbatim research paraphrases only; no full text copied.",
-      "access": {
-        "access_level": "open",
-        "status": "public_publisher_page_opened_and_body_inspected",
-        "rights_status": "copyrighted-link-only",
-        "full_text_reproduced": false
-      },
-      "locator": {
-        "aid": 4812666,
-        "volume": 6,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812666/jewish/page.htm",
-        "body_locator": "body lines 244–256"
-      },
-      "taxonomy": {
-        "publisher_index_terms": [
-          "אגרות קודש",
-          "מכתבי הרבי"
-        ],
-        "research_terms": [
-          "בריאות",
-          "רופאים",
-          "דאגה",
-          "מחשבות",
-          "תורה",
-          "מצוות",
-          "תורת החסידות"
-        ],
-        "response_case_candidate": true
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation of this same letter must join Evidence Family igrot-letter-5712-3-sivan-aid4812666; a translation is not an independent witness.",
-      "epistemic_level": 1,
-      "summary_researcher": "המכתב מתייחס לשני מכתבים שבהם הנמען תיאר מצב בריאות ומצב רוח ירוד, וממליץ לבטוח בה׳ ובמקביל לפעול בדרך הטבע ולשמור על הוראות הרופאים. הוא מבחין בין פעולה מעשית בענייני רפואה לבין השקעת מחשבה ופלפול רפואי של מי שאינו רופא; את הכוחות השכליים הוא מכוון ללימוד תורה ומצוות. המכתב מעודד את הנמען לנצל את זמנו ללימוד תורה ולחיזוק סביבתו באמצעות מצוות ותורת החסידות, תוך ברכה לבריאותו ולמשפחתו."
     },
     {
       "id": "chabad-letter-5054364",
@@ -1047,7 +823,31 @@
       "update_type": "in_place_content_enrichment",
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357369/jewish/page.htm",
       "new_locator": "Chabad.org AID 5357369, body lines 301–302",
-      "note": "Re-inspected the visible Hebrew body and added a non-verbatim proposition about the enclosed official letter sent to R. L. Kramer and its planned publication. The letter remains in its original Evidence Family; the enclosed letter and source photograph were not inspected."
+      "note": "Added one non-verbatim proposition about the enclosed official letter sent to R. L. Kramer and its planned publication; the source photograph and enclosed letter remain uninspected."
+    },
+    {
+      "id": "chabad-letter-4731080",
+      "aid": 4731080,
+      "canonical_key": "aid:4731080",
+      "canonical_file": "data/items/content-research-batch-059-2026-11-12.json",
+      "added_propositions": 0,
+      "evidence_family_id": "igrot-letter-5710-11-elul-תשכ-aid4731080",
+      "update_type": "rechecked_existing_identity",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731080/jewish/page.htm",
+      "new_locator": "Chabad.org AID 4731080, body lines 244–265",
+      "note": "The Yiddish body was re-inspected. Its three existing propositions already cover the relevant text; retained the original canonical identity and Evidence Family, with no duplicate record or new family."
+    },
+    {
+      "id": "chabad-letter-4812666",
+      "aid": 4812666,
+      "canonical_key": "aid:4812666",
+      "canonical_file": "data/items/content-research-batch-058-2026-11-12.json",
+      "added_propositions": 0,
+      "evidence_family_id": "igrot-letter-5712-3-sivan-aid4812666",
+      "update_type": "rechecked_existing_identity",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812666/jewish/page.htm",
+      "new_locator": "Chabad.org AID 4812666, body lines 244–256",
+      "note": "The Hebrew body was re-inspected. Its three existing propositions already cover the relevant text; retained the original canonical identity and Evidence Family, with no duplicate record or new family."
     }
   ],
   "blocked_candidates": [
@@ -1074,7 +874,7 @@
     }
   ],
   "excluded_candidates": [],
-  "deduplication_check": "Exact AIDs were absent from the current review queue (1,054 records) and batch 073. The public-search-index file could not be read through the connector because the response was empty for the oversized file. Deterministic reconciliation will determine whether any AID was already represented in older canonical batches; no unsupported claim of repository-wide uniqueness is made.",
+  "deduplication_check": "The reconciliation audit found that AID 4731080 and AID 4812666 were already canonical in batches 059 and 058, respectively, with matching dates, letter numbers and source bodies. Both duplicate batch-074 records were removed and the original identities were rechecked in place. The remaining seven AIDs are distinct selected answer-eligible identities. The oversized public-search-index file was not directly readable through the connector; the deterministic index reconciliation and item-level audit are authoritative.",
   "source_languages": [
     "Hebrew",
     "Yiddish"
@@ -1106,8 +906,15 @@
     "answer_eligible_propositions": 2559
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 773,
-    "content_verified_unique_sources": 770,
-    "answer_eligible_propositions": 2586
-  }
+    "answer_eligible_unique_sources": 771,
+    "content_verified_unique_sources": 768,
+    "answer_eligible_propositions": 2580
+  },
+  "rechecked_language_distribution": {
+    "Hebrew": 1,
+    "Yiddish": 1
+  },
+  "limits": [
+    "AID 4731080 and AID 4812666 were existing canonical identities; duplicate batch-074 records were removed and both were kept in their original Evidence Families."
+  ]
 }
