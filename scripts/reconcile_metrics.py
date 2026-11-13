@@ -197,6 +197,63 @@ search_index={"generated":today,"count":len(search_entries),"entries":sorted(sea
 # This generated index is shipped to browsers; compact JSON cuts repository and
 # deployment transfer size without changing any record or field.
 (ROOT/"data/public-search-index.json").write_text(json.dumps(search_index,ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf-8")
+
+# Preserve an item-level reconciliation audit for the latest manual content batch.
+# This makes AID-level deduplication and answer eligibility inspectable without
+# downloading the oversized public search index.
+batch074_path=ROOT/"data/items/content-research-batch-074-2026-11-13.json"
+if batch074_path.exists():
+    try:
+        batch074=json.loads(batch074_path.read_text(encoding="utf-8"))
+        target_aids=[str(r.get("aid")) for r in batch074.get("records",[]) if isinstance(r,dict) and r.get("aid")]
+        audit=[]
+        by_aid={aid:[] for aid in target_aids}
+        for fp in items:
+            try: obj=json.loads(fp.read_text(encoding="utf-8"))
+            except Exception: continue
+            if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
+            for x in candidate_dicts(obj):
+                loc=x.get("locator") if isinstance(x.get("locator"),dict) else {}
+                aid=str(x.get("aid") or loc.get("aid") or "")
+                if aid in by_aid:
+                    by_aid[aid].append({
+                        "file":str(fp.relative_to(ROOT)),
+                        "id":x.get("id"),
+                        "evidence_family_id":x.get("evidence_family_id"),
+                        "status":status_of(x),
+                        "has_content_evidence":bool(x.get("has_content_evidence")),
+                        "proposition_count":len(x.get("response_propositions") or []),
+                        "proposition_origin":x.get("proposition_origin"),
+                        "proposition_verification":x.get("proposition_verification"),
+                        "proposition_source_locator":x.get("proposition_source_locator"),
+                        "verification_scope":x.get("verification_scope"),
+                        "context_status":x.get("context_status")
+                    })
+        for aid in target_aids:
+            selected=search_entries.get("aid:"+aid)
+            audit.append({
+                "aid":int(aid),
+                "canonical_records_found":len(by_aid[aid]),
+                "records":by_aid[aid],
+                "selected_index_entry":{
+                    "present":bool(selected),
+                    "answer_eligible":bool(selected and answer_eligible(selected)),
+                    "status":selected.get("status") if selected else None,
+                    "evidence_family_id":selected.get("evidence_family_id") if selected else None,
+                    "canonical_file":selected.get("canonical_file") if selected else None,
+                    "proposition_count":len(selected.get("response_propositions") or []) if selected else 0,
+                    "proposition_source_locator":selected.get("proposition_source_locator") if selected else None
+                } if selected else {"present":False}
+            })
+        state.setdefault("development_recovery",{})["last_reconciliation"]={
+            "batch_id":"074","generated":today,"batch_record_count":len(target_aids),
+            "answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),
+            "selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")}),
+            "items":audit
+        }
+    except Exception as exc:
+        state.setdefault("development_recovery",{})["last_reconciliation"]={"batch_id":"074","generated":today,"error":str(exc)}
+
 print("search_index_count",len(search_entries))
 
 # Measure the evidence that can actually answer questions, not index summaries.
@@ -204,6 +261,16 @@ out.update(summarize(search_index["entries"]))
 state["current_counts"].update({k:out[k] for k in
                               ("answer_eligible_unique_sources","content_verified_unique_sources",
                                "answer_eligible_propositions")})
+if isinstance(state.get("metrics_integrity"),dict):
+    integrity=state["metrics_integrity"]
+    readiness=integrity.setdefault("answer_readiness",{})
+    before=readiness.get("before") or {}
+    actual={k:out[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
+    readiness["actual_after"]=actual
+    readiness["actual_delta"]={k:actual[k]-int(before.get(k,actual[k])) for k in actual}
+    integrity["status"]="reconciled_pending_commit"
+    integrity["last_reconciled_at"]=today
+
 ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}
 review_candidates=[e for e in search_index["entries"]
                    if e.get("id") and e.get("source_url") and e["key"] not in ready_keys]
