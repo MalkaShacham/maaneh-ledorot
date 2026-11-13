@@ -31,9 +31,9 @@
       "Indexed": 1151,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 764,
-    "content_verified_unique_sources": 761,
-    "answer_eligible_propositions": 2559
+    "answer_eligible_unique_sources": 771,
+    "content_verified_unique_sources": 768,
+    "answer_eligible_propositions": 2580
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -80,11 +80,11 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciliation_pending",
+    "status": "reconciled_pending_quality_gate",
     "source": "data/public-metrics.json",
     "generated": "2026-11-13",
-    "reconciliation_commit": null,
-    "search_index_refresh_commit": null,
+    "reconciliation_commit": "c4baabc9d665d635445c458ed50ab37c99e15d8b",
+    "search_index_refresh_commit": "c4baabc9d665d635445c458ed50ab37c99e15d8b",
     "answer_readiness": {
       "before": {
         "answer_eligible_unique_sources": 764,
@@ -95,6 +95,21 @@
         "answer_eligible_unique_sources": 773,
         "content_verified_unique_sources": 770,
         "answer_eligible_propositions": 2586
+      },
+      "actual_after": {
+        "answer_eligible_unique_sources": 771,
+        "content_verified_unique_sources": 768,
+        "answer_eligible_propositions": 2580
+      },
+      "actual_delta": {
+        "answer_eligible_unique_sources": 7,
+        "content_verified_unique_sources": 7,
+        "answer_eligible_propositions": 21
+      },
+      "reconciliation_variance": {
+        "answer_eligible_unique_sources": -2,
+        "content_verified_unique_sources": -2,
+        "answer_eligible_propositions": -6
       }
     },
     "quality_gate": {
@@ -108,7 +123,7 @@
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": null,
-      "note": "Batch 074 adds nine inspected Hebrew/Yiddish correspondence families and one in-place enrichment. The readiness test now removes stale cumulative metric constants and asserts the new batch, multi-family tzedakah synthesis, claim-local citations and researcher-mode evidence map."
+      "note": "Batch 074 is reconciled at 771 answer-eligible Evidence Families, 768 content-verified families and 2,580 distinct propositions. This is two families and six propositions below the nine-family/27-proposition expectation; item-level AID dedup/eligibility audit is pending. The readiness test was updated to remove stale hard-coded cumulative totals and add batch-074 retrieval/researcher-mode checks."
     },
     "publication": {
       "status": "pending_deployment_check",
@@ -188,15 +203,30 @@
         "answer_eligible_propositions": 27
       },
       "blocked_candidates": 4,
-      "status": "content_committed_reconciliation_pending"
+      "status": "reconciled_pending_quality_gate_and_item_audit",
+      "metrics_after_actual": {
+        "answer_eligible_unique_sources": 771,
+        "content_verified_unique_sources": 768,
+        "answer_eligible_propositions": 2580
+      },
+      "metrics_delta_actual": {
+        "answer_eligible_unique_sources": 7,
+        "content_verified_unique_sources": 7,
+        "answer_eligible_propositions": 21
+      },
+      "reconciliation_variance": {
+        "answer_eligible_unique_sources": -2,
+        "content_verified_unique_sources": -2,
+        "answer_eligible_propositions": -6
+      }
     },
-    "last_run_note": "Batch 074 manually inspected nine new item-level Hebrew/Yiddish publisher bodies and re-inspected existing AID 5357369. Added 26 new non-verbatim propositions across nine new Evidence Families and one additional proposition to AID 5357369 in its existing family. Three items are secretary-signed in the Rebbe's name; AID 4731080 is marked as a secretariat copy; AID 5357253 is marked as transcribed from a photograph, which was not inspected. Four candidates (5413764, 5054497, 4754352, 4666220) redirected to rewritten summary shells and were excluded; nine accessible alternatives were inspected in the same run. No crawler retry, access-control bypass, full-text copying, audience change or permission change. Expected readiness: 764→773 unique families, 761→770 content-verified families, 2559→2586 propositions, pending deterministic reconciliation.",
+    "last_run_note": "Batch 074 manually inspected nine new item-level Hebrew/Yiddish publisher bodies and re-inspected existing AID 5357369. Added 26 new non-verbatim propositions across nine new Evidence Families and one additional proposition to AID 5357369 in its existing family. Three items are secretary-signed in the Rebbe's name; AID 4731080 is marked as a secretariat copy; AID 5357253 is marked as transcribed from a photograph, which was not inspected. Four candidates (5413764, 5054497, 4754352, 4666220) redirected to rewritten summary shells and were excluded; nine accessible alternatives were inspected in the same run. No crawler retry, access-control bypass, full-text copying, audience change or permission change. Expected readiness: 764→773 unique families, 761→770 content-verified families, 2559→2586 propositions, pending deterministic reconciliation. Actual reconciliation after the batch: 771 answer-eligible families, 768 content-verified families and 2,580 propositions (+7, +7, +21), which is two families/six propositions below the expected delta. An item-level audit is being run before treating the remaining two identities as eligible.",
     "last_batch_blocked_count": 4,
     "last_batch_blocked_reason": "AIDs 5413764, 5054497, 4754352 and 4666220 redirected to rewritten Torah Texts summary shells without item-level bodies. No propositions were inferred from titles or metadata; nine other accessible publisher bodies were inspected instead.",
     "next_work": [
-      "Complete deterministic reconciliation for batch 074 and confirm the actual answer_eligible_unique_sources and proposition counts.",
-      "Run the commit-bound answer-quality gate, including test_content_readiness.mjs, and repair only evidence-supported regressions.",
-      "Verify the public GitHub Pages deployment and ensure researcher-mode evidence maps retain witness provenance, context boundaries and claim-level citations."
+      "Inspect the item-level reconciliation audit to identify which of the nine new AIDs were already represented or did not pass answer eligibility.",
+      "Run the commit-bound test_content_readiness.mjs and answer-integrity gates against the reconciled index; fix only evidence-supported failures.",
+      "Verify the published GitHub Pages deployment and confirm regular/researcher modes preserve claim-level citations and source context."
     ]
   }
 }
