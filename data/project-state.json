@@ -20,20 +20,21 @@
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 432,
-    "canonical_unique_item_keys": 8958,
+    "canonical_json_files": 433,
+    "canonical_unique_item_keys": 8959,
     "evidence_family_files": 55,
     "verified_unique_item_keys": 7641,
     "status_counts_unique_keys": {
       "Verified": 7641,
       "Linked": 11,
-      "Parsed": 0,
+      "Parsed": 1,
       "Indexed": 1153,
       "Discovered": 3
     },
     "answer_eligible_unique_sources": 663,
     "content_verified_unique_sources": 660,
-    "answer_eligible_propositions": 2022
+    "answer_eligible_propositions": 2022,
+    "content_review_queue_records": 1057
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -65,14 +66,16 @@
     "Underlying manuscript, photograph or secretariat-copy witnesses named by publisher notes were not independently inspected; Verified is scoped to the authorized item-level publisher witness.",
     "Retrieval now has proposition-level relevance gates, topic aliases, claim-local citation entailment checks and a separate researcher evidence map, but ranking remains deterministic and lexical/topic-based rather than a semantic entailment model.",
     "Translated public talks are one manifestation of their dated event; original-language transcripts and recordings must join the same Evidence Family.",
-    "www.chabad.org is host-blocked after HTTP 403 responses on the 12-reference GitHub acquisition attempt (2026-10-15 onward). data/acquisition/state.json now marks this host permanent_block; the hourly script must skip network requests and rely on manual public web search or another authorized source."
+    "www.chabad.org is host-blocked after HTTP 403 responses on the 12-reference GitHub acquisition attempt (2026-10-15 onward). data/acquisition/state.json now marks this host permanent_block; the hourly script must skip network requests and rely on manual public web search or another authorized source.",
+    "AID 4666284 text was inspected through Pnimi's secondary index of chabadlibrary.org; its pipeline status remains Parsed, and it is a member of the existing Shanghai Evidence Family, not a new independent corroborating family."
   ],
   "next_work": [
     "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
     "Inspect remaining inaccessible AIDs 4666265, 4666267, 4666268 and 4666270 only if an inspectable public body becomes available; do not infer from titles or IDs.",
     "Expand event-level Evidence Family links when original-language transcripts, audio or video of already indexed talks become available.",
     "Adversarially test proposition relevance, claim-local citation entailment, context boundaries and researcher-mode witness distinctions on both answer modes.",
-    "Continue reconciling the live public-search index, metrics and content-readiness test after each content batch."
+    "Continue reconciling the live public-search index, metrics and content-readiness test after each content batch.",
+    "Continue public-body inspection in Hebrew/Yiddish/English and other documentation types; resolve the Shanghai letter ריג identity only if a direct/authoritative item witness is found; do not retry the blocked runner crawler."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
@@ -83,39 +86,34 @@
     "search_index_refresh_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
     "answer_readiness": {
       "answer_eligible_unique_sources": {
-        "before": 653,
-        "expected_after": 663,
-        "after": 663
+        "before": 663,
+        "expected_after": 666
       },
       "content_verified_unique_sources": {
-        "before": 650,
-        "expected_after": 660,
-        "after": 660
+        "before": 660,
+        "expected_after": 663
       },
       "answer_eligible_propositions": {
-        "before": 2002,
-        "expected_after": 2022,
-        "after": 2022
+        "before": 2022,
+        "expected_after": 2042
       }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "pull_request to main and push to main; changed paths include source items, answer engine and readiness tests",
-      "run_status": "passed",
+      "run_status": "pending_commit_bound_run",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": true,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
       "note": "Commit-bound answer-quality gate passed on the merged main commit. node scripts/test_content_readiness.mjs, test_answer_integrity.mjs, test_question_specificity_gate.mjs and workflow write-safety tests all completed successfully. The structural report is not a substitute for semantic claim-level review.",
-      "evaluated_commit": "c8dc09f8605983b586c09777d4aa6d64061ada82",
-      "workflow_run_id": 43335539676,
+      "evaluated_commit": null,
+      "workflow_run_id": null,
       "pull_request_run_id": 43335370438
     },
     "publication": {
-      "status": "pages_deployment_succeeded",
-      "workflow_run_id": 43335594714,
-      "deployed_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
-      "direct_page_reader": "The available web reader could not open the GitHub Pages URL; the GitHub Pages build and deploy job completed successfully."
+      "status": "pending_deployment_check",
+      "url": "https://malkashacham.github.io/maaneh-ledorot"
     }
   },
   "ux": {
@@ -152,55 +150,29 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-062",
+    "current_batch": "2026-11-13-content-batch-063",
     "required_agent_action": "Continue direct public-body inspection across Hebrew, Yiddish and English; prioritize pending AIDs whose publisher pages expose body text, preserve Evidence Family identity and translation dependency, run reconciliation and both answer modes, and do not retry the known 403 crawler.",
-    "last_completed_batch": "2026-11-13-content-batch-062",
+    "last_completed_batch": "2026-11-13-content-batch-063",
     "last_batch_summary": {
-      "reviewed_items": 15,
-      "new_source_identities": 9,
-      "existing_identities_enriched": 1,
+      "reviewed_items": 9,
+      "new_source_identities": 1,
+      "existing_identities_enriched": 8,
       "response_propositions_added": 20,
       "metrics_before": {
-        "answer_eligible_unique_sources": 653,
-        "content_verified_unique_sources": 650,
-        "answer_eligible_propositions": 2002,
-        "canonical_unique_item_keys": 8950,
-        "verified_unique_item_keys": 7633,
-        "canonical_json_files": 423,
-        "evidence_family_files": 55,
-        "content_review_queue_records": 1060
+        "answer_eligible_unique_sources": 663,
+        "content_verified_unique_sources": 660,
+        "answer_eligible_propositions": 2022
       },
       "expected_metrics_after": {
-        "answer_eligible_unique_sources": 663,
-        "content_verified_unique_sources": 660,
-        "answer_eligible_propositions": 2022,
-        "canonical_unique_item_keys": 8958,
-        "verified_unique_item_keys": 7641,
-        "canonical_json_files": 432,
-        "evidence_family_files": 55,
-        "content_review_queue_records": 1058
+        "answer_eligible_unique_sources": 666,
+        "content_verified_unique_sources": 663,
+        "answer_eligible_propositions": 2042
       },
-      "metrics_after": {
-        "answer_eligible_unique_sources": 663,
-        "content_verified_unique_sources": 660,
-        "answer_eligible_propositions": 2022,
-        "canonical_unique_item_keys": 8958,
-        "verified_unique_item_keys": 7641,
-        "canonical_json_files": 432,
-        "evidence_family_files": 55,
-        "content_review_queue_records": 1058
-      },
-      "reconciliation_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
-      "merge_commit": "c8dc09f8605983b586c09777d4aa6d64061ada82",
-      "search_index_refresh_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
-      "existing_identities_rechecked": 5,
+      "family_reconciliations": 2,
       "duplicate_aliases_linked": 2,
-      "status": "reconciled_and_published",
-      "pull_request_quality_gate_run_id": 43335370438,
-      "main_quality_gate_run_id": 43335539676,
-      "pages_deployment_run_id": 43335594714,
-      "hourly_maintenance_run_id": 43335456118
+      "review_queue_removed": 1,
+      "status": "content_reviewed_reconciliation_and_quality_gate_pending"
     },
-    "last_run_note": "Batch 062 reviewed 15 public publisher bodies/excerpts: nine new Hebrew/Yiddish letter identities were added, one existing identity (AID 4666289) was enriched, and five already-enriched identities were rechecked without duplicating propositions. Twenty non-verbatim source-grounded propositions were added. Two metadata-only duplicate aliases (AIDs 4666210 and 4666231) were linked to their existing Evidence Families; the duplicate AID 4666210 queue entry was removed. Reconciliation confirms answer_eligible_unique_sources 653→663, content_verified_unique_sources 650→660 and answer_eligible_propositions 2002→2022; canonical unique keys 8958, verified keys 7641, 432 canonical files and queue 1058. PR and main answer-quality gates passed, including test_content_readiness.mjs; public metrics/search index were reconciled and GitHub Pages deployment succeeded. The scheduled hourly run on pre-merge SHA 139a326 failed its old BATCH018 class/camp comparison gate; the acquisition state shows the prior 403 host block and no acquisition attempts. The blocked crawler was not manually retried. The direct Pages URL could not be independently read by the available web reader."
+    "last_run_note": "Batch 063 inspected nine public text-index pages for Igrot Kodesh vol. II letters רמא–רמט. Eight existing identities were enriched; AID 4666284 was added as Parsed via Pnimi's secondary index and linked to the existing Shanghai correspondence family. Twenty new source-grounded paraphrases were added; three existing propositions for AID 4666281 were migrated from a duplicate alias without double-counting. Family IDs and remaining aliases are being reconciled in a follow-up commit. Expected answer-eligible unique families 663→666, content-verified unique families 660→663, propositions 2022→2042. Direct Chabad.org reader routes returned shells; Pnimi index and publisher search excerpts were used without access-control bypass. Actions and live publication remain pending."
   }
 }

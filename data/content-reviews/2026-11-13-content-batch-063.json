@@ -1,0 +1,210 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "063",
+  "reviewed_at": "2026-11-13",
+  "review_method": "Manual inspection of nine public Pnimi text-index pages for Igrot Kodesh volume II letters רמא–רמט, with Chabad.org Knowledge Base excerpts cross-checked where available. Pnimi identifies itself as an index for chabadlibrary.org and states that text rights remain with Kehot. It is an access path, not an independent witness. No crawler, access-control bypass or full-text copying.",
+  "source_bodies_reviewed": 9,
+  "new_source_identities": 1,
+  "existing_identities_enriched": 8,
+  "source_grounded_propositions_added": 20,
+  "existing_enriched": [
+    {
+      "aid": 4666280,
+      "evidence_family_id": "evidence-family-rebbe-mother-exit-certificate-5706",
+      "propositions": 3,
+      "propositions_new": 3,
+      "alias_propositions_migrated": 0,
+      "text_access_url": "https://pnimi.org/page/1200760075",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמא, lines 85–98; Chabad.org Knowledge Base result page 17, lines 374–376."
+    },
+    {
+      "aid": 4666281,
+      "evidence_family_id": "original-letter-aid-4666281",
+      "propositions": 3,
+      "propositions_new": 0,
+      "alias_propositions_migrated": 3,
+      "text_access_url": "https://pnimi.org/page/1200760077",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמב, lines 85–91; Chabad.org Knowledge Base result page 17, lines 369–371."
+    },
+    {
+      "aid": 4666282,
+      "evidence_family_id": "original-letter-aid-4666282",
+      "propositions": 2,
+      "propositions_new": 2,
+      "alias_propositions_migrated": 0,
+      "text_access_url": "https://pnimi.org/page/1200760078",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמג, lines 85–110; Chabad.org Knowledge Base result page 17, lines 364–366."
+    },
+    {
+      "aid": 4666283,
+      "evidence_family_id": "original-letter-aid-4666283",
+      "propositions": 3,
+      "propositions_new": 3,
+      "alias_propositions_migrated": 0,
+      "text_access_url": "https://pnimi.org/page/1200760079",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמד, lines 83–100; Chabad.org Knowledge Base result page 17, lines 359–362."
+    },
+    {
+      "aid": 4666285,
+      "evidence_family_id": "original-letter-aid-4666285",
+      "propositions": 3,
+      "propositions_new": 3,
+      "alias_propositions_migrated": 0,
+      "text_access_url": "https://pnimi.org/page/1200760081",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמו, lines 85–112; Chabad.org Knowledge Base result page 17, lines 349–351."
+    },
+    {
+      "aid": 4666286,
+      "evidence_family_id": "original-letter-aid-4666286",
+      "propositions": 2,
+      "propositions_new": 2,
+      "alias_propositions_migrated": 0,
+      "text_access_url": "https://pnimi.org/page/1200760082",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמז, lines 87–100; Chabad.org Knowledge Base result page 17, lines 344–346."
+    },
+    {
+      "aid": 4666287,
+      "evidence_family_id": "original-letter-aid-4666287",
+      "propositions": 3,
+      "propositions_new": 3,
+      "alias_propositions_migrated": 0,
+      "text_access_url": "https://pnimi.org/page/1200760083",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמח, lines 84–101; direct Chabad.org reader returned a navigation shell."
+    },
+    {
+      "aid": 4666288,
+      "evidence_family_id": "original-letter-aid-4666288",
+      "propositions": 2,
+      "propositions_new": 2,
+      "alias_propositions_migrated": 0,
+      "text_access_url": "https://pnimi.org/page/1200760084",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמט, lines 85–109; direct Chabad.org reader returned a navigation shell."
+    }
+  ],
+  "new_sources": [
+    {
+      "aid": 4666284,
+      "id": "igrot-kodesh-v2-letter-245-aid-4666284",
+      "evidence_family_id": "shanghai-printing-sephardic-education-5706",
+      "language": "Yiddish",
+      "pipeline_status": "Parsed",
+      "text_access_url": "https://pnimi.org/page/1200760080",
+      "locator": "Pnimi, Igrot Kodesh vol. II, letter רמה, lines 84–106; Chabad.org Knowledge Base result page 17, lines 354–356; direct Chabad.org reader returned a navigation shell.",
+      "propositions": 2,
+      "independent_evidence_family_added": false
+    }
+  ],
+  "family_links_reconciled": [
+    {
+      "family": "evidence-family-rebbe-mother-exit-certificate-5706",
+      "members": [
+        4666256,
+        4666265,
+        4666269,
+        4666280,
+        4666304
+      ]
+    },
+    {
+      "family": "shanghai-printing-sephardic-education-5706",
+      "members": [
+        4666271,
+        4666278,
+        4666279,
+        4666284
+      ],
+      "note": "Four distinct letters in one chain; AID 4666284 explicitly points to unresolved letter ריג."
+    }
+  ],
+  "duplicate_resolution": {
+    "aliases_linked": [
+      {
+        "aid": 4666280,
+        "alias": "chabad-letter-4666280",
+        "canonical": "igrot-kodesh-v2-letter-241-aid-4666280"
+      },
+      {
+        "aid": 4666281,
+        "alias": "chabad-letter-4666281",
+        "canonical": "igrot-kodesh-v2-letter-242-aid-4666281"
+      }
+    ],
+    "checked_against": [
+      "canonical item paths",
+      "bulk-indexed-2026-09-24-001..006",
+      "bulk-indexed-2026-09-25-001",
+      "bulk-indexed-2026-09-26-001",
+      "bulk-indexed-2026-09-27-001..003"
+    ],
+    "result": "AID 4666284 absent from checked canonical and bulk inventories; it is a new item identity but joins the existing Shanghai family."
+  },
+  "access_blockers": {
+    "reader_shells": [
+      4666280,
+      4666281,
+      4666282,
+      4666283,
+      4666284,
+      4666285,
+      4666286,
+      4666287,
+      4666288
+    ],
+    "direct_reader": "Direct Chabad.org item routes returned navigation shells in the current reader. Publisher Knowledge Base excerpts were available for AIDs 4666280–4666286; full visible text for all nine letters was inspected through Pnimi pages. Pnimi is a secondary index and not an independent witness; AID 4666284 remains Parsed.",
+    "prior_acquisition": "The known runner-side HTTP 403 on 12 Chabad.org references remains documented. The crawler was not retried; data/acquisition/latest.json was not rewritten because no acquisition script ran.",
+    "fallback_used": [
+      "https://pnimi.org/page/1200760075",
+      "https://pnimi.org/page/1200760077",
+      "https://pnimi.org/page/1200760078",
+      "https://pnimi.org/page/1200760079",
+      "https://pnimi.org/page/1200760080",
+      "https://pnimi.org/page/1200760081",
+      "https://pnimi.org/page/1200760082",
+      "https://pnimi.org/page/1200760083",
+      "https://pnimi.org/page/1200760084"
+    ]
+  },
+  "retrieval_changes": {
+    "new_topic": "הדפסת ספרים בשנגחאי",
+    "cross_source_comparison": "Researcher mode may inspect multiple distinct letters within the Shanghai correspondence family while counting that family once.",
+    "note": "Added Yiddish/English book-publication aliases. Regular mode retains one item per Evidence Family; researcher mode may expose up to four distinct members from one family. Researcher claim witnesses expose item-level proposition locators. Readiness metrics aggregate distinct propositions across family members while counting each family once."
+  },
+  "metrics_before": {
+    "answer_eligible_unique_sources": 663,
+    "content_verified_unique_sources": 660,
+    "answer_eligible_propositions": 2022,
+    "canonical_unique_item_keys": 8958,
+    "verified_unique_item_keys": 7641,
+    "canonical_json_files": 432,
+    "content_review_queue_records": 1058
+  },
+  "expected_metrics_after_reconciliation": {
+    "answer_eligible_unique_sources": 666,
+    "content_verified_unique_sources": 663,
+    "answer_eligible_propositions": 2042,
+    "canonical_unique_item_keys": 8959,
+    "verified_unique_item_keys": 7641,
+    "canonical_json_files": 433,
+    "content_review_queue_records": 1057,
+    "evidence_family_files": 55
+  },
+  "reconciliation": {
+    "status": "pending",
+    "note": "Expected values reflect family-level deduplication across the Shanghai and Rebbe-mother correspondence chains; confirm from generated public metrics."
+  },
+  "quality_gate": {
+    "status": "pending"
+  },
+  "publication": {
+    "status": "pending",
+    "url": "https://malkashacham.github.io/maaneh-ledorot"
+  },
+  "safeguards": {
+    "crawler_retried": false,
+    "access_controls_bypassed": false,
+    "full_copyrighted_text_copied": false,
+    "translations_counted_as_independent": false,
+    "schedule_changed": false,
+    "audience_or_permissions_changed": false
+  }
+}
