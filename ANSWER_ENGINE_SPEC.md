@@ -60,18 +60,19 @@
 ## 5. Researcher mode — evidence analysis
 מצב חוקר הוא מוצר מחקרי שונה, לא CSS נוסף. הוא מתחיל בסקירה מסונתזת מורחבת ואז מוסיף, רק כאשר הנתונים מאפשרים:
 1. פירוק לטענות/תת־נושאים.
-2. evidence map בין טענה למקורות.
-3. הבחנות בין תקופות, קהלים, נסיבות וסוגי מקור.
-4. דפוסים חוזרים לצד חריגים, מתחים או הבדלים.
-5. מקורות בכיוונים שונים בלי לשטח אותם לקונצנזוס.
-6. provenance ברמת witness ו-scope של האימות.
-7. Pipeline status: Discovered / Indexed / Parsed / Linked / Verified.
-8. context completeness.
-9. שפת המקור; תרגום מסומן `derived` ואינו witness עצמאי.
-10. Evidence Family, מקבילות וכפילויות.
-11. primary source לעומת later publication / editorial processing / translation.
-12. `answered_well` ו-`insufficient_evidence` — אילו חלקים בשאלה נענו ואילו לא.
-13. רשימת מקורות רחבה יותר מן המצב הרגיל.
+2. evidence map בין טענה למקורות, כולל locator לכל witness.
+3. claim-support map המציג לכל טענה את מספר העדים, מספר משפחות הראיות העצמאיות ומספר העדים הנגזרים/לא-עצמאיים; ספירת משפחות היא מדד provenance בלבד ואינה הוכחה לסינתזה סמנטית או לדפוס רוחבי.
+4. הבחנות בין תקופות, קהלים, נסיבות וסוגי מקור.
+5. דפוסים חוזרים לצד חריגים, מתחים או הבדלים.
+6. מקורות בכיוונים שונים בלי לשטח אותם לקונצנזוס.
+7. provenance ברמת witness ו-scope של האימות.
+8. Pipeline status: Discovered / Indexed / Parsed / Linked / Verified.
+9. context completeness.
+10. שפת המקור; תרגום מסומן `derived` ואינו witness עצמאי.
+11. Evidence Family, מקבילות וכפילויות.
+12. primary source לעומת later publication / editorial processing / translation.
+13. `answered_well` ו-`insufficient_evidence` — אילו חלקים בשאלה נענו ואילו לא.
+14. רשימת מקורות רחבה יותר מן המצב הרגיל.
 
 ## 6. Citation entailment
 Citation אינו קישוט. לפני הצגה יש לבדוק: אילו מילים בטענה נתמכות בפועל במקור? אם המקור תומך רק בחלק, יש לצמצם את הטענה או להוסיף מקור מתאים. מקור contextual בלבד אינו citation לטענה תוכנית.
@@ -92,5 +93,5 @@ Dedup נעשה לפני ספירת תמיכה ולפני ניסוח דפוס:
 - מצב חוקר משכפל את המצב הרגיל ללא עומק ראייתי נוסף.
 - המערכת ממציאה הקשר כדי להפוך מקור חלקי לתשובה מלאה.
 
-## 9. Current implementation gap
-ה-Alpha הנוכחי משתמש עדיין ב-token/substring scoring על `search_text`, title ו-summary. הוא שלב candidate retrieval בלבד ואינו עומד עדיין ב-relevance gate וב-proposition reranking המוגדרים כאן. מצב חוקר הנוכחי חושף metadata טכני בלבד ולכן אינו עומד בדרישת researcher-depth differential. אלה פערי היישום בעדיפות העליונה.
+## 9. Current implementation status
+המימוש הנוכחי משתמש ב-token/substring scoring כשלב candidate retrieval, ולאחריו proposition-level direct-support gate ו-reranking מודע לגיוון Evidence Families. דפוס רוחבי מחייב התאמה בין טענות במשפחות עצמאיות; תרגומים ועדים נגזרים אינם נספרים כעצמאיים. Citation validation היא ברמת טענה ומקור, וגבולות ההקשר נשמרים ברמת witness. מצב חוקר מוסיף evidence map, claim-support map, provenance, context completeness, distinctions וניתוח מתחים. המגבלה שנותרה: התאמת טענות בין מקורות עדיין מבוססת כללים/דמיון לקסיקלי ולא מודל entailment סמנטי; ספירת משפחות אינה תחליף לבדיקה סמנטית.
