@@ -882,11 +882,11 @@ function buildDailyRoutineSynthesis(selected){
    const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());
    return{text:String(p),source_locator:arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null};
   });
-  basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,primary_secondary_status:e.primary_secondary_status||null,propositions});
+  basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,witness_type:e.witness_type||null,provenance:e.witness_provenance||e.provenance?.source_witness||null,verification_scope:e.verification_scope||null,primary_secondary_status:e.primary_secondary_status||null,propositions});
  });
  const families=[...new Set(basis.map(x=>x.evidence_family_id).filter(Boolean))];
  if(families.length<3)return null;
- return{kind:'cross_family_research_synthesis',topic:'daily_study_prayer_routine',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:'בשלוש איגרות נפרדות לפחות מופיעות דוגמאות לשילוב פעולות רוחניות קבועות בסדר היום: קריאת שמע לפני השינה והשלמת לימוד; אמירת תהילים לאחר תפילת שחרית ולימוד פרשת השבוע; וכן צדקה יומית, תהילים ובדיקת תפילין. הדפוס המשותף הוא עיגון של לימוד, תפילה ומעשה קבוע בתוך שגרת היום — לא לוח זמנים אחיד ולא הוראה כללית אחת לכל אדם.',source_numbers:basis.map(x=>x.source_number),evidence_family_ids:families,basis,method:'Thematic synthesis across distinct inspected correspondence families: each cited letter contains at least one recurring daily practice. The practices differ by recipient and context; no uniform schedule is inferred.',limits:['הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.','האיגרות הן מענים אישיים לנמענים שונים; אין להסיק מהן תוכנית יומית אחידה לכל אדם.','בחלק מן הפריטים מדובר בפרסום מו״ל של תשובת מזכירות בשם הרבי; חתימה אוטוגרפית והמכתבים הנכנסים לא נבדקו.','הסינתזה מוגבלת לגוף הטקסט שנסקר ולתמציות המקוריות; אין בה הכרעה הלכתית.']};
+ return{kind:'cross_family_research_synthesis',topic:'daily_study_prayer_routine',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:'בשלוש משפחות תיעוד נפרדות לפחות, ובהן איגרות ותשובות מזכירות, מופיעות דוגמאות לשילוב פעולות רוחניות קבועות בסדר היום: קריאת שמע לפני השינה והשלמת לימוד; אמירת תהילים לאחר תפילת שחרית ולימוד פרשת השבוע; וכן צדקה יומית, תהילים ובדיקת תפילין. הדפוס המשותף הוא עיגון של לימוד, תפילה ומעשה קבוע בתוך שגרת היום — לא לוח זמנים אחיד ולא הוראה כללית אחת לכל אדם.',source_numbers:basis.map(x=>x.source_number),evidence_family_ids:families,basis,method:'Thematic synthesis across distinct inspected correspondence families: each cited letter contains at least one recurring daily practice. The practices differ by recipient and context; no uniform schedule is inferred.',limits:['הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.','האיגרות הן מענים אישיים לנמענים שונים; אין להסיק מהן תוכנית יומית אחידה לכל אדם.','בחלק מן הפריטים מדובר בפרסום מו״ל של תשובת מזכירות בשם הרבי; חתימה אוטוגרפית והמכתבים הנכנסים לא נבדקו.','הסינתזה מוגבלת לגוף הטקסט שנסקר ולתמציות המקוריות; אין בה הכרעה הלכתית.']};
 }
 function buildPatternSynthesis(selected,u){
  if(!u.topics.includes('התמודדות עם קשיים ומכשולים'))return null;
@@ -959,7 +959,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  let answerEvidence=usable;
  if(dailyStudyPrayerQuestion){
-  answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e)&&classifyWitness(e)!=='derived');
+  answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
   const dailyFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(dailyFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_daily_routine_families',claims:[],sources:answerEvidence,answered_well:['נמצאו מענים אישיים על הרגלים יומיים'],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות נפרדות עם תוכן שנבדק על סדרי לימוד ותפילה יומיים.']};
  }else if(understanding.intent==='pattern'){
