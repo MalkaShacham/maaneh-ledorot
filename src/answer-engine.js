@@ -816,6 +816,10 @@ function isHebrewSource(e){
  const language=norm([e?.language,e?.original_language,e?.proposition_language].join(' '));
  return /hebrew|עברית/.test(language);
 }
+function dailyRoutinePracticeCount(source){
+ const body=norm(arr(source?.response_propositions).join(' '));
+ return ['תהילים','תפילה','קריאת שמע','לימוד','חומש','צדקה','טלית קטן','ציצית','תפילין'].filter(term=>body.includes(term)).length;
+}
 function supportsDailyStudyPrayerRoutine(source){
  const body=norm(arr(source?.response_propositions).join(' '));
  const time=['בכל יום','יומית','יומי','לאחר תפילת שחרית','לפני תפילת שחרית','לפני השינה','לפני קריאת שמע','למחרת','במשך היום'];
@@ -881,7 +885,7 @@ function buildDailyRoutineSynthesis(selected){
  });
  const families=[...new Set(basis.map(x=>x.evidence_family_id).filter(Boolean))];
  if(families.length<3)return null;
- return{kind:'cross_family_research_synthesis',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:'בשלוש איגרות נפרדות לפחות מופיעות דוגמאות לשילוב פעולות רוחניות קבועות בסדר היום: קריאת שמע לפני השינה והשלמת לימוד; אמירת תהילים לאחר תפילת שחרית ולימוד פרשת השבוע; וכן צדקה יומית, תהילים ובדיקת תפילין. הדפוס המשותף הוא עיגון של לימוד, תפילה ומעשה קבוע בתוך שגרת היום — לא לוח זמנים אחיד ולא הוראה כללית אחת לכל אדם.',source_numbers:basis.map(x=>x.source_number),evidence_family_ids:families,basis,method:'Thematic synthesis across distinct inspected correspondence families: each cited letter contains at least one recurring daily practice. The practices differ by recipient and context; no uniform schedule is inferred.',limits:['הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.','האיגרות הן מענים אישיים לנמענים שונים; אין להסיק מהן תוכנית יומית אחידה לכל אדם.','בחלק מן הפריטים מדובר בפרסום מו״ל של תשובת מזכירות בשם הרבי; חתימה אוטוגרפית והמכתבים הנכנסים לא נבדקו.','הסינתזה מוגבלת לגוף הטקסט שנסקר ולתמציות המקוריות; אין בה הכרעה הלכתית.']};
+ return{kind:'cross_family_research_synthesis',topic:'daily_study_prayer_routine',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:'בשלוש איגרות נפרדות לפחות מופיעות דוגמאות לשילוב פעולות רוחניות קבועות בסדר היום: קריאת שמע לפני השינה והשלמת לימוד; אמירת תהילים לאחר תפילת שחרית ולימוד פרשת השבוע; וכן צדקה יומית, תהילים ובדיקת תפילין. הדפוס המשותף הוא עיגון של לימוד, תפילה ומעשה קבוע בתוך שגרת היום — לא לוח זמנים אחיד ולא הוראה כללית אחת לכל אדם.',source_numbers:basis.map(x=>x.source_number),evidence_family_ids:families,basis,method:'Thematic synthesis across distinct inspected correspondence families: each cited letter contains at least one recurring daily practice. The practices differ by recipient and context; no uniform schedule is inferred.',limits:['הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.','האיגרות הן מענים אישיים לנמענים שונים; אין להסיק מהן תוכנית יומית אחידה לכל אדם.','בחלק מן הפריטים מדובר בפרסום מו״ל של תשובת מזכירות בשם הרבי; חתימה אוטוגרפית והמכתבים הנכנסים לא נבדקו.','הסינתזה מוגבלת לגוף הטקסט שנסקר ולתמציות המקוריות; אין בה הכרעה הלכתית.']};
 }
 function buildPatternSynthesis(selected,u){
  if(!u.topics.includes('התמודדות עם קשיים ומכשולים'))return null;
@@ -953,7 +957,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  let answerEvidence=usable;
- if(dailyStudyPrayerQuestion){console.log('DAILY_ROUTINE_ENGINE_DEBUG',{query:understanding.query,intent:understanding.intent,usable:usable.map(e=>({aid:e.aid,family:e.evidence_family_id,props:e.response_propositions})),matched:usable.filter(e=>supportsDailyStudyPrayerRoutine(e)).map(e=>({aid:e.aid,family:e.evidence_family_id}))});
+ if(dailyStudyPrayerQuestion){
   answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
   const dailyFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(dailyFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_daily_routine_families',claims:[],sources:answerEvidence,answered_well:['נמצאו מענים אישיים על הרגלים יומיים'],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות נפרדות עם תוכן שנבדק על סדרי לימוד ותפילה יומיים.']};
@@ -974,7 +978,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(niglehPnimiyusQuestion){const priority=usable.filter(e=>supportsNiglehPnimiyus(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(anniversaryBlessingQuestion){const priority=usable.filter(e=>supportsWeddingAnniversaryBlessing(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(businessSynagogueQuestion){const priority=usable.filter(e=>supportsBusinessExpansion(e)||supportsSynagogueWellsprings(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
- if(dailyStudyPrayerQuestion){const priority=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
+ if(dailyStudyPrayerQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a)||propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score);}
  const queryBudget=(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion||dailyStudyPrayerQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
  const candidates=answerEvidence.slice(0,queryBudget.sources),synthesized=synthesizeClaims(candidates,understanding,queryBudget.claims),initialCoverage=coverageFor(candidates,understanding);
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};

@@ -467,7 +467,7 @@ assert.equal(restored5100487.evidence_family_id,'igrot-letter-5719-2-adar-ii-ו�
 assert(restored5100487.response_propositions.length>=4);
 const dailyRoutineQ='מה הדפוס החוזר באיגרות לגבי סדרי לימוד ותפילה בחיי היום יום?';
 for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,dailyRoutineQ,{mode});console.log('DAILY_ROUTINE_TEST_DEBUG',mode,{query:m.understanding?.query,intent:m.understanding?.intent,answerable:m.answerable,reason:m.reason,sources:m.sources?.map(e=>({aid:e.aid,family:e.evidence_family_id}))});
+ const m=buildAnswerModel(idx.entries,dailyRoutineQ,{mode});
  assert(m.answerable,mode+': daily study/prayer pattern must be supported by multiple inspected families');
  assert(m.sources.length>=3,mode+': daily routine synthesis must use at least three source families');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': translations or aliases must not inflate the daily routine family count');

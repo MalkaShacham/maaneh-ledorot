@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch073-semantic-pattern-v27';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch073-semantic-pattern-v28';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -351,11 +351,15 @@ export function contextBoundary(model,entailment){
   });
 }
 
+function supportsDailyRoutineProposition(p){
+ const b=norm(p);
+ return ['תהילים','תפילה','קריאת שמע','לימוד','חומש','צדקה','טלית קטן','ציצית','תפילין'].some(term=>b.includes(term));
+}
 function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
  const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[];
  for(const n of numbers){
-  const e=sources[n-1],supported=!!e&&arr(e._supporting_propositions).some(supportsDifficultyPattern);
+  const e=sources[n-1],supported=!!e&&arr(e._supporting_propositions).some(s.topic==='daily_study_prayer_routine'?supportsDailyRoutineProposition:supportsDifficultyPattern);
   if(!e||!supported||e._independent_witness===false||!e.evidence_family_id)unsupported.push(n);
   else families.add(String(e.evidence_family_id));
  }
