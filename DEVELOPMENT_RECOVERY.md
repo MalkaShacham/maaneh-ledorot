@@ -398,3 +398,8 @@ The first structural gate after adding printed-index locators correctly rejected
 ### Actual proposition count reconciled to 2707 (2026-11-14)
 
 The CI reconciliation measured 833 answer-eligible unique Evidence Families, 830 content-verified families and 2,707 answer-eligible propositions. The first batch-082 expectation of 2,704 was short by three because the improved duplicate-AID source priority exposed three propositions already present in older inspected records; batch 082 itself still adds exactly 16 new propositions and six new source identities. The expected-after figure is corrected to 2,707, with the +3 reconciliation adjustment explicitly separated from new content. No source or proposition was promoted solely from an index scan.
+
+
+### AID 4812708 publisher-text witness clarified (2026-11-14)
+
+AID 4812708's seven existing paraphrases include the conditional statement that, if Israel acts with love, the world will be refined and Mashiach revealed. The regression assertion now matches the inspected wording (`העולם יזדכך` and `משיח`), rather than an absent noun phrase. The item is explicitly marked as a publisher-attributed original-language Hebrew letter (`witness_type=published_hebrew_letter_text`, `independent_witness=true`); this is an independent published text witness, not autograph authentication, and no secretary signature was reported.

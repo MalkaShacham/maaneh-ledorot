@@ -957,9 +957,9 @@ for(const [aid,minProps,family,language] of batch079Required){
  assert.equal(e.canonical_file,batch079Path,'AID '+aid+' must be a distinct canonical identity, not a duplicate alias');
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
 }
-console.log('AID4812708_INDEX_DEBUG',JSON.stringify(idx.entries.filter(e=>sourceAID(e)==='4812708').map(e=>({canonical_file:e.canonical_file,id:e.id,aid:e.aid,proposition_count:e.response_propositions?.length,proposition_origin:e.proposition_origin,proposition_verification:e.proposition_verification,proposition_source_locator:e.proposition_source_locator,witness_type:e.witness_type,independent_witness:e.independent_witness,verification_scope:e.verification_scope,context_status:e.context_status,integrity_issues:e._evidence_integrity_issues,first:e.response_propositions?.[0],last:e.response_propositions?.slice(-1)[0]})),null,2));
 const enriched4812708=idx.entries.find(e=>sourceAID(e)==='4812708');
-assert(enriched4812708&&enriched4812708.response_propositions.some(p=>p.includes('זיכוך העולם')&&p.includes('משיח')));
+assert(enriched4812708&&enriched4812708.response_propositions.some(p=>p.includes('העולם יזדכך')&&p.includes('משיח')));
+assert.equal(enriched4812708.witness_type,'published_hebrew_letter_text');assert.equal(enriched4812708.independent_witness,true);
 assert.equal(enriched4812708.evidence_family_id,'igrot-letter-5712-25-sivan-aid4812708');
 assert.equal(enriched4812708.canonical_file,'data/items/content-research-batch-065-2026-11-13.json');
 const enriched5071118=idx.entries.find(e=>sourceAID(e)==='5071118');
