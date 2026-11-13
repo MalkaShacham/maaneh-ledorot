@@ -80,21 +80,21 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled_pending_commit",
+    "status": "pending_reconciliation",
     "source": "data/public-metrics.json",
     "generated": "2026-11-13",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "answer_readiness": {
       "before": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
+        "answer_eligible_unique_sources": 799,
+        "content_verified_unique_sources": 796,
+        "answer_eligible_propositions": 2627
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 804,
-        "content_verified_unique_sources": 801,
-        "answer_eligible_propositions": 2654
+        "answer_eligible_unique_sources": 808,
+        "content_verified_unique_sources": 805,
+        "answer_eligible_propositions": 2647
       },
       "actual_after": {
         "answer_eligible_unique_sources": 799,
@@ -169,56 +169,30 @@
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
     "last_completed_batch": "2026-11-13-content-batch-077",
     "last_batch_summary": {
-      "batch_id": "078",
-      "reviewed_items": 14,
-      "source_bodies_inspected": 14,
-      "new_source_identities": 12,
-      "new_rebbe_letter_identities": 11,
-      "new_other_document_identities": 1,
-      "new_secretariat_document_identities": 0,
-      "new_metadata_only_identities": 0,
-      "duplicate_alias_identities": 0,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 2,
-      "new_response_propositions_added": 23,
-      "existing_response_propositions_added": 1,
-      "response_propositions_added": 24,
-      "answer_eligible_source_families_added": 12,
-      "source_languages": {
-        "Hebrew": 7,
-        "Yiddish": 4,
-        "English": 1
-      },
-      "rechecked_languages": {
-        "Hebrew": 2
-      },
+      "batch_id": "079",
+      "batch_file": "data/items/content-research-batch-079-2026-11-13.json",
+      "generated": "2026-11-13",
+      "records_reviewed": 15,
+      "source_bodies_inspected": 15,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 2,
+      "existing_identities_rechecked": 4,
+      "new_response_propositions": 18,
+      "existing_response_propositions_added": 2,
       "metrics_before": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
-      },
-      "metrics_after_expected": {
-        "answer_eligible_unique_sources": 804,
-        "content_verified_unique_sources": 801,
-        "answer_eligible_propositions": 2654
-      },
-      "metrics_after_actual": {
         "answer_eligible_unique_sources": 799,
         "content_verified_unique_sources": 796,
         "answer_eligible_propositions": 2627
       },
-      "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 12,
-        "content_verified_unique_sources": 12,
-        "answer_eligible_propositions": 24
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 808,
+        "content_verified_unique_sources": 805,
+        "answer_eligible_propositions": 2647
       },
-      "blocked_candidates": 12,
-      "status": "reconciled_with_variance",
-      "metrics_delta_actual": {
-        "answer_eligible_unique_sources": 7,
-        "content_verified_unique_sources": 7,
-        "answer_eligible_propositions": -3
-      }
+      "status": "pending_reconciliation",
+      "blocked_candidate_count": 5,
+      "crawler_retry": false,
+      "method": "Fifteen publisher item bodies inspected in one run: nine new candidate letters, two in-place identity enrichments and four rechecks. Nine new candidates span Hebrew and Yiddish; no translated witness is counted as independent."
     },
     "last_run_note": "Batch 078 submitted for reconciliation: 12 new public source identities across Hebrew, Yiddish and English; 23 new non-verbatim source-grounded propositions; one existing identity enriched with one proposition; two existing identities rechecked. Twelve alternative candidates redirected to navigation/summary shells and were excluded. No crawler retry, access-control bypass, scan-only verification or full-text copying. Reconciliation and content-readiness tests pending.",
     "last_batch_blocked_count": 12,
