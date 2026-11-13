@@ -85,17 +85,15 @@
     "reconciliation_commit": null,
     "search_index_refresh_commit": null,
     "answer_readiness": {
-      "answer_eligible_unique_sources": {
-        "before": 690,
-        "expected_after": 698
+      "before": {
+        "answer_eligible_unique_sources": 734,
+        "content_verified_unique_sources": 731,
+        "answer_eligible_propositions": 2486
       },
-      "content_verified_unique_sources": {
-        "before": 687,
-        "expected_after": 695
-      },
-      "answer_eligible_propositions": {
-        "before": 2386,
-        "expected_after": 2404
+      "expected_after": {
+        "answer_eligible_unique_sources": 744,
+        "content_verified_unique_sources": 741,
+        "answer_eligible_propositions": 2509
       }
     },
     "quality_gate": {
@@ -106,7 +104,7 @@
       "latest_saved_report_passed": true,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "The preceding run failed at test_content_readiness.mjs on the synagogue-dissemination query; a topic-alias collision was corrected and explicit positive/negative retrieval regressions were added. Awaiting a commit-bound run.",
+      "note": "נוספו בדיקות רגרסיה חדשות לסינתזה מרובת מקורות בנושא הפצת המעיינות, לאחזור עברית→יידיש ולמכתב אנגלי לנשיא פורד; ממתינים לריצת commit-bound.",
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": 43335370438
@@ -150,37 +148,46 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-068",
+    "current_batch": "2026-11-13-content-batch-071",
     "required_agent_action": "Continue item-level source review, prioritizing original-language Hebrew/Yiddish/English witnesses and additional document types; keep translations linked to their underlying Evidence Family and preserve partial-context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-068",
+    "last_completed_batch": "2026-11-13-content-batch-071",
     "last_batch_summary": {
-      "reviewed_items": 9,
-      "new_source_identities": 9,
-      "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 0,
+      "reviewed_items": 11,
+      "source_bodies_inspected": 11,
+      "new_source_identities": 10,
+      "new_metadata_only_identities": 0,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 1,
       "existing_identities_canonicalized": 0,
-      "new_response_propositions_added": 18,
-      "existing_response_propositions_added": 0,
-      "response_propositions_added": 18,
+      "new_response_propositions_added": 22,
+      "existing_response_propositions_added": 1,
+      "response_propositions_added": 23,
+      "source_languages": {
+        "Hebrew": 8,
+        "Yiddish": 1,
+        "English": 1
+      },
       "metrics_before": {
-        "answer_eligible_unique_sources": 698,
-        "content_verified_unique_sources": 695,
-        "answer_eligible_propositions": 2404
+        "answer_eligible_unique_sources": 734,
+        "content_verified_unique_sources": 731,
+        "answer_eligible_propositions": 2486
       },
       "metrics_after_expected": {
-        "answer_eligible_unique_sources": 707,
-        "content_verified_unique_sources": 704,
-        "answer_eligible_propositions": 2422
+        "answer_eligible_unique_sources": 744,
+        "content_verified_unique_sources": 741,
+        "answer_eligible_propositions": 2509
       },
       "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 9,
-        "content_verified_unique_sources": 9,
-        "answer_eligible_propositions": 18
+        "answer_eligible_unique_sources": 10,
+        "content_verified_unique_sources": 10,
+        "answer_eligible_propositions": 23
       },
+      "blocked_candidates": 5,
+      "excluded_translated_nonindependent_items": 1,
       "status": "content_committed_reconciliation_pending"
     },
-    "last_run_note": "Batch 068 reviewed nine public source bodies: five Chabad-Lubavitch Library Hebrew item pages through search-visible body excerpts and four Chabad.org/TheRebbe.org English translation pages with line-addressable bodies. Added nine new letter identities and 18 non-verbatim source-grounded propositions. One Hebrew item is a free translation from Russian and four English items are translations from Hebrew; all five are marked non-independent and assigned one Evidence Family per underlying letter, so any future original-language witness must join that family. The five Library page opens returned zero readable lines; claims are limited to visible indexed excerpts. AID 4666220 redirected to a rewritten Torah Texts shell and was excluded; Yiddish discovery found no item-level transcript. No crawler retry, access-control bypass or full-text copying. Dedup checked exact AIDs/URLs and letter numbers against current item paths, queue, bulk-indexed files and batches 061–067; a substring match for תשפה was rejected as a false duplicate because the existing item is יִתְשפה in volume 28, not תשפה in volume 4. The retrieval regression was traced to the generic 'הפצת המעיינות' alias in 'הרחבת שיעור חסידות'; the broad alias was removed and the synagogue-topic regression test strengthened. Before reconciliation: 698 answer-eligible families, 695 content-verified families, 2404 propositions; expected after: 707, 704, 2422. Reconciliation, quality gate and publication are pending.",
-    "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 redirected to a rewritten Torah Texts summary shell without inspectable item-level body text and was excluded. Yiddish discovery returned no inspectable item-level transcript. Chabad Library direct opens returned zero readable lines; the five admitted items are limited to body excerpts exposed by public search."
+    "last_run_note": "Batch 071 inspected ten new publisher item bodies (eight Hebrew, one Yiddish, one English) and re-inspected/enriched existing AID 5100487. Added 22 new non-verbatim propositions and one additional proposition to the existing Evidence Family. New source bodies cover personal character correction, dissemination of inner Torah, Chassidic classes, freedom and all-day service, integrating profession with divine service, outreach and the role of impure animals, a Yiddish melody exchange, administrative archival correspondence, and a public English letter to President Ford. Five pages (including AID 4666220) redirected to rewritten Torah Texts shells without inspectable bodies; alternative direct publisher item pages were inspected in the same run. AID 63794 was excluded because it is explicitly a freely translated excerpt and the Hebrew original was not inspected. No crawler retry, access-control bypass, full-text copying, audience change or permission change. Expected readiness before/after: 734→744 answer-eligible Evidence Families, 731→741 content-verified families, 2486→2509 propositions. Reconciliation, commit-bound quality gate and publication check pending.",
+    "last_batch_blocked_count": 5,
+    "last_batch_blocked_reason": "Five candidate pages (AID 4666220, 5054489, 5100603, 5100244, 5071021) redirected to rewritten Torah Texts shells or navigation without inspectable item-level body text; they were excluded. Alternative accessible publisher pages supplied ten new bodies. AID 63794 was excluded separately as a freely translated excerpt with no inspected Hebrew original."
   }
 }

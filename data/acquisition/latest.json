@@ -7,6 +7,82 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "reviewed_at": "2026-11-13T12:44:25+02:00",
+    "status": "completed",
+    "batch_id": "071",
+    "reviewed_item_count": 11,
+    "source_bodies_inspected": 11,
+    "new_source_identities": 10,
+    "new_metadata_only_identities": 0,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 1,
+    "existing_identities_canonicalized": 0,
+    "new_paraphrase_entries": 23,
+    "answer_eligible_source_families_added": 10,
+    "blocked_candidate_count": 5,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "העמוד הופנה למעטפת Torah Texts מסוכמת ללא גוף האיגרת הניתן לבדיקה; לא נוצרה ממנו תמצית."
+      },
+      {
+        "aid": 5054489,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5054489/jewish/page.htm",
+        "reason": "הפניה למעטפת Torah Texts/ניווט ללא גוף מכתב קריא; לא הוכנס כעד תוכן."
+      },
+      {
+        "aid": 5100603,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100603/jewish/page.htm",
+        "reason": "הפניה למעטפת Torah Texts ללא גוף מכתב קריא; נבדקו במקומה פריטי פרסום אחרים עם גוף נגיש."
+      },
+      {
+        "aid": 5100244,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100244/jewish/page.htm",
+        "reason": "הפניה למעטפת Torah Texts/ניווט ללא גוף מכתב קריא; לא הוכנס כעד תוכן."
+      },
+      {
+        "aid": 5071021,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5071021/jewish/page.htm",
+        "reason": "הפניה למעטפת Torah Texts ללא גוף מכתב קריא; נבחרו פריטי מכתב אחרים שניתן היה לבדוק ישירות."
+      }
+    ],
+    "excluded_candidates": [
+      {
+        "aid": 63794,
+        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/63794/jewish/Art.htm",
+        "reason": "העמוד מציין במפורש שזהו קטע בתרגום חופשי ממכתב בכרך ד׳ עמ׳ 222–224; המקור העברי לא נבדק, ולכן לא נרשם כעד עצמאי ולא נוסף למניין המשפחות."
+      }
+    ],
+    "method": "Manual public web search/open. Ten new source identities were inspected at item-body level (eight Hebrew, one Yiddish, one English); one existing Hebrew identity (AID 5100487) was re-inspected and enriched with one additional proposition. No crawler retry, access-control bypass or full-text copying.",
+    "deduplication_check": "עשרת ה-AIDs החדשים נבדקו מול 9,028 מפתחות המקור במדד הציבורי, 1,050 פריטי תור ההמתנה, קבצי הפריטים והאצוות 055–070; לא נמצא AID/URL כפול. לכל מכתב חדש הוקצתה Evidence Family נפרדת. AID 63794 הוצא משום שהוא קטע מתורגם חופשי ממכתב בכרך ד׳, עמ׳ 222–224, והמקור העברי לא נבדק. AID 5100487 הועשר באותה משפחה קיימת ולא נספר כמקור חדש.",
+    "source_languages": [
+      "Hebrew",
+      "Yiddish",
+      "English"
+    ],
+    "source_types": [
+      "published Hebrew correspondence",
+      "published Yiddish correspondence",
+      "published English public letter",
+      "secretary-signed response",
+      "letter completed from photograph",
+      "administrative/archival correspondence"
+    ],
+    "limitations": [
+      "המכתבים הנכנסים אינם מוצגים; הקשר השאלות חלקי גם כאשר גוף האיגרת המפורסם שלם.",
+      "לא נבדקו אוטוגרפים או עותקי מזכירות פיזיים; באיגרת 4645967 המו״ל מציין שמקורה בכתב יד, ובאיגרות 5071052 ו-5054461 מצוין שהנוסח הושלם מצילום, אך התמונות לא נבדקו.",
+      "AID 5054240: המו״ל מציין שטופס דומה נשלח לכמה; אין לראות בו מכתב אישי ייחודי לכל פרט.",
+      "AID 4731105: ההערכה שלא צפויה מלחמה היא היסטורית ומתוארכת לשנת תש״י בלבד.",
+      "AID 4783876: הייחוס של הניגון לר׳ אברהם המלאך מובא כדיווח הנמען ולא אומת עצמאית.",
+      "AID 6429866: גוף המכתב האנגלי נבדק, אך מכתב הנשיא המקורי והאוטוגרף לא נבדקו.",
+      "AID 63794 הוא תרגום חופשי של קטע ממכתב אחר, ולכן הוצא ולא נספר כעד עצמאי."
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false
+  },
+  "previous_manual_web_review": {
     "reviewed_at": "2026-11-13T12:15:00+02:00",
     "status": "completed",
     "batch_id": "070",
@@ -65,7 +141,7 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "previous_manual_web_review": {
+  "earlier_manual_web_review": {
     "reviewed_at": "2026-11-13T10:35:56+02:00",
     "status": "completed",
     "batch_id": "069",
@@ -126,7 +202,7 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "earlier_manual_web_review": {
+  "earlier_manual_web_review_2": {
     "reviewed_at": "2026-11-13T07:00:00+02:00",
     "status": "completed",
     "batch_id": "067",
