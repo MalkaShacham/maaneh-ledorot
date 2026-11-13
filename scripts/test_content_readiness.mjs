@@ -888,9 +888,9 @@ for(const mode of ['regular','researcher']){
  assert(m.sources.some(e=>sourceAID(e)==='5100351'&&e._independent_witness===true));
 }
 const publisherAttributedSadnessItem=idx.entries.find(e=>sourceAID(e)==='5071054');
-assert(publisherAttributedSadnessItem&&publisherAttributedSadnessItem.witness_type==='published_hebrew_letter_text'&&publisherAttributedSadnessItem._independent_witness===true,'AID 5071054 must remain a publisher-attributed Hebrew letter, not be confused with a secretary-signed response');
+assert(publisherAttributedSadnessItem&&publisherAttributedSadnessItem.witness_type==='published_hebrew_letter_text'&&publisherAttributedSadnessItem.independent_witness===true,'AID 5071054 must remain a publisher-attributed Hebrew letter, not be confused with a secretary-signed response');
 const publisherAttributedMoodItem=idx.entries.find(e=>sourceAID(e)==='5100351');
-assert(publisherAttributedMoodItem&&publisherAttributedMoodItem.witness_type==='published_hebrew_letter_text'&&publisherAttributedMoodItem._independent_witness===true,'AID 5100351 must remain a publisher-attributed Hebrew letter, not be confused with a secretary-signed response');
+assert(publisherAttributedMoodItem&&publisherAttributedMoodItem.witness_type==='published_hebrew_letter_text'&&publisherAttributedMoodItem.independent_witness===true,'AID 5100351 must remain a publisher-attributed Hebrew letter, not be confused with a secretary-signed response');
 const directMoodQuestion='מה כתב הרבי על עצבות ומיעוט חיות בלימוד?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,directMoodQuestion,{mode});
