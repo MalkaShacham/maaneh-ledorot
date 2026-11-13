@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה למה מדוע הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין אגרות איגרות רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך לפי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה למה מדוע הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין אגרות איגרות מענה מזכירות מזכיר מתועד תיעוד רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך לפי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s)||s==='מספר')return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
@@ -360,6 +360,7 @@ export function understandQuestion(q){
  let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
  // Multi-clause Hebrew phrasing can split a topic's canonical phrase (e.g. "תוספת אברכים והרחבת שיעור חסידות"). Treat the conjunction as one specific topic so generic livelihood/business matches cannot leak into the answer.
  if(containsTerm(query,'תוספת אברכים')&&containsTerm(query,'שיעור חסידות'))topics=['הרחבת שיעור חסידות'];
+ if(containsTerm(query,'מענה המזכירות')||containsTerm(query,'מענה מזכירות'))topics=topics.filter(t=>t!=='חתימת מזכירות והכתבה');
  if(topics.includes('התחייבות לצדקה בסכום נקוב'))topics=topics.filter(t=>t!=='צדקה ולימוד');
  if(topics.includes('כתבי יד משה יצחק מיאס')&&!['מיאס','משה יצחק'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='כתבי יד משה יצחק מיאס');
  if(topics.includes('צעירי אגודת ישראל דוגמה חיה')&&!['צעירי אגודת ישראל','ועידת צעירי','משבר הדור הצעיר'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='צעירי אגודת ישראל דוגמה חיה');
