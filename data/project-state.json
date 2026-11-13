@@ -68,7 +68,7 @@
   ],
   "next_work": [
     "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
-    "Inspect remaining pending AIDs 4666211, 4666265, 4666267, 4666268 and 4666270 only if a public body becomes available; do not infer from title or ID.",
+    "Inspect remaining inaccessible AIDs 4666265, 4666267, 4666268 and 4666270 only if an inspectable public body becomes available; do not infer from titles or IDs.",
     "Expand event-level Evidence Family links when original-language transcripts, audio or video of already indexed talks become available.",
     "Adversarially test proposition relevance, claim-local citation entailment, context boundaries and researcher-mode witness distinctions on both answer modes.",
     "Continue reconciling the live public-search index, metrics and content-readiness test after each content batch."
@@ -143,7 +143,7 @@
     "required_agent_action": "Continue direct public-body inspection across Hebrew, Yiddish and English; prioritize pending AIDs whose publisher pages expose body text, preserve Evidence Family identity and translation dependency, run reconciliation and both answer modes, and do not retry the known 403 crawler.",
     "last_completed_batch": "2026-11-13-content-batch-062",
     "last_batch_summary": {
-      "reviewed_items": 10,
+      "reviewed_items": 15,
       "new_source_identities": 9,
       "existing_identities_enriched": 1,
       "response_propositions_added": 20,
@@ -161,17 +161,19 @@
         "answer_eligible_unique_sources": 663,
         "content_verified_unique_sources": 660,
         "answer_eligible_propositions": 2022,
-        "canonical_unique_item_keys": 8959,
-        "verified_unique_item_keys": 7642,
+        "canonical_unique_item_keys": 8957,
+        "verified_unique_item_keys": 7640,
         "canonical_json_files": 432,
         "evidence_family_files": 55,
-        "content_review_queue_records": 1059
+        "content_review_queue_records": 1058
       },
       "metrics_after": null,
       "reconciliation_commit": null,
       "merge_commit": null,
-      "search_index_refresh_commit": null
+      "search_index_refresh_commit": null,
+      "existing_identities_rechecked": 5,
+      "duplicate_aliases_linked": 2
     },
-    "last_run_note": "Batch 062 manually inspected ten public publisher letter bodies, enriched one existing AID identity and added nine new Hebrew/Yiddish letter identities with twenty source-grounded non-verbatim propositions. The known 403 crawler was not retried; blocked reader shells were documented and replaced by accessible publisher bodies. Reconciliation, commit-bound quality checks and live publication verification are pending."
+    "last_run_note": "Batch 062 reviewed 15 public publisher bodies/excerpts: nine new Hebrew/Yiddish letter identities were added, one existing identity (AID 4666289) was enriched, and five already-enriched identities were rechecked without duplicating propositions. Two metadata-only duplicate aliases (AIDs 4666210 and 4666231) were linked to their existing Evidence Families; the duplicate AID 4666210 queue entry was removed. Twenty non-verbatim source-grounded propositions were added. The direct reader shells for AID 4666295 and other blocked pages were not used; the known HTTP 403 crawler was not retried. Reconciliation, commit-bound quality checks and live publication verification remain pending."
   }
 }
