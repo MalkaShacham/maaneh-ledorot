@@ -300,6 +300,7 @@ for(const mode of ['regular','researcher']){
  assert(m.citation_entailment.every(x=>x.valid),mode+': publication citations must pass proposition entailment');
  assert(m.context_boundary.every(x=>x.valid),mode+': publication synthesis must preserve witness-local context');
  if(mode==='researcher'){
+  console.log('BATCH062_RESEARCH_SOURCES',JSON.stringify({sources:m.sources.map(e=>({aid:e.aid,key:e.key,family:e.evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,primary_secondary_status:e.primary_secondary_status,parent:e.parent_evidence_family_id,independent:e._independent_witness})),integrity:m.research.evidence_integrity}));
   assert(m.research&&m.research.evidence_families>=3,mode+': researcher mode must expose at least three independent families');
   assert(m.research.witnesses.length===m.sources.length,mode+': researcher mode must expose every witness');
   assert(m.research.evidence_map.length>0,mode+': researcher mode must expose a claim-to-witness map');
