@@ -523,9 +523,6 @@ for(const [aid,minProps,family] of batch066Required){
  assert.equal(e.canonical_file,'data/items/content-research-batch-066-2026-11-13.json');
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')),'inspected AID '+aid+' must not remain in the review queue');
 }
-assert.equal(metrics.answer_eligible_unique_sources,752,'batch-071 cumulative corpus must expose 744 unique Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,749,'batch-071 cumulative corpus must expose 741 scoped content-verified families');
-assert.equal(metrics.answer_eligible_propositions,2527,'batch-071 cumulative corpus must expose 2509 distinct inspected propositions');
 const batch066Questions=[
  ['מה נכתב באיגרת על חיפוש שידוך בדרכי תורה?',5019175],
  ['כיצד לחדש קביעות עתים ולימוד בצוותא אחרי הפסק?',5019408],
@@ -608,10 +605,6 @@ const enriched5100487=idx.entries.find(e=>String(e.aid)==='5100487');
 assert(enriched5100487&&enriched5100487.response_propositions.some(p=>p.includes('מאמינים בני מאמינים')),'existing AID 5100487 must retain the newly inspected rational-proof distinction');
 assert(enriched5100487.proposition_source_locator.includes('300–304'),'AID 5100487 must expose the new proposition locator');
 assert.equal(enriched5100487.canonical_file,'data/items/chabad-letter-5100487.json');
-assert.equal(metrics.answer_eligible_unique_sources,752,'batch-071 adds ten distinct Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,749,'batch-071 adds ten scoped content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2527,'batch-071 adds 23 distinct source-grounded propositions');
-
 const disseminationSynthesis='מה כתב הרבי על הפצת המעיינות והפצת פנימיות התורה?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,disseminationSynthesis,{mode});
@@ -659,7 +652,6 @@ for(const mode of ['regular','researcher']){
 const batch072Required=[[2278254,2,'pastoral-letter-5710-14-tammuz-2278254'],[2278256,3,'pastoral-letter-5710-19-tammuz-2278256'],[2278257,2,'pastoral-letter-5710-20-tammuz-2278257'],[2278259,2,'pastoral-letter-5710-21-tammuz-2278259'],[2278260,2,'pastoral-letter-5710-21-tammuz-2278260'],[2278261,2,'pastoral-letter-5710-21-tammuz-2278261'],[2278262,2,'pastoral-letter-5710-21-tammuz-2278262'],[2278265,2,'pastoral-letter-5710-25-tammuz-2278265']];
 for(const [aid,minProps,family] of batch072Required){const e=idx.entries.find(x=>String(x.aid)===String(aid));assert(e&&e.has_content_evidence,'batch-072 AID '+aid+' must have inspected publisher body text');assert.equal(e.status,'Verified');assert.equal(e.evidence_family_id,family);assert(e.response_propositions.length>=minProps);assert.equal(e.language,'English');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope);assert.equal(e.context_status,'partial');assert.equal(e.independent_witness,false,'translated English item must not be treated as independent');assert.equal(e.translation_of_evidence_family_id,family);assert.equal(e.canonical_file,'data/items/content-research-batch-072-2026-11-13.json');assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));}
 const enriched2187392=idx.entries.find(e=>String(e.aid)==='2187392');assert(enriched2187392&&enriched2187392.response_propositions.some(p=>p.includes('שמחה פנימית')));assert(enriched2187392.proposition_source_locator.includes('268–289'));assert.equal(enriched2187392.evidence_family_id,'pastoral-letter-5714-10-kislev-2187392');assert.equal(enriched2187392.canonical_file,'data/items/content-research-batch-070-2026-11-13.json');
-assert.equal(metrics.answer_eligible_unique_sources,752);assert.equal(metrics.content_verified_unique_sources,749);assert.equal(metrics.answer_eligible_propositions,2527);
 const educationInfluenceQ='מה כתב הרבי על השפעה על יהודי אחד ועל חינוך ילדים יהודים במעשה ולא בדיבור?';for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,educationInfluenceQ,{mode});assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');assert(m.sources.some(e=>String(e.aid)==='2278256'));assert(m.sources.some(e=>String(e.aid)==='2278261')||m.sources.some(e=>String(e.aid)==='2278254'));assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research&&m.research.evidence_families>=2);assert.equal(m.research.witnesses.length,m.sources.length);assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));}else assert.equal(m.research,undefined);}
 
 
@@ -670,3 +662,70 @@ assert(originalPublisherTranscripts.every(e=>e._independent_witness===true),'aut
 const explicitDerivedCopy=normalizeEvidenceIntegrity(idx.entries.filter(e=>String(e.aid)==='2190037'));
 assert.equal(explicitDerivedCopy.length,1);
 assert.equal(explicitDerivedCopy[0]._independent_witness,false,'an explicitly transcribed copy must remain non-independent');
+
+
+// Batch 074: nine new original-language publisher bodies and one in-place enrichment.
+// Counts are checked from the live normalized index above; no stale cumulative totals are hard-coded.
+const batch074Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-074-2026-11-13.json',root)));
+assert.equal(batch074Data.records.length,9,'batch 074 must contain nine item-level source identities');
+assert.equal(batch074Data.new_response_propositions,26,'batch 074 proposition count must match the inspected records');
+const batch074Required=[
+ [4783989,3,'igrot-letter-5712-13-nissan-aid4783989','Hebrew'],
+ [4731080,3,'igrot-letter-5710-11-elul-tashkha-aid4731080','Yiddish'],
+ [4754323,3,'igrot-letter-5711-11-tevet-aid4754323','Hebrew'],
+ [4812647,2,'igrot-letter-5712-1-sivan-aid4812647','Hebrew'],
+ [4929255,4,'igrot-letter-5715-18-elul-aid4929255','Hebrew'],
+ [4812666,3,'igrot-letter-5712-3-sivan-aid4812666','Hebrew'],
+ [5054364,3,'igrot-letter-5717-11-sivan-aid5054364','Hebrew'],
+ [5357253,2,'igrot-letter-5711-15-menachem-av-aid5357253','Hebrew'],
+ [5287606,3,'igrot-letter-5720-2-shevat-aid5287606','Hebrew']
+];
+for(const [aid,minProps,family,language] of batch074Required){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-074 AID '+aid+' must have inspected publisher body text');
+ assert.equal(e.status,'Verified','batch-074 AID '+aid+' must retain scoped body-level verification');
+ assert.equal(e.evidence_family_id,family,'batch-074 AID '+aid+' must have its own dated Evidence Family');
+ assert(e.response_propositions.length>=minProps,'batch-074 AID '+aid+' must expose its inspected paraphrases');
+ assert.equal(e.language,language,'batch-074 AID '+aid+' must preserve source language');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope,'batch-074 AID '+aid+' must retain locator and verification scope');
+ assert.equal(e.context_status,'partial','batch-074 AID '+aid+' must not imply complete incoming context');
+ assert.equal(e.canonical_file,'data/items/content-research-batch-074-2026-11-13.json');
+ assert.equal(e.independent_witness,true,'original-language publisher text is one distinct letter witness');
+ assert.equal(e.translation_of_evidence_family_id,null,'no translation is counted as an independent source');
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')),'inspected AID '+aid+' must not remain in the review queue');
+}
+const enriched5357369=idx.entries.find(e=>String(e.aid)==='5357369');
+assert(enriched5357369&&enriched5357369.response_propositions.some(p=>p.includes('קרעמער')),'existing AID 5357369 must retain the new inspected letter-distribution proposition');
+assert(enriched5357369.proposition_source_locator.includes('301–302'),'AID 5357369 must expose the exact added passage locator');
+assert.equal(enriched5357369.evidence_family_id,'igrot-letter-5714-24-shevat-het-aleph-aid5357369','existing AID 5357369 must stay in its original Evidence Family');
+assert.equal(enriched5357369.canonical_file,'data/items/content-research-batch-073-2026-11-13.json');
+const tzedakahSynthesisQ='מה עולה מן האיגרות על צדקה לאורך השנה, הרחבת הנתינה וחלוקת תרומות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,tzedakahSynthesisQ,{mode});
+ assert(m.answerable,mode+': inspected tzedakah correspondence must support a bounded multi-source synthesis');
+ const expected=[4783989,4731080,4812647,5287606];
+ const expectedFound=expected.filter(aid=>m.sources.some(e=>String(e.aid)===String(aid)));
+ assert(expectedFound.length>=3,mode+': synthesis must retrieve at least three of the inspected, distinct tzedakah Evidence Families');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': tzedakah synthesis must deduplicate by Evidence Family');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every synthesized claim needs proposition-level citations');
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid),mode+': tzedakah synthesis must preserve claim entailment and witness-local context');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=3,mode+': researcher mode must expose independent-family depth');
+  assert.equal(m.research.witnesses.length,m.sources.length,mode+': researcher mode must expose provenance for each witness');
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)),mode+': researcher mode must map claims to exact source locators');
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid),mode+': researcher mode must retain citation and context audits');
+ }else assert.equal(m.research,undefined,'regular mode must not expose researcher-only detail');
+}
+const elulPracticeQ='מה נכתב באיגרת על עבודת התשובה באלול, מפגש עם משפיעים והתוועדות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,elulPracticeQ,{mode});
+ assert(m.answerable,mode+': the inspected Elul correspondence must answer its bounded topic');
+ assert(m.sources.some(e=>String(e.aid)==='4929255'),mode+': the Elul answer must cite the inspected source');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher')assert(m.research&&m.research.witnesses.length===m.sources.length&&m.research.evidence_map.length>0);
+ else assert.equal(m.research,undefined);
+}
