@@ -322,3 +322,13 @@ Expected readiness pending reconciliation: **789 → 792** answer-eligible Evide
 
 
 Publication verification: GitHub Pages deployment completed successfully for main commit `3f4b63215d3700daf07ec8ca027b40569ce6e1cd` on 2026-11-13. The browser/search retrieval tool could not fetch the site URL directly, so publication status is based on the successful Pages deployment job and its reported environment URL.
+
+ 
+## 2026-11-13 — Manual publisher review batch 079 (reconciliation pending)
+
+- Inspected 15 public item bodies from Kehot/Chabad.org/TheRebbe.org in Hebrew and Yiddish: nine candidate letter identities, two existing identities enriched in place, and four existing identities rechecked without duplicate propositions.
+- New candidate AIDs: 4831007, 4831137, 4831186, 4831187, 4831315, 5357370, 5100610, 5100451, 5100615. One Yiddish original-language witness is counted once; no translation is treated as an independent witness.
+- Existing identities enriched in place: AID 4812708 (communal consequence of the instruction on love of Israel) and AID 5071118 (explicit practical redirection to the Shulchan Aruch).
+- Five alternative pages returned navigation/summary shells and were excluded. Other accessible publisher bodies were inspected in the same run. The known HTTP-403 crawler remains disabled; no retry or access-control bypass occurred.
+- Provisional expected metrics from the then-current baseline 799 / 796 / 2,627 are 808 answer-eligible unique sources, 805 content-verified unique sources and 2,647 propositions. These are expectations only, not reported progress. Full-corpus AID/Evidence-Family reconciliation and Actions validation are pending.
+- Scope limits: no incoming letters or autographs were inspected; AID 5357370 is a partial excerpt; AID 4831186's nonstandard printed date is preserved; AID 4831187 is a Yiddish witness and any later translation must remain derivative; medical, housing and study guidance remain bounded to their original personal contexts.
