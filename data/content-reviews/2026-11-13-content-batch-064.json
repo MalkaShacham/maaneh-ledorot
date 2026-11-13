@@ -5,7 +5,7 @@
   "source_bodies_reviewed": 11,
   "new_source_identities": 10,
   "existing_identities_enriched": 1,
-  "source_grounded_propositions_added": 20,
+  "source_grounded_propositions_added": 18,
   "new_aids": [
     5100223,
     5100360,
@@ -88,5 +88,38 @@
     "translations_counted_independent": false,
     "schedule_changed": false,
     "audience_or_permissions_changed": false
-  }
+  },
+  "metrics_after_reconciliation": {
+    "answer_eligible_unique_sources": 674,
+    "content_verified_unique_sources": 671,
+    "answer_eligible_propositions": 2345,
+    "canonical_unique_item_keys": 8968,
+    "verified_unique_item_keys": 7650,
+    "canonical_json_files": 434,
+    "content_review_queue_records": 1050
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 10,
+    "content_verified_unique_sources": 10,
+    "answer_eligible_propositions": 17,
+    "canonical_unique_item_keys": 10,
+    "verified_unique_item_keys": 10,
+    "canonical_json_files": 1,
+    "content_review_queue_records": 0
+  },
+  "reconciliation": {
+    "status": "success",
+    "workflow_run_id": 43343704044,
+    "main_commit": "ad74f60a315d982ea9c8aefb5c93ca4d02b0cd8e"
+  },
+  "quality_gate": {
+    "status": "failed_on_stale_assertion",
+    "workflow_run_id": 43343703659,
+    "detail": "All prior test steps passed; test_content_readiness expected single_evidence_family, while the improved core engine returned no_cross_family_pattern for the same one-family pattern query. Assertion is updated in this commit; remaining batch-064 regression cases must run."
+  },
+  "publication": {
+    "status": "pending_retry_after_quality_fix",
+    "url": "https://malkashacham.github.io/maaneh-ledorot"
+  },
+  "metric_note": "18 non-verbatim proposition entries were recorded (17 across ten new letters and one enrichment of existing AID 5100487). The reconciled answer_eligible_propositions metric increased by 17; no extra unique-proposition credit is claimed for the existing-family enrichment."
 }

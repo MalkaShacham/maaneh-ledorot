@@ -150,33 +150,30 @@
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
     "current_batch": "2026-11-13-content-batch-064",
-    "required_agent_action": "Continue direct public-body inspection in Hebrew, Yiddish and English and additional document types; preserve Evidence Families; do not retry the known HTTP 403 crawler.",
+    "required_agent_action": "Run the corrected content-readiness suite and verify the next Pages deployment. Continue manual source-body review in Hebrew, Yiddish and English; do not retry the known HTTP 403 crawler.",
     "last_completed_batch": "2026-11-13-content-batch-064",
     "last_batch_summary": {
       "reviewed_items": 11,
       "new_source_identities": 10,
       "existing_identities_enriched": 1,
-      "response_propositions_added": 20,
+      "response_propositions_added": 18,
       "metrics_before": {
         "answer_eligible_unique_sources": 664,
         "content_verified_unique_sources": 661,
-        "answer_eligible_propositions": 2328,
-        "canonical_unique_item_keys": 8958,
-        "verified_unique_item_keys": 7640,
-        "canonical_json_files": 433,
-        "content_review_queue_records": 1050
+        "answer_eligible_propositions": 2328
       },
-      "expected_metrics_after": {
+      "metrics_after": {
         "answer_eligible_unique_sources": 674,
         "content_verified_unique_sources": 671,
-        "answer_eligible_propositions": 2348,
-        "canonical_unique_item_keys": 8968,
-        "verified_unique_item_keys": 7650,
-        "canonical_json_files": 434,
-        "content_review_queue_records": 1050
+        "answer_eligible_propositions": 2345
       },
-      "status": "content_reviewed_reconciliation_pending"
+      "metrics_delta": {
+        "answer_eligible_unique_sources": 10,
+        "content_verified_unique_sources": 10,
+        "answer_eligible_propositions": 17
+      },
+      "status": "reconciled_quality_gate_fix_pending"
     },
-    "last_run_note": "Batch 064 inspected 11 Hebrew publisher letter bodies/excerpts: 10 new letter identities, 1 existing identity enriched, 20 non-verbatim source-grounded propositions. Expected answer-eligible unique sources 664→674, content-verified sources 661→671, propositions 2328→2348. Runner crawler was not retried after known HTTP 403. Reconciliation, tests and publication pending."
+    "last_run_note": "Batch 064 inspected 11 Hebrew publisher letter bodies/excerpts: 10 new letter identities and 1 existing identity enriched; 18 non-verbatim proposition entries recorded. Reconciliation confirmed answer-eligible unique sources 664→674, content-verified sources 661→671, answer-eligible propositions 2328→2345 (+17 net unique propositions). All preceding quality checks passed; the remaining test failure was a stale expected reason label (single_evidence_family vs the engine's more precise no_cross_family_pattern), now corrected. Pages deployment awaits a fresh run."
   }
 }
