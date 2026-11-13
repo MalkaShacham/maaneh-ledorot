@@ -251,7 +251,7 @@ for(const mode of ['regular','researcher']){
   assert.deepEqual(new Set(m.comparative_coverage.supported_topics),new Set(['אהבת התורה','אהבת ה׳']),`${mode}: both comparison sides need proposition-level coverage`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every love comparison claim needs a proposition-level citation`);
 }
-const focusedClassQuestion='מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?';
+const focusedClassQuestion='מה מתועד במענה המזכירות על תוספת אברכים והרחבת שיעור חסידות?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,focusedClassQuestion,{mode});
  assert(m.answerable,`${mode}: focused class-expansion query must be answerable`);
@@ -262,7 +262,7 @@ for(const mode of ['regular','researcher']){
 const newBatchChecks=[
   ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
   ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
-  ['מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?','id:igrot-kodesh-v13-דתרפא'],
+  ['מה מתועד במענה המזכירות על תוספת אברכים והרחבת שיעור חסידות?','id:igrot-kodesh-v13-דתרפא'],
   ['מה מתועד במענה המזכירות על מסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
 ];
 for(const [question,key] of newBatchChecks){
@@ -822,9 +822,9 @@ assert.equal(batch076Data.existing_identities_enriched,1);
 assert.equal(batch076Data.new_response_propositions,20);
 assert.equal(batch076Data.existing_response_propositions_added,1);
 assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
-assert.equal(metrics.answer_eligible_unique_sources,792,'batch-077 adds three distinct answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,789,'batch-077 adds three content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2630,'batch-077 adds eight inspected non-verbatim propositions');
+assert.equal(metrics.answer_eligible_unique_sources,827,'batches 079-081 must reconcile to 827 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,824,'batches 079-081 must reconcile to 824 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2688,'batches 079-081 must reconcile to 2688 source-grounded propositions');
 for(const aid of batch076Aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
  assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
@@ -979,9 +979,9 @@ assert.equal(new Set(batch080Data.records.map(r=>r.evidence_family_id)).size,10)
 assert.equal(new Set(batch080Data.records.map(r=>r.source_url)).size,10);
 assert.equal(batch080Data.records.filter(r=>r.language==='Hebrew').length,6);
 assert.equal(batch080Data.records.filter(r=>r.language==='English').length,4);
-assert.equal(metrics.answer_eligible_unique_sources,818,'batch-079 plus batch-080 must reconcile to 818 unique answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,815,'batch-080 must add ten inspected Verified families');
-assert.equal(metrics.answer_eligible_propositions,2666,'batch-080 must add nineteen distinct source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,827,'batches 079-081 must reconcile to 827 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,824,'batches 079-081 must reconcile to 824 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2688,'batches 079-081 must reconcile to 2688 source-grounded propositions');
 for(const r of batch080Data.records){
  const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
  assert(e&&e.has_content_evidence,'batch-080 AID '+r.aid+' must be present with content evidence');
@@ -1021,3 +1021,50 @@ for(const mode of ['regular','researcher']){
  assert(direct.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'));
 }
 
+
+
+const batch081Path='data/items/content-research-batch-081-2026-11-13.json';
+const batch081Data=JSON.parse(await readFile(new URL(batch081Path,root)));
+assert.equal(batch081Data.records.length,9);
+assert.equal(batch081Data.source_bodies_inspected,10);
+assert.equal(batch081Data.new_source_identities,9);
+assert.equal(batch081Data.existing_identities_enriched,7);
+assert.equal(batch081Data.existing_identities_rechecked,1);
+assert.equal(batch081Data.blocked_candidate_count,4);
+assert.equal(batch081Data.new_response_propositions,22);
+assert.equal(batch081Data.response_propositions_added,22);
+assert.equal(batch081Data.existing_response_propositions_added,0);
+assert.equal(batch081Data.existing_identity_updates.length,7);
+assert.equal(new Set(batch081Data.records.map(r=>String(r.aid))).size,9);
+assert.equal(new Set(batch081Data.records.map(r=>r.evidence_family_id)).size,9);
+assert.equal(new Set(batch081Data.records.map(r=>r.source_url)).size,9);
+assert.equal(batch081Data.records.filter(r=>r.language==='Hebrew').length,9);
+assert.equal(batch081Data.records.filter(r=>r.type==='letter-fragment').length,1);
+for(const r of batch081Data.records){
+ const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
+ assert(e&&e.has_content_evidence);
+ assert.equal(e.status,'Verified');
+ assert.equal(e.canonical_file,batch081Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert.equal(e.independent_witness,true);
+}
+for(const id of ['igrot-kodesh-v13-דתרע','igrot-kodesh-v13-דתרעב','igrot-kodesh-v13-דתרעו','igrot-kodesh-v13-דתרעח','igrot-kodesh-v13-דתרפא','igrot-kodesh-v13-דתרפב','igrot-kodesh-v13-דתרפג']){
+ const e=idx.entries.find(x=>x.id===id);
+ assert(e&&/secretariat/i.test(e.witness_type||''));
+ assert.equal(e.independent_witness,false);
+}
+const secretariatClassQ='מה מתועד במענה המזכירות על תוספת אברכים והרחבת שיעור חסידות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,secretariatClassQ,{mode});
+ assert(m.answerable,mode+': secretary-signed class-expansion response must be retrievable when asked neutrally');
+ assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרפא'));
+ assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?',{mode});
+ assert.equal(direct.answerable,false);
+ assert.equal(direct.reason,'secretariat_authorship_boundary');
+}
