@@ -987,7 +987,15 @@ function supportsTzedakahStudyEffortProposition(proposition){
 }
 function supportsTzedakahSynthesisProposition(proposition){
  const body=norm(proposition);
- return ['צדקה','תרומה','מעות חיטים','מעשר','חומש'].some(term=>containsTerm(body,term));
+ return ['צדקה לאורך השנה','בכסף ובזמן ובמאמץ','לחלק את התרומה','חלוקת התרומה','חלקים שווים','מוסדות חינוך','מעשר','חומש','חמישית לצדקה','להוסיף בנתינת צדקה','מעבר לאומדן','נתינה מעבר','מעות חיטים'].some(term=>body.includes(term));
+}
+function tzedakahSynthesisRelevanceScore(source){
+ const body=norm(arr(source?.response_propositions).join(' '));
+ return Number(body.includes('צדקה לאורך השנה'))*12+
+  Number(body.includes('לחלק את התרומה')||body.includes('חלוקת התרומה')||body.includes('חלקים שווים'))*10+
+  Number(body.includes('מעשר')||body.includes('חומש')||body.includes('חמישית לצדקה'))*8+
+  Number(body.includes('מעבר לאומדן')||body.includes('להוסיף בנתינת צדקה')||body.includes('בזמן ובמאמץ'))*8+
+  Number(body.includes('מעות חיטים'))*4;
 }
 function buildDailyRoutineSynthesis(selected){
  const basis=[];
@@ -1147,9 +1155,9 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  if(tzedakahSynthesisQuestion){
   const tzedakahContentIndex=index.filter(e=>arr(e.response_propositions).some(supportsTzedakahSynthesisProposition));
-  const directTzedakah=tzedakahContentIndex.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived').map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition)}));
+  const directTzedakah=tzedakahContentIndex.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived').map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition)})).sort((a,b)=>tzedakahSynthesisRelevanceScore(b)-tzedakahSynthesisRelevanceScore(a));
   const byFamily=new Map();
-  for(const e of [...answerEvidence,...directTzedakah]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
+  for(const e of [...directTzedakah,...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
   answerEvidence=[...byFamily.values()].slice(0,8);
   console.log('[tzedakah-source-debug]',JSON.stringify({index_candidates:index.filter(e=>['4783989','4731080','4812647','5287606'].includes(String(e.aid))).map(e=>({aid:e.aid,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,family:familyKey(e),props:e.response_propositions})),content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,direct_aids:directTzedakah.map(e=>e.aid),answer_aids:answerEvidence.map(e=>e.aid),families:[...tzedakahFamilies]}));
   answerEvidence.forEach(e=>{const k=familyKey(e);if(k)tzedakahFamilies.add(k);});
