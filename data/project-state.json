@@ -66,7 +66,8 @@
     "Retrieval now has proposition-level relevance gates, topic aliases, claim-local citation entailment checks and a separate researcher evidence map, but ranking remains deterministic and lexical/topic-based rather than a semantic entailment model.",
     "Translated public talks are one manifestation of their dated event; original-language transcripts and recordings must join the same Evidence Family.",
     "www.chabad.org is host-blocked after HTTP 403 responses on the 12-reference GitHub acquisition attempt (2026-10-15 onward). data/acquisition/state.json now marks this host permanent_block; the hourly script must skip network requests and rely on manual public web search or another authorized source.",
-    "AID 4666284 text was inspected through Pnimi's secondary index of chabadlibrary.org; its pipeline status remains Parsed, and it is a member of the existing Shanghai Evidence Family, not a new independent corroborating family."
+    "AID 4666284 text was inspected through Pnimi's secondary index of chabadlibrary.org; its pipeline status remains Parsed, and it is a member of the existing Shanghai Evidence Family, not a new independent corroborating family.",
+    "On 2026-11-13, twelve attempted English Sicha pages returned internal errors and twelve other item pages exposed rewritten summary shells; ten accessible Hebrew publisher-body alternatives were inspected instead. No access controls were bypassed."
   ],
   "next_work": [
     "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
@@ -78,23 +79,23 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled",
+    "status": "reconciliation_pending",
     "source": "data/public-metrics.json",
     "generated": "2026-11-13",
-    "reconciliation_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
-    "search_index_refresh_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
+    "reconciliation_commit": null,
+    "search_index_refresh_commit": null,
     "answer_readiness": {
       "answer_eligible_unique_sources": {
-        "before": 663,
-        "expected_after": 666
+        "before": 690,
+        "expected_after": 698
       },
       "content_verified_unique_sources": {
-        "before": 660,
-        "expected_after": 663
+        "before": 687,
+        "expected_after": 695
       },
       "answer_eligible_propositions": {
-        "before": 2022,
-        "expected_after": 2042
+        "before": 2386,
+        "expected_after": 2404
       }
     },
     "quality_gate": {
@@ -105,7 +106,7 @@
       "latest_saved_report_passed": true,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "Commit-bound answer-quality gate passed on the merged main commit. node scripts/test_content_readiness.mjs, test_answer_integrity.mjs, test_question_specificity_gate.mjs and workflow write-safety tests all completed successfully. The structural report is not a substitute for semantic claim-level review.",
+      "note": "The preceding run failed at test_content_readiness.mjs on the synagogue-dissemination query; a topic-alias collision was corrected and explicit positive/negative retrieval regressions were added. Awaiting a commit-bound run.",
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": 43335370438
@@ -149,34 +150,37 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-065",
-    "required_agent_action": "Run the corrected content-readiness suite and verify the next Pages deployment. Continue manual source-body review in Hebrew, Yiddish and English; do not retry the known HTTP 403 crawler.",
-    "last_completed_batch": "2026-11-13-content-batch-065",
+    "current_batch": "2026-11-13-content-batch-067",
+    "required_agent_action": "Continue direct public-body review in Hebrew, Yiddish and English and other documentation types; retain partial-context limits; do not retry the known blocked runner crawler.",
+    "last_completed_batch": "2026-11-13-content-batch-067",
     "last_batch_summary": {
-      "reviewed_items": 9,
-      "new_source_identities": 3,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 4,
-      "existing_identities_canonicalized": 1,
-      "response_propositions_added": 11,
-      "response_propositions_restored_to_index": 4,
+      "reviewed_items": 10,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 2,
+      "existing_identities_rechecked": 2,
+      "existing_identities_canonicalized": 0,
+      "new_response_propositions_added": 17,
+      "existing_response_propositions_added": 1,
+      "response_propositions_added": 18,
       "metrics_before": {
-        "answer_eligible_unique_sources": 674,
-        "content_verified_unique_sources": 671,
-        "answer_eligible_propositions": 2345
+        "answer_eligible_unique_sources": 690,
+        "content_verified_unique_sources": 687,
+        "answer_eligible_propositions": 2386
       },
       "metrics_after_expected": {
-        "answer_eligible_unique_sources": 678,
-        "content_verified_unique_sources": 675,
-        "answer_eligible_propositions": 2359
+        "answer_eligible_unique_sources": 698,
+        "content_verified_unique_sources": 695,
+        "answer_eligible_propositions": 2404
       },
       "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 4,
-        "content_verified_unique_sources": 4,
-        "answer_eligible_propositions": 14
+        "answer_eligible_unique_sources": 8,
+        "content_verified_unique_sources": 8,
+        "answer_eligible_propositions": 18
       },
       "status": "content_committed_reconciliation_pending"
     },
-    "last_run_note": "Batch 065 manually inspected nine public publisher letter bodies. Three new Hebrew letter identities were added (AIDs 4994198, 4812708, 5413170); existing AID 4812666 gained one bounded proposition; AIDs 5071046, 5100253, 4830967 and 5100391 were rechecked; AID 5100487 was restored as one canonical item record from a double-encoded volume-index container without adding a new witness. Eleven new paraphrase entries were added and four existing AID 5100487 propositions were restored to the search index. Expected answer-eligible sources 674→678, content-verified sources 671→675, propositions 2345→2359. Reconciliation, quality gate and Pages deployment pending."
+    "last_run_note": "Batch 067 manually inspected ten public publisher-body passages in Hebrew: eight new AID-backed letter identities (5019579, 5100579, 4854786, 5100402, 4854570, 4854796, 4854525, 5100709) and two in-place enrichments (5357154, 5413358). Seventeen paraphrase propositions were added to new identities and one to existing AID 5413358; AID 5357154 provenance/locator was rechecked. Twelve English Sicha candidates returned internal errors and twelve other item pages redirected to rewritten summary shells; ten accessible Hebrew publisher pages were used as alternatives. No crawler retry, access-control bypass or full-text copying. Expected answer-eligible sources 690→698, content-verified 687→695, propositions 2386→2404. Retrieval regression on synagogue dissemination was traced to a generic alias collision with the Tanya-project topic; aliases were narrowed and regression assertions added. Reconciliation, commit-bound quality gate and Pages publication are pending.",
+    "last_batch_blocked_count": 24,
+    "last_batch_blocked_reason": "Twelve public Sicha pages returned internal errors; twelve additional item pages redirected to rewritten summaries without inspectable body text."
   }
 }

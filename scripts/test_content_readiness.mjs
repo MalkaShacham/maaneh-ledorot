@@ -362,6 +362,19 @@ const qs=[
  ['מה נאמר על ברכה לרגל שנת השלושים ליום החתונה?',5100360]
 ];
 for(const [q,aid] of qs)for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,q,{mode});assert(m.answerable,mode+' query should be answerable: '+q);assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+' must retrieve AID '+aid);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}else assert.equal(m.research,undefined);}
+const synagogueQ='מה כתב הרבי על אמירת דברי חסידות בבתי כנסת והפצת המעיינות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,synagogueQ,{mode});
+ assert(m.answerable,mode+' synagogue-dissemination query should be answerable');
+ assert(m.sources.some(e=>String(e.aid)==='5071043'),'synagogue query must retrieve AID 5071043');
+ assert(!m.sources.some(e=>String(e.aid)==='5071046'),'synagogue query must not conflate the Tanya project with synagogue dissemination');
+}
+const tanyaProjectQ='מה כתב הרבי על פרויקט תניא והפצת המעיינות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,tanyaProjectQ,{mode});
+ assert(m.answerable,mode+' Tanya-project query should be answerable');
+ assert(m.sources.some(e=>String(e.aid)==='5071046'),'Tanya-project query must retain its own source');
+}
 const crossQ='מה כתבו האיגרות על הרחבת עסק בכוחות עצמו ועל הפצת המעיינות בבתי כנסת?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,crossQ,{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='5100223')&&m.sources.some(e=>String(e.aid)==='5071043'));assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_families>=2);assert(m.research.evidence_map.length>0);}}
 
