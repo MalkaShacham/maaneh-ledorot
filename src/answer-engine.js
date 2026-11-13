@@ -1023,13 +1023,15 @@ function supportsBodilyHealthProposition(p){
  const t=norm(p);
  return t.includes('בריאות')&&['עבודת','תורה','מצוות','רופא','תפילה','אכילה','תענית','מנוחה','כפייה','פעולות הנשמה'].some(term=>t.includes(term));
 }
-function healthSynthesisRelevanceScore(e){
- const t=norm(arr(e.response_propositions).join(' '));
+function healthSynthesisRelevanceScore(e,q=''){
+ const t=norm(arr(e.response_propositions).join(' ')),query=norm(q);
  return Number(t.includes('בריאות הגוף'))*10+
-  Number(t.includes('רופא')||t.includes('הוראת הרופא'))*8+
-  Number(t.includes('תעניות')||t.includes('אכילה לפני תפילה'))*7+
-  Number(t.includes('תורה ומצוות')||t.includes('עבודת ה'))*5+
-  Number(t.includes('מנוחה'))*3;
+  Number(query.includes('רופא')&&(t.includes('רופא')||t.includes('הוראת הרופא')))*20+
+  Number(query.includes('אכילה')&&t.includes('אכילה'))*18+
+  Number(query.includes('תעניות')&&t.includes('תעניות'))*18+
+  Number(query.includes('תפילה')&&t.includes('תפילה'))*10+
+  Number(query.includes('עבודת')&&(t.includes('תורה ומצוות')||t.includes('עבודת ה')))*8+
+  Number(t.includes('מנוחה'))*2;
 }
 function buildHealthSynthesis(selected){
  const basis=[];
@@ -1315,7 +1317,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.'],debug_tzedakah:{content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,sample:tzedakahContentIndex.slice(0,24).map(e=>({aid:e.aid,id:e.id,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,family:familyKey(e),classification:classifyWitness(e)}))}};
  }
  else if(communityActivityQuestion){answerEvidence=usable.filter(supportsCommunityActivitySource);const communityFamilies=new Set(answerEvidence.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));if(communityFamilies.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_community_activity_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו לפחות שתי משפחות ראיות מקוריות ונפרדות על התוועדות ופעילות קהילתית.']};}
- else if(healthSynthesisQuestion){const healthContentIndex=index.filter(e=>arr(e.response_propositions).some(supportsBodilyHealthProposition));const directHealth=healthContentIndex.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&isLetterEvidence(e)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsBodilyHealthProposition)}));const byFamily=new Map();for(const e of directHealth){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}answerEvidence=[...byFamily.values()].sort((a,b)=>healthSynthesisRelevanceScore(b)-healthSynthesisRelevanceScore(a)).slice(0,10);const healthFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));if(healthFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_health_evidence_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות מקוריות ונפרדות עם תמציות גוף שנבדקו על בריאות הגוף ועבודת ה׳.']};}
+ else if(healthSynthesisQuestion){const healthContentIndex=index.filter(e=>arr(e.response_propositions).some(supportsBodilyHealthProposition));const directHealth=healthContentIndex.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&isLetterEvidence(e)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsBodilyHealthProposition)}));const byFamily=new Map();for(const e of directHealth){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}answerEvidence=[...byFamily.values()].sort((a,b)=>healthSynthesisRelevanceScore(b,understanding.query)-healthSynthesisRelevanceScore(a,understanding.query)).slice(0,10);const healthFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));if(healthFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_health_evidence_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות מקוריות ונפרדות עם תמציות גוף שנבדקו על בריאות הגוף ועבודת ה׳.']};}
  else if(educationInfluenceActionQuestion){answerEvidence=usable.filter(e=>supportsEducationalInfluenceActionSource(e));}
  else if(fordLetterQuestion){answerEvidence=usable.filter(e=>supportsFordLetterSource(e));}
  else if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}

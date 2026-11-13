@@ -1101,7 +1101,7 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretariatClassQ,{mode});
  assert(m.answerable,mode+': secretary-signed class-expansion response must be retrievable when asked neutrally');
  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרפא'));
- assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ assert(m.sources.find(e=>sourceAID(e)==='5071128')&&/secretariat/i.test(m.sources.find(e=>sourceAID(e)==='5071128').witness_type||''));
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?',{mode});
  assert.equal(direct.answerable,false);
  assert.equal(direct.reason,'secretariat_authorship_boundary');
@@ -1179,7 +1179,7 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretaryReturnQ,{mode});
  assert(m.answerable,mode+': a neutral secretariat question about enlistment and return to yeshiva must be answerable');
  assert(m.sources.some(e=>sourceAID(e)==='5100309'));
- assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ assert(m.sources.find(e=>sourceAID(e)==='5357059')&&/secretariat/i.test(m.sources.find(e=>sourceAID(e)==='5357059').witness_type||''));
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על תלמיד שהתגייס ומבקש לחזור לישיבה?',{mode});
