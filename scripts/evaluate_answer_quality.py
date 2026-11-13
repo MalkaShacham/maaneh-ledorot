@@ -72,7 +72,7 @@ def main() -> int:
         if e.get("proposition_origin") == "editorial_summary_derived" and e.get("proposition_verbatim") is not False:
             failures.append(f"{key}: derived editorial proposition must be explicitly non-verbatim")
         if e.get("proposition_origin") == "source_grounded_paraphrase" and not is_answer_eligible(e):
-            failures.append(f"{key}: source-grounded paraphrase lacks inspected-text verification or source locator")
+            failures.append(f"{key}: source-grounded paraphrase is not answer-eligible (has_content_evidence={e.get('has_content_evidence')!r}, propositions={len(arr(e.get('response_propositions')))}, proposition_verbatim={e.get('proposition_verbatim')!r}, proposition_verification={e.get('proposition_verification')!r}, proposition_source_locator={str(e.get('proposition_source_locator') or '')[:240]!r}, context_status={e.get('context_status')!r}, verification_scope={str(e.get('verification_scope') or '')[:240]!r}, rights_status={str(e.get('rights_status') or '')[:160]!r})")
         if e.get("status") == "Verified":
             if not (e.get("witness_type") or e.get("source_witness") or e.get("witness_provenance")):
                 failures.append(f"{key}: Verified content evidence lacks witness provenance")
