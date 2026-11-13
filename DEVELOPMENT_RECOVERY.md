@@ -230,3 +230,9 @@
 - The first PR quality gate (run 43417471551) passed evidence-index generation, question-specific retrieval, answer synthesis, citation integrity, structural evidence-contract audit and workflow write-safety tests. `test_content_readiness.mjs` then exposed an overbroad integrity rule: any publisher use of the word “transcription” was classified as derived, including authorized original-language Hebrew letter texts AIDs 4666292 and 4666305.
 - Corrected the distinction: translations and explicitly identified transcribed copies remain non-independent; a publisher transcription of an original-language letter remains a primary text witness unless the record explicitly marks it non-independent. Added regression checks for both cases. This does not elevate an autograph or claim independent manuscript authentication.
 - The corrected PR gate must pass before merge; no metrics or publication success is claimed yet.
+
+### Batch 072 quality-gate correction — metadata-only audio listings
+
+- The second PR gate passed the retrieval, synthesis, citation, structural and workflow-safety steps, and passed the original-language publisher-transcription correction. It then exposed two older Yechidus audio catalogue entries (AIDs 553672/553673) that carried an editorial one-line description in `response_propositions` with `has_content_evidence=true`, despite the explicit note that no audio was played and no transcript inspected.
+- Corrected both records in batch 069: retained identity/date/language/parallel-listing metadata and the shared Evidence Family, but set `has_content_evidence=false`, removed response propositions and marked verification as metadata-only. No audio statement was promoted into answer evidence.
+- The commit-bound readiness test must be rerun after this correction.
