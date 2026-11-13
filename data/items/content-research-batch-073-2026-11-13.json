@@ -5,32 +5,32 @@
   "review_method": "Manual public web search/open through accessible Chabad.org/Kehot publisher pages. Thirteen source bodies/documents were inspected: ten new Hebrew/Yiddish Rebbe-attributed letter texts, one separate secretariat letter, one duplicate reprint body, and one existing Hebrew identity. Only bounded non-verbatim paraphrases with exact body locators were stored. No crawler retry, access-control bypass or full-text reproduction.",
   "reviewed_item_count": 18,
   "source_bodies_inspected": 17,
-  "new_source_identities": 13,
-  "new_rebbe_letter_identities": 11,
+  "new_source_identities": 12,
+  "new_rebbe_letter_identities": 10,
   "new_secretariat_document_identities": 1,
   "new_metadata_only_identities": 1,
   "duplicate_alias_identities": 2,
-  "existing_identities_enriched": 1,
-  "existing_identities_rechecked": 1,
+  "existing_identities_enriched": 2,
+  "existing_identities_rechecked": 2,
   "existing_identities_canonicalized": 0,
-  "new_response_propositions": 34,
+  "new_response_propositions": 31,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 37,
-  "answer_eligible_source_families_added": 13,
+  "total_new_paraphrase_entries": 35,
+  "answer_eligible_source_families_added": 12,
   "language_distribution": {
-    "Hebrew": 12,
+    "Hebrew": 11,
     "Yiddish": 1,
     "English_translation_manifestations": 1
   },
   "source_type_distribution": {
-    "rebbe_letters": 11,
+    "rebbe_letters": 10,
     "secretariat_documents": 1,
     "talk_transcripts": 1,
     "duplicate_aliases": 2,
     "translation_manifestations": 1,
     "bibliographic_identity_only": 1
   },
-  "dedup_policy": "Each distinct correspondence or talk is one Evidence Family. AID 5413573 is a publisher-identified reprint of AID 4854544; AID 4279887 is a publisher mirror of AID 4783983; both aliases are Linked, have no propositions and are not independent witnesses. AID 4096303 is an English translation of the bibliographic identity Igrot Kodesh vol.32 p.48; it is Linked to the original family and is not independent. Translation text is stored only as translation_observations, not response_propositions.",
+  "dedup_policy": "Each distinct correspondence or talk is one Evidence Family. AID 5413573 is a publisher-identified reprint of AID 4854544; AID 4783983 is a publisher mirror of the existing AID 4279887 letter; both aliases are Linked, have no propositions and are not independent witnesses. AID 4096303 is an English translation manifestation linked to the bibliographic identity Igrot Kodesh vol.32 p.48; it is not independent.",
   "records": [
     {
       "id": "chabad-letter-4994478",
@@ -1379,11 +1379,11 @@
       "id": "rebbe-letter-5712-11-nissan-aitk-aid4783983",
       "canonical_key": "aid:4783983",
       "aid": 4783983,
-      "type": "letter",
+      "type": "letter_reprint_alias",
       "collection": "Igrot Kodesh",
-      "source_class": "Igrot Kodesh",
-      "source_class_detail": "Published Hebrew letter addressed directly to yeshiva students; Igrot Kodesh volume 5, letter א’תקז.",
-      "title": "אגרות קודש - מכתב א’תקז",
+      "source_class": "Duplicate publisher mirror",
+      "source_class_detail": "Chabad.org/TheRebbe.org mirror of the existing Hebrew letter AID 4279887; same date and letter number א’תקז.",
+      "title": "אגרות קודש - מכתב א’תקז (מראה מקביל של AID 4279887)",
       "letter_number": "א’תקז",
       "date_original": "י״א ניסן, תשי״ב",
       "event_date": "י״א ניסן, תשי״ב",
@@ -1391,34 +1391,26 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4783983/jewish/page.htm",
-      "pipeline_status": "Verified",
-      "status": "Verified",
-      "canonical_status": "Verified",
-      "verification_status": "Verified",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "response_propositions": [
-        "המכתב פונה ישירות לתלמידי הישיבות ומציג את היחס לבן הרשע במסגרת ארבעת הבנים: אין להסתפק בהתרחקות ממנו, אלא להשתדל לעזור לו לשפר את דרכיו.",
-        "המכתב מנמק את האחריות לעזור לזולת בכך שכל ישראל ערבים ומעורבים זה בזה, ועל כל אחד מוטל להשתדל להחזיר את האחר למוטב; עם זאת, ההשפעה צריכה להיות חד-כיוונית, כך שהתלמיד המסייע לא ייגרר אחר השפעה שלילית.",
-        "החובה לסייע מתרחבת גם לבן התם ולמי שאינו יודע לשאול; בפוסט-סקריפטום נאמר שתוכן המכתב רלוונטי בכל עת, אף שנכתב לקראת פסח."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4783983, אגרות קודש - מכתב א’תקז; body lines 288–315. Body inspected 2026-11-13.",
-      "response_proposition_locators": [
-        "Chabad.org/TheRebbe.org AID 4783983, body lines 299–300.",
-        "Chabad.org/TheRebbe.org AID 4783983, body lines 300–302.",
-        "Chabad.org/TheRebbe.org AID 4783983, body lines 302–315."
-      ],
-      "evidence_family_id": "igrot-kodesh-v5-letter-aitk-5712-11-nissan",
-      "primary_secondary_status": "Primary published Hebrew Rebbe letter; publisher identifies it as Igrot Kodesh volume 5, letter א’תקז. The physical original was not inspected.",
-      "witness_type": "published_hebrew_letter",
-      "independent_witness": true,
-      "parent_evidence_family_id": null,
+      "pipeline_status": "Linked",
+      "status": "Linked",
+      "canonical_status": "Linked",
+      "verification_status": "Linked",
+      "context_status": "duplicate_identity_only",
+      "has_content_evidence": false,
+      "response_propositions": [],
+      "proposition_language": null,
+      "proposition_origin": null,
+      "proposition_verbatim": null,
+      "proposition_verification": null,
+      "proposition_source_locator": null,
+      "response_proposition_locators": [],
+      "evidence_family_id": "torat-menachem-letter-5712-11-nissan-yeshiva-students-4279887",
+      "primary_secondary_status": "Publisher mirror of the same letter as AID 4279887; not an independent witness.",
+      "witness_type": "duplicate_publisher_mirror",
+      "independent_witness": false,
+      "parent_evidence_family_id": "torat-menachem-letter-5712-11-nissan-yeshiva-students-4279887",
       "translation_of_evidence_family_id": null,
-      "translation_status": "Not a translation; original-language Hebrew publisher text inspected.",
+      "translation_status": "Not a translation; duplicate publisher mirror of the same Hebrew letter.",
       "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4783983; body lines 288–315; https://www.chabad.org/therebbe/article_cdo/aid/4783983/jewish/page.htm",
       "witness": {
         "kind": "published Hebrew correspondence",
@@ -1442,7 +1434,7 @@
         "accessed": "2026-11-13",
         "verification_scope": "אימות התוכן מוגבל לגוף האיגרת המפורסם בעמוד Chabad.org/TheRebbe.org, AID 4783983, בשורות 288–315. ההקשר הוא פנייה לתלמידי הישיבות לקראת פסח ופירוש ארבעת הבנים; המכתב הנכנס והעותק הפיזי לא נבדקו; context_status=partial."
       },
-      "verification_scope": "אימות התוכן מוגבל לגוף האיגרת המפורסם בעמוד Chabad.org/TheRebbe.org, AID 4783983, בשורות 288–315. ההקשר הוא פנייה לתלמידי הישיבות לקראת פסח ופירוש ארבעת הבנים; המכתב הנכנס והעותק הפיזי לא נבדקו; context_status=partial.",
+      "verification_scope": "Chabad.org/TheRebbe.org AID 4783983, body lines 288–315, inspected and compared with AID 4279887; same date, letter number and body. The canonical content record remains AID 4279887; this mirror is linked and has no separate propositions.",
       "documented_circumstances": "מכתב לתלמידי הישיבות לקראת חג הפסח, העוסק בארבעת הבנים ובהשפעת הבן החכם על הבן הרשע, התם ומי שאינו יודע לשאול.",
       "question_or_problem": "כיצד על תלמיד ישיבה להתייחס לזולת הזקוק לעזרה רוחנית, וכיצד לסייע בלי להיגרר אחר השפעה שלילית.",
       "conditions_or_qualifications": [
@@ -1486,18 +1478,18 @@
           "type": "same_evidence_family",
           "target_aid": 4279887,
           "same_evidence_family": true,
-          "basis": "BeitChabad AID 4279887 reproduces the same dated letter and explicitly cites Igrot Kodesh volume 5, letter א’תקז."
+          "basis": "Same date, same letter number א’תקז, and matching body."
         }
       ],
       "duplicate_or_parallel_relations": [
         {
           "type": "same_evidence_family",
-          "evidence_family_id": "igrot-kodesh-v5-letter-aitk-5712-11-nissan",
+          "evidence_family_id": "torat-menachem-letter-5712-11-nissan-yeshiva-students-4279887",
           "target_aid": 4279887,
-          "note": "Publisher mirror of the same letter; not an independent witness."
+          "note": "AID 4783983 is a publisher mirror of the existing canonical letter; not independent."
         }
       ],
-      "identity_note": "One Hebrew letter identity in Igrot Kodesh volume 5, letter א’תקז. AID 4279887 is a publisher mirror and must join this same Evidence Family.",
+      "identity_note": "Duplicate publisher mirror of the existing verified AID 4279887 letter; same Evidence Family, not an independent source.",
       "epistemic_level": 1,
       "notes": "No full copyrighted text copied. Verified applies only to the inspected published body and exact scope recorded above; context remains partial."
     },
@@ -1610,104 +1602,6 @@
       "identity_note": "One distinct Hebrew talk-transcript identity; not a letter and not a translation.",
       "epistemic_level": 1,
       "notes": "No full copyrighted text copied. Verified applies only to the inspected published transcript sections and the exact scope recorded above."
-    },
-    {
-      "id": "rebbe-letter-5712-11-nissan-beit-chabad-mirror-aid4279887",
-      "canonical_key": "aid:4279887",
-      "aid": 4279887,
-      "type": "letter_reprint_alias",
-      "collection": "Igrot Kodesh",
-      "source_class": "Duplicate publisher mirror",
-      "source_class_detail": "BeitChabad page reproduces the same Hebrew letter as AID 4783983 and its footnote explicitly cites Igrot Kodesh volume 5, letter א’תקז.",
-      "title": "מכתב לתלמידי הישיבות, ניסן ה׳תשי״ב — מראה מקביל של מכתב א׳תקז",
-      "letter_number": "א’תקז",
-      "date_original": "י״א ניסן, תשי״ב",
-      "date_precision": "exact_as_publisher",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4279887",
-      "pipeline_status": "Linked",
-      "status": "Linked",
-      "canonical_status": "Linked",
-      "verification_status": "Linked",
-      "context_status": "duplicate_identity_only",
-      "has_content_evidence": false,
-      "response_propositions": [],
-      "proposition_language": null,
-      "proposition_origin": null,
-      "proposition_verbatim": null,
-      "proposition_verification": null,
-      "proposition_source_locator": null,
-      "response_proposition_locators": [],
-      "evidence_family_id": "igrot-kodesh-v5-letter-aitk-5712-11-nissan",
-      "primary_secondary_status": "Publisher mirror of the same letter as AID 4783983; not an independent witness.",
-      "witness_type": "duplicate_publisher_mirror",
-      "independent_witness": false,
-      "parent_evidence_family_id": "igrot-kodesh-v5-letter-aitk-5712-11-nissan",
-      "translation_of_evidence_family_id": null,
-      "translation_status": "Not a translation; duplicate mirror of the same Hebrew letter.",
-      "witness_provenance": "BeitChabad.com AID 4279887, body lines 161–190 and footnote line 200; the footnote explicitly cites Igrot Kodesh volume 5, letter א’תקז.",
-      "provenance": {
-        "source_witness": "BeitChabad.com AID 4279887, https://he.chabad.org/library/article_cdo/aid/4279887",
-        "authorship_status": "Publisher presents the page as a letter to yeshiva students; footnote identifies it as Igrot Kodesh volume 5, letter א’תקז, matching AID 4783983.",
-        "signature_status": "The page includes the same published signature as the letter; no separate autograph inspected.",
-        "transmission_type": "Parallel publisher mirror of the same Hebrew letter.",
-        "textual_status": "Body lines 161–190 and footnote line 200 inspected; compared with AID 4783983.",
-        "editorial_scope": "Duplicate identity only; no independent propositions added.",
-        "verification_status": "Linked to the same Evidence Family as AID 4783983; not an independent witness.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4279887",
-        "accessed": "2026-11-13",
-        "verification_scope": "AID 4279887 body lines 161–190 and footnote line 200 inspected; footnote explicitly identifies Igrot Kodesh volume 5, letter א’תקז. The body matches AID 4783983; no independent content evidence added."
-      },
-      "verification_scope": "AID 4279887 body lines 161–190 and footnote line 200 inspected; footnote explicitly identifies Igrot Kodesh volume 5, letter א’תקז. The body matches AID 4783983; no independent content evidence added.",
-      "documented_circumstances": "מראה מקביל של מכתב א’תקז לתלמידי הישיבות, ניסן תשי״ב.",
-      "conditions_or_qualifications": [
-        "זהו אותו מכתב כמו AID 4783983; אין לספור אותו כעד עצמאי או כמקור נוסף.",
-        "הערת השוליים בעמוד מזהה את המכתב כאגרת א’תקז בכרך ה׳ של אגרות קודש."
-      ],
-      "rights_status": "Link-only duplicate alias; no full text or new propositions stored.",
-      "access": {
-        "access_level": "open",
-        "status": "public_publisher_page_opened",
-        "rights_status": "link-only duplicate alias",
-        "full_text_reproduced": false
-      },
-      "locator": {
-        "aid": 4279887,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4279887",
-        "body_locator": "AID 4279887, body lines 161–190 and footnote line 200."
-      },
-      "taxonomy": {
-        "publisher_index_terms": [
-          "מכתב לתלמידי הישיבות",
-          "אגרות קודש",
-          "א’תקז"
-        ],
-        "research_terms": [
-          "כפילות פרסום",
-          "תלמידי הישיבות"
-        ],
-        "response_case_candidate": false
-      },
-      "relations": [
-        {
-          "type": "same_evidence_family",
-          "target_aid": 4783983,
-          "same_evidence_family": true,
-          "basis": "Same date, same body, and footnote explicitly identifies the same Igrot Kodesh letter number."
-        }
-      ],
-      "duplicate_or_parallel_relations": [
-        {
-          "type": "same_evidence_family",
-          "evidence_family_id": "igrot-kodesh-v5-letter-aitk-5712-11-nissan",
-          "target_aid": 4783983,
-          "note": "Publisher mirror of the same letter; no independent propositions."
-        }
-      ],
-      "identity_note": "Duplicate mirror of AID 4783983; same Evidence Family, not an independent witness.",
-      "epistemic_level": "duplicate_identity_only",
-      "notes": "No full copyrighted text copied; no new response propositions."
     },
     {
       "id": "igrot-letter-5737-21-cheshvan-vol32-p48-original",
@@ -1901,6 +1795,17 @@
       "added_propositions": 1,
       "evidence_family_id": "igrot-letter-5718-17-adar-v16-aid5071138",
       "update_type": "Re-inspected the visible Hebrew body at lines 294–296 and added a distinct source-grounded proposition explaining differences in spiritual comprehension by differences in capacity and soul-root; this is not an instruction to investigate one's personal soul-root."
+    },
+    {
+      "aid": 4279887,
+      "evidence_family_id": "torat-menachem-letter-5712-11-nissan-yeshiva-students-4279887",
+      "update_type": "alternate_publisher_witness_and_duplicate_link",
+      "alternate_source_aid": 4783983,
+      "alternate_source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4783983/jewish/page.htm",
+      "same_evidence_family": true,
+      "new_response_propositions": 0,
+      "content_status_preserved": "Verified",
+      "note": "Existing AID 4279887 remains the canonical verified letter; AID 4783983 is linked as a same-letter publisher mirror."
     }
   ],
   "blocked_candidates": [
@@ -1923,7 +1828,7 @@
       "status": "blocked_not_promoted",
       "reason": "The publisher page opened as a generic Torah Texts summary and did not expose the complete letter body in this run. A search result displayed an excerpt, but that was not treated as full source-text inspection.",
       "alternative_sources_used": [
-        4783983,
+        4279887,
         4279854,
         5357574
       ],
@@ -1945,8 +1850,8 @@
       },
       {
         "aids": [
-          4783983,
-          4279887
+          4279887,
+          4783983
         ],
         "same_evidence_family": true,
         "independent_witnesses": 1,
@@ -1995,20 +1900,21 @@
   "full_text_copied": false,
   "reconciliation_status": "pending",
   "reconciled_metrics": null,
-  "metric_note": "Expected after reconciliation: 752→765 answer-eligible unique sources, 749→762 content-verified unique sources, 2527→2562 answer-eligible propositions. The 2 publisher mirrors and 1 English translation manifestation are linked/non-independent and do not increase these counts; the original Hebrew identity for AID 4096303 is metadata-only.",
+  "metric_note": "Expected after reconciliation: 752→764 answer-eligible unique sources, 749→761 content-verified unique sources, 2527→2559 answer-eligible propositions. AID 4783983 is a linked mirror of existing AID 4279887 and does not add a family. AID 4279854 adds one independent talk family. AID 4096303 is a linked English translation manifestation; the original Hebrew identity is metadata-only.",
   "new_talk_identities": 1,
   "new_translation_manifestations": 1,
   "limits": [
     "Verified means only that the specified published body or transcript section was inspected; it does not mean an autograph, incoming letter, or full correspondence context was authenticated.",
     "The 7 Kislev 5712 talk is a transcript, not a letter; publisher notes indicate that some portions derive from unedited notes.",
-    "AID 4279887 is a duplicate mirror of AID 4783983; it is not an independent witness.",
+    "AID 4783983 is a duplicate mirror of the existing AID 4279887 letter; it is not an independent witness.",
     "AID 4096303 is an English translation manifestation linked to an original bibliographic identity; the Hebrew original was not inspected and the translation is not answer-eligible.",
     "AID 5019514 was not promoted because the full body was not accessible through the public page in this run.",
     "No full copyrighted text was copied; all retained content propositions are bounded non-verbatim paraphrases."
   ],
   "expected_metrics_after": {
-    "answer_eligible_unique_sources": 765,
-    "content_verified_unique_sources": 762,
-    "answer_eligible_propositions": 2562
-  }
+    "answer_eligible_unique_sources": 764,
+    "content_verified_unique_sources": 761,
+    "answer_eligible_propositions": 2559
+  },
+  "translation_observations_added": 3
 }
