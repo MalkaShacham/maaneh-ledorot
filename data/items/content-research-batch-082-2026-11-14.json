@@ -48,12 +48,12 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 833,
     "content_verified_unique_sources": 830,
-    "answer_eligible_propositions": 2704
+    "answer_eligible_propositions": 2707
   },
   "metrics_expected_after_all_pending_batches": {
     "answer_eligible_unique_sources": 833,
     "content_verified_unique_sources": 830,
-    "answer_eligible_propositions": 2704
+    "answer_eligible_propositions": 2707
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -1108,5 +1108,17 @@
       "letter_number": "ו׳תרצ",
       "note": "No matching entry found in the inspected v18 index; no locator inferred."
     }
+  },
+  "metrics_delta_expected": {
+    "answer_eligible_unique_sources": 34,
+    "content_verified_unique_sources": 34,
+    "answer_eligible_propositions": 80
+  },
+  "reconciliation_adjustment": {
+    "new_response_propositions_added_in_batch": 16,
+    "previously_recorded_propositions_unmasked_by_duplicate_aid_reconciliation": 3,
+    "net_proposition_delta_from_baseline": 80,
+    "source_priority_fix_commit": "29e6f992c8834df391765120c111ac2eea5e4158",
+    "note": "The 3 additional propositions were already recorded in existing source items; the revised reconciliation priority selected the complete inspected witness over duplicate catalog/update entries. They are not new batch-082 propositions or new source identities."
   }
 }

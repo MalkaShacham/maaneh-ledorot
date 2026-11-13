@@ -393,3 +393,8 @@ A duplicate search covered all 24 prior content-research batch files present (05
 ### Index-locator metadata kept separate from content verification scope (2026-11-14)
 
 The first structural gate after adding printed-index locators correctly rejected five records because the locator-only wording had been appended to the main `verification_scope`, which the readiness classifier intentionally treats as bibliographic-only. The correction keeps the inspected publisher-body scope unchanged and stores the index evidence separately in `provenance.index_locator_verification_scope` and `locator.index_pdf_page`. Thus the printed index verifies location only and does not downgrade or replace the separately inspected body evidence. The v18 index entry ו׳תתצט (PDF p.15) was also recorded as a distinct prefixed identity from v4 תתצט.
+
+
+### Actual proposition count reconciled to 2707 (2026-11-14)
+
+The CI reconciliation measured 833 answer-eligible unique Evidence Families, 830 content-verified families and 2,707 answer-eligible propositions. The first batch-082 expectation of 2,704 was short by three because the improved duplicate-AID source priority exposed three propositions already present in older inspected records; batch 082 itself still adds exactly 16 new propositions and six new source identities. The expected-after figure is corrected to 2,707, with the +3 reconciliation adjustment explicitly separated from new content. No source or proposition was promoted solely from an index scan.

@@ -805,8 +805,8 @@ assert(acquisitionState.manual_web_review_history.some(x=>x.batch_id==='077'));
 const batch082Reconciliation=JSON.parse(await readFile(new URL('data/items/content-research-batch-082-2026-11-14.json',root),'utf8'));
 assert.equal(batch082Reconciliation.reconciliation_status,acquisitionState.manual_web_review.reconciliation_status);
 if(acquisitionState.manual_web_review.reconciliation_status==='reconciled'){
- assert.deepEqual(acquisitionState.manual_web_review_current_metrics,{answer_eligible_unique_sources:833,content_verified_unique_sources:830,answer_eligible_propositions:2704});
- assert.deepEqual(batch082Reconciliation.metrics_actual_after,{answer_eligible_unique_sources:833,content_verified_unique_sources:830,answer_eligible_propositions:2704});
+ assert.deepEqual(acquisitionState.manual_web_review_current_metrics,{answer_eligible_unique_sources:833,content_verified_unique_sources:830,answer_eligible_propositions:2707});
+ assert.deepEqual(batch082Reconciliation.metrics_actual_after,{answer_eligible_unique_sources:833,content_verified_unique_sources:830,answer_eligible_propositions:2707});
 }else{
  assert.equal(acquisitionState.manual_web_review.reconciliation_status,'pending_reconciliation');
  assert.deepEqual(acquisitionState.manual_web_review_current_metrics,{answer_eligible_unique_sources:799,content_verified_unique_sources:796,answer_eligible_propositions:2627});
@@ -844,7 +844,7 @@ assert.equal(batch076Data.existing_response_propositions_added,1);
 assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
 assert.equal(metrics.answer_eligible_unique_sources,833,'batches 079-082 must reconcile to 833 unique answer-eligible Evidence Families');
 assert.equal(metrics.content_verified_unique_sources,830,'batches 079-082 must reconcile to 830 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2704,'batches 079-082 must reconcile to 2704 source-grounded propositions');
+assert.equal(metrics.answer_eligible_propositions,2707,'batches 079-082 must reconcile to 2707 source-grounded propositions');
 for(const aid of batch076Aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
  assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
@@ -1020,7 +1020,7 @@ assert.equal(batch080Data.records.filter(r=>r.language==='Hebrew').length,6);
 assert.equal(batch080Data.records.filter(r=>r.language==='English').length,4);
 assert.equal(metrics.answer_eligible_unique_sources,833,'batches 079-082 must reconcile to 833 unique answer-eligible Evidence Families');
 assert.equal(metrics.content_verified_unique_sources,830,'batches 079-082 must reconcile to 830 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2704,'batches 079-082 must reconcile to 2704 source-grounded propositions');
+assert.equal(metrics.answer_eligible_propositions,2707,'batches 079-082 must reconcile to 2707 source-grounded propositions');
 for(const r of batch080Data.records){
  const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
  assert(e&&e.has_content_evidence,'batch-080 AID '+r.aid+' must be present with content evidence');
