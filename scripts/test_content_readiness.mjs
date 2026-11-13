@@ -418,3 +418,84 @@ for(const mode of ['regular','researcher']){
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher') assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
 }
+
+
+// Batch 066: twelve newly inspected Hebrew publisher letters; partial context is preserved.
+const batch066Required=[
+ [5019175,3,'igrot-letter-5717-דתשעג-vxiv-aid5019175'],
+ [5019408,3,'igrot-letter-5717-הד-vxiv-aid5019408'],
+ [5019192,1,'igrot-letter-5717-דתשצ-vxiv-aid5019192'],
+ [5054253,2,'igrot-letter-5717-השצד-vxv-aid5054253'],
+ [5054281,3,'igrot-letter-5717-התכב-vxv-aid5054281'],
+ [5099923,2,'igrot-letter-5718-וקפב-vxvii-aid5099923'],
+ [5099937,2,'igrot-letter-5718-וקצו-vxvii-aid5099937'],
+ [5100533,2,'igrot-letter-5719-ותשפח-vxviii-aid5100533'],
+ [5100423,3,'igrot-letter-5719-ותרעה-vxviii-aid5100423'],
+ [5413208,2,'igrot-letter-5722-חתס-vxxii-aid5413208'],
+ [5019512,1,'igrot-letter-5717-הקו-vxiv-aid5019512'],
+ [5100416,2,'igrot-letter-5719-ותרסה-vxviii-aid5100416']
+];
+for(const [aid,minProps,family] of batch066Required){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-066 AID '+aid+' must have inspected published body text');
+ assert.equal(e.status,'Verified','batch-066 AID '+aid+' must retain scoped published-text verification');
+ assert.equal(e.evidence_family_id,family,'batch-066 AID '+aid+' must have one stable Evidence Family');
+ assert(e.response_propositions.length>=minProps,'batch-066 AID '+aid+' must expose its non-verbatim propositions');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.canonical_file,'data/items/content-research-batch-066-2026-11-13.json');
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')),'inspected AID '+aid+' must not remain in the review queue');
+}
+assert.equal(metrics.answer_eligible_unique_sources,690,'batch-066 must add twelve unique Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,687,'batch-066 must add twelve scoped content-verified families');
+assert.equal(metrics.answer_eligible_propositions,2386,'batch-066 must add 26 distinct inspected propositions');
+const batch066Questions=[
+ ['מה נכתב באיגרת על חיפוש שידוך בדרכי תורה?',5019175],
+ ['כיצד לחדש קביעות עתים ולימוד בצוותא אחרי הפסק?',5019408],
+ ['האם לימוד תורה סותר עבודה במשק חקלאי?',5054281],
+ ['מה נכתב על פירות שביעית של נכרים והפניה לגדולי ההוראה?',5100423],
+ ['מהו תיקון אישי בהפצת המעיינות?',5100416],
+ ['מה נכתב לבחור ישיבה בן שמונה עשרה על המשך הלימוד והפרנסה?',5099937],
+ ['מה נכתב על קיום מצוות בחיי היום יום בהקשר לצבא?',5413208],
+ ['איך לקיים תורה ומצוות בדרכי נועם בלי להכנס לריב?',5054253],
+ ['מה נכתב על חירות בפסח והבאת לימוד למעשה?',5099923],
+ ['מה נכתב על שלושת השיעורים היומיים בחומש תהלים ותניא?',5019175],
+ ['מה נכתב על חינוך תלמידים בשמיני עצרת ושמחת תורה?',5019192],
+ ['מה נכתב לתלמידי תומכי תמימים בלוד על לימוד ונסיעות?',5019512]
+];
+for(const [q,aid] of batch066Questions)for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,q,{mode});
+ assert(m.answerable,mode+': batch-066 question must be answerable: '+q);
+ assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+': expected source AID '+aid+' for '+q);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid));
+ assert(m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_map.length>0);
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ }else assert.equal(m.research,undefined);
+}
+const partnershipRegression='מה כתב הרבי על שותפות במסחר והרחבת העסק בכוחות עצמו?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,partnershipRegression,{mode});
+ assert(m.answerable,mode+': the existing batch-064 business-partnership question must remain answerable');
+ assert(m.sources.some(e=>String(e.aid)==='5100223'),mode+': the source wording about a trading partner and independent expansion must be retrieved');
+ assert(m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+}
+const batch066Cross='השוו בין קביעות עתים ולימוד בצוותא לבין לימוד תורה לצד עבודה במשק חקלאי.';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch066Cross,{mode});
+ assert(m.answerable,mode+': two-family study/farming comparison must be answerable');
+ assert(m.sources.some(e=>String(e.aid)==='5019408')&&m.sources.some(e=>String(e.aid)==='5054281'),mode+': comparison must cite both distinct letters');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
+ assert(m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research.evidence_families>=2);
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ }else assert.equal(m.research,undefined);
+}

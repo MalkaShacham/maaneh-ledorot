@@ -7,6 +7,52 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "reviewed_at": "2026-11-13T06:03:00+02:00",
+    "status": "completed",
+    "batch_id": "066",
+    "source_bodies_inspected": 12,
+    "new_source_identities": 12,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "existing_identities_canonicalized": 0,
+    "new_paraphrase_entries": 26,
+    "blocked_candidate_count": 4,
+    "blocked_candidates": [
+      {
+        "aid": 5413100,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413100/jewish/page.htm",
+        "reason": "Redirected to a rewritten Torah Texts summary page; no item-level original body text inspected; excluded."
+      },
+      {
+        "aid": 5054355,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5054355/jewish/page.htm",
+        "reason": "Redirected to a rewritten summary/shell; no item-level body text inspected; excluded."
+      },
+      {
+        "aid": 5071147,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5071147/jewish/page.htm",
+        "reason": "Redirected to a rewritten Torah Texts summary; no original letter body inspected; excluded."
+      },
+      {
+        "aid": 5071091,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5071091/jewish/page.htm",
+        "reason": "Reader exposed a rewritten summary rather than inspectable original body; excluded."
+      }
+    ],
+    "method": "public web search/open of item-level Chabad.org/TheRebbe.org pages; no crawler retry",
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "deduplication_check": "Checked current item paths, the review queue, bulk-indexed records, research batches 055–060 and 064–065, and available volume indexes. No matching AID/URL record was found for the 12 admitted identities. Each AID receives one distinct Evidence Family. No translation, reprint, or alias was counted as a separate witness.",
+    "limitations": [
+      "All 12 records have context_status=partial; only visible publisher text was inspected, not incoming letters or autograph manuscripts.",
+      "AID 5019512 is an excerpt beginning with an ellipsis; only the visible passage is eligible.",
+      "The publisher notes for AIDs 5019192 and 5054281 state that the printed text was completed from a secretariat copy; that copy was not independently inspected.",
+      "AID 5100423 is not encoded as a final halachic ruling: it refers the recipient to local halachic authorities and asks that the exact mezuzah tradition be checked.",
+      "For AID 5413208 the army context is supplied by a publisher footnote, not inferred from the letter body alone."
+    ]
+  },
+  "previous_manual_web_review": {
     "reviewed_at": "2026-11-13T03:28:52+02:00",
     "status": "completed",
     "batch_id": "065",
