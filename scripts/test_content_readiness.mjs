@@ -263,7 +263,7 @@ const newBatchChecks=[
   ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
   ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
   ['מה מתועד במענה המזכירות על תוספת אברכים והרחבת שיעור חסידות?','id:igrot-kodesh-v13-דתרפא'],
-  ['מה מתועד במענה המזכירות על מסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
+  ['מה מתועד במענה המזכירות על מסחר ולימוד יום שלם?','id:igrot-kodesh-v13-דשם']
 ];
 for(const [question,key] of newBatchChecks){
   for(const mode of ['regular','researcher']){
@@ -1007,7 +1007,7 @@ for(const aid of ['2277929','2278502','4264336','3905730']){
 const volume13Secretariat=idx.entries.find(e=>e.id==='igrot-kodesh-v13-דשם');
 assert(volume13Secretariat&&/secretariat/i.test(volume13Secretariat.witness_type||''));
 assert.equal(volume13Secretariat.independent_witness,false);
-const secretariatQuestion='מה מתועד במענה המזכירות על מסחר בזמן לימוד בישיבה?';
+const secretariatQuestion='מה מתועד במענה המזכירות על מסחר ולימוד יום שלם?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretariatQuestion,{mode});
  assert(m.answerable,mode+': a neutral question about the secretariat letter must be answerable');
