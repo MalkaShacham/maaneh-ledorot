@@ -860,26 +860,35 @@ for(const aid of batch076Aids){
 const enriched4812673=idx.entries.find(e=>String(e.aid)==='4812673');
 assert(enriched4812673&&enriched4812673.response_propositions.length>=3,'AID 4812673 must retain its existing family and the additional Hebrew proposition');
 assert.equal(enriched4812673.evidence_family_id,'igrot-letter-5712-10-sivan-aid4812673');
-const moodQuestion='מה מתועד במקורות על עצבות ומיעוט חיות בלימוד?';
+const sadnessQuestion='מה מתועד באיגרת על עצבות בעבודת ה׳?';
 for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,moodQuestion,{mode});
- assert(m.answerable,mode+': inspected correspondence must answer the mood-and-study question');
- assert(m.sources.some(e=>String(e.aid)==='5071054'),mode+': AID 5071054 must support the study-and-sadness claim');
- assert(m.sources.some(e=>String(e.aid)==='4854525'),mode+': AID 4854525 must support the low-mood-and-study claim');
- assert(new Set(m.sources.filter(e=>e._independent_witness!==false).map(e=>e.evidence_family_id)).size>=1,mode+': synthesis must retain at least one independent Hebrew Evidence Family');
- assert(m.sources.some(e=>String(e.aid)==='4854525'&&e._independent_witness===false),mode+': AID 4854525 must be retained as a secretary-signed response, not an independent Rebbe witness');
- assert(m.claims.every(c=>c.source_numbers.length),mode+': each mood-and-study claim needs a source citation');
- assert(m.citation_entailment.every(x=>x.valid),mode+': every citation must entail its exact claim');
- assert(m.context_boundary.every(x=>x.valid),mode+': circumstances and qualifications must remain witness-local');
- if(mode==='researcher'){
-  assert(m.research&&m.research.evidence_map.length>0,'researcher mode must expose the claim-to-witness evidence map');
-  assert(m.research.citation_entailment.every(x=>x.valid),'researcher mode must expose valid claim-local citations');
-  assert(m.research.context_boundary.every(x=>x.valid),'researcher mode must expose valid context boundaries');
-  assert(m.research.evidence_families>=1,'researcher mode must count the independent Hebrew witness without upgrading the secretary-signed response');
-  assert(m.research.witnesses.length>=2,'researcher mode must retain both the independent letter and the secretary-signed response with distinct attribution');
- }else assert.equal(m.research,undefined,'regular mode must not expose researcher-only analysis');
+ const m=buildAnswerModel(idx.entries,sadnessQuestion,{mode});
+ assert(m.answerable,mode+': the publisher-attributed Hebrew letter must answer the specific sadness-in-divine-service question');
+ assert(m.sources.some(e=>String(e.aid)==='5071054'&&e._independent_witness===true));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.witnesses.length>=1);
+}
+const secretaryLowVitalityQuestion='מה מתועד במענה המזכירות על מיעוט חיות בלימוד?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,secretaryLowVitalityQuestion,{mode});
+ assert(m.answerable,mode+': the secretary-signed response must answer a neutral secretariat question about low vitality in study');
+ assert(m.sources.some(e=>String(e.aid)==='4854525'&&e._independent_witness===false));
+ assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.witnesses.length>=1);
+ else assert.equal(m.research,undefined);
 }
 
+const confusingThoughtsQuestion='מה מתועד באיגרת על מחשבות מבלבלות והפניית המחשבה לתורה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,confusingThoughtsQuestion,{mode});
+ assert(m.answerable,mode+': prior inspected AID 5100351 paraphrases must support the confusing-thoughts question');
+ assert(m.sources.some(e=>sourceAID(e)==='5100351'&&e._independent_witness===true));
+}
+const publisherAttributedSadnessItem=idx.entries.find(e=>sourceAID(e)==='5071054');
+assert(publisherAttributedSadnessItem&&publisherAttributedSadnessItem.witness_type==='published_hebrew_letter_text'&&publisherAttributedSadnessItem._independent_witness===true,'AID 5071054 must remain a publisher-attributed Hebrew letter, not be confused with a secretary-signed response');
 const publisherAttributedMoodItem=idx.entries.find(e=>sourceAID(e)==='5100351');
 assert(publisherAttributedMoodItem&&publisherAttributedMoodItem.witness_type==='published_hebrew_letter_text'&&publisherAttributedMoodItem._independent_witness===true,'AID 5100351 must remain a publisher-attributed Hebrew letter, not be confused with a secretary-signed response');
 const directMoodQuestion='מה כתב הרבי על עצבות ומיעוט חיות בלימוד?';

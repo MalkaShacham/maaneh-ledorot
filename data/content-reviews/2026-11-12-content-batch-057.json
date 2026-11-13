@@ -255,5 +255,8 @@
     "failed_step": "node scripts/test_answer_integrity.mjs",
     "diagnosis": "A missing comma in the newly appended TOPIC_ALIASES object caused a module parse error after question-specific retrieval and synthesis had passed.",
     "remediation": "Inserted the separator and bumped the validated-engine and index.html cache-busters to v3. No content metrics or source records changed."
-  }
+  },
+  "scope_notes": [
+    "AID 5071054: prior body inspection at lines 288–300 is retained; no secretary signature was reported. Classified as a publisher-attributed original-language Hebrew text witness, not autograph-verified; no new proposition added."
+  ]
 }

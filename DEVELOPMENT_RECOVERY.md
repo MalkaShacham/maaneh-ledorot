@@ -378,3 +378,8 @@ The latest main-branch hourly run (run 43520214183) completed deterministic main
 ### Content-readiness reconciliation assertions updated for batch 082 (2026-11-14)
 
 The first full-corpus PR run generated the expected index totals (833 answer-eligible unique families; 921 answer-eligible source entries; 2,704 source-grounded propositions) and passed the question-specificity, synthesis, citation-integrity, evidence-contract, write-safety and structural answer-quality gates. The content-readiness test then exposed stale assertions that still expected batches 079–081 only (827/824/2,688) and treated AID 4854525 as an independent Rebbe witness. The test now expects the 079–082 totals and frames the low-mood/study comparison as a neutral cross-source question, preserving AID 4854525 as a secretary-signed response while excluding it from direct-Rebbe-authorship queries.
+
+
+### AID 5071054 attribution and query scope (2026-11-14)
+
+AID 5071054 is a publisher-attributed original-language Hebrew letter with selected body passages previously inspected on 2026-11-12 (lines 288–300); no secretary signature was reported and no autograph was inspected. It is now explicitly marked `witness_type=published_hebrew_letter_text` and `independent_witness=true` (independent text witness, not autograph authentication). The content-readiness regression was split into source-specific questions: AID 5071054 answers the sadness-in-divine-service question; AID 4854525 answers a neutral question about the secretary-signed response on low vitality in study. This avoids asserting that either item supports wording absent from its inspected propositions.
