@@ -420,9 +420,7 @@ function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&containsTerm(t,x)?1:0
 function familyKey(e){return e.evidence_family_id||e.aid||e.source_url||e.key;}
 function propositionKey(p){return contentWords(p).sort().join(' ');}
 function sameClaim(a,b){if(propositionKey(a)===propositionKey(b))return true;if(negationSignature(a)!==negationSignature(b))return false;return jaccard(a,b)>=0.72;}
-function propositionSupportsQuery(p,u){const body=norm(p);if(u.topics.includes('התחייבות לצדקה בסכום נקוב'))return containsTerm(body,'צדקה')&&containsTerm(body,'סכום')&&containsTerm(body,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(body,t));// Components of a detected multi-word topic are anchors, not extra question-specific qualifiers.
- const topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);
- const raw=u.terms.filter(t=>!topicVocab.has(t)&&!topicTerms.some(alias=>alias.length>t.length&&containsTerm(alias,t)));const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?1:Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
+function propositionSupportsQuery(p,u){const body=norm(p);if(u.topics.includes('התחייבות לצדקה בסכום נקוב'))return containsTerm(body,'צדקה')&&containsTerm(body,'סכום')&&containsTerm(body,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(body,t));const raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?1:Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
 function intentEvidenceGate(e,u){
  if(u.intent==='circumstances'&&!text(e.documented_circumstances)&&!text(e.conditions_or_qualifications)&&!text(e.audience))return 'missing documented circumstances/conditions/audience';
  // Circumstances are not temporal evidence. A historical answer may only use a
