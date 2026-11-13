@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch073-semantic-pattern-v30';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch073-semantic-pattern-v31';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -357,11 +357,11 @@ function supportsDailyRoutineProposition(p){
 }
 function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
- const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[];
+ const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],isDailyRoutine=s.topic==='daily_study_prayer_routine';
  for(const n of numbers){
   const e=sources[n-1],supported=!!e&&arr(e._supporting_propositions).some(s.topic==='daily_study_prayer_routine'?supportsDailyRoutineProposition:supportsDifficultyPattern);
-  if(!e||!supported||e._independent_witness===false||!e.evidence_family_id)unsupported.push(n);
-  else families.add(String(e.evidence_family_id));
+  if(!e||!supported||(!isDailyRoutine&&e._independent_witness===false)||!e.evidence_family_id)unsupported.push(n);
+  else if(e._independent_witness!==false)families.add(String(e.evidence_family_id));
  }
  const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=2&&families.size>=2&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length;
  return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,attribution:s.attribution||null};

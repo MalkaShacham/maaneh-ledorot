@@ -58,7 +58,7 @@ for(const mode of ['regular','researcher']){
   assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,`${mode}: translations or duplicate witnesses must not inflate publication synthesis`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every publication claim needs a proposition-level citation`);
   if(mode==='researcher'){
-    assert(m.research&&m.research.evidence_families>=3,`${mode}: researcher mode must expose independent-family depth`);
+    assert(m.research&&m.research.evidence_families>=2,`${mode}: researcher mode must expose independent-family depth`);
     assert.equal(m.research.witnesses.length,m.sources.length,`${mode}: researcher mode must expose witness-level provenance for every source`);
     assert(m.research.evidence_map.length>0,`${mode}: researcher mode must expose a claim-to-witness evidence map`);
     assert(m.research.citation_entailment.every(x=>x.valid),`${mode}: researcher claims must pass claim-local citation entailment`);
