@@ -462,6 +462,46 @@
     "full_text_copied": false
   },
   "earlier_manual_web_review": {
+    "batch_id": "080",
+    "batch_file": "data/items/content-research-batch-080-2026-11-13.json",
+    "reviewed_at": "2026-11-13T22:10:00+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 26,
+    "source_bodies_inspected": 10,
+    "new_source_identities": 10,
+    "new_rebbe_letter_identities": 8,
+    "new_secretariat_document_identities": 2,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 15,
+    "new_response_propositions": 19,
+    "answer_eligible_source_families_added": 10,
+    "source_languages": [
+      "Hebrew",
+      "English"
+    ],
+    "language_distribution": {
+      "Hebrew": 6,
+      "English": 4
+    },
+    "source_type_distribution": {
+      "published_hebrew_letter_text": 4,
+      "published_hebrew_secretariat_response": 2,
+      "published_english_letter_translation": 4
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 808,
+      "content_verified_unique_sources": 805,
+      "answer_eligible_propositions": 2647
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 818,
+      "content_verified_unique_sources": 815,
+      "answer_eligible_propositions": 2666
+    },
+    "metrics_actual_after": null,
+    "reconciliation_status": "pending_reconciliation"
+  },
+  "earlier_manual_web_review_2": {
     "batch_id": "076",
     "batch_file": "data/items/content-research-batch-076-2026-11-13.json",
     "reviewed_at": "2026-11-13T18:35:35+02:00",
@@ -592,7 +632,7 @@
       "note": "This pre-guardrail run used the old pipeline definition. The step returned success, but the available job log did not expose individual HTTP responses or a request count; later answer validation failed, so its run artifact was not committed. Whether it reissued the 12 requests cannot be verified."
     }
   },
-  "earlier_manual_web_review_2": {
+  "earlier_manual_web_review_3": {
     "batch_id": "2026-11-13-content-batch-075",
     "reviewed_at": "2026-11-13T17:04:39+02:00",
     "status": "completed",
@@ -717,140 +757,6 @@
         "previous_body_inspection_locator": "added proposition body lines 301–302"
       }
     ]
-  },
-  "earlier_manual_web_review_3": {
-    "batch_id": "073",
-    "status": "completed",
-    "reviewed_item_count": 18,
-    "source_bodies_inspected": 17,
-    "new_source_identities": 12,
-    "new_rebbe_letter_identities": 10,
-    "new_secretariat_document_identities": 1,
-    "new_talk_identities": 1,
-    "new_secondary_narrative_identities": 0,
-    "new_translation_manifestations": 1,
-    "new_metadata_only_identities": 1,
-    "duplicate_alias_identities": 2,
-    "existing_identities_enriched": 2,
-    "existing_identities_rechecked": 2,
-    "existing_identities_canonicalized": 0,
-    "new_paraphrase_entries": 0,
-    "existing_response_propositions_added": 1,
-    "answer_eligible_propositions_added": 1,
-    "total_new_paraphrase_entries": 35,
-    "translation_observations_added": 3,
-    "answer_eligible_source_families_added": 12,
-    "blocked_candidate_count": 0,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-        "alternate_url": "https://www.chabad.org/torah-texts/4666220/page/default.htm",
-        "reason": "Both direct public-reader attempts returned an internal error; no body text was available. No access-control bypass or crawler retry was attempted."
-      },
-      {
-        "aid": 5357139,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5357139/jewish/page.htm",
-        "reason": "Only a short continuation fragment and editorial note were visible; the excerpt did not support a substantive bounded proposition and was excluded."
-      },
-      {
-        "candidate_id": "aid:5019514",
-        "aid": 5019514,
-        "title": "Published Hebrew letter to Mesoud Nagar / yeshiva-student association, 7 Shevat 5717",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/5019514",
-        "status": "blocked_not_promoted",
-        "reason": "The publisher page opened as a generic Torah Texts summary and did not expose the complete letter body in this run. A search result displayed an excerpt, but that was not treated as full source-text inspection.",
-        "alternative_sources_used": [
-          4279887,
-          4279854,
-          5357574
-        ],
-        "access_control_bypassed": false,
-        "content_claims_added": 0
-      }
-    ],
-    "source_languages": [
-      "Hebrew",
-      "Yiddish",
-      "English_translation"
-    ],
-    "source_types": [
-      "rebbe_letter",
-      "secretariat_correspondence",
-      "talk_transcript",
-      "duplicate_publisher_mirror",
-      "english_translation_manifestation",
-      "bibliographic_identity_only"
-    ],
-    "deduplication_check": {
-      "checked_pairs": [
-        {
-          "aids": [
-            4854544,
-            5413573
-          ],
-          "same_evidence_family": true,
-          "independent_witnesses": 1,
-          "alias_status": "Linked"
-        },
-        {
-          "aids": [
-            4279887,
-            4783983
-          ],
-          "same_evidence_family": true,
-          "independent_witnesses": 1,
-          "alias_status": "Linked"
-        }
-      ],
-      "translations": [
-        {
-          "aid": 4096303,
-          "original_identity_id": "igrot-letter-5737-21-cheshvan-vol32-p48-original",
-          "evidence_family_id": "igrot-letter-5737-21-cheshvan-vol32-page48",
-          "independent_witness": false,
-          "answer_eligible": false,
-          "observations": 3
-        }
-      ],
-      "no_translation_counted_as_independent": true
-    },
-    "method": null,
-    "limitations": [
-      "Incoming correspondence is absent from these pages; context_status remains partial.",
-      "No autograph, physical photograph or original secretariat copy was independently inspected; Verified is limited to the visible publisher text.",
-      "AID 5413029 and AID 4872259 are signed by a secretary in the Rebbe's name; the publisher attribution is recorded, but no autograph authentication is claimed.",
-      "AID 5357369, AID 4731085 and AID 5357544 are identified by the publisher as transcribed from photographs; the photographs were not inspected.",
-      "AID 4730903 contains copied prior instructions attributed to the Previous Rebbe; only the current Rebbe's own comments are paraphrased.",
-      "AID 4731008 was sent to multiple recipients at different dates; identical copies must join one Evidence Family.",
-      "AID 5357574 contains a separate secretariat letter; it is indexed as a separate source and none of its propositions are attributed to the Rebbe.",
-      "AID 5413573 is a duplicate reprint of AID 4854544; its conflicting displayed date is retained as publisher metadata, not a second event.",
-      "AID 4994478 is a historical analysis of one ship-operation scenario and is not a general contemporary halachic ruling.",
-      "Health-related passages in AID 5357369 and AID 5357544 are historical personal correspondence, not medical advice."
-    ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "metrics_before": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 764,
-      "content_verified_unique_sources": 761,
-      "answer_eligible_propositions": 2559
-    },
-    "metrics_actual_after": {
-      "answer_eligible_unique_sources": 764,
-      "content_verified_unique_sources": 761,
-      "answer_eligible_propositions": 2559
-    },
-    "reconciliation_status": "reconciled",
-    "current_access_recheck": {
-      "checked_at": "2026-11-13",
-      "method": "public web open",
-      "summary_shell_aids": [
-        "5357369"
-      ],
-      "note": "AID 5357369 currently redirects to a summary shell. Prior inspected body text and the proposition-level locator are retained."
-    }
   },
   "earlier_manual_web_review_4": {
     "reviewed_at": "2026-11-13T12:15:00+02:00",
@@ -1615,6 +1521,46 @@
       "crawler_retry": false,
       "access_control_bypassed": false,
       "full_text_copied": false
+    },
+    {
+      "batch_id": "080",
+      "batch_file": "data/items/content-research-batch-080-2026-11-13.json",
+      "reviewed_at": "2026-11-13T22:10:00+02:00",
+      "status": "pending_reconciliation",
+      "reviewed_item_count": 26,
+      "source_bodies_inspected": 10,
+      "new_source_identities": 10,
+      "new_rebbe_letter_identities": 8,
+      "new_secretariat_document_identities": 2,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 15,
+      "new_response_propositions": 19,
+      "answer_eligible_source_families_added": 10,
+      "source_languages": [
+        "Hebrew",
+        "English"
+      ],
+      "language_distribution": {
+        "Hebrew": 6,
+        "English": 4
+      },
+      "source_type_distribution": {
+        "published_hebrew_letter_text": 4,
+        "published_hebrew_secretariat_response": 2,
+        "published_english_letter_translation": 4
+      },
+      "metrics_before": {
+        "answer_eligible_unique_sources": 808,
+        "content_verified_unique_sources": 805,
+        "answer_eligible_propositions": 2647
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 818,
+        "content_verified_unique_sources": 815,
+        "answer_eligible_propositions": 2666
+      },
+      "metrics_actual_after": null,
+      "reconciliation_status": "pending_reconciliation"
     },
     {
       "batch_id": "077",

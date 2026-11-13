@@ -1130,9 +1130,9 @@ for(const mode of ['regular','researcher']){
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על תלמיד שהתגייס ומבקש לחזור לישיבה?',{mode});
  assert(!direct.sources.some(e=>sourceAID(e)==='5100309'),'secretariat response must not be attributed directly to the Rebbe');
 }
-const tanyaProjectQ='מה כתב הרבי על פרויקט תניא והפצת המעיינות?';
+const tanyaProjectQBatch082='מה כתב הרבי על פרויקט תניא והפצת המעיינות?';
 for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,tanyaProjectQ,{mode});
+ const m=buildAnswerModel(idx.entries,tanyaProjectQBatch082,{mode});
  assert(m.answerable,mode+': the publisher-attributed Tanya project letter must remain retrievable');
  assert(m.sources.some(e=>sourceAID(e)==='5071046'&&e._independent_witness!==false),'AID 5071046 must not be falsely classified as secretary-signed merely because its signature status says a secretariat copy was not inspected');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
