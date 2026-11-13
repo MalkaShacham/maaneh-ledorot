@@ -959,7 +959,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  let answerEvidence=usable;
  if(dailyStudyPrayerQuestion){
-  answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
+  answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e)&&e._independent_witness!==false&&classifyWitness(e)!=='derived');
   const dailyFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(dailyFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_daily_routine_families',claims:[],sources:answerEvidence,answered_well:['נמצאו מענים אישיים על הרגלים יומיים'],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות נפרדות עם תוכן שנבדק על סדרי לימוד ותפילה יומיים.']};
  }else if(understanding.intent==='pattern'){
