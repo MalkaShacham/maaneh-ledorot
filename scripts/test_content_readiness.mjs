@@ -660,7 +660,7 @@ for(const [url,minProps,family] of batch072Required){
 }
 const duplicate1200710342=idx.entries.filter(e=>e.source_url==='https://www.chabadlibrary.org/books/1200710342');
 assert.equal(duplicate1200710342.length,1,'the previously indexed translated /books/1200710342 item must not be duplicated');
-assert.equal(duplicate1200710342[0].evidence_family_id,'igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama','the translated item must retain its original Evidence Family');
+assert.equal(duplicate1200710342[0].evidence_family_id,'igrot-letter-5732-parashat-mishpatim-yishlad','the translated item must retain its original Evidence Family');
 
 const batch072Cross='השוו בין ההנחיה לארגן אגודת חב״ד בטורונטו ולשלב את אגודת נשי ובנות חב״ד לבין ההמלצה להאיץ את הופעת כרכי האנציקלופדיה התלמודית.';
 for(const mode of ['regular','researcher']){
@@ -687,7 +687,8 @@ const batch072Questions=[
  ['מה נאמר על בדיקה רפואית כאשר ייתכן צורך בטיפול?','https://www.chabadlibrary.org/books/1200720136'],
  ['מהי הברכה לשנה טובה ולהצלחה בתפקיד אחראי?','https://www.chabadlibrary.org/books/1200720002'],
  ['מה נכתב על הצורך בעזרת ה׳ גם לעת זקנה?','https://www.chabadlibrary.org/books/1200840069'],
- ['מה ביקשה האיגרת לגבי פרסום מכתב לראשי המפלגות הדתיות לתועלת הציבור?','https://www.chabadlibrary.org/books/1200980004']
+ ['מה ביקשה האיגרת לגבי פרסום מכתב לראשי המפלגות הדתיות לתועלת הציבור?','https://www.chabadlibrary.org/books/1200980004'],
+ ['מה נכתב על זריזות בפעולות החברה עבור עניים ועשירים?','https://www.chabadlibrary.org/books/1200710342']
 ];
 for(const [q,url] of batch072Questions)for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,q,{mode});
