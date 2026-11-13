@@ -14,6 +14,7 @@ const TOPIC_ALIASES={
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
+  'צדקה לאורך השנה והקצאת תרומות':['צדקה לאורך השנה','צדקה','מעות חיטים','מעשר','חומש','תרומה','תרומות','חלוקת תרומות','tzedakah','charity'],
   'התמודדות עם קשיים ומכשולים':['קשיים ומכשולים','התמודדות עם קשיים ומכשולים','מכשולים וקשיים','קשיים','קשיי','קושי','מכשול','מכשולים','התמודדות','תמודדות','אתגר','אתגרים','קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','difficulty','obstacles','obstacle','challenges','challenge','overcoming difficulties'],
   'ייעוד האדם והשפעה על העולם':['ייעוד האדם','תפקיד האדם בעולם','השפעה על העולם','אדם אחד יכול להשפיע','אדם אחד','whole world','purpose in life','mission in life','one individual','conquer the world'],
   'ניצול הזמן והתגברות על עצלות':['ניצול הזמן','בזבוז זמן','עצלות','מתנת הזמן','זמן ויכולת שכלית','overcome laziness','waste time','gift of time'],
@@ -355,17 +356,22 @@ function supportsDailyRoutineProposition(p){
  const b=norm(p);
  return ['תהילים','תפילה','קריאת שמע','לימוד','חומש','צדקה','טלית קטן','ציצית','תפילין'].some(term=>b.includes(term));
 }
+function supportsTzedakahSynthesisProposition(p){
+ const b=norm(p);
+ return ['צדקה','תרומה','מעות חיטים','מעשר','חומש'].some(term=>b.includes(term));
+}
 function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
- const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],isDailyRoutine=s.topic==='daily_study_prayer_routine';
+ const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation';
  for(const n of numbers){
-  const e=sources[n-1],supported=!!e&&arr(e._supporting_propositions).some(s.topic==='daily_study_prayer_routine'?supportsDailyRoutineProposition:supportsDifficultyPattern);
+  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:supportsDifficultyPattern,supported=!!e&&arr(e._supporting_propositions).some(supportFn);
   const derived=!!e&&isDerived(e);
   if(!e||!supported||(!isDailyRoutine&&(e._independent_witness===false||derived))||!e.evidence_family_id)unsupported.push(n);
   else if(e._independent_witness!==false&&!derived)families.add(String(e.evidence_family_id));
  }
- const minNumbers=isDailyRoutine?3:2,minIndependentFamilies=isDailyRoutine?1:2;
- const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length;
+ const minNumbers=isDailyRoutine?3:isTzedakah?3:2,minIndependentFamilies=isDailyRoutine?1:isTzedakah?3:2;
+ const tzedakahClaimsValid=!isTzedakah||(Array.isArray(s.claims)&&s.claims.length>=3&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator))&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
+ const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&tzedakahClaimsValid;
  return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,attribution:s.attribution||null};
 }
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}
