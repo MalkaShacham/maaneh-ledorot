@@ -242,3 +242,8 @@ The third commit-bound readiness run reached the dossier checks and found a test
 ### Batch 072 researcher-mode test semantics
 
 The multi-source regression distinguishes two underlying letter Evidence Families from two independent witnesses. The selected new sources are English translations of two different letters: they may support a two-family synthesis, but must not be counted as two independent textual witnesses. Researcher mode now asserts two family-level evidence-map entries and explicitly non-independent translation status for both sources, while existing Hebrew-source tests continue to require independent witnesses where the primary text is available.
+
+
+### Batch 072 retrieval regression correction
+
+A further readiness run showed that the established three-letter pattern test for difficulties/obstacles did not recognize the exact Hebrew query phrase `קשיים ומכשולים`, although the topic already contained narrower variants. The topic alias set now includes the exact query phrase and its word-order variant in both the core retriever and validated comparison layer. This is a bounded synonym correction; the test still requires the three named source families and claim-local citation/context checks.

@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch072-source-grounded-v3';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch072-source-grounded-v4';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -14,7 +14,7 @@ const TOPIC_ALIASES={
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
-  'התמודדות עם קשיים ומכשולים':['קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','obstacles','challenges','overcoming difficulties'],
+  'התמודדות עם קשיים ומכשולים':['קשיים ומכשולים','התמודדות עם קשיים ומכשולים','מכשולים וקשיים','קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','obstacles','challenges','overcoming difficulties'],
   'ייעוד האדם והשפעה על העולם':['ייעוד האדם','תפקיד האדם בעולם','השפעה על העולם','אדם אחד יכול להשפיע','אדם אחד','whole world','purpose in life','mission in life','one individual','conquer the world'],
   'ניצול הזמן והתגברות על עצלות':['ניצול הזמן','בזבוז זמן','עצלות','מתנת הזמן','זמן ויכולת שכלית','overcome laziness','waste time','gift of time'],
   'ניהול מחשבות והסחת הדעת':['ניהול מחשבות','הסחת דעת','להסיח דעת','מחשבות מטרידות','חזרה לבעיה בבהירות','rumination','dismiss problems from the mind','fresh mind'],
