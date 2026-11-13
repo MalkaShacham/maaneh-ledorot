@@ -1,7 +1,7 @@
 {
   "schema": "content-review-queue-v1",
   "generated": "2026-11-13",
-  "pending_online_items": 1059,
+  "pending_online_items": 1058,
   "policy": "Navigation only. Open and inspect the authorized item text before adding propositions; never infer content from a title or scan index. A blocked source must be recorded and another candidate tried.",
   "records": [
     {
@@ -10411,17 +10411,6 @@
       "verification_scope": null
     },
     {
-      "key": "url:https://www.chabad.org/therebbe/article_cdo/aid/4666210/jewish/page.htm",
-      "id": "igrot-v2-171-4666210",
-      "title": "אגרות קודש — מכתב קעא",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666210/jewish/page.htm",
-      "aid": null,
-      "language": "unknown",
-      "canonical_file": "data/items/igrot-v2-171-4666210.json",
-      "evidence_family_id": null,
-      "verification_scope": null
-    },
-    {
       "key": "aid:553295",
       "id": "jem-audio-553295",
       "title": "3 Tishrei 5742 - Kos Shel Brachah",
@@ -11653,5 +11642,7 @@
       "evidence_family_id": null,
       "verification_scope": "publisher item metadata"
     }
-  ]
+  ],
+  "last_reconciled": "2026-11-13",
+  "reconciliation_note": "Removed the metadata-only AID 4666210 queue alias after linking it to the existing content-bearing canonical letter; no separate source identity remains pending."
 }
