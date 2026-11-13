@@ -20,20 +20,20 @@
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 448,
-    "canonical_unique_item_keys": 9111,
+    "canonical_json_files": 449,
+    "canonical_unique_item_keys": 9089,
     "evidence_family_files": 55,
-    "verified_unique_item_keys": 7771,
+    "verified_unique_item_keys": 7749,
     "status_counts_unique_keys": {
-      "Verified": 7771,
+      "Verified": 7749,
       "Linked": 13,
       "Parsed": 1,
-      "Indexed": 1151,
+      "Indexed": 1144,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 792,
-    "content_verified_unique_sources": 789,
-    "answer_eligible_propositions": 2630
+    "answer_eligible_unique_sources": 799,
+    "content_verified_unique_sources": 796,
+    "answer_eligible_propositions": 2627
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -87,29 +87,29 @@
     "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "answer_readiness": {
       "before": {
-        "answer_eligible_unique_sources": 789,
-        "content_verified_unique_sources": 786,
-        "answer_eligible_propositions": 2622
+        "answer_eligible_unique_sources": 792,
+        "content_verified_unique_sources": 789,
+        "answer_eligible_propositions": 2630
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
+        "answer_eligible_unique_sources": 804,
+        "content_verified_unique_sources": 801,
+        "answer_eligible_propositions": 2654
       },
       "actual_after": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
+        "answer_eligible_unique_sources": 799,
+        "content_verified_unique_sources": 796,
+        "answer_eligible_propositions": 2627
       },
       "actual_delta": {
-        "answer_eligible_unique_sources": 3,
-        "content_verified_unique_sources": 3,
-        "answer_eligible_propositions": 8
+        "answer_eligible_unique_sources": 7,
+        "content_verified_unique_sources": 7,
+        "answer_eligible_propositions": -3
       },
       "reconciliation_variance": {
-        "answer_eligible_unique_sources": 0,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 0
+        "answer_eligible_unique_sources": -5,
+        "content_verified_unique_sources": -5,
+        "answer_eligible_propositions": -27
       }
     },
     "quality_gate": {
@@ -202,14 +202,23 @@
         "content_verified_unique_sources": 801,
         "answer_eligible_propositions": 2654
       },
-      "metrics_after_actual": null,
+      "metrics_after_actual": {
+        "answer_eligible_unique_sources": 799,
+        "content_verified_unique_sources": 796,
+        "answer_eligible_propositions": 2627
+      },
       "metrics_delta_expected": {
         "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 12,
         "answer_eligible_propositions": 24
       },
       "blocked_candidates": 12,
-      "status": "pending_reconciliation"
+      "status": "reconciled_with_variance",
+      "metrics_delta_actual": {
+        "answer_eligible_unique_sources": 7,
+        "content_verified_unique_sources": 7,
+        "answer_eligible_propositions": -3
+      }
     },
     "last_run_note": "Batch 078 submitted for reconciliation: 12 new public source identities across Hebrew, Yiddish and English; 23 new non-verbatim source-grounded propositions; one existing identity enriched with one proposition; two existing identities rechecked. Twelve alternative candidates redirected to navigation/summary shells and were excluded. No crawler retry, access-control bypass, scan-only verification or full-text copying. Reconciliation and content-readiness tests pending.",
     "last_batch_blocked_count": 12,
@@ -221,32 +230,32 @@
       "Maintain the existing hourly cron and verify every batch through reconciliation, content-readiness tests and Pages deployment."
     ],
     "last_reconciliation": {
-      "batch_id": "2026-11-13-content-batch-077",
-      "batch_file": "data/items/content-research-batch-077-2026-11-13.json",
+      "batch_id": "078",
+      "batch_file": "data/items/content-research-batch-078-2026-11-13.json",
       "generated": "2026-11-13",
-      "batch_record_count": 12,
-      "new_source_identity_count": 3,
+      "batch_record_count": 13,
+      "new_source_identity_count": 12,
       "existing_identities_enriched": 1,
-      "source_bodies_inspected": 12,
-      "answer_eligible_selected_count": 12,
-      "selected_unique_evidence_families": 12,
-      "non_independent_selected_count": 1,
+      "source_bodies_inspected": 14,
+      "answer_eligible_selected_count": 13,
+      "selected_unique_evidence_families": 13,
+      "non_independent_selected_count": 0,
       "items": [
         {
-          "aid": 5100681,
+          "aid": 4754246,
           "canonical_records_found": 1,
           "records": [
             {
-              "file": "data/items/content-research-batch-077-2026-11-13.json",
-              "id": "chabad-letter-5100681",
-              "evidence_family_id": "igrot-letter-5719-15-tammuz-v18-aid5100681",
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4754246",
+              "evidence_family_id": "igrot-text-fragment-tishrei-aid4754246",
               "status": "Verified",
               "has_content_evidence": true,
               "proposition_count": 2,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5100681, מכתב ו’תתקלד; body lines 288–303.",
-              "verification_scope": "אימות התוכן מוגבל לגוף העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100681, שורות 288–303. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. הפתקה והמכתב הנכנס אינם מוצגים; הניסוח המתאר את חלק התרומה אינו מפורט דיו לקביעת אחוז או סכום. האוטוגרף לא נבדק; ההקשר חלקי.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4754246, body lines 244–251.",
+              "verification_scope": "אימות התוכן מוגבל לקטע העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4754246, שורות 244–251. אין בו תאריך, נמען או מסגרת מסמך מלאה; לא נבדקו הקונטרס והמאמרים שאליהם הוא מפנה או כתב יד.",
               "context_status": "partial"
             }
           ],
@@ -254,28 +263,28 @@
             "present": true,
             "answer_eligible": true,
             "status": "Verified",
-            "evidence_family_id": "igrot-letter-5719-15-tammuz-v18-aid5100681",
-            "canonical_file": "data/items/content-research-batch-077-2026-11-13.json",
+            "evidence_family_id": "igrot-text-fragment-tishrei-aid4754246",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
             "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5100681, מכתב ו’תתקלד; body lines 288–303.",
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4754246, body lines 244–251.",
             "independent_witness": true
           }
         },
         {
-          "aid": 5054399,
+          "aid": 4754232,
           "canonical_records_found": 1,
           "records": [
             {
-              "file": "data/items/content-research-batch-077-2026-11-13.json",
-              "id": "chabad-letter-5054399",
-              "evidence_family_id": "igrot-letter-5717-25-sivan-aid5054399",
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4754232",
+              "evidence_family_id": "igrot-letter-5711-erev-shabbat-teshuvah-aid4754232",
               "status": "Verified",
               "has_content_evidence": true,
               "proposition_count": 2,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5054399, מכתב ה’תקלט; visible excerpt body lines 244–257 (text begins with an ellipsis).",
-              "verification_scope": "אימות התוכן מוגבל לקטע העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5054399, שורות 244–257. גוף הקטע מתחיל בסימן השמטה (ellipsis), ולכן אין מדובר באיגרת מלאה. התמציות הן פרפרזות לא-מילוליות של השורות המצוינות בלבד. המכתב הנכנס וההקשר שקדם לקטע אינם מוצגים; הניסוח מתאר מנהגים אחדים ואינו קובע כלל חלוקה אוניברסלי. האוטוגרף לא נבדק.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4754232, body lines 288–307, 322.",
+              "verification_scope": "נבדק גוף הנוסח העברי בעמוד Chabad.org/TheRebbe.org, AID 4754232, שורות 288–307, וכן הערת הפרסום בשורה 322. המכתב הנכנס והמקור הפיזי לא נבדקו; ההקשר האישי חלקי.",
               "context_status": "partial"
             }
           ],
@@ -283,28 +292,318 @@
             "present": true,
             "answer_eligible": true,
             "status": "Verified",
-            "evidence_family_id": "igrot-letter-5717-25-sivan-aid5054399",
-            "canonical_file": "data/items/content-research-batch-077-2026-11-13.json",
+            "evidence_family_id": "igrot-letter-5711-erev-shabbat-teshuvah-aid4754232",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
             "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5054399, מכתב ה’תקלט; visible excerpt body lines 244–257 (text begins with an ellipsis).",
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4754232, body lines 288–307, 322.",
             "independent_witness": true
           }
         },
         {
-          "aid": 5413166,
+          "aid": 5019468,
           "canonical_records_found": 1,
           "records": [
             {
-              "file": "data/items/content-research-batch-077-2026-11-13.json",
-              "id": "chabad-letter-5413166",
-              "evidence_family_id": "igrot-letter-5722-20-iyar-v22-aid5413166",
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-5019468",
+              "evidence_family_id": "igrot-letter-5717-22-tevet-aid5019468",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5019468, body lines 288–304, 310.",
+              "verification_scope": "נבדק גוף האיגרת העברי בעמוד Chabad.org/TheRebbe.org, AID 5019468, שורות 288–304, וכן הערת הנמען בשורה 310. המכתב הנכנס והאוטוגרף לא נבדקו; ההקשר חלקי.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5717-22-tevet-aid5019468",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5019468, body lines 288–304, 310.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4731110,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4731110",
+              "evidence_family_id": "igrot-public-letter-5710-18-elul-aid4731110",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4731110, body lines 244–258.",
+              "verification_scope": "אימות התוכן מוגבל לגוף העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4731110, שורות 244–258. מדובר במכתב כללי לקהל רחב; לא נבדקו כתב היד או כל חלקי הפרסום מעבר לקטעים המצוינים.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-public-letter-5710-18-elul-aid4731110",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4731110, body lines 244–258.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4831361,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4831361",
+              "evidence_family_id": "igrot-letter-5714-3-kislev-aid4831361",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4831361, body lines 288–299.",
+              "verification_scope": "נבדק גוף האיגרת העברי בעמוד Chabad.org/TheRebbe.org, AID 4831361, שורות 288–299. המכתב הנכנס והאוטוגרף אינם מוצגים; אין בפרסום אבחנה רפואית או פירוט טיפול.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5714-3-kislev-aid4831361",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4831361, body lines 288–299.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4812675,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4812675",
+              "evidence_family_id": "igrot-letter-5712-11-sivan-aid4812675",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4812675, body lines 244–256.",
+              "verification_scope": "נבדקו קטעי גוף האיגרת בעמוד Chabad.org/TheRebbe.org, AID 4812675, שורות 244–256. המכתב הנכנס והאוטוגרף לא נבדקו; ההקשר האישי חלקי.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5712-11-sivan-aid4812675",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4812675, body lines 244–256.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4830985,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4830985",
+              "evidence_family_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4830985, body lines 288–294.",
+              "verification_scope": "אימות התוכן מוגבל לקטע העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4830985, שורות 288–294. הקטע מתחיל באליפסיס ואינו איגרת מלאה; לא נבדקו ההקשר הקודם, המכתב הנכנס או כתב היד.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 1,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4830985, body lines 288–294.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4754643,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4754643",
+              "evidence_family_id": "igrot-letter-5711-5-elul-aid4754643",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4754643, body lines 244–263.",
+              "verification_scope": "נבדק גוף האיגרת ביידיש בעמוד Chabad.org/TheRebbe.org, AID 4754643, שורות 244–263. המכתב הנכנס והאוטוגרף אינם מוצגים; ההקשר האישי והארגוני חלקי.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5711-5-elul-aid4754643",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4754643, body lines 244–263.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4730884,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4730884",
+              "evidence_family_id": "igrot-secretariat-copy-5710-26-tishrei-aid4730884",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4730884, body lines 244–263.",
+              "verification_scope": "נבדק גוף האיגרת ביידיש בעמוד Chabad.org/TheRebbe.org, AID 4730884, שורות 244–263. הערת המו״ל מציינת שהטקסט נדפס מהעתק המזכירות; האוטוגרף והמכתב הנכנס לא נבדקו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-secretariat-copy-5710-26-tishrei-aid4730884",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4730884, body lines 244–263.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 5100601,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-5100601",
+              "evidence_family_id": "igrot-public-letter-5719-erev-shabbat-emor-aid5100601",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5100601, body lines 288–317.",
+              "verification_scope": "נבדק גוף המכתב הכללי ביידיש בעמוד Chabad.org/TheRebbe.org, AID 5100601, שורות 288–317. המו״ל מציין שהנוסח הושלם על פי צילום האיגרת; הצילום עצמו לא נבדק.",
+              "context_status": "complete"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-public-letter-5719-erev-shabbat-emor-aid5100601",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5100601, body lines 288–317.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4754628,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-4754628",
+              "evidence_family_id": "igrot-letter-5711-1-elul-aid4754628",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4754628, body lines 244–267.",
+              "verification_scope": "נבדק גוף האיגרת ביידיש בעמוד Chabad.org/TheRebbe.org, AID 4754628, שורות 244–267. המכתב הנכנס והאוטוגרף לא נבדקו; ההקשר האישי חלקי.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5711-1-elul-aid4754628",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4754628, body lines 244–267.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 5043323,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-078-2026-11-13.json",
+              "id": "chabad-letter-5043323",
+              "evidence_family_id": "public-letter-purim-5736-aid5043323",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5043323, body lines 272–307.",
+              "verification_scope": "נבדק גוף המכתב הציבורי באנגלית בעמוד Chabad.org/TheRebbe.org, AID 5043323, שורות 272–307. העמוד מציג מכתב לתלמידים יהודים וחתימה מודפסת; לא נבדק כתב היד ולא אותר בעמוד עד מקביל בשפה אחרת.",
+              "context_status": "complete"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "public-letter-purim-5736-aid5043323",
+            "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5043323, body lines 272–307.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4731005,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-058-2026-11-12.json",
+              "id": "chabad-letter-4731005",
+              "evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
               "status": "Verified",
               "has_content_evidence": true,
               "proposition_count": 4,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5413166, מכתב ח’תיח; body lines 288–316, including the publisher's recipient note.",
-              "verification_scope": "אימות התוכן מוגבל לקטע העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5413166, שורות 288–316. שורת השאלה עצמה כוללת השמטה, ולכן אין להסיק מה היה החשש המקורי. התמציות הן פרפרזות מחקר לא-מילוליות של השורות המצוינות בלבד. הערת המו״ל מזהה את הנמען כר׳ שלמה זוין בירושלים; האוטוגרף והמכתב הנכנס לא נבדקו. סכום 25 הלירות הוא נתון היסטורי של המענה המסוים, לא שיעור כללי.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4731005, body lines 244–261; selected visible Hebrew body passages inspected on 2026-11-13.",
+              "verification_scope": "אימות התוכן מוגבל לקטעי גוף הטקסט העבריים הגלויים בעמוד המו״ל Chabad.org/TheRebbe.org, AID 4731005, שורות 244–261. לא נבדקו כתב היד, העתק המזכירות או המכתב הנכנס; ההקשר נשאר חלקי.",
               "context_status": "partial"
             }
           ],
@@ -312,286 +611,25 @@
             "present": true,
             "answer_eligible": true,
             "status": "Verified",
-            "evidence_family_id": "igrot-letter-5722-20-iyar-v22-aid5413166",
-            "canonical_file": "data/items/content-research-batch-077-2026-11-13.json",
-            "proposition_count": 4,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5413166, מכתב ח’תיח; body lines 288–316, including the publisher's recipient note.",
-            "independent_witness": true
-          }
-        },
-        {
-          "aid": 5357409,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-058-2026-11-12.json",
-              "id": "chabad-letter-5357409",
-              "evidence_family_id": "igrot-letter-5715-15-tevet-aid5357409",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357409, body lines 288–306; selected visible Hebrew body passages inspected on 2026-11-12.",
-              "verification_scope": "אימות התוכן מוגבל לקטעי גוף הטקסט העבריים הגלויים בעמוד המו״ל Chabad.org/TheRebbe.org, aid 5357409, שורות 288–306. לא נבדקו כתב היד, העתק המזכירות או המכתב הנכנס; ההקשר נשאר חלקי. העמוד מציין הדפסה מאוחרת ושלמה יותר בכרך יח, אגרת ג׳קפב, בתאריך יא טבת; בניווט העמוד מופיע סימון כרך שאינו תואם לכיתוב התחתון, ולכן הכרך לא אומת.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5715-15-tevet-aid5357409",
-            "canonical_file": "data/items/content-research-batch-058-2026-11-12.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357409, body lines 288–306; selected visible Hebrew body passages inspected on 2026-11-12.",
-            "independent_witness": null
-          }
-        },
-        {
-          "aid": 5099964,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-059-2026-11-12.json",
-              "id": "chabad-letter-5099964",
-              "evidence_family_id": "igrot-letter-5718-5-iyar-ו׳רכג-aid5099964",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 3,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5099964, visible body lines 244–258.",
-              "verification_scope": "אימות התוכן מוגבל לגוף האיגרת הגלוי בעמוד Chabad.org/TheRebbe.org, aid 5099964, שורות 244–258, כולל חתימת המזכיר. המכתב הנכנס והמקור הפיזי לא נבדקו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5718-5-iyar-ו׳רכג-aid5099964",
-            "canonical_file": "data/items/content-research-batch-059-2026-11-12.json",
-            "proposition_count": 3,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5099964, visible body lines 244–258.",
-            "independent_witness": null
-          }
-        },
-        {
-          "aid": 5071046,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-058-2026-11-12.json",
-              "id": "chabad-letter-5071046",
-              "evidence_family_id": "igrot-letter-5718-rosh-chodesh-shevat-v16-aid5071046",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5071046, body lines 288–311; selected visible Hebrew body passages inspected on 2026-11-12.",
-              "verification_scope": "אימות התוכן מוגבל לקטעי גוף הטקסט העבריים הגלויים בעמוד המו״ל Chabad.org/TheRebbe.org, aid 5071046, שורות 288–311. לא נבדקו כתב היד, העתק המזכירות או המכתב הנכנס; ההקשר נשאר חלקי.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5718-rosh-chodesh-shevat-v16-aid5071046",
-            "canonical_file": "data/items/content-research-batch-058-2026-11-12.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5071046, body lines 288–311; selected visible Hebrew body passages inspected on 2026-11-12.",
-            "independent_witness": null
-          }
-        },
-        {
-          "aid": 4812708,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-065-2026-11-13.json",
-              "id": "chabad-letter-4812708",
-              "evidence_family_id": "igrot-letter-5712-25-sivan-aid4812708",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 6,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 4812708, body lines 244–256.",
-              "verification_scope": "AID 4812708, Chabad.org, body lines 244–256 inspected; incoming letter and autograph not inspected; context partial.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5712-25-sivan-aid4812708",
-            "canonical_file": "data/items/content-research-batch-065-2026-11-13.json",
-            "proposition_count": 6,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 4812708, body lines 244–256.",
-            "independent_witness": null
-          }
-        },
-        {
-          "aid": 5357571,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-057-2026-11-12.json",
-              "id": "chabad-letter-5357571",
-              "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 4,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357571, body lines 244–257; selected visible Hebrew body passages inspected on 2026-11-12.",
-              "verification_scope": "AID 5357571, Chabad.org, body lines 244–257 inspected; incoming letter, autograph and physical secretariat copy not inspected; context partial.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
-            "canonical_file": "data/items/content-research-batch-057-2026-11-12.json",
-            "proposition_count": 4,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357571, body lines 244–257; selected visible Hebrew body passages inspected on 2026-11-12.",
-            "independent_witness": null
-          }
-        },
-        {
-          "aid": 5100253,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-058-2026-11-12.json",
-              "id": "chabad-letter-5100253",
-              "evidence_family_id": "igrot-letter-5719-rosh-chodesh-adar-i-v18-aid5100253",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 4,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5100253, body lines 288–312; selected visible Hebrew body passages inspected on 2026-11-12.",
-              "verification_scope": "AID 5100253, Chabad.org, body lines 288–312 inspected including secretariat closing; autograph, physical secretariat copy and incoming letter not inspected; context partial.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5719-rosh-chodesh-adar-i-v18-aid5100253",
+            "evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
             "canonical_file": "data/items/content-research-batch-058-2026-11-12.json",
             "proposition_count": 4,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5100253, body lines 288–312; selected visible Hebrew body passages inspected on 2026-11-12.",
-            "independent_witness": false
-          }
-        },
-        {
-          "aid": 5071054,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-057-2026-11-12.json",
-              "id": "chabad-letter-5071054",
-              "evidence_family_id": "igrot-letter-5718-3-shevat-v16-aid5071054",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5071054, body lines 288–300; selected visible Hebrew body passages inspected on 2026-11-12.",
-              "verification_scope": "אימות התוכן מוגבל לקטעי גוף הטקסט העברי הגלויים בעמוד המו״ל Chabad.org/TheRebbe.org, aid 5071054, body lines 288–300. לא נבדקו כתב היד, העתק המזכירות, המכתב הנכנס או ההקשר הארכיוני המלא; context_status=partial.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5718-3-shevat-v16-aid5071054",
-            "canonical_file": "data/items/content-research-batch-057-2026-11-12.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5071054, body lines 288–300; selected visible Hebrew body passages inspected on 2026-11-12.",
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4731005, body lines 244–261; selected visible Hebrew body passages inspected on 2026-11-13.",
             "independent_witness": null
-          }
-        },
-        {
-          "aid": 5100064,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-057-2026-11-12.json",
-              "id": "chabad-letter-5100064",
-              "evidence_family_id": "igrot-letter-5718-21-sivan-v17-aid5100064",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5100064, body lines 297–308; selected visible Hebrew body passages inspected on 2026-11-12.",
-              "verification_scope": "אימות התוכן מוגבל לקטעי גוף הטקסט העברי הגלויים בעמוד המו״ל Chabad.org/TheRebbe.org, aid 5100064, body lines 297–308. לא נבדקו כתב היד, העתק המזכירות, המכתב הנכנס או ההקשר הארכיוני המלא; context_status=partial.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5718-21-sivan-v17-aid5100064",
-            "canonical_file": "data/items/content-research-batch-057-2026-11-12.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5100064, body lines 297–308; selected visible Hebrew body passages inspected on 2026-11-12.",
-            "independent_witness": null
-          }
-        },
-        {
-          "aid": 5071052,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-071-2026-11-13.json",
-              "id": "chabad-letter-5071052",
-              "evidence_family_id": "igrot-letter-5718-v-lamed-aid5071052",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5071052, גוף האיגרת, שורות 244–262.",
-              "verification_scope": "נבדק גוף הפרסום המלא המוצג בפריט Chabad.org/TheRebbe.org, AID 5071052, שורות 244–262, ביום 2026-11-13. התמציות הן פרפרזות מחקר לא-מילוליות של הטקסט הגלוי בלבד. גוף האיגרת המוצג נבדק; המכתב הנכנס והצילום שעל פיו הושלם הנוסח לא נבדקו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5718-v-lamed-aid5071052",
-            "canonical_file": "data/items/content-research-batch-071-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5071052, גוף האיגרת, שורות 244–262.",
-            "independent_witness": true
           }
         }
       ],
       "metrics_actual_after": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
+        "answer_eligible_unique_sources": 799,
+        "content_verified_unique_sources": 796,
+        "answer_eligible_propositions": 2627
       },
       "reconciliation_variance": {
-        "answer_eligible_unique_sources": 0,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 0
+        "answer_eligible_unique_sources": -5,
+        "content_verified_unique_sources": -5,
+        "answer_eligible_propositions": -27
       },
-      "reconciliation_status": "reconciled"
+      "reconciliation_status": "reconciled_with_variance"
     }
   }
 }

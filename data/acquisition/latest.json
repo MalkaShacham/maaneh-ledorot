@@ -133,9 +133,17 @@
       "content_verified_unique_sources": 801,
       "answer_eligible_propositions": 2654
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "reconciliation_status": "pending_reconciliation",
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 799,
+      "content_verified_unique_sources": 796,
+      "answer_eligible_propositions": 2627
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": -5,
+      "content_verified_unique_sources": -5,
+      "answer_eligible_propositions": -27
+    },
+    "reconciliation_status": "reconciled_with_variance",
     "method": "12 new public source bodies inspected in Hebrew, Yiddish and English; one existing identity enriched; two existing identities rechecked. Twelve navigation/summary shells excluded.",
     "limitations": [
       "Private incoming letters and autograph witnesses were not inspected.",
@@ -752,9 +760,9 @@
   },
   "manual_web_review_note": "Batch 078: 12 new public source bodies across Hebrew, Yiddish and English; one existing identity enriched; two existing identities rechecked. Navigation shells excluded; no crawler retry or access-control bypass. Metrics pending reconciliation.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 792,
-    "content_verified_unique_sources": 789,
-    "answer_eligible_propositions": 2630
+    "answer_eligible_unique_sources": 799,
+    "content_verified_unique_sources": 796,
+    "answer_eligible_propositions": 2627
   },
   "last_manual_review_at": "2026-11-13T20:29:43+02:00",
   "runner_acquisition_policy": {
