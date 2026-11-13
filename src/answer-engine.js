@@ -951,8 +951,9 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(!usable.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
+ if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  let answerEvidence=usable;
- if(understanding.intent==='pattern'&&dailyStudyPrayerQuestion){
+ if(dailyStudyPrayerQuestion){
   answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
   const dailyFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(dailyFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_daily_routine_families',claims:[],sources:answerEvidence,answered_well:['נמצאו מענים אישיים על הרגלים יומיים'],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות נפרדות עם תוכן שנבדק על סדרי לימוד ותפילה יומיים.']};
