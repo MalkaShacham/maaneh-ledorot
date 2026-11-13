@@ -106,7 +106,7 @@
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "The latest content-readiness run passed all source, duplicate, audio metadata-only, witness-independence, and new batch-072 checks reached before the final assertion. It then showed that the generated public index omitted original_language and translation linkage fields even though the canonical source record contained them. The index builder now carries original_language, translation_status, independent_witness, parent/translation Evidence Family links, and witness_type. Rerun the commit-bound gate.",
+      "note": "The latest gate passed the original-language/translation metadata assertions and all prior corrections, then exposed that the generated public index omitted the source record's `type` field for correspondence dossiers. The index builder now carries `type` and `collection` in addition to original_language and translation-family metadata. Rerun the commit-bound gate.",
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": null
