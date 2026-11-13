@@ -165,63 +165,55 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-077",
+    "current_batch": "2026-11-13-content-batch-078",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
     "last_completed_batch": "2026-11-13-content-batch-077",
     "last_batch_summary": {
-      "batch_id": "2026-11-13-content-batch-077",
-      "reviewed_items": 12,
-      "source_bodies_inspected": 12,
-      "new_source_identities": 3,
-      "new_rebbe_letter_identities": 3,
+      "batch_id": "078",
+      "reviewed_items": 14,
+      "source_bodies_inspected": 14,
+      "new_source_identities": 12,
+      "new_rebbe_letter_identities": 11,
+      "new_other_document_identities": 1,
       "new_secretariat_document_identities": 0,
       "new_metadata_only_identities": 0,
       "duplicate_alias_identities": 0,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 8,
-      "new_response_propositions_added": 8,
-      "existing_response_propositions_added": 0,
-      "response_propositions_added": 8,
-      "answer_eligible_source_families_added": 3,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions_added": 23,
+      "existing_response_propositions_added": 1,
+      "response_propositions_added": 24,
+      "answer_eligible_source_families_added": 12,
       "source_languages": {
-        "Hebrew": 3
+        "Hebrew": 7,
+        "Yiddish": 4,
+        "English": 1
       },
       "rechecked_languages": {
-        "Hebrew": 9
+        "Hebrew": 2
       },
       "metrics_before": {
-        "answer_eligible_unique_sources": 789,
-        "content_verified_unique_sources": 786,
-        "answer_eligible_propositions": 2622
+        "answer_eligible_unique_sources": 792,
+        "content_verified_unique_sources": 789,
+        "answer_eligible_propositions": 2630
       },
       "metrics_after_expected": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
+        "answer_eligible_unique_sources": 804,
+        "content_verified_unique_sources": 801,
+        "answer_eligible_propositions": 2654
       },
-      "metrics_after_actual": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
-      },
+      "metrics_after_actual": null,
       "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 3,
-        "content_verified_unique_sources": 3,
-        "answer_eligible_propositions": 8
-      },
-      "metrics_delta_actual": {
-        "answer_eligible_unique_sources": 3,
-        "content_verified_unique_sources": 3,
-        "answer_eligible_propositions": 8
+        "answer_eligible_unique_sources": 12,
+        "content_verified_unique_sources": 12,
+        "answer_eligible_propositions": 24
       },
       "blocked_candidates": 12,
-      "status": "reconciled",
-      "reconciliation_commit": "b363a8ba0782bb4bd18527ae6e5c0636d389ca42",
-      "publication_commit": "3f4b63215d3700daf07ec8ca027b40569ce6e1cd"
+      "status": "pending_reconciliation"
     },
-    "last_run_note": "Batch 077 fully reconciled and published. Inspected 12 public Hebrew publisher body pages; added three distinct original-language letter identities (AIDs 5100681, 5054399, 5413166) with eight non-verbatim source-grounded propositions and exact body locators. Enriched AID 5357409 with a non-duplicate cross-family link to AID 5100681; rechecked eight existing identities without duplicate propositions. Twelve other candidates redirected to summary/navigation shells and were excluded. No crawler retry, access-control bypass, scan-only content verification, full-text copying, or Rebbe attribution of system synthesis. Actual readiness: 792 answer-eligible families, 789 content-verified families, 2630 propositions; zero reconciliation variance. Answer-quality gate, hourly maintenance and GitHub Pages deployment succeeded.",
+    "last_run_note": "Batch 078 submitted for reconciliation: 12 new public source identities across Hebrew, Yiddish and English; 23 new non-verbatim source-grounded propositions; one existing identity enriched with one proposition; two existing identities rechecked. Twelve alternative candidates redirected to navigation/summary shells and were excluded. No crawler retry, access-control bypass, scan-only verification or full-text copying. Reconciliation and content-readiness tests pending.",
     "last_batch_blocked_count": 12,
-    "last_batch_blocked_reason": "Twelve candidate AIDs (4666220, 4831207, 5100603, 5054489, 5100285, 5071021, 4812846, 5100376, 5100468, 5019426, 5100487, 5100014) redirected to rewritten summary/navigation shells without inspectable item-level bodies. No crawler retry or bypass; twelve alternate Hebrew publisher bodies were inspected.",
+    "last_batch_blocked_reason": "12 candidate pages redirected to summary/navigation shells: 5071144, 4783701, 5054608, 5071147, 4754642, 5100603, 4812647, 4812666, 5100244, 5100662, 4831207, 5357153. They were excluded; alternative public item-level bodies were inspected in the same run.",
     "next_work": [
       "Continue manual inspection of 8–15 accessible primary-source bodies per run, expanding to Yiddish and English and to distinct documentary classes where public bodies are available.",
       "Extend claim-level multi-source synthesis and researcher-mode evidence maps to additional high-priority topics, preserving item-local context and limitations.",

@@ -28,8 +28,18 @@ def answer_eligible(entry):
 
 def summarize(entries):
     usable = [e for e in entries if answer_eligible(e)]
-    identity = lambda e: str(e.get("evidence_family_id") or e.get("aid")
-                             or e.get("source_url") or e.get("key"))
+    def identity(e):
+        family = e.get("evidence_family_id")
+        if family:
+            return str(family)
+        aid = e.get("aid")
+        if not aid and e.get("source_url"):
+            match = re.search(r"/aid/(\d+)(?:/|$)", str(e.get("source_url")))
+            if match:
+                aid = match.group(1)
+        if aid:
+            return "aid:" + str(aid)
+        return str(e.get("source_url") or e.get("key"))
     families = {}
     for entry in usable:
         families.setdefault(identity(entry), []).append(entry)
