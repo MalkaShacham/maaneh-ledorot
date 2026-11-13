@@ -1,0 +1,1223 @@
+{
+  "schema": "content-research-batch-v1",
+  "generated": "2026-11-13",
+  "batch_id": "2026-11-13-content-batch-076",
+  "reviewed_at": "2026-11-13T18:35:35+02:00",
+  "status": "completed_pending_reconciliation",
+  "review_method": "Manual public web search/open of publisher pages; 10 new item-level English bodies and one reinspection of an existing Hebrew letter. No GitHub-runner crawler retry.",
+  "reviewed_item_count": 11,
+  "source_bodies_inspected": 11,
+  "new_source_identities": 10,
+  "new_rebbe_letter_identities": 10,
+  "new_secondary_narrative_identities": 0,
+  "new_secretariat_document_identities": 0,
+  "new_metadata_only_identities": 0,
+  "duplicate_alias_identities": 0,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 1,
+  "existing_identities_canonicalized": 0,
+  "new_response_propositions": 20,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 21,
+  "answer_eligible_source_families_added": 10,
+  "record_count": 10,
+  "language_distribution": {
+    "English": 10,
+    "Hebrew": 1
+  },
+  "source_type_distribution": {
+    "published_english_correspondence": 9,
+    "published_english_excerpt": 1,
+    "existing_hebrew_correspondence_reinspection": 1
+  },
+  "dedup_policy": "AID and source URL are stable item keys; distinct letters receive distinct Evidence Families. English renderings are explicitly marked independent_witness=false unless an original-language witness is inspected; translations/reprints of one letter must join the same family. Excerpts remain partial.",
+  "records": [
+    {
+      "id": "chabad-letter-72910",
+      "canonical_key": "aid:72910",
+      "aid": 72910,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "A Waste of Time",
+      "date_original": "17 Adar II, 5717 [March 20, 1957]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/72910/jewish/A-Waste-of-Time.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "בהתייחס לדיווח על דיכאון, המכתב מפנה לתניא ומציג את העצבות כמצב שמקורו, לפי ההסבר המצוטט, במקור שאינו קדוש.",
+        "המכתב מדגיש שהזמן הוא משאב יקר שכל רגע בו צריך לנצל, ומבקר את הזמן המוקדש לעיסוק בעניינים שהכותב רואה כזוטות."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 72910, \"A Waste of Time\", body lines 273–278; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 72910, body lines 273–278.",
+        "AID 72910, body lines 273–278 and publisher note at lines 293–299."
+      ],
+      "evidence_family_id": "rebbe-letter-5717-17-adar-ii-vol14-page503",
+      "primary_secondary_status": "Publisher-attributed English correspondence text; original-language status not established except where the page explicitly labels a free translation; no autograph inspected. Not an independent corroborating witness of an underlying original.",
+      "witness_type": "published_english_free_translation",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": "rebbe-letter-5717-17-adar-ii-vol14-page503",
+      "translation_status": "העמוד מסמן במפורש free translation; נוסח המקור בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 72910, \"A Waste of Time\", body lines 273–278; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 72910, \"A Waste of Time\", body lines 273–278; body inspected 2026-11-13.",
+        "transmission_type": "Publisher explicitly labels the page a free translation.",
+        "textual_status": "Body lines 273–278 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/72910/jewish/A-Waste-of-Time.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 72910, שורות 273–278. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 72910,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/72910/jewish/A-Waste-of-Time.htm",
+        "body_locator": "AID 72910, body lines 273–278",
+        "volume": 14,
+        "page": 503
+      },
+      "documented_circumstances": "מכתב המתייחס לדיווח של הנמען על דיכאון; העמוד מסומן כתרגום חופשי ומציין מיקום באגרות קודש כרך י״ד, עמ׳ 503.",
+      "question_or_problem": "הנמען מתאר דיכאון; המכתב מפנה לדברי התניא על מקור העצבות ומעמיד במרכז את ניצול הזמן.",
+      "conditions_or_qualifications": [
+        "העמוד מציין במפורש שמדובר בתרגום חופשי; נוסח המקור והאוטוגרף לא נבדקו.",
+        "המכתב אינו ייעוץ רפואי או פסיכולוגי ואינו מתאר את מלוא נסיבות הנמען."
+      ],
+      "audience": "נמען לא מזוהה בעמוד.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "עצבות",
+          "דיכאון",
+          "ניצול הזמן",
+          "מצב רוח ירוד",
+          "depression",
+          "time use"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The page explicitly identifies a free translation. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:72910"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "תרגום חופשי של מכתב העוסק בדיכאון ובניצול הזמן; המקור הביבליוגרפי מצוין כאגרות קודש כרך י״ד, עמ׳ 503."
+    },
+    {
+      "id": "chabad-letter-1266",
+      "canonical_key": "aid:1266",
+      "aid": 1266,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "Dealing With Doubt",
+      "date_original": null,
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1266/jewish/Dealing-With-Doubt.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מבחין בין קבלת מסגרת מחייבת לבין ויתור על חשיבה: הוא משווה את ההסתמכות על ידע מקצועי מצטבר בתחומי מדע ובריאות לקבלת מסגרת תורנית, בלי לדרוש מאדם לשחזר לבדו את כל הבדיקות.",
+        "לצד קבלת התורה והמצוות כנקודת מוצא מחייבת, המכתב מעודד שימוש בשכל ובהבנה לאחר הקבלה ומציע לנמענת להשפיע על צעירים בעלי נטייה דומה."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1266, \"Dealing With Doubt\", body lines 277–303; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 1266, body lines 281–291.",
+        "AID 1266, body lines 294–300."
+      ],
+      "evidence_family_id": "rebbe-letter-undated-dealing-with-doubt-aid1266",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם נוסח באנגלית אך אינו מציין אם זהו המקור האנגלי או תרגום; נוסח מקביל בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 1266, \"Dealing With Doubt\", body lines 277–303; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 1266, \"Dealing With Doubt\", body lines 277–303; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 277–303 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1266/jewish/Dealing-With-Doubt.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 1266, שורות 277–303. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 1266,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1266/jewish/Dealing-With-Doubt.htm",
+        "body_locator": "AID 1266, body lines 277–303"
+      },
+      "documented_circumstances": "מכתב לאישה ממיניאפוליס המתארת קושי ליישב מחויבות לתורה ומצוות עם חירות אישית ויצירתיות מחשבתית.",
+      "question_or_problem": "כיצד ליישב מחויבות לתורה ומצוות עם חופש אישי וחשיבה עצמאית.",
+      "conditions_or_qualifications": [
+        "העמוד אינו מציג תאריך או את המכתב הנכנס במלואו.",
+        "ההשוואה לתחומי מדע ובריאות היא אנלוגיה בתוך מכתב אישי, לא טענה מחקרית על תחומים אלה."
+      ],
+      "audience": "נמענת ששמה הושמט; העמוד מציין Minneapolis, Minnesota.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "קבלת עול תורה ומצוות",
+          "חופש אישי",
+          "חירות",
+          "חשיבה ביקורתית",
+          "personal freedom",
+          "Torah observance",
+          "intellect"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:1266"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "מכתב על היחס בין מחויבות לתורה ומצוות, חירות אישית, חשיבה עצמאית והשפעה על צעירים."
+    },
+    {
+      "id": "chabad-letter-1273955",
+      "canonical_key": "aid:1273955",
+      "aid": 1273955,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "How to Feel Secure",
+      "date_original": "22 Elul, 5739 [September 14, 1979]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1273955/jewish/How-to-Feel-Secure.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מציג את ההשגחה הפרטית כעיקרון החל על כל אדם, ומקשר את ההכרה בהשגחה לתחושת ביטחון מול תחושות הדיכאון שתוארו במכתב.",
+        "הוא מתאר קיום תורה ומצוות בחיי היומיום כערוץ לקבלת הברכות, ומייחס לנמענת יכולת לבצע זאת לפי יכולתה; זו פנייה אישית ולא הנחיה טיפולית."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1273955, \"How to Feel Secure\", body lines 269–287; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 1273955, body lines 278–280.",
+        "AID 1273955, body lines 279–283."
+      ],
+      "evidence_family_id": "rebbe-letter-5739-22-elul-aid1273955",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם נוסח באנגלית ואינו מציין במפורש אם הוא מקור או תרגום; נוסח בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 1273955, \"How to Feel Secure\", body lines 269–287; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 1273955, \"How to Feel Secure\", body lines 269–287; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 269–287 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1273955/jewish/How-to-Feel-Secure.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 1273955, שורות 269–287. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 1273955,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1273955/jewish/How-to-Feel-Secure.htm",
+        "body_locator": "AID 1273955, body lines 269–287"
+      },
+      "documented_circumstances": "מכתב לאישה ביוהנסבורג המתארת תחושות דיכאון; המכתב כולל התייחסות לקבלת צדקה.",
+      "question_or_problem": "הנמענת מתארת תחושות דיכאון ומבקשת מענה אישי.",
+      "conditions_or_qualifications": [
+        "המכתב הנכנס אינו מוצג; ההקשר חלקי.",
+        "אין לפרש את הדברים כטיפול או ייעוץ רפואי/נפשי."
+      ],
+      "audience": "Mrs. [name omitted], Johannesburg, South Africa.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "השגחה פרטית",
+          "דיכאון",
+          "ביטחון",
+          "תורה ומצוות",
+          "divine providence",
+          "depression",
+          "confidence"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:1273955"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "מכתב אישי על השגחה פרטית, ביטחון וקיום תורה ומצוות בתגובה לתיאור דיכאון."
+    },
+    {
+      "id": "chabad-letter-3567490",
+      "canonical_key": "aid:3567490",
+      "aid": 3567490,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "Sharing Good News",
+      "date_original": "Rosh Chodesh Nissan, 5738",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3567490/jewish/Sharing-Good-News.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הכותב מתאר קבלת מכתב מבנו של הנמען, שבו הבן מדווח על לימוד בישיבה בעיר העתיקה בירושלים ועל כוונתו להמשיך ללמוד שם לאורך השנה.",
+        "המכתב מביע סיפוק מכך שהבן עוסק בתורה ובחסידות בעומק, ומקשר את שמחת המשפחה להמשך לימוד, מצוות והפצת תורה; הדברים מתייחסים למשפחה ולבן המסוימים."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3567490, \"Sharing Good News\", body lines 267–285; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 3567490, body lines 275–280.",
+        "AID 3567490, body lines 279–282."
+      ],
+      "evidence_family_id": "rebbe-letter-5738-rosh-chodesh-nissan-aid3567490",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם נוסח באנגלית ואינו מציין במפורש אם הוא מקור או תרגום; נוסח בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 3567490, \"Sharing Good News\", body lines 267–285; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 3567490, \"Sharing Good News\", body lines 267–285; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 267–285 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3567490/jewish/Sharing-Good-News.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 3567490, שורות 267–285. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 3567490,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3567490/jewish/Sharing-Good-News.htm",
+        "body_locator": "AID 3567490, body lines 267–285"
+      },
+      "documented_circumstances": "מכתב למר שלמה יוסף זיפל המשתף אותו בבשורה על לימודי בנו בישיבה בעיר העתיקה בירושלים.",
+      "question_or_problem": "המכתב משתף את הנמען בבשורה טובה על בנו ומעודד המשך לימוד ועשייה.",
+      "conditions_or_qualifications": [
+        "הדברים מתייחסים לבן ולמשפחה המסוימים; אין להסיק מהם מדיניות חינוכית כללית.",
+        "המכתב הנכנס אינו מוצג."
+      ],
+      "audience": "Mr. Shlomo Yosef Zippel and his family.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "שמחה",
+          "בשורות טובות",
+          "חינוך בישיבה",
+          "לימוד תורה",
+          "חסידות",
+          "good news",
+          "yeshiva",
+          "joy"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:3567490"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "מכתב המשתף בשורה על לימודי בנו של הנמען בישיבה בירושלים ומעודד המשך לימוד ושמחה."
+    },
+    {
+      "id": "chabad-letter-2387459",
+      "canonical_key": "aid:2387459",
+      "aid": 2387459,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "How to Feed a Soul",
+      "date_original": "5729",
+      "date_precision": "approximate",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2387459/jewish/How-to-Feed-a-Soul.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מתייחס לאדישות ולייאוש שהנמען מתאר, ומעודד אותו שלא להישאר במצב זה אלא לחזור לפעילות יהודית מעשית.",
+        "הוא מציב את קיום המצוות כשלב מעשי שקודם להבנה מלאה, ומשתמש בדימוי של אדם רעב שצריך לקבל מזון לפני שהוא מנתח כיצד הגוף מעכל אותו."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 2387459, \"How to Feed a Soul\", body lines 267–279; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 2387459, body lines 273–275.",
+        "AID 2387459, body lines 276–279."
+      ],
+      "evidence_family_id": "rebbe-letter-5729-unknown-day-aid2387459",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם נוסח באנגלית ואינו מציין במפורש אם הוא מקור או תרגום; נוסח בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 2387459, \"How to Feed a Soul\", body lines 267–279; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 2387459, \"How to Feed a Soul\", body lines 267–279; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 267–279 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2387459/jewish/How-to-Feed-a-Soul.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 2387459, שורות 267–279. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 2387459,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2387459/jewish/How-to-Feed-a-Soul.htm",
+        "body_locator": "AID 2387459, body lines 267–279"
+      },
+      "documented_circumstances": "מכתב לנמען המתאר את תהפוכות חייו, אדישות וייאוש; התאריך מצוין כשנת 5729 בלבד.",
+      "question_or_problem": "הנמען מתאר אדישות וייאוש לאחר קשיי חיים.",
+      "conditions_or_qualifications": [
+        "התאריך בעמוד מצוין כשנה בלבד; המכתב הנכנס אינו מוצג.",
+        "הדברים הם מענה אישי; אין להסיק מהם אבחנה נפשית או תחליף לטיפול."
+      ],
+      "audience": "Recipient not named on page.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "ייאוש",
+          "אדישות",
+          "מעשה קודם להבנה",
+          "נעשה ונשמע",
+          "תורה ומצוות",
+          "despair",
+          "indifference",
+          "naaseh v'nishma"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:2387459"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "מכתב על תגובה לאדישות וייאוש ועל קדימות המעשה והמצוות להבנה מלאה."
+    },
+    {
+      "id": "chabad-letter-1866734",
+      "canonical_key": "aid:1866734",
+      "aid": 1866734,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "Fasting as a Means of Repentance",
+      "date_original": "15 Iyar, 5724 [April 27, 1964]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1866734/jewish/Fasting-as-a-Means-of-Repentance.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "במענה לבקשה להוסיף תעניות מעבר לתעניות הקבועות בלוח השנה, האיגרת נשענת על דברי אדמו״ר הזקן בדבר חולשת הדורות כסיבה שלא להוסיף תעניות.",
+        "במקום החלטה לצום, המכתב מציע להוסיף שמחה בעבודת ה׳ ולהפיץ השפעה טובה בסביבה; ההמלצה נאמרה בהקשר של שיחה קודמת עם הנמען."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1866734, \"Fasting as a Means of Repentance\", body lines 279–287; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 1866734, body lines 285–286.",
+        "AID 1866734, body lines 286–287."
+      ],
+      "evidence_family_id": "rebbe-letter-5724-15-iyar-aid1866734",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם נוסח באנגלית ואינו מציין במפורש אם הוא מקור או תרגום; נוסח בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 1866734, \"Fasting as a Means of Repentance\", body lines 279–287; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 1866734, \"Fasting as a Means of Repentance\", body lines 279–287; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 279–287 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1866734/jewish/Fasting-as-a-Means-of-Repentance.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 1866734, שורות 279–287. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 1866734,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1866734/jewish/Fasting-as-a-Means-of-Repentance.htm",
+        "body_locator": "AID 1866734, body lines 279–287"
+      },
+      "documented_circumstances": "מכתב בתגובה להצעת הנמען לקבל על עצמו תעניות נוספות, בהקשר של שיחה קודמת עם הכותב.",
+      "question_or_problem": "האם לקבל על עצמו תעניות מעבר לתעניות הקבועות בלוח השנה.",
+      "conditions_or_qualifications": [
+        "המכתב מציין שההמלצה נשענת על שיחה קודמת עם הנמען; אין להרחיב אותה לפסק הלכה כללי.",
+        "העמוד אינו מציג את המכתב הנכנס."
+      ],
+      "audience": "Recipient not named on page.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "תעניות פרטיות",
+          "צום נוסף",
+          "שמחה בעבודת ה׳",
+          "תענית",
+          "fasting",
+          "extra fasts",
+          "joy"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:1866734"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "מכתב על הימנעות מתעניות נוספות והמרת ההחלטה בתוספת שמחה והשפעה טובה."
+    },
+    {
+      "id": "chabad-letter-1878196",
+      "canonical_key": "aid:1878196",
+      "aid": 1878196,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "The Power of Teshuvah",
+      "date_original": "Erev Shevuoth, 5716 [May 15, 1956]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1878196/jewish/The-Power-of-Teshuvah.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב קובע שתשובה אפשרית גם לאחר עבירה חוזרת, ואין להמתין לוודאות שלא תישנה התקלה לפני המשך לימוד התורה וקיום המצוות.",
+        "הוא מזהיר מפני שקיעה בעצבות ובמחשבות שאין להן תועלת מעשית, ומפנה את תשומת הלב למאמץ מתמשך בתורה ובמצוות; זו תשובה למכתב אישי, לא טיפול נפשי."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1878196, \"The Power of Teshuvah\", body lines 267–284; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 1878196, body lines 273–278.",
+        "AID 1878196, body lines 276–280."
+      ],
+      "evidence_family_id": "rebbe-letter-5716-erev-shavuot-aid1878196",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם נוסח באנגלית ואינו מציין במפורש אם הוא מקור או תרגום; נוסח בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 1878196, \"The Power of Teshuvah\", body lines 267–284; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 1878196, \"The Power of Teshuvah\", body lines 267–284; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 267–284 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1878196/jewish/The-Power-of-Teshuvah.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 1878196, שורות 267–284. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 1878196,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1878196/jewish/The-Power-of-Teshuvah.htm",
+        "body_locator": "AID 1878196, body lines 267–284"
+      },
+      "documented_circumstances": "מענה למכתב לא מתוארך העוסק בתשובה, חזרה על אותה עבירה וחשש מכישלון חוזר.",
+      "question_or_problem": "כיצד להתייחס לתשובה כאשר אותה עבירה חוזרת והנמען אינו בטוח שיוכל לעמוד בניסיון בעתיד.",
+      "conditions_or_qualifications": [
+        "המכתב הנכנס אינו מוצג; ההקשר חלקי.",
+        "אין לפרש את הדברים כהנחיה טיפולית או רפואית."
+      ],
+      "audience": "Recipient not named on page.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "תשובה",
+          "עבירה חוזרת",
+          "עצבות",
+          "דכדוך",
+          "תורה ומצוות",
+          "teshuvah",
+          "relapse",
+          "despondency"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:1878196"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "מכתב על אפשרות התשובה גם לאחר כישלון חוזר ועל הימנעות משקיעה בעצבות."
+    },
+    {
+      "id": "chabad-letter-6977991",
+      "canonical_key": "aid:6977991",
+      "aid": 6977991,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "From Loneliness to Joy",
+      "date_original": "In the Days of Selichos, 5720",
+      "date_precision": "range",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/6977991/jewish/From-Loneliness-to-Joy.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב קושר בין ההכרה בהשגחה פרטית על כל אדם לבין עידוד ביטחון ואופטימיות, בתגובה לתחושת בדידות שהנמען העלה.",
+        "הוא מזכיר קשר לימודי עם מר פישר ופעילות אפשרית לקרב צעירים יהודים בהולנד ללימוד תורה, מצוות וחסידות; אין כאן תיאור של תכנית מוסדית רחבה."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 6977991, \"From Loneliness to Joy\", body lines 272–295; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 6977991, body lines 290–293.",
+        "AID 6977991, body lines 290–295."
+      ],
+      "evidence_family_id": "rebbe-letter-5720-days-of-selichos-aid6977991",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם נוסח באנגלית ואינו מציין במפורש אם הוא מקור או תרגום; נוסח בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 6977991, \"From Loneliness to Joy\", body lines 272–295; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 6977991, \"From Loneliness to Joy\", body lines 272–295; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 272–295 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/6977991/jewish/From-Loneliness-to-Joy.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 6977991, שורות 272–295. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 6977991,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/6977991/jewish/From-Loneliness-to-Joy.htm",
+        "body_locator": "AID 6977991, body lines 272–295"
+      },
+      "documented_circumstances": "מכתב מתקופת הסליחות תש״כ לנמען המתאר תחושת בדידות; מוזכר קשר עם מר פישר ופעילות עם צעירים יהודים בהולנד.",
+      "question_or_problem": "תחושת בדידות ומצב רוח, לצד לימודים ופעילות עם צעירים יהודים בהולנד.",
+      "conditions_or_qualifications": [
+        "העמוד מציין תקופה ולא יום מדויק; המכתב הנכנס אינו מוצג.",
+        "ההצעה לפעילות מתייחסת לנמען ולנסיבותיו, לא לתכנית מוסדית מתועדת."
+      ],
+      "audience": "Mr. [name omitted]; Mr. Fischer is mentioned as a study contact.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "בדידות",
+          "השגחה פרטית",
+          "אופטימיות",
+          "הפצת יהדות",
+          "צעירים יהודים",
+          "loneliness",
+          "divine providence",
+          "outreach"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:6977991"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "מכתב על בדידות, השגחה פרטית, לימוד ופעילות עם צעירים יהודים בהולנד."
+    },
+    {
+      "id": "chabad-letter-1273936",
+      "canonical_key": "aid:1273936",
+      "aid": 1273936,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "Feeling a Lack of Purpose",
+      "date_original": "16 Adar, 5712 [March 13, 1952]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1273936/jewish/Feeling-a-Lack-of-Purpose.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מציג אי-שביעות רצון עצמית כסימן אפשרי לחיות ולרצון להשתפר, כל עוד היא אינה הופכת לדכדוך ולשיתוק.",
+        "הוא מציב את קיום המצוות כשלב ראשון ואת ההבנה כשלב שני, ומעודד פעולה מעשית במקום התעכבות על תחושת חוסר תכלית."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1273936, \"Feeling a Lack of Purpose\", body lines 168–192; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 1273936, body lines 181–186.",
+        "AID 1273936, body lines 187–188."
+      ],
+      "evidence_family_id": "rebbe-letter-5712-16-adar-aid1273936",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם נוסח באנגלית ואינו מציין במפורש אם הוא מקור או תרגום; נוסח בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 1273936, \"Feeling a Lack of Purpose\", body lines 168–192; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 1273936, \"Feeling a Lack of Purpose\", body lines 168–192; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 168–192 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1273936/jewish/Feeling-a-Lack-of-Purpose.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 1273936, שורות 168–192. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 1273936,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1273936/jewish/Feeling-a-Lack-of-Purpose.htm",
+        "body_locator": "AID 1273936, body lines 168–192"
+      },
+      "documented_circumstances": "מכתב המשיב לפונה שכתב על תחושה שלא הגיע לרמה הראויה בתורה ומצוות ועל קושי לראות תכלית; המכתב הנכנס מתוארך ל-8 שבט.",
+      "question_or_problem": "תחושת חוסר תכלית ודכדוך על רקע תפיסה של חוסר התקדמות רוחנית.",
+      "conditions_or_qualifications": [
+        "המכתב הנכנס אינו מוצג; המכתב מציין רק את תאריך קבלתו.",
+        "אין להרחיב את המענה האישי לכל מצב נפשי או טיפולי."
+      ],
+      "audience": "Recipient not named on page.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "חוסר תכלית",
+          "אי שביעות רצון עצמית",
+          "עצבות",
+          "פעולה מעשית",
+          "מצוות",
+          "purpose",
+          "self-improvement",
+          "mitzvot"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:1273936"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "מכתב על אי-שביעות רצון עצמית, דכדוך, פעולה מעשית וקיום מצוות כשלב ראשון."
+    },
+    {
+      "id": "chabad-letter-1898720",
+      "canonical_key": "aid:1898720",
+      "aid": 1898720,
+      "type": "letter",
+      "collection": "Letters From the Rebbe / Pastoral Letters",
+      "source_class": "Written responses",
+      "source_class_detail": "פריט מכתב באנגלית באתר Chabad.org/TheRebbe.org; גוף הפרסום נבדק ידנית. אין בכך אימות אוטוגרף או נוסח מקור.",
+      "title": "The Purpose of Life",
+      "date_original": "10 Kislev, 5714 [November 17, 1953]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": "unknown",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1898720/jewish/The-Purpose-of-Life.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "verification_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "בקטע המצוטט הנשמה מתוארת כמי שיורדת לעולם הגשמי כדי למלא שליחות של זיכוך הגוף והסביבה באמצעות תורה ומצוות.",
+        "הקטע קושר בין התבוננות בשליחות הנשמה לבין שמחה בעבודת ה׳ גם לנוכח קשיים, ומציג את קיום המצוות כדרך למימוש תכלית החיים; מדובר בקטע מתוך איגרת ולא באיגרת מלאה."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1898720, \"The Purpose of Life\", body lines 261–288; body inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "AID 1898720, body lines 272–275.",
+        "AID 1898720, body lines 277–285."
+      ],
+      "evidence_family_id": "rebbe-letter-5714-10-kislev-aid1898720-excerpt",
+      "primary_secondary_status": "Publisher-attributed English text; original-language status not established; no autograph or parallel original-language witness inspected; not counted as independent corroboration.",
+      "witness_type": "published_english_text_non_independent",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "העמוד מפרסם קטע באנגלית ואינו מציין אם הוא מקור או תרגום; נוסח בלשון המקור לא נבדק.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 1898720, \"The Purpose of Life\", body lines 261–288; body inspected 2026-11-13.",
+      "witness": {
+        "kind": "text",
+        "state": "public publisher English body inspected",
+        "complete_partial": "partial",
+        "notes": "Only the visible English publisher body was inspected. Incoming letter and original-language manuscript/autograph were not inspected; this rendering is not counted as an independent corroborating witness."
+      },
+      "provenance": {
+        "authorship_status": "The publisher presents the item as correspondence of Rabbi Menachem M. Schneerson; attribution was not independently authenticated against an autograph.",
+        "signature_status": "No original autograph or signature inspected; publisher attribution only.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 1898720, \"The Purpose of Life\", body lines 261–288; body inspected 2026-11-13.",
+        "transmission_type": "Published English text; translation status is not stated on the page.",
+        "textual_status": "Body lines 261–288 inspected; incoming letter and original-language manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and exact source locators only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the public publisher-body level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1898720/jewish/The-Purpose-of-Life.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף האנגלי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 1898720, שורות 261–288. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. לא נבדקו המכתב הנכנס, אוטוגרף או נוסח המקור בלשון המקור; הטקסט האנגלי אינו נספר כעד עצמאי נוסף. העמוד מציג קטע בלבד, לא את האיגרת המלאה. ההקשר חלקי ואין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only bibliographic metadata, bounded non-verbatim research paraphrases and source locators are stored; no full text copied."
+      },
+      "locator": {
+        "aid": 1898720,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1898720/jewish/The-Purpose-of-Life.htm",
+        "body_locator": "AID 1898720, body lines 261–288"
+      },
+      "documented_circumstances": "קטע מתוך איגרת העוסק בשליחות הנשמה ובתכלית החיים; העמוד אינו מציג את האיגרת המלאה או את המכתב הנכנס.",
+      "question_or_problem": "אין שאלה נכנסת גלויה; הקטע מסביר את תכלית ירידת הנשמה לעולם.",
+      "conditions_or_qualifications": [
+        "העמוד מסמן במפורש שמדובר בקטע מתוך איגרת; יתר האיגרת והמכתב הנכנס לא נבדקו.",
+        "הקטע אינו בסיס לייחוס פרטים שאינם מופיעים בו."
+      ],
+      "audience": "Recipient not identified on page; excerpt only.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "Pastoral Letters from the Lubavitcher Rebbe"
+        ],
+        "research_terms": [
+          "תכלית החיים",
+          "ייעוד הנשמה",
+          "זיכוך העולם",
+          "תורה ומצוות",
+          "שמחה",
+          "purpose of life",
+          "soul mission",
+          "divine purpose"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One underlying letter/excerpt Evidence Family. Any later original-language text, scan, reprint or translation of the same letter must be linked to this family, not counted as a second independent witness.",
+      "rights_status": "copyrighted-source; bounded non-verbatim paraphrases and source locators only",
+      "notes": "Dedup checked against current data/items paths, bulk-indexed inventories and content-research batches 055–075; no exact AID/URL match found. The English rendering is marked non-independent; any later original-language witness must join this Evidence Family. No full copyrighted text copied.",
+      "dedup": {
+        "checked_on": "2026-11-13",
+        "result": "No exact AID or source URL match found in the inspected canonical item paths, bulk-indexed inventories and content-research batches 055–075; one Evidence Family retained for this underlying letter.",
+        "stable_key": "aid:1898720"
+      },
+      "epistemic_level": 1,
+      "summary_researcher": "קטע מאיגרת על שליחות הנשמה, זיכוך העולם ותכלית החיים באמצעות תורה ומצוות."
+    }
+  ],
+  "existing_identity_updates": [
+    {
+      "identity": "chabad-letter-4812673",
+      "aid": 4812673,
+      "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
+      "evidence_family_id": "igrot-letter-5712-10-sivan-aid4812673",
+      "propositions_added": 1,
+      "source_locator": "Chabad.org AID 4812673, Hebrew body line 295; re-inspected 2026-11-13.",
+      "note": "Added the specific bedtime Shema sequence: after the cited Psalm, repeat the verse beginning 'Ya'ancha' and intend the required kavvanot; same original Hebrew letter and same Evidence Family."
+    }
+  ],
+  "blocked_candidates": [
+    {
+      "aid": 4646055,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4646055/jewish/page.htm",
+      "reason": "summary/navigation shell; no item-level body returned",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 4754371,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4754371/jewish/page.htm",
+      "reason": "summary/navigation shell; no item-level body returned",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 4872422,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4872422/jewish/page.htm",
+      "reason": "summary/navigation shell; no item-level body returned",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 4872436,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4872436/jewish/page.htm",
+      "reason": "summary/navigation shell; no item-level body returned",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 5099887,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5099887/jewish/page.htm",
+      "reason": "summary/navigation shell; no item-level body returned",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 5100351,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100351/jewish/page.htm",
+      "reason": "summary/navigation shell; no item-level body returned",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 1878120,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/1878120/jewish/page.htm",
+      "reason": "open returned internal error; body unavailable",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 1910419,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/1910419/jewish/page.htm",
+      "reason": "open returned internal error; body unavailable",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 4855474,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4855474/jewish/page.htm",
+      "reason": "open returned internal error; body unavailable",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 1897842,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/1897842/jewish/page.htm",
+      "reason": "open returned internal error; body unavailable",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 6429866,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/6429866/jewish/page.htm",
+      "reason": "open returned internal error on this run; body unavailable",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    },
+    {
+      "aid": 4783853,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4783853/jewish/page.htm",
+      "reason": "redirected to rewritten summary/navigation shell; no body available",
+      "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
+    }
+  ],
+  "excluded_candidates": [],
+  "deduplication_check": "The 10 new AIDs were checked against current data/items filenames, all bulk-indexed files, content-research batches 055–075, and mixed-authorized-content batches 037–040; no exact AID/URL match was found. AID 4812673 was retained in its existing family. English pages are not counted as independent corroborating witnesses; any later original-language manifestation must join the same family. AID 1898720 is explicitly an excerpt.",
+  "source_languages": [
+    "English",
+    "Hebrew"
+  ],
+  "source_types": [
+    "published English correspondence",
+    "publisher-labeled free English translation",
+    "published English excerpt",
+    "re-inspected original-language Hebrew correspondence"
+  ],
+  "limitations": [
+    "The incoming letters are not displayed; recipient and situational context are incomplete for several pages.",
+    "AID 72910 is explicitly labeled a free translation; the original-language text was not inspected.",
+    "For the other English pages, the publisher page does not establish whether the English is original or translated; all are conservatively marked non-independent.",
+    "AID 1898720 is an excerpt, not a complete letter.",
+    "No autograph, original signature or physical manuscript was inspected.",
+    "These historical personal letters are not current medical or psychological advice.",
+    "No full copyrighted text was copied."
+  ],
+  "crawler_retry": false,
+  "access_control_bypassed": false,
+  "full_text_copied": false,
+  "metrics_before": {
+    "answer_eligible_unique_sources": 779,
+    "content_verified_unique_sources": 776,
+    "answer_eligible_propositions": 2601
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 789,
+    "content_verified_unique_sources": 786,
+    "answer_eligible_propositions": 2622
+  },
+  "reconciliation_status": "pending"
+}

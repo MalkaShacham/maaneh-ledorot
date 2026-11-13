@@ -277,3 +277,14 @@ Retrieval and researcher-mode work:
 - Researcher mode now distinguishes total underlying Evidence Families from independent witness families. English translations can be shown as non-independent manifestations without being counted as independent witnesses; secondary narratives are not treated as translations.
 
 Validation status: answer quality gate run 43463212994 on commit 658fc435 passed, including `test_content_readiness.mjs`; Pages build/deploy run 43463212552 succeeded; bulk-ingest run 43463212996 completed without a content change. The tzedakah synthesis regression was resolved by making query-specific evidence selection mutually exclusive and prioritizing inspected propositions for year-round giving, allocation, and proportional charity. Hourly maintenance run 43460650386 reported no actionable corpus change and failed evidence validation before publication; it did not create a new content batch. The blocked crawler was not retried. The website URL could not be independently rendered by the web reader, although GitHub Pages build/deploy succeeded.
+
+
+## 2026-11-13 — Manual content review batch 076
+
+- Inspected 10 new public English-language letter bodies and re-inspected one existing Hebrew letter (AID 4812673): 11 bodies total.
+- Added 10 distinct letter/excerpt identities and 20 non-verbatim, source-grounded propositions; enriched AID 4812673 in place with one additional proposition from Hebrew body line 295, retaining its existing Evidence Family.
+- The 10 English renderings are conservatively marked `independent_witness=false`. AID 72910 is explicitly labeled a free translation; the translation status of the other English pages is not established by the page. AID 1898720 is an excerpt, not a complete letter.
+- 12 candidate pages were blocked by rewritten summary shells or open errors. No blocked crawler was retried; alternative public item-level letter pages were inspected in the same run. No access controls were bypassed and no full copyrighted text was copied.
+- Expected content-readiness change after reconciliation: `answer_eligible_unique_sources` 779 → 789; `content_verified_unique_sources` 776 → 786; `answer_eligible_propositions` 2601 → 2622. These are expected values until the reconciliation workflow confirms them.
+- Retrieval work: added focused Hebrew/English topic aliases for sadness, depression, loneliness, life purpose and additional fasts; added a multi-source answer-quality regression for regular and researcher modes, requiring proposition-level citations and witness-local context boundaries.
+- The reconciliation script now audits the latest content-research batch dynamically and resets its before/after delta from that batch's recorded `metrics_before`, rather than remaining hard-coded to batch 075.

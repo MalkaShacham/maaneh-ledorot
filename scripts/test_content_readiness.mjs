@@ -749,3 +749,51 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher')assert(m.research&&m.research.witnesses.length===m.sources.length&&m.research.evidence_map.length>0);
  else assert.equal(m.research,undefined);
 }
+
+
+// Batch 076: English publisher renderings remain non-independent, while existing
+// Hebrew witnesses support a claim-cited multi-source answer in both modes.
+const batch076Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-076-2026-11-13.json',root)));
+const batch076Aids=[72910,1266,1273955,3567490,2387459,1866734,1878196,6977991,1273936,1898720];
+assert.equal(batch076Data.reviewed_item_count,11);
+assert.equal(batch076Data.source_bodies_inspected,11);
+assert.equal(batch076Data.new_source_identities,10);
+assert.equal(batch076Data.existing_identities_enriched,1);
+assert.equal(batch076Data.new_response_propositions,20);
+assert.equal(batch076Data.existing_response_propositions_added,1);
+assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
+assert.equal(metrics.answer_eligible_unique_sources,789,'answer-eligible unique Evidence Families must rise by ten');
+assert.equal(metrics.content_verified_unique_sources,786,'content-verified Evidence Families must rise by ten');
+assert.equal(metrics.answer_eligible_propositions,2622,'all twenty new propositions and one enrichment must be counted');
+for(const aid of batch076Aids){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
+ assert.equal(e.status,'Verified','batch-076 source '+aid+' must retain scoped publisher-body verification');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope,'batch-076 source '+aid+' must expose exact locator and scope');
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,false,'English rendering '+aid+' must not be counted as an independent witness');
+ assert(e.evidence_family_id,'batch-076 source '+aid+' must have one underlying Evidence Family');
+}
+const enriched4812673=idx.entries.find(e=>String(e.aid)==='4812673');
+assert(enriched4812673&&enriched4812673.response_propositions.length>=3,'AID 4812673 must retain its existing family and the additional Hebrew proposition');
+assert.equal(enriched4812673.evidence_family_id,'igrot-letter-5712-10-sivan-aid4812673');
+const moodQuestion='איך להתמודד עם מצב רוח ירוד, מחשבות מבלבלות וחוסר חיות בלימוד?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,moodQuestion,{mode});
+ assert(m.answerable,mode+': inspected correspondence must answer the mood-and-study question');
+ assert(m.sources.some(e=>String(e.aid)==='5100351'),mode+': AID 5100351 must support the thought-redirection claim');
+ assert(m.sources.some(e=>String(e.aid)==='4854525'),mode+': AID 4854525 must support the low-mood-and-study claim');
+ assert(new Set(m.sources.filter(e=>e._independent_witness!==false).map(e=>e.evidence_family_id)).size>=2,mode+': synthesis must retain at least two independent Hebrew Evidence Families');
+ assert(m.claims.every(c=>c.source_numbers.length),mode+': each mood-and-study claim needs a source citation');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': every citation must entail its exact claim');
+ assert(m.context_boundary.every(x=>x.valid),mode+': circumstances and qualifications must remain witness-local');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_map.length>0,'researcher mode must expose the claim-to-witness evidence map');
+  assert(m.research.citation_entailment.every(x=>x.valid),'researcher mode must expose valid claim-local citations');
+  assert(m.research.context_boundary.every(x=>x.valid),'researcher mode must expose valid context boundaries');
+  assert(m.research.evidence_families>=2,'researcher mode must count at least two independent evidence families');
+ }else assert.equal(m.research,undefined,'regular mode must not expose researcher-only analysis');
+}

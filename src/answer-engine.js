@@ -322,6 +322,9 @@ const TOPICS={
  'שיעורי חומש תהלים ותניא':['שלשת השיעורים','שלושת השיעורים','שלושת סדרי הלימוד היומיים','שיעור תהלים','תהלים לאחר תפילת שחרית','פרשה חומש עם פירוש רש״י','חומש עם פירוש רש״י','שיעור תניא','לימוד תניא','daily Chumash Tehillim Tanya'],
  'בשורות טובות מנסיעה ותומכי תמימים':['בשורות טובות ממקומות הנסיעה','מקומות שיהי׳ שם דרך נסיעתו','ישיבת תומכי תמימים','דרך נסיעתו','good news from Tomchei Temimim','travel updates']
 
+ 'מצב רוח ירוד, עצבות ובדידות':['מצב רוח ירוד','מצב רוח','עצבות','דיכאון','בדידות','ייאוש','דכדוך','מחשבות מבלבלות','חוסר חיות בלימוד','חוסר חשק בלימוד','low mood','depression','sadness','loneliness','despondency'],
+ 'תכלית החיים וייעוד הנשמה':['תכלית החיים','חוסר תכלית','ייעוד הנשמה','מטרת החיים','שליחות הנשמה','purpose of life','soul mission','divine purpose'],
+ 'תעניות פרטיות ושמחה':['תעניות פרטיות','תעניות נוספות','צום נוסף','תענית נוספת','שמחה במקום צום','private fasts','extra fasts','voluntary fasting']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -974,8 +977,8 @@ function isLetterEvidence(e){
 }
 export function supportsDifficultyPattern(proposition){
  const body=norm(proposition);
- const challenge=['קשיים','קשיי','קושי','מכשול','מכשולים','אתגר','אתגרים','difficulty','difficulties','obstacle','obstacles','challenge','challenges','hardship','struggle','struggles'];
- const constructive=['מאמץ','מאמצים','נחישות','התגברות','להמשיך','המשך','התמדה','להתמיד','להתקדם','התקדמות','כוחות','חיזוק','effort','efforts','determination','overcome','overcoming','continue','continuing','persist','persistence','perseverance','strength','strengthen','progress','growth','commitment'];
+ const challenge=['קשיים','קשיי','קושי','מכשול','מכשולים','אתגר','אתגרים','difficulty','difficulties','obstacle','obstacles','challenge','challenges','hardship','struggle','struggles','עצבות','דיכאון','בדידות','ייאוש','דכדוך','מצב רוח','מחשבות מבלבלות','חוסר חיות','depression','sadness','loneliness','despondency'];
+ const constructive=['מאמץ','מאמצים','נחישות','התגברות','להמשיך','המשך','התמדה','להתמיד','להתקדם','התקדמות','כוחות','חיזוק','effort','efforts','determination','overcome','overcoming','continue','continuing','persist','persistence','perseverance','strength','strengthen','progress','growth','commitment','להוסיף','להפנות','הפניית תשומת לב','לימוד','קיום מצוות','פעילות','מעשה','שמחה','action','study','mitzvot','joy'];
  return challenge.some(term=>containsTerm(body,term))&&constructive.some(term=>containsTerm(body,term));
 }
 function supportsTzedakahStudyEffortProposition(proposition){

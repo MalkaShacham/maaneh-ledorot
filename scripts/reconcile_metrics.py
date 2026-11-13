@@ -199,13 +199,20 @@ search_index={"generated":today,"count":len(search_entries),"entries":sorted(sea
 (ROOT/"data/public-search-index.json").write_text(json.dumps(search_index,ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf-8")
 
 # Preserve an item-level reconciliation audit for the latest manual content batch.
-# This makes AID-level deduplication and answer eligibility inspectable without
-# downloading the oversized public search index.
-batch075_path=ROOT/"data/items/content-research-batch-075-2026-11-13.json"
-if batch075_path.exists():
+# The selected batch is discovered dynamically so new manual reviews do not leave
+# the audit pinned to a historical filename.
+manual_batch_paths=sorted(fp for fp in items if re.fullmatch(r"content-research-batch-\d{3}-\d{4}-\d{2}-\d{2}\.json",fp.name))
+batch_path=manual_batch_paths[-1] if manual_batch_paths else None
+if batch_path:
+    batch_label=re.search(r"content-research-batch-(\d+)-",batch_path.name).group(1)
     try:
-        batch075=json.loads(batch075_path.read_text(encoding="utf-8"))
-        target_aids=[str(r.get("aid")) for r in batch075.get("records",[]) if isinstance(r,dict) and r.get("aid")]
+        batch_data=json.loads(batch_path.read_text(encoding="utf-8"))
+        target_aids=[str(r.get("aid")) for r in batch_data.get("records",[]) if isinstance(r,dict) and r.get("aid")]
+        for update in batch_data.get("existing_identity_updates",[]):
+            identity=str(update.get("identity") or update.get("id") or "")
+            match=re.search(r"(\d+)$",identity)
+            if match: target_aids.append(match.group(1))
+        target_aids=list(dict.fromkeys(target_aids))
         audit=[]
         by_aid={aid:[] for aid in target_aids}
         for fp in items:
@@ -242,17 +249,30 @@ if batch075_path.exists():
                     "evidence_family_id":selected.get("evidence_family_id") if selected else None,
                     "canonical_file":selected.get("canonical_file") if selected else None,
                     "proposition_count":len(selected.get("response_propositions") or []) if selected else 0,
-                    "proposition_source_locator":selected.get("proposition_source_locator") if selected else None
+                    "proposition_source_locator":selected.get("proposition_source_locator") if selected else None,
+                    "independent_witness":selected.get("independent_witness") if selected else None
                 } if selected else {"present":False}
             })
+        batch_before=batch_data.get("metrics_before")
+        if isinstance(batch_before,dict):
+            state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})["before"]={
+                k:batch_before[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in batch_before
+            }
         state.setdefault("development_recovery",{})["last_reconciliation"]={
-            "batch_id":"075","generated":today,"batch_record_count":len(target_aids),
+            "batch_id":batch_data.get("batch_id") or batch_label,
+            "batch_file":str(batch_path.relative_to(ROOT)),
+            "generated":today,
+            "batch_record_count":len(target_aids),
+            "new_source_identity_count":batch_data.get("new_source_identities"),
+            "existing_identities_enriched":batch_data.get("existing_identities_enriched"),
+            "source_bodies_inspected":batch_data.get("source_bodies_inspected"),
             "answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),
             "selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")}),
+            "non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),
             "items":audit
         }
     except Exception as exc:
-        state.setdefault("development_recovery",{})["last_reconciliation"]={"batch_id":"075","generated":today,"error":str(exc)}
+        state.setdefault("development_recovery",{})["last_reconciliation"]={"batch_id":batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"generated":today,"error":str(exc)}
 
 print("search_index_count",len(search_entries))
 
