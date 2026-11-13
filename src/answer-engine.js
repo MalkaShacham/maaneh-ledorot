@@ -1139,8 +1139,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
  const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
  const tzedakahSynthesisQuestion=understanding.query.includes('צדקה לאורך השנה')&&(['מעשר','חומש','חלוקת תרומות'].some(term=>understanding.query.includes(term)));
- if(String(q||'').includes('צדקה'))console.log('[tzedakah-query-debug]',JSON.stringify({raw:String(q),normalized:understanding.query,topics:understanding.topics,flag:tzedakahSynthesisQuestion}));
- if(tzedakahSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
+  if(tzedakahSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(!usable.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
@@ -1159,7 +1158,6 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   const byFamily=new Map();
   for(const e of [...directTzedakah,...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
   answerEvidence=[...byFamily.values()].slice(0,8);
-  console.log('[tzedakah-source-debug]',JSON.stringify({index_candidates:index.filter(e=>['4783989','4731080','4812647','5287606'].includes(String(e.aid))).map(e=>({aid:e.aid,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,family:familyKey(e),props:e.response_propositions})),content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,direct_aids:directTzedakah.map(e=>e.aid),answer_aids:answerEvidence.map(e=>e.aid),families:[...tzedakahFamilies]}));
   answerEvidence.forEach(e=>{const k=familyKey(e);if(k)tzedakahFamilies.add(k);});
   if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.'],debug_tzedakah:{content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,sample:tzedakahContentIndex.slice(0,24).map(e=>({aid:e.aid,id:e.id,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,family:familyKey(e),classification:classifyWitness(e)}))}};
  }

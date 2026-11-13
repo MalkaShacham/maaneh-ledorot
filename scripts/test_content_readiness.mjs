@@ -728,7 +728,7 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': inspected tzedakah correspondence must support a bounded multi-source synthesis');
  const expected=[4783989,4731080,4812647,5287606];
  const expectedFound=expected.filter(aid=>m.sources.some(e=>String(e.aid)===String(aid)));
- assert(expectedFound.length>=3,mode+': synthesis must retrieve at least three of the inspected, distinct tzedakah Evidence Families; found '+expectedFound.join(',')+'; sources '+m.sources.map(e=>e.aid||e.id).join(',')+'; query '+m.understanding.query+'; topics '+m.understanding.topics.join('|')+'; intent '+m.understanding.intent+'; debug '+JSON.stringify(m.debug_tzedakah));
+ assert(expectedFound.length>=3,mode+': synthesis must retrieve at least three of the inspected, distinct tzedakah Evidence Families; found '+expectedFound.join(',')+'; sources '+m.sources.map(e=>e.aid||e.id).join(',')+'; query '+m.understanding.query+'; topics '+m.understanding.topics.join('|')+'; intent '+m.understanding.intent);
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': tzedakah synthesis must deduplicate by Evidence Family');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every synthesized claim needs proposition-level citations');
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid),mode+': tzedakah synthesis must preserve claim entailment and witness-local context');
