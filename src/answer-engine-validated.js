@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch061-work-study-v1';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch062-publication-v5';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -234,13 +234,17 @@ const TOPIC_ALIASES={
  'יחס למכחישי תורה ולימוד הלכה':['מכחישים וכופרים','תורה שבכתב','תורה שבעל פה','הלכות הצריכות בחיי היום יום','לימוד הלכה למעשה','deniers of written and oral Torah','practical halacha'],
  'התכתבות עם הוצאה לאור וספרים':['ילדותנו','ספרי ילדותנו','הוצאה לאור בירושלים','הוצאת ספרים בירושלים','קבלת ספרים','publication correspondence books']
 ,
- 'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
+ 'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','הוספת אברכים לשיעור חסידות','להוסיף אברכים לשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
  'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence'],
   'ידיעה ובחירה חופשית':['ידיעת ה׳','ידיעת השם','היחס בין ידיעת ה׳ לבחירה','בחירה חופשית','free choice','divine foreknowledge'],
   'השגחה פרטית':['השגחה פרטית','השגחה על כל פרט','השגחה על דומם צומח וחי','דומם','צומח','בעלי חיים','Divine Providence','Hashgachah Peratis'],
  'העתק שיחות סוכות':['העתק שיחות סוכות','העתקה של שיחות סוכות','שיחות סוכות','Sukkot talks copy'],
  'מחלקת קה״ת בשנגהי':['מחלקת קה״ת בשנגהי','מחלקת קה״ת','הקמת מחלקת קה״ת','שנגהי','300 עותקים','Shanghai Kehot department','Kehot publishing department'],
  'לימוד יומי תחת עומס עבודה':['לימוד יומי תחת עומס עבודה','לימוד חומש וחק לישראל','חומש וחק לישראל','חלוקת הלימוד לפסקאות','חלוקת שיעורי חומש במהלך היום','לימוד בימי החורף הקצרים','טרדת העבודה ולימוד','לימוד בחנות','daily Torah study under work constraints','Chumash and Chok L’Yisrael during work'],
+  'הדפסת ספרי חסידות ותיקוני מהדורות':['הדפסת ספרי חסידות ותיקוני מהדורות','הדפסת ספרי חסידות','הדפסת ספרי הצמח צדק','ספרי הצמח צדק','הדפסת כתבי רבותינו','הדפסת כתבי וספרי רבותינו','קרן להדפסה','קרן להדפסת כתבי רבותינו','קרן להדפסת כתבי וספרי רבותינו','הפצת הנדפסים','הפצת תורת רבותינו','הפצת הספרים','הפצתם','פצתם','השמטות ושינויי נוסח','השמטות ושינויי הנוסח','איסוף השמטות ושינויי נוסח','מילואים ותיקונים לספר השיחות','הוצאת כתבי אדמו״ר נ״ע','publishing chassidic texts and editorial corrections','printing fund and distribution'],
+  'בית רבקה בקשת ויזה וסיוע לפליטים':['בית רבקה בקשת ויזה וסיוע לפליטים','בקשת ויזה באמצעות בית רבקה','בית רבקה תגיש עבורה בקשה','וויזה לארה״ב','פליטים שהגיעו מרוסיה בקיץ תש״ו'],
+  'בית רבקה פריז ורישום בית ספר':['בית רבקה פריז ורישום בית ספר','ועד בית הספר לנערות בית רבקה בפריז','בית רבקה בפריז','המוסד נרשם לרשת בתי הספר','תכנית הלימודים הרגילה']
+
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);

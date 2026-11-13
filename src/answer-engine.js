@@ -279,9 +279,13 @@ const TOPICS={
  'יחס למכחישי תורה ולימוד הלכה':['מכחישים וכופרים','תורה שבכתב','תורה שבעל פה','הלכות הצריכות בחיי היום יום','לימוד הלכה למעשה','deniers of written and oral Torah','practical halacha'],
  'התכתבות עם הוצאה לאור וספרים':['ילדותנו','ספרי ילדותנו','הוצאה לאור בירושלים','הוצאת ספרים בירושלים','קבלת ספרים','publication correspondence books']
 ,
- 'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
+ 'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','הוספת אברכים לשיעור חסידות','להוסיף אברכים לשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
  'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence'],
  'לימוד יומי תחת עומס עבודה':['לימוד יומי תחת עומס עבודה','לימוד חומש וחק לישראל','חומש וחק לישראל','חלוקת הלימוד לפסקאות','חלוקת שיעורי חומש במהלך היום','לימוד בימי החורף הקצרים','טרדת העבודה ולימוד','לימוד בחנות','daily Torah study under work constraints','Chumash and Chok L’Yisrael during work'],
+  'הדפסת ספרי חסידות ותיקוני מהדורות':['הדפסת ספרי חסידות ותיקוני מהדורות','הדפסת ספרי חסידות','הדפסת ספרי הצמח צדק','ספרי הצמח צדק','הדפסת כתבי רבותינו','הדפסת כתבי וספרי רבותינו','קרן להדפסה','קרן להדפסת כתבי רבותינו','קרן להדפסת כתבי וספרי רבותינו','הפצת הנדפסים','הפצת תורת רבותינו','הפצת הספרים','הפצתם','פצתם','השמטות ושינויי נוסח','השמטות ושינויי הנוסח','איסוף השמטות ושינויי נוסח','מילואים ותיקונים לספר השיחות','הוצאת כתבי אדמו״ר נ״ע','publishing chassidic texts and editorial corrections','printing fund and distribution'],
+  'בית רבקה בקשת ויזה וסיוע לפליטים':['בית רבקה בקשת ויזה וסיוע לפליטים','בקשת ויזה באמצעות בית רבקה','בית רבקה תגיש עבורה בקשה','וויזה לארה״ב','פליטים שהגיעו מרוסיה בקיץ תש״ו'],
+  'בית רבקה פריז ורישום בית ספר':['בית רבקה פריז ורישום בית ספר','ועד בית הספר לנערות בית רבקה בפריז','בית רבקה בפריז','המוסד נרשם לרשת בתי הספר','תכנית הלימודים הרגילה']
+
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -353,6 +357,8 @@ export function understandQuestion(q){
  if(topics.includes('פרויקט תניא והפצת המעיינות'))topics=topics.filter(t=>t!=='שליחות');
  if(topics.includes('התכתבות עם הוצאה לאור וספרים'))topics=topics.filter(t=>!['הפצת ספרים','הערות שוליים בספר'].includes(t));
  if(topics.includes('הרחבת שיעור חסידות'))topics=topics.filter(t=>!['חינוך','לימוד חסידות'].includes(t));
+ // A specific print/editing/distribution query must not inherit the broad publishing bucket.
+ if(topics.includes('הדפסת ספרי חסידות ותיקוני מהדורות'))topics=topics.filter(t=>t!=='הפצת ספרים');
  if(topics.includes('מדריך מחנה גן ישראל והשפעה'))topics=topics.filter(t=>t!=='חינוך');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
@@ -364,6 +370,8 @@ export function understandQuestion(q){
  if(topics.includes('רופאים מומחים והתאמת לימוד'))topics=topics.filter(t=>t!=='בריאות');
  if(topics.includes('סניף נשי חב״ד מונטריאול'))topics=topics.filter(t=>t!=='נשים');
  if(topics.includes('בית רבקה סדר בוקר'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('בית רבקה בקשת ויזה וסיוע לפליטים'))topics=topics.filter(t=>t!=='חינוך');
+ if(topics.includes('בית רבקה פריז ורישום בית ספר'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('איגוד הרבנים ושעות חול'))topics=topics.filter(t=>t!=='בית רבקה סדר בוקר');
  if(topics.includes('הערות שוליים בספר'))topics=topics.filter(t=>t!=='הפצת ספרים');
  if(topics.includes('הודעה מסודרת להנהלת בית ספר'))topics=topics.filter(t=>t!=='חינוך');
