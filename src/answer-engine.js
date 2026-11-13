@@ -1145,7 +1145,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  let answerEvidence=usable;
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  if(tzedakahSynthesisQuestion){
-  const directTzedakah=index.filter(e=>e.status==='Verified'&&e.has_content_evidence&&isLetterEvidence(e)&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&arr(e.response_propositions).some(supportsTzedakahSynthesisProposition)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition)}));
+  const directTzedakah=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&arr(e.response_propositions).some(supportsTzedakahSynthesisProposition)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition)}));
   const byFamily=new Map();
   for(const e of [...answerEvidence,...directTzedakah]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
   answerEvidence=[...byFamily.values()].slice(0,8);
