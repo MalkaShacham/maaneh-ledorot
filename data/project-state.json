@@ -149,29 +149,34 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-063",
-    "required_agent_action": "Continue direct public-body inspection across Hebrew, Yiddish and English; prioritize pending AIDs whose publisher pages expose body text, preserve Evidence Family identity and translation dependency, run reconciliation and both answer modes, and do not retry the known 403 crawler.",
-    "last_completed_batch": "2026-11-13-content-batch-063",
+    "current_batch": "2026-11-13-content-batch-064",
+    "required_agent_action": "Continue direct public-body inspection in Hebrew, Yiddish and English and additional document types; preserve Evidence Families; do not retry the known HTTP 403 crawler.",
+    "last_completed_batch": "2026-11-13-content-batch-064",
     "last_batch_summary": {
-      "reviewed_items": 9,
-      "new_source_identities": 1,
-      "existing_identities_enriched": 8,
+      "reviewed_items": 11,
+      "new_source_identities": 10,
+      "existing_identities_enriched": 1,
       "response_propositions_added": 20,
       "metrics_before": {
-        "answer_eligible_unique_sources": 663,
-        "content_verified_unique_sources": 660,
-        "answer_eligible_propositions": 2022
+        "answer_eligible_unique_sources": 664,
+        "content_verified_unique_sources": 661,
+        "answer_eligible_propositions": 2328,
+        "canonical_unique_item_keys": 8958,
+        "verified_unique_item_keys": 7640,
+        "canonical_json_files": 433,
+        "content_review_queue_records": 1050
       },
       "expected_metrics_after": {
-        "answer_eligible_unique_sources": 666,
-        "content_verified_unique_sources": 663,
-        "answer_eligible_propositions": 2042
+        "answer_eligible_unique_sources": 674,
+        "content_verified_unique_sources": 671,
+        "answer_eligible_propositions": 2348,
+        "canonical_unique_item_keys": 8968,
+        "verified_unique_item_keys": 7650,
+        "canonical_json_files": 434,
+        "content_review_queue_records": 1050
       },
-      "family_reconciliations": 2,
-      "duplicate_aliases_linked": 4,
-      "review_queue_removed": 1,
-      "status": "content_reviewed_family_links_reconciled_quality_gate_pending"
+      "status": "content_reviewed_reconciliation_pending"
     },
-    "last_run_note": "Batch 063 inspected nine public text-index pages for Igrot Kodesh vol. II letters רמא–רמט. Eight existing identities were enriched; AID 4666284 was added as Parsed via Pnimi's secondary index and linked to the existing Shanghai correspondence family. Twenty new source-grounded paraphrases were added; three existing propositions for AID 4666281 were migrated from a duplicate alias without double-counting. Family IDs were reconciled across the Shanghai and Rebbe-mother correspondence chains; four metadata aliases were linked. Expected answer-eligible unique families 663→666, content-verified unique families 660→663, propositions 2022→2042. Direct Chabad.org reader routes returned shells; Pnimi index and publisher search excerpts were used without access-control bypass. Actions and live publication remain pending."
+    "last_run_note": "Batch 064 inspected 11 Hebrew publisher letter bodies/excerpts: 10 new letter identities, 1 existing identity enriched, 20 non-verbatim source-grounded propositions. Expected answer-eligible unique sources 664→674, content-verified sources 661→671, propositions 2328→2348. Runner crawler was not retried after known HTTP 403. Reconciliation, tests and publication pending."
   }
 }

@@ -1,5 +1,5 @@
 /* Maaneh Ledorot evidence-grounded answer engine core. Precision > recall. */
-const STOP=new Set('מה למה מדוע הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך לפי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
+const STOP=new Set('מה למה מדוע הרבי אמר אומר אומרים כתב כותב נכתב על ועל של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אותו אני אנחנו מתוך בנושא בעניין אגרות איגרות רוצה לדעת כיצד איך אילו איזה מהו מהי מהם מהן מי מתי צריך צריכה צריכים כדאי כדי לפני מחדש לשם כך לפי the a an of to and or on about what how did does is are rebbe say says said saying teach teaches taught teaching advise advises advised guidance'.split(' '));
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s)||s==='מספר')return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
@@ -8,6 +8,16 @@ const TOPICS={
  בריאות:['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אמא','אם המשפחה','woman','women','mother','פרוי','פרויען'],
  פרנסה:['פרנסה','עסק','livelihood','business','parnassa'],
+ 'שותפות והרחבת עסק':['שותפות במסחר','שותפות בעסק','הרחבת העסק בכוחות עצמו','להוסיף שותף לעסק','business partnership'],
+ 'הרצאה ושיחה בענייני חסידות':['הרצאה על חסידות','לדבר עניני חסידות בדרך הרצאה ושיחה','chassidus lecture'],
+ 'שיעור קונטרס החלצו ברבים':['קונטרס החלצו','שיעור ציבורי בקונטרס החלצו','העדר קירוב הלבבות'],
+ 'תכנון פעילויות חג לקהילה':['תכנית מפורטת לימי השמחה','פעולות צעירי אגודת חב״ד','שמחת בית השואבה'],
+ 'הפצת המעיינות בבתי כנסת':['אמירת דא״ח בבתי הכנסת','הפצת המעיינות בבתי הכנסת'],
+ 'חוסר חשק בלימוד':['אין חשק ללימוד','הוספה בתורה ומצוות'],
+ 'גשמים בשנת השמיטה':['גשמים בשנת שמיטה','ירידת גשמים בשנת השביעית'],
+ 'שבת וראש חודש כמקורות ברכה':['ערב שבת וערב ראש חודש','ברכה בשבת ובראש חודש'],
+ 'לימוד נגלה ופנימיות התורה':['תורת הנגלה ופנימיות התורה','לימוד נגלה ופנימיות'],
+ 'ברכה ליום נישואין':['שנת השלושים ליום החתונה','יום הנישואין השלושים'],
  'ידיעה ובחירה חופשית':['ידיעת ה׳','ידיעת השם','ידיעה ובחירה','בחירה חופשית','free choice','divine foreknowledge','foreknowledge'],
  'השגחה פרטית':['השגחה פרטית','השגחה על כל פרט','השגחה על דומם צומח וחי','דומם','צומח','בעלי חיים','divine providence','hashgachah peratis'],
  שליחות:['שליח','שליחות','shliach','shlichus','mission'],
@@ -306,7 +316,7 @@ const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return fa
 // pattern question fail even when multiple independent evidence families existed.
 const isIntentFramingTerm=(term,intent)=>{
  const t=norm(term);
- if(intent==='pattern')return /^(?:pattern|patterns|recurring|usually|approach|approaches|דפוס|דפוסים|חוזר|חוזרת|חוזרים|בדרך|כלל|גישה|גישות|הדרכה|הדרכות|בהדרכה|בהדרכות)$/.test(t);
+ if(intent==='pattern')return /^(?:pattern|patterns|recurring|usually|approach|approaches|דפוס|דפוסים|חוזר|חוזרת|חוזרים|בדרך|כלל|גישה|גישות|הדרכה|הדרכות|בהדרכה|בהדרכות|אגרות|איגרות|מכתבים)$/.test(t);
  if(intent==='comparative')return /^(?:compare|comparison|comparisons|difference|differences|versus|vs|between|השווה|השוו|השוואה|השוואת|הבדל|הבדלים|לעומת|בין)$/.test(t);
  if(intent==='historical')return /^(?:when|date|dates|period|periods|year|years|time|מתי|תאריך|תאריכים|תקופה|תקופות|שנה|שנים|כתב|כותב|דיבר|לימד|הדריך)$/.test(t);
  if(intent==='bibliographic')return /^(?:source|sources|bibliographic|bibliography|citation|citations|where|published|publication|מקור|מקורות|ביבליוגרפיה|ביבליוגרפי|איפה|פורסם|פרסום)$/.test(t);
@@ -368,6 +378,12 @@ export function understandQuestion(q){
  if(topics.includes('בית רבקה בראונסוויל'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('סניף תלמוד תורה ומחנה יום'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('מסחר ולימוד יום שלם'))topics=topics.filter(t=>t!=='פרנסה');
+ if(topics.includes('שותפות והרחבת עסק'))topics=topics.filter(t=>t!=='פרנסה');
+ if(topics.includes('הרצאה ושיחה בענייני חסידות'))topics=topics.filter(t=>!['שליחות','לימוד חסידות'].includes(t));
+ if(topics.includes('שיעור קונטרס החלצו ברבים'))topics=topics.filter(t=>!['חינוך','לימוד חסידות'].includes(t));
+ if(topics.includes('תכנון פעילויות חג לקהילה'))topics=topics.filter(t=>t!=='שליחות');
+ if(topics.includes('הפצת המעיינות בבתי כנסת'))topics=topics.filter(t=>t!=='שליחות');
+ if(topics.includes('חוסר חשק בלימוד'))topics=topics.filter(t=>!['חינוך','דאגה'].includes(t));
  if(topics.includes('רופאים מומחים והתאמת לימוד'))topics=topics.filter(t=>t!=='בריאות');
  if(topics.includes('סניף נשי חב״ד מונטריאול'))topics=topics.filter(t=>t!=='נשים');
  if(topics.includes('בית רבקה סדר בוקר'))topics=topics.filter(t=>t!=='חינוך');
@@ -421,7 +437,7 @@ function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&containsTerm(t,x)?1:0
 function familyKey(e){return e.evidence_family_id||e.aid||e.source_url||e.key;}
 function propositionKey(p){return contentWords(p).sort().join(' ');}
 function sameClaim(a,b){if(propositionKey(a)===propositionKey(b))return true;if(negationSignature(a)!==negationSignature(b))return false;return jaccard(a,b)>=0.72;}
-function propositionSupportsQuery(p,u){const body=norm(p);if(u.topics.includes('התחייבות לצדקה בסכום נקוב'))return containsTerm(body,'צדקה')&&containsTerm(body,'סכום')&&containsTerm(body,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(body,t));const raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?1:Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
+function propositionSupportsQuery(p,u){const body=norm(p);if(u.topics.includes('התחייבות לצדקה בסכום נקוב'))return containsTerm(body,'צדקה')&&containsTerm(body,'סכום')&&containsTerm(body,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(body,t));const raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?(raw.length?1:0):Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
 function intentEvidenceGate(e,u){
  if(u.intent==='circumstances'&&!text(e.documented_circumstances)&&!text(e.conditions_or_qualifications)&&!text(e.audience))return 'missing documented circumstances/conditions/audience';
  // Circumstances are not temporal evidence. A historical answer may only use a
@@ -729,7 +745,7 @@ function crossFamilyPatternEvidence(selected,u){
  const matched=new Map(),add=(index,p)=>{if(!matched.has(index))matched.set(index,new Set());matched.get(index).add(p);};
  for(let i=0;i<rows.length;i++)for(let j=i+1;j<rows.length;j++){
   const a=rows[i],b=rows[j];
-  if(a.e._independent_witness===false||b.e._independent_witness===false||!a.family||a.family===b.family)continue;
+  if(a.e._independent_witness===false||b.e._independent_witness===false||classifyWitness(a.e)==='derived'||classifyWitness(b.e)==='derived'||!a.family||a.family===b.family)continue;
   for(const pa of a.props)for(const pb of b.props)if(sameClaim(pa,pb)){add(a.index,pa);add(b.index,pb);}
  }
  return rows.filter(r=>matched.has(r.index)).map(r=>({...r.e,_supporting_propositions:[...matched.get(r.index)]}));
@@ -765,7 +781,7 @@ function retainCitedSources(selected,claims){
 }
 export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
- const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean));
+ const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
  if(!usable.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  let answerEvidence=usable;
@@ -778,7 +794,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized),selected=retained.sources,claims=retained.claims,coverage=coverageFor(selected,understanding);
  const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};
- if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims);base.research={evidence_families:selectedIndependentFamilies.size,verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
+ if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims),independentWitnesses=selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').length,derivedNonIndependent=selected.length-independentWitnesses;base.research={evidence_families:selectedIndependentFamilies.size,evidence_integrity:{independent_witnesses:independentWitnesses,derived_non_independent:derivedNonIndependent},verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;
 }
 

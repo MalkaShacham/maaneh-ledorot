@@ -332,3 +332,35 @@ assert.equal(shanghaiResearcher.research.evidence_families,new Set(shanghaiResea
 assert(shanghaiResearcher.research.evidence_map.length>0&&shanghaiResearcher.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)),'researcher evidence map must expose claim-level source locators');
 assert(shanghaiResearcher.research.citation_entailment.every(x=>x.valid)&&shanghaiResearcher.research.context_boundary.every(x=>x.valid),'Shanghai synthesis must pass claim entailment and context boundaries');
 const shanghaiPattern=buildAnswerModel(idx.entries,'מה הדפוס החוזר באגרות על הדפסת ספרים בשנגחאי?',{mode:'researcher'});assert.equal(shanghaiPattern.answerable,false,'multiple letters from one family must not establish a cross-family pattern');assert.equal(shanghaiPattern.reason,'single_evidence_family');
+
+
+// Batch 064 content and retrieval regressions.
+const b64=[
+ [5100223,2,'igrot-letter-5718-18-elul-v17-aid5100223'],
+ [5100360,1,'igrot-letter-5719-20-kislev-aid5100360'],
+ [5100574,2,'igrot-letter-5719-28-nissan-aid5100574'],
+ [5100225,2,'igrot-letter-5718-19-elul-aid5100225'],
+ [5100468,1,'igrot-letter-5719-15-adar-i-aid5100468'],
+ [5100351,2,'igrot-letter-5719-13-kislev-aid5100351'],
+ [5071043,2,'igrot-letter-5718-29-tevet-aid5071043'],
+ [5070800,2,'igrot-letter-5718-6-tishrei-aid5070800'],
+ [5100353,2,'igrot-letter-5719-14-kislev-aid5100353'],
+ [5413068,1,'igrot-letter-5722-erev-shabbat-rosh-chodesh-shevat-aid5413068'],
+ [5100487,4,'igrot-letter-5719-2-adar-ii-ו׳תשמא-aid5100487']
+];
+for(const [aid,n,f] of b64){const e=idx.entries.find(x=>String(x.aid)===String(aid));assert(e&&e.has_content_evidence,'AID '+aid+' must have inspected content');assert.equal(e.status,'Verified');assert.equal(e.evidence_family_id,f);assert(e.response_propositions.length>=n);assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope);assert.equal(e.context_status,'partial');}
+const qs=[
+ ['מה כתב הרבי על שותפות במסחר והרחבת העסק בכוחות עצמו?',5100223],
+ ['האם מותר לדבר בענייני חסידות בדרך הרצאה ושיחה ולהוסיף הסבר למאמר?',5100574],
+ ['כיצד הוצע לארגן שיעור ציבורי בקונטרס החלצו?',5100468],
+ ['מה הציע הרבי לצעירי אגודת חב״ד בניו הייבן לקראת ימי השמחה?',5070800],
+ ['מה כתב הרבי על אמירת דברי חסידות בבתי כנסת והפצת המעיינות?',5071043],
+ ['מה כתב הרבי על חוסר חשק בלימוד?',5100225],
+ ['מה כתב הרבי על ירידת גשמים בשנת שמיטה?',5100487],
+ ['מה נאמר על ברכה בערב שבת וערב ראש חודש?',5413068],
+ ['מה כתב הרבי על שילוב תורה הנגלה ופנימיות התורה?',5100353],
+ ['מה נאמר על ברכה לרגל שנת השלושים ליום החתונה?',5100360]
+];
+for(const [q,aid] of qs)for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,q,{mode});assert(m.answerable,mode+' query should be answerable: '+q);assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+' must retrieve AID '+aid);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}else assert.equal(m.research,undefined);}
+const crossQ='מה כתבו האיגרות על הרחבת עסק בכוחות עצמו ועל הפצת המעיינות בבתי כנסת?';
+for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,crossQ,{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='5100223')&&m.sources.some(e=>String(e.aid)==='5071043'));assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_families>=2);assert(m.research.evidence_map.length>0);}}

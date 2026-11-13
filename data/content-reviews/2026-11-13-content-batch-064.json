@@ -1,0 +1,92 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "064",
+  "reviewed_at": "2026-11-13",
+  "source_bodies_reviewed": 11,
+  "new_source_identities": 10,
+  "existing_identities_enriched": 1,
+  "source_grounded_propositions_added": 20,
+  "new_aids": [
+    5100223,
+    5100360,
+    5100574,
+    5100225,
+    5100468,
+    5100351,
+    5071043,
+    5070800,
+    5100353,
+    5413068
+  ],
+  "existing_enriched": [
+    {
+      "aid": 5100487,
+      "action": "enriched in existing volume XVIII index; same Evidence Family"
+    }
+  ],
+  "dedup_scope": "Checked current queue, 11 bulk-index inventories, volume XVI/XVII/XVIII/XXII indexes, batches 055–063 and individual item paths surfaced by Git tree. Full public-search-index.json was too large for file-fetch; dedup is strong but not exhaustive.",
+  "rejected_candidates": [
+    {
+      "aid": 5071147,
+      "reason": "rewritten summary, not direct original-letter body"
+    },
+    {
+      "aid": 5100407,
+      "reason": "rewritten summary"
+    },
+    {
+      "aid": 5100603,
+      "reason": "rewritten summary"
+    },
+    {
+      "aid": 5100198,
+      "reason": "rewritten summary"
+    },
+    {
+      "aid": 5100455,
+      "reason": "rewritten summary"
+    },
+    {
+      "aid": 4831207,
+      "reason": "short excerpt only"
+    },
+    {
+      "aid": 5019512,
+      "reason": "short excerpt only"
+    }
+  ],
+  "scope_notes": [
+    "AID 5100468 excerpt begins with ellipsis; only visible text and publisher note paraphrased.",
+    "AID 5413068 volume metadata conflict; volume omitted."
+  ],
+  "crawler_status": "Known HTTP 403 across 12 runner references; crawler not retried. Manual public pages used instead.",
+  "metrics_before": {
+    "answer_eligible_unique_sources": 664,
+    "content_verified_unique_sources": 661,
+    "answer_eligible_propositions": 2328,
+    "canonical_unique_item_keys": 8958,
+    "verified_unique_item_keys": 7640,
+    "canonical_json_files": 433,
+    "content_review_queue_records": 1050
+  },
+  "expected_after": {
+    "answer_eligible_unique_sources": 674,
+    "content_verified_unique_sources": 671,
+    "answer_eligible_propositions": 2348,
+    "canonical_unique_item_keys": 8968,
+    "verified_unique_item_keys": 7650,
+    "canonical_json_files": 434,
+    "content_review_queue_records": 1050
+  },
+  "reconciliation_status": "pending",
+  "quality_gate_status": "pending",
+  "publication_status": "pending",
+  "safeguards": {
+    "crawler_retried": false,
+    "access_controls_bypassed": false,
+    "full_text_copied": false,
+    "translations_counted_independent": false,
+    "schedule_changed": false,
+    "audience_or_permissions_changed": false
+  }
+}

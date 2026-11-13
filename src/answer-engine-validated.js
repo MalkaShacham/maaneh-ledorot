@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch062-publication-v5';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch064-retrieval-v1';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -13,7 +13,18 @@ const TOPIC_ALIASES={
   'דאגה':['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
-  'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'], 'שליחות':['שליח','שליחות','shliach','shlichus','mission'],
+  'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
+ 'שותפות והרחבת עסק':['שותפות במסחר','הרחבת העסק בכוחות עצמו','business partnership'],
+ 'הרצאה ושיחה בענייני חסידות':['הרצאה על חסידות','לדבר עניני חסידות בדרך הרצאה ושיחה','chassidus lecture'],
+ 'שיעור קונטרס החלצו ברבים':['קונטרס החלצו','שיעור ציבורי בקונטרס החלצו','העדר קירוב לבבות'],
+ 'תכנון פעילויות חג לקהילה':['תכנית מפורטת לימי השמחה','פעולות צעירי אגודת חב״ד','שמחת בית השואבה'],
+ 'הפצת המעיינות בבתי כנסת':['אמירת דא״ח בבתי הכנסת','הפצת המעיינות בבתי הכנסת'],
+ 'חוסר חשק בלימוד':['אין חשק ללימוד','הוספה בתורה ומצוות'],
+ 'גשמים בשנת השמיטה':['גשמים בשנת שמיטה','ירידת גשמים בשנת השביעית'],
+ 'שבת וראש חודש כמקורות ברכה':['ערב שבת וערב ראש חודש','ברכה בשבת ובראש חודש'],
+ 'לימוד נגלה ופנימיות התורה':['תורת הנגלה ופנימיות התורה','לימוד נגלה ופנימיות'],
+ 'ברכה ליום נישואין':['שנת השלושים ליום החתונה','יום הנישואין השלושים'],
+ 'שליחות':['שליח','שליחות','shliach','shlichus','mission'],
   'נישואין':['שלום בית','נישוא','חתונ','בעל','אשה','marriage','wedding','husband','wife','sholom bayis'],
   'שכחה וחלומות':['שכחה וחלומות','שכחה','חיזוק הזכרון','חלומות מטרידים','forgetfulness and dreams','memory and disturbing dreams'],
   'צדקה ולימוד':['צדקה מחליפה לימוד','צדקה מתוארת כמזככת','צדקה מגדילה את פירות העבודה','charity replace study','charity and study effort'],
