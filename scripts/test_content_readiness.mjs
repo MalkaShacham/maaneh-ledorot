@@ -726,7 +726,7 @@ const tzedakahSynthesisQ='מה עולה מן האיגרות על צדקה לאו
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,tzedakahSynthesisQ,{mode});
  assert(m.answerable,mode+': inspected tzedakah correspondence must support a bounded multi-source synthesis');
- const expected=[4783989,4731080,4812647,5287606];
+ const expected=[4783989,4731080,4812647,5287606,5054399,5413166,5100681];
  const expectedFound=expected.filter(aid=>m.sources.some(e=>String(e.aid)===String(aid)));
  assert(expectedFound.length>=3,mode+': synthesis must retrieve at least three of the inspected, distinct tzedakah Evidence Families; found '+expectedFound.join(',')+'; sources '+m.sources.map(e=>e.aid||e.id).join(',')+'; query '+m.understanding.query+'; topics '+m.understanding.topics.join('|')+'; intent '+m.understanding.intent);
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': tzedakah synthesis must deduplicate by Evidence Family');
