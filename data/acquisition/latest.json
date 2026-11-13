@@ -7,6 +7,78 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "reviewed_at": "2026-11-13T13:17:52+02:00",
+    "status": "completed",
+    "batch_id": "072",
+    "reviewed_item_count": 11,
+    "source_bodies_inspected": 11,
+    "source_excerpts_inspected": 11,
+    "direct_item_page_readable_lines": 0,
+    "new_source_identities": 11,
+    "new_metadata_only_identities": 0,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "existing_identities_canonicalized": 0,
+    "new_paraphrase_entries": 18,
+    "answer_eligible_source_families_added": 11,
+    "blocked_candidate_count": 4,
+    "blocked_candidates": [
+      {
+        "aid": 4666217,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666217/jewish/page.htm",
+        "reason": "דף הפריט הופנה למעטפת/סיכום Torah Texts ללא גוף איגרת קריא; לא נוצרה ממנו תמצית."
+      },
+      {
+        "aid": 4666240,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666240/jewish/page.htm",
+        "reason": "דף הפריט הופנה למעטפת/סיכום Torah Texts ללא גוף איגרת קריא; לא נוצרה ממנו תמצית."
+      },
+      {
+        "aid": 4666241,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666241/jewish/page.htm",
+        "reason": "דף הפריט הופנה למעטפת/סיכום Torah Texts ללא גוף איגרת קריא; לא נוצרה ממנו תמצית."
+      },
+      {
+        "url": "https://hebrewbooks.org/pdfpager.aspx?req=15897&pgnum=10",
+        "reason": "פתיחת דף ה-PDF החזירה שגיאת כלי פנימית; לא נבדק טקסט ולא נוצרה תמצית."
+      }
+    ],
+    "excluded_candidates": [
+      {
+        "url": "https://www.chabadlibrary.org/books/1200710342",
+        "reason": "זהות זו כבר קיימת באצווה 068; היא לא נוספה שוב."
+      },
+      {
+        "aid": 796411,
+        "url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/796411/jewish/Letter-of-Approbation.htm",
+        "reason": "העמוד מציג קטע קצר/תיאור של Living Torah; הווידאו או תמליל מלא לא נבדקו ולכן לא נרשם כעד תוכן מלא."
+      }
+    ],
+    "method": "בדיקת פריטי מקור באמצעות web search/open. אחת-עשרה תמציות מחקר לא-מילוליות נכתבו רק מתוך קטעי גוף גלויים בתוצאות חיפוש של ספריית חב״ד; דפי הפריט עצמם לא החזירו שורות קריאות. כל הרשומות מסומנות Verified בהיקף הקטע הגלוי בלבד ו-context_status=partial.",
+    "deduplication_check": "Checked the review queue, content-research batches 055–071, and accessible bulk-index files dated 2026-09-24, 2026-09-25 and 2026-09-27. One separate candidate URL (/books/1200710342) was already present in batch 068 as a free Hebrew translation from Russian and was excluded. No exact match for the eleven new URLs was found in the checked records. The 9,038-key public-search-index file returned an empty response from the GitHub file reader, so this duplicate check is bounded rather than exhaustive.",
+    "source_languages": [
+      "Hebrew"
+    ],
+    "source_types": [
+      "published Hebrew correspondence excerpts",
+      "community organization and public activity",
+      "educational publishing correspondence",
+      "personal blessing and condolence correspondence",
+      "halachic commentary correspondence",
+      "brief medical guidance note"
+    ],
+    "limitations": [
+      "כל 11 דפי Chabad Library הישירים החזירו אפס שורות קריאות; התוכן נבדק רק מתוך קטעי גוף שהוצגו בתוצאות חיפוש ציבוריות.",
+      "אין להסיק מן הקטעים את מלוא ההקשר, את המכתב הנכנס, את גוף האיגרת המלא או את הנוסח בכתב יד.",
+      "AID 1200720136 הוא הערה קצרה בלבד; אין בו אבחנה, תסמינים, סוג טיפול או דחיפות רפואית.",
+      "AID 1200980004 מפנה למכתב ציבורי מצורף שאינו מוצג במלואו; התמצית מוגבלת לבקשת הפרסום.",
+      "הבדיקה הכפולה אינה exhaustive משום שקובץ public-search-index.json לא הוחזר על ידי קורא הקבצים."
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false
+  },
+  "previous_manual_web_review": {
     "reviewed_at": "2026-11-13T12:44:25+02:00",
     "status": "completed",
     "batch_id": "071",
@@ -82,7 +154,7 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "previous_manual_web_review": {
+  "earlier_manual_web_review": {
     "reviewed_at": "2026-11-13T12:15:00+02:00",
     "status": "completed",
     "batch_id": "070",
@@ -141,7 +213,7 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "earlier_manual_web_review": {
+  "earlier_manual_web_review_2": {
     "reviewed_at": "2026-11-13T10:35:56+02:00",
     "status": "completed",
     "batch_id": "069",
@@ -202,7 +274,7 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "earlier_manual_web_review_2": {
+  "earlier_manual_web_review_3": {
     "reviewed_at": "2026-11-13T07:00:00+02:00",
     "status": "completed",
     "batch_id": "067",
