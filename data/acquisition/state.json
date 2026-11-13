@@ -1,88 +1,106 @@
 {
   "sources": {
+    "4666215": {
+      "outcome": "blocked",
+      "reason": "HTTP Error 403: Forbidden",
+      "checked_at": "2026-10-15T13:38:08.011065+00:00",
+      "retry_after": "2026-10-16T13:38:08.011065+00:00",
+      "permanent_block": true
+    },
     "4666220": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-15T13:34:23.387904+00:00",
-      "retry_after": "2026-10-16T13:34:23.387904+00:00"
+      "retry_after": "2026-10-16T13:34:23.387904+00:00",
+      "permanent_block": true
     },
     "4666221": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-15T13:34:23.387904+00:00",
-      "retry_after": "2026-10-16T13:34:23.387904+00:00"
+      "retry_after": "2026-10-16T13:34:23.387904+00:00",
+      "permanent_block": true
     },
     "4666222": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-15T13:34:23.387904+00:00",
-      "retry_after": "2026-10-16T13:34:23.387904+00:00"
+      "retry_after": "2026-10-16T13:34:23.387904+00:00",
+      "permanent_block": true
     },
     "4666225": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-17T17:05:28.681651+00:00",
-      "retry_after": "2026-10-18T17:05:28.681651+00:00"
+      "retry_after": "2026-10-18T17:05:28.681651+00:00",
+      "permanent_block": true
     },
     "4666226": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-20T23:49:35.049556+00:00",
-      "retry_after": "2026-10-21T23:49:35.049556+00:00"
+      "retry_after": "2026-10-21T23:49:35.049556+00:00",
+      "permanent_block": true
     },
     "4666227": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-22T04:34:56.866804+00:00",
-      "retry_after": "2026-10-23T04:34:56.866804+00:00"
+      "retry_after": "2026-10-23T04:34:56.866804+00:00",
+      "permanent_block": true
     },
     "4666230": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-30T00:53:30.859721+00:00",
-      "retry_after": "2026-10-31T00:53:30.859721+00:00"
+      "retry_after": "2026-10-31T00:53:30.859721+00:00",
+      "permanent_block": true
     },
     "4666231": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-15T13:34:23.387904+00:00",
-      "retry_after": "2026-10-16T13:34:23.387904+00:00"
+      "retry_after": "2026-10-16T13:34:23.387904+00:00",
+      "permanent_block": true
     },
     "4666233": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-15T13:34:23.387904+00:00",
-      "retry_after": "2026-10-16T13:34:23.387904+00:00"
+      "retry_after": "2026-10-16T13:34:23.387904+00:00",
+      "permanent_block": true
     },
     "4666234": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-31T05:29:06.194996+00:00",
-      "retry_after": "2026-11-01T05:29:06.194996+00:00"
+      "retry_after": "2026-11-01T05:29:06.194996+00:00",
+      "permanent_block": true
     },
     "4666235": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-15T13:34:23.387904+00:00",
-      "retry_after": "2026-10-16T13:34:23.387904+00:00"
+      "retry_after": "2026-10-16T13:34:23.387904+00:00",
+      "permanent_block": true
     },
     "4666280": {
       "outcome": "blocked",
       "reason": "HTTP Error 403: Forbidden",
       "checked_at": "2026-10-15T13:34:23.387904+00:00",
-      "retry_after": "2026-10-16T13:34:23.387904+00:00"
-    },
-    "4666215": {
-      "outcome": "blocked",
-      "reason": "HTTP Error 403: Forbidden",
-      "checked_at": "2026-10-15T13:38:08.011065+00:00",
-      "retry_after": "2026-10-16T13:38:08.011065+00:00"
+      "retry_after": "2026-10-16T13:34:23.387904+00:00",
+      "permanent_block": true
     }
   },
   "hosts": {
     "www.chabad.org": {
       "reason": "HTTP Error 403: Forbidden",
-      "retry_after": "2026-11-01T05:29:06.194996+00:00"
+      "retry_after": "2026-11-01T05:29:06.194996+00:00",
+      "permanent_block": true,
+      "blocked_at": "2026-10-15T13:34:23.387904+00:00",
+      "last_reviewed_at": "2026-11-13T00:16:00+00:00",
+      "policy": "do_not_retry_from_github_runner; use manual public web search or another authorized witness"
     }
-  }
+  },
+  "policy_note": "The GitHub-hosted publisher crawler is not an evidence-acquisition path for www.chabad.org after repeated HTTP 403. Host-level permanent_block suppresses further network attempts; use public web search/open or other authorized sources. No access controls are bypassed."
 }

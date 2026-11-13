@@ -231,24 +231,44 @@
     "answer_eligible_unique_sources": 663,
     "content_verified_unique_sources": 660,
     "answer_eligible_propositions": 2022,
-    "canonical_unique_item_keys": 8957,
-    "verified_unique_item_keys": 7640,
+    "canonical_unique_item_keys": 8958,
+    "verified_unique_item_keys": 7641,
     "canonical_json_files": 432,
     "evidence_family_files": 55,
     "content_review_queue_records": 1058
   },
   "reconciliation": {
-    "status": "pending",
-    "script": "scripts/reconcile_metrics.py and scripts/reconcile_identity_aliases.py"
+    "status": "complete",
+    "commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
+    "main_sha": "447c266cb5bcd3163a79415ef6913f7171d554ed",
+    "metrics": {
+      "answer_eligible_unique_sources": 663,
+      "content_verified_unique_sources": 660,
+      "answer_eligible_propositions": 2022,
+      "canonical_unique_item_keys": 8958,
+      "verified_unique_item_keys": 7641,
+      "canonical_json_files": 432,
+      "evidence_family_files": 55,
+      "content_review_queue_records": 1058
+    }
   },
   "quality_gate": {
-    "status": "pending",
-    "test": "node scripts/test_content_readiness.mjs",
-    "note": "The saved structural report is not commit-bound; wait for the batch-062 pull-request Actions run."
+    "status": "passed",
+    "pull_request_run_id": 43335370438,
+    "pull_request_commit": "634092798c30907156b8a43ccf6ecc94b411679b",
+    "main_run_id": 43335539676,
+    "main_commit": "c8dc09f8605983b586c09777d4aa6d64061ada82",
+    "test_content_readiness": "passed",
+    "test_answer_integrity": "passed",
+    "test_question_specificity_gate": "passed",
+    "workflow_write_safety": "passed",
+    "structural_regression_cases": 32
   },
   "publication": {
-    "status": "pending",
-    "url": "https://malkashacham.github.io/maaneh-ledorot/"
+    "status": "pages_deployment_succeeded",
+    "run_id": 43335594714,
+    "deployed_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
+    "direct_page_reader": "unavailable"
   },
   "safeguards": {
     "crawler_retried": false,
@@ -304,5 +324,15 @@
       "locator": "Publisher body: opening Sefer Torah shipment for Europe, request to encourage participation in spiritual aid, and textual note concerning the printed divine-name letters in Hallel.",
       "result": "Existing three source-grounded propositions rechecked against the visible publisher body; no duplicate propositions added."
     }
-  ]
+  ],
+  "metrics_after_reconciliation": {
+    "answer_eligible_unique_sources": 663,
+    "content_verified_unique_sources": 660,
+    "answer_eligible_propositions": 2022,
+    "canonical_unique_item_keys": 8958,
+    "verified_unique_item_keys": 7641,
+    "canonical_json_files": 432,
+    "evidence_family_files": 55,
+    "content_review_queue_records": 1058
+  }
 }

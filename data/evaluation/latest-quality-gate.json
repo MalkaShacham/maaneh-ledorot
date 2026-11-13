@@ -1,16 +1,16 @@
 {
   "gate": "answer-quality-structural-v2",
-  "index_generated": "2026-11-12",
-  "entries_total": 10092,
-  "content_evidence_entries": 685,
-  "answer_eligible_content_evidence_entries": 622,
+  "index_generated": "2026-11-13",
+  "entries_total": 8931,
+  "content_evidence_entries": 804,
+  "answer_eligible_content_evidence_entries": 747,
   "explicit_proposition_entries": 0,
-  "source_grounded_paraphrase_entries": 622,
-  "derived_editorial_proposition_entries": 63,
-  "verified_content_evidence_entries": 653,
-  "content_evidence_families": 506,
-  "partial_context_content_entries": 625,
-  "regression_cases": 31,
+  "source_grounded_paraphrase_entries": 747,
+  "derived_editorial_proposition_entries": 57,
+  "verified_content_evidence_entries": 772,
+  "content_evidence_families": 633,
+  "partial_context_content_entries": 744,
+  "regression_cases": 32,
   "required_regression_cases_floor": 26,
   "required_dimensions": [
     "answerability",
@@ -27,5 +27,26 @@
   "failures": [],
   "warnings": [],
   "passed": true,
-  "note": "Structural gate only. Semantic relevance and citation entailment still require per-question evaluation; lexical overlap is not accepted as semantic proof."
+  "note": "Structural gate only. Semantic relevance and citation entailment still require per-question evaluation; lexical overlap is not accepted as semantic proof.",
+  "evaluated_commit": "c8dc09f8605983b586c09777d4aa6d64061ada82",
+  "workflow_run_id": 43335539676,
+  "pull_request_run_id": 43335370438,
+  "test_content_readiness": {
+    "passed": true,
+    "command": "node scripts/test_content_readiness.mjs",
+    "workflow_run_id": 43335539676,
+    "commit": "c8dc09f8605983b586c09777d4aa6d64061ada82"
+  },
+  "test_answer_integrity": {
+    "passed": true,
+    "workflow_run_id": 43335539676
+  },
+  "test_question_specificity_gate": {
+    "passed": true,
+    "workflow_run_id": 43335539676
+  },
+  "workflow_write_safety": {
+    "passed": true,
+    "workflow_run_id": 43335539676
+  }
 }
