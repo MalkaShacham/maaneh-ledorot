@@ -860,7 +860,7 @@ for(const aid of batch076Aids){
 const enriched4812673=idx.entries.find(e=>String(e.aid)==='4812673');
 assert(enriched4812673&&enriched4812673.response_propositions.length>=3,'AID 4812673 must retain its existing family and the additional Hebrew proposition');
 assert.equal(enriched4812673.evidence_family_id,'igrot-letter-5712-10-sivan-aid4812673');
-const sadnessQuestion='מה מתועד באיגרת על עצבות בעבודת ה׳?';
+const sadnessQuestion='מה כתוב באיגרת ו׳לג על עצבות בעבודת ה׳ והצלחה בלימודים?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,sadnessQuestion,{mode});
  assert(m.answerable,mode+': the publisher-attributed Hebrew letter must answer the specific sadness-in-divine-service question');
