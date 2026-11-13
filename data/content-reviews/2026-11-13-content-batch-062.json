@@ -215,7 +215,8 @@
     "query": "מה נכתב באגרות על הדפסת ספרי חסידות, איסוף תיקונים והפצתם?",
     "cross_source_comparison": "AID 4666289 (דברי ברכה על הדפסת ספרי הצמח צדק), AID 4666300 (הצעה לקרן וועד הדפסה והפצה), AID 4666301 (איסוף השמטות ושינויי נוסח לקראת מילואים ותיקונים).",
     "note": "The three letters remain separate Evidence Families. The answer-quality regression requires at least three independent families, claim-local citations, context boundaries and a researcher evidence map.",
-    "normalization_fix": "Topic-component tokens from multi-word aliases are no longer treated as extra unsupported query qualifiers; the specific publication/editing topic suppresses the generic publishing bucket. The Hebrew clitic/definite-article form והפצתם no longer leaves the residual token פצתם."
+    "normalization_fix": "Topic-component tokens from multi-word aliases are no longer treated as extra unsupported query qualifiers; the specific publication/editing topic suppresses the generic publishing bucket. The Hebrew clitic/definite-article form והפצתם no longer leaves the residual token פצתם.",
+    "derived_context_note": "The publication synthesis may surface the existing English Chabad.org translation AID 2294977 as contextual material. It is a different letter number (232) from the new AID 4666300 (letter 261), so it is not linked to that Evidence Family. Its record explicitly identifies it as a derived publisher translation; researcher mode marks it non-independent, while the three Hebrew/Yiddish letter families AIDs 4666289, 4666300 and 4666301 remain the minimum independent evidence set. The corresponding Hebrew original for AID 2294977 was not identified and no family was inferred."
   },
   "metrics_before": {
     "answer_eligible_unique_sources": 653,
