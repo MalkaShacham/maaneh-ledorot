@@ -1068,3 +1068,78 @@ for(const mode of ['regular','researcher']){
  assert.equal(direct.answerable,false);
  assert.equal(direct.reason,'secretariat_authorship_boundary');
 }
+
+
+// Batch 082: six new Hebrew publisher identities, two in-place secretariat reclassifications,
+// and two rechecks. Only the six new Evidence Families add to answer-readiness counts.
+const batch082Path='data/items/content-research-batch-082-2026-11-14.json';
+const batch082Data=JSON.parse(await readFile(new URL(batch082Path,root)));
+assert.equal(batch082Data.records.length,6);
+assert.equal(batch082Data.source_bodies_inspected,10);
+assert.equal(batch082Data.new_source_identities,6);
+assert.equal(batch082Data.existing_identities_enriched,2);
+assert.equal(batch082Data.existing_identities_rechecked,2);
+assert.equal(batch082Data.existing_secretariat_reclassifications,2);
+assert.equal(batch082Data.new_response_propositions,16);
+assert.equal(batch082Data.response_propositions_added,16);
+assert.equal(batch082Data.existing_response_propositions_added,0);
+assert.equal(batch082Data.blocked_candidate_count,35);
+assert.equal(batch082Data.records.reduce((n,r)=>n+r.response_propositions.length,0),16);
+assert.equal(new Set(batch082Data.records.map(r=>String(r.aid))).size,6);
+assert.equal(new Set(batch082Data.records.map(r=>r.evidence_family_id)).size,6);
+assert.equal(new Set(batch082Data.records.map(r=>r.source_url)).size,6);
+for(const r of batch082Data.records){
+ const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
+ assert(e&&e.has_content_evidence,'batch-082 AID '+r.aid+' must have inspected publisher body text');
+ assert.equal(e.status,'Verified');
+ assert.equal(e.canonical_file,batch082Path);
+ assert.equal(e.evidence_family_id,r.evidence_family_id);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.language,'Hebrew');
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+r.aid||String(q.source_url||'').includes('/aid/'+r.aid+'/')));
+}
+for(const aid of ['5100309','5054581']){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e&&/secretariat/i.test(e.witness_type||''),'AID '+aid+' must be identified as a secretariat response');
+ assert.equal(e.independent_witness,false);
+}
+for(const aid of ['4854786','4854525']){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e&&/secretariat/i.test(e.witness_type||''),'existing AID '+aid+' must retain the corrected secretariat classification');
+ assert.equal(e.independent_witness,false);
+ assert(e.provenance?.signature_status);
+}
+for(const aid of ['5100579','4854804']){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e&&e.has_content_evidence&&e.response_propositions.length>=2,'rechecked AID '+aid+' must retain its prior propositions without duplication');
+}
+const secretaryReturnQ='מה מתועד במענה המזכירות לגבי תלמיד שהתגייס ומבקש לחזור לישיבה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,secretaryReturnQ,{mode});
+ assert(m.answerable,mode+': a neutral secretariat question about enlistment and return to yeshiva must be answerable');
+ assert(m.sources.some(e=>sourceAID(e)==='5100309'));
+ assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על תלמיד שהתגייס ומבקש לחזור לישיבה?',{mode});
+ assert(!direct.sources.some(e=>sourceAID(e)==='5100309'),'secretariat response must not be attributed directly to the Rebbe');
+}
+const tanyaProjectQ='מה כתב הרבי על פרויקט תניא והפצת המעיינות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,tanyaProjectQ,{mode});
+ assert(m.answerable,mode+': the publisher-attributed Tanya project letter must remain retrievable');
+ assert(m.sources.some(e=>sourceAID(e)==='5071046'&&e._independent_witness!==false),'AID 5071046 must not be falsely classified as secretary-signed merely because its signature status says a secretariat copy was not inspected');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+}
+const indexHtml=await readFile(new URL('index.html',root),'utf8');
+const sourceCardStart=indexHtml.indexOf('function sourceCard');
+const sourceCardEnd=indexHtml.indexOf('function sources',sourceCardStart);
+const sourceCardText=indexHtml.slice(sourceCardStart,sourceCardEnd);
+assert.equal((sourceCardText.match(/const url=/g)||[]).length,1,'sourceCard must not redeclare const url; the duplicate declaration breaks the page script');
