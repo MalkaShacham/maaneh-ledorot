@@ -76,34 +76,46 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "pending_reconciliation",
+    "status": "reconciled",
     "source": "data/public-metrics.json",
-    "generated": "2026-11-12",
-    "reconciliation_commit": null,
-    "search_index_refresh_commit": null,
+    "generated": "2026-11-13",
+    "reconciliation_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
+    "search_index_refresh_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
     "answer_readiness": {
       "answer_eligible_unique_sources": {
         "before": 653,
-        "expected_after": 663
+        "expected_after": 663,
+        "after": 663
       },
       "content_verified_unique_sources": {
         "before": 650,
-        "expected_after": 660
+        "expected_after": 660,
+        "after": 660
       },
       "answer_eligible_propositions": {
         "before": 2002,
-        "expected_after": 2022
+        "expected_after": 2022,
+        "after": 2022
       }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "pull_request to main and push to main; changed paths include source items, answer engine and readiness tests",
-      "run_status": "pending_pull_request_run",
+      "run_status": "passed",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": true,
-      "latest_saved_report_regression_cases": 31,
-      "commit_binding": false,
-      "note": "The saved 2026-11-12 structural report is not bound to batch 062. Do not report a pass until the batch-062 pull-request run is inspected."
+      "latest_saved_report_regression_cases": 32,
+      "commit_binding": true,
+      "note": "Commit-bound answer-quality gate passed on the merged main commit. node scripts/test_content_readiness.mjs, test_answer_integrity.mjs, test_question_specificity_gate.mjs and workflow write-safety tests all completed successfully. The structural report is not a substitute for semantic claim-level review.",
+      "evaluated_commit": "c8dc09f8605983b586c09777d4aa6d64061ada82",
+      "workflow_run_id": 43335539676,
+      "pull_request_run_id": 43335370438
+    },
+    "publication": {
+      "status": "pages_deployment_succeeded",
+      "workflow_run_id": 43335594714,
+      "deployed_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
+      "direct_page_reader": "The available web reader could not open the GitHub Pages URL; the GitHub Pages build and deploy job completed successfully."
     }
   },
   "ux": {
@@ -162,19 +174,33 @@
         "answer_eligible_unique_sources": 663,
         "content_verified_unique_sources": 660,
         "answer_eligible_propositions": 2022,
-        "canonical_unique_item_keys": 8957,
-        "verified_unique_item_keys": 7640,
+        "canonical_unique_item_keys": 8958,
+        "verified_unique_item_keys": 7641,
         "canonical_json_files": 432,
         "evidence_family_files": 55,
         "content_review_queue_records": 1058
       },
-      "metrics_after": null,
-      "reconciliation_commit": null,
-      "merge_commit": null,
-      "search_index_refresh_commit": null,
+      "metrics_after": {
+        "answer_eligible_unique_sources": 663,
+        "content_verified_unique_sources": 660,
+        "answer_eligible_propositions": 2022,
+        "canonical_unique_item_keys": 8958,
+        "verified_unique_item_keys": 7641,
+        "canonical_json_files": 432,
+        "evidence_family_files": 55,
+        "content_review_queue_records": 1058
+      },
+      "reconciliation_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
+      "merge_commit": "c8dc09f8605983b586c09777d4aa6d64061ada82",
+      "search_index_refresh_commit": "447c266cb5bcd3163a79415ef6913f7171d554ed",
       "existing_identities_rechecked": 5,
-      "duplicate_aliases_linked": 2
+      "duplicate_aliases_linked": 2,
+      "status": "reconciled_and_published",
+      "pull_request_quality_gate_run_id": 43335370438,
+      "main_quality_gate_run_id": 43335539676,
+      "pages_deployment_run_id": 43335594714,
+      "hourly_maintenance_run_id": 43335456118
     },
-    "last_run_note": "Batch 062 reviewed 15 public publisher bodies/excerpts: nine new Hebrew/Yiddish letter identities were added, one existing identity (AID 4666289) was enriched, and five already-enriched identities were rechecked without duplicating propositions. Two metadata-only duplicate aliases (AIDs 4666210 and 4666231) were linked to their existing Evidence Families; the duplicate AID 4666210 queue entry was removed. Twenty non-verbatim source-grounded propositions were added. The direct reader shells for AID 4666295 and other blocked pages were not used; the known HTTP 403 crawler was not retried. Reconciliation, commit-bound quality checks and live publication verification remain pending."
+    "last_run_note": "Batch 062 reviewed 15 public publisher bodies/excerpts: nine new Hebrew/Yiddish letter identities were added, one existing identity (AID 4666289) was enriched, and five already-enriched identities were rechecked without duplicating propositions. Twenty non-verbatim source-grounded propositions were added. Two metadata-only duplicate aliases (AIDs 4666210 and 4666231) were linked to their existing Evidence Families; the duplicate AID 4666210 queue entry was removed. Reconciliation confirms answer_eligible_unique_sources 653→663, content_verified_unique_sources 650→660 and answer_eligible_propositions 2002→2022; canonical unique keys 8958, verified keys 7641, 432 canonical files and queue 1058. PR and main answer-quality gates passed, including test_content_readiness.mjs; public metrics/search index were reconciled and GitHub Pages deployment succeeded. The scheduled hourly run on pre-merge SHA 139a326 failed its old BATCH018 class/camp comparison gate; the acquisition state shows the prior 403 host block and no acquisition attempts. The blocked crawler was not manually retried. The direct Pages URL could not be independently read by the available web reader."
   }
 }
