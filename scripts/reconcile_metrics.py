@@ -199,8 +199,21 @@ for fp in items:
         old=search_entries.get(key)
         # Prefer inspected answer evidence over a duplicate catalog-only record.
         # Keep the entire witness together; never mix propositions/context fields.
-        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
-        if old is None or priority(entry)>priority(old):search_entries[key]=entry
+        # When two records share an AID, prefer the complete inspected witness
+        # as one unit. A catalog/index record must never win a tie merely because
+        # it is also marked Verified; do not merge propositions or provenance.
+        def source_priority(e):
+            return (
+                bool(answer_eligible(e)),
+                e.get("proposition_verification") == "source_text_inspected",
+                bool(e.get("proposition_source_locator")),
+                bool(e.get("witness_type") or e.get("witness_provenance")),
+                e.get("independent_witness") is not None,
+                bool(e.get("source_url")),
+                rank.get(e.get("status"),0),
+                len(e.get("response_propositions") or []),
+            )
+        if old is None or source_priority(entry)>source_priority(old):search_entries[key]=entry
 search_index={"generated":today,"count":len(search_entries),"entries":sorted(search_entries.values(),key=lambda e:(0 if e.get("status")=="Verified" else 1,str(e.get("date") or ""),str(e.get("title") or "")))}
 # This generated index is shipped to browsers; compact JSON cuts repository and
 # deployment transfer size without changing any record or field.
