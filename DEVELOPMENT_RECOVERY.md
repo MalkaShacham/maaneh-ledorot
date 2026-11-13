@@ -232,3 +232,8 @@ The first commit-bound quality run (workflow run 43423215342) passed index gener
 ### Batch 072 quality-gate correction 2
 
 The second commit-bound quality run passed retrieval, answer synthesis, citation integrity, the evidence-contract audit and workflow write-safety checks, but `test_content_readiness.mjs` then exposed that `reconcile_metrics.py` was rebuilding a derived editorial proposition from `summary_researcher` even when a source record explicitly declared `has_content_evidence=false`. The index therefore mislabeled the two unplayed Yechidus audio listings (AIDs 553672/553673) as content evidence. Reconciliation now treats an explicit false content flag as authoritative, suppresses summary-derived propositions for that record, and carries witness/translation metadata into the public index. This preserves metadata-only identity and prevents audio listings without audio/transcript inspection from becoming answer evidence. A new commit-bound run is required.
+
+
+### Batch 072 quality-gate correction 3
+
+The third commit-bound readiness run reached the dossier checks and found a test-field mismatch, not missing source content: the Reagan correspondence dossier records the addressee as `audience` (`נשיא ארצות הברית`) while its `conditions_or_qualifications` correctly limits attribution of third-party texts. The assertion was corrected to validate the addressee in the audience field rather than requiring it in the conditions field. No source proposition or context boundary was broadened.
