@@ -842,9 +842,9 @@ assert.equal(batch076Data.existing_identities_enriched,1);
 assert.equal(batch076Data.new_response_propositions,20);
 assert.equal(batch076Data.existing_response_propositions_added,1);
 assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
-assert.equal(metrics.answer_eligible_unique_sources,827,'batches 079-081 must reconcile to 827 unique answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,824,'batches 079-081 must reconcile to 824 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2688,'batches 079-081 must reconcile to 2688 source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,833,'batches 079-082 must reconcile to 833 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,830,'batches 079-082 must reconcile to 830 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2704,'batches 079-082 must reconcile to 2704 source-grounded propositions');
 for(const aid of batch076Aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
  assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
@@ -860,13 +860,14 @@ for(const aid of batch076Aids){
 const enriched4812673=idx.entries.find(e=>String(e.aid)==='4812673');
 assert(enriched4812673&&enriched4812673.response_propositions.length>=3,'AID 4812673 must retain its existing family and the additional Hebrew proposition');
 assert.equal(enriched4812673.evidence_family_id,'igrot-letter-5712-10-sivan-aid4812673');
-const moodQuestion='מה כתב הרבי על מיעוט חיות בלימוד ומחשבות מבלבלות?';
+const moodQuestion='מה מתועד במקורות על מיעוט חיות בלימוד ומחשבות מבלבלות?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,moodQuestion,{mode});
  assert(m.answerable,mode+': inspected correspondence must answer the mood-and-study question');
  assert(m.sources.some(e=>String(e.aid)==='5100351'),mode+': AID 5100351 must support the thought-redirection claim');
  assert(m.sources.some(e=>String(e.aid)==='4854525'),mode+': AID 4854525 must support the low-mood-and-study claim');
- assert(new Set(m.sources.filter(e=>e._independent_witness!==false).map(e=>e.evidence_family_id)).size>=2,mode+': synthesis must retain at least two independent Hebrew Evidence Families');
+ assert(new Set(m.sources.filter(e=>e._independent_witness!==false).map(e=>e.evidence_family_id)).size>=1,mode+': synthesis must retain at least one independent Hebrew Evidence Family');
+ assert(m.sources.some(e=>String(e.aid)==='4854525'&&e._independent_witness===false),mode+': AID 4854525 must be retained as a secretary-signed response, not an independent Rebbe witness');
  assert(m.claims.every(c=>c.source_numbers.length),mode+': each mood-and-study claim needs a source citation');
  assert(m.citation_entailment.every(x=>x.valid),mode+': every citation must entail its exact claim');
  assert(m.context_boundary.every(x=>x.valid),mode+': circumstances and qualifications must remain witness-local');
@@ -874,8 +875,15 @@ for(const mode of ['regular','researcher']){
   assert(m.research&&m.research.evidence_map.length>0,'researcher mode must expose the claim-to-witness evidence map');
   assert(m.research.citation_entailment.every(x=>x.valid),'researcher mode must expose valid claim-local citations');
   assert(m.research.context_boundary.every(x=>x.valid),'researcher mode must expose valid context boundaries');
-  assert(m.research.evidence_families>=2,'researcher mode must count at least two independent evidence families');
+  assert(m.research.evidence_families>=1,'researcher mode must count the independent Hebrew witness without upgrading the secretary-signed response');
+  assert(m.research.witnesses.length>=2,'researcher mode must retain both the independent letter and the secretary-signed response with distinct attribution');
  }else assert.equal(m.research,undefined,'regular mode must not expose researcher-only analysis');
+}
+
+const directMoodQuestion='מה כתב הרבי על מיעוט חיות בלימוד ומחשבות מבלבלות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,directMoodQuestion,{mode});
+ assert(!m.sources.some(e=>String(e.aid)==='4854525'),mode+': secretary-signed AID 4854525 must not be attributed directly to the Rebbe');
 }
 
 const batch078TeshuvahQuestion='מה מתארות האיגרות על תשובה תתאה ותשובה עילאה?';
@@ -999,9 +1007,9 @@ assert.equal(new Set(batch080Data.records.map(r=>r.evidence_family_id)).size,10)
 assert.equal(new Set(batch080Data.records.map(r=>r.source_url)).size,10);
 assert.equal(batch080Data.records.filter(r=>r.language==='Hebrew').length,6);
 assert.equal(batch080Data.records.filter(r=>r.language==='English').length,4);
-assert.equal(metrics.answer_eligible_unique_sources,827,'batches 079-081 must reconcile to 827 unique answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,824,'batches 079-081 must reconcile to 824 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2688,'batches 079-081 must reconcile to 2688 source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,833,'batches 079-082 must reconcile to 833 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,830,'batches 079-082 must reconcile to 830 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2704,'batches 079-082 must reconcile to 2704 source-grounded propositions');
 for(const r of batch080Data.records){
  const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
  assert(e&&e.has_content_evidence,'batch-080 AID '+r.aid+' must be present with content evidence');
