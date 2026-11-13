@@ -489,9 +489,9 @@ for(const [aid,minProps,family] of batch066Required){
  assert.equal(e.canonical_file,'data/items/content-research-batch-066-2026-11-13.json');
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')),'inspected AID '+aid+' must not remain in the review queue');
 }
-assert.equal(metrics.answer_eligible_unique_sources,744,'batch-071 cumulative corpus must expose 744 unique Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,741,'batch-071 cumulative corpus must expose 741 scoped content-verified families');
-assert.equal(metrics.answer_eligible_propositions,2509,'batch-071 cumulative corpus must expose 2509 distinct inspected propositions');
+assert.equal(metrics.answer_eligible_unique_sources,755,'batch-071 cumulative corpus must expose 744 unique Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,752,'batch-071 cumulative corpus must expose 741 scoped content-verified families');
+assert.equal(metrics.answer_eligible_propositions,2527,'batch-071 cumulative corpus must expose 2509 distinct inspected propositions');
 const batch066Questions=[
  ['מה נכתב באיגרת על חיפוש שידוך בדרכי תורה?',5019175],
  ['כיצד לחדש קביעות עתים ולימוד בצוותא אחרי הפסק?',5019408],
@@ -574,9 +574,9 @@ const enriched5100487=idx.entries.find(e=>String(e.aid)==='5100487');
 assert(enriched5100487&&enriched5100487.response_propositions.some(p=>p.includes('מאמינים בני מאמינים')),'existing AID 5100487 must retain the newly inspected rational-proof distinction');
 assert(enriched5100487.proposition_source_locator.includes('300–304'),'AID 5100487 must expose the new proposition locator');
 assert.equal(enriched5100487.canonical_file,'data/items/chabad-letter-5100487.json');
-assert.equal(metrics.answer_eligible_unique_sources,744,'batch-071 adds ten distinct Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,741,'batch-071 adds ten scoped content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2509,'batch-071 adds 23 distinct source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,755,'batch-071 adds ten distinct Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,752,'batch-071 adds ten scoped content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2527,'batch-071 adds 23 distinct source-grounded propositions');
 
 const disseminationSynthesis='מה כתב הרבי על הפצת המעיינות והפצת פנימיות התורה?';
 for(const mode of ['regular','researcher']){
@@ -617,5 +617,79 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher'){
   assert(m.research&&m.research.witnesses.length===m.sources.length);
   assert(m.research.evidence_map.length>0);
+ }else assert.equal(m.research,undefined);
+}
+
+
+
+// Batch 072: eleven Hebrew Chabad Library item excerpts; all claims are limited to public search-visible text.
+const batch072Required=[
+ ["https://www.chabadlibrary.org/books/1200870047",2,"igrot-letter-5716-9-iyar-v13-dashiz"],
+ ["https://www.chabadlibrary.org/books/1200870349",2,"igrot-letter-5716-10-menachem-av-v13-daterig"],
+ ["https://www.chabadlibrary.org/books/1200980008",2,"igrot-letter-5726-25-tishrei-v24-telz"],
+ ["https://www.chabadlibrary.org/books/1200980128",2,"igrot-letter-5726-19-sivan-v24-tiknaz"],
+ ["https://www.chabadlibrary.org/books/1200980187",2,"igrot-letter-5726-23-elul-v24-tertez"],
+ ["https://www.chabadlibrary.org/books/1200980224",1,"igrot-letter-5727-hanukkah-v24-terang"],
+ ["https://www.chabadlibrary.org/books/1200980004",1,"igrot-letter-5726-25-tishrei-v24-telg"],
+ ["https://www.chabadlibrary.org/books/1200720002",2,"igrot-letter-5733-5-tishrei-v28-yitkansch"],
+ ["https://www.chabadlibrary.org/books/1200710272",2,"igrot-letter-5732-28-marcheshvan-v27-yirsad"],
+ ["https://www.chabadlibrary.org/books/1200840069",1,"igrot-letter-5715-16-marcheshvan-v10-gimmel-lamed-bet"],
+ ["https://www.chabadlibrary.org/books/1200720136",1,"igrot-letter-5733-shevat-v28-yitrazv"]
+];
+for(const [url,minProps,family] of batch072Required){
+ const e=idx.entries.find(x=>x.source_url===url);
+ assert(e&&e.has_content_evidence,'batch-072 '+url+' must have an inspected body excerpt');
+ assert.equal(e.status,'Verified','batch-072 '+url+' must retain excerpt-scoped verification');
+ assert.equal(e.evidence_family_id,family,'batch-072 '+url+' must have one stable Evidence Family');
+ assert(e.response_propositions.length>=minProps,'batch-072 '+url+' must expose its inspected paraphrases');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.context_status,'partial','batch-072 search-result excerpts must retain partial context');
+ assert.equal(e.canonical_file,'data/items/content-research-batch-072-2026-11-13.json');
+ assert(!queue.records.some(q=>String(q.key||'')==='url:'+url||String(q.source_url||'')===url),'inspected URL '+url+' must not remain in the review queue');
+}
+const duplicate1200710342=idx.entries.filter(e=>e.source_url==='https://www.chabadlibrary.org/books/1200710342');
+assert.equal(duplicate1200710342.length,1,'the previously indexed translated /books/1200710342 item must not be duplicated');
+assert.equal(duplicate1200710342[0].evidence_family_id,'igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama','the translated item must retain its original Evidence Family');
+
+const batch072Cross='השוו בין ההנחיה לארגן אגודת חב״ד בטורונטו ולשלב את אגודת נשי ובנות חב״ד לבין ההמלצה להאיץ את הופעת כרכי האנציקלופדיה התלמודית.';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch072Cross,{mode});
+ assert(m.answerable,mode+': batch-072 organizational/publication comparison must be answerable');
+ assert.equal(m.understanding.intent,'comparative');
+ assert(m.sources.some(e=>e.source_url==='https://www.chabadlibrary.org/books/1200870047'),mode+': Toronto organization letter must be cited');
+ assert(m.sources.some(e=>e.source_url==='https://www.chabadlibrary.org/books/1200870349'),mode+': Talmudic Encyclopedia letter must be cited');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
+ assert(m.claims.length>=2&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=2);
+  assert(m.research.evidence_map.length>0);
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
+ }else assert.equal(m.research,undefined);
+}
+const batch072Questions=[
+ ['כיצד האיגרת מסבירה את הקשר בין נחמת היחיד לאבלי ציון וירושלים?','https://www.chabadlibrary.org/books/1200980187'],
+ ['מה נכתב על נסיעה באוניות ישראליות המפליגות בשבת?','https://www.chabadlibrary.org/books/1200980128'],
+ ['כיצד מוסבר בפירוש רש״י הביטוי ״בעצם היום הזה״ אצל אברהם?','https://www.chabadlibrary.org/books/1200980224'],
+ ['מה נכתב על דיוק במצוות תפילין והשפעה על חברים בצבא?','https://www.chabadlibrary.org/books/1200710272'],
+ ['מה נאמר על בדיקה רפואית כאשר ייתכן צורך בטיפול?','https://www.chabadlibrary.org/books/1200720136'],
+ ['מהי הברכה לשנה טובה ולהצלחה בתפקיד אחראי?','https://www.chabadlibrary.org/books/1200720002'],
+ ['מה נכתב על הצורך בעזרת ה׳ גם לעת זקנה?','https://www.chabadlibrary.org/books/1200840069'],
+ ['מה ביקשה האיגרת לגבי פרסום מכתב לראשי המפלגות הדתיות לתועלת הציבור?','https://www.chabadlibrary.org/books/1200980004']
+];
+for(const [q,url] of batch072Questions)for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,q,{mode});
+ assert(m.answerable,mode+': batch-072 question must be answerable: '+q);
+ assert(m.sources.some(e=>e.source_url===url),mode+': expected batch-072 source '+url);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.witnesses.length===m.sources.length);
+  assert(m.research.evidence_map.length>0);
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
  }else assert.equal(m.research,undefined);
 }
