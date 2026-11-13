@@ -101,12 +101,12 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "pull_request to main and push to main; changed paths include source items, answer engine and readiness tests",
-      "run_status": "pending_commit_bound_run",
+      "run_status": "pending_commit_bound_rerun",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "Batch 072 adds 11 partial-context Hebrew source identities and 18 excerpt-bounded propositions. New regression coverage tests the two-family organizational/publication comparison, item-level claim citations, context boundaries and researcher evidence map. The previous saved report predates this batch; wait for the commit-bound gate.",
+      "note": "The first PR gate passed retrieval, synthesis, citation integrity, structural audit and write-safety checks, but test_content_readiness exposed an overbroad rule that treated every publisher transcription as derived. The rule is narrowed: translations and explicitly transcribed copies remain non-independent; authorized original-language publisher transcriptions remain primary text witnesses. A direct regression preserves the non-independent status of AID 2190037. Rerun the commit-bound gate before merge.",
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": null
