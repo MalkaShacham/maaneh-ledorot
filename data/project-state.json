@@ -106,7 +106,7 @@
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "The first PR gate passed retrieval, synthesis, citation integrity, structural audit and write-safety checks, but test_content_readiness exposed an overbroad rule that treated every publisher transcription as derived. The rule is narrowed: translations and explicitly transcribed copies remain non-independent; authorized original-language publisher transcriptions remain primary text witnesses. A direct regression preserves the non-independent status of AID 2190037. Rerun the commit-bound gate before merge.",
+      "note": "The first gate exposed two issues: generic publisher-transcription wording incorrectly demoted original-language letters, now fixed without promoting explicit copies/translations; and AIDs 553672/553673 were catalog-only audio listings carrying editorial-summary text as content evidence. Those two records are now metadata-only (no response propositions, has_content_evidence=false). Rerun the commit-bound gate before merge.",
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": null
