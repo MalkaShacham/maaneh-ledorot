@@ -1,0 +1,119 @@
+{
+  "schema": "content-review-batch-v1",
+  "batch_id": "065",
+  "reviewed_at": "2026-11-13",
+  "source_bodies_reviewed": 9,
+  "inspected_aids": [
+    4812666,
+    4994198,
+    4812708,
+    5071046,
+    5100253,
+    4830967,
+    5100391,
+    5413170,
+    5100487
+  ],
+  "new_source_identities": 3,
+  "new_aids": [
+    4994198,
+    4812708,
+    5413170
+  ],
+  "existing_identities_enriched": 1,
+  "existing_enriched": [
+    {
+      "aid": 4812666,
+      "action": "added one non-verbatim source-grounded proposition about the letter's four-cubits/light-in-the-surroundings passage; same Evidence Family."
+    }
+  ],
+  "existing_identities_rechecked": [
+    5071046,
+    5100253,
+    4830967,
+    5100391
+  ],
+  "existing_identities_canonicalized": [
+    {
+      "aid": 5100487,
+      "action": "copied the already inspected single record out of a double-encoded volume-index container into one canonical item file; same AID and Evidence Family; no new witness."
+    }
+  ],
+  "source_grounded_propositions_added": 11,
+  "source_grounded_propositions_restored_to_search_index": 4,
+  "dedup_scope": "Checked queue, bulk-index inventories, batches 055–060 and 064, volume indexes for the relevant collections, and explicit item paths. The full public-search-index was too large for file-fetch, so this is a documented bounded dedup check, not a claim of exhaustive corpus-wide dedup.",
+  "rejected_candidates": [
+    {
+      "aid": 4666220,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+      "reason": "The public reader returned a Torah Texts rewritten-summary/navigation shell rather than the letter body; the prior GitHub-runner HTTP 403 remains recorded. No crawler retry or bypass."
+    },
+    {
+      "aid": 4812846,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812846/jewish/page.htm",
+      "reason": "The public reader returned a rewritten-summary shell; no source body inspected and no proposition added."
+    },
+    {
+      "aid": 5099941,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5099941/jewish/page.htm",
+      "reason": "The public reader returned a rewritten-summary shell; search metadata was not used as content evidence."
+    },
+    {
+      "aid": 5100376,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100376/jewish/page.htm",
+      "reason": "The public reader redirected to a rewritten-summary route; no source body inspected."
+    },
+    {
+      "aid": 5100603,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100603/jewish/page.htm",
+      "reason": "The public reader redirected to a rewritten-summary route; no source body inspected."
+    },
+    {
+      "aid": 553671,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553671/jewish/21-Kislev-5743-Yechidus-French.htm",
+      "reason": "Public page exposes an audio item and event navigation, not a transcript; no content proposition added."
+    },
+    {
+      "aid": 553673,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553673/jewish/21-Kislev-5743-Yechidus-Yiddish.htm",
+      "reason": "Public page exposes an audio item and event navigation, not a transcript; no content proposition added. Yiddish language metadata is not treated as inspected Yiddish text."
+    }
+  ],
+  "alternative_sources_used": [
+    4994198,
+    4812708,
+    5413170
+  ],
+  "language_and_type_notes": "Nine inspected bodies were Hebrew publisher letters. French and Yiddish Yechidus pages were checked as audio-only records but yielded no transcript. An English-translation search for the reviewed letter topics returned no accessible text witness. No translation is counted as an independent witness.",
+  "crawler_status": "Known GitHub-runner HTTP 403 remains permanent_block; crawler not retried. Manual public web search/open was used instead.",
+  "metrics_before": {
+    "answer_eligible_unique_sources": 674,
+    "content_verified_unique_sources": 671,
+    "answer_eligible_propositions": 2345,
+    "canonical_unique_item_keys": 8968,
+    "verified_unique_item_keys": 7650,
+    "canonical_json_files": 434,
+    "content_review_queue_records": 1050
+  },
+  "expected_after": {
+    "answer_eligible_unique_sources": 678,
+    "content_verified_unique_sources": 675,
+    "answer_eligible_propositions": 2359,
+    "canonical_unique_item_keys": 8972,
+    "verified_unique_item_keys": 7654,
+    "canonical_json_files": 436,
+    "content_review_queue_records": 1050
+  },
+  "reconciliation_status": "pending",
+  "quality_gate_status": "pending",
+  "publication_status": "pending",
+  "safeguards": {
+    "crawler_retried": false,
+    "access_controls_bypassed": false,
+    "full_text_copied": false,
+    "translations_counted_independent": false,
+    "schedule_changed": false,
+    "audience_or_permissions_changed": false,
+    "repository_permissions_changed": false
+  }
+}

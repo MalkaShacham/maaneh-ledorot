@@ -1,0 +1,69 @@
+{
+  "schema": "manual-public-web-review-v1",
+  "reviewed_at": "2026-11-13T03:28:52+02:00",
+  "batch_id": "065",
+  "method": "Public web search/open through the available reader; direct inspection of visible Chabad.org/TheRebbe.org publisher bodies.",
+  "source_bodies_inspected": 9,
+  "source_aids_inspected": [
+    4812666,
+    4994198,
+    4812708,
+    5071046,
+    5100253,
+    4830967,
+    5100391,
+    5413170,
+    5100487
+  ],
+  "new_source_identities": 3,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 4,
+  "existing_identities_canonicalized": 1,
+  "new_paraphrase_entries": 11,
+  "existing_paraphrase_entries_restored_to_index": 4,
+  "blocked_candidates": [
+    {
+      "aid": 4666220,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+      "reason": "The public reader returned a Torah Texts rewritten-summary/navigation shell rather than the letter body; the prior GitHub-runner HTTP 403 remains recorded. No crawler retry or bypass."
+    },
+    {
+      "aid": 4812846,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812846/jewish/page.htm",
+      "reason": "The public reader returned a rewritten-summary shell; no source body inspected and no proposition added."
+    },
+    {
+      "aid": 5099941,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5099941/jewish/page.htm",
+      "reason": "The public reader returned a rewritten-summary shell; search metadata was not used as content evidence."
+    },
+    {
+      "aid": 5100376,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100376/jewish/page.htm",
+      "reason": "The public reader redirected to a rewritten-summary route; no source body inspected."
+    },
+    {
+      "aid": 5100603,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100603/jewish/page.htm",
+      "reason": "The public reader redirected to a rewritten-summary route; no source body inspected."
+    },
+    {
+      "aid": 553671,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553671/jewish/21-Kislev-5743-Yechidus-French.htm",
+      "reason": "Public page exposes an audio item and event navigation, not a transcript; no content proposition added."
+    },
+    {
+      "aid": 553673,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553673/jewish/21-Kislev-5743-Yechidus-Yiddish.htm",
+      "reason": "Public page exposes an audio item and event navigation, not a transcript; no content proposition added. Yiddish language metadata is not treated as inspected Yiddish text."
+    }
+  ],
+  "alternatives_used": [
+    4994198,
+    4812708,
+    5413170
+  ],
+  "acquisition_policy": "Do not retry the GitHub-hosted Chabad.org crawler after the recorded HTTP 403 permanent block. No access controls were bypassed. No full copyrighted text was copied.",
+  "language_findings": "Hebrew publisher letter bodies were accessible. The French and Yiddish Yechidus pages expose audio metadata/navigation but no transcript in the reader; no Yiddish text was inferred. Search for English translations of the reviewed topics did not return an accessible text witness.",
+  "notes": "AID 5100487's four already inspected propositions were preserved in a one-record canonical file because the containing volume index is double-encoded JSON and was not loaded into the public search index. The volume index itself was not bulk-promoted."
+}

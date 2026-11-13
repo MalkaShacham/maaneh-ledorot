@@ -364,3 +364,57 @@ const qs=[
 for(const [q,aid] of qs)for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,q,{mode});assert(m.answerable,mode+' query should be answerable: '+q);assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+' must retrieve AID '+aid);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}else assert.equal(m.research,undefined);}
 const crossQ='מה כתבו האיגרות על הרחבת עסק בכוחות עצמו ועל הפצת המעיינות בבתי כנסת?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,crossQ,{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='5100223')&&m.sources.some(e=>String(e.aid)==='5071043'));assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_families>=2);assert(m.research.evidence_map.length>0);}}
+
+
+// Batch 065: inspected publisher letters, family-level synthesis and deep researcher diagnostics.
+const batch065Required=[
+ [4994198,2,'igrot-letter-5716-7-iyar-v13-aid4994198'],
+ [4812708,5,'igrot-letter-5712-25-sivan-aid4812708'],
+ [5413170,3,'igrot-letter-5722-1-sivan-v22-aid5413170']
+];
+for(const [aid,minProps,family] of batch065Required){
+ const e=idx.entries.find(x=>String(x.aid)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-065 AID '+aid+' must have inspected source text');
+ assert.equal(e.status,'Verified','batch-065 AID '+aid+' must retain scoped published-text status');
+ assert.equal(e.evidence_family_id,family,'batch-065 AID '+aid+' must have its own Evidence Family');
+ assert(e.response_propositions.length>=minProps);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.context_status,'partial');
+}
+const enriched4812666=idx.entries.find(x=>String(x.aid)==='4812666');
+assert(enriched4812666&&enriched4812666.response_propositions.length>=3,'AID 4812666 must retain the added four-cubits proposition');
+assert.equal(enriched4812666.evidence_family_id,'igrot-letter-5712-3-sivan-aid4812666');
+const restored5100487=idx.entries.find(x=>String(x.aid)==='5100487');
+assert(restored5100487&&restored5100487.has_content_evidence,'AID 5100487 must be exposed as one canonical content-bearing item, not only buried in a volume index');
+assert.equal(restored5100487.evidence_family_id,'igrot-letter-5719-2-adar-ii-ו׳תשמא-aid5100487');
+assert(restored5100487.response_propositions.length>=4);
+const dailyRoutineQ='מה הדפוס החוזר באיגרות לגבי סדרי לימוד ותפילה בחיי היום יום?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,dailyRoutineQ,{mode});
+ assert(m.answerable,mode+': daily study/prayer pattern must be supported by multiple inspected families');
+ assert(m.sources.length>=3,mode+': daily routine synthesis must use at least three source families');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': translations or aliases must not inflate the daily routine family count');
+ for(const aid of [4994198,4812708,5100391]) assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+': daily routine synthesis must include AID '+aid);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every daily routine claim needs claim-local citations');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': daily routine citations must entail their cited propositions');
+ assert(m.context_boundary.every(x=>x.valid),mode+': daily routine synthesis must preserve witness-local context');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=3,mode+': deep researcher mode must expose three independent families');
+  assert(m.research.witnesses.length===m.sources.length,mode+': researcher mode must expose every witness');
+  assert(m.research.evidence_map.length>0,mode+': researcher mode must expose claim-to-witness mapping');
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)),mode+': researcher map must retain item-level locators');
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid),mode+': researcher diagnostics must pass');
+ }else assert.equal(m.research,undefined,'regular mode must not expose researcher-only diagnostics');
+}
+const kfarChabadQ='מה נכתב על גובה בתים פרטיים בכפר חב״ד?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,kfarChabadQ,{mode});
+ assert(m.answerable,mode+': the appended Kfar Chabad building note must be retrievable');
+ assert(m.sources.some(e=>String(e.aid)==='5413170'),mode+': the Kfar Chabad note must cite AID 5413170');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher') assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+}
