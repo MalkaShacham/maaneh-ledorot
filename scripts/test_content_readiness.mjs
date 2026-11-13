@@ -53,7 +53,8 @@ for(const aid of batch078Aids){
 const secretariatCopy=idx.entries.find(e=>sourceAID(e)==='4730884');
 assert(secretariatCopy&&/secretariat/i.test(secretariatCopy.witness_type||''));
 const yiddishPublic=idx.entries.find(e=>sourceAID(e)==='5100601');
-assert(yiddishPublic&&yiddishPublic.language==='Yiddish'&&String(yiddishPublic.provenance?.textual_status||'').includes('צילום'));
+const yiddishPublicRecord=batch078Data.records.find(e=>String(e.aid)==='5100601');
+assert(yiddishPublic&&yiddishPublic.language==='Yiddish'&&String(yiddishPublicRecord?.provenance?.textual_status||'').includes('צילום'));
 const englishPublic=idx.entries.find(e=>sourceAID(e)==='5043323');
 assert(englishPublic&&englishPublic.language==='English'&&englishPublic.context_status==='complete');
 const partialExcerpt=idx.entries.find(e=>sourceAID(e)==='4830985');

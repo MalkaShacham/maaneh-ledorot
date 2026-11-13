@@ -10,7 +10,7 @@
     "batch_id": "078",
     "batch_file": "data/items/content-research-batch-078-2026-11-13.json",
     "reviewed_at": "2026-11-13T20:29:43+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
+    "status": "reconciled_with_variance",
     "reviewed_item_count": 14,
     "source_bodies_inspected": 14,
     "new_source_identities": 12,
@@ -139,9 +139,12 @@
       "answer_eligible_propositions": 2627
     },
     "reconciliation_variance": {
-      "answer_eligible_unique_sources": -5,
-      "content_verified_unique_sources": -5,
-      "answer_eligible_propositions": -27
+      "actual_minus_expected": {
+        "answer_eligible_unique_sources": -5,
+        "content_verified_unique_sources": -5,
+        "answer_eligible_propositions": -27
+      },
+      "reason": "URL/AID-based reconciliation collapsed legacy duplicate aliases across the corpus; all 12 new batch AIDs were selected as answer-eligible and 13 distinct families were audited including the enriched existing identity."
     },
     "reconciliation_status": "reconciled_with_variance",
     "method": "12 new public source bodies inspected in Hebrew, Yiddish and English; one existing identity enriched; two existing identities rechecked. Twelve navigation/summary shells excluded.",
@@ -155,7 +158,12 @@
       "Health-related letters are personal pastoral correspondence, not medical advice.",
       "Morocco and Tomchei Temimim funding details are case-specific.",
       "No full copyrighted text copied; no AI inference attributed to the Rebbe."
-    ]
+    ],
+    "metrics_delta_actual": {
+      "answer_eligible_unique_sources": 7,
+      "content_verified_unique_sources": 7,
+      "answer_eligible_propositions": -3
+    }
   },
   "previous_manual_web_review": {
     "batch_id": "077",
@@ -758,7 +766,7 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "manual_web_review_note": "Batch 078: 12 new public source bodies across Hebrew, Yiddish and English; one existing identity enriched; two existing identities rechecked. Navigation shells excluded; no crawler retry or access-control bypass. Metrics pending reconciliation.",
+  "manual_web_review_note": "Batch 078 reconciled: all 12 new AIDs plus the enriched existing identity were selected (13 distinct Evidence Families audited; zero non-independent selections). Global URL/AID dedup collapsed legacy aliases, yielding net metrics 792→799 answer-eligible sources, 789→796 content-verified sources, and 2630→2627 propositions. Content-readiness test assertion is being corrected to read publisher provenance from the canonical batch record, not the derived search index.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 799,
     "content_verified_unique_sources": 796,

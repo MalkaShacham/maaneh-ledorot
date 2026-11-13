@@ -57,9 +57,12 @@
     "answer_eligible_propositions": 2627
   },
   "reconciliation_variance": {
-    "answer_eligible_unique_sources": -5,
-    "content_verified_unique_sources": -5,
-    "answer_eligible_propositions": -27
+    "actual_minus_expected": {
+      "answer_eligible_unique_sources": -5,
+      "content_verified_unique_sources": -5,
+      "answer_eligible_propositions": -27
+    },
+    "reason": "URL/AID-based reconciliation collapsed legacy duplicate aliases across the corpus; all 12 new batch AIDs were selected as answer-eligible and 13 distinct families were audited including the enriched existing identity."
   },
   "reconciliation_status": "reconciled_with_variance",
   "records": [
@@ -1483,5 +1486,12 @@
     "הפניות למרוקו ולתומכי תמימים מתייחסות למקרים ולזמנים מסוימים, ולא לכלל חלוקה או גיוס משאבים.",
     "לא הועתק טקסט מוגן במלואו; לא יוחסה למערכת או ל-AI מסקנה לרבי."
   ],
-  "reconciled_at": "2026-11-13T18:50:59.761877+00:00"
+  "reconciled_at": "2026-11-13T18:50:59.761877+00:00",
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 7,
+    "content_verified_unique_sources": 7,
+    "answer_eligible_propositions": -3
+  },
+  "reconciliation_completed_at": "2026-11-13T18:50:46Z",
+  "reconciliation_notes": "The audit selected all 12 new AIDs plus the enriched AID 4731005 (13 answer-eligible Evidence Families; zero non-independent selections). The global AID reconciliation collapsed pre-existing aliases, so the net public metrics changed by +7 unique answer-eligible sources, +7 content-verified unique sources and -3 answer-eligible propositions."
 }
