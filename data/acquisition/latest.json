@@ -12,19 +12,19 @@
     "batch_id": "074",
     "reviewed_item_count": 14,
     "source_bodies_inspected": 10,
-    "new_source_identities": 9,
-    "new_rebbe_letter_identities": 9,
+    "new_source_identities": 7,
+    "new_rebbe_letter_identities": 7,
     "new_secretariat_document_identities": 0,
     "secretariat_signed_letter_count": 3,
     "new_metadata_only_identities": 0,
     "duplicate_alias_identities": 0,
     "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
+    "existing_identities_rechecked": 2,
     "existing_identities_canonicalized": 0,
-    "new_paraphrase_entries": 26,
+    "new_paraphrase_entries": 20,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 27,
-    "answer_eligible_source_families_added": 9,
+    "total_new_paraphrase_entries": 21,
+    "answer_eligible_source_families_added": 7,
     "blocked_candidate_count": 4,
     "blocked_candidates": [
       {
@@ -50,14 +50,14 @@
       }
     ],
     "method": "Manual public web search/open of item-level Kehot/Chabad.org pages. Nine new Hebrew/Yiddish source bodies and one existing Hebrew identity were inspected. Four candidates redirected to rewritten summary shells and were excluded. No crawler retry, access-control bypass or full-text copying.",
-    "deduplication_check": "The nine AIDs were checked against the 1,054-record review queue and batch 073; no exact AID/URL match was found there. The oversized public-search-index file returned an empty response through the connector, so repository-wide uniqueness is subject to deterministic reconciliation. AID 5357369 was enriched in place in its existing Evidence Family. No translation or reprint was counted as an independent witness.",
+    "deduplication_check": "The item-level reconciliation audit found AID 4731080 already canonical in batch 059 under the same dated Yiddish letter and Evidence Family, and AID 4812666 already canonical in batch 058 under the same dated Hebrew letter and Evidence Family. Their duplicate batch-074 records were removed; both were rechecked in place. Seven genuinely new AIDs remain, and all seven are selected as answer-eligible with seven distinct Evidence Families. AID 5357369 was enriched in place. No translation or reprint was counted as an independent witness.",
     "source_languages": [
       "Hebrew",
       "Yiddish"
     ],
     "source_types": [
       "published Hebrew correspondence",
-      "published Yiddish correspondence",
+      "published Yiddish correspondence (existing identity rechecked)",
       "secretariat-signed correspondence",
       "letter transcribed from photograph"
     ],
@@ -81,9 +81,16 @@
       "answer_eligible_propositions": 2559
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 773,
-      "content_verified_unique_sources": 770,
-      "answer_eligible_propositions": 2586
+      "answer_eligible_unique_sources": 771,
+      "content_verified_unique_sources": 768,
+      "answer_eligible_propositions": 2580
+    },
+    "language_distribution": {
+      "Hebrew": 7
+    },
+    "rechecked_language_distribution": {
+      "Hebrew": 1,
+      "Yiddish": 1
     }
   },
   "previous_manual_web_review": {
@@ -447,5 +454,5 @@
       "Hebrew"
     ]
   },
-  "manual_web_review_note": "Manual public-source review completed; the blocked runner crawler was not run."
+  "manual_web_review_note": "Manual public-source review completed; seven new identities, two existing identities rechecked, one existing identity enriched; four shell redirects excluded. The blocked crawler was not run."
 }
