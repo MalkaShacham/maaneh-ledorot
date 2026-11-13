@@ -265,7 +265,7 @@ Batch detail:
 All three batch manifests and the acquisition summary are reconciled against `data/public-metrics.json` and `data/project-state.json`. Current metrics are 779 answer-eligible unique sources, 776 content-verified unique sources, and 2,601 answer-eligible propositions. The content-review queue still contains 1,054 pending items; no unreviewed item was promoted merely to reach a target.
 
 Public-source rechecks:
-- AID 6429866 (English letter to President Gerald Ford) body lines 261–292 and AID 4783876 (Yiddish melody correspondence) body lines 251–261 were accessible and inspected.
+- AID 6429866 (English letter to President Gerald Ford) remains body-accessible; the current page displays the letter at lines 271–300, while its proposition locator remains lines 261–292. AID 4783876 (Yiddish melody correspondence) was previously inspected at body lines 244–261, but the current URL now redirects to a rewritten Torah Texts summary shell; the earlier inspection remains recorded and was not repeated as a current body check.
 - AID 79705 (Eli Touger, “A Miraculous Release”) was accessible as a secondary narrative; its locator was corrected to article body lines 254–269, replacing the erroneous footer-range locator 280–303.
 - AID 4812673 was accessible at body lines 290–302.
 - The current recheck of AIDs 4783853, 4812732, 5100383, 5100452, 5100585 and 5100260 returned summary shells. AID 5357369 also currently returns a summary shell; its previously inspected added passage is specifically located at lines 301–302. These are documented access limitations, not fresh body inspections.

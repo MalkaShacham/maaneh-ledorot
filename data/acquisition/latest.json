@@ -113,7 +113,24 @@
         "5100260"
       ],
       "note": "The batch records 14 source bodies/segments inspected during its original manual review. This current recheck could reopen two bodies; six pages now resolve to summary shells. Their prior paraphrases remain tied to the earlier recorded source-text inspection and are not represented as newly re-inspected."
-    }
+    },
+    "cross_batch_rechecks": [
+      {
+        "aid": "6429866",
+        "status": "body_accessible",
+        "locator": "letter body lines 271–300"
+      },
+      {
+        "aid": "4783876",
+        "status": "summary_shell_redirect",
+        "previous_body_inspection_locator": "Yiddish letter body lines 244–261"
+      },
+      {
+        "aid": "5357369",
+        "status": "summary_shell_redirect",
+        "previous_body_inspection_locator": "added proposition body lines 301–302"
+      }
+    ]
   },
   "previous_manual_web_review": {
     "batch_id": "074",
@@ -610,7 +627,7 @@
       "Hebrew"
     ]
   },
-  "manual_web_review_note": "Manual source-content batches 073–075 reconciled to measured public metrics. Translations remain linked to their underlying Evidence Families and are not counted as independent witnesses; duplicate aliases are not counted as new sources. The latest public-page recheck found six summary-shell redirects; no blocked crawler was retried.",
+  "manual_web_review_note": "Manual source-content batches 073–075 reconciled to measured public metrics. Translations remain linked to their underlying Evidence Families and are not counted as independent witnesses; duplicate aliases are not counted as new sources. The latest public-page recheck found six summary-shell redirects; no blocked crawler was retried. Cross-batch recheck: AID 6429866 remains body-accessible; AIDs 4783876 and 5357369 now redirect to rewritten summary shells, so their prior body inspections are retained but not represented as newly re-inspected.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 779,
     "content_verified_unique_sources": 776,
