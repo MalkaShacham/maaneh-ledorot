@@ -7,6 +7,140 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "081",
+    "batch_file": "data/items/content-research-batch-081-2026-11-13.json",
+    "reviewed_at": "2026-11-13T22:40:00+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 10,
+    "records_reviewed": 17,
+    "source_bodies_inspected": 10,
+    "new_source_identities": 9,
+    "new_rebbe_letter_identities": 9,
+    "new_other_document_identities": 0,
+    "new_secretariat_document_identities": 0,
+    "new_secondary_narrative_identities": 0,
+    "new_metadata_only_identities": 0,
+    "duplicate_alias_identities": 0,
+    "existing_identities_enriched": 7,
+    "existing_identities_rechecked": 1,
+    "existing_identities_canonicalized": 0,
+    "existing_secretariat_reclassifications": 7,
+    "new_response_propositions": 22,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 22,
+    "answer_eligible_source_families_added": 9,
+    "source_languages": [
+      "Hebrew"
+    ],
+    "language_distribution": {
+      "Hebrew": 9
+    },
+    "source_type_distribution": {
+      "published_hebrew_letter_text": 8,
+      "published_hebrew_letter_fragment": 1
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 799,
+      "content_verified_unique_sources": 796,
+      "answer_eligible_propositions": 2627
+    },
+    "metrics_before_this_batch_after_prior_pending_batches": {
+      "answer_eligible_unique_sources": 818,
+      "content_verified_unique_sources": 815,
+      "answer_eligible_propositions": 2666
+    },
+    "metrics_expected_after_all_pending_batches": {
+      "answer_eligible_unique_sources": 827,
+      "content_verified_unique_sources": 824,
+      "answer_eligible_propositions": 2688
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "reconciliation_status": "pending_reconciliation",
+    "blocked_candidate_count": 4,
+    "blocked_candidates": [
+      {
+        "aid": 4994633,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4994633/jewish/page.htm",
+        "reason": "Direct open redirected to a rewritten Torah Texts summary/navigation shell; no inspectable item body was returned.",
+        "handling": "Excluded; other directly inspectable Kehot publisher bodies were inspected in the same run."
+      },
+      {
+        "aid": 5100256,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100256/jewish/page.htm",
+        "reason": "Direct open redirected to a rewritten Torah Texts summary/navigation shell; no inspectable item body was returned.",
+        "handling": "Excluded; other directly inspectable Kehot publisher bodies were inspected in the same run."
+      },
+      {
+        "aid": 5356838,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5356838/jewish/page.htm",
+        "reason": "Direct open redirected to a rewritten Torah Texts summary/navigation shell; no inspectable item body was returned.",
+        "handling": "Excluded; other directly inspectable Kehot publisher bodies were inspected in the same run."
+      },
+      {
+        "aid": 5099972,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5099972/jewish/page.htm",
+        "reason": "Direct open redirected to a rewritten Torah Texts summary/navigation shell; no inspectable item body was returned.",
+        "handling": "Excluded; other directly inspectable Kehot publisher bodies were inspected in the same run."
+      }
+    ],
+    "existing_identity_updates": [
+      {
+        "id": "igrot-kodesh-v13-דתרע",
+        "letter_number": "ד׳תרע",
+        "language": "Hebrew",
+        "change": "Reclassified as publisher-presented secretary-signed secretariat response; existing Evidence Family and propositions retained; independent_witness=false; no new proposition."
+      },
+      {
+        "id": "igrot-kodesh-v13-דתרעב",
+        "letter_number": "ד׳תרעב",
+        "language": "Yiddish",
+        "change": "Reclassified as publisher-presented secretary-signed secretariat response; existing Evidence Family and propositions retained; independent_witness=false; no new proposition."
+      },
+      {
+        "id": "igrot-kodesh-v13-דתרעו",
+        "letter_number": "ד׳תרעו",
+        "language": "Hebrew",
+        "change": "Reclassified as publisher-presented secretary-signed secretariat response; existing Evidence Family and propositions retained; independent_witness=false; no new proposition."
+      },
+      {
+        "id": "igrot-kodesh-v13-דתרעח",
+        "letter_number": "ד׳תרעח",
+        "language": "Hebrew",
+        "change": "Reclassified as publisher-presented secretary-signed secretariat response; existing Evidence Family and propositions retained; independent_witness=false; no new proposition."
+      },
+      {
+        "id": "igrot-kodesh-v13-דתרפא",
+        "letter_number": "ד׳תרפא",
+        "language": "Hebrew",
+        "change": "Reclassified as publisher-presented secretary-signed secretariat response; existing Evidence Family and propositions retained; independent_witness=false; no new proposition."
+      },
+      {
+        "id": "igrot-kodesh-v13-דתרפב",
+        "letter_number": "ד׳תרפב",
+        "language": "Hebrew",
+        "change": "Reclassified as publisher-presented secretary-signed secretariat response; existing Evidence Family and propositions retained; independent_witness=false; no new proposition."
+      },
+      {
+        "id": "igrot-kodesh-v13-דתרפג",
+        "letter_number": "ד׳תרפג",
+        "language": "Hebrew",
+        "change": "Reclassified as publisher-presented secretary-signed secretariat response; existing Evidence Family and propositions retained; independent_witness=false; no new proposition."
+      }
+    ],
+    "existing_identity_rechecks": [
+      {
+        "aid": "5054501",
+        "canonical_batch": "080",
+        "body_lines": "280-291",
+        "result": "Publisher body rechecked; existing identity retained; no duplicate record or new proposition added."
+      }
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false
+  },
+  "previous_manual_web_review": {
     "batch_id": "080",
     "batch_file": "data/items/content-research-batch-080-2026-11-13.json",
     "reviewed_at": "2026-11-13T22:10:00+02:00",
@@ -99,115 +233,6 @@
       "summary_shells": 15,
       "body_text_reinspected": 0,
       "effect": "The prior batch-079 body inspections are retained as historical records; this run did not re-verify their text and added no new propositions from those pages."
-    }
-  },
-  "previous_manual_web_review": {
-    "batch_id": "079",
-    "batch_file": "data/items/content-research-batch-079-2026-11-13.json",
-    "reviewed_at": "2026-11-13T20:59:00+02:00",
-    "status": "historical_batch_079_pending_merge_reconciliation",
-    "reviewed_item_count": 15,
-    "source_bodies_inspected": 15,
-    "new_source_identities": 9,
-    "new_rebbe_letter_identities": 9,
-    "new_other_document_identities": 0,
-    "new_secretariat_document_identities": 0,
-    "new_secondary_narrative_identities": 0,
-    "new_metadata_only_identities": 0,
-    "duplicate_alias_identities": 0,
-    "existing_identities_enriched": 2,
-    "existing_identities_rechecked": 4,
-    "existing_identities_canonicalized": 0,
-    "new_response_propositions": 18,
-    "existing_response_propositions_added": 2,
-    "total_new_paraphrase_entries": 20,
-    "answer_eligible_source_families_added": 9,
-    "source_languages": [
-      "Hebrew",
-      "Yiddish"
-    ],
-    "language_distribution": {
-      "Hebrew": 8,
-      "Yiddish": 1
-    },
-    "source_type_distribution": {
-      "published_hebrew_public_letter": 3,
-      "published_hebrew_letter_text": 4,
-      "published_yiddish_letter_text": 1,
-      "published_hebrew_letter_excerpt": 1
-    },
-    "blocked_candidate_count": 5,
-    "blocked_candidates": [
-      {
-        "aid": 4831077,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4831077/jewish/page.htm",
-        "reason": "Direct open returned a navigation/summary shell rather than the inspectable item body; the search-result summary was not substituted.",
-        "handling": "Excluded; an adjacent accessible publisher item was inspected instead."
-      },
-      {
-        "aid": 4831314,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4831314/jewish/page.htm",
-        "reason": "Direct open returned a navigation/summary shell rather than the inspectable item body.",
-        "handling": "Excluded; adjacent accessible item AID 4831315 was inspected instead."
-      },
-      {
-        "aid": 5100360,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100360/jewish/page.htm",
-        "reason": "Direct open returned a navigation/summary shell; the search snippet was not used as a substitute for the body.",
-        "handling": "Excluded; accessible adjacent publisher letters AID 5100451 and AID 5100615 were inspected instead."
-      },
-      {
-        "aid": 5100423,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100423/jewish/page.htm",
-        "reason": "Direct open returned a navigation/summary shell rather than inspectable item text.",
-        "handling": "Excluded; other directly inspectable letters in the same publisher collection were used."
-      },
-      {
-        "aid": 5100468,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100468/jewish/page.htm",
-        "reason": "Direct open returned a navigation/summary shell rather than inspectable item text.",
-        "handling": "Excluded; other directly inspectable letters in the same publisher collection were used."
-      }
-    ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 799,
-      "content_verified_unique_sources": 796,
-      "answer_eligible_propositions": 2627
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 808,
-      "content_verified_unique_sources": 805,
-      "answer_eligible_propositions": 2647
-    },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "reconciliation_status": "pending_reconciliation",
-    "method": "Fifteen publisher item bodies inspected in one run: nine new candidate letters, two in-place identity enrichments and four rechecks. Nine new candidates span Hebrew and Yiddish; no translated witness is counted as independent.",
-    "limitations": [
-      "Incoming letters, autographs, physical originals and most cited works were not independently inspected.",
-      "AID 5357370 is a partial excerpt beginning with an omission; only its visible passage is verified.",
-      "AID 4831186 carries a nonstandard publisher-printed date; it is preserved without normalization.",
-      "AID 4831187 is an original-language Yiddish witness; no parallel Hebrew witness was identified on the inspected page.",
-      "AID 5100451 is personal housing correspondence, not general real-estate or financial advice.",
-      "AID 5100615 is personal guidance, not general career or mental-health advice.",
-      "AID 4831186 mentions an operation but contains no diagnosis or medical instruction.",
-      "AID 4831187 defers mikveh construction and water arrangements to local rabbinic instructions.",
-      "No protected full text was copied; no AI inference was attributed to the Rebbe."
-    ],
-    "current_access_recheck_summary": {
-      "prior_batch_id": "079",
-      "attempted": 15,
-      "summary_shells": 15,
-      "body_text_reinspected": 0,
-      "effect": "The prior batch-079 body inspections are retained as historical records; this run did not re-verify their text and added no new propositions from those pages."
-    },
-    "ci_reconciliation": {
-      "workflow_run_id": 43491380509,
-      "computed_answer_eligible_unique_sources": 808,
-      "committed_to_main": false
     }
   },
   "earlier_manual_web_review": {
@@ -660,9 +685,13 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "manual_web_review_note": "Batch 080 is a manual public-body review; automated acquisition remains separate. Metrics are pending deterministic reconciliation after merge.",
-  "manual_web_review_current_metrics": null,
-  "last_manual_review_at": "2026-11-13T22:10:00+02:00",
+  "manual_web_review_note": "Batch 081 is a manual public-body review; nine new source identities and 22 source-grounded paraphrases are pending deterministic reconciliation. Published baseline remains 799 answer-eligible unique Evidence Families until merge and reconciliation.",
+  "manual_web_review_current_metrics": {
+    "answer_eligible_unique_sources": 799,
+    "content_verified_unique_sources": 796,
+    "answer_eligible_propositions": 2627
+  },
+  "last_manual_review_at": "2026-11-13T22:40:00+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -1058,24 +1087,112 @@
       "publication_commit": "3f4b63215d3700daf07ec8ca027b40569ce6e1cd"
     },
     {
-      "batch_id": "080",
-      "reviewed_at": "2026-11-13T22:10:00+02:00",
-      "status": "pending_reconciliation",
-      "new_source_identities": 10,
-      "source_bodies_inspected": 10,
-      "response_propositions_added": 19,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 15,
-      "blocked_candidate_count": 3,
+      "batch_id": "079",
+      "batch_file": "data/items/content-research-batch-079-2026-11-13.json",
+      "reviewed_at": "2026-11-13T20:59:00+02:00",
+      "status": "historical_batch_079_pending_merge_reconciliation",
+      "reviewed_item_count": 15,
+      "source_bodies_inspected": 15,
+      "new_source_identities": 9,
+      "new_rebbe_letter_identities": 9,
+      "new_other_document_identities": 0,
+      "new_secretariat_document_identities": 0,
+      "new_secondary_narrative_identities": 0,
+      "new_metadata_only_identities": 0,
+      "duplicate_alias_identities": 0,
+      "existing_identities_enriched": 2,
+      "existing_identities_rechecked": 4,
+      "existing_identities_canonicalized": 0,
+      "new_response_propositions": 18,
+      "existing_response_propositions_added": 2,
+      "total_new_paraphrase_entries": 20,
+      "answer_eligible_source_families_added": 9,
+      "source_languages": [
+        "Hebrew",
+        "Yiddish"
+      ],
+      "language_distribution": {
+        "Hebrew": 8,
+        "Yiddish": 1
+      },
+      "source_type_distribution": {
+        "published_hebrew_public_letter": 3,
+        "published_hebrew_letter_text": 4,
+        "published_yiddish_letter_text": 1,
+        "published_hebrew_letter_excerpt": 1
+      },
+      "blocked_candidate_count": 5,
+      "blocked_candidates": [
+        {
+          "aid": 4831077,
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/4831077/jewish/page.htm",
+          "reason": "Direct open returned a navigation/summary shell rather than the inspectable item body; the search-result summary was not substituted.",
+          "handling": "Excluded; an adjacent accessible publisher item was inspected instead."
+        },
+        {
+          "aid": 4831314,
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/4831314/jewish/page.htm",
+          "reason": "Direct open returned a navigation/summary shell rather than the inspectable item body.",
+          "handling": "Excluded; adjacent accessible item AID 4831315 was inspected instead."
+        },
+        {
+          "aid": 5100360,
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100360/jewish/page.htm",
+          "reason": "Direct open returned a navigation/summary shell; the search snippet was not used as a substitute for the body.",
+          "handling": "Excluded; accessible adjacent publisher letters AID 5100451 and AID 5100615 were inspected instead."
+        },
+        {
+          "aid": 5100423,
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100423/jewish/page.htm",
+          "reason": "Direct open returned a navigation/summary shell rather than inspectable item text.",
+          "handling": "Excluded; other directly inspectable letters in the same publisher collection were used."
+        },
+        {
+          "aid": 5100468,
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100468/jewish/page.htm",
+          "reason": "Direct open returned a navigation/summary shell rather than inspectable item text.",
+          "handling": "Excluded; other directly inspectable letters in the same publisher collection were used."
+        }
+      ],
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
       "metrics_before": {
+        "answer_eligible_unique_sources": 799,
+        "content_verified_unique_sources": 796,
+        "answer_eligible_propositions": 2627
+      },
+      "metrics_expected_after": {
         "answer_eligible_unique_sources": 808,
         "content_verified_unique_sources": 805,
         "answer_eligible_propositions": 2647
       },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 818,
-        "content_verified_unique_sources": 815,
-        "answer_eligible_propositions": 2666
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "reconciliation_status": "pending_reconciliation",
+      "method": "Fifteen publisher item bodies inspected in one run: nine new candidate letters, two in-place identity enrichments and four rechecks. Nine new candidates span Hebrew and Yiddish; no translated witness is counted as independent.",
+      "limitations": [
+        "Incoming letters, autographs, physical originals and most cited works were not independently inspected.",
+        "AID 5357370 is a partial excerpt beginning with an omission; only its visible passage is verified.",
+        "AID 4831186 carries a nonstandard publisher-printed date; it is preserved without normalization.",
+        "AID 4831187 is an original-language Yiddish witness; no parallel Hebrew witness was identified on the inspected page.",
+        "AID 5100451 is personal housing correspondence, not general real-estate or financial advice.",
+        "AID 5100615 is personal guidance, not general career or mental-health advice.",
+        "AID 4831186 mentions an operation but contains no diagnosis or medical instruction.",
+        "AID 4831187 defers mikveh construction and water arrangements to local rabbinic instructions.",
+        "No protected full text was copied; no AI inference was attributed to the Rebbe."
+      ],
+      "current_access_recheck_summary": {
+        "prior_batch_id": "079",
+        "attempted": 15,
+        "summary_shells": 15,
+        "body_text_reinspected": 0,
+        "effect": "The prior batch-079 body inspections are retained as historical records; this run did not re-verify their text and added no new propositions from those pages."
+      },
+      "ci_reconciliation": {
+        "workflow_run_id": 43491380509,
+        "computed_answer_eligible_unique_sources": 808,
+        "committed_to_main": false
       }
     }
   ],
