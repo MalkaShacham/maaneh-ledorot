@@ -351,6 +351,20 @@ if batch_path and isinstance(batch_data,dict):
             review["reconciliation_status"]=batch_data["reconciliation_status"]
             acquisition["manual_web_review_current_metrics"]=actual_metrics
             acquisition["last_manual_review_at"]=review.get("reviewed_at") or acquisition.get("last_manual_review_at")
+            history=acquisition.get("manual_web_review_history") or []
+            for history_item in history:
+                if str(history_item.get("batch_id"))==str(batch_label):
+                    history_item["metrics_actual_after"]=actual_metrics
+                    history_item["reconciliation_variance"]=variance
+                    history_item["reconciliation_status"]=batch_data["reconciliation_status"]
+                    history_item["reconciled_at"]=batch_data.get("reconciled_at")
+            previous=acquisition.get("previous_manual_web_review") or {}
+            if str(previous.get("batch_id"))==str(batch_label):
+                previous["metrics_actual_after"]=actual_metrics
+                previous["reconciliation_variance"]=variance
+                previous["reconciliation_status"]=batch_data["reconciliation_status"]
+                previous["reconciled_at"]=batch_data.get("reconciled_at")
+                acquisition["previous_manual_web_review"]=previous
             acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
 ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}

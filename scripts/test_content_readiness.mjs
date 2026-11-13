@@ -797,21 +797,18 @@ for(const mode of ['regular','researcher']){
 const batch077Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-077-2026-11-13.json',root)));
 assert.equal(batch077Data.reviewed_item_count,12);assert.equal(batch077Data.source_bodies_inspected,12);assert.equal(batch077Data.new_source_identities,3);assert.equal(batch077Data.existing_identities_enriched,1);assert.equal(batch077Data.existing_identities_rechecked,8);assert.equal(batch077Data.new_response_propositions,8);assert.equal(batch077Data.answer_eligible_source_families_added,3);
 const acquisitionState=JSON.parse(await readFile(new URL('data/acquisition/latest.json',root),'utf8'));
-assert.equal(acquisitionState.manual_web_review.batch_id,'082');
-assert.equal(acquisitionState.previous_manual_web_review.batch_id,'081');
-assert.deepEqual(acquisitionState.manual_web_review_history.slice(0,3).map(x=>x.batch_id),['082','081','080']);
+assert.equal(acquisitionState.manual_web_review.batch_id,'083');
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'082');
+assert.deepEqual(acquisitionState.manual_web_review_history.slice(0,3).map(x=>x.batch_id),['083','082','081']);
 assert(acquisitionState.manual_web_review_history.some(x=>x.batch_id==='079'));
 assert(acquisitionState.manual_web_review_history.some(x=>x.batch_id==='077'));
 const batch082Reconciliation=JSON.parse(await readFile(new URL('data/items/content-research-batch-082-2026-11-14.json',root),'utf8'));
-assert.equal(batch082Reconciliation.reconciliation_status,acquisitionState.manual_web_review.reconciliation_status);
-if(acquisitionState.manual_web_review.reconciliation_status==='reconciled'){
- assert.deepEqual(acquisitionState.manual_web_review_current_metrics,{answer_eligible_unique_sources:833,content_verified_unique_sources:830,answer_eligible_propositions:2707});
- assert.deepEqual(batch082Reconciliation.metrics_actual_after,{answer_eligible_unique_sources:833,content_verified_unique_sources:830,answer_eligible_propositions:2707});
-}else{
- assert.equal(acquisitionState.manual_web_review.reconciliation_status,'pending_reconciliation');
- assert.deepEqual(acquisitionState.manual_web_review_current_metrics,{answer_eligible_unique_sources:799,content_verified_unique_sources:796,answer_eligible_propositions:2627});
- assert.equal(batch082Reconciliation.metrics_actual_after,null);
-}
+const batch082Actual={answer_eligible_unique_sources:833,content_verified_unique_sources:830,answer_eligible_propositions:2707};
+assert.equal(batch082Reconciliation.reconciliation_status,'reconciled');
+assert.deepEqual(batch082Reconciliation.metrics_actual_after,batch082Actual);
+assert.deepEqual(batch082Reconciliation.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert.equal(acquisitionState.previous_manual_web_review.reconciliation_status,'reconciled');
+assert.deepEqual(acquisitionState.previous_manual_web_review.metrics_actual_after,batch082Actual);
 assert.equal(batch077Data.metrics_actual_after.answer_eligible_unique_sources,792);assert.equal(batch077Data.metrics_actual_after.content_verified_unique_sources,789);assert.equal(batch077Data.metrics_actual_after.answer_eligible_propositions,2630);assert.equal(batch077Data.reconciliation_status,'reconciled');
 const batch077Aids=[5100681,5054399,5413166];
 for(const aid of batch077Aids){const e=idx.entries.find(x=>sourceAID(x)===String(aid));assert(e&&e.has_content_evidence,'batch-077 AID '+aid+' must have inspected publisher body/excerpt');assert.equal(e.status,'Verified');assert.equal(e.language,'Hebrew');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);assert.equal(e.context_status,'partial');assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);assert.equal(e.canonical_file,'data/items/content-research-batch-077-2026-11-13.json');assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));}
@@ -1195,6 +1192,111 @@ for(const mode of ['regular','researcher']){
  assert(m.sources.some(e=>sourceAID(e)==='5071046'&&e._independent_witness!==false),'AID 5071046 must not be falsely classified as secretary-signed merely because its signature status says a secretariat copy was not inspected');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+}
+// Batch 083: six new identities and three in-place enrichments after nine publisher-body inspections.
+const batch083Path='data/items/content-research-batch-083-2026-11-14.json';
+const batch083Data=JSON.parse(await readFile(new URL(batch083Path,root),'utf8'));
+assert.equal(batch083Data.records.length,6);
+assert.equal(batch083Data.records_reviewed,9);
+assert.equal(batch083Data.source_bodies_inspected,9);
+assert.equal(batch083Data.new_source_identities,6);
+assert.equal(batch083Data.existing_identities_enriched,3);
+assert.equal(batch083Data.existing_identities_rechecked,0);
+assert.equal(batch083Data.new_response_propositions,12);
+assert.equal(batch083Data.existing_response_propositions_added,5);
+assert.equal(batch083Data.response_propositions_added,17);
+assert.equal(batch083Data.blocked_candidate_count,10);
+assert.equal(batch083Data.records.reduce((n,r)=>n+r.response_propositions.length,0),12);
+assert.equal(new Set(batch083Data.records.map(r=>String(r.aid))).size,6);
+assert.equal(new Set(batch083Data.records.map(r=>r.evidence_family_id)).size,6);
+assert.equal(batch083Data.source_language_distribution.Hebrew,8);
+assert.equal(batch083Data.source_language_distribution.Yiddish,1);
+for(const r of batch083Data.records){
+ const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
+ assert(e&&e.has_content_evidence,'batch-083 AID '+r.aid+' must have inspected publisher-body text');
+ assert.equal(e.status,'Verified');
+ assert.equal(e.canonical_file,batch083Path);
+ assert.equal(e.evidence_family_id,r.evidence_family_id);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.translation_of_evidence_family_id,null);
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+r.aid||String(q.source_url||'').includes('/aid/'+r.aid+'/')));
+}
+const batch083NewAids=[5019502,4831629,5287569,4754445,5071128,5357059];
+for(const aid of batch083NewAids)assert(idx.entries.filter(e=>sourceAID(e)===String(aid)).length===1,'new AID '+aid+' must resolve to one canonical identity');
+for(const aid of [5071128,5357059]){
+ const e=idx.entries.find(x=>sourceAID(x)===String(aid));
+ assert(e&&/secretariat/i.test(e.witness_type||''),'AID '+aid+' must preserve its secretariat/telegram attribution');
+ assert.equal(e.independent_witness,false);
+ assert(e.provenance?.signature_status);
+}
+const telegram083=idx.entries.find(e=>sourceAID(e)==='5357059');
+assert(telegram083&&telegram083.volume===null&&telegram083.provenance?.volume_conflict,'AID 5357059 must not normalize the conflicting volume label');
+const fragment083=idx.entries.find(e=>sourceAID(e)==='4854534');
+assert(fragment083&&fragment083.context_status==='partial'&&/קטע|fragment|אליפסיס/i.test(fragment083.verification_scope),'AID 4854534 must retain fragment-only scope');
+for(const u of batch083Data.existing_identity_updates){
+ const e=idx.entries.find(x=>sourceAID(x)===String(u.aid));
+ assert(e&&e.has_content_evidence,'existing AID '+u.aid+' must be enriched in place');
+ assert.equal(e.id,u.id);
+ assert.equal(e.canonical_file,u.canonical_file);
+ assert.equal(e.evidence_family_id,u.evidence_family_id);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.provenance?.index_locator_verification_scope,'existing index locator must remain explicitly locator-only');
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+u.aid||String(q.source_url||'').includes('/aid/'+u.aid+'/')));
+}
+assert.equal(metrics.answer_eligible_unique_sources,842);
+assert.equal(metrics.content_verified_unique_sources,839);
+assert.equal(metrics.answer_eligible_propositions,2724);
+const batch083Actual={answer_eligible_unique_sources:842,content_verified_unique_sources:839,answer_eligible_propositions:2724};
+const batch083Reconciliation=JSON.parse(await readFile(new URL(batch083Path,root),'utf8'));
+assert.equal(batch083Reconciliation.reconciliation_status,'reconciled');
+assert.deepEqual(batch083Reconciliation.metrics_actual_after,batch083Actual);
+assert.deepEqual(batch083Reconciliation.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert.deepEqual(acquisitionState.manual_web_review_current_metrics,batch083Actual);
+assert.equal(acquisitionState.manual_web_review.reconciliation_status,'reconciled');
+assert.deepEqual(acquisitionState.manual_web_review.metrics_actual_after,batch083Actual);
+assert.equal(acquisitionState.manual_web_review_history[0].reconciliation_status,'reconciled');
+assert.deepEqual(acquisitionState.manual_web_review_history[0].metrics_actual_after,batch083Actual);
+const healthSynthesisQ='מה עולה מן האיגרות על שמירת בריאות הגוף כחלק מעבודת ה׳, הקשבה לרופא, אכילה לפני תפילה והימנעות מתעניות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,healthSynthesisQ,{mode});
+ assert(m.answerable,mode+': inspected health/body-care letters must support a bounded multi-family synthesis');
+ assert(m.synthesis&&m.synthesis.topic==='bodily_health_and_divine_service');
+ assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');
+ assert(m.synthesis.claims.length>=3&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
+ assert(m.synthesis.evidence_family_ids.length>=4);
+ for(const aid of [5019502,4831629,5287569,5357093,4754445])assert(m.sources.some(e=>sourceAID(e)===String(aid)),mode+': health synthesis must retain source '+aid);
+ assert(!m.sources.some(e=>['5071128','5357059'].includes(sourceAID(e))),mode+': secretariat response and transmitted telegram are not independent synthesis witnesses');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=4);
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert(m.research.pattern_synthesis&&m.research.pattern_synthesis.topic==='bodily_health_and_divine_service');
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
+ }else assert.equal(m.research,undefined);
+}
+const secretaryLishmahQ='מה מתועד במענה המזכירות על לימוד שלא לשמה והתקדמות ללימוד לשמה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,secretaryLishmahQ,{mode});
+ assert(m.answerable&&m.sources.some(e=>sourceAID(e)==='5071128'));
+ assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על לימוד שלא לשמה והתקדמות ללימוד לשמה?',{mode});
+ assert(!direct.sources.some(e=>sourceAID(e)==='5071128'),'secretariat response must not be attributed directly to the Rebbe');
+}
+const telegramQ='מה מתועד בהעתק המברק למנהלי מחנה גן ישראל על פתיחת המחנה והשפעתו לאורך השנה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,telegramQ,{mode});
+ assert(m.answerable&&m.sources.some(e=>sourceAID(e)==='5357059'));
+ assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ const direct=buildAnswerModel(idx.entries,'מה כתב הרבי למנהלי מחנה גן ישראל על פתיחת המחנה והשפעתו לאורך השנה?',{mode});
+ assert(!direct.sources.some(e=>sourceAID(e)==='5357059'),'secretariat-transmitted telegram must not be attributed directly to the Rebbe');
 }
 const indexHtml=await readFile(new URL('index.html',root),'utf8');
 const sourceCardStart=indexHtml.indexOf('function sourceCard');

@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch082-precision-secretariat';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch083-health-synthesis';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -12,6 +12,7 @@ const TOPIC_ALIASES={
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
   'דאגה':['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
+  'שמירת בריאות הגוף ועבודת ה׳':['שמירת בריאות הגוף','בריאות הגוף כחלק מעבודת ה׳','בריאות הגוף','אכילה לפני תפילה','הוראת הרופא','תעניות וסיגופים','body health and divine service','health and prayer'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
   'צדקה לאורך השנה והקצאת תרומות':['צדקה לאורך השנה','צדקה','מעות חיטים','מעשר','חומש','תרומה','תרומות','חלוקת תרומות','הקופה הכללית','לקופה הכללית','קופה כללית','קרובים','קרוביהם','ישיבת תורת אמת','תרומה לישיבה','נדבה','בניית ביתם','בית נאמן','tzedakah','charity','general charity fund','donation to yeshiva','home-building donation'],
@@ -365,21 +366,26 @@ function supportsTzedakahSynthesisProposition(p){
  const b=norm(p);
  return ['צדקה','תרומה','מעות חיטים','מעשר','חומש','הקופה הכללית','לקופה הכללית','קרובים','קרוביהם','ישיבת תורת אמת','בניית ביתם','בית נאמן','נדבה'].some(term=>b.includes(term));
 }
+function supportsBodilyHealthSynthesisProposition(p){
+ const b=norm(p);
+ return b.includes('בריאות')&&['עבודת','תורה','מצוות','רופא','תפילה','אכילה','תענית','מנוחה','כפייה','פעולות הנשמה'].some(term=>b.includes(term));
+}
 function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
- const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation';
+ const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation',isHealth=s.topic==='bodily_health_and_divine_service';
  for(const n of numbers){
-  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:supportsDifficultyPattern,supported=!!e&&arr(e._supporting_propositions).some(supportFn);
+  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isHealth?supportsBodilyHealthSynthesisProposition:supportsDifficultyPattern,supported=!!e&&arr(e._supporting_propositions).some(supportFn);
   const derived=!!e&&isDerived(e);
   if(!e||!supported||!e.evidence_family_id)unsupported.push(n);
   else if(e._independent_witness!==false&&!derived)families.add(String(e.evidence_family_id));
   else nonIndependent.push(n);
  }
- const minNumbers=isDailyRoutine?3:isTzedakah?3:2,minIndependentFamilies=isDailyRoutine?1:isTzedakah?3:2;
+ const minNumbers=isHealth?4:isDailyRoutine?3:isTzedakah?3:2,minIndependentFamilies=isHealth?3:isDailyRoutine?1:isTzedakah?3:2;
  const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=3&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
  const dailyClaimsValid=!isDailyRoutine||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
  const tzedakahClaimsValid=!isTzedakah||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
- const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid;
+ const healthClaimsValid=!isHealth||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
+ const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid&&healthClaimsValid;
  return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,non_independent_source_numbers:nonIndependent,attribution:s.attribution||null};
 }
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}

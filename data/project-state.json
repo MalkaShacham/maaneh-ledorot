@@ -160,123 +160,24 @@
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
     "last_completed_batch": "2026-11-13-content-batch-078",
     "last_batch_summary": {
-      "batch_id": "082",
-      "batch_file": "data/items/content-research-batch-082-2026-11-14.json",
-      "reviewed_at": "2026-11-14T00:25:33+02:00",
-      "status": "pending_reconciliation",
-      "source_bodies_inspected": 10,
+      "batch_id": "083",
+      "batch_file": "data/items/content-research-batch-083-2026-11-14.json",
+      "reviewed_at": "2026-11-14T01:28:47+02:00",
+      "source_bodies_inspected": 9,
       "new_source_identities": 6,
-      "existing_identities_enriched": 2,
-      "existing_identities_rechecked": 2,
-      "existing_secretariat_reclassifications": 2,
-      "new_response_propositions": 16,
-      "answer_eligible_source_families_added": 6,
-      "blocked_candidate_count": 35,
+      "existing_identities_enriched": 3,
+      "response_propositions_added": 17,
       "metrics_before": {
-        "answer_eligible_unique_sources": 799,
-        "content_verified_unique_sources": 796,
-        "answer_eligible_propositions": 2627
-      },
-      "metrics_before_this_batch_after_prior_pending_batches": {
-        "answer_eligible_unique_sources": 827,
-        "content_verified_unique_sources": 824,
-        "answer_eligible_propositions": 2688
-      },
-      "metrics_expected_after_all_pending_batches": {
         "answer_eligible_unique_sources": 833,
         "content_verified_unique_sources": 830,
         "answer_eligible_propositions": 2707
-      },
-      "metrics_actual_after": null,
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "deduplication_check": "Searched all 24 prior content-research batches present in the repository (055–060 and 064–081), plus the complete content-review queue, for all six new AIDs and all six new Evidence Family IDs; none appeared before batch 082. No duplicate Evidence Family IDs were found among the six new records. Checked printed volume indexes IV, VI, IX, XV and XVIII: v4 תתצט (PDF p.16) and א׳עא (p.22); v6 א׳תשפט (p.12); v15 ה׳תשכד (p.15); v18 ו׳תקנח (p.6) and ו׳תתצט (p.15); v9 ב׳תתצט (p.14). These index entries corroborate bibliographic identity/location only, not content. The differently prefixed v9 ב׳תתצט and v18 ו׳תתצט are not duplicates of v4 תתצט. AID 5100438 (ו׳תרצ) was not located in the inspected v18 index, so no index locator was assigned.",
-      "index_locator_audit": {
-        "indexes_checked": [
-          {
-            "volume": "IV",
-            "file": "data/items/library-igrot-kodesh-v4-index-verified-2026-10-04-001.json",
-            "entries": [
-              {
-                "letter_number": "תתצט",
-                "pdf_page": 16
-              },
-              {
-                "letter_number": "א׳עא",
-                "pdf_page": 22
-              }
-            ]
-          },
-          {
-            "volume": "VI",
-            "file": "data/items/library-igrot-kodesh-v6-index-verified-2026-10-04-001.json",
-            "entries": [
-              {
-                "letter_number": "א׳תשפט",
-                "pdf_page": 12
-              }
-            ]
-          },
-          {
-            "volume": "XV",
-            "file": "data/items/library-igrot-kodesh-v15-index-verified-2026-10-04-002.json",
-            "entries": [
-              {
-                "letter_number": "ה׳תשכד",
-                "pdf_page": 15
-              }
-            ]
-          },
-          {
-            "volume": "XVIII",
-            "file": "data/items/library-igrot-kodesh-v18-index-verified-2026-10-01-001.json",
-            "entries": [
-              {
-                "letter_number": "ו׳תקנח",
-                "pdf_page": 6
-              },
-              {
-                "letter_number": "ו׳תתצט",
-                "pdf_page": 15
-              }
-            ]
-          },
-          {
-            "volume": "IX",
-            "file": "data/items/library-igrot-kodesh-v9-index-verified-2026-10-04-001.json",
-            "entries": [
-              {
-                "letter_number": "ב׳תתצט",
-                "pdf_page": 14
-              }
-            ]
-          }
-        ],
-        "locator_only": true,
-        "content_verified_by_index": false,
-        "unlocated_letter_number": {
-          "aid": 5100438,
-          "letter_number": "ו׳תרצ",
-          "note": "No matching entry found in the inspected v18 index; no locator inferred."
-        }
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 833,
-        "content_verified_unique_sources": 830,
-        "answer_eligible_propositions": 2707
+        "answer_eligible_unique_sources": 842,
+        "content_verified_unique_sources": 839,
+        "answer_eligible_propositions": 2724
       },
-      "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 34,
-        "content_verified_unique_sources": 34,
-        "answer_eligible_propositions": 80
-      },
-      "reconciliation_adjustment": {
-        "new_response_propositions_added_in_batch": 16,
-        "previously_recorded_propositions_unmasked_by_duplicate_aid_reconciliation": 3,
-        "net_proposition_delta_from_baseline": 80,
-        "source_priority_fix_commit": "29e6f992c8834df391765120c111ac2eea5e4158",
-        "note": "The 3 additional propositions were already recorded in existing source items; the revised reconciliation priority selected the complete inspected witness over duplicate catalog/update entries. They are not new batch-082 propositions or new source identities."
-      }
+      "status": "pending_reconciliation"
     },
     "last_run_note": "Batch 082: ten Hebrew publisher bodies inspected; six new Evidence Families, 16 non-verbatim propositions, two existing secretariat reclassifications and two rechecks. Reconciliation is pending.",
     "last_batch_blocked_count": 35,

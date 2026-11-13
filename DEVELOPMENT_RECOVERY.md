@@ -403,3 +403,16 @@ The CI reconciliation measured 833 answer-eligible unique Evidence Families, 830
 ### AID 4812708 publisher-text witness clarified (2026-11-14)
 
 AID 4812708's seven existing paraphrases include the conditional statement that, if Israel acts with love, the world will be refined and Mashiach revealed. The regression assertion now matches the inspected wording (`העולם יזדכך` and `משיח`), rather than an absent noun phrase. The item is explicitly marked as a publisher-attributed original-language Hebrew letter (`witness_type=published_hebrew_letter_text`, `independent_witness=true`); this is an independent published text witness, not autograph authentication, and no secretary signature was reported.
+
+
+## Batch 083 — public body inspection and in-place enrichment (2026-11-14)
+
+- Inspected nine public publisher bodies directly: six new identities and three existing volume-index identities enriched in place. Added 17 non-verbatim source-grounded Hebrew propositions: 12 for new identities and five for existing identities.
+- New identities: AID 5019502 (Yiddish letter), 4831629, 5287569 and 4754445 (publisher-presented Hebrew letters), 5071128 (secretariat response signed in the Rebbe's name), and 5357059 (secretariat-transmitted telegram copy).
+- Existing identities enriched, not duplicated: AID 4854534 (volume IX index identity; partial excerpt), 5099896 (volume XVII index identity), and 5357093 (volume XX index identity; Evidence Family igrot-kodesh-letter-7731).
+- Source-body locators are recorded per proposition. The old printed-index witness and its locator-only scope are preserved separately in provenance; index scans do not verify content.
+- Ten direct rechecks of prior AIDs resolved to rewritten summary/navigation shells. No proposition was taken from those shells. Alternative public Kehot publisher bodies were found and inspected in the same run.
+- Deduplication checked research batches 055–082, all 13 content-verified batch-006 item files, 11 bulk-indexed files, the review queue, and relevant volume indexes. Translations/reprints remain aliases within one Evidence Family, never independent witnesses.
+- Boundaries: AID 4854534 remains a fragment with missing context; AID 5071128 is a secretary-signed response; AID 5357059 is a secretary-transmitted telegram copy with a printed signature and a conflicting volume label, so no volume is asserted. No autograph or incoming letter was inspected. No full text was copied and no access control was bypassed. No new English independent witness was added; the batch contains eight Hebrew and one Yiddish body.
+- Retrieval changes add a dedicated multi-family health/body-care synthesis with claim-level locators, distinct witness families, explicit non-Rebbe system attribution, and researcher-mode evidence mapping. Secretariat responses and telegram copies remain excluded from direct-Rebbe-authorship questions.
+- Batch 082 reconciliation was corrected to the measured CI totals 833/830/2707 (the earlier 2704 projection was short by three already-recorded propositions, not by new sources). Batch 083 expected increment: +9 answer-eligible families, +9 content-verified families, +17 propositions; expected branch totals after batches 079–083: 842/839/2724. These are pending the new CI reconciliation and merge.
