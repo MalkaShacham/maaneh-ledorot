@@ -1155,11 +1155,11 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   answerEvidence.forEach(e=>{const k=familyKey(e);if(k)tzedakahFamilies.add(k);});
   if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.'],debug_tzedakah:{content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,sample:tzedakahContentIndex.slice(0,24).map(e=>({aid:e.aid,id:e.id,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,family:familyKey(e),classification:classifyWitness(e)}))}};
  }
- if(educationInfluenceActionQuestion){answerEvidence=usable.filter(e=>supportsEducationalInfluenceActionSource(e));}
- if(fordLetterQuestion){answerEvidence=usable.filter(e=>supportsFordLetterSource(e));}
- if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}
- if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
- if(lodYeshivaStudyTravelQuestion){answerEvidence=usable.filter(e=>supportsLodYeshivaStudyTravelSource(e));}
+ else if(educationInfluenceActionQuestion){answerEvidence=usable.filter(e=>supportsEducationalInfluenceActionSource(e));}
+ else if(fordLetterQuestion){answerEvidence=usable.filter(e=>supportsFordLetterSource(e));}
+ else if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}
+ else if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
+ else if(lodYeshivaStudyTravelQuestion){answerEvidence=usable.filter(e=>supportsLodYeshivaStudyTravelSource(e));}
  else if(shmittaFruitReferralQuestion){answerEvidence=usable.filter(e=>supportsShmittaFruitReferralSource(e));}
  else if(dailyStudyPrayerQuestion){
   answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
