@@ -275,6 +275,14 @@ for(const [question,key] of newBatchChecks){
 }
 
 
+const batch018SecretariatItem=idx.entries.find(e=>e.key==='id:igrot-kodesh-v13-דשם');
+assert(batch018SecretariatItem&&/secretariat/i.test(batch018SecretariatItem.witness_type||''),'batch-018 item ד׳שס must be explicitly classified as a secretary-signed response');
+assert.equal(batch018SecretariatItem.independent_witness,false);
+for(const mode of ['regular','researcher']){
+ const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?',{mode});
+ assert(!direct.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'),'secretary-signed batch-018 item must not be attributed directly to the Rebbe');
+}
+
 const batch018Comparison='השווה בין האיגרת על הוספת אברכים לשיעור חסידות לבין האיגרת למדריך במחנה גן ישראל על הרחבת ההשפעה ועל לימוד אישי';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch018Comparison,{mode});
