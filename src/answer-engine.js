@@ -818,8 +818,8 @@ function isHebrewSource(e){
 }
 function dailyRoutinePracticeCount(source){
  const body=norm(arr(source?.response_propositions).join(' '));
- const weighted=[['צדקה',3],['תהילים',3],['תפילין',3],['קריאת שמע',2],['חומש',2],['לימוד',2],['תפילה',2],['טלית קטן',1],['ציצית',1]];
- return weighted.reduce((score,[term,weight])=>score+(body.includes(term)?weight:0),0)+(['יומית','יומי','בכל יום','למחרת','במשך היום'].some(term=>body.includes(term))?2:0);
+ const weighted=[['קריאת שמע',5],['לימוד',4],['במשך היום',4],['למחרת',3],['תהילים',3],['תפילה',3],['צדקה',2],['תפילין',2],['חומש',2],['טלית קטן',2],['ציצית',2]];
+ return weighted.reduce((score,[term,weight])=>score+(body.includes(term)?weight:0),0)+(['יומית','יומי','בכל יום','לפני השינה','לפני קריאת שמע'].some(term=>body.includes(term))?2:0);
 }
 function supportsDailyStudyPrayerRoutine(source){
  const body=norm(arr(source?.response_propositions).join(' '));
@@ -980,7 +980,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(anniversaryBlessingQuestion){const priority=usable.filter(e=>supportsWeddingAnniversaryBlessing(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(businessSynagogueQuestion){const priority=usable.filter(e=>supportsBusinessExpansion(e)||supportsSynagogueWellsprings(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(dailyStudyPrayerQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a)||propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score);}
- const queryBudget=dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,12),claims:Math.max(budget.claims,12)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
+ const queryBudget=dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,16),claims:Math.max(budget.claims,16)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
  const candidates=answerEvidence.slice(0,queryBudget.sources),synthesized=synthesizeClaims(candidates,understanding,queryBudget.claims),initialCoverage=coverageFor(candidates,understanding);
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized),selected=retained.sources,claims=retained.claims,coverage=coverageFor(selected,understanding);
