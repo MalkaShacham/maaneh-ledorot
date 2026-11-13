@@ -2,7 +2,7 @@
   "id": "igrot-kodesh-v2-letter-239-aid-4666278",
   "title": "אגרות קודש — מכתב רלט",
   "source_class": "Igrot Kodesh",
-  "pipeline_status": "Verified",
+  "pipeline_status": "Linked",
   "date_original": null,
   "date_precision": "unknown",
   "language": "Hebrew/Yiddish as published",
@@ -11,13 +11,13 @@
   "provenance": {
     "authorship_status": "published as correspondence of the Rebbe by Kehot",
     "signature_status": "publisher item page inspected",
-    "source_witness": "authorized Kehot/Chabad.org item page",
+    "source_witness": "Metadata-only duplicate alias; canonical content-bearing item is chabad-letter-4666278.",
     "transmission_type": "published edition",
     "textual_status": "item-level publisher witness checked; no missing context reconstructed",
     "editorial_scope": "item-level page",
-    "verification_status": "Verified against direct authorized publisher item witness on 2026-09-27",
+    "verification_status": "Linked metadata alias; same AID and publisher URL as canonical item; not an independent witness.",
     "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666278/jewish/page.htm",
-    "accessed": "2026-09-27"
+    "accessed": "2026-11-13"
   },
   "witness": {
     "kind": "text",
@@ -28,9 +28,15 @@
   "access": {
     "access_level": "open",
     "rights_status": "copyrighted-link-only",
-    "reuse_notes": "Metadata and locator only; protected full text is not stored."
+    "reuse_notes": "Alias only; use the canonical item and shared Evidence Family. No independent content evidence."
   },
-  "relations": [],
+  "relations": [
+    {
+      "type": "same_evidence_family",
+      "target_id": "chabad-letter-4666278",
+      "basis": "Same stable AID and publisher URL; canonical item contains the content-bearing record."
+    }
+  ],
   "taxonomy": {
     "publisher_index_terms": [
       "כרך ב",
@@ -42,5 +48,21 @@
     "response_case_candidate": false
   },
   "epistemic_level": 1,
-  "notes": "Direct item-level publisher witness inspected; date/content enrichment deferred rather than inferred."
+  "notes": "Retained for stable reference only. Do not count this alias as a separate source or witness.",
+  "aid": 4666278,
+  "evidence_family_id": "shanghai-printing-sephardic-education-5706",
+  "duplicate_alias_of": "chabad-letter-4666278",
+  "canonical_item_id": "chabad-letter-4666278",
+  "has_content_evidence": false,
+  "response_propositions": [],
+  "dedup": {
+    "checked_on": "2026-11-13",
+    "keys": [
+      "aid:4666278",
+      "letter:רלט"
+    ],
+    "evidence_family_id": "shanghai-printing-sephardic-education-5706",
+    "canonical_item_id": "chabad-letter-4666278",
+    "result": "Metadata-only duplicate alias linked to canonical item; no second source identity."
+  }
 }

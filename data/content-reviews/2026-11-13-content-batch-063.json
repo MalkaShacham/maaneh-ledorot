@@ -103,7 +103,8 @@
         4666269,
         4666280,
         4666304
-      ]
+      ],
+      "note": "Five items now carry the same family ID; AIDs 4666256 and 4666304 are no longer counted as separate corroborating families."
     },
     {
       "family": "shanghai-printing-sephardic-education-5706",
@@ -113,7 +114,7 @@
         4666279,
         4666284
       ],
-      "note": "Four distinct letters in one chain; AID 4666284 explicitly points to unresolved letter ריג."
+      "note": "Four distinct letters in one chain; AID 4666284 explicitly points to unresolved letter ריג. Three existing items and the new Parsed member share one family."
     }
   ],
   "duplicate_resolution": {
@@ -127,6 +128,18 @@
         "aid": 4666281,
         "alias": "chabad-letter-4666281",
         "canonical": "igrot-kodesh-v2-letter-242-aid-4666281"
+      },
+      {
+        "aid": 4666278,
+        "alias": "igrot-kodesh-v2-letter-239-aid-4666278",
+        "canonical": "chabad-letter-4666278",
+        "family": "shanghai-printing-sephardic-education-5706"
+      },
+      {
+        "aid": 4666279,
+        "alias": "igrot-kodesh-v2-letter-240-aid-4666279",
+        "canonical": "chabad-letter-4666279",
+        "family": "shanghai-printing-sephardic-education-5706"
       }
     ],
     "checked_against": [
@@ -136,7 +149,7 @@
       "bulk-indexed-2026-09-26-001",
       "bulk-indexed-2026-09-27-001..003"
     ],
-    "result": "AID 4666284 absent from checked canonical and bulk inventories; it is a new item identity but joins the existing Shanghai family."
+    "result": "Four metadata aliases linked; family IDs normalized across both documented correspondence chains. AID 4666284 is a new item identity in an existing family, not a new independent family."
   },
   "access_blockers": {
     "reader_shells": [
