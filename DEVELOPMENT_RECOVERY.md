@@ -238,3 +238,9 @@
 - The commit-bound readiness test must be rerun after this correction.
 
 - Follow-up diagnosis: `reconcile_metrics.py` can create an `editorial_summary_derived` proposition from `summary_researcher` when `response_propositions` is empty. The two audio catalogue records therefore also had their `summary_researcher`/summary/description fields removed, preventing the fallback from reintroducing a non-inspected summary as answer evidence. Identity metadata and the shared event family remain.
+
+### Batch 072 quality-gate correction — preserve original-language and translation metadata
+
+- The third PR gate passed the audio-only metadata correction and all new batch-072 source/claim checks. It then failed an existing batch-070 assertion because the generated public index omitted `original_language` and translation-family linkage fields that are present in the canonical Yiddish-source record.
+- Updated `scripts/reconcile_metrics.py` to carry `original_language`, `translation_status`, `independent_witness`, `parent_evidence_family_id`, `translation_of_evidence_family_id`, and `witness_type` into each public index entry. This preserves the distinction between the English excerpt and its underlying Yiddish Evidence Family; it does not count the translation as an independent source.
+- Added a regression that the translation points back to its source Evidence Family. Rerun the commit-bound gate before merge.
