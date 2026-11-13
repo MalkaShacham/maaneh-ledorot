@@ -664,18 +664,16 @@ assert.equal(explicitDerivedCopy.length,1);
 assert.equal(explicitDerivedCopy[0]._independent_witness,false,'an explicitly transcribed copy must remain non-independent');
 
 
-// Batch 074: nine new original-language publisher bodies and one in-place enrichment.
+// Batch 074: seven new original-language publisher identities, two existing identities rechecked in place, and one in-place content enrichment.
 // Counts are checked from the live normalized index above; no stale cumulative totals are hard-coded.
 const batch074Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-074-2026-11-13.json',root)));
-assert.equal(batch074Data.records.length,9,'batch 074 must contain nine item-level source identities');
-assert.equal(batch074Data.new_response_propositions,26,'batch 074 proposition count must match the inspected records');
+assert.equal(batch074Data.records.length,7,'batch 074 must contain seven genuinely new item-level source identities');
+assert.equal(batch074Data.new_response_propositions,20,'batch 074 proposition count must match the seven genuinely new inspected records');
 const batch074Required=[
  [4783989,3,'igrot-letter-5712-13-nissan-aid4783989','Hebrew'],
- [4731080,3,'igrot-letter-5710-11-elul-tashkha-aid4731080','Yiddish'],
  [4754323,3,'igrot-letter-5711-11-tevet-aid4754323','Hebrew'],
  [4812647,2,'igrot-letter-5712-1-sivan-aid4812647','Hebrew'],
  [4929255,4,'igrot-letter-5715-18-elul-aid4929255','Hebrew'],
- [4812666,3,'igrot-letter-5712-3-sivan-aid4812666','Hebrew'],
  [5054364,3,'igrot-letter-5717-11-sivan-aid5054364','Hebrew'],
  [5357253,2,'igrot-letter-5711-15-menachem-av-aid5357253','Hebrew'],
  [5287606,3,'igrot-letter-5720-2-shevat-aid5287606','Hebrew']
@@ -702,6 +700,17 @@ assert(enriched5357369&&enriched5357369.response_propositions.some(p=>p.includes
 assert(enriched5357369.proposition_source_locator.includes('301–302'),'AID 5357369 must expose the exact added passage locator');
 assert.equal(enriched5357369.evidence_family_id,'igrot-letter-5714-24-shevat-het-aleph-aid5357369','existing AID 5357369 must stay in its original Evidence Family');
 assert.equal(enriched5357369.canonical_file,'data/items/content-research-batch-073-2026-11-13.json');
+const rechecked4731080=idx.entries.find(e=>String(e.aid)==='4731080');
+assert(rechecked4731080&&rechecked4731080.response_propositions.length>=3,'existing AID 4731080 must retain its inspected Yiddish propositions');
+assert.equal(rechecked4731080.evidence_family_id,'igrot-letter-5710-11-elul-תשכ-aid4731080','AID 4731080 must retain its original Evidence Family');
+assert.equal(rechecked4731080.canonical_file,'data/items/content-research-batch-059-2026-11-12.json','AID 4731080 must remain in its original canonical batch');
+assert(batch074Data.existing_identity_updates.some(x=>String(x.aid)==='4731080'&&x.update_type==='rechecked_existing_identity'),'AID 4731080 must be recorded as rechecked, not new');
+const rechecked4812666=idx.entries.find(e=>String(e.aid)==='4812666');
+assert(rechecked4812666&&rechecked4812666.response_propositions.length>=3,'existing AID 4812666 must retain its inspected Hebrew propositions');
+assert.equal(rechecked4812666.evidence_family_id,'igrot-letter-5712-3-sivan-aid4812666','AID 4812666 must retain its original Evidence Family');
+assert.equal(rechecked4812666.canonical_file,'data/items/content-research-batch-058-2026-11-12.json','AID 4812666 must remain in its original canonical batch');
+assert(batch074Data.existing_identity_updates.some(x=>String(x.aid)==='4812666'&&x.update_type==='rechecked_existing_identity'),'AID 4812666 must be recorded as rechecked, not new');
+
 const tzedakahSynthesisQ='מה עולה מן האיגרות על צדקה לאורך השנה, הרחבת הנתינה וחלוקת תרומות?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,tzedakahSynthesisQ,{mode});
