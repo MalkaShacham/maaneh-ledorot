@@ -860,7 +860,7 @@ function prioritizeDailyRoutineCandidates(evidence,limit){
 }
 function supportsWellspringsDisseminationProposition(proposition){
  const body=norm(proposition).toLowerCase();
- const hebrew=body.includes('הפצת')&&(body.includes('מעיינות')||body.includes('פנימיות התורה')||body.includes('תורת הבעל שם'));
+ const hebrew=(body.includes('הפצת')&&(body.includes('מעיינות')||body.includes('פנימיות התורה')||body.includes('תורת הבעל שם')))||(body.includes('פנימיות התורה')&&(body.includes('זוהר')||body.includes('גילוי')));
  const english=['dissemination of the wellsprings','spread the wellsprings','spreading the wellsprings','inner torah','inner dimension of torah','pnimiyus hatorah','hafatzas hamaayanos','baal shem tov'].some(term=>body.includes(term));
  return hebrew||english;
 }
