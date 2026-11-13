@@ -1146,12 +1146,13 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  let answerEvidence=usable;
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  if(tzedakahSynthesisQuestion){
-  const directTzedakah=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&arr(e.response_propositions).some(supportsTzedakahSynthesisProposition)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition)}));
+  const tzedakahContentIndex=index.filter(e=>arr(e.response_propositions).some(supportsTzedakahSynthesisProposition));
+  const directTzedakah=tzedakahContentIndex.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived').map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition)}));
   const byFamily=new Map();
   for(const e of [...answerEvidence,...directTzedakah]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
   answerEvidence=[...byFamily.values()].slice(0,8);
   answerEvidence.forEach(e=>{const k=familyKey(e);if(k)tzedakahFamilies.add(k);});
-  if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.']};
+  if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.'],debug_tzedakah:{content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,sample:tzedakahContentIndex.slice(0,24).map(e=>({aid:e.aid,id:e.id,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,family:familyKey(e),classification:classifyWitness(e)}))}};
  }
  if(educationInfluenceActionQuestion){answerEvidence=usable.filter(e=>supportsEducationalInfluenceActionSource(e));}
  if(fordLetterQuestion){answerEvidence=usable.filter(e=>supportsFordLetterSource(e));}
