@@ -263,7 +263,7 @@ const newBatchChecks=[
   ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
   ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
   ['מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?','id:igrot-kodesh-v13-דתרפא'],
-  ['מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
+  ['מה מתועד במענה המזכירות על מסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
 ];
 for(const [question,key] of newBatchChecks){
   for(const mode of ['regular','researcher']){
@@ -959,3 +959,65 @@ for(const mode of ['regular','researcher']){
  assert(m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid));
 }
+
+
+const batch080Path='data/items/content-research-batch-080-2026-11-13.json';
+const batch080Data=JSON.parse(await readFile(new URL(batch080Path,root)));
+assert.equal(batch080Data.records.length,10,'batch-080 must contain ten body-inspected source identities');
+assert.equal(batch080Data.source_bodies_inspected,10);
+assert.equal(batch080Data.new_source_identities,10);
+assert.equal(batch080Data.new_rebbe_letter_identities,8);
+assert.equal(batch080Data.new_secretariat_document_identities,2);
+assert.equal(batch080Data.existing_identities_enriched,1);
+assert.equal(batch080Data.existing_identity_rechecks.length,15);
+assert.equal(batch080Data.blocked_candidate_count,3);
+assert.equal(batch080Data.new_response_propositions,19);
+assert.equal(batch080Data.response_propositions_added,19);
+assert.equal(batch080Data.existing_response_propositions_added,0);
+assert.equal(new Set(batch080Data.records.map(r=>String(r.aid))).size,10);
+assert.equal(new Set(batch080Data.records.map(r=>r.evidence_family_id)).size,10);
+assert.equal(new Set(batch080Data.records.map(r=>r.source_url)).size,10);
+assert.equal(batch080Data.records.filter(r=>r.language==='Hebrew').length,6);
+assert.equal(batch080Data.records.filter(r=>r.language==='English').length,4);
+assert.equal(metrics.answer_eligible_unique_sources,818,'batch-079 plus batch-080 must reconcile to 818 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,815,'batch-080 must add ten inspected Verified families');
+assert.equal(metrics.answer_eligible_propositions,2666,'batch-080 must add nineteen distinct source-grounded propositions');
+for(const r of batch080Data.records){
+ const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
+ assert(e&&e.has_content_evidence,'batch-080 AID '+r.aid+' must be present with content evidence');
+ assert.equal(e.status,'Verified','batch-080 AID '+r.aid+' must retain scoped publisher-text verification');
+ assert.equal(e.canonical_file,batch080Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+}
+for(const aid of ['4872065','4831497']){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e&&/secretariat/i.test(e.witness_type||''),'batch-080 AID '+aid+' must retain secretariat authorship classification');
+ assert.equal(e.independent_witness,false,'secretariat letters are not independent Rebbe-authored witnesses');
+}
+for(const aid of ['2277929','2278502','4264336','3905730']){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e&&/translation/i.test(e.witness_type||''),'batch-080 AID '+aid+' must be labelled as a published translation');
+ assert.equal(e.independent_witness,false,'translations must not count as independent witnesses');
+}
+const volume13Secretariat=idx.entries.find(e=>e.id==='igrot-kodesh-v13-דשם');
+assert(volume13Secretariat&&/secretariat/i.test(volume13Secretariat.witness_type||''));
+assert.equal(volume13Secretariat.independent_witness,false);
+const secretariatQuestion='מה מתועד במענה המזכירות על מסחר בזמן לימוד בישיבה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,secretariatQuestion,{mode});
+ assert(m.answerable,mode+': a neutral question about the secretariat letter must be answerable');
+ assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'));
+ assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid));
+ const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?',{mode});
+ assert.equal(direct.answerable,false,mode+': do not attribute a secretary-signed response directly to the Rebbe');
+ assert.equal(direct.reason,'secretariat_authorship_boundary');
+ assert(direct.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'));
+}
+

@@ -68,7 +68,8 @@
     "www.chabad.org is host-blocked after HTTP 403 responses on the 12-reference GitHub acquisition attempt (2026-10-15 onward). data/acquisition/state.json now marks this host permanent_block; the hourly script must skip network requests and rely on manual public web search or another authorized source.",
     "AID 4666284 text was inspected through Pnimi's secondary index of chabadlibrary.org; its pipeline status remains Parsed, and it is a member of the existing Shanghai Evidence Family, not a new independent corroborating family.",
     "On 2026-11-13, twelve attempted English Sicha pages returned internal errors and twelve other item pages exposed rewritten summary shells; ten accessible Hebrew publisher-body alternatives were inspected instead. No access controls were bypassed.",
-    "2026-11-13 batch 074: four attempted item pages (AIDs 5413764, 5054497, 4754352, 4666220) now resolve to rewritten summary shells without source text; they remain excluded. The runner-side HTTP 403 crawler was not retried."
+    "2026-11-13 batch 074: four attempted item pages (AIDs 5413764, 5054497, 4754352, 4666220) now resolve to rewritten summary shells without source text; they remain excluded. The runner-side HTTP 403 crawler was not retried.",
+    "Current public-open recheck of 15 batch-079 AIDs returned summary shells; no new text was inferred or added from them. Three additional pages (4928948, 4812597, 4666220) also returned shells."
   ],
   "next_work": [
     "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
@@ -87,43 +88,33 @@
     "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "answer_readiness": {
       "before": {
-        "answer_eligible_unique_sources": 799,
-        "content_verified_unique_sources": 796,
-        "answer_eligible_propositions": 2627
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 808,
         "content_verified_unique_sources": 805,
         "answer_eligible_propositions": 2647
       },
-      "actual_after": {
-        "answer_eligible_unique_sources": 799,
-        "content_verified_unique_sources": 796,
-        "answer_eligible_propositions": 2627
+      "expected_after": {
+        "answer_eligible_unique_sources": 818,
+        "content_verified_unique_sources": 815,
+        "answer_eligible_propositions": 2666
       },
-      "actual_delta": {
-        "answer_eligible_unique_sources": 7,
-        "content_verified_unique_sources": 7,
-        "answer_eligible_propositions": -3
-      },
-      "reconciliation_variance": {
-        "answer_eligible_unique_sources": -5,
-        "content_verified_unique_sources": -5,
-        "answer_eligible_propositions": -27
-      }
+      "actual_after": null,
+      "actual_delta": null,
+      "reconciliation_variance": null
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_commit_bound_run",
+      "run_status": "pending_pr_rerun",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
-      "latest_saved_report_passed": null,
-      "latest_saved_report_regression_cases": null,
+      "latest_saved_report_passed": false,
+      "latest_saved_report_regression_cases": [
+        "batch-018 direct-Rebbe attribution test corrected to distinguish secretary-signed response"
+      ],
       "commit_binding": true,
-      "evaluated_commit": null,
+      "evaluated_commit": "811e167700351cb10f978e68004b3bd05e05dac5",
       "workflow_run_id": null,
-      "pull_request_run_id": null,
-      "note": "The item-level reconciliation audit confirms seven genuinely new batch-074 AIDs, all selected as answer-eligible in seven distinct Evidence Families. AID 4731080 and AID 4812666 were already canonical in batches 059 and 058; duplicate batch-074 records were removed and the original families retained. Actual counts match the corrected expectation: 764→771 answer-eligible families, 761→768 content-verified families, 2,559→2,580 propositions. The readiness test now asserts seven new items, two existing rechecks, claim-level citations and researcher-mode evidence maps."
+      "pull_request_run_id": 43491380509,
+      "note": "Previous PR run failed at the batch-018 query because it treated a secretary-signed letter as direct Rebbe wording. Test and engine attribution boundary are corrected in batch-080 commit; awaiting a new run."
     },
     "publication": {
       "status": "pending_deployment_check",
@@ -165,38 +156,40 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-078",
+    "current_batch": "2026-11-13-content-batch-080",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
     "last_completed_batch": "2026-11-13-content-batch-077",
     "last_batch_summary": {
-      "batch_id": "079",
-      "batch_file": "data/items/content-research-batch-079-2026-11-13.json",
+      "batch_id": "080",
+      "batch_file": "data/items/content-research-batch-080-2026-11-13.json",
       "generated": "2026-11-13",
-      "records_reviewed": 15,
-      "source_bodies_inspected": 15,
-      "new_source_identities": 9,
-      "existing_identities_enriched": 2,
-      "existing_identities_rechecked": 4,
-      "new_response_propositions": 18,
-      "existing_response_propositions_added": 2,
+      "records_reviewed": 26,
+      "source_bodies_inspected": 10,
+      "new_source_identities": 10,
+      "new_rebbe_letter_identities": 8,
+      "new_secretariat_document_identities": 2,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 15,
+      "new_response_propositions": 19,
+      "existing_response_propositions_added": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 799,
-        "content_verified_unique_sources": 796,
-        "answer_eligible_propositions": 2627
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 808,
         "content_verified_unique_sources": 805,
         "answer_eligible_propositions": 2647
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 818,
+        "content_verified_unique_sources": 815,
+        "answer_eligible_propositions": 2666
+      },
       "status": "pending_reconciliation",
-      "blocked_candidate_count": 5,
+      "blocked_candidate_count": 3,
       "crawler_retry": false,
-      "method": "Fifteen publisher item bodies inspected in one run: nine new candidate letters, two in-place identity enrichments and four rechecks. Nine new candidates span Hebrew and Yiddish; no translated witness is counted as independent."
+      "method": "Ten source bodies were opened and inspected directly through public web/search/open access. Four pages are published Hebrew letter texts, two are Hebrew secretariat responses signed by a secretary in the Rebbe's name, and four are English translations. Nineteen non-verbatim propositions were added with proposition-level locators, provenance, verification scope, documented circumstances and limitations."
     },
-    "last_run_note": "Batch 078 submitted for reconciliation: 12 new public source identities across Hebrew, Yiddish and English; 23 new non-verbatim source-grounded propositions; one existing identity enriched with one proposition; two existing identities rechecked. Twelve alternative candidates redirected to navigation/summary shells and were excluded. No crawler retry, access-control bypass, scan-only verification or full-text copying. Reconciliation and content-readiness tests pending.",
-    "last_batch_blocked_count": 12,
-    "last_batch_blocked_reason": "12 candidate pages redirected to summary/navigation shells: 5071144, 4783701, 5054608, 5071147, 4754642, 5100603, 4812647, 4812666, 5100244, 5100662, 4831207, 5357153. They were excluded; alternative public item-level bodies were inspected in the same run.",
+    "last_run_note": "Batch 080 added ten inspected public source bodies and nineteen non-verbatim propositions; one existing volume-13 identity was reclassified as a secretary-signed secretariat response. Fifteen batch-079 URLs currently return summary shells; three additional candidate pages were excluded. No crawler retry, access-control bypass or full-text copying. PR quality gate rerun and deterministic reconciliation pending.",
+    "last_batch_blocked_count": 3,
+    "last_batch_blocked_reason": "Three attempted pages returned summary/navigation shells: AIDs 4928948, 4812597 and 4666220. Fifteen current rechecks of batch-079 AIDs also returned shells; no new content was inferred from them.",
     "next_work": [
       "Continue manual inspection of 8–15 accessible primary-source bodies per run, expanding to Yiddish and English and to distinct documentary classes where public bodies are available.",
       "Extend claim-level multi-source synthesis and researcher-mode evidence maps to additional high-priority topics, preserving item-local context and limitations.",
