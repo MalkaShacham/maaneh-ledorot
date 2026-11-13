@@ -94,7 +94,6 @@ for(const mode of ['regular','researcher']){
 const yeshivaEnrollmentQuestion='כיצד הציע הרבי להגדיל את מספר התלמידים בישיבה?';
 for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,yeshivaEnrollmentQuestion,{mode});
-  if(!m.answerable) console.log('YESHIVA_DEBUG',JSON.stringify({mode,reason:m.reason,understanding:m.understanding,source_keys:m.sources.map(e=>e.key),source_aids:m.sources.map(e=>e.aid),source_families:m.sources.map(e=>e.evidence_family_id),insufficient:m.insufficient_evidence}));
   assert(m.answerable,`${mode}: inspected yeshiva-enrollment evidence must answer the query`);
   assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-319'),`${mode}: letter ד׳שיט must support the enrollment answer`);
   assert(m.sources.length<=3,`${mode}: broad education evidence must not flood a specific enrollment-policy answer`);
@@ -224,7 +223,6 @@ const newBatchChecks=[
 for(const [question,key] of newBatchChecks){
   for(const mode of ['regular','researcher']){
     const m=buildAnswerModel(idx.entries,question,{mode});
-    if(!m.answerable) console.log('BATCH018_DEBUG',JSON.stringify({question,mode,reason:m.reason,understanding:m.understanding,source_keys:m.sources.map(e=>e.key),insufficient:m.insufficient_evidence}));
     assert(m.answerable,`${mode}: inspected batch-018 evidence must answer ${question}`);
     assert.deepEqual(m.sources.map(e=>e.key),[key],`${mode}: the specific batch-018 query must retrieve only its inspected evidence family`);
     assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every batch-018 claim needs a proposition-level citation`);
@@ -245,7 +243,6 @@ for(const mode of ['regular','researcher']){
 const beitRivkaComparison='השווה בין האיגרת על בקשת ויזה באמצעות בית רבקה לבין האיגרת לוועד בית הספר לנערות בית רבקה בפריז על רישום המוסד לרשת ותכנית הלימודים הרגילה';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,beitRivkaComparison,{mode});
- if(!m.answerable)console.log('BEIT_RIVKA_COMPARE_DEBUG',JSON.stringify({mode,reason:m.reason,understanding:m.understanding,source_keys:m.sources.map(e=>e.key),insufficient:m.insufficient_evidence,coverage:m.comparative_coverage}));
  assert(m.answerable,mode+': inspected Beit Rivka letters must support a two-source comparison');
  assert(m.sources.some(e=>String(e.aid)==='4666292'),mode+': include the visa/branch-committee letter');
  assert(m.sources.some(e=>String(e.aid)==='4666305'),mode+': include the Paris school-registration letter');
@@ -304,7 +301,6 @@ for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,'מה נאמר במקורות על הימים שלאחר השבת המתברכים ממנה?',{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='5989776'));assert(m.sources.some(e=>String(e.aid)==='5989136'));assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_families>=2);assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}else assert.equal(m.research,undefined);}
 const blockedErev=buildAnswerModel(idx.entries,'מה נאמר על ברכה בערב שבת וערב ראש חודש?',{mode:'regular'});assert(!blockedErev.sources.some(e=>String(e.aid)==='5413068'));
 
-console.log('BATCH062_PUBLICATION_DEBUG',JSON.stringify({mode,reason:m.reason,understanding:m.understanding,sources:m.sources.map(e=>({key:e.key,aid:e.aid,family:e.evidence_family_id,props:e.response_propositions})),insufficient:m.insufficient_evidence,coverage:m.comparative_coverage}));
  assert(m.answerable,mode+': inspected publication and editorial evidence must answer');
  assert(m.sources.length>=3,mode+': publication synthesis must use at least three source families');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': duplicate witnesses must not inflate publication synthesis');
