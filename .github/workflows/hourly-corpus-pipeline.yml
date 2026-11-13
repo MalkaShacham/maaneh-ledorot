@@ -9,6 +9,7 @@ on:
       - 'scripts/test_source_acquisition.py'
       - 'scripts/reconcile_identity_aliases.py'
       - 'scripts/content_readiness.py'
+      - 'scripts/reconcile_metrics.py'
       - 'data/items/content-research-batch-*.json'
       - '.github/workflows/hourly-corpus-pipeline.yml'
   schedule:
