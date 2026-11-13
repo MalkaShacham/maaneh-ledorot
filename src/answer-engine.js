@@ -489,7 +489,7 @@ export function propositionRelevance(e,u){
   if(!isHebrewSource(e))return{score:0,support:'insufficient_specific_evidence',reasons:['question explicitly requests Hebrew source text']};
   const supportingProps=arr(e.response_propositions).filter(p=>supportsYeshivaInfluence(p,e));
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['no inspected proposition links yeshiva students with influencing or educating others']};
-  return{score:16+Math.min(4,supportingProps.length*2),support:'direct_support',reasons:['inspected Hebrew source directly connects yeshiva students with influencing or educating their surroundings'],supportingProps};
+  return{score:24+Math.min(4,supportingProps.length*2),support:'direct_support',reasons:['inspected Hebrew source directly connects yeshiva students with influencing or educating their surroundings'],supportingProps};
  }
  if(u.topics.includes('התמודדות עם קשיים ומכשולים')){
   if(e.status!=='Verified'||e._independent_witness===false||!isLetterEvidence(e))return{score:0,support:'insufficient_specific_evidence',reasons:['difficulty-pattern synthesis requires an independently verified letter witness']};
@@ -875,7 +875,10 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   const recurringFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(recurringFamilies.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_cross_family_pattern',claims:[],sources:usable.slice(0,4),answered_well:['נמצאו כמה מקרים מתועדים בנושא'],insufficient_evidence:['לא נמצאה טענה חוזרת דומה בשתי משפחות ראיות עצמאיות; אין לייחס דפוס רוחבי.']};
  }
- const candidates=answerEvidence.slice(0,budget.sources),synthesized=synthesizeClaims(candidates,understanding,budget.claims),initialCoverage=coverageFor(candidates,understanding);
+ const yeshivaQuestion=understanding.query.includes('בעברית')&&understanding.query.includes('תלמידי הישיבות');
+ if(yeshivaQuestion){const priority=usable.filter(e=>isHebrewSource(e)&&arr(e._supporting_propositions).some(p=>supportsYeshivaInfluence(p,e)));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
+ const queryBudget=yeshivaQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
+ const candidates=answerEvidence.slice(0,queryBudget.sources),synthesized=synthesizeClaims(candidates,understanding,queryBudget.claims),initialCoverage=coverageFor(candidates,understanding);
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized),selected=retained.sources,claims=retained.claims,coverage=coverageFor(selected,understanding);
  const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
