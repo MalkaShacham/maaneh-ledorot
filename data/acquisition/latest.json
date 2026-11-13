@@ -124,9 +124,17 @@
       "content_verified_unique_sources": 789,
       "answer_eligible_propositions": 2630
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "reconciliation_status": "pending_reconciliation",
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 792,
+      "content_verified_unique_sources": 789,
+      "answer_eligible_propositions": 2630
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
+    "reconciliation_status": "reconciled",
     "method": "Manual public web/search/open inspection of visible Hebrew item-level publisher bodies. Twelve body pages were inspected: three new distinct letter identities, one existing identity cross-linked, and eight existing identities rechecked. Search/navigation shells were excluded. No runner crawler retry or access-control bypass.",
     "deduplication_check": {
       "new_aids_unique": true,
@@ -660,9 +668,9 @@
   },
   "manual_web_review_note": "Manual public web/search/open inspection is the semantic content-review path. Runner-side crawler remains disabled after HTTP 403; summary/navigation shells are excluded and no access-control bypass is attempted. Batch 077 contains three new Hebrew Evidence Families and eight bounded paraphrases; metrics update only after reconciliation.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 789,
-    "content_verified_unique_sources": 786,
-    "answer_eligible_propositions": 2622
+    "answer_eligible_unique_sources": 792,
+    "content_verified_unique_sources": 789,
+    "answer_eligible_propositions": 2630
   },
   "last_manual_review_at": "2026-11-13T20:02:00+02:00",
   "runner_acquisition_policy": {
