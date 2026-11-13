@@ -94,3 +94,8 @@ Dedup נעשה לפני ספירת תמיכה ולפני ניסוח דפוס:
 
 ## 9. Current implementation gap
 ה-Alpha הנוכחי משתמש עדיין ב-token/substring scoring על `search_text`, title ו-summary. הוא שלב candidate retrieval בלבד ואינו עומד עדיין ב-relevance gate וב-proposition reranking המוגדרים כאן. מצב חוקר הנוכחי חושף metadata טכני בלבד ולכן אינו עומד בדרישת researcher-depth differential. אלה פערי היישום בעדיפות העליונה.
+
+
+## 6. Case-specific charity-allocation synthesis
+
+The tzedakah synthesis now includes three additional bounded claim types: allocation between a general fund and personal distribution that may assist relatives (AID 5054399); a historically specified donation to Yeshivat Torat Emet (AID 5413166); and a donation mentioned at the beginning of a couple's home-building (AID 5100681). Each claim carries its own body locator and remains tied to its own Evidence Family. The synthesis is labelled as system research, not a Rebbe quotation. It must not infer a universal allocation rule, a contemporary monetary amount, or a fixed tzedakah percentage from these personal cases. Researcher mode exposes witness provenance, context limits and the claim-to-source map; regular mode retains claim-local citations without expanded diagnostics.

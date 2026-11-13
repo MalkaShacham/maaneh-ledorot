@@ -203,6 +203,7 @@ search_index={"generated":today,"count":len(search_entries),"entries":sorted(sea
 # the audit pinned to a historical filename.
 manual_batch_paths=sorted(fp for fp in items if re.fullmatch(r"content-research-batch-\d{3}-\d{4}-\d{2}-\d{2}\.json",fp.name))
 batch_path=manual_batch_paths[-1] if manual_batch_paths else None
+batch_data=None
 if batch_path:
     batch_label=re.search(r"content-research-batch-(\d+)-",batch_path.name).group(1)
     try:
@@ -295,6 +296,39 @@ if isinstance(state.get("metrics_integrity"),dict):
     readiness["reconciliation_variance"]={k:actual[k]-int(expected.get(k,actual[k])) for k in actual}
     integrity["status"]="reconciled_pending_commit"
     integrity["last_reconciled_at"]=today
+
+actual_metrics={k:out[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
+if batch_path and isinstance(batch_data,dict):
+    expected=batch_data.get("metrics_expected_after") or {}
+    variance={k:actual_metrics[k]-int(expected.get(k,actual_metrics[k])) for k in actual_metrics}
+    batch_data["metrics_actual_after"]=actual_metrics
+    batch_data["reconciliation_variance"]=variance
+    batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
+    batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    dev=state.setdefault("development_recovery",{})
+    summary=dev.get("last_batch_summary")
+    if isinstance(summary,dict) and summary.get("batch_id")==batch_data.get("batch_id"):
+        summary["metrics_after_actual"]=actual_metrics
+        b=summary.get("metrics_before") or {}
+        summary["metrics_delta_actual"]={k:actual_metrics[k]-int(b.get(k,actual_metrics[k])) for k in actual_metrics}
+        summary["status"]=batch_data["reconciliation_status"]
+    last=dev.get("last_reconciliation")
+    if isinstance(last,dict) and last.get("batch_id")==batch_data.get("batch_id"):
+        last["metrics_actual_after"]=actual_metrics
+        last["reconciliation_variance"]=variance
+        last["reconciliation_status"]=batch_data["reconciliation_status"]
+    acquisition_path=ROOT/"data/acquisition/latest.json"
+    if acquisition_path.exists():
+        acquisition=json.loads(acquisition_path.read_text(encoding="utf-8"))
+        review=acquisition.get("manual_web_review") or {}
+        if str(review.get("batch_id"))==str(batch_label):
+            review["metrics_actual_after"]=actual_metrics
+            review["reconciliation_variance"]=variance
+            review["reconciliation_status"]=batch_data["reconciliation_status"]
+            acquisition["manual_web_review_current_metrics"]=actual_metrics
+            acquisition["last_manual_review_at"]=review.get("reviewed_at") or acquisition.get("last_manual_review_at")
+            acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
 
 ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}
 review_candidates=[e for e in search_index["entries"]

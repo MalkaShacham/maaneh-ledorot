@@ -310,3 +310,12 @@ Validation status: answer quality gate run 43463212994 on commit 658fc435 passed
 - Batch 076 reconciliation completed with zero variance: answer-eligible unique Evidence Families 779 → 789; content-verified unique Evidence Families 776 → 786; answer-eligible propositions 2601 → 2622. The reconciliation audit selected all 10 new identities plus the enriched AID 4812673 identity; all 11 were answer-eligible and each had a top-level verification scope. Ten English renderings remain non-independent witnesses.
 - Correction on the pre-guardrail hourly run 43466512615: its old pipeline step did execute and returned success. The available job log did not expose individual HTTP responses or a request count, and later answer validation failed before the run artifact was committed. It is therefore not possible to verify whether that one invocation reissued the prior 12 HTTP requests. No further live-crawler invocation is intended; the next hourly run used the skip policy and passed the acquisition-boundary test.
 - The answer-quality gate on commit eb7a5f5b9ad6aa32941ca4ce800de98adcd5873c passed after narrowing the over-broad wellbeing alias. A subsequent commit narrows the regression query further without changing the source metrics.
+
+
+## 2026-11-13 — Manual public-body review, batch 077
+
+Inspected **12 public Hebrew publisher body pages** through web search/open. Added **3 distinct original-language letter identities** (AIDs 5100681, 5054399 and 5413166) and **8 non-verbatim source-grounded propositions** with item-level body locators, provenance and partial-context limits. Existing AID 5357409 was enriched with a non-duplicate cross-family link to AID 5100681; eight other identities were rechecked without duplicate propositions.
+
+Twelve attempted candidates (including AID 4666220) redirected to rewritten summary/navigation shells and were excluded. Alternative item-level bodies were inspected in the same run. No blocked crawler retry, access-control bypass, scan-only content verification, full-text copying or system-synthesis attribution to the Rebbe was used.
+
+Expected readiness pending reconciliation: **789 → 792** answer-eligible Evidence Families, **786 → 789** content-verified Evidence Families, and **2,622 → 2,630** answer-eligible propositions. Reconciliation now writes actual counts and variance back to the reviewed batch and acquisition record. The existing hourly cron is unchanged; a push path for manual content-research batches invokes the existing deterministic reconciliation workflow.

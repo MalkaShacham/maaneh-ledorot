@@ -38,7 +38,7 @@ const TOPICS={
  'בית רבקה בראונסוויל':['בית רבקה בבראונסוויל','בתי הספר בית רבקה בבראונסוויל','בראונסוויל','brownsville','east new york beis rivka'],
  'שכחה וחלומות':['שכחה וחלומות','שכחה','חיזוק הזכרון','חלומות מטרידים','forgetfulness and dreams','memory and disturbing dreams'],
  'צדקה ולימוד':['צדקה מחליפה לימוד','צדקה מתוארת כמזככת','צדקה מגדילה את פירות העבודה','charity replace study','charity and study effort'],
- 'צדקה לאורך השנה והקצאת תרומות':['צדקה לאורך השנה','צדקה לאורך כל השנה','צדקה','מעות חיטים','מעשר','חומש','תרומה','תרומות','חלוקת תרומות','tzedakah','charity year-round','charity allocation'],
+ 'צדקה לאורך השנה והקצאת תרומות':['צדקה לאורך השנה','צדקה לאורך כל השנה','צדקה','מעות חיטים','מעשר','חומש','תרומה','תרומות','חלוקת תרומות','הקופה הכללית','קופה כללית','קרובים','קרוביהם','ישיבת תורת אמת','תרומה לישיבה','נדבה','בניית ביתם','בית נאמן','tzedakah','charity year-round','charity allocation','general charity fund','donation to yeshiva','home-building donation'],
  'התחייבות לצדקה בסכום נקוב':['לנקוב בסכום מסוים','נודבים לצדקה','סכום מסוים לצדקה','מתחייבים לצדקה','specific amount charity pledge','state a specific amount when pledging charity'],
  'מדיניות הימנעות מגיוס כספים ישיר':['מדיניות הימנעות מגיוס כספים','מדיניות של הימנעות מגיוס כספים','הימנעות מגיוס כספים ישיר','שני הטעמים למדיניות הימנעות','שני הטעמים שניתנו למדיניות','why the rebbe does not fundraise'],
  'תפקיד דתי ייחודי':['תפקיד ייחודי בענייני דת','תפקיד המסוים שנמסר','משימה שאחרים אינם יכולים למלא','unique religious role','task others cannot fulfill'],
@@ -989,7 +989,7 @@ function supportsTzedakahStudyEffortProposition(proposition){
 }
 function supportsTzedakahSynthesisProposition(proposition){
  const body=norm(proposition);
- return ['צדקה לאורך השנה','בכסף ובזמן ובמאמץ','לחלק את התרומה','חלוקת התרומה','חלקים שווים','מוסדות חינוך','מעשר','חומש','חמישית לצדקה','להוסיף בנתינת צדקה','מעבר לאומדן','נתינה מעבר','מעות חיטים'].some(term=>body.includes(term));
+ return ['צדקה לאורך השנה','בכסף ובזמן ובמאמץ','לחלק את התרומה','חלוקת התרומה','חלקים שווים','מוסדות חינוך','מעשר','חומש','חמישית לצדקה','להוסיף בנתינת צדקה','מעבר לאומדן','נתינה מעבר','מעות חיטים','הקופה הכללית','קרובים','קרוביהם','ישיבת תורת אמת','בניית ביתם','בית נאמן','נדבה'].some(term=>body.includes(term));
 }
 function tzedakahSynthesisRelevanceScore(source){
  const body=norm(arr(source?.response_propositions).join(' '));
@@ -997,7 +997,10 @@ function tzedakahSynthesisRelevanceScore(source){
   Number(body.includes('לחלק את התרומה')||body.includes('חלוקת התרומה')||body.includes('חלקים שווים'))*10+
   Number(body.includes('מעשר')||body.includes('חומש')||body.includes('חמישית לצדקה'))*8+
   Number(body.includes('מעבר לאומדן')||body.includes('להוסיף בנתינת צדקה')||body.includes('בזמן ובמאמץ'))*8+
-  Number(body.includes('מעות חיטים'))*4;
+  Number(body.includes('מעות חיטים'))*4+
+  Number(body.includes('הקופה הכללית')&&body.includes('קרוב'))*16+
+  Number(body.includes('ישיבת תורת אמת'))*14+
+  Number(body.includes('בניית ביתם')||body.includes('בית נאמן'))*12;
 }
 function buildDailyRoutineSynthesis(selected){
  const basis=[];
@@ -1056,6 +1059,12 @@ function buildTzedakahSynthesis(selected){
   'מענה אחר מציע חלוקה של תרומה מסוימת בין ארבעה מוסדות חינוך.');
  addClaim('insurance_case',t=>t.includes('פיצויים')||t.includes('חמישית')||t.includes('הסכמתה המלאה'),
   'במקרה משפחתי של פיצויי ביטוח מוצעת הפרשה של כחמישית לצדקה, בכפוף להסכמת האישה.');
+ addClaim('general_fund_and_relatives',t=>t.includes('הקופה הכללית')&&t.includes('קרוב'),
+  'בקטע אחד מתוארת חלוקה בין קופה כללית לבין חלוקה עצמית שממנה ניתן לסייע גם לקרובים; זהו תיאור של מנהגים בהקשר אישי, לא כלל חלוקה אוניברסלי.');
+ addClaim('dedicated_yeshiva_donation',t=>t.includes('ישיבת תורת אמת'),
+  'במענה אישי אחר מופיע סכום היסטורי של 25 לירות לתרומה לישיבת תורת אמת; אין להשליך ממנו על סכומים עכשוויים או על שיעור כללי.');
+ addClaim('home_building_donation',t=>t.includes('בניית ביתם')||t.includes('בית נאמן'),
+  'באיגרת נוספת נזכרת נדבה בתחילת בניית ביתם של בני זוג, והברכה קושרת אותה להצלחת בניית בית נאמן; זהו מקרה מסוים ולא כלל חלוקה.');
  if(claims.length<3)return null;
  const sourceNumbers=[...new Set(claims.flatMap(c=>c.source_numbers))];
  const usedBasis=basis.filter(b=>sourceNumbers.includes(b.source_number));
@@ -1156,7 +1165,8 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  if(tzedakahSynthesisQuestion){
   const tzedakahContentIndex=index.filter(e=>arr(e.response_propositions).some(supportsTzedakahSynthesisProposition));
-  const directTzedakah=tzedakahContentIndex.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived').map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition)})).sort((a,b)=>tzedakahSynthesisRelevanceScore(b)-tzedakahSynthesisRelevanceScore(a));
+  const querySpecificPriority=e=>{const body=norm(arr(e.response_propositions).join(' '));return Number((understanding.query.includes('קופה כללית')||understanding.query.includes('הקופה הכללית'))&&body.includes('הקופה הכללית'))*100+Number(understanding.query.includes('ישיבת תורת אמת')&&body.includes('ישיבת תורת אמת'))*100+Number(understanding.query.includes('בניית בית')&&(body.includes('בניית ביתם')||body.includes('בית נאמן')))*100;};
+  const directTzedakah=tzedakahContentIndex.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived').map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition)})).sort((a,b)=>querySpecificPriority(b)-querySpecificPriority(a)||tzedakahSynthesisRelevanceScore(b)-tzedakahSynthesisRelevanceScore(a));
   const byFamily=new Map();
   for(const e of [...directTzedakah,...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
   answerEvidence=[...byFamily.values()].slice(0,8);
