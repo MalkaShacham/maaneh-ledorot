@@ -31,9 +31,9 @@
       "Indexed": 1151,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 771,
-    "content_verified_unique_sources": 768,
-    "answer_eligible_propositions": 2580
+    "answer_eligible_unique_sources": 764,
+    "content_verified_unique_sources": 761,
+    "answer_eligible_propositions": 2559
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -67,7 +67,8 @@
     "Translated public talks are one manifestation of their dated event; original-language transcripts and recordings must join the same Evidence Family.",
     "www.chabad.org is host-blocked after HTTP 403 responses on the 12-reference GitHub acquisition attempt (2026-10-15 onward). data/acquisition/state.json now marks this host permanent_block; the hourly script must skip network requests and rely on manual public web search or another authorized source.",
     "AID 4666284 text was inspected through Pnimi's secondary index of chabadlibrary.org; its pipeline status remains Parsed, and it is a member of the existing Shanghai Evidence Family, not a new independent corroborating family.",
-    "On 2026-11-13, twelve attempted English Sicha pages returned internal errors and twelve other item pages exposed rewritten summary shells; ten accessible Hebrew publisher-body alternatives were inspected instead. No access controls were bypassed."
+    "On 2026-11-13, twelve attempted English Sicha pages returned internal errors and twelve other item pages exposed rewritten summary shells; ten accessible Hebrew publisher-body alternatives were inspected instead. No access controls were bypassed.",
+    "2026-11-13 batch 074: four attempted item pages (AIDs 5413764, 5054497, 4754352, 4666220) now resolve to rewritten summary shells without source text; they remain excluded. The runner-side HTTP 403 crawler was not retried."
   ],
   "next_work": [
     "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
@@ -86,28 +87,28 @@
     "search_index_refresh_commit": null,
     "answer_readiness": {
       "before": {
-        "answer_eligible_unique_sources": 752,
-        "content_verified_unique_sources": 749,
-        "answer_eligible_propositions": 2527
+        "answer_eligible_unique_sources": 764,
+        "content_verified_unique_sources": 761,
+        "answer_eligible_propositions": 2559
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 763,
-        "content_verified_unique_sources": 760,
-        "answer_eligible_propositions": 2556
+        "answer_eligible_unique_sources": 773,
+        "content_verified_unique_sources": 770,
+        "answer_eligible_propositions": 2586
       }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
-      "trigger": "pull_request to main and push to main; changed paths include source items, answer engine and readiness tests",
+      "trigger": "push to main on source items, answer engine and readiness tests",
       "run_status": "pending_commit_bound_run",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "note": "Batch 073 adds inspected Hebrew/Yiddish letter evidence and a separate secretariat document; the query engine now recognizes component tokens for difficulty/obstacle topics and uses a guarded cross-family concept recurrence with an explicitly non-attributed system synthesis. Commit-bound retrieval, citation, context-boundary and content-readiness tests are pending.",
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "pull_request_run_id": 43335370438
+      "pull_request_run_id": null,
+      "note": "Batch 074 adds nine inspected Hebrew/Yiddish correspondence families and one in-place enrichment. The readiness test now removes stale cumulative metric constants and asserts the new batch, multi-family tzedakah synthesis, claim-local citations and researcher-mode evidence map."
     },
     "publication": {
       "status": "pending_deployment_check",
@@ -148,51 +149,54 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-073",
+    "current_batch": "2026-11-13-content-batch-074",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-073",
+    "last_completed_batch": "2026-11-13-content-batch-074",
     "last_batch_summary": {
-      "reviewed_items": 13,
-      "source_bodies_inspected": 13,
-      "new_source_identities": 11,
-      "new_rebbe_letter_identities": 10,
-      "new_secretariat_document_identities": 1,
+      "reviewed_items": 14,
+      "source_bodies_inspected": 10,
+      "new_source_identities": 9,
+      "new_rebbe_letter_identities": 9,
+      "new_secretariat_document_identities": 0,
+      "secretariat_signed_letter_count": 3,
       "new_metadata_only_identities": 0,
-      "duplicate_alias_identities": 1,
+      "duplicate_alias_identities": 0,
       "existing_identities_enriched": 1,
       "existing_identities_rechecked": 1,
       "existing_identities_canonicalized": 0,
-      "new_response_propositions_added": 28,
+      "new_response_propositions_added": 26,
       "existing_response_propositions_added": 1,
-      "response_propositions_added": 29,
+      "response_propositions_added": 27,
+      "answer_eligible_source_families_added": 9,
       "source_languages": {
-        "Hebrew": 10,
+        "Hebrew": 8,
         "Yiddish": 1
       },
       "metrics_before": {
-        "answer_eligible_unique_sources": 752,
-        "content_verified_unique_sources": 749,
-        "answer_eligible_propositions": 2527
+        "answer_eligible_unique_sources": 764,
+        "content_verified_unique_sources": 761,
+        "answer_eligible_propositions": 2559
       },
       "metrics_after_expected": {
-        "answer_eligible_unique_sources": 763,
-        "content_verified_unique_sources": 760,
-        "answer_eligible_propositions": 2556
+        "answer_eligible_unique_sources": 773,
+        "content_verified_unique_sources": 770,
+        "answer_eligible_propositions": 2586
       },
       "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 11,
-        "content_verified_unique_sources": 11,
-        "answer_eligible_propositions": 29
+        "answer_eligible_unique_sources": 9,
+        "content_verified_unique_sources": 9,
+        "answer_eligible_propositions": 27
       },
-      "blocked_candidates": 2,
-      "excluded_translated_nonindependent_items": 0,
+      "blocked_candidates": 4,
       "status": "content_committed_reconciliation_pending"
     },
-    "last_run_note": "Batch 073 manually inspected 10 new Hebrew/Yiddish Rebbe-attributed letter bodies (9 Hebrew and 1 Yiddish), one separate Hebrew secretariat letter, one duplicate reprint body, and one existing Hebrew identity (AID 5071138). Added 28 new source-grounded paraphrases across 11 new Evidence Families and one additional proposition to the existing family. AID 5413573 was linked to AID 4854544 as the same letter; the secretariat appendix on AID 5357574 is a separate source and is explicitly not attributed to the Rebbe. AID 4666220 remained inaccessible through both public-reader paths; AID 5357139 exposed only an insufficient fragment. Alternative accessible publisher bodies were used in the same run. No crawler retry, access-control bypass, full-text copying, audience change or permission change. Baseline/expected after: 752→763 answer-eligible families, 749→760 content-verified families, 2527→2556 propositions; reconciliation and commit-bound checks pending.",
-    "last_batch_blocked_count": 2,
-    "last_batch_blocked_reason": "AID 4666220: both direct public-reader URLs returned internal errors; AID 5357139: only a short continuation fragment was visible and could not support a substantive proposition. No crawler retry or access-control bypass; alternative publisher bodies inspected.",
+    "last_run_note": "Batch 074 manually inspected nine new item-level Hebrew/Yiddish publisher bodies and re-inspected existing AID 5357369. Added 26 new non-verbatim propositions across nine new Evidence Families and one additional proposition to AID 5357369 in its existing family. Three items are secretary-signed in the Rebbe's name; AID 4731080 is marked as a secretariat copy; AID 5357253 is marked as transcribed from a photograph, which was not inspected. Four candidates (5413764, 5054497, 4754352, 4666220) redirected to rewritten summary shells and were excluded; nine accessible alternatives were inspected in the same run. No crawler retry, access-control bypass, full-text copying, audience change or permission change. Expected readiness: 764→773 unique families, 761→770 content-verified families, 2559→2586 propositions, pending deterministic reconciliation.",
+    "last_batch_blocked_count": 4,
+    "last_batch_blocked_reason": "AIDs 5413764, 5054497, 4754352 and 4666220 redirected to rewritten Torah Texts summary shells without item-level bodies. No propositions were inferred from titles or metadata; nine other accessible publisher bodies were inspected instead.",
     "next_work": [
-      "Complete reconciliation and commit-bound tests for batch 073; verify the published site and actual before/after answer-eligible counts."
+      "Complete deterministic reconciliation for batch 074 and confirm the actual answer_eligible_unique_sources and proposition counts.",
+      "Run the commit-bound answer-quality gate, including test_content_readiness.mjs, and repair only evidence-supported regressions.",
+      "Verify the public GitHub Pages deployment and ensure researcher-mode evidence maps retain witness provenance, context boundaries and claim-level citations."
     ]
   }
 }
