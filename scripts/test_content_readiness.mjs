@@ -897,7 +897,8 @@ for(const mode of ['regular','researcher']){
  assert(!m.sources.some(e=>String(e.aid)==='4854525'),mode+': secretary-signed AID 4854525 must not be attributed directly to the Rebbe');
 }
 
-const batch078TeshuvahQuestion='מה מתארות האיגרות על תשובה תתאה ותשובה עילאה?';
+// The query follows both inspected propositions: AID 4754232 names תשובה תתאה/עילאה; AID 5019468 describes stages from repentance for sin to תשובה מאהבה.
+const batch078TeshuvahQuestion='מה מתארות האיגרות על מדרגות התשובה, מתשובה על חטא ועד תשובה מאהבה?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch078TeshuvahQuestion,{mode});
  assert(m.answerable,mode+': new teshuvah sources must support a multi-source answer');
