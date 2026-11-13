@@ -7,6 +7,67 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "reviewed_at": "2026-11-13T10:35:56+02:00",
+    "status": "completed",
+    "batch_id": "069",
+    "reviewed_item_count": 15,
+    "source_bodies_inspected": 13,
+    "new_source_identities": 12,
+    "new_metadata_only_identities": 2,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 1,
+    "existing_identities_canonicalized": 1,
+    "new_paraphrase_entries": 28,
+    "answer_eligible_source_families_added": 13,
+    "blocked_candidate_count": 5,
+    "blocked_candidates": [
+      {
+        "aid": 5413068,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413068/jewish/page.htm",
+        "reason": "Rewritten summary/navigation shell; no item-level letter body. Alternative accessible Hebrew talk AID 5989776 inspected instead."
+      },
+      {
+        "aid": 553673,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/553673/jewish/21-Kislev-5743-Yechidus-Yiddish.htm",
+        "reason": "Yiddish audio listing only; no transcript and audio not played."
+      },
+      {
+        "aid": 553672,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/553672/jewish/21-Kislev-5743-Yechidus-Hebrew.htm",
+        "reason": "Parallel Hebrew audio listing only; same Evidence Family as AID 553673."
+      },
+      {
+        "aid": 3798080,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/3798080/jewish/Shuvah-Yisrael-5737.htm",
+        "reason": "Yiddish audio listing and transcript link only; audio not played and no text inspected."
+      },
+      {
+        "aid": 3140368,
+        "url": "https://www.chabad.org/torah-texts/3140368",
+        "reason": "Linked Hebrew transcript page returned a shell without readable text."
+      }
+    ],
+    "method": "Manual public web search/open; thirteen source bodies inspected; two audio metadata-only listings. AID 5413068 returned a rewritten shell; alternative Hebrew source AID 5989776 inspected. No crawler retry.",
+    "deduplication_check": "No exact duplicate found for twelve new text identities. Existing URL-only AID 4950814 enriched in place. AIDs 553672/553673 share one Evidence Family; 2513862 and 3294874 cross-reference but remain distinct dated letters.",
+    "source_languages": [
+      "English",
+      "Hebrew",
+      "Yiddish (audio metadata only; no transcript admitted)"
+    ],
+    "limitations": [
+      "English translations/renderings: original-language texts and recordings not inspected; marked non-independent.",
+      "Hebrew transcripts 5989776 and 5989136 are בלתי מוגה; no audio comparison.",
+      "AID 4950814: published letter body inspected; incoming letter and autograph absent.",
+      "Yiddish/Hebrew Yechidus pages 553673/553672 are metadata-only audio listings in one family.",
+      "AID 5413068 returned a rewritten shell; alternative AID 5989776 is not represented as the same document.",
+      "AID 3798080 and linked transcript AID 3140368 did not provide inspectable text.",
+      "No full copyrighted text copied."
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false
+  },
+  "previous_manual_web_review": {
     "reviewed_at": "2026-11-13T08:00:00+02:00",
     "status": "completed",
     "batch_id": "068",
@@ -43,7 +104,7 @@
       "Russian (underlying language; Hebrew free translation inspected)"
     ]
   },
-  "previous_manual_web_review": {
+  "earlier_manual_web_review": {
     "reviewed_at": "2026-11-13T07:00:00+02:00",
     "status": "completed",
     "batch_id": "067",
@@ -193,19 +254,5 @@
     "source_languages": [
       "Hebrew"
     ]
-  },
-  "earlier_manual_web_review": {
-    "reviewed_at": "2026-11-13T03:28:52+02:00",
-    "status": "completed",
-    "batch_id": "065",
-    "source_bodies_inspected": 9,
-    "new_source_identities": 3,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 4,
-    "existing_identities_canonicalized": 1,
-    "new_paraphrase_entries": 11,
-    "existing_paraphrase_entries_restored_to_index": 4,
-    "blocked_candidate_count": 7,
-    "method": "public web search/open; no crawler retry"
   }
 }

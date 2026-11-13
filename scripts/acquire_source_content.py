@@ -211,7 +211,16 @@ def main():
         write(ROOT/f'data/staging/batches/auto-links-{token}.json',{'records':discoveries})
     report['discovered']=len(discoveries)
     report['status']='progress' if report['enriched'] or discoveries else ('blocked' if report['blocked'] else 'no_candidates')
-    write(statepath,state);write(ROOT/'data/acquisition/latest.json',report)
+    latestpath=ROOT/'data/acquisition/latest.json'
+    try:
+        previous_report=json.loads(latestpath.read_text()) if latestpath.exists() else {}
+    except (OSError, ValueError):
+        previous_report={}
+    # Preserve manual semantic reviews when the hourly literal-excerpt runner writes its report.
+    for field in ('manual_web_review','previous_manual_web_review','earlier_manual_web_review'):
+        if field in previous_report:
+            report[field]=previous_report[field]
+    write(statepath,state);write(latestpath,report)
     print(json.dumps(report,ensure_ascii=False))
 
 if __name__=='__main__':main()

@@ -294,7 +294,16 @@ assert(!publicationNormalization.topics.includes('הפצת ספרים'),'specifi
 assert(!publicationNormalization.subtopic.includes('פצתם'),'definite-article stripping must not leave הפצתם as an unsupported residual qualifier');
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,publishingQuestion,{mode});
- if(!m.answerable)console.log('BATCH062_PUBLICATION_DEBUG',JSON.stringify({mode,reason:m.reason,understanding:m.understanding,sources:m.sources.map(e=>({key:e.key,aid:e.aid,family:e.evidence_family_id,props:e.response_propositions})),insufficient:m.insufficient_evidence,coverage:m.comparative_coverage}));
+ if(!m.answerable)
+const batch069Required=[[2513862,2],[3294872,2],[2515100,2],[3294874,2],[2513197,2],[2514917,2],[2183868,2],[2600571,2],[2516887,2],[2600694,2],[5989776,3],[5989136,2],[4950814,3]];
+for(const [aid,minProps] of batch069Required){const e=idx.entries.find(x=>String(x.aid)===String(aid));assert(e&&e.has_content_evidence,`batch069 ${aid} content`);assert.equal(e.status,'Verified');assert(e.response_propositions.length>=minProps);assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope);assert.equal(e.context_status,'partial');}
+const audioOnly=idx.entries.filter(e=>['553672','553673'].includes(String(e.aid)));assert.equal(audioOnly.length,2);assert.equal(new Set(audioOnly.map(e=>e.evidence_family_id)).size,1);assert(audioOnly.every(e=>!e.has_content_evidence&&!e.response_propositions?.length));
+const pesachA=idx.entries.find(e=>String(e.aid)==='2513862'),pesachB=idx.entries.find(e=>String(e.aid)==='3294874');assert.notEqual(pesachA.evidence_family_id,pesachB.evidence_family_id);assert(pesachB.relations.some(r=>String(r.target_aid)==='2513862'));
+for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,'מה כתב הרבי למי שקשה לו להתפרנס בגלל עבודה בשבת?',{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='4950814'));assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}}
+for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,'מה נאמר במקורות על הימים שלאחר השבת המתברכים ממנה?',{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='5989776'));assert(m.sources.some(e=>String(e.aid)==='5989136'));assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_families>=2);assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}else assert.equal(m.research,undefined);}
+const blockedErev=buildAnswerModel(idx.entries,'מה נאמר על ברכה בערב שבת וערב ראש חודש?',{mode:'regular'});assert(!blockedErev.sources.some(e=>String(e.aid)==='5413068'));
+
+console.log('BATCH062_PUBLICATION_DEBUG',JSON.stringify({mode,reason:m.reason,understanding:m.understanding,sources:m.sources.map(e=>({key:e.key,aid:e.aid,family:e.evidence_family_id,props:e.response_propositions})),insufficient:m.insufficient_evidence,coverage:m.comparative_coverage}));
  assert(m.answerable,mode+': inspected publication and editorial evidence must answer');
  assert(m.sources.length>=3,mode+': publication synthesis must use at least three source families');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': duplicate witnesses must not inflate publication synthesis');
@@ -357,7 +366,7 @@ const qs=[
  ['מה כתב הרבי על אמירת דברי חסידות בבתי כנסת והפצת המעיינות?',5071043],
  ['מה כתב הרבי על חוסר חשק בלימוד?',5100225],
  ['מה כתב הרבי על ירידת גשמים בשנת שמיטה?',5100487],
- ['מה נאמר על ברכה בערב שבת וערב ראש חודש?',5413068],
+ ['מה נאמר על ברכה בערב שבת וערב ראש חודש?',5989776],
  ['מה כתב הרבי על שילוב תורה הנגלה ופנימיות התורה?',5100353],
  ['מה נאמר על ברכה לרגל שנת השלושים ליום החתונה?',5100360]
 ];

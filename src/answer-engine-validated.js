@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch068-retrieval-v2';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch069-retrieval-v3';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -14,6 +14,7 @@ const TOPIC_ALIASES={
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
+ 'פרנסה ושמירת שבת':['קושי בפרנסה','קושי להתפרנס','להתפרנס','מקור פרנסה','עבודה בשבת','עבודה אסורה בשבת','שמירת שבת','פרנסה מותרת וכשרה','livelihood and Shabbat observance','work on Shabbat','kosher livelihood'],
  'שותפות והרחבת עסק':['שותפות במסחר','צירוף שותף למסחר','שותף למסחר','הרחבת העסק בכוחות עצמו','הרחבה בכוחות עצמו','העסק זקוק להתרחבות','business partnership','expand the business independently'],
  'הרצאה ושיחה בענייני חסידות':['הרצאה על חסידות','לדבר עניני חסידות בדרך הרצאה ושיחה','chassidus lecture'],
  'שיעור קונטרס החלצו ברבים':['קונטרס החלצו','שיעור ציבורי בקונטרס החלצו','שיעורים הנלמדים ברבים','לכלול בשיעורים הנלמדים ברבים','לקבוע זמן נוח להשתתפות','להסבירו באופן מובן לכל השומעים','העדר קירוב לבבות','העדר קירוב הלבבות'],
@@ -21,7 +22,7 @@ const TOPIC_ALIASES={
  'הפצת המעיינות בבתי כנסת':['אמירת דא״ח בבתי הכנסת','אמירת דברי חסידות בבתי כנסת','ארגון אמירת דברי חסידות בבתי כנסת','הפצת המעיינות בבתי הכנסת','spreading Chassidus in synagogues'],
  'חוסר חשק בלימוד':['אין חשק ללימוד','הוספה בתורה ומצוות'],
  'גשמים בשנת השמיטה':['גשמים בשנת שמיטה','ירידת גשמים בשנת השביעית'],
- 'שבת וראש חודש כמקורות ברכה':['ערב שבת וערב ראש חודש','ברכה בשבת ובראש חודש'],
+ 'שבת וראש חודש כמקורות ברכה':['ערב שבת וערב ראש חודש','ברכה בשבת ובראש חודש','שבת מברכים','מחר חודש','ערב ראש חודש שחל בשבת','ערב ר״ח שחל בשבת','ברכת החודש','מתברכין כולהו יומין','הימים שלאחר השבת מתברכים','ימים שלאחר השבת','Shabbat Mevorchim','Erev Rosh Chodesh','days following Shabbat are blessed','blessing for the new month','preparation for Rosh Chodesh'],
  'לימוד נגלה ופנימיות התורה':['תורת הנגלה ופנימיות התורה','לימוד נגלה ופנימיות'],
  'ברכה ליום נישואין':['שנת השלושים ליום החתונה','יום הנישואין השלושים'],
  'שליחות':['שליח','שליחות','shliach','shlichus','mission'],
