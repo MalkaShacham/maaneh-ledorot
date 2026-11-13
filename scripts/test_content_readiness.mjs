@@ -241,6 +241,13 @@ for(const mode of ['regular','researcher']){
  assert(m.comparative_coverage.missing_topics.includes('מדריך מחנה גן ישראל והשפעה'),mode+': identify the missing side explicitly');
  assert(m.insufficient_evidence.some(s=>s.includes('מדריך מחנה גן ישראל והשפעה')),mode+': explain the evidence gap');
 }
+const publisherTranscript=normalizeEvidenceIntegrity(idx.entries.filter(e=>['4666292','4666305'].includes(String(e.aid))));
+assert.equal(publisherTranscript.length,2);
+assert(publisherTranscript.every(e=>e._independent_witness===true),'authorized original-language publisher transcriptions remain independent text witnesses');
+const derivedCopy=normalizeEvidenceIntegrity(idx.entries.filter(e=>String(e.aid)==='2190037'));
+assert.equal(derivedCopy.length,1);
+assert.equal(derivedCopy[0]._independent_witness,false,'explicitly marked transcribed copies remain non-independent');
+
 const beitRivkaComparison='השווה בין האיגרת על בקשת ויזה באמצעות בית רבקה לבין האיגרת לוועד בית הספר לנערות בית רבקה בפריז על רישום המוסד לרשת ותכנית הלימודים הרגילה';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,beitRivkaComparison,{mode});
@@ -256,6 +263,7 @@ for(const mode of ['regular','researcher']){
  assert(m.comparative_coverage.supported_topics.includes('בית רבקה פריז ורישום בית ספר'));
  if(mode==='researcher'){
   assert(m.research&&m.research.evidence_families>=2,mode+': researcher comparison must expose both families');
+  assert(m.research.witness_classes.primary>=2,mode+': publisher transcriptions of original-language letters are primary text witnesses, not derived translations');
   assert(m.research.witnesses.length===m.sources.length,mode+': researcher mode must expose every witness');
   assert(m.research.evidence_map.length>0,mode+': researcher mode must expose a claim-to-witness map');
   assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid),mode+': researcher mode must expose valid claim-local checks');
