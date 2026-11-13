@@ -295,3 +295,8 @@ Validation status: answer quality gate run 43463212994 on commit 658fc435 passed
 - The hourly schedule remains unchanged (7 * * * *). The runner-side live crawler is now skipped by default after the prior HTTP 403 across all 12 references; the scheduled job continues deterministic promotion, identity reconciliation and metrics reconciliation.
 - The push trigger no longer treats a scripts/reconcile_metrics.py-only change as a reason to launch the hourly acquisition workflow.
 - At the time this guardrail was prepared, the run triggered by the content commit was already in progress at the acquisition-boundary test, with the live-acquisition step pending. The available GitHub integration exposes run status but no cancellation action; that in-flight run could not be canceled from this session. Future scheduled runs use the skip policy above.
+
+
+## 2026-11-13 — Retrieval regression correction
+
+- The first content-readiness run after batch 076 passed question-specific retrieval, answer synthesis, citation integrity and workflow-write safety, but caught an over-broad new topic alias that diverted the existing AID 5100225 query for "lack of desire in study". Removed the phrase "חוסר חשק בלימוד" from the new wellbeing alias in both retrieval layers; the narrower terms for low mood, confusing thoughts and low vitality in study remain. The regression is being rerun on the corrected commit.
