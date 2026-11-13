@@ -1015,9 +1015,9 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const tzedakahFamilies=new Set();
+ let answerEvidence=usable;
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  if(tzedakahSynthesisQuestion){answerEvidence=usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived'&&arr(e._supporting_propositions).some(supportsTzedakahSynthesisProposition));answerEvidence.forEach(e=>{const k=familyKey(e);if(k)tzedakahFamilies.add(k);});if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.']};}
- let answerEvidence=usable;
  if(dailyStudyPrayerQuestion){
   answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
   const dailyFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
