@@ -237,3 +237,8 @@ The second commit-bound quality run passed retrieval, answer synthesis, citation
 ### Batch 072 quality-gate correction 3
 
 The third commit-bound readiness run reached the dossier checks and found a test-field mismatch, not missing source content: the Reagan correspondence dossier records the addressee as `audience` (`נשיא ארצות הברית`) while its `conditions_or_qualifications` correctly limits attribution of third-party texts. The assertion was corrected to validate the addressee in the audience field rather than requiring it in the conditions field. No source proposition or context boundary was broadened.
+
+
+### Batch 072 researcher-mode test semantics
+
+The multi-source regression distinguishes two underlying letter Evidence Families from two independent witnesses. The selected new sources are English translations of two different letters: they may support a two-family synthesis, but must not be counted as two independent textual witnesses. Researcher mode now asserts two family-level evidence-map entries and explicitly non-independent translation status for both sources, while existing Hebrew-source tests continue to require independent witnesses where the primary text is available.

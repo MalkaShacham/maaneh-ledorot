@@ -588,7 +588,7 @@ for(const mode of ['regular','researcher']){
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': each synthesized claim must cite its supporting sources');
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher'){
-  assert(m.research&&m.research.evidence_families>=2);
+  assert(m.research&&m.research.evidence_map.length>=2&&m.sources.filter(e=>e.independent_witness===false).length>=2,'researcher mode must preserve two distinct underlying letter families while marking both English translations non-independent');
   assert.equal(m.research.witnesses.length,m.sources.length);
   assert(m.research.evidence_map.length>0);
   assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
