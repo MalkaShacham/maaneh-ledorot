@@ -1,0 +1,1017 @@
+{
+  "batch_id": "2026-11-13-content-batch-075",
+  "reviewed_at": "2026-11-13T17:04:39+02:00",
+  "status": "completed_pending_reconciliation",
+  "reviewed_item_count": 15,
+  "source_bodies_inspected": 14,
+  "new_source_identities": 8,
+  "new_rebbe_letter_identities": 7,
+  "new_secondary_narrative_identities": 1,
+  "new_secretariat_document_identities": 0,
+  "new_metadata_only_identities": 0,
+  "duplicate_alias_identities": 0,
+  "existing_identities_enriched": 6,
+  "existing_identities_rechecked": 1,
+  "existing_identities_canonicalized": 0,
+  "new_paraphrase_entries": 16,
+  "existing_response_propositions_added": 5,
+  "total_new_paraphrase_entries": 21,
+  "answer_eligible_source_families_added": 8,
+  "blocked_candidate_count": 3,
+  "blocked_candidates": [
+    {
+      "aid": 4666220,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+      "alternate_url": "https://www.chabad.org/torah-texts/4666220/page/default.htm",
+      "reason": "Current public web open returned rewritten summary/navigation shell without the letter body.",
+      "handling": "No crawler retry; other public publisher pages inspected."
+    },
+    {
+      "aid": 5100391,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100391/jewish/page.htm",
+      "reason": "Current page redirects to summary shell; existing content record retained without new proposition."
+    },
+    {
+      "aid": 4994198,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4994198/jewish/page.htm",
+      "reason": "Current page redirects to summary shell; existing content record retained without new proposition."
+    }
+  ],
+  "method": "Manual public web search/open; 14 page bodies/segments inspected across Hebrew, Yiddish and English. No GitHub-runner crawler retry, access-control bypass or full-text copying.",
+  "deduplication_check": "New AIDs 4783853, 4812732, 4812673, 5100383, 5100452, 5100585, 5100260 and 79705 checked against batches 055–074 and current item paths; no duplicate AID/URL found. Existing duplicate/parallel families remain linked: AID 5413573 with 4854544; AID 4783983 with 4279887; English translation AID 4096303 remains non-independent. AID 5357574 secretariat appendix remains a separate document and Evidence Family.",
+  "existing_identity_updates": [
+    {
+      "identity": "chabad-letter-5357571",
+      "canonical_file": "data/items/content-research-batch-057-2026-11-12.json",
+      "propositions_added": 1
+    },
+    {
+      "identity": "chabad-letter-5413358",
+      "canonical_file": "data/items/content-research-batch-057-2026-11-12.json",
+      "propositions_added": 1
+    },
+    {
+      "identity": "chabad-letter-5100253",
+      "canonical_file": "data/items/content-research-batch-058-2026-11-12.json",
+      "propositions_added": 1
+    },
+    {
+      "identity": "chabad-letter-4812708",
+      "canonical_file": "data/items/content-research-batch-065-2026-11-13.json",
+      "propositions_added": 1
+    },
+    {
+      "identity": "chabad-letter-5357574",
+      "canonical_file": "data/items/content-research-batch-073-2026-11-13.json",
+      "propositions_added": 0
+    },
+    {
+      "identity": "secretariat-letter-5357574-5719-12-sivan",
+      "canonical_file": "data/items/content-research-batch-073-2026-11-13.json",
+      "propositions_added": 1
+    }
+  ],
+  "existing_identity_rechecked": [
+    {
+      "identity": "chabad-letter-4830967",
+      "canonical_file": "data/items/content-research-batch-059-2026-11-12.json",
+      "propositions_added": 0
+    }
+  ],
+  "source_languages": [
+    "Hebrew",
+    "Yiddish",
+    "English"
+  ],
+  "language_distribution": {
+    "Hebrew": 6,
+    "Yiddish": 1,
+    "English": 1
+  },
+  "source_types": [
+    "published Hebrew correspondence",
+    "published Yiddish/Hebrew mixed correspondence",
+    "publisher text completed from photograph (2 letters)",
+    "secondary English narrative"
+  ],
+  "limitations": [
+    "Incoming letters are not displayed; context remains partial.",
+    "Photo-completed AIDs 5100383 and 5100452 were inspected as publisher text; photographs not inspected.",
+    "AID 5100585 is a mixed Hebrew/Yiddish page; core paragraph is Yiddish.",
+    "AID 79705 is a secondary narrative, not a primary letter or independently authenticated eyewitness account.",
+    "Health and pregnancy passages in AIDs 4783853, 4812732 and 4812673 are historical personal correspondence, not current medical advice.",
+    "AID 5100253 is a secretary-signed response in the Rebbe's name; no autograph inspected.",
+    "AID 5357574 contains a separate secretariat appendix; none of its content is attributed to the Rebbe.",
+    "No full copyrighted text copied."
+  ],
+  "crawler_retry": false,
+  "access_control_bypassed": false,
+  "full_text_copied": false,
+  "metrics_before": {
+    "answer_eligible_unique_sources": 771,
+    "content_verified_unique_sources": 768,
+    "answer_eligible_propositions": 2580
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 779,
+    "content_verified_unique_sources": 776,
+    "answer_eligible_propositions": 2601
+  },
+  "metrics_after_actual": null,
+  "reconciliation_status": "pending",
+  "records": [
+    {
+      "id": "chabad-letter-4783853",
+      "canonical_key": "aid:4783853",
+      "aid": 4783853,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level correspondence page; publisher attribution: Kehot Publication Society.",
+      "title": "אגרות קודש - מכתב א’שעח",
+      "volume": 5,
+      "volume_he": "כרך ה",
+      "letter_number": "א’שעח",
+      "date_original": "כ״ז טבת, תשי״ב",
+      "event_date": "כ״ז טבת, תשי״ב",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4783853/jewish/page.htm",
+      "publisher": "Kehot Publication Society",
+      "pipeline_status": "Verified",
+      "verification_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המענה מתייחס לדיווח על נטייה של הבן לגניבה וממליץ לפנות לרופא מקצועי בתחום; ההמלצה מוצגת במסגרת מקרה אישי ולא כאבחנה של הכותב.",
+        "לצד הפנייה לרופא, המכתב מציין צעדים דתיים ומשפחתיים שהוצעו במקרה: אמירת פרק תהילים יומי נוסף, נתינת צדקה לפני תפילות שחרית ומנחה לזכות הבן, בדיקת ציצית, כיסוי ראש ומזוזות, והרגלה למנהג חברתי בלי ליצור בולטות."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4783853, אגרות קודש - מכתב א’שעח; body lines 290–301. Body inspected on 2026-11-13.",
+      "response_proposition_locators": [
+        "Chabad.org AID 4783853, body lines 296–297.",
+        "Chabad.org AID 4783853, body lines 297–299."
+      ],
+      "evidence_family_id": "igrot-letter-5712-27-tevet-aid4783853",
+      "primary_secondary_status": "Primary published correspondence attributed by the publisher to the Rebbe; original manuscript/autograph not independently inspected.",
+      "witness_type": "published_letter_text",
+      "independent_witness": true,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "Not a translation; original-language publisher text.",
+      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4783853; visible publisher letter body inspected.",
+      "witness": {
+        "kind": "published letter text",
+        "publisher": "Kehot Publication Society",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "AID 4783853, body lines 290–301",
+        "complete_partial": "partial",
+        "notes": "Publisher-attributed correspondence; incoming letter and autograph not inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org, item-level publisher page, AID 4783853; Published by Kehot Publication Society.",
+        "authorship_status": "Publisher-attributed correspondence of the Lubavitcher Rebbe; not independent autograph authentication.",
+        "signature_status": "Publisher attribution inspected; original signature/autograph not inspected.",
+        "transmission_type": "Published original-language correspondence; no translation used.",
+        "textual_status": "Body lines 290–301 inspected; incoming letter and original manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at inspected publisher-text level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4783853/jewish/page.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4783853, שורות 290–301. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. העמוד מייחס את ההמלצה לרופא מקצועי; לא נבדקו אבחנה רפואית, מסמכים קליניים או מכתב הפונה. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4783853, שורות 290–301. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. העמוד מייחס את ההמלצה לרופא מקצועי; לא נבדקו אבחנה רפואית, מסמכים קליניים או מכתב הפונה. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+      "documented_circumstances": "מענה להורה שתיאר נטייה של בנו לגניבה; המכתב מציג הפניה לרופא מקצועי לצד צעדים דתיים ומשפחתיים.",
+      "question_or_problem": "מענה אישי לדיווח על נטייה של ילד לגניבה.",
+      "conditions_or_qualifications": [
+        "זהו מקרה אישי והיסטורי; המכתב מפנה במפורש לרופא מקצועי. אין להסיק ממנו אבחנה או טיפול קליני עכשווי.",
+        "הצעדים הדתיים שייכים למקרה המסוים ואינם תחליף לייעוץ מקצועי."
+      ],
+      "audience": "The named recipient and circumstances shown on the publisher page; no generalization to other cases without further sources.",
+      "rights_status": "Copyrighted publisher text; bounded non-verbatim paraphrases and exact source locator only; no full text reproduced.",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 4783853,
+        "volume": 5,
+        "letter_number": "א’שעח",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4783853/jewish/page.htm",
+        "body_locator": "AID 4783853, body lines 290–301"
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "אגרות קודש",
+          "מכתבי הרבי"
+        ],
+        "research_terms": [
+          "התנהגות ילדים",
+          "גניבה",
+          "רופא מקצועי",
+          "תהילים",
+          "צדקה",
+          "ציצית",
+          "כיסוי ראש",
+          "מזוזות"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation must join Evidence Family igrot-letter-5712-27-tevet-aid4783853; translation is not an independent witness.",
+      "notes": "Deduplicated against current item paths and content-research batches 055–074. One Evidence Family assigned; no translation or reprint counted independently. Verified applies only to inspected publisher passages; context partial.  No full copyrighted text copied.",
+      "epistemic_level": 1
+    },
+    {
+      "id": "chabad-letter-4812732",
+      "canonical_key": "aid:4812732",
+      "aid": 4812732,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level correspondence page; publisher attribution: Kehot Publication Society.",
+      "title": "אגרות קודש - מכתב א’תרפח",
+      "volume": 6,
+      "volume_he": "כרך ו",
+      "letter_number": "א’תרפח",
+      "date_original": "ז׳ תמוז, תשי״ב",
+      "event_date": "ז׳ תמוז, תשי״ב",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812732/jewish/page.htm",
+      "publisher": "Kehot Publication Society",
+      "pipeline_status": "Verified",
+      "verification_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב משיב לנמען שתיאר מצוקה כלכלית וכאב ברגל ימין; הוא משתמש בדימוי הרוחני של רגל כקשור לצדקה ואמונה, ומעודד להוסיף במצוות אלה דווקא במצבו האישי.",
+        "המכתב מציג קביעות עתים בתורת הנגלה ובתורת החסידות והידור בקיום המצוות ככלים רוחניים לבקשת ברכה; האזכור הרפואי הוא תפילה לרפואתו, לא אבחנה או הנחיה רפואית."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812732, אגרות קודש - מכתב א’תרפח; body lines 244–257. Body inspected on 2026-11-13.",
+      "response_proposition_locators": [
+        "Chabad.org AID 4812732, body lines 250–251.",
+        "Chabad.org AID 4812732, body lines 251–253."
+      ],
+      "evidence_family_id": "igrot-letter-5712-7-tammuz-aid4812732",
+      "primary_secondary_status": "Primary published correspondence attributed by the publisher to the Rebbe; original manuscript/autograph not independently inspected.",
+      "witness_type": "published_letter_text",
+      "independent_witness": true,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "Not a translation; original-language publisher text.",
+      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812732; visible publisher letter body inspected.",
+      "witness": {
+        "kind": "published letter text",
+        "publisher": "Kehot Publication Society",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "AID 4812732, body lines 244–257",
+        "complete_partial": "partial",
+        "notes": "Publisher-attributed correspondence; incoming letter and autograph not inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org, item-level publisher page, AID 4812732; Published by Kehot Publication Society.",
+        "authorship_status": "Publisher-attributed correspondence of the Lubavitcher Rebbe; not independent autograph authentication.",
+        "signature_status": "Publisher attribution inspected; original signature/autograph not inspected.",
+        "transmission_type": "Published original-language correspondence; no translation used.",
+        "textual_status": "Body lines 244–257 inspected; incoming letter and original manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at inspected publisher-text level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812732/jewish/page.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4812732, שורות 244–257. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4812732, שורות 244–257. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+      "documented_circumstances": "מענה לנמען שתיאר מצוקה כלכלית וכאב ברגל ימין.",
+      "question_or_problem": "מענה אישי המשלב את מצבו של הנמען עם דימוי רוחני של רגל, צדקה ואמונה.",
+      "conditions_or_qualifications": [
+        "הדימוי הרוחני אינו הסבר רפואי לכאב ואינו מחליף בדיקה או טיפול רפואי.",
+        "המכתב הוא מענה אישי; אין להרחיב את ההמלצות למקרה רפואי אחר."
+      ],
+      "audience": "The named recipient and circumstances shown on the publisher page; no generalization to other cases without further sources.",
+      "rights_status": "Copyrighted publisher text; bounded non-verbatim paraphrases and exact source locator only; no full text reproduced.",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 4812732,
+        "volume": 6,
+        "letter_number": "א’תרפח",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812732/jewish/page.htm",
+        "body_locator": "AID 4812732, body lines 244–257"
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "אגרות קודש",
+          "מכתבי הרבי"
+        ],
+        "research_terms": [
+          "כאב רגל",
+          "מצוקה כלכלית",
+          "צדקה",
+          "אמונה",
+          "קביעות עתים",
+          "תורת הנגלה",
+          "תורת החסידות"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation must join Evidence Family igrot-letter-5712-7-tammuz-aid4812732; translation is not an independent witness.",
+      "notes": "Deduplicated against current item paths and content-research batches 055–074. One Evidence Family assigned; no translation or reprint counted independently. Verified applies only to inspected publisher passages; context partial.  No full copyrighted text copied.",
+      "epistemic_level": 1
+    },
+    {
+      "id": "chabad-letter-4812673",
+      "canonical_key": "aid:4812673",
+      "aid": 4812673,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level correspondence page; publisher attribution: Kehot Publication Society.",
+      "title": "אגרות קודש - מכתב א’תרכו",
+      "volume": 6,
+      "volume_he": "כרך ו",
+      "letter_number": "א’תרכו",
+      "date_original": "י׳ סיון, תשי״ב",
+      "event_date": "י׳ סיון, תשי״ב",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812673/jewish/page.htm",
+      "publisher": "Kehot Publication Society",
+      "pipeline_status": "Verified",
+      "verification_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב משיב לאישה שדיווחה על כניסה לחודש השני להריונה ומבקש להימנע מפרסום מוקדם עד החודש החמישי; הוא מדגיש למלא את הוראות הרופאים שכבר מכירים אותה בענייני אכילה, שתייה ומאמץ.",
+        "בנוסף, המכתב מתאר מנהגים דתיים שהוצעו לאותה משפחה במהלך ההיריון: בדיקת מזוזות, נתינת צדקה לפני הדלקת נרות, שמירת שיעור תהילים יומי בידי הבעל, ואמירת פרק נוסף לפני השינה; ההמלצות הן מקרה-ספציפיות ואינן תחליף להנחיה רפואית."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812673, אגרות קודש - מכתב א’תרכו; body lines 290–302. Body inspected on 2026-11-13.",
+      "response_proposition_locators": [
+        "Chabad.org AID 4812673, body lines 294–295.",
+        "Chabad.org AID 4812673, body lines 295–296."
+      ],
+      "evidence_family_id": "igrot-letter-5712-10-sivan-aid4812673",
+      "primary_secondary_status": "Primary published correspondence attributed by the publisher to the Rebbe; original manuscript/autograph not independently inspected.",
+      "witness_type": "published_letter_text",
+      "independent_witness": true,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "Not a translation; original-language publisher text.",
+      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812673; visible publisher letter body inspected.",
+      "witness": {
+        "kind": "published letter text",
+        "publisher": "Kehot Publication Society",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "AID 4812673, body lines 290–302",
+        "complete_partial": "partial",
+        "notes": "Publisher-attributed correspondence; incoming letter and autograph not inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org, item-level publisher page, AID 4812673; Published by Kehot Publication Society.",
+        "authorship_status": "Publisher-attributed correspondence of the Lubavitcher Rebbe; not independent autograph authentication.",
+        "signature_status": "Publisher attribution inspected; original signature/autograph not inspected.",
+        "transmission_type": "Published original-language correspondence; no translation used.",
+        "textual_status": "Body lines 290–302 inspected; incoming letter and original manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at inspected publisher-text level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812673/jewish/page.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4812673, שורות 290–302. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. הטקסט מתאר היריון אישי ומפנה להוראות רופאים קיימים; לא נבדקו מסמכים רפואיים או המכתב הנכנס. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4812673, שורות 290–302. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. הטקסט מתאר היריון אישי ומפנה להוראות רופאים קיימים; לא נבדקו מסמכים רפואיים או המכתב הנכנס. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+      "documented_circumstances": "מענה לאישה שדיווחה על הריונה בחודש השני, עם הנחיות אישיות לבני הזוג.",
+      "question_or_problem": "מענה אישי על פרטיות ההיריון, הוראות הרופאים ומנהגים דתיים במשפחה.",
+      "conditions_or_qualifications": [
+        "הטקסט מפנה להוראות הרופאים שכבר מכירים את האישה; אין לראות בו ייעוץ מיילדותי עכשווי.",
+        "ההמלצות הדתיות מתוארות בהקשר משפחתי מסוים ואינן הוראה רפואית או כלל אחיד לכל היריון."
+      ],
+      "audience": "The named recipient and circumstances shown on the publisher page; no generalization to other cases without further sources.",
+      "rights_status": "Copyrighted publisher text; bounded non-verbatim paraphrases and exact source locator only; no full text reproduced.",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 4812673,
+        "volume": 6,
+        "letter_number": "א’תרכו",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4812673/jewish/page.htm",
+        "body_locator": "AID 4812673, body lines 290–302"
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "אגרות קודש",
+          "מכתבי הרבי"
+        ],
+        "research_terms": [
+          "היריון",
+          "פרטיות",
+          "הוראות רופאים",
+          "תזונה",
+          "שתייה",
+          "צדקה",
+          "נרות שבת",
+          "תהילים יומי",
+          "קריאת שמע"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation must join Evidence Family igrot-letter-5712-10-sivan-aid4812673; translation is not an independent witness.",
+      "notes": "Deduplicated against current item paths and content-research batches 055–074. One Evidence Family assigned; no translation or reprint counted independently. Verified applies only to inspected publisher passages; context partial.  No full copyrighted text copied.",
+      "epistemic_level": 1
+    },
+    {
+      "id": "chabad-letter-5100383",
+      "canonical_key": "aid:5100383",
+      "aid": 5100383,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Publisher page says printed in Likkutei Sichot vol. 23 p. 483 and completed from a photograph; photograph not inspected.",
+      "title": "אגרות קודש - מכתב ו’תרלב",
+      "volume": 18,
+      "volume_he": "כרך יח",
+      "letter_number": "ו’תרלב",
+      "date_original": "ז׳ טבת, תשי״ט",
+      "event_date": "ז׳ טבת, תשי״ט",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100383/jewish/page.htm",
+      "publisher": "Kehot Publication Society",
+      "pipeline_status": "Verified",
+      "verification_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מבקש מבני הזוג לדווח בהמשך גם על נקודות הדיון עם בעלי הבתים ועל האופן שבו הן עוברות מן הכוח אל הפועל בקהילה; זהו מעקב על פעילותם במקום מסוים.",
+        "המכתב מציע לבחון פרסום סיפורים בענייני יהדות וחסידות בעיתונים הנקראים בידי יהודים, תוך התאמת הנוסח לאופי הקוראים של כל עיתון; ההצעה מופנית לנמענים המסוימים."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100383, אגרות קודש - מכתב ו’תרלב; body lines 288–309. Body inspected on 2026-11-13.",
+      "response_proposition_locators": [
+        "Chabad.org AID 5100383, body lines 292–298.",
+        "Chabad.org AID 5100383, body lines 299–309."
+      ],
+      "evidence_family_id": "igrot-letter-5719-7-tevet-v18-aid5100383",
+      "primary_secondary_status": "Published Hebrew letter text completed from a photograph; photograph not inspected and autograph authenticity not claimed.",
+      "witness_type": "publisher_transcription_completed_from_photograph",
+      "independent_witness": true,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "Not a translation; original-language publisher text.",
+      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100383; visible publisher letter body inspected.",
+      "witness": {
+        "kind": "publisher_transcription_completed_from_photograph",
+        "publisher": "Kehot Publication Society",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "AID 5100383, body lines 288–309",
+        "complete_partial": "partial",
+        "notes": "Publisher-attributed correspondence; incoming letter and autograph not inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org, item-level publisher page, AID 5100383; Published by Kehot Publication Society.",
+        "authorship_status": "Publisher-attributed correspondence of the Lubavitcher Rebbe; not independent autograph authentication.",
+        "signature_status": "Published text displays signature M. Schneerson; underlying photograph not inspected.",
+        "transmission_type": "Publisher text completed from a photograph of the letter; no translation used.",
+        "textual_status": "Body lines 288–309 inspected; publisher note says completed from a photograph; photograph itself not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at inspected publisher-text level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100383/jewish/page.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100383, שורות 288–309. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100383, שורות 288–309. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+      "documented_circumstances": "מכתב לרב גרשון מענדל גרליק ולרעייתו על פעילותם בקהילה במילאנו ועל פרסום סיפורי יהדות וחסידות.",
+      "question_or_problem": "דיווח על פעילות קהילתית ואפשרות לפרסם סיפורי יהדות וחסידות בעיתונות.",
+      "conditions_or_qualifications": [
+        "הטקסט הושלם על פי צילום האיגרת; הצילום עצמו לא נבדק.",
+        "ההצעה לפרסום מופנית לנמענים ולעיתונים שהכירו; אין להסיק ממנה מדיניות תקשורתית אחידה."
+      ],
+      "audience": "The named recipient and circumstances shown on the publisher page; no generalization to other cases without further sources.",
+      "rights_status": "Copyrighted publisher text; bounded non-verbatim paraphrases and exact source locator only; no full text reproduced.",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 5100383,
+        "volume": 18,
+        "letter_number": "ו’תרלב",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100383/jewish/page.htm",
+        "body_locator": "AID 5100383, body lines 288–309"
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "אגרות קודש",
+          "מכתבי הרבי"
+        ],
+        "research_terms": [
+          "גרשון מענדל גרליק",
+          "מילאנו",
+          "פעילות קהילתית",
+          "בעלי בתים",
+          "הוצאה מן הכוח אל הפועל",
+          "פרסום בעיתונות",
+          "יהדות",
+          "חסידות"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "chabad-narrative-79705",
+          "same_evidence_family": false,
+          "basis": "Both publications mention Rabbi Gershon Mendel Garelik, but concern different documents/events and remain separate Evidence Families."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation must join Evidence Family igrot-letter-5719-7-tevet-v18-aid5100383; translation is not an independent witness.",
+      "notes": "Deduplicated against current item paths and content-research batches 055–074. One Evidence Family assigned; no translation or reprint counted independently. Verified applies only to inspected publisher passages; context partial.  No full copyrighted text copied.",
+      "epistemic_level": 1
+    },
+    {
+      "id": "chabad-letter-5100452",
+      "canonical_key": "aid:5100452",
+      "aid": 5100452,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Publisher page says printed in Likkutei Sichot vol. 17 p. 480 and completed from a photograph; photograph not inspected.",
+      "title": "אגרות קודש - מכתב ו’תשו",
+      "volume": 18,
+      "volume_he": "כרך יח",
+      "letter_number": "ו’תשו",
+      "date_original": "ב׳ אד״ר, תשי״ט",
+      "event_date": "ב׳ אד״ר, תשי״ט",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100452/jewish/page.htm",
+      "publisher": "Kehot Publication Society",
+      "pipeline_status": "Verified",
+      "verification_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מבקש מהנמען לפרט את מצב תיקון המקווה, ובפרט את החלפת המים והאופן שבו ניתן לראות את התיקון בפועל; המענה מבקש דיווח קונקרטי ולא תיאור כללי בלבד.",
+        "בהקשר של בדיקת המקווה, המכתב מציין שאין להחיל כאן את ההסתייגות מפני הוצאת לעז על הראשונים; זו התייחסות למקווה ולתיקון מסוימים, ולא פסק כללי לכל מצב."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100452, אגרות קודש - מכתב ו’תשו; body lines 244–270. Body inspected on 2026-11-13.",
+      "response_proposition_locators": [
+        "Chabad.org AID 5100452, body lines 253–258.",
+        "Chabad.org AID 5100452, body lines 257–260."
+      ],
+      "evidence_family_id": "igrot-letter-5719-2-adar-rishon-v18-aid5100452",
+      "primary_secondary_status": "Published Hebrew letter text completed from a photograph; photograph not inspected and autograph authenticity not claimed.",
+      "witness_type": "publisher_transcription_completed_from_photograph",
+      "independent_witness": true,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "Not a translation; original-language publisher text.",
+      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100452; visible publisher letter body inspected.",
+      "witness": {
+        "kind": "publisher_transcription_completed_from_photograph",
+        "publisher": "Kehot Publication Society",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "AID 5100452, body lines 244–270",
+        "complete_partial": "partial",
+        "notes": "Publisher-attributed correspondence; incoming letter and autograph not inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org, item-level publisher page, AID 5100452; Published by Kehot Publication Society.",
+        "authorship_status": "Publisher-attributed correspondence of the Lubavitcher Rebbe; not independent autograph authentication.",
+        "signature_status": "Published text displays signature M. Schneerson; underlying photograph not inspected.",
+        "transmission_type": "Publisher text completed from a photograph; no translation used.",
+        "textual_status": "Body lines 244–270 inspected; publisher note says completed from a photograph; photograph not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at inspected publisher-text level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100452/jewish/page.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100452, שורות 244–270. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100452, שורות 244–270. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+      "documented_circumstances": "מענה לרב מרדכי פרלוב על מצב תיקון מקווה ועל האפשרות לעקוב אחר החלפת המים ותחזוקתו.",
+      "question_or_problem": "דיווח על תיקון מקווה והיכולת לבחון את מצב המים והתחזוקה.",
+      "conditions_or_qualifications": [
+        "הטקסט הושלם על פי צילום האיגרת; הצילום עצמו לא נבדק.",
+        "האמירה על הוצאת לעז נאמרת בהקשר של מקווה מסוים ותיקונו; אין להציג אותה כפסק כללי בלי מקורות הלכתיים נוספים."
+      ],
+      "audience": "The named recipient and circumstances shown on the publisher page; no generalization to other cases without further sources.",
+      "rights_status": "Copyrighted publisher text; bounded non-verbatim paraphrases and exact source locator only; no full text reproduced.",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 5100452,
+        "volume": 18,
+        "letter_number": "ו’תשו",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100452/jewish/page.htm",
+        "body_locator": "AID 5100452, body lines 244–270"
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "אגרות קודש",
+          "מכתבי הרבי"
+        ],
+        "research_terms": [
+          "מקווה",
+          "תחזוקה",
+          "החלפת מים",
+          "תיקון המקווה",
+          "דיווח קונקרטי",
+          "הוצאת לעז על הראשונים"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation must join Evidence Family igrot-letter-5719-2-adar-rishon-v18-aid5100452; translation is not an independent witness.",
+      "notes": "Deduplicated against current item paths and content-research batches 055–074. One Evidence Family assigned; no translation or reprint counted independently. Verified applies only to inspected publisher passages; context partial.  No full copyrighted text copied.",
+      "epistemic_level": 1
+    },
+    {
+      "id": "chabad-letter-5100585",
+      "canonical_key": "aid:5100585",
+      "aid": 5100585,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Central substantive paragraph is in Yiddish, with Hebrew opening and closing.",
+      "title": "אגרות קודש - מכתב ו’תתלט",
+      "volume": 18,
+      "volume_he": "כרך יח",
+      "letter_number": "ו’תתלט",
+      "date_original": "ד׳ אייר, תשי״ט",
+      "event_date": "ד׳ אייר, תשי״ט",
+      "date_precision": "exact_as_publisher",
+      "language": "Yiddish",
+      "original_language": "Yiddish",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100585/jewish/page.htm",
+      "publisher": "Kehot Publication Society",
+      "pipeline_status": "Verified",
+      "verification_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מתאר קשיים בבית כנסת חב״ד ומבהיר שגם אם מניחים שכל הטענות מוצדקות, עזיבת בית הכנסת אינה הפתרון; במקום זאת מוצע למשוך מתפללים נוספים כדי לסייע בתיקון המצב ולחזק את הקדושה במקום.",
+        "המכתב קושר את ההתחזקות הרוחנית במקום התפילה להכרת תודה על הטובות שנזכרו במכתב, ומעודד את הנמען להוסיף רוחניות וקדושה במקום שבו הוא מתפלל; זהו מענה אישי על מצב קהילתי מסוים."
+      ],
+      "proposition_language": "Yiddish",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100585, אגרות קודש - מכתב ו’תתלט; body lines 288–301. Body inspected on 2026-11-13.",
+      "response_proposition_locators": [
+        "Chabad.org AID 5100585, Yiddish paragraph, body lines 296–298.",
+        "Chabad.org AID 5100585, body lines 299–301."
+      ],
+      "evidence_family_id": "igrot-letter-5719-4-iyar-v18-aid5100585",
+      "primary_secondary_status": "Published mixed Hebrew/Yiddish correspondence text attributed by the publisher to the Rebbe; autograph not inspected.",
+      "witness_type": "published_yiddish_hebrew_letter_text",
+      "independent_witness": true,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "Not a translation; original-language publisher text.",
+      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100585; visible publisher letter body inspected.",
+      "witness": {
+        "kind": "published_yiddish_hebrew_letter_text",
+        "publisher": "Kehot Publication Society",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Yiddish",
+        "scope": "AID 5100585, body lines 288–301",
+        "complete_partial": "partial",
+        "notes": "Publisher-attributed correspondence; incoming letter and autograph not inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org, item-level publisher page, AID 5100585; Published by Kehot Publication Society.",
+        "authorship_status": "Publisher-attributed correspondence of the Lubavitcher Rebbe; not independent autograph authentication.",
+        "signature_status": "Publisher attribution inspected; original signature/autograph not inspected.",
+        "transmission_type": "Published original-language correspondence; no translation used.",
+        "textual_status": "Body lines 288–301 inspected; incoming letter and original manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at inspected publisher-text level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100585/jewish/page.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט היידי/המעורב הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100585, שורות 288–301. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. הפרפרזה נשענת על הפסקה היידית בשורות 296–298 ועל הסיום העברי בשורות 299–301; המכתב הנכנס והאוטוגרף לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט היידי/המעורב הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100585, שורות 288–301. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. הפרפרזה נשענת על הפסקה היידית בשורות 296–298 ועל הסיום העברי בשורות 299–301; המכתב הנכנס והאוטוגרף לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+      "documented_circumstances": "מענה לנמען שתיאר קשיים בבית כנסת חב״ד שבו הוא מתפלל והפסקה זמנית של תפילתו במקום.",
+      "question_or_problem": "האם עזיבת בית הכנסת היא דרך להתמודד עם מחלוקות וקשיים קהילתיים.",
+      "conditions_or_qualifications": [
+        "הפסקה המרכזית היא ביידיש בתוך עמוד שיש בו גם פתיחה וסיום בעברית.",
+        "ההמלצה מתייחסת לבית הכנסת ולנסיבות שתוארו; אין להסיק שכל מחלוקת מחייבת להישאר בכל מסגרת."
+      ],
+      "audience": "The named recipient and circumstances shown on the publisher page; no generalization to other cases without further sources.",
+      "rights_status": "Copyrighted publisher text; bounded non-verbatim paraphrases and exact source locator only; no full text reproduced.",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 5100585,
+        "volume": 18,
+        "letter_number": "ו’תתלט",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100585/jewish/page.htm",
+        "body_locator": "AID 5100585, body lines 288–301"
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "אגרות קודש",
+          "מכתבי הרבי"
+        ],
+        "research_terms": [
+          "יידיש",
+          "בית כנסת חב״ד",
+          "מחלוקת קהילתית",
+          "מתפללים",
+          "תיקון בית הכנסת",
+          "קדושה",
+          "רוחניות"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One dated Yiddish letter identity. Any scan, reprint or translation must join Evidence Family igrot-letter-5719-4-iyar-v18-aid5100585; translation is not an independent witness.",
+      "notes": "Deduplicated against current item paths and content-research batches 055–074. One Evidence Family assigned; no translation or reprint counted independently. Verified applies only to inspected publisher passages; context partial.  No full copyrighted text copied.",
+      "epistemic_level": 1
+    },
+    {
+      "id": "chabad-letter-5100260",
+      "canonical_key": "aid:5100260",
+      "aid": 5100260,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level correspondence page; publisher attribution: Kehot Publication Society.",
+      "title": "אגרות קודש - מכתב ו’תקי",
+      "volume": 18,
+      "volume_he": "כרך יח",
+      "letter_number": "ו’תקי",
+      "date_original": "ד׳ תשרי, תשי״ט",
+      "event_date": "ד׳ תשרי, תשי״ט",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100260/jewish/page.htm",
+      "publisher": "Kehot Publication Society",
+      "pipeline_status": "Verified",
+      "verification_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מתייחס לנמען המתאר שינוי במצבו לאורך שלוש שנים, וממסגר את המעבר מפעילות שעניינה בעיקר סיפוק אישי לפעילות בהפצת המעיינות חוצה כמעבר שמביא נחת רוח לה׳; זו פרשנות רוחנית למקרה האישי, לא כלל פסיכולוגי.",
+        "המכתב משיב בנפרד על ריחוק גאוגרפי ועל שאלת שידוכים, ומציין שהמרחק אינו בהכרח מכשול מכריע בימינו; אין להציג את ההתייחסות כהבטחה או כפסיקה כללית לגבי שידוך מסוים."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100260, אגרות קודש - מכתב ו’תקי; body lines 244–270. Body inspected on 2026-11-13.",
+      "response_proposition_locators": [
+        "Chabad.org AID 5100260, body lines 250–259.",
+        "Chabad.org AID 5100260, body lines 261–265."
+      ],
+      "evidence_family_id": "igrot-letter-5719-4-tishrei-v18-aid5100260",
+      "primary_secondary_status": "Primary published correspondence attributed by the publisher to the Rebbe; original manuscript/autograph not independently inspected.",
+      "witness_type": "published_letter_text",
+      "independent_witness": true,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "Not a translation; original-language publisher text.",
+      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100260; visible publisher letter body inspected.",
+      "witness": {
+        "kind": "published letter text",
+        "publisher": "Kehot Publication Society",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "AID 5100260, body lines 244–270",
+        "complete_partial": "partial",
+        "notes": "Publisher-attributed correspondence; incoming letter and autograph not inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org, item-level publisher page, AID 5100260; Published by Kehot Publication Society.",
+        "authorship_status": "Publisher-attributed correspondence of the Lubavitcher Rebbe; not independent autograph authentication.",
+        "signature_status": "Publisher attribution inspected; original signature/autograph not inspected.",
+        "transmission_type": "Published original-language correspondence; no translation used.",
+        "textual_status": "Body lines 244–270 inspected; incoming letter and original manuscript not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at inspected publisher-text level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100260/jewish/page.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100260, שורות 244–270. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות."
+      },
+      "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100260, שורות 244–270. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+      "documented_circumstances": "מענה לנמען המתאר שינוי אישי לאורך שלוש שנים, פעילות בהפצת המעיינות חוצה, ריחוק גאוגרפי ושאלת שידוכים.",
+      "question_or_problem": "מענה אישי על שינוי במטרות הפעילות, ריחוק מקום ושידוכים.",
+      "conditions_or_qualifications": [
+        "הפרשנות הרוחנית מתייחסת למצבו של הנמען; אין להכלילה כהסבר פסיכולוגי לכל אדם.",
+        "ההתייחסות לשידוכים אינה הבטחה לתוצאה או פסיקה כללית."
+      ],
+      "audience": "The named recipient and circumstances shown on the publisher page; no generalization to other cases without further sources.",
+      "rights_status": "Copyrighted publisher text; bounded non-verbatim paraphrases and exact source locator only; no full text reproduced.",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 5100260,
+        "volume": 18,
+        "letter_number": "ו’תקי",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100260/jewish/page.htm",
+        "body_locator": "AID 5100260, body lines 244–270"
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "אגרות קודש",
+          "מכתבי הרבי"
+        ],
+        "research_terms": [
+          "הפצת המעיינות חוצה",
+          "שינוי אישי",
+          "נחת רוח",
+          "ריחוק מקום",
+          "שידוכים",
+          "תשובה ומעשים טובים"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "One dated Hebrew letter identity. Any scan, reprint or translation must join Evidence Family igrot-letter-5719-4-tishrei-v18-aid5100260; translation is not an independent witness.",
+      "notes": "Deduplicated against current item paths and content-research batches 055–074. One Evidence Family assigned; no translation or reprint counted independently. Verified applies only to inspected publisher passages; context partial.  No full copyrighted text copied.",
+      "epistemic_level": 1
+    },
+    {
+      "id": "chabad-narrative-79705",
+      "canonical_key": "aid:79705",
+      "aid": 79705,
+      "type": "narrative",
+      "collection": "To Know and to Care Vol. 2, Chapter 7; Sichos in English Collection",
+      "source_class": "Sichos in English Collection",
+      "source_class_detail": "Chabad.org story by Eli Touger, explicitly from the Sichos in English Collection; secondary narrative, not primary correspondence.",
+      "title": "A Miraculous Release",
+      "date_original": null,
+      "event_date": "Late 1950s, as stated in the published narrative",
+      "date_precision": "approximate_as_narrative",
+      "language": "English",
+      "original_language": "English",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/79705/jewish/A-Miraculous-Release.htm",
+      "pipeline_status": "Verified",
+      "verification_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "The published narrative by Eli Touger reports that Mrs. Bassie Garelik mentioned local supporter Avraham Tzippel during a yechidus, after which the Rebbe made a brief positive remark about him; Rabbi Gershon Mendel Garelik later investigated why the remark had stood out.",
+        "The narrative says Tzippel used business travel to the Soviet Union to bring religious articles to Jews and Chassidic manuscripts out, and that he was briefly placed under house arrest before being released without explanation shortly after the yechidus; this chronology is the author's published account, not independently corroborated here."
+      ],
+      "proposition_language": "English",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "TheRebbe.org/Chabad.org AID 79705, article body lines 280–303; author and collection label at lines 282–284. Inspected 2026-11-13.",
+      "response_proposition_locators": [
+        "Chabad.org AID 79705, body lines 280–295.",
+        "Chabad.org AID 79705, body lines 298–303."
+      ],
+      "evidence_family_id": "sichos-in-english-story-79705-miraculous-release",
+      "primary_secondary_status": "Secondary published narrative by Eli Touger; not primary correspondence and not an independently authenticated eyewitness record.",
+      "witness_type": "secondary_published_narrative",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "translation_status": "Not a translation; English narrative article.",
+      "witness_provenance": "Chabad.org/TheRebbe.org, article by Eli Touger, from the Sichos in English Collection; To Know and To Care Vol. 2, chapter 7.",
+      "witness": {
+        "kind": "secondary published narrative",
+        "publisher": "Chabad.org/TheRebbe.org / Sichos in English Collection",
+        "author": "Eli Touger",
+        "language": "English",
+        "scope": "Article body lines 280–303",
+        "complete_partial": "partial",
+        "notes": "Secondary narrative; underlying interviews, correspondence and eyewitness records not inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org, AID 79705, A Miraculous Release, by Eli Touger; page labels it as from the Sichos in English Collection.",
+        "authorship_status": "Article authored by Eli Touger; narrative is the author's account, not a text authored by the Rebbe.",
+        "signature_status": "Not applicable; narrative article.",
+        "transmission_type": "Published secondary narrative; not a translation of a letter.",
+        "textual_status": "Article body lines 280–303 inspected; underlying correspondence, interviews and eyewitness records not inspected.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases only; no full copyrighted text reproduced.",
+        "verification_status": "Verified at the inspected secondary narrative level on 2026-11-13; source_text_inspected.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/79705/jewish/A-Miraculous-Release.htm",
+        "accessed": "2026-11-13",
+        "verification_scope": "AID 79705, article body lines 280–303 inspected. Secondary narrative, not primary correspondence; chronology and interpretation are the author's account and were not independently corroborated."
+      },
+      "verification_scope": "AID 79705, article body lines 280–303 inspected. Secondary narrative, not primary correspondence; chronology and interpretation are the author's account and were not independently corroborated.",
+      "documented_circumstances": "Published narrative about Bassie and Gershon Mendel Garelik and local supporter Avraham Tzippel, involving travel to the Soviet Union with religious articles and Chassidic manuscripts.",
+      "question_or_problem": "Secondary narrative about a remark during yechidus and a short Soviet house-arrest/release episode.",
+      "conditions_or_qualifications": [
+        "Secondary narrative by Eli Touger, not a Rebbe letter or independently authenticated eyewitness account.",
+        "The chronology and causal connection are the author's account; no independent corroboration was inspected."
+      ],
+      "audience": "Readers of historical narratives; secondary source only.",
+      "rights_status": "Copyrighted publisher text; bounded non-verbatim paraphrases and exact locator only; no full text reproduced.",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 79705,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/79705/jewish/A-Miraculous-Release.htm",
+        "chapter": "To Know and to Care Vol. 2, Chapter 7",
+        "body_locator": "AID 79705, article body lines 280–303"
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "A Miraculous Release",
+          "Sichos in English Collection",
+          "To Know and to Care Vol. 2"
+        ],
+        "research_terms": [
+          "Bassie Garelik",
+          "Gershon Mendel Garelik",
+          "Avraham Tzippel",
+          "Soviet Union",
+          "religious articles",
+          "Chassidic manuscripts",
+          "historical narrative"
+        ],
+        "response_case_candidate": true
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "chabad-letter-5100383",
+          "same_evidence_family": false,
+          "basis": "Both pages mention Rabbi Gershon Mendel Garelik, but this is a separate secondary narrative and a different event/document; not the same Evidence Family."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "Secondary narrative identity with its own Evidence Family; do not merge with AID 5100383 or treat as primary correspondence or independent eyewitness.",
+      "notes": "Deduplicated against item paths and content-research batches 055–074; article body inspected 2026-11-13; no full copyrighted text copied.",
+      "epistemic_level": 1,
+      "summary_researcher": "כתבה משנית מאת אלי טוגר מספרת על אמירה ביחידות ביחס לאברהם ציפל ועל פעילותו להבאת תשמישי קדושה וכתבי חסידות לברית המועצות וממנה. הכרונולוגיה והקשר הסיבתי הם דיווח המחבר ולא אומתו עצמאית."
+    }
+  ]
+}

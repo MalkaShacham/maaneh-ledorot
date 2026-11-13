@@ -201,11 +201,11 @@ search_index={"generated":today,"count":len(search_entries),"entries":sorted(sea
 # Preserve an item-level reconciliation audit for the latest manual content batch.
 # This makes AID-level deduplication and answer eligibility inspectable without
 # downloading the oversized public search index.
-batch074_path=ROOT/"data/items/content-research-batch-074-2026-11-13.json"
-if batch074_path.exists():
+batch075_path=ROOT/"data/items/content-research-batch-075-2026-11-13.json"
+if batch075_path.exists():
     try:
-        batch074=json.loads(batch074_path.read_text(encoding="utf-8"))
-        target_aids=[str(r.get("aid")) for r in batch074.get("records",[]) if isinstance(r,dict) and r.get("aid")]
+        batch075=json.loads(batch075_path.read_text(encoding="utf-8"))
+        target_aids=[str(r.get("aid")) for r in batch075.get("records",[]) if isinstance(r,dict) and r.get("aid")]
         audit=[]
         by_aid={aid:[] for aid in target_aids}
         for fp in items:
@@ -246,13 +246,13 @@ if batch074_path.exists():
                 } if selected else {"present":False}
             })
         state.setdefault("development_recovery",{})["last_reconciliation"]={
-            "batch_id":"074","generated":today,"batch_record_count":len(target_aids),
+            "batch_id":"075","generated":today,"batch_record_count":len(target_aids),
             "answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),
             "selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")}),
             "items":audit
         }
     except Exception as exc:
-        state.setdefault("development_recovery",{})["last_reconciliation"]={"batch_id":"074","generated":today,"error":str(exc)}
+        state.setdefault("development_recovery",{})["last_reconciliation"]={"batch_id":"075","generated":today,"error":str(exc)}
 
 print("search_index_count",len(search_entries))
 

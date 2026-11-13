@@ -370,8 +370,10 @@ function patternSynthesisIntegrity(model){
   else if(e._independent_witness!==false&&!derived)families.add(String(e.evidence_family_id));
  }
  const minNumbers=isDailyRoutine?3:isTzedakah?3:2,minIndependentFamilies=isDailyRoutine?1:isTzedakah?3:2;
- const tzedakahClaimsValid=!isTzedakah||(Array.isArray(s.claims)&&s.claims.length>=3&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator))&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
- const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&tzedakahClaimsValid;
+ const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=3&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
+ const dailyClaimsValid=!isDailyRoutine||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
+ const tzedakahClaimsValid=!isTzedakah||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
+ const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid;
  return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,attribution:s.attribution||null};
 }
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}

@@ -465,6 +465,11 @@ const restored5100487=idx.entries.find(x=>String(x.aid)==='5100487');
 assert(restored5100487&&restored5100487.has_content_evidence,'AID 5100487 must be exposed as one canonical content-bearing item, not only buried in a volume index');
 assert.equal(restored5100487.evidence_family_id,'igrot-letter-5719-2-adar-ii-ו׳תשמא-aid5100487');
 assert(restored5100487.response_propositions.length>=4);
+const batch075Aids=[4783853,4812732,4812673,5100383,5100452,5100585,5100260,79705];
+for(const aid of batch075Aids){const item=idx.entries.find(e=>String(e.aid)===String(aid));assert(item&&item.status==='Verified'&&item.has_content_evidence===true,`batch 075 source ${aid} must be content-verified`);assert(item.proposition_origin==='source_grounded_paraphrase'&&item.proposition_verbatim===false&&item.proposition_verification==='source_text_inspected'&&item.proposition_source_locator,`batch 075 source ${aid} must have inspected source-grounded propositions`);}
+const englishNarrative=idx.entries.find(e=>String(e.aid)==='79705');assert(englishNarrative&&englishNarrative.independent_witness===false&&String(englishNarrative.primary_secondary_status||'').includes('Secondary published narrative'),'English AID 79705 must remain secondary and non-independent');
+const yiddishLetter=idx.entries.find(e=>String(e.aid)==='5100585');assert(yiddishLetter&&yiddishLetter.language==='Yiddish','AID 5100585 must retain its Yiddish language label');
+const secretary=idx.entries.find(e=>e.id==='secretariat-letter-5357574-5719-12-sivan'),rebbe5357574=idx.entries.find(e=>String(e.aid)==='5357574');assert(secretary&&rebbe5357574&&secretary.evidence_family_id!==rebbe5357574.evidence_family_id,'AID 5357574 secretariat appendix must remain a separate Evidence Family');assert(String(secretary.primary_secondary_status||'').includes('not the Rebbe'),'secretariat appendix must not be attributed to the Rebbe');
 const dailyRoutineQ='מה הדפוס החוזר באיגרות לגבי סדרי לימוד ותפילה בחיי היום יום?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,dailyRoutineQ,{mode});
@@ -473,6 +478,9 @@ for(const mode of ['regular','researcher']){
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': translations or aliases must not inflate the daily routine family count');
  for(const aid of [4994198,4812708,5100391]) assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+': daily routine synthesis must include AID '+aid);
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every daily routine claim needs claim-local citations');
+ assert(m.synthesis?.claims?.length>=3,mode+': daily routine synthesis must expose claim-level comparisons');
+ assert(m.synthesis.claims.every(c=>c.source_numbers.length>0&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number))),mode+': daily routine synthesis claims must carry source-local body locators');
+ assert(m.pattern_synthesis_integrity?.valid===true,mode+': daily routine synthesis must pass integrity validation');
  assert(m.citation_entailment.every(x=>x.valid),mode+': daily routine citations must entail their cited propositions');
  assert(m.context_boundary.every(x=>x.valid),mode+': daily routine synthesis must preserve witness-local context');
  if(mode==='researcher'){
