@@ -485,6 +485,13 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('התמודדות עם קשיים ומכשולים')){
+  if(e.status!=='Verified'||e._independent_witness===false)return{score:0,support:'insufficient_specific_evidence',reasons:['difficulty-pattern synthesis requires an independently verified witness']};
+  const supportingProps=arr(e.response_propositions).filter(supportsDifficultyPattern);
+  if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['no inspected proposition links a challenge with a constructive response']};
+  const score=12+Math.min(4,supportingProps.length*2);
+  return{score,support:'direct_support',reasons:['inspected proposition connects a challenge with a constructive response'],supportingProps};
+ }
  if(u.topics.includes('בריאות בחופשה וחיזוק הנשמה')&&(!containsTerm(body,'הבראת הגוף')||!containsTerm(body,'שיעור לימוד')))return{score:0,support:'insufficient_specific_evidence',reasons:['vacation-health answer requires both bodily recovery and the documented added study action']};
  if(u.topics.includes('מניעת הריון בסיכון רפואי')&&!arr(e.response_propositions).some(p=>containsTerm(p,'סכנה')&&containsTerm(p,'הריון')&&containsTerm(p,'רב')))return{score:0,support:'insufficient_specific_evidence',reasons:['historical contraception evidence must include the medical-risk context and referral to a halachic authority']};
  if(u.topics.includes('פרויקט תניא והפצת המעיינות')&&!arr(e.response_propositions).some(p=>containsTerm(p,'פרויקט תניא')&&containsTerm(p,'הפצת המעיינות')))return{score:0,support:'insufficient_specific_evidence',reasons:['Tanya-project answer requires explicit project and dissemination language in the same witness']};
@@ -694,7 +701,7 @@ export function propositionRelevance(e,u){
  if(u.intent==='circumstances')score+=3;if(u.intent==='guidance'&&supportingProps.length)score+=3;if(u.intent==='historical'&&e.date)score+=2;if(u.intent==='bibliographic'&&(e.source_url||e.provenance||e.witness_provenance))score+=2;
  return{score,support:score>=6?'direct_support':'contextual_support',reasons:[`topic=${topicHit}`,`specific=${rawHit}`,`supporting_propositions=${supportingProps.length}`],supportingProps};
 }
-export function retrieveEvidence(index,q,{limit=36,threshold=6,maxPerFamily=1}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed);const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
+export function retrieveEvidence(index,q,{limit=36,threshold=6,maxPerFamily=1}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)+(understanding.topics.includes('התמודדות עם קשיים ומכשולים')&&e.status==='Verified'&&e._independent_witness!==false&&arr(e.response_propositions).some(supportsDifficultyPattern)?50:0)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed);const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
    proposition-level relevance. Novelty cannot rescue a lexical-only result. */
 const familyCounts=new Map(),hits=[],remaining=reranked.slice();
 const typeCount=new Map(),periodCount=new Map();
