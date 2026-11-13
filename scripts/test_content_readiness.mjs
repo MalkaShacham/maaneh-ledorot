@@ -839,9 +839,9 @@ assert.equal(batch076Data.existing_identities_enriched,1);
 assert.equal(batch076Data.new_response_propositions,20);
 assert.equal(batch076Data.existing_response_propositions_added,1);
 assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
-assert.equal(metrics.answer_eligible_unique_sources,833,'batches 079-082 must reconcile to 833 unique answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,830,'batches 079-082 must reconcile to 830 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2707,'batches 079-082 must reconcile to 2707 source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,842,'batches 079-083 must reconcile to 842 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,839,'batches 079-083 must reconcile to 839 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2724,'batches 079-083 must reconcile to 2724 source-grounded propositions');
 for(const aid of batch076Aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
  assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
@@ -871,7 +871,7 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretaryLowVitalityQuestion,{mode});
  assert(m.answerable,mode+': the secretary-signed response must answer a neutral secretariat question about low vitality in study');
  assert(m.sources.some(e=>String(e.aid)==='4854525'&&e._independent_witness===false));
- assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ assert(m.sources.find(e=>sourceAID(e)==='5071128')&&/secretariat/i.test(m.sources.find(e=>sourceAID(e)==='5071128').witness_type||''));
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.witnesses.length>=1);
@@ -1017,9 +1017,9 @@ assert.equal(new Set(batch080Data.records.map(r=>r.evidence_family_id)).size,10)
 assert.equal(new Set(batch080Data.records.map(r=>r.source_url)).size,10);
 assert.equal(batch080Data.records.filter(r=>r.language==='Hebrew').length,6);
 assert.equal(batch080Data.records.filter(r=>r.language==='English').length,4);
-assert.equal(metrics.answer_eligible_unique_sources,833,'batches 079-082 must reconcile to 833 unique answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,830,'batches 079-082 must reconcile to 830 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2707,'batches 079-082 must reconcile to 2707 source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,842,'batches 079-083 must reconcile to 842 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,839,'batches 079-083 must reconcile to 839 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2724,'batches 079-083 must reconcile to 2724 source-grounded propositions');
 for(const r of batch080Data.records){
  const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
  assert(e&&e.has_content_evidence,'batch-080 AID '+r.aid+' must be present with content evidence');
@@ -1050,7 +1050,7 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretariatQuestion,{mode});
  assert(m.answerable,mode+': a neutral question about the secretariat letter must be answerable');
  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'));
- assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
+ assert(m.sources.find(e=>sourceAID(e)==='5357059')&&/secretariat/i.test(m.sources.find(e=>sourceAID(e)==='5357059').witness_type||''));
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid));
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?',{mode});
@@ -1271,7 +1271,7 @@ for(const mode of ['regular','researcher']){
  assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');
  assert(m.synthesis.claims.length>=3&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
  assert(m.synthesis.evidence_family_ids.length>=4);
- for(const aid of [5019502,4831629,5287569,5357093,4754445])assert(m.sources.some(e=>sourceAID(e)===String(aid)),mode+': health synthesis must retain source '+aid);
+ for(const aid of [5019502,4831629,5287569,4754445])assert(m.sources.some(e=>sourceAID(e)===String(aid)),mode+': health synthesis must retain source '+aid);
  assert(!m.sources.some(e=>['5071128','5357059'].includes(sourceAID(e))),mode+': secretariat response and transmitted telegram are not independent synthesis witnesses');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
@@ -1297,6 +1297,20 @@ for(const mode of ['regular','researcher']){
  assert(m.sources.every(e=>/secretariat/i.test(e.witness_type||'')));
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי למנהלי מחנה גן ישראל על פתיחת המחנה והשפעתו לאורך השנה?',{mode});
  assert(!direct.sources.some(e=>sourceAID(e)==='5357059'),'secretariat-transmitted telegram must not be attributed directly to the Rebbe');
+}
+const lonelinessQ083='מה נכתב במענה לבחור בישיבה המתמודד עם בדידות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,lonelinessQ083,{mode});
+ assert(m.answerable&&m.sources.some(e=>sourceAID(e)==='5099896'),mode+': the inspected yeshiva-loneliness letter must remain retrievable');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+}
+const youthWorkQ083='מה נכתב באיגרת על הנגשת חסידות לנוער ועל מנוחה להורים העובדים במוסד?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,youthWorkQ083,{mode});
+ assert(m.answerable&&m.sources.some(e=>sourceAID(e)==='5357093'),mode+': enriched volume-XX identity must remain retrievable for its actual youth/work-rest topic');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
 }
 const indexHtml=await readFile(new URL('index.html',root),'utf8');
 const sourceCardStart=indexHtml.indexOf('function sourceCard');

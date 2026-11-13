@@ -416,3 +416,10 @@ AID 4812708's seven existing paraphrases include the conditional statement that,
 - Boundaries: AID 4854534 remains a fragment with missing context; AID 5071128 is a secretary-signed response; AID 5357059 is a secretary-transmitted telegram copy with a printed signature and a conflicting volume label, so no volume is asserted. No autograph or incoming letter was inspected. No full text was copied and no access control was bypassed. No new English independent witness was added; the batch contains eight Hebrew and one Yiddish body.
 - Retrieval changes add a dedicated multi-family health/body-care synthesis with claim-level locators, distinct witness families, explicit non-Rebbe system attribution, and researcher-mode evidence mapping. Secretariat responses and telegram copies remain excluded from direct-Rebbe-authorship questions.
 - Batch 082 reconciliation was corrected to the measured CI totals 833/830/2707 (the earlier 2704 projection was short by three already-recorded propositions, not by new sources). Batch 083 expected increment: +9 answer-eligible families, +9 content-verified families, +17 propositions; expected branch totals after batches 079–083: 842/839/2724. These are pending the new CI reconciliation and merge.
+
+
+### CI correction after batch 083 commit
+
+- Run 43529414167 regenerated the index and reconciled batch 083 exactly: 842 answer-eligible unique Evidence Families, 839 content-verified families, 2,724 propositions; variance zero. The structural answer-quality gate also passed with no warnings.
+- The first content-readiness test failure was stale hard-coded totals still referring to batches 079–082 (833/830/2707). Updated those assertions to include batch 083 (842/839/2724). This was test drift, not a reconciliation or source-count variance.
+- Tightened health synthesis retrieval to draw only from inspected, independent letter families across the full index; secretariat responses and telegram copies remain separately retrievable but excluded from direct-author synthesis. Added targeted retrieval regressions for the yeshiva-loneliness and youth/work-rest letters.

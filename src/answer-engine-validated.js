@@ -374,7 +374,7 @@ function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
  const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation',isHealth=s.topic==='bodily_health_and_divine_service';
  for(const n of numbers){
-  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isHealth?supportsBodilyHealthSynthesisProposition:supportsDifficultyPattern,supported=!!e&&arr(e._supporting_propositions).some(supportFn);
+  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isHealth?supportsBodilyHealthSynthesisProposition:supportsDifficultyPattern,supported=!!e&&(arr(e._supporting_propositions).some(supportFn)||(isHealth&&arr(e.response_propositions).some(supportFn)));
   const derived=!!e&&isDerived(e);
   if(!e||!supported||!e.evidence_family_id)unsupported.push(n);
   else if(e._independent_witness!==false&&!derived)families.add(String(e.evidence_family_id));
