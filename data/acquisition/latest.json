@@ -160,77 +160,21 @@
     }
   },
   "earlier_manual_web_review": {
-    "reviewed_at": "2026-11-13T14:29:52+02:00",
+    "reviewed_at": "2026-11-13T14:02:34+02:00",
     "status": "completed",
-    "batch_id": "073",
-    "reviewed_item_count": 13,
-    "source_bodies_inspected": 13,
-    "new_source_identities": 11,
-    "new_rebbe_letter_identities": 10,
-    "new_secretariat_document_identities": 1,
+    "batch_id": "072",
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 9,
+    "new_source_identities": 8,
     "new_metadata_only_identities": 0,
-    "duplicate_alias_identities": 1,
     "existing_identities_enriched": 1,
     "existing_identities_rechecked": 1,
     "existing_identities_canonicalized": 0,
-    "new_paraphrase_entries": 28,
+    "new_paraphrase_entries": 17,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 29,
-    "answer_eligible_source_families_added": 11,
-    "blocked_candidate_count": 2,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-        "alternate_url": "https://www.chabad.org/torah-texts/4666220/page/default.htm",
-        "reason": "Both direct public-reader attempts returned an internal error; no body text was available. No access-control bypass or crawler retry was attempted."
-      },
-      {
-        "aid": 5357139,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5357139/jewish/page.htm",
-        "reason": "Only a short continuation fragment and editorial note were visible; the excerpt did not support a substantive bounded proposition and was excluded."
-      }
-    ],
-    "excluded_candidates": [],
-    "method": "Manual public web search/open. Ten new Hebrew/Yiddish Rebbe-attributed letter bodies and one separate secretariat letter were inspected; one duplicate reprint and one existing Hebrew letter were also inspected. No crawler retry, access-control bypass or full-text copying.",
-    "deduplication_check": "The ten new Rebbe-letter AIDs and the secretariat document were checked against recent content batches 055–072, bulk-indexed item files, the review queue and relevant volume indexes (volumes 1, 3, 4, 9, 18 and 21). No AID/URL duplicate was found for the ten new Rebbe letters. AID 5413573 was discovered to be a publisher-identified duplicate of AID 4854544 and linked to the same Evidence Family. The public-search-index file itself could not be read directly because the connector returned an empty oversized-file response; post-commit reconciliation is the authoritative final dedup check.",
-    "source_languages": [
-      "Hebrew",
-      "Yiddish"
-    ],
-    "source_types": [
-      "published Hebrew correspondence",
-      "published Yiddish correspondence",
-      "secretariat correspondence",
-      "letter transcribed from photograph",
-      "circular letter",
-      "duplicate reprint alias"
-    ],
-    "limitations": [
-      "Incoming correspondence is absent from these pages; context_status remains partial.",
-      "No autograph, physical photograph or original secretariat copy was independently inspected; Verified is limited to the visible publisher text.",
-      "AID 5413029 and AID 4872259 are signed by a secretary in the Rebbe's name; the publisher attribution is recorded, but no autograph authentication is claimed.",
-      "AID 5357369, AID 4731085 and AID 5357544 are identified by the publisher as transcribed from photographs; the photographs were not inspected.",
-      "AID 4730903 contains copied prior instructions attributed to the Previous Rebbe; only the current Rebbe's own comments are paraphrased.",
-      "AID 4731008 was sent to multiple recipients at different dates; identical copies must join one Evidence Family.",
-      "AID 5357574 contains a separate secretariat letter; it is indexed as a separate source and none of its propositions are attributed to the Rebbe.",
-      "AID 5413573 is a duplicate reprint of AID 4854544; its conflicting displayed date is retained as publisher metadata, not a second event.",
-      "AID 4994478 is a historical analysis of one ship-operation scenario and is not a general contemporary halachic ruling.",
-      "Health-related passages in AID 5357369 and AID 5357544 are historical personal correspondence, not medical advice."
-    ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 752,
-      "content_verified_unique_sources": 749,
-      "answer_eligible_propositions": 2527
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 763,
-      "content_verified_unique_sources": 760,
-      "answer_eligible_propositions": 2556
-    }
+    "total_new_paraphrase_entries": 18,
+    "answer_eligible_source_families_added": 8,
+    "note": "Preserved summary of the previous manual review; detailed blockers and limitations remain in the earlier acquisition record."
   },
   "earlier_manual_web_review_2": {
     "reviewed_at": "2026-11-13T12:15:00+02:00",
