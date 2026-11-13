@@ -825,7 +825,15 @@ function isHebrewSource(e){
 function dailyRoutinePracticeCount(source){
  const body=norm(arr(source?.response_propositions).join(' '));
  const weighted=[['קריאת שמע',5],['לימוד',4],['במשך היום',4],['למחרת',3],['תהילים',3],['תפילה',3],['צדקה',2],['תפילין',2],['חומש',2],['טלית קטן',2],['ציצית',2]];
- return weighted.reduce((score,[term,weight])=>score+(body.includes(term)?weight:0),0)+(['יומית','יומי','בכל יום','לפני השינה','לפני קריאת שמע'].some(term=>body.includes(term))?2:0);
+ const patternBonus=(body.includes('קריאת שמע')&&body.includes('לימוד')?16:0)+(body.includes('תהילים')&&body.includes('חומש')?12:0)+(body.includes('צדקה')&&body.includes('תהילים')&&body.includes('תפילין')?20:0);
+ return weighted.reduce((score,[term,weight])=>score+(body.includes(term)?weight:0),0)+patternBonus+(['יומית','יומי','בכל יום','לפני השינה','לפני קריאת שמע'].some(term=>body.includes(term))?2:0);
+}
+function dailyRoutineSignature(source){
+ const body=norm(arr(source?.response_propositions).join(' '));
+ if(body.includes('קריאת שמע')&&body.includes('לימוד'))return 'bedtime_shema_study';
+ if(body.includes('תהילים')&&body.includes('חומש'))return 'morning_psalms_chumash';
+ if(body.includes('צדקה')&&body.includes('תהילים')&&body.includes('תפילין'))return 'charity_psalms_tefillin';
+ return 'other';
 }
 function supportsDailyStudyPrayerRoutine(source){
  const body=norm(arr(source?.response_propositions).join(' '));
@@ -1052,10 +1060,25 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(anniversaryBlessingQuestion){const priority=usable.filter(e=>supportsWeddingAnniversaryBlessing(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(businessSynagogueQuestion){const priority=usable.filter(e=>supportsBusinessExpansion(e)||supportsSynagogueWellsprings(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(dailyStudyPrayerQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a)||propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score);}
- const queryBudget=dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,16),claims:Math.max(budget.claims,16)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion||tzedakahSynthesisQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
+ const queryBudget=dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,20),claims:Math.max(budget.claims,20)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion||tzedakahSynthesisQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
  const candidates=answerEvidence.slice(0,queryBudget.sources),synthesized=synthesizeClaims(candidates,understanding,queryBudget.claims),initialCoverage=coverageFor(candidates,understanding);
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
- const retained=retainCitedSources(candidates,synthesized),selected=retained.sources,claims=retained.claims,coverage=coverageFor(selected,understanding);
+ const retained=retainCitedSources(candidates,synthesized);
+ let selected=retained.sources.slice(),claims=retained.claims.slice();
+ if(dailyStudyPrayerQuestion){
+  const signatures=new Set(selected.map(dailyRoutineSignature).filter(s=>s!=='other'));
+  for(const e of candidates){
+   const signature=dailyRoutineSignature(e);
+   if(signature==='other'||signatures.has(signature)||selected.some(x=>familyKey(x)===familyKey(e)))continue;
+   const proposition=arr(e._supporting_propositions).find(supportsDailyStudyPrayerRoutine);
+   if(!proposition)continue;
+   const sourceNumber=selected.length+1,propIndex=arr(e.response_propositions).findIndex(p=>String(p).trim()===String(proposition).trim());
+   const locator=arr(e.response_proposition_locators)[propIndex]||e.proposition_source_locator||e.source_locator||null;
+   selected.push(e);signatures.add(signature);
+   claims.push({topic:'daily_study_prayer_routine',text:String(proposition),source_numbers:[sourceNumber],evidence_family_ids:[familyKey(e)],witnesses:[{source_number:sourceNumber,source_id:e.id||e.aid||null,source_title:e.title||null,evidence_family_id:familyKey(e),source_locator:locator,proposition:String(proposition),independent_witness:e._independent_witness!==false}],documented_circumstances:arr(e.documented_circumstances),conditions_or_qualifications:arr(e.conditions_or_qualifications),audiences:arr(e.audience)});
+  }
+ }
+ const coverage=coverageFor(selected,understanding);
  const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=dailyStudyPrayerQuestion?buildDailyRoutineSynthesis(selected):tzedakahSynthesisQuestion?buildTzedakahSynthesis(selected):buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
  if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims),independentWitnesses=selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').length,derivedNonIndependent=selected.length-independentWitnesses;base.research={evidence_families:selectedIndependentFamilies.size,evidence_integrity:{independent_witnesses:independentWitnesses,derived_non_independent:derivedNonIndependent},verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,pattern_synthesis:synthesis||null,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;
