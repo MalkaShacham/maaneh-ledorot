@@ -13,7 +13,7 @@ const TOPICS={
  'ניצול הזמן והתגברות על עצלות':['ניצול הזמן','בזבוז זמן','עצלות','מתנת הזמן','זמן ויכולת שכלית','overcome laziness','waste time','gift of time'],
  'ניהול מחשבות והסחת הדעת':['ניהול מחשבות','הסחת דעת','להסיח דעת','מחשבות מטרידות','חזרה לבעיה בבהירות','rumination','dismiss problems from the mind','fresh mind'],
  'השקעה בלימוד מקצוע ובעתיד':['לימוד מקצוע','השקעה בעתיד','השקעה ארוכת טווח','לימוד מקצועי','תכנון עתיד','professional training','investment in future','greater achievement'],
- 'אחריות חינוכית והשפעה על הזולת':['אחריות תלמידי הישיבות','חינוך בני נוער','השפעה על הזולת','לקרב ולחזק','חינוך כשר','בן חכם ובן רשע','spiritual charity','influence others','education of children'],
+ 'אחריות חינוכית והשפעה על הזולת':['אחריות תלמידי הישיבות','חינוך בני נוער','השפעה על הזולת','לקרב ולחזק','חינוך כשר','בן חכם ובן רשע','spiritual charity','influence others','education of children','השפעה על יהודי אחד','השפעה על אדם אחד','חינוך ילדים יהודים','חינוך ילדי עולים','הצלת ילדים בארץ ישראל','פעולה מעשית ולא דיבור','מעשה ולא דיבור','חינוך והפצת תורה','influence one individual','immigrant children education','practical action in outreach'],
  'חינוך וערכים ציבוריים':['ערכים מוסריים','ערכים אתיים','חינוך ציבורי','חינוך אזרחי','education and moral values','moral and ethical values'],
  'ראש השנה וערך הזמן':['לייקר את הזמן','זמן בראש השנה','ראש השנה כולל בתוכו','חיות כל ימות השנה','value of time','Rosh Hashanah and time'],
  'פרנסה ושמירת שבת':['קושי בפרנסה','קושי להתפרנס','להתפרנס','מקור פרנסה','עבודה בשבת','עבודה אסורה בשבת','שמירת שבת','פרנסה מותרת וכשרה','livelihood and Shabbat observance','work on Shabbat','kosher livelihood'],

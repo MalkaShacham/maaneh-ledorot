@@ -489,9 +489,9 @@ for(const [aid,minProps,family] of batch066Required){
  assert.equal(e.canonical_file,'data/items/content-research-batch-066-2026-11-13.json');
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')),'inspected AID '+aid+' must not remain in the review queue');
 }
-assert.equal(metrics.answer_eligible_unique_sources,744,'batch-071 cumulative corpus must expose 744 unique Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,741,'batch-071 cumulative corpus must expose 741 scoped content-verified families');
-assert.equal(metrics.answer_eligible_propositions,2509,'batch-071 cumulative corpus must expose 2509 distinct inspected propositions');
+assert.equal(metrics.answer_eligible_unique_sources,752,'batch-071 cumulative corpus must expose 744 unique Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,749,'batch-071 cumulative corpus must expose 741 scoped content-verified families');
+assert.equal(metrics.answer_eligible_propositions,2527,'batch-071 cumulative corpus must expose 2509 distinct inspected propositions');
 const batch066Questions=[
  ['מה נכתב באיגרת על חיפוש שידוך בדרכי תורה?',5019175],
  ['כיצד לחדש קביעות עתים ולימוד בצוותא אחרי הפסק?',5019408],
@@ -574,9 +574,9 @@ const enriched5100487=idx.entries.find(e=>String(e.aid)==='5100487');
 assert(enriched5100487&&enriched5100487.response_propositions.some(p=>p.includes('מאמינים בני מאמינים')),'existing AID 5100487 must retain the newly inspected rational-proof distinction');
 assert(enriched5100487.proposition_source_locator.includes('300–304'),'AID 5100487 must expose the new proposition locator');
 assert.equal(enriched5100487.canonical_file,'data/items/chabad-letter-5100487.json');
-assert.equal(metrics.answer_eligible_unique_sources,744,'batch-071 adds ten distinct Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,741,'batch-071 adds ten scoped content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2509,'batch-071 adds 23 distinct source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,752,'batch-071 adds ten distinct Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,749,'batch-071 adds ten scoped content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2527,'batch-071 adds 23 distinct source-grounded propositions');
 
 const disseminationSynthesis='מה כתב הרבי על הפצת המעיינות והפצת פנימיות התורה?';
 for(const mode of ['regular','researcher']){
@@ -619,3 +619,11 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_map.length>0);
  }else assert.equal(m.research,undefined);
 }
+
+
+// Batch 072: eight translated English correspondence items plus one full-body enrichment.
+const batch072Required=[[2278254,2,'pastoral-letter-5710-14-tammuz-2278254'],[2278256,3,'pastoral-letter-5710-19-tammuz-2278256'],[2278257,2,'pastoral-letter-5710-20-tammuz-2278257'],[2278259,2,'pastoral-letter-5710-21-tammuz-2278259'],[2278260,2,'pastoral-letter-5710-21-tammuz-2278260'],[2278261,2,'pastoral-letter-5710-21-tammuz-2278261'],[2278262,2,'pastoral-letter-5710-21-tammuz-2278262'],[2278265,2,'pastoral-letter-5710-25-tammuz-2278265']];
+for(const [aid,minProps,family] of batch072Required){const e=idx.entries.find(x=>String(x.aid)===String(aid));assert(e&&e.has_content_evidence,'batch-072 AID '+aid+' must have inspected publisher body text');assert.equal(e.status,'Verified');assert.equal(e.evidence_family_id,family);assert(e.response_propositions.length>=minProps);assert.equal(e.language,'English');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope);assert.equal(e.context_status,'partial');assert.equal(e.independent_witness,false,'translated English item must not be treated as independent');assert.equal(e.translation_of_evidence_family_id,family);assert.equal(e.canonical_file,'data/items/content-research-batch-072-2026-11-13.json');assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));}
+const enriched2187392=idx.entries.find(e=>String(e.aid)==='2187392');assert(enriched2187392&&enriched2187392.response_propositions.some(p=>p.includes('שמחה פנימית')));assert(enriched2187392.proposition_source_locator.includes('268–289'));assert.equal(enriched2187392.evidence_family_id,'pastoral-letter-5714-10-kislev-2187392');assert.equal(enriched2187392.canonical_file,'data/items/content-research-batch-070-2026-11-13.json');
+assert.equal(metrics.answer_eligible_unique_sources,752);assert.equal(metrics.content_verified_unique_sources,749);assert.equal(metrics.answer_eligible_propositions,2527);
+const educationInfluenceQ='מה כתב הרבי על השפעה על יהודי אחד ועל חינוך ילדים יהודים במעשה ולא בדיבור?';for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,educationInfluenceQ,{mode});assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');assert(m.sources.some(e=>String(e.aid)==='2278256'));assert(m.sources.some(e=>String(e.aid)==='2278261')||m.sources.some(e=>String(e.aid)==='2278254'));assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research&&m.research.evidence_families>=2);assert.equal(m.research.witnesses.length,m.sources.length);assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));}else assert.equal(m.research,undefined);}

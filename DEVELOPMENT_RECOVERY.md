@@ -205,3 +205,20 @@
 - **Expected metric effect before reconciliation:** answer_eligible_unique_sources 719 → 734 if all 15 newly verified Evidence Families pass readiness. This is an expectation only until reconciliation writes and public metrics are reread.
 - **Crawler:** no retry of the blocked hourly acquisition crawler; no access-control bypass; no full copyrighted text copied.
 
+
+
+## 2026-11-13 — Batch 072: eight translated letters and one existing identity enrichment
+
+Manual public-web inspection was completed on eight new item-level publisher pages (AIDs 2278254, 2278256, 2278257, 2278259, 2278260, 2278261, 2278262, 2278265; English Letters 642–649) and the complete published body of existing AID 2187392. The new letters contribute 17 non-verbatim, source-grounded Hebrew propositions. AID 2187392 gained one additional proposition based on lines 282–289. The new English pages explicitly credit Eli Touger as translator; each is marked `independent_witness=false` and assigned to one Evidence Family for the underlying letter. Any original-language witness found later must join that family rather than increase the family count.
+
+| Measure | Before | Expected after reconciliation |
+|---|---:|---:|
+| Answer-eligible unique Evidence Families | 744 | 752 |
+| Content-verified unique Evidence Families | 741 | 749 |
+| Distinct answer-eligible propositions | 2,509 | 2,527 |
+
+The new bodies cover North African Jewish education and emissary activity, the value of influencing one individual, practical action in outreach, fixed and group study, immigrant-child education, use of vacation time, conditional housing guidance, and pregnancy-specific correspondence. Retrieval regressions were added for multi-source educational influence/action synthesis in regular and researcher modes, with claim-local citations, witness-level locators, citation entailment and context-boundary checks.
+
+Blocked alternatives were not counted: nine AIDs redirected to rewritten Torah Texts shells without inspectable bodies (4666240, 4666241, 4646121, 4646123, 4646126, 4646127, 4646128, 4646129, 4666316); nine direct pages were inaccessible through the public reader (2308526, 4855474, 5413720, 5287861, 5054354, 2306904, 2307741, 2307902, 2308550); and adjacent Letter 650 (AID 2278266) returned HTTP 429. The run switched to accessible direct publisher pages for Letters 642–649. No blocked crawler was retried, no access controls were bypassed, and no full copyrighted text was copied. Exact repository search and the review queue contained no matching new AIDs; the connector could not return the oversized public-search-index file, so reconciliation remains the final duplicate check.
+
+Content review is complete; Git commit, reconciliation, commit-bound `test_content_readiness.mjs`, Actions and Pages publication checks remain pending at this point.
