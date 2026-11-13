@@ -79,7 +79,7 @@ Citation אינו קישוט. לפני הצגה יש לבדוק: אילו מיל
 ## 7. Dedup לפני synthesis
 Dedup נעשה לפני ספירת תמיכה ולפני ניסוח דפוס:
 `item → witness → event → Evidence Family`.
-שני URL-ים לאותו פרסום, תרגום של אותו מקור, או פרסום מאוחר של אותו witness אינם שתי ראיות עצמאיות.
+שני URL-ים לאותו פרסום, תרגום של אותו מקור, או פרסום מאוחר של אותו witness אינם שתי ראיות עצמאיות. מצב רגיל מציג לכל היותר פריט אחד מכל Evidence Family; מצב חוקר רשאי להציג כמה פריטים מובחנים מאותה משפחה לצורך רצף והקשר, אך המשפחה נספרת פעם אחת בלבד ואינה יכולה לבסס לבדה דפוס רוחבי.
 
 ## 8. Evaluation gate
 כל שינוי במענה נבדק מול `data/evaluation/answer-quality-regression.json` בשני המצבים. בדיקות החובה: relevance, answerability, citation entailment, source diversity, hallucination, researcher-depth differential.

@@ -29,17 +29,32 @@ def answer_eligible(entry):
 def summarize(entries):
     usable = [e for e in entries if answer_eligible(e)]
     identity = lambda e: str(e.get("evidence_family_id") or e.get("aid")
-                             or e.get("source_url") or e["key"])
-    unique = {identity(e): e for e in usable}
+                             or e.get("source_url") or e.get("key"))
+    families = {}
+    for entry in usable:
+        families.setdefault(identity(entry), []).append(entry)
+
+    def proposition_key(entry, proposition):
+        normalize = lambda value: " ".join(str(value or "").casefold().split())
+        return (normalize(proposition), normalize(entry.get("documented_circumstances")),
+                normalize(entry.get("conditions_or_qualifications")),
+                normalize(entry.get("audience")))
+
     content_verified = {
-        key: entry for key, entry in unique.items()
-        if (entry.get("canonical_status") or entry.get("status")) == "Verified"
+        key: members for key, members in families.items()
+        if any((entry.get("canonical_status") or entry.get("status")) == "Verified"
+               for entry in members)
     }
+    proposition_count = 0
+    for members in families.values():
+        distinct = {proposition_key(entry, proposition)
+                    for entry in members
+                    for proposition in entry.get("response_propositions", [])
+                    if str(proposition).strip()}
+        proposition_count += len(distinct)
     return {
-        "answer_eligible_unique_sources": len(unique),
+        "answer_eligible_unique_sources": len(families),
         "content_verified_unique_sources": len(content_verified),
-        "answer_eligible_propositions": sum(len(e["response_propositions"])
-                                            for e in unique.values()),
-        "content_readiness_note": "Only evidence accepted by the answer engine; "
-                                 "bibliographic verification and editorial summaries do not count."
+        "answer_eligible_propositions": proposition_count,
+        "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across their member items. Bibliographic verification and editorial summaries do not count."
     }

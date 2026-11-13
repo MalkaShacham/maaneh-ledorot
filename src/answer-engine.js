@@ -222,7 +222,7 @@ const TOPICS={
  'שתי בחינות קריאת שמע':['שתי בחינות בקריאת שמע','שתי הבחינות בקריאת שמע','בחינות קריאת שמע','שער התפילה לאדמו״ר האמצעי','אמרי בינה','two aspects shema'],
  'הפצת ספרים':['מימון','הדפס','הוצאה לאור','הפצת ספר','הדפסת ספר','פרסום הספר','פרסומים תורניים','publication','publishing','printing','book'],
  'העתק שיחות סוכות':['העתק שיחות סוכות','העתקה של שיחות סוכות','שיחות סוכות','Sukkot talks copy'],
- 'מחלקת קה״ת בשנגהי':['מחלקת קה״ת בשנגהי','מחלקת קה״ת','הקמת מחלקת קה״ת','שנגהי','300 עותקים','Shanghai Kehot department','Kehot publishing department'],
+ 'מחלקת קה״ת בשנגהי':['מחלקת קה״ת בשנגהי','מחלקת קה״ת','הקמת מחלקת קה״ת','שנגהי','שנגחאי','הדפסה בשנגחאי','הדפסת ספרים בשנגחאי','תרגום לסינית','ספרים בסינית','קהילה ספרדית בשנגחאי','חינוך יהודי בשנגחאי','300 עותקים','Shanghai Kehot department','Kehot publishing department','Shanghai printing','printing in Shanghai','Chinese translation','Sephardic community education'],
  אמונה:['אמונה','בטחון','faith','belief','trust','emunah','bitachon'],
  'אחדות לאחר מפגש':["אחדות","מפגש משותף","פרידה","חוזרים לבתים","unity after gathering","unity after parting" ],
  'המשך השפעת חג':["השפעת החג","חזרה הביתה","הימים הבאים","להמשיך את ההשפעה","festival influence after returning home" ],
@@ -282,7 +282,7 @@ const TOPICS={
  'הרחבת שיעור חסידות':['תוספת אברכים בשיעור חסידות','הוספת אברכים לשיעור חסידות','להוסיף אברכים לשיעור חסידות','שיעור דא״ח','הרחבת השיעור','הפצת המעיינות','Chassidus class expansion'],
  'מדריך מחנה גן ישראל והשפעה':['מחנה גן ישראל','מדריך במחנה גן ישראל','הרחבת ההשפעה על החניכים','לימוד אישי בנגלה ובחסידות','camp counselor at Gan Israel','personal study and camper influence'],
  'לימוד יומי תחת עומס עבודה':['לימוד יומי תחת עומס עבודה','לימוד חומש וחק לישראל','חומש וחק לישראל','חלוקת הלימוד לפסקאות','חלוקת שיעורי חומש במהלך היום','לימוד בימי החורף הקצרים','טרדת העבודה ולימוד','לימוד בחנות','daily Torah study under work constraints','Chumash and Chok L’Yisrael during work'],
-  'הדפסת ספרי חסידות ותיקוני מהדורות':['הדפסת ספרי חסידות ותיקוני מהדורות','הדפסת ספרי חסידות','הדפסת ספרי הצמח צדק','ספרי הצמח צדק','הדפסת כתבי רבותינו','הדפסת כתבי וספרי רבותינו','קרן להדפסה','קרן להדפסת כתבי רבותינו','קרן להדפסת כתבי וספרי רבותינו','הפצת הנדפסים','הפצת תורת רבותינו','הפצת הספרים','הפצתם','פצתם','השמטות ושינויי נוסח','השמטות ושינויי הנוסח','איסוף השמטות ושינויי נוסח','מילואים ותיקונים לספר השיחות','הוצאת כתבי אדמו״ר נ״ע','publishing chassidic texts and editorial corrections','printing fund and distribution'],
+  'הדפסת ספרי חסידות ותיקוני מהדורות':['הדפסת ספרי חסידות ותיקוני מהדורות','הדפסת ספרי חסידות','הדפסת ספרי הצמח צדק','ספרי הצמח צדק','הדפסת כתבי רבותינו','הדפסת כתבי וספרי רבותינו','קרן להדפסה','קרן להדפסת כתבי רבותינו','קרן להדפסת כתבי וספרי רבותינו','הפצת הנדפסים','הפצת תורת רבותינו','הפצת הספרים','הפצתם','פצתם','השמטות ושינויי נוסח','השמטות ושינויי הנוסח','איסוף השמטות ושינויי נוסח','מילואים ותיקונים לספר השיחות','הוצאת כתבי אדמו״ר נ״ע','דרוקן ספרי חסידות','דרוקן ספרי רבותינו','ספר המאמרים','מאמרי חסידות אין אידיש','אפדרוקן תורה','ספרי רבותינו הקדושים','Chassidic discourses in Yiddish','Sefer HaMaamarim','printing Chassidic books','distribution of Chassidic books','publishing chassidic texts and editorial corrections','printing fund and distribution'],
   'בית רבקה בקשת ויזה וסיוע לפליטים':['בית רבקה בקשת ויזה וסיוע לפליטים','בקשת ויזה באמצעות בית רבקה','בית רבקה תגיש עבורה בקשה','וויזה לארה״ב','פליטים שהגיעו מרוסיה בקיץ תש״ו'],
   'בית רבקה פריז ורישום בית ספר':['בית רבקה פריז ורישום בית ספר','ועד בית הספר לנערות בית רבקה בפריז','בית רבקה בפריז','המוסד נרשם לרשת בתי הספר','תכנית הלימודים הרגילה']
 
@@ -359,6 +359,7 @@ export function understandQuestion(q){
  if(topics.includes('הרחבת שיעור חסידות'))topics=topics.filter(t=>!['חינוך','לימוד חסידות'].includes(t));
  // A specific print/editing/distribution query must not inherit the broad publishing bucket.
  if(topics.includes('הדפסת ספרי חסידות ותיקוני מהדורות'))topics=topics.filter(t=>t!=='הפצת ספרים');
+ if(topics.includes('מחלקת קה״ת בשנגהי'))topics=topics.filter(t=>!['חינוך','הפצת ספרים'].includes(t));
  if(topics.includes('מדריך מחנה גן ישראל והשפעה'))topics=topics.filter(t=>t!=='חינוך');
  // A specific institutional-enrollment question must not inherit the much
  // broader education topic. Otherwise any proposition mentioning a school or
@@ -643,24 +644,24 @@ export function propositionRelevance(e,u){
  if(u.intent==='circumstances')score+=3;if(u.intent==='guidance'&&supportingProps.length)score+=3;if(u.intent==='historical'&&e.date)score+=2;if(u.intent==='bibliographic'&&(e.source_url||e.provenance||e.witness_provenance))score+=2;
  return{score,support:score>=6?'direct_support':'contextual_support',reasons:[`topic=${topicHit}`,`specific=${rawHit}`,`supporting_propositions=${supportingProps.length}`],supportingProps};
 }
-export function retrieveEvidence(index,q,{limit=36,threshold=6}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed);const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
+export function retrieveEvidence(index,q,{limit=36,threshold=6,maxPerFamily=1}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed);const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
    proposition-level relevance. Novelty cannot rescue a lexical-only result. */
-const seen=new Set(),hits=[],remaining=reranked.slice();
+const familyCounts=new Map(),hits=[],remaining=reranked.slice();
 const typeCount=new Map(),periodCount=new Map();
 const sourceType=e=>norm(e.source_class||e.witness_type||'unknown');
 const sourcePeriod=e=>{const m=String(e.date||'').match(/(?:18|19|20)\d{2}/);return m?String(Math.floor(Number(m[0])/10)*10):null;};
 while(hits.length<limit&&remaining.length){
  let best=-1,bestUtility=-Infinity;
  for(let i=0;i<remaining.length;i++){
-  const r=remaining[i],e=r.e,k=familyKey(e);if(seen.has(k))continue;
+  const r=remaining[i],e=r.e,k=familyKey(e),usedCount=familyCounts.get(k)||0;if(usedCount>=maxPerFamily)continue;
   const type=sourceType(e),period=sourcePeriod(e);
-  const utility=r.score+(typeCount.has(type)?-Math.min(5,1.5*typeCount.get(type)):3)
+  const utility=r.score-Math.min(4,1.5*usedCount)+(typeCount.has(type)?-Math.min(5,1.5*typeCount.get(type)):3)
    +(period?(periodCount.has(period)?-Math.min(2,0.5*periodCount.get(period)):1):0);
   if(utility>bestUtility){bestUtility=utility;best=i;}
  }
  if(best<0)break;
  const [r]=remaining.splice(best,1),e=r.e,k=familyKey(e),type=sourceType(e),period=sourcePeriod(e);
- seen.add(k);typeCount.set(type,(typeCount.get(type)||0)+1);
+ familyCounts.set(k,(familyCounts.get(k)||0)+1);typeCount.set(type,(typeCount.get(type)||0)+1);
  if(period)periodCount.set(period,(periodCount.get(period)||0)+1);
  hits.push({...e,_relevance:r.score,_support:r.support,_supporting_propositions:r.supportingProps||[]});
 }
@@ -691,10 +692,13 @@ function synthesizeClaims(selected,u,limit){
    arr(e.documented_circumstances).filter(Boolean).forEach(x=>g.circumstances.add(String(x)));
    arr(e.conditions_or_qualifications).filter(Boolean).forEach(x=>g.conditions.add(String(x)));
    arr(e.audience).filter(Boolean).forEach(x=>g.audiences.add(String(x)));
+   const propositionIndex=arr(e.response_propositions).findIndex(x=>String(x).trim()===p);
+   const propositionLocator=arr(e.response_proposition_locators)[propositionIndex]||e.proposition_source_locator||null;
    g.witnesses.push({source_number:sourceIndex+1,family:familyKey(e),
     provenance:e.witness_provenance||e.source_witness||e.witness_type||null,
-    verification_scope:e.verification_scope||null,status:e.status||null,
-    context_status:e.context_status||'unknown',language:e.language||null});
+    verification_scope:e.verification_scope||null,proposition_source_locator:propositionLocator,
+    proposition_locators:propositionLocator?[propositionLocator]:arr(e.response_proposition_locators).filter(Boolean),
+    status:e.status||null,context_status:e.context_status||'unknown',language:e.language||null});
   }
  }
  // A comparison is useful only when the displayed claim budget contains evidence
@@ -746,7 +750,7 @@ function groupSourceValues(selected,field){
 function researcherAnalysis(selected,claims){
  const supportedBySource=selected.map((_,i)=>claims.map((claim,j)=>claim.source_numbers.includes(i+1)?j+1:null).filter(Boolean));
  return{
-  cases:selected.map((e,i)=>({source_number:i+1,supported_claim_numbers:supportedBySource[i],evidence_family_id:familyKey(e)||null,date:e.date||null,audiences:arr(e.audience).filter(Boolean),documented_circumstances:arr(e.documented_circumstances).filter(Boolean),conditions_or_qualifications:arr(e.conditions_or_qualifications).filter(Boolean),source_class:e.source_class||null,witness_class:classifyWitness(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,pipeline_status:e.status||null,context_status:e.context_status||'unknown',language:e.language||null})),
+  cases:selected.map((e,i)=>({source_number:i+1,supported_claim_numbers:supportedBySource[i],evidence_family_id:familyKey(e)||null,date:e.date||null,audiences:arr(e.audience).filter(Boolean),documented_circumstances:arr(e.documented_circumstances).filter(Boolean),conditions_or_qualifications:arr(e.conditions_or_qualifications).filter(Boolean),source_class:e.source_class||null,witness_class:classifyWitness(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),pipeline_status:e.status||null,context_status:e.context_status||'unknown',language:e.language||null})),
   distinctions:{periods:groupSourceValues(selected,'date'),audiences:groupSourceValues(selected,'audience'),circumstances:groupSourceValues(selected,'documented_circumstances'),conditions:groupSourceValues(selected,'conditions_or_qualifications'),source_classes:groupSourceValues(selected,'source_class'),context_statuses:groupSourceValues(selected,e=>e.context_status||'unknown')}
  };
 }
@@ -761,7 +765,7 @@ function retainCitedSources(selected,claims){
 }
 export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
- const{understanding,hits}=retrieveEvidence(index,q),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean));
+ const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean));
  if(!usable.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  let answerEvidence=usable;
@@ -774,7 +778,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized),selected=retained.sources,claims=retained.claims,coverage=coverageFor(selected,understanding);
  const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};
- if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims);base.research={evidence_families:selectedIndependentFamilies.size,verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
+ if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false).map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims);base.research={evidence_families:selectedIndependentFamilies.size,verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;
 }
 
