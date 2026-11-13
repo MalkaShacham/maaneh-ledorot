@@ -806,7 +806,8 @@ function buildPatternSynthesis(selected,u){
 // across independent evidence families. This conservative gate avoids turning
 // unrelated education cases into a general rule attributed to the Rebbe.
 function crossFamilyPatternEvidence(selected,u){
- const rows=selected.filter(isLetterEvidence).map((e,index)=>({e,index,family:familyKey(e),
+ const patternCandidates=u.topics.includes('התמודדות עם קשיים ומכשולים')?selected.filter(isLetterEvidence):selected;
+ const rows=patternCandidates.map((e,index)=>({e,index,family:familyKey(e),
   props:(e._supporting_propositions?.length?e._supporting_propositions:
    arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u))).map(String)}));
  const matched=new Map(),add=(index,p)=>{if(!matched.has(index))matched.set(index,new Set());matched.get(index).add(p);};
