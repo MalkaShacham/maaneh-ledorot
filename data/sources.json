@@ -1,21 +1,152 @@
 {
-  "project":"מענה לדורות","space":"יקום הרבי","updated":"2026-09-18","method":{"pipeline":["Discovered","Indexed","Parsed","Linked","Verified"],"rule":"No inference is presented as the Rebbe's words. Corpus-level metadata verification does not imply item-level verification."},
-  "corpora":[
-    {"id":"igrot-kodesh","title":"אגרות קודש","type":"letters","status":"Indexed","source_url":"https://he.chabad.org/library/article_cdo/aid/470201/jewish/-.htm","accessed":"2026-09-17"},
-    {"id":"torat-menachem","title":"תורת מנחם – התוועדויות","type":"talks-maamarim-public-letters","status":"Indexed","source_url":"https://he.chabad.org/library/article_cdo/aid/3195479","accessed":"2026-09-17"},
-    {"id":"likkutei-sichos","title":"לקוטי שיחות","type":"edited-talks","status":"Indexed","source_url":"https://he.chabad.org/library/article_cdo/aid/470199/jewish/-.htm","accessed":"2026-09-17"},
-    {"id":"reshimos","title":"רשימות","type":"notes-writings","status":"Indexed","source_url":"https://he.chabad.org/library/article_cdo/aid/2988653","accessed":"2026-09-17"},
-    {"id":"sefer-hamaamarim-melukat","title":"ספר המאמרים מלוקט","type":"maamarim","status":"Indexed","source_url":"https://he.chabad.org/library/article_cdo/aid/3139961/jewish/page.htm","accessed":"2026-09-17"},
-    {"id":"jem","title":"JEM / The Living Archive","type":"audio-video-photo-testimony","status":"Indexed","source_url":"https://videos.jem.tv/dedication?type=the-living-archive","accessed":"2026-09-17"},
-    {"id":"chabad-library","title":"ספריית אגודת חסידי חב״ד","type":"archive-library","status":"Discovered","source_url":"https://www.chabadlibrary.org/","accessed":"2026-09-17"},
-    {"id":"igros-kodesh-english-letters","title":"Igros Kodesh — The English Letters","type":"letters-english-originals-and-dictated-correspondence","status":"Indexed","source_url":"https://www.chabad.org/news/article_cdo/aid/7403003/jewish/For-the-First-Time-Archive-of-the-Rebbes-English-Language-Correspondence-is-Being-Published.htm","accessed":"2026-09-17"},
-    {"id":"igrot-kodesh-hebrewbooks-scan-layer","title":"אגרות קודש — שכבת סריקות מהדורות דפוס","type":"printed-edition-scans","status":"Discovered","source_url":"https://www.hebrewbooks.org/","accessed":"2026-09-17"},
-    {"id":"torah-recordings-igrot-audio-text","title":"Torah Recordings — אגרות קודש audio/text navigation","type":"audio-text-derivative-index","status":"Indexed","source_url":"https://www.torahrecordings.com/rebbe/igroskodesh/","accessed":"2026-09-17"},
-    {"id":"halacha-brura-igrot-catalog","title":"מכון הלכה ברורה — קטלוג אגרות קודש","type":"bibliographic-derivative-index","status":"Indexed","source_url":"https://www.halachabrura.org/library/library1a.htm","accessed":"2026-09-17"},
-    {"id":"rebbesletters-teshura-archive","title":"The Rebbe's Letters — ארכיון התשורות","type":"teshura-derived-letters-written-responses","status":"Indexed","source_url":"https://rebbesletters.com/teshura%20letters.dc","accessed":"2026-09-17"},
-    {"id":"chabad-org-rebbe-video","title":"Chabad.org Video — The Rebbe","type":"video-talks-living-torah-testimony","status":"Indexed","source_url":"https://www.chabad.org/video/default_cdo/channels/true","verified_metadata":"Public Chabad.org Video index exposes a dedicated The Rebbe collection and currently reports 3,901 videos. It separately exposes Living Torah and My Encounter collections; those category counts must not be summed because category overlap has not been excluded.","accessed":"2026-09-17","notes":"High-yield legal discovery layer for item-level video metadata. Individual pages can expose stable aid URLs, event dates, program/disc locators and related-text metadata. Copyright remains with the relevant publisher/JEM; ingest metadata and locators, not bulk protected media or transcripts."},
-    {"id":"sichos-kodesh-audio","title":"Sichos Kodesh Audio","type":"audio-public-addresses","status":"Indexed","source_url":"https://www.chabad.org/therebbe/article_cdo/aid/555068/jewish/5752-1991-1992.htm","verified_metadata":"The public Chabad.org/JEM index describes more than 4,700 audio recordings of the Rebbe's public addresses spanning 1951 through 1992, organized by year/date with stable item pages.","accessed":"2026-09-18","notes":"External inventory only until bounded item-level ingestion. Preserve audio witness identity separately from edited/printed texts and Living Torah video excerpts; same-date records are linkage candidates, not assumed equivalents. Copyrighted audio is not bulk-copied."}
+  "project": "מענה לדורות",
+  "space": "יקום הרבי",
+  "updated": "2026-11-13",
+  "method": {
+    "pipeline": [
+      "Discovered",
+      "Indexed",
+      "Parsed",
+      "Linked",
+      "Verified"
+    ],
+    "rule": "No inference is presented as the Rebbe's words. Corpus-level metadata verification does not imply item-level verification."
+  },
+  "corpora": [
+    {
+      "id": "igrot-kodesh",
+      "title": "אגרות קודש",
+      "type": "letters",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/470201/jewish/-.htm",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "torat-menachem",
+      "title": "תורת מנחם – התוועדויות",
+      "type": "talks-maamarim-public-letters",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/3195479",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "likkutei-sichos",
+      "title": "לקוטי שיחות",
+      "type": "edited-talks",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/470199/jewish/-.htm",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "reshimos",
+      "title": "רשימות",
+      "type": "notes-writings",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2988653",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "sefer-hamaamarim-melukat",
+      "title": "ספר המאמרים מלוקט",
+      "type": "maamarim",
+      "status": "Indexed",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/3139961/jewish/page.htm",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "jem",
+      "title": "JEM / The Living Archive",
+      "type": "audio-video-photo-testimony",
+      "status": "Indexed",
+      "source_url": "https://videos.jem.tv/dedication?type=the-living-archive",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "chabad-library",
+      "title": "ספריית אגודת חסידי חב״ד",
+      "type": "archive-library",
+      "status": "Indexed",
+      "source_url": "https://www.chabadlibrary.org/",
+      "accessed": "2026-11-13",
+      "notes": "On 2026-11-13, five public Igrot Kodesh item pages were reviewed through search-visible Hebrew body excerpts. Direct page opens returned zero readable lines, so item-level records remain context_status=partial and claims are restricted to visible excerpts. One item is explicitly a free Hebrew translation of a Russian letter and is marked non-independent. Corpus-level Indexed status does not imply that all items or full page bodies are verified."
+    },
+    {
+      "id": "igros-kodesh-english-letters",
+      "title": "Igros Kodesh — The English Letters",
+      "type": "letters-english-originals-and-dictated-correspondence",
+      "status": "Indexed",
+      "source_url": "https://www.chabad.org/news/article_cdo/aid/7403003/jewish/For-the-First-Time-Archive-of-the-Rebbes-English-Language-Correspondence-is-Being-Published.htm",
+      "accessed": "2026-11-13",
+      "notes": "Four item-level English translation pages were opened and body lines inspected on 2026-11-13: AIDs 2277919 (Letter 557), 3906834 (Letter 1059), 2278277 (Letter 654) and 2278341 (Letter 689). All are credited to Eli Touger; original Hebrew texts were not inspected. Each translation is a non-independent witness assigned to one Evidence Family for the underlying letter; no translation is counted as a second witness."
+    },
+    {
+      "id": "igrot-kodesh-hebrewbooks-scan-layer",
+      "title": "אגרות קודש — שכבת סריקות מהדורות דפוס",
+      "type": "printed-edition-scans",
+      "status": "Discovered",
+      "source_url": "https://www.hebrewbooks.org/",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "torah-recordings-igrot-audio-text",
+      "title": "Torah Recordings — אגרות קודש audio/text navigation",
+      "type": "audio-text-derivative-index",
+      "status": "Indexed",
+      "source_url": "https://www.torahrecordings.com/rebbe/igroskodesh/",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "halacha-brura-igrot-catalog",
+      "title": "מכון הלכה ברורה — קטלוג אגרות קודש",
+      "type": "bibliographic-derivative-index",
+      "status": "Indexed",
+      "source_url": "https://www.halachabrura.org/library/library1a.htm",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "rebbesletters-teshura-archive",
+      "title": "The Rebbe's Letters — ארכיון התשורות",
+      "type": "teshura-derived-letters-written-responses",
+      "status": "Indexed",
+      "source_url": "https://rebbesletters.com/teshura%20letters.dc",
+      "accessed": "2026-09-17"
+    },
+    {
+      "id": "chabad-org-rebbe-video",
+      "title": "Chabad.org Video — The Rebbe",
+      "type": "video-talks-living-torah-testimony",
+      "status": "Indexed",
+      "source_url": "https://www.chabad.org/video/default_cdo/channels/true",
+      "verified_metadata": "Public Chabad.org Video index exposes a dedicated The Rebbe collection and currently reports 3,901 videos. It separately exposes Living Torah and My Encounter collections; those category counts must not be summed because category overlap has not been excluded.",
+      "accessed": "2026-09-17",
+      "notes": "High-yield legal discovery layer for item-level video metadata. Individual pages can expose stable aid URLs, event dates, program/disc locators and related-text metadata. Copyright remains with the relevant publisher/JEM; ingest metadata and locators, not bulk protected media or transcripts."
+    },
+    {
+      "id": "sichos-kodesh-audio",
+      "title": "Sichos Kodesh Audio",
+      "type": "audio-public-addresses",
+      "status": "Indexed",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555068/jewish/5752-1991-1992.htm",
+      "verified_metadata": "The public Chabad.org/JEM index describes more than 4,700 audio recordings of the Rebbe's public addresses spanning 1951 through 1992, organized by year/date with stable item pages.",
+      "accessed": "2026-09-18",
+      "notes": "External inventory only until bounded item-level ingestion. Preserve audio witness identity separately from edited/printed texts and Living Torah video excerpts; same-date records are linkage candidates, not assumed equivalents. Copyrighted audio is not bulk-copied."
+    }
   ],
-  "provenance_fields":["authorship_status","signature_status","source_witness","transmission_type","textual_status","editorial_scope","verification_status","source_url","accessed"],
-  "relation_types":["explicit_by_rebbe","editorial_cross_reference","same_evidence_family","researcher/model_link"]
+  "provenance_fields": [
+    "authorship_status",
+    "signature_status",
+    "source_witness",
+    "transmission_type",
+    "textual_status",
+    "editorial_scope",
+    "verification_status",
+    "source_url",
+    "accessed"
+  ],
+  "relation_types": [
+    "explicit_by_rebbe",
+    "editorial_cross_reference",
+    "same_evidence_family",
+    "researcher/model_link"
+  ]
 }

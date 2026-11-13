@@ -366,6 +366,8 @@ const synagogueQ='מה כתב הרבי על אמירת דברי חסידות ב�
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,synagogueQ,{mode});
  assert(m.answerable,mode+' synagogue-dissemination query should be answerable');
+ assert(m.understanding.topics.includes('הפצת המעיינות בבתי כנסת'),'synagogue query must retain its specific topic');
+ assert(!m.understanding.topics.includes('הרחבת שיעור חסידות'),'synagogue query must not inherit the generic class-expansion topic');
  assert(m.sources.some(e=>String(e.aid)==='5071043'),'synagogue query must retrieve AID 5071043');
  assert(!m.sources.some(e=>String(e.aid)==='5071046'),'synagogue query must not conflate the Tanya project with synagogue dissemination');
 }
