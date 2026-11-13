@@ -8,7 +8,7 @@ const TOPICS={
  בריאות:['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אמא','אם המשפחה','woman','women','mother','פרוי','פרויען'],
  פרנסה:['פרנסה','עסק','livelihood','business','parnassa'],
- 'התמודדות עם קשיים ומכשולים':['קשיים ומכשולים','התמודדות עם קשיים ומכשולים','מכשולים וקשיים','קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','obstacles','challenges','overcoming difficulties'],
+ 'התמודדות עם קשיים ומכשולים':['קשיים ומכשולים','התמודדות עם קשיים ומכשולים','מכשולים וקשיים','קשיים','קשיי','קושי','מכשול','מכשולים','התמודדות','תמודדות','אתגר','אתגרים','קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','difficulty','obstacles','obstacle','challenges','challenge','overcoming difficulties'],
  'ייעוד האדם והשפעה על העולם':['ייעוד האדם','תפקיד האדם בעולם','השפעה על העולם','אדם אחד יכול להשפיע','אדם אחד','whole world','purpose in life','mission in life','one individual','conquer the world'],
  'ניצול הזמן והתגברות על עצלות':['ניצול הזמן','בזבוז זמן','עצלות','מתנת הזמן','זמן ויכולת שכלית','overcome laziness','waste time','gift of time'],
  'ניהול מחשבות והסחת הדעת':['ניהול מחשבות','הסחת דעת','להסיח דעת','מחשבות מטרידות','חזרה לבעיה בבהירות','rumination','dismiss problems from the mind','fresh mind'],
@@ -768,6 +768,28 @@ function synthesizeClaims(selected,u,limit){
   witnesses:g.witnesses}));
 }
 function findTensions(claims){const out=[];for(let i=0;i<claims.length;i++)for(let j=i+1;j<claims.length;j++){const a=claims[i],b=claims[j],similarity=jaccard(a.text,b.text);if(similarity>=0.45&&negationSignature(a.text)!==negationSignature(b.text)){out.push({claim_numbers:[i+1,j+1],similarity:Number(similarity.toFixed(2)),type:'possible_directional_tension',note:'Lexically related propositions differ in negation/direction; review witness context before synthesizing as consensus.'});}}return out;}
+export function supportsDifficultyPattern(proposition){
+ const body=norm(proposition);
+ const challenge=['קשיים','קשיי','קושי','מכשול','מכשולים','אתגר','אתגרים','difficulty','difficulties','obstacle','obstacles','challenge','challenges','hardship','struggle','struggles'];
+ const constructive=['מאמץ','מאמצים','נחישות','התגברות','להמשיך','המשך','התמדה','להתמיד','להתקדם','התקדמות','כוחות','חיזוק','effort','efforts','determination','overcome','overcoming','continue','continuing','persist','persistence','perseverance','strength','strengthen','progress','growth','commitment'];
+ return challenge.some(term=>containsTerm(body,term))&&constructive.some(term=>containsTerm(body,term));
+}
+function buildPatternSynthesis(selected,u){
+ if(!u.topics.includes('התמודדות עם קשיים ומכשולים'))return null;
+ const basis=[];
+ selected.forEach((e,index)=>{
+  const props=arr(e._supporting_propositions).filter(supportsDifficultyPattern);
+  if(!props.length)return;
+  const propositions=props.map(p=>{
+   const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());
+   return{text:String(p),source_locator:arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null};
+  });
+  basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,propositions});
+ });
+ const families=[...new Set(basis.map(x=>x.evidence_family_id).filter(Boolean))];
+ if(families.length<2)return null;
+ return{kind:'cross_family_research_synthesis',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:'במכתבים שנבדקו, קשיים בתחילת הדרך ומכשולים אינם מוצגים כשלעצמם כסימן שהדרך שגויה או כסיבה לוותר. הם מתוארים כחלק מתהליך הסתגלות, צמיחה או מימוש שליחות; התגובה המתוארת היא להמשיך לפעול, להשקיע מאמץ ולהתחזק. זוהי הכללה מחקרית מצומצמת מן המקרים המוצגים בלבד, לא כלל גורף.',source_numbers:basis.map(x=>x.source_number),evidence_family_ids:families,basis,method:'Concept-level recurrence across independent Evidence Families: each cited family contains an inspected proposition connecting a challenge with a constructive response; this is not exact-phrase matching.',limits:['הניסוח הוא סינתזה אנליטית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.','הסינתזה מוגבלת לאיגרות המוצגות ואינה כלל גורף לכל אדם או מצב.','המכתבים הנכנסים והאוטוגרפים לא נבדקו; ההקשר נשאר חלקי.']};
+}
 // Multiple witnesses on one topic do not by themselves establish a pattern.
 // Keep only propositions that recur (exactly or with high lexical agreement)
 // across independent evidence families. This conservative gate avoids turning
@@ -780,7 +802,7 @@ function crossFamilyPatternEvidence(selected,u){
  for(let i=0;i<rows.length;i++)for(let j=i+1;j<rows.length;j++){
   const a=rows[i],b=rows[j];
   if(a.e._independent_witness===false||b.e._independent_witness===false||classifyWitness(a.e)==='derived'||classifyWitness(b.e)==='derived'||!a.family||a.family===b.family)continue;
-  for(const pa of a.props)for(const pb of b.props)if(sameClaim(pa,pb)){add(a.index,pa);add(b.index,pb);}
+  for(const pa of a.props)for(const pb of b.props){const recurring=sameClaim(pa,pb)||(u.topics.includes('התמודדות עם קשיים ומכשולים')&&supportsDifficultyPattern(pa)&&supportsDifficultyPattern(pb));if(recurring){add(a.index,pa);add(b.index,pb);}}
  }
  return rows.filter(r=>matched.has(r.index)).map(r=>({...r.e,_supporting_propositions:[...matched.get(r.index)]}));
 }
@@ -827,8 +849,8 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const candidates=answerEvidence.slice(0,budget.sources),synthesized=synthesizeClaims(candidates,understanding,budget.claims),initialCoverage=coverageFor(candidates,understanding);
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized),selected=retained.sources,claims=retained.claims,coverage=coverageFor(selected,understanding);
- const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};
- if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims),independentWitnesses=selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').length,derivedNonIndependent=selected.length-independentWitnesses;base.research={evidence_families:selectedIndependentFamilies.size,evidence_integrity:{independent_witnesses:independentWitnesses,derived_non_independent:derivedNonIndependent},verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
+ const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
+ if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims),independentWitnesses=selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').length,derivedNonIndependent=selected.length-independentWitnesses;base.research={evidence_families:selectedIndependentFamilies.size,evidence_integrity:{independent_witnesses:independentWitnesses,derived_non_independent:derivedNonIndependent},verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,pattern_synthesis:synthesis||null,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;
 }
 

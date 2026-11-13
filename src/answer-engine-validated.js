@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch072-source-grounded-v4';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch073-semantic-pattern-v1';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -14,7 +14,7 @@ const TOPIC_ALIASES={
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
-  'התמודדות עם קשיים ומכשולים':['קשיים ומכשולים','התמודדות עם קשיים ומכשולים','מכשולים וקשיים','קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','obstacles','challenges','overcoming difficulties'],
+  'התמודדות עם קשיים ומכשולים':['קשיים ומכשולים','התמודדות עם קשיים ומכשולים','מכשולים וקשיים','קשיים','קשיי','קושי','מכשול','מכשולים','התמודדות','תמודדות','אתגר','אתגרים','קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','difficulty','obstacles','obstacle','challenges','challenge','overcoming difficulties'],
   'ייעוד האדם והשפעה על העולם':['ייעוד האדם','תפקיד האדם בעולם','השפעה על העולם','אדם אחד יכול להשפיע','אדם אחד','whole world','purpose in life','mission in life','one individual','conquer the world'],
   'ניצול הזמן והתגברות על עצלות':['ניצול הזמן','בזבוז זמן','עצלות','מתנת הזמן','זמן ויכולת שכלית','overcome laziness','waste time','gift of time'],
   'ניהול מחשבות והסחת הדעת':['ניהול מחשבות','הסחת דעת','להסיח דעת','מחשבות מטרידות','חזרה לבעיה בבהירות','rumination','dismiss problems from the mind','fresh mind'],
@@ -351,17 +351,30 @@ export function contextBoundary(model,entailment){
   });
 }
 
+function patternSynthesisIntegrity(model){
+ const s=model?.synthesis;if(!s)return{valid:true,required:false};
+ const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[];
+ for(const n of numbers){
+  const e=sources[n-1],supported=!!e&&arr(e._supporting_propositions).some(supportsDifficultyPattern);
+  if(!e||!supported||e._independent_witness===false||!e.evidence_family_id)unsupported.push(n);
+  else families.add(String(e.evidence_family_id));
+ }
+ const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=2&&families.size>=2&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length;
+ return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,attribution:s.attribution||null};
+}
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}
 
 export function buildAnswerModel(index,q,options={}){
   const normalized=normalizeEvidenceIntegrity(index);let model=buildCoreAnswerModel(normalized,q,options);
+  const synthesisIntegrity=patternSynthesisIntegrity(model);model.pattern_synthesis_integrity=synthesisIntegrity;
+  if(!synthesisIntegrity.valid)model={...model,answerable:false,reason:'pattern_synthesis_integrity_failed',claims:[],answered_well:[],insufficient_evidence:[...(model.insufficient_evidence||[]),'סינתזה בין-משפחתית לא עברה בדיקת משפחות/טענות תומכות; אין להציג אותה.'],synthesis:undefined};
   model.catalog_matches=retrieveCatalogMatches(index,q);
   const integrityIssues=(model.sources||[]).flatMap((e,i)=>arr(e._evidence_integrity_issues).map(issue=>({source_number:i+1,issue,reported_status:e._reported_status||null})));
   const entailment=citationEntailment(model),boundaries=contextBoundary(model,entailment);
   const citationFailures=entailment.filter(x=>!x.valid),contextFailures=boundaries.filter(x=>!x.valid);
   model.citation_entailment=entailment;model.context_boundary=boundaries;
   if(citationFailures.length||contextFailures.length){model={...model,answerable:false,reason:citationFailures.length?'citation_entailment_failed':'context_boundary_failed',claims:[],answered_well:[],insufficient_evidence:[...(model.insufficient_evidence||[]),...(citationFailures.length?['לפחות citation אחד אינו נתמך ישירות ב-proposition של ה-witness המצוטט.']:[]),...(contextFailures.length?['זוהתה אפשרות לזליגת הקשר בין witnesses; אין להציג את הטענה עד לבירור.']:[])]};}
-  if(options.mode==='researcher'){model.research=model.research||{};model.research.evidence_integrity={issues:integrityIssues,independent_witnesses:(model.sources||[]).filter(e=>e._independent_witness!==false).length,derived_non_independent:(model.sources||[]).filter(e=>e._independent_witness===false).length};model.research.citation_entailment=entailment;model.research.context_boundary=boundaries;}
+  if(options.mode==='researcher'){model.research=model.research||{};model.research.pattern_synthesis_integrity=synthesisIntegrity;model.research.evidence_integrity={issues:integrityIssues,independent_witnesses:(model.sources||[]).filter(e=>e._independent_witness!==false).length,derived_non_independent:(model.sources||[]).filter(e=>e._independent_witness===false).length};model.research.citation_entailment=entailment;model.research.context_boundary=boundaries;}
   const coverage=comparativeCoverage(model);if(!coverage)return model;model.comparative_coverage=coverage;
   if(!coverage.enforceable)return {...model,answerable:false,reason:'comparative_sides_unresolved',claims:[],answered_well:[],insufficient_evidence:[...(model.insufficient_evidence||[]),'לא ניתן לזהות בביטחון את שני צדי ההשוואה; אין להסיק הבדל.']};
   if(coverage.missing_topics.length)return {...model,answerable:false,reason:'comparative_missing_side',claims:[],answered_well:coverage.supported_topics.map(t=>`נמצאו ראיות לצד: ${t}`),insufficient_evidence:[...(model.insufficient_evidence||[]),...coverage.missing_topics.map(t=>`אין די ראיות ברמת proposition לצד: ${t}`)]};

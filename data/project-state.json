@@ -86,14 +86,14 @@
     "search_index_refresh_commit": null,
     "answer_readiness": {
       "before": {
-        "answer_eligible_unique_sources": 744,
-        "content_verified_unique_sources": 741,
-        "answer_eligible_propositions": 2509
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 752,
         "content_verified_unique_sources": 749,
         "answer_eligible_propositions": 2527
+      },
+      "expected_after": {
+        "answer_eligible_unique_sources": 763,
+        "content_verified_unique_sources": 760,
+        "answer_eligible_propositions": 2556
       }
     },
     "quality_gate": {
@@ -104,7 +104,7 @@
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "note": "נוספו בדיקות רגרסיה לסינתזה מרובת מקורות בנושא השפעה חינוכית ופעולה מעשית, כולל מיפוי טענה–עד, citation entailment, גבולות הקשר ומצב חוקר עמוק; ממתינים לריצה הקשורה ל-commit 072.",
+      "note": "Batch 073 adds inspected Hebrew/Yiddish letter evidence and a separate secretariat document; the query engine now recognizes component tokens for difficulty/obstacle topics and uses a guarded cross-family concept recurrence with an explicitly non-attributed system synthesis. Commit-bound retrieval, citation, context-boundary and content-readiness tests are pending.",
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": 43335370438
@@ -148,44 +148,51 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-072",
+    "current_batch": "2026-11-13-content-batch-073",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-072",
+    "last_completed_batch": "2026-11-13-content-batch-073",
     "last_batch_summary": {
-      "reviewed_items": 9,
-      "source_bodies_inspected": 9,
-      "new_source_identities": 8,
+      "reviewed_items": 13,
+      "source_bodies_inspected": 13,
+      "new_source_identities": 11,
+      "new_rebbe_letter_identities": 10,
+      "new_secretariat_document_identities": 1,
       "new_metadata_only_identities": 0,
+      "duplicate_alias_identities": 1,
       "existing_identities_enriched": 1,
       "existing_identities_rechecked": 1,
       "existing_identities_canonicalized": 0,
-      "new_response_propositions_added": 17,
+      "new_response_propositions_added": 28,
       "existing_response_propositions_added": 1,
-      "response_propositions_added": 18,
+      "response_propositions_added": 29,
       "source_languages": {
-        "English": 8
+        "Hebrew": 10,
+        "Yiddish": 1
       },
       "metrics_before": {
-        "answer_eligible_unique_sources": 744,
-        "content_verified_unique_sources": 741,
-        "answer_eligible_propositions": 2509
-      },
-      "metrics_after_expected": {
         "answer_eligible_unique_sources": 752,
         "content_verified_unique_sources": 749,
         "answer_eligible_propositions": 2527
       },
-      "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 8,
-        "content_verified_unique_sources": 8,
-        "answer_eligible_propositions": 18
+      "metrics_after_expected": {
+        "answer_eligible_unique_sources": 763,
+        "content_verified_unique_sources": 760,
+        "answer_eligible_propositions": 2556
       },
-      "blocked_candidates": 19,
+      "metrics_delta_expected": {
+        "answer_eligible_unique_sources": 11,
+        "content_verified_unique_sources": 11,
+        "answer_eligible_propositions": 29
+      },
+      "blocked_candidates": 2,
       "excluded_translated_nonindependent_items": 0,
       "status": "content_committed_reconciliation_pending"
     },
-    "last_run_note": "Batch 072 inspected eight new public English letter bodies (Letters 642–649, AIDs 2278254, 2278256, 2278257, 2278259, 2278260, 2278261, 2278262 and 2278265) and re-inspected the full published body of existing AID 2187392. Added 17 new non-verbatim paraphrases and one additional proposition to the existing Evidence Family. All eight new items are explicitly credited to translator Eli Touger; they are marked non-independent and assigned one Evidence Family per underlying letter. Nine candidate pages redirected to rewritten Torah Texts shells, nine direct pages were inaccessible, and adjacent Letter 650 returned HTTP 429; alternative accessible direct publisher pages were inspected in the same run. No crawler retry, access-control bypass, full-text copying, audience change or permission change. Before/expected after: 744→752 answer-eligible Evidence Families, 741→749 content-verified families, 2509→2527 propositions. Reconciliation, commit-bound tests and publication verification pending.",
-    "last_batch_blocked_count": 19,
-    "last_batch_blocked_reason": "Nine candidate AIDs (4666240, 4666241, 4646121, 4646123, 4646126, 4646127, 4646128, 4646129, 4666316) redirected to rewritten Torah Texts shells without inspectable body text. Nine direct pages (2308526, 4855474, 5413720, 5287861, 5054354, 2306904, 2307741, 2307902, 2308550) were inaccessible through the public reader. Adjacent Letter 650 (AID 2278266) returned HTTP 429; no retry was attempted. Eight alternative accessible publisher letters were inspected."
+    "last_run_note": "Batch 073 manually inspected 10 new Hebrew/Yiddish Rebbe-attributed letter bodies (9 Hebrew and 1 Yiddish), one separate Hebrew secretariat letter, one duplicate reprint body, and one existing Hebrew identity (AID 5071138). Added 28 new source-grounded paraphrases across 11 new Evidence Families and one additional proposition to the existing family. AID 5413573 was linked to AID 4854544 as the same letter; the secretariat appendix on AID 5357574 is a separate source and is explicitly not attributed to the Rebbe. AID 4666220 remained inaccessible through both public-reader paths; AID 5357139 exposed only an insufficient fragment. Alternative accessible publisher bodies were used in the same run. No crawler retry, access-control bypass, full-text copying, audience change or permission change. Baseline/expected after: 752→763 answer-eligible families, 749→760 content-verified families, 2527→2556 propositions; reconciliation and commit-bound checks pending.",
+    "last_batch_blocked_count": 2,
+    "last_batch_blocked_reason": "AID 4666220: both direct public-reader URLs returned internal errors; AID 5357139: only a short continuation fragment was visible and could not support a substantive proposition. No crawler retry or access-control bypass; alternative publisher bodies inspected.",
+    "next_work": [
+      "Complete reconciliation and commit-bound tests for batch 073; verify the published site and actual before/after answer-eligible counts."
+    ]
   }
 }
