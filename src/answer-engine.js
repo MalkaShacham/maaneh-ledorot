@@ -865,6 +865,24 @@ export function supportsDifficultyPattern(proposition){
  const constructive=['מאמץ','מאמצים','נחישות','התגברות','להמשיך','המשך','התמדה','להתמיד','להתקדם','התקדמות','כוחות','חיזוק','effort','efforts','determination','overcome','overcoming','continue','continuing','persist','persistence','perseverance','strength','strengthen','progress','growth','commitment'];
  return challenge.some(term=>containsTerm(body,term))&&constructive.some(term=>containsTerm(body,term));
 }
+function buildDailyRoutineSynthesis(selected){
+ const basis=[];
+ selected.forEach((e,index)=>{
+  const props=arr(e._supporting_propositions).filter(p=>{
+   const b=norm(p);
+   return ['תהילים','תפילה','קריאת שמע','לימוד','חומש','צדקה','טלית קטן','ציצית','תפילין'].filter(t=>b.includes(t)).length>=1;
+  });
+  if(!props.length)return;
+  const propositions=props.map(p=>{
+   const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());
+   return{text:String(p),source_locator:arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null};
+  });
+  basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,primary_secondary_status:e.primary_secondary_status||null,propositions});
+ });
+ const families=[...new Set(basis.map(x=>x.evidence_family_id).filter(Boolean))];
+ if(families.length<3)return null;
+ return{kind:'cross_family_research_synthesis',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:'בשלוש איגרות נפרדות לפחות מופיעות דוגמאות לשילוב פעולות רוחניות קבועות בסדר היום: קריאת שמע לפני השינה והשלמת לימוד; אמירת תהילים לאחר תפילת שחרית ולימוד פרשת השבוע; וכן צדקה יומית, תהילים ובדיקת תפילין. הדפוס המשותף הוא עיגון של לימוד, תפילה ומעשה קבוע בתוך שגרת היום — לא לוח זמנים אחיד ולא הוראה כללית אחת לכל אדם.',source_numbers:basis.map(x=>x.source_number),evidence_family_ids:families,basis,method:'Thematic synthesis across distinct inspected correspondence families: each cited letter contains at least one recurring daily practice. The practices differ by recipient and context; no uniform schedule is inferred.',limits:['הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.','האיגרות הן מענים אישיים לנמענים שונים; אין להסיק מהן תוכנית יומית אחידה לכל אדם.','בחלק מן הפריטים מדובר בפרסום מו״ל של תשובת מזכירות בשם הרבי; חתימה אוטוגרפית והמכתבים הנכנסים לא נבדקו.','הסינתזה מוגבלת לגוף הטקסט שנסקר ולתמציות המקוריות; אין בה הכרעה הלכתית.']};
+}
 function buildPatternSynthesis(selected,u){
  if(!u.topics.includes('התמודדות עם קשיים ומכשולים'))return null;
  const basis=[];
@@ -932,8 +950,13 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
  if(!usable.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
+ const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  let answerEvidence=usable;
- if(understanding.intent==='pattern'){
+ if(understanding.intent==='pattern'&&dailyStudyPrayerQuestion){
+  answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
+  const dailyFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
+  if(dailyFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_daily_routine_families',claims:[],sources:answerEvidence,answered_well:['נמצאו מענים אישיים על הרגלים יומיים'],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות נפרדות עם תוכן שנבדק על סדרי לימוד ותפילה יומיים.']};
+ }else if(understanding.intent==='pattern'){
   answerEvidence=crossFamilyPatternEvidence(usable,understanding);
   const recurringFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(recurringFamilies.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_cross_family_pattern',claims:[],sources:usable.slice(0,4),answered_well:['נמצאו כמה מקרים מתועדים בנושא'],insufficient_evidence:['לא נמצאה טענה חוזרת דומה בשתי משפחות ראיות עצמאיות; אין לייחס דפוס רוחבי.']};
@@ -944,7 +967,6 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const niglehPnimiyusQuestion=understanding.query.includes('נגלה')&&understanding.query.includes('פנימיות התורה');
  const anniversaryBlessingQuestion=understanding.query.includes('שנת השלושים')&&understanding.query.includes('יום החתונה')&&understanding.query.includes('ברכה');
  const businessSynagogueQuestion=understanding.query.includes('הרחבת עסק')&&understanding.query.includes('כוחות עצמו')&&understanding.query.includes('הפצת המעיינות')&&understanding.query.includes('בתי כנסת');
- const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  if(yeshivaQuestion){const priority=usable.filter(e=>isHebrewSource(e)&&arr(e._supporting_propositions).some(p=>supportsYeshivaInfluence(p,e)));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(humanMissionQuestion){const priority=usable.filter(e=>e.independent_witness!==false&&supportsHumanMission(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(shabbatRoshChodeshQuestion){const priority=usable.filter(e=>supportsShabbatRoshChodeshHaftarah(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
@@ -956,7 +978,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const candidates=answerEvidence.slice(0,queryBudget.sources),synthesized=synthesizeClaims(candidates,understanding,queryBudget.claims),initialCoverage=coverageFor(candidates,understanding);
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized),selected=retained.sources,claims=retained.claims,coverage=coverageFor(selected,understanding);
- const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
+ const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=dailyStudyPrayerQuestion?buildDailyRoutineSynthesis(selected):buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
  if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims),independentWitnesses=selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').length,derivedNonIndependent=selected.length-independentWitnesses;base.research={evidence_families:selectedIndependentFamilies.size,evidence_integrity:{independent_witnesses:independentWitnesses,derived_non_independent:derivedNonIndependent},verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,pattern_synthesis:synthesis||null,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;
 }
