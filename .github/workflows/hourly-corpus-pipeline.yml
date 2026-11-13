@@ -10,6 +10,9 @@ on:
       - 'scripts/reconcile_identity_aliases.py'
       - 'scripts/content_readiness.py'
       - 'scripts/reconcile_metrics.py'
+      - 'scripts/test_content_readiness.mjs'
+      - 'src/answer-engine.js'
+      - 'src/answer-engine-validated.js'
       - 'data/items/content-research-batch-*.json'
       - '.github/workflows/hourly-corpus-pipeline.yml'
   schedule:
