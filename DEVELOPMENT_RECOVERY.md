@@ -205,3 +205,22 @@
 - **Expected metric effect before reconciliation:** answer_eligible_unique_sources 719 → 734 if all 15 newly verified Evidence Families pass readiness. This is an expectation only until reconciliation writes and public metrics are reread.
 - **Crawler:** no retry of the blocked hourly acquisition crawler; no access-control bypass; no full copyrighted text copied.
 
+
+## 2026-11-13 — Content research batch 071 (manual public-source inspection)
+
+- **Work performed:** eleven review actions: ten new published correspondence identities (eight Hebrew, one Yiddish, one English) and one in-place enrichment/recheck of existing AID 5100487.
+- **Content change:** 10 new Evidence Families, 22 new propositions plus one proposition added to an existing family; no metadata-only item promoted as content.
+- **Integrity:** AID 5100487 remained in its existing Evidence Family. AID 63794 was excluded as a free translation excerpt whose Hebrew original was not inspected. Translations and copies were not counted as independent witnesses.
+- **Readiness expected after reconciliation:** 734 → 744 answer-eligible Evidence Families; 731 → 741 content-verified families; 2,486 → 2,509 propositions.
+- **Limits:** incoming letters and autographs were not inspected; five candidate pages were shells/navigation. No crawler retry, access bypass or full-text copying.
+
+## 2026-11-13 — Content research batch 072 (manual public-source inspection)
+
+- **Work performed:** inspected eleven new Hebrew correspondence identities in Chabad Library through substantive body excerpts visible in public search results. Direct opens of the eleven item pages returned zero readable lines; therefore this is excerpt-level inspection, not a claim that eleven full pages were read.
+- **Content change:** 11 new source identities / 11 Evidence Families / 18 non-verbatim source-grounded propositions; existing identities enriched: 0; metadata-only identities: 0. Every record remains `context_status=partial`, with the exact public excerpt locator and a scope limitation.
+- **Topics and document forms:** community organization in Toronto and the women's association; Talmudic Encyclopedia publishing workflow; a halachic discussion of Rashi; travel on Israeli ships on Shabbat; individual and collective mourning; a Rashi explanation concerning Abraham; public-letter publication; new-year blessing; tefillin in a military environment; a Chassidic explanation about divine help in old age; and a short medical-examination note.
+- **Deduplication:** the candidate /books/1200710342 already exists in batch 068 as a free Hebrew translation from Russian and was excluded. The eleven new URLs were not found in the review queue or the checked content batches 055–071 and accessible bulk-index files dated 2026-09-24, 2026-09-25 and 2026-09-27. The full 9,038-key public index could not be fetched by the connector, so this check is bounded rather than exhaustive.
+- **Blocked alternatives:** Chabad.org AIDs 4666217, 4666240 and 4666241 redirected to rewritten Torah Texts shells without inspectable body text; HebrewBooks PDF req=15897&pgnum=10 returned an internal error. Eleven alternative Chabad Library excerpts were inspected in the same run. Living Torah AID 796411 was excluded because only a short excerpt/description was visible and no video or full transcript was inspected.
+- **Readiness expected after reconciliation:** 744 → 755 answer-eligible Evidence Families; 741 → 752 content-verified families; 2,509 → 2527 propositions. These are expected values until the reconciliation workflow writes and the public metrics are reread.
+- **Retrieval changes:** added specific Hebrew topic aliases for organization/publication, consolation, Shabbat travel, Rashi on Abraham, blessings, tefillin in a military setting, charity, and medical examination. Added regression tests for a two-family comparison and for claim-local citations/context boundaries in regular and researcher modes. Advanced browser cache-busting versions.
+- **Crawler and rights:** no retry of the blocked crawler, no access-control bypass, and no full copyrighted text copied. Hourly schedule, audience and repository permissions unchanged.
