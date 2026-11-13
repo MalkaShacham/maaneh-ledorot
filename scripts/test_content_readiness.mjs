@@ -473,9 +473,7 @@ for(const [aid,minProps,family] of batch066Required){
  assert.equal(e.canonical_file,'data/items/content-research-batch-066-2026-11-13.json');
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')),'inspected AID '+aid+' must not remain in the review queue');
 }
-assert.equal(metrics.answer_eligible_unique_sources,690,'batch-066 must add twelve unique Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,687,'batch-066 must add twelve scoped content-verified families');
-assert.equal(metrics.answer_eligible_propositions,2386,'batch-066 must add 26 distinct inspected propositions');
+// Total metrics are checked against the reconciled index at the top of this test; historical batch snapshots are not current totals.
 const batch066Questions=[
  ['מה נכתב באיגרת על חיפוש שידוך בדרכי תורה?',5019175],
  ['כיצד לחדש קביעות עתים ולימוד בצוותא אחרי הפסק?',5019408],
@@ -522,4 +520,47 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_families>=2);
   assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
  }else assert.equal(m.research,undefined);
+}
+
+
+// Batch 070: ten new Hebrew Library letter identities plus two in-place enrichments.
+const batch070Pages=['1200700039','1200970108','1200820161','1200920230','1200890331','1200970046','1200690164','1200820149','1200980187','1200700258'];
+const batch070Families=new Set();
+for(const page of batch070Pages){
+ const url='https://www.chabadlibrary.org/books/'+page;
+ const e=idx.entries.find(x=>x.source_url===url);
+ assert(e&&e.has_content_evidence,'batch-070 Library page '+page+' must have inspected body-excerpt evidence');
+ assert.equal(e.status,'Verified','batch-070 Library page '+page+' must retain excerpt-scoped Verified status');
+ assert.equal(e.context_status,'partial','batch-070 Library page '+page+' must preserve partial context');
+ assert(e.evidence_family_id,'batch-070 Library page '+page+' must have a stable Evidence Family');
+ batch070Families.add(e.evidence_family_id);
+ assert(e.response_propositions.length>=1,'batch-070 Library page '+page+' must expose non-verbatim propositions');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope,'batch-070 Library page '+page+' must retain excerpt locator and scope');
+ assert.equal(e.canonical_file,'data/items/content-research-batch-070-2026-11-13.json');
+ assert(!queue.records.some(q=>String(q.source_url||'')===url),'reviewed Library page '+page+' must not remain in the queue');
+}
+assert.equal(batch070Families.size,10,'ten new letters must remain ten distinct Evidence Families');
+for(const page of ['1200720273','1200780021']){
+ const url='https://www.chabadlibrary.org/books/'+page;
+ const e=idx.entries.find(x=>x.source_url===url);
+ assert(e&&e.response_propositions.length>=3,'existing Library identity '+page+' must retain its in-place enrichment');
+ assert(e.response_proposition_locators?.length>=3,'existing Library identity '+page+' must expose locators for each proposition');
+ assert(e.context_status==='partial'&&e.evidence_family_id,'existing Library identity '+page+' must retain its family and partial context');
+}
+const libraryEducationQ='מה עולה מהאיגרות על חינוך ילדים ועל מסגרות החינוך?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,libraryEducationQ,{mode});
+ assert(m.answerable,mode+': multi-letter education question must be answerable from inspected propositions');
+ assert(m.sources.length>=3,mode+': education synthesis must use at least three sources');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': education synthesis must use distinct Evidence Families');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.witnesses.every(w=>w.proposition_source_locator)),mode+': each education claim must retain claim-local item locators');
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid),mode+': education synthesis must pass citation and context checks');
+ if(mode==='researcher'){
+  assert(m.research.claim_support_map.length===m.claims.length,'researcher mode must expose one claim-support row per claim');
+  assert(m.research.claim_support_map.every(x=>x.source_numbers.length&&x.witness_count>=1&&x.independent_family_count>=1&&x.caution),'claim-support map must expose source, family and provenance limits');
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)),'researcher evidence map must retain claim-level locators');
+ }else assert.equal(m.research,undefined,'regular mode must not expose researcher-only claim-support diagnostics');
 }
