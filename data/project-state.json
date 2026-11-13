@@ -86,30 +86,30 @@
     "search_index_refresh_commit": null,
     "answer_readiness": {
       "answer_eligible_unique_sources": {
-        "before": 690,
-        "expected_after": 698
+        "before": 719,
+        "expected_after": 729
       },
       "content_verified_unique_sources": {
-        "before": 687,
-        "expected_after": 695
+        "before": 716,
+        "expected_after": 726
       },
       "answer_eligible_propositions": {
-        "before": 2386,
-        "expected_after": 2404
+        "before": 2448,
+        "expected_after": 2470
       }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
-      "trigger": "pull_request to main and push to main; changed paths include source items, answer engine and readiness tests",
-      "run_status": "pending_commit_bound_run",
+      "trigger": "pull_request to main and push to main",
+      "run_status": "pending_pull_request_run",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
-      "latest_saved_report_passed": true,
+      "latest_saved_report_passed": false,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "The preceding run failed at test_content_readiness.mjs on the synagogue-dissemination query; a topic-alias collision was corrected and explicit positive/negative retrieval regressions were added. Awaiting a commit-bound run.",
+      "note": "Batch 070 adds 10 new Hebrew source families and two in-place enrichments. The quality gate will rebuild the evidence index for the exact PR revision and run test_content_readiness.mjs plus citation, specificity and write-safety checks; no pass is claimed before the commit-bound run completes.",
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "pull_request_run_id": 43335370438
+      "pull_request_run_id": null
     },
     "publication": {
       "status": "pending_deployment_check",
@@ -150,37 +150,37 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-068",
+    "current_batch": "2026-11-13-content-batch-070",
     "required_agent_action": "Continue item-level source review, prioritizing original-language Hebrew/Yiddish/English witnesses and additional document types; keep translations linked to their underlying Evidence Family and preserve partial-context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-068",
+    "last_completed_batch": "2026-11-13-content-batch-070",
     "last_batch_summary": {
-      "reviewed_items": 9,
-      "new_source_identities": 9,
-      "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 0,
+      "reviewed_items": 12,
+      "new_source_identities": 10,
+      "existing_identities_enriched": 2,
+      "existing_identities_rechecked": 2,
       "existing_identities_canonicalized": 0,
-      "new_response_propositions_added": 18,
-      "existing_response_propositions_added": 0,
-      "response_propositions_added": 18,
+      "new_response_propositions_added": 20,
+      "existing_response_propositions_added": 2,
+      "response_propositions_added": 22,
       "metrics_before": {
-        "answer_eligible_unique_sources": 698,
-        "content_verified_unique_sources": 695,
-        "answer_eligible_propositions": 2404
+        "answer_eligible_unique_sources": 719,
+        "content_verified_unique_sources": 716,
+        "answer_eligible_propositions": 2448
       },
       "metrics_after_expected": {
-        "answer_eligible_unique_sources": 707,
-        "content_verified_unique_sources": 704,
-        "answer_eligible_propositions": 2422
+        "answer_eligible_unique_sources": 729,
+        "content_verified_unique_sources": 726,
+        "answer_eligible_propositions": 2470
       },
       "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 9,
-        "content_verified_unique_sources": 9,
-        "answer_eligible_propositions": 18
+        "answer_eligible_unique_sources": 10,
+        "content_verified_unique_sources": 10,
+        "answer_eligible_propositions": 22
       },
       "status": "content_committed_reconciliation_pending"
     },
-    "last_run_note": "Batch 068 reviewed nine public source bodies: five Chabad-Lubavitch Library Hebrew item pages through search-visible body excerpts and four Chabad.org/TheRebbe.org English translation pages with line-addressable bodies. Added nine new letter identities and 18 non-verbatim source-grounded propositions. One Hebrew item is a free translation from Russian and four English items are translations from Hebrew; all five are marked non-independent and assigned one Evidence Family per underlying letter, so any future original-language witness must join that family. The five Library page opens returned zero readable lines; claims are limited to visible indexed excerpts. AID 4666220 redirected to a rewritten Torah Texts shell and was excluded; Yiddish discovery found no item-level transcript. No crawler retry, access-control bypass or full-text copying. Dedup checked exact AIDs/URLs and letter numbers against current item paths, queue, bulk-indexed files and batches 061–067; a substring match for תשפה was rejected as a false duplicate because the existing item is יִתְשפה in volume 28, not תשפה in volume 4. The retrieval regression was traced to the generic 'הפצת המעיינות' alias in 'הרחבת שיעור חסידות'; the broad alias was removed and the synagogue-topic regression test strengthened. Before reconciliation: 698 answer-eligible families, 695 content-verified families, 2404 propositions; expected after: 707, 704, 2422. Reconciliation, quality gate and publication are pending.",
-    "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 redirected to a rewritten Torah Texts summary shell without inspectable item-level body text and was excluded. Yiddish discovery returned no inspectable item-level transcript. Chabad Library direct opens returned zero readable lines; the five admitted items are limited to body excerpts exposed by public search."
+    "last_run_note": "Batch 070 reviewed twelve Hebrew Library item identities through official search-visible body excerpts: ten new letters and two in-place enrichments of existing batch-068 identities. Added twenty new propositions plus two propositions to existing identities, all non-verbatim and scoped to the visible excerpt; direct page opens returned zero readable lines, incoming letters and manuscripts were not inspected, and context remains partial. Seven Chabad.org AID candidates redirected to rewritten summary shells and were excluded; official Chabad Library search excerpts were used as the alternative. Dedup checked the queue, batches 057/060/065–069, bulk indexes 001–004 and response-cases-002; a full scan of all canonical files was not available. No crawler retry, access bypass or full-text copying. Metrics before reconciliation: 719 answer-eligible families, 716 content-verified families and 2448 propositions; expected after: 729, 726 and 2470.",
+    "last_batch_blocked_count": 7,
+    "last_batch_blocked_reason": "Seven Chabad.org candidates redirected to rewritten Torah Texts summary shells without item-level body text. Twelve official Library pages had no readable lines on direct open; bounded body excerpts remained visible in official search results and were used with partial-context limits."
   }
 }
