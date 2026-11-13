@@ -224,3 +224,9 @@
 - **Readiness expected after reconciliation:** 744 → 755 answer-eligible Evidence Families; 741 → 752 content-verified families; 2,509 → 2527 propositions. These are expected values until the reconciliation workflow writes and the public metrics are reread.
 - **Retrieval changes:** added specific Hebrew topic aliases for organization/publication, consolation, Shabbat travel, Rashi on Abraham, blessings, tefillin in a military setting, charity, and medical examination. Added regression tests for a two-family comparison and for claim-local citations/context boundaries in regular and researcher modes. Advanced browser cache-busting versions.
 - **Crawler and rights:** no retry of the blocked crawler, no access-control bypass, and no full copyrighted text copied. Hourly schedule, audience and repository permissions unchanged.
+
+### Batch 072 quality-gate correction
+
+- The first PR quality gate (run 43417471551) passed evidence-index generation, question-specific retrieval, answer synthesis, citation integrity, structural evidence-contract audit and workflow write-safety tests. `test_content_readiness.mjs` then exposed an overbroad integrity rule: any publisher use of the word “transcription” was classified as derived, including authorized original-language Hebrew letter texts AIDs 4666292 and 4666305.
+- Corrected the distinction: translations and explicitly identified transcribed copies remain non-independent; a publisher transcription of an original-language letter remains a primary text witness unless the record explicitly marks it non-independent. Added regression checks for both cases. This does not elevate an autograph or claim independent manuscript authentication.
+- The corrected PR gate must pass before merge; no metrics or publication success is claimed yet.
