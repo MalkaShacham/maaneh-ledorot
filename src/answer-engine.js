@@ -471,7 +471,7 @@ function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&containsTerm(t,x)?1:0
 function familyKey(e){return e.evidence_family_id||e.aid||e.source_url||e.key;}
 function propositionKey(p){return contentWords(p).sort().join(' ');}
 function sameClaim(a,b){if(propositionKey(a)===propositionKey(b))return true;if(negationSignature(a)!==negationSignature(b))return false;return jaccard(a,b)>=0.72;}
-function propositionSupportsQuery(p,u){const body=norm(p);if(u.topics.includes('התמודדות עם קשיים ומכשולים'))return supportsDifficultyPattern(body);if(u.topics.includes('התחייבות לצדקה בסכום נקוב'))return containsTerm(body,'צדקה')&&containsTerm(body,'סכום')&&containsTerm(body,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(body,t));const raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?(raw.length?1:0):Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
+function propositionSupportsQuery(p,u){const body=norm(p);if(u.topics.includes('אחריות חינוכית והשפעה על הזולת')&&u.query.includes('בעברית'))return supportsYeshivaInfluence(body);if(u.topics.includes('התמודדות עם קשיים ומכשולים'))return supportsDifficultyPattern(body);if(u.topics.includes('התחייבות לצדקה בסכום נקוב'))return containsTerm(body,'צדקה')&&containsTerm(body,'סכום')&&containsTerm(body,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(body,t));const raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?(raw.length?1:0):Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
 function intentEvidenceGate(e,u){
  if(u.intent==='circumstances'&&!text(e.documented_circumstances)&&!text(e.conditions_or_qualifications)&&!text(e.audience))return 'missing documented circumstances/conditions/audience';
  // Circumstances are not temporal evidence. A historical answer may only use a
@@ -485,6 +485,12 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.topics.includes('אחריות חינוכית והשפעה על הזולת')&&u.query.includes('בעברית')){
+  if(!isHebrewSource(e))return{score:0,support:'insufficient_specific_evidence',reasons:['question explicitly requests Hebrew source text']};
+  const supportingProps=arr(e.response_propositions).filter(supportsYeshivaInfluence);
+  if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['no inspected proposition links yeshiva students with influencing or educating others']};
+  return{score:16+Math.min(4,supportingProps.length*2),support:'direct_support',reasons:['inspected Hebrew source directly connects yeshiva students with influencing or educating their surroundings'],supportingProps};
+ }
  if(u.topics.includes('התמודדות עם קשיים ומכשולים')){
   if(e.status!=='Verified'||e._independent_witness===false||!isLetterEvidence(e))return{score:0,support:'insufficient_specific_evidence',reasons:['difficulty-pattern synthesis requires an independently verified letter witness']};
   const supportingProps=arr(e.response_propositions).filter(supportsDifficultyPattern);
@@ -701,7 +707,7 @@ export function propositionRelevance(e,u){
  if(u.intent==='circumstances')score+=3;if(u.intent==='guidance'&&supportingProps.length)score+=3;if(u.intent==='historical'&&e.date)score+=2;if(u.intent==='bibliographic'&&(e.source_url||e.provenance||e.witness_provenance))score+=2;
  return{score,support:score>=6?'direct_support':'contextual_support',reasons:[`topic=${topicHit}`,`specific=${rawHit}`,`supporting_propositions=${supportingProps.length}`],supportingProps};
 }
-export function retrieveEvidence(index,q,{limit=36,threshold=6,maxPerFamily=1}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)+(understanding.topics.includes('התמודדות עם קשיים ומכשולים')&&e.status==='Verified'&&e._independent_witness!==false&&isLetterEvidence(e)&&arr(e.response_propositions).some(supportsDifficultyPattern)?50:0)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed);const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
+export function retrieveEvidence(index,q,{limit=36,threshold=6,maxPerFamily=1}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)+(understanding.topics.includes('התמודדות עם קשיים ומכשולים')&&e.status==='Verified'&&e._independent_witness!==false&&isLetterEvidence(e)&&arr(e.response_propositions).some(supportsDifficultyPattern)?50:0)+(understanding.topics.includes('אחריות חינוכית והשפעה על הזולת')&&understanding.query.includes('בעברית')&&e.status==='Verified'&&isHebrewSource(e)&&arr(e.response_propositions).some(supportsYeshivaInfluence)?60:0)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed);const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
    proposition-level relevance. Novelty cannot rescue a lexical-only result. */
 const familyCounts=new Map(),hits=[],remaining=reranked.slice();
 const typeCount=new Map(),periodCount=new Map();
@@ -775,6 +781,16 @@ function synthesizeClaims(selected,u,limit){
   witnesses:g.witnesses}));
 }
 function findTensions(claims){const out=[];for(let i=0;i<claims.length;i++)for(let j=i+1;j<claims.length;j++){const a=claims[i],b=claims[j],similarity=jaccard(a.text,b.text);if(similarity>=0.45&&negationSignature(a.text)!==negationSignature(b.text)){out.push({claim_numbers:[i+1,j+1],similarity:Number(similarity.toFixed(2)),type:'possible_directional_tension',note:'Lexically related propositions differ in negation/direction; review witness context before synthesizing as consensus.'});}}return out;}
+function isHebrewSource(e){
+ const language=norm([e?.language,e?.original_language,e?.proposition_language].join(' '));
+ return /hebrew|עברית/.test(language);
+}
+function supportsYeshivaInfluence(proposition){
+ const body=norm(proposition);
+ const yeshiva=['ישיבה','ישיבות','ישיבת','תלמידי הישיבות','תלמידי ישיבה','בחורים','תומכי תמימים'];
+ const influence=['להשפיע','השפעה','מושפע','להחזירו למוטב','להחזיר למוטב','להיטיב דרכיו','לקרב','קירוב','לקרבם','להפיץ','הפצת התורה','חינוך','לחנך','פעילות ציבורית','למשוך תלמידים','לעבוד בשביל אחרים','להשפיע על הסביבה'];
+ return yeshiva.some(term=>body.includes(term))&&influence.some(term=>body.includes(term));
+}
 function isLetterEvidence(e){
  const s=norm([e?.type,e?.source_class,e?.collection,e?.source_class_detail,e?.witness_type,e?.title].join(' '));
  return /letter|igrot|אגרת|מכתב|מכתבי/.test(s);
