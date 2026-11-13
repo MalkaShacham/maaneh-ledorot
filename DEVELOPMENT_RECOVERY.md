@@ -388,3 +388,8 @@ AID 5071054 is a publisher-attributed original-language Hebrew letter with selec
 ### Batch 082 printed-index locator audit (2026-11-14)
 
 A duplicate search covered all 24 prior content-research batch files present (055–060 and 064–081) and the complete review queue; none of the six new AIDs appeared before batch 082, and no duplicate Evidence Family IDs were found. Printed volume indexes were inspected for bibliographic locator only: v4 תתצט p.16 and א׳עא p.22; v6 א׳תשפט p.12; v15 ה׳תשכד p.15; v18 ו׳תקנח p.6. The index entries do not verify content. The v9 ב׳תתצט and v18 ו׳תתצט are differently prefixed identities, not duplicates of v4 תתצט. AID 5100438's ו׳תרצ was not found in the inspected v18 index, so no locator was inferred.
+
+
+### Index-locator metadata kept separate from content verification scope (2026-11-14)
+
+The first structural gate after adding printed-index locators correctly rejected five records because the locator-only wording had been appended to the main `verification_scope`, which the readiness classifier intentionally treats as bibliographic-only. The correction keeps the inspected publisher-body scope unchanged and stores the index evidence separately in `provenance.index_locator_verification_scope` and `locator.index_pdf_page`. Thus the printed index verifies location only and does not downgrade or replace the separately inspected body evidence. The v18 index entry ו׳תתצט (PDF p.15) was also recorded as a distinct prefixed identity from v4 תתצט.

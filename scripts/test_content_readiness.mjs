@@ -1154,6 +1154,7 @@ for(const [aid,expected] of Object.entries(expectedIndexLocators082)){
  const r=batch082Data.records.find(x=>String(x.aid)===aid);
  assert(r&&r.locator.index_pdf_page===expected.page&&r.locator.volume===expected.volume,'AID '+aid+' must carry only the corroborated printed-index locator');
  assert(/bibliographic locator only/i.test(r.provenance.index_locator_verification_scope),'AID '+aid+' index must be explicitly locator-only, not content verification');
+ assert(!/bibliographic identity|bibliographic_locator_verified_only|index-first/i.test(r.verification_scope),'AID '+aid+' content verification scope must remain body-only; index metadata must not make it locator-only');
  assert(r.proposition_source_locator.includes('body lines'),'AID '+aid+' content propositions must continue to cite the inspected publisher body');
 }
 const noIndexLocator082=batch082Data.records.find(x=>String(x.aid)==='5100438');
