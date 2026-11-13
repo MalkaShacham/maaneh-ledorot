@@ -3,7 +3,7 @@
   "batch_id": "062",
   "reviewed_at": "2026-11-13",
   "review_method": "Manual inspection of public Kehot/Chabad.org publisher pages using web open/search. No runner-side crawler, no access-control bypass, no full-text copying.",
-  "source_bodies_reviewed": 10,
+  "source_bodies_reviewed": 15,
   "new_source_identities": 9,
   "existing_identities_enriched": 1,
   "source_grounded_propositions_added": 20,
@@ -156,9 +156,28 @@
     "checked_against": [
       "canonical item paths",
       "content-review queue",
-      "bulk-indexed-2026-09-24-001.json through -006.json"
+      "bulk-indexed-2026-09-24-001.json through -006.json",
+      "bulk-indexed-2026-09-25-001.json",
+      "bulk-indexed-2026-09-26-001.json",
+      "bulk-indexed-2026-09-27-001.json through -003.json"
     ],
-    "result": "No existing canonical or bulk-indexed AID identity was found for the nine new AIDs. AID 4666289 was enriched in its existing canonical file rather than duplicated. Each new letter has its own Evidence Family; no translation or reprint was counted as an independent witness."
+    "result": "No existing canonical or bulk-indexed AID identity was found for the nine new AIDs. AID 4666289 was enriched in its existing canonical file rather than duplicated. Two older metadata-only URL records for AIDs 4666210 and 4666231 were assigned the existing AID and Evidence Family and linked to their content-bearing items; neither is an independent witness. Each new letter has its own Evidence Family; no translation or reprint was counted as an independent witness.",
+    "aliases_linked": [
+      {
+        "aid": 4666210,
+        "alias_id": "igrot-v2-171-4666210",
+        "canonical_id": "chabad-letter-4666210",
+        "evidence_family_id": "original-letter-aid-4666210",
+        "basis": "Same AID and exact publisher URL; alias has metadata/locator only and no response propositions."
+      },
+      {
+        "aid": 4666231,
+        "alias_id": "igrot-kodesh-v2-letter-192-aid-4666231",
+        "canonical_id": "chabad-letter-4666231",
+        "evidence_family_id": "original-letter-aid-4666231",
+        "basis": "Same AID and exact publisher URL; alias has metadata/locator only and no response propositions."
+      }
+    ]
   },
   "access_blockers": {
     "reader_shells": [
@@ -171,7 +190,7 @@
       "4666303",
       "4666304"
     ],
-    "direct_reader": "These pages returned publisher navigation/shell content without an inspectable letter body in the available reader; no propositions were inferred from their titles or IDs.",
+    "direct_reader": "The listed reader pages returned publisher navigation/shell content on direct open; no propositions were inferred from those shells. Five already-enriched publisher bodies (AIDs 4666210, 4666211, 4666219, 4666231 and 4666264) were rechecked through the publisher's indexed search-result body text. AID 4666295 and the remaining listed shells stayed blocked and were not used.",
     "prior_acquisition": "data/acquisition/latest.json records status=no_candidates, attempted=0, blocked=[]. The earlier 12-reference HTTP 403 event remains documented in the recovery record. The blocked crawler was not rerun.",
     "fallback_used": [
       4666289,
@@ -183,14 +202,20 @@
       4666297,
       4666300,
       4666301,
-      4666305
+      4666305,
+      4666210,
+      4666211,
+      4666219,
+      4666231,
+      4666264
     ]
   },
   "retrieval_changes": {
     "new_topic": "הדפסת ספרי חסידות ותיקוני מהדורות",
     "query": "מה נכתב באגרות על הדפסת ספרי חסידות, איסוף תיקונים והפצתם?",
     "cross_source_comparison": "AID 4666289 (דברי ברכה על הדפסת ספרי הצמח צדק), AID 4666300 (הצעה לקרן וועד הדפסה והפצה), AID 4666301 (איסוף השמטות ושינויי נוסח לקראת מילואים ותיקונים).",
-    "note": "The three letters remain separate Evidence Families. The answer-quality regression requires at least three independent families, claim-local citations, context boundaries and a researcher evidence map."
+    "note": "The three letters remain separate Evidence Families. The answer-quality regression requires at least three independent families, claim-local citations, context boundaries and a researcher evidence map.",
+    "normalization_fix": "Topic-component tokens from multi-word aliases are no longer treated as extra unsupported query qualifiers; the specific publication/editing topic suppresses the generic publishing bucket. The Hebrew clitic/definite-article form והפצתם no longer leaves the residual token פצתם."
   },
   "metrics_before": {
     "answer_eligible_unique_sources": 653,
@@ -205,10 +230,11 @@
     "answer_eligible_unique_sources": 663,
     "content_verified_unique_sources": 660,
     "answer_eligible_propositions": 2022,
-    "canonical_unique_item_keys": 8959,
-    "verified_unique_item_keys": 7642,
+    "canonical_unique_item_keys": 8957,
+    "verified_unique_item_keys": 7640,
     "canonical_json_files": 432,
-    "content_review_queue_records": 1059
+    "evidence_family_files": 55,
+    "content_review_queue_records": 1058
   },
   "reconciliation": {
     "status": "pending",
@@ -230,5 +256,52 @@
     "translations_counted_as_independent": false,
     "schedule_changed": false,
     "audience_or_permissions_changed": false
-  }
+  },
+  "rechecked_existing_sources": [
+    {
+      "aid": 4666210,
+      "id": "chabad-letter-4666210",
+      "evidence_family_id": "original-letter-aid-4666210",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666210/jewish/page.htm",
+      "locator": "Publisher body: opening receipt/expenditure paragraph, request to broaden readership, Sukkot paragraphs, and closing secretariat-copy note.",
+      "result": "Existing two source-grounded propositions rechecked against the visible publisher body; no duplicate propositions added. A metadata-only URL alias was linked to this identity."
+    },
+    {
+      "aid": 4666211,
+      "id": "chabad-letter-4666211",
+      "evidence_family_id": "original-letter-aid-4666211",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666211/jewish/page.htm",
+      "locator": "Publisher body: section א on the Shavuot two-loaves/Zohar argument and section ב on sukkah use in the Temple courtyard; closing secretariat-copy note.",
+      "result": "Existing three source-grounded propositions rechecked against the visible publisher body; no duplicate propositions added."
+    },
+    {
+      "aid": 4666219,
+      "id": "chabad-letter-4666219",
+      "evidence_family_id": "original-letter-aid-4666219",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666219/jewish/page.htm",
+      "locator": "Publisher body: opening health-status paragraph, daily Tehillim paragraph, and closing discussion of healing and the number eight.",
+      "result": "Existing three source-grounded propositions rechecked against the visible publisher body; no duplicate propositions added."
+    },
+    {
+      "aid": 4666231,
+      "id": "chabad-letter-4666231",
+      "evidence_family_id": "original-letter-aid-4666231",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666231/jewish/page.htm",
+      "locator": "Publisher body: opening acknowledgement and $100 allocation, yahrzeit discussion, and closing request for prayer for the writer's mother.",
+      "result": "Existing three source-grounded propositions rechecked against the visible publisher body; no duplicate propositions added. A metadata-only locator alias was linked to this identity."
+    },
+    {
+      "aid": 4666264,
+      "id": "igrot-kodesh-v2-letter-225-aid-4666264",
+      "evidence_family_id": "original-letter-aid-4666264",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666264/jewish/page.htm",
+      "locator": "Publisher body: opening Sefer Torah shipment for Europe, request to encourage participation in spiritual aid, and textual note concerning the printed divine-name letters in Hallel.",
+      "result": "Existing three source-grounded propositions rechecked against the visible publisher body; no duplicate propositions added."
+    }
+  ]
 }
