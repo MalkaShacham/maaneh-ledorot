@@ -20,20 +20,20 @@
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 446,
-    "canonical_unique_item_keys": 9082,
+    "canonical_json_files": 447,
+    "canonical_unique_item_keys": 9100,
     "evidence_family_files": 55,
-    "verified_unique_item_keys": 7758,
+    "verified_unique_item_keys": 7768,
     "status_counts_unique_keys": {
-      "Verified": 7758,
+      "Verified": 7768,
       "Linked": 13,
       "Parsed": 1,
       "Indexed": 1151,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 779,
-    "content_verified_unique_sources": 776,
-    "answer_eligible_propositions": 2601
+    "answer_eligible_unique_sources": 789,
+    "content_verified_unique_sources": 786,
+    "answer_eligible_propositions": 2622
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -87,9 +87,9 @@
     "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "answer_readiness": {
       "before": {
-        "answer_eligible_unique_sources": 764,
-        "content_verified_unique_sources": 761,
-        "answer_eligible_propositions": 2559
+        "answer_eligible_unique_sources": 779,
+        "content_verified_unique_sources": 776,
+        "answer_eligible_propositions": 2601
       },
       "expected_after": {
         "answer_eligible_unique_sources": 771,
@@ -97,14 +97,14 @@
         "answer_eligible_propositions": 2580
       },
       "actual_after": {
-        "answer_eligible_unique_sources": 779,
-        "content_verified_unique_sources": 776,
-        "answer_eligible_propositions": 2601
+        "answer_eligible_unique_sources": 789,
+        "content_verified_unique_sources": 786,
+        "answer_eligible_propositions": 2622
       },
       "actual_delta": {
-        "answer_eligible_unique_sources": 15,
-        "content_verified_unique_sources": 15,
-        "answer_eligible_propositions": 42
+        "answer_eligible_unique_sources": 10,
+        "content_verified_unique_sources": 10,
+        "answer_eligible_propositions": 21
       },
       "reconciliation_variance": {
         "answer_eligible_unique_sources": 0,
@@ -228,31 +228,36 @@
       "Continue with new source bodies in Hebrew/Yiddish and other document types; keep translations and duplicate reprints within their original Evidence Families."
     ],
     "last_reconciliation": {
-      "batch_id": "075",
+      "batch_id": "2026-11-13-content-batch-076",
+      "batch_file": "data/items/content-research-batch-076-2026-11-13.json",
       "generated": "2026-11-13",
-      "batch_record_count": 8,
-      "answer_eligible_selected_count": 8,
-      "selected_unique_evidence_families": 8,
+      "batch_record_count": 11,
+      "new_source_identity_count": 10,
+      "existing_identities_enriched": 1,
+      "source_bodies_inspected": 11,
+      "answer_eligible_selected_count": 11,
+      "selected_unique_evidence_families": 11,
+      "non_independent_selected_count": 10,
       "items": [
         {
-          "aid": 4783853,
+          "aid": 72910,
           "canonical_records_found": 2,
           "records": [
             {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": "chabad-letter-4783853",
-              "evidence_family_id": "igrot-letter-5712-27-tevet-aid4783853",
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-72910",
+              "evidence_family_id": "rebbe-letter-5717-17-adar-ii-vol14-page503",
               "status": "Verified",
               "has_content_evidence": true,
               "proposition_count": 2,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4783853, אגרות קודש - מכתב א’שעח; body lines 290–301. Body inspected on 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4783853, שורות 290–301. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. העמוד מייחס את ההמלצה לרופא מקצועי; לא נבדקו אבחנה רפואית, מסמכים קליניים או מכתב הפונה. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 72910, \"A Waste of Time\", body lines 273–278; body inspected 2026-11-13.",
+              "verification_scope": null,
               "context_status": "partial"
             },
             {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
               "id": null,
               "evidence_family_id": null,
               "status": null,
@@ -269,31 +274,32 @@
             "present": true,
             "answer_eligible": true,
             "status": "Verified",
-            "evidence_family_id": "igrot-letter-5712-27-tevet-aid4783853",
-            "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
+            "evidence_family_id": "rebbe-letter-5717-17-adar-ii-vol14-page503",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
             "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4783853, אגרות קודש - מכתב א’שעח; body lines 290–301. Body inspected on 2026-11-13."
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 72910, \"A Waste of Time\", body lines 273–278; body inspected 2026-11-13.",
+            "independent_witness": false
           }
         },
         {
-          "aid": 4812732,
+          "aid": 1266,
           "canonical_records_found": 2,
           "records": [
             {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": "chabad-letter-4812732",
-              "evidence_family_id": "igrot-letter-5712-7-tammuz-aid4812732",
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-1266",
+              "evidence_family_id": "rebbe-letter-undated-dealing-with-doubt-aid1266",
               "status": "Verified",
               "has_content_evidence": true,
               "proposition_count": 2,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812732, אגרות קודש - מכתב א’תרפח; body lines 244–257. Body inspected on 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 4812732, שורות 244–257. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1266, \"Dealing With Doubt\", body lines 277–303; body inspected 2026-11-13.",
+              "verification_scope": null,
               "context_status": "partial"
             },
             {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
               "id": null,
               "evidence_family_id": null,
               "status": null,
@@ -310,10 +316,347 @@
             "present": true,
             "answer_eligible": true,
             "status": "Verified",
-            "evidence_family_id": "igrot-letter-5712-7-tammuz-aid4812732",
-            "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
+            "evidence_family_id": "rebbe-letter-undated-dealing-with-doubt-aid1266",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
             "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812732, אגרות קודש - מכתב א’תרפח; body lines 244–257. Body inspected on 2026-11-13."
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1266, \"Dealing With Doubt\", body lines 277–303; body inspected 2026-11-13.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 1273955,
+          "canonical_records_found": 2,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-1273955",
+              "evidence_family_id": "rebbe-letter-5739-22-elul-aid1273955",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1273955, \"How to Feel Secure\", body lines 269–287; body inspected 2026-11-13.",
+              "verification_scope": null,
+              "context_status": "partial"
+            },
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": null,
+              "evidence_family_id": null,
+              "status": null,
+              "has_content_evidence": false,
+              "proposition_count": 0,
+              "proposition_origin": null,
+              "proposition_verification": null,
+              "proposition_source_locator": null,
+              "verification_scope": null,
+              "context_status": null
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "rebbe-letter-5739-22-elul-aid1273955",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1273955, \"How to Feel Secure\", body lines 269–287; body inspected 2026-11-13.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 3567490,
+          "canonical_records_found": 2,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-3567490",
+              "evidence_family_id": "rebbe-letter-5738-rosh-chodesh-nissan-aid3567490",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3567490, \"Sharing Good News\", body lines 267–285; body inspected 2026-11-13.",
+              "verification_scope": null,
+              "context_status": "partial"
+            },
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": null,
+              "evidence_family_id": null,
+              "status": null,
+              "has_content_evidence": false,
+              "proposition_count": 0,
+              "proposition_origin": null,
+              "proposition_verification": null,
+              "proposition_source_locator": null,
+              "verification_scope": null,
+              "context_status": null
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "rebbe-letter-5738-rosh-chodesh-nissan-aid3567490",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3567490, \"Sharing Good News\", body lines 267–285; body inspected 2026-11-13.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 2387459,
+          "canonical_records_found": 2,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-2387459",
+              "evidence_family_id": "rebbe-letter-5729-unknown-day-aid2387459",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 2387459, \"How to Feed a Soul\", body lines 267–279; body inspected 2026-11-13.",
+              "verification_scope": null,
+              "context_status": "partial"
+            },
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": null,
+              "evidence_family_id": null,
+              "status": null,
+              "has_content_evidence": false,
+              "proposition_count": 0,
+              "proposition_origin": null,
+              "proposition_verification": null,
+              "proposition_source_locator": null,
+              "verification_scope": null,
+              "context_status": null
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "rebbe-letter-5729-unknown-day-aid2387459",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 2387459, \"How to Feed a Soul\", body lines 267–279; body inspected 2026-11-13.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 1866734,
+          "canonical_records_found": 2,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-1866734",
+              "evidence_family_id": "rebbe-letter-5724-15-iyar-aid1866734",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1866734, \"Fasting as a Means of Repentance\", body lines 279–287; body inspected 2026-11-13.",
+              "verification_scope": null,
+              "context_status": "partial"
+            },
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": null,
+              "evidence_family_id": null,
+              "status": null,
+              "has_content_evidence": false,
+              "proposition_count": 0,
+              "proposition_origin": null,
+              "proposition_verification": null,
+              "proposition_source_locator": null,
+              "verification_scope": null,
+              "context_status": null
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "rebbe-letter-5724-15-iyar-aid1866734",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1866734, \"Fasting as a Means of Repentance\", body lines 279–287; body inspected 2026-11-13.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 1878196,
+          "canonical_records_found": 2,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-1878196",
+              "evidence_family_id": "rebbe-letter-5716-erev-shavuot-aid1878196",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1878196, \"The Power of Teshuvah\", body lines 267–284; body inspected 2026-11-13.",
+              "verification_scope": null,
+              "context_status": "partial"
+            },
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": null,
+              "evidence_family_id": null,
+              "status": null,
+              "has_content_evidence": false,
+              "proposition_count": 0,
+              "proposition_origin": null,
+              "proposition_verification": null,
+              "proposition_source_locator": null,
+              "verification_scope": null,
+              "context_status": null
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "rebbe-letter-5716-erev-shavuot-aid1878196",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1878196, \"The Power of Teshuvah\", body lines 267–284; body inspected 2026-11-13.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 6977991,
+          "canonical_records_found": 2,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-6977991",
+              "evidence_family_id": "rebbe-letter-5720-days-of-selichos-aid6977991",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 6977991, \"From Loneliness to Joy\", body lines 272–295; body inspected 2026-11-13.",
+              "verification_scope": null,
+              "context_status": "partial"
+            },
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": null,
+              "evidence_family_id": null,
+              "status": null,
+              "has_content_evidence": false,
+              "proposition_count": 0,
+              "proposition_origin": null,
+              "proposition_verification": null,
+              "proposition_source_locator": null,
+              "verification_scope": null,
+              "context_status": null
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "rebbe-letter-5720-days-of-selichos-aid6977991",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 6977991, \"From Loneliness to Joy\", body lines 272–295; body inspected 2026-11-13.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 1273936,
+          "canonical_records_found": 2,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-1273936",
+              "evidence_family_id": "rebbe-letter-5712-16-adar-aid1273936",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1273936, \"Feeling a Lack of Purpose\", body lines 168–192; body inspected 2026-11-13.",
+              "verification_scope": null,
+              "context_status": "partial"
+            },
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": null,
+              "evidence_family_id": null,
+              "status": null,
+              "has_content_evidence": false,
+              "proposition_count": 0,
+              "proposition_origin": null,
+              "proposition_verification": null,
+              "proposition_source_locator": null,
+              "verification_scope": null,
+              "context_status": null
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "rebbe-letter-5712-16-adar-aid1273936",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1273936, \"Feeling a Lack of Purpose\", body lines 168–192; body inspected 2026-11-13.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 1898720,
+          "canonical_records_found": 2,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": "chabad-letter-1898720",
+              "evidence_family_id": "rebbe-letter-5714-10-kislev-aid1898720-excerpt",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1898720, \"The Purpose of Life\", body lines 261–288; body inspected 2026-11-13.",
+              "verification_scope": null,
+              "context_status": "partial"
+            },
+            {
+              "file": "data/items/content-research-batch-076-2026-11-13.json",
+              "id": null,
+              "evidence_family_id": null,
+              "status": null,
+              "has_content_evidence": false,
+              "proposition_count": 0,
+              "proposition_origin": null,
+              "proposition_verification": null,
+              "proposition_source_locator": null,
+              "verification_scope": null,
+              "context_status": null
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "rebbe-letter-5714-10-kislev-aid1898720-excerpt",
+            "canonical_file": "data/items/content-research-batch-076-2026-11-13.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org AID 1898720, \"The Purpose of Life\", body lines 261–288; body inspected 2026-11-13.",
+            "independent_witness": false
           }
         },
         {
@@ -326,7 +669,7 @@
               "evidence_family_id": "igrot-letter-5712-10-sivan-aid4812673",
               "status": "Verified",
               "has_content_evidence": true,
-              "proposition_count": 2,
+              "proposition_count": 3,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
               "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812673, אגרות קודש - מכתב א’תרכו; body lines 290–302. Body inspected on 2026-11-13.",
@@ -353,213 +696,9 @@
             "status": "Verified",
             "evidence_family_id": "igrot-letter-5712-10-sivan-aid4812673",
             "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812673, אגרות קודש - מכתב א’תרכו; body lines 290–302. Body inspected on 2026-11-13."
-          }
-        },
-        {
-          "aid": 5100383,
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": "chabad-letter-5100383",
-              "evidence_family_id": "igrot-letter-5719-7-tevet-v18-aid5100383",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100383, אגרות קודש - מכתב ו’תרלב; body lines 288–309. Body inspected on 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100383, שורות 288–309. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": null,
-              "evidence_family_id": null,
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5719-7-tevet-v18-aid5100383",
-            "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100383, אגרות קודש - מכתב ו’תרלב; body lines 288–309. Body inspected on 2026-11-13."
-          }
-        },
-        {
-          "aid": 5100452,
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": "chabad-letter-5100452",
-              "evidence_family_id": "igrot-letter-5719-2-adar-rishon-v18-aid5100452",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100452, אגרות קודש - מכתב ו’תשו; body lines 244–270. Body inspected on 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100452, שורות 244–270. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": null,
-              "evidence_family_id": null,
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5719-2-adar-rishon-v18-aid5100452",
-            "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100452, אגרות קודש - מכתב ו’תשו; body lines 244–270. Body inspected on 2026-11-13."
-          }
-        },
-        {
-          "aid": 5100585,
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": "chabad-letter-5100585",
-              "evidence_family_id": "igrot-letter-5719-4-iyar-v18-aid5100585",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100585, אגרות קודש - מכתב ו’תתלט; body lines 288–301. Body inspected on 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לגוף הטקסט היידי/המעורב הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100585, שורות 288–301. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. הפרפרזה נשענת על הפסקה היידית בשורות 296–298 ועל הסיום העברי בשורות 299–301; המכתב הנכנס והאוטוגרף לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": null,
-              "evidence_family_id": null,
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5719-4-iyar-v18-aid5100585",
-            "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100585, אגרות קודש - מכתב ו’תתלט; body lines 288–301. Body inspected on 2026-11-13."
-          }
-        },
-        {
-          "aid": 5100260,
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": "chabad-letter-5100260",
-              "evidence_family_id": "igrot-letter-5719-4-tishrei-v18-aid5100260",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100260, אגרות קודש - מכתב ו’תקי; body lines 244–270. Body inspected on 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לגוף הטקסט העברי הגלוי בעמוד Chabad.org/TheRebbe.org, AID 5100260, שורות 244–270. התמציות הן פרפרזות מחקר לא-מילוליות של הקטעים המצוינים בלבד. המכתב הנכנס, כתב היד והעותק הפיזי לא נבדקו. ההקשר חלקי; אין להרחיב מעבר לנסיבות המתועדות.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": null,
-              "evidence_family_id": null,
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5719-4-tishrei-v18-aid5100260",
-            "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100260, אגרות קודש - מכתב ו’תקי; body lines 244–270. Body inspected on 2026-11-13."
-          }
-        },
-        {
-          "aid": 79705,
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": "chabad-narrative-79705",
-              "evidence_family_id": "sichos-in-english-story-79705-miraculous-release",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org, AID 79705, article body lines 254–269.",
-              "verification_scope": "Public article body lines 254–269 inspected on 2026-11-13. This is Eli Touger's secondary narrative, not the Rebbe's own letter, not an autograph, and not an independent primary witness. Only the visible article body is paraphrased.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-075-2026-11-13.json",
-              "id": null,
-              "evidence_family_id": null,
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "sichos-in-english-story-79705-miraculous-release",
-            "canonical_file": "data/items/content-research-batch-075-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org, AID 79705, article body lines 254–269."
+            "proposition_count": 3,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4812673, אגרות קודש - מכתב א’תרכו; body lines 290–302. Body inspected on 2026-11-13.",
+            "independent_witness": true
           }
         }
       ]
