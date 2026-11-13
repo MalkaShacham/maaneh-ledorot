@@ -7,7 +7,6 @@ on:
       - 'scripts/hourly_corpus_pipeline.py'
       - 'scripts/acquire_source_content.py'
       - 'scripts/test_source_acquisition.py'
-      - 'scripts/reconcile_metrics.py'
       - 'scripts/reconcile_identity_aliases.py'
       - 'scripts/content_readiness.py'
       - '.github/workflows/hourly-corpus-pipeline.yml'
@@ -37,7 +36,7 @@ jobs:
         run: git pull --ff-only origin main
       - name: Test acquisition boundaries
         run: python scripts/test_source_acquisition.py
-      - name: Acquire bounded publisher content and reconcile corpus
+      - name: Run deterministic maintenance; blocked live crawler remains disabled
         run: python scripts/hourly_corpus_pipeline.py
       - uses: actions/setup-node@v4
         with:

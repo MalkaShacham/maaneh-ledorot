@@ -49,7 +49,8 @@ def main():
     started = dt.datetime.now(dt.timezone.utc)
     before = read_metrics()
     steps = []
-    steps.append(run("acquire_source_content.py", "--limit", "12"))
+    # HTTP 403 was returned for all 12 runner-side references; do not retry this crawler.
+    steps.append({"command":"acquire_source_content.py --limit 12","returncode":0,"skipped":True,"reason":"Disabled after HTTP 403; use manual public web/source inspection.","stdout":"","stderr":""})
     steps.append(run("bulk_promote_indexed.py"))
     steps.append(run("reconcile_metrics.py"))
     steps.append(run("reconcile_identity_aliases.py"))
@@ -69,9 +70,9 @@ def main():
         "run_started_utc": started.isoformat(),
         "run_finished_utc": finished.isoformat(),
         "status": status,
-        "work_type": "bounded_publisher_acquisition_and_exact_excerpt_verification; then deterministic maintenance",
+        "work_type": "deterministic_maintenance_only; live publisher crawler disabled after HTTP 403",
         "acquisition": json.loads((DATA / "acquisition/latest.json").read_text()) if (DATA / "acquisition/latest.json").exists() else None,
-        "next_action": "Inspect data/acquisition/latest.json for access blockers or unsupported source formats; semantic synthesis still requires inspected paraphrases" if not productive else None,
+        "next_action": "Use manual public web/search/open inspection for source content; runner-side live acquisition remains disabled after HTTP 403" if not productive else None,
         "before": b,
         "after": a,
         "delta": delta,

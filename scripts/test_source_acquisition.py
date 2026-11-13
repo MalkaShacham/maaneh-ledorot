@@ -50,4 +50,11 @@ class AcquisitionTests(unittest.TestCase):
    self.assertEqual(batch['records'][0]['status'],'Indexed')
    self.assertNotIn('response_propositions',batch['records'][0])
 
+class ScheduledPipelinePolicyTests(unittest.TestCase):
+ def test_hourly_runner_skips_blocked_live_crawler(self):
+  pipeline=(Path(__file__).resolve().parent / "hourly_corpus_pipeline.py").read_text(encoding="utf-8")
+  self.assertNotIn('steps.append(run("acquire_source_content.py"',pipeline)
+  self.assertIn('"skipped":True',pipeline)
+  self.assertIn("HTTP 403",pipeline)
+
 if __name__=='__main__':unittest.main()

@@ -654,5 +654,18 @@
     "content_verified_unique_sources": 776,
     "answer_eligible_propositions": 2601
   },
-  "last_manual_review_at": "2026-11-13T18:35:35+02:00"
+  "last_manual_review_at": "2026-11-13T18:35:35+02:00",
+  "runner_acquisition_policy": {
+    "live_crawler_enabled": false,
+    "disabled_at": "2026-11-13T18:35:35+02:00",
+    "reason": "Previous runner-side request returned HTTP 403 for all 12 references; this project now uses manual public web/source inspection for content review.",
+    "schedule_preserved": true,
+    "cron_unchanged": "7 * * * *",
+    "scheduled_maintenance": [
+      "bulk_promote_indexed.py",
+      "reconcile_metrics.py",
+      "reconcile_identity_aliases.py"
+    ],
+    "no_access_control_bypass": true
+  }
 }

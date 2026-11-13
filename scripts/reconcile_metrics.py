@@ -220,6 +220,7 @@ if batch_path:
             except Exception: continue
             if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
             for x in candidate_dicts(obj):
+                if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id") or x.get("aid")): continue
                 loc=x.get("locator") if isinstance(x.get("locator"),dict) else {}
                 aid=str(x.get("aid") or loc.get("aid") or "")
                 if aid in by_aid:
@@ -233,7 +234,7 @@ if batch_path:
                         "proposition_origin":x.get("proposition_origin"),
                         "proposition_verification":x.get("proposition_verification"),
                         "proposition_source_locator":x.get("proposition_source_locator"),
-                        "verification_scope":x.get("verification_scope"),
+                        "verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),
                         "context_status":x.get("context_status")
                     })
         for aid in target_aids:
@@ -254,10 +255,12 @@ if batch_path:
                 } if selected else {"present":False}
             })
         batch_before=batch_data.get("metrics_before")
+        batch_expected=batch_data.get("metrics_expected_after")
+        readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
         if isinstance(batch_before,dict):
-            state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})["before"]={
-                k:batch_before[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in batch_before
-            }
+            readiness_state["before"]={k:batch_before[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in batch_before}
+        if isinstance(batch_expected,dict):
+            readiness_state["expected_after"]={k:batch_expected[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in batch_expected}
         state.setdefault("development_recovery",{})["last_reconciliation"]={
             "batch_id":batch_data.get("batch_id") or batch_label,
             "batch_file":str(batch_path.relative_to(ROOT)),
@@ -288,6 +291,8 @@ if isinstance(state.get("metrics_integrity"),dict):
     actual={k:out[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
     readiness["actual_after"]=actual
     readiness["actual_delta"]={k:actual[k]-int(before.get(k,actual[k])) for k in actual}
+    expected=readiness.get("expected_after") or {}
+    readiness["reconciliation_variance"]={k:actual[k]-int(expected.get(k,actual[k])) for k in actual}
     integrity["status"]="reconciled_pending_commit"
     integrity["last_reconciled_at"]=today
 
