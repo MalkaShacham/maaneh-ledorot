@@ -880,6 +880,8 @@ for(const mode of ['regular','researcher']){
  }else assert.equal(m.research,undefined,'regular mode must not expose researcher-only analysis');
 }
 
+const publisherAttributedMoodItem=idx.entries.find(e=>sourceAID(e)==='5100351');
+assert(publisherAttributedMoodItem&&publisherAttributedMoodItem.witness_type==='published_hebrew_letter_text'&&publisherAttributedMoodItem._independent_witness===true,'AID 5100351 must remain a publisher-attributed Hebrew letter, not be confused with a secretary-signed response');
 const directMoodQuestion='מה כתב הרבי על עצבות ומיעוט חיות בלימוד?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,directMoodQuestion,{mode});
