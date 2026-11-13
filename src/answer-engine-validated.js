@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch078-source-locators-topic-fix';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch079-community-synthesis';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -283,7 +283,10 @@ const TOPIC_ALIASES={
  'בשורות טובות מנסיעה ותומכי תמימים':['בשורות טובות ממקומות הנסיעה','מקומות שיהי׳ שם דרך נסיעתו','ישיבת תומכי תמימים','דרך נסיעתו','good news from Tomchei Temimim','travel updates'],
  'מצב רוח ירוד, עצבות ובדידות':['מצב רוח ירוד','עצבות','דיכאון','בדידות','ייאוש','דכדוך','low mood','depression','sadness','loneliness','despondency'],
  'תכלית החיים וייעוד הנשמה':['תכלית החיים','חוסר תכלית','ייעוד הנשמה','מטרת החיים','שליחות הנשמה','purpose of life','soul mission','divine purpose'],
- 'תעניות פרטיות ושמחה':['תעניות פרטיות','תעניות נוספות','צום נוסף','תענית נוספת','שמחה במקום צום','private fasts','extra fasts','voluntary fasting']
+ 'תעניות פרטיות ושמחה':['תעניות פרטיות','תעניות נוספות','צום נוסף','תענית נוספת','שמחה במקום צום','private fasts','extra fasts','voluntary fasting'],
+ 'התוועדויות ופעילות קהילתית':['התוועדות','התוועדויות','פארבריינגען','י״ט כסלו','חג הגאולה','חנוכה','הפצת המעיינות','פעילות קהילתית','תלמידים','באתי לגני','מקווה','הוצאות המקווה','חלוקת אחריות','farbrengen','community activity','mikveh expenses'],
+ 'חירות רוחנית ויציאת מצרים יומיומית':['יציאת מצרים בכל יום','יציאת מצרים','חירות רוחנית','מגבלות הגוף','הנפש הבהמית','daily exodus','spiritual liberation','animal soul'],
+ 'אדם כעולם קטן וקידוש ממדי החיים':['אדם עולם קטן','דומם צומח חי מדבר','קידוש הבריאה','קידוש החיים','microcosm','sanctifying all dimensions of life']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
