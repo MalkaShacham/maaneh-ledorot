@@ -486,7 +486,7 @@ export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
  if(u.topics.includes('התמודדות עם קשיים ומכשולים')){
-  if(e.status!=='Verified'||e._independent_witness===false)return{score:0,support:'insufficient_specific_evidence',reasons:['difficulty-pattern synthesis requires an independently verified witness']};
+  if(e.status!=='Verified'||e._independent_witness===false||!isLetterEvidence(e))return{score:0,support:'insufficient_specific_evidence',reasons:['difficulty-pattern synthesis requires an independently verified letter witness']};
   const supportingProps=arr(e.response_propositions).filter(supportsDifficultyPattern);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['no inspected proposition links a challenge with a constructive response']};
   const score=12+Math.min(4,supportingProps.length*2);
@@ -701,7 +701,7 @@ export function propositionRelevance(e,u){
  if(u.intent==='circumstances')score+=3;if(u.intent==='guidance'&&supportingProps.length)score+=3;if(u.intent==='historical'&&e.date)score+=2;if(u.intent==='bibliographic'&&(e.source_url||e.provenance||e.witness_provenance))score+=2;
  return{score,support:score>=6?'direct_support':'contextual_support',reasons:[`topic=${topicHit}`,`specific=${rawHit}`,`supporting_propositions=${supportingProps.length}`],supportingProps};
 }
-export function retrieveEvidence(index,q,{limit=36,threshold=6,maxPerFamily=1}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)+(understanding.topics.includes('התמודדות עם קשיים ומכשולים')&&e.status==='Verified'&&e._independent_witness!==false&&arr(e.response_propositions).some(supportsDifficultyPattern)?50:0)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed);const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
+export function retrieveEvidence(index,q,{limit=36,threshold=6,maxPerFamily=1}={}){const understanding=understandQuestion(q);const candidates=index.map(e=>({e,seed:overlap(metadataText(e),understanding.terms)+2*overlap(evidenceText(e),understanding.terms)+(understanding.topics.includes('התמודדות עם קשיים ומכשולים')&&e.status==='Verified'&&e._independent_witness!==false&&isLetterEvidence(e)&&arr(e.response_propositions).some(supportsDifficultyPattern)?50:0)})).filter(x=>x.seed>0).sort((a,b)=>b.seed-a.seed);const reranked=candidates.map(({e})=>({e,...propositionRelevance(e,understanding)})).filter(x=>x.support==='direct_support'&&x.score>=threshold).sort((a,b)=>b.score-a.score);/* Greedy diversity-aware reranking: each candidate must independently pass
    proposition-level relevance. Novelty cannot rescue a lexical-only result. */
 const familyCounts=new Map(),hits=[],remaining=reranked.slice();
 const typeCount=new Map(),periodCount=new Map();
@@ -775,6 +775,10 @@ function synthesizeClaims(selected,u,limit){
   witnesses:g.witnesses}));
 }
 function findTensions(claims){const out=[];for(let i=0;i<claims.length;i++)for(let j=i+1;j<claims.length;j++){const a=claims[i],b=claims[j],similarity=jaccard(a.text,b.text);if(similarity>=0.45&&negationSignature(a.text)!==negationSignature(b.text)){out.push({claim_numbers:[i+1,j+1],similarity:Number(similarity.toFixed(2)),type:'possible_directional_tension',note:'Lexically related propositions differ in negation/direction; review witness context before synthesizing as consensus.'});}}return out;}
+function isLetterEvidence(e){
+ const s=norm([e?.type,e?.source_class,e?.collection,e?.source_class_detail,e?.witness_type,e?.title].join(' '));
+ return /letter|igrot|אגרת|מכתב|מכתבי/.test(s);
+}
 export function supportsDifficultyPattern(proposition){
  const body=norm(proposition);
  const challenge=['קשיים','קשיי','קושי','מכשול','מכשולים','אתגר','אתגרים','difficulty','difficulties','obstacle','obstacles','challenge','challenges','hardship','struggle','struggles'];
@@ -802,7 +806,7 @@ function buildPatternSynthesis(selected,u){
 // across independent evidence families. This conservative gate avoids turning
 // unrelated education cases into a general rule attributed to the Rebbe.
 function crossFamilyPatternEvidence(selected,u){
- const rows=selected.map((e,index)=>({e,index,family:familyKey(e),
+ const rows=selected.filter(isLetterEvidence).map((e,index)=>({e,index,family:familyKey(e),
   props:(e._supporting_propositions?.length?e._supporting_propositions:
    arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u))).map(String)}));
  const matched=new Map(),add=(index,p)=>{if(!matched.has(index))matched.set(index,new Set());matched.get(index).add(p);};
@@ -813,7 +817,7 @@ function crossFamilyPatternEvidence(selected,u){
  }
  return rows.filter(r=>matched.has(r.index)).map(r=>({...r.e,_supporting_propositions:[...matched.get(r.index)]}));
 }
-function classifyWitness(e){const s=norm([e.primary_secondary_status,e.source_class,e.witness_type].join(' '));return /primary|ראשוני|direct/.test(s)?'primary':/translation|תרגום|derived/.test(s)?'derived':/secondary|מאוחר|עיבוד/.test(s)?'secondary':'unspecified';}
+function classifyWitness(e){const s=norm([e.primary_secondary_status,e.source_class,e.witness_type].join(' ')).replace(/no translation notice|translation not indicated|original language not independently established|not a translation/g,'');return /primary|ראשוני|direct/.test(s)?'primary':/translation|תרגום|translated|derived/.test(s)?'derived':/secondary|מאוחר|עיבוד/.test(s)?'secondary':'unspecified';}
 function coverageFor(selected,u){const covered=[],missing=[];if(selected.length)covered.push('תוכן המענה');if(u.intent==='circumstances')(selected.some(e=>text(e.documented_circumstances)||text(e.conditions_or_qualifications)||text(e.audience))?covered:missing).push('נסיבות/תנאים/קהל');if(u.intent==='historical')(selected.some(e=>e.date)?covered:missing).push('תאריך/תקופה');if(u.intent==='bibliographic')(selected.some(e=>e.source_url||e.provenance||e.witness_provenance)?covered:missing).push('provenance ביבליוגרפי');if(u.intent==='pattern')(new Set(selected.map(familyKey)).size>=2?covered:missing).push('דפוס בין משפחות ראיות עצמאיות');return{covered,missing};}
 const MODE_BUDGETS={regular:{sources:6,claims:5},researcher:{sources:24,claims:32}};
 function presentationFor(mode){const budget=MODE_BUDGETS[mode];return{answer_style:mode==='researcher'?'extended_evidence_analysis':'concise_answer_first',detail_level:mode==='researcher'?'witness_level':'summary',source_limit:budget.sources,claim_limit:budget.claims};}
