@@ -516,6 +516,11 @@ export function propositionRelevance(e,u){
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not contain the inspected referral about non-Jewish shemitah produce']};
   return{score:38,support:'direct_support',reasons:['inspected letter states that the question is referred to local senior halachic authorities because the ruling depends on details'],supportingProps};
  }
+ if(u.topics.includes('צדקה לאורך השנה והקצאת תרומות')&&u.query.includes('צדקה לאורך השנה')&&u.query.includes('חלוקת תרומות')){
+  const supportingProps=arr(e.response_propositions).filter(supportsTzedakahSynthesisProposition);
+  if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not document year-round charity or allocation of donations']};
+  return{score:38+Math.min(4,supportingProps.length),support:'direct_support',reasons:['inspected correspondence documents year-round charity, donation allocation, or a bounded tzedakah distribution case'],supportingProps};
+ }
  if(u.query.includes('צדקה')&&u.query.includes('לימוד')&&u.query.includes('יגיעה')){
   const supportingProps=arr(e.response_propositions).filter(supportsTzedakahStudyEffortProposition);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source mentions charity but does not explicitly distinguish it from the need for study and effort']};
