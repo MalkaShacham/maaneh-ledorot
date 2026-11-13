@@ -67,7 +67,8 @@
     "Translated public talks are one manifestation of their dated event; original-language transcripts and recordings must join the same Evidence Family.",
     "www.chabad.org is host-blocked after HTTP 403 responses on the 12-reference GitHub acquisition attempt (2026-10-15 onward). data/acquisition/state.json now marks this host permanent_block; the hourly script must skip network requests and rely on manual public web search or another authorized source.",
     "AID 4666284 text was inspected through Pnimi's secondary index of chabadlibrary.org; its pipeline status remains Parsed, and it is a member of the existing Shanghai Evidence Family, not a new independent corroborating family.",
-    "On 2026-11-13, twelve attempted English Sicha pages returned internal errors and twelve other item pages exposed rewritten summary shells; ten accessible Hebrew publisher-body alternatives were inspected instead. No access controls were bypassed."
+    "On 2026-11-13, twelve attempted English Sicha pages returned internal errors and twelve other item pages exposed rewritten summary shells; ten accessible Hebrew publisher-body alternatives were inspected instead. No access controls were bypassed.",
+    "Batch 072: Chabad Library direct item pages returned zero readable lines; only public search-result body excerpts were inspected, so all eleven records remain partial-context."
   ],
   "next_work": [
     "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
@@ -75,7 +76,8 @@
     "Expand event-level Evidence Family links when original-language transcripts, audio or video of already indexed talks become available.",
     "Adversarially test proposition relevance, claim-local citation entailment, context boundaries and researcher-mode witness distinctions on both answer modes.",
     "Continue reconciling the live public-search index, metrics and content-readiness test after each content batch.",
-    "Continue public-body inspection in Hebrew/Yiddish/English and other documentation types; resolve the Shanghai letter ריג identity only if a direct/authoritative item witness is found; do not retry the blocked runner crawler."
+    "Continue public-body inspection in Hebrew/Yiddish/English and other documentation types; resolve the Shanghai letter ריג identity only if a direct/authoritative item witness is found; do not retry the blocked runner crawler.",
+    "Reconcile batch 072 and confirm 755/752/2527 readiness; inspect commit-bound quality gate, Actions and Pages deployment."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
@@ -86,28 +88,28 @@
     "search_index_refresh_commit": null,
     "answer_readiness": {
       "before": {
-        "answer_eligible_unique_sources": 734,
-        "content_verified_unique_sources": 731,
-        "answer_eligible_propositions": 2486
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 744,
         "content_verified_unique_sources": 741,
         "answer_eligible_propositions": 2509
+      },
+      "expected_after": {
+        "answer_eligible_unique_sources": 755,
+        "content_verified_unique_sources": 752,
+        "answer_eligible_propositions": 2527
       }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "pull_request to main and push to main; changed paths include source items, answer engine and readiness tests",
-      "run_status": "pending_commit_bound_run",
+      "run_status": "pending_commit_bound_rerun",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
-      "latest_saved_report_passed": true,
+      "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "נוספו בדיקות רגרסיה חדשות לסינתזה מרובת מקורות בנושא הפצת המעיינות, לאחזור עברית→יידיש ולמכתב אנגלי לנשיא פורד; ממתינים לריצת commit-bound.",
+      "note": "The latest gate passed the original-language/translation metadata assertions and all prior corrections, then exposed that the generated public index omitted the source record's `type` field for correspondence dossiers. The index builder now carries `type` and `collection` in addition to original_language and translation-family metadata. Rerun the commit-bound gate.",
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "pull_request_run_id": 43335370438
+      "pull_request_run_id": null
     },
     "publication": {
       "status": "pending_deployment_check",
@@ -148,46 +150,48 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-071",
-    "required_agent_action": "Continue item-level source review, prioritizing original-language Hebrew/Yiddish/English witnesses and additional document types; keep translations linked to their underlying Evidence Family and preserve partial-context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-071",
+    "current_batch": "2026-11-13-content-batch-072",
+    "required_agent_action": "Continue item-level source review across Hebrew, Yiddish and English, and additional document types. Treat public search-result body excerpts as partial evidence when direct pages are unreadable; do not infer beyond the visible text. Link translations and reprints to the same Evidence Family; avoid the blocked crawler.",
+    "last_completed_batch": "2026-11-13-content-batch-072",
     "last_batch_summary": {
       "reviewed_items": 11,
       "source_bodies_inspected": 11,
-      "new_source_identities": 10,
+      "source_excerpts_inspected": 11,
+      "direct_item_page_readable_lines": 0,
+      "new_source_identities": 11,
       "new_metadata_only_identities": 0,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 1,
+      "existing_identities_enriched": 0,
+      "existing_identities_rechecked": 0,
       "existing_identities_canonicalized": 0,
-      "new_response_propositions_added": 22,
-      "existing_response_propositions_added": 1,
-      "response_propositions_added": 23,
+      "new_response_propositions_added": 18,
+      "existing_response_propositions_added": 0,
+      "response_propositions_added": 18,
       "source_languages": {
-        "Hebrew": 8,
-        "Yiddish": 1,
-        "English": 1
+        "Hebrew": 11
       },
       "metrics_before": {
-        "answer_eligible_unique_sources": 734,
-        "content_verified_unique_sources": 731,
-        "answer_eligible_propositions": 2486
-      },
-      "metrics_after_expected": {
         "answer_eligible_unique_sources": 744,
         "content_verified_unique_sources": 741,
         "answer_eligible_propositions": 2509
       },
-      "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 10,
-        "content_verified_unique_sources": 10,
-        "answer_eligible_propositions": 23
+      "metrics_after_expected": {
+        "answer_eligible_unique_sources": 755,
+        "content_verified_unique_sources": 752,
+        "answer_eligible_propositions": 2527
       },
-      "blocked_candidates": 5,
-      "excluded_translated_nonindependent_items": 1,
-      "status": "content_committed_reconciliation_pending"
+      "metrics_delta_expected": {
+        "answer_eligible_unique_sources": 11,
+        "content_verified_unique_sources": 11,
+        "answer_eligible_propositions": 18
+      },
+      "blocked_candidates": 4,
+      "excluded_duplicate_or_nonindependent_items": 1,
+      "status": "content_committed_reconciliation_pending",
+      "excluded_translated_nonindependent_items": 0,
+      "excluded_duplicate_items": 1
     },
-    "last_run_note": "Batch 071 inspected ten new publisher item bodies (eight Hebrew, one Yiddish, one English) and re-inspected/enriched existing AID 5100487. Added 22 new non-verbatim propositions and one additional proposition to the existing Evidence Family. New source bodies cover personal character correction, dissemination of inner Torah, Chassidic classes, freedom and all-day service, integrating profession with divine service, outreach and the role of impure animals, a Yiddish melody exchange, administrative archival correspondence, and a public English letter to President Ford. Five pages (including AID 4666220) redirected to rewritten Torah Texts shells without inspectable bodies; alternative direct publisher item pages were inspected in the same run. AID 63794 was excluded because it is explicitly a freely translated excerpt and the Hebrew original was not inspected. No crawler retry, access-control bypass, full-text copying, audience change or permission change. Expected readiness before/after: 734→744 answer-eligible Evidence Families, 731→741 content-verified families, 2486→2509 propositions. Reconciliation, commit-bound quality gate and publication check pending.",
-    "last_batch_blocked_count": 5,
-    "last_batch_blocked_reason": "Five candidate pages (AID 4666220, 5054489, 5100603, 5100244, 5071021) redirected to rewritten Torah Texts shells or navigation without inspectable item-level body text; they were excluded. Alternative accessible publisher pages supplied ten new bodies. AID 63794 was excluded separately as a freely translated excerpt with no inspected Hebrew original."
+    "last_run_note": "Batch 072 reviewed eleven new Hebrew Chabad Library correspondence identities through substantive body excerpts visible in public search results. Added 18 non-verbatim source-grounded propositions across eleven Evidence Families; enriched existing identities: 0. Direct item-page opens returned zero readable lines, so no full page is represented as inspected and all records remain context_status=partial. One already indexed original-language Hebrew letter (/books/1200710342) was excluded as an exact duplicate; it was not a translation. The separate free Hebrew translation from Russian (/books/1200710552) remains marked non-independent in batch 068. Three Chabad.org AIDs redirected to rewritten Torah Texts shells and a HebrewBooks PDF reader returned an internal error; eleven alternative Chabad Library excerpts were used in the same run. No crawler retry, access-control bypass, or full-text copying. Expected readiness: 744→755 answer-eligible Evidence Families, 741→752 content-verified families, 2509→2527 propositions. Reconciliation, commit-bound quality gate, Actions and Pages verification pending.",
+    "last_batch_blocked_count": 4,
+    "last_batch_blocked_reason": "Three Chabad.org item pages (AIDs 4666217, 4666240, 4666241) redirected to rewritten shells without readable body text; HebrewBooks PDF page req=15897&pgnum=10 returned an internal error. Eleven alternative Chabad Library body excerpts were inspected in the same run."
   }
 }

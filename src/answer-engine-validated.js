@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch070-source-grounded-v1';
+import {buildAnswerModel as buildCoreAnswerModel} from './answer-engine.js?v=20261113-batch072-source-grounded-v3';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -281,12 +281,25 @@ const TOPIC_ALIASES={
  'שיעורי חומש תהלים ותניא':['שלשת השיעורים','שלושת השיעורים','שלושת סדרי הלימוד היומיים','שיעור תהלים','תהלים לאחר תפילת שחרית','פרשה חומש עם פירוש רש״י','חומש עם פירוש רש״י','שיעור תניא','לימוד תניא','daily Chumash Tehillim Tanya'],
  'בשורות טובות מנסיעה ותומכי תמימים':['בשורות טובות ממקומות הנסיעה','מקומות שיהי׳ שם דרך נסיעתו','ישיבת תומכי תמימים','דרך נסיעתו','good news from Tomchei Temimim','travel updates']
 
+ ,
+ 'ארגון אגודת חב״ד בטורונטו ונשי חב״ד':['אגודת חב״ד בטורונטו','אגודת נשי ובנות חב״ד','סניף נשי חב״ד בטורונטו','Toronto Chabad association women branch'],
+ 'פרסום כרכי האנציקלופדיה התלמודית':['האנציקלופדיה התלמודית','כרך השביעי של האנציקלופדיה התלמודית','הופעת כרכים','פרסום כרכי האנציקלופדיה','Talmudic Encyclopedia volume publication'],
+ 'נחמת אבל יחיד וזיקתה לאבלות ציון':['נחמת היחיד','אבלי ציון וירושלים','נחמה אישית','consolation of individual mourning','mourning Zion and Jerusalem'],
+ 'נסיעה באוניות ישראליות בשבת':['אוניות ישראליות','אניות ישראליות','מפליגות בשבת','Israeli ships sailing on Shabbat'],
+ 'ביאור רש״י על עצם היום הזה אצל אברהם':['עצם היום הזה','אברהם אבינו','מילת אברהם','Rashi etzem hayom hazeh Abraham'],
+ 'ברכת שנה טובה והצלחה בתפקיד':['שנה טובה ומתוקה','הצלחה בתפקיד האחראי','תפקיד אחראי','new year blessing responsible role'],
+ 'תפילין והשפעה על חברים בצבא':['מצוות תפילין','תפילין בצבא','חבריו','צה״ל','tefillin in army influence peers'],
+ 'זריזות בפעולות צדקה':['בין לעניים ובין לעשירים','פעולות החברה','זריזות במעשה הצדקה','charity society activities'],
+ 'בדיקה רפואית לפני טיפול':['בדיקה רפואית','להבדק אצל רופא','צורך בטיפול','medical check-up if treatment may be needed'],
+ 'הסבר רש״י על הקטר חלבים ואיברים':['הקטר חלבים ואיברים','כהנים זריזים','חצות בהקטר חלבים','Rashi sacrificial fats and priests'],
+ 'פרסום מכתב לתועלת הציבור':['ראשי שלוש המפלגות הדתיות','פרסום בעיתונות','תועלת הציבור','publicize letter for public benefit'],
+ 'עזרת ה׳ בלימוד לעת זקנה':['לעת זקנה','בעת נעורינו','עזרת ה׳','divine help in old age']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
 const propositionText=e=>norm(arr(e?._supporting_propositions).concat(arr(e?.response_propositions)).join(' '));
 const topicSupported=(claims,topic)=>{const aliases=TOPIC_ALIASES[topic]||[topic];return claims.some(claim=>{const body=norm(claim?.text);return aliases.some(a=>body.includes(norm(a)));});};
-const isDerived=e=>/translation|תרגום|derived|transcrib|transcription|copy of original/.test(norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' ')));
+const isDerived=e=>{const s=norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' '));return /translation|תרגום|derived|copy of original|transcribed copy|transcription of (?:a )?copy|העתק של|מעתק/.test(s);};
 // An index entry establishes the letter's identity/locator, not what the Rebbe said.
 const isLocatorOnly=e=>/bibliographic_locator_verified_only|identity\/locator|bibliographic identity|index[- ]first|metadata[_ -]and[_ -]locator[_ -]only/.test(norm([e?.context_status,e?.verification_scope,e?.rights_status].join(' ')));
 // Non-verbatim text is answer evidence only when it is an explicit source-grounded
