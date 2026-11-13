@@ -424,7 +424,7 @@ const qs=[
  ['מה כתב הרבי על שילוב תורה הנגלה ופנימיות התורה?',5100353],
  ['מה נאמר על ברכה לרגל שנת השלושים ליום החתונה?',5100360]
 ];
-for(const [q,aid] of qs)for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,q,{mode});assert(m.answerable,mode+' query should be answerable: '+q);assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+' must retrieve AID '+aid);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}else assert.equal(m.research,undefined);}
+for(const [q,aid] of qs)for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,q,{mode});if(aid===5100353)console.log('REVEALED_INNER_TORAH_DEBUG',mode,{query:m.understanding?.query,sources:m.sources?.map(e=>({aid:e.aid,family:e.evidence_family_id,title:e.title,props:e._supporting_propositions}))});assert(m.answerable,mode+' query should be answerable: '+q);assert(m.sources.some(e=>String(e.aid)===String(aid)),mode+' must retrieve AID '+aid);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}else assert.equal(m.research,undefined);}
 const synagogueQ='מה כתב הרבי על אמירת דברי חסידות בבתי כנסת והפצת המעיינות?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,synagogueQ,{mode});
