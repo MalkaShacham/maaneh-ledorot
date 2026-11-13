@@ -953,7 +953,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  let answerEvidence=usable;
- if(dailyStudyPrayerQuestion){
+ if(dailyStudyPrayerQuestion){console.log('DAILY_ROUTINE_ENGINE_DEBUG',{query:understanding.query,intent:understanding.intent,usable:usable.map(e=>({aid:e.aid,family:e.evidence_family_id,props:e.response_propositions})),matched:usable.filter(e=>supportsDailyStudyPrayerRoutine(e)).map(e=>({aid:e.aid,family:e.evidence_family_id}))});
   answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
   const dailyFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(dailyFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_daily_routine_families',claims:[],sources:answerEvidence,answered_well:['נמצאו מענים אישיים על הרגלים יומיים'],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות נפרדות עם תוכן שנבדק על סדרי לימוד ותפילה יומיים.']};
