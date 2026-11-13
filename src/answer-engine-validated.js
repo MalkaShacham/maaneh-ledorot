@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch080-secretariat-boundary';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch081-secretariat-attribution';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -302,7 +302,7 @@ const isInspectedSourceParaphrase=e=>e?.proposition_origin==='source_grounded_pa
 const isEditorialSummaryOnly=e=>e?.proposition_origin==='editorial_summary_derived'||(e?.proposition_verbatim===false&&!isInspectedSourceParaphrase(e));
 const tokens=s=>new Set(norm(s).split(/\s+/).filter(x=>x.length>1));
 const overlapRatio=(a,b)=>{const A=tokens(a),B=tokens(b);if(!A.size||!B.size)return 0;let n=0;A.forEach(x=>{if(B.has(x))n++;});return n/Math.min(A.size,B.size);};
-const CATALOG_STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו בנושא בעניין רוצה לדעת the a an of to and or on about what how did does is are rebbe say says said'.split(' '));
+const CATALOG_STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו בנושא בעניין מענה מזכירות מזכיר מתועד תיעוד רוצה לדעת the a an of to and or on about what how did does is are rebbe say says said'.split(' '));
 
 /* Catalog matches are discovery leads, never answer evidence. Ranking may use
    publisher metadata or an editorial summary, but the returned object deliberately
