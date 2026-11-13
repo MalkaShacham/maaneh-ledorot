@@ -106,7 +106,7 @@
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": 32,
       "commit_binding": true,
-      "note": "The prior gate identified that the reconciliation script derives an editorial proposition from summary_researcher when response_propositions is empty. For metadata-only Yechidus AIDs 553672/553673, the correction now removes summary/description fields as well as response propositions and has_content_evidence, preventing the fallback from turning a catalogue note into answer evidence. Original-language publisher transcriptions remain primary text witnesses; translations and explicitly transcribed copies remain non-independent. Rerun the commit-bound gate.",
+      "note": "The latest content-readiness run passed all source, duplicate, audio metadata-only, witness-independence, and new batch-072 checks reached before the final assertion. It then showed that the generated public index omitted original_language and translation linkage fields even though the canonical source record contained them. The index builder now carries original_language, translation_status, independent_witness, parent/translation Evidence Family links, and witness_type. Rerun the commit-bound gate.",
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": null
