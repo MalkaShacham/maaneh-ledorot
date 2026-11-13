@@ -383,3 +383,8 @@ The first full-corpus PR run generated the expected index totals (833 answer-eli
 ### AID 5071054 attribution and query scope (2026-11-14)
 
 AID 5071054 is a publisher-attributed original-language Hebrew letter with selected body passages previously inspected on 2026-11-12 (lines 288–300); no secretary signature was reported and no autograph was inspected. It is now explicitly marked `witness_type=published_hebrew_letter_text` and `independent_witness=true` (independent text witness, not autograph authentication). The content-readiness regression was split into source-specific questions: AID 5071054 answers the sadness-in-divine-service question; AID 4854525 answers a neutral question about the secretary-signed response on low vitality in study. This avoids asserting that either item supports wording absent from its inspected propositions.
+
+
+### Batch 082 printed-index locator audit (2026-11-14)
+
+A duplicate search covered all 24 prior content-research batch files present (055–060 and 064–081) and the complete review queue; none of the six new AIDs appeared before batch 082, and no duplicate Evidence Family IDs were found. Printed volume indexes were inspected for bibliographic locator only: v4 תתצט p.16 and א׳עא p.22; v6 א׳תשפט p.12; v15 ה׳תשכד p.15; v18 ו׳תקנח p.6. The index entries do not verify content. The v9 ב׳תתצט and v18 ו׳תתצט are differently prefixed identities, not duplicates of v4 תתצט. AID 5100438's ו׳תרצ was not found in the inspected v18 index, so no locator was inferred.

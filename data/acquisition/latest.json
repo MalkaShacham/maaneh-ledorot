@@ -313,7 +313,7 @@
         "result": "The published Hebrew medical letter was reopened and checked. Existing propositions already capture the bounded personal medical context; no new proposition added and no modern medical guidance inferred."
       }
     ],
-    "deduplication_check": "Checked the review queue, content batches 055–081 and the relevant Igrot Kodesh volume indexes (volumes 4, 6, 9, 15 and 18). The six new AIDs 4754363, 4754536, 5100438, 5100309, 5054581 and 4812831 were not found as existing item identities in those checked sources. AIDs 4854786 and 4854525 were found in batch 067 and updated in place; AID 5100579 was found in batch 067 and rechecked; AID 4854804 was found in batch 080 and rechecked. No translation was counted as a new independent witness.",
+    "deduplication_check": "Searched all 24 prior content-research batches present in the repository (055–060 and 064–081), plus the complete content-review queue, for all six new AIDs 4754363, 4754536, 5100438, 5100309, 5054581 and 4812831; none appeared before batch 082. No duplicate Evidence Family IDs were found in the batch records. Checked printed volume indexes IV, VI, IX, XV and XVIII: v4 entries תתצט (PDF p.16) and א׳עא (p.22); v6 א׳תשפט (p.12); v15 ה׳תשכד (p.15); v18 ו׳תקנח (p.6). These are bibliographic identity/location checks only, not content verification. The similarly ending v9 ב׳תתצט and v18 ו׳תתצט are distinct prefixed letter numbers, not duplicates of v4 תתצט. AID 5100438 (ו׳תרצ) was not located in the inspected v18 index, so no index locator was assigned.",
     "limitations": [
       "Incoming letters, physical originals and autograph images were not inspected; verification is limited to the visible publisher bodies and printed attribution/signature lines.",
       "AIDs 5100309 and 5054581 are secretary-signed responses in the Rebbe's name; their wording is not represented as direct Rebbe-authored text.",
@@ -325,7 +325,72 @@
     ],
     "crawler_retry": false,
     "access_control_bypassed": false,
-    "full_text_copied": false
+    "full_text_copied": false,
+    "index_locator_audit": {
+      "indexes_checked": [
+        {
+          "volume": "IV",
+          "file": "data/items/library-igrot-kodesh-v4-index-verified-2026-10-04-001.json",
+          "entries": [
+            {
+              "letter_number": "תתצט",
+              "pdf_page": 16
+            },
+            {
+              "letter_number": "א׳עא",
+              "pdf_page": 22
+            }
+          ]
+        },
+        {
+          "volume": "VI",
+          "file": "data/items/library-igrot-kodesh-v6-index-verified-2026-10-04-001.json",
+          "entries": [
+            {
+              "letter_number": "א׳תשפט",
+              "pdf_page": 12
+            }
+          ]
+        },
+        {
+          "volume": "XV",
+          "file": "data/items/library-igrot-kodesh-v15-index-verified-2026-10-04-002.json",
+          "entries": [
+            {
+              "letter_number": "ה׳תשכד",
+              "pdf_page": 15
+            }
+          ]
+        },
+        {
+          "volume": "XVIII",
+          "file": "data/items/library-igrot-kodesh-v18-index-verified-2026-10-01-001.json",
+          "entries": [
+            {
+              "letter_number": "ו׳תקנח",
+              "pdf_page": 6
+            }
+          ]
+        },
+        {
+          "volume": "IX",
+          "file": "data/items/library-igrot-kodesh-v9-index-verified-2026-10-04-001.json",
+          "entries": [
+            {
+              "letter_number": "ב׳תתצט",
+              "pdf_page": 14
+            }
+          ]
+        }
+      ],
+      "locator_only": true,
+      "content_verified_by_index": false,
+      "unlocated_letter_number": {
+        "aid": 5100438,
+        "letter_number": "ו׳תרצ",
+        "note": "No matching entry found in the inspected v18 index; no locator inferred."
+      }
+    }
   },
   "previous_manual_web_review": {
     "batch_id": "081",
@@ -1374,7 +1439,7 @@
           "result": "The published Hebrew medical letter was reopened and checked. Existing propositions already capture the bounded personal medical context; no new proposition added and no modern medical guidance inferred."
         }
       ],
-      "deduplication_check": "Checked the review queue, content batches 055–081 and the relevant Igrot Kodesh volume indexes (volumes 4, 6, 9, 15 and 18). The six new AIDs 4754363, 4754536, 5100438, 5100309, 5054581 and 4812831 were not found as existing item identities in those checked sources. AIDs 4854786 and 4854525 were found in batch 067 and updated in place; AID 5100579 was found in batch 067 and rechecked; AID 4854804 was found in batch 080 and rechecked. No translation was counted as a new independent witness.",
+      "deduplication_check": "Searched all 24 prior content-research batches present in the repository (055–060 and 064–081), plus the complete content-review queue, for all six new AIDs 4754363, 4754536, 5100438, 5100309, 5054581 and 4812831; none appeared before batch 082. No duplicate Evidence Family IDs were found in the batch records. Checked printed volume indexes IV, VI, IX, XV and XVIII: v4 entries תתצט (PDF p.16) and א׳עא (p.22); v6 א׳תשפט (p.12); v15 ה׳תשכד (p.15); v18 ו׳תקנח (p.6). These are bibliographic identity/location checks only, not content verification. The similarly ending v9 ב׳תתצט and v18 ו׳תתצט are distinct prefixed letter numbers, not duplicates of v4 תתצט. AID 5100438 (ו׳תרצ) was not located in the inspected v18 index, so no index locator was assigned.",
       "limitations": [
         "Incoming letters, physical originals and autograph images were not inspected; verification is limited to the visible publisher bodies and printed attribution/signature lines.",
         "AIDs 5100309 and 5054581 are secretary-signed responses in the Rebbe's name; their wording is not represented as direct Rebbe-authored text.",

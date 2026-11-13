@@ -1143,6 +1143,22 @@ for(const r of batch082Data.records){
  assert.equal(e.language,'Hebrew');
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+r.aid||String(q.source_url||'').includes('/aid/'+r.aid+'/')));
 }
+const expectedIndexLocators082={
+ '4754363':{volume:'4',page:16},
+ '4754536':{volume:'4',page:22},
+ '4812831':{volume:'6',page:12},
+ '5054581':{volume:'15',page:15},
+ '5100309':{volume:'18',page:6}
+};
+for(const [aid,expected] of Object.entries(expectedIndexLocators082)){
+ const r=batch082Data.records.find(x=>String(x.aid)===aid);
+ assert(r&&r.locator.index_pdf_page===expected.page&&r.locator.volume===expected.volume,'AID '+aid+' must carry only the corroborated printed-index locator');
+ assert(/bibliographic locator only/i.test(r.provenance.index_locator_verification_scope),'AID '+aid+' index must be explicitly locator-only, not content verification');
+ assert(r.proposition_source_locator.includes('body lines'),'AID '+aid+' content propositions must continue to cite the inspected publisher body');
+}
+const noIndexLocator082=batch082Data.records.find(x=>String(x.aid)==='5100438');
+assert(noIndexLocator082&&!('index_pdf_page' in noIndexLocator082.locator),'AID 5100438 must not receive an unverified volume-index locator');
+
 for(const aid of ['5100309','5054581']){
  const e=idx.entries.find(x=>sourceAID(x)===aid);
  assert(e&&/secretariat/i.test(e.witness_type||''),'AID '+aid+' must be identified as a secretariat response');

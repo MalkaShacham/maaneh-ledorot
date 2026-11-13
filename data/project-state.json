@@ -190,7 +190,72 @@
       "metrics_actual_after": null,
       "crawler_retry": false,
       "access_control_bypassed": false,
-      "deduplication_check": "Six new AIDs absent from checked batches 055–081 and volume indexes 4, 6, 9, 15 and 18; two existing identities reclassified in place; two existing bodies rechecked without new propositions."
+      "deduplication_check": "Searched all 24 prior content-research batches present in the repository (055–060 and 064–081), plus the complete content-review queue, for all six new AIDs 4754363, 4754536, 5100438, 5100309, 5054581 and 4812831; none appeared before batch 082. No duplicate Evidence Family IDs were found in the batch records. Checked printed volume indexes IV, VI, IX, XV and XVIII: v4 entries תתצט (PDF p.16) and א׳עא (p.22); v6 א׳תשפט (p.12); v15 ה׳תשכד (p.15); v18 ו׳תקנח (p.6). These are bibliographic identity/location checks only, not content verification. The similarly ending v9 ב׳תתצט and v18 ו׳תתצט are distinct prefixed letter numbers, not duplicates of v4 תתצט. AID 5100438 (ו׳תרצ) was not located in the inspected v18 index, so no index locator was assigned.",
+      "index_locator_audit": {
+        "indexes_checked": [
+          {
+            "volume": "IV",
+            "file": "data/items/library-igrot-kodesh-v4-index-verified-2026-10-04-001.json",
+            "entries": [
+              {
+                "letter_number": "תתצט",
+                "pdf_page": 16
+              },
+              {
+                "letter_number": "א׳עא",
+                "pdf_page": 22
+              }
+            ]
+          },
+          {
+            "volume": "VI",
+            "file": "data/items/library-igrot-kodesh-v6-index-verified-2026-10-04-001.json",
+            "entries": [
+              {
+                "letter_number": "א׳תשפט",
+                "pdf_page": 12
+              }
+            ]
+          },
+          {
+            "volume": "XV",
+            "file": "data/items/library-igrot-kodesh-v15-index-verified-2026-10-04-002.json",
+            "entries": [
+              {
+                "letter_number": "ה׳תשכד",
+                "pdf_page": 15
+              }
+            ]
+          },
+          {
+            "volume": "XVIII",
+            "file": "data/items/library-igrot-kodesh-v18-index-verified-2026-10-01-001.json",
+            "entries": [
+              {
+                "letter_number": "ו׳תקנח",
+                "pdf_page": 6
+              }
+            ]
+          },
+          {
+            "volume": "IX",
+            "file": "data/items/library-igrot-kodesh-v9-index-verified-2026-10-04-001.json",
+            "entries": [
+              {
+                "letter_number": "ב׳תתצט",
+                "pdf_page": 14
+              }
+            ]
+          }
+        ],
+        "locator_only": true,
+        "content_verified_by_index": false,
+        "unlocated_letter_number": {
+          "aid": 5100438,
+          "letter_number": "ו׳תרצ",
+          "note": "No matching entry found in the inspected v18 index; no locator inferred."
+        }
+      }
     },
     "last_run_note": "Batch 082: ten Hebrew publisher bodies inspected; six new Evidence Families, 16 non-verbatim propositions, two existing secretariat reclassifications and two rechecks. Reconciliation is pending.",
     "last_batch_blocked_count": 35,
