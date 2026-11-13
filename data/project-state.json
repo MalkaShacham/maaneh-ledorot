@@ -156,40 +156,45 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-080",
+    "current_batch": "2026-11-13-content-batch-081",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-077",
+    "last_completed_batch": "2026-11-13-content-batch-078",
     "last_batch_summary": {
-      "batch_id": "080",
-      "batch_file": "data/items/content-research-batch-080-2026-11-13.json",
-      "generated": "2026-11-13",
-      "records_reviewed": 26,
+      "batch_id": "081",
+      "batch_file": "data/items/content-research-batch-081-2026-11-13.json",
+      "reviewed_at": "2026-11-13T22:40:00+02:00",
+      "status": "pending_reconciliation",
       "source_bodies_inspected": 10,
-      "new_source_identities": 10,
-      "new_rebbe_letter_identities": 8,
-      "new_secretariat_document_identities": 2,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 15,
-      "new_response_propositions": 19,
-      "existing_response_propositions_added": 0,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 7,
+      "existing_identities_rechecked": 1,
+      "existing_secretariat_reclassifications": 7,
+      "new_response_propositions": 22,
+      "answer_eligible_source_families_added": 9,
+      "blocked_candidate_count": 4,
       "metrics_before": {
-        "answer_eligible_unique_sources": 808,
-        "content_verified_unique_sources": 805,
-        "answer_eligible_propositions": 2647
+        "answer_eligible_unique_sources": 799,
+        "content_verified_unique_sources": 796,
+        "answer_eligible_propositions": 2627
       },
-      "metrics_expected_after": {
+      "metrics_before_this_batch_after_prior_pending_batches": {
         "answer_eligible_unique_sources": 818,
         "content_verified_unique_sources": 815,
         "answer_eligible_propositions": 2666
       },
-      "status": "pending_reconciliation",
-      "blocked_candidate_count": 3,
+      "metrics_expected_after_all_pending_batches": {
+        "answer_eligible_unique_sources": 827,
+        "content_verified_unique_sources": 824,
+        "answer_eligible_propositions": 2688
+      },
+      "metrics_actual_after": null,
       "crawler_retry": false,
-      "method": "Ten source bodies were opened and inspected directly through public web/search/open access. Four pages are published Hebrew letter texts, two are Hebrew secretariat responses signed by a secretary in the Rebbe's name, and four are English translations. Nineteen non-verbatim propositions were added with proposition-level locators, provenance, verification scope, documented circumstances and limitations."
+      "access_control_bypassed": false,
+      "deduplication_check": "Nine new AIDs have no matching canonical item, queue entry, or Evidence Family in checked recent batches/indexes; AID 5054501 was already in batch 080 and was rechecked only."
     },
-    "last_run_note": "Batch 080 added ten inspected public source bodies and nineteen non-verbatim propositions; one existing volume-13 identity was reclassified as a secretary-signed secretariat response. Fifteen batch-079 URLs currently return summary shells; three additional candidate pages were excluded. No crawler retry, access-control bypass or full-text copying. PR quality gate rerun and deterministic reconciliation pending.",
-    "last_batch_blocked_count": 3,
-    "last_batch_blocked_reason": "Three attempted pages returned summary/navigation shells: AIDs 4928948, 4812597 and 4666220. Fifteen current rechecks of batch-079 AIDs also returned shells; no new content was inferred from them.",
+    "last_run_note": "Batch 081: 10 publisher bodies inspected (9 new AIDs plus a recheck), 9 new Evidence Families, 22 non-verbatim propositions, and 7 existing secretary-signed volume XIII identities reclassified; metrics pending reconciliation.",
+    "last_batch_blocked_count": 4,
+    "last_batch_blocked_reason": "Four candidate pages redirected to rewritten Torah Texts summary/navigation shells; those items were excluded and other directly inspectable publisher bodies were used in the same run.",
     "next_work": [
       "Continue manual inspection of 8–15 accessible primary-source bodies per run, expanding to Yiddish and English and to distinct documentary classes where public bodies are available.",
       "Extend claim-level multi-source synthesis and researcher-mode evidence maps to additional high-priority topics, preserving item-local context and limitations.",
