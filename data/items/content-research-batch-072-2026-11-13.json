@@ -17,7 +17,7 @@
   "total_new_paraphrase_entries": 18,
   "answer_eligible_source_families_added": 11,
   "record_count": 11,
-  "deduplication_check": "Checked the review queue, content-research batches 055–071, and accessible bulk-index files dated 2026-09-24, 2026-09-25 and 2026-09-27. One separate candidate URL (/books/1200710342) was already present in batch 068 as a free Hebrew translation from Russian and was excluded. No exact match for the eleven new URLs was found in the checked records. The 9,038-key public-search-index file returned an empty response from the GitHub file reader, so this duplicate check is bounded rather than exhaustive.",
+  "deduplication_check": "Checked the review queue, content-research batches 055–071, and accessible bulk-index files dated 2026-09-24, 2026-09-25 and 2026-09-27. One separate candidate URL (/books/1200710342) was already present in batch 068 as a distinct Hebrew original-language letter and was excluded as an exact duplicate. No exact match for the eleven new URLs was found in the checked records. The 9,038-key public-search-index file returned an empty response from the GitHub file reader, so this duplicate check is bounded rather than exhaustive. The separate Russian-to-Hebrew free translation in batch 068 is /books/1200710552 and remains explicitly non-independent; it is not the /books/1200710342 item.",
   "source_languages": [
     "Hebrew"
   ],
@@ -54,7 +54,7 @@
   "excluded_candidates": [
     {
       "url": "https://www.chabadlibrary.org/books/1200710342",
-      "reason": "זהות זו כבר קיימת באצווה 068; היא לא נוספה שוב."
+      "reason": "ה-URL ומספר האיגרת כבר קיימים באצווה 068 כעד טקסט עברי של אותה איגרת; זהו כפילות מדויקת, לא תרגום, ולכן לא נוספה רשומה נוספת."
     },
     {
       "aid": 796411,
