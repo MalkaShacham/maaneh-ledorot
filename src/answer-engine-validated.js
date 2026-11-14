@@ -4,12 +4,16 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch081-study-youth-synthesis-v2';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch082-precision-gate-v1';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
   'מעכה לפי הספורנו':['לפי הספורנו','הספורנו','מעכה יכולה להיקרא אשה','sforno maacah'],
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
+  'צדקה רוחנית וחינוך':['צדקה רוחנית','צדקה גשמית','לקרב לתורה','חינוך ילדים','spiritual charity','spiritual tzedakah','education of children','yeshivah students'],
+  'השפעת היחיד והארת הסביבה':['אדם אחד','יחיד','השפעה על העולם','להאיר את הסביבה','one individual','whole creation','beacon of light'],
+  'שמיטה ומטרת החיים':['שמיטה','שנת השמיטה','שבת לה׳','Shemittah','Sabbatical year','Sabbath unto G-d','spiritual goal'],
+  'שליחות חינוכית והתמדה':['שליחות בחינוך','חינוך יהודי','חוסר חיות','התמדה בשליחות','shlichus','Jewish education','vitality'],
   'דאגה':['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
@@ -385,6 +389,12 @@ export function comparativeCoverage(model){if(model?.understanding?.intent!=='co
 
 export function buildAnswerModel(index,q,options={}){
   const normalized=normalizeEvidenceIntegrity(index);let model=buildCoreAnswerModel(normalized,q,options);
+  // A Lag BaOmer + youth question requires the event-specific, inspected campaign family.
+  // Generic education or consolation letters and event metadata are not substitutes.
+  const normalizedQuestion=norm(q);
+  const asksLagBaomerYouth=/(?:לג\\s*בעומר|lag\\s*ba\\s*omer|lag\\s*b\\s*omer)/.test(normalizedQuestion)&&/(?:נוער|נער|ילד|youth|teen|adolescent)/.test(normalizedQuestion);
+  const hasLagBaomerYouthWitness=(model.sources||[]).some(e=>String(e.evidence_family_id||'')==='lag-baomer-1956-outreach-campaign'&&e.has_content_evidence===true&&arr(e.response_propositions).some(p=>/(?:נוער|נער|ילד|youth|teen|adolescent)/.test(norm(p))));
+  if(asksLagBaomerYouth&&!hasLagBaomerYouthWitness)model={...model,answerable:false,reason:'specific_event_evidence_missing',claims:[],answered_well:[],synthesis:undefined,insufficient_evidence:[...(model.insufficient_evidence||[]),'אין במאגר עד תוכן שנבדק המתעד את הפעולה המדויקת בל״ג בעומר עם בני נוער. מכתב כללי או מטא־נתוני אירוע אינם תחליף למקור המתעד את האירוע ואת הקהל.']};
   const synthesisIntegrity=patternSynthesisIntegrity(model);model.pattern_synthesis_integrity=synthesisIntegrity;
   if(!synthesisIntegrity.valid)model={...model,answerable:false,reason:'pattern_synthesis_integrity_failed',claims:[],answered_well:[],insufficient_evidence:[...(model.insufficient_evidence||[]),'סינתזה בין-משפחתית לא עברה בדיקת משפחות/טענות תומכות; אין להציג אותה.'],synthesis:undefined};
   model.catalog_matches=retrieveCatalogMatches(index,q);
