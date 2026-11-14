@@ -341,7 +341,7 @@ if batch_path and isinstance(batch_data,dict):
         # Always expose the latest corpus totals, even when the newest corpus batch
         # is not the same object as the last manual web review.
         acquisition["manual_web_review_current_metrics"]=actual_metrics
-        acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+        acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
 ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}
 review_candidates=[e for e in search_index["entries"]
