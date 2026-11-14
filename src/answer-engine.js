@@ -1325,7 +1325,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
    // Do not let generic top-k retrieval hide other inspected community-activity families.
    // Select only Verified, source-inspected, original-language content witnesses.
    const communityContentIndex=index.filter(e=>e.has_content_evidence===true&&String(e.status||'').toLowerCase()==='verified'&&e.proposition_origin==='source_grounded_paraphrase'&&e.proposition_verbatim===false&&e.proposition_verification==='source_text_inspected'&&Boolean(e.proposition_source_locator)&&arr(e.response_propositions).some(supportsCommunityActivityProposition));
-   const directCommunity=communityContentIndex.filter(e=>e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&!isSecretariatWitness(e)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsCommunityActivityProposition)}));
+   const directCommunity=communityContentIndex.filter(e=>e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&isLetterEvidence(e)&&!isSecretariatWitness(e)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsCommunityActivityProposition)}));
    const communityRelevance=(a,b)=>propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score;
    const communityCategoryPicks=[
     directCommunity.filter(e=>arr(e.response_propositions).some(p=>/התועד/.test(norm(p))&&/(יט כסלו|חנוכה|חג הגאולה)/.test(norm(p)))).sort(communityRelevance)[0],
@@ -1334,7 +1334,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
    ].filter(Boolean);
    const byFamily=new Map();
    for(const e of [...communityCategoryPicks,...directCommunity,...usable]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
-   answerEvidence=[...byFamily.values()].filter(supportsCommunityActivitySource).sort(communityRelevance).slice(0,8);
+   answerEvidence=[...byFamily.values()].filter(supportsCommunityActivitySource).slice(0,8);
    const communityFamilies=new Set(answerEvidence.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
    if(communityFamilies.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_community_activity_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו לפחות שתי משפחות ראיות מקוריות ונפרדות על התוועדות ופעילות קהילתית.']};
   }
@@ -1342,7 +1342,21 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  else if(educationInfluenceActionQuestion){answerEvidence=usable.filter(e=>supportsEducationalInfluenceActionSource(e));}
  else if(fordLetterQuestion){answerEvidence=usable.filter(e=>supportsFordLetterSource(e));}
  else if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}
- else if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
+ else if(communityActivityQuestion){
+  // Preserve the inspected independent letters that ground each subclaim,
+  // even when generic claim retention would otherwise omit them.
+  for(const e of candidates.filter(supportsCommunityActivitySource)){
+   if(selected.length>=queryBudget.sources)break;
+   if(selected.some(x=>familyKey(x)===familyKey(e)))continue;
+   const proposition=arr(e._supporting_propositions).find(supportsCommunityActivityProposition)||arr(e.response_propositions).find(supportsCommunityActivityProposition);
+   if(!proposition)continue;
+   const sourceNumber=selected.length+1,propIndex=arr(e.response_propositions).findIndex(p=>String(p).trim()===String(proposition).trim());
+   const locator=arr(e.response_proposition_locators)[propIndex]||e.proposition_source_locator||e.source_locator||null;
+   selected.push(e);
+   claims.push({topic:'community_activity_source_proposition',text:String(proposition),source_numbers:[sourceNumber],evidence_family_ids:[familyKey(e)],witnesses:[{source_number:sourceNumber,source_id:e.id||e.aid||null,source_title:e.title||null,evidence_family_id:familyKey(e),source_locator:locator,proposition_source_locator:locator,proposition:String(proposition),independent_witness:e._independent_witness!==false}],documented_circumstances:arr(e.documented_circumstances),conditions_or_qualifications:arr(e.conditions_or_qualifications),audiences:arr(e.audience)});
+  }
+ }
+ if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
  else if(lodYeshivaStudyTravelQuestion){answerEvidence=usable.filter(e=>supportsLodYeshivaStudyTravelSource(e));}
  else if(shmittaFruitReferralQuestion){answerEvidence=usable.filter(e=>supportsShmittaFruitReferralSource(e));}
  else if(dailyStudyPrayerQuestion){
