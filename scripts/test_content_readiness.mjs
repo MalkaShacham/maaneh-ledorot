@@ -85,7 +85,7 @@ assert.equal(batch085Data.metrics_before.answer_eligible_propositions,2721);
 assert.deepEqual(batch085Data.metrics_expected_after,{answer_eligible_unique_sources:855,content_verified_unique_sources:852,answer_eligible_propositions:2767});
 assert(['pending','reconciled'].includes(batch085Data.reconciliation_status));
 if(batch085Data.reconciliation_status==='reconciled'){
- assert.deepEqual(batch085Data.metrics_actual_after,{answer_eligible_unique_sources:metrics.answer_eligible_unique_sources,content_verified_unique_sources:metrics.content_verified_unique_sources,answer_eligible_propositions:metrics.answer_eligible_propositions});
+ assert.deepEqual(batch085Data.metrics_actual_after,batch085Data.metrics_expected_after,'batch 085 reconciliation must be checked against its own snapshot, not the later batch 086 metrics');
  assert.deepEqual(batch085Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 }
 for(const aid of batch085Aids){
