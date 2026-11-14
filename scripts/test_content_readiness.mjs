@@ -685,6 +685,10 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher'){
   assert(m.research.evidence_families>=2);
   assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert.equal(m.synthesis?.topic,'study_routine_and_farming','researcher mode should provide a dedicated cross-family synthesis');
+  assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote','system synthesis must not be attributed to the Rebbe');
+  assert(m.synthesis?.claims?.length===2&&m.synthesis.claims.every(c=>c.source_locators?.length>0),'each comparative claim must carry its own inspected body locator');
+  assert(m.synthesis?.evidence_family_ids?.length>=2,'the synthesis must preserve two distinct Evidence Families');
  }else assert.equal(m.research,undefined);
 }
 
