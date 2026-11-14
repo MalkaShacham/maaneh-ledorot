@@ -88,46 +88,31 @@
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "answer_readiness": {
-      "before_committed": {
-        "answer_eligible_unique_sources": 810,
-        "content_verified_unique_sources": 807,
-        "answer_eligible_propositions": 2660
-      },
-      "expected_after_batch_081": {
-        "answer_eligible_unique_sources": 819,
-        "content_verified_unique_sources": 816,
-        "answer_eligible_propositions": 2684
-      },
-      "expected_after_batch_082": {
-        "answer_eligible_unique_sources": 830,
-        "content_verified_unique_sources": 827,
-        "answer_eligible_propositions": 2709
-      },
-      "actual_after": null,
-      "reconciliation_status": "pending",
       "before": {
         "answer_eligible_unique_sources": 829,
         "content_verified_unique_sources": 826,
         "answer_eligible_propositions": 2706
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 835,
-        "content_verified_unique_sources": 832,
-        "answer_eligible_propositions": 2725
+        "answer_eligible_unique_sources": 834,
+        "content_verified_unique_sources": 831,
+        "answer_eligible_propositions": 2723
       },
+      "actual_after": null,
+      "reconciliation_status": "pending",
       "reconciliation_variance": null
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "awaiting_batch_083_pull_request_gate",
+      "run_status": "awaiting_corrected_batch_083_pull_request_gate",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 082 and the precision gate are committed; Actions must reconcile the exact main revision and run the full quality/readiness suite."
+      "note": "Batch 083 was deduplicated against existing AID 5100299 in batch 058; the corrected batch and proposition-first retrieval regression are undergoing the full readiness gate."
     },
     "publication": {
       "status": "pending_deployment_check",
@@ -176,22 +161,21 @@
       "batch_id": "083",
       "reviewed_items": 9,
       "source_bodies_inspected": 9,
-      "new_source_identities": 6,
-      "new_rebbe_letter_identities": 5,
+      "new_source_identities": 5,
+      "new_rebbe_letter_identities": 4,
       "new_other_document_identities": 0,
       "new_secretariat_document_identities": 1,
       "new_secondary_narrative_identities": 0,
       "new_metadata_only_identities": 0,
       "duplicate_alias_identities": 0,
       "existing_identities_enriched": 2,
-      "existing_identities_rechecked": 1,
-      "new_response_propositions_added": 15,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions_added": 13,
       "existing_response_propositions_added": 4,
-      "response_propositions_added": 19,
-      "answer_eligible_source_families_added": 6,
+      "response_propositions_added": 17,
+      "answer_eligible_source_families_added": 5,
       "source_languages": {
-        "Hebrew": 6,
-        "Yiddish": 1
+        "Hebrew": 5
       },
       "reviewed_languages": {
         "Hebrew": 8,
@@ -203,27 +187,27 @@
         "answer_eligible_propositions": 2706
       },
       "metrics_after_expected": {
-        "answer_eligible_unique_sources": 835,
-        "content_verified_unique_sources": 832,
-        "answer_eligible_propositions": 2725
+        "answer_eligible_unique_sources": 834,
+        "content_verified_unique_sources": 831,
+        "answer_eligible_propositions": 2723
       },
       "metrics_after_actual": null,
       "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 6,
-        "content_verified_unique_sources": 6,
-        "answer_eligible_propositions": 19
+        "answer_eligible_unique_sources": 5,
+        "content_verified_unique_sources": 5,
+        "answer_eligible_propositions": 17
       },
       "metrics_delta_actual": null,
       "blocked_candidates": 7,
       "status": "submitted_for_reconciliation"
     },
-    "last_run_note": "Batch 083 submitted for canonical reconciliation: six new Hebrew identities, one existing Hebrew identity enriched, one existing Yiddish public letter enriched, and one Hebrew identity rechecked without duplicate propositions. Nine publisher bodies inspected; seven summary-shell candidates excluded. No crawler retry, access-control bypass or full-text copying.",
+    "last_run_note": "Batch 083 submitted for reconciliation: five new Hebrew identities, one existing Hebrew identity enriched, one existing Yiddish public letter enriched, and two existing Hebrew identities rechecked without new propositions. AID 5100299 was found in batch 058; its duplicate entry and duplicate paraphrases were removed, retaining the original Evidence Family. Nine publisher bodies inspected; seven summary-shell candidates excluded. No crawler retry, access-control bypass or full-text copying.",
     "last_batch_blocked_count": 7,
     "last_batch_blocked_reason": "Seven candidates (4812572, 4812652, 4854561, 5100455, 5100610, 5100309, 5287694) resolved to navigation/summary shells and were excluded.",
     "next_work": [
-      "Reconcile batch 083 across all canonical items and Evidence Families; verify six new identities and both in-place enrichments.",
+      "Reconcile batch 083 across all canonical items and Evidence Families, including existing-identity rechecks.",
       "Confirm actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions; expected counts are not actual until reconciliation completes.",
-      "Run test_content_readiness.mjs and regular/researcher claim-level synthesis checks, including the Yiddish public-letter query.",
+      "Run test_content_readiness.mjs and regular/researcher claim-level synthesis checks, including the education/influence multi-source query.",
       "Verify the pull-request Actions gate, merge to main, main reconciliation workflow and live GitHub Pages publication.",
       "Continue manual inspection of 8–15 accessible source bodies per development run; seek additional Yiddish and other document classes only where the body can be inspected."
     ],
@@ -231,13 +215,13 @@
       "batch_id": "083",
       "batch_file": "data/items/content-research-batch-083-2026-11-14.json",
       "generated": "2026-11-14",
-      "batch_record_count": 8,
-      "new_source_identity_count": 6,
+      "batch_record_count": 9,
+      "new_source_identity_count": 5,
       "existing_identities_enriched": 2,
       "source_bodies_inspected": 9,
-      "answer_eligible_selected_count": 8,
-      "selected_unique_evidence_families": 8,
-      "non_independent_selected_count": 0,
+      "answer_eligible_selected_count": null,
+      "selected_unique_evidence_families": null,
+      "non_independent_selected_count": null,
       "items": [],
       "metrics_actual_after": null,
       "reconciliation_variance": null,
