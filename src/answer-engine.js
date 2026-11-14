@@ -1321,9 +1321,15 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
    // Select only Verified, source-inspected, original-language content witnesses.
    const communityContentIndex=index.filter(e=>e.has_content_evidence===true&&String(e.status||'').toLowerCase()==='verified'&&e.proposition_origin==='source_grounded_paraphrase'&&e.proposition_verbatim===false&&e.proposition_verification==='source_text_inspected'&&Boolean(e.proposition_source_locator)&&arr(e.response_propositions).some(supportsCommunityActivityProposition));
    const directCommunity=communityContentIndex.filter(e=>e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&!isSecretariatWitness(e)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsCommunityActivityProposition)}));
+   const communityRelevance=(a,b)=>propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score;
+   const communityCategoryPicks=[
+    directCommunity.filter(e=>arr(e.response_propositions).some(p=>/התועד/.test(norm(p))&&/(יט כסלו|חנוכה|חג הגאולה)/.test(norm(p)))).sort(communityRelevance)[0],
+    directCommunity.filter(e=>arr(e.response_propositions).some(p=>/באתי לגני/.test(norm(p))&&/תלמידים/.test(norm(p)))).sort(communityRelevance)[0],
+    directCommunity.filter(e=>arr(e.response_propositions).some(p=>/מקו[וה]/.test(norm(p))&&/(הוצאות|שותפ|השתתפ)/.test(norm(p)))).sort(communityRelevance)[0]
+   ].filter(Boolean);
    const byFamily=new Map();
-   for(const e of [...directCommunity,...usable]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
-   answerEvidence=[...byFamily.values()].filter(supportsCommunityActivitySource).slice(0,8);
+   for(const e of [...communityCategoryPicks,...directCommunity,...usable]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
+   answerEvidence=[...byFamily.values()].filter(supportsCommunityActivitySource).sort(communityRelevance).slice(0,8);
    const communityFamilies=new Set(answerEvidence.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
    if(communityFamilies.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_community_activity_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו לפחות שתי משפחות ראיות מקוריות ונפרדות על התוועדות ופעילות קהילתית.']};
   }
