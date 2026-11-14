@@ -997,7 +997,7 @@ function isSecretariatWitness(e){
  // Require an explicit secretary-signed/secretariat-response marker. A statement
  // that an original or secretariat copy was "not inspected" is not authorship evidence.
  const fields=[e?.witness_type,e?.primary_secondary_status,p.authorship_status,p.signature_status,p.transmission_type];
- const explicit=/(?:secretariat[_ -](?:letter|response|reply|signed)|secretary[- ]signed|signed by (?:a )?secretary|secretary(?:'s)?\s+(?:response|letter|sign(?:ed|ing))|בשם\s+כ[״"]?ק\s+אדמו[״"]ר[^.]{0,90}מזכיר|מזכיר(?:ה)?\s+(?:בשם|חתם|חתימה)|חתימת\s+מזכיר|מענה\s+(?:של\s+)?המזכירות|מכתב\s+המזכירות|(?:printed|visible|published)\s+signature[^.]{0,90}(?:by\s+(?:a\s+)?secretary|מזכיר)|signature\s+by\s+(?:a\s+)?secretary|חתימה[^.]{0,80}מזכיר)/i;
+ const explicit=/(?:secretariat[_ -](?:letter|response|reply|signed|transmitted[_ -]telegram)|secretary[- ]signed|signed by (?:a )?secretary|secretary(?:'s)?\s+(?:response|letter|sign(?:ed|ing))|בשם\s+כ[״"]?ק\s+אדמו[״"]ר[^.]{0,90}מזכיר|מזכיר(?:ה)?\s+(?:בשם|חתם|חתימה)|חתימת\s+מזכיר|מענה\s+(?:של\s+)?המזכירות|מכתב\s+המזכירות|(?:printed|visible|published)\s+signature[^.]{0,90}(?:by\s+(?:a\s+)?secretary|מזכיר)|signature\s+by\s+(?:a\s+)?secretary|חתימה[^.]{0,80}מזכיר)/i;
  return fields.some(value=>explicit.test(String(value||'')));
 }
 function isDirectRebbeAuthorshipQuestion(q){

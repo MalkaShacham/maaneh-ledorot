@@ -475,3 +475,8 @@ The batch-084 microcosm topic alias initially included the bare token `חי`, wh
 Batch 084 reviewed 14 public publisher bodies: nine new English-translated event Evidence Families, four existing identities enriched, and one existing identity rechecked. It added 27 propositions to new families and six to existing families; no new independent witness was added. Three existing audio families were promoted by linked English text. The English translation AID 1281934 is linked to Hebrew AID 4831315 in the same family; its two identical propositions are deduplicated against the original, not counted as additional evidence.
 
 AID 4666220 remained unavailable as a source body, so fourteen alternative public publisher pages were opened and inspected. Body-only locators were normalized across the batch; AID 1281934 was corrected to lines 288–301, AID 2507332 to lines 256–263, and AID 2507334 to lines 256–261 and 278–285. No full text was copied. Final reconciliation: answer-eligible Evidence Families 842 → 854; content-verified families 839 → 851; distinct eligible propositions 2724 → 2757.
+
+
+### Secretariat-transmitted telegram witness classification (2026-11-14)
+
+AID 5357059 is a secretariat-transmitted telegram copy. The secretariat witness classifier now recognizes the explicit `secretariat_transmitted_telegram` marker, allowing neutral questions about the secretariat copy to retrieve it while direct-Rebbe-authorship questions continue to return the authorship boundary. The browser/core cache versions remain aligned.

@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch084-microcosm-safe-alias';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch084-secretariat-telegram-guard';
 
 const TOPIC_ALIASES={
   'האדם כעולם קטן וארבעת ממדיו':['עולם קטן','דומם','צומח','מדבר','לקדש את ממדי החיים','human microcosm','four kingdoms'],
