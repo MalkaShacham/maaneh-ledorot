@@ -322,3 +322,16 @@ Expected readiness pending reconciliation: **789 → 792** answer-eligible Evide
 
 
 Publication verification: GitHub Pages deployment completed successfully for main commit `3f4b63215d3700daf07ec8ca027b40569ce6e1cd` on 2026-11-13. The browser/search retrieval tool could not fetch the site URL directly, so publication status is based on the successful Pages deployment job and its reported environment URL.
+
+
+## 2026-11-14 — Batch 080: Hebrew/Yiddish education and institutional correspondence
+
+- Reconciled batch 079 against the generated search index: `answer_eligible_unique_sources=803`, `content_verified_unique_sources=800`, `answer_eligible_propositions=2635`; its variance is zero. The prior run had left the batch manifest pending because the readiness test stopped on a literal escaped newline in `test_content_readiness.mjs`; that syntax defect is corrected here.
+- Inspected **8 publisher bodies**: seven new item-level correspondence identities and one recheck of existing AID 5357574. New AIDs: **4929253, 5413540, 5413024, 5413389, 4854607, 4754490, 4854828**. The batch contains **3 Hebrew** and **4 Yiddish** letters, each in a distinct Evidence Family.
+- Added **25 bounded, non-verbatim source-grounded propositions** with `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, exact body-line locators, provenance, verification scope, context boundaries and limitations. Topics include educational outcome review and institutional accountability; Torah-based education and timely correction; yeshiva expansion, student admission and public support; vocational education in one historical institution; and alumni continuity with Chabad institutions.
+- AID 5357574 was rechecked in place; its separate secretariat appendix remains a different document and is not attributed to the Rebbe. No new proposition was added to that existing identity.
+- Eleven candidate pages (AIDs 4646121, 4646123, 4646126–4646130, 4754516, 4994487, 5019596 and 5054555) opened as navigation/summary shells. They were excluded; accessible alternatives were inspected in the same run. No search snippet or scan index was used as substitute source text. No crawler retry or access-control bypass occurred.
+- No translation manifestation was counted as an independent witness. The Yiddish records use Hebrew research paraphrases, not independent translated sources. No English-language manifestation was added in this batch because no same-letter translation with inspectable body and reliable family mapping was established.
+- Expected after reconciliation: `answer_eligible_unique_sources` **803 → 810**; `content_verified_unique_sources` **800 → 807**; `answer_eligible_propositions` **2635 → 2660**. These are expected values until the commit-bound reconciliation and Actions results confirm them.
+- Added real-corpus regression checks for education-governance and yeshiva-expansion multi-source answers, plus a bounded vocational-school answer, in regular and researcher modes. Each claim must carry source numbers and valid citation entailment; researcher mode must expose witness-level locators and multiple Evidence Families where applicable.
+- No schedule, audience or permissions changed. The hourly runner-side acquisition crawler remains disabled after its recorded HTTP 403 responses.

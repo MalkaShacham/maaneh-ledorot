@@ -879,7 +879,8 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
 }
 
-\n// Batch 079: four new inspected Hebrew/Yiddish witnesses, two enriched identities,
+
+// Batch 079: four new inspected Hebrew/Yiddish witnesses, two enriched identities,
 // two additional rechecks, and claim-level synthesis across the Jewish-home cases.
 const batch079Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-079-2026-11-14.json',root)));
 const batch079Path='data/items/content-research-batch-079-2026-11-14.json';
@@ -960,6 +961,92 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,tanyaMarginalQuestion,{mode});
  assert(m.answerable,mode+': the inspected marginal response must answer the bounded Tanya question');
  assert(m.sources.some(e=>sourceAID(e)==='5413169'));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0);
+ else assert.equal(m.research,undefined);
+}
+
+ 
+// Batch 080: seven new inspected Hebrew/Yiddish letters, one existing identity rechecked,
+// 25 bounded propositions, and claim-level retrieval in regular/researcher modes.
+const batch080Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-080-2026-11-14.json',root)));
+const batch080Aids=[4929253,5413540,5413024,5413389,4854607,4754490,4854828];
+assert.equal(batch080Data.records.length,7);
+assert.equal(batch080Data.source_bodies_inspected,8);
+assert.equal(batch080Data.new_source_identities,7);
+assert.equal(batch080Data.existing_identities_rechecked,1);
+assert.equal(batch080Data.new_response_propositions,25);
+assert.equal(batch080Data.records.reduce((n,e)=>n+e.response_propositions.length,0),25);
+assert.equal(new Set(batch080Data.records.map(e=>e.evidence_family_id)).size,7);
+assert.equal(batch080Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch080Data.metrics_actual_after,{
+ answer_eligible_unique_sources:810,
+ content_verified_unique_sources:807,
+ answer_eligible_propositions:2660
+});
+assert.deepEqual(batch080Data.reconciliation_variance,{
+ answer_eligible_unique_sources:0,
+ content_verified_unique_sources:0,
+ answer_eligible_propositions:0
+});
+for(const aid of batch080Aids){
+ const e=idx.entries.find(x=>sourceAID(x)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-080 AID '+aid+' must expose inspected body content');
+ assert.equal(e.status,'Verified');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.translation_of_evidence_family_id,null);
+ assert.equal(e.canonical_file,'data/items/content-research-batch-080-2026-11-14.json');
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
+}
+assert.equal(idx.entries.find(e=>sourceAID(e)==='5413540').language,'Yiddish');
+assert.equal(idx.entries.find(e=>sourceAID(e)==='5413024').language,'Yiddish');
+assert.equal(idx.entries.find(e=>sourceAID(e)==='5413389').language,'Yiddish');
+assert.equal(idx.entries.find(e=>sourceAID(e)==='4754490').language,'Yiddish');
+const rechecked5357574=idx.entries.find(e=>sourceAID(e)==='5357574');
+assert(rechecked5357574&&rechecked5357574.has_content_evidence,'AID 5357574 remains in its existing Evidence Family');
+assert.equal(rechecked5357574.canonical_file,'data/items/content-research-batch-073-2026-11-13.json');
+
+const educationGovernanceQuestion='מה נכתב באגרות על אחריות הנהלות מוסדות חינוך, בחינת תוצאות החינוך, תיקון ליקויים והעמדת החינוך על יסודות תורה ומצוות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,educationGovernanceQuestion,{mode});
+ assert(m.answerable,mode+': education-governance sources must support a bounded multi-source answer');
+ assert(m.sources.some(e=>sourceAID(e)==='4929253'));
+ assert(m.sources.some(e=>sourceAID(e)==='5413540'));
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid));
+ assert(m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=2);
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
+ }else assert.equal(m.research,undefined);
+}
+const yeshivaExpansionQuestion='מה נכתב באגרות על הרחבת החינוך הישיבתי, קליטת תלמידים נוספים, הפצת תורה ותמיכת הציבור בישיבות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,yeshivaExpansionQuestion,{mode});
+ assert(m.answerable,mode+': yeshiva expansion sources must support a bounded multi-source answer');
+ assert(m.sources.some(e=>sourceAID(e)==='5413024'));
+ assert(m.sources.some(e=>sourceAID(e)==='4754490'));
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=2);
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ }else assert.equal(m.research,undefined);
+}
+const vocationalSchoolQuestion='מה נכתב באיגרת על בית ספר למלאכה, היחס בין לימודי מלאכה ללימודי קודש ותנאי קבלה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,vocationalSchoolQuestion,{mode});
+ assert(m.answerable,mode+': the vocational-school letter must support a bounded answer');
+ assert(m.sources.some(e=>sourceAID(e)==='4854607'));
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0);
