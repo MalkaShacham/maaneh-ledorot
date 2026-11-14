@@ -480,3 +480,8 @@ AID 4666220 remained unavailable as a source body, so fourteen alternative publi
 ### Secretariat-transmitted telegram witness classification (2026-11-14)
 
 AID 5357059 is a secretariat-transmitted telegram copy. The secretariat witness classifier now recognizes the explicit `secretariat_transmitted_telegram` marker, allowing neutral questions about the secretariat copy to retrieve it while direct-Rebbe-authorship questions continue to return the authorship boundary. The browser/core cache versions remain aligned.
+
+
+### Secretariat telegram query-specific retrieval (2026-11-14)
+
+The neutral query explicitly naming the secretariat telegram and Gan Israel camp now has a bounded proposition-level retrieval path and candidate seed. It requires the inspected proposition to mention the camp, opening, and year-round impact. Direct-Rebbe-authorship questions still use the separate secretariat authorship boundary; this does not promote the telegram to an independent Rebbe-authored letter.
