@@ -490,3 +490,8 @@ The neutral query explicitly naming the secretariat telegram and Gan Israel camp
 ### Direct authorship boundary for secretariat telegram copies (2026-11-14)
 
 A direct-Rebbe-authorship question about the Gan Israel camp can now retrieve the relevant secretariat-transmitted telegram as a boundary witness, even when the query does not itself say "secretariat" or "telegram". The answer remains non-answerable as a Rebbe-authored letter and returns the explicit secretariat authorship boundary. The neutral query about the secretariat copy remains answerable with claim-level citations.
+
+
+### Camp-specific secretariat boundary retrieval (2026-11-14)
+
+The camp/season query now retrieves the inspected telegram copy whenever it explicitly asks about the secretariat response or about the camp opening and year-round impact. This allows a direct-authorship question to surface the relevant boundary witness and return `secretariat_authorship_boundary` instead of generic insufficiency; the source remains non-independent and is not attributed directly to the Rebbe.
