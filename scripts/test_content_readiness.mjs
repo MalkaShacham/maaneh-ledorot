@@ -111,6 +111,14 @@ assert(secretariatCopy&&/secretariat/i.test(secretariatCopy.witness_type||''));
 const yiddishPublic=idx.entries.find(e=>sourceAID(e)==='5100601');
 const yiddishPublicRecord=batch078Data.records.find(e=>String(e.aid)==='5100601');
 assert(yiddishPublic&&yiddishPublic.language==='Yiddish'&&String(yiddishPublicRecord?.provenance?.textual_status||'').includes('צילום'));
+
+assert(yiddishPublic.response_propositions.length>=5,'AID 5100601 must retain the enriched Yiddish public-letter propositions');
+assert(yiddishPublic.response_proposition_locators.some(x=>String(x).includes('300–303')));
+assert(yiddishPublic.response_proposition_locators.some(x=>String(x).includes('306–308')));
+assert(yiddishPublic.response_proposition_locators.some(x=>String(x).includes('309–310')));
+assert.equal(yiddishPublic.canonical_file,'data/items/content-research-batch-078-2026-11-13.json');
+assert.equal(yiddishPublic.evidence_family_id,'igrot-public-letter-5719-erev-shabbat-emor-aid5100601');
+
 const englishPublic=idx.entries.find(e=>sourceAID(e)==='5043323');
 assert(englishPublic&&englishPublic.language==='English'&&englishPublic.context_status==='complete');
 const partialExcerpt=idx.entries.find(e=>sourceAID(e)==='4830985');
@@ -1262,10 +1270,15 @@ assert.equal(batch083Data.records.length,6);
 assert.equal(new Set(batch083Aids).size,6);
 assert.equal(new Set(batch083Data.records.map(r=>r.evidence_family_id)).size,6);
 assert.equal(new Set(batch083Data.records.map(r=>r.source_url)).size,6);
-assert.equal(batch083Data.source_bodies_inspected,8);
+assert.equal(batch083Data.source_bodies_inspected,9);
 assert.equal(batch083Data.new_response_propositions,15);
-assert.equal(batch083Data.existing_response_propositions_added,1);
-assert.equal(batch083Data.existing_identity_updates.length,1);
+assert.equal(batch083Data.existing_response_propositions_added,4);
+assert.equal(batch083Data.total_new_paraphrase_entries,19);
+assert(batch083Data.source_languages.includes('Yiddish'));
+assert.equal(batch083Data.reviewed_language_distribution.Yiddish,1);
+assert(batch083Data.reviewed_aids.includes(5100601));
+assert.equal(batch083Data.existing_identity_updates.length,2);
+assert(batch083Data.existing_identity_updates.some(x=>String(x.aid)==='5100601'&&x.identity==='aid:5100601'));
 assert.equal(batch083Data.existing_identity_rechecks.length,1);
 assert.equal(batch083Data.reconciliation_status,'reconciled');
 assert.deepEqual(batch083Data.metrics_actual_after,{answer_eligible_unique_sources:metrics.answer_eligible_unique_sources,content_verified_unique_sources:metrics.content_verified_unique_sources,answer_eligible_propositions:metrics.answer_eligible_propositions});
@@ -1275,7 +1288,7 @@ assert.equal(batch083Data.metrics_before.content_verified_unique_sources,826);
 assert.equal(batch083Data.metrics_before.answer_eligible_propositions,2706);
 assert.equal(batch083Data.metrics_expected_after.answer_eligible_unique_sources,835);
 assert.equal(batch083Data.metrics_expected_after.content_verified_unique_sources,832);
-assert.equal(batch083Data.metrics_expected_after.answer_eligible_propositions,2722);
+assert.equal(batch083Data.metrics_expected_after.answer_eligible_propositions,2725);
 for(const aid of batch083Aids){
  const r=batch083Data.records.find(x=>String(x.aid)===aid);
  const e=eligible.find(x=>sourceAID(x)===aid);
@@ -1302,6 +1315,12 @@ assert.equal(enriched5100402.canonical_file,'data/items/content-research-batch-0
 const rechecked5100203=eligible.find(e=>sourceAID(e)==='5100203');
 assert(rechecked5100203&&rechecked5100203.response_propositions.length===2);
 assert.equal(rechecked5100203.canonical_file,'data/items/content-research-batch-057-2026-11-12.json');
+const yiddishInfluenceQuestion='מה נכתב במכתב היידיש על להזהיר גדולים על הקטנים?';
+for(const mode of ['regular','researcher']){
+ const yiddishInfluence=buildAnswerModel(idx.entries,yiddishInfluenceQuestion,{mode});
+ assert(yiddishInfluence.answerable&&yiddishInfluence.sources.some(e=>sourceAID(e)==='5100601'),mode+': Yiddish public-letter evidence must be retrievable for its explicit responsibility theme');
+ assert(yiddishInfluence.sources.some(e=>e.language==='Yiddish'));
+}
 const speechPublishedQuestion='מה נכתב במענה שפורסם על קושי בדיבור?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,speechPublishedQuestion,{mode});
