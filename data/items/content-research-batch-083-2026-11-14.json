@@ -1,0 +1,869 @@
+{
+  "batch_id": "083",
+  "reviewed_at": "2026-11-14T12:57:03+02:00",
+  "method": "Manual source-text review using public Chabad.org/TheRebbe.org pages opened through web search/open. No blocked crawler was retried and no access control was bypassed. Seven new source families were promoted only after body inspection; one existing Hebrew family was enriched with two parallel English translations; one accessible excerpt was held because its unique letter identity could not be mapped.",
+  "source_bodies_inspected": 9,
+  "reviewed_item_count": 9,
+  "new_source_identities": 7,
+  "new_rebbe_letter_identities": 7,
+  "new_other_document_identities": 0,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 0,
+  "new_response_propositions": 14,
+  "existing_response_propositions_added": 0,
+  "total_new_paraphrase_entries": 14,
+  "answer_eligible_source_families_added": 7,
+  "new_source_families_added": 7,
+  "source_languages": [
+    "English"
+  ],
+  "language_distribution": {
+    "English": 9
+  },
+  "source_type_distribution": {
+    "published_english_translation": 5,
+    "published_english_letter_text": 2,
+    "parallel_english_translation": 1,
+    "translated_excerpt_held": 1
+  },
+  "new_aids": [
+    4264313,
+    96091,
+    96076,
+    6428978,
+    2334949,
+    6428941,
+    96234
+  ],
+  "reviewed_aids": [
+    4264313,
+    96091,
+    96076,
+    6428978,
+    2334949,
+    6428941,
+    96234,
+    96097,
+    72874
+  ],
+  "cross_reference_aids": [
+    2989328,
+    2276672
+  ],
+  "existing_identity_updates": [
+    {
+      "identity": "aid:2989328",
+      "id": "chabad-letter-2989328",
+      "file": "data/items/content-research-batch-070-2026-11-13.json",
+      "action": "enriched_existing_identity_in_original_batch_file",
+      "parallel_witnesses_added": 2,
+      "new_propositions_added": 0,
+      "translation_aids": [
+        96097,
+        2276672
+      ],
+      "evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+      "note": "AID 96097 (Uri Kaploun) and AID 2276672 (Eli Touger) are two English translations of the Hebrew letter AID 2989328. Both are linked to the same Evidence Family; no independent propositions or source families are added."
+    }
+  ],
+  "blocked_candidate_count": 2,
+  "blocked_candidates": [
+    {
+      "source_ref": "AID 2276672 direct open",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity.htm",
+      "reason": "Direct open returned Internal Error in this run. The page body had already been inspected in batch 082; the current run did not claim a new body inspection for it.",
+      "handling": "Linked the existing translation record to the accessible Hebrew AID 2989328 and independently inspected the parallel English translation AID 96097 in this run."
+    },
+    {
+      "source_ref": "Yiddish parallel of AID 2276666, Letter No. 750",
+      "source_url": null,
+      "reason": "The English page's footnote identifies a Yiddish parallel in Igros Kodesh Vol. 3, but public search did not expose a separate accessible Yiddish body or stable page URL.",
+      "handling": "No Yiddish content or independent witness was claimed; the source was not promoted. Alternative accessible English source bodies were inspected in the same run."
+    }
+  ],
+  "not_promoted_after_inspection": [
+    {
+      "aid": 72874,
+      "title": "Kisui HaRosh — Hair Covering",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/72874/jewish/Kisui-HaRosh-Hair-Covering.htm",
+      "source_body_locator": "AID 72874, body lines 247–256.",
+      "reason": "The page is a translated excerpt and its footnote identifies only Igros Kodesh Vol. XXIII, pp. 345–346. No date or letter number is exposed in the inspected page, and no unique existing family could be mapped with confidence. Held outside Verified/answer-eligible counts."
+    }
+  ],
+  "crawler_retry": false,
+  "access_control_bypassed": false,
+  "full_text_copied": false,
+  "deduplication_check": {
+    "new_aids_unique": true,
+    "new_source_urls_unique": true,
+    "new_evidence_families_unique": true,
+    "checked_against": "Current public-search index, content-review queue, batches 055–082, and the existing Hebrew AID 2989328 record.",
+    "new_family_count": 7,
+    "parallel_translations_linked_to_existing_family": 2,
+    "translations_counted_as_independent_witnesses": 0,
+    "duplicate_family_mapping": "AID 96097 and AID 2276672 -> AID 2989328",
+    "held_unmapped_excerpt": 72874
+  },
+  "metrics_before": {
+    "answer_eligible_unique_sources": 828,
+    "content_verified_unique_sources": 825,
+    "answer_eligible_propositions": 2704
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 835,
+    "content_verified_unique_sources": 832,
+    "answer_eligible_propositions": 2718
+  },
+  "metrics_actual_after": null,
+  "reconciliation_variance": null,
+  "reconciliation_status": "pending_reconciliation",
+  "reconciled_at": null,
+  "reconciliation_commit": null,
+  "publication_commit": null,
+  "limitations": [
+    "All seven new source bodies are English pages. Five are explicitly published translations; their original-language text was not inspected, and they are not counted as independent witnesses.",
+    "The Yiddish parallel to AID 2276666 was identified in a publisher footnote but no separate public body was found; it remains uninspected.",
+    "AID 72874 was opened but held because its volume/page locator does not uniquely identify a letter family in the current corpus.",
+    "The Reagan letters are published English text; original handwritten documents were not inspected.",
+    "The message AID 96076 contains a separate letter by the Rebbe Rayatz; propositions explicitly distinguish Rayatz's quoted text from the Rebbe's own message."
+  ],
+  "records": [
+    {
+      "id": "chabad-letter-4264313",
+      "canonical_key": "aid:4264313",
+      "aid": 4264313,
+      "type": "letter",
+      "collection": "The Rebbe's Letters / Chabad.org",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "מכתב פרטי מ-1 שבט תשל״ד; העמוד מסמן את הגוף כתרגום חופשי מרוסית ומציין Igros Kodesh, כרך כ״ט, עמ׳ 80.",
+      "title": "All Jews are Believers",
+      "volume": 29,
+      "letter_number": null,
+      "date_original": "1 Shevat, 5734 [January 24, 1974]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": "Russian",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4264313/jewish/All-Jews-are-Believers.htm",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "verification_status": "נבדק גוף הפרסום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 267–277. העמוד מציין במפורש תרגום חופשי מרוסית; הנוסח הרוסי והמכתב הנכנס לא נבדקו. האימות חל על הטקסט שפורסם בלבד, ללא אימות אוטוגרף.",
+      "has_content_evidence": true,
+      "summary_researcher": "מכתב פרטי על הסתגלות למצב חדש, הסתייעות בניסיונם של עולים אחרים וגילוי אמונה פנימית.",
+      "response_propositions": [
+        "המכתב מתאר את קשיי הנמען במעבר למצב חדש ומציין כי גם כאשר ההסתגלות אינה מספקת בתחילתה, הניסיון מלמד שהמצב עשוי להשתפר בהמשך.",
+        "הרבי ממליץ להיעזר בניסיונם של עולים חדשים שעברו קשיים דומים, ומקשר את תחושת הקנאה במאמינים להזמנה לגלות את האמונה שכבר מצויה באדם ובמשפחתו."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 4264313, body lines 272–274.",
+        "Chabad.org AID 4264313, body lines 274–276."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 4264313, published English body lines 267–277.",
+      "evidence_family_id": "igrot-letter-5734-1-shevat-v29-p80-aid4264313",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": "igrot-letter-5734-1-shevat-v29-p80-aid4264313",
+      "independent_witness": false,
+      "witness_type": "published_english_translation",
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [],
+        "research_terms": [
+          "הסתגלות",
+          "מצב חדש",
+          "עולים חדשים",
+          "אמונה",
+          "זהות דתית",
+          "Russian translation",
+          "new situation",
+          "immigrants",
+          "faith"
+        ],
+        "response_case_candidate": false
+      },
+      "epistemic_level": 2,
+      "notes": "הנמען אינו מזוהה בעמוד. הפרפרזות מוגבלות לשתי הפסקאות שנבדקו; אין להסיק מהן אבחנה פסיכולוגית או הקשר אישי שלא פורסם.",
+      "documented_circumstances": "מכתב פרטי מ-1 שבט תשל״ד בתגובה להתכתבות שבה תוארו קשיים במצב חדש; המכתב הנכנס אינו מוצג.",
+      "question_or_problem": "כיצד להתמודד עם קשיי הסתגלות למצב חדש ועם תחושת ריחוק מזהות דתית.",
+      "conditions_or_qualifications": [
+        "העמוד מציין FREE TRANSLATION FROM RUSSIAN; המקור הרוסי לא נבדק.",
+        "המכתב הנכנס אינו מוצג; הנמען אינו מזוהה.",
+        "אין להסיק מהתמצית אבחנה או פרטים ביוגרפיים שאינם מופיעים בגוף הפרסום."
+      ],
+      "audience": "נמען פרטי שאינו מזוהה בעמוד.",
+      "primary_secondary_status": "Published English translation of a private letter; not an independent witness; original-language text not inspected.",
+      "translation_status": "FREE TRANSLATION FROM RUSSIAN; original Russian text not inspected; one translated manifestation of this letter.",
+      "witness_provenance": "Chabad.org / TheRebbe.org AID 4264313; published English translation from Russian; https://www.chabad.org/therebbe/letters/default_cdo/aid/4264313/jewish/All-Jews-are-Believers.htm",
+      "witness": {
+        "kind": "text",
+        "state": "published_translation",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "language": "English",
+        "scope": "AID 4264313, published English body lines 267–277",
+        "complete_partial": "complete",
+        "notes": "העמוד מציין במפורש תרגום מרוסית; הנמען והמכתב הנכנס אינם מוצגים."
+      },
+      "provenance": {
+        "authorship_status": "Publisher identifies the page as a letter of the Lubavitcher Rebbe; this is publisher attribution, not independent autograph authentication.",
+        "signature_status": "Publisher page attributes the letter to the Rebbe; no original autograph image was inspected.",
+        "source_witness": "Chabad.org / TheRebbe.org, AID 4264313, All Jews are Believers; published English translation from Russian: https://www.chabad.org/therebbe/letters/default_cdo/aid/4264313/jewish/All-Jews-are-Believers.htm",
+        "transmission_type": "Published English translation from Russian; original Russian text not inspected.",
+        "textual_status": "Published English body lines 267–277 inspected; original Russian text and incoming correspondence not inspected.",
+        "editorial_scope": "נשמרו תמציות מחקר לא-מילוליות בלבד; לא הועתק גוף הפרסום המוגן.",
+        "verification_status": "נבדק גוף הפרסום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 267–277. העמוד מציין במפורש תרגום חופשי מרוסית; הנוסח הרוסי והמכתב הנכנס לא נבדקו. האימות חל על הטקסט שפורסם בלבד, ללא אימות אוטוגרף.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4264313/jewish/All-Jews-are-Believers.htm",
+        "accessed": "2026-11-14"
+      },
+      "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 267–277. העמוד מציין במפורש תרגום חופשי מרוסית; הנוסח הרוסי והמכתב הנכנס לא נבדקו. האימות חל על הטקסט שפורסם בלבד, ללא אימות אוטוגרף.",
+      "rights_status": "copyrighted-link-only",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "status": "public_publisher_body_opened",
+        "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא-מילוליות בלבד."
+      },
+      "locator": {
+        "publisher": "Chabad.org / TheRebbe.org",
+        "aid": 4264313,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4264313/jewish/All-Jews-are-Believers.htm"
+      }
+    },
+    {
+      "id": "chabad-letter-96091",
+      "canonical_key": "aid:96091",
+      "aid": 96091,
+      "type": "letter",
+      "collection": "Sichos in English Collection / Chabad.org",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "קטע ממכתב מ-13 אלול תש״י; הטקסט מתחיל באליפסיס, כולל ציטוטים מדברי הריי״צ ומסתיים בדברי הרבי. תרגום חופשי מאת Uri Kaploun; הערת המו״ל מפנה לאגרות קודש כרך ג׳ עמ׳ 431.",
+      "title": "A Letter for Chai Elul",
+      "volume": 3,
+      "letter_number": null,
+      "date_original": "Erev Shabbat, 13 Elul, 5710 [1950]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": null,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96091/jewish/A-Letter-for-Chai-Elul.htm",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "partial",
+      "verification_status": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 246–260, וכן הערת המו״ל בשורות 267–270. הפתיחה מתחילה באליפסיס ולכן ההקשר חלקי. הפרופוזיציה הראשונה מתארת במפורש דברי הריי״צ המצוטטים במכתב; השנייה מתייחסת למסקנת הרבי. המקור בשפתו המקורית לא נבדק.",
+      "has_content_evidence": true,
+      "summary_researcher": "קטע ממכתב על חשבון נפש בימי אלול, פרסום תכנים חסידיים והתקשרות לתורת הריי״צ.",
+      "response_propositions": [
+        "הקטע המצטט את דברי הריי״צ מציג את שנים־עשר הימים מחי אלול ועד ראש השנה כחשבון נפש מובנה, יום לכל אחד מחודשי השנה; חי אלול משויך לחשבון הנפש של חודש תשרי שעבר וערב ראש השנה לחודש אלול.",
+        "בחתימת המכתב הרבי מסביר שיש לפרסם כעת תכנים חסידיים שהיו מוצנעים, לנוכח החשכה הרוחנית של הדור, ומטיל על כל אדם ואישה אחריות להתחזק בהתקשרות לתורת הריי״צ כדי לסייע בהסרת ההסתר."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 96091, body lines 253–255 (quotation attributed in the letter to the Rebbe Rayatz).",
+        "Chabad.org AID 96091, body lines 256–260 (the Rebbe's concluding message)."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 96091, published English body lines 246–260; bibliographic note at lines 267–270.",
+      "evidence_family_id": "igrot-letter-5710-13-elul-v3-p431-aid96091",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": "igrot-letter-5710-13-elul-v3-p431-aid96091",
+      "independent_witness": false,
+      "witness_type": "published_english_translation",
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [],
+        "research_terms": [
+          "חי אלול",
+          "חשבון נפש",
+          "ראש השנה",
+          "סליחות",
+          "הריי״צ",
+          "הפצת חסידות",
+          "Chai Elul",
+          "spiritual accounting"
+        ],
+        "response_case_candidate": false
+      },
+      "epistemic_level": 2,
+      "notes": "העמוד אינו מציג את תחילת המכתב; אין להציג את הקטע כטקסט מלא. המקור המקורי לא נבדק.",
+      "documented_circumstances": "קטע ממכתב המתוארך לערב שבת קודש, 13 אלול תש״י, העוסק במשמעות חי אלול, היום השלישי של סליחות והכנה לראש השנה.",
+      "question_or_problem": "כיצד להבין את עבודת ההכנה לראש השנה ואת פרסום תכנים חסידיים שהיו מוצנעים.",
+      "conditions_or_qualifications": [
+        "הטקסט מתחיל באליפסיס ולכן ההקשר חלקי.",
+        "הפרופוזיציה הראשונה מתייחסת לדברי הריי״צ המצוטטים; אין לייחסם לרבי כציטוט מקורי שלו.",
+        "תרגום חופשי מאת Uri Kaploun; המקור בשפתו המקורית לא נבדק."
+      ],
+      "audience": "קוראי המכתב; הנמען המדויק אינו מוצג בעמוד.",
+      "primary_secondary_status": "Published English translation of a dated letter excerpt; not an independent witness; quoted Rayatz material is explicitly attributed.",
+      "translation_status": "Free English translation by Uri Kaploun; original-language text not inspected; one translated manifestation of this letter.",
+      "witness_provenance": "Chabad.org / TheRebbe.org AID 96091; published English free translation by Uri Kaploun; https://www.chabad.org/therebbe/article_cdo/aid/96091/jewish/A-Letter-for-Chai-Elul.htm",
+      "witness": {
+        "kind": "text",
+        "state": "published_translation",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "language": "English",
+        "scope": "AID 96091, published English body lines 246–260; footnote 1 at 267–270",
+        "complete_partial": "partial",
+        "notes": "הקטע מתחיל באליפסיס; יש להבחין בין דברי הריי״צ המצוטטים לבין דברי הרבי בסיום."
+      },
+      "provenance": {
+        "authorship_status": "Publisher attributes the letter to the Lubavitcher Rebbe; quoted teachings of the Rebbe Rayatz are distinguished from the Rebbe's own concluding message.",
+        "signature_status": "The page prints the name Menachem Schneerson at line 260; autograph not independently inspected.",
+        "source_witness": "Chabad.org / TheRebbe.org, AID 96091, A Letter for Chai Elul; published English free translation by Uri Kaploun: https://www.chabad.org/therebbe/article_cdo/aid/96091/jewish/A-Letter-for-Chai-Elul.htm",
+        "transmission_type": "Published English free translation by Uri Kaploun; original-language text not inspected.",
+        "textual_status": "Published English excerpt lines 246–260 inspected; opening ellipsis retained as a partial-context limitation; original-language text not inspected.",
+        "editorial_scope": "נשמרו תמציות מחקר לא-מילוליות בלבד; לא הועתק גוף הפרסום המוגן.",
+        "verification_status": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 246–260, וכן הערת המו״ל בשורות 267–270. הפתיחה מתחילה באליפסיס ולכן ההקשר חלקי. הפרופוזיציה הראשונה מתארת במפורש דברי הריי״צ המצוטטים במכתב; השנייה מתייחסת למסקנת הרבי. המקור בשפתו המקורית לא נבדק.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96091/jewish/A-Letter-for-Chai-Elul.htm",
+        "accessed": "2026-11-14"
+      },
+      "verification_scope": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 246–260, וכן הערת המו״ל בשורות 267–270. הפתיחה מתחילה באליפסיס ולכן ההקשר חלקי. הפרופוזיציה הראשונה מתארת במפורש דברי הריי״צ המצוטטים במכתב; השנייה מתייחסת למסקנת הרבי. המקור בשפתו המקורית לא נבדק.",
+      "rights_status": "copyrighted-link-only",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "status": "public_publisher_body_opened",
+        "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא-מילוליות בלבד."
+      },
+      "locator": {
+        "publisher": "Chabad.org / TheRebbe.org",
+        "aid": 96091,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96091/jewish/A-Letter-for-Chai-Elul.htm"
+      }
+    },
+    {
+      "id": "chabad-letter-96076",
+      "canonical_key": "aid:96076",
+      "aid": 96076,
+      "type": "letter",
+      "collection": "Sichos in English Collection / Proceeding Together, Vol. 1",
+      "source_class": "Published letter",
+      "source_class_detail": "מסר מ-21 אייר תש״י, כשבועיים לפני שבועות; כולל ציטוט נרחב ממכתב נפרד של הריי״צ לחסידים ולתלמידי תומכי תמימים שהתיישבו בארץ הקודש. תרגום חופשי מאת Uri Kaploun.",
+      "title": "Shavuos: How to Receive the Torah",
+      "volume": null,
+      "letter_number": null,
+      "date_original": "21 Iyar, 5710 [1950]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": null,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96076/jewish/Shavuos-How-to-Receive-the-Torah.htm",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "complete",
+      "verification_status": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 289–309, וכן הערת המו״ל בשורות 318–322. הפרופוזיציה הראשונה מיוחסת במפורש למכתב הריי״צ המצוטט; השנייה למסר של הרבי. המקור בשפתו המקורית לא נבדק; הפקסימיליה של מכתב הריי״צ מוזכרת בהערה אך לא נבדקה.",
+      "has_content_evidence": true,
+      "summary_researcher": "מכתב לקראת שבועות המצטט את הריי״צ על עיצוב החיים לפי התורה ומדגיש את התחדשות קבלת התורה מדי יום.",
+      "response_propositions": [
+        "המסר מצטט מכתב של הריי״צ לתלמידי תומכי תמימים שהתיישבו בארץ הקודש: ספר התורה שנשלח אליהם נועד להזכיר להם לעצב את חייהם הפרטיים והציבוריים לפי התורה, לחנך את ילדיהם ולהדריך יהודים נוספים בלימוד ובקיום מצוות.",
+        "במסר שלו הרבי מדגיש שקבלת התורה מתחדשת בכל יום, ומבקש להתבונן בדברי הריי״צ סביב חג השבועות כך שיניבו תוצאות מעשיות לאורך השנה."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 96076, body lines 289–295 (the quoted letter is attributed to the Rebbe Rayatz).",
+        "Chabad.org AID 96076, body lines 296–301 (the Rebbe's own concluding message)."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 96076, published English body lines 289–309; publication note at lines 318–322.",
+      "evidence_family_id": "letter-5710-21-iyar-shavuos-aid96076",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": "letter-5710-21-iyar-shavuos-aid96076",
+      "independent_witness": false,
+      "witness_type": "published_english_translation",
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [],
+        "research_terms": [
+          "שבועות",
+          "מתן תורה",
+          "תומכי תמימים",
+          "חינוך ילדים",
+          "קיום מצוות",
+          "Torah",
+          "Shavuos",
+          "daily Torah"
+        ],
+        "response_case_candidate": false
+      },
+      "epistemic_level": 2,
+      "notes": "אין לייחס לרבי את נוסח המכתב המצוטט של הריי״צ. תאריך המסר מאומת בהערת המו״ל, לא מתוך כותרת בלבד.",
+      "documented_circumstances": "מסר מ-21 אייר תש״י, כשבועיים לפני שבועות, הכולל מכתב מצוטט של הריי״צ לתלמידי תומכי תמימים בארץ הקודש.",
+      "question_or_problem": "כיצד להפוך את חג השבועות ואת מתן התורה להדרכה מעשית לאורך השנה.",
+      "conditions_or_qualifications": [
+        "הפרופוזיציה הראשונה היא תוכן מכתב הריי״צ המצוטט, לא אמירה עצמאית של הרבי.",
+        "הפרופוזיציה השנייה היא מסקנת הרבי במסר מ-21 אייר תש״י.",
+        "תרגום חופשי מאת Uri Kaploun; המקור והפקסימיליה לא נבדקו."
+      ],
+      "audience": "חסידים ותלמידי תומכי תמימים בארץ הקודש כפי שהם מופיעים במכתב המצוטט; קוראי המסר.",
+      "primary_secondary_status": "Published English translation of a dated message; not an independent witness; includes a separately attributed quotation from the Rebbe Rayatz.",
+      "translation_status": "Free English translation by Uri Kaploun; original-language text not inspected; one translated manifestation of the Rebbe's message.",
+      "witness_provenance": "Chabad.org / TheRebbe.org AID 96076; published English free translation by Uri Kaploun; https://www.chabad.org/therebbe/article_cdo/aid/96076/jewish/Shavuos-How-to-Receive-the-Torah.htm",
+      "witness": {
+        "kind": "text",
+        "state": "published_translation",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "language": "English",
+        "scope": "AID 96076, published English body lines 289–309; footnotes 318–322",
+        "complete_partial": "complete",
+        "notes": "המסר של הרבי מצטט מכתב קודם של הריי״צ; הפרפרזה הראשונה מיוחסת לריי״צ והשנייה לרבי."
+      },
+      "provenance": {
+        "authorship_status": "Publisher attributes the message to the Lubavitcher Rebbe; the embedded letter is explicitly attributed to the Rebbe Rayatz and is not treated as the Rebbe's own wording.",
+        "signature_status": "The page prints Menachem Schneerson at lines 301–309; autograph not independently inspected.",
+        "source_witness": "Chabad.org / TheRebbe.org, AID 96076, Shavuos: How to Receive the Torah; published English free translation by Uri Kaploun: https://www.chabad.org/therebbe/article_cdo/aid/96076/jewish/Shavuos-How-to-Receive-the-Torah.htm",
+        "transmission_type": "Published English free translation by Uri Kaploun; source text is a dated message of the Rebbe containing a separately attributed Rayatz letter.",
+        "textual_status": "Published English body lines 289–309 inspected; footnote identifies the message date as 21 Iyar 5710; original-language text not inspected.",
+        "editorial_scope": "נשמרו תמציות מחקר לא-מילוליות בלבד; לא הועתק גוף הפרסום המוגן.",
+        "verification_status": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 289–309, וכן הערת המו״ל בשורות 318–322. הפרופוזיציה הראשונה מיוחסת במפורש למכתב הריי״צ המצוטט; השנייה למסר של הרבי. המקור בשפתו המקורית לא נבדק; הפקסימיליה של מכתב הריי״צ מוזכרת בהערה אך לא נבדקה.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96076/jewish/Shavuos-How-to-Receive-the-Torah.htm",
+        "accessed": "2026-11-14"
+      },
+      "verification_scope": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 289–309, וכן הערת המו״ל בשורות 318–322. הפרופוזיציה הראשונה מיוחסת במפורש למכתב הריי״צ המצוטט; השנייה למסר של הרבי. המקור בשפתו המקורית לא נבדק; הפקסימיליה של מכתב הריי״צ מוזכרת בהערה אך לא נבדקה.",
+      "rights_status": "copyrighted-link-only",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "status": "public_publisher_body_opened",
+        "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא-מילוליות בלבד."
+      },
+      "locator": {
+        "publisher": "Chabad.org / TheRebbe.org",
+        "aid": 96076,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96076/jewish/Shavuos-How-to-Receive-the-Torah.htm"
+      }
+    },
+    {
+      "id": "chabad-letter-6428978",
+      "canonical_key": "aid:6428978",
+      "aid": 6428978,
+      "type": "letter",
+      "collection": "Historical Correspondence with US Presidents / Chabad.org",
+      "source_class": "Public correspondence",
+      "source_class_detail": "מכתב פומבי באנגלית לנשיא רונלד רייגן מ-30 שבט תשמ״ח, בתגובה למכתב תנחומים; העמוד אינו מזהה את הנפטרת.",
+      "title": "Letter to President Ronald Reagan February 18, 1988",
+      "volume": null,
+      "letter_number": null,
+      "date_original": "30 Shevat, 5748 [February 18, 1988]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": null,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6428978/jewish/Letter-to-President-Ronald-Reagan-February-18-1988.htm",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "complete",
+      "verification_status": "נבדק גוף המכתב האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–267. העמוד מציג תאריך, נמען וחתימה מודפסת; לא נבדק כתב היד המקורי או צילום החתימה. זהות הנפטרת אינה מצוינת בעמוד ולא הוסקה.",
+      "has_content_evidence": true,
+      "summary_researcher": "מכתב תנחומים לנשיא רייגן המתאר את המשך השפעתם של מעשים טובים ומוסדות כמורשת חיה.",
+      "response_propositions": [
+        "המכתב משיב לתנחומים של הנשיא רייגן ומציין כי דבריו החמים, שנמסרו מן הלב, הביאו נחמה ועידוד.",
+        "המכתב מתאר את מורשת הנפטרת כמעשים טובים הממשיכים להתפתח וכפעילות מוסדית הממשיכה להעניק השראה, ומחזיר לנשיא ברכת תנחומים תוך הדגשת התקווה לטוב גלוי ומוחשי גם בעולם הזה."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 6428978, body lines 256–260.",
+        "Chabad.org AID 6428978, body lines 261–267."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 6428978, published English letter body lines 247–267.",
+      "evidence_family_id": "reagan-letter-1988-02-18-aid6428978",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "independent_witness": true,
+      "witness_type": "published_english_letter_text",
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [],
+        "research_terms": [
+          "תנחומים",
+          "מעשים טובים",
+          "מורשת",
+          "מוסדות",
+          "השראה",
+          "Ronald Reagan",
+          "condolence",
+          "legacy"
+        ],
+        "response_case_candidate": false
+      },
+      "epistemic_level": 2,
+      "notes": "הנפטרת אינה מזוהה; אין להסיק את זהותה. הפרפרזה מתייחסת רק למכתב התנחומים שפורסם.",
+      "documented_circumstances": "מכתב לנשיא רונלד רייגן מ-30 שבט תשמ״ח, בתגובה לדברי תנחומים.",
+      "question_or_problem": "כיצד המכתב מתייחס לתנחומים ולמורשת הנמשכת באמצעות מעשים טובים ומוסדות.",
+      "conditions_or_qualifications": [
+        "הנפטרת אינה מזוהה בעמוד.",
+        "הטקסט והחתימה מוצגים בפרסום; כתב היד המקורי לא נבדק.",
+        "אין להסיק מכאן זהות או קשר משפחתי שלא נמסרו."
+      ],
+      "audience": "הנשיא רונלד רייגן והגברת רייגן, כפי שמצוין בגוף המכתב.",
+      "primary_secondary_status": "Published English letter text; direct correspondence identity; autograph not independently inspected.",
+      "translation_status": "No translation notice on the inspected page; the published English text is treated as a direct English letter text, not as an independently authenticated autograph.",
+      "witness_provenance": "Chabad.org / TheRebbe.org AID 6428978; published English letter text; https://www.chabad.org/therebbe/article_cdo/aid/6428978/jewish/Letter-to-President-Ronald-Reagan-February-18-1988.htm",
+      "witness": {
+        "kind": "text",
+        "state": "published_letter_text",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "language": "English",
+        "scope": "AID 6428978, published English letter body lines 247–267",
+        "complete_partial": "complete",
+        "notes": "הנפטרת אינה מזוהה בעמוד; אין להסיק את זהותה או את הקשר המשפחתי."
+      },
+      "provenance": {
+        "authorship_status": "Publisher presents the text as a letter of the Lubavitcher Rebbe; no independent autograph authentication performed.",
+        "signature_status": "The page prints M Schneerson at line 267; original handwritten signature not inspected.",
+        "source_witness": "Chabad.org / TheRebbe.org, AID 6428978, Letter to President Ronald Reagan February 18, 1988; published English letter text: https://www.chabad.org/therebbe/article_cdo/aid/6428978/jewish/Letter-to-President-Ronald-Reagan-February-18-1988.htm",
+        "transmission_type": "Published English letter text; the page does not label it as a translation.",
+        "textual_status": "Published English letter body lines 247–267 inspected; original manuscript image not inspected.",
+        "editorial_scope": "נשמרו תמציות מחקר לא-מילוליות בלבד; לא הועתק גוף הפרסום המוגן.",
+        "verification_status": "נבדק גוף המכתב האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–267. העמוד מציג תאריך, נמען וחתימה מודפסת; לא נבדק כתב היד המקורי או צילום החתימה. זהות הנפטרת אינה מצוינת בעמוד ולא הוסקה.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6428978/jewish/Letter-to-President-Ronald-Reagan-February-18-1988.htm",
+        "accessed": "2026-11-14"
+      },
+      "verification_scope": "נבדק גוף המכתב האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–267. העמוד מציג תאריך, נמען וחתימה מודפסת; לא נבדק כתב היד המקורי או צילום החתימה. זהות הנפטרת אינה מצוינת בעמוד ולא הוסקה.",
+      "rights_status": "copyrighted-link-only",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "status": "public_publisher_body_opened",
+        "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא-מילוליות בלבד."
+      },
+      "locator": {
+        "publisher": "Chabad.org / TheRebbe.org",
+        "aid": 6428978,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6428978/jewish/Letter-to-President-Ronald-Reagan-February-18-1988.htm"
+      }
+    },
+    {
+      "id": "chabad-letter-2334949",
+      "canonical_key": "aid:2334949",
+      "aid": 2334949,
+      "type": "letter",
+      "collection": "Sichos in English Collection / Chabad.org",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "איגרת מ-25 אדר שני תשי״א; תרגום חופשי לאנגלית מאת Uri Kaploun. הערת המו״ל מזהה את איגרות קודש כרך ד׳, מכתב 959, עמ׳ 228, לצד מהדורות נוספות.",
+      "title": "A Letter — What is a Lamp?",
+      "volume": 4,
+      "letter_number": 959,
+      "date_original": "25 Adar II, 5711 [1951]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": null,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2334949/jewish/A-Letter.htm",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "complete",
+      "verification_status": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–260, וכן הערת המקור בשורות 270–274. העמוד מזהה את המכתב כמכתב 959 באיגרות קודש כרך ד׳, עמ׳ 228; נוסח המקור העברי לא נבדק. ההפניות הביבליוגרפיות מאמתות זיהוי ומיקום, לא את התוכן מעבר לתרגום שנקרא.",
+      "has_content_evidence": true,
+      "summary_researcher": "איגרת המפתחת את משל הנר: תורה ומצוות, האדם ונפשו, והארת החלק הגשמי שעל האדם לברר.",
+      "response_propositions": [
+        "במשל הנר, השמן מייצג את התורה והמצוות, והפתילה מייצגת את האדם — גופו או, באופן מדויק יותר, את מדרגת הנפש המתוארת כשותפה לגוף; חיבורם יוצר אור.",
+        "המכתב מעביר את משל הנר להוראה מעשית: להאיר את חלקו המסוים של העולם הגשמי שעל האדם לברר ולהעלות, ובפרט את הנפש הבהמית והנפש האלוקית שבו."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2334949, body lines 251–252.",
+        "Chabad.org AID 2334949, body lines 254–257."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 2334949, published English body lines 247–260; source references at lines 270–274.",
+      "evidence_family_id": "igrot-letter-5711-25-adar-ii-v4-letter959-aid2334949",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": "igrot-letter-5711-25-adar-ii-v4-letter959-aid2334949",
+      "independent_witness": false,
+      "witness_type": "published_english_translation",
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [],
+        "research_terms": [
+          "נר",
+          "שמן",
+          "פתילה",
+          "תורה ומצוות",
+          "נפש",
+          "בירור העולם",
+          "lamp",
+          "wick",
+          "oil",
+          "Torah and mitzvot"
+        ],
+        "response_case_candidate": false
+      },
+      "epistemic_level": 2,
+      "notes": "הנוסח העברי לא נבדק; המיקום הביבליוגרפי אינו משמש אימות סמנטי. הפרפרזות נשענות על גוף התרגום האנגלי שנפתח.",
+      "documented_circumstances": "איגרת מ-25 אדר שני תשי״א על משל הנר ותפקידו של האדם להאיר את חלקו בעולם.",
+      "question_or_problem": "כיצד להבין את משל הנר ולתרגם אותו לעבודה מעשית.",
+      "conditions_or_qualifications": [
+        "תרגום חופשי מאת Uri Kaploun; המקור העברי לא נבדק.",
+        "הפניות לספרים מאמתות זיהוי ומיקום בלבד, לא תוכן שלא נפתח.",
+        "הפרפרזות מוגבלות לגוף התרגום האנגלי בשורות 247–260."
+      ],
+      "audience": "תלמידי הרבי הרש״ב והמקושרים לתורתו; הנמען הישיר אינו מצוין בעמוד.",
+      "primary_secondary_status": "Published English translation of a specific letter; not an independent witness; original-language text not inspected.",
+      "translation_status": "Free English translation by Uri Kaploun; original Hebrew text not inspected; one translated manifestation of Igros Kodesh Vol. IV, Letter 959.",
+      "witness_provenance": "Chabad.org / TheRebbe.org AID 2334949; published English free translation by Uri Kaploun; https://www.chabad.org/therebbe/article_cdo/aid/2334949/jewish/A-Letter.htm",
+      "witness": {
+        "kind": "text",
+        "state": "published_translation",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "language": "English",
+        "scope": "AID 2334949, published English body lines 247–260; footnote 1 at 270–274",
+        "complete_partial": "complete",
+        "notes": "הערת המו״ל מזהה את איגרות קודש כרך ד׳, מכתב 959; אין לטעון שנבדק נוסח עברי שלא נפתח."
+      },
+      "provenance": {
+        "authorship_status": "Publisher attributes the translated letter to the Lubavitcher Rebbe; bibliographic note identifies the Hebrew source but does not authenticate an autograph.",
+        "signature_status": "The page prints Menachem Schneerson at lines 257–260; original autograph not inspected.",
+        "source_witness": "Chabad.org / TheRebbe.org, AID 2334949, A Letter — What is a Lamp?; published English free translation by Uri Kaploun: https://www.chabad.org/therebbe/article_cdo/aid/2334949/jewish/A-Letter.htm",
+        "transmission_type": "Published English free translation by Uri Kaploun; bibliographic note identifies Igros Kodesh Vol. IV, Letter 959, p. 228.",
+        "textual_status": "Published English body inspected; original Hebrew letter was not inspected; bibliographic source references were checked only for identity/location.",
+        "editorial_scope": "נשמרו תמציות מחקר לא-מילוליות בלבד; לא הועתק גוף הפרסום המוגן.",
+        "verification_status": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–260, וכן הערת המקור בשורות 270–274. העמוד מזהה את המכתב כמכתב 959 באיגרות קודש כרך ד׳, עמ׳ 228; נוסח המקור העברי לא נבדק. ההפניות הביבליוגרפיות מאמתות זיהוי ומיקום, לא את התוכן מעבר לתרגום שנקרא.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2334949/jewish/A-Letter.htm",
+        "accessed": "2026-11-14"
+      },
+      "verification_scope": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–260, וכן הערת המקור בשורות 270–274. העמוד מזהה את המכתב כמכתב 959 באיגרות קודש כרך ד׳, עמ׳ 228; נוסח המקור העברי לא נבדק. ההפניות הביבליוגרפיות מאמתות זיהוי ומיקום, לא את התוכן מעבר לתרגום שנקרא.",
+      "rights_status": "copyrighted-link-only",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "status": "public_publisher_body_opened",
+        "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא-מילוליות בלבד."
+      },
+      "locator": {
+        "publisher": "Chabad.org / TheRebbe.org",
+        "aid": 2334949,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2334949/jewish/A-Letter.htm"
+      }
+    },
+    {
+      "id": "chabad-letter-6428941",
+      "canonical_key": "aid:6428941",
+      "aid": 6428941,
+      "type": "letter",
+      "collection": "Historical Correspondence with US Presidents / Chabad.org",
+      "source_class": "Public correspondence",
+      "source_class_detail": "מכתב פומבי באנגלית לנשיא רונלד רייגן מל״ג בעומר תשמ״ז, בתגובה להכרזת Education Day USA ול-International Scroll of Honor.",
+      "title": "Letter to President Ronald Reagan May 17, 1987",
+      "volume": null,
+      "letter_number": null,
+      "date_original": "Lag B'Omer, 5747 [May 17, 1987]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": null,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6428941/jewish/Letter-to-President-Ronald-Reagan-May-17-1987.htm",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "complete",
+      "verification_status": "נבדק גוף המכתב האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–272. העמוד מציג תאריך, נמען וחתימה מודפסת; כתב היד המקורי לא נבדק. התוכן נכתב בהקשר של הכרזת Education Day USA ושל Scroll of Honor ואינו מוצג כמסמך מדיניות כללי.",
+      "has_content_evidence": true,
+      "summary_researcher": "מכתב לנשיא רייגן על מקומם של ערכים מוסריים ורוחניים בחינוך הציבורי ועל שימוש חיובי בזמן הפנוי של צעירים.",
+      "response_propositions": [
+        "במכתב לנשיא רייגן הרבי משבח את ההכרה בצורך לשלב ערכים מוסריים בחינוך הציבורי ומדגיש שחינוך אינו שלם ללא הממד המוסרי והרוחני.",
+        "המכתב מפרט חכמה, אהבה, הגינות, אומץ מוסרי וחמלה כערכים הראויים להיות חלק מהחינוך, ומעלה את האפשרות לעודד צעירים לנצל את חופשת הקיץ באופן חיובי מתוך מודעות לבורא ולחוק מוסרי עליון."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 6428941, body lines 259–263.",
+        "Chabad.org AID 6428941, body lines 263–264."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 6428941, published English letter body lines 247–272.",
+      "evidence_family_id": "reagan-letter-1987-05-17-aid6428941",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "independent_witness": true,
+      "witness_type": "published_english_letter_text",
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [],
+        "research_terms": [
+          "חינוך ציבורי",
+          "ערכים מוסריים",
+          "ערכים רוחניים",
+          "חכמה",
+          "אהבה",
+          "חמלה",
+          "נוער",
+          "Education Day",
+          "moral values",
+          "public education"
+        ],
+        "response_case_candidate": false
+      },
+      "epistemic_level": 2,
+      "notes": "הפרפרזה נשענת על תגובה להכרזה מסוימת ולשיח ציבורי מסוים בשנת 1987; אין להסיק ממנה מדיניות חינוך כוללת.",
+      "documented_circumstances": "מכתב לנשיא רונלד רייגן מל״ג בעומר תשמ״ז, המודה על הכרזת Education Day USA ועל Scroll of Honor.",
+      "question_or_problem": "אילו ממדים מוסריים ורוחניים המכתב מבקש לכלול בחינוך.",
+      "conditions_or_qualifications": [
+        "המכתב מגיב להכרזה מסוימת; אין להציגו כמסמך מדיניות כללי.",
+        "כתב היד המקורי לא נבדק; נבדק גוף הפרסום האנגלי.",
+        "ההצעה לגבי חופשת הקיץ מופיעה בהקשר של צעירים וזמן פנוי."
+      ],
+      "audience": "הנשיא רונלד רייגן; ההכרזה שאליה המכתב מתייחס פונה גם להורים ולמורים ולחינוך הילדים.",
+      "primary_secondary_status": "Published English letter text; direct correspondence identity; autograph not independently inspected.",
+      "translation_status": "No translation notice on the inspected page; treated as a published English letter text, not an independently authenticated autograph.",
+      "witness_provenance": "Chabad.org / TheRebbe.org AID 6428941; published English letter text; https://www.chabad.org/therebbe/article_cdo/aid/6428941/jewish/Letter-to-President-Ronald-Reagan-May-17-1987.htm",
+      "witness": {
+        "kind": "text",
+        "state": "published_letter_text",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "language": "English",
+        "scope": "AID 6428941, published English letter body lines 247–272",
+        "complete_partial": "complete",
+        "notes": "ההקשר הוא הכרזת Education Day USA; אין להרחיב את הדברים למדיניות כללית או עדכנית."
+      },
+      "provenance": {
+        "authorship_status": "Publisher presents the text as a letter of the Lubavitcher Rebbe; no independent autograph authentication performed.",
+        "signature_status": "The page prints M Schneerson at line 272; original handwritten signature not inspected.",
+        "source_witness": "Chabad.org / TheRebbe.org, AID 6428941, Letter to President Ronald Reagan May 17, 1987; published English letter text: https://www.chabad.org/therebbe/article_cdo/aid/6428941/jewish/Letter-to-President-Ronald-Reagan-May-17-1987.htm",
+        "transmission_type": "Published English letter text; the page does not label it as a translation.",
+        "textual_status": "Published English letter body lines 247–272 inspected; original manuscript image not inspected.",
+        "editorial_scope": "נשמרו תמציות מחקר לא-מילוליות בלבד; לא הועתק גוף הפרסום המוגן.",
+        "verification_status": "נבדק גוף המכתב האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–272. העמוד מציג תאריך, נמען וחתימה מודפסת; כתב היד המקורי לא נבדק. התוכן נכתב בהקשר של הכרזת Education Day USA ושל Scroll of Honor ואינו מוצג כמסמך מדיניות כללי.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6428941/jewish/Letter-to-President-Ronald-Reagan-May-17-1987.htm",
+        "accessed": "2026-11-14"
+      },
+      "verification_scope": "נבדק גוף המכתב האנגלי ב-Chabad.org ביום 14.11.2026, שורות 247–272. העמוד מציג תאריך, נמען וחתימה מודפסת; כתב היד המקורי לא נבדק. התוכן נכתב בהקשר של הכרזת Education Day USA ושל Scroll of Honor ואינו מוצג כמסמך מדיניות כללי.",
+      "rights_status": "copyrighted-link-only",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "status": "public_publisher_body_opened",
+        "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא-מילוליות בלבד."
+      },
+      "locator": {
+        "publisher": "Chabad.org / TheRebbe.org",
+        "aid": 6428941,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6428941/jewish/Letter-to-President-Ronald-Reagan-May-17-1987.htm"
+      }
+    },
+    {
+      "id": "chabad-letter-96234",
+      "canonical_key": "aid:96234",
+      "aid": 96234,
+      "type": "letter",
+      "collection": "Sichos in English Collection / Chabad.org",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "איגרת מראש חודש כסלו תשי״א; תרגום חופשי מאת Uri Kaploun. הערת המו״ל מזהה איגרות קודש כרך ד׳, מכתב 815; בגוף מובאים דברי הריי״צ והסבר על הפצת המעיינות.",
+      "title": "A Letter for Yud-Tes Kislev",
+      "volume": 4,
+      "letter_number": 815,
+      "date_original": "Rosh Chodesh Kislev, 5711 [1950]",
+      "date_precision": "exact",
+      "language": "English",
+      "original_language": null,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96234/jewish/A-Letter-for-Yud-Tes-Kislev.htm",
+      "pipeline_status": "Verified",
+      "status": "Verified",
+      "canonical_status": "Verified",
+      "context_status": "complete",
+      "verification_status": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 256–268, וכן הערות המקור בשורות 276–281. הפרופוזיציה הראשונה מייחסת את התוכן המצוטט לריי״צ; השנייה מסכמת את הסבר הרבי. המקור בשפתו המקורית לא נבדק.",
+      "has_content_evidence": true,
+      "summary_researcher": "איגרת על י״ט כסלו כראש השנה לחסידות, עבודת התפילה ותיקון המידות, והפצת המעיינות תוך שמירת קשר למקור.",
+      "response_propositions": [
+        "המכתב מצטט את הריי״צ ומתאר את י״ט כסלו כראש השנה לחסידות וכזמן לחיזוק לימוד התורה הנגלית והחסידות, עבודת התפילה, תיקון המידות ואהבת ישראל.",
+        "בהסברו, הרבי מציג את חסידות חב״ד כמנגישה הבנה אלוקית לכל יהודי, וקורא להפיץ את המעיינות למרחקים תוך שמירה על קשר בלתי־מופסק למקור."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 96234, body lines 258–259 (quoted teaching of the Rebbe Rayatz).",
+        "Chabad.org AID 96234, body lines 260–265 (the Rebbe's explanation and application)."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 96234, published English body lines 256–268; source references at lines 276–281.",
+      "evidence_family_id": "igrot-letter-5711-rosh-chodesh-kislev-v4-letter815-aid96234",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": "igrot-letter-5711-rosh-chodesh-kislev-v4-letter815-aid96234",
+      "independent_witness": false,
+      "witness_type": "published_english_translation",
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [],
+        "research_terms": [
+          "י״ט כסלו",
+          "ראש השנה לחסידות",
+          "לימוד נגלה",
+          "פנימיות התורה",
+          "תפילה",
+          "תיקון המידות",
+          "אהבת ישראל",
+          "הפצת המעיינות",
+          "Yud-Tes Kislev",
+          "Chassidus"
+        ],
+        "response_case_candidate": false
+      },
+      "epistemic_level": 2,
+      "notes": "המקור בשפתו המקורית לא נבדק; הפניות הביבליוגרפיות משמשות לזיהוי ולמיקום בלבד.",
+      "documented_circumstances": "איגרת מראש חודש כסלו תשי״א על י״ט כסלו, לימוד חסידות והפצת המעיינות.",
+      "question_or_problem": "איזו עבודת הנפש קשורה לי״ט כסלו וכיצד להפיץ את תורת החסידות.",
+      "conditions_or_qualifications": [
+        "הפרופוזיציה הראשונה מתארת דברי הריי״צ המצוטטים; השנייה את הסבר הרבי.",
+        "תרגום חופשי מאת Uri Kaploun; המקור בשפתו המקורית לא נבדק.",
+        "הערות המו״ל מאמתות מיקום ביבליוגרפי בלבד."
+      ],
+      "audience": "יהודים מכל החוגים, כפי שמתואר באיגרת; קהל קוראי הפרסום.",
+      "primary_secondary_status": "Published English translation of a specific letter; not an independent witness; original-language text not inspected.",
+      "translation_status": "Free English translation by Uri Kaploun; original-language text not inspected; one translated manifestation of Igros Kodesh Vol. IV, Letter 815.",
+      "witness_provenance": "Chabad.org / TheRebbe.org AID 96234; published English free translation by Uri Kaploun; https://www.chabad.org/therebbe/article_cdo/aid/96234/jewish/A-Letter-for-Yud-Tes-Kislev.htm",
+      "witness": {
+        "kind": "text",
+        "state": "published_translation",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "language": "English",
+        "scope": "AID 96234, published English body lines 256–268; footnote 1 at 276–281",
+        "complete_partial": "complete",
+        "notes": "הפרופוזיציה הראשונה מתייחסת לציטוט מהריי״צ; השנייה להסבר הרבי. אין לייחס את דברי הריי״צ לרבי."
+      },
+      "provenance": {
+        "authorship_status": "Publisher attributes the letter to the Lubavitcher Rebbe; quoted teachings of the Rebbe Rayatz and Rebbe Rashab are distinguished from the Rebbe's own explanation.",
+        "signature_status": "The page prints Menachem Schneerson at line 268; original autograph not independently inspected.",
+        "source_witness": "Chabad.org / TheRebbe.org, AID 96234, A Letter for Yud-Tes Kislev; published English free translation by Uri Kaploun: https://www.chabad.org/therebbe/article_cdo/aid/96234/jewish/A-Letter-for-Yud-Tes-Kislev.htm",
+        "transmission_type": "Published English free translation by Uri Kaploun; bibliographic note identifies Igros Kodesh Vol. IV, Letter 815.",
+        "textual_status": "Published English body lines 256–268 inspected; original-language text not inspected; footnote checked for source identity/location only.",
+        "editorial_scope": "נשמרו תמציות מחקר לא-מילוליות בלבד; לא הועתק גוף הפרסום המוגן.",
+        "verification_status": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 256–268, וכן הערות המקור בשורות 276–281. הפרופוזיציה הראשונה מייחסת את התוכן המצוטט לריי״צ; השנייה מסכמת את הסבר הרבי. המקור בשפתו המקורית לא נבדק.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96234/jewish/A-Letter-for-Yud-Tes-Kislev.htm",
+        "accessed": "2026-11-14"
+      },
+      "verification_scope": "נבדק גוף התרגום האנגלי ב-Chabad.org ביום 14.11.2026, שורות 256–268, וכן הערות המקור בשורות 276–281. הפרופוזיציה הראשונה מייחסת את התוכן המצוטט לריי״צ; השנייה מסכמת את הסבר הרבי. המקור בשפתו המקורית לא נבדק.",
+      "rights_status": "copyrighted-link-only",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "status": "public_publisher_body_opened",
+        "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא-מילוליות בלבד."
+      },
+      "locator": {
+        "publisher": "Chabad.org / TheRebbe.org",
+        "aid": 96234,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96234/jewish/A-Letter-for-Yud-Tes-Kislev.htm"
+      }
+    }
+  ],
+  "existing_identity_rechecks": [],
+  "blocked_source_attempts": [
+    {
+      "source_ref": "AID 2276672",
+      "attempt": "web open",
+      "result": "Internal Error",
+      "alternative": "AID 96097 body opened; Hebrew source AID 2989328 already present and inspected."
+    }
+  ]
+}
