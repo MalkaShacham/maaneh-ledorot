@@ -217,7 +217,7 @@ if batch_path:
     try:
         batch_data=json.loads(batch_path.read_text(encoding="utf-8"))
         target_aids=[str(r.get("aid")) for r in batch_data.get("records",[]) if isinstance(r,dict) and r.get("aid")]
-        for update in batch_data.get("existing_identity_updates",[]):
+        for update in [*batch_data.get("existing_identity_updates",[]),*batch_data.get("existing_identity_rechecks",[])]:
             identity=str(update.get("identity") or update.get("id") or "")
             match=re.search(r"(\d+)$",identity)
             if match: target_aids.append(match.group(1))
