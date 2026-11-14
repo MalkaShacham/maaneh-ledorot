@@ -926,7 +926,7 @@ for(const aid of batch087Aids){
 }
 const batch087Pdf=batch087Data.records.find(r=>r.id==='igrot-letter-5702-rosh-chodesh-nissan-achlei-torah-p169');assert(batch087Pdf&&batch087Pdf.language==='Hebrew'&&batch087Pdf.original_language==='Yiddish');assert.equal(batch087Pdf.independent_witness,false);assert.equal(batch087Pdf.translation_of_evidence_family_id,batch087Pdf.evidence_family_id);assert(batch087Pdf.verification_scope.includes('המקור ביידיש לא נבדק'));
 const indexedPdf=idx.entries.find(e=>e.id==='igrot-letter-5702-rosh-chodesh-nissan-achlei-torah-p169');assert(indexedPdf&&indexedPdf.has_content_evidence&&indexedPdf.status==='Parsed');assert.equal(indexedPdf.canonical_file,batch087Path);
-const enriched1875534=idx.entries.find(e=>sourceAID(e)==='1875534');assert(enriched1875534&&enriched1875534.status==='Verified');assert.equal(enriched1875534.evidence_family_id,'chabad-letter-1875534');assert.equal(enriched1875534.response_propositions.length,6);assert.equal(enriched1875534.response_proposition_locators.length,6);assert(enriched1875534.response_propositions.some(p=>p.includes('מפגש של מחשבות ורעיונות חורג מזמן וממרחק')));assert(enriched1875534.response_propositions.some(p=>p.includes('בקשת תרומה עקיפה')));assert(enriched1875534.response_proposition_locators.some(l=>l.includes('288–290')));
+const enriched1875534=idx.entries.find(e=>sourceAID(e)==='1875534');assert(enriched1875534&&enriched1875534.status==='Verified');assert.equal(enriched1875534.evidence_family_id,'chabad-letter-1875534');assert.equal(enriched1875534.response_propositions.length,6);assert.equal(enriched1875534.response_proposition_locators.length,6);assert.equal(enriched1875534.has_content_evidence,true);assert.equal(enriched1875534.independent_witness,false);assert(enriched1875534.response_propositions.some(p=>p.includes('מפגש של מחשבות ורעיונות חורג מזמן וממרחק')));assert(enriched1875534.response_propositions.some(p=>p.includes('בקשת תרומה עקיפה')));assert(enriched1875534.response_proposition_locators.some(l=>l.includes('288–290')));
 const withheld2189943=idx.entries.find(e=>sourceAID(e)==='2189943');assert(!withheld2189943||withheld2189943.has_content_evidence!==true);
 const educationCorrespondenceQuestion='מה מתועד באיגרות על חינוך ילדים צעירים, חינוך עברי, דיבור בכיתה, מטרות החינוך ומעורבות תלמידים?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,educationCorrespondenceQuestion,{mode});assert(m.answerable,mode+': bounded cross-family comparison should be answerable');for(const aid of ['1273962','1875534','1875506','1273','66725','4082940','4650780','1874637'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': source '+aid);assert(m.sources.some(e=>e.id==='igrot-letter-5702-rosh-chodesh-nissan-achlei-torah-p169'));assert(m.synthesis&&m.synthesis.topic==='education_correspondence_comparison');assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');assert.equal(m.synthesis.claims.length,7);assert(m.synthesis.basis.length>=8);assert(new Set(m.synthesis.evidence_family_ids).size>=8);assert(m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length&&c.source_locators.every(x=>x.locator)));assert(m.pattern_synthesis_integrity?.valid===true);assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert.equal(m.research.depth,'deep');assert(m.research.evidence_integrity.derived_non_independent>=8);assert(m.research.claim_source_map.length>=7&&m.research.claim_source_map.every(c=>c.source_locators.length));assert(m.research.synthesis_constraints.rule.includes('case comparison'));}else assert.equal(m.research,undefined);}
@@ -1449,9 +1449,9 @@ const held387881=idx.entries.find(e=>sourceAID(e)==='387881');
 assert(held387881&&!held387881.answer_eligible&&held387881.date_precision==='unknown','conflicting-date item must remain non-answerable');
 assert(queue.records.some(e=>String(e.aid||'')==='387881'||String(e.key||'').endsWith('387881')),'date-conflict item must remain in the review queue');
 assert(queue.records.every(e=>!batch086Aids.includes(String(e.aid||''))&&!batch086Aids.some(a=>String(e.key||'').endsWith(a))),'answer-eligible batch 086 items must leave the review queue');
-assert.equal(metrics.answer_eligible_unique_sources,888);
-assert.equal(metrics.content_verified_unique_sources,854);
-assert.equal(metrics.answer_eligible_propositions,2822);
+assert.equal(metrics.answer_eligible_unique_sources,887);
+assert.equal(metrics.content_verified_unique_sources,853);
+assert.equal(metrics.answer_eligible_propositions,2823);
 const queenQuestion='מה מתעד תקציר Living Torah על אסתר המלכה, הדסה וגאווה יהודית?';
 const queenModel=buildAnswerModel(idx.entries,queenQuestion,{mode:'regular'});
 assert(queenModel.answerable&&queenModel.sources.some(e=>sourceAID(e)==='363474'));
@@ -1480,29 +1480,37 @@ assert(batch086Ui.includes('מיפוי טענות והפניות')&&batch086Ui.i
 
 
 
-// Batch 088: original-language Hebrew/Yiddish excerpts, two directly opened Hebrew bodies,
-// one secretary-signed document kept distinct, and one in-place English identity enrichment.
+// Batch 088: ten new source identities, two duplicate/translation aliases, three existing identities enriched.
 const batch088Path='data/items/content-research-batch-088-2026-11-15.json';
 const batch088Data=JSON.parse(await readFile(new URL(batch088Path,root)));
 assert.equal(batch088Data.batch_id,'088');
 assert.equal(batch088Data.records.length,12);
 assert.equal(batch088Data.reviewed_item_count,13);
 assert.equal(batch088Data.source_bodies_inspected,13);
-assert.equal(batch088Data.new_source_identities,12);
-assert.equal(batch088Data.existing_identities_enriched,1);
-assert.equal(batch088Data.new_response_propositions,24);
+assert.equal(batch088Data.new_source_identities,10);
+assert.equal(batch088Data.duplicate_alias_identities,2);
+assert.equal(batch088Data.existing_identities_enriched,3);
+assert.equal(batch088Data.new_response_propositions,20);
 assert.equal(batch088Data.existing_response_propositions_added,1);
-assert.equal(batch088Data.records.reduce((n,e)=>n+e.response_propositions.length,0),24);
-assert.equal(new Set(batch088Data.records.map(e=>e.evidence_family_id)).size,12);
-assert.equal(new Set(batch088Data.records.map(e=>e.source_url)).size,12);
+assert.equal(batch088Data.existing_response_propositions_promoted_to_answer_eligible,5);
+assert.equal(batch088Data.records.reduce((n,e)=>n+e.response_propositions.length,0),20);
 assert.equal(batch088Data.records.filter(e=>e.status==='Verified').length,2);
-assert.equal(batch088Data.records.filter(e=>e.status==='Parsed').length,10);
-assert.equal(batch088Data.records.filter(e=>e.independent_witness===true).length,8);
-assert.equal(batch088Data.records.filter(e=>e.independent_witness===false).length,4);
+assert.equal(batch088Data.records.filter(e=>e.status==='Parsed').length,8);
+assert.equal(batch088Data.records.filter(e=>e.status==='Linked').length,2);
+assert.equal(batch088Data.records.filter(e=>e.independent_witness===true).length,7);
+assert.equal(batch088Data.records.filter(e=>e.independent_witness===false).length,5);
+assert.equal(batch088Data.records.filter(e=>e.translation_of_evidence_family_id).length,1);
 assert.equal(batch088Data.records.filter(e=>e.author_role==='secretariat').length,1);
 assert.equal(batch088Data.records.filter(e=>e.type==='marginal_response').length,1);
 assert.equal(batch088Data.records.filter(e=>e.type==='public_letter').length,1);
-assert.equal(batch088Data.source_type_distribution.published_hebrew_letter_text,9);
+assert.equal(batch088Data.answer_eligible_source_families_added,11);
+assert.equal(batch088Data.independent_witnesses_added,7);
+assert.equal(batch088Data.non_independent_presentations_added,3);
+assert.equal(batch088Data.content_verified_unique_sources_added,3);
+assert.equal(batch088Data.content_verified_unique_sources_downgraded,2);
+assert.equal(batch088Data.content_verified_unique_sources_net_change,1);
+assert.equal(batch088Data.translation_manifestations_linked,1);
+assert.equal(batch088Data.source_type_distribution.published_hebrew_letter_text,7);
 assert.equal(batch088Data.source_type_distribution.published_hebrew_marginal_response_excerpt,1);
 assert.equal(batch088Data.source_type_distribution.published_yiddish_public_letter_excerpt,1);
 assert.equal(batch088Data.source_type_distribution.published_hebrew_secretariat_signed_response,1);
@@ -1513,11 +1521,27 @@ assert.equal(batch088Data.access_control_bypassed,false);
 assert.equal(batch088Data.full_text_copied,false);
 assert.equal(batch088Data.scan_only_verification_used_for_content,false);
 assert.deepEqual(batch088Data.metrics_before,{answer_eligible_unique_sources:876,content_verified_unique_sources:852,answer_eligible_propositions:2797});
-assert.deepEqual(batch088Data.metrics_expected_after,{answer_eligible_unique_sources:888,content_verified_unique_sources:854,answer_eligible_propositions:2822});
+assert.deepEqual(batch088Data.metrics_expected_after,{answer_eligible_unique_sources:887,content_verified_unique_sources:853,answer_eligible_propositions:2823});
 assert.equal(batch088Data.reconciliation_status,'reconciled');
 assert.deepEqual(batch088Data.metrics_actual_after,batch088Data.metrics_expected_after);
 assert.deepEqual(batch088Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 for(const r of batch088Data.records){
+ if(r.status==='Linked'){
+  assert.equal(r.has_content_evidence,false);assert.equal(r.response_propositions.length,0);
+  const existing=idx.entries.find(x=>String(x.source_url||'')===String(r.source_url));
+  assert(existing,'linked batch-088 alias must resolve to an existing canonical source');
+  assert.equal(existing.evidence_family_id,r.evidence_family_id);
+  assert.notEqual(existing.canonical_file,batch088Path);
+  if(r.id==='chabadlibrary-1200710552'){
+   assert.equal(existing.original_language,'Russian');assert.equal(existing.independent_witness,false);
+   assert.equal(r.translation_of_evidence_family_id,r.evidence_family_id);
+  }
+  if(r.id==='chabadlibrary-1200710429'){
+   assert.equal(existing.status,'Parsed');assert.equal(existing.independent_witness,false);
+   assert.match(existing.primary_secondary_status,/photograph/i);
+  }
+  continue;
+ }
  const e=idx.entries.find(x=>x.id===r.id);
  assert(e&&e.has_content_evidence,'batch-088 source '+r.id+' must have inspected text content');
  assert.equal(e.canonical_file,batch088Path);
@@ -1541,16 +1565,19 @@ const marginal088=idx.entries.find(e=>e.id==='chabadlibrary-1200710132');
 assert(marginal088&&marginal088.type==='marginal_response'&&marginal088.independent_witness===false);
 const copy088=idx.entries.find(e=>e.id==='chabadlibrary-1200980070');
 assert(copy088&&copy088.independent_witness===false&&/copy/i.test(copy088.primary_secondary_status||''));
-const photo088=idx.entries.find(e=>e.id==='chabadlibrary-1200710429');
-assert(photo088&&photo088.independent_witness===false&&/photograph/i.test(photo088.primary_secondary_status||''));
 const direct5412963=idx.entries.find(e=>sourceAID(e)==='5412963');
 assert(direct5412963&&direct5412963.status==='Verified'&&direct5412963.proposition_source_locator.includes('244–249'));
 const secretariat088=idx.entries.find(e=>sourceAID(e)==='5413093');
 assert(secretariat088&&secretariat088.type==='secretariat_letter'&&secretariat088.author_role==='secretariat');
 assert.match(secretariat088.primary_secondary_status,/not a direct Rebbe-authored letter/);
 const enriched1875534b=idx.entries.find(e=>sourceAID(e)==='1875534');
-assert(enriched1875534b&&enriched1875534b.response_propositions.length===6);
+assert(enriched1875534b&&enriched1875534b.has_content_evidence===true&&enriched1875534b.response_propositions.length===6);
+assert.equal(enriched1875534b.independent_witness,false);
 assert(enriched1875534b.response_proposition_locators.some(l=>l.includes('288–290')));
+const translated0552=idx.entries.find(e=>String(e.source_url||'').endsWith('/1200710552'));
+assert(translated0552&&translated0552.original_language==='Russian'&&translated0552.status==='Parsed'&&translated0552.independent_witness===false);
+const photo0429=idx.entries.find(e=>String(e.source_url||'').endsWith('/1200710429'));
+assert(photo0429&&photo0429.status==='Parsed'&&photo0429.independent_witness===false);
 
 const batch088Queries=[
  ['מה כתב הרבי למחנך על השפעת החינוך לאחר שהתלמידים עוזבים את המסגרת?','chabadlibrary-1200890083'],
