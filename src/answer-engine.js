@@ -521,7 +521,7 @@ export function propositionRelevance(e,u){
  if(u.query.includes('השפעה')&&u.query.includes('חינוך')&&u.query.includes('מעשה')&&u.query.includes('דיבור')){
   const supportingProps=arr(e.response_propositions).filter(supportsEducationalInfluenceActionProposition);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not directly address the requested combination of individual influence and practical education']};
-  return{score:40,support:'direct_support',reasons:['the retrieved letters provide complementary, separately cited evidence about individual influence, children's education, and concrete action rather than words alone'],supportingProps};
+  return{score:40,support:'direct_support',reasons:["the retrieved letters provide complementary, separately cited evidence about individual influence, children's education, and concrete action rather than words alone"],supportingProps};
  }
  if(u.query.toLowerCase().includes('president gerald ford')&&u.query.toLowerCase().includes('religious freedom')&&u.query.toLowerCase().includes('education')){
   const supportingProps=arr(e.response_propositions).filter(supportsFordLetterProposition);
