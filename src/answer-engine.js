@@ -1322,7 +1322,19 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   answerEvidence.forEach(e=>{const k=familyKey(e);if(k)tzedakahFamilies.add(k);});
   if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.'],debug_tzedakah:{content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,sample:tzedakahContentIndex.slice(0,24).map(e=>({aid:e.aid,id:e.id,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,family:familyKey(e),classification:classifyWitness(e)}))}};
  }
- else if(educationInfluenceActionQuestion){answerEvidence=usable.filter(e=>supportsEducationalInfluenceActionSource(e));}
+ else if(educationInfluenceActionQuestion){
+  const educationContentIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.has_content_evidence!==false&&arr(e.response_propositions).some(supportsEducationalInfluenceActionProposition));
+  const educationScore=e=>{const body=norm(arr(e.response_propositions).join(' '));return Number(body.includes('השפעה')&&body.includes('אדם יחיד'))*100+Number(body.includes('חינוך')&&body.includes('ילדים'))*80+Number(['פעולה','מעשה','עשייה'].some(t=>body.includes(t))&&['דיבור','מילים'].some(t=>body.includes(t)))*70+Number(body.includes('ילדים')&&['פעולה','מעשה','עשייה','מאמץ'].some(t=>body.includes(t)))*50;};
+  const byFamily=new Map();
+  for(const e of [...educationContentIndex.sort((a,b)=>educationScore(b)-educationScore(a)),...answerEvidence]){
+   const k=familyKey(e);if(!k)continue;
+   const prior=byFamily.get(k);
+   const independent=e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived';
+   const priorIndependent=prior&&prior.independent_witness!==false&&prior._independent_witness!==false&&!prior.translation_of_evidence_family_id&&classifyWitness(prior)!=='derived';
+   if(!prior||(independent&&!priorIndependent))byFamily.set(k,{...e,_supporting_propositions:arr(e.response_propositions).filter(supportsEducationalInfluenceActionProposition)});
+  }
+  answerEvidence=[...byFamily.values()].slice(0,8);
+}
  else if(fordLetterQuestion){answerEvidence=usable.filter(e=>supportsFordLetterSource(e));}
  else if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}
  else if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
