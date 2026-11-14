@@ -371,17 +371,23 @@ function supportsTzedakahSynthesisProposition(p){
 function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
  const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[];
- const isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation',isStudyFarming=s.topic==='study_routine_and_farming';
+ const isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation',isStudyFarming=s.topic==='study_routine_and_farming',isEducationYouthGuidance=s.topic==='education_youth_guidance';
  const studySupport=p=>['זמני לימוד','קביעות עתים','ללמוד יחד עם אדם נוסף','לימוד יחד עם חבר','לימוד בצוותא'].some(t=>norm(p).includes(norm(t)));
  const farmingSupport=p=>['חקלאים ובעלי משק','עבודה במשק חקלאי','לימוד תורה לצד עבודה במשק','לימוד תורה במשק','עוסק בחקלאות ולומד תורה'].some(t=>norm(p).includes(norm(t)));
- const supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isStudyFarming?(p=>studySupport(p)||farmingSupport(p)):supportsDifficultyPattern;
+ const educationYouthSupport=p=>{
+  const t=norm(p);
+  return (t.includes('תלמידים')&&(t.includes('בר מצווה')||t.includes('בר מצוה'))&&t.includes('דינים מעשיים'))||
+   (t.includes('בחור')&&t.includes('שיחה מקרבת')&&t.includes('ויכוח'))||
+   (t.includes('שיעורים ציבוריים')&&t.includes('לימוד חסידות'));
+ };
+ const supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isStudyFarming?(p=>studySupport(p)||farmingSupport(p)):isEducationYouthGuidance?educationYouthSupport:supportsDifficultyPattern;
  for(const n of numbers){
   const e=sources[n-1],supported=!!e&&arr(e._supporting_propositions).some(supportFn),derived=!!e&&isDerived(e);
   if(!e||!supported||!e.evidence_family_id)unsupported.push(n);
   else if(e._independent_witness!==false&&!derived)families.add(String(e.evidence_family_id));
   else nonIndependent.push(n);
  }
- const minNumbers=isDailyRoutine?3:isTzedakah?3:2,minIndependentFamilies=isDailyRoutine?1:isTzedakah?3:2;
+ const minNumbers=isDailyRoutine?3:isTzedakah?3:isEducationYouthGuidance?3:2,minIndependentFamilies=isDailyRoutine?1:isTzedakah?3:isEducationYouthGuidance?3:2;
  const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=(isStudyFarming?2:3)&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
  const dailyClaimsValid=!isDailyRoutine||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
  const tzedakahClaimsValid=!isTzedakah||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
@@ -396,7 +402,11 @@ function patternSynthesisIntegrity(model){
     })
    );
   })&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&s.basis.every(b=>Array.isArray(b.propositions)&&b.propositions.length>0&&b.propositions.every(p=>p.source_locator))&&arr(s.evidence_family_ids).length>=2);
- const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid&&studyFarmingClaimsValid;
+ const educationYouthClaimsValid=!isEducationYouthGuidance||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&
+  s.basis.every(b=>Array.isArray(b.propositions)&&b.propositions.length>0&&b.propositions.every(p=>p.source_locator))&&
+  new Set(arr(s.evidence_family_ids)).size>=3&&
+  ['practical_youth_learning','supportive_conversation_with_youth','community_learning'].every(topic=>arr(s.claims).some(c=>c.topic===topic&&c.source_numbers.length>0&&c.source_locators.some(x=>x.locator))));
+ const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid&&studyFarmingClaimsValid&&educationYouthClaimsValid;
  return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,non_independent_source_numbers:nonIndependent,attribution:s.attribution||null};
 }
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}

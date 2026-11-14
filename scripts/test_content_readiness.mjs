@@ -66,8 +66,8 @@ assert(enriched4645984.response_proposition_locators.some(l=>String(l).includes(
 const batch085Path='data/items/content-research-batch-085-2026-11-14.json';
 const batch085Aids=batch085Data.records.map(r=>String(r.aid));
 assert.equal(batch085Data.records.length,11);
-assert.equal(batch085Data.reviewed_item_count,18);
-assert.equal(batch085Data.source_bodies_inspected,13);
+assert.equal(batch085Data.reviewed_item_count,19);
+assert.equal(batch085Data.source_bodies_inspected,14);
 assert.equal(batch085Data.new_source_identities,11);
 assert.equal(batch085Data.existing_identities_enriched,2);
 assert.equal(batch085Data.new_response_propositions,28);
@@ -115,9 +115,13 @@ for(const mode of ['regular','researcher']){
  for(const aid of ['4783830','5357009','4730988'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': multi-source education answer must retain AID '+aid);
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': education synthesis must retain distinct Evidence Families');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': each synthesized claim needs claim-level source citations');
+ assert(m.synthesis&&m.synthesis.topic==='education_youth_guidance'&&m.synthesis.attribution==='system_synthesis_not_rebbe_quote',mode+': cross-source synthesis must be explicitly system-authored, not attributed to the Rebbe');
+ assert.equal(m.synthesis.claims.length,3,mode+': each educational case must have a separate cited synthesis claim');
+ assert.equal(m.synthesis.basis.length,3,mode+': synthesis basis must retain three distinct source witnesses');
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid),mode+': citations and context boundaries must validate');
  if(mode==='researcher'){
   assert(m.research&&m.research.evidence_families>=3);
+  assert(m.research.pattern_synthesis_integrity?.valid===true,'researcher mode must pass cross-family synthesis integrity');
   assert(m.research.witnesses.length===m.sources.length);
   assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
   assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
