@@ -4,14 +4,14 @@
   "reviewed_at": "2026-11-14T04:22:35+02:00",
   "method": "manual_public_web_body_inspection",
   "source_bodies_inspected": 11,
-  "records_reviewed": 11,
+  "records_reviewed": 12,
   "new_source_identities": 11,
   "new_event_evidence_families": 11,
   "new_secretariat_document_identities": 8,
   "new_rebbe_letter_identities": 3,
   "new_yechidus_identities": 2,
   "new_other_document_identities": 6,
-  "existing_identities_enriched": 0,
+  "existing_identities_enriched": 1,
   "existing_identity_rechecks": 0,
   "response_propositions_added": 25,
   "answer_eligible_source_families_expected_added": 11,
@@ -124,7 +124,7 @@
     "answer_eligible_propositions": 2798
   },
   "reconciliation_status": "pending_ci",
-  "review_scope": "נבדקו 11 גופי פרסום באנגלית; הוזנו 25 פרפרזות מחקריות לא-מילוליות עם מיקום גוף מדויק. שמונה מסמכים חתומים בידי אנשי מזכירות ואינם מוצגים כמכתבי הרבי; שני מכתבים מוצגים כחתומים בידי הרבי; פריט אחד הוא קטע מכתב המיוחס לרבי. כל ההקשרים חלקיים. שני יעדים חסומים הוחלפו במקורות ציבוריים נגישים.",
+  "review_scope": "נבדקו 11 גופי פרסום באנגלית; הוזנו 25 פרפרזות מחקריות לא-מילוליות עם מיקום גוף מדויק. שמונה מסמכים חתומים בידי אנשי מזכירות ואינם מוצגים כמכתבי הרבי; שני מכתבים מוצגים כחתומים בידי הרבי; פריט אחד הוא קטע מכתב המיוחס לרבי. כל ההקשרים חלקיים. שני יעדים חסומים הוחלפו במקורות ציבוריים נגישים. בנוסף הועשרה זהות קיימת אחת (AID 1888988) בקישורי אוסף מחקריים בלבד; היא נותרה תרגום אנגלי של מכתב ביידיש, ללא הוספת פרופוזיציות וללא ספירה כעד עצמאי.",
   "limitations": [
     "The incoming letters and complete correspondence chains are not displayed; context_status remains partial.",
     "No autograph or handwritten signature was inspected; printed sign-offs and publisher attribution are recorded as such.",
@@ -134,5 +134,29 @@
     "AID 289151 contains two dated letters on one publisher page and is counted as one source identity.",
     "The AIDs 4666220 and 5413690 were blocked by rewritten summary shells; alternative accessible pages were used.",
     "No full copyrighted text was copied; no access control was bypassed and no crawler was retried."
+  ],
+  "reviewed_item_count": 12,
+  "existing_identity_updates": [
+    {
+      "identity": "aid:1888988",
+      "id": "chabad-letter-1888988",
+      "aid": 1888988,
+      "canonical_file": "data/items/content-research-batch-085-2026-11-14.json",
+      "evidence_family_id": "igrot-letter-5722-19-menachem-av-yiddish-yeshivas-yaakov-yosef-aid1888988",
+      "update_type": "collection_relationship_only",
+      "metadata_only": true,
+      "content_reverified": false,
+      "response_propositions_added": 0,
+      "independent_witness_remains": false,
+      "relations_added": [
+        289110,
+        289111
+      ],
+      "updates": [
+        "Added researcher/model links to two distinct AIDs in the same Mr. Manchester correspondence collection.",
+        "Kept the Yiddish original uninspected and the published English translation non-independent.",
+        "Did not merge Evidence Families, add propositions, or change the source's answer-readiness status."
+      ]
+    }
   ]
 }

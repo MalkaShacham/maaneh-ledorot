@@ -4,7 +4,7 @@
   "generated": "2026-11-14T04:22:35+02:00",
   "source": "Manual public web/search/open inspection of accessible Chabad.org publisher pages. No crawler retry, no access-control bypass, and no full-text copying.",
   "batch_type": "manual_source_text_inspection_and_evidence_family_reconciliation",
-  "records_reviewed": 11,
+  "records_reviewed": 12,
   "source_bodies_inspected": 11,
   "records_added": 11,
   "new_source_identities": 11,
@@ -13,7 +13,7 @@
   "new_other_document_identities": 6,
   "new_rebbe_letter_identities": 3,
   "new_secretariat_document_identities": 8,
-  "existing_identities_enriched": 0,
+  "existing_identities_enriched": 1,
   "existing_identity_rechecks": 0,
   "new_response_propositions": 25,
   "existing_response_propositions_added": 0,
@@ -130,7 +130,29 @@
       "disposition": "published_english_secretariat_correspondence"
     }
   ],
-  "existing_identity_updates": [],
+  "existing_identity_updates": [
+    {
+      "identity": "aid:1888988",
+      "id": "chabad-letter-1888988",
+      "aid": 1888988,
+      "canonical_file": "data/items/content-research-batch-085-2026-11-14.json",
+      "evidence_family_id": "igrot-letter-5722-19-menachem-av-yiddish-yeshivas-yaakov-yosef-aid1888988",
+      "update_type": "collection_relationship_only",
+      "metadata_only": true,
+      "content_reverified": false,
+      "response_propositions_added": 0,
+      "independent_witness_remains": false,
+      "relations_added": [
+        289110,
+        289111
+      ],
+      "updates": [
+        "Added researcher/model links to two distinct AIDs in the same Mr. Manchester correspondence collection.",
+        "Kept the Yiddish original uninspected and the published English translation non-independent.",
+        "Did not merge Evidence Families, add propositions, or change the source's answer-readiness status."
+      ]
+    }
+  ],
   "excluded_candidates": [],
   "metrics_committed_before_batch": {
     "answer_eligible_unique_sources": 854,
@@ -186,7 +208,7 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "deduplication_check": "Searched the content-review queue, GitHub repository code search for all eleven AIDs and titles, and prior batch manifests; no matching AID or source URL was found. The 11 AIDs represent 11 distinct published page identities and 11 event/document Evidence Families. AIDs 289110 and 289111 are related by date and visit context but are separate documents with different signers and separate families; a researcher/model link records the relationship without merging them. AID 289151 contains two dated secretariat communications on one page and is retained as one page identity with three separate proposition locators. All items belong to the broader Mr. Manchester correspondence collection where indicated, but collection membership alone does not merge distinct letters. No translation was counted as an independent witness; original-language status was not independently established.",
+  "deduplication_check": "Searched the content-review queue, GitHub repository code search for all eleven AIDs and titles, and prior batch manifests; no matching AID or source URL was found. The 11 AIDs represent 11 distinct published page identities and 11 event/document Evidence Families. AIDs 289110 and 289111 are related by date and visit context but are separate documents with different signers and separate families; a researcher/model link records the relationship without merging them. AID 289151 contains two dated secretariat communications on one page and is retained as one page identity with three separate proposition locators. All items belong to the broader Mr. Manchester correspondence collection where indicated, but collection membership alone does not merge distinct letters. No translation was counted as an independent witness; original-language status was not independently established. One existing item, AID 1888988, was enriched with collection-level researcher links to AIDs 289110 and 289111. Its English text is already identified by the publisher as a translation of a Yiddish letter; independent_witness remains false, no new propositions were added, and no Evidence Family was merged.",
   "verification_scope": "Eleven public publisher-body pages were inspected at item level: eight secretary-signed correspondence pages, two pages presenting Rebbe letters with printed signatures, and one publisher-attributed letter excerpt. All 25 propositions are non-verbatim Hebrew research paraphrases with body-level locators and provenance. The eight secretary-signed records are answer evidence only for what the named secretary's communication states; any report of the Rebbe's view remains explicitly second-hand. AID 1274011 is an incomplete excerpt with a generic signature marker. No autograph, incoming letter, complete correspondence chain or separate original-language witness was inspected. All context remains partial.",
   "limitations": [
     "The incoming letters and complete correspondence chains are not displayed; context_status remains partial.",
@@ -206,7 +228,7 @@
       "record_role": "new_rebbe_letter",
       "type": "letter",
       "source_type": "published_english_rebbe_letter",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_rebbe_letter",
       "source_class_detail": "עמוד Chabad.org מציג מכתב באנגלית המיוחס לרבי עם חתימה מודפסת; לא נבדק אוטוגרף.",
       "title": "Follow-up of Personal Meeting",
@@ -333,6 +355,11 @@
           "type": "researcher/model_link",
           "target_aid": 289111,
           "reason": "שני מסמכים נפרדים מאותו תאריך ובאותו רצף ביקור; אחד חתום בידי הרבי ואחד בידי הרב מ.א. חודקוב. הקישור מחקרי בלבד ואינו ממזג את המסמכים או את מחבריהם."
+        },
+        {
+          "type": "researcher/model_link",
+          "target_aid": 1888988,
+          "reason": "Same broader Mr. Manchester correspondence collection; distinct letter and date. Collection-level link only; no shared Evidence Family or duplicate claim. AID 1888988 remains an English translation of a Yiddish original and is not an independent witness."
         }
       ],
       "duplicate_or_parallel_relations": [],
@@ -348,7 +375,7 @@
       "record_role": "new_secretariat_document",
       "type": "letter",
       "source_type": "published_english_secretariat_correspondence",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_secretariat_correspondence",
       "source_class_detail": "עמוד Chabad.org מציג התכתבות באנגלית החתומה בידי Rabbi M. A. Hodakov, Director, Merkos L'Inyonei Chinuch; מדובר במסמך מזכירות ולא במכתב חתום בידי הרבי.",
       "title": "Secretariat: Follow Up to Visit",
@@ -475,6 +502,11 @@
           "type": "researcher/model_link",
           "target_aid": 289110,
           "reason": "שני מסמכים נפרדים מאותו תאריך ובאותו רצף ביקור; מכתב הרבי ומכתב המזכירות נשארים בעלי זהויות ו-Evidence Families נפרדים."
+        },
+        {
+          "type": "researcher/model_link",
+          "target_aid": 1888988,
+          "reason": "Same broader Mr. Manchester correspondence collection; distinct letter and date. Collection-level link only; no shared Evidence Family or duplicate claim. AID 1888988 remains an English translation of a Yiddish original and is not an independent witness."
         }
       ],
       "duplicate_or_parallel_relations": [],
@@ -490,7 +522,7 @@
       "record_role": "new_secretariat_document",
       "type": "letter",
       "source_type": "published_english_secretariat_correspondence",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_secretariat_correspondence",
       "source_class_detail": "עמוד Chabad.org מציג התכתבות באנגלית החתומה בידי Nissan Mindel, Sec'y; מדובר במסמך מזכירות ולא במכתב חתום בידי הרבי.",
       "title": "Secretariat: Group Visit to the Rebbe",
@@ -629,7 +661,7 @@
       "record_role": "new_secretariat_document",
       "type": "letter",
       "source_type": "published_english_secretariat_correspondence",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_secretariat_correspondence",
       "source_class_detail": "עמוד Chabad.org מציג התכתבות באנגלית החתומה בידי Nissan Mindel, Sec'y; מדובר במסמך מזכירות ולא במכתב חתום בידי הרבי.",
       "title": "Secretariat: Rebbe Does Not Accept Telephone Calls",
@@ -765,7 +797,7 @@
       "record_role": "new_secretariat_document",
       "type": "letter",
       "source_type": "published_english_secretariat_correspondence",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_secretariat_correspondence",
       "source_class_detail": "עמוד Chabad.org מציג התכתבות באנגלית החתומה בידי Rabbi M. A. Hodakov; מדובר במסמך מזכירות ולא במכתב חתום בידי הרבי.",
       "title": "Secretariat: No Yechidus Appointment",
@@ -901,7 +933,7 @@
       "record_role": "new_rebbe_letter",
       "type": "letter",
       "source_type": "published_english_rebbe_letter",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_rebbe_letter",
       "source_class_detail": "עמוד Chabad.org מציג מכתב באנגלית המיוחס לרבי עם חתימה מודפסת; לא נבדק אוטוגרף.",
       "title": "Convey Report from Visit",
@@ -1180,7 +1212,7 @@
       "record_role": "new_secretariat_document",
       "type": "letter",
       "source_type": "published_english_secretariat_correspondence",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_secretariat_correspondence",
       "source_class_detail": "עמוד Chabad.org מציג התכתבות באנגלית החתומה בידי Yehuda Krinsky; מדובר במסמך מזכירות ולא במכתב חתום בידי הרבי.",
       "title": "Secretariat: Accommodation in Crown Heights",
@@ -1316,7 +1348,7 @@
       "record_role": "new_secretariat_document",
       "type": "letter",
       "source_type": "published_english_secretariat_correspondence",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_secretariat_correspondence",
       "source_class_detail": "עמוד Chabad.org מציג התכתבות באנגלית החתומה בידי Rabbi M. A. Hodakov; מדובר במסמך מזכירות ולא במכתב חתום בידי הרבי.",
       "title": "Secretariat: re son Appointment for Yechidus",
@@ -1452,7 +1484,7 @@
       "record_role": "new_secretariat_document",
       "type": "letter",
       "source_type": "published_english_secretariat_correspondence",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_secretariat_correspondence",
       "source_class_detail": "עמוד Chabad.org מציג התכתבות באנגלית החתומה בידי Nissan Mindel, Sec'y; מדובר במסמך מזכירות ולא במכתב חתום בידי הרבי.",
       "title": "Secretariat: Arrangements for New York Visit",
@@ -1588,7 +1620,7 @@
       "record_role": "new_secretariat_document",
       "type": "letter",
       "source_type": "published_english_secretariat_correspondence",
-      "collection": "Mr. Manchester — correspondence with Zalmon Jaffe",
+      "collection": "Mr. Manchester / Correspondence by the Rebbe",
       "source_class": "published_english_secretariat_correspondence",
       "source_class_detail": "עמוד Chabad.org מציג התכתבות באנגלית החתומה בידי Rabbi M. A. Hodakov, Director, Machne Israel; מדובר במסמך מזכירות ולא במכתב חתום בידי הרבי.",
       "title": "Secretariat: Write Diary of Group Visit",
