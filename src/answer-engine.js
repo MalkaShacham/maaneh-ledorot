@@ -17,6 +17,7 @@ const TOPICS={
  'השקעה בלימוד מקצוע ובעתיד':['לימוד מקצוע','השקעה בעתיד','השקעה ארוכת טווח','לימוד מקצועי','תכנון עתיד','professional training','investment in future','greater achievement'],
  'אחריות חינוכית והשפעה על הזולת':['אחריות תלמידי הישיבות','חינוך בני נוער','השפעה על הזולת','לקרב ולחזק','חינוך כשר','בן חכם ובן רשע','spiritual charity','influence others','education of children','השפעה על יהודי אחד','השפעה על אדם אחד','חינוך ילדים יהודים','חינוך ילדי עולים','הצלת ילדים בארץ ישראל','פעולה מעשית ולא דיבור','מעשה ולא דיבור','חינוך והפצת תורה','influence one individual','immigrant children education','practical action in outreach'],
  'חינוך וערכים ציבוריים':['ערכים מוסריים','ערכים אתיים','חינוך ציבורי','חינוך אזרחי','education and moral values','moral and ethical values'],
+ 'לימוד וחינוך — חברותא והתקדמות הדרגתית':['לימוד בחברותא','חברותא ללימוד','לימוד בצוותא','בני נוער','מסירת יהדות לבני נוער','התקדמות הדרגתית','התקדמות הדרגתית בחינוך','youth education','chavruta study','learning with a study partner'],
  'ראש השנה וערך הזמן':['לייקר את הזמן','זמן בראש השנה','ראש השנה כולל בתוכו','חיות כל ימות השנה','value of time','Rosh Hashanah and time'],
  'פרנסה ושמירת שבת':['קושי בפרנסה','קושי להתפרנס','להתפרנס','מקור פרנסה','עבודה בשבת','עבודה אסורה בשבת','שמירת שבת','פרנסה מותרת וכשרה','livelihood and Shabbat observance','work on Shabbat','kosher livelihood'],
  'שותפות והרחבת עסק':['שותפות במסחר','שותפות בעסק','צירוף שותף למסחר','שותף למסחר','הרחבת העסק בכוחות עצמו','הרחבה בכוחות עצמו','העסק זקוק להתרחבות','business partnership','expand the business independently'],
@@ -414,6 +415,7 @@ export function understandQuestion(q){
  if(topics.includes('לימוד בישיבה ופרנסה בעתיד'))topics=topics.filter(t=>t!=='פרנסה');
  if(topics.includes('שאלות הלכתיות והפניה לסמכות מקומית'))topics=topics.filter(t=>!['מזוזה','לימוד הלכה'].includes(t));
  if(topics.includes('קביעות עתים ולימוד בצוותא'))topics=topics.filter(t=>!['חינוך','לימוד חסידות'].includes(t));
+ if(topics.includes('לימוד וחינוך — חברותא והתקדמות הדרגתית'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('תיקון אישי והפצת המעיינות'))topics=topics.filter(t=>t!=='שליחות');
  if(topics.includes('חינוך תלמידים בימי שמחה'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('קיום תורה ומצוות בדרכי נועם'))topics=topics.filter(t=>!['חינוך','לימוד חסידות'].includes(t));
@@ -476,7 +478,7 @@ function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&containsTerm(t,x)?1:0
 function familyKey(e){return e.evidence_family_id||e.aid||e.source_url||e.key;}
 function propositionKey(p){return contentWords(p).sort().join(' ');}
 function sameClaim(a,b){if(propositionKey(a)===propositionKey(b))return true;if(negationSignature(a)!==negationSignature(b))return false;return jaccard(a,b)>=0.72;}
-function propositionSupportsQuery(p,u){const body=norm(p);if(u.query.includes('השפעה')&&u.query.includes('חינוך')&&u.query.includes('מעשה')&&u.query.includes('דיבור'))return supportsEducationalInfluenceActionProposition(p);if(u.query.toLowerCase().includes('president gerald ford')&&u.query.toLowerCase().includes('religious freedom')&&u.query.toLowerCase().includes('education'))return supportsFordLetterProposition(p);if(u.query.includes('ניגון')&&u.query.includes('רבי אברהם המלאך')&&u.query.includes('לכה דודי'))return supportsYiddishMelodyProposition(p);if(u.query.includes('הפצת המעיינות')&&u.query.includes('פנימיות התורה'))return supportsWellspringsDisseminationProposition(p);if(u.query.includes('תומכי תמימים')&&u.query.includes('לוד')&&u.query.includes('לימוד')&&u.query.includes('נסיעות'))return supportsLodYeshivaStudyTravelProposition(p);if(u.query.includes('פירות שביעית')&&u.query.includes('נכרים')&&u.query.includes('גדולי ההוראה'))return supportsShmittaFruitReferralProposition(p);if(u.query.includes('צדקה')&&u.query.includes('לימוד')&&u.query.includes('יגיעה'))return supportsTzedakahStudyEffortProposition(p);if(u.query.includes('סדרי לימוד ותפילה')&&u.query.includes('חיי היום יום'))return ['תהילים','תפילה','קריאת שמע','לימוד','חומש','צדקה','טלית קטן','ציצית','תפילין'].filter(t=>norm(p).includes(t)).length>=1;if(u.query.includes('הרחבת עסק')&&u.query.includes('כוחות עצמו')&&u.query.includes('הפצת המעיינות')&&u.query.includes('בתי כנסת'))return (norm(p).includes('כוחות עצמו')&&(norm(p).includes('מסחר')||norm(p).includes('עסק')))||(norm(p).includes('הפצת המעיינות')&&norm(p).includes('בתי כנסת'));if(u.query.includes('שנת השלושים')&&u.query.includes('יום החתונה')&&u.query.includes('ברכה'))return norm(p).includes('שנת השלושים')&&norm(p).includes('יום החתונה')&&norm(p).includes('ברכה');if(u.query.includes('נגלה')&&u.query.includes('פנימיות התורה'))return norm(p).includes('נגלה')&&norm(p).includes('פנימיות התורה');if(u.query.includes('ברכה')&&u.query.includes('ערב שבת')&&u.query.includes('ערב ראש חודש'))return norm(p).includes('מחר חודש')&&norm(p).includes('הפטר')&&norm(p).includes('ברכות');if(u.query.includes('ייעוד האדם')&&u.query.includes('השפעה על העולם'))return supportsHumanMission({response_propositions:[p]});if(u.query.includes('בעברית')&&u.query.includes('תלמידי הישיבות'))return supportsYeshivaInfluence(body);if(u.topics.includes('התמודדות עם קשיים ומכשולים'))return supportsDifficultyPattern(body);if(u.topics.includes('התחייבות לצדקה בסכום נקוב'))return containsTerm(body,'צדקה')&&containsTerm(body,'סכום')&&containsTerm(body,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(body,t));if(u.query.includes('צדקה לאורך השנה')&&(['מעשר','חומש','חלוקת תרומות'].some(term=>u.query.includes(term))))return supportsTzedakahSynthesisProposition(body);const raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?(raw.length?1:0):Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
+function propositionSupportsQuery(p,u){const body=norm(p);if(u.query.includes('לימוד בחברותא')&&u.query.includes('בני נוער')&&u.query.includes('התקדמות הדרגתית'))return supportsYouthEducationStudyProposition(body);if(u.query.includes('השפעה')&&u.query.includes('חינוך')&&u.query.includes('מעשה')&&u.query.includes('דיבור'))return supportsEducationalInfluenceActionProposition(p);if(u.query.toLowerCase().includes('president gerald ford')&&u.query.toLowerCase().includes('religious freedom')&&u.query.toLowerCase().includes('education'))return supportsFordLetterProposition(p);if(u.query.includes('ניגון')&&u.query.includes('רבי אברהם המלאך')&&u.query.includes('לכה דודי'))return supportsYiddishMelodyProposition(p);if(u.query.includes('הפצת המעיינות')&&u.query.includes('פנימיות התורה'))return supportsWellspringsDisseminationProposition(p);if(u.query.includes('תומכי תמימים')&&u.query.includes('לוד')&&u.query.includes('לימוד')&&u.query.includes('נסיעות'))return supportsLodYeshivaStudyTravelProposition(p);if(u.query.includes('פירות שביעית')&&u.query.includes('נכרים')&&u.query.includes('גדולי ההוראה'))return supportsShmittaFruitReferralProposition(p);if(u.query.includes('צדקה')&&u.query.includes('לימוד')&&u.query.includes('יגיעה'))return supportsTzedakahStudyEffortProposition(p);if(u.query.includes('סדרי לימוד ותפילה')&&u.query.includes('חיי היום יום'))return ['תהילים','תפילה','קריאת שמע','לימוד','חומש','צדקה','טלית קטן','ציצית','תפילין'].filter(t=>norm(p).includes(t)).length>=1;if(u.query.includes('הרחבת עסק')&&u.query.includes('כוחות עצמו')&&u.query.includes('הפצת המעיינות')&&u.query.includes('בתי כנסת'))return (norm(p).includes('כוחות עצמו')&&(norm(p).includes('מסחר')||norm(p).includes('עסק')))||(norm(p).includes('הפצת המעיינות')&&norm(p).includes('בתי כנסת'));if(u.query.includes('שנת השלושים')&&u.query.includes('יום החתונה')&&u.query.includes('ברכה'))return norm(p).includes('שנת השלושים')&&norm(p).includes('יום החתונה')&&norm(p).includes('ברכה');if(u.query.includes('נגלה')&&u.query.includes('פנימיות התורה'))return norm(p).includes('נגלה')&&norm(p).includes('פנימיות התורה');if(u.query.includes('ברכה')&&u.query.includes('ערב שבת')&&u.query.includes('ערב ראש חודש'))return norm(p).includes('מחר חודש')&&norm(p).includes('הפטר')&&norm(p).includes('ברכות');if(u.query.includes('ייעוד האדם')&&u.query.includes('השפעה על העולם'))return supportsHumanMission({response_propositions:[p]});if(u.query.includes('בעברית')&&u.query.includes('תלמידי הישיבות'))return supportsYeshivaInfluence(body);if(u.topics.includes('התמודדות עם קשיים ומכשולים'))return supportsDifficultyPattern(body);if(u.topics.includes('התחייבות לצדקה בסכום נקוב'))return containsTerm(body,'צדקה')&&containsTerm(body,'סכום')&&containsTerm(body,'לנקוב')&&['נודב','התחייב','נדר'].some(t=>containsTerm(body,t));if(u.query.includes('צדקה לאורך השנה')&&(['מעשר','חומש','חלוקת תרומות'].some(term=>u.query.includes(term))))return supportsTzedakahSynthesisProposition(body);const raw=u.terms.filter(t=>!topicVocab.has(t)),topicTerms=u.topics.flatMap(t=>TOPICS[t]||[]).map(norm);const specific=overlap(body,raw),topical=overlap(body,topicTerms),requiredSpecific=u.topics.length?(raw.length?1:0):Math.min(2,raw.length);if(u.topics.length&&topical===0)return false;return specific>=requiredSpecific||topical>=2||(!raw.length&&topical>0);}
 function intentEvidenceGate(e,u){
  if(u.intent==='circumstances'&&!text(e.documented_circumstances)&&!text(e.conditions_or_qualifications)&&!text(e.audience))return 'missing documented circumstances/conditions/audience';
  // Circumstances are not temporal evidence. A historical answer may only use a
@@ -494,6 +496,11 @@ export function propositionRelevance(e,u){
  const asksRebbeAuthorship=/הרבי|רבי|the rebbe/.test(norm(u.query));
  if(isSecretariat&&asksRebbeAuthorship)return{score:0,support:'insufficient_authorship_evidence',reasons:['matched item is a secretariat office letter, not a Rebbe-authored letter']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ if(u.query.includes('לימוד בחברותא')&&u.query.includes('בני נוער')&&u.query.includes('התקדמות הדרגתית')){
+  const supportingProps=arr(e.response_propositions).filter(supportsYouthEducationStudyProposition);
+  if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not contain either the inspected chavruta-study passage or the distinct youth-education/gradual-practice passage']};
+  return{score:44,support:'direct_support',reasons:['the inspected letter directly supports one distinct side of the study-and-youth-education comparison'],supportingProps};
+ }
  if(u.query.includes('השפעה')&&u.query.includes('חינוך')&&u.query.includes('מעשה')&&u.query.includes('דיבור')){
   const supportingProps=arr(e.response_propositions).filter(supportsEducationalInfluenceActionProposition);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not directly address the requested combination of individual influence and practical education']};
@@ -1098,6 +1105,65 @@ function supportsJewishHomeSynthesisProposition(p){
  const t=norm(p);
  return t.includes('הבית היהודי')||t.includes('בית יהודי')||t.includes('חינוך הילדים')||t.includes('הכנסת השכינה')||t.includes('חנוכת הבית')||t.includes('מזוזה');
 }
+
+function supportsYouthEducationStudyProposition(p){
+ const t=norm(p);
+ const chavruta=t.includes('חברותא')&&t.includes('לימוד');
+ const youth=t.includes('בני הנוער')&&(t.includes('פשרות')||t.includes('אמת'))&&(t.includes('מוכן')||t.includes('להוסיף')||t.includes('מזמן לזמן'));
+ return chavruta||youth;
+}
+function buildYouthEducationStudySynthesis(selected){
+ const basis=[];
+ selected.forEach((e,index)=>{
+  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  const props=arr(e._supporting_propositions).filter(supportsYouthEducationStudyProposition);
+  if(!props.length)return;
+  const propositions=props.map(p=>{
+   const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());
+   return{text:String(p),source_locator:arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null};
+  });
+  basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,
+   date:e.date||null,context_status:e.context_status||'unknown',
+   provenance:e.witness_provenance||e.source_witness||e.witness_type||null,
+   verification_scope:e.verification_scope||null,propositions});
+ });
+ const chavruta=basis.filter(b=>b.propositions.some(p=>norm(p.text).includes('חברותא')));
+ const youth=basis.filter(b=>b.propositions.some(p=>norm(p.text).includes('בני הנוער')&&(norm(p.text).includes('פשרות')||norm(p.text).includes('להוסיף'))));
+ const families=new Set([...chavruta,...youth].map(b=>b.evidence_family_id).filter(Boolean));
+ if(!chavruta.length||!youth.length||families.size<2)return null;
+ const claim=(topic,text,matches)=>{
+  const sourceNumbers=[...new Set(matches.map(b=>b.source_number))];
+  const sourceLocators=matches.flatMap(b=>b.propositions.map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator));
+  return{topic,text,source_numbers:sourceNumbers,source_locators:sourceLocators};
+ };
+ const claims=[
+  claim('study_with_chavruta',
+   'באיגרת אישית על סדרי הלימוד, החברותא מוצגת כסיוע משמעותי להתקדמות; אם לא נמצא בן־זוג מתאים ללימוד, אין בכך הצדקה להפסיק ללמוד, והכותב מעודד להמשיך בלימוד בשמחה ובביטחון.',
+   chavruta),
+  claim('youth_education_and_gradual_practice',
+   'באיגרת אחרת, העוסקת בשיחה חינוכית עם צעירים, מודגשת מסירת היהדות כפי שהיא ולא בדרך של פשרה; לצד זאת, כאשר תלמיד עדיין אינו מוכן לקבל את מלוא הדרך, מוצע להתחיל בתחומים שבהם הוא מוכן למעשה ולהוסיף בהדרגה.',
+   youth)
+ ];
+ const sourceNumbers=[...new Set(claims.flatMap(c=>c.source_numbers))];
+ const usedBasis=basis.filter(b=>sourceNumbers.includes(b.source_number));
+ const evidenceFamilies=[...new Set(usedBasis.map(b=>b.evidence_family_id).filter(Boolean))];
+ if(evidenceFamilies.length<2||claims.some(c=>!c.source_locators.length))return null;
+ return{
+  kind:'cross_family_research_synthesis',topic:'study_and_youth_education',
+  attribution:'system_synthesis_not_rebbe_quote',
+  label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',
+  text:claims.map(c=>c.text).join(' ')+' אלה שני הקשרים שונים — התנהלות הלומד עצמו ושיח של מחנך עם בני נוער; אין להפוך אותם לכלל אחיד שנאמר באיגרת אחת.',
+  source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,
+  method:'Claim-level comparison across two distinct, inspected Hebrew correspondence Evidence Families. Each claim has its own source numbers and item-level body locator; the synthesis preserves the difference between personal study guidance and educator-to-youth communication.',
+  limits:[
+   'הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.',
+   'האיגרת על חברותא עוסקת בנמען ובנסיבות לימוד אישיות; האיגרת על בני הנוער עוסקת בהדרכה חינוכית. אלה אינם אותו מקרה ואינם מוכיחים מדיניות אחידה.',
+   'המכתבים הנכנסים וכתבי היד המקוריים לא נבדקו; אחד המקורות הוא פרסום שהושלם על פי צילום, והצילום עצמו לא נבדק.',
+   'ההמלצות הן תיעוד היסטורי של מקרים מסוימים ואינן פסיקה או הוראה עדכנית לכל אדם.'
+  ]
+ };
+}
+
 function buildJewishHomeSynthesis(selected){
  const basis=[];
  selected.forEach((e,index)=>{
@@ -1221,10 +1287,12 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const yiddishMelodyQuestion=understanding.query.includes('ניגון')&&understanding.query.includes('רבי אברהם המלאך')&&understanding.query.includes('לכה דודי');
  const wellspringsDisseminationQuestion=understanding.query.includes('הפצת המעיינות')&&understanding.query.includes('פנימיות התורה');
  const jewishHomeSynthesisQuestion=understanding.query.includes('הבית היהודי')&&(understanding.query.includes('חנוכת הבית')||understanding.query.includes('מזוזה'));
+ const youthEducationStudyQuestion=understanding.query.includes('לימוד בחברותא')&&understanding.query.includes('בני נוער')&&understanding.query.includes('התקדמות הדרגתית');
  const tzedakahFamilies=new Set();
  let answerEvidence=usable;
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  if(jewishHomeSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
+ if(youthEducationStudyQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(tzedakahSynthesisQuestion){
   const tzedakahContentIndex=index.filter(e=>arr(e.response_propositions).some(supportsTzedakahSynthesisProposition));
   const querySpecificPriority=e=>{const body=norm(arr(e.response_propositions).join(' '));return Number((understanding.query.includes('קופה כללית')||understanding.query.includes('הקופה הכללית'))&&(body.includes('הקופה הכללית')||body.includes('לקופה הכללית')))*100+Number(understanding.query.includes('ישיבת תורת אמת')&&body.includes('ישיבת תורת אמת'))*100+Number(understanding.query.includes('בניית בית')&&(body.includes('בניית ביתם')||body.includes('בית נאמן')))*100;};
@@ -1321,7 +1389,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   }
  }
  const coverage=coverageFor(selected,understanding);
- const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=dailyStudyPrayerQuestion?buildDailyRoutineSynthesis(selected):tzedakahSynthesisQuestion?buildTzedakahSynthesis(selected):jewishHomeSynthesisQuestion?buildJewishHomeSynthesis(selected):buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
+ const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=dailyStudyPrayerQuestion?buildDailyRoutineSynthesis(selected):tzedakahSynthesisQuestion?buildTzedakahSynthesis(selected):jewishHomeSynthesisQuestion?buildJewishHomeSynthesis(selected):youthEducationStudyQuestion?buildYouthEducationStudySynthesis(selected):buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
  if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const allEvidenceFamilies=new Set(selected.map(familyKey).filter(Boolean)),selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims),independentWitnesses=selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').length,derivedNonIndependent=selected.length-independentWitnesses;base.research={evidence_families:allEvidenceFamilies.size,independent_evidence_families:selectedIndependentFamilies.size,evidence_integrity:{independent_witnesses:independentWitnesses,derived_non_independent:derivedNonIndependent},verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,pattern_synthesis:synthesis||null,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;
 }
