@@ -1480,6 +1480,7 @@ assert(batch086Ui.includes('מיפוי טענות והפניות')&&batch086Ui.i
 
 
 
+// Regression guard: AID 1875534 must be eligible after body inspection; translation/photo-only items remain Parsed and non-independent.
 // Batch 088: ten new source identities, two duplicate/translation aliases, three existing identities enriched.
 const batch088Path='data/items/content-research-batch-088-2026-11-15.json';
 const batch088Data=JSON.parse(await readFile(new URL(batch088Path,root)));
