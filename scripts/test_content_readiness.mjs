@@ -682,8 +682,8 @@ for(const mode of ['regular','researcher']){
 const batch066Cross='השוו בין קביעות עתים ולימוד בצוותא לבין לימוד תורה לצד עבודה במשק חקלאי.';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch066Cross,{mode});
- if(!m.answerable) console.log('BATCH066_COMPARISON_DEBUG',JSON.stringify({mode,reason:m.reason,topics:m.understanding?.topics,sources:(m.sources||[]).map(e=>({aid:sourceAID(e),family:e.evidence_family_id,props:e.response_propositions,independent:e._independent_witness})),claims:m.claims,coverage:m.comparative_coverage,insufficient:m.insufficient_evidence},null,2));
  assert(m.answerable,mode+': two-family study/farming comparison must be answerable');
+ assert.equal(m.comparative_coverage?.missing_topics?.length,0,mode+': all detected comparison sides must be proposition-supported');
  assert(m.sources.some(e=>String(e.aid)==='5019408')&&m.sources.some(e=>String(e.aid)==='5054281'),mode+': comparison must cite both distinct letters');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
  assert(m.claims.every(c=>c.source_numbers.length));
