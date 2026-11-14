@@ -4,12 +4,21 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch082-precision-gate-v1';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch083-yiddish-synthesis-v9';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
   'מעכה לפי הספורנו':['לפי הספורנו','הספורנו','מעכה יכולה להיקרא אשה','sforno maacah'],
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
+ 'קושי בדיבור':['קושי בדיבור','קשיים בדיבור','קושי לבטא מילה','מילה שקשה לבטא','speech difficulty','speech impediment'],
+'פרוזבול והלוואה בעל פה':['פרוזבול','פרוזבול וחוב בעל פה','חוב בעל פה ופרוזבול','מסירת שטר לבית דין','prozbul','prosbul'],
+'נחיצות מוסד תלמוד תורה':['נחיצות תלמוד תורה','נחיצות הת״ת','הכרחיות תלמוד תורה','תיקונים בתלמוד תורה','Talmud Torah institution'],
+'העברת קבורה והפניה לרב':['העברת ארון לקבורה','העברת נפטר לארץ ישראל','העברת קבורה','רב מורה הוראה','burial transfer','transfer of coffin'],
+'השפעה מעשית על הזולת':['השפעה מעשית על הזולת','השפעה על חברים','לארגן קבוצה ללימוד','לימוד שמביא לידי מעשה','השתתפות בעניינים ציבוריים','ביסוס קהילה','practical influence','organize a study group','communal participation'],
+'מרחק גיאוגרפי ומנוחת הנפש':['מרחק גיאוגרפי ומנוחת הנפש','מנוחת הנפש בקשר למרחק','מרחק בין אנשים','peace of mind and distance','geographical separation'],
+'יגעת ומצאת ועבודת הקודש':['יגעת ומצאת','התמסרות לעבודת הקודש','עשר כוחות הנפש','effort in sacred service','yegata umatzata'],
+ 'אחריות להזהיר גדולים על הקטנים':['להזהיר גדולים על הקטנים','גדולים להשפיע על קטנים','לעורר אחרים למלא חובתם','להניע אחרים למלא את חובתם','responsibility to influence others','great ones to influence the small'],
+'תמיכה בישיבה בעת משבר':['תומכי תמימים','משבר כלכלי בישיבה','תמיכה בישיבה','קריאה לתמיכה בישיבה','financial support for yeshiva','yeshivah in financial crisis'],
   'צדקה רוחנית וחינוך':['צדקה רוחנית','צדקה גשמית','לקרב לתורה','חינוך ילדים','spiritual charity','spiritual tzedakah','education of children','yeshivah students'],
   'השפעת היחיד והארת הסביבה':['אדם אחד','יחיד','השפעה על העולם','להאיר את הסביבה','one individual','whole creation','beacon of light'],
   'שמיטה ומטרת החיים':['שמיטה','שנת השמיטה','שבת לה׳','Shemittah','Sabbatical year','Sabbath unto G-d','spiritual goal'],
@@ -276,6 +285,7 @@ const TOPIC_ALIASES={
  'בית רבקה פריז ורישום בית ספר':['בית רבקה פריז ורישום בית ספר','ועד בית הספר לנערות בית רבקה בפריז','בית רבקה בפריז','המוסד נרשם לרשת בתי הספר','תכנית הלימודים הרגילה'],
  'חיפוש שידוך בדרכי תורה':['חיפוש שידוך','חיפוש שידוך בדרכי תורה','דרכי תורה ויראת שמים','ידידים וקרובים','shidduch search','matchmaking'],
  'קביעות עתים ולימוד בצוותא':['קביעות עתים בלימודים','קביעות עתים','זמני לימוד','לימוד בצוותא','ללמוד יחד עם אדם נוסף','לימוד יחד עם חבר','study with a partner','fixed study times'],
+ 'לימוד וחינוך — חברותא והתקדמות הדרגתית':['חברותא','לימוד בצוותא','ללמוד יחד עם אדם נוסף','מחויבות לחבר','קביעות עתים','זמני לימוד','להתקדם בהדרגה','מן הקל אל הכבד','ניסיון ראשון או שני','study partner','gradual progress','fixed study times'],
  'תורה ופרנסה במשק חקלאי':['חקלאים ובעלי משק','החקלאים מחויבים בלימוד תורה','עיסוק במשק','עבודה במשק חקלאי','לימוד תורה לצד עבודה במשק','לימוד תורה במשק','farmers and Torah study','Torah study and farming'],
  'לימוד בישיבה ופרנסה בעתיד':['להמשיך בלימודו בישיבה','להמשיך בלימוד התורה','פרנסה כשיבוא הזמן','פרנסה העתידית','בחור בן שמונה עשרה הלומד בישיבה','continue yeshiva study','future livelihood'],
  'שאלות הלכתיות והפניה לסמכות מקומית':['פירות שביעית של נכרים','שימוש בחשמל בארץ ישראל','גדולי ההוראה על המקום','גדולי ההוראה המקומיים','בירור אצל גדולי ההוראה','קביעת מזוזה במרפסת','mezuzah on a balcony','local halachic authorities'],

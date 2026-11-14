@@ -357,3 +357,37 @@ Publication verification: GitHub Pages deployment completed successfully for mai
 - Added a narrow retrieval/synthesis path for a two-family comparison between AID 5019597 (personal study with a chavruta) and AID 5019603 (educator-to-youth communication and gradual practice). The synthesis is explicitly labeled as system research, not a Rebbe quote; each claim has its own source locator, and the two historical contexts remain distinct. Researcher mode retains its evidence-family map and witness-level provenance.
 - Baseline before reconciliation: `answer_eligible_unique_sources=810`, `content_verified_unique_sources=807`, `answer_eligible_propositions=2660`. Expected if all nine AIDs are new: 819, 816, 2684; actual counts must come from reconciliation, not this estimate.
 - `test_content_readiness.mjs`, answer-integrity checks, Actions and Pages publication remain pending at this point. No cron, audience, permissions or access settings were changed.
+
+
+
+## 2026-11-14 — Batch 083: Hebrew and Yiddish correspondence, source-bound retrieval and researcher synthesis
+
+- Inspected **9 publisher bodies** through public web search/open: six new Hebrew AIDs, two existing identities enriched in place (AID 5100402 in batch 067 and Yiddish public letter AID 5100601 in batch 078), and one existing identity rechecked without adding a proposition (AID 5100203). New AIDs: 5100345, 5070960, 5100268, 5100499, 5100299, 5100227.
+- Added **15** non-verbatim, source-grounded propositions to the six new identities and **4** additional propositions to the two existing identities. Every addition has `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, item-level body locators, provenance, verification scope, circumstances and limitations.
+- AID 5100601 adds Yiddish-language public-letter evidence: the text interprets responsibility to influence others, makes an urgent appeal to support Tomchei Temimim, and states the blessing associated with that support. The publisher says the Yiddish text was completed from a photograph; the photograph itself was not inspected. The same Evidence Family was retained; it is not a translation witness.
+- AID 5100402 was enriched in its original batch file with a distinct publisher-text permission to publish the message appropriately (body lines 315–317). AID 5100203 was rechecked; no new proposition was warranted.
+- AID 5100345 is marked as a secretary-signed response in the Rebbe's name, not as an independently inspected autograph. Researcher mode and the direct-authorship filter preserve this distinction. AID 5100402 remains a published text completed from a secretariat copy; that copy was not inspected.
+- Seven candidates (4812572, 4812652, 4854561, 5100455, 5100610, 5100309, 5287694) resolved to navigation/summary shells on open and were excluded. No crawler retry, access-control bypass, scan-only verification or full-text copying occurred.
+- Added narrow retrieval aliases for speech difficulty, pruzbul/oral debt, the necessity of a Talmud Torah institution, burial transfer/local rabbinic authority, practical influence and community participation, personal distance/peace of mind, effort in sacred service, and the Yiddish public-letter themes of influencing others and supporting a yeshivah. Regular and researcher tests require claim-level locators, witness provenance and context boundaries.
+- Baseline before this batch: `answer_eligible_unique_sources=829`, `content_verified_unique_sources=826`, `answer_eligible_propositions=2706`. Expected after reconciliation, if all six new identities remain unique: `835`, `832`, `2725`. These are expected counts only; actual counts remain pending canonical reconciliation.
+- The content-readiness tests and cache-busted retrieval code were updated in the same change set. PR validation, reconciliation, Actions and live Pages publication are pending. No cron, audience, permissions or access settings were changed.
+
+
+## 2026-11-14 — Batch 083 deduplication and retrieval correction
+
+- Canonical cross-check found AID 5100299 already present in `data/items/content-research-batch-058-2026-11-12.json`. The duplicate batch-083 record and its two overlapping paraphrases were removed; the original Evidence Family `igrot-letter-5719-10-marcheshvan-aid5100299` remains authoritative. AID 5100299 is recorded as an existing-identity recheck with zero propositions added.
+- Corrected batch 083: **5 new Hebrew identities**, **2 existing identities enriched**, **2 existing identities rechecked**, **13 new propositions + 4 in-place propositions = 17 new paraphrase entries**. The secretariat-signed AID 5100345 remains separately typed and is not represented as an authenticated autograph.
+- Baseline before batch 083: answer-eligible families **829**, content-verified families **826**, propositions **2,706**. Expected after deduplication: **834 / 831 / 2,723**. These are expected counts until the repository reconciliation confirms actual values.
+- The reconciliation audit now includes both `existing_identity_updates` and `existing_identity_rechecks`, so rechecked identities are represented in the item-level audit.
+- The first readiness run still missed AID 2278256 in the education/influence query after a simple top-96 retrieval increase. The query-specific path now retrieves verified proposition-matching items directly, prefers an independent witness when the same Evidence Family has one, and keeps translations explicitly non-independent. Researcher mode also uses a deeper candidate limit. The full `test_content_readiness.mjs` gate is being rerun against this correction.
+- No runner-side crawler retry was made; the HTTP 403 guard remains in place.
+
+
+
+## 2026-11-14 — Batch 084: Chabad Library publisher excerpts (pending reconciliation)
+
+- Reviewed 11 distinct Hebrew publisher excerpts surfaced in public search. Direct page opens returned zero readable lines, so the review is limited to those displayed excerpts; no full-page body inspection is claimed.
+- Targeted deduplication found two exact existing identities in batch 068: item 1200710342 (Evidence Family igrot-letter-5732-parashat-mishpatim-yishlad) and item 1200720273 (Evidence Family igrot-letter-5733-15-tammuz-yittatkat). Both already had the same source-grounded propositions; they were rechecked, not recreated, and no duplicate propositions were added.
+- Added 9 new publisher-presented Hebrew letter identities and 17 non-verbatim source-grounded paraphrases. All new excerpt-only records remain Parsed, not Verified. Expected metrics: answer-eligible unique sources 834→843; content-verified unique sources remain 831; propositions 2,723→2,740.
+- Nine current Chabad.org letter URLs (AIDs 5100345, 5070960, 5100268, 5100499, 5100227, 5100402, 5100601, 5100203, 5100299) redirect to rewritten summary shells; no new propositions were taken from those shells. Chabad Library search excerpts were used as the alternate public source.
+- No crawler retry, access-control bypass, scan-only content verification, full-text copying, schedule change, audience change, or permission change. Full corpus-wide duplicate reconciliation and publication remain pending.
