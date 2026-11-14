@@ -858,9 +858,9 @@ assert.equal(batch076Data.existing_identities_enriched,1);
 assert.equal(batch076Data.new_response_propositions,20);
 assert.equal(batch076Data.existing_response_propositions_added,1);
 assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
-assert.equal(metrics.answer_eligible_unique_sources,854,'batches 079-084 must reconcile to 854 unique answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,851,'batches 079-084 must reconcile to 851 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2757,'batches 079-084 must reconcile to 2757 distinct source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,861,'batches 079-085 must reconcile to 861 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,858,'batches 079-085 must reconcile to 858 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2773,'batches 079-085 must reconcile to 2773 distinct source-grounded propositions');
 for(const aid of batch076Aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
  assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
@@ -1235,7 +1235,10 @@ for(const mode of ['regular','researcher']){
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על תלמיד שהתגייס ומבקש לחזור לישיבה?',{mode});
- assert(!direct.sources.some(e=>sourceAID(e)==='5100309'),'secretariat response must not be attributed directly to the Rebbe');
+ assert.equal(direct.answerable,false);
+  assert.equal(direct.reason,'secretariat_authorship_boundary');
+  assert(direct.sources.some(e=>sourceAID(e)==='5100309'));
+  assert.equal(direct.claims.length,0);
 }
 const tanyaProjectQBatch082='מה כתב הרבי על פרויקט תניא והפצת המעיינות?';
 for(const mode of ['regular','researcher']){
@@ -1373,6 +1376,9 @@ for(const mode of ['regular','researcher']){
  assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');
  assert(m.synthesis.claims.length>=3&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
  assert(m.synthesis.evidence_family_ids.length>=4);
+ const derivedHealth=idx.entries.find(e=>sourceAID(e)==='4096314');
+ assert(derivedHealth&&derivedHealth.independent_witness===false);
+ assert(!m.synthesis.evidence_family_ids.includes(derivedHealth.evidence_family_id),'translation-only health text must not inflate independent synthesis families');
  for(const aid of [5019502,4831629,5287569,4754445])assert(m.sources.some(e=>sourceAID(e)===String(aid)),mode+': health synthesis must retain source '+aid);
  assert(!m.sources.some(e=>['5071128','5357059'].includes(sourceAID(e))),mode+': secretariat response and transmitted telegram are not independent synthesis witnesses');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
@@ -1429,7 +1435,6 @@ assert.equal((sourceCardText.match(/const url=/g)||[]).length,1,'sourceCard must
  
 const batch085Path='data/items/content-research-batch-085-2026-11-14.json';
 const batch085Data=JSON.parse(await readFile(new URL(batch085Path,root),'utf8'));
-const batch085Actual={answer_eligible_unique_sources:861,content_verified_unique_sources:858,answer_eligible_propositions:2773};
 assert.equal(batch085Data.batch_id,'2026-11-14-content-batch-085');
 assert.equal(batch085Data.records_reviewed,11);
 assert.equal(batch085Data.source_bodies_inspected,11);
