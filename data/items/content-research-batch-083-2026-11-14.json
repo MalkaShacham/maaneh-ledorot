@@ -10,22 +10,22 @@
   "records_reviewed": 9,
   "reviewed_item_count": 9,
   "source_bodies_inspected": 9,
-  "new_source_identities": 6,
-  "new_rebbe_letter_identities": 5,
+  "new_source_identities": 5,
+  "new_rebbe_letter_identities": 4,
   "new_other_document_identities": 0,
   "new_secretariat_document_identities": 1,
   "new_secondary_narrative_identities": 0,
   "new_metadata_only_identities": 0,
   "duplicate_alias_identities": 0,
   "existing_identities_enriched": 2,
-  "existing_identities_rechecked": 1,
+  "existing_identities_rechecked": 2,
   "existing_identities_canonicalized": 0,
-  "new_response_propositions": 15,
+  "new_response_propositions": 13,
   "existing_response_propositions_added": 4,
-  "total_new_paraphrase_entries": 19,
-  "answer_eligible_source_families_added": 6,
+  "total_new_paraphrase_entries": 17,
+  "answer_eligible_source_families_added": 5,
   "language_distribution": {
-    "Hebrew": 6
+    "Hebrew": 5
   },
   "reviewed_language_distribution": {
     "Hebrew": 8,
@@ -39,8 +39,8 @@
     "published_hebrew_letter_text": 5,
     "secretariat_signed_published_response": 1
   },
-  "evidence_family_count": 6,
-  "dedup_policy": "Stable AID and item-level letter identity define each Evidence Family. Each new Hebrew item is a distinct letter. The secretary-signed response is marked as secretariat witness, not an inspected autograph. Existing AID 5100402 is enriched in place. Rechecked AID 5100203 remains in its existing family. No translation was added or counted as an independent witness.",
+  "evidence_family_count": 5,
+  "dedup_policy": "Stable AID and item-level letter identity define each Evidence Family. AID 5100299 was already canonical in batch 058; its two new paraphrases duplicate the two existing source-grounded propositions, so the duplicate record was removed and the original Evidence Family retained. Five genuinely new Hebrew identities remain. AID 5100402 and AID 5100601 were enriched in place; AID 5100203 and AID 5100299 were rechecked without new propositions. The secretary-signed response remains a secretariat witness, not an inspected autograph. No translation was added or counted as an independent witness.",
   "records": [
     {
       "id": "chabad-letter-5100345",
@@ -493,118 +493,6 @@
       }
     },
     {
-      "id": "chabad-letter-5100299",
-      "canonical_key": "aid:5100299",
-      "aid": 5100299,
-      "type": "letter",
-      "collection": "Igrot Kodesh",
-      "source_class": "Igrot Kodesh",
-      "source_class_detail": "Published Hebrew correspondence in the Igrot Kodesh collection; the response points to named halachic sources and recommends practical daily study.",
-      "title": "אגרות קודש - מכתב ו׳תקמח",
-      "volume": "18",
-      "volume_he": "יח",
-      "letter_number": "ו׳תקמח",
-      "date_original": "יו״ד מ״ח, תשי״ט",
-      "event_date": "יו״ד מ״ח, תשי״ט",
-      "date_precision": "exact_as_publisher",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100299/jewish/page.htm",
-      "pipeline_status": "Verified",
-      "status": "Verified",
-      "canonical_status": "Verified",
-      "context_status": "partial",
-      "verification_status": "Verified at published-text level; source_text_inspected on 2026-11-14; body lines 244–258; context partial.",
-      "has_content_evidence": true,
-      "summary_researcher": "האיגרת מפנה לשני סעיפים ברמב״ם ביחס לשאלה על מכחישי תורה, ומעודדת לימוד הלכה מעשית והשפעה על חברים.",
-      "response_propositions": [
-        "לשאלה על היחס למכחישים בענייני תורה שבכתב ושבעל פה, המכתב מפנה למקורות מפורשים ובהם הלכות תשובה לרמב״ם, פרק ג׳ סעיפים ח׳ וי״ד.",
-        "המכתב מעודד לימוד הלכות הנוגעות לחיי היום־יום כדי לדעת כיצד לנהוג, ומציין גם השפעה על חברים בהקשר זה."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org/TheRebbe.org, AID 5100299, published Hebrew body lines 250–251.",
-        "Chabad.org/TheRebbe.org, AID 5100299, published Hebrew body lines 252–254."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5100299, published Hebrew body lines 244–258.",
-      "evidence_family_id": "igrot-letter-5719-10-marcheshvan-v18-v-takach-mem-chet-aid5100299",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "independent_witness": true,
-      "witness_type": "published_hebrew_letter_text",
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "taxonomy": {
-        "publisher_index_terms": [
-          "אגרות קודש",
-          "מכתבי הרבי"
-        ],
-        "research_terms": [
-          "תורה שבכתב",
-          "תורה שבעל פה",
-          "הלכות תשובה",
-          "רמב״ם",
-          "הלכה למעשה",
-          "לימוד יומי",
-          "השפעה על חברים",
-          "Rambam",
-          "practical halacha"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "The letter points to Rambam, Hilchot Teshuvah 3:8 and 3:14. The summary does not extend the cited passage into a new ruling. לא הועתק טקסט מלא; נשמרו פרפרזות מחקר לא-מילוליות בלבד.",
-      "documented_circumstances": "מענה לשאלה אישית על היחס למי שמכחישים עניינים שבתורה שבכתב או בתורה שבעל פה.",
-      "question_or_problem": "הנמען מבקש הכוונה בשאלת היחס למכחישי עניינים בתורה שבכתב ובתורה שבעל פה.",
-      "conditions_or_qualifications": [
-        "הנמען והמכתב הנכנס אינם מזוהים בעמוד.",
-        "המכתב מפנה למקורות; הסיכום אינו תחליף לעיון ברמב״ם או לפסיקה הלכתית."
-      ],
-      "audience": "נמען פרטי; זהותו אינה נמסרת בקטע.",
-      "primary_secondary_status": "Published Hebrew correspondence attributed by the publisher to the Rebbe; original manuscript and incoming letter not inspected.",
-      "translation_status": "Published original-language Hebrew page; no translation used as a witness.",
-      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100299, Hebrew item-level Igrot Kodesh page.",
-      "witness": {
-        "kind": "publisher text page",
-        "publisher": "Kehot Publication Society",
-        "platform": "Chabad.org/TheRebbe.org",
-        "language": "Hebrew",
-        "scope": "visible published Hebrew body lines 244–258",
-        "complete_partial": "partial",
-        "notes": "The letter points to Rambam, Hilchot Teshuvah 3:8 and 3:14. The summary does not extend the cited passage into a new ruling."
-      },
-      "provenance": {
-        "authorship_status": "The publisher presents the item as correspondence of the Lubavitcher Rebbe. The visible Hebrew body was inspected; original manuscript and incoming correspondence were not.",
-        "signature_status": "No separate autograph/signature was independently inspected in the reviewed body passage.",
-        "source_witness": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5100299, אגרות קודש - מכתב ו׳תקמח.",
-        "transmission_type": "Published Hebrew text presentation; not a translated witness.",
-        "textual_status": "Visible Hebrew body lines 244–258 inspected; incoming letter and original manuscript not inspected.",
-        "editorial_scope": "Only bounded non-verbatim research paraphrases and item-level locators retained; no full copyrighted text copied.",
-        "verification_status": "Verified at published-text level; source_text_inspected on 2026-11-14; body lines 244–258; context partial.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100299/jewish/page.htm",
-        "accessed": "2026-11-14",
-        "verification_scope": "נבדק גוף הפרסום העברי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, AID 5100299, בטווח שורות 244–258. האימות חל על הטקסט שפורסם בלבד; כתב היד והמכתב הנכנס לא נבדקו; context_status=partial."
-      },
-      "verification_scope": "נבדק גוף הפרסום העברי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, AID 5100299, בטווח שורות 244–258. האימות חל על הטקסט שפורסם בלבד; כתב היד והמכתב הנכנס לא נבדקו; context_status=partial.",
-      "rights_status": "copyrighted-link-only",
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "status": "public_publisher_body_opened",
-        "reuse_notes": "Public publisher body opened and inspected; only bounded non-verbatim research paraphrases and source locators retained."
-      },
-      "locator": {
-        "publisher": "Chabad.org / TheRebbe.org",
-        "aid": 5100299,
-        "volume": "18",
-        "letter_number": "ו׳תקמח",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100299/jewish/page.htm"
-      }
-    },
-    {
       "id": "chabad-letter-5100227",
       "canonical_key": "aid:5100227",
       "aid": 5100227,
@@ -753,6 +641,16 @@
       "body_locator": "Chabad.org/TheRebbe.org, AID 5100203, body lines 244–258.",
       "propositions_added": 0,
       "reason": "The already recorded propositions cover the inspected content; recheck confirmed the same letter and Evidence Family, with no distinct new proposition warranted."
+    },
+    {
+      "aid": 5100299,
+      "canonical_key": "aid:5100299",
+      "file": "data/items/content-research-batch-058-2026-11-12.json",
+      "evidence_family_id": "igrot-letter-5719-10-marcheshvan-aid5100299",
+      "body_locator": "Chabad.org/TheRebbe.org, AID 5100299, body lines 244–258.",
+      "propositions_added": 0,
+      "action": "duplicate_reconciled_to_existing_identity",
+      "reason": "AID 5100299 and its publisher URL were already canonical in batch 058. The two batch-083 paraphrases duplicate the existing two propositions; the original Evidence Family and canonical file are retained, with no new source family or proposition counted."
     }
   ],
   "new_aids": [
@@ -760,7 +658,6 @@
     5070960,
     5100268,
     5100499,
-    5100299,
     5100227
   ],
   "reviewed_aids": [
@@ -815,9 +712,9 @@
     "answer_eligible_propositions": 2706
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 835,
-    "content_verified_unique_sources": 832,
-    "answer_eligible_propositions": 2725
+    "answer_eligible_unique_sources": 834,
+    "content_verified_unique_sources": 831,
+    "answer_eligible_propositions": 2723
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -832,11 +729,12 @@
     "existing_identity_enrichment_in_place": true,
     "translation_counted_as_independent_witness": false,
     "scan_only_verification_used": false,
-    "checked_against": "Current review queue; known batch records 057, 064–067, 073–082 including batch 078 AID 5100601; AID 5100402 and 5100203 existing records; stable AID and publisher URL.",
+    "checked_against": "Current review queue; known batch records 055–082; bulk-indexed inventories; canonical AID 5100299 in batch 058; stable AID, publisher URL and letter number.",
     "exhaustive_canonical_reconciliation_pending": true,
-    "notes": "The full public-search-index exceeds the GitHub connector's practical file-response size; the canonical reconciliation workflow remains the authoritative repository-wide duplicate/family check."
+    "notes": "AID 5100299 was an existing canonical Hebrew letter in batch 058. The batch-083 duplicate was removed; its original Evidence Family is retained. The canonical reconciliation workflow remains authoritative for repository-wide deduplication.",
+    "duplicate_aid_5100299_resolved": true
   },
-  "method": "Nine publisher bodies were opened and inspected: six new Hebrew AIDs, two existing identities enriched in place (one Hebrew and one Yiddish), and one existing Hebrew identity rechecked without adding a proposition. Seven additional candidates were excluded because opening yielded navigation/summary shells rather than source text.",
+  "method": "Nine publisher bodies were opened and inspected: five new Hebrew AIDs, two existing identities enriched in place (one Hebrew and one Yiddish), and two existing Hebrew identities rechecked without new propositions. AID 5100299 was found in batch 058; its duplicate batch record and duplicate paraphrases were removed, retaining the existing Evidence Family. Seven additional candidates were excluded because opening yielded navigation/summary shells rather than source text.",
   "limitations": [
     "All six new identities in this batch are Hebrew; no new Yiddish or English source body was promoted in this run.",
     "AID 5100345 is a secretary-signed response issued in the Rebbe's name; no autograph, dictation record or secretariat copy was inspected. It must not be described as an authenticated autograph.",
@@ -847,7 +745,8 @@
     "AID 5100345 contains historical advice about speech difficulty; it is not current medical guidance.",
     "Incoming letters and full archival context were not inspected for the six new records.",
     "No full copyrighted text was copied.",
-    "AID 5100601 is a Yiddish public letter whose publisher note says the text was completed from a photograph; the photograph itself was not inspected. The new propositions are verified only against the published Yiddish body."
+    "AID 5100601 is a Yiddish public letter whose publisher note says the text was completed from a photograph; the photograph itself was not inspected. The new propositions are verified only against the published Yiddish body.",
+    "AID 5100299 was already canonical in batch 058; its two batch-083 paraphrases were duplicates of the existing propositions and were not counted again."
   ],
   "batch_file": "data/items/content-research-batch-083-2026-11-14.json",
   "status": "submitted_for_reconciliation",
