@@ -1254,3 +1254,79 @@ for(const mode of ['regular','researcher']){
   assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
  }else assert.equal(m.research,undefined);
 }
+
+const batch083Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-083-2026-11-14.json',root)));
+const batch083Path='data/items/content-research-batch-083-2026-11-14.json';
+const batch083Aids=batch083Data.records.map(r=>String(r.aid));
+assert.equal(batch083Data.records.length,6);
+assert.equal(new Set(batch083Aids).size,6);
+assert.equal(new Set(batch083Data.records.map(r=>r.evidence_family_id)).size,6);
+assert.equal(new Set(batch083Data.records.map(r=>r.source_url)).size,6);
+assert.equal(batch083Data.source_bodies_inspected,8);
+assert.equal(batch083Data.new_response_propositions,15);
+assert.equal(batch083Data.existing_response_propositions_added,1);
+assert.equal(batch083Data.existing_identity_updates.length,1);
+assert.equal(batch083Data.existing_identity_rechecks.length,1);
+assert.equal(batch083Data.reconciliation_status,'pending');
+assert.equal(batch083Data.metrics_before.answer_eligible_unique_sources,829);
+assert.equal(batch083Data.metrics_before.content_verified_unique_sources,826);
+assert.equal(batch083Data.metrics_before.answer_eligible_propositions,2706);
+assert.equal(batch083Data.metrics_expected_after.answer_eligible_unique_sources,835);
+assert.equal(batch083Data.metrics_expected_after.content_verified_unique_sources,832);
+assert.equal(batch083Data.metrics_expected_after.answer_eligible_propositions,2722);
+for(const aid of batch083Aids){
+ const r=batch083Data.records.find(x=>String(x.aid)===aid);
+ const e=eligible.find(x=>sourceAID(x)===aid);
+ assert(e&&e.has_content_evidence,'batch-083 AID '+aid+' must have inspected publisher-body content');
+ assert.equal(e.canonical_file,batch083Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.provenance);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.evidence_family_id,r.evidence_family_id);
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.translation_of_evidence_family_id,null);
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
+}
+const secretariatSpeech=eligible.find(e=>sourceAID(e)==='5100345');
+assert(secretariatSpeech&&/secretariat/i.test(secretariatSpeech.witness_type||''),'AID 5100345 must retain its secretary-signed provenance');
+const enriched5100402=eligible.find(e=>sourceAID(e)==='5100402');
+assert(enriched5100402&&enriched5100402.response_propositions.some(p=>p.includes('לפרסם את תוכן המכתב')));
+assert(enriched5100402.response_proposition_locators.some(l=>l.includes('315–317')));
+assert.equal(enriched5100402.canonical_file,'data/items/content-research-batch-067-2026-11-13.json');
+const rechecked5100203=eligible.find(e=>sourceAID(e)==='5100203');
+assert(rechecked5100203&&rechecked5100203.response_propositions.length===2);
+assert.equal(rechecked5100203.canonical_file,'data/items/content-research-batch-057-2026-11-12.json');
+const speechPublishedQuestion='מה נכתב במענה שפורסם על קושי בדיבור?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,speechPublishedQuestion,{mode});
+ assert(m.answerable,mode+': the published response on speech difficulty should be retrievable with its secretary provenance');
+ assert(m.sources.some(e=>sourceAID(e)==='5100345'));
+ const directAuthorship=buildAnswerModel(idx.entries,'מה כתב הרבי על קושי בדיבור?',{mode});
+ assert(!directAuthorship.sources.some(e=>sourceAID(e)==='5100345'),mode+': a secretary-signed response must not be presented as an independently authenticated direct Rebbe-authored witness');
+ const pruzbul=buildAnswerModel(idx.entries,'מה נכתב באיגרת על פרוזבול וחוב בעל פה?',{mode});
+ assert(pruzbul.answerable&&pruzbul.sources.some(e=>sourceAID(e)==='5100268'));
+ const burial=buildAnswerModel(idx.entries,'מה נכתב באיגרת על העברת ארון של נפטר לארץ ישראל?',{mode});
+ assert(burial.answerable&&burial.sources.some(e=>sourceAID(e)==='5100227'));
+ const school=buildAnswerModel(idx.entries,'מה נכתב באיגרת על נחיצות מוסד תלמוד תורה?',{mode});
+ assert(school.answerable&&school.sources.some(e=>sourceAID(e)==='5070960'));
+ const personal=buildAnswerModel(idx.entries,'מה נכתב באיגרת על מנוחת הנפש בעקבות מרחק גיאוגרפי?',{mode});
+ assert(personal.answerable&&personal.sources.some(e=>sourceAID(e)==='5100499'));
+ const practicalInfluence=buildAnswerModel(idx.entries,'מה עולה מהאיגרות על השפעה מעשית על הזולת?',{mode});
+ assert(practicalInfluence.answerable,mode+': multiple letters should support a bounded practical-influence synthesis');
+ const practicalAids=practicalInfluence.sources.map(e=>sourceAID(e));
+ assert(practicalAids.includes('5100227')&&practicalAids.includes('5100299')&&practicalAids.includes('5100402'));
+ assert(new Set(practicalInfluence.sources.map(e=>e.evidence_family_id)).size>=3);
+ assert(practicalInfluence.claims.length>0&&practicalInfluence.claims.every(c=>c.source_numbers.length));
+ assert(practicalInfluence.citation_entailment.every(x=>x.valid));
+ assert(practicalInfluence.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(practicalInfluence.research&&practicalInfluence.research.evidence_map.length>=3);
+  assert(practicalInfluence.research.witnesses.length===practicalInfluence.sources.length);
+  assert(practicalInfluence.research.citation_entailment.every(x=>x.valid));
+  assert(practicalInfluence.research.context_boundary.every(x=>x.valid));
+ }else assert.equal(practicalInfluence.research,undefined);
+}
