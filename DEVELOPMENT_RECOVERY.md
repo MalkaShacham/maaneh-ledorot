@@ -453,3 +453,8 @@ AID 5357059 is a secretariat-transmitted telegram to Gan Israel camp directors, 
 ### Secretariat lishma retrieval path (2026-11-14)
 
 AID 5071128 is a secretary-signed response, not an independent Rebbe-authored letter. Its two inspected propositions separately cover the transition from study not for its own sake to study for its own sake, and persistence in Torah and mitzvot without harming bodily health. A bounded query-specific relevance rule now retrieves it only for a neutral secretariat query matching those propositions; the direct-Rebbe-authorship boundary remains in force. Client cache key advanced.
+
+
+### Core-engine import cache parity (2026-11-14)
+
+The readiness test revealed that the validation module imported a stale versioned `answer-engine.js` even though `index.html` referenced a newer validation-layer version. The core import now uses the same cache version as the browser entry point, and the test suite asserts this parity so retrieval fixes cannot silently remain unloaded.
