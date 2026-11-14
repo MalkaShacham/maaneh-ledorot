@@ -1171,17 +1171,29 @@ assert.equal(batch081Data.existing_identity_updates.length,1);
 assert.equal(batch081Data.metrics_before.answer_eligible_unique_sources,810);
 assert.equal(batch081Data.metrics_before.content_verified_unique_sources,807);
 assert.equal(batch081Data.metrics_before.answer_eligible_propositions,2660);
-assert.deepEqual(batch081Data.metrics_actual_after,{
+assert.deepEqual(batch081Data.metrics_expected_after,{
+ answer_eligible_unique_sources:819,
+ content_verified_unique_sources:816,
+ answer_eligible_propositions:2684
+});
+assert.equal(batch081Data.reconciliation_status,'superseded_by_batch_082');
+assert.equal(batch081Data.superseded_by_batch,'082');
+assert.equal(batch081Data.metrics_actual_after,null);
+assert.equal(batch081Data.reconciliation_variance,null);
+assert.equal(batch082Data.metrics_before.answer_eligible_unique_sources,819);
+assert.equal(batch082Data.metrics_before.content_verified_unique_sources,816);
+assert.equal(batch082Data.metrics_before.answer_eligible_propositions,2684);
+assert.equal(batch082Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch082Data.metrics_actual_after,{
  answer_eligible_unique_sources:metrics.answer_eligible_unique_sources,
  content_verified_unique_sources:metrics.content_verified_unique_sources,
  answer_eligible_propositions:metrics.answer_eligible_propositions
-},'batch 081 reconciliation must match the public metrics');
-assert.deepEqual(batch081Data.reconciliation_variance,{
- answer_eligible_unique_sources:metrics.answer_eligible_unique_sources-batch081Data.metrics_expected_after.answer_eligible_unique_sources,
- content_verified_unique_sources:metrics.content_verified_unique_sources-batch081Data.metrics_expected_after.content_verified_unique_sources,
- answer_eligible_propositions:metrics.answer_eligible_propositions-batch081Data.metrics_expected_after.answer_eligible_propositions
 });
-assert.equal(batch081Data.reconciliation_status,Object.values(batch081Data.reconciliation_variance).every(v=>v===0)?'reconciled':'reconciled_with_variance');
+assert.deepEqual(batch082Data.reconciliation_variance,{
+ answer_eligible_unique_sources:0,
+ content_verified_unique_sources:0,
+ answer_eligible_propositions:0
+});
 for(const record of batch081Data.records){
  const aid=String(record.aid),e=idx.entries.find(x=>sourceAID(x)===aid);
  assert(e&&e.has_content_evidence,'batch-081 AID '+aid+' must expose inspected body content');
@@ -1191,8 +1203,14 @@ for(const record of batch081Data.records){
  assert.equal(e.proposition_verification,'source_text_inspected');
  assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);
  assert.equal(e.context_status,'partial');
- assert.equal(e.independent_witness,true);
- assert.equal(e.translation_of_evidence_family_id,null);
+ if(aid==='5019603'){
+  assert.equal(e.independent_witness,false);
+  assert.equal(e.witness_type,'publisher_text_completed_from_photograph');
+  assert.equal(e.translation_of_evidence_family_id,null);
+ }else{
+  assert.equal(e.independent_witness,true);
+  assert.equal(e.translation_of_evidence_family_id,null);
+ }
  assert.equal(e.evidence_family_id,record.evidence_family_id);
  assert.equal(e.canonical_file,batch081Path,'new AID '+aid+' must be selected from the inspected batch after deduplication');
  assert(record.response_propositions.every(p=>e.response_propositions.includes(p)),'all reviewed propositions for AID '+aid+' must survive reconciliation');
