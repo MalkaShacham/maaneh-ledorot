@@ -389,3 +389,9 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - The run therefore does **not** claim a fully passing quality gate. A narrow topic-specific retrieval and cross-family synthesis path is being added with claim-level locators and an explicit system-synthesis-not-Rebbe-quote label. Batch-085 reconciliation remains valid at 855 / 852 / 2,767.
 - Count correction: AID 5357088 was also opened and its body inspected but withheld from promotion pending same-physical-document linkage. The accurate batch totals are 14 source bodies inspected and 19 reviewed items (including five navigation shells); it is not an additional independent Evidence Family.
 - Bibliographic correction: for AIDs 5356825, 5356960 and 5356942, the page breadcrumb says כרך כ׳ while a lower page tag says Volume 18. Volume remains null pending bibliographic reconciliation. AID 5100697 is explicitly marked as a published response transmitted in the Rebbe's name by secretary A. Quint, not as an inspected autograph.
+
+
+### Retrieval regression follow-up — teshuvah synthesis — 2026-11-14
+
+- After the youth-education retrieval path passed its new checks, the same full readiness suite exposed a previously latent regression in the batch-078 teshuvah question: the standard retriever selected AID 4754232 but omitted AID 5019468, even though its inspected proposition describes a broader progression of teshuvah. This was a second retrieval/synthesis gap, not a source-readiness or reconciliation failure.
+- Added a bounded two-family retrieval/synthesis path: AID 4754232 supports the explicit distinction between תשובה תתאה and תשובה עילאה; AID 5019468 is labeled only as a related, broader progression from repentance for sin to תשובה מאהבה and return to source. The system synthesis explicitly states that the two formulations are related but not identical, and every claim retains its own source locator. No new identity or proposition was added in this repair.

@@ -1040,8 +1040,11 @@ for(const mode of ['regular','researcher']){
  assert(m.sources.some(e=>sourceAID(e)==='4754232'));
  assert(m.sources.some(e=>sourceAID(e)==='5019468'));
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
+ assert(m.synthesis&&m.synthesis.topic==='teshuvah_levels'&&m.synthesis.attribution==='system_synthesis_not_rebbe_quote');
+ assert.equal(m.synthesis.claims.length,2);
+ assert.equal(m.synthesis.basis.length,2);
  assert(m.claims.every(c=>c.source_numbers.length));
- if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ if(mode==='researcher'){assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));assert(m.research.pattern_synthesis_integrity?.valid===true);}
 }
 const batch078HealthQuestion='מה מתארות האיגרות על מילוי הוראות רופאים בזמן אשפוז?';
 for(const mode of ['regular','researcher']){
