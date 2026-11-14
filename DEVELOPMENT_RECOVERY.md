@@ -389,3 +389,5 @@ Publication verification: GitHub Pages deployment completed successfully for mai
 - Added 11 new publisher-presented letter identities and 21 non-verbatim source-grounded paraphrases. All records are deliberately Parsed, not Verified; answer-eligible unique sources are expected to rise 834→845 while content-verified unique sources stay at 831. Expected propositions: 2,723→2,744.
 - Nine current Chabad.org letter URLs (AIDs 5100345, 5070960, 5100268, 5100499, 5100227, 5100402, 5100601, 5100203, 5100299) now redirect to rewritten summary shells; no new propositions were taken from those pages. Chabad Library search excerpts were used as an alternate public source, with the excerpt-only limitation retained.
 - No crawler retry, access-control bypass, scan-only content verification, full-text copying, schedule change, audience change, or permission change. Repository-wide canonical reconciliation and publication remain pending.
+
+- Quality-gate validation for batch 084 must confirm 845 answer-eligible families, 831 content-verified families, and 2,744 propositions; the excerpt-only records must remain Parsed.
