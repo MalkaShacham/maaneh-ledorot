@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch083-source-synthesis-v1';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch083-yiddish-synthesis-v2';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -17,6 +17,8 @@ const TOPIC_ALIASES={
 'השפעה מעשית על הזולת':['השפעה מעשית על הזולת','השפעה על חברים','לארגן קבוצה ללימוד','לימוד שמביא לידי מעשה','השתתפות בעניינים ציבוריים','ביסוס קהילה','practical influence','organize a study group','communal participation'],
 'מרחק גיאוגרפי ומנוחת הנפש':['מרחק גיאוגרפי ומנוחת הנפש','מנוחת הנפש בקשר למרחק','מרחק בין אנשים','peace of mind and distance','geographical separation'],
 'יגעת ומצאת ועבודת הקודש':['יגעת ומצאת','התמסרות לעבודת הקודש','עשר כוחות הנפש','effort in sacred service','yegata umatzata'],
+ 'אחריות להזהיר גדולים על הקטנים':['להזהיר גדולים על הקטנים','גדולים להשפיע על קטנים','לעורר אחרים למלא חובתם','להניע אחרים למלא את חובתם','responsibility to influence others','great ones to influence the small'],
+'תמיכה בישיבה בעת משבר':['תומכי תמימים','משבר כלכלי בישיבה','תמיכה בישיבה','קריאה לתמיכה בישיבה','financial support for yeshiva','yeshivah in financial crisis'],
   'צדקה רוחנית וחינוך':['צדקה רוחנית','צדקה גשמית','לקרב לתורה','חינוך ילדים','spiritual charity','spiritual tzedakah','education of children','yeshivah students'],
   'השפעת היחיד והארת הסביבה':['אדם אחד','יחיד','השפעה על העולם','להאיר את הסביבה','one individual','whole creation','beacon of light'],
   'שמיטה ומטרת החיים':['שמיטה','שנת השמיטה','שבת לה׳','Shemittah','Sabbatical year','Sabbath unto G-d','spiritual goal'],
