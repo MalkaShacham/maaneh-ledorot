@@ -1386,13 +1386,13 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "manual_web_review_note": "Batch 083 is reconciled at 834/831/2723. Batch 084 reviews 11 Hebrew publisher excerpts: 9 new Evidence Families, 2 exact existing identities rechecked with no duplicate propositions, and 17 new paraphrases. Excerpt-only records remain Parsed; expected counts 843/831/2740.",
+  "manual_web_review_note": "Batch 084 reviewed at source-text level: 8 Hebrew source items inspected (5 full published texts via Pnimi index of ChabadLibrary; 3 publisher search-result body excerpts), 8 new Evidence Families and 16 bounded non-verbatim propositions; 2 existing identities rechecked. Three additional ChabadLibrary items (1200890274, 1200830298, 1200900255) returned no readable body and remain blocked without propositions. Expected after reconciliation of batches 083–084: answer_eligible_unique_sources 842, content_verified_unique_sources 831, answer_eligible_propositions 2739. No crawler retry or access-control bypass.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 834,
-    "content_verified_unique_sources": 831,
-    "answer_eligible_propositions": 2723
+    "answer_eligible_unique_sources": 829,
+    "content_verified_unique_sources": 826,
+    "answer_eligible_propositions": 2706
   },
-  "last_manual_review_at": "2026-11-14T11:57:41+02:00",
+  "last_manual_review_at": "2026-11-14T19:24:05+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -2245,24 +2245,942 @@
     "batch_id": "084",
     "batch_name": "2026-11-14 Chabad Library Hebrew publisher search excerpts",
     "generated": "2026-11-14",
-    "reviewed_at": "2026-11-14T18:56:47+02:00",
+    "reviewed_at": "2026-11-14T19:24:05+02:00",
+    "collection": "Igrot Kodesh",
     "source_authority": "Chabad Library, chabadlibrary.org",
-    "reviewed_item_count": 11,
-    "source_bodies_inspected": 0,
-    "source_body_excerpts_inspected": 11,
-    "new_source_identities": 9,
-    "new_rebbe_letter_identities": 9,
+    "review_method": "Manual public web search/open inspection. Five full Hebrew publisher-text bodies were inspected through Pnimi's index of ChabadLibrary texts (Pnimi is an access layer, not an independent witness). Three additional publisher body excerpts were inspected through public Chabad.org search results: one parallel manifestation of ChabadLibrary item 1200770224 (AID 4730976) and two new Hebrew letters (AIDs 5070876 and 5071097). Direct ChabadLibrary opens for 1200890274, 1200830298 and 1200900255 returned zero readable body lines; exact searches for alternate publisher bodies did not surface them, so they were blocked and excluded. No crawler retry, access-control bypass, scan-only content verification or full-text copying.",
+    "reviewed_item_count": 13,
+    "records_reviewed": 10,
+    "source_bodies_inspected": 5,
+    "source_body_excerpts_inspected": 3,
+    "new_source_identities": 8,
+    "new_rebbe_letter_identities": 8,
+    "new_publisher_presented_letter_identities": 8,
+    "new_other_document_identities": 0,
+    "new_secretariat_document_identities": 0,
+    "new_secondary_narrative_identities": 0,
+    "new_metadata_only_identities": 3,
+    "duplicate_alias_identities": 0,
     "existing_identities_enriched": 0,
     "existing_identities_rechecked": 2,
-    "new_response_propositions": 17,
-    "answer_eligible_source_families_added": 9,
+    "existing_identities_canonicalized": 0,
+    "new_response_propositions": 16,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 16,
+    "answer_eligible_source_families_added": 8,
     "language_distribution": {
-      "Hebrew": 11
+      "Hebrew": 8
     },
+    "reviewed_language_distribution": {
+      "Hebrew": 13
+    },
+    "source_languages": [
+      "Hebrew"
+    ],
     "source_type_distribution": {
-      "publisher_search_excerpt_hebrew": 11
+      "publisher_text_index_full_text": 5,
+      "publisher_search_excerpt": 3
     },
-    "blocked_candidate_count": 9,
+    "evidence_family_count": 8,
+    "records": [
+      {
+        "id": "chabadlibrary-letter-1200820161",
+        "canonical_key": "library-item:1200820161",
+        "library_item_id": "1200820161",
+        "type": "letter",
+        "collection": "Igrot Kodesh",
+        "source_class": "Igrot Kodesh",
+        "source_class_detail": "טקסט איגרת עברי שפורסם באגרות קודש; גוף הטקסט המלא הוצג דרך מפתח Pnimi לטקסטי ChabadLibrary. Pnimi הוא שכבת גישה/אינדקס, לא עד עצמאי נוסף.",
+        "title": "אגרות קודש – כרך ח, ב׳תה",
+        "volume": "8",
+        "volume_he": "ח",
+        "letter_number": "ב׳תה",
+        "date_original": "י״א שבט, תשי״ד",
+        "event_date": "י״א שבט, תשי״ד",
+        "date_precision": "exact_as_publisher",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "source_url": "https://www.chabadlibrary.org/books/1200820161",
+        "pipeline_status": "Parsed",
+        "status": "Parsed",
+        "canonical_status": "Parsed",
+        "context_status": "partial",
+        "verification_status": "Parsed at publisher-text level; source_text_inspected on 2026-11-14 through Pnimi index lines 77–96. Underlying manuscript/autograph not inspected; not promoted to Verified.",
+        "has_content_evidence": true,
+        "summary_researcher": "המכתב קורא להתחדשות יומיומית ולפעולה ממשית במקום מגוריו של הנמען, ולא להסתפק בתחושה שאין חדש.",
+        "response_propositions": [
+          "המכתב מגיב לטענת הנמען שאין אצלו חדשות ומדגיש שעבודת התורה והעבודה הרוחנית דורשות התחדשות בכל יום; כל יום מזמן חידוש בלימוד ובעשייה.",
+          "העיקרון מתורגם לאחריות מקומית: הנמען נקרא לפעול בעירו ולא להניח לשעות שהוקצבו לתפקידו לחלוף ללא מעשה, כחלק מהפיכת העולם לדירה לו יתברך."
+        ],
+        "response_proposition_locators": [
+          "Pnimi index, page 1200820161, lines 82–89; digital view, not printed pagination.",
+          "Pnimi index, page 1200820161, lines 88–96; digital view, not printed pagination."
+        ],
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Pnimi index, https://pnimi.org/page/1200820161, lines 77–96 (digital view, not printed pagination); underlying publisher item https://www.chabadlibrary.org/books/1200820161. Pnimi footer identifies the site as an index of chabadlibrary.org texts and states that text rights belong to Kehot.",
+        "evidence_family_id": "igrot-library-item-1200820161",
+        "parent_evidence_family_id": null,
+        "translation_of_evidence_family_id": null,
+        "independent_witness": true,
+        "witness_type": "publisher_text_index",
+        "relations": [],
+        "duplicate_or_parallel_relations": [],
+        "taxonomy": {
+          "publisher_index_terms": [
+            "אגרות קודש",
+            "ספרי כ״ק אדמו״ר"
+          ],
+          "research_terms": [
+            "התחדשות יומיומית",
+            "תפקיד אישי",
+            "תורה",
+            "תומכי תמימים",
+            "daily renewal",
+            "personal responsibility"
+          ],
+          "response_case_candidate": true
+        },
+        "epistemic_level": 1,
+        "notes": "Body inspected through Pnimi index of ChabadLibrary text; this does not authenticate an autograph or make Pnimi a second witness.",
+        "documented_circumstances": "מענה אישי ליהודה ליב הורביץ; הטקסט מגיב לפתיחת מכתבו של הנמען ומזכיר את לימודיו בתומכי תמימים.",
+        "question_or_problem": "הנמען מתאר היעדר חידוש במצבו או בעשייתו.",
+        "conditions_or_qualifications": "המכתב הנכנס אינו מצורף לתצוגה; ההמלצה נוגעת לנמען ולהקשרו ואינה תיאור של כלל בוגרי הישיבה.",
+        "audience": "יהודה ליב הורביץ.",
+        "primary_secondary_status": "Publisher-presented Hebrew letter transcription from Igrot Kodesh, accessed through Pnimi index of ChabadLibrary text; original manuscript/autograph not independently inspected.",
+        "translation_status": "Original Hebrew text; no translation was used or counted as an independent witness.",
+        "witness_provenance": "ChabadLibrary publisher item 1200820161; body accessed via Pnimi index https://pnimi.org/page/1200820161; Pnimi is not an independent textual witness.",
+        "witness": {
+          "kind": "publisher_text_via_index",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "platform": "Pnimi public index",
+          "language": "Hebrew",
+          "scope": "Full published letter body displayed in Pnimi index, lines 77–96; original manuscript/autograph and incoming letter not inspected.",
+          "complete_partial": "published_text_visible_context_partial",
+          "independent_witness": true,
+          "notes": "Pnimi identifies itself as an index of chabadlibrary.org text and notes that rights belong to Kehot; it is an access layer, not an additional witness."
+        },
+        "provenance": {
+          "source_witness": "ChabadLibrary item 1200820161",
+          "source_url": "https://www.chabadlibrary.org/books/1200820161",
+          "access_path": "https://pnimi.org/page/1200820161",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "language": "Hebrew",
+          "transmission_type": "Published Hebrew transcription surfaced through a third-party index; not a translation.",
+          "textual_status": "Full published body visible in Pnimi index at lines 77–96; underlying publisher page not readable in direct open.",
+          "verification_status": "source_text_inspected",
+          "verification_scope": "Pnimi index lines 77–96; no autograph, manuscript, incoming letter or scan inspected; context partial.",
+          "editorial_scope": "Only non-verbatim bounded paraphrases retained; no full copyrighted text copied.",
+          "accessed_at": "2026-11-14T19:24:05+02:00"
+        },
+        "verification_scope": "Full published Hebrew text body was inspected in the Pnimi index on 2026-11-14 at lines 77–96; the underlying ChabadLibrary page itself returned no readable lines in direct open. Pnimi is an access index, not an independent witness. No autograph, manuscript, incoming letter or scan was inspected. Context remains partial; only the cited body passages support the propositions.",
+        "rights_status": "copyrighted-link-only; paraphrase only",
+        "access": {
+          "access_level": "public_index_full_text",
+          "status": "publisher_text_visible_via_pnimi_index",
+          "direct_publisher_open": "zero readable body lines",
+          "alternate_access": "Pnimi index page body visible",
+          "reuse_notes": "Paraphrase only; no full text copied; no access-control bypass."
+        },
+        "locator": {
+          "publisher": "Chabad Library",
+          "library_item_id": "1200820161",
+          "volume": "8",
+          "letter_number": "ב׳תה",
+          "source_url": "https://www.chabadlibrary.org/books/1200820161"
+        },
+        "source_type": "published_letter_text"
+      },
+      {
+        "id": "chabadlibrary-letter-1200840145",
+        "canonical_key": "library-item:1200840145",
+        "library_item_id": "1200840145",
+        "type": "letter",
+        "collection": "Igrot Kodesh",
+        "source_class": "Igrot Kodesh",
+        "source_class_detail": "טקסט איגרת עברי שפורסם באגרות קודש; גוף הטקסט המלא הוצג דרך מפתח Pnimi לטקסטי ChabadLibrary. Pnimi הוא שכבת גישה/אינדקס, לא עד עצמאי נוסף.",
+        "title": "אגרות קודש – כרך י, ג׳קח",
+        "volume": "10",
+        "volume_he": "י",
+        "letter_number": "ג׳קח",
+        "date_original": "ט״ו כסלו, תשט״ו",
+        "event_date": "ט״ו כסלו, תשט״ו",
+        "date_precision": "exact_as_publisher",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "source_url": "https://www.chabadlibrary.org/books/1200840145",
+        "pipeline_status": "Parsed",
+        "status": "Parsed",
+        "canonical_status": "Parsed",
+        "context_status": "partial",
+        "verification_status": "Parsed at publisher-text level; source_text_inspected on 2026-11-14 through Pnimi index lines 77–91. Underlying manuscript/autograph not inspected; not promoted to Verified.",
+        "has_content_evidence": true,
+        "summary_researcher": "המכתב דן במקרה אישי של יולדת ומוסד החלמה, ומוסיף עידוד להשפעה חיובית על הסביבה.",
+        "response_propositions": [
+          "בתגובה לחשש של בני זוג בעקבות חוויית לידה קשה קודמת, המכתב מציין שתנאי בית ההבראה ליולדות והפיקוח בו השתפרו, ואינו רואה סיבה להימנע ממנו רק על יסוד החוויה הקודמת.",
+          "המכתב מוסיף עידוד נפרד להשתמש בהשפעת בני הזוג על סביבתם לחיזוק ולהפצת תורה ומצוות; זהו מענה אישי היסטורי ולא הנחיה רפואית עכשווית."
+        ],
+        "response_proposition_locators": [
+          "Pnimi index, page 1200840145, lines 81–86; digital view, not printed pagination.",
+          "Pnimi index, page 1200840145, lines 84–91; digital view, not printed pagination."
+        ],
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Pnimi index, https://pnimi.org/page/1200840145, lines 77–91 (digital view, not printed pagination); underlying publisher item https://www.chabadlibrary.org/books/1200840145. Pnimi footer identifies the site as an index of chabadlibrary.org texts and states that text rights belong to Kehot.",
+        "evidence_family_id": "igrot-library-item-1200840145",
+        "parent_evidence_family_id": null,
+        "translation_of_evidence_family_id": null,
+        "independent_witness": true,
+        "witness_type": "publisher_text_index",
+        "relations": [],
+        "duplicate_or_parallel_relations": [],
+        "taxonomy": {
+          "publisher_index_terms": [
+            "אגרות קודש",
+            "ספרי כ״ק אדמו״ר"
+          ],
+          "research_terms": [
+            "בית הבראה ליולדות",
+            "לידה",
+            "מענה אישי",
+            "השפעה על הסביבה",
+            "יולדות",
+            "maternity care",
+            "community influence"
+          ],
+          "response_case_candidate": true
+        },
+        "epistemic_level": 1,
+        "notes": "Body inspected through Pnimi index of ChabadLibrary text; this does not authenticate an autograph or make Pnimi a second witness.",
+        "documented_circumstances": "התכתבות אישית על חשש משימוש בבית הבראה ליולדות לאחר ניסיון קודם; בהמשך מופיעה פסקה על השפעה בסביבה.",
+        "question_or_problem": "בת הזוג אינה רוצה לשוב למוסד שבו אירעה בעבר חוויה קשה לאחר לידה.",
+        "conditions_or_qualifications": "אין להסיק מכאן על איכות מוסדות רפואיים כיום או על החלטה רפואית פרטנית; מדובר בתנאים היסטוריים ובהקשר אישי.",
+        "audience": "בני זוג; שמותיהם אינם מוצגים בקטע שנבדק.",
+        "primary_secondary_status": "Publisher-presented Hebrew letter transcription from Igrot Kodesh, accessed through Pnimi index of ChabadLibrary text; original manuscript/autograph not independently inspected.",
+        "translation_status": "Original Hebrew text; no translation was used or counted as an independent witness.",
+        "witness_provenance": "ChabadLibrary publisher item 1200840145; body accessed via Pnimi index https://pnimi.org/page/1200840145; Pnimi is not an independent textual witness.",
+        "witness": {
+          "kind": "publisher_text_via_index",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "platform": "Pnimi public index",
+          "language": "Hebrew",
+          "scope": "Full published letter body displayed in Pnimi index, lines 77–91; original manuscript/autograph and incoming letter not inspected.",
+          "complete_partial": "published_text_visible_context_partial",
+          "independent_witness": true,
+          "notes": "Pnimi identifies itself as an index of chabadlibrary.org text and notes that rights belong to Kehot; it is an access layer, not an additional witness."
+        },
+        "provenance": {
+          "source_witness": "ChabadLibrary item 1200840145",
+          "source_url": "https://www.chabadlibrary.org/books/1200840145",
+          "access_path": "https://pnimi.org/page/1200840145",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "language": "Hebrew",
+          "transmission_type": "Published Hebrew transcription surfaced through a third-party index; not a translation.",
+          "textual_status": "Full published body visible in Pnimi index at lines 77–91; underlying publisher page not readable in direct open.",
+          "verification_status": "source_text_inspected",
+          "verification_scope": "Pnimi index lines 77–91; no autograph, manuscript, incoming letter or scan inspected; context partial.",
+          "editorial_scope": "Only non-verbatim bounded paraphrases retained; no full copyrighted text copied.",
+          "accessed_at": "2026-11-14T19:24:05+02:00"
+        },
+        "verification_scope": "Full published Hebrew text body was inspected in the Pnimi index on 2026-11-14 at lines 77–91; the underlying ChabadLibrary page itself returned no readable lines in direct open. Pnimi is an access index, not an independent witness. No autograph, manuscript, incoming letter or scan was inspected. Context remains partial; only the cited body passages support the propositions.",
+        "rights_status": "copyrighted-link-only; paraphrase only",
+        "access": {
+          "access_level": "public_index_full_text",
+          "status": "publisher_text_visible_via_pnimi_index",
+          "direct_publisher_open": "zero readable body lines",
+          "alternate_access": "Pnimi index page body visible",
+          "reuse_notes": "Paraphrase only; no full text copied; no access-control bypass."
+        },
+        "locator": {
+          "publisher": "Chabad Library",
+          "library_item_id": "1200840145",
+          "volume": "10",
+          "letter_number": "ג׳קח",
+          "source_url": "https://www.chabadlibrary.org/books/1200840145"
+        },
+        "source_type": "published_letter_text"
+      },
+      {
+        "id": "chabadlibrary-letter-1200690008",
+        "canonical_key": "library-item:1200690008",
+        "library_item_id": "1200690008",
+        "type": "letter",
+        "collection": "Igrot Kodesh",
+        "source_class": "Igrot Kodesh",
+        "source_class_detail": "טקסט איגרת עברי שפורסם באגרות קודש; גוף הטקסט המלא הוצג דרך מפתח Pnimi לטקסטי ChabadLibrary. Pnimi הוא שכבת גישה/אינדקס, לא עד עצמאי נוסף.",
+        "title": "אגרות קודש – כרך כה, ט׳שפה",
+        "volume": "25",
+        "volume_he": "כה",
+        "letter_number": "ט׳שפה",
+        "date_original": "חול המועד סוכות, תשכ״ח",
+        "event_date": "חול המועד סוכות, תשכ״ח",
+        "date_precision": "period_as_publisher",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "source_url": "https://www.chabadlibrary.org/books/1200690008",
+        "pipeline_status": "Parsed",
+        "status": "Parsed",
+        "canonical_status": "Parsed",
+        "context_status": "partial",
+        "verification_status": "Parsed at publisher-text level; source_text_inspected on 2026-11-14 through Pnimi index lines 77–91. Underlying manuscript/autograph not inspected; not promoted to Verified.",
+        "has_content_evidence": true,
+        "summary_researcher": "המכתב מציג פרסום תקשורתי כאמצעי ראוי כאשר צפויה ממנו תועלת ציבורית שתתבטא במעשה.",
+        "response_propositions": [
+          "המכתב מציין שאף שאין זה מדרכו של הרבי להתראיין לעיתונאים, ניתן לראות בחיוב שיחה או פרסום כאשר צפויה מהם תועלת ציבורית ממשית.",
+          "הקריטריון המודגש הוא השפעה מעשית: הדברים אמורים להוביל את הקוראים למעשים בחיי היום־יום ולא להישאר ברמת אמירה בלבד."
+        ],
+        "response_proposition_locators": [
+          "Pnimi index, page 1200690008, lines 81–86; digital view, not printed pagination.",
+          "Pnimi index, page 1200690008, lines 85–91; digital view, not printed pagination."
+        ],
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Pnimi index, https://pnimi.org/page/1200690008, lines 77–91 (digital view, not printed pagination); underlying publisher item https://www.chabadlibrary.org/books/1200690008. Pnimi footer identifies the site as an index of chabadlibrary.org texts and states that text rights belong to Kehot.",
+        "evidence_family_id": "igrot-library-item-1200690008",
+        "parent_evidence_family_id": null,
+        "translation_of_evidence_family_id": null,
+        "independent_witness": true,
+        "witness_type": "publisher_text_index",
+        "relations": [],
+        "duplicate_or_parallel_relations": [],
+        "taxonomy": {
+          "publisher_index_terms": [
+            "אגרות קודש",
+            "ספרי כ״ק אדמו״ר"
+          ],
+          "research_terms": [
+            "עיתונות",
+            "פרסום",
+            "תועלת ציבורית",
+            "מעשה בפועל",
+            "חיי היום-יום",
+            "media",
+            "public benefit",
+            "practical action"
+          ],
+          "response_case_candidate": true
+        },
+        "epistemic_level": 1,
+        "notes": "Body inspected through Pnimi index of ChabadLibrary text; this does not authenticate an autograph or make Pnimi a second witness.",
+        "documented_circumstances": "מכתב לאליהו עמיקם בעקבות פרסום עיתונאי שכלל דברים מן הרבי; הטקסט מציין במפורש שהמכתב אינו חתום מחמת קדושת החג.",
+        "question_or_problem": "פורסמו בעיתונות קטעים משיחה, אף שהכותב מציין שאינו נוהג להתראיין לעיתונאים.",
+        "conditions_or_qualifications": "ההקשר הוא פרסום מסוים; אין כאן כלל גורף בדבר מתן ראיונות. התצוגה מציינת שהמכתב לא נחתם; לא נבדק כתב יד.",
+        "audience": "אליהו עמיקם.",
+        "primary_secondary_status": "Publisher-presented Hebrew letter transcription from Igrot Kodesh, accessed through Pnimi index of ChabadLibrary text; original manuscript/autograph not independently inspected.",
+        "translation_status": "Original Hebrew text; no translation was used or counted as an independent witness.",
+        "witness_provenance": "ChabadLibrary publisher item 1200690008; body accessed via Pnimi index https://pnimi.org/page/1200690008; Pnimi is not an independent textual witness.",
+        "witness": {
+          "kind": "publisher_text_via_index",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "platform": "Pnimi public index",
+          "language": "Hebrew",
+          "scope": "Full published letter body displayed in Pnimi index, lines 77–91; original manuscript/autograph and incoming letter not inspected.",
+          "complete_partial": "published_text_visible_context_partial",
+          "independent_witness": true,
+          "notes": "Pnimi identifies itself as an index of chabadlibrary.org text and notes that rights belong to Kehot; it is an access layer, not an additional witness."
+        },
+        "provenance": {
+          "source_witness": "ChabadLibrary item 1200690008",
+          "source_url": "https://www.chabadlibrary.org/books/1200690008",
+          "access_path": "https://pnimi.org/page/1200690008",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "language": "Hebrew",
+          "transmission_type": "Published Hebrew transcription surfaced through a third-party index; not a translation.",
+          "textual_status": "Full published body visible in Pnimi index at lines 77–91; underlying publisher page not readable in direct open.",
+          "verification_status": "source_text_inspected",
+          "verification_scope": "Pnimi index lines 77–91; no autograph, manuscript, incoming letter or scan inspected; context partial.",
+          "editorial_scope": "Only non-verbatim bounded paraphrases retained; no full copyrighted text copied.",
+          "accessed_at": "2026-11-14T19:24:05+02:00"
+        },
+        "verification_scope": "Full published Hebrew text body was inspected in the Pnimi index on 2026-11-14 at lines 77–91; the underlying ChabadLibrary page itself returned no readable lines in direct open. Pnimi is an access index, not an independent witness. No autograph, manuscript, incoming letter or scan was inspected. Context remains partial; only the cited body passages support the propositions.",
+        "rights_status": "copyrighted-link-only; paraphrase only",
+        "access": {
+          "access_level": "public_index_full_text",
+          "status": "publisher_text_visible_via_pnimi_index",
+          "direct_publisher_open": "zero readable body lines",
+          "alternate_access": "Pnimi index page body visible",
+          "reuse_notes": "Paraphrase only; no full text copied; no access-control bypass."
+        },
+        "locator": {
+          "publisher": "Chabad Library",
+          "library_item_id": "1200690008",
+          "volume": "25",
+          "letter_number": "ט׳שפה",
+          "source_url": "https://www.chabadlibrary.org/books/1200690008"
+        },
+        "source_type": "published_letter_text"
+      },
+      {
+        "id": "chabadlibrary-letter-1200770224",
+        "canonical_key": "library-item:1200770224",
+        "library_item_id": "1200770224",
+        "type": "letter",
+        "collection": "Igrot Kodesh",
+        "source_class": "Igrot Kodesh",
+        "source_class_detail": "Published Hebrew Igrot Kodesh letter; the same letter is also published on Chabad.org as AID 4730976. Only the public publisher search-result body excerpt was inspectable in this run; direct open returned a rewritten summary shell.",
+        "title": "אגרות קודש – כרך ג, תרכ",
+        "volume": "3",
+        "volume_he": "ג",
+        "letter_number": "תרכ",
+        "date_original": "ג׳ סיון, תש״י",
+        "event_date": "ג׳ סיון, תש״י",
+        "date_precision": "exact_as_publisher",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "source_url": "https://chabadlibrary.org/books/1200770224",
+        "pipeline_status": "Parsed",
+        "status": "Parsed",
+        "canonical_status": "Parsed",
+        "context_status": "partial",
+        "verification_status": "Parsed at publisher search-excerpt level; source_text_inspected applies only to the visible body excerpt for parallel Chabad.org AID 4730976; direct open returned summary shell; not promoted to Verified.",
+        "has_content_evidence": true,
+        "summary_researcher": "מכתב על היערכות מעשית לפרויקט מסוים באפריקה: נוכחות בהנחת אבן הפינה והעברת כספים לאנשי הפעילות המקומיים.",
+        "response_propositions": [
+          "המכתב מבקש מהנמען להשתתף בהנחת אבן הפינה לפעילות באפריקה ומדגיש שהצעד המעשי הראשון צריך להתאים לכיוון שאליו מיועדת הפעילות.",
+          "המכתב מבקש לדאוג להעברת כספים לאנשי הפעילות המקומיים כחלק מן ההיערכות המיידית; זו הוראה לוגיסטית בפרויקט מסוים, לא מדיניות מימון כללית."
+        ],
+        "response_proposition_locators": [
+          "Chabad.org Torah Texts, AID 4730976, public publisher search-result body excerpt; same letter as ChabadLibrary item 1200770224 (vol. 3, letter תרכ, 3 Sivan 5710); direct open on 2026-11-14 returned a rewritten summary shell, no line numbers.",
+          "Chabad.org Torah Texts, AID 4730976, public publisher search-result body excerpt; same Evidence Family as ChabadLibrary item 1200770224; direct open returned a rewritten summary shell, no line numbers."
+        ],
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "ChabadLibrary item https://www.chabadlibrary.org/books/1200770224; parallel Chabad.org publication https://www.chabad.org/torah-texts/4730976 (AID 4730976), whose public search result exposed the Hebrew body excerpt; direct open returned a rewritten summary shell. Same letter, not an independent second witness.",
+        "evidence_family_id": "igrot-library-item-1200770224",
+        "parent_evidence_family_id": null,
+        "translation_of_evidence_family_id": null,
+        "independent_witness": true,
+        "witness_type": "publisher_search_excerpt",
+        "relations": [],
+        "duplicate_or_parallel_relations": [
+          {
+            "relation_type": "same_evidence_family_parallel_publication",
+            "target_aid": 4730976,
+            "target_url": "https://www.chabad.org/torah-texts/4730976",
+            "independent_witness": false,
+            "basis": "Same volume 3 letter תרכ, same date 3 Sivan 5710, same addressee and body content; Chabad.org is a parallel publication of the ChabadLibrary item, not an independent witness."
+          }
+        ],
+        "taxonomy": {
+          "publisher_index_terms": [
+            "אגרות קודש",
+            "ספרי כ״ק אדמו״ר"
+          ],
+          "research_terms": [
+            "אפריקה",
+            "הנחת אבן הפינה",
+            "הקמת פעילות",
+            "סיוע כספי",
+            "שלב ראשון",
+            "community initiative",
+            "funding",
+            "project launch"
+          ],
+          "response_case_candidate": true
+        },
+        "epistemic_level": 1,
+        "notes": "Parallel Chabad.org publication AID 4730976 was used only as an access path to the same letter; it is not a second source identity.",
+        "documented_circumstances": "מכתב לרב בנימין גורודצקי, ג׳ סיון תש״י, על פעילות באפריקה; בגוף הקטע נזכרות גם איגרות מהרב מיכאל ליפסקר ממקנס.",
+        "question_or_problem": "יש צורך לארגן התחלה מעשית של פעילות באפריקה ולדאוג למשאבים ראשוניים.",
+        "conditions_or_qualifications": "הוראות לוגיסטיות לפרויקט היסטורי מסוים; אין להסיק מהן כלל מימון לכל פעילות. הטקסט נבדק רק בקטע חיפוש של פרסום מקביל.",
+        "audience": "הרב בנימין גורודצקי.",
+        "primary_secondary_status": "Publisher-presented Hebrew letter excerpt; parallel Chabad.org page AID 4730976 matches ChabadLibrary item 1200770224; no autograph inspected.",
+        "translation_status": "Original Hebrew; no translation used.",
+        "witness_provenance": "ChabadLibrary item 1200770224; parallel Chabad.org AID 4730976, same letter and Evidence Family; parallel manifestation is not an independent witness.",
+        "witness": {
+          "kind": "publisher_search_excerpt",
+          "publisher": "ChabadLibrary / Chabad.org, Kehot",
+          "platform": "Chabad.org public search result",
+          "language": "Hebrew",
+          "scope": "Visible body excerpt only; direct page open returned rewritten summary shell; no autograph inspected.",
+          "complete_partial": "partial",
+          "independent_witness": true,
+          "notes": "AID 4730976 is a parallel publication of the same letter, not a second Evidence Family."
+        },
+        "provenance": {
+          "source_witness": "ChabadLibrary item 1200770224; parallel Chabad.org AID 4730976",
+          "source_url": "https://www.chabadlibrary.org/books/1200770224",
+          "parallel_publication_url": "https://www.chabad.org/torah-texts/4730976",
+          "publisher": "ChabadLibrary / Kehot; Chabad.org / Kehot",
+          "language": "Hebrew",
+          "access_path": "Public Chabad.org search-result body excerpt for AID 4730976",
+          "transmission_type": "Published Hebrew letter text, parallel publisher manifestation; not a translation.",
+          "textual_status": "Only visible search-result body excerpt inspected; direct open returned summary shell.",
+          "verification_status": "source_text_inspected",
+          "verification_scope": "Excerpt only; no line numbers, no autograph, no underlying ChabadLibrary body read.",
+          "editorial_scope": "Non-verbatim paraphrases only; no full text copied.",
+          "accessed_at": "2026-11-14T19:24:05+02:00"
+        },
+        "verification_scope": "Only the visible publisher-indexed Hebrew body excerpt for Chabad.org AID 4730976 was inspected; direct open returned a rewritten summary shell. It matches ChabadLibrary item 1200770224 by volume, letter number, date and content. ChabadLibrary direct body was not readable in this run; no autograph/manuscript or incoming letters inspected. Context partial.",
+        "rights_status": "copyrighted-link-only; paraphrase only",
+        "access": {
+          "access_level": "public_search_excerpt",
+          "status": "body_excerpt_visible_direct_open_shell",
+          "direct_publisher_open": "rewritten summary shell",
+          "alternate_access": "Chabad.org search result excerpt for AID 4730976",
+          "reuse_notes": "Same letter as ChabadLibrary item 1200770224; not counted as an independent witness."
+        },
+        "locator": {
+          "publisher": "Chabad Library",
+          "library_item_id": "1200770224",
+          "volume": "3",
+          "letter_number": "תרכ",
+          "source_url": "https://chabadlibrary.org/books/1200770224"
+        },
+        "source_type": "published_letter_excerpt"
+      },
+      {
+        "id": "chabadlibrary-letter-1200830053",
+        "canonical_key": "library-item:1200830053",
+        "library_item_id": "1200830053",
+        "type": "letter",
+        "collection": "Igrot Kodesh",
+        "source_class": "Igrot Kodesh",
+        "source_class_detail": "טקסט איגרת עברי שפורסם באגרות קודש; גוף הטקסט המלא הוצג דרך מפתח Pnimi לטקסטי ChabadLibrary. Pnimi הוא שכבת גישה/אינדקס, לא עד עצמאי נוסף.",
+        "title": "אגרות קודש – כרך ט, ב׳תערב",
+        "volume": "9",
+        "volume_he": "ט",
+        "letter_number": "ב׳תערב",
+        "date_original": "כ״א אייר, תשי״ד",
+        "event_date": "כ״א אייר, תשי״ד",
+        "date_precision": "exact_as_publisher",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "source_url": "https://www.chabadlibrary.org/books/1200830053",
+        "pipeline_status": "Parsed",
+        "status": "Parsed",
+        "canonical_status": "Parsed",
+        "context_status": "partial",
+        "verification_status": "Parsed at publisher-text level; source_text_inspected on 2026-11-14 through Pnimi index lines 77–90. Underlying manuscript/autograph not inspected; not promoted to Verified.",
+        "has_content_evidence": true,
+        "summary_researcher": "המכתב מציע מודל הפצה מאורגן לספרי חב״ד בארץ ישראל, המבוסס על סוכנים מקומיים, תמריץ ותמחור אחראי.",
+        "response_propositions": [
+          "המכתב דוחק במו״ל לארגן הפצה יזומה של ספרי חב״ד בארץ ישראל במקום להסתפק בביקוש הקיים; הוא מציע להפעיל סוכנים מקומיים ולהסדיר את התמריץ והעמלה שלהם.",
+          "ההנחיה מדגישה תמחור נגיש ומאמץ הפצה נמרץ באמצעות חוגי חב״ד והצעירים; זהו מענה למצב הפצה היסטורי מסוים, לא מדיניות מחירים כללית."
+        ],
+        "response_proposition_locators": [
+          "Pnimi index, page 1200830053, lines 80–85; digital view, not printed pagination.",
+          "Pnimi index, page 1200830053, lines 84–90; digital view, not printed pagination."
+        ],
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Pnimi index, https://pnimi.org/page/1200830053, lines 77–90 (digital view, not printed pagination); underlying publisher item https://www.chabadlibrary.org/books/1200830053. Pnimi footer identifies the site as an index of chabadlibrary.org texts and states that text rights belong to Kehot.",
+        "evidence_family_id": "igrot-library-item-1200830053",
+        "parent_evidence_family_id": null,
+        "translation_of_evidence_family_id": null,
+        "independent_witness": true,
+        "witness_type": "publisher_text_index",
+        "relations": [],
+        "duplicate_or_parallel_relations": [],
+        "taxonomy": {
+          "publisher_index_terms": [
+            "אגרות קודש",
+            "ספרי כ״ק אדמו״ר"
+          ],
+          "research_terms": [
+            "הפצת ספרים",
+            "ספרי חב״ד",
+            "אגודת חסידי חב״ד",
+            "מחיר מתון",
+            "מערך הפצה",
+            "book distribution",
+            "community networks",
+            "publishing"
+          ],
+          "response_case_candidate": true
+        },
+        "epistemic_level": 1,
+        "notes": "Body inspected through Pnimi index of ChabadLibrary text; this does not authenticate an autograph or make Pnimi a second witness.",
+        "documented_circumstances": "מכתב אישי למו״ל על הפצת ספרי חב״ד בארץ ישראל ועל דרכי הרחבת המכירה וההגעה לקוראים.",
+        "question_or_problem": "הביקוש לספרים מתואר כגבוה, אך פעילות ההפצה אינה מתקדמת בהתאם.",
+        "conditions_or_qualifications": "הדברים מתייחסים למצב היסטורי מסוים ולהוצאה מסוימת; אין להסיק מהם מדיניות מסחרית עכשווית או מחירון כללי.",
+        "audience": "מו״ל/מוציא לאור; שמו אינו מוצג בקטע שנבדק.",
+        "primary_secondary_status": "Publisher-presented Hebrew letter transcription from Igrot Kodesh, accessed through Pnimi index of ChabadLibrary text; original manuscript/autograph not independently inspected.",
+        "translation_status": "Original Hebrew text; no translation was used or counted as an independent witness.",
+        "witness_provenance": "ChabadLibrary publisher item 1200830053; body accessed via Pnimi index https://pnimi.org/page/1200830053; Pnimi is not an independent textual witness.",
+        "witness": {
+          "kind": "publisher_text_via_index",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "platform": "Pnimi public index",
+          "language": "Hebrew",
+          "scope": "Full published letter body displayed in Pnimi index, lines 77–90; original manuscript/autograph and incoming letter not inspected.",
+          "complete_partial": "published_text_visible_context_partial",
+          "independent_witness": true,
+          "notes": "Pnimi identifies itself as an index of chabadlibrary.org text and notes that rights belong to Kehot; it is an access layer, not an additional witness."
+        },
+        "provenance": {
+          "source_witness": "ChabadLibrary item 1200830053",
+          "source_url": "https://www.chabadlibrary.org/books/1200830053",
+          "access_path": "https://pnimi.org/page/1200830053",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "language": "Hebrew",
+          "transmission_type": "Published Hebrew transcription surfaced through a third-party index; not a translation.",
+          "textual_status": "Full published body visible in Pnimi index at lines 77–90; underlying publisher page not readable in direct open.",
+          "verification_status": "source_text_inspected",
+          "verification_scope": "Pnimi index lines 77–90; no autograph, manuscript, incoming letter or scan inspected; context partial.",
+          "editorial_scope": "Only non-verbatim bounded paraphrases retained; no full copyrighted text copied.",
+          "accessed_at": "2026-11-14T19:24:05+02:00"
+        },
+        "verification_scope": "Full published Hebrew text body was inspected in the Pnimi index on 2026-11-14 at lines 77–90; the underlying ChabadLibrary page itself returned no readable lines in direct open. Pnimi is an access index, not an independent witness. No autograph, manuscript, incoming letter or scan was inspected. Context remains partial; only the cited body passages support the propositions.",
+        "rights_status": "copyrighted-link-only; paraphrase only",
+        "access": {
+          "access_level": "public_index_full_text",
+          "status": "publisher_text_visible_via_pnimi_index",
+          "direct_publisher_open": "zero readable body lines",
+          "alternate_access": "Pnimi index page body visible",
+          "reuse_notes": "Paraphrase only; no full text copied; no access-control bypass."
+        },
+        "locator": {
+          "publisher": "Chabad Library",
+          "library_item_id": "1200830053",
+          "volume": "9",
+          "letter_number": "ב׳תערב",
+          "source_url": "https://www.chabadlibrary.org/books/1200830053"
+        },
+        "source_type": "published_letter_text"
+      },
+      {
+        "id": "chabadlibrary-letter-1200710195",
+        "canonical_key": "library-item:1200710195",
+        "library_item_id": "1200710195",
+        "type": "letter",
+        "collection": "Igrot Kodesh",
+        "source_class": "Igrot Kodesh",
+        "source_class_detail": "טקסט איגרת עברי שפורסם באגרות קודש; גוף הטקסט המלא הוצג דרך מפתח Pnimi לטקסטי ChabadLibrary. Pnimi הוא שכבת גישה/אינדקס, לא עד עצמאי נוסף.",
+        "title": "אגרות קודש – כרך כז, י׳קפז",
+        "volume": "27",
+        "volume_he": "כז",
+        "letter_number": "י׳קפז",
+        "date_original": "שלהי תמוז, תשל״א",
+        "event_date": "שלהי תמוז, תשל״א",
+        "date_precision": "approximate_as_publisher",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "source_url": "https://www.chabadlibrary.org/books/1200710195",
+        "pipeline_status": "Parsed",
+        "status": "Parsed",
+        "canonical_status": "Parsed",
+        "context_status": "partial",
+        "verification_status": "Parsed at publisher-text level; source_text_inspected on 2026-11-14 through Pnimi index lines 77–100. Underlying manuscript/autograph not inspected; not promoted to Verified.",
+        "has_content_evidence": true,
+        "summary_researcher": "המכתב קושר את י״ב–י״ג תמוז לחיזוק תורה ומצוות בכל מקום, תוך הבחנה בין ציטוט דברי הריי״צ לבין מסקנת הרבי.",
+        "response_propositions": [
+          "המכתב מצטט את דברי הריי״צ שלפיהם שחרורו בי״ב תמוז נגע גם לכל מחבבי התורה ושומרי המצוות ולכל מי שנקרא ישראל; הניסוח המצוטט מיוחס לריי״צ ולא מוצג כניסוח מקורי של הרבי במכתב.",
+          "בהמשך הרבי מסיק שהימים שלאחר י״ב–י״ג תמוז מסוגלים לחיזוק התורה והיהדות בכל מקום לפי תנאיו, ומעודד לפעול בשמחה ובזריזות גם בתנאים נוחים יותר מן התנאים הקשים שבהם פעלו בעבר."
+        ],
+        "response_proposition_locators": [
+          "Pnimi index, page 1200710195, lines 83–90; digital view, not printed pagination.",
+          "Pnimi index, page 1200710195, lines 89–100; digital view, not printed pagination."
+        ],
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Pnimi index, https://pnimi.org/page/1200710195, lines 77–100 (digital view, not printed pagination); underlying publisher item https://www.chabadlibrary.org/books/1200710195. Pnimi footer identifies the site as an index of chabadlibrary.org texts and states that text rights belong to Kehot.",
+        "evidence_family_id": "igrot-library-item-1200710195",
+        "parent_evidence_family_id": null,
+        "translation_of_evidence_family_id": null,
+        "independent_witness": true,
+        "witness_type": "publisher_text_index",
+        "relations": [],
+        "duplicate_or_parallel_relations": [],
+        "taxonomy": {
+          "publisher_index_terms": [
+            "אגרות קודש",
+            "ספרי כ״ק אדמו״ר"
+          ],
+          "research_terms": [
+            "י״ב–י״ג תמוז",
+            "ימי הגאולה",
+            "הרבי הריי״צ",
+            "תורה",
+            "מצוות",
+            "communal significance",
+            "redemption anniversary"
+          ],
+          "response_case_candidate": true
+        },
+        "epistemic_level": 1,
+        "notes": "Body inspected through Pnimi index of ChabadLibrary text; this does not authenticate an autograph or make Pnimi a second witness.",
+        "documented_circumstances": "המכתב העיקרי מתואר בהערת המהדיר ככללי־פרטי ונכתב בשלהי תמוז תשל״א; בהמשך אותו עמוד מופיעים קטעים נפרדים לנמענים אחרים.",
+        "question_or_problem": "הקטע מרחיב את משמעות ימי י״ב–י״ג תמוז מעבר לאירוע האישי של שחרור הרבי הריי״צ.",
+        "conditions_or_qualifications": "נסקר רק המכתב העיקרי בשורות 83–100; קטעים מאוחרים יותר בעמוד לא אוחדו עמו. הערת המהדיר אומרת שהטקסט הושלם לפי צילום, אך הצילום עצמו לא נבדק ואינו משמש כאן אימות תוכן.",
+        "audience": "מכתב כללי־פרטי; הנמען אינו מזוהה בקטע העיקרי.",
+        "primary_secondary_status": "Publisher-presented Hebrew letter transcription from Igrot Kodesh, accessed through Pnimi index of ChabadLibrary text; original manuscript/autograph not independently inspected.",
+        "translation_status": "Original Hebrew text; no translation was used or counted as an independent witness.",
+        "witness_provenance": "ChabadLibrary publisher item 1200710195; body accessed via Pnimi index https://pnimi.org/page/1200710195; Pnimi is not an independent textual witness.",
+        "witness": {
+          "kind": "publisher_text_via_index",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "platform": "Pnimi public index",
+          "language": "Hebrew",
+          "scope": "Full published letter body displayed in Pnimi index, lines 77–100; original manuscript/autograph and incoming letter not inspected.",
+          "complete_partial": "published_text_visible_context_partial",
+          "independent_witness": true,
+          "notes": "Pnimi identifies itself as an index of chabadlibrary.org text and notes that rights belong to Kehot; it is an access layer, not an additional witness."
+        },
+        "provenance": {
+          "source_witness": "ChabadLibrary item 1200710195",
+          "source_url": "https://www.chabadlibrary.org/books/1200710195",
+          "access_path": "https://pnimi.org/page/1200710195",
+          "publisher": "ChabadLibrary / Kehot Publication Society",
+          "language": "Hebrew",
+          "transmission_type": "Published Hebrew transcription surfaced through a third-party index; not a translation.",
+          "textual_status": "Full published body visible in Pnimi index at lines 77–100; underlying publisher page not readable in direct open.",
+          "verification_status": "source_text_inspected",
+          "verification_scope": "Pnimi index lines 77–100; no autograph, manuscript, incoming letter or scan inspected; context partial.",
+          "editorial_scope": "Only non-verbatim bounded paraphrases retained; no full copyrighted text copied.",
+          "accessed_at": "2026-11-14T19:24:05+02:00"
+        },
+        "verification_scope": "Full published Hebrew text body was inspected in the Pnimi index on 2026-11-14 at lines 77–100; the underlying ChabadLibrary page itself returned no readable lines in direct open. Pnimi is an access index, not an independent witness. No autograph, manuscript, incoming letter or scan was inspected. Context remains partial; only the cited body passages support the propositions.",
+        "rights_status": "copyrighted-link-only; paraphrase only",
+        "access": {
+          "access_level": "public_index_full_text",
+          "status": "publisher_text_visible_via_pnimi_index",
+          "direct_publisher_open": "zero readable body lines",
+          "alternate_access": "Pnimi index page body visible",
+          "reuse_notes": "Paraphrase only; no full text copied; no access-control bypass."
+        },
+        "locator": {
+          "publisher": "Chabad Library",
+          "library_item_id": "1200710195",
+          "volume": "27",
+          "letter_number": "י׳קפז",
+          "source_url": "https://www.chabadlibrary.org/books/1200710195"
+        },
+        "source_type": "published_letter_text"
+      },
+      {
+        "id": "chabad-letter-5070876",
+        "canonical_key": "aid:5070876",
+        "aid": 5070876,
+        "title": "מכתב ה׳תתנו",
+        "collection": "Igrot Kodesh",
+        "source_class": "Igrot Kodesh",
+        "source_class_detail": "Published Hebrew letter excerpt surfaced in a public Chabad.org search result; direct open currently returns a rewritten summary shell.",
+        "source_type": "published_letter_excerpt",
+        "language": "Hebrew",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5070876/jewish/page.htm",
+        "publisher": "Chabad.org / Kehot Publication Society",
+        "volume": 16,
+        "volume_label": "טז",
+        "letter_number": "ה׳תתנו",
+        "date_original": "י״ח מרחשוון, תשי״ח",
+        "date_precision": "exact_as_publisher",
+        "status": "Parsed",
+        "pipeline_status": "Parsed",
+        "canonical_status": "Parsed",
+        "context_status": "partial",
+        "has_content_evidence": true,
+        "response_propositions": [
+          "במענה אישי על קושי שמיעה ודיבור אצל בתם, המכתב דוחה הסבר מאגי וממליץ לבדוק את המזוזות והתפילין, ובמקביל לפנות לרופא מומחה שיבדוק את האוזן ואת מערכת העצבים.",
+          "המכתב משלב פעולות דתיות אישיות, כגון צדקה לפני הדלקת נרות והוספה בתורה ומצוות, לצד בדיקה רפואית; אין להציג את ההמלצות הדתיות כתחליף לאבחון או לטיפול."
+        ],
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Chabad.org AID 5070876, מכתב ה׳תתנו, public publisher search-result body excerpt; direct open on 2026-11-14 returned a rewritten summary shell, so only the visible excerpt is verified; no line numbers.",
+        "response_proposition_locators": [
+          "Chabad.org AID 5070876, public publisher search-result body excerpt; no line numbers; direct open returned rewritten summary shell.",
+          "Chabad.org AID 5070876, public publisher search-result body excerpt; no line numbers; direct open returned rewritten summary shell."
+        ],
+        "verification_scope": "Visible Hebrew body excerpt in public Chabad.org search result for AID 5070876 was inspected on 2026-11-14. Direct open of the item URL returned a rewritten summary/navigation shell with no readable body lines. Claims are limited to the excerpt; no autograph, manuscript or incoming letter inspected; not promoted to Verified.",
+        "summary_researcher": "מכתב אישי המשלב הפניה לרופא מומחה עם הוראות דתיות בתגובה לקושי שמיעה ודיבור של ילדה.",
+        "documented_circumstances": "תשובה להורים על קושי שמיעה ודיבור אצל בתם; הקטע הנגיש כולל הפניה מפורשת לבדיקה רפואית.",
+        "conditions_or_qualifications": "מקרה אישי והיסטורי; לא הנחיה רפואית כללית ולא תחליף לייעוץ רפואי. אין אבחנה קלינית או תיאור של תוצאות הטיפול.",
+        "audience": "הורי ילדה עם קושי שמיעה ודיבור; שמותיהם אינם מוצגים בקטע.",
+        "primary_secondary_status": "Publisher-presented Hebrew letter excerpt; publisher collection attribution is recorded, but no autograph or original manuscript was independently inspected.",
+        "translation_status": "Original Hebrew excerpt; no translation used or counted as an independent witness.",
+        "witness_provenance": "Chabad.org publisher page AID 5070876; only public search-result body excerpt was inspectable.",
+        "witness_type": "publisher_search_excerpt",
+        "independent_witness": true,
+        "translation_of_evidence_family_id": null,
+        "evidence_family_id": "igrot-letter-vol16-ה-תתנו-aid5070876",
+        "provenance": {
+          "source_witness": "Chabad.org AID 5070876",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5070876/jewish/page.htm",
+          "publisher": "Chabad.org / Kehot Publication Society",
+          "language": "Hebrew",
+          "access_path": "Public publisher search-result body excerpt",
+          "transmission_type": "Publisher-presented Hebrew letter excerpt; not a translation.",
+          "textual_status": "Only visible search-result excerpt inspected; direct open returned summary shell.",
+          "verification_status": "source_text_inspected",
+          "verification_scope": "Excerpt only; no readable body lines on direct open; no autograph/manuscript inspected.",
+          "editorial_scope": "Non-verbatim bounded paraphrases only; no full text copied.",
+          "accessed_at": "2026-11-14T19:24:05+02:00"
+        },
+        "witness": {
+          "kind": "publisher_search_excerpt",
+          "publisher": "Chabad.org / Kehot Publication Society",
+          "platform": "Chabad.org public search result",
+          "language": "Hebrew",
+          "scope": "Visible body excerpt only; direct open returned rewritten summary shell.",
+          "complete_partial": "partial",
+          "independent_witness": true,
+          "notes": "Search-result text is treated only as a limited publisher excerpt, not as a full-page inspection."
+        },
+        "access": {
+          "access_level": "public_search_excerpt",
+          "status": "body_excerpt_visible_direct_open_shell",
+          "direct_publisher_open": "rewritten summary shell; zero readable body lines",
+          "alternate_access": "public Chabad.org search-result body excerpt",
+          "reuse_notes": "Only paraphrase; no full text copied; no access-control bypass."
+        },
+        "rights_status": "copyrighted-link-only; paraphrase only",
+        "epistemic_level": 1,
+        "taxonomy": {
+          "research_terms": [
+            "שמיעה",
+            "דיבור",
+            "רופא מומחה",
+            "מזוזות",
+            "תפילין",
+            "בריאות"
+          ],
+          "source_language": "Hebrew",
+          "document_type": "personal correspondence",
+          "answer_case_candidate": true
+        },
+        "notes": "Search-result excerpt only. No full text copied; no access-control bypass; not promoted to Verified."
+      },
+      {
+        "id": "chabad-letter-5071097",
+        "canonical_key": "aid:5071097",
+        "aid": 5071097,
+        "title": "מכתב ו׳עו",
+        "collection": "Igrot Kodesh",
+        "source_class": "Igrot Kodesh",
+        "source_class_detail": "Published Hebrew letter excerpt surfaced in a public Chabad.org search result; direct open currently returns a rewritten summary shell.",
+        "source_type": "published_letter_excerpt",
+        "language": "Hebrew",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071097/jewish/page.htm",
+        "publisher": "Chabad.org / Kehot Publication Society",
+        "volume": 16,
+        "volume_label": "טז",
+        "letter_number": "ו׳עו",
+        "date_original": "כ״ו שבט, תשי״ח",
+        "date_precision": "exact_as_publisher",
+        "status": "Parsed",
+        "pipeline_status": "Parsed",
+        "canonical_status": "Parsed",
+        "context_status": "partial",
+        "has_content_evidence": true,
+        "response_propositions": [
+          "לאחר שהנמען מדווח שהחל בטיפול רפואי, המכתב מעודד אותו להמשיך בטיפול ומביע תקווה להחלמה מהירה.",
+          "המכתב ממליץ להוסיף בחיזוק בריאות הנשמה באמצעות לימוד תורה וקיום מצוות, כגורם נוסף לבריאות הגוף; אין בו הצגה של העיסוק הרוחני כתחליף לטיפול הרפואי."
+        ],
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Chabad.org AID 5071097, מכתב ו׳עו, public publisher search-result body excerpt; direct open on 2026-11-14 returned a rewritten summary shell, so only the visible excerpt is verified; no line numbers.",
+        "response_proposition_locators": [
+          "Chabad.org AID 5071097, public publisher search-result body excerpt; no line numbers; direct open returned rewritten summary shell.",
+          "Chabad.org AID 5071097, public publisher search-result body excerpt; no line numbers; direct open returned rewritten summary shell."
+        ],
+        "verification_scope": "Visible Hebrew body excerpt in public Chabad.org search result for AID 5071097 was inspected on 2026-11-14. Direct open of the item URL returned a rewritten summary/navigation shell with no readable body lines. Claims are limited to the excerpt; no autograph, manuscript or incoming letter inspected; not promoted to Verified.",
+        "summary_researcher": "מכתב אישי המעודד המשך טיפול רפואי לצד חיזוק בריאות הנשמה.",
+        "documented_circumstances": "מענה לאדם שדיווח כי החל בטיפול רפואי; הקטע כולל ברכה להצלחת הטיפול ולעידוד רוחני.",
+        "conditions_or_qualifications": "מקרה אישי והיסטורי, לא פרוטוקול רפואי ולא המלצה להחליף טיפול. ההמלצה הרוחנית מוצגת כתוספת ולא כתחליף.",
+        "audience": "נמען אישי ששמו אינו מוצג בקטע.",
+        "primary_secondary_status": "Publisher-presented Hebrew letter excerpt; publisher collection attribution is recorded, but no autograph or original manuscript was independently inspected.",
+        "translation_status": "Original Hebrew excerpt; no translation used or counted as an independent witness.",
+        "witness_provenance": "Chabad.org publisher page AID 5071097; only public search-result body excerpt was inspectable.",
+        "witness_type": "publisher_search_excerpt",
+        "independent_witness": true,
+        "translation_of_evidence_family_id": null,
+        "evidence_family_id": "igrot-letter-vol16-ו-עו-aid5071097",
+        "provenance": {
+          "source_witness": "Chabad.org AID 5071097",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071097/jewish/page.htm",
+          "publisher": "Chabad.org / Kehot Publication Society",
+          "language": "Hebrew",
+          "access_path": "Public publisher search-result body excerpt",
+          "transmission_type": "Publisher-presented Hebrew letter excerpt; not a translation.",
+          "textual_status": "Only visible search-result excerpt inspected; direct open returned summary shell.",
+          "verification_status": "source_text_inspected",
+          "verification_scope": "Excerpt only; no readable body lines on direct open; no autograph/manuscript inspected.",
+          "editorial_scope": "Non-verbatim bounded paraphrases only; no full text copied.",
+          "accessed_at": "2026-11-14T19:24:05+02:00"
+        },
+        "witness": {
+          "kind": "publisher_search_excerpt",
+          "publisher": "Chabad.org / Kehot Publication Society",
+          "platform": "Chabad.org public search result",
+          "language": "Hebrew",
+          "scope": "Visible body excerpt only; direct open returned rewritten summary shell.",
+          "complete_partial": "partial",
+          "independent_witness": true,
+          "notes": "Search-result text is treated only as a limited publisher excerpt, not as a full-page inspection."
+        },
+        "access": {
+          "access_level": "public_search_excerpt",
+          "status": "body_excerpt_visible_direct_open_shell",
+          "direct_publisher_open": "rewritten summary shell; zero readable body lines",
+          "alternate_access": "public Chabad.org search-result body excerpt",
+          "reuse_notes": "Only paraphrase; no full text copied; no access-control bypass."
+        },
+        "rights_status": "copyrighted-link-only; paraphrase only",
+        "epistemic_level": 1,
+        "taxonomy": {
+          "research_terms": [
+            "טיפול רפואי",
+            "בריאות הגוף",
+            "בריאות הנשמה",
+            "תורה",
+            "מצוות",
+            "החלמה"
+          ],
+          "source_language": "Hebrew",
+          "document_type": "personal correspondence",
+          "answer_case_candidate": true
+        },
+        "notes": "Search-result excerpt only. No full text copied; no access-control bypass; not promoted to Verified."
+      }
+    ],
+    "existing_identity_updates": [],
+    "existing_identity_rechecks": [
+      {
+        "library_item_id": "1200710342",
+        "existing_item_id": "chabad-library-letter-1200710342",
+        "canonical_file": "data/items/content-research-batch-068-2026-11-13.json",
+        "evidence_family_id": "igrot-letter-5732-parashat-mishpatim-yishlad",
+        "source_url": "https://www.chabadlibrary.org/books/1200710342",
+        "propositions_added": 0,
+        "action": "rechecked_existing_content_no_new_propositions",
+        "reason": "The same Chabad Library item already has source-grounded Hebrew propositions in the canonical batch 068 record; no duplicate identity or duplicate propositions were added."
+      },
+      {
+        "library_item_id": "1200720273",
+        "existing_item_id": "chabad-library-letter-1200720273",
+        "canonical_file": "data/items/content-research-batch-068-2026-11-13.json",
+        "evidence_family_id": "igrot-letter-5733-15-tammuz-yittatkat",
+        "source_url": "https://www.chabadlibrary.org/books/1200720273",
+        "propositions_added": 0,
+        "action": "rechecked_existing_content_no_new_propositions",
+        "reason": "The same Chabad Library item already has source-grounded Hebrew propositions in the canonical batch 068 record; no duplicate identity or duplicate propositions were added."
+      }
+    ],
+    "new_library_item_ids": [
+      "1200820161",
+      "1200830053",
+      "1200840145",
+      "1200690008",
+      "1200710195",
+      "1200770224"
+    ],
+    "blocked_candidate_count": 12,
     "blocked_candidates": [
       {
         "aid": 5100345,
@@ -2308,58 +3226,130 @@
         "aid": 5100299,
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100299/jewish/page.htm",
         "reason": "Direct open on 2026-11-14 redirected to a rewritten Torah Texts summary/navigation shell; no source-body lines were available, so no new propositions were taken from this page in batch 084."
+      },
+      {
+        "library_item_id": "1200890274",
+        "source_url": "https://www.chabadlibrary.org/books/1200890274",
+        "title": "אגרות קודש – כרך טו, ה׳תקצו",
+        "volume": "15",
+        "letter_number": "ה׳תקצו",
+        "reason": "Direct ChabadLibrary open returned zero readable body lines. Exact AID/letter/date searches and Chabad.org alternate-publication searches did not surface a readable body in this run. No title- or key-based inference was retained; item excluded from response_propositions and answer eligibility.",
+        "handling": "Metadata-only blocked candidate; keep Parsed/Indexed status out of answer evidence; no crawler retry or access-control bypass."
+      },
+      {
+        "library_item_id": "1200830298",
+        "source_url": "https://www.chabadlibrary.org/books/1200830298",
+        "title": "אגרות קודש – כרך ט, ב׳תתקיג",
+        "volume": "9",
+        "letter_number": "ב׳תתקיג",
+        "reason": "Direct ChabadLibrary open returned zero readable body lines. Exact AID/letter/date searches and Chabad.org alternate-publication searches did not surface a readable body in this run. No title- or key-based inference was retained; item excluded from response_propositions and answer eligibility.",
+        "handling": "Metadata-only blocked candidate; keep Parsed/Indexed status out of answer evidence; no crawler retry or access-control bypass."
+      },
+      {
+        "library_item_id": "1200900255",
+        "source_url": "https://www.chabadlibrary.org/books/1200900255",
+        "title": "אגרות קודש – כרך טז, ו׳כו",
+        "volume": "16",
+        "letter_number": "ו׳כו",
+        "reason": "Direct ChabadLibrary open returned zero readable body lines. Exact AID/letter/date searches and Chabad.org alternate-publication searches did not surface a readable body in this run. No title- or key-based inference was retained; item excluded from response_propositions and answer eligibility.",
+        "handling": "Metadata-only blocked candidate; keep Parsed/Indexed status out of answer evidence; no crawler retry or access-control bypass."
       }
     ],
+    "alternate_source_attempt": {
+      "blocked_library_items": [
+        "1200890274",
+        "1200830298",
+        "1200900255"
+      ],
+      "direct_open_readable_lines": 0,
+      "exact_alternate_publisher_search": "No readable alternate body surfaced for the three blocked ChabadLibrary items.",
+      "inspected_full_text_access_paths": [
+        "Pnimi index of ChabadLibrary items 1200820161, 1200830053, 1200840145, 1200690008 and 1200710195"
+      ],
+      "inspected_publisher_excerpts": [
+        {
+          "aid": 4730976,
+          "relation": "same_evidence_family_parallel_publication_of_1200770224",
+          "independent_witness": false
+        },
+        {
+          "aid": 5070876,
+          "relation": "new_distinct_letter",
+          "independent_witness": true
+        },
+        {
+          "aid": 5071097,
+          "relation": "new_distinct_letter",
+          "independent_witness": true
+        }
+      ],
+      "no_crawler_retry": true,
+      "no_access_control_bypass": true
+    },
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
+    "scan_only_verification_used": false,
     "metrics_before": {
       "answer_eligible_unique_sources": 834,
       "content_verified_unique_sources": 831,
       "answer_eligible_propositions": 2723
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 843,
+      "answer_eligible_unique_sources": 842,
       "content_verified_unique_sources": 831,
-      "answer_eligible_propositions": 2740
+      "answer_eligible_propositions": 2739
     },
     "metrics_actual_after": null,
+    "reconciliation_variance": null,
     "reconciliation_status": "pending",
-    "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
+    "reconciled_at": null,
+    "reconciliation_commit": null,
+    "publication_commit": null,
+    "deduplication_check": {
+      "new_library_item_ids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "existing_identity_enrichment_in_place": false,
+      "existing_identity_rechecks": 2,
+      "duplicate_candidates_found": 2,
+      "duplicate_records_not_created": 2,
+      "translation_counted_as_independent_witness": false,
+      "scan_only_verification_used": false,
+      "parallel_publications_linked": 1,
+      "checked_against": "Current content-review queue, all 28 content-research batches 055–082, all bulk-indexed inventories, public-search-index and relevant source URLs. No existing AID/URL match was found for the six ChabadLibrary items or the two new Chabad.org AIDs. Chabad.org AID 4730976 is the same letter as ChabadLibrary item 1200770224 and is linked as a parallel publication, not a separate Evidence Family. AIDs 1200710342 and 1200720273 remain existing batch-068 identities rechecked in place.",
+      "exhaustive_canonical_reconciliation_pending": true,
+      "notes": "The complete item-by-item scan of all 453 JSON files remains pending; the reconciliation workflow is authoritative. Three inaccessible ChabadLibrary items are metadata-only blocked candidates and carry no propositions."
+    },
+    "method": "Five full publisher-text bodies were inspected in Pnimi's public index of ChabadLibrary text (lines 77–100, depending on item). Three additional publisher body excerpts were inspected in public Chabad.org search results; direct open returned rewritten summary shells. Each proposition is a bounded non-verbatim paraphrase with an item-level locator. Pnimi is an access layer, not an independent witness. The same-letter Chabad.org AID 4730976 is linked to ChabadLibrary item 1200770224 within one Evidence Family.",
     "limitations": [
-      "No full Chabad Library page body was readable through the current open tool; all eleven records are excerpt-level only.",
-      "No autograph, manuscript, incoming letter, or scan was inspected; no authorship authentication beyond publisher collection attribution is claimed.",
-      "AID 1200720273 search excerpt also surfaced a separate secretariat letter; that separate text was excluded from the Rebbe-letter propositions.",
-      "AID 1200840145 concerns a historical personal maternity-care case and is not current medical guidance.",
-      "AID 1200900255 is a personal historical health-related response and is not medical advice.",
-      "AID 1200770224 concerns a specific historical project in Africa and does not establish a general funding rule.",
-      "AID 1200830053 concerns historical distribution of Chabad books and is not a current commercial policy.",
-      "AID 1200710195 is represented by a short excerpt only; no broader context is inferred.",
-      "Nine Chabad.org candidates from batch 083 currently redirect to rewritten summary shells; no new propositions were taken from those shells.",
-      "No full copyrighted text was copied; no access controls were bypassed and the known blocked crawler was not retried."
+      "Pnimi exposes the published ChabadLibrary transcription but is an access index, not an independent witness; no original manuscript or autograph was inspected.",
+      "Three records are search-excerpt-only (Chabad.org AIDs 4730976, 5070876 and 5071097); direct open returned summary shells, so claims are limited to the visible body excerpts and context is partial.",
+      "ChabadLibrary items 1200890274, 1200830298 and 1200900255 returned no readable body lines and no alternate publisher body was found; they remain blocked with no propositions.",
+      "The 1200710195 page contains a main letter and separate later fragments; only the main letter was summarized. The editorial note says it was completed from a photograph, but the photograph was not inspected.",
+      "The 1200710195 proposition explicitly attributes the quoted liberation wording to the Previous Rebbe; it is not represented as the Rebbe's own original wording.",
+      "The 1200840145, 5070876 and 5071097 records are historical personal health-related correspondence, not current medical advice.",
+      "The 1200770224 letter concerns a specific historical Africa project and does not establish a general funding rule.",
+      "The 1200830053 letter concerns a historical book-distribution arrangement and is not a current commercial or pricing policy.",
+      "The 1200690008 letter concerns a specific media interaction and is not a general rule about granting interviews.",
+      "No full copyrighted text was copied; no access controls were bypassed; the known HTTP 403 crawler was not retried."
     ],
-    "existing_identity_rechecks": [
-      {
-        "library_item_id": "1200710342",
-        "existing_item_id": "chabad-library-letter-1200710342",
-        "canonical_file": "data/items/content-research-batch-068-2026-11-13.json",
-        "evidence_family_id": "igrot-letter-5732-parashat-mishpatim-yishlad",
-        "source_url": "https://www.chabadlibrary.org/books/1200710342",
-        "propositions_added": 0,
-        "action": "rechecked_existing_content_no_new_propositions",
-        "reason": "The same Chabad Library item already has source-grounded Hebrew propositions in the canonical batch 068 record; no duplicate identity or duplicate propositions were added."
-      },
-      {
-        "library_item_id": "1200720273",
-        "existing_item_id": "chabad-library-letter-1200720273",
-        "canonical_file": "data/items/content-research-batch-068-2026-11-13.json",
-        "evidence_family_id": "igrot-letter-5733-15-tammuz-yittatkat",
-        "source_url": "https://www.chabadlibrary.org/books/1200720273",
-        "propositions_added": 0,
-        "action": "rechecked_existing_content_no_new_propositions",
-        "reason": "The same Chabad Library item already has source-grounded Hebrew propositions in the canonical batch 068 record; no duplicate identity or duplicate propositions were added."
-      }
+    "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
+    "status": "reviewed_waiting_reconciliation",
+    "source_text_items_inspected": 8,
+    "new_aids": [
+      5070876,
+      5071097
+    ],
+    "parallel_publication_aids": [
+      4730976
     ]
   },
-  "last_manual_review_attempt_at": "2026-11-14T18:56:47+02:00"
+  "last_manual_review_attempt_at": "2026-11-14T19:24:05+02:00",
+  "manual_web_review_expected_metrics": {
+    "answer_eligible_unique_sources": 842,
+    "content_verified_unique_sources": 831,
+    "answer_eligible_propositions": 2739
+  },
+  "manual_web_review_status": "reviewed_waiting_reconciliation"
 }
