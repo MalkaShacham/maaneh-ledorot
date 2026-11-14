@@ -7,6 +7,123 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "085",
+    "batch_file": "data/items/content-research-batch-085-2026-11-14.json",
+    "reviewed_at": "2026-11-14T03:56:02+02:00",
+    "status": "pending_ci_reconciliation",
+    "method": "manual_public_web_body_inspection",
+    "reviewed_item_count": 11,
+    "records_reviewed": 11,
+    "records_added": 7,
+    "source_bodies_inspected": 11,
+    "new_source_identities": 7,
+    "new_rebbe_letter_identities": 7,
+    "new_secretariat_document_identities": 0,
+    "existing_identities_enriched": 3,
+    "existing_identities_rechecked": 3,
+    "new_response_propositions": 16,
+    "existing_response_propositions_added": 0,
+    "response_propositions_added": 16,
+    "answer_eligible_source_families_added": 7,
+    "translation_aliases_linked": 0,
+    "independent_new_witnesses": 0,
+    "blocked_candidate_count": 6,
+    "blocked_candidates": [
+      {
+        "aid": 5413690,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413690/jewish/page.htm",
+        "reason": "Direct open returned a rewritten summary/navigation shell; no item body was available."
+      },
+      {
+        "aid": 5019512,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5019512/jewish/page.htm",
+        "reason": "Direct open returned a rewritten summary/navigation shell; no item body was available."
+      },
+      {
+        "aid": 5100116,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100116/jewish/page.htm",
+        "reason": "Direct open returned a rewritten summary/navigation shell; no item body was available."
+      },
+      {
+        "aid": 4831446,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4831446/jewish/page.htm",
+        "reason": "Direct open returned a rewritten summary/navigation shell; no item body was available."
+      },
+      {
+        "aid": 5054489,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5054489/jewish/page.htm",
+        "reason": "Direct open returned a rewritten summary/navigation shell; no item body was available."
+      },
+      {
+        "aid": 4666220,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "Fresh open redirected to a rewritten summary/navigation shell without the letter body; no content inferred."
+      }
+    ],
+    "alternative_source_attempted": true,
+    "crawler_retried": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "source_language_distribution": {
+      "English": 7,
+      "Hebrew": 4
+    },
+    "original_language_distribution": {
+      "Hebrew": 10,
+      "Yiddish": 1
+    },
+    "source_type_distribution": {
+      "published_english_letter_translation": 1,
+      "published_english_letter_excerpt_translation": 3,
+      "published_hebrew_letter": 1,
+      "published_english_translation_of_yiddish_letter": 1,
+      "existing_hebrew_identity_recheck": 3,
+      "excluded_published_english_free_adaptation": 1
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 854,
+      "content_verified_unique_sources": 851,
+      "answer_eligible_propositions": 2757
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 861,
+      "content_verified_unique_sources": 858,
+      "answer_eligible_propositions": 2773
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "reconciliation_status": "pending_ci",
+    "current_access_recheck": {
+      "checked_at": "2026-11-14T03:56:02+02:00",
+      "aids": [
+        4666220
+      ],
+      "direct_publisher_open_result": "The AID 4666220 URL redirected to a rewritten summary/navigation shell; no letter body was accessible.",
+      "source_bodies_rechecked": 11,
+      "alternative_aids": [
+        4096314,
+        4422928,
+        63798,
+        4783836,
+        66722,
+        4423140,
+        1888988,
+        5100299,
+        4830967,
+        5357571,
+        482843
+      ],
+      "alternative_source_attempted": true,
+      "alternative_source_result": "Seven new source identities, three existing identity rechecks, and one inspected-but-excluded free adaptation were opened and their body sections inspected. Six unavailable pages were recorded as blocked; no content was inferred from shells.",
+      "locator_ranges_normalized": 7,
+      "new_content_claims_added": 16,
+      "crawler_retried": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false
+    },
+    "deduplication_check": "Checked the content-review queue, research batches 055–084, eleven bulk-index JSON files and the branch tree for all seven new AIDs. No new AID was found in those locations. AIDs 5100299, 4830967 and 5357571 are existing identities and were enriched only with publisher bibliographic/cross-reference metadata. AID 482843 was inspected but excluded as a free adaptation. The English translation of the Yiddish AID 1888988 is one derived witness in one Evidence Family; no Yiddish original was inspected. No translation was counted as an independent witness."
+  },
+  "previous_manual_web_review": {
     "batch_id": "084",
     "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
     "reviewed_at": "2026-11-14T02:27:04+02:00",
@@ -128,128 +245,6 @@
       "answer_eligible_propositions": 33
     },
     "source_bodies_rechecked": 14
-  },
-  "previous_manual_web_review": {
-    "batch_id": "083",
-    "reviewed_at": "2026-11-14T01:28:47+02:00",
-    "method": "manual_public_web_body_inspection",
-    "source_bodies_inspected": 9,
-    "new_source_identities": 6,
-    "existing_identities_enriched": 3,
-    "existing_identities_rechecked": 0,
-    "new_rebbe_letter_identities": 4,
-    "new_secretariat_document_identities": 2,
-    "new_response_propositions": 12,
-    "existing_response_propositions_added": 5,
-    "response_propositions_added": 17,
-    "answer_eligible_source_families_added": 9,
-    "blocked_candidate_count": 10,
-    "blocked_candidates": [
-      {
-        "aid": 4754363,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 4754536,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 5100438,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 5100309,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 5054581,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 4812831,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 4854786,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 4854525,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 5100579,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      },
-      {
-        "aid": 4854804,
-        "reason": "Direct open now resolves to a rewritten summary/navigation shell; no new body text used."
-      }
-    ],
-    "alternative_source_attempted": true,
-    "crawler_retried": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "source_language_distribution": {
-      "Hebrew": 8,
-      "Yiddish": 1
-    },
-    "metrics_before_main": {
-      "answer_eligible_unique_sources": 799,
-      "content_verified_unique_sources": 796,
-      "answer_eligible_propositions": 2627
-    },
-    "metrics_before": {
-      "answer_eligible_unique_sources": 833,
-      "content_verified_unique_sources": 830,
-      "answer_eligible_propositions": 2707
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 842,
-      "content_verified_unique_sources": 839,
-      "answer_eligible_propositions": 2724
-    },
-    "metrics_actual_after": {
-      "answer_eligible_unique_sources": 842,
-      "content_verified_unique_sources": 839,
-      "answer_eligible_propositions": 2724
-    },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 0
-    },
-    "reconciliation_status": "reconciled",
-    "batch_file": "data/items/content-research-batch-083-2026-11-14.json",
-    "current_access_recheck": {
-      "checked_at": "2026-11-14T01:55:56+02:00",
-      "aids": [
-        5019502,
-        4831629,
-        5287569,
-        4754445,
-        5071128,
-        5357059,
-        4854534,
-        5099896,
-        5357093
-      ],
-      "direct_publisher_open_result": "All nine current article_cdo URLs now resolve to rewritten unavailable summary/navigation shells; no propositions were derived from those shells.",
-      "source_bodies_rechecked": 0,
-      "new_content_claims_added": 0,
-      "alternative_source_attempted": true,
-      "alternative_source_result": "A public Pnimi Igrot Kodesh index and a transcription page for a different letter were inspected; the exact nine AID bodies were not located there. A search result for AID 4754445 exposed a cached excerpt, but its full open also resolved to an unavailable shell, so no new proposition was based on that snippet.",
-      "historical_inspection_status": "The batch-083 source_text_inspected provenance records the earlier 2026-11-14 01:28 body inspections. This later recheck records current unavailability only; it does not replace the earlier body locators or claim that the shells contain the letter text.",
-      "crawler_retried": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false
-    },
-    "status": "reconciled",
-    "metrics_delta_actual": {
-      "answer_eligible_unique_sources": 9,
-      "content_verified_unique_sources": 9,
-      "answer_eligible_propositions": 17
-    }
   },
   "earlier_manual_web_review": {
     "batch_id": "080",
@@ -608,12 +603,8 @@
     "full_text_copied": false
   },
   "manual_web_review_note": "Batch 084: 14 public English bodies inspected; nine new Evidence Families, four existing identities enriched, one rechecked. Translation aliases remain in their existing families and are not independent witnesses. AID 4666220 remained blocked; fourteen alternative publisher bodies were inspected.",
-  "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 854,
-    "content_verified_unique_sources": 851,
-    "answer_eligible_propositions": 2757
-  },
-  "last_manual_review_at": "2026-11-14T02:27:04+02:00",
+  "manual_web_review_current_metrics": null,
+  "last_manual_review_at": "2026-11-14T03:56:02+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -857,6 +848,31 @@
     ]
   },
   "manual_web_review_history": [
+    {
+      "batch_id": "085",
+      "reviewed_at": "2026-11-14T03:56:02+02:00",
+      "records_reviewed": 11,
+      "source_bodies_inspected": 11,
+      "new_source_identities": 7,
+      "existing_identities_enriched": 3,
+      "existing_identity_rechecks": 3,
+      "new_response_propositions": 16,
+      "response_propositions_added": 16,
+      "answer_eligible_source_families_added": 7,
+      "blocked_candidate_count": 6,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 861,
+        "content_verified_unique_sources": 858,
+        "answer_eligible_propositions": 2773
+      },
+      "metrics_actual_after": null,
+      "reconciliation_status": "pending_ci"
+    },
     {
       "batch_id": "084",
       "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
@@ -2164,5 +2180,6 @@
       "content_verified_unique_sources": 7,
       "answer_eligible_propositions": -3
     }
-  }
+  },
+  "last_manual_review_batch_id": "085"
 }
