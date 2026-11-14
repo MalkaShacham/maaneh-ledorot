@@ -1190,7 +1190,7 @@ function buildStudyFarmingSynthesis(selected){
  const claim=(topic,text,matches)=>({topic,text,source_numbers:[...new Set(matches.map(b=>b.source_number))],evidence_family_ids:[...new Set(matches.map(b=>b.evidence_family_id).filter(Boolean))],source_locators:matches.flatMap(b=>b.propositions.filter(p=>topic==='study_routine'?supportsStudyRoutineComparison(p.text):supportsFarmingStudyComparison(p.text)).map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator))});
  const claims=[
   claim('study_routine','במענה אישי על חזרה ללימוד לאחר הפסק, קביעת זמני לימוד בהיקף מדוד והתקדמות הדרגתית מוצגות לצד לימוד עם אדם נוסף כדרכים לסייע להתמדה.',study),
-  claim('farming_and_torah','במענה אחר לשאלה על עבודה במשק, נכתב שגם חקלאים ובעלי משק מחויבים בלימוד תורה, והדוגמה המעשית של שילוב העיסוקים מוצגת כבעלת השפעה חינוכית.',farming)
+  claim('farming_and_torah','במענה אחר לשאלה על שילוב עיסוקים, נכתב שגם חקלאים ובעלי משק מחויבים בלימוד תורה; הדוגמה מתארת לימוד תורה לצד עבודה במשק ומציינת את כוח ההשפעה החינוכית של הדוגמה המעשית.',farming)
  ];
  if(claims.some(c=>!c.source_locators.length))return null;
  const sourceNumbers=[...new Set(claims.flatMap(c=>c.source_numbers))],usedBasis=basis.filter(b=>sourceNumbers.includes(b.source_number)),evidenceFamilies=[...new Set(usedBasis.map(b=>b.evidence_family_id).filter(Boolean))];
