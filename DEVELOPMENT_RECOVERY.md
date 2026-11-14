@@ -357,3 +357,14 @@ Publication verification: GitHub Pages deployment completed successfully for mai
 - Added a narrow retrieval/synthesis path for a two-family comparison between AID 5019597 (personal study with a chavruta) and AID 5019603 (educator-to-youth communication and gradual practice). The synthesis is explicitly labeled as system research, not a Rebbe quote; each claim has its own source locator, and the two historical contexts remain distinct. Researcher mode retains its evidence-family map and witness-level provenance.
 - Baseline before reconciliation: `answer_eligible_unique_sources=810`, `content_verified_unique_sources=807`, `answer_eligible_propositions=2660`. Expected if all nine AIDs are new: 819, 816, 2684; actual counts must come from reconciliation, not this estimate.
 - `test_content_readiness.mjs`, answer-integrity checks, Actions and Pages publication remain pending at this point. No cron, audience, permissions or access settings were changed.
+
+
+## 2026-11-14 — Manual publisher-body review batch 083
+
+Nine item bodies were inspected through public publisher pages: eight new content-bearing identities (seven Hebrew letters and one Yiddish organizational circular) plus an in-place recheck of existing AID 4666247. The batch adds 15 non-verbatim, source-grounded response propositions with item-level locators, provenance, scope, context and limitations. Eight distinct Evidence Families were reconciled; no translation was counted as an independent witness.
+
+Four candidate pages (AIDs 4666220, 4854505, 4730852 and 5413047) returned summary/navigation shells without inspectable item bodies and were excluded. Alternate public bodies were inspected in the same run. The HTTP 403 crawler was not retried; no access controls were bypassed and no full copyrighted text was copied.
+
+Reconciled metrics for batch 083: **829 → 837 answer-eligible unique Evidence Families; 826 → 834 content-verified unique sources; 2,706 → 2,721 answer-eligible propositions.** The reconciliation variance is zero. Batch details and item-level audit are in `data/items/content-research-batch-083-2026-11-14.json`.
+
+A retrieval regression was identified: a provenance caveat saying that a secretariat copy had not been inspected was incorrectly interpreted as evidence that the letter itself was secretariat-authored. The authorship filter now uses explicit source class and witness type, and the Tanya-project query requires one inspected proposition to connect the project with dissemination of the wellsprings. The code and regression test are committed; the post-fix Actions and publication checks remain to be verified.
