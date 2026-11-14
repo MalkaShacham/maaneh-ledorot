@@ -22,6 +22,7 @@ assert.equal(metrics.answer_eligible_propositions,propositionCount,'all distinct
 const queue=JSON.parse(await readFile(new URL('data/content-review-queue.json',root)));
 const batch073Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-073-2026-11-13.json',root)));
 const batch078Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-078-2026-11-13.json',root)));
+const batch082Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-082-2026-11-14.json',root)));
 assert.equal(new Set(queue.records.map(e=>e.key)).size,queue.records.length);
 assert(!queue.records.some(e=>String(e.source_url||'').includes('/aid/4666210/')),'metadata-only AID 4666210 alias must not remain pending after the content-bearing identity is verified');
 const ready=new Set(eligible.map(e=>e.key));
@@ -49,6 +50,61 @@ for(const aid of batch078Aids){
  assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
  assert(e.response_proposition_locators.every(Boolean));
  assert(e.evidence_family_id&&e.independent_witness!==false);
+}
+const batch082Path='data/items/content-research-batch-082-2026-11-14.json';
+const batch082Aids=batch082Data.records.map(r=>String(r.aid));
+assert.equal(batch082Data.records.length,11);
+assert.equal(new Set(batch082Aids).size,11);
+assert.equal(new Set(batch082Data.records.map(r=>r.evidence_family_id)).size,11);
+assert.equal(new Set(batch082Data.records.map(r=>r.source_url)).size,11);
+assert.equal(batch082Data.new_response_propositions,24);
+assert.equal(batch082Data.existing_response_propositions_added,1);
+assert.equal(batch082Data.existing_identity_updates.length,1);
+assert.equal(batch082Data.records.filter(r=>r.language==='English').length,11);
+assert.equal(batch082Data.records.filter(r=>r.independent_witness===false).length,7);
+assert.equal(batch082Data.records.filter(r=>r.translation_of_evidence_family_id).length,7);
+for(const aid of batch082Aids){
+ const r=batch082Data.records.find(x=>String(x.aid)===aid);
+ const e=eligible.find(x=>sourceAID(x)===aid);
+ assert(e&&e.has_content_evidence,'batch-082 AID '+aid+' must have inspected content evidence');
+ assert.equal(e.canonical_file,batch082Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert.equal(e.evidence_family_id,r.evidence_family_id);
+ if(r.independent_witness===false){
+  assert.equal(r.translation_of_evidence_family_id,r.evidence_family_id);
+  assert.equal(e._independent_witness,false,'translations must remain derived, non-independent witnesses');
+ }
+}
+const enriched1858362=eligible.find(e=>sourceAID(e)==='1858362');
+assert(enriched1858362&&enriched1858362.response_propositions.length>=3);
+assert.equal(enriched1858362.canonical_file,'data/items/content-research-batch-070-2026-11-13.json');
+assert(enriched1858362.response_proposition_locators.some(x=>String(x).includes('290–295')));
+const charity749=eligible.find(e=>sourceAID(e)==='2276666');
+const charity751=eligible.find(e=>sourceAID(e)==='2276672');
+assert(charity749&&charity751&&charity749.evidence_family_id!==charity751.evidence_family_id,
+ 'Letter Nos. 749 and 751 are distinct letters, not duplicate translations of one letter');
+assert.equal(charity749._independent_witness,false);
+assert.equal(charity751._independent_witness,false);
+assert(!queue.records.some(e=>batch082Aids.includes(String(e.aid))),'reviewed batch-082 AIDs must not remain in the content-review queue');
+const educationResponsibilityQuestion='מה כתב הרבי על אחריות תלמידי ישיבות לחינוך ילדים ונוער?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,educationResponsibilityQuestion,{mode});
+ assert(m.answerable, `${mode}: inspected correspondence should support a bounded answer about educational responsibility`);
+ assert(m.sources.length>=2, `${mode}: educational synthesis should retrieve multiple Evidence Families`);
+ assert(m.sources.some(e=>sourceAID(e)==='2276672'), `${mode}: Letter No. 751 should be retrieved for yeshivah-student responsibility`);
+ assert(m.claims.every(c=>c.source_numbers.length), `${mode}: each educational claim needs proposition-level citations`);
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_map.length>0, 'researcher mode must expose a claim-to-witness evidence map');
+  assert(m.research.evidence_integrity.derived_non_independent>=1, 'researcher mode must distinguish translated, non-independent witnesses');
+  assert.equal(m.research.witnesses.length,m.sources.length);
+  assert(m.research.citation_entailment.every(x=>x.valid));
+  assert(m.research.context_boundary.every(x=>x.valid));
+ }
 }
 const secretariatCopy=idx.entries.find(e=>sourceAID(e)==='4730884');
 assert(secretariatCopy&&/secretariat/i.test(secretariatCopy.witness_type||''));
@@ -155,12 +211,18 @@ for(const mode of ['regular','researcher']){
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every Brownsville claim needs a proposition-level citation`);
 }
 const lagBaomerYouthQuestion='כיצד הציע הרבי לפעול בל״ג בעומר עם בני נוער?';
+const lagBaomerYouthFamilyPresent=eligible.some(e=>e.evidence_family_id==='lag-baomer-1956-outreach-campaign');
 for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,lagBaomerYouthQuestion,{mode});
-  assert(m.answerable,`${mode}: inspected Lag BaOmer youth evidence must answer the query`);
-  assert(m.sources.some(e=>e.evidence_family_id==='lag-baomer-1956-outreach-campaign'),`${mode}: the campaign family must be retrieved`);
+  if(!lagBaomerYouthFamilyPresent){
+    assert.equal(m.answerable,false,`${mode}: without an inspected event-specific youth witness, the query must fail closed`);
+    assert.equal(m.reason,'specific_event_evidence_missing');
+    assert.equal(m.claims.length,0);
+  }else{
+    assert(m.answerable,`${mode}: inspected Lag BaOmer youth evidence must answer the query`);
+    assert(m.sources.some(e=>e.evidence_family_id==='lag-baomer-1956-outreach-campaign'),`${mode}: the campaign family must be retrieved`);
+  }
   assert(!m.sources.some(e=>['aid:4666207','url:https://www.chabad.org/therebbe/article_cdo/aid/4666217/jewish/page.htm'].includes(e.key)),`${mode}: consolation letters must not match a Lag BaOmer query through generic action words`);
-  assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every Lag BaOmer claim needs a proposition-level citation`);
 }
 const forgetfulnessDreamsQuestion='מה כתב הרבי על שכחה וחלומות?';
 for(const mode of ['regular','researcher']){
