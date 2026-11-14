@@ -1361,20 +1361,26 @@ for(const aid of [2497614,2498908,2506320,2499039,2511619,2497688,2504381,250733
  assert(e.proposition_source_locator&&e.response_proposition_locators?.length===e.response_propositions.length);
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
 }
-assert.equal(metrics.answer_eligible_unique_sources,861);
-assert.equal(metrics.content_verified_unique_sources,858);
-assert.equal(metrics.answer_eligible_propositions,2773);
-const batch085Actual={answer_eligible_unique_sources:861,content_verified_unique_sources:858,answer_eligible_propositions:2773};
+const batch085Expected={answer_eligible_unique_sources:861,content_verified_unique_sources:858,answer_eligible_propositions:2773};
+const batch086Actual={answer_eligible_unique_sources:872,content_verified_unique_sources:869,answer_eligible_propositions:2798};
+assert.equal(metrics.answer_eligible_unique_sources,batch086Actual.answer_eligible_unique_sources);
+assert.equal(metrics.content_verified_unique_sources,batch086Actual.content_verified_unique_sources);
+assert.equal(metrics.answer_eligible_propositions,batch086Actual.answer_eligible_propositions);
 assert.deepEqual(acquisitionState.previous_manual_web_review.metrics_actual_after,batch084Actual);
-assert.deepEqual(acquisitionState.manual_web_review_current_metrics,batch085Actual);
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'084');
+assert.deepEqual(acquisitionState.manual_web_review_current_metrics,batch086Actual);
+assert.equal(acquisitionState.manual_web_review.batch_id,'086');
 assert.equal(acquisitionState.manual_web_review.reconciliation_status,'reconciled');
-assert.deepEqual(acquisitionState.manual_web_review.metrics_actual_after,batch085Actual);
-assert.equal(acquisitionState.manual_web_review_history[0].batch_id,'085');
-assert.deepEqual(acquisitionState.manual_web_review_history[0].metrics_actual_after,batch085Actual);
-assert.equal(acquisitionState.manual_web_review_history[1].batch_id,'084');
-assert.deepEqual(acquisitionState.manual_web_review_history[1].metrics_actual_after,batch084Actual);
-assert.equal(acquisitionState.manual_web_review_history[2].batch_id,'083');
-assert.deepEqual(acquisitionState.manual_web_review_history[2].metrics_actual_after,batch083Actual);
+assert.deepEqual(acquisitionState.manual_web_review.metrics_actual_after,batch086Actual);
+assert.equal(acquisitionState.manual_web_review_history[0].batch_id,'086');
+assert.deepEqual(acquisitionState.manual_web_review_history[0].metrics_actual_after,batch086Actual);
+assert.equal(acquisitionState.manual_web_review_history[1].batch_id,'085');
+assert.equal(acquisitionState.manual_web_review_history[1].reconciliation_status,'pending_ci_reconciliation');
+assert.equal(acquisitionState.manual_web_review_history[1].metrics_actual_after,null);
+assert.equal(acquisitionState.manual_web_review_history[2].batch_id,'084');
+assert.deepEqual(acquisitionState.manual_web_review_history[2].metrics_actual_after,batch084Actual);
+assert.equal(acquisitionState.manual_web_review_history[3].batch_id,'083');
+assert.deepEqual(acquisitionState.manual_web_review_history[3].metrics_actual_after,batch083Actual);
 const healthSynthesisQ='מה עולה מן האיגרות על שמירת בריאות הגוף כחלק מעבודת ה׳, הקשבה לרופא, אכילה לפני תפילה והימנעות מתעניות?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,healthSynthesisQ,{mode});
@@ -1515,15 +1521,94 @@ for(const u of batch085Data.existing_identity_updates){
  assert(oldRecord.publisher_references.every(x=>x.independent_witness===false&&x.content_inspected===false));
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+u.aid||String(q.source_url||'').includes('/aid/'+u.aid+'/')));
 }
-assert.equal(batch085Data.reconciliation_status,'reconciled');
+assert.equal(batch085Data.reconciliation_status,'pending_ci');
 assert.deepEqual(batch085Data.metrics_before,batch084Actual);
-assert.deepEqual(batch085Data.metrics_expected_after,batch085Actual);
-assert.deepEqual(batch085Data.metrics_actual_after,batch085Actual);
-assert.deepEqual(batch085Data.metrics_delta_actual,{answer_eligible_unique_sources:7,content_verified_unique_sources:7,answer_eligible_propositions:16});
-assert.deepEqual(batch085Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert.deepEqual(batch085Data.metrics_expected_after,batch085Expected);
+assert.equal(batch085Data.metrics_actual_after,null,'batch 085 is included in the later cumulative batch-086 reconciliation; do not fabricate an intermediate actual');
+const batch086Path='data/items/content-research-batch-086-2026-11-14.json';
+const batch086Data=JSON.parse(await readFile(new URL(batch086Path,root),'utf8'));
+assert.equal(batch086Data.batch_id,'2026-11-14-content-batch-086');
+assert.equal(batch086Data.records_reviewed,11);
+assert.equal(batch086Data.source_bodies_inspected,11);
+assert.equal(batch086Data.records.length,11);
+assert.equal(batch086Data.records_added,11);
+assert.equal(batch086Data.new_source_identities,11);
+assert.equal(batch086Data.new_event_evidence_families,11);
+assert.equal(batch086Data.new_secretariat_document_identities,8);
+assert.equal(batch086Data.new_rebbe_letter_identities,3);
+assert.equal(batch086Data.new_yechidus_identities,2);
+assert.equal(batch086Data.new_other_document_identities,6);
+assert.equal(batch086Data.new_response_propositions,25);
+assert.equal(batch086Data.response_propositions_added,25);
+assert.equal(batch086Data.answer_eligible_source_families_added,11);
+assert.equal(batch086Data.independent_new_witnesses,0);
+assert.equal(batch086Data.translation_aliases_linked,0);
+assert.equal(batch086Data.source_language_distribution.English,11);
+assert.equal(batch086Data.original_language_distribution.not_independently_established,11);
+assert.equal(batch086Data.source_type_distribution.published_english_secretariat_correspondence,8);
+assert.equal(batch086Data.source_type_distribution.published_english_rebbe_letter,2);
+assert.equal(batch086Data.source_type_distribution.published_english_letter_excerpt,1);
+assert.equal(batch086Data.blocked_candidate_count,2);
+assert.equal(batch086Data.blocked_candidates.length,2);
+assert.equal(batch086Data.alternative_source_attempted,true);
+assert.equal(batch086Data.alternative_sources_used.length,11);
+assert.equal(batch086Data.current_access_recheck.source_bodies_rechecked,11);
+assert.equal(batch086Data.current_access_recheck.crawler_retried,false);
+assert.equal(batch086Data.current_access_recheck.access_control_bypassed,false);
+assert.equal(batch086Data.current_access_recheck.full_text_copied,false);
+assert.equal(new Set(batch086Data.records.map(r=>String(r.aid))).size,11);
+assert.equal(new Set(batch086Data.records.map(r=>r.evidence_family_id)).size,11);
+assert.equal(batch086Data.metrics_before.answer_eligible_unique_sources,batch085Expected.answer_eligible_unique_sources);
+assert.deepEqual(batch086Data.metrics_expected_after,batch086Actual);
+assert.equal(batch086Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch086Data.metrics_actual_after,batch086Actual);
+assert.deepEqual(batch086Data.metrics_delta_actual,{answer_eligible_unique_sources:11,content_verified_unique_sources:11,answer_eligible_propositions:25});
+assert.deepEqual(batch086Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+for(const r of batch086Data.records){
+ const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
+ assert(e&&e.has_content_evidence&&e.answer_eligible,'batch-086 AID '+r.aid+' must expose inspected answer evidence');
+ assert.equal(e.status,'Verified');
+ assert.equal(e.canonical_file,batch086Path);
+ assert.equal(e.evidence_family_id,r.evidence_family_id);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert.equal(e.context_status,'partial');
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+r.aid||String(q.source_url||'').includes('/aid/'+r.aid+'/')));
+ if(/secretariat/i.test(e.witness_type||''))assert.equal(e.independent_witness,false);
+}
+for(const aid of [289110,1889079]){
+ const e=idx.entries.find(x=>sourceAID(x)===String(aid));
+ assert(e&&e.independent_witness===true&&!/secretariat/i.test(e.witness_type||''),'publisher-presented Rebbe letter '+aid+' must retain its own attribution');
+}
+const regentsExcerpt=idx.entries.find(e=>sourceAID(e)==='1274011');
+assert(regentsExcerpt&&regentsExcerpt.context_status==='partial'&&/excerpt/i.test(regentsExcerpt.witness_type||'')&&regentsExcerpt.independent_witness===false);
+const groupVisitQ='מה מתועד במכתב המזכירות על תיאום קבלת קבוצה מאנגליה עם הגעתה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,groupVisitQ,{mode});
+ assert(m.answerable&&m.sources.some(e=>sourceAID(e)==='289149'),mode+': neutral group-visit question must retrieve the secretary-signed page');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על קבלת הקבוצה מאנגליה עם הגעתה?',{mode});
+ assert.equal(direct.answerable,false);
+ assert.equal(direct.reason,'secretariat_authorship_boundary');
+ assert(direct.sources.some(e=>sourceAID(e)==='289149'));
+ assert.equal(direct.claims.length,0);
+}
+const personalMeetingQ='מה כתב הרבי במכתב למר יפה אחרי הפגישה על חיזוק הפעילות בעניינים הקדושים?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,personalMeetingQ,{mode});
+ assert(m.answerable&&m.sources.some(e=>sourceAID(e)==='289110'),mode+': direct Rebbe letter must remain retrievable separately from the secretary-signed follow-up');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+}
 const projectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
-assert.equal(projectState.current_counts.answer_eligible_unique_sources,861);
-assert.equal(projectState.current_counts.content_verified_unique_sources,858);
+assert.equal(projectState.current_counts.answer_eligible_unique_sources,batch086Actual.answer_eligible_unique_sources);
+assert.equal(projectState.current_counts.content_verified_unique_sources,batch086Actual.content_verified_unique_sources);
+assert.equal(projectState.current_counts.answer_eligible_propositions,batch086Actual.answer_eligible_propositions);
+assert.equal(projectState.development_recovery.last_completed_batch,'2026-11-14-content-batch-086');
 const workDivisionQ='מה מתועד במכתב על חלוקת עבודה ומשימות מוגדרות בקהילה?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,workDivisionQ,{mode});
