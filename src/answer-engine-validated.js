@@ -392,7 +392,8 @@ function patternSynthesisIntegrity(model){
   else nonIndependent.push(n);
  }
  const minNumbers=isDailyRoutine?3:isTzedakah?3:isEducationYouthGuidance?3:isTeshuvahLevels?2:2,minIndependentFamilies=isDailyRoutine?1:isTzedakah?3:isEducationYouthGuidance?3:isTeshuvahLevels?2:2;
- const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=(isStudyFarming?2:3)&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
+ const minClaims=(isStudyFarming||isTeshuvahLevels)?2:3;
+ const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=minClaims&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
  const dailyClaimsValid=!isDailyRoutine||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
  const tzedakahClaimsValid=!isTzedakah||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
  const studyFarmingClaimsValid=!isStudyFarming||(claimLocatorsValid&&
