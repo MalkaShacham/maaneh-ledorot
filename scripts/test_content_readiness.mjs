@@ -606,6 +606,8 @@ const batch066Questions=[
  ['מה נכתב על חינוך תלמידים בשמיני עצרת ושמחת תורה?',5019192],
  ['מה נכתב לתלמידי תומכי תמימים בלוד על לימוד ונסיעות?',5019512]
 ];
+const passoverFreedomAliasGuard=buildAnswerModel(idx.entries,'מה נכתב על חירות בפסח ועל הקשר בין לימוד למעשה?',{mode:'regular'});
+assert(!passoverFreedomAliasGuard.understanding.topics?.includes('האדם כעולם קטן וארבעת ממדיו'),'the short word חי must not classify חירות as human microcosm');
 for(const [q,aid] of batch066Questions)for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,q,{mode});
  assert(m.answerable,mode+': batch-066 question must be answerable: '+q);

@@ -4,10 +4,10 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch084-microcosm-deep-synthesis';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch084-microcosm-safe-alias';
 
 const TOPIC_ALIASES={
-  'האדם כעולם קטן וארבעת ממדיו':['עולם קטן','דומם','צומח','חי','מדבר','לקדש את ממדי החיים','human microcosm','four kingdoms'],
+  'האדם כעולם קטן וארבעת ממדיו':['עולם קטן','דומם','צומח','מדבר','לקדש את ממדי החיים','human microcosm','four kingdoms'],
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
   'מעכה לפי הספורנו':['לפי הספורנו','הספורנו','מעכה יכולה להיקרא אשה','sforno maacah'],
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],

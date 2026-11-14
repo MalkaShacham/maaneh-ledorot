@@ -463,3 +463,8 @@ The readiness test revealed that the validation module imported a stale versione
 ### Batch 084 core cache parity (2026-11-14)
 
 The microcosm cross-family synthesis update advanced the core-engine import version. The browser entry point now uses the same version, satisfying the explicit cache-parity guard in the readiness test. The update also preserves the topic alias for the four human dimensions and claim-level source locators in researcher mode.
+
+
+### Short-word topic alias guard (2026-11-14)
+
+The batch-084 microcosm topic alias initially included the bare token `חי`, which can be a substring of unrelated Hebrew words such as `חירות`. The alias now relies on the longer, discriminating terms (עולם קטן, דומם, צומח, מדבר, and the English concept labels); proposition-level microcosm validation still checks all four kingdoms. A regression assertion protects the Passover-freedom query from false topic classification. Cache versions are aligned.
