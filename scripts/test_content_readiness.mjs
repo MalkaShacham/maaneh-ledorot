@@ -892,9 +892,9 @@ assert.equal(batch076Data.existing_identities_enriched,1);
 assert.equal(batch076Data.new_response_propositions,20);
 assert.equal(batch076Data.existing_response_propositions_added,1);
 assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
-assert.equal(metrics.answer_eligible_unique_sources,845,'reconciled through batch-084: 845 unique answer-eligible Evidence Families');
+assert.equal(metrics.answer_eligible_unique_sources,843,'reconciled through batch-084: 843 unique answer-eligible Evidence Families');
 assert.equal(metrics.content_verified_unique_sources,831,'reconciled through batch-084: excerpt-only records remain Parsed, not Verified');
-assert.equal(metrics.answer_eligible_propositions,2744,'reconciled through batch-084: 2744 distinct inspected propositions');
+assert.equal(metrics.answer_eligible_propositions,2740,'reconciled through batch-084: 2740 distinct inspected propositions');
 for(const aid of batch076Aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
  assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
@@ -1363,31 +1363,36 @@ for(const mode of ['regular','researcher']){
 }
 
 
-// Batch 084: publisher search-indexed Hebrew body excerpts are answer-eligible
-// only for the displayed excerpt; they remain Parsed, not content-Verified.
+
+
+// Batch 084: nine new publisher search-indexed Hebrew excerpts; two exact
+// duplicates were rechecked against existing Evidence Families and not recreated.
 const batch084Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-084-2026-11-14.json',root)));
 const batch084Path='data/items/content-research-batch-084-2026-11-14.json';
 assert.equal(batch084Data.reviewed_item_count,11);
 assert.equal(batch084Data.source_bodies_inspected,0);
 assert.equal(batch084Data.source_body_excerpts_inspected,11);
-assert.equal(batch084Data.new_source_identities,11);
-assert.equal(batch084Data.new_response_propositions,21);
-assert.equal(batch084Data.answer_eligible_source_families_added,11);
+assert.equal(batch084Data.new_source_identities,9);
+assert.equal(batch084Data.new_response_propositions,17);
+assert.equal(batch084Data.answer_eligible_source_families_added,9);
 assert.equal(batch084Data.existing_identities_enriched,0);
+assert.equal(batch084Data.existing_identities_rechecked,2);
+assert.equal(batch084Data.existing_identity_rechecks.length,2);
 assert.equal(batch084Data.blocked_candidate_count,9);
 assert.equal(batch084Data.crawler_retry,false);
 assert.equal(batch084Data.access_control_bypassed,false);
 assert.equal(batch084Data.full_text_copied,false);
 assert.equal(batch084Data.reconciliation_status,'pending');
 assert.deepEqual(batch084Data.metrics_before,{answer_eligible_unique_sources:834,content_verified_unique_sources:831,answer_eligible_propositions:2723});
-assert.deepEqual(batch084Data.metrics_expected_after,{answer_eligible_unique_sources:845,content_verified_unique_sources:831,answer_eligible_propositions:2744});
-assert.equal(batch084Data.records.length,11);
-assert.equal(new Set(batch084Data.records.map(r=>r.library_item_id)).size,11);
-assert.equal(new Set(batch084Data.records.map(r=>r.source_url)).size,11);
-assert.equal(new Set(batch084Data.records.map(r=>r.evidence_family_id)).size,11);
-assert.equal(metrics.answer_eligible_unique_sources,845);
+assert.deepEqual(batch084Data.metrics_expected_after,{answer_eligible_unique_sources:843,content_verified_unique_sources:831,answer_eligible_propositions:2740});
+assert.equal(batch084Data.records.length,9);
+assert.equal(new Set(batch084Data.records.map(r=>r.library_item_id)).size,9);
+assert.equal(new Set(batch084Data.records.map(r=>r.source_url)).size,9);
+assert.equal(new Set(batch084Data.records.map(r=>r.evidence_family_id)).size,9);
+assert(!batch084Data.records.some(r=>['1200710342','1200720273'].includes(String(r.library_item_id))));
+assert.equal(metrics.answer_eligible_unique_sources,843);
 assert.equal(metrics.content_verified_unique_sources,831);
-assert.equal(metrics.answer_eligible_propositions,2744);
+assert.equal(metrics.answer_eligible_propositions,2740);
 for(const r of batch084Data.records){
  const e=idx.entries.find(x=>x.source_url===r.source_url);
  assert(e&&e.has_content_evidence,'batch-084 library item '+r.library_item_id+' must expose inspected publisher excerpt content');
@@ -1405,4 +1410,11 @@ for(const r of batch084Data.records){
  assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
  assert(e.response_proposition_locators.every(Boolean));
  assert(!queue.records.some(q=>String(q.source_url||'')===r.source_url));
+}
+for(const check of batch084Data.existing_identity_rechecks){
+ const e=idx.entries.find(x=>x.source_url===check.source_url);
+ assert(e&&e.has_content_evidence,'rechecked existing item '+check.library_item_id+' must retain its prior content evidence');
+ assert.equal(e.evidence_family_id,check.evidence_family_id);
+ assert.equal(e.canonical_file,check.canonical_file);
+ assert.equal(check.propositions_added,0);
 }

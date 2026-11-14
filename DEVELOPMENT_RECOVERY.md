@@ -383,11 +383,11 @@ Publication verification: GitHub Pages deployment completed successfully for mai
 - No runner-side crawler retry was made; the HTTP 403 guard remains in place.
 
 
+
 ## 2026-11-14 — Batch 084: Chabad Library publisher excerpts (pending reconciliation)
 
-- Reviewed 11 distinct Chabad Library item excerpts in Hebrew through public search results. Direct page opens returned zero readable lines; the review therefore used only publisher text excerpts surfaced in search, not full-page body inspection.
-- Added 11 new publisher-presented letter identities and 21 non-verbatim source-grounded paraphrases. All records are deliberately Parsed, not Verified; answer-eligible unique sources are expected to rise 834→845 while content-verified unique sources stay at 831. Expected propositions: 2,723→2,744.
-- Nine current Chabad.org letter URLs (AIDs 5100345, 5070960, 5100268, 5100499, 5100227, 5100402, 5100601, 5100203, 5100299) now redirect to rewritten summary shells; no new propositions were taken from those pages. Chabad Library search excerpts were used as an alternate public source, with the excerpt-only limitation retained.
-- No crawler retry, access-control bypass, scan-only content verification, full-text copying, schedule change, audience change, or permission change. Repository-wide canonical reconciliation and publication remain pending.
-
-- Quality-gate validation for batch 084 must confirm 845 answer-eligible families, 831 content-verified families, and 2,744 propositions; the excerpt-only records must remain Parsed.
+- Reviewed 11 distinct Hebrew publisher excerpts surfaced in public search. Direct page opens returned zero readable lines, so the review is limited to those displayed excerpts; no full-page body inspection is claimed.
+- Targeted deduplication found two exact existing identities in batch 068: item 1200710342 (Evidence Family igrot-letter-5732-parashat-mishpatim-yishlad) and item 1200720273 (Evidence Family igrot-letter-5733-15-tammuz-yittatkat). Both already had the same source-grounded propositions; they were rechecked, not recreated, and no duplicate propositions were added.
+- Added 9 new publisher-presented Hebrew letter identities and 17 non-verbatim source-grounded paraphrases. All new excerpt-only records remain Parsed, not Verified. Expected metrics: answer-eligible unique sources 834→843; content-verified unique sources remain 831; propositions 2,723→2,740.
+- Nine current Chabad.org letter URLs (AIDs 5100345, 5070960, 5100268, 5100499, 5100227, 5100402, 5100601, 5100203, 5100299) redirect to rewritten summary shells; no new propositions were taken from those shells. Chabad Library search excerpts were used as the alternate public source.
+- No crawler retry, access-control bypass, scan-only content verification, full-text copying, schedule change, audience change, or permission change. Full corpus-wide duplicate reconciliation and publication remain pending.
