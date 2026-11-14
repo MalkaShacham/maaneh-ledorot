@@ -5,35 +5,36 @@
   "method": "בדיקה ידנית באמצעות web search/open. תוצאות חיפוש שימשו לאיתור מועמדים בלבד; כל פרופוזיציה נגזרה מגוף פרסום שנפתח ונבדק בשפת המקור. לא נעשה שימוש ב-crawler החסום ולא בוצעה עקיפת בקרות גישה.",
   "reviewed_item_count": 15,
   "source_bodies_inspected": 10,
-  "new_source_identities": 8,
-  "new_rebbe_letter_identities": 8,
+  "new_source_identities": 7,
+  "new_rebbe_letter_identities": 7,
   "new_other_document_identities": 0,
   "new_secretariat_document_identities": 0,
   "new_secondary_narrative_identities": 0,
   "new_metadata_only_identities": 0,
   "existing_identities_enriched": 1,
-  "existing_identities_rechecked": 0,
+  "existing_identities_rechecked": 1,
   "existing_identities_canonicalized": 0,
   "duplicate_alias_identities": 0,
-  "new_response_propositions": 16,
+  "new_response_propositions": 15,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 17,
-  "answer_eligible_source_families_added": 8,
+  "total_new_paraphrase_entries": 16,
+  "answer_eligible_source_families_added": 7,
   "source_languages": [
-    "Hebrew"
+    "Hebrew",
+    "Yiddish (embedded passages)"
   ],
   "language_distribution": {
-    "Hebrew": 8
+    "Hebrew": 5,
+    "Hebrew_with_Yiddish_passages": 2
   },
   "source_type_distribution": {
-    "published_hebrew_letter_text": 5,
+    "published_hebrew_letter_text": 4,
     "published_hebrew_letter_excerpt": 1,
     "published_hebrew_letter_text_completed_from_photo_or_secretariat_copy": 2
   },
   "new_aids": [
     4730960,
     5070826,
-    5071052,
     5054356,
     5100062,
     5071166,
@@ -70,7 +71,17 @@
       "proposition_locator": "Chabad.org, AID 5071116, גוף האיגרת, שורה 247."
     }
   ],
-  "existing_identity_rechecks": [],
+  "existing_identity_rechecks": [
+    {
+      "aid": 5071052,
+      "identity": "aid:5071052",
+      "id": "chabad-letter-5071052",
+      "file": "data/items/content-research-batch-071-2026-11-13.json",
+      "evidence_family_id": "igrot-letter-5718-v-lamed-aid5071052",
+      "action": "rechecked_no_new_proposition",
+      "reason": "הפריט כבר קיים באצווה 071; שתי התמציות הקיימות מכסות את התוכן שנבדק מחדש. לא נוצרה משפחת ראיות כפולה ולא נוספה פרופוזיציה."
+    }
+  ],
   "blocked_candidate_count": 5,
   "blocked_candidates": [
     {
@@ -304,102 +315,6 @@
         "letter_number": "ה׳תתי",
         "date_original": "כ״ט תשרי, תשי״ח",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5070826/jewish/page.htm"
-      }
-    },
-    {
-      "id": "chabad-letter-5071052",
-      "canonical_key": "aid:5071052",
-      "aid": 5071052,
-      "type": "letter",
-      "collection": "Igrot Kodesh / Kehot Publication Society / Chabad.org",
-      "source_class": "Igrot Kodesh",
-      "source_class_detail": "מענה אישי על הפצת המעיינות וההתמודדות עם קשיים; הערת המו״ל מציינת שהאיגרת נדפסה בלקוטי שיחות והושלמה על פי צילום.",
-      "title": "אגרות קודש — מכתב ו׳לא",
-      "volume": null,
-      "letter_number": "ו׳לא",
-      "date_original": "ב׳ שבט, תשי״ח",
-      "date_precision": "exact_as_publisher",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm",
-      "pipeline_status": "Verified",
-      "status": "Verified",
-      "canonical_status": "Verified",
-      "context_status": "partial",
-      "verification_status": "נבדק גוף הפרסום בעברית בעמוד Chabad.org/TheRebbe.org, AID 5071052, שורות 244–262, ביום 14.11.2026. האימות חל על הטקסט הגלוי בפרסום Kehot בלבד; כתב היד/ההעתק הפיזי וההתכתבות הנכנסת לא נבדקו אלא אם צוין אחרת.  לא הועתק טקסט מוגן במלואו.",
-      "has_content_evidence": true,
-      "summary_researcher": "מענה לנמען העוסק בהפצת המעיינות, המעודד להוסיף אומץ גם לנוכח קשיים והסתרות. ההערה המו״לית מתעדת שהנוסח הושלם על פי צילום האיגרת.",
-      "response_propositions": [
-        "המענה מציג את הפצת המעיינות כדרישת השעה, ואת הקשיים וההסתרות כחלק מן הניסיון ולא כהוכחה שאין יכולת לפעול.",
-        "הנמען נקרא להוסיף אומץ בפעילות ההפצה; הערת המו״ל מציינת שהאיגרת נדפסה בלקוטי שיחות והושלמה על פי צילום."
-      ],
-      "response_proposition_locators": [
-        "AID 5071052, גוף המכתב, שורות 251–252.",
-        "AID 5071052, גוף המכתב והערת המו״ל, שורות 251–262."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5071052, שורות 244–262.",
-      "evidence_family_id": "igrot-letter-5718-2-shevat-letter-v-lamed-aid5071052",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "independent_witness": true,
-      "witness_type": "published_hebrew_letter_text",
-      "relations": [],
-      "taxonomy": {
-        "publisher_index_terms": [
-          "אגרות קודש",
-          "מכתבי הרבי"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "documented_circumstances": "מכתב לנמען שדיווח על פעילותו בהפצת המעיינות ועל קשיים או ירידה במרץ; זהות האירועים והפרטים המלאים של מכתבו אינם מוצגים.",
-      "question_or_problem": "כיצד להמשיך בפעילות הפצת המעיינות כאשר נתקלים בהסתרות, קשיים או לעג.",
-      "conditions_or_qualifications": [
-        "מכתבו הנכנס אינו מוצג; אין לפרט את הקשיים מעבר למה שנאמר במענה.",
-        "ההערה המו״לית מציינת השלמה על פי צילום; הצילום עצמו לא נבדק."
-      ],
-      "audience": "נמען העוסק בהפצת המעיינות.",
-      "primary_secondary_status": "טקסט ראשוני כפי שפורסם באוסף אגרות קודש של Kehot; הייחוס לרבי הוא ייחוס מו״לי, ולא אימות עצמאי של כתב יד.",
-      "translation_status": "הטקסט נבדק בשפת המקור (עברית); לא צורף תרגום כעד נוסף ולא נספר עד מתורגם.",
-      "witness_provenance": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5071052, אגרות קודש — מכתב ו׳לא: https://www.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm",
-      "witness": {
-        "kind": "text",
-        "state": "authorized_published_item_witness",
-        "publisher": "Kehot Publication Society / Chabad.org",
-        "language": "Hebrew",
-        "scope": "244–262",
-        "complete_partial": "complete_as_published",
-        "notes": "הגוף המפורסם נבדק; ההערה מציינת שהאיגרת נדפסה בלקוטי שיחות חכ״ג והושלמה על פי צילום האיגרת. הצילום לא נבדק."
-      },
-      "provenance": {
-        "authorship_status": "Kehot/Chabad.org מציגים את הפריט כאיגרת של הרבי; לא נערכה בדיקה עצמאית של כתב היד.",
-        "signature_status": "החתימה/כתב היד המקוריים לא נבדקו.",
-        "source_witness": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5071052, אגרות קודש — מכתב ו׳לא: https://www.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm",
-        "transmission_type": "פרסום באגרות קודש ובמקביל בלקוטי שיחות; השלמה על פי צילום האיגרת.",
-        "textual_status": "גוף הפרסום בשורות 244–262 נבדק בשפת המקור; הגוף המפורסם נבדק; ההערה מציינת שהאיגרת נדפסה בלקוטי שיחות חכ״ג והושלמה על פי צילום האיגרת. הצילום לא נבדק.",
-        "editorial_scope": "נשמרו תמציות מחקר לא-מילוליות, מיקומי מקור, provenance והקשר; לא נשמר טקסט מוגן מלא.",
-        "verification_status": "נבדק גוף הפרסום בעברית בעמוד Chabad.org/TheRebbe.org, AID 5071052, שורות 244–262, ביום 14.11.2026. האימות חל על הטקסט הגלוי בפרסום Kehot בלבד; כתב היד/ההעתק הפיזי וההתכתבות הנכנסת לא נבדקו אלא אם צוין אחרת.  לא הועתק טקסט מוגן במלואו.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm",
-        "accessed": "2026-11-14"
-      },
-      "verification_scope": "נבדק גוף הפרסום בעברית בעמוד Chabad.org/TheRebbe.org, AID 5071052, שורות 244–262, ביום 14.11.2026. האימות חל על הטקסט הגלוי בפרסום Kehot בלבד; כתב היד/ההעתק הפיזי וההתכתבות הנכנסת לא נבדקו אלא אם צוין אחרת.  לא הועתק טקסט מוגן במלואו.",
-      "rights_status": "copyrighted-link-only",
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "status": "public_publisher_body_opened",
-        "reuse_notes": "קישור למקור ותמציות מחקר קצרות ולא-מילוליות בלבד; אין העתקה מלאה."
-      },
-      "locator": {
-        "publisher": "Chabad.org / Kehot Publication Society",
-        "aid": 5071052,
-        "letter_number": "ו׳לא",
-        "date_original": "ב׳ שבט, תשי״ח",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm"
       }
     },
     {
@@ -897,9 +812,9 @@
     "answer_eligible_propositions": 2721
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 845,
-    "content_verified_unique_sources": 842,
-    "answer_eligible_propositions": 2738
+    "answer_eligible_unique_sources": 844,
+    "content_verified_unique_sources": 841,
+    "answer_eligible_propositions": 2737
   },
   "reconciliation_status": "pending",
   "deduplication_check": {
@@ -911,7 +826,8 @@
     "translations_added": 0,
     "translations_counted_as_independent_witnesses": 0,
     "scan_only_verification_used": 0,
-    "checked_against": "Content review queue; content-research batches 055–083; bulk-indexed inventories dated 2026-09-24 through 2026-09-27; mixed-authorized-content files 037–040. No matching AID was found for the eight promoted identities. AID 5070799 was withheld because its publisher note points to an earlier letter whose Evidence Family mapping remains unresolved. Existing AID 5071116 was enriched in place."
+    "checked_against": "Content review queue; content-research batches 055–083; bulk-indexed inventories dated 2026-09-24 through 2026-09-27; mixed-authorized-content files 037–040. No matching AID was found for the eight promoted identities. AID 5070799 was withheld because its publisher note points to an earlier letter whose Evidence Family mapping remains unresolved. Existing AID 5071116 was enriched in place. The generated index showed AID 5071052 already canonical in batch 071; its duplicate batch-084 record was removed and the existing identity was rechecked in place.",
+    "existing_identity_rechecks_in_place": true
   },
   "limitations": [
     "במרבית המענים האישיים מכתבו הנכנס של הנמען אינו מוצג; ההקשר נשאר Partial.",
@@ -923,6 +839,7 @@
     "AID 5054561 הוא מענה אישי לשאלות שאינן מוצגות במלואן; אין להפוך אותו לסקירה שיטתית או לכלל פסיקתי.",
     "AID 5070799 לא קודם משום שהערת המו״ל מפנה לאיגרת קודמת לתוכן; לא נוצרה משפחת ראיות נוספת ללא מיפוי.",
     "חמישה עמודים שנפתחו הפנו למעטפות סיכום/ניווט ללא גוף מקור; הוחרגו והוחלפו בגופי פרסום נגישים באותה הפעלה.",
-    "לא נבדקו סריקות או כתבי יד; לא הועתק טקסט מוגן במלואו ולא יוחסה הסקת AI לרבי."
+    "לא נבדקו סריקות או כתבי יד; לא הועתק טקסט מוגן במלואו ולא יוחסה הסקת AI לרבי.",
+    "AID 5071052 זוהה ככבר קיים באצווה 071; הרשומה הכפולה הוסרה מאצווה 084, והפריט הקיים נבדק מחדש ללא ספירת מקור או משפחת ראיות נוספת."
   ]
 }
