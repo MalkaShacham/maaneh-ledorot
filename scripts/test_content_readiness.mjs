@@ -1305,7 +1305,6 @@ assert.deepEqual(batch084Data.metrics_expected_after,batch084Actual);
 assert.deepEqual(batch084Data.metrics_actual_after,batch084Actual);
 assert.deepEqual(batch084Data.metrics_delta_actual,{answer_eligible_unique_sources:12,content_verified_unique_sources:12,answer_eligible_propositions:33});
 assert.deepEqual(batch084Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
-const batch079Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-079-2026-11-13.json',root),'utf8'));
 const englishAlias=batch084Data.records.find(x=>String(x.aid)==='1281934');
 const hebrewOriginal=batch079Data.records.find(x=>String(x.aid)==='4831315');
 assert(englishAlias&&hebrewOriginal);
