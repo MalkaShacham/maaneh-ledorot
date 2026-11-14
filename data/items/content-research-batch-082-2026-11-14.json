@@ -14,7 +14,7 @@
   "new_response_propositions": 24,
   "existing_response_propositions_added": 1,
   "total_new_paraphrase_entries": 25,
-  "answer_eligible_source_families_added": 11,
+  "answer_eligible_source_families_added": 10,
   "source_languages": [
     "English"
   ],
@@ -130,9 +130,9 @@
     "answer_eligible_propositions": 2684
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 830,
-    "content_verified_unique_sources": 827,
-    "answer_eligible_propositions": 2709
+    "answer_eligible_unique_sources": 829,
+    "content_verified_unique_sources": 826,
+    "answer_eligible_propositions": 2706
   },
   "metrics_actual_after": {
     "answer_eligible_unique_sources": 829,
@@ -140,11 +140,11 @@
     "answer_eligible_propositions": 2706
   },
   "reconciliation_variance": {
-    "answer_eligible_unique_sources": -1,
-    "content_verified_unique_sources": -1,
-    "answer_eligible_propositions": -3
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
   },
-  "reconciliation_status": "reconciled_with_variance",
+  "reconciliation_status": "reconciled",
   "deduplication_check": {
     "new_aids_unique": true,
     "new_source_urls_unique": true,
@@ -154,7 +154,11 @@
     "translations_added": 7,
     "translations_counted_as_independent_witnesses": 0,
     "scan_only_verification_used": 0,
-    "checked_against": "Current content-review queue; available content-research batches 055–081; bulk-indexed inventories dated 2026-09-24 through 2026-09-27. AID 1858362 was found in batch 070 and enriched in place. Full reconciliation across every canonical item file remains authoritative."
+    "checked_against": "Current content-review queue; available content-research batches 055–081; bulk-indexed inventories dated 2026-09-24 through 2026-09-27. AID 1858362 was found in batch 070 and enriched in place. Full reconciliation across every canonical item file remains authoritative.",
+    "canonical_net_new_evidence_families": 10,
+    "canonical_net_new_distinct_propositions": 22,
+    "canonical_overlap_unresolved": true,
+    "canonical_overlap_note": "One candidate family and three proposition keys were already represented in the canonical corpus; the per-AID audit did not isolate their prior record IDs. The canonical metrics are authoritative; no extra source family is claimed."
   },
   "limitations": [
     "All 11 new identities are English publisher pages; no new Hebrew or Yiddish identity was added in this batch.",
@@ -1316,10 +1320,32 @@
       }
     }
   ],
-  "reconciled_at": "2026-11-14T09:41:45.395144+00:00",
+  "reconciled_at": "2026-11-14T15:18:00+02:00",
   "metrics_before": {
     "answer_eligible_unique_sources": 819,
     "content_verified_unique_sources": 816,
     "answer_eligible_propositions": 2684
-  }
+  },
+  "canonical_reconciliation": {
+    "baseline_after_pending_batch_081": {
+      "answer_eligible_unique_sources": 819,
+      "content_verified_unique_sources": 816,
+      "answer_eligible_propositions": 2684
+    },
+    "canonical_after_batch_082": {
+      "answer_eligible_unique_sources": 829,
+      "content_verified_unique_sources": 826,
+      "answer_eligible_propositions": 2706
+    },
+    "canonical_net_delta": {
+      "answer_eligible_unique_sources": 10,
+      "content_verified_unique_sources": 10,
+      "answer_eligible_propositions": 22
+    },
+    "candidate_source_identities": 11,
+    "net_new_evidence_families": 10,
+    "net_new_distinct_propositions": 22,
+    "overlap_summary": "The canonical index counted ten net-new Evidence Families and twenty-two net-new distinct propositions from eleven candidate identities and twenty-four proposition strings. One family and three proposition keys were already represented in the canonical corpus; the exact prior family members were not isolated by the per-AID reconciliation. No extra family was counted."
+  },
+  "reconciliation_note": "Reconciled to the canonical index: 819/816/2684 baseline after batch 081 to 829/826/2706 after batch 082. Net delta is +10 unique answer-eligible Evidence Families, +10 content-verified unique sources, and +22 distinct propositions. Eleven candidate identities were reviewed; one family and three proposition keys overlapped with existing canonical content, and their exact prior member IDs remain unresolved in the per-AID audit."
 }
