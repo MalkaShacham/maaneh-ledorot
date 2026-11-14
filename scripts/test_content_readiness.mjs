@@ -1003,7 +1003,9 @@ assert.equal(batch080Data.source_bodies_inspected,8);
 assert.equal(batch080Data.new_source_identities,7);
 assert.equal(batch080Data.existing_identities_rechecked,1);
 assert.equal(batch080Data.new_response_propositions,25);
-assert.equal(batch080Data.records.reduce((n,e)=>n+e.response_propositions.length,0),25);
+assert.equal(batch080Data.records.reduce((n,e)=>n+e.response_propositions.length,0),26,'one later enrichment is stored in the original AID identity');
+assert.equal(batch080Data.post_reconciliation_enrichment_count,1);
+assert.equal(batch080Data.post_reconciliation_enrichment_batch,'081');
 assert.equal(new Set(batch080Data.records.map(e=>e.evidence_family_id)).size,7);
 assert.equal(batch080Data.reconciliation_status,'reconciled');
 assert.deepEqual(batch080Data.metrics_actual_after,{
@@ -1077,4 +1079,99 @@ for(const mode of ['regular','researcher']){
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0);
  else assert.equal(m.research,undefined);
+}
+
+
+
+// Batch 081: nine new inspected Hebrew letters, one in-place enrichment,
+// explicit excerpt/provenance boundaries, and claim-level multi-family synthesis.
+const batch081Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-081-2026-11-14.json',root)));
+const batch081Path='data/items/content-research-batch-081-2026-11-14.json';
+const batch081Aids=[5099914,5356971,4812730,4994319,5099977,5019597,5019603,4928859,4783811];
+assert.equal(batch081Data.records.length,9);
+assert.equal(batch081Data.source_bodies_inspected,10);
+assert.equal(batch081Data.reviewed_item_count,10);
+assert.equal(batch081Data.new_source_identities,9);
+assert.equal(batch081Data.existing_identities_enriched,1);
+assert.equal(batch081Data.new_response_propositions,23);
+assert.equal(batch081Data.existing_response_propositions_added,1);
+assert.equal(batch081Data.records.reduce((n,e)=>n+e.response_propositions.length,0),23);
+assert.equal(new Set(batch081Data.records.map(e=>e.aid)).size,9);
+assert.equal(new Set(batch081Data.records.map(e=>e.evidence_family_id)).size,9);
+assert.equal(new Set(batch081Data.records.map(e=>e.source_url)).size,9);
+assert.equal(batch081Data.records.filter(e=>e.witness.complete_partial==='partial').length,4);
+assert.equal(batch081Data.records.filter(e=>e.context_status==='partial').length,9);
+assert.equal(batch081Data.blocked_candidate_count,8);
+assert.equal(batch081Data.blocked_candidates.length,8);
+assert.equal(batch081Data.crawler_retry,false);
+assert.equal(batch081Data.access_control_bypassed,false);
+assert.equal(batch081Data.full_text_copied,false);
+assert.equal(batch081Data.existing_identity_updates.length,1);
+assert.equal(batch081Data.metrics_before.answer_eligible_unique_sources,810);
+assert.equal(batch081Data.metrics_before.content_verified_unique_sources,807);
+assert.equal(batch081Data.metrics_before.answer_eligible_propositions,2660);
+assert.deepEqual(batch081Data.metrics_actual_after,{
+ answer_eligible_unique_sources:metrics.answer_eligible_unique_sources,
+ content_verified_unique_sources:metrics.content_verified_unique_sources,
+ answer_eligible_propositions:metrics.answer_eligible_propositions
+},'batch 081 reconciliation must match the public metrics');
+assert.deepEqual(batch081Data.reconciliation_variance,{
+ answer_eligible_unique_sources:metrics.answer_eligible_unique_sources-batch081Data.metrics_expected_after.answer_eligible_unique_sources,
+ content_verified_unique_sources:metrics.content_verified_unique_sources-batch081Data.metrics_expected_after.content_verified_unique_sources,
+ answer_eligible_propositions:metrics.answer_eligible_propositions-batch081Data.metrics_expected_after.answer_eligible_propositions
+});
+assert.equal(batch081Data.reconciliation_status,Object.values(batch081Data.reconciliation_variance).every(v=>v===0)?'reconciled':'reconciled_with_variance');
+for(const record of batch081Data.records){
+ const aid=String(record.aid),e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e&&e.has_content_evidence,'batch-081 AID '+aid+' must expose inspected body content');
+ assert.equal(e.status,'Verified');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.translation_of_evidence_family_id,null);
+ assert.equal(e.evidence_family_id,record.evidence_family_id);
+ assert.equal(e.canonical_file,batch081Path,'new AID '+aid+' must be selected from the inspected batch after deduplication');
+ assert(record.response_propositions.every(p=>e.response_propositions.includes(p)),'all reviewed propositions for AID '+aid+' must survive reconciliation');
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
+}
+const enriched4929253=idx.entries.find(e=>sourceAID(e)==='4929253');
+assert(enriched4929253&&enriched4929253.response_propositions.some(p=>p.includes('אהבת עצמו')),'existing AID 4929253 must retain its additional inspected proposition');
+assert(enriched4929253.response_proposition_locators.some(l=>l.includes('265–266')));
+assert.equal(enriched4929253.canonical_file,'data/items/content-research-batch-080-2026-11-14.json');
+assert.equal(enriched4929253.evidence_family_id,'igrot-letter-5715-18-elul-gteshpe-aid4929253');
+const secretariatExcerpt=idx.entries.find(e=>sourceAID(e)==='4928859');
+assert(secretariatExcerpt&&/secretariat/i.test(secretariatExcerpt.witness_type||''),'AID 4928859 must preserve its secretariat-copy provenance');
+const sinaiAuthorshipQuestion='מה כתב הרבי על מסורת מעמד הר סיני?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,sinaiAuthorshipQuestion,{mode});
+ assert(!m.sources.some(e=>sourceAID(e)==='4928859'),mode+': a secretariat-copy excerpt must not be presented as a direct Rebbe-authored witness');
+}
+const studyYouthEducationQuestion='מה נכתב באיגרות על לימוד בחברותא, מסירת יהדות לבני נוער והתקדמות הדרגתית?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,studyYouthEducationQuestion,{mode});
+ assert(m.answerable,mode+': two inspected correspondence families must support a bounded study/youth-education synthesis');
+ assert(m.sources.some(e=>sourceAID(e)==='5019597'),mode+': personal chavruta-study letter must be retained');
+ assert(m.sources.some(e=>sourceAID(e)==='5019603'),mode+': youth-education letter must be retained');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
+ assert(m.synthesis&&m.synthesis.topic==='study_and_youth_education');
+ assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');
+ assert(m.synthesis.claims.length>=2&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length),mode+': each synthesis claim must carry its own item-level locator');
+ const studyClaim=m.synthesis.claims.find(c=>c.topic==='study_with_chavruta');
+ const youthClaim=m.synthesis.claims.find(c=>c.topic==='youth_education_and_gradual_practice');
+ assert(studyClaim&&studyClaim.source_numbers.some(n=>sourceAID(m.sources[n-1])==='5019597'));
+ assert(youthClaim&&youthClaim.source_numbers.some(n=>sourceAID(m.sources[n-1])==='5019603'));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid),mode+': citations must entail their own claims');
+ assert(m.context_boundary.every(x=>x.valid),mode+': circumstances and limits must remain witness-local');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=2);
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert(m.research.witnesses.some(w=>w.proposition_source_locator&&w.verification_scope));
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
+ }else assert.equal(m.research,undefined);
 }
