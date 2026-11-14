@@ -698,7 +698,7 @@
       "type": "letter",
       "collection": "Igrot Kodesh",
       "source_class": "Igrot Kodesh",
-      "source_class_detail": "Published Hebrew correspondence text on Chabad.org/TheRebbe.org; published by Kehot Publication Society; visible item-level body inspected.",
+      "source_class_detail": "Published Hebrew correspondence text on Chabad.org/TheRebbe.org; Kehot notes that the text was completed from a photograph; the photograph itself was not inspected.",
       "title": "אגרות קודש - מכתב ה’קצו",
       "letter_number": "ה’קצו",
       "date_original": "י״א אדר א׳, תשי״ז",
@@ -738,13 +738,13 @@
         "האמירות על בני נוער הן חלק ממענה היסטורי מסוים ואינן מחקר אמפירי או מדיניות חינוכית אוניברסלית."
       ],
       "audience": "יצחק דמיאל, כפי שמזוהה בהערת המו״ל; הקשר של סמינריון ושיחות עם בני נוער.",
-      "primary_secondary_status": "Primary published correspondence witness attributed by Kehot Publication Society; incoming correspondence and original autograph were not independently inspected.",
+      "primary_secondary_status": "Publisher-presented Hebrew transcription completed from a photograph; photograph and original autograph not inspected; not an independent corroborating witness.",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
-      "independent_witness": true,
-      "witness_type": "published_hebrew_letter_text_completed_from_photograph",
+      "independent_witness": false,
+      "witness_type": "publisher_text_completed_from_photograph",
       "relations": [],
-      "identity_note": "One distinct dated correspondence identity. Any scan, reprint or translation of this same letter must join Evidence Family undefined; a translation is not an independent witness.",
+      "identity_note": "One distinct dated Hebrew correspondence identity (11 Adar I 5717, letter ה׳קצו). Any scan, reprint or translation of this same letter must join Evidence Family igrot-letter-5717-11-adar1-letter-he-kuf-tzadi; a translation is not an independent witness.",
       "witness": {
         "kind": "text",
         "state": "publisher body inspected",
@@ -753,14 +753,14 @@
         "language": "Hebrew",
         "scope": "body lines 244–271",
         "complete_partial": "complete",
-        "notes": "העמוד הוא עד פרסומי; לא נבדקו המכתב הנכנס, כתב היד או צילום המקור."
+        "notes": "המו״ל מציין שהטקסט הושלם על פי צילום; הצילום וכתב היד לא נבדקו. זהו עד פרסומי יחיד במשפחת הראיות; סריקה, הדפסה חוזרת או תרגום עתידיים ישויכו לאותה משפחה."
       },
       "provenance": {
         "source_witness": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5019603, אגרות קודש - מכתב ה’קצו; body lines 244–271. Inspected 2026-11-14.",
         "authorship_status": "Kehot Publication Society presents the text as correspondence of the Lubavitcher Rebbe; this review verifies the visible published body, not autograph authenticity.",
         "signature_status": "No original autograph was independently inspected; publisher attribution and any displayed signature remain publisher-level evidence.",
-        "transmission_type": "Published Hebrew correspondence text; publisher notes that the letter text was completed according to a photograph, which was not inspected.",
-        "textual_status": "Visible publisher body body lines 244–271 inspected on 2026-11-14; incoming letter and physical original not inspected.",
+        "transmission_type": "Published Hebrew text completed from a photograph; the photograph itself and the physical original were not inspected.",
+        "textual_status": "Visible publisher body lines 244–271 inspected on 2026-11-14; publisher notes that the text was completed from a photograph; the photograph and physical original were not inspected.",
         "editorial_scope": "Bounded non-verbatim research paraphrases and item-level source locators only; no full copyrighted text reproduced.",
         "verification_status": "Verified at the inspected published-body level on 2026-11-14; not autograph authentication.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5019603/jewish/page.htm",
@@ -800,7 +800,8 @@
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5019603/jewish/page.htm",
       "content_review_batch_id": "081",
       "content_reviewed_at": "2026-11-14T10:22:37+02:00",
-      "notes": "הטקסט הגלוי שלם לפי עמוד המו״ל; הערת המו״ל מציינת שהאיגרת הושלמה על פי צילום שלא נבדק."
+      "notes": "הטקסט הגלוי שלם לפי עמוד המו״ל; הערת המו״ל מציינת שהאיגרת הושלמה על פי צילום שלא נבדק.",
+      "evidence_family_id": "igrot-letter-5717-11-adar1-letter-he-kuf-tzadi"
     },
     {
       "id": "chabad-letter-4928859",
@@ -1132,5 +1133,6 @@
   "reconciliation_status": "pending",
   "reconciled_at": null,
   "reconciliation_commit": null,
-  "publication_commit": null
+  "publication_commit": null,
+  "identity_reconciliation_note": "AID 5019603 was missing an evidence_family_id in the initial batch record. The family is now assigned as igrot-letter-5717-11-adar1-letter-he-kuf-tzadi; the item remains a single publisher-text witness completed from a photograph, not an independent corroborating witness."
 }
