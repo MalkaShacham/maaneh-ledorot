@@ -1291,7 +1291,7 @@ assert(existing5100299&&existing5100299.canonical_file==='data/items/content-res
 assert.equal(existing5100299.evidence_family_id,'igrot-letter-5719-10-marcheshvan-aid5100299');
 assert.equal(existing5100299.response_propositions.length,2);
 assert.equal(batch083Data.reconciliation_status,'reconciled');
-assert.deepEqual(batch083Data.metrics_actual_after,{answer_eligible_unique_sources:metrics.answer_eligible_unique_sources,content_verified_unique_sources:metrics.content_verified_unique_sources,answer_eligible_propositions:metrics.answer_eligible_propositions});
+assert.deepEqual(batch083Data.metrics_actual_after,batch083Data.metrics_expected_after,'batch-083 reconciliation remains fixed at its own checkpoint, not the later batch-084 corpus totals');
 assert.deepEqual(batch083Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 assert.equal(batch083Data.metrics_before.answer_eligible_unique_sources,829);
 assert.equal(batch083Data.metrics_before.content_verified_unique_sources,826);
