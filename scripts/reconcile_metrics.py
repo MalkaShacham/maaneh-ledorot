@@ -216,53 +216,34 @@ if batch_path:
     batch_label=re.search(r"content-research-batch-(\d+)-",batch_path.name).group(1)
     try:
         batch_data=json.loads(batch_path.read_text(encoding="utf-8"))
-        target_aids=[str(r.get("aid")) for r in batch_data.get("records",[]) if isinstance(r,dict) and r.get("aid")]
+        target_identities=[]
+        def add_target(identity_key, aid=None, item_id=None):
+            if identity_key and not any(t["key"]==identity_key for t in target_identities):
+                target_identities.append({"key":identity_key,"aid":aid,"id":item_id})
+        for record in batch_data.get("records",[]):
+            if not isinstance(record,dict): continue
+            keys=identity_keys(record); stable=keys[0] if keys else None
+            if stable:
+                aid=str(record.get("aid") or "")
+                add_target(stable,aid if aid else None,record.get("id"))
         for update in batch_data.get("existing_identity_updates",[]):
             identity=str(update.get("identity") or update.get("id") or "")
-            match=re.search(r"(\d+)$",identity)
-            if match: target_aids.append(match.group(1))
-        target_aids=list(dict.fromkeys(target_aids))
-        audit=[]
-        by_aid={aid:[] for aid in target_aids}
+            match=re.search(r"(\\d+)$",identity)
+            if match:add_target("aid:"+match.group(1),match.group(1),update.get("id"))
+            else:
+                item_id=str(update.get("id") or identity);add_target("id:"+item_id,None,item_id)
+        audit=[];by_identity={target["key"]:[] for target in target_identities}
         for fp in items:
             try: obj=json.loads(fp.read_text(encoding="utf-8"))
             except Exception: continue
             if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
             for x in candidate_dicts(obj):
                 if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
-                loc=x.get("locator") if isinstance(x.get("locator"),dict) else {}
-                aid=str(x.get("aid") or loc.get("aid") or "")
-                if aid in by_aid:
-                    by_aid[aid].append({
-                        "file":str(fp.relative_to(ROOT)),
-                        "id":x.get("id"),
-                        "evidence_family_id":x.get("evidence_family_id"),
-                        "status":status_of(x),
-                        "has_content_evidence":bool(x.get("has_content_evidence")),
-                        "proposition_count":len(x.get("response_propositions") or []),
-                        "proposition_origin":x.get("proposition_origin"),
-                        "proposition_verification":x.get("proposition_verification"),
-                        "proposition_source_locator":x.get("proposition_source_locator"),
-                        "verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),
-                        "context_status":x.get("context_status")
-                    })
-        for aid in target_aids:
-            selected=search_entries.get("aid:"+aid)
-            audit.append({
-                "aid":int(aid),
-                "canonical_records_found":len(by_aid[aid]),
-                "records":by_aid[aid],
-                "selected_index_entry":{
-                    "present":bool(selected),
-                    "answer_eligible":bool(selected and answer_eligible(selected)),
-                    "status":selected.get("status") if selected else None,
-                    "evidence_family_id":selected.get("evidence_family_id") if selected else None,
-                    "canonical_file":selected.get("canonical_file") if selected else None,
-                    "proposition_count":len(selected.get("response_propositions") or []) if selected else 0,
-                    "proposition_source_locator":selected.get("proposition_source_locator") if selected else None,
-                    "independent_witness":selected.get("independent_witness") if selected else None
-                } if selected else {"present":False}
-            })
+                for record_key in [key for key in identity_keys(x) if key in by_identity]:
+                    by_identity[record_key].append({"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")})
+        for target in target_identities:
+            selected=search_entries.get(target["key"]);aid_value=target.get("aid")
+            audit.append({"identity_key":target["key"],"aid":int(aid_value) if aid_value and str(aid_value).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(by_identity[target["key"]]),"records":by_identity[target["key"]],"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False})
         batch_before=batch_data.get("metrics_before")
         batch_expected=batch_data.get("metrics_expected_after")
         readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
@@ -274,7 +255,7 @@ if batch_path:
             "batch_id":batch_data.get("batch_id") or batch_label,
             "batch_file":str(batch_path.relative_to(ROOT)),
             "generated":today,
-            "batch_record_count":len(target_aids),
+            "batch_record_count":len(target_identities),
             "new_source_identity_count":batch_data.get("new_source_identities"),
             "existing_identities_enriched":batch_data.get("existing_identities_enriched"),
             "source_bodies_inspected":batch_data.get("source_bodies_inspected"),
