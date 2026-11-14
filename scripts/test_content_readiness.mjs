@@ -3,13 +3,13 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {normalizeEvidenceIntegrity,buildAnswerModel,citationEntailment} from '../src/answer-engine-validated.js';
 const root=new URL('../',import.meta.url);
-const [indexHtml,validatedSource]=await Promise.all([
+const [engineCacheParityHtml,engineCacheParityValidated]=await Promise.all([
  readFile(new URL('index.html',root),'utf8'),
  readFile(new URL('src/answer-engine-validated.js',root),'utf8')
 ]);
-const browserEngineVersion=indexHtml.match(/answer-engine-validated\.js\?v=([^"']+)/)?.[1];
-const coreEngineVersion=validatedSource.match(/from ['"]\.\/answer-engine\.js\?v=([^'"]+)['"]/)?.[1];
-assert(browserEngineVersion&&coreEngineVersion&&browserEngineVersion===coreEngineVersion,'browser validation layer and its core-engine import must share the same cache version');
+const engineCacheBrowserVersion=engineCacheParityHtml.match(/answer-engine-validated\.js\?v=([^"']+)/)?.[1];
+const engineCacheCoreVersion=engineCacheParityValidated.match(/from ['"]\.\/answer-engine\.js\?v=([^'"]+)['"]/)?.[1];
+assert(engineCacheBrowserVersion&&engineCacheCoreVersion&&engineCacheBrowserVersion===engineCacheCoreVersion,'browser validation layer and its core-engine import must share the same cache version');
 
 const sourceAID=e=>{
   if(e?.aid!==undefined&&e?.aid!==null&&String(e.aid).trim())return String(e.aid);
