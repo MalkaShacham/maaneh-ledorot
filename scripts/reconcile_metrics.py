@@ -199,8 +199,21 @@ for fp in items:
         old=search_entries.get(key)
         # Prefer inspected answer evidence over a duplicate catalog-only record.
         # Keep the entire witness together; never mix propositions/context fields.
-        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
-        if old is None or priority(entry)>priority(old):search_entries[key]=entry
+        # When two records share an AID, prefer the complete inspected witness
+        # as one unit. A catalog/index record must never win a tie merely because
+        # it is also marked Verified; do not merge propositions or provenance.
+        def source_priority(e):
+            return (
+                bool(answer_eligible(e)),
+                e.get("proposition_verification") == "source_text_inspected",
+                bool(e.get("proposition_source_locator")),
+                bool(e.get("witness_type") or e.get("witness_provenance")),
+                e.get("independent_witness") is not None,
+                bool(e.get("source_url")),
+                rank.get(e.get("status"),0),
+                len(e.get("response_propositions") or []),
+            )
+        if old is None or source_priority(entry)>source_priority(old):search_entries[key]=entry
 search_index={"generated":today,"count":len(search_entries),"entries":sorted(search_entries.values(),key=lambda e:(0 if e.get("status")=="Verified" else 1,str(e.get("date") or ""),str(e.get("title") or "")))}
 # This generated index is shipped to browsers; compact JSON cuts repository and
 # deployment transfer size without changing any record or field.
@@ -304,8 +317,10 @@ if isinstance(state.get("metrics_integrity"),dict):
     readiness["reconciliation_variance"]={k:actual[k]-int(expected.get(k,actual[k])) for k in actual}
     integrity["status"]="reconciled_pending_commit"
     integrity["last_reconciled_at"]=today
+    state["last_reconciled_at"]=today
 
 actual_metrics={k:out[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
+print("answer_readiness_actual_metrics",json.dumps(actual_metrics,ensure_ascii=False))
 if batch_path and isinstance(batch_data,dict):
     expected=batch_data.get("metrics_expected_after") or {}
     variance={k:actual_metrics[k]-int(expected.get(k,actual_metrics[k])) for k in actual_metrics}
@@ -314,6 +329,7 @@ if batch_path and isinstance(batch_data,dict):
     batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
     batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
     batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print("latest_manual_batch_reconciliation",json.dumps({"batch_id":batch_data.get("batch_id"),"expected":expected,"actual":actual_metrics,"variance":variance,"status":batch_data["reconciliation_status"]},ensure_ascii=False))
     dev=state.setdefault("development_recovery",{})
     summary=dev.get("last_batch_summary")
     if isinstance(summary,dict) and summary.get("batch_id")==batch_data.get("batch_id"):
@@ -326,6 +342,12 @@ if batch_path and isinstance(batch_data,dict):
         last["metrics_actual_after"]=actual_metrics
         last["reconciliation_variance"]=variance
         last["reconciliation_status"]=batch_data["reconciliation_status"]
+    if batch_data["reconciliation_status"]=="reconciled":
+        completed_id=batch_data.get("batch_id") or batch_label
+        dev["last_completed_batch"]=completed_id
+        dev["current_batch"]=completed_id
+        if isinstance(summary,dict) and summary.get("batch_id")==batch_data.get("batch_id"):
+            summary["reconciliation_status"]="reconciled"
     acquisition_path=ROOT/"data/acquisition/latest.json"
     if acquisition_path.exists():
         acquisition=json.loads(acquisition_path.read_text(encoding="utf-8"))
@@ -336,6 +358,20 @@ if batch_path and isinstance(batch_data,dict):
             review["reconciliation_status"]=batch_data["reconciliation_status"]
             acquisition["manual_web_review_current_metrics"]=actual_metrics
             acquisition["last_manual_review_at"]=review.get("reviewed_at") or acquisition.get("last_manual_review_at")
+            history=acquisition.get("manual_web_review_history") or []
+            for history_item in history:
+                if str(history_item.get("batch_id"))==str(batch_label):
+                    history_item["metrics_actual_after"]=actual_metrics
+                    history_item["reconciliation_variance"]=variance
+                    history_item["reconciliation_status"]=batch_data["reconciliation_status"]
+                    history_item["reconciled_at"]=batch_data.get("reconciled_at")
+            previous=acquisition.get("previous_manual_web_review") or {}
+            if str(previous.get("batch_id"))==str(batch_label):
+                previous["metrics_actual_after"]=actual_metrics
+                previous["reconciliation_variance"]=variance
+                previous["reconciliation_status"]=batch_data["reconciliation_status"]
+                previous["reconciled_at"]=batch_data.get("reconciled_at")
+                acquisition["previous_manual_web_review"]=previous
             acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
 ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}

@@ -322,3 +322,210 @@ Expected readiness pending reconciliation: **789 → 792** answer-eligible Evide
 
 
 Publication verification: GitHub Pages deployment completed successfully for main commit `3f4b63215d3700daf07ec8ca027b40569ce6e1cd` on 2026-11-13. The browser/search retrieval tool could not fetch the site URL directly, so publication status is based on the successful Pages deployment job and its reported environment URL.
+
+ 
+## 2026-11-13 — Manual publisher review batch 079 (reconciliation pending)
+
+- Inspected 15 public item bodies from Kehot/Chabad.org/TheRebbe.org in Hebrew and Yiddish: nine candidate letter identities, two existing identities enriched in place, and four existing identities rechecked without duplicate propositions.
+- New candidate AIDs: 4831007, 4831137, 4831186, 4831187, 4831315, 5357370, 5100610, 5100451, 5100615. One Yiddish original-language witness is counted once; no translation is treated as an independent witness.
+- Existing identities enriched in place: AID 4812708 (communal consequence of the instruction on love of Israel) and AID 5071118 (explicit practical redirection to the Shulchan Aruch).
+- Five alternative pages returned navigation/summary shells and were excluded. Other accessible publisher bodies were inspected in the same run. The known HTTP-403 crawler remains disabled; no retry or access-control bypass occurred.
+- Provisional expected metrics from the then-current baseline 799 / 796 / 2,627 are 808 answer-eligible unique sources, 805 content-verified unique sources and 2,647 propositions. These are expectations only, not reported progress. Full-corpus AID/Evidence-Family reconciliation and Actions validation are pending.
+- Scope limits: no incoming letters or autographs were inspected; AID 5357370 is a partial excerpt; AID 4831186's nonstandard printed date is preserved; AID 4831187 is a Yiddish witness and any later translation must remain derivative; medical, housing and study guidance remain bounded to their original personal contexts.
+
+
+## 2026-11-13 — Manual public-body review, batch 080
+
+- Inspected ten public item-level source bodies through web/search/open: six Hebrew publisher pages and four English translations. Added **10 new source identities** and **19 non-verbatim, source-grounded response propositions**, each with a proposition-level body locator, provenance, verification scope, context and limitations.
+- Source mix: four publisher-presented Hebrew letter texts, two Hebrew secretariat responses signed by a secretary in the Rebbe's name, and four English translations. The two secretariat responses are explicitly non-independent and are not presented as direct Rebbe-authored wording. The four English translations are also non-independent; AID 4264336 is linked to the publisher-cited Igrot Kodesh Vol. XXIX p.133 family, while the other three remain translation-only families because the page does not identify an exact original volume/page.
+- Enriched the existing volume-13 identity `igrot-kodesh-v13-דשם` with `witness_type=secretariat_letter_on_behalf_of_rebbe` and `independent_witness=false`, preserving the stable identity and existing propositions while correcting the attribution boundary.
+- Reopened 15 AIDs from batch 079. All 15 current public-open results now return navigation/summary shells; no new proposition was taken from those shells and the historical batch-079 review was not rewritten. Three additional candidate pages (AIDs 4928948, 4812597 and 4666220) also returned summary shells and were excluded. Alternative inspectable publisher pages were used in the same run.
+- No crawler retry, no access-control bypass and no full-text copying. Only bounded paraphrases were added.
+- Retrieval/attribution repair: the full-day yeshiva/commerce topic now matches on its inspected semantic components rather than requiring the entire query phrase to appear verbatim. A direct “מה כתב הרבי” query is blocked when the only matching evidence is a secretary-signed response; a neutral question about the secretariat record remains answerable with its witness class and claim-level citations.
+- PR CI run 43491380509 computed the batch-079 branch baseline at **808 answer-eligible unique sources**. Main still shows **799** until merge and reconciliation. Batch 080 expects **818** after deterministic reconciliation (before 808, plus 10 new Evidence Families); actual after remains pending until the merge-triggered reconciliation workflow writes the metrics.
+- Batch 080: 10 source bodies inspected; 10 new identities; 1 existing identity enriched; 15 current access rechecks; 3 newly blocked candidates; 19 propositions; expected answer-eligible unique sources 808 → 818.
+
+
+## 2026-11-13 — Manual public-body review, batch 081
+
+- Inspected ten public item-level publisher bodies: nine new Hebrew source identities and one recheck of AID 5054501 already present in batch 080. Added nine unique Evidence Families and 22 non-verbatim, source-grounded response propositions with item-level body-line locators.
+- New AIDs: 5357452, 5054304, 4994184, 4854516, 5071066, 5100091, 4854524, 4994342, 4994482. Eight are full publisher-presented letter texts; AID 4994482 is a partial excerpt with an uncertain printed date. AID 5357452 has conflicting publisher volume labels (breadcrumb כרך כא versus footer Volume 18); no normalized volume was assigned.
+- Reclassified seven existing volume XIII items signed by secretaries (ד׳תרע, ד׳תרעב, ד׳תרעו, ד׳תרעח, ד׳תרפא, ד׳תרפב, ד׳תרפג) as secretariat responses, including one Yiddish item. Existing Evidence Family IDs and propositions were retained; these are not direct Rebbe-authored witnesses.
+- Four candidate AIDs (4994633, 5100256, 5356838, 5099972) redirected to rewritten Torah Texts summary/navigation shells and were excluded. Other directly inspectable publisher bodies were used in the same run. No crawler retry, access-control bypass, or full-text copying occurred.
+- Deduplication checked the review queue, recent content batches 055-080, relevant volume indexes/content batches, bulk-indexed and content-verified files. No duplicate AID or Evidence Family was found among the nine new records; AID 5054501 was found in batch 080 and was rechecked only. No translation was counted as an independent witness.
+- Published metrics before the pending PR batches remain 799 answer-eligible unique Evidence Families, 796 content-verified unique sources, and 2,627 propositions. After batches 079-081, expected reconciled values are 827, 824, and 2,688 respectively; these are not actual until deterministic reconciliation completes.
+- The content-readiness tests now assert the secretariat attribution boundary for the class-expansion item and the new batch's source/proposition counts. Final status remains pending until Actions, reconciliation, and Pages publication succeed.
+
+
+## 2026-11-14 — Manual public-body review, batch 082
+
+- Inspected **10 public Hebrew item-level publisher bodies** through web/search/open. Added **6 new source identities** (four publisher-presented original-language letters and two secretary-signed responses), reclassified **2 existing identities in place** (AID 4854786 and AID 4854525), and rechecked **2 existing bodies** (AID 5100579 and AID 4854804) without duplicate propositions.
+- Added **16 non-verbatim source-grounded response propositions**. Each new proposition has `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, a body-line locator, provenance, explicit verification scope, documented circumstances and limitations.
+- The two new secretariat responses (AIDs 5100309 and 5054581) are marked `witness_type=secretariat_letter_on_behalf_of_rebbe` and `independent_witness=false`; they are not presented as direct Rebbe-authored wording. Existing AID 4854786 was explicitly secretary-signed in the Rebbe's name; AID 4854525 closes with a visible secretary signature and was conservatively reclassified as a secretary-signed publisher response. Existing Evidence Families and propositions were retained.
+- Deduplication checked the review queue, content batches 055–081 and relevant volume indexes (4, 6, 9, 15 and 18). Six new AIDs (4754363, 4754536, 5100438, 5100309, 5054581 and 4812831) were not present as existing identities in the checked files. AID 5100579 was found in batch 067 and rechecked; AID 4854804 was found in batch 080 and rechecked. No translation was counted as an independent witness.
+- **35 candidates were excluded**: 12 audio/media pages without inspectable transcript bodies and 23 pages that returned rewritten summary/navigation shells. The known HTTP-403 crawler was not retried, no access control was bypassed, and no scan-only identity check was treated as content verification.
+- Expected values after pending batches 079–082: `answer_eligible_unique_sources` **799 → 833**, `content_verified_unique_sources` **796 → 830**, and `answer_eligible_propositions` **2,627 → 2,704**. These are expected values only until the deterministic reconciliation workflow confirms the actual counts.
+- Retrieval repair: the core engine now requires explicit secretary-signature/secretariat-response evidence before excluding a source from a direct-authorship query. A generic note that a secretariat copy was not inspected no longer misclassifies a publisher-attributed letter (AID 5071046). Added a narrow Tanya-project topic and proposition gate, plus regular/researcher-mode regression coverage.
+- UI repair: removed a duplicate `const url` declaration in `index.html` that prevented the page module script from parsing, and refreshed the engine cache key. A source-card syntax regression is included in content-readiness tests.
+- Reconciliation, PR checks and Pages publication remain pending until the updated PR branch passes and is merged to main.
+
+
+### Batch-018 secretariat attribution correction (2026-11-14)
+
+The latest main-branch hourly run (run 43520214183) completed deterministic maintenance with no corpus delta (799 answer-eligible families, 796 content-verified families, 2,627 propositions) but failed the content-readiness test because a test phrased the batch-018 item ד׳שס as “what the Rebbe wrote.” The publisher scan's printed signature is by a secretary. The canonical item and audit record now mark it as a secretary-signed response (`independent_witness=false`); the branch regression asks what the secretariat response documents and separately excludes it from direct-Rebbe wording queries. The core detector recognizes explicit secretary signatures but does not treat “secretariat copy not inspected” as proof of a secretary signature, preserving the separate publisher-attributed Tanya-project item AID 5071046. The hourly crawler remained disabled; no 403 route was retried.
+
+
+### Content-readiness reconciliation assertions updated for batch 082 (2026-11-14)
+
+The first full-corpus PR run generated the expected index totals (833 answer-eligible unique families; 921 answer-eligible source entries; 2,704 source-grounded propositions) and passed the question-specificity, synthesis, citation-integrity, evidence-contract, write-safety and structural answer-quality gates. The content-readiness test then exposed stale assertions that still expected batches 079–081 only (827/824/2,688) and treated AID 4854525 as an independent Rebbe witness. The test now expects the 079–082 totals and frames the low-mood/study comparison as a neutral cross-source question, preserving AID 4854525 as a secretary-signed response while excluding it from direct-Rebbe-authorship queries.
+
+
+### AID 5071054 attribution and query scope (2026-11-14)
+
+AID 5071054 is a publisher-attributed original-language Hebrew letter with selected body passages previously inspected on 2026-11-12 (lines 288–300); no secretary signature was reported and no autograph was inspected. It is now explicitly marked `witness_type=published_hebrew_letter_text` and `independent_witness=true` (independent text witness, not autograph authentication). The content-readiness regression was split into source-specific questions: AID 5071054 answers the sadness-in-divine-service question; AID 4854525 answers a neutral question about the secretary-signed response on low vitality in study. This avoids asserting that either item supports wording absent from its inspected propositions.
+
+
+### Batch 082 printed-index locator audit (2026-11-14)
+
+A duplicate search covered all 24 prior content-research batch files present (055–060 and 064–081) and the complete review queue; none of the six new AIDs appeared before batch 082, and no duplicate Evidence Family IDs were found. Printed volume indexes were inspected for bibliographic locator only: v4 תתצט p.16 and א׳עא p.22; v6 א׳תשפט p.12; v15 ה׳תשכד p.15; v18 ו׳תקנח p.6. The index entries do not verify content. The v9 ב׳תתצט and v18 ו׳תתצט are differently prefixed identities, not duplicates of v4 תתצט. AID 5100438's ו׳תרצ was not found in the inspected v18 index, so no locator was inferred.
+
+
+### Index-locator metadata kept separate from content verification scope (2026-11-14)
+
+The first structural gate after adding printed-index locators correctly rejected five records because the locator-only wording had been appended to the main `verification_scope`, which the readiness classifier intentionally treats as bibliographic-only. The correction keeps the inspected publisher-body scope unchanged and stores the index evidence separately in `provenance.index_locator_verification_scope` and `locator.index_pdf_page`. Thus the printed index verifies location only and does not downgrade or replace the separately inspected body evidence. The v18 index entry ו׳תתצט (PDF p.15) was also recorded as a distinct prefixed identity from v4 תתצט.
+
+
+### Actual proposition count reconciled to 2707 (2026-11-14)
+
+The CI reconciliation measured 833 answer-eligible unique Evidence Families, 830 content-verified families and 2,707 answer-eligible propositions. The first batch-082 expectation of 2,704 was short by three because the improved duplicate-AID source priority exposed three propositions already present in older inspected records; batch 082 itself still adds exactly 16 new propositions and six new source identities. The expected-after figure is corrected to 2,707, with the +3 reconciliation adjustment explicitly separated from new content. No source or proposition was promoted solely from an index scan.
+
+
+### AID 4812708 publisher-text witness clarified (2026-11-14)
+
+AID 4812708's seven existing paraphrases include the conditional statement that, if Israel acts with love, the world will be refined and Mashiach revealed. The regression assertion now matches the inspected wording (`העולם יזדכך` and `משיח`), rather than an absent noun phrase. The item is explicitly marked as a publisher-attributed original-language Hebrew letter (`witness_type=published_hebrew_letter_text`, `independent_witness=true`); this is an independent published text witness, not autograph authentication, and no secretary signature was reported.
+
+
+## Batch 083 — public body inspection and in-place enrichment (2026-11-14)
+
+- Inspected nine public publisher bodies directly: six new identities and three existing volume-index identities enriched in place. Added 17 non-verbatim source-grounded Hebrew propositions: 12 for new identities and five for existing identities.
+- New identities: AID 5019502 (Yiddish letter), 4831629, 5287569 and 4754445 (publisher-presented Hebrew letters), 5071128 (secretariat response signed in the Rebbe's name), and 5357059 (secretariat-transmitted telegram copy).
+- Existing identities enriched, not duplicated: AID 4854534 (volume IX index identity; partial excerpt), 5099896 (volume XVII index identity), and 5357093 (volume XX index identity; Evidence Family igrot-kodesh-letter-7731).
+- Source-body locators are recorded per proposition. The old printed-index witness and its locator-only scope are preserved separately in provenance; index scans do not verify content.
+- Ten direct rechecks of prior AIDs resolved to rewritten summary/navigation shells. No proposition was taken from those shells. Alternative public Kehot publisher bodies were found and inspected in the same run.
+- Deduplication checked research batches 055–082, all 13 content-verified batch-006 item files, 11 bulk-indexed files, the review queue, and relevant volume indexes. Translations/reprints remain aliases within one Evidence Family, never independent witnesses.
+- Boundaries: AID 4854534 remains a fragment with missing context; AID 5071128 is a secretary-signed response; AID 5357059 is a secretary-transmitted telegram copy with a printed signature and a conflicting volume label, so no volume is asserted. No autograph or incoming letter was inspected. No full text was copied and no access control was bypassed. No new English independent witness was added; the batch contains eight Hebrew and one Yiddish body.
+- Retrieval changes add a dedicated multi-family health/body-care synthesis with claim-level locators, distinct witness families, explicit non-Rebbe system attribution, and researcher-mode evidence mapping. Secretariat responses and telegram copies remain excluded from direct-Rebbe-authorship questions.
+- Batch 082 reconciliation was corrected to the measured CI totals 833/830/2707 (the earlier 2704 projection was short by three already-recorded propositions, not by new sources). Batch 083 expected increment: +9 answer-eligible families, +9 content-verified families, +17 propositions; expected branch totals after batches 079–083: 842/839/2724. These are pending the new CI reconciliation and merge.
+
+
+### CI correction after batch 083 commit
+
+- Run 43529414167 regenerated the index and reconciled batch 083 exactly: 842 answer-eligible unique Evidence Families, 839 content-verified families, 2,724 propositions; variance zero. The structural answer-quality gate also passed with no warnings.
+- The first content-readiness test failure was stale hard-coded totals still referring to batches 079–082 (833/830/2707). Updated those assertions to include batch 083 (842/839/2724). This was test drift, not a reconciliation or source-count variance.
+- Tightened health synthesis retrieval to draw only from inspected, independent letter families across the full index; secretariat responses and telegram copies remain separately retrievable but excluded from direct-author synthesis. Added targeted retrieval regressions for the yeshiva-loneliness and youth/work-rest letters.
+
+
+### Current access recheck of batch 083 (2026-11-14 01:55 +02:00)
+
+All nine direct AID URLs in batch 083 now resolve to rewritten unavailable summary/navigation shells. No claims were taken from those shells. A public Pnimi index and a transcription page for a different letter were inspected; they did not provide the same nine AID bodies. A cached search excerpt for AID 4754445 was not used as new evidence because the full open remained unavailable. The earlier batch-083 body inspections and locators remain recorded as historical inspections; this recheck records current unavailability only. No crawler retry, access-control bypass, or full-text copying occurred. AID 5071128 is tested against its actual secretariat propositions (study motivation and health) separately from AID 4854525's low-vitality question. The volume-XIII printed-index identity remains locator-only, not content evidence.
+
+
+### Community-activity retrieval correction (2026-11-14)
+
+The regression suite exposed that community propositions passed the synthesis-integrity checks but were not reaching the synthesis stage: generic lexical ranking left the three independently inspected letter families below the retrieval threshold. The retriever now applies a bounded query-specific boost only to Verified, independent, letter-text sources whose inspected propositions match the farbrengen/student-gathering/mikveh-responsibility predicate. This does not admit locator-only entries or secretariat responses as direct Rebbe authorship. The browser cache key was incremented so the published client loads the corrected engine.
+
+
+### Community proposition relevance branch (2026-11-14)
+
+The second regression showed that a candidate seed boost alone did not clear the later proposition-relevance threshold. For the exact community-activity synthesis query, sources now receive direct-support status only when at least one inspected response proposition matches the bounded farbrengen/student-gathering/shared-mikveh-responsibility predicate. This keeps the retrieval rule content-based and claim-locatable; unrelated sources, locator-only indexes and secretariat material are not promoted. Client cache key advanced to `20261114-06`.
+
+
+### Human-microcosm source retrieval (2026-11-14)
+
+The inspected Rosh Hashanah letter AID 4831315 contains a body-grounded proposition describing the human being as an olam katan with inanimate, vegetative, animal and speaking dimensions, and the letter's call to elevate them through Torah and mitzvot. A dedicated retrieval path now admits only Verified, independently witnessed, original-language letter records whose inspected propositions contain all four dimensions and the sanctification frame. This avoids losing the source to generic term ranking without treating a title or locator as content. Cache key advanced for the client.
+
+
+### Secretariat telegram regression scope (2026-11-14)
+
+AID 5357059 is a secretariat-transmitted telegram to Gan Israel camp directors, not the trade-and-study letter. The regression suite now tests it with a separate neutral query explicitly asking about the secretariat's telegram copy and verifies that a direct-Rebbe-authorship query returns the secretariat boundary instead of attributing the copy to the Rebbe. The trade-and-study query remains scoped to its own secretariat letter.
+
+
+### Secretariat lishma retrieval path (2026-11-14)
+
+AID 5071128 is a secretary-signed response, not an independent Rebbe-authored letter. Its two inspected propositions separately cover the transition from study not for its own sake to study for its own sake, and persistence in Torah and mitzvot without harming bodily health. A bounded query-specific relevance rule now retrieves it only for a neutral secretariat query matching those propositions; the direct-Rebbe-authorship boundary remains in force. Client cache key advanced.
+
+
+### Core-engine import cache parity (2026-11-14)
+
+The readiness test revealed that the validation module imported a stale versioned `answer-engine.js` even though `index.html` referenced a newer validation-layer version. The core import now uses the same cache version as the browser entry point, and the test suite asserts this parity so retrieval fixes cannot silently remain unloaded.
+
+
+### Batch 084 core cache parity (2026-11-14)
+
+The microcosm cross-family synthesis update advanced the core-engine import version. The browser entry point now uses the same version, satisfying the explicit cache-parity guard in the readiness test. The update also preserves the topic alias for the four human dimensions and claim-level source locators in researcher mode.
+
+
+### Short-word topic alias guard (2026-11-14)
+
+The batch-084 microcosm topic alias initially included the bare token `חי`, which can be a substring of unrelated Hebrew words such as `חירות`. The alias now relies on the longer, discriminating terms (עולם קטן, דומם, צומח, מדבר, and the English concept labels); proposition-level microcosm validation still checks all four kingdoms. A regression assertion protects the Passover-freedom query from false topic classification. Cache versions are aligned.
+
+
+### Batch 084 reconciliation and body-locator correction (2026-11-14)
+
+Batch 084 reviewed 14 public publisher bodies: nine new English-translated event Evidence Families, four existing identities enriched, and one existing identity rechecked. It added 27 propositions to new families and six to existing families; no new independent witness was added. Three existing audio families were promoted by linked English text. The English translation AID 1281934 is linked to Hebrew AID 4831315 in the same family; its two identical propositions are deduplicated against the original, not counted as additional evidence.
+
+AID 4666220 remained unavailable as a source body, so fourteen alternative public publisher pages were opened and inspected. Body-only locators were normalized across the batch; AID 1281934 was corrected to lines 288–301, AID 2507332 to lines 256–263, and AID 2507334 to lines 256–261 and 278–285. No full text was copied. Final reconciliation: answer-eligible Evidence Families 842 → 854; content-verified families 839 → 851; distinct eligible propositions 2724 → 2757.
+
+
+### Secretariat-transmitted telegram witness classification (2026-11-14)
+
+AID 5357059 is a secretariat-transmitted telegram copy. The secretariat witness classifier now recognizes the explicit `secretariat_transmitted_telegram` marker, allowing neutral questions about the secretariat copy to retrieve it while direct-Rebbe-authorship questions continue to return the authorship boundary. The browser/core cache versions remain aligned.
+
+
+### Secretariat telegram query-specific retrieval (2026-11-14)
+
+The neutral query explicitly naming the secretariat telegram and Gan Israel camp now has a bounded proposition-level retrieval path and candidate seed. It requires the inspected proposition to mention the camp, opening, and year-round impact. Direct-Rebbe-authorship questions still use the separate secretariat authorship boundary; this does not promote the telegram to an independent Rebbe-authored letter.
+
+
+### Direct authorship boundary for secretariat telegram copies (2026-11-14)
+
+A direct-Rebbe-authorship question about the Gan Israel camp can now retrieve the relevant secretariat-transmitted telegram as a boundary witness, even when the query does not itself say "secretariat" or "telegram". The answer remains non-answerable as a Rebbe-authored letter and returns the explicit secretariat authorship boundary. The neutral query about the secretariat copy remains answerable with claim-level citations.
+
+
+### Camp-specific secretariat boundary retrieval (2026-11-14)
+
+The camp/season query now retrieves the inspected telegram copy whenever it explicitly asks about the secretariat response or about the camp opening and year-round impact. This allows a direct-authorship question to surface the relevant boundary witness and return `secretariat_authorship_boundary` instead of generic insufficiency; the source remains non-independent and is not attributed directly to the Rebbe.
+
+
+### Scanned index locator is not content evidence (2026-11-14)
+
+The printed-index identity `igrot-kodesh-v13-דשם` remains discoverable for bibliographic lookup, but its scan verifies only the letter identity and printed-page locator. It has no inspected body propositions and cannot support an answer about trade or study. The neutral Lishma query now cites the actually inspected secretariat response AID 5071128; the unrelated trade-and-study question remains insufficiently evidenced rather than borrowing content from the index or an unrelated response.
+
+
+### Volume XIII letter דשם: index versus body scan (2026-11-14)
+
+The bibliographic index record for `igrot-kodesh-v13-דשם` remains identity/locator-only. A separate user-supplied publisher-scan content record (PDF page 131, printed p. צב; letter ד׳שס, legacy index OCR identity ד׳שם) has five inspected non-verbatim propositions. It is a secretary-signed response, not an autograph. Retrieval and the direct-authorship boundary use the inspected body record; the index alone is never treated as content. The distinct AID 5071128 response concerns staged Torah study and health and is not conflated with this letter.
+
+
+## 2026-11-14 — manual source inspection batch 085 (CI reconciliation pending)
+
+- Inspected 11 public publisher-body pages through web search/open: seven new answer-eligible letter families, three existing Hebrew identities enriched with publisher reprint/cross-reference metadata, and one free adaptation inspected but excluded from answer evidence.
+- New identities: AID 4096314 (English publisher rendering, Igrot Kodesh XIV p.18); 4422928 (freely translated excerpt, XI p.58); 63798 (freely translated excerpt to Shneur Zalman Shazar, VIII pp.101–102); 4783836 (published Hebrew letter א’שסא); 66722 (free translation of an introductory letter, III pp.331–332); 4423140 (freely translated excerpt on division of work, XI pp.14–15); 1888988 (English translation of a letter explicitly stated by the publisher to have been written in Yiddish).
+- Added 16 non-verbatim source-grounded paraphrases with source_text_inspected verification, per-proposition locators, provenance, partial-context notes and scope limitations. No protected full text was copied.
+- Existing identities enriched in place: AID 5100299 (publisher reprint note to Likkutei Sichot XVI p.558), 4830967 (publisher cross-references for birthday practice and tefillin), and 5357571 (later reprint note in Tzaddik LaMelech III p.99 and a publisher cross-reference). These notes are bibliographic metadata only, not independent witnesses or new propositions.
+- Translation policy: six new English renderings/excerpts are marked derived and independent_witness=false; the Yiddish original for AID 1888988 was not inspected. The Hebrew body for AID 4783836 is the only new original-language text inspected; it is one primary witness in a new family, not an additional corroborating witness. AID 482843 was inspected but excluded because the publisher labels it a free adaptation.
+- Blocked pages: AIDs 5413690, 5019512, 5100116, 4831446, 5054489 and 4666220 returned rewritten summary/navigation shells without body text. Alternative accessible publisher pages were inspected in the same run. No crawler retry or access-control bypass was attempted.
+- Expected content delta from the reconciled batch-084 baseline: answer_eligible_unique_sources 854 → 861; content_verified_unique_sources 851 → 858; answer_eligible_propositions 2757 → 2773. These are expected values until the PR quality gate and main-branch reconciliation confirm them.
+- Retrieval improvement: added a boundary-only fallback for direct-authorship questions. It searches inspected propositions for concrete query-term overlap to identify a relevant secretary-signed witness when ordinary retrieval misses it; such a witness can trigger an authorship-boundary notice but can never enter the answer's Rebbe-attributed evidence set. Added a topic alias for division of work/defined tasks and researcher-mode retrieval tests for the new translation and Hebrew sources.
+
+
+## 2026-11-14 — Manual public-body inspection batch 086 (CI pending)
+
+- Inspected 11 accessible Chabad.org publisher bodies by manual search/open; added 11 new page identities in 11 distinct document/event Evidence Families and 25 non-verbatim Hebrew research propositions; one existing translation identity (AID 1888988) was enriched with collection-level links only, without adding propositions or treating the translation as an independent witness with item-level body locators, provenance, verification scope, context and limitations.
+- Source types: eight secretary-signed correspondence pages, two publisher-presented Rebbe letters with printed signatures, and one publisher-attributed excerpt from a Rebbe letter. All inspected bodies were in English; original-language status was not independently established. No autograph or incoming letter was inspected.
+- Secretary-signed records are answer evidence only for what the named secretary wrote and for any explicitly attributed relay. They are not Rebbe-authored wording. The Regents Prayer page is a partial excerpt with a generic /Signature/ marker; it is not a complete letter or autograph verification.
+- AID 289110 and AID 289111 are separate documents with different signers, although they share a date and visit context; they are linked by a researcher/model relation and retain separate Evidence Families. AID 289151 contains two dated secretary communications on one page and remains one page identity.
+- AIDs 4666220 and 5413690 redirected to rewritten summary shells without body text. Eleven alternative public pages were inspected in the same run. No crawler retry, access-control bypass or full-text copying occurred.
+- Expected metrics after batch 085 and 086: answer-eligible Evidence Families 854 → 872; content-verified families 851 → 869; distinct answer-eligible propositions 2757 → 2798. These are projected until the PR reconciliation and main-branch workflow confirm them. The committed baseline before these pending batches remains 854/851/2757.
+- Corrected the readiness regression for volume XIII letter ד׳תרפא: the printed index record is tested independently as locator-only, while the separate scanned body record remains content-bearing as a secretary-signed response for neutral queries. Direct Rebbe-authorship queries continue to be blocked for that secretariat record.
+- The current source/data and test changes are on PR #15. Merge is withheld until a fresh PR quality-gate run passes; main Actions and Pages publication remain to be checked after merge.

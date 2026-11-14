@@ -4,14 +4,16 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch078-source-locators-topic-fix';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch085-authorship-boundary-researcher';
 
 const TOPIC_ALIASES={
+  'האדם כעולם קטן וארבעת ממדיו':['עולם קטן','דומם','צומח','מדבר','לקדש את ממדי החיים','human microcosm','four kingdoms'],
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
   'מעכה לפי הספורנו':['לפי הספורנו','הספורנו','מעכה יכולה להיקרא אשה','sforno maacah'],
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
   'דאגה':['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
+  'שמירת בריאות הגוף ועבודת ה׳':['שמירת בריאות הגוף','בריאות הגוף כחלק מעבודת ה׳','בריאות הגוף','אכילה לפני תפילה','הוראת הרופא','תעניות וסיגופים','body health and divine service','health and prayer'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
   'צדקה לאורך השנה והקצאת תרומות':['צדקה לאורך השנה','צדקה','מעות חיטים','מעשר','חומש','תרומה','תרומות','חלוקת תרומות','הקופה הכללית','לקופה הכללית','קופה כללית','קרובים','קרוביהם','ישיבת תורת אמת','תרומה לישיבה','נדבה','בניית ביתם','בית נאמן','tzedakah','charity','general charity fund','donation to yeshiva','home-building donation'],
@@ -283,7 +285,10 @@ const TOPIC_ALIASES={
  'בשורות טובות מנסיעה ותומכי תמימים':['בשורות טובות ממקומות הנסיעה','מקומות שיהי׳ שם דרך נסיעתו','ישיבת תומכי תמימים','דרך נסיעתו','good news from Tomchei Temimim','travel updates'],
  'מצב רוח ירוד, עצבות ובדידות':['מצב רוח ירוד','עצבות','דיכאון','בדידות','ייאוש','דכדוך','low mood','depression','sadness','loneliness','despondency'],
  'תכלית החיים וייעוד הנשמה':['תכלית החיים','חוסר תכלית','ייעוד הנשמה','מטרת החיים','שליחות הנשמה','purpose of life','soul mission','divine purpose'],
- 'תעניות פרטיות ושמחה':['תעניות פרטיות','תעניות נוספות','צום נוסף','תענית נוספת','שמחה במקום צום','private fasts','extra fasts','voluntary fasting']
+ 'תעניות פרטיות ושמחה':['תעניות פרטיות','תעניות נוספות','צום נוסף','תענית נוספת','שמחה במקום צום','private fasts','extra fasts','voluntary fasting'],
+ 'התוועדויות ופעילות קהילתית':['התוועדות','התוועדויות','פארבריינגען','י״ט כסלו','חג הגאולה','חנוכה','הפצת המעיינות','פעילות קהילתית','תלמידים','באתי לגני','מקווה','הוצאות המקווה','חלוקת אחריות','farbrengen','community activity','mikveh expenses'],
+ 'חירות רוחנית ויציאת מצרים יומיומית':['יציאת מצרים בכל יום','יציאת מצרים','חירות רוחנית','מגבלות הגוף','הנפש הבהמית','daily exodus','spiritual liberation','animal soul'],
+ 'אדם כעולם קטן וקידוש ממדי החיים':['אדם עולם קטן','דומם צומח חי מדבר','קידוש הבריאה','קידוש החיים','microcosm','sanctifying all dimensions of life']
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
@@ -299,7 +304,7 @@ const isInspectedSourceParaphrase=e=>e?.proposition_origin==='source_grounded_pa
 const isEditorialSummaryOnly=e=>e?.proposition_origin==='editorial_summary_derived'||(e?.proposition_verbatim===false&&!isInspectedSourceParaphrase(e));
 const tokens=s=>new Set(norm(s).split(/\s+/).filter(x=>x.length>1));
 const overlapRatio=(a,b)=>{const A=tokens(a),B=tokens(b);if(!A.size||!B.size)return 0;let n=0;A.forEach(x=>{if(B.has(x))n++;});return n/Math.min(A.size,B.size);};
-const CATALOG_STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו בנושא בעניין רוצה לדעת the a an of to and or on about what how did does is are rebbe say says said'.split(' '));
+const CATALOG_STOP=new Set('מה הרבי אמר אומר על של את עם או וגם לגבי האם לי יש היה היא הוא זה זו אני אנחנו בנושא בעניין מענה מזכירות מזכיר מתועד תיעוד רוצה לדעת the a an of to and or on about what how did does is are rebbe say says said'.split(' '));
 
 /* Catalog matches are discovery leads, never answer evidence. Ranking may use
    publisher metadata or an editorial summary, but the returned object deliberately
@@ -362,22 +367,49 @@ function supportsTzedakahSynthesisProposition(p){
  const b=norm(p);
  return ['צדקה','תרומה','מעות חיטים','מעשר','חומש','הקופה הכללית','לקופה הכללית','קרובים','קרוביהם','ישיבת תורת אמת','בניית ביתם','בית נאמן','נדבה'].some(term=>b.includes(term));
 }
+function supportsBodilyHealthSynthesisProposition(p){
+ const b=norm(p);
+ return b.includes('בריאות')&&['עבודת','תורה','מצוות','רופא','תפילה','אכילה','תענית','מנוחה','כפייה','פעולות הנשמה'].some(term=>b.includes(term));
+}
+function supportsCommunityActivitySynthesisProposition(p){
+ const b=norm(p);
+ return /התוו?עד|פארבריינגען/.test(b)||
+  (/מקו[וה]/.test(b)&&/(הוצאות|שותפ|השתתפ)/.test(b))||
+  (/באתי לגני/.test(b)&&/תלמידים/.test(b));
+}
+function supportsHumanMicrocosmProposition(p){
+ const t=norm(p);
+ return t.includes('עולם קטן')&&['דומם','צומח','חי','מדבר'].every(x=>t.includes(x))&&(t.includes('לקדש')||t.includes('תורה ומצוות'));
+}
+function supportsYearHeadMicrocosmProposition(p){
+ const t=norm(p);
+ return t.includes('ראש')&&t.includes('השנה')&&(t.includes('ראש הגוף')||t.includes('תשרי'))&&(t.includes('איבר')||t.includes('מיקרוקוסמ'));
+}
 function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
- const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation';
+ const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[];
+ const isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation',isHealth=s.topic==='bodily_health_and_divine_service',isCommunity=s.topic==='community_gatherings_and_shared_responsibility',isHumanMicrocosm=s.topic==='human_microcosm_and_year_head_analogy';
+ const supportFn=isHumanMicrocosm?(p=>supportsHumanMicrocosmProposition(p)||supportsYearHeadMicrocosmProposition(p)):isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isHealth?supportsBodilyHealthSynthesisProposition:isCommunity?supportsCommunityActivitySynthesisProposition:supportsDifficultyPattern;
  for(const n of numbers){
-  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:supportsDifficultyPattern,supported=!!e&&arr(e._supporting_propositions).some(supportFn);
+  const e=sources[n-1],supporting=arr(e?._supporting_propositions).length?arr(e._supporting_propositions):arr(e?.response_propositions);
+  const supported=!!e&&(supporting.some(supportFn)||((isHealth||isCommunity||isHumanMicrocosm)&&arr(e.response_propositions).some(supportFn)));
   const derived=!!e&&isDerived(e);
   if(!e||!supported||!e.evidence_family_id)unsupported.push(n);
   else if(e._independent_witness!==false&&!derived)families.add(String(e.evidence_family_id));
   else nonIndependent.push(n);
  }
- const minNumbers=isDailyRoutine?3:isTzedakah?3:2,minIndependentFamilies=isDailyRoutine?1:isTzedakah?3:2;
- const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=3&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
+ const minNumbers=isHumanMicrocosm?3:isHealth?4:isDailyRoutine?3:isTzedakah?3:2;
+ const minIndependentFamilies=isHumanMicrocosm?1:isHealth?3:isDailyRoutine?1:isTzedakah?3:2;
+ const minClaims=isHumanMicrocosm?3:isCommunity?2:3;
+ const claims=Array.isArray(s.claims)?s.claims:[];
+ const claimLocatorsValid=claims.length>=minClaims&&claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x&&x.locator&&c.source_numbers.includes(x.source_number)));
  const dailyClaimsValid=!isDailyRoutine||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
  const tzedakahClaimsValid=!isTzedakah||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
- const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid;
- return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,non_independent_source_numbers:nonIndependent,attribution:s.attribution||null};
+ const healthClaimsValid=!isHealth||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
+ const communityClaimsValid=!isCommunity||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
+ const humanClaimsValid=!isHumanMicrocosm||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
+ const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid&&healthClaimsValid&&communityClaimsValid&&humanClaimsValid;
+ return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,non_independent_source_numbers:nonIndependent,attribution:s.attribution||null,human_microcosm_claims_valid:humanClaimsValid};
 }
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}
 

@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-13",
+  "last_updated": "2026-11-14",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -31,9 +31,9 @@
       "Indexed": 1144,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 799,
-    "content_verified_unique_sources": 796,
-    "answer_eligible_propositions": 2627
+    "answer_eligible_unique_sources": 854,
+    "content_verified_unique_sources": 851,
+    "answer_eligible_propositions": 2757
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -68,7 +68,8 @@
     "www.chabad.org is host-blocked after HTTP 403 responses on the 12-reference GitHub acquisition attempt (2026-10-15 onward). data/acquisition/state.json now marks this host permanent_block; the hourly script must skip network requests and rely on manual public web search or another authorized source.",
     "AID 4666284 text was inspected through Pnimi's secondary index of chabadlibrary.org; its pipeline status remains Parsed, and it is a member of the existing Shanghai Evidence Family, not a new independent corroborating family.",
     "On 2026-11-13, twelve attempted English Sicha pages returned internal errors and twelve other item pages exposed rewritten summary shells; ten accessible Hebrew publisher-body alternatives were inspected instead. No access controls were bypassed.",
-    "2026-11-13 batch 074: four attempted item pages (AIDs 5413764, 5054497, 4754352, 4666220) now resolve to rewritten summary shells without source text; they remain excluded. The runner-side HTTP 403 crawler was not retried."
+    "2026-11-13 batch 074: four attempted item pages (AIDs 5413764, 5054497, 4754352, 4666220) now resolve to rewritten summary shells without source text; they remain excluded. The runner-side HTTP 403 crawler was not retried.",
+    "Current public-open recheck of 15 batch-079 AIDs returned summary shells; no new text was inferred or added from them. Three additional pages (4928948, 4812597, 4666220) also returned shells."
   ],
   "next_work": [
     "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
@@ -80,56 +81,61 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled_pending_commit",
+    "status": "reconciled",
     "source": "data/public-metrics.json",
-    "generated": "2026-11-13",
-    "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
-    "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
+    "generated": "2026-11-14",
+    "reconciliation_commit": "fb5fb9f6565373e60bc3a3b3ea3a0fbbdedaf6bd",
+    "search_index_refresh_commit": "fb5fb9f6565373e60bc3a3b3ea3a0fbbdedaf6bd",
     "answer_readiness": {
       "before": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
-      },
-      "expected_after": {
-        "answer_eligible_unique_sources": 804,
-        "content_verified_unique_sources": 801,
-        "answer_eligible_propositions": 2654
-      },
-      "actual_after": {
         "answer_eligible_unique_sources": 799,
         "content_verified_unique_sources": 796,
         "answer_eligible_propositions": 2627
       },
+      "expected_after": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
+      "actual_after": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
       "actual_delta": {
-        "answer_eligible_unique_sources": 7,
-        "content_verified_unique_sources": 7,
-        "answer_eligible_propositions": -3
+        "answer_eligible_unique_sources": 55,
+        "content_verified_unique_sources": 55,
+        "answer_eligible_propositions": 130
       },
       "reconciliation_variance": {
-        "answer_eligible_unique_sources": -5,
-        "content_verified_unique_sources": -5,
-        "answer_eligible_propositions": -27
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 0
       }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_commit_bound_run",
+      "run_status": "pending_pr_rerun",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
-      "latest_saved_report_passed": null,
-      "latest_saved_report_regression_cases": null,
+      "latest_saved_report_passed": false,
+      "latest_saved_report_regression_cases": [
+        "human microcosm direct proposition retrieval",
+        "researcher-mode cross-family synthesis and non-equivalence",
+        "claim-level source locators",
+        "translation/Evidence Family deduplication"
+      ],
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
       "pull_request_run_id": null,
-      "note": "The item-level reconciliation audit confirms seven genuinely new batch-074 AIDs, all selected as answer-eligible in seven distinct Evidence Families. AID 4731080 and AID 4812666 were already canonical in batches 059 and 058; duplicate batch-074 records were removed and the original families retained. Actual counts match the corrected expectation: 764→771 answer-eligible families, 761→768 content-verified families, 2,559→2,580 propositions. The readiness test now asserts seven new items, two existing rechecks, claim-level citations and researcher-mode evidence maps."
+      "note": "Batch 084 adds source bodies and the microcosm synthesis regression fix. Awaiting PR quality-gate rerun; no success claimed before CI."
     },
     "publication": {
       "status": "pending_deployment_check",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
-    "last_reconciled_at": "2026-11-13"
+    "last_reconciled_at": "2026-11-14T03:21:01+02:00"
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -165,69 +171,50 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-078",
+    "current_batch": "2026-11-14-content-batch-086",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-077",
+    "last_completed_batch": "2026-11-14-content-batch-084",
     "last_batch_summary": {
-      "batch_id": "078",
-      "reviewed_items": 14,
-      "source_bodies_inspected": 14,
-      "new_source_identities": 12,
-      "new_rebbe_letter_identities": 11,
-      "new_other_document_identities": 1,
-      "new_secretariat_document_identities": 0,
-      "new_metadata_only_identities": 0,
-      "duplicate_alias_identities": 0,
+      "batch_id": "2026-11-14-content-batch-086",
+      "source_bodies_inspected": 11,
+      "new_source_identities": 11,
+      "new_event_evidence_families": 11,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 2,
-      "new_response_propositions_added": 23,
-      "existing_response_propositions_added": 1,
-      "response_propositions_added": 24,
-      "answer_eligible_source_families_added": 12,
-      "source_languages": {
-        "Hebrew": 7,
-        "Yiddish": 4,
-        "English": 1
-      },
-      "rechecked_languages": {
-        "Hebrew": 2
+      "existing_identity_rechecks": 0,
+      "new_response_propositions": 25,
+      "existing_response_propositions_added": 0,
+      "response_propositions_added": 25,
+      "independent_new_witnesses": 0,
+      "blocked_candidate_aids": [
+        4666220,
+        5413690
+      ],
+      "alternative_sources_inspected": 11,
+      "metrics_committed_before": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
       },
       "metrics_before": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
+        "answer_eligible_unique_sources": 861,
+        "content_verified_unique_sources": 858,
+        "answer_eligible_propositions": 2773
       },
-      "metrics_after_expected": {
-        "answer_eligible_unique_sources": 804,
-        "content_verified_unique_sources": 801,
-        "answer_eligible_propositions": 2654
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 872,
+        "content_verified_unique_sources": 869,
+        "answer_eligible_propositions": 2798
       },
-      "metrics_after_actual": {
-        "answer_eligible_unique_sources": 799,
-        "content_verified_unique_sources": 796,
-        "answer_eligible_propositions": 2627
-      },
-      "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 12,
-        "content_verified_unique_sources": 12,
-        "answer_eligible_propositions": 24
-      },
-      "blocked_candidates": 12,
-      "status": "reconciled_with_variance",
-      "metrics_delta_actual": {
-        "answer_eligible_unique_sources": 7,
-        "content_verified_unique_sources": 7,
-        "answer_eligible_propositions": -3
-      }
+      "reconciliation_status": "pending_ci"
     },
-    "last_run_note": "Batch 078 submitted for reconciliation: 12 new public source identities across Hebrew, Yiddish and English; 23 new non-verbatim source-grounded propositions; one existing identity enriched with one proposition; two existing identities rechecked. Twelve alternative candidates redirected to navigation/summary shells and were excluded. No crawler retry, access-control bypass, scan-only verification or full-text copying. Reconciliation and content-readiness tests pending.",
-    "last_batch_blocked_count": 12,
-    "last_batch_blocked_reason": "12 candidate pages redirected to summary/navigation shells: 5071144, 4783701, 5054608, 5071147, 4754642, 5100603, 4812647, 4812666, 5100244, 5100662, 4831207, 5357153. They were excluded; alternative public item-level bodies were inspected in the same run.",
+    "last_run_note": "Batch 086: 11 public publisher bodies inspected; 11 new source identities and 11 event/document Evidence Families, plus one metadata-only collection-link enrichment of existing AID 1888988, with 25 non-verbatim source-grounded propositions. Eight records are secretary-signed and cannot be attributed to the Rebbe; two are publisher-presented Rebbe letters and one is a partial publisher-attributed excerpt. AIDs 4666220 and 5413690 redirected to summary shells; 11 accessible alternatives were inspected. No crawler retry, access-control bypass or full-text copying. Batch 085 and 086 remain pending CI; committed answer-readiness baseline remains 854/851/2757.",
+    "last_batch_blocked_count": 2,
+    "last_batch_blocked_reason": "AIDs 4666220 and 5413690 redirected to rewritten Torah-texts summary shells without inspectable letter bodies. No content was inferred; eleven alternative public publisher bodies were inspected in the same run.",
     "next_work": [
-      "Continue manual inspection of 8–15 accessible primary-source bodies per run, expanding to Yiddish and English and to distinct documentary classes where public bodies are available.",
-      "Extend claim-level multi-source synthesis and researcher-mode evidence maps to additional high-priority topics, preserving item-local context and limitations.",
-      "Keep inaccessible summary/navigation shells excluded and use alternative public publisher items rather than retrying the blocked crawler.",
-      "Maintain the existing hourly cron and verify every batch through reconciliation, content-readiness tests and Pages deployment."
+      "Run the PR quality gate after the locator-versus-content assertion correction; do not merge until it passes.",
+      "After merge, allow the deterministic reconcile-metrics workflow to rebuild public-search-index.json, public-metrics.json and project-state.json from the inspected item records.",
+      "Verify answer_eligible_unique_sources and content_verified_unique_sources against the reconciled Evidence Family index; do not claim projected counts as actual.",
+      "Check the main Actions runs and the published GitHub Pages deployment; keep the hourly schedule and crawler restrictions unchanged."
     ],
     "last_reconciliation": {
       "batch_id": "078",
@@ -631,5 +618,14 @@
       },
       "reconciliation_status": "reconciled_with_variance"
     }
+  },
+  "last_reconciled_at": "2026-11-14T03:21:01+02:00",
+  "quality_gate": {
+    "run_status": "pending_pr_rerun",
+    "latest_saved_report_passed": false,
+    "note": "Batch 085–086 content and the locator/content regression correction are on PR #15; await a fresh passing PR quality-gate run before merge."
+  },
+  "publication": {
+    "status": "pending_deployment_check"
   }
 }
