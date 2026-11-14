@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261113-batch078-source-locators-topic-fix';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch079-home-unity-aliases';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -13,6 +13,8 @@ const TOPIC_ALIASES={
   'דאגה':['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],
+  'חינוך הבית והכנסת השכינה':['הבית היהודי','חינוך הבית','הכנסת השכינה לבית','עבודת ה׳ בבית','חינוך הילדים בבית','תפקיד האישה בבית','נשי ובנות חב״ד','Jewish home','Jewish home education',"women's role in the Jewish home"],
+  'אחדות בלימוד תורה':['אחדות בלימוד תורה','קירוב לבבות בין לומדי תורה','שבת אחים גם יחד','ויחן שם ישראל','אחדות לקבלת התורה','לימוד תורה באחדות','unity among Torah learners','brotherly unity in Torah study'],
   'פרנסה':['פרנסה','עסק','livelihood','business','parnassa'],
   'צדקה לאורך השנה והקצאת תרומות':['צדקה לאורך השנה','צדקה','מעות חיטים','מעשר','חומש','תרומה','תרומות','חלוקת תרומות','הקופה הכללית','לקופה הכללית','קופה כללית','קרובים','קרוביהם','ישיבת תורת אמת','תרומה לישיבה','נדבה','בניית ביתם','בית נאמן','tzedakah','charity','general charity fund','donation to yeshiva','home-building donation'],
   'התמודדות עם קשיים ומכשולים':['קשיים ומכשולים','התמודדות עם קשיים ומכשולים','מכשולים וקשיים','קשיים','קשיי','קושי','מכשול','מכשולים','התמודדות','תמודדות','אתגר','אתגרים','קשיים בתחילת דרך חדשה','כל ההתחלות קשות','קשיים בתחילת הדרך','מכשולים בדרך','התגברות על קשיים','אתגרים בדרך','difficulties','difficulty','obstacles','obstacle','challenges','challenge','overcoming difficulties'],
