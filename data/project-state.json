@@ -74,15 +74,14 @@
     "Lag BaOmer youth queries now fail closed until an event-specific source body for the 1956 campaign is inspected; event metadata and unrelated letters are not substitutes."
   ],
   "next_work": [
-    "Complete canonical reconciliation for batches 081 and 082; verify answer-eligible families and proposition counts from the generated public-search index.",
-    "Run the full answer-quality, content-readiness, citation-integrity and question-specificity suites against the exact main commit.",
-    "Inspect Hebrew/Yiddish original-language witnesses for the translated English letters where a public, authorized body is available; join them to existing Evidence Families rather than counting translations independently.",
-    "Find an inspectable source body or transcript for the 1956 Lag BaOmer youth campaign; until then keep that query unanswerable.",
-    "Continue exploring other document types only where the source body or recording transcript can be inspected; metadata-only records remain outside answer evidence."
+    "Reconcile batches 083–084 on the PR branch; verify 842 answer_eligible_unique_sources, 831 content_verified_unique_sources and 2,739 answer_eligible_propositions without promoting Parsed sources to Verified.",
+    "Run test_content_readiness.mjs, answer-quality, synthesis, integrity, specificity and write-safety gates; correct any retrieval/citation regressions before merge.",
+    "Merge the approved PR to main only after all required checks pass; then verify the reconciliation workflow, hourly workflow and GitHub Pages publication.",
+    "Continue source-level expansion across Hebrew, Yiddish and English and additional document types; retain blocked candidates without propositions and link parallel translations/publications to the same Evidence Family."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciliation_pending_after_batch_083",
+    "status": "reconciliation_pending_after_batch_084",
     "source": "data/public-metrics.json",
     "generated": "2026-11-14",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -94,25 +93,27 @@
         "answer_eligible_propositions": 2706
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 834,
+        "answer_eligible_unique_sources": 842,
         "content_verified_unique_sources": 831,
-        "answer_eligible_propositions": 2723
+        "answer_eligible_propositions": 2739
       },
       "actual_after": null,
       "reconciliation_status": "pending",
-      "reconciliation_variance": null
+      "reconciliation_variance": null,
+      "variance": null,
+      "note": "Batches 083–084 are in the open development PR. Batch 084 now contains eight source-text-inspected Hebrew letter identities (five full published texts accessed through Pnimi's ChabadLibrary index and three publisher search-result excerpts), 16 non-verbatim source-grounded propositions, and three additional blocked metadata-only candidates. Expected after reconciliation: 842 answer-eligible unique Evidence Families, 831 content-verified unique sources, 2,739 answer-eligible propositions. The eight new sources remain Parsed, not Verified."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "awaiting_corrected_batch_083_pull_request_gate",
+      "run_status": "awaiting_batch_083_084_final_gate_after_retrieval_fixes",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 083 was deduplicated against existing AID 5100299 in batch 058; the corrected batch and proposition-first retrieval regression are undergoing the full readiness gate."
+      "note": "Final gate must cover the Tanya-project single-letter retrieval and the two-level teshuvah multi-family query, plus source integrity, claim-level citations, and researcher mode. No crawler retry."
     },
     "publication": {
       "status": "pending_deployment_check",
