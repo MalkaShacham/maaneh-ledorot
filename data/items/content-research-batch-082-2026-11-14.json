@@ -11,10 +11,10 @@
   "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
   "existing_identities_canonicalized": 0,
-  "new_response_propositions": 24,
+  "new_response_propositions": 22,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 25,
-  "answer_eligible_source_families_added": 11,
+  "total_new_paraphrase_entries": 23,
+  "answer_eligible_source_families_added": 10,
   "source_languages": [
     "English"
   ],
@@ -130,21 +130,13 @@
     "answer_eligible_propositions": 2684
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 830,
-    "content_verified_unique_sources": 827,
-    "answer_eligible_propositions": 2709
+    "answer_eligible_unique_sources": 828,
+    "content_verified_unique_sources": 825,
+    "answer_eligible_propositions": 2704
   },
-  "metrics_actual_after": {
-    "answer_eligible_unique_sources": 829,
-    "content_verified_unique_sources": 826,
-    "answer_eligible_propositions": 2706
-  },
-  "reconciliation_variance": {
-    "answer_eligible_unique_sources": -1,
-    "content_verified_unique_sources": -1,
-    "answer_eligible_propositions": -3
-  },
-  "reconciliation_status": "reconciled_with_variance",
+  "metrics_actual_after": null,
+  "reconciliation_variance": null,
+  "reconciliation_status": "pending_reconciliation_after_family_dedup",
   "deduplication_check": {
     "new_aids_unique": true,
     "new_source_urls_unique": true,
@@ -154,7 +146,14 @@
     "translations_added": 7,
     "translations_counted_as_independent_witnesses": 0,
     "scan_only_verification_used": 0,
-    "checked_against": "Current content-review queue; available content-research batches 055–081; bulk-indexed inventories dated 2026-09-24 through 2026-09-27. AID 1858362 was found in batch 070 and enriched in place. Full reconciliation across every canonical item file remains authoritative."
+    "checked_against": "Current content-review queue; available content-research batches 055–081; bulk-indexed inventories dated 2026-09-24 through 2026-09-27. AID 1858362 was found in batch 070 and enriched in place. Full reconciliation across every canonical item file remains authoritative.",
+    "new_source_identities": 11,
+    "new_answer_eligible_families": 10,
+    "linked_translation_aliases": [
+      2276672
+    ],
+    "duplicate_family_mapping": "AID 2276672 -> torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+    "proposition_deduplication": "Two translated propositions from AID 2276672 removed from answer-evidence counts because the Hebrew AID 2989328 already covers the same source content."
   },
   "limitations": [
     "All 11 new identities are English publisher pages; no new Hebrew or Yiddish identity was added in this batch.",
@@ -1018,32 +1017,33 @@
       "language": "English",
       "original_language": null,
       "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity-Particularly-for-Yeshivah-Students.htm",
-      "pipeline_status": "Verified",
-      "status": "Verified",
-      "canonical_status": "Verified",
+      "pipeline_status": "Linked",
+      "status": "Linked",
+      "canonical_status": "Linked",
       "context_status": "complete",
-      "verification_status": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–329. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי לא נבדק; האימות חל על התרגום ועל הערות השוליים המפורסמים.",
-      "has_content_evidence": true,
+      "verification_status": "גוף התרגום נבדק באצווה 082; בבדיקת דדופליקציה מ-14.11.2026 הותאם למשפחת המקור העברי AID 2989328. לא נספר כעד עצמאי ולא נשמרו פרופוזיציות כפולות.",
+      "has_content_evidence": false,
       "summary_researcher": "מכתב מתורגם לתלמידי ישיבות המטיל עליהם אחריות להוביל בצדקה רוחנית, לקרב יהודים לתורה ולפעול להבטחת חינוך יהודי לילדים ולמתבגרים.",
-      "response_propositions": [
-        "המכתב מטיל על תלמידי ישיבות אחריות להוביל בפעילות של צדקה רוחנית — לקרב מי שזקוקים לכך לתורה ולחזק את מי שזקוקים לתמיכה.",
-        "כאשר מצווה מסוימת אינה יכולה להתבצע בידי אחרים, הלימוד עשוי להידחות זמנית כדי לקיים את המצווה; לצד העבודה האישית נדרשת פעילות רחבה להבטחת חינוך יהודי לילדים ולמתבגרים."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org/TheRebbe.org, AID 2276672, body lines 272–287.",
-        "Chabad.org/TheRebbe.org, AID 2276672, body lines 282–287."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
+      "response_propositions": [],
+      "response_proposition_locators": [],
+      "proposition_language": null,
+      "proposition_origin": null,
       "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2276672, published English body lines 261–329.",
-      "evidence_family_id": "igrot-letter-5710-first-day-selichos-letter751-aid2276672",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "igrot-letter-5710-first-day-selichos-letter751-aid2276672",
+      "proposition_verification": null,
+      "proposition_source_locator": null,
+      "evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+      "parent_evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+      "translation_of_evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
       "independent_witness": false,
       "witness_type": "published_english_translation",
-      "relations": [],
+      "relations": [
+        {
+          "type": "same_evidence_family",
+          "target_aid": 2989328,
+          "target_id": "chabad-letter-2989328",
+          "note": "Same letter; translation is not an independent witness."
+        }
+      ],
       "taxonomy": {
         "publisher_index_terms": [],
         "research_terms": [
@@ -1060,7 +1060,7 @@
         "response_case_candidate": false
       },
       "epistemic_level": 2,
-      "notes": null,
+      "notes": " דדופליקציה: זהו תרגום של AID 2989328; התוכן כבר מכוסה בפרופוזיציות של המקור העברי ולכן הרשומה נשמרת כקישור בלבד.",
       "documented_circumstances": "מכתב מס׳ 751, ביום הראשון של סליחות תש״י, הממוען לתלמידי הישיבות.",
       "question_or_problem": "אחריות תלמידי ישיבות לעבודתם האישית ולהשפעה חינוכית על אחרים.",
       "conditions_or_qualifications": [
@@ -1069,35 +1069,35 @@
         "התרגום אינו עד עצמאי נוסף; נוסח מקורי עתידי ישויך לאותה Evidence Family."
       ],
       "audience": "תלמידי הישיבות, לפי כתובת המכתב.",
-      "primary_secondary_status": "Published English translation; derived manifestation of one underlying letter; not an independent witness; original-language text not inspected.",
-      "translation_status": "Translated by Eli Touger; the original-language text was not inspected; this is one translated manifestation of Letter No. 751.",
+      "primary_secondary_status": "Published English translation of an existing Hebrew letter; derived manifestation; no separate answer propositions retained.",
+      "translation_status": "Published English translation by Eli Touger; linked to the Hebrew letter AID 2989328 (same first day of Selichos 5710, addressees and publication reference); not an independent witness.",
       "witness_provenance": "Chabad.org/TheRebbe.org, AID 2276672, The Importance of Spiritual Charity; Particularly for Yeshivah Students; published English translation: https://www.chabad.org/therebbe/letters/default_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity-Particularly-for-Yeshivah-Students.htm",
       "witness": {
         "kind": "text",
-        "state": "published_translation",
+        "state": "published_translation_linked",
         "publisher": "Chabad.org / TheRebbe.org",
         "language": "English",
         "scope": "AID 2276672, body lines 261–329",
         "complete_partial": "complete",
-        "notes": "העמוד הוא תרגום לאנגלית; הנוסח המקורי לא נבדק. אין למנותו כעד עצמאי נוסף; כל נוסח מקביל עתידי יצורף לאותה Evidence Family."
+        "notes": "Linked to Hebrew AID 2989328; not independent; no separate propositions retained."
       },
       "provenance": {
         "authorship_status": "Chabad.org/TheRebbe.org presents the item as correspondence of the Lubavitcher Rebbe; this is publisher attribution, not independent autograph authentication.",
         "signature_status": "Original autograph/signature not independently inspected.",
         "source_witness": "Chabad.org/TheRebbe.org, AID 2276672, The Importance of Spiritual Charity; Particularly for Yeshivah Students; published English translation: https://www.chabad.org/therebbe/letters/default_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity-Particularly-for-Yeshivah-Students.htm",
-        "transmission_type": "Published English translation; derived from one underlying letter.",
-        "textual_status": "Published English body lines 261–329 inspected; original-language text not inspected.",
+        "transmission_type": "Published English translation by Eli Touger; linked to the Hebrew source AID 2989328; not an independent witness.",
+        "textual_status": "English translation body inspected in batch 082; its unique content propositions are already represented by the Hebrew source and are not separately counted.",
         "editorial_scope": "רק תמציות מחקר לא-מילוליות ומוגבלות בעברית נשמרו; לא הועתק טקסט מוגן במלואו.",
-        "verification_status": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–329. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי לא נבדק; האימות חל על התרגום ועל הערות השוליים המפורסמים.",
+        "verification_status": "גוף התרגום נבדק באצווה 082; בבדיקת דדופליקציה מ-14.11.2026 הותאם למשפחת המקור העברי AID 2989328. לא נספר כעד עצמאי ולא נשמרו פרופוזיציות כפולות.",
         "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity-Particularly-for-Yeshivah-Students.htm",
         "accessed": "2026-11-14"
       },
-      "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–329. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי לא נבדק; האימות חל על התרגום ועל הערות השוליים המפורסמים.",
+      "verification_scope": "גוף התרגום נבדק באצווה 082; בבדיקת דדופליקציה מ-14.11.2026 הותאם למשפחת המקור העברי AID 2989328. לא נספר כעד עצמאי ולא נשמרו פרופוזיציות כפולות.",
       "rights_status": "copyrighted-link-only",
       "access": {
         "access_level": "open",
         "rights_status": "copyrighted-link-only",
-        "status": "public_publisher_body_opened",
+        "status": "public_publisher_body_inspected_and_linked",
         "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא-מילוליות בלבד."
       },
       "locator": {
@@ -1318,8 +1318,20 @@
   ],
   "reconciled_at": "2026-11-14T09:41:45.395144+00:00",
   "metrics_before": {
-    "answer_eligible_unique_sources": 819,
-    "content_verified_unique_sources": 816,
-    "answer_eligible_propositions": 2684
-  }
+    "answer_eligible_unique_sources": 818,
+    "content_verified_unique_sources": 815,
+    "answer_eligible_propositions": 2681
+  },
+  "new_source_families_added": 10,
+  "reconciliation_notes": "The measured pre-batch-082 baseline is 818 answer-eligible families, 815 content-verified families and 2,681 propositions after excluding batch-082 AIDs and the batch-082 enrichment to AID 1858362. The previously recorded 819/816/2684 was a projected batch-081 value, not an observed baseline. AID 2276672 is the English translation of existing Hebrew AID 2989328; it is now linked to that family and its duplicate propositions are excluded. Expected post-082 values after deduplication: 828/825/2704.",
+  "translation_deduplication": [
+    {
+      "aid": 2276672,
+      "linked_to_aid": 2989328,
+      "evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+      "independent_witness": false,
+      "answer_eligible": false,
+      "reason": "Same letter by date, addressees, body and cited Igros Kodesh/Likkutei Sichos location; translation is not an independent witness."
+    }
+  ]
 }
