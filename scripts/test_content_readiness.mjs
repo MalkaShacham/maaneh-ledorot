@@ -822,9 +822,9 @@ assert.equal(batch076Data.existing_identities_enriched,1);
 assert.equal(batch076Data.new_response_propositions,20);
 assert.equal(batch076Data.existing_response_propositions_added,1);
 assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
-assert.equal(metrics.answer_eligible_unique_sources,792,'batch-077 adds three distinct answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,789,'batch-077 adds three content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2630,'batch-077 adds eight inspected non-verbatim propositions');
+assert.equal(metrics.answer_eligible_unique_sources,803,'reconciled through batch-079: 803 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,800,'reconciled through batch-079: 800 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2635,'reconciled through batch-079: 2635 distinct inspected propositions');
 for(const aid of batch076Aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
  assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
@@ -877,4 +877,91 @@ for(const mode of ['regular','researcher']){
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
  assert(m.claims.every(c=>c.source_numbers.length));
  if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+}
+
+\n// Batch 079: four new inspected Hebrew/Yiddish witnesses, two enriched identities,
+// two additional rechecks, and claim-level synthesis across the Jewish-home cases.
+const batch079Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-079-2026-11-14.json',root)));
+const batch079Path='data/items/content-research-batch-079-2026-11-14.json';
+const batch079Aids=[5413165,5413167,5413169,5413171];
+assert.equal(batch079Data.records.length,4);
+assert.equal(new Set(batch079Aids.map(String)).size,4);
+assert.equal(new Set(batch079Data.records.map(e=>e.evidence_family_id)).size,4);
+assert.equal(batch079Data.source_bodies_inspected,8);
+assert.equal(batch079Data.new_source_identities,4);
+assert.equal(batch079Data.existing_identities_enriched,2);
+assert.equal(batch079Data.existing_identities_rechecked,4);
+assert.equal(batch079Data.new_response_propositions,7);
+assert.equal(batch079Data.existing_response_propositions_added,1);
+assert.equal(batch079Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch079Data.metrics_actual_after, {
+ answer_eligible_unique_sources:803,
+ content_verified_unique_sources:800,
+ answer_eligible_propositions:2635
+});
+assert.deepEqual(batch079Data.reconciliation_variance,{
+ answer_eligible_unique_sources:0,
+ content_verified_unique_sources:0,
+ answer_eligible_propositions:0
+});
+for(const aid of batch079Aids){
+ const e=idx.entries.find(x=>sourceAID(x)===String(aid));
+ assert(e&&e.has_content_evidence,'batch-079 AID '+aid+' must expose inspected body content');
+ assert.equal(e.status,'Verified','batch-079 AID '+aid+' must retain scoped publisher-body verification');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance,'batch-079 AID '+aid+' must retain provenance and source locator');
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.translation_of_evidence_family_id,null);
+ assert.equal(e.canonical_file,batch079Path);
+ assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
+}
+assert.equal(idx.entries.find(e=>sourceAID(e)==='5413165').language,'Yiddish');
+assert.equal(idx.entries.find(e=>sourceAID(e)==='5413169').date_precision,'approximate');
+const enriched5357409=idx.entries.find(e=>sourceAID(e)==='5357409');
+assert(enriched5357409&&enriched5357409.response_propositions.some(p=>p.includes('מזוזה נאה יותר')&&p.includes('ברכה')),'AID 5357409 must retain the additional bounded mezuzah detail');
+const linked5357571=idx.entries.find(e=>sourceAID(e)==='5357571');
+assert(linked5357571&&linked5357571.relations.some(r=>r.target_id==='chabad-letter-5413167'&&r.same_evidence_family===false),'AID 5357571 must link to the distinct evening-yeshiva letter without merging families');
+const linked5413167=idx.entries.find(e=>sourceAID(e)==='5413167');
+assert(linked5413167&&linked5413167.relations.some(r=>r.target_id==='chabad-letter-5357571'&&r.same_evidence_family===false),'AID 5413167 must expose the reciprocal cross-family research link');
+
+const homeQuestion='מה נכתב באיגרות על חינוך הבית היהודי, הכנסת השכינה לבית, חנוכת הבית וקביעת מזוזות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,homeQuestion,{mode});
+ assert(m.answerable,mode+': the distinct home-and-house-dedication witnesses must support a bounded multi-source answer');
+ assert(m.sources.some(e=>sourceAID(e)==='5413165'),mode+': the Yiddish convention letter must be retained');
+ assert(m.sources.some(e=>sourceAID(e)==='5357409'),mode+': the personal housewarming/mezuzah letter must be retained');
+ assert(m.synthesis&&m.synthesis.topic==='jewish_home_and_house_dedication',mode+': synthesis must explicitly distinguish the two contexts');
+ assert(m.synthesis.attribution==='system_synthesis_not_rebbe_quote');
+ assert(m.synthesis.claims.length>=2&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length),mode+': each synthesis claim must carry source-level locators');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every answer claim needs source numbers');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': every citation must entail its claim');
+ assert(m.context_boundary.every(x=>x.valid),mode+': context boundaries must remain witness-local');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=2, 'researcher mode must expose multiple Evidence Families');
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)), 'researcher mode must expose claim-to-witness locators');
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
+ }else assert.equal(m.research,undefined);
+}
+const yeshivaUnityQuestion='מה נכתב במכתב להנהלת רשת ישיבות הערב על אחדות בין לומדי תורה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,yeshivaUnityQuestion,{mode});
+ assert(m.answerable,mode+': the inspected evening-yeshiva letter must answer the unity question');
+ assert(m.sources.some(e=>sourceAID(e)==='5413167'));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ else assert.equal(m.research,undefined);
+}
+const tanyaMarginalQuestion='מה מבארת ההערה על הקשר בין ההתבוננות בפרק מ״ט בתניא לבין הדיבור בדברי תורה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,tanyaMarginalQuestion,{mode});
+ assert(m.answerable,mode+': the inspected marginal response must answer the bounded Tanya question');
+ assert(m.sources.some(e=>sourceAID(e)==='5413169'));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher')assert(m.research&&m.research.evidence_map.length>0);
+ else assert.equal(m.research,undefined);
 }
