@@ -7,6 +7,50 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "083",
+    "batch_path": "data/items/content-research-batch-083-2026-11-14.json",
+    "source_bodies_inspected": 9,
+    "reviewed_item_count": 9,
+    "new_source_identities": 7,
+    "new_source_families_added": 7,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 14,
+    "existing_response_propositions_added": 0,
+    "answer_eligible_source_families_added": 7,
+    "blocked_candidate_count": 2,
+    "blocked_candidates": [
+      {
+        "source_ref": "AID 2276672 direct open",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity.htm",
+        "reason": "Direct open returned Internal Error in this run. The page body had already been inspected in batch 082; the current run did not claim a new body inspection for it.",
+        "handling": "Linked the existing translation record to the accessible Hebrew AID 2989328 and independently inspected the parallel English translation AID 96097 in this run."
+      },
+      {
+        "source_ref": "Yiddish parallel of AID 2276666, Letter No. 750",
+        "source_url": null,
+        "reason": "The English page's footnote identifies a Yiddish parallel in Igros Kodesh Vol. 3, but public search did not expose a separate accessible Yiddish body or stable page URL.",
+        "handling": "No Yiddish content or independent witness was claimed; the source was not promoted. Alternative accessible English source bodies were inspected in the same run."
+      }
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 828,
+      "content_verified_unique_sources": 825,
+      "answer_eligible_propositions": 2704
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 835,
+      "content_verified_unique_sources": 832,
+      "answer_eligible_propositions": 2718
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "reconciliation_status": "pending_reconciliation",
+    "note": "Seven new source families from inspected English letter bodies; one existing Hebrew identity enriched with two non-independent English translations; one translated excerpt held for family mapping; one Yiddish parallel not publicly located."
+  },
+  "previous_manual_web_review": {
     "batch_id": "082",
     "batch_file": "data/items/content-research-batch-082-2026-11-14.json",
     "reviewed_at": "2026-11-14T11:28:14+02:00",
@@ -23,10 +67,10 @@
     "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
     "existing_identities_canonicalized": 0,
-    "new_response_propositions": 24,
+    "new_response_propositions": 22,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 25,
-    "answer_eligible_source_families_added": 11,
+    "total_new_paraphrase_entries": 23,
+    "answer_eligible_source_families_added": 10,
     "source_languages": [
       "English"
     ],
@@ -140,13 +184,13 @@
       "answer_eligible_propositions": 2684
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 830,
-      "content_verified_unique_sources": 827,
-      "answer_eligible_propositions": 2709
+      "answer_eligible_unique_sources": 828,
+      "content_verified_unique_sources": 825,
+      "answer_eligible_propositions": 2704
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
-    "reconciliation_status": "pending",
+    "reconciliation_status": "pending_reconciliation_after_family_dedup",
     "reconciled_at": null,
     "reconciliation_commit": null,
     "publication_commit": null,
@@ -170,166 +214,14 @@
       "AID 1858362 remains an excerpt, not a complete letter.",
       "AID 2190037 was not promoted because the page says it is a transcribed copy and the original is unavailable.",
       "No full copyrighted text was copied."
-    ]
-  },
-  "previous_manual_web_review": {
-    "batch_id": "081",
-    "batch_file": "data/items/content-research-batch-081-2026-11-14.json",
-    "reviewed_at": "2026-11-14T10:22:37+02:00",
-    "status": "submitted_for_reconciliation",
-    "reviewed_item_count": 10,
-    "source_bodies_inspected": 10,
-    "new_source_identities": 9,
-    "new_rebbe_letter_identities": 9,
-    "new_other_document_identities": 0,
-    "new_secretariat_document_identities": 0,
-    "new_secondary_narrative_identities": 0,
-    "new_metadata_only_identities": 0,
-    "duplicate_alias_identities": 0,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "existing_identities_canonicalized": 0,
-    "new_response_propositions": 23,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 24,
-    "answer_eligible_source_families_added": 9,
-    "source_languages": [
-      "Hebrew"
     ],
-    "language_distribution": {
-      "Hebrew": 9
-    },
-    "source_type_distribution": {
-      "published_hebrew_letter_text": 5,
-      "published_hebrew_letter_excerpt": 4
-    },
-    "new_aids": [
-      5099914,
-      5356971,
-      4812730,
-      4994319,
-      5099977,
-      5019597,
-      5019603,
-      4928859,
-      4783811
-    ],
-    "reviewed_aids": [
-      5099914,
-      5356971,
-      4812730,
-      4994319,
-      5099977,
-      5019597,
-      5019603,
-      4928859,
-      4783811,
-      4929253
-    ],
-    "existing_identity_updates": [
-      {
-        "identity": "aid:4929253",
-        "id": "chabad-letter-4929253",
-        "action": "enriched_existing_identity_in_original_batch_file",
-        "propositions_added": 1,
-        "proposition_locators": [
-          "Chabad.org AID 4929253, body lines 265–266."
-        ],
-        "note": "Added a distinct non-verbatim proposition about institutional self-assessment being distorted by self-love; same AID and Evidence Family retained."
-      }
-    ],
-    "blocked_candidate_count": 8,
-    "blocked_candidates": [
-      {
-        "aid": 5100615,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100615/jewish/page.htm",
-        "reason": "The public reader returned a navigation/summary shell rather than an inspectable item-level body; search snippets were not substituted for body inspection.",
-        "handling": "Excluded from propositions; no crawler retry and no access-control bypass. Alternative public publisher item-level bodies were inspected in this same run."
-      },
-      {
-        "aid": 5071147,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5071147/jewish/page.htm",
-        "reason": "The public reader returned a navigation/summary shell rather than an inspectable item-level body; search snippets were not substituted for body inspection.",
-        "handling": "Excluded from propositions; no crawler retry and no access-control bypass. Alternative public publisher item-level bodies were inspected in this same run."
-      },
-      {
-        "aid": 5100353,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100353/jewish/page.htm",
-        "reason": "The public reader returned a navigation/summary shell rather than an inspectable item-level body; search snippets were not substituted for body inspection.",
-        "handling": "Excluded from propositions; no crawler retry and no access-control bypass. Alternative public publisher item-level bodies were inspected in this same run."
-      },
-      {
-        "aid": 4754642,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4754642/jewish/page.htm",
-        "reason": "The public reader returned a navigation/summary shell rather than an inspectable item-level body; search snippets were not substituted for body inspection.",
-        "handling": "Excluded from propositions; no crawler retry and no access-control bypass. Alternative public publisher item-level bodies were inspected in this same run."
-      },
-      {
-        "aid": 5100225,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100225/jewish/page.htm",
-        "reason": "The public reader returned a navigation/summary shell rather than an inspectable item-level body; search snippets were not substituted for body inspection.",
-        "handling": "Excluded from propositions; no crawler retry and no access-control bypass. Alternative public publisher item-level bodies were inspected in this same run."
-      },
-      {
-        "aid": 5100277,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100277/jewish/page.htm",
-        "reason": "The public reader returned a navigation/summary shell rather than an inspectable item-level body; search snippets were not substituted for body inspection.",
-        "handling": "Excluded from propositions; no crawler retry and no access-control bypass. Alternative public publisher item-level bodies were inspected in this same run."
-      },
-      {
-        "aid": 5413047,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413047/jewish/page.htm",
-        "reason": "The public reader returned a navigation/summary shell rather than an inspectable item-level body; search snippets were not substituted for body inspection.",
-        "handling": "Excluded from propositions; no crawler retry and no access-control bypass. Alternative public publisher item-level bodies were inspected in this same run."
-      },
-      {
-        "aid": 5287567,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5287567/jewish/page.htm",
-        "reason": "The public reader returned a navigation/summary shell rather than an inspectable item-level body; search snippets were not substituted for body inspection.",
-        "handling": "Excluded from propositions; no crawler retry and no access-control bypass. Alternative public publisher item-level bodies were inspected in this same run."
-      }
-    ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
     "metrics_before": {
-      "answer_eligible_unique_sources": 810,
-      "content_verified_unique_sources": 807,
-      "answer_eligible_propositions": 2660
+      "answer_eligible_unique_sources": 818,
+      "content_verified_unique_sources": 815,
+      "answer_eligible_propositions": 2681
     },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 819,
-      "content_verified_unique_sources": 816,
-      "answer_eligible_propositions": 2684
-    },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "reconciliation_status": "pending",
-    "method": "Manual public web/search/open inspection of nine new item-level Hebrew correspondence bodies and one existing body. Search snippets were used only to locate candidates; all propositions derive from opened publisher body text. Eight summary/navigation shells were excluded and replaced by accessible alternatives.",
-    "deduplication_check": {
-      "new_aids_unique": true,
-      "new_source_urls_unique": true,
-      "new_evidence_families_unique": true,
-      "existing_identity_enrichment_in_place": true,
-      "translations_added": 0,
-      "scan_only_verification_used": 0,
-      "duplicate_alias_identities": 0,
-      "checked_against": "Current content-review queue; available content-research batches 055–060 and 067–078; batch 080; bulk-indexed inventories dated 2026-09-24 through 2026-09-27. No matching AID was found for the nine new identities in those checked sets. The full canonical reconciliation across all data/items files remains authoritative and is pending."
-    },
-    "limitations": [
-      "All nine new identities remain context_status=partial: incoming correspondence and original manuscripts were not inspected.",
-      "Four records are published excerpts rather than complete letters: AIDs 5356971, 4994319, 4928859 and 4783811. Their propositions are limited to visible passages.",
-      "AID 4928859 is explicitly marked by the publisher as completed from a secretariat copy; the copy and autograph were not inspected.",
-      "AID 5019603 is explicitly marked by the publisher as completed from a photograph; the photograph was not inspected.",
-      "AID 4994319 concerns a specific historical dispute about exhumation and esoteric Torah; it is not a halachic ruling for present cases.",
-      "AID 4783811 contains a personal historical recommendation about tefillin variants; it is not general halachic guidance.",
-      "No Yiddish or English source was added in this batch; no translation manifestation was counted as an independent witness.",
-      "Eight candidate pages redirected to summary/navigation shells and were excluded. No crawler retry or access-control bypass was used.",
-      "No full copyrighted text was copied."
-    ],
-    "reconciled_at": null,
-    "reconciliation_commit": null,
-    "publication_commit": null
+    "new_source_families_added": 10,
+    "note": "Batch 082 corrected: AID 2276672 is linked to existing Hebrew AID 2989328; two duplicate translation propositions are excluded. Baseline is the measured pre-082 index, not the projected post-081 value."
   },
   "earlier_manual_web_review": {
     "batch_id": "076",
@@ -781,13 +673,13 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "manual_web_review_note": "Batch 081: nine new Hebrew letter identities, one existing identity enriched in place, ten bodies inspected, 24 non-verbatim propositions added, eight blocked summary/navigation shells excluded. Canonical reconciliation and quality tests pending.",
+  "manual_web_review_note": "Batch 083 is pending reconciliation. Manual source inspection only; no crawler retry, no access-control bypass, no full-text copying. Translations are linked to existing families and are not counted as independent witnesses.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 810,
-    "content_verified_unique_sources": 807,
-    "answer_eligible_propositions": 2660
+    "answer_eligible_unique_sources": 828,
+    "content_verified_unique_sources": 825,
+    "answer_eligible_propositions": 2704
   },
-  "last_manual_review_at": "2026-11-14T10:22:37+02:00",
+  "last_manual_review_at": "2026-11-14T12:57:03+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
