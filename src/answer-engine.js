@@ -65,6 +65,7 @@ const TOPICS={
  'ברכת אתרוגים והדסים':['מסירת האתרוגים','אתרוג','הדסים','הדסים ואתרוג','ריבוי הדסים','ברכת חג הסוכות','etrog myrtle branches','Sukkot etrog blessing'],
  'מאמר אתה אחד':['אתה אחד','שמך אחד','גוי אחד בארץ','אחד ויחיד','Ata Echad','one and unique Israel'],
  'מסחר ולימוד יום שלם':['עיסוק במסחר בזמן לימוד בישיבה','מסחר בזמן לימוד בישיבה','עסק בזמן לימוד בישיבה','מסחר בזמן סדרי הלימוד בישיבה'],
+ 'חלוקת עבודה ותחילת פעילות':['חלוקת עבודה','חלוקת משימות','משימות מוגדרות','להמתין לאחדות מלאה','אחדות מלאה לפני התחלת פעילות','סמכות מרכזית','division of work','defined tasks','community organization'],
  'אותיות מצבה':['אותיות בולטות במצבה','אותיות שקועות במצבה','אותיות המצבה','raised tombstone letters','sunken tombstone letters'],
  'סניף תלמוד תורה ומחנה יום':['סניף תלמוד תורה שאינו מצליח','לסגור סניף תלמוד תורה','חיסול הסניף','מחנה יום','בסיס לרכישת תלמידים','failing talmud torah branch','day camp student recruitment'],
  'הגדלת כיתות ולימוד אישי':['להגדיל משתתפים בכיתות','להגדיל את מספר המשתתפים','כיתות לימוד','בלי להזניח לימוד אישי','increase class participants'],
@@ -1369,6 +1370,22 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   const retrievedUsable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding)));
   const directAuthorshipQuestion=isDirectRebbeAuthorshipQuestion(q);
   const secretariatHits=retrievedUsable.filter(isSecretariatWitness);
+  // Boundary-only fallback: if ordinary retrieval misses a secretary-signed witness,
+  // search inspected propositions by concrete query-term overlap. These records
+  // never enter "usable" and therefore cannot support a Rebbe-attributed answer.
+  if(directAuthorshipQuestion&&!secretariatHits.length){
+   const queryTerms=arr(understanding.terms).map(String).filter(term=>term.length>1);
+   const minHits=Math.min(3,queryTerms.length);
+   if(minHits>=2){
+    const fallback=index.map(e=>{
+     const props=arr(e.response_propositions);
+     const score=props.reduce((best,p)=>Math.max(best,overlap(norm(p),queryTerms)),0);
+     return{e,score};
+    }).filter(({e,score})=>isSecretariatWitness(e)&&e.status==='Verified'&&e.has_content_evidence===true&&score>=minHits)
+      .sort((a,b)=>b.score-a.score).slice(0,2).map(x=>x.e);
+    secretariatHits.push(...fallback);
+   }
+  }
   const usable=directAuthorshipQuestion?retrievedUsable.filter(e=>!isSecretariatWitness(e)):retrievedUsable;
   const families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
  const tzedakahSynthesisQuestion=understanding.query.includes('צדקה לאורך השנה')&&(['מעשר','חומש','חלוקת תרומות'].some(term=>understanding.query.includes(term)));
