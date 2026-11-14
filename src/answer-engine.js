@@ -1294,6 +1294,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
  const educationInfluenceActionQuestion=norm(q).includes('השפעה')&&norm(q).includes('חינוך')&&norm(q).includes('מעשה')&&norm(q).includes('דיבור');
  const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:educationInfluenceActionQuestion?4:answerMode==='researcher'?4:1}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
+ if(educationInfluenceActionQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  const tzedakahSynthesisQuestion=understanding.query.includes('צדקה לאורך השנה')&&(['מעשר','חומש','חלוקת תרומות'].some(term=>understanding.query.includes(term)));
   if(tzedakahSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(!usable.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
