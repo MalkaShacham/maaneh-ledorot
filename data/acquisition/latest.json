@@ -10,17 +10,17 @@
     "batch_id": "088",
     "batch_file": "data/items/content-research-batch-088-2026-11-15.json",
     "reviewed_at": "2026-11-15T01:27:52+02:00",
-    "status": "reconciled_with_variance",
-    "reconciliation_status": "reconciled_with_variance",
+    "status": "pending_reconciliation_after_duplicate_and_provenance_correction",
+    "reconciliation_status": "pending",
     "reviewed_item_count": 13,
     "source_bodies_inspected": 13,
-    "new_source_identities": 12,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 24,
+    "new_source_identities": 10,
+    "existing_identities_enriched": 3,
+    "new_response_propositions": 20,
     "existing_response_propositions_added": 1,
-    "answer_eligible_source_families_added": 12,
-    "independent_witnesses_added": 8,
-    "non_independent_presentations_added": 4,
+    "answer_eligible_source_families_added": 11,
+    "independent_witnesses_added": 7,
+    "non_independent_presentations_added": 3,
     "explicit_translation_manifestations_added": 0,
     "translations_counted_as_independent_witnesses": 0,
     "blocked_candidate_count": 10,
@@ -31,27 +31,19 @@
       "answer_eligible_propositions": 2797
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 888,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 2822
+      "answer_eligible_unique_sources": 887,
+      "content_verified_unique_sources": 853,
+      "answer_eligible_propositions": 2823
     },
-    "metrics_actual_after": {
-      "answer_eligible_unique_sources": 886,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 2818
-    },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": -2,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": -4
-    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
     "source_languages": [
       "Hebrew",
       "Yiddish",
       "English"
     ],
     "language_distribution": {
-      "Hebrew": 11,
+      "Hebrew": 9,
       "Yiddish": 1
     },
     "reviewed_body_language_distribution": {
@@ -60,7 +52,7 @@
       "English": 1
     },
     "source_type_distribution": {
-      "published_hebrew_letter_text": 9,
+      "published_hebrew_letter_text": 7,
       "published_hebrew_marginal_response_excerpt": 1,
       "published_yiddish_public_letter_excerpt": 1,
       "published_hebrew_secretariat_signed_response": 1
@@ -157,25 +149,32 @@
       "full_index_scan_available": false,
       "reconciliation_required": true,
       "source_urls_unique": true,
-      "evidence_families_unique": true,
-      "translations_added": 0,
+      "new_evidence_family_count": 10,
+      "duplicate_aliases_linked": 2,
+      "aid_1200710552_linked_to_existing_russian_family": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+      "aid_1200710429_linked_to_existing_hebrew_family": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+      "aid_1875534_promoted_to_answer_eligible": true,
       "translations_counted_as_independent_witnesses": 0,
-      "scan_only_verification_used": 0,
-      "secretariat_response_kept_separate_from_rebbe_authored_sources": true,
-      "note": "A full public-search-index scan was unavailable through the connector; the reconciliation script must confirm canonical AID/URL/ID uniqueness before counts are accepted."
+      "note": "The first reconciliation found two existing Chabad Library identities and one existing English record missing has_content_evidence=true. Both aliases are now linked; AID 1875534 is promoted after body inspection; two excerpt-only records are downgraded to Parsed."
     },
     "limitations": [
-      "Ten Chabad Library items are supported only by visible public search extracts because direct open returned no readable lines; they remain Parsed, not Verified.",
-      "No scan, autograph, incoming letter or independent manuscript was inspected for the Chabad Library items.",
+      "Eight new Chabad Library item bodies are supported only by visible public search extracts because direct open returned no readable lines; they remain Parsed, not Verified.",
+      "Two Chabad Library pages are existing identities: 1200710552 is a Hebrew free translation of a Russian original, and 1200710429 is already represented by a Hebrew record. Neither translation nor duplicate presentation is counted as a new source.",
+      "The existing 1200710429 record was downgraded to Parsed and non-independent because the page notes partial completion from a photograph that was not inspected.",
       "AID 1200980070 is noted by the publisher as completed from a copy; the copy was not inspected and the item is non-independent.",
-      "AID 1200710429 is noted by the publisher as completed in part from a photograph; the photograph was not inspected and the item is non-independent.",
       "AID 1200710132 is a marginal response on an incoming letter; it is not counted as an independent witness.",
       "AID 5413093 is signed by a secretary in the Rebbe's name and is not attributed as a direct Rebbe-authored letter.",
       "AID 5412963 is a historical 5722 response to a specific case; it is not current halachic guidance.",
-      "AID 1875534 is a published English presentation; its original-language witness and incoming letter were not inspected.",
+      "AID 1875534 is a published English presentation. Its body was inspected and its six propositions are now answer-eligible, but its original-language witness is uninspected and it is not counted as independent.",
       "No full copyrighted text was copied and no AI inference was attributed to the Rebbe."
     ],
-    "reconciled_at": "2026-11-14T23:42:25.976194+00:00"
+    "reconciled_at": null,
+    "duplicate_alias_identities": 2,
+    "existing_response_propositions_promoted_to_answer_eligible": 5,
+    "content_verified_unique_sources_added": 3,
+    "content_verified_unique_sources_downgraded": 2,
+    "content_verified_unique_sources_net_change": 1,
+    "translation_manifestations_linked": 1
   },
   "previous_manual_web_review": {
     "batch_id": "087",
@@ -695,7 +694,7 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 088: 12 new Hebrew/Yiddish source identities (10 Chabad Library search-extract items, two directly opened Chabad.org Hebrew bodies), 1 existing English AID 1875534 enriched, 13 source bodies/items inspected; 10 Chabad Library direct opens returned no readable lines and remain Parsed; no crawler retry.",
+  "manual_web_review_note": "Batch 088 corrected after reconciliation audit: two Chabad Library pages were linked to existing Evidence Families (one Hebrew translation of a Russian source, one duplicate page); AID 1875534 was promoted to answer-eligible after body/locator inspection; two excerpt-only records were downgraded to Parsed. Expected after rerun: 887 / 853 / 2,823.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 886,
     "content_verified_unique_sources": 854,
