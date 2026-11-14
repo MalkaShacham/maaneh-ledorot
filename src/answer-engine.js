@@ -1109,7 +1109,9 @@ function supportsJewishHomeSynthesisProposition(p){
 function supportsYouthEducationStudyProposition(p){
  const t=norm(p);
  const chavruta=t.includes('חברותא')&&t.includes('לימוד');
- const youth=(t.includes('בני הנוער')||t.includes('בני נוער'))&&(t.includes('פשרות')||t.includes('אמת'))&&(t.includes('מוכן')||t.includes('להוסיף')||t.includes('מזמן לזמן'));
+ const youthAudience=(t.includes('בני הנוער')||t.includes('בני נוער'))&&(t.includes('פשרות')||t.includes('אמת'));
+ const gradualPractice=t.includes('תלמיד')&&t.includes('מוכן')&&t.includes('להוסיף');
+ const youth=youthAudience||gradualPractice;
  return chavruta||youth;
 }
 function buildYouthEducationStudySynthesis(selected){
@@ -1128,7 +1130,7 @@ function buildYouthEducationStudySynthesis(selected){
    verification_scope:e.verification_scope||null,propositions});
  });
  const chavruta=basis.filter(b=>b.propositions.some(p=>norm(p.text).includes('חברותא')));
- const youth=basis.filter(b=>b.propositions.some(p=>(norm(p.text).includes('בני הנוער')||norm(p.text).includes('בני נוער'))&&(norm(p.text).includes('פשרות')||norm(p.text).includes('להוסיף'))));
+ const youth=basis.filter(b=>b.propositions.some(p=>{const t=norm(p.text);return ((t.includes('בני הנוער')||t.includes('בני נוער'))&&(t.includes('פשרות')||t.includes('אמת')))||(t.includes('תלמיד')&&t.includes('מוכן')&&t.includes('להוסיף'));}));
  const families=new Set([...chavruta,...youth].map(b=>b.evidence_family_id).filter(Boolean));
  if(!chavruta.length||!youth.length||families.size<2)return null;
  const claim=(topic,text,matches)=>{
