@@ -677,7 +677,9 @@ for(const mode of ['regular','researcher']){
 const batch066Cross='השוו בין קביעות עתים ולימוד בצוותא לבין לימוד תורה לצד עבודה במשק חקלאי.';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch066Cross,{mode});
- if(!m.answerable)console.log('STUDY_FARMING_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,query:m.understanding?.query,source_aids:m.sources?.map(e=>e.aid),source_families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,synthesis:m.synthesis,pattern_integrity:m.pattern_synthesis_integrity,comparative_coverage:m.comparative_coverage,citation_entailment:m.citation_entailment,context_boundary:m.context_boundary}));
+ assert(!m.understanding.topics.includes('לימוד וחינוך — חברותא והתקדמות הדרגתית'),mode+': the broad overlapping topic must be suppressed when both specific comparison sides are present');
+ assert.equal(m.comparative_coverage?.missing_topics?.length,0,mode+': both requested comparison sides must be represented in displayed claims');
+ assert.equal(m.pattern_synthesis_integrity?.valid,true,mode+': cross-family synthesis must pass claim/family/locator integrity');
  assert(m.answerable,mode+': two-family study/farming comparison must be answerable');
  assert(m.sources.some(e=>String(e.aid)==='5019408')&&m.sources.some(e=>String(e.aid)==='5054281'),mode+': comparison must cite both distinct letters');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
