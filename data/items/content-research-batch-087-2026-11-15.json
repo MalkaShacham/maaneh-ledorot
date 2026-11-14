@@ -6,13 +6,13 @@
   "title": "Public-source education correspondence review",
   "reviewed_item_count": 18,
   "source_bodies_inspected": 10,
-  "new_source_identities": 8,
+  "new_source_identities": 7,
   "existing_identities_enriched": 1,
-  "new_response_propositions": 17,
+  "new_response_propositions": 15,
   "existing_response_propositions_added": 1,
-  "answer_eligible_source_families_added": 8,
+  "answer_eligible_source_families_added": 7,
   "independent_witnesses_added": 0,
-  "non_independent_presentations_added": 8,
+  "non_independent_presentations_added": 7,
   "explicit_translation_manifestations_added": 2,
   "translations_counted_as_independent_witnesses": 0,
   "language_distribution": {
@@ -30,7 +30,6 @@
     "published_hebrew_free_translation_from_yiddish": 1
   },
   "new_aids": [
-    "1273962",
     "1875506",
     "1273",
     "66725",
@@ -61,9 +60,9 @@
     "answer_eligible_propositions": 2781
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 877,
+    "answer_eligible_unique_sources": 876,
     "content_verified_unique_sources": 852,
-    "answer_eligible_propositions": 2799
+    "answer_eligible_propositions": 2797
   },
   "metrics_actual_after": {
     "answer_eligible_unique_sources": 876,
@@ -71,11 +70,11 @@
     "answer_eligible_propositions": 2797
   },
   "reconciliation_variance": {
-    "answer_eligible_unique_sources": -1,
+    "answer_eligible_unique_sources": 0,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": -2
+    "answer_eligible_propositions": 0
   },
-  "reconciliation_status": "reconciled_with_variance",
+  "reconciliation_status": "reconciled",
   "reconciled_at": "2026-11-14T23:24:33.169324+00:00",
   "source_body_inspection_method": "Public web search/open of publisher item bodies and a searchable published PDF text layer; no crawler was retried.",
   "crawler_retry": false,
@@ -84,14 +83,14 @@
   "scan_only_verification_used_for_content": false,
   "records": [
     {
-      "id": "chabad-letter-1273962",
+      "id": "chabad-letter-1273962-duplicate-alias",
       "aid": "1273962",
       "title": "On Educating Small Children — Learning from the Baal Shem Tov",
       "source_class": "Written responses",
       "source_type": "published_english_letter_text",
-      "pipeline_status": "Parsed",
-      "verification_status": "Parsed",
-      "status": "Parsed",
+      "pipeline_status": "Linked",
+      "verification_status": "Linked",
+      "status": "Linked",
       "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1273962/jewish/On-Educating-Small-Children.htm",
       "date_original": "25th of Adar, 5723 [March 21, 1963]",
       "date_precision": "exact",
@@ -99,21 +98,15 @@
       "original_language": null,
       "translation_status": "Published English presentation; original-language version not inspected.",
       "context_status": "partial",
-      "has_content_evidence": true,
-      "response_propositions": [
-        "במענה לנמען העוסק בחינוך על טהרת הקודש, הנוסח מתאר את הבעל שם טוב כמי שעבד כעוזר מלמד והקדיש את עצמו לחינוך ילדים קטנים מאוד.",
-        "הנוסח מציין כי אדמו״ר הזקן וממשיכיו הציבו את החינוך בראש סדר העדיפויות; הדברים מובאים במסגרת מענה אישי לנמען העוסק בחינוך ולתלמידיו."
-      ],
+      "has_content_evidence": false,
+      "response_propositions": [],
       "proposition_language": "Hebrew research paraphrases of inspected source text",
-      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_origin": null,
       "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org / TheRebbe.org, AID 1273962, body lines 282–283. ; Chabad.org / TheRebbe.org, AID 1273962, body line 284.",
-      "response_proposition_locators": [
-        "Chabad.org / TheRebbe.org, AID 1273962, body lines 282–283.",
-        "Chabad.org / TheRebbe.org, AID 1273962, body line 284."
-      ],
-      "verification_scope": "נבדק גוף העמוד באנגלית, AID 1273962, שורות 276–295; הפרופוזיציות נשענות על שורות 282–285. מכתב הפנייה, הנוסח בשפת המקור וכתב יד לא נבדקו. שורת החתימה מציינת חתימה בידי המזכיר; אין לראות בעמוד חתימה אוטוגרפית.",
+      "proposition_verification": "not_independently_promoted",
+      "proposition_source_locator": null,
+      "response_proposition_locators": [],
+      "verification_scope": "AID 1273962 and its source URL already exist in data/items/mixed-authorized-content-2026-11-12-039.json as chabad-letter-aid-1273962, Evidence Family letter-aid-1273962-education-young-children. This batch entry is a duplicate alias only; no additional proposition or source family is counted.",
       "documented_circumstances": "מענה אישי לנמען העוסק בחינוך על טהרת הקודש; העמוד מציין הפסקה בהתכתבות וחתימה בידי המזכיר.",
       "conditions_or_qualifications": [
         "הנוסח באנגלית; שפת המקור לא נבדקה.",
@@ -122,20 +115,20 @@
         "אין להכליל ממענה אישי זה מדיניות מוסדית גורפת."
       ],
       "audience": "נמען העוסק בחינוך על טהרת הקודש ותלמידיו.",
-      "evidence_family_id": "chabad-letter-1273962",
-      "primary_secondary_status": "Published English letter presentation; original-language witness not inspected; no independent corroboration claimed.",
-      "witness_type": "published_english_letter_text_original_language_uninspected",
-      "witness_provenance": "Chabad.org / TheRebbe.org, AID 1273962; item-level body text inspected.",
+      "evidence_family_id": "letter-aid-1273962-education-young-children",
+      "primary_secondary_status": "Duplicate alias of an existing canonical English presentation; not a separate source identity or independent witness.",
+      "witness_type": "duplicate_alias",
+      "witness_provenance": "Linked to existing canonical item chabad-letter-aid-1273962 in mixed-authorized-content-2026-11-12-039.json.",
       "independent_witness": false,
       "translation_of_evidence_family_id": null,
       "rights_status": "copyrighted-source; non-verbatim paraphrases only; no full text copied",
       "provenance": {
-        "source_witness": "Chabad.org / TheRebbe.org, AID 1273962",
-        "publisher": "Chabad.org / TheRebbe.org",
-        "textual_status": "Published English presentation; original-language version not inspected.",
-        "verification_status": "source_text_inspected",
+        "source_witness": "Existing canonical item chabad-letter-aid-1273962, data/items/mixed-authorized-content-2026-11-12-039.json",
+        "authorship_status": "Existing publisher-attributed item; no new authorship claim.",
+        "textual_status": "Duplicate alias only; no new body proposition is counted.",
+        "verification_status": "linked_to_existing_identity",
         "accessed": "2026-11-15",
-        "verification_scope": "נבדק גוף העמוד באנגלית, AID 1273962, שורות 276–295; הפרופוזיציות נשענות על שורות 282–285. מכתב הפנייה, הנוסח בשפת המקור וכתב יד לא נבדקו. שורת החתימה מציינת חתימה בידי המזכיר; אין לראות בעמוד חתימה אוטוגרפית.",
+        "verification_scope": "AID 1273962 and its source URL already exist in data/items/mixed-authorized-content-2026-11-12-039.json as chabad-letter-aid-1273962, Evidence Family letter-aid-1273962-education-young-children. This batch entry is a duplicate alias only; no additional proposition or source family is counted.",
         "no_full_text_copied": true
       },
       "taxonomy": {
@@ -154,7 +147,19 @@
           "חינוך חסידי"
         ]
       },
-      "notes": "הפרפרזות נשענות על גוף הפרסום שנבדק. נוסח בשפת המקור, מכתב הפנייה וכתב יד לא נבדקו; אין לספור את ההצגה המתורגמת/המפורסמת כעד עצמאי."
+      "notes": "הפרפרזות נשענות על גוף הפרסום שנבדק. נוסח בשפת המקור, מכתב הפנייה וכתב יד לא נבדקו; אין לספור את ההצגה המתורגמת/המפורסמת כעד עצמאי.",
+      "parent_evidence_family_id": "letter-aid-1273962-education-young-children",
+      "duplicate_alias_of": "chabad-letter-aid-1273962",
+      "relations": [
+        {
+          "type": "same_document_duplicate",
+          "target_id": "chabad-letter-aid-1273962",
+          "target_evidence_family_id": "letter-aid-1273962-education-young-children",
+          "same_evidence_family": true,
+          "basis": "Same AID 1273962 and same Chabad.org source URL; the existing canonical record already has three inspected propositions."
+        }
+      ],
+      "identity_note": "Duplicate AID/URL alias linked to the existing Evidence Family; do not count as a new source or proposition."
     },
     {
       "id": "chabad-letter-1875506",
@@ -738,13 +743,15 @@
     }
   ],
   "deduplication_check": {
-    "repository_tree_files_checked": 928,
-    "new_aid_path_matches": 0,
-    "existing_aid_1875534_found": true,
+    "new_aids_unique": true,
+    "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
-    "source_urls_unique": true,
-    "duplicate_alias_identities": 0,
-    "translations_counted_as_independent_witnesses": 0
+    "duplicate_alias_identities": 1,
+    "aid_1273962_linked_to_existing_family": "letter-aid-1273962-education-young-children",
+    "existing_identity_crosslink_is_not_duplicate": true,
+    "translations_added": 2,
+    "translations_counted_as_independent_witnesses": 0,
+    "scan_only_verification_used": 0
   },
   "limitations": [
     "שבע הזהויות החדשות מ-Chabad.org הן נוסחים באנגלית; שפת המקור לא נבדקה. הן מסומנות non-independent.",
@@ -754,5 +761,6 @@
     "AID 2189943 לא קודם בגלל תעתיק ללא מקור מקורי זמין.",
     "שמונה דפי Yechidus לא סיפקו תמליל נגיש; לא נעשה ניסיון לעקוף בקרות גישה ולא חזרנו על crawler חסום.",
     "לא הועתק טקסט מלא או קטע מוגן ארוך."
-  ]
+  ],
+  "duplicate_alias_identities": 1
 }
