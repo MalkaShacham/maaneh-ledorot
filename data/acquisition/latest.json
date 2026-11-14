@@ -10,8 +10,8 @@
     "batch_id": "088",
     "batch_file": "data/items/content-research-batch-088-2026-11-15.json",
     "reviewed_at": "2026-11-15T01:27:52+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
-    "reconciliation_status": "pending",
+    "status": "reconciled_with_variance",
+    "reconciliation_status": "reconciled_with_variance",
     "reviewed_item_count": 13,
     "source_bodies_inspected": 13,
     "new_source_identities": 12,
@@ -35,8 +35,16 @@
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 2822
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 886,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 2818
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": -2,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": -4
+    },
     "source_languages": [
       "Hebrew",
       "Yiddish",
@@ -166,7 +174,8 @@
       "AID 5412963 is a historical 5722 response to a specific case; it is not current halachic guidance.",
       "AID 1875534 is a published English presentation; its original-language witness and incoming letter were not inspected.",
       "No full copyrighted text was copied and no AI inference was attributed to the Rebbe."
-    ]
+    ],
+    "reconciled_at": "2026-11-14T23:42:25.976194+00:00"
   },
   "previous_manual_web_review": {
     "batch_id": "087",
@@ -688,9 +697,9 @@
   },
   "manual_web_review_note": "Batch 088: 12 new Hebrew/Yiddish source identities (10 Chabad Library search-extract items, two directly opened Chabad.org Hebrew bodies), 1 existing English AID 1875534 enriched, 13 source bodies/items inspected; 10 Chabad Library direct opens returned no readable lines and remain Parsed; no crawler retry.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 876,
-    "content_verified_unique_sources": 852,
-    "answer_eligible_propositions": 2797
+    "answer_eligible_unique_sources": 886,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 2818
   },
   "last_manual_review_at": "2026-11-15T01:27:52+02:00",
   "runner_acquisition_policy": {

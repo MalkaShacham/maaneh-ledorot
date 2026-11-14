@@ -115,10 +115,18 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 2822
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
-  "reconciliation_status": "pending",
-  "reconciled_at": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 886,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 2818
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": -2,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": -4
+  },
+  "reconciliation_status": "reconciled_with_variance",
+  "reconciled_at": "2026-11-14T23:42:25.976194+00:00",
   "source_body_inspection_method": "Public web search/open. Ten Chabad Library item pages yielded body text in public search extracts, while direct page open returned no readable lines; those ten records remain Parsed. Two complete Hebrew Chabad.org item bodies were opened directly (AID 5412963 and AID 5413093). Existing English AID 1875534 was reopened and enriched in place. No crawler retry.",
   "crawler_retry": false,
   "access_control_bypassed": false,
