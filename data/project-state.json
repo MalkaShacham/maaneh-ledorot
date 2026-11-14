@@ -68,62 +68,55 @@
     "www.chabad.org is host-blocked after HTTP 403 responses on the 12-reference GitHub acquisition attempt (2026-10-15 onward). data/acquisition/state.json now marks this host permanent_block; the hourly script must skip network requests and rely on manual public web search or another authorized source.",
     "AID 4666284 text was inspected through Pnimi's secondary index of chabadlibrary.org; its pipeline status remains Parsed, and it is a member of the existing Shanghai Evidence Family, not a new independent corroborating family.",
     "On 2026-11-13, twelve attempted English Sicha pages returned internal errors and twelve other item pages exposed rewritten summary shells; ten accessible Hebrew publisher-body alternatives were inspected instead. No access controls were bypassed.",
-    "2026-11-13 batch 074: four attempted item pages (AIDs 5413764, 5054497, 4754352, 4666220) now resolve to rewritten summary shells without source text; they remain excluded. The runner-side HTTP 403 crawler was not retried."
+    "2026-11-13 batch 074: four attempted item pages (AIDs 5413764, 5054497, 4754352, 4666220) now resolve to rewritten summary shells without source text; they remain excluded. The runner-side HTTP 403 crawler was not retried.",
+    "2026-11-14 batch 082: seven English translation pages are derived manifestations, not independent witnesses; original-language texts were not inspected.",
+    "2026-11-14: AIDs 4872422, 4872436, 5099887, 5100351 and 4646055 resolved to rewritten summary shells; AIDs 1878120 and 1897842 returned internal errors. All were excluded; alternative public bodies were inspected in the same run.",
+    "Lag BaOmer youth queries now fail closed until an event-specific source body for the 1956 campaign is inspected; event metadata and unrelated letters are not substitutes."
   ],
   "next_work": [
-    "Continue Hebrew/Yiddish item-level inspection where public body text is accessible; keep audio-only metadata and publisher shells out of answer evidence.",
-    "Inspect remaining inaccessible AIDs 4666265, 4666267, 4666268 and 4666270 only if an inspectable public body becomes available; do not infer from titles or IDs.",
-    "Expand event-level Evidence Family links when original-language transcripts, audio or video of already indexed talks become available.",
-    "Adversarially test proposition relevance, claim-local citation entailment, context boundaries and researcher-mode witness distinctions on both answer modes.",
-    "Continue reconciling the live public-search index, metrics and content-readiness test after each content batch.",
-    "Continue public-body inspection in Hebrew/Yiddish/English and other documentation types; resolve the Shanghai letter ריג identity only if a direct/authoritative item witness is found; do not retry the blocked runner crawler."
+    "Complete canonical reconciliation for batches 081 and 082; verify answer-eligible families and proposition counts from the generated public-search index.",
+    "Run the full answer-quality, content-readiness, citation-integrity and question-specificity suites against the exact main commit.",
+    "Inspect Hebrew/Yiddish original-language witnesses for the translated English letters where a public, authorized body is available; join them to existing Evidence Families rather than counting translations independently.",
+    "Find an inspectable source body or transcript for the 1956 Lag BaOmer youth campaign; until then keep that query unanswerable.",
+    "Continue exploring other document types only where the source body or recording transcript can be inspected; metadata-only records remain outside answer evidence."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled_pending_commit",
+    "status": "reconciliation_pending_after_batch_082",
     "source": "data/public-metrics.json",
-    "generated": "2026-11-13",
+    "generated": "2026-11-14",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "answer_readiness": {
-      "before": {
-        "answer_eligible_unique_sources": 803,
-        "content_verified_unique_sources": 800,
-        "answer_eligible_propositions": 2635
+      "before_committed": {
+        "answer_eligible_unique_sources": 810,
+        "content_verified_unique_sources": 807,
+        "answer_eligible_propositions": 2660
       },
-      "expected_after": {
+      "expected_after_batch_081": {
+        "answer_eligible_unique_sources": 819,
+        "content_verified_unique_sources": 816,
+        "answer_eligible_propositions": 2684
+      },
+      "expected_after_batch_082": {
         "answer_eligible_unique_sources": 830,
         "content_verified_unique_sources": 827,
         "answer_eligible_propositions": 2709
       },
-      "actual_after": {
-        "answer_eligible_unique_sources": 829,
-        "content_verified_unique_sources": 826,
-        "answer_eligible_propositions": 2706
-      },
-      "actual_delta": {
-        "answer_eligible_unique_sources": 26,
-        "content_verified_unique_sources": 26,
-        "answer_eligible_propositions": 71
-      },
-      "reconciliation_variance": {
-        "answer_eligible_unique_sources": -1,
-        "content_verified_unique_sources": -1,
-        "answer_eligible_propositions": -3
-      }
+      "actual_after": null,
+      "reconciliation_status": "pending"
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_commit_bound_run",
+      "run_status": "awaiting_post-commit_run",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "pull_request_run_id": null,
-      "note": "The item-level reconciliation audit confirms seven genuinely new batch-074 AIDs, all selected as answer-eligible in seven distinct Evidence Families. AID 4731080 and AID 4812666 were already canonical in batches 059 and 058; duplicate batch-074 records were removed and the original families retained. Actual counts match the corrected expectation: 764→771 answer-eligible families, 761→768 content-verified families, 2,559→2,580 propositions. The readiness test now asserts seven new items, two existing rechecks, claim-level citations and researcher-mode evidence maps."
+      "note": "Batch 082 and the precision gate are committed; Actions must reconcile the exact main revision and run the full quality/readiness suite."
     },
     "publication": {
       "status": "pending_deployment_check",
@@ -165,7 +158,7 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-14-content-batch-081",
+    "current_batch": "2026-11-14-content-batch-082",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
     "last_completed_batch": "2026-11-14-content-batch-081",
     "last_batch_summary": {
@@ -590,6 +583,16 @@
         "answer_eligible_propositions": -3
       },
       "reconciliation_status": "reconciled_with_variance"
+    },
+    "last_manual_web_review": {
+      "batch_id": "082",
+      "reviewed_item_count": 12,
+      "new_source_identities": 11,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 24,
+      "existing_response_propositions_added": 1,
+      "answer_eligible_source_families_expected_after_batch_082": 830,
+      "method": "Public publisher-body inspection; 7 translated manifestations explicitly marked non-independent; AID 1858362 enriched in place."
     }
   }
 }
