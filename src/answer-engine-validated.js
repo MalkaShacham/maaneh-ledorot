@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch083-yiddish-synthesis-v3';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch083-yiddish-synthesis-v4';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -285,6 +285,7 @@ const TOPIC_ALIASES={
  'בית רבקה פריז ורישום בית ספר':['בית רבקה פריז ורישום בית ספר','ועד בית הספר לנערות בית רבקה בפריז','בית רבקה בפריז','המוסד נרשם לרשת בתי הספר','תכנית הלימודים הרגילה'],
  'חיפוש שידוך בדרכי תורה':['חיפוש שידוך','חיפוש שידוך בדרכי תורה','דרכי תורה ויראת שמים','ידידים וקרובים','shidduch search','matchmaking'],
  'קביעות עתים ולימוד בצוותא':['קביעות עתים בלימודים','קביעות עתים','זמני לימוד','לימוד בצוותא','ללמוד יחד עם אדם נוסף','לימוד יחד עם חבר','study with a partner','fixed study times'],
+ 'לימוד וחינוך — חברותא והתקדמות הדרגתית':['חברותא','לימוד בצוותא','ללמוד יחד עם אדם נוסף','מחויבות לחבר','קביעות עתים','זמני לימוד','להתקדם בהדרגה','מן הקל אל הכבד','ניסיון ראשון או שני','study partner','gradual progress','fixed study times'],
  'תורה ופרנסה במשק חקלאי':['חקלאים ובעלי משק','החקלאים מחויבים בלימוד תורה','עיסוק במשק','עבודה במשק חקלאי','לימוד תורה לצד עבודה במשק','לימוד תורה במשק','farmers and Torah study','Torah study and farming'],
  'לימוד בישיבה ופרנסה בעתיד':['להמשיך בלימודו בישיבה','להמשיך בלימוד התורה','פרנסה כשיבוא הזמן','פרנסה העתידית','בחור בן שמונה עשרה הלומד בישיבה','continue yeshiva study','future livelihood'],
  'שאלות הלכתיות והפניה לסמכות מקומית':['פירות שביעית של נכרים','שימוש בחשמל בארץ ישראל','גדולי ההוראה על המקום','גדולי ההוראה המקומיים','בירור אצל גדולי ההוראה','קביעת מזוזה במרפסת','mezuzah on a balcony','local halachic authorities'],
