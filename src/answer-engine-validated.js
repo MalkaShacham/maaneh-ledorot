@@ -372,7 +372,7 @@ function supportsBodilyHealthSynthesisProposition(p){
 }
 function supportsCommunityActivitySynthesisProposition(p){
  const b=norm(p);
- return /התועד|פארבריינגען/.test(b)||
+ return /התוו?עד|פארבריינגען/.test(b)||
   (/מקו[וה]/.test(b)&&/(הוצאות|שותפ|השתתפ)/.test(b))||
   (/באתי לגני/.test(b)&&/תלמידים/.test(b));
 }
