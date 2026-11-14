@@ -448,3 +448,8 @@ The inspected Rosh Hashanah letter AID 4831315 contains a body-grounded proposit
 ### Secretariat telegram regression scope (2026-11-14)
 
 AID 5357059 is a secretariat-transmitted telegram to Gan Israel camp directors, not the trade-and-study letter. The regression suite now tests it with a separate neutral query explicitly asking about the secretariat's telegram copy and verifies that a direct-Rebbe-authorship query returns the secretariat boundary instead of attributing the copy to the Rebbe. The trade-and-study query remains scoped to its own secretariat letter.
+
+
+### Secretariat lishma retrieval path (2026-11-14)
+
+AID 5071128 is a secretary-signed response, not an independent Rebbe-authored letter. Its two inspected propositions separately cover the transition from study not for its own sake to study for its own sake, and persistence in Torah and mitzvot without harming bodily health. A bounded query-specific relevance rule now retrieves it only for a neutral secretariat query matching those propositions; the direct-Rebbe-authorship boundary remains in force. Client cache key advanced.
