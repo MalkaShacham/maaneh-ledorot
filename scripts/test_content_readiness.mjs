@@ -1051,9 +1051,9 @@ assert.equal(new Set(batch080Data.records.map(r=>r.evidence_family_id)).size,10)
 assert.equal(new Set(batch080Data.records.map(r=>r.source_url)).size,10);
 assert.equal(batch080Data.records.filter(r=>r.language==='Hebrew').length,6);
 assert.equal(batch080Data.records.filter(r=>r.language==='English').length,4);
-assert.equal(metrics.answer_eligible_unique_sources,854,'batches 079-084 must reconcile to 854 unique answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,851,'batches 079-084 must reconcile to 851 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2757,'batches 079-084 must reconcile to 2757 distinct source-grounded propositions');
+assert.equal(metrics.answer_eligible_unique_sources,861,'batches 079-085 must reconcile to 861 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,858,'batches 079-085 must reconcile to 858 content-verified Evidence Families');
+assert.equal(metrics.answer_eligible_propositions,2773,'batches 079-085 must reconcile to 2773 distinct source-grounded propositions');
 for(const r of batch080Data.records){
  const e=idx.entries.find(x=>sourceAID(x)===String(r.aid));
  assert(e&&e.has_content_evidence,'batch-080 AID '+r.aid+' must be present with content evidence');
