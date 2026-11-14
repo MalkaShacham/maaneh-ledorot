@@ -1176,7 +1176,7 @@ function buildTzedakahSynthesis(selected){
 }
 function supportsCommunityActivityProposition(p){
  const t=norm(p);
- return /התועד|פארבריינגען/.test(t)||
+ return /התוו?עד|פארבריינגען/.test(t)||
   (/מקו[וה]/.test(t)&&/(הוצאות|שותפ|השתתפ)/.test(t))||
   (/באתי לגני/.test(t)&&/תלמידים/.test(t));
 }
@@ -1193,7 +1193,7 @@ function buildCommunityActivitySynthesis(selected){
   basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,witness_type:e.witness_type||null,provenance:e.witness_provenance||e.provenance?.source_witness||null,verification_scope:e.verification_scope||null,propositions});
  });
  const specs=[
-  ['holiday_farbrengen',t=>/התועד/.test(t)&&/(יט כסלו|חנוכה|חג הגאולה)/.test(t),'מכתב ציבורי אחד מציע לקשור התוועדויות סביב י״ט כסלו וחנוכה ללימוד חסידות ולהחלטות מעשיות.'],
+  ['holiday_farbrengen',t=>/התוו?עד/.test(t)&&/(יט כסלו|חנוכה|חג הגאולה)/.test(t),'מכתב ציבורי אחד מציע לקשור התוועדויות סביב י״ט כסלו וחנוכה ללימוד חסידות ולהחלטות מעשיות.'],
   ['student_gathering',t=>/באתי לגני/.test(t)&&/תלמידים/.test(t),'במענה להנהלת ישיבה מתוארת התוועדות עם תלמידים לאחר לימוד מאמר חסידות, ולאחריה תוספת בלימוד נגלה וחסידות.'],
   ['shared_mikveh_responsibility',t=>/מקו[וה]/.test(t)&&/(הוצאות|שותפ|השתתפ)/.test(t),'באיגרת אחרת מתוארת חלוקת מאמץ והוצאות סביב מקווה בין חברי קהילה, תוך הפניה מפורשת להוראות הרבנים המקומיים.']
  ];
@@ -1328,7 +1328,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
    const directCommunity=communityContentIndex.filter(e=>e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&isLetterEvidence(e)&&!isSecretariatWitness(e)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsCommunityActivityProposition)}));
    const communityRelevance=(a,b)=>propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score;
    const communityCategoryPicks=[
-    directCommunity.filter(e=>arr(e.response_propositions).some(p=>/התועד/.test(norm(p))&&/(יט כסלו|חנוכה|חג הגאולה)/.test(norm(p)))).sort(communityRelevance)[0],
+    directCommunity.filter(e=>arr(e.response_propositions).some(p=>/התוו?עד/.test(norm(p))&&/(יט כסלו|חנוכה|חג הגאולה)/.test(norm(p)))).sort(communityRelevance)[0],
     directCommunity.filter(e=>arr(e.response_propositions).some(p=>/באתי לגני/.test(norm(p))&&/תלמידים/.test(norm(p)))).sort(communityRelevance)[0],
     directCommunity.filter(e=>arr(e.response_propositions).some(p=>/מקו[וה]/.test(norm(p))&&/(הוצאות|שותפ|השתתפ)/.test(norm(p)))).sort(communityRelevance)[0]
    ].filter(Boolean);
