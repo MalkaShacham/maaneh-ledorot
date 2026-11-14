@@ -428,3 +428,8 @@ AID 4812708's seven existing paraphrases include the conditional statement that,
 ### Current access recheck of batch 083 (2026-11-14 01:55 +02:00)
 
 All nine direct AID URLs in batch 083 now resolve to rewritten unavailable summary/navigation shells. No claims were taken from those shells. A public Pnimi index and a transcription page for a different letter were inspected; they did not provide the same nine AID bodies. A cached search excerpt for AID 4754445 was not used as new evidence because the full open remained unavailable. The earlier batch-083 body inspections and locators remain recorded as historical inspections; this recheck records current unavailability only. No crawler retry, access-control bypass, or full-text copying occurred. AID 5071128 is tested against its actual secretariat propositions (study motivation and health) separately from AID 4854525's low-vitality question. The volume-XIII printed-index identity remains locator-only, not content evidence.
+
+
+### Community-activity retrieval correction (2026-11-14)
+
+The regression suite exposed that community propositions passed the synthesis-integrity checks but were not reaching the synthesis stage: generic lexical ranking left the three independently inspected letter families below the retrieval threshold. The retriever now applies a bounded query-specific boost only to Verified, independent, letter-text sources whose inspected propositions match the farbrengen/student-gathering/mikveh-responsibility predicate. This does not admit locator-only entries or secretariat responses as direct Rebbe authorship. The browser cache key was incremented so the published client loads the corrected engine.
