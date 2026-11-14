@@ -892,9 +892,9 @@ assert.equal(batch076Data.existing_identities_enriched,1);
 assert.equal(batch076Data.new_response_propositions,20);
 assert.equal(batch076Data.existing_response_propositions_added,1);
 assert.equal(new Set(batch076Data.records.map(e=>e.evidence_family_id)).size,10);
-assert.equal(metrics.answer_eligible_unique_sources,803,'reconciled through batch-079: 803 unique answer-eligible Evidence Families');
-assert.equal(metrics.content_verified_unique_sources,800,'reconciled through batch-079: 800 content-verified Evidence Families');
-assert.equal(metrics.answer_eligible_propositions,2635,'reconciled through batch-079: 2635 distinct inspected propositions');
+assert.equal(metrics.answer_eligible_unique_sources,845,'reconciled through batch-084: 845 unique answer-eligible Evidence Families');
+assert.equal(metrics.content_verified_unique_sources,831,'reconciled through batch-084: excerpt-only records remain Parsed, not Verified');
+assert.equal(metrics.answer_eligible_propositions,2744,'reconciled through batch-084: 2744 distinct inspected propositions');
 for(const aid of batch076Aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
  assert(e&&e.has_content_evidence,'batch-076 source '+aid+' must expose inspected content');
@@ -1360,4 +1360,49 @@ for(const mode of ['regular','researcher']){
   assert(practicalInfluence.research.citation_entailment.every(x=>x.valid));
   assert(practicalInfluence.research.context_boundary.every(x=>x.valid));
  }else assert.equal(practicalInfluence.research,undefined);
+}
+
+
+// Batch 084: publisher search-indexed Hebrew body excerpts are answer-eligible
+// only for the displayed excerpt; they remain Parsed, not content-Verified.
+const batch084Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-084-2026-11-14.json',root)));
+const batch084Path='data/items/content-research-batch-084-2026-11-14.json';
+assert.equal(batch084Data.reviewed_item_count,11);
+assert.equal(batch084Data.source_bodies_inspected,0);
+assert.equal(batch084Data.source_body_excerpts_inspected,11);
+assert.equal(batch084Data.new_source_identities,11);
+assert.equal(batch084Data.new_response_propositions,21);
+assert.equal(batch084Data.answer_eligible_source_families_added,11);
+assert.equal(batch084Data.existing_identities_enriched,0);
+assert.equal(batch084Data.blocked_candidate_count,9);
+assert.equal(batch084Data.crawler_retry,false);
+assert.equal(batch084Data.access_control_bypassed,false);
+assert.equal(batch084Data.full_text_copied,false);
+assert.equal(batch084Data.reconciliation_status,'pending');
+assert.deepEqual(batch084Data.metrics_before,{answer_eligible_unique_sources:834,content_verified_unique_sources:831,answer_eligible_propositions:2723});
+assert.deepEqual(batch084Data.metrics_expected_after,{answer_eligible_unique_sources:845,content_verified_unique_sources:831,answer_eligible_propositions:2744});
+assert.equal(batch084Data.records.length,11);
+assert.equal(new Set(batch084Data.records.map(r=>r.library_item_id)).size,11);
+assert.equal(new Set(batch084Data.records.map(r=>r.source_url)).size,11);
+assert.equal(new Set(batch084Data.records.map(r=>r.evidence_family_id)).size,11);
+assert.equal(metrics.answer_eligible_unique_sources,845);
+assert.equal(metrics.content_verified_unique_sources,831);
+assert.equal(metrics.answer_eligible_propositions,2744);
+for(const r of batch084Data.records){
+ const e=idx.entries.find(x=>x.source_url===r.source_url);
+ assert(e&&e.has_content_evidence,'batch-084 library item '+r.library_item_id+' must expose inspected publisher excerpt content');
+ assert.equal(e.status,'Parsed','excerpt-only evidence must not be promoted to Verified');
+ assert.equal(e.canonical_file,batch084Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.provenance);
+ assert(e.verification_scope.includes('קטע טקסט עברי'));
+ assert(e.verification_scope.includes('אפס שורות קריאות'));
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.translation_of_evidence_family_id,null);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert(!queue.records.some(q=>String(q.source_url||'')===r.source_url));
 }

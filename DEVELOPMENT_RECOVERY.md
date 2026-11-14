@@ -381,3 +381,11 @@ Publication verification: GitHub Pages deployment completed successfully for mai
 - The reconciliation audit now includes both `existing_identity_updates` and `existing_identity_rechecks`, so rechecked identities are represented in the item-level audit.
 - The first readiness run still missed AID 2278256 in the education/influence query after a simple top-96 retrieval increase. The query-specific path now retrieves verified proposition-matching items directly, prefers an independent witness when the same Evidence Family has one, and keeps translations explicitly non-independent. Researcher mode also uses a deeper candidate limit. The full `test_content_readiness.mjs` gate is being rerun against this correction.
 - No runner-side crawler retry was made; the HTTP 403 guard remains in place.
+
+
+## 2026-11-14 — Batch 084: Chabad Library publisher excerpts (pending reconciliation)
+
+- Reviewed 11 distinct Chabad Library item excerpts in Hebrew through public search results. Direct page opens returned zero readable lines; the review therefore used only publisher text excerpts surfaced in search, not full-page body inspection.
+- Added 11 new publisher-presented letter identities and 21 non-verbatim source-grounded paraphrases. All records are deliberately Parsed, not Verified; answer-eligible unique sources are expected to rise 834→845 while content-verified unique sources stay at 831. Expected propositions: 2,723→2,744.
+- Nine current Chabad.org letter URLs (AIDs 5100345, 5070960, 5100268, 5100499, 5100227, 5100402, 5100601, 5100203, 5100299) now redirect to rewritten summary shells; no new propositions were taken from those pages. Chabad Library search excerpts were used as an alternate public source, with the excerpt-only limitation retained.
+- No crawler retry, access-control bypass, scan-only content verification, full-text copying, schedule change, audience change, or permission change. Repository-wide canonical reconciliation and publication remain pending.
