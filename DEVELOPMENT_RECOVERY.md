@@ -443,3 +443,8 @@ The second regression showed that a candidate seed boost alone did not clear the
 ### Human-microcosm source retrieval (2026-11-14)
 
 The inspected Rosh Hashanah letter AID 4831315 contains a body-grounded proposition describing the human being as an olam katan with inanimate, vegetative, animal and speaking dimensions, and the letter's call to elevate them through Torah and mitzvot. A dedicated retrieval path now admits only Verified, independently witnessed, original-language letter records whose inspected propositions contain all four dimensions and the sanctification frame. This avoids losing the source to generic term ranking without treating a title or locator as content. Cache key advanced for the client.
+
+
+### Secretariat telegram regression scope (2026-11-14)
+
+AID 5357059 is a secretariat-transmitted telegram to Gan Israel camp directors, not the trade-and-study letter. The regression suite now tests it with a separate neutral query explicitly asking about the secretariat's telegram copy and verifies that a direct-Rebbe-authorship query returns the secretariat boundary instead of attributing the copy to the Rebbe. The trade-and-study query remains scoped to its own secretariat letter.
