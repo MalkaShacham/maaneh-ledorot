@@ -20,20 +20,20 @@
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 451,
-    "canonical_unique_item_keys": 9106,
+    "canonical_json_files": 453,
+    "canonical_unique_item_keys": 9129,
     "evidence_family_files": 55,
-    "verified_unique_item_keys": 7760,
+    "verified_unique_item_keys": 7779,
     "status_counts_unique_keys": {
-      "Verified": 7760,
+      "Verified": 7779,
       "Linked": 13,
       "Parsed": 1,
       "Indexed": 1144,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 810,
-    "content_verified_unique_sources": 807,
-    "answer_eligible_propositions": 2660
+    "answer_eligible_unique_sources": 829,
+    "content_verified_unique_sources": 826,
+    "answer_eligible_propositions": 2706
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -92,24 +92,24 @@
         "answer_eligible_propositions": 2635
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 810,
-        "content_verified_unique_sources": 807,
-        "answer_eligible_propositions": 2660
+        "answer_eligible_unique_sources": 830,
+        "content_verified_unique_sources": 827,
+        "answer_eligible_propositions": 2709
       },
       "actual_after": {
-        "answer_eligible_unique_sources": 810,
-        "content_verified_unique_sources": 807,
-        "answer_eligible_propositions": 2660
+        "answer_eligible_unique_sources": 829,
+        "content_verified_unique_sources": 826,
+        "answer_eligible_propositions": 2706
       },
       "actual_delta": {
-        "answer_eligible_unique_sources": 7,
-        "content_verified_unique_sources": 7,
-        "answer_eligible_propositions": 25
+        "answer_eligible_unique_sources": 26,
+        "content_verified_unique_sources": 26,
+        "answer_eligible_propositions": 71
       },
       "reconciliation_variance": {
-        "answer_eligible_unique_sources": 0,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 0
+        "answer_eligible_unique_sources": -1,
+        "content_verified_unique_sources": -1,
+        "answer_eligible_propositions": -3
       }
     },
     "quality_gate": {
@@ -219,235 +219,61 @@
       "Keep the hourly workflow and access boundaries unchanged; no runner-side retry of the known HTTP 403 crawler."
     ],
     "last_reconciliation": {
-      "batch_id": "080",
-      "batch_file": "data/items/content-research-batch-080-2026-11-14.json",
+      "batch_id": "082",
+      "batch_file": "data/items/content-research-batch-082-2026-11-14.json",
       "generated": "2026-11-14",
-      "batch_record_count": 8,
-      "new_source_identity_count": 7,
-      "existing_identities_enriched": 0,
-      "source_bodies_inspected": 8,
-      "answer_eligible_selected_count": 8,
-      "selected_unique_evidence_families": 8,
-      "non_independent_selected_count": 0,
+      "batch_record_count": 12,
+      "new_source_identity_count": 11,
+      "existing_identities_enriched": 1,
+      "source_bodies_inspected": 12,
+      "answer_eligible_selected_count": 12,
+      "selected_unique_evidence_families": 12,
+      "non_independent_selected_count": 7,
       "items": [
         {
-          "aid": 4929253,
+          "aid": 5221184,
           "canonical_records_found": 1,
           "records": [
             {
-              "file": "data/items/content-research-batch-080-2026-11-14.json",
-              "id": "chabad-letter-4929253",
-              "evidence_family_id": "igrot-letter-5715-18-elul-gteshpe-aid4929253",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 4,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4929253, אגרות קודש - מכתב ג’תשפ; body lines 244–294. Inspected 2026-11-14.",
-              "verification_scope": "נבדק גוף הטקסט העברי הגלוי בעמוד המו״ל Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4929253, שורות 244–294. לא נבדקו המכתב הנכנס או כתב היד המקורי; ההקשר נשאר חלקי. התמציות הן פרפרזות מחקר לא-מילוליות בלבד; לא הועתק נוסח מוגן בהיקף נרחב.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5715-18-elul-gteshpe-aid4929253",
-            "canonical_file": "data/items/content-research-batch-080-2026-11-14.json",
-            "proposition_count": 4,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4929253, אגרות קודש - מכתב ג’תשפ; body lines 244–294. Inspected 2026-11-14.",
-            "independent_witness": true
-          }
-        },
-        {
-          "aid": 5413540,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-080-2026-11-14.json",
-              "id": "chabad-letter-5413540",
-              "evidence_family_id": "igrot-letter-5724-27-adar-chet-tashatz-aid5413540",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 3,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413540, אגרות קודש - מכתב ח’תשצא; body lines 244–269. Inspected 2026-11-14.",
-              "verification_scope": "נבדק גוף הטקסט היידי הגלוי בעמוד המו״ל Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413540, שורות 244–269. לא נבדקו המכתב הנכנס או כתב היד המקורי; ההקשר נשאר חלקי. התמציות הן פרפרזות מחקר לא-מילוליות בלבד; לא הועתק נוסח מוגן בהיקף נרחב.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5724-27-adar-chet-tashatz-aid5413540",
-            "canonical_file": "data/items/content-research-batch-080-2026-11-14.json",
-            "proposition_count": 3,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413540, אגרות קודש - מכתב ח’תשצא; body lines 244–269. Inspected 2026-11-14.",
-            "independent_witness": true
-          }
-        },
-        {
-          "aid": 5413024,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-080-2026-11-14.json",
-              "id": "chabad-letter-5413024",
-              "evidence_family_id": "igrot-letter-5722-chanukah-night1-chet-eder-aid5413024",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 4,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413024, אגרות קודש - מכתב ח’עדר; body lines 288–315. Inspected 2026-11-14.",
-              "verification_scope": "נבדק גוף הטקסט היידי הגלוי בעמוד המו״ל Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413024, שורות 288–315. לא נבדקו המכתב הנכנס או כתב היד המקורי; ההקשר נשאר חלקי. התמציות הן פרפרזות מחקר לא-מילוליות בלבד; לא הועתק נוסח מוגן בהיקף נרחב.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5722-chanukah-night1-chet-eder-aid5413024",
-            "canonical_file": "data/items/content-research-batch-080-2026-11-14.json",
-            "proposition_count": 4,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413024, אגרות קודש - מכתב ח’עדר; body lines 288–315. Inspected 2026-11-14.",
-            "independent_witness": true
-          }
-        },
-        {
-          "aid": 5413389,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-080-2026-11-14.json",
-              "id": "chabad-letter-5413389",
-              "evidence_family_id": "igrot-letter-5723-korach-daled-tammuz-chet-tarm-aid5413389",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 4,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413389, אגרות קודש - מכתב ח’תרמ; body lines 280–306. Inspected 2026-11-14.",
-              "verification_scope": "נבדק גוף הטקסט היידי הגלוי בעמוד המו״ל Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413389, שורות 280–306. לא נבדקו המכתב הנכנס או כתב היד המקורי; ההקשר נשאר חלקי. המו״ל מציין שהאיגרת הוגהה על פי צילום; הצילום עצמו לא נבדק. התמציות הן פרפרזות מחקר לא-מילוליות בלבד; לא הועתק נוסח מוגן בהיקף נרחב.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5723-korach-daled-tammuz-chet-tarm-aid5413389",
-            "canonical_file": "data/items/content-research-batch-080-2026-11-14.json",
-            "proposition_count": 4,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5413389, אגרות קודש - מכתב ח’תרמ; body lines 280–306. Inspected 2026-11-14.",
-            "independent_witness": true
-          }
-        },
-        {
-          "aid": 4854607,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-080-2026-11-14.json",
-              "id": "chabad-letter-4854607",
-              "evidence_family_id": "igrot-letter-5714-12-sivan-bet-tashkhat-aid4854607",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 4,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4854607, אגרות קודש - מכתב ב’תשכט; body lines 288–325. Inspected 2026-11-14.",
-              "verification_scope": "נבדק גוף הטקסט העברי הגלוי בעמוד המו״ל Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4854607, שורות 288–325. לא נבדקו המכתב הנכנס או כתב היד המקורי; ההקשר נשאר חלקי. התמציות הן פרפרזות מחקר לא-מילוליות בלבד; לא הועתק נוסח מוגן בהיקף נרחב.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5714-12-sivan-bet-tashkhat-aid4854607",
-            "canonical_file": "data/items/content-research-batch-080-2026-11-14.json",
-            "proposition_count": 4,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4854607, אגרות קודש - מכתב ב’תשכט; body lines 288–325. Inspected 2026-11-14.",
-            "independent_witness": true
-          }
-        },
-        {
-          "aid": 4754490,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-080-2026-11-14.json",
-              "id": "chabad-letter-4754490",
-              "evidence_family_id": "igrot-letter-5711-25-iyar-aleph-kaf-aid4754490",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 3,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4754490, אגרות קודש - מכתב א’כה; body lines 288–314. Inspected 2026-11-14.",
-              "verification_scope": "נבדק גוף הטקסט היידי הגלוי בעמוד המו״ל Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4754490, שורות 288–314. לא נבדקו המכתב הנכנס או כתב היד המקורי; ההקשר נשאר חלקי. התמציות הן פרפרזות מחקר לא-מילוליות בלבד; לא הועתק נוסח מוגן בהיקף נרחב.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5711-25-iyar-aleph-kaf-aid4754490",
-            "canonical_file": "data/items/content-research-batch-080-2026-11-14.json",
-            "proposition_count": 3,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4754490, אגרות קודש - מכתב א’כה; body lines 288–314. Inspected 2026-11-14.",
-            "independent_witness": true
-          }
-        },
-        {
-          "aid": 4854828,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-080-2026-11-14.json",
-              "id": "chabad-letter-4854828",
-              "evidence_family_id": "igrot-letter-5714-23-elul-bet-tetkaf-mem-aid4854828",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 3,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4854828, אגרות קודש - מכתב ב’תתקמה*; body lines 288–316. Inspected 2026-11-14.",
-              "verification_scope": "נבדק גוף הטקסט העברי הגלוי בעמוד המו״ל Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4854828, שורות 288–316. לא נבדקו המכתב הנכנס או כתב היד המקורי; ההקשר נשאר חלקי. התמציות הן פרפרזות מחקר לא-מילוליות בלבד; לא הועתק נוסח מוגן בהיקף נרחב.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-letter-5714-23-elul-bet-tetkaf-mem-aid4854828",
-            "canonical_file": "data/items/content-research-batch-080-2026-11-14.json",
-            "proposition_count": 3,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 4854828, אגרות קודש - מכתב ב’תתקמה*; body lines 288–316. Inspected 2026-11-14.",
-            "independent_witness": true
-          }
-        },
-        {
-          "aid": 5357574,
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-073-2026-11-13.json",
-              "id": "chabad-letter-5357574",
-              "evidence_family_id": "igrot-letter-5720-9-kislev-het-resh-he-aid5357574",
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-5221184",
+              "evidence_family_id": "public-letter-5725-selichot-shemittah-aid5221184",
               "status": "Verified",
               "has_content_evidence": true,
               "proposition_count": 2,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5357574, אגרות קודש - מכתב ח’רה; body lines 288–303. Body inspected on 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לגוף הטקסט המפורסם בעמוד המו״ל Chabad.org/TheRebbe.org, AID 5357574, body lines 288–303. גוף האיגרת העיקרית נבדק בשורות 288–303; הנספח המסומן ״אגרת המזכירות״ אינו מיוחס לרבי ונרשם בנפרד; context_status=partial.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5221184, published English body lines 246–293.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 246–293. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי לא נבדק; לא הוסקו ממנו פרטים מעבר לתרגום המפורסם.",
+              "context_status": "complete"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "public-letter-5725-selichot-shemittah-aid5221184",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5221184, published English body lines 246–293.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 1888935,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-1888935",
+              "evidence_family_id": "jaffe-correspondence-5718-15-sivan-aid1888935",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1888935, published English body lines 271–305.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 271–305. האימות חל על הטקסט האנגלי המפורסם בלבד; האוטוגרף/כתב היד לא נבדק. ההקשר האישי המלא והכבל/מכתב שעליו השיב הרבי אינם זמינים בעמוד.",
               "context_status": "partial"
             }
           ],
@@ -455,25 +281,315 @@
             "present": true,
             "answer_eligible": true,
             "status": "Verified",
-            "evidence_family_id": "igrot-letter-5720-9-kislev-het-resh-he-aid5357574",
-            "canonical_file": "data/items/content-research-batch-073-2026-11-13.json",
+            "evidence_family_id": "jaffe-correspondence-5718-15-sivan-aid1888935",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
             "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org/TheRebbe.org, Kehot Publication Society, AID 5357574, אגרות קודש - מכתב ח’רה; body lines 288–303. Body inspected on 2026-11-13.",
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1888935, published English body lines 271–305.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 2504338,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-2504338",
+              "evidence_family_id": "public-letter-5750-6-tishrei-aid2504338",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 3,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2504338, published English body lines 246–293.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 246–293. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. האימות חל על התרגום המפורסם בלבד; לא נבדק הנוסח המקורי.",
+              "context_status": "complete"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "public-letter-5750-6-tishrei-aid2504338",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 3,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2504338, published English body lines 246–293.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 2216525,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-2216525",
+              "evidence_family_id": "pastoral-letter-5734-29-tishrei-aid2216525",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2216525, published English body lines 261–288.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–288. האימות חל על הטקסט האנגלי המפורסם בלבד; האוטוגרף/כתב היד לא נבדק. ההקשר הפרטי המלא והמסמך המקורי לא נבדקו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "pastoral-letter-5734-29-tishrei-aid2216525",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2216525, published English body lines 261–288.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 4586106,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-4586106",
+              "evidence_family_id": "public-letter-5733-chanukah-students-aid4586106",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4586106, published English body lines 261–309.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–309. האימות חל על הטקסט האנגלי המפורסם בלבד; האוטוגרף/כתב היד לא נבדק. האימות חל על הטקסט הציבורי שפורסם ועל הערות השוליים; האוטוגרף לא נבדק.",
+              "context_status": "complete"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "public-letter-5733-chanukah-students-aid4586106",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4586106, published English body lines 261–309.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 1939848,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-1939848",
+              "evidence_family_id": "personal-letter-5721-20-sivan-aid1939848",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 3,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1939848, published English body lines 261–295.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–295. האימות חל על הטקסט האנגלי המפורסם בלבד; האוטוגרף/כתב היד לא נבדק. ההתכתבות הנכנסת וזהות הנמען לא נבדקו; ההקשר מסומן חלקי.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "personal-letter-5721-20-sivan-aid1939848",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 3,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1939848, published English body lines 261–295.",
+            "independent_witness": true
+          }
+        },
+        {
+          "aid": 5920864,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-5920864",
+              "evidence_family_id": "igrot-letter-5703-8-iyar-letter72-aid5920864",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5920864, published English body lines 261–316.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–316. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי והנמען אינם זמינים בעמוד; האימות חל על התרגום המפורסם.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5703-8-iyar-letter72-aid5920864",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5920864, published English body lines 261–316.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 2276569,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-2276569",
+              "evidence_family_id": "igrot-letter-5710-14-elul-letter730-aid2276569",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2276569, published English body lines 261–300.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–300. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. ההקשר של ההתכתבות הנכנסת אינו זמין; האימות חל על התרגום המפורסם.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5710-14-elul-letter730-aid2276569",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2276569, published English body lines 261–300.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 2276672,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-2276672",
+              "evidence_family_id": "igrot-letter-5710-first-day-selichos-letter751-aid2276672",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2276672, published English body lines 261–329.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–329. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי לא נבדק; האימות חל על התרגום ועל הערות השוליים המפורסמים.",
+              "context_status": "complete"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5710-first-day-selichos-letter751-aid2276672",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2276672, published English body lines 261–329.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 2276666,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-2276666",
+              "evidence_family_id": "igrot-letter-5710-18-elul-letter749-aid2276666",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2276666, published English body lines 246–310.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 246–310. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי והנוסח היידי המקביל לא נבדקו; שניהם שייכים לאותה Evidence Family.",
+              "context_status": "complete"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5710-18-elul-letter749-aid2276666",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2276666, published English body lines 246–310.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 2281919,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-082-2026-11-14.json",
+              "id": "chabad-letter-2281919",
+              "evidence_family_id": "igrot-letter-5708-21-adar1-letter337-aid2281919",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 2,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2281919, published English body lines 261–312.",
+              "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–312. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. ההקשר של ההתכתבות הנכנסת חסר; האימות חל על התרגום המפורסם בלבד.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "igrot-letter-5708-21-adar1-letter337-aid2281919",
+            "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+            "proposition_count": 2,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2281919, published English body lines 261–312.",
+            "independent_witness": false
+          }
+        },
+        {
+          "aid": 1858362,
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/content-research-batch-070-2026-11-13.json",
+              "id": "chabad-letter-1858362",
+              "evidence_family_id": "pastoral-letter-5724-days-of-selichoth-1858362",
+              "status": "Verified",
+              "has_content_evidence": true,
+              "proposition_count": 3,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1858362, published excerpt body lines 268–295.",
+              "verification_scope": "נבדק גוף הקטע שפורסם בעמוד המו״ל, שורות 268–295. העמוד מסמן במפורש שמדובר בקטע ממכתב ולא במכתב המלא. התמציות הן פרפרזות מחקר לא-מילוליות בעברית; כתב היד והנוסח המקורי לא נבדקו. ההקשר נותר חלקי.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": true,
+            "answer_eligible": true,
+            "status": "Verified",
+            "evidence_family_id": "pastoral-letter-5724-days-of-selichoth-1858362",
+            "canonical_file": "data/items/content-research-batch-070-2026-11-13.json",
+            "proposition_count": 3,
+            "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1858362, published excerpt body lines 268–295.",
             "independent_witness": true
           }
         }
       ],
       "metrics_actual_after": {
-        "answer_eligible_unique_sources": 810,
-        "content_verified_unique_sources": 807,
-        "answer_eligible_propositions": 2660
+        "answer_eligible_unique_sources": 829,
+        "content_verified_unique_sources": 826,
+        "answer_eligible_propositions": 2706
       },
       "reconciliation_variance": {
-        "answer_eligible_unique_sources": 0,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 0
+        "answer_eligible_unique_sources": -1,
+        "content_verified_unique_sources": -1,
+        "answer_eligible_propositions": -3
       },
-      "reconciliation_status": "reconciled"
+      "reconciliation_status": "reconciled_with_variance"
     }
   }
 }
