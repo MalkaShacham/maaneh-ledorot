@@ -485,3 +485,8 @@ AID 5357059 is a secretariat-transmitted telegram copy. The secretariat witness 
 ### Secretariat telegram query-specific retrieval (2026-11-14)
 
 The neutral query explicitly naming the secretariat telegram and Gan Israel camp now has a bounded proposition-level retrieval path and candidate seed. It requires the inspected proposition to mention the camp, opening, and year-round impact. Direct-Rebbe-authorship questions still use the separate secretariat authorship boundary; this does not promote the telegram to an independent Rebbe-authored letter.
+
+
+### Direct authorship boundary for secretariat telegram copies (2026-11-14)
+
+A direct-Rebbe-authorship question about the Gan Israel camp can now retrieve the relevant secretariat-transmitted telegram as a boundary witness, even when the query does not itself say "secretariat" or "telegram". The answer remains non-answerable as a Rebbe-authored letter and returns the explicit secretariat authorship boundary. The neutral query about the secretariat copy remains answerable with claim-level citations.
