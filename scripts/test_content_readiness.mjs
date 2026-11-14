@@ -27,10 +27,33 @@ const batch084Data=JSON.parse(await readFile(new URL('data/items/content-researc
 assert.equal(new Set(queue.records.map(e=>e.key)).size,queue.records.length);
 assert(!queue.records.some(e=>String(e.source_url||'').includes('/aid/4666210/')),'metadata-only AID 4666210 alias must not remain pending after the content-bearing identity is verified');
 const ready=new Set(eligible.map(e=>e.key));
-for(const rec of batch084Data.records){
- const matches=idx.entries.filter(e=>sourceAID(e)===String(rec.aid));
- console.log('BATCH084_INDEX_MATCH '+rec.aid+' '+JSON.stringify(matches.map(e=>({id:e.id,key:e.key,family:e.evidence_family_id,canonical_file:e.canonical_file,props:e.response_propositions?.length,status:e.status,verified:e.has_content_evidence}))));
+const batch084Path='data/items/content-research-batch-084-2026-11-14.json';
+const batch084Aids=batch084Data.records.map(r=>String(r.aid));
+assert.equal(batch084Data.records.length,7);
+assert.equal(new Set(batch084Aids).size,7);
+assert.equal(new Set(batch084Data.records.map(r=>r.evidence_family_id)).size,7);
+assert.equal(batch084Data.new_response_propositions,15);
+assert.equal(batch084Data.existing_response_propositions_added,1);
+assert.equal(batch084Data.existing_identity_updates.length,1);
+assert.equal(batch084Data.existing_identity_rechecks.length,1);
+assert(!batch084Aids.includes('5071052'),'AID 5071052 must remain in its existing batch-071 identity, not be duplicated');
+for(const aid of batch084Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-084 AID '+aid+' must have exactly one indexed identity');
+ const e=matches[0];
+ assert(e.has_content_evidence,'batch-084 AID '+aid+' must be answer eligible');
+ assert.equal(e.canonical_file,batch084Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.evidence_family_id&&e.independent_witness!==false);
 }
+const rechecked5071052=idx.entries.find(e=>sourceAID(e)==='5071052');
+assert(rechecked5071052&&rechecked5071052.canonical_file==='data/items/content-research-batch-071-2026-11-13.json');
+const enriched5071116=idx.entries.find(e=>sourceAID(e)==='5071116');
+assert(enriched5071116&&enriched5071116.response_propositions.some(p=>p.includes('חינוכם ולעתידם של ילדים וילדות יהודים רבים')));
 const batch078Path='data/items/content-research-batch-078-2026-11-13.json';
 const batch078Aids=batch078Data.records.map(r=>String(r.aid));
 assert.equal(batch078Data.records.length,12);
