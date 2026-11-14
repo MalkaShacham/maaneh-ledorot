@@ -7,9 +7,9 @@
   "collection": "Igrot Kodesh",
   "source_authority": "Chabad.org/TheRebbe.org; Kehot Publication Society",
   "review_method": "Manual public web search/open inspection of publisher pages. Search results were used to locate records; source text was promoted only where the publisher body was opened and inspected with stable body-line locators. No crawler retry, no access-control bypass and no full-text copying.",
-  "records_reviewed": 8,
-  "reviewed_item_count": 8,
-  "source_bodies_inspected": 8,
+  "records_reviewed": 9,
+  "reviewed_item_count": 9,
+  "source_bodies_inspected": 9,
   "new_source_identities": 6,
   "new_rebbe_letter_identities": 5,
   "new_other_document_identities": 0,
@@ -17,21 +17,23 @@
   "new_secondary_narrative_identities": 0,
   "new_metadata_only_identities": 0,
   "duplicate_alias_identities": 0,
-  "existing_identities_enriched": 1,
+  "existing_identities_enriched": 2,
   "existing_identities_rechecked": 1,
   "existing_identities_canonicalized": 0,
   "new_response_propositions": 15,
-  "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 16,
+  "existing_response_propositions_added": 4,
+  "total_new_paraphrase_entries": 19,
   "answer_eligible_source_families_added": 6,
   "language_distribution": {
     "Hebrew": 6
   },
   "reviewed_language_distribution": {
-    "Hebrew": 8
+    "Hebrew": 8,
+    "Yiddish": 1
   },
   "source_languages": [
-    "Hebrew"
+    "Hebrew",
+    "Yiddish"
   ],
   "source_type_distribution": {
     "published_hebrew_letter_text": 5,
@@ -729,6 +731,17 @@
       "locator": "Chabad.org/TheRebbe.org, AID 5100402, body lines 315–317.",
       "reason": "The publisher text explicitly permits the committee to publish the message appropriately; this distinct statement was absent from the existing proposition set.",
       "identity": "aid:5100402"
+    },
+    {
+      "aid": 5100601,
+      "identity": "aid:5100601",
+      "canonical_key": "aid:5100601",
+      "file": "data/items/content-research-batch-078-2026-11-13.json",
+      "action": "enriched_existing_yiddish_public_letter_in_original_batch_file",
+      "evidence_family_id": "igrot-public-letter-5719-erev-shabbat-emor-aid5100601",
+      "propositions_added": 3,
+      "locator": "Chabad.org/TheRebbe.org, AID 5100601, Yiddish body lines 300–310.",
+      "reason": "Re-opened Yiddish publisher body; added the explicit interpretation of responsibility to influence others, the urgent universal appeal for support, and the stated blessing attached to that support."
     }
   ],
   "existing_identity_rechecks": [
@@ -758,6 +771,7 @@
     5100299,
     5100227,
     5100402,
+    5100601,
     5100203
   ],
   "blocked_candidate_count": 7,
@@ -803,7 +817,7 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 835,
     "content_verified_unique_sources": 832,
-    "answer_eligible_propositions": 2722
+    "answer_eligible_propositions": 2725
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -818,11 +832,11 @@
     "existing_identity_enrichment_in_place": true,
     "translation_counted_as_independent_witness": false,
     "scan_only_verification_used": false,
-    "checked_against": "Current review queue; known batch records 057, 064–067 and 073–082; AID 5100402 and 5100203 existing records; stable AID and publisher URL.",
+    "checked_against": "Current review queue; known batch records 057, 064–067, 073–082 including batch 078 AID 5100601; AID 5100402 and 5100203 existing records; stable AID and publisher URL.",
     "exhaustive_canonical_reconciliation_pending": true,
     "notes": "The full public-search-index exceeds the GitHub connector's practical file-response size; the canonical reconciliation workflow remains the authoritative repository-wide duplicate/family check."
   },
-  "method": "Eight publisher bodies were opened and inspected: six new AIDs, one existing identity enriched, and one existing identity rechecked without adding a proposition. Seven additional candidates were excluded because opening yielded navigation/summary shells rather than source text.",
+  "method": "Nine publisher bodies were opened and inspected: six new Hebrew AIDs, two existing identities enriched in place (one Hebrew and one Yiddish), and one existing Hebrew identity rechecked without adding a proposition. Seven additional candidates were excluded because opening yielded navigation/summary shells rather than source text.",
   "limitations": [
     "All six new identities in this batch are Hebrew; no new Yiddish or English source body was promoted in this run.",
     "AID 5100345 is a secretary-signed response issued in the Rebbe's name; no autograph, dictation record or secretariat copy was inspected. It must not be described as an authenticated autograph.",
@@ -832,8 +846,12 @@
     "AID 5100227 explicitly refers the burial-transfer question to a local halachic authority; this record is not a general halachic ruling.",
     "AID 5100345 contains historical advice about speech difficulty; it is not current medical guidance.",
     "Incoming letters and full archival context were not inspected for the six new records.",
-    "No full copyrighted text was copied."
+    "No full copyrighted text was copied.",
+    "AID 5100601 is a Yiddish public letter whose publisher note says the text was completed from a photograph; the photograph itself was not inspected. The new propositions are verified only against the published Yiddish body."
   ],
   "batch_file": "data/items/content-research-batch-083-2026-11-14.json",
-  "status": "submitted_for_reconciliation"
+  "status": "submitted_for_reconciliation",
+  "existing_source_type_distribution": {
+    "published_yiddish_public_letter": 1
+  }
 }
