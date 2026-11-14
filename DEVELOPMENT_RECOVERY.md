@@ -468,3 +468,10 @@ The microcosm cross-family synthesis update advanced the core-engine import vers
 ### Short-word topic alias guard (2026-11-14)
 
 The batch-084 microcosm topic alias initially included the bare token `חי`, which can be a substring of unrelated Hebrew words such as `חירות`. The alias now relies on the longer, discriminating terms (עולם קטן, דומם, צומח, מדבר, and the English concept labels); proposition-level microcosm validation still checks all four kingdoms. A regression assertion protects the Passover-freedom query from false topic classification. Cache versions are aligned.
+
+
+### Batch 084 reconciliation and body-locator correction (2026-11-14)
+
+Batch 084 reviewed 14 public publisher bodies: nine new English-translated event Evidence Families, four existing identities enriched, and one existing identity rechecked. It added 27 propositions to new families and six to existing families; no new independent witness was added. Three existing audio families were promoted by linked English text. The English translation AID 1281934 is linked to Hebrew AID 4831315 in the same family; its two identical propositions are deduplicated against the original, not counted as additional evidence.
+
+AID 4666220 remained unavailable as a source body, so fourteen alternative public publisher pages were opened and inspected. Body-only locators were normalized across the batch; AID 1281934 was corrected to lines 288–301, AID 2507332 to lines 256–263, and AID 2507334 to lines 256–261 and 278–285. No full text was copied. Final reconciliation: answer-eligible Evidence Families 842 → 854; content-verified families 839 → 851; distinct eligible propositions 2724 → 2757.
