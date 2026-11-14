@@ -1375,7 +1375,7 @@ assert.deepEqual(acquisitionState.manual_web_review.metrics_actual_after,batch08
 assert.equal(acquisitionState.manual_web_review_history[0].batch_id,'086');
 assert.deepEqual(acquisitionState.manual_web_review_history[0].metrics_actual_after,batch086Actual);
 assert.equal(acquisitionState.manual_web_review_history[1].batch_id,'085');
-assert.equal(acquisitionState.manual_web_review_history[1].reconciliation_status,'pending_ci_reconciliation');
+assert.equal(acquisitionState.manual_web_review_history[1].reconciliation_status,'pending_ci');
 assert.equal(acquisitionState.manual_web_review_history[1].metrics_actual_after,null);
 assert.equal(acquisitionState.manual_web_review_history[2].batch_id,'084');
 assert.deepEqual(acquisitionState.manual_web_review_history[2].metrics_actual_after,batch084Actual);
