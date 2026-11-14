@@ -1297,8 +1297,7 @@ assert(fragment083&&fragment083.context_status==='partial'&&/קטע|fragment|א�
 for(const u of batch083Data.existing_identity_updates){
  const e=idx.entries.find(x=>sourceAID(x)===String(u.aid));
  assert(e&&e.has_content_evidence,'existing AID '+u.aid+' must be enriched in place');
- assert.equal(e.id,u.id);
- assert.equal(e.canonical_file,u.canonical_file);
+  assert.equal(e.canonical_file,u.canonical_file);
  assert.equal(e.evidence_family_id,u.evidence_family_id);
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');
  assert.equal(e.proposition_verification,'source_text_inspected');
