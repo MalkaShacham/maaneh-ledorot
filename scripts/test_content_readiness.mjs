@@ -24,7 +24,13 @@ for(const e of eligible){const key=String(e.evidence_family_id||e.aid||e.source_
 assert.equal(metrics.answer_eligible_unique_sources,families.size,'dashboard must count unique Evidence Families');
 assert.equal(metrics.content_verified_unique_sources,[...families.values()].filter(group=>group.some(e=>(e.canonical_status||e.status)==='Verified')).length,'content-verified metric must require at least one usable inspected Verified member per family');
 assert(metrics.content_verified_unique_sources<=metrics.answer_eligible_unique_sources,'content-verified families are a subset of answer-eligible families');
-const propositionKey=(e,p)=>[String(p).normalize('NFC').trim().replace(/\\s+/g,' ').toLocaleLowerCase(),String(e.documented_circumstances||'').normalize('NFC').trim(),String(e.conditions_or_qualifications||'').normalize('NFC').trim(),String(e.audience||'').normalize('NFC').trim()].join('|');
+const translationFamilyKeys=new Set(eligible.filter(e=>e.translation_of_evidence_family_id&&e.independent_witness===false).map(e=>String(e.evidence_family_id||e.aid||e.source_url||e.key)));
+const propositionKey=(e,p)=>{
+ const base=String(p).normalize('NFC').trim().replace(/\\s+/g,' ').toLocaleLowerCase();
+ const familyKey=String(e.evidence_family_id||e.aid||e.source_url||e.key);
+ if(translationFamilyKeys.has(familyKey))return base;
+ return [base,String(e.documented_circumstances||'').normalize('NFC').trim(),String(e.conditions_or_qualifications||'').normalize('NFC').trim(),String(e.audience||'').normalize('NFC').trim()].join('|');
+};
 const propositionCount=[...families.values()].reduce((n,group)=>n+new Set(group.flatMap(e=>(e.response_propositions||[]).map(p=>propositionKey(e,p)))).size,0);
 assert.equal(metrics.answer_eligible_propositions,propositionCount,'all distinct propositions across family members must be counted without counting aliases as independent families');
 const queue=JSON.parse(await readFile(new URL('data/content-review-queue.json',root)));
