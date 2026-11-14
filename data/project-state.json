@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-14T02:27:04+02:00",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -93,9 +93,9 @@
         "answer_eligible_propositions": 2627
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 842,
-        "content_verified_unique_sources": 839,
-        "answer_eligible_propositions": 2724
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
       },
       "actual_after": null,
       "actual_delta": null,
@@ -108,13 +108,16 @@
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": false,
       "latest_saved_report_regression_cases": [
-        "batch-018 direct-Rebbe attribution test corrected to distinguish secretary-signed response"
+        "human microcosm direct proposition retrieval",
+        "researcher-mode cross-family synthesis and non-equivalence",
+        "claim-level source locators",
+        "translation/Evidence Family deduplication"
       ],
       "commit_binding": true,
-      "evaluated_commit": "811e167700351cb10f978e68004b3bd05e05dac5",
+      "evaluated_commit": null,
       "workflow_run_id": null,
-      "pull_request_run_id": 43491380509,
-      "note": "Previous PR run failed at the batch-018 query because it treated a secretary-signed letter as direct Rebbe wording. Test and engine attribution boundary are corrected in batch-080 commit; awaiting a new run."
+      "pull_request_run_id": null,
+      "note": "Batch 084 adds source bodies and the microcosm synthesis regression fix. Awaiting PR quality-gate rerun; no success claimed before CI."
     },
     "publication": {
       "status": "pending_deployment_check",
@@ -156,60 +159,53 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-14-content-batch-082",
+    "current_batch": "2026-11-14-content-batch-084",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-078",
+    "last_completed_batch": "2026-11-14-content-batch-084",
     "last_batch_summary": {
-      "batch_id": "083",
-      "batch_file": "data/items/content-research-batch-083-2026-11-14.json",
-      "reviewed_at": "2026-11-14T01:28:47+02:00",
-      "source_bodies_inspected": 9,
-      "new_source_identities": 6,
-      "existing_identities_enriched": 3,
-      "response_propositions_added": 17,
+      "batch_id": "084",
+      "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
+      "reviewed_at": "2026-11-14T02:27:04+02:00",
+      "source_bodies_inspected": 14,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 4,
+      "existing_identity_rechecks": 1,
+      "new_response_propositions": 27,
+      "existing_response_propositions_added": 6,
+      "response_propositions_added": 33,
+      "answer_eligible_source_families_added": 9,
+      "existing_families_promoted_to_answer_eligible": 3,
       "metrics_before": {
-        "answer_eligible_unique_sources": 833,
-        "content_verified_unique_sources": 830,
-        "answer_eligible_propositions": 2707
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 842,
         "content_verified_unique_sources": 839,
         "answer_eligible_propositions": 2724
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
+      "metrics_actual_after": null,
       "status": "pending_reconciliation",
-      "current_access_recheck": {
-        "checked_at": "2026-11-14T01:55:56+02:00",
-        "aids": [
-          5019502,
-          4831629,
-          5287569,
-          4754445,
-          5071128,
-          5357059,
-          4854534,
-          5099896,
-          5357093
-        ],
-        "direct_publisher_open_result": "All nine current article_cdo URLs now resolve to rewritten unavailable summary/navigation shells; no propositions were derived from those shells.",
-        "source_bodies_rechecked": 0,
-        "new_content_claims_added": 0,
-        "alternative_source_attempted": true,
-        "alternative_source_result": "A public Pnimi Igrot Kodesh index and a transcription page for a different letter were inspected; the exact nine AID bodies were not located there. A search result for AID 4754445 exposed a cached excerpt, but its full open also resolved to an unavailable shell, so no new proposition was based on that snippet.",
-        "historical_inspection_status": "The batch-083 source_text_inspected provenance records the earlier 2026-11-14 01:28 body inspections. This later recheck records current unavailability only; it does not replace the earlier body locators or claim that the shells contain the letter text.",
-        "crawler_retried": false,
-        "access_control_bypassed": false,
-        "full_text_copied": false
-      }
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "reason": "Direct open returned rewritten summary/navigation shell; no body used."
+        }
+      ],
+      "alternative_source_attempted": true,
+      "crawler_retried": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "translation_integrity": "AID 1281934 linked to Hebrew AID 4831315 in same Evidence Family; 3 English Yechidus pages linked to existing 1991 audio families; all translations marked non-independent."
     },
-    "last_run_note": "Batch 082: ten Hebrew publisher bodies inspected; six new Evidence Families, 16 non-verbatim propositions, two existing secretariat reclassifications and two rechecks. Reconciliation is pending.",
-    "last_batch_blocked_count": 35,
-    "last_batch_blocked_reason": "Twelve audio/media pages returned no inspectable transcript body and 23 direct-open candidates returned rewritten summary/navigation shells; all were excluded and alternative public publisher bodies were inspected in the same run.",
+    "last_run_note": "Batch 084: 14 public source bodies inspected; 9 new event families, 4 existing identities enriched, 1 existing identity rechecked, and 33 new non-verbatim propositions. AID 4666220 remained a summary shell; alternative public pages were inspected. Retrieval/synthesis regression fix is included in the PR branch; reconciliation and Actions are pending.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 4666220 direct open returned a rewritten summary/navigation shell. No content was inferred or used; 14 alternative public source bodies were inspected in the same run.",
     "next_work": [
-      "Continue manual inspection of 8–15 accessible primary-source bodies per run, expanding to Yiddish and English and to distinct documentary classes where public bodies are available.",
-      "Extend claim-level multi-source synthesis and researcher-mode evidence maps to additional high-priority topics, preserving item-local context and limitations.",
-      "Keep inaccessible summary/navigation shells excluded and use alternative public publisher items rather than retrying the blocked crawler.",
-      "Maintain the existing hourly cron and verify every batch through reconciliation, content-readiness tests and Pages deployment."
+      "Run deterministic reconciliation and test_content_readiness.mjs for batch 084 and the microcosm retrieval/synthesis regression.",
+      "Merge the source/data/engine changes to main only after the quality gate passes, then verify main Actions and Pages publication.",
+      "Keep translations within their Evidence Families and do not count them as independent witnesses; seek original-language transcripts/audio only when publicly inspectable."
     ],
     "last_reconciliation": {
       "batch_id": "078",
