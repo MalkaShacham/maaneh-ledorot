@@ -392,7 +392,7 @@ export function buildAnswerModel(index,q,options={}){
   // A Lag BaOmer + youth question requires the event-specific, inspected campaign family.
   // Generic education or consolation letters and event metadata are not substitutes.
   const normalizedQuestion=norm(q);
-  const asksLagBaomerYouth=/(?:לג\\s*בעומר|lag\\s*ba\\s*omer|lag\\s*b\\s*omer)/.test(normalizedQuestion)&&/(?:נוער|נער|ילד|youth|teen|adolescent)/.test(normalizedQuestion);
+  const asksLagBaomerYouth=/(?:ל\\s*ג\\s*בעומר|לג\\s*בעומר|lag\\s*ba\\s*omer|lag\\s*b\\s*omer)/.test(normalizedQuestion)&&/(?:נוער|נער|ילד|youth|teen|adolescent)/.test(normalizedQuestion);
   const hasLagBaomerYouthWitness=(model.sources||[]).some(e=>String(e.evidence_family_id||'')==='lag-baomer-1956-outreach-campaign'&&e.has_content_evidence===true&&arr(e.response_propositions).some(p=>/(?:נוער|נער|ילד|youth|teen|adolescent)/.test(norm(p))));
   if(asksLagBaomerYouth&&!hasLagBaomerYouthWitness)model={...model,answerable:false,reason:'specific_event_evidence_missing',claims:[],answered_well:[],synthesis:undefined,insufficient_evidence:[...(model.insufficient_evidence||[]),'אין במאגר עד תוכן שנבדק המתעד את הפעולה המדויקת בל״ג בעומר עם בני נוער. מכתב כללי או מטא־נתוני אירוע אינם תחליף למקור המתעד את האירוע ואת הקהל.']};
   const synthesisIntegrity=patternSynthesisIntegrity(model);model.pattern_synthesis_integrity=synthesisIntegrity;
