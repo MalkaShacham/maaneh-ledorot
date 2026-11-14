@@ -370,22 +370,29 @@ function supportsBodilyHealthSynthesisProposition(p){
  const b=norm(p);
  return b.includes('בריאות')&&['עבודת','תורה','מצוות','רופא','תפילה','אכילה','תענית','מנוחה','כפייה','פעולות הנשמה'].some(term=>b.includes(term));
 }
+function supportsCommunityActivitySynthesisProposition(p){
+ const b=norm(p);
+ return /התועד|פארבריינגען/.test(b)||
+  (/מקו[וה]/.test(b)&&/(הוצאות|שותפ|השתתפ)/.test(b))||
+  (/באתי לגני/.test(b)&&/תלמידים/.test(b));
+}
 function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
- const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation',isHealth=s.topic==='bodily_health_and_divine_service';
+ const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation',isHealth=s.topic==='bodily_health_and_divine_service',isCommunity=s.topic==='community_gatherings_and_shared_responsibility';
  for(const n of numbers){
-  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isHealth?supportsBodilyHealthSynthesisProposition:supportsDifficultyPattern,supported=!!e&&(arr(e._supporting_propositions).some(supportFn)||(isHealth&&arr(e.response_propositions).some(supportFn)));
+  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isHealth?supportsBodilyHealthSynthesisProposition:isCommunity?supportsCommunityActivitySynthesisProposition:supportsDifficultyPattern,supported=!!e&&(arr(e._supporting_propositions).some(supportFn)||((isHealth||isCommunity)&&arr(e.response_propositions).some(supportFn)));
   const derived=!!e&&isDerived(e);
   if(!e||!supported||!e.evidence_family_id)unsupported.push(n);
   else if(e._independent_witness!==false&&!derived)families.add(String(e.evidence_family_id));
   else nonIndependent.push(n);
  }
- const minNumbers=isHealth?4:isDailyRoutine?3:isTzedakah?3:2,minIndependentFamilies=isHealth?3:isDailyRoutine?1:isTzedakah?3:2;
- const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=3&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
+ const minNumbers=isHealth?4:isDailyRoutine?3:isTzedakah?3:2,minIndependentFamilies=isHealth?3:isDailyRoutine?1:isTzedakah?3:2,minClaims=isCommunity?2:3;
+ const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=minClaims&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
  const dailyClaimsValid=!isDailyRoutine||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
  const tzedakahClaimsValid=!isTzedakah||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
  const healthClaimsValid=!isHealth||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
- const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid&&healthClaimsValid;
+ const communityClaimsValid=!isCommunity||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
+ const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid&&healthClaimsValid&&communityClaimsValid;
  return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,non_independent_source_numbers:nonIndependent,attribution:s.attribution||null};
 }
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}
