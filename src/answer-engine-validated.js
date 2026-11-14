@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch082-precision-gate-v1';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261114-batch083-education-context-synthesis-v1';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -27,7 +27,7 @@ const TOPIC_ALIASES={
   'ניהול מחשבות והסחת הדעת':['ניהול מחשבות','הסחת דעת','להסיח דעת','מחשבות מטרידות','חזרה לבעיה בבהירות','rumination','dismiss problems from the mind','fresh mind'],
   'השקעה בלימוד מקצוע ובעתיד':['לימוד מקצוע','השקעה בעתיד','השקעה ארוכת טווח','לימוד מקצועי','תכנון עתיד','professional training','investment in future','greater achievement'],
   'אחריות חינוכית והשפעה על הזולת':['אחריות תלמידי הישיבות','חינוך בני נוער','השפעה על הזולת','לקרב ולחזק','חינוך כשר','בן חכם ובן רשע','spiritual charity','influence others','education of children','השפעה על יהודי אחד','השפעה על אדם אחד','חינוך ילדים יהודים','חינוך ילדי עולים','הצלת ילדים בארץ ישראל','פעולה מעשית ולא דיבור','מעשה ולא דיבור','חינוך והפצת תורה','influence one individual','immigrant children education','practical action in outreach'],
-  'חינוך וערכים ציבוריים':['ערכים מוסריים','ערכים אתיים','חינוך ציבורי','חינוך אזרחי','education and moral values','moral and ethical values'],
+  'חינוך וערכים ציבוריים':['ערכים מוסריים','ערכים אתיים','חינוך ציבורי','חינוך הציבורי','חינוך אזרחי','education and moral values','moral and ethical values','public education','children and adolescents'],
   'ראש השנה וערך הזמן':['לייקר את הזמן','זמן בראש השנה','ראש השנה כולל בתוכו','חיות כל ימות השנה','value of time','Rosh Hashanah and time'],
   'פרנסה ושמירת שבת':['קושי בפרנסה','קושי להתפרנס','להתפרנס','מקור פרנסה','עבודה בשבת','עבודה אסורה בשבת','שמירת שבת','פרנסה מותרת וכשרה','livelihood and Shabbat observance','work on Shabbat','kosher livelihood'],
  'שותפות והרחבת עסק':['שותפות במסחר','צירוף שותף למסחר','שותף למסחר','הרחבת העסק בכוחות עצמו','הרחבה בכוחות עצמו','העסק זקוק להתרחבות','business partnership','expand the business independently'],
@@ -368,11 +368,17 @@ function supportsTzedakahSynthesisProposition(p){
  const b=norm(p);
  return ['צדקה','תרומה','מעות חיטים','מעשר','חומש','הקופה הכללית','לקופה הכללית','קרובים','קרוביהם','ישיבת תורת אמת','בניית ביתם','בית נאמן','נדבה'].some(term=>b.includes(term));
 }
+function supportsEducationContextsProposition(p){
+ const b=norm(p);
+ const yeshiva=b.includes('תלמידי הישיבות')||(b.includes('ילדים')&&(b.includes('נוער')||b.includes('מתבגרים'))&&(b.includes('חינוך כשר')||b.includes('חינוך יהודי')));
+ const publicEducation=(b.includes('חינוך ציבורי')||b.includes('חינוך הציבורי'))&&(b.includes('ערכים מוסריים')||b.includes('ערכים רוחניים')||b.includes('חמלה'));
+ return yeshiva||publicEducation;
+}
 function patternSynthesisIntegrity(model){
  const s=model?.synthesis;if(!s)return{valid:true,required:false};
- const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation';
+ const sources=model?.sources||[],numbers=arr(s.source_numbers).map(Number).filter(Number.isInteger),families=new Set(),unsupported=[],nonIndependent=[],isDailyRoutine=s.topic==='daily_study_prayer_routine',isTzedakah=s.topic==='tzedakah_contexts_and_allocation',isEducationContexts=s.topic==='education_across_public_and_yeshiva_contexts';
  for(const n of numbers){
-  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:supportsDifficultyPattern,supported=!!e&&arr(e._supporting_propositions).some(supportFn);
+  const e=sources[n-1],supportFn=isDailyRoutine?supportsDailyRoutineProposition:isTzedakah?supportsTzedakahSynthesisProposition:isEducationContexts?supportsEducationContextsProposition:supportsDifficultyPattern,supported=!!e&&arr(e._supporting_propositions).some(supportFn);
   const derived=!!e&&isDerived(e);
   if(!e||!supported||!e.evidence_family_id)unsupported.push(n);
   else if(e._independent_witness!==false&&!derived)families.add(String(e.evidence_family_id));
@@ -382,7 +388,8 @@ function patternSynthesisIntegrity(model){
  const claimLocatorsValid=Array.isArray(s.claims)&&s.claims.length>=3&&s.claims.every(c=>Array.isArray(c.source_numbers)&&c.source_numbers.length>0&&c.source_numbers.every(n=>numbers.includes(n))&&Array.isArray(c.source_locators)&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator&&c.source_numbers.includes(x.source_number)));
  const dailyClaimsValid=!isDailyRoutine||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
  const tzedakahClaimsValid=!isTzedakah||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator)));
- const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid;
+ const educationClaimsValid=!isEducationContexts||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.every(b=>b.propositions?.some(p=>p.source_locator&&supportsEducationContextsProposition(p.text))));
+ const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&dailyClaimsValid&&tzedakahClaimsValid&&educationClaimsValid;
  return{valid,required:true,source_numbers:numbers,evidence_families:families.size,unsupported_source_numbers:unsupported,non_independent_source_numbers:nonIndependent,attribution:s.attribution||null};
 }
 export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}
