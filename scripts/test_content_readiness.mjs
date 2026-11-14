@@ -906,6 +906,7 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.witnesses.length>=1);
  else assert.equal(m.research,undefined);
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על פתיחת מחנה גן ישראל והשפעתו לאורך השנה?',{mode});
+ console.log('DIRECT_TELEGRAM_DEBUG',JSON.stringify({mode,understanding:direct.understanding,answerable:direct.answerable,reason:direct.reason,sources:direct.sources.map(x=>({aid:sourceAID(x),witness_type:x.witness_type,independent_witness:x._independent_witness,score:x._relevance,support:x._support})),entry:idx.entries.find(x=>sourceAID(x)==='5357059')&&{status:idx.entries.find(x=>sourceAID(x)==='5357059').status,witness_type:idx.entries.find(x=>sourceAID(x)==='5357059').witness_type,has_content_evidence:idx.entries.find(x=>sourceAID(x)==='5357059').has_content_evidence,proposition:idx.entries.find(x=>sourceAID(x)==='5357059').response_propositions?.[0]}},null,2));
  assert.equal(direct.answerable,false,mode+': do not attribute a secretariat-transmitted telegram directly to the Rebbe');
  assert.equal(direct.reason,'secretariat_authorship_boundary');
  assert(direct.sources.some(x=>sourceAID(x)==='5357059'));
