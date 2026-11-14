@@ -335,3 +335,6 @@ Publication verification: GitHub Pages deployment completed successfully for mai
 - Expected after reconciliation: `answer_eligible_unique_sources` **803 → 810**; `content_verified_unique_sources` **800 → 807**; `answer_eligible_propositions` **2635 → 2660**. These are expected values until the commit-bound reconciliation and Actions results confirm them.
 - Added real-corpus regression checks for education-governance and yeshiva-expansion multi-source answers, plus a bounded vocational-school answer, in regular and researcher modes. Each claim must carry source numbers and valid citation entailment; researcher mode must expose witness-level locators and multiple Evidence Families where applicable.
 - No schedule, audience or permissions changed. The hourly runner-side acquisition crawler remains disabled after its recorded HTTP 403 responses.
+
+
+- Regression-test correction after the first full run: `test_content_readiness.mjs` still expected OCR aliases ד׳שטג and ד׳שם as canonical identities. The 2026-10-31 content-review audit explicitly resolves those aliases to ד׳שסג and ד׳שס, respectively. Updated only the test's expected canonical keys; no source records or Evidence Families were changed.

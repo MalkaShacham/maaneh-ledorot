@@ -260,10 +260,10 @@ for(const mode of ['regular','researcher']){
 }
 
 const newBatchChecks=[
-  ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
+  ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשסג'],
   ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
   ['מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?','id:igrot-kodesh-v13-דתרפא'],
-  ['מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
+  ['מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשס']
 ];
 for(const [question,key] of newBatchChecks){
   for(const mode of ['regular','researcher']){
