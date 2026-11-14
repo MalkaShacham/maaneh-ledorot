@@ -398,3 +398,14 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 
 
 - Validator correction: the first teshuvah synthesis run reached the new path but the generic pattern validator still required three claims, although this bounded synthesis intentionally has two distinct Evidence Families and two claims. The validator now uses a two-claim minimum only for this two-family topic; all other pattern topics retain their existing thresholds. This is a validation-threshold correction, not a relaxation of source or locator requirements.
+
+
+## 2026-11-14 — Batch 086: Living Torah publisher-synopsis review
+
+- נבדקו 15 גופי עמודים ציבוריים בפריטי Living Torah; 14 פרופוזיציות מחקר לא-מילוליות נוספו: 13 זהויות קיימות הועשרו במקום, ונוספה זהות חדשה אחת (AID 363474). שתי הפניות נוספות (AID 618965, 4477459) הציגו מטא-נתונים בלבד ולא קודמו. AID 387881 נבדק בגוף העמוד אך הוחזק בגלל סתירה בין תאריך הכותרת לתאריך Event Date.
+- כל 14 הפרופוזיציות הן פרפרזות של תקציר המו״ל באנגלית, עם `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, locator ברמת AID ושורות, היקף אימות, הקשר חלקי ומגבלות. הן מיוחסות לתקציר JEM/Living Torah ולא מוצגות כתמליל או כניסוח ישיר של הרבי. כל הרשומות נשארו `Parsed`, לא `Verified`, משום שהווידאו והתמליל לא נבדקו.
+- זוהה ואוחד ברמת הזהות alias של AID 3789070: כתובת ארכיון היום והעמוד הישיר מצביעים כעת לאותו AID ולאותה Evidence Family. ארבעה פריטים מתאריך 5 חשוון תשנ״ב לא אוחדו רק בשל תאריך משותף; לכל אחד AID ועמוד פריט נפרד.
+- לא נוספו תרגומים ולא הוסק מקור שפת הדיבור. סוג התיעוד שנוסף הוא תקציר מו״ל של פריט וידאו; שפת הטקסט שנבדק היא אנגלית והפרפרזות נשמרו בעברית. לא נבדקו סריקות או כתבי יד.
+- מדדי לפני: 855 answer-eligible unique sources, 852 content-verified unique sources, 2,767 propositions. יעד אחרי reconciliation: 869, 852, 2,781. המדדים בפועל ייקבעו רק לאחר הרצת reconciliation.
+- בבדיקת הריצות האחרונות נמצא כשל חוזר ב-`test_content_readiness.mjs`: הבדיקה דורשת `date_precision` באינדקס אך `reconcile_metrics.py` לא כלל את השדה. נוסף השדה לאינדקס, ונוספו בדיקות ל-batch 086, ל-dedup ולמצב חוקר עמוק.
+- ה-crawler שחזר 403 לא הופעל מחדש; לא בוצעה עקיפת בקרות גישה ולא הועתק טקסט מוגן במלואו.

@@ -60,7 +60,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled_pending_commit",
+    "status": "pending_batch_086_reconciliation",
     "source": "data/public-metrics.json",
     "generated": "2026-11-14",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -81,32 +81,20 @@
         "content_verified_unique_sources": 827,
         "answer_eligible_propositions": 2709
       },
-      "actual_after": {
-        "answer_eligible_unique_sources": 855,
-        "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2767
-      },
+      "actual_after": null,
       "reconciliation_status": "reconciled",
       "before": {
-        "answer_eligible_unique_sources": 837,
-        "content_verified_unique_sources": 834,
-        "answer_eligible_propositions": 2721
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 855,
         "content_verified_unique_sources": 852,
         "answer_eligible_propositions": 2767
       },
-      "actual_delta": {
-        "answer_eligible_unique_sources": 18,
-        "content_verified_unique_sources": 18,
-        "answer_eligible_propositions": 46
+      "expected_after": {
+        "answer_eligible_unique_sources": 869,
+        "content_verified_unique_sources": 852,
+        "answer_eligible_propositions": 2781
       },
-      "reconciliation_variance": {
-        "answer_eligible_unique_sources": 0,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 0
-      }
+      "actual_delta": null,
+      "reconciliation_variance": null
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
@@ -160,67 +148,38 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-14-content-batch-083",
+    "current_batch": "2026-11-14-content-batch-086",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
-    "last_completed_batch": "2026-11-14-content-batch-083",
+    "last_completed_batch": "085",
     "last_batch_summary": {
-      "batch_id": "083",
-      "reviewed_items": 9,
-      "source_bodies_inspected": 9,
-      "new_source_identities": 8,
-      "new_rebbe_letter_identities": 7,
-      "new_other_document_identities": 1,
-      "new_secretariat_document_identities": 0,
-      "new_secondary_narrative_identities": 0,
-      "new_metadata_only_identities": 0,
-      "duplicate_alias_identities": 0,
-      "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 1,
-      "new_response_propositions_added": 15,
-      "existing_response_propositions_added": 0,
-      "response_propositions_added": 15,
-      "answer_eligible_source_families_added": 8,
-      "source_languages": {
-        "Hebrew": 7,
-        "Yiddish": 1
-      },
-      "source_types": {
-        "published_hebrew_letter_text": 5,
-        "published_hebrew_letter_excerpt": 2,
-        "published_yiddish_organizational_letter": 1
-      },
+      "batch_id": "086",
+      "batch_file": "data/items/content-research-batch-086-2026-11-14.json",
+      "generated": "2026-11-14",
+      "new_source_identities": 1,
+      "existing_identities_enriched": 13,
+      "existing_identities_canonicalized": 1,
+      "source_bodies_inspected": 15,
+      "reviewed_item_count": 17,
+      "new_response_propositions": 1,
+      "existing_response_propositions_added": 13,
+      "answer_eligible_source_families_added": 14,
       "metrics_before": {
-        "answer_eligible_unique_sources": 829,
-        "content_verified_unique_sources": 826,
-        "answer_eligible_propositions": 2706
+        "answer_eligible_unique_sources": 855,
+        "content_verified_unique_sources": 852,
+        "answer_eligible_propositions": 2767
       },
-      "metrics_after_expected": {
-        "answer_eligible_unique_sources": 837,
-        "content_verified_unique_sources": 834,
-        "answer_eligible_propositions": 2721
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 869,
+        "content_verified_unique_sources": 852,
+        "answer_eligible_propositions": 2781
       },
-      "metrics_after_actual": {
-        "answer_eligible_unique_sources": 837,
-        "content_verified_unique_sources": 834,
-        "answer_eligible_propositions": 2721
-      },
-      "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 8,
-        "content_verified_unique_sources": 8,
-        "answer_eligible_propositions": 15
-      },
-      "metrics_delta_actual": {
-        "answer_eligible_unique_sources": 8,
-        "content_verified_unique_sources": 8,
-        "answer_eligible_propositions": 15
-      },
-      "blocked_candidates": 4,
-      "status": "reconciled",
-      "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71"
+      "metrics_after_actual": null,
+      "metrics_delta_actual": null,
+      "status": "pending_reconciliation"
     },
-    "last_run_note": "Batch 083 reconciled: nine publisher bodies inspected (eight new identities plus one existing identity rechecked); eight new Evidence Families, seven Hebrew letters and one Yiddish organizational circular, with 15 source-grounded paraphrases. Four summary/navigation shells were excluded. No crawler retry, access-control bypass, scan-only verification, translation-as-independent-witness, full-text copying or AI inference attributed to the Rebbe.",
-    "last_batch_blocked_count": 4,
-    "last_batch_blocked_reason": "Four candidate pages (AIDs 4666220, 4854505, 4730852 and 5413047) redirected to summary/navigation shells without inspectable item-level bodies; they were excluded and alternate public publisher bodies were inspected in the same run.",
+    "last_run_note": "Batch 086 source inspection and item-level enrichment prepared; awaiting reconciliation and workflow verification. No crawler retry or access-control bypass.",
+    "last_batch_blocked_count": 3,
+    "last_batch_blocked_reason": "AID 387881 body inspected but conflicting heading/Event Date fields; AID 618965 page exposed metadata only; AID 4477459 exposed retrospective interview metadata without substantive testimony or Rebbe content.",
     "next_work": [
       "Run test_content_readiness.mjs and the answer-integrity/question-specificity suites after the Tanya-project retrieval correction.",
       "Verify the exact main-branch Actions run and the published GitHub Pages revision; do not infer publication from a queued build.",
