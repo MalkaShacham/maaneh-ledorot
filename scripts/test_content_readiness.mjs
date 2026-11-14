@@ -294,7 +294,9 @@ assert(batch018SecretariatItem&&/secretariat/i.test(batch018SecretariatItem.witn
 assert.equal(batch018SecretariatItem.independent_witness,false);
 for(const mode of ['regular','researcher']){
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?',{mode});
- assert(!direct.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'),'secretary-signed batch-018 item must not be attributed directly to the Rebbe');
+ assert.equal(direct.answerable,false,mode+': secretary-signed response cannot be attributed directly to the Rebbe');
+ assert.equal(direct.reason,'secretariat_authorship_boundary');
+ assert(direct.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'),'surface the inspected secretary-signed item as a boundary witness, not as Rebbe-authored evidence');
 }
 
 const batch018Comparison='השווה בין האיגרת על הוספת אברכים לשיעור חסידות לבין האיגרת למדריך במחנה גן ישראל על הרחבת ההשפעה ועל לימוד אישי';
