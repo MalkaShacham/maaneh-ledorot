@@ -1174,6 +1174,29 @@ function buildYouthEducationStudySynthesis(selected){
  };
 }
 
+function buildStudyFarmingSynthesis(selected){
+ const basis=[];
+ selected.forEach((e,index)=>{
+  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  const props=arr(e._supporting_propositions).filter(p=>supportsStudyRoutineComparison(p)||supportsFarmingStudyComparison(p));
+  if(!props.length)return;
+  const propositions=props.map(p=>{const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());return{text:String(p),source_locator:arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null};});
+  basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,date:e.date||null,context_status:e.context_status||'unknown',provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,primary_secondary_status:e.primary_secondary_status||null,propositions});
+ });
+ const study=basis.filter(b=>b.propositions.some(p=>supportsStudyRoutineComparison(p.text)));
+ const farming=basis.filter(b=>b.propositions.some(p=>supportsFarmingStudyComparison(p.text)));
+ const families=new Set([...study,...farming].map(b=>b.evidence_family_id).filter(Boolean));
+ if(!study.length||!farming.length||families.size<2)return null;
+ const claim=(topic,text,matches)=>({topic,text,source_numbers:[...new Set(matches.map(b=>b.source_number))],evidence_family_ids:[...new Set(matches.map(b=>b.evidence_family_id).filter(Boolean))],source_locators:matches.flatMap(b=>b.propositions.filter(p=>topic==='study_routine'?supportsStudyRoutineComparison(p.text):supportsFarmingStudyComparison(p.text)).map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator))});
+ const claims=[
+  claim('study_routine','במענה אישי על חזרה ללימוד לאחר הפסק, קביעת זמני לימוד בהיקף מדוד והתקדמות הדרגתית מוצגות לצד לימוד עם אדם נוסף כדרכים לסייע להתמדה.',study),
+  claim('farming_and_torah','במענה אחר לשאלה על עבודה במשק, נכתב שגם חקלאים ובעלי משק מחויבים בלימוד תורה, והדוגמה המעשית של שילוב העיסוקים מוצגת כבעלת השפעה חינוכית.',farming)
+ ];
+ if(claims.some(c=>!c.source_locators.length))return null;
+ const sourceNumbers=[...new Set(claims.flatMap(c=>c.source_numbers))],usedBasis=basis.filter(b=>sourceNumbers.includes(b.source_number)),evidenceFamilies=[...new Set(usedBasis.map(b=>b.evidence_family_id).filter(Boolean))];
+ if(evidenceFamilies.length<2)return null;
+ return{kind:'cross_family_research_synthesis',topic:'study_routine_and_farming',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:claims.map(c=>c.text).join(' ')+' ההשוואה מחברת שני מענים אישיים שונים: חזרה ללימוד לאחר הפסק, ושילוב לימוד תורה עם עבודה במשק. אין להפוך אותם לכלל אחיד או לפסיקה תעסוקתית.',source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,method:'Claim-level comparison across two distinct inspected Hebrew correspondence Evidence Families. Each claim carries its own source numbers, item-level body locator, provenance and verification scope.',limits:['הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.','האיגרת על קביעות הלימוד היא מענה אישי לאחר הפסק בלימוד; האיגרת על המשק היא מענה אישי לשאלה על עיסוק חקלאי.','מכתבי הנמענים וכתבי היד המקוריים לא נבדקו; באחד הפריטים הערת המו״ל מציינת השלמה על פי העתק המזכירות.','אין להסיק מן המקרים כלל תעסוקתי או הלכתי עדכני.']};
+}
 function buildJewishHomeSynthesis(selected){
  const basis=[];
  selected.forEach((e,index)=>{
