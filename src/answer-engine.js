@@ -521,7 +521,7 @@ export function propositionRelevance(e,u){
  if(u.query.includes('השפעה')&&u.query.includes('חינוך')&&u.query.includes('מעשה')&&u.query.includes('דיבור')){
   const supportingProps=arr(e.response_propositions).filter(supportsEducationalInfluenceActionProposition);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not directly address the requested combination of individual influence and practical education']};
-  return{score:40,support:'direct_support',reasons:['letters describe the value of influencing even one person and emphasize concrete educational action rather than words alone'],supportingProps};
+  return{score:40,support:'direct_support',reasons:['the retrieved letters provide complementary, separately cited evidence about individual influence, children's education, and concrete action rather than words alone'],supportingProps};
  }
  if(u.query.toLowerCase().includes('president gerald ford')&&u.query.toLowerCase().includes('religious freedom')&&u.query.toLowerCase().includes('education')){
   const supportingProps=arr(e.response_propositions).filter(supportsFordLetterProposition);
@@ -916,15 +916,14 @@ function prioritizeDailyRoutineCandidates(evidence,limit){
 }
 function supportsEducationalInfluenceActionProposition(proposition){
  const body=norm(proposition);
- return ['השפעה','אדם יחיד','מעגלים נוספים','חינוך','ילדים','פעולה ממשית','פעולה','מעשה','עשייה','מאמץ','דיבור','מילים'].some(term=>body.includes(term));
+ const individualInfluence=body.includes('השפעה')&&(body.includes('אדם יחיד')||body.includes('מעגלים נוספים'));
+ const educationOfChildren=body.includes('חינוך')&&body.includes('ילדים');
+ const practicalActionForChildren=body.includes('ילדים')&&['פעולה','מעשה','עשייה','מאמץ'].some(term=>body.includes(term));
+ const actionRatherThanWords=['פעולה','מעשה','עשייה'].some(term=>body.includes(term))&&['דיבור','מילים'].some(term=>body.includes(term));
+ return individualInfluence||educationOfChildren||practicalActionForChildren||actionRatherThanWords;
 }
 function supportsEducationalInfluenceActionSource(source){
- const body=norm(arr(source?.response_propositions).join(' '));
- const influence=body.includes('השפעה')&&(body.includes('אדם יחיד')||body.includes('מעגלים נוספים'));
- const education=body.includes('חינוך')&&body.includes('ילדים');
- const action=body.includes('פעולה')||body.includes('מעשה')||body.includes('עשייה')||body.includes('מאמץ');
- const speech=body.includes('דיבור')||body.includes('מילים');
- return (influence&&(education||action||speech))||(education&&action);
+ return arr(source?.response_propositions).some(supportsEducationalInfluenceActionProposition);
 }
 function supportsFordLetterProposition(proposition){
  const body=norm(proposition);
