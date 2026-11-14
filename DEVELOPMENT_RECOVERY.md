@@ -438,3 +438,8 @@ The regression suite exposed that community propositions passed the synthesis-in
 ### Community proposition relevance branch (2026-11-14)
 
 The second regression showed that a candidate seed boost alone did not clear the later proposition-relevance threshold. For the exact community-activity synthesis query, sources now receive direct-support status only when at least one inspected response proposition matches the bounded farbrengen/student-gathering/shared-mikveh-responsibility predicate. This keeps the retrieval rule content-based and claim-locatable; unrelated sources, locator-only indexes and secretariat material are not promoted. Client cache key advanced to `20261114-06`.
+
+
+### Human-microcosm source retrieval (2026-11-14)
+
+The inspected Rosh Hashanah letter AID 4831315 contains a body-grounded proposition describing the human being as an olam katan with inanimate, vegetative, animal and speaking dimensions, and the letter's call to elevate them through Torah and mitzvot. A dedicated retrieval path now admits only Verified, independently witnessed, original-language letter records whose inspected propositions contain all four dimensions and the sanctification frame. This avoids losing the source to generic term ranking without treating a title or locator as content. Cache key advanced for the client.

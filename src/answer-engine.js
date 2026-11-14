@@ -1174,6 +1174,10 @@ function buildTzedakahSynthesis(selected){
   ]
  };
 }
+function supportsHumanMicrocosmProposition(p){
+ const b=norm(p);
+ return b.includes('עולם קטן')&&['דומם','צומח','חי','מדבר'].every(term=>b.includes(term))&&(b.includes('לקדש')||b.includes('תורה ומצוות'));
+}
 function supportsCommunityActivityProposition(p){
  const t=norm(p);
  return /התוו?עד|פארבריינגען/.test(t)||
@@ -1295,12 +1299,13 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   const families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
  const tzedakahSynthesisQuestion=understanding.query.includes('צדקה לאורך השנה')&&(['מעשר','חומש','חלוקת תרומות'].some(term=>understanding.query.includes(term)));
  const communityActivityQuestion=understanding.query.includes('התוועדויות ופעילות קהילתית');
+ const humanMicrocosmQuestion=understanding.query.includes('עולם קטן')&&['דומם','צומח','חי','מדבר'].every(term=>understanding.query.includes(term));
  const healthSynthesisQuestion=understanding.topics.includes('שמירת בריאות הגוף ועבודת ה׳');
   if(healthSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
   if(tzedakahSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(communityActivityQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
- if(!usable.length){if(directAuthorshipQuestion&&secretariatHits.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'secretariat_authorship_boundary',claims:[],sources:secretariatHits.slice(0,2),answered_well:[],insufficient_evidence:['המקור שנמצא הוא מכתב מזכירות חתום בידי מזכיר בשם הרבי; אין לייחס את נוסח המענה ישירות לרבי ללא עד ישיר.']};return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};}
- if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
+ if(!usable.length&&!humanMicrocosmQuestion){if(directAuthorshipQuestion&&secretariatHits.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'secretariat_authorship_boundary',claims:[],sources:secretariatHits.slice(0,2),answered_well:[],insufficient_evidence:['המקור שנמצא הוא מכתב מזכירות חתום בידי מזכיר בשם הרבי; אין לייחס את נוסח המענה ישירות לרבי ללא עד ישיר.']};return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};}
+ if(understanding.intent==='pattern'&&families.size<2&&!humanMicrocosmQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const shmittaFruitReferralQuestion=understanding.query.includes('פירות שביעית')&&understanding.query.includes('נכרים')&&understanding.query.includes('גדולי ההוראה');
  const lodYeshivaStudyTravelQuestion=understanding.query.includes('תומכי תמימים')&&understanding.query.includes('לוד')&&understanding.query.includes('לימוד')&&understanding.query.includes('נסיעות');
@@ -1320,6 +1325,14 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   answerEvidence=[...byFamily.values()].slice(0,8);
   answerEvidence.forEach(e=>{const k=familyKey(e);if(k)tzedakahFamilies.add(k);});
   if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.'],debug_tzedakah:{content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,sample:tzedakahContentIndex.slice(0,24).map(e=>({aid:e.aid,id:e.id,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,family:familyKey(e),classification:classifyWitness(e)}))}};
+ }
+ else if(humanMicrocosmQuestion){
+  const microcosmContentIndex=index.filter(e=>e.has_content_evidence===true&&String(e.status||'').toLowerCase()==='verified'&&e.proposition_origin==='source_grounded_paraphrase'&&e.proposition_verbatim===false&&e.proposition_verification==='source_text_inspected'&&Boolean(e.proposition_source_locator)&&arr(e.response_propositions).some(supportsHumanMicrocosmProposition));
+  const directMicrocosm=microcosmContentIndex.filter(e=>e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&isLetterEvidence(e)&&!isSecretariatWitness(e)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsHumanMicrocosmProposition)}));
+  const byFamily=new Map();
+  for(const e of directMicrocosm){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
+  answerEvidence=[...byFamily.values()].slice(0,4);
+  if(!answerEvidence.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_microcosm_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצא מכתב מקור שנבדק בגופו ומכיל את מסגרת האדם כעולם קטן עם ממדי דומם, צומח, חי ומדבר.']};
  }
  else if(communityActivityQuestion){
    // Do not let generic top-k retrieval hide other inspected community-activity families.
