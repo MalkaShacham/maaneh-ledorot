@@ -505,7 +505,11 @@ function intentEvidenceGate(e,u){
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
  const witnessDescriptor=norm([e.type,e.source_class,e.source_class_detail,e.witness_type,e.primary_secondary_status].join(' '));
- const isSecretariat=/secretariat|מזכירות/.test(witnessDescriptor);
+ const explicitWitnessType=norm(e?.witness_type||'');
+ // Do not treat a caveat such as "secretariat copy not inspected" as proof
+ // that the published item itself is a secretariat-authored response.
+ const isSecretariat=/^secretariat(?:_signed|_reply|_office_letter)?$/.test(explicitWitnessType)||
+  /secretariat[- ]signed|secretariat (?:office )?(?:letter|reply)|signed by a secretary|secretary-signed|מענה מזכירות|חתימת מזכיר|מזכיר בשם/.test(witnessDescriptor);
  const asksRebbeAuthorship=/הרבי|רבי|the rebbe/.test(norm(u.query));
  if(isSecretariat&&asksRebbeAuthorship)return{score:0,support:'insufficient_authorship_evidence',reasons:['matched item is a secretariat office letter, not a Rebbe-authored letter']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
