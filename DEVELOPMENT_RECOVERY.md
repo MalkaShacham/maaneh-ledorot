@@ -500,3 +500,8 @@ The camp/season query now retrieves the inspected telegram copy whenever it expl
 ### Scanned index locator is not content evidence (2026-11-14)
 
 The printed-index identity `igrot-kodesh-v13-דשם` remains discoverable for bibliographic lookup, but its scan verifies only the letter identity and printed-page locator. It has no inspected body propositions and cannot support an answer about trade or study. The neutral Lishma query now cites the actually inspected secretariat response AID 5071128; the unrelated trade-and-study question remains insufficiently evidenced rather than borrowing content from the index or an unrelated response.
+
+
+### Volume XIII letter דשם: index versus body scan (2026-11-14)
+
+The bibliographic index record for `igrot-kodesh-v13-דשם` remains identity/locator-only. A separate user-supplied publisher-scan content record (PDF page 131, printed p. צב; letter ד׳שס, legacy index OCR identity ד׳שם) has five inspected non-verbatim propositions. It is a secretary-signed response, not an autograph. Retrieval and the direct-authorship boundary use the inspected body record; the index alone is never treated as content. The distinct AID 5071128 response concerns staged Torah study and health and is not conflated with this letter.
