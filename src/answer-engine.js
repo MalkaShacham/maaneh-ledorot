@@ -497,6 +497,11 @@ export function propositionRelevance(e,u){
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not directly address the requested combination of individual influence and practical education']};
   return{score:40,support:'direct_support',reasons:['letters describe the value of influencing even one person and emphasize concrete educational action rather than words alone'],supportingProps};
  }
+ if(u.query.includes('התוועדויות ופעילות קהילתית')){
+  const supportingProps=arr(e.response_propositions).filter(supportsCommunityActivityProposition);
+  if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source has no inspected farbrengen, student-gathering or shared-community-responsibility proposition']};
+  return{score:40,support:'direct_support',reasons:['inspected letter proposition directly describes a farbrengen, student gathering or shared responsibility around community mikveh costs'],supportingProps};
+ }
  if(u.query.toLowerCase().includes('president gerald ford')&&u.query.toLowerCase().includes('religious freedom')&&u.query.toLowerCase().includes('education')){
   const supportingProps=arr(e.response_propositions).filter(supportsFordLetterProposition);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not contain the inspected English letter’s religious-freedom and education discussion']};

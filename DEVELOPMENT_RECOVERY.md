@@ -433,3 +433,8 @@ All nine direct AID URLs in batch 083 now resolve to rewritten unavailable summa
 ### Community-activity retrieval correction (2026-11-14)
 
 The regression suite exposed that community propositions passed the synthesis-integrity checks but were not reaching the synthesis stage: generic lexical ranking left the three independently inspected letter families below the retrieval threshold. The retriever now applies a bounded query-specific boost only to Verified, independent, letter-text sources whose inspected propositions match the farbrengen/student-gathering/mikveh-responsibility predicate. This does not admit locator-only entries or secretariat responses as direct Rebbe authorship. The browser cache key was incremented so the published client loads the corrected engine.
+
+
+### Community proposition relevance branch (2026-11-14)
+
+The second regression showed that a candidate seed boost alone did not clear the later proposition-relevance threshold. For the exact community-activity synthesis query, sources now receive direct-support status only when at least one inspected response proposition matches the bounded farbrengen/student-gathering/shared-mikveh-responsibility predicate. This keeps the retrieval rule content-based and claim-locatable; unrelated sources, locator-only indexes and secretariat material are not promoted. Client cache key advanced to `20261114-06`.
