@@ -165,69 +165,58 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-13-content-batch-078",
+    "current_batch": "2026-11-14-content-batch-081",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
-    "last_completed_batch": "2026-11-13-content-batch-077",
+    "last_completed_batch": "2026-11-14-content-batch-081",
     "last_batch_summary": {
-      "batch_id": "078",
-      "reviewed_items": 14,
-      "source_bodies_inspected": 14,
-      "new_source_identities": 12,
-      "new_rebbe_letter_identities": 11,
-      "new_other_document_identities": 1,
+      "batch_id": "081",
+      "reviewed_items": 10,
+      "source_bodies_inspected": 10,
+      "new_source_identities": 9,
+      "new_rebbe_letter_identities": 9,
+      "new_other_document_identities": 0,
       "new_secretariat_document_identities": 0,
+      "new_secondary_narrative_identities": 0,
       "new_metadata_only_identities": 0,
       "duplicate_alias_identities": 0,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 2,
+      "existing_identities_rechecked": 0,
       "new_response_propositions_added": 23,
       "existing_response_propositions_added": 1,
       "response_propositions_added": 24,
-      "answer_eligible_source_families_added": 12,
+      "answer_eligible_source_families_added": 9,
       "source_languages": {
-        "Hebrew": 7,
-        "Yiddish": 4,
-        "English": 1
-      },
-      "rechecked_languages": {
-        "Hebrew": 2
+        "Hebrew": 9
       },
       "metrics_before": {
-        "answer_eligible_unique_sources": 792,
-        "content_verified_unique_sources": 789,
-        "answer_eligible_propositions": 2630
+        "answer_eligible_unique_sources": 810,
+        "content_verified_unique_sources": 807,
+        "answer_eligible_propositions": 2660
       },
       "metrics_after_expected": {
-        "answer_eligible_unique_sources": 804,
-        "content_verified_unique_sources": 801,
-        "answer_eligible_propositions": 2654
+        "answer_eligible_unique_sources": 819,
+        "content_verified_unique_sources": 816,
+        "answer_eligible_propositions": 2684
       },
-      "metrics_after_actual": {
-        "answer_eligible_unique_sources": 799,
-        "content_verified_unique_sources": 796,
-        "answer_eligible_propositions": 2627
-      },
+      "metrics_after_actual": null,
       "metrics_delta_expected": {
-        "answer_eligible_unique_sources": 12,
-        "content_verified_unique_sources": 12,
+        "answer_eligible_unique_sources": 9,
+        "content_verified_unique_sources": 9,
         "answer_eligible_propositions": 24
       },
-      "blocked_candidates": 12,
-      "status": "reconciled_with_variance",
-      "metrics_delta_actual": {
-        "answer_eligible_unique_sources": 7,
-        "content_verified_unique_sources": 7,
-        "answer_eligible_propositions": -3
-      }
+      "metrics_delta_actual": null,
+      "blocked_candidates": 8,
+      "status": "submitted_for_reconciliation"
     },
-    "last_run_note": "Batch 078 submitted for reconciliation: 12 new public source identities across Hebrew, Yiddish and English; 23 new non-verbatim source-grounded propositions; one existing identity enriched with one proposition; two existing identities rechecked. Twelve alternative candidates redirected to navigation/summary shells and were excluded. No crawler retry, access-control bypass, scan-only verification or full-text copying. Reconciliation and content-readiness tests pending.",
-    "last_batch_blocked_count": 12,
-    "last_batch_blocked_reason": "12 candidate pages redirected to summary/navigation shells: 5071144, 4783701, 5054608, 5071147, 4754642, 5100603, 4812647, 4812666, 5100244, 5100662, 4831207, 5357153. They were excluded; alternative public item-level bodies were inspected in the same run.",
+    "last_run_note": "Batch 081 submitted for canonical reconciliation: nine new Hebrew correspondence identities and one in-place enrichment of AID 4929253; ten publisher bodies inspected; 23 new non-verbatim source-grounded propositions plus one existing proposition. Eight navigation/summary shells were excluded; no crawler retry, access-control bypass, scan-only verification or full-text copying. Reconciliation and test results are pending.",
+    "last_batch_blocked_count": 8,
+    "last_batch_blocked_reason": "Eight candidate pages returned navigation/summary shells rather than item-level bodies: 5100615, 5071147, 5100353, 4754642, 5100225, 5100277, 5413047, 5287567. They were excluded; nine accessible Hebrew publisher bodies and one existing body were inspected in the same run.",
     "next_work": [
-      "Continue manual inspection of 8–15 accessible primary-source bodies per run, expanding to Yiddish and English and to distinct documentary classes where public bodies are available.",
-      "Extend claim-level multi-source synthesis and researcher-mode evidence maps to additional high-priority topics, preserving item-local context and limitations.",
-      "Keep inaccessible summary/navigation shells excluded and use alternative public publisher items rather than retrying the blocked crawler.",
-      "Maintain the existing hourly cron and verify every batch through reconciliation, content-readiness tests and Pages deployment."
+      "Run canonical reconciliation across all data/items files and confirm AID/Evidence Family deduplication for batch 081.",
+      "Verify answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions against the actual generated search index; do not assume the expected delta.",
+      "Run test_content_readiness.mjs and the answer-integrity/question-specificity suites against the new claim-level study/youth-education synthesis.",
+      "Continue manual inspection of 8–15 accessible source bodies per development run; expand to Yiddish, English and additional documentary classes when inspectable bodies are available.",
+      "Keep the hourly workflow and access boundaries unchanged; no runner-side retry of the known HTTP 403 crawler."
     ],
     "last_reconciliation": {
       "batch_id": "080",
