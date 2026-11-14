@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-13",
+  "generated": "2026-11-14",
   "external_inventory_mapped_minimum": 25906,
   "staging_batch_files": 203,
   "staging_manifest_files": 83,
@@ -19,8 +19,8 @@
   },
   "verified_unique_item_keys": 7749,
   "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.",
-  "answer_eligible_unique_sources": 799,
-  "content_verified_unique_sources": 796,
-  "answer_eligible_propositions": 2627,
-  "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across their member items. Bibliographic verification and editorial summaries do not count."
+  "answer_eligible_unique_sources": 854,
+  "content_verified_unique_sources": 851,
+  "answer_eligible_propositions": 2757,
+  "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across member items. Explicitly linked non-independent translations deduplicate against the same-family original by proposition text; bibliographic verification and editorial summaries do not count."
 }

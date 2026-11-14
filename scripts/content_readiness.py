@@ -44,9 +44,22 @@ def summarize(entries):
     for entry in usable:
         families.setdefault(identity(entry), []).append(entry)
 
+    # A linked translation is not an independent witness. Within a family
+    # containing an explicit non-independent translation, deduplicate the
+    # same paraphrase text across language members despite translation metadata.
+    translation_families = {
+        str(entry.get("translation_of_evidence_family_id"))
+        for entry in usable
+        if entry.get("translation_of_evidence_family_id")
+        and entry.get("independent_witness") is False
+    }
+
     def proposition_key(entry, proposition):
         normalize = lambda value: " ".join(str(value or "").casefold().split())
-        return (normalize(proposition), normalize(entry.get("documented_circumstances")),
+        base = normalize(proposition)
+        if identity(entry) in translation_families:
+            return (base,)
+        return (base, normalize(entry.get("documented_circumstances")),
                 normalize(entry.get("conditions_or_qualifications")),
                 normalize(entry.get("audience")))
 
@@ -66,5 +79,5 @@ def summarize(entries):
         "answer_eligible_unique_sources": len(families),
         "content_verified_unique_sources": len(content_verified),
         "answer_eligible_propositions": proposition_count,
-        "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across their member items. Bibliographic verification and editorial summaries do not count."
+        "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across member items. Explicitly linked non-independent translations deduplicate against the same-family original by proposition text; bibliographic verification and editorial summaries do not count."
     }

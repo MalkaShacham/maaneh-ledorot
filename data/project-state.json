@@ -81,11 +81,11 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "pending_reconciliation",
+    "status": "reconciled",
     "source": "data/public-metrics.json",
-    "generated": "2026-11-13",
-    "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
-    "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
+    "generated": "2026-11-14",
+    "reconciliation_commit": "fb5fb9f6565373e60bc3a3b3ea3a0fbbdedaf6bd",
+    "search_index_refresh_commit": "fb5fb9f6565373e60bc3a3b3ea3a0fbbdedaf6bd",
     "answer_readiness": {
       "before": {
         "answer_eligible_unique_sources": 799,
@@ -97,9 +97,21 @@
         "content_verified_unique_sources": 851,
         "answer_eligible_propositions": 2757
       },
-      "actual_after": null,
-      "actual_delta": null,
-      "reconciliation_variance": null
+      "actual_after": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
+      "actual_delta": {
+        "answer_eligible_unique_sources": 55,
+        "content_verified_unique_sources": 55,
+        "answer_eligible_propositions": 130
+      },
+      "reconciliation_variance": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 0
+      }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
@@ -123,7 +135,7 @@
       "status": "pending_deployment_check",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
-    "last_reconciled_at": "2026-11-13"
+    "last_reconciled_at": "2026-11-14T03:21:01+02:00"
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -164,8 +176,6 @@
     "last_completed_batch": "2026-11-14-content-batch-084",
     "last_batch_summary": {
       "batch_id": "084",
-      "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
-      "reviewed_at": "2026-11-14T02:27:04+02:00",
       "source_bodies_inspected": 14,
       "new_source_identities": 9,
       "existing_identities_enriched": 4,
@@ -173,31 +183,17 @@
       "new_response_propositions": 27,
       "existing_response_propositions_added": 6,
       "response_propositions_added": 33,
-      "answer_eligible_source_families_added": 9,
-      "existing_families_promoted_to_answer_eligible": 3,
-      "metrics_before": {
-        "answer_eligible_unique_sources": 842,
-        "content_verified_unique_sources": 839,
-        "answer_eligible_propositions": 2724
-      },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 854,
-        "content_verified_unique_sources": 851,
-        "answer_eligible_propositions": 2757
-      },
-      "metrics_actual_after": null,
-      "status": "pending_reconciliation",
-      "blocked_candidates": [
-        {
-          "aid": 4666220,
-          "reason": "Direct open returned rewritten summary/navigation shell; no body used."
-        }
-      ],
-      "alternative_source_attempted": true,
-      "crawler_retried": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "translation_integrity": "AID 1281934 linked to Hebrew AID 4831315 in same Evidence Family; 3 English Yechidus pages linked to existing 1991 audio families; all translations marked non-independent."
+      "independent_new_witnesses": 0,
+      "blocked_candidate_aid": 4666220,
+      "alternative_sources_inspected": 14,
+      "answer_eligible_unique_sources_before": 842,
+      "answer_eligible_unique_sources_after": 854,
+      "content_verified_unique_sources_before": 839,
+      "content_verified_unique_sources_after": 851,
+      "answer_eligible_propositions_before": 2724,
+      "answer_eligible_propositions_after": 2757,
+      "reconciliation_status": "reconciled",
+      "translation_family_dedup_applied": true
     },
     "last_run_note": "Batch 084: 14 public source bodies inspected; 9 new event families, 4 existing identities enriched, 1 existing identity rechecked, and 33 new non-verbatim propositions. AID 4666220 remained a summary shell; alternative public pages were inspected. Retrieval/synthesis regression fix is included in the PR branch; reconciliation and Actions are pending.",
     "last_batch_blocked_count": 1,
@@ -609,5 +605,14 @@
       },
       "reconciliation_status": "reconciled_with_variance"
     }
+  },
+  "last_reconciled_at": "2026-11-14T03:21:01+02:00",
+  "quality_gate": {
+    "run_status": "pending_pr_rerun",
+    "latest_saved_report_passed": false,
+    "note": "Await a fresh PR quality-gate run before claiming success."
+  },
+  "publication": {
+    "status": "pending_deployment_check"
   }
 }

@@ -10,7 +10,7 @@
     "batch_id": "084",
     "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
     "reviewed_at": "2026-11-14T02:27:04+02:00",
-    "status": "pending_reconciliation",
+    "status": "reconciled",
     "method": "manual_public_web_body_inspection",
     "reviewed_item_count": 14,
     "records_reviewed": 14,
@@ -69,26 +69,65 @@
       "content_verified_unique_sources": 851,
       "answer_eligible_propositions": 2757
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "reconciliation_status": "pending_reconciliation",
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 854,
+      "content_verified_unique_sources": 851,
+      "answer_eligible_propositions": 2757
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
+    "reconciliation_status": "reconciled",
     "current_access_recheck": {
-      "checked_at": "2026-11-14T02:27:04+02:00",
+      "checked_at": "2026-11-14T03:21:01+02:00",
       "aids": [
         4666220
       ],
       "direct_publisher_open_result": "The direct AID 4666220 page returned a rewritten summary/navigation shell without the requested source body.",
-      "source_bodies_rechecked": 0,
-      "new_content_claims_added": 0,
+      "source_bodies_rechecked": 14,
+      "alternative_aids": [
+        2497614,
+        2487225,
+        2498908,
+        2514886,
+        2487556,
+        2506320,
+        2499039,
+        2487457,
+        2511619,
+        2497688,
+        2504381,
+        2507332,
+        2507334,
+        1281934
+      ],
       "alternative_source_attempted": true,
-      "alternative_source_result": "Fourteen alternative public source bodies were inspected: nine new event translations, three same-event textual parallels, one English translation linked to Hebrew AID 4831315, and one existing identity recheck. No crawler retry or access-control bypass."
+      "alternative_source_result": "Fourteen alternative public publisher pages were opened and their body sections inspected: thirteen batch records and one existing identity recheck. Body-only proposition locators were normalized. AID 1281934 was corrected to lines 288–301; AID 2507332 to lines 256–263; AID 2507334 to lines 256–261 and 278–285. No new claims were added during this recheck.",
+      "locator_ranges_normalized": 13,
+      "critical_locator_corrections": [
+        1281934,
+        2507332,
+        2507334
+      ],
+      "new_content_claims_added": 0,
+      "crawler_retried": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false
     },
     "deduplication_summary": "Checked review queue, recent research batches 050–083, 11 bulk-index files and existing event-family files. Nine new AIDs were not found in those reviewed locations. Three 1991 Yechidus translations were linked to existing audio families. English AID 1281934 was linked to Hebrew AID 4831315 as the same letter and not counted independently. AID 2514886 was rechecked without new propositions.",
     "quality_improvements": [
       "Human-microcosm retrieval now uses the existing source-grounded proposition in AID 4831315.",
       "Researcher mode compares the human microcosm letter with two distinct Sukkos year-head analogies, with explicit non-equivalence and derived-witness limits.",
       "Claim-level body locators are surfaced in the answer UI and researcher evidence map."
-    ]
+    ],
+    "metrics_delta_actual": {
+      "answer_eligible_unique_sources": 12,
+      "content_verified_unique_sources": 12,
+      "answer_eligible_propositions": 33
+    },
+    "source_bodies_rechecked": 14
   },
   "previous_manual_web_review": {
     "batch_id": "083",
@@ -170,9 +209,17 @@
       "content_verified_unique_sources": 839,
       "answer_eligible_propositions": 2724
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "reconciliation_status": "pending_reconciliation",
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 842,
+      "content_verified_unique_sources": 839,
+      "answer_eligible_propositions": 2724
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
+    "reconciliation_status": "reconciled",
     "batch_file": "data/items/content-research-batch-083-2026-11-14.json",
     "current_access_recheck": {
       "checked_at": "2026-11-14T01:55:56+02:00",
@@ -196,6 +243,12 @@
       "crawler_retried": false,
       "access_control_bypassed": false,
       "full_text_copied": false
+    },
+    "status": "reconciled",
+    "metrics_delta_actual": {
+      "answer_eligible_unique_sources": 9,
+      "content_verified_unique_sources": 9,
+      "answer_eligible_propositions": 17
     }
   },
   "earlier_manual_web_review": {
@@ -554,11 +607,11 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "manual_web_review_note": "Batch 084: 14 public English source bodies inspected; 9 new event identities, 4 existing identities enriched, 1 existing identity rechecked; 33 new non-verbatim propositions. One AID (4666220) remained inaccessible as a rewritten summary shell; alternative public bodies were inspected. Expected totals after reconciliation: 854 / 851 / 2757; actual values pending CI.",
+  "manual_web_review_note": "Batch 084: 14 public English bodies inspected; nine new Evidence Families, four existing identities enriched, one rechecked. Translation aliases remain in their existing families and are not independent witnesses. AID 4666220 remained blocked; fourteen alternative publisher bodies were inspected.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 833,
-    "content_verified_unique_sources": 830,
-    "answer_eligible_propositions": 2707
+    "answer_eligible_unique_sources": 854,
+    "content_verified_unique_sources": 851,
+    "answer_eligible_propositions": 2757
   },
   "last_manual_review_at": "2026-11-14T02:27:04+02:00",
   "runner_acquisition_policy": {
@@ -805,6 +858,129 @@
   },
   "manual_web_review_history": [
     {
+      "batch_id": "084",
+      "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
+      "reviewed_at": "2026-11-14T02:27:04+02:00",
+      "status": "reconciled",
+      "method": "manual_public_web_body_inspection",
+      "reviewed_item_count": 14,
+      "records_reviewed": 14,
+      "records_added": 13,
+      "source_bodies_inspected": 14,
+      "new_source_identities": 9,
+      "new_yechidus_identities": 7,
+      "new_other_document_identities": 2,
+      "new_rebbe_letter_identities": 0,
+      "new_secretariat_document_identities": 0,
+      "existing_identities_enriched": 4,
+      "existing_identities_rechecked": 1,
+      "new_response_propositions": 27,
+      "existing_response_propositions_added": 6,
+      "response_propositions_added": 33,
+      "answer_eligible_source_families_added": 9,
+      "existing_families_promoted_to_answer_eligible": 3,
+      "translation_aliases_linked": 1,
+      "duplicate_alias_identities": 1,
+      "independent_new_witnesses": 0,
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "reason": "Direct open returned a rewritten summary/navigation shell; no source body available.",
+          "handling": "No content inferred; an alternative set of public publisher bodies was inspected in the same run."
+        }
+      ],
+      "alternative_source_attempted": true,
+      "crawler_retried": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "source_language_distribution": {
+        "English": 14
+      },
+      "source_type_distribution": {
+        "published_english_yechidus_translation": 7,
+        "published_english_yechidus_translation_parallel": 3,
+        "published_english_sicha_translation": 2,
+        "published_english_letter_translation_parallel": 1,
+        "existing_identity_recheck": 1
+      },
+      "metrics_before_main": {
+        "answer_eligible_unique_sources": 799,
+        "content_verified_unique_sources": 796,
+        "answer_eligible_propositions": 2627
+      },
+      "metrics_before": {
+        "answer_eligible_unique_sources": 842,
+        "content_verified_unique_sources": 839,
+        "answer_eligible_propositions": 2724
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
+      "metrics_actual_after": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
+      "reconciliation_variance": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 0
+      },
+      "reconciliation_status": "reconciled",
+      "current_access_recheck": {
+        "checked_at": "2026-11-14T03:21:01+02:00",
+        "aids": [
+          4666220
+        ],
+        "direct_publisher_open_result": "The direct AID 4666220 page returned a rewritten summary/navigation shell without the requested source body.",
+        "source_bodies_rechecked": 14,
+        "alternative_aids": [
+          2497614,
+          2487225,
+          2498908,
+          2514886,
+          2487556,
+          2506320,
+          2499039,
+          2487457,
+          2511619,
+          2497688,
+          2504381,
+          2507332,
+          2507334,
+          1281934
+        ],
+        "alternative_source_attempted": true,
+        "alternative_source_result": "Fourteen alternative public publisher pages were opened and their body sections inspected: thirteen batch records and one existing identity recheck. Body-only proposition locators were normalized. AID 1281934 was corrected to lines 288–301; AID 2507332 to lines 256–263; AID 2507334 to lines 256–261 and 278–285. No new claims were added during this recheck.",
+        "locator_ranges_normalized": 13,
+        "critical_locator_corrections": [
+          1281934,
+          2507332,
+          2507334
+        ],
+        "new_content_claims_added": 0,
+        "crawler_retried": false,
+        "access_control_bypassed": false,
+        "full_text_copied": false
+      },
+      "deduplication_summary": "Checked review queue, recent research batches 050–083, 11 bulk-index files and existing event-family files. Nine new AIDs were not found in those reviewed locations. Three 1991 Yechidus translations were linked to existing audio families. English AID 1281934 was linked to Hebrew AID 4831315 as the same letter and not counted independently. AID 2514886 was rechecked without new propositions.",
+      "quality_improvements": [
+        "Human-microcosm retrieval now uses the existing source-grounded proposition in AID 4831315.",
+        "Researcher mode compares the human microcosm letter with two distinct Sukkos year-head analogies, with explicit non-equivalence and derived-witness limits.",
+        "Claim-level body locators are surfaced in the answer UI and researcher evidence map."
+      ],
+      "metrics_delta_actual": {
+        "answer_eligible_unique_sources": 12,
+        "content_verified_unique_sources": 12,
+        "answer_eligible_propositions": 33
+      },
+      "source_bodies_rechecked": 14
+    },
+    {
       "batch_id": "083",
       "reviewed_at": "2026-11-14T01:28:47+02:00",
       "method": "manual_public_web_body_inspection",
@@ -884,9 +1060,17 @@
         "content_verified_unique_sources": 839,
         "answer_eligible_propositions": 2724
       },
-      "metrics_actual_after": null,
-      "reconciliation_variance": null,
-      "reconciliation_status": "pending_reconciliation",
+      "metrics_actual_after": {
+        "answer_eligible_unique_sources": 842,
+        "content_verified_unique_sources": 839,
+        "answer_eligible_propositions": 2724
+      },
+      "reconciliation_variance": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 0
+      },
+      "reconciliation_status": "reconciled",
       "batch_file": "data/items/content-research-batch-083-2026-11-14.json",
       "current_access_recheck": {
         "checked_at": "2026-11-14T01:55:56+02:00",
@@ -910,6 +1094,12 @@
         "crawler_retried": false,
         "access_control_bypassed": false,
         "full_text_copied": false
+      },
+      "status": "reconciled",
+      "metrics_delta_actual": {
+        "answer_eligible_unique_sources": 9,
+        "content_verified_unique_sources": 9,
+        "answer_eligible_propositions": 17
       }
     },
     {
@@ -1816,90 +2006,6 @@
           "status": "summary_shell_redirect",
           "previous_body_inspection_locator": "added proposition body lines 301–302"
         }
-      ]
-    },
-    {
-      "batch_id": "084",
-      "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
-      "reviewed_at": "2026-11-14T02:27:04+02:00",
-      "status": "pending_reconciliation",
-      "method": "manual_public_web_body_inspection",
-      "reviewed_item_count": 14,
-      "records_reviewed": 14,
-      "records_added": 13,
-      "source_bodies_inspected": 14,
-      "new_source_identities": 9,
-      "new_yechidus_identities": 7,
-      "new_other_document_identities": 2,
-      "new_rebbe_letter_identities": 0,
-      "new_secretariat_document_identities": 0,
-      "existing_identities_enriched": 4,
-      "existing_identities_rechecked": 1,
-      "new_response_propositions": 27,
-      "existing_response_propositions_added": 6,
-      "response_propositions_added": 33,
-      "answer_eligible_source_families_added": 9,
-      "existing_families_promoted_to_answer_eligible": 3,
-      "translation_aliases_linked": 1,
-      "duplicate_alias_identities": 1,
-      "independent_new_witnesses": 0,
-      "blocked_candidate_count": 1,
-      "blocked_candidates": [
-        {
-          "aid": 4666220,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-          "reason": "Direct open returned a rewritten summary/navigation shell; no source body available.",
-          "handling": "No content inferred; an alternative set of public publisher bodies was inspected in the same run."
-        }
-      ],
-      "alternative_source_attempted": true,
-      "crawler_retried": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "source_language_distribution": {
-        "English": 14
-      },
-      "source_type_distribution": {
-        "published_english_yechidus_translation": 7,
-        "published_english_yechidus_translation_parallel": 3,
-        "published_english_sicha_translation": 2,
-        "published_english_letter_translation_parallel": 1,
-        "existing_identity_recheck": 1
-      },
-      "metrics_before_main": {
-        "answer_eligible_unique_sources": 799,
-        "content_verified_unique_sources": 796,
-        "answer_eligible_propositions": 2627
-      },
-      "metrics_before": {
-        "answer_eligible_unique_sources": 842,
-        "content_verified_unique_sources": 839,
-        "answer_eligible_propositions": 2724
-      },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 854,
-        "content_verified_unique_sources": 851,
-        "answer_eligible_propositions": 2757
-      },
-      "metrics_actual_after": null,
-      "reconciliation_variance": null,
-      "reconciliation_status": "pending_reconciliation",
-      "current_access_recheck": {
-        "checked_at": "2026-11-14T02:27:04+02:00",
-        "aids": [
-          4666220
-        ],
-        "direct_publisher_open_result": "The direct AID 4666220 page returned a rewritten summary/navigation shell without the requested source body.",
-        "source_bodies_rechecked": 0,
-        "new_content_claims_added": 0,
-        "alternative_source_attempted": true,
-        "alternative_source_result": "Fourteen alternative public source bodies were inspected: nine new event translations, three same-event textual parallels, one English translation linked to Hebrew AID 4831315, and one existing identity recheck. No crawler retry or access-control bypass."
-      },
-      "deduplication_summary": "Checked review queue, recent research batches 050–083, 11 bulk-index files and existing event-family files. Nine new AIDs were not found in those reviewed locations. Three 1991 Yechidus translations were linked to existing audio families. English AID 1281934 was linked to Hebrew AID 4831315 as the same letter and not counted independently. AID 2514886 was rechecked without new propositions.",
-      "quality_improvements": [
-        "Human-microcosm retrieval now uses the existing source-grounded proposition in AID 4831315.",
-        "Researcher mode compares the human microcosm letter with two distinct Sukkos year-head analogies, with explicit non-equivalence and derived-witness limits.",
-        "Claim-level body locators are surfaced in the answer UI and researcher evidence map."
       ]
     }
   ],

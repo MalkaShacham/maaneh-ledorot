@@ -1042,9 +1042,17 @@
     "content_verified_unique_sources": 839,
     "answer_eligible_propositions": 2724
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
-  "reconciliation_status": "pending_reconciliation",
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 842,
+    "content_verified_unique_sources": 839,
+    "answer_eligible_propositions": 2724
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
+  "reconciliation_status": "reconciled",
   "limitations": [
     "No autograph, incoming letters, manuscripts or physical volumes were inspected; verification is at the public publisher-body level only.",
     "AID 4854534 is an excerpt beginning with an ellipsis; its missing context is not reconstructed.",
@@ -1075,5 +1083,10 @@
     "crawler_retried": false,
     "access_control_bypassed": false,
     "full_text_copied": false
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 9,
+    "content_verified_unique_sources": 9,
+    "answer_eligible_propositions": 17
   }
 }
