@@ -7,6 +7,119 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "086",
+    "batch_file": "data/items/content-research-batch-086-2026-11-14.json",
+    "reviewed_at": "2026-11-14T04:22:35+02:00",
+    "status": "pending_ci_reconciliation",
+    "method": "manual_public_web_body_inspection",
+    "reviewed_item_count": 11,
+    "records_reviewed": 11,
+    "records_added": 11,
+    "source_bodies_inspected": 11,
+    "new_source_identities": 11,
+    "new_event_evidence_families": 11,
+    "new_rebbe_letter_identities": 3,
+    "new_secretariat_document_identities": 8,
+    "new_yechidus_identities": 2,
+    "new_other_document_identities": 6,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 25,
+    "existing_response_propositions_added": 0,
+    "response_propositions_added": 25,
+    "answer_eligible_source_families_added": 11,
+    "translation_aliases_linked": 0,
+    "duplicate_alias_identities": 0,
+    "independent_new_witnesses": 0,
+    "blocked_candidate_count": 2,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "Fresh direct open redirected to the rewritten Torah-texts summary shell; no letter body was exposed, so no content was inferred."
+      },
+      {
+        "aid": 5413690,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413690/jewish/page.htm",
+        "reason": "Fresh direct open redirected to the rewritten Torah-texts summary shell; no letter body was exposed, so no content was inferred."
+      }
+    ],
+    "alternative_source_attempted": true,
+    "crawler_retried": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "source_language_distribution": {
+      "English": 11
+    },
+    "original_language_distribution": {
+      "not_independently_established": 11
+    },
+    "source_type_distribution": {
+      "published_english_secretariat_correspondence": 8,
+      "published_english_rebbe_letter": 2,
+      "published_english_letter_excerpt": 1
+    },
+    "metrics_committed_before": {
+      "answer_eligible_unique_sources": 854,
+      "content_verified_unique_sources": 851,
+      "answer_eligible_propositions": 2757
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 861,
+      "content_verified_unique_sources": 858,
+      "answer_eligible_propositions": 2773
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 872,
+      "content_verified_unique_sources": 869,
+      "answer_eligible_propositions": 2798
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "reconciliation_status": "pending_ci",
+    "current_access_recheck": {
+      "checked_at": "2026-11-14T04:22:35+02:00",
+      "aids": [
+        4666220,
+        5413690
+      ],
+      "direct_publisher_open_result": "Both AID URLs redirected to rewritten Torah-texts summary shells with no inspectable letter body; no content was inferred.",
+      "source_bodies_rechecked": 11,
+      "alternative_aids": [
+        289110,
+        289111,
+        289149,
+        289159,
+        1889078,
+        1889079,
+        1274011,
+        289237,
+        289123,
+        289108,
+        289151
+      ],
+      "alternative_source_attempted": true,
+      "alternative_source_result": "Eleven alternative public publisher pages were opened and their displayed body passages inspected. Eight are secretary-signed documents, two are Rebbe letters with printed signatures, and one is a publisher-attributed excerpt. All source-language bodies are English; original language was not independently established.",
+      "locator_ranges_normalized": 11,
+      "new_content_claims_added": 25,
+      "crawler_retried": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false
+    },
+    "deduplication_check": "Searched the content-review queue, GitHub repository code search for all eleven AIDs and titles, and prior batch manifests; no matching AID or source URL was found. The 11 AIDs represent 11 distinct published page identities and 11 event/document Evidence Families. AIDs 289110 and 289111 are related by date and visit context but are separate documents with different signers and separate families; a researcher/model link records the relationship without merging them. AID 289151 contains two dated secretariat communications on one page and is retained as one page identity with three separate proposition locators. All items belong to the broader Mr. Manchester correspondence collection where indicated, but collection membership alone does not merge distinct letters. No translation was counted as an independent witness; original-language status was not independently established.",
+    "verification_scope": "Eleven public publisher-body pages were inspected at item level: eight secretary-signed correspondence pages, two pages presenting Rebbe letters with printed signatures, and one publisher-attributed letter excerpt. All 25 propositions are non-verbatim Hebrew research paraphrases with body-level locators and provenance. The eight secretary-signed records are answer evidence only for what the named secretary's communication states; any report of the Rebbe's view remains explicitly second-hand. AID 1274011 is an incomplete excerpt with a generic signature marker. No autograph, incoming letter, complete correspondence chain or separate original-language witness was inspected. All context remains partial.",
+    "limitations": [
+      "The incoming letters and complete correspondence chains are not displayed; context_status remains partial.",
+      "No autograph or handwritten signature was inspected; printed sign-offs and publisher attribution are recorded as such.",
+      "Secretary-signed records must not be attributed to the Rebbe; they may support neutral questions about the secretary's documented communication.",
+      "AID 1274011 is an excerpt, not a complete letter; the publisher attribution and generic signature marker are retained.",
+      "All inspected bodies are in English; the original language of the correspondence was not independently established.",
+      "AID 289151 contains two dated letters on one publisher page and is counted as one source identity.",
+      "The AIDs 4666220 and 5413690 were blocked by rewritten summary shells; alternative accessible pages were used.",
+      "No full copyrighted text was copied; no access control was bypassed and no crawler was retried."
+    ]
+  },
+  "previous_manual_web_review": {
     "batch_id": "085",
     "batch_file": "data/items/content-research-batch-085-2026-11-14.json",
     "reviewed_at": "2026-11-14T03:56:02+02:00",
@@ -122,129 +235,6 @@
       "full_text_copied": false
     },
     "deduplication_check": "Checked the content-review queue, research batches 055–084, eleven bulk-index JSON files and the branch tree for all seven new AIDs. No new AID was found in those locations. AIDs 5100299, 4830967 and 5357571 are existing identities and were enriched only with publisher bibliographic/cross-reference metadata. AID 482843 was inspected but excluded as a free adaptation. The English translation of the Yiddish AID 1888988 is one derived witness in one Evidence Family; no Yiddish original was inspected. No translation was counted as an independent witness."
-  },
-  "previous_manual_web_review": {
-    "batch_id": "084",
-    "batch_file": "data/items/content-research-batch-084-2026-11-14.json",
-    "reviewed_at": "2026-11-14T02:27:04+02:00",
-    "status": "reconciled",
-    "method": "manual_public_web_body_inspection",
-    "reviewed_item_count": 14,
-    "records_reviewed": 14,
-    "records_added": 13,
-    "source_bodies_inspected": 14,
-    "new_source_identities": 9,
-    "new_yechidus_identities": 7,
-    "new_other_document_identities": 2,
-    "new_rebbe_letter_identities": 0,
-    "new_secretariat_document_identities": 0,
-    "existing_identities_enriched": 4,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 27,
-    "existing_response_propositions_added": 6,
-    "response_propositions_added": 33,
-    "answer_eligible_source_families_added": 9,
-    "existing_families_promoted_to_answer_eligible": 3,
-    "translation_aliases_linked": 1,
-    "duplicate_alias_identities": 1,
-    "independent_new_witnesses": 0,
-    "blocked_candidate_count": 1,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-        "reason": "Direct open returned a rewritten summary/navigation shell; no source body available.",
-        "handling": "No content inferred; an alternative set of public publisher bodies was inspected in the same run."
-      }
-    ],
-    "alternative_source_attempted": true,
-    "crawler_retried": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "source_language_distribution": {
-      "English": 14
-    },
-    "source_type_distribution": {
-      "published_english_yechidus_translation": 7,
-      "published_english_yechidus_translation_parallel": 3,
-      "published_english_sicha_translation": 2,
-      "published_english_letter_translation_parallel": 1,
-      "existing_identity_recheck": 1
-    },
-    "metrics_before_main": {
-      "answer_eligible_unique_sources": 799,
-      "content_verified_unique_sources": 796,
-      "answer_eligible_propositions": 2627
-    },
-    "metrics_before": {
-      "answer_eligible_unique_sources": 842,
-      "content_verified_unique_sources": 839,
-      "answer_eligible_propositions": 2724
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 854,
-      "content_verified_unique_sources": 851,
-      "answer_eligible_propositions": 2757
-    },
-    "metrics_actual_after": {
-      "answer_eligible_unique_sources": 854,
-      "content_verified_unique_sources": 851,
-      "answer_eligible_propositions": 2757
-    },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 0
-    },
-    "reconciliation_status": "reconciled",
-    "current_access_recheck": {
-      "checked_at": "2026-11-14T03:21:01+02:00",
-      "aids": [
-        4666220
-      ],
-      "direct_publisher_open_result": "The direct AID 4666220 page returned a rewritten summary/navigation shell without the requested source body.",
-      "source_bodies_rechecked": 14,
-      "alternative_aids": [
-        2497614,
-        2487225,
-        2498908,
-        2514886,
-        2487556,
-        2506320,
-        2499039,
-        2487457,
-        2511619,
-        2497688,
-        2504381,
-        2507332,
-        2507334,
-        1281934
-      ],
-      "alternative_source_attempted": true,
-      "alternative_source_result": "Fourteen alternative public publisher pages were opened and their body sections inspected: thirteen batch records and one existing identity recheck. Body-only proposition locators were normalized. AID 1281934 was corrected to lines 288–301; AID 2507332 to lines 256–263; AID 2507334 to lines 256–261 and 278–285. No new claims were added during this recheck.",
-      "locator_ranges_normalized": 13,
-      "critical_locator_corrections": [
-        1281934,
-        2507332,
-        2507334
-      ],
-      "new_content_claims_added": 0,
-      "crawler_retried": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false
-    },
-    "deduplication_summary": "Checked review queue, recent research batches 050–083, 11 bulk-index files and existing event-family files. Nine new AIDs were not found in those reviewed locations. Three 1991 Yechidus translations were linked to existing audio families. English AID 1281934 was linked to Hebrew AID 4831315 as the same letter and not counted independently. AID 2514886 was rechecked without new propositions.",
-    "quality_improvements": [
-      "Human-microcosm retrieval now uses the existing source-grounded proposition in AID 4831315.",
-      "Researcher mode compares the human microcosm letter with two distinct Sukkos year-head analogies, with explicit non-equivalence and derived-witness limits.",
-      "Claim-level body locators are surfaced in the answer UI and researcher evidence map."
-    ],
-    "metrics_delta_actual": {
-      "answer_eligible_unique_sources": 12,
-      "content_verified_unique_sources": 12,
-      "answer_eligible_propositions": 33
-    },
-    "source_bodies_rechecked": 14
   },
   "earlier_manual_web_review": {
     "batch_id": "080",
@@ -602,9 +592,13 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "manual_web_review_note": "Batch 084: 14 public English bodies inspected; nine new Evidence Families, four existing identities enriched, one rechecked. Translation aliases remain in their existing families and are not independent witnesses. AID 4666220 remained blocked; fourteen alternative publisher bodies were inspected.",
-  "manual_web_review_current_metrics": null,
-  "last_manual_review_at": "2026-11-14T03:56:02+02:00",
+  "manual_web_review_note": "Batch 086 added 11 source identities and 25 inspected non-verbatim propositions; batch 085 and 086 await CI reconciliation. Current committed answer-readiness baseline remains 854/851/2757. The blocked runner crawler was not retried.",
+  "manual_web_review_current_metrics": {
+    "answer_eligible_unique_sources": 854,
+    "content_verified_unique_sources": 851,
+    "answer_eligible_propositions": 2757
+  },
+  "last_manual_review_at": "2026-11-14T04:22:35+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -848,6 +842,119 @@
     ]
   },
   "manual_web_review_history": [
+    {
+      "batch_id": "086",
+      "batch_file": "data/items/content-research-batch-086-2026-11-14.json",
+      "reviewed_at": "2026-11-14T04:22:35+02:00",
+      "status": "pending_ci_reconciliation",
+      "method": "manual_public_web_body_inspection",
+      "reviewed_item_count": 11,
+      "records_reviewed": 11,
+      "records_added": 11,
+      "source_bodies_inspected": 11,
+      "new_source_identities": 11,
+      "new_event_evidence_families": 11,
+      "new_rebbe_letter_identities": 3,
+      "new_secretariat_document_identities": 8,
+      "new_yechidus_identities": 2,
+      "new_other_document_identities": 6,
+      "existing_identities_enriched": 0,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 25,
+      "existing_response_propositions_added": 0,
+      "response_propositions_added": 25,
+      "answer_eligible_source_families_added": 11,
+      "translation_aliases_linked": 0,
+      "duplicate_alias_identities": 0,
+      "independent_new_witnesses": 0,
+      "blocked_candidate_count": 2,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "reason": "Fresh direct open redirected to the rewritten Torah-texts summary shell; no letter body was exposed, so no content was inferred."
+        },
+        {
+          "aid": 5413690,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413690/jewish/page.htm",
+          "reason": "Fresh direct open redirected to the rewritten Torah-texts summary shell; no letter body was exposed, so no content was inferred."
+        }
+      ],
+      "alternative_source_attempted": true,
+      "crawler_retried": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "source_language_distribution": {
+        "English": 11
+      },
+      "original_language_distribution": {
+        "not_independently_established": 11
+      },
+      "source_type_distribution": {
+        "published_english_secretariat_correspondence": 8,
+        "published_english_rebbe_letter": 2,
+        "published_english_letter_excerpt": 1
+      },
+      "metrics_committed_before": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
+      "metrics_before": {
+        "answer_eligible_unique_sources": 861,
+        "content_verified_unique_sources": 858,
+        "answer_eligible_propositions": 2773
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 872,
+        "content_verified_unique_sources": 869,
+        "answer_eligible_propositions": 2798
+      },
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "reconciliation_status": "pending_ci",
+      "current_access_recheck": {
+        "checked_at": "2026-11-14T04:22:35+02:00",
+        "aids": [
+          4666220,
+          5413690
+        ],
+        "direct_publisher_open_result": "Both AID URLs redirected to rewritten Torah-texts summary shells with no inspectable letter body; no content was inferred.",
+        "source_bodies_rechecked": 11,
+        "alternative_aids": [
+          289110,
+          289111,
+          289149,
+          289159,
+          1889078,
+          1889079,
+          1274011,
+          289237,
+          289123,
+          289108,
+          289151
+        ],
+        "alternative_source_attempted": true,
+        "alternative_source_result": "Eleven alternative public publisher pages were opened and their displayed body passages inspected. Eight are secretary-signed documents, two are Rebbe letters with printed signatures, and one is a publisher-attributed excerpt. All source-language bodies are English; original language was not independently established.",
+        "locator_ranges_normalized": 11,
+        "new_content_claims_added": 25,
+        "crawler_retried": false,
+        "access_control_bypassed": false,
+        "full_text_copied": false
+      },
+      "deduplication_check": "Searched the content-review queue, GitHub repository code search for all eleven AIDs and titles, and prior batch manifests; no matching AID or source URL was found. The 11 AIDs represent 11 distinct published page identities and 11 event/document Evidence Families. AIDs 289110 and 289111 are related by date and visit context but are separate documents with different signers and separate families; a researcher/model link records the relationship without merging them. AID 289151 contains two dated secretariat communications on one page and is retained as one page identity with three separate proposition locators. All items belong to the broader Mr. Manchester correspondence collection where indicated, but collection membership alone does not merge distinct letters. No translation was counted as an independent witness; original-language status was not independently established.",
+      "verification_scope": "Eleven public publisher-body pages were inspected at item level: eight secretary-signed correspondence pages, two pages presenting Rebbe letters with printed signatures, and one publisher-attributed letter excerpt. All 25 propositions are non-verbatim Hebrew research paraphrases with body-level locators and provenance. The eight secretary-signed records are answer evidence only for what the named secretary's communication states; any report of the Rebbe's view remains explicitly second-hand. AID 1274011 is an incomplete excerpt with a generic signature marker. No autograph, incoming letter, complete correspondence chain or separate original-language witness was inspected. All context remains partial.",
+      "limitations": [
+        "The incoming letters and complete correspondence chains are not displayed; context_status remains partial.",
+        "No autograph or handwritten signature was inspected; printed sign-offs and publisher attribution are recorded as such.",
+        "Secretary-signed records must not be attributed to the Rebbe; they may support neutral questions about the secretary's documented communication.",
+        "AID 1274011 is an excerpt, not a complete letter; the publisher attribution and generic signature marker are retained.",
+        "All inspected bodies are in English; the original language of the correspondence was not independently established.",
+        "AID 289151 contains two dated letters on one publisher page and is counted as one source identity.",
+        "The AIDs 4666220 and 5413690 were blocked by rewritten summary shells; alternative accessible pages were used.",
+        "No full copyrighted text was copied; no access control was bypassed and no crawler was retried."
+      ]
+    },
     {
       "batch_id": "085",
       "reviewed_at": "2026-11-14T03:56:02+02:00",
@@ -2189,5 +2296,5 @@
       "answer_eligible_propositions": -3
     }
   },
-  "last_manual_review_batch_id": "085"
+  "last_manual_review_batch_id": "086"
 }

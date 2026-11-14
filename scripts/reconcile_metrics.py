@@ -317,6 +317,7 @@ if isinstance(state.get("metrics_integrity"),dict):
     readiness["reconciliation_variance"]={k:actual[k]-int(expected.get(k,actual[k])) for k in actual}
     integrity["status"]="reconciled_pending_commit"
     integrity["last_reconciled_at"]=today
+    state["last_reconciled_at"]=today
 
 actual_metrics={k:out[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
 print("answer_readiness_actual_metrics",json.dumps(actual_metrics,ensure_ascii=False))
@@ -341,6 +342,12 @@ if batch_path and isinstance(batch_data,dict):
         last["metrics_actual_after"]=actual_metrics
         last["reconciliation_variance"]=variance
         last["reconciliation_status"]=batch_data["reconciliation_status"]
+    if batch_data["reconciliation_status"]=="reconciled":
+        completed_id=batch_data.get("batch_id") or batch_label
+        dev["last_completed_batch"]=completed_id
+        dev["current_batch"]=completed_id
+        if isinstance(summary,dict) and summary.get("batch_id")==batch_data.get("batch_id"):
+            summary["reconciliation_status"]="reconciled"
     acquisition_path=ROOT/"data/acquisition/latest.json"
     if acquisition_path.exists():
         acquisition=json.loads(acquisition_path.read_text(encoding="utf-8"))

@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-14T02:27:04+02:00",
+  "last_updated": "2026-11-14",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -31,9 +31,9 @@
       "Indexed": 1144,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 799,
-    "content_verified_unique_sources": 796,
-    "answer_eligible_propositions": 2627
+    "answer_eligible_unique_sources": 854,
+    "content_verified_unique_sources": 851,
+    "answer_eligible_propositions": 2757
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": [
@@ -171,37 +171,50 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-14-content-batch-084",
+    "current_batch": "2026-11-14-content-batch-086",
     "required_agent_action": "Continue original-language Hebrew/Yiddish witnesses and additional document types; treat English translations as non-independent witnesses in their underlying Evidence Families; preserve item-level locators and context limits.",
     "last_completed_batch": "2026-11-14-content-batch-084",
     "last_batch_summary": {
-      "batch_id": "084",
-      "source_bodies_inspected": 14,
-      "new_source_identities": 9,
-      "existing_identities_enriched": 4,
-      "existing_identity_rechecks": 1,
-      "new_response_propositions": 27,
-      "existing_response_propositions_added": 6,
-      "response_propositions_added": 33,
+      "batch_id": "086",
+      "source_bodies_inspected": 11,
+      "new_source_identities": 11,
+      "new_event_evidence_families": 11,
+      "existing_identities_enriched": 0,
+      "existing_identity_rechecks": 0,
+      "new_response_propositions": 25,
+      "existing_response_propositions_added": 0,
+      "response_propositions_added": 25,
       "independent_new_witnesses": 0,
-      "blocked_candidate_aid": 4666220,
-      "alternative_sources_inspected": 14,
-      "answer_eligible_unique_sources_before": 842,
-      "answer_eligible_unique_sources_after": 854,
-      "content_verified_unique_sources_before": 839,
-      "content_verified_unique_sources_after": 851,
-      "answer_eligible_propositions_before": 2724,
-      "answer_eligible_propositions_after": 2757,
-      "reconciliation_status": "reconciled",
-      "translation_family_dedup_applied": true
+      "blocked_candidate_aids": [
+        4666220,
+        5413690
+      ],
+      "alternative_sources_inspected": 11,
+      "metrics_committed_before": {
+        "answer_eligible_unique_sources": 854,
+        "content_verified_unique_sources": 851,
+        "answer_eligible_propositions": 2757
+      },
+      "metrics_before": {
+        "answer_eligible_unique_sources": 861,
+        "content_verified_unique_sources": 858,
+        "answer_eligible_propositions": 2773
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 872,
+        "content_verified_unique_sources": 869,
+        "answer_eligible_propositions": 2798
+      },
+      "reconciliation_status": "pending_ci"
     },
-    "last_run_note": "Batch 084: 14 public source bodies inspected; 9 new event families, 4 existing identities enriched, 1 existing identity rechecked, and 33 new non-verbatim propositions. AID 4666220 remained a summary shell; alternative public pages were inspected. Retrieval/synthesis regression fix is included in the PR branch; reconciliation and Actions are pending.",
-    "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 direct open returned a rewritten summary/navigation shell. No content was inferred or used; 14 alternative public source bodies were inspected in the same run.",
+    "last_run_note": "Batch 086: 11 public publisher bodies inspected; 11 new source identities and 11 event/document Evidence Families, with 25 non-verbatim source-grounded propositions. Eight records are secretary-signed and cannot be attributed to the Rebbe; two are publisher-presented Rebbe letters and one is a partial publisher-attributed excerpt. AIDs 4666220 and 5413690 redirected to summary shells; 11 accessible alternatives were inspected. No crawler retry, access-control bypass or full-text copying. Batch 085 and 086 remain pending CI; committed answer-readiness baseline remains 854/851/2757.",
+    "last_batch_blocked_count": 2,
+    "last_batch_blocked_reason": "AIDs 4666220 and 5413690 redirected to rewritten Torah-texts summary shells without inspectable letter bodies. No content was inferred; eleven alternative public publisher bodies were inspected in the same run.",
     "next_work": [
-      "Run deterministic reconciliation and test_content_readiness.mjs for batch 084 and the microcosm retrieval/synthesis regression.",
-      "Merge the source/data/engine changes to main only after the quality gate passes, then verify main Actions and Pages publication.",
-      "Keep translations within their Evidence Families and do not count them as independent witnesses; seek original-language transcripts/audio only when publicly inspectable."
+      "Run the PR quality gate after the locator-versus-content assertion correction; do not merge until it passes.",
+      "After merge, allow the deterministic reconcile-metrics workflow to rebuild public-search-index.json, public-metrics.json and project-state.json from the inspected item records.",
+      "Verify answer_eligible_unique_sources and content_verified_unique_sources against the reconciled Evidence Family index; do not claim projected counts as actual.",
+      "Check the main Actions runs and the published GitHub Pages deployment; keep the hourly schedule and crawler restrictions unchanged."
     ],
     "last_reconciliation": {
       "batch_id": "078",
@@ -610,7 +623,7 @@
   "quality_gate": {
     "run_status": "pending_pr_rerun",
     "latest_saved_report_passed": false,
-    "note": "Await a fresh PR quality-gate run before claiming success."
+    "note": "Batch 085–086 content and the locator/content regression correction are on PR #15; await a fresh passing PR quality-gate run before merge."
   },
   "publication": {
     "status": "pending_deployment_check"

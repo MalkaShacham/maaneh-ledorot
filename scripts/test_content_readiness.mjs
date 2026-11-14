@@ -1147,12 +1147,20 @@ for(const id of ['igrot-kodesh-v13-דתרע','igrot-kodesh-v13-דתרעב','igro
  assert(e&&/secretariat/i.test(e.witness_type||''));
  assert.equal(e.independent_witness,false);
 }
+const v13PrintedIndexFile=JSON.parse(await readFile(new URL('data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json',root)));
+const v13PrintedIndexEntry=v13PrintedIndexFile.records.find(e=>e.id==='igrot-kodesh-v13-דתרפא');
+assert(v13PrintedIndexEntry&&/bibliographic identity\/locator verified/.test(v13PrintedIndexEntry.verification_scope||''));
+const v13LocatorOnly=normalizeEvidenceIntegrity([v13PrintedIndexEntry])[0];
+assert.equal(v13LocatorOnly.has_content_evidence,false,'the printed volume index verifies identity and locator only');
+assert.equal(v13LocatorOnly.response_propositions.length,0,'the printed volume index must not carry answer propositions');
+const v13Body=idx.entries.find(e=>e.key==='id:igrot-kodesh-v13-דתרפא');
+assert(v13Body&&v13Body.has_content_evidence===true&&v13Body.response_propositions.length>=3&&/secretariat/i.test(v13Body.source_class||v13Body.witness_type||''),'the separately inspected secretary-signed body is content evidence for neutral secretariat queries');
 const secretariatClassQ='מה מתועד במענה המזכירות על תוספת אברכים והרחבת שיעור חסידות?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretariatClassQ,{mode});
  assert(m.answerable,mode+': secretary-signed class-expansion response must be retrievable when asked neutrally');
  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרפא'));
- const locatorIdentity=m.sources.find(e=>e.key==='id:igrot-kodesh-v13-דתרפא');assert(locatorIdentity&&locatorIdentity.has_content_evidence===false&&(!Array.isArray(locatorIdentity.response_propositions)||locatorIdentity.response_propositions.length===0),'printed index identity must remain locator-only, not content evidence');
+ const locatorIdentity=m.sources.find(e=>e.key==='id:igrot-kodesh-v13-דתרפא');assert(locatorIdentity&&locatorIdentity.has_content_evidence===true&&Array.isArray(locatorIdentity.response_propositions)&&locatorIdentity.response_propositions.length>=3&&/secretariat/i.test(locatorIdentity.source_class||locatorIdentity.witness_type||''),'neutral retrieval must use the separately inspected secretary-signed body, not the printed index locator');
  assert(!m.sources.some(e=>sourceAID(e)==='5071128'),'AID 5071128 is about study motivation, not class expansion');
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?',{mode});
  assert.equal(direct.answerable,false);
