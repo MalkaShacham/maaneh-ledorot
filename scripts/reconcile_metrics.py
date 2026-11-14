@@ -333,13 +333,15 @@ if batch_path and isinstance(batch_data,dict):
         if str(review.get("batch_id"))==str(batch_label):
             review["metrics_actual_after"]=actual_metrics
             review["reconciliation_variance"]=variance
-            review["reconciliation_status"]=batch_data["reconciliation_status"]
+            review["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
             review["status"]=batch_data["reconciliation_status"]
             if batch_data.get("reconciled_at"):
                 review["reconciled_at"]=batch_data["reconciled_at"]
-            acquisition["manual_web_review_current_metrics"]=actual_metrics
             acquisition["last_manual_review_at"]=review.get("reviewed_at") or acquisition.get("last_manual_review_at")
-            acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+        # Always expose the latest corpus totals, even when the newest corpus batch
+        # is not the same object as the last manual web review.
+        acquisition["manual_web_review_current_metrics"]=actual_metrics
+        acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
 ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}
 review_candidates=[e for e in search_index["entries"]
