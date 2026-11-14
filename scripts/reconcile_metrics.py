@@ -334,6 +334,9 @@ if batch_path and isinstance(batch_data,dict):
             review["metrics_actual_after"]=actual_metrics
             review["reconciliation_variance"]=variance
             review["reconciliation_status"]=batch_data["reconciliation_status"]
+            review["status"]=batch_data["reconciliation_status"]
+            if batch_data.get("reconciled_at"):
+                review["reconciled_at"]=batch_data["reconciled_at"]
             acquisition["manual_web_review_current_metrics"]=actual_metrics
             acquisition["last_manual_review_at"]=review.get("reviewed_at") or acquisition.get("last_manual_review_at")
             acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

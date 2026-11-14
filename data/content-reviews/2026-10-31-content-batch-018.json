@@ -28,18 +28,26 @@
   "evidence_family_dedup": [
     {
       "family_id": "kfar-chabad-1956-attack-recovery",
-      "member_letters_in_batch": ["ד׳שסט"],
+      "member_letters_in_batch": [
+        "ד׳שסט"
+      ],
       "counting_rule": "The letter responds to the already documented Kfar Chabad attack and joins that event-level family; it is a distinct letter witness, not a new attack or recovery campaign."
     },
     {
       "family_id": "igrot-kodesh-v13-letter-4296",
-      "member_letters_in_batch": ["ד׳שסד"],
-      "related_existing_letters": ["ד׳רצו"],
+      "member_letters_in_batch": [
+        "ד׳שסד"
+      ],
+      "related_existing_letters": [
+        "ד׳רצו"
+      ],
       "counting_rule": "Letter ד׳שסד explicitly continues the same practical-halacha class correspondence documented in ד׳רצו. Both letters therefore share one evidence family; the follow-up is a distinct letter witness, not an independent case."
     },
     {
       "family_id": "lag-baomer-1956-outreach-campaign",
-      "member_letters_in_batch": ["ד׳שסז"],
+      "member_letters_in_batch": [
+        "ד׳שסז"
+      ],
       "counting_rule": "The Lag BaOmer paragraph is a related facet inside a broader fundraising and school-branch letter; it does not create a separate campaign witness."
     }
   ],
@@ -50,5 +58,15 @@
       "action": "Known blocked routes were not retried; the user-supplied publisher scan was used as the accessible source."
     }
   ],
-  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored."
+  "rights_boundary": "No complete letter text is reproduced. Only bounded non-verbatim research paraphrases, locators, provenance, context and limitations are stored.",
+  "authorship_exceptions": [
+    {
+      "id": "igrot-kodesh-v13-דשם",
+      "canonical_key": "igrot-kodesh-v13-ד׳שס",
+      "letter_number": "ד׳שס",
+      "document_type": "secretariat_letter",
+      "printed_signature": "secretary",
+      "attribution_rule": "Do not attribute this item to the Rebbe. It is an office letter signed by a secretary; it may answer only questions framed as asking what the secretariat letter says."
+    }
+  ]
 }

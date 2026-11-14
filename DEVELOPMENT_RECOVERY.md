@@ -338,3 +338,8 @@ Publication verification: GitHub Pages deployment completed successfully for mai
 
 
 - Regression-test correction after the first full run: `test_content_readiness.mjs` still expected OCR aliases ד׳שטג and ד׳שם as canonical identities. The 2026-10-31 content-review audit explicitly resolves those aliases to ד׳שסג and ד׳שס, respectively. Updated only the test's expected canonical keys; no source records or Evidence Families were changed.
+
+
+- Follow-up source-integrity correction: AID `igrot-kodesh-v13-דשם` (printed letter number ד׳שס) is a **secretariat office letter**, not a direct Rebbe-authored letter. The printed signature is by a secretary. The item is now explicitly typed and labeled as `secretariat_letter`; its Hebrew propositions remain source-grounded, but queries asking what the Rebbe wrote cannot use it. A question explicitly asking what the secretariat letter says remains answerable with claim-level locators.
+- The retrieval gate for `מסחר ולימוד יום שלם` now checks that one inspected proposition explicitly contains the three elements—commercial activity, yeshiva, and study—rather than requiring an exact phrase match. Researcher mode labels this witness as `secretariat`.
+- The committed reconciliation for batch 080 confirms zero variance: `answer_eligible_unique_sources=810`, `content_verified_unique_sources=807`, `answer_eligible_propositions=2660`. The acquisition manifest's human-readable `status` field is now aligned with `reconciliation_status`; the reconciliation script will keep them synchronized on future runs.

@@ -260,10 +260,10 @@ for(const mode of ['regular','researcher']){
 }
 
 const newBatchChecks=[
-  ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשסג'],
+  ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
   ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
   ['מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?','id:igrot-kodesh-v13-דתרפא'],
-  ['מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשס']
+  ['מה נכתב במכתב המזכירות על עיסוק במסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
 ];
 for(const [question,key] of newBatchChecks){
   for(const mode of ['regular','researcher']){
@@ -968,6 +968,32 @@ for(const mode of ['regular','researcher']){
 }
 
  
+
+const secretariatLetter=idx.entries.find(e=>e.id==='igrot-kodesh-v13-דשם');
+assert(secretariatLetter,'the volume-XIII office letter must remain discoverable');
+assert.equal(secretariatLetter.type,'secretariat_letter');
+assert.equal(secretariatLetter.source_class,'Secretariat correspondence');
+assert.equal(secretariatLetter.author_role,'secretariat');
+assert.match(secretariatLetter.primary_secondary_status,/not a direct Rebbe-authored letter/);
+const directRebbeAttributionQuestion='מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,directRebbeAttributionQuestion,{mode});
+ assert(!m.sources.some(e=>e.id==='igrot-kodesh-v13-דשם'),mode+': a secretary-signed office letter must not be attributed to the Rebbe');
+ if(m.answerable)assert(m.sources.every(e=>e.author_role!=='secretariat'));
+}
+const secretariatQuestion='מה נכתב במכתב המזכירות על עיסוק במסחר בזמן לימוד בישיבה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,secretariatQuestion,{mode});
+ assert(m.answerable,mode+': explicitly framed secretariat-letter question must be answerable');
+ const s=m.sources.find(e=>e.id==='igrot-kodesh-v13-דשם');
+ assert(s&&s.type==='secretariat_letter');
+ assert.match(s.primary_secondary_status,/not a direct Rebbe-authored letter/);
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher')assert(m.research&&m.research.cases.some(c=>c.witness_class==='secretariat'));
+ else assert.equal(m.research,undefined);
+}
+
 // Batch 080: seven new inspected Hebrew/Yiddish letters, one existing identity rechecked,
 // 25 bounded propositions, and claim-level retrieval in regular/researcher modes.
 const batch080Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-080-2026-11-14.json',root)));

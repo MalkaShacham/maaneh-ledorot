@@ -489,6 +489,10 @@ function intentEvidenceGate(e,u){
 
 export function propositionRelevance(e,u){
  if(!e?.has_content_evidence)return{score:0,support:'unknown_content',reasons:['no content evidence']};
+ const witnessDescriptor=norm([e.type,e.source_class,e.source_class_detail,e.witness_type,e.primary_secondary_status].join(' '));
+ const isSecretariat=/secretariat|מזכירות/.test(witnessDescriptor);
+ const asksRebbeAuthorship=/הרבי|רבי|the rebbe/.test(norm(u.query));
+ if(isSecretariat&&asksRebbeAuthorship)return{score:0,support:'insufficient_authorship_evidence',reasons:['matched item is a secretariat office letter, not a Rebbe-authored letter']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
  if(u.query.includes('השפעה')&&u.query.includes('חינוך')&&u.query.includes('מעשה')&&u.query.includes('דיבור')){
   const supportingProps=arr(e.response_propositions).filter(supportsEducationalInfluenceActionProposition);
@@ -611,7 +615,11 @@ export function propositionRelevance(e,u){
  if(u.topics.includes('אחדות בפורים')&&(!containsTerm(body,'פורים')||!containsTerm(body,'אחדות')||!['משלוח מנות','מתנות לאביונים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Purim unity and mitzvah setting is absent']};
  if(u.topics.includes('מבצע פורים נמשך לפסח ולצדקה')&&(!containsTerm(body,'פורים')||!containsTerm(body,'פסח')||!['צדקה','מצות'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['Purim-to-Pesach charity campaign setting is absent']};
  if(u.topics.includes('לימוד רמב״ם ואחדות מרחבית')&&(!containsTerm(body,'רמב״ם')||!containsTerm(body,'אחדות')||!['מקומות','מרוחקים'].some(t=>containsTerm(body,t))))return{score:0,support:'insufficient_specific_evidence',reasons:['shared Rambam study across locations setting is absent']};
- if(u.topics.includes('מסחר ולימוד יום שלם')&&(!containsTerm(body,'מסחר')||!containsTerm(body,'ישיבה')||!containsTerm(body,'לימוד')))return{score:0,support:'insufficient_specific_evidence',reasons:['business activity during yeshiva study must be explicit in the inspected proposition']};
+ if(u.topics.includes('מסחר ולימוד יום שלם')){
+  const supportingProps=arr(e.response_propositions).filter(p=>containsTerm(p,'מסחר')&&containsTerm(p,'ישיבה')&&containsTerm(p,'לימוד'));
+  if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['business activity during yeshiva study must be explicit in the same inspected proposition']};
+  return{score:28,support:'direct_support',reasons:['inspected proposition explicitly connects commercial activity with yeshiva study'],supportingProps};
+ }
  if(u.topics.includes('אונייה בשבת ועלייה מצפון אפריקה')&&(!containsTerm(body,'צפון אפריקה')||!containsTerm(body,'יום ראשון')))return{score:0,support:'insufficient_specific_evidence',reasons:['North-Africa Sunday-departure setting is absent']};
  if(u.topics.includes('עולים ממרוקו ושפת ההתוועדות')&&!['עולים ממרוקו','התוועדויות','יידיש','עברית'].every(t=>containsTerm(body,t)))return{score:0,support:'insufficient_specific_evidence',reasons:['Moroccan immigrant Hebrew-farbrengen language-access setting is absent']};
  if(u.topics.includes('גיל העולם ורדיואקטיביות')&&(!containsTerm(body,'גיל העולם')||!containsTerm(body,'רדיואקטיביות')))return{score:0,support:'insufficient_specific_evidence',reasons:['radioactivity and world-age correspondence setting is absent']};
@@ -1169,7 +1177,7 @@ function crossFamilyPatternEvidence(selected,u){
  }
  return rows.filter(r=>matched.has(r.index)).map(r=>({...r.e,_supporting_propositions:[...matched.get(r.index)]}));
 }
-function classifyWitness(e){const s=norm([e.primary_secondary_status,e.source_class,e.witness_type].join(' ')).replace(/no translation notice|translation not indicated|original language not independently established|not a translation/g,'');return /primary|ראשוני|direct/.test(s)?'primary':/translation|תרגום|translated|derived/.test(s)?'derived':/secondary|מאוחר|עיבוד/.test(s)?'secondary':'unspecified';}
+function classifyWitness(e){const s=norm([e.primary_secondary_status,e.source_class,e.witness_type].join(' ')).replace(/no translation notice|translation not indicated|original language not independently established|not a translation/g,'');return /secretariat|מזכירות/.test(s)?'secretariat':/primary|ראשוני|direct/.test(s)?'primary':/translation|תרגום|translated|derived/.test(s)?'derived':/secondary|מאוחר|עיבוד/.test(s)?'secondary':'unspecified';}
 function coverageFor(selected,u){const covered=[],missing=[];if(selected.length)covered.push('תוכן המענה');if(u.intent==='circumstances')(selected.some(e=>text(e.documented_circumstances)||text(e.conditions_or_qualifications)||text(e.audience))?covered:missing).push('נסיבות/תנאים/קהל');if(u.intent==='historical')(selected.some(e=>e.date)?covered:missing).push('תאריך/תקופה');if(u.intent==='bibliographic')(selected.some(e=>e.source_url||e.provenance||e.witness_provenance)?covered:missing).push('provenance ביבליוגרפי');if(u.intent==='pattern')(new Set(selected.map(familyKey)).size>=2?covered:missing).push('דפוס בין משפחות ראיות עצמאיות');return{covered,missing};}
 const MODE_BUDGETS={regular:{sources:6,claims:5},researcher:{sources:24,claims:32}};
 function presentationFor(mode){const budget=MODE_BUDGETS[mode];return{answer_style:mode==='researcher'?'extended_evidence_analysis':'concise_answer_first',detail_level:mode==='researcher'?'witness_level':'summary',source_limit:budget.sources,claim_limit:budget.claims};}
