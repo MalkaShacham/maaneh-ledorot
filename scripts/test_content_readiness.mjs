@@ -906,7 +906,6 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher')assert(m.research.evidence_map.length>0&&m.research.witnesses.length>=1);
  else assert.equal(m.research,undefined);
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על פתיחת מחנה גן ישראל והשפעתו לאורך השנה?',{mode});
- console.log('DIRECT_TELEGRAM_DEBUG',JSON.stringify({mode,understanding:direct.understanding,answerable:direct.answerable,reason:direct.reason,sources:direct.sources.map(x=>({aid:sourceAID(x),witness_type:x.witness_type,independent_witness:x._independent_witness,score:x._relevance,support:x._support})),entry:idx.entries.find(x=>sourceAID(x)==='5357059')&&{status:idx.entries.find(x=>sourceAID(x)==='5357059').status,witness_type:idx.entries.find(x=>sourceAID(x)==='5357059').witness_type,has_content_evidence:idx.entries.find(x=>sourceAID(x)==='5357059').has_content_evidence,proposition:idx.entries.find(x=>sourceAID(x)==='5357059').response_propositions?.[0]}},null,2));
  assert.equal(direct.answerable,false,mode+': do not attribute a secretariat-transmitted telegram directly to the Rebbe');
  assert.equal(direct.reason,'secretariat_authorship_boundary');
  assert(direct.sources.some(x=>sourceAID(x)==='5357059'));
@@ -1075,21 +1074,25 @@ for(const aid of ['2277929','2278502','4264336','3905730']){
  assert(e&&/translation/i.test(e.witness_type||''),'batch-080 AID '+aid+' must be labelled as a published translation');
  assert.equal(e.independent_witness,false,'translations must not count as independent witnesses');
 }
-const volume13Secretariat=idx.entries.find(e=>e.id==='igrot-kodesh-v13-דשם');
-assert(volume13Secretariat&&/secretariat/i.test(volume13Secretariat.witness_type||''));
-assert.equal(volume13Secretariat.independent_witness,false);
-const secretariatQuestion='מה מתועד במענה המזכירות על מסחר ולימוד יום שלם?';
+const volume13KeyOnly=idx.entries.find(e=>e.id==='igrot-kodesh-v13-דשם');
+assert(volume13KeyOnly,'the printed-index identity must remain discoverable');
+assert(!volume13KeyOnly.has_content_evidence,'a scanned volume index verifies identity and locator only');
+assert(!(volume13KeyOnly.response_propositions||[]).length,'a scanned volume index cannot supply substantive propositions');
+assert(/full wording not independently verified|bibliographic identity\/locator only/i.test(volume13KeyOnly.verification_scope||''));
+const secretariatQuestion='מה מתועד במענה המזכירות על לימוד שלא לשמה והתקדמות ללימוד לשמה?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,secretariatQuestion,{mode});
- assert(m.answerable,mode+': a neutral question about the secretariat letter must be answerable');
- assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'));
- assert(!m.sources.some(e=>sourceAID(e)==='5357059'),'the camp telegram is not evidence for the trade-and-study question');
+ assert(m.answerable,mode+': the inspected secretariat response about staged Torah study must be answerable');
+ assert(m.sources.some(e=>sourceAID(e)==='5071128'&&e.witness_type==='secretariat_letter_on_behalf_of_rebbe'&&e._independent_witness===false));
+ assert(!m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'),'metadata-only printed-index record cannot support a substantive answer');
+ assert(!m.sources.some(e=>sourceAID(e)==='5357059'),'the camp telegram is not evidence for the Lishma question');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid));
  const direct=buildAnswerModel(idx.entries,'מה כתב הרבי על עיסוק במסחר בזמן לימוד בישיבה?',{mode});
- assert.equal(direct.answerable,false,mode+': do not attribute a secretary-signed response directly to the Rebbe');
- assert.equal(direct.reason,'secretariat_authorship_boundary');
- assert(direct.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'));
+ assert.equal(direct.answerable,false,mode+': do not infer content from a printed index locator');
+ assert.equal(direct.reason,'insufficient_evidence');
+ assert(!direct.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשם'));
+ assert(!direct.sources.some(e=>sourceAID(e)==='5071128'),'the Lishma/health response does not support the unrelated trade-and-study question');
 }
 
 

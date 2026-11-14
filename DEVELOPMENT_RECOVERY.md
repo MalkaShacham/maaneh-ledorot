@@ -495,3 +495,8 @@ A direct-Rebbe-authorship question about the Gan Israel camp can now retrieve th
 ### Camp-specific secretariat boundary retrieval (2026-11-14)
 
 The camp/season query now retrieves the inspected telegram copy whenever it explicitly asks about the secretariat response or about the camp opening and year-round impact. This allows a direct-authorship question to surface the relevant boundary witness and return `secretariat_authorship_boundary` instead of generic insufficiency; the source remains non-independent and is not attributed directly to the Rebbe.
+
+
+### Scanned index locator is not content evidence (2026-11-14)
+
+The printed-index identity `igrot-kodesh-v13-דשם` remains discoverable for bibliographic lookup, but its scan verifies only the letter identity and printed-page locator. It has no inspected body propositions and cannot support an answer about trade or study. The neutral Lishma query now cites the actually inspected secretariat response AID 5071128; the unrelated trade-and-study question remains insufficiently evidenced rather than borrowing content from the index or an unrelated response.
