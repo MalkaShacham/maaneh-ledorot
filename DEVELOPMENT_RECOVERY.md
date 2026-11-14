@@ -458,3 +458,8 @@ AID 5071128 is a secretary-signed response, not an independent Rebbe-authored le
 ### Core-engine import cache parity (2026-11-14)
 
 The readiness test revealed that the validation module imported a stale versioned `answer-engine.js` even though `index.html` referenced a newer validation-layer version. The core import now uses the same cache version as the browser entry point, and the test suite asserts this parity so retrieval fixes cannot silently remain unloaded.
+
+
+### Batch 084 core cache parity (2026-11-14)
+
+The microcosm cross-family synthesis update advanced the core-engine import version. The browser entry point now uses the same version, satisfying the explicit cache-parity guard in the readiness test. The update also preserves the topic alias for the four human dimensions and claim-level source locators in researcher mode.
