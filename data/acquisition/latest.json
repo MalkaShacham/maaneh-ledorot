@@ -13,8 +13,8 @@
     "batch_name": "Manual publisher-body review — Hebrew letters and Yiddish in-place enrichment",
     "generated": "2026-11-14",
     "reviewed_at": "2026-11-14T23:01:00+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
-    "reconciliation_status": "pending",
+    "status": "reconciled",
+    "reconciliation_status": "reconciled",
     "review_method": "בדיקה ידנית באמצעות web search/open. תוצאות חיפוש שימשו לאיתור מועמדים בלבד; כל פרופוזיציה נגזרה מגוף פרסום שנפתח ונבדק בשפת המקור. לא נעשה שימוש ב-crawler החסום ולא בוצעה עקיפת בקרות גישה.",
     "records_reviewed": 18,
     "reviewed_item_count": 18,
@@ -158,8 +158,16 @@
       "content_verified_unique_sources": 852,
       "answer_eligible_propositions": 2767
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 855,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2767
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
@@ -191,7 +199,8 @@
       "AID 5357088 הוחזק מחוץ לקורפוס עד לבירור הקשר הפיזי לאיגרת הקודמת; לא נוצרה משפחת ראיות נוספת ללא בסיס.",
       "חמישה עמודים שנפתחו הפנו למעטפות סיכום/ניווט ללא גוף מקור; הם תועדו והוחלפו באותה הפעלה בגופי פרסום נגישים.",
       "לא נבדקו סריקות או כתבי יד; לא הועתק טקסט מוגן במלואו ולא יוחסה הסקת AI לרבי."
-    ]
+    ],
+    "reconciled_at": "2026-11-14T21:12:10.976292+00:00"
   },
   "previous_manual_web_review": {
     "schema_version": "1.0",
@@ -1682,9 +1691,9 @@
   },
   "manual_web_review_note": "Batch 085: 11 new Hebrew publisher-body identities and two in-place enrichments (one Yiddish public circular); 13 source bodies inspected. Five navigation shells excluded; AID 5357088 withheld pending physical-document linkage. Reconciliation pending; no crawler retry or access-control bypass.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 837,
-    "content_verified_unique_sources": 834,
-    "answer_eligible_propositions": 2721
+    "answer_eligible_unique_sources": 855,
+    "content_verified_unique_sources": 852,
+    "answer_eligible_propositions": 2767
   },
   "last_manual_review_at": "2026-11-14T23:01:00+02:00",
   "runner_acquisition_policy": {
