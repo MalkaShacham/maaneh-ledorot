@@ -542,6 +542,9 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+' Tanya-project query should be answerable');
  assert(m.sources.some(e=>String(e.aid)==='5071046'),'Tanya-project query must retain its own source');
 }
+const tanyaWitness=idx.entries.find(e=>sourceAID(e)==='5071046');
+assert(tanyaWitness&&/secretariat/i.test(tanyaWitness.primary_secondary_status||'')&&!/secretariat/i.test(tanyaWitness.witness_type||''),
+ 'a caveat about an uninspected secretariat copy must not relabel a publisher-attributed Rebbe letter as secretariat-authored');
 const crossQ='מה כתבו האיגרות על הרחבת עסק בכוחות עצמו ועל הפצת המעיינות בבתי כנסת?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,crossQ,{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='5100223')&&m.sources.some(e=>String(e.aid)==='5071043'));assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_families>=2);assert(m.research.evidence_map.length>0);}}
 
