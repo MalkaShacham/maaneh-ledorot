@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-13",
+  "generated": "2026-11-14",
   "external_inventory_mapped_minimum": 25906,
   "staging_batch_files": 203,
   "staging_manifest_files": 83,
@@ -7,20 +7,20 @@
   "promotion_queue_physical_records": 526,
   "promotion_queue_already_canonical": 526,
   "promotion_ready_records": 0,
-  "canonical_json_files": 449,
-  "canonical_unique_item_keys": 9089,
+  "canonical_json_files": 450,
+  "canonical_unique_item_keys": 9095,
   "evidence_family_files": 55,
   "status_counts_unique_keys": {
-    "Verified": 7749,
+    "Verified": 7753,
     "Linked": 13,
     "Parsed": 1,
     "Indexed": 1144,
     "Discovered": 3
   },
-  "verified_unique_item_keys": 7749,
+  "verified_unique_item_keys": 7753,
   "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.",
-  "answer_eligible_unique_sources": 799,
-  "content_verified_unique_sources": 796,
-  "answer_eligible_propositions": 2627,
+  "answer_eligible_unique_sources": 803,
+  "content_verified_unique_sources": 800,
+  "answer_eligible_propositions": 2635,
   "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across their member items. Bibliographic verification and editorial summaries do not count."
 }

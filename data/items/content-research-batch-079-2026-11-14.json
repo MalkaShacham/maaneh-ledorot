@@ -46,9 +46,17 @@
     "content_verified_unique_sources": 800,
     "answer_eligible_propositions": 2635
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
-  "reconciliation_status": "pending",
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 803,
+    "content_verified_unique_sources": 800,
+    "answer_eligible_propositions": 2635
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
+  "reconciliation_status": "reconciled",
   "records": [
     {
       "id": "chabad-letter-5413165",
@@ -533,7 +541,7 @@
     "AID 5357409 נשאר מענה אישי היסטורי; אין להציג את פרטי המזוזה כפסיקה כללית.",
     "לא יוחסה ל-AI או למערכת מסקנה לרבי; כל פרופוזיציה נגזרה מהקטע המפורסם בלבד."
   ],
-  "reconciled_at": null,
+  "reconciled_at": "2026-11-14T06:14:35.999165+00:00",
   "metrics_delta_actual": null,
   "reconciliation_completed_at": null,
   "reconciliation_notes": "Pending deterministic reconciliation on main. Expected delta is provisional; actual answer-eligible families and propositions must be taken from the rebuilt index and audit."
