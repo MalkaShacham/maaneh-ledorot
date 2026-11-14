@@ -6,7 +6,7 @@
   "generated": "2026-11-14",
   "reviewed_at": "2026-11-14T23:45:00+02:00",
   "status": "manual_public_body_inspection_pending_reconciliation",
-  "reconciliation_status": "pending",
+  "reconciliation_status": "reconciled_with_variance",
   "review_method": "Public web search/open. Search results were used only to locate candidates; each of the 15 inspected content bodies was opened at its item-level Chabad.org/TheRebbe.org page. Fourteen publisher synopses were paraphrased in Hebrew; one body was withheld because of conflicting dates. Two additional pages exposed metadata only and were not promoted. No crawler retry, access-control bypass, transcript copying, or scan-only content verification.",
   "records_reviewed": 17,
   "reviewed_item_count": 17,
@@ -271,8 +271,16 @@
     "content_verified_unique_sources": 852,
     "answer_eligible_propositions": 2781
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 863,
+    "content_verified_unique_sources": 852,
+    "answer_eligible_propositions": 2775
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": -6,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": -6
+  },
   "crawler_retry": false,
   "access_control_bypassed": false,
   "full_text_copied": false,
@@ -422,5 +430,6 @@
       },
       "relations": []
     }
-  ]
+  ],
+  "reconciled_at": "2026-11-14T22:03:43.750849+00:00"
 }
