@@ -10,8 +10,8 @@
     "batch_id": "087",
     "batch_file": "data/items/content-research-batch-087-2026-11-15.json",
     "reviewed_at": "2026-11-15T01:00:08+02:00",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending",
+    "status": "reconciled_with_variance",
+    "reconciliation_status": "reconciled_with_variance",
     "reviewed_item_count": 18,
     "source_bodies_inspected": 10,
     "new_source_identities": 8,
@@ -34,8 +34,16 @@
       "content_verified_unique_sources": 852,
       "answer_eligible_propositions": 2799
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 876,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2797
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": -1,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": -2
+    },
     "source_languages": [
       "English",
       "Hebrew"
@@ -43,7 +51,8 @@
     "source_body_inspection_method": "public web search/open; publisher bodies and searchable PDF text layer",
     "crawler_retry": false,
     "access_control_bypassed": false,
-    "full_text_copied": false
+    "full_text_copied": false,
+    "reconciled_at": "2026-11-14T23:24:33.169324+00:00"
   },
   "previous_manual_web_review": {
     "batch_id": "086",
@@ -650,9 +659,9 @@
   },
   "manual_web_review_note": "Batch 087: 8 new Evidence Families (7 English publisher letters/excerpts and 1 Hebrew free translation of a Yiddish letter), 1 existing AID 1875534 enriched, 10 source bodies inspected, 8 metadata-only Yechidus pages blocked, AID 2189943 withheld; no crawler retry.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 869,
+    "answer_eligible_unique_sources": 876,
     "content_verified_unique_sources": 852,
-    "answer_eligible_propositions": 2781
+    "answer_eligible_propositions": 2797
   },
   "last_manual_review_at": "2026-11-15T01:00:08+02:00",
   "runner_acquisition_policy": {
