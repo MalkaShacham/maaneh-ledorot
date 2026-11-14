@@ -1113,12 +1113,40 @@
         "source_witness": "BeitChabad.com / Chabad.org; מכתב, ראשון דסליחות, השי״ת; AID 2989328; https://he.chabad.org/library/article_cdo/aid/2989328",
         "transmission_type": "Published Hebrew original-language text; printed PDF used only for pagination/identity cross-check.",
         "textual_status": "Published Hebrew letter text; original autograph not inspected.",
-        "editorial_scope": "תמציות מחקר לא-מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
+        "editorial_scope": "התרגומים האנגליים נרשמו כעדים מקבילים לאותה איגרת; לא נספרו כמשפחות עצמאיות ולא נוספו פרופוזיציות כפולות.",
         "verification_status": "גוף המכתב העברי נבדק ב-2026-11-13; נבדק גוף ה-HTML; PDF עמודים 219–220 שימש לאימות מיקום/זהות בלבד ולא לאימות סמנטי.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989328",
-        "accessed": "2026-11-13"
+        "accessed": "2026-11-13",
+        "parallel_witnesses": [
+          {
+            "aid": 96097,
+            "title": "A Letter to Yeshivah Students",
+            "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96097/jewish/A-Letter-to-Yeshivah-Students.htm",
+            "language": "English",
+            "translator": "Uri Kaploun",
+            "witness_type": "published_english_translation",
+            "independent_witness": false,
+            "evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+            "source_body_locator": "Chabad.org AID 96097, body lines 246–273; publication references at lines 281–282.",
+            "verification_status": "גוף התרגום האנגלי נבדק; תאריך, קהל ותוכן תואמים למכתב העברי AID 2989328; העמוד מציין את Likkutei Sichos IX p.305 ואת Igros Kodesh III p.466. תרגום מקביל, לא עד עצמאי.",
+            "notes": "לא נשמרו פרופוזיציות נפרדות: התוכן חופף למכתב העברי שכבר נבדק ב-AID 2989328."
+          },
+          {
+            "aid": 2276672,
+            "title": "The Importance of Spiritual Charity; Particularly for Yeshivah Students",
+            "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity.htm",
+            "language": "English",
+            "translator": "Eli Touger",
+            "witness_type": "published_english_translation",
+            "independent_witness": false,
+            "evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+            "source_body_locator": "AID 2276672 was inspected in batch 082; publisher search text identifies Letter No. 751 and the same Likkutei Sichos IX p.305 reference.",
+            "verification_status": "קושר למכתב העברי AID 2989328 לפי תאריך היום הראשון לסליחות תש״י, קהל תלמידי הישיבות, תוכן ההוראה וההפניה הביבליוגרפית. פתיחה חוזרת של העמוד בהרצה זו החזירה Internal Error; ההכרעה נשענת על בדיקת הגוף שתועדה באצווה 082 ועל המקור העברי.",
+            "notes": "התרגום אינו עד עצמאי. הפרופוזיציות הוסרו מן הספירה כדי שלא לספור מחדש תוכן שכבר מתועד במקור העברי."
+          }
+        ]
       },
-      "verification_scope": "נבדק גוף הפרסום בטווח AID 2989328, lines 153–185. נבדק גוף ה-HTML; PDF עמודים 219–220 שימש לאימות מיקום/זהות בלבד ולא לאימות סמנטי. הקשר הפרסום סווג partial.",
+      "verification_scope": "נבדק גוף הפרסום בטווח AID 2989328, lines 153–185. נבדק גוף ה-HTML; PDF עמודים 219–220 שימש לאימות מיקום/זהות בלבד ולא לאימות סמנטי. הקשר הפרסום סווג partial. נבדקו גם שני תרגומים אנגליים מקבילים; לא נוספו מהם טענות חדשות משום שתוכנם חופף למקור העברי.",
       "documented_circumstances": "מכתב לתלמידי הישיבות לקראת חודש תשרי תש״י.",
       "question_or_problem": "אחריות תלמידי הישיבות לעבודה אישית ולהשפעה חינוכית על הזולת.",
       "conditions_or_qualifications": [
@@ -1153,11 +1181,72 @@
         ],
         "response_case_candidate": false
       },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
+      "relations": [
+        {
+          "type": "same_evidence_family",
+          "target_aid": 96097,
+          "target_id": "parallel-translation-96097",
+          "note": "English translation of the same letter; not an independent witness."
+        },
+        {
+          "type": "same_evidence_family",
+          "target_aid": 2276672,
+          "target_id": "chabad-letter-2276672",
+          "note": "English translation of the same letter; not an independent witness."
+        }
+      ],
+      "duplicate_or_parallel_relations": [
+        {
+          "type": "same_evidence_family",
+          "aid": 96097,
+          "id": "parallel-translation-96097",
+          "title": "A Letter to Yeshivah Students",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96097/jewish/A-Letter-to-Yeshivah-Students.htm",
+          "independent_witness": false,
+          "translation_status": "published English translation by Uri Kaploun; same Hebrew letter; not independent"
+        },
+        {
+          "type": "same_evidence_family",
+          "aid": 2276672,
+          "id": "parallel-translation-2276672",
+          "title": "The Importance of Spiritual Charity; Particularly for Yeshivah Students",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity.htm",
+          "independent_witness": false,
+          "translation_status": "published English translation by Eli Touger; same Hebrew letter; not independent"
+        }
+      ],
       "identity_note": "",
       "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "summary_researcher": "מכתב בעברית לתלמידי הישיבות על עבודה עצמית, קירוב אחרים וחינוך."
+      "summary_researcher": "מכתב בעברית לתלמידי הישיבות על עבודה עצמית, קירוב אחרים וחינוך.",
+      "parallel_witnesses": [
+        {
+          "aid": 96097,
+          "title": "A Letter to Yeshivah Students",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/96097/jewish/A-Letter-to-Yeshivah-Students.htm",
+          "language": "English",
+          "translator": "Uri Kaploun",
+          "witness_type": "published_english_translation",
+          "independent_witness": false,
+          "evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+          "source_body_locator": "Chabad.org AID 96097, body lines 246–273; publication references at lines 281–282.",
+          "verification_status": "גוף התרגום האנגלי נבדק; תאריך, קהל ותוכן תואמים למכתב העברי AID 2989328; העמוד מציין את Likkutei Sichos IX p.305 ואת Igros Kodesh III p.466. תרגום מקביל, לא עד עצמאי.",
+          "notes": "לא נשמרו פרופוזיציות נפרדות: התוכן חופף למכתב העברי שכבר נבדק ב-AID 2989328."
+        },
+        {
+          "aid": 2276672,
+          "title": "The Importance of Spiritual Charity; Particularly for Yeshivah Students",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2276672/jewish/The-Importance-of-Spiritual-Charity.htm",
+          "language": "English",
+          "translator": "Eli Touger",
+          "witness_type": "published_english_translation",
+          "independent_witness": false,
+          "evidence_family_id": "torat-menachem-letter-5710-rishon-selichot-yeshiva-students-2989328",
+          "source_body_locator": "AID 2276672 was inspected in batch 082; publisher search text identifies Letter No. 751 and the same Likkutei Sichos IX p.305 reference.",
+          "verification_status": "קושר למכתב העברי AID 2989328 לפי תאריך היום הראשון לסליחות תש״י, קהל תלמידי הישיבות, תוכן ההוראה וההפניה הביבליוגרפית. פתיחה חוזרת של העמוד בהרצה זו החזירה Internal Error; ההכרעה נשענת על בדיקת הגוף שתועדה באצווה 082 ועל המקור העברי.",
+          "notes": "התרגום אינו עד עצמאי. הפרופוזיציות הוסרו מן הספירה כדי שלא לספור מחדש תוכן שכבר מתועד במקור העברי."
+        }
+      ],
+      "notes": " הועשר ב-14.11.2026 בשני עדי תרגום אנגליים מקבילים (AID 96097 ו-AID 2276672); הם שייכים לאותה Evidence Family ואינם מוסיפים פרופוזיציות עצמאיות."
     },
     {
       "id": "chabad-letter-2989329",
