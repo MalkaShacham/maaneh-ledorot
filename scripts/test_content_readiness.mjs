@@ -815,9 +815,13 @@ for(const mode of ['regular','researcher']){
 const batch077Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-077-2026-11-13.json',root)));
 assert.equal(batch077Data.reviewed_item_count,12);assert.equal(batch077Data.source_bodies_inspected,12);assert.equal(batch077Data.new_source_identities,3);assert.equal(batch077Data.existing_identities_enriched,1);assert.equal(batch077Data.existing_identities_rechecked,8);assert.equal(batch077Data.new_response_propositions,8);assert.equal(batch077Data.answer_eligible_source_families_added,3);
 const acquisitionState=JSON.parse(await readFile(new URL('data/acquisition/latest.json',root),'utf8'));
-assert.equal(acquisitionState.manual_web_review.batch_id,'085');
+assert.equal(acquisitionState.manual_web_review.batch_id,'086');
+assert.equal(acquisitionState.manual_web_review.reconciliation_status,'reconciled');
+assert.deepEqual(acquisitionState.manual_web_review_current_metrics,{answer_eligible_unique_sources:872,content_verified_unique_sources:869,answer_eligible_propositions:2798});
+assert.deepEqual(acquisitionState.manual_web_review_history.slice(0,4).map(x=>x.batch_id),['086','085','084','083']);
+assert.equal(acquisitionState.manual_web_review_history[1].reconciliation_status,'pending_ci');
+assert.equal(acquisitionState.manual_web_review_history[1].metrics_actual_after,null);
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'084');
-assert.deepEqual(acquisitionState.manual_web_review_history.slice(0,3).map(x=>x.batch_id),['085','084','083']);
 assert(acquisitionState.manual_web_review_history.some(x=>x.batch_id==='079'));
 assert(acquisitionState.manual_web_review_history.some(x=>x.batch_id==='077'));
 const batch082Reconciliation=JSON.parse(await readFile(new URL('data/items/content-research-batch-082-2026-11-14.json',root),'utf8'));
