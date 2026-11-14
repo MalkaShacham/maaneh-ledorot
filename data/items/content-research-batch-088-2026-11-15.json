@@ -115,10 +115,18 @@
     "content_verified_unique_sources": 853,
     "answer_eligible_propositions": 2823
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
-  "reconciliation_status": "pending",
-  "reconciled_at": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 886,
+    "content_verified_unique_sources": 852,
+    "answer_eligible_propositions": 2818
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": -1,
+    "content_verified_unique_sources": -1,
+    "answer_eligible_propositions": -5
+  },
+  "reconciliation_status": "reconciled_with_variance",
+  "reconciled_at": "2026-11-14T23:50:04.546046+00:00",
   "source_body_inspection_method": "Public web search/open. Ten Chabad Library item pages were inspected via public search-result body extracts; direct open returned no readable lines. Two of those pages (1200710552 and 1200710429) were found to be existing identities and linked rather than added. Eight new Chabad Library identities remain Parsed. Two complete Hebrew Chabad.org item bodies were opened directly (AID 5412963 and AID 5413093). Existing English AID 1875534 was reopened, enriched with one proposition, and promoted to has_content_evidence=true; its six propositions are now eligible, but it is not an independent witness.",
   "crawler_retry": false,
   "access_control_bypassed": false,

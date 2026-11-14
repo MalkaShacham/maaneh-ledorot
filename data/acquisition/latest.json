@@ -10,8 +10,8 @@
     "batch_id": "088",
     "batch_file": "data/items/content-research-batch-088-2026-11-15.json",
     "reviewed_at": "2026-11-15T01:27:52+02:00",
-    "status": "pending_reconciliation_after_duplicate_and_provenance_correction",
-    "reconciliation_status": "pending",
+    "status": "reconciled_with_variance",
+    "reconciliation_status": "reconciled_with_variance",
     "reviewed_item_count": 13,
     "source_bodies_inspected": 13,
     "new_source_identities": 10,
@@ -35,8 +35,16 @@
       "content_verified_unique_sources": 853,
       "answer_eligible_propositions": 2823
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 886,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2818
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": -1,
+      "content_verified_unique_sources": -1,
+      "answer_eligible_propositions": -5
+    },
     "source_languages": [
       "Hebrew",
       "Yiddish",
@@ -168,7 +176,7 @@
       "AID 1875534 is a published English presentation. Its body was inspected and its six propositions are now answer-eligible, but its original-language witness is uninspected and it is not counted as independent.",
       "No full copyrighted text was copied and no AI inference was attributed to the Rebbe."
     ],
-    "reconciled_at": null,
+    "reconciled_at": "2026-11-14T23:50:04.546046+00:00",
     "duplicate_alias_identities": 2,
     "existing_response_propositions_promoted_to_answer_eligible": 5,
     "content_verified_unique_sources_added": 3,
@@ -697,7 +705,7 @@
   "manual_web_review_note": "Batch 088 corrected after reconciliation audit: two Chabad Library pages were linked to existing Evidence Families (one Hebrew translation of a Russian source, one duplicate page); AID 1875534 was promoted to answer-eligible after body/locator inspection; two excerpt-only records were downgraded to Parsed. Expected after rerun: 887 / 853 / 2,823.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 886,
-    "content_verified_unique_sources": 854,
+    "content_verified_unique_sources": 852,
     "answer_eligible_propositions": 2818
   },
   "last_manual_review_at": "2026-11-15T01:27:52+02:00",
