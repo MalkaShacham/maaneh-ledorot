@@ -608,6 +608,10 @@ const batch066Questions=[
 ];
 const passoverFreedomAliasGuard=buildAnswerModel(idx.entries,'מה נכתב על חירות בפסח ועל הקשר בין לימוד למעשה?',{mode:'regular'});
 assert(!passoverFreedomAliasGuard.understanding.topics?.includes('האדם כעולם קטן וארבעת ממדיו'),'the short word חי must not classify חירות as human microcosm');
+const passoverDebugQuery='מה נכתב על חירות בפסח ועל הקשר בין לימוד למעשה?';
+const passoverDebugEntry=idx.entries.find(e=>sourceAID(e)==='5099923');
+const passoverDebugModel=buildAnswerModel(idx.entries,passoverDebugQuery,{mode:'regular'});
+console.log('PASSOVER_DEBUG',JSON.stringify({entry:passoverDebugEntry&&{key:passoverDebugEntry.key,status:passoverDebugEntry.status,canonical_status:passoverDebugEntry.canonical_status,has_content_evidence:passoverDebugEntry.has_content_evidence,proposition_origin:passoverDebugEntry.proposition_origin,proposition_verification:passoverDebugEntry.proposition_verification,proposition_source_locator:passoverDebugEntry.proposition_source_locator,witness_type:passoverDebugEntry.witness_type,independent_witness:passoverDebugEntry.independent_witness,evidence_family_id:passoverDebugEntry.evidence_family_id,props:passoverDebugEntry.response_propositions},normalized:passoverDebugEntry&&normalizeEvidenceIntegrity([passoverDebugEntry])[0],understanding:passoverDebugModel.understanding,answerable:passoverDebugModel.answerable,reason:passoverDebugModel.reason,sources:passoverDebugModel.sources.map(e=>({aid:sourceAID(e),id:e.id,topic:e.topic,score:e._score,support:e._support})),claims:passoverDebugModel.claims},null,2));
 for(const [q,aid] of batch066Questions)for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,q,{mode});
  assert(m.answerable,mode+': batch-066 question must be answerable: '+q);
