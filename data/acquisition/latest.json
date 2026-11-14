@@ -7,10 +7,125 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "content-research-batch-083-2026-11-14",
+    "status": "submitted_for_reconciliation",
+    "reviewed_at": "2026-11-14T15:18:00+02:00",
+    "reviewed_item_count": 10,
+    "source_bodies_inspected": 10,
+    "new_source_identities": 8,
+    "new_rebbe_letter_identities": 8,
+    "existing_identities_enriched": 1,
+    "duplicate_alias_identities": 1,
+    "new_response_propositions": 16,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 17,
+    "answer_eligible_source_families_added": 8,
+    "new_aids": [
+      5099989,
+      5100319,
+      5100654,
+      5357009,
+      5413088,
+      5413226,
+      5413238,
+      5413058
+    ],
+    "reviewed_aids": [
+      5099989,
+      5100319,
+      5100654,
+      5357009,
+      5413088,
+      5413226,
+      5413238,
+      5413058,
+      5357561,
+      5413029
+    ],
+    "source_languages": [
+      "Hebrew"
+    ],
+    "language_distribution": {
+      "Hebrew": 8
+    },
+    "source_type_distribution": {
+      "published_hebrew_letter_text": 8,
+      "publisher_reprint_alias": 1,
+      "existing_identity_reinspection": 1
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 829,
+      "content_verified_unique_sources": 826,
+      "answer_eligible_propositions": 2706
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 837,
+      "content_verified_unique_sources": 834,
+      "answer_eligible_propositions": 2723
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "reconciliation_status": "pending",
+    "blocked_candidates": [
+      5100017,
+      5099913,
+      5100376,
+      5100273,
+      5100198,
+      5357560,
+      5357562
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "duplicate_alias_relations": [
+      {
+        "aid": 5357561,
+        "duplicate_of_aid": 5100643,
+        "evidence_family_id": "igrot-letter-5719-17-sivan-v18-aid5100643",
+        "reason": "Publisher note identifies the earlier volume 18 printing as letter ו’תתצו; same letter, not an independent witness; 14/17 Sivan date discrepancy preserved."
+      }
+    ],
+    "existing_identity_updates": [
+      {
+        "aid": 5413029,
+        "identity": "aid:5413029",
+        "id": "chabad-letter-5413029",
+        "file": "data/items/content-research-batch-073-2026-11-13.json",
+        "action": "enriched_existing_identity_in_original_batch_file",
+        "propositions_added": 1,
+        "proposition_locator": "Chabad.org/TheRebbe.org, AID 5413029, body lines 302–305.",
+        "note": "Added a distinct, source-grounded proposition about reframing the workplace as livelihood for family and Torah education and avoiding workplace arguments; same AID and Evidence Family retained."
+      }
+    ],
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "existing_identity_enrichment_in_place": true,
+      "duplicate_aliases_counted_as_independent": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "checked_against": "content-review-queue.json and content-research-batch files 055–082; candidate AIDs absent from that reviewed range and queue.",
+      "limitation": "Batches 001–054 were not exhaustively crosswalked in this pass; final canonical index reconciliation is authoritative for net-new Evidence Families. The explicit reprint relation for AID 5357561 is recorded separately."
+    },
+    "limitations": [
+      "All eight new records are verified at the published-body level only; incoming letters and autographs were not inspected, so context_status remains partial.",
+      "Several items are secretariat-signed transmissions in the Rebbe's name; they are not autograph witnesses.",
+      "The 5100654 letter is a personal case involving loneliness and relocation; it is not clinical or psychological advice.",
+      "The 5099989 letter refers the mezuzah obligation to a rabbi; no general ruling for shops is inferred.",
+      "The 5100319 note concerns a left-handed person and a specific tefillin practice; no general halachic instruction is inferred.",
+      "The 5413088 publication contains appended scholarly notes; these are not treated as independent evidence or as a separate ruling.",
+      "The 5413238 and 5413029 workplace guidance is personal correspondence, not general financial or employment policy.",
+      "The 5357561 reprint alias is not counted as an independent witness; both publisher dates are retained.",
+      "All stored propositions are non-verbatim paraphrases; no complete copyrighted passage is reproduced."
+    ],
+    "note": "Eight new Hebrew publisher-body records; one existing identity enriched; one reprint alias linked to the same Evidence Family; all claims are non-verbatim and context-limited."
+  },
+  "previous_manual_web_review": {
     "batch_id": "082",
     "batch_file": "data/items/content-research-batch-082-2026-11-14.json",
     "reviewed_at": "2026-11-14T11:28:14+02:00",
-    "status": "submitted_for_reconciliation",
+    "status": "reconciled",
     "reviewed_item_count": 12,
     "source_bodies_inspected": 12,
     "new_source_identities": 11,
@@ -26,7 +141,7 @@
     "new_response_propositions": 24,
     "existing_response_propositions_added": 1,
     "total_new_paraphrase_entries": 25,
-    "answer_eligible_source_families_added": 11,
+    "answer_eligible_source_families_added": 10,
     "source_languages": [
       "English"
     ],
@@ -140,14 +255,22 @@
       "answer_eligible_propositions": 2684
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 830,
-      "content_verified_unique_sources": 827,
-      "answer_eligible_propositions": 2709
+      "answer_eligible_unique_sources": 829,
+      "content_verified_unique_sources": 826,
+      "answer_eligible_propositions": 2706
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "reconciliation_status": "pending",
-    "reconciled_at": null,
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 829,
+      "content_verified_unique_sources": 826,
+      "answer_eligible_propositions": 2706
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
+    "reconciliation_status": "reconciled",
+    "reconciled_at": "2026-11-14T15:18:00+02:00",
     "reconciliation_commit": null,
     "publication_commit": null,
     "method": "Manual public web/search/open inspection of 12 publisher pages. Search results were used to locate candidate pages; all 12 reviewed item bodies were opened and inspected. Seven are explicitly translated English manifestations and are marked non-independent. Seven inaccessible/rewritten pages were excluded; alternative accessible pages were reviewed in the same run.",
@@ -170,9 +293,10 @@
       "AID 1858362 remains an excerpt, not a complete letter.",
       "AID 2190037 was not promoted because the page says it is a transcribed copy and the original is unavailable.",
       "No full copyrighted text was copied."
-    ]
+    ],
+    "reconciliation_note": "Reconciled to the canonical index: 819/816/2684 baseline after batch 081 to 829/826/2706 after batch 082. Net delta is +10 unique answer-eligible Evidence Families, +10 content-verified unique sources, and +22 distinct propositions. Eleven candidate identities were reviewed; one family and three proposition keys overlapped with existing canonical content, and their exact prior member IDs remain unresolved in the per-AID audit."
   },
-  "previous_manual_web_review": {
+  "earlier_manual_web_review": {
     "batch_id": "081",
     "batch_file": "data/items/content-research-batch-081-2026-11-14.json",
     "reviewed_at": "2026-11-14T10:22:37+02:00",
@@ -330,137 +454,6 @@
     "reconciled_at": null,
     "reconciliation_commit": null,
     "publication_commit": null
-  },
-  "earlier_manual_web_review": {
-    "batch_id": "076",
-    "batch_file": "data/items/content-research-batch-076-2026-11-13.json",
-    "reviewed_at": "2026-11-13T18:35:35+02:00",
-    "status": "reconciled",
-    "reviewed_item_count": 11,
-    "source_bodies_inspected": 11,
-    "new_source_identities": 10,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 20,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 21,
-    "answer_eligible_source_families_added": 10,
-    "source_languages": [
-      "English",
-      "Hebrew"
-    ],
-    "language_distribution": {
-      "English": 10,
-      "Hebrew": 1
-    },
-    "blocked_candidate_count": 12,
-    "blocked_candidates": [
-      {
-        "aid": 4646055,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4646055/jewish/page.htm",
-        "reason": "summary/navigation shell; no item-level body returned",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 4754371,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4754371/jewish/page.htm",
-        "reason": "summary/navigation shell; no item-level body returned",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 4872422,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4872422/jewish/page.htm",
-        "reason": "summary/navigation shell; no item-level body returned",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 4872436,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4872436/jewish/page.htm",
-        "reason": "summary/navigation shell; no item-level body returned",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 5099887,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5099887/jewish/page.htm",
-        "reason": "summary/navigation shell; no item-level body returned",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 5100351,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100351/jewish/page.htm",
-        "reason": "summary/navigation shell; no item-level body returned",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 1878120,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/1878120/jewish/page.htm",
-        "reason": "open returned internal error; body unavailable",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 1910419,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/1910419/jewish/page.htm",
-        "reason": "open returned internal error; body unavailable",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 4855474,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4855474/jewish/page.htm",
-        "reason": "open returned internal error; body unavailable",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 1897842,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/1897842/jewish/page.htm",
-        "reason": "open returned internal error; body unavailable",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 6429866,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/6429866/jewish/page.htm",
-        "reason": "open returned internal error on this run; body unavailable",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      },
-      {
-        "aid": 4783853,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4783853/jewish/page.htm",
-        "reason": "redirected to rewritten summary/navigation shell; no body available",
-        "handling": "No crawler retry or access-control bypass; no propositions added; an alternate public item-level letter body was inspected in the same run."
-      }
-    ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 779,
-      "content_verified_unique_sources": 776,
-      "answer_eligible_propositions": 2601
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 789,
-      "content_verified_unique_sources": 786,
-      "answer_eligible_propositions": 2622
-    },
-    "reconciliation_status": "reconciled",
-    "metrics_actual_after": {
-      "answer_eligible_unique_sources": 789,
-      "content_verified_unique_sources": 786,
-      "answer_eligible_propositions": 2622
-    },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 0
-    },
-    "reconciliation_commit": "5cff5731a10c80971e33f89628b6daa37f5c3476",
-    "runner_invocation_after_previous_403": {
-      "run_id": 43466512615,
-      "step": "Acquire bounded publisher content and reconcile corpus",
-      "step_conclusion": "success",
-      "individual_http_statuses_visible": false,
-      "request_count_verified": false,
-      "artifact_committed": false,
-      "note": "This pre-guardrail run used the old pipeline definition. The step returned success, but the available job log did not expose individual HTTP responses or a request count; later answer validation failed, so its run artifact was not committed. Whether it reissued the 12 requests cannot be verified."
-    }
   },
   "earlier_manual_web_review_2": {
     "batch_id": "2026-11-13-content-batch-075",
@@ -781,13 +774,13 @@
     "access_control_bypassed": false,
     "full_text_copied": false
   },
-  "manual_web_review_note": "Batch 081: nine new Hebrew letter identities, one existing identity enriched in place, ten bodies inspected, 24 non-verbatim propositions added, eight blocked summary/navigation shells excluded. Canonical reconciliation and quality tests pending.",
+  "manual_web_review_note": "Batch 083: 8 new Hebrew letter bodies, 1 existing identity enriched, 1 reprint duplicate linked; 10 source-body/identity inspections. Canonical reconciliation pending. No crawler retry or access-control bypass.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 810,
-    "content_verified_unique_sources": 807,
-    "answer_eligible_propositions": 2660
+    "answer_eligible_unique_sources": 829,
+    "content_verified_unique_sources": 826,
+    "answer_eligible_propositions": 2706
   },
-  "last_manual_review_at": "2026-11-14T10:22:37+02:00",
+  "last_manual_review_at": "2026-11-14T15:18:00+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
