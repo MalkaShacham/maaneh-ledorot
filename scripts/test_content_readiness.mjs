@@ -1807,7 +1807,7 @@ for(const mode of ['regular','researcher']){
  assert(m.context_boundary.every(x=>x.valid),mode+': circumstances and limitations must stay witness-local');
  if(mode==='researcher'){
   assert.equal(m.research.depth,'deep');
-  assert(m.research.evidence_map.length>=2);
+  assert(m.research.evidence_witnesses.length>=2);
   assert.equal(m.research.claim_source_map.length,m.claims.length);
   assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
   assert(m.research.synthesis_constraints.non_independent_sources>=2);
