@@ -59,7 +59,8 @@
     "Chabad Library AID 1200720068: public reader returned zero readable lines; search extract excluded from content verification.",
     "Batch 099: AID 4666220 again returned no inspectable item-level body; no crawler retry. Eight additional Chabad.org pages exposed only audio/media listings, so they were excluded from content propositions.",
     "AIDs 553672 and 553673 were rechecked as parallel Hebrew/Yiddish Yechidus audio listings with no transcript; their existing shared Evidence Family was retained and neither was counted as an independent content witness.",
-    "Four new Hebrew text pages are publisher renderings of Yiddish-edited talks; original Yiddish bodies were not separately inspected and these translations are marked non-independent."
+    "Four new Hebrew text pages are publisher renderings of Yiddish-edited talks; original Yiddish bodies were not separately inspected and these translations are marked non-independent.",
+    "Full-index reconciliation found two metadata-only canonical presentations of AID 553673 (bulk-indexed 2026-09-24 and batch 069). Both are now linked to the same Evidence Family; the duplicate is not an independent witness and carries no answer proposition."
   ],
   "next_work": [
     "Reconcile batches 090–096 on the exact new main commit; verify actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions rather than relying on expected values.",
@@ -171,11 +172,12 @@
     "current_batch": "099",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "097",
-    "last_batch_summary": "Batch 099: 12 new Hebrew Sicha/Maamar identities, 20 new source-grounded paraphrases, one in-place enrichment of AID 3316719, and one existing shared audio-only Evidence Family reconfirmed. Eight independent Hebrew text witnesses and four derived Hebrew translations; no Verified promotion.",
+    "last_batch_summary": "Batch 099: 12 new Hebrew Sicha/Maamar identities, 20 new source-grounded paraphrases, one in-place enrichment of AID 3316719, one same-AID duplicate presentation of AID 553673 linked to its existing Evidence Family, and the AID 553672/553673 parallel audio pair reconfirmed. Eight independent Hebrew text witnesses and four derived Hebrew translations; no Verified promotion.",
     "last_run_note": "Batch 098: ten source bodies were inspected (eight new original-language Hayom Yom entries, one English recipient testimony with an embedded letter excerpt, and one existing AID 3316701 identity enriched in place). AID 4666220 returned a summary shell and Chabad Library AID 1200720068 returned no readable body; accessible sources were used as fallback. No crawler retry, access-control bypass, full-text copying or status promotion was performed.",
     "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 returned a summary/navigation shell; ten audio/media pages had no inspectable transcript and were excluded.",
+    "last_batch_blocked_reason": "AID 4666220 returned a summary/navigation shell; ten audio/media pages had no inspectable transcript and were excluded. Full-index scan also found and linked a duplicate metadata-only AID 553673 presentation.",
     "next_work": [
+      "Verify the full-index duplicate audit classifies the two AID 553673 metadata presentations as one non-independent Evidence Family, not a conflicting identity.",
       "Run reconcile_metrics.py on the batch-099 commit and verify all twelve new AIDs plus the in-place AID 3316719 enrichment in the canonical index.",
       "Run test_content_readiness.mjs, answer-quality regression, claim-level citation entailment, context-boundary, and deep researcher-mode tests.",
       "Inspect commit-bound Actions results and verify the public GitHub Pages site reflects the reconciled search index and metrics.",

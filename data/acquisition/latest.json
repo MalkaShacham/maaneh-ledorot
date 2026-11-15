@@ -79,10 +79,22 @@
     "duplicate_aliases_linked": [
       {
         "alias_aid": 553673,
+        "canonical_aid": 553673,
+        "alias_file": "data/items/bulk-indexed-2026-09-24-001.json",
+        "canonical_file": "data/items/content-research-batch-069-2026-11-13.json",
+        "duplicate_file": "data/items/bulk-indexed-2026-09-24-001.json",
+        "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+        "action": "same_aid_duplicate_presentation_linked",
+        "note": "The older bulk-indexed metadata record and batch-069 audio record describe the same publisher item; both are linked to one Evidence Family and remain non-independent metadata-only presentations."
+      },
+      {
+        "alias_aid": 553673,
         "canonical_aid": 553672,
+        "alias_file": "data/items/content-research-batch-069-2026-11-13.json",
+        "canonical_file": "data/items/content-research-batch-069-2026-11-13.json",
         "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
         "action": "reconfirmed_existing_shared_evidence_family",
-        "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript, and neither is counted as an independent content witness."
+        "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript."
       }
     ],
     "translations_counted_as_independent_witnesses": 0,
@@ -163,10 +175,21 @@
       "existing_parallel_audio_family_reconfirmed": true,
       "translations_counted_as_independent_witnesses": 0,
       "scan_only_verification_used": 0,
-      "duplicate_alias_identities": 0,
-      "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.",
+      "duplicate_alias_identities": 1,
+      "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.; full-index scan identified a duplicate metadata presentation of AID 553673 in bulk-indexed-2026-09-24-001.json; both presentations are being linked to the existing shared Evidence Family.",
       "full_index_scan_available": false,
-      "full_index_scan_pending_reconciliation": true
+      "full_index_scan_pending_reconciliation": true,
+      "same_family_duplicate_presentations": [
+        {
+          "aid": 553673,
+          "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+          "files": [
+            "data/items/bulk-indexed-2026-09-24-001.json",
+            "data/items/content-research-batch-069-2026-11-13.json"
+          ]
+        }
+      ],
+      "canonical_identity_collisions": []
     },
     "existing_identity_updates": [
       {
@@ -179,7 +202,8 @@
         ],
         "note": "האמרה המקורית פוצלה לשתי פרפרזות נפרדות: אחת על אמרת חסידות והנהגה טובה, ואחת על ניגון; ה-AID ומשפחת הראיות נשמרו."
       }
-    ]
+    ],
+    "duplicate_alias_identities": 1
   },
   "previous_manual_web_review": {
     "batch_id": "098",
@@ -589,7 +613,7 @@
       }
     ]
   },
-  "manual_web_review_note": "Manual public source-body inspection remains the semantic acquisition path. The runner-side Chabad.org crawler stays disabled after HTTP 403. Batch 099 adds twelve inspected BeitChabad text identities, enriches AID 3316719 in place, and reconfirms the shared audio-only Evidence Family for AIDs 553672/553673. Four Hebrew pages are translations of Yiddish-edited texts and are not independent witnesses.",
+  "manual_web_review_note": "Manual public source-body inspection remains the semantic acquisition path. The runner-side Chabad.org crawler stays disabled after HTTP 403. Batch 099 adds twelve inspected BeitChabad text identities, enriches AID 3316719 in place, and reconfirms the shared audio-only Evidence Family for AIDs 553672/553673. Four Hebrew pages are translations of Yiddish-edited texts and are not independent witnesses. Full-index scan also found an older bulk-indexed duplicate presentation of AID 553673; it has now been linked to the same Evidence Family as the batch-069 record, with no content promotion.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 977,
     "content_verified_unique_sources": 878,
@@ -1733,10 +1757,22 @@
       "duplicate_aliases_linked": [
         {
           "alias_aid": 553673,
+          "canonical_aid": 553673,
+          "alias_file": "data/items/bulk-indexed-2026-09-24-001.json",
+          "canonical_file": "data/items/content-research-batch-069-2026-11-13.json",
+          "duplicate_file": "data/items/bulk-indexed-2026-09-24-001.json",
+          "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+          "action": "same_aid_duplicate_presentation_linked",
+          "note": "The older bulk-indexed metadata record and batch-069 audio record describe the same publisher item; both are linked to one Evidence Family and remain non-independent metadata-only presentations."
+        },
+        {
+          "alias_aid": 553673,
           "canonical_aid": 553672,
+          "alias_file": "data/items/content-research-batch-069-2026-11-13.json",
+          "canonical_file": "data/items/content-research-batch-069-2026-11-13.json",
           "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
           "action": "reconfirmed_existing_shared_evidence_family",
-          "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript, and neither is counted as an independent content witness."
+          "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript."
         }
       ],
       "translations_counted_as_independent_witnesses": 0,
@@ -1817,10 +1853,21 @@
         "existing_parallel_audio_family_reconfirmed": true,
         "translations_counted_as_independent_witnesses": 0,
         "scan_only_verification_used": 0,
-        "duplicate_alias_identities": 0,
-        "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.",
+        "duplicate_alias_identities": 1,
+        "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.; full-index scan identified a duplicate metadata presentation of AID 553673 in bulk-indexed-2026-09-24-001.json; both presentations are being linked to the existing shared Evidence Family.",
         "full_index_scan_available": false,
-        "full_index_scan_pending_reconciliation": true
+        "full_index_scan_pending_reconciliation": true,
+        "same_family_duplicate_presentations": [
+          {
+            "aid": 553673,
+            "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+            "files": [
+              "data/items/bulk-indexed-2026-09-24-001.json",
+              "data/items/content-research-batch-069-2026-11-13.json"
+            ]
+          }
+        ],
+        "canonical_identity_collisions": []
       },
       "existing_identity_updates": [
         {
@@ -1833,7 +1880,8 @@
           ],
           "note": "האמרה המקורית פוצלה לשתי פרפרזות נפרדות: אחת על אמרת חסידות והנהגה טובה, ואחת על ניגון; ה-AID ומשפחת הראיות נשמרו."
         }
-      ]
+      ],
+      "duplicate_alias_identities": 1
     }
   ],
   "earlier_manual_web_review_12": {

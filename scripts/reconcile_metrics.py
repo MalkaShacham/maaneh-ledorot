@@ -250,10 +250,13 @@ if batch_path:
             for x in candidate_dicts(obj):
                 if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
                 for record_key in [key for key in identity_keys(x) if key in by_identity]:
-                    by_identity[record_key].append({"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")})
+                    by_identity[record_key].append({"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")})
         for target in target_identities:
-            selected=search_entries.get(target["key"]);aid_value=target.get("aid")
-            audit.append({"identity_key":target["key"],"aid":int(aid_value) if aid_value and str(aid_value).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(by_identity[target["key"]]),"records":by_identity[target["key"]],"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False}})
+            selected=search_entries.get(target["key"]);aid_value=target.get("aid");matches=by_identity[target["key"]]
+            family_ids=sorted({r.get("evidence_family_id") for r in matches if r.get("evidence_family_id")})
+            same_family_duplicate=len(matches)>1 and len(family_ids)==1 and all(r.get("independent_witness") is False for r in matches)
+            identity_collision=len(matches)>1 and not same_family_duplicate
+            audit.append({"identity_key":target["key"],"aid":int(aid_value) if aid_value and str(aid_value).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False}})
         batch_before=batch_data.get("metrics_before")
         batch_expected=batch_data.get("metrics_expected_after")
         readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
@@ -272,6 +275,8 @@ if batch_path:
             "answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),
             "selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")}),
             "non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),
+            "same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),
+            "canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),
             "items":audit
         }
     except Exception as exc:
@@ -311,8 +316,10 @@ if batch_path and isinstance(batch_data,dict):
     dedup=batch_data.get("deduplication_check")
     if isinstance(dedup,dict):
         audit_rows=locals().get("audit",[])
-        collisions=[x.get("aid") for x in audit_rows if int(x.get("canonical_records_found") or 0)>1]
+        collisions=[x.get("aid") for x in audit_rows if x.get("canonical_identity_collision")]
+        same_family=[{"aid":x.get("aid"),"evidence_family_id":(x.get("matching_evidence_family_ids") or [None])[0],"files":sorted({r.get("file") for r in x.get("records",[]) if r.get("file")})} for x in audit_rows if x.get("same_family_duplicate")]
         missing=[x.get("aid") for x in audit_rows if not x.get("selected_index_entry",{}).get("present")]
+        dedup["same_family_duplicate_presentations"]=same_family
         dedup["full_index_scan_available"]=True
         dedup["full_index_scan_pending_reconciliation"]=False
         dedup["full_index_scan_completed_at"]=today

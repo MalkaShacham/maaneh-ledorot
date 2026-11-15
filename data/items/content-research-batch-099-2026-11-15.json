@@ -25,7 +25,7 @@
   "independent_witnesses_added": 8,
   "non_independent_presentations_added": 4,
   "content_verified_unique_sources_added": 0,
-  "duplicate_alias_identities": 0,
+  "duplicate_alias_identities": 1,
   "source_languages": [
     "Hebrew"
   ],
@@ -106,10 +106,22 @@
   "duplicate_aliases_linked": [
     {
       "alias_aid": 553673,
+      "canonical_aid": 553673,
+      "alias_file": "data/items/bulk-indexed-2026-09-24-001.json",
+      "canonical_file": "data/items/content-research-batch-069-2026-11-13.json",
+      "duplicate_file": "data/items/bulk-indexed-2026-09-24-001.json",
+      "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+      "action": "same_aid_duplicate_presentation_linked",
+      "note": "The older bulk-indexed metadata record and batch-069 audio record describe the same publisher item; both are linked to one Evidence Family and remain non-independent metadata-only presentations."
+    },
+    {
+      "alias_aid": 553673,
       "canonical_aid": 553672,
+      "alias_file": "data/items/content-research-batch-069-2026-11-13.json",
+      "canonical_file": "data/items/content-research-batch-069-2026-11-13.json",
       "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
       "action": "reconfirmed_existing_shared_evidence_family",
-      "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript, and neither is counted as an independent content witness."
+      "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript."
     }
   ],
   "translations_added": 4,
@@ -209,10 +221,21 @@
     "existing_parallel_audio_family_reconfirmed": true,
     "translations_counted_as_independent_witnesses": 0,
     "scan_only_verification_used": 0,
-    "duplicate_alias_identities": 0,
-    "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.",
+    "duplicate_alias_identities": 1,
+    "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.; full-index scan identified a duplicate metadata presentation of AID 553673 in bulk-indexed-2026-09-24-001.json; both presentations are being linked to the existing shared Evidence Family.",
     "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true
+    "full_index_scan_pending_reconciliation": true,
+    "same_family_duplicate_presentations": [
+      {
+        "aid": 553673,
+        "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+        "files": [
+          "data/items/bulk-indexed-2026-09-24-001.json",
+          "data/items/content-research-batch-069-2026-11-13.json"
+        ]
+      }
+    ],
+    "canonical_identity_collisions": []
   },
   "limitations": [
     "ארבעה עמודים מציגים נוסח עברי של שיחות שהוגהו באידית; הנוסח היידי המקורי לא נבדק בנפרד והתרגומים אינם עדים עצמאיים.",
@@ -220,7 +243,8 @@
     "כל שנים־עשר המקורות נשארים בהקשר חלקי; לא נבדקו מסמכי רקע או מלוא נסיבות ההתוועדות.",
     "AID 553672 ו-AID 553673 הם רישומי אודיו מקבילים לאותו אירוע; לא הושמע אודיו ולא נוצרו מהם פרופוזיציות.",
     "AID 4666220 לא סיפק גוף איגרת קריא; לא נעשה ניסיון crawler חוזר או עקיפת גישה.",
-    "לא הועתק טקסט מוגן במלואו ולא נעשתה העלאה של פריטים ל-Verified."
+    "לא הועתק טקסט מוגן במלואו ולא נעשתה העלאה של פריטים ל-Verified.",
+    "Full-index reconciliation found two canonical metadata presentations of AID 553673 (bulk-indexed and batch-069); they are now linked to the same Evidence Family and are not independent witnesses."
   ],
   "notes": "הפרופוזיציות הן פרפרזות מחקריות של גוף הטקסט בלבד. אין לייחס הסקת AI לרבי. ארבעת התרגומים מסומנים כנגזרים; שמונה עדי הטקסט בעברית הם פרסומים בלתי מוגהים.",
   "records": [

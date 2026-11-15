@@ -4254,9 +4254,30 @@
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-045.json"
+        },
+        {
+          "type": "same_evidence_family_duplicate_presentation",
+          "target": "audio-yechidus-553673",
+          "target_file": "data/items/content-research-batch-069-2026-11-13.json",
+          "note": "Same AID and audio item; metadata-only duplicate presentation, not an independent witness."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold. Linked during batch 099 reconciliation to the same Evidence Family as AID 553672 and the batch-069 AID 553673 item; no content witness or answer proposition added.",
+      "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+      "independent_witness": false,
+      "status": "Indexed",
+      "source_class_detail": "Publisher audio listing for a Yechidus; no transcript body was inspected.",
+      "primary_secondary_status": "Metadata-only audio listing; same Evidence Family as the batch-069 AID 553673 presentation and the parallel AID 553672 item.",
+      "witness_type": "audio_metadata_only",
+      "has_content_evidence": false,
+      "response_propositions": [],
+      "proposition_source_locator": null,
+      "verification_scope": "Publisher item metadata only; no transcript or audio content was inspected.",
+      "duplicate_of": {
+        "id": "audio-yechidus-553673",
+        "file": "data/items/content-research-batch-069-2026-11-13.json",
+        "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio"
+      }
     },
     {
       "id": "canonical-ska-553674",
