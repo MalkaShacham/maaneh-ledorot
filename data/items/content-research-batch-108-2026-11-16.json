@@ -43,12 +43,12 @@
   "metrics_before": {
     "answer_eligible_unique_sources": 1051,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3111
+    "answer_eligible_propositions": 3112
   },
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1051,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3111
+    "answer_eligible_propositions": 3112
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -321,10 +321,11 @@
     }
   ],
   "records": [],
-  "metrics_attribution_note": "שמונה הפרפרזות נוספו in-place לקובצי המקור הקנוניים של אצוות 106 ו-107. מאחר ש-reconcile_metrics.py מפיק snapshot לפי מיקום הקובץ הקנוני, שש ההעשרות בקובץ 106 נכללות בגבול אצווה 106, ושתי ההעשרות בקובץ 107 נכללות בגבול אצווה 107. אצווה 108 היא מעטפת ביקורת ותיעוד של ההעשרות ואינה מוסיפה זהויות או Evidence Families.",
+  "metrics_attribution_note": "שמונה הפרפרזות נוספו in-place לקובצי המקור הקנוניים של אצוות 106 ו-107. מאחר ש-reconcile_metrics.py מפיק snapshot לפי מיקום הקובץ הקנוני, שש ההעשרות בקובץ 106 נכללות בגבול אצווה 106, ושתי ההעשרות בקובץ 107 נכללות בגבול אצווה 107. נקודת הפתיחה היא המדד בפועל של אצווה 105 (3,071 פרופוזיציות; סטייה קודמת של +1 מול הצפי). אצווה 108 היא מעטפת ביקורת ותיעוד ואינה מוסיפה זהויות או Evidence Families.",
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 0,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 0
-  }
+  },
+  "metrics_before_source": "Batch 107 metrics_expected_after after two in-place Yiddish source enrichments; batch 108 is the audit envelope for all eight additions."
 }

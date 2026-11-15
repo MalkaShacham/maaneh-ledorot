@@ -92,12 +92,12 @@
       "before": {
         "answer_eligible_unique_sources": 1033,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3070
+        "answer_eligible_propositions": 3071
       },
       "expected_after": {
         "answer_eligible_unique_sources": 1051,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3111
+        "answer_eligible_propositions": 3112
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -180,7 +180,7 @@
     "last_run_note": "Manual source review on 16.11.2026: opened body segments for AIDs 2989153, 2989320, 2989243, 4304434, 5959845, 2988989, 5990037, 5989929, 4736086 and 5430533. Added six Hebrew and two Yiddish-source paraphrases to existing identities with exact locators. Rechecked two records and added no duplicate claims. Two Hebrew direct links failed; same-AID Chabad.org pages with Yiddish text and English translation were used as fallback. No crawler retry, access bypass, full-text copying or Verified promotion.",
     "last_batch_blocked_count": 2,
     "last_batch_blocked_reason": "Two direct Hebrew URLs returned Internal Error; same-AID Chabad.org pages were opened as fallback and their Yiddish body text was inspected. No unresolved blocked item remains in this reviewed set.",
-    "next_work": "Reconcile batches 106–108 using the full canonical index; expected after-state is 1,051 answer-eligible unique Evidence Families, 854 content-Verified sources and 3,111 propositions. Then pass test_content_readiness.mjs, Yiddish/English retrieval, question-specific synthesis, claim-local citations, deep researcher evidence maps, workflow-write-safety, Actions and Pages publication.",
+    "next_work": "Reconcile batches 106–108 using the full canonical index; expected after-state is 1,051 answer-eligible unique Evidence Families, 854 content-Verified sources and 3,112 propositions. Then pass test_content_readiness.mjs, Yiddish/English retrieval, question-specific synthesis, claim-local citations, deep researcher evidence maps, workflow-write-safety, Actions and Pages publication.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",

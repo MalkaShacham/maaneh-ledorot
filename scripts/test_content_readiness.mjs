@@ -2640,7 +2640,7 @@ assert.equal(batch106Data.reviewed_item_count,11);assert.equal(batch106Data.bloc
 assert.equal(batch106Data.fallback_source_attempted,true);assert.equal(batch106Data.crawler_retry,false);
 assert.equal(batch106Data.access_control_bypassed,false);assert.equal(batch106Data.full_text_copied,false);
 assert.equal(batch106Data.scan_only_verification_used,false);assert.equal(batch106Data.translations_counted_as_independent_witnesses,0);
-assert.deepEqual(batch106Data.metrics_expected_after,{answer_eligible_unique_sources:1041,content_verified_unique_sources:854,answer_eligible_propositions:3089});
+assert.deepEqual(batch106Data.metrics_expected_after,{answer_eligible_unique_sources:1041,content_verified_unique_sources:854,answer_eligible_propositions:3090});
 if(batch106Data.reconciliation_status==='reconciled'){
  assert.deepEqual(readinessMetrics(batch106Data.metrics_actual_after),batch106Data.metrics_expected_after);
  assert.deepEqual(batch106Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
@@ -2726,7 +2726,7 @@ assert.equal(batch107Data.full_text_copied,false);assert.equal(batch107Data.scan
 assert.equal(batch107Data.search_extracts_used_as_content,0);assert.equal(batch107Data.translations_counted_as_independent_witnesses,0);
 assert.equal(batch107Data.independent_witnesses_added,4);assert.equal(batch107Data.non_independent_presentations_added,6);
 assert.deepEqual(batch107Data.metrics_before,{answer_eligible_unique_sources:1041,content_verified_unique_sources:854,answer_eligible_propositions:3083});
-assert.deepEqual(batch107Data.metrics_expected_after,{answer_eligible_unique_sources:1051,content_verified_unique_sources:854,answer_eligible_propositions:3111});
+assert.deepEqual(batch107Data.metrics_expected_after,{answer_eligible_unique_sources:1051,content_verified_unique_sources:854,answer_eligible_propositions:3112});
 assert.equal(batch107Data.records.reduce((n,r)=>n+r.response_propositions.length,0),22);
 assert.equal(new Set(batch107Data.records.map(r=>String(r.aid))).size,10);
 assert.equal(new Set(batch107Data.records.map(r=>r.evidence_family_id)).size,10);
@@ -2815,7 +2815,7 @@ assert.equal(batch108Data.fallback_source_results.accessible_item_level_bodies,1
 assert.equal(batch108Data.blocked_candidates.length,2);
 assert.equal(batch108Data.source_body_review.length,10);
 assert(batch108Data.source_body_review.every(r=>!('aid' in r)&&!('id' in r)&&!('evidence_family_id' in r)));
-assert.deepEqual(batch108Data.metrics_before,{answer_eligible_unique_sources:1051,content_verified_unique_sources:854,answer_eligible_propositions:3111});
+assert.deepEqual(batch108Data.metrics_before,{answer_eligible_unique_sources:1051,content_verified_unique_sources:854,answer_eligible_propositions:3112});
 assert.deepEqual(batch108Data.metrics_expected_after,batch108Data.metrics_before);
 for(const aid of batch108Data.enriched_aids){
  const e=idx.entries.find(x=>sourceAID(x)===String(aid));
