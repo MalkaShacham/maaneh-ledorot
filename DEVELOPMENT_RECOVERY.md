@@ -620,3 +620,41 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - Expected progression, not yet a committed reconciliation result: before batch 099 **965 answer-eligible / 870 content-Verified / 2,929 propositions**; after batch 099 **977 / 870 / 2,952**; after batch 100 **986 / 870 / 2,968**; after batch 101 **1,001 / 870 / 2,998**. The published `data/public-metrics.json` still contains the documented stale 878 Verified count until the corrected reconciliation runs. Actual-after fields remain null until that run.
 - A pull-request answer-quality run validated the first version of the new batch chain and confirmed 1,000 answer-eligible unique sources with no identity collisions; its first status-normalization pass exposed an over-broad negative phrase rule that temporarily lowered the Verified count to 854. That rule was refined to preserve explicit pipeline status and is being rerun with the full 099–101 chain.
 - At the time of this note, the latest validation run is still in progress. The GitHub connector provides PR-triggered job status and logs, but push-triggered Actions and Pages deployment are not yet confirmed. Do not treat the expected totals above as published metrics until the final run and deployment complete.
+
+
+## 2026-11-15 — Batch 102: English correspondence bodies and Hebrew in-place enrichment
+
+- נפתחו ונבדקו 10 גופי איגרות/התכתבויות באנגלית ב-Chabad.org / TheRebbe.org: חמש איגרות אישיות, התכתבות רב־מכתבית אחת, שני תעתיקים שבהם המו״ל מציין שהמקור אינו בידיו, תרגום אחד מאידיש ותרגום אחד של מכתב קהילתי. נוספו 10 זהויות חדשות ב-10 Evidence Families ו-19 פרפרזות מחקריות בעברית, כולן עם `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, locator ברמת טענה, provenance, היקף בדיקה, נסיבות ומגבלות.
+- הועשרה הזהות העברית הקיימת AID 2989588 בתוך batch 099: נוספה פרפרזה אחת על תקופת הקיץ כהכנה לשנת הלימודים הבאה ולבניית בית יהודי; שלושת ה-locators הקודמים תוקנו לפי גוף העמוד שנפתח (שורות 177–180, 182–184, 187–189). אותו AID ואותה Evidence Family.
+- AID 72176 הוא תרגום אנגלי מאידיש (איגרות קודש כרך ד׳ עמ׳ 334–336); AID 2276666 הוא תרגום אנגלי של מכתב קהילתי, והעמוד מציין גרסה יידית של אותה איגרת כמכתב 750. שני התרגומים סומנו כלא־עצמאיים. AIDs 2190037 ו-2201447 הם תעתיקים שהמו״ל מציין כי המקור הפיזי אינו בידיו; גם הם לא נספרו כעדים עצמאיים. לא נספר תרגום כעד עצמאי.
+- נבדק מועמד לכפילות בין AID 1888932 ל-AID 289101: גוף 1888932 נפתח, אך גוף 289101 לא נפתח. התאמת הכותרת/התאריך במטא־דאטה אינה מספיקה; לא בוצע מיזוג ולא נטענה כפילות מאומתת.
+- נחסמו שבעה מועמדים: AID 1921269 (שגיאת קורא), AID 6052000 (PDF ללא טקסט קריא), AIDs 5996836 ו-4543714 (טקסט PDF משובש), AID 1053 (תוצאת חיפוש בלבד; פתיחה ללא גוף קריא), AIDs 2988234 ו-4296290 (shell/תקציר ללא גוף). חסימות קודמות של AID 4666220 ושני מועמדי ChabadLibrary ביידיש לא נוסו שוב. באותה הפעלה בוצע fallback לעשרה גופי איגרות נגישים.
+- נבדקו 12 גופי מקור בסך הכול: עשרת המקורות החדשים, הזהות העברית שהועשרה ומועמד הכפילות. נוספו 19 פרפרזות למקורות חדשים ועוד פרפרזה אחת לזהות קיימת. כל הרשומות נשארות Parsed; לא הועלה מקור ל-Verified.
+- בדיקת כפילויות מקדימה כללה את review queue, batches 056–060 ו-097–101 וקובץ bulk-indexed נגיש אחד. הסריקה הקנונית המלאה עדיין ממתינה ל-`scripts/reconcile_metrics.py`; אין לטעון שהושלמה לפני תוצאת ה-PR/Actions.
+- צפי בלבד לאחר שרשרת 099–102: 1,011 answer-eligible unique Evidence Families / 870 content-Verified / 3,018 propositions. לפני batch 102: 1,001 / 870 / 2,998. המדדים בפועל ייקבעו רק לאחר reconciliation.
+- אחזור/סינתזה: נשמרה תמיכת המנוע הקיימת ב-proposition-level relevance, claim-local citations, citation entailment, context boundaries ו-`researcher depth=deep` עם evidence map ו-claim-source map. נוספה בדיקת רגרסיה לסינתזה בין שלוש איגרות עם הפניות ברמת טענה במצב רגיל ובמצב חוקר עמוק; לא בוצע שינוי לא מאומת במנוע עצמו.
+- לא נעשה שימוש ב-search extracts כתוכן, לא הועתק טקסט מוגן במלואו, לא נעשה retry ל-crawler החסום, לא נעקפו בקרות גישה, לא נוצרה אוטומציה חדשה ולא שונו לוח הזמנים, קהל או הרשאות. בדיקות PR, reconciliation ופרסום Pages ממתינים לאימות בפועל.
+
+
+## 2026-11-15 — Batch 102: corrected canonical accounting and full reconciliation
+
+- לאחר סריקה קנונית מלאה ב-PR workspace, שבעה מקורות חדשים בלבד נשארו ב-batch 102: AIDs 6489115, 1888937, 821755, 2201447, 72176, 1872993 ו-1277. שלושה AIDs שנראו חדשים כבר היו בקורפוס (2190037 ב-batch 070; 1939848 ו-2276666 ב-batch 082), ולכן הוצאו מרשימת החדשים וסומנו כ-rechecks ללא פרפרזה כפולה.
+- הועשרה זהות עברית קיימת אחת, AID 2989588, עם פרפרזה אחת על תקופת הקיץ; תוקנו שלושה locators קיימים. בסך הכול: 7 זהויות חדשות, 3 זהויות שנבדקו מחדש, זהות קיימת אחת שהועשרה, 13 פרפרזות למקורות החדשים ועוד אחת לזהות קיימת. 12 גופי מקור נבדקו.
+- התרגום מאידיש AID 72176 ותעתיק AID 2201447 נשארו non-independent; AIDs 2190037 ו-2276666 הקיימים נשארו non-independent לפי הרשומות הקנוניות. אין ספירת תרגום כעד עצמאי.
+- מועמד הכפילות AID 1888932 / 289101 לא אוחד: גוף 1888932 נפתח, אך גוף 289101 לא נפתח. אין מיזוג על סמך כותרת או מטא־דאטה בלבד.
+- שבע חסימות תועדו, ובאותה הפעלה נעשה fallback לעשרה גופים נגישים; לא נעשה retry ל-crawler החסום, לא נעקפו בקרות גישה, ולא הועתק טקסט מלא.
+- **תוצאת reconciliation בפועל ב-PR workspace עבור batches 099–102:** 965 → 1008 answer-eligible unique Evidence Families; content-Verified נשאר 854; propositions עלו מ-2929 ל-3012. ההפרש של 16 לעומת צפי Verified קודם נובע מנרמול סטטוסים: 870 היה גבוה מדי, ו-878 שפורסם היה גבוה עוד יותר. לא קודם מקור חדש ל-Verified.
+- ה-PR הראשון הריץ reconciliation מלא והפיק 1008/854/3012, אך בדיקת התוכן נעצרה בגלל הצהרת `const` כפולה ב-test. המשתנים תוקנו; נדרשת ריצת PR חוזרת מוצלחת לפני merge. פרסום GitHub Pages עדיין ממתין ל-merge ול-Actions ב-main.
+
+
+## 2026-11-15 — Batch 103: Hebrew Sicha and Yechidus body review
+
+- נפתחו ונבדקו 12 גופי מקור עבריים חדשים ב-he.chabad.org: 11 פריטי שיחה/התוועדות ורישום יחידות כללית אחד. נוספה זהות חדשה אחת לכל AID ובסך הכול 12 Evidence Families חדשים, עם 12 פרפרזות מחקריות לא־מילוליות, locator ברמת טענה, provenance, היקף אימות, נסיבות, קהל ומגבלות.
+- הועשרה זהות קיימת אחת בלבד: AID 2989589 ב-batch 101. נפתחו שורות 190–193 ונוספה פרפרזה על המאמץ האישי, נחת להורים/מורים/מנהלים והתקדמות בשנה הבאה. נשמרו ה-AID וה-Evidence Family המקוריים; לא נוצרה זהות נוספת.
+- עשרה עמודי ChabadLibrary (AIDs 3701350036, 3701350369, 3701350306, 3701350321, 3701350178, 3701350354, 3701350153, 3701350323, 3701350166, 3701350215) החזירו אפס שורות גוף קריאות בפתיחה הישירה. קטעי החיפוש לא שימשו כתוכן. באותה הפעלה נעשה fallback ל-13 גופים קריאים ב-he.chabad.org: 12 מקורות חדשים ו-AID 2989589 שהועשר.
+- סיווגים והגבלות: AID 5989650 הוא רישום יחידות כללית ולא תמליל מלא; AID 5989699 כולל פסקה שמסומנת כהוגהה ונדפסה בלקוטי שיחות י״ח; AID 5989813 מביא שלוש משמעויות מי״ב תמוז מתוך דברים קודמים של הרבי הריי״צ, והייחוס נשמר אליו; AID 5989814 מציין נוסח מוגה נפרד בלקוטי שיחות ל״ג שלא נבדק. כל הרשומות נשארות Parsed.
+- בדיקת כפילויות מקדימה: 12 חיפושי AID מדויקים ותור הביקורת לא הצביעו על התאמות. הסריקה הקנונית המלאה והכרעת collisions/missing identities ממתינות ל-reconcile_metrics.py; אין לטעון שהיעדר כפילויות אומת לפני הסריקה.
+- לפני batch 103: **1,008** answer-eligible unique Evidence Families / **854** content-Verified sources / **3,012** propositions. צפי לאחר batch 103: **1,020 / 854 / 3,025**. אלה ערכי expected בלבד עד reconciliation; לא קודם מקור ל-Verified.
+- תוקן גם אי־התאמה בסכמת batch 102: existing_identity_rechecks נשמר קודם כמספר במקום מערך, ולכן reconciliation נעצר ב-TypeError. הרשומות הומרו למערך מפורש ונוספה הגנה לקריאת batches ישנים.
+- אחזור: נוספו aliases ממוקדים ל״לימוד פרשת היום והוראה לחיים״ ול״חירות בלימוד תורה ותשובה״, יחד עם בדיקת תמיכה ברמת proposition. נוספו בדיקות לאחזור AID 5989705 ולסינתזה רב־מקורית עם הפניות ברמת טענה ובדיקת researcher depth=deep.
+- לא נעשה retry ל-crawler החסום, לא נעקפו בקרות גישה, לא הועתק טקסט מוגן במלואו, לא נספר תרגום כעד עצמאי ולא קודם מקור ל-Verified. לוח הזמנים השעתי, קהל היעד והרשאות המאגר לא שונו. בדיקות PR, merge, reconciliation ב-main ופרסום Pages עדיין ממתינים לתוצאות בפועל.

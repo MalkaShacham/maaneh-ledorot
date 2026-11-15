@@ -254,7 +254,13 @@ for selected_index, batch_info in enumerate(selected_batches):
         alias_aid=str(alias.get("alias_aid") or ""); canonical_aid=str(alias.get("canonical_aid") or "")
         if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
         if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
-    for recheck in batch_data.get("existing_identity_rechecks",[]):
+    rechecks=batch_data.get("existing_identity_rechecks",[])
+    if not isinstance(rechecks,list):
+        # Backward-compatible with older batch summaries that stored only a count;
+        # use the explicit rechecked_aids list for identity-level auditing.
+        rechecks=[{"aid":aid} for aid in batch_data.get("rechecked_aids",[]) if str(aid).isdigit()]
+    for recheck in rechecks:
+        if not isinstance(recheck,dict): continue
         recheck_aid=str(recheck.get("aid") or "")
         if recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
 
@@ -269,7 +275,8 @@ for selected_index, batch_info in enumerate(selected_batches):
         old=snapshot_by_key.get(key)
         priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
         if old is None or priority(entry)>priority(old): snapshot_by_key[key]=entry
-    snapshot_metrics=summarize(list(snapshot_by_key.values()))
+    snapshot_summary=summarize(list(snapshot_by_key.values()))
+    snapshot_metrics={k:snapshot_summary[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
 
     audit=[]; by_identity={target["key"]:[] for target in target_identities}
     for fp in items:
@@ -321,7 +328,7 @@ for selected_index, batch_info in enumerate(selected_batches):
     if isinstance(summary,dict) and str(summary.get("batch_id"))==str(batch_data.get("batch_id")):
         summary["metrics_after_actual"]=snapshot_metrics
         b=summary.get("metrics_before") or {}
-        summary["metrics_delta_actual"]={k:snapshot_metrics[k]-int(b.get(k,snapshot_metrics[k])) for k in snapshot_metrics}
+        summary["metrics_delta_actual"]={k:snapshot_metrics[k]-int(b.get(k,snapshot_metrics[k])) for k in snapshot_metrics if isinstance(snapshot_metrics[k],(int,float)) and not isinstance(snapshot_metrics[k],bool)}
         summary["status"]=batch_data["reconciliation_status"]
     batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
