@@ -107,3 +107,8 @@ Dedup נעשה לפני ספירת תמיכה ולפני ניסוח דפוס:
 ## 6. Case-specific charity-allocation synthesis
 
 The tzedakah synthesis now includes three additional bounded claim types: allocation between a general fund and personal distribution that may assist relatives (AID 5054399); a historically specified donation to Yeshivat Torat Emet (AID 5413166); and a donation mentioned at the beginning of a couple's home-building (AID 5100681). Each claim carries its own body locator and remains tied to its own Evidence Family. The synthesis is labelled as system research, not a Rebbe quotation. It must not infer a universal allocation rule, a contemporary monetary amount, or a fixed tzedakah percentage from these personal cases. Researcher mode exposes witness provenance, context limits and the claim-to-source map; regular mode retains claim-local citations without expanded diagnostics.
+
+
+## Narrow-topic evidence gates
+
+For a query classified as **עקירת שיניים וחוות דעת**, a candidate source is retained only when its inspected evidence contains both (1) an explicit dental/tooth-extraction reference and (2) an additional-opinion, additional-expert, or additional-doctor reference. Generic health or medical correspondence alone is excluded. This is a topic-specific precision gate; it does not suppress general health evidence for broad health questions.

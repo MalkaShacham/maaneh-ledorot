@@ -524,6 +524,14 @@ export function propositionRelevance(e,u){
  const asksRebbeAuthorship=/הרבי|רבי|the rebbe/.test(norm(u.query));
  if(isSecretariat&&asksRebbeAuthorship)return{score:0,support:'insufficient_authorship_evidence',reasons:['matched item is a secretariat office letter, not a Rebbe-authored letter']};
  const body=evidenceText(e);if(!body)return{score:0,support:'unknown_content',reasons:['empty evidence body']};
+ // Narrow dental-extraction/second-opinion questions require both parts of the request in the candidate's inspected evidence.
+ // A generic health letter mentioning a doctor or medical opinion is not sufficient for this specific topic.
+ if(u.topics.includes('עקירת שיניים וחוות דעת')){
+  const dentalText=norm(body);
+  const hasDentalSpecific=/(?:עקירת\\s+שיניים|לעקור\\s+את\\s+כל\\s+השיניים|רופא\\s+שיניים|שיניים|שן|dental extraction|tooth extraction)/i.test(dentalText);
+  const hasSecondOpinion=/(?:חוות\\s+דעת\\s+(?:נוספת|שנייה)|מומחים?\\s+נוספים|מומחה\\s+נוסף|רופא\\s+נוסף|דעה\\s+נוספת|second opinion|additional opinion)/i.test(dentalText);
+  if(!hasDentalSpecific||!hasSecondOpinion)return{score:0,support:'insufficient_specific_evidence',reasons:['specific dental answer requires both a dental-extraction reference and an additional-opinion reference']};
+ }
  if(isTeshuvahLevelsQuestion(u.query)){
   const supportingProps=arr(e.response_propositions).filter(supportsTeshuvahLevelsProposition);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not describe the inspected teshuvah subtypes or a related graded progression']};

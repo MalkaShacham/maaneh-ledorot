@@ -643,3 +643,9 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 
 
 - Test-chain correction: the batch-102 test now expects **2969 propositions** after batch 100 and **2999** after batch 101, because the newly inspected AID 2989585 proposition is stored in its original batch-100 file. This avoids double-counting it in batch 102.
+
+
+## 2026-11-15 — Narrow dental-topic retrieval correction
+
+- The hourly validation on the corrected 854 baseline progressed past metric normalization but failed an existing retrieval regression: a generic health item was being returned for a specific dental-extraction/second-opinion question. The answer engine now applies a two-part gate for that narrow topic: the candidate must contain explicit dental/tooth-extraction language and explicit additional-opinion/expert/doctor language. General health queries are not narrowed by this rule.
+- The existing dental regression test requires the specific dental letter and exactly one source; it is retained as the validation target. A fresh answer-quality and hourly run is required to verify the change.
