@@ -488,3 +488,10 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - Corrected the batch-091 arithmetic target to 2,857 propositions after batches 090–091 (16 + 9 new propositions). Combined expected metrics after batches 090–092 are **926 answer-eligible Evidence Families**, **853 content-verified families**, and **2,873 propositions**. These remain targets until reconciliation confirms the actual index.
 - No crawler retry, access-control bypass, full-text copying, scan-only content verification, translation-as-independent-witness counting, audience/permission changes or schedule changes.
 - The exact main commit, reconciliation result, quality gate, Actions and Pages publication remain unconfirmed until the resulting GitHub workflows complete.
+
+
+## 2026-11-15 — Retrieval precision repair: forgetfulness versus dreams
+
+- The first batch-092 quality-gate run exposed a real false-positive: the new AID 5100372 letter about forgetfulness and study methods was being retrieved for a narrower question explicitly asking about both forgetfulness and dreams. The source does not discuss dreams, so it must not enter that answer.
+- Added a query-specific constraint in the core retriever: when a question explicitly combines שכחה and חלומות, an answer source must contain a proposition about a dream. Generic forgetfulness queries still retain AID 5100372. Added a regression for both query forms; no source content or status was changed.
+- The structural answer-quality evaluation, question-specificity gate, answer-synthesis tests, citation-integrity tests and write-safety tests passed on the first batch-092 revision; test_content_readiness.mjs failed only at the forgetfulness/dreams source-count assertion. The corrected suite is pending a fresh run.
