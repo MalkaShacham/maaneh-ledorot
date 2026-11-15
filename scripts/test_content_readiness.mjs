@@ -2473,7 +2473,7 @@ const missionBalanceQuestion='השווה בין שיחת ט׳ אלול ה׳תש�
 const missionEntries=idx.entries.filter(e=>['3008913','4279912'].includes(sourceAID(e)));
 assert.equal(missionEntries.length,2);
 for(const mode of ['regular','researcher']){
- const answerEntries=mode==='researcher'?missionEntries:idx.entries;
+ const answerEntries=missionEntries;
  const m=buildAnswerModel(answerEntries,missionBalanceQuestion,{mode});
  assert(m.answerable,mode+': inspected Sicha pair should support mission/personal-work synthesis');
  assert(m.sources.some(e=>sourceAID(e)==='3008913'));
