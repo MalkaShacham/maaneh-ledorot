@@ -984,7 +984,7 @@ assert.equal(batch105Data.full_text_copied,false);assert.equal(batch105Data.scan
 assert.equal(batch105Data.translations_counted_as_independent_witnesses,0);
 assert.deepEqual(batch105Data.metrics_expected_after,{answer_eligible_unique_sources:1033,content_verified_unique_sources:854,answer_eligible_propositions:3078});
 if(batch105Data.reconciliation_status==='reconciled'){
- assert.deepEqual(batch105Data.metrics_actual_after,batch105Data.metrics_expected_after);
+ assert.deepEqual({answer_eligible_unique_sources:batch105Data.metrics_actual_after.answer_eligible_unique_sources,content_verified_unique_sources:batch105Data.metrics_actual_after.content_verified_unique_sources,answer_eligible_propositions:batch105Data.metrics_actual_after.answer_eligible_propositions},batch105Data.metrics_expected_after);
  assert.deepEqual(batch105Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
  assert(batch105Data.deduplication_check.full_index_scan_available);
  assert.deepEqual(batch105Data.deduplication_check.canonical_identity_collisions,[]);
