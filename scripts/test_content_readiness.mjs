@@ -2484,6 +2484,7 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher'){
   assert(m.research&&m.research.evidence_families>=2);
   assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
-  assert(m.research.claim_source_map.length>0&&m.research.claim_source_map.every(c=>c.source_numbers.length&&c.evidence_family_ids.length&&c.proposition_source_locators.length));
+  assert.equal(m.research.claim_source_map.length,m.claims.length);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
  }else assert.equal(m.research,undefined);
 }
