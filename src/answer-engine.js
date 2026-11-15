@@ -4,7 +4,6 @@ const STOP=new Set('מה למה מדוע הרבי אמר אומר אומרים �
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s)||s==='מספר')return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
  חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch','קינדער'],
- 'יוזמות חינוכיות וקהילתיות':['יוזמות חינוכיות וקהילתיות','פעילות תלמידות','בית רבקה','בנות חב','הפצת המעיינות','התוועדות יט כסלו','גמילות חסדים','community education outreach'],
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
  בריאות:['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אמא','אם המשפחה','woman','women','mother','פרוי','פרויען'],
