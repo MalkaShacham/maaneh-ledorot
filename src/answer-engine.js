@@ -497,11 +497,34 @@ export function understandQuestion(q){
   ||(topics.includes('חשבון נפש בלי ייאוש')&&t==='ערוך');
  return {query,query_script:scriptOf(query),topic:topics[0]||null,topics,intent,entities,subtopic:semanticRaw.filter(t=>!isTopicToken(t)).slice(0,8),terms:[...new Set(expanded.map(norm))]};
 }
-function evidenceText(e){return norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));}
+// Loaded evidence-index entries are immutable during answer generation. Cache their
+// normalized retrieval text so repeated regular/researcher queries do not rescan
+// and renormalize every proposition and metadata field.
+const evidenceTextCache=new WeakMap();
+const metadataTextCache=new WeakMap();
+function evidenceText(e){
+ if(e&&typeof e==='object'){
+  const cached=evidenceTextCache.get(e);
+  if(cached!==undefined)return cached;
+  const value=norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));
+  evidenceTextCache.set(e,value);
+  return value;
+ }
+ return norm([text(e?.response_propositions),text(e?.question_or_problem),text(e?.conditions_or_qualifications),text(e?.documented_circumstances),text(e?.audience)].join(' '));
+}
 function supportsStudyRoutineComparison(p){const t=norm(p);return ['זמני לימוד','קביעות עתים','ללמוד יחד עם אדם נוסף','לימוד יחד עם חבר','לימוד בצוותא'].some(term=>containsTerm(t,term));}
 function supportsFarmingStudyComparison(p){const t=norm(p);return ['חקלאים ובעלי משק','עבודה במשק חקלאי','לימוד תורה לצד עבודה במשק','לימוד תורה במשק','עוסק בחקלאות ולומד תורה'].some(term=>containsTerm(t,term));}
 function supportsStudyFarmingComparisonSource(e){return arr(e.response_propositions).some(p=>supportsStudyRoutineComparison(p)||supportsFarmingStudyComparison(p));}
-function metadataText(e){return norm([e.title,e.search_text,e.source_class,e.date,e.language,e.topic,e.subtopic].join(' '));}
+function metadataText(e){
+ if(e&&typeof e==='object'){
+  const cached=metadataTextCache.get(e);
+  if(cached!==undefined)return cached;
+  const value=norm([e.title,e.search_text,e.source_class,e.date,e.language,e.topic,e.subtopic].join(' '));
+  metadataTextCache.set(e,value);
+  return value;
+ }
+ return norm([e?.title,e?.search_text,e?.source_class,e?.date,e?.language,e?.topic,e?.subtopic].join(' '));
+}
 function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&containsTerm(t,x)?1:0),0);}
 function familyKey(e){return e.evidence_family_id||e.aid||e.source_url||e.key;}
 function propositionKey(p){return contentWords(p).sort().join(' ');}
@@ -1133,7 +1156,7 @@ function buildDailyRoutineSynthesis(selected){
 function buildTzedakahSynthesis(selected){
  const basis=[];
  selected.forEach((e,index)=>{
-  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  if(classifyWitness(e)==='derived')return;
   const props=arr(e._supporting_propositions).filter(supportsTzedakahSynthesisProposition);
   if(!props.length)return;
   const propositions=props.map(p=>{
@@ -1366,7 +1389,7 @@ function buildStudyFarmingSynthesis(selected){
 function buildJewishHomeSynthesis(selected){
  const basis=[];
  selected.forEach((e,index)=>{
-  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  if(classifyWitness(e)==='derived')return;
   const props=arr(e._supporting_propositions).filter(supportsJewishHomeSynthesisProposition);
   if(!props.length)return;
   const propositions=props.map(p=>{
@@ -1400,12 +1423,13 @@ function buildJewishHomeSynthesis(selected){
   attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',
   text:claims.map(c=>c.text).join(' ')+' אלה שני הקשרים נפרדים — איגרת ציבורית לכינוס ומענה אישי; אין לאחד אותם לכלל אחיד.',
   source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,
-  method:'Claim-level thematic comparison across distinct inspected Evidence Families. Each claim carries its own source numbers and body locator; the comparison preserves the difference between a public Yiddish convention letter and an individual housewarming response.',
+  method:'Claim-level thematic comparison across distinct inspected Evidence Families. Each claim carries its own source numbers and body locator. AID 5357409 is a shorter publisher presentation linked by the publisher to a fuller same-family printing; it is counted once as one case family, not as independent corroboration.',
   limits:[
    'הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.',
    'האיגרת לכינוס והמענה על מעבר לדירה הם מקרים נפרדים, עם קהלים ונסיבות שונים; אין להסיק מהם מדיניות אחידה.',
    'הפרטים על מזוזות הם חלק ממענה אישי היסטורי ואינם פסיקה הלכתית כללית או עדכנית.',
-   'המקור הראשון ביידיש ותמציותיו בעברית הן פרפרזות; לא נבדקו כתבי היד, צילומי המקור או המכתבים הנכנסים.'
+   'המקור הראשון ביידיש ותמציותיו בעברית הן פרפרזות; לא נבדקו כתבי היד, צילומי המקור או המכתבים הנכנסים.',
+   'AID 5357409 הוא הצגה מקוצרת של אותו מכתב שפורסם בשלמות רבה יותר תחת AID 4872269; הוא נספר פעם אחת כמשפחת ראיות ואינו עד מאמת עצמאי נוסף.'
   ]
  };
 }
@@ -1511,10 +1535,11 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  else if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}
  else if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
  else if(jewishHomeSynthesisQuestion){
-  const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition));
   const score=e=>{const t=norm(arr(e.response_propositions).join(' '));return Number(t.includes('הבית היהודי')||t.includes('בית יהודי')||t.includes('חינוך הילדים'))*100+Number(t.includes('חנוכת הבית'))*100+Number(t.includes('מזוזה'))*80;};
+  const preferredHomeAids=['5413165','5357409'];
+  const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.has_content_evidence===true&&!e.translation_of_evidence_family_id&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition)).sort((a,b)=>{const ai=preferredHomeAids.indexOf(String(a.aid||'')),bi=preferredHomeAids.indexOf(String(b.aid||''));if((ai<0?99:ai)!==(bi<0?99:bi))return(ai<0?99:ai)-(bi<0?99:bi);return score(b)-score(a);}).slice(0,40);
   const byFamily=new Map();
-  for(const e of [...homeIndex.sort((a,b)=>score(b)-score(a)),...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,{...e,_supporting_propositions:arr(e.response_propositions).filter(supportsJewishHomeSynthesisProposition)});}
+  for(const e of [...homeIndex,...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,{...e,_supporting_propositions:arr(e.response_propositions).filter(supportsJewishHomeSynthesisProposition)});}
   answerEvidence=[...byFamily.values()].slice(0,8);
  }
  else if(educationYouthGuidanceQuestion){

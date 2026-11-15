@@ -4230,33 +4230,55 @@
       "source_class": "Audio",
       "pipeline_status": "Indexed",
       "event_date": "1982-12-07",
-      "language": "unknown",
-      "context_status": "partial",
+      "language": "Yiddish",
+      "context_status": "metadata_only",
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553673/jewish/21-Kislev-5743-Yechidus-Yiddish.htm",
       "locator": {
         "aid": 553673,
         "duration_publisher": "3:36"
       },
       "provenance": {
-        "source_witness": "Chabad.org Sichos Kodesh Audio / Jewish Educational Media public item and year-index pages",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
+        "source_witness": "Chabad.org Sichos Kodesh Audio / Jewish Educational Media public item; Yiddish listing for the same session as AID 553672.",
+        "transmission_type": "publisher audio metadata only; parallel-language listing",
+        "textual_status": "audio_body_not_inspected; no transcript available in the public item page",
+        "editorial_scope": "metadata only; not used for content propositions",
+        "verification_status": "Indexed; metadata_checked_only; no content verification",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553673/jewish/21-Kislev-5743-Yechidus-Yiddish.htm",
-        "accessed": "2026-09-24"
+        "accessed": "2026-11-15"
       },
       "access": {
         "rights_status": "public_metadata_only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "reuse_notes": "Metadata/link only; no transcript or protected full text copied.",
+        "access_level": "open_metadata_only"
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-045.json"
+        },
+        {
+          "type": "parallel_language_variant",
+          "target": "AID 553672",
+          "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+          "independent_witness": false,
+          "basis": "Both pages identify the same 21 Kislev 5743 Yechidus session; the Yiddish page is a language variant, not a separate session or independent witness."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "AID 553673 is the Yiddish-language audio listing for the same 21 Kislev 5743 Yechidus session as AID 553672. The two language listings are linked to one Evidence Family; this item is not an independent witness and has no transcript or inspected audio content. Status remains Indexed; it is not answer evidence.",
+      "original_language": "Yiddish",
+      "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+      "parent_evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+      "independent_witness": false,
+      "translation_status": "Parallel-language audio item for the same Yechidus session as AID 553672; not an independent witness.",
+      "witness_type": "parallel_language_audio_metadata",
+      "has_content_evidence": false,
+      "response_propositions": [],
+      "response_proposition_locators": [],
+      "proposition_origin": null,
+      "proposition_verbatim": false,
+      "proposition_verification": null,
+      "proposition_source_locator": null,
+      "source_class_detail": "Chabad.org Sichos Kodesh Audio / Jewish Educational Media; Yiddish-language audio listing parallel to the English AID 553672 for the same 21 Kislev 5743 Yechidus."
     },
     {
       "id": "canonical-ska-553674",

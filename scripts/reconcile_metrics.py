@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, pathlib, re, datetime
+import json, pathlib, re, datetime, os
 from content_readiness import answer_eligible, summarize
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 items=sorted((ROOT/"data/items").glob("*.json"))
@@ -35,15 +35,23 @@ def stable_key(d):
     ks=identity_keys(d)
     return ks[0] if ks else None
 def status_of(d):
-    vals=[d.get("pipeline_status"),d.get("verification_status")]
+    # Parse an explicit leading pipeline value, never a status word mentioned
+    # later in a caveat (e.g. "Parsed; ... not promoted to Verified").
     p=d.get("provenance")
+    vals=[d.get("pipeline_status"),d.get("verification_status"),d.get("status")]
     if isinstance(p,dict): vals.append(p.get("verification_status"))
-    s=" ".join(str(v) for v in vals if v)
-    if re.search(r"\bunverified\b",s,re.I): return None
-    if re.search(r"\bverified\b",s,re.I): return "Verified"
-    for x in PIPE:
-        if x in s: return x
-    return d.get("pipeline_status") if d.get("pipeline_status") in PIPE else None
+    texts=[str(v).strip() for v in vals if v not in (None,"")]
+    if any(re.match(r"^(?:unverified|not verified)\b",v,re.I) for v in texts):
+        return None
+    found=[]
+    for value in texts:
+        match=re.match(r"^(Verified|Linked|Parsed|Indexed|Discovered)(?:\b|[;,:])",value,re.I)
+        if match:
+            token=match.group(1).lower()
+            found.append(next(x for x in PIPE if x.lower()==token))
+    if not found: return None
+    rank={name:i for i,name in enumerate(reversed(PIPE))}
+    return max(found,key=lambda name:rank[name])
 seen={}; evidence_files=0
 for fp in items:
     try: obj=json.loads(fp.read_text(encoding="utf-8"))
@@ -191,7 +199,7 @@ for fp in items:
             if not verification_scope: integrity_issues.append("verified_content_missing_scope")
             if not witness_provenance: integrity_issues.append("verified_content_missing_witness_provenance")
             if integrity_issues: search_status="Linked"
-        entry={"key":key,"id":x.get("id"),"title":x.get("title") or x.get("id") or key,"summary":summary,"source_class":x.get("source_class") or x.get("collection") or x.get("type"),"type":x.get("type") or prop.get("type"),"collection":x.get("collection") or prop.get("collection"),"original_language":x.get("original_language") or prop.get("original_language"),"translation_status":x.get("translation_status") or prop.get("translation_status"),"independent_witness":x.get("independent_witness") if "independent_witness" in x else prop.get("independent_witness"),"parent_evidence_family_id":x.get("parent_evidence_family_id") or prop.get("parent_evidence_family_id"),"translation_of_evidence_family_id":x.get("translation_of_evidence_family_id") or prop.get("translation_of_evidence_family_id"),"witness_type":x.get("witness_type") or prop.get("witness_type"),"status":search_status,"canonical_status":st or x.get("pipeline_status") or x.get("verification_status") or "unknown","context_status":context_status,"context_status_raw":raw_context if str(raw_context).lower()!=context_status else None,"date":x.get("date_original") or x.get("event_date") or x.get("event_date_hebrew"),"date_precision":x.get("date_precision") or prop.get("date_precision"),"language":x.get("language") or "unknown","source_url":source_url,"aid":aid_value,"locator":loc or x.get("locator"),"rights_status":x.get("rights_status") or access.get("rights_status"),"publisher_terms":tax.get("publisher_index_terms") or [],"research_terms":tax.get("research_terms") or [],"relations":x.get("relations") if isinstance(x.get("relations"),list) else [],"canonical_file":str(fp.relative_to(ROOT)),"documented_circumstances":x.get("documented_circumstances") or prop.get("documented_circumstances"),"question_or_problem":x.get("question_or_problem") or prop.get("question_or_problem"),"response_propositions":response_props,"response_proposition_locators":x.get("response_proposition_locators") or prop.get("response_proposition_locators") or [],"conditions_or_qualifications":x.get("conditions_or_qualifications") or prop.get("conditions_or_qualifications") or [],"audience":x.get("audience") or prop.get("audience"),"verification_scope":verification_scope,"witness_provenance":witness_provenance,"evidence_family_id":x.get("evidence_family_id") or prop.get("evidence_family_id"),"primary_secondary_status":x.get("primary_secondary_status") or prop.get("primary_secondary_status"),"has_content_evidence":bool(response_props) and explicit_content_flag is not False,"proposition_origin":proposition_origin,"proposition_verbatim":proposition_verbatim,"evidence_integrity_issues":integrity_issues}
+        entry={"key":key,"id":x.get("id"),"title":x.get("title") or x.get("id") or key,"summary":summary,"source_class":x.get("source_class") or x.get("collection") or x.get("type"),"source_class_detail":x.get("source_class_detail") or prop.get("source_class_detail"),"author_role":x.get("author_role") or prop.get("author_role"),"document_authorship_role":x.get("document_authorship_role") or prop.get("document_authorship_role"),"authorship_boundary":x.get("authorship_boundary") or prop.get("authorship_boundary"),"signature_status":x.get("signature_status") or prov.get("signature_status"),"authorship_status":x.get("authorship_status") or prov.get("authorship_status"),"type":x.get("type") or prop.get("type"),"collection":x.get("collection") or prop.get("collection"),"original_language":x.get("original_language") or prop.get("original_language"),"translation_status":x.get("translation_status") or prop.get("translation_status"),"independent_witness":x.get("independent_witness") if "independent_witness" in x else prop.get("independent_witness"),"parent_evidence_family_id":x.get("parent_evidence_family_id") or prop.get("parent_evidence_family_id"),"translation_of_evidence_family_id":x.get("translation_of_evidence_family_id") or prop.get("translation_of_evidence_family_id"),"witness_type":x.get("witness_type") or prop.get("witness_type"),"status":search_status,"canonical_status":st or x.get("pipeline_status") or x.get("verification_status") or "unknown","context_status":context_status,"context_status_raw":raw_context if str(raw_context).lower()!=context_status else None,"date":x.get("date_original") or x.get("event_date") or x.get("event_date_hebrew"),"date_precision":x.get("date_precision") or prop.get("date_precision"),"language":x.get("language") or "unknown","source_url":source_url,"aid":aid_value,"locator":loc or x.get("locator"),"rights_status":x.get("rights_status") or access.get("rights_status"),"publisher_terms":tax.get("publisher_index_terms") or [],"research_terms":tax.get("research_terms") or [],"relations":x.get("relations") if isinstance(x.get("relations"),list) else [],"canonical_file":str(fp.relative_to(ROOT)),"documented_circumstances":x.get("documented_circumstances") or prop.get("documented_circumstances"),"question_or_problem":x.get("question_or_problem") or prop.get("question_or_problem"),"response_propositions":response_props,"response_proposition_locators":x.get("response_proposition_locators") or prop.get("response_proposition_locators") or [],"conditions_or_qualifications":x.get("conditions_or_qualifications") or prop.get("conditions_or_qualifications") or [],"audience":x.get("audience") or prop.get("audience"),"verification_scope":verification_scope,"witness_provenance":witness_provenance,"evidence_family_id":x.get("evidence_family_id") or prop.get("evidence_family_id"),"primary_secondary_status":x.get("primary_secondary_status") or prop.get("primary_secondary_status"),"has_content_evidence":bool(response_props) and explicit_content_flag is not False,"proposition_origin":proposition_origin,"proposition_verbatim":proposition_verbatim,"evidence_integrity_issues":integrity_issues}
         if response_props and proposition_origin != "editorial_summary_derived":
             entry["proposition_verification"]=x.get("proposition_verification") or prop.get("proposition_verification")
             entry["proposition_source_locator"]=x.get("proposition_source_locator") or prop.get("proposition_source_locator")
@@ -300,9 +308,17 @@ actual_metrics={k:out[k] for k in ("answer_eligible_unique_sources","content_ver
 if batch_path and isinstance(batch_data,dict):
     expected=batch_data.get("metrics_expected_after") or {}
     variance={k:actual_metrics[k]-int(expected.get(k,actual_metrics[k])) for k in actual_metrics}
+    before=batch_data.get("metrics_before") or {}
+    delta={k:actual_metrics[k]-int(before.get(k,actual_metrics[k])) for k in actual_metrics}
     batch_data["metrics_actual_after"]=actual_metrics
+    batch_data["metrics_delta_actual"]=delta
     batch_data["reconciliation_variance"]=variance
     batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
+    run_id=os.environ.get("GITHUB_RUN_ID")
+    if run_id:
+        batch_data["reconciliation_run_id"]=int(run_id)
+        batch_data["reconciliation_run_url"]=f"{os.environ.get('GITHUB_SERVER_URL','https://github.com')}/{os.environ.get('GITHUB_REPOSITORY','')}/actions/runs/{run_id}"
+        batch_data["reconciliation_head_commit"]=os.environ.get("GITHUB_SHA")
     batch_data["status"]=batch_data["reconciliation_status"]
     readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
     readiness_state["reconciliation_status"]=batch_data["reconciliation_status"]
@@ -315,20 +331,30 @@ if batch_path and isinstance(batch_data,dict):
     if isinstance(summary,dict) and summary.get("batch_id")==batch_data.get("batch_id"):
         summary["metrics_after_actual"]=actual_metrics
         b=summary.get("metrics_before") or {}
-        summary["metrics_delta_actual"]={k:actual_metrics[k]-int(b.get(k,actual_metrics[k])) for k in actual_metrics}
+        summary["metrics_delta_actual"]=delta
         summary["status"]=batch_data["reconciliation_status"]
     last=dev.get("last_reconciliation")
     if isinstance(last,dict) and last.get("batch_id")==batch_data.get("batch_id"):
         last["metrics_actual_after"]=actual_metrics
+        last["metrics_delta_actual"]=delta
         last["reconciliation_variance"]=variance
         last["reconciliation_status"]=batch_data["reconciliation_status"]
+        if run_id:
+            last["reconciliation_run_id"]=int(run_id)
+            last["reconciliation_run_url"]=batch_data["reconciliation_run_url"]
+            last["reconciliation_head_commit"]=batch_data["reconciliation_head_commit"]
     acquisition_path=ROOT/"data/acquisition/latest.json"
     if acquisition_path.exists():
         acquisition=json.loads(acquisition_path.read_text(encoding="utf-8"))
         review=acquisition.get("manual_web_review") or {}
         if str(review.get("batch_id"))==str(batch_label):
             review["metrics_actual_after"]=actual_metrics
+            review["metrics_delta_actual"]=delta
             review["reconciliation_variance"]=variance
+            if run_id:
+                review["reconciliation_run_id"]=int(run_id)
+                review["reconciliation_run_url"]=batch_data["reconciliation_run_url"]
+                review["reconciliation_head_commit"]=batch_data["reconciliation_head_commit"]
             review["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
             review["status"]=batch_data["reconciliation_status"]
             if batch_data.get("reconciled_at"):

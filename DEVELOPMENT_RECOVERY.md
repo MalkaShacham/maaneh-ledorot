@@ -576,3 +576,34 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - No crawler retry, access-control bypass, scan-only content inference, full-text copying, translation-as-independent-witness counting, or status promotion was used.
 - Batch file: data/items/content-research-batch-098-2026-11-15.json. Reconciliation baseline carried forward from batch 097 expectations is 956 / 870 / 2,918; batch 098 expects 965 / 870 / 2,929. The published metrics before reconciliation still show 900 / 852 / 2,832, so only the post-reconciliation index can establish actual totals.
 - GitHub Actions, full canonical deduplication, the answer-quality gate, and GitHub Pages publication are pending the commit-bound workflow run; no result is marked passed before it is observed.
+
+
+### Batch 098 — CI reconciliation result and test correction — 2026-11-15
+
+- GitHub Actions answer-quality gate run 43728789802 executed the full reconciliation step on the PR head. It reported 9,268 canonical unique item keys, 470 canonical JSON files, 56 Evidence Family files, and 10 selected unique Evidence Families for batch 098 (nine new AIDs plus the enriched AID 3316701). Each of the ten AIDs had exactly one canonical record; no AID or URL collision was reported.
+- Reconciled CI metrics: 965 answer-eligible unique sources, 878 content-verified unique sources, and 2,929 answer-eligible propositions. Relative to the carried-forward expectation 956 / 870 / 2,918, the actual delta was +9 / +8 / +11. The +8 content-verified variance came from the previously pending corpus (batches 090–097); batch 098 itself promoted zero identities to content-verified.
+- The first answer-quality gate run reached test_content_readiness.mjs and failed on a stale assertion that still required batch 097 to be the latest reconciled batch. The reconciliation step and canonical identity audit completed; the failure occurred before the new batch-098-specific assertions. The test is being corrected to assert reconciliation against batch 098.
+- The CI-generated index and metrics are not yet committed to main or confirmed on GitHub Pages. The push-triggered hourly maintenance workflow is safe to use for publication: its current script explicitly records the live crawler as skipped after HTTP 403 and runs deterministic maintenance, identity reconciliation and metrics reconciliation only.
+
+
+### Batch 098 — correction of a status-parser false positive — 2026-11-15
+
+- A review of the failed content-readiness test identified that `scripts/reconcile_metrics.py::status_of()` searched for the word `Verified` anywhere in provenance. Eight batch-096 records contained the negated caveat “no promotion to Verified”, so the parser incorrectly treated them as content-Verified even though their explicit pipeline status was Parsed.
+- Corrected the parser to read only an explicit leading pipeline token from status fields, and corrected batch-096 provenance wording to “not promoted”. The source bodies, propositions, evidence families and answer-eligibility counts are unchanged; no content status was promoted or demoted by this correction.
+- The earlier CI count 965 / 878 / 2,929 is superseded. The corrected status-only expectation before the AID 4666220 access review was 965 / 870 / 2,929; after withdrawing that inaccessible item from answer evidence, the corrected baseline after batch 097 is 955 / 869 / 2,918 and the expected post-batch-098 total is 964 / 869 / 2,929 (+9 answer-eligible families, +0 content-verified families, +11 propositions). A new commit-bound CI run is required to record actual counts and the new run identifier.
+- Batch 098 still adds nine new identities and enriches one existing identity. Its own content-verified contribution remains zero. No crawler retry, access-control bypass, search-extract substitution or full-text copying was used.
+
+
+### AID 4666220 — current public-reader access recheck — 2026-11-15
+
+- Reopened the publisher URL. It redirected to a rewritten Torah Texts summary shell with no readable letter body. The old record had two content propositions and a Verified label, but its claimed prior item-level inspection could not be reproduced in the current public reader.
+- The record `chabad-letter-4666220.json` was retained as a source identity but demoted to Linked/metadata-only. Its response propositions were cleared, `has_content_evidence=false`, and it no longer contributes an answer-eligible Evidence Family or a content-Verified family. No claim is inferred from its title or summary shell.
+- This removes one answer-eligible family and one content-Verified family from the previously reported baseline. The corrected batch-097 baseline is **955 / 869 / 2,918**; batch 098 is expected to reconcile to **964 / 869 / 2,929**. The new CI reconciliation will supply the actual run ID and commit-bound result.
+- Alternate public source bodies were inspected in the same run (ten original-language Hayom Yom entries); the known HTTP 403 crawler was not retried and no access control was bypassed.
+
+
+### Parallel-language audio deduplication — AID 553672 / 553673 — 2026-11-15
+
+- The readiness test exposed that the indexed Yiddish listing AID 553673 still lacked an `evidence_family_id`, while the English listing AID 553672 and the newer batch record were already linked to `yechidus-5743-21-kislev-parallel-language-audio`.
+- Updated the existing bulk-indexed AID 553673 identity with the same Evidence Family and explicit `independent_witness=false`, `translation_status=parallel-language audio variant`, and metadata-only/no-transcript scope. No audio content was inferred, no response proposition was added, and the status remains Indexed.
+- Removed temporary debug output from `test_content_readiness.mjs`; the regression assertion now checks that the two language listings resolve to one family and are not treated as independent content witnesses.

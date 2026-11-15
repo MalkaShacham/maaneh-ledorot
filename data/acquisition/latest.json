@@ -10,7 +10,7 @@
     "batch_id": "098",
     "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
     "reviewed_at": "2026-11-15T17:00:00+02:00",
-    "status": "pending_reconciliation",
+    "status": "pending_corrected_reconciliation",
     "reviewed_item_count": 10,
     "source_bodies_inspected": 10,
     "search_extracts_used_as_content": 0,
@@ -39,13 +39,13 @@
     "full_text_copied": false,
     "scan_only_verification_used": false,
     "metrics_before": {
-      "answer_eligible_unique_sources": 956,
-      "content_verified_unique_sources": 870,
+      "answer_eligible_unique_sources": 955,
+      "content_verified_unique_sources": 869,
       "answer_eligible_propositions": 2918
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
+      "answer_eligible_unique_sources": 964,
+      "content_verified_unique_sources": 869,
       "answer_eligible_propositions": 2929
     },
     "enriched_aids": [
@@ -71,7 +71,19 @@
     "source_type_distribution": {
       "published_daily_anthology_original_language_entry": 8,
       "recipient_testimony_with_embedded_english_letter_excerpt": 1
-    }
+    },
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "reconciliation_variance": null,
+    "reconciliation_run_id": null,
+    "reconciliation_run_url": null,
+    "reconciliation_head_commit": null,
+    "canonical_scan": {
+      "selected_unique_evidence_families": 10,
+      "duplicate_aids_found": 0,
+      "duplicate_urls_found": 0
+    },
+    "reconciliation_status": "pending_corrected_reconciliation"
   },
   "previous_manual_web_review": {
     "batch_id": "097",
@@ -468,20 +480,26 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 098 manually inspected ten source bodies; no crawler retry, search-extract content inference or content-status promotion. Reconciliation and Actions results are pending.",
+  "manual_web_review_note": "Batch 098 reconciliation is being rerun after two integrity corrections: (1) the status parser now reads explicit leading pipeline tokens and no longer treats 'no promotion to Verified' as a positive status; (2) AID 4666220 was withdrawn from answer evidence because the current public reader exposes only a rewritten summary shell. Corrected baseline after batch 097: 955 / 869 / 2,918; expected after batch 098: 964 / 869 / 2,929.",
   "manual_web_review_current_metrics": {
     "published_actual_before": {
       "answer_eligible_unique_sources": 900,
       "content_verified_unique_sources": 852,
       "answer_eligible_propositions": 2832
     },
-    "expected_after_pending_batches": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
+    "corrected_baseline_after_batch097": {
+      "answer_eligible_unique_sources": 955,
+      "content_verified_unique_sources": 869,
+      "answer_eligible_propositions": 2918
+    },
+    "corrected_expected_after": {
+      "answer_eligible_unique_sources": 964,
+      "content_verified_unique_sources": 869,
       "answer_eligible_propositions": 2929
     },
-    "reconciliation_status": "pending",
-    "note": "The published actual before-value is 900 answer-eligible Evidence Families. The 956 baseline is the expected reconciled total after batches 090–097; batch 098 expects 965 after adding nine new families. Reconciliation must replace expectations with actual counts."
+    "reconciliation_variance": null,
+    "reconciliation_status": "pending_corrected_reconciliation",
+    "note": "The prior +8 Verified count was a parser false positive; AID 4666220 was also demoted to Linked because its current public reader exposes only a rewritten summary shell. Both corrections are reflected in the corrected baseline."
   },
   "last_manual_review_at": "2026-11-15T17:00:00+02:00",
   "runner_acquisition_policy": {
