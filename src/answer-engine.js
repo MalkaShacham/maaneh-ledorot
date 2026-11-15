@@ -1156,7 +1156,7 @@ function buildDailyRoutineSynthesis(selected){
 function buildTzedakahSynthesis(selected){
  const basis=[];
  selected.forEach((e,index)=>{
-  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  if(classifyWitness(e)==='derived')return;
   const props=arr(e._supporting_propositions).filter(supportsTzedakahSynthesisProposition);
   if(!props.length)return;
   const propositions=props.map(p=>{
@@ -1423,12 +1423,13 @@ function buildJewishHomeSynthesis(selected){
   attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',
   text:claims.map(c=>c.text).join(' ')+' אלה שני הקשרים נפרדים — איגרת ציבורית לכינוס ומענה אישי; אין לאחד אותם לכלל אחיד.',
   source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,
-  method:'Claim-level thematic comparison across distinct inspected Evidence Families. Each claim carries its own source numbers and body locator; the comparison preserves the difference between a public Yiddish convention letter and an individual housewarming response.',
+  method:'Claim-level thematic comparison across distinct inspected Evidence Families. Each claim carries its own source numbers and body locator. AID 5357409 is a shorter publisher presentation linked by the publisher to a fuller same-family printing; it is counted once as one case family, not as independent corroboration.',
   limits:[
    'הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.',
    'האיגרת לכינוס והמענה על מעבר לדירה הם מקרים נפרדים, עם קהלים ונסיבות שונים; אין להסיק מהם מדיניות אחידה.',
    'הפרטים על מזוזות הם חלק ממענה אישי היסטורי ואינם פסיקה הלכתית כללית או עדכנית.',
-   'המקור הראשון ביידיש ותמציותיו בעברית הן פרפרזות; לא נבדקו כתבי היד, צילומי המקור או המכתבים הנכנסים.'
+   'המקור הראשון ביידיש ותמציותיו בעברית הן פרפרזות; לא נבדקו כתבי היד, צילומי המקור או המכתבים הנכנסים.',
+   'AID 5357409 הוא הצגה מקוצרת של אותו מכתב שפורסם בשלמות רבה יותר תחת AID 4872269; הוא נספר פעם אחת כמשפחת ראיות ואינו עד מאמת עצמאי נוסף.'
   ]
  };
 }
@@ -1534,7 +1535,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  else if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}
  else if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
  else if(jewishHomeSynthesisQuestion){
-  const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition));
+  const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.has_content_evidence===true&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition));
   const score=e=>{const t=norm(arr(e.response_propositions).join(' '));return Number(t.includes('הבית היהודי')||t.includes('בית יהודי')||t.includes('חינוך הילדים'))*100+Number(t.includes('חנוכת הבית'))*100+Number(t.includes('מזוזה'))*80;};
   const byFamily=new Map();
   for(const e of [...homeIndex.sort((a,b)=>score(b)-score(a)),...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,{...e,_supporting_propositions:arr(e.response_propositions).filter(supportsJewishHomeSynthesisProposition)});}
