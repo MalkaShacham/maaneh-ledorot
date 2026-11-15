@@ -7,6 +7,141 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "101",
+    "batch_file": "data/items/content-research-batch-101-2026-11-15.json",
+    "reviewed_at": "2026-11-15T20:00:00+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending",
+    "reviewed_item_count": 20,
+    "source_bodies_inspected": 17,
+    "source_body_pages_opened": 20,
+    "metadata_only_items_rechecked": 2,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 14,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 1,
+    "new_response_propositions": 26,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 26,
+    "answer_eligible_source_families_added": 14,
+    "independent_witnesses_added": 14,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 3,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "reason": "העמוד הפנה ל-Torah Texts summary shell ללא גוף מכתב קריא; לא בוצע crawler retry."
+      },
+      {
+        "id": "chabadlibrary-1200910053",
+        "reason": "עמוד יידי שנפתח אך החזיר אפס שורות גוף קריאות."
+      },
+      {
+        "id": "chabadlibrary-1500390039",
+        "reason": "עמוד מאמר שנפתח אך החזיר אפס שורות גוף קריאות."
+      }
+    ],
+    "metadata_only_candidate_count": 2,
+    "metadata_only_candidates": [
+      {
+        "id": "chabadlibrary-1200910053",
+        "reason": "פרסום יידי ללא גוף קריא בקורא הציבורי."
+      },
+      {
+        "id": "chabadlibrary-1500390039",
+        "reason": "פרסום מאמר ללא גוף קריא בקורא הציבורי."
+      }
+    ],
+    "duplicate_alias_identities": 0,
+    "duplicate_aliases_linked": [],
+    "translations_counted_as_independent_witnesses": 0,
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "BeitChabad / he.chabad.org",
+      "accessible_item_level_bodies": 14,
+      "body_text_inspected": true,
+      "aids": [
+        2989311,
+        5959840,
+        2989404,
+        2989555,
+        2989195,
+        4304430,
+        2989020,
+        2989386,
+        2989426,
+        2989396,
+        2989589,
+        2989587,
+        2989554,
+        2989348
+      ]
+    },
+    "new_aids": [
+      2989311,
+      5959840,
+      2989404,
+      2989555,
+      2989195,
+      4304430,
+      2989020,
+      2989386,
+      2989426,
+      2989396,
+      2989589,
+      2989587,
+      2989554,
+      2989348
+    ],
+    "enriched_aids": [],
+    "rechecked_aids": [
+      2989588
+    ],
+    "language_distribution": {
+      "Hebrew": 14
+    },
+    "original_language_distribution": {
+      "Hebrew": 14
+    },
+    "source_type_distribution": {
+      "published_unedited_hebrew_sicha_transcript": 11,
+      "published_unedited_hebrew_qa_transcript": 1,
+      "published_hebrew_event_report": 2
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 986,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2966
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1000,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2992
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "deduplication_check": {
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "translations_counted_as_independent_witnesses": 0,
+      "canonical_identity_collisions": [],
+      "missing_canonical_identities": []
+    },
+    "existing_identity_updates": [],
+    "existing_identity_rechecks": [
+      {
+        "aid": 2989588,
+        "evidence_family_id": "sicha-5717-24-sivan-aid2989588",
+        "result": "נבדק מחדש בגוף העמוד; הזהות קיימת בבאץ׳ 099 ולא נוצרה כפילות."
+      }
+    ]
+  },
+  "previous_manual_web_review": {
     "batch_id": "100",
     "batch_file": "data/items/content-research-batch-100-2026-11-15.json",
     "reviewed_at": "2026-11-15T19:30:52+02:00",
@@ -70,205 +205,6 @@
         ]
       }
     ]
-  },
-  "previous_manual_web_review": {
-    "batch_id": "099",
-    "batch_file": "data/items/content-research-batch-099-2026-11-15.json",
-    "reviewed_at": "2026-11-15T19:03:35+02:00",
-    "status": "pending_reconciliation",
-    "reviewed_item_count": 15,
-    "source_bodies_inspected": 13,
-    "source_body_pages_opened": 15,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 12,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 20,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 21,
-    "answer_eligible_source_families_added": 12,
-    "independent_witnesses_added": 8,
-    "non_independent_presentations_added": 4,
-    "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-        "reason": "The public reader returned a rewritten summary/navigation shell without an inspectable letter body; excluded from content propositions."
-      }
-    ],
-    "metadata_only_candidate_count": 10,
-    "metadata_only_candidates": [
-      {
-        "aid": 553672,
-        "reason": "Yechidus audio listing; no transcript body."
-      },
-      {
-        "aid": 553673,
-        "reason": "Parallel Yiddish Yechidus audio listing; no transcript body; same Evidence Family as AID 553672."
-      },
-      {
-        "aid": 555044,
-        "reason": "Sicha audio/media listing; no transcript body."
-      },
-      {
-        "aid": 555071,
-        "reason": "Sicha audio/media listing; no transcript body."
-      },
-      {
-        "aid": 555082,
-        "reason": "Sicha audio/media listing; no transcript body."
-      },
-      {
-        "aid": 550377,
-        "reason": "Sicha audio/media listing; no transcript body."
-      },
-      {
-        "aid": 550378,
-        "reason": "Maamar audio/media listing; no transcript body."
-      },
-      {
-        "aid": 550380,
-        "reason": "Sicha audio/media listing; no transcript body."
-      },
-      {
-        "aid": 550381,
-        "reason": "Maamar audio/media listing; no transcript body."
-      },
-      {
-        "aid": 550384,
-        "reason": "Maamar audio/media listing; no transcript body."
-      }
-    ],
-    "duplicate_aliases_linked": [
-      {
-        "alias_aid": 553673,
-        "canonical_aid": 553673,
-        "alias_file": "data/items/bulk-indexed-2026-09-24-001.json",
-        "canonical_file": "data/items/content-research-batch-069-2026-11-13.json",
-        "duplicate_file": "data/items/bulk-indexed-2026-09-24-001.json",
-        "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
-        "action": "same_aid_duplicate_presentation_linked",
-        "note": "The older bulk-indexed metadata record and batch-069 audio record describe the same publisher item; both are linked to one Evidence Family and remain non-independent metadata-only presentations."
-      },
-      {
-        "alias_aid": 553673,
-        "canonical_aid": 553672,
-        "alias_file": "data/items/content-research-batch-069-2026-11-13.json",
-        "canonical_file": "data/items/content-research-batch-069-2026-11-13.json",
-        "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
-        "action": "reconfirmed_existing_shared_evidence_family",
-        "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript."
-      }
-    ],
-    "translations_counted_as_independent_witnesses": 0,
-    "fallback_source_attempted": true,
-    "fallback_source_results": {
-      "publisher": "BeitChabad / he.chabad.org",
-      "accessible_item_level_bodies": 12,
-      "aids": [
-        5989917,
-        5959972,
-        2989236,
-        5989541,
-        4280144,
-        4385862,
-        2989588,
-        5990031,
-        6132085,
-        5959982,
-        2988962,
-        4296219
-      ],
-      "body_text_inspected": true
-    },
-    "new_aids": [
-      5989917,
-      5959972,
-      2989236,
-      5989541,
-      4280144,
-      4385862,
-      2989588,
-      5990031,
-      6132085,
-      5959982,
-      2988962,
-      4296219
-    ],
-    "enriched_aids": [
-      3316719
-    ],
-    "rechecked_aids": [
-      553672,
-      553673
-    ],
-    "language_distribution": {
-      "Hebrew": 12
-    },
-    "original_language_distribution": {
-      "Hebrew": 8,
-      "Yiddish": 4
-    },
-    "source_type_distribution": {
-      "published_unedited_hebrew_sicha_transcript": 7,
-      "published_unedited_hebrew_maamar_transcript": 1,
-      "published_hebrew_translation_of_yiddish_edited_sicha": 4
-    },
-    "metrics_before": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2929
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 977,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2950
-    },
-    "metrics_actual_after": null,
-    "reconciliation_status": "pending",
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "deduplication_check": {
-      "new_aids_unique": true,
-      "new_source_urls_unique": true,
-      "new_evidence_families_unique": true,
-      "existing_identity_enrichment_in_place": true,
-      "existing_parallel_audio_family_reconfirmed": true,
-      "translations_counted_as_independent_witnesses": 0,
-      "scan_only_verification_used": 0,
-      "duplicate_alias_identities": 1,
-      "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.; full-index scan identified a duplicate metadata presentation of AID 553673 in bulk-indexed-2026-09-24-001.json; both presentations are being linked to the existing shared Evidence Family.",
-      "full_index_scan_available": false,
-      "full_index_scan_pending_reconciliation": true,
-      "same_family_duplicate_presentations": [
-        {
-          "aid": 553673,
-          "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
-          "files": [
-            "data/items/bulk-indexed-2026-09-24-001.json",
-            "data/items/content-research-batch-069-2026-11-13.json"
-          ]
-        }
-      ],
-      "canonical_identity_collisions": []
-    },
-    "existing_identity_updates": [
-      {
-        "aid": 3316719,
-        "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
-        "action": "enriched_existing_identity_in_original_batch_file",
-        "propositions_added": 1,
-        "proposition_locators": [
-          "Chabad.org/TheRebbe.org AID 3316719, original Yiddish body line 245."
-        ],
-        "note": "האמרה המקורית פוצלה לשתי פרפרזות נפרדות: אחת על אמרת חסידות והנהגה טובה, ואחת על ניגון; ה-AID ומשפחת הראיות נשמרו."
-      }
-    ],
-    "duplicate_alias_identities": 1
   },
   "earlier_manual_web_review": {
     "batch_id": "093",
@@ -611,13 +547,13 @@
       }
     ]
   },
-  "manual_web_review_note": "המדדים הנוכחיים הם הערכים האחרונים שב-data/public-metrics.json; batch 100 עדיין pending reconciliation. metrics_expected_after אינו מדד בפועל עד להרצת reconciliation מלאה.",
+  "manual_web_review_note": "המדדים הנוכחיים משקפים את data/public-metrics.json האחרון. באץ׳ 100 ובאץ׳ 101 עדיין pending reconciliation; metrics_before של באץ׳ 101 הוא הערך הצפוי לאחר באץ׳ 100 ולא מדד שנמדד בפועל.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 977,
     "content_verified_unique_sources": 878,
     "answer_eligible_propositions": 2950
   },
-  "last_manual_review_at": "2026-11-15T19:30:52+02:00",
+  "last_manual_review_at": "2026-11-15T20:00:00+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -1903,6 +1839,141 @@
         "answer_eligible_propositions": 2964
       },
       "reconciliation_status": "pending"
+    },
+    {
+      "batch_id": "101",
+      "batch_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "reviewed_at": "2026-11-15T20:00:00+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending",
+      "reviewed_item_count": 20,
+      "source_bodies_inspected": 17,
+      "source_body_pages_opened": 20,
+      "metadata_only_items_rechecked": 2,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 14,
+      "existing_identities_enriched": 0,
+      "existing_identities_rechecked": 1,
+      "new_response_propositions": 26,
+      "existing_response_propositions_added": 0,
+      "total_new_paraphrase_entries": 26,
+      "answer_eligible_source_families_added": 14,
+      "independent_witnesses_added": 14,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidate_count": 3,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "reason": "העמוד הפנה ל-Torah Texts summary shell ללא גוף מכתב קריא; לא בוצע crawler retry."
+        },
+        {
+          "id": "chabadlibrary-1200910053",
+          "reason": "עמוד יידי שנפתח אך החזיר אפס שורות גוף קריאות."
+        },
+        {
+          "id": "chabadlibrary-1500390039",
+          "reason": "עמוד מאמר שנפתח אך החזיר אפס שורות גוף קריאות."
+        }
+      ],
+      "metadata_only_candidate_count": 2,
+      "metadata_only_candidates": [
+        {
+          "id": "chabadlibrary-1200910053",
+          "reason": "פרסום יידי ללא גוף קריא בקורא הציבורי."
+        },
+        {
+          "id": "chabadlibrary-1500390039",
+          "reason": "פרסום מאמר ללא גוף קריא בקורא הציבורי."
+        }
+      ],
+      "duplicate_alias_identities": 0,
+      "duplicate_aliases_linked": [],
+      "translations_counted_as_independent_witnesses": 0,
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "publisher": "BeitChabad / he.chabad.org",
+        "accessible_item_level_bodies": 14,
+        "body_text_inspected": true,
+        "aids": [
+          2989311,
+          5959840,
+          2989404,
+          2989555,
+          2989195,
+          4304430,
+          2989020,
+          2989386,
+          2989426,
+          2989396,
+          2989589,
+          2989587,
+          2989554,
+          2989348
+        ]
+      },
+      "new_aids": [
+        2989311,
+        5959840,
+        2989404,
+        2989555,
+        2989195,
+        4304430,
+        2989020,
+        2989386,
+        2989426,
+        2989396,
+        2989589,
+        2989587,
+        2989554,
+        2989348
+      ],
+      "enriched_aids": [],
+      "rechecked_aids": [
+        2989588
+      ],
+      "language_distribution": {
+        "Hebrew": 14
+      },
+      "original_language_distribution": {
+        "Hebrew": 14
+      },
+      "source_type_distribution": {
+        "published_unedited_hebrew_sicha_transcript": 11,
+        "published_unedited_hebrew_qa_transcript": 1,
+        "published_hebrew_event_report": 2
+      },
+      "metrics_before": {
+        "answer_eligible_unique_sources": 986,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2966
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1000,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2992
+      },
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "translations_counted_as_independent_witnesses": 0,
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": []
+      },
+      "existing_identity_updates": [],
+      "existing_identity_rechecks": [
+        {
+          "aid": 2989588,
+          "evidence_family_id": "sicha-5717-24-sivan-aid2989588",
+          "result": "נבדק מחדש בגוף העמוד; הזהות קיימת בבאץ׳ 099 ולא נוצרה כפילות."
+        }
+      ]
     }
   ],
   "earlier_manual_web_review_12": {
