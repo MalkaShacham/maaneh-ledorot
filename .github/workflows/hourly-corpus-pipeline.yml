@@ -10,6 +10,8 @@ on:
       - 'scripts/reconcile_identity_aliases.py'
       - 'scripts/content_readiness.py'
       - 'scripts/reconcile_metrics.py'
+      - 'scripts/status_normalization.py'
+      - 'scripts/test_reconcile_status.py'
       - 'scripts/test_content_readiness.mjs'
       - 'src/answer-engine.js'
       - 'src/answer-engine-validated.js'
@@ -39,6 +41,8 @@ jobs:
           python-version: '3.x'
       - name: Sync latest main before mutation
         run: git pull --ff-only origin main
+      - name: Test conservative status normalization
+        run: python scripts/test_reconcile_status.py
       - name: Test acquisition boundaries
         run: python scripts/test_source_acquisition.py
       - name: Run deterministic maintenance; blocked live crawler remains disabled
