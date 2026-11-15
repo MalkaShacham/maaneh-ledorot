@@ -30,6 +30,12 @@ const batch087Path='data/items/content-research-batch-087-2026-11-15.json';
 const batch087Data=JSON.parse(await readFile(new URL(batch087Path,root)));
 const batch089Path='data/items/content-research-batch-089-2026-11-15.json';
 const batch089Data=JSON.parse(await readFile(new URL(batch089Path,root)));
+const batch090Path='data/items/content-research-batch-090-2026-11-15.json';
+const batch090Data=JSON.parse(await readFile(new URL(batch090Path,root)));
+const batch091Path='data/items/content-research-batch-091-2026-11-15.json';
+const batch091Data=JSON.parse(await readFile(new URL(batch091Path,root)));
+const batch092Path='data/items/content-research-batch-092-2026-11-15.json';
+const batch092Data=JSON.parse(await readFile(new URL(batch092Path,root)));
 assert.equal(new Set(queue.records.map(e=>e.key)).size,queue.records.length);
 assert(!queue.records.some(e=>String(e.source_url||'').includes('/aid/4666210/')),'metadata-only AID 4666210 alias must not remain pending after the content-bearing identity is verified');
 const ready=new Set(eligible.map(e=>e.key));
@@ -1624,8 +1630,8 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,directAttributionHeadCover,{mode});
  assert(!m.sources.some(e=>sourceAID(e)==='5413093'),mode+': a secretary-signed response must not be attributed directly to the Rebbe');
 }
-assert.equal(acquisitionState.manual_web_review.batch_id,'089');
-assert.equal(acquisitionState.manual_web_review.batch_file,batch089Path);
+assert.equal(acquisitionState.manual_web_review.batch_id,'092');
+assert.equal(acquisitionState.manual_web_review.batch_file,batch092Path);
 assert.equal(acquisitionState.manual_web_review.reconciliation_status,'reconciled');
 assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
 
@@ -1695,10 +1701,96 @@ for(const mode of ['regular','researcher']){
 }
 
 const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
-const batch089Audit=reconciledProjectState.development_recovery.last_reconciliation;
-assert.equal(batch089Audit.batch_id,'089');
-assert.equal(batch089Audit.answer_eligible_selected_count,14);
-assert.equal(batch089Audit.selected_unique_evidence_families,14);
-assert.equal(batch089Audit.non_independent_selected_count,14);
-assert(batch089Audit.items.every(x=>x.selected_index_entry.present&&x.selected_index_entry.answer_eligible&&x.selected_index_entry.proposition_source_locator));
+const batch092Audit=reconciledProjectState.development_recovery.last_reconciliation;
+assert.equal(batch092Audit.batch_id,'092');
+assert(batch092Audit.items.some(x=>x.aid===5054491&&x.selected_index_entry.present),'batch-092 audit must include enriched AID 5054491');
+assert(batch092Audit.items.some(x=>x.aid===4872269),'duplicate-family audit must inspect canonical AID 4872269');
+assert(batch092Audit.items.some(x=>x.aid===5357409),'duplicate-family audit must inspect alias AID 5357409');
+assert(batch092Audit.items.filter(x=>batch092Data.new_aids.includes(x.aid)).every(x=>x.selected_index_entry.present&&x.selected_index_entry.answer_eligible&&x.selected_index_entry.proposition_source_locator));
+const aliasAudit=batch092Audit.items.find(x=>x.aid===5357409);
+const canonicalAliasAudit=batch092Audit.items.find(x=>x.aid===4872269);
+if(aliasAudit?.selected_index_entry?.present&&canonicalAliasAudit?.selected_index_entry?.present)assert.equal(aliasAudit.selected_index_entry.evidence_family_id,canonicalAliasAudit.selected_index_entry.evidence_family_id,'duplicate AID 5357409 must share AID 4872269 Evidence Family');
 assert.equal(reconciledProjectState.metrics_integrity.answer_readiness.reconciliation_status,'reconciled');
+
+
+// Batches 090–092: source-body evidence, in-place enrichment, duplicate family links and deep retrieval.
+assert.equal(batch090Data.records.length,8);
+assert.equal(batch090Data.new_response_propositions,16);
+assert.equal(batch091Data.records.length,9);
+assert.equal(batch091Data.new_response_propositions,9);
+assert.deepEqual(batch091Data.metrics_expected_after,{answer_eligible_unique_sources:917,content_verified_unique_sources:852,answer_eligible_propositions:2857});
+assert.equal(batch092Data.records.length,9);
+assert.equal(batch092Data.source_bodies_inspected,11);
+assert.equal(batch092Data.source_body_pages_opened,3);
+assert.equal(batch092Data.search_extracts_inspected,8);
+assert.equal(batch092Data.new_source_identities,9);
+assert.equal(batch092Data.existing_identities_enriched,1);
+assert.equal(batch092Data.new_response_propositions,15);
+assert.equal(batch092Data.existing_response_propositions_added,1);
+assert.equal(batch092Data.blocked_candidate_count,1);
+assert.equal(batch092Data.not_promoted_after_inspection_count,1);
+assert.equal(batch092Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch092Data.duplicate_aliases_linked.length,1);
+assert.equal(batch092Data.duplicate_aliases_linked[0].alias_aid,5357409);
+assert.equal(batch092Data.duplicate_aliases_linked[0].canonical_aid,4872269);
+assert(!batch092Data.records.some(r=>Number(r.aid)===5357409),'duplicate AID 5357409 must not become a second canonical source record');
+assert.equal(batch092Data.not_promoted_after_inspection[0].aid,5357409);
+assert.deepEqual(batch092Data.metrics_expected_after,{answer_eligible_unique_sources:926,content_verified_unique_sources:853,answer_eligible_propositions:2873});
+assert.equal(batch092Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch092Data.metrics_actual_after,batch092Data.metrics_expected_after);
+assert.deepEqual(batch092Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert.deepEqual(metrics,batch092Data.metrics_actual_after);
+assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
+const batch092Aids=batch092Data.records.map(r=>String(r.aid));
+assert.deepEqual(batch092Aids,['5054489','5100603','5100353','5100285','5071021','5071046','5019408','5100374','5100372']);
+assert.equal(new Set(batch092Aids).size,9);
+assert.equal(new Set(batch092Data.records.map(r=>r.evidence_family_id)).size,9);
+for(const aid of batch092Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-092 AID '+aid+' must have exactly one indexed identity');
+ const e=matches[0];
+ assert(e.has_content_evidence,'batch-092 AID '+aid+' must be answer eligible');
+ assert.equal(e.canonical_file,batch092Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.language,'Hebrew');
+ assert(e.response_propositions.every(p=>typeof p==='string'&&p.length>30));
+}
+const batch092Verified=idx.entries.find(e=>sourceAID(e)==='5100372');
+assert.equal(batch092Verified.canonical_status,'Verified','only directly opened new AID 5100372 may be promoted to Verified');
+assert.equal(batch092Verified.response_propositions.length,2);
+for(const aid of ['5054489','5100603','5100353','5100285','5071021','5071046','5019408','5100374']){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert.equal(e.canonical_status,'Parsed','search-result-only Hebrew text must remain Parsed');
+ assert.match(e.verification_scope,/תוצאת חיפוש|תוצאת החיפוש/);
+}
+const enriched5054491=idx.entries.find(e=>sourceAID(e)==='5054491');
+assert(enriched5054491&&enriched5054491.canonical_file==='data/items/content-research-batch-057-2026-11-12.json');
+assert.equal(enriched5054491.evidence_family_id,'igrot-letter-5717-8-menachem-av-v15-aid5054491');
+assert.equal(enriched5054491.response_propositions.length,3);
+assert(enriched5054491.response_proposition_locators.some(l=>String(l).includes('line 298')));
+assert.equal(idx.entries.filter(e=>sourceAID(e)==='5357409').length,0,'duplicate AID 5357409 must not add a new independent item');
+
+const studyPersistenceQuestion='מה נכתב באיגרות על קביעות עתים בלימוד תורה לצד עבודה, התמדה, לימוד בחברותא והתקדמות הדרגתית?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,studyPersistenceQuestion,{mode});
+ assert(m.answerable,mode+': inspected study-persistence letters must support a bounded multi-source answer');
+ for(const aid of ['5019408','5100285','5100603'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': multi-source retrieval must retain AID '+aid);
+ assert(m.claims.length>=2&&m.claims.every(c=>c.source_numbers.length),mode+': every study-persistence claim must retain claim-level source numbers');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': each study-persistence claim must be entailed by its own source');
+ assert(m.context_boundary.every(x=>x.valid),mode+': personal correspondence context must remain witness-local');
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert(m.research.evidence_map.length>=3);
+  assert.equal(m.research.claim_source_map.length,m.claims.length);
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='5019408'));
+  assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='5100285'));
+  assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='5100603'));
+ }else assert.equal(m.research,undefined);
+}
