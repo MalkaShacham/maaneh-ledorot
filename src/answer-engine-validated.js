@@ -10,7 +10,6 @@ const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
   'מעכה לפי הספורנו':['לפי הספורנו','הספורנו','מעכה יכולה להיקרא אשה','sforno maacah'],
   'חינוך':['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch'],
-  'יוזמות חינוכיות וקהילתיות':['יוזמות חינוכיות וקהילתיות','בית רבקה','פעילות תלמידות','בנות חב','הפצת המעיינות','התוועדות יט כסלו','גמילות חסדים','community education outreach'],
   'צדקה רוחנית וחינוך':['צדקה רוחנית','צדקה גשמית','לקרב לתורה','חינוך ילדים','spiritual charity','spiritual tzedakah','education of children','yeshivah students'],
   'השפעת היחיד והארת הסביבה':['אדם אחד','יחיד','השפעה על העולם','להאיר את הסביבה','one individual','whole creation','beacon of light'],
   'שמיטה ומטרת החיים':['שמיטה','שנת השמיטה','שבת לה׳','Shemittah','Sabbatical year','Sabbath unto G-d','spiritual goal'],
