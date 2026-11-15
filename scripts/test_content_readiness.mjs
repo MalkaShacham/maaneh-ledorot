@@ -1010,6 +1010,8 @@ assert.equal(batch105Data.source_body_recheck.source_bodies_reopened,9);
 assert.equal(batch105Data.source_body_recheck.new_response_propositions_added,8);
 assert.equal(batch105Data.source_body_recheck.aids.length,9);
 assert.equal(batch105Data.source_body_recheck.rechecked_aids_with_new_propositions.length,8);
+assert(batch105Data.source_body_recheck.aids_reopened_without_new_proposition.includes(3315445));
+assert.equal(batch105Data.records.find(r=>String(r.aid)==='3315445').response_propositions.length,3);
 assert.equal(batch105Data.source_body_recheck.blocked_alternatives_count,15);
 assert.equal(batch105Data.source_body_recheck.fallback_source_bodies_inspected,9);
 assert.equal(batch105Data.blocked_candidates.length,17);
@@ -1022,7 +1024,7 @@ const recheckClaims105=[
  ['4304375','״פרזונו״ ולא ״פזרונו״','178–181'],
  ['2989391','חג השבועות','180–184'],
  ['2216588','limited staffing and funds','286–289'],
- ['3315445','מעשים דרמטיים','256–259']
+ ['4280038','עבודת התשובה','181–186']
 ];
 for(const [aid,needle,range] of recheckClaims105){
  const r=batch105Data.records.find(x=>String(x.aid)===aid);
