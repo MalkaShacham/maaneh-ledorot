@@ -35,15 +35,28 @@ def stable_key(d):
     ks=identity_keys(d)
     return ks[0] if ks else None
 def status_of(d):
-    vals=[d.get("pipeline_status"),d.get("verification_status")]
+    # Only explicit enum fields, or a leading enum token in legacy provenance,
+    # establish pipeline status. A caveat such as "no promotion to Verified"
+    # must never upgrade a Parsed record.
+    explicit=[d.get("pipeline_status"),d.get("verification_status")]
+    explicit_clean=[str(v).strip() for v in explicit if v is not None and str(v).strip()]
+    for value in explicit_clean:
+        if value.lower()=="verified":
+            return "Verified"
+    priority=("Linked","Parsed","Indexed","Discovered")
+    for status in priority:
+        if any(value.lower()==status.lower() for value in explicit_clean):
+            return status
     p=d.get("provenance")
-    if isinstance(p,dict): vals.append(p.get("verification_status"))
-    s=" ".join(str(v) for v in vals if v)
-    if re.search(r"\bunverified\b",s,re.I): return None
-    if re.search(r"\bverified\b",s,re.I): return "Verified"
-    for x in PIPE:
-        if x in s: return x
-    return d.get("pipeline_status") if d.get("pipeline_status") in PIPE else None
+    provenance_status=p.get("verification_status") if isinstance(p,dict) else None
+    if isinstance(provenance_status,str):
+        value=provenance_status.strip()
+        match=re.match(r"^(Verified|Linked|Parsed|Indexed|Discovered)(?=$|[\s;:])",value,re.I)
+        if match:
+            token=match.group(1).lower()
+            return next(x for x in ("Verified","Linked","Parsed","Indexed","Discovered") if x.lower()==token)
+    return None
+
 seen={}; evidence_files=0
 for fp in items:
     try: obj=json.loads(fp.read_text(encoding="utf-8"))

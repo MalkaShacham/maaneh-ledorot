@@ -451,15 +451,13 @@ for(const mode of ['regular','researcher']){
 const focusedClassQuestion='מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,focusedClassQuestion,{mode});
- assert(m.answerable,`${mode}: focused class-expansion query must be answerable`);
- assert.deepEqual(m.sources.map(e=>e.key),['id:igrot-kodesh-v13-דתרפא'],`${mode}: class-expansion query must exclude generic livelihood/business letters`);
- assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every focused class-expansion claim needs a proposition citation`);
+ assert.equal(m.answerable,false,`${mode}: a scanned bibliographic locator without inspected body text cannot answer the class-expansion question`);
+ assert(!m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרפא'),`${mode}: volume XIII scan identity must not be used as content evidence`);
 }
 
 const newBatchChecks=[
   ['מה כתב הרבי על אותיות בולטות במצבה?','id:igrot-kodesh-v13-דשטג'],
   ['האם צריך לסגור סניף תלמוד תורה שאינו מצליח?','id:igrot-kodesh-v13-דשסז'],
-  ['מה כתב הרבי על תוספת אברכים והרחבת שיעור חסידות?','id:igrot-kodesh-v13-דתרפא'],
   ['מה נכתב במכתב המזכירות על עיסוק במסחר בזמן לימוד בישיבה?','id:igrot-kodesh-v13-דשם']
 ];
 for(const [question,key] of newBatchChecks){
@@ -477,7 +475,12 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch018Comparison,{mode});
  assert.equal(m.answerable,false,mode+': do not answer the camp-counselor side without an inspectable, answer-eligible proposition');
  assert.equal(m.reason,'comparative_missing_side',mode+': missing camp evidence must fail closed');
- assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרפא'),mode+': retain the supported yeshiva-class side');
+ const scanOnlyYeshivaSource=m.sources.find(e=>e.key==='id:igrot-kodesh-v13-דתרפא');
+ if(scanOnlyYeshivaSource){
+  assert.equal(scanOnlyYeshivaSource.has_content_evidence,false,mode+': scan-only yeshiva identity must remain metadata-only');
+  assert.equal((scanOnlyYeshivaSource.response_propositions||[]).length,0,mode+': scan-only yeshiva identity must expose no propositions');
+ }
+ assert(!m.claims.some(c=>c.source_numbers.some(n=>m.sources[n-1]?.key==='id:igrot-kodesh-v13-דתרפא')),mode+': no comparison claim may cite the scan-only yeshiva identity');
  assert(!m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרעו'),mode+': do not treat the unlocated camp-counselor identity as evidence');
  assert(m.comparative_coverage.missing_topics.includes('מדריך מחנה גן ישראל והשפעה'),mode+': identify the missing side explicitly');
  assert(m.insufficient_evidence.some(s=>s.includes('מדריך מחנה גן ישראל והשפעה')),mode+': explain the evidence gap');
@@ -537,7 +540,7 @@ for(const mode of ['regular','researcher']){
  if(!m.answerable) throw new Error(mode+': publication synthesis unavailable');
 const batch069Required=[[2513862,2],[3294872,2],[2515100,2],[3294874,2],[2513197,2],[2514917,2],[2183868,2],[2600571,2],[2516887,2],[2600694,2],[5989776,3],[5989136,2],[4950814,3]];
 for(const [aid,minProps] of batch069Required){const e=idx.entries.find(x=>sourceAID(x)===String(aid));assert(e&&e.has_content_evidence,`batch069 ${aid} content`);assert.equal(e.status,'Verified');assert(e.response_propositions.length>=minProps);assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope);assert.equal(e.context_status,'partial');}
-const audioOnly=idx.entries.filter(e=>['553672','553673'].includes(String(e.aid)));assert.equal(audioOnly.length,2);assert.equal(new Set(audioOnly.map(e=>e.evidence_family_id)).size,1);assert(audioOnly.every(e=>!e.has_content_evidence&&!e.response_propositions?.length));
+const audioOnly=idx.entries.filter(e=>['553672','553673'].includes(String(e.aid)));assert.equal(audioOnly.length,2);assert.equal(new Set(audioOnly.map(e=>e.evidence_family_id)).size,1,'parallel-language audio family mismatch: '+JSON.stringify(audioOnly.map(e=>({aid:e.aid,family:e.evidence_family_id,parent:e.parent_evidence_family_id,canonical_file:e.canonical_file,independent:e.independent_witness,relations:e.relations}))));assert(audioOnly.every(e=>!e.has_content_evidence&&!e.response_propositions?.length));
 const pesachA=idx.entries.find(e=>String(e.aid)==='2513862'),pesachB=idx.entries.find(e=>String(e.aid)==='3294874');assert.notEqual(pesachA.evidence_family_id,pesachB.evidence_family_id);assert(pesachB.relations.some(r=>String(r.target_aid)==='2513862'));
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,'מה כתב הרבי למי שקשה לו להתפרנס בגלל עבודה בשבת?',{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='4950814'));assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}}
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,'מה נאמר במקורות על הימים שלאחר השבת המתברכים ממנה?',{mode});assert(m.answerable);assert(m.sources.some(e=>String(e.aid)==='5989776'));assert(m.sources.some(e=>String(e.aid)==='5989136'));assert(m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research.evidence_families>=2);assert(m.research.evidence_map.length>0);assert.equal(m.research.witnesses.length,m.sources.length);}else assert.equal(m.research,undefined);}
@@ -1982,4 +1985,213 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='5100285'));
   assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='5100603'));
  }else assert.equal(m.research,undefined);
+}
+
+
+const batch098Path='data/items/content-research-batch-098-2026-11-15.json';
+const batch098Data=JSON.parse(await readFile(new URL(batch098Path,root)));
+assert.equal(batch098Data.reviewed_item_count,14);
+assert.equal(batch098Data.source_bodies_inspected,14);
+assert.equal(batch098Data.source_body_pages_opened,14);
+assert.equal(batch098Data.search_extracts_used_as_content,0);
+assert.equal(batch098Data.new_source_identities,5);
+assert.equal(batch098Data.existing_identities_enriched,3);
+assert.equal(batch098Data.existing_identities_rechecked,6);
+assert.equal(batch098Data.new_response_propositions,12);
+assert.equal(batch098Data.existing_response_propositions_added,3);
+assert.equal(batch098Data.answer_eligible_source_families_added,5);
+assert.equal(batch098Data.content_verified_unique_sources_added,0);
+assert.equal(batch098Data.blocked_candidate_count,26);
+assert.equal(batch098Data.crawler_retry,false);
+assert.equal(batch098Data.access_control_bypassed,false);
+assert.equal(batch098Data.full_text_copied,false);
+assert.equal(batch098Data.scan_only_verification_used,false);
+assert.equal(batch098Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch098Data.deduplication_check.repository_search_exact_aid_matches,0);
+assert.equal(batch098Data.deduplication_check.reconciliation_required,true);
+assert.deepEqual(batch098Data.metrics_expected_after,{answer_eligible_unique_sources:961,content_verified_unique_sources:870,answer_eligible_propositions:2933});
+assert.deepEqual(batch098Data.records.map(r=>String(r.aid)).sort(),['5412970','5413082','5413119','5413465','5413494']);
+assert.equal(new Set(batch098Data.records.map(r=>r.evidence_family_id)).size,5);
+assert.equal(new Set(batch098Data.records.map(r=>r.source_url)).size,5);
+assert.equal(batch098Data.existing_identity_updates.length,3);
+for(const r of batch098Data.records){
+ assert.equal(r.status,'Parsed','new letter records must remain Parsed until stronger witness/context review');
+ assert.equal(r.context_status,'partial');
+ assert.equal(r.has_content_evidence,true);
+ assert.equal(r.independent_witness,true);
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(r.proposition_verbatim,false);
+ assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.verification_scope&&r.provenance?.source_witness);
+ assert.equal(r.response_proposition_locators.length,r.response_propositions.length);
+ assert(r.response_propositions.length>=2);
+}
+for(const aid of ['5413082','5413119','5413465','5413494','5412970']){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-098 AID '+aid+' must have exactly one indexed identity');
+ const e=matches[0];
+ assert.equal(e.canonical_file,batch098Path);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.has_content_evidence&&e.evidence_family_id);
+}
+const batch097Enriched=JSON.parse(await readFile(new URL('data/items/content-research-batch-097-2026-11-15.json',root)));
+for(const aid of ['3316664','3316684','3316710']){
+ const r=batch097Enriched.records.find(x=>String(x.aid)===aid);
+ assert(r,'existing Hayom Yom identity '+aid+' must remain in its original batch');
+ assert(r.response_propositions.length>=3,'existing identity '+aid+' must be enriched in place');
+ assert.equal(r.response_proposition_locators.length,r.response_propositions.length);
+}
+const communityEducationOutreachQuestion='מה מתועד בארבע איגרות על חינוך ופנימיות הנפש, פעילות תלמידות בית רבקה, בנות חב״ד והפצת המעיינות, והתוועדות י״ט כסלו עם לימוד תורה הנגלה והחסידות, גמילות חסדים ותפילה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,communityEducationOutreachQuestion,{mode});
+ assert(m.answerable,mode+': four inspected Hebrew letters must support a bounded education/community case comparison');
+ assert.equal(m.synthesis?.topic,'community_education_outreach_comparison');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.synthesis?.basis?.length,4);
+ assert.equal(m.synthesis?.claims?.length,4);
+ assert.equal(new Set(m.synthesis.evidence_family_ids).size,4);
+ for(const aid of ['5413082','5412970','5413494','5413465'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': synthesis must retain AID '+aid);
+ assert.equal(m.claims.length,4);
+ assert(m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator),mode+': each case claim must have its own item-level locator');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': every case claim must be entailed by its cited proposition');
+ assert(m.context_boundary.every(x=>x.valid),mode+': case claims must stay within the documented audience and circumstances');
+ assert.equal(m.pattern_synthesis_integrity.valid,true,mode+': four-family synthesis must pass family, support and locator integrity');
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert.equal(m.research.evidence_map.length,4);
+  assert.equal(m.research.claim_source_map.length,4);
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length===1&&c.source_locators[0].locator));
+  for(const aid of ['5413082','5412970','5413494','5413465'])assert(m.research.evidence_witnesses.some(w=>String(w.aid)===aid),'deep researcher map must retain AID '+aid);
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ }else assert.equal(m.research,undefined);
+}
+const directAuthorshipQuestion='מה הרבי כתב על חינוך קצר ועל פעילות תלמידות בית רבקה עם קבוצות אחרות?';
+const directAuthorshipModel=buildAnswerModel(idx.entries,directAuthorshipQuestion,{mode:'regular'});
+assert(!directAuthorshipModel.sources.some(e=>['5413082','5412970'].includes(sourceAID(e))),'proxy/secretariat-signed records must not be presented as personally authenticated Rebbe authorship');
+
+
+// Batch 099: nine new source identities, one in-place enrichment, two rechecks.
+const batch099Path='data/items/content-research-batch-099-2026-11-15.json';
+const batch099Data=JSON.parse(await readFile(new URL(batch099Path,root)));
+assert.equal(batch099Data.records.length,9);
+assert.equal(batch099Data.new_source_identities,9);
+assert.equal(batch099Data.existing_identities_enriched,1);
+assert.equal(batch099Data.existing_identities_rechecked,2);
+assert.equal(batch099Data.new_response_propositions,9);
+assert.equal(batch099Data.existing_response_propositions_added,1);
+assert.equal(batch099Data.content_verified_unique_sources_added,0);
+assert.equal(batch099Data.crawler_retry,false);
+assert.equal(batch099Data.access_control_bypassed,false);
+assert.equal(batch099Data.full_text_copied,false);
+assert.equal(batch099Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch099Data.search_extracts_used_as_content,0);
+assert.equal(batch099Data.blocked_candidate_count,12);
+const batch099Aids=['5413126','4645969','4830982','4304526','2988234','2987887','2987732','1695044','2126206'];
+const batch099Families=new Set();
+for(const aid of batch099Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-099 AID '+aid+' must resolve to exactly one canonical identity');
+ const e=matches[0];
+ assert.equal(e.canonical_file,batch099Path);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.has_content_evidence,true);
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&Array.isArray(e.conditions_or_qualifications)&&e.conditions_or_qualifications.length>0);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert(e.primary_secondary_status&&e.witness_type&&e.evidence_family_id);
+ batch099Families.add(e.evidence_family_id);
+}
+assert.equal(batch099Families.size,9,'new AIDs must create nine distinct Evidence Families');
+for(const aid of ['1695044','2126206']){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e.primary_secondary_status.includes('Secondary'),'AID '+aid+' must remain explicitly secondary');
+ assert.equal(e.witness_type,'published_secondary_testimony_transcript');
+}
+const enriched4666247=idx.entries.filter(e=>sourceAID(e)==='4666247');
+assert.equal(enriched4666247.length,1,'AID 4666247 must remain one canonical identity');
+assert.equal(enriched4666247[0].evidence_family_id,'original-letter-aid-4666247');
+assert(enriched4666247[0].response_propositions.length>=4);
+assert(enriched4666247[0].response_propositions.some(p=>p.includes('י״ח אלול')&&p.includes('י״ט כסלו')));
+assert(enriched4666247[0].primary_secondary_status.includes('secretariat'));
+const rechecked5357571=idx.entries.filter(e=>sourceAID(e)==='5357571');
+assert.equal(rechecked5357571.length,1,'AID 5357571 must not be duplicated by the recheck');
+assert.equal(rechecked5357571[0].evidence_family_id,'igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571');
+assert.equal(rechecked5357571[0].response_propositions.length,4);
+const classExpansionExisting=idx.entries.filter(e=>e.key==='id:igrot-kodesh-v13-דתרפא');
+assert.equal(classExpansionExisting.length,1,'the volume XIII scan identity must remain in its existing family');
+assert.deepEqual(batch099Data.metrics_actual_after,{answer_eligible_unique_sources:969,content_verified_unique_sources:853,answer_eligible_propositions:2941},'batch 099 actuals must reflect the scan-only volume XIII demotion and the corrected status parser');
+assert.equal(batch099Data.reconciliation_status,'reconciled_with_variance','batch 099 must preserve the measured variance instead of masking it');
+assert.deepEqual(batch099Data.reconciliation_variance,{answer_eligible_unique_sources:-1,content_verified_unique_sources:-17,answer_eligible_propositions:-2},'batch 099 must expose the scan-only and status-parser variance');
+assert.equal(batch099Data.metrics_expected_after.answer_eligible_unique_sources,970);
+assert.equal(batch099Data.metrics_expected_after.content_verified_unique_sources,870);
+assert.equal(batch099Data.metrics_expected_after.answer_eligible_propositions,2943);
+const scanOnlyIdentity=idx.entries.filter(e=>e.key==='id:igrot-kodesh-v13-דתרפא');
+assert.equal(scanOnlyIdentity.length,1,'the volume XIII scan identity must remain one canonical metadata identity');
+assert.equal(scanOnlyIdentity[0].has_content_evidence,false,'a scan/index locator does not verify letter content');
+assert.equal((scanOnlyIdentity[0].response_propositions||[]).length,0,'scan-only identity must not expose response propositions');
+assert.equal(scanOnlyIdentity[0].context_status,'bibliographic_locator_verified_only');
+assert.equal(scanOnlyIdentity[0].independent_witness,false);
+const batch100Path='data/items/content-research-batch-100-2026-11-15.json';
+const batch100Data=JSON.parse(await readFile(new URL(batch100Path,root)));
+const batch100Aids=['3316731','3316736','3316744','3316746','3316749','3316790','3316793','3316794','3316797'];
+assert.equal(batch100Data.records.length,9);
+assert.equal(batch100Data.new_source_identities,9);
+assert.equal(batch100Data.existing_identities_enriched,1);
+assert.equal(batch100Data.source_bodies_inspected,10);
+assert.equal(batch100Data.new_response_propositions,9);
+assert.equal(batch100Data.existing_response_propositions_added,1);
+assert.equal(batch100Data.content_verified_unique_sources_added,0);
+assert.equal(batch100Data.blocked_candidates[0].aid,4666220);
+assert.equal(batch100Data.crawler_retry,false);
+assert.equal(batch100Data.access_control_bypassed,false);
+assert.equal(batch100Data.translations_counted_as_independent_witnesses,0);
+const batch100Families=new Set();
+for(const aid of batch100Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-100 AID '+aid+' must have one canonical identity');
+ const e=matches[0];
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.has_content_evidence,true);
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.provenance);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert.equal(e.independent_witness,true);
+ assert(e.translation_status.includes('not counted independently'));
+ batch100Families.add(e.evidence_family_id);
+}
+assert.equal(batch100Families.size,9,'batch-100 daily entries must retain nine distinct Evidence Families');
+const enriched3316748=idx.entries.filter(e=>sourceAID(e)==='3316748');
+assert.equal(enriched3316748.length,1,'AID 3316748 must remain one canonical identity');
+assert.equal(enriched3316748[0].evidence_family_id,'hayom-yom-tammuz-28-aid3316748');
+assert.equal(enriched3316748[0].response_propositions.length,3);
+assert(enriched3316748[0].response_propositions.some(p=>p.includes('החלצו')&&p.includes('וידעת היום')));
+assert(enriched3316748[0].response_proposition_locators.some(l=>l.includes('lines 260–261')));
+assert.deepEqual(batch100Data.metrics_before,{answer_eligible_unique_sources:969,content_verified_unique_sources:853,answer_eligible_propositions:2941});
+assert.deepEqual(batch100Data.metrics_expected_after,{answer_eligible_unique_sources:978,content_verified_unique_sources:853,answer_eligible_propositions:2951});
+assert.equal(metrics.answer_eligible_unique_sources,978,'the reconciled public index must contain 978 answer-eligible Evidence Families after batch 100');
+assert.equal(metrics.content_verified_unique_sources,853,'no Parsed batch-100 source may be promoted to content-Verified');
+assert.equal(metrics.answer_eligible_propositions,2951,'the public proposition count must include the nine new propositions and one in-place enrichment');
+for(const mode of ['regular','researcher']){
+ const studyPrayer=buildAnswerModel(idx.entries,'כיצד הערך מבחין בין לימוד תורה לתפילה?',{mode});
+ assert(studyPrayer.answerable,mode+': inspected 26 Tammuz proposition must answer the study/prayer question');
+ assert(studyPrayer.sources.some(e=>sourceAID(e)==='3316744'),mode+': retrieve the original-language 26 Tammuz source');
+ assert(studyPrayer.claims.every(c=>c.source_numbers?.length),mode+': claims must retain source references');
+ if(mode==='researcher')assert.equal(studyPrayer.research.depth,'deep','researcher mode must retain deep evidence analysis');
+ const tefillin=buildAnswerModel(idx.entries,'מהי ההוראה על תחילת הנחת תפילין לפני בר מצווה?',{mode});
+ assert(tefillin.answerable,mode+': inspected 2 Menachem Av proposition must answer the tefillin timing question');
+ assert(tefillin.sources.some(e=>sourceAID(e)==='3316793'),mode+': retrieve the original-language 2 Menachem Av source');
 }

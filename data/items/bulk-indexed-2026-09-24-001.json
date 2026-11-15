@@ -4231,7 +4231,7 @@
       "pipeline_status": "Indexed",
       "event_date": "1982-12-07",
       "language": "unknown",
-      "context_status": "partial",
+      "context_status": "unknown",
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553673/jewish/21-Kislev-5743-Yechidus-Yiddish.htm",
       "locator": {
         "aid": 553673,
@@ -4240,11 +4240,13 @@
       "provenance": {
         "source_witness": "Chabad.org Sichos Kodesh Audio / Jewish Educational Media public item and year-index pages",
         "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
+        "textual_status": "No transcript body visible; audio not played.",
+        "editorial_scope": "Metadata only. Parallel-language listing is linked to the Hebrew listing AID 553672 in the same Evidence Family; no independent textual or recording witness is claimed.",
+        "verification_status": "Identity and location only; not content verified.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553673/jewish/21-Kislev-5743-Yechidus-Yiddish.htm",
-        "accessed": "2026-09-24"
+        "accessed": "2026-09-24",
+        "authorship_status": "Publisher identifies a Yiddish Yechidus audio listing for 21 Kislev 5743; recording content not inspected.",
+        "verification_scope": "Only title, date, language and publisher attribution inspected; no audio played and no transcript read."
       },
       "access": {
         "rights_status": "public_metadata_only",
@@ -4254,9 +4256,38 @@
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-sichos-kodesh-audio-batch-045.json"
+        },
+        {
+          "type": "same_event_parallel_language_listing",
+          "target_aid": 553672,
+          "note": "Same publisher date and event label; Hebrew/Yiddish parallel listings; no recording comparison."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold. Linked in place to AID 553672 under Evidence Family yechidus-5743-21-kislev-parallel-language-audio. The Hebrew and Yiddish listings remain distinct item identities but are not independent content witnesses; neither recording was compared or listened to.",
+      "aid": 553673,
+      "type": "audio_recording",
+      "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+      "parent_evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+      "independent_witness": false,
+      "witness_type": "audio_recording_listing",
+      "translation_status": "Parallel-language publisher listing; recording equivalence was not compared; not an independent textual witness.",
+      "has_content_evidence": false,
+      "response_propositions": [],
+      "proposition_origin": null,
+      "proposition_verbatim": null,
+      "proposition_verification": null,
+      "proposition_source_locator": null,
+      "primary_secondary_status": "Publisher audio listing metadata only; recording content not inspected.",
+      "rights_status": "copyrighted-metadata-only",
+      "identity_note": "Parallel-language Yiddish listing to AID 553672 for the same 21 Kislev 5743 Yechidus event. Both remain distinct item identities in one Evidence Family; no recording comparison or content verification is claimed.",
+      "duplicate_or_parallel_relations": [
+        {
+          "type": "same_evidence_family",
+          "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+          "target_aid": 553672,
+          "note": "Parallel-language audio listing; metadata only; no independent witness claim."
+        }
+      ]
     },
     {
       "id": "canonical-ska-553674",
