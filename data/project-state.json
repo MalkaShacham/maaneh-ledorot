@@ -13,27 +13,9 @@
     "Verified"
   ],
   "current_counts": {
-    "external_inventory_mapped_minimum": 25906,
-    "staging_batch_files": 203,
-    "staging_manifest_files": 83,
-    "staging_records_physical_sum": 2070,
-    "promotion_queue_physical_records": 526,
-    "promotion_queue_already_canonical": 526,
-    "promotion_ready_records": 0,
-    "canonical_json_files": 471,
-    "canonical_unique_item_keys": 9280,
-    "evidence_family_files": 56,
-    "verified_unique_item_keys": 7830,
-    "status_counts_unique_keys": {
-      "Verified": 7830,
-      "Linked": 15,
-      "Parsed": 94,
-      "Indexed": 1136,
-      "Discovered": 3
-    },
-    "answer_eligible_unique_sources": 977,
-    "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2950
+    "answer_eligible_unique_sources": 1008,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3012
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": 8,
@@ -71,7 +53,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "pending_reconciliation",
+    "status": "reconciled_in_pr_workspace_pending_merge",
     "source": "data/public-metrics.json",
     "generated": "2026-11-15",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -92,48 +74,49 @@
         "content_verified_unique_sources": 827,
         "answer_eligible_propositions": 2709
       },
-      "actual_after": null,
-      "reconciliation_status": "pending",
+      "actual_after": {
+        "answer_eligible_unique_sources": 1008,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3012
+      },
+      "reconciliation_status": "reconciled_in_pr_workspace_pending_merge",
       "before": {
         "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 870,
+        "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 2929
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1011,
-        "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 3018
+        "answer_eligible_unique_sources": 1008,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3012
       },
-      "actual_delta": null,
-      "reconciliation_variance": null,
-      "pending_batches": [
-        "090",
-        "091",
-        "092",
-        "093",
-        "094",
-        "095",
-        "099",
-        "100",
-        "101",
-        "102"
-      ],
+      "actual_delta": {
+        "answer_eligible_unique_sources": 43,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 83
+      },
+      "reconciliation_variance": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 0
+      },
+      "pending_batches": [],
       "baseline_correction": "The prior 878 content-Verified count was a false positive: eight batch-096 provenance.verification_status strings said 'no promotion to Verified', which status_of() matched as Verified. The records remain Parsed; after neutralizing the phrase, the correct content-Verified baseline is 870."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_on_pr_for_batch_102",
+      "run_status": "pending_retry_after_test_syntax_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 102 adds ten source-body-inspected English correspondence identities, one in-place Hebrew Sicha enrichment and regression coverage for multi-family synthesis with claim-local locators in regular and deep researcher modes. Full reconciliation must preserve content-Verified at 870 and verify no identity collisions."
+      "note": "The first PR run completed full-corpus reconciliation and measured 1008/854/3012, but the content-readiness test stopped on a duplicate top-level const declaration. The test is being corrected and must pass before merge."
     },
     "publication": {
-      "status": "pending_after_batch_102",
+      "status": "pending_merge_and_pages_deploy",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -174,393 +157,57 @@
     "content_review_queue": "data/content-review-queue.json",
     "current_batch": "102",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "098",
-    "last_batch_summary": "Batch 102: 10 new English correspondence identities and 19 source-grounded Hebrew paraphrases; one existing Hebrew Sicha identity (AID 2989588) enriched in place with one new proposition and three corrected locators. Twelve source bodies inspected in total. No source promoted to Verified.",
-    "last_run_note": "Ten public English correspondence bodies were inspected through Chabad.org/TheRebbe.org; the existing Hebrew Sicha AID 2989588 was reopened and enriched. AID 1888932/289101 remains an unconfirmed duplicate candidate because the 289101 body did not open. Seven blocked candidates were documented and the run fell back to ten accessible bodies. Batches 099–102 await contiguous full-index reconciliation.",
+    "last_completed_batch": "102",
+    "last_batch_summary": "Batch 102: 7 new English correspondence identities, 3 existing identities rechecked without duplicate propositions, and 1 existing Hebrew Sicha identity enriched with one new proposition and three corrected locators. 12 source bodies inspected. Full chain 099–102 measured 1008/854/3012.",
+    "last_run_note": "Full-corpus reconciliation ran in the PR workspace: 1008 answer-eligible unique Evidence Families, 854 content-Verified sources, 3012 propositions. The earlier 870 Verified expectation was 16 too high after status normalization; no new Verified promotion. Three apparent new AIDs were existing identities and are now rechecks. The initial test step failed on a duplicate const declaration; a corrected run is pending.",
     "last_batch_blocked_count": 7,
     "last_batch_blocked_reason": "AID 1921269 reader error; AID 6052000 PDF had no readable text; AIDs 5996836 and 4543714 had garbled PDF text; AID 1053 yielded only a search extract and no readable open body; AIDs 2988234 and 4296290 returned summary shells. Prior blocks 4666220 and two ChabadLibrary Yiddish candidates were not retried.",
     "next_work": [
-      "Validate the batch-102 pull request and run the full-corpus reconciliation for the contiguous chain 099–102; confirm all new AIDs and the in-place AID 2989588 enrichment against the canonical index.",
-      "Confirm the measured progression 965/870/2929 → 977/870/2952 → 986/870/2968 → 1001/870/2998 → 1011/870/3018; record any variance rather than normalizing it away.",
-      "Run test_reconcile_status.py and test_content_readiness.mjs, including the new three-family synthesis, claim-local citation, context-boundary and deep researcher-mode checks.",
-      "Inspect PR-triggered Actions, merge only after checks pass, then verify push-triggered reconciliation, regenerated search index, public metrics and GitHub Pages publication.",
-      "Continue original-language Hebrew and Yiddish source-body work; this run added ten English correspondence sources and one Hebrew in-place enrichment. The Yiddish originals behind two English translations remain uninspected.",
-      "Do not retry the HTTP 403 crawler, bypass access controls, use search extracts as content, or promote partial/translated/transcribed material to Verified."
+      "Rerun the PR answer-quality gate after correcting the duplicate test variable declarations; confirm test_content_readiness.mjs passes, including three-family synthesis and deep researcher citations.",
+      "Merge only after the PR quality gate passes; then verify the push-triggered reconciliation commit on main.",
+      "Verify the deployed data/public-metrics.json and public-search-index on GitHub Pages match 1008/854/3012 and include the seven new identities.",
+      "Continue original-language Hebrew and Yiddish source-body work; translations and transcribed copies remain dependent witnesses.",
+      "Do not retry the blocked crawler, bypass access controls, use search extracts as content, or promote partial/translated/transcribed material to Verified."
     ],
     "last_reconciliation": {
-      "batch_id": "089",
-      "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
-      "generated": "2026-11-15",
-      "batch_record_count": 14,
-      "new_source_identity_count": 0,
-      "existing_identities_enriched": 14,
-      "source_bodies_inspected": 14,
-      "answer_eligible_selected_count": 0,
-      "selected_unique_evidence_families": 0,
-      "non_independent_selected_count": 0,
-      "items": [
-        {
-          "identity_key": "id:canonical-lt-eye-010-010",
-          "aid": null,
-          "id": "canonical-lt-eye-010-010",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-010-010",
-              "evidence_family_id": "living-torah-aid-335482",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 335482, lines 291–303 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 335482, שורות 291–303, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-010-006",
-          "aid": null,
-          "id": "canonical-lt-eye-010-006",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-010-006",
-              "evidence_family_id": "living-torah-aid-2889264",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2889264, lines 246–249 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2889264, שורות 246–249, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-010-001",
-          "aid": null,
-          "id": "canonical-lt-eye-010-001",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-010-001",
-              "evidence_family_id": "living-torah-aid-4525544",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4525544, lines 255–258 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4525544, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-013-007",
-          "aid": null,
-          "id": "canonical-lt-eye-013-007",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-013-007",
-              "evidence_family_id": "living-torah-aid-2349222",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2349222, lines 255–258 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2349222, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-014-002",
-          "aid": null,
-          "id": "canonical-lt-eye-014-002",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-014-002",
-              "evidence_family_id": "living-torah-aid-281313",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 281313, lines 257–260 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 281313, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-013-010",
-          "aid": null,
-          "id": "canonical-lt-eye-013-010",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-013-010",
-              "evidence_family_id": "living-torah-aid-363469",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 363469, lines 257–260 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 363469, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-014-005",
-          "aid": null,
-          "id": "canonical-lt-eye-014-005",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-014-005",
-              "evidence_family_id": "living-torah-aid-2606412",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2606412, lines 255–258 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2606412, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-010-007",
-          "aid": null,
-          "id": "canonical-lt-eye-010-007",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-010-007",
-              "evidence_family_id": "living-torah-aid-2946206",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2946206, lines 246–249 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2946206, שורות 246–249, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-014-003",
-          "aid": null,
-          "id": "canonical-lt-eye-014-003",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-014-003",
-              "evidence_family_id": "living-torah-aid-702100",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 702100, lines 257–260 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 702100, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-e2e-1991-06-12-a-modest-queen",
-          "aid": null,
-          "id": "canonical-lt-e2e-1991-06-12-a-modest-queen",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-e2e-1991-06-12-a-modest-queen",
-              "evidence_family_id": "living-torah-aid-1974202",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1974202, lines 255–258 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 1974202, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-e2e-1990-07-29-nothing-too-difficult",
-          "aid": null,
-          "id": "canonical-lt-e2e-1990-07-29-nothing-too-difficult",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-e2e-1990-07-29-nothing-too-difficult",
-              "evidence_family_id": "living-torah-aid-4547216",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4547216, lines 255–258 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4547216, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-013-005",
-          "aid": null,
-          "id": "canonical-lt-eye-013-005",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-013-005",
-              "evidence_family_id": "living-torah-aid-2316185",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2316185, lines 255–258 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2316185, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-e2e-1991-03-24-his-real-life",
-          "aid": null,
-          "id": "canonical-lt-e2e-1991-03-24-his-real-life",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-e2e-1991-03-24-his-real-life",
-              "evidence_family_id": "living-torah-aid-2920438",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2920438, lines 255–258 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2920438, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        },
-        {
-          "identity_key": "id:canonical-lt-eye-012-007",
-          "aid": null,
-          "id": "canonical-lt-eye-012-007",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/bulk-indexed-2026-09-25-001.json",
-              "id": "canonical-lt-eye-012-007",
-              "evidence_family_id": "living-torah-aid-4469446",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 1,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4469446, lines 255–258 (publisher synopsis only).",
-              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4469446, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": false
-          }
-        }
+      "batch_id": "102",
+      "batches": [
+        "099",
+        "100",
+        "101",
+        "102"
       ],
-      "metrics_actual_after": {
-        "answer_eligible_unique_sources": 900,
-        "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2832
+      "status": "reconciled_in_pr_workspace_pending_merge",
+      "metrics_before": {
+        "answer_eligible_unique_sources": 965,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 2929
+      },
+      "metrics_after_actual": {
+        "answer_eligible_unique_sources": 1008,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3012
+      },
+      "metrics_delta_actual": {
+        "answer_eligible_unique_sources": 43,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 83
       },
       "reconciliation_variance": {
         "answer_eligible_unique_sources": 0,
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 0
       },
-      "reconciliation_status": "reconciled"
+      "note": "Full canonical scan completed in PR workflow; main branch and public Pages remain pending merge/deployment."
     },
-    "last_manual_web_review": "Batch 102: 10 new English source identities, 1 existing Hebrew identity enriched, 12 bodies inspected, 19 new propositions plus 1 enrichment, no Verified promotions.",
+    "last_manual_web_review": "Batch 102: 7 new identities, 3 existing rechecks, 1 existing Hebrew identity enriched, 12 bodies inspected, 14 new propositions in total, no Verified promotions.",
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
       "AID 2189943: transcription without accessible original; keep out of answer-eligible corpus.",
       "English publisher presentations and Hebrew free translation from Yiddish are non-independent; do not count as corroborating witnesses.",
       "Batch 096: nine original-language Hayom Yom entries remain Parsed and partial-context; same-page English renderings are not independent witnesses. AID 1273962 has proposition-level locators at body lines 283–285."
     ],
-    "pending_reconciliation_batches": [
-      "099",
-      "100",
-      "101",
-      "102"
-    ],
-    "last_reconciliation_pending": true
+    "pending_reconciliation_batches": [],
+    "last_reconciliation_pending": false
   }
 }
