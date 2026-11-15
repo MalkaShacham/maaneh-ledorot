@@ -111,12 +111,12 @@
     },
     "metrics_before": {
       "answer_eligible_unique_sources": 986,
-      "content_verified_unique_sources": 878,
+      "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2966
     },
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1000,
-      "content_verified_unique_sources": 878,
+      "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2992
     },
     "metrics_actual_after": null,
@@ -183,12 +183,12 @@
     "scan_only_verification_used": false,
     "metrics_before": {
       "answer_eligible_unique_sources": 977,
-      "content_verified_unique_sources": 878,
+      "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2950
     },
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 986,
-      "content_verified_unique_sources": 878,
+      "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2966
     },
     "metrics_actual_after": null,
@@ -547,10 +547,10 @@
       }
     ]
   },
-  "manual_web_review_note": "המדדים הנוכחיים משקפים את data/public-metrics.json האחרון. באץ׳ 100 ובאץ׳ 101 עדיין pending reconciliation; metrics_before של באץ׳ 101 הוא הערך הצפוי לאחר באץ׳ 100 ולא מדד שנמדד בפועל.",
+  "manual_web_review_note": "המדד 878 בקובץ public-metrics.json הוא false positive מתועד: שמונה רשומות Parsed הכילו את הביטוי 'no promotion to Verified'. baseline התקין לפי project-state הוא 870. באצוות 100–101 actual_after נשאר null עד reconciliation.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 977,
-    "content_verified_unique_sources": 878,
+    "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2950
   },
   "last_manual_review_at": "2026-11-15T20:00:00+02:00",
@@ -1836,9 +1836,12 @@
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 986,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2964
+        "answer_eligible_propositions": 2966
       },
-      "reconciliation_status": "pending"
+      "reconciliation_status": "pending",
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "status": "pending_reconciliation"
     },
     {
       "batch_id": "101",
@@ -1945,12 +1948,12 @@
       },
       "metrics_before": {
         "answer_eligible_unique_sources": 986,
-        "content_verified_unique_sources": 878,
+        "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2966
       },
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 1000,
-        "content_verified_unique_sources": 878,
+        "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2992
       },
       "metrics_actual_after": null,
