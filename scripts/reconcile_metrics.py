@@ -51,12 +51,13 @@ def status_of(d):
     provenance_status=p.get("verification_status") if isinstance(p,dict) else None
     if isinstance(provenance_status,str):
         value=provenance_status.strip()
-        match=re.match(r"^(Verified|Linked|Parsed|Indexed|Discovered)(?=$|[\\s;:])",value,re.I)
+        match=re.match(r"^(Verified|Linked|Parsed|Indexed|Discovered)(?=$|[\s;:])",value,re.I)
         if match:
             token=match.group(1).lower()
             return next(x for x in ("Verified","Linked","Parsed","Indexed","Discovered") if x.lower()==token)
     return None
 
+search_entries={}
 def flatten_terms(v):
     if v is None:return []
     if isinstance(v,str):return [v]
