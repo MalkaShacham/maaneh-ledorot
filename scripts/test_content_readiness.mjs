@@ -967,27 +967,6 @@ assert.deepEqual(batch097Data.reconciliation_variance,{answer_eligible_unique_so
 
 
 
-// Batch 099: twelve inspected Hebrew text identities, one in-place enrichment, and same-family audio deduplication.
-const batch099Path='data/items/content-research-batch-099-2026-11-15.json';
-const batch099Data=JSON.parse(await readFile(new URL(batch099Path,root)));
-assert.equal(batch099Data.records.length,12);assert.equal(batch099Data.reviewed_item_count,15);assert.equal(batch099Data.source_bodies_inspected,13);assert.equal(batch099Data.source_body_pages_opened,15);
-assert.equal(batch099Data.new_source_identities,12);assert.equal(batch099Data.existing_identities_enriched,1);assert.equal(batch099Data.existing_identities_rechecked,2);
-assert.equal(batch099Data.new_response_propositions,20);assert.equal(batch099Data.existing_response_propositions_added,1);assert.equal(batch099Data.answer_eligible_source_families_added,12);
-assert.equal(batch099Data.content_verified_unique_sources_added,0);assert.equal(batch099Data.translations_counted_as_independent_witnesses,0);
-assert.equal(batch099Data.crawler_retry,false);assert.equal(batch099Data.access_control_bypassed,false);assert.equal(batch099Data.full_text_copied,false);assert.equal(batch099Data.scan_only_verification_used,false);
-assert.equal(batch099Data.blocked_candidate_count,1);assert.equal(batch099Data.metadata_only_candidate_count,10);
-assert.equal(batch099Data.duplicate_aliases_linked.length,1);assert.equal(batch099Data.duplicate_aliases_linked[0].alias_aid,553673);assert.equal(batch099Data.duplicate_aliases_linked[0].canonical_aid,553672);
-assert.equal(batch099Data.duplicate_aliases_linked[0].evidence_family_id,'yechidus-5743-21-kislev-parallel-language-audio');
-assert.equal(new Set(batch099Data.new_aids.map(String)).size,12);assert.equal(new Set(batch099Data.records.map(r=>String(r.aid))).size,12);
-assert.equal(new Set(batch099Data.records.map(r=>r.evidence_family_id)).size,12);assert.equal(new Set(batch099Data.records.map(r=>r.source_url)).size,12);
-assert.equal(batch099Data.records.filter(r=>r.independent_witness===true).length,8);assert.equal(batch099Data.records.filter(r=>r.independent_witness===false).length,4);
-const batch099Languages=batch099Data.records.reduce((a,r)=>(a[r.language]=(a[r.language]||0)+1,a),{});assert.deepEqual(batch099Languages,{Hebrew:12});
-for(const r of batch099Data.records){const aid=String(r.aid),matches=idx.entries.filter(e=>sourceAID(e)===aid);assert.equal(matches.length,1,'batch-099 AID '+aid+' must have exactly one canonical identity');const e=matches[0];assert(e.has_content_evidence&&e.response_propositions.length>0);assert.equal(e.canonical_file,batch099Path);assert.equal(e.status,'Parsed');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);assert.equal(e.response_proposition_locators.length,e.response_propositions.length);assert.equal(e.context_status,'partial');assert(e.evidence_family_id);}
-const enriched3316719Batch099=idx.entries.find(e=>sourceAID(e)==='3316719');assert(enriched3316719Batch099&&enriched3316719Batch099.canonical_file==='data/items/content-research-batch-097-2026-11-15.json');assert.equal(enriched3316719Batch099.evidence_family_id,'hayom-yom-tammuz-22-aid3316719');assert.equal(enriched3316719Batch099.response_propositions.length,2);assert(enriched3316719Batch099.response_propositions.some(p=>p.includes('ניגון חסידי')));assert.equal(enriched3316719Batch099.response_proposition_locators.length,2);assert(batch099Data.existing_identity_updates.some(x=>String(x.aid)==='3316719'));
-const yechidusHebrew=idx.entries.find(e=>sourceAID(e)==='553672'),yechidusYiddish=idx.entries.find(e=>sourceAID(e)==='553673');assert(yechidusHebrew&&yechidusYiddish);assert.equal(yechidusHebrew.evidence_family_id,'yechidus-5743-21-kislev-parallel-language-audio');assert.equal(yechidusYiddish.evidence_family_id,yechidusHebrew.evidence_family_id);assert.equal(yechidusHebrew.independent_witness,false);assert.equal(yechidusYiddish.independent_witness,false);assert.equal(yechidusHebrew.response_propositions.length,0);assert.equal(yechidusYiddish.response_propositions.length,0);
-assert.equal(batch099Data.deduplication_check.full_index_scan_available,true);assert.equal(batch099Data.deduplication_check.full_index_scan_pending_reconciliation,false);assert.deepEqual(batch099Data.deduplication_check.canonical_identity_collisions,[]);assert.equal(batch099Data.reconciliation_status,'reconciled');assert.deepEqual(batch099Data.metrics_expected_after,{answer_eligible_unique_sources:977,content_verified_unique_sources:878,answer_eligible_propositions:2950});assert.deepEqual(batch099Data.metrics_actual_after,batch099Data.metrics_expected_after);assert.deepEqual(batch099Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});assert.deepEqual(metrics,batch099Data.metrics_actual_after);assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
-const educationEverydayQuestion='מה מתארות השיחות על השפעה חינוכית על ילדים ועל הוראה מעשית בחיי היום-יום?';
-for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,educationEverydayQuestion,{mode});assert(m.answerable,mode+': inspected Sicha texts must support a bounded multi-source education/everyday-life answer');assert(m.sources.some(e=>sourceAID(e)==='4385862'),mode+': expected Beit Rivka/Hakhel source');assert(m.sources.some(e=>sourceAID(e)==='5990031')||m.sources.some(e=>sourceAID(e)==='6132085'),mode+': expected a second dated educational Sicha');assert(m.claims.length>=2&&m.claims.every(c=>c.source_numbers.length),mode+': every claim must retain claim-level source numbers');assert(m.citation_entailment.every(x=>x.valid),mode+': each claim must be entailed by its own inspected proposition');assert(m.context_boundary.every(x=>x.valid),mode+': witness circumstances must remain local');if(mode==='researcher'){assert.equal(m.research.depth,'deep');assert(m.research.evidence_map.length>=2);assert.equal(m.research.claim_source_map.length,m.claims.length);assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='4385862'));}else assert.equal(m.research,undefined);}
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
@@ -2078,3 +2057,44 @@ for(const mode of ['regular','researcher']){
   assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
  }else assert.equal(m.research,undefined);
 }
+
+
+// Batch 099: twelve inspected Hebrew text identities, one in-place enrichment, and same-family audio deduplication.
+const batch099Path='data/items/content-research-batch-099-2026-11-15.json';
+const batch099Data=JSON.parse(await readFile(new URL(batch099Path,root)));
+assert.equal(batch099Data.records.length,12);assert.equal(batch099Data.reviewed_item_count,15);assert.equal(batch099Data.source_bodies_inspected,13);assert.equal(batch099Data.source_body_pages_opened,15);
+assert.equal(batch099Data.new_source_identities,12);assert.equal(batch099Data.existing_identities_enriched,1);assert.equal(batch099Data.existing_identities_rechecked,2);
+assert.equal(batch099Data.new_response_propositions,20);assert.equal(batch099Data.existing_response_propositions_added,1);assert.equal(batch099Data.answer_eligible_source_families_added,12);
+assert.equal(batch099Data.content_verified_unique_sources_added,0);assert.equal(batch099Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch099Data.crawler_retry,false);assert.equal(batch099Data.access_control_bypassed,false);assert.equal(batch099Data.full_text_copied,false);assert.equal(batch099Data.scan_only_verification_used,false);
+assert.equal(batch099Data.blocked_candidate_count,1);assert.equal(batch099Data.metadata_only_candidate_count,10);
+assert.equal(batch099Data.duplicate_aliases_linked.length,1);assert.equal(batch099Data.duplicate_aliases_linked[0].alias_aid,553673);assert.equal(batch099Data.duplicate_aliases_linked[0].canonical_aid,553672);
+assert.equal(batch099Data.duplicate_aliases_linked[0].evidence_family_id,'yechidus-5743-21-kislev-parallel-language-audio');
+assert.equal(new Set(batch099Data.new_aids.map(String)).size,12);assert.equal(new Set(batch099Data.records.map(r=>String(r.aid))).size,12);
+assert.equal(new Set(batch099Data.records.map(r=>r.evidence_family_id)).size,12);assert.equal(new Set(batch099Data.records.map(r=>r.source_url)).size,12);
+assert.equal(batch099Data.records.filter(r=>r.independent_witness===true).length,8);assert.equal(batch099Data.records.filter(r=>r.independent_witness===false).length,4);
+const batch099Languages=batch099Data.records.reduce((a,r)=>(a[r.language]=(a[r.language]||0)+1,a),{});assert.deepEqual(batch099Languages,{Hebrew:12});
+for(const r of batch099Data.records){const aid=String(r.aid),matches=idx.entries.filter(e=>sourceAID(e)===aid);assert.equal(matches.length,1,'batch-099 AID '+aid+' must have exactly one canonical identity');const e=matches[0];assert(e.has_content_evidence&&e.response_propositions.length>0);assert.equal(e.canonical_file,batch099Path);assert.equal(e.status,'Parsed');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);assert.equal(e.response_proposition_locators.length,e.response_propositions.length);assert.equal(e.context_status,'partial');assert(e.evidence_family_id);}
+const enriched3316719Batch099=idx.entries.find(e=>sourceAID(e)==='3316719');assert(enriched3316719Batch099&&enriched3316719Batch099.canonical_file==='data/items/content-research-batch-097-2026-11-15.json');assert.equal(enriched3316719Batch099.evidence_family_id,'hayom-yom-tammuz-22-aid3316719');assert.equal(enriched3316719Batch099.response_propositions.length,2);assert(enriched3316719Batch099.response_propositions.some(p=>p.includes('ניגון חסידי')));assert.equal(enriched3316719Batch099.response_proposition_locators.length,2);assert(batch099Data.existing_identity_updates.some(x=>String(x.aid)==='3316719'));
+const yechidusHebrew=idx.entries.find(e=>sourceAID(e)==='553672'),yechidusYiddish=idx.entries.find(e=>sourceAID(e)==='553673');assert(yechidusHebrew&&yechidusYiddish);assert.equal(yechidusHebrew.evidence_family_id,'yechidus-5743-21-kislev-parallel-language-audio');assert.equal(yechidusYiddish.evidence_family_id,yechidusHebrew.evidence_family_id);assert.equal(yechidusHebrew.independent_witness,false);assert.equal(yechidusYiddish.independent_witness,false);assert.equal(yechidusHebrew.response_propositions.length,0);assert.equal(yechidusYiddish.response_propositions.length,0);
+assert.equal(batch099Data.deduplication_check.full_index_scan_available,true);assert.equal(batch099Data.deduplication_check.full_index_scan_pending_reconciliation,false);assert.deepEqual(batch099Data.deduplication_check.canonical_identity_collisions,[]);assert.equal(batch099Data.reconciliation_status,'reconciled');assert.deepEqual(batch099Data.metrics_expected_after,{answer_eligible_unique_sources:977,content_verified_unique_sources:878,answer_eligible_propositions:2950});assert.deepEqual(batch099Data.metrics_actual_after,batch099Data.metrics_expected_after);assert.deepEqual(batch099Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});assert.deepEqual(metrics,batch099Data.metrics_actual_after);assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
+const batch099EducationQuestion='מה מתארות השיחות על השפעה חינוכית ועל הוראה מעשית בפרשת השבוע?';
+const batch099EducationAids=new Set(['5959982','5990031','6132085']);
+const batch099EducationEntries=idx.entries.filter(e=>batch099EducationAids.has(sourceAID(e)));
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(batch099EducationEntries,batch099EducationQuestion,{mode});
+ assert(m.answerable,mode+': inspected Sicha texts must support a bounded multi-source education/everyday-life answer');
+ assert(m.sources.some(e=>sourceAID(e)==='5990031'),mode+': expected the source on educational influence');
+ assert(m.sources.some(e=>sourceAID(e)==='6132085'),mode+': expected the source on practical weekly-parasha guidance');
+ assert(m.claims.length>=2&&m.claims.every(c=>c.source_numbers.length),mode+': every claim must retain claim-level source numbers');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': each claim must be entailed by its own inspected proposition');
+ assert(m.context_boundary.every(x=>x.valid),mode+': witness circumstances must remain local');
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert(m.research.evidence_map.length>=2);
+  assert.equal(m.research.claim_source_map.length,m.claims.length);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
+  assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='5990031'));
+ }else assert.equal(m.research,undefined);
+}
+
