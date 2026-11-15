@@ -445,3 +445,12 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - No translation was counted as an independent witness. No crawler retry, access-control bypass, full-text copying, or scan-only content verification occurred. The accessible Living Torah item pages were used as the same-run fallback.
 - Expected readiness after reconciliation: **900 answer-eligible unique Evidence Families** (from 886), **852 content-verified** (unchanged), and **2,832 propositions** (from 2,818). These are targets until the reconciliation and tests report actual values.
 - Added regression coverage for all 14 AIDs and a two-item researcher-mode retrieval query. It requires separate item-level citations and explicitly records that publisher synopses are not independent corroborating witnesses.
+
+
+## 2026-11-15 — Batch 089 reconciliation and audit repair
+
+- The repository reconciliation produced the expected actual totals: **900 answer-eligible unique Evidence Families**, **852 content-verified unique sources**, and **2,832 answer-eligible propositions**. Delta from the pre-batch baseline: +14 / 0 / +14; variance from target: zero.
+- All 14 newly answer-eligible items are existing Living Torah identities enriched in place. They remain Parsed, partial-context and non-independent publisher-synopsis records. No content-verified count was inflated.
+- The first audit pass exposed a regex defect in reconcile_metrics.py: the batch update identity aid:<number> was not being mapped back to the aid: index key, so the audit reported zero selected items despite the correct metrics. Corrected the numeric-suffix regex, made batch status follow reconciliation status, and made answer_readiness.reconciliation_status explicit. The follow-up audit must select all 14 AIDs with item-level locators.
+- Added an executable test_content_readiness.mjs step to the reconciliation workflow after a second deterministic index rebuild. It checks the 14 item identities, their Parsed/non-independent limits, the zero-variance metrics, the 14-item reconciliation audit, and multi-source researcher-mode claim-level citations.
+- Actions and Pages publication are still subject to the resulting workflow run and live-site verification; no success is inferred from a commit alone.
