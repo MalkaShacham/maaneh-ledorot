@@ -564,3 +564,15 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - The second CI pass confirmed that the early-childhood retrieval repair now works, but the deep-researcher map still failed one assertion: `claim_source_map` was built from the generic answer-level `model.claims`, which can include a non-synthesis claim without a locator, while the structured seven-claim comparison in `model.synthesis.claims` already had claim-local source numbers and locators.
 - Updated researcher mode to build `claim_source_map` from the structured synthesis claims when present, falling back to generic claims only when no structured synthesis exists. This aligns the deep evidence map with the claim-level citations actually shown in the synthesis; it does not relax citation validation.
 - Cache version bumped to `20261115-batch097-researcher-claims-v3`. A new CI run is required to establish the final test result.
+
+ 
+## Batch 098 — 15 November 2026: Hebrew correspondence and original-language rechecks
+
+- Opened 14 public item bodies: five new Hebrew *Igrot Kodesh* letters (AIDs 5413082, 5413119, 5413465, 5413494, 5412970) and nine original-language *Hayom Yom* pages.
+- Added 12 non-verbatim, source-grounded propositions to five new identities and three additional propositions to existing *Hayom Yom* identities 3316664, 3316684 and 3316710.
+- Each proposition carries an item-level Hebrew body locator, provenance, verification scope, audience/context and explicit limitations. All new/enriched items remain Parsed/partial; no Verified promotion was made.
+- The AID 5413465 telegram remains inside one published letter/Evidence Family. Same-page translations are not independent witnesses. AIDs 5413082 and 5412970 retain their qualified signature status; AID 5413494's referenced photograph was not inspected.
+- Seven other candidate pages did not expose readable item-level bodies and were excluded. Public alternatives were inspected in the same run. No crawler retry, access-control bypass, full-text copying or scan-only content verification occurred.
+- The large public-search index could not be fetched through the connector; repository search and batches 090–097 showed no exact-AID duplicates. Canonical corpus-wide deduplication and metric reconciliation remain pending.
+- Retrieval/synthesis work adds a bounded four-family case comparison for education and community initiatives, with claim-local locators and an explicit system-synthesis-not-Rebbe-quote label; deep researcher mode retains the evidence map and claim-source map. The PR quality gate must validate this before merge.
+- Actual public metrics remain at the pre-reconciliation committed values until the reconciliation workflow runs. Expected post-reconciliation values are provisional only.
