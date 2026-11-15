@@ -95,14 +95,14 @@
       "actual_after": null,
       "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 977,
+        "answer_eligible_unique_sources": 965,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2950
+        "answer_eligible_propositions": 2929
       },
       "expected_after": {
         "answer_eligible_unique_sources": 1000,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2992
+        "answer_eligible_propositions": 2994
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -173,9 +173,9 @@
     "content_review_queue": "data/content-review-queue.json",
     "current_batch": "101",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "099",
-    "last_batch_summary": "Batch 101: fourteen new Hebrew source identities, 26 non-verbatim source-grounded propositions, eleven Sichos, one Q&A transcript and two short event reports. AID 2989588 was rechecked without duplication. In batch 100, existing AID 2989585 was enriched in place with two additional propositions. No item was promoted to Verified.",
-    "last_run_note": "AID 4666220 again exposed only a summary shell; no crawler retry or access-control bypass was attempted. Same-run fallback inspected fourteen public Hebrew source bodies. Two Chabad Library candidates (including a Yiddish item) returned no readable body; a Hebrew translation of an English talk and a free English translation were excluded from independent-witness counts. Batches 100–101 remain pending reconciliation; actual after metrics are not yet available.",
+    "last_completed_batch": "098",
+    "last_batch_summary": "Batch 099–101: AID 2989588 enriched in place with two additional propositions; AID 2989585 enriched in place with two propositions; fourteen new Hebrew source identities and 26 propositions in batch 101. No new Verified promotions.",
+    "last_run_note": "AID 4666220 remained a summary shell; two Chabad Library pages (including one Yiddish) had no readable body. Fourteen alternative Hebrew bodies were inspected. AID 2989588 and AID 2989585 were enriched in their original canonical files; translations were not counted as independent witnesses. Batches 099–101 pending contiguous reconciliation.",
     "last_batch_blocked_count": 3,
     "last_batch_blocked_reason": "AID 4666220 returned a summary shell; two Chabad Library pages (one Yiddish) returned no readable body. Alternative public Hebrew bodies were inspected in the same run.",
     "next_work": [
@@ -729,6 +729,7 @@
       "Batch 096: nine original-language Hayom Yom entries remain Parsed and partial-context; same-page English renderings are not independent witnesses. AID 1273962 has proposition-level locators at body lines 283–285."
     ],
     "pending_reconciliation_batches": [
+      "099",
       "100",
       "101"
     ],
