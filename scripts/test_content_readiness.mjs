@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {normalizeEvidenceIntegrity,buildAnswerModel,citationEntailment} from '../src/answer-engine-validated.js';
+import {understandQuestion} from '../src/answer-engine.js';
 const root=new URL('../',import.meta.url);
 const sourceAID=e=>{
   if(e?.aid!==undefined&&e?.aid!==null&&String(e.aid).trim())return String(e.aid);
@@ -1021,8 +1022,10 @@ assert(englishLetter&&englishLetter.language==='English'&&englishLetter.proposit
 const enrichedSicha=idx.entries.find(e=>sourceAID(e)==='2988877');
 assert(enrichedSicha&&enrichedSicha.response_propositions.length===3&&enrichedSicha.response_proposition_locators.some(x=>x.includes('209–216')));
 for(const aid of batch105Data.new_aids){const e=idx.entries.find(x=>sourceAID(x)===String(aid));assert(e&&e.has_content_evidence,'batch-105 AID '+aid+' must have inspected source body');assert.equal(e.status,'Parsed');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));}
-const hayomQuestion='מה מתאר הערך היומי ביידיש על עבודת המוח, חיפוש אמת ובדיקת כל תנועה?';
-for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,hayomQuestion,{mode});assert(m.answerable&&m.sources.some(e=>sourceAID(e)==='3315445'),mode+': Yiddish Hayom Yom entry must be retrieved');assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher')assert(m.research&&m.research.witnesses.length===m.sources.length&&m.research.evidence_map.length>0);else assert.equal(m.research,undefined);}
+const hayomQuestion='מהו התוכן של ערך היום יום ביידיש על חיפוש אמת ובדיקה של כל תנועה?';
+const hayomAnalysis=understandQuestion(hayomQuestion);
+console.log('YIDDISH_HAYOM_ANALYSIS',JSON.stringify({topics:hayomAnalysis.topics,terms:hayomAnalysis.terms,subtopic:hayomAnalysis.subtopic,intent:hayomAnalysis.intent,sourceLanguage:hayomAnalysis.source_language||null}));
+for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,hayomQuestion,{mode});const isolated=buildAnswerModel([hayomYomYiddish],hayomQuestion,{mode});console.log('YIDDISH_HAYOM_DEBUG',JSON.stringify({mode,answerable:m.answerable,reason:m.reason,sourceAids:m.sources.map(sourceAID),isolated:{answerable:isolated.answerable,reason:isolated.reason,sourceAids:isolated.sources.map(sourceAID)},target:{title:hayomYomYiddish.title,language:hayomYomYiddish.language,proposition_language:hayomYomYiddish.proposition_language,source_class:hayomYomYiddish.source_class,witness_type:hayomYomYiddish.witness_type,has_content_evidence:hayomYomYiddish.has_content_evidence,independent_witness:hayomYomYiddish.independent_witness,response_propositions:hayomYomYiddish.response_propositions}}));assert(m.answerable&&m.sources.some(e=>sourceAID(e)==='3315445'),mode+': Yiddish Hayom Yom entry must be retrieved');assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher')assert(m.research&&m.research.witnesses.length===m.sources.length&&m.research.evidence_map.length>0);else assert.equal(m.research,undefined);}
 const englishQuestion='What did the Rebbe explain about using Yiddish for Chassidic discourses and why practical deeds matter?';
 const englishModel=buildAnswerModel(idx.entries,englishQuestion,{mode:'researcher'});
 assert(englishModel.answerable&&englishModel.sources.some(e=>sourceAID(e)==='2216588'));
