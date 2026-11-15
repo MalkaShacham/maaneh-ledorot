@@ -25,4 +25,10 @@ assert status_of({
     "verification_status": "unverified"
 }) is None
 
-print("Conservative status normalization: 6 checks passed")
+
+assert status_of({
+    "pipeline_status": "Parsed",
+    "verification_status": "no content verification was performed"
+}) == "Parsed"
+
+print("Conservative status normalization: 7 checks passed")
