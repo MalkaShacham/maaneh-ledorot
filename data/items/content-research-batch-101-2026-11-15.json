@@ -18,7 +18,7 @@
   "existing_response_propositions_added": 2,
   "answer_eligible_source_families_added": 1,
   "independent_witnesses_added": 1,
-  "non_independent_presentations_added": 0,
+  "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "evidence_family_count": 1,
   "source_languages": [
@@ -313,7 +313,15 @@
     }
   ],
   "duplicate_aliases_linked": 0,
-  "identity_alias_audit_targets": [],
+  "identity_alias_audit_targets": [
+    {
+      "alias_aid": "553673",
+      "canonical_aid": "553672",
+      "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+      "relation": "same_event_parallel_language_listing",
+      "note": "Same date and event label; Hebrew/Yiddish publisher listings remain separate item identities in one Evidence Family. Metadata only; no recording comparison or content verification."
+    }
+  ],
   "deduplication_check": {
     "keys_checked": [
       "aid",
@@ -330,7 +338,7 @@
     "Eighteen attempted candidates did not expose an inspectable source body; no content propositions were created for them.",
     "The full generated public-search-index file was not readable through the connector in this run, so the duplicate audit is scoped to the queue and recent batches 096–100."
   ],
-  "note": "Ten item-level source bodies were inspected. One new Hebrew Hayom Yom identity was added; two existing identities were enriched in place. All four new propositions are non-verbatim source-grounded paraphrases with item-level locators and explicit editorial/attribution boundaries. No source was promoted to Verified.",
+  "note": "Ten item-level source bodies were inspected. One new Hebrew Hayom Yom identity was added; two existing identities were enriched in place. All four new propositions are non-verbatim source-grounded paraphrases with item-level locators and explicit editorial/attribution boundaries. No source was promoted to Verified. Metadata reconciliation: AID 553673 (Yiddish listing) was linked to the same Evidence Family as AID 553672 (Hebrew listing); both remain metadata-only and not answer eligible.",
   "records": [
     {
       "id": "hayom-yom-tammuz-23-aid3316725",
@@ -463,6 +471,17 @@
       "propositions_added": 1,
       "source_body_inspected": true,
       "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316748, English editorial section “To Fill In the Background”, body lines 267–268; footnote line 283."
+    },
+    {
+      "identity_key": "aid:553673",
+      "canonical_file": "data/items/bulk-indexed-2026-09-24-001.json",
+      "action": "link_parallel_language_listing_to_existing_evidence_family",
+      "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+      "propositions_added": 0,
+      "source_body_inspected": false,
+      "metadata_only": true,
+      "related_aid": "553672",
+      "note": "Same event/date and publisher listing; no audio comparison, no independent witness, no answer-eligibility change."
     }
   ],
   "existing_identity_rechecks": [
