@@ -228,7 +228,7 @@ if batch_path:
                 add_target(stable,aid if aid else None,record.get("id"))
         for update in batch_data.get("existing_identity_updates",[]):
             identity=str(update.get("identity") or update.get("id") or "")
-            match=re.search(r"(\\d+)$",identity)
+            match=re.search(r"(\d+)$",identity)
             if match:add_target("aid:"+match.group(1),match.group(1),update.get("id"))
             else:
                 item_id=str(update.get("id") or identity);add_target("id:"+item_id,None,item_id)
@@ -293,6 +293,11 @@ if batch_path and isinstance(batch_data,dict):
     batch_data["metrics_actual_after"]=actual_metrics
     batch_data["reconciliation_variance"]=variance
     batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
+    batch_data["status"]=batch_data["reconciliation_status"]
+    readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
+    readiness_state["reconciliation_status"]=batch_data["reconciliation_status"]
+    readiness_state["actual_after"]=actual_metrics
+    readiness_state["reconciliation_variance"]=variance
     batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
     batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     dev=state.setdefault("development_recovery",{})
