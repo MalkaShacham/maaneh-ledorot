@@ -7,6 +7,73 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "098",
+    "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
+    "reviewed_at": "2026-11-15T17:00:00+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 10,
+    "source_bodies_inspected": 10,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 10,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 11,
+    "answer_eligible_source_families_added": 9,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "העמוד הופנה ל-Torah Texts summary shell ללא גוף איגרת קריא; לא נוצרו ממנו פרופוזיציות ולא בוצע ניסיון crawler או עקיפת גישה."
+      },
+      {
+        "aid": 1200720068,
+        "url": "https://www.chabadlibrary.org/books/1200720068",
+        "reason": "העמוד נפתח בקורא הציבורי אך החזיר אפס שורות קריאות; קטע החיפוש לא שימש כתוכן ולא נוצרו ממנו פרופוזיציות."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 956,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2918
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 965,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2929
+    },
+    "enriched_aids": [
+      3316701
+    ],
+    "reviewed_aids": [
+      3316610,
+      3316613,
+      3316630,
+      3316731,
+      3316736,
+      3316744,
+      3316746,
+      3316749,
+      259799,
+      3316701
+    ],
+    "language_distribution": {
+      "Hebrew": 4,
+      "Yiddish": 4,
+      "English": 1
+    },
+    "source_type_distribution": {
+      "published_daily_anthology_original_language_entry": 8,
+      "recipient_testimony_with_embedded_english_letter_excerpt": 1
+    }
+  },
+  "previous_manual_web_review": {
     "batch_id": "097",
     "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
     "reviewed_at": "2026-11-15T11:20:00+02:00",
@@ -59,122 +126,6 @@
       "Hebrew": 7,
       "Yiddish": 2
     }
-  },
-  "previous_manual_web_review": {
-    "batch_id": "095",
-    "batch_file": "data/content-reviews/2026-11-15-content-batch-095.json",
-    "reviewed_at": "2026-11-15T06:55:00+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
-    "reconciliation_status": "pending",
-    "reviewed_item_count": 11,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 0,
-    "existing_identities_enriched": 10,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 10,
-    "answer_eligible_source_families_added": 1,
-    "independent_witnesses_added": 1,
-    "non_independent_presentations_added": 1,
-    "content_verified_unique_sources_added": 1,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 900,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2832
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 939,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2895
-    },
-    "metrics_actual_after": null,
-    "source_languages": [
-      "Hebrew",
-      "Yiddish"
-    ],
-    "language_distribution": {
-      "Hebrew": 5,
-      "Yiddish": 6
-    },
-    "source_type_distribution": {
-      "published_likkutei_sichos_original_language_excerpt": 9,
-      "published_hebrew_correspondence_text": 2
-    },
-    "enriched_aids": [
-      5245732,
-      6393752,
-      4846181,
-      6391815,
-      5834915,
-      4772806,
-      4804686,
-      5245755,
-      4929245,
-      4994228
-    ],
-    "reviewed_aids": [
-      4804686,
-      5245755,
-      5245732,
-      5168552,
-      6393752,
-      4846181,
-      6391815,
-      5834915,
-      4772806,
-      4929245,
-      4994228
-    ],
-    "rechecked_aids": [
-      5168552
-    ],
-    "blocked_candidate_count": 7,
-    "blocked_candidates": [
-      {
-        "aid": 5100375,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100375/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100376,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100376/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100377,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100377/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100603,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100603/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100116,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100116/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 4754642,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4754642/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100374,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100374/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      }
-    ],
-    "duplicate_aliases_linked": 0,
-    "translations_counted_as_independent_witnesses": 0,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "fallback_source_attempted": true
   },
   "earlier_manual_web_review": {
     "batch_id": "093",
@@ -517,7 +468,7 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 094 inspected eight new original Hebrew/Yiddish source bodies and enriched AID 6436855 in place. Batch 093 was corrected after the full public index scan found AID 2190037 already canonical in batch 070; the duplicate record was removed. Expected cumulative readiness after batches 090–094 is 938 / 853 / 2,885, but the published actual metrics remain 900 / 852 / 2,832 until reconciliation. No Verified promotions were made in batches 093–094.",
+  "manual_web_review_note": "Batch 098 manually inspected ten source bodies; no crawler retry, search-extract content inference or content-status promotion. Reconciliation and Actions results are pending.",
   "manual_web_review_current_metrics": {
     "published_actual_before": {
       "answer_eligible_unique_sources": 900,
@@ -525,14 +476,14 @@
       "answer_eligible_propositions": 2832
     },
     "expected_after_pending_batches": {
-      "answer_eligible_unique_sources": 938,
-      "content_verified_unique_sources": 853,
-      "answer_eligible_propositions": 2885
+      "answer_eligible_unique_sources": 965,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2929
     },
     "reconciliation_status": "pending",
-    "note": "These are expected cumulative values after batches 090–094, not reconciled actual metrics."
+    "note": "The published actual before-value is 900 answer-eligible Evidence Families. The 956 baseline is the expected reconciled total after batches 090–097; batch 098 expects 965 after adding nine new families. Reconciliation must replace expectations with actual counts."
   },
-  "last_manual_review_at": "2026-11-15T11:20:00+02:00",
+  "last_manual_review_at": "2026-11-15T17:00:00+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
