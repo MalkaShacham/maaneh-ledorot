@@ -535,6 +535,12 @@ export function propositionRelevance(e,u){
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not contain an inspected practical-youth-learning, supportive-conversation or community-learning proposition']};
   return{score:48,support:'direct_support',reasons:['the inspected Hebrew letter directly supports a distinct youth-education or community-learning case'],supportingProps};
  }
+ if(isEarlyChildhoodEducationQuestion(u.query)){
+  const supportingProps=arr(e.response_propositions).filter(p=>!!earlyChildhoodEducationCategory(p));
+  if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not contain an inspected early-childhood, Hebrew-school, classroom-speech, education-purpose or student-participation proposition']};
+  const categories=[...new Set(supportingProps.map(earlyChildhoodEducationCategory).filter(Boolean))];
+  return{score:48,support:'direct_support',reasons:[`inspected source supports a bounded early-childhood education case: ${categories.join(', ')}`],supportingProps};
+ }
  if(u.query.includes('לימוד בחברותא')&&u.query.includes('בני נוער')&&u.query.includes('התקדמות הדרגתית')){
   const supportingProps=arr(e.response_propositions).filter(supportsYouthEducationStudyProposition);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not contain either the inspected chavruta-study passage or the distinct youth-education/gradual-practice passage']};

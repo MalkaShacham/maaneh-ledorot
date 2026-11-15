@@ -53,10 +53,11 @@
     "Batch 093 deduplication correction: AID 2190037 was already a Verified canonical identity in batch 070 with the same publisher URL and Evidence Family; the duplicate batch-093 record was removed.",
     "Batch 094 adds eight new original-language excerpt identities and enriches AID 6436855 in place; all eight new identities remain Parsed pending broader witness verification.",
     "AID 4557806 was inspected but withheld because the publisher labels it an adaptation of two separate talks; the Hebrewbooks PDF viewer was inaccessible through the public reader and was not bypassed.",
-    "Batch 095: seven attempted AID pages redirected to summary/navigation shells; excluded from propositions. Eleven directly opened Hebrew/Yiddish publisher bodies were used as same-run fallback."
+    "Batch 095: seven attempted AID pages redirected to summary/navigation shells; excluded from propositions. Eleven directly opened Hebrew/Yiddish publisher bodies were used as same-run fallback.",
+    "AID 4666220 was rechecked through the public web reader on 2026-11-15 and returned Internal Error without a readable body; nine accessible Hayom Yom item pages were used as same-run fallback."
   ],
   "next_work": [
-    "Reconcile batches 090–095 on the exact new main commit; verify actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions rather than relying on expected values.",
+    "Reconcile batches 090–096 on the exact new main commit; verify actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions rather than relying on expected values.",
     "Run test_content_readiness.mjs, question-specific retrieval, answer synthesis, citation integrity, answer-quality and workflow-write-safety checks on the exact commit.",
     "Inspect commit-bound GitHub Actions results and verify GitHub Pages publication of the refreshed public-search index and metrics.",
     "Continue direct original-language source inspection, prioritizing Hebrew/Yiddish and additional documentary classes; enrich existing identities and Evidence Families rather than creating duplicate translations.",
@@ -64,7 +65,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "pending_reconciliation_after_batch_095",
+    "status": "pending_reconciliation_after_batch_096",
     "source": "data/public-metrics.json",
     "generated": "2026-11-15",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -93,9 +94,9 @@
         "answer_eligible_propositions": 2832
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 939,
+        "answer_eligible_unique_sources": 948,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2895
+        "answer_eligible_propositions": 2906
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -105,23 +106,24 @@
         "092",
         "093",
         "094",
-        "095"
+        "095",
+        "096"
       ]
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_095",
+      "run_status": "pending_after_batch_096",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batches 090–094 await reconciliation and a commit-bound quality-gate run. The test suite is being extended to assert batch 093 deduplication, batch 094 source readiness and the in-place AID 6436855 enrichment. No test is marked passed until an Actions result is observed."
+      "note": "Batch 096 adds nine Parsed original-language Hayom Yom entries and precise locators to AID 1273962. The early-childhood correspondence retrieval regression is being repaired with a proposition-level category gate. No test is marked passed until a commit-bound Actions result is observed."
     },
     "publication": {
-      "status": "pending_after_batch_095",
+      "status": "pending_after_batch_096",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -160,117 +162,78 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-15-content-batch-095",
+    "current_batch": "2026-11-15-content-batch-096",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "095",
+    "last_completed_batch": "096",
     "last_batch_summary": {
-      "batch_id": "095",
-      "batch_file": "data/content-reviews/2026-11-15-content-batch-095.json",
+      "batch_id": "096",
+      "batch_file": "data/items/content-research-batch-096-2026-11-15.json",
       "generated": "2026-11-15",
-      "reviewed_item_count": 11,
-      "source_bodies_inspected": 11,
-      "source_body_pages_opened": 11,
+      "reviewed_item_count": 10,
+      "source_bodies_inspected": 10,
+      "source_body_pages_opened": 10,
       "search_extracts_used_as_content": 0,
-      "new_source_identities": 0,
-      "existing_identities_enriched": 10,
-      "existing_identities_rechecked": 1,
-      "new_response_propositions": 10,
-      "existing_response_propositions_added": 10,
-      "answer_eligible_source_families_added": 1,
-      "independent_witnesses_added": 1,
-      "non_independent_presentations_added": 1,
-      "content_verified_unique_sources_added": 1,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 11,
+      "existing_response_propositions_added": 0,
+      "answer_eligible_source_families_added": 9,
+      "independent_witnesses_added": 9,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
       "metrics_before": {
         "answer_eligible_unique_sources": 900,
         "content_verified_unique_sources": 852,
         "answer_eligible_propositions": 2832
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 939,
+        "answer_eligible_unique_sources": 948,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2895
+        "answer_eligible_propositions": 2906
       },
       "metrics_actual_after": null,
       "reconciliation_status": "pending",
-      "blocked_candidate_count": 7,
+      "blocked_candidate_count": 1,
       "not_promoted_after_inspection_count": 9,
       "source_languages": [
         "Hebrew",
-        "Yiddish"
+        "Yiddish",
+        "Yiddish/Hebrew"
       ],
       "language_distribution": {
-        "Hebrew": 5,
-        "Yiddish": 6
+        "Hebrew": 6,
+        "Yiddish": 2,
+        "Yiddish/Hebrew": 1
       },
       "source_type_distribution": {
-        "published_likkutei_sichos_original_language_excerpt": 9,
-        "published_hebrew_correspondence_text": 2
+        "published_daily_anthology_original_language_entry": 9
       },
-      "new_aids": [],
+      "new_aids": [
+        3316616,
+        3316619,
+        3316622,
+        3316627,
+        3316640,
+        3316694,
+        3316701,
+        3316725,
+        3316748
+      ],
       "enriched_aids": [
-        5245732,
-        6393752,
-        4846181,
-        6391815,
-        5834915,
-        4772806,
-        4804686,
-        5245755,
-        4929245,
-        4994228
+        1273962
       ],
       "reviewed_aids": [
-        4804686,
-        5245755,
-        5245732,
-        5168552,
-        6393752,
-        4846181,
-        6391815,
-        5834915,
-        4772806,
-        4929245,
-        4994228
-      ],
-      "rechecked_aids": [
-        5168552
-      ],
-      "blocked_candidates": [
-        {
-          "aid": 5100375,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100375/jewish/page.htm",
-          "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-        },
-        {
-          "aid": 5100376,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100376/jewish/page.htm",
-          "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-        },
-        {
-          "aid": 5100377,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100377/jewish/page.htm",
-          "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-        },
-        {
-          "aid": 5100603,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100603/jewish/page.htm",
-          "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-        },
-        {
-          "aid": 5100116,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100116/jewish/page.htm",
-          "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-        },
-        {
-          "aid": 4754642,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/4754642/jewish/page.htm",
-          "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-        },
-        {
-          "aid": 5100374,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100374/jewish/page.htm",
-          "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-        }
+        1273962,
+        3316616,
+        3316619,
+        3316622,
+        3316627,
+        3316640,
+        3316694,
+        3316701,
+        3316725,
+        3316748
       ],
       "duplicate_aliases_linked": 0,
       "translations_counted_as_independent_witnesses": 0,
@@ -278,13 +241,19 @@
       "access_control_bypassed": false,
       "full_text_copied": false,
       "scan_only_verification_used": false,
-      "fallback_source_attempted": true
+      "fallback_source_attempted": true,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "reason": "Public web reader returned Internal Error; no readable item-level body. Nine other Hayom Yom pages were opened as fallback."
+        }
+      ]
     },
-    "last_run_note": "Batch 095: eleven directly opened Hebrew/Yiddish source bodies were inspected. Eight existing Likkutei Sichos identities received one distinct second proposition each; the existing AID 4929245 volume-XI letter identity was enriched with two propositions and a new Evidence Family; the existing AID 4994228 volume-XIII letter identity was linked to its public publisher page as the same printed letter already represented by the user scan. AID 5168552 was rechecked without adding a duplicate proposition. Seven attempted AID pages redirected to summary/navigation shells and were excluded; accessible publisher pages were used as same-run fallback. No crawler retry, access bypass, full-text copying, translation-as-independent-witness or new item identity.",
-    "last_batch_blocked_count": 7,
-    "last_batch_blocked_reason": "Seven candidate AID pages redirected to a navigation/summary shell without readable item-level source text. They were excluded; eleven other directly opened source bodies were inspected in the same run as fallback.",
+    "last_run_note": "Batch 096: nine new original-language Hayom Yom item pages were opened; one existing AID 1273962 letter identity was enriched with three precise proposition locators. AID 4666220 returned an Internal Error, so nine accessible item pages were used as same-run fallback. All nine new entries remain Parsed; no translations counted independently.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 4666220 returned Internal Error without readable source text; nine other directly opened Hayom Yom pages were used as same-run fallback.",
     "next_work": [
-      "Reconcile batches 090–095 on the exact new main commit; verify actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions rather than relying on expected values.",
+      "Reconcile batches 090–096 on the exact new main commit; verify actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions rather than relying on expected values.",
       "Run test_content_readiness.mjs, question-specific retrieval, answer synthesis, citation integrity, answer-quality and workflow-write-safety checks on the exact commit.",
       "Inspect commit-bound GitHub Actions results and verify GitHub Pages publication of the refreshed public-search index and metrics.",
       "Continue direct original-language source inspection, prioritizing Hebrew/Yiddish and additional documentary classes; enrich existing identities and Evidence Families rather than creating duplicate translations.",
@@ -652,19 +621,20 @@
       "reconciliation_status": "reconciled"
     },
     "last_manual_web_review": {
-      "batch_id": "082",
-      "reviewed_item_count": 12,
-      "new_source_identities": 11,
+      "batch_id": "096",
+      "reviewed_item_count": 10,
+      "new_source_identities": 9,
       "existing_identities_enriched": 1,
-      "new_response_propositions": 24,
-      "existing_response_propositions_added": 1,
-      "answer_eligible_source_families_expected_after_batch_082": 830,
-      "method": "Public publisher-body inspection; 7 translated manifestations explicitly marked non-independent; AID 1858362 enriched in place."
+      "new_response_propositions": 11,
+      "existing_response_propositions_added": 0,
+      "answer_eligible_source_families_expected_after_batch_096": 948,
+      "method": "Direct public body inspection of nine original-language Hayom Yom entries plus proposition-locator enrichment of canonical AID 1273962; blocked AID 4666220 replaced by accessible pages."
     },
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
       "AID 2189943: transcription without accessible original; keep out of answer-eligible corpus.",
-      "English publisher presentations and Hebrew free translation from Yiddish are non-independent; do not count as corroborating witnesses."
+      "English publisher presentations and Hebrew free translation from Yiddish are non-independent; do not count as corroborating witnesses.",
+      "Batch 096: nine original-language Hayom Yom entries remain Parsed and partial-context; same-page English renderings are not independent witnesses. AID 1273962 has proposition-level locators at body lines 283–285."
     ]
   }
 }
