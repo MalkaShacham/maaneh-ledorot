@@ -254,7 +254,13 @@ for selected_index, batch_info in enumerate(selected_batches):
         alias_aid=str(alias.get("alias_aid") or ""); canonical_aid=str(alias.get("canonical_aid") or "")
         if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
         if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
-    for recheck in batch_data.get("existing_identity_rechecks",[]):
+    rechecks=batch_data.get("existing_identity_rechecks",[])
+    if not isinstance(rechecks,list):
+        # Backward-compatible with older batch summaries that stored only a count;
+        # use the explicit rechecked_aids list for identity-level auditing.
+        rechecks=[{"aid":aid} for aid in batch_data.get("rechecked_aids",[]) if str(aid).isdigit()]
+    for recheck in rechecks:
+        if not isinstance(recheck,dict): continue
         recheck_aid=str(recheck.get("aid") or "")
         if recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
 

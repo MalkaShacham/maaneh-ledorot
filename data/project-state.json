@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-15T21:07:06+02:00",
+  "last_updated": "2026-11-15",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -53,7 +53,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled_in_pr_workspace_pending_merge",
+    "status": "pending_pr_validation",
     "source": "data/public-metrics.json",
     "generated": "2026-11-15",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -79,16 +79,16 @@
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3012
       },
-      "reconciliation_status": "reconciled_in_pr_workspace_pending_merge",
+      "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 2929
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 1008,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3012
+      },
+      "expected_after": {
+        "answer_eligible_unique_sources": 1020,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3025
       },
       "actual_delta": {
         "answer_eligible_unique_sources": 43,
@@ -100,13 +100,15 @@
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 0
       },
-      "pending_batches": [],
+      "pending_batches": [
+        "103"
+      ],
       "baseline_correction": "The prior 878 content-Verified count was a false positive: eight batch-096 provenance.verification_status strings said 'no promotion to Verified', which status_of() matched as Verified. The records remain Parsed; after neutralizing the phrase, the correct content-Verified baseline is 870."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_retry_after_test_syntax_fix",
+      "run_status": "pending_pr_rerun_after_batch102_schema_fix_and_batch103",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
@@ -116,7 +118,7 @@
       "note": "The first PR run completed full-corpus reconciliation and measured 1008/854/3012, but the content-readiness test stopped on a duplicate top-level const declaration. The test is being corrected and must pass before merge."
     },
     "publication": {
-      "status": "pending_merge_and_pages_deploy",
+      "status": "pending_pr_merge_and_pages_deploy",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -155,19 +157,41 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "102",
+    "current_batch": "103",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "102",
-    "last_batch_summary": "Batch 102: 7 new English correspondence identities, 3 existing identities rechecked without duplicate propositions, and 1 existing Hebrew Sicha identity enriched with one new proposition and three corrected locators. 12 source bodies inspected. Full chain 099–102 measured 1008/854/3012.",
-    "last_run_note": "Full-corpus reconciliation ran in the PR workspace: 1008 answer-eligible unique Evidence Families, 854 content-Verified sources, 3012 propositions. The earlier 870 Verified expectation was 16 too high after status normalization; no new Verified promotion. Three apparent new AIDs were existing identities and are now rechecks. The initial test step failed on a duplicate const declaration; a corrected run is pending.",
-    "last_batch_blocked_count": 7,
-    "last_batch_blocked_reason": "AID 1921269 reader error; AID 6052000 PDF had no readable text; AIDs 5996836 and 4543714 had garbled PDF text; AID 1053 yielded only a search extract and no readable open body; AIDs 2988234 and 4296290 returned summary shells. Prior blocks 4666220 and two ChabadLibrary Yiddish candidates were not retried.",
+    "last_completed_batch": "103",
+    "last_batch_summary": {
+      "batch_id": "103",
+      "summary": "Batch 103: 12 new Hebrew Sicha/Yechidus identities, one existing Hebrew Sicha identity enriched in place, 13 readable source-body inspections; ten ChabadLibrary pages blocked at direct-open body access.",
+      "new_source_identities": 12,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 0,
+      "source_bodies_inspected": 13,
+      "new_response_propositions": 12,
+      "existing_response_propositions_added": 1,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1008,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3012
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1020,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3025
+      },
+      "metrics_after_actual": null,
+      "metrics_delta_actual": null,
+      "status": "pending_reconciliation"
+    },
+    "last_run_note": "Batch 103 added 12 new Hebrew Sicha/Yechidus identities and enriched AID 2989589 in place. Ten ChabadLibrary direct-open pages returned no readable body; search extracts were excluded and he.chabad.org was used as same-run fallback. Full canonical reconciliation and the quality gate remain pending.",
+    "last_batch_blocked_count": 10,
+    "last_batch_blocked_reason": "Ten ChabadLibrary item pages returned no readable body lines. Search extracts were not used as content; fallback to 13 readable he.chabad.org bodies in the same run.",
     "next_work": [
-      "Rerun the PR answer-quality gate after correcting the duplicate test variable declarations; confirm test_content_readiness.mjs passes, including three-family synthesis and deep researcher citations.",
-      "Merge only after the PR quality gate passes; then verify the push-triggered reconciliation commit on main.",
-      "Verify the deployed data/public-metrics.json and public-search-index on GitHub Pages match 1008/854/3012 and include the seven new identities.",
-      "Continue original-language Hebrew and Yiddish source-body work; translations and transcribed copies remain dependent witnesses.",
-      "Do not retry the blocked crawler, bypass access controls, use search extracts as content, or promote partial/translated/transcribed material to Verified."
+      "Run scripts/reconcile_metrics.py and test_content_readiness.mjs for batches 099–103; confirm full-index identity collisions are zero and all 12 new AIDs are answer-eligible.",
+      "Rerun the answer-quality gate after normalizing the batch-102 existing_identity_rechecks schema; merge only after the full gate passes.",
+      "After merge, verify the main-branch reconciliation commit and the deployed metrics/search index on GitHub Pages.",
+      "Continue Hebrew/Yiddish original-language source-body acquisition; do not count translations as independent witnesses.",
+      "Do not retry the blocked crawler, bypass access controls, use search extracts as content, or promote partial records to Verified."
     ],
     "last_reconciliation": {
       "batch_id": "102",
@@ -200,14 +224,17 @@
       },
       "note": "Full canonical scan completed in PR workflow; main branch and public Pages remain pending merge/deployment."
     },
-    "last_manual_web_review": "Batch 102: 7 new identities, 3 existing rechecks, 1 existing Hebrew identity enriched, 12 bodies inspected, 14 new propositions in total, no Verified promotions.",
+    "last_manual_web_review": "Batch 103: 12 new Hebrew source identities, one existing identity enriched, 13 body inspections, ten blocked ChabadLibrary pages; pending reconciliation.",
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
       "AID 2189943: transcription without accessible original; keep out of answer-eligible corpus.",
       "English publisher presentations and Hebrew free translation from Yiddish are non-independent; do not count as corroborating witnesses.",
-      "Batch 096: nine original-language Hayom Yom entries remain Parsed and partial-context; same-page English renderings are not independent witnesses. AID 1273962 has proposition-level locators at body lines 283–285."
+      "Batch 096: nine original-language Hayom Yom entries remain Parsed and partial-context; same-page English renderings are not independent witnesses. AID 1273962 has proposition-level locators at body lines 283–285.",
+      "ChabadLibrary Hayom Yom candidate pages 3701350036, 3701350369, 3701350306, 3701350321, 3701350178, 3701350354, 3701350153, 3701350323, 3701350166 and 3701350215: direct open returned no readable body lines; search extracts excluded; do not count as content evidence."
     ],
-    "pending_reconciliation_batches": [],
-    "last_reconciliation_pending": false
+    "pending_reconciliation_batches": [
+      "103"
+    ],
+    "last_reconciliation_pending": true
   }
 }

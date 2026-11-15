@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261115-batch097-researcher-claims-v3';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261115-batch103-hebrew-parsha-freedom-v1';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -283,6 +283,8 @@ const TOPIC_ALIASES={
  'שאלות הלכתיות והפניה לסמכות מקומית':['פירות שביעית של נכרים','שימוש בחשמל בארץ ישראל','גדולי ההוראה על המקום','גדולי ההוראה המקומיים','בירור אצל גדולי ההוראה','קביעת מזוזה במרפסת','mezuzah on a balcony','local halachic authorities'],
  'תיקון אישי והפצת המעיינות':['תיקון באותו הענין','מאמץ נוסף באותו תחום','השתדלות מוגברת בהפצת המעיינות','הפצת המעיינות חוצה','spreading the wellsprings as rectification'],
  'חירות בפסח והבאת לימוד למעשה':['חירות מדאגות בגשם וברוח','חירות מדאגות גשמיות ורוחניות','גדול תלמוד ומחשבה כשהם מביאים לידי מעשה','לימוד ומחשבה מביאים לידי מעשה','חירות אמתית','Passover freedom from worry','study leading to action'],
+  'לימוד פרשת היום והוראה לחיים':['פרשת היום','לימוד החלק היומי בפרשת השבוע','חלק הפרשה השייך ליום','חומש עם פירוש רש״י בכל יום','הוראה לחיי היום יום','daily Torah portion','daily parsha study','practical guidance from the daily portion'],
+  'חירות בלימוד תורה ותשובה':['חירות בלימוד תורה','אין לך בן חורין אלא מי שעוסק בתלמוד תורה','חירות באמצעות לימוד תורה','חירות ותשובה','Torah study and freedom','freedom through Torah study','teshuvah and freedom'],
  'הנהגה בחיי היום יום וקיום מצוות':['הנהגה בחיי היום יומים','יישום הוראות התורה בחיי היום יום','הוראות התורה בחיי היום־יום','פקודת בשר ודם','קיום מצוות בחיי היום יום','וחי בהם','daily Torah observance'],
  'חינוך תלמידים בימי שמחה':['התלמידים והמחונכים','תלמידים בימי שמיני עצרת ושמחת תורה','ימי השמע״צ ושמח״ת','השפעה חינוכית לאורך השנה','גילוי כוחות התלמידים','לגלות בהתלמידים כחותיהם הנעלמים','education during Simchat Torah'],
  'לימוד והתרכזות בתומכי תמימים בלוד':['תלמידי תו״ת דלוד','תלמידי תומכי תמימים בלוד','תומכי תמימים בלוד','תכניות נסיעה','התמקדות בלימוד','לימוד באופן כזה','Tomchei Temimim Lod students'],
