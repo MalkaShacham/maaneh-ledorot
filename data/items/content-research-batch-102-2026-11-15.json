@@ -12,35 +12,7 @@
   "independent_witnesses_added": 5,
   "non_independent_presentations_added": 2,
   "existing_identities_enriched": 1,
-  "existing_identity_rechecks": [
-    {
-      "aid": 2190037,
-      "canonical_file": "data/items/content-research-batch-070-2026-11-13.json",
-      "action": "rechecked_existing_identity_no_new_proposition",
-      "propositions_added": 0,
-      "evidence_family_id": "pastoral-letter-5723-22-elul-2190037",
-      "source_locator": "Chabad.org AID 2190037, body lines 268–286.",
-      "note": "הזהות הקיימת כבר כוללת את שתי התמציות הרלוונטיות ואת ההסתייגות שמדובר בתעתיק; לא נוספה פרפרזה כפולה."
-    },
-    {
-      "aid": 1939848,
-      "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
-      "action": "rechecked_existing_identity_no_new_proposition",
-      "propositions_added": 0,
-      "evidence_family_id": "personal-letter-5721-20-sivan-aid1939848",
-      "source_locator": "Chabad.org AID 1939848, body lines 261–296.",
-      "note": "הזהות הקיימת כבר כוללת שלוש תמציות על התייעצות, שיפור רוחני וסביבת לימוד; לא נוספה פרפרזה כפולה."
-    },
-    {
-      "aid": 2276666,
-      "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
-      "action": "rechecked_existing_translation_no_new_proposition",
-      "propositions_added": 0,
-      "evidence_family_id": "igrot-letter-5710-18-elul-letter749-aid2276666",
-      "source_locator": "Chabad.org AID 2276666, body lines 246–310.",
-      "note": "הזהות הקיימת כבר כוללת שתי תמציות ומסמנת את התרגום היידי המקביל כחלק מאותה Evidence Family; לא נוסף עד עצמאי או proposition כפול."
-    }
-  ],
+  "existing_identity_rechecks": 3,
   "new_response_propositions": 13,
   "existing_response_propositions_added": 1,
   "total_new_paraphrase_entries": 14,
@@ -930,7 +902,7 @@
     "full_index_scan_pending_reconciliation": true,
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "note": "Full canonical scan is performed by scripts/reconcile_metrics.py. AIDs 2190037, 1939848 and 2276666 already existed in canonical batches 070/082 and are rechecks, not new identities. The 1888932/289101 candidate remains unmerged because the 289101 body was unavailable."
+    "note": "Full index reconciliation found AIDs 2190037, 1939848 and 2276666 already in canonical batches 070/082. They were rechecked, not counted as new identities; their existing propositions already cover the inspected text. AID 1888932/289101 remains unmerged because the 289101 body was unavailable."
   },
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -938,10 +910,10 @@
   "scan_only_verification_used": false,
   "search_extracts_used_as_content": 0,
   "notes": [
-    "נוספו שבע זהויות חדשות בלבד; שלושה AIDs שנראו כמועמדים חדשים כבר קיימים בקורפוס (2190037, 1939848, 2276666) ולכן הוצאו מרשימת המקורות החדשים.",
-    "שלוש הזהויות הקיימות נבדקו מחדש; התמציות הרלוונטיות כבר היו בהן ולכן לא נוספו פרפרזות כפולות.",
-    "AID 2989588 הועשרה בזהות הקיימת; נוספה פרפרזה אחת ותוקנו שלושה locators.",
-    "כל 13 הפרפרזות במקורות החדשים הן source-grounded Hebrew paraphrases; עוד פרפרזה אחת נוספה לזהות הקיימת.",
+    "נוספו שבע זהויות חדשות בלבד; AIDs 2190037, 1939848 ו-2276666 כבר קיימים בקורפוס ולכן הוצאו מרשימת המקורות החדשים.",
+    "שלוש הזהויות הקיימות נבדקו מחדש; התמציות הרלוונטיות כבר קיימות בהן ולכן לא נוספו פרפרזות כפולות.",
+    "AID 2989588 הועשרה בזהות הקיימת: נוספה פרפרזה אחת ותוקנו שלושה locators.",
+    "נוספו 13 פרפרזות למקורות החדשים ועוד פרפרזה אחת לזהות קיימת; כל התמציות הן לא-מילוליות ומקורקעות בגוף הפרסום.",
     "AID 72176 הוא תרגום מאידיש; AID 2201447 הוא תעתיק ללא מקור זמין. שניהם סומנו כלא-עצמאיים.",
     "AID 1888932/289101 נשאר מועמד כפילות לא מאומת; לא אוחד על סמך כותרת/תאריך בלבד.",
     "כל הרשומות החדשות נשארו Parsed; לא הועלה מקור ל-Verified."
