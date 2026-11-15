@@ -1498,7 +1498,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  else if(earlyChildhoodEducationQuestion){
   const preferredAids=['1273962','1875534','1875506','1273','66725','4082940','4650780','1874637'],preferredId='igrot-letter-5702-rosh-chodesh-nissan-achlei-torah-p169',byFamily=new Map();
   for(const e of index){const props=arr(e.response_propositions).filter(p=>!!earlyChildhoodEducationCategory(p));if(!props.length)continue;const key=familyKey(e);if(!key||byFamily.has(key))continue;byFamily.set(key,{...e,_supporting_propositions:props});}
-  const rank=e=>{const match=String(e.source_url||'').match(/\\/aid\\/(\\d+)(?:\\/|$)/);const aid=String(e.aid??(match?match[1]:''));const i=preferredAids.indexOf(aid);return i>=0?i:(e.id===preferredId?8:99);};
+  const rank=e=>{const match=String(e.source_url||'').match(new RegExp('/aid/(\\d+)(?:/|$)'));const aid=String(e.aid??(match?match[1]:''));const i=preferredAids.indexOf(aid);return i>=0?i:(e.id===preferredId?8:99);};
   answerEvidence=[...byFamily.values()].filter(e=>rank(e)<99).sort((a,b)=>rank(a)-rank(b));
   const requiredCategories=['early_childhood_attention','early_stage_child_education','specific_hebrew_school_case','classroom_speech','education_purposes','diplomatic_influence','student_participation_and_example'];
   const found=new Set(answerEvidence.flatMap(e=>arr(e._supporting_propositions).map(earlyChildhoodEducationCategory))),missing=requiredCategories.filter(c=>!found.has(c));
