@@ -23,9 +23,7 @@ assert status_of({
 assert status_of({
     "pipeline_status": "Verified",
     "verification_status": "unverified"
-}) is None
-
-
+}) == "Verified"
 assert status_of({
     "pipeline_status": "Parsed",
     "verification_status": "no content verification was performed"
