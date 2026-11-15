@@ -2406,9 +2406,9 @@ assert.equal(batch103Data.reviewed_item_count,21);
 assert.equal(batch103Data.source_bodies_inspected,13);
 assert.equal(batch103Data.new_source_identities,12);
 assert.equal(batch103Data.existing_identities_enriched,1);
-assert.equal(batch103Data.new_response_propositions,22);
+assert.equal(batch103Data.new_response_propositions,24);
 assert.equal(batch103Data.existing_response_propositions_added,1);
-assert.equal(batch103Data.total_new_paraphrase_entries,23);
+assert.equal(batch103Data.total_new_paraphrase_entries,25);
 assert.equal(batch103Data.answer_eligible_source_families_added,11);
 assert.equal(batch103Data.independent_witnesses_added,9);
 assert.equal(batch103Data.non_independent_presentations_added,3);
@@ -2420,7 +2420,7 @@ assert.equal(batch103Data.access_control_bypassed,false);
 assert.equal(batch103Data.full_text_copied,false);
 assert.equal(batch103Data.translations_counted_as_independent_witnesses,0);
 assert.deepEqual(batch103Data.metrics_before,{answer_eligible_unique_sources:1009,content_verified_unique_sources:854,answer_eligible_propositions:3018});
-assert.deepEqual(batch103Data.metrics_expected_after,{answer_eligible_unique_sources:1020,content_verified_unique_sources:854,answer_eligible_propositions:3041});
+assert.deepEqual(batch103Data.metrics_expected_after,{answer_eligible_unique_sources:1020,content_verified_unique_sources:854,answer_eligible_propositions:3042});
 assert.equal(batch103Data.reconciliation_status,'reconciled');
 assert.deepEqual(batch103Data.metrics_actual_after,batch103Data.metrics_expected_after);
 assert.deepEqual(batch103Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
@@ -2436,7 +2436,7 @@ assert.equal(batch103Data.records.filter(r=>r.source_class==='Sichos').length,6)
 assert.equal(batch103Data.records.filter(r=>r.source_class==='Maamarim').length,5);
 assert.equal(batch103Data.records.filter(r=>r.source_class==='Correspondence').length,1);
 assert.equal(batch103Data.records.filter(r=>r.independent_witness===false).length,3);
-assert.equal(batch103Data.records.reduce((n,r)=>n+r.response_propositions.length,0),22);
+assert.equal(batch103Data.records.reduce((n,r)=>n+r.response_propositions.length,0),24);
 for(const r of batch103Data.records){
  const aid=String(r.aid),matches=idx.entries.filter(e=>sourceAID(e)===aid);
  assert.equal(matches.length,1,'batch-103 AID '+aid+' must have exactly one canonical index identity');
@@ -2469,7 +2469,7 @@ assert.equal(translatedLetter.original_language,'unknown');
 assert.equal(batch103Data.existing_identity_updates[0].aid,2989585);
 
 // Cross-source synthesis regression: public mission and personal avodah, with claim-level citations.
-const missionBalanceQuestion='השווה בין שיחת ט׳ אלול ה׳תשי״ח לבין שיחת כ״ח סיון ה׳תשי״ב: כיצד הן מאזנות בין שליחות ציבורית, קירוב הזולת ועבודה אישית?';
+const missionBalanceQuestion='השווה בין שיחת ט׳ אלול ה׳תשי״ח לבין שיחת כ״ח סיון ה׳תשי״ב: כיצד הן מאזנות בין עסקנות ציבורית, השפעה על הזולת ועבודה אישית?';
 const missionEntries=idx.entries.filter(e=>['3008913','4279912'].includes(sourceAID(e)));
 assert.equal(missionEntries.length,2);
 for(const mode of ['regular','researcher']){
