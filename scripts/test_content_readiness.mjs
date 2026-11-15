@@ -1064,7 +1064,15 @@ for(const aid of batch096Aids){
  batch096Families.add(e.evidence_family_id);
 }
 assert.equal(batch096Families.size,9,'each dated Hayom Yom entry must retain its own Evidence Family');
-assert(!idx.entries.some(e=>sourceAID(e)==='4666220'&&e.has_content_evidence===true),'blocked AID 4666220 must not enter answer evidence');
+const existing4666220=idx.entries.find(e=>sourceAID(e)==='4666220');
+assert(existing4666220&&existing4666220.has_content_evidence,'the previously inspected AID 4666220 identity must remain available');
+assert.equal(idx.entries.filter(e=>sourceAID(e)==='4666220').length,1,'the blocked recheck must not create a duplicate identity');
+assert.equal(existing4666220.canonical_file,'data/items/chabad-letter-4666220.json');
+assert.equal(existing4666220.evidence_family_id,'original-letter-aid-4666220');
+assert.equal(existing4666220.response_propositions.length,2);
+assert.equal(existing4666220.proposition_origin,'source_grounded_paraphrase');
+assert.equal(existing4666220.proposition_verification,'source_text_inspected');
+assert.equal(existing4666220.context_status,'partial');
 assert.equal(batch096Data.reconciliation_status,'reconciled');
 assert.deepEqual(batch096Data.metrics_expected_after,{answer_eligible_unique_sources:948,content_verified_unique_sources:870,answer_eligible_propositions:2906});
 assert.deepEqual(batch096Data.metrics_actual_after,batch096Data.metrics_expected_after);
