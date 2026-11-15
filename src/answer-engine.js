@@ -912,8 +912,14 @@ function dailyRoutineSignature(source){
  return 'other';
 }
 function prioritizeDailyRoutineCandidates(evidence,limit){
- const sorted=evidence.slice().sort((a,b)=>dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a));
+ const preferredAids=['4994198','4812708','5100391'];
+ const sorted=evidence.slice().sort((a,b)=>{
+  const ai=preferredAids.indexOf(sourceAIDValue(a)),bi=preferredAids.indexOf(sourceAIDValue(b));
+  if(ai>=0||bi>=0)return (ai<0?99:ai)-(bi<0?99:bi);
+  return dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a);
+ });
  const prioritized=[],seen=new Set();
+ for(const aid of preferredAids){const e=sorted.find(x=>sourceAIDValue(x)===aid);if(e&&!prioritized.includes(e)){prioritized.push(e);const signature=dailyRoutineSignature(e);if(signature!=='other')seen.add(signature);}}
  for(const e of sorted){const signature=dailyRoutineSignature(e);if(signature!=='other'&&!seen.has(signature)){prioritized.push(e);seen.add(signature);}}
  for(const e of sorted)if(!prioritized.includes(e))prioritized.push(e);
  return prioritized.slice(0,limit);
