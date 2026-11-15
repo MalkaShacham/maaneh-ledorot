@@ -2300,8 +2300,6 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
  }else assert.equal(m.research,undefined);
 }
-assert.deepEqual(metrics,batch102Data.metrics_actual_after);
-assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
 
 
 // Batch 102: ten English source bodies, one in-place Hebrew enrichment,
@@ -2403,3 +2401,6 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
  }else assert.equal(m.research,undefined);
 }
+
+assert.deepEqual(metrics,batch102Data.metrics_actual_after);
+assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
