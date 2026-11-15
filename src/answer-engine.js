@@ -896,6 +896,7 @@ function isHebrewSource(e){
  const language=norm([e?.language,e?.original_language,e?.proposition_language].join(' '));
  return /hebrew|עברית/.test(language);
 }
+function sourceAIDValue(source){const match=String(source?.source_url||'').match(new RegExp('/aid/(\\d+)(?:/|$)'));return String(source?.aid??(match?match[1]:''));}
 function dailyRoutinePracticeCount(source){
  const body=norm(arr(source?.response_propositions).join(' '));
  const weighted=[['קריאת שמע',5],['לימוד',4],['במשך היום',4],['למחרת',3],['תהילים',3],['תפילה',3],['צדקה',2],['תפילין',2],['חומש',2],['טלית קטן',2],['ציצית',2]];
@@ -1457,7 +1458,16 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   const studyFarmingComparisonQuestion=understanding.topics.includes('קביעות עתים ולימוד בצוותא')&&understanding.topics.includes('תורה ופרנסה במשק חקלאי');
  const tzedakahFamilies=new Set();
  let answerEvidence=usable;
- if(dailyStudyPrayerQuestion)understanding.intent='pattern';
+ if(dailyStudyPrayerQuestion){
+  understanding.intent='pattern';
+  const preferredAids=['4994198','4812708','5100391'];
+  const preferred=index.filter(e=>preferredAids.includes(sourceAIDValue(e))&&e.has_content_evidence===true)
+   .map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsDailyStudyPrayerRoutine)}))
+   .filter(e=>e._supporting_propositions.length);
+  const merged=new Map();
+  for(const e of [...preferred,...answerEvidence]){const key=familyKey(e);if(key&&!merged.has(key))merged.set(key,e);}
+  answerEvidence=[...merged.values()];
+ }
  if(jewishHomeSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(youthEducationStudyQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(tzedakahSynthesisQuestion){
