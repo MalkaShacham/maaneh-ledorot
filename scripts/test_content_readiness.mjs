@@ -1998,7 +1998,7 @@ assert.equal(batch098Data.new_response_propositions,12);
 assert.equal(batch098Data.existing_response_propositions_added,3);
 assert.equal(batch098Data.answer_eligible_source_families_added,5);
 assert.equal(batch098Data.content_verified_unique_sources_added,0);
-assert.equal(batch098Data.blocked_candidate_count,7);
+assert.equal(batch098Data.blocked_candidate_count,26);
 assert.equal(batch098Data.crawler_retry,false);
 assert.equal(batch098Data.access_control_bypassed,false);
 assert.equal(batch098Data.full_text_copied,false);
