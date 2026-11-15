@@ -343,6 +343,12 @@ for(const mode of ['regular','researcher']){
   assert(m.sources.length<=2,`${mode}: generic mezuzah or health evidence must not flood the specific query`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every forgetfulness-and-dreams claim needs a proposition-level citation`);
 }
+const genericForgetfulnessQuestion='מה נכתב באיגרות על שכחה ושיטות למידה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,genericForgetfulnessQuestion,{mode});
+ assert(m.answerable,mode+': generic forgetfulness query must remain answerable');
+ assert(m.sources.some(e=>sourceAID(e)==='5100372'),mode+': AID 5100372 must remain retrievable for a generic forgetfulness/study-method query');
+}
 const charityStudyQuestion='האם צדקה מחליפה לימוד ויגיעה?';
 for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,charityStudyQuestion,{mode});
