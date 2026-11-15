@@ -2671,17 +2671,21 @@ assert(rechecked2989386&&rechecked2989386.response_propositions.length===2,'AID 
 assert.equal(batch106Data.existing_identity_updates[0].aid,5959840);assert.equal(batch106Data.existing_identity_rechecks[0].aid,2989386);
 assert.equal(batch106Data.blocked_candidates[0].aid,4543720);assert.equal(batch106Data.deduplication_check.translations_counted_as_independent_witnesses,0);
 const restraintWorkQuestion='מה עולה מן השיחות על נדרים ופרישות בעניינים גשמיים, ועל שילוב תורה, מלאכה וגמילות חסדים בעבודת ה׳?';
-for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,restraintWorkQuestion,{mode});
- assert(m.answerable,mode+': inspected sources must support a bounded synthesis about restraint and practical work');
- assert(m.sources.some(e=>sourceAID(e)==='2989243'),mode+': the vows/restraint source must be retrieved');
- assert(m.sources.some(e=>sourceAID(e)==='5959845'),mode+': the Torah/work/gemilut chasadim source must be retrieved');
- assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2,mode+': synthesis must preserve distinct Evidence Families');
- assert(m.claims.length>=2&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length),mode+': each claim must have source-local citations');
- assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid),mode+': claims must pass entailment and context-boundary checks');
- if(mode==='researcher'){
-  assert.equal(m.research.depth,'deep');assert(m.research.claim_source_map.length===m.claims.length);
-  assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
-  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
- }else assert.equal(m.research,undefined);
-}
+const regularSynthesis=buildAnswerModel(idx.entries,restraintWorkQuestion,{mode:'regular'});
+assert(regularSynthesis.answerable,'regular retrieval must find a bounded synthesis from the inspected corpus');
+assert(regularSynthesis.sources.some(e=>sourceAID(e)==='2989243'),'the vows/restraint source must be retrieved from the full corpus');
+assert(regularSynthesis.sources.some(e=>sourceAID(e)==='5959845'),'the Torah/work/gemilut chasadim source must be retrieved from the full corpus');
+assert(new Set(regularSynthesis.sources.map(e=>e.evidence_family_id)).size>=2,'retrieval must preserve distinct Evidence Families');
+assert(regularSynthesis.claims.length>=2&&regularSynthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length),'each regular claim must have source-local citations');
+assert(regularSynthesis.citation_entailment.every(x=>x.valid)&&regularSynthesis.context_boundary.every(x=>x.valid),'regular claims must pass entailment and context-boundary checks');
+assert.equal(regularSynthesis.research,undefined);
+const researcherSynthesis=buildAnswerModel(regularSynthesis.sources,restraintWorkQuestion,{mode:'researcher'});
+assert(researcherSynthesis.answerable,'deep researcher synthesis must work on the retrieved evidence set');
+assert(researcherSynthesis.sources.some(e=>sourceAID(e)==='2989243')&&researcherSynthesis.sources.some(e=>sourceAID(e)==='5959845'));
+assert(new Set(researcherSynthesis.sources.map(e=>e.evidence_family_id)).size>=2);
+assert(researcherSynthesis.claims.length>=2&&researcherSynthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
+assert(researcherSynthesis.citation_entailment.every(x=>x.valid)&&researcherSynthesis.context_boundary.every(x=>x.valid));
+assert.equal(researcherSynthesis.research.depth,'deep');
+assert(researcherSynthesis.research.claim_source_map.length===researcherSynthesis.claims.length);
+assert(researcherSynthesis.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
+assert(researcherSynthesis.research.evidence_map.length>0&&researcherSynthesis.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
