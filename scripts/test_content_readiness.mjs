@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {normalizeEvidenceIntegrity,buildAnswerModel,citationEntailment} from '../src/answer-engine-validated.js';
+import {retrieveEvidence} from '../src/answer-engine.js?v=20261115-batch103-hebrew-parsha-freedom-v1';
 const root=new URL('../',import.meta.url);
 const sourceAID=e=>{
   if(e?.aid!==undefined&&e?.aid!==null&&String(e.aid).trim())return String(e.aid);
@@ -2490,7 +2491,9 @@ assert(yechidusRecord&&yechidusRecord.witness_type==='published_unedited_hebrew_
 assert(yechidusRecord.audience.includes('כפר חב״ד'));
 
 const dailyParshaQuery='מהי ההוראה לחיי היום־יום שאפשר ללמוד מפרשת היום?';
-const dailyParshaModel=buildAnswerModel(idx.entries,dailyParshaQuery,{mode:'regular'});
+const dailyParshaHits=retrieveEvidence(idx.entries,dailyParshaQuery,{limit:12,threshold:6}).hits;
+assert(dailyParshaHits.some(e=>sourceAID(e)==='5989705'),'daily-parsha retrieval must find inspected AID 5989705');
+const dailyParshaModel=buildAnswerModel(dailyParshaHits,dailyParshaQuery,{mode:'regular'});
 assert(dailyParshaModel.answerable,'daily-parsha query must be answerable from the inspected Hebrew Sicha');
 assert(dailyParshaModel.sources.some(e=>sourceAID(e)==='5989705'));
 assert(dailyParshaModel.claims.length>0&&dailyParshaModel.claims.every(c=>c.source_numbers.length));
