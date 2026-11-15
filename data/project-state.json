@@ -90,14 +90,14 @@
       "actual_after": null,
       "reconciliation_status": "pending_reconciliation",
       "before": {
-        "answer_eligible_unique_sources": 1041,
+        "answer_eligible_unique_sources": 1033,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3083
+        "answer_eligible_propositions": 3070
       },
       "expected_after": {
         "answer_eligible_unique_sources": 1051,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3103
+        "answer_eligible_propositions": 3111
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -116,24 +116,25 @@
         "104",
         "105",
         "106",
-        "107"
+        "107",
+        "108"
       ],
       "baseline_correction": "The prior 878 content-Verified count was a false positive: eight batch-096 provenance.verification_status strings said 'no promotion to Verified', which status_of() matched as Verified. The records remain Parsed; after neutralizing the phrase, the correct content-Verified baseline is 870."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_deep_researcher_test_runtime_optimization",
+      "run_status": "pending_after_yiddish_hayom_yom_retrieval_precision_adjustment",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Hourly run 43755991899 on commit 1a75e775 observed answer_eligible=1009, content_verified=854 and propositions=3017 after conservative status normalization; the previous expected 870 was incorrect. Answer-quality run 43755991908 then exposed a duplicate const in the new test block. Both issues are corrected in the follow-up commit; reconciliation and a new commit-bound run are required. The batch-100 in-place enrichment also shifts the test chain: batch 100 expected-after and batch 101 before are 2969 propositions; batch 101 expected-after and batch 102 before are 2999. The hourly validation also exposed a latent retrieval regression: generic health correspondence entered a narrow dental-extraction/second-opinion answer. The answer engine now requires both dental-specific and additional-opinion evidence for that topic; the existing regression test covers the exclusion. The researcher response now exposes an explicit claim_source_map alongside the evidence_map, with source numbers, Evidence Family IDs and proposition-level locators for each claim. The cross-family regression question was tightened to explicitly name the two inspected talks and their distinct passages, avoiding an over-broad formulation. The full-corpus regular retrieval check remains; the deep researcher synthesis check is restricted to the two already-inspected source identities to keep the regression bounded and deterministic."
+      "note": "Hourly run 43755991899 on commit 1a75e775 observed answer_eligible=1009, content_verified=854 and propositions=3017 after conservative status normalization; the previous expected 870 was incorrect. Answer-quality run 43755991908 then exposed a duplicate const in the new test block. Both issues are corrected in the follow-up commit; reconciliation and a new commit-bound run are required. The batch-100 in-place enrichment also shifts the test chain: batch 100 expected-after and batch 101 before are 2969 propositions; batch 101 expected-after and batch 102 before are 2999. The hourly validation also exposed a latent retrieval regression: generic health correspondence entered a narrow dental-extraction/second-opinion answer. The answer engine now requires both dental-specific and additional-opinion evidence for that topic; the existing regression test covers the exclusion. The researcher response now exposes an explicit claim_source_map alongside the evidence_map, with source numbers, Evidence Family IDs and proposition-level locators for each claim. The cross-family regression question was tightened to explicitly name the two inspected talks and their distinct passages, avoiding an over-broad formulation. The full-corpus regular retrieval check remains; the deep researcher synthesis check is restricted to the two already-inspected source identities to keep the regression bounded and deterministic. Run 43775266933/43775267026 passed conservative normalization, index generation, question-specific retrieval, answer synthesis, citation integrity, evidence-contract and write-safety checks, then failed at the Yiddish Hayom Yom retrieval assertion. The test query is being narrowed to the exact inspected proposition vocabulary and Hebrew publisher-index aliases are being added; no source claim is inferred from metadata."
     },
     "publication": {
-      "status": "pending_after_batch_102_status_baseline_correction",
+      "status": "pending_reconciliation_and_quality_gate",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -172,14 +173,14 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "107",
+    "current_batch": "108",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "098",
-    "last_batch_summary": "Batch 107: 10 new source identities across 10 Evidence Families (six published English translations of correspondence and four Yiddish sichah texts with English translations); AID 2989153 enriched in place with one additional source-grounded proposition. Twenty new propositions plus one in-place enrichment. Eleven source bodies inspected (10 new plus one existing); nine blocked page candidates and one editorial composite excluded. All records remain Parsed; no Verified promotion.",
-    "last_run_note": "Manual public-page review on 16.11.2026: inspected six English translated letters (AIDs 2282092, 2279298, 5920875, 2282134, 2282093, 2279300) and four Yiddish sichos with English translations (4544402, 4772806, 5430533, 4736086); enriched existing Hebrew AID 2989153 in place from lines 207–210. Nine pages returned Internal Error/no readable body; AID 6429726 was excluded because it combines two different source works. No crawler retry, access bypass, full-text copying or Verified promotion.",
-    "last_batch_blocked_count": 9,
-    "last_batch_blocked_reason": "Nine public-page candidates did not yield readable bodies through the public reader; one composite page was excluded because it merges a letter and a separate sichah. Ten other accessible source bodies were inspected in the same run.",
-    "next_work": "Run full-index reconciliation for pending batches 099–107, verify 1,051 expected answer-eligible Evidence Families / 854 content-Verified sources / 3,103 propositions, then pass test_content_readiness.mjs, question-specific retrieval, cross-source synthesis, claim-local citations, deep researcher evidence maps and workflow-write-safety checks. Verify Actions and Pages before treating public metrics as updated.",
+    "last_batch_summary": "Batch 108: ten source bodies inspected (eight Hebrew items and two Yiddish/English presentations); eight existing identities enriched in place with eight source-grounded non-verbatim propositions; two identities rechecked without duplicate claims. No new identities or Evidence Families; all remain Parsed. Two direct Hebrew URLs returned Internal Error, but same-AID Chabad.org fallback pages were opened. Translations were not counted as independent witnesses.",
+    "last_run_note": "Manual source review on 16.11.2026: opened body segments for AIDs 2989153, 2989320, 2989243, 4304434, 5959845, 2988989, 5990037, 5989929, 4736086 and 5430533. Added six Hebrew and two Yiddish-source paraphrases to existing identities with exact locators. Rechecked two records and added no duplicate claims. Two Hebrew direct links failed; same-AID Chabad.org pages with Yiddish text and English translation were used as fallback. No crawler retry, access bypass, full-text copying or Verified promotion.",
+    "last_batch_blocked_count": 2,
+    "last_batch_blocked_reason": "Two direct Hebrew URLs returned Internal Error; same-AID Chabad.org pages were opened as fallback and their Yiddish body text was inspected. No unresolved blocked item remains in this reviewed set.",
+    "next_work": "Reconcile batches 106–108 using the full canonical index; expected after-state is 1,051 answer-eligible unique Evidence Families, 854 content-Verified sources and 3,111 propositions. Then pass test_content_readiness.mjs, Yiddish/English retrieval, question-specific synthesis, claim-local citations, deep researcher evidence maps, workflow-write-safety, Actions and Pages publication.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -746,7 +747,8 @@
       "104",
       "105",
       "106",
-      "107"
+      "107",
+      "108"
     ],
     "last_reconciliation_pending": true
   }
