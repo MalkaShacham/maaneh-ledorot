@@ -7,21 +7,57 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
-    "batch_id": "097",
-    "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
-    "reviewed_at": "2026-11-15T11:20:00+02:00",
+    "batch_id": "098",
+    "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
+    "reviewed_at": "2026-11-15T13:25:00+02:00",
     "status": "pending_reconciliation",
-    "reviewed_item_count": 9,
-    "source_bodies_inspected": 9,
+    "reviewed_item_count": 14,
+    "source_bodies_inspected": 14,
+    "source_body_pages_opened": 14,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 11,
+    "new_source_identities": 5,
+    "existing_identities_enriched": 3,
+    "existing_identities_rechecked": 6,
+    "new_response_propositions": 12,
+    "existing_response_propositions_added": 3,
+    "answer_eligible_source_families_added": 5,
     "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 7,
     "blocked_candidates": [
       {
-        "aid": 4666220,
-        "reason": "Redirected to rewritten Torah Texts summary shell; no readable item-level body."
+        "identity": "aid:5413081",
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413081/jewish/page.htm",
+        "reason": "Direct page opened to a rewritten Torah Texts/navigation shell without readable item-level Hebrew body; excluded."
+      },
+      {
+        "identity": "aid:5413083",
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413083/jewish/page.htm",
+        "reason": "Direct page opened to a rewritten Torah Texts/navigation shell without readable item-level Hebrew body; excluded."
+      },
+      {
+        "identity": "aid:5413084",
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413084/jewish/page.htm",
+        "reason": "Direct page opened to a rewritten Torah Texts/navigation shell without readable item-level Hebrew body; excluded."
+      },
+      {
+        "identity": "aid:5413066",
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413066/jewish/page.htm",
+        "reason": "Direct page did not expose a readable item-level Hebrew body; excluded."
+      },
+      {
+        "identity": "aid:5413260",
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413260/jewish/page.htm",
+        "reason": "Direct page did not expose a readable item-level Hebrew body; excluded."
+      },
+      {
+        "identity": "aid:5413151",
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413151/jewish/page.htm",
+        "reason": "Direct page did not expose a readable item-level Hebrew body; excluded."
+      },
+      {
+        "identity": "aid:5413246",
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413246/jewish/page.htm",
+        "reason": "Direct page did not expose a readable item-level Hebrew body; excluded."
       }
     ],
     "fallback_source_attempted": true,
@@ -30,19 +66,27 @@
     "full_text_copied": false,
     "scan_only_verification_used": false,
     "metrics_before": {
-      "answer_eligible_unique_sources": 948,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2906
+      "answer_eligible_unique_sources": 900,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2832
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 956,
+      "answer_eligible_unique_sources": 961,
       "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2918
+      "answer_eligible_propositions": 2933
     },
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 12,
+    "metrics_actual_after": null,
     "enriched_aids": [
-      3316690
+      3316664,
+      3316684,
+      3316710
+    ],
+    "new_aids": [
+      5413082,
+      5413119,
+      5413465,
+      5413494,
+      5412970
     ],
     "reviewed_aids": [
       3316648,
@@ -53,12 +97,22 @@
       3316684,
       3316710,
       3316719,
+      5413082,
+      5413119,
+      5413465,
+      5413494,
+      5412970,
       3316690
     ],
     "language_distribution": {
-      "Hebrew": 7,
+      "Hebrew": 5
+    },
+    "reviewed_body_language_distribution": {
+      "Hebrew": 12,
       "Yiddish": 2
-    }
+    },
+    "duplicate_aliases_linked": 0,
+    "translations_counted_as_independent_witnesses": 0
   },
   "previous_manual_web_review": {
     "batch_id": "095",
@@ -517,7 +571,7 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 094 inspected eight new original Hebrew/Yiddish source bodies and enriched AID 6436855 in place. Batch 093 was corrected after the full public index scan found AID 2190037 already canonical in batch 070; the duplicate record was removed. Expected cumulative readiness after batches 090–094 is 938 / 853 / 2,885, but the published actual metrics remain 900 / 852 / 2,832 until reconciliation. No Verified promotions were made in batches 093–094.",
+  "manual_web_review_note": "Batch 098: five new Hebrew Igrot Kodesh bodies plus nine Hayom Yom rechecks; three existing identities enriched. Seven inaccessible candidate pages excluded; fallback bodies inspected in the same run. Pending corpus-wide reconciliation.",
   "manual_web_review_current_metrics": {
     "published_actual_before": {
       "answer_eligible_unique_sources": 900,
@@ -532,7 +586,7 @@
     "reconciliation_status": "pending",
     "note": "These are expected cumulative values after batches 090–094, not reconciled actual metrics."
   },
-  "last_manual_review_at": "2026-11-15T11:20:00+02:00",
+  "last_manual_review_at": "2026-11-15T13:25:00+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -1596,6 +1650,73 @@
       "blocked_candidate_count": 1,
       "reconciliation_status": "pending",
       "existing_identities_rechecked": 4
+    },
+    {
+      "batch_id": "098",
+      "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
+      "reviewed_at": "2026-11-15T13:25:00+02:00",
+      "source_bodies_inspected": 14,
+      "new_source_identities": 5,
+      "existing_identities_enriched": 3,
+      "new_response_propositions": 12,
+      "existing_response_propositions_added": 3,
+      "answer_eligible_source_families_added": 5,
+      "content_verified_unique_sources_added": 0,
+      "reconciliation_status": "pending"
     }
-  ]
+  ],
+  "previous": {
+    "batch_id": "097",
+    "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
+    "reviewed_at": "2026-11-15T11:20:00+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 9,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 11,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "reason": "Redirected to rewritten Torah Texts summary shell; no readable item-level body."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 948,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2906
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 956,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2918
+    },
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 12,
+    "enriched_aids": [
+      3316690
+    ],
+    "reviewed_aids": [
+      3316648,
+      3316664,
+      3316666,
+      3316676,
+      3316679,
+      3316684,
+      3316710,
+      3316719,
+      3316690
+    ],
+    "language_distribution": {
+      "Hebrew": 7,
+      "Yiddish": 2
+    }
+  }
 }
