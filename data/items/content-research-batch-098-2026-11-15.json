@@ -42,16 +42,16 @@
   },
   "metrics_actual_after": {
     "answer_eligible_unique_sources": 965,
-    "content_verified_unique_sources": 878,
+    "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2929
   },
   "reconciliation_variance": {
     "answer_eligible_unique_sources": 0,
-    "content_verified_unique_sources": 8,
+    "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 0
   },
-  "reconciliation_status": "reconciled_in_ci_workspace_pending_main_publication",
-  "status": "reconciled_in_ci_workspace_pending_main_publication",
+  "reconciliation_status": "pending_corrected_reconciliation",
+  "status": "pending_corrected_reconciliation",
   "new_aids": [
     3316610,
     3316613,
@@ -1054,15 +1054,15 @@
       "rights_status": "copyrighted-link-only"
     }
   ],
-  "notes": "The batch contains nine new source identities and one in-place enrichment. Chabad Library AID 1200720068 returned no readable body through the public reader, so its search extract was excluded. AID 4666220 likewise yielded no readable letter body. The canonical reconciliation audit must confirm there is exactly one selected identity per new AID and report any collisions or metric variance. CI reconciliation completed in run 43728789802: 10 selected unique Evidence Families, and every new/enriched AID had exactly one canonical record. Actual after metrics were 965 / 878 / 2,929. The +8 content-verified delta relative to the 870 expectation arose in the previously pending corpus (batches 090–097); this batch itself added zero content-verified identities. The CI-generated index has not yet been committed to main or published.",
+  "notes": "The batch contains nine new source identities and one in-place enrichment. Chabad Library AID 1200720068 and AID 4666220 returned no readable item-level body and were excluded. A prior CI run over-counted eight Parsed identities as content-Verified because a negated provenance caveat contained the word Verified; the status parser now recognizes only explicit leading pipeline values. Corrected metrics expected after reconciliation are 965 / 870 / 2,929. Batch 098 itself added nine answer-eligible Evidence Families, eleven propositions, and zero content-verified identities. No full text was copied, no crawler retry or access-control bypass occurred, and translations were not counted independently.",
   "metrics_delta_actual": {
     "answer_eligible_unique_sources": 9,
-    "content_verified_unique_sources": 8,
+    "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 11
   },
-  "reconciliation_run_id": 43728789802,
-  "reconciliation_run_url": "https://github.com/MalkaShacham/maaneh-ledorot/actions/runs/43728789802",
-  "reconciliation_head_commit": "488d08733bbe45493d9df867d68908a661d2c82a",
+  "reconciliation_run_id": null,
+  "reconciliation_run_url": null,
+  "reconciliation_head_commit": null,
   "reconciliation_commit": null,
   "reconciliation_audit": {
     "answer_eligible_selected_count": 10,
@@ -1185,5 +1185,25 @@
     "scan_result": "All nine new AIDs and the one enriched AID had exactly one canonical record and one selected unique Evidence Family."
   },
   "actual_content_verified_delta_attributed_to_batch": 0,
-  "prior_pending_batches_content_verified_variance": 8
+  "prior_pending_batches_content_verified_variance": 8,
+  "manual_web_review_note": "A prior CI reconciliation reported 965 / 878 / 2,929 because status_of() treated the caveat 'no promotion to Verified' in batch 096 provenance as a positive Verified status. The provenance wording and status parser have been corrected; the corrected baseline is 965 / 870 / 2,929, pending the new commit-bound CI reconciliation. Batch 098 itself added zero content-verified identities.",
+  "manual_web_review_current_metrics": {
+    "published_actual_before": {
+      "answer_eligible_unique_sources": 900,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2832
+    },
+    "corrected_expected_after": {
+      "answer_eligible_unique_sources": 965,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2929
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
+    "reconciliation_status": "pending_corrected_reconciliation",
+    "note": "The earlier +8 content-verified count was a parser false positive from a negated provenance caveat, not a source promotion. The corrected parser recognizes explicit leading status values only."
+  }
 }

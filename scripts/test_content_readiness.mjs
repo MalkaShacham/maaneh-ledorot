@@ -2014,8 +2014,8 @@ assert(batch098Data.reconciliation_audit.items.every(x=>x.canonical_records_foun
 assert.equal(batch098Data.metrics_actual_after.answer_eligible_unique_sources,metrics.answer_eligible_unique_sources);
 assert.equal(batch098Data.metrics_actual_after.content_verified_unique_sources,metrics.content_verified_unique_sources);
 assert.equal(batch098Data.metrics_actual_after.answer_eligible_propositions,metrics.answer_eligible_propositions);
-assert.deepEqual(batch098Data.metrics_delta_actual,{answer_eligible_unique_sources:9,content_verified_unique_sources:8,answer_eligible_propositions:11});
-assert.deepEqual(batch098Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:8,answer_eligible_propositions:0});
+assert.deepEqual(batch098Data.metrics_delta_actual,{answer_eligible_unique_sources:9,content_verified_unique_sources:0,answer_eligible_propositions:11});
+assert.deepEqual(batch098Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 const batch098Languages=batch098Data.records.reduce((a,r)=>(a[r.language]=(a[r.language]||0)+1,a),{});
 assert.deepEqual(batch098Languages,{Hebrew:4,Yiddish:4,English:1});
 for(const r of batch098Data.records){

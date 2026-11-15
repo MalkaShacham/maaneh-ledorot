@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, pathlib, re, datetime
+import json, pathlib, re, datetime, os
 from content_readiness import answer_eligible, summarize
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 items=sorted((ROOT/"data/items").glob("*.json"))
@@ -308,9 +308,17 @@ actual_metrics={k:out[k] for k in ("answer_eligible_unique_sources","content_ver
 if batch_path and isinstance(batch_data,dict):
     expected=batch_data.get("metrics_expected_after") or {}
     variance={k:actual_metrics[k]-int(expected.get(k,actual_metrics[k])) for k in actual_metrics}
+    before=batch_data.get("metrics_before") or {}
+    delta={k:actual_metrics[k]-int(before.get(k,actual_metrics[k])) for k in actual_metrics}
     batch_data["metrics_actual_after"]=actual_metrics
+    batch_data["metrics_delta_actual"]=delta
     batch_data["reconciliation_variance"]=variance
     batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
+    run_id=os.environ.get("GITHUB_RUN_ID")
+    if run_id:
+        batch_data["reconciliation_run_id"]=int(run_id)
+        batch_data["reconciliation_run_url"]=f"{os.environ.get('GITHUB_SERVER_URL','https://github.com')}/{os.environ.get('GITHUB_REPOSITORY','')}/actions/runs/{run_id}"
+        batch_data["reconciliation_head_commit"]=os.environ.get("GITHUB_SHA")
     batch_data["status"]=batch_data["reconciliation_status"]
     readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
     readiness_state["reconciliation_status"]=batch_data["reconciliation_status"]
@@ -323,20 +331,30 @@ if batch_path and isinstance(batch_data,dict):
     if isinstance(summary,dict) and summary.get("batch_id")==batch_data.get("batch_id"):
         summary["metrics_after_actual"]=actual_metrics
         b=summary.get("metrics_before") or {}
-        summary["metrics_delta_actual"]={k:actual_metrics[k]-int(b.get(k,actual_metrics[k])) for k in actual_metrics}
+        summary["metrics_delta_actual"]=delta
         summary["status"]=batch_data["reconciliation_status"]
     last=dev.get("last_reconciliation")
     if isinstance(last,dict) and last.get("batch_id")==batch_data.get("batch_id"):
         last["metrics_actual_after"]=actual_metrics
+        last["metrics_delta_actual"]=delta
         last["reconciliation_variance"]=variance
         last["reconciliation_status"]=batch_data["reconciliation_status"]
+        if run_id:
+            last["reconciliation_run_id"]=int(run_id)
+            last["reconciliation_run_url"]=batch_data["reconciliation_run_url"]
+            last["reconciliation_head_commit"]=batch_data["reconciliation_head_commit"]
     acquisition_path=ROOT/"data/acquisition/latest.json"
     if acquisition_path.exists():
         acquisition=json.loads(acquisition_path.read_text(encoding="utf-8"))
         review=acquisition.get("manual_web_review") or {}
         if str(review.get("batch_id"))==str(batch_label):
             review["metrics_actual_after"]=actual_metrics
+            review["metrics_delta_actual"]=delta
             review["reconciliation_variance"]=variance
+            if run_id:
+                review["reconciliation_run_id"]=int(run_id)
+                review["reconciliation_run_url"]=batch_data["reconciliation_run_url"]
+                review["reconciliation_head_commit"]=batch_data["reconciliation_head_commit"]
             review["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
             review["status"]=batch_data["reconciliation_status"]
             if batch_data.get("reconciled_at"):

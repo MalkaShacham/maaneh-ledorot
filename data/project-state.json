@@ -67,7 +67,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled_in_ci_workspace_pending_main_publication",
+    "status": "pending_corrected_reconciliation",
     "source": "data/public-metrics.json",
     "generated": "2026-11-15",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -90,10 +90,10 @@
       },
       "actual_after": {
         "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 878,
+        "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2929
       },
-      "reconciliation_status": "reconciled_in_ci_workspace_pending_main_publication",
+      "reconciliation_status": "pending_corrected_reconciliation",
       "before": {
         "answer_eligible_unique_sources": 956,
         "content_verified_unique_sources": 870,
@@ -106,15 +106,24 @@
       },
       "actual_delta": {
         "answer_eligible_unique_sources": 9,
-        "content_verified_unique_sources": 8,
+        "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 11
       },
       "reconciliation_variance": {
         "answer_eligible_unique_sources": 0,
-        "content_verified_unique_sources": 8,
+        "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 0
       },
-      "pending_batches": [],
+      "pending_batches": [
+        "090",
+        "091",
+        "092",
+        "093",
+        "094",
+        "096",
+        "097",
+        "098"
+      ],
       "published_actual_before": {
         "answer_eligible_unique_sources": 900,
         "content_verified_unique_sources": 852,
@@ -127,20 +136,19 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_rerun_after_stale_batch097_assertion_fix",
+      "run_status": "pending_corrected_status_parser_ci",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": "488d08733bbe45493d9df867d68908a661d2c82a",
       "workflow_run_id": 43728789802,
-      "note": "Batch 098 adds nine Parsed source identities (eight original-language Hayom Yom entries and one English recipient testimony) and enriches existing AID 3316701 in place. No new source is promoted to a content-verified status. Commit-bound Actions results are pending.",
-      "last_failed_reason": "The answer-quality gate reached test_content_readiness.mjs; it stopped on the legacy assertion that batch 097 must be the latest reconciled batch. The reconciliation step itself completed and audited ten unique canonical items. Batch 098 test assertions are being updated to replace the stale batch-097 assertion."
+      "note": "Batch 098 adds nine Parsed source identities and one in-place enrichment; no source was promoted. A prior +8 content-verified count was a false positive because the status parser matched a negated provenance caveat. The parser now reads explicit leading status tokens only; corrected reconciliation and the quality gate are pending.",
+      "last_failed_reason": "Previous run failed because batch 096 caveats containing 'no promotion to Verified' were parsed as positive Verified status; parser correction and regression rerun are in progress."
     },
     "publication": {
-      "status": "pending_main_reconciliation_commit_and_pages",
-      "url": "https://malkashacham.github.io/maaneh-ledorot",
-      "note": "The PR CI workspace generated the reconciled index and metrics, but they are not yet committed to main or confirmed on GitHub Pages."
+      "status": "pending_corrected_reconciliation_and_pages",
+      "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
   },

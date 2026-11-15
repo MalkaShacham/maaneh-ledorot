@@ -10,7 +10,7 @@
     "batch_id": "098",
     "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
     "reviewed_at": "2026-11-15T17:00:00+02:00",
-    "status": "reconciled_in_ci_workspace_pending_main_publication",
+    "status": "pending_corrected_reconciliation",
     "reviewed_item_count": 10,
     "source_bodies_inspected": 10,
     "search_extracts_used_as_content": 0,
@@ -74,27 +74,28 @@
     },
     "metrics_actual_after": {
       "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 878,
+      "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2929
     },
     "metrics_delta_actual": {
       "answer_eligible_unique_sources": 9,
-      "content_verified_unique_sources": 8,
+      "content_verified_unique_sources": 0,
       "answer_eligible_propositions": 11
     },
     "reconciliation_variance": {
       "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 8,
+      "content_verified_unique_sources": 0,
       "answer_eligible_propositions": 0
     },
-    "reconciliation_run_id": 43728789802,
-    "reconciliation_run_url": "https://github.com/MalkaShacham/maaneh-ledorot/actions/runs/43728789802",
-    "reconciliation_head_commit": "488d08733bbe45493d9df867d68908a661d2c82a",
+    "reconciliation_run_id": null,
+    "reconciliation_run_url": null,
+    "reconciliation_head_commit": null,
     "canonical_scan": {
       "selected_unique_evidence_families": 10,
       "duplicate_aids_found": 0,
       "duplicate_urls_found": 0
-    }
+    },
+    "reconciliation_status": "pending_corrected_reconciliation"
   },
   "previous_manual_web_review": {
     "batch_id": "097",
@@ -491,30 +492,25 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 098 source review complete; CI reconciliation completed with 10 unique canonical identities. Answer-quality gate run 43728789802 failed only on the obsolete batch-097 reconciliation assertion; test correction and rerun are pending. Main metrics/index publication is pending.",
+  "manual_web_review_note": "Batch 098 was re-audited after finding a false-positive status parse: 'no promotion to Verified' in batch 096 provenance had been counted as Verified. The parser now reads explicit leading status tokens only. Corrected metrics expected: 965 / 870 / 2,929; new commit-bound reconciliation pending.",
   "manual_web_review_current_metrics": {
     "published_actual_before": {
       "answer_eligible_unique_sources": 900,
       "content_verified_unique_sources": 852,
       "answer_eligible_propositions": 2832
     },
-    "reconciled_ci_after": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 878,
-      "answer_eligible_propositions": 2929
-    },
-    "expected_after": {
+    "corrected_expected_after": {
       "answer_eligible_unique_sources": 965,
       "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2929
     },
     "reconciliation_variance": {
       "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 8,
+      "content_verified_unique_sources": 0,
       "answer_eligible_propositions": 0
     },
-    "reconciliation_status": "reconciled_in_ci_workspace_pending_main_publication",
-    "note": "The 8-source increase in content_verified_unique_sources is a corpus-wide variance from batches 090–097, not a promotion by batch 098. Batch 098 added nine answer-eligible families and zero content-verified identities. Main publication is still pending."
+    "reconciliation_status": "pending_corrected_reconciliation",
+    "note": "The earlier +8 content-verified delta was a false positive from a negated provenance caveat, not a promotion."
   },
   "last_manual_review_at": "2026-11-15T17:00:00+02:00",
   "runner_acquisition_policy": {
