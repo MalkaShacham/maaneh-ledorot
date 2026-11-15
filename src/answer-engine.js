@@ -1389,7 +1389,7 @@ function buildStudyFarmingSynthesis(selected){
 function buildJewishHomeSynthesis(selected){
  const basis=[];
  selected.forEach((e,index)=>{
-  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  if(classifyWitness(e)==='derived')return;
   const props=arr(e._supporting_propositions).filter(supportsJewishHomeSynthesisProposition);
   if(!props.length)return;
   const propositions=props.map(p=>{
@@ -1536,7 +1536,8 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  else if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
  else if(jewishHomeSynthesisQuestion){
   const score=e=>{const t=norm(arr(e.response_propositions).join(' '));return Number(t.includes('הבית היהודי')||t.includes('בית יהודי')||t.includes('חינוך הילדים'))*100+Number(t.includes('חנוכת הבית'))*100+Number(t.includes('מזוזה'))*80;};
-  const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.has_content_evidence===true&&!e.translation_of_evidence_family_id&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition)).sort((a,b)=>score(b)-score(a)).slice(0,40);
+  const preferredHomeAids=['5413165','5357409'];
+  const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.has_content_evidence===true&&!e.translation_of_evidence_family_id&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition)).sort((a,b)=>{const ai=preferredHomeAids.indexOf(String(a.aid||'')),bi=preferredHomeAids.indexOf(String(b.aid||''));if((ai<0?99:ai)!==(bi<0?99:bi))return(ai<0?99:ai)-(bi<0?99:bi);return score(b)-score(a);}).slice(0,40);
   const byFamily=new Map();
   for(const e of [...homeIndex,...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,{...e,_supporting_propositions:arr(e.response_propositions).filter(supportsJewishHomeSynthesisProposition)});}
   answerEvidence=[...byFamily.values()].slice(0,8);
