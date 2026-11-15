@@ -497,11 +497,34 @@ export function understandQuestion(q){
   ||(topics.includes('חשבון נפש בלי ייאוש')&&t==='ערוך');
  return {query,query_script:scriptOf(query),topic:topics[0]||null,topics,intent,entities,subtopic:semanticRaw.filter(t=>!isTopicToken(t)).slice(0,8),terms:[...new Set(expanded.map(norm))]};
 }
-function evidenceText(e){return norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));}
+// Loaded evidence-index entries are immutable during answer generation. Cache their
+// normalized retrieval text so repeated regular/researcher queries do not rescan
+// and renormalize every proposition and metadata field.
+const evidenceTextCache=new WeakMap();
+const metadataTextCache=new WeakMap();
+function evidenceText(e){
+ if(e&&typeof e==='object'){
+  const cached=evidenceTextCache.get(e);
+  if(cached!==undefined)return cached;
+  const value=norm([text(e.response_propositions),text(e.question_or_problem),text(e.conditions_or_qualifications),text(e.documented_circumstances),text(e.audience)].join(' '));
+  evidenceTextCache.set(e,value);
+  return value;
+ }
+ return norm([text(e?.response_propositions),text(e?.question_or_problem),text(e?.conditions_or_qualifications),text(e?.documented_circumstances),text(e?.audience)].join(' '));
+}
 function supportsStudyRoutineComparison(p){const t=norm(p);return ['זמני לימוד','קביעות עתים','ללמוד יחד עם אדם נוסף','לימוד יחד עם חבר','לימוד בצוותא'].some(term=>containsTerm(t,term));}
 function supportsFarmingStudyComparison(p){const t=norm(p);return ['חקלאים ובעלי משק','עבודה במשק חקלאי','לימוד תורה לצד עבודה במשק','לימוד תורה במשק','עוסק בחקלאות ולומד תורה'].some(term=>containsTerm(t,term));}
 function supportsStudyFarmingComparisonSource(e){return arr(e.response_propositions).some(p=>supportsStudyRoutineComparison(p)||supportsFarmingStudyComparison(p));}
-function metadataText(e){return norm([e.title,e.search_text,e.source_class,e.date,e.language,e.topic,e.subtopic].join(' '));}
+function metadataText(e){
+ if(e&&typeof e==='object'){
+  const cached=metadataTextCache.get(e);
+  if(cached!==undefined)return cached;
+  const value=norm([e.title,e.search_text,e.source_class,e.date,e.language,e.topic,e.subtopic].join(' '));
+  metadataTextCache.set(e,value);
+  return value;
+ }
+ return norm([e?.title,e?.search_text,e?.source_class,e?.date,e?.language,e?.topic,e?.subtopic].join(' '));
+}
 function overlap(t,terms){return terms.reduce((n,x)=>n+(x&&containsTerm(t,x)?1:0),0);}
 function familyKey(e){return e.evidence_family_id||e.aid||e.source_url||e.key;}
 function propositionKey(p){return contentWords(p).sort().join(' ');}
