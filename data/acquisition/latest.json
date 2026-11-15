@@ -23,28 +23,53 @@
     "total_new_paraphrase_entries": 12,
     "answer_eligible_source_families_added": 11,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 4,
+    "blocked_candidate_count": 9,
     "not_promoted_after_inspection_count": 11,
     "blocked_candidates": [
       {
         "aid": 3316800,
         "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316800/jewish/page.htm",
-        "reason": "הקורא הציבורי דרך כלי החיפוש החזיר שגיאה פנימית; גוף פריט לא נפתח ולא נוצרה ממנו תמצית."
+        "reason": "הקורא הציבורי החזיר שגיאה פנימית; גוף הפריט לא נפתח."
       },
       {
         "aid": 3316803,
         "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316803/jewish/page.htm",
-        "reason": "הקורא הציבורי דרך כלי החיפוש החזיר שגיאה פנימית; גוף פריט לא נפתח ולא נוצרה ממנו תמצית."
+        "reason": "הקורא הציבורי החזיר שגיאה פנימית; גוף הפריט לא נפתח."
       },
       {
         "aid": 3316806,
         "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316806/jewish/page.htm",
-        "reason": "הקורא הציבורי דרך כלי החיפוש החזיר שגיאה פנימית; גוף פריט לא נפתח ולא נוצרה ממנו תמצית."
+        "reason": "הקורא הציבורי החזיר שגיאה פנימית; גוף הפריט לא נפתח."
       },
       {
         "aid": 5413165,
         "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413165/jewish/page.htm",
-        "reason": "בבדיקה חוזרת ב-2026-11-15 הכתובת הפנתה ל-Torah Texts summary shell ללא גוף האיגרת; לא נוצרה תמצית חדשה. התוכן הקודם נשאר מתועד באצווה 079 ולא שימש כבסיס להרחבה."
+        "reason": "הכתובת הפנתה ל-Torah Texts summary shell ללא גוף איגרת קריא; לא נוצרה תמצית חדשה."
+      },
+      {
+        "aid": 5357409,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5357409/jewish/page.htm",
+        "reason": "הכתובת הפנתה ל-Torah Texts summary shell ללא גוף המכתב; לא נוספה תמצית ממנו."
+      },
+      {
+        "aid": 3316744,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316744/jewish/page.htm",
+        "reason": "הקורא הציבורי החזיר שגיאה פנימית; גוף הפריט לא נפתח."
+      },
+      {
+        "aid": 3316613,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316613/jewish/page.htm",
+        "reason": "הקורא הציבורי החזיר שגיאה פנימית; גוף הפריט לא נפתח."
+      },
+      {
+        "aid": 3316610,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316610/jewish/page.htm",
+        "reason": "הקורא הציבורי החזיר שגיאה פנימית; גוף הפריט לא נפתח."
+      },
+      {
+        "aid": 4666220,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "העמוד נפתח אך הופנה ל-Torah Texts summary shell ללא גוף המכתב; זהות ומיקום בלבד, לא תוכן."
       }
     ],
     "fallback_source_attempted": true,
@@ -69,11 +94,12 @@
     "reconciliation_run_url": null,
     "reconciliation_head_commit": null,
     "language_distribution": {
-      "Hebrew": 12
+      "Hebrew": 11,
+      "English": 1
     },
     "source_type_distribution": {
       "published_unedited_hebrew_sichah_transcript": 11,
-      "published_hebrew_letter_recheck": 1
+      "published_recipient_testimony_recheck": 1
     },
     "new_aids": [
       4280367,
@@ -89,7 +115,7 @@
       5989343
     ],
     "enriched_aids": [
-      5357409
+      259799
     ],
     "reviewed_aids": [
       4280367,
@@ -103,7 +129,7 @@
       5959555,
       2987808,
       5989343,
-      5357409
+      259799
     ],
     "duplicate_aliases_linked": 0,
     "translations_counted_as_independent_witnesses": 0,
@@ -115,15 +141,25 @@
       "full_canonical_reconciliation_pending": true,
       "existing_identity_enrichments": [
         {
-          "aid": 5357409,
-          "evidence_family_id": "igrot-letter-5715-11-tevet-aid4872269",
-          "same_family_as_aid": 4872269,
-          "independent_witness": false,
-          "added_proposition_locator": "Chabad.org/TheRebbe.org, AID 5357409, Hebrew body line 292."
+          "aid": 259799,
+          "evidence_family_id": "letter-to-zalmon-jaffe-20-iyar-5713-aid259799",
+          "independent_witness": true,
+          "added_proposition_locator": "Chabad.org AID 259799, recipient testimony, embedded English letter excerpt body lines 281–283."
         }
       ]
     },
-    "reconciliation_status": "pending"
+    "reconciliation_status": "pending",
+    "existing_identity_updates": [
+      {
+        "aid": 259799,
+        "identity": "zalmon-jaffe-letter-20-iyar-5713-aid259799",
+        "canonical_file": "data/items/content-research-batch-098-2026-11-15.json",
+        "update_type": "response_proposition_added",
+        "existing_evidence_family_id": "letter-to-zalmon-jaffe-20-iyar-5713-aid259799",
+        "added_propositions": 1,
+        "note": "The added paraphrase is from the same recipient testimony's second embedded English letter excerpt (lines 281–283); it is one existing Evidence Family and not a new original-letter witness."
+      }
+    ]
   },
   "previous_manual_web_review": {
     "batch_id": "098",
