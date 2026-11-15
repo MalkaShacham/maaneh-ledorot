@@ -35,15 +35,23 @@ def stable_key(d):
     ks=identity_keys(d)
     return ks[0] if ks else None
 def status_of(d):
-    vals=[d.get("pipeline_status"),d.get("verification_status")]
+    # Parse an explicit leading pipeline value, never a status word mentioned
+    # later in a caveat (e.g. "Parsed; ... not promoted to Verified").
     p=d.get("provenance")
+    vals=[d.get("pipeline_status"),d.get("verification_status"),d.get("status")]
     if isinstance(p,dict): vals.append(p.get("verification_status"))
-    s=" ".join(str(v) for v in vals if v)
-    if re.search(r"\bunverified\b",s,re.I): return None
-    if re.search(r"\bverified\b",s,re.I): return "Verified"
-    for x in PIPE:
-        if x in s: return x
-    return d.get("pipeline_status") if d.get("pipeline_status") in PIPE else None
+    texts=[str(v).strip() for v in vals if v not in (None,"")]
+    if any(re.match(r"^(?:unverified|not verified)\\b",v,re.I) for v in texts):
+        return None
+    found=[]
+    for value in texts:
+        match=re.match(r"^(Verified|Linked|Parsed|Indexed|Discovered)(?:\\b|[;,:])",value,re.I)
+        if match:
+            token=match.group(1).lower()
+            found.append(next(x for x in PIPE if x.lower()==token))
+    if not found: return None
+    rank={name:i for i,name in enumerate(reversed(PIPE))}
+    return max(found,key=lambda name:rank[name])
 seen={}; evidence_files=0
 for fp in items:
     try: obj=json.loads(fp.read_text(encoding="utf-8"))
