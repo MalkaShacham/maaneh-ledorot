@@ -1535,10 +1535,10 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  else if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}
  else if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
  else if(jewishHomeSynthesisQuestion){
-  const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.has_content_evidence===true&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived'&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition));
   const score=e=>{const t=norm(arr(e.response_propositions).join(' '));return Number(t.includes('הבית היהודי')||t.includes('בית יהודי')||t.includes('חינוך הילדים'))*100+Number(t.includes('חנוכת הבית'))*100+Number(t.includes('מזוזה'))*80;};
+  const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.has_content_evidence===true&&!e.translation_of_evidence_family_id&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition)).sort((a,b)=>score(b)-score(a)).slice(0,40);
   const byFamily=new Map();
-  for(const e of [...homeIndex.sort((a,b)=>score(b)-score(a)),...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,{...e,_supporting_propositions:arr(e.response_propositions).filter(supportsJewishHomeSynthesisProposition)});}
+  for(const e of [...homeIndex,...answerEvidence]){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,{...e,_supporting_propositions:arr(e.response_propositions).filter(supportsJewishHomeSynthesisProposition)});}
   answerEvidence=[...byFamily.values()].slice(0,8);
  }
  else if(educationYouthGuidanceQuestion){
