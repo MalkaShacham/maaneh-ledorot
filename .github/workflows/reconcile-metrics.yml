@@ -46,6 +46,13 @@ jobs:
         run: python scripts/reconcile_metrics.py
       - name: Reconcile promotion backlog across alternate stable identities
         run: python scripts/reconcile_identity_aliases.py
+      - name: Refresh metrics and item-level audit after identity reconciliation
+        run: python scripts/reconcile_metrics.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate content readiness and deep researcher citations
+        run: node scripts/test_content_readiness.mjs
       - name: Commit bulk ingestion, promotion and reconciled state if changed
         run: |
           if [ -z "$(git status --porcelain -- data/items data/staging/batches data/staging/manifests data/public-metrics.json data/public-search-index.json data/project-state.json data/promotion-ready-reconciled.json data/content-review-queue.json data/acquisition)" ]; then exit 0; fi
