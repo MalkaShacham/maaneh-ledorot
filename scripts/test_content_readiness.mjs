@@ -2264,7 +2264,7 @@ for(const mode of ['regular','researcher']){
  assert(new Set(m.sources.filter(e=>e._independent_witness!==false).map(e=>e.evidence_family_id)).size>=3,mode+': synthesis must use three independent Evidence Families');
  assert(m.claims.length>=2&&m.claims.every(c=>c.source_numbers.length),mode+': every synthesized claim needs claim-level source numbers');
  assert(m.citation_entailment.every(x=>x.valid),mode+': every claim must be entailed by its own inspected proposition');
- assert(m.context_boundary.every(x=>x.valid),mode+': each source's audience and limitations must remain local');
+ assert(m.context_boundary.every(x=>x.valid),mode+": each source's audience and limitations must remain local");
  if(mode==='researcher'){
   assert.equal(m.research.depth,'deep');
   assert(m.research.evidence_families>=3);
