@@ -2313,7 +2313,6 @@ assert.equal(batch102Data.source_bodies_inspected,12);
 assert.equal(batch102Data.source_body_pages_opened,12);
 assert.equal(batch102Data.new_source_identities,7);
 assert.equal(batch102Data.existing_identities_enriched,1);
-assert.equal(batch102Data.existing_identity_rechecks,3);
 assert.equal(batch102Data.existing_identity_rechecks.length,3);
 assert.equal(batch102Data.new_response_propositions,13);
 assert.equal(batch102Data.existing_response_propositions_added,1);
