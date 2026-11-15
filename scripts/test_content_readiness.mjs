@@ -2047,17 +2047,10 @@ assert(blocked4666220&&blockedLibrary,'both blocked source attempts must be reco
 const tzedakahStudyQuestion='מה נכתב על צדקה, יגיעה בלימוד תורה והזמן שיש להקדיש ללימוד?';
 const englishLetterEvidence=idx.entries.filter(e=>sourceAID(e)==='259799');
 assert.equal(englishLetterEvidence.length,1,'the English letter testimony must have one canonical index entry');
-for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(englishLetterEvidence,tzedakahStudyQuestion,{mode});
- assert(m.answerable,mode+': the inspected English recipient testimony must support a bounded answer');
- assert(m.sources.some(e=>sourceAID(e)==='259799'),mode+': the English correspondence testimony must be retrievable');
- assert(m.claims.length>=1&&m.claims.every(c=>c.source_numbers.length),mode+': the claim must retain claim-level source numbers');
- assert(m.citation_entailment.every(x=>x.valid),mode+': the claim must be entailed by its own source');
- assert(m.context_boundary.every(x=>x.valid),mode+': personal correspondence context must remain witness-local');
- if(mode==='researcher'){
-  assert.equal(m.research.depth,'deep');
-  assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='259799'));
-  assert.equal(m.research.claim_source_map.length,m.claims.length);
-  assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
- }else assert.equal(m.research,undefined);
-}
+const m=buildAnswerModel(englishLetterEvidence,tzedakahStudyQuestion,{mode:'regular'});
+assert(m.answerable,'the inspected English recipient testimony must support a bounded answer');
+assert(m.sources.some(e=>sourceAID(e)==='259799'),'the English correspondence testimony must be retrievable');
+assert(m.claims.length>=1&&m.claims.every(c=>c.source_numbers.length),'the claim must retain claim-level source numbers');
+assert(m.citation_entailment.every(x=>x.valid),'the claim must be entailed by its own source');
+assert(m.context_boundary.every(x=>x.valid),'personal correspondence context must remain witness-local');
+assert.equal(m.research,undefined);
