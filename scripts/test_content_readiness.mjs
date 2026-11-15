@@ -36,6 +36,10 @@ const batch091Path='data/items/content-research-batch-091-2026-11-15.json';
 const batch091Data=JSON.parse(await readFile(new URL(batch091Path,root)));
 const batch092Path='data/items/content-research-batch-092-2026-11-15.json';
 const batch092Data=JSON.parse(await readFile(new URL(batch092Path,root)));
+const batch093Path='data/items/content-research-batch-093-2026-11-15.json';
+const batch093Data=JSON.parse(await readFile(new URL(batch093Path,root)));
+const batch094Path='data/items/content-research-batch-094-2026-11-15.json';
+const batch094Data=JSON.parse(await readFile(new URL(batch094Path,root)));
 assert.equal(new Set(queue.records.map(e=>e.key)).size,queue.records.length);
 assert(!queue.records.some(e=>String(e.source_url||'').includes('/aid/4666210/')),'metadata-only AID 4666210 alias must not remain pending after the content-bearing identity is verified');
 const ready=new Set(eligible.map(e=>e.key));
@@ -1781,6 +1785,84 @@ assert.equal(enriched5054491.evidence_family_id,'igrot-letter-5717-8-menachem-av
 assert.equal(enriched5054491.response_propositions.length,3);
 assert(enriched5054491.response_proposition_locators.some(l=>String(l).includes('line 298')));
 assert.equal(idx.entries.filter(e=>sourceAID(e)==='5357409').length,0,'duplicate AID 5357409 must not add a new independent item');
+
+// Batch 093/094: exact AID deduplication, original-language body evidence and in-place enrichment.
+assert.equal(batch093Data.records.length,8);
+assert.equal(batch093Data.new_source_identities,8);
+assert.equal(batch093Data.existing_identity_rechecks.length,2);
+assert(batch093Data.existing_identity_rechecks.some(x=>String(x.aid)==='2190037'));
+assert(!batch093Data.records.some(r=>String(r.aid)==='2190037'),'AID 2190037 already exists in batch 070 and must not be duplicated');
+assert.deepEqual(batch093Data.metrics_expected_after,{answer_eligible_unique_sources:930,content_verified_unique_sources:853,answer_eligible_propositions:2875});
+assert.equal(new Set(batch093Data.records.map(r=>String(r.aid))).size,8);
+assert.equal(new Set(batch093Data.records.map(r=>r.evidence_family_id)).size,8);
+assert.equal(new Set(batch093Data.records.map(r=>r.source_url)).size,8);
+for(const r of batch093Data.records){
+ const aid=String(r.aid);
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-093 AID '+aid+' must have exactly one indexed identity');
+ const e=matches[0];
+ assert(e.has_content_evidence&&e.response_propositions.length>0);
+ assert.equal(e.canonical_file,batch093Path);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+}
+const existing2190037=idx.entries.filter(e=>sourceAID(e)==='2190037');
+assert.equal(existing2190037.length,1,'the duplicate AID 2190037 must resolve to one canonical item');
+assert.equal(existing2190037[0].canonical_file,'data/items/content-research-batch-070-2026-11-13.json');
+assert.equal(existing2190037[0].evidence_family_id,'pastoral-letter-5723-22-elul-2190037');
+assert.equal(existing2190037[0].independent_witness,false);
+const enriched6436855=idx.entries.find(e=>sourceAID(e)==='6436855');
+assert(enriched6436855&&enriched6436855.canonical_file===batch093Path);
+assert.equal(enriched6436855.evidence_family_id,'sicha-v34-vayelech-1-aid6436855');
+assert.equal(enriched6436855.response_propositions.length,2,'AID 6436855 must be enriched in place, not duplicated');
+assert.equal(enriched6436855.response_proposition_locators.length,2);
+assert(enriched6436855.response_propositions.some(p=>p.includes('הנחיות משה ליהושע')));
+assert(enriched6436855.response_proposition_locators.some(l=>String(l).includes('301–307')));
+
+assert.equal(batch094Data.records.length,8);
+assert.equal(batch094Data.records_reviewed,11);
+assert.equal(batch094Data.source_bodies_inspected,10);
+assert.equal(batch094Data.new_source_identities,8);
+assert.equal(batch094Data.existing_identities_enriched,1);
+assert.equal(batch094Data.new_response_propositions,8);
+assert.equal(batch094Data.existing_response_propositions_added,1);
+assert.equal(batch094Data.answer_eligible_source_families_added,8);
+assert.equal(batch094Data.content_verified_unique_sources_added,0);
+assert.deepEqual(batch094Data.metrics_expected_after,{answer_eligible_unique_sources:938,content_verified_unique_sources:853,answer_eligible_propositions:2884});
+assert.equal(batch094Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch094Data.deduplication_check.candidate_aids_found.length,0);
+assert.equal(batch094Data.translations_counted_as_independent_witnesses,0);
+assert(batch094Data.existing_identity_updates.some(x=>String(x.aid)==='6436855'));
+assert(!batch094Data.records.some(r=>String(r.aid)==='4557806'),'publisher adaptation from two talks must not be counted as a new independent item');
+assert(batch094Data.not_promoted_after_inspection.some(x=>String(x.aid)==='4557806'));
+assert.equal(new Set(batch094Data.records.map(r=>String(r.aid))).size,8);
+assert.equal(new Set(batch094Data.records.map(r=>r.evidence_family_id)).size,8);
+assert.equal(new Set(batch094Data.records.map(r=>r.source_url)).size,8);
+for(const r of batch094Data.records){
+ const aid=String(r.aid);
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-094 AID '+aid+' must have exactly one indexed identity');
+ const e=matches[0];
+ assert(e.has_content_evidence&&e.response_propositions.length===1);
+ assert.equal(e.canonical_file,batch094Path);
+ assert.equal(e.status,'Parsed','excerpt-only new identities must remain Parsed');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.evidence_family_id);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,true);
+}
+const batch094Languages=batch094Data.records.reduce((a,r)=>(a[r.language]=(a[r.language]||0)+1,a),{});
+assert.deepEqual(batch094Languages,{Hebrew:3,Yiddish:5});
+const essence4632005=idx.entries.find(e=>sourceAID(e)==='4632005');
+assert(essence4632005&&essence4632005.type==='maamar'&&essence4632005.original_language==='Hebrew');
+assert(essence4632005.response_proposition_locators.some(l=>String(l).includes('260–282')));
 
 const studyPersistenceQuestion='מה נכתב באיגרות על קביעות עתים בלימוד תורה לצד עבודה, התמדה, לימוד בחברותא והתקדמות הדרגתית?';
 for(const mode of ['regular','researcher']){
