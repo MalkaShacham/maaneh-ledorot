@@ -649,3 +649,9 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 
 - The hourly validation on the corrected 854 baseline progressed past metric normalization but failed an existing retrieval regression: a generic health item was being returned for a specific dental-extraction/second-opinion question. The answer engine now applies a two-part gate for that narrow topic: the candidate must contain explicit dental/tooth-extraction language and explicit additional-opinion/expert/doctor language. General health queries are not narrowed by this rule.
 - The existing dental regression test requires the specific dental letter and exactly one source; it is retained as the validation target. A fresh answer-quality and hourly run is required to verify the change.
+
+
+## 2026-11-15 — Explicit researcher claim-source map
+
+- Researcher mode now emits an explicit claim-source map in addition to the existing evidence map. Each entry binds a claim to supporting source numbers, Evidence Family IDs and proposition-level body locators. The map supports audit/navigation and does not replace reading the cited passage or its limits.
+- Batch-102 regression checks this map in deep researcher mode against two separately dated Hebrew talks; the current answer-quality run must complete before this change is considered validated.

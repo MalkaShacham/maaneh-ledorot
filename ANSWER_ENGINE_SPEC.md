@@ -112,3 +112,8 @@ The tzedakah synthesis now includes three additional bounded claim types: alloca
 ## Narrow-topic evidence gates
 
 For a query classified as **עקירת שיניים וחוות דעת**, a candidate source is retained only when its inspected evidence contains both (1) an explicit dental/tooth-extraction reference and (2) an additional-opinion, additional-expert, or additional-doctor reference. Generic health or medical correspondence alone is excluded. This is a topic-specific precision gate; it does not suppress general health evidence for broad health questions.
+
+
+## Deep researcher claim-source map
+
+Researcher mode returns both an evidence map and an explicit claim-source map. Each claim-source entry includes the claim number/text, supporting source numbers, Evidence Family IDs and proposition-level body locators. This is a navigation map for claim verification, not a substitute for checking the cited passage or its context.
