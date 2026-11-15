@@ -187,7 +187,7 @@ for fp in items:
         if response_props and proposition_origin != "editorial_summary_derived":
             entry["proposition_verification"]=x.get("proposition_verification") or prop.get("proposition_verification")
             entry["proposition_source_locator"]=x.get("proposition_source_locator") or prop.get("proposition_source_locator")
-        entry["search_text"]=" ".join(flatten_terms([entry["title"],entry["summary"],entry["source_class"],entry["date"],entry["language"],entry["publisher_terms"],entry["research_terms"],entry["question_or_problem"],entry["response_propositions"],entry["conditions_or_qualifications"],entry["audience"],entry["aid"],entry["locator"]]))
+        entry["search_text"]=" ".join(flatten_terms([entry["title"],entry["summary"],entry["source_class"],entry["date"],entry["language"],entry["original_language"],entry["proposition_language"],entry["publisher_terms"],entry["research_terms"],entry["question_or_problem"],entry["response_propositions"],entry["conditions_or_qualifications"],entry["audience"],entry["aid"],entry["locator"]]))
         all_search_entries.append(entry)
         old=search_entries.get(key)
         # Prefer inspected answer evidence over a duplicate catalog-only record.

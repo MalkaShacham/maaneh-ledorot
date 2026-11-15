@@ -1015,7 +1015,7 @@ for(const r of batch105Data.records){assert.equal(r.status,'Parsed');assert.equa
 const sameFamilyMaamar=idx.entries.find(e=>sourceAID(e)==='4280038'),sameFamilySicha=idx.entries.find(e=>sourceAID(e)==='4280039');
 assert(sameFamilyMaamar&&sameFamilySicha);assert.equal(sameFamilyMaamar.evidence_family_id,sameFamilySicha.evidence_family_id);
 const hayomYomYiddish=idx.entries.find(e=>sourceAID(e)==='3315445');
-assert(hayomYomYiddish&&hayomYomYiddish.language==='Yiddish'&&hayomYomYiddish.original_language==='Yiddish'&&hayomYomYiddish.independent_witness===true);
+assert(hayomYomYiddish&&hayomYomYiddish.language==='Yiddish'&&hayomYomYiddish.original_language==='Yiddish'&&hayomYomYiddish.proposition_language==='Hebrew'&&hayomYomYiddish.independent_witness===true);assert(hayomYomYiddish.search_text.includes('היום יום'));
 const englishLetter=idx.entries.find(e=>sourceAID(e)==='2216588');
 assert(englishLetter&&englishLetter.language==='English'&&englishLetter.proposition_language==='English');
 const enrichedSicha=idx.entries.find(e=>sourceAID(e)==='2988877');
