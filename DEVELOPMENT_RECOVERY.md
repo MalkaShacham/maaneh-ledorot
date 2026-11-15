@@ -672,3 +672,6 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - ההעשרה הנוספת ב-AID 2989585 נשמרת בקובץ המקורי batch 100. לכן שרשרת proposition snapshots זזה ב-+1 החל מ-batch 100: **965/854/2929 → 977/854/2952 → 986/854/2970 → 1001/854/3000 → 1009/854/3018 → 1020/854/3042**. הערך האחרון הוא צפי בלבד עד סריקה קנונית מלאה.
 - תיקון CI: בדיקת batch 097 עודכנה ל-snapshot ההיסטורי בפועל **956/870/2918**; שרשרת batch 099 ואילך נשארת על baseline השמרני של 854. בדיקת AID 2989585 עודכנה לצפות לשבע פרופוזיציות. נוספה בדיקת סינתזה רב־מקורית חדשה בין AID 3008913 ו-AID 4279912, כולל claim-source map במצב researcher.
 - batch file: `data/items/content-research-batch-103-2026-11-15.json`. Reconciliation, Actions ופרסום Pages ייקבעו רק לפי תוצאות הריצות החדשות לאחר commit.
+
+
+- Additional CI audit on 15.11.2026 found that the batch-096 historical snapshot is also **948/870/2906** (the batch file's reconciled expected and actual values agree); the readiness test had retained a stale 854 assertion. It is now corrected to 870. The conservative 854 baseline begins with batch 098 and remains the chain for batches 099–103.

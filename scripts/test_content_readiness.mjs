@@ -1074,7 +1074,7 @@ assert.equal(existing4666220.proposition_origin,'source_grounded_paraphrase');
 assert.equal(existing4666220.proposition_verification,'source_text_inspected');
 assert.equal(existing4666220.context_status,'partial');
 assert.equal(batch096Data.reconciliation_status,'reconciled');
-assert.deepEqual(batch096Data.metrics_expected_after,{answer_eligible_unique_sources:948,content_verified_unique_sources:854,answer_eligible_propositions:2906});
+assert.deepEqual(batch096Data.metrics_expected_after,{answer_eligible_unique_sources:948,content_verified_unique_sources:870,answer_eligible_propositions:2906});
 assert.deepEqual(batch096Data.metrics_actual_after,batch096Data.metrics_expected_after);
 assert.deepEqual(batch096Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 
