@@ -7,6 +7,139 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "106",
+    "batch_file": "data/items/content-research-batch-106-2026-11-16.json",
+    "title": "Batch 106 — Hebrew Sichos and farbrengen report; in-place enrichment",
+    "reviewed_at": "2026-11-16T00:28:38+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending",
+    "reviewed_item_count": 11,
+    "source_bodies_inspected": 10,
+    "source_body_pages_opened": 10,
+    "metadata_only_items_rechecked": 0,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 1,
+    "new_response_propositions": 11,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 12,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 8,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4543720,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4543720",
+        "reason": "העמוד נפתח אך הציג מעטפת פרסום/מטא־נתונים ללא גוף ברכה קריא; לא נעשה שימוש במידע הכותרת כראיה ולא בוצע ניסיון עקיפה."
+      }
+    ],
+    "metadata_only_candidate_count": 0,
+    "excluded_candidate_count": 0,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1033,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3070
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1041,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3082
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "new_aids": [
+      2989153,
+      2989320,
+      2989243,
+      4304434,
+      5959845,
+      2988989,
+      5990037,
+      5989929
+    ],
+    "enriched_aids": [
+      5959840
+    ],
+    "rechecked_aids": [
+      2989386
+    ],
+    "blocked_aids": [
+      4543720
+    ],
+    "excluded_aids": [],
+    "language_distribution": {
+      "Hebrew": 8
+    },
+    "original_language_distribution": {
+      "Hebrew": 8
+    },
+    "source_type_distribution": {
+      "published_unedited_hebrew_sicha_transcript": 7,
+      "published_hebrew_farbrengen_report": 1
+    },
+    "translations_counted_as_independent_witnesses": 0,
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "BeitChabad / he.chabad.org",
+      "accessible_item_level_bodies": 10,
+      "body_text_inspected": true,
+      "aids": [
+        2989153,
+        2989320,
+        2989243,
+        4304434,
+        5959845,
+        2988989,
+        5990037,
+        5989929,
+        5959840,
+        2989386
+      ],
+      "notes": "לאחר AID 4543720 שלא הציג גוף טקסט, נפתחו עשרה גופי פרסום חלופיים; הפרופוזיציות נגזרו מהמקטעים שנבדקו בפועל ולא מכותרות או מתוצאות חיפוש."
+    },
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "unique_new_evidence_families": 8,
+      "same_family_memberships": 0,
+      "duplicate_alias_identities": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "scan_only_verification_used": 0,
+      "checked_against": "Current content-review queue; all 47 manual content-research batches 055–105; all 12 bulk-indexed item files; data/items path inventory and exact AID/source-page checks. AID 5959840 was found in batch 101 and enriched there in place; AID 2989386 was found in batch 101 and rechecked without a duplicate. Full canonical item-content scan is completed only by reconciliation.",
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true
+    },
+    "existing_identity_updates": [
+      {
+        "aid": 5959840,
+        "id": "sicha-5728-24-sivan-shelach-aid5959840",
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "evidence_family_id": "sicha-5728-24-sivan-shelach-aid5959840",
+        "existing_propositions_before": 2,
+        "propositions_added": 1,
+        "total_propositions_after": 3,
+        "locator": "he.chabad.org AID 5959840, פתיחת השיחה שורות 171–177."
+      }
+    ],
+    "existing_identity_rechecks": [
+      {
+        "aid": 2989386,
+        "id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "evidence_family_id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+        "result": "גוף הרישום נפתח ונבדק מחדש; הפרופוזיציה הקיימת מכסה את הקטע הרלוונטי בשורות 168–170, ולכן לא נוספה פרופוזיציה ולא נוצרה זהות כפולה."
+      }
+    ]
+  },
+  "previous_manual_web_review": {
     "batch_id": "105",
     "batch_file": "data/items/content-research-batch-105-2026-11-15.json",
     "title": "Batch 105 — Hebrew, English and Yiddish source-body review",
@@ -83,52 +216,6 @@
       "Yiddish": 1
     },
     "translations_counted_as_independent_witnesses": 0
-  },
-  "previous_manual_web_review": {
-    "batch_id": "104",
-    "batch_file": "data/items/content-research-batch-104-2026-11-15.json",
-    "title": "Canonical fuller Hebrew publication of the housewarming and mezuzah letter",
-    "reviewed_at": "2026-11-15T23:06:00+02:00",
-    "reviewed_item_count": 1,
-    "source_bodies_inspected": 1,
-    "new_source_identities": 1,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 0,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 0,
-    "reused_same_family_propositions": 3,
-    "answer_eligible_source_families_added": 0,
-    "content_verified_unique_sources_added": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1020,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3043
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1020,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3043
-    },
-    "source_body_recheck": {
-      "rechecked_at": "2026-11-15T23:06:00+02:00",
-      "source_bodies_reopened": 1,
-      "aids": [
-        4872269
-      ],
-      "same_family_alias_aid": 5357409,
-      "new_response_propositions_added": 0,
-      "reused_same_family_propositions": 3,
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "scan_only_verification_used": false,
-      "full_text_copied": false,
-      "limitations": "Only the public publisher body was inspected. The publisher-referenced photograph and the autograph, incoming letter and secretariat copy were not inspected."
-    },
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false
   },
   "earlier_manual_web_review": {
     "batch_id": "093",
@@ -471,9 +558,9 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 105: 16 public source bodies inspected across Hebrew, English and Yiddish; 14 new identities, one in-place enrichment, 13 new Evidence Families and 27 paraphrase entries. Two reader failures were recorded and followed by alternatives. No crawler retry, access bypass, full-text copying or Verified promotion. Reconciliation pending.",
+  "manual_web_review_note": "Batch 106: 10 גופי פרסום ציבוריים נפתחו ונבדקו בעברית; נוספו 8 זהויות חדשות בשמונה Evidence Families, הועשרה זהות קיימת אחת ונבדקה זהות קיימת נוספת. 11 פרופוזיציות חדשות ועוד אחת בהעשרה; AID 4543720 לא הציג גוף ברכה קריא ונרשם כחסום, ולאחריו נבדקו מקורות חלופיים. אין crawler retry, עקיפת גישה, העתקת טקסט מלא או קידום ל-Verified. נדרש reconciliation מלא של batches 099–106.",
   "manual_web_review_current_metrics": null,
-  "last_manual_review_at": "2026-11-15T23:24:59+02:00",
+  "last_manual_review_at": "2026-11-16T00:28:38+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -2126,6 +2213,139 @@
         "Yiddish": 1
       },
       "translations_counted_as_independent_witnesses": 0
+    },
+    {
+      "batch_id": "106",
+      "batch_file": "data/items/content-research-batch-106-2026-11-16.json",
+      "title": "Batch 106 — Hebrew Sichos and farbrengen report; in-place enrichment",
+      "reviewed_at": "2026-11-16T00:28:38+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending",
+      "reviewed_item_count": 11,
+      "source_bodies_inspected": 10,
+      "source_body_pages_opened": 10,
+      "metadata_only_items_rechecked": 0,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 1,
+      "new_response_propositions": 11,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 12,
+      "answer_eligible_source_families_added": 8,
+      "independent_witnesses_added": 8,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 4543720,
+          "url": "https://he.chabad.org/library/article_cdo/aid/4543720",
+          "reason": "העמוד נפתח אך הציג מעטפת פרסום/מטא־נתונים ללא גוף ברכה קריא; לא נעשה שימוש במידע הכותרת כראיה ולא בוצע ניסיון עקיפה."
+        }
+      ],
+      "metadata_only_candidate_count": 0,
+      "excluded_candidate_count": 0,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1033,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3070
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1041,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3082
+      },
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "new_aids": [
+        2989153,
+        2989320,
+        2989243,
+        4304434,
+        5959845,
+        2988989,
+        5990037,
+        5989929
+      ],
+      "enriched_aids": [
+        5959840
+      ],
+      "rechecked_aids": [
+        2989386
+      ],
+      "blocked_aids": [
+        4543720
+      ],
+      "excluded_aids": [],
+      "language_distribution": {
+        "Hebrew": 8
+      },
+      "original_language_distribution": {
+        "Hebrew": 8
+      },
+      "source_type_distribution": {
+        "published_unedited_hebrew_sicha_transcript": 7,
+        "published_hebrew_farbrengen_report": 1
+      },
+      "translations_counted_as_independent_witnesses": 0,
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "publisher": "BeitChabad / he.chabad.org",
+        "accessible_item_level_bodies": 10,
+        "body_text_inspected": true,
+        "aids": [
+          2989153,
+          2989320,
+          2989243,
+          4304434,
+          5959845,
+          2988989,
+          5990037,
+          5989929,
+          5959840,
+          2989386
+        ],
+        "notes": "לאחר AID 4543720 שלא הציג גוף טקסט, נפתחו עשרה גופי פרסום חלופיים; הפרופוזיציות נגזרו מהמקטעים שנבדקו בפועל ולא מכותרות או מתוצאות חיפוש."
+      },
+      "deduplication_check": {
+        "new_aids_unique": true,
+        "new_source_urls_unique": true,
+        "new_evidence_families_unique": true,
+        "unique_new_evidence_families": 8,
+        "same_family_memberships": 0,
+        "duplicate_alias_identities": 0,
+        "translations_counted_as_independent_witnesses": 0,
+        "scan_only_verification_used": 0,
+        "checked_against": "Current content-review queue; all 47 manual content-research batches 055–105; all 12 bulk-indexed item files; data/items path inventory and exact AID/source-page checks. AID 5959840 was found in batch 101 and enriched there in place; AID 2989386 was found in batch 101 and rechecked without a duplicate. Full canonical item-content scan is completed only by reconciliation.",
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true
+      },
+      "existing_identity_updates": [
+        {
+          "aid": 5959840,
+          "id": "sicha-5728-24-sivan-shelach-aid5959840",
+          "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+          "evidence_family_id": "sicha-5728-24-sivan-shelach-aid5959840",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 5959840, פתיחת השיחה שורות 171–177."
+        }
+      ],
+      "existing_identity_rechecks": [
+        {
+          "aid": 2989386,
+          "id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+          "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+          "evidence_family_id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+          "result": "גוף הרישום נפתח ונבדק מחדש; הפרופוזיציה הקיימת מכסה את הקטע הרלוונטי בשורות 168–170, ולכן לא נוספה פרופוזיציה ולא נוצרה זהות כפולה."
+        }
+      ]
     }
   ],
   "earlier_manual_web_review_12": {
@@ -2267,83 +2487,138 @@
     },
     "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
   },
-  "next_action": "Reconcile pending batches 099–105, run test_content_readiness.mjs and the answer-quality/hourly corpus gates, then verify Pages deployment.",
+  "next_action": "Run deterministic full-index reconciliation for pending manual batches 099–106, then run content-readiness and deep researcher claim-citation gates.",
   "last_manual_web_review": {
-    "batch_id": "105",
-    "batch_file": "data/items/content-research-batch-105-2026-11-15.json",
-    "title": "Batch 105 — Hebrew, English and Yiddish source-body review",
-    "reviewed_at": "2026-11-15T23:24:59+02:00",
+    "batch_id": "106",
+    "batch_file": "data/items/content-research-batch-106-2026-11-16.json",
+    "title": "Batch 106 — Hebrew Sichos and farbrengen report; in-place enrichment",
+    "reviewed_at": "2026-11-16T00:28:38+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending",
-    "reviewed_item_count": 16,
-    "source_bodies_inspected": 16,
-    "source_body_pages_opened": 16,
+    "reviewed_item_count": 11,
+    "source_bodies_inspected": 10,
+    "source_body_pages_opened": 10,
     "metadata_only_items_rechecked": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 14,
+    "new_source_identities": 8,
     "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 25,
-    "existing_response_propositions_added": 2,
-    "total_new_paraphrase_entries": 27,
-    "answer_eligible_source_families_added": 13,
-    "independent_witnesses_added": 14,
+    "existing_identities_rechecked": 1,
+    "new_response_propositions": 11,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 12,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 8,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 2,
-    "excluded_candidate_count": 1,
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4543720,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4543720",
+        "reason": "העמוד נפתח אך הציג מעטפת פרסום/מטא־נתונים ללא גוף ברכה קריא; לא נעשה שימוש במידע הכותרת כראיה ולא בוצע ניסיון עקיפה."
+      }
+    ],
+    "metadata_only_candidate_count": 0,
+    "excluded_candidate_count": 0,
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
     "scan_only_verification_used": false,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1020,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3043
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1033,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3070
     },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1041,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3082
+    },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
     "new_aids": [
-      2216588,
-      2988982,
-      2989391,
-      3315445,
-      4279870,
-      4279872,
-      4279873,
-      4280036,
-      4280037,
-      4280038,
-      4280039,
-      4304374,
-      4304375,
-      5959941
+      2989153,
+      2989320,
+      2989243,
+      4304434,
+      5959845,
+      2988989,
+      5990037,
+      5989929
     ],
     "enriched_aids": [
-      2988877
+      5959840
+    ],
+    "rechecked_aids": [
+      2989386
     ],
     "blocked_aids": [
-      4666220,
-      4783876
+      4543720
     ],
-    "excluded_aids": [
-      4279874
-    ],
+    "excluded_aids": [],
     "language_distribution": {
-      "Hebrew": 12,
-      "English": 1,
-      "Yiddish": 1
+      "Hebrew": 8
     },
     "original_language_distribution": {
-      "Hebrew": 12,
-      "English": 1,
-      "Yiddish": 1
+      "Hebrew": 8
     },
-    "translations_counted_as_independent_witnesses": 0
+    "source_type_distribution": {
+      "published_unedited_hebrew_sicha_transcript": 7,
+      "published_hebrew_farbrengen_report": 1
+    },
+    "translations_counted_as_independent_witnesses": 0,
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "BeitChabad / he.chabad.org",
+      "accessible_item_level_bodies": 10,
+      "body_text_inspected": true,
+      "aids": [
+        2989153,
+        2989320,
+        2989243,
+        4304434,
+        5959845,
+        2988989,
+        5990037,
+        5989929,
+        5959840,
+        2989386
+      ],
+      "notes": "לאחר AID 4543720 שלא הציג גוף טקסט, נפתחו עשרה גופי פרסום חלופיים; הפרופוזיציות נגזרו מהמקטעים שנבדקו בפועל ולא מכותרות או מתוצאות חיפוש."
+    },
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "unique_new_evidence_families": 8,
+      "same_family_memberships": 0,
+      "duplicate_alias_identities": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "scan_only_verification_used": 0,
+      "checked_against": "Current content-review queue; all 47 manual content-research batches 055–105; all 12 bulk-indexed item files; data/items path inventory and exact AID/source-page checks. AID 5959840 was found in batch 101 and enriched there in place; AID 2989386 was found in batch 101 and rechecked without a duplicate. Full canonical item-content scan is completed only by reconciliation.",
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true
+    },
+    "existing_identity_updates": [
+      {
+        "aid": 5959840,
+        "id": "sicha-5728-24-sivan-shelach-aid5959840",
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "evidence_family_id": "sicha-5728-24-sivan-shelach-aid5959840",
+        "existing_propositions_before": 2,
+        "propositions_added": 1,
+        "total_propositions_after": 3,
+        "locator": "he.chabad.org AID 5959840, פתיחת השיחה שורות 171–177."
+      }
+    ],
+    "existing_identity_rechecks": [
+      {
+        "aid": 2989386,
+        "id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "evidence_family_id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+        "result": "גוף הרישום נפתח ונבדק מחדש; הפרופוזיציה הקיימת מכסה את הקטע הרלוונטי בשורות 168–170, ולכן לא נוספה פרופוזיציה ולא נוצרה זהות כפולה."
+      }
+    ]
   }
 }
