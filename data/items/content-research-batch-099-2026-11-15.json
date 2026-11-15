@@ -4,8 +4,8 @@
   "generated": "2026-11-15",
   "reviewed_at": "2026-11-15T13:55:00+02:00",
   "title": "Nine new Hebrew/English source identities, one in-place enrichment, and two existing-identity rechecks",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending",
+  "status": "reconciled_with_variance",
+  "reconciliation_status": "reconciled_with_variance",
   "reviewed_item_count": 12,
   "source_bodies_inspected": 12,
   "source_body_pages_opened": 12,
@@ -80,13 +80,21 @@
     "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2943
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
-  "source_body_inspection_method": "Public web search used only to discover candidate pages; direct public page opens were used to inspect body text. One existing Igrot Kodesh identity was rechecked against user-supplied PDF page 464/553 rendered as an image. No crawler retry, no access-control bypass, no search-extract content, and no full copyrighted text copied.",
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 969,
+    "content_verified_unique_sources": 853,
+    "answer_eligible_propositions": 2941
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": -1,
+    "content_verified_unique_sources": -17,
+    "answer_eligible_propositions": -2
+  },
+  "source_body_inspection_method": "Public item-level bodies were inspected for the nine new identities. The existing volume XIII identity was checked only against the user-supplied volume index/scan locator (PDF p.464/553, printed p.תכה); this confirms identity and page location only, not letter content.",
   "crawler_retry": false,
   "access_control_bypassed": false,
   "full_text_copied": false,
-  "scan_only_verification_used": false,
+  "scan_only_verification_used": true,
   "translations_added": 0,
   "translations_counted_as_independent_witnesses": 0,
   "fallback_source_attempted": true,
@@ -104,7 +112,7 @@
       "source": "User-provided Library PDF אגרות קודש יג.pdf",
       "page": "PDF page 464/553; printed page תכה",
       "identity": "id:igrot-kodesh-v13-דתרפא",
-      "result": "Existing identity body and secretariat closing visually rechecked; no new proposition added."
+      "result": "Only bibliographic identity and printed-page location were checked; no letter-body content or signature was treated as inspected."
     },
     {
       "source": "Existing Chabad.org item pages",
@@ -247,7 +255,7 @@
     {
       "identity": "id:igrot-kodesh-v13-דתרפא",
       "canonical_file": "data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json",
-      "note": "User-provided publisher PDF page 464/553 (printed p. תכה) visually inspected. The letter body and secretary closing were checked; no new proposition or family created because the existing identity is already answerable in the readiness test."
+      "note": "Only the bibliographic identity and printed-page locator were verified from the user-supplied volume index/scan. The letter body and signature were not used as content evidence; the duplicate content record is demoted to metadata-only."
     }
   ],
   "deduplication_check": {
@@ -279,8 +287,15 @@
       1695044,
       2126206
     ],
-    "full_index_reconciliation": "Pending CI corpus-wide reconciliation. The generated public search index is too large for direct retrieval in this session; do not treat the pre-CI duplicate check as a complete corpus scan.",
-    "translation_rule": "Any translation or reprint of the same source remains in the same Evidence Family and is not an independent witness."
+    "full_index_reconciliation": "Pending final branch CI after metadata-only correction; the public index and uniqueness assertion must confirm exactly one answer-ineligible identity.",
+    "translation_rule": "Any translation or reprint of the same source remains in the same Evidence Family and is not an independent witness.",
+    "duplicate_volume_xiii_identity": {
+      "identity": "id:igrot-kodesh-v13-דתרפא",
+      "canonical_file": "data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json",
+      "duplicate_file": "data/items/library-igrot-kodesh-v13-content-2026-11-05-032.json",
+      "evidence_family_id": "london-chassidus-class-growth-still-insufficient-for-dissemination",
+      "action": "one bibliographic identity retained; duplicate content record linked; scan-only locator does not create content evidence"
+    }
   },
   "limitations": [
     "Nine new sources remain Parsed because only bounded body passages were inspected; full source context, incoming correspondence, manuscripts or audio were not independently checked.",
@@ -288,9 +303,10 @@
     "AID 2987732 quotes a letter by the Previous Rebbe; the quoted statement is not attributed to the Rebbe as author.",
     "AIDs 1695044 and 2126206 are secondary retrospective testimonies, not primary transcripts of the Rebbe's words.",
     "Twelve candidate pages did not expose readable item-level body text and were excluded.",
-    "No new Yiddish body was accessible in this run; the corpus's earlier Yiddish material remains in its existing Evidence Families."
+    "No new Yiddish body was accessible in this run; the corpus's earlier Yiddish material remains in its existing Evidence Families.",
+    "The volume XIII scan/index for ד׳תרפא verifies bibliographic identity and printed-page location only; it does not verify letter content, signature or wording. The earlier content propositions were removed."
   ],
-  "note": "Nine new AID identities, one existing AID enriched in place, two existing identities rechecked. The public 403/summary-shell path was not retried through the crawler; alternative accessible publisher pages and the permitted user PDF were used.",
+  "note": "Nine new AID identities, one existing AID enriched in place, two existing identities rechecked. The public 403/summary-shell path was not retried through the crawler; alternative accessible publisher pages and the permitted user PDF were used. The volume XIII scan-only item was corrected to metadata-only; its prior three propositions no longer count. Corrected post-batch-099 totals are 969 answer-eligible families, 853 content-Verified families and 2,941 propositions; variance is recorded rather than hidden.",
   "records": [
     {
       "id": "chabad-letter-5413126",
@@ -1262,6 +1278,16 @@
       "summary_researcher": "לואיז הגר מספרת כי חברותה הקרובה עם הרבנית נשענה על אמון ודיסקרטיות, וכי לפני שדיברה עליה בפומבי שוחחה עם בעלה וביקשה את רשות הרבי; העדות מתארת את שיקולי הפרטיות של הדוברת, לא הוראה הלכתית או תורנית של הרבי.",
       "content_review_batch_id": "099",
       "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    }
+  ],
+  "scan_only_metadata_rechecks": 1,
+  "metadata_only_corrections": [
+    {
+      "identity": "id:igrot-kodesh-v13-דתרפא",
+      "canonical_file": "data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json",
+      "duplicate_file": "data/items/library-igrot-kodesh-v13-content-2026-11-05-032.json",
+      "action": "Duplicate content record demoted to Linked/metadata-only; the index/scan establishes only identity and page location; no propositions retained.",
+      "evidence_family_id": "london-chassidus-class-growth-still-insufficient-for-dissemination"
     }
   ]
 }
