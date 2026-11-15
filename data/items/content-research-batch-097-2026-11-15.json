@@ -1,16 +1,16 @@
 {
   "batch_id": "097",
   "generated": "2026-11-15T11:20:00+02:00",
-  "reviewed_item_count": 8,
-  "source_bodies_inspected": 8,
-  "source_body_pages_opened": 8,
+  "reviewed_item_count": 9,
+  "source_bodies_inspected": 9,
+  "source_body_pages_opened": 9,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 8,
-  "existing_identities_enriched": 0,
+  "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
   "new_response_propositions": 11,
-  "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 11,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 12,
   "answer_eligible_source_families_added": 8,
   "independent_witnesses_added": 8,
   "non_independent_presentations_added": 0,
@@ -23,7 +23,7 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 956,
     "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2917
+    "answer_eligible_propositions": 2918
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -36,7 +36,7 @@
   ],
   "language_distribution": {
     "Hebrew": 7,
-    "Yiddish": 1
+    "Yiddish": 2
   },
   "source_type_distribution": {
     "published_daily_anthology_original_language_entry": 8
@@ -51,7 +51,9 @@
     3316710,
     3316719
   ],
-  "enriched_aids": [],
+  "enriched_aids": [
+    3316690
+  ],
   "reviewed_aids": [
     3316648,
     3316664,
@@ -60,7 +62,8 @@
     3316679,
     3316684,
     3316710,
-    3316719
+    3316719,
+    3316690
   ],
   "duplicate_aliases_linked": 0,
   "translations_counted_as_independent_witnesses": 0,
@@ -84,9 +87,12 @@
     "translations_added": 0,
     "scan_only_verification_used": 0,
     "duplicate_alias_identities": 0,
-    "checked_against": "Current content-review queue; bulk-indexed inventories; item-level content-research batches 080–096, including existing Hayom Yom identities in batches 091 and 096. The reconciliation script scans all canonical item JSON files and records any additional AID collision."
+    "checked_against": "Current content-review queue; bulk-indexed inventories; item-level content-research batches 080–096, including existing Hayom Yom identities in batches 091 and 096. The reconciliation script scans all canonical item JSON files and records any additional AID collision.",
+    "enriched_existing_aids": [
+      3316690
+    ]
   },
-  "method": "Manual public web/open inspection of eight Chabad.org/TheRebbe.org item-level Hayom Yom bodies. All propositions derive from opened original Hebrew/Yiddish body text; search results were used only for navigation, with zero search extracts used as content. Same-page English translations and publisher commentary were excluded as independent evidence.",
+  "method": "Manual public web/open inspection of nine Chabad.org/TheRebbe.org item bodies: eight new dated Hayom Yom entries plus a focused reinspection of existing AID 3316690. All propositions derive from opened original Hebrew/Yiddish body text; search results were used only for navigation, with zero search extracts used as content. Same-page English translations and publisher commentary were excluded as independent evidence.",
   "limitations": [
     "All eight records remain Parsed with partial context; no promotion to Verified.",
     "Hayom Yom is a compiled anthology. Embedded sayings are attributed to the earlier figures named in the entry and are not automatically the Rebbe's own words.",
@@ -137,7 +143,7 @@
         "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור בעברית או ביידיש מוצג לצד נוסח אנגלי מקביל.",
         "textual_status": "הקטע המקורי נפתח ונבדק במיקומים Chabad.org/TheRebbe.org AID 3316648, original Hebrew body line 246. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
         "editorial_scope": "הפרופוזיציות מבוססות רק על הקטע המקורי המצוין ב-locator; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316648/jewish/11-Tammuz.htm",
         "accessed": "2026-11-15"
       },
@@ -242,7 +248,7 @@
         "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור בעברית או ביידיש מוצג לצד נוסח אנגלי מקביל.",
         "textual_status": "הקטע המקורי נפתח ונבדק במיקומים Chabad.org/TheRebbe.org AID 3316664, original Hebrew body lines 259–259. Chabad.org/TheRebbe.org AID 3316664, original Hebrew body lines 260–261. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
         "editorial_scope": "הפרופוזיציות מבוססות רק על הקטע המקורי המצוין ב-locator; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316664/jewish/13-Tammuz.htm",
         "accessed": "2026-11-15"
       },
@@ -347,7 +353,7 @@
         "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור בעברית או ביידיש מוצג לצד נוסח אנגלי מקביל.",
         "textual_status": "הקטע המקורי נפתח ונבדק במיקומים Chabad.org/TheRebbe.org AID 3316666, original Hebrew body lines 255–256. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
         "editorial_scope": "הפרופוזיציות מבוססות רק על הקטע המקורי המצוין ב-locator; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316666/jewish/14-Tammuz.htm",
         "accessed": "2026-11-15"
       },
@@ -451,7 +457,7 @@
         "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור בעברית או ביידיש מוצג לצד נוסח אנגלי מקביל.",
         "textual_status": "הקטע המקורי נפתח ונבדק במיקומים Chabad.org/TheRebbe.org AID 3316676, original Hebrew body line 256. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
         "editorial_scope": "הפרופוזיציות מבוססות רק על הקטע המקורי המצוין ב-locator; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316676/jewish/15-Tammuz.htm",
         "accessed": "2026-11-15"
       },
@@ -554,7 +560,7 @@
         "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור בעברית או ביידיש מוצג לצד נוסח אנגלי מקביל.",
         "textual_status": "הקטע המקורי נפתח ונבדק במיקומים Chabad.org/TheRebbe.org AID 3316679, original Hebrew body line 256. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
         "editorial_scope": "הפרופוזיציות מבוססות רק על הקטע המקורי המצוין ב-locator; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316679/jewish/16-Tammuz.htm",
         "accessed": "2026-11-15"
       },
@@ -660,7 +666,7 @@
         "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור בעברית או ביידיש מוצג לצד נוסח אנגלי מקביל.",
         "textual_status": "הקטע המקורי נפתח ונבדק במיקומים Chabad.org/TheRebbe.org AID 3316684, original Hebrew body lines 256–258. Chabad.org/TheRebbe.org AID 3316684, original Hebrew body lines 259–260. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
         "editorial_scope": "הפרופוזיציות מבוססות רק על הקטע המקורי המצוין ב-locator; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316684/jewish/17-Tammuz-Shivah-Asar-BeTammuz.htm",
         "accessed": "2026-11-15"
       },
@@ -767,7 +773,7 @@
         "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור בעברית או ביידיש מוצג לצד נוסח אנגלי מקביל.",
         "textual_status": "הקטע המקורי נפתח ונבדק במיקומים Chabad.org/TheRebbe.org AID 3316710, original Hebrew body line 246. Chabad.org/TheRebbe.org AID 3316710, original Hebrew body lines 249–250. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
         "editorial_scope": "הפרופוזיציות מבוססות רק על הקטע המקורי המצוין ב-locator; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316710/jewish/21-Tammuz.htm",
         "accessed": "2026-11-15"
       },
@@ -872,7 +878,7 @@
         "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור בעברית או ביידיש מוצג לצד נוסח אנגלי מקביל.",
         "textual_status": "הקטע המקורי נפתח ונבדק במיקומים Chabad.org/TheRebbe.org AID 3316719, original Yiddish body line 245. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
         "editorial_scope": "הפרופוזיציות מבוססות רק על הקטע המקורי המצוין ב-locator; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316719/jewish/22-Tammuz.htm",
         "accessed": "2026-11-15"
       },
@@ -936,5 +942,16 @@
       "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316719; הקטע המקורי בשפה Yiddish נבדק במיקומים Chabad.org/TheRebbe.org AID 3316719, original Yiddish body line 245. הפרפרזות מוגבלות לקטע המקורי המצוין. הנוסח האנגלי המקביל באותו עמוד הוא הצגה נגזרת של אותו ערך ואינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים שעליהם נשען הערך; ההקשר נשאר חלקי. הרשומה נשארת Parsed ואינה מקודמת ל-Verified.",
       "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316719; הקטע המקורי בשפה Yiddish נבדק במיקומים Chabad.org/TheRebbe.org AID 3316719, original Yiddish body line 245. הפרפרזות מוגבלות לקטע המקורי המצוין. הנוסח האנגלי המקביל באותו עמוד הוא הצגה נגזרת של אותו ערך ואינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים שעליהם נשען הערך; ההקשר נשאר חלקי. הרשומה נשארת Parsed ואינה מקודמת ל-Verified."
     }
-  ]
+  ],
+  "existing_identity_updates": [
+    {
+      "identity": "aid:3316690",
+      "aid": 3316690,
+      "id": "hayom-yom-3316690",
+      "evidence_family_id": "hayom-yom-entry-18-tammuz-aid-3316690",
+      "new_response_propositions": 1,
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316690, original Yiddish body line 256; same-page English translation line 259."
+    }
+  ],
+  "status": "pending_reconciliation"
 }

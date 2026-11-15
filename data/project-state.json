@@ -96,7 +96,7 @@
       "expected_after": {
         "answer_eligible_unique_sources": 956,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2917
+        "answer_eligible_propositions": 2918
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -169,12 +169,12 @@
       "batch_id": "097",
       "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
       "generated": "2026-11-15",
-      "reviewed_item_count": 8,
-      "source_bodies_inspected": 8,
-      "source_body_pages_opened": 8,
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 9,
+      "source_body_pages_opened": 9,
       "search_extracts_used_as_content": 0,
       "new_source_identities": 8,
-      "existing_identities_enriched": 0,
+      "existing_identities_enriched": 1,
       "existing_identities_rechecked": 0,
       "new_response_propositions": 11,
       "answer_eligible_source_families_added": 8,
@@ -186,7 +186,7 @@
       ],
       "language_distribution": {
         "Hebrew": 7,
-        "Yiddish": 1
+        "Yiddish": 2
       },
       "source_type_distribution": {
         "published_daily_anthology_original_language_entry": 8
@@ -201,7 +201,9 @@
         3316710,
         3316719
       ],
-      "enriched_aids": [],
+      "enriched_aids": [
+        3316690
+      ],
       "blocked_candidate_count": 1,
       "blocked_candidates": [
         {
@@ -224,15 +226,28 @@
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 956,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2917
+        "answer_eligible_propositions": 2918
       },
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "status": "pending_reconciliation"
+      "status": "pending_reconciliation",
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 12,
+      "reviewed_aids": [
+        3316648,
+        3316664,
+        3316666,
+        3316676,
+        3316679,
+        3316684,
+        3316710,
+        3316719,
+        3316690
+      ]
     },
     "last_run_note": "Batch 096: nine new original-language Hayom Yom item pages were opened; one existing AID 1273962 letter identity was enriched with three precise proposition locators. AID 4666220 returned an Internal Error, so nine accessible item pages were used as same-run fallback. All nine new entries remain Parsed; no translations counted independently.",
     "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 returned Internal Error without readable source text; nine other directly opened Hayom Yom pages were used as same-run fallback.",
+    "last_batch_blocked_reason": "AID 4666220 redirected to a rewritten Torah Texts summary shell without readable item-level body; excluded and replaced with accessible public Hayom Yom bodies.",
     "next_work": [
       "Reconcile batches 090–096 on the exact new main commit; verify actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions rather than relying on expected values.",
       "Run test_content_readiness.mjs, question-specific retrieval, answer synthesis, citation integrity, answer-quality and workflow-write-safety checks on the exact commit.",
