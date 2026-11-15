@@ -1983,3 +1983,72 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='5100603'));
  }else assert.equal(m.research,undefined);
 }
+
+
+// Batch 098: nine new identities, one in-place enrichment, and mixed-language evidence.
+const batch098Path='data/items/content-research-batch-098-2026-11-15.json';
+const batch098Data=JSON.parse(await readFile(new URL(batch098Path,root)));
+assert.equal(batch098Data.records.length,9);
+assert.equal(batch098Data.reviewed_item_count,10);
+assert.equal(batch098Data.source_bodies_inspected,10);
+assert.equal(batch098Data.new_source_identities,9);
+assert.equal(batch098Data.existing_identities_enriched,1);
+assert.equal(batch098Data.new_response_propositions,10);
+assert.equal(batch098Data.existing_response_propositions_added,1);
+assert.equal(batch098Data.answer_eligible_source_families_added,9);
+assert.equal(batch098Data.content_verified_unique_sources_added,0);
+assert.equal(batch098Data.blocked_candidate_count,2);
+assert.deepEqual(batch098Data.metrics_expected_after,{answer_eligible_unique_sources:965,content_verified_unique_sources:870,answer_eligible_propositions:2929});
+assert.equal(new Set(batch098Data.new_aids.map(String)).size,9);
+assert.equal(new Set(batch098Data.records.map(r=>String(r.aid))).size,9);
+assert.equal(new Set(batch098Data.records.map(r=>r.evidence_family_id)).size,9);
+assert.equal(new Set(batch098Data.records.map(r=>r.source_url)).size,9);
+assert.equal(batch098Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch098Data.crawler_retry,false);
+assert.equal(batch098Data.access_control_bypassed,false);
+assert.equal(batch098Data.full_text_copied,false);
+assert.equal(batch098Data.scan_only_verification_used,false);
+assert.equal(batch098Data.deduplication_check.full_index_scan_pending_reconciliation,true);
+const batch098Languages=batch098Data.records.reduce((a,r)=>(a[r.language]=(a[r.language]||0)+1,a),{});
+assert.deepEqual(batch098Languages,{Hebrew:4,Yiddish:4,English:1});
+for(const r of batch098Data.records){
+ const aid=String(r.aid);
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-098 AID '+aid+' must have exactly one canonical identity');
+ const e=matches[0];
+ assert(e.has_content_evidence,'batch-098 AID '+aid+' must be answer eligible');
+ assert.equal(e.canonical_file,batch098Path);
+ assert.equal(e.status,'Parsed','excerpt-only new identities must remain Parsed');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert.equal(e.context_status,'partial');
+ assert(e.evidence_family_id);
+}
+const enriched3316701=idx.entries.find(e=>sourceAID(e)==='3316701');
+assert(enriched3316701&&enriched3316701.canonical_file==='data/items/content-research-batch-096-2026-11-15.json');
+assert.equal(enriched3316701.evidence_family_id,'hayom-yom-tammuz-20-aid3316701');
+assert.equal(enriched3316701.response_propositions.length,2,'AID 3316701 must be enriched in place without changing its Evidence Family');
+assert(enriched3316701.response_proposition_locators.some(l=>String(l).includes('line 256')));
+assert(batch098Data.existing_identity_updates.some(x=>String(x.aid)==='3316701'));
+const blocked4666220=batch098Data.blocked_candidates.find(x=>String(x.aid)==='4666220');
+const blockedLibrary=batch098Data.blocked_candidates.find(x=>String(x.aid)==='1200720068');
+assert(blocked4666220&&blockedLibrary,'both blocked source attempts must be recorded');
+
+const tzedakahStudyQuestion='מה נכתב על צדקה, יגיעה בלימוד תורה והזמן שיש להקדיש ללימוד?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,tzedakahStudyQuestion,{mode});
+ assert(m.answerable,mode+': the inspected English recipient testimony must support a bounded answer');
+ assert(m.sources.some(e=>sourceAID(e)==='259799'),mode+': the English correspondence testimony must be retrievable');
+ assert(m.claims.length>=1&&m.claims.every(c=>c.source_numbers.length),mode+': the claim must retain claim-level source numbers');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': the claim must be entailed by its own source');
+ assert(m.context_boundary.every(x=>x.valid),mode+': personal correspondence context must remain witness-local');
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='259799'));
+  assert.equal(m.research.claim_source_map.length,m.claims.length);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
+ }else assert.equal(m.research,undefined);
+}
