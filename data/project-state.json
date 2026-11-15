@@ -35,7 +35,7 @@
     "content_verified_unique_sources": 852,
     "answer_eligible_propositions": 2832
   },
-  "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
+  "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes. Main-branch counts remain the last committed snapshot until the corrected batch 100 reconciliation is committed; do not substitute expected totals for measured public metrics.",
   "verified_promotions_latest_run": 8,
   "active_blocks": [
     "No permission for bulk copying of protected corpora; only bounded non-verbatim paraphrases and locators are stored.",
@@ -89,14 +89,14 @@
       "actual_after": null,
       "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 961,
-        "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2933
+        "answer_eligible_unique_sources": 969,
+        "content_verified_unique_sources": 853,
+        "answer_eligible_propositions": 2941
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 970,
-        "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2943
+        "answer_eligible_unique_sources": 978,
+        "content_verified_unique_sources": 853,
+        "answer_eligible_propositions": 2951
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -107,27 +107,31 @@
         "093",
         "094",
         "095",
-        "096"
+        "096",
+        "097",
+        "098",
+        "099",
+        "100"
       ]
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_096",
+      "run_status": "pending_after_batch_100",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 096 adds nine Parsed original-language Hayom Yom entries and precise locators to AID 1273962. The early-childhood correspondence retrieval regression is being repaired with a proposition-level category gate. No test is marked passed until a commit-bound Actions result is observed."
+      "note": "Batch 100 adds nine Parsed original-language Hayom Yom entries and one in-place enrichment. The volume XIII scan-only identity was corrected to metadata-only. No test is marked passed until commit-bound Actions confirms the regenerated corpus."
     },
     "publication": {
-      "status": "pending_after_batch_096",
+      "status": "pending_after_batch_100",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15",
-    "note": "Batch 099 is content-reviewed but not yet reconciled. The preceding CI run exposed a status parser bug: prose saying 'no promotion to Verified' was counted as Verified. The parser is corrected in this branch; the next CI reconciliation must establish the actual totals. The committed public metrics remain the last committed snapshot until reconciliation is committed."
+    "note": "The committed main-branch metrics remain 900 / 852 / 2,832 until reconciliation is committed. The corrected branch baseline after batch 099 is 969 / 853 / 2,941; expected after batch 100 is 978 / 853 / 2,951. These are provisional until the branch CI and main hourly reconciliation confirm them."
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -163,43 +167,43 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "099",
+    "current_batch": "100",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "099",
+    "last_completed_batch": "100",
     "last_batch_summary": {
-      "batch_id": "2026-11-15-content-batch-099",
+      "batch_id": "2026-11-15-content-batch-100",
       "status": "pending_reconciliation",
-      "reviewed_item_count": 12,
-      "source_bodies_inspected": 12,
+      "reviewed_item_count": 10,
+      "source_bodies_inspected": 10,
       "new_source_identities": 9,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 2,
+      "existing_identities_rechecked": 0,
       "new_response_propositions": 9,
       "existing_response_propositions_added": 1,
       "answer_eligible_source_families_added": 9,
       "content_verified_unique_sources_added": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 961,
-        "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2933
+        "answer_eligible_unique_sources": 969,
+        "content_verified_unique_sources": 853,
+        "answer_eligible_propositions": 2941
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 970,
-        "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2943
+        "answer_eligible_unique_sources": 978,
+        "content_verified_unique_sources": 853,
+        "answer_eligible_propositions": 2951
       },
       "metrics_after_actual": null,
-      "note": "Baseline is the expected post-batch-098 total after correcting the Verified-status false positive; CI must confirm before the dashboard is treated as current."
+      "note": "Nine new original-language Hayom Yom entries and one existing identity enriched. AID 4666220 was blocked and replaced by nine accessible item bodies. AID ד׳תרפא scan-only duplicate was demoted to metadata-only; branch reconciliation and CI must confirm totals."
     },
-    "last_run_note": "Batch 098: five new Hebrew Igrot Kodesh letter bodies and nine original-language Hayom Yom pages were opened. Twelve propositions were added to five new letter identities and three further paraphrases enriched existing Hayom Yom identities in place. Seven inaccessible candidate pages were excluded; alternative public bodies were inspected in the same run. All new and enriched items remain Parsed/partial; no Verified promotions.",
-    "last_batch_blocked_count": 26,
-    "last_batch_blocked_reason": "Twenty-six candidate pages (eleven Hayom Yom pages, eight Chabad Library pages and seven Igrot Kodesh pages) did not expose readable item-level bodies; they were excluded and replaced by five accessible Hebrew letters plus nine Hayom Yom body reviews. No access-control bypass or crawler retry.",
+    "last_run_note": "Batch 100: nine new original-language Hayom Yom entries (Hebrew and Yiddish) and one in-place enrichment of AID 3316748. AID 4666220 returned Internal Error; nine accessible pages were inspected as same-run alternatives. The volume XIII identity ד׳תרפא is retained as bibliographic identity/page locator only; the duplicate content record and its propositions were removed.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 4666220 returned Internal Error with no readable item-level body; it was excluded, no crawler retry or access bypass was attempted, and nine accessible original-language Hayom Yom pages were inspected in the same run.",
     "next_work": [
-      "Reconcile batches 090–098 against the canonical corpus and confirm exact unique Evidence Family and answer_eligible_unique_sources counts; do not rely on expected values.",
+      "Run branch CI and the full canonical reconciliation; confirm the exact post-batch-100 Evidence Family and answer_eligible_unique_sources counts, including the metadata-only volume XIII correction.",
       "Run test_content_readiness.mjs, claim-level citation entailment, context-boundary checks, answer-quality and workflow-write-safety checks on the exact merged commit.",
-      "Verify Actions, the public-search index, metrics and GitHub Pages publication after reconciliation.",
+      "After merge, verify Actions, regenerated public-search index and public metrics, then confirm GitHub Pages publication.",
       "Continue original-language Hebrew/Yiddish source inspection across distinct documentary classes; enrich identities in place and link true duplicates to one Evidence Family.",
-      "Do not retry the known HTTP 403 acquisition crawler, bypass access controls, or promote excerpt-only Parsed items to Verified."
+      "Do not retry the known HTTP 403 acquisition crawler, bypass access controls, treat scan keys as content evidence, or promote excerpt-only Parsed items to Verified."
     ],
     "last_reconciliation": {
       "batch_id": "089",
