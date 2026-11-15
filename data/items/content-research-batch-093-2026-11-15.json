@@ -4,31 +4,29 @@
   "generated": "2026-11-15T05:00:00+02:00",
   "collection": "Likkutei Sichos original-language excerpts and English correspondence transcription",
   "source_authority": "Chabad.org / TheRebbe.org public item-level pages",
-  "review_method": "Direct web.open inspection of nine new item pages and one existing Hebrew letter page. Eight Likkutei Sichos pages supplied original Hebrew/Yiddish passages alongside an English companion rendering; one English letter page supplied a publisher transcription. Only bounded non-verbatim paraphrases were retained.",
+  "review_method": "Direct web.open inspection of eight new Likkutei Sichos item pages with original Hebrew/Yiddish passages, plus two existing item-page reopens (AID 5054491 and AID 2190037). AID 2190037 was found in the full public index as an existing Verified identity in batch 070 and was removed from this batch's new records. AID 6436855 was subsequently enriched in place with a second distinct original-Hebrew proposition. Companion English renderings were not counted as separate witnesses.",
   "records_reviewed": 11,
   "source_bodies_inspected": 10,
   "source_body_pages_opened": 10,
   "search_extracts_inspected": 0,
-  "new_source_identities": 9,
+  "new_source_identities": 8,
   "existing_identities_enriched": 0,
-  "existing_identities_rechecked": 1,
-  "response_propositions_added": 9,
-  "new_response_propositions": 9,
+  "existing_identities_rechecked": 2,
+  "response_propositions_added": 8,
+  "new_response_propositions": 8,
   "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 9,
-  "answer_eligible_source_families_added": 9,
+  "total_new_paraphrase_entries": 8,
+  "answer_eligible_source_families_added": 8,
   "independent_witnesses_added": 8,
-  "non_independent_presentations_added": 1,
+  "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
-  "evidence_family_count": 9,
+  "evidence_family_count": 8,
   "language_distribution": {
     "Hebrew": 3,
-    "Yiddish": 5,
-    "English": 1
+    "Yiddish": 5
   },
   "source_type_distribution": {
-    "published_likkutei_sichos_original_language_excerpt": 8,
-    "published_english_letter_transcription": 1
+    "published_likkutei_sichos_original_language_excerpt": 8
   },
   "metrics_before": {
     "answer_eligible_unique_sources": 922,
@@ -36,9 +34,9 @@
     "answer_eligible_propositions": 2867
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 931,
+    "answer_eligible_unique_sources": 930,
     "content_verified_unique_sources": 853,
-    "answer_eligible_propositions": 2876
+    "answer_eligible_propositions": 2875
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -52,8 +50,7 @@
     4846181,
     6391815,
     5834915,
-    4772806,
-    2190037
+    4772806
   ],
   "enriched_aids": [],
   "reviewed_aids": [
@@ -77,6 +74,13 @@
       "aid": 5054491,
       "canonical_file": "data/items/content-research-batch-057-2026-11-12.json",
       "result": "The existing three source-grounded propositions already cover the visible Hebrew body lines 288–303. The page was reopened and compared; no additional distinct proposition was added, and the Evidence Family was left unchanged."
+    },
+    {
+      "identity": "aid:2190037",
+      "id": "chabad-letter-2190037",
+      "aid": 2190037,
+      "canonical_file": "data/items/content-research-batch-070-2026-11-13.json",
+      "result": "AID 2190037 already exists as a Verified item in batch 070 with the same publisher URL and Evidence Family pastoral-letter-5723-22-elul-2190037. The duplicate batch-093 presentation was removed; no new identity, family, witness or proposition was created."
     }
   ],
   "identity_alias_audit_targets": [
@@ -88,7 +92,7 @@
       "note": "Previously resolved in batch 092; included only to re-audit the existing alias-to-canonical family assignment. No new identity or proposition is created."
     }
   ],
-  "duplicate_aliases_linked": [],
+  "duplicate_aliases_linked": 0,
   "translations_counted_as_independent_witnesses": 0,
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -97,12 +101,12 @@
   "fallback_source_attempted": true,
   "fallback_source_results": [
     {
-      "source": "Chabad.org/TheRebbe.org — Likkutei Sichos item pages and English correspondence page",
-      "inspected_item_pages": 9,
-      "directly_opened_source_bodies": 9,
+      "source": "Chabad.org / TheRebbe.org — Likkutei Sichos item-level pages",
+      "inspected_item_pages": 8,
+      "directly_opened_source_bodies": 8,
       "original_language_passages": 8,
-      "english_transcription_pages": 1,
-      "result": "Nine new item pages supplied readable body text. Eight original Hebrew/Yiddish excerpts and one English publisher transcription were inspected; all remain Parsed. English companion renderings on the Likkutei Sichos pages were not counted as separate witnesses."
+      "existing_identity_reopens": 2,
+      "result": "Eight new original Hebrew/Yiddish item pages were opened and inspected. Two existing identities were reopened: AID 5054491 had no additional distinct proposition; AID 2190037 was confirmed as an already-canonical Verified item and was not duplicated. AID 6436855 received a second proposition in the subsequent batch 094 enrichment."
     }
   ],
   "blocked_candidate_count": 1,
@@ -114,7 +118,7 @@
       "handling": "Excluded from promotion; no crawler retry and no access-control bypass. Nine other item-level pages were opened in the same run as fallback."
     }
   ],
-  "not_promoted_after_inspection_count": 9,
+  "not_promoted_after_inspection_count": 8,
   "not_promoted_after_inspection": [
     {
       "aid": 6436855,
@@ -147,45 +151,49 @@
     {
       "aid": 4772806,
       "reason": "Only the original Yiddish passage in the published bilingual page was inspected; full volume, recording and manuscript were not examined. Remains Parsed."
-    },
-    {
-      "aid": 2190037,
-      "reason": "The publisher explicitly identifies the visible English text as a transcription and says the original is not held; no comparison with an autograph is possible. Remains Parsed and non-independent."
     }
   ],
   "deduplication_check": {
-    "exact_aid_repository_search_matches": 0,
+    "exact_aid_repository_search_matches": 1,
     "exact_aid_searches": [
-      "6436855",
-      "5245732",
-      "5168552",
-      "6393752",
-      "4846181",
-      "6391815",
-      "5834915",
-      "4772806",
-      "2190037"
+      6436855,
+      5245732,
+      5168552,
+      6393752,
+      4846181,
+      6391815,
+      5834915,
+      4772806,
+      2190037
     ],
     "recent_batch_files_checked": [
       "057",
+      "070",
       "090",
       "091",
       "092"
     ],
-    "full_index_scan_available": false,
+    "full_index_scan_available": true,
+    "public_search_index_blob_scanned": true,
+    "public_search_index_blob_sha": "943a9cbdcb3b7898668243221961ed5eda352433",
+    "public_search_index_entries_scanned": 9122,
+    "existing_aid_matches": [
+      2190037
+    ],
     "source_urls_unique": true,
-    "new_evidence_family_count": 9,
+    "new_evidence_family_count": 8,
     "duplicate_aliases_linked": 0,
+    "existing_identity_rechecks": 2,
     "translations_counted_as_independent_witnesses": 0,
-    "note": "Connector exact-AID searches returned no matches for the nine candidate AIDs. The public search-index file was too large for a full connector scan; the canonical reconciliation across all item files remains authoritative and must confirm unique AID/URL/Evidence Family identity."
+    "note": "The full public-search-index blob was scanned. AID 2190037 already existed in batch 070 as a Verified item with the same URL and Evidence Family, so its duplicate presentation was removed from batch 093. AID 5054491 was rechecked without adding a duplicate proposition. The eight remaining new AIDs were absent from the public index and review queue; their URLs and Evidence Families are unique. Same-page English renderings were not counted as independent witnesses."
   },
   "limitations": [
-    "All eight Likkutei Sichos records are partial original-language excerpts from published bilingual pages; the companion English rendering is not a separate witness.",
-    "AID 2190037 is a publisher transcription; the publisher states that the original is not held and that transcription errors cannot be excluded.",
-    "No manuscript, scan, incoming letter, full printed volume or recording was inspected.",
-    "All nine new records remain Parsed; no content-verified count is added.",
-    "The blocked AID 4666220 shell was not used for content; the same-run fallback consisted of nine other accessible item pages.",
-    "No full copyrighted text was copied; no AI inference is attributed to the Rebbe."
+    "All eight new identities are partial original-language excerpts from published bilingual Likkutei Sichos pages; the companion English renderings are not separate witnesses.",
+    "No manuscript, full printed volume, incoming letter or recording was inspected; all eight new identities remain Parsed.",
+    "AID 2190037 is an existing Verified identity in batch 070 and was not duplicated or counted as a new family.",
+    "AID 5054491 was reopened; its existing propositions already covered the visible Hebrew passage, so no duplicate proposition was added.",
+    "AID 4666220 redirected to a navigation/summary shell and was excluded; no crawler retry or access-control bypass was attempted.",
+    "No full copyrighted text was copied and no AI inference was attributed to the Rebbe."
   ],
   "records": [
     {
@@ -214,7 +222,8 @@
       "context_status": "partial",
       "has_content_evidence": true,
       "response_propositions": [
-        "השיחה מונה את הקהל ואת כתיבת ספר התורה כשתי מצוות העשה האחרונות, אך מבחינה שבפשט הפסוק ״כתבו לכם את השירה״ מתייחס לשירת האזינו ולא לכתיבת ספר תורה; ההבחנה הזאת היא חלק מן הדיון במשמעות מיקום המצוות בסוף התורה."
+        "השיחה מונה את הקהל ואת כתיבת ספר התורה כשתי מצוות העשה האחרונות, אך מבחינה שבפשט הפסוק ״כתבו לכם את השירה״ מתייחס לשירת האזינו ולא לכתיבת ספר תורה; ההבחנה הזאת היא חלק מן הדיון במשמעות מיקום המצוות בסוף התורה.",
+        "בקטע נמסר שמצוות הקהל קשורה להנחיות משה ליהושע לקראת הכניסה לארץ: הקריאה בתורה בפני העם נועדה לעודד שמירת תורה ומצוות בארץ ולחזק גם את הלמידה והיראה של הדור הבא."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -222,7 +231,8 @@
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "Chabad.org/TheRebbe.org AID 6436855, original Hebrew body lines 279–286.",
       "response_proposition_locators": [
-        "Chabad.org/TheRebbe.org AID 6436855, original Hebrew body lines 279–286."
+        "Chabad.org/TheRebbe.org AID 6436855, original Hebrew body lines 279–286.",
+        "Chabad.org/TheRebbe.org AID 6436855, original Hebrew body lines 301–307."
       ],
       "evidence_family_id": "sicha-v34-vayelech-1-aid6436855",
       "parent_evidence_family_id": null,
@@ -231,12 +241,12 @@
         "signature_status": "לא רלוונטי לפרסום שיחה; לא נבדקה חתימה בכתב יד.",
         "source_witness": "Chabad.org/TheRebbe.org, Likkutei Sichos, 34, Vayelech, AID 6436855; original-language excerpt visible on item page.",
         "transmission_type": "דף מו״ל דו-לשוני: קטע מקורי בעברית/יידיש לצד עיבוד אנגלי; רק הקטע המקורי נרשם כעד הטקסטואלי.",
-        "textual_status": "נפתח ונבדק הקטע המקורי בשורות המצוינות ב-locator; לא נבדקו יתר חלקי הכרך, הקלטה או כתב יד.",
-        "editorial_scope": "הפרופוזיציה נגזרה מן הקטע המקורי המצוין ב-locator בלבד. המבוא והנוסח האנגלי באותו עמוד לא נספרו כעדים נפרדים.",
+        "textual_status": "נפתחו ונבדקו שני קטעים מקוריים בעברית בשורות 279–286 ו-301–307; לא נבדקו יתר חלקי הכרך, הקלטה או כתב יד.",
+        "editorial_scope": "שתי הפרופוזיציות נגזרו מן הקטעים המקוריים המצוינים ב-locators בלבד. המבוא והנוסח האנגלי באותו עמוד לא נספרו כעדים נפרדים.",
         "verification_status": "Parsed; source_text_inspected; partial context; no promotion to Verified.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6436855/jewish/Vayelech-Making-the-Past-Present.htm",
         "accessed": "2026-11-15",
-        "verification_scope": "נבדק קטע מקורי Hebrew בדף Chabad.org/TheRebbe.org, AID 6436855, Chabad.org/TheRebbe.org AID 6436855, original Hebrew body lines 279–286.. הפרפרזה בעברית אינה מילולית ומוגבלת לתוכן הקטע המצוין. לא נבדקו כתב היד, ההקלטה, יתר השיחה או מלוא ההקשר בכרך. הנוסח האנגלי באותו עמוד הוא שכבת פרסום מקבילה ולא עד עצמאי נוסף."
+        "verification_scope": "נבדקו שני קטעים מקוריים בעברית בדף Chabad.org/TheRebbe.org AID 6436855: שורות 279–286 ושורות 301–307. שתי הפרפרזות בעברית אינן מילוליות ומוגבלות לקטעים אלה. לא נבדקו כתב היד, ההקלטה, יתר השיחה או מלוא ההקשר בכרך. הנוסח האנגלי באותו עמוד הוא שכבת פרסום מקבילה ולא עד עצמאי נוסף."
       },
       "witness": {
         "kind": "text",
@@ -263,15 +273,21 @@
           "כתיבת ספר תורה",
           "שירת האזינו",
           "סדר התורה",
-          "מצוות עשה"
+          "מצוות עשה",
+          "יהושע",
+          "כניסה לארץ",
+          "שמירת תורה ומצוות",
+          "למידה ויראה",
+          "הנחלת התורה לדורות"
         ],
         "response_case_candidate": true
       },
       "documented_circumstances": "פרסום מתוך לקוטי שיחות, כרך 34, שיחת Vayelech; הדף כולל מבוא עריכתי וקטע מקור בעברית/יידיש.",
-      "question_or_problem": "מדוע מצוות הקהל וכתיבת השירה מופיעות סמוך לסיום התורה, ומה ההבדל בין הפשט לבין הדרשה ההלכתית של כתיבת ספר תורה?",
+      "question_or_problem": "מדוע מצוות הקהל וכתיבת השירה מופיעות סמוך לסיום התורה, ומה הקשר של מצוות הקהל להנחיות משה ליהושע לקראת הכניסה לארץ?",
       "conditions_or_qualifications": [
         "הפרופוזיציה כוללת רק את ההבחנה שבקטע המקורי בין הפשט לבין הדרשה; אין להסיק מכאן את מלוא מהלך השיחה.",
-        "לא נבדקה מהדורת הכרך המודפסת או הקלטת השיחה."
+        "לא נבדקה מהדורת הכרך המודפסת או הקלטת השיחה.",
+        "הפרופוזיציה השנייה מתארת את ההסבר הפשטי המובא בקטע המקורי בלבד; אין להסיק ממנה את מלוא מהלך השיחה או הוראה מעשית כללית."
       ],
       "audience": "קוראי המהדורה המודפסת/המקוונת של לקוטי שיחות; אין בדף זיהוי של נמען אישי.",
       "primary_secondary_status": "Published original-language excerpt within a bilingual Likkutei Sichos page; the Hebrew/Yiddish passage is the inspected text witness; no second witness is represented.",
@@ -280,7 +296,7 @@
       "independent_witness": true,
       "rights_status": "copyrighted-link-only",
       "epistemic_level": 1,
-      "summary_researcher": "השיחה מונה את הקהל ואת כתיבת ספר התורה כשתי מצוות העשה האחרונות, אך מבחינה שבפשט הפסוק ״כתבו לכם את השירה״ מתייחס לשירת האזינו ולא לכתיבת ספר תורה; ההבחנה הזאת היא חלק מן הדיון במשמעות מיקום המצוות בסוף התורה.",
+      "summary_researcher": "השיחה דנה במיקום מצוות הקהל וכתיבת ספר התורה בסוף התורה; בפשט הפסוק ״כתבו לכם את השירה״ מתייחס לשירת האזינו. בהמשך מוצגת מצוות הקהל כחלק מהנחיות משה ליהושע לקראת הכניסה לארץ, לשם עידוד שמירת התורה והמצוות והנחלתן לדורות.",
       "locator": {
         "aid": 6436855,
         "volume": 34,
@@ -289,7 +305,7 @@
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6436855/jewish/Vayelech-Making-the-Past-Present.htm"
       },
       "identity_note": "AID ייחודי של פריט לקוטי שיחות זה. הנוסח האנגלי באותו דף הוא הצגה מקבילה של אותו פריט; כל תרגום/הדפסה של אותה שיחה יצורף לאותה Evidence Family.",
-      "notes": "נבדק בפועל דרך web.open ב-15.11.2026. הסטטוס נשאר Parsed: נבדק קטע מקור, אך לא כתב יד, הקלטה או מלוא השיחה. אין ייחוס של מסקנת AI לרבי."
+      "notes": "נבדק בפועל דרך web.open ב-15.11.2026. הסטטוס נשאר Parsed: נבדק קטע מקור, אך לא כתב יד, הקלטה או מלוא השיחה. אין ייחוס של מסקנת AI לרבי. ב-15.11.2026 נוספה פרופוזיציה שנייה על תפקיד הקהל בהנחיות משה ליהושע, מתוך הקטע המקורי בשורות 301–307; ה-AID וה-Evidence Family נשמרו."
     },
     {
       "id": "likkutei-sichos-v31-beshalach-1-aid5245732",
@@ -1013,102 +1029,6 @@
       },
       "identity_note": "AID ייחודי של פריט לקוטי שיחות זה. הנוסח האנגלי באותו דף הוא הצגה מקבילה של אותו פריט; כל תרגום/הדפסה של אותה שיחה יצורף לאותה Evidence Family.",
       "notes": "נבדק בפועל דרך web.open ב-15.11.2026. הסטטוס נשאר Parsed: נבדק קטע מקור, אך לא כתב יד, הקלטה או מלוא השיחה. אין ייחוס של מסקנת AI לרבי."
-    },
-    {
-      "id": "english-letter-5723-22-elul-aid2190037",
-      "canonical_key": "aid:2190037",
-      "aid": 2190037,
-      "type": "letter",
-      "collection": "Pastoral Letters from the Lubavitcher Rebbe",
-      "source_class": "Igrot Kodesh",
-      "source_class_detail": "Chabad.org/TheRebbe.org English-language letter page; publisher explicitly describes the displayed text as a transcription of the original and states that the original is not held.",
-      "title": "You Must Do Your Part",
-      "date_original": "22nd of Elul, 5723 [September 11, 1963]",
-      "date_precision": "exact",
-      "language": "English",
-      "original_language": "unknown (the page text is English; the original letter is not held by the publisher)",
-      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2190037/jewish/You-Must-Do-Your-Part.htm",
-      "publisher": "Chabad.org / TheRebbe.org",
-      "pipeline_status": "Parsed",
-      "verification_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "response_propositions": [
-        "המכתב מאחל לנמען שנה מוצלחת בגשמיות וברוחניות, ומדגיש את הצורך להוסיף מאמץ אישי במסירות ובהתמדה בלימוד התורה ובקיום המצוות; הוא מתאר את המאמץ הקטן של האדם כפותח פתח לסיוע רב מלמעלה."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 2190037, English body lines 268–286; the publisher's transcription limitation appears at line 286.",
-      "response_proposition_locators": [
-        "Chabad.org/TheRebbe.org AID 2190037, English body lines 274–276; publisher limitation at line 286."
-      ],
-      "evidence_family_id": "letter-5723-22-elul-aid2190037",
-      "parent_evidence_family_id": null,
-      "provenance": {
-        "authorship_status": "המו״ל מייחס את המכתב לרבי; הייחוס לא הושווה לכתב היד המקורי, שאינו מצוי בידי המו״ל.",
-        "signature_status": "העמוד מציג חתימה בשם M. Schneerson; חתימה מקורית לא נבדקה.",
-        "source_witness": "Chabad.org/TheRebbe.org, AID 2190037, public English letter page.",
-        "transmission_type": "תעתיק מו״ל של מכתב; המו״ל מציין שהמקור אינו ברשותו ושייתכנו שגיאות תעתיק.",
-        "textual_status": "גוף הטקסט האנגלי בשורות 268–286 נפתח ונבדק; הערת המו״ל בשורה 286 קובעת שהמקור אינו ברשותו.",
-        "editorial_scope": "הפרופוזיציה נגזרה מן השורות 274–276 בלבד. אין אימות מול כתב היד, ואין הנחה שהנוסח נקי משגיאות תעתיק.",
-        "verification_status": "Parsed; source_text_inspected; publisher transcription; original unavailable; partial context.",
-        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2190037/jewish/You-Must-Do-Your-Part.htm",
-        "accessed": "2026-11-15"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "publisher transcription; original not held",
-        "complete_partial": "partial",
-        "notes": "The publisher says the original is not held and the transcription may contain errors."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור ופרפרזה לא-מילולית בלבד; לא הועתק טקסט מוגן."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "translation_of_evidence_family_id": null,
-      "taxonomy": {
-        "publisher_index_terms": [
-          "Pastoral Letters from the Lubavitcher Rebbe",
-          "Correspondence",
-          "Birthday"
-        ],
-        "research_terms": [
-          "יום הולדת",
-          "לימוד תורה",
-          "קיום מצוות",
-          "התמדה",
-          "ברכה אישית"
-        ],
-        "response_case_candidate": true
-      },
-      "documented_circumstances": "מכתב אישי לנמען שכתב על יום הולדתו בחודש אלול; המכתב כולל ברכה לשנה מוצלחת והדרכה ביחס ללימוד תורה וקיום מצוות.",
-      "question_or_problem": "כיצד עודד המכתב את הנמען לחזק את לימוד התורה וקיום המצוות בעקבות יום הולדתו?",
-      "conditions_or_qualifications": [
-        "המו״ל מציין שהטקסט הוא תעתיק של המקור ושהמקור אינו ברשותו; ייתכנו שגיאות תעתיק.",
-        "הפרפרזה מוגבלת לתוכן הגלוי בעמוד ואינה משחזרת את המכתב המלא."
-      ],
-      "audience": "נמען אישי המתואר כמי שכתב על יום הולדתו; אין להרחיב את ההדרכה לכלל הציבור ללא מקור נוסף.",
-      "primary_secondary_status": "Publisher transcription of a letter; the publisher states that the original is not held, so this is not an inspected autograph or independent corroborating witness.",
-      "witness_type": "publisher_transcription",
-      "translation_status": "No translator is named; the page is in English and is explicitly described as a transcription of the original, whose language/manuscript is unavailable.",
-      "independent_witness": false,
-      "rights_status": "copyrighted-link-only",
-      "epistemic_level": 1,
-      "summary_researcher": "המכתב מאחל לנמען שנה מוצלחת בגשמיות וברוחניות, ומדגיש את הצורך להוסיף מאמץ אישי במסירות ובהתמדה בלימוד התורה ובקיום המצוות; הוא מתאר את המאמץ הקטן של האדם כפותח פתח לסיוע רב מלמעלה.",
-      "locator": {
-        "aid": 2190037,
-        "date_original": "22nd of Elul, 5723",
-        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2190037/jewish/You-Must-Do-Your-Part.htm"
-      },
-      "identity_note": "זהות אחת של מכתב אישי AID 2190037. כל סריקה או פרסום נוסף של אותו מכתב יצורף לאותה Evidence Family; אין כאן עד כתב-יד עצמאי.",
-      "notes": "נפתח ונבדק בפועל ב-15.11.2026. נשאר Parsed משום שהמו״ל מציין שהמקור אינו ברשותו ושייתכנו שגיאות תעתיק. אין ייחוס של מסקנת AI לרבי."
     }
   ]
 }
