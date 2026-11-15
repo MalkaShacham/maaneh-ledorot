@@ -655,3 +655,6 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 
 - Researcher mode now emits an explicit claim-source map in addition to the existing evidence map. Each entry binds a claim to supporting source numbers, Evidence Family IDs and proposition-level body locators. The map supports audit/navigation and does not replace reading the cited passage or its limits.
 - Batch-102 regression checks this map in deep researcher mode against two separately dated Hebrew talks; the current answer-quality run must complete before this change is considered validated.
+
+
+- Cross-source test wording was tightened to a grounded comparison of the two inspected passages: the 19 Kislev talk on stating the gathering's purpose aloud and the 20 Kislev talk on extending the farbrengen through Torah study and mitzvah practice. The next quality run will verify retrieval of both families and the claim-source map.
