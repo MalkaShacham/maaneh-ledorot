@@ -232,6 +232,13 @@ if batch_path:
             if match:add_target("aid:"+match.group(1),match.group(1),update.get("id"))
             else:
                 item_id=str(update.get("id") or identity);add_target("id:"+item_id,None,item_id)
+        # Duplicate presentations are audit targets, not new source records.
+        # Resolve both ends by stable AID and compare their selected Evidence Family.
+        for alias in batch_data.get("identity_alias_audit_targets",[]):
+            alias_aid=str(alias.get("alias_aid") or "")
+            canonical_aid=str(alias.get("canonical_aid") or "")
+            if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
+            if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
         audit=[];by_identity={target["key"]:[] for target in target_identities}
         for fp in items:
             try: obj=json.loads(fp.read_text(encoding="utf-8"))
