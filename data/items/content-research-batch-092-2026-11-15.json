@@ -4,8 +4,8 @@
   "generated": "2026-11-15",
   "reviewed_at": "2026-11-15T04:15:57+02:00",
   "title": "Hebrew Igrot Kodesh: direct letter body and public search-extract review",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending",
+  "status": "reconciled_as_part_of_batch_093",
+  "reconciliation_status": "reconciled_as_part_of_batch_093",
   "review_method": "Public web search/open; item-level public Hebrew letter pages and visible search-result body extracts. No runner-side crawler.",
   "records_reviewed": 12,
   "reviewed_item_count": 12,
@@ -80,8 +80,16 @@
     "content_verified_unique_sources": 853,
     "answer_eligible_propositions": 2867
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 922,
+    "content_verified_unique_sources": 853,
+    "answer_eligible_propositions": 2867
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
   "source_body_inspection_method": "Three public item pages were directly opened with readable Hebrew body text (AID 5054491 existing identity, AID 5100372 new item, and AID 5357409 existing duplicate presentation); eight additional public search-result body extracts were inspected. Four search extracts (AIDs 5100353, 5100285, 5071046 and 5019408) matched existing Verified propositions and were rechecked in place without duplicate propositions. AID 4666220 was opened and redirected to a Torah Texts summary/navigation shell; same-run fallback used other accessible Hebrew Igrot Kodesh pages.",
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -726,5 +734,7 @@
       "canonical_file": "data/items/content-research-batch-066-2026-11-13.json",
       "result": "existing Verified propositions already cover gradual scheduling and study with a partner; no duplicate proposition added."
     }
-  ]
+  ],
+  "reconciled_by_batch": "093",
+  "reconciliation_note": "המדדים ההיסטוריים של אצווה זו נכללו בהתאמה המצטברת שבוצעה באצווה 093; אין מדובר בהרצת reconciliation נפרדת לאצווה זו."
 }
