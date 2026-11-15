@@ -1464,16 +1464,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   const studyFarmingComparisonQuestion=understanding.topics.includes('קביעות עתים ולימוד בצוותא')&&understanding.topics.includes('תורה ופרנסה במשק חקלאי');
  const tzedakahFamilies=new Set();
  let answerEvidence=usable;
- if(dailyStudyPrayerQuestion){
-  understanding.intent='pattern';
-  const preferredAids=['4994198','4812708','5100391'];
-  const preferred=index.filter(e=>preferredAids.includes(sourceAIDValue(e))&&e.has_content_evidence===true)
-   .map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsDailyStudyPrayerRoutine)}))
-   .filter(e=>e._supporting_propositions.length);
-  const merged=new Map();
-  for(const e of [...preferred,...answerEvidence]){const key=familyKey(e);if(key&&!merged.has(key))merged.set(key,e);}
-  answerEvidence=[...merged.values()];
- }
+ if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  if(jewishHomeSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(youthEducationStudyQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(tzedakahSynthesisQuestion){
@@ -1539,6 +1530,13 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  else if(shmittaFruitReferralQuestion){answerEvidence=usable.filter(e=>supportsShmittaFruitReferralSource(e));}
  else if(dailyStudyPrayerQuestion){
   answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
+  const preferredAids=['4994198','4812708','5100391'];
+  const preferred=index.filter(e=>preferredAids.includes(sourceAIDValue(e))&&e.has_content_evidence===true)
+   .map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsDailyStudyPrayerRoutine)}))
+   .filter(e=>e._supporting_propositions.length);
+  const merged=new Map();
+  for(const e of [...preferred,...answerEvidence]){const key=familyKey(e);if(key&&!merged.has(key))merged.set(key,e);}
+  answerEvidence=[...merged.values()];
   const dailyFamilies=new Set(answerEvidence.map(familyKey).filter(Boolean));
   if(dailyFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_daily_routine_families',claims:[],sources:answerEvidence,answered_well:['נמצאו מענים אישיים על הרגלים יומיים'],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות נפרדות עם תוכן שנבדק על סדרי לימוד ותפילה יומיים.']};
  }else if(understanding.intent==='pattern'){
