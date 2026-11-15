@@ -89,9 +89,9 @@
         "answer_eligible_propositions": 2832
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 926,
+        "answer_eligible_unique_sources": 922,
         "content_verified_unique_sources": 853,
-        "answer_eligible_propositions": 2873
+        "answer_eligible_propositions": 2867
       },
       "actual_delta": {
         "answer_eligible_unique_sources": 14,
@@ -163,14 +163,14 @@
       "source_bodies_inspected": 11,
       "source_body_pages_opened": 3,
       "search_extracts_inspected": 8,
-      "new_source_identities": 9,
+      "new_source_identities": 5,
       "duplicate_alias_identities": 1,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 15,
+      "existing_identities_rechecked": 4,
+      "new_response_propositions": 8,
       "existing_response_propositions_added": 1,
-      "answer_eligible_source_families_added": 9,
-      "independent_witnesses_added": 9,
+      "answer_eligible_source_families_added": 5,
+      "independent_witnesses_added": 5,
       "content_verified_unique_sources_added": 1,
       "metrics_before": {
         "answer_eligible_unique_sources": 900,
@@ -178,9 +178,9 @@
         "answer_eligible_propositions": 2832
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 926,
+        "answer_eligible_unique_sources": 922,
         "content_verified_unique_sources": 853,
-        "answer_eligible_propositions": 2873
+        "answer_eligible_propositions": 2867
       },
       "metrics_after_actual": null,
       "status": "pending_reconciliation",
@@ -190,14 +190,30 @@
         "Hebrew"
       ],
       "translations_counted_as_independent_witnesses": 0,
-      "metrics_delta_actual": null
+      "metrics_delta_actual": null,
+      "rechecked_aids": [
+        5100353,
+        5100285,
+        5071046,
+        5019408
+      ],
+      "new_aids": [
+        5054489,
+        5100603,
+        5071021,
+        5100374,
+        5100372
+      ],
+      "enriched_aids": [
+        5054491
+      ]
     },
-    "last_run_note": "Batch 092: 11 source bodies/items inspected (three directly opened pages and eight public search-result body extracts), nine new Hebrew Igrot Kodesh identities, one existing identity enriched in place, and one duplicate presentation linked to the same letter. AID 4666220 remained blocked by a navigation shell; same-run fallback pages were used. Eight search-extract records remain Parsed; only directly opened AID 5100372 is newly Verified. Reconciliation and Actions remain pending.",
+    "last_run_note": "Batch 092: 11 source bodies/items inspected (three directly opened pages and eight public search-result body extracts), five genuinely new Hebrew Igrot Kodesh identities, one existing identity enriched in place, four existing Verified identities rechecked without duplicate propositions, and one existing duplicate presentation linked to the same Evidence Family. AID 4666220 remained blocked by a navigation shell; same-run fallback pages were used. Four new search-extract records remain Parsed; only directly opened AID 5100372 is newly Verified. Reconciliation and Actions remain pending.",
     "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 redirected to a Torah Texts summary/navigation shell with no readable item body. The same run used nine other Hebrew Igrot Kodesh pages as fallback. AID 5357409 was not promoted because the publisher identifies it as a duplicate presentation of AID 4872269.",
+    "last_batch_blocked_reason": "AID 4666220 redirected to a Torah Texts summary/navigation shell with no readable item body. The same run used nine other Hebrew Igrot Kodesh pages as fallback. AID 5357409 was already canonical and is now linked to the fuller AID 4872269 presentation in one Evidence Family.",
     "next_work": [
-      "Run deterministic reconciliation across batches 090–092 and confirm all AIDs, URLs and Evidence Families are unique; resolve the AID 5357409 → AID 4872269 family mapping from the alias audit.",
-      "Verify actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions from the regenerated public-search index; do not treat the expected 926 / 853 / 2,873 as actual until reconciliation confirms them.",
+      "Run deterministic reconciliation across batches 090–092 and confirm all AIDs, URLs and Evidence Families are unique; verify the AID 5357409 family ID and the absence of a duplicate AID 4872269 record.",
+      "Verify actual answer_eligible_unique_sources, content_verified_unique_sources and answer_eligible_propositions from the regenerated public-search index; expected combined metrics are 922 / 853 / 2,867, subject to the reconciliation result.",
       "Run test_content_readiness.mjs, question-specific retrieval, synthesis, citation-integrity and answer-quality suites against the exact main commit.",
       "Inspect the GitHub Actions results and confirm the exact data revision is deployed to GitHub Pages.",
       "Continue original-language source inspection and in-place enrichment; do not retry the known HTTP 403 crawler or promote search-result-only records to Verified."
