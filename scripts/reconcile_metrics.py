@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json, pathlib, re, datetime
 from content_readiness import answer_eligible, summarize
+from status_normalization import status_of
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 items=sorted((ROOT/"data/items").glob("*.json"))
 batches=sorted((ROOT/"data/staging/batches").glob("*.json"))
@@ -34,16 +35,6 @@ def is_source_record(d):
 def stable_key(d):
     ks=identity_keys(d)
     return ks[0] if ks else None
-def status_of(d):
-    vals=[d.get("pipeline_status"),d.get("verification_status")]
-    p=d.get("provenance")
-    if isinstance(p,dict): vals.append(p.get("verification_status"))
-    s=" ".join(str(v) for v in vals if v)
-    if re.search(r"\bunverified\b",s,re.I): return None
-    if re.search(r"\bverified\b",s,re.I): return "Verified"
-    for x in PIPE:
-        if x in s: return x
-    return d.get("pipeline_status") if d.get("pipeline_status") in PIPE else None
 seen={}; evidence_files=0
 for fp in items:
     try: obj=json.loads(fp.read_text(encoding="utf-8"))
