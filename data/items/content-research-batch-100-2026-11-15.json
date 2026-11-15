@@ -1,0 +1,1151 @@
+{
+  "schema": "content-research-batch-v1",
+  "batch_id": "100",
+  "generated": "2026-11-15",
+  "reviewed_at": "2026-11-15T15:31:46+02:00",
+  "title": "Nine new original-language Hayom Yom entries and one in-place enrichment; blocked AID replaced by accessible pages",
+  "status": "pending_reconciliation",
+  "reconciliation_status": "pending",
+  "review_method": "Direct public web.open/click inspection of nine item-level Hayom Yom pages in original Hebrew/Yiddish; one existing original-Hebrew page was reopened for a distinct third proposition. Search extracts were not used as content.",
+  "records_reviewed": 10,
+  "source_bodies_inspected": 10,
+  "source_body_pages_opened": 10,
+  "search_extracts_inspected": 0,
+  "search_extracts_used_as_content": 0,
+  "new_source_identities": 9,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 0,
+  "response_propositions_added": 10,
+  "new_response_propositions": 9,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 10,
+  "answer_eligible_source_families_added": 9,
+  "independent_witnesses_added": 9,
+  "non_independent_presentations_added": 0,
+  "content_verified_unique_sources_added": 0,
+  "evidence_family_count": 9,
+  "source_languages": [
+    "Hebrew",
+    "Yiddish"
+  ],
+  "language_distribution": {
+    "Hebrew": 4,
+    "Yiddish": 5
+  },
+  "source_type_distribution": {
+    "published_daily_anthology_original_language_entry": 9
+  },
+  "metrics_before": {
+    "answer_eligible_unique_sources": 969,
+    "content_verified_unique_sources": 853,
+    "answer_eligible_propositions": 2941
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 978,
+    "content_verified_unique_sources": 853,
+    "answer_eligible_propositions": 2951
+  },
+  "metrics_actual_after": null,
+  "reconciliation_variance": null,
+  "new_aids": [
+    3316731,
+    3316736,
+    3316744,
+    3316746,
+    3316749,
+    3316790,
+    3316793,
+    3316794,
+    3316797
+  ],
+  "enriched_aids": [
+    3316748
+  ],
+  "reviewed_aids": [
+    3316731,
+    3316736,
+    3316744,
+    3316746,
+    3316749,
+    3316790,
+    3316793,
+    3316794,
+    3316797,
+    3316748
+  ],
+  "existing_identity_updates": [
+    {
+      "identity_key": "aid:3316748",
+      "canonical_file": "data/items/content-research-batch-096-2026-11-15.json",
+      "propositions_added": 1,
+      "locator": "Chabad.org/TheRebbe.org AID 3316748, original Hebrew body lines 260–261.",
+      "evidence_family_id": "hayom-yom-tammuz-28-aid3316748"
+    }
+  ],
+  "metadata_only_corrections": [
+    {
+      "identity": "id:igrot-kodesh-v13-דתרפא",
+      "canonical_file": "data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json",
+      "duplicate_file": "data/items/library-igrot-kodesh-v13-content-2026-11-05-032.json",
+      "action": "The duplicate content record is demoted to Linked/Indexed metadata-only. The user-supplied scan/index establishes bibliographic identity and printed-page location only; no source-body content proposition is retained.",
+      "evidence_family_id": "london-chassidus-class-growth-still-insufficient-for-dissemination"
+    }
+  ],
+  "blocked_candidate_count": 1,
+  "blocked_candidates": [
+    {
+      "aid": 4666220,
+      "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4666220/jewish/letter.htm",
+      "reason": "The public web reader returned Internal Error and marked the URL inaccessible on 2026-11-15; no readable item-level body was available. No crawler retry or access-control bypass was attempted."
+    }
+  ],
+  "fallback_source_attempted": true,
+  "fallback_source_results": [
+    {
+      "source": "Chabad.org/TheRebbe.org Hayom Yom original-language item pages",
+      "inspected_item_pages": 9,
+      "directly_opened_source_bodies": 9,
+      "source_aids": [
+        3316731,
+        3316736,
+        3316744,
+        3316746,
+        3316749,
+        3316790,
+        3316793,
+        3316794,
+        3316797
+      ],
+      "result": "Nine accessible daily-entry bodies were opened and inspected in original Hebrew/Yiddish as same-run alternatives. Same-page English renderings were not counted as independent witnesses."
+    }
+  ],
+  "crawler_retry": false,
+  "access_control_bypassed": false,
+  "full_text_copied": false,
+  "scan_only_verification_used": false,
+  "translations_counted_as_independent_witnesses": 0,
+  "duplicate_aliases_linked": 0,
+  "deduplication_check": {
+    "full_public_index_scan": false,
+    "new_aids_checked": [
+      3316731,
+      3316736,
+      3316744,
+      3316746,
+      3316749,
+      3316790,
+      3316793,
+      3316794,
+      3316797
+    ],
+    "new_aid_collisions": [],
+    "checked_against": "The current content-review queue and batches 096–099; exact-AID GitHub code searches returned no matches. Full canonical uniqueness is left to the branch reconciliation/index test; the 9,191-entry generated index was not manually downloaded.",
+    "existing_identity_enrichment": "AID 3316748 remains in its original batch file and its existing Evidence Family hayom-yom-tammuz-28-aid3316748; no duplicate identity was created.",
+    "duplicate_volume_xiii_identity": "The volume XIII scan-only identity remains one bibliographic identity and one Evidence Family; its duplicate content record is linked and no longer answer-eligible.",
+    "translation_rule": "Same-page English translations and later reprints of the same daily entry are not independent witnesses."
+  },
+  "not_promoted_after_inspection_count": 9,
+  "not_promoted_after_inspection": [
+    {
+      "aid": 3316731,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    },
+    {
+      "aid": 3316736,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    },
+    {
+      "aid": 3316744,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    },
+    {
+      "aid": 3316746,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    },
+    {
+      "aid": 3316749,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    },
+    {
+      "aid": 3316790,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    },
+    {
+      "aid": 3316793,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    },
+    {
+      "aid": 3316794,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    },
+    {
+      "aid": 3316797,
+      "reason": "Only the bounded original-language daily-entry passage was inspected; no first edition, manuscript, autograph, recording or underlying cited source was independently examined. Retained as Parsed with partial context."
+    }
+  ],
+  "limitations": [
+    "The nine new entries are nine separate dated anthology identities, not nine independent witnesses to one event or proposition.",
+    "Same-page English renderings are translations of the same entries and are not counted as separate witnesses.",
+    "Embedded attributions are preserved: Tzemach Tzedek (24 Tammuz), Rebbe Rayatz source note (25 Tammuz), Alter Rebbe narrative (27 Tammuz), Tzemach Tzedek note copied by Maharash (29 Tammuz), Sefer HaMaamarim 5699 (1 Av), Rebbe Rashab (3 Av), and the Rebbe Rayatz editorial context (4 Av).",
+    "All nine new records remain Parsed/partial; no Verified promotion was made.",
+    "The scan-only volume XIII identity ד׳תרפא is metadata-only; the scan key establishes identity and printed-page location, not letter content.",
+    "AID 4666220 remained inaccessible; nine other original-language daily-entry bodies were opened in the same run.",
+    "No full copyrighted text was copied."
+  ],
+  "records": [
+    {
+      "id": "hayom-yom-24-tammuz-aid3316731",
+      "canonical_key": "aid:3316731",
+      "aid": 3316731,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 24 Tammuz",
+      "date_original": "24 Tammuz (annual calendar entry; year not specified on item page)",
+      "date": "24 Tammuz",
+      "date_precision": "calendar_day",
+      "language": "Yiddish",
+      "original_language": "Yiddish",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316731/jewish/24-Tammuz.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מביא בשם הצמח צדק כי ״פנימי״ הוא חסיד שאינו מחליף את עבודתו הרוחנית בבקשת ברכה להצלחתה; הדרישה היא שהעבודה עצמה תוטל על האדם ותיעשה בפועל."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316731, original Yiddish body line 256.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316731, original Yiddish body line 256."
+      ],
+      "evidence_family_id": "hayom-yom-24-tammuz-aid3316731",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; הקטע המקורי פותח במפורש כפתגם של הצמח צדק; הפרפרזה שומרת על ייחוס זה ואינה מציגה את האמירה כדברי הרבי מליובאוויטש. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316731; הקטע המקורי בשפה Yiddish גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316731, original Yiddish body line 256. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316731/jewish/24-Tammuz.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Yiddish לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "24 Tammuz",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "פנימי",
+          "עבודת האדם",
+          "עבודת ה׳",
+          "צמח צדק",
+          "ברכה"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לכ״ד תמוז מביא אמירה המיוחסת לצמח צדק על פנימיות ועבודת האדם.",
+      "question_or_problem": "כיצד הערך מגדיר חסיד פנימי ומהו היחס בין בקשת ברכה לעבודה עצמית?",
+      "conditions_or_qualifications": [
+        "הייחוס לצמח צדק מופיע בגוף הערך; המקור המוקדם של הפתגם לא נבדק.",
+        "הפרפרזה מוגבלת למשפט המקורי ביידיש; הסיפור וההסבר האנגלי שבהמשך העמוד אינם נכללים.",
+        "אין להסיק מכאן כלל הלכתי או הבטחה לתוצאה רוחנית מסוימת."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מביא בשם הצמח צדק כי ״פנימי״ הוא חסיד שאינו מחליף את עבודתו הרוחנית בבקשת ברכה להצלחתה; הדרישה היא שהעבודה עצמה תוטל על האדם ותיעשה בפועל.",
+      "locator": {
+        "aid": 3316731,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316731/jewish/24-Tammuz.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316731, original Yiddish body line 256."
+      },
+      "identity_note": "AID 3316731 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-24-tammuz-aid3316731; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316731; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body line 256. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316731; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body line 256. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    },
+    {
+      "id": "hayom-yom-25-tammuz-aid3316736",
+      "canonical_key": "aid:3316736",
+      "aid": 3316736,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 25 Tammuz",
+      "date_original": "25 Tammuz (annual calendar entry; year not specified on item page)",
+      "date": "25 Tammuz",
+      "date_precision": "calendar_day",
+      "language": "Yiddish",
+      "original_language": "Yiddish",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316736/jewish/25-Tammuz.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מציג שתי קביעות חסידיות הקשורות זו בזו: יהודי מכיר באלוקות ומרגיש את הממד העל־טבעי ללא צורך בהוכחה, ולכן אינו רוצה ואינו יכול להינתק מאלוקות. הערת העורך מפנה לגבי הקביעה השנייה לאיגרת של הרבי הריי״צ."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316736, original Yiddish body lines 255–256; publisher footnote line 281 for the attribution of the second statement.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316736, original Yiddish body lines 255–256; publisher footnote line 281 for the attribution of the second statement."
+      ],
+      "evidence_family_id": "hayom-yom-25-tammuz-aid3316736",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; הקטע המקורי ביידיש מציג את שתי האמירות כחלק מהערך; הערת המו״ל מייחסת את הקביעה השנייה לאיגרות קודש של הרבי הריי״צ, ולא לרבי מליובאוויטש כציטוט חדש. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316736; הקטע המקורי בשפה Yiddish גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316736, original Yiddish body lines 255–256; publisher footnote line 281 for the attribution of the second statement. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316736/jewish/25-Tammuz.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Yiddish לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "25 Tammuz",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "אלוקות",
+          "קשר לאלוקות",
+          "טבע יהודי",
+          "חסידות",
+          "הריי״צ"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לכ״ה תמוז מציג שתי אמירות על זיקה טבעית של יהודי לאלוקות ומבהיר שהן ביטוי לנקודה אחת.",
+      "question_or_problem": "אילו שתי קביעות על הקשר של יהודי לאלוקות מובאות בערך, וכיצד הוא קושר ביניהן?",
+      "conditions_or_qualifications": [
+        "הפרפרזה מתארת את ניסוח הערך ואינה טענה אמפירית על כל אדם.",
+        "הייחוס לאיגרת הריי״צ מבוסס על הערת המו״ל באותו עמוד; האיגרת עצמה לא נפתחה.",
+        "התרגום האנגלי המקביל אינו עד עצמאי."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מציג שתי קביעות חסידיות הקשורות זו בזו: יהודי מכיר באלוקות ומרגיש את הממד העל־טבעי ללא צורך בהוכחה, ולכן אינו רוצה ואינו יכול להינתק מאלוקות. הערת העורך מפנה לגבי הקביעה השנייה לאיגרת של הרבי הריי״צ.",
+      "locator": {
+        "aid": 3316736,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316736/jewish/25-Tammuz.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316736, original Yiddish body lines 255–256; publisher footnote line 281 for the attribution of the second statement."
+      },
+      "identity_note": "AID 3316736 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-25-tammuz-aid3316736; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316736; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body lines 255–256; publisher footnote line 281 for the attribution of the second statement. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316736; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body lines 255–256; publisher footnote line 281 for the attribution of the second statement. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    },
+    {
+      "id": "hayom-yom-26-tammuz-aid3316744",
+      "canonical_key": "aid:3316744",
+      "aid": 3316744,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 26 Tammuz",
+      "date_original": "26 Tammuz (annual calendar entry; year not specified on item page)",
+      "date": "26 Tammuz",
+      "date_precision": "calendar_day",
+      "language": "Yiddish",
+      "original_language": "Yiddish",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316744/jewish/26-Tammuz.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מבחין בין לימוד תורה, שבו האדם מתמסר לדבר שהוא מבקש להבין ומבין, לבין תפילה, שבה ההתמסרות היא למה שמעבר להבנה; הוא מתאר את הלומד כתלמיד לפני רב ואת המתפלל כבן לפני אב."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316744, original Yiddish body lines 256–257.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316744, original Yiddish body lines 256–257."
+      ],
+      "evidence_family_id": "hayom-yom-26-tammuz-aid3316744",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; בקטע המקורי לא מצוין דובר מוקדם מסוים; הפרפרזה מתייחסת לניסוח הערך בלבד. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316744; הקטע המקורי בשפה Yiddish גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316744, original Yiddish body lines 256–257. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316744/jewish/26-Tammuz.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Yiddish לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "26 Tammuz",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "לימוד תורה",
+          "תפילה",
+          "הבנה",
+          "התמסרות",
+          "תלמיד ורב",
+          "בן ואב"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לכ״ו תמוז מציג הבחנה בין אופי ההתמסרות בלימוד תורה לבין אופי ההתמסרות בתפילה.",
+      "question_or_problem": "כיצד הערך מבחין בין לימוד תורה לתפילה מבחינת היחס להבנה?",
+      "conditions_or_qualifications": [
+        "הפרפרזה מוגבלת לשתי השורות המקוריות ביידיש.",
+        "אין להסיק מכאן הגדרה הלכתית של תפילה או של לימוד תורה.",
+        "לא נבדקו מקורות מוקדמים שהערך עשוי להישען עליהם."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מבחין בין לימוד תורה, שבו האדם מתמסר לדבר שהוא מבקש להבין ומבין, לבין תפילה, שבה ההתמסרות היא למה שמעבר להבנה; הוא מתאר את הלומד כתלמיד לפני רב ואת המתפלל כבן לפני אב.",
+      "locator": {
+        "aid": 3316744,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316744/jewish/26-Tammuz.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316744, original Yiddish body lines 256–257."
+      },
+      "identity_note": "AID 3316744 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-26-tammuz-aid3316744; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316744; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body lines 256–257. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316744; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body lines 256–257. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    },
+    {
+      "id": "hayom-yom-27-tammuz-aid3316746",
+      "canonical_key": "aid:3316746",
+      "aid": 3316746,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 27 Tammuz",
+      "date_original": "27 Tammuz (annual calendar entry; year not specified on item page)",
+      "date": "27 Tammuz",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316746/jewish/27-Tammuz.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מספר על תלמיד חכם שהגיע לליאוזנה ושאל את אדמו״ר הזקן מה חסר לו; בתשובה המיוחסת לאדמו״ר הזקן נאמר כי נדרשת הסרת ישות וגסות הרוח והחלפתן בביטול, באמצעות דימויי חמץ ומצה וליבון כלי."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316746, original Hebrew body lines 256–258.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316746, original Hebrew body lines 256–258."
+      ],
+      "evidence_family_id": "hayom-yom-27-tammuz-aid3316746",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; הדברים מוצגים כסיפור וכמענה של אדמו״ר הזקן בתוך ערך אנתולוגי; אין מדובר בתמליל בן־הזמן או בעדות עצמאית. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316746; הקטע המקורי בשפה Hebrew גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316746, original Hebrew body lines 256–258. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316746/jewish/27-Tammuz.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Hebrew לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "27 Tammuz",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "אדמו״ר הזקן",
+          "יחידות",
+          "ישות",
+          "גסות הרוח",
+          "ביטול",
+          "חמץ ומצה",
+          "ליבון"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לכ״ז תמוז מביא סיפור על יחידות עם אדמו״ר הזקן ועל ההבחנה בין ידיעה ויראת שמים לבין עבודה על ישות וגסות הרוח.",
+      "question_or_problem": "מה השיב אדמו״ר הזקן לתלמיד החכם ששאל מה חסר לו ביחסו לעבודת החסידות?",
+      "conditions_or_qualifications": [
+        "הסיפור והדברים מיוחסים לאדמו״ר הזקן בתוך הערך; מקור היסטורי נוסף לא נבדק.",
+        "הפרפרזה מוגבלת לסיפור המקורי בעברית בשורות 256–258.",
+        "ההסבר האנגלי של המו״ל אינו נספר כעד עצמאי."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מספר על תלמיד חכם שהגיע לליאוזנה ושאל את אדמו״ר הזקן מה חסר לו; בתשובה המיוחסת לאדמו״ר הזקן נאמר כי נדרשת הסרת ישות וגסות הרוח והחלפתן בביטול, באמצעות דימויי חמץ ומצה וליבון כלי.",
+      "locator": {
+        "aid": 3316746,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316746/jewish/27-Tammuz.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316746, original Hebrew body lines 256–258."
+      },
+      "identity_note": "AID 3316746 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-27-tammuz-aid3316746; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316746; נבדק רק הקטע המקורי בשפה Hebrew במיקום original Hebrew body lines 256–258. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316746; נבדק רק הקטע המקורי בשפה Hebrew במיקום original Hebrew body lines 256–258. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    },
+    {
+      "id": "hayom-yom-29-tammuz-aid3316749",
+      "canonical_key": "aid:3316749",
+      "aid": 3316749,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 29 Tammuz",
+      "date_original": "29 Tammuz (annual calendar entry; year not specified on item page)",
+      "date": "29 Tammuz",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316749/jewish/29-Tammuz.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מתאר פתקה שבה נרשמה קבלת הצמח צדק ללמוד בכל לילה שש שעות נגלה בעמידה, ומציין כי לפי תוכן הפתקה הוא קיים את הקבלה והקיף בעיון את התלמוד הבבלי והירושלמי ואת ארבעת חלקי השולחן ערוך. הערת המו״ל מציינת שהמהר״ש העתיק את הפתקה."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316749, original Hebrew body line 256; publisher footnote line 275 identifies the Rebbe Maharash as the copyist.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316749, original Hebrew body line 256; publisher footnote line 275 identifies the Rebbe Maharash as the copyist."
+      ],
+      "evidence_family_id": "hayom-yom-29-tammuz-aid3316749",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; הקבלה מיוחסת לצמח צדק; הערת המו״ל מציינת שהמהר״ש העתיק את הפתקה. אין לטעון שנבדק אוטוגרף של הצמח צדק. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316749; הקטע המקורי בשפה Hebrew גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316749, original Hebrew body line 256; publisher footnote line 275 identifies the Rebbe Maharash as the copyist. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316749/jewish/29-Tammuz.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Hebrew לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "29 Tammuz",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "צמח צדק",
+          "המהר״ש",
+          "נגלה",
+          "ש״ס",
+          "תלמוד ירושלמי",
+          "שולחן ערוך",
+          "לימוד בעמידה"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לכ״ט תמוז מתעד קבלת לימוד המיוחסת לצמח צדק באמצעות פתקה שהועתקה בידי בנו, המהר״ש.",
+      "question_or_problem": "איזו קבלת לימוד מיוחסת לצמח צדק בפתקה המתוארת בערך, ומי העתיק אותה?",
+      "conditions_or_qualifications": [
+        "הערך מתאר פתקה; לפי הערת המו״ל המהר״ש הוא המעתיק, ולא נבדק כתב היד המקורי.",
+        "הפרפרזה מבוססת על שורת המקור בעברית ועל הערת המעתיק; הספר Reshimas HaYoman לא נפתח.",
+        "אין להסיק מן הערך לבדו אימות עצמאי של היקף הלימוד ההיסטורי."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מתאר פתקה שבה נרשמה קבלת הצמח צדק ללמוד בכל לילה שש שעות נגלה בעמידה, ומציין כי לפי תוכן הפתקה הוא קיים את הקבלה והקיף בעיון את התלמוד הבבלי והירושלמי ואת ארבעת חלקי השולחן ערוך. הערת המו״ל מציינת שהמהר״ש העתיק את הפתקה.",
+      "locator": {
+        "aid": 3316749,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316749/jewish/29-Tammuz.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316749, original Hebrew body line 256; publisher footnote line 275 identifies the Rebbe Maharash as the copyist."
+      },
+      "identity_note": "AID 3316749 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-29-tammuz-aid3316749; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316749; נבדק רק הקטע המקורי בשפה Hebrew במיקום original Hebrew body line 256; publisher footnote line 275 identifies the Rebbe Maharash as the copyist. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316749; נבדק רק הקטע המקורי בשפה Hebrew במיקום original Hebrew body line 256; publisher footnote line 275 identifies the Rebbe Maharash as the copyist. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    },
+    {
+      "id": "hayom-yom-1-menachem-av-rosh-chodesh--aid3316790",
+      "canonical_key": "aid:3316790",
+      "aid": 3316790,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 1 Menachem Av (Rosh Chodesh)",
+      "date_original": "1 Menachem Av (Rosh Chodesh) (annual calendar entry; year not specified on item page)",
+      "date": "1 Menachem Av (Rosh Chodesh)",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316790/jewish/1-Menachem-Av-Rosh-Chodesh.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מביא בשם ספר המאמרים תרצ״ט תיאור של ענוות המשיח: אף שיהיה בדרגה רוחנית גבוהה וילמד תורה עם האבות ומשה רבנו, הוא יתאפיין בביטול וילמד גם אנשים פשוטים."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316790, original Hebrew body line 254; publisher footnote line 269 identifies Sefer HaMaamarim 5699.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316790, original Hebrew body line 254; publisher footnote line 269 identifies Sefer HaMaamarim 5699."
+      ],
+      "evidence_family_id": "hayom-yom-1-menachem-av-rosh-chodesh--aid3316790",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; הערת המו״ל מפנה ל-Sefer HaMaamarim 5699, עמ׳ 194; אין לייחס את הניסוח למאמר חדש של הרבי מליובאוויטש או לטעון שהספר עצמו נבדק. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316790; הקטע המקורי בשפה Hebrew גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316790, original Hebrew body line 254; publisher footnote line 269 identifies Sefer HaMaamarim 5699. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316790/jewish/1-Menachem-Av-Rosh-Chodesh.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Hebrew לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "1 Menachem Av (Rosh Chodesh)",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "משיח",
+          "ענווה",
+          "ביטול",
+          "ספר המאמרים תרצ״ט",
+          "לימוד תורה"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לראש חודש מנחם אב מביא קטע על ענוות המשיח, ומפנה בהערת שוליים לספר המאמרים תרצ״ט.",
+      "question_or_problem": "כיצד מתוארת ענוות המשיח בערך לראש חודש מנחם אב, ומהו המקור המופנה בהערה?",
+      "conditions_or_qualifications": [
+        "הפרפרזה מתארת את הקטע כפי שהוא מובא בערך; ספר המאמרים והעמוד המצוין לא נפתחו.",
+        "התרגום האנגלי המקביל אינו עד עצמאי.",
+        "ההקשר הרחב של המאמר משנת תרצ״ט לא נבדק."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מביא בשם ספר המאמרים תרצ״ט תיאור של ענוות המשיח: אף שיהיה בדרגה רוחנית גבוהה וילמד תורה עם האבות ומשה רבנו, הוא יתאפיין בביטול וילמד גם אנשים פשוטים.",
+      "locator": {
+        "aid": 3316790,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316790/jewish/1-Menachem-Av-Rosh-Chodesh.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316790, original Hebrew body line 254; publisher footnote line 269 identifies Sefer HaMaamarim 5699."
+      },
+      "identity_note": "AID 3316790 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-1-menachem-av-rosh-chodesh--aid3316790; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316790; נבדק רק הקטע המקורי בשפה Hebrew במיקום original Hebrew body line 254; publisher footnote line 269 identifies Sefer HaMaamarim 5699. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316790; נבדק רק הקטע המקורי בשפה Hebrew במיקום original Hebrew body line 254; publisher footnote line 269 identifies Sefer HaMaamarim 5699. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    },
+    {
+      "id": "hayom-yom-2-menachem-av-aid3316793",
+      "canonical_key": "aid:3316793",
+      "aid": 3316793,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 2 Menachem Av",
+      "date_original": "2 Menachem Av (annual calendar entry; year not specified on item page)",
+      "date": "2 Menachem Av",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316793/jewish/2-Menachem-Av.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מציג הוראה כללית להתחיל בהנחת תפילין חודשיים לפני בר המצווה: בתחילה ללא ברכה, ולאחר כמה שבועות עם ברכה."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316793, original Hebrew body line 256.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316793, original Hebrew body line 256."
+      ],
+      "evidence_family_id": "hayom-yom-2-menachem-av-aid3316793",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; הפרפרזה מתארת הוראה כפי שהיא מוצגת בערך; אין לייחס לה פרטים שלא נבדקו בגוף המקור או להרחיב אותה מעבר לנוסח המובא. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316793; הקטע המקורי בשפה Hebrew גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316793, original Hebrew body line 256. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316793/jewish/2-Menachem-Av.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Hebrew לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "2 Menachem Av",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "תפילין",
+          "בר מצווה",
+          "ברכה",
+          "הנחת תפילין",
+          "הוראה לרבים"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לב׳ מנחם אב מציג הוראה כללית הנוגעת לתחילת הנחת תפילין לפני בר המצווה.",
+      "question_or_problem": "מהו לוח הזמנים לתחילת הנחת תפילין לפני בר המצווה לפי ההוראה המובאת בערך?",
+      "conditions_or_qualifications": [
+        "הפרפרזה מוגבלת לשורה המקורית בעברית; הערות המו״ל המפורטות על סוגי תפילין ומועדים לא נכללו.",
+        "אין לראות בכך פסיקה אישית או תחליף להוראה הלכתית מוסמכת.",
+        "לא נבדקו מקורות הלכתיים נוספים או הנסיבות של אדם מסוים."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מציג הוראה כללית להתחיל בהנחת תפילין חודשיים לפני בר המצווה: בתחילה ללא ברכה, ולאחר כמה שבועות עם ברכה.",
+      "locator": {
+        "aid": 3316793,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316793/jewish/2-Menachem-Av.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316793, original Hebrew body line 256."
+      },
+      "identity_note": "AID 3316793 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-2-menachem-av-aid3316793; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316793; נבדק רק הקטע המקורי בשפה Hebrew במיקום original Hebrew body line 256. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316793; נבדק רק הקטע המקורי בשפה Hebrew במיקום original Hebrew body line 256. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    },
+    {
+      "id": "hayom-yom-3-menachem-av-aid3316794",
+      "canonical_key": "aid:3316794",
+      "aid": 3316794,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 3 Menachem Av",
+      "date_original": "3 Menachem Av (annual calendar entry; year not specified on item page)",
+      "date": "3 Menachem Av",
+      "date_precision": "calendar_day",
+      "language": "Yiddish",
+      "original_language": "Yiddish",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316794/jewish/3-Menachem-Av.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מביא משיחת אדמו״ר הרש״ב את הרעיון שתקופת הגלות היא זמן של עבודה רוחנית והכנה לביאת המשיח; הוא מתאר את החרטה העתידית על עבודה שלא נעשתה כדרך להדגיש את ההזדמנויות שבהווה."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316794, original Yiddish body line 255.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316794, original Yiddish body line 255."
+      ],
+      "evidence_family_id": "hayom-yom-3-menachem-av-aid3316794",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; הקטע המקורי פותח במפורש כציטוט משיחת אביו של הדובר, אדמו״ר הרש״ב; אין לייחסו לרבי מליובאוויטש. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316794; הקטע המקורי בשפה Yiddish גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316794, original Yiddish body line 255. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316794/jewish/3-Menachem-Av.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Yiddish לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "3 Menachem Av",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "אדמו״ר הרש״ב",
+          "גלות",
+          "עבודה רוחנית",
+          "ביאת המשיח",
+          "הזדמנויות"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לג׳ מנחם אב מצטט משיחת אדמו״ר הרש״ב על עבודת האדם בזמן הגלות כהכנה לביאת המשיח.",
+      "question_or_problem": "כיצד מתוארת עבודת האדם בזמן הגלות בקטע המיוחס לאדמו״ר הרש״ב?",
+      "conditions_or_qualifications": [
+        "הייחוס לאדמו״ר הרש״ב מופיע בגוף המקור; ההפניה המוקדמת לא נבדקה מעבר למידע שבעמוד.",
+        "הפרפרזה מוגבלת לשורה המקורית ביידיש.",
+        "אין להסיק שהקטע קובע לוח זמנים לביאת המשיח."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מביא משיחת אדמו״ר הרש״ב את הרעיון שתקופת הגלות היא זמן של עבודה רוחנית והכנה לביאת המשיח; הוא מתאר את החרטה העתידית על עבודה שלא נעשתה כדרך להדגיש את ההזדמנויות שבהווה.",
+      "locator": {
+        "aid": 3316794,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316794/jewish/3-Menachem-Av.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316794, original Yiddish body line 255."
+      },
+      "identity_note": "AID 3316794 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-3-menachem-av-aid3316794; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316794; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body line 255. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316794; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body line 255. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    },
+    {
+      "id": "hayom-yom-4-menachem-av-aid3316797",
+      "canonical_key": "aid:3316797",
+      "aid": 3316797,
+      "type": "daily_anthology_entry",
+      "collection": "Hayom Yom",
+      "source_class": "Hayom Yom",
+      "source_class_detail": "Chabad.org/TheRebbe.org item-level Hayom Yom daily page. The original Hebrew/Yiddish passage was inspected; the same-page English rendering is not an independent witness. Embedded attributions to earlier Rebbeim and cited works are preserved.",
+      "title": "Hayom Yom — 4 Menachem Av",
+      "date_original": "4 Menachem Av (annual calendar entry; year not specified on item page)",
+      "date": "4 Menachem Av",
+      "date_precision": "calendar_day",
+      "language": "Yiddish",
+      "original_language": "Yiddish",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316797/jewish/4-Menachem-Av.htm",
+      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "הערך מציג את ההשתדלות לפרנסה כנחוצה אך משנית ביחס לברכת ה׳, ומונה תפילה בציבור, שמירת שבת בהידור, הקפדה על כשרות וחינוך הילדים בידי מלמדים יראי שמים כמרכיבים של אורח חיים יהודי. ההקשר האנגלי בעמוד מציין שהרבי הריי״צ הקדים את הדברים בהבחנה בין עיקר לטפל."
+      ],
+      "proposition_language": "Hebrew research paraphrase of inspected original-language source excerpt",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316797, original Yiddish body lines 255–256.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 3316797, original Yiddish body lines 255–256."
+      ],
+      "evidence_family_id": "hayom-yom-4-menachem-av-aid3316797",
+      "parent_evidence_family_id": null,
+      "provenance": {
+        "authorship_status": "המו״ל מציג את העמוד כערך מהיום יום שנערך מכתבי הרבי; הפרפרזה מתארת את הקטע המקורי ביידיש; ההקשר האנגלי באותו עמוד מייחס לרבי הריי״צ את ההקדמה, אך אינו נספר כעד עצמאי ואינו משמש בסיס לניסוח נוסף. הפרפרזה מתארת את תוכן הערך ואינה מייחסת הסקת AI לרבי.",
+        "signature_status": "לא נבדקו כתב יד או חתימה; מדובר בעמוד פרסום דיגיטלי של ערך אנתולוגי.",
+        "source_witness": "Chabad.org/TheRebbe.org, Hayom Yom, AID 3316797; הקטע המקורי בשפה Yiddish גלוי בגוף העמוד.",
+        "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה; קטע המקור המקורי מוצג לצד נוסח אנגלי מקביל.",
+        "textual_status": "הקטע המקורי נפתח ונבדק במיקום Chabad.org/TheRebbe.org AID 3316797, original Yiddish body lines 255–256. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם.",
+        "editorial_scope": "הפרופוזיציה מבוססת רק על הקטע המקורי המצוין ב-locator ועל הערת מקור מפורשת אם צוינה; נוסח אנגלי מקביל והסברי המו״ל אינם נספרים כעדים נוספים.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316797/jewish/4-Menachem-Av.htm",
+        "accessed": "2026-11-15"
+      },
+      "witness": {
+        "kind": "published_original_language_text_excerpt",
+        "state": "ערך יומי שפורסם ב-Chabad.org; קטע מקור Yiddish לצד נוסח אנגלי מקביל.",
+        "complete_partial": "partial",
+        "notes": "הקטע המקורי נבדק; מהדורה ראשונה, כתב יד, אוטוגרף והמקורות המוקדמים לא נבדקו."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית לא-מילולית ומיקום מקור בלבד; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "editorial_cross_reference",
+          "target_id": "hayom-yom",
+          "note": "חבר בקורפוס האנתולוגיה היום יום; לכל תאריך זהות פריט ומשפחת ראיות נפרדת."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "translation_of_evidence_family_id": null,
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Hayom Yom",
+          "4 Menachem Av",
+          "TheRebbe.org"
+        ],
+        "research_terms": [
+          "פרנסה",
+          "השתדלות",
+          "ברכת ה׳",
+          "תפילה בציבור",
+          "שמירת שבת",
+          "כשרות",
+          "חינוך ילדים",
+          "הריי״צ"
+        ],
+        "response_case_candidate": true
+      },
+      "documented_circumstances": "ערך היום יום לד׳ מנחם אב דן ביחס בין השתדלות כלכלית, ברכת ה׳ ואורח חיים יהודי.",
+      "question_or_problem": "כיצד הערך מציג את היחס בין השתדלות בפרנסה לבין תפילה, שבת, כשרות וחינוך הילדים?",
+      "conditions_or_qualifications": [
+        "הפרפרזה מוגבלת לשתי השורות המקוריות ביידיש; דברי ההסבר האנגליים אינם עד עצמאי.",
+        "אין להציג את הקטע כהבטחה כספית או כקביעה שכל תוצאה כלכלית תלויה רק בפרטים שנמנו.",
+        "המקור המוקדם המוזכר בהערות לא נבדק."
+      ],
+      "audience": "קוראי היום יום; אין בעמוד נמען אישי.",
+      "primary_secondary_status": "Published original-language Hayom Yom entry; original Hebrew/Yiddish passage is the inspected witness. The same-page English rendering is a derived presentation, not an independent witness.",
+      "witness_type": "published_original_language_text_excerpt",
+      "translation_status": "Same-page English rendering is a parallel presentation of the same entry; it is not a separate witness and is not counted independently.",
+      "independent_witness": true,
+      "rights_status": "copyrighted-link-only",
+      "epistemic_level": 1,
+      "summary_researcher": "הערך מציג את ההשתדלות לפרנסה כנחוצה אך משנית ביחס לברכת ה׳, ומונה תפילה בציבור, שמירת שבת בהידור, הקפדה על כשרות וחינוך הילדים בידי מלמדים יראי שמים כמרכיבים של אורח חיים יהודי. ההקשר האנגלי בעמוד מציין שהרבי הריי״צ הקדים את הדברים בהבחנה בין עיקר לטפל.",
+      "locator": {
+        "aid": 3316797,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316797/jewish/4-Menachem-Av.htm",
+        "body_locator": "Chabad.org/TheRebbe.org AID 3316797, original Yiddish body lines 255–256."
+      },
+      "identity_note": "AID 3316797 identifies this dated Hayom Yom entry. Any later translation or reprint of this same entry belongs to Evidence Family hayom-yom-4-menachem-av-aid3316797; the same-page English rendering is not independent.",
+      "notes": "נבדק דרך קורא האינטרנט הציבורי ב-15.11.2026. הרשומה נשארת Parsed ובעלת הקשר חלקי; לא הועתק טקסט מלא. ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316797; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body lines 255–256. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed.",
+      "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316797; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body lines 255–256. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
+    }
+  ],
+  "status_note": "Manual source inspection is complete; reconciliation and branch CI remain pending."
+}
