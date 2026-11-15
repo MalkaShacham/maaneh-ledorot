@@ -1291,6 +1291,7 @@ for(const aid of batch079Aids){
 }
 assert.equal(idx.entries.find(e=>sourceAID(e)==='5413165').language,'Yiddish');
 assert.equal(idx.entries.find(e=>sourceAID(e)==='5413169').date_precision,'approximate');
+const nonIndependent5357409=idx.entries.find(e=>sourceAID(e)==='5357409');assert(nonIndependent5357409&&nonIndependent5357409.independent_witness===false&&nonIndependent5357409.evidence_family_id==='igrot-letter-5715-11-tevet-aid4872269','AID 5357409 must remain linked to its existing Evidence Family and not count as an independent witness');
 const enriched5357409=idx.entries.find(e=>sourceAID(e)==='5357409');
 assert(enriched5357409&&enriched5357409.response_propositions.some(p=>p.includes('מזוזה נאה יותר')&&p.includes('ברכה')),'AID 5357409 must retain the additional bounded mezuzah detail');
 const linked5357571=idx.entries.find(e=>sourceAID(e)==='5357571');
@@ -1303,7 +1304,7 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,homeQuestion,{mode});
  assert(m.answerable,mode+': the distinct home-and-house-dedication witnesses must support a bounded multi-source answer');
  assert(m.sources.some(e=>sourceAID(e)==='5413165'),mode+': the Yiddish convention letter must be retained');
- assert(m.sources.some(e=>sourceAID(e)==='5357409'),mode+': the personal housewarming/mezuzah letter must be retained');
+ assert(m.sources.some(e=>e.evidence_family_id==='igrot-letter-5715-11-tevet-aid4872269'&&e._independent_witness!==false),mode+': the canonical housewarming/mezuzah Evidence Family must be retained without counting its non-independent AID 5357409 presentation as a separate witness');
  assert(m.synthesis&&m.synthesis.topic==='jewish_home_and_house_dedication',mode+': synthesis must explicitly distinguish the two contexts');
  assert(m.synthesis.attribution==='system_synthesis_not_rebbe_quote');
  assert(m.synthesis.claims.length>=2&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length),mode+': each synthesis claim must carry source-level locators');
