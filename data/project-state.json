@@ -174,16 +174,16 @@
     "current_batch": "101",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "098",
-    "last_batch_summary": "Batch 099–101: AID 2989588 enriched in place with two propositions; AID 2989585 enriched in place with two propositions; batch 101 added fourteen Hebrew sources plus one English correspondence letter, with 30 non-verbatim propositions. No new item promoted to Verified.",
+    "last_batch_summary": "Batch 099–101: three existing identities enriched in place (AID 3316719 +1 proposition; AID 2989588 +2; AID 2989585 +2); batch 101 added fourteen Hebrew sources and one English correspondence letter, with 30 non-verbatim propositions. No new item promoted to Verified.",
     "last_run_note": "AID 4666220 remained a summary shell; two Chabad Library pages (including one Yiddish) had no readable body. Fourteen alternative Hebrew bodies and one public English letter body were inspected. AID 2989588 and AID 2989585 were enriched in their original canonical files; translations were not counted as independent witnesses. Batches 099–101 pending contiguous reconciliation.",
     "last_batch_blocked_count": 3,
     "last_batch_blocked_reason": "AID 4666220 returned a summary shell; two Chabad Library pages (one Yiddish) returned no readable body. Alternative public Hebrew bodies were inspected in the same run.",
     "next_work": [
-      "Run the new contiguous reconciliation for pending batches 100 and 101; verify all 23 new AIDs and the in-place AID 2989585 enrichment against the full canonical index.",
-      "Confirm the measured result against 977/870/2950 → 1000/870/2992; record any variance rather than normalizing it away.",
+      "Run contiguous reconciliation for batches 099–101; verify all 36 new AIDs and the three in-place enrichments (AID 3316719, 2989588, 2989585) against the full canonical index.",
+      "Confirm the measured result against 965/870/2929 → 977/870/2952 → 986/870/2968 → 1001/870/2998; record any variance rather than normalizing it away.",
       "Run test_reconcile_status.py, test_content_readiness.mjs, answer-quality, synthesis, citation-entailment, context-boundary, and deep researcher-mode checks.",
       "Inspect commit-bound GitHub Actions and confirm GitHub Pages serves the regenerated search index and metrics.",
-      "Continue source-body research in Hebrew, Yiddish and English using accessible original-language texts and additional documentary classes; keep translations in the same Evidence Family.",
+      "Continue source-body research in Hebrew, Yiddish and English using accessible original-language texts and additional documentary classes; the current chain has 35 Hebrew and one English source, while the Yiddish page candidates inspected this run had no readable body.",
       "Do not retry the HTTP 403 crawler, bypass access controls, or promote partial/unedited text records to Verified."
     ],
     "last_reconciliation": {
