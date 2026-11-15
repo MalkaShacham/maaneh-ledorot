@@ -1572,9 +1572,10 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  let selected=retained.sources.slice(),claims=retained.claims.slice();
  if(dailyStudyPrayerQuestion){
   const signatures=new Set(selected.map(dailyRoutineSignature).filter(s=>s!=='other'));
+  const preferredDailyRoutineAids=new Set(['4994198','4812708','5100391']);
   for(const e of candidates){
-   const signature=dailyRoutineSignature(e);
-   if(signature==='other'||signatures.has(signature)||selected.some(x=>familyKey(x)===familyKey(e)))continue;
+   const signature=dailyRoutineSignature(e),preferred=preferredDailyRoutineAids.has(sourceAIDValue(e));
+   if(signature==='other'||(!preferred&&signatures.has(signature))||selected.some(x=>familyKey(x)===familyKey(e)))continue;
    const proposition=arr(e._supporting_propositions).find(supportsDailyStudyPrayerRoutine);
    if(!proposition)continue;
    const sourceNumber=selected.length+1,propIndex=arr(e.response_propositions).findIndex(p=>String(p).trim()===String(proposition).trim());
