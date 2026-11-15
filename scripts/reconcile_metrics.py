@@ -316,7 +316,7 @@ for selected_index, batch_info in enumerate(selected_batches):
         "same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),
         "canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),
         "metrics_actual_after":snapshot_metrics,"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"items":audit}
-    reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_after":snapshot_metrics,"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit)})
+    reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_after":snapshot_metrics,"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit),"batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),"existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),"answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),"selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")} ),"non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),"same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),"canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),"items":audit})
     summary=state.setdefault("development_recovery",{}).get("last_batch_summary")
     if isinstance(summary,dict) and str(summary.get("batch_id"))==str(batch_data.get("batch_id")):
         summary["metrics_after_actual"]=snapshot_metrics
@@ -333,6 +333,10 @@ if selected_batches:
     if isinstance(last_data.get("metrics_expected_after"),dict):
         readiness_state["expected_after"]={k:last_data["metrics_expected_after"][k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in last_data["metrics_expected_after"]}
     state.setdefault("development_recovery",{})["reconciliation_chain"]=reconciliation_audit_history
+    reconciled_ids={str(x["data"].get("batch_id")) for x in selected_batches}
+    readiness_state["pending_batches"]=[str(x) for x in readiness_state.get("pending_batches",[]) if str(x) not in reconciled_ids]
+    dev_pending=state.setdefault("development_recovery",{}).get("pending_reconciliation_batches",[])
+    state["development_recovery"]["pending_reconciliation_batches"]=[str(x) for x in dev_pending if str(x) not in reconciled_ids]
 
 print("search_index_count",len(search_entries))
 out.update(summarize(search_index["entries"]))
