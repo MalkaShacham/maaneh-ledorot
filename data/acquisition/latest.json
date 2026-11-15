@@ -10,25 +10,25 @@
     "batch_id": "105",
     "batch_file": "data/items/content-research-batch-105-2026-11-15.json",
     "title": "Batch 105 — Hebrew, English and Yiddish source-body review",
-    "reviewed_at": "2026-11-15T23:24:59+02:00",
+    "reviewed_at": "2026-11-15T23:54:53+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending",
-    "reviewed_item_count": 16,
-    "source_bodies_inspected": 16,
-    "source_body_pages_opened": 16,
+    "reviewed_item_count": 25,
+    "source_bodies_inspected": 25,
+    "source_body_pages_opened": 25,
     "metadata_only_items_rechecked": 0,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 14,
     "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 25,
+    "existing_identities_rechecked": 9,
+    "new_response_propositions": 33,
     "existing_response_propositions_added": 2,
-    "total_new_paraphrase_entries": 27,
+    "total_new_paraphrase_entries": 35,
     "answer_eligible_source_families_added": 13,
     "independent_witnesses_added": 14,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 2,
+    "blocked_candidate_count": 17,
     "excluded_candidate_count": 1,
     "crawler_retry": false,
     "access_control_bypassed": false,
@@ -42,7 +42,7 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1033,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3070
+      "answer_eligible_propositions": 3078
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -67,7 +67,22 @@
     ],
     "blocked_aids": [
       4666220,
-      4783876
+      4783876,
+      1200970095,
+      1200700039,
+      1200820161,
+      1200860170,
+      1200920230,
+      1200890121,
+      1200900255,
+      1200770178,
+      1200720273,
+      1200700258,
+      2988238,
+      4280406,
+      2987653,
+      2987969,
+      4280469
     ],
     "excluded_aids": [
       4279874
@@ -82,7 +97,313 @@
       "English": 1,
       "Yiddish": 1
     },
-    "translations_counted_as_independent_witnesses": 0
+    "translations_counted_as_independent_witnesses": 0,
+    "blocked_candidates": [
+      {
+        "url": "https://he.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "Public web reader returned Internal Error; no inspectable body. No crawler retry or access-control bypass.",
+        "candidate_aid": 4666220
+      },
+      {
+        "url": "https://he.chabad.org/therebbe/article_cdo/aid/4783876/jewish/page.htm",
+        "reason": "Public web reader returned Internal Error for Yiddish melody-letter page; no body inspected and no access-control bypass.",
+        "candidate_aid": 4783876
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200970095
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200700039
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200820161
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200860170
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200920230
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200890121
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200900255
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200770178
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200720273
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200700258
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2988238",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2988238
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/4280406",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 4280406
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2987653",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2987653
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2987969",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2987969
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/4280469",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 4280469
+      }
+    ],
+    "source_body_recheck": {
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "source_bodies_reopened": 9,
+      "new_response_propositions_added": 8,
+      "aids": [
+        4279872,
+        4279873,
+        4280037,
+        4280038,
+        4280039,
+        4304375,
+        2989391,
+        2216588,
+        3315445
+      ],
+      "rechecked_aids_with_new_propositions": [
+        4279872,
+        4279873,
+        4280037,
+        4280038,
+        4280039,
+        4304375,
+        2989391,
+        2216588
+      ],
+      "aids_reopened_without_new_proposition": [
+        3315445
+      ],
+      "locators": [
+        {
+          "aid": 4279872,
+          "locator": "he.chabad.org AID 4279872, גוף השיחה שורות 184–186."
+        },
+        {
+          "aid": 4279873,
+          "locator": "he.chabad.org AID 4279873, גוף הר״ד שורות 194–199."
+        },
+        {
+          "aid": 4280037,
+          "locator": "he.chabad.org AID 4280037, גוף המאמר שורות 175–176."
+        },
+        {
+          "aid": 4280038,
+          "locator": "he.chabad.org AID 4280038, גוף המאמר שורות 174–177 ו-181–186; נוספה פרופוזיציה על עבודת התשובה והפיכת חושך לאור."
+        },
+        {
+          "aid": 4280039,
+          "locator": "he.chabad.org AID 4280039, גוף השיחה שורות 198–204."
+        },
+        {
+          "aid": 4304375,
+          "locator": "he.chabad.org AID 4304375, גוף המאמר שורות 178–181."
+        },
+        {
+          "aid": 2989391,
+          "locator": "he.chabad.org AID 2989391, גוף המכתב שורות 180–184."
+        },
+        {
+          "aid": 2216588,
+          "locator": "Chabad.org/TheRebbe.org AID 2216588, body lines 286–289."
+        },
+        {
+          "aid": 3315445,
+          "locator": "Chabad.org AID 3315445, Yiddish original body lines 256–259; נבדק מחדש, ללא פרופוזיציה נוספת כדי למנוע כפילות."
+        }
+      ],
+      "blocked_alternatives_count": 15,
+      "blocked_alternatives": [
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200970095
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200700039
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200820161
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200860170
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200920230
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200890121
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200900255
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200770178
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200720273
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200700258
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2988238",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2988238
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/4280406",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 4280406
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2987653",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2987653
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2987969",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2987969
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/4280469",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 4280469
+        }
+      ],
+      "fallback_publisher": "BeitChabad / he.chabad.org and Chabad.org/TheRebbe.org",
+      "fallback_source_bodies_inspected": 9,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "scan_only_verification_used": false,
+      "full_text_copied": false,
+      "limitations": "כל תשע הבדיקות החוזרות הן של גופי פרסום דיגיטליים; לא נבדקו כתבי־יד, אוטוגרפים, הקלטות, מהדורות ביקורתיות או ההקשר המלא. ב-AID 3315445 נבדק הטקסט המקורי ביידיש; התרגום האנגלי באותו עמוד אינו עד עצמאי."
+    },
+    "fallback_source_results": {
+      "publisher": "BeitChabad / he.chabad.org and Chabad.org/TheRebbe.org",
+      "accessible_item_level_bodies": 16,
+      "aids": [
+        2216588,
+        2988877,
+        2988982,
+        2989391,
+        3315445,
+        4279870,
+        4279872,
+        4279873,
+        4279874,
+        4280036,
+        4280037,
+        4280038,
+        4280039,
+        4304374,
+        4304375,
+        5959941
+      ],
+      "body_text_inspected": true,
+      "notes": "לאחר שעמודי ChabadLibrary החזירו תוצאות חיפוש ללא שורות גוף, וחמישה עמודי Chabad.org הציגו מעטפות תקציר במקום את גוף המקור, בוצעה בדיקת fallback של תשעה גופי פרסום מלאים ב-BeitChabad/Chabad.org. שמונה קיבלו פרופוזיציה חדשה; ב-AID 3315445 לא נוספה פרופוזיציה נוספת משום שהמקטע כבר כוסה, כדי למנוע כפילות. לא נעשה שימוש בקטעי חיפוש כתוכן.",
+      "second_pass_accessible_item_level_bodies": 9,
+      "second_pass_aids": [
+        4279872,
+        4279873,
+        4280037,
+        4280038,
+        4280039,
+        4304375,
+        2989391,
+        2216588,
+        3315445
+      ],
+      "second_pass_blocked_alternatives": 15
+    }
   },
   "previous_manual_web_review": {
     "batch_id": "104",
@@ -471,9 +792,9 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 105: 16 public source bodies inspected across Hebrew, English and Yiddish; 14 new identities, one in-place enrichment, 13 new Evidence Families and 27 paraphrase entries. Two reader failures were recorded and followed by alternatives. No crawler retry, access bypass, full-text copying or Verified promotion. Reconciliation pending.",
+  "manual_web_review_note": "Batch 105 second-pass review: nine source bodies reopened, eight additional propositions added with body locators; 15 alternative pages were unusable (10 ChabadLibrary pages without readable body lines, five summary shells). Fallback to nine accessible publisher bodies succeeded. Metrics remain pending full reconciliation; no crawler retry, bypass, or Verified promotion.",
   "manual_web_review_current_metrics": null,
-  "last_manual_review_at": "2026-11-15T23:24:59+02:00",
+  "last_manual_review_at": "2026-11-15T23:54:53+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -2053,25 +2374,25 @@
       "batch_id": "105",
       "batch_file": "data/items/content-research-batch-105-2026-11-15.json",
       "title": "Batch 105 — Hebrew, English and Yiddish source-body review",
-      "reviewed_at": "2026-11-15T23:24:59+02:00",
+      "reviewed_at": "2026-11-15T23:54:53+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending",
-      "reviewed_item_count": 16,
-      "source_bodies_inspected": 16,
-      "source_body_pages_opened": 16,
+      "reviewed_item_count": 25,
+      "source_bodies_inspected": 25,
+      "source_body_pages_opened": 25,
       "metadata_only_items_rechecked": 0,
       "search_extracts_used_as_content": 0,
       "new_source_identities": 14,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 25,
+      "existing_identities_rechecked": 9,
+      "new_response_propositions": 33,
       "existing_response_propositions_added": 2,
-      "total_new_paraphrase_entries": 27,
+      "total_new_paraphrase_entries": 35,
       "answer_eligible_source_families_added": 13,
       "independent_witnesses_added": 14,
       "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 2,
+      "blocked_candidate_count": 17,
       "excluded_candidate_count": 1,
       "crawler_retry": false,
       "access_control_bypassed": false,
@@ -2085,7 +2406,7 @@
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 1033,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3070
+        "answer_eligible_propositions": 3078
       },
       "metrics_actual_after": null,
       "reconciliation_variance": null,
@@ -2110,7 +2431,22 @@
       ],
       "blocked_aids": [
         4666220,
-        4783876
+        4783876,
+        1200970095,
+        1200700039,
+        1200820161,
+        1200860170,
+        1200920230,
+        1200890121,
+        1200900255,
+        1200770178,
+        1200720273,
+        1200700258,
+        2988238,
+        4280406,
+        2987653,
+        2987969,
+        4280469
       ],
       "excluded_aids": [
         4279874
@@ -2125,7 +2461,313 @@
         "English": 1,
         "Yiddish": 1
       },
-      "translations_counted_as_independent_witnesses": 0
+      "translations_counted_as_independent_witnesses": 0,
+      "blocked_candidates": [
+        {
+          "url": "https://he.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "reason": "Public web reader returned Internal Error; no inspectable body. No crawler retry or access-control bypass.",
+          "candidate_aid": 4666220
+        },
+        {
+          "url": "https://he.chabad.org/therebbe/article_cdo/aid/4783876/jewish/page.htm",
+          "reason": "Public web reader returned Internal Error for Yiddish melody-letter page; no body inspected and no access-control bypass.",
+          "candidate_aid": 4783876
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200970095
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200700039
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200820161
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200860170
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200920230
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200890121
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200900255
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200770178
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200720273
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200700258
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2988238",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2988238
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/4280406",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 4280406
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2987653",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2987653
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2987969",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2987969
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/4280469",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 4280469
+        }
+      ],
+      "source_body_recheck": {
+        "rechecked_at": "2026-11-15T23:54:53+02:00",
+        "source_bodies_reopened": 9,
+        "new_response_propositions_added": 8,
+        "aids": [
+          4279872,
+          4279873,
+          4280037,
+          4280038,
+          4280039,
+          4304375,
+          2989391,
+          2216588,
+          3315445
+        ],
+        "rechecked_aids_with_new_propositions": [
+          4279872,
+          4279873,
+          4280037,
+          4280038,
+          4280039,
+          4304375,
+          2989391,
+          2216588
+        ],
+        "aids_reopened_without_new_proposition": [
+          3315445
+        ],
+        "locators": [
+          {
+            "aid": 4279872,
+            "locator": "he.chabad.org AID 4279872, גוף השיחה שורות 184–186."
+          },
+          {
+            "aid": 4279873,
+            "locator": "he.chabad.org AID 4279873, גוף הר״ד שורות 194–199."
+          },
+          {
+            "aid": 4280037,
+            "locator": "he.chabad.org AID 4280037, גוף המאמר שורות 175–176."
+          },
+          {
+            "aid": 4280038,
+            "locator": "he.chabad.org AID 4280038, גוף המאמר שורות 174–177 ו-181–186; נוספה פרופוזיציה על עבודת התשובה והפיכת חושך לאור."
+          },
+          {
+            "aid": 4280039,
+            "locator": "he.chabad.org AID 4280039, גוף השיחה שורות 198–204."
+          },
+          {
+            "aid": 4304375,
+            "locator": "he.chabad.org AID 4304375, גוף המאמר שורות 178–181."
+          },
+          {
+            "aid": 2989391,
+            "locator": "he.chabad.org AID 2989391, גוף המכתב שורות 180–184."
+          },
+          {
+            "aid": 2216588,
+            "locator": "Chabad.org/TheRebbe.org AID 2216588, body lines 286–289."
+          },
+          {
+            "aid": 3315445,
+            "locator": "Chabad.org AID 3315445, Yiddish original body lines 256–259; נבדק מחדש, ללא פרופוזיציה נוספת כדי למנוע כפילות."
+          }
+        ],
+        "blocked_alternatives_count": 15,
+        "blocked_alternatives": [
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200970095
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200700039
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200820161
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200860170
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200920230
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200890121
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200900255
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200770178
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200720273
+          },
+          {
+            "source_reference": "ChabadLibrary public search result",
+            "url": null,
+            "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+            "candidate_aid": 1200700258
+          },
+          {
+            "source_reference": "he.chabad.org public reader",
+            "url": "https://he.chabad.org/library/article_cdo/aid/2988238",
+            "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+            "candidate_aid": 2988238
+          },
+          {
+            "source_reference": "he.chabad.org public reader",
+            "url": "https://he.chabad.org/library/article_cdo/aid/4280406",
+            "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+            "candidate_aid": 4280406
+          },
+          {
+            "source_reference": "he.chabad.org public reader",
+            "url": "https://he.chabad.org/library/article_cdo/aid/2987653",
+            "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+            "candidate_aid": 2987653
+          },
+          {
+            "source_reference": "he.chabad.org public reader",
+            "url": "https://he.chabad.org/library/article_cdo/aid/2987969",
+            "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+            "candidate_aid": 2987969
+          },
+          {
+            "source_reference": "he.chabad.org public reader",
+            "url": "https://he.chabad.org/library/article_cdo/aid/4280469",
+            "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+            "candidate_aid": 4280469
+          }
+        ],
+        "fallback_publisher": "BeitChabad / he.chabad.org and Chabad.org/TheRebbe.org",
+        "fallback_source_bodies_inspected": 9,
+        "crawler_retry": false,
+        "access_control_bypassed": false,
+        "scan_only_verification_used": false,
+        "full_text_copied": false,
+        "limitations": "כל תשע הבדיקות החוזרות הן של גופי פרסום דיגיטליים; לא נבדקו כתבי־יד, אוטוגרפים, הקלטות, מהדורות ביקורתיות או ההקשר המלא. ב-AID 3315445 נבדק הטקסט המקורי ביידיש; התרגום האנגלי באותו עמוד אינו עד עצמאי."
+      },
+      "fallback_source_results": {
+        "publisher": "BeitChabad / he.chabad.org and Chabad.org/TheRebbe.org",
+        "accessible_item_level_bodies": 16,
+        "aids": [
+          2216588,
+          2988877,
+          2988982,
+          2989391,
+          3315445,
+          4279870,
+          4279872,
+          4279873,
+          4279874,
+          4280036,
+          4280037,
+          4280038,
+          4280039,
+          4304374,
+          4304375,
+          5959941
+        ],
+        "body_text_inspected": true,
+        "notes": "לאחר שעמודי ChabadLibrary החזירו תוצאות חיפוש ללא שורות גוף, וחמישה עמודי Chabad.org הציגו מעטפות תקציר במקום את גוף המקור, בוצעה בדיקת fallback של תשעה גופי פרסום מלאים ב-BeitChabad/Chabad.org. שמונה קיבלו פרופוזיציה חדשה; ב-AID 3315445 לא נוספה פרופוזיציה נוספת משום שהמקטע כבר כוסה, כדי למנוע כפילות. לא נעשה שימוש בקטעי חיפוש כתוכן.",
+        "second_pass_accessible_item_level_bodies": 9,
+        "second_pass_aids": [
+          4279872,
+          4279873,
+          4280037,
+          4280038,
+          4280039,
+          4304375,
+          2989391,
+          2216588,
+          3315445
+        ],
+        "second_pass_blocked_alternatives": 15
+      }
     }
   ],
   "earlier_manual_web_review_12": {
@@ -2272,25 +2914,25 @@
     "batch_id": "105",
     "batch_file": "data/items/content-research-batch-105-2026-11-15.json",
     "title": "Batch 105 — Hebrew, English and Yiddish source-body review",
-    "reviewed_at": "2026-11-15T23:24:59+02:00",
+    "reviewed_at": "2026-11-15T23:54:53+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending",
-    "reviewed_item_count": 16,
-    "source_bodies_inspected": 16,
-    "source_body_pages_opened": 16,
+    "reviewed_item_count": 25,
+    "source_bodies_inspected": 25,
+    "source_body_pages_opened": 25,
     "metadata_only_items_rechecked": 0,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 14,
     "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 25,
+    "existing_identities_rechecked": 9,
+    "new_response_propositions": 33,
     "existing_response_propositions_added": 2,
-    "total_new_paraphrase_entries": 27,
+    "total_new_paraphrase_entries": 35,
     "answer_eligible_source_families_added": 13,
     "independent_witnesses_added": 14,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 2,
+    "blocked_candidate_count": 17,
     "excluded_candidate_count": 1,
     "crawler_retry": false,
     "access_control_bypassed": false,
@@ -2304,7 +2946,7 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1033,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3070
+      "answer_eligible_propositions": 3078
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -2329,7 +2971,22 @@
     ],
     "blocked_aids": [
       4666220,
-      4783876
+      4783876,
+      1200970095,
+      1200700039,
+      1200820161,
+      1200860170,
+      1200920230,
+      1200890121,
+      1200900255,
+      1200770178,
+      1200720273,
+      1200700258,
+      2988238,
+      4280406,
+      2987653,
+      2987969,
+      4280469
     ],
     "excluded_aids": [
       4279874
@@ -2344,6 +3001,312 @@
       "English": 1,
       "Yiddish": 1
     },
-    "translations_counted_as_independent_witnesses": 0
+    "translations_counted_as_independent_witnesses": 0,
+    "blocked_candidates": [
+      {
+        "url": "https://he.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "Public web reader returned Internal Error; no inspectable body. No crawler retry or access-control bypass.",
+        "candidate_aid": 4666220
+      },
+      {
+        "url": "https://he.chabad.org/therebbe/article_cdo/aid/4783876/jewish/page.htm",
+        "reason": "Public web reader returned Internal Error for Yiddish melody-letter page; no body inspected and no access-control bypass.",
+        "candidate_aid": 4783876
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200970095
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200700039
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200820161
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200860170
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200920230
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200890121
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200900255
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200770178
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200720273
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200700258
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2988238",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2988238
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/4280406",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 4280406
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2987653",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2987653
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2987969",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2987969
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/4280469",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 4280469
+      }
+    ],
+    "source_body_recheck": {
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "source_bodies_reopened": 9,
+      "new_response_propositions_added": 8,
+      "aids": [
+        4279872,
+        4279873,
+        4280037,
+        4280038,
+        4280039,
+        4304375,
+        2989391,
+        2216588,
+        3315445
+      ],
+      "rechecked_aids_with_new_propositions": [
+        4279872,
+        4279873,
+        4280037,
+        4280038,
+        4280039,
+        4304375,
+        2989391,
+        2216588
+      ],
+      "aids_reopened_without_new_proposition": [
+        3315445
+      ],
+      "locators": [
+        {
+          "aid": 4279872,
+          "locator": "he.chabad.org AID 4279872, גוף השיחה שורות 184–186."
+        },
+        {
+          "aid": 4279873,
+          "locator": "he.chabad.org AID 4279873, גוף הר״ד שורות 194–199."
+        },
+        {
+          "aid": 4280037,
+          "locator": "he.chabad.org AID 4280037, גוף המאמר שורות 175–176."
+        },
+        {
+          "aid": 4280038,
+          "locator": "he.chabad.org AID 4280038, גוף המאמר שורות 174–177 ו-181–186; נוספה פרופוזיציה על עבודת התשובה והפיכת חושך לאור."
+        },
+        {
+          "aid": 4280039,
+          "locator": "he.chabad.org AID 4280039, גוף השיחה שורות 198–204."
+        },
+        {
+          "aid": 4304375,
+          "locator": "he.chabad.org AID 4304375, גוף המאמר שורות 178–181."
+        },
+        {
+          "aid": 2989391,
+          "locator": "he.chabad.org AID 2989391, גוף המכתב שורות 180–184."
+        },
+        {
+          "aid": 2216588,
+          "locator": "Chabad.org/TheRebbe.org AID 2216588, body lines 286–289."
+        },
+        {
+          "aid": 3315445,
+          "locator": "Chabad.org AID 3315445, Yiddish original body lines 256–259; נבדק מחדש, ללא פרופוזיציה נוספת כדי למנוע כפילות."
+        }
+      ],
+      "blocked_alternatives_count": 15,
+      "blocked_alternatives": [
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200970095
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200700039
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200820161
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200860170
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200920230
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200890121
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200900255
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200770178
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200720273
+        },
+        {
+          "source_reference": "ChabadLibrary public search result",
+          "url": null,
+          "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+          "candidate_aid": 1200700258
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2988238",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2988238
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/4280406",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 4280406
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2987653",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2987653
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/2987969",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 2987969
+        },
+        {
+          "source_reference": "he.chabad.org public reader",
+          "url": "https://he.chabad.org/library/article_cdo/aid/4280469",
+          "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+          "candidate_aid": 4280469
+        }
+      ],
+      "fallback_publisher": "BeitChabad / he.chabad.org and Chabad.org/TheRebbe.org",
+      "fallback_source_bodies_inspected": 9,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "scan_only_verification_used": false,
+      "full_text_copied": false,
+      "limitations": "כל תשע הבדיקות החוזרות הן של גופי פרסום דיגיטליים; לא נבדקו כתבי־יד, אוטוגרפים, הקלטות, מהדורות ביקורתיות או ההקשר המלא. ב-AID 3315445 נבדק הטקסט המקורי ביידיש; התרגום האנגלי באותו עמוד אינו עד עצמאי."
+    },
+    "fallback_source_results": {
+      "publisher": "BeitChabad / he.chabad.org and Chabad.org/TheRebbe.org",
+      "accessible_item_level_bodies": 16,
+      "aids": [
+        2216588,
+        2988877,
+        2988982,
+        2989391,
+        3315445,
+        4279870,
+        4279872,
+        4279873,
+        4279874,
+        4280036,
+        4280037,
+        4280038,
+        4280039,
+        4304374,
+        4304375,
+        5959941
+      ],
+      "body_text_inspected": true,
+      "notes": "לאחר שעמודי ChabadLibrary החזירו תוצאות חיפוש ללא שורות גוף, וחמישה עמודי Chabad.org הציגו מעטפות תקציר במקום את גוף המקור, בוצעה בדיקת fallback של תשעה גופי פרסום מלאים ב-BeitChabad/Chabad.org. שמונה קיבלו פרופוזיציה חדשה; ב-AID 3315445 לא נוספה פרופוזיציה נוספת משום שהמקטע כבר כוסה, כדי למנוע כפילות. לא נעשה שימוש בקטעי חיפוש כתוכן.",
+      "second_pass_accessible_item_level_bodies": 9,
+      "second_pass_aids": [
+        4279872,
+        4279873,
+        4280037,
+        4280038,
+        4280039,
+        4304375,
+        2989391,
+        2216588,
+        3315445
+      ],
+      "second_pass_blocked_alternatives": 15
+    }
   }
 }

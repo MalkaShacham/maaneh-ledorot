@@ -6,22 +6,22 @@
   "title": "Batch 105 — Hebrew, English and Yiddish source-body review",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending",
-  "reviewed_item_count": 16,
-  "source_bodies_inspected": 16,
-  "source_body_pages_opened": 16,
+  "reviewed_item_count": 25,
+  "source_bodies_inspected": 25,
+  "source_body_pages_opened": 25,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 14,
   "existing_identities_enriched": 1,
-  "existing_identities_rechecked": 0,
-  "new_response_propositions": 25,
+  "existing_identities_rechecked": 9,
+  "new_response_propositions": 33,
   "existing_response_propositions_added": 2,
-  "total_new_paraphrase_entries": 27,
+  "total_new_paraphrase_entries": 35,
   "answer_eligible_source_families_added": 13,
   "independent_witnesses_added": 14,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
-  "blocked_candidate_count": 2,
+  "blocked_candidate_count": 17,
   "metadata_only_candidate_count": 0,
   "excluded_candidate_count": 1,
   "crawler_retry": false,
@@ -37,7 +37,7 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1033,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3070
+    "answer_eligible_propositions": 3078
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -65,7 +65,22 @@
   ],
   "blocked_aids": [
     4666220,
-    4783876
+    4783876,
+    1200970095,
+    1200700039,
+    1200820161,
+    1200860170,
+    1200920230,
+    1200890121,
+    1200900255,
+    1200770178,
+    1200720273,
+    1200700258,
+    2988238,
+    4280406,
+    2987653,
+    2987969,
+    4280469
   ],
   "language_distribution": {
     "Hebrew": 12,
@@ -129,14 +144,104 @@
   },
   "blocked_candidates": [
     {
-      "aid": 4666220,
       "url": "https://he.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-      "reason": "Public web reader returned Internal Error; no inspectable body. No crawler retry or access-control bypass."
+      "reason": "Public web reader returned Internal Error; no inspectable body. No crawler retry or access-control bypass.",
+      "candidate_aid": 4666220
     },
     {
-      "aid": 4783876,
       "url": "https://he.chabad.org/therebbe/article_cdo/aid/4783876/jewish/page.htm",
-      "reason": "Public web reader returned Internal Error for Yiddish melody-letter page; no body inspected and no access-control bypass."
+      "reason": "Public web reader returned Internal Error for Yiddish melody-letter page; no body inspected and no access-control bypass.",
+      "candidate_aid": 4783876
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200970095
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200700039
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200820161
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200860170
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200920230
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200890121
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200900255
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200770178
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200720273
+    },
+    {
+      "source_reference": "ChabadLibrary public search result",
+      "url": null,
+      "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+      "candidate_aid": 1200700258
+    },
+    {
+      "source_reference": "he.chabad.org public reader",
+      "url": "https://he.chabad.org/library/article_cdo/aid/2988238",
+      "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+      "candidate_aid": 2988238
+    },
+    {
+      "source_reference": "he.chabad.org public reader",
+      "url": "https://he.chabad.org/library/article_cdo/aid/4280406",
+      "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+      "candidate_aid": 4280406
+    },
+    {
+      "source_reference": "he.chabad.org public reader",
+      "url": "https://he.chabad.org/library/article_cdo/aid/2987653",
+      "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+      "candidate_aid": 2987653
+    },
+    {
+      "source_reference": "he.chabad.org public reader",
+      "url": "https://he.chabad.org/library/article_cdo/aid/2987969",
+      "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+      "candidate_aid": 2987969
+    },
+    {
+      "source_reference": "he.chabad.org public reader",
+      "url": "https://he.chabad.org/library/article_cdo/aid/4280469",
+      "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+      "candidate_aid": 4280469
     }
   ],
   "fallback_source_attempted": true,
@@ -162,7 +267,20 @@
       5959941
     ],
     "body_text_inspected": true,
-    "notes": "After inaccessible candidates, alternative public item pages were inspected; propositions derived from body passages, not titles or search snippets."
+    "notes": "לאחר שעמודי ChabadLibrary החזירו תוצאות חיפוש ללא שורות גוף, וחמישה עמודי Chabad.org הציגו מעטפות תקציר במקום את גוף המקור, בוצעה בדיקת fallback של תשעה גופי פרסום מלאים ב-BeitChabad/Chabad.org. שמונה קיבלו פרופוזיציה חדשה; ב-AID 3315445 לא נוספה פרופוזיציה נוספת משום שהמקטע כבר כוסה, כדי למנוע כפילות. לא נעשה שימוש בקטעי חיפוש כתוכן.",
+    "second_pass_accessible_item_level_bodies": 9,
+    "second_pass_aids": [
+      4279872,
+      4279873,
+      4280037,
+      4280038,
+      4280039,
+      4304375,
+      2989391,
+      2216588,
+      3315445
+    ],
+    "second_pass_blocked_alternatives": 15
   },
   "excluded_candidates": [
     {
@@ -173,125 +291,146 @@
   ],
   "source_body_review": [
     {
-      "aid": 4279872,
-      "id": "sicha-5712-yud-shevat-aid4279872",
+      "reviewed_aid": 4279872,
+      "reviewed_id": "sicha-5712-yud-shevat-aid4279872",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "sicha",
-      "evidence_family_id": "sicha-5712-yud-shevat-aid4279872",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4279872",
+      "reviewed_evidence_family_id": "sicha-5712-yud-shevat-aid4279872",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4279872",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4279872, גוף השיחה שורות 181–186.",
         "he.chabad.org AID 4279872, גוף השיחה שורות 188–191."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "he.chabad.org AID 4279872, גוף השיחה שורות 184–186.",
+      "recheck_new_proposition": true
     },
     {
-      "aid": 4279873,
-      "id": "farbrengen-report-5712-13-shevat-aid4279873",
+      "reviewed_aid": 4279873,
+      "reviewed_id": "farbrengen-report-5712-13-shevat-aid4279873",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "farbrengen_report",
-      "evidence_family_id": "farbrengen-report-5712-13-shevat-aid4279873",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4279873",
+      "reviewed_evidence_family_id": "farbrengen-report-5712-13-shevat-aid4279873",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4279873",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4279873, גוף הר״ד שורות 176–184.",
         "he.chabad.org AID 4279873, גוף הר״ד שורות 183–189."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "he.chabad.org AID 4279873, גוף הר״ד שורות 194–199.",
+      "recheck_new_proposition": true
     },
     {
-      "aid": 4280037,
-      "id": "maamar-5721-11-shevat-basi-legani-aid4280037",
+      "reviewed_aid": 4280037,
+      "reviewed_id": "maamar-5721-11-shevat-basi-legani-aid4280037",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "maamar",
-      "evidence_family_id": "maamar-5721-11-shevat-beshalach-friday-night-aid4280037",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
+      "reviewed_evidence_family_id": "maamar-5721-11-shevat-beshalach-friday-night-aid4280037",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4280037, גוף המאמר שורות 171–175.",
         "he.chabad.org AID 4280037, גוף המאמר שורות 175–177."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "he.chabad.org AID 4280037, גוף המאמר שורות 175–176.",
+      "recheck_new_proposition": true
     },
     {
-      "aid": 4280038,
-      "id": "maamar-5721-11-shevat-vayehi-beshalach-aid4280038",
+      "reviewed_aid": 4280038,
+      "reviewed_id": "maamar-5721-11-shevat-vayehi-beshalach-aid4280038",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "maamar",
-      "evidence_family_id": "farbrengen-5721-11-shevat-beshalach-day-aid4280038",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280038",
+      "reviewed_evidence_family_id": "farbrengen-5721-11-shevat-beshalach-day-aid4280038",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4280038",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4280038, גוף המאמר שורות 171–176.",
         "he.chabad.org AID 4280038, גוף המאמר שורות 176–178."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "he.chabad.org AID 4280038, גוף המאמר שורות 181–186.",
+      "recheck_new_proposition": true
     },
     {
-      "aid": 4280039,
-      "id": "sicha-5721-11-shevat-beshalach-aid4280039",
+      "reviewed_aid": 4280039,
+      "reviewed_id": "sicha-5721-11-shevat-beshalach-aid4280039",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "sicha",
-      "evidence_family_id": "farbrengen-5721-11-shevat-beshalach-day-aid4280038",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280039",
+      "reviewed_evidence_family_id": "farbrengen-5721-11-shevat-beshalach-day-aid4280038",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4280039",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4280039, גוף השיחה שורות 179–185.",
         "he.chabad.org AID 4280039, גוף השיחה שורות 185–191."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "he.chabad.org AID 4280039, גוף השיחה שורות 198–204.",
+      "recheck_new_proposition": true
     },
     {
-      "aid": 4304375,
-      "id": "maamar-5724-11-shevat-tzedkat-pizrono-aid4304375",
+      "reviewed_aid": 4304375,
+      "reviewed_id": "maamar-5724-11-shevat-tzedkat-pizrono-aid4304375",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "maamar",
-      "evidence_family_id": "maamar-5724-11-shevat-tzedkat-pizrono-aid4304375",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4304375",
+      "reviewed_evidence_family_id": "maamar-5724-11-shevat-tzedkat-pizrono-aid4304375",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4304375",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4304375, גוף המאמר שורות 171–175.",
         "he.chabad.org AID 4304375, גוף המאמר שורות 175–177."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "he.chabad.org AID 4304375, גוף המאמר שורות 178–181.",
+      "recheck_new_proposition": true
     },
     {
-      "aid": 2989391,
-      "id": "letter-5711-21-iyar-aid2989391",
+      "reviewed_aid": 2989391,
+      "reviewed_id": "letter-5711-21-iyar-aid2989391",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "letter",
-      "evidence_family_id": "letter-5711-21-iyar-aid2989391",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989391",
+      "reviewed_evidence_family_id": "letter-5711-21-iyar-aid2989391",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/2989391",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 2989391, גוף המכתב שורות 165–168.",
         "he.chabad.org AID 2989391, גוף המכתב שורות 170–175."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "he.chabad.org AID 2989391, גוף המכתב שורות 180–184.",
+      "recheck_new_proposition": true
     },
     {
-      "aid": 5959941,
-      "id": "telegram-5730-yud-shevat-aid5959941",
+      "reviewed_aid": 5959941,
+      "reviewed_id": "telegram-5730-yud-shevat-aid5959941",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "telegram",
-      "evidence_family_id": "telegram-5730-yud-shevat-aid5959941",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/5959941",
+      "reviewed_evidence_family_id": "telegram-5730-yud-shevat-aid5959941",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/5959941",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 5959941, גוף המברק שורות 198–208."
@@ -300,13 +439,13 @@
       "included_in_corpus": true
     },
     {
-      "aid": 4280036,
-      "id": "telegram-5721-yud-shevat-aid4280036",
+      "reviewed_aid": 4280036,
+      "reviewed_id": "telegram-5721-yud-shevat-aid4280036",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "telegram",
-      "evidence_family_id": "telegram-5721-yud-shevat-aid4280036",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280036",
+      "reviewed_evidence_family_id": "telegram-5721-yud-shevat-aid4280036",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4280036",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4280036, גוף המברק שורות 161–182."
@@ -315,13 +454,13 @@
       "included_in_corpus": true
     },
     {
-      "aid": 2988982,
-      "id": "telegram-5716-yud-bet-yud-gimmel-tammuz-aid2988982",
+      "reviewed_aid": 2988982,
+      "reviewed_id": "telegram-5716-yud-bet-yud-gimmel-tammuz-aid2988982",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "telegram",
-      "evidence_family_id": "telegram-5716-yud-bet-yud-gimmel-tammuz-aid2988982",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2988982",
+      "reviewed_evidence_family_id": "telegram-5716-yud-bet-yud-gimmel-tammuz-aid2988982",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/2988982",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 2988982, גוף המברק שורות 196–204."
@@ -330,13 +469,13 @@
       "included_in_corpus": true
     },
     {
-      "aid": 4304374,
-      "id": "telegram-5724-yud-shevat-aid4304374",
+      "reviewed_aid": 4304374,
+      "reviewed_id": "telegram-5724-yud-shevat-aid4304374",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "telegram",
-      "evidence_family_id": "telegram-5724-yud-shevat-aid4304374",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4304374",
+      "reviewed_evidence_family_id": "telegram-5724-yud-shevat-aid4304374",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4304374",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4304374, גוף המברק שורות 198–208."
@@ -345,13 +484,13 @@
       "included_in_corpus": true
     },
     {
-      "aid": 4279870,
-      "id": "telegram-5712-yud-shevat-aid4279870",
+      "reviewed_aid": 4279870,
+      "reviewed_id": "telegram-5712-yud-shevat-aid4279870",
       "language": "Hebrew",
       "original_language": "Hebrew",
       "type": "telegram",
-      "evidence_family_id": "telegram-5712-yud-shevat-aid4279870",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4279870",
+      "reviewed_evidence_family_id": "telegram-5712-yud-shevat-aid4279870",
+      "reviewed_source_url": "https://he.chabad.org/library/article_cdo/aid/4279870",
       "body_text_inspected": true,
       "locators": [
         "he.chabad.org AID 4279870, גוף המברק שורות 161–170."
@@ -360,13 +499,13 @@
       "included_in_corpus": true
     },
     {
-      "aid": 2216588,
-      "id": "letter-5713-5-shevat-aid2216588",
+      "reviewed_aid": 2216588,
+      "reviewed_id": "letter-5713-5-shevat-aid2216588",
       "language": "English",
       "original_language": "English",
       "type": "letter",
-      "evidence_family_id": "letter-5713-5-shevat-aid2216588",
-      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2216588/jewish/Why-the-Chabad-Rebbes-Didnt-Speak-Hebrew.htm",
+      "reviewed_evidence_family_id": "letter-5713-5-shevat-aid2216588",
+      "reviewed_source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2216588/jewish/Why-the-Chabad-Rebbes-Didnt-Speak-Hebrew.htm",
       "body_text_inspected": true,
       "locators": [
         "Chabad.org/TheRebbe.org AID 2216588, body lines 267–275.",
@@ -374,16 +513,19 @@
         "Chabad.org/TheRebbe.org AID 2216588, body lines 276–277."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "Chabad.org/TheRebbe.org AID 2216588, body lines 286–289.",
+      "recheck_new_proposition": true
     },
     {
-      "aid": 3315445,
-      "id": "hayom-yom-2-adar-i-aid3315445",
+      "reviewed_aid": 3315445,
+      "reviewed_id": "hayom-yom-2-adar-i-aid3315445",
       "language": "Yiddish",
       "original_language": "Yiddish",
       "type": "daily_entry",
-      "evidence_family_id": "hayom-yom-2-adar-i-aid3315445",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315445/jewish/2-Adar-I.htm",
+      "reviewed_evidence_family_id": "hayom-yom-2-adar-i-aid3315445",
+      "reviewed_source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315445/jewish/2-Adar-I.htm",
       "body_text_inspected": true,
       "locators": [
         "Chabad.org AID 3315445, Yiddish original body lines 246–247.",
@@ -391,10 +533,13 @@
         "Chabad.org AID 3315445, Yiddish original body line 249."
       ],
       "status": "Parsed",
-      "included_in_corpus": true
+      "included_in_corpus": true,
+      "rechecked_at": "2026-11-15T23:54:53+02:00",
+      "recheck_locator": "Chabad.org AID 3315445, Yiddish original body lines 256–259; no duplicate proposition added.",
+      "recheck_new_proposition": false
     },
     {
-      "aid": 2988877,
+      "reviewed_aid": 2988877,
       "language": "Hebrew",
       "type": "sicha",
       "body_text_inspected": true,
@@ -406,7 +551,7 @@
       "action": "existing identity enriched in place"
     },
     {
-      "aid": 4279874,
+      "reviewed_aid": 4279874,
       "language": "Hebrew",
       "original_language": "English",
       "body_text_inspected": true,
@@ -431,17 +576,171 @@
     }
   ],
   "source_body_recheck": {
-    "rechecked_at": "2026-11-15T23:24:59+02:00",
-    "source_bodies_reopened": 1,
+    "rechecked_at": "2026-11-15T23:54:53+02:00",
+    "source_bodies_reopened": 9,
+    "new_response_propositions_added": 8,
     "aids": [
-      2988877
+      4279872,
+      4279873,
+      4280037,
+      4280038,
+      4280039,
+      4304375,
+      2989391,
+      2216588,
+      3315445
     ],
-    "new_response_propositions_added": 2,
+    "rechecked_aids_with_new_propositions": [
+      4279872,
+      4279873,
+      4280037,
+      4280038,
+      4280039,
+      4304375,
+      2989391,
+      2216588
+    ],
+    "aids_reopened_without_new_proposition": [
+      3315445
+    ],
+    "locators": [
+      {
+        "aid": 4279872,
+        "locator": "he.chabad.org AID 4279872, גוף השיחה שורות 184–186."
+      },
+      {
+        "aid": 4279873,
+        "locator": "he.chabad.org AID 4279873, גוף הר״ד שורות 194–199."
+      },
+      {
+        "aid": 4280037,
+        "locator": "he.chabad.org AID 4280037, גוף המאמר שורות 175–176."
+      },
+      {
+        "aid": 4280038,
+        "locator": "he.chabad.org AID 4280038, גוף המאמר שורות 174–177 ו-181–186; נוספה פרופוזיציה על עבודת התשובה והפיכת חושך לאור."
+      },
+      {
+        "aid": 4280039,
+        "locator": "he.chabad.org AID 4280039, גוף השיחה שורות 198–204."
+      },
+      {
+        "aid": 4304375,
+        "locator": "he.chabad.org AID 4304375, גוף המאמר שורות 178–181."
+      },
+      {
+        "aid": 2989391,
+        "locator": "he.chabad.org AID 2989391, גוף המכתב שורות 180–184."
+      },
+      {
+        "aid": 2216588,
+        "locator": "Chabad.org/TheRebbe.org AID 2216588, body lines 286–289."
+      },
+      {
+        "aid": 3315445,
+        "locator": "Chabad.org AID 3315445, Yiddish original body lines 256–259; נבדק מחדש, ללא פרופוזיציה נוספת כדי למנוע כפילות."
+      }
+    ],
+    "blocked_alternatives_count": 15,
+    "blocked_alternatives": [
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200970095
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200700039
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200820161
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200860170
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200920230
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200890121
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200900255
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200770178
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200720273
+      },
+      {
+        "source_reference": "ChabadLibrary public search result",
+        "url": null,
+        "reason": "העמוד נפתח בכלי הקריאה אך לא החזיר שורות גוף קריאות. קטעי חיפוש לא שימשו כתוכן ולא נוספו פרופוזיציות.",
+        "candidate_aid": 1200700258
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2988238",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2988238
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/4280406",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 4280406
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2987653",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2987653
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/2987969",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 2987969
+      },
+      {
+        "source_reference": "he.chabad.org public reader",
+        "url": "https://he.chabad.org/library/article_cdo/aid/4280469",
+        "reason": "העמוד הציג מעטפת/תקציר חלופי ולא את גוף הפרסום המקורי; לא נגזרה ממנו פרופוזיציה.",
+        "candidate_aid": 4280469
+      }
+    ],
+    "fallback_publisher": "BeitChabad / he.chabad.org and Chabad.org/TheRebbe.org",
+    "fallback_source_bodies_inspected": 9,
     "crawler_retry": false,
     "access_control_bypassed": false,
     "scan_only_verification_used": false,
     "full_text_copied": false,
-    "limitations": "Public publisher body only; no recording, manuscript, autograph or full surrounding farbrengen checked."
+    "limitations": "כל תשע הבדיקות החוזרות הן של גופי פרסום דיגיטליים; לא נבדקו כתבי־יד, אוטוגרפים, הקלטות, מהדורות ביקורתיות או ההקשר המלא. ב-AID 3315445 נבדק הטקסט המקורי ביידיש; התרגום האנגלי באותו עמוד אינו עד עצמאי."
   },
   "records": [
     {
@@ -460,23 +759,23 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "השיחה דנה בנצחיות דברי צדיקים, לרבות מחשבות ורעיונות שטרם יצאו לפועל, ומקשרת זאת לחיים רוחניים של אמונה, יראה ואהבה.",
+      "summary_researcher": "השיחה דנה בנצחיות דברי צדיקים ובחובת האדם להזדרז ולהוציא ענייני תורה ומצוות מן המחשבה והדיבור אל המעשה.",
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "he.chabad.org AID 4279872; he.chabad.org AID 4279872, גוף השיחה שורות 181–186. he.chabad.org AID 4279872, גוף השיחה שורות 188–191.",
+        "source_witness": "he.chabad.org AID 4279872; he.chabad.org AID 4279872, גוף השיחה שורות 181–186. he.chabad.org AID 4279872, גוף השיחה שורות 188–191. he.chabad.org AID 4279872, גוף השיחה שורות 184–186.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "העמוד מסמן את השיחה כבלתי מוגה. מאמר הפתיחה מסומן בנפרד כמאמר שהוגה.",
-        "editorial_scope": "נבדקו רק סעיפים ב–ג; לא נבדקו הקלטה, כתב־יד או ההקשר המלא.",
+        "editorial_scope": "נבדקו רק סעיפים ב–ג; לא נבדקו הקלטה, כתב־יד או ההקשר המלא. בבדיקה חוזרת נבדק גם he.chabad.org AID 4279872, גוף השיחה שורות 184–186.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4279872",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף הפרסום הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -494,22 +793,27 @@
           "נצחיות",
           "אמונה",
           "יראה",
-          "אהבה"
+          "אהבה",
+          "זריזות",
+          "מחשבה דיבור ומעשה",
+          "סופיות חיי האדם"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4279872 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4279872, גוף השיחה שורות 181–186. he.chabad.org AID 4279872, גוף השיחה שורות 188–191. נבדקו רק סעיפים ב–ג; לא נבדקו הקלטה, כתב־יד או ההקשר המלא. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4279872 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4279872, גוף השיחה שורות 181–186. he.chabad.org AID 4279872, גוף השיחה שורות 188–191. נבדקו רק סעיפים ב–ג; לא נבדקו הקלטה, כתב־יד או ההקשר המלא. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: he.chabad.org AID 4279872, גוף השיחה שורות 184–186. נוספה פרפרזה מחקרית לא־מילולית; לא הועתק טקסט מוגן.",
       "type": "sicha",
       "collection": "תורת מנחם — התוועדויות תשי״ב",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4279872",
       "response_propositions": [
         "השיחה מחדשת כי דברי צדיקים שנאמרו או אף נחשבו, אך טרם הגיעו למעשה, אינם מתבטלים; היא מתארת אותם כעניינים שסופם לבוא לידי פועל.",
-        "ההסבר קושר את נצחיות דברי הצדיק לחיים רוחניים — אמונה, יראה ואהבה — בניגוד לחיים גשמיים מוגבלים בזמן."
+        "ההסבר קושר את נצחיות דברי הצדיק לחיים רוחניים — אמונה, יראה ואהבה — בניגוד לחיים גשמיים מוגבלים בזמן.",
+        "מעבר לנצחיות של מעשים שכבר בוצעו, השיחה מבחינה בין אדם שימיו מוגבלים ולכן עליו להזדרז לממש ענייני תורה ומצוות שעדיין קיימים רק במחשבה או בדיבור, לבין הקב״ה שאינו מוגבל בזמן; הנצחיות של דברי צדיקים אינה מבטלת את חובת המעשה אצל האדם."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 4279872, גוף השיחה שורות 181–186.",
-        "he.chabad.org AID 4279872, גוף השיחה שורות 188–191."
+        "he.chabad.org AID 4279872, גוף השיחה שורות 188–191.",
+        "he.chabad.org AID 4279872, גוף השיחה שורות 184–186."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -519,14 +823,15 @@
       "evidence_family_id": "sicha-5712-yud-shevat-aid4279872",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4279872 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4279872, גוף השיחה שורות 181–186. he.chabad.org AID 4279872, גוף השיחה שורות 188–191. נבדקו רק סעיפים ב–ג; לא נבדקו הקלטה, כתב־יד או ההקשר המלא. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "he.chabad.org AID 4279872; he.chabad.org AID 4279872, גוף השיחה שורות 181–186. he.chabad.org AID 4279872, גוף השיחה שורות 188–191.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4279872 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4279872, גוף השיחה שורות 181–186. he.chabad.org AID 4279872, גוף השיחה שורות 188–191. נבדקו רק סעיפים ב–ג; לא נבדקו הקלטה, כתב־יד או ההקשר המלא. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: he.chabad.org AID 4279872, גוף השיחה שורות 184–186. הפרפרזה הנוספת נשענת על גוף הפרסום בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "he.chabad.org AID 4279872; he.chabad.org AID 4279872, גוף השיחה שורות 181–186. he.chabad.org AID 4279872, גוף השיחה שורות 188–191. he.chabad.org AID 4279872, גוף השיחה שורות 184–186.",
       "documented_circumstances": "שיחת יו״ד שבט ה׳תשי״ב; הפרפרזות מתייחסות לסעיפים ב–ג בלבד.",
-      "question_or_problem": "כיצד מסבירה השיחה את נצחיות דברי הצדיק ואת היחס בין מחשבה, דיבור ומעשה?",
+      "question_or_problem": "כיצד היחס בין נצחיות דברי הצדיק לבין סופיות חיי האדם משפיע על חובת מימוש מחשבה ומעשה?",
       "conditions_or_qualifications": [
         "נבדקו רק טווחי השורות המצוינים; ההקשר המלא לא נבדק.",
         "הפרפרזות אינן ציטוטים ואינן מייחסות ניסוח שנוצר בידי מערכת AI לרבי.",
-        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית.",
+        "הפרופוזיציה הנוספת מבוססת רק על he.chabad.org AID 4279872, גוף השיחה שורות 184–186.; אין בכך אימות של כתב־יד, אוטוגרף או הקשר מלא."
       ],
       "audience": "משתתפי ההתוועדות; רשימת נוכחים לא נבדקה.",
       "primary_secondary_status": "Publisher's public text; partial context; no manuscript or recording comparison.",
@@ -553,23 +858,23 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "הר״ד מפרש את ״נחתת וסלקת״ בהקשר שרה ומדגיש את ההבדל בין מעלה בכוח לבין מימושה בפועל.",
+      "summary_researcher": "הר״ד מרחיב את ההבחנה בין כוח לפועל מן הדוגמה של שרה אל תולדות בית רבי וגלות הרבנית שטערנא שרה.",
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "he.chabad.org AID 4279873; he.chabad.org AID 4279873, גוף הר״ד שורות 176–184. he.chabad.org AID 4279873, גוף הר״ד שורות 183–189.",
+        "source_witness": "he.chabad.org AID 4279873; he.chabad.org AID 4279873, גוף הר״ד שורות 176–184. he.chabad.org AID 4279873, גוף הר״ד שורות 183–189. he.chabad.org AID 4279873, גוף הר״ד שורות 194–199.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "העמוד מסמן את הנוסח כבלתי מוגה.",
-        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן. בבדיקה חוזרת נבדק גם he.chabad.org AID 4279873, גוף הר״ד שורות 194–199.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4279873",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף הפרסום הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -587,22 +892,27 @@
           "נחתת וסלקת",
           "כוח ופועל",
           "שלמות",
-          "מימוש"
+          "מימוש",
+          "בית רבי",
+          "מאסר",
+          "הרבנית שטערנא שרה"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4279873 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4279873, גוף הר״ד שורות 176–184. he.chabad.org AID 4279873, גוף הר״ד שורות 183–189. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4279873 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4279873, גוף הר״ד שורות 176–184. he.chabad.org AID 4279873, גוף הר״ד שורות 183–189. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: he.chabad.org AID 4279873, גוף הר״ד שורות 194–199. נוספה פרפרזה מחקרית לא־מילולית; לא הועתק טקסט מוגן.",
       "type": "farbrengen_report",
       "collection": "תורת מנחם — התוועדויות תשי״ב",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4279873",
       "response_propositions": [
         "הקטע מציג את ״נחתת וסלקת״ כמעלה שהתגלתה אצל שרה בפועל: הירידה למצרים לא פגעה בשלמותה, אלא הדגישה את מעלתה.",
-        "הוא מבחין בין מעלה שקיימת בכוח לבין מעלה שמגיעה לידי פועל, ומציג את המימוש בפועל כתכלית השלמות של דבר."
+        "הוא מבחין בין מעלה שקיימת בכוח לבין מעלה שמגיעה לידי פועל, ומציג את המימוש בפועל כתכלית השלמות של דבר.",
+        "הר״ד מיישם את ההבחנה בין כוח לפועל גם בתולדות בית רבי: מאסר שסיכן חיים מתואר כמימוש בפועל אצל אדמו״ר הזקן והרבי הריי״צ, ואילו אצל נשיאים אחרים האפשרות מתוארת רק בכוח; גלות הרבנית שטערנא שרה מוצגת אף היא כמעלה שהתממשה בפועל."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 4279873, גוף הר״ד שורות 176–184.",
-        "he.chabad.org AID 4279873, גוף הר״ד שורות 183–189."
+        "he.chabad.org AID 4279873, גוף הר״ד שורות 183–189.",
+        "he.chabad.org AID 4279873, גוף הר״ד שורות 194–199."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -612,14 +922,15 @@
       "evidence_family_id": "farbrengen-report-5712-13-shevat-aid4279873",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4279873 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4279873, גוף הר״ד שורות 176–184. he.chabad.org AID 4279873, גוף הר״ד שורות 183–189. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "he.chabad.org AID 4279873; he.chabad.org AID 4279873, גוף הר״ד שורות 176–184. he.chabad.org AID 4279873, גוף הר״ד שורות 183–189.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4279873 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4279873, גוף הר״ד שורות 176–184. he.chabad.org AID 4279873, גוף הר״ד שורות 183–189. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: he.chabad.org AID 4279873, גוף הר״ד שורות 194–199. הפרפרזה הנוספת נשענת על גוף הפרסום בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "he.chabad.org AID 4279873; he.chabad.org AID 4279873, גוף הר״ד שורות 176–184. he.chabad.org AID 4279873, גוף הר״ד שורות 183–189. he.chabad.org AID 4279873, גוף הר״ד שורות 194–199.",
       "documented_circumstances": "דברי הרבי לאחר תפילת מנחה בשבת פרשת בשלח, י״ג שבט ה׳תשי״ב.",
-      "question_or_problem": "מה מדגיש הקטע בהבחנה בין יכולת רוחנית בכוח לבין מימושה בפועל?",
+      "question_or_problem": "כיצד מתבטאת ההבחנה בין כוח לפועל בתולדות בית רבי ובדוגמת הרבנית שטערנא שרה?",
       "conditions_or_qualifications": [
         "נבדקו רק טווחי השורות המצוינים; ההקשר המלא לא נבדק.",
         "הפרפרזות אינן ציטוטים ואינן מייחסות ניסוח שנוצר בידי מערכת AI לרבי.",
-        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית.",
+        "הפרופוזיציה הנוספת מבוססת רק על he.chabad.org AID 4279873, גוף הר״ד שורות 194–199.; אין בכך אימות של כתב־יד, אוטוגרף או הקשר מלא."
       ],
       "audience": "משתתפי המפגש לאחר תפילת מנחה; רשימת נוכחים לא נבדקה.",
       "primary_secondary_status": "Publisher's public text; partial context; no manuscript or recording comparison.",
@@ -646,23 +957,23 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "המאמר עוסק בהשראת השכינה בתוך כל אחד מישראל ובהפיכת כוחות גשמיים לקדושה כחלק מהפיכת העולם לדירה לה׳.",
+      "summary_researcher": "המאמר קושר בין השראת השכינה בתוך האדם לבין הפיכת חומרי העולם לכלים של קדושה, כפי שמודגם בבניית המשכן.",
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "he.chabad.org AID 4280037; he.chabad.org AID 4280037, גוף המאמר שורות 171–175. he.chabad.org AID 4280037, גוף המאמר שורות 175–177.",
+        "source_witness": "he.chabad.org AID 4280037; he.chabad.org AID 4280037, גוף המאמר שורות 171–175. he.chabad.org AID 4280037, גוף המאמר שורות 175–177. he.chabad.org AID 4280037, גוף המאמר שורות 175–176.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "העמוד מסמן במפורש את ההנחה כבלתי מוגה.",
-        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן. בבדיקה חוזרת נבדק גם he.chabad.org AID 4280037, גוף המאמר שורות 175–176.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף הפרסום הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -680,22 +991,28 @@
           "השראת השכינה",
           "נפש הבהמית",
           "עבודת היחיד",
-          "קדושה"
+          "קדושה",
+          "המשכן",
+          "קרשי המשכן",
+          "בירור חומרי העולם",
+          "שטות דקדושה"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280037 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280037, גוף המאמר שורות 171–175. he.chabad.org AID 4280037, גוף המאמר שורות 175–177. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280037 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280037, גוף המאמר שורות 171–175. he.chabad.org AID 4280037, גוף המאמר שורות 175–177. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: he.chabad.org AID 4280037, גוף המאמר שורות 175–176. נוספה פרפרזה מחקרית לא־מילולית; לא הועתק טקסט מוגן.",
       "type": "maamar",
       "collection": "תורת מנחם — התוועדויות תשכ״א",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
       "response_propositions": [
         "המאמר מפרש את ״באתי לגני״ כהשבת השכינה לתחתונים, ומסביר שהציווי ״ושכנתי בתוכם״ מכוון גם להשראת השכינה בתוך כל אחד מישראל.",
-        "המאמר קושר את עבודת היחיד בהפיכת כוחות הנפש הבהמית לקדושה להרחבת ההשפעה עד לעולם כולו, כדי שיהיה דירה לה׳ בתחתונים."
+        "המאמר קושר את עבודת היחיד בהפיכת כוחות הנפש הבהמית לקדושה להרחבת ההשפעה עד לעולם כולו, כדי שיהיה דירה לה׳ בתחתונים.",
+        "המאמר מתאר את בניית המשכן עצמה כדוגמה להפיכת חומרי העולם: השטות והכוחות של הלעומת־זה נהפכים לקרשים ולקשרים של המשכן, כך שהמקדש הגשמי מבטא את אותה עבודת בירור הנדרשת מן האדם."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 4280037, גוף המאמר שורות 171–175.",
-        "he.chabad.org AID 4280037, גוף המאמר שורות 175–177."
+        "he.chabad.org AID 4280037, גוף המאמר שורות 175–177.",
+        "he.chabad.org AID 4280037, גוף המאמר שורות 175–176."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -705,14 +1022,15 @@
       "evidence_family_id": "maamar-5721-11-shevat-beshalach-friday-night-aid4280037",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280037 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280037, גוף המאמר שורות 171–175. he.chabad.org AID 4280037, גוף המאמר שורות 175–177. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "he.chabad.org AID 4280037; he.chabad.org AID 4280037, גוף המאמר שורות 171–175. he.chabad.org AID 4280037, גוף המאמר שורות 175–177.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280037 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280037, גוף המאמר שורות 171–175. he.chabad.org AID 4280037, גוף המאמר שורות 175–177. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: he.chabad.org AID 4280037, גוף המאמר שורות 175–176. הפרפרזה הנוספת נשענת על גוף הפרסום בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "he.chabad.org AID 4280037; he.chabad.org AID 4280037, גוף המאמר שורות 171–175. he.chabad.org AID 4280037, גוף המאמר שורות 175–177. he.chabad.org AID 4280037, גוף המאמר שורות 175–176.",
       "documented_circumstances": "מאמר באתי לגני בליל שבת פרשת בשלח, י״א שבט ה׳תשכ״א, לאחר קבלת שבת.",
-      "question_or_problem": "כיצד קושר המאמר בין עבודת היחיד לבין השראת השכינה בעולם?",
+      "question_or_problem": "כיצד מתוארת הפיכת חומרי העולם והנפש לכלים של קדושה?",
       "conditions_or_qualifications": [
         "נבדקו רק טווחי השורות המצוינים; ההקשר המלא לא נבדק.",
         "הפרפרזות אינן ציטוטים ואינן מייחסות ניסוח שנוצר בידי מערכת AI לרבי.",
-        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית.",
+        "הפרופוזיציה הנוספת מבוססת רק על he.chabad.org AID 4280037, גוף המאמר שורות 175–176.; אין בכך אימות של כתב־יד, אוטוגרף או הקשר מלא."
       ],
       "audience": "משתתפי ההתוועדות בליל שבת; רשימת נוכחים לא נבדקה.",
       "primary_secondary_status": "Publisher's public text; partial context; no manuscript or recording comparison.",
@@ -739,23 +1057,23 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "המאמר מפרש את גלות מצרים והפיזור בין האומות כתהליך של זריעה ובירור ניצוצות קדושה מתוך המציאות הגשמית.",
+      "summary_researcher": "המאמר מתאר את גלות מצרים כזריעה ובירור ניצוצות, ומוסיף שעבודת התשובה יכולה להפוך חושך לאור באמצעות גילוי בלתי מוגבל.",
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "he.chabad.org AID 4280038; he.chabad.org AID 4280038, גוף המאמר שורות 171–176. he.chabad.org AID 4280038, גוף המאמר שורות 176–178.",
+        "source_witness": "he.chabad.org AID 4280038; he.chabad.org AID 4280038, גוף המאמר שורות 171–176. he.chabad.org AID 4280038, גוף המאמר שורות 176–178. he.chabad.org AID 4280038, גוף המאמר שורות 181–186.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "העמוד מסמן במפורש את ההנחה כבלתי מוגה.",
-        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן. בבדיקה חוזרת נבדק גם he.chabad.org AID 4280038, גוף המאמר שורות 181–186.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4280038",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף המאמר הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -779,22 +1097,29 @@
           "פיזור בין האומות",
           "ניצוצות קדושה",
           "בירור",
-          "לשם שמים"
+          "לשם שמים",
+          "תשובה",
+          "אתהפכא חשוכא לנהורא",
+          "אור בלתי מוגבל",
+          "בירור ניצוצות",
+          "עבודת תורה ומצוות"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280038 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280038, גוף המאמר שורות 171–176. he.chabad.org AID 4280038, גוף המאמר שורות 176–178. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280038 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280038, גוף המאמר שורות 171–176. he.chabad.org AID 4280038, גוף המאמר שורות 176–178. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: he.chabad.org AID 4280038, גוף המאמר שורות 181–186. נוספה פרפרזה מחקרית לא־מילולית; לא הועתק טקסט מוגן.",
       "type": "maamar",
       "collection": "תורת מנחם — התוועדויות תשכ״א",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4280038",
       "response_propositions": [
         "המאמר מדמה את גלות מצרים לזריעה שממנה צומחת ישועה בריבוי, ומסביר שפיזור ישראל בין האומות מאפשר בירור ניצוצות קדושה.",
-        "הבירור מתואר כנעשה גם דרך שימוש בחפצים ובמשאבים גשמיים לשם שמים; ״גרים״ בקטע מתפרשים גם כניצוצות קדושה ולא רק כמתגיירים בפועל."
+        "הבירור מתואר כנעשה גם דרך שימוש בחפצים ובמשאבים גשמיים לשם שמים; ״גרים״ בקטע מתפרשים גם כניצוצות קדושה ולא רק כמתגיירים בפועל.",
+        "המאמר מבחין בין עבודת תורה ומצוות במתכונתה המוגבלת לבין עבודת התשובה שמאפשרת להפוך חושך לאור באמצעות גילוי אור בלתי מוגבל; הוא מציג את בירור הניצוצות כעבודה העולה במדרגתה על העבודה הרגילה של תורה ומצוות."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 4280038, גוף המאמר שורות 171–176.",
-        "he.chabad.org AID 4280038, גוף המאמר שורות 176–178."
+        "he.chabad.org AID 4280038, גוף המאמר שורות 176–178.",
+        "he.chabad.org AID 4280038, גוף המאמר שורות 181–186."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -804,14 +1129,15 @@
       "evidence_family_id": "farbrengen-5721-11-shevat-beshalach-day-aid4280038",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280038 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280038, גוף המאמר שורות 171–176. he.chabad.org AID 4280038, גוף המאמר שורות 176–178. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "he.chabad.org AID 4280038; he.chabad.org AID 4280038, גוף המאמר שורות 171–176. he.chabad.org AID 4280038, גוף המאמר שורות 176–178.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280038 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280038, גוף המאמר שורות 171–176. he.chabad.org AID 4280038, גוף המאמר שורות 176–178. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: he.chabad.org AID 4280038, גוף המאמר שורות 181–186. הפרפרזה הנוספת נשענת על גוף המאמר בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "he.chabad.org AID 4280038; he.chabad.org AID 4280038, גוף המאמר שורות 171–176. he.chabad.org AID 4280038, גוף המאמר שורות 176–178. he.chabad.org AID 4280038, גוף המאמר שורות 181–186.",
       "documented_circumstances": "מאמר בשבת פרשת בשלח, י״א שבט ה׳תשכ״א; אותה התוועדות של AID 4280039.",
-      "question_or_problem": "כיצד מפרש המאמר את תפקיד הגלות והפיזור בין האומות?",
+      "question_or_problem": "כיצד קושר המאמר בין גלות, בירור ניצוצות ועבודת התשובה ההופכת חושך לאור?",
       "conditions_or_qualifications": [
         "נבדקו רק טווחי השורות המצוינים; ההקשר המלא לא נבדק.",
         "הפרפרזות אינן ציטוטים ואינן מייחסות ניסוח שנוצר בידי מערכת AI לרבי.",
-        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית.",
+        "הפרופוזיציה הנוספת מבוססת רק על he.chabad.org AID 4280038, גוף המאמר שורות 181–186.; אין בכך אימות של כתב־יד, אוטוגרף או הקשר מלא."
       ],
       "audience": "משתתפי ההתוועדות; רשימת נוכחים לא נבדקה.",
       "primary_secondary_status": "Publisher's public text; partial context; no manuscript or recording comparison.",
@@ -838,23 +1164,23 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "השיחה מדגישה שהיציאה מן הגלות החיצונית אינה מספיקה בלי עבודה פנימית, ומזהירה מפני תחושת ישות גם בלימוד תורה.",
+      "summary_researcher": "השיחה מדגישה שהנס של קריעת ים סוף אינו מחליף עבודה פנימית: נדרשת התגברות על קרירות עמלק כהכנה למתן תורה.",
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "he.chabad.org AID 4280039; he.chabad.org AID 4280039, גוף השיחה שורות 179–185. he.chabad.org AID 4280039, גוף השיחה שורות 185–191.",
+        "source_witness": "he.chabad.org AID 4280039; he.chabad.org AID 4280039, גוף השיחה שורות 179–185. he.chabad.org AID 4280039, גוף השיחה שורות 185–191. he.chabad.org AID 4280039, גוף השיחה שורות 198–204.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "העמוד מסמן במפורש את השיחה כבלתי מוגה.",
-        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן. בבדיקה חוזרת נבדק גם he.chabad.org AID 4280039, גוף השיחה שורות 198–204.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4280039",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף הפרסום הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -879,22 +1205,29 @@
           "ישות",
           "ביטול",
           "ניסיון",
-          "לימוד תורה"
+          "לימוד תורה",
+          "מלחמת עמלק",
+          "קרירות",
+          "מתן תורה",
+          "יתרו",
+          "בירור הניצוצות"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280039 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280039, גוף השיחה שורות 179–185. he.chabad.org AID 4280039, גוף השיחה שורות 185–191. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280039 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280039, גוף השיחה שורות 179–185. he.chabad.org AID 4280039, גוף השיחה שורות 185–191. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: he.chabad.org AID 4280039, גוף השיחה שורות 198–204. נוספה פרפרזה מחקרית לא־מילולית; לא הועתק טקסט מוגן.",
       "type": "sicha",
       "collection": "תורת מנחם — התוועדויות תשכ״א",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4280039",
       "response_propositions": [
         "השיחה מבחינה בין שחרור מן המצרים החיצוניים לבין הצורך להתמודד עם הרע שנותר בתוך האדם; לכן יציאת מצרים אינה מתוארת כאן כגאולה שלמה.",
-        "היא מזהירה שתחושת ישות והתרחבות עלולה לגרום ללומד להשתמש בשכל התורה כדי להקשות על נותן התורה; ההמשך קושר את היציאה מן המצב הזה לביטול."
+        "היא מזהירה שתחושת ישות והתרחבות עלולה לגרום ללומד להשתמש בשכל התורה כדי להקשות על נותן התורה; ההמשך קושר את היציאה מן המצב הזה לביטול.",
+        "השיחה מבחינה בין הנס הגלוי של קריעת ים סוף לבין ההתמודדות עם קרירות עמלק: ההתגברות על הקרירות דורשת עבודה בלתי מוגבלת ומוצגת כהכנה למתן תורה, והתגיירות יתרו נזכרת כחלק מבירור הניצוצות."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 4280039, גוף השיחה שורות 179–185.",
-        "he.chabad.org AID 4280039, גוף השיחה שורות 185–191."
+        "he.chabad.org AID 4280039, גוף השיחה שורות 185–191.",
+        "he.chabad.org AID 4280039, גוף השיחה שורות 198–204."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -904,14 +1237,15 @@
       "evidence_family_id": "farbrengen-5721-11-shevat-beshalach-day-aid4280038",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280039 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280039, גוף השיחה שורות 179–185. he.chabad.org AID 4280039, גוף השיחה שורות 185–191. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "he.chabad.org AID 4280039; he.chabad.org AID 4280039, גוף השיחה שורות 179–185. he.chabad.org AID 4280039, גוף השיחה שורות 185–191.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4280039 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4280039, גוף השיחה שורות 179–185. he.chabad.org AID 4280039, גוף השיחה שורות 185–191. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: he.chabad.org AID 4280039, גוף השיחה שורות 198–204. הפרפרזה הנוספת נשענת על גוף הפרסום בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "he.chabad.org AID 4280039; he.chabad.org AID 4280039, גוף השיחה שורות 179–185. he.chabad.org AID 4280039, גוף השיחה שורות 185–191. he.chabad.org AID 4280039, גוף השיחה שורות 198–204.",
       "documented_circumstances": "שיחת שבת פרשת בשלח, י״א שבט ה׳תשכ״א; אותה התוועדות של מאמר AID 4280038.",
-      "question_or_problem": "מה ההבדל בין יציאה מן המצרים החיצוניים לבין העבודה הנדרשת בתוך האדם?",
+      "question_or_problem": "מה מוסיפה מלחמת עמלק על הנס של קריעת ים סוף כהכנה למתן תורה?",
       "conditions_or_qualifications": [
         "נבדקו רק טווחי השורות המצוינים; ההקשר המלא לא נבדק.",
         "הפרפרזות אינן ציטוטים ואינן מייחסות ניסוח שנוצר בידי מערכת AI לרבי.",
-        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית.",
+        "הפרופוזיציה הנוספת מבוססת רק על he.chabad.org AID 4280039, גוף השיחה שורות 198–204.; אין בכך אימות של כתב־יד, אוטוגרף או הקשר מלא."
       ],
       "audience": "משתתפי ההתוועדות; רשימת נוכחים לא נבדקה.",
       "primary_secondary_status": "Publisher's public text; partial context; no manuscript or recording comparison.",
@@ -938,23 +1272,23 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "המאמר מפרש את פיזור ישראל בין האומות כמנגנון שמאפשר את המשך התורה והמצוות ומחזק קהילות הנתונות תחת גזירות.",
+      "summary_researcher": "המאמר מפרש את הפיזור בין האומות לא רק כהגנה מפני כליה, אלא גם כמצב המעורר מסירות נפש ויראת שמים בלתי מוגבלות.",
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "he.chabad.org AID 4304375; he.chabad.org AID 4304375, גוף המאמר שורות 171–175. he.chabad.org AID 4304375, גוף המאמר שורות 175–177.",
+        "source_witness": "he.chabad.org AID 4304375; he.chabad.org AID 4304375, גוף המאמר שורות 171–175. he.chabad.org AID 4304375, גוף המאמר שורות 175–177. he.chabad.org AID 4304375, גוף המאמר שורות 178–181.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "העמוד מסמן במפורש את ההנחה כבלתי מוגה.",
-        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת ותוצאת חיפוש לא שימשו תחליף לתוכן. בבדיקה חוזרת נבדק גם he.chabad.org AID 4304375, גוף המאמר שורות 178–181.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4304375",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף הפרסום הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -972,22 +1306,28 @@
           "גזירות",
           "תורה ומצוות",
           "מסירות נפש",
-          "חיזוק קהילות"
+          "חיזוק קהילות",
+          "פרזונו",
+          "פזרונו",
+          "יראת שמים",
+          "מניעות ועיכובים"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4304375 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4304375, גוף המאמר שורות 171–175. he.chabad.org AID 4304375, גוף המאמר שורות 175–177. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4304375 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4304375, גוף המאמר שורות 171–175. he.chabad.org AID 4304375, גוף המאמר שורות 175–177. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: he.chabad.org AID 4304375, גוף המאמר שורות 178–181. נוספה פרפרזה מחקרית לא־מילולית; לא הועתק טקסט מוגן.",
       "type": "maamar",
       "collection": "תורת מנחם — התוועדויות תשכ״ד",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4304375",
       "response_propositions": [
         "המאמר מסביר שפיזור ישראל בין מדינות מונע את האפשרות לכלות את כולם יחד, ומאפשר את המשך קיום התורה והמצוות גם כאשר קהילה במדינה אחת נתונה ללחץ.",
-        "העיסוק בתורה ובמצוות של יהודים במדינות אחרות מתואר כמקור חיזוק לאלה הנתונים תחת גזירות, כדי שיוכלו להמשיך בעבודתם בתוקף."
+        "העיסוק בתורה ובמצוות של יהודים במדינות אחרות מתואר כמקור חיזוק לאלה הנתונים תחת גזירות, כדי שיוכלו להמשיך בעבודתם בתוקף.",
+        "המאמר מדייק מן הלשון ״פרזונו״ ולא ״פזרונו״: הפיזור בין האומות מתואר כמצב המעורר מסירות נפש ויראת שמים שלמעלה ממדידה, במיוחד כאשר מניעות מחייבות את ישראל לברר ניצוצות במקום הימצאם."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 4304375, גוף המאמר שורות 171–175.",
-        "he.chabad.org AID 4304375, גוף המאמר שורות 175–177."
+        "he.chabad.org AID 4304375, גוף המאמר שורות 175–177.",
+        "he.chabad.org AID 4304375, גוף המאמר שורות 178–181."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -997,14 +1337,15 @@
       "evidence_family_id": "maamar-5724-11-shevat-tzedkat-pizrono-aid4304375",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4304375 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4304375, גוף המאמר שורות 171–175. he.chabad.org AID 4304375, גוף המאמר שורות 175–177. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "he.chabad.org AID 4304375; he.chabad.org AID 4304375, גוף המאמר שורות 171–175. he.chabad.org AID 4304375, גוף המאמר שורות 175–177.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 4304375 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 4304375, גוף המאמר שורות 171–175. he.chabad.org AID 4304375, גוף המאמר שורות 175–177. לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: he.chabad.org AID 4304375, גוף המאמר שורות 178–181. הפרפרזה הנוספת נשענת על גוף הפרסום בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "he.chabad.org AID 4304375; he.chabad.org AID 4304375, גוף המאמר שורות 171–175. he.chabad.org AID 4304375, גוף המאמר שורות 175–177. he.chabad.org AID 4304375, גוף המאמר שורות 178–181.",
       "documented_circumstances": "מאמר ב׳ בשבת פרשת בשלח, י״א שבט ה׳תשכ״ד.",
-      "question_or_problem": "כיצד מתואר תפקיד הפיזור בין האומות בהגנה על קיום התורה והמצוות?",
+      "question_or_problem": "כיצד מדייק המאמר בין פיזור גאוגרפי לבין מסירות נפש ויראת שמים?",
       "conditions_or_qualifications": [
         "נבדקו רק טווחי השורות המצוינים; ההקשר המלא לא נבדק.",
         "הפרפרזות אינן ציטוטים ואינן מייחסות ניסוח שנוצר בידי מערכת AI לרבי.",
-        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית.",
+        "הפרופוזיציה הנוספת מבוססת רק על he.chabad.org AID 4304375, גוף המאמר שורות 178–181.; אין בכך אימות של כתב־יד, אוטוגרף או הקשר מלא."
       ],
       "audience": "משתתפי ההתוועדות; רשימת נוכחים לא נבדקה.",
       "primary_secondary_status": "Publisher's public text; partial context; no manuscript or recording comparison.",
@@ -1031,23 +1372,23 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "המכתב דן באימה ויראה בלימוד תורה, בנוכחות כל כוחות האדם בלימוד ובהתבוננות במקור האלוקי של התורה.",
+      "summary_researcher": "המכתב מתאר את יראת מתן תורה כחוויה שניתן לעורר בכל זמן, ושכוחה מתחדש מדי שנה בחג השבועות.",
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "he.chabad.org AID 2989391; he.chabad.org AID 2989391, גוף המכתב שורות 165–168. he.chabad.org AID 2989391, גוף המכתב שורות 170–175.",
+        "source_witness": "he.chabad.org AID 2989391; he.chabad.org AID 2989391, גוף המכתב שורות 165–168. he.chabad.org AID 2989391, גוף המכתב שורות 170–175. he.chabad.org AID 2989391, גוף המכתב שורות 180–184.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "הערת המו״ל מציינת שהוספו במהדורה זו מראי מקומות וציונים; לא נבדקו אוטוגרף, צילום המכתב או עותק ארכיוני.",
-        "editorial_scope": "נבדק גוף המכתב בשורות 161–180; הערות המו״ל נבדקו רק כדי להבחין בין גוף המכתב לבין תוספות מערכתיות.",
+        "editorial_scope": "נבדק גוף המכתב בשורות 161–180; הערות המו״ל נבדקו רק כדי להבחין בין גוף המכתב לבין תוספות מערכתיות. בבדיקה חוזרת נבדק גם he.chabad.org AID 2989391, גוף המכתב שורות 180–184.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989391",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף הפרסום הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -1065,22 +1406,27 @@
           "כ״א אייר תשי״א",
           "לימוד תורה",
           "אימה ויראה",
-          "נעשה ונשמע"
+          "נעשה ונשמע",
+          "חג השבועות",
+          "מתן תורה",
+          "התחדשות שנתית"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 2989391 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 2989391, גוף המכתב שורות 165–168. he.chabad.org AID 2989391, גוף המכתב שורות 170–175. נבדק גוף המכתב בשורות 161–180; הערות המו״ל נבדקו רק כדי להבחין בין גוף המכתב לבין תוספות מערכתיות. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 2989391 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 2989391, גוף המכתב שורות 165–168. he.chabad.org AID 2989391, גוף המכתב שורות 170–175. נבדק גוף המכתב בשורות 161–180; הערות המו״ל נבדקו רק כדי להבחין בין גוף המכתב לבין תוספות מערכתיות. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: he.chabad.org AID 2989391, גוף המכתב שורות 180–184. נוספה פרפרזה מחקרית לא־מילולית; לא הועתק טקסט מוגן.",
       "type": "letter",
       "collection": "אגרות קודש, כרך ד, אגרת א׳יא (כפי שמצוין בהערת המו״ל)",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989391",
       "response_propositions": [
         "המכתב מפרש את דרישת חז״ל ללימוד תורה באימה ויראה כחוויה שבה כל האדם — השכל, הלב והאיברים הפנימיים והחיצוניים — נוכח בלימוד.",
-        "הוא מסביר שהלומד יכול לעורר תחושה זו בכל זמן כאשר הוא מתבונן שהתורה הנלמדת היא המשכת חכמה אלוקית, ומציב את קבלת ״נעשה ונשמע״ כהקדמה לכך."
+        "הוא מסביר שהלומד יכול לעורר תחושה זו בכל זמן כאשר הוא מתבונן שהתורה הנלמדת היא המשכת חכמה אלוקית, ומציב את קבלת ״נעשה ונשמע״ כהקדמה לכך.",
+        "המכתב מציין שנתינת הכוח לחוות את יראת מתן תורה מתעוררת מחדש מדי שנה בחג השבועות; הקדמת ״נעשה״ ל״נשמע״ מוצגת כהכנה הנדרשת לקבלת הכוח הזה."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 2989391, גוף המכתב שורות 165–168.",
-        "he.chabad.org AID 2989391, גוף המכתב שורות 170–175."
+        "he.chabad.org AID 2989391, גוף המכתב שורות 170–175.",
+        "he.chabad.org AID 2989391, גוף המכתב שורות 180–184."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -1090,14 +1436,15 @@
       "evidence_family_id": "letter-5711-21-iyar-aid2989391",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 2989391 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 2989391, גוף המכתב שורות 165–168. he.chabad.org AID 2989391, גוף המכתב שורות 170–175. נבדק גוף המכתב בשורות 161–180; הערות המו״ל נבדקו רק כדי להבחין בין גוף המכתב לבין תוספות מערכתיות. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "he.chabad.org AID 2989391; he.chabad.org AID 2989391, גוף המכתב שורות 165–168. he.chabad.org AID 2989391, גוף המכתב שורות 170–175.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של he.chabad.org AID 2989391 ב־15.11.2026. נבדקו רק המקטעים: he.chabad.org AID 2989391, גוף המכתב שורות 165–168. he.chabad.org AID 2989391, גוף המכתב שורות 170–175. נבדק גוף המכתב בשורות 161–180; הערות המו״ל נבדקו רק כדי להבחין בין גוף המכתב לבין תוספות מערכתיות. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: he.chabad.org AID 2989391, גוף המכתב שורות 180–184. הפרפרזה הנוספת נשענת על גוף הפרסום בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "he.chabad.org AID 2989391; he.chabad.org AID 2989391, גוף המכתב שורות 165–168. he.chabad.org AID 2989391, גוף המכתב שורות 170–175. he.chabad.org AID 2989391, גוף המכתב שורות 180–184.",
       "documented_circumstances": "מכתב מברוקלין, כ״א אייר ה׳תשי״א; העמוד מציין שנדפס באגרות קודש ובמקורות נוספים.",
-      "question_or_problem": "כיצד מתאר המכתב את מצב הלומד הנדרש בלימוד תורה בכל זמן?",
+      "question_or_problem": "כיצד מתחדשת יראת מתן תורה בכל שנה, ומה תפקיד הקדמת נעשה ונשמע?",
       "conditions_or_qualifications": [
         "נבדקו רק טווחי השורות המצוינים; ההקשר המלא לא נבדק.",
         "הפרפרזות אינן ציטוטים ואינן מייחסות ניסוח שנוצר בידי מערכת AI לרבי.",
-        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית.",
+        "הפרופוזיציה הנוספת מבוססת רק על he.chabad.org AID 2989391, גוף המכתב שורות 180–184.; אין בכך אימות של כתב־יד, אוטוגרף או הקשר מלא."
       ],
       "audience": "נמען המכתב; זהותו אינה מופיעה במקטע שנבדק.",
       "primary_secondary_status": "Publisher's digital presentation of a Hebrew letter; publisher notes added references; no manuscript comparison.",
@@ -1582,23 +1929,23 @@
       "language": "English",
       "original_language": "English",
       "context_status": "partial",
-      "summary_researcher": "The English letter discusses language choice in Chassidic communication, the use of Yiddish to reach an audience inwardly, and the necessity of practical deeds.",
+      "summary_researcher": "The English letter discusses language choice, practical action, and the organizational constraints that shaped public communication about Lubavitch social work.",
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "Chabad.org/TheRebbe.org AID 2216588; Chabad.org/TheRebbe.org AID 2216588, body lines 267–275. Chabad.org/TheRebbe.org AID 2216588, body lines 273–275. Chabad.org/TheRebbe.org AID 2216588, body lines 276–277.",
+        "source_witness": "Chabad.org/TheRebbe.org AID 2216588; Chabad.org/TheRebbe.org AID 2216588, body lines 267–275. Chabad.org/TheRebbe.org AID 2216588, body lines 273–275. Chabad.org/TheRebbe.org AID 2216588, body lines 276–277. Chabad.org/TheRebbe.org AID 2216588, body lines 286–289.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "The page presents an English letter and contains no translation notice; the archival original, incoming letter and secretariat copy were not inspected.",
-        "editorial_scope": "Only lines 267–279 were used for propositions; the later personal-health paragraph was not summarized.",
+        "editorial_scope": "Only lines 267–279 were used for propositions; the later personal-health paragraph was not summarized. בבדיקה חוזרת נבדק גם Chabad.org/TheRebbe.org AID 2216588, body lines 286–289.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2216588/jewish/Why-the-Chabad-Rebbes-Didnt-Speak-Hebrew.htm",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף הפרסום הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -1616,24 +1963,31 @@
           "Correspondence",
           "Yiddish",
           "Chassidic discourse",
-          "practical deeds"
+          "practical deeds",
+          "social work",
+          "public communication",
+          "staffing",
+          "funding",
+          "organizational priorities"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של Chabad.org/TheRebbe.org AID 2216588 ב־15.11.2026. נבדקו רק המקטעים: Chabad.org/TheRebbe.org AID 2216588, body lines 267–275. Chabad.org/TheRebbe.org AID 2216588, body lines 273–275. Chabad.org/TheRebbe.org AID 2216588, body lines 276–277. Only lines 267–279 were used for propositions; the later personal-health paragraph was not summarized. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של Chabad.org/TheRebbe.org AID 2216588 ב־15.11.2026. נבדקו רק המקטעים: Chabad.org/TheRebbe.org AID 2216588, body lines 267–275. Chabad.org/TheRebbe.org AID 2216588, body lines 273–275. Chabad.org/TheRebbe.org AID 2216588, body lines 276–277. Only lines 267–279 were used for propositions; the later personal-health paragraph was not summarized. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: Chabad.org/TheRebbe.org AID 2216588, body lines 286–289. נוספה פרפרזה מחקרית לא־מילולית; לא הועתק טקסט מוגן.",
       "type": "letter",
       "collection": "TheRebbe.org — Letters / Correspondence",
       "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2216588/jewish/Why-the-Chabad-Rebbes-Didnt-Speak-Hebrew.htm",
       "response_propositions": [
         "The letter distinguishes the sanctity of Hebrew from the purpose of communication: when the content is Chassidic, the language used is secondary, so the recipient need not apologize for writing in English.",
         "It explains that Chabad leaders used Yiddish for Chassidic discourses because that medium could reach the audience's depth and inner response more directly.",
-        "The letter insists that spiritual concern must take practical form; a good heart alone is insufficient without corresponding deeds."
+        "The letter insists that spiritual concern must take practical form; a good heart alone is insufficient without corresponding deeds.",
+        "The letter acknowledges that Lubavitch's social work was broad in scope but constrained by limited staffing and funds. It describes publicizing that work as a real need, while explaining that available effort had to prioritize the work itself; an English booklet is cited as one concrete response."
       ],
       "response_proposition_locators": [
         "Chabad.org/TheRebbe.org AID 2216588, body lines 267–275.",
         "Chabad.org/TheRebbe.org AID 2216588, body lines 273–275.",
-        "Chabad.org/TheRebbe.org AID 2216588, body lines 276–277."
+        "Chabad.org/TheRebbe.org AID 2216588, body lines 276–277.",
+        "Chabad.org/TheRebbe.org AID 2216588, body lines 286–289."
       ],
       "proposition_language": "English",
       "proposition_origin": "source_grounded_paraphrase",
@@ -1643,14 +1997,15 @@
       "evidence_family_id": "letter-5713-5-shevat-aid2216588",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של Chabad.org/TheRebbe.org AID 2216588 ב־15.11.2026. נבדקו רק המקטעים: Chabad.org/TheRebbe.org AID 2216588, body lines 267–275. Chabad.org/TheRebbe.org AID 2216588, body lines 273–275. Chabad.org/TheRebbe.org AID 2216588, body lines 276–277. Only lines 267–279 were used for propositions; the later personal-health paragraph was not summarized. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "Chabad.org/TheRebbe.org AID 2216588; Chabad.org/TheRebbe.org AID 2216588, body lines 267–275. Chabad.org/TheRebbe.org AID 2216588, body lines 273–275. Chabad.org/TheRebbe.org AID 2216588, body lines 276–277.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של Chabad.org/TheRebbe.org AID 2216588 ב־15.11.2026. נבדקו רק המקטעים: Chabad.org/TheRebbe.org AID 2216588, body lines 267–275. Chabad.org/TheRebbe.org AID 2216588, body lines 273–275. Chabad.org/TheRebbe.org AID 2216588, body lines 276–277. Only lines 267–279 were used for propositions; the later personal-health paragraph was not summarized. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: Chabad.org/TheRebbe.org AID 2216588, body lines 286–289. הפרפרזה הנוספת נשענת על גוף הפרסום בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "Chabad.org/TheRebbe.org AID 2216588; Chabad.org/TheRebbe.org AID 2216588, body lines 267–275. Chabad.org/TheRebbe.org AID 2216588, body lines 273–275. Chabad.org/TheRebbe.org AID 2216588, body lines 276–277. Chabad.org/TheRebbe.org AID 2216588, body lines 286–289.",
       "documented_circumstances": "Letter dated 5 Shevat 5713 (January 21, 1953), Brooklyn, New York.",
-      "question_or_problem": "What does the letter say about language choice in Chassidic communication and the relationship between spiritual feeling and practical action?",
+      "question_or_problem": "What does the letter say about language, practical deeds, and the institutional constraints affecting public communication of Chabad's social work?",
       "conditions_or_qualifications": [
         "נבדקו רק טווחי השורות המצוינים; ההקשר המלא לא נבדק.",
         "הפרפרזות אינן ציטוטים ואינן מייחסות ניסוח שנוצר בידי מערכת AI לרבי.",
-        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית.",
+        "הפרופוזיציה הנוספת מבוססת רק על Chabad.org/TheRebbe.org AID 2216588, body lines 286–289.; אין בכך אימות של כתב־יד, אוטוגרף או הקשר מלא."
       ],
       "audience": "The recipient of the letter; the recipient's identity is not visible in the inspected body.",
       "primary_secondary_status": "Publisher's English presentation of a letter attributed to the Rebbe; no translation notice is present, but the archival original was not inspected.",
@@ -1681,19 +2036,19 @@
       "provenance": {
         "authorship_status": "העמוד מייחס את הפריט לרבי; לא נבדקו כתב־יד או עותק ארכיוני.",
         "signature_status": "לא נבדק מקור חתום או אוטוגרף.",
-        "source_witness": "Chabad.org AID 3315445; Chabad.org AID 3315445, Yiddish original body lines 246–247. Chabad.org AID 3315445, Yiddish original body lines 247–248. Chabad.org AID 3315445, Yiddish original body line 249.",
+        "source_witness": "Chabad.org AID 3315445; Chabad.org AID 3315445, Yiddish original body lines 246–247. Chabad.org AID 3315445, Yiddish original body lines 247–248. Chabad.org AID 3315445, Yiddish original body line 249. Chabad.org AID 3315445, Yiddish original body lines 256–259.",
         "transmission_type": "פרסום דיגיטלי של טקסט מקור/תעתיק; לא נבדקה מהדורה ביקורתית.",
         "textual_status": "העמוד מציג את הערך כמתורגם מכתבי הרבי, אך גוף המקור ביידיש מופיע לצד התרגום. ההערות ״Living as a Chassid״ משורות 256 ואילך הן שכבת עריכה נפרדת ולא שימשו לפרופוזיציות.",
-        "editorial_scope": "נבדקו רק שורות 246–249 של המקור ביידיש. התרגום האנגלי בשורות 251–254 נבדק כהצגה נגזרת בלבד; ההערות המערכתיות שאחריו לא יוחסו לרבי.",
+        "editorial_scope": "נבדקו רק שורות 246–249 של המקור ביידיש. התרגום האנגלי בשורות 251–254 נבדק כהצגה נגזרת בלבד; ההערות המערכתיות שאחריו לא יוחסו לרבי. בבדיקה חוזרת נבדק גם Chabad.org AID 3315445, Yiddish original body lines 256–259.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315445/jewish/2-Adar-I.htm",
-        "accessed": "2026-11-15T23:24:59+02:00"
+        "accessed": "2026-11-15T23:54:53+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "גוף הפרסום הציבורי נפתח; נבדקו המקטעים המצוינים ב-locators.",
+        "state": "גוף הפרסום הציבורי נפתח ונבדק מחדש; נבדקו המקטעים המקוריים והטווח הנוסף המצוין ב-locators.",
         "complete_partial": "partial",
-        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
+        "notes": "לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית. בבדיקה חוזרת לא נבדקו כתב־יד, אוטוגרף, הקלטה או מהדורה ביקורתית."
       },
       "access": {
         "access_level": "open",
@@ -1711,12 +2066,16 @@
           "2 Adar I",
           "Yiddish original",
           "כוונה",
-          "עבודת ה׳"
+          "עבודת ה׳",
+          "עבודה יומיומית",
+          "כוונה אמיתית",
+          "פעולות רגילות",
+          "עבודה פנימית"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של Chabad.org AID 3315445 ב־15.11.2026. נבדקו רק המקטעים: Chabad.org AID 3315445, Yiddish original body lines 246–247. Chabad.org AID 3315445, Yiddish original body lines 247–248. Chabad.org AID 3315445, Yiddish original body line 249. נבדקו רק שורות 246–249 של המקור ביידיש. התרגום האנגלי בשורות 251–254 נבדק כהצגה נגזרת בלבד; ההערות המערכתיות שאחריו לא יוחסו לרבי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
+      "notes": "נבדק ידנית ב־15.11.2026. נפתח ונבדק גוף הפרסום הציבורי של Chabad.org AID 3315445 ב־15.11.2026. נבדקו רק המקטעים: Chabad.org AID 3315445, Yiddish original body lines 246–247. Chabad.org AID 3315445, Yiddish original body lines 247–248. Chabad.org AID 3315445, Yiddish original body line 249. נבדקו רק שורות 246–249 של המקור ביידיש. התרגום האנגלי בשורות 251–254 נבדק כהצגה נגזרת בלבד; ההערות המערכתיות שאחריו לא יוחסו לרבי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. בדיקה חוזרת ב־15.11.2026: Chabad.org AID 3315445, Yiddish original body lines 256–259. נבדק מחדש הטווח המצוין; הפרופוזיציות הקיימות כבר מכסות את המקטע ולכן לא נוספה פרופוזיציה כפולה. לא הועתק טקסט מוגן.",
       "type": "daily_entry",
       "collection": "Hayom Yom",
       "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315445/jewish/2-Adar-I.htm",
@@ -1738,8 +2097,8 @@
       "evidence_family_id": "hayom-yom-2-adar-i-aid3315445",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של Chabad.org AID 3315445 ב־15.11.2026. נבדקו רק המקטעים: Chabad.org AID 3315445, Yiddish original body lines 246–247. Chabad.org AID 3315445, Yiddish original body lines 247–248. Chabad.org AID 3315445, Yiddish original body line 249. נבדקו רק שורות 246–249 של המקור ביידיש. התרגום האנגלי בשורות 251–254 נבדק כהצגה נגזרת בלבד; ההערות המערכתיות שאחריו לא יוחסו לרבי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "Chabad.org AID 3315445; Chabad.org AID 3315445, Yiddish original body lines 246–247. Chabad.org AID 3315445, Yiddish original body lines 247–248. Chabad.org AID 3315445, Yiddish original body line 249.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של Chabad.org AID 3315445 ב־15.11.2026. נבדקו רק המקטעים: Chabad.org AID 3315445, Yiddish original body lines 246–247. Chabad.org AID 3315445, Yiddish original body lines 247–248. Chabad.org AID 3315445, Yiddish original body line 249. נבדקו רק שורות 246–249 של המקור ביידיש. התרגום האנגלי בשורות 251–254 נבדק כהצגה נגזרת בלבד; ההערות המערכתיות שאחריו לא יוחסו לרבי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות, לא ציטוטים. לא הועתק טקסט מוגן במלואו. נבדק מחדש ב־15.11.2026: Chabad.org AID 3315445, Yiddish original body lines 256–259. הפרפרזה הנוספת נשענת על גוף הפרסום בטווח זה בלבד; ההקשר המלא, הקלטה, כתב־יד ואוטוגרף לא נבדקו.",
+      "witness_provenance": "Chabad.org AID 3315445; Chabad.org AID 3315445, Yiddish original body lines 246–247. Chabad.org AID 3315445, Yiddish original body lines 247–248. Chabad.org AID 3315445, Yiddish original body line 249. Chabad.org AID 3315445, Yiddish original body lines 256–259.",
       "documented_circumstances": "ערך Hayom Yom ליום 2 Adar I; השנה אינה מצוינת בעמוד. העמוד מציג את המקור ביידיש ואת תרגומו לאנגלית.",
       "question_or_problem": "כיצד מתאר הערך את עבודת ה׳ היומיומית ואת היחס בין כוונה, מעשה ויגיעה?",
       "conditions_or_qualifications": [
