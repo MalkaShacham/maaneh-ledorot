@@ -354,3 +354,13 @@ queue={"schema":"content-review-queue-v1","generated":today,
 (ROOT/"data/public-metrics.json").write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 state_path.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print("answer_eligible_unique_sources",out["answer_eligible_unique_sources"])
+print("answer_readiness_metrics",json.dumps({k:out.get(k) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")},ensure_ascii=False))
+audit_state=state.get("development_recovery",{}).get("last_reconciliation",{})
+print("batch_reconciliation_audit",json.dumps({
+    "batch_id":audit_state.get("batch_id"),
+    "answer_eligible_selected_count":audit_state.get("answer_eligible_selected_count"),
+    "selected_unique_evidence_families":audit_state.get("selected_unique_evidence_families"),
+    "items":[{"aid":x.get("aid"),"canonical_records_found":x.get("canonical_records_found"),
+              "selected_index_entry":{k:x.get("selected_index_entry",{}).get(k) for k in ("present","answer_eligible","evidence_family_id","canonical_file","canonical_status")}}
+             for x in audit_state.get("items",[])]
+},ensure_ascii=False))
