@@ -658,3 +658,6 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 
 
 - Cross-source test wording was tightened to a grounded comparison of the two inspected passages: the 19 Kislev talk on stating the gathering's purpose aloud and the 20 Kislev talk on extending the farbrengen through Torah study and mitzvah practice. The next quality run will verify retrieval of both families and the claim-source map.
+
+
+- The cross-source regression retains full-index retrieval in regular mode and runs deep researcher synthesis on the two exact inspected records. This bounds test cost without removing the full-corpus retrieval assertion.

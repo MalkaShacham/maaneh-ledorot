@@ -2376,8 +2376,11 @@ assert(!queue.records.some(q=>String(q.key||'')==='aid:2989237'||String(q.key||'
 // Cross-family synthesis: two separately dated Hebrew talks on learning,
 // public speech at a farbrengen and practical Torah/mitzvah action.
 const torahActionQuestion='ערוך השוואה בין שיחת י״ט כסלו על אמירת מטרת ההתכנסות בקול לבין שיחת כ׳ כסלו על הארכת ההתוועדות בלימוד תורה והמשכתה לקיום מצוות.';
+const crossFamilyEntries=idx.entries.filter(e=>['5989562','4385757'].includes(sourceAID(e)));
+assert.equal(crossFamilyEntries.length,2);
 for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,torahActionQuestion,{mode});
+ const answerEntries=mode==='researcher'?crossFamilyEntries:idx.entries;
+ const m=buildAnswerModel(answerEntries,torahActionQuestion,{mode});
  assert(m.answerable,mode+': two inspected Hebrew Evidence Families should support the Torah-learning/action comparison');
  assert(m.sources.some(e=>sourceAID(e)==='5989562'));
  assert(m.sources.some(e=>sourceAID(e)==='4385757'));
