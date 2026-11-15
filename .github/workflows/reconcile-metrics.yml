@@ -7,6 +7,8 @@ on:
       - 'data/staging/batches/**'
       - 'data/staging/manifests/**'
       - 'scripts/reconcile_metrics.py'
+      - 'scripts/status_normalization.py'
+      - 'scripts/test_reconcile_status.py'
       - 'scripts/content_readiness.py'
       - 'scripts/reconcile_identity_aliases.py'
       - 'scripts/bulk_promote_indexed.py'
@@ -30,6 +32,8 @@ jobs:
           python-version: '3.x'
       - name: Sync latest main before mutation
         run: git pull --ff-only origin main
+      - name: Test conservative status normalization
+        run: python scripts/test_reconcile_status.py
       # Do not repeat runner-side HTTP 403 discovery during deterministic push reconciliation.
       # Manual dispatch remains available for a separately authorized discovery review.
       - name: Optional live discovery of up to 250 Sichos Kodesh audio records
