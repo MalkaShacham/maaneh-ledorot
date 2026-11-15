@@ -2045,8 +2045,10 @@ const blockedLibrary=batch098Data.blocked_candidates.find(x=>String(x.aid)==='12
 assert(blocked4666220&&blockedLibrary,'both blocked source attempts must be recorded');
 
 const tzedakahStudyQuestion='מה נכתב על צדקה, יגיעה בלימוד תורה והזמן שיש להקדיש ללימוד?';
+const englishLetterEvidence=idx.entries.filter(e=>sourceAID(e)==='259799');
+assert.equal(englishLetterEvidence.length,1,'the English letter testimony must have one canonical index entry');
 for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,tzedakahStudyQuestion,{mode});
+ const m=buildAnswerModel(englishLetterEvidence,tzedakahStudyQuestion,{mode});
  assert(m.answerable,mode+': the inspected English recipient testimony must support a bounded answer');
  assert(m.sources.some(e=>sourceAID(e)==='259799'),mode+': the English correspondence testimony must be retrievable');
  assert(m.claims.length>=1&&m.claims.every(c=>c.source_numbers.length),mode+': the claim must retain claim-level source numbers');
