@@ -32,7 +32,7 @@
       "Discovered": 3
     },
     "answer_eligible_unique_sources": 977,
-    "content_verified_unique_sources": 878,
+    "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2950
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
@@ -96,12 +96,12 @@
       "reconciliation_status": "pending",
       "before": {
         "answer_eligible_unique_sources": 977,
-        "content_verified_unique_sources": 878,
+        "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2950
       },
       "expected_after": {
         "answer_eligible_unique_sources": 986,
-        "content_verified_unique_sources": 878,
+        "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2964
       },
       "actual_delta": null,
@@ -116,22 +116,22 @@
         "099",
         "100"
       ],
-      "baseline_correction": "Full-corpus reconciliation confirmed 878 content-verified Evidence Families before batch 099; the prior 870 expectation was stale by eight pre-existing families. No new status promotion is made in batch 099."
+      "baseline_correction": "The prior 878 content-Verified count was a false positive: eight batch-096 provenance.verification_status strings said 'no promotion to Verified', which status_of() matched as Verified. The records remain Parsed; after neutralizing the phrase, the correct content-Verified baseline is 870."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_100",
+      "run_status": "pending_after_batch_100_corrected_baseline",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 100 adds nine Parsed Hebrew Sicha identities and fourteen inspected-text paraphrases. A known status-parser false positive in batch 096 is corrected; commit-bound tests must establish the final result."
+      "note": "Batch 096 contained eight Parsed records whose explanatory provenance phrase was misread as Verified. The phrase is corrected; the expected content-Verified count is 870, not 878. Commit-bound reconciliation and tests must confirm."
     },
     "publication": {
-      "status": "pending_after_batch_100",
+      "status": "pending_after_batch_100_corrected_baseline",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -173,8 +173,8 @@
     "current_batch": "100",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "099",
-    "last_batch_summary": "Batch 100: nine new Hebrew Sicha text identities from opened BeitChabad bodies, fourteen non-verbatim source-grounded propositions, one metadata-only Yechidus audio page rechecked; no existing content identity enriched and no status promoted to Verified.",
-    "last_run_note": "AID 553674 opened as a Yechidus audio listing without a readable transcript; it was excluded. Same-run fallback inspected nine public Hebrew Sicha bodies on he.chabad.org. No crawler retry or access-control bypass.",
+    "last_batch_summary": "Batch 100: nine new Hebrew Sicha text identities, fourteen non-verbatim source-grounded propositions, one metadata-only Yechidus audio page rechecked. No existing content identity enriched and no source promoted to Verified. Corrected the batch-096 status parser false positive; the content-Verified baseline is 870, not 878.",
+    "last_run_note": "AID 553674 opened as a Yechidus audio listing without a readable transcript; it was excluded. Same-run fallback inspected nine public Hebrew Sicha bodies. The run also corrected a status-parser false positive in batch 096; the eight records remain Parsed and are not content-Verified.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 553674 exposed an audio listing without a readable transcript; excluded from content evidence.",
     "next_work": [

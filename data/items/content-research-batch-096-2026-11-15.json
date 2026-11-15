@@ -39,16 +39,16 @@
   },
   "metrics_actual_after": {
     "answer_eligible_unique_sources": 948,
-    "content_verified_unique_sources": 878,
+    "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2906
   },
   "reconciliation_variance": {
     "answer_eligible_unique_sources": 0,
-    "content_verified_unique_sources": 8,
+    "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 0
   },
-  "reconciliation_status": "reconciled_with_variance",
-  "status": "reconciled_with_variance",
+  "reconciliation_status": "reconciled",
+  "status": "reconciled",
   "new_aids": [
     3316616,
     3316619,
@@ -1166,6 +1166,6 @@
       "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org AID 3316748, בשפת המקור ובמיקומים Chabad.org/TheRebbe.org AID 3316748, original Hebrew body line 246. | Chabad.org/TheRebbe.org AID 3316748, original Hebrew body lines 250–251.. הפרופוזיציות הן פרפרזות לא-מילוליות של הקטע המקורי בלבד. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, הקלטה או המקור המוקדם שעליו נשען הערך; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
     }
   ],
-  "notes": "AID 3316633 and the other nine AIDs from the earlier Hayom Yom review were excluded from this batch to avoid duplication. The existing AID 1273962 identity was enriched only with precise proposition locators.",
+  "notes": "AID 3316633 and the other nine AIDs from the earlier Hayom Yom review were excluded from this batch to avoid duplication. The existing AID 1273962 identity was enriched only with precise proposition locators. Corrected reconciliation snapshot: the previous +8 content-Verified variance came from the phrase 'no promotion to Verified' being misread by status_of(); the affected records remain Parsed and the corrected snapshot is 948/870/2906.",
   "metrics_variance_note": "Full-corpus reconciliation found eight pre-existing Verified Evidence Families absent from the stale published baseline. No status promotion occurred in batch 096; this is a baseline correction."
 }

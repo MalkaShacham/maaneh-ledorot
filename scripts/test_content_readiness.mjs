@@ -962,7 +962,7 @@ for(const aid of batch097Aids){
  assert.equal(e.context_status,'partial');
 }
 assert.equal(batch097Data.reconciliation_status,'reconciled');
-assert.deepEqual(batch097Data.metrics_actual_after,{answer_eligible_unique_sources:956,content_verified_unique_sources:878,answer_eligible_propositions:2918});
+assert.deepEqual(batch097Data.metrics_actual_after,{answer_eligible_unique_sources:956,content_verified_unique_sources:870,answer_eligible_propositions:2918});
 assert.deepEqual(batch097Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 
 
@@ -1065,9 +1065,10 @@ for(const aid of batch096Aids){
 }
 assert.equal(batch096Families.size,9,'each dated Hayom Yom entry must retain its own Evidence Family');
 assert(!idx.entries.some(e=>sourceAID(e)==='4666220'&&e.has_content_evidence===true),'blocked AID 4666220 must not enter answer evidence');
-assert.equal(batch096Data.reconciliation_status,'reconciled_with_variance');
-assert.deepEqual(batch096Data.metrics_actual_after,{answer_eligible_unique_sources:948,content_verified_unique_sources:878,answer_eligible_propositions:2906});
-assert.deepEqual(batch096Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:8,answer_eligible_propositions:0});
+assert.equal(batch096Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch096Data.metrics_expected_after,{answer_eligible_unique_sources:948,content_verified_unique_sources:870,answer_eligible_propositions:2906});
+assert.deepEqual(batch096Data.metrics_actual_after,batch096Data.metrics_expected_after);
+assert.deepEqual(batch096Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 
 
 
@@ -2002,7 +2003,7 @@ assert.equal(batch098Data.existing_response_propositions_added,1);
 assert.equal(batch098Data.answer_eligible_source_families_added,9);
 assert.equal(batch098Data.content_verified_unique_sources_added,0);
 assert.equal(batch098Data.blocked_candidate_count,2);
-assert.deepEqual(batch098Data.metrics_expected_after,{answer_eligible_unique_sources:965,content_verified_unique_sources:878,answer_eligible_propositions:2929});
+assert.deepEqual(batch098Data.metrics_expected_after,{answer_eligible_unique_sources:965,content_verified_unique_sources:870,answer_eligible_propositions:2929});
 assert.equal(new Set(batch098Data.new_aids.map(String)).size,9);
 assert.equal(new Set(batch098Data.records.map(r=>String(r.aid))).size,9);
 assert.equal(new Set(batch098Data.records.map(r=>r.evidence_family_id)).size,9);
@@ -2080,7 +2081,7 @@ const batch099Languages=batch099Data.records.reduce((a,r)=>(a[r.language]=(a[r.l
 for(const r of batch099Data.records){const aid=String(r.aid),matches=idx.entries.filter(e=>sourceAID(e)===aid);assert.equal(matches.length,1,'batch-099 AID '+aid+' must have exactly one canonical identity');const e=matches[0];assert(e.has_content_evidence&&e.response_propositions.length>0);assert.equal(e.canonical_file,batch099Path);assert.equal(e.status,'Parsed');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);assert.equal(e.response_proposition_locators.length,e.response_propositions.length);assert.equal(e.context_status,'partial');assert(e.evidence_family_id);}
 const enriched3316719Batch099=idx.entries.find(e=>sourceAID(e)==='3316719');assert(enriched3316719Batch099&&enriched3316719Batch099.canonical_file==='data/items/content-research-batch-097-2026-11-15.json');assert.equal(enriched3316719Batch099.evidence_family_id,'hayom-yom-tammuz-22-aid3316719');assert.equal(enriched3316719Batch099.response_propositions.length,2);assert(enriched3316719Batch099.response_propositions.some(p=>p.includes('ניגון חסידי')));assert.equal(enriched3316719Batch099.response_proposition_locators.length,2);assert(batch099Data.existing_identity_updates.some(x=>String(x.aid)==='3316719'));
 const yechidusHebrew=idx.entries.find(e=>sourceAID(e)==='553672'),yechidusYiddish=idx.entries.find(e=>sourceAID(e)==='553673');assert(yechidusHebrew&&yechidusYiddish);assert.equal(yechidusHebrew.evidence_family_id,'yechidus-5743-21-kislev-parallel-language-audio');assert.equal(yechidusYiddish.evidence_family_id,yechidusHebrew.evidence_family_id);assert.equal(yechidusHebrew.independent_witness,false);assert.equal(yechidusYiddish.independent_witness,false);assert.equal(yechidusHebrew.response_propositions.length,0);assert.equal(yechidusYiddish.response_propositions.length,0);
-assert(batch099Data.deduplication_check.same_family_duplicate_presentations.some(x=>x.aid===553673));assert.equal(batch099Data.deduplication_check.duplicate_alias_identities,1);assert.equal(batch099Data.reconciliation_status,'pending');assert.deepEqual(batch099Data.metrics_expected_after,{answer_eligible_unique_sources:977,content_verified_unique_sources:878,answer_eligible_propositions:2950});assert.equal(batch099Data.metrics_actual_after,null);
+assert(batch099Data.deduplication_check.same_family_duplicate_presentations.some(x=>x.aid===553673));assert.equal(batch099Data.deduplication_check.duplicate_alias_identities,1);assert.equal(batch099Data.reconciliation_status,'pending');assert.deepEqual(batch099Data.metrics_expected_after,{answer_eligible_unique_sources:977,content_verified_unique_sources:870,answer_eligible_propositions:2950});assert.equal(batch099Data.metrics_actual_after,null);
 const batch099EducationQuestion='מה מתארות השיחות על השפעה חינוכית ועל הוראה מעשית בפרשת השבוע?';
 const batch099EducationAids=new Set(['5959982','5990031','6132085']);
 const batch099EducationEntries=idx.entries.filter(e=>batch099EducationAids.has(sourceAID(e)));
@@ -2124,8 +2125,8 @@ assert.equal(batch100Data.access_control_bypassed,false);
 assert.equal(batch100Data.full_text_copied,false);
 assert.equal(batch100Data.scan_only_verification_used,false);
 assert.equal(batch100Data.translations_counted_as_independent_witnesses,0);
-assert.deepEqual(batch100Data.metrics_before,{answer_eligible_unique_sources:977,content_verified_unique_sources:878,answer_eligible_propositions:2950});
-assert.deepEqual(batch100Data.metrics_expected_after,{answer_eligible_unique_sources:986,content_verified_unique_sources:878,answer_eligible_propositions:2964});
+assert.deepEqual(batch100Data.metrics_before,{answer_eligible_unique_sources:977,content_verified_unique_sources:870,answer_eligible_propositions:2950});
+assert.deepEqual(batch100Data.metrics_expected_after,{answer_eligible_unique_sources:986,content_verified_unique_sources:870,answer_eligible_propositions:2964});
 assert.equal(batch100Data.reconciliation_status,'reconciled');
 assert.deepEqual(batch100Data.metrics_actual_after,batch100Data.metrics_expected_after);
 assert.deepEqual(batch100Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
