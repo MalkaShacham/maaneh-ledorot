@@ -1749,8 +1749,8 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,directAttributionHeadCover,{mode});
  assert(!m.sources.some(e=>sourceAID(e)==='5413093'),mode+': a secretary-signed response must not be attributed directly to the Rebbe');
 }
-assert.equal(acquisitionState.manual_web_review.batch_id,'101');
-assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-101-2026-11-15.json');
+assert.equal(acquisitionState.manual_web_review.batch_id,'103');
+assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-103-2026-11-15.json');
 assert.equal(acquisitionState.manual_web_review.crawler_retry,false);
 assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
 
