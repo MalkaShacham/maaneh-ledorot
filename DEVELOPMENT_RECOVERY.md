@@ -454,3 +454,14 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - The first audit pass exposed a regex defect in reconcile_metrics.py: the batch update identity aid:<number> was not being mapped back to the aid: index key, so the audit reported zero selected items despite the correct metrics. Corrected the numeric-suffix regex, made batch status follow reconciliation status, and made answer_readiness.reconciliation_status explicit. The follow-up audit must select all 14 AIDs with item-level locators.
 - Added an executable test_content_readiness.mjs step to the reconciliation workflow after a second deterministic index rebuild. It checks the 14 item identities, their Parsed/non-independent limits, the zero-variance metrics, the 14-item reconciliation audit, and multi-source researcher-mode claim-level citations.
 - Actions and Pages publication are still subject to the resulting workflow run and live-site verification; no success is inferred from a commit alone.
+
+
+## 2026-11-15 — Batch 090: Hebrew correspondence search-extract inspection
+
+- Inspected eight distinct Hebrew Chabad Library item pages through visible public search-result body extracts: AIDs 1200930278, 1200970064, 1200960330, 1200940046, 1200880574, 1200970168, 1200890400, and 1200920296.
+- Added eight candidate item identities and 16 bounded non-verbatim Hebrew research propositions in `data/items/content-research-batch-090-2026-11-15.json`. Each record has its own Evidence Family, item AID/URL locator, provenance, context limits, and `source_grounded_paraphrase` / `source_text_inspected` fields.
+- Direct opens of all eight item pages returned no readable lines. Only the visible public search-result body extracts were used; all eight remain `Parsed` with partial context. No manuscript, photograph, secretariat copy, incoming letter, or full context was inspected. No item was promoted to `Verified`.
+- Exact-AID repository code searches returned no matches, but a full canonical-index scan was unavailable before commit. Duplicate/AID/Evidence Family reconciliation is still required; the eight identities and expected metric change are provisional.
+- Expected answer readiness: 900 → 908 unique answer-eligible Evidence Families; content-verified remains 852; propositions 2,832 → 2,848. These are targets, not reconciled results.
+- No crawler retry, access-control bypass, full-text copying, translation-as-independent-witness counting, audience/permission change, or schedule change.
+- Next: run canonical reconciliation, verify metrics and the generated index, then run content-readiness and answer-quality tests on the exact commit and verify Pages publication.

@@ -60,7 +60,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled_pending_commit",
+    "status": "pending_reconciliation_after_batch_090",
     "source": "data/public-metrics.json",
     "generated": "2026-11-15",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -88,14 +88,14 @@
       },
       "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 886,
-        "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2818
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 900,
         "content_verified_unique_sources": 852,
         "answer_eligible_propositions": 2832
+      },
+      "expected_after": {
+        "answer_eligible_unique_sources": 908,
+        "content_verified_unique_sources": 852,
+        "answer_eligible_propositions": 2848
       },
       "actual_delta": {
         "answer_eligible_unique_sources": 14,
@@ -111,7 +111,7 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_089",
+      "run_status": "pending_after_batch_090",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
@@ -121,7 +121,7 @@
       "note": "Batch 089 adds 14 Parsed, non-independent publisher-synopsis propositions to existing identities. The answer-quality and content-readiness workflows must run on the resulting main commit."
     },
     "publication": {
-      "status": "pending_after_batch_089",
+      "status": "pending_after_batch_090",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -160,64 +160,54 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-15-content-batch-089",
+    "current_batch": "2026-11-15-content-batch-090",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "089",
+    "last_completed_batch": "090",
     "last_batch_summary": {
-      "batch_id": "089",
-      "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
+      "batch_id": "090",
+      "batch_file": "data/items/content-research-batch-090-2026-11-15.json",
       "generated": "2026-11-15",
-      "reviewed_item_count": 23,
-      "source_bodies_inspected": 14,
-      "new_source_identities": 0,
+      "reviewed_item_count": 8,
+      "source_bodies_inspected": 8,
+      "new_source_identities": 8,
       "duplicate_alias_identities": 0,
-      "existing_identities_enriched": 14,
-      "existing_identities_rechecked": 1,
-      "existing_identities_canonicalized": 14,
-      "new_response_propositions": 0,
-      "existing_response_propositions_added": 14,
-      "answer_eligible_source_families_added": 14,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 14,
+      "existing_identities_enriched": 0,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 16,
+      "existing_response_propositions_added": 0,
+      "answer_eligible_source_families_added": 8,
+      "independent_witnesses_added": 8,
       "content_verified_unique_sources_added": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 886,
+        "answer_eligible_unique_sources": 900,
         "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2818
+        "answer_eligible_propositions": 2832
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 900,
+        "answer_eligible_unique_sources": 908,
         "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2832
+        "answer_eligible_propositions": 2848
       },
-      "metrics_after_actual": {
-        "answer_eligible_unique_sources": 900,
-        "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2832
-      },
-      "status": "reconciled",
-      "blocked_candidate_count": 8,
+      "metrics_after_actual": null,
+      "status": "pending_reconciliation",
+      "blocked_candidate_count": 0,
       "not_promoted_after_inspection_count": 8,
       "source_languages": [
-        "English"
+        "Hebrew"
       ],
       "translations_counted_as_independent_witnesses": 0,
-      "metrics_delta_actual": {
-        "answer_eligible_unique_sources": 14,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 14
-      }
+      "metrics_delta_actual": null
     },
-    "last_run_note": "Batch 089: 14 existing Indexed Living Torah records were enriched in place from item-level publisher synopsis bodies. All remain Parsed and non-independent; expected answer-readiness change 886→900, 852 content-verified unchanged, propositions 2,818→2,832. Reconciliation and Actions pending.",
-    "last_batch_blocked_count": 8,
-    "last_batch_blocked_reason": "Seven audio-only Yechidus candidates exposed no readable transcript or synopsis; one Living Torah archive-date page did not match the queued title and was withheld. Fourteen accessible item-level publisher synopses were used as fallback. No crawler retry or access-control bypass.",
+    "last_run_note": "Batch 090: eight Hebrew Chabad Library item-level search-result body extracts were inspected; eight candidate identities and sixteen non-verbatim propositions were recorded. Direct page opens returned no readable lines, so all records remain Parsed with partial context and none was promoted to Verified. Stable-key reconciliation and answer-readiness metrics are pending.",
+    "last_batch_blocked_count": 0,
+    "last_batch_blocked_reason": "No candidate was discarded; direct page opens returned no readable lines for all eight items, so only visible public search-result extracts were used and the records remain Parsed. No crawler retry or access-control bypass.",
     "next_work": [
-      "Reconcile batch 089 and verify the exact metrics 900 / 852 / 2,832; investigate any variance before claiming progress.",
+      "Reconcile batch 090 against all canonical AIDs, URLs and Evidence Families; remove or link any duplicate identities before counting the batch.",
+      "Verify answer_eligible_unique_sources and proposition totals from the regenerated public-search index; do not assume the expected 908 / 852 / 2,848 until confirmed.",
       "Run test_content_readiness.mjs, answer-quality, citation-integrity and question-specificity suites against the exact main commit.",
-      "Verify multi-source researcher mode preserves separate publisher-synopsis claims, item-level locators and the non-independent constraint; do not infer a generalized Rebbe teaching from derivative synopses.",
-      "Inspect Actions results and confirm the exact GitHub Pages data revision is published.",
-      "Continue manual inspection of original-language Hebrew and Yiddish primary documents and additional documentary classes; metadata-only audio and scan-only items remain non-answer evidence.",
-      "Keep the hourly workflow, access boundaries and repository audience unchanged; do not retry the known HTTP 403 crawler."
+      "Inspect original Hebrew/Yiddish witnesses and direct item bodies where public access provides readable text; search-result extracts remain Parsed and partial.",
+      "Check Actions and confirm the exact GitHub Pages data revision is published.",
+      "Keep the hourly workflow, access boundaries, audience and permissions unchanged; do not retry the known HTTP 403 crawler."
     ],
     "last_reconciliation": {
       "batch_id": "089",
