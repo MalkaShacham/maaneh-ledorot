@@ -343,7 +343,7 @@ const forgetfulnessDreamsQuestion='מה כתב הרבי על שכחה וחלומ
 for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,forgetfulnessDreamsQuestion,{mode});
   assert(m.answerable,`${mode}: inspected forgetfulness-and-dreams evidence must answer the query`);
-  assert(m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דשלג'),`${mode}: letter ד׳שלג must support the forgetfulness-and-dreams answer`);
+  assert(m.sources.some(e=>e.id==='igrot-kodesh-v13-דשלג'&&sourceAID(e)==='4994228'),`${mode}: existing letter ד׳שלג must resolve to its inspected public publisher AID 4994228`);
   assert(m.sources.length<=2,`${mode}: generic mezuzah or health evidence must not flood the specific query`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every forgetfulness-and-dreams claim needs a proposition-level citation`);
 }
@@ -351,7 +351,21 @@ const genericForgetfulnessQuestion='מה נכתב באיגרות על שכחה �
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,genericForgetfulnessQuestion,{mode});
  assert(m.answerable,mode+': generic forgetfulness query must remain answerable');
- assert(m.sources.some(e=>sourceAID(e)==='5100372'),mode+': AID 5100372 must remain retrievable for a generic forgetfulness/study-method query');
+ assert(m.sources.some(e=>sourceAID(e)==='4994228'&&e.id==='igrot-kodesh-v13-דשלג'),mode+': the existing letter identity must remain retrievable by its actual publisher AID 4994228');
+}
+const institutionalSupportQuestion='מה נכתב באיגרות על תמיכה בתלמוד תורה במצב דחוק?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,institutionalSupportQuestion,{mode});
+ assert(m.answerable,mode+': inspected Talmud Torah support letter must answer a bounded educational-support query');
+ assert(m.sources.some(e=>sourceAID(e)==='4929245'&&e.id==='library-igrot-kodesh-v11-3772'),mode+': existing volume-XI bibliographic identity must resolve to public AID 4929245');
+ assert(m.sources.length<=2,mode+': generic charity sources must not flood the institutional-support query');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': each institutional-support claim needs proposition-level citations');
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid),mode+': institutional-support claims must pass citation and context checks');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_families>=1,mode+': researcher mode must expose the supporting Evidence Family');
+  assert(m.research.evidence_map.length>0,mode+': researcher mode must expose a claim-to-witness evidence map');
+  assert.equal(m.research.witnesses.length,m.sources.length,mode+': researcher mode must expose witness-level provenance');
+ }
 }
 const charityStudyQuestion='האם צדקה מחליפה לימוד ויגיעה?';
 for(const mode of ['regular','researcher']){
