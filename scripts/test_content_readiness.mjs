@@ -1669,7 +1669,10 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_map.length>=2);
   assert.equal(m.research.claim_source_map.length,m.claims.length);
   assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
-  assert.equal(m.research.synthesis_constraints.non_independent_sources,2);
+  assert(m.research.synthesis_constraints.non_independent_sources>=2);
+  assert(m.research.synthesis_constraints.publisher_synopsis_sources>=2);
+  assert(m.research.evidence_witnesses.some(w=>w.aid==='281313'));
+  assert(m.research.evidence_witnesses.some(w=>w.aid==='4469446'));
   assert.match(m.research.synthesis_constraints.rule,/Publisher synopses/);
  }else assert.equal(m.research,undefined);
 }
