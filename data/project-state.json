@@ -65,7 +65,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "pending_reconciliation_after_batch_096",
+    "status": "pending_reconciliation",
     "source": "data/public-metrics.json",
     "generated": "2026-11-15",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -89,14 +89,14 @@
       "actual_after": null,
       "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 900,
-        "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2832
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 948,
         "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2906
+      },
+      "expected_after": {
+        "answer_eligible_unique_sources": 956,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2917
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -162,92 +162,73 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-15-content-batch-096",
+    "current_batch": "097",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "096",
+    "last_completed_batch": "097",
     "last_batch_summary": {
-      "batch_id": "096",
-      "batch_file": "data/items/content-research-batch-096-2026-11-15.json",
+      "batch_id": "097",
+      "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
       "generated": "2026-11-15",
-      "reviewed_item_count": 10,
-      "source_bodies_inspected": 10,
-      "source_body_pages_opened": 10,
+      "reviewed_item_count": 8,
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 8,
       "search_extracts_used_as_content": 0,
-      "new_source_identities": 9,
-      "existing_identities_enriched": 1,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 0,
       "existing_identities_rechecked": 0,
       "new_response_propositions": 11,
-      "existing_response_propositions_added": 0,
-      "answer_eligible_source_families_added": 9,
-      "independent_witnesses_added": 9,
-      "non_independent_presentations_added": 0,
+      "answer_eligible_source_families_added": 8,
       "content_verified_unique_sources_added": 0,
-      "metrics_before": {
-        "answer_eligible_unique_sources": 900,
-        "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2832
-      },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 948,
-        "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2906
-      },
-      "metrics_actual_after": null,
-      "reconciliation_status": "pending",
-      "blocked_candidate_count": 1,
-      "not_promoted_after_inspection_count": 9,
+      "not_promoted_after_inspection_count": 8,
       "source_languages": [
         "Hebrew",
-        "Yiddish",
-        "Yiddish/Hebrew"
+        "Yiddish"
       ],
       "language_distribution": {
-        "Hebrew": 6,
-        "Yiddish": 2,
-        "Yiddish/Hebrew": 1
+        "Hebrew": 7,
+        "Yiddish": 1
       },
       "source_type_distribution": {
-        "published_daily_anthology_original_language_entry": 9
+        "published_daily_anthology_original_language_entry": 8
       },
       "new_aids": [
-        3316616,
-        3316619,
-        3316622,
-        3316627,
-        3316640,
-        3316694,
-        3316701,
-        3316725,
-        3316748
+        3316648,
+        3316664,
+        3316666,
+        3316676,
+        3316679,
+        3316684,
+        3316710,
+        3316719
       ],
-      "enriched_aids": [
-        1273962
+      "enriched_aids": [],
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "reason": "Redirected to rewritten Torah Texts summary shell; no readable item-level body; excluded."
+        }
       ],
-      "reviewed_aids": [
-        1273962,
-        3316616,
-        3316619,
-        3316622,
-        3316627,
-        3316640,
-        3316694,
-        3316701,
-        3316725,
-        3316748
-      ],
-      "duplicate_aliases_linked": 0,
-      "translations_counted_as_independent_witnesses": 0,
       "crawler_retry": false,
       "access_control_bypassed": false,
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "fallback_source_attempted": true,
-      "blocked_candidates": [
-        {
-          "aid": 4666220,
-          "reason": "Public web reader returned Internal Error; no readable item-level body. Nine other Hayom Yom pages were opened as fallback."
-        }
-      ]
+      "duplicate_aliases_linked": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 948,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2906
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 956,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2917
+      },
+      "metrics_after_actual": null,
+      "metrics_delta_actual": null,
+      "status": "pending_reconciliation"
     },
     "last_run_note": "Batch 096: nine new original-language Hayom Yom item pages were opened; one existing AID 1273962 letter identity was enriched with three precise proposition locators. AID 4666220 returned an Internal Error, so nine accessible item pages were used as same-run fallback. All nine new entries remain Parsed; no translations counted independently.",
     "last_batch_blocked_count": 1,

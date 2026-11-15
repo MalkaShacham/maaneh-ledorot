@@ -142,3 +142,12 @@
 הקורפוס הוא רב־לשוני. שפת המקור נשמרת לכל witness בנפרד; עברית, יידיש ואנגלית הן שכבות פעילות, ושפות נוספות ייכללו כאשר קיים מקור ישיר/מוסמך. תרגום הוא derived ואינו הופך ל-witness עצמאי.
 
 מענה למשתמש אינו נשען כברירת מחדל על פריט יחיד. המערכת מאתרת את כלל המקורות הרלוונטיים, מבצעת dedup ברמת ה-witness / event / Evidence Family, מסנתזת רק את הנקודות הנתמכות במקורות, ומציגה מתחת לסינתזה את המקורות שעליהם היא נשענת. מקור יחיד מסומן במפורש ככזה ואינו מוצג כדפוס רוחבי.
+
+
+## Daily anthology entries — Hayom Yom
+
+- Treat each dated Hayom Yom entry as its own item identity and Evidence Family when it has a distinct stable publisher AID.
+- Inspect the original Hebrew or Yiddish passage before creating answer propositions. A title, date index, scan locator, or search-result snippet is not content verification.
+- A same-page English rendering or later translation of the same entry is a derived presentation, not an independent witness and not a second Evidence Family.
+- Preserve every embedded attribution to the Alter Rebbe, the Rebbe Rashab, the Rebbe Rayatz, the Maggid, the Baal Shem Tov, or another named figure. A proposition describing an entry is not automatically a direct statement by the Lubavitcher Rebbe.
+- Keep context partial and status Parsed unless the underlying edition, textual history, and relevant context have actually been inspected. Do not promote an anthology excerpt to Verified merely because its page is publicly readable.

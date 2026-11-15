@@ -921,7 +921,41 @@ const enriched2187392=idx.entries.find(e=>String(e.aid)==='2187392');assert(enri
 const educationInfluenceQ='מה כתב הרבי על השפעה על יהודי אחד ועל חינוך ילדים יהודים במעשה ולא בדיבור?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,educationInfluenceQ,{mode});
- console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
+ 
+// Batch 097: eight newly inspected original-language Hayom Yom entries; same-page English renderings are not independent witnesses.
+const batch097Path='data/items/content-research-batch-097-2026-11-15.json';
+const batch097Data=JSON.parse(await readFile(new URL(batch097Path,root)));
+const batch097Aids=['3316648','3316664','3316666','3316676','3316679','3316684','3316710','3316719'];
+assert.equal(batch097Data.records.length,8);
+assert.equal(batch097Data.new_source_identities,8);
+assert.equal(batch097Data.new_response_propositions,11);
+assert.equal(batch097Data.content_verified_unique_sources_added,0);
+assert.equal(batch097Data.blocked_candidates[0].aid,4666220);
+assert.equal(batch097Data.crawler_retry,false);
+assert.equal(batch097Data.access_control_bypassed,false);
+assert.equal(batch097Data.translations_counted_as_independent_witnesses,0);
+for(const aid of batch097Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-097 AID '+aid+' must have one canonical identity');
+ const e=matches[0];
+ assert.equal(e.canonical_file,batch097Path);
+ assert(e.has_content_evidence);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.context_status,'partial');
+}
+assert.notEqual(batch097Data.reconciliation_status,'pending');
+assert.equal(batch097Data.metrics_actual_after.answer_eligible_unique_sources,metrics.answer_eligible_unique_sources);
+assert.equal(batch097Data.metrics_actual_after.content_verified_unique_sources,metrics.content_verified_unique_sources);
+assert.equal(batch097Data.metrics_actual_after.answer_eligible_propositions,metrics.answer_eligible_propositions);
+
+console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
  assert(m.sources.some(e=>String(e.aid)==='2278256'));
  assert(m.sources.some(e=>String(e.aid)==='2278261')||m.sources.some(e=>String(e.aid)==='2278254'));
