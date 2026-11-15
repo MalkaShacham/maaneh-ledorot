@@ -961,10 +961,7 @@ for(const aid of batch097Aids){
  assert.equal(e.independent_witness,true);
  assert.equal(e.context_status,'partial');
 }
-assert.notEqual(batch097Data.reconciliation_status,'pending');
-assert.equal(batch097Data.metrics_actual_after.answer_eligible_unique_sources,metrics.answer_eligible_unique_sources);
-assert.equal(batch097Data.metrics_actual_after.content_verified_unique_sources,metrics.content_verified_unique_sources);
-assert.equal(batch097Data.metrics_actual_after.answer_eligible_propositions,metrics.answer_eligible_propositions);
+// Batch 097 was superseded by batch 098; reconciliation is asserted against the latest batch below.
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
@@ -2008,7 +2005,17 @@ assert.equal(batch098Data.crawler_retry,false);
 assert.equal(batch098Data.access_control_bypassed,false);
 assert.equal(batch098Data.full_text_copied,false);
 assert.equal(batch098Data.scan_only_verification_used,false);
-assert.equal(batch098Data.deduplication_check.full_index_scan_pending_reconciliation,true);
+assert.equal(batch098Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.equal(batch098Data.deduplication_check.full_index_scan_available,true);
+assert.notEqual(batch098Data.reconciliation_status,'pending');
+assert.equal(batch098Data.reconciliation_audit.answer_eligible_selected_count,10);
+assert.equal(batch098Data.reconciliation_audit.selected_unique_evidence_families,10);
+assert(batch098Data.reconciliation_audit.items.every(x=>x.canonical_records_found===1));
+assert.equal(batch098Data.metrics_actual_after.answer_eligible_unique_sources,metrics.answer_eligible_unique_sources);
+assert.equal(batch098Data.metrics_actual_after.content_verified_unique_sources,metrics.content_verified_unique_sources);
+assert.equal(batch098Data.metrics_actual_after.answer_eligible_propositions,metrics.answer_eligible_propositions);
+assert.deepEqual(batch098Data.metrics_delta_actual,{answer_eligible_unique_sources:9,content_verified_unique_sources:8,answer_eligible_propositions:11});
+assert.deepEqual(batch098Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:8,answer_eligible_propositions:0});
 const batch098Languages=batch098Data.records.reduce((a,r)=>(a[r.language]=(a[r.language]||0)+1,a),{});
 assert.deepEqual(batch098Languages,{Hebrew:4,Yiddish:4,English:1});
 for(const r of batch098Data.records){
