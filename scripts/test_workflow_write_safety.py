@@ -34,4 +34,4 @@ assert "from status_normalization import status_of" in metrics, "metrics reconci
 assert 'items=sorted(' in metrics, "canonical item traversal must be deterministic"
 assert 'batches=sorted(' in metrics, "staging batch traversal must be deterministic"
 
-print("Workflow write safety: 11 checks passed")
+print("Workflow write safety and status-normalization wiring checks passed")
