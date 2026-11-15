@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-15",
+  "last_updated": "2026-11-15T21:07:06+02:00",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -100,9 +100,9 @@
         "answer_eligible_propositions": 2929
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1001,
+        "answer_eligible_unique_sources": 1011,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2998
+        "answer_eligible_propositions": 3018
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -115,24 +115,25 @@
         "095",
         "099",
         "100",
-        "101"
+        "101",
+        "102"
       ],
       "baseline_correction": "The prior 878 content-Verified count was a false positive: eight batch-096 provenance.verification_status strings said 'no promotion to Verified', which status_of() matched as Verified. The records remain Parsed; after neutralizing the phrase, the correct content-Verified baseline is 870."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_101_and_status_normalization_fix",
+      "run_status": "pending_on_pr_for_batch_102",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 096 contained eight Parsed records whose explanatory provenance phrase was misread as Verified. The phrase is corrected; the expected content-Verified count is 870, not 878. Commit-bound reconciliation and tests must confirm."
+      "note": "Batch 102 adds ten source-body-inspected English correspondence identities, one in-place Hebrew Sicha enrichment and regression coverage for multi-family synthesis with claim-local locators in regular and deep researcher modes. Full reconciliation must preserve content-Verified at 870 and verify no identity collisions."
     },
     "publication": {
-      "status": "pending_after_batch_101",
+      "status": "pending_after_batch_102",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -171,20 +172,20 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "101",
+    "current_batch": "102",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "098",
-    "last_batch_summary": "Batch 099–101: three existing identities enriched in place (AID 3316719 +1 proposition; AID 2989588 +2; AID 2989585 +2); batch 101 added fourteen Hebrew sources and one English correspondence letter, with 30 non-verbatim propositions. No new item promoted to Verified.",
-    "last_run_note": "AID 4666220 remained a summary shell; two Chabad Library pages (including one Yiddish) had no readable body. Fourteen alternative Hebrew bodies and one public English letter body were inspected. AID 2989588 and AID 2989585 were enriched in their original canonical files; translations were not counted as independent witnesses. Batches 099–101 pending contiguous reconciliation.",
-    "last_batch_blocked_count": 3,
-    "last_batch_blocked_reason": "AID 4666220 returned a summary shell; two Chabad Library pages (one Yiddish) returned no readable body. Alternative public Hebrew bodies were inspected in the same run.",
+    "last_batch_summary": "Batch 102: 10 new English correspondence identities and 19 source-grounded Hebrew paraphrases; one existing Hebrew Sicha identity (AID 2989588) enriched in place with one new proposition and three corrected locators. Twelve source bodies inspected in total. No source promoted to Verified.",
+    "last_run_note": "Ten public English correspondence bodies were inspected through Chabad.org/TheRebbe.org; the existing Hebrew Sicha AID 2989588 was reopened and enriched. AID 1888932/289101 remains an unconfirmed duplicate candidate because the 289101 body did not open. Seven blocked candidates were documented and the run fell back to ten accessible bodies. Batches 099–102 await contiguous full-index reconciliation.",
+    "last_batch_blocked_count": 7,
+    "last_batch_blocked_reason": "AID 1921269 reader error; AID 6052000 PDF had no readable text; AIDs 5996836 and 4543714 had garbled PDF text; AID 1053 yielded only a search extract and no readable open body; AIDs 2988234 and 4296290 returned summary shells. Prior blocks 4666220 and two ChabadLibrary Yiddish candidates were not retried.",
     "next_work": [
-      "Run contiguous reconciliation for batches 099–101; verify all 36 new AIDs and the three in-place enrichments (AID 3316719, 2989588, 2989585) against the full canonical index.",
-      "Confirm the measured result against 965/870/2929 → 977/870/2952 → 986/870/2968 → 1001/870/2998; record any variance rather than normalizing it away.",
-      "Run test_reconcile_status.py, test_content_readiness.mjs, answer-quality, synthesis, citation-entailment, context-boundary, and deep researcher-mode checks.",
-      "Inspect commit-bound GitHub Actions and confirm GitHub Pages serves the regenerated search index and metrics.",
-      "Continue source-body research in Hebrew, Yiddish and English using accessible original-language texts and additional documentary classes; the current chain has 35 Hebrew and one English source, while the Yiddish page candidates inspected this run had no readable body.",
-      "Do not retry the HTTP 403 crawler, bypass access controls, or promote partial/unedited text records to Verified."
+      "Validate the batch-102 pull request and run the full-corpus reconciliation for the contiguous chain 099–102; confirm all new AIDs and the in-place AID 2989588 enrichment against the canonical index.",
+      "Confirm the measured progression 965/870/2929 → 977/870/2952 → 986/870/2968 → 1001/870/2998 → 1011/870/3018; record any variance rather than normalizing it away.",
+      "Run test_reconcile_status.py and test_content_readiness.mjs, including the new three-family synthesis, claim-local citation, context-boundary and deep researcher-mode checks.",
+      "Inspect PR-triggered Actions, merge only after checks pass, then verify push-triggered reconciliation, regenerated search index, public metrics and GitHub Pages publication.",
+      "Continue original-language Hebrew and Yiddish source-body work; this run added ten English correspondence sources and one Hebrew in-place enrichment. The Yiddish originals behind two English translations remain uninspected.",
+      "Do not retry the HTTP 403 crawler, bypass access controls, use search extracts as content, or promote partial/translated/transcribed material to Verified."
     ],
     "last_reconciliation": {
       "batch_id": "089",
@@ -547,181 +548,7 @@
       },
       "reconciliation_status": "reconciled"
     },
-    "last_manual_web_review": {
-      "batch_id": "099",
-      "batch_file": "data/items/content-research-batch-099-2026-11-15.json",
-      "reviewed_at": "2026-11-15T19:03:35+02:00",
-      "status": "pending_reconciliation",
-      "reviewed_item_count": 15,
-      "source_bodies_inspected": 13,
-      "source_body_pages_opened": 15,
-      "search_extracts_used_as_content": 0,
-      "new_source_identities": 12,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 2,
-      "new_response_propositions": 20,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 21,
-      "answer_eligible_source_families_added": 12,
-      "independent_witnesses_added": 8,
-      "non_independent_presentations_added": 4,
-      "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 1,
-      "blocked_candidates": [
-        {
-          "aid": 4666220,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-          "reason": "The public reader returned a rewritten summary/navigation shell without an inspectable letter body; excluded from content propositions."
-        }
-      ],
-      "metadata_only_candidate_count": 10,
-      "metadata_only_candidates": [
-        {
-          "aid": 553672,
-          "reason": "Yechidus audio listing; no transcript body."
-        },
-        {
-          "aid": 553673,
-          "reason": "Parallel Yiddish Yechidus audio listing; no transcript body; same Evidence Family as AID 553672."
-        },
-        {
-          "aid": 555044,
-          "reason": "Sicha audio/media listing; no transcript body."
-        },
-        {
-          "aid": 555071,
-          "reason": "Sicha audio/media listing; no transcript body."
-        },
-        {
-          "aid": 555082,
-          "reason": "Sicha audio/media listing; no transcript body."
-        },
-        {
-          "aid": 550377,
-          "reason": "Sicha audio/media listing; no transcript body."
-        },
-        {
-          "aid": 550378,
-          "reason": "Maamar audio/media listing; no transcript body."
-        },
-        {
-          "aid": 550380,
-          "reason": "Sicha audio/media listing; no transcript body."
-        },
-        {
-          "aid": 550381,
-          "reason": "Maamar audio/media listing; no transcript body."
-        },
-        {
-          "aid": 550384,
-          "reason": "Maamar audio/media listing; no transcript body."
-        }
-      ],
-      "duplicate_aliases_linked": [
-        {
-          "alias_aid": 553673,
-          "canonical_aid": 553672,
-          "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
-          "action": "reconfirmed_existing_shared_evidence_family",
-          "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript, and neither is counted as an independent content witness."
-        }
-      ],
-      "translations_counted_as_independent_witnesses": 0,
-      "fallback_source_attempted": true,
-      "fallback_source_results": {
-        "publisher": "BeitChabad / he.chabad.org",
-        "accessible_item_level_bodies": 12,
-        "aids": [
-          5989917,
-          5959972,
-          2989236,
-          5989541,
-          4280144,
-          4385862,
-          2989588,
-          5990031,
-          6132085,
-          5959982,
-          2988962,
-          4296219
-        ],
-        "body_text_inspected": true
-      },
-      "new_aids": [
-        5989917,
-        5959972,
-        2989236,
-        5989541,
-        4280144,
-        4385862,
-        2989588,
-        5990031,
-        6132085,
-        5959982,
-        2988962,
-        4296219
-      ],
-      "enriched_aids": [
-        3316719
-      ],
-      "rechecked_aids": [
-        553672,
-        553673
-      ],
-      "language_distribution": {
-        "Hebrew": 12
-      },
-      "original_language_distribution": {
-        "Hebrew": 8,
-        "Yiddish": 4
-      },
-      "source_type_distribution": {
-        "published_unedited_hebrew_sicha_transcript": 7,
-        "published_unedited_hebrew_maamar_transcript": 1,
-        "published_hebrew_translation_of_yiddish_edited_sicha": 4
-      },
-      "metrics_before": {
-        "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 878,
-        "answer_eligible_propositions": 2929
-      },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 977,
-        "content_verified_unique_sources": 878,
-        "answer_eligible_propositions": 2950
-      },
-      "metrics_actual_after": null,
-      "reconciliation_status": "pending",
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "scan_only_verification_used": false,
-      "deduplication_check": {
-        "new_aids_unique": true,
-        "new_source_urls_unique": true,
-        "new_evidence_families_unique": true,
-        "existing_identity_enrichment_in_place": true,
-        "existing_parallel_audio_family_reconfirmed": true,
-        "translations_counted_as_independent_witnesses": 0,
-        "scan_only_verification_used": 0,
-        "duplicate_alias_identities": 0,
-        "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.",
-        "full_index_scan_available": false,
-        "full_index_scan_pending_reconciliation": true
-      },
-      "existing_identity_updates": [
-        {
-          "aid": 3316719,
-          "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
-          "action": "enriched_existing_identity_in_original_batch_file",
-          "propositions_added": 1,
-          "proposition_locators": [
-            "Chabad.org/TheRebbe.org AID 3316719, original Yiddish body line 245."
-          ],
-          "note": "האמרה המקורית פוצלה לשתי פרפרזות נפרדות: אחת על אמרת חסידות והנהגה טובה, ואחת על ניגון; ה-AID ומשפחת הראיות נשמרו."
-        }
-      ]
-    },
+    "last_manual_web_review": "Batch 102: 10 new English source identities, 1 existing Hebrew identity enriched, 12 bodies inspected, 19 new propositions plus 1 enrichment, no Verified promotions.",
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
       "AID 2189943: transcription without accessible original; keep out of answer-eligible corpus.",
@@ -731,7 +558,8 @@
     "pending_reconciliation_batches": [
       "099",
       "100",
-      "101"
+      "101",
+      "102"
     ],
     "last_reconciliation_pending": true
   }
