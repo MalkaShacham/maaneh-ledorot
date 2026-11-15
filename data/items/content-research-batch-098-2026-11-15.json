@@ -32,18 +32,26 @@
   },
   "metrics_before": {
     "answer_eligible_unique_sources": 956,
-    "content_verified_unique_sources": 870,
+    "content_verified_unique_sources": 878,
     "answer_eligible_propositions": 2918
   },
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 965,
-    "content_verified_unique_sources": 870,
+    "content_verified_unique_sources": 878,
     "answer_eligible_propositions": 2929
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
-  "reconciliation_status": "pending",
-  "status": "pending_reconciliation",
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 965,
+    "content_verified_unique_sources": 878,
+    "answer_eligible_propositions": 2929
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
+  "reconciliation_status": "reconciled",
+  "status": "reconciled",
   "new_aids": [
     3316610,
     3316613,
@@ -175,9 +183,12 @@
       "097"
     ],
     "checked_against": "Current content-review queue (no candidate AIDs present) and accessible item-level review batches 090–094 and 096–097. The complete canonical identity scan is delegated to scripts/reconcile_metrics.py after this commit; no full-index scan is claimed before that run.",
-    "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true,
-    "translations_counted_as_independent_witnesses": 0
+    "full_index_scan_available": true,
+    "full_index_scan_pending_reconciliation": false,
+    "translations_counted_as_independent_witnesses": 0,
+    "full_index_scan_completed_at": "2026-11-15",
+    "canonical_identity_collisions": [],
+    "reconciled_identity_count": 10
   },
   "limitations": [
     "All nine new identities remain Parsed with partial context; no content-level promotion was made.",
@@ -1046,5 +1057,6 @@
       "rights_status": "copyrighted-link-only"
     }
   ],
-  "notes": "The batch contains nine new source identities and one in-place enrichment. Chabad Library AID 1200720068 returned no readable body through the public reader, so its search extract was excluded. AID 4666220 likewise yielded no readable letter body. The canonical reconciliation audit must confirm there is exactly one selected identity per new AID and report any collisions or metric variance."
+  "notes": "The batch contains nine new source identities and one in-place enrichment. Chabad Library AID 1200720068 returned no readable body through the public reader, so its search extract was excluded. AID 4666220 likewise yielded no readable letter body. The canonical reconciliation audit must confirm there is exactly one selected identity per new AID and report any collisions or metric variance.",
+  "metrics_baseline_correction": "The full-corpus reconciliation found 878 content-verified Evidence Families, not the stale expected 870. This is a correction to the baseline, not a new promotion."
 }

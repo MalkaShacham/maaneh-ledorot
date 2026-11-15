@@ -7,6 +7,181 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "099",
+    "batch_file": "data/items/content-research-batch-099-2026-11-15.json",
+    "reviewed_at": "2026-11-15T19:03:35+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 15,
+    "source_bodies_inspected": 13,
+    "source_body_pages_opened": 15,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 12,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 2,
+    "new_response_propositions": 20,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 21,
+    "answer_eligible_source_families_added": 12,
+    "independent_witnesses_added": 8,
+    "non_independent_presentations_added": 4,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "The public reader returned a rewritten summary/navigation shell without an inspectable letter body; excluded from content propositions."
+      }
+    ],
+    "metadata_only_candidate_count": 10,
+    "metadata_only_candidates": [
+      {
+        "aid": 553672,
+        "reason": "Yechidus audio listing; no transcript body."
+      },
+      {
+        "aid": 553673,
+        "reason": "Parallel Yiddish Yechidus audio listing; no transcript body; same Evidence Family as AID 553672."
+      },
+      {
+        "aid": 555044,
+        "reason": "Sicha audio/media listing; no transcript body."
+      },
+      {
+        "aid": 555071,
+        "reason": "Sicha audio/media listing; no transcript body."
+      },
+      {
+        "aid": 555082,
+        "reason": "Sicha audio/media listing; no transcript body."
+      },
+      {
+        "aid": 550377,
+        "reason": "Sicha audio/media listing; no transcript body."
+      },
+      {
+        "aid": 550378,
+        "reason": "Maamar audio/media listing; no transcript body."
+      },
+      {
+        "aid": 550380,
+        "reason": "Sicha audio/media listing; no transcript body."
+      },
+      {
+        "aid": 550381,
+        "reason": "Maamar audio/media listing; no transcript body."
+      },
+      {
+        "aid": 550384,
+        "reason": "Maamar audio/media listing; no transcript body."
+      }
+    ],
+    "duplicate_aliases_linked": [
+      {
+        "alias_aid": 553673,
+        "canonical_aid": 553672,
+        "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+        "action": "reconfirmed_existing_shared_evidence_family",
+        "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript, and neither is counted as an independent content witness."
+      }
+    ],
+    "translations_counted_as_independent_witnesses": 0,
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "BeitChabad / he.chabad.org",
+      "accessible_item_level_bodies": 12,
+      "aids": [
+        5989917,
+        5959972,
+        2989236,
+        5989541,
+        4280144,
+        4385862,
+        2989588,
+        5990031,
+        6132085,
+        5959982,
+        2988962,
+        4296219
+      ],
+      "body_text_inspected": true
+    },
+    "new_aids": [
+      5989917,
+      5959972,
+      2989236,
+      5989541,
+      4280144,
+      4385862,
+      2989588,
+      5990031,
+      6132085,
+      5959982,
+      2988962,
+      4296219
+    ],
+    "enriched_aids": [
+      3316719
+    ],
+    "rechecked_aids": [
+      553672,
+      553673
+    ],
+    "language_distribution": {
+      "Hebrew": 12
+    },
+    "original_language_distribution": {
+      "Hebrew": 8,
+      "Yiddish": 4
+    },
+    "source_type_distribution": {
+      "published_unedited_hebrew_sicha_transcript": 7,
+      "published_unedited_hebrew_maamar_transcript": 1,
+      "published_hebrew_translation_of_yiddish_edited_sicha": 4
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 965,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2929
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2950
+    },
+    "metrics_actual_after": null,
+    "reconciliation_status": "pending",
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "existing_identity_enrichment_in_place": true,
+      "existing_parallel_audio_family_reconfirmed": true,
+      "translations_counted_as_independent_witnesses": 0,
+      "scan_only_verification_used": 0,
+      "duplicate_alias_identities": 0,
+      "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.",
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true
+    },
+    "existing_identity_updates": [
+      {
+        "aid": 3316719,
+        "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
+        "action": "enriched_existing_identity_in_original_batch_file",
+        "propositions_added": 1,
+        "proposition_locators": [
+          "Chabad.org/TheRebbe.org AID 3316719, original Yiddish body line 245."
+        ],
+        "note": "האמרה המקורית פוצלה לשתי פרפרזות נפרדות: אחת על אמרת חסידות והנהגה טובה, ואחת על ניגון; ה-AID ומשפחת הראיות נשמרו."
+      }
+    ]
+  },
+  "previous_manual_web_review": {
     "batch_id": "098",
     "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
     "reviewed_at": "2026-11-15T17:00:00+02:00",
@@ -71,60 +246,6 @@
     "source_type_distribution": {
       "published_daily_anthology_original_language_entry": 8,
       "recipient_testimony_with_embedded_english_letter_excerpt": 1
-    }
-  },
-  "previous_manual_web_review": {
-    "batch_id": "097",
-    "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
-    "reviewed_at": "2026-11-15T11:20:00+02:00",
-    "status": "pending_reconciliation",
-    "reviewed_item_count": 9,
-    "source_bodies_inspected": 9,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 11,
-    "content_verified_unique_sources_added": 0,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "reason": "Redirected to rewritten Torah Texts summary shell; no readable item-level body."
-      }
-    ],
-    "fallback_source_attempted": true,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 948,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2906
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 956,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2918
-    },
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 12,
-    "enriched_aids": [
-      3316690
-    ],
-    "reviewed_aids": [
-      3316648,
-      3316664,
-      3316666,
-      3316676,
-      3316679,
-      3316684,
-      3316710,
-      3316719,
-      3316690
-    ],
-    "language_distribution": {
-      "Hebrew": 7,
-      "Yiddish": 2
     }
   },
   "earlier_manual_web_review": {
@@ -468,22 +589,13 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 098 manually inspected ten source bodies; no crawler retry, search-extract content inference or content-status promotion. Reconciliation and Actions results are pending.",
+  "manual_web_review_note": "Manual public source-body inspection remains the semantic acquisition path. The runner-side Chabad.org crawler stays disabled after HTTP 403. Batch 099 adds twelve inspected BeitChabad text identities, enriches AID 3316719 in place, and reconfirms the shared audio-only Evidence Family for AIDs 553672/553673. Four Hebrew pages are translations of Yiddish-edited texts and are not independent witnesses.",
   "manual_web_review_current_metrics": {
-    "published_actual_before": {
-      "answer_eligible_unique_sources": 900,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2832
-    },
-    "expected_after_pending_batches": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2929
-    },
-    "reconciliation_status": "pending",
-    "note": "The published actual before-value is 900 answer-eligible Evidence Families. The 956 baseline is the expected reconciled total after batches 090–097; batch 098 expects 965 after adding nine new families. Reconciliation must replace expectations with actual counts."
+    "answer_eligible_unique_sources": 977,
+    "content_verified_unique_sources": 878,
+    "answer_eligible_propositions": 2950
   },
-  "last_manual_review_at": "2026-11-15T17:00:00+02:00",
+  "last_manual_review_at": "2026-11-15T19:03:35+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -1547,6 +1659,321 @@
       "blocked_candidate_count": 1,
       "reconciliation_status": "pending",
       "existing_identities_rechecked": 4
+    },
+    {
+      "batch_id": "099",
+      "batch_file": "data/items/content-research-batch-099-2026-11-15.json",
+      "reviewed_at": "2026-11-15T19:03:35+02:00",
+      "status": "pending_reconciliation",
+      "reviewed_item_count": 15,
+      "source_bodies_inspected": 13,
+      "source_body_pages_opened": 15,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions": 20,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 21,
+      "answer_eligible_source_families_added": 12,
+      "independent_witnesses_added": 8,
+      "non_independent_presentations_added": 4,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "reason": "The public reader returned a rewritten summary/navigation shell without an inspectable letter body; excluded from content propositions."
+        }
+      ],
+      "metadata_only_candidate_count": 10,
+      "metadata_only_candidates": [
+        {
+          "aid": 553672,
+          "reason": "Yechidus audio listing; no transcript body."
+        },
+        {
+          "aid": 553673,
+          "reason": "Parallel Yiddish Yechidus audio listing; no transcript body; same Evidence Family as AID 553672."
+        },
+        {
+          "aid": 555044,
+          "reason": "Sicha audio/media listing; no transcript body."
+        },
+        {
+          "aid": 555071,
+          "reason": "Sicha audio/media listing; no transcript body."
+        },
+        {
+          "aid": 555082,
+          "reason": "Sicha audio/media listing; no transcript body."
+        },
+        {
+          "aid": 550377,
+          "reason": "Sicha audio/media listing; no transcript body."
+        },
+        {
+          "aid": 550378,
+          "reason": "Maamar audio/media listing; no transcript body."
+        },
+        {
+          "aid": 550380,
+          "reason": "Sicha audio/media listing; no transcript body."
+        },
+        {
+          "aid": 550381,
+          "reason": "Maamar audio/media listing; no transcript body."
+        },
+        {
+          "aid": 550384,
+          "reason": "Maamar audio/media listing; no transcript body."
+        }
+      ],
+      "duplicate_aliases_linked": [
+        {
+          "alias_aid": 553673,
+          "canonical_aid": 553672,
+          "evidence_family_id": "yechidus-5743-21-kislev-parallel-language-audio",
+          "action": "reconfirmed_existing_shared_evidence_family",
+          "note": "Parallel Hebrew/Yiddish audio listings for the same dated Yechidus; neither page exposes an inspectable transcript, and neither is counted as an independent content witness."
+        }
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "publisher": "BeitChabad / he.chabad.org",
+        "accessible_item_level_bodies": 12,
+        "aids": [
+          5989917,
+          5959972,
+          2989236,
+          5989541,
+          4280144,
+          4385862,
+          2989588,
+          5990031,
+          6132085,
+          5959982,
+          2988962,
+          4296219
+        ],
+        "body_text_inspected": true
+      },
+      "new_aids": [
+        5989917,
+        5959972,
+        2989236,
+        5989541,
+        4280144,
+        4385862,
+        2989588,
+        5990031,
+        6132085,
+        5959982,
+        2988962,
+        4296219
+      ],
+      "enriched_aids": [
+        3316719
+      ],
+      "rechecked_aids": [
+        553672,
+        553673
+      ],
+      "language_distribution": {
+        "Hebrew": 12
+      },
+      "original_language_distribution": {
+        "Hebrew": 8,
+        "Yiddish": 4
+      },
+      "source_type_distribution": {
+        "published_unedited_hebrew_sicha_transcript": 7,
+        "published_unedited_hebrew_maamar_transcript": 1,
+        "published_hebrew_translation_of_yiddish_edited_sicha": 4
+      },
+      "metrics_before": {
+        "answer_eligible_unique_sources": 965,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2929
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 977,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2950
+      },
+      "metrics_actual_after": null,
+      "reconciliation_status": "pending",
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "deduplication_check": {
+        "new_aids_unique": true,
+        "new_source_urls_unique": true,
+        "new_evidence_families_unique": true,
+        "existing_identity_enrichment_in_place": true,
+        "existing_parallel_audio_family_reconfirmed": true,
+        "translations_counted_as_independent_witnesses": 0,
+        "scan_only_verification_used": 0,
+        "duplicate_alias_identities": 0,
+        "checked_against": "Current content-review queue; batches 090–098; all bulk-indexed item files; all content-verified-batch files. The full canonical item scan is performed by reconcile_metrics.py on this commit.",
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true
+      },
+      "existing_identity_updates": [
+        {
+          "aid": 3316719,
+          "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
+          "action": "enriched_existing_identity_in_original_batch_file",
+          "propositions_added": 1,
+          "proposition_locators": [
+            "Chabad.org/TheRebbe.org AID 3316719, original Yiddish body line 245."
+          ],
+          "note": "האמרה המקורית פוצלה לשתי פרפרזות נפרדות: אחת על אמרת חסידות והנהגה טובה, ואחת על ניגון; ה-AID ומשפחת הראיות נשמרו."
+        }
+      ]
     }
-  ]
+  ],
+  "earlier_manual_web_review_12": {
+    "batch_id": "098",
+    "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
+    "reviewed_at": "2026-11-15T17:00:00+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 10,
+    "source_bodies_inspected": 10,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 10,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 11,
+    "answer_eligible_source_families_added": 9,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "העמוד הופנה ל-Torah Texts summary shell ללא גוף איגרת קריא; לא נוצרו ממנו פרופוזיציות ולא בוצע ניסיון crawler או עקיפת גישה."
+      },
+      {
+        "aid": 1200720068,
+        "url": "https://www.chabadlibrary.org/books/1200720068",
+        "reason": "העמוד נפתח בקורא הציבורי אך החזיר אפס שורות קריאות; קטע החיפוש לא שימש כתוכן ולא נוצרו ממנו פרופוזיציות."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 956,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2918
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 965,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2929
+    },
+    "enriched_aids": [
+      3316701
+    ],
+    "reviewed_aids": [
+      3316610,
+      3316613,
+      3316630,
+      3316731,
+      3316736,
+      3316744,
+      3316746,
+      3316749,
+      259799,
+      3316701
+    ],
+    "language_distribution": {
+      "Hebrew": 4,
+      "Yiddish": 4,
+      "English": 1
+    },
+    "source_type_distribution": {
+      "published_daily_anthology_original_language_entry": 8,
+      "recipient_testimony_with_embedded_english_letter_excerpt": 1
+    }
+  },
+  "earlier_manual_web_review_13": {
+    "batch_id": "097",
+    "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
+    "reviewed_at": "2026-11-15T11:20:00+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 9,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 11,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "reason": "Redirected to rewritten Torah Texts summary shell; no readable item-level body."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 948,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2906
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 956,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2918
+    },
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 12,
+    "enriched_aids": [
+      3316690
+    ],
+    "reviewed_aids": [
+      3316648,
+      3316664,
+      3316666,
+      3316676,
+      3316679,
+      3316684,
+      3316710,
+      3316719,
+      3316690
+    ],
+    "language_distribution": {
+      "Hebrew": 7,
+      "Yiddish": 2
+    }
+  },
+  "manual_web_review_metrics_audit": {
+    "published_metrics_before_full_reconciliation": {
+      "answer_eligible_unique_sources": 900,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2832
+    },
+    "confirmed_full_corpus_after_batch_098": {
+      "answer_eligible_unique_sources": 965,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2929
+    },
+    "previous_expected_after_batch_098": {
+      "answer_eligible_unique_sources": 965,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2929
+    },
+    "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
+  },
+  "next_action": "Run full-corpus reconciliation and content-readiness/answer-quality tests on batch 099; inspect Actions and GitHub Pages publication."
 }

@@ -7,20 +7,20 @@
   "promotion_queue_physical_records": 526,
   "promotion_queue_already_canonical": 526,
   "promotion_ready_records": 0,
-  "canonical_json_files": 461,
-  "canonical_unique_item_keys": 9203,
-  "evidence_family_files": 55,
+  "canonical_json_files": 471,
+  "canonical_unique_item_keys": 9280,
+  "evidence_family_files": 56,
   "status_counts_unique_keys": {
-    "Verified": 7804,
+    "Verified": 7830,
     "Linked": 15,
-    "Parsed": 43,
+    "Parsed": 94,
     "Indexed": 1136,
     "Discovered": 3
   },
-  "verified_unique_item_keys": 7804,
+  "verified_unique_item_keys": 7830,
   "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.",
-  "answer_eligible_unique_sources": 900,
-  "content_verified_unique_sources": 852,
-  "answer_eligible_propositions": 2832,
-  "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across their member items. Bibliographic verification and editorial summaries do not count."
+  "answer_eligible_unique_sources": 977,
+  "content_verified_unique_sources": 878,
+  "answer_eligible_propositions": 2950,
+  "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across their member items. Bibliographic verification and editorial summaries do not count. Content-verified sources require an existing Verified pipeline status; no new Verified status is created by manual source-body review."
 }

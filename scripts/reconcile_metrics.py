@@ -308,6 +308,18 @@ if batch_path and isinstance(batch_data,dict):
     readiness_state["reconciliation_status"]=batch_data["reconciliation_status"]
     readiness_state["actual_after"]=actual_metrics
     readiness_state["reconciliation_variance"]=variance
+    dedup=batch_data.get("deduplication_check")
+    if isinstance(dedup,dict):
+        audit_rows=locals().get("audit",[])
+        collisions=[x.get("aid") for x in audit_rows if int(x.get("canonical_records_found") or 0)>1]
+        missing=[x.get("aid") for x in audit_rows if not x.get("selected_index_entry",{}).get("present")]
+        dedup["full_index_scan_available"]=True
+        dedup["full_index_scan_pending_reconciliation"]=False
+        dedup["full_index_scan_completed_at"]=today
+        dedup["reconciled_identity_count"]=len(audit_rows)
+        dedup["canonical_identity_collisions"]=collisions
+        dedup["missing_canonical_identities"]=missing
+        dedup["all_target_identities_answer_eligible"]=bool(audit_rows) and all(x.get("selected_index_entry",{}).get("answer_eligible") for x in audit_rows)
     batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
     batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     dev=state.setdefault("development_recovery",{})

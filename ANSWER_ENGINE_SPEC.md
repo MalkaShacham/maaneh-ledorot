@@ -92,8 +92,16 @@ Dedup נעשה לפני ספירת תמיכה ולפני ניסוח דפוס:
 - מצב חוקר משכפל את המצב הרגיל ללא עומק ראייתי נוסף.
 - המערכת ממציאה הקשר כדי להפוך מקור חלקי לתשובה מלאה.
 
-## 9. Current implementation gap
-ה-Alpha הנוכחי משתמש עדיין ב-token/substring scoring על `search_text`, title ו-summary. הוא שלב candidate retrieval בלבד ואינו עומד עדיין ב-relevance gate וב-proposition reranking המוגדרים כאן. מצב חוקר הנוכחי חושף metadata טכני בלבד ולכן אינו עומד בדרישת researcher-depth differential. אלה פערי היישום בעדיפות העליונה.
+## 9. Current implementation status and remaining limits
+
+היישום הנוכחי אינו עוד metadata-only:
+- Candidate retrieval משתמש במטא־נתונים ובטקסט הראיות כדי להציע מועמדים בלבד; `propositionRelevance` דורש proposition מתועד שעובר topic gate, התאמה לשאלה ולתנאים הספציפיים. `lexical_only` ו-`unknown_content` אינם מוצגים כראיה.
+- Regular mode מגביל בדרך כלל לפריט אחד מכל Evidence Family ומפיק טענות עם מספרי מקור ברמת הטענה.
+- שכבת האימות ב-`answer-engine-validated.js` בודקת citation entailment מול proposition של אותו witness, וכן context boundaries כדי למנוע זליגת נסיבות/קהל בין מקורות.
+- Researcher mode מחזיר `depth=deep`, `evidence_map`, `claim_source_map` עם source numbers ו-locators, `evidence_witnesses`, `synthesis_constraints`, הבחנות בין תקופות/קהלים/סוגי מקור ונתוני provenance.
+- תרגומים ומקורות נגזרים מסומנים כלא־עצמאיים; ריבוי פרסומים מאותה Evidence Family אינו corroboration עצמאי.
+
+**מגבלות שנותרו:** האחזור עדיין דטרמיניסטי ומבוסס topic/lexical gates ו-proposition matching; הוא אינו מודל סמנטי כללי להסקת entailment. Citation validation בודקת התאמה מדויקת ל-proposition, אך אינה מאמתת היסטורית אוטוגרף או הקלטה. תקציר מו״ל, תרגום או תמליל בלתי מוגה נשארים מסומנים בהתאם למעמדם, ובדיקת תוכן ממשית ממשיכה להיעשות ידנית מול גוף מקור נגיש.
 
 
 ## 6. Case-specific charity-allocation synthesis
