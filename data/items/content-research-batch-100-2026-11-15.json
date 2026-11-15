@@ -8,19 +8,19 @@
   "status": "pending_reconciliation",
   "reconciliation_status": "pending",
   "review_method": "Manual public web/open inspection. Search was used only to discover candidates; nine item-level Hebrew body pages were opened and inspected directly. One Yechidus audio listing was opened and excluded because no readable transcript body was present.",
-  "records_reviewed": 10,
-  "reviewed_item_count": 10,
-  "source_bodies_inspected": 9,
-  "source_body_pages_opened": 10,
+  "records_reviewed": 11,
+  "reviewed_item_count": 11,
+  "source_bodies_inspected": 10,
+  "source_body_pages_opened": 11,
   "metadata_only_items_rechecked": 1,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 9,
-  "existing_identities_enriched": 0,
+  "existing_identities_enriched": 1,
   "existing_identities_rechecked": 1,
   "new_response_propositions": 14,
-  "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 14,
+  "existing_response_propositions_added": 2,
+  "total_new_paraphrase_entries": 16,
   "answer_eligible_source_families_added": 9,
   "independent_witnesses_added": 9,
   "non_independent_presentations_added": 0,
@@ -50,7 +50,9 @@
     2988877,
     2989022
   ],
-  "enriched_aids": [],
+  "enriched_aids": [
+    2989585
+  ],
   "rechecked_aids": [
     553674
   ],
@@ -66,7 +68,19 @@
     2989022,
     553674
   ],
-  "existing_identity_updates": [],
+  "existing_identity_updates": [
+    {
+      "aid": 2989585,
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "action": "enriched_existing_identity_in_original_batch_file",
+      "propositions_added": 2,
+      "proposition_locators": [
+        "he.chabad.org AID 2989585, גוף השיחה שורות 222–233.",
+        "he.chabad.org AID 2989585, גוף השיחה שורות 214–217 ו־245."
+      ],
+      "note": "אותה שיחת שבועות ואותה Evidence Family; נפתחו מקטעים נוספים בגוף הפרסום והוספו שתי פרפרזות. לא נוצרה זהות או עדות עצמאית חדשה."
+    }
+  ],
   "existing_identity_rechecks": [
     {
       "aid": 553674,
@@ -114,13 +128,13 @@
   "scan_only_verification_used": false,
   "metrics_before": {
     "answer_eligible_unique_sources": 977,
-    "content_verified_unique_sources": 870,
+    "content_verified_unique_sources": 878,
     "answer_eligible_propositions": 2950
   },
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 986,
-    "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2964
+    "content_verified_unique_sources": 878,
+    "answer_eligible_propositions": 2966
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -137,7 +151,9 @@
     "full_index_scan_pending_reconciliation": true,
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "new_aid_collisions": []
+    "new_aid_collisions": [],
+    "preflight_exact_aid_search": "GitHub code search returned no matches for candidate AIDs; this is not a substitute for full filesystem reconciliation.",
+    "candidate_aids_found": []
   },
   "limitations": [
     "כל תשע הרשומות נשארות Parsed; אף אחת לא קודמה ל-Verified.",
@@ -164,17 +180,17 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "השיחה קושרת קבלת תורה בשמחה ובפנימיות לערבות הילדים ולהפצת תורה יזומה שאינה משנה את תוכנה כדי להתאים אותה לקהל.",
+      "summary_researcher": "השיחה קושרת קבלת תורה בשמחה ובפנימיות לערבות הילדים, להפצה יזומה שאינה מתאימה את התורה לפשרות, לחלוקת התפקידים בהדלקת המנורה הרוחנית ולתפקיד פנימיות התורה בהארת הנשמה.",
       "provenance": {
         "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לשיחת הרבי; הפרפרזות מתארות את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
         "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
         "source_witness": "BeitChabad.com / he.chabad.org, AID 2989585, גוף שיחה בעברית.",
         "transmission_type": "פרסום דיגיטלי של הנחה עברית בלתי מוגה.",
-        "textual_status": "נבדקו רק המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כבלתי מוגה. לא בוצעה השוואה להקלטה או לכתב־יד.",
-        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו; כותרת, מפתח ותוצאת חיפוש לא שימשו תחליף לתוכן.",
+        "textual_status": "נבדקו המקטעים המצוינים ב-locators; העמוד מסמן את השיחה כבלתי מוגה. לא הושוותה להקלטה, כתב־יד או מהדורה ביקורתית.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו. שתי הפרפרזות הנוספות נשענות על שורות 222–233 ו־214–217,245; לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989585",
-        "accessed": "2026-11-15T19:30:52+02:00"
+        "accessed": "2026-11-15T20:00:00+02:00"
       },
       "witness": {
         "kind": "text",
@@ -206,19 +222,23 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 2989585. נבדקו רק המקטעים: he.chabad.org AID 2989585, גוף השיחה שורות 166–177. he.chabad.org AID 2989585, גוף השיחה שורות 180–186. he.chabad.org AID 2989585, גוף השיחה שורות 201–210. העמוד מסמן במפורש את הנוסח כבלתי מוגה. ההקשר נשאר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 2989585. נבדקו רק המקטעים: he.chabad.org AID 2989585, גוף השיחה שורות 166–177. he.chabad.org AID 2989585, גוף השיחה שורות 180–186. he.chabad.org AID 2989585, גוף השיחה שורות 201–210. העמוד מסמן במפורש את הנוסח כבלתי מוגה. ההקשר נשאר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed. העשרה נוספת ב־15.11.2026: נפתחו מקטעים נוספים באותו פרסום, שורות 222–233 ו־214–217,245; נוספו שתי פרפרזות לא־מילוליות לאותה זהות ולאותה Evidence Family. לא נוצר מקור חדש, לא שונה הסטטוס Parsed ולא נטען לאימות כתב־יד או הקלטה.",
       "type": "sicha",
       "collection": "תורת מנחם — התוועדויות",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989585",
       "response_propositions": [
         "הקטע מסביר שהקבלה השנתית של התורה בשבועות צריכה להיעשות בשמחה ובפנימיות: שמחה נדרשת משום שלימוד וקיום מצוות כרוכים בניסיונות ובהסתר, ופנימיות פירושה שהעבודה תגיע עד עצם הנפש ולא תישאר רק במחשבה, בדיבור, במעשה, בשכל וברגש.",
         "בהקשר של מתן תורה, השיחה מציגה את הילדים כערבים לקבלת התורה, ומקשרת את ערבותם גם ליכולת של מבוגרים לשמר תכונות של קטנות ופתיחות לקבלת התורה.",
-        "הקטע על התהלוכה מציג הפצת תורה כיציאה יזומה אל מחוץ למעגל הקרוב, תוך קירוב אנשים לתורה עצמה ולא התאמת התורה לפשרות לפי רוחם; העבודה החינוכית מכוונת לכך שהאור הפנימי של האדם יוכל להאיר מעצמו."
+        "הקטע על התהלוכה מציג הפצת תורה כיציאה יזומה אל מחוץ למעגל הקרוב, תוך קירוב אנשים לתורה עצמה ולא התאמת התורה לפשרות לפי רוחם; העבודה החינוכית מכוונת לכך שהאור הפנימי של האדם יוכל להאיר מעצמו.",
+        "הקטע על המנורה מבחין בין חובת ההפצה המוטלת על כל יהודי לבין הכנת אמצעי ההשפעה הרוחנית, המתוארת כתפקיד הכהן; לאחר ההכנה, האחריות להדליק ולהפיץ מוטלת על הציבור הרחב.",
+        "השיחה מציגה את פנימיות התורה כמרכיב הנחוץ להארת הנשמה ולהפצת המעיינות: היא מבחינה בין התורה הגלויה לבין הרובד הפנימי המחובר למקור, ומקשרת את לימוד פנימיות התורה לתוספת חיות גם בלימוד הנגלה ובקיום המצוות."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 2989585, גוף השיחה שורות 166–177.",
         "he.chabad.org AID 2989585, גוף השיחה שורות 180–186.",
-        "he.chabad.org AID 2989585, גוף השיחה שורות 201–210."
+        "he.chabad.org AID 2989585, גוף השיחה שורות 201–210.",
+        "he.chabad.org AID 2989585, גוף השיחה שורות 222–233.",
+        "he.chabad.org AID 2989585, גוף השיחה שורות 214–217 ו־245."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -228,7 +248,7 @@
       "evidence_family_id": "sicha-5717-shavuot-day2-aid2989585",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 2989585. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989585, גוף השיחה שורות 166–177. he.chabad.org AID 2989585, גוף השיחה שורות 180–186. he.chabad.org AID 2989585, גוף השיחה שורות 201–210. העמוד מסמן במפורש את הנוסח כבלתי מוגה. לא נבדקו הקלטה, כתב־יד, אוטוגרף, מהדורה ביקורתית או ההקשר המלא של ההתוועדות. כל הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של המקטעים שנפתחו, ולא ציטוטים. הרשומה נשארת Parsed.",
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 2989585. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989585, גוף השיחה שורות 166–177. he.chabad.org AID 2989585, גוף השיחה שורות 180–186. he.chabad.org AID 2989585, גוף השיחה שורות 201–210. העמוד מסמן במפורש את הנוסח כבלתי מוגה. לא נבדקו הקלטה, כתב־יד, אוטוגרף, מהדורה ביקורתית או ההקשר המלא של ההתוועדות. כל הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של המקטעים שנפתחו, ולא ציטוטים. הרשומה נשארת Parsed. בבדיקה נוספת ב־15.11.2026 נפתחו גם שורות 222–233 ו־214–217,245; נוספו שתי פרפרזות מחקריות לא־מילוליות של מקטעים אלה בלבד.",
       "witness_provenance": "BeitChabad.com / he.chabad.org, AID 2989585, גוף שיחה בעברית.",
       "documented_circumstances": "שיחת יום ב׳ דחג השבועות ה׳תשי״ז; הקטעים שנבדקו עוסקים בקבלת התורה, בערבות הילדים ובהפצת המעיינות.",
       "question_or_problem": "כיצד מתארת השיחה קבלת תורה בפנימיות, ערבות ילדים והפצת תורה מחוץ למעגל הקרוב?",
