@@ -2182,7 +2182,9 @@ assert(enriched3316748[0].response_propositions.some(p=>p.includes('החלצו')
 assert(enriched3316748[0].response_proposition_locators.some(l=>l.includes('lines 260–261')));
 assert.deepEqual(batch100Data.metrics_before,{answer_eligible_unique_sources:969,content_verified_unique_sources:853,answer_eligible_propositions:2941});
 assert.deepEqual(batch100Data.metrics_expected_after,{answer_eligible_unique_sources:978,content_verified_unique_sources:853,answer_eligible_propositions:2951});
-assert.deepEqual(metrics,{answer_eligible_unique_sources:978,content_verified_unique_sources:853,answer_eligible_propositions:2951},'the reconciled public metrics must match batch 100 actual content readiness');
+assert.equal(metrics.answer_eligible_unique_sources,978,'the reconciled public index must contain 978 answer-eligible Evidence Families after batch 100');
+assert.equal(metrics.content_verified_unique_sources,853,'no Parsed batch-100 source may be promoted to content-Verified');
+assert.equal(metrics.answer_eligible_propositions,2951,'the public proposition count must include the nine new propositions and one in-place enrichment');
 for(const mode of ['regular','researcher']){
  const studyPrayer=buildAnswerModel(idx.entries,'כיצד הערך מבחין בין לימוד תורה לתפילה?',{mode});
  assert(studyPrayer.answerable,mode+': inspected 26 Tammuz proposition must answer the study/prayer question');
