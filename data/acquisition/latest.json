@@ -7,6 +7,165 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "102",
+    "reviewed_at": "2026-11-15T21:07:06+02:00",
+    "status": "pending_reconciliation",
+    "review_method": "manual_public_web_source_body_inspection",
+    "reviewed_item_count": 12,
+    "source_bodies_inspected": 12,
+    "source_body_pages_opened": 12,
+    "new_source_identities": 10,
+    "answer_eligible_source_families_added": 10,
+    "independent_witnesses_added": 6,
+    "non_independent_presentations_added": 4,
+    "existing_identities_enriched": 1,
+    "existing_identity_rechecks": 0,
+    "new_response_propositions": 19,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 20,
+    "content_verified_unique_sources_added": 0,
+    "duplicate_candidate_count": 1,
+    "duplicate_alias_identities": 0,
+    "translations_counted_as_independent_witnesses": 0,
+    "new_aids": [
+      6489115,
+      1888937,
+      821755,
+      2190037,
+      2201447,
+      1939848,
+      72176,
+      1872993,
+      1277,
+      2276666
+    ],
+    "enriched_aids": [
+      2989588
+    ],
+    "source_language_distribution": {
+      "English": 10,
+      "Hebrew": 1
+    },
+    "source_type_distribution": {
+      "published_english_letter_transcription": 5,
+      "published_english_correspondence_exchange": 1,
+      "publisher_transcribed_copy_original_unavailable": 2,
+      "published_english_translation_from_yiddish": 1,
+      "published_english_translation_of_communal_letter": 1
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1001,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2998
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1011,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 3018
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "reconciliation_status": "pending",
+    "blocked_candidate_count": 7,
+    "blocked_candidates": [
+      {
+        "aid": 1921269,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1921269",
+        "reason": "Public reader returned an error; no source body inspected; excluded."
+      },
+      {
+        "aid": 6052000,
+        "reason": "Public page exposed bibliographic metadata and a PDF link; PDF yielded no readable source text; excluded."
+      },
+      {
+        "aid": 5996836,
+        "reason": "Linked PDF text was garbled by Hebrew font encoding; no semantic content used; excluded."
+      },
+      {
+        "aid": 4543714,
+        "reason": "Linked PDF text was garbled by Hebrew font encoding; no semantic content used; excluded."
+      },
+      {
+        "aid": 1053,
+        "source_url": "https://www.chabadlibrary.org/books/admur/ig/4/1053.htm",
+        "reason": "Search result exposed a text extract but direct open returned no readable body lines; search extract was not used as content; excluded."
+      },
+      {
+        "aid": 2988234,
+        "reason": "Public article reader returned a navigation/summary shell without readable body; excluded."
+      },
+      {
+        "aid": 4296290,
+        "reason": "Public article reader returned a navigation/summary shell without readable body; excluded."
+      }
+    ],
+    "duplicate_candidates": [
+      {
+        "observed_aid": 1888932,
+        "candidate_aid": 289101,
+        "candidate_evidence_family_id": "letter-5717-15-menachem-av-jaffe-blessing",
+        "status": "not_linked_body_unavailable",
+        "reason": "AID 1888932 body was inspected; AID 289101 page did not open. Search metadata showed matching title/date, but no body-level comparison was possible. Not merged and not counted as a duplicate."
+      }
+    ],
+    "duplicate_aliases_linked": [],
+    "existing_identity_updates": [
+      {
+        "aid": 2989588,
+        "canonical_file": "data/items/content-research-batch-099-2026-11-15.json",
+        "action": "enriched_existing_identity_and_corrected_source_locators_in_original_batch_file",
+        "propositions_added": 1,
+        "locators_corrected": 3,
+        "proposition_source_locator": "he.chabad.org AID 2989588, גוף השיחה line 185 (הקיץ כהכנה לשנת הלימודים הבאה ולבניית בתים יהודיים).",
+        "evidence_family_id": "sicha-5717-24-sivan-aid2989588",
+        "note": "נוספה פרפרזה על תקופת הקיץ וההכנה לשנת הלימודים הבאה; שלושת ה-locators הקודמים תוקנו לפי גוף העמוד שנפתח. אותו AID ואותה Evidence Family."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "Chabad.org / TheRebbe.org public correspondence pages",
+      "accessible_item_level_bodies": 10,
+      "body_text_inspected": true,
+      "aids": [
+        6489115,
+        1888937,
+        821755,
+        2190037,
+        2201447,
+        1939848,
+        72176,
+        1872993,
+        1277,
+        2276666
+      ]
+    },
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "existing_identity_enrichment_in_place": true,
+      "translations_counted_as_independent_witnesses": 0,
+      "confirmed_duplicate_aliases_linked": 0,
+      "duplicate_candidate_not_merged": 1,
+      "checked_against": [
+        "data/content-review-queue.json",
+        "content-research batches 056–060",
+        "content-research batches 097–101",
+        "data/items/bulk-indexed-2026-09-25-001.json (accessible subset)"
+      ],
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "canonical_identity_collisions": [],
+      "missing_canonical_identities": [],
+      "note": "Full canonical scan must be completed by scripts/reconcile_metrics.py. The 1888932/289101 candidate remains unmerged because the 289101 body was unavailable."
+    },
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "search_extracts_used_as_content": 0
+  },
+  "previous_manual_web_review": {
     "batch_id": "101",
     "batch_file": "data/items/content-research-batch-101-2026-11-15.json",
     "reviewed_at": "2026-11-15T20:00:00+02:00",
@@ -142,71 +301,6 @@
         "aid": 2989588,
         "evidence_family_id": "sicha-5717-24-sivan-aid2989588",
         "result": "נבדק מחדש בגוף העמוד; הזהות קיימת בבאץ׳ 099 ולא נוצרה כפילות."
-      }
-    ]
-  },
-  "previous_manual_web_review": {
-    "batch_id": "100",
-    "batch_file": "data/items/content-research-batch-100-2026-11-15.json",
-    "reviewed_at": "2026-11-15T19:30:52+02:00",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending",
-    "reviewed_item_count": 11,
-    "source_bodies_inspected": 10,
-    "source_body_pages_opened": 11,
-    "metadata_only_items_rechecked": 1,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 9,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 14,
-    "existing_response_propositions_added": 2,
-    "total_new_paraphrase_entries": 16,
-    "answer_eligible_source_families_added": 9,
-    "independent_witnesses_added": 9,
-    "non_independent_presentations_added": 0,
-    "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
-    "blocked_candidates": [
-      {
-        "aid": 553674,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/553674/jewish/21-Kislev-5743-Yechidus-Bar-Mitzva.htm",
-        "reason": "העמוד הציבורי מציג רישום יחידות וקישור לאוסף אודיו בלבד; לא נמצא תמליל גוף קריא, ולכן לא נוצרה ממנו פרופוזיציה."
-      }
-    ],
-    "metadata_only_candidate_count": 1,
-    "metadata_only_candidates": [
-      {
-        "aid": 553674,
-        "reason": "רישום Yechidus/אודיו; אין תמליל טקסטואלי גלוי בעמוד שנפתח."
-      }
-    ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 977,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2952
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 986,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2968
-    },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "existing_identity_updates": [
-      {
-        "aid": 2989585,
-        "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
-        "action": "enriched_existing_identity_in_original_batch_file",
-        "propositions_added": 2,
-        "proposition_locators": [
-          "he.chabad.org AID 2989585, גוף השיחה שורות 222–233.",
-          "he.chabad.org AID 2989585, גוף השיחה שורות 214–217 ו־245."
-        ]
       }
     ]
   },
@@ -551,13 +645,13 @@
       }
     ]
   },
-  "manual_web_review_note": "המדדים האחרונים לפני reconciliation הם 977/870/2950. באץ׳ 099 הועשר ב־2 פרופוזיציות לאותה זהות AID 2989588; באץ׳ 101 כולל 14 מקורות עבריים ומכתב אנגלי אחד. שרשרת הציפיות המעודכנת: 977/870/2952 → 986/870/2968 → 1001/870/2998. 878 בקובץ public-metrics הוא false positive מתועד עד לריצה מתוקנת.",
+  "manual_web_review_note": "Batch 102: ten new English correspondence bodies inspected and added; one existing Hebrew Sicha identity enriched in place; 12 bodies inspected in total including the existing identity and a duplicate candidate. Seven unreadable candidates were documented; the same run fell back to ten accessible letter bodies. All additions remain Parsed; no Verified promotion.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 977,
     "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2950
   },
-  "last_manual_review_at": "2026-11-15T20:00:00+02:00",
+  "last_manual_review_at": "2026-11-15T21:07:06+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -1987,6 +2081,165 @@
           "result": "נבדק מחדש בגוף העמוד; הזהות קיימת בבאץ׳ 099 ולא נוצרה כפילות."
         }
       ]
+    },
+    {
+      "batch_id": "102",
+      "reviewed_at": "2026-11-15T21:07:06+02:00",
+      "status": "pending_reconciliation",
+      "review_method": "manual_public_web_source_body_inspection",
+      "reviewed_item_count": 12,
+      "source_bodies_inspected": 12,
+      "source_body_pages_opened": 12,
+      "new_source_identities": 10,
+      "answer_eligible_source_families_added": 10,
+      "independent_witnesses_added": 6,
+      "non_independent_presentations_added": 4,
+      "existing_identities_enriched": 1,
+      "existing_identity_rechecks": 0,
+      "new_response_propositions": 19,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 20,
+      "content_verified_unique_sources_added": 0,
+      "duplicate_candidate_count": 1,
+      "duplicate_alias_identities": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "new_aids": [
+        6489115,
+        1888937,
+        821755,
+        2190037,
+        2201447,
+        1939848,
+        72176,
+        1872993,
+        1277,
+        2276666
+      ],
+      "enriched_aids": [
+        2989588
+      ],
+      "source_language_distribution": {
+        "English": 10,
+        "Hebrew": 1
+      },
+      "source_type_distribution": {
+        "published_english_letter_transcription": 5,
+        "published_english_correspondence_exchange": 1,
+        "publisher_transcribed_copy_original_unavailable": 2,
+        "published_english_translation_from_yiddish": 1,
+        "published_english_translation_of_communal_letter": 1
+      },
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1001,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2998
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1011,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 3018
+      },
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "reconciliation_status": "pending",
+      "blocked_candidate_count": 7,
+      "blocked_candidates": [
+        {
+          "aid": 1921269,
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1921269",
+          "reason": "Public reader returned an error; no source body inspected; excluded."
+        },
+        {
+          "aid": 6052000,
+          "reason": "Public page exposed bibliographic metadata and a PDF link; PDF yielded no readable source text; excluded."
+        },
+        {
+          "aid": 5996836,
+          "reason": "Linked PDF text was garbled by Hebrew font encoding; no semantic content used; excluded."
+        },
+        {
+          "aid": 4543714,
+          "reason": "Linked PDF text was garbled by Hebrew font encoding; no semantic content used; excluded."
+        },
+        {
+          "aid": 1053,
+          "source_url": "https://www.chabadlibrary.org/books/admur/ig/4/1053.htm",
+          "reason": "Search result exposed a text extract but direct open returned no readable body lines; search extract was not used as content; excluded."
+        },
+        {
+          "aid": 2988234,
+          "reason": "Public article reader returned a navigation/summary shell without readable body; excluded."
+        },
+        {
+          "aid": 4296290,
+          "reason": "Public article reader returned a navigation/summary shell without readable body; excluded."
+        }
+      ],
+      "duplicate_candidates": [
+        {
+          "observed_aid": 1888932,
+          "candidate_aid": 289101,
+          "candidate_evidence_family_id": "letter-5717-15-menachem-av-jaffe-blessing",
+          "status": "not_linked_body_unavailable",
+          "reason": "AID 1888932 body was inspected; AID 289101 page did not open. Search metadata showed matching title/date, but no body-level comparison was possible. Not merged and not counted as a duplicate."
+        }
+      ],
+      "duplicate_aliases_linked": [],
+      "existing_identity_updates": [
+        {
+          "aid": 2989588,
+          "canonical_file": "data/items/content-research-batch-099-2026-11-15.json",
+          "action": "enriched_existing_identity_and_corrected_source_locators_in_original_batch_file",
+          "propositions_added": 1,
+          "locators_corrected": 3,
+          "proposition_source_locator": "he.chabad.org AID 2989588, גוף השיחה line 185 (הקיץ כהכנה לשנת הלימודים הבאה ולבניית בתים יהודיים).",
+          "evidence_family_id": "sicha-5717-24-sivan-aid2989588",
+          "note": "נוספה פרפרזה על תקופת הקיץ וההכנה לשנת הלימודים הבאה; שלושת ה-locators הקודמים תוקנו לפי גוף העמוד שנפתח. אותו AID ואותה Evidence Family."
+        }
+      ],
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "publisher": "Chabad.org / TheRebbe.org public correspondence pages",
+        "accessible_item_level_bodies": 10,
+        "body_text_inspected": true,
+        "aids": [
+          6489115,
+          1888937,
+          821755,
+          2190037,
+          2201447,
+          1939848,
+          72176,
+          1872993,
+          1277,
+          2276666
+        ]
+      },
+      "deduplication_check": {
+        "new_aids_unique": true,
+        "new_source_urls_unique": true,
+        "new_evidence_families_unique": true,
+        "existing_identity_enrichment_in_place": true,
+        "translations_counted_as_independent_witnesses": 0,
+        "confirmed_duplicate_aliases_linked": 0,
+        "duplicate_candidate_not_merged": 1,
+        "checked_against": [
+          "data/content-review-queue.json",
+          "content-research batches 056–060",
+          "content-research batches 097–101",
+          "data/items/bulk-indexed-2026-09-25-001.json (accessible subset)"
+        ],
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "note": "Full canonical scan must be completed by scripts/reconcile_metrics.py. The 1888932/289101 candidate remains unmerged because the 289101 body was unavailable."
+      },
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "search_extracts_used_as_content": 0
     }
   ],
   "earlier_manual_web_review_12": {
@@ -2112,21 +2365,37 @@
   },
   "manual_web_review_metrics_audit": {
     "published_metrics_before_full_reconciliation": {
-      "answer_eligible_unique_sources": 900,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2832
-    },
-    "confirmed_full_corpus_after_batch_098": {
-      "answer_eligible_unique_sources": 965,
+      "answer_eligible_unique_sources": 977,
       "content_verified_unique_sources": 878,
-      "answer_eligible_propositions": 2929
+      "answer_eligible_propositions": 2950
     },
-    "previous_expected_after_batch_098": {
+    "corrected_baseline_before_batch_099": {
       "answer_eligible_unique_sources": 965,
       "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2929
     },
-    "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
+    "expected_after_batch_099": {
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2952
+    },
+    "expected_after_batch_100": {
+      "answer_eligible_unique_sources": 986,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2968
+    },
+    "expected_after_batch_101": {
+      "answer_eligible_unique_sources": 1001,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2998
+    },
+    "expected_after_batch_102": {
+      "answer_eligible_unique_sources": 1011,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 3018
+    },
+    "status": "pending_reconciliation",
+    "correction": "The published 878 content-Verified count is a status-normalization false positive from eight Parsed batch-096 records whose provenance wording included 'no promotion to Verified'. The corrected baseline is 870; no status promotion is intended."
   },
-  "next_action": "Run corrected full-corpus reconciliation for batch 100; verify that the eight batch-096 false-positive statuses are Parsed and content-Verified remains 870, then complete answer-quality Actions and Pages publication."
+  "next_action": "Validate the batch-102 pull request, then merge and run the contiguous reconciliation chain 099–102. Confirm full-index identity audits, test_content_readiness.mjs, commit-bound Actions, and GitHub Pages metrics/search-index publication."
 }
