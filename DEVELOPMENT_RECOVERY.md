@@ -593,3 +593,15 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - לא הועתק טקסט מוגן במלואו, לא נעשה שימוש ב-search extracts כתוכן, לא נוצרה אוטומציה חדשה, לוח הזמנים השעתי נשמר ולא שונו קהל או הרשאות.
 
 - לאחר הסריקה הקנונית המלאה התגלה גם רישום כפול של AID 553673: רשומת metadata בקובץ `bulk-indexed-2026-09-24-001.json` לצד רשומת audio ב-batch 069. שתי הרשומות עודכנו לאותה Evidence Family `yechidus-5743-21-kislev-parallel-language-audio`, עם `independent_witness=false`; הרשומה הכפולה נשארת metadata-only ללא proposition. במקביל, AID 553673 נשאר מקושר ל-AID 553672 כפרסום מקביל של אותו אירוע. הסריקה מבחינה כעת בין duplicate presentation באותה משפחה לבין collision בין משפחות שונות.
+
+## 2026-11-15 — Batch 100: nine additional Hebrew Sicha bodies
+
+- נפתח עמוד Yechidus AID 553674. הוא מציג רישום מדיה/אודיו ללא תמליל קריא, ולכן נשאר metadata-only ולא נוצרה ממנו פרופוזיציה. באותה הפעלה בוצע fallback לתשעה גופי שיחות ציבוריים נגישים ב-BeitChabad / he.chabad.org: AIDs 2989585, 4296215, 2989341, 4296163, 4280029, 4385617, 4279842, 2988877 ו-2989022.
+- נוספו תשע זהויות חדשות בתשע Evidence Families נפרדות ו-14 פרפרזות מחקריות לא-מילוליות, עם locator נפרד לכל טענה, provenance, היקף בדיקה, נסיבות ומגבלות. כל הרשומות נשארות Parsed; לא הועלה אף מקור ל-Verified. שמונה העמודים מסומנים במפורש כבלתי מוגהים; ב-AID 2989341 לא נמצא ציון עריכה מפורש בכותרת/במקטע שנבדק, ולכן הסטטוס העריכתי שלו נשאר לא ידוע.
+- כל הרשומות מתארות רק מקטעים שנפתחו בגוף הפרסום. לא נבדקו הקלטות, כתבי-יד, אוטוגרפים או ההקשר המלא. לא נעשה שימוש בתמציות חיפוש כראיית תוכן, לא הועתק טקסט מוגן במלואו, ולא יוחסה הסקת מערכת לרבי.
+- בדיקת כפילויות ראשונית נעשתה מול review queue, batches 055–060, 064–094, 096–099, קובצי bulk-indexed שנבדקו ו-GitHub code search; הסריקה הקנונית המלאה והכרעה סופית על collisions נשארות ל-scripts/reconcile_metrics.py ב-commit זה.
+- לפני batch 100: 977 answer-eligible unique Evidence Families, 878 content-verified families ו-2,950 propositions. הצפי, אם כל תשעת ה-AIDs יישארו זהויות נפרדות, הוא 986 / 878 / 2,964. אלה ערכי צפי בלבד עד reconciliation בפועל.
+- תיקון CI: ב-batch 096 נוסח ההסבר 'no promotion to Verified' בשדה provenance.verification_status הפעיל בטעות את זיהוי הסטטוס מבוסס-הטוקן Verified, אף ששדות ה-pipeline נשארו Parsed. הנוסח הוחלף ב-'not promoted.'; בדיקות היסטוריות עודכנו להשתמש במדדי snapshot של batch 096 ולא להשוותם למדדים הגלובליים הנוכחיים.
+- לא נעשה retry ל-crawler שחזר HTTP 403, לא נעקפו בקרות גישה, לא נוצרו אוטומציות חדשות ולא שונו קהל, הרשאות או לוח הזמנים השעתי.
+
+- Batch file: data/items/content-research-batch-100-2026-11-15.json.

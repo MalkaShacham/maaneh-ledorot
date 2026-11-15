@@ -7,6 +7,59 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "100",
+    "batch_file": "data/items/content-research-batch-100-2026-11-15.json",
+    "reviewed_at": "2026-11-15T19:30:52+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending",
+    "reviewed_item_count": 10,
+    "source_bodies_inspected": 9,
+    "source_body_pages_opened": 10,
+    "metadata_only_items_rechecked": 1,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 1,
+    "new_response_propositions": 14,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 14,
+    "answer_eligible_source_families_added": 9,
+    "independent_witnesses_added": 9,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 553674,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/553674/jewish/21-Kislev-5743-Yechidus-Bar-Mitzva.htm",
+        "reason": "העמוד הציבורי מציג רישום יחידות וקישור לאוסף אודיו בלבד; לא נמצא תמליל גוף קריא, ולכן לא נוצרה ממנו פרופוזיציה."
+      }
+    ],
+    "metadata_only_candidate_count": 1,
+    "metadata_only_candidates": [
+      {
+        "aid": 553674,
+        "reason": "רישום Yechidus/אודיו; אין תמליל טקסטואלי גלוי בעמוד שנפתח."
+      }
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2950
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 986,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2964
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null
+  },
+  "previous_manual_web_review": {
     "batch_id": "099",
     "batch_file": "data/items/content-research-batch-099-2026-11-15.json",
     "reviewed_at": "2026-11-15T19:03:35+02:00",
@@ -204,73 +257,6 @@
       }
     ],
     "duplicate_alias_identities": 1
-  },
-  "previous_manual_web_review": {
-    "batch_id": "098",
-    "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
-    "reviewed_at": "2026-11-15T17:00:00+02:00",
-    "status": "pending_reconciliation",
-    "reviewed_item_count": 10,
-    "source_bodies_inspected": 10,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 9,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 9,
-    "content_verified_unique_sources_added": 0,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-        "reason": "העמוד הופנה ל-Torah Texts summary shell ללא גוף איגרת קריא; לא נוצרו ממנו פרופוזיציות ולא בוצע ניסיון crawler או עקיפת גישה."
-      },
-      {
-        "aid": 1200720068,
-        "url": "https://www.chabadlibrary.org/books/1200720068",
-        "reason": "העמוד נפתח בקורא הציבורי אך החזיר אפס שורות קריאות; קטע החיפוש לא שימש כתוכן ולא נוצרו ממנו פרופוזיציות."
-      }
-    ],
-    "fallback_source_attempted": true,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 956,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2918
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2929
-    },
-    "enriched_aids": [
-      3316701
-    ],
-    "reviewed_aids": [
-      3316610,
-      3316613,
-      3316630,
-      3316731,
-      3316736,
-      3316744,
-      3316746,
-      3316749,
-      259799,
-      3316701
-    ],
-    "language_distribution": {
-      "Hebrew": 4,
-      "Yiddish": 4,
-      "English": 1
-    },
-    "source_type_distribution": {
-      "published_daily_anthology_original_language_entry": 8,
-      "recipient_testimony_with_embedded_english_letter_excerpt": 1
-    }
   },
   "earlier_manual_web_review": {
     "batch_id": "093",
@@ -615,11 +601,11 @@
   },
   "manual_web_review_note": "Manual public source-body inspection remains the semantic acquisition path. The runner-side Chabad.org crawler stays disabled after HTTP 403. Batch 099 adds twelve inspected BeitChabad text identities, enriches AID 3316719 in place, and reconfirms the shared audio-only Evidence Family for AIDs 553672/553673. Four Hebrew pages are translations of Yiddish-edited texts and are not independent witnesses. Full-index scan also found an older bulk-indexed duplicate presentation of AID 553673; it has now been linked to the same Evidence Family as the batch-069 record, with no content promotion.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 977,
+    "answer_eligible_unique_sources": 986,
     "content_verified_unique_sources": 878,
-    "answer_eligible_propositions": 2950
+    "answer_eligible_propositions": 2964
   },
-  "last_manual_review_at": "2026-11-15T19:03:35+02:00",
+  "last_manual_review_at": "2026-11-15T19:30:52+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -1882,6 +1868,29 @@
         }
       ],
       "duplicate_alias_identities": 1
+    },
+    {
+      "batch_id": "100",
+      "batch_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "reviewed_at": "2026-11-15T19:30:52+02:00",
+      "new_source_identities": 9,
+      "new_response_propositions": 14,
+      "existing_identities_enriched": 0,
+      "existing_identities_rechecked": 1,
+      "blocked_candidate_count": 1,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 977,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2950
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 986,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2964
+      },
+      "reconciliation_status": "pending"
     }
   ],
   "earlier_manual_web_review_12": {
@@ -2023,5 +2032,5 @@
     },
     "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
   },
-  "next_action": "Run full-corpus reconciliation and content-readiness/answer-quality tests on batch 099; inspect Actions and GitHub Pages publication."
+  "next_action": "Run full-corpus identity and answer-readiness reconciliation for batch 100; verify test_content_readiness.mjs, answer-quality Actions, and the published GitHub Pages metrics."
 }

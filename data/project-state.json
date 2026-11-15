@@ -95,14 +95,14 @@
       "actual_after": null,
       "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 878,
-        "answer_eligible_propositions": 2929
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 977,
         "content_verified_unique_sources": 878,
         "answer_eligible_propositions": 2950
+      },
+      "expected_after": {
+        "answer_eligible_unique_sources": 986,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2964
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -113,24 +113,25 @@
         "093",
         "094",
         "095",
-        "099"
+        "099",
+        "100"
       ],
       "baseline_correction": "Full-corpus reconciliation confirmed 878 content-verified Evidence Families before batch 099; the prior 870 expectation was stale by eight pre-existing families. No new status promotion is made in batch 099."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_099",
+      "run_status": "pending_after_batch_100",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 098 adds nine Parsed source identities (eight original-language Hayom Yom entries and one English recipient testimony) and enriches existing AID 3316701 in place. No new source is promoted to a content-verified status. Commit-bound Actions results are pending."
+      "note": "Batch 100 adds nine Parsed Hebrew Sicha identities and fourteen inspected-text paraphrases. A known status-parser false positive in batch 096 is corrected; commit-bound tests must establish the final result."
     },
     "publication": {
-      "status": "pending_after_batch_099",
+      "status": "pending_after_batch_100",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -169,20 +170,20 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "099",
+    "current_batch": "100",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "097",
-    "last_batch_summary": "Batch 099: 12 new Hebrew Sicha/Maamar identities, 20 new source-grounded paraphrases, one in-place enrichment of AID 3316719, one same-AID duplicate presentation of AID 553673 linked to its existing Evidence Family, and the AID 553672/553673 parallel audio pair reconfirmed. Eight independent Hebrew text witnesses and four derived Hebrew translations; no Verified promotion.",
-    "last_run_note": "Batch 098: ten source bodies were inspected (eight new original-language Hayom Yom entries, one English recipient testimony with an embedded letter excerpt, and one existing AID 3316701 identity enriched in place). AID 4666220 returned a summary shell and Chabad Library AID 1200720068 returned no readable body; accessible sources were used as fallback. No crawler retry, access-control bypass, full-text copying or status promotion was performed.",
+    "last_completed_batch": "099",
+    "last_batch_summary": "Batch 100: nine new Hebrew Sicha text identities from opened BeitChabad bodies, fourteen non-verbatim source-grounded propositions, one metadata-only Yechidus audio page rechecked; no existing content identity enriched and no status promoted to Verified.",
+    "last_run_note": "AID 553674 opened as a Yechidus audio listing without a readable transcript; it was excluded. Same-run fallback inspected nine public Hebrew Sicha bodies on he.chabad.org. No crawler retry or access-control bypass.",
     "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 returned a summary/navigation shell; ten audio/media pages had no inspectable transcript and were excluded. Full-index scan also found and linked a duplicate metadata-only AID 553673 presentation.",
+    "last_batch_blocked_reason": "AID 553674 exposed an audio listing without a readable transcript; excluded from content evidence.",
     "next_work": [
-      "Verify the full-index duplicate audit classifies the two AID 553673 metadata presentations as one non-independent Evidence Family, not a conflicting identity.",
-      "Run reconcile_metrics.py on the batch-099 commit and verify all twelve new AIDs plus the in-place AID 3316719 enrichment in the canonical index.",
-      "Run test_content_readiness.mjs, answer-quality regression, claim-level citation entailment, context-boundary, and deep researcher-mode tests.",
-      "Inspect commit-bound Actions results and verify the public GitHub Pages site reflects the reconciled search index and metrics.",
-      "Continue manual public source-body inspection across Hebrew, Yiddish, English and additional documentary classes; enrich existing identities and link translations/reprints to the same Evidence Family.",
-      "Do not retry the known HTTP 403 acquisition crawler, bypass access controls, or promote excerpt-only/unedited text records to Verified."
+      "Run full-corpus reconciliation for batch 100 and confirm all nine AIDs map to one canonical identity and nine distinct Evidence Families.",
+      "Verify the measured answer-readiness delta is +9 sources, +0 content-Verified sources, and +14 propositions; record any variance without normalizing it away.",
+      "Run test_content_readiness.mjs, answer-quality, synthesis, citation-entailment, context-boundary, and deep researcher-mode checks.",
+      "Inspect commit-bound GitHub Actions and confirm GitHub Pages serves the reconciled search index and metrics.",
+      "Continue source-body research across Hebrew, Yiddish, English, and additional documentary classes; enrich existing identities in place and link translations/reprints to their Evidence Families.",
+      "Do not retry the HTTP 403 crawler, bypass access controls, or promote unedited/partial transcript items to Verified."
     ],
     "last_reconciliation": {
       "batch_id": "089",
