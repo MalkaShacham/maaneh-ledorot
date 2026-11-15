@@ -888,14 +888,18 @@ const enriched2187392=idx.entries.find(e=>String(e.aid)==='2187392');assert(enri
 const educationInfluenceQ='מה כתב הרבי על השפעה על יהודי אחד ועל חינוך ילדים יהודים במעשה ולא בדיבור?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,educationInfluenceQ,{mode});
- assert(m.answerable,mode+': education correspondence question must be answerable from inspected letters');
- assert(m.sources.some(e=>String(e.aid)==='2278261')||m.sources.some(e=>String(e.aid)==='2278254'),mode+': cite at least one of the inspected correspondence items');
+ console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
+ assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
+ assert(m.sources.some(e=>String(e.aid)==='2278256'));
+ assert(m.sources.some(e=>String(e.aid)==='2278261')||m.sources.some(e=>String(e.aid)==='2278254'));
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher'){
-  assert(m.research&&m.research.witnesses.length===m.sources.length);
-  assert(m.research.evidence_map.length>0);
-  assert(m.research.claim_source_map?.length>0);
+  assert(m.research&&m.research.evidence_families>=2);
+  assert.equal(m.research.witnesses.length,m.sources.length);
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
  }else assert.equal(m.research,undefined);
 }
 
@@ -944,7 +948,6 @@ const withheld2189943=idx.entries.find(e=>sourceAID(e)==='2189943');assert(!with
 const educationCorrespondenceQuestion='מה מתועד באיגרות על חינוך ילדים צעירים, חינוך עברי, דיבור בכיתה, מטרות החינוך ומעורבות תלמידים?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,educationCorrespondenceQuestion,{mode});assert(m.answerable,mode+': bounded cross-family comparison should be answerable');for(const aid of ['1273962','1875534','1875506','1273','66725','4082940','4650780','1874637'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': source '+aid);assert(m.sources.some(e=>e.id==='igrot-letter-5702-rosh-chodesh-nissan-achlei-torah-p169'));assert(m.synthesis&&m.synthesis.topic==='education_correspondence_comparison');assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');assert.equal(m.synthesis.claims.length,7);assert(m.synthesis.basis.length>=8);assert(new Set(m.synthesis.evidence_family_ids).size>=8);assert(m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length&&c.source_locators.every(x=>x.locator)));assert(m.pattern_synthesis_integrity?.valid===true);assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert.equal(m.research.depth,'deep');assert(m.research.evidence_integrity.derived_non_independent>=8);assert(m.research.claim_source_map.length>=7&&m.research.claim_source_map.every(c=>c.source_locators.length));assert(m.research.synthesis_constraints.rule.includes('case comparison'));}else assert.equal(m.research,undefined);}
 
-console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');assert(m.sources.some(e=>String(e.aid)==='2278256'));assert(m.sources.some(e=>String(e.aid)==='2278261')||m.sources.some(e=>String(e.aid)==='2278254'));assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research&&m.research.evidence_families>=2);assert.equal(m.research.witnesses.length,m.sources.length);assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));}else assert.equal(m.research,undefined);}
 
 
 // Publisher transcriptions of original-language correspondence are direct text witnesses, not translations or copied derivatives.
