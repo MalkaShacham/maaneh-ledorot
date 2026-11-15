@@ -208,7 +208,7 @@
         3316684,
         3316710
       ],
-      "blocked_candidate_count": 7,
+      "blocked_candidate_count": 26,
       "crawler_retry": false,
       "access_control_bypassed": false,
       "full_text_copied": false,
@@ -228,11 +228,117 @@
       },
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "status": "pending_reconciliation"
+      "status": "pending_reconciliation",
+      "blocked_candidates": [
+        {
+          "identity": "candidate-aid:3316730",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316735",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316740",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316745",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316753",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316758",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316763",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316768",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316773",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316778",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "candidate-aid:3316783",
+          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
+        },
+        {
+          "identity": "chabadlibrary-page:3701350216",
+          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
+        },
+        {
+          "identity": "chabadlibrary-page:3701350217",
+          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
+        },
+        {
+          "identity": "chabadlibrary-page:3701350218",
+          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
+        },
+        {
+          "identity": "chabadlibrary-page:3701350219",
+          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
+        },
+        {
+          "identity": "chabadlibrary-page:3701350220",
+          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
+        },
+        {
+          "identity": "chabadlibrary-page:3701350221",
+          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
+        },
+        {
+          "identity": "chabadlibrary-page:3701350222",
+          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
+        },
+        {
+          "identity": "chabadlibrary-page:3701350223",
+          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
+        },
+        {
+          "identity": "candidate-aid:5413081",
+          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
+        },
+        {
+          "identity": "candidate-aid:5413083",
+          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
+        },
+        {
+          "identity": "candidate-aid:5413084",
+          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
+        },
+        {
+          "identity": "candidate-aid:5413066",
+          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
+        },
+        {
+          "identity": "candidate-aid:5413260",
+          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
+        },
+        {
+          "identity": "candidate-aid:5413151",
+          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
+        },
+        {
+          "identity": "candidate-aid:5413246",
+          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
+        }
+      ]
     },
     "last_run_note": "Batch 098: five new Hebrew Igrot Kodesh letter bodies and nine original-language Hayom Yom pages were opened. Twelve propositions were added to five new letter identities and three further paraphrases enriched existing Hayom Yom identities in place. Seven inaccessible candidate pages were excluded; alternative public bodies were inspected in the same run. All new and enriched items remain Parsed/partial; no Verified promotions.",
-    "last_batch_blocked_count": 7,
-    "last_batch_blocked_reason": "Seven candidate Chabad.org pages redirected to navigation/summary shells or did not expose a readable item-level body; they were excluded and replaced by five accessible Hebrew letters plus nine Hayom Yom page-body reviews. No access-control bypass or crawler retry.",
+    "last_batch_blocked_count": 26,
+    "last_batch_blocked_reason": "Twenty-six candidate pages (eleven Hayom Yom pages, eight Chabad Library pages and seven Igrot Kodesh pages) did not expose readable item-level bodies; they were excluded and replaced by five accessible Hebrew letters plus nine Hayom Yom body reviews. No access-control bypass or crawler retry.",
     "next_work": [
       "Reconcile batches 090–098 against the canonical corpus and confirm exact unique Evidence Family and answer_eligible_unique_sources counts; do not rely on expected values.",
       "Run test_content_readiness.mjs, claim-level citation entailment, context-boundary checks, answer-quality and workflow-write-safety checks on the exact merged commit.",
