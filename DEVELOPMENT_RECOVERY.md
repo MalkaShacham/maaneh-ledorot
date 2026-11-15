@@ -696,3 +696,5 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - The reconciliation and quality-gate workflows must still complete against the new commit before these metrics can be described as published.
 
 - Browser cache version was advanced to `batch104-independent-family-priority-v1` in both the site entry point and validation wrapper so GitHub Pages loads the new independent-witness tie-breaker rather than a cached prior engine module.
+
+- The quality gate exposed a researcher-mode budget mismatch: `MODE_BUDGETS.researcher.sources` was 24, but `retrieveEvidence` still used its default cap. The engine now passes `maxSources: budget.sources`, allowing the existing wellsprings-specific researcher path to retain two relevant English translations from distinct Evidence Families while keeping both marked non-independent. The regression remains explicit; this does not increase the independent-family count.
