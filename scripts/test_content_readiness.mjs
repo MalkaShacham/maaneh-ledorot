@@ -1821,10 +1821,12 @@ for(const mode of ['regular','researcher']){
 
 const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
 const reconciliationChain=reconciledProjectState.development_recovery.reconciliation_chain;
-assert.deepEqual(reconciliationChain.map(x=>String(x.batch_id)),['099','100','101']);
+assert.deepEqual(reconciliationChain.map(x=>String(x.batch_id)),['099','100','101','102','103']);
 const batch099Audit=reconciliationChain.find(x=>String(x.batch_id)==='099');
 const batch100Audit=reconciliationChain.find(x=>String(x.batch_id)==='100');
 const batch101Audit=reconciliationChain.find(x=>String(x.batch_id)==='101');
+const batch102Audit=reconciliationChain.find(x=>String(x.batch_id)==='102');
+const batch103Audit=reconciliationChain.find(x=>String(x.batch_id)==='103');
 assert.equal(batch099Audit.batch_file,'data/items/content-research-batch-099-2026-11-15.json');
 assert.equal(batch099Audit.batch_record_count,16);
 assert.equal(batch099Audit.new_source_identity_count,12);
@@ -1844,10 +1846,13 @@ assert.equal(batch100Audit.answer_eligible_selected_count,10);
 assert.equal(batch100Audit.selected_unique_evidence_families,10);
 assert.equal(batch101Audit.answer_eligible_selected_count,15);
 assert.equal(batch101Audit.selected_unique_evidence_families,15);
-assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'101');
+assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'103');
 assert.equal(reconciledProjectState.metrics_integrity.answer_readiness.reconciliation_status,'reconciled');
 assert(!reconciledProjectState.metrics_integrity.answer_readiness.pending_batches.includes('099'));
 assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('101'));
+assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('103'));
+assert.equal(batch102Audit.reconciliation_status,'reconciled');
+assert.equal(batch103Audit.reconciliation_status,'reconciled');
 
 
 // Batches 090–092: source-body evidence, in-place enrichment, duplicate family links and deep retrieval.
@@ -2406,7 +2411,7 @@ assert.equal(batch103Data.reviewed_item_count,21);
 assert.equal(batch103Data.source_bodies_inspected,13);
 assert.equal(batch103Data.new_source_identities,12);
 assert.equal(batch103Data.existing_identities_enriched,1);
-assert.equal(batch103Data.new_response_propositions,24);
+assert.equal(batch103Data.new_response_propositions,25);
 assert.equal(batch103Data.existing_response_propositions_added,1);
 assert.equal(batch103Data.total_new_paraphrase_entries,25);
 assert.equal(batch103Data.answer_eligible_source_families_added,11);
@@ -2420,7 +2425,7 @@ assert.equal(batch103Data.access_control_bypassed,false);
 assert.equal(batch103Data.full_text_copied,false);
 assert.equal(batch103Data.translations_counted_as_independent_witnesses,0);
 assert.deepEqual(batch103Data.metrics_before,{answer_eligible_unique_sources:1009,content_verified_unique_sources:854,answer_eligible_propositions:3018});
-assert.deepEqual(batch103Data.metrics_expected_after,{answer_eligible_unique_sources:1020,content_verified_unique_sources:854,answer_eligible_propositions:3042});
+assert.deepEqual(batch103Data.metrics_expected_after,{answer_eligible_unique_sources:1020,content_verified_unique_sources:854,answer_eligible_propositions:3043});
 assert.equal(batch103Data.reconciliation_status,'reconciled');
 assert.deepEqual(batch103Data.metrics_actual_after,batch103Data.metrics_expected_after);
 assert.deepEqual(batch103Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
@@ -2436,7 +2441,19 @@ assert.equal(batch103Data.records.filter(r=>r.source_class==='Sichos').length,6)
 assert.equal(batch103Data.records.filter(r=>r.source_class==='Maamarim').length,5);
 assert.equal(batch103Data.records.filter(r=>r.source_class==='Correspondence').length,1);
 assert.equal(batch103Data.records.filter(r=>r.independent_witness===false).length,3);
-assert.equal(batch103Data.records.reduce((n,r)=>n+r.response_propositions.length,0),24);
+assert.equal(batch103Data.records.reduce((n,r)=>n+r.response_propositions.length,0),25);
+assert.equal(batch103Data.source_body_recheck.source_bodies_reopened,12);
+assert.equal(batch103Data.source_body_recheck.new_response_propositions_added,1);
+assert.equal(batch103Data.records.find(r=>String(r.aid)==='5989700').response_propositions.length,3);
+assert(batch103Data.records.find(r=>String(r.aid)==='5989700').response_propositions[2].includes('אין לשנות את התורה'));
+const educationMission103=batch103Data.records.find(r=>String(r.aid)==='3008913');
+assert(educationMission103.response_propositions[0].includes('שליחות חינוכית'));
+assert(educationMission103.response_propositions[1].includes('האם'));
+assert(educationMission103.response_proposition_locators[0].includes('237–238'));
+assert(educationMission103.response_proposition_locators[1].includes('234–236'));
+const publicAvodah103=batch103Data.records.find(r=>String(r.aid)==='4279912');
+assert(publicAvodah103.response_proposition_locators[0].includes('249–258'));
+assert(publicAvodah103.response_proposition_locators[1].includes('258–262'));
 for(const r of batch103Data.records){
  const aid=String(r.aid),matches=idx.entries.filter(e=>sourceAID(e)===aid);
  assert.equal(matches.length,1,'batch-103 AID '+aid+' must have exactly one canonical index identity');
@@ -2469,7 +2486,7 @@ assert.equal(translatedLetter.original_language,'unknown');
 assert.equal(batch103Data.existing_identity_updates[0].aid,2989585);
 
 // Cross-source synthesis regression: public mission and personal avodah, with claim-level citations.
-const missionBalanceQuestion='השווה בין שיחת ט׳ אלול ה׳תשי״ח לבין שיחת כ״ח סיון ה׳תשי״ב: כיצד הן מאזנות בין עסקנות ציבורית, השפעה על הזולת ועבודה אישית?';
+const missionBalanceQuestion='השווה בין שיחת ט׳ אלול ה׳תשי״ח לבין שיחת כ״ח סיון ה׳תשי״ב: כיצד מתוארת שליחות חינוכית והשפעה על הזולת, ומה מוסיפה השיחה השנייה על הגבלת זמן העסקנות ושמירה על העבודה האישית?';
 const missionEntries=idx.entries.filter(e=>['3008913','4279912'].includes(sourceAID(e)));
 assert.equal(missionEntries.length,2);
 for(const mode of ['regular','researcher']){

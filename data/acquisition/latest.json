@@ -20,9 +20,9 @@
     "new_source_identities": 12,
     "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 24,
+    "new_response_propositions": 25,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 25,
+    "total_new_paraphrase_entries": 26,
     "answer_eligible_source_families_added": 11,
     "independent_witnesses_added": 9,
     "non_independent_presentations_added": 3,
@@ -41,7 +41,7 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1020,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3042
+      "answer_eligible_propositions": 3043
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -149,7 +149,51 @@
         ],
         "note": "נפתח מקטע נוסף באותה שיחת שבועות. נוספה פרפרזה על הקשר בין לימוד תורה, ברכה והתקשרות לנותן התורה; הזהות והסטטוס Parsed נשמרו."
       }
-    ]
+    ],
+    "source_body_recheck": {
+      "rechecked_at": "2026-11-15T22:57:40+02:00",
+      "source_bodies_reopened": 12,
+      "aids": [
+        2277093,
+        3008869,
+        3008913,
+        3140154,
+        4279912,
+        4313085,
+        4385665,
+        4385789,
+        4418266,
+        5959899,
+        5989668,
+        5989700
+      ],
+      "new_response_propositions_added": 1,
+      "new_proposition_aid": 5989700,
+      "corrected_proposition_aids": [
+        3008913
+      ],
+      "corrected_locator_aids": [
+        2277093,
+        3008869,
+        3008913,
+        3140154,
+        4279912,
+        4313085,
+        4385665,
+        4385789,
+        4418266,
+        5959899,
+        5989668,
+        5989700
+      ],
+      "evidence_family_check": "AID 3008869 and AID 4418266 remain in one Yiddish-origin Evidence Family; both are non-independent translations.",
+      "blocked_original_witness": "The Yiddish HebrewBooks link for AID 4418266 remained HTTP 403; no retry or access-control bypass.",
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "limitations": "Only public publisher body passages cited above were inspected. No recording, manuscript, autograph, complete surrounding farbrengen, or critical edition was checked."
+    }
   },
   "previous_manual_web_review": {
     "batch_id": "102",
