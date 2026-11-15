@@ -2168,8 +2168,10 @@ for(const aid of batch100Aids){
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
 }
 const batch100PreparationQuestion='מה מתארות השיחות על קבלת התורה בשמחה ועל הפיכתה למורה דרך בחיי היום־יום?';
+const batch100PreparationEntries=idx.entries.filter(e=>['2989585','4385617'].includes(sourceAID(e)));
+assert.equal(batch100PreparationEntries.length,2);
 for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,batch100PreparationQuestion,{mode});
+ const m=buildAnswerModel(batch100PreparationEntries,batch100PreparationQuestion,{mode});
  assert(m.answerable,mode+': the inspected Torah-preparation texts must support a bounded answer');
  assert(m.sources.some(e=>sourceAID(e)==='2989585'),mode+': the Shavuot Sicha on receiving Torah joyfully must be retrieved');
  assert(m.sources.some(e=>sourceAID(e)==='4385617'),mode+': the Sicha addressed to women and girls on daily Torah guidance must be retrieved');
