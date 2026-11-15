@@ -1,6 +1,6 @@
 {
   "type": "bulk-canonical-index",
-  "generated": "2026-09-25",
+  "generated": "2026-11-15",
   "promotion_policy": "metadata-safe bulk promotion to Indexed only",
   "record_count": 250,
   "items": [
@@ -255,32 +255,124 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/9/month/1/year/5751",
       "title": "His Real Life",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1991-03-24",
-      "language": "unknown",
-      "context_status": "partial publisher summary; Professor Lieberman reference retained as publisher metadata",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/9/month/1/year/5751",
-      "locator": {},
+      "pipeline_status": "Parsed",
+      "event_date": "9 Nissan 5751 / 24 March 1991",
+      "language": "English",
+      "context_status": "partial",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2920438/jewish/His-Real-Life.htm",
+      "locator": {
+        "aid": 2920438,
+        "collection": "Living Torah",
+        "disc": 139,
+        "program": 553,
+        "event_date": "9 Nissan 5751 / 24 March 1991",
+        "page_locator": "AID 2920438, lines 255–258"
+      },
       "provenance": {
-        "source_witness": "staging source metadata",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/9/month/1/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 2920438; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2920438/jewish/His-Real-Life.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2920438, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "metadata-index-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-008.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2920438/jewish/His-Real-Life.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 2920438,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "9 Nissan 5751 / 24 March 1991",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מתאר המלצה לפרסם את עבודתו של פרופ׳ ליברמן כדי שתלמידיו יכירו שהתשוקה המרכזית שלו הייתה תורה ומצוות; התקציר אינו מפרט את עבודתו או את נסיבות השיחה.",
+      "documented_circumstances": "המלצה לפרסם את עבודתו של פרופ׳ ליברמן כדי שתלמידיו יכירו את מרכזיות התורה והמצוות בחייו.",
+      "question_or_problem": "איזו המלצה ניתנה לגבי פרסום עבודתו של פרופ׳ ליברמן?",
+      "response_propositions": [
+        "תקציר Living Torah מתאר המלצה לפרסם את עבודתו של פרופ׳ ליברמן כדי שתלמידיו יכירו שהתשוקה המרכזית שלו הייתה תורה ומצוות; התקציר אינו מפרט את עבודתו או את נסיבות השיחה."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 2920438, lines 255–258 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2920438, lines 255–258 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2920438, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד אינו מפרט את תחום עבודתו של פרופ׳ ליברמן או את זהותו המלאה.",
+        "התקציר אינו מציג את מלוא השיחה או את היקף הפרסום המבוקש.",
+        "הווידאו עצמו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "תלמידיו של פרופ׳ ליברמן; זהות המוסד אינה מצוינת.",
+      "evidence_family_id": "living-torah-aid-2920438",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 2920438; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/9/month/1/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "פרסום תורה",
+          "פרופ׳ ליברמן",
+          "תלמידים",
+          "תורה ומצוות",
+          "Torah and mitzvot"
+        ],
+        "research_terms": [
+          "פרסום תורה",
+          "פרופ׳ ליברמן",
+          "תלמידים",
+          "תורה ומצוות",
+          "Torah and mitzvot"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:2920438",
+        "evidence_family_id": "living-torah-aid-2920438",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-e2e-1991-04-07-the-strong-jew",
@@ -351,32 +443,125 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/30/month/3/year/5751",
       "title": "A Modest Queen",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1991-06-12",
-      "language": "unknown",
-      "context_status": "partial publisher summary",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/30/month/3/year/5751",
-      "locator": {},
+      "pipeline_status": "Parsed",
+      "event_date": "30 Sivan 5751 / 12 June 1991",
+      "language": "English",
+      "context_status": "partial",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1974202/jewish/A-Modest-Queen.htm",
+      "locator": {
+        "aid": 1974202,
+        "collection": "Living Torah",
+        "disc": 106,
+        "program": 424,
+        "event_date": "30 Sivan 5751 / 12 June 1991",
+        "page_locator": "AID 1974202, lines 255–258"
+      },
       "provenance": {
-        "source_witness": "staging source metadata",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/30/month/3/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 1974202; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1974202/jewish/A-Modest-Queen.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 1974202, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "metadata-index-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-008.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/1974202/jewish/A-Modest-Queen.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 1974202,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "30 Sivan 5751 / 12 June 1991",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מתאר את ביקורה של בס מיירסון, זוכת תחרות מיס אמריקה 1945, ומציג ברכה לבריאות ולבשורות טובות לצד עידוד לשמש דוגמה בצניעות לנשים ולנערות יהודיות.",
+      "documented_circumstances": "ביקורה של בס מיירסון אצל הרבי; התקציר מציג ברכה אישית ועידוד הקשור לצניעות.",
+      "question_or_problem": "מה מתועד במפגש עם בס מיירסון ביחס לצניעות ולדוגמה אישית?",
+      "response_propositions": [
+        "תקציר Living Torah מתאר את ביקורה של בס מיירסון, זוכת תחרות מיס אמריקה 1945, ומציג ברכה לבריאות ולבשורות טובות לצד עידוד לשמש דוגמה בצניעות לנשים ולנערות יהודיות."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 1974202, lines 255–258 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1974202, lines 255–258 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 1974202, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג תקציר מו״ל של מפגש מסוים ולא דיון מלא בצניעות.",
+        "אין להסיק מן התקציר הוראה מפורטת או כללית לכל הנשים והנערות.",
+        "הווידאו עצמו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "בס מיירסון; התקציר מתייחס גם לנשים ולנערות יהודיות.",
+      "evidence_family_id": "living-torah-aid-1974202",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 1974202; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/30/month/3/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "צניעות",
+          "נשים יהודיות",
+          "בס מיירסון",
+          "דוגמה אישית",
+          "tznius"
+        ],
+        "research_terms": [
+          "צניעות",
+          "נשים יהודיות",
+          "בס מיירסון",
+          "דוגמה אישית",
+          "tznius",
+          "Bess Myerson"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:1974202",
+        "evidence_family_id": "living-torah-aid-1974202",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-e2e-1991-06-30-going-to-camp",
@@ -735,32 +920,125 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/7/month/5/year/5750",
       "title": "Nothing too Difficult for G-d",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1990-07-29",
-      "language": "unknown",
-      "context_status": "partial publisher summary; recipient identity unresolved",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/7/month/5/year/5750",
-      "locator": {},
+      "pipeline_status": "Parsed",
+      "event_date": "7 Av 5750 / 29 July 1990",
+      "language": "English",
+      "context_status": "partial",
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4547216/jewish/Nothing-too-Difficult-for-G-d.htm",
+      "locator": {
+        "aid": 4547216,
+        "collection": "Living Torah",
+        "disc": 198,
+        "program": 792,
+        "event_date": "7 Av 5750 / 29 July 1990",
+        "page_locator": "AID 4547216, lines 255–258"
+      },
       "provenance": {
-        "source_witness": "staging source metadata",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/7/month/5/year/5750",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 4547216; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4547216/jewish/Nothing-too-Difficult-for-G-d.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4547216, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "metadata-index-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-009.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4547216/jewish/Nothing-too-Difficult-for-G-d.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 4547216,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "7 Av 5750 / 29 July 1990",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מתעד ברכה למנהיג קהילה שיזכה להנהיג שנים רבות ולהוביל את קהילתו לארץ ישראל עם הגאולה, ומוסיף הדגשה שאין דבר קשה מדי לקב״ה, גם במדינות כגון ברזיל; זהו תיאור של ברכה למקרה מסוים.",
+      "documented_circumstances": "ברכה למנהיג קהילה על המשך הנהגה ארוכה והובלת קהילתו לארץ ישראל עם הגאולה.",
+      "question_or_problem": "מה כוללת הברכה למנהיג הקהילה לפי התקציר?",
+      "response_propositions": [
+        "תקציר Living Torah מתעד ברכה למנהיג קהילה שיזכה להנהיג שנים רבות ולהוביל את קהילתו לארץ ישראל עם הגאולה, ומוסיף הדגשה שאין דבר קשה מדי לקב״ה, גם במדינות כגון ברזיל; זהו תיאור של ברכה למקרה מסוים."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 4547216, lines 255–258 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4547216, lines 255–258 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4547216, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג ברכה למקרה מסוים ולא הבטחה כללית לכל מנהיג או קהילה.",
+        "התקציר אינו מזהה את הנמען או את הקהילה.",
+        "הווידאו עצמו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "מנהיג קהילה; הקהילה אינה מזוהה בעמוד.",
+      "evidence_family_id": "living-torah-aid-4547216",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 4547216; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/7/month/5/year/5750"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "הנהגת קהילה",
+          "גאולה",
+          "ברזיל",
+          "ארץ ישראל",
+          "ביטחון בה׳"
+        ],
+        "research_terms": [
+          "הנהגת קהילה",
+          "גאולה",
+          "ברזיל",
+          "ארץ ישראל",
+          "ביטחון בה׳",
+          "nothing too difficult"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:4547216",
+        "evidence_family_id": "living-torah-aid-4547216",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-e2e-1991-02-12-a-growing-influence",
@@ -799,32 +1077,126 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/24/month/5/year/5751",
       "title": "Dance for Joy",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1991-08-04",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "24 Av 5751 / 4 August 1991",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/24/month/5/year/5751",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4525544/jewish/Dance-for-Joy.htm",
+      "locator": {
+        "aid": 4525544,
+        "collection": "Living Torah",
+        "disc": 198,
+        "program": 789,
+        "event_date": "24 Av 5751 / 4 August 1991",
+        "page_locator": "AID 4525544, lines 255–258"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/24/month/5/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 4525544; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4525544/jewish/Dance-for-Joy.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4525544, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-010.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4525544/jewish/Dance-for-Joy.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 4525544,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "24 Av 5751 / 4 August 1991",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מציין שהרבי המליץ לאדם לרקוד בשמחת תורה כסיוע לריפוי גופני; אין בתקציר אבחנה רפואית, תיאור תוצאה או פרטים על מצבו של האדם.",
+      "documented_circumstances": "תקציר של מפגש שבו ניתנה לאדם המלצה לרקוד בשמחת תורה בהקשר של ריפוי גופני.",
+      "question_or_problem": "איזו המלצה מתעד התקציר ביחס לריקוד בשמחת תורה ולריפוי?",
+      "response_propositions": [
+        "תקציר Living Torah מציין שהרבי המליץ לאדם לרקוד בשמחת תורה כסיוע לריפוי גופני; אין בתקציר אבחנה רפואית, תיאור תוצאה או פרטים על מצבו של האדם."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 4525544, lines 255–258 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4525544, lines 255–258 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4525544, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג תקציר מו״ל קצר ולא תמליל.",
+        "האדם, מצבו הרפואי והנסיבות אינם מזוהים.",
+        "אין בתקציר תיעוד של תוצאה רפואית; אין לראות בכך ייעוץ או טיפול רפואי.",
+        "הווידאו עצמו ושפת הדיבור המקורית לא נבדקו."
+      ],
+      "audience": "נמען לא מזוהה בעמוד.",
+      "evidence_family_id": "living-torah-aid-4525544",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 4525544; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/24/month/5/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "ריקוד",
+          "שמחת תורה",
+          "רפואה",
+          "ריפוי גופני",
+          "שמחה"
+        ],
+        "research_terms": [
+          "ריקוד",
+          "שמחת תורה",
+          "רפואה",
+          "ריפוי גופני",
+          "שמחה",
+          "Simchat Torah"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:4525544",
+        "evidence_family_id": "living-torah-aid-4525544",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-010-002",
@@ -1045,64 +1417,251 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/2/month/1/year/5751",
       "title": "The Rebbe’s Shliach",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1991-03-17",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "2 Nissan 5751 / 17 March 1991",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/2/month/1/year/5751",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2889264/jewish/The-Rebbes-Shliach.htm",
+      "locator": {
+        "aid": 2889264,
+        "collection": "Living Torah",
+        "disc": 138,
+        "program": 551,
+        "event_date": "2 Nissan 5751 / 17 March 1991",
+        "page_locator": "AID 2889264, lines 246–249"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/2/month/1/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 2889264; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2889264/jewish/The-Rebbes-Shliach.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2889264, שורות 246–249, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-010.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2889264/jewish/The-Rebbes-Shliach.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 2889264,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "2 Nissan 5751 / 17 March 1991",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "העמוד מתאר כיצד הרב שנייר מבית הכנסת Park East סיפר לרבי על מפגש עם נציג חב״ד צעיר במוסקבה; התקציר אינו מוסר את תוכן תגובת הרבי או את זהות הנציג.",
+      "documented_circumstances": "הרב שנייר מבית הכנסת Park East סיפר לרבי על מפגש עם נציג חב״ד צעיר במוסקבה.",
+      "question_or_problem": "מה מתועד על הדיווח של הרב שנייר על נציג חב״ד במוסקבה?",
+      "response_propositions": [
+        "העמוד מתאר כיצד הרב שנייר מבית הכנסת Park East סיפר לרבי על מפגש עם נציג חב״ד צעיר במוסקבה; התקציר אינו מוסר את תוכן תגובת הרבי או את זהות הנציג."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 2889264, lines 246–249 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2889264, lines 246–249 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2889264, שורות 246–249, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג תיאור עריכתי קצר של המפגש בלבד.",
+        "זהות הנציג הצעיר, תוכן תגובת הרבי והנסיבות המלאות אינם מפורטים.",
+        "אין להסיק שהתקציר מתעד את מלוא השיחה או עמדה כללית על שליחות במוסקבה.",
+        "הווידאו עצמו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "הרב שנייר; זהות הנציג הצעיר אינה מצוינת בעמוד.",
+      "evidence_family_id": "living-torah-aid-2889264",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 2889264; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/2/month/1/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "שליחות חב״ד",
+          "מוסקבה",
+          "רבני קהילות",
+          "נציג חב״ד",
+          "שליח צעיר"
+        ],
+        "research_terms": [
+          "שליחות חב״ד",
+          "מוסקבה",
+          "רבני קהילות",
+          "נציג חב״ד",
+          "שליח צעיר",
+          "Moscow"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:2889264",
+        "evidence_family_id": "living-torah-aid-2889264",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-010-007",
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/3/month/3/year/5750",
       "title": "The World was Created for You",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1990-05-27",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "3 Sivan 5750 / 27 May 1990",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/3/month/3/year/5750",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2946206/jewish/The-World-was-Created-for-You.htm",
+      "locator": {
+        "aid": 2946206,
+        "collection": "Living Torah",
+        "disc": 140,
+        "program": 558,
+        "event_date": "3 Sivan 5750 / 27 May 1990",
+        "page_locator": "AID 2946206, lines 246–249"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/3/month/3/year/5750",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 2946206; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2946206/jewish/The-World-was-Created-for-You.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2946206, שורות 246–249, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-010.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2946206/jewish/The-World-was-Created-for-You.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 2946206,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "3 Sivan 5750 / 27 May 1990",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah קושר את שם הישיבה מאור עיניים למתן תורה, ומכאן מסביר מדוע חג השבועות מקבל משמעות מיוחדת עבור בני הישיבה; לא נמסר בעמוד הסבר רחב יותר.",
+      "documented_circumstances": "פנייה לבני ישיבת מאור עיניים; התקציר מקשר בין שם הישיבה לבין חג השבועות ומתן תורה.",
+      "question_or_problem": "מה הקשר בין שם הישיבה מאור עיניים לחג השבועות לפי התקציר?",
+      "response_propositions": [
+        "תקציר Living Torah קושר את שם הישיבה מאור עיניים למתן תורה, ומכאן מסביר מדוע חג השבועות מקבל משמעות מיוחדת עבור בני הישיבה; לא נמסר בעמוד הסבר רחב יותר."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 2946206, lines 246–249 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2946206, lines 246–249 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2946206, שורות 246–249, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג תקציר קצר של מפגש ולא שיעור מלא על שם הישיבה.",
+        "אין להסיק ממנו פירוש לשם הישיבה מעבר לקשר המפורש למתן תורה.",
+        "הווידאו עצמו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "בני ישיבת מאור עיניים.",
+      "evidence_family_id": "living-torah-aid-2946206",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 2946206; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/3/month/3/year/5750"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "קבלת התורה",
+          "שבועות",
+          "ישיבה",
+          "מאור עיניים",
+          "מתן תורה"
+        ],
+        "research_terms": [
+          "קבלת התורה",
+          "שבועות",
+          "ישיבה",
+          "מאור עיניים",
+          "מתן תורה",
+          "Shavuos"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:2946206",
+        "evidence_family_id": "living-torah-aid-2946206",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-010-008",
@@ -1259,32 +1818,126 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/18/month/4/year/5751",
       "title": "Blessing Jews Every Day",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1991-06-30",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "18 Tammuz 5751 / 30 June 1991",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/18/month/4/year/5751",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/335482/jewish/Blessing-Jews-Every-Day.htm",
+      "locator": {
+        "aid": 335482,
+        "collection": "Living Torah",
+        "disc": 17,
+        "program": 65,
+        "event_date": "18 Tammuz 5751 / 30 June 1991",
+        "page_locator": "AID 335482, lines 291–303"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/18/month/4/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 335482; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/335482/jewish/Blessing-Jews-Every-Day.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 335482, שורות 291–303, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-010.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/335482/jewish/Blessing-Jews-Every-Day.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 335482,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "18 Tammuz 5751 / 30 June 1991",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר JEM מתאר ביקור של הרב שאר ישוב כהן, רבה הראשי של חיפה, ומציג את ברכת הכהנים הנאמרת מדי יום בישראל כברכה המועילה ליהודים בכל העולם; זהו תיאור תקציר המו״ל של מפגש מסוים, לא תמליל.",
+      "documented_circumstances": "ביקורו של הרב שאר ישוב כהן, רבה הראשי של חיפה, אצל הרבי; התקציר קושר את ברכת הכהנים היומיומית בישראל לתועלת לכלל יהודי העולם.",
+      "question_or_problem": "מה מציג התקציר על הקשר בין ברכת כהנים בישראל ליהודים בעולם?",
+      "response_propositions": [
+        "תקציר JEM מתאר ביקור של הרב שאר ישוב כהן, רבה הראשי של חיפה, ומציג את ברכת הכהנים הנאמרת מדי יום בישראל כברכה המועילה ליהודים בכל העולם; זהו תיאור תקציר המו״ל של מפגש מסוים, לא תמליל."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 335482, lines 291–303 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 335482, lines 291–303 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 335482, שורות 291–303, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג תקציר מו״ל באנגלית ולא תמליל מלא.",
+        "הווידאו עצמו, שפת הדיבור המקורית וההקשר המלא לא נבדקו.",
+        "הפרופוזיציה מתארת את תקציר המו״ל בלבד ואינה ייחוס מילולי של הניסוח לרבי.",
+        "אין להסיק מן התקציר פרטים על נוסח ברכת הכהנים או על נסיבות נוספות שלא הוצגו."
+      ],
+      "audience": "הרב שאר ישוב כהן; התקציר אינו מציין קהל נוסף.",
+      "evidence_family_id": "living-torah-aid-335482",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 335482; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/18/month/4/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "ברכת כהנים",
+          "ברכה ליהודי העולם",
+          "רבני ישראל",
+          "חיפה",
+          "כהן"
+        ],
+        "research_terms": [
+          "ברכת כהנים",
+          "ברכה ליהודי העולם",
+          "רבני ישראל",
+          "חיפה",
+          "כהן",
+          "Priestly blessing"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:335482",
+        "evidence_family_id": "living-torah-aid-335482",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-011-001",
@@ -1844,32 +2497,127 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/9/month/7/year/5750",
       "title": "Focus on the Future",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1989-10-08",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "9 Tishrei 5750 / 8 October 1989",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/9/month/7/year/5750",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4469446/jewish/Focus-on-the-Future.htm",
+      "locator": {
+        "aid": 4469446,
+        "collection": "Living Torah",
+        "disc": 196,
+        "program": 781,
+        "event_date": "9 Tishrei 5750 / 8 October 1989",
+        "page_locator": "AID 4469446, lines 255–258"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/9/month/7/year/5750",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 4469446; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4469446/jewish/Focus-on-the-Future.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4469446, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-012.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/4469446/jewish/Focus-on-the-Future.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 4469446,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "9 Tishrei 5750 / 8 October 1989",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מציג החלטות מרכזיות הנוגעות לשלמות הארץ, שלמות העם ושלמות התורה, ומציין כי אין להירתע גם כאשר נדרשים ניסים; זהו תקציר של קטע היסטורי ולא הנחיה מדינית עכשווית.",
+      "documented_circumstances": "קטע היסטורי העוסק בהחלטות מרכזיות בארץ ישראל ומקשר אותן לשלמות הארץ, העם והתורה.",
+      "question_or_problem": "אילו שלוש שלמויות מוזכרות בהחלטות על ארץ ישראל?",
+      "response_propositions": [
+        "תקציר Living Torah מציג החלטות מרכזיות הנוגעות לשלמות הארץ, שלמות העם ושלמות התורה, ומציין כי אין להירתע גם כאשר נדרשים ניסים; זהו תקציר של קטע היסטורי ולא הנחיה מדינית עכשווית."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 4469446, lines 255–258 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4469446, lines 255–258 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4469446, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג תקציר מו״ל של קטע משנת 1989 ולא תמליל מלא.",
+        "התקציר אינו מפרט אילו החלטות קונקרטיות עמדו על הפרק או את נסיבותיהן.",
+        "אין להציג את הדברים כהנחיה מדינית עכשווית או להסיק מהם עמדה לגבי אירוע מאוחר.",
+        "הווידאו עצמו ושפת הדיבור המקורית לא נבדקו."
+      ],
+      "audience": "נמען או קהל מסוים לא מזוהה בעמוד.",
+      "evidence_family_id": "living-torah-aid-4469446",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 4469446; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/9/month/7/year/5750"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "שלמות הארץ",
+          "שלמות העם",
+          "שלמות התורה",
+          "החלטות בישראל",
+          "ניסים"
+        ],
+        "research_terms": [
+          "שלמות הארץ",
+          "שלמות העם",
+          "שלמות התורה",
+          "החלטות בישראל",
+          "ניסים",
+          "Land of Israel",
+          "integrity"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:4469446",
+        "evidence_family_id": "living-torah-aid-4469446",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-012-008",
@@ -2036,32 +2784,125 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/7/month/7/year/5751",
       "title": "Keep the Peace",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1990-09-26",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "7 Tishrei 5751 / 26 September 1990",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/7/month/7/year/5751",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2316185/jewish/Keep-the-Peace.htm",
+      "locator": {
+        "aid": 2316185,
+        "collection": "Living Torah",
+        "disc": 118,
+        "program": 470,
+        "event_date": "7 Tishrei 5751 / 26 September 1990",
+        "page_locator": "AID 2316185, lines 255–258"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/7/month/7/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 2316185; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2316185/jewish/Keep-the-Peace.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2316185, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-013.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2316185/jewish/Keep-the-Peace.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 2316185,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "7 Tishrei 5751 / 26 September 1990",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מפרש את הכינוי אנ״ש כקשור לאנשי שלומנו ומקשר אותו לציפייה לשלום בין חברי קהילת חב״ד; מדובר בהסבר קצר המופיע בתקציר מפגש.",
+      "documented_circumstances": "קטע קצר העוסק בפירוש הכינוי אנ״ש וביחסים בין חברי קהילת חב״ד.",
+      "question_or_problem": "כיצד התקציר מסביר את אנ״ש ואת היחסים בתוך הקהילה?",
+      "response_propositions": [
+        "תקציר Living Torah מפרש את הכינוי אנ״ש כקשור לאנשי שלומנו ומקשר אותו לציפייה לשלום בין חברי קהילת חב״ד; מדובר בהסבר קצר המופיע בתקציר מפגש."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 2316185, lines 255–258 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2316185, lines 255–258 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2316185, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג הסבר קצר בלבד; אין בו דיון מלא במבנה הקהילה או במחלוקותיה.",
+        "הפרפרזה מוגבלת לפירוש ולמסר כפי שהם מופיעים בתקציר.",
+        "הווידאו עצמו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "חברי קהילת חב״ד (אנ״ש).",
+      "evidence_family_id": "living-torah-aid-2316185",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 2316185; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/7/month/7/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "שלום בין חסידים",
+          "אנ״ש",
+          "אחדות קהילתית",
+          "קהילת חב״ד",
+          "Anash"
+        ],
+        "research_terms": [
+          "שלום בין חסידים",
+          "אנ״ש",
+          "אחדות קהילתית",
+          "קהילת חב״ד",
+          "Anash",
+          "peace"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:2316185",
+        "evidence_family_id": "living-torah-aid-2316185",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-013-006",
@@ -2100,32 +2941,126 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/25/month/2/year/5750",
       "title": "Young Israel",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1990-05-20",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "25 Iyar 5750 / 20 May 1990",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/25/month/2/year/5750",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2349222/jewish/Young-Israel.htm",
+      "locator": {
+        "aid": 2349222,
+        "collection": "Living Torah",
+        "disc": 119,
+        "program": 476,
+        "event_date": "25 Iyar 5750 / 20 May 1990",
+        "page_locator": "AID 2349222, lines 255–258"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/25/month/2/year/5750",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 2349222; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2349222/jewish/Young-Israel.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2349222, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-013.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2349222/jewish/Young-Israel.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 2349222,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "25 Iyar 5750 / 20 May 1990",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מביא עידוד לשמר את רוח הנעורים והחיוניות במועצת Young Israel; מדובר באמירה קצרה המובאת בהקשר של פנייה מסוימת.",
+      "documented_circumstances": "קטע קצר המופנה למועצת Young Israel ומתמקד בשמירת חיוניות ורוח נעורים.",
+      "question_or_problem": "איזה מסר קצר מובא ביחס לשמירת חיוניות מועצת Young Israel?",
+      "response_propositions": [
+        "תקציר Living Torah מביא עידוד לשמר את רוח הנעורים והחיוניות במועצת Young Israel; מדובר באמירה קצרה המובאת בהקשר של פנייה מסוימת."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 2349222, lines 255–258 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2349222, lines 255–258 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2349222, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "התקציר מציג אמירה קצרה אחת בלבד.",
+        "אין בו פירוט של מבנה המועצה, תכניותיה או נסיבות הפנייה.",
+        "אין להסיק ממנו תכנית ארגונית מלאה או הגדרה כוללת של פעילות Young Israel.",
+        "הווידאו עצמו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "מועצת Young Israel; הנמען המדויק אינו מצוין.",
+      "evidence_family_id": "living-torah-aid-2349222",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 2349222; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/25/month/2/year/5750"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Young Israel",
+          "חיוניות",
+          "רוח נעורים",
+          "פעילות ציבורית",
+          "מועצה"
+        ],
+        "research_terms": [
+          "Young Israel",
+          "חיוניות",
+          "רוח נעורים",
+          "פעילות ציבורית",
+          "מועצה",
+          "youth"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:2349222",
+        "evidence_family_id": "living-torah-aid-2349222",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-013-008",
@@ -2281,32 +3216,127 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/27/month/10/year/5751",
       "title": "From Russia to America to Redemption",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1991-01-13",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "27 Tevet 5751 / 13 January 1991",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/27/month/10/year/5751",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/363469/jewish/From-Russia-to-America-to-Redemption.htm",
+      "locator": {
+        "aid": 363469,
+        "collection": "Living Torah",
+        "disc": 20,
+        "program": 78,
+        "event_date": "27 Tevet 5751 / 13 January 1991",
+        "page_locator": "AID 363469, lines 257–260"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/27/month/10/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 363469; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/363469/jewish/From-Russia-to-America-to-Redemption.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 363469, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-013.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/363469/jewish/From-Russia-to-America-to-Redemption.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 363469,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "27 Tevet 5751 / 13 January 1991",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מציג את המעבר מרוסיה לאמריקה כהחלפת גלות אחת באחרת, ומציב בפני מהגרים יהודים מרוסיה שאיפה לגאולה ולא רק למעבר למדינה אחרת; זהו ניסוח התקציר של קטע מסוים.",
+      "documented_circumstances": "קטע המופנה בהקשר של הגירת יהודים מרוסיה לאמריקה ומציג את המהלך במונחי גלות וגאולה.",
+      "question_or_problem": "כיצד מתאר התקציר את ההגירה מרוסיה לאמריקה ביחס לגלות וגאולה?",
+      "response_propositions": [
+        "תקציר Living Torah מציג את המעבר מרוסיה לאמריקה כהחלפת גלות אחת באחרת, ומציב בפני מהגרים יהודים מרוסיה שאיפה לגאולה ולא רק למעבר למדינה אחרת; זהו ניסוח התקציר של קטע מסוים."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 363469, lines 257–260 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 363469, lines 257–260 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 363469, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "מדובר בתקציר של קטע מסוים ולא בתיאור מלא של מדיניות הגירה או של כלל דברי הרבי בנושא.",
+        "הביטוי גלות הוא המסגור הרוחני שבתקציר, לא קביעה עובדתית על מדינות.",
+        "הווידאו עצמו, שפת הדיבור המקורית וההקשר המלא לא נבדקו."
+      ],
+      "audience": "מהגרים יהודים מרוסיה; הנמען הפרטי אינו מזוהה.",
+      "evidence_family_id": "living-torah-aid-363469",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 363469; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/27/month/10/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "יהודי רוסיה",
+          "ברית המועצות",
+          "הגירה",
+          "גלות",
+          "גאולה"
+        ],
+        "research_terms": [
+          "יהודי רוסיה",
+          "ברית המועצות",
+          "הגירה",
+          "גלות",
+          "גאולה",
+          "עלייה לארץ",
+          "Russia",
+          "America"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:363469",
+        "evidence_family_id": "living-torah-aid-363469",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-014-001",
@@ -2345,64 +3375,251 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/27/month/1/year/5750",
       "title": "Take Responsibility",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1990-04-22",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "27 Nissan 5750 / 22 April 1990",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/27/month/1/year/5750",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/281313/jewish/Take-Responsibility.htm",
+      "locator": {
+        "aid": 281313,
+        "collection": "Living Torah",
+        "disc": 10,
+        "program": 37,
+        "event_date": "27 Nissan 5750 / 22 April 1990",
+        "page_locator": "AID 281313, lines 257–260"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/27/month/1/year/5750",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 281313; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/281313/jewish/Take-Responsibility.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 281313, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-014.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/281313/jewish/Take-Responsibility.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 281313,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "27 Nissan 5750 / 22 April 1990",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מתאר שיחה עם שלמה גזית, לשעבר ראש אמ״ן, ומייחס לרבי עמדה שלפיה עצם המשא ומתן למסירת חלק כלשהו מארץ ישראל מסוכן, לצד קריאה לאחריות ציבורית; זהו תקציר של מפגש היסטורי מ-1990.",
+      "documented_circumstances": "שיחה עם שלמה גזית, לשעבר ראש אמ״ן, על משא ומתן למסירת חלקים מארץ ישראל ועל אחריות הציבור כאשר הממשלה פועלת בכיוון זה.",
+      "question_or_problem": "מה מתעד התקציר על שיחתו של שלמה גזית עם הרבי ועל משא ומתן למסירת שטחים?",
+      "response_propositions": [
+        "תקציר Living Torah מתאר שיחה עם שלמה גזית, לשעבר ראש אמ״ן, ומייחס לרבי עמדה שלפיה עצם המשא ומתן למסירת חלק כלשהו מארץ ישראל מסוכן, לצד קריאה לאחריות ציבורית; זהו תקציר של מפגש היסטורי מ-1990."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 281313, lines 257–260 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 281313, lines 257–260 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 281313, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "העמוד מציג תקציר מו״ל של מפגש היסטורי מ-1990 ולא תמליל מלא.",
+        "העמדה מתוארת בהקשר מדיני מסוים; אין להציג אותה כהנחיה מדינית עדכנית.",
+        "התקציר אינו מפרט את מלוא השיחה, את הצעת המשא ומתן או את נסיבותיה.",
+        "אין להרחיב את הפרפרזה מעבר לתוכן התקציר."
+      ],
+      "audience": "שלמה גזית; התקציר אינו מציין קהל נוסף.",
+      "evidence_family_id": "living-torah-aid-281313",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 281313; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/27/month/1/year/5750"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "שלמות הארץ",
+          "ארץ ישראל",
+          "אחריות ציבורית",
+          "משא ומתן מדיני",
+          "שלמה גזית"
+        ],
+        "research_terms": [
+          "שלמות הארץ",
+          "ארץ ישראל",
+          "אחריות ציבורית",
+          "משא ומתן מדיני",
+          "שלמה גזית",
+          "מסירת שטחים"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:281313",
+        "evidence_family_id": "living-torah-aid-281313",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-014-003",
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/3/month/5/year/5751",
       "title": "Defensive Driving",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1991-07-14",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "3 Menachem Av 5751 / 14 July 1991",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/3/month/5/year/5751",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/702100/jewish/Defensive-Driving.htm",
+      "locator": {
+        "aid": 702100,
+        "collection": "Living Torah",
+        "disc": 51,
+        "program": 204,
+        "event_date": "3 Menachem Av 5751 / 14 July 1991",
+        "page_locator": "AID 702100, lines 257–260"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/3/month/5/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 702100; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/702100/jewish/Defensive-Driving.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 702100, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-014.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/702100/jewish/Defensive-Driving.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 702100,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "3 Menachem Av 5751 / 14 July 1991",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מציג המלצה להציב בכל מכונית כמה ספרי קודש וקופת צדקה כסימן להגנה בדרכים; זהו מסר רוחני המתועד בתקציר, ולא הנחיית בטיחות בדרכים.",
+      "documented_circumstances": "קטע קצר העוסק בהגנה בדרכים ובהצבת ספרי קודש וקופת צדקה במכונית.",
+      "question_or_problem": "איזה אמצעי רוחני מוצג בתקציר כהגנה בדרכים?",
+      "response_propositions": [
+        "תקציר Living Torah מציג המלצה להציב בכל מכונית כמה ספרי קודש וקופת צדקה כסימן להגנה בדרכים; זהו מסר רוחני המתועד בתקציר, ולא הנחיית בטיחות בדרכים."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 702100, lines 257–260 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 702100, lines 257–260 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 702100, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "ההמלצה מתוארת בתקציר כמסר רוחני ולא כאמצעי בטיחות פיזי.",
+        "אין לראות בכך תחליף לחגירת חגורה, נהיגה זהירה, ציוד בטיחות או ציות לחוקי התנועה.",
+        "הווידאו עצמו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "נהגים; העמוד אינו מפרט נמען אישי.",
+      "evidence_family_id": "living-torah-aid-702100",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 702100; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/3/month/5/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "הגנה בדרכים",
+          "ספרי קודש",
+          "צדקה",
+          "רכב",
+          "נהיגה"
+        ],
+        "research_terms": [
+          "הגנה בדרכים",
+          "ספרי קודש",
+          "צדקה",
+          "רכב",
+          "נהיגה",
+          "road protection"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:702100",
+        "evidence_family_id": "living-torah-aid-702100",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-014-004",
@@ -2441,32 +3658,125 @@
       "staging_stable_key": "url:https://www.chabad.org/therebbe/livingtorah/default_cdo/day/28/month/2/year/5751",
       "title": "Jews Like all Others",
       "source_class": "Video",
-      "pipeline_status": "Indexed",
-      "event_date": "1991-05-12",
-      "language": "unknown",
+      "pipeline_status": "Parsed",
+      "event_date": "28 Iyar 5751 / 12 May 1991",
+      "language": "English",
       "context_status": "partial",
-      "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/28/month/2/year/5751",
-      "locator": {},
+      "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2606412/jewish/Jews-Like-all-Others.htm",
+      "locator": {
+        "aid": 2606412,
+        "collection": "Living Torah",
+        "disc": 128,
+        "program": 509,
+        "event_date": "28 Iyar 5751 / 12 May 1991",
+        "page_locator": "AID 2606412, lines 255–258"
+      },
       "provenance": {
-        "source_witness": "Chabad.org Living Torah public archive / JEM",
-        "transmission_type": "publisher/item metadata only",
-        "textual_status": "content_not_inspected",
-        "editorial_scope": "metadata-level canonical indexing",
-        "verification_status": "metadata_checked_only",
-        "source_url": "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/28/month/2/year/5751",
-        "accessed": "2026-09-25"
+        "publisher": "Chabad.org / Jewish Educational Media (Living Torah)",
+        "authorship_status": "Publisher attributes the audiovisual segment to the Rebbe; this review inspected only the publisher synopsis, not the recording.",
+        "source_witness": "Item-level Chabad.org/TheRebbe.org page, AID 2606412; visible synopsis text.",
+        "transmission_type": "Publisher-edited audiovisual segment with a short English synopsis.",
+        "textual_status": "English publisher synopsis inspected; underlying recording and transcript not reviewed.",
+        "editorial_scope": "Visible synopsis paragraph and item metadata only.",
+        "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+        "source_url": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2606412/jewish/Jews-Like-all-Others.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2606412, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
-        "rights_status": "public-metadata-only",
-        "reuse_notes": "Metadata/link only; no protected full text copied."
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Link and non-verbatim research paraphrase only; no full transcript or media copied."
       },
       "relations": [
         {
           "type": "staging_origin",
           "target": "data/staging/batches/2026-09-18-living-torah-eye-to-eye-batch-014.json"
+        },
+        {
+          "type": "item_level_source_canonicalization",
+          "target": "https://www.chabad.org/therebbe/livingtorah/player_cdo/aid/2606412/jewish/Jews-Like-all-Others.htm",
+          "note": "The former archive-date URL remains in source_aliases; the item-level page supplies the inspected publisher synopsis."
         }
       ],
-      "notes": "Bulk canonical indexing from reconciled staging. Indexed is not content verification; promotion to Linked/Verified requires the corresponding evidence threshold."
+      "notes": "Existing metadata-only Living Torah identity enriched in place after direct inspection of the item-level publisher page. Only the publisher synopsis is usable; do not treat it as a transcript, an independent witness, or a verbatim Rebbe quotation.",
+      "aid": 2606412,
+      "source_class_detail": "JEM/Living Torah item-level video page; only the publisher's English synopsis was inspected.",
+      "type": "video_segment",
+      "canonical_status": "Parsed",
+      "status": "Parsed",
+      "verification_status": "Parsed — publisher synopsis text inspected; underlying recording not reviewed.",
+      "date_original": "28 Iyar 5751 / 12 May 1991",
+      "date_precision": "exact",
+      "original_language": null,
+      "translation_status": "Not a translation witness; English publisher synopsis only; underlying speech language not established.",
+      "context_completeness": "partial",
+      "summary_researcher": "תקציר Living Torah מציין כי לנוכח הקשיים הייחודיים שחוו יהודים בברית המועצות לשעבר, הם ראויים במיוחד לברכות ה׳; התקציר אינו מפרט את הקשיים או את נסיבות המפגש.",
+      "documented_circumstances": "קטע קצר העוסק ביהודים בברית המועצות לשעבר ובהתייחסות לקשיים הייחודיים שחוו.",
+      "question_or_problem": "מה מציין התקציר על יהודים בברית המועצות לשעבר?",
+      "response_propositions": [
+        "תקציר Living Torah מציין כי לנוכח הקשיים הייחודיים שחוו יהודים בברית המועצות לשעבר, הם ראויים במיוחד לברכות ה׳; התקציר אינו מפרט את הקשיים או את נסיבות המפגש."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org, AID 2606412, lines 255–258 (publisher synopsis only)."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2606412, lines 255–258 (publisher synopsis only).",
+      "proposition_language": "Hebrew",
+      "has_content_evidence": true,
+      "response_case_candidate": true,
+      "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2606412, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+      "conditions_or_qualifications": [
+        "התקציר אינו מפרט מהם הקשיים הייחודיים או כיצד נבחנו.",
+        "אין להסיק ממנו תיאור מלא של מצב יהודי ברית המועצות או של מדיניות כלפיהם.",
+        "העמוד מציג תקציר מו״ל בלבד; הווידאו ותמליל מלא לא נבדקו."
+      ],
+      "audience": "יהודים בברית המועצות לשעבר; הנמען המדויק אינו מצוין.",
+      "evidence_family_id": "living-torah-aid-2606412",
+      "independent_witness": false,
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "primary_secondary_status": "Secondary publisher synopsis of a primary audiovisual segment; not a transcript; underlying recording not reviewed.",
+      "witness_type": "publisher_editorial_synopsis_of_video",
+      "witness_provenance": "Chabad.org/TheRebbe.org / Jewish Educational Media, Living Torah, AID 2606412; item-level page body synopsis inspected.",
+      "rights_status": "copyrighted-link-only",
+      "access_level": "open",
+      "source_aliases": [
+        "https://www.chabad.org/therebbe/livingtorah/default_cdo/day/28/month/2/year/5751"
+      ],
+      "witness": {
+        "kind": "other",
+        "state": "Publisher synopsis on an item-level video page; audiovisual recording not reviewed.",
+        "complete_partial": "partial",
+        "notes": "The inspected textual witness is the publisher's synopsis, not a transcript or the recording."
+      },
+      "taxonomy": {
+        "publisher_index_terms": [
+          "יהודי ברית המועצות",
+          "קשיים היסטוריים",
+          "ברכות",
+          "יהדות רוסיה",
+          "former Soviet Union"
+        ],
+        "research_terms": [
+          "יהודי ברית המועצות",
+          "קשיים היסטוריים",
+          "ברכות",
+          "יהדות רוסיה",
+          "former Soviet Union",
+          "Soviet Jewry"
+        ]
+      },
+      "epistemic_level": 2,
+      "content_review_batch_id": "089",
+      "content_reviewed_at": "2026-11-15T01:57:47+02:00",
+      "dedup": {
+        "canonical_identity": "aid:2606412",
+        "evidence_family_id": "living-torah-aid-2606412",
+        "translations_independent": false
+      }
     },
     {
       "id": "canonical-lt-eye-014-006",
