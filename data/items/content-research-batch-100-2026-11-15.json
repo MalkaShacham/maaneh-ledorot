@@ -5,7 +5,7 @@
   "reviewed_at": "2026-11-15T15:31:46+02:00",
   "title": "Nine new original-language Hayom Yom entries and one in-place enrichment; blocked AID replaced by accessible pages",
   "status": "pending_reconciliation",
-  "reconciliation_status": "pending",
+  "reconciliation_status": "pending_reconciliation",
   "review_method": "Direct public web.open/click inspection of nine item-level Hayom Yom pages in original Hebrew/Yiddish; one existing original-Hebrew page was reopened for a distinct third proposition. Search extracts were not used as content.",
   "records_reviewed": 10,
   "source_bodies_inspected": 10,
@@ -13,11 +13,11 @@
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 9,
-  "existing_identities_enriched": 1,
-  "existing_identities_rechecked": 0,
+  "existing_identities_enriched": 0,
+  "existing_identities_rechecked": 1,
   "response_propositions_added": 10,
   "new_response_propositions": 9,
-  "existing_response_propositions_added": 1,
+  "existing_response_propositions_added": 0,
   "total_new_paraphrase_entries": 10,
   "answer_eligible_source_families_added": 9,
   "independent_witnesses_added": 9,
@@ -43,7 +43,7 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 978,
     "content_verified_unique_sources": 853,
-    "answer_eligible_propositions": 2951
+    "answer_eligible_propositions": 2950
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -77,9 +77,11 @@
     {
       "identity_key": "aid:3316748",
       "canonical_file": "data/items/content-research-batch-096-2026-11-15.json",
-      "propositions_added": 1,
+      "propositions_added": 0,
       "locator": "Chabad.org/TheRebbe.org AID 3316748, original Hebrew body lines 260–261.",
-      "evidence_family_id": "hayom-yom-tammuz-28-aid3316748"
+      "evidence_family_id": "hayom-yom-tammuz-28-aid3316748",
+      "action": "recheck_existing_identity_in_place",
+      "reason": "The referenced original Hebrew lines 260–261 and their proposition already exist in the canonical AID 3316748 record in batch 096. This batch did not add a distinct proposition; reclassified to prevent duplicate proposition counting."
     }
   ],
   "metadata_only_corrections": [
@@ -1147,5 +1149,6 @@
       "verification_scope": "ב-15.11.2026 נפתח ונבדק גוף העמוד הציבורי של Chabad.org/TheRebbe.org עבור AID 3316797; נבדק רק הקטע המקורי בשפה Yiddish במיקום original Yiddish body lines 255–256. הפרפרזה מוגבלת לקטע זה ולהערת המקור שצוינה בו, אם ישנה. התרגום האנגלי באותו עמוד אינו עד עצמאי. לא נבדקו מהדורה ראשונה, כתב יד, אוטוגרף, הקלטה או המקורות המוקדמים; ההקשר נשאר חלקי. הרשומה נשארת Parsed."
     }
   ],
-  "status_note": "Manual source inspection is complete; reconciliation and branch CI remain pending."
+  "status_note": "Manual source inspection is complete; reconciliation and branch CI remain pending.",
+  "note": " Reconciliation correction 2026-11-15: AID 3316748 was already enriched in batch 096 with the same proposition from Hebrew lines 260–261; batch 100's duplicate update is now classified as a recheck, and its proposition count is not double-counted."
 }
