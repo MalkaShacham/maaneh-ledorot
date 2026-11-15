@@ -837,6 +837,7 @@ export function propositionRelevance(e,u){
  const requiredRawHits=u.topics.length?1:Math.min(2,raw.length);
  if(raw.length && rawHit<requiredRawHits)return{score:0,support:'insufficient_specific_evidence',reasons:[`question-specific evidence below threshold (${rawHit}/${requiredRawHits})`]};
  let supportingProps=arr(e.response_propositions).filter(p=>propositionSupportsQuery(p,u));
+ if(u.topics.includes('עקירת שיניים וחוות דעת')&&!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['tooth-extraction-specific proposition is absent; generic health or second-opinion evidence is insufficient']};
  if(u.topics.includes('קביעת מזוזה בדירה חדשה'))supportingProps=supportingProps.filter(p=>containsTerm(p,'מזוזה')&&containsTerm(p,'כניסה')&&(containsTerm(p,'מיד')||containsTerm(p,'יום השלושים')||containsTerm(p,'שלושים')));
  if(u.topics.includes('שנים מקרא מול חומש יומי וציצית מכונה')&&!containsTerm(u.query,'ציצית')&&!containsTerm(u.query,'מכונה'))supportingProps=supportingProps.filter(p=>!containsTerm(p,'ציצית'));
  if(u.topics.length&&topicHit===0)return{score:0,support:'lexical_only',reasons:['topic absent from evidence']};
