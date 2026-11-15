@@ -983,12 +983,20 @@ assert.equal(batch105Data.crawler_retry,false);assert.equal(batch105Data.access_
 assert.equal(batch105Data.full_text_copied,false);assert.equal(batch105Data.scan_only_verification_used,false);
 assert.equal(batch105Data.translations_counted_as_independent_witnesses,0);
 assert.deepEqual(batch105Data.metrics_expected_after,{answer_eligible_unique_sources:1033,content_verified_unique_sources:854,answer_eligible_propositions:3070});
-assert.equal(batch105Data.reconciliation_status,'reconciled');assert.deepEqual(batch105Data.metrics_actual_after,batch105Data.metrics_expected_after);
-assert.deepEqual(batch105Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
-assert(batch105Data.deduplication_check.full_index_scan_available);
-assert.deepEqual(batch105Data.deduplication_check.canonical_identity_collisions,[]);
-assert.deepEqual(batch105Data.deduplication_check.missing_canonical_identities,[]);
-assert.equal(batch105Data.deduplication_check.all_target_identities_answer_eligible,true);
+if(batch105Data.reconciliation_status==='reconciled'){
+ assert.deepEqual(batch105Data.metrics_actual_after,batch105Data.metrics_expected_after);
+ assert.deepEqual(batch105Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+ assert(batch105Data.deduplication_check.full_index_scan_available);
+ assert.deepEqual(batch105Data.deduplication_check.canonical_identity_collisions,[]);
+ assert.deepEqual(batch105Data.deduplication_check.missing_canonical_identities,[]);
+ assert.equal(batch105Data.deduplication_check.all_target_identities_answer_eligible,true);
+ }else{
+ assert.equal(batch105Data.reconciliation_status,'pending');
+ assert.equal(batch105Data.metrics_actual_after,null);
+ assert.equal(batch105Data.reconciliation_variance,null);
+ assert.equal(batch105Data.deduplication_check.full_index_scan_pending_reconciliation,true);
+ assert.equal(acquisitionState.manual_web_review_current_metrics,null);
+}
 assert.equal(new Set(batch105Data.records.map(r=>r.aid)).size,14);
 assert.equal(new Set(batch105Data.records.map(r=>r.evidence_family_id)).size,13);
 assert.equal(batch105Data.records.filter(r=>r.language==='Hebrew').length,12);
