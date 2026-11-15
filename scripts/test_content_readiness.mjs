@@ -1920,9 +1920,15 @@ assert.equal(batch100Audit.selected_unique_evidence_families,10);
 assert.equal(batch101Audit.answer_eligible_selected_count,15);
 assert.equal(batch101Audit.selected_unique_evidence_families,15);
 assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'106');
-console.log('BATCH106_CANONICAL_RECORD_AUDIT',JSON.stringify((reconciledProjectState.development_recovery.last_reconciliation.items||[]).map(x=>({aid:x.aid,canonical_records_found:x.canonical_records_found,matching_evidence_family_ids:x.matching_evidence_family_ids,canonical_identity_collision:x.canonical_identity_collision,same_family_duplicate:x.same_family_duplicate,records:x.records})).filter(x=>[2989153,2989320,2989243,4304434,5959845,2988989,5990037,5989929,5959840,2989386].includes(Number(x.aid)))));
 assert(batch105Audit&&batch106ChainAudit);
-assert(['reconciled','reconciled_with_variance'].includes(batch106ChainAudit.reconciliation_status));
+assert.equal(batch105Audit.reconciliation_status,'reconciled');
+assert.equal(batch106ChainAudit.reconciliation_status,'reconciled');
+assert.equal(batch106ChainAudit.canonical_identity_collision_count,0);
+assert.equal(batch106ChainAudit.same_family_duplicate_count,0);
+const batch106ReconciledAids=new Set(['2989153','2989320','2989243','4304434','5959845','2988989','5990037','5989929','5959840','2989386']);
+const batch106IdentityAudit=(reconciledProjectState.development_recovery.last_reconciliation.items||[]).filter(x=>batch106ReconciledAids.has(String(x.aid)));
+assert.equal(batch106IdentityAudit.length,10);
+assert(batch106IdentityAudit.every(x=>x.canonical_records_found===1&&!x.canonical_identity_collision&&x.selected_index_entry.answer_eligible));
 assert.equal(reconciledProjectState.metrics_integrity.answer_readiness.reconciliation_status,'reconciled');
 assert(!reconciledProjectState.metrics_integrity.answer_readiness.pending_batches.includes('099'));
 assert(!reconciledProjectState.metrics_integrity.answer_readiness.pending_batches.includes('105'));
@@ -2634,8 +2640,6 @@ if(batch106Data.reconciliation_status==='reconciled'){
  assert.deepEqual(batch106Data.deduplication_check.canonical_identity_collisions,[]);
  assert.deepEqual(batch106Data.deduplication_check.missing_canonical_identities,[]);
  assert.equal(batch106Data.deduplication_check.all_target_identities_answer_eligible,true);
-}else if(batch106Data.reconciliation_status==='reconciled_with_variance'){
- console.log('BATCH106_RECONCILED_WITH_VARIANCE',JSON.stringify({actual:readinessMetrics(batch106Data.metrics_actual_after),expected:batch106Data.metrics_expected_after,variance:batch106Data.reconciliation_variance,dedup:batch106Data.deduplication_check}));
 }else{
  assert.equal(batch106Data.reconciliation_status,'pending');assert.equal(batch106Data.metrics_actual_after,null);
  assert.equal(batch106Data.reconciliation_variance,null);assert.equal(batch106Data.deduplication_check.full_index_scan_pending_reconciliation,true);
@@ -2645,6 +2649,7 @@ assert.equal(new Set(batch106Data.records.map(r=>String(r.aid))).size,8);
 assert.equal(new Set(batch106Data.records.map(r=>r.evidence_family_id)).size,8);
 assert.equal(batch106Data.records.reduce((n,r)=>n+r.response_propositions.length,0),11);
 assert.equal(batch106Data.records.filter(r=>r.language==='Hebrew'&&r.original_language==='Hebrew').length,8);
+assert(batch106Data.source_body_review.every(r=>!('aid' in r)&&!('id' in r)&&!('evidence_family_id' in r)),'source_body_review is audit metadata, not a second canonical source record');
 for(const r of batch106Data.records){
  assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');
  assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');

@@ -726,3 +726,8 @@ Expected metrics after batch 105 were 1,033 answer-eligible Evidence Families / 
 The quality-gate failure on the previous main commit was traced to a brittle `deepStrictEqual` comparison: the actual content-readiness summary now includes an explanatory `content_readiness_note` field, while historical batch snapshots intentionally store only the three numeric measures. The regression test is updated to compare the three numeric measures, preserving the note without weakening any numeric check. New assertions cover batch 106 identity/family uniqueness, source-text locators, in-place enrichment, blocked-source fallback, multi-source claim citations and deep researcher evidence maps.
 
 The hourly acquisition policy remains unchanged: the known blocked crawler is not retried; manual public-page inspection is used. Schedule, audience, permissions and repository visibility are unchanged.
+
+
+### Batch 106 reconciliation audit correction
+
+The first full reconciliation correctly detected two record-shaped entries for each target AID because the batch's `source_body_review` audit rows repeated canonical identity markers (`aid`, `id`, `evidence_family_id`). These rows are review metadata, not independent source records. Their identity fields were renamed to `reviewed_aid`, `reviewed_id` and `reviewed_evidence_family_id`; the canonical `records` array remains the sole source-identity payload. The regression test now asserts one canonical record per target AID, zero identity collisions and zero same-family duplicate presentations after the full-index scan.
