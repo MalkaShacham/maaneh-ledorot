@@ -7,6 +7,107 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "102",
+    "batch_file": "data/items/content-research-batch-102-2026-11-15.json",
+    "reviewed_at": "2026-11-15T18:06:00+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 11,
+    "source_bodies_inspected": 11,
+    "source_body_pages_opened": 11,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 11,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 11,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 11,
+    "answer_eligible_source_families_added": 11,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 3,
+    "not_promoted_after_inspection_count": 11,
+    "blocked_candidates": [
+      {
+        "aid": 3316800,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316800/jewish/page.htm",
+        "reason": "הקורא הציבורי דרך כלי החיפוש החזיר שגיאה פנימית; גוף פריט לא נפתח ולא נוצרה ממנו תמצית."
+      },
+      {
+        "aid": 3316803,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316803/jewish/page.htm",
+        "reason": "הקורא הציבורי דרך כלי החיפוש החזיר שגיאה פנימית; גוף פריט לא נפתח ולא נוצרה ממנו תמצית."
+      },
+      {
+        "aid": 3316806,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316806/jewish/page.htm",
+        "reason": "הקורא הציבורי דרך כלי החיפוש החזיר שגיאה פנימית; גוף פריט לא נפתח ולא נוצרה ממנו תמצית."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 964,
+      "content_verified_unique_sources": 853,
+      "answer_eligible_propositions": 2927
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 975,
+      "content_verified_unique_sources": 853,
+      "answer_eligible_propositions": 2938
+    },
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "reconciliation_variance": null,
+    "reconciliation_run_id": null,
+    "reconciliation_run_url": null,
+    "reconciliation_head_commit": null,
+    "language_distribution": {
+      "Hebrew": 11
+    },
+    "source_type_distribution": {
+      "published_unedited_hebrew_sichah_transcript": 11
+    },
+    "new_aids": [
+      4280367,
+      2987949,
+      4313175,
+      2987986,
+      4280330,
+      5959558,
+      4280318,
+      5989363,
+      5959555,
+      2987808,
+      5989343
+    ],
+    "enriched_aids": [],
+    "reviewed_aids": [
+      4280367,
+      2987949,
+      4313175,
+      2987986,
+      4280330,
+      5959558,
+      4280318,
+      5989363,
+      5959555,
+      2987808,
+      5989343
+    ],
+    "duplicate_aliases_linked": 0,
+    "translations_counted_as_independent_witnesses": 0,
+    "deduplication_check": {
+      "bulk_index_files_checked": 12,
+      "recent_content_research_batches_checked": "055–098 (40 files)",
+      "exact_aid_matches_found": 0,
+      "exact_path_name_matches_found": 0,
+      "full_canonical_reconciliation_pending": true
+    },
+    "reconciliation_status": "pending"
+  },
+  "previous_manual_web_review": {
     "batch_id": "098",
     "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
     "reviewed_at": "2026-11-15T17:00:00+02:00",
@@ -84,60 +185,6 @@
       "duplicate_urls_found": 0
     },
     "reconciliation_status": "pending_corrected_reconciliation"
-  },
-  "previous_manual_web_review": {
-    "batch_id": "097",
-    "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
-    "reviewed_at": "2026-11-15T11:20:00+02:00",
-    "status": "pending_reconciliation",
-    "reviewed_item_count": 9,
-    "source_bodies_inspected": 9,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 11,
-    "content_verified_unique_sources_added": 0,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "reason": "Redirected to rewritten Torah Texts summary shell; no readable item-level body."
-      }
-    ],
-    "fallback_source_attempted": true,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 948,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2906
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 956,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2918
-    },
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 12,
-    "enriched_aids": [
-      3316690
-    ],
-    "reviewed_aids": [
-      3316648,
-      3316664,
-      3316666,
-      3316676,
-      3316679,
-      3316684,
-      3316710,
-      3316719,
-      3316690
-    ],
-    "language_distribution": {
-      "Hebrew": 7,
-      "Yiddish": 2
-    }
   },
   "earlier_manual_web_review": {
     "batch_id": "093",
@@ -501,7 +548,7 @@
     "reconciliation_status": "pending_corrected_reconciliation",
     "note": "The prior +8 Verified count was a parser false positive; AID 4666220 was also demoted to Linked because its current public reader exposes only a rewritten summary shell. Both corrections are reflected in the corrected baseline."
   },
-  "last_manual_review_at": "2026-11-15T17:00:00+02:00",
+  "last_manual_review_at": "2026-11-15T18:06:00+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -1518,17 +1565,6 @@
       "reconciliation_status": "reconciled_with_variance"
     },
     {
-      "batch_id": "089",
-      "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
-      "reviewed_at": "2026-11-15T01:57:47+02:00",
-      "source_bodies_inspected": 14,
-      "new_source_identities": 0,
-      "existing_identities_enriched": 14,
-      "new_response_propositions": 14,
-      "answer_eligible_source_families_added": 14,
-      "reconciliation_status": "reconciled"
-    },
-    {
       "batch_id": "090",
       "batch_file": "data/items/content-research-batch-090-2026-11-15.json",
       "reviewed_at": "2026-11-15T03:26:59+02:00",
@@ -1565,6 +1601,60 @@
       "blocked_candidate_count": 1,
       "reconciliation_status": "pending",
       "existing_identities_rechecked": 4
+    },
+    {
+      "batch_id": "097",
+      "batch_file": "data/items/content-research-batch-097-2026-11-15.json",
+      "reviewed_at": "2026-11-15T11:20:00+02:00",
+      "status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 9,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 11,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "reason": "Redirected to rewritten Torah Texts summary shell; no readable item-level body."
+        }
+      ],
+      "fallback_source_attempted": true,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 948,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2906
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 956,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2918
+      },
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 12,
+      "enriched_aids": [
+        3316690
+      ],
+      "reviewed_aids": [
+        3316648,
+        3316664,
+        3316666,
+        3316676,
+        3316679,
+        3316684,
+        3316710,
+        3316719,
+        3316690
+      ],
+      "language_distribution": {
+        "Hebrew": 7,
+        "Yiddish": 2
+      }
     }
   ]
 }
