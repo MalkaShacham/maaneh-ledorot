@@ -1,8 +1,8 @@
 {
   "batch_id": "102",
   "reviewed_at": "2026-11-15T18:06:00+02:00",
-  "reviewed_item_count": 11,
-  "source_bodies_inspected": 11,
+  "reviewed_item_count": 12,
+  "source_bodies_inspected": 12,
   "review_method": "Public publisher pages opened through web search/open; no crawler or access-control bypass.",
   "reviewed_aids": [
     4280367,
@@ -15,7 +15,8 @@
     5989363,
     5959555,
     2987808,
-    5989343
+    5989343,
+    5357409
   ],
   "source_body_locators": [
     {
@@ -83,10 +84,19 @@
       "url": "https://www.chabad.org/therebbe/article_cdo/aid/5989343/jewish/page.htm",
       "lines": "245–272",
       "title": "שיחת ש״פ האזינו, י״ג תשרי, ה׳תשל״ב — בלתי מוגה"
+    },
+    {
+      "aid": 5357409,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5357409/jewish/page.htm",
+      "lines": "292",
+      "title": "אגרות קודש - מכתב ח׳מ",
+      "existing_identity": true,
+      "evidence_family_id": "igrot-letter-5715-11-tevet-aid4872269",
+      "independent_witness": false
     }
   ],
   "new_source_identities": 11,
-  "existing_identities_enriched": 0,
+  "existing_identities_enriched": 1,
   "new_response_propositions": 11,
   "content_verified_unique_sources_added": 0,
   "blocked_candidates": [
@@ -104,6 +114,11 @@
       "aid": 3316806,
       "url": "https://www.chabad.org/therebbe/article_cdo/aid/3316806/jewish/page.htm",
       "reason": "הקורא הציבורי דרך כלי החיפוש החזיר שגיאה פנימית; גוף פריט לא נפתח ולא נוצרה ממנו תמצית."
+    },
+    {
+      "aid": 5413165,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413165/jewish/page.htm",
+      "reason": "בבדיקה חוזרת ב-2026-11-15 הכתובת הפנתה ל-Torah Texts summary shell ללא גוף האיגרת; לא נוצרה תמצית חדשה. התוכן הקודם נשאר מתועד באצווה 079 ולא שימש כבסיס להרחבה."
     }
   ],
   "manual_deduplication": {
@@ -122,5 +137,18 @@
   "full_text_copied": false,
   "search_extracts_used_as_content": 0,
   "crawler_retry": false,
-  "access_control_bypassed": false
+  "access_control_bypassed": false,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 12,
+  "existing_identity_updates": [
+    {
+      "aid": 5357409,
+      "identity": "chabad-letter-5357409",
+      "canonical_file": "data/items/content-research-batch-058-2026-11-12.json",
+      "update_type": "response_proposition_added",
+      "existing_evidence_family_id": "igrot-letter-5715-11-tevet-aid4872269",
+      "added_propositions": 1,
+      "note": "AID 5357409 is a shorter publisher presentation of the same letter as AID 4872269; the added line-292 blessing is in-place enrichment only and does not create an independent witness."
+    }
+  ]
 }
