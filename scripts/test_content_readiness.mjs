@@ -2654,7 +2654,7 @@ const rechecked2989386=idx.entries.find(e=>sourceAID(e)==='2989386');
 assert(rechecked2989386&&rechecked2989386.response_propositions.length===2,'AID 2989386 remains its existing identity with no duplicate proposition');
 assert.equal(batch106Data.existing_identity_updates[0].aid,5959840);assert.equal(batch106Data.existing_identity_rechecks[0].aid,2989386);
 assert.equal(batch106Data.blocked_candidates[0].aid,4543720);assert.equal(batch106Data.deduplication_check.translations_counted_as_independent_witnesses,0);
-const restraintWorkQuestion='כיצד שתי השיחות מבחינות בין פרישות מדברים המותרים לבין שילוב תורה, מלאכה וגמילות חסדים בעיסוק בענייני העולם?';
+const restraintWorkQuestion='מה עולה מן השיחות על נדרים ופרישות בעניינים גשמיים, ועל שילוב תורה, מלאכה וגמילות חסדים בעבודת ה׳?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,restraintWorkQuestion,{mode});
  assert(m.answerable,mode+': inspected sources must support a bounded synthesis about restraint and practical work');
