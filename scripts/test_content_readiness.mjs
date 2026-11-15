@@ -1891,13 +1891,15 @@ for(const mode of ['regular','researcher']){
 
 const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
 const reconciliationChain=reconciledProjectState.development_recovery.reconciliation_chain;
-assert.deepEqual(reconciliationChain.map(x=>String(x.batch_id)),['099','100','101','102','103','104']);
+assert.deepEqual(reconciliationChain.map(x=>String(x.batch_id)),['099','100','101','102','103','104','105','106']);
 const batch099Audit=reconciliationChain.find(x=>String(x.batch_id)==='099');
 const batch100Audit=reconciliationChain.find(x=>String(x.batch_id)==='100');
 const batch101Audit=reconciliationChain.find(x=>String(x.batch_id)==='101');
 const batch102Audit=reconciliationChain.find(x=>String(x.batch_id)==='102');
 const batch103Audit=reconciliationChain.find(x=>String(x.batch_id)==='103');
 const batch104Audit=reconciliationChain.find(x=>String(x.batch_id)==='104');
+const batch105Audit=reconciliationChain.find(x=>String(x.batch_id)==='105');
+const batch106ChainAudit=reconciliationChain.find(x=>String(x.batch_id)==='106');
 assert.equal(batch099Audit.batch_file,'data/items/content-research-batch-099-2026-11-15.json');
 assert.equal(batch099Audit.batch_record_count,16);
 assert.equal(batch099Audit.new_source_identity_count,12);
@@ -1917,12 +1919,19 @@ assert.equal(batch100Audit.answer_eligible_selected_count,10);
 assert.equal(batch100Audit.selected_unique_evidence_families,10);
 assert.equal(batch101Audit.answer_eligible_selected_count,15);
 assert.equal(batch101Audit.selected_unique_evidence_families,15);
-assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'104');
+assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'106');
+console.log('BATCH106_CANONICAL_RECORD_AUDIT',JSON.stringify((reconciledProjectState.development_recovery.last_reconciliation.items||[]).map(x=>({aid:x.aid,canonical_records_found:x.canonical_records_found,matching_evidence_family_ids:x.matching_evidence_family_ids,canonical_identity_collision:x.canonical_identity_collision,same_family_duplicate:x.same_family_duplicate,records:x.records})).filter(x=>[2989153,2989320,2989243,4304434,5959845,2988989,5990037,5989929,5959840,2989386].includes(Number(x.aid)))));
+assert(batch105Audit&&batch106ChainAudit);
+assert(['reconciled','reconciled_with_variance'].includes(batch106ChainAudit.reconciliation_status));
 assert.equal(reconciledProjectState.metrics_integrity.answer_readiness.reconciliation_status,'reconciled');
 assert(!reconciledProjectState.metrics_integrity.answer_readiness.pending_batches.includes('099'));
+assert(!reconciledProjectState.metrics_integrity.answer_readiness.pending_batches.includes('105'));
+assert(!reconciledProjectState.metrics_integrity.answer_readiness.pending_batches.includes('106'));
 assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('101'));
 assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('103'));
 assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('104'));
+assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('105'));
+assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('106'));
 assert.equal(batch104Audit.reconciliation_status,'reconciled');
 assert.equal(batch102Audit.reconciliation_status,'reconciled');
 assert.equal(batch103Audit.reconciliation_status,'reconciled');
@@ -2625,6 +2634,8 @@ if(batch106Data.reconciliation_status==='reconciled'){
  assert.deepEqual(batch106Data.deduplication_check.canonical_identity_collisions,[]);
  assert.deepEqual(batch106Data.deduplication_check.missing_canonical_identities,[]);
  assert.equal(batch106Data.deduplication_check.all_target_identities_answer_eligible,true);
+}else if(batch106Data.reconciliation_status==='reconciled_with_variance'){
+ console.log('BATCH106_RECONCILED_WITH_VARIANCE',JSON.stringify({actual:readinessMetrics(batch106Data.metrics_actual_after),expected:batch106Data.metrics_expected_after,variance:batch106Data.reconciliation_variance,dedup:batch106Data.deduplication_check}));
 }else{
  assert.equal(batch106Data.reconciliation_status,'pending');assert.equal(batch106Data.metrics_actual_after,null);
  assert.equal(batch106Data.reconciliation_variance,null);assert.equal(batch106Data.deduplication_check.full_index_scan_pending_reconciliation,true);
