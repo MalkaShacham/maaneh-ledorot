@@ -2522,3 +2522,9 @@ console.log('Reconciled metric chain',JSON.stringify({
 }));
 assert.deepEqual(metrics,batch103Data.metrics_actual_after);
 assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
+
+const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root)));
+const measuredDelta=reconciledProjectState.development_recovery.last_batch_summary.metrics_delta_actual;
+assert.deepEqual(Object.keys(measuredDelta).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
+assert(Object.values(measuredDelta).every(v=>Number.isFinite(v)));
+assert.deepEqual(Object.keys(batch103Data.metrics_actual_after).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
