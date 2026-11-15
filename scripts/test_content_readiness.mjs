@@ -2071,7 +2071,8 @@ const directAuthorshipQuestion='מה הרבי כתב על חינוך קצר וע
 const directAuthorshipModel=buildAnswerModel(idx.entries,directAuthorshipQuestion,{mode:'regular'});
 assert(!directAuthorshipModel.sources.some(e=>['5413082','5412970'].includes(sourceAID(e))),'proxy/secretariat-signed records must not be presented as personally authenticated Rebbe authorship');
 
-\n// Batch 099: nine new source identities, one in-place enrichment, two rechecks.
+
+// Batch 099: nine new source identities, one in-place enrichment, two rechecks.
 const batch099Path='data/items/content-research-batch-099-2026-11-15.json';
 const batch099Data=JSON.parse(await readFile(new URL(batch099Path,root)));
 assert.equal(batch099Data.records.length,9);
@@ -2101,7 +2102,7 @@ for(const aid of batch099Aids){
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');
  assert.equal(e.proposition_verbatim,false);
  assert.equal(e.proposition_verification,'source_text_inspected');
- assert(e.proposition_source_locator&&e.verification_scope&&e.content_context_limitations);
+ assert(e.proposition_source_locator&&e.verification_scope&&Array.isArray(e.conditions_or_qualifications)&&e.conditions_or_qualifications.length>0);
  assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
  assert(e.response_proposition_locators.every(Boolean));
  assert(e.primary_secondary_status&&e.witness_type&&e.evidence_family_id);
