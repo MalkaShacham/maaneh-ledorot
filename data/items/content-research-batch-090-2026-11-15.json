@@ -4,8 +4,8 @@
   "generated": "2026-11-15",
   "reviewed_at": "2026-11-15T03:26:59+02:00",
   "title": "Hebrew Igrot Kodesh item-level search-extract inspection — eight distinct correspondence identities",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending",
+  "status": "reconciled_as_part_of_batch_093",
+  "reconciliation_status": "reconciled_as_part_of_batch_093",
   "reviewed_item_count": 8,
   "source_bodies_inspected": 8,
   "source_body_pages_opened": 8,
@@ -51,8 +51,16 @@
     "content_verified_unique_sources": 852,
     "answer_eligible_propositions": 2849
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 908,
+    "content_verified_unique_sources": 852,
+    "answer_eligible_propositions": 2849
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
   "source_body_inspection_method": "Manual public web search/open. Eight item-specific Chabad Library search results exposed visible Hebrew body extracts. Direct opens were attempted for all eight and returned no readable lines; only the visible search-result extracts were used. All records remain Parsed with partial context.",
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -715,5 +723,7 @@
   ],
   "note": "Batch 090 records eight candidate Hebrew correspondence identities and sixteen bounded non-verbatim propositions from public search-result body extracts. Expected answer readiness 900→908; content-verified remains 852; propositions 2,832→2,848. All figures remain provisional until stable-key reconciliation and index regeneration.",
   "total_new_paraphrase_entries": 17,
-  "metrics_arithmetic_note": "The records array contains 17 distinct response propositions (3+2+2+2+2+2+2+2); the earlier metadata value 16 was undercounted by one."
+  "metrics_arithmetic_note": "The records array contains 17 distinct response propositions (3+2+2+2+2+2+2+2); the earlier metadata value 16 was undercounted by one.",
+  "reconciled_by_batch": "093",
+  "reconciliation_note": "המדדים ההיסטוריים של אצווה זו נכללו בהתאמה המצטברת שבוצעה באצווה 093; אין מדובר בהרצת reconciliation נפרדת לאצווה זו."
 }
