@@ -27,12 +27,12 @@
     "metrics_before": {
       "answer_eligible_unique_sources": 1051,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3112
+      "answer_eligible_propositions": 3111
     },
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1051,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3112
+      "answer_eligible_propositions": 3111
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -175,12 +175,12 @@
     "metrics_before": {
       "answer_eligible_unique_sources": 1041,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3090
+      "answer_eligible_propositions": 3089
     },
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1051,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3112
+      "answer_eligible_propositions": 3111
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -2313,12 +2313,12 @@
       "metrics_before": {
         "answer_eligible_unique_sources": 1033,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3071
+        "answer_eligible_propositions": 3070
       },
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 1041,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3090
+        "answer_eligible_propositions": 3089
       },
       "metrics_actual_after": null,
       "reconciliation_variance": null,
@@ -2493,12 +2493,12 @@
       "metrics_before": {
         "answer_eligible_unique_sources": 1041,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3090
+        "answer_eligible_propositions": 3089
       },
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 1051,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3112
+        "answer_eligible_propositions": 3111
       },
       "metrics_actual_after": null,
       "reconciliation_variance": null,
@@ -2735,7 +2735,7 @@
     },
     "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
   },
-  "next_action": "Reconcile batches 106–108 from the carried-forward batch-105 actual baseline (1,033 / 854 / 3,071) to the expected after-state (1,051 / 854 / 3,112), then verify content readiness, multilingual retrieval, synthesis, citations and Pages.",
+  "next_action": "Reconcile the contiguous pending chain 099–108 from 965 / 854 / 2,929 to the expected 1,051 / 854 / 3,111. Preserve the measured +1 proposition variance from batch 105 in actual metrics; then pass test_content_readiness.mjs, multilingual retrieval, synthesis, citations and Pages.",
   "last_manual_web_review": {
     "batch_id": "108",
     "batch_file": "data/items/content-research-batch-108-2026-11-16.json",
@@ -2757,12 +2757,12 @@
     "metrics_before": {
       "answer_eligible_unique_sources": 1051,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3112
+      "answer_eligible_propositions": 3111
     },
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1051,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3112
+      "answer_eligible_propositions": 3111
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
