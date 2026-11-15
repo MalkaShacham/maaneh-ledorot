@@ -2070,3 +2070,68 @@ for(const mode of ['regular','researcher']){
 const directAuthorshipQuestion='מה הרבי כתב על חינוך קצר ועל פעילות תלמידות בית רבקה עם קבוצות אחרות?';
 const directAuthorshipModel=buildAnswerModel(idx.entries,directAuthorshipQuestion,{mode:'regular'});
 assert(!directAuthorshipModel.sources.some(e=>['5413082','5412970'].includes(sourceAID(e))),'proxy/secretariat-signed records must not be presented as personally authenticated Rebbe authorship');
+
+\n// Batch 099: nine new source identities, one in-place enrichment, two rechecks.
+const batch099Path='data/items/content-research-batch-099-2026-11-15.json';
+const batch099Data=JSON.parse(await readFile(new URL(batch099Path,root)));
+assert.equal(batch099Data.records.length,9);
+assert.equal(batch099Data.new_source_identities,9);
+assert.equal(batch099Data.existing_identities_enriched,1);
+assert.equal(batch099Data.existing_identities_rechecked,2);
+assert.equal(batch099Data.new_response_propositions,9);
+assert.equal(batch099Data.existing_response_propositions_added,1);
+assert.equal(batch099Data.content_verified_unique_sources_added,0);
+assert.equal(batch099Data.crawler_retry,false);
+assert.equal(batch099Data.access_control_bypassed,false);
+assert.equal(batch099Data.full_text_copied,false);
+assert.equal(batch099Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch099Data.search_extracts_used_as_content,0);
+assert.equal(batch099Data.blocked_candidate_count,12);
+const batch099Aids=['5413126','4645969','4830982','4304526','2988234','2987887','2987732','1695044','2126206'];
+const batch099Families=new Set();
+for(const aid of batch099Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-099 AID '+aid+' must resolve to exactly one canonical identity');
+ const e=matches[0];
+ assert.equal(e.canonical_file,batch099Path);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.has_content_evidence,true);
+ assert.equal(e.independent_witness,true);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.content_context_limitations);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+ assert(e.primary_secondary_status&&e.witness_type&&e.evidence_family_id);
+ batch099Families.add(e.evidence_family_id);
+}
+assert.equal(batch099Families.size,9,'new AIDs must create nine distinct Evidence Families');
+for(const aid of ['1695044','2126206']){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e.primary_secondary_status.includes('Secondary'),'AID '+aid+' must remain explicitly secondary');
+ assert.equal(e.witness_type,'published_secondary_testimony_transcript');
+}
+const enriched4666247=idx.entries.filter(e=>sourceAID(e)==='4666247');
+assert.equal(enriched4666247.length,1,'AID 4666247 must remain one canonical identity');
+assert.equal(enriched4666247[0].evidence_family_id,'original-letter-aid-4666247');
+assert(enriched4666247[0].response_propositions.length>=4);
+assert(enriched4666247[0].response_propositions.some(p=>p.includes('י״ח אלול')&&p.includes('י״ט כסלו')));
+assert(enriched4666247[0].primary_secondary_status.includes('secretariat'));
+const rechecked5357571=idx.entries.filter(e=>sourceAID(e)==='5357571');
+assert.equal(rechecked5357571.length,1,'AID 5357571 must not be duplicated by the recheck');
+assert.equal(rechecked5357571[0].evidence_family_id,'igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571');
+assert.equal(rechecked5357571[0].response_propositions.length,4);
+const classExpansionExisting=idx.entries.filter(e=>e.key==='id:igrot-kodesh-v13-דתרפא');
+assert.equal(classExpansionExisting.length,1,'the volume XIII scan identity must remain in its existing family');
+const batch099Metrics=JSON.parse(await readFile(new URL('data/public-metrics.json',root)));
+assert(batch099Data.metrics_actual_after,'batch 099 must be reconciled before readiness passes');
+assert.equal(batch099Data.metrics_actual_after.answer_eligible_unique_sources,batch099Metrics.answer_eligible_unique_sources);
+assert.equal(batch099Data.metrics_actual_after.content_verified_unique_sources,batch099Metrics.content_verified_unique_sources);
+assert.equal(batch099Data.metrics_actual_after.answer_eligible_propositions,batch099Metrics.answer_eligible_propositions);
+assert.equal(batch099Data.reconciliation_status,'reconciled','batch 099 must reconcile without metric variance');
+assert(Object.values(batch099Data.reconciliation_variance).every(v=>v===0),'batch 099 metric variance must be zero');
+assert.equal(batch099Data.metrics_expected_after.answer_eligible_unique_sources,970);
+assert.equal(batch099Data.metrics_expected_after.content_verified_unique_sources,870);
+assert.equal(batch099Data.metrics_expected_after.answer_eligible_propositions,2943);

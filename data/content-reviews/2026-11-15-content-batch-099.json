@@ -1,0 +1,1129 @@
+{
+  "schema": "content-review-audit-v1",
+  "batch_id": "2026-11-15-content-batch-099",
+  "reviewed_at": "2026-11-15T13:55:00+02:00",
+  "reviewed_item_count": 12,
+  "source_bodies_inspected": 12,
+  "new_source_identities": 9,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 2,
+  "new_response_propositions": 9,
+  "existing_response_propositions_added": 1,
+  "answer_eligible_source_families_added": 9,
+  "content_verified_unique_sources_added": 0,
+  "blocked_candidate_count": 12,
+  "blocked_candidates": [
+    {
+      "identity": "candidate-aid:4994198",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4994198/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:5099941",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5099941/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:4731058",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4731058/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:5071116",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5071116/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:5100353",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100353/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:5100603",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100603/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:5357574",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5357574/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:2988235",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/2988235/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:5019579",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5019579/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:4830967",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4830967/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:5071147",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5071147/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    },
+    {
+      "identity": "candidate-aid:5100299",
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100299/jewish/page.htm",
+      "reason": "Public open did not expose readable item-level body text in this run (summary/navigation shell or access error); excluded from content propositions; no access-control bypass attempted."
+    }
+  ],
+  "deduplication_check": {
+    "method": "Exact AIDs checked against DEVELOPMENT_RECOVERY history, recent content batches 090–098, the review queue and relevant Igrot Kodesh volume indexes. Existing AID 5357571 and AID 4666247 were retained in their existing Evidence Families; no duplicate record was created for either. The non-AID volume XIII identity was rechecked in place.",
+    "known_existing_identities": [
+      {
+        "aid": 5357571,
+        "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+        "action": "recheck only; no new identity"
+      },
+      {
+        "aid": 4666247,
+        "evidence_family_id": "original-letter-aid-4666247",
+        "action": "enriched in place; no new identity"
+      },
+      {
+        "identity": "id:igrot-kodesh-v13-דתרפא",
+        "action": "rechecked against the user PDF; no new identity"
+      }
+    ],
+    "new_aid_candidates_without_known_match": [
+      5413126,
+      4645969,
+      4830982,
+      4304526,
+      2988234,
+      2987887,
+      2987732,
+      1695044,
+      2126206
+    ],
+    "full_index_reconciliation": "Pending CI corpus-wide reconciliation. The generated public search index is too large for direct retrieval in this session; do not treat the pre-CI duplicate check as a complete corpus scan.",
+    "translation_rule": "Any translation or reprint of the same source remains in the same Evidence Family and is not an independent witness."
+  },
+  "limitations": [
+    "Nine new sources remain Parsed because only bounded body passages were inspected; full source context, incoming correspondence, manuscripts or audio were not independently checked.",
+    "AID 4645969 is marked by the publisher as from the Rebbe's handwriting, but the autograph itself was not inspected; the printed date is preserved as published and not normalized.",
+    "AID 2987732 quotes a letter by the Previous Rebbe; the quoted statement is not attributed to the Rebbe as author.",
+    "AIDs 1695044 and 2126206 are secondary retrospective testimonies, not primary transcripts of the Rebbe's words.",
+    "Twelve candidate pages did not expose readable item-level body text and were excluded.",
+    "No new Yiddish body was accessible in this run; the corpus's earlier Yiddish material remains in its existing Evidence Families."
+  ],
+  "records": [
+    {
+      "id": "chabad-letter-5413126",
+      "canonical_key": "aid:5413126",
+      "aid": 5413126,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Published Hebrew correspondence, Kehot/Chabad.org item page.",
+      "title": "אגרות קודש - מכתב ח’שעח",
+      "volume": 28,
+      "volume_he": "כ״ח",
+      "letter_number": "ח’שעח",
+      "date": "5 Adar II 5722",
+      "date_original": "ה׳ אדר שני, ה׳תשכ״ב",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413126/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "האיגרת מציעה שכל תלמידי בתי הספר, בלי לצמצם זאת לסוג מוסד מסוים, יקיימו משלוח מנות ומתנות לאביונים; היא מסבירה שהמצוות הנגישות עשויות לעורר מצווה נוספת, ומדגישה את תרומתן לאחדות ולקירוב לבבות בישראל."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 5413126, Hebrew body lines 256–259; the passage names all school types, the two Purim mitzvot, and the stated aim of unity and closeness.",
+      "response_proposition_locators": [
+        "Chabad.org AID 5413126, Hebrew body lines 256–259; the passage names all school types, the two Purim mitzvot, and the stated aim of unity and closeness."
+      ],
+      "evidence_family_id": "igrot-letter-5722-05-adar-ii-aid5413126",
+      "primary_secondary_status": "Primary published Hebrew correspondence attributed to the Rebbe; the underlying manuscript/autograph was not inspected.",
+      "witness_type": "published_primary_hebrew_letter",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 5413126; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "Chabad.org AID 5413126, Hebrew body lines 256–259; the passage names all school types, the two Purim mitzvot, and the stated aim of unity and closeness.",
+        "complete_partial": "partial",
+        "notes": "Only the cited body passage was inspected; the incoming letter, manuscript, audio or full surrounding context was not independently inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 5413126; page states Published by Kehot where applicable.",
+        "authorship_status": "Primary published Hebrew correspondence attributed to the Rebbe; the underlying manuscript/autograph was not inspected.",
+        "signature_status": "Publisher attribution only; original manuscript/autograph not inspected unless explicitly stated otherwise.",
+        "transmission_type": "Published Hebrew correspondence text.",
+        "textual_status": "Hebrew body passage inspected at Chabad.org AID 5413126, Hebrew body lines 256–259; the passage names all school types, the two Purim mitzvot, and the stated aim of unity and closeness.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413126/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 5413126, Hebrew body passage at Chabad.org AID 5413126, Hebrew body lines 256–259; the passage names all school types, the two Purim mitzvot, and the stated aim of unity and closeness.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. הפרופוזיציה מוגבלת לפעולה המסוימת של משלוח מנות ומתנות לאביונים ולנימוקי האיגרת; אין בה ראיה לביצוע בפועל או לתוצאות בבתי הספר."
+      },
+      "verification_scope": "AID 5413126, Hebrew body passage at Chabad.org AID 5413126, Hebrew body lines 256–259; the passage names all school types, the two Purim mitzvot, and the stated aim of unity and closeness.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. הפרופוזיציה מוגבלת לפעולה המסוימת של משלוח מנות ומתנות לאביונים ולנימוקי האיגרת; אין בה ראיה לביצוע בפועל או לתוצאות בבתי הספר.",
+      "documented_circumstances": "מכתב לרב יוסף (ד״ר בורג) המתייחס לחוברת ששלח וליוזמה קודמת לעודד תלמידי בתי ספר לקיים מצוות פורים.",
+      "question_or_problem": "מכתב לרב יוסף (ד״ר בורג) המתייחס לחוברת ששלח וליוזמה קודמת לעודד תלמידי בתי ספר לקיים מצוות פורים.",
+      "conditions_or_qualifications": [
+        "הפרופוזיציה מוגבלת לפעולה המסוימת של משלוח מנות ומתנות לאביונים ולנימוקי האיגרת; אין בה ראיה לביצוע בפועל או לתוצאות בבתי הספר."
+      ],
+      "audience": "הנמען הוא הרב יוסף המכונה ד״ר בורג; ההצעה מתייחסת לתלמידי כלל בתי הספר.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 5413126,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413126/jewish/page.htm",
+        "volume": 28,
+        "letter_number": "ח’שעח",
+        "body_locator": "Chabad.org AID 5413126, Hebrew body lines 256–259; the passage names all school types, the two Purim mitzvot, and the stated aim of unity and closeness.",
+        "date_original": "ה׳ אדר שני, ה׳תשכ״ב"
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Igrot Kodesh",
+          "אגרות קודש - מכתב ח’שעח"
+        ],
+        "research_terms": [
+          "משלוח מנות",
+          "מתנות לאביונים",
+          "בתי ספר",
+          "מצווה גוררת מצווה",
+          "אחדות בישראל",
+          "קירוב לבבות"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 2,
+      "independent_witness": true,
+      "translation_status": "Original Hebrew source text; no translation used.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 5413126 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family igrot-letter-5722-05-adar-ii-aid5413126; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Partial item-level context; source remains Parsed.",
+      "summary_researcher": "האיגרת מציעה שכל תלמידי בתי הספר, בלי לצמצם זאת לסוג מוסד מסוים, יקיימו משלוח מנות ומתנות לאביונים; היא מסבירה שהמצוות הנגישות עשויות לעורר מצווה נוספת, ומדגישה את תרומתן לאחדות ולקירוב לבבות בישראל.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    },
+    {
+      "id": "chabad-letter-4645969",
+      "canonical_key": "aid:4645969",
+      "aid": 4645969,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Published Hebrew correspondence; publisher note attributes the letter to the Rebbe's handwriting.",
+      "title": "אגרות קודש - מכתב ח",
+      "volume": 1,
+      "volume_he": "א׳",
+      "letter_number": "ח",
+      "date": "ד׳ ב׳ ניסן, צ״ח (as printed; not normalized)",
+      "date_original": "ד׳ ב׳ ניסן, צ״ח",
+      "date_precision": "as_printed_not_normalized",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4645969/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "האיגרת מתעדת שהכותב שלח המחאה בסך 400 דולר לפי הוראת חותנו, הרבי הריי״צ, ומבקש אישור קבלה; נוסף לכך הוא מבקש להשיב מאמרי דא״ח של חג השבועות שהנמען שאל ממנו בעת שהותו בווינה."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 4645969, Hebrew body lines 254–263; publisher note at line 263 identifies the letter as from the Rebbe's handwriting, while the autograph itself was not inspected.",
+      "response_proposition_locators": [
+        "Chabad.org AID 4645969, Hebrew body lines 254–263; publisher note at line 263 identifies the letter as from the Rebbe's handwriting, while the autograph itself was not inspected."
+      ],
+      "evidence_family_id": "igrot-letter-aid4645969",
+      "primary_secondary_status": "Primary published Hebrew correspondence; the publisher note says the text is from the Rebbe's handwriting, but the autograph itself was not inspected.",
+      "witness_type": "published_primary_hebrew_letter_autograph_claim",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 4645969; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "Chabad.org AID 4645969, Hebrew body lines 254–263; publisher note at line 263 identifies the letter as from the Rebbe's handwriting, while the autograph itself was not inspected.",
+        "complete_partial": "partial",
+        "notes": "Only the cited body passage was inspected; the incoming letter, manuscript, audio or full surrounding context was not independently inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 4645969; page states Published by Kehot where applicable.",
+        "authorship_status": "Primary published Hebrew correspondence; the publisher note says the text is from the Rebbe's handwriting, but the autograph itself was not inspected.",
+        "signature_status": "Publisher attribution only; original manuscript/autograph not inspected unless explicitly stated otherwise.",
+        "transmission_type": "Published Hebrew correspondence text.",
+        "textual_status": "Hebrew body passage inspected at Chabad.org AID 4645969, Hebrew body lines 254–263; publisher note at line 263 identifies the letter as from the Rebbe's handwriting, while the autograph itself was not inspected.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4645969/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 4645969, Hebrew body passage at Chabad.org AID 4645969, Hebrew body lines 254–263; publisher note at line 263 identifies the letter as from the Rebbe's handwriting, while the autograph itself was not inspected.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. ההוראה לשליחת ההמחאה מיוחסת במפורש לחותן הכותב, הרבי הריי״צ; אין לייחס אותה ליוזמה עצמאית של כותב האיגרת. המו״ל מציין שהאיגרת מגוכתי״ק, אך כתב היד המקורי לא נבדק; תאריך השנה נשמר כפי שנדפס ולא נורמל."
+      },
+      "verification_scope": "AID 4645969, Hebrew body passage at Chabad.org AID 4645969, Hebrew body lines 254–263; publisher note at line 263 identifies the letter as from the Rebbe's handwriting, while the autograph itself was not inspected.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. ההוראה לשליחת ההמחאה מיוחסת במפורש לחותן הכותב, הרבי הריי״צ; אין לייחס אותה ליוזמה עצמאית של כותב האיגרת. המו״ל מציין שהאיגרת מגוכתי״ק, אך כתב היד המקורי לא נבדק; תאריך השנה נשמר כפי שנדפס ולא נורמל.",
+      "documented_circumstances": "איגרת מפריז העוסקת בהמחאה שנשלחה בעקבות הוראת הריי״צ ובהחזרת מאמרי דא״ח שהושאלו לנמען.",
+      "question_or_problem": "איגרת מפריז העוסקת בהמחאה שנשלחה בעקבות הוראת הריי״צ ובהחזרת מאמרי דא״ח שהושאלו לנמען.",
+      "conditions_or_qualifications": [
+        "ההוראה לשליחת ההמחאה מיוחסת במפורש לחותן הכותב, הרבי הריי״צ; אין לייחס אותה ליוזמה עצמאית של כותב האיגרת.",
+        "המו״ל מציין שהאיגרת מגוכתי״ק, אך כתב היד המקורי לא נבדק; תאריך השנה נשמר כפי שנדפס ולא נורמל."
+      ],
+      "audience": "הרב יעקב יוסף זייקובסון, כפי שמזהה הערת המו״ל; אין להרחיב מעבר לנמען המופיע בעמוד.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 4645969,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4645969/jewish/page.htm",
+        "volume": 1,
+        "letter_number": "ח",
+        "body_locator": "Chabad.org AID 4645969, Hebrew body lines 254–263; publisher note at line 263 identifies the letter as from the Rebbe's handwriting, while the autograph itself was not inspected.",
+        "date_original": "ד׳ ב׳ ניסן, צ״ח"
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Igrot Kodesh",
+          "אגרות קודש - מכתב ח"
+        ],
+        "research_terms": [
+          "המחאה",
+          "400 דולר",
+          "הריי״צ",
+          "מאמרי דא״ח",
+          "חג השבועות",
+          "וינה",
+          "התכתבות היסטורית"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 2,
+      "independent_witness": true,
+      "translation_status": "Original Hebrew source text; no translation used.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 4645969 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family igrot-letter-aid4645969; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Partial item-level context; source remains Parsed.",
+      "summary_researcher": "האיגרת מתעדת שהכותב שלח המחאה בסך 400 דולר לפי הוראת חותנו, הרבי הריי״צ, ומבקש אישור קבלה; נוסף לכך הוא מבקש להשיב מאמרי דא״ח של חג השבועות שהנמען שאל ממנו בעת שהותו בווינה.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    },
+    {
+      "id": "chabad-letter-4830982",
+      "canonical_key": "aid:4830982",
+      "aid": 4830982,
+      "type": "letter",
+      "collection": "Igrot Kodesh",
+      "source_class": "Igrot Kodesh",
+      "source_class_detail": "Published Hebrew correspondence, Kehot/Chabad.org item page.",
+      "title": "אגרות קודש - מכתב א’תתקיד",
+      "volume": 1,
+      "volume_he": "א׳",
+      "letter_number": "א’תתקיד",
+      "date": "25 Marcheshvan 5713",
+      "date_original": "כ״ה מ״ח, תשי״ג",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4830982/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "במענה על הצעה לארגון נשי ובנות חב״ד, האיגרת ממליצה לצרף נשים שפנו בעבר ולתת לכל אחת תפקיד המתאים ליכולותיה; היא אינה מתנה השתתפות בהתאמה מלאה לכל מנהגי חב״ד, ומציגה את ההצטרפות כדרך לסייע בהשלמת חסרים בתחומי הפעילות השונים."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 4830982, Hebrew body line 252; line 253 provides the immediate follow-up context.",
+      "response_proposition_locators": [
+        "Chabad.org AID 4830982, Hebrew body line 252; line 253 provides the immediate follow-up context."
+      ],
+      "evidence_family_id": "igrot-letter-5713-25-cheshvan-aid4830982",
+      "primary_secondary_status": "Primary published Hebrew correspondence attributed to the Rebbe; the underlying manuscript/autograph and incoming letter were not inspected.",
+      "witness_type": "published_primary_hebrew_letter",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 4830982; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "Chabad.org AID 4830982, Hebrew body line 252; line 253 provides the immediate follow-up context.",
+        "complete_partial": "partial",
+        "notes": "Only the cited body passage was inspected; the incoming letter, manuscript, audio or full surrounding context was not independently inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 4830982; page states Published by Kehot where applicable.",
+        "authorship_status": "Primary published Hebrew correspondence attributed to the Rebbe; the underlying manuscript/autograph and incoming letter were not inspected.",
+        "signature_status": "Publisher attribution only; original manuscript/autograph not inspected unless explicitly stated otherwise.",
+        "transmission_type": "Published Hebrew correspondence text.",
+        "textual_status": "Hebrew body passage inspected at Chabad.org AID 4830982, Hebrew body line 252; line 253 provides the immediate follow-up context.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4830982/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 4830982, Hebrew body passage at Chabad.org AID 4830982, Hebrew body line 252; line 253 provides the immediate follow-up context.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. ההמלצה מתייחסת לארגון המסוים ולתפקידים המתאימים לכל משתתפת; אין להסיק ממנה כלל חברות אוניברסלי לכל מוסד או קהילה."
+      },
+      "verification_scope": "AID 4830982, Hebrew body passage at Chabad.org AID 4830982, Hebrew body line 252; line 253 provides the immediate follow-up context.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. ההמלצה מתייחסת לארגון המסוים ולתפקידים המתאימים לכל משתתפת; אין להסיק ממנה כלל חברות אוניברסלי לכל מוסד או קהילה.",
+      "documented_circumstances": "מכתב המשיב על ארגון נשים ובנות חב״ד ועל נשים שכבר פנו בבקשות להצטרף.",
+      "question_or_problem": "מכתב המשיב על ארגון נשים ובנות חב״ד ועל נשים שכבר פנו בבקשות להצטרף.",
+      "conditions_or_qualifications": [
+        "ההמלצה מתייחסת לארגון המסוים ולתפקידים המתאימים לכל משתתפת; אין להסיק ממנה כלל חברות אוניברסלי לכל מוסד או קהילה."
+      ],
+      "audience": "הנמען הוא הרב שמואל זלמן העכט, כפי שמזהה הערת המו״ל; הדברים עוסקים בארגון נשי ובנות חב״ד במחנהו.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 4830982,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4830982/jewish/page.htm",
+        "volume": 1,
+        "letter_number": "א’תתקיד",
+        "body_locator": "Chabad.org AID 4830982, Hebrew body line 252; line 253 provides the immediate follow-up context.",
+        "date_original": "כ״ה מ״ח, תשי״ג"
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Igrot Kodesh",
+          "אגרות קודש - מכתב א’תתקיד"
+        ],
+        "research_terms": [
+          "נשים ובנות חב״ד",
+          "ארגון קהילתי",
+          "השתתפות נשים",
+          "התאמת תפקידים",
+          "הכלה ארגונית",
+          "פעילות ציבורית"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 2,
+      "independent_witness": true,
+      "translation_status": "Original Hebrew source text; no translation used.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 4830982 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family igrot-letter-5713-25-cheshvan-aid4830982; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Partial item-level context; source remains Parsed.",
+      "summary_researcher": "במענה על הצעה לארגון נשי ובנות חב״ד, האיגרת ממליצה לצרף נשים שפנו בעבר ולתת לכל אחת תפקיד המתאים ליכולותיה; היא אינה מתנה השתתפות בהתאמה מלאה לכל מנהגי חב״ד, ומציגה את ההצטרפות כדרך לסייע בהשלמת חסרים בתחומי הפעילות השונים.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    },
+    {
+      "id": "torat-menachem-sichah-4304526",
+      "canonical_key": "aid:4304526",
+      "aid": 4304526,
+      "type": "sichah_transcript",
+      "collection": "Torat Menachem",
+      "source_class": "Torat Menachem",
+      "source_class_detail": "Publisher-published unedited Hebrew transcript of a talk to Machane Emunah counselors.",
+      "title": "שיחת יום ה׳ פ׳ קרח, ב׳ דר״ח תמוז, ה׳תשכ״ד — להמדריכות דמחנה אמונה — בלתי מוגה",
+      "volume": null,
+      "volume_he": null,
+      "letter_number": null,
+      "date": "2 Rosh Chodesh Tammuz 5724",
+      "date_original": "ב׳ דר״ח תמוז, ה׳תשכ״ד",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4304526/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "בשיחה למדריכות מחנה אמונה מתואר המקדש הרוחני כשלם ונצחי, ותפקידו של כל יהודי לתרום לשמירת קדושתו ולהמשיך ממנה אור לסביבתו ולמשפחתו; בהמשך מוסבר שגם אכילה, שתייה ומסחר יכולים להיעשות מתוך הכרה בברכה ובמקור האלוקי."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 4304526, Hebrew transcript lines 251–261; title and body identify the audience and mark the transcript as unedited.",
+      "response_proposition_locators": [
+        "Chabad.org AID 4304526, Hebrew transcript lines 251–261; title and body identify the audience and mark the transcript as unedited."
+      ],
+      "evidence_family_id": "sichah-5724-machane-emunah-aid4304526",
+      "primary_secondary_status": "Primary published unedited transcript of the Rebbe's talk; no audio recording or manuscript was inspected.",
+      "witness_type": "published_unedited_hebrew_sichah_transcript",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 4304526; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "Chabad.org AID 4304526, Hebrew transcript lines 251–261; title and body identify the audience and mark the transcript as unedited.",
+        "complete_partial": "partial",
+        "notes": "Only the cited body passage was inspected; the incoming letter, manuscript, audio or full surrounding context was not independently inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 4304526; page states Published by Kehot where applicable.",
+        "authorship_status": "Primary published unedited transcript of the Rebbe's talk; no audio recording or manuscript was inspected.",
+        "signature_status": "Publisher attribution only; original manuscript/autograph not inspected unless explicitly stated otherwise.",
+        "transmission_type": "Published unedited Hebrew talk transcript.",
+        "textual_status": "Hebrew body passage inspected at Chabad.org AID 4304526, Hebrew transcript lines 251–261; title and body identify the audience and mark the transcript as unedited.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4304526/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 4304526, Hebrew body passage at Chabad.org AID 4304526, Hebrew transcript lines 251–261; title and body identify the audience and mark the transcript as unedited.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה. הפרופוזיציה מוגבלת לפסקאות על המקדש הרוחני והכנסת קדושה בענייני היום-יום."
+      },
+      "verification_scope": "AID 4304526, Hebrew body passage at Chabad.org AID 4304526, Hebrew transcript lines 251–261; title and body identify the audience and mark the transcript as unedited.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה. הפרופוזיציה מוגבלת לפסקאות על המקדש הרוחני והכנסת קדושה בענייני היום-יום.",
+      "documented_circumstances": "שיחה שנמסרה למדריכות מחנה אמונה בפרשת קורח, בתחילת חודש תמוז תשכ״ד.",
+      "question_or_problem": "שיחה שנמסרה למדריכות מחנה אמונה בפרשת קורח, בתחילת חודש תמוז תשכ״ד.",
+      "conditions_or_qualifications": [
+        "המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+        "הפרופוזיציה מוגבלת לפסקאות על המקדש הרוחני והכנסת קדושה בענייני היום-יום."
+      ],
+      "audience": "המדריכות של מחנה אמונה.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 4304526,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4304526/jewish/page.htm",
+        "volume": null,
+        "letter_number": null,
+        "body_locator": "Chabad.org AID 4304526, Hebrew transcript lines 251–261; title and body identify the audience and mark the transcript as unedited.",
+        "date_original": "ב׳ דר״ח תמוז, ה׳תשכ״ד"
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Torat Menachem",
+          "שיחת יום ה׳ פ׳ קרח, ב׳ דר״ח תמוז, ה׳תשכ״ד — להמדריכות דמחנה אמונה — בלתי מוגה"
+        ],
+        "research_terms": [
+          "מחנה אמונה",
+          "המקדש הרוחני",
+          "קדושת חיי היום יום",
+          "משפחה",
+          "אכילה ושתייה",
+          "מסחר ופרנסה"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 2,
+      "independent_witness": true,
+      "translation_status": "Original Hebrew source text; no translation used.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 4304526 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family sichah-5724-machane-emunah-aid4304526; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Partial item-level context; source remains Parsed.",
+      "summary_researcher": "בשיחה למדריכות מחנה אמונה מתואר המקדש הרוחני כשלם ונצחי, ותפקידו של כל יהודי לתרום לשמירת קדושתו ולהמשיך ממנה אור לסביבתו ולמשפחתו; בהמשך מוסבר שגם אכילה, שתייה ומסחר יכולים להיעשות מתוך הכרה בברכה ובמקור האלוקי.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    },
+    {
+      "id": "torat-menachem-sichah-2988234",
+      "canonical_key": "aid:2988234",
+      "aid": 2988234,
+      "type": "sichah_transcript",
+      "collection": "Torat Menachem",
+      "source_class": "Torat Menachem",
+      "source_class_detail": "Publisher-published unedited Hebrew transcript addressed to graduating Beit Rivka students.",
+      "title": "שיחת יום א׳, כ״ד סיון, ה׳תשי״ז — בלתי מוגה",
+      "volume": null,
+      "volume_he": null,
+      "letter_number": null,
+      "date": "24 Sivan 5717",
+      "date_original": "כ״ד סיון, ה׳תשי״ז",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2988234/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "בשיחה לבוגרות בית רבקה מודגש שלימודים אינם יעד של צבירת מידע בלבד, אלא הכנה לחיים שמחייבת ליישם את הידע בחיי היום-יום; החינוך התורני נועד להכין לחיים יהודיים, והמשך הלימודים אמור להעמיק את הידע ואת הזהירות בקיום מצוות."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 2988234, Hebrew transcript lines 296–310; the title identifies the graduating Beit Rivka students as the audience.",
+      "response_proposition_locators": [
+        "Chabad.org AID 2988234, Hebrew transcript lines 296–310; the title identifies the graduating Beit Rivka students as the audience."
+      ],
+      "evidence_family_id": "sichah-5717-beit-rivka-graduates-aid2988234",
+      "primary_secondary_status": "Primary published unedited transcript of the Rebbe's talk; no audio recording or manuscript was inspected.",
+      "witness_type": "published_unedited_hebrew_sichah_transcript",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 2988234; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "Chabad.org AID 2988234, Hebrew transcript lines 296–310; the title identifies the graduating Beit Rivka students as the audience.",
+        "complete_partial": "partial",
+        "notes": "Only the cited body passage was inspected; the incoming letter, manuscript, audio or full surrounding context was not independently inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 2988234; page states Published by Kehot where applicable.",
+        "authorship_status": "Primary published unedited transcript of the Rebbe's talk; no audio recording or manuscript was inspected.",
+        "signature_status": "Publisher attribution only; original manuscript/autograph not inspected unless explicitly stated otherwise.",
+        "transmission_type": "Published unedited Hebrew talk transcript.",
+        "textual_status": "Hebrew body passage inspected at Chabad.org AID 2988234, Hebrew transcript lines 296–310; the title identifies the graduating Beit Rivka students as the audience.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2988234/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 2988234, Hebrew body passage at Chabad.org AID 2988234, Hebrew transcript lines 296–310; the title identifies the graduating Beit Rivka students as the audience.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד. ההנחיות נאמרו לקהל מסוים של תלמידות מסיימות; אין להציגן כאילו נמסרו לכל קבוצת גיל או מוסד."
+      },
+      "verification_scope": "AID 2988234, Hebrew body passage at Chabad.org AID 2988234, Hebrew transcript lines 296–310; the title identifies the graduating Beit Rivka students as the audience.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד. ההנחיות נאמרו לקהל מסוים של תלמידות מסיימות; אין להציגן כאילו נמסרו לכל קבוצת גיל או מוסד.",
+      "documented_circumstances": "שיחה לבוגרות בית רבקה בסיום שנת הלימודים, העוסקת בהמשך לימודים ובהכנה לחיים.",
+      "question_or_problem": "שיחה לבוגרות בית רבקה בסיום שנת הלימודים, העוסקת בהמשך לימודים ובהכנה לחיים.",
+      "conditions_or_qualifications": [
+        "המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד.",
+        "ההנחיות נאמרו לקהל מסוים של תלמידות מסיימות; אין להציגן כאילו נמסרו לכל קבוצת גיל או מוסד."
+      ],
+      "audience": "תלמידות המסיימות את לימודיהן בבית רבקה; בהמשך השיחה פונה הדובר גם למורות.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 2988234,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2988234/jewish/page.htm",
+        "volume": null,
+        "letter_number": null,
+        "body_locator": "Chabad.org AID 2988234, Hebrew transcript lines 296–310; the title identifies the graduating Beit Rivka students as the audience.",
+        "date_original": "כ״ד סיון, ה׳תשי״ז"
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Torat Menachem",
+          "שיחת יום א׳, כ״ד סיון, ה׳תשי״ז — בלתי מוגה"
+        ],
+        "research_terms": [
+          "בית רבקה",
+          "חינוך תורני",
+          "לימודים והכנה לחיים",
+          "יישום בחיי היום יום",
+          "קיום מצוות",
+          "המשך לימודים"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 2,
+      "independent_witness": true,
+      "translation_status": "Original Hebrew source text; no translation used.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 2988234 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family sichah-5717-beit-rivka-graduates-aid2988234; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Partial item-level context; source remains Parsed.",
+      "summary_researcher": "בשיחה לבוגרות בית רבקה מודגש שלימודים אינם יעד של צבירת מידע בלבד, אלא הכנה לחיים שמחייבת ליישם את הידע בחיי היום-יום; החינוך התורני נועד להכין לחיים יהודיים, והמשך הלימודים אמור להעמיק את הידע ואת הזהירות בקיום מצוות.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    },
+    {
+      "id": "torat-menachem-sichah-2987887",
+      "canonical_key": "aid:2987887",
+      "aid": 2987887,
+      "type": "sichah_transcript",
+      "collection": "Torat Menachem",
+      "source_class": "Torat Menachem",
+      "source_class_detail": "Publisher-published unedited Hebrew transcript delivered after Mincha, with children forming most of the audience.",
+      "title": "שיחת יום א׳ פ׳ בהר-בחוקותי, ל״ג בעומר, ה׳תשי״ג — בלתי מוגה",
+      "volume": null,
+      "volume_he": null,
+      "letter_number": null,
+      "date": "Lag BaOmer 5713",
+      "date_original": "ל״ג בעומר, ה׳תשי״ג",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2987887/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "בשיחה לילדים על רבי עקיבא מוסבר כי בתחילת לימוד אפשר להניע ילדים בדברים האהובים עליהם, אף שהרמב״ם מבחין בין שלב חינוכי זה לבין עבודת ה׳ לשמה; בהמשך מוסבר שלעניינים הגשמיים המשמשים בחינוך יש מקבילות רוחניות."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 2987887, Hebrew transcript lines 251–257; the speaker explicitly frames the explanation for the children present after Mincha.",
+      "response_proposition_locators": [
+        "Chabad.org AID 2987887, Hebrew transcript lines 251–257; the speaker explicitly frames the explanation for the children present after Mincha."
+      ],
+      "evidence_family_id": "sichah-5713-lag-baomer-rabbi-akiva-aid2987887",
+      "primary_secondary_status": "Primary published unedited transcript of the Rebbe's talk; no audio recording or manuscript was inspected.",
+      "witness_type": "published_unedited_hebrew_sichah_transcript",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 2987887; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "Chabad.org AID 2987887, Hebrew transcript lines 251–257; the speaker explicitly frames the explanation for the children present after Mincha.",
+        "complete_partial": "partial",
+        "notes": "Only the cited body passage was inspected; the incoming letter, manuscript, audio or full surrounding context was not independently inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 2987887; page states Published by Kehot where applicable.",
+        "authorship_status": "Primary published unedited transcript of the Rebbe's talk; no audio recording or manuscript was inspected.",
+        "signature_status": "Publisher attribution only; original manuscript/autograph not inspected unless explicitly stated otherwise.",
+        "transmission_type": "Published unedited Hebrew talk transcript.",
+        "textual_status": "Hebrew body passage inspected at Chabad.org AID 2987887, Hebrew transcript lines 251–257; the speaker explicitly frames the explanation for the children present after Mincha.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2987887/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 2987887, Hebrew body passage at Chabad.org AID 2987887, Hebrew transcript lines 251–257; the speaker explicitly frames the explanation for the children present after Mincha.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד. הקטע מפרש את שיטת הרמב״ם בחינוך קטנים; אין להרחיבו להמלצה כללית על תמריצים חומריים בכל מצב חינוכי."
+      },
+      "verification_scope": "AID 2987887, Hebrew body passage at Chabad.org AID 2987887, Hebrew transcript lines 251–257; the speaker explicitly frames the explanation for the children present after Mincha.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד. הקטע מפרש את שיטת הרמב״ם בחינוך קטנים; אין להרחיבו להמלצה כללית על תמריצים חומריים בכל מצב חינוכי.",
+      "documented_circumstances": "שיחה בל״ג בעומר לאחר תפילת מנחה, בהמשך לדברים שנאמרו בחצר על חייו של רבי עקיבא.",
+      "question_or_problem": "שיחה בל״ג בעומר לאחר תפילת מנחה, בהמשך לדברים שנאמרו בחצר על חייו של רבי עקיבא.",
+      "conditions_or_qualifications": [
+        "המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד.",
+        "הקטע מפרש את שיטת הרמב״ם בחינוך קטנים; אין להרחיבו להמלצה כללית על תמריצים חומריים בכל מצב חינוכי."
+      ],
+      "audience": "רוב הנוכחים לאחר תפילת מנחה היו ילדים קטנים, כפי שמצוין בפתיחת השיחה.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 2987887,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2987887/jewish/page.htm",
+        "volume": null,
+        "letter_number": null,
+        "body_locator": "Chabad.org AID 2987887, Hebrew transcript lines 251–257; the speaker explicitly frames the explanation for the children present after Mincha.",
+        "date_original": "ל״ג בעומר, ה׳תשי״ג"
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Torat Menachem",
+          "שיחת יום א׳ פ׳ בהר-בחוקותי, ל״ג בעומר, ה׳תשי״ג — בלתי מוגה"
+        ],
+        "research_terms": [
+          "רבי עקיבא",
+          "חינוך ילדים",
+          "תמריצים חינוכיים",
+          "עבודה לשמה",
+          "רמב״ם",
+          "לימוד תורה"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 2,
+      "independent_witness": true,
+      "translation_status": "Original Hebrew source text; no translation used.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 2987887 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family sichah-5713-lag-baomer-rabbi-akiva-aid2987887; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Partial item-level context; source remains Parsed.",
+      "summary_researcher": "בשיחה לילדים על רבי עקיבא מוסבר כי בתחילת לימוד אפשר להניע ילדים בדברים האהובים עליהם, אף שהרמב״ם מבחין בין שלב חינוכי זה לבין עבודת ה׳ לשמה; בהמשך מוסבר שלעניינים הגשמיים המשמשים בחינוך יש מקבילות רוחניות.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    },
+    {
+      "id": "torat-menachem-sichah-2987732",
+      "canonical_key": "aid:2987732",
+      "aid": 2987732,
+      "type": "sichah_transcript",
+      "collection": "Torat Menachem",
+      "source_class": "Torat Menachem",
+      "source_class_detail": "Publisher-published unedited Hebrew transcript; the relevant passage quotes a letter by the Previous Rebbe.",
+      "title": "שיחת יום ה׳ פ׳ בלק, י״ב תמוז, ה׳תשט״ז — בלתי מוגה",
+      "volume": null,
+      "volume_he": null,
+      "letter_number": null,
+      "date": "12 Tammuz 5716",
+      "date_original": "י״ב תמוז, ה׳תשט״ז",
+      "date_precision": "exact_as_publisher",
+      "language": "Hebrew",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2987732/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "בשיחה הרבי מצטט מכתב של הרבי הריי״צ שלפיו ניצחון י״ב–י״ג תמוז אינו עניין פרטי אלא עניין לכלל ישראל ולכל הדורות; הרבי משתמש בכך כדי להסביר שגם בזמן גלות יהודי נשאר בן חורין למלא את חובתו בענייני תורה ומצוות."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 2987732, Hebrew transcript lines 274–277; line 275 explicitly attributes the quoted historical statement to a letter by the Previous Rebbe.",
+      "response_proposition_locators": [
+        "Chabad.org AID 2987732, Hebrew transcript lines 274–277; line 275 explicitly attributes the quoted historical statement to a letter by the Previous Rebbe."
+      ],
+      "evidence_family_id": "sichah-5716-12-tammuz-spiritual-freedom-aid2987732",
+      "primary_secondary_status": "Primary published unedited transcript of the Rebbe's talk; the passage separately quotes a letter by the Previous Rebbe. No audio recording or manuscript was inspected.",
+      "witness_type": "published_unedited_hebrew_sichah_transcript",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 2987732; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "Hebrew",
+        "scope": "Chabad.org AID 2987732, Hebrew transcript lines 274–277; line 275 explicitly attributes the quoted historical statement to a letter by the Previous Rebbe.",
+        "complete_partial": "partial",
+        "notes": "Only the cited body passage was inspected; the incoming letter, manuscript, audio or full surrounding context was not independently inspected."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 2987732; page states Published by Kehot where applicable.",
+        "authorship_status": "Primary published unedited transcript of the Rebbe's talk; the passage separately quotes a letter by the Previous Rebbe. No audio recording or manuscript was inspected.",
+        "signature_status": "Publisher attribution only; original manuscript/autograph not inspected unless explicitly stated otherwise.",
+        "transmission_type": "Published unedited Hebrew talk transcript.",
+        "textual_status": "Hebrew body passage inspected at Chabad.org AID 2987732, Hebrew transcript lines 274–277; line 275 explicitly attributes the quoted historical statement to a letter by the Previous Rebbe.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2987732/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 2987732, Hebrew body passage at Chabad.org AID 2987732, Hebrew transcript lines 274–277; line 275 explicitly attributes the quoted historical statement to a letter by the Previous Rebbe.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד. יש להפריד בין תוכן המכתב המצוטט של הריי״צ לבין הסברו של הרבי בשיחה."
+      },
+      "verification_scope": "AID 2987732, Hebrew body passage at Chabad.org AID 2987732, Hebrew transcript lines 274–277; line 275 explicitly attributes the quoted historical statement to a letter by the Previous Rebbe.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד. יש להפריד בין תוכן המכתב המצוטט של הריי״צ לבין הסברו של הרבי בשיחה.",
+      "documented_circumstances": "שיחה בי״ב תמוז תשט״ז על משמעות נס י״ב–י״ג תמוז והוראתו לעבודת היהודי.",
+      "question_or_problem": "שיחה בי״ב תמוז תשט״ז על משמעות נס י״ב–י״ג תמוז והוראתו לעבודת היהודי.",
+      "conditions_or_qualifications": [
+        "המקור מסומן ״בלתי מוגה״; לא נבדקו הקלטה או כתב יד.",
+        "יש להפריד בין תוכן המכתב המצוטט של הריי״צ לבין הסברו של הרבי בשיחה."
+      ],
+      "audience": "קהל המשתתפים בשיחת י״ב תמוז; הקטע אינו מציין קהל יעד מצומצם.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 2987732,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2987732/jewish/page.htm",
+        "volume": null,
+        "letter_number": null,
+        "body_locator": "Chabad.org AID 2987732, Hebrew transcript lines 274–277; line 275 explicitly attributes the quoted historical statement to a letter by the Previous Rebbe.",
+        "date_original": "י״ב תמוז, ה׳תשט״ז"
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Torat Menachem",
+          "שיחת יום ה׳ פ׳ בלק, י״ב תמוז, ה׳תשט״ז — בלתי מוגה"
+        ],
+        "research_terms": [
+          "י״ב–י״ג תמוז",
+          "חירות רוחנית",
+          "גלות",
+          "קיום תורה ומצוות",
+          "הריי״צ",
+          "שליחות יהודית"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 2,
+      "independent_witness": true,
+      "translation_status": "Original Hebrew source text; no translation used.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 2987732 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family sichah-5716-12-tammuz-spiritual-freedom-aid2987732; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Partial item-level context; source remains Parsed.",
+      "summary_researcher": "בשיחה הרבי מצטט מכתב של הרבי הריי״צ שלפיו ניצחון י״ב–י״ג תמוז אינו עניין פרטי אלא עניין לכלל ישראל ולכל הדורות; הרבי משתמש בכך כדי להסביר שגם בזמן גלות יהודי נשאר בן חורין למלא את חובתו בענייני תורה ומצוות.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    },
+    {
+      "id": "testimony-rabbi-sacks-1695044",
+      "canonical_key": "aid:1695044",
+      "aid": 1695044,
+      "type": "testimony_transcript",
+      "collection": "Published testimony transcripts",
+      "source_class": "Secondary testimony",
+      "source_class_detail": "English transcript of a retrospective talk by Chief Rabbi Jonathan Sacks.",
+      "title": "Transcript: Chief Rabbi Sacks Highlights Rebbe's Inspiring Charge",
+      "volume": null,
+      "volume_he": null,
+      "letter_number": null,
+      "date": "Not stated in inspected passage",
+      "date_original": null,
+      "date_precision": "not_stated",
+      "language": "English",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1695044/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "ברטרוספקטיבה על פגישה אישית עם הרבי, הרב יונתן זקס מספר שהרבי אתגר אותו לקחת אחריות על מצבו ולפעול לשינויו; זקס מתאר את המפגש כנקודת מפנה בחייו וכמקור להבנתו שמנהיגות טובה מצמיחה מנהיגים."
+      ],
+      "proposition_language": "English",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 1695044, English transcript lines 299–305; retrospective account by Chief Rabbi Jonathan Sacks.",
+      "response_proposition_locators": [
+        "Chabad.org AID 1695044, English transcript lines 299–305; retrospective account by Chief Rabbi Jonathan Sacks."
+      ],
+      "evidence_family_id": "secondary-testimony-rabbi-sacks-aid1695044",
+      "primary_secondary_status": "Secondary retrospective testimony by Rabbi Jonathan Sacks about a private audience; not a contemporaneous recording or transcript of the Rebbe's words.",
+      "witness_type": "published_secondary_testimony_transcript",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 1695044; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "English",
+        "scope": "Chabad.org AID 1695044, English transcript lines 299–305; retrospective account by Chief Rabbi Jonathan Sacks.",
+        "complete_partial": "partial",
+        "notes": "Retrospective testimony transcript; not a contemporaneous recording of the described event."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 1695044; page states Published by Kehot where applicable.",
+        "authorship_status": "Secondary retrospective testimony by Rabbi Jonathan Sacks about a private audience; not a contemporaneous recording or transcript of the Rebbe's words.",
+        "signature_status": "No signature or contemporaneous event record inspected.",
+        "transmission_type": "Published English transcript of a retrospective testimony.",
+        "textual_status": "English body passage inspected at Chabad.org AID 1695044, English transcript lines 299–305; retrospective account by Chief Rabbi Jonathan Sacks.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1695044/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 1695044, English body passage at Chabad.org AID 1695044, English transcript lines 299–305; retrospective account by Chief Rabbi Jonathan Sacks.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. זהו תיאור מאוחר של זקס, לא הקלטה או תמליל בן-זמנו של הפגישה; הניסוח הוא זיכרונו כפי שפורסם. אין להציג את המקור כעדות ראשונית מילולית לדברי הרבי."
+      },
+      "verification_scope": "AID 1695044, English body passage at Chabad.org AID 1695044, English transcript lines 299–305; retrospective account by Chief Rabbi Jonathan Sacks.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. זהו תיאור מאוחר של זקס, לא הקלטה או תמליל בן-זמנו של הפגישה; הניסוח הוא זיכרונו כפי שפורסם. אין להציג את המקור כעדות ראשונית מילולית לדברי הרבי.",
+      "documented_circumstances": "עדות רטרוספקטיבית של הרב יונתן זקס על שיחה אישית שקיים עם הרבי.",
+      "question_or_problem": "עדות רטרוספקטיבית של הרב יונתן זקס על שיחה אישית שקיים עם הרבי.",
+      "conditions_or_qualifications": [
+        "זהו תיאור מאוחר של זקס, לא הקלטה או תמליל בן-זמנו של הפגישה; הניסוח הוא זיכרונו כפי שפורסם.",
+        "אין להציג את המקור כעדות ראשונית מילולית לדברי הרבי."
+      ],
+      "audience": "הקהל בהרצאה המאוחרת של הרב זקס; פרטי הפגישה המקורית אינם מלאים בקטע שנבדק.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 1695044,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1695044/jewish/page.htm",
+        "volume": null,
+        "letter_number": null,
+        "body_locator": "Chabad.org AID 1695044, English transcript lines 299–305; retrospective account by Chief Rabbi Jonathan Sacks.",
+        "date_original": null
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Published testimony transcripts",
+          "Transcript: Chief Rabbi Sacks Highlights Rebbe's Inspiring Charge"
+        ],
+        "research_terms": [
+          "Rabbi Jonathan Sacks",
+          "leadership",
+          "personal responsibility",
+          "private audience",
+          "secondary testimony",
+          "developing leaders"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "independent_witness": true,
+      "translation_status": "Original English transcript; not a translation.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 1695044 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family secondary-testimony-rabbi-sacks-aid1695044; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Secondary testimony; not a primary transcript of the Rebbe's words.",
+      "summary_researcher": "ברטרוספקטיבה על פגישה אישית עם הרבי, הרב יונתן זקס מספר שהרבי אתגר אותו לקחת אחריות על מצבו ולפעול לשינויו; זקס מתאר את המפגש כנקודת מפנה בחייו וכמקור להבנתו שמנהיגות טובה מצמיחה מנהיגים.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    },
+    {
+      "id": "testimony-louise-hager-2126206",
+      "canonical_key": "aid:2126206",
+      "aid": 2126206,
+      "type": "testimony_transcript",
+      "collection": "Published testimony transcripts",
+      "source_class": "Secondary testimony",
+      "source_class_detail": "English transcript of a retrospective talk by Louise Hager about her friendship with the Rebbetzin.",
+      "title": "Personal Memories of the Rebbetzin — Transcript of a talk delivered at the International Conference of Women Emissaries",
+      "volume": null,
+      "volume_he": null,
+      "letter_number": null,
+      "date": "Not stated in inspected passage",
+      "date_original": null,
+      "date_precision": "not_stated",
+      "language": "English",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2126206/jewish/page.htm",
+      "pipeline_status": "Parsed",
+      "verification_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "לואיז הגר מספרת כי חברותה הקרובה עם הרבנית נשענה על אמון ודיסקרטיות, וכי לפני שדיברה עליה בפומבי שוחחה עם בעלה וביקשה את רשות הרבי; העדות מתארת את שיקולי הפרטיות של הדוברת, לא הוראה הלכתית או תורנית של הרבי."
+      ],
+      "proposition_language": "English",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 2126206, English transcript lines 244–251; speaker identified on the page as Louise Hager.",
+      "response_proposition_locators": [
+        "Chabad.org AID 2126206, English transcript lines 244–251; speaker identified on the page as Louise Hager."
+      ],
+      "evidence_family_id": "secondary-testimony-louise-hager-rebbetzin-aid2126206",
+      "primary_secondary_status": "Secondary retrospective testimony by Louise Hager about her friendship with the Rebbetzin; the passage mentions a request for the Rebbe's permission but is not a direct Rebbe teaching.",
+      "witness_type": "published_secondary_testimony_transcript",
+      "witness_provenance": "Chabad.org/TheRebbe.org public item page, AID 2126206; page states Published by Kehot where applicable.",
+      "witness": {
+        "kind": "published item text",
+        "publisher": "Kehot Publication Society / Chabad.org",
+        "platform": "Chabad.org/TheRebbe.org",
+        "language": "English",
+        "scope": "Chabad.org AID 2126206, English transcript lines 244–251; speaker identified on the page as Louise Hager.",
+        "complete_partial": "partial",
+        "notes": "Retrospective testimony transcript; not a contemporaneous recording of the described event."
+      },
+      "provenance": {
+        "source_witness": "Chabad.org/TheRebbe.org public item page, AID 2126206; page states Published by Kehot where applicable.",
+        "authorship_status": "Secondary retrospective testimony by Louise Hager about her friendship with the Rebbetzin; the passage mentions a request for the Rebbe's permission but is not a direct Rebbe teaching.",
+        "signature_status": "No signature or contemporaneous event record inspected.",
+        "transmission_type": "Published English transcript of a retrospective testimony.",
+        "textual_status": "English body passage inspected at Chabad.org AID 2126206, English transcript lines 244–251; speaker identified on the page as Louise Hager.; no full text copied.",
+        "editorial_scope": "One bounded research paraphrase based only on the cited body passage; surrounding sources and later outcomes not reconstructed.",
+        "verification_status": "Parsed; source_text_inspected; partial context; not promoted.",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2126206/jewish/page.htm",
+        "accessed": "2026-11-15",
+        "verification_scope": "AID 2126206, English body passage at Chabad.org AID 2126206, English transcript lines 244–251; speaker identified on the page as Louise Hager.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. זהו מקור עדות משני על הרבנית; הוא אינו מקור ישיר לתוכן תורני של הרבי. הקטע שנבדק אינו מספק את מלוא ההקשר או תיעוד של השיחה שבה התבקשה הרשות."
+      },
+      "verification_scope": "AID 2126206, English body passage at Chabad.org AID 2126206, English transcript lines 244–251; speaker identified on the page as Louise Hager.; directly opened and inspected on 2026-11-15. Only the cited passage supports the paraphrase. זהו מקור עדות משני על הרבנית; הוא אינו מקור ישיר לתוכן תורני של הרבי. הקטע שנבדק אינו מספק את מלוא ההקשר או תיעוד של השיחה שבה התבקשה הרשות.",
+      "documented_circumstances": "זיכרונות אישיים של לואיז הגר על הקשר שלה עם הרבנית ועל ההחלטה אם לספר על כך בפומבי.",
+      "question_or_problem": "זיכרונות אישיים של לואיז הגר על הקשר שלה עם הרבנית ועל ההחלטה אם לספר על כך בפומבי.",
+      "conditions_or_qualifications": [
+        "זהו מקור עדות משני על הרבנית; הוא אינו מקור ישיר לתוכן תורני של הרבי.",
+        "הקטע שנבדק אינו מספק את מלוא ההקשר או תיעוד של השיחה שבה התבקשה הרשות."
+      ],
+      "audience": "הקהל בכנס הבינלאומי של שליחות חב״ד; הקטע אינו מפרט את מועד ההרצאה.",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase and item locator only; no full text reproduced",
+      "access": {
+        "status": "public_publisher_page_opened",
+        "rights_status": "link-and-bounded-paraphrase-only",
+        "full_text_reproduced": false
+      },
+      "locator": {
+        "aid": 2126206,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2126206/jewish/page.htm",
+        "volume": null,
+        "letter_number": null,
+        "body_locator": "Chabad.org AID 2126206, English transcript lines 244–251; speaker identified on the page as Louise Hager.",
+        "date_original": null
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Published testimony transcripts",
+          "Personal Memories of the Rebbetzin — Transcript of a talk delivered at the International Conference of Women Emissaries"
+        ],
+        "research_terms": [
+          "Louise Hager",
+          "Rebbetzin",
+          "personal testimony",
+          "trust",
+          "discretion",
+          "women emissaries"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "independent_witness": true,
+      "translation_status": "Original English transcript; not a translation.",
+      "translation_of_evidence_family_id": null,
+      "identity_note": "Stable AID 2126206 is one source identity. Any translation, reprint or parallel presentation of this same item must remain in Evidence Family secondary-testimony-louise-hager-rebbetzin-aid2126206; a translation is not an independent witness.",
+      "notes": "Direct public page opened and body passage inspected on 2026-11-15. Search extracts were used only for discovery, never as content. No full copyrighted text copied. Secondary testimony; not a primary transcript of the Rebbe's words.",
+      "summary_researcher": "לואיז הגר מספרת כי חברותה הקרובה עם הרבנית נשענה על אמון ודיסקרטיות, וכי לפני שדיברה עליה בפומבי שוחחה עם בעלה וביקשה את רשות הרבי; העדות מתארת את שיקולי הפרטיות של הדוברת, לא הוראה הלכתית או תורנית של הרבי.",
+      "content_review_batch_id": "099",
+      "content_reviewed_at": "2026-11-15T13:55:00+02:00"
+    }
+  ],
+  "existing_identity_updates": [
+    {
+      "identity": "aid:4666247",
+      "canonical_file": "data/items/igrot-kodesh-v2-letter-208-aid-4666247.json",
+      "added_response_propositions": [
+        "המכתב מדווח כי הרבי הריי״צ לקח אליו את טיוטת מאמר י״ט כסלו כדי להוסיף ולתקן אותה, ובהמשך מסר לכותב האיגרת הוראה לפרסם יחד את דברי י״ח אלול וי״ט כסלו; הכותב מציין שהרשימות טרם נמסרו בחזרה, אף שרובן כבר הושלמו. ההוראה מיוחסת במפורש לריי״צ, ולא לכותב האיגרת."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 4666247, Hebrew body lines 257–258; the publisher identifies the witness as a secretariat copy at line 286."
+      ],
+      "evidence_family_id": "original-letter-aid-4666247",
+      "verification_scope": "AID 4666247, Chabad.org, lines 257–258 inspected; publisher note at line 286 identifies the surviving witness as a secretariat copy; the added proposition attributes the publication instruction to the Previous Rebbe."
+    }
+  ],
+  "existing_identity_rechecks": [
+    {
+      "identity": "aid:5357571",
+      "canonical_file": "data/items/content-research-batch-057-2026-11-12.json",
+      "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+      "note": "Body lines 244–257 re-opened. Existing four propositions already cover the study schedule, tefillin, influence on friends and effort; no duplicate proposition or new family added."
+    },
+    {
+      "identity": "id:igrot-kodesh-v13-דתרפא",
+      "canonical_file": "data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json",
+      "note": "User-provided publisher PDF page 464/553 (printed p. תכה) visually inspected. The letter body and secretary closing were checked; no new proposition or family created because the existing identity is already answerable in the readiness test."
+    }
+  ],
+  "metrics_before": {
+    "answer_eligible_unique_sources": 961,
+    "content_verified_unique_sources": 870,
+    "answer_eligible_propositions": 2933
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 970,
+    "content_verified_unique_sources": 870,
+    "answer_eligible_propositions": 2943
+  },
+  "metrics_actual_after": null,
+  "reconciliation_status": "pending"
+}

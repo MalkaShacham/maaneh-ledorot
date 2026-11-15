@@ -89,14 +89,14 @@
       "actual_after": null,
       "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 948,
+        "answer_eligible_unique_sources": 961,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2906
+        "answer_eligible_propositions": 2933
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 956,
+        "answer_eligible_unique_sources": 970,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2918
+        "answer_eligible_propositions": 2943
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -126,7 +126,8 @@
       "status": "pending_after_batch_096",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
-    "last_reconciled_at": "2026-11-15"
+    "last_reconciled_at": "2026-11-15",
+    "note": "Batch 099 is content-reviewed but not yet reconciled. The preceding CI run exposed a status parser bug: prose saying 'no promotion to Verified' was counted as Verified. The parser is corrected in this branch; the next CI reconciliation must establish the actual totals. The committed public metrics remain the last committed snapshot until reconciliation is committed."
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -162,179 +163,33 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "098",
+    "current_batch": "099",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "098",
+    "last_completed_batch": "099",
     "last_batch_summary": {
-      "batch_id": "098",
-      "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
-      "generated": "2026-11-15",
-      "reviewed_item_count": 14,
-      "source_bodies_inspected": 14,
-      "source_body_pages_opened": 14,
-      "search_extracts_used_as_content": 0,
-      "new_source_identities": 5,
-      "existing_identities_enriched": 3,
-      "existing_identities_rechecked": 6,
-      "new_response_propositions": 12,
-      "existing_response_propositions_added": 3,
-      "total_new_paraphrase_entries": 15,
-      "answer_eligible_source_families_added": 5,
+      "batch_id": "2026-11-15-content-batch-099",
+      "status": "pending_reconciliation",
+      "reviewed_item_count": 12,
+      "source_bodies_inspected": 12,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions": 9,
+      "existing_response_propositions_added": 1,
+      "answer_eligible_source_families_added": 9,
       "content_verified_unique_sources_added": 0,
-      "not_promoted_after_inspection_count": 8,
-      "source_languages": [
-        "Hebrew"
-      ],
-      "language_distribution": {
-        "Hebrew": 5
-      },
-      "reviewed_body_language_distribution": {
-        "Hebrew": 12,
-        "Yiddish": 2
-      },
-      "source_type_distribution": {
-        "published_hebrew_igrot_kodesh_letter_text": 5,
-        "published_daily_anthology_original_language_entry_rechecked": 9
-      },
-      "new_aids": [
-        5413082,
-        5413119,
-        5413465,
-        5413494,
-        5412970
-      ],
-      "enriched_aids": [
-        3316664,
-        3316684,
-        3316710
-      ],
-      "blocked_candidate_count": 26,
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "scan_only_verification_used": false,
-      "fallback_source_attempted": true,
-      "duplicate_aliases_linked": 0,
-      "translations_counted_as_independent_witnesses": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 900,
-        "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2832
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 961,
         "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2933
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 970,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2943
+      },
       "metrics_after_actual": null,
-      "metrics_delta_actual": null,
-      "status": "pending_reconciliation",
-      "blocked_candidates": [
-        {
-          "identity": "candidate-aid:3316730",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316735",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316740",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316745",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316753",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316758",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316763",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316768",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316773",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316778",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "candidate-aid:3316783",
-          "reason": "Direct page did not expose readable item-level body lines; excluded and not used for content propositions."
-        },
-        {
-          "identity": "chabadlibrary-page:3701350216",
-          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
-        },
-        {
-          "identity": "chabadlibrary-page:3701350217",
-          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
-        },
-        {
-          "identity": "chabadlibrary-page:3701350218",
-          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
-        },
-        {
-          "identity": "chabadlibrary-page:3701350219",
-          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
-        },
-        {
-          "identity": "chabadlibrary-page:3701350220",
-          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
-        },
-        {
-          "identity": "chabadlibrary-page:3701350221",
-          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
-        },
-        {
-          "identity": "chabadlibrary-page:3701350222",
-          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
-        },
-        {
-          "identity": "chabadlibrary-page:3701350223",
-          "reason": "Direct open returned no readable item-level text; search-visible material was not treated as source-body inspection."
-        },
-        {
-          "identity": "candidate-aid:5413081",
-          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
-        },
-        {
-          "identity": "candidate-aid:5413083",
-          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
-        },
-        {
-          "identity": "candidate-aid:5413084",
-          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
-        },
-        {
-          "identity": "candidate-aid:5413066",
-          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
-        },
-        {
-          "identity": "candidate-aid:5413260",
-          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
-        },
-        {
-          "identity": "candidate-aid:5413151",
-          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
-        },
-        {
-          "identity": "candidate-aid:5413246",
-          "reason": "Direct page opened to a navigation/summary shell or did not expose a readable item-level Hebrew body; excluded."
-        }
-      ]
+      "note": "Baseline is the expected post-batch-098 total after correcting the Verified-status false positive; CI must confirm before the dashboard is treated as current."
     },
     "last_run_note": "Batch 098: five new Hebrew Igrot Kodesh letter bodies and nine original-language Hayom Yom pages were opened. Twelve propositions were added to five new letter identities and three further paraphrases enriched existing Hayom Yom identities in place. Seven inaccessible candidate pages were excluded; alternative public bodies were inspected in the same run. All new and enriched items remain Parsed/partial; no Verified promotions.",
     "last_batch_blocked_count": 26,

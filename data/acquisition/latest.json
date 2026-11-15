@@ -7,6 +7,46 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "2026-11-15-content-batch-099",
+    "status": "pending_reconciliation",
+    "reviewed_at": "2026-11-15T13:55:00+02:00",
+    "reviewed_item_count": 12,
+    "source_bodies_inspected": 12,
+    "source_body_pages_opened": 12,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 2,
+    "new_response_propositions": 9,
+    "existing_response_propositions_added": 1,
+    "answer_eligible_source_families_added": 9,
+    "content_verified_unique_sources_added": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 961,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2933
+    },
+    "metrics_before_confirmed": false,
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 970,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2943
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "reconciliation_status": "pending",
+    "blocked_candidate_count": 12,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "translations_counted_as_independent_witnesses": 0,
+    "fallback_source_attempted": true,
+    "source_languages": [
+      "Hebrew",
+      "English"
+    ],
+    "note": "Nine new identities; AID 4666247 enriched in place; AID 5357571 and a volume XIII PDF identity rechecked. Twelve blocked pages were excluded. No crawler retry or access bypass."
+  },
+  "previous_manual_web_review": {
     "batch_id": "098",
     "batch_file": "data/items/content-research-batch-098-2026-11-15.json",
     "reviewed_at": "2026-11-15T13:25:00+02:00",
@@ -208,122 +248,6 @@
     },
     "duplicate_aliases_linked": 0,
     "translations_counted_as_independent_witnesses": 0
-  },
-  "previous_manual_web_review": {
-    "batch_id": "095",
-    "batch_file": "data/content-reviews/2026-11-15-content-batch-095.json",
-    "reviewed_at": "2026-11-15T06:55:00+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
-    "reconciliation_status": "pending",
-    "reviewed_item_count": 11,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 0,
-    "existing_identities_enriched": 10,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 10,
-    "answer_eligible_source_families_added": 1,
-    "independent_witnesses_added": 1,
-    "non_independent_presentations_added": 1,
-    "content_verified_unique_sources_added": 1,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 900,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2832
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 939,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2895
-    },
-    "metrics_actual_after": null,
-    "source_languages": [
-      "Hebrew",
-      "Yiddish"
-    ],
-    "language_distribution": {
-      "Hebrew": 5,
-      "Yiddish": 6
-    },
-    "source_type_distribution": {
-      "published_likkutei_sichos_original_language_excerpt": 9,
-      "published_hebrew_correspondence_text": 2
-    },
-    "enriched_aids": [
-      5245732,
-      6393752,
-      4846181,
-      6391815,
-      5834915,
-      4772806,
-      4804686,
-      5245755,
-      4929245,
-      4994228
-    ],
-    "reviewed_aids": [
-      4804686,
-      5245755,
-      5245732,
-      5168552,
-      6393752,
-      4846181,
-      6391815,
-      5834915,
-      4772806,
-      4929245,
-      4994228
-    ],
-    "rechecked_aids": [
-      5168552
-    ],
-    "blocked_candidate_count": 7,
-    "blocked_candidates": [
-      {
-        "aid": 5100375,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100375/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100376,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100376/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100377,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100377/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100603,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100603/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100116,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100116/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 4754642,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4754642/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      },
-      {
-        "aid": 5100374,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5100374/jewish/page.htm",
-        "reason": "The public reader redirected to a navigation/summary shell without readable item-level body text; excluded from content claims."
-      }
-    ],
-    "duplicate_aliases_linked": 0,
-    "translations_counted_as_independent_witnesses": 0,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "fallback_source_attempted": true
   },
   "earlier_manual_web_review": {
     "batch_id": "093",
@@ -681,7 +605,7 @@
     "reconciliation_status": "pending",
     "note": "These are expected cumulative values after batches 090–094, not reconciled actual metrics."
   },
-  "last_manual_review_at": "2026-11-15T13:25:00+02:00",
+  "last_manual_review_at": "2026-11-15T13:55:00+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
