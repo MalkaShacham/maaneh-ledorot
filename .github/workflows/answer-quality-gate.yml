@@ -14,6 +14,8 @@ on:
       - 'scripts/test_answer_*.mjs'
       - 'scripts/test_question_specificity_gate.mjs'
       - 'scripts/reconcile_metrics.py'
+      - 'scripts/status_normalization.py'
+      - 'scripts/test_reconcile_status.py'
       - 'scripts/content_readiness.py'
       - 'scripts/test_content_readiness.mjs'
       - 'src/answer-engine.js'
@@ -44,6 +46,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Test conservative status normalization
+        run: python scripts/test_reconcile_status.py
       - name: Generate evidence index for this exact source revision
         run: python scripts/reconcile_metrics.py
       - name: Test question-specific retrieval
