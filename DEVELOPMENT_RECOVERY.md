@@ -634,3 +634,14 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - צפי בלבד לאחר שרשרת 099–102: 1,011 answer-eligible unique Evidence Families / 870 content-Verified / 3,018 propositions. לפני batch 102: 1,001 / 870 / 2,998. המדדים בפועל ייקבעו רק לאחר reconciliation.
 - אחזור/סינתזה: נשמרה תמיכת המנוע הקיימת ב-proposition-level relevance, claim-local citations, citation entailment, context boundaries ו-`researcher depth=deep` עם evidence map ו-claim-source map. נוספה בדיקת רגרסיה לסינתזה בין שלוש איגרות עם הפניות ברמת טענה במצב רגיל ובמצב חוקר עמוק; לא בוצע שינוי לא מאומת במנוע עצמו.
 - לא נעשה שימוש ב-search extracts כתוכן, לא הועתק טקסט מוגן במלואו, לא נעשה retry ל-crawler החסום, לא נעקפו בקרות גישה, לא נוצרה אוטומציה חדשה ולא שונו לוח הזמנים, קהל או הרשאות. בדיקות PR, reconciliation ופרסום Pages ממתינים לאימות בפועל.
+
+
+## 2026-11-15 — Batch 102: corrected canonical accounting and full reconciliation
+
+- לאחר סריקה קנונית מלאה ב-PR workspace, שבעה מקורות חדשים בלבד נשארו ב-batch 102: AIDs 6489115, 1888937, 821755, 2201447, 72176, 1872993 ו-1277. שלושה AIDs שנראו חדשים כבר היו בקורפוס (2190037 ב-batch 070; 1939848 ו-2276666 ב-batch 082), ולכן הוצאו מרשימת החדשים וסומנו כ-rechecks ללא פרפרזה כפולה.
+- הועשרה זהות עברית קיימת אחת, AID 2989588, עם פרפרזה אחת על תקופת הקיץ; תוקנו שלושה locators קיימים. בסך הכול: 7 זהויות חדשות, 3 זהויות שנבדקו מחדש, זהות קיימת אחת שהועשרה, 13 פרפרזות למקורות החדשים ועוד אחת לזהות קיימת. 12 גופי מקור נבדקו.
+- התרגום מאידיש AID 72176 ותעתיק AID 2201447 נשארו non-independent; AIDs 2190037 ו-2276666 הקיימים נשארו non-independent לפי הרשומות הקנוניות. אין ספירת תרגום כעד עצמאי.
+- מועמד הכפילות AID 1888932 / 289101 לא אוחד: גוף 1888932 נפתח, אך גוף 289101 לא נפתח. אין מיזוג על סמך כותרת או מטא־דאטה בלבד.
+- שבע חסימות תועדו, ובאותה הפעלה נעשה fallback לעשרה גופים נגישים; לא נעשה retry ל-crawler החסום, לא נעקפו בקרות גישה, ולא הועתק טקסט מלא.
+- **תוצאת reconciliation בפועל ב-PR workspace עבור batches 099–102:** 965 → 1008 answer-eligible unique Evidence Families; content-Verified נשאר 854; propositions עלו מ-2929 ל-3012. ההפרש של 16 לעומת צפי Verified קודם נובע מנרמול סטטוסים: 870 היה גבוה מדי, ו-878 שפורסם היה גבוה עוד יותר. לא קודם מקור חדש ל-Verified.
+- ה-PR הראשון הריץ reconciliation מלא והפיק 1008/854/3012, אך בדיקת התוכן נעצרה בגלל הצהרת `const` כפולה ב-test. המשתנים תוקנו; נדרשת ריצת PR חוזרת מוצלחת לפני merge. פרסום GitHub Pages עדיין ממתין ל-merge ול-Actions ב-main.
