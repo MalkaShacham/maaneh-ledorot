@@ -600,3 +600,10 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - The record `chabad-letter-4666220.json` was retained as a source identity but demoted to Linked/metadata-only. Its response propositions were cleared, `has_content_evidence=false`, and it no longer contributes an answer-eligible Evidence Family or a content-Verified family. No claim is inferred from its title or summary shell.
 - This removes one answer-eligible family and one content-Verified family from the previously reported baseline. The corrected batch-097 baseline is **955 / 869 / 2,918**; batch 098 is expected to reconcile to **964 / 869 / 2,929**. The new CI reconciliation will supply the actual run ID and commit-bound result.
 - Alternate public source bodies were inspected in the same run (ten original-language Hayom Yom entries); the known HTTP 403 crawler was not retried and no access control was bypassed.
+
+
+### Parallel-language audio deduplication — AID 553672 / 553673 — 2026-11-15
+
+- The readiness test exposed that the indexed Yiddish listing AID 553673 still lacked an `evidence_family_id`, while the English listing AID 553672 and the newer batch record were already linked to `yechidus-5743-21-kislev-parallel-language-audio`.
+- Updated the existing bulk-indexed AID 553673 identity with the same Evidence Family and explicit `independent_witness=false`, `translation_status=parallel-language audio variant`, and metadata-only/no-transcript scope. No audio content was inferred, no response proposition was added, and the status remains Indexed.
+- Removed temporary debug output from `test_content_readiness.mjs`; the regression assertion now checks that the two language listings resolve to one family and are not treated as independent content witnesses.
