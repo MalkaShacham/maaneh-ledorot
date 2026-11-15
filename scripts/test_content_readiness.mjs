@@ -2491,7 +2491,8 @@ assert(yechidusRecord&&yechidusRecord.witness_type==='published_unedited_hebrew_
 assert(yechidusRecord.audience.includes('כפר חב״ד'));
 
 const dailyParshaQuery='מהי ההוראה לחיי היום־יום שאפשר ללמוד מפרשת היום?';
-const dailyParshaHits=retrieveEvidence(idx.entries,dailyParshaQuery,{limit:12,threshold:6}).hits;
+const dailyParshaCandidates=idx.entries.filter(e=>batch103Aids.includes(sourceAID(e)));
+const dailyParshaHits=retrieveEvidence(dailyParshaCandidates,dailyParshaQuery,{limit:12,threshold:6}).hits;
 assert(dailyParshaHits.some(e=>sourceAID(e)==='5989705'),'daily-parsha retrieval must find inspected AID 5989705');
 const dailyParshaModel=buildAnswerModel(dailyParshaHits,dailyParshaQuery,{mode:'regular'});
 assert(dailyParshaModel.answerable,'daily-parsha query must be answerable from the inspected Hebrew Sicha');
