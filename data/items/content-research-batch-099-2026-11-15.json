@@ -8,19 +8,19 @@
   "status": "pending_reconciliation",
   "reconciliation_status": "pending",
   "review_method": "Manual public web/open inspection of twelve accessible item-level BeitChabad (he.chabad.org) Hebrew body pages. Search was used only for candidate discovery; all response propositions derive from opened body passages, not titles or search extracts.",
-  "records_reviewed": 15,
-  "reviewed_item_count": 15,
-  "source_bodies_inspected": 13,
-  "source_body_pages_opened": 15,
+  "records_reviewed": 16,
+  "reviewed_item_count": 16,
+  "source_bodies_inspected": 14,
+  "source_body_pages_opened": 16,
   "metadata_only_items_rechecked": 2,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 12,
-  "existing_identities_enriched": 1,
+  "existing_identities_enriched": 2,
   "existing_identities_rechecked": 2,
   "new_response_propositions": 20,
-  "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 21,
+  "existing_response_propositions_added": 3,
+  "total_new_paraphrase_entries": 23,
   "answer_eligible_source_families_added": 12,
   "independent_witnesses_added": 8,
   "non_independent_presentations_added": 4,
@@ -56,7 +56,8 @@
     4296219
   ],
   "enriched_aids": [
-    3316719
+    3316719,
+    2989588
   ],
   "rechecked_aids": [
     553672,
@@ -89,6 +90,17 @@
         "Chabad.org/TheRebbe.org AID 3316719, original Yiddish body line 245."
       ],
       "note": "האמרה המקורית פוצלה לשתי פרפרזות נפרדות: אחת על אמרת חסידות והנהגה טובה, ואחת על ניגון; ה-AID ומשפחת הראיות נשמרו."
+    },
+    {
+      "aid": 2989588,
+      "canonical_file": "data/items/content-research-batch-099-2026-11-15.json",
+      "action": "enriched_existing_identity_in_original_batch_file",
+      "propositions_added": 2,
+      "proposition_locators": [
+        "he.chabad.org AID 2989588, גוף השיחה שורות 211–213.",
+        "he.chabad.org AID 2989588, גוף השיחה שורות 215–217."
+      ],
+      "note": "אותה שיחת יום א׳ כ״ד סיון תשי״ז ואותה Evidence Family; נפתחו מקטעים נוספים על המשך לימוד הבוגרות ועל תפקיד המורות. לא נוצרה זהות או עדות עצמאית חדשה."
     }
   ],
   "existing_identity_rechecks": [
@@ -209,7 +221,7 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 977,
     "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2950
+    "answer_eligible_propositions": 2952
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -246,7 +258,7 @@
     "לא הועתק טקסט מוגן במלואו ולא נעשתה העלאה של פריטים ל-Verified.",
     "Full-index reconciliation found two canonical metadata presentations of AID 553673 (bulk-indexed and batch-069); they are now linked to the same Evidence Family and are not independent witnesses."
   ],
-  "notes": "הפרופוזיציות הן פרפרזות מחקריות של גוף הטקסט בלבד. אין לייחס הסקת AI לרבי. ארבעת התרגומים מסומנים כנגזרים; שמונה עדי הטקסט בעברית הם פרסומים בלתי מוגהים.",
+  "notes": "הפרופוזיציות הן פרפרזות מחקריות של גוף הטקסט בלבד. אין לייחס הסקת AI לרבי. ארבעת התרגומים מסומנים כנגזרים; שמונה עדי הטקסט בעברית הם פרסומים בלתי מוגהים. המדד הצפוי לאחר באץ׳ 099 עודכן ל־2,952 פרופוזיציות עקב שתי ההעשרות; באץ׳ 100–101 עודכנו בהתאם לשרשרת המדדים.",
   "records": [
     {
       "id": "sicha-5732-rosh-chodesh-sivan-aid5989917",
@@ -809,17 +821,17 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "השיחה מתארת לימוד תורה כהכנה לחיים וכמקור להכוונת ההתנהגות היומיומית.",
+      "summary_researcher": "השיחה מתארת לימוד תורה כהכנה לחיים ולמימוש הידע בחיי היום־יום; היא מעודדת את הבוגרות להמשיך בלימוד תורני ברמה גבוהה יותר ואת המורות להמשיך ללמד אידישקייט לבנות ישראל.",
       "provenance": {
         "authorship_status": "העמוד מפרסם את הטקסט במסגרת תורת מנחם ומייחסו לשיחת/מאמר הרבי; הפרפרזה מתארת את הקטע שנפתח ואינה ניסוח של המערכת המיוחס לרבי.",
         "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
         "source_witness": "BeitChabad.com / he.chabad.org, AID 2989588, גוף שיחה בעברית.",
         "transmission_type": "פרסום דיגיטלי של הנחה בלתי מוגה בעברית.",
-        "textual_status": "נבדקו רק מקטעי גוף העמוד המצוינים ב-locators. העמוד מציג שיחה בלתי מוגה בעברית; לא נבדקו הקלטה, כתב־יד או הגהה מול מקור.",
-        "editorial_scope": "הפרפרזות מוגבלות למקטעי הגוף שנבדקו; כותרת, מפתח, קישור או מיקום ביבליוגרפי לא שימשו כתחליף לתוכן.",
+        "textual_status": "העמוד מסמן את השיחה כבלתי מוגה; נבדקו גם שורות 211–213 ו־215–217. לא הושוותה להקלטה, כתב־יד או מהדורה ביקורתית.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: שורות 205–210, 211–213 ו־215–217; לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
         "verification_status": "Parsed; source_text_inspected; partial context.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989588",
-        "accessed": "2026-11-15T19:03:35+02:00"
+        "accessed": "2026-11-15T20:00:00+02:00"
       },
       "witness": {
         "kind": "text",
@@ -848,15 +860,19 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי של he.chabad.org, AID 2989588. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989588, גוף השיחה שורות 205–210.. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף הטקסט שנפתח, ולא ציטוטים. העמוד מציג שיחה בלתי מוגה בעברית; לא נבדקו הקלטה, כתב־יד או הגהה מול מקור. לא נבדקו אוטוגרף, כתב־יד, הקלטה או מהדורה ביקורתית; ההקשר נשאר חלקי. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי של he.chabad.org, AID 2989588. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989588, גוף השיחה שורות 205–210.. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף הטקסט שנפתח, ולא ציטוטים. העמוד מציג שיחה בלתי מוגה בעברית; לא נבדקו הקלטה, כתב־יד או הגהה מול מקור. לא נבדקו אוטוגרף, כתב־יד, הקלטה או מהדורה ביקורתית; ההקשר נשאר חלקי. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed. העשרה נוספת ב־15.11.2026: נפתחו שורות 211–213 ו־215–217 באותו עמוד; נוספו שתי פרפרזות לא־מילוליות לאותה זהות ולאותה Evidence Family. לא נוצר מקור חדש ולא שונה סטטוס Parsed.",
       "type": "sicha",
       "collection": "תורת מנחם — התוועדויות",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989588",
       "response_propositions": [
-        "השיחה מציגה לימוד תורה כהכנה לחיים ולא כצבירת מידע בלבד; הידע הנלמד אמור להתממש בהתנהגות ובחיי היום־יום."
+        "השיחה מציגה לימוד תורה כהכנה לחיים ולא כצבירת מידע בלבד; הידע הנלמד אמור להתממש בהתנהגות ובחיי היום־יום.",
+        "בהמשך השיחה מודגש שהלימוד לאחר סיום ה״זמן״ צריך להימשך באותה מגמה תורנית אך ברמה גבוהה ונמרצת יותר; הטקסט קושר החלטה תקיפה להמשך לימוד לסיוע אלוקי ולהצלחה.",
+        "בפנייה למורות, השיחה מעודדת אותן להמשיך ללמד אידישקייט לבנות ישראל ומקשרת את המשך עבודתן לנחת חינוכי מהתלמידות."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2989588, גוף השיחה שורות 205–210."
+        "he.chabad.org AID 2989588, גוף השיחה שורות 205–210.",
+        "he.chabad.org AID 2989588, גוף השיחה שורות 211–213.",
+        "he.chabad.org AID 2989588, גוף השיחה שורות 215–217."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -866,7 +882,7 @@
       "evidence_family_id": "sicha-5717-24-sivan-aid2989588",
       "parent_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי של he.chabad.org, AID 2989588. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989588, גוף השיחה שורות 205–210.. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף הטקסט שנפתח, ולא ציטוטים. העמוד מציג שיחה בלתי מוגה בעברית; לא נבדקו הקלטה, כתב־יד או הגהה מול מקור. לא נבדקו אוטוגרף, כתב־יד, הקלטה או מהדורה ביקורתית; ההקשר נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי של he.chabad.org, AID 2989588. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989588, גוף השיחה שורות 205–210.. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף הטקסט שנפתח, ולא ציטוטים. העמוד מציג שיחה בלתי מוגה בעברית; לא נבדקו הקלטה, כתב־יד או הגהה מול מקור. לא נבדקו אוטוגרף, כתב־יד, הקלטה או מהדורה ביקורתית; ההקשר נשאר חלקי. לא הועתק טקסט מוגן במלואו. בבדיקה נוספת ב־15.11.2026 נפתחו גם שורות 211–213 ו־215–217; נוספו שתי פרפרזות מחקריות לא־מילוליות על המשך לימוד הבוגרות ועל תפקיד המורות.",
       "documented_circumstances": "שיחה בכ״ד סיון ה׳תשי״ז.",
       "question_or_problem": null,
       "conditions_or_qualifications": [
