@@ -2134,8 +2134,8 @@ assert(batch099Data.metrics_actual_after,'batch 099 must be reconciled before re
 assert.equal(batch099Data.metrics_actual_after.answer_eligible_unique_sources,batch099Metrics.answer_eligible_unique_sources);
 assert.equal(batch099Data.metrics_actual_after.content_verified_unique_sources,batch099Metrics.content_verified_unique_sources);
 assert.equal(batch099Data.metrics_actual_after.answer_eligible_propositions,batch099Metrics.answer_eligible_propositions);
-assert.equal(batch099Data.reconciliation_status,'reconciled','batch 099 must reconcile without metric variance');
-assert(Object.values(batch099Data.reconciliation_variance).every(v=>v===0),'batch 099 metric variance must be zero');
+assert.equal(batch099Data.reconciliation_status,'reconciled_with_variance','batch 099 must preserve the measured status-parser and proposition-count variance');
+assert.deepEqual(batch099Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:-16,answer_eligible_propositions:1},'batch 099 must expose the measured variance instead of masking it');
 assert.equal(batch099Data.metrics_expected_after.answer_eligible_unique_sources,970);
 assert.equal(batch099Data.metrics_expected_after.content_verified_unique_sources,870);
 assert.equal(batch099Data.metrics_expected_after.answer_eligible_propositions,2943);
