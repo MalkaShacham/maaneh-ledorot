@@ -607,3 +607,14 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - The readiness test exposed that the indexed Yiddish listing AID 553673 still lacked an `evidence_family_id`, while the English listing AID 553672 and the newer batch record were already linked to `yechidus-5743-21-kislev-parallel-language-audio`.
 - Updated the existing bulk-indexed AID 553673 identity with the same Evidence Family and explicit `independent_witness=false`, `translation_status=parallel-language audio variant`, and metadata-only/no-transcript scope. No audio content was inferred, no response proposition was added, and the status remains Indexed.
 - Removed temporary debug output from `test_content_readiness.mjs`; the regression assertion now checks that the two language listings resolve to one family and are not treated as independent content witnesses.
+
+
+## 2026-11-15 — Manual source-body review, batch 102
+
+- נפתחו ונבדקו 11 גופי פרסום ציבוריים בעברית של שיחות ״תורת מנחם״ המסומנות ״בלתי מוגה״. נוספו 11 זהויות AID חדשות ו-11 פרופוזיציות מחקר לא-מילוליות, עם מיקומי שורות מדויקים, provenance, היקף אימות, נסיבות ומגבלות הקשר.
+- כל 11 הרשומות נשארו Parsed ובעלות הקשר חלקי. לא ניתנה קפיצה ל-Verified: לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים. תמציות המחקר מתארות את תוכן הקטע ואינן מוצגות כציטוט או כסינתזה שנאמרה בידי הרבי.
+- סוג המקור החדש באצווה זו הוא תעתיק שיחה עברי מתוארך; הרחבת השפות הקודמת נשמרת באצוות 097–098 (עברית, יידיש ואנגלית). תרגום או פרסום מקביל של אותה שיחה יישאר באותה Evidence Family.
+- שלושה מועמדים חלופיים (AID 3316800, 3316803, 3316806) לא נפתחו דרך הקורא הציבורי והחזירו שגיאה פנימית. הם תועדו כחסומים; באותה הפעלה נפתחו ונבדקו 11 עמודים חלופיים נגישים. לא בוצע ניסיון crawler חוזר או עקיפת בקרת גישה.
+- בדיקת כפילויות ידנית: 12 קובצי bulk-indexed ו-40 אצוות content-research 055–098 נסרקו למזהי AID אלה; לא נמצאו התאמות. התאמה מלאה מול כל הקורפוס נשארת כפופה ל-reconciliation הקנוני.
+- מדדי בסיס צפויים לאחר תיקון batch 098: 964 answer-eligible unique sources, 853 content-verified unique sources ו-2,927 propositions. לאחר batch 102 צפויים 975 / 853 / 2,938. אלה ערכי צפי בלבד עד reconciliation בפועל; אין להציגם כתוצאה מאומתת לפני ריצת CI.
+- קובץ האצווה: `data/items/content-research-batch-102-2026-11-15.json`; audit: `data/content-reviews/2026-11-15-content-batch-102.json`.
