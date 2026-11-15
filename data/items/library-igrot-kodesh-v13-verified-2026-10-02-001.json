@@ -6673,18 +6673,41 @@
       "printed_page": "תכה",
       "printed_page_value": 425,
       "source_witness": {
-        "kind": "published-edition scan",
+        "kind": "published-edition index locator",
         "publisher": "Kehot Publication Society",
         "library_filename": "אגרות קודש יג.pdf",
         "library_file_id": "libfile_6d038a3f8bdc8191a28d62c5fc0db390",
-        "index_pdf_pages": "28-39"
+        "index_pdf_pages": "28-39",
+        "printed_page": "תכה",
+        "note": "Identity and printed-page locator only; not a source-body witness."
       },
-      "pipeline_status": "Verified",
-      "verification_status": "Verified",
-      "verification_scope": "published-edition bibliographic identity/locator verified from inspected volume index; full wording not independently verified",
-      "context_status": "Partial",
+      "pipeline_status": "Indexed",
+      "verification_status": "Indexed",
+      "verification_scope": "bibliographic_locator_verified_only; identity and printed-page location verified from the inspected volume index only; full wording, letter body and signature were not independently verified.",
+      "context_status": "bibliographic_locator_verified_only",
       "rights_status": "metadata/locator only; full copyrighted text not reproduced",
-      "notes": "Identity and printed-page locator verified from visually inspected printed volume index. Manuscript, signature, incoming correspondence, full wording, and substantive content not verified by this record."
+      "notes": "Identity and printed-page locator verified from visually inspected printed volume index only. This status verifies bibliographic identity/location, not source content. Manuscript, signature, incoming correspondence and full wording were not inspected; no response propositions are supported.",
+      "status": "Indexed",
+      "canonical_status": "Indexed",
+      "has_content_evidence": false,
+      "response_propositions": [],
+      "proposition_origin": null,
+      "proposition_verbatim": null,
+      "proposition_verification": null,
+      "proposition_source_locator": null,
+      "response_proposition_locators": [],
+      "evidence_family_id": "london-chassidus-class-growth-still-insufficient-for-dissemination",
+      "identity_verification_status": "Verified",
+      "witness_type": "bibliographic_locator_only",
+      "independent_witness": false,
+      "primary_secondary_status": "Bibliographic identity and printed-page locator only; no source-body content was inspected.",
+      "duplicate_or_parallel_relations": [
+        {
+          "type": "duplicate_metadata_record",
+          "target_id": "data/items/library-igrot-kodesh-v13-content-2026-11-05-032.json#igrot-kodesh-v13-דתרפא",
+          "note": "The duplicate content record is demoted to Linked/metadata-only; both entries refer to the same bibliographic identity and Evidence Family."
+        }
+      ]
     },
     {
       "id": "igrot-kodesh-v13-דתרפב",
