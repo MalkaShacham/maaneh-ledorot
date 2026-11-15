@@ -2302,3 +2302,93 @@ for(const mode of ['regular','researcher']){
 }
 assert.deepEqual(metrics,batch101Data.metrics_actual_after);
 assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
+
+
+// Batch 102: nine new Hebrew item identities in eight Evidence Families,
+// plus one in-place enrichment of the original AID 2989585 record.
+const batch102Path='data/items/content-research-batch-102-2026-11-15.json';
+const batch102Data=JSON.parse(await readFile(new URL(batch102Path,root)));
+const batch102Aids=batch102Data.records.map(r=>String(r.aid));
+assert.equal(batch102Data.records.length,9);
+assert.equal(batch102Data.reviewed_item_count,16);
+assert.equal(batch102Data.source_bodies_inspected,10);
+assert.equal(batch102Data.new_source_identities,9);
+assert.equal(batch102Data.existing_identities_enriched,1);
+assert.equal(batch102Data.new_response_propositions,18);
+assert.equal(batch102Data.existing_response_propositions_added,1);
+assert.equal(batch102Data.total_new_paraphrase_entries,19);
+assert.equal(batch102Data.answer_eligible_source_families_added,8);
+assert.equal(batch102Data.independent_witnesses_added,8);
+assert.equal(batch102Data.non_independent_presentations_added,1);
+assert.equal(batch102Data.content_verified_unique_sources_added,0);
+assert.equal(batch102Data.blocked_candidate_count,3);
+assert.equal(batch102Data.metadata_only_candidate_count,2);
+assert.equal(batch102Data.crawler_retry,false);
+assert.equal(batch102Data.access_control_bypassed,false);
+assert.equal(batch102Data.full_text_copied,false);
+assert.equal(batch102Data.translations_counted_as_independent_witnesses,0);
+assert.deepEqual(batch102Data.metrics_before,{answer_eligible_unique_sources:1001,content_verified_unique_sources:870,answer_eligible_propositions:2999});
+assert.deepEqual(batch102Data.metrics_expected_after,{answer_eligible_unique_sources:1009,content_verified_unique_sources:870,answer_eligible_propositions:3017});
+assert.equal(batch102Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch102Data.metrics_actual_after,batch102Data.metrics_expected_after);
+assert.deepEqual(batch102Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert.equal(batch102Data.deduplication_check.full_index_scan_available,true);
+assert.deepEqual(batch102Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch102Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(new Set(batch102Aids).size,9);
+assert.equal(new Set(batch102Data.records.map(r=>r.evidence_family_id)).size,8);
+assert.equal(new Set(batch102Data.records.map(r=>r.source_url)).size,9);
+assert.deepEqual(batch102Data.records.reduce((a,r)=>(a[r.language]=(a[r.language]||0)+1,a),{}),{Hebrew:9});
+assert.equal(batch102Data.records.filter(r=>r.source_class==='Sichos').length,6);
+assert.equal(batch102Data.records.filter(r=>r.source_class==='Maamarim').length,3);
+assert.equal(batch102Data.records.filter(r=>r.independent_witness===false).length,1);
+assert.equal(batch102Data.records.reduce((n,r)=>n+r.response_propositions.length,0),18);
+for(const r of batch102Data.records){
+ const aid=String(r.aid),matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-102 AID '+aid+' must have exactly one canonical index identity');
+ const e=matches[0];
+ assert(e.has_content_evidence&&e.response_propositions.length===r.response_propositions.length);
+ assert.equal(e.canonical_file,batch102Path);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope&&e.witness_provenance);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.response_proposition_locators.every(Boolean));
+}
+const sameFamilyMaamar=idx.entries.find(e=>sourceAID(e)==='5989527');
+const sameFamilySicha=idx.entries.find(e=>sourceAID(e)==='5989563');
+assert(sameFamilyMaamar&&sameFamilySicha);
+assert.equal(sameFamilyMaamar.evidence_family_id,sameFamilySicha.evidence_family_id);
+assert.equal(sameFamilyMaamar.independent_witness,false);
+assert(sameFamilyMaamar.relations.some(r=>r.type==='same_evidence_family'&&r.target_id==='sicha-5728-21-kislev-aid5989563'));
+const enriched2989585=idx.entries.find(e=>sourceAID(e)==='2989585');
+assert(enriched2989585&&enriched2989585.canonical_file==='data/items/content-research-batch-100-2026-11-15.json');
+assert.equal(enriched2989585.response_propositions.length,6);
+assert.equal(enriched2989585.response_proposition_locators.length,6);
+assert(enriched2989585.response_propositions.some(p=>p.includes('שפלות רוחנית')&&p.includes('מניעות')));
+assert.equal(enriched2989585.status,'Parsed');
+assert.equal(batch102Data.existing_identity_updates[0].aid,2989585);
+assert(!queue.records.some(q=>String(q.key||'')==='aid:2989237'||String(q.key||'')==='aid:5989562'));
+
+// Cross-family synthesis: two separately dated Hebrew talks on learning,
+// public speech at a farbrengen and practical Torah/mitzvah action.
+const torahActionQuestion='מה מתועד בשיחות על הקשר בין לימוד תורה, דיבור בהתוועדות וקיום מצוות בפועל?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,torahActionQuestion,{mode});
+ assert(m.answerable,mode+': two inspected Hebrew Evidence Families should support the Torah-learning/action comparison');
+ assert(m.sources.some(e=>sourceAID(e)==='5989562'));
+ assert(m.sources.some(e=>sourceAID(e)==='4385757'));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
+ assert(m.citation_entailment.every(x=>x.valid));
+ assert(m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert(m.research.evidence_families>=2);
+  assert.equal(m.research.claim_source_map.length,m.claims.length);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ }else assert.equal(m.research,undefined);
+}

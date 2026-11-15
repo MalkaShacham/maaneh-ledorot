@@ -1,0 +1,1051 @@
+{
+  "schema_version": "content-research-batch-v1",
+  "batch_id": "102",
+  "generated": "2026-11-15",
+  "generated_at": "2026-11-15T21:54:00+02:00",
+  "batch_file": "data/items/content-research-batch-102-2026-11-15.json",
+  "title": "Batch 102 — nine new Hebrew item identities, one in-place enrichment, and event-family linkage",
+  "status": "pending_reconciliation",
+  "reconciliation_status": "pending",
+  "review_method": "Manual public web/search/open inspection of item-level body pages at he.chabad.org. Search was used only for candidate discovery; all propositions derive from opened body passages and the stated line locators. No search-result snippet was used as content.",
+  "records_reviewed": 16,
+  "reviewed_item_count": 16,
+  "source_bodies_inspected": 10,
+  "source_body_pages_opened": 16,
+  "metadata_only_items_rechecked": 2,
+  "search_extracts_inspected": 0,
+  "search_extracts_used_as_content": 0,
+  "new_source_identities": 9,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 0,
+  "new_response_propositions": 18,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 19,
+  "answer_eligible_source_families_added": 8,
+  "independent_witnesses_added": 8,
+  "non_independent_presentations_added": 1,
+  "content_verified_unique_sources_added": 0,
+  "duplicate_alias_identities": 0,
+  "source_languages": [
+    "Hebrew"
+  ],
+  "language_distribution": {
+    "Hebrew": 9
+  },
+  "original_language_distribution": {
+    "Hebrew": 9
+  },
+  "source_type_distribution": {
+    "published_unedited_hebrew_sicha_transcript": 6,
+    "published_unedited_hebrew_maamar_transcript": 3
+  },
+  "new_aids": [
+    2989237,
+    3008863,
+    5989562,
+    5989563,
+    4280143,
+    4385757,
+    4280030,
+    2989283,
+    5989527
+  ],
+  "enriched_aids": [
+    2989585
+  ],
+  "rechecked_aids": [],
+  "reviewed_aids": [
+    4666220,
+    553672,
+    553691,
+    3140253,
+    4280029,
+    4280144,
+    2989237,
+    3008863,
+    5989562,
+    5989563,
+    4280143,
+    4385757,
+    4280030,
+    2989283,
+    5989527,
+    2989585
+  ],
+  "existing_identity_updates": [
+    {
+      "aid": 2989585,
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "action": "enriched_existing_identity_in_original_batch_file",
+      "propositions_added": 1,
+      "proposition_locators": [
+        "he.chabad.org AID 2989585, גוף השיחה שורות 197–201."
+      ],
+      "note": "אותה שיחת שבועות ואותה Evidence Family; נפתחו שורות 197–201 בגוף העמוד ונוספה פרפרזה אחת. הזהות נשמרה בקובץ הקנוני המקורי; לא נוצר מקור חדש ולא שונה הסטטוס Parsed."
+    }
+  ],
+  "existing_identity_rechecks": [],
+  "duplicate_aliases_linked": [],
+  "translations_added": [],
+  "translations_counted_as_independent_witnesses": 0,
+  "duplicate_candidates_excluded": [
+    {
+      "aid": 4280029,
+      "already_present_in_batch": "100"
+    },
+    {
+      "aid": 4280144,
+      "already_present_in_batch": "099"
+    }
+  ],
+  "translation_candidates_excluded": [
+    {
+      "aid": 3140253,
+      "presentation_language": "Hebrew",
+      "original_language": "Yiddish",
+      "reason": "עמוד הפרסום מציין במפורש תרגום מאידית; לא נבדק עד המקור ביידיש ולכן לא נספר כעד עצמאי ולא שימש לפרופוזיציות."
+    }
+  ],
+  "same_evidence_family_memberships": [
+    {
+      "aid": 5989527,
+      "related_aid": 5989563,
+      "evidence_family_id": "farbrengen-5728-21-kislev-vayeshev-5728",
+      "reason": "מאמר ושיחה נפרדים מאותה שבת/התוועדות; שתי זהויות פריט אך משפחת ראיות אחת."
+    }
+  ],
+  "blocked_candidate_count": 3,
+  "blocked_candidates": [
+    {
+      "aid": 4666220,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+      "reason": "הנתיב הציבורי הפנה ל-Torah Texts summary shell ללא גוף מכתב קריא; לא נוצרה ממנו פרופוזיציה."
+    },
+    {
+      "aid": 553672,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/553672/jewish/21-Kislev-5743-Yechidus-Hebrew.htm",
+      "reason": "עמוד יחידות בעברית מציג כותרת/נגן וקישור לאודיו בלבד; לא נמצא תמליל גוף קריא."
+    },
+    {
+      "aid": 553691,
+      "url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+      "reason": "עמוד יחידות ביידיש מציג כותרת/נגן וקישור לאודיו בלבד; לא נמצא תמליל גוף קריא."
+    }
+  ],
+  "metadata_only_candidate_count": 2,
+  "metadata_only_candidates": [
+    {
+      "aid": 553672,
+      "reason": "רישום יחידות/אודיו בעברית ללא תמליל טקסטואלי גלוי."
+    },
+    {
+      "aid": 553691,
+      "reason": "רישום יחידות/אודיו ביידיש ללא תמליל טקסטואלי גלוי."
+    }
+  ],
+  "fallback_source_attempted": true,
+  "fallback_source_results": {
+    "publisher": "BeitChabad / he.chabad.org",
+    "accessible_item_level_bodies": 10,
+    "body_text_inspected": true,
+    "aids": [
+      2989237,
+      3008863,
+      5989562,
+      5989563,
+      4280143,
+      4385757,
+      4280030,
+      2989283,
+      5989527,
+      2989585
+    ]
+  },
+  "crawler_retry": false,
+  "access_control_bypassed": false,
+  "full_text_copied": false,
+  "scan_only_verification_used": false,
+  "metrics_before": {
+    "answer_eligible_unique_sources": 1001,
+    "content_verified_unique_sources": 870,
+    "answer_eligible_propositions": 2999
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 1009,
+    "content_verified_unique_sources": 870,
+    "answer_eligible_propositions": 3017
+  },
+  "metrics_actual_after": null,
+  "reconciliation_variance": null,
+  "deduplication_check": {
+    "new_aids_unique": true,
+    "new_source_urls_unique": true,
+    "new_evidence_families_unique": false,
+    "unique_new_evidence_families": 8,
+    "same_family_memberships": 1,
+    "existing_identity_enrichment_in_place": true,
+    "duplicate_candidates_excluded": [
+      4280029,
+      4280144
+    ],
+    "translation_candidates_excluded": [
+      3140253
+    ],
+    "translations_counted_as_independent_witnesses": 0,
+    "duplicate_alias_identities": 0,
+    "scan_only_verification_used": 0,
+    "checked_against": "Current content-review queue; batches 099–101; item-path inventory; direct AID code-search queries. Full canonical item scan is pending reconciliation.",
+    "full_index_scan_available": false,
+    "full_index_scan_pending_reconciliation": true
+  },
+  "limitations": [
+    "כל תשעת הפריטים החדשים הם פרסומים עבריים בלתי מוגהים/הנחות בלתי מוגהות; ההקשר חלקי ולא נבדקו הקלטות, כתבי־יד או מהדורות ביקורתיות.",
+    "AID 5989527 הוא מאמר נפרד מאותה התוועדות של AID 5989563; הוא נשמר כפריט נפרד אך חולק עמו Evidence Family ואינו נספר כמשפחה עצמאית נוספת.",
+    "העשרת AID 2989585 בוצעה בבאץ׳ 102 אך נשמרה בקובץ הקנוני המקורי של batch 100; היא נכללת בסנאפשוט המדדים של batch 100 ואינה נספרת שוב כתוספת מדדים בבאץ׳ 102.",
+    "הסריקה הקנונית המלאה, בדיקת כפילויות סופית ומדדי after בפועל ממתינים להרצת reconciliation."
+  ],
+  "notes": "AID 4666220 נבדק שוב ונשאר summary shell; AIDs 553672 ו-553691 נפתחו כעמודי אודיו ללא תמליל. באותה הפעלה נפתחו עשרה גופי פרסום חלופיים: תשעה זהויות חדשות ו-AID 2989585 להעשרה. AIDs 4280029 ו-4280144 לא הוזנו מחדש כי כבר קיימים בבאצ׳ים 100 ו-099; AID 3140253 לא שימש כעד עצמאי כי הוא תרגום מיידיש. לא בוצע crawler retry ולא נעקפו בקרות גישה.",
+  "records": [
+    {
+      "id": "sicha-5722-26-sivan-aid2989237",
+      "aid": 2989237,
+      "title": "שיחת יום ה׳ פ׳ שלח, כ״ו סיון, ה׳תשכ״ב — בלתי מוגה",
+      "source_class": "Sichos",
+      "source_class_detail": "תורת מנחם — שיחה; פרסום עברי דיגיטלי; העמוד מסמן את הנוסח כבלתי מוגה.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "יום ה׳ פ׳ שלח, כ״ו סיון, ה׳תשכ״ב",
+      "date": "יום ה׳ פ׳ שלח, כ״ו סיון, ה׳תשכ״ב",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "הפתיחה מציגה את פרשת השבוע כמקור להוראה מעשית, ומביאה את תגובת הנשים בפרשת המרגלים כדוגמה ללימוד המיועד לנשי ישראל ולבנות ישראל בכל הדורות.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989237, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של שיחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 2989237, גוף השיחה שורות 167–168. ; he.chabad.org AID 2989237, גוף השיחה שורות 169–172.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989237",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "יום ה׳ פ׳ שלח, כ״ו סיון, ה׳תשכ״ב"
+        ],
+        "research_terms": [
+          "פרשת שלח",
+          "מרגלים",
+          "נשים ובנות",
+          "ארץ ישראל",
+          "הוראה מפרשת השבוע"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 2989237. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989237, גוף השיחה שורות 167–168. ; he.chabad.org AID 2989237, גוף השיחה שורות 169–172.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "sicha",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989237",
+      "response_propositions": [
+        "הקטע מציג את קריאת פרשת השבוע לא רק כחובת קריאה, אלא כמקור להפקת הוראה הנוגעת לענייני האדם בכל שבוע.",
+        "השיחה מביאה את המדרש על הנשים והבנות שלא קיבלו את גישת המרגלים, אלא חיבבו את ארץ ישראל ורצו לעלות אליה, ומציגה את המדרש כהוראה לנשי ישראל ולבנות ישראל בכל הדורות."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 2989237, גוף השיחה שורות 167–168.",
+        "he.chabad.org AID 2989237, גוף השיחה שורות 169–172."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 2989237, גוף השיחה שורות 167–168.",
+      "evidence_family_id": "sicha-5722-26-sivan-aid2989237",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 2989237. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989237, גוף השיחה שורות 167–168. ; he.chabad.org AID 2989237, גוף השיחה שורות 169–172.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 2989237, גוף הפרסום בעברית.",
+      "documented_circumstances": "שיחה לתלמידות המסיימות ישיבת אהל משה בברוקלין; הפתיחה עוסקת בהוראה מפרשת השבוע ובסיפור המרגלים.",
+      "question_or_problem": "איזו הוראה מציגה השיחה לנשים ולבנות מן המדרש על תגובתן לחטא המרגלים?",
+      "conditions_or_qualifications": [
+        "הפרפרזה מתארת את המהלך המובא בשיחה; אין בה קביעה היסטורית עצמאית על אירועי המרגלים מעבר לטקסט.",
+        "העמוד מסמן את הנוסח כבלתי מוגה; לא נבדקו הקלטה או כתב־יד."
+      ],
+      "audience": "תלמידות המסיימות ישיבת אהל משה בברוקלין, לפי ציון העמוד.",
+      "primary_secondary_status": "Published unedited Hebrew Sicha transcript; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "sicha-5718-2-tishrei-aid3008863",
+      "aid": 3008863,
+      "title": "שיחת יום ב׳ דראש השנה, ה׳תשח״י — בלתי מוגה",
+      "source_class": "Sichos",
+      "source_class_detail": "תורת מנחם — שיחה; פרסום עברי דיגיטלי; העמוד מסמן את הנוסח כבלתי מוגה.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "יום ב׳ דראש השנה, ה׳תשח״י",
+      "date": "יום ב׳ דראש השנה, ה׳תשח״י",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "הקטע מתעד את סדר ההתוועדות בראש השנה וקושר את התעוררות התשובה במועד להמשכת ברכה לאורך השנה.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 3008863, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של שיחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 3008863, גוף השיחה שורות 175–177. ; he.chabad.org AID 3008863, גוף השיחה שורות 180–184.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/3008863",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "יום ב׳ דראש השנה, ה׳תשח״י"
+        ],
+        "research_terms": [
+          "ראש השנה",
+          "תשובה",
+          "כוס של ברכה",
+          "שבת",
+          "המשכת הברכה"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 3008863. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 3008863, גוף השיחה שורות 175–177. ; he.chabad.org AID 3008863, גוף השיחה שורות 180–184.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "sicha",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/3008863",
+      "response_propositions": [
+        "הקטע מתאר את סדר ההתוועדות בראש השנה: נטילת ידיים לסעודה, אמירת לחיים וניגון, ולאחר ברכת המזון חלוקת כוס של ברכה לכל אחד מן הנאספים, ולאחר מכן אמירת מאמר על תקיעת שופר.",
+        "השיחה קושרת את התעוררות התשובה בראש השנה עם המשכת הכתיבה והחתימה הטובה לכל השנה, ומסבירה את הרצף באמצעות המעבר הישיר ליום השבת ותשובה עילאה."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 3008863, גוף השיחה שורות 175–177.",
+        "he.chabad.org AID 3008863, גוף השיחה שורות 180–184."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 3008863, גוף השיחה שורות 175–177.",
+      "evidence_family_id": "sicha-5718-2-tishrei-aid3008863",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 3008863. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 3008863, גוף השיחה שורות 175–177. ; he.chabad.org AID 3008863, גוף השיחה שורות 180–184.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 3008863, גוף הפרסום בעברית.",
+      "documented_circumstances": "שיחת יום ב׳ דראש השנה; העמוד מתאר את סדר ההתוועדות ואת הקשר בין ראש השנה לשבת.",
+      "question_or_problem": "כיצד מתארת השיחה את המשכת הברכה מראש השנה לאורך השנה?",
+      "conditions_or_qualifications": [
+        "העמוד מציין בהערת שוליים 1 שהמקור חסר אצל המו״ל; אין להסיק ממנה פרטים נוספים.",
+        "הפרפרזה מוגבלת לפתיחת השיחה ולסיכום המובא בשורות 180–184."
+      ],
+      "audience": "משתתפי ההתוועדות בראש השנה.",
+      "primary_secondary_status": "Published unedited Hebrew Sicha transcript; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "sicha-5728-19-kislev-aid5989562",
+      "aid": 5989562,
+      "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״ח — בלתי מוגה",
+      "source_class": "Sichos",
+      "source_class_detail": "תורת מנחם — שיחה; פרסום עברי דיגיטלי; העמוד מסמן את הנוסח כבלתי מוגה.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״ח",
+      "date": "יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״ח",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "השיחה מסבירה כיצד אמירת מטרת ההתכנסות בקול יוצרת הבנה משותפת, ומדגישה שתכלית ההתכנסות היא תוספת מעשית בתורה ובמצוות.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 5989562, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של שיחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 5989562, גוף השיחה שורות 175–181. ; he.chabad.org AID 5989562, גוף השיחה שורות 181–182.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/5989562",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״ח"
+        ],
+        "research_terms": [
+          "י״ט כסלו",
+          "התוועדות",
+          "דיבור",
+          "שיתוף רעיוני",
+          "תורה ומצוות",
+          "מעשה"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 5989562. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 5989562, גוף השיחה שורות 175–181. ; he.chabad.org AID 5989562, גוף השיחה שורות 181–182.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "sicha",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/5989562",
+      "response_propositions": [
+        "הקטע מסביר כי אמירת מטרת ההתכנסות בקול יוצרת שיתוף והבנה משותפת בין המשתתפים, מעבר למחשבות הפרטיות שכל אחד מחזיק לעצמו.",
+        "הקטע מציב את תכלית ההתכנסות בהוספה מעשית בלימוד תורה ובקיום מצוות, ולא רק ביצירת חוויה רעיונית משותפת."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 5989562, גוף השיחה שורות 175–181.",
+        "he.chabad.org AID 5989562, גוף השיחה שורות 181–182."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 5989562, גוף השיחה שורות 175–181.",
+      "evidence_family_id": "sicha-5728-19-kislev-aid5989562",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 5989562. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 5989562, גוף השיחה שורות 175–181. ; he.chabad.org AID 5989562, גוף השיחה שורות 181–182.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 5989562, גוף הפרסום בעברית.",
+      "documented_circumstances": "שיחת י״ט כסלו; הדיון עוסק בדיבור פומבי במסגרת התכנסות.",
+      "question_or_problem": "כיצד מסבירה השיחה את התועלת שבאמירת מטרת ההתכנסות בקול?",
+      "conditions_or_qualifications": [
+        "הפרפרזה מוגבלת לפתיחת השיחה; אין להרחיב ממנה לכל סוגי ההתכנסות.",
+        "העמוד מסמן את הנוסח כבלתי מוגה; לא נבדקה הקלטה."
+      ],
+      "audience": "משתתפי ההתוועדות בי״ט כסלו.",
+      "primary_secondary_status": "Published unedited Hebrew Sicha transcript; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "sicha-5728-21-kislev-aid5989563",
+      "aid": 5989563,
+      "title": "שיחת ש״פ וישב, כ״א כסלו, ה׳תשכ״ח — בלתי מוגה",
+      "source_class": "Sichos",
+      "source_class_detail": "תורת מנחם — שיחה; פרסום עברי דיגיטלי; העמוד מסמן את הנוסח כבלתי מוגה.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "ש״פ וישב, כ״א כסלו, ה׳תשכ״ח",
+      "date": "ש״פ וישב, כ״א כסלו, ה׳תשכ״ח",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "השיחה מציגה את שבת וישב שבין י״ט כסלו לחנוכה כחיבור בין המועדים, ובהמשך מתארת את השבת כסיום שבוע של מנוחה ועונג.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 5989563, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של שיחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 5989563, גוף השיחה שורות 166–169. ; he.chabad.org AID 5989563, גוף השיחה שורות 171–174.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/5989563",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "same_evidence_family",
+          "target_id": "maamar-5728-21-kislev-aid5989527",
+          "basis": "הפרסום מתעד מאמר נוסף מאותה שבת/התוועדות; שני הפריטים מובחנים אך שייכים לאותו אירוע ולכן המשפחה נספרת פעם אחת."
+        }
+      ],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "ש״פ וישב, כ״א כסלו, ה׳תשכ״ח"
+        ],
+        "research_terms": [
+          "י״ט כסלו",
+          "חנוכה",
+          "שבת",
+          "ימי בראשית",
+          "מנוחה ועונג"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 5989563. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 5989563, גוף השיחה שורות 166–169. ; he.chabad.org AID 5989563, גוף השיחה שורות 171–174.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "sicha",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/5989563",
+      "response_propositions": [
+        "הקטע מציג את שבת וישב שבין י״ט כסלו לחנוכה כמחברת בין שני המועדים, ומסביר את הקשר באמצעות ההמשכיות שבימי חנוכה.",
+        "השיחה מתארת את השבת הן כסיום השבוע והן כיום של מנוחה ועונג, ומקשרת את מחזוריות ימי השבוע לחזרה על תכני ימי בראשית."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 5989563, גוף השיחה שורות 166–169.",
+        "he.chabad.org AID 5989563, גוף השיחה שורות 171–174."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 5989563, גוף השיחה שורות 166–169.",
+      "evidence_family_id": "farbrengen-5728-21-kislev-vayeshev-5728",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 5989563. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 5989563, גוף השיחה שורות 166–169. ; he.chabad.org AID 5989563, גוף השיחה שורות 171–174.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 5989563, גוף הפרסום בעברית.",
+      "documented_circumstances": "שיחת שבת וישב כ״א כסלו; הקטע פותח בחיבור בין י״ט כסלו לחנוכה וממשיך בהיבטים של יום השבת.",
+      "question_or_problem": "כיצד קושרת השיחה את השבת שבין י״ט כסלו לחנוכה?",
+      "conditions_or_qualifications": [
+        "הפרפרזה מתארת את המהלך בפתיחת השיחה בלבד; אין להרחיב מעבר למקטעים שנבדקו.",
+        "המאמר AID 5989527 מאותה התוועדות משויך לאותה Evidence Family ואינו עד עצמאי נוסף לאירוע."
+      ],
+      "audience": "משתתפי ההתוועדות בשבת וישב.",
+      "primary_secondary_status": "Published unedited Hebrew Sicha transcript; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "sicha-5720-9-sivan-aid4280143",
+      "aid": 4280143,
+      "title": "שיחת ש״פ נשא, ט׳ סיון, ה׳תש״כ — בלתי מוגה",
+      "source_class": "Sichos",
+      "source_class_detail": "תורת מנחם — שיחה; פרסום עברי דיגיטלי; העמוד מסמן את הנוסח כבלתי מוגה.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "ש״פ נשא, ט׳ סיון, ה׳תש״כ",
+      "date": "ש״פ נשא, ט׳ סיון, ה׳תש״כ",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "השיחה מספרת על המניין של אדמו״ר הזקן ועל דמותו של ר׳ שלמה אופה העוגות, ומעבירה סיפור שנמסר דרך הרבי הקודם.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 4280143, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של שיחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 4280143, גוף השיחה שורות 166–167. ; he.chabad.org AID 4280143, גוף השיחה שורות 169–174.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4280143",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "ש״פ נשא, ט׳ סיון, ה׳תש״כ"
+        ],
+        "research_terms": [
+          "אדמו״ר הזקן",
+          "מניין",
+          "חסידים",
+          "ר׳ שלמה אופה העוגות",
+          "סעודת מצווה"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 4280143. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 4280143, גוף השיחה שורות 166–167. ; he.chabad.org AID 4280143, גוף השיחה שורות 169–174.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "sicha",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280143",
+      "response_propositions": [
+        "השיחה מספרת כי לאחר שהקשר של אדמו״ר הזקן לחסידים נודע, חמיו הוסר ממינוי הכבוד שהיה לו בעירו; למרות הרדיפות המתוארות, נותר לאדמו״ר הזקן מניין של מקושרים, ובהם גם אנשים פשוטים.",
+        "הקטע מציג את ר׳ שלמה אופה העוגות כחבר במניין, שהיכרותו עם תלמידי חכמים נבעה מהזמנתם לסעודות מצווה; בהמשך הוא מוסר סיפור ששמע על התוועדות אדמו״ר הזקן בשנת תקל״א."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 4280143, גוף השיחה שורות 166–167.",
+        "he.chabad.org AID 4280143, גוף השיחה שורות 169–174."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 4280143, גוף השיחה שורות 166–167.",
+      "evidence_family_id": "sicha-5720-9-sivan-aid4280143",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 4280143. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 4280143, גוף השיחה שורות 166–167. ; he.chabad.org AID 4280143, גוף השיחה שורות 169–174.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 4280143, גוף הפרסום בעברית.",
+      "documented_circumstances": "שיחת ש״פ נשא, ט׳ סיון; הדיון נפתח בסיפור היסטורי שנמסר בשם הרבי הקודם על אדמו״ר הזקן.",
+      "question_or_problem": "מה מספרת השיחה על המניין של אדמו״ר הזקן ועל ר׳ שלמה אופה העוגות?",
+      "conditions_or_qualifications": [
+        "הפרטים ההיסטוריים מובאים בשיחה כסיפור שנמסר דרך ר׳ שלמה והרבי הקודם; לא נבדק מקור היסטורי עצמאי.",
+        "העמוד מסמן את הנוסח כבלתי מוגה; לא נבדקו כתב־יד או הקלטה."
+      ],
+      "audience": "משתתפי שיחת ש״פ נשא.",
+      "primary_secondary_status": "Published unedited Hebrew Sicha transcript; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "sicha-5727-20-kislev-aid4385757",
+      "aid": 4385757,
+      "title": "שיחת ש״פ וישב, כ׳ כסלו, ה׳תשכ״ז — בלתי מוגה",
+      "source_class": "Sichos",
+      "source_class_detail": "תורת מנחם — שיחה; פרסום עברי דיגיטלי; העמוד מסמן את הנוסח כבלתי מוגה.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "ש״פ וישב, כ׳ כסלו, ה׳תשכ״ז",
+      "date": "ש״פ וישב, כ׳ כסלו, ה׳תשכ״ז",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "השיחה מתארת התוועדויות י״ט כסלו שנמשכו מעבר ליום עצמו, ומציגה את לימוד התורה כנקודת הפתיחה להרחבה בקיום מצוות וביתר תחומי החיים.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 4385757, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של שיחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 4385757, גוף השיחה שורות 166–168. ; he.chabad.org AID 4385757, גוף השיחה שורות 169–178.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4385757",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "ש״פ וישב, כ׳ כסלו, ה׳תשכ״ז"
+        ],
+        "research_terms": [
+          "י״ט כסלו",
+          "לימוד חסידות",
+          "לימוד תורה",
+          "קיום מצוות",
+          "התוועדות"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 4385757. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 4385757, גוף השיחה שורות 166–168. ; he.chabad.org AID 4385757, גוף השיחה שורות 169–178.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "sicha",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4385757",
+      "response_propositions": [
+        "הקטע מתאר את התוועדויות י״ט כסלו בשנים תרע״ג ותרע״ט ככאלה שנמשכו מעבר ליום עצמו, ומסביר את הכינוי י״ט כסלו הארוך בהקשר זה.",
+        "השיחה קובעת שהארכת ההתוועדות צריכה להתחיל בלימוד תורה, שממנו נמשכת ההשפעה לקיום מצוות וליתר תחומי החיים; היא מפנה לנוסח ברכת הרבי הקודם שמקדים לימוד החסידות לדרכי החסידות."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 4385757, גוף השיחה שורות 166–168.",
+        "he.chabad.org AID 4385757, גוף השיחה שורות 169–178."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 4385757, גוף השיחה שורות 166–168.",
+      "evidence_family_id": "sicha-5727-20-kislev-aid4385757",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 4385757. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 4385757, גוף השיחה שורות 166–168. ; he.chabad.org AID 4385757, גוף השיחה שורות 169–178.. העמוד מסמן במפורש את הנוסח כבלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 4385757, גוף הפרסום בעברית.",
+      "documented_circumstances": "שיחת ש״פ וישב כ׳ כסלו; הדיון מתייחס להתוועדויות י״ט כסלו הארוכות בשנים תרע״ג ותרע״ט.",
+      "question_or_problem": "כיצד מתארת השיחה את סדר ההשפעה של לימוד החסידות על קיום מצוות?",
+      "conditions_or_qualifications": [
+        "האזכורים ההיסטוריים מובאים בתוך השיחה; לא נבדקו רישומים חיצוניים של ההתוועדויות.",
+        "העמוד מסמן את הנוסח כבלתי מוגה; לא נבדקה הקלטה."
+      ],
+      "audience": "משתתפי שיחת ש״פ וישב.",
+      "primary_secondary_status": "Published unedited Hebrew Sicha transcript; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "maamar-5721-21-kislev-aid4280030",
+      "aid": 4280030,
+      "title": "דוד מלך ישראל, ש״פ וישב, כ״א כסלו, ה׳תשכ״א — הנחה בלתי מוגה",
+      "source_class": "Maamarim",
+      "source_class_detail": "תורת מנחם — הנחה בלתי מוגה של מאמר; פרסום עברי דיגיטלי.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "ש״פ וישב, כ״א כסלו, ה׳תשכ״א",
+      "date": "ש״פ וישב, כ״א כסלו, ה׳תשכ״א",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "ההנחה מפרשת את הביטוי דוד מלך ישראל באמצעות תיאור המלכות כגילוי והירידה לעולם העשייה, ומקשרת זאת לעבודת הביטול ולאמירת תהילים לפי גיל.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 4280030, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של הנחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 4280030, גוף ההנחה שורות 174–177. ; he.chabad.org AID 4280030, גוף ההנחה שורות 178–179.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4280030",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "ש״פ וישב, כ״א כסלו, ה׳תשכ״א"
+        ],
+        "research_terms": [
+          "דוד מלך ישראל",
+          "מלכות",
+          "תהילים",
+          "פרק תהילים לפי גיל",
+          "עולם העשייה"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 4280030. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 4280030, גוף ההנחה שורות 174–177. ; he.chabad.org AID 4280030, גוף ההנחה שורות 178–179.. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "maamar",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280030",
+      "response_propositions": [
+        "ההנחה מבארת את מאמר אדמו״ר הזקן על דוד מלך ישראל באמצעות תיאור המלכות כגילוי, והחלפת האות ה׳ בד׳ בעולם העשייה כהבחנה בין תחום הקדושה לבין היפוכה.",
+        "ההנחה קושרת את אמירת מזמור התהילים המתאים למספר שנות האדם למסקנת המאמר, ומציינת שזהו המקור שנראה כמסביר תקנה קודמת של אמירת פרק תהילים לפי גיל."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 4280030, גוף ההנחה שורות 174–177.",
+        "he.chabad.org AID 4280030, גוף ההנחה שורות 178–179."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 4280030, גוף ההנחה שורות 174–177.",
+      "evidence_family_id": "maamar-5721-21-kislev-aid4280030",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 4280030. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 4280030, גוף ההנחה שורות 174–177. ; he.chabad.org AID 4280030, גוף ההנחה שורות 178–179.. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 4280030, גוף הפרסום בעברית.",
+      "documented_circumstances": "הנחה בלתי מוגה של מאמר בשם דוד מלך ישראל בהתוועדות ש״פ וישב כ״א כסלו ה׳תשכ״א; הדיון מפרש מאמר קצר של אדמו״ר הזקן.",
+      "question_or_problem": "כיצד מסבירה ההנחה את הביטוי דוד מלך ישראל ואת הקשר לאמירת פרק תהילים לפי גיל?",
+      "conditions_or_qualifications": [
+        "הקטע מפרש מאמר של אדמו״ר הזקן ומביא הפניה לתקנה שנמסרה בשם אדמו״ר מוהריי״צ; אין לייחס את לשון המאמר לאדמו״ר שליט״א או להסיק נוסח תקנה מעבר למקטעים שנבדקו.",
+        "העמוד מסמן את הנוסח כהנחה בלתי מוגה; לא נבדקו כתב־יד או הקלטה."
+      ],
+      "audience": "משתתפי ההתוועדות בש״פ וישב.",
+      "primary_secondary_status": "Published unedited Hebrew Maamar/hanacha; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_maamar_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "maamar-5722-28-sivan-aid2989283",
+      "aid": 2989283,
+      "title": "והי׳ באכלכם גו׳, ש״פ שלח, כ״ח סיון, מבה״ח תמוז, ה׳תשכ״ב — הנחה בלתי מוגה",
+      "source_class": "Maamarim",
+      "source_class_detail": "תורת מנחם — הנחה בלתי מוגה של מאמר; פרסום עברי דיגיטלי.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "ש״פ שלח, כ״ח סיון, מבה״ח תמוז, ה׳תשכ״ב",
+      "date": "ש״פ שלח, כ״ח סיון, מבה״ח תמוז, ה׳תשכ״ב",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "ההנחה פותחת בקושיות על מצוות חלה ועל הכפלת לשון תרומה, ובהמשך מציגה את לחם מן הארץ ולחם מן השמים כמסגרות להסברת עבודת הבירורים.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989283, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של הנחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 2989283, גוף ההנחה שורות 174–176. ; he.chabad.org AID 2989283, גוף ההנחה שורות 177–180.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989283",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "ש״פ שלח, כ״ח סיון, מבה״ח תמוז, ה׳תשכ״ב"
+        ],
+        "research_terms": [
+          "חלה",
+          "לחם מן הארץ",
+          "לחם מן השמים",
+          "בירור ניצוצות",
+          "עבודת האדם"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 2989283. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989283, גוף ההנחה שורות 174–176. ; he.chabad.org AID 2989283, גוף ההנחה שורות 177–180.. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "maamar",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989283",
+      "response_propositions": [
+        "ההנחה מציבה שאלות על הפסוק והיה באכלכם: מדוע מצוין לחם הארץ, מדוע מופיעה לשון תרומה פעמיים, וכיצד היא מתיישבת עם הדרישה להפריש חלה לפני האכילה.",
+        "ההנחה מפרשת לחם מן הארץ ולחם מן השמים כשתי בחינות בסדר ההשתלשלות ובעבודת האדם, ומקשרת את לחם מן הארץ לעבודת בירור ניצוצות בחומר הגשמי."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 2989283, גוף ההנחה שורות 174–176.",
+        "he.chabad.org AID 2989283, גוף ההנחה שורות 177–180."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 2989283, גוף ההנחה שורות 174–176.",
+      "evidence_family_id": "maamar-5722-28-sivan-aid2989283",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 2989283. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 2989283, גוף ההנחה שורות 174–176. ; he.chabad.org AID 2989283, גוף ההנחה שורות 177–180.. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 2989283, גוף הפרסום בעברית.",
+      "documented_circumstances": "הנחה בלתי מוגה של מאמר בש״פ שלח כ״ח סיון; הפתיחה דנה במצוות חלה ובמשמעות לחם מן הארץ ולחם מן השמים.",
+      "question_or_problem": "אילו שאלות מציבה ההנחה על מצוות חלה וכיצד היא מקשרת לחם מן הארץ לעבודת האדם?",
+      "conditions_or_qualifications": [
+        "זהו מהלך חסידי/דרשני בתוך הנחה בלתי מוגה, לא פסק הלכה מעשי בדיני חלה.",
+        "ההקשר המלא של המאמר לא נבדק מעבר למקטעים המצוינים."
+      ],
+      "audience": "משתתפי ההתוועדות בש״פ שלח.",
+      "primary_secondary_status": "Published unedited Hebrew Maamar/hanacha; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_maamar_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "maamar-5728-21-kislev-aid5989527",
+      "aid": 5989527,
+      "title": "אלה תולדות יעקב יוסף, ש״פ וישב, כ״א כסלו, ה׳תשכ״ח — הנחה בלתי מוגה",
+      "source_class": "Maamarim",
+      "source_class_detail": "תורת מנחם — הנחה בלתי מוגה של מאמר; פרסום עברי דיגיטלי.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "ש״פ וישב, כ״א כסלו, ה׳תשכ״ח",
+      "date": "ש״פ וישב, כ״א כסלו, ה׳תשכ״ח",
+      "date_precision": "calendar_day",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "ההנחה דנה בהבחנה בין חסד דקדושה לחסד דלעומת־זה, ומקשרת את מקור ההשפעה לאופן שבו החסד פועל על המקבל.",
+      "provenance": {
+        "authorship_status": "העמוד מציג את הפריט במסגרת תורת מנחם ומייחסו לדברי הרבי; הפרפרזות מתארות רק את המקטעים שנבדקו ואינן ניסוח מילולי המיוחס לרבי.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 5989527, גוף הפרסום בעברית.",
+        "transmission_type": "פרסום דיגיטלי של הנחה עברית בלתי מוגה.",
+        "textual_status": "העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה.",
+        "editorial_scope": "הפרפרזות מוגבלות למקטעי גוף העמוד שנפתחו: he.chabad.org AID 5989527, גוף ההנחה שורות 174–175. ; he.chabad.org AID 5989527, גוף ההנחה שורות 176–180.. לא נעשה שימוש בכותרת או בתוצאת חיפוש כתחליף לתוכן.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/5989527",
+        "accessed": "2026-11-15T21:54:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד הציבורי ב-he.chabad.org נפתח; נבדקו המקטעים המצוינים ב-locators. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזות מחקריות קצרות וקישור למקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [
+        {
+          "type": "same_evidence_family",
+          "target_id": "sicha-5728-21-kislev-aid5989563",
+          "basis": "המאמר וההנחה של השיחה מתוארכים לאותה שבת וישב כ״א כסלו ה׳תשכ״ח; פריטים נבדלים מאותה התוועדות, לא שתי Evidence Families עצמאיות."
+        }
+      ],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "תורת מנחם",
+          "התוועדויות",
+          "ש״פ וישב, כ״א כסלו, ה׳תשכ״ח"
+        ],
+        "research_terms": [
+          "אלה תולדות יעקב יוסף",
+          "חסד דקדושה",
+          "חסד דלעומת־זה",
+          "ביטול",
+          "גסות רוח"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־15.11.2026. נפתח גוף העמוד של he.chabad.org AID 5989527. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 5989527, גוף ההנחה שורות 174–175. ; he.chabad.org AID 5989527, גוף ההנחה שורות 176–180.. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה. ההקשר חלקי; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. הרשומה נשארת Parsed.",
+      "type": "maamar",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/5989527",
+      "response_propositions": [
+        "ההנחה מציבה קושיה על תיאור בית יעקב ובית יוסף ככוח המבטל את עשו, ומציגה את הפער בין פחדו של יעקב מריבוי האלופים לבין הדימוי של בית עשו כקש.",
+        "הקטע מבחין בין חסד דקדושה, שמקורו בביטול ומשפיע ביטול, לבין חסד דלעומת־זה, שמקורו בתוקף ועלול לעורר תוקף וגסות רוח אצל המקבל."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 5989527, גוף ההנחה שורות 174–175.",
+        "he.chabad.org AID 5989527, גוף ההנחה שורות 176–180."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 5989527, גוף ההנחה שורות 174–175.",
+      "evidence_family_id": "farbrengen-5728-21-kislev-vayeshev-5728",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי בעברית ב-he.chabad.org, AID 5989527. נבדקו רק המקטעים המצוינים ב-locators: he.chabad.org AID 5989527, גוף ההנחה שורות 174–175. ; he.chabad.org AID 5989527, גוף ההנחה שורות 176–180.. העמוד מסמן במפורש את הנוסח כהנחה בלתי מוגה. הפרפרזות הן מחקריות ולא־מילוליות; לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה ביקורתית, וההקשר מעבר למקטעים שנפתחו נשאר חלקי. לא הועתק טקסט מוגן במלואו.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 5989527, גוף הפרסום בעברית.",
+      "documented_circumstances": "הנחה בלתי מוגה של מאמר אלה תולדות יעקב יוסף באותה שבת וישב כ״א כסלו ה׳תשכ״ח שבה פורסמה גם שיחת AID 5989563.",
+      "question_or_problem": "כיצד מבדילה ההנחה בין חסד דקדושה לחסד דלעומת־זה?",
+      "conditions_or_qualifications": [
+        "ההנחה היא מאמר נפרד מאותה התוועדות, אך אינה עד עצמאי נוסף לאירוע המתועד ב-AID 5989563; הפרפרזות מתארות את תוכן המאמר בלבד.",
+        "העמוד מסמן את הנוסח כהנחה בלתי מוגה; לא נבדקו כתב־יד או הקלטה."
+      ],
+      "audience": "משתתפי ההתוועדות בשבת וישב כ״א כסלו.",
+      "primary_secondary_status": "Published unedited Hebrew Maamar/hanacha; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_maamar_transcript",
+      "translation_status": "Original Hebrew text; no translation presentation counted independently.",
+      "independent_witness": false,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    }
+  ]
+}

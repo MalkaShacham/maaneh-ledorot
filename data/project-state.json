@@ -100,9 +100,9 @@
         "answer_eligible_propositions": 2929
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1001,
+        "answer_eligible_unique_sources": 1009,
         "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2998
+        "answer_eligible_propositions": 3017
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -115,24 +115,25 @@
         "095",
         "099",
         "100",
-        "101"
+        "101",
+        "102"
       ],
       "baseline_correction": "The prior 878 content-Verified count was a false positive: eight batch-096 provenance.verification_status strings said 'no promotion to Verified', which status_of() matched as Verified. The records remain Parsed; after neutralizing the phrase, the correct content-Verified baseline is 870."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_101_and_status_normalization_fix",
+      "run_status": "pending_after_batch_102; main test baseline expects 870; prior PR run failed on stale branch expectation 854",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 096 contained eight Parsed records whose explanatory provenance phrase was misread as Verified. The phrase is corrected; the expected content-Verified count is 870, not 878. Commit-bound reconciliation and tests must confirm."
+      "note": "The latest PR run 43754292319 failed on a stale PR revision that expected 854 content-Verified sources; current main test file expects 870 after the batch-096 false-positive correction. A new commit-bound run must validate batch 102."
     },
     "publication": {
-      "status": "pending_after_batch_101",
+      "status": "pending_after_batch_102",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -171,20 +172,20 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "101",
+    "current_batch": "102",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "098",
-    "last_batch_summary": "Batch 099–101: three existing identities enriched in place (AID 3316719 +1 proposition; AID 2989588 +2; AID 2989585 +2); batch 101 added fourteen Hebrew sources and one English correspondence letter, with 30 non-verbatim propositions. No new item promoted to Verified.",
-    "last_run_note": "AID 4666220 remained a summary shell; two Chabad Library pages (including one Yiddish) had no readable body. Fourteen alternative Hebrew bodies and one public English letter body were inspected. AID 2989588 and AID 2989585 were enriched in their original canonical files; translations were not counted as independent witnesses. Batches 099–101 pending contiguous reconciliation.",
+    "last_batch_summary": "Batch 102: nine new item identities in eight Evidence Families; one existing identity (AID 2989585) enriched in place; 18 new propositions and one additional proposition on the existing identity. No source promoted to Verified. Three blocked candidates were documented and replaced by accessible he.chabad.org bodies.",
+    "last_run_note": "AID 4666220 remained a public summary shell; AIDs 553672 (Hebrew) and 553691 (Yiddish) exposed audio/player metadata without transcript bodies. Ten alternative public bodies were inspected: nine new identities and an in-place enrichment of AID 2989585. AIDs 4280029 and 4280144 were excluded as already present; AID 3140253 was excluded as a Hebrew translation of a Yiddish source. AID 5989527 was linked to the same farbrengen Evidence Family as AID 5989563. No crawler retry, access-control bypass or full-text copying.",
     "last_batch_blocked_count": 3,
-    "last_batch_blocked_reason": "AID 4666220 returned a summary shell; two Chabad Library pages (one Yiddish) returned no readable body. Alternative public Hebrew bodies were inspected in the same run.",
+    "last_batch_blocked_reason": "AID 4666220 returned a rewritten summary shell; AIDs 553672 and 553691 exposed audio listings without inspectable transcripts. Alternative public Hebrew source bodies were inspected in the same run.",
     "next_work": [
-      "Run contiguous reconciliation for batches 099–101; verify all 36 new AIDs and the three in-place enrichments (AID 3316719, 2989588, 2989585) against the full canonical index.",
-      "Confirm the measured result against 965/870/2929 → 977/870/2952 → 986/870/2968 → 1001/870/2998; record any variance rather than normalizing it away.",
-      "Run test_reconcile_status.py, test_content_readiness.mjs, answer-quality, synthesis, citation-entailment, context-boundary, and deep researcher-mode checks.",
-      "Inspect commit-bound GitHub Actions and confirm GitHub Pages serves the regenerated search index and metrics.",
-      "Continue source-body research in Hebrew, Yiddish and English using accessible original-language texts and additional documentary classes; the current chain has 35 Hebrew and one English source, while the Yiddish page candidates inspected this run had no readable body.",
-      "Do not retry the HTTP 403 crawler, bypass access controls, or promote partial/unedited text records to Verified."
+      "Run contiguous reconciliation for batches 099–102; verify the nine new AIDs and the in-place AID 2989585 enrichment in its original batch-100 file.",
+      "Confirm the adjusted chain: 965/870/2929 → 977/870/2952 → 986/870/2969 → 1001/870/2999 → 1009/870/3017; record any variance.",
+      "Run test_reconcile_status.py, test_content_readiness.mjs, answer-quality, synthesis, citation-entailment, context-boundary and deep researcher-mode checks.",
+      "Inspect commit-bound GitHub Actions and confirm the regenerated public search index, metrics and GitHub Pages deployment.",
+      "Continue original-language Hebrew/Yiddish/English body inspection and additional documentary classes; preserve same-event Evidence Family links and non-independent translation status.",
+      "Do not retry the HTTP 403 crawler, bypass access controls or promote partial unedited texts to Verified."
     ],
     "last_reconciliation": {
       "batch_id": "089",
@@ -731,7 +732,8 @@
     "pending_reconciliation_batches": [
       "099",
       "100",
-      "101"
+      "101",
+      "102"
     ],
     "last_reconciliation_pending": true
   }

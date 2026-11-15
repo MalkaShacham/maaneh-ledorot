@@ -180,12 +180,12 @@
   "metrics_before": {
     "answer_eligible_unique_sources": 986,
     "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2968
+    "answer_eligible_propositions": 2969
   },
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1001,
     "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2998
+    "answer_eligible_propositions": 2999
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -1590,5 +1590,9 @@
       "translation_of_evidence_family_id": null,
       "rights_status": "copyrighted-link-only"
     }
-  ]
+  ],
+  "metrics_chain_adjustment": {
+    "adjusted_by_batch": "102",
+    "reason": "AID 2989585 received one later in-place proposition in its original batch-100 file; the batch-100 snapshot and batch-101 baseline/expected-after values therefore shift by +1 proposition, without changing source or Verified counts."
+  }
 }

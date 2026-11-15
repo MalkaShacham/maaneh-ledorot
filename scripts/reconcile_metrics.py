@@ -337,6 +337,7 @@ if selected_batches:
     readiness_state["pending_batches"]=[str(x) for x in readiness_state.get("pending_batches",[]) if str(x) not in reconciled_ids]
     dev_pending=state.setdefault("development_recovery",{}).get("pending_reconciliation_batches",[])
     state["development_recovery"]["pending_reconciliation_batches"]=[str(x) for x in dev_pending if str(x) not in reconciled_ids]
+    state["development_recovery"]["last_reconciliation_pending"]=bool(state["development_recovery"]["pending_reconciliation_batches"] or readiness_state.get("pending_batches"))
 
 print("search_index_count",len(search_entries))
 out.update(summarize(search_index["entries"]))
@@ -373,6 +374,7 @@ if selected_batches:
         for batch_info in selected_batches:
             update_review(acquisition.get("manual_web_review"),batch_info)
             update_review(acquisition.get("previous_manual_web_review"),batch_info)
+            update_review(acquisition.get("last_manual_web_review"),batch_info)
             for review in acquisition.get("manual_web_review_history",[]):
                 update_review(review,batch_info)
         acquisition["manual_web_review_current_metrics"]=actual_metrics
