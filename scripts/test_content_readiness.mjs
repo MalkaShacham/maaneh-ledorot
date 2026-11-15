@@ -1628,6 +1628,7 @@ assert.equal(new Set(batch089Data.enriched_aids.map(String)).size,14);
 assert.equal(new Set(batch089Data.existing_identity_updates.map(x=>x.identity)).size,14);
 assert.deepEqual(batch089Data.metrics_expected_after,{answer_eligible_unique_sources:900,content_verified_unique_sources:852,answer_eligible_propositions:2832});
 assert.equal(batch089Data.reconciliation_status,'reconciled');
+assert.equal(batch089Data.status,'reconciled');
 assert.deepEqual(batch089Data.metrics_actual_after,batch089Data.metrics_expected_after);
 assert.deepEqual(batch089Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 assert.equal(batch089Data.existing_identity_rechecks[0].aid,4057736,'AID 4057736 was already enriched in batch 086 and must not be duplicated');
@@ -1654,7 +1655,7 @@ for(const aid of batch089Aids){
  assert(!queue.records.some(q=>q.id===e.id),'batch-089 reviewed item '+e.id+' must leave the content review queue');
 }
 assert.equal(new Set(batch089Aids.map(a=>idx.entries.find(e=>sourceAID(e)===a).evidence_family_id)).size,14);
-const batch089MultiSourceQuery='הצג בנפרד מה מתעדים תקצירי Living Torah על שיחתו עם שלמה גזית ועל שלמות הארץ, שלמות העם ושלמות התורה';
+const batch089MultiSourceQuery='מה מתעדים שני תקצירי Living Torah על שיחתו של שלמה גזית בנוגע למסירת חלקים מארץ ישראל ועל שלמות הארץ, שלמות העם ושלמות התורה?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch089MultiSourceQuery,{mode});
  assert(m.answerable,mode+': batch-089 multi-item synopsis retrieval must remain answerable as separate cases');
@@ -1672,3 +1673,12 @@ for(const mode of ['regular','researcher']){
   assert.match(m.research.synthesis_constraints.rule,/Publisher synopses/);
  }else assert.equal(m.research,undefined);
 }
+
+const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
+const batch089Audit=reconciledProjectState.development_recovery.last_reconciliation;
+assert.equal(batch089Audit.batch_id,'089');
+assert.equal(batch089Audit.answer_eligible_selected_count,14);
+assert.equal(batch089Audit.selected_unique_evidence_families,14);
+assert.equal(batch089Audit.non_independent_selected_count,14);
+assert(batch089Audit.items.every(x=>x.selected_index_entry.present&&x.selected_index_entry.answer_eligible&&x.selected_index_entry.proposition_source_locator));
+assert.equal(reconciledProjectState.metrics_integrity.answer_readiness.reconciliation_status,'reconciled');
