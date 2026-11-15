@@ -1292,7 +1292,10 @@ for(const aid of batch079Aids){
 assert.equal(idx.entries.find(e=>sourceAID(e)==='5413165').language,'Yiddish');
 assert.equal(idx.entries.find(e=>sourceAID(e)==='5413169').date_precision,'approximate');
 const nonIndependent5357409=idx.entries.find(e=>sourceAID(e)==='5357409');assert(nonIndependent5357409&&nonIndependent5357409.independent_witness===false&&nonIndependent5357409.evidence_family_id==='igrot-letter-5715-11-tevet-aid4872269','AID 5357409 must remain linked to its existing Evidence Family and not count as an independent witness');
-assert.equal(nonIndependent5357409.family_resolution.canonical_item_present_in_repository,true);
+const batch058Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-058-2026-11-12.json',root)));
+const alias5357409Record=batch058Data.records.find(r=>String(r.aid)==='5357409');
+assert.equal(alias5357409Record.family_resolution.canonical_item_present_in_repository,true);
+assert(nonIndependent5357409.relations.some(r=>r.target_id==='chabad-letter-4872269'&&r.same_evidence_family===true),'the search index must expose the same-family link to the canonical fuller item');
 const canonical4872269=idx.entries.find(e=>sourceAID(e)==='4872269');
 assert(canonical4872269&&canonical4872269.independent_witness===true&&canonical4872269.evidence_family_id===nonIndependent5357409.evidence_family_id,'AID 4872269 must be the inspected canonical full-text witness for the shared family');
 const enriched5357409=idx.entries.find(e=>sourceAID(e)==='5357409');
