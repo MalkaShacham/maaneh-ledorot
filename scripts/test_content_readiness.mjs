@@ -974,7 +974,8 @@ assert.deepEqual(batch097Data.reconciliation_variance,{answer_eligible_unique_so
 // Batch 105: source-text readiness, multilingual retrieval, family deduplication and deep synthesis.
 const batch105Path='data/items/content-research-batch-105-2026-11-15.json';
 const batch105Data=JSON.parse(await readFile(new URL(batch105Path,root)));
-assert.equal(batch105Data.records.length,14);assert.equal(batch105Data.new_source_identities,14);
+assert.equal(batch105Data.records.length,14);
+assert(batch105Data.source_body_review.every(r=>!('aid' in r)&&!('id' in r)&&!('evidence_family_id' in r)),'batch 105 source_body_review rows are audit metadata, not duplicate source records');assert.equal(batch105Data.new_source_identities,14);
 assert.equal(batch105Data.existing_identities_enriched,1);assert.equal(batch105Data.new_response_propositions,25);
 assert.equal(batch105Data.existing_response_propositions_added,2);assert.equal(batch105Data.total_new_paraphrase_entries,27);
 assert.equal(batch105Data.answer_eligible_source_families_added,13);assert.equal(batch105Data.independent_witnesses_added,14);

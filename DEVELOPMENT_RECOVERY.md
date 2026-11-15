@@ -731,3 +731,8 @@ The hourly acquisition policy remains unchanged: the known blocked crawler is no
 ### Batch 106 reconciliation audit correction
 
 The first full reconciliation correctly detected two record-shaped entries for each target AID because the batch's `source_body_review` audit rows repeated canonical identity markers (`aid`, `id`, `evidence_family_id`). These rows are review metadata, not independent source records. Their identity fields were renamed to `reviewed_aid`, `reviewed_id` and `reviewed_evidence_family_id`; the canonical `records` array remains the sole source-identity payload. The regression test now asserts one canonical record per target AID, zero identity collisions and zero same-family duplicate presentations after the full-index scan.
+
+
+### Batch 105 reconciliation audit correction
+
+The first full-index reconciliation also identified duplicate-looking records in batch 105 because `source_body_review` rows repeated canonical identity markers. Those rows describe reviewed pages only; they are not independent source records. Their keys were renamed to `reviewed_aid`, `reviewed_id` and `reviewed_evidence_family_id`, preserving the 14 canonical records and the one translated presentation linked to its original Evidence Family. The batch's 13 unique Evidence Families remain the correct count; the translation is not an additional witness.
