@@ -8,37 +8,41 @@
   "status": "pending_reconciliation",
   "reconciliation_status": "pending",
   "review_method": "Manual public web/search/open inspection of fourteen accessible item-level Hebrew body pages at he.chabad.org. Search was used only for candidate discovery; all response propositions derive from opened body passages, not titles or search extracts. One existing identity (AID 2989588) was rechecked but not duplicated. A separate existing identity (AID 2989585) was enriched in-place in batch 100 during the same run.",
-  "records_reviewed": 20,
-  "reviewed_item_count": 20,
-  "source_bodies_inspected": 17,
-  "source_body_pages_opened": 20,
+  "records_reviewed": 21,
+  "reviewed_item_count": 21,
+  "source_bodies_inspected": 18,
+  "source_body_pages_opened": 21,
   "metadata_only_items_rechecked": 2,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 14,
+  "new_source_identities": 15,
   "existing_identities_enriched": 0,
   "existing_identities_rechecked": 1,
-  "new_response_propositions": 26,
+  "new_response_propositions": 30,
   "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 26,
-  "answer_eligible_source_families_added": 14,
-  "independent_witnesses_added": 14,
+  "total_new_paraphrase_entries": 30,
+  "answer_eligible_source_families_added": 15,
+  "independent_witnesses_added": 15,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
   "duplicate_alias_identities": 0,
   "source_languages": [
-    "Hebrew"
+    "Hebrew",
+    "English"
   ],
   "language_distribution": {
-    "Hebrew": 14
+    "Hebrew": 14,
+    "English": 1
   },
   "original_language_distribution": {
-    "Hebrew": 14
+    "Hebrew": 14,
+    "English": 1
   },
   "source_type_distribution": {
     "published_unedited_hebrew_sicha_transcript": 11,
     "published_unedited_hebrew_qa_transcript": 1,
-    "published_hebrew_event_report": 2
+    "published_hebrew_event_report": 2,
+    "published_english_letter_transcription": 1
   },
   "new_aids": [
     2989311,
@@ -54,7 +58,8 @@
     2989589,
     2989587,
     2989554,
-    2989348
+    2989348,
+    2021558
   ],
   "enriched_aids": [],
   "rechecked_aids": [
@@ -79,7 +84,8 @@
     2989234,
     4666220,
     1200910053,
-    1500390039
+    1500390039,
+    2021558
   ],
   "existing_identity_updates": [],
   "existing_identity_rechecks": [
@@ -159,6 +165,12 @@
     {
       "id": "chabadlibrary-1500390039",
       "result": "עמוד מאמר ללא גוף קריא; לא נכלל."
+    },
+    {
+      "aid": 2021558,
+      "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2021558/jewish/Dear-Rebbe-Ive-Been-Religious-for-Many-Years-but-Im-Not-Sure-Anymore.htm",
+      "language": "English",
+      "result": "Public English letter body opened; lines 267–299 inspected. Page attributes the letter to the Rebbe and the transcription ends M. Schneerson; page does not label it as a translation. No autograph comparison."
     }
   ],
   "crawler_retry": false,
@@ -171,9 +183,9 @@
     "answer_eligible_propositions": 2968
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1000,
+    "answer_eligible_unique_sources": 1001,
     "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2994
+    "answer_eligible_propositions": 2998
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
@@ -193,7 +205,7 @@
     "המקורות היידיים ב-Chabad Library לא החזירו גוף קריא; מקור יידי לא נכלל באצווה זו.",
     "תרגום עברי של שיחה שנאמרה באנגלית ותרגום אנגלי של שיחה לא נספרו כעדים עצמאיים."
   ],
-  "notes": "אצווה זו כוללת 14 זהויות חדשות ו-26 פרופוזיציות לא־מילוליות. שתי פרופוזיציות נוספות לאותה זהות קיימת AID 2989585 הוכנסו ישירות לקובץ המקורי בבאץ׳ 100 ונרשמו שם כהעשרה; אין לספור אותן שוב בבאץ׳ 101. AID 2989588 נשאר בבאץ׳ 099; AID 2989589 הוא מפגש אחר עם קהל אחר. כל הפריטים החדשים נשארים Parsed. אין שינוי סטטוס Verified, הרשאות או לוח זמנים. The baseline is the expected post-batch-100 state, not a measured reconciliation result; batch 100 and 101 are to be reconciled as a contiguous chain. Baseline updated to include batch 099's in-place AID 2989588 enrichment and batch 100's AID 2989585 enrichment.",
+  "notes": "אצווה זו כוללת 14 זהויות חדשות ו-26 פרופוזיציות לא־מילוליות. שתי פרופוזיציות נוספות לאותה זהות קיימת AID 2989585 הוכנסו ישירות לקובץ המקורי בבאץ׳ 100 ונרשמו שם כהעשרה; אין לספור אותן שוב בבאץ׳ 101. AID 2989588 נשאר בבאץ׳ 099; AID 2989589 הוא מפגש אחר עם קהל אחר. כל הפריטים החדשים נשארים Parsed. אין שינוי סטטוס Verified, הרשאות או לוח זמנים. The baseline is the expected post-batch-100 state, not a measured reconciliation result; batch 100 and 101 are to be reconciled as a contiguous chain. Baseline updated to include batch 099's in-place AID 2989588 enrichment and batch 100's AID 2989585 enrichment. נוספה גם איגרת באנגלית AID 2021558 לאחר פתיחת גוף המכתב הציבורי ב-Chabad.org; זהו עד טקסטואלי נפרד, לא תרגום שמנופח כעד עצמאי. נבדקו שורות 274–284, 280–292, 285–287 ו־295–299. הסטטוס נשאר Parsed.",
   "records": [
     {
       "id": "sicha-5710-rosh-chodesh-sivan-aid2989311",
@@ -1474,6 +1486,106 @@
       "primary_secondary_status": "Published unedited Hebrew Sicha transcript; one public text witness; no recording/manuscript comparison.",
       "witness_type": "published_unedited_hebrew_sicha_transcript",
       "translation_status": "הטקסט נבדק בעברית; לא נוספה לו מצגת תרגום כעד עצמאי.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only"
+    },
+    {
+      "id": "letter-5743-16-tammuz-aid2021558",
+      "aid": 2021558,
+      "title": "Dear Rebbe, I've Been Religious for Many Years, but I'm Not Sure Anymore...",
+      "source_class": "Letters",
+      "source_class_detail": "Published English personal correspondence transcript; the page does not label the text as a translation.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "16 Tammuz, 5743 [June 27, 1983]",
+      "date": "June 27, 1983",
+      "date_precision": "calendar_day",
+      "language": "English",
+      "original_language": "English",
+      "context_status": "partial",
+      "summary_researcher": "The letter responds to a recipient considering a major change in religious observance because of strong doubts. It urges caution, further study and consultation with knowledgeable people, and connects the eve of 17 Tammuz with protecting the spiritual integrity of every Jewish home.",
+      "provenance": {
+        "authorship_status": "Chabad.org labels the page as a letter of the Lubavitcher Rebbe; the published body is signed M. Schneerson. The original manuscript/autograph was not inspected.",
+        "signature_status": "The published transcription ends with the signature M. Schneerson; no autograph comparison was performed.",
+        "source_witness": "Chabad.org / The Rebbe's Letters, AID 2021558, public English body.",
+        "transmission_type": "Public English transcription of personal correspondence. The page does not identify the text as a translation; no independent original-language comparison was performed.",
+        "textual_status": "The English body at lines 267–299 was opened and inspected. No manuscript, original letter image, or critical edition was compared.",
+        "editorial_scope": "Paraphrases are limited to the body passages at lines 274–284, 280–292, 285–287 and 295–299; the page title was not used as content evidence.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2021558/jewish/Dear-Rebbe-Ive-Been-Religious-for-Many-Years-but-Im-Not-Sure-Anymore.htm",
+        "accessed": "2026-11-15T20:00:00+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Public English letter body opened; lines 267–299 inspected. The publisher attributes the letter to the Rebbe and the transcription ends with M. Schneerson.",
+        "complete_partial": "partial",
+        "notes": "No original manuscript, autograph, envelope, or critical edition inspected."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only short non-verbatim research paraphrases and source locators were retained; no full letter text copied."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "The Rebbe's Letters",
+          "Correspondence",
+          "16 Tammuz 5743"
+        ],
+        "research_terms": [
+          "religious doubt",
+          "Jewish observance",
+          "consultation",
+          "intensive study",
+          "Sinai revelation",
+          "17 Tammuz",
+          "Jewish home",
+          "inner sanctuary"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק גוף המכתב האנגלי הציבורי ב־Chabad.org AID 2021558 בתאריך 15.11.2026. נפתחו ונבדקו שורות 267–299. העמוד אינו מסמן את הטקסט כתרגום; עם זאת, לא נבדקו אוטוגרף, כתב־יד, מעטפה או מהדורה ביקורתית. כל ארבע הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של מקטעים שנפתחו; אין לייחס את ניסוחי הפרפרזה לרבי כציטוט.",
+      "type": "letter",
+      "collection": "The Rebbe's Letters",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2021558/jewish/Dear-Rebbe-Ive-Been-Religious-for-Many-Years-but-Im-Not-Sure-Anymore.htm",
+      "response_propositions": [
+        "המכתב מערער על החלטת הנמען לוותר על אורח חיים יהודי לאחר שנים רבות, כאשר ההחלטה נשענת על ספקות וחוסר ידע מספק; הוא מדגיש שהמהלך עלול להשפיע גם על משפחתו.",
+        "המכתב ממליץ שלא למהר בצעד משמעותי: לדון בספקות עם אנשים בעלי ידע ולהמשיך בלימוד מעמיק. משל הרפואה משמש להסבר מדוע אדם שאינו מומחה עשוי להסתייע במומחים ולבקש חוות דעת נוספת.",
+        "המכתב מציג את רציפות המסורת מסיני ואת הדמיון במנהגי ישראל לאורך דורות וקהילות כחלק מן הטיעון שלו לאמינות המסורת; זו הנמקה תאולוגית־היסטורית המופיעה במכתב, ולא אימות היסטורי עצמאי של הטענה.",
+        "המכתב קושר את כתיבתו לערב י״ז בתמוז ולזיכרון חורבן בית המקדש, ומפרש את המקדש הפנימי כמצוי בתוך כל יהודי ובכל בית יהודי; מכאן הוא מפיק קריאה לשמור על שלמותו הרוחנית של הבית."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2021558, public English letter body, lines 274–284.",
+        "Chabad.org AID 2021558, public English letter body, lines 280–292.",
+        "Chabad.org AID 2021558, public English letter body, lines 285–287.",
+        "Chabad.org AID 2021558, public English letter body, lines 295–299."
+      ],
+      "proposition_language": "English",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 2021558, public English letter body, lines 274–284.",
+      "evidence_family_id": "letter-5743-16-tammuz-aid2021558",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב־15.11.2026 נפתח ונבדק גוף העמוד הציבורי באנגלית ב-Chabad.org, AID 2021558. נבדקו רק שורות 274–284, 280–292, 285–287 ו־295–299. העמוד מייחס את המכתב לרבי והטקסט מסתיים בחתימה M. Schneerson, אך לא נבדקו אוטוגרף, כתב־יד, מעטפה או מהדורה ביקורתית. לא הועתק טקסט מוגן במלואו. ההקשר חלקי; הפרופוזיציות מתארות את טיעוני המכתב ואינן אימות עצמאי של טענותיו.",
+      "witness_provenance": "Chabad.org / The Rebbe's Letters, AID 2021558, public English body.",
+      "documented_circumstances": "מכתב מ־16 תמוז ה׳תשמ״ג, בתשובה למכתב מ־20 ביוני; העמוד מציין שהמכתב נכתב בערב צום י״ז בתמוז.",
+      "question_or_problem": "כיצד ראוי להתמודד עם ספקות חזקים לגבי שמירת מצוות כאשר נשקל שינוי משמעותי באורח החיים היהודי?",
+      "conditions_or_qualifications": [
+        "המכתב נכתב לנמען מסוים בנסיבות משפחתיות ואישיות מסוימות; אין להציגו כפסיקה הלכתית כללית או כתחליף לייעוץ רבני אישי.",
+        "הטענה על מעמד ההתגלות בסיני היא חלק מהנמקת המכתב; היא לא אומתה במחקר היסטורי עצמאי במסגרת בדיקה זו.",
+        "העמוד אינו מסמן את הטקסט כתרגום, אך בהיעדר כתב־יד או אוטוגרף אין לקבוע שהנוסח הדיגיטלי זהה לכל פרט לנוסח המקורי."
+      ],
+      "audience": "נמען המכתב ומשפחתו; הפנייה היא אישית ולא קהל ציבורי.",
+      "primary_secondary_status": "Published English letter transcription; publisher attribution and printed signature visible; no original manuscript comparison.",
+      "witness_type": "published_english_letter_transcription",
+      "translation_status": "העמוד האנגלי אינו מסומן כתרגום; לא נמצא עד מקורי נוסף להשוואה.",
       "independent_witness": true,
       "translation_of_evidence_family_id": null,
       "rights_status": "copyrighted-link-only"
