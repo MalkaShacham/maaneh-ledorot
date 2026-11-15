@@ -239,6 +239,9 @@ if batch_path:
             canonical_aid=str(alias.get("canonical_aid") or "")
             if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
             if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
+        for recheck in batch_data.get("existing_identity_rechecks",[]):
+            recheck_aid=str(recheck.get("aid") or "")
+            if recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
         audit=[];by_identity={target["key"]:[] for target in target_identities}
         for fp in items:
             try: obj=json.loads(fp.read_text(encoding="utf-8"))
