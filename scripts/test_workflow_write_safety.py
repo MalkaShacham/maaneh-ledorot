@@ -25,7 +25,12 @@ for script in ["reconcile_metrics.py", "reconcile_identity_aliases.py"]:
     text = (ROOT / "scripts" / script).read_text(encoding="utf-8")
     assert policy in text, f"{script}: promotion-ready identity policy schema drift"
 
+for path in WORKFLOWS + [ROOT / ".github/workflows/answer-quality-gate.yml"]:
+    text = path.read_text(encoding="utf-8")
+    assert "python scripts/test_reconcile_status.py" in text, f"{path.name}: status-normalization regression missing"
+
 metrics = (ROOT / "scripts/reconcile_metrics.py").read_text(encoding="utf-8")
+assert "from status_normalization import status_of" in metrics, "metrics reconciliation must use conservative status normalization"
 assert 'items=sorted(' in metrics, "canonical item traversal must be deterministic"
 assert 'batches=sorted(' in metrics, "staging batch traversal must be deterministic"
 
