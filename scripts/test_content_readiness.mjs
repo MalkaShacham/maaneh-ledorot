@@ -686,8 +686,11 @@ const englishNarrative=idx.entries.find(e=>String(e.aid)==='79705');assert(engli
 const yiddishLetter=idx.entries.find(e=>String(e.aid)==='5100585');assert(yiddishLetter&&yiddishLetter.language==='Yiddish','AID 5100585 must retain its Yiddish language label');
 const secretary=idx.entries.find(e=>e.id==='secretariat-letter-5357574-5719-12-sivan'),rebbe5357574=idx.entries.find(e=>String(e.aid)==='5357574');assert(secretary&&rebbe5357574&&secretary.evidence_family_id!==rebbe5357574.evidence_family_id,'AID 5357574 secretariat appendix must remain a separate Evidence Family');assert(String(secretary.primary_secondary_status||'').includes('not the Rebbe'),'secretariat appendix must not be attributed to the Rebbe');
 const dailyRoutineQ='מה הדפוס החוזר באיגרות לגבי סדרי לימוד ותפילה בחיי היום יום?';
+const daily5100391=idx.entries.find(e=>sourceAID(e)==='5100391');
+console.log('DAILY_ROUTINE_5100391_INDEX '+JSON.stringify(daily5100391?{id:daily5100391.id,aid:daily5100391.aid,status:daily5100391.status,canonical_status:daily5100391.canonical_status,has_content_evidence:daily5100391.has_content_evidence,independent_witness:daily5100391.independent_witness,source_url:daily5100391.source_url,evidence_family_id:daily5100391.evidence_family_id,propositions:daily5100391.response_propositions,locators:daily5100391.response_proposition_locators,primary_secondary_status:daily5100391.primary_secondary_status,witness_type:daily5100391.witness_type}:null));
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,dailyRoutineQ,{mode});
+ console.log('DAILY_ROUTINE_MODEL '+mode+' '+JSON.stringify({answerable:m.answerable,reason:m.reason,sources:m.sources?.map(e=>({aid:sourceAID(e),id:e.id,family:e.evidence_family_id,independent:e.independent_witness,has_content:e.has_content_evidence}))}));
  assert(m.answerable,mode+': daily study/prayer pattern must be supported by multiple inspected families');
  assert(m.sources.length>=3,mode+': daily routine synthesis must use at least three source families');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': translations or aliases must not inflate the daily routine family count');
