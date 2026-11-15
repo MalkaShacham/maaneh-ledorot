@@ -435,3 +435,13 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - The reviewed Chabad Library material includes a marginal response (1200710132), a Yiddish public letter (1200710378), a transcription completed from a copy (1200980070) and a transcription completed partly from a photograph (1200710429). The copy/photo witnesses were not inspected. No translation was counted as independent.
 - Ten direct-open limitations were recorded and alternative accessible Chabad.org pages were used in the same run. The known 403 crawler was not retried; no access-control bypass or full-text copying occurred.
 - The corrected reconciliation target is 887 / 853 / 2,823. Actions, test results and Pages publication remain unconfirmed until the corrected commit is processed.
+
+
+## 2026-11-15 — Batch 089: 14 existing Living Torah identities enriched
+
+- Opened 14 item-level Chabad.org/TheRebbe.org pages and inspected the visible JEM/Living Torah publisher synopses. Added one Hebrew, non-verbatim, source-grounded proposition per existing identity: AIDs 335482, 2889264, 4525544, 2349222, 281313, 363469, 2606412, 2946206, 702100, 1974202, 4547216, 2316185, 2920438, 4469446. These are secondary publisher synopses, not transcripts or direct inspection of the audiovisual recordings.
+- Enriched the existing canonical records in place, preserving their prior archive URLs as aliases and adding item-level AIDs/URLs. All 14 remain **Parsed**, partial-context and non-independent; none was promoted to Verified. No new bibliographic identity was created. AID 4057736 was rechecked but not duplicated because it was already enriched in batch 086.
+- Seven Yechidus/audio candidates exposed metadata without a readable transcript and were withheld. The queued “Kfar Chabad and Brooklyn - Healthy Competition” archive entry did not match the opened archive page; the different “Keep On Your Toes” item (AID 1558542) was not relabelled or promoted.
+- No translation was counted as an independent witness. No crawler retry, access-control bypass, full-text copying, or scan-only content verification occurred. The accessible Living Torah item pages were used as the same-run fallback.
+- Expected readiness after reconciliation: **900 answer-eligible unique Evidence Families** (from 886), **852 content-verified** (unchanged), and **2,832 propositions** (from 2,818). These are targets until the reconciliation and tests report actual values.
+- Added regression coverage for all 14 AIDs and a two-item researcher-mode retrieval query. It requires separate item-level citations and explicitly records that publisher synopses are not independent corroborating witnesses.
