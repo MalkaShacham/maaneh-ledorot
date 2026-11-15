@@ -41,11 +41,11 @@ def status_of(d):
     vals=[d.get("pipeline_status"),d.get("verification_status"),d.get("status")]
     if isinstance(p,dict): vals.append(p.get("verification_status"))
     texts=[str(v).strip() for v in vals if v not in (None,"")]
-    if any(re.match(r"^(?:unverified|not verified)\\b",v,re.I) for v in texts):
+    if any(re.match(r"^(?:unverified|not verified)\b",v,re.I) for v in texts):
         return None
     found=[]
     for value in texts:
-        match=re.match(r"^(Verified|Linked|Parsed|Indexed|Discovered)(?:\\b|[;,:])",value,re.I)
+        match=re.match(r"^(Verified|Linked|Parsed|Indexed|Discovered)(?:\b|[;,:])",value,re.I)
         if match:
             token=match.group(1).lower()
             found.append(next(x for x in PIPE if x.lower()==token))
