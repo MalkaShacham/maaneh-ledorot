@@ -694,3 +694,5 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - Added a retrieval tie-breaker: when two same-family items have equal proposition-level relevance, the engine prefers the independent canonical witness over a non-independent presentation. The housewarming/mezuzah regression now requires AID 4872269 and verifies that AID 5357409 is never treated as independent.
 - Batch 104 adds **one canonical source identity**, **zero new Evidence Families**, and **zero new distinct propositions**. Expected metrics remain **1,020 answer-eligible Evidence Families / 854 content-Verified Evidence Families / 3,043 distinct propositions**. This is a canonicalization improvement, not a source-count increase.
 - The reconciliation and quality-gate workflows must still complete against the new commit before these metrics can be described as published.
+
+- Browser cache version was advanced to `batch104-independent-family-priority-v1` in both the site entry point and validation wrapper so GitHub Pages loads the new independent-witness tie-breaker rather than a cached prior engine module.
