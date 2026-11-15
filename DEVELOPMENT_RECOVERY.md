@@ -640,3 +640,6 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - The answer-quality workflow **43755991908** passed normalization, index generation, retrieval, answer synthesis and citation-integrity setup, then stopped on a duplicate top-level test variable declaration in the new batch-102 assertions. The follow-up test renames that variable and updates the historical/current metric assertions appropriately.
 - Corrected contiguous chain: **965/854/2929 → 977/854/2952 → 986/854/2969 → 1001/854/2999 → 1009/854/3017**. Historical batch 096–098 snapshots remain at their previously reconciled 870 values; the corrected baseline begins at batch 099 after the status-normalization adjustment.
 - The bulk reconciliation workflow **43755991938** was still pending without a job at the time of this correction; it syncs latest main before mutation. The Pages build was still running. No publication or final reconciliation is claimed until fresh runs complete.
+
+
+- Test-chain correction: the batch-102 test now expects **2969 propositions** after batch 100 and **2999** after batch 101, because the newly inspected AID 2989585 proposition is stored in its original batch-100 file. This avoids double-counting it in batch 102.

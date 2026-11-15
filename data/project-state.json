@@ -123,14 +123,14 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_102_status_baseline_correction_and_test_fix",
+      "run_status": "pending_after_batch_102_test_metric_chain_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Hourly run 43755991899 on commit 1a75e775 observed answer_eligible=1009, content_verified=854 and propositions=3017 after conservative status normalization; the previous expected 870 was incorrect. Answer-quality run 43755991908 then exposed a duplicate const in the new test block. Both issues are corrected in the follow-up commit; reconciliation and a new commit-bound run are required."
+      "note": "Hourly run 43755991899 on commit 1a75e775 observed answer_eligible=1009, content_verified=854 and propositions=3017 after conservative status normalization; the previous expected 870 was incorrect. Answer-quality run 43755991908 then exposed a duplicate const in the new test block. Both issues are corrected in the follow-up commit; reconciliation and a new commit-bound run are required. The batch-100 in-place enrichment also shifts the test chain: batch 100 expected-after and batch 101 before are 2969 propositions; batch 101 expected-after and batch 102 before are 2999."
     },
     "publication": {
       "status": "pending_after_batch_102_status_baseline_correction",
@@ -176,7 +176,7 @@
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "098",
     "last_batch_summary": "Batch 102: nine new item identities in eight Evidence Families; one existing identity (AID 2989585) enriched in place; 18 new propositions and one additional proposition on the existing identity. No source promoted to Verified. Expected post-reconciliation counts are 1009 answer-eligible / 854 content-Verified / 3017 propositions.",
-    "last_run_note": "AID 4666220 remained a public summary shell; AIDs 553672 (Hebrew) and 553691 (Yiddish) exposed audio/player metadata without transcript bodies. Ten alternative public bodies were inspected: nine new identities and an in-place enrichment of AID 2989585. AIDs 4280029 and 4280144 were excluded as already present; AID 3140253 was excluded as a Hebrew translation of a Yiddish source. AID 5989527 was linked to the same farbrengen Evidence Family as AID 5989563. No crawler retry, access-control bypass or full-text copying. Latest hourly validation run 43755991899 measured 1009/854/3017 after conservative status normalization, not the previously expected 1009/870/3017; the expected chain is corrected to 854. Answer-quality run 43755991908 stopped on a duplicate test variable declaration, now renamed in the follow-up commit.",
+    "last_run_note": "AID 4666220 remained a public summary shell; AIDs 553672 (Hebrew) and 553691 (Yiddish) exposed audio/player metadata without transcript bodies. Ten alternative public bodies were inspected: nine new identities and an in-place enrichment of AID 2989585. AIDs 4280029 and 4280144 were excluded as already present; AID 3140253 was excluded as a Hebrew translation of a Yiddish source. AID 5989527 was linked to the same farbrengen Evidence Family as AID 5989563. No crawler retry, access-control bypass or full-text copying. Latest hourly validation run 43755991899 measured 1009/854/3017 after conservative status normalization, not the previously expected 1009/870/3017; the expected chain is corrected to 854. Answer-quality run 43755991908 stopped on a duplicate test variable declaration, now renamed in the follow-up commit. The follow-up test also aligns the proposition snapshots to 2969 after batch 100 and 2999 after batch 101, reflecting the in-place AID 2989585 enrichment.",
     "last_batch_blocked_count": 3,
     "last_batch_blocked_reason": "AID 4666220 returned a rewritten summary shell; AIDs 553672 and 553691 exposed audio listings without inspectable transcripts. Alternative public Hebrew source bodies were inspected in the same run.",
     "next_work": [
