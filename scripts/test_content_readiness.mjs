@@ -1292,6 +1292,9 @@ for(const aid of batch079Aids){
 assert.equal(idx.entries.find(e=>sourceAID(e)==='5413165').language,'Yiddish');
 assert.equal(idx.entries.find(e=>sourceAID(e)==='5413169').date_precision,'approximate');
 const nonIndependent5357409=idx.entries.find(e=>sourceAID(e)==='5357409');assert(nonIndependent5357409&&nonIndependent5357409.independent_witness===false&&nonIndependent5357409.evidence_family_id==='igrot-letter-5715-11-tevet-aid4872269','AID 5357409 must remain linked to its existing Evidence Family and not count as an independent witness');
+assert.equal(nonIndependent5357409.family_resolution.canonical_item_present_in_repository,true);
+const canonical4872269=idx.entries.find(e=>sourceAID(e)==='4872269');
+assert(canonical4872269&&canonical4872269.independent_witness===true&&canonical4872269.evidence_family_id===nonIndependent5357409.evidence_family_id,'AID 4872269 must be the inspected canonical full-text witness for the shared family');
 const enriched5357409=idx.entries.find(e=>sourceAID(e)==='5357409');
 assert(enriched5357409&&enriched5357409.response_propositions.some(p=>p.includes('מזוזה נאה יותר')&&p.includes('ברכה')),'AID 5357409 must retain the additional bounded mezuzah detail');
 const linked5357571=idx.entries.find(e=>sourceAID(e)==='5357571');
@@ -1305,6 +1308,8 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': the distinct home-and-house-dedication witnesses must support a bounded multi-source answer');
  assert(m.sources.some(e=>sourceAID(e)==='5413165'),mode+': the Yiddish convention letter must be retained');
  assert(m.sources.some(e=>e.evidence_family_id==='igrot-letter-5715-11-tevet-aid4872269'&&e._independent_witness!==false),mode+': the canonical housewarming/mezuzah Evidence Family must be retained without counting its non-independent AID 5357409 presentation as a separate witness');
+ assert(m.sources.some(e=>sourceAID(e)==='4872269'),mode+': the fuller canonical AID 4872269 body must be retrieved');
+ assert(m.sources.every(e=>sourceAID(e)!=='5357409'||e._independent_witness===false),mode+': the shorter AID 5357409 presentation must never be treated as independent');
  assert(m.synthesis&&m.synthesis.topic==='jewish_home_and_house_dedication',mode+': synthesis must explicitly distinguish the two contexts');
  assert(m.synthesis.attribution==='system_synthesis_not_rebbe_quote');
  assert(m.synthesis.claims.length>=2&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length),mode+': each synthesis claim must carry source-level locators');
@@ -1821,12 +1826,13 @@ for(const mode of ['regular','researcher']){
 
 const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
 const reconciliationChain=reconciledProjectState.development_recovery.reconciliation_chain;
-assert.deepEqual(reconciliationChain.map(x=>String(x.batch_id)),['099','100','101','102','103']);
+assert.deepEqual(reconciliationChain.map(x=>String(x.batch_id)),['099','100','101','102','103','104']);
 const batch099Audit=reconciliationChain.find(x=>String(x.batch_id)==='099');
 const batch100Audit=reconciliationChain.find(x=>String(x.batch_id)==='100');
 const batch101Audit=reconciliationChain.find(x=>String(x.batch_id)==='101');
 const batch102Audit=reconciliationChain.find(x=>String(x.batch_id)==='102');
 const batch103Audit=reconciliationChain.find(x=>String(x.batch_id)==='103');
+const batch104Audit=reconciliationChain.find(x=>String(x.batch_id)==='104');
 assert.equal(batch099Audit.batch_file,'data/items/content-research-batch-099-2026-11-15.json');
 assert.equal(batch099Audit.batch_record_count,16);
 assert.equal(batch099Audit.new_source_identity_count,12);
@@ -1846,11 +1852,13 @@ assert.equal(batch100Audit.answer_eligible_selected_count,10);
 assert.equal(batch100Audit.selected_unique_evidence_families,10);
 assert.equal(batch101Audit.answer_eligible_selected_count,15);
 assert.equal(batch101Audit.selected_unique_evidence_families,15);
-assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'103');
+assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'104');
 assert.equal(reconciledProjectState.metrics_integrity.answer_readiness.reconciliation_status,'reconciled');
 assert(!reconciledProjectState.metrics_integrity.answer_readiness.pending_batches.includes('099'));
 assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('101'));
 assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('103'));
+assert(!reconciledProjectState.development_recovery.pending_reconciliation_batches.includes('104'));
+assert.equal(batch104Audit.reconciliation_status,'reconciled');
 assert.equal(batch102Audit.reconciliation_status,'reconciled');
 assert.equal(batch103Audit.reconciliation_status,'reconciled');
 
@@ -2486,6 +2494,29 @@ assert.equal(translatedLetter.original_language,'unknown');
 assert.equal(batch103Data.existing_identity_updates[0].aid,2989585);
 
 // Cross-source synthesis regression: public mission and personal avodah, with claim-level citations.
+const batch104Path='data/items/content-research-batch-104-2026-11-15.json';
+const batch104Data=JSON.parse(await readFile(new URL(batch104Path,root)));
+assert.equal(batch104Data.records.length,1);
+assert.equal(batch104Data.new_source_identities,1);
+assert.equal(batch104Data.existing_identities_enriched,1);
+assert.equal(batch104Data.answer_eligible_source_families_added,0);
+assert.equal(batch104Data.new_response_propositions,0);
+assert.equal(batch104Data.reused_same_family_propositions,3);
+assert.equal(batch104Data.records[0].aid,4872269);
+assert.equal(batch104Data.records[0].evidence_family_id,'igrot-letter-5715-11-tevet-aid4872269');
+assert.equal(batch104Data.records[0].independent_witness,true);
+assert.equal(batch104Data.records[0].status,'Verified');
+assert.equal(batch104Data.records[0].response_propositions.length,3);
+assert.equal(batch104Data.records[0].response_proposition_locators.length,3);
+assert.equal(batch104Data.metrics_expected_after.answer_eligible_unique_sources,1020);
+assert.equal(batch104Data.metrics_expected_after.content_verified_unique_sources,854);
+assert.equal(batch104Data.metrics_expected_after.answer_eligible_propositions,3043);
+assert.equal(batch104Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch104Data.metrics_actual_after,batch104Data.metrics_expected_after);
+assert.deepEqual(batch104Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert(batch104Data.deduplication_check.full_index_scan_available);
+assert.equal(batch104Data.deduplication_check.canonical_identity_collisions.length,0);
+assert.equal(batch104Data.deduplication_check.all_target_identities_answer_eligible,true);
 const missionBalanceQuestion='השווה בין שיחת ט׳ אלול ה׳תשי״ח לבין שיחת כ״ח סיון ה׳תשי״ב: כיצד מתוארת שליחות חינוכית והשפעה על הזולת, ומה מוסיפה השיחה השנייה על הגבלת זמן העסקנות ושמירה על העבודה האישית?';
 const missionEntries=idx.entries.filter(e=>['3008913','4279912'].includes(sourceAID(e)));
 assert.equal(missionEntries.length,2);

@@ -572,6 +572,12 @@
           "target_id": "chabad-letter-5100681",
           "same_evidence_family": false,
           "basis": "Both letters concern a home-building context, but AID 5357409 addresses moving into a new apartment, housewarming and mezuzot, while AID 5100681 acknowledges a donation at the start of a couple's home-building. Different recipients and dates; do not merge Evidence Families or generalize instructions."
+        },
+        {
+          "type": "same_evidence_family_fuller_canonical_printing",
+          "target_id": "chabad-letter-4872269",
+          "same_evidence_family": true,
+          "basis": "The publisher's AID 5357409 note explicitly identifies AID 4872269 as the fuller printing of the same letter."
         }
       ],
       "duplicate_or_parallel_relations": [
@@ -586,11 +592,12 @@
           "aid": 4872269,
           "url": "https://www.chabad.org/therebbe/article_cdo/aid/4872269/jewish/page.htm",
           "evidence_family_id": "igrot-letter-5715-11-tevet-aid4872269",
-          "basis": "Publisher note on AID 5357409 identifies the fuller publication as volume 18, letter ג׳קפב, dated 11 Tevet 5715."
+          "basis": "Publisher note on AID 5357409 identifies the fuller publication as volume 18, letter ג׳קפב, dated 11 Tevet 5715.",
+          "canonical_item_present_in_repository": true
         }
       ],
-      "identity_note": "One dated Hebrew letter identity. The publisher notes a later fuller printing in volume 18, letter ג׳קפב, with a different date; that printing belongs to the same Evidence Family. A translation, scan or reprint is not an independent witness.",
-      "notes": "Volume deliberately omitted because the inspected page contains inconsistent volume metadata (navigation breadcrumb versus lower page label). Later fuller printing is linked to the same Evidence Family; no duplicate witness is counted. Cross-linked to AID 5100681 as a distinct home-building case; same_evidence_family=false. Rechecked 2026-11-14; added a distinct bounded proposition from line 294, without changing the existing Evidence Family. Rechecked public Hebrew body extract on 2026-11-15 (batch 092); existing propositions already cover the inspected passage, so no duplicate proposition was added. Publisher cross-reference confirms this is a shorter presentation of AID 4872269 (vol. 18, letter ג׳קפב, 11 Tevet 5715). Reclassified as a non-independent manifestation of the shared Evidence Family; no second item or family was created.",
+      "identity_note": "Shorter publisher presentation of the letter; the fuller canonical AID 4872269 item is now present in the repository. AID 5357409 remains a non-independent manifestation and is not counted as a separate witness or Evidence Family.",
+      "notes": "Volume deliberately omitted because the inspected page contains inconsistent volume metadata (navigation breadcrumb versus lower page label). Later fuller printing is linked to the same Evidence Family; no duplicate witness is counted. Cross-linked to AID 5100681 as a distinct home-building case; same_evidence_family=false. Rechecked 2026-11-14; added a distinct bounded proposition from line 294, without changing the existing Evidence Family. Rechecked public Hebrew body extract on 2026-11-15 (batch 092); existing propositions already cover the inspected passage, so no duplicate proposition was added. Publisher cross-reference confirms this is a shorter presentation of AID 4872269 (vol. 18, letter ג׳קפב, 11 Tevet 5715). Reclassified as a non-independent manifestation of the shared Evidence Family; no second item or family was created. On 2026-11-15 the full canonical AID 4872269 publisher item was opened, inspected and ingested in batch 104. AID 5357409 remains a non-independent shorter presentation in the same Evidence Family.",
       "epistemic_level": 1,
       "summary_researcher": "האיגרת מתייחסת למעבר של הנמען לדירה חדשה ומציעה לערוך חנוכת הבית, תוך הישענות על מנהג ישראל ועל ביאור המיוחס לאדמו״ר הזקן; היא מזכירה התוועדות חסידית כתועלת בגשמיות וברוחניות. העמוד מתאר סדר מסוים לקביעת המזוזות עם הכניסה לבית ולבדיקת מזוזה אחת לאחר שלושים יום, אך מציין גם שהנוסח נדפס בשלמות רבה יותר באיגרת אחרת ובתאריך שונה; יש לשמר את ההסתייגות ולא להציג את הקטע כפסיקה כללית. במענה המסוים מתואר שלאחר שלושים יום נוטלים מזוזה אחת לבדיקה; אם מחליפים אותה במזוזה נאה יותר, קובעים את החדשה בברכה ומתכוונים להוציא גם את המזוזות שבשאר הדלתות. זהו פרט מתוך מענה אישי היסטורי, ולא פסיקה כללית לכל מקרה.",
       "content_review_batch_id": "079",
@@ -607,11 +614,12 @@
       "independent_witness": false,
       "duplicate_of_aid": 4872269,
       "family_resolution": {
-        "status": "linked_to_same_evidence_family",
+        "status": "canonical_fuller_printing_ingested",
         "canonical_aid": 4872269,
-        "canonical_item_present_in_repository": false,
+        "canonical_item_present_in_repository": true,
+        "canonical_file": "data/items/content-research-batch-104-2026-11-15.json",
         "independent_witness": false,
-        "reason": "The publisher identifies AID 5357409 as a shorter presentation of the same letter later printed more fully as AID 4872269. AID 4872269 is not currently an ingested canonical item; the existing AID 5357409 record carries the shared family ID and is not counted as a separate witness."
+        "reason": "The publisher identifies AID 5357409 as a shorter presentation of the same letter later printed more fully as AID 4872269. The full AID 4872269 publisher body is now ingested; AID 5357409 remains a non-independent alias within the shared Evidence Family."
       }
     },
     {
