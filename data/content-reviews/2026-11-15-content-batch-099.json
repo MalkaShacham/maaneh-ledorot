@@ -103,8 +103,15 @@
       1695044,
       2126206
     ],
-    "full_index_reconciliation": "Pending CI corpus-wide reconciliation. The generated public search index is too large for direct retrieval in this session; do not treat the pre-CI duplicate check as a complete corpus scan.",
-    "translation_rule": "Any translation or reprint of the same source remains in the same Evidence Family and is not an independent witness."
+    "full_index_reconciliation": "Pending final branch CI after metadata-only correction; the public index and uniqueness assertion must confirm exactly one answer-ineligible identity.",
+    "translation_rule": "Any translation or reprint of the same source remains in the same Evidence Family and is not an independent witness.",
+    "duplicate_volume_xiii_identity": {
+      "identity": "id:igrot-kodesh-v13-דתרפא",
+      "canonical_file": "data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json",
+      "duplicate_file": "data/items/library-igrot-kodesh-v13-content-2026-11-05-032.json",
+      "evidence_family_id": "london-chassidus-class-growth-still-insufficient-for-dissemination",
+      "action": "one bibliographic identity retained; duplicate content record linked; scan-only locator does not create content evidence"
+    }
   },
   "limitations": [
     "Nine new sources remain Parsed because only bounded body passages were inspected; full source context, incoming correspondence, manuscripts or audio were not independently checked.",
@@ -112,7 +119,8 @@
     "AID 2987732 quotes a letter by the Previous Rebbe; the quoted statement is not attributed to the Rebbe as author.",
     "AIDs 1695044 and 2126206 are secondary retrospective testimonies, not primary transcripts of the Rebbe's words.",
     "Twelve candidate pages did not expose readable item-level body text and were excluded.",
-    "No new Yiddish body was accessible in this run; the corpus's earlier Yiddish material remains in its existing Evidence Families."
+    "No new Yiddish body was accessible in this run; the corpus's earlier Yiddish material remains in its existing Evidence Families.",
+    "The volume XIII scan/index for ד׳תרפא verifies bibliographic identity and printed-page location only; it does not verify letter content, signature or wording. The earlier content propositions were removed."
   ],
   "records": [
     {
@@ -1111,7 +1119,7 @@
     {
       "identity": "id:igrot-kodesh-v13-דתרפא",
       "canonical_file": "data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json",
-      "note": "User-provided publisher PDF page 464/553 (printed p. תכה) visually inspected. The letter body and secretary closing were checked; no new proposition or family created because the existing identity is already answerable in the readiness test."
+      "note": "Only the bibliographic identity and printed-page locator were verified from the user-supplied volume index/scan. The letter body and signature were not used as content evidence; the duplicate content record is demoted to metadata-only."
     }
   ],
   "metrics_before": {
@@ -1124,6 +1132,30 @@
     "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2943
   },
-  "metrics_actual_after": null,
-  "reconciliation_status": "pending"
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 969,
+    "content_verified_unique_sources": 853,
+    "answer_eligible_propositions": 2941
+  },
+  "reconciliation_status": "reconciled_with_variance",
+  "status": "reconciled_with_variance",
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": -1,
+    "content_verified_unique_sources": -17,
+    "answer_eligible_propositions": -2
+  },
+  "scan_only_verification_used": true,
+  "scan_only_metadata_rechecks": 1,
+  "source_body_inspection_method": "Public item-level bodies were inspected for the nine new identities. The existing volume XIII identity was checked only against the user-supplied volume index/scan locator (PDF p.464/553, printed p.תכה); this confirms identity and page location only, not letter content.",
+  "fallback_source_results": [],
+  "metadata_only_corrections": [
+    {
+      "identity": "id:igrot-kodesh-v13-דתרפא",
+      "canonical_file": "data/items/library-igrot-kodesh-v13-verified-2026-10-02-001.json",
+      "duplicate_file": "data/items/library-igrot-kodesh-v13-content-2026-11-05-032.json",
+      "action": "Duplicate content record demoted to Linked/metadata-only; the index/scan establishes only identity and page location; no propositions retained.",
+      "evidence_family_id": "london-chassidus-class-growth-still-insufficient-for-dissemination"
+    }
+  ],
+  "note": " The volume XIII scan-only item was corrected to metadata-only; its prior three propositions no longer count. Corrected post-batch-099 totals are 969 answer-eligible families, 853 content-Verified families and 2,941 propositions; variance is recorded rather than hidden."
 }
