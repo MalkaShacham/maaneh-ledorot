@@ -12,17 +12,17 @@
     "reviewed_at": "2026-11-15T19:30:52+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending",
-    "reviewed_item_count": 10,
-    "source_bodies_inspected": 9,
-    "source_body_pages_opened": 10,
+    "reviewed_item_count": 11,
+    "source_bodies_inspected": 10,
+    "source_body_pages_opened": 11,
     "metadata_only_items_rechecked": 1,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 9,
-    "existing_identities_enriched": 0,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 1,
     "new_response_propositions": 14,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 14,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 16,
     "answer_eligible_source_families_added": 9,
     "independent_witnesses_added": 9,
     "non_independent_presentations_added": 0,
@@ -48,16 +48,28 @@
     "scan_only_verification_used": false,
     "metrics_before": {
       "answer_eligible_unique_sources": 977,
-      "content_verified_unique_sources": 870,
+      "content_verified_unique_sources": 878,
       "answer_eligible_propositions": 2950
     },
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 986,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2964
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2966
     },
     "metrics_actual_after": null,
-    "reconciliation_variance": null
+    "reconciliation_variance": null,
+    "existing_identity_updates": [
+      {
+        "aid": 2989585,
+        "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+        "action": "enriched_existing_identity_in_original_batch_file",
+        "propositions_added": 2,
+        "proposition_locators": [
+          "he.chabad.org AID 2989585, גוף השיחה שורות 222–233.",
+          "he.chabad.org AID 2989585, גוף השיחה שורות 214–217 ו־245."
+        ]
+      }
+    ]
   },
   "previous_manual_web_review": {
     "batch_id": "099",
@@ -599,11 +611,11 @@
       }
     ]
   },
-  "manual_web_review_note": "Manual public source-body inspection remains the semantic acquisition path. The runner-side Chabad.org crawler stays disabled after HTTP 403. Batch 099 adds twelve inspected BeitChabad text identities, enriches AID 3316719 in place, and reconfirms the shared audio-only Evidence Family for AIDs 553672/553673. Four Hebrew pages are translations of Yiddish-edited texts and are not independent witnesses. Full-index scan also found an older bulk-indexed duplicate presentation of AID 553673; it has now been linked to the same Evidence Family as the batch-069 record, with no content promotion.",
+  "manual_web_review_note": "המדדים הנוכחיים הם הערכים האחרונים שב-data/public-metrics.json; batch 100 עדיין pending reconciliation. metrics_expected_after אינו מדד בפועל עד להרצת reconciliation מלאה.",
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 986,
-    "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2964
+    "answer_eligible_unique_sources": 977,
+    "content_verified_unique_sources": 878,
+    "answer_eligible_propositions": 2950
   },
   "last_manual_review_at": "2026-11-15T19:30:52+02:00",
   "runner_acquisition_policy": {
