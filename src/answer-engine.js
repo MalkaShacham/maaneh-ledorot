@@ -3,6 +3,7 @@ const STOP=new Set('מה למה מדוע הרבי אמר אומר אומרים �
 // Normalize Hebrew clitic prefixes so "מפרה" and "באיגרת" match documented content.
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s)||s==='מספר')return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
+ 'לימוד תורה והשפעתה על חיי היום יום':['לימוד תורה למעשה','לימוד תורה לעשייה','לימוד חסידות יומי','רבע שעה של לימוד חסידות','השפעת הלימוד על היום כולו','תורה וגמילות חסדים','קירוב יהודים באמצעות תורה','Torah study into action','daily Chassidic study'],
  חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch','קינדער'],
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
  בריאות:['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
@@ -1006,6 +1007,17 @@ function supportsEducationalInfluenceActionProposition(proposition){
  const body=norm(proposition);
  return ['השפעה','אדם יחיד','מעגלים נוספים','חינוך','ילדים','פעולה ממשית','פעולה','מעשה','עשייה','מאמץ','דיבור','מילים'].some(term=>body.includes(term));
 }
+function torahStudyToActionCategory(proposition){
+ const t=norm(proposition);
+ if(t.includes('לימוד התורה')&&(t.includes('לידי מעשה')||t.includes('לפעול בעולם')))return 'learning_to_action';
+ if(t.includes('רבע שעה')&&t.includes('לימוד חסידות')&&t.includes('24 שעות'))return 'daily_chassidic_study';
+ if(t.includes('אהבת ישראל')&&t.includes('גמילות חסדים')&&t.includes('דיבור'))return 'outreach_and_gemilut';
+ if(t.includes('שמחה ובפנימיות')&&t.includes('תורה ומצוות'))return 'joy_and_inwardness';
+ if(t.includes('זהירות מיוחדת')&&t.includes('לימוד התורה')&&t.includes('תפילה'))return 'learner_self_scrutiny';
+ return null;
+}
+function supportsTorahStudyToActionProposition(proposition){return !!torahStudyToActionCategory(proposition);}
+function supportsTorahStudyToActionSource(source){return arr(source?.response_propositions).some(supportsTorahStudyToActionProposition);}
 function supportsEducationalInfluenceActionSource(source){
  const body=norm(arr(source?.response_propositions).join(' '));
  const influence=body.includes('השפעה')&&(body.includes('אדם יחיד')||body.includes('מעגלים נוספים'));
@@ -1207,6 +1219,38 @@ function buildTzedakahSynthesis(selected){
    'בחלק מהפריטים מדובר בתשובות מזכירות בשם הרבי; חתימה אוטוגרפית והמכתבים הנכנסים לא נבדקו.',
    'הסינתזה מוגבלת לתוכן שנבדק; היא אינה פסיקה הלכתית או ייעוץ פיננסי.'
   ]
+ };
+}
+function buildTorahStudyToActionSynthesis(selected){
+ const categories=['learning_to_action','daily_chassidic_study','outreach_and_gemilut','joy_and_inwardness','learner_self_scrutiny'];
+ const basis=[];
+ selected.forEach((e,index)=>{
+  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  const props=arr(e._supporting_propositions).filter(p=>!!torahStudyToActionCategory(p));
+  if(!props.length)return;
+  const propositions=props.map(p=>{
+   const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());
+   return{text:String(p),category:torahStudyToActionCategory(p),source_locator:arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null};
+  });
+  basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,date:e.date||null,context_status:e.context_status||'unknown',provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,primary_secondary_status:e.primary_secondary_status||null,propositions});
+ });
+ const claims=categories.map(category=>{
+  const rows=basis.filter(b=>b.propositions.some(p=>p.category===category));
+  const sourceNumbers=[...new Set(rows.map(b=>b.source_number))];
+  const sourceLocators=rows.flatMap(b=>b.propositions.filter(p=>p.category===category).map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator));
+  return{topic:category,text:rows.flatMap(b=>b.propositions.filter(p=>p.category===category).map(p=>p.text)).join(' '),source_numbers:sourceNumbers,evidence_family_ids:[...new Set(rows.map(b=>b.evidence_family_id).filter(Boolean))],source_locators:sourceLocators};
+ });
+ if(claims.some(c=>!c.source_numbers.length||!c.source_locators.length))return null;
+ const sourceNumbers=[...new Set(claims.flatMap(c=>c.source_numbers))],usedBasis=basis.filter(b=>sourceNumbers.includes(b.source_number));
+ const evidenceFamilies=[...new Set(usedBasis.map(b=>b.evidence_family_id).filter(Boolean))];
+ if(sourceNumbers.length<5||evidenceFamilies.length<5||usedBasis.some(b=>!b.propositions.length||b.propositions.some(p=>!p.source_locator)))return null;
+ return{
+  kind:'cross_family_research_synthesis',topic:'torah_study_to_daily_action',
+  attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',
+  text:'בחמש שיחות נפרדות נידונים ממדים שונים של הקשר בין לימוד תורה לחיי המעשה: מעבר מן הלימוד לפעולה בעולם; השפעת לימוד חסידות על סדר היום; שילוב הפצת תורה עם גמילות חסדים; קבלה מתוך שמחה ופנימיות; וזהירותו האישית של הלומד. אלה הקשרים מתקופות ומנסיבות שונות, ולא נוסחה אחת שנאמרה בשיחה אחת.',
+  source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,
+  method:'Bounded thematic synthesis across five distinct Hebrew published unedited talk-transcript Evidence Families. Each category is tied to one inspected proposition and its item-level body locator; no translation is counted as an independent witness.',
+  limits:['הניסוח הוא סינתזה מחקרית של המערכת בלבד; אינו ציטוט ואינו ייחוס של אמירה מסכמת לרבי.','השיחות נמסרו בתקופות ובהקשרים שונים; אין להסיק מהן שיטה אחידה או כלל מחייב לכל אדם.','כל חמשת התעתיקים מסומנים ״בלתי מוגה״; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים.','הטענות מוגבלות לפרופוזיציות ולמיקומי הגוף המצורפים; אין להסיק תוצאות שלא תועדו.']
  };
 }
 function supportsJewishHomeSynthesisProposition(p){
@@ -1498,11 +1542,12 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
  const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
  const tzedakahSynthesisQuestion=understanding.query.includes('צדקה לאורך השנה')&&(['מעשר','חומש','חלוקת תרומות'].some(term=>understanding.query.includes(term)));
+ const torahStudyToActionQuestion=understanding.query.includes('לימוד תורה')&&understanding.query.includes('מעשה')&&(understanding.query.includes('השפעה')||understanding.query.includes('חיי היום יום')||understanding.query.includes('עשייה'));
  const earlyChildhoodEducationQuestion=isEarlyChildhoodEducationQuestion(understanding.query);
  const educationYouthGuidanceQuestion=isEducationYouthGuidanceQuestion(understanding.query)&&!earlyChildhoodEducationQuestion;
  const teshuvahLevelsQuestion=isTeshuvahLevelsQuestion(understanding.query);
- if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
- if(!usable.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
+ if((tzedakahSynthesisQuestion||torahStudyToActionQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
+ if(!usable.length&&!torahStudyToActionQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const shmittaFruitReferralQuestion=understanding.query.includes('פירות שביעית')&&understanding.query.includes('נכרים')&&understanding.query.includes('גדולי ההוראה');
@@ -1528,6 +1573,21 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   answerEvidence=[...byFamily.values()].slice(0,8);
   answerEvidence.forEach(e=>{const k=familyKey(e);if(k)tzedakahFamilies.add(k);});
   if(tzedakahFamilies.size<3)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_tzedakah_families',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות איגרות נפרדות עם תמציות צדקה שנבדקו מול גוף הפרסום.'],debug_tzedakah:{content_count:tzedakahContentIndex.length,direct_count:directTzedakah.length,sample:tzedakahContentIndex.slice(0,24).map(e=>({aid:e.aid,id:e.id,status:e.status,independent_witness:e.independent_witness,_independent_witness:e._independent_witness,translation_of:e.translation_of_evidence_family_id,source_class:e.source_class,witness_type:e.witness_type,family:familyKey(e),classification:classifyWitness(e)}))}};
+ }
+ else if(torahStudyToActionQuestion){
+  const requiredCategories=['learning_to_action','daily_chassidic_study','outreach_and_gemilut','joy_and_inwardness','learner_self_scrutiny'];
+  const preferredAids=['5989363','5989343','5959558','4313175','4280330'];
+  const candidates=index.filter(e=>e.has_content_evidence===true&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&supportsTorahStudyToActionSource(e));
+  const rank=e=>{const i=preferredAids.indexOf(String(e.aid||''));return i<0?99:i;};
+  const ordered=[...candidates].sort((a,b)=>rank(a)-rank(b));
+  const byCategory=new Map();
+  for(const e of ordered)for(const p of arr(e.response_propositions)){
+   const category=torahStudyToActionCategory(p);
+   if(requiredCategories.includes(category)&&!byCategory.has(category))byCategory.set(category,{...e,_supporting_propositions:[p]});
+  }
+  const missing=requiredCategories.filter(category=>!byCategory.has(category));
+  if(missing.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_torah_study_action_families',claims:[],sources:[...byCategory.values()],answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות שיחה נפרדות עם תמציות בדוקות לחמשת ממדי הלימוד והמעשה. חסר: '+missing.join(', ')]};
+  answerEvidence=requiredCategories.map(category=>byCategory.get(category));
  }
  else if(educationInfluenceActionQuestion){answerEvidence=usable.filter(e=>supportsEducationalInfluenceActionSource(e));}
  else if(fordLetterQuestion){answerEvidence=usable.filter(e=>supportsFordLetterSource(e));}
@@ -1615,7 +1675,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(lodYeshivaStudyTravelQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsLodYeshivaStudyTravelSource(b))-Number(supportsLodYeshivaStudyTravelSource(a)));}
  if(shmittaFruitReferralQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsShmittaFruitReferralSource(b))-Number(supportsShmittaFruitReferralSource(a)));}
  if(dailyStudyPrayerQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a)||propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score);}
- const queryBudget=earlyChildhoodEducationQuestion?{...budget,sources:Math.max(budget.sources,12),claims:Math.max(budget.claims,12)}:teshuvahLevelsQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:educationYouthGuidanceQuestion?{...budget,sources:Math.max(budget.sources,3),claims:Math.max(budget.claims,3)}:jewishHomeSynthesisQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:educationInfluenceActionQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:fordLetterQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:yiddishMelodyQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:wellspringsDisseminationQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:studyFarmingComparisonQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:lodYeshivaStudyTravelQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:shmittaFruitReferralQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,20),claims:Math.max(budget.claims,20)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion||tzedakahSynthesisQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
+ const queryBudget=torahStudyToActionQuestion?{...budget,sources:Math.max(budget.sources,5),claims:Math.max(budget.claims,5)}:earlyChildhoodEducationQuestion?{...budget,sources:Math.max(budget.sources,12),claims:Math.max(budget.claims,12)}:teshuvahLevelsQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:educationYouthGuidanceQuestion?{...budget,sources:Math.max(budget.sources,3),claims:Math.max(budget.claims,3)}:jewishHomeSynthesisQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:educationInfluenceActionQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:fordLetterQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:yiddishMelodyQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:wellspringsDisseminationQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:studyFarmingComparisonQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:lodYeshivaStudyTravelQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:shmittaFruitReferralQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,20),claims:Math.max(budget.claims,20)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion||tzedakahSynthesisQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
  const candidates=dailyStudyPrayerQuestion?prioritizeDailyRoutineCandidates(answerEvidence,queryBudget.sources):answerEvidence.slice(0,queryBudget.sources),synthesized=synthesizeClaims(candidates,understanding,queryBudget.claims),initialCoverage=coverageFor(candidates,understanding);
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized);
@@ -1662,7 +1722,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   }
  }
  const coverage=coverageFor(selected,understanding);
- const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=earlyChildhoodEducationQuestion?buildEarlyChildhoodEducationSynthesis(selected):teshuvahLevelsQuestion?buildTeshuvahLevelsSynthesis(selected):educationYouthGuidanceQuestion?buildEducationYouthGuidanceSynthesis(selected):studyFarmingComparisonQuestion?buildStudyFarmingSynthesis(selected):dailyStudyPrayerQuestion?buildDailyRoutineSynthesis(selected):tzedakahSynthesisQuestion?buildTzedakahSynthesis(selected):jewishHomeSynthesisQuestion?buildJewishHomeSynthesis(selected):youthEducationStudyQuestion?buildYouthEducationStudySynthesis(selected):buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
+ const base={mode:answerMode,presentation,understanding,answerable:true,reason:null,claims,sources:selected,answered_well:coverage.covered,insufficient_evidence:coverage.missing};const synthesis=torahStudyToActionQuestion?buildTorahStudyToActionSynthesis(selected):earlyChildhoodEducationQuestion?buildEarlyChildhoodEducationSynthesis(selected):teshuvahLevelsQuestion?buildTeshuvahLevelsSynthesis(selected):educationYouthGuidanceQuestion?buildEducationYouthGuidanceSynthesis(selected):studyFarmingComparisonQuestion?buildStudyFarmingSynthesis(selected):dailyStudyPrayerQuestion?buildDailyRoutineSynthesis(selected):tzedakahSynthesisQuestion?buildTzedakahSynthesis(selected):jewishHomeSynthesisQuestion?buildJewishHomeSynthesis(selected):youthEducationStudyQuestion?buildYouthEducationStudySynthesis(selected):buildPatternSynthesis(selected,understanding);if(synthesis)base.synthesis=synthesis;
  if(answerMode==='researcher'){const witnessClasses=selected.reduce((a,e)=>(a[classifyWitness(e)]=(a[classifyWitness(e)]||0)+1,a),{});const allEvidenceFamilies=new Set(selected.map(familyKey).filter(Boolean)),selectedIndependentFamilies=new Set(selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean)),analysis=researcherAnalysis(selected,claims),independentWitnesses=selected.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').length,derivedNonIndependent=selected.length-independentWitnesses;base.research={evidence_families:allEvidenceFamilies.size,independent_evidence_families:selectedIndependentFamilies.size,evidence_integrity:{independent_witnesses:independentWitnesses,derived_non_independent:derivedNonIndependent},verified_sources:selected.filter(e=>e.status==='Verified').length,partial_context_sources:selected.filter(e=>e.context_status==='partial').length,periods:[...new Set(selected.map(e=>e.date).filter(Boolean))],audiences:[...new Set(selected.flatMap(e=>arr(e.audience)).filter(Boolean))],source_classes:[...new Set(selected.map(e=>e.source_class).filter(Boolean))],languages:[...new Set(selected.map(e=>e.language).filter(Boolean))],witness_classes:witnessClasses,pipeline_statuses:[...new Set(selected.map(e=>e.status).filter(Boolean))],coverage,tensions:findTensions(claims),evidence_map:claims.map((c,i)=>({claim_number:i+1,claim:c.text,source_numbers:c.source_numbers,evidence_family_ids:c.evidence_family_ids,documented_circumstances:c.documented_circumstances,conditions_or_qualifications:c.conditions_or_qualifications,audiences:c.audiences,witnesses:c.witnesses})),cases:analysis.cases,distinctions:analysis.distinctions,pattern_synthesis:synthesis||null,witnesses:selected.map(e=>({family:familyKey(e),provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,proposition_source_locator:e.proposition_source_locator||null,proposition_locators:arr(e.response_proposition_locators).filter(Boolean),context_status:e.context_status||'unknown',language:e.language||null,witness_class:classifyWitness(e),primary_secondary_status:e.primary_secondary_status||null,duplicate_or_parallel_relations:e.duplicate_or_parallel_relations||[]}))};}
  return base;
 }
