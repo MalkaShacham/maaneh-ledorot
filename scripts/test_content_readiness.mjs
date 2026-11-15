@@ -1060,9 +1060,7 @@ for(const aid of batch096Aids){
 }
 assert.equal(batch096Families.size,9,'each dated Hayom Yom entry must retain its own Evidence Family');
 assert(!idx.entries.some(e=>sourceAID(e)==='4666220'&&e.has_content_evidence===true),'blocked AID 4666220 must not enter answer evidence');
-assert.equal(metrics.answer_eligible_unique_sources,948);
-assert.equal(metrics.content_verified_unique_sources,870);
-assert.equal(metrics.answer_eligible_propositions,2906);
+// Cumulative metrics are asserted once against the live normalized index above; do not freeze a historical batch total here.
 
 
 
@@ -1582,9 +1580,7 @@ const held387881=idx.entries.find(e=>sourceAID(e)==='387881');
 assert(held387881&&!held387881.answer_eligible&&held387881.date_precision==='unknown','conflicting-date item must remain non-answerable');
 assert(queue.records.some(e=>String(e.aid||'')==='387881'||String(e.key||'').endsWith('387881')),'date-conflict item must remain in the review queue');
 assert(queue.records.every(e=>!batch086Aids.includes(String(e.aid||''))&&!batch086Aids.some(a=>String(e.key||'').endsWith(a))),'answer-eligible batch 086 items must leave the review queue');
-assert.equal(metrics.answer_eligible_unique_sources,887);
-assert.equal(metrics.content_verified_unique_sources,853);
-assert.equal(metrics.answer_eligible_propositions,2823);
+// Historical batch-086 counts are not the current corpus totals; the live-index assertions at the top are authoritative.
 const queenQuestion='מה מתעד תקציר Living Torah על אסתר המלכה, הדסה וגאווה יהודית?';
 const queenModel=buildAnswerModel(idx.entries,queenQuestion,{mode:'regular'});
 assert(queenModel.answerable&&queenModel.sources.some(e=>sourceAID(e)==='363474'));
