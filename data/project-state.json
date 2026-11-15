@@ -93,16 +93,16 @@
         "answer_eligible_propositions": 2709
       },
       "actual_after": null,
-      "reconciliation_status": "pending",
+      "reconciliation_status": "pending_reconciliation",
       "before": {
-        "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 2929
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 1020,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3042
+        "answer_eligible_propositions": 3043
+      },
+      "expected_after": {
+        "answer_eligible_unique_sources": 1033,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3070
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -117,7 +117,9 @@
         "100",
         "101",
         "102",
-        "103"
+        "103",
+        "104",
+        "105"
       ],
       "baseline_correction": "The prior 878 content-Verified count was a false positive: eight batch-096 provenance.verification_status strings said 'no promotion to Verified', which status_of() matched as Verified. The records remain Parsed; after neutralizing the phrase, the correct content-Verified baseline is 870."
     },
@@ -173,20 +175,14 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "103",
+    "current_batch": "105",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "098",
     "last_batch_summary": "Batch 103: 12 new source presentations across 11 Evidence Families (nine original Hebrew Sicha/Maamar bodies, two non-independent translations of one Yiddish talk, and one English translated letter); one existing identity AID 2989585 enriched in place; 24 new propositions plus one in-place enrichment. All new records remain Parsed; no Verified promotion.",
     "last_run_note": "Seven media/audio pages (AIDs 554871, 555023, 555030, 555044, 555045, 555046, 554661) exposed no readable transcript body. The linked original Yiddish transcript for AID 4418266 on HebrewBooks returned HTTP 403; no bypass was attempted. In the same run, 12 alternative item-level bodies were inspected: nine original Hebrew texts, a Hebrew and English presentation of the same Yiddish Simchat Torah talk (AIDs 3008869 and 4418266, one Evidence Family), and an English translated letter (AID 2277093). Existing AID 2989585 was enriched in place from newly opened lines 285–291. Added 24 new source-grounded paraphrases plus one existing-identity proposition, all with claim-level locators, provenance, scope and limitations. No search snippet was used as content, no full copyrighted text was copied, no crawler retry or access-control bypass, and no status promotion. CI audit also corrected the historical batch-096 assertion to its reconciled snapshot 948/870/2906; batch 098 and later remain on the conservative 854 baseline.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "The original Yiddish transcript link returned HTTP 403; seven other candidates exposed media/audio metadata only without transcript bodies.",
-    "next_work": [
-      "Reconcile batches 099–103 in sequence. The in-place AID 2989585 proposition stored in batch 100 shifts the expected chain by +1 proposition from batch 100 onward.",
-      "Verify the post-batch-103 result against 1020 answer-eligible Evidence Families / 854 content-Verified families / 3042 propositions only if the full canonical scan reports zero collisions and zero missing identities.",
-      "Run test_content_readiness.mjs, Answer Quality Gate and hourly corpus pipeline; inspect job logs and any remaining failures.",
-      "Confirm the generated public search index, public metrics and GitHub Pages deployment after successful reconciliation.",
-      "Keep audio-only and blocked Yiddish candidates out of answer evidence until inspectable source text is available; do not retry the blocked crawler."
-    ],
+    "next_work": "Reconcile batches 099–105, run content-readiness and researcher-mode regressions, then verify Actions and Pages.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -727,14 +723,18 @@
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
       "AID 2189943: transcription without accessible original; keep out of answer-eligible corpus.",
       "English publisher presentations and Hebrew free translation from Yiddish are non-independent; do not count as corroborating witnesses.",
-      "Batch 096: nine original-language Hayom Yom entries remain Parsed and partial-context; same-page English renderings are not independent witnesses. AID 1273962 has proposition-level locators at body lines 283–285."
+      "Batch 096: nine original-language Hayom Yom entries remain Parsed and partial-context; same-page English renderings are not independent witnesses. AID 1273962 has proposition-level locators at body lines 283–285.",
+      "AID 4666220: public reader Internal Error; no body or bypass.",
+      "AID 4783876: Yiddish melody-letter reader Internal Error; alternate Yiddish Hayom Yom AID 3315445 inspected."
     ],
     "pending_reconciliation_batches": [
       "099",
       "100",
       "101",
       "102",
-      "103"
+      "103",
+      "104",
+      "105"
     ],
     "last_reconciliation_pending": true
   }

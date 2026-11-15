@@ -1483,7 +1483,7 @@ function retainCitedSources(selected,claims){
 }
 export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
- const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1,maxSources:budget.sources}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
+ const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1,limit:budget.sources}),usable=hits.filter(e=>e._supporting_propositions?.length||arr(e.response_propositions).some(p=>propositionSupportsQuery(p,understanding))),families=new Set(usable.filter(e=>e._independent_witness!==false&&classifyWitness(e)!=='derived').map(familyKey).filter(Boolean));
  const tzedakahSynthesisQuestion=understanding.query.includes('צדקה לאורך השנה')&&(['מעשר','חומש','חלוקת תרומות'].some(term=>understanding.query.includes(term)));
  const earlyChildhoodEducationQuestion=isEarlyChildhoodEducationQuestion(understanding.query);
  const educationYouthGuidanceQuestion=isEducationYouthGuidanceQuestion(understanding.query)&&!earlyChildhoodEducationQuestion;
@@ -1637,7 +1637,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
    if(e.independent_witness===true&&selected.filter(x=>x.independent_witness===true).length<4)addSource(e,false);
   }
   if(answerMode==='researcher'){
-   const translations=answerEvidence.filter(e=>supportsWellspringsDisseminationSource(e)&&!!e.translation_of_evidence_family_id);
+   const translations=index.filter(e=>e&&e.has_content_evidence===true&&e.proposition_origin==='source_grounded_paraphrase'&&e.proposition_verbatim===false&&e.proposition_verification==='source_text_inspected'&&supportsWellspringsDisseminationSource(e)&&!!e.translation_of_evidence_family_id).sort((a,b)=>String(a.translation_of_evidence_family_id).localeCompare(String(b.translation_of_evidence_family_id))||String(a.id||a.aid||'').localeCompare(String(b.id||b.aid||'')));
    const translationFamilies=new Set();
    for(const e of translations){
     const family=String(e.translation_of_evidence_family_id||familyKey(e)||'');

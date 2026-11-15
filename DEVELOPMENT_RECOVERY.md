@@ -698,3 +698,18 @@ A retrieval regression was identified: a provenance caveat saying that a secreta
 - Browser cache version was advanced to `batch104-independent-family-priority-v1` in both the site entry point and validation wrapper so GitHub Pages loads the new independent-witness tie-breaker rather than a cached prior engine module.
 
 - The quality gate exposed a researcher-mode budget mismatch: `MODE_BUDGETS.researcher.sources` was 24, but `retrieveEvidence` still used its default cap. The engine now passes `maxSources: budget.sources`, allowing the existing wellsprings-specific researcher path to retain two relevant English translations from distinct Evidence Families while keeping both marked non-independent. The regression remains explicit; this does not increase the independent-family count.
+
+
+## 2026-11-15 — Batch 105 source-body review and researcher retrieval repair
+
+Batch 105 adds **14 new source identities** across **13 Evidence Families**, enriches existing AID 2988877 in place with two additional propositions, and adds **25 new propositions** plus **2 propositions to the existing identity**. All new and enriched records remain **Parsed**; no source was promoted to Verified.
+
+Language coverage: 12 Hebrew, 1 English, 1 Yiddish. Document types include Sichot, an R"D/farbrengen report, Maamarim, correspondence, telegrams and a Yiddish Hayom Yom entry. AID 4280038 (Maamar) and AID 4280039 (Sicha) are separate publication identities from the same Shabbat Beshalach farbrengen and share one Evidence Family. The English rendering printed alongside the Yiddish Hayom Yom text at AID 3315445 is not a separate witness.
+
+The body-level review inspected 16 accessible pages: 14 new identities, existing AID 2988877, and translated presentation AID 4279874. AID 4279874 was not ingested as a separate identity because its Hebrew page notes that the text was edited in English and the English original was not separately inspected. AID 4666220 and Yiddish melody-letter AID 4783876 returned Internal Error in the public reader; no crawler retry or access-control bypass was attempted. Alternative accessible source bodies were inspected in the same run. No full copyrighted text was copied.
+
+Expected answer-readiness chain after batch 104: 1,020 answer-eligible unique sources, 854 content-verified unique sources, 3,043 propositions. Batch 105 expects **1,033 / 854 / 3,070**. The current public-metrics.json (977 / 878 / 2,950) and project-state.json still reflect an older reconciliation point; the full canonical scan and reconciliation of pending batches 099–105 are required before those values are treated as actual. content_verified_unique_sources is expected to remain unchanged because no Verified status was added.
+
+The last Answer Quality Gate and Hourly Corpus Maintenance runs failed at the researcher-mode regression requiring two English translation presentations from distinct underlying Evidence Families. The cause was the special wellsprings branch searching only the truncated answerEvidence subset. The engine now selects eligible translated presentations from the full corpus index, deduplicates them by translation_of_evidence_family_id, and keeps them marked non-independent. The retrieval budget parameter was also corrected from maxSources to the supported limit key. Cache versions were bumped. Tests now cover batch 105, Yiddish and English retrieval, same-family deduplication, and cross-source diaspora synthesis with claim-level locators.
+
+At commit time batch 105 is pending reconciliation. The hourly schedule, workflow triggers, audience, and repository permissions were not changed.
