@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-15",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -60,7 +60,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "reconciled_pending_commit",
+    "status": "pending_after_batch_089",
     "source": "data/public-metrics.json",
     "generated": "2026-11-15",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -88,14 +88,14 @@
       },
       "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 876,
+        "answer_eligible_unique_sources": 886,
         "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2797
+        "answer_eligible_propositions": 2818
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 887,
-        "content_verified_unique_sources": 853,
-        "answer_eligible_propositions": 2823
+        "answer_eligible_unique_sources": 900,
+        "content_verified_unique_sources": 852,
+        "answer_eligible_propositions": 2832
       },
       "actual_delta": {
         "answer_eligible_unique_sources": 10,
@@ -111,17 +111,17 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_088_reconciliation_correction",
+      "run_status": "pending_after_batch_089",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "First batch-088 reconciliation found two duplicate Chabad Library identities and one existing English item missing has_content_evidence=true. The aliases are now linked, two excerpt-only items downgraded to Parsed, and AID 1875534 promoted after body inspection. Re-run reconciliation and quality tests."
+      "note": "Batch 089 adds 14 Parsed, non-independent publisher-synopsis propositions to existing identities. The answer-quality and content-readiness workflows must run on the resulting main commit."
     },
     "publication": {
-      "status": "pending_post_correction_pages_check",
+      "status": "pending_after_batch_089",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-14"
@@ -160,65 +160,55 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "2026-11-15-content-batch-088",
+    "current_batch": "2026-11-15-content-batch-089",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "087",
+    "last_completed_batch": "089",
     "last_batch_summary": {
-      "batch_id": "088",
-      "batch_file": "data/items/content-research-batch-088-2026-11-15.json",
+      "batch_id": "089",
+      "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
       "generated": "2026-11-15",
-      "reviewed_item_count": 13,
-      "source_bodies_inspected": 13,
-      "new_source_identities": 10,
-      "duplicate_alias_identities": 2,
-      "existing_identities_enriched": 3,
-      "new_response_propositions": 20,
-      "existing_response_propositions_added": 1,
-      "existing_response_propositions_promoted_to_answer_eligible": 5,
-      "answer_eligible_source_families_added": 11,
-      "independent_witnesses_added": 7,
-      "non_independent_presentations_added": 3,
-      "content_verified_unique_sources_added": 3,
-      "content_verified_unique_sources_downgraded": 2,
+      "reviewed_item_count": 23,
+      "source_bodies_inspected": 14,
+      "new_source_identities": 0,
+      "duplicate_alias_identities": 0,
+      "existing_identities_enriched": 14,
+      "existing_identities_rechecked": 1,
+      "existing_identities_canonicalized": 14,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 14,
+      "answer_eligible_source_families_added": 14,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 14,
+      "content_verified_unique_sources_added": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 876,
-        "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2797
-      },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 887,
-        "content_verified_unique_sources": 853,
-        "answer_eligible_propositions": 2823
-      },
-      "metrics_after_actual": {
         "answer_eligible_unique_sources": 886,
         "content_verified_unique_sources": 852,
         "answer_eligible_propositions": 2818
       },
-      "status": "reconciled_with_variance",
-      "blocked_candidate_count": 10,
-      "not_promoted_after_inspection_count": 0,
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 900,
+        "content_verified_unique_sources": 852,
+        "answer_eligible_propositions": 2832
+      },
+      "metrics_after_actual": null,
+      "status": "pending_reconciliation",
+      "blocked_candidate_count": 8,
+      "not_promoted_after_inspection_count": 8,
       "source_languages": [
-        "Hebrew",
-        "Yiddish",
         "English"
       ],
       "translations_counted_as_independent_witnesses": 0,
-      "metrics_delta_actual": {
-        "answer_eligible_unique_sources": 10,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 21
-      }
+      "metrics_delta_actual": null
     },
-    "last_run_note": "First batch-088 reconciliation yielded 886 / 854 / 2,818 against the original 888 / 854 / 2,822 target. Audit found two duplicate Chabad Library identities and AID 1875534 was missing has_content_evidence=true. Corrected: two aliases linked, two excerpt-only records downgraded to Parsed, AID 1875534 promoted after inspection. New target: 887 / 853 / 2,823; rerun pending.",
-    "last_batch_blocked_count": 10,
-    "last_batch_blocked_reason": "Ten Chabad Library item pages returned no readable lines on direct open. Public search-result body extracts were inspected, so these items remain Parsed; two accessible Chabad.org bodies were opened as an alternative. No crawler retry or access-control bypass.",
+    "last_run_note": "Batch 089: 14 existing Indexed Living Torah records were enriched in place from item-level publisher synopsis bodies. All remain Parsed and non-independent; expected answer-readiness change 886→900, 852 content-verified unchanged, propositions 2,818→2,832. Reconciliation and Actions pending.",
+    "last_batch_blocked_count": 8,
+    "last_batch_blocked_reason": "Seven audio-only Yechidus candidates exposed no readable transcript or synopsis; one Living Torah archive-date page did not match the queued title and was withheld. Fourteen accessible item-level publisher synopses were used as fallback. No crawler retry or access-control bypass.",
     "next_work": [
-      "Re-run reconciliation after the batch-088 duplicate/provenance correction and confirm 887 / 853 / 2,823 or document any remaining variance.",
+      "Reconcile batch 089 and verify the exact metrics 900 / 852 / 2,832; investigate any variance before claiming progress.",
       "Run test_content_readiness.mjs, answer-quality, citation-integrity and question-specificity suites against the exact main commit.",
-      "Verify researcher-mode claim_source_map and evidence_map for the new Hebrew/Yiddish items; ensure the secretariat-signed AID 5413093 is never attributed directly to the Rebbe.",
+      "Verify multi-source researcher mode preserves separate publisher-synopsis claims, item-level locators and the non-independent constraint; do not infer a generalized Rebbe teaching from derivative synopses.",
       "Inspect Actions results and confirm the exact GitHub Pages data revision is published.",
-      "Continue source inspection across Hebrew, Yiddish, English and additional document types; search-extract-only records remain Parsed until full body access is available.",
+      "Continue manual inspection of original-language Hebrew and Yiddish primary documents and additional documentary classes; metadata-only audio and scan-only items remain non-answer evidence.",
       "Keep the hourly workflow, access boundaries and repository audience unchanged; do not retry the known HTTP 403 crawler."
     ],
     "last_reconciliation": {
