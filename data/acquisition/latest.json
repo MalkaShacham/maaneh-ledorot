@@ -16,16 +16,16 @@
     "source_bodies_inspected": 11,
     "source_body_pages_opened": 3,
     "search_extracts_inspected": 8,
-    "new_source_identities": 9,
+    "new_source_identities": 5,
     "duplicate_alias_identities": 1,
     "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 15,
+    "existing_identities_rechecked": 4,
+    "new_response_propositions": 8,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 16,
-    "answer_eligible_source_families_added": 9,
-    "independent_witnesses_added": 9,
-    "non_independent_presentations_added": 1,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 5,
+    "independent_witnesses_added": 5,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 1,
     "metrics_before": {
       "answer_eligible_unique_sources": 900,
@@ -33,9 +33,9 @@
       "answer_eligible_propositions": 2832
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 926,
+      "answer_eligible_unique_sources": 922,
       "content_verified_unique_sources": 853,
-      "answer_eligible_propositions": 2873
+      "answer_eligible_propositions": 2867
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -51,20 +51,17 @@
       "inaccessible": 1
     },
     "source_type_distribution": {
-      "published_hebrew_letter_text_search_extract": 7,
-      "published_secretariat_letter_with_embedded_rebbe_telegram_search_extract": 1,
-      "published_hebrew_letter_text_direct_body": 1,
-      "existing_hebrew_letter_reopened": 1,
-      "duplicate_reprint_reviewed_not_promoted": 1
+      "new_published_hebrew_letter_search_extracts": 4,
+      "new_published_hebrew_letter_direct_body": 1,
+      "existing_verified_identity_search_extract_rechecks": 4,
+      "existing_verified_identity_direct_body_reopen": 1,
+      "duplicate_presentation_direct_body_recheck": 1,
+      "blocked_navigation_shell": 1
     },
     "new_aids": [
       5054489,
       5100603,
-      5100353,
-      5100285,
       5071021,
-      5071046,
-      5019408,
       5100374,
       5100372
     ],
@@ -125,8 +122,10 @@
         "alias_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357409/jewish/page.htm",
         "canonical_url": "https://www.chabad.org/therebbe/article_cdo/aid/4872269/jewish/page.htm",
         "relation": "same_evidence_family",
-        "proposed_evidence_family_id": "igrot-letter-5715-11-tevet-aid4872269",
-        "basis": "The AID 5357409 publisher note explicitly cross-references the fuller publication as AID 4872269, volume 18 letter ג׳קפב, dated 11 Tevet 5715. The visible Hebrew body extracts match in circumstances and wording. This is one letter with two publisher presentations, not two independent witnesses."
+        "evidence_family_id": "igrot-letter-5715-11-tevet-aid4872269",
+        "canonical_record_present_in_repository": false,
+        "existing_alias_record_updated": true,
+        "basis": "The AID 5357409 publisher note explicitly cross-references the fuller publication as AID 4872269, volume 18 letter ג׳קפב, dated 11 Tevet 5715. The existing AID 5357409 item is now assigned the shared Evidence Family and marked non-independent; AID 4872269 itself is not ingested as a second item."
       }
     ],
     "deduplication_check": {
@@ -167,6 +166,43 @@
       "AID 4666220 redirected to a navigation shell and was excluded; the same-run fallback was used.",
       "No original manuscripts, incoming letters, secretariat copies, scans, or full archival contexts were inspected.",
       "No full copyrighted text was copied and no AI-generated inference was attributed to the Rebbe."
+    ],
+    "non_independent_presentations_reclassified": 1,
+    "rechecked_aids": [
+      5100353,
+      5100285,
+      5071046,
+      5019408
+    ],
+    "existing_identity_rechecks": [
+      {
+        "identity": "aid:5100353",
+        "id": "chabad-letter-5100353",
+        "aid": 5100353,
+        "canonical_file": "data/items/content-research-batch-064-2026-11-13.json",
+        "result": "existing Verified propositions already cover the inspected excerpt; no duplicate proposition added."
+      },
+      {
+        "identity": "aid:5100285",
+        "id": "chabad-letter-5100285",
+        "aid": 5100285,
+        "canonical_file": "data/items/chabad-letter-5100285.json",
+        "result": "existing Verified propositions already cover the inspected excerpt; no duplicate proposition added."
+      },
+      {
+        "identity": "aid:5071046",
+        "id": "chabad-letter-5071046",
+        "aid": 5071046,
+        "canonical_file": "data/items/content-research-batch-058-2026-11-12.json",
+        "result": "existing Verified propositions already cover the embedded telegram excerpt; cover-letter authorship remains distinct from telegram attribution."
+      },
+      {
+        "identity": "aid:5019408",
+        "id": "chabad-letter-5019408",
+        "aid": 5019408,
+        "canonical_file": "data/items/content-research-batch-066-2026-11-13.json",
+        "result": "existing Verified propositions already cover gradual scheduling and study with a partner; no duplicate proposition added."
+      }
     ]
   },
   "previous_manual_web_review": {
@@ -834,7 +870,7 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 092 inspected 11 public source bodies/items and used accessible Hebrew correspondence pages as same-run fallback for blocked AID 4666220. Metrics are provisional until reconciliation.",
+  "manual_web_review_note": "Batch 092 inspected 11 public source bodies/items. Reconciliation found four AIDs already represented by Verified canonical records; their content was rechecked in place without duplicate propositions. Five genuinely new families were added, and AID 5054491 was enriched. AID 5357409 was linked to the fuller AID 4872269 presentation in one Evidence Family. Metrics remain provisional until reconciliation.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 900,
     "content_verified_unique_sources": 852,
@@ -1771,15 +1807,16 @@
       "batch_file": "data/items/content-research-batch-092-2026-11-15.json",
       "reviewed_at": "2026-11-15T04:15:57+02:00",
       "source_bodies_inspected": 11,
-      "new_source_identities": 9,
+      "new_source_identities": 5,
       "existing_identities_enriched": 1,
-      "new_response_propositions": 15,
+      "new_response_propositions": 8,
       "existing_response_propositions_added": 1,
-      "answer_eligible_source_families_added": 9,
+      "answer_eligible_source_families_added": 5,
       "content_verified_unique_sources_added": 1,
       "duplicate_aliases_linked": 1,
       "blocked_candidate_count": 1,
-      "reconciliation_status": "pending"
+      "reconciliation_status": "pending",
+      "existing_identities_rechecked": 4
     }
   ]
 }
