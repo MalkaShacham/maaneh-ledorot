@@ -1983,3 +1983,90 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_witnesses.some(w=>String(w.aid)==='5100603'));
  }else assert.equal(m.research,undefined);
 }
+
+
+const batch098Path='data/items/content-research-batch-098-2026-11-15.json';
+const batch098Data=JSON.parse(await readFile(new URL(batch098Path,root)));
+assert.equal(batch098Data.reviewed_item_count,14);
+assert.equal(batch098Data.source_bodies_inspected,14);
+assert.equal(batch098Data.source_body_pages_opened,14);
+assert.equal(batch098Data.search_extracts_used_as_content,0);
+assert.equal(batch098Data.new_source_identities,5);
+assert.equal(batch098Data.existing_identities_enriched,3);
+assert.equal(batch098Data.existing_identities_rechecked,6);
+assert.equal(batch098Data.new_response_propositions,12);
+assert.equal(batch098Data.existing_response_propositions_added,3);
+assert.equal(batch098Data.answer_eligible_source_families_added,5);
+assert.equal(batch098Data.content_verified_unique_sources_added,0);
+assert.equal(batch098Data.blocked_candidate_count,7);
+assert.equal(batch098Data.crawler_retry,false);
+assert.equal(batch098Data.access_control_bypassed,false);
+assert.equal(batch098Data.full_text_copied,false);
+assert.equal(batch098Data.scan_only_verification_used,false);
+assert.equal(batch098Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch098Data.deduplication_check.repository_search_exact_aid_matches,0);
+assert.equal(batch098Data.deduplication_check.reconciliation_required,true);
+assert.deepEqual(batch098Data.metrics_expected_after,{answer_eligible_unique_sources:961,content_verified_unique_sources:870,answer_eligible_propositions:2933});
+assert.deepEqual(batch098Data.records.map(r=>String(r.aid)).sort(),['5412970','5413082','5413119','5413465','5413494']);
+assert.equal(new Set(batch098Data.records.map(r=>r.evidence_family_id)).size,5);
+assert.equal(new Set(batch098Data.records.map(r=>r.source_url)).size,5);
+assert.equal(batch098Data.existing_identity_updates.length,3);
+for(const r of batch098Data.records){
+ assert.equal(r.status,'Parsed','new letter records must remain Parsed until stronger witness/context review');
+ assert.equal(r.context_status,'partial');
+ assert.equal(r.has_content_evidence,true);
+ assert.equal(r.independent_witness,true);
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(r.proposition_verbatim,false);
+ assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.verification_scope&&r.provenance?.source_witness);
+ assert.equal(r.response_proposition_locators.length,r.response_propositions.length);
+ assert(r.response_propositions.length>=2);
+}
+for(const aid of ['5413082','5413119','5413465','5413494','5412970']){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-098 AID '+aid+' must have exactly one indexed identity');
+ const e=matches[0];
+ assert.equal(e.canonical_file,batch098Path);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
+ assert(e.has_content_evidence&&e.evidence_family_id);
+}
+const batch097Enriched=JSON.parse(await readFile(new URL('data/items/content-research-batch-097-2026-11-15.json',root)));
+for(const aid of ['3316664','3316684','3316710']){
+ const r=batch097Enriched.records.find(x=>String(x.aid)===aid);
+ assert(r,'existing Hayom Yom identity '+aid+' must remain in its original batch');
+ assert(r.response_propositions.length>=3,'existing identity '+aid+' must be enriched in place');
+ assert.equal(r.response_proposition_locators.length,r.response_propositions.length);
+}
+const communityEducationOutreachQuestion='מה מתועד בארבע איגרות על חינוך ופנימיות הנפש, פעילות תלמידות בית רבקה, בנות חב״ד והפצת המעיינות, והתוועדות י״ט כסלו עם לימוד תורה הנגלה והחסידות, גמילות חסדים ותפילה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,communityEducationOutreachQuestion,{mode});
+ assert(m.answerable,mode+': four inspected Hebrew letters must support a bounded education/community case comparison');
+ assert.equal(m.synthesis?.topic,'community_education_outreach_comparison');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.synthesis?.basis?.length,4);
+ assert.equal(m.synthesis?.claims?.length,4);
+ assert.equal(new Set(m.synthesis.evidence_family_ids).size,4);
+ for(const aid of ['5413082','5412970','5413494','5413465'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': synthesis must retain AID '+aid);
+ assert.equal(m.claims.length,4);
+ assert(m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator),mode+': each case claim must have its own item-level locator');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': every case claim must be entailed by its cited proposition');
+ assert(m.context_boundary.every(x=>x.valid),mode+': case claims must stay within the documented audience and circumstances');
+ assert.equal(m.pattern_synthesis_integrity.valid,true,mode+': four-family synthesis must pass family, support and locator integrity');
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert.equal(m.research.evidence_map.length,4);
+  assert.equal(m.research.claim_source_map.length,4);
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length===1&&c.source_locators[0].locator));
+  for(const aid of ['5413082','5412970','5413494','5413465'])assert(m.research.evidence_witnesses.some(w=>String(w.aid)===aid),'deep researcher map must retain AID '+aid);
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ }else assert.equal(m.research,undefined);
+}
+const directAuthorshipQuestion='מה הרבי כתב על חינוך קצר ועל פעילות תלמידות בית רבקה עם קבוצות אחרות?';
+const directAuthorshipModel=buildAnswerModel(idx.entries,directAuthorshipQuestion,{mode:'regular'});
+assert(!directAuthorshipModel.sources.some(e=>['5413082','5412970'].includes(sourceAID(e))),'proxy/secretariat-signed records must not be presented as personally authenticated Rebbe authorship');
