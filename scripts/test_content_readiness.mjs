@@ -475,7 +475,12 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch018Comparison,{mode});
  assert.equal(m.answerable,false,mode+': do not answer the camp-counselor side without an inspectable, answer-eligible proposition');
  assert.equal(m.reason,'comparative_missing_side',mode+': missing camp evidence must fail closed');
- assert(!m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרפא'),mode+': a scan-only yeshiva-class identity is not a supported side');
+ const scanOnlyYeshivaSource=m.sources.find(e=>e.key==='id:igrot-kodesh-v13-דתרפא');
+ if(scanOnlyYeshivaSource){
+  assert.equal(scanOnlyYeshivaSource.has_content_evidence,false,mode+': scan-only yeshiva identity must remain metadata-only');
+  assert.equal((scanOnlyYeshivaSource.response_propositions||[]).length,0,mode+': scan-only yeshiva identity must expose no propositions');
+ }
+ assert(!m.claims.some(c=>c.source_numbers.some(n=>m.sources[n-1]?.key==='id:igrot-kodesh-v13-דתרפא')),mode+': no comparison claim may cite the scan-only yeshiva identity');
  assert(!m.sources.some(e=>e.key==='id:igrot-kodesh-v13-דתרעו'),mode+': do not treat the unlocated camp-counselor identity as evidence');
  assert(m.comparative_coverage.missing_topics.includes('מדריך מחנה גן ישראל והשפעה'),mode+': identify the missing side explicitly');
  assert(m.insufficient_evidence.some(s=>s.includes('מדריך מחנה גן ישראל והשפעה')),mode+': explain the evidence gap');
