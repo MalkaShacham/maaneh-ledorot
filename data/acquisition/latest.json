@@ -7,6 +7,126 @@
   "skipped": 2,
   "status": "no_candidates",
   "manual_web_review": {
+    "batch_id": "091",
+    "batch_file": "data/items/content-research-batch-091-2026-11-15.json",
+    "reviewed_at": "2026-11-15T03:56:15+02:00",
+    "status": "manual_public_body_inspection_pending_reconciliation",
+    "reconciliation_status": "pending",
+    "reviewed_item_count": 10,
+    "source_bodies_inspected": 9,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 9,
+    "answer_eligible_source_families_added": 9,
+    "independent_witnesses_added": 9,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 1,
+    "not_promoted_after_inspection_count": 1,
+    "source_languages": [
+      "Hebrew",
+      "Yiddish"
+    ],
+    "language_distribution": {
+      "Hebrew": 6,
+      "Yiddish": 3
+    },
+    "reviewed_body_language_distribution": {
+      "Hebrew": 6,
+      "Yiddish": 3,
+      "inaccessible": 1
+    },
+    "source_type_distribution": {
+      "published_hayom_yom_entry_original_excerpt_with_english_translation": 9
+    },
+    "new_aids": [
+      3316690,
+      3316055,
+      3315465,
+      3316633,
+      3315291,
+      3318017,
+      3316611,
+      3318107,
+      3316286
+    ],
+    "reviewed_aids": [
+      3316690,
+      3316055,
+      3315465,
+      3316633,
+      3315291,
+      3318017,
+      3316611,
+      3318107,
+      3316286,
+      4666220
+    ],
+    "metrics_before": {
+      "answer_eligible_unique_sources": 900,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2832
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 917,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2858
+    },
+    "metrics_actual_after": null,
+    "source_body_inspection_method": "Public web search/open. Nine item-level Hayom Yom pages were opened; original Hebrew/Yiddish excerpts and same-page English translations were inspected. The translation was not counted as a separate witness.",
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "fallback_source_attempted": true,
+    "fallback_source_results": [
+      {
+        "source": "Chabad.org / TheRebbe.org — Hayom Yom daily entries",
+        "inspected_item_pages": 9,
+        "result": "Nine item-level pages with visible original Hebrew/Yiddish excerpts were inspected; each entry received a distinct Evidence Family; no separate translation witness was created."
+      }
+    ],
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "reason": "Redirected to a rewritten Torah Texts summary/navigation shell; no inspectable item-level letter body.",
+        "handling": "Excluded; no crawler retry or access-control bypass. Nine accessible Hayom Yom entries were inspected as the same-run fallback."
+      }
+    ],
+    "deduplication_check": {
+      "exact_aid_repository_search_matches": 0,
+      "recent_content_batches_checked": "070–090",
+      "recent_batch_matches": 0,
+      "full_index_scan_available": false,
+      "source_urls_unique": true,
+      "new_evidence_family_count": 9,
+      "duplicate_aliases_linked": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "Exact-AID repository searches returned no matches and recent batches 070–090 were checked. The full canonical corpus was not exhaustively scanned through the connector; reconciliation must deduplicate by AID and URL."
+    },
+    "limitations": [
+      "All nine records remain Parsed; none was promoted to Verified.",
+      "The original printed edition/manuscript was not inspected.",
+      "English translations on the same pages are not independent witnesses.",
+      "Embedded teachings attributed to earlier figures remain attributed to them.",
+      "The pages are daily anthology entries, not personal correspondence.",
+      "No full copyrighted text was copied."
+    ]
+  },
+  "previous_manual_web_review": {
+    "batch_id": "090",
+    "batch_file": "data/items/content-research-batch-090-2026-11-15.json",
+    "reviewed_at": "2026-11-15T03:26:59+02:00",
+    "source_bodies_inspected": 8,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 0,
+    "new_response_propositions": 16,
+    "answer_eligible_source_families_added": 8,
+    "reconciliation_status": "pending_at_start_of_batch-091"
+  },
+  "earlier_manual_web_review": {
     "batch_id": "089",
     "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
     "reviewed_at": "2026-11-15T01:57:47+02:00",
@@ -145,237 +265,6 @@
       "No translations were added or counted as independent witnesses."
     ],
     "reconciled_at": "2026-11-15T00:06:25.066176+00:00"
-  },
-  "previous_manual_web_review": {
-    "batch_id": "088",
-    "batch_file": "data/items/content-research-batch-088-2026-11-15.json",
-    "reviewed_at": "2026-11-15T01:27:52+02:00",
-    "status": "reconciled_with_variance",
-    "reconciliation_status": "reconciled_with_variance",
-    "reviewed_item_count": 13,
-    "source_bodies_inspected": 13,
-    "new_source_identities": 10,
-    "existing_identities_enriched": 3,
-    "new_response_propositions": 20,
-    "existing_response_propositions_added": 1,
-    "answer_eligible_source_families_added": 11,
-    "independent_witnesses_added": 7,
-    "non_independent_presentations_added": 3,
-    "explicit_translation_manifestations_added": 0,
-    "translations_counted_as_independent_witnesses": 0,
-    "blocked_candidate_count": 10,
-    "not_promoted_after_inspection_count": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 876,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2797
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 887,
-      "content_verified_unique_sources": 853,
-      "answer_eligible_propositions": 2823
-    },
-    "metrics_actual_after": {
-      "answer_eligible_unique_sources": 886,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2818
-    },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": -1,
-      "content_verified_unique_sources": -1,
-      "answer_eligible_propositions": -5
-    },
-    "source_languages": [
-      "Hebrew",
-      "Yiddish",
-      "English"
-    ],
-    "language_distribution": {
-      "Hebrew": 9,
-      "Yiddish": 1
-    },
-    "reviewed_body_language_distribution": {
-      "Hebrew": 11,
-      "Yiddish": 1,
-      "English": 1
-    },
-    "source_type_distribution": {
-      "published_hebrew_letter_text": 7,
-      "published_hebrew_marginal_response_excerpt": 1,
-      "published_yiddish_public_letter_excerpt": 1,
-      "published_hebrew_secretariat_signed_response": 1
-    },
-    "source_body_inspection_method": "Public web search/open. Ten Chabad Library item pages yielded body text in public search extracts, while direct page open returned no readable lines; those ten records remain Parsed. Two complete Hebrew Chabad.org item bodies were opened directly (AID 5412963 and AID 5413093). Existing English AID 1875534 was reopened and enriched in place. No crawler retry.",
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used_for_content": false,
-    "fallback_source_attempted": true,
-    "fallback_source_results": [
-      {
-        "aid": 5412963,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5412963/jewish/page.htm",
-        "result": "Complete visible Hebrew body opened; promoted as Verified with lines 244–249."
-      },
-      {
-        "aid": 5413093,
-        "url": "https://www.chabad.org/therebbe/article_cdo/aid/5413093/jewish/page.htm",
-        "result": "Complete visible Hebrew body opened; promoted as Verified as a separate secretariat-signed document."
-      },
-      {
-        "aid": 1875534,
-        "url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1875534/jewish/Neglecting-the-Education-of-the-Very-Young.htm",
-        "result": "Existing English body reopened at lines 288–290 and enriched in place."
-      }
-    ],
-    "blocked_candidates": [
-      {
-        "id": "chabadlibrary-1200890083",
-        "url": "https://www.chabadlibrary.org/books/1200890083",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200710552",
-        "url": "https://www.chabadlibrary.org/books/1200710552",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200710132",
-        "url": "https://www.chabadlibrary.org/books/1200710132",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200980070",
-        "url": "https://www.chabadlibrary.org/books/1200980070",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200820350",
-        "url": "https://www.chabadlibrary.org/books/1200820350",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200800002",
-        "url": "https://www.chabadlibrary.org/books/1200800002",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200710429",
-        "url": "https://www.chabadlibrary.org/books/1200710429",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200710378",
-        "url": "https://www.chabadlibrary.org/books/1200710378",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200910034",
-        "url": "https://www.chabadlibrary.org/books/1200910034",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      },
-      {
-        "id": "chabadlibrary-1200910023",
-        "url": "https://www.chabadlibrary.org/books/1200910023",
-        "reason": "Direct open returned no readable lines; a public search-result body extract was available.",
-        "handling": "Used only the visible extracted body text, retained Parsed status and partial context; no crawler retry or access-control bypass."
-      }
-    ],
-    "not_promoted_after_inspection": [],
-    "deduplication_check": {
-      "review_queue_matches": 0,
-      "repository_code_search_matches": 0,
-      "full_index_scan_available": false,
-      "reconciliation_required": true,
-      "source_urls_unique": true,
-      "new_evidence_family_count": 10,
-      "duplicate_aliases_linked": 2,
-      "aid_1200710552_linked_to_existing_russian_family": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
-      "aid_1200710429_linked_to_existing_hebrew_family": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
-      "aid_1875534_promoted_to_answer_eligible": true,
-      "translations_counted_as_independent_witnesses": 0,
-      "note": "The first reconciliation found two existing Chabad Library identities and one existing English record missing has_content_evidence=true. Both aliases are now linked; AID 1875534 is promoted after body inspection; two excerpt-only records are downgraded to Parsed."
-    },
-    "limitations": [
-      "Eight new Chabad Library item bodies are supported only by visible public search extracts because direct open returned no readable lines; they remain Parsed, not Verified.",
-      "Two Chabad Library pages are existing identities: 1200710552 is a Hebrew free translation of a Russian original, and 1200710429 is already represented by a Hebrew record. Neither translation nor duplicate presentation is counted as a new source.",
-      "The existing 1200710429 record was downgraded to Parsed and non-independent because the page notes partial completion from a photograph that was not inspected.",
-      "AID 1200980070 is noted by the publisher as completed from a copy; the copy was not inspected and the item is non-independent.",
-      "AID 1200710132 is a marginal response on an incoming letter; it is not counted as an independent witness.",
-      "AID 5413093 is signed by a secretary in the Rebbe's name and is not attributed as a direct Rebbe-authored letter.",
-      "AID 5412963 is a historical 5722 response to a specific case; it is not current halachic guidance.",
-      "AID 1875534 is a published English presentation. Its body was inspected and its six propositions are now answer-eligible, but its original-language witness is uninspected and it is not counted as independent.",
-      "No full copyrighted text was copied and no AI inference was attributed to the Rebbe."
-    ],
-    "reconciled_at": "2026-11-14T23:50:04.546046+00:00",
-    "duplicate_alias_identities": 2,
-    "existing_response_propositions_promoted_to_answer_eligible": 5,
-    "content_verified_unique_sources_added": 3,
-    "content_verified_unique_sources_downgraded": 2,
-    "content_verified_unique_sources_net_change": 1,
-    "translation_manifestations_linked": 1
-  },
-  "earlier_manual_web_review": {
-    "batch_id": "086",
-    "batch_file": "data/items/content-research-batch-086-2026-11-14.json",
-    "reviewed_at": "2026-11-14T23:45:00+02:00",
-    "status": "reconciled",
-    "reconciliation_status": "reconciled",
-    "reviewed_item_count": 17,
-    "source_bodies_inspected": 15,
-    "new_source_identities": 1,
-    "existing_identities_enriched": 13,
-    "existing_identities_canonicalized": 1,
-    "duplicate_alias_identities": 1,
-    "new_response_propositions": 1,
-    "existing_response_propositions_added": 13,
-    "total_new_paraphrase_entries": 14,
-    "answer_eligible_source_families_added": 14,
-    "source_languages": [
-      "English"
-    ],
-    "proposition_languages": [
-      "Hebrew"
-    ],
-    "source_type_distribution": {
-      "living_torah_publisher_synopsis": 14
-    },
-    "metrics_before": {
-      "answer_eligible_unique_sources": 855,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2767
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 869,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2781
-    },
-    "metrics_actual_after": {
-      "answer_eligible_unique_sources": 869,
-      "content_verified_unique_sources": 852,
-      "answer_eligible_propositions": 2781
-    },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 0
-    },
-    "blocked_candidate_count": 2,
-    "not_promoted_after_inspection_count": 1,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "note": "14 source-grounded paraphrases added (13 existing identities enriched, 1 new AID); 15 source bodies inspected, one date-conflict item withheld, two metadata-only pages not promoted. All items remain Parsed, not Verified.",
-    "reconciled_at": "2026-11-14T22:07:01.863840+00:00"
   },
   "earlier_manual_web_review_2": {
     "batch_id": "081",
@@ -793,13 +682,13 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 089: 14 existing Living Torah identities enriched from directly opened item-level publisher synopses; all remain Parsed and non-independent. Seven audio-only candidates and one title mismatch withheld. Awaiting reconciliation.",
+  "manual_web_review_note": "Manual public web reviews are separate from the blocked runner crawler. Item-level body inspection, stable-ID deduplication, Evidence Family linkage, rights boundaries and reconciliation status are recorded per batch.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 900,
     "content_verified_unique_sources": 852,
     "answer_eligible_propositions": 2832
   },
-  "last_manual_review_at": "2026-11-15T01:57:47+02:00",
+  "last_manual_review_at": "2026-11-15T03:56:15+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -1569,5 +1458,161 @@
     "content_verified_unique_sources_downgraded": 2,
     "content_verified_unique_sources_net_change": 1,
     "translation_manifestations_linked": 1
-  }
+  },
+  "manual_web_review_history": [
+    {
+      "batch_id": "089",
+      "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
+      "reviewed_at": "2026-11-15T01:57:47+02:00",
+      "source_bodies_inspected": 14,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 14,
+      "new_response_propositions": 14,
+      "answer_eligible_source_families_added": 14,
+      "reconciliation_status": "reconciled"
+    },
+    {
+      "batch_id": "088",
+      "batch_file": "data/items/content-research-batch-088-2026-11-15.json",
+      "reviewed_at": "2026-11-15T01:27:52+02:00",
+      "source_bodies_inspected": 13,
+      "new_source_identities": 10,
+      "existing_identities_enriched": 3,
+      "new_response_propositions": 20,
+      "answer_eligible_source_families_added": 11,
+      "reconciliation_status": "reconciled_with_variance"
+    },
+    {
+      "batch_id": "086",
+      "batch_file": "data/items/content-research-batch-086-2026-11-14.json",
+      "reviewed_at": "2026-11-14T23:45:00+02:00",
+      "source_bodies_inspected": 15,
+      "new_source_identities": 1,
+      "existing_identities_enriched": 13,
+      "new_response_propositions": 1,
+      "answer_eligible_source_families_added": 14,
+      "reconciliation_status": "reconciled"
+    },
+    {
+      "batch_id": "081",
+      "batch_file": "data/items/content-research-batch-081-2026-11-14.json",
+      "reviewed_at": "2026-11-14T10:22:37+02:00",
+      "source_bodies_inspected": 10,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 23,
+      "answer_eligible_source_families_added": 9,
+      "reconciliation_status": "pending"
+    },
+    {
+      "batch_id": "076",
+      "batch_file": "data/items/content-research-batch-076-2026-11-13.json",
+      "reviewed_at": "2026-11-13T18:35:35+02:00",
+      "source_bodies_inspected": 11,
+      "new_source_identities": 10,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 20,
+      "answer_eligible_source_families_added": 10,
+      "reconciliation_status": "reconciled"
+    },
+    {
+      "batch_id": "2026-11-13-content-batch-075",
+      "batch_file": null,
+      "reviewed_at": "2026-11-13T17:04:39+02:00",
+      "source_bodies_inspected": 14,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 6,
+      "new_response_propositions": 5,
+      "answer_eligible_source_families_added": 8,
+      "reconciliation_status": "reconciled"
+    },
+    {
+      "batch_id": "073",
+      "batch_file": null,
+      "reviewed_at": null,
+      "source_bodies_inspected": 17,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 2,
+      "new_response_propositions": 1,
+      "answer_eligible_source_families_added": 12,
+      "reconciliation_status": "reconciled"
+    },
+    {
+      "batch_id": "070",
+      "batch_file": null,
+      "reviewed_at": "2026-11-13T12:15:00+02:00",
+      "source_bodies_inspected": 15,
+      "new_source_identities": 15,
+      "existing_identities_enriched": 0,
+      "new_response_propositions": 0,
+      "answer_eligible_source_families_added": 15,
+      "reconciliation_status": "completed"
+    },
+    {
+      "batch_id": "069",
+      "batch_file": null,
+      "reviewed_at": "2026-11-13T10:35:56+02:00",
+      "source_bodies_inspected": 13,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 0,
+      "answer_eligible_source_families_added": 13,
+      "reconciliation_status": "completed"
+    },
+    {
+      "batch_id": "067",
+      "batch_file": null,
+      "reviewed_at": "2026-11-13T07:00:00+02:00",
+      "source_bodies_inspected": 10,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 2,
+      "new_response_propositions": 0,
+      "answer_eligible_source_families_added": 0,
+      "reconciliation_status": "completed"
+    },
+    {
+      "batch_id": "078",
+      "batch_file": "data/items/content-research-batch-078-2026-11-13.json",
+      "reviewed_at": "2026-11-13T20:29:43+02:00",
+      "source_bodies_inspected": 14,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 23,
+      "answer_eligible_source_families_added": 12,
+      "reconciliation_status": "reconciled_with_variance"
+    },
+    {
+      "batch_id": "089",
+      "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
+      "reviewed_at": "2026-11-15T01:57:47+02:00",
+      "source_bodies_inspected": 14,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 14,
+      "new_response_propositions": 14,
+      "answer_eligible_source_families_added": 14,
+      "reconciliation_status": "reconciled"
+    },
+    {
+      "batch_id": "090",
+      "batch_file": "data/items/content-research-batch-090-2026-11-15.json",
+      "reviewed_at": "2026-11-15T03:26:59+02:00",
+      "source_bodies_inspected": 8,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 0,
+      "new_response_propositions": 16,
+      "answer_eligible_source_families_added": 8,
+      "reconciliation_status": "pending_at_start_of_batch-091"
+    },
+    {
+      "batch_id": "091",
+      "batch_file": "data/items/content-research-batch-091-2026-11-15.json",
+      "reviewed_at": "2026-11-15T03:56:15+02:00",
+      "source_bodies_inspected": 9,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 0,
+      "new_response_propositions": 9,
+      "answer_eligible_source_families_added": 9,
+      "reconciliation_status": "pending"
+    }
+  ]
 }

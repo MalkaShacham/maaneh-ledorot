@@ -1004,11 +1004,14 @@ function supportsShmittaFruitReferralProposition(proposition){
 function supportsShmittaFruitReferralSource(source){
  return arr(source?.response_propositions).some(supportsShmittaFruitReferralProposition);
 }
-function supportsDailyStudyPrayerRoutine(source){
- const body=norm(arr(source?.response_propositions).join(' '));
+function supportsDailyStudyPrayerProposition(proposition){
+ const body=norm(proposition);
  const time=['בכל יום','יומית','יומי','לאחר תפילת שחרית','לפני תפילת שחרית','לפני השינה','לפני קריאת שמע','למחרת','במשך היום'];
  const practices=['תהילים','תפילה','קריאת שמע','לימוד','חומש','צדקה','טלית קטן','ציצית','תפילין'];
  return time.some(term=>body.includes(term))&&practices.filter(term=>body.includes(term)).length>=2;
+}
+function supportsDailyStudyPrayerRoutine(source){
+ return arr(source?.response_propositions).some(supportsDailyStudyPrayerProposition);
 }
 function supportsBusinessExpansion(source){
  const body=norm(arr(source?.response_propositions).join(' '));
@@ -1532,7 +1535,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   answerEvidence=usable.filter(e=>supportsDailyStudyPrayerRoutine(e));
   const preferredAids=['4994198','4812708','5100391'];
   const preferred=index.filter(e=>preferredAids.includes(sourceAIDValue(e))&&e.has_content_evidence===true)
-   .map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsDailyStudyPrayerRoutine)}))
+   .map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsDailyStudyPrayerProposition)}))
    .filter(e=>e._supporting_propositions.length);
   const merged=new Map();
   for(const e of [...preferred,...answerEvidence]){const key=familyKey(e);if(key&&!merged.has(key))merged.set(key,e);}
@@ -1574,7 +1577,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   for(const e of candidates){
    const signature=dailyRoutineSignature(e),preferred=preferredDailyRoutineAids.has(sourceAIDValue(e));
    if(signature==='other'||(!preferred&&signatures.has(signature))||selected.some(x=>familyKey(x)===familyKey(e)))continue;
-   const proposition=arr(e._supporting_propositions).find(supportsDailyStudyPrayerRoutine);
+   const proposition=arr(e._supporting_propositions).find(supportsDailyStudyPrayerProposition);
    if(!proposition)continue;
    const sourceNumber=selected.length+1,propIndex=arr(e.response_propositions).findIndex(p=>String(p).trim()===String(proposition).trim());
    const locator=arr(e.response_proposition_locators)[propIndex]||e.proposition_source_locator||e.source_locator||null;
