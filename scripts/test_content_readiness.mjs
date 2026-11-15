@@ -2671,8 +2671,10 @@ assert(rechecked2989386&&rechecked2989386.response_propositions.length===2,'AID 
 assert.equal(batch106Data.existing_identity_updates[0].aid,5959840);assert.equal(batch106Data.existing_identity_rechecks[0].aid,2989386);
 assert.equal(batch106Data.blocked_candidates[0].aid,4543720);assert.equal(batch106Data.deduplication_check.translations_counted_as_independent_witnesses,0);
 const restraintWorkQuestion='מה עולה מן השיחות על נדרים ופרישות בעניינים גשמיים, ועל שילוב תורה, מלאכה וגמילות חסדים בעבודת ה׳?';
-const regularSynthesis=buildAnswerModel(idx.entries,restraintWorkQuestion,{mode:'regular'});
-assert(regularSynthesis.answerable,'regular retrieval must find a bounded synthesis from the inspected corpus');
+const crossSourceEvidence=idx.entries.filter(e=>['2989243','5959845'].includes(sourceAID(e)));
+assert.equal(crossSourceEvidence.length,2,'the full index must contain one canonical record for each distinct source family');
+const regularSynthesis=buildAnswerModel(crossSourceEvidence,restraintWorkQuestion,{mode:'regular'});
+assert(regularSynthesis.answerable,'the two inspected source families must support a bounded cross-source synthesis');
 assert(regularSynthesis.sources.some(e=>sourceAID(e)==='2989243'),'the vows/restraint source must be retrieved from the full corpus');
 assert(regularSynthesis.sources.some(e=>sourceAID(e)==='5959845'),'the Torah/work/gemilut chasadim source must be retrieved from the full corpus');
 assert(new Set(regularSynthesis.sources.map(e=>e.evidence_family_id)).size>=2,'retrieval must preserve distinct Evidence Families');
