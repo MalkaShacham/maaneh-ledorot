@@ -10,8 +10,8 @@
     "batch_id": "089",
     "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
     "reviewed_at": "2026-11-15T01:57:47+02:00",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending",
+    "status": "reconciled",
+    "reconciliation_status": "reconciled",
     "reviewed_item_count": 23,
     "source_bodies_inspected": 14,
     "new_source_identities": 0,
@@ -35,8 +35,16 @@
       "content_verified_unique_sources": 852,
       "answer_eligible_propositions": 2832
     },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 900,
+      "content_verified_unique_sources": 852,
+      "answer_eligible_propositions": 2832
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
     "source_languages": [
       "English"
     ],
@@ -135,7 +143,8 @@
       "The queued Kfar Chabad/Brooklyn title did not match the archive-date page; the different AID 1558542 item was not relabelled or promoted.",
       "No full copyrighted text was copied; no AI inference was attributed to the Rebbe.",
       "No translations were added or counted as independent witnesses."
-    ]
+    ],
+    "reconciled_at": "2026-11-15T00:06:25.066176+00:00"
   },
   "previous_manual_web_review": {
     "batch_id": "088",

@@ -20,20 +20,20 @@
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 460,
-    "canonical_unique_item_keys": 9191,
+    "canonical_json_files": 461,
+    "canonical_unique_item_keys": 9203,
     "evidence_family_files": 55,
     "verified_unique_item_keys": 7804,
     "status_counts_unique_keys": {
       "Verified": 7804,
       "Linked": 15,
-      "Parsed": 29,
-      "Indexed": 1142,
+      "Parsed": 43,
+      "Indexed": 1136,
       "Discovered": 3
     },
-    "answer_eligible_unique_sources": 886,
+    "answer_eligible_unique_sources": 900,
     "content_verified_unique_sources": 852,
-    "answer_eligible_propositions": 2818
+    "answer_eligible_propositions": 2832
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": 8,
@@ -60,7 +60,7 @@
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "pending_after_batch_089",
+    "status": "reconciled_pending_commit",
     "source": "data/public-metrics.json",
     "generated": "2026-11-15",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -82,9 +82,9 @@
         "answer_eligible_propositions": 2709
       },
       "actual_after": {
-        "answer_eligible_unique_sources": 886,
+        "answer_eligible_unique_sources": 900,
         "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2818
+        "answer_eligible_propositions": 2832
       },
       "reconciliation_status": "pending",
       "before": {
@@ -98,14 +98,14 @@
         "answer_eligible_propositions": 2832
       },
       "actual_delta": {
-        "answer_eligible_unique_sources": 10,
+        "answer_eligible_unique_sources": 14,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 21
+        "answer_eligible_propositions": 14
       },
       "reconciliation_variance": {
-        "answer_eligible_unique_sources": -1,
-        "content_verified_unique_sources": -1,
-        "answer_eligible_propositions": -5
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 0
       }
     },
     "quality_gate": {
@@ -124,7 +124,7 @@
       "status": "pending_after_batch_089",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
-    "last_reconciled_at": "2026-11-14"
+    "last_reconciled_at": "2026-11-15"
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -190,15 +190,23 @@
         "content_verified_unique_sources": 852,
         "answer_eligible_propositions": 2832
       },
-      "metrics_after_actual": null,
-      "status": "pending_reconciliation",
+      "metrics_after_actual": {
+        "answer_eligible_unique_sources": 900,
+        "content_verified_unique_sources": 852,
+        "answer_eligible_propositions": 2832
+      },
+      "status": "reconciled",
       "blocked_candidate_count": 8,
       "not_promoted_after_inspection_count": 8,
       "source_languages": [
         "English"
       ],
       "translations_counted_as_independent_witnesses": 0,
-      "metrics_delta_actual": null
+      "metrics_delta_actual": {
+        "answer_eligible_unique_sources": 14,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 14
+      }
     },
     "last_run_note": "Batch 089: 14 existing Indexed Living Torah records were enriched in place from item-level publisher synopsis bodies. All remain Parsed and non-independent; expected answer-readiness change 886→900, 852 content-verified unchanged, propositions 2,818→2,832. Reconciliation and Actions pending.",
     "last_batch_blocked_count": 8,
@@ -212,588 +220,34 @@
       "Keep the hourly workflow, access boundaries and repository audience unchanged; do not retry the known HTTP 403 crawler."
     ],
     "last_reconciliation": {
-      "batch_id": "088",
-      "batch_file": "data/items/content-research-batch-088-2026-11-15.json",
-      "generated": "2026-11-14",
-      "batch_record_count": 15,
-      "new_source_identity_count": 10,
-      "existing_identities_enriched": 3,
-      "source_bodies_inspected": 13,
-      "answer_eligible_selected_count": 12,
-      "selected_unique_evidence_families": 12,
-      "non_independent_selected_count": 5,
+      "batch_id": "089",
+      "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
+      "generated": "2026-11-15",
+      "batch_record_count": 14,
+      "new_source_identity_count": 0,
+      "existing_identities_enriched": 14,
+      "source_bodies_inspected": 14,
+      "answer_eligible_selected_count": 0,
+      "selected_unique_evidence_families": 0,
+      "non_independent_selected_count": 0,
       "items": [
         {
-          "identity_key": "aid:5412963",
-          "aid": 5412963,
-          "id": "chabad-letter-5412963",
+          "identity_key": "id:canonical-lt-eye-010-010",
+          "aid": null,
+          "id": "canonical-lt-eye-010-010",
           "canonical_records_found": 1,
           "records": [
             {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabad-letter-5412963",
-              "evidence_family_id": "igrot-kodesh-5722-letter-ch-shedm-aid5412963",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org / TheRebbe.org, AID 5412963, body lines 244–245. ; Chabad.org / TheRebbe.org, AID 5412963, body lines 245–249.",
-              "verification_scope": "נבדק גוף העמוד בעברית ב-Chabad.org, AID 5412963, שורות 235–249; גוף המכתב עצמו בשורות 244–249. העמוד מציין שהמכתב נדפס בשערי הלכה ומנהג ח״ג ע׳ רמה; הספר המודפס והצילום לא נבדקו בנפרד. מכתב הפנייה, זהות הנמען והנסיבות המלאות אינם זמינים. מדובר במקרה היסטורי משנת תשכ״ב ולא בהנחיה הלכתית או ייעוץ עדכני.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "igrot-kodesh-5722-letter-ch-shedm-aid5412963",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org / TheRebbe.org, AID 5412963, body lines 244–245. ; Chabad.org / TheRebbe.org, AID 5412963, body lines 245–249.",
-            "independent_witness": true
-          }
-        },
-        {
-          "identity_key": "aid:5413093",
-          "aid": 5413093,
-          "id": "chabad-secretariat-letter-5413093",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabad-secretariat-letter-5413093",
-              "evidence_family_id": "secretariat-letter-5722-1-adar-i-head-covering-aid5413093",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org / TheRebbe.org, AID 5413093, body lines 250–254. ; Chabad.org / TheRebbe.org, AID 5413093, body lines 258–266 (including the secretary signature and publication note).",
-              "verification_scope": "נבדק גוף העמוד בעברית ב-Chabad.org, AID 5413093, שורות 235–268. גוף המענה בשורות 250–256; החתימה בשורות 258–262 מציינת 'בשם כ״ק אדמו״ר שליט״א, מזכיר'. לכן הרשומה מסווגת כמכתב מזכירות ולא כאיגרת שנכתבה ישירות בידי הרבי. מכתב הפנייה, זהות הנמען והנסיבות המלאות אינם זמינים.",
-              "context_status": "partial"
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Verified",
-            "evidence_family_id": "secretariat-letter-5722-1-adar-i-head-covering-aid5413093",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad.org / TheRebbe.org, AID 5413093, body lines 250–254. ; Chabad.org / TheRebbe.org, AID 5413093, body lines 258–266 (including the secretary signature and publication note).",
-            "independent_witness": false
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200710132",
-          "aid": null,
-          "id": "chabadlibrary-1200710132",
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200710132",
-              "evidence_family_id": "igrot-kodesh-v27-marginal-response-y-kd-aid1200710132",
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-010-010",
+              "evidence_family_id": "living-torah-aid-335482",
               "status": "Parsed",
               "has_content_evidence": true,
-              "proposition_count": 2,
+              "proposition_count": 1,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad Library, כרך כ״ז, י׳קכד, item 1200710132, marginal response concerning a planned Caesarean section near Shabbat (public search extract; no line numbers). ; Chabad Library, כרך כ״ז, י׳קכד, item 1200710132, closing passage on consulting the physician and local halachic authority (public search extract; no line numbers).",
-              "verification_scope": "נבדק הטקסט הגלוי בתוצאת החיפוש הציבורית של עמוד הפריט ב-Chabad Library, מזהה 1200710132. פתיחת העמוד בכלי הקריאה לא החזירה שורות קריאות; הפרפרזות מוגבלות לקטע גוף הפרסום שהופיע בתוצאת החיפוש. לא נבדקו גוף העמוד המלא, צילום, כתב יד, מכתב הפנייה או עותק עצמאי. הרשומה נשארת Parsed ולא Verified.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200710132",
-              "evidence_family_id": "igrot-kodesh-v27-marginal-response-y-kd-aid1200710132",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-kodesh-v27-marginal-response-y-kd-aid1200710132",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad Library, כרך כ״ז, י׳קכד, item 1200710132, marginal response concerning a planned Caesarean section near Shabbat (public search extract; no line numbers). ; Chabad Library, כרך כ״ז, י׳קכד, item 1200710132, closing passage on consulting the physician and local halachic authority (public search extract; no line numbers).",
-            "independent_witness": false
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200710378",
-          "aid": null,
-          "id": "chabadlibrary-1200710378",
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200710378",
-              "evidence_family_id": "igrot-kodesh-v27-y-sha-yiddish-public-letter-aid1200710378",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad Library, כרך כ״ז, י׳שע, item 1200710378, Yiddish public-letter passage contrasting minimal effort with toil and achievement (public search extract; no line numbers). ; Chabad Library, כרך כ״ז, י׳שע, item 1200710378, address to Jewish men and women in all places (public search extract; no line numbers).",
-              "verification_scope": "נבדק הטקסט הגלוי בתוצאת החיפוש הציבורית של עמוד הפריט ב-Chabad Library, מזהה 1200710378. פתיחת העמוד בכלי הקריאה לא החזירה שורות קריאות; הפרפרזות מוגבלות לקטע גוף הפרסום שהופיע בתוצאת החיפוש. לא נבדקו גוף העמוד המלא, צילום, כתב יד, מכתב הפנייה או עותק עצמאי. הרשומה נשארת Parsed ולא Verified.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200710378",
-              "evidence_family_id": "igrot-kodesh-v27-y-sha-yiddish-public-letter-aid1200710378",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-kodesh-v27-y-sha-yiddish-public-letter-aid1200710378",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad Library, כרך כ״ז, י׳שע, item 1200710378, Yiddish public-letter passage contrasting minimal effort with toil and achievement (public search extract; no line numbers). ; Chabad Library, כרך כ״ז, י׳שע, item 1200710378, address to Jewish men and women in all places (public search extract; no line numbers).",
-            "independent_witness": true
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200710429",
-          "aid": null,
-          "id": "chabadlibrary-1200710429",
-          "canonical_records_found": 4,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-068-2026-11-13.json",
-              "id": "chabad-library-letter-1200710429",
-              "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "ספריית ליובאוויטש /books/1200710429, מכתב י'תכא; הקטע הגלוי על המשך הפרסומים, הפצת התורה ועידוד המצוות, ולאחריו ההתייחסות לימי הגאולה י״ב–י״ג תמוז; נבדק 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לקטע גוף האיגרת שהוצג בתוצאת החיפוש הרשמית עבור /books/1200710429, מכתב י'תכא, ג' תמוז תשל\"ב. הפתיחה הישירה החזירה 0 שורות קריאות; לא נבדקו המכתב הנכנס או כתב היד. ההקשר ההיסטורי מוזכר רק כפי שהוא מופיע בקטע; context_status=partial. The item-page note also says part of the text was completed from a photograph; that photograph was not inspected. This source is not counted as an independent witness.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200710429",
-              "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
-              "status": "Linked",
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": "not_independently_promoted",
-              "proposition_source_locator": null,
-              "verification_scope": "Same source URL and same letter are already represented in batch 068. The item-page note indicates that part of the text was completed from a photograph; the photograph was not inspected. This batch entry is a duplicate alias only and contributes no new proposition.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabad-library-letter-1200710429",
-              "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200710429",
-              "evidence_family_id": "igrot-kodesh-v27-y-tka-aid1200710429",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
-            "canonical_file": "data/items/content-research-batch-068-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "ספריית ליובאוויטש /books/1200710429, מכתב י'תכא; הקטע הגלוי על המשך הפרסומים, הפצת התורה ועידוד המצוות, ולאחריו ההתייחסות לימי הגאולה י״ב–י״ג תמוז; נבדק 2026-11-13.",
-            "independent_witness": false
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200710552",
-          "aid": null,
-          "id": "chabadlibrary-1200710552",
-          "canonical_records_found": 4,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-068-2026-11-13.json",
-              "id": "chabad-library-letter-1200710552",
-              "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "ספריית ליובאוויטש /books/1200710552, מכתב י'תקמד; קטע גוף גלוי בתוצאת החיפוש, מן הסימון [תרגום חפשי] ועד הפסקה על שיעורי חת״ת; נבדק 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לתרגום החופשי לעברית שהוצג בתוצאת החיפוש של ספריית ליובאוויטש עבור /books/1200710552, מכתב י'תקמד, ה' ניסן תשל\"ב. המקור מסומן [רוסית], אך גוף המקור הרוסי לא הוצג בקטע שנבדק. פתיחה ישירה החזירה 0 שורות קריאות. אין לספור את התרגום כעד עצמאי; המכתב הנכנס וכתב היד לא נבדקו; context_status=partial.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200710552",
-              "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
-              "status": "Linked",
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": "not_independently_promoted",
-              "proposition_source_locator": null,
-              "verification_scope": "This Hebrew presentation is explicitly marked as a free translation from Russian. The existing canonical record already represents the same source family and contains two bounded propositions. The Russian body was not inspected in this run; no new proposition or independent witness is added.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabad-library-letter-1200710552",
-              "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200710552",
-              "evidence_family_id": "igrot-kodesh-v27-y-tkmd-aid1200710552",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
-            "canonical_file": "data/items/content-research-batch-068-2026-11-13.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "ספריית ליובאוויטש /books/1200710552, מכתב י'תקמד; קטע גוף גלוי בתוצאת החיפוש, מן הסימון [תרגום חפשי] ועד הפסקה על שיעורי חת״ת; נבדק 2026-11-13.",
-            "independent_witness": false
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200800002",
-          "aid": null,
-          "id": "chabadlibrary-1200800002",
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200800002",
-              "evidence_family_id": "igrot-kodesh-v6-a-tktk-aid1200800002",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad Library, כרך ו׳, א׳תקכט, item 1200800002, opening acknowledgment of support for Ohaley Yosef Yitzchak institutions (public search extract; no line numbers). ; Chabad Library, כרך ו׳, א׳תקכט, item 1200800002, paragraph on explaining the institution's purpose and future participation (public search extract; no line numbers).",
-              "verification_scope": "נבדק הטקסט הגלוי בתוצאת החיפוש הציבורית של עמוד הפריט ב-Chabad Library, מזהה 1200800002. פתיחת העמוד בכלי הקריאה לא החזירה שורות קריאות; הפרפרזות מוגבלות לקטע גוף הפרסום שהופיע בתוצאת החיפוש. לא נבדקו גוף העמוד המלא, צילום, כתב יד, מכתב הפנייה או עותק עצמאי. הרשומה נשארת Parsed ולא Verified.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200800002",
-              "evidence_family_id": "igrot-kodesh-v6-a-tktk-aid1200800002",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-kodesh-v6-a-tktk-aid1200800002",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad Library, כרך ו׳, א׳תקכט, item 1200800002, opening acknowledgment of support for Ohaley Yosef Yitzchak institutions (public search extract; no line numbers). ; Chabad Library, כרך ו׳, א׳תקכט, item 1200800002, paragraph on explaining the institution's purpose and future participation (public search extract; no line numbers).",
-            "independent_witness": true
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200820350",
-          "aid": null,
-          "id": "chabadlibrary-1200820350",
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200820350",
-              "evidence_family_id": "igrot-kodesh-v8-b-tktzd-aid1200820350",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad Library, כרך ח׳, ב׳תקצד, item 1200820350, halachic discussion of inserting Kedushah during Shema (public search extract; no line numbers). ; Chabad Library, כרך ח׳, ב׳תקצד, item 1200820350, closing reasoning on interruption and absence of a cited halachic precedent (public search extract; no line numbers).",
-              "verification_scope": "נבדק הטקסט הגלוי בתוצאת החיפוש הציבורית של עמוד הפריט ב-Chabad Library, מזהה 1200820350. פתיחת העמוד בכלי הקריאה לא החזירה שורות קריאות; הפרפרזות מוגבלות לקטע גוף הפרסום שהופיע בתוצאת החיפוש. לא נבדקו גוף העמוד המלא, צילום, כתב יד, מכתב הפנייה או עותק עצמאי. הרשומה נשארת Parsed ולא Verified.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200820350",
-              "evidence_family_id": "igrot-kodesh-v8-b-tktzd-aid1200820350",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-kodesh-v8-b-tktzd-aid1200820350",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad Library, כרך ח׳, ב׳תקצד, item 1200820350, halachic discussion of inserting Kedushah during Shema (public search extract; no line numbers). ; Chabad Library, כרך ח׳, ב׳תקצד, item 1200820350, closing reasoning on interruption and absence of a cited halachic precedent (public search extract; no line numbers).",
-            "independent_witness": true
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200890083",
-          "aid": null,
-          "id": "chabadlibrary-1200890083",
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200890083",
-              "evidence_family_id": "igrot-kodesh-v15-he-taz-aid1200890083",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad Library, כרך ט״ו, ה׳תז, item 1200890083, paragraph on the educator's concern after students leave his framework (public search extract; no line numbers). ; Chabad Library, כרך ט״ו, ה׳תז, item 1200890083, paragraph on the lasting influence of years of Jewish education (public search extract; no line numbers).",
-              "verification_scope": "נבדק הטקסט הגלוי בתוצאת החיפוש הציבורית של עמוד הפריט ב-Chabad Library, מזהה 1200890083. פתיחת העמוד בכלי הקריאה לא החזירה שורות קריאות; הפרפרזות מוגבלות לקטע גוף הפרסום שהופיע בתוצאת החיפוש. לא נבדקו גוף העמוד המלא, צילום, כתב יד, מכתב הפנייה או עותק עצמאי. הרשומה נשארת Parsed ולא Verified.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200890083",
-              "evidence_family_id": "igrot-kodesh-v15-he-taz-aid1200890083",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-kodesh-v15-he-taz-aid1200890083",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad Library, כרך ט״ו, ה׳תז, item 1200890083, paragraph on the educator's concern after students leave his framework (public search extract; no line numbers). ; Chabad Library, כרך ט״ו, ה׳תז, item 1200890083, paragraph on the lasting influence of years of Jewish education (public search extract; no line numbers).",
-            "independent_witness": true
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200910023",
-          "aid": null,
-          "id": "chabadlibrary-1200910023",
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200910023",
-              "evidence_family_id": "igrot-kodesh-v17-v-kas-aid1200910023",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad Library, כרך י״ז, ו׳קסז, item 1200910023, paragraph on the yeshiva's financial and spiritual situation (public search extract; no line numbers). ; Chabad Library, כרך י״ז, ו׳קסז, item 1200910023, paragraph on repeated donor outreach and study of the inner dimension of Torah (public search extract; no line numbers).",
-              "verification_scope": "נבדק הטקסט הגלוי בתוצאת החיפוש הציבורית של עמוד הפריט ב-Chabad Library, מזהה 1200910023. פתיחת העמוד בכלי הקריאה לא החזירה שורות קריאות; הפרפרזות מוגבלות לקטע גוף הפרסום שהופיע בתוצאת החיפוש. לא נבדקו גוף העמוד המלא, צילום, כתב יד, מכתב הפנייה או עותק עצמאי. הרשומה נשארת Parsed ולא Verified.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200910023",
-              "evidence_family_id": "igrot-kodesh-v17-v-kas-aid1200910023",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-kodesh-v17-v-kas-aid1200910023",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad Library, כרך י״ז, ו׳קסז, item 1200910023, paragraph on the yeshiva's financial and spiritual situation (public search extract; no line numbers). ; Chabad Library, כרך י״ז, ו׳קסז, item 1200910023, paragraph on repeated donor outreach and study of the inner dimension of Torah (public search extract; no line numbers).",
-            "independent_witness": true
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200910034",
-          "aid": null,
-          "id": "chabadlibrary-1200910034",
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200910034",
-              "evidence_family_id": "igrot-kodesh-v17-v-kach-aid1200910034",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad Library, כרך י״ז, ו׳קעח, item 1200910034, response to the Tel Aviv branch's winter activity report (public search extract; no line numbers). ; Chabad Library, כרך י״ז, ו׳קעח, item 1200910034, paragraph on expanding the work quantitatively and qualitatively (public search extract; no line numbers).",
-              "verification_scope": "נבדק הטקסט הגלוי בתוצאת החיפוש הציבורית של עמוד הפריט ב-Chabad Library, מזהה 1200910034. פתיחת העמוד בכלי הקריאה לא החזירה שורות קריאות; הפרפרזות מוגבלות לקטע גוף הפרסום שהופיע בתוצאת החיפוש. לא נבדקו גוף העמוד המלא, צילום, כתב יד, מכתב הפנייה או עותק עצמאי. הרשומה נשארת Parsed ולא Verified.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200910034",
-              "evidence_family_id": "igrot-kodesh-v17-v-kach-aid1200910034",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-kodesh-v17-v-kach-aid1200910034",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad Library, כרך י״ז, ו׳קעח, item 1200910034, response to the Tel Aviv branch's winter activity report (public search extract; no line numbers). ; Chabad Library, כרך י״ז, ו׳קעח, item 1200910034, paragraph on expanding the work quantitatively and qualitatively (public search extract; no line numbers).",
-            "independent_witness": true
-          }
-        },
-        {
-          "identity_key": "url:https://www.chabadlibrary.org/books/1200980070",
-          "aid": null,
-          "id": "chabadlibrary-1200980070",
-          "canonical_records_found": 2,
-          "records": [
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200980070",
-              "evidence_family_id": "igrot-kodesh-v24-t-tzt-aid1200980070",
-              "status": "Parsed",
-              "has_content_evidence": true,
-              "proposition_count": 2,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad Library, כרך כ״ד, ט׳צט, item 1200980070, paragraph connecting kosher food with the heart and mind (public search extract; no line numbers). ; Chabad Library, כרך כ״ד, ט׳צט, item 1200980070, paragraph connecting bodily and spiritual kashrut with Torah and Chassidic dissemination (public search extract; no line numbers).",
-              "verification_scope": "נבדק הטקסט הגלוי בתוצאת החיפוש הציבורית של עמוד הפריט ב-Chabad Library, מזהה 1200980070. פתיחת העמוד בכלי הקריאה לא החזירה שורות קריאות; הפרפרזות מוגבלות לקטע גוף הפרסום שהופיע בתוצאת החיפוש. לא נבדקו גוף העמוד המלא, צילום, כתב יד, מכתב הפנייה או עותק עצמאי. הרשומה נשארת Parsed ולא Verified.",
-              "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabadlibrary-1200980070",
-              "evidence_family_id": "igrot-kodesh-v24-t-tzt-aid1200980070",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
-            }
-          ],
-          "selected_index_entry": {
-            "present": true,
-            "answer_eligible": true,
-            "status": "Parsed",
-            "evidence_family_id": "igrot-kodesh-v24-t-tzt-aid1200980070",
-            "canonical_file": "data/items/content-research-batch-088-2026-11-15.json",
-            "proposition_count": 2,
-            "proposition_source_locator": "Chabad Library, כרך כ״ד, ט׳צט, item 1200980070, paragraph connecting kosher food with the heart and mind (public search extract; no line numbers). ; Chabad Library, כרך כ״ד, ט׳צט, item 1200980070, paragraph connecting bodily and spiritual kashrut with Torah and Chassidic dissemination (public search extract; no line numbers).",
-            "independent_witness": false
-          }
-        },
-        {
-          "identity_key": "id:chabad-letter-1875534",
-          "aid": null,
-          "id": "chabad-letter-1875534",
-          "canonical_records_found": 1,
-          "records": [
-            {
-              "file": "data/items/chabad-letter-1875534.json",
-              "id": "chabad-letter-1875534",
-              "evidence_family_id": "chabad-letter-1875534",
-              "status": "Verified",
-              "has_content_evidence": true,
-              "proposition_count": 6,
-              "proposition_origin": "source_grounded_paraphrase",
-              "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "Chabad.org / TheRebbe.org, AID 1875534, body lines 282–287; accessed 2026-11-15. ; Chabad.org / TheRebbe.org, AID 1875534, body lines 288–290.",
-              "verification_scope": "גוף העמוד באנגלית נבדק ב-AID 1875534, שורות 271–296. הפרופוזיציות על חינוך ילדים נשענות על שורות 283–287; הפרופוזיציה על רציפות הקשר נשענת על שורה 282. מכתב הפנייה, הנוסח בשפת המקור וכתב יד לא נבדקו. בבדיקה הנוכחית נבדקו גם שורות 288–290: ההבחנה בין מטרה חינוכית לבין פנייה כספית עקיפה, וההתייחסות למיאמי כעדיפות של הנמען.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 335482, lines 291–303 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 335482, שורות 291–303, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
               "context_status": "partial"
             }
           ],
@@ -802,36 +256,23 @@
           }
         },
         {
-          "identity_key": "id:chabad-library-letter-1200710552",
+          "identity_key": "id:canonical-lt-eye-010-006",
           "aid": null,
-          "id": "chabad-library-letter-1200710552",
-          "canonical_records_found": 2,
+          "id": "canonical-lt-eye-010-006",
+          "canonical_records_found": 1,
           "records": [
             {
-              "file": "data/items/content-research-batch-068-2026-11-13.json",
-              "id": "chabad-library-letter-1200710552",
-              "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-010-006",
+              "evidence_family_id": "living-torah-aid-2889264",
               "status": "Parsed",
               "has_content_evidence": true,
-              "proposition_count": 2,
+              "proposition_count": 1,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "ספריית ליובאוויטש /books/1200710552, מכתב י'תקמד; קטע גוף גלוי בתוצאת החיפוש, מן הסימון [תרגום חפשי] ועד הפסקה על שיעורי חת״ת; נבדק 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לתרגום החופשי לעברית שהוצג בתוצאת החיפוש של ספריית ליובאוויטש עבור /books/1200710552, מכתב י'תקמד, ה' ניסן תשל\"ב. המקור מסומן [רוסית], אך גוף המקור הרוסי לא הוצג בקטע שנבדק. פתיחה ישירה החזירה 0 שורות קריאות. אין לספור את התרגום כעד עצמאי; המכתב הנכנס וכתב היד לא נבדקו; context_status=partial.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2889264, lines 246–249 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2889264, שורות 246–249, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
               "context_status": "partial"
-            },
-            {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabad-library-letter-1200710552",
-              "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
             }
           ],
           "selected_index_entry": {
@@ -839,36 +280,287 @@
           }
         },
         {
-          "identity_key": "id:chabad-library-letter-1200710429",
+          "identity_key": "id:canonical-lt-eye-010-001",
           "aid": null,
-          "id": "chabad-library-letter-1200710429",
-          "canonical_records_found": 2,
+          "id": "canonical-lt-eye-010-001",
+          "canonical_records_found": 1,
           "records": [
             {
-              "file": "data/items/content-research-batch-068-2026-11-13.json",
-              "id": "chabad-library-letter-1200710429",
-              "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-010-001",
+              "evidence_family_id": "living-torah-aid-4525544",
               "status": "Parsed",
               "has_content_evidence": true,
-              "proposition_count": 2,
+              "proposition_count": 1,
               "proposition_origin": "source_grounded_paraphrase",
               "proposition_verification": "source_text_inspected",
-              "proposition_source_locator": "ספריית ליובאוויטש /books/1200710429, מכתב י'תכא; הקטע הגלוי על המשך הפרסומים, הפצת התורה ועידוד המצוות, ולאחריו ההתייחסות לימי הגאולה י״ב–י״ג תמוז; נבדק 2026-11-13.",
-              "verification_scope": "אימות התוכן מוגבל לקטע גוף האיגרת שהוצג בתוצאת החיפוש הרשמית עבור /books/1200710429, מכתב י'תכא, ג' תמוז תשל\"ב. הפתיחה הישירה החזירה 0 שורות קריאות; לא נבדקו המכתב הנכנס או כתב היד. ההקשר ההיסטורי מוזכר רק כפי שהוא מופיע בקטע; context_status=partial. The item-page note also says part of the text was completed from a photograph; that photograph was not inspected. This source is not counted as an independent witness.",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4525544, lines 255–258 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4525544, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
               "context_status": "partial"
-            },
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-eye-013-007",
+          "aid": null,
+          "id": "canonical-lt-eye-013-007",
+          "canonical_records_found": 1,
+          "records": [
             {
-              "file": "data/items/content-research-batch-088-2026-11-15.json",
-              "id": "chabad-library-letter-1200710429",
-              "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
-              "status": null,
-              "has_content_evidence": false,
-              "proposition_count": 0,
-              "proposition_origin": null,
-              "proposition_verification": null,
-              "proposition_source_locator": null,
-              "verification_scope": null,
-              "context_status": null
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-013-007",
+              "evidence_family_id": "living-torah-aid-2349222",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2349222, lines 255–258 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2349222, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-eye-014-002",
+          "aid": null,
+          "id": "canonical-lt-eye-014-002",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-014-002",
+              "evidence_family_id": "living-torah-aid-281313",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 281313, lines 257–260 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 281313, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-eye-013-010",
+          "aid": null,
+          "id": "canonical-lt-eye-013-010",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-013-010",
+              "evidence_family_id": "living-torah-aid-363469",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 363469, lines 257–260 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 363469, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-eye-014-005",
+          "aid": null,
+          "id": "canonical-lt-eye-014-005",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-014-005",
+              "evidence_family_id": "living-torah-aid-2606412",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2606412, lines 255–258 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2606412, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-eye-010-007",
+          "aid": null,
+          "id": "canonical-lt-eye-010-007",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-010-007",
+              "evidence_family_id": "living-torah-aid-2946206",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2946206, lines 246–249 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2946206, שורות 246–249, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-eye-014-003",
+          "aid": null,
+          "id": "canonical-lt-eye-014-003",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-014-003",
+              "evidence_family_id": "living-torah-aid-702100",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 702100, lines 257–260 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 702100, שורות 257–260, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-e2e-1991-06-12-a-modest-queen",
+          "aid": null,
+          "id": "canonical-lt-e2e-1991-06-12-a-modest-queen",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-e2e-1991-06-12-a-modest-queen",
+              "evidence_family_id": "living-torah-aid-1974202",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 1974202, lines 255–258 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 1974202, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-e2e-1990-07-29-nothing-too-difficult",
+          "aid": null,
+          "id": "canonical-lt-e2e-1990-07-29-nothing-too-difficult",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-e2e-1990-07-29-nothing-too-difficult",
+              "evidence_family_id": "living-torah-aid-4547216",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4547216, lines 255–258 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4547216, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-eye-013-005",
+          "aid": null,
+          "id": "canonical-lt-eye-013-005",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-013-005",
+              "evidence_family_id": "living-torah-aid-2316185",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2316185, lines 255–258 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2316185, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-e2e-1991-03-24-his-real-life",
+          "aid": null,
+          "id": "canonical-lt-e2e-1991-03-24-his-real-life",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-e2e-1991-03-24-his-real-life",
+              "evidence_family_id": "living-torah-aid-2920438",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 2920438, lines 255–258 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 2920438, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
+            }
+          ],
+          "selected_index_entry": {
+            "present": false
+          }
+        },
+        {
+          "identity_key": "id:canonical-lt-eye-012-007",
+          "aid": null,
+          "id": "canonical-lt-eye-012-007",
+          "canonical_records_found": 1,
+          "records": [
+            {
+              "file": "data/items/bulk-indexed-2026-09-25-001.json",
+              "id": "canonical-lt-eye-012-007",
+              "evidence_family_id": "living-torah-aid-4469446",
+              "status": "Parsed",
+              "has_content_evidence": true,
+              "proposition_count": 1,
+              "proposition_origin": "source_grounded_paraphrase",
+              "proposition_verification": "source_text_inspected",
+              "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 4469446, lines 255–258 (publisher synopsis only).",
+              "verification_scope": "נבדק גוף העמוד הציבורי באנגלית ב-Chabad.org/TheRebbe.org, AID 4469446, שורות 255–258, ביום 15.11.2026. נבדק רק תקציר JEM/Living Torah הגלוי בעמוד; הווידאו עצמו, תמליל מלא, שפת הדיבור המקורית וההקשר המלא לא נבדקו. הפרופוזיציה היא פרפרזה מחקרית של תקציר המו״ל, ולא ציטוט או ייחוס ישיר של הניסוח לרבי. לא הועתק טקסט מוגן במלואו.",
+              "context_status": "partial"
             }
           ],
           "selected_index_entry": {
@@ -877,16 +569,16 @@
         }
       ],
       "metrics_actual_after": {
-        "answer_eligible_unique_sources": 886,
+        "answer_eligible_unique_sources": 900,
         "content_verified_unique_sources": 852,
-        "answer_eligible_propositions": 2818
+        "answer_eligible_propositions": 2832
       },
       "reconciliation_variance": {
-        "answer_eligible_unique_sources": -1,
-        "content_verified_unique_sources": -1,
-        "answer_eligible_propositions": -5
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 0
       },
-      "reconciliation_status": "reconciled_with_variance"
+      "reconciliation_status": "reconciled"
     },
     "last_manual_web_review": {
       "batch_id": "082",

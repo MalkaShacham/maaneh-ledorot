@@ -6,7 +6,7 @@
   "generated": "2026-11-15",
   "reviewed_at": "2026-11-15T01:57:47+02:00",
   "status": "pending_reconciliation",
-  "reconciliation_status": "pending",
+  "reconciliation_status": "reconciled",
   "review_method": "Public web search/open. Fourteen existing Living Torah archive identities were matched by title/date, their item-level Chabad.org/TheRebbe.org pages were opened, and only the visible JEM publisher synopsis was paraphrased. One previously enriched item (AID 4057736) was rechecked without duplication. Seven audio-only Yechidus candidates had no readable transcript; one archive/title mismatch was withheld. No crawler retry, access-control bypass, transcript copying, or scan-only content verification.",
   "records_reviewed": 23,
   "reviewed_item_count": 23,
@@ -468,8 +468,16 @@
     "content_verified_unique_sources": 852,
     "answer_eligible_propositions": 2832
   },
-  "metrics_actual_after": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 900,
+    "content_verified_unique_sources": 852,
+    "answer_eligible_propositions": 2832
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
   "crawler_retry": false,
   "access_control_bypassed": false,
   "full_text_copied": false,
@@ -508,5 +516,6 @@
     "No translations were added or counted as independent witnesses."
   ],
   "note": "This batch adds no new bibliographic identities. It converts 14 existing metadata-only Living Torah identities into answer-eligible, partial-context, Parsed publisher-synopsis records. Expected change: 886→900 answer-eligible Evidence Families; content-verified remains 852; propositions 2,818→2,832.",
-  "records": []
+  "records": [],
+  "reconciled_at": "2026-11-15T00:06:25.066176+00:00"
 }
