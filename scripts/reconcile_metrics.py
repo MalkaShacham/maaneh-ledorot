@@ -119,6 +119,7 @@ state_path.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encodin
 print(json.dumps(out,ensure_ascii=False))
 
 search_entries={}
+all_search_entries=[]
 def flatten_terms(v):
     if v is None:return []
     if isinstance(v,str):return [v]
@@ -196,6 +197,7 @@ for fp in items:
             entry["proposition_verification"]=x.get("proposition_verification") or prop.get("proposition_verification")
             entry["proposition_source_locator"]=x.get("proposition_source_locator") or prop.get("proposition_source_locator")
         entry["search_text"]=" ".join(flatten_terms([entry["title"],entry["summary"],entry["source_class"],entry["date"],entry["language"],entry["publisher_terms"],entry["research_terms"],entry["question_or_problem"],entry["response_propositions"],entry["conditions_or_qualifications"],entry["audience"],entry["aid"],entry["locator"]]))
+        all_search_entries.append(entry)
         old=search_entries.get(key)
         # Prefer inspected answer evidence over a duplicate catalog-only record.
         # Keep the entire witness together; never mix propositions/context fields.
@@ -206,89 +208,146 @@ search_index={"generated":today,"count":len(search_entries),"entries":sorted(sea
 # deployment transfer size without changing any record or field.
 (ROOT/"data/public-search-index.json").write_text(json.dumps(search_index,ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf-8")
 
-# Preserve an item-level reconciliation audit for the latest manual content batch.
-# The selected batch is discovered dynamically so new manual reviews do not leave
-# the audit pinned to a historical filename.
+# Reconcile the contiguous pending manual-batch chain ending at the newest batch.
+# This prevents a later manual review from leaving the immediately preceding batch pending.
 manual_batch_paths=sorted(fp for fp in items if re.fullmatch(r"content-research-batch-\d{3}-\d{4}-\d{2}-\d{2}\.json",fp.name))
-batch_path=manual_batch_paths[-1] if manual_batch_paths else None
-batch_data=None
-if batch_path:
+manual_batches=[]
+for fp in manual_batch_paths:
+    try: data=json.loads(fp.read_text(encoding="utf-8"))
+    except Exception: continue
+    if isinstance(data,dict): manual_batches.append({"path":fp,"data":data})
+
+def is_pending_batch(data):
+    return (data.get("reconciliation_status") in ("pending","pending_reconciliation")
+            or data.get("status") in ("pending","pending_reconciliation"))
+
+selected_batches=[]
+if manual_batches and is_pending_batch(manual_batches[-1]["data"]):
+    selected_batches=[manual_batches[-1]]
+    current=manual_batches[-1]["data"]
+    index=len(manual_batches)-2
+    while index>=0:
+        previous=manual_batches[index]["data"]
+        if not is_pending_batch(previous): break
+        if (previous.get("metrics_expected_after") or {}) != (current.get("metrics_before") or {}): break
+        selected_batches.insert(0,manual_batches[index])
+        current=previous
+        index-=1
+
+reconciliation_audit_history=[]
+for selected_index, batch_info in enumerate(selected_batches):
+    batch_path=batch_info["path"]; batch_data=batch_info["data"]
     batch_label=re.search(r"content-research-batch-(\d+)-",batch_path.name).group(1)
-    try:
-        batch_data=json.loads(batch_path.read_text(encoding="utf-8"))
-        target_identities=[]
-        def add_target(identity_key, aid=None, item_id=None):
-            if identity_key and not any(t["key"]==identity_key for t in target_identities):
-                target_identities.append({"key":identity_key,"aid":aid,"id":item_id})
-        for record in batch_data.get("records",[]):
-            if not isinstance(record,dict): continue
-            keys=identity_keys(record); stable=keys[0] if keys else None
-            if stable:
-                aid=str(record.get("aid") or "")
-                add_target(stable,aid if aid else None,record.get("id"))
-        for update in batch_data.get("existing_identity_updates",[]):
+    target_identities=[]
+    def add_target(identity_key, aid=None, item_id=None):
+        if identity_key and not any(t["key"]==identity_key for t in target_identities):
+            target_identities.append({"key":identity_key,"aid":aid,"id":item_id})
+    for record in batch_data.get("records",[]):
+        if not isinstance(record,dict): continue
+        keys=identity_keys(record); stable=keys[0] if keys else None
+        if stable:
+            aid=str(record.get("aid") or "")
+            add_target(stable,aid if aid else None,record.get("id"))
+    for update in batch_data.get("existing_identity_updates",[]):
+        aid=str(update.get("aid") or "")
+        if aid.isdigit():
+            add_target("aid:"+aid,aid,update.get("id"))
+        else:
             identity=str(update.get("identity") or update.get("id") or "")
             match=re.search(r"(\d+)$",identity)
-            if match:add_target("aid:"+match.group(1),match.group(1),update.get("id"))
+            if match: add_target("aid:"+match.group(1),match.group(1),update.get("id"))
             else:
-                item_id=str(update.get("id") or identity);add_target("id:"+item_id,None,item_id)
-        # Duplicate presentations are audit targets, not new source records.
-        # Resolve both ends by stable AID and compare their selected Evidence Family.
-        for alias in batch_data.get("identity_alias_audit_targets",[]):
-            alias_aid=str(alias.get("alias_aid") or "")
-            canonical_aid=str(alias.get("canonical_aid") or "")
-            if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
-            if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
-        for recheck in batch_data.get("existing_identity_rechecks",[]):
-            recheck_aid=str(recheck.get("aid") or "")
-            if recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
-        audit=[];by_identity={target["key"]:[] for target in target_identities}
-        for fp in items:
-            try: obj=json.loads(fp.read_text(encoding="utf-8"))
-            except Exception: continue
-            if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
-            for x in candidate_dicts(obj):
-                if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
-                for record_key in [key for key in identity_keys(x) if key in by_identity]:
-                    by_identity[record_key].append({"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")})
-        for target in target_identities:
-            selected=search_entries.get(target["key"]);aid_value=target.get("aid");matches=by_identity[target["key"]]
-            family_ids=sorted({r.get("evidence_family_id") for r in matches if r.get("evidence_family_id")})
-            same_family_duplicate=len(matches)>1 and len(family_ids)==1 and all(r.get("independent_witness") is False for r in matches)
-            identity_collision=len(matches)>1 and not same_family_duplicate
-            audit.append({"identity_key":target["key"],"aid":int(aid_value) if aid_value and str(aid_value).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False}})
-        batch_before=batch_data.get("metrics_before")
-        batch_expected=batch_data.get("metrics_expected_after")
-        readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
-        if isinstance(batch_before,dict):
-            readiness_state["before"]={k:batch_before[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in batch_before}
-        if isinstance(batch_expected,dict):
-            readiness_state["expected_after"]={k:batch_expected[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in batch_expected}
-        state.setdefault("development_recovery",{})["last_reconciliation"]={
-            "batch_id":batch_data.get("batch_id") or batch_label,
-            "batch_file":str(batch_path.relative_to(ROOT)),
-            "generated":today,
-            "batch_record_count":len(target_identities),
-            "new_source_identity_count":batch_data.get("new_source_identities"),
-            "existing_identities_enriched":batch_data.get("existing_identities_enriched"),
-            "source_bodies_inspected":batch_data.get("source_bodies_inspected"),
-            "answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),
-            "selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")}),
-            "non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),
-            "same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),
-            "canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),
-            "items":audit
-        }
-    except Exception as exc:
-        state.setdefault("development_recovery",{})["last_reconciliation"]={"batch_id":batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"generated":today,"error":str(exc)}
+                item_id=str(update.get("id") or identity)
+                add_target("id:"+item_id,None,item_id)
+    for alias in batch_data.get("identity_alias_audit_targets",[]):
+        alias_aid=str(alias.get("alias_aid") or ""); canonical_aid=str(alias.get("canonical_aid") or "")
+        if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
+        if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
+    for recheck in batch_data.get("existing_identity_rechecks",[]):
+        recheck_aid=str(recheck.get("aid") or "")
+        if recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
+
+    # Exclude later manual batches to calculate the actual corpus snapshot immediately
+    # after this batch. Use all entries, not only the final deduplicated index.
+    later_paths={str(x["path"].relative_to(ROOT)) for x in selected_batches[selected_index+1:]}
+    snapshot_by_key={}
+    for entry in all_search_entries:
+        if entry.get("canonical_file") in later_paths: continue
+        key=entry.get("key")
+        if not key: continue
+        old=snapshot_by_key.get(key)
+        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
+        if old is None or priority(entry)>priority(old): snapshot_by_key[key]=entry
+    snapshot_metrics=summarize(list(snapshot_by_key.values()))
+
+    audit=[]; by_identity={target["key"]:[] for target in target_identities}
+    for fp in items:
+        try: obj=json.loads(fp.read_text(encoding="utf-8"))
+        except Exception: continue
+        if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
+        for x in candidate_dicts(obj):
+            if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
+            for record_key in [key for key in identity_keys(x) if key in by_identity]:
+                by_identity[record_key].append({"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")})
+    for target in target_identities:
+        selected=snapshot_by_key.get(target["key"]); matches=by_identity[target["key"]]
+        family_ids=sorted({r.get("evidence_family_id") for r in matches if r.get("evidence_family_id")})
+        same_family_duplicate=len(matches)>1 and len(family_ids)==1 and all(r.get("independent_witness") is False for r in matches)
+        identity_collision=len(matches)>1 and not same_family_duplicate
+        audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False}})
+    expected=batch_data.get("metrics_expected_after") or {}
+    variance={k:snapshot_metrics[k]-int(expected.get(k,snapshot_metrics[k])) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
+    batch_data["metrics_actual_after"]=snapshot_metrics
+    batch_data["reconciliation_variance"]=variance
+    batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
+    batch_data["status"]=batch_data["reconciliation_status"]
+    batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    dedup=batch_data.get("deduplication_check")
+    if isinstance(dedup,dict):
+        collisions=[x.get("aid") for x in audit if x.get("canonical_identity_collision")]
+        same_family=[{"aid":x.get("aid"),"evidence_family_id":(x.get("matching_evidence_family_ids") or [None])[0],"files":sorted({r.get("file") for r in x.get("records",[]) if r.get("file")})} for x in audit if x.get("same_family_duplicate")]
+        missing=[x.get("aid") for x in audit if not x.get("selected_index_entry",{}).get("present")]
+        dedup["same_family_duplicate_presentations"]=same_family
+        dedup["full_index_scan_available"]=True
+        dedup["full_index_scan_pending_reconciliation"]=False
+        dedup["full_index_scan_completed_at"]=today
+        dedup["reconciled_identity_count"]=len(audit)
+        dedup["canonical_identity_collisions"]=collisions
+        dedup["missing_canonical_identities"]=missing
+        dedup["all_target_identities_answer_eligible"]=bool(audit) and all(x.get("selected_index_entry",{}).get("answer_eligible") for x in audit)
+    state.setdefault("development_recovery",{})["last_reconciliation"]={
+        "batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"generated":today,
+        "batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),
+        "existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),
+        "answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),
+        "selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")}),
+        "non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),
+        "same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),
+        "canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),
+        "metrics_actual_after":snapshot_metrics,"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"items":audit}
+    reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_after":snapshot_metrics,"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit)})
+    summary=state.setdefault("development_recovery",{}).get("last_batch_summary")
+    if isinstance(summary,dict) and str(summary.get("batch_id"))==str(batch_data.get("batch_id")):
+        summary["metrics_after_actual"]=snapshot_metrics
+        b=summary.get("metrics_before") or {}
+        summary["metrics_delta_actual"]={k:snapshot_metrics[k]-int(b.get(k,snapshot_metrics[k])) for k in snapshot_metrics}
+        summary["status"]=batch_data["reconciliation_status"]
+    batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+if selected_batches:
+    readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
+    first_data=selected_batches[0]["data"]; last_data=selected_batches[-1]["data"]
+    if isinstance(first_data.get("metrics_before"),dict):
+        readiness_state["before"]={k:first_data["metrics_before"][k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in first_data["metrics_before"]}
+    if isinstance(last_data.get("metrics_expected_after"),dict):
+        readiness_state["expected_after"]={k:last_data["metrics_expected_after"][k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in last_data["metrics_expected_after"]}
+    state.setdefault("development_recovery",{})["reconciliation_chain"]=reconciliation_audit_history
 
 print("search_index_count",len(search_entries))
-
-# Measure the evidence that can actually answer questions, not index summaries.
 out.update(summarize(search_index["entries"]))
 state["current_counts"].update({k:out[k] for k in
-                              ("answer_eligible_unique_sources","content_verified_unique_sources",
-                               "answer_eligible_propositions")})
+                               ("answer_eligible_unique_sources","content_verified_unique_sources",
+                                "answer_eligible_propositions")})
 if isinstance(state.get("metrics_integrity"),dict):
     integrity=state["metrics_integrity"]
     readiness=integrity.setdefault("answer_readiness",{})
@@ -298,66 +357,31 @@ if isinstance(state.get("metrics_integrity"),dict):
     readiness["actual_delta"]={k:actual[k]-int(before.get(k,actual[k])) for k in actual}
     expected=readiness.get("expected_after") or {}
     readiness["reconciliation_variance"]={k:actual[k]-int(expected.get(k,actual[k])) for k in actual}
-    integrity["status"]="reconciled_pending_commit"
-    integrity["last_reconciled_at"]=today
+    if selected_batches:
+        readiness["reconciliation_status"]="reconciled" if all(v==0 for v in readiness["reconciliation_variance"].values()) else "reconciled_with_variance"
+        integrity["status"]="reconciled_pending_commit" if readiness["reconciliation_status"]=="reconciled" else "reconciled_with_variance_pending_commit"
+        integrity["last_reconciled_at"]=today
 
 actual_metrics={k:out[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
-if batch_path and isinstance(batch_data,dict):
-    expected=batch_data.get("metrics_expected_after") or {}
-    variance={k:actual_metrics[k]-int(expected.get(k,actual_metrics[k])) for k in actual_metrics}
-    batch_data["metrics_actual_after"]=actual_metrics
-    batch_data["reconciliation_variance"]=variance
-    batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
-    batch_data["status"]=batch_data["reconciliation_status"]
-    readiness_state=state.setdefault("metrics_integrity",{}).setdefault("answer_readiness",{})
-    readiness_state["reconciliation_status"]=batch_data["reconciliation_status"]
-    readiness_state["actual_after"]=actual_metrics
-    readiness_state["reconciliation_variance"]=variance
-    dedup=batch_data.get("deduplication_check")
-    if isinstance(dedup,dict):
-        audit_rows=locals().get("audit",[])
-        collisions=[x.get("aid") for x in audit_rows if x.get("canonical_identity_collision")]
-        same_family=[{"aid":x.get("aid"),"evidence_family_id":(x.get("matching_evidence_family_ids") or [None])[0],"files":sorted({r.get("file") for r in x.get("records",[]) if r.get("file")})} for x in audit_rows if x.get("same_family_duplicate")]
-        missing=[x.get("aid") for x in audit_rows if not x.get("selected_index_entry",{}).get("present")]
-        dedup["same_family_duplicate_presentations"]=same_family
-        dedup["full_index_scan_available"]=True
-        dedup["full_index_scan_pending_reconciliation"]=False
-        dedup["full_index_scan_completed_at"]=today
-        dedup["reconciled_identity_count"]=len(audit_rows)
-        dedup["canonical_identity_collisions"]=collisions
-        dedup["missing_canonical_identities"]=missing
-        dedup["all_target_identities_answer_eligible"]=bool(audit_rows) and all(x.get("selected_index_entry",{}).get("answer_eligible") for x in audit_rows)
-    batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
-    batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    dev=state.setdefault("development_recovery",{})
-    summary=dev.get("last_batch_summary")
-    if isinstance(summary,dict) and summary.get("batch_id")==batch_data.get("batch_id"):
-        summary["metrics_after_actual"]=actual_metrics
-        b=summary.get("metrics_before") or {}
-        summary["metrics_delta_actual"]={k:actual_metrics[k]-int(b.get(k,actual_metrics[k])) for k in actual_metrics}
-        summary["status"]=batch_data["reconciliation_status"]
-    last=dev.get("last_reconciliation")
-    if isinstance(last,dict) and last.get("batch_id")==batch_data.get("batch_id"):
-        last["metrics_actual_after"]=actual_metrics
-        last["reconciliation_variance"]=variance
-        last["reconciliation_status"]=batch_data["reconciliation_status"]
+if selected_batches:
     acquisition_path=ROOT/"data/acquisition/latest.json"
     if acquisition_path.exists():
         acquisition=json.loads(acquisition_path.read_text(encoding="utf-8"))
-        review=acquisition.get("manual_web_review") or {}
-        if str(review.get("batch_id"))==str(batch_label):
-            review["metrics_actual_after"]=actual_metrics
-            review["reconciliation_variance"]=variance
-            review["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
-            review["status"]=batch_data["reconciliation_status"]
-            if batch_data.get("reconciled_at"):
-                review["reconciled_at"]=batch_data["reconciled_at"]
-            acquisition["last_manual_review_at"]=review.get("reviewed_at") or acquisition.get("last_manual_review_at")
-        # Always expose the latest corpus totals, even when the newest corpus batch
-        # is not the same object as the last manual web review.
+        def update_review(review, batch_info):
+            if not isinstance(review,dict) or str(review.get("batch_id"))!=str(batch_info["data"].get("batch_id")): return
+            batch_data=batch_info["data"]
+            review["metrics_actual_after"]=batch_data.get("metrics_actual_after")
+            review["reconciliation_variance"]=batch_data.get("reconciliation_variance")
+            review["reconciliation_status"]=batch_data.get("reconciliation_status")
+            review["status"]=batch_data.get("status")
+            review["reconciled_at"]=batch_data.get("reconciled_at")
+        for batch_info in selected_batches:
+            update_review(acquisition.get("manual_web_review"),batch_info)
+            update_review(acquisition.get("previous_manual_web_review"),batch_info)
+            for review in acquisition.get("manual_web_review_history",[]):
+                update_review(review,batch_info)
         acquisition["manual_web_review_current_metrics"]=actual_metrics
         acquisition_path.write_text(json.dumps(acquisition,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-
 ready_keys={e["key"] for e in search_index["entries"] if answer_eligible(e)}
 review_candidates=[e for e in search_index["entries"]
                    if e.get("id") and e.get("source_url") and e["key"] not in ready_keys]
