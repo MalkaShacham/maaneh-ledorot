@@ -1140,12 +1140,15 @@ for(const mode of ['regular','researcher']){
  }else assert.equal(m.research,undefined,'regular mode must not expose researcher-only detail');
 }
 // Batch 077: three new Hebrew Evidence Families and case-specific charity allocation synthesis.
+const batch097Path='data/items/content-research-batch-097-2026-11-15.json';
+const batch097Data=JSON.parse(await readFile(new URL(batch097Path,root),'utf8'));
 const batch077Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-077-2026-11-13.json',root)));
 assert.equal(batch077Data.reviewed_item_count,12);assert.equal(batch077Data.source_bodies_inspected,12);assert.equal(batch077Data.new_source_identities,3);assert.equal(batch077Data.existing_identities_enriched,1);assert.equal(batch077Data.existing_identities_rechecked,8);assert.equal(batch077Data.new_response_propositions,8);assert.equal(batch077Data.answer_eligible_source_families_added,3);
 const acquisitionState=JSON.parse(await readFile(new URL('data/acquisition/latest.json',root),'utf8'));
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'097');
 assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch097Path);
-assert.equal(acquisitionState.previous_manual_web_review.reconciliation_status,batch097Data.reconciliation_status);
+assert.equal(acquisitionState.previous_manual_web_review.status,'pending_reconciliation');
+assert.equal(batch097Data.reconciliation_status,'pending');
 assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
 assert.equal(batch077Data.metrics_actual_after.answer_eligible_unique_sources,792);assert.equal(batch077Data.metrics_actual_after.content_verified_unique_sources,789);assert.equal(batch077Data.metrics_actual_after.answer_eligible_propositions,2630);assert.equal(batch077Data.reconciliation_status,'reconciled');
 const batch077Aids=[5100681,5054399,5413166];
