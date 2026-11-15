@@ -39,13 +39,13 @@
     "full_text_copied": false,
     "scan_only_verification_used": false,
     "metrics_before": {
-      "answer_eligible_unique_sources": 956,
-      "content_verified_unique_sources": 870,
+      "answer_eligible_unique_sources": 955,
+      "content_verified_unique_sources": 869,
       "answer_eligible_propositions": 2918
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
+      "answer_eligible_unique_sources": 964,
+      "content_verified_unique_sources": 869,
       "answer_eligible_propositions": 2929
     },
     "enriched_aids": [
@@ -72,21 +72,9 @@
       "published_daily_anthology_original_language_entry": 8,
       "recipient_testimony_with_embedded_english_letter_excerpt": 1
     },
-    "metrics_actual_after": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2929
-    },
-    "metrics_delta_actual": {
-      "answer_eligible_unique_sources": 9,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 11
-    },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 0
-    },
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "reconciliation_variance": null,
     "reconciliation_run_id": null,
     "reconciliation_run_url": null,
     "reconciliation_head_commit": null,
@@ -492,25 +480,26 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 098 was re-audited after finding a false-positive status parse: 'no promotion to Verified' in batch 096 provenance had been counted as Verified. The parser now reads explicit leading status tokens only. Corrected metrics expected: 965 / 870 / 2,929; new commit-bound reconciliation pending.",
+  "manual_web_review_note": "Batch 098 reconciliation is being rerun after two integrity corrections: (1) the status parser now reads explicit leading pipeline tokens and no longer treats 'no promotion to Verified' as a positive status; (2) AID 4666220 was withdrawn from answer evidence because the current public reader exposes only a rewritten summary shell. Corrected baseline after batch 097: 955 / 869 / 2,918; expected after batch 098: 964 / 869 / 2,929.",
   "manual_web_review_current_metrics": {
     "published_actual_before": {
       "answer_eligible_unique_sources": 900,
       "content_verified_unique_sources": 852,
       "answer_eligible_propositions": 2832
     },
+    "corrected_baseline_after_batch097": {
+      "answer_eligible_unique_sources": 955,
+      "content_verified_unique_sources": 869,
+      "answer_eligible_propositions": 2918
+    },
     "corrected_expected_after": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
+      "answer_eligible_unique_sources": 964,
+      "content_verified_unique_sources": 869,
       "answer_eligible_propositions": 2929
     },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 0
-    },
+    "reconciliation_variance": null,
     "reconciliation_status": "pending_corrected_reconciliation",
-    "note": "The earlier +8 content-verified delta was a false positive from a negated provenance caveat, not a promotion."
+    "note": "The prior +8 Verified count was a parser false positive; AID 4666220 was also demoted to Linked because its current public reader exposes only a rewritten summary shell. Both corrections are reflected in the corrected baseline."
   },
   "last_manual_review_at": "2026-11-15T17:00:00+02:00",
   "runner_acquisition_policy": {

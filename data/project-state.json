@@ -88,32 +88,20 @@
         "content_verified_unique_sources": 827,
         "answer_eligible_propositions": 2709
       },
-      "actual_after": {
-        "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2929
-      },
+      "actual_after": null,
       "reconciliation_status": "pending_corrected_reconciliation",
       "before": {
-        "answer_eligible_unique_sources": 956,
-        "content_verified_unique_sources": 870,
+        "answer_eligible_unique_sources": 955,
+        "content_verified_unique_sources": 869,
         "answer_eligible_propositions": 2918
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 870,
+        "answer_eligible_unique_sources": 964,
+        "content_verified_unique_sources": 869,
         "answer_eligible_propositions": 2929
       },
-      "actual_delta": {
-        "answer_eligible_unique_sources": 9,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 11
-      },
-      "reconciliation_variance": {
-        "answer_eligible_unique_sources": 0,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 0
-      },
+      "actual_delta": null,
+      "reconciliation_variance": null,
       "pending_batches": [
         "090",
         "091",
@@ -136,15 +124,15 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_corrected_status_parser_ci",
+      "run_status": "pending_corrected_status_and_access_reconciliation",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": "488d08733bbe45493d9df867d68908a661d2c82a",
       "workflow_run_id": 43728789802,
-      "note": "Batch 098 adds nine Parsed source identities and one in-place enrichment; no source was promoted. A prior +8 content-verified count was a false positive because the status parser matched a negated provenance caveat. The parser now reads explicit leading status tokens only; corrected reconciliation and the quality gate are pending.",
-      "last_failed_reason": "Previous run failed because batch 096 caveats containing 'no promotion to Verified' were parsed as positive Verified status; parser correction and regression rerun are in progress."
+      "note": "Batch 098 adds nine Parsed source identities and one in-place enrichment. No source is promoted. A false-positive status parse was corrected; AID 4666220 was demoted to Linked/metadata-only because its current public reader exposes only a rewritten summary shell. Corrected baseline after batch 097: 955 / 869 / 2,918; expected after batch 098: 964 / 869 / 2,929. Commit-bound reconciliation and the quality gate are pending.",
+      "last_failed_reason": "Previous checks exposed two integrity issues: a negated provenance caveat was parsed as Verified, and AID 4666220's inaccessible body was still answer eligible. Both are corrected; rerun pending."
     },
     "publication": {
       "status": "pending_corrected_reconciliation_and_pages",

@@ -31,25 +31,17 @@
     "recipient_testimony_with_embedded_english_letter_excerpt": 1
   },
   "metrics_before": {
-    "answer_eligible_unique_sources": 956,
-    "content_verified_unique_sources": 870,
+    "answer_eligible_unique_sources": 955,
+    "content_verified_unique_sources": 869,
     "answer_eligible_propositions": 2918
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 965,
-    "content_verified_unique_sources": 870,
+    "answer_eligible_unique_sources": 964,
+    "content_verified_unique_sources": 869,
     "answer_eligible_propositions": 2929
   },
-  "metrics_actual_after": {
-    "answer_eligible_unique_sources": 965,
-    "content_verified_unique_sources": 870,
-    "answer_eligible_propositions": 2929
-  },
-  "reconciliation_variance": {
-    "answer_eligible_unique_sources": 0,
-    "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 0
-  },
+  "metrics_actual_after": null,
+  "reconciliation_variance": null,
   "reconciliation_status": "pending_corrected_reconciliation",
   "status": "pending_corrected_reconciliation",
   "new_aids": [
@@ -1054,12 +1046,8 @@
       "rights_status": "copyrighted-link-only"
     }
   ],
-  "notes": "The batch contains nine new source identities and one in-place enrichment. Chabad Library AID 1200720068 and AID 4666220 returned no readable item-level body and were excluded. A prior CI run over-counted eight Parsed identities as content-Verified because a negated provenance caveat contained the word Verified; the status parser now recognizes only explicit leading pipeline values. Corrected metrics expected after reconciliation are 965 / 870 / 2,929. Batch 098 itself added nine answer-eligible Evidence Families, eleven propositions, and zero content-verified identities. No full text was copied, no crawler retry or access-control bypass occurred, and translations were not counted independently.",
-  "metrics_delta_actual": {
-    "answer_eligible_unique_sources": 9,
-    "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 11
-  },
+  "notes": "The batch contains nine new source identities and one in-place enrichment. Chabad Library AID 1200720068 and AID 4666220 returned no readable item-level body and were excluded. A prior CI run over-counted eight Parsed identities as content-Verified because a negated provenance caveat contained the word Verified; the status parser now recognizes only explicit leading pipeline values. AID 4666220 was also returned to Linked/metadata-only after the current public reader exposed only a rewritten summary shell; its former answer-eligible family and Verified count are excluded from the corrected baseline. Corrected baseline after batch 097 is 955 / 869 / 2,918; expected after batch 098 is 964 / 869 / 2,929. Batch 098 itself adds nine answer-eligible Evidence Families, eleven propositions, and zero content-verified identities. No full text was copied, no crawler retry or access-control bypass occurred, and translations were not counted independently.",
+  "metrics_delta_actual": null,
   "reconciliation_run_id": null,
   "reconciliation_run_url": null,
   "reconciliation_head_commit": null,
@@ -1194,16 +1182,12 @@
       "answer_eligible_propositions": 2832
     },
     "corrected_expected_after": {
-      "answer_eligible_unique_sources": 965,
-      "content_verified_unique_sources": 870,
+      "answer_eligible_unique_sources": 964,
+      "content_verified_unique_sources": 869,
       "answer_eligible_propositions": 2929
     },
-    "reconciliation_variance": {
-      "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 0
-    },
+    "reconciliation_variance": null,
     "reconciliation_status": "pending_corrected_reconciliation",
-    "note": "The earlier +8 content-verified count was a parser false positive from a negated provenance caveat, not a source promotion. The corrected parser recognizes explicit leading status values only."
+    "note": "AID 4666220 was withdrawn from answer evidence after the current public reader exposed only a rewritten summary shell. Its prior one-family/one-Verified contribution is excluded; the corrected baseline and expected post-batch counts reflect that demotion."
   }
 }
