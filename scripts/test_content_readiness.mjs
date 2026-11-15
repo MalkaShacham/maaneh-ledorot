@@ -28,6 +28,8 @@ const batch085Data=JSON.parse(await readFile(new URL('data/items/content-researc
 const batch086Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-086-2026-11-14.json',root)));
 const batch087Path='data/items/content-research-batch-087-2026-11-15.json';
 const batch087Data=JSON.parse(await readFile(new URL(batch087Path,root)));
+const batch089Path='data/items/content-research-batch-089-2026-11-15.json';
+const batch089Data=JSON.parse(await readFile(new URL(batch089Path,root)));
 assert.equal(new Set(queue.records.map(e=>e.key)).size,queue.records.length);
 assert(!queue.records.some(e=>String(e.source_url||'').includes('/aid/4666210/')),'metadata-only AID 4666210 alias must not remain pending after the content-bearing identity is verified');
 const ready=new Set(eligible.map(e=>e.key));
@@ -1605,7 +1607,68 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,directAttributionHeadCover,{mode});
  assert(!m.sources.some(e=>sourceAID(e)==='5413093'),mode+': a secretary-signed response must not be attributed directly to the Rebbe');
 }
-assert.equal(acquisitionState.manual_web_review.batch_id,'088');
-assert.equal(acquisitionState.manual_web_review.batch_file,batch088Path);
+assert.equal(acquisitionState.manual_web_review.batch_id,'089');
+assert.equal(acquisitionState.manual_web_review.batch_file,batch089Path);
 assert.equal(acquisitionState.manual_web_review.reconciliation_status,'reconciled');
 assert.deepEqual(acquisitionState.manual_web_review_current_metrics,metrics);
+
+
+// Batch 089: fourteen existing Living Torah identities gain bounded publisher-synopsis evidence; none becomes Verified or independent.
+const batch089Aids=['335482','2889264','4525544','2349222','281313','363469','2606412','2946206','702100','1974202','4547216','2316185','2920438','4469446'];
+assert.equal(batch089Data.records.length,0);
+assert.equal(batch089Data.source_bodies_inspected,14);
+assert.equal(batch089Data.existing_identities_enriched,14);
+assert.equal(batch089Data.existing_identities_rechecked,1);
+assert.equal(batch089Data.new_source_identities,0);
+assert.equal(batch089Data.existing_response_propositions_added,14);
+assert.equal(batch089Data.answer_eligible_source_families_added,14);
+assert.equal(batch089Data.blocked_candidate_count,8);
+assert.equal(batch089Data.translations_counted_as_independent_witnesses,0);
+assert.equal(new Set(batch089Data.enriched_aids.map(String)).size,14);
+assert.equal(new Set(batch089Data.existing_identity_updates.map(x=>x.identity)).size,14);
+assert.deepEqual(batch089Data.metrics_expected_after,{answer_eligible_unique_sources:900,content_verified_unique_sources:852,answer_eligible_propositions:2832});
+assert.equal(batch089Data.reconciliation_status,'reconciled');
+assert.deepEqual(batch089Data.metrics_actual_after,batch089Data.metrics_expected_after);
+assert.deepEqual(batch089Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert.equal(batch089Data.existing_identity_rechecks[0].aid,4057736,'AID 4057736 was already enriched in batch 086 and must not be duplicated');
+assert(!batch089Aids.includes('4057736'));
+assert(!batch089Aids.includes('1558542'),'mismatched archive segment AID 1558542 must not be relabelled as the queued Kfar Chabad item');
+assert.equal(new Set(batch089Data.existing_identity_updates.map(x=>x.id)).size,14);
+for(const aid of batch089Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-089 AID '+aid+' must have exactly one indexed canonical identity');
+ const e=matches[0];
+ assert(e.has_content_evidence,'batch-089 AID '+aid+' must be answer eligible');
+ assert.equal(e.canonical_file,'data/items/bulk-indexed-2026-09-25-001.json');
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.canonical_status,'Parsed');
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.proposition_source_locator.includes('AID '+aid));
+ assert.equal(e.response_propositions.length,1);
+ assert.equal(e.response_proposition_locators.length,1);
+ assert(e.verification_scope.includes('תקציר')&&e.verification_scope.includes('לא נבדקו'));
+ assert.equal(e.independent_witness,false);
+ assert.match(e.primary_secondary_status,/Secondary publisher synopsis/);
+ assert(!queue.records.some(q=>q.id===e.id),'batch-089 reviewed item '+e.id+' must leave the content review queue');
+}
+assert.equal(new Set(batch089Aids.map(a=>idx.entries.find(e=>sourceAID(e)===a).evidence_family_id)).size,14);
+const batch089MultiSourceQuery='הצג בנפרד מה מתעדים תקצירי Living Torah על שיחתו עם שלמה גזית ועל שלמות הארץ, שלמות העם ושלמות התורה';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch089MultiSourceQuery,{mode});
+ assert(m.answerable,mode+': batch-089 multi-item synopsis retrieval must remain answerable as separate cases');
+ assert(m.sources.some(e=>sourceAID(e)==='281313'),mode+': expected Shlomo Gazit item-level source');
+ assert(m.sources.some(e=>sourceAID(e)==='4469446'),mode+': expected integrity-of-land/people/Torah item-level source');
+ assert(m.claims.length>=2&&m.claims.every(c=>c.source_numbers.length),mode+': separate claims must have source numbers');
+ assert(m.citation_entailment.every(x=>x.valid),mode+': every claim must be entailed by its own publisher synopsis');
+ assert(m.context_boundary.every(x=>x.valid),mode+': circumstances and limitations must stay witness-local');
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert(m.research.evidence_map.length>=2);
+  assert.equal(m.research.claim_source_map.length,m.claims.length);
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert.equal(m.research.synthesis_constraints.non_independent_sources,2);
+  assert.match(m.research.synthesis_constraints.rule,/Publisher synopses/);
+ }else assert.equal(m.research,undefined);
+}
