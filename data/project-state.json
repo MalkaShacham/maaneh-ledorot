@@ -96,9 +96,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1103,
+        "answer_eligible_unique_sources": 1114,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3177
+        "answer_eligible_propositions": 3189
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -118,28 +118,29 @@
         "111",
         "112",
         "113",
-        "114"
+        "114",
+        "115"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "114",
+        "batch_id": "115",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1091,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3164
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1103,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3177
         },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1114,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3189
+        },
         "metrics_after_actual": null,
         "metrics_delta_actual": null,
-        "new_source_identities": 12,
+        "new_source_identities": 11,
         "existing_identities_enriched": 1,
-        "source_bodies_inspected": 13,
-        "new_response_propositions": 12,
+        "source_bodies_inspected": 12,
+        "new_response_propositions": 11,
         "existing_response_propositions_added": 1
       },
       "status": "pending_reconciliation"
@@ -147,7 +148,7 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_immigrant_children_retrieval_fix",
+      "run_status": "pending_after_immigrant_child_retrieval_rank_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
@@ -200,30 +201,30 @@
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "114",
+      "batch_id": "115",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1091,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3164
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1103,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3177
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1114,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3189
+      },
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 12,
+      "new_source_identities": 11,
       "existing_identities_enriched": 1,
-      "source_bodies_inspected": 13,
-      "new_response_propositions": 12,
+      "source_bodies_inspected": 12,
+      "new_response_propositions": 11,
       "existing_response_propositions_added": 1
     },
     "last_run_note": "2026-11-16 batch 114: inspected 12 original-language Hebrew/Yiddish Hayom Yom item bodies (AIDs 528661–528672) and enriched existing Sicha identity AID 5959845 with one non-verbatim proposition. All new records remain Parsed; 12 distinct Evidence Families added; full reconciliation and quality-gate validation pending.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "GitHub runner acquisition path remains HTTP 403; manual public publisher pages were opened instead; no crawler retry or access-control bypass.",
-    "next_work": "Run reconciliation across pending batches 099–114; verify canonical AID/Evidence Family collisions and measured answer-readiness counts; run test_content_readiness.mjs; inspect Answer Quality Gate, Actions and Pages.",
+    "next_work": "Reconcile the contiguous pending manual batches 099–115, then run test_content_readiness.mjs and the answer-quality gates; verify Actions and the public Pages metrics.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -693,7 +694,8 @@
       "111",
       "112",
       "113",
-      "114"
+      "114",
+      "115"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {

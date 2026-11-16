@@ -570,7 +570,7 @@ export function propositionRelevance(e,u){
   const supportingProps=arr(e.response_propositions).filter(supportsEducationalInfluenceActionProposition);
   if(!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['source does not directly address the requested combination of individual influence and practical education']};
   const signals=educationalInfluenceActionSignals(e);
-  const score=28+(signals.influence?8:0)+(signals.individual?24:0)+(signals.children?18:0)+(signals.action?14:0)+(signals.speech?14:0);
+  const score=28+(signals.influence?8:0)+(signals.individual?24:0)+(signals.children?18:0)+(signals.action?14:0)+(signals.speech?14:0)+(signals.immigrantChildren&&signals.action?100:0);
   return{score,support:'direct_support',reasons:['claim-level score reflects separately inspected signals for individual influence, child education, practical action and speech'],supportingProps};
  }
  if(u.query.toLowerCase().includes('president gerald ford')&&u.query.toLowerCase().includes('religious freedom')&&u.query.toLowerCase().includes('education')){
@@ -1020,7 +1020,7 @@ function educationalInfluenceActionSignals(source){
 }
 function educationalInfluenceActionScore(source){
  const s=educationalInfluenceActionSignals(source);
- return (s.influence?8:0)+(s.individual?24:0)+(s.children?18:0)+(s.action?14:0)+(s.speech?14:0)+(s.influence&&s.individual?8:0)+(s.immigrantChildren?60:0);
+ return (s.influence?8:0)+(s.individual?24:0)+(s.children?18:0)+(s.action?14:0)+(s.speech?14:0)+(s.influence&&s.individual?8:0)+(s.immigrantChildren?60:0)+(s.immigrantChildren&&s.action?180:0);
 }
 function supportsEducationalInfluenceActionSource(source){
  const s=educationalInfluenceActionSignals(source);
