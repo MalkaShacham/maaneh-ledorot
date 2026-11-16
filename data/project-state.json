@@ -163,16 +163,16 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "latest evidence-quality and hourly runs failed on stale AID 5959845 proposition-count assertions (12 expected vs 13 canonical); assertions corrected in the batch-126 commit; rerun pending.",
+      "run_status": "latest Answer Quality Gate failed at a stale manual_web_review.batch_file assertion (expected batch 124 while acquisition.latest points to batch 126); current and previous batch file assertions corrected to 126/125; retest pending.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "evaluated_commit": "26676bb431b60f0623a697c2b86674b8202afb7c",
-      "workflow_run_id": 43937320752,
-      "note": "Failure log inspected: both workflows reached readiness tests and failed at AID 5959845 length assertion. The canonical item has 13 propositions after batch 125; historical assertions were updated to reflect the current in-place identity. Batch 126 adds deep researcher multi-source retrieval tests.",
+      "evaluated_commit": "bb2f57ffcb0af838f6ed07a124c93b8a1e0dd3d7",
+      "workflow_run_id": 43948984951,
+      "note": "The run passed status normalization, evidence-index generation, question-specific retrieval, answer synthesis, citation integrity, evidence-contract audit and write-safety. test_content_readiness then failed at line 1341 because a historical acquisition path assertion still expected batch 124 while the current pointer is batch 126. Both current/previous path assertions were corrected to 126/125; full retest pending.",
       "bulk_reconcile_run_id": null,
-      "hourly_run_id": 43937320701
+      "hourly_run_id": 43948984956
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",

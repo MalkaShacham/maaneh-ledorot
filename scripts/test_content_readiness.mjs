@@ -1338,9 +1338,9 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
 });
 assert.equal(acquisitionState.manual_web_review.batch_id,'126');
-assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-124-2026-11-16.json');
+assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-126-2026-11-16.json');
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'125');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-123-2026-11-16.json');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-125-2026-11-16.json');
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
@@ -3875,9 +3875,9 @@ assert(audit124);assert.deepEqual(readinessMetrics(audit124.metrics_actual_after
 const audit125=projectState.development_recovery.reconciliation_chain.find(x=>String(x.batch_id)==='125');
 assert(audit125);assert.deepEqual(readinessMetrics(audit125.metrics_actual_after),readinessMetrics(metrics));
 assert.equal(acquisitionState.manual_web_review.batch_id,'126');
-assert.equal(acquisitionState.manual_web_review.batch_file,batch125Path);
+assert.equal(acquisitionState.manual_web_review.batch_file,batch126Path);
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'125');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch124Path);
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch125Path);
 assert.equal(acquisitionState.last_manual_web_review.batch_id,'126');
 assert.equal(acquisitionState.last_manual_review.batch_id,'126');
 assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='125'));
