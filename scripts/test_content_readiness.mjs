@@ -2899,6 +2899,20 @@ assert(choiceModel.answerable&&choiceModel.sources.some(e=>sourceAID(e)==='29891
 assert(choiceModel.claims.length>0&&choiceModel.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
 assert(choiceModel.research&&choiceModel.research.depth==='deep'&&choiceModel.research.claim_source_map.length===choiceModel.claims.length);
 assert(choiceModel.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
+const chassidusDisseminationQuestion='כיצד השיחה מסבירה את ההוראה להפיץ עניינים עמוקים בחסידות גם למי שעדיין אינו אוחז בהם, ומה תפקיד ההבנה השכלית ביחס לרגש הלב?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel([choiceEntry],chassidusDisseminationQuestion,{mode});
+ assert(m.answerable,mode+': section 9 on intellectual work, dissemination and later emotional internalization must be retrievable');
+ assert(m.sources.some(e=>sourceAID(e)==='2989153'));
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.depth==='deep');
+  assert(m.research.claim_source_map.length===m.claims.length);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ }else assert.equal(m.research,undefined);
+}
 const generosityEntries=idx.entries.filter(e=>['5920875','4772806'].includes(sourceAID(e)));
 assert.equal(generosityEntries.length,2);
 const generosityQuestion='כיצד מתארים המקורות את התמיכה בלימוד תורה לאחרים ואת ההשקעה בחינוך של ילדים שאינם ילדיו של אדם?';
