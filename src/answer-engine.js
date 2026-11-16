@@ -684,7 +684,7 @@ export function propositionRelevance(e,u){
  ].filter(g=>u.topics.includes(g.topic));
  if(focusedWitnessGates.length&&!focusedWitnessGates.some(g=>g.ok))return{score:0,support:'insufficient_specific_evidence',reasons:[`No single witness satisfied any requested focused evidence gate: ${focusedWitnessGates.map(g=>g.topic).join(', ')}`]};
  if(u.topics.includes('הרחבת ישיבה')){
-  const explicitRecruitment=arr(e.response_propositions).some(p=>['לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
+  const explicitRecruitment=arr(e.response_propositions).some(p=>['הרחבת החינוך הישיבתי','הרחבת חינוך ישיבתי','להרחיב את החדרים בבניין','לקלוט תלמידים המבקשים להיכנס לישיבה','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
   if(!explicitRecruitment)return{score:0,support:'insufficient_specific_evidence',reasons:['A yeshiva-enrollment answer requires an inspected proposition with an explicit recruitment/expansion action or target; decline and perseverance alone are not a recruitment plan.']};
  }
  if(u.topics.includes('קביעת מזוזה בדירה חדשה')){

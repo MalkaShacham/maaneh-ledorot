@@ -66,9 +66,10 @@
     "AID 528698: public reader returned Internal Error on 2026-11-16; no body inspected and no bypass attempted.",
     "AID 4666220 was rechecked through the public web reader on 2026-11-16 and returned Internal Error without a readable body; no bypass was attempted. Fourteen accessible original-language Hayom Yom bodies and one existing identity were inspected as same-run fallback.",
     "The first batch-123 reconciliation attempt stopped before commit because generic yeshiva aliases misclassified a separate educational-responsibility question. Phrase-level aliases and a negative regression assertion have been added; a new run is required.",
-    "Batch 123's first narrowed-alias readiness run reached the current-batch pointer checks and found manual_web_review.batch_file missing; the batch and acquisition history pointers now include it. Reconciliation did not commit metrics in that failed run."
+    "Batch 123's first narrowed-alias readiness run reached the current-batch pointer checks and found manual_web_review.batch_file missing; the batch and acquisition history pointers now include it. Reconciliation did not commit metrics in that failed run.",
+    "Batch 124 access blockers: AID 528803 Internal Error; AIDs 5413024 and 4754490 summary shells; no bypass. AID 528800 excluded as navigation page."
   ],
-  "next_work": "Rerun test_content_readiness.mjs, the answer-quality gate and batch reconciliation after narrowing yeshiva topic aliases; only then verify public metrics and Pages.",
+  "next_work": "Reconcile pending manual batches 099–124, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation",
@@ -100,9 +101,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1219,
+        "answer_eligible_unique_sources": 1231,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3337
+        "answer_eligible_propositions": 3358
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -131,29 +132,28 @@
         "120",
         "121",
         "122",
-        "123"
+        "123",
+        "124"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "123",
+        "batch_id": "124",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1205,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3313
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1219,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3337
         },
-        "metrics_after_actual": null,
-        "new_source_identities": 14,
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1231,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3358
+        },
+        "new_source_identities": 12,
         "existing_identities_enriched": 1,
-        "source_bodies_inspected": 15,
-        "new_response_propositions": 23,
+        "new_response_propositions": 20,
         "existing_response_propositions_added": 1,
-        "total_new_paraphrase_entries": 24
+        "total_new_paraphrase_entries": 21
       },
       "status": "pending_reconciliation"
     },
@@ -211,40 +211,40 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "123",
+    "current_batch": "124",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "123",
-      "batch_file": "data/items/content-research-batch-123-2026-11-16.json",
+      "batch_id": "124",
+      "batch_file": "data/items/content-research-batch-124-2026-11-16.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1205,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3313
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1219,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3337
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1231,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3358
+      },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 14,
+      "new_source_identities": 12,
       "existing_identities_enriched": 1,
-      "source_bodies_inspected": 15,
-      "new_response_propositions": 23,
+      "source_bodies_inspected": 13,
+      "new_response_propositions": 20,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 24,
-      "blocked_candidate_count": 1,
+      "total_new_paraphrase_entries": 21,
+      "blocked_candidate_count": 3,
       "crawler_retry": false,
       "access_control_bypassed": false
     },
-    "last_run_note": "Batch 123: 14 new original-language Hebrew/Yiddish Hayom Yom identities (7–20 Tammuz 5703), 23 non-verbatim propositions, and one in-place enrichment of AID 528765 by splitting a broad proposition into two line-located claims. AID 4666220 returned Internal Error; 14 accessible daily-entry bodies and the existing AID 528765 body were inspected in the same run. All new identities remain Parsed/partial; no Verified promotion. Follow-up: run 43927615189/43927615350/43927615421 exposed an over-broad yeshiva-expansion alias that misclassified a general educational-responsibility question; narrowed to phrase-level aliases and added a negative regression assertion. Metrics were not committed by the failed reconciliation run. Follow-up: after narrowing yeshiva aliases, the readiness run passed the prior topic-precision case but failed because batch 123's acquisition summary omitted batch_file; this pointer is now populated and asserted.",
-    "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 returned Internal Error with no readable item body; no bypass. Fourteen accessible publisher bodies were inspected as same-run fallback.",
-    "next_work": "Reconcile pending manual batches 099–123, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
+    "last_run_note": "Batch 124: 12 new original-language Hebrew/Yiddish Hayom Yom identities (21 Tammuz–4 Menachem Av 5703), 20 non-verbatim propositions, and one in-place enrichment of AID 5959845 via footnote 21 (lines 434–435). AID 528803 returned Internal Error; AIDs 5413024 and 4754490 redirected to summary shells without original bodies; AID 528800 was a navigation page and excluded. Twelve accessible item bodies plus one existing-identity footnote were inspected in the same run. All new identities remain Parsed/partial; no Verified promotion. Yeshiva-expansion answer gate now recognizes the exact inspected phrases in AIDs 5413024 and 4754490 rather than requiring only a narrow set of generic recruitment phrases. Reconcile pending batches 099–124 and run readiness tests.",
+    "last_batch_blocked_count": 3,
+    "last_batch_blocked_reason": "AID 528803 returned Internal Error; AIDs 5413024 and 4754490 redirected to rewritten summary shells without readable original text. No bypass; 12 alternative public item bodies and one existing identity footnote were inspected in the same run.",
+    "next_work": "Reconcile pending manual batches 099–124, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -802,7 +802,8 @@
       "120",
       "121",
       "122",
-      "123"
+      "123",
+      "124"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
@@ -843,5 +844,5 @@
       "blocked_candidate_count": 1
     }
   },
-  "current_batch": "122"
+  "current_batch": "124"
 }
