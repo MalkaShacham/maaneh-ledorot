@@ -3380,7 +3380,7 @@ assert.equal(batch118Data.answer_eligible_source_families_added,11);assert.equal
 assert.equal(batch118Data.reviewed_item_count,12);assert.equal(batch118Data.source_bodies_inspected,12);assert.equal(batch118Data.source_body_pages_opened,14);assert.equal(batch118Data.metadata_only_items_rechecked,1);assert.equal(batch118Data.source_body_review.length,12);
 assert(batch118Data.source_body_review.every(r=>r.inspected_original_language_body===true&&r.body_locator));
 assert.deepEqual(batch118Data.language_distribution,{Hebrew:6,Yiddish:5});assert.deepEqual(batch118Data.original_language_distribution,{Hebrew:6,Yiddish:5});
-assert.equal(batch118Data.records.reduce((n,r)=>n+r.response_propositions.length,0),12);assert.equal(new Set(batch118Data.records.map(r=>String(r.aid))).size,11);assert.equal(new Set(batch118Data.records.map(r=>r.evidence_family_id)).size,11);
+assert.equal(batch118Data.records.reduce((n,r)=>n+r.response_propositions.length,0),13);assert.equal(batch118Data.records.find(r=>String(r.aid)==='528717').response_propositions.length,2);assert.equal(new Set(batch118Data.records.map(r=>String(r.aid))).size,11);assert.equal(new Set(batch118Data.records.map(r=>r.evidence_family_id)).size,11);
 assert.equal(batch118Data.blocked_candidate_count,1);assert.equal(batch118Data.blocked_candidates[0].aid,4666220);
 assert.equal(batch118Data.excluded_candidate_count,1);assert.equal(batch118Data.excluded_candidates[0].aid,528709);
 assert.equal(batch118Data.fallback_source_attempted,true);assert.equal(batch118Data.fallback_source_results.body_text_inspected,true);assert.equal(batch118Data.fallback_source_results.accessible_item_level_bodies,11);assert.equal(batch118Data.fallback_source_results.existing_identity_bodies,1);
@@ -3506,18 +3506,18 @@ const batch122Data=JSON.parse(await readFile(new URL(batch122Path,root),'utf8'))
 const batch122Aids=[528764,528765,528766,528767,528768,528769,528771,528772,528773,528774,528775,528776,4280364,4280365];
 assert.equal(batch122Data.batch_id,'122');
 assert.equal(batch122Data.records.length,14);
-assert.deepEqual(batch122Data.new_aids,batch122Aids);
+assert.deepEqual(batch122Data.new_aids,batch122Aids);assert.deepEqual(batch122Data.enriched_aids,[528717]);
 assert.equal(batch122Data.new_source_identities,14);
-assert.equal(batch122Data.existing_identities_enriched,0);
+assert.equal(batch122Data.existing_identities_enriched,1);
 assert.equal(batch122Data.new_response_propositions,19);
-assert.equal(batch122Data.existing_response_propositions_added,0);
-assert.equal(batch122Data.total_new_paraphrase_entries,19);
+assert.equal(batch122Data.existing_response_propositions_added,1);
+assert.equal(batch122Data.total_new_paraphrase_entries,20);
 assert.equal(batch122Data.answer_eligible_source_families_added,14);
 assert.equal(batch122Data.independent_witnesses_added,14);
 assert.equal(batch122Data.non_independent_presentations_added,0);
 assert.equal(batch122Data.content_verified_unique_sources_added,0);
-assert.equal(batch122Data.source_bodies_inspected,14);
-assert.equal(batch122Data.source_body_review.length,14);
+assert.equal(batch122Data.source_bodies_inspected,15);assert.equal(batch122Data.reviewed_item_count,18);assert.equal(batch122Data.source_body_pages_opened,19);
+assert.equal(batch122Data.source_body_review.length,15);
 assert(batch122Data.source_body_review.every(r=>r.body_text_inspected&&r.inspected_original_language_body));
 assert.equal(batch122Data.records.reduce((n,r)=>n+r.response_propositions.length,0),19);
 assert.equal(new Set(batch122Data.records.map(r=>String(r.aid))).size,14);
@@ -3536,15 +3536,15 @@ assert.equal(batch122Data.excluded_candidate_count,1);
 assert.equal(batch122Data.excluded_candidates[0].aid,528770);
 assert.equal(batch122Data.fallback_source_attempted,true);
 assert.equal(batch122Data.fallback_source_results.accessible_item_level_bodies,14);
-assert.equal(batch122Data.fallback_source_results.existing_identity_bodies,0);
+assert.equal(batch122Data.fallback_source_results.existing_identity_bodies,1);assert.deepEqual(batch122Data.fallback_source_results.existing_identity_aids,[528717]);
 assert.equal(batch122Data.crawler_retry,false);
 assert.equal(batch122Data.access_control_bypassed,false);
 assert.equal(batch122Data.full_text_copied,false);
 assert.equal(batch122Data.scan_only_verification_used,false);
 assert.equal(batch122Data.translations_counted_as_independent_witnesses,0);
 assert.deepEqual(batch122Data.metrics_before,{answer_eligible_unique_sources:1191,content_verified_unique_sources:854,answer_eligible_propositions:3293});
-assert.deepEqual(batch122Data.metrics_expected_after,{answer_eligible_unique_sources:1205,content_verified_unique_sources:854,answer_eligible_propositions:3312});
-assert.deepEqual(batch122Data.metrics_delta_at_batch_boundary,{answer_eligible_unique_sources:14,content_verified_unique_sources:0,answer_eligible_propositions:19});
+assert.deepEqual(batch122Data.metrics_expected_after,{answer_eligible_unique_sources:1205,content_verified_unique_sources:854,answer_eligible_propositions:3313});
+assert.deepEqual(batch122Data.metrics_delta_at_batch_boundary,{answer_eligible_unique_sources:14,content_verified_unique_sources:0,answer_eligible_propositions:20});
 for(const r of batch122Data.records){
  assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');
  assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
@@ -3602,3 +3602,5 @@ for(const mode of ['regular','researcher']){
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));
  if(mode==='researcher')assert(m.research&&m.research.depth==='deep'&&m.research.claim_source_map.some(c=>c.source_locators.some(l=>String(l).includes('245–252'))));
 }
+
+assert.equal(batch122Data.existing_identity_updates.length,1);assert.equal(batch122Data.existing_identity_updates[0].aid,528717);assert.equal(batch122Data.existing_identity_updates[0].existing_propositions_before,1);assert.equal(batch122Data.existing_identity_updates[0].propositions_added,1);assert.equal(batch122Data.existing_identity_updates[0].total_propositions_after,2);const enriched528717=idx.entries.find(e=>sourceAID(e)==='528717');assert(enriched528717&&enriched528717.response_propositions.length===2);assert.equal(enriched528717.canonical_file,'data/items/content-research-batch-118-2026-11-16.json');assert.equal(enriched528717.evidence_family_id,'hayom-yom-528717-5703');assert(enriched528717.response_proposition_locators.some(l=>String(l).includes('172–173')));const shlichutDailyQuestion='מה היום יום מתעד על שליחותו של חסיד ועל הקשר בין השליח למשלח בפעולות היום־יום?';for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,shlichutDailyQuestion,{mode});assert(m.answerable,mode+': existing enriched Hayom Yom AID 528717 must answer the bounded shlichut question');assert(m.sources.some(e=>sourceAID(e)==='528717'));assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));if(mode==='researcher')assert(m.research&&m.research.depth==='deep'&&m.research.claim_source_map.some(c=>c.source_locators.some(l=>String(l).includes('172–173'))));}

@@ -6,17 +6,17 @@
   "title": "Batch 122 — 12 inspected Hebrew/Yiddish Hayom Yom entries (25 Sivan–6 Tammuz 5703) plus two Hebrew unedited Sicha transcripts from 19 Kislev 5721; existing-source access blockers recorded",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
-  "reviewed_item_count": 17,
-  "source_bodies_inspected": 14,
-  "source_body_pages_opened": 18,
+  "reviewed_item_count": 18,
+  "source_bodies_inspected": 15,
+  "source_body_pages_opened": 19,
   "metadata_only_items_rechecked": 2,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 14,
-  "existing_identities_enriched": 0,
+  "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
   "new_response_propositions": 19,
-  "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 19,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 20,
   "answer_eligible_source_families_added": 14,
   "independent_witnesses_added": 14,
   "non_independent_presentations_added": 0,
@@ -37,7 +37,9 @@
     4280364,
     4280365
   ],
-  "enriched_aids": [],
+  "enriched_aids": [
+    528717
+  ],
   "rechecked_aids": [],
   "blocked_candidate_count": 2,
   "blocked_candidates": [
@@ -71,7 +73,7 @@
   "fallback_source_results": {
     "publisher": "Kehot / BeitChabad.com, he.chabad.org; Chabad.org, www.chabad.org",
     "accessible_item_level_bodies": 14,
-    "existing_identity_bodies": 0,
+    "existing_identity_bodies": 1,
     "body_text_inspected": true,
     "inspected_aids": [
       528764,
@@ -87,9 +89,12 @@
       528775,
       528776,
       4280364,
-      4280365
+      4280365,
+      528717
     ],
-    "existing_identity_aids": [],
+    "existing_identity_aids": [
+      528717
+    ],
     "metadata_only_pages_opened": 2,
     "notes": "AID 2989585 החזיר Internal Error בשתי וריאציות; AID 4783983 הפנה לעמוד תקציר ללא גוף מכתב; AID 528770 זוהה כעמוד ניווט. במקום זאת נפתחו ונבדקו 12 גופי ערכי היום יום AID 528764–528769 ו-528771–528776, ושני תמלילי שיחות בעברית AID 4280364 ו-4280365. לא נעשה שימוש בתוצאות חיפוש או בתקצירים כתחליף לגוף, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
   },
@@ -107,16 +112,16 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1205,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3312
+    "answer_eligible_propositions": 3313
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 14,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 19
+    "answer_eligible_propositions": 20
   },
-  "metrics_attribution_note": "Expected delta is 14 new item identities in 14 distinct Evidence Families and 19 non-verbatim propositions. No existing identity was enriched because the available existing-source pages were inaccessible or summary-only. No content-verified/Verified promotion. Actual unique-family and proposition counts may differ after full canonical reconciliation.",
+  "metrics_attribution_note": "Expected delta is 14 new item identities in 14 distinct Evidence Families and 19 new-source propositions, plus one in-place proposition in existing AID 528717. No content-verified/Verified promotion. Actual unique-family and proposition counts may differ after full canonical reconciliation.",
   "language_distribution": {
     "Hebrew": 10,
     "Yiddish": 2,
@@ -150,7 +155,23 @@
     "sicha-5721-19-kislev-aid4280365"
   ],
   "same_family_items": [],
-  "existing_identity_updates": [],
+  "existing_identity_updates": [
+    {
+      "action": "enriched_existing_identity_in_place",
+      "aid": 528717,
+      "id": "hayom-yom-528717-5703",
+      "canonical_file": "data/items/content-research-batch-118-2026-11-16.json",
+      "evidence_family_id": "hayom-yom-528717-5703",
+      "existing_propositions_before": 1,
+      "propositions_added": 1,
+      "total_propositions_after": 2,
+      "locators": [
+        "he.chabad.org AID 528717, גוף הערך ביידיש, שורות 172–173 (ההשוואה בין מלאך כשליח לבין מעלת הקשר של נשמות)."
+      ],
+      "locator": "he.chabad.org AID 528717, גוף הערך ביידיש, שורות 172–173 (ההשוואה בין מלאך כשליח לבין מעלת הקשר של נשמות).",
+      "note": "AID 528717 נפתח מחדש ב-16.11.2026. נוספה פרפרזה לא־מילולית נפרדת על ההשוואה בין שליח למי ששלח אותו, דוגמת המלאך וההבחנה שמעלת הקשר של נשמות נחשבת גבוהה יותר. נשמרו הזהות, Evidence Family, שפת המקור היידיש והסטטוס Parsed."
+    }
+  ],
   "source_body_review": [
     {
       "aid": 528764,
@@ -291,6 +312,16 @@
       "inspected_original_language_body": true,
       "locator": "www.chabad.org AID 4280365, גוף השיחה סעיפים ג–ו, שורות 266–305. www.chabad.org AID 4280365, גוף השיחה סעיפים ח–ט, שורות 323–342.",
       "notes": "גוף תמליל השיחה בעברית נפתח ונבדק במקטעים המצוינים; העמוד מסומן בלתי מוגה; לא נבדקו הקלטה או כתב־יד."
+    },
+    {
+      "aid": 528717,
+      "title": "ח אייר, כג לעומר",
+      "language": "Yiddish",
+      "original_language": "Yiddish",
+      "body_text_inspected": true,
+      "inspected_original_language_body": true,
+      "locator": "he.chabad.org AID 528717, גוף הערך ביידיש, שורות 172–173.",
+      "notes": "זהות קיימת באצווה 118 נפתחה מחדש ונוספה לה פרפרזה לא־מילולית נוספת; אותו AID ואותה Evidence Family, ללא יצירת עד עצמאי."
     }
   ],
   "deduplication_check": {
@@ -1725,5 +1756,6 @@
       "canonical_file": "data/items/content-research-batch-122-2026-11-16.json",
       "accessed": "2026-11-16T18:34:40+02:00"
     }
-  ]
+  ],
+  "note": "15 item bodies inspected in original languages: 14 new identities and one existing AID 528717 enrichment. 19 new-source propositions plus one in-place proposition. All remain Parsed and partial. Existing Sicha AID 2989585 was inaccessible and AID 4783983 exposed only a summary shell. Expected metrics are chained estimates, not actual public counts."
 }

@@ -13,17 +13,17 @@
     "reviewed_at": "2026-11-16T18:34:40+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 17,
-    "source_bodies_inspected": 14,
-    "source_body_pages_opened": 18,
+    "reviewed_item_count": 18,
+    "source_bodies_inspected": 15,
+    "source_body_pages_opened": 19,
     "metadata_only_items_rechecked": 2,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 14,
-    "existing_identities_enriched": 0,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
     "new_response_propositions": 19,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 19,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 20,
     "answer_eligible_source_families_added": 14,
     "independent_witnesses_added": 14,
     "non_independent_presentations_added": 0,
@@ -44,7 +44,9 @@
       4280364,
       4280365
     ],
-    "enriched_aids": [],
+    "enriched_aids": [
+      528717
+    ],
     "rechecked_aids": [],
     "blocked_candidate_count": 2,
     "blocked_candidates": [
@@ -74,7 +76,7 @@
     "fallback_source_results": {
       "publisher": "Kehot / BeitChabad.com, he.chabad.org; Chabad.org, www.chabad.org",
       "accessible_item_level_bodies": 14,
-      "existing_identity_bodies": 0,
+      "existing_identity_bodies": 1,
       "body_text_inspected": true,
       "inspected_aids": [
         528764,
@@ -90,9 +92,12 @@
         528775,
         528776,
         4280364,
-        4280365
+        4280365,
+        528717
       ],
-      "existing_identity_aids": [],
+      "existing_identity_aids": [
+        528717
+      ],
       "metadata_only_pages_opened": 2,
       "notes": "AID 2989585 החזיר Internal Error בשתי וריאציות; AID 4783983 הפנה לעמוד תקציר ללא גוף מכתב; AID 528770 זוהה כעמוד ניווט. במקום זאת נפתחו ונבדקו 12 גופי ערכי היום יום ושני תמלילי שיחות בעברית. לא נעשה שימוש בתוצאות חיפוש או בתקצירים כתחליף לגוף, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
     },
@@ -109,14 +114,14 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1205,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3312
+      "answer_eligible_propositions": 3313
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
       "answer_eligible_unique_sources": 14,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 19
+      "answer_eligible_propositions": 20
     },
     "language_distribution": {
       "Hebrew": 10,
@@ -151,7 +156,20 @@
       "sicha-5721-19-kislev-aid4280365"
     ],
     "same_family_items": [],
-    "existing_identity_updates": [],
+    "existing_identity_updates": [
+      {
+        "action": "enriched_existing_identity_in_place",
+        "aid": 528717,
+        "id": "hayom-yom-528717-5703",
+        "canonical_file": "data/items/content-research-batch-118-2026-11-16.json",
+        "evidence_family_id": "hayom-yom-528717-5703",
+        "existing_propositions_before": 1,
+        "propositions_added": 1,
+        "total_propositions_after": 2,
+        "locator": "he.chabad.org AID 528717, גוף הערך ביידיש, שורות 172–173.",
+        "note": "נוסף ביאור נפרד על משל המלאך כשליח ועל מעלת הקשר של נשמות, מתוך אותו גוף מקור."
+      }
+    ],
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
@@ -955,7 +973,7 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 120 is a manual public-source inspection, not crawler acquisition. It inspected 17 original-language daily entries and two published English letter translations (non-independent), enriched AID 2989585, recorded blocked AID 528725 and excluded navigation page AID 528739. Full reconciliation and readiness are pending. Batch 121 inspected 16 Hebrew/Yiddish Hayom Yom bodies and enriched AID 2989585 in place. AID 553691 was opened but exposed audio listing only and remains pending without propositions. No crawler retry, access bypass, full-text copying or Verified promotion. Metrics in batch 121 are chained expectations pending full reconciliation.\nBatch 122: 14 item-level source bodies inspected (12 Hebrew/Yiddish Hayom Yom entries and two Hebrew unedited Sicha transcripts); 14 new identities and Evidence Families, 19 source-grounded non-verbatim propositions. Existing Sicha AID 2989585 returned Internal Error on two public URL variants; AID 4783983 exposed only a rewritten summary shell; AID 528770 was month navigation. Fourteen accessible bodies were inspected as fallback. No existing identity was enriched, no translation counted as independent, no crawler retry, no access bypass, no full-text copying and no Verified promotion. Chained expected boundary 1,191/854/3,293 → 1,205/854/3,312; actual counts pending reconciliation.",
+  "manual_web_review_note": "Batch 120 is a manual public-source inspection, not crawler acquisition. It inspected 17 original-language daily entries and two published English letter translations (non-independent), enriched AID 2989585, recorded blocked AID 528725 and excluded navigation page AID 528739. Full reconciliation and readiness are pending. Batch 121 inspected 16 Hebrew/Yiddish Hayom Yom bodies and enriched AID 2989585 in place. AID 553691 was opened but exposed audio listing only and remains pending without propositions. No crawler retry, access bypass, full-text copying or Verified promotion. Metrics in batch 121 are chained expectations pending full reconciliation.\nBatch 122: 15 item-level bodies inspected in original languages (12 Hebrew/Yiddish Hayom Yom entries, two Hebrew unedited Sicha transcripts and one existing AID 528717 identity). Added 14 new identities in 14 Evidence Families, 19 new-source propositions and one in-place proposition in AID 528717; its existing identity and Evidence Family were retained. Existing Sicha AID 2989585 returned Internal Error on two public URL variants; AID 4783983 exposed only a rewritten summary shell; AID 528770 was month navigation. No translation counted as independent, no crawler retry, no access bypass, no full-text copying and no Verified promotion. Chained expected boundary 1,191/854/3,293 → 1,205/854/3,313; actual counts pending reconciliation.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 1146,
     "content_verified_unique_sources": 854,
@@ -4738,17 +4756,17 @@
     "reviewed_at": "2026-11-16T18:34:40+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 17,
-    "source_bodies_inspected": 14,
-    "source_body_pages_opened": 18,
+    "reviewed_item_count": 18,
+    "source_bodies_inspected": 15,
+    "source_body_pages_opened": 19,
     "metadata_only_items_rechecked": 2,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 14,
-    "existing_identities_enriched": 0,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
     "new_response_propositions": 19,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 19,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 20,
     "answer_eligible_source_families_added": 14,
     "independent_witnesses_added": 14,
     "non_independent_presentations_added": 0,
@@ -4769,7 +4787,9 @@
       4280364,
       4280365
     ],
-    "enriched_aids": [],
+    "enriched_aids": [
+      528717
+    ],
     "rechecked_aids": [],
     "blocked_candidate_count": 2,
     "blocked_candidates": [
@@ -4799,7 +4819,7 @@
     "fallback_source_results": {
       "publisher": "Kehot / BeitChabad.com, he.chabad.org; Chabad.org, www.chabad.org",
       "accessible_item_level_bodies": 14,
-      "existing_identity_bodies": 0,
+      "existing_identity_bodies": 1,
       "body_text_inspected": true,
       "inspected_aids": [
         528764,
@@ -4815,9 +4835,12 @@
         528775,
         528776,
         4280364,
-        4280365
+        4280365,
+        528717
       ],
-      "existing_identity_aids": [],
+      "existing_identity_aids": [
+        528717
+      ],
       "metadata_only_pages_opened": 2,
       "notes": "AID 2989585 החזיר Internal Error בשתי וריאציות; AID 4783983 הפנה לעמוד תקציר ללא גוף מכתב; AID 528770 זוהה כעמוד ניווט. במקום זאת נפתחו ונבדקו 12 גופי ערכי היום יום ושני תמלילי שיחות בעברית. לא נעשה שימוש בתוצאות חיפוש או בתקצירים כתחליף לגוף, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
     },
@@ -4834,14 +4857,14 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1205,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3312
+      "answer_eligible_propositions": 3313
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
       "answer_eligible_unique_sources": 14,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 19
+      "answer_eligible_propositions": 20
     },
     "language_distribution": {
       "Hebrew": 10,
@@ -4876,7 +4899,20 @@
       "sicha-5721-19-kislev-aid4280365"
     ],
     "same_family_items": [],
-    "existing_identity_updates": [],
+    "existing_identity_updates": [
+      {
+        "action": "enriched_existing_identity_in_place",
+        "aid": 528717,
+        "id": "hayom-yom-528717-5703",
+        "canonical_file": "data/items/content-research-batch-118-2026-11-16.json",
+        "evidence_family_id": "hayom-yom-528717-5703",
+        "existing_propositions_before": 1,
+        "propositions_added": 1,
+        "total_propositions_after": 2,
+        "locator": "he.chabad.org AID 528717, גוף הערך ביידיש, שורות 172–173.",
+        "note": "נוסף ביאור נפרד על משל המלאך כשליח ועל מעלת הקשר של נשמות, מתוך אותו גוף מקור."
+      }
+    ],
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
@@ -4901,17 +4937,17 @@
     "reviewed_at": "2026-11-16T18:34:40+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 17,
-    "source_bodies_inspected": 14,
-    "source_body_pages_opened": 18,
+    "reviewed_item_count": 18,
+    "source_bodies_inspected": 15,
+    "source_body_pages_opened": 19,
     "metadata_only_items_rechecked": 2,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 14,
-    "existing_identities_enriched": 0,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
     "new_response_propositions": 19,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 19,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 20,
     "answer_eligible_source_families_added": 14,
     "independent_witnesses_added": 14,
     "non_independent_presentations_added": 0,
@@ -4932,7 +4968,9 @@
       4280364,
       4280365
     ],
-    "enriched_aids": [],
+    "enriched_aids": [
+      528717
+    ],
     "rechecked_aids": [],
     "blocked_candidate_count": 2,
     "blocked_candidates": [
@@ -4962,7 +5000,7 @@
     "fallback_source_results": {
       "publisher": "Kehot / BeitChabad.com, he.chabad.org; Chabad.org, www.chabad.org",
       "accessible_item_level_bodies": 14,
-      "existing_identity_bodies": 0,
+      "existing_identity_bodies": 1,
       "body_text_inspected": true,
       "inspected_aids": [
         528764,
@@ -4978,9 +5016,12 @@
         528775,
         528776,
         4280364,
-        4280365
+        4280365,
+        528717
       ],
-      "existing_identity_aids": [],
+      "existing_identity_aids": [
+        528717
+      ],
       "metadata_only_pages_opened": 2,
       "notes": "AID 2989585 החזיר Internal Error בשתי וריאציות; AID 4783983 הפנה לעמוד תקציר ללא גוף מכתב; AID 528770 זוהה כעמוד ניווט. במקום זאת נפתחו ונבדקו 12 גופי ערכי היום יום ושני תמלילי שיחות בעברית. לא נעשה שימוש בתוצאות חיפוש או בתקצירים כתחליף לגוף, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
     },
@@ -4997,14 +5038,14 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1205,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3312
+      "answer_eligible_propositions": 3313
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
       "answer_eligible_unique_sources": 14,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 19
+      "answer_eligible_propositions": 20
     },
     "language_distribution": {
       "Hebrew": 10,
@@ -5039,7 +5080,20 @@
       "sicha-5721-19-kislev-aid4280365"
     ],
     "same_family_items": [],
-    "existing_identity_updates": [],
+    "existing_identity_updates": [
+      {
+        "action": "enriched_existing_identity_in_place",
+        "aid": 528717,
+        "id": "hayom-yom-528717-5703",
+        "canonical_file": "data/items/content-research-batch-118-2026-11-16.json",
+        "evidence_family_id": "hayom-yom-528717-5703",
+        "existing_propositions_before": 1,
+        "propositions_added": 1,
+        "total_propositions_after": 2,
+        "locator": "he.chabad.org AID 528717, גוף הערך ביידיש, שורות 172–173.",
+        "note": "נוסף ביאור נפרד על משל המלאך כשליח ועל מעלת הקשר של נשמות, מתוך אותו גוף מקור."
+      }
+    ],
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
