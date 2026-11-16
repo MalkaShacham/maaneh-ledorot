@@ -3542,6 +3542,8 @@ const batch127Aids=[528832,528833,528834,528835,528836,528837,528838,528839,5288
 const batch128Path='data/items/content-research-batch-128-2026-11-16.json';
 const batch128Data=JSON.parse(await readFile(new URL(batch128Path,root),'utf8'));
 const batch128Aids=[528846,528847,528848,528849,528850,528851,528852,528853,528854,528855,528856,528857,528858,528859,528860,528862,528863,528864];
+const batch129Path='data/items/content-research-batch-129-2026-11-16.json';
+const batch129Data=JSON.parse(await readFile(new URL(batch129Path,root),'utf8'));
 const batch130Path='data/items/content-research-batch-130-2026-11-17.json';
 const batch130Data=JSON.parse(await readFile(new URL(batch130Path,root),'utf8'));
 const batch130Aids=[528877,528878,528880,528881,528882,528883,528884,528885,528886,528887,528888,528889,528890,528891,2277337];
@@ -3724,6 +3726,8 @@ assert.deepEqual(readinessMetrics(batch125Data.metrics_actual_after),readinessMe
 assert.deepEqual(readinessMetrics(batch126Data.metrics_actual_after),readinessMetrics(batch127Data.metrics_actual_before));
 assert.deepEqual(readinessMetrics(batch127Data.metrics_actual_after),readinessMetrics(batch128Data.metrics_actual_before));
 assert.deepEqual(readinessMetrics(batch128Data.metrics_actual_after),readinessMetrics(batch129Data.metrics_actual_before));
+assert.deepEqual(readinessMetrics(batch129Data.metrics_actual_after),readinessMetrics(batch130Data.metrics_actual_before));
+assert.deepEqual(readinessMetrics(batch130Data.metrics_actual_after),readinessMetrics(metrics));
 for(const b of ['124','125','126','127','128','129','130']){assert(!projectState.development_recovery.pending_reconciliation_batches.includes(b));assert(!projectState.metrics_integrity.answer_readiness.pending_batches.includes(b));}
 assert.equal(projectState.current_batch,'130');
 assert.equal(projectState.development_recovery.current_batch,'130');
