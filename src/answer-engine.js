@@ -1568,7 +1568,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const yiddishMelodyQuestion=understanding.query.includes('ניגון')&&understanding.query.includes('רבי אברהם המלאך')&&understanding.query.includes('לכה דודי');
  const wellspringsDisseminationQuestion=understanding.query.includes('הפצת המעיינות')&&understanding.query.includes('פנימיות התורה');
  const jewishHomeSynthesisQuestion=understanding.query.includes('הבית היהודי')&&(understanding.query.includes('חנוכת הבית')||understanding.query.includes('מזוזה'));
- const youthEducationStudyQuestion=understanding.query.includes('לימוד בחברותא')&&understanding.query.includes('בני נוער')&&understanding.query.includes('התקדמות הדרגתית');
+ const youthEducationStudyQuestion=understanding.topics.includes('לימוד וחינוך — חברותא והתקדמות הדרגתית')||(containsTerm(understanding.query,'חברותא')&&containsTerm(understanding.query,'נוער')&&containsTerm(understanding.query,'התקדמות'));
   const studyFarmingComparisonQuestion=understanding.topics.includes('קביעות עתים ולימוד בצוותא')&&understanding.topics.includes('תורה ופרנסה במשק חקלאי');
  const tzedakahFamilies=new Set();
  let answerEvidence=usable;
