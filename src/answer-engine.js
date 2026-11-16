@@ -1023,7 +1023,7 @@ function educationalInfluenceActionScore(source){
 }
 function supportsEducationalInfluenceActionSource(source){
  const s=educationalInfluenceActionSignals(source);
- return (s.influence&&s.individual&&(s.action||s.speech))||(s.children&&(s.action||s.speech))||(s.individual&&s.children);
+ return (s.influence&&s.individual&&(s.action||s.speech))||(s.children&&(s.action||s.speech))||(s.individual&&s.children)||(s.immigrantChildren&&s.action);
 }
 function supportsFordLetterProposition(proposition){
  const body=norm(proposition);

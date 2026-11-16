@@ -1,19 +1,196 @@
 {
-  "started_at": "2026-11-16T04:58:08+02:00",
-  "attempted": 10,
-  "enriched": 1,
-  "discovered": 9,
+  "started_at": "2026-11-16T05:55:17+02:00",
+  "attempted": 17,
+  "enriched": 2,
+  "discovered": 15,
   "blocked": [
     {
-      "aid": 6105,
-      "url": "https://he.chabad.org/therebbe/article_cdo/aid/6105/jewish/Hayom-Yom-24-Adar-I.htm",
-      "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528641",
-      "reason": "הנתיב העברי הישיר של AID 6105 הופנה לעמוד ספרייה אחר (AID 528641) ולא הציג את ערך כ״ד אדר א׳. באותה הפעלה נפתח דף הלימוד היומי של 13.03.2026 ונבדק בו גוף הערך המקורי ביידיש בשורה 174. דף האנגלית של AID 6105 שימש לאישור זהות הפריט בלבד. לא בוצע crawler retry ולא נעקפה בקרת גישה."
+      "host": "www.chabad.org",
+      "route": "GitHub runner acquisition path",
+      "reason": "HTTP 403 on the previously recorded 12-reference acquisition attempt; no retry. Public web reader used for canonical publisher item pages."
     }
   ],
-  "skipped": 0,
+  "skipped": 1,
   "status": "manual_web_review_pending_reconciliation",
   "manual_web_review": {
+    "batch_id": "113",
+    "batch_file": "data/items/content-research-batch-113-2026-11-16.json",
+    "title": "Batch 113 — 15 Hebrew/Yiddish Hayom Yom entries (28 Adar I–12 Adar II 5703) and two in-place Sicha enrichments",
+    "reviewed_at": "2026-11-16T05:55:17+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending",
+    "reviewed_item_count": 17,
+    "source_bodies_inspected": 17,
+    "source_body_pages_opened": 17,
+    "metadata_only_items_rechecked": 0,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 15,
+    "existing_identities_enriched": 2,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 15,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 17,
+    "answer_eligible_source_families_added": 15,
+    "independent_witnesses_added": 15,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1076,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3147
+    },
+    "metrics_before_source": "Expected boundary after pending batch 112; not yet reconciled or published.",
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1091,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3164
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 15,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 17
+    },
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "host": "www.chabad.org",
+        "route": "GitHub runner acquisition path",
+        "reason": "The known runner-side acquisition path returned HTTP 403 for all 12 references in its first attempt; the crawler was not retried.",
+        "handling": "The public web reader was used to inspect the publisher's canonical /library item pages in this run; no access-control bypass."
+      }
+    ],
+    "excluded_candidate_count": 1,
+    "excluded_candidates": [
+      {
+        "aid": 528648,
+        "url": "https://he.chabad.org/library/article_cdo/aid/528648",
+        "reason": "Month index only; no dated item-level body, so no identity or proposition was created."
+      }
+    ],
+    "new_aids": [
+      528645,
+      528646,
+      528647,
+      528649,
+      528650,
+      528651,
+      528652,
+      528653,
+      528654,
+      528655,
+      528656,
+      528657,
+      528658,
+      528659,
+      528660
+    ],
+    "enriched_aids": [
+      2989585,
+      5959845
+    ],
+    "rechecked_aids": [],
+    "blocked_aids": [],
+    "excluded_aids": [
+      528648
+    ],
+    "language_distribution": {
+      "Hebrew": 9,
+      "Yiddish": 6
+    },
+    "original_language_distribution": {
+      "Hebrew": 9,
+      "Yiddish": 6
+    },
+    "source_type_distribution": {
+      "published_hebrew_hayom_yom_entry": 9,
+      "published_yiddish_hayom_yom_entry": 6
+    },
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "Chabad.org / BeitChabad",
+      "accessible_item_level_bodies": 15,
+      "existing_identity_bodies": 2,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        528645,
+        528646,
+        528647,
+        528649,
+        528650,
+        528651,
+        528652,
+        528653,
+        528654,
+        528655,
+        528656,
+        528657,
+        528658,
+        528659,
+        528660
+      ],
+      "notes": "Opened original Hebrew/Yiddish body text on the publisher's canonical /library/article_cdo/aid pages. AID 528648 was only a month index and was excluded. Two existing Sicha bodies were also reopened for enrichment. No title or search snippet was used as content."
+    },
+    "translations_counted_as_independent_witnesses": 0,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_attribution_note": "The two in-place enrichments are stored in the canonical files for batches 100 and 106; reconciliation may expose their proposition deltas in earlier snapshot variances. Expected counts are not measured counts. No source was promoted to Verified.",
+    "existing_identity_updates": [
+      {
+        "aid": 5959845,
+        "id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+        "evidence_family_id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+        "existing_propositions_before": 5,
+        "propositions_added": 1,
+        "total_propositions_after": 6,
+        "locators": [
+          "he.chabad.org AID 5959845, section 9, lines 246–253."
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "Added a non-verbatim proposition about the explicit limit on anger toward students: do not break vessels or damage property to instill fear."
+      },
+      {
+        "aid": 2989585,
+        "id": "sicha-5717-shavuot-day2-aid2989585",
+        "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+        "evidence_family_id": "sicha-5717-shavuot-day2-aid2989585",
+        "existing_propositions_before": 7,
+        "propositions_added": 1,
+        "total_propositions_after": 8,
+        "locators": [
+          "he.chabad.org AID 2989585, section B, lines 189–193."
+        ],
+        "locator_corrections": [
+          {
+            "proposition_index": 1,
+            "from": "lines 180–186",
+            "to": "lines 189–193"
+          }
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "Added a non-verbatim proposition recording the Rebbe's address to children before bar mitzvah at that farbrengen; corrected the children-as-guarantors locator."
+      }
+    ],
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "unique_new_evidence_families": 15,
+      "same_family_memberships": 0,
+      "duplicate_alias_identities": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "scan_only_verification_used": 0,
+      "existing_identity_updates_unique": true,
+      "checked_against": "1,022-record content-review queue; 12 bulk-index files; batch files 100, 106, 111 and 112; exact AID search in the repository. The complete canonical item/Evidence Family scan remains pending reconciliation.",
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true
+    }
+  },
+  "previous_manual_web_review": {
     "batch_id": "112",
     "batch_file": "data/items/content-research-batch-112-2026-11-16.json",
     "title": "Batch 112 — Hebrew/Yiddish Hayom Yom entries 20–27 Adar I 5703, a Hebrew letter, and in-place Sicha enrichment",
@@ -121,7 +298,7 @@
       }
     ]
   },
-  "previous_manual_web_review": {
+  "earlier_manual_web_review": {
     "batch_id": "111",
     "batch_file": "data/items/content-research-batch-111-2026-11-16.json",
     "title": "Batch 111 — Hebrew and Yiddish original-language Hayom Yom entries 12–19 Adar I 5703",
@@ -222,50 +399,6 @@
         "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
       }
     ]
-  },
-  "earlier_manual_web_review": {
-    "batch_id": "093",
-    "batch_file": "data/items/content-research-batch-093-2026-11-15.json",
-    "reviewed_at": "2026-11-15T05:11:00+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
-    "reconciliation_status": "pending",
-    "reviewed_item_count": 11,
-    "source_bodies_inspected": 10,
-    "source_body_pages_opened": 10,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 0,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 8,
-    "existing_response_propositions_added": 0,
-    "answer_eligible_source_families_added": 8,
-    "content_verified_unique_sources_added": 0,
-    "duplicate_aliases_linked": 0,
-    "translations_counted_as_independent_witnesses": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 922,
-      "content_verified_unique_sources": 853,
-      "answer_eligible_propositions": 2867
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 930,
-      "content_verified_unique_sources": 853,
-      "answer_eligible_propositions": 2875
-    },
-    "new_aids": [
-      6436855,
-      5245732,
-      5168552,
-      6393752,
-      4846181,
-      6391815,
-      5834915,
-      4772806
-    ],
-    "rechecked_aids": [
-      5054491,
-      2190037
-    ],
-    "blocked_candidate_count": 1
   },
   "earlier_manual_web_review_2": {
     "batch_id": "092",
@@ -564,9 +697,9 @@
       }
     ]
   },
-  "manual_web_review_note": "נבדקו עשרה גופי מקור: תשעה פריטים חדשים (שמונה ערכי היום יום ומכתב עברי אחד) והעשרה אחת של שיחה קיימת. AID 6105 הופנה לעמוד אחר; נפתח באותה הפעלה דף לימוד יומי חלופי בשפת המקור. כל הפריטים נשארו Parsed.",
+  "manual_web_review_note": "נבדקו 17 גופי מקור: 15 ערכי היום יום מקוריים בעברית וביידיש ושתי העשרות של זהויות שיחה קיימות. AID 528648 היה דף אינדקס ולא נכלל. נתיב ה-crawler ב-GitHub נשאר חסום ב-HTTP 403 ולא הופעל מחדש; גופי המקור נפתחו דרך עמודי הפרסום הציבוריים. כל המקורות החדשים נשארו Parsed.",
   "manual_web_review_current_metrics": null,
-  "last_manual_review_at": "2026-11-16T04:58:08+02:00",
+  "last_manual_review_at": "2026-11-16T05:55:17+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -2944,6 +3077,16 @@
           "note": "נפתח גוף השיחה העברי AID 5959845, סעיפים ז–ח, שורות 214–224 ו־233–244. נוספה פרפרזה על ההבחנה שבשיחה בין תלמידים שלא הבינו מחמת קושי לבין תלמידים שהתרשלו בלימוד. הזהות, משפחת הראיות והסטטוס Parsed נשמרו."
         }
       ]
+    },
+    {
+      "batch_id": "113",
+      "batch_file": "data/items/content-research-batch-113-2026-11-16.json",
+      "reviewed_at": "2026-11-16T05:55:17+02:00",
+      "new_source_identities": 15,
+      "existing_identities_enriched": 2,
+      "new_response_propositions": 15,
+      "existing_response_propositions_added": 2,
+      "reconciliation_status": "pending"
     }
   ],
   "earlier_manual_web_review_12": {
@@ -3085,215 +3228,361 @@
     },
     "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
   },
-  "next_action": "Reconcile contiguous pending batches 099–112, run test_content_readiness.mjs and the answer-quality gate, then verify GitHub Actions and live Pages metrics.",
+  "next_action": "Reconcile contiguous pending batches 099–113, run test_content_readiness.mjs and the answer-quality gate, then verify Actions and live Pages metrics.",
   "last_manual_web_review": {
-    "batch_id": "111",
-    "batch_file": "data/items/content-research-batch-111-2026-11-16.json",
-    "title": "Batch 111 — Hebrew and Yiddish original-language Hayom Yom entries 12–19 Adar I 5703",
-    "reviewed_at": "2026-11-16T03:55:14+02:00",
+    "batch_id": "113",
+    "batch_file": "data/items/content-research-batch-113-2026-11-16.json",
+    "title": "Batch 113 — 15 Hebrew/Yiddish Hayom Yom entries (28 Adar I–12 Adar II 5703) and two in-place Sicha enrichments",
+    "reviewed_at": "2026-11-16T05:55:17+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending",
-    "reviewed_item_count": 9,
-    "source_bodies_inspected": 9,
-    "source_body_pages_opened": 9,
+    "reviewed_item_count": 17,
+    "source_bodies_inspected": 17,
+    "source_body_pages_opened": 17,
     "metadata_only_items_rechecked": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 1,
+    "new_source_identities": 15,
+    "existing_identities_enriched": 2,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 10,
+    "new_response_propositions": 15,
     "existing_response_propositions_added": 2,
-    "total_new_paraphrase_entries": 12,
-    "answer_eligible_source_families_added": 8,
-    "independent_witnesses_added": 8,
+    "total_new_paraphrase_entries": 17,
+    "answer_eligible_source_families_added": 15,
+    "independent_witnesses_added": 15,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1059,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3121
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1067,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3133
-    },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "blocked_candidate_count": 0,
-    "blocked_candidates": [],
-    "new_aids": [
-      6093,
-      6094,
-      6095,
-      6096,
-      6097,
-      6098,
-      6099,
-      6100
-    ],
-    "enriched_aids": [
-      2989153
-    ],
-    "rechecked_aids": [],
-    "fallback_source_attempted": false,
-    "fallback_source_results": {
-      "accessible_item_level_bodies": 8,
-      "body_text_inspected": true,
-      "inspected_aids": [
-        6093,
-        6094,
-        6095,
-        6096,
-        6097,
-        6098,
-        6099,
-        6100
-      ]
-    },
-    "translations_counted_as_independent_witnesses": 0,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "language_distribution": {
-      "Hebrew": 4,
-      "Yiddish": 4
-    },
-    "original_language_distribution": {
-      "Hebrew": 4,
-      "Yiddish": 4
-    },
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 8,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 12
-    },
-    "metrics_attribution_note": "שמונה ערכי היום יום נפרדים (AIDs 6093–6100) נוספו כמשפחות ראיות חדשות; בנוסף הועשרה זהות קיימת אחת (AID 2989153) בשתי פרפרזות מסעיף ט׳. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation.",
-    "existing_identity_updates": [
-      {
-        "aid": 2989153,
-        "id": "sicha-5713-20-menachem-av-akev-aid2989153",
-        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
-        "evidence_family_id": "sicha-5713-20-menachem-av-akev-aid2989153",
-        "existing_propositions_before": 4,
-        "propositions_added": 2,
-        "total_propositions_after": 6,
-        "locators": [
-          "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 247–256.",
-          "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 243–244."
-        ],
-        "action": "enriched_existing_identity_in_place",
-        "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
-      }
-    ]
-  },
-  "last_manual_review": {
-    "batch_id": "112",
-    "batch_file": "data/items/content-research-batch-112-2026-11-16.json",
-    "title": "Batch 112 — Hebrew/Yiddish Hayom Yom entries 20–27 Adar I 5703, a Hebrew letter, and in-place Sicha enrichment",
-    "reviewed_at": "2026-11-16T04:58:08+02:00",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending",
-    "reviewed_item_count": 10,
-    "source_bodies_inspected": 10,
-    "source_body_pages_opened": 10,
-    "metadata_only_items_rechecked": 0,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 9,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 13,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 14,
-    "answer_eligible_source_families_added": 9,
-    "independent_witnesses_added": 9,
-    "non_independent_presentations_added": 0,
-    "content_verified_unique_sources_added": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1067,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3133
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1076,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3147
     },
+    "metrics_before_source": "Expected boundary after pending batch 112; not yet reconciled or published.",
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1091,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3164
+    },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 15,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 17
+    },
     "blocked_candidate_count": 1,
     "blocked_candidates": [
       {
-        "aid": 6105,
-        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6105/jewish/Hayom-Yom-24-Adar-I.htm",
-        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528641",
-        "reason": "הנתיב העברי הישיר של AID 6105 הופנה לעמוד ספרייה אחר (AID 528641) ולא הציג את ערך כ״ד אדר א׳. באותה הפעלה נפתח דף הלימוד היומי של 13.03.2026 ונבדק בו גוף הערך המקורי ביידיש בשורה 174. דף האנגלית של AID 6105 שימש לאישור זהות הפריט בלבד. לא בוצע crawler retry ולא נעקפה בקרת גישה."
+        "host": "www.chabad.org",
+        "route": "GitHub runner acquisition path",
+        "reason": "The known runner-side acquisition path returned HTTP 403 for all 12 references in its first attempt; the crawler was not retried.",
+        "handling": "The public web reader was used to inspect the publisher's canonical /library item pages in this run; no access-control bypass."
+      }
+    ],
+    "excluded_candidate_count": 1,
+    "excluded_candidates": [
+      {
+        "aid": 528648,
+        "url": "https://he.chabad.org/library/article_cdo/aid/528648",
+        "reason": "Month index only; no dated item-level body, so no identity or proposition was created."
       }
     ],
     "new_aids": [
-      6101,
-      6102,
-      6103,
-      6104,
-      6105,
-      6106,
-      6107,
-      6108,
-      2989411
+      528645,
+      528646,
+      528647,
+      528649,
+      528650,
+      528651,
+      528652,
+      528653,
+      528654,
+      528655,
+      528656,
+      528657,
+      528658,
+      528659,
+      528660
     ],
     "enriched_aids": [
+      2989585,
       5959845
     ],
     "rechecked_aids": [],
+    "blocked_aids": [],
+    "excluded_aids": [
+      528648
+    ],
+    "language_distribution": {
+      "Hebrew": 9,
+      "Yiddish": 6
+    },
+    "original_language_distribution": {
+      "Hebrew": 9,
+      "Yiddish": 6
+    },
+    "source_type_distribution": {
+      "published_hebrew_hayom_yom_entry": 9,
+      "published_yiddish_hayom_yom_entry": 6
+    },
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "accessible_item_level_bodies": 1,
+      "publisher": "Chabad.org / BeitChabad",
+      "accessible_item_level_bodies": 15,
+      "existing_identity_bodies": 2,
       "body_text_inspected": true,
       "inspected_aids": [
-        6105
+        528645,
+        528646,
+        528647,
+        528649,
+        528650,
+        528651,
+        528652,
+        528653,
+        528654,
+        528655,
+        528656,
+        528657,
+        528658,
+        528659,
+        528660
       ],
-      "notes": "החלופה נפתחה באותה הפעלה: דף הלימוד היומי של 13.03.2026 הציג את גוף ערך 24 אדר א׳ ה׳תש״ג ביידיש. שבעת דפי ה-AID האחרים נפתחו ישירות; המכתב והסיחה נפתחו בנפרד. סך הכול נבדקו עשרה גופי מקור."
+      "notes": "Opened original Hebrew/Yiddish body text on the publisher's canonical /library/article_cdo/aid pages. AID 528648 was only a month index and was excluded. Two existing Sicha bodies were also reopened for enrichment. No title or search snippet was used as content."
     },
     "translations_counted_as_independent_witnesses": 0,
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
     "scan_only_verification_used": false,
-    "language_distribution": {
-      "Hebrew": 6,
-      "Yiddish": 3
-    },
-    "original_language_distribution": {
-      "Hebrew": 6,
-      "Yiddish": 3
-    },
-    "source_type_distribution": {
-      "published_hebrew_hayom_yom_entry": 5,
-      "published_yiddish_hayom_yom_entry": 3,
-      "published_hebrew_letter": 1
-    },
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 9,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 14
-    },
-    "metrics_attribution_note": "תשעה פריטים חדשים: שמונה ערכי היום יום נפרדים (AIDs 6101–6108; חמש עברית ושלוש יידיש) ומכתב עברי אחד (AID 2989411); הערת השוליים מציינת שנכתב ונשלח גם נוסח יידי, שלא נבדק ולא נספר כעד נוסף. בנוסף הועשרה אותה זהות של שיחה קיימת (AID 5959845) בפרפרזה אחת מסעיפים ז–ח. תרגום לא נספר כעד עצמאי. AID 6105 נפתח דרך דף הלימוד היומי המקביל לאחר שהנתיב העברי הישיר הופנה לעמוד אחר. כל הרשומות נשארו Parsed; אין קידום ל-Verified. המדדים בפועל ממתינים ל-reconciliation.",
+    "metrics_attribution_note": "The two in-place enrichments are stored in the canonical files for batches 100 and 106; reconciliation may expose their proposition deltas in earlier snapshot variances. Expected counts are not measured counts. No source was promoted to Verified.",
     "existing_identity_updates": [
       {
         "aid": 5959845,
         "id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
         "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
         "evidence_family_id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
-        "existing_propositions_before": 4,
+        "existing_propositions_before": 5,
         "propositions_added": 1,
-        "total_propositions_after": 5,
+        "total_propositions_after": 6,
         "locators": [
-          "he.chabad.org AID 5959845, גוף השיחה סעיפים ז–ח, שורות 214–224 ו־233–244."
+          "he.chabad.org AID 5959845, section 9, lines 246–253."
         ],
         "action": "enriched_existing_identity_in_place",
-        "note": "נפתח גוף השיחה העברי AID 5959845, סעיפים ז–ח, שורות 214–224 ו־233–244. נוספה פרפרזה על ההבחנה שבשיחה בין תלמידים שלא הבינו מחמת קושי לבין תלמידים שהתרשלו בלימוד. הזהות, משפחת הראיות והסטטוס Parsed נשמרו."
+        "note": "Added a non-verbatim proposition about the explicit limit on anger toward students: do not break vessels or damage property to instill fear."
+      },
+      {
+        "aid": 2989585,
+        "id": "sicha-5717-shavuot-day2-aid2989585",
+        "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+        "evidence_family_id": "sicha-5717-shavuot-day2-aid2989585",
+        "existing_propositions_before": 7,
+        "propositions_added": 1,
+        "total_propositions_after": 8,
+        "locators": [
+          "he.chabad.org AID 2989585, section B, lines 189–193."
+        ],
+        "locator_corrections": [
+          {
+            "proposition_index": 1,
+            "from": "lines 180–186",
+            "to": "lines 189–193"
+          }
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "Added a non-verbatim proposition recording the Rebbe's address to children before bar mitzvah at that farbrengen; corrected the children-as-guarantors locator."
       }
-    ]
+    ],
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "unique_new_evidence_families": 15,
+      "same_family_memberships": 0,
+      "duplicate_alias_identities": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "scan_only_verification_used": 0,
+      "existing_identity_updates_unique": true,
+      "checked_against": "1,022-record content-review queue; 12 bulk-index files; batch files 100, 106, 111 and 112; exact AID search in the repository. The complete canonical item/Evidence Family scan remains pending reconciliation.",
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true
+    }
+  },
+  "last_manual_review": {
+    "batch_id": "113",
+    "batch_file": "data/items/content-research-batch-113-2026-11-16.json",
+    "title": "Batch 113 — 15 Hebrew/Yiddish Hayom Yom entries (28 Adar I–12 Adar II 5703) and two in-place Sicha enrichments",
+    "reviewed_at": "2026-11-16T05:55:17+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending",
+    "reviewed_item_count": 17,
+    "source_bodies_inspected": 17,
+    "source_body_pages_opened": 17,
+    "metadata_only_items_rechecked": 0,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 15,
+    "existing_identities_enriched": 2,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 15,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 17,
+    "answer_eligible_source_families_added": 15,
+    "independent_witnesses_added": 15,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1076,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3147
+    },
+    "metrics_before_source": "Expected boundary after pending batch 112; not yet reconciled or published.",
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1091,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3164
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 15,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 17
+    },
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "host": "www.chabad.org",
+        "route": "GitHub runner acquisition path",
+        "reason": "The known runner-side acquisition path returned HTTP 403 for all 12 references in its first attempt; the crawler was not retried.",
+        "handling": "The public web reader was used to inspect the publisher's canonical /library item pages in this run; no access-control bypass."
+      }
+    ],
+    "excluded_candidate_count": 1,
+    "excluded_candidates": [
+      {
+        "aid": 528648,
+        "url": "https://he.chabad.org/library/article_cdo/aid/528648",
+        "reason": "Month index only; no dated item-level body, so no identity or proposition was created."
+      }
+    ],
+    "new_aids": [
+      528645,
+      528646,
+      528647,
+      528649,
+      528650,
+      528651,
+      528652,
+      528653,
+      528654,
+      528655,
+      528656,
+      528657,
+      528658,
+      528659,
+      528660
+    ],
+    "enriched_aids": [
+      2989585,
+      5959845
+    ],
+    "rechecked_aids": [],
+    "blocked_aids": [],
+    "excluded_aids": [
+      528648
+    ],
+    "language_distribution": {
+      "Hebrew": 9,
+      "Yiddish": 6
+    },
+    "original_language_distribution": {
+      "Hebrew": 9,
+      "Yiddish": 6
+    },
+    "source_type_distribution": {
+      "published_hebrew_hayom_yom_entry": 9,
+      "published_yiddish_hayom_yom_entry": 6
+    },
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "Chabad.org / BeitChabad",
+      "accessible_item_level_bodies": 15,
+      "existing_identity_bodies": 2,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        528645,
+        528646,
+        528647,
+        528649,
+        528650,
+        528651,
+        528652,
+        528653,
+        528654,
+        528655,
+        528656,
+        528657,
+        528658,
+        528659,
+        528660
+      ],
+      "notes": "Opened original Hebrew/Yiddish body text on the publisher's canonical /library/article_cdo/aid pages. AID 528648 was only a month index and was excluded. Two existing Sicha bodies were also reopened for enrichment. No title or search snippet was used as content."
+    },
+    "translations_counted_as_independent_witnesses": 0,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_attribution_note": "The two in-place enrichments are stored in the canonical files for batches 100 and 106; reconciliation may expose their proposition deltas in earlier snapshot variances. Expected counts are not measured counts. No source was promoted to Verified.",
+    "existing_identity_updates": [
+      {
+        "aid": 5959845,
+        "id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+        "evidence_family_id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+        "existing_propositions_before": 5,
+        "propositions_added": 1,
+        "total_propositions_after": 6,
+        "locators": [
+          "he.chabad.org AID 5959845, section 9, lines 246–253."
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "Added a non-verbatim proposition about the explicit limit on anger toward students: do not break vessels or damage property to instill fear."
+      },
+      {
+        "aid": 2989585,
+        "id": "sicha-5717-shavuot-day2-aid2989585",
+        "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+        "evidence_family_id": "sicha-5717-shavuot-day2-aid2989585",
+        "existing_propositions_before": 7,
+        "propositions_added": 1,
+        "total_propositions_after": 8,
+        "locators": [
+          "he.chabad.org AID 2989585, section B, lines 189–193."
+        ],
+        "locator_corrections": [
+          {
+            "proposition_index": 1,
+            "from": "lines 180–186",
+            "to": "lines 189–193"
+          }
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "Added a non-verbatim proposition recording the Rebbe's address to children before bar mitzvah at that farbrengen; corrected the children-as-guarantors locator."
+      }
+    ],
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "unique_new_evidence_families": 15,
+      "same_family_memberships": 0,
+      "duplicate_alias_identities": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "scan_only_verification_used": 0,
+      "existing_identity_updates_unique": true,
+      "checked_against": "1,022-record content-review queue; 12 bulk-index files; batch files 100, 106, 111 and 112; exact AID search in the repository. The complete canonical item/Evidence Family scan remains pending reconciliation.",
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true
+    }
   }
 }

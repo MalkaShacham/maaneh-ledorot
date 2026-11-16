@@ -844,3 +844,24 @@ The hourly schedule, repository visibility, audience and permissions remain unch
 - Expected batch-112 boundary (not actual until reconciliation): **1,067 / 854 / 3,133 → 1,076 / 854 / 3,147** (answer-eligible unique Evidence Families / content-Verified sources / answer-eligible propositions). The prior public metrics file is not treated as current corpus evidence.
 - Fixed a reconciliation false-collision defect: existing_identity_updates audit descriptors carry canonical AID/ID/Evidence Family fields but are not separate source records. The index and collision scan now exclude these descriptors, preventing a legitimate in-place enrichment (including AID 2989153) from being counted as a duplicate canonical record.
 - Updated the commit-bound readiness tests for batch 112 and the 099–112 reconciliation chain. Actions and live Pages metrics must still be checked after the commit; no test pass or deployment success is assumed in advance.
+
+
+## 2026-11-16 — Manual source review batch 113
+
+Batch 113 adds **15 distinct dated Hayom Yom item identities** from original-language publisher pages: 9 Hebrew and 6 Yiddish entries, AIDs 528645–528647 and 528649–528660. AID 528648 was inspected as a month index only and excluded. Each dated entry receives its own Evidence Family; no translation was counted as an independent witness. All 15 records remain Parsed, with one non-verbatim `source_grounded_paraphrase` per item, `proposition_verification=source_text_inspected`, item-level locators, provenance, partial-context boundaries and explicit attribution limitations.
+
+Two existing Sicha identities were enriched in place:
+- AID 5959845: one additional proposition from section 9, lines 246–253, documenting the explicit limit on disciplinary anger and the prohibition on breaking vessels/property to instill fear. The identity and Evidence Family remain unchanged; total propositions 5 → 6.
+- AID 2989585: one additional proposition from section B, lines 189–193, recording the Rebbe's address to children before bar mitzvah at that particular farbrengen. The locator for the existing children-as-guarantors proposition was corrected to lines 189–193. The identity and Evidence Family remain unchanged; total propositions 7 → 8.
+
+The known GitHub-runner acquisition path remains blocked by HTTP 403 for the earlier 12-reference attempt. It was not retried and no access control was bypassed. Manual public-reader inspection of the publisher's canonical `/library/article_cdo/aid` pages supplied the 15 accessible item-level bodies; the two existing Sicha bodies were also reopened. No search snippet or title was used as source content, and no full copyrighted text was copied.
+
+Deduplication was checked against the 1,022-record content-review queue, 12 bulk-index inventories, selected recent batch files and exact AID searches. No collision was found in those checked sets. **The complete canonical identity/Evidence Family scan is still pending reconciliation**, so the new-family count and metrics below are expected, not measured. Expected boundary after batch 112: 1,076 answer-eligible unique sources / 854 content-verified unique sources / 3,147 answer-eligible propositions. Expected after batch 113: **1,091 / 854 / 3,164**. No source was promoted to Verified.
+
+### Retrieval regression repair
+
+The latest Answer Quality Gate failed because the child-education letter AID 2278261 did not survive the top-36 retrieval candidate window for the educational-influence/action query. The underlying source is a derived translation manifestation and must remain non-independent, but it is still useful as a bounded source. The core scorer now gives an explicit relevance bonus to propositions that identify immigrant children, without changing the Evidence Family or independent-witness status. The readiness test is extended to verify that AID 2278261 is retrieved while retaining its derived/non-independent classification.
+
+### Reconciliation and publication status
+
+Batch 113 is submitted as pending reconciliation. The public metrics and project-state counts have not been manually advanced. The two in-place enrichments may appear in earlier batch snapshots because their canonical records live in batches 100 and 106; reconciliation must record any resulting historical variance rather than conceal it. Required next validation is the full reconciliation of batches 099–113, `test_content_readiness.mjs`, the Answer Quality Gate, Actions and live Pages metrics.
