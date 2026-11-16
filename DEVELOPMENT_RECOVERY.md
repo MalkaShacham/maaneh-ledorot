@@ -814,3 +814,10 @@ The hourly schedule, repository visibility, audience and permissions remain unch
 
 
 - Final test scan found one additional batch-109 assertion still using the current-review object; it now checks the predecessor object. The only current-review pointer assertion is batch 110.
+
+
+### Education-influence retrieval repair — 2026-11-16
+
+- The first post-reconciliation readiness run exposed a retrieval regression in the education-influence case: broad equal scores and the independent-witness tie-break pushed the relevant English translations (AIDs 2278256 and 2278261/2278254) below the small source budget. The translation must remain a derived presentation, but it is still usable to retrieve the content of its own Evidence Family when no more specific original-language body is available.
+- Added a query-specific evidence-signal score for individual influence, children’s education, practical action and speech; raised the source/claim budget for this multi-source question and deduplicated presentations by Evidence Family after relevance ranking. The translated AID 2278256 is explicitly tested as `independent_witness=false` and counted only as derived evidence.
+- The next quality-gate and hourly runs must verify the source selection, deep claim-source map, reconciliation metrics and publication. No translation is counted as an independent witness.

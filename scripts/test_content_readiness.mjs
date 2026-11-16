@@ -1108,12 +1108,17 @@ assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_met
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
- assert(m.sources.some(e=>String(e.aid)==='2278256'));
- assert(m.sources.some(e=>String(e.aid)==='2278261')||m.sources.some(e=>String(e.aid)==='2278254'));
+ const individualInfluence=m.sources.find(e=>String(e.aid)==='2278256');
+ assert(individualInfluence,'the single-person influence letter must survive retrieval');
+ assert.equal(individualInfluence.independent_witness,false,'English translation remains a derived presentation, not an independent witness');
+ assert(individualInfluence.translation_of_evidence_family_id===individualInfluence.evidence_family_id);
+ assert(m.sources.some(e=>String(e.aid)==='2278261')||m.sources.some(e=>String(e.aid)==='2278254'),'the child-education letter must survive multi-source retrieval');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
  assert(m.claims.length>0);
  if(mode==='researcher'){
-  assert(m.research&&m.research.evidence_families>=2);
+  assert(m.research&&m.research.depth==='deep'&&m.research.evidence_families>=2);
+  assert(m.research.evidence_integrity.derived_non_independent>=1,'researcher mode must expose the translated letter as derived, not independent');
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length>0),'researcher mode must preserve claim-level source locators');
   assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
   assert.equal(m.research.witnesses.length,m.sources.length);
   assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
