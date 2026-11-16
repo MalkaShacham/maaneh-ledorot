@@ -73,7 +73,7 @@
     "Batch 127's pre-addition full public-search-index scan (9,122 entries, generated 2026-11-15) found no matching AIDs for the 15 new identities or five aliases. Post-addition reconciliation, readiness tests, public metrics and deployment verification remain pending; no source was promoted to Verified.",
     "The prior readiness failure revealed that patternSynthesisIntegrity lacked a branch for study_and_youth_education. A topic-specific validator and regression tests now preserve one independent letter plus one explicitly non-independent publisher text, with claim-level locators; the full rerun is pending."
   ],
-  "next_work": "Run full reconciliation for pending batches 099–127 against the canonical corpus, refresh the search index and public-metrics.json, resolve the eight-source project-state/public-metrics discrepancy, run scripts/test_content_readiness.mjs and answer-quality gate, then verify Actions and Pages.",
+  "next_work": "Run full reconciliation for pending batches 099–129, verify canonical collisions and answer eligibility, run test_content_readiness.mjs and Answer Quality Gate, refresh public metrics, resolve the eight-source discrepancy, and verify Pages.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation_and_readiness_retest",
@@ -105,9 +105,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1290,
+        "answer_eligible_unique_sources": 1302,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3449
+        "answer_eligible_propositions": 3470
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -141,35 +141,36 @@
         "125",
         "126",
         "127",
-        "128"
+        "128",
+        "129"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "128",
-        "batch_file": "data/items/content-research-batch-128-2026-11-16.json",
+        "batch_id": "129",
+        "batch_file": "data/items/content-research-batch-129-2026-11-16.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1272,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3425
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1290,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3449
         },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1302,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3470
+        },
         "metrics_actual_before": null,
         "metrics_after_actual": null,
         "metrics_delta_actual": null,
-        "new_source_identities": 18,
-        "existing_identities_enriched": 5,
-        "existing_identities_rechecked": 5,
-        "source_bodies_inspected": 22,
-        "source_body_pages_opened": 23,
-        "new_response_propositions": 24,
-        "existing_response_propositions_added": 0,
-        "total_new_paraphrase_entries": 24,
-        "independent_witnesses_added": 18,
+        "new_source_identities": 12,
+        "existing_identities_enriched": 1,
+        "existing_identities_rechecked": 1,
+        "source_bodies_inspected": 13,
+        "source_body_pages_opened": 18,
+        "new_response_propositions": 20,
+        "existing_response_propositions_added": 1,
+        "total_new_paraphrase_entries": 21,
+        "independent_witnesses_added": 12,
         "non_independent_presentations_added": 5,
         "content_verified_unique_sources_added": 0,
         "same_family_aliases_linked": 5,
@@ -184,16 +185,16 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "Batch 128 source/index reconciliation reached the readiness suite. The suite exposed a pre-existing index-schema gap: raw public-search-index entries omitted the explicit answer_eligible boolean required by the batch-086 scoped publisher-synopsis regression. reconcile_metrics.py now persists the same answer_eligible(entry) decision used by reconciliation, and the test asserts a boolean for every index entry. Rerun pending after this commit.",
+      "run_status": "The last gate failed because the multi-source Living Torah question selected the unrelated 'רופא מצליח וגאווה' topic from the generic word גאווה and omitted AID 318996. Batch 129 adds a narrow disambiguation requiring explicit doctor context, with a regression assertion. Full rerun and reconciliation are pending.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": "02157e441c28ef0a74b2eccea58b941f2d3922c5",
-      "workflow_run_id": 43960476645,
+      "workflow_run_id": null,
       "note": "AID 5019603 remains non-independent and its uninspected photograph is explicitly disclosed. The new validator requires two distinct Evidence Families, at least one independent family, two claim-level cited claims, and the exact publisher-text-not-independent witness status. No source is promoted to Verified.",
-      "bulk_reconcile_run_id": 43960239196,
-      "hourly_run_id": 43960476698
+      "bulk_reconcile_run_id": null,
+      "hourly_run_id": null
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
@@ -235,35 +236,35 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "128",
+    "current_batch": "129",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "128",
-      "batch_file": "data/items/content-research-batch-128-2026-11-16.json",
+      "batch_id": "129",
+      "batch_file": "data/items/content-research-batch-129-2026-11-16.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1272,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3425
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1290,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3449
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1302,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3470
+      },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 18,
-      "existing_identities_enriched": 5,
-      "existing_identities_rechecked": 5,
-      "source_bodies_inspected": 22,
-      "source_body_pages_opened": 23,
-      "new_response_propositions": 24,
-      "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 24,
-      "independent_witnesses_added": 18,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 1,
+      "source_bodies_inspected": 13,
+      "source_body_pages_opened": 18,
+      "new_response_propositions": 20,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 21,
+      "independent_witnesses_added": 12,
       "non_independent_presentations_added": 5,
       "content_verified_unique_sources_added": 0,
       "same_family_aliases_linked": 5,
@@ -273,10 +274,10 @@
       "pre_addition_index_count": 9122,
       "pre_addition_index_matches": null
     },
-    "last_run_note": "Batch 128 added 18 source-grounded Hayom Yom identities and 24 non-verbatim propositions; five same-family publisher presentations were linked in place. One public route returned Internal Error and an index page was excluded. Reconciliation and readiness retest are pending.",
+    "last_run_note": "Batch 129 adds 12 inspected original-language Hebrew/Yiddish Hayom Yom identities (AIDs 528865–528876), 20 source-grounded non-verbatim propositions, five older same-family presentations AIDs 5933–5937 linked to the canonical entries, and one in-place enrichment of AID 528819. AID 4666220 returned Internal Error; alternate public item bodies were inspected in the same run. No crawler retry, access bypass or Verified promotion. Full-index reconciliation and readiness retest remain pending.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 5900 returned Internal Error. No crawler retry or access bypass; accessible item-level entries AID 528846–528860 and 528862–528864 were inspected in the same run.",
-    "next_work": "Run reconciliation for batches 099–128; verify canonical collisions and answer eligibility; run test_content_readiness.mjs and Answer Quality Gate; confirm public-metrics.json and Pages.",
+    "next_work": "Run full reconciliation for pending batches 099–129; scan canonical identity collisions and same-family links; run scripts/test_content_readiness.mjs and Answer Quality Gate; confirm actual answer_eligible_unique_sources before/after, refresh public-metrics.json, resolve the eight-source project-state/public-metrics discrepancy, and verify GitHub Pages.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -730,5 +731,5 @@
       "access_control_bypassed": false
     }
   },
-  "current_batch": "128"
+  "current_batch": "129"
 }

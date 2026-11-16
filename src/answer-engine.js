@@ -467,6 +467,8 @@ export function understandQuestion(q){
  if(topics.includes('דואר כפר חבד ושבת'))topics=topics.filter(t=>t!=='שיקום לאחר פיגוע');
  if(topics.includes('פעילות נוער לפי תנאי המקום'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('רופא מצליח וגאווה'))topics=topics.filter(t=>t!=='בריאות');
+ // The word "גאווה" alone is not enough to select the doctor-success case; require the doctor context.
+ if(topics.includes('רופא מצליח וגאווה')&&!containsTerm(query,'רופא'))topics=topics.filter(t=>t!=='רופא מצליח וגאווה');
  if(topics.includes('סמינר כפר חבד בחירת מורות'))topics=topics.filter(t=>!['חינוך','נשים'].includes(t));
  if(topics.includes('נוער ברחובות בימי החופש'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('זכירת חסדים מול קשיי חיים'))topics=topics.filter(t=>!['אמונה','דאגה','בריאות'].includes(t));
