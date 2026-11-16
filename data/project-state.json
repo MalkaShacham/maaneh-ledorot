@@ -97,9 +97,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1175,
+        "answer_eligible_unique_sources": 1174,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3270
+        "answer_eligible_propositions": 3268
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -137,16 +137,17 @@
           "answer_eligible_propositions": 3242
         },
         "metrics_expected_after": {
-          "answer_eligible_unique_sources": 1175,
+          "answer_eligible_unique_sources": 1174,
           "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3270
+          "answer_eligible_propositions": 3268
         },
         "metrics_after_actual": null,
         "metrics_delta_actual": null,
-        "new_source_identities": 19,
-        "existing_identities_enriched": 1,
-        "source_bodies_inspected": 19,
-        "new_response_propositions": 25,
+        "new_source_identities": 18,
+        "existing_identities_enriched": 2,
+        "source_bodies_inspected": 18,
+        "existing_identity_bodies_inspected": 2,
+        "new_response_propositions": 23,
         "existing_response_propositions_added": 3
       },
       "status": "pending_reconciliation"
@@ -161,7 +162,7 @@
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 120 adds 19 source identities (17 original-language daily entries and two non-independent English translated letter presentations) and three in-place propositions to AID 2989585. Current-batch assertions now expect 120/119 and final AID 2989585 proposition count 16. Reconcile pending batches 099–120 and rerun readiness before publication."
+      "note": "Batch 120 adds 18 new source identities (17 original-language dated entries and one non-independent English translation presentation) and enriches two existing identities: three new propositions to AID 2989585 and exact locators/translation metadata for AID 3906812. Reconcile pending batches 099–120 and rerun readiness before publication."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
@@ -216,22 +217,23 @@
         "answer_eligible_propositions": 3242
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1175,
+        "answer_eligible_unique_sources": 1174,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3270
+        "answer_eligible_propositions": 3268
       },
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 19,
-      "existing_identities_enriched": 1,
-      "source_bodies_inspected": 19,
-      "new_response_propositions": 25,
+      "new_source_identities": 18,
+      "existing_identities_enriched": 2,
+      "source_bodies_inspected": 18,
+      "existing_identity_bodies_inspected": 2,
+      "new_response_propositions": 23,
       "existing_response_propositions_added": 3,
       "blocked_candidate_count": 1,
       "crawler_retry": false,
       "access_control_bypassed": false
     },
-    "last_run_note": "Batch 120 inspected 17 dated Hayom Yom bodies (14 Hebrew, 3 Yiddish) and two English translations of dated letters (non-independent presentations), and enriched existing Sicha AID 2989585 in place with three propositions from sections 29–33. AID 528725 was blocked; AID 528739 was a navigation page and excluded. No crawler retry, access-control bypass, full-text copying or Verified promotion. Reconciliation chain 099–120 is pending.",
+    "last_run_note": "Batch 120 now contains 18 new source identities: 17 inspected Hebrew/Yiddish Hayom Yom entries and one inspected English translation of a distinct dated letter. Existing AID 2989585 received three new propositions; existing AID 3906812 was re-opened and enriched in place with exact locators and explicit non-independent translation metadata, not duplicated. AID 528725 was blocked; AID 528739 was a navigation page and excluded. No crawler retry, access-control bypass, full-text copying or Verified promotion. Reconciliation chain 099–120 is pending.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 528725 returned Internal Error on direct public open; no bypass. Same-run fallback inspected 17 other daily entries and two public English letter translations, plus existing Sicha AID 2989585. AID 528739 was excluded as a month-navigation page.",
     "next_work": "Reconcile pending manual batches 099–120, run test_content_readiness.mjs and the answer-quality gate, then verify Actions and live Pages metrics.",
