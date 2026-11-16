@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-16T05:55:17+02:00",
+  "last_updated": "2026-11-16",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -96,9 +96,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1091,
+        "answer_eligible_unique_sources": 1103,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3164
+        "answer_eligible_propositions": 3177
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -117,37 +117,44 @@
         "110",
         "111",
         "112",
-        "113"
+        "113",
+        "114"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "113",
+        "batch_id": "114",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1076,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3147
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1091,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3164
         },
-        "metrics_after_actual": null
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1103,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3177
+        },
+        "metrics_after_actual": null,
+        "metrics_delta_actual": null,
+        "new_source_identities": 12,
+        "existing_identities_enriched": 1,
+        "source_bodies_inspected": 13,
+        "new_response_propositions": 12,
+        "existing_response_propositions_added": 1
       },
       "status": "pending_reconciliation"
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_111_reconciliation",
+      "run_status": "pending_after_batch_114_reconciliation",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Commit d44457e triggered Actions. Run 43785321364 failed in question-specific retrieval because yiddishHayomYomQuestion was referenced before its const initialization at answer-engine.js:1503. The same preliminary reconciliation measured 1,050/854/3,117; validation failed before public metrics were committed. Move the declaration before first use and update reconciliation assertions to reflect in-place enrichment and measured variance. The previous acquisitionState ReferenceError is fixed."
+      "note": "The latest reconciliation run 43802854595 reached node scripts/test_content_readiness.mjs and failed at line 1247 with ReferenceError: readFileSync is not defined. This commit replaces the undeclared synchronous file read with the already-imported async readFile/root URL pattern, adds batch-114 assertions, and tests multi-source rabbinic-responsibility retrieval in regular and researcher modes. The prior run did not commit regenerated metrics."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
@@ -189,30 +196,34 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "113",
+    "current_batch": "114",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "113",
+    "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "113",
+      "batch_id": "114",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1076,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3147
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1091,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3164
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1103,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3177
+      },
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "reconciliation_variance": null
+      "new_source_identities": 12,
+      "existing_identities_enriched": 1,
+      "source_bodies_inspected": 13,
+      "new_response_propositions": 12,
+      "existing_response_propositions_added": 1
     },
-    "last_run_note": "2026-11-16 batch 113: inspected 15 original Hebrew/Yiddish Hayom Yom item bodies and enriched two existing Sicha identities with two non-verbatim propositions. All new records remain Parsed. Full canonical deduplication and actual metrics await reconciliation.",
+    "last_run_note": "2026-11-16 batch 114: inspected 12 original-language Hebrew/Yiddish Hayom Yom item bodies (AIDs 528661–528672) and enriched existing Sicha identity AID 5959845 with one non-verbatim proposition. All new records remain Parsed; 12 distinct Evidence Families added; full reconciliation and quality-gate validation pending.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "GitHub runner acquisition path remains HTTP 403; manual public publisher pages were opened instead; no crawler retry or access-control bypass.",
-    "next_work": "Run reconciliation across pending batches 099–113; verify canonical AID/Evidence Family collisions, answer_eligible_unique_sources and content readiness; run test_content_readiness.mjs; inspect Actions and Pages.",
+    "next_work": "Run reconciliation across pending batches 099–114; verify canonical AID/Evidence Family collisions and measured answer-readiness counts; run test_content_readiness.mjs; inspect Answer Quality Gate, Actions and Pages.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -575,13 +586,87 @@
       "reconciliation_status": "reconciled"
     },
     "last_manual_web_review": {
-      "batch_id": "113",
-      "batch_file": "data/items/content-research-batch-113-2026-11-16.json",
+      "batch_id": "114",
+      "batch_file": "data/items/content-research-batch-114-2026-11-16.json",
+      "title": "אצווה 114 — 12 ערכי היום יום בעברית וביידיש (י״ג–כ״ד אדר ב׳ ה׳תש״ג) והעשרת שיחה קיימת",
+      "reviewed_at": "2026-11-16T06:26:23+02:00",
       "status": "pending_reconciliation",
-      "new_source_identities": 15,
-      "existing_identities_enriched": 2,
-      "new_response_propositions": 15,
-      "existing_response_propositions_added": 2
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 13,
+      "source_bodies_inspected": 13,
+      "source_body_pages_opened": 13,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 12,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 13,
+      "answer_eligible_source_families_added": 12,
+      "independent_witnesses_added": 12,
+      "content_verified_unique_sources_added": 0,
+      "new_aids": [
+        528661,
+        528662,
+        528663,
+        528664,
+        528665,
+        528666,
+        528667,
+        528668,
+        528669,
+        528670,
+        528671,
+        528672
+      ],
+      "enriched_aids": [
+        5959845
+      ],
+      "blocked_candidate_count": 1,
+      "fallback_source_attempted": true,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "translations_counted_as_independent_witnesses": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1091,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3164
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1103,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3177
+      },
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 12,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 13
+      },
+      "language_distribution": {
+        "Hebrew": 9,
+        "Yiddish": 3
+      },
+      "source_type_distribution": {
+        "published_hebrew_hayom_yom_entry": 9,
+        "published_yiddish_hayom_yom_entry": 3
+      },
+      "deduplication_check": {
+        "new_aids_unique": true,
+        "new_source_urls_unique": true,
+        "new_evidence_families_unique": true,
+        "unique_new_aid_count": 12,
+        "unique_new_family_count": 12,
+        "same_family_duplicate_count": 0,
+        "translations_counted_as_independent_witnesses": 0,
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "all_target_identities_answer_eligible": null,
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "checked_against": "Exact repository AID searches for 528661–528672; current 1,022-record review queue; recent canonical batch files 106 and 111–113. Full canonical identity/Evidence Family scan remains pending reconciliation."
+      }
     },
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
@@ -589,7 +674,8 @@
       "English publisher presentations and Hebrew free translation from Yiddish are non-independent; do not count as corroborating witnesses.",
       "Batch 096: nine original-language Hayom Yom entries remain Parsed and partial-context; same-page English renderings are not independent witnesses. AID 1273962 has proposition-level locators at body lines 283–285.",
       "AID 4666220: public reader Internal Error; no body or bypass.",
-      "AID 4783876: Yiddish melody-letter reader Internal Error; alternate Yiddish Hayom Yom AID 3315445 inspected."
+      "AID 4783876: Yiddish melody-letter reader Internal Error; alternate Yiddish Hayom Yom AID 3315445 inspected.",
+      "Known runner-side HTTP 403 on source-body acquisition remains documented; this run did not retry it and used the public web reader on canonical publisher pages."
     ],
     "pending_reconciliation_batches": [
       "099",
@@ -606,17 +692,93 @@
       "110",
       "111",
       "112",
-      "113"
+      "113",
+      "114"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
-      "batch_id": "113",
-      "batch_file": "data/items/content-research-batch-113-2026-11-16.json",
+      "batch_id": "114",
+      "batch_file": "data/items/content-research-batch-114-2026-11-16.json",
+      "title": "אצווה 114 — 12 ערכי היום יום בעברית וביידיש (י״ג–כ״ד אדר ב׳ ה׳תש״ג) והעשרת שיחה קיימת",
+      "reviewed_at": "2026-11-16T06:26:23+02:00",
       "status": "pending_reconciliation",
-      "new_source_identities": 15,
-      "existing_identities_enriched": 2,
-      "new_response_propositions": 15,
-      "existing_response_propositions_added": 2
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 13,
+      "source_bodies_inspected": 13,
+      "source_body_pages_opened": 13,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 12,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 13,
+      "answer_eligible_source_families_added": 12,
+      "independent_witnesses_added": 12,
+      "content_verified_unique_sources_added": 0,
+      "new_aids": [
+        528661,
+        528662,
+        528663,
+        528664,
+        528665,
+        528666,
+        528667,
+        528668,
+        528669,
+        528670,
+        528671,
+        528672
+      ],
+      "enriched_aids": [
+        5959845
+      ],
+      "blocked_candidate_count": 1,
+      "fallback_source_attempted": true,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "translations_counted_as_independent_witnesses": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1091,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3164
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1103,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3177
+      },
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 12,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 13
+      },
+      "language_distribution": {
+        "Hebrew": 9,
+        "Yiddish": 3
+      },
+      "source_type_distribution": {
+        "published_hebrew_hayom_yom_entry": 9,
+        "published_yiddish_hayom_yom_entry": 3
+      },
+      "deduplication_check": {
+        "new_aids_unique": true,
+        "new_source_urls_unique": true,
+        "new_evidence_families_unique": true,
+        "unique_new_aid_count": 12,
+        "unique_new_family_count": 12,
+        "same_family_duplicate_count": 0,
+        "translations_counted_as_independent_witnesses": 0,
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "all_target_identities_answer_eligible": null,
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "checked_against": "Exact repository AID searches for 528661–528672; current 1,022-record review queue; recent canonical batch files 106 and 111–113. Full canonical identity/Evidence Family scan remains pending reconciliation."
+      }
     }
-  }
+  },
+  "current_batch": "114"
 }
