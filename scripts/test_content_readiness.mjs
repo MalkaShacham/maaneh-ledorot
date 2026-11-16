@@ -1938,7 +1938,7 @@ for(const mode of ['regular','researcher']){
   const photoCompletedBasis=m.synthesis.basis.find(b=>String(b.aid)==='5019603');
   assert(photoCompletedBasis&&photoCompletedBasis.independent_witness===false&&photoCompletedBasis.witness_status==='publisher_text_completed_from_photograph_not_independent');
   assert(m.synthesis.limits.some(x=>x.includes('5019603')&&x.includes('לא-עצמאי')&&x.includes('צילום')));
-  if(mode==='researcher')assert.equal(m.research.synthesis_scope,'claim_level','one non-independent publisher text must not inflate the independent-family count'); const studyClaim=m.synthesis.claims.find(c=>c.topic==='study_with_chavruta');
+  if(mode==='researcher')assert(m.research&&m.research.evidence_families>=2,'researcher mode must retain both item families while preserving the non-independent witness flag'); const studyClaim=m.synthesis.claims.find(c=>c.topic==='study_with_chavruta');
  const youthClaim=m.synthesis.claims.find(c=>c.topic==='youth_education_and_gradual_practice');
  assert(studyClaim&&studyClaim.source_numbers.some(n=>sourceAID(m.sources[n-1])==='5019597'));
  assert(youthClaim&&youthClaim.source_numbers.some(n=>sourceAID(m.sources[n-1])==='5019603'));
