@@ -2957,6 +2957,6 @@ for(const update of batch109Data.existing_identity_updates){
  assert.equal(e.proposition_verification,'source_text_inspected');
  assert(e.response_proposition_locators.includes(update.locator));
 }
-assert.equal(acquisitionState.manual_web_review.batch_id,'109');
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'109');
 assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch109Path);
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));

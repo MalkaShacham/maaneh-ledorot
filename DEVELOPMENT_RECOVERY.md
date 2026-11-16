@@ -811,3 +811,6 @@ The hourly schedule, repository visibility, audience and permissions remain unch
 ### Historical review assertions — 2026-11-16
 
 - Updated historical readiness assertions that still treated batch 109 as the current review. The current review is batch 110; batch 109 is now the predecessor. Historical batch-077 checks no longer assert that batch 108 is the live predecessor, and batch-107/109 history checks now reference `previous_manual_web_review` rather than the current review object.
+
+
+- Final test scan found one additional batch-109 assertion still using the current-review object; it now checks the predecessor object. The only current-review pointer assertion is batch 110.
