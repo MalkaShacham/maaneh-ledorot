@@ -806,3 +806,8 @@ The hourly schedule, repository visibility, audience and permissions remain unch
 ### Current-review pointer correction — 2026-11-16
 
 - The historical batch-108 assertion in `test_content_readiness.mjs` was still checking batch 109 as the current manual review. Since batch 110 is now the current review and batch 109 is its predecessor, the assertion now checks `previous_manual_web_review.batch_id === '109'`. The final current-review assertion remains batch 110.
+
+
+### Historical review assertions — 2026-11-16
+
+- Updated historical readiness assertions that still treated batch 109 as the current review. The current review is batch 110; batch 109 is now the predecessor. Historical batch-077 checks no longer assert that batch 108 is the live predecessor, and batch-107/109 history checks now reference `previous_manual_web_review` rather than the current review object.
