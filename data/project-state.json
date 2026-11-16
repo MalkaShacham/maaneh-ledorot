@@ -98,7 +98,7 @@
       "expected_after": {
         "answer_eligible_unique_sources": 1067,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3131
+        "answer_eligible_propositions": 3133
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -178,11 +178,11 @@
       "batch_id": "111",
       "batch_file": "data/items/content-research-batch-111-2026-11-16.json",
       "title": "Batch 111 — Hebrew and Yiddish original-language Hayom Yom entries 12–19 Adar I 5703",
-      "source_bodies_inspected": 8,
+      "source_bodies_inspected": 9,
       "new_source_identities": 8,
-      "existing_identities_enriched": 0,
+      "existing_identities_enriched": 1,
       "new_response_propositions": 10,
-      "existing_response_propositions_added": 0,
+      "existing_response_propositions_added": 2,
       "answer_eligible_source_families_added": 8,
       "content_verified_unique_sources_added": 0,
       "metrics_before": {
@@ -193,7 +193,7 @@
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 1067,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3131
+        "answer_eligible_propositions": 3133
       },
       "metrics_after_actual": null,
       "blocked_candidate_count": 0,
@@ -201,9 +201,15 @@
         "Hebrew": 4,
         "Yiddish": 4
       },
-      "status": "pending_reconciliation"
+      "status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_body_pages_opened": 9,
+      "total_new_paraphrase_entries": 12,
+      "enriched_aids": [
+        2989153
+      ]
     },
-    "last_run_note": "ב־16.11.2026 נפתחו שמונה ערכי היום יום המקוריים לימים י״ב–י״ט אדר א׳ ה׳תש״ג (AIDs 6093–6100), ארבעה בעברית וארבעה ביידיש. נוספו עשר פרפרזות לא־מילוליות עם locators ברמת המקטע, provenance והיקף אימות חלקי. הייחוסים הפנימיים לא הומרו לייחוס לרבי מליובאוויטש. לא נתקלו בחסימות בגופי הערך; לא נעשה ניסיון crawler חוזר ולא בוצעה עקיפת גישה. כל שמונה הזהויות נשארו Parsed.",
+    "last_run_note": "ב־16.11.2026 נפתחו שמונה ערכי היום יום המקוריים לימים י״ב–י״ט אדר א׳ ה׳תש״ג (AIDs 6093–6100), ארבעה בעברית וארבעה ביידיש. נוספו עשר פרפרזות לא־מילוליות. בנוסף נפתח גוף השיחה העברי AID 2989153, סעיף ט׳, שורות 243–256, והועשרה אותה זהות בשתי פרפרזות נוספות. סך הכול נבדקו תשעה גופי מקור ונוספו 12 פרפרזות; הייחוסים הפנימיים והסתייגות המקור נשמרו. כל הזהויות נשארו Parsed.",
     "last_batch_blocked_count": 0,
     "last_batch_blocked_reason": "לא נמצאה חסימת גוף מקור באצווה 111; שמונת דפי הלימוד היומיים נפתחו עם גוף עברי/יידי קריא.",
     "next_work": "Reconcile contiguous pending batches 099–111; run commit-bound test_content_readiness.mjs and the answer-quality gate; verify Actions and the live Pages metrics.",
