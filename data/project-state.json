@@ -185,20 +185,22 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "The batch-129 readiness test initially failed on a missing closing parenthesis in a nested queue assertion. Fixed in d4474aabd77e1ecf9fdcc9542b66de1df0b81793; the doctor-topic disambiguation was expanded and regression-tested in 0ddd3579c65e26f7edbe1e53dd497c6a20f157f4. A full rerun is pending. Bulk run 476 computed 1,300/854/3,474 in its workspace but did not commit metrics because the readiness test stopped on syntax.",
+      "run_status": "Answer Quality Gate run 969 is in progress on commit c49df2b516c391c77235b48beb5d0e1108d441a0. Status normalization, exact-revision index generation, question-specific retrieval, answer synthesis, citation integrity, evidence-contract audit and workflow-write-safety checks have passed; test_content_readiness.mjs is still running.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "evaluated_commit": "02157e441c28ef0a74b2eccea58b941f2d3922c5",
-      "workflow_run_id": 43966967668,
+      "evaluated_commit": "c49df2b516c391c77235b48beb5d0e1108d441a0",
+      "workflow_run_id": 43967095201,
       "note": "AID 5019603 remains non-independent and its uninspected photograph is explicitly disclosed. The new validator requires two distinct Evidence Families, at least one independent family, two claim-level cited claims, and the exact publisher-text-not-independent witness status. No source is promoted to Verified.",
-      "bulk_reconcile_run_id": null,
-      "hourly_run_id": 43966967874
+      "bulk_reconcile_run_id": 43967095108,
+      "hourly_run_id": null
     },
     "publication": {
-      "status": "pending_reconciliation_and_quality_gate",
-      "url": "https://malkashacham.github.io/maaneh-ledorot"
+      "status": "Pages deployment run 1703 succeeded; direct site verification through the public reader returned Internal Error.",
+      "url": "https://malkashacham.github.io/maaneh-ledorot",
+      "last_deployment_run_id": 43967095817,
+      "last_deployed_commit": "c49df2b516c391c77235b48beb5d0e1108d441a0"
     },
     "last_reconciled_at": "2026-11-15"
   },
