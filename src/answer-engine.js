@@ -1258,6 +1258,15 @@ function supportsYouthEducationStudyProposition(p){
  const chavruta=t.includes('חברותא')&&t.includes('לימוד');
  return chavruta||supportsYouthAudienceProposition(p);
 }
+function youthEducationStudyRelevance(e){
+ const props=arr(e.response_propositions);
+ return Math.max(0,...props.map(p=>{
+  const t=norm(p);
+  return Number(t.includes('חברותא')&&t.includes('לימוד'))*100+
+   Number(supportsYouthAudienceProposition(p))*90+
+   Number(t.includes('מצוה גוררת מצוה'))*15;
+ }));
+}
 function buildYouthEducationStudySynthesis(selected){
  const basis=[];
  selected.forEach((e,index)=>{
@@ -1303,12 +1312,12 @@ function buildYouthEducationStudySynthesis(selected){
   label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',
   text:claims.map(c=>c.text).join(' ')+' אלה שני הקשרים שונים — התנהלות הלומד עצמו ושיח של מחנך עם בני נוער; אין להפוך אותם לכלל אחיד שנאמר באיגרת אחת.',
   source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,
-  method:'Claim-level comparison across two distinct correspondence Evidence Families. Each claim has its own source numbers and item-level body locator; a derived translation may describe its own letter identity but is never counted as an independent corroborating witness.',
+  method:'Claim-level comparison across two distinct correspondence Evidence Families. Each claim has its own source numbers and item-level body locator; a derived translation or publisher text completed from a photograph may describe its own letter identity but is never counted as an independent corroborating witness.',
   source_integrity:{distinct_evidence_families:evidenceFamilies.length,independent_evidence_families:independentFamilies.size,derived_presentations:usedBasis.filter(b=>!b.independent_witness).length},
   limits:[
    'הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.',
    'האיגרת על חברותא עוסקת בנמען ובנסיבות לימוד אישיות; האיגרת על בני הנוער עוסקת בהדרכה חינוכית. אלה אינם אותו מקרה ואינם מוכיחים מדיניות אחידה.',
-   'כל תרגום או עיבוד הוא מצגת נגזרת של אותה איגרת ואינו עד עצמאי; הוא נשמר ככזה גם במפת הראיות.',
+   'תרגום או טקסט מו״ל שהושלם על פי צילום הוא מצגת נגזרת של אותה איגרת ואינו עד עצמאי; הוא נשמר ככזה גם במפת הראיות.',
    'המכתבים הנכנסים וכתבי היד המקוריים לא נבדקו; אחד המקורות הוא פרסום שהושלם על פי צילום, והצילום עצמו לא נבדק.',
    'ההמלצות הן תיעוד היסטורי של מקרים מסוימים ואינן פסיקה או הוראה עדכנית לכל אדם.'
   ]
@@ -1669,6 +1678,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(niglehPnimiyusQuestion){const priority=usable.filter(e=>supportsNiglehPnimiyus(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(anniversaryBlessingQuestion){const priority=usable.filter(e=>supportsWeddingAnniversaryBlessing(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
  if(businessSynagogueQuestion){const priority=usable.filter(e=>supportsBusinessExpansion(e)||supportsSynagogueWellsprings(e));const rest=answerEvidence.filter(e=>!priority.includes(e));answerEvidence=[...priority,...rest];}
+ if(youthEducationStudyQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>youthEducationStudyRelevance(b)-youthEducationStudyRelevance(a)||propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score);}
  if(educationInfluenceActionQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsEducationalInfluenceActionSource(b))-Number(supportsEducationalInfluenceActionSource(a)));}
  if(fordLetterQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsFordLetterSource(b))-Number(supportsFordLetterSource(a)));}
  if(yiddishMelodyQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsYiddishMelodySource(b))-Number(supportsYiddishMelodySource(a)));}
@@ -1676,7 +1686,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  if(lodYeshivaStudyTravelQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsLodYeshivaStudyTravelSource(b))-Number(supportsLodYeshivaStudyTravelSource(a)));}
  if(shmittaFruitReferralQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsShmittaFruitReferralSource(b))-Number(supportsShmittaFruitReferralSource(a)));}
  if(dailyStudyPrayerQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a)||propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score);}
- const queryBudget=educationGovernanceQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:earlyChildhoodEducationQuestion?{...budget,sources:Math.max(budget.sources,12),claims:Math.max(budget.claims,12)}:teshuvahLevelsQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:educationYouthGuidanceQuestion?{...budget,sources:Math.max(budget.sources,3),claims:Math.max(budget.claims,3)}:jewishHomeSynthesisQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:educationInfluenceActionQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:fordLetterQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:yiddishMelodyQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:wellspringsDisseminationQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:studyFarmingComparisonQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:lodYeshivaStudyTravelQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:shmittaFruitReferralQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,20),claims:Math.max(budget.claims,20)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion||tzedakahSynthesisQuestion||educationInfluenceActionQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
+ const queryBudget=educationGovernanceQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:earlyChildhoodEducationQuestion?{...budget,sources:Math.max(budget.sources,12),claims:Math.max(budget.claims,12)}:teshuvahLevelsQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:educationYouthGuidanceQuestion?{...budget,sources:Math.max(budget.sources,3),claims:Math.max(budget.claims,3)}:youthEducationStudyQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:jewishHomeSynthesisQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:educationInfluenceActionQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:fordLetterQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:yiddishMelodyQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:wellspringsDisseminationQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:studyFarmingComparisonQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:lodYeshivaStudyTravelQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:shmittaFruitReferralQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,20),claims:Math.max(budget.claims,20)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion||tzedakahSynthesisQuestion||educationInfluenceActionQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
  const candidates=dailyStudyPrayerQuestion?prioritizeDailyRoutineCandidates(answerEvidence,queryBudget.sources):answerEvidence.slice(0,queryBudget.sources),synthesized=synthesizeClaims(candidates,understanding,queryBudget.claims),initialCoverage=coverageFor(candidates,understanding);
  if(!synthesized.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized);
