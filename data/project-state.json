@@ -67,12 +67,13 @@
     "AID 4666220 was rechecked through the public web reader on 2026-11-16 and returned Internal Error without a readable body; no bypass was attempted. Fourteen accessible original-language Hayom Yom bodies and one existing identity were inspected as same-run fallback.",
     "The first batch-123 reconciliation attempt stopped before commit because generic yeshiva aliases misclassified a separate educational-responsibility question. Phrase-level aliases and a negative regression assertion have been added; a new run is required.",
     "Batch 123's first narrowed-alias readiness run reached the current-batch pointer checks and found manual_web_review.batch_file missing; the batch and acquisition history pointers now include it. Reconciliation did not commit metrics in that failed run.",
-    "Batch 124 access blockers: AID 528803 Internal Error; AIDs 5413024 and 4754490 summary shells; no bypass. AID 528800 excluded as navigation page."
+    "Batch 124 access blockers: AID 528803 Internal Error; AIDs 5413024 and 4754490 summary shells; no bypass. AID 528800 excluded as navigation page.",
+    "Readiness retest required: broad yeshiva expansion wording must not enter narrow student-enrollment answers; gate now distinguishes narrow recruitment from multi-aspect expansion/dissemination/public-support synthesis."
   ],
-  "next_work": "Reconcile pending manual batches 099–124, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
+  "next_work": "Re-run pending reconciliation 099–124 after the yeshiva-gate precision correction; require test_content_readiness.mjs and answer-quality gate to pass, then verify committed public metrics and Pages.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
-    "status": "pending_reconciliation",
+    "status": "pending_reconciliation_and_readiness_retest",
     "source": "data/public-metrics.json",
     "generated": "2026-11-16",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
@@ -241,10 +242,10 @@
       "crawler_retry": false,
       "access_control_bypassed": false
     },
-    "last_run_note": "Batch 124: 12 new original-language Hebrew/Yiddish Hayom Yom identities (21 Tammuz–4 Menachem Av 5703), 20 non-verbatim propositions, and one in-place enrichment of AID 5959845 via footnote 21 (lines 434–435). AID 528803 returned Internal Error; AIDs 5413024 and 4754490 redirected to summary shells without original bodies; AID 528800 was a navigation page and excluded. Twelve accessible item bodies plus one existing-identity footnote were inspected in the same run. All new identities remain Parsed/partial; no Verified promotion. Yeshiva-expansion answer gate now recognizes the exact inspected phrases in AIDs 5413024 and 4754490 rather than requiring only a narrow set of generic recruitment phrases. Reconcile pending batches 099–124 and run readiness tests.",
+    "last_run_note": "Batch 124 content was indexed in the failed reconciliation workspace, which calculated a diagnostic snapshot of 1,229 / 854 / 3,362. That run did not commit public metrics because test_content_readiness.mjs failed at line 322: the broad 'הרחבת החינוך הישיבתי' phrase was mistakenly accepted as explicit recruitment in a narrow student-enrollment query. The gate is now split: narrow queries require an explicit recruitment action/target; the broad multi-aspect query may include AID 5413024 only when it also asks about Torah dissemination and public support. Re-run reconciliation and all readiness tests; do not treat the diagnostic snapshot as published.",
     "last_batch_blocked_count": 3,
     "last_batch_blocked_reason": "AID 528803 returned Internal Error; AIDs 5413024 and 4754490 redirected to rewritten summary shells without readable original text. No bypass; 12 alternative public item bodies and one existing identity footnote were inspected in the same run.",
-    "next_work": "Reconcile pending manual batches 099–124, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
+    "next_work": "Re-run pending reconciliation 099–124 after the yeshiva-gate precision correction; require test_content_readiness.mjs and answer-quality gate to pass, then verify committed public metrics and Pages.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",

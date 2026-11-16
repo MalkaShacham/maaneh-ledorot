@@ -1748,5 +1748,26 @@
       }
     }
   ],
-  "batch_file": "data/items/content-research-batch-124-2026-11-16.json"
+  "batch_file": "data/items/content-research-batch-124-2026-11-16.json",
+  "quality_gate_followup": {
+    "observed_run_id": 43931998981,
+    "failed_assertion": "scripts/test_content_readiness.mjs:322 — narrow enrollment answer admitted a general yeshiva-education expansion source",
+    "diagnosis": "The gate treated the phrase 'הרחבת החינוך הישיבתי' as explicit recruitment, so AID 5413024 could enter a narrow question asking only how to increase student enrollment.",
+    "correction": "Narrow enrollment now requires an explicit recruitment action/target. AID 5413024 is admitted only when the query also explicitly requests the multi-aspect combination of yeshiva-education expansion, Torah dissemination and public support; this preserves the separate broad synthesis regression.",
+    "status": "correction_committed_pending_retest"
+  },
+  "reconciliation_attempt_note": {
+    "run_id": 43931999045,
+    "observed_snapshot": {
+      "answer_eligible_unique_sources": 1229,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3362
+    },
+    "expected_chain_boundary": {
+      "answer_eligible_unique_sources": 1231,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3358
+    },
+    "note": "The reconciliation script generated this workspace snapshot, but the workflow stopped at the readiness assertion and did not commit public metrics. Treat the snapshot as diagnostic only until a successful reconciliation run persists metrics_actual_before/after and variance."
+  }
 }
