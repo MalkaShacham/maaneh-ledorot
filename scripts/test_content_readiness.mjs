@@ -3481,6 +3481,16 @@ assert(!projectState.development_recovery.pending_reconciliation_batches.include
 assert.equal(projectState.development_recovery.last_batch_summary.batch_id,'120');assert.deepEqual(readinessMetrics(projectState.development_recovery.last_batch_summary.metrics_after_actual),readinessMetrics(metrics));
 assert.equal(acquisitionState.manual_web_review.batch_id,'120');assert.equal(acquisitionState.previous_manual_web_review.batch_id,'119');assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
 assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='120'));assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='119'));assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='118'));
+const girlsSchoolAccessQuestion='מה מתועד על הקמת בתי ספר לבנות על יסודות של קדושה וטהרה ועל מסיבות שבת כשלב ביניים?';
+const girlsSchoolAccessModel=buildAnswerModel(idx.entries,girlsSchoolAccessQuestion,{mode:'researcher'});
+assert(girlsSchoolAccessModel.answerable);assert(girlsSchoolAccessModel.sources.some(e=>sourceAID(e)==='5920863'));
+assert(girlsSchoolAccessModel.research.depth==='deep');assert(girlsSchoolAccessModel.research.claim_source_map.some(c=>c.source_locators.some(l=>String(l).includes('272–288'))));
+assert(girlsSchoolAccessModel.research.evidence_witnesses.some(w=>String(w.aid)==='5920863'&&w.independent_witness===false));
+const summerTorahContinuityQuestion='מה מתועד על רציפות לימוד תורה בחופשת הקיץ ועל אחריות ההורים לחינוך הילדים?';
+const summerTorahContinuityModel=buildAnswerModel(idx.entries,summerTorahContinuityQuestion,{mode:'researcher'});
+assert(summerTorahContinuityModel.answerable);assert(summerTorahContinuityModel.sources.some(e=>sourceAID(e)==='3906812'));
+assert(summerTorahContinuityModel.research.depth==='deep');assert(summerTorahContinuityModel.research.claim_source_map.some(c=>c.source_locators.some(l=>String(l).includes('272–287'))));
+assert(summerTorahContinuityModel.research.evidence_witnesses.some(w=>String(w.aid)==='3906812'&&w.independent_witness===false));
 const educationResponsibilityQuestion='מה המכתבים מתעדים על אחריות ההורים והקהילה לחינוך ילדים, ובפרט לימוד בקיץ והקמת בתי ספר לבנות?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,educationResponsibilityQuestion,{mode});assert(m.answerable,mode+': multi-source education responsibility synthesis must be answerable');assert(m.sources.some(e=>sourceAID(e)==='3906812'));assert(m.sources.some(e=>sourceAID(e)==='5920863'));assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length));if(mode==='researcher'){assert(m.research&&m.research.depth==='deep'&&m.research.claim_source_map.some(c=>c.source_locators.some(l=>String(l).includes('272–287')))&&m.research.claim_source_map.some(c=>c.source_locators.some(l=>String(l).includes('272–288'))),'researcher mode must expose both translated-letter locators in the claim-source map');assert(m.research.synthesis_constraints.non_independent_sources>=2,'deep researcher must mark both English translations as non-independent presentations');assert(m.research.evidence_witnesses.filter(w=>['3906812','5920863'].includes(String(w.aid))).every(w=>w.independent_witness===false),'deep researcher must preserve translation non-independence');}}
 
