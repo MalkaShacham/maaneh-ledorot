@@ -63,9 +63,10 @@
     "Full-index reconciliation found two metadata-only canonical presentations of AID 553673 (bulk-indexed 2026-09-24 and batch 069). Both are now linked to the same Evidence Family; the duplicate is not an independent witness and carries no answer proposition.",
     "Batch 107: 10 new source identities, one in-place Hebrew enrichment, 21 non-verbatim source-grounded propositions; public metrics await full reconciliation.",
     "Full-index reconciliation and content-readiness verification pending through batch 109; no status promotions were made.",
-    "AID 528698: public reader returned Internal Error on 2026-11-16; no body inspected and no bypass attempted."
+    "AID 528698: public reader returned Internal Error on 2026-11-16; no body inspected and no bypass attempted.",
+    "AID 4666220 was rechecked through the public web reader on 2026-11-16 and returned Internal Error without a readable body; no bypass was attempted. Fourteen accessible original-language Hayom Yom bodies and one existing identity were inspected as same-run fallback."
   ],
-  "next_work": "Reconcile pending manual batches 099–122, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
+  "next_work": "Reconcile pending manual batches 099–123, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation",
@@ -97,9 +98,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1205,
+        "answer_eligible_unique_sources": 1219,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3313
+        "answer_eligible_propositions": 3337
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -127,43 +128,44 @@
         "119",
         "120",
         "121",
-        "122"
+        "122",
+        "123"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "122",
+        "batch_id": "123",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1191,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3293
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1205,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3313
+        },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1219,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3337
         },
         "metrics_after_actual": null,
         "new_source_identities": 14,
         "existing_identities_enriched": 1,
         "source_bodies_inspected": 15,
-        "new_response_propositions": 19,
+        "new_response_propositions": 23,
         "existing_response_propositions_added": 1,
-        "total_new_paraphrase_entries": 20
+        "total_new_paraphrase_entries": 24
       },
       "status": "pending_reconciliation"
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "failed_on_stale_AID_2989585_final_index_count_assertion; corrected in batch 122 readiness patch",
+      "run_status": "failed_on_yishiva_expansion_retrieval_assertion; repaired by expanding the existing yeshiva-enrollment topic aliases",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "evaluated_commit": "0583e70fc9eb9d98f3de6cad017b1cc02c9cc1e3",
-      "workflow_run_id": 43907718460,
-      "note": "Batch 121 adds 16 inspected Hebrew/Yiddish Hayom Yom identities and 20 non-verbatim propositions, plus three in-place propositions in AID 2989585. The first commit-bound test run exposed a duplicate const declaration in test_content_readiness.mjs; the duplicate was renamed and latest-batch assertions now bind to batch 121. Reconcile batches 099–121 and rerun the complete readiness gate before publication."
+      "evaluated_commit": "b9933af47a02b7f27fe1e571b7ee602cffc76a2c",
+      "workflow_run_id": 43913257630,
+      "note": "The latest gate failed at scripts/test_content_readiness.mjs:1821 because the query phrase 'הרחבת החינוך הישיבתי, קליטת תלמידים' did not trigger the existing 'הרחבת ישיבה' topic strongly enough to retain AID 4754490 alongside AID 5413024. The source itself remains an inspected Yiddish letter; retrieval aliases now include the source's documented room expansion and student-admission vocabulary. The next commit-bound run must verify regular and researcher modes."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
@@ -205,39 +207,40 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "122",
+    "current_batch": "123",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "122",
-      "batch_file": "data/items/content-research-batch-122-2026-11-16.json",
+      "batch_id": "123",
+      "batch_file": "data/items/content-research-batch-123-2026-11-16.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1191,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3293
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1205,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3313
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1219,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3337
+      },
+      "metrics_actual_before": null,
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
       "new_source_identities": 14,
       "existing_identities_enriched": 1,
       "source_bodies_inspected": 15,
-      "new_response_propositions": 19,
+      "new_response_propositions": 23,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 20,
-      "blocked_candidate_count": 2,
+      "total_new_paraphrase_entries": 24,
+      "blocked_candidate_count": 1,
       "crawler_retry": false,
       "access_control_bypassed": false
     },
-    "last_run_note": "Batch 122: 14 new source identities and one existing identity enriched. Fifteen original-language bodies inspected (12 Hebrew/Yiddish Hayom Yom entries, two unedited Hebrew Sicha transcripts, and existing AID 528717). Added 19 new-source propositions plus one in-place proposition. Existing Sicha AID 2989585 remained inaccessible through two public URL variants; AID 4783983 exposed only a summary shell. No Verified promotion; reconciliation pending.",
-    "last_batch_blocked_count": 2,
-    "last_batch_blocked_reason": "AID 2989585 returned Internal Error on two public URL variants; AID 4783983 redirected to a summary shell without readable source body. No access bypass or crawler retry.",
-    "next_work": "Reconcile pending manual batches 099–122, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
+    "last_run_note": "Batch 123: 14 new original-language Hebrew/Yiddish Hayom Yom identities (7–20 Tammuz 5703), 23 non-verbatim propositions, and one in-place enrichment of AID 528765 by splitting a broad proposition into two line-located claims. AID 4666220 returned Internal Error; 14 accessible daily-entry bodies and the existing AID 528765 body were inspected in the same run. All new identities remain Parsed/partial; no Verified promotion.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 4666220 returned Internal Error with no readable item body; no bypass. Fourteen accessible publisher bodies were inspected as same-run fallback.",
+    "next_work": "Reconcile pending manual batches 099–123, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -794,189 +797,46 @@
       "119",
       "120",
       "121",
-      "122"
+      "122",
+      "123"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
-      "batch_id": "122",
-      "batch_file": "data/items/content-research-batch-122-2026-11-16.json",
-      "title": "Batch 122 — 12 inspected Hebrew/Yiddish Hayom Yom entries (25 Sivan–6 Tammuz 5703) plus two Hebrew unedited Sicha transcripts from 19 Kislev 5721; existing-source access blockers recorded",
-      "reviewed_at": "2026-11-16T18:34:40+02:00",
+      "batch_id": "123",
+      "batch_file": "data/items/content-research-batch-123-2026-11-16.json",
+      "title": "Batch 123 — 14 inspected Hebrew/Yiddish Hayom Yom entries (7–20 Tammuz 5703), in-place enrichment of AID 528765, and AID 4666220 access failure",
+      "reviewed_at": "2026-11-16T20:03:01+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 18,
+      "reviewed_item_count": 16,
       "source_bodies_inspected": 15,
-      "source_body_pages_opened": 19,
-      "metadata_only_items_rechecked": 2,
-      "search_extracts_used_as_content": 0,
       "new_source_identities": 14,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 19,
+      "new_response_propositions": 23,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 20,
+      "total_new_paraphrase_entries": 24,
       "answer_eligible_source_families_added": 14,
-      "independent_witnesses_added": 14,
-      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "new_aids": [
-        528764,
-        528765,
-        528766,
-        528767,
-        528768,
-        528769,
-        528771,
-        528772,
-        528773,
-        528774,
-        528775,
-        528776,
-        4280364,
-        4280365
+        528777,
+        528778,
+        528779,
+        528780,
+        528781,
+        528782,
+        528783,
+        528784,
+        528785,
+        528786,
+        528787,
+        528788,
+        528789,
+        528790
       ],
       "enriched_aids": [
-        528717
+        528765
       ],
-      "rechecked_aids": [],
-      "blocked_candidate_count": 2,
-      "blocked_candidates": [
-        {
-          "aid": 2989585,
-          "urls": [
-            "https://he.chabad.org/therebbe/article_cdo/aid/2989585",
-            "https://www.chabad.org/therebbe/article_cdo/aid/2989585/jewish/page.htm"
-          ],
-          "reason": "שתי וריאציות של פתיחה ישירה החזירו Internal Error; גוף השיחה לא היה נגיש בהפעלה זו."
-        },
-        {
-          "aid": 4783983,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/4783983/jewish/page.htm",
-          "reason": "העמוד הפנה ל-Torah Texts summary shell ולא הציג גוף מכתב קריא; לא נעשה שימוש בתקציר כתוכן."
-        }
-      ],
-      "excluded_candidate_count": 1,
-      "excluded_candidates": [
-        {
-          "aid": 528770,
-          "url": "https://he.chabad.org/library/article_cdo/aid/528770",
-          "reason": "עמוד ניווט של חודש תמוז ולא ערך יומי עצמאי."
-        }
-      ],
-      "fallback_source_attempted": true,
-      "fallback_source_results": {
-        "publisher": "Kehot / BeitChabad.com, he.chabad.org; Chabad.org, www.chabad.org",
-        "accessible_item_level_bodies": 14,
-        "existing_identity_bodies": 1,
-        "body_text_inspected": true,
-        "inspected_aids": [
-          528764,
-          528765,
-          528766,
-          528767,
-          528768,
-          528769,
-          528771,
-          528772,
-          528773,
-          528774,
-          528775,
-          528776,
-          4280364,
-          4280365,
-          528717
-        ],
-        "existing_identity_aids": [
-          528717
-        ],
-        "metadata_only_pages_opened": 2,
-        "notes": "AID 2989585 החזיר Internal Error בשתי וריאציות; AID 4783983 הפנה לעמוד תקציר ללא גוף מכתב; AID 528770 זוהה כעמוד ניווט. במקום זאת נפתחו ונבדקו 12 גופי ערכי היום יום ושני תמלילי שיחות בעברית. לא נעשה שימוש בתוצאות חיפוש או בתקצירים כתחליף לגוף, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
-      },
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "scan_only_verification_used": false,
-      "translations_counted_as_independent_witnesses": 0,
-      "metrics_before": {
-        "answer_eligible_unique_sources": 1191,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3293
-      },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1205,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3313
-      },
-      "metrics_actual_after": null,
-      "reconciliation_variance": null,
-      "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 14,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 20
-      },
-      "language_distribution": {
-        "Hebrew": 10,
-        "Yiddish": 2,
-        "Hebrew/Yiddish": 2
-      },
-      "original_language_distribution": {
-        "Hebrew": 10,
-        "Yiddish": 2,
-        "Hebrew/Yiddish": 2
-      },
-      "source_type_distribution": {
-        "published_hebrew_hayom_yom_entry": 8,
-        "published_yiddish_hayom_yom_entry": 2,
-        "published_mixed_hebrew_yiddish_hayom_yom_entry": 2,
-        "published_unedited_hebrew_sicha_transcript": 2
-      },
-      "evidence_family_ids": [
-        "hayom-yom-528764-5703",
-        "hayom-yom-528765-5703",
-        "hayom-yom-528766-5703",
-        "hayom-yom-528767-5703",
-        "hayom-yom-528768-5703",
-        "hayom-yom-528769-5703",
-        "hayom-yom-528771-5703",
-        "hayom-yom-528772-5703",
-        "hayom-yom-528773-5703",
-        "hayom-yom-528774-5703",
-        "hayom-yom-528775-5703",
-        "hayom-yom-528776-5703",
-        "sicha-5721-19-kislev-aid4280364",
-        "sicha-5721-19-kislev-aid4280365"
-      ],
-      "same_family_items": [],
-      "existing_identity_updates": [
-        {
-          "action": "enriched_existing_identity_in_place",
-          "aid": 528717,
-          "id": "hayom-yom-528717-5703",
-          "canonical_file": "data/items/content-research-batch-118-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-528717-5703",
-          "existing_propositions_before": 1,
-          "propositions_added": 1,
-          "total_propositions_after": 2,
-          "locator": "he.chabad.org AID 528717, גוף הערך ביידיש, שורות 172–173.",
-          "note": "נוסף ביאור נפרד על משל המלאך כשליח ועל מעלת הקשר של נשמות, מתוך אותו גוף מקור."
-        }
-      ],
-      "deduplication_check": {
-        "new_aids_unique": true,
-        "new_source_urls_unique": true,
-        "new_evidence_families_unique": true,
-        "unique_new_aid_count": 14,
-        "unique_new_family_count": 14,
-        "same_family_duplicate_count": 0,
-        "duplicate_alias_identities": 0,
-        "translations_counted_as_independent_witnesses": 0,
-        "canonical_identity_collisions": [],
-        "missing_canonical_identities": [],
-        "all_target_identities_answer_eligible": null,
-        "full_index_scan_available": false,
-        "full_index_scan_pending_reconciliation": true
-      },
-      "note": "14 item bodies inspected in original languages; 12 dated anthology entries and two distinct unedited Sicha transcripts. All remain Parsed and partial. No existing identity enriched because accessible existing-source bodies were unavailable. Expected metrics are chained estimates, not actual public counts."
+      "blocked_candidate_count": 1
     }
   },
   "current_batch": "122"

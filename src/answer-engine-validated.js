@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261116-batch114-rabbinic-responsibility-v2';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261116-batch123-yeshiva-expansion-v1';
 
 const TOPIC_ALIASES={
   'מעכה לפי רש״י והמדרש':['רש״י והמדרש','פירוש רש״י והמדרש','מעכה היה בן נחור','rashi and midrash maacah'],
@@ -254,7 +254,7 @@ const TOPIC_ALIASES={
   'שיעורי חומש תהילים ותניא':['שיעורי חומש תהילים ותניא','שלשת השיעורים','שלושת השיעורים','חומש','תהלים','תהילים','תניא','daily Chumash Tehillim Tanya'],
   'שורש הנשמה ותפקיד בעולם':['שורש הנשמה','שרש הנשמה','שרש נפשו למעלה','מילוי תפקידו בעולם','תפקידו בעולם','soul root and purpose'],
   'לימוד הלכה למעשה והשפעה על הזולת':['לימוד הלכה למעשה והשפעה על הסביבה','הלכות הצריכות','ספרי הלכה','השפעה על חבריו','השפעה על כל אחד בסביבתו','השפעה על הסביבה','practical halacha and influence']
-  , 'הרחבת ישיבה':['מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','להגדיל','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים','להקל במידת ההתאמה','yeshiva enrollment','increase yeshiva enrollment']
+  , 'הרחבת ישיבה':['הרחבת החינוך הישיבתי','קליטת תלמידים נוספים','קליטת תלמידים','לקלוט תלמידים','תלמידים המבקשים להיכנס לישיבה','הרחבת חדרי הישיבה','הרחבת מבנה הישיבה','מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','להרחיב','להגדיל','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים','להקל במידת ההתאמה','ישיבות','ישיבה','תלמיד','חדרים','admission of additional students','admit students to yeshiva','yeshiva building expansion','yeshiva enrollment','increase yeshiva enrollment']
 ,
  'בריאות בחופשה וחיזוק הנשמה':['נאות דשא','הבראת הגוף','חיזוק הנשמה','ימי החופש','שיעור לימוד מיוחד','vacation health recovery and soul'],
  'מניעת הריון בסיכון רפואי':['מניעת הריון','סכנה בהריון','סכנה שתתעבר','רופאים קובעים סכנה','אישה שהיריון מסוכן לה','contraception medical risk pregnancy'],
