@@ -6,20 +6,20 @@
   "title": "Batch 120 — 17 inspected Hebrew/Yiddish Hayom Yom entries (21 Iyar–8 Sivan 5703), two English letter translations, and three in-place propositions in existing Sicha AID 2989585",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
-  "reviewed_item_count": 19,
-  "source_bodies_inspected": 19,
-  "source_body_pages_opened": 19,
+  "reviewed_item_count": 18,
+  "source_bodies_inspected": 18,
+  "source_body_pages_opened": 18,
   "metadata_only_items_rechecked": 1,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 19,
-  "existing_identities_enriched": 1,
+  "new_source_identities": 18,
+  "existing_identities_enriched": 2,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 25,
+  "new_response_propositions": 23,
   "existing_response_propositions_added": 3,
-  "total_new_paraphrase_entries": 28,
-  "answer_eligible_source_families_added": 19,
+  "total_new_paraphrase_entries": 26,
+  "answer_eligible_source_families_added": 18,
   "independent_witnesses_added": 17,
-  "non_independent_presentations_added": 2,
+  "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "new_aids": [
     528730,
@@ -39,11 +39,11 @@
     528745,
     528746,
     528747,
-    3906812,
     5920863
   ],
   "enriched_aids": [
-    2989585
+    2989585,
+    3906812
   ],
   "rechecked_aids": [
     528739
@@ -69,8 +69,8 @@
   "fallback_source_attempted": true,
   "fallback_source_results": {
     "publisher": "BeitChabad.com / he.chabad.org; Chabad.org / Sichos in English Collection",
-    "accessible_item_level_bodies": 19,
-    "existing_identity_bodies": 1,
+    "accessible_item_level_bodies": 18,
+    "existing_identity_bodies": 2,
     "body_text_inspected": true,
     "inspected_aids": [
       528730,
@@ -90,14 +90,14 @@
       528745,
       528746,
       528747,
-      3906812,
       5920863
     ],
     "existing_identity_aids": [
-      2989585
+      2989585,
+      3906812
     ],
     "metadata_only_pages_opened": 1,
-    "notes": "AID 528725 החזיר Internal Error. באותה הפעלה נפתחו ונבדקו 17 גופי ערכי היום יום AID 528730–528738 ו-528740–528747, שני גופי תרגום מכתבים באנגלית AID 3906812 ו-5920863, וכן סעיפים כ״ט–ל״ג בשיחה קיימת AID 2989585. AID 528739 זוהה כעמוד ניווט והוחרג. לא נעשה שימוש בתוצאת חיפוש כתוכן, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
+    "notes": "AID 528725 returned Internal Error. No bypass was attempted. In the same run, 17 other dated Hayom Yom bodies and one new English translated letter (AID 5920863) were inspected; existing identities AID 2989585 and AID 3906812 were re-opened and enriched in place. AID 3906812 was already canonical and was not duplicated. AID 528739 was a month-navigation page and was excluded. No crawler was used."
   },
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -111,32 +111,32 @@
   },
   "metrics_before_source": "Expected boundary after batch 119; this is a chained expected boundary, not a measured public metric. Full reconciliation will compute actual snapshots.",
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1175,
+    "answer_eligible_unique_sources": 1174,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3270
+    "answer_eligible_propositions": 3268
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 19,
+    "answer_eligible_unique_sources": 18,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 28
+    "answer_eligible_propositions": 26
   },
-  "metrics_attribution_note": "Expected delta is 19 new Evidence Families (17 original-language dated entries and two distinct translated letter presentations, each explicitly non-independent relative to any original-language witness) and 28 non-verbatim propositions (25 in new records plus 3 in-place additions to AID 2989585). No content-verified/Verified promotion. Actual unique-family and proposition counts may differ after full canonical reconciliation.",
+  "metrics_attribution_note": "Expected delta is 18 new Evidence Families (17 original-language dated daily entries and one English translation presentation of a distinct dated letter, explicitly non-independent relative to any source-language witness) and 26 new paraphrase entries (23 in new records plus 3 in-place additions to AID 2989585). AID 3906812 already existed in the canonical corpus and was enriched in place with exact proposition locators and translation non-independence metadata; its three existing propositions are not counted again. No Verified promotion. Actual counts may differ after full reconciliation.",
   "language_distribution": {
     "Hebrew": 14,
     "Yiddish": 3,
-    "English": 2
+    "English": 1
   },
   "original_language_distribution": {
     "Hebrew": 14,
     "Yiddish": 3,
-    "unknown": 2
+    "unknown": 1
   },
   "source_type_distribution": {
     "published_hebrew_hayom_yom_entry": 14,
     "published_yiddish_hayom_yom_entry": 3,
-    "published_english_letter_translation": 2
+    "published_english_letter_translation": 1
   },
   "evidence_family_ids": [
     "hayom-yom-528730-5703",
@@ -156,7 +156,6 @@
     "hayom-yom-528745-5703",
     "hayom-yom-528746-5703",
     "hayom-yom-528747-5703",
-    "igrot-letter-5711-15-sivan-1051",
     "igrot-letter-5703-13-nissan-71"
   ],
   "same_family_items": [],
@@ -177,6 +176,25 @@
       ],
       "locator": "he.chabad.org AID 2989585, גוף השיחה סעיפים כ״ט–ל״ג, שורות 434–477.",
       "note": "נפתחו ונבדקו סעיפים כ״ט–ל״ג. נוספו שלוש פרפרזות על צימאון בעלי תשובה, זהירות מפני ייחוס הצלחה לכוח עצמי, ואחריות רבנים ומורי הוראה. הזהות, Evidence Family והסטטוס Parsed נשמרו; השיחה מסומנת בלתי מוגה."
+    },
+    {
+      "action": "enriched_existing_identity_metadata_and_proposition_locators",
+      "aid": 3906812,
+      "id": "sie-letter-1051-aid-3906812",
+      "canonical_file": "data/items/mixed-authorized-content-2026-11-12-039.json",
+      "evidence_family_id": "letter-no-1051-summer-education",
+      "existing_propositions_before": 3,
+      "propositions_added": 0,
+      "total_propositions_after": 3,
+      "locators_added": 3,
+      "locators": [
+        "Chabad.org AID 3906812, body lines 281–282.",
+        "Chabad.org AID 3906812, body lines 283–284.",
+        "Chabad.org AID 3906812, body line 286."
+      ],
+      "independent_witness": false,
+      "translation_of_evidence_family_id": "letter-no-1051-summer-education",
+      "note": "AID 3906812 already existed in the canonical corpus. The existing three propositions were retained and given exact paragraph-level locators; the published English translation was explicitly marked as non-independent. No new source identity, Evidence Family or proposition was created."
     }
   ],
   "source_body_review": [
@@ -453,22 +471,6 @@
       "handling": "גוף הערך בשפת המקור נפתח ונבדק; נוספו פרפרזות מחקריות לא־מילוליות."
     },
     {
-      "aid": 3906812,
-      "id": "igrot-letter-5711-15-sivan-1051-aid3906812",
-      "title": "Using the summer vacation to upgrade Torah study",
-      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3906812/jewish/Using-the-summer-vacation-to-upgrade-Torah-study.htm",
-      "body_text_inspected": true,
-      "inspected_original_language_body": false,
-      "language": "English",
-      "original_language": "unknown",
-      "body_locator": "Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.",
-      "evidence_family_id": "igrot-letter-5711-15-sivan-1051",
-      "canonical_file": "data/items/content-research-batch-120-2026-11-16.json",
-      "existing_identity": false,
-      "verification_scope": "נפתח ונבדק גוף התרגום האנגלי הציבורי ב-Chabad.org AID 3906812 ביום 16.11.2026. נבדקו רק שורות התרגום המצוינות ב-locator: Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.. העמוד מציין שהטקסט תורגם בידי Eli Touger; המקור בשפתו המקורית, כתב־היד והחתימה המקורית לא נבדקו. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של התרגום כפי שפורסם. התרגום אינו עד עצמאי נוסף מול המקור אם יאותר. לא הועתק טקסט מוגן במלואו. ההקשר נשאר חלקי.",
-      "handling": "גוף התרגום האנגלי נפתח ונבדק; המקור בשפתו המקורית לא נבדק והתרגום אינו עד עצמאי."
-    },
-    {
       "aid": 5920863,
       "id": "igrot-letter-5703-13-nissan-71-aid5920863",
       "title": "The importance of establishing Torah schools for girls",
@@ -489,8 +491,8 @@
     "new_aids_unique": true,
     "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
-    "unique_new_aid_count": 19,
-    "unique_new_family_count": 19,
+    "unique_new_aid_count": 18,
+    "unique_new_family_count": 18,
     "same_family_duplicate_count": 0,
     "duplicate_alias_identities": 0,
     "translations_counted_as_independent_witnesses": 0,
@@ -499,7 +501,7 @@
     "all_target_identities_answer_eligible": null,
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
-    "checked_against": "AIDs 528730–528738 and 528740–528747 were absent from the current review queue and prior batches 116–119; English translation AIDs 3906812 and 5920863 were absent from repository search by AID. Translation family IDs are stable at the underlying dated-letter level and the presentations are marked non-independent. Full canonical-index and Evidence Family scan remains pending reconciliation."
+    "checked_against": "AIDs 528730–528738 and 528740–528747 were absent from the current review queue and prior batches 116–119; AID 5920863 was not previously canonical. AID 3906812 was found in data/items/mixed-authorized-content-2026-11-12-039.json and is enriched in place, not added as a new identity. AID 2989585 is enriched in its existing canonical file. Full canonical-index and Evidence Family scan remains pending reconciliation."
   },
   "records": [
     {
@@ -2215,110 +2217,6 @@
       "accessed": "2026-11-16T10:41:57+02:00"
     },
     {
-      "id": "igrot-letter-5711-15-sivan-1051-aid3906812",
-      "canonical_key": "aid:3906812",
-      "aid": 3906812,
-      "type": "letter_translation",
-      "collection": "I Will Write It In Their Hearts — Volume 8",
-      "source_class": "Igrot Kodesh — published English translation",
-      "source_class_detail": "פרסום דיגיטלי של תרגום אנגלי של מכתב מתוארך; המו״ל מציין תרגום של Eli Touger. גוף התרגום נפתח ונבדק, אך המקור בשפתו המקורית לא נבדק; התרגום אינו עד עצמאי נוסף.",
-      "title": "Using the summer vacation to upgrade Torah study",
-      "date_original": "15 Sivan, 5711, Brooklyn, N.Y.",
-      "date": "ט״ו סיוון תשי״א",
-      "date_precision": "exact_as_publisher",
-      "language": "English",
-      "original_language": "unknown",
-      "translation_status": "Published English translation by Eli Touger; original-language text not inspected. This is a derived presentation, not an independent witness.",
-      "summary_researcher": "המכתב קובע שחופשת הקיץ אינה הפסקה בלימוד ובחינוך יהודי; התלמידים מתבקשים לנצל את הזמן הפנוי לחזרה מסודרת על החומר שנלמד ולהכנה להמשך לימוד התורה והמצוות. המכתב מטיל על ההורים אחריות מרכזית לחינוך הילדים, ובמיוחד בתקופת הקיץ, ומקשר בין כוחות גופניים מחודשים לבין התחדשות כוחות רוחניים. הדברים נכתבו לתלמידי כיתה מסיימת ולהוריהם, ולא כהנחיה כללית לכל מערכת חינוך.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed; translated_source_text_inspected; partial context.",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "response_propositions": [
-        "המכתב קובע שחופשת הקיץ אינה הפסקה בלימוד ובחינוך יהודי; התלמידים מתבקשים לנצל את הזמן הפנוי לחזרה מסודרת על החומר שנלמד ולהכנה להמשך לימוד התורה והמצוות.",
-        "המכתב מטיל על ההורים אחריות מרכזית לחינוך הילדים, ובמיוחד בתקופת הקיץ, ומקשר בין כוחות גופניים מחודשים לבין התחדשות כוחות רוחניים. הדברים נכתבו לתלמידי כיתה מסיימת ולהוריהם, ולא כהנחיה כללית לכל מערכת חינוך."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.",
-        "Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.",
-      "evidence_family_id": "igrot-letter-5711-15-sivan-1051",
-      "parent_evidence_family_id": null,
-      "independent_witness": false,
-      "translation_of_evidence_family_id": "igrot-letter-5711-15-sivan-1051",
-      "documented_circumstances": "מכתב מתוארך 15 Sivan, 5711, Brooklyn, N.Y.; פרטי הנמען וההקשר נמסרים כפי שפורסמו בעמוד התרגום.",
-      "question_or_problem": "מה מכתב 1051 אומר על חופשת הקיץ, רציפות לימוד התורה ואחריות ההורים?",
-      "conditions_or_qualifications": [
-        "העמוד מציין במפורש שהטקסט הוא תרגום של Eli Touger; נוסח המקור בשפתו המקורית לא נבדק.",
-        "הפרפרזה מתארת את התרגום שפורסם; אין לספור את התרגום כעד עצמאי נוסף אם יימצא נוסח המקור.",
-        "המסקנות מוגבלות למכתב המסוים ולנמען המתועד בו."
-      ],
-      "audience": "תלמידי הכיתה המסיימת והוריהם; המו״ל מציין שהמכתב נשלח למוסדות חינוך יהודיים שונים בארצות הברית.",
-      "primary_secondary_status": "תרגום אנגלי שפורסם מתוך התכתבות; עדות לתוכן התרגום כפי שהוצג בלבד, לא עד עצמאי מול המקור.",
-      "witness_type": "published_english_translation_of_letter",
-      "relations": [],
-      "identity_note": "זהות פרסום מתורגמת של מכתב ט״ו סיוון תשי״א (Using the summer vacation to upgrade Torah study); Evidence Family igrot-letter-5711-15-sivan-1051 מתאר את המכתב עצמו. תרגום זה אינו עד עצמאי, וכל נוסח מקביל או מקור בשפת המקור ייקשרו לאותה משפחת ראיות.",
-      "witness": {
-        "kind": "published translated correspondence",
-        "state": "publisher translation body inspected",
-        "publisher": "Chabad.org / Sichos in English Collection",
-        "platform": "www.chabad.org",
-        "language": "English",
-        "scope": "Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.",
-        "complete_partial": "complete_published_translation_body",
-        "notes": "התרגום שפורסם נבדק; המקור בשפתו המקורית, כתב־היד והחתימה המקורית לא נבדקו. תרגום זה אינו עד עצמאי."
-      },
-      "provenance": {
-        "authorship_status": "העמוד מייחס את המכתב לרבי ומציין שהנוסח האנגלי תורגם בידי Eli Touger. המקור בשפתו המקורית לא נבדק.",
-        "signature_status": "לא נבדקו חתימה מקורית או כתב־יד; הייחוס הוא כפי שמופיע בפרסום המו״ל.",
-        "source_witness": "Chabad.org / Sichos in English Collection, AID 3906812, Using the summer vacation to upgrade Torah study; Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.",
-        "transmission_type": "Published English translation of dated correspondence; translated by Eli Touger.",
-        "textual_status": "Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.",
-        "editorial_scope": "פרפרזות מחקריות לא־מילוליות ומיקומי מקור ברמת פרופוזיציה; לא הועתק טקסט מוגן במלואו.",
-        "verification_status": "גוף התרגום האנגלי הציבורי נפתח ונבדק ביום 16.11.2026; המקור בשפתו המקורית לא נבדק.",
-        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3906812/jewish/Using-the-summer-vacation-to-upgrade-Torah-study.htm",
-        "accessed": "2026-11-16T10:41:57+02:00",
-        "verification_scope": "נפתח ונבדק גוף התרגום האנגלי הציבורי ב-Chabad.org AID 3906812 ביום 16.11.2026. נבדקו רק שורות התרגום המצוינות ב-locator: Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.. העמוד מציין שהטקסט תורגם בידי Eli Touger; המקור בשפתו המקורית, כתב־היד והחתימה המקורית לא נבדקו. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של התרגום כפי שפורסם. התרגום אינו עד עצמאי נוסף מול המקור אם יאותר. לא הועתק טקסט מוגן במלואו. ההקשר נשאר חלקי."
-      },
-      "witness_provenance": "Chabad.org / Sichos in English Collection, AID 3906812, Using the summer vacation to upgrade Torah study; Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.",
-      "verification_scope": "נפתח ונבדק גוף התרגום האנגלי הציבורי ב-Chabad.org AID 3906812 ביום 16.11.2026. נבדקו רק שורות התרגום המצוינות ב-locator: Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.. העמוד מציין שהטקסט תורגם בידי Eli Touger; המקור בשפתו המקורית, כתב־היד והחתימה המקורית לא נבדקו. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של התרגום כפי שפורסם. התרגום אינו עד עצמאי נוסף מול המקור אם יאותר. לא הועתק טקסט מוגן במלואו. ההקשר נשאר חלקי.",
-      "source_witness": "Chabad.org / Sichos in English Collection, AID 3906812, Using the summer vacation to upgrade Torah study; Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.",
-      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3906812/jewish/Using-the-summer-vacation-to-upgrade-Torah-study.htm",
-      "accessed": "2026-11-16T10:41:57+02:00",
-      "access": {
-        "access_level": "open",
-        "status": "public_translated_publisher_page_opened_and_body_inspected",
-        "rights_status": "copyrighted-link-only",
-        "full_text_reproduced": false,
-        "reuse_notes": "קישור למקור ופרפרזות לא־מילוליות בלבד; תרגום אינו עד עצמאי."
-      },
-      "rights_status": "copyrighted-link-only",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "Using the summer vacation to upgrade Torah study",
-          "I Will Write It In Their Hearts — Volume 8"
-        ],
-        "research_terms": [
-          "חינוך",
-          "חופשת הקיץ",
-          "לימוד תורה",
-          "אחריות ההורים",
-          "מכתב 1051"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "גוף התרגום האנגלי נפתח ונבדק ב-16.11.2026. Locator: Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.. המקור בשפתו המקורית לא נבדק; התרגום אינו עד עצמאי. לא נגזר תוכן מכותרת בלבד ולא הועתק טקסט מוגן במלואו.",
-      "canonical_file": "data/items/content-research-batch-120-2026-11-16.json"
-    },
-    {
       "id": "igrot-letter-5703-13-nissan-71-aid5920863",
       "canonical_key": "aid:5920863",
       "aid": 5920863,
@@ -2421,6 +2319,40 @@
       "epistemic_level": 1,
       "notes": "גוף התרגום האנגלי נפתח ונבדק ב-16.11.2026. Locator: Chabad.org AID 5920863, גוף התרגום האנגלי, שורות 272–288.. המקור בשפתו המקורית לא נבדק; התרגום אינו עד עצמאי. לא נגזר תוכן מכותרת בלבד ולא הועתק טקסט מוגן במלואו.",
       "canonical_file": "data/items/content-research-batch-120-2026-11-16.json"
+    }
+  ],
+  "existing_identity_bodies_inspected": 2,
+  "existing_identity_body_pages_opened": 2,
+  "existing_identity_source_body_review": [
+    {
+      "aid": 2989585,
+      "id": "sicha-5717-shavuot-day2-aid2989585",
+      "title": "שיחת יום ב׳ דחג השבועות ה׳תשי״ז — בלתי מוגה",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989585",
+      "body_text_inspected": true,
+      "inspected_original_language_body": true,
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "body_locator": "he.chabad.org AID 2989585, sections XXIX–XXXIII, lines 434–477.",
+      "existing_identity": true,
+      "evidence_family_id": "sicha-5717-shavuot-day2-aid2989585",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "verification_scope": "Sections XXIX–XXXIII, lines 434–477 were opened and inspected on 2026-11-16; three new non-verbatim propositions were added in place. The talk is marked unedited."
+    },
+    {
+      "aid": 3906812,
+      "id": "sie-letter-1051-aid-3906812",
+      "title": "Using Summer Vacation to Upgrade Torah Study — Letter No. 1051",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3906812/jewish/Using-the-summer-vacation-to-upgrade-Torah-study.htm",
+      "body_text_inspected": true,
+      "inspected_original_language_body": false,
+      "language": "English",
+      "original_language": "unknown",
+      "body_locator": "Chabad.org AID 3906812, body lines 281–282. Chabad.org AID 3906812, body lines 283–284. Chabad.org AID 3906812, body line 286.",
+      "existing_identity": true,
+      "evidence_family_id": "letter-no-1051-summer-education",
+      "canonical_file": "data/items/mixed-authorized-content-2026-11-12-039.json",
+      "verification_scope": "The complete published English translation was reopened on 2026-11-16; existing three propositions were assigned exact locators. The source-language original was not inspected; this translation is non-independent."
     }
   ]
 }

@@ -922,3 +922,11 @@ A subsequent run (16.11.2026) then reached the historical batch-113 assertions a
 - Added readiness assertions for the new Hebrew/Yiddish entries, non-independent English translations, the three new AID 2989585 locators, and deep-researcher multi-source synthesis across the two letters. Current pointers now expect batch 120 and previous batch 119.
 - No source was promoted to Verified. The public metrics, public search index and Pages are not reported as updated until reconciliation, readiness and quality-gate checks complete.
 
+
+
+### Batch 120 canonical-identity correction — 2026-11-16
+
+- The first full-index reconciliation in the Answer Quality Gate found that AID 3906812 already exists as a canonical translated-letter record in `data/items/mixed-authorized-content-2026-11-12-039.json` (`letter-no-1051-summer-education`). The duplicate new record was removed. The existing record was enriched in place with three exact paragraph locators and explicit non-independent translation metadata; its three existing propositions were not counted again.
+- Corrected batch 120: 18 new identities (17 Hebrew/Yiddish dated entries and one English translation presentation for AID 5920863); two existing identities enriched (AID 2989585 with three new propositions; AID 3906812 with locators and translation provenance); 23 propositions in new records plus three new propositions in an existing record. Expected boundary: 1,174 / 854 / 3,268. These are expected, not measured, until the main reconciliation commits.
+- The first PR validation completed source normalization, index generation, question-specific retrieval, answer synthesis, citation integrity, structural quality and workflow-write-safety checks. Content readiness initially stopped on a duplicate JavaScript test binding; the binding was corrected. The canonical AID duplicate was then corrected before the next validation.
+- No Verified promotion, full-text copying, crawler retry or access-control bypass was performed. Reconciliation and publication remain pending until the corrected readiness run and main-branch workflow are verified.
