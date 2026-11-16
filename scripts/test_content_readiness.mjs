@@ -1926,6 +1926,10 @@ for(const mode of ['regular','researcher']){
  assert(m.sources.some(e=>sourceAID(e)==='5019603'),mode+': youth-education letter must be retained');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
  assert(m.synthesis&&m.synthesis.topic==='study_and_youth_education');
+ assert(m.synthesis.basis.some(b=>String(b.aid)==='5019597')&&m.synthesis.basis.some(b=>String(b.aid)==='5019603'),mode+': both dated correspondence identities must be represented in the synthesis basis');
+ assert(m.synthesis.source_integrity.distinct_evidence_families>=2&&m.synthesis.source_integrity.independent_evidence_families>=1);
+ assert.equal(m.synthesis.source_integrity.derived_presentations,m.synthesis.basis.filter(b=>b.independent_witness===false).length,'derived translations remain explicitly non-independent in the synthesis basis');
+ if(mode==='researcher')assert(m.research.evidence_integrity.derived_non_independent>=m.synthesis.source_integrity.derived_presentations,'researcher mode must preserve the derived-presentation count');
  assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');
  assert(m.synthesis.claims.length>=2&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length),mode+': each synthesis claim must carry its own item-level locator');
  const studyClaim=m.synthesis.claims.find(c=>c.topic==='study_with_chavruta');
