@@ -1960,5 +1960,7 @@
     }
   ],
   "readiness_test_revision": 3,
-  "readiness_test_repair_note": "Fixed a missing closing parenthesis in the batch-121 queue-exclusion assertion; duplicate const declaration and latest-batch bindings were already repaired."
+  "readiness_test_repair_note": "Fixed a missing closing parenthesis in the batch-121 queue-exclusion assertion; duplicate const declaration and latest-batch bindings were already repaired.",
+  "validation_trigger_revision": 4,
+  "validation_trigger_note": "Contents-API push to rerun reconcile-metrics, hourly maintenance and answer-quality workflows after the batch-121 readiness assertion syntax fix."
 }
