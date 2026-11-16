@@ -68,9 +68,12 @@
     "The first batch-123 reconciliation attempt stopped before commit because generic yeshiva aliases misclassified a separate educational-responsibility question. Phrase-level aliases and a negative regression assertion have been added; a new run is required.",
     "Batch 123's first narrowed-alias readiness run reached the current-batch pointer checks and found manual_web_review.batch_file missing; the batch and acquisition history pointers now include it. Reconciliation did not commit metrics in that failed run.",
     "Batch 124 access blockers: AID 528803 Internal Error; AIDs 5413024 and 4754490 summary shells; no bypass. AID 528800 excluded as navigation page.",
-    "Readiness retest required: broad yeshiva expansion wording must not enter narrow student-enrollment answers; gate now distinguishes narrow recruitment from multi-aspect expansion/dissemination/public-support synthesis."
+    "Readiness retest required: broad yeshiva expansion wording must not enter narrow student-enrollment answers; gate now distinguishes narrow recruitment from multi-aspect expansion/dissemination/public-support synthesis.",
+    "Batch 127 adds 14 inspected original-language Hayom Yom entries (AIDs 528832–528845; 13 Hebrew, one Yiddish), one English published translation of Letter 128 (AID 5920904, explicitly non-independent), and an in-place enrichment of AID 528819. Five parallel pages AIDs 5903–5907 are linked to the same Evidence Families as AIDs 528835–528839; direct routes 5900–5902 returned Internal Error and were not bypassed.",
+    "Batch 127's pre-addition full public-search-index scan (9,122 entries, generated 2026-11-15) found no matching AIDs for the 15 new identities or five aliases. Post-addition reconciliation, readiness tests, public metrics and deployment verification remain pending; no source was promoted to Verified.",
+    "The prior readiness failure revealed that patternSynthesisIntegrity lacked a branch for study_and_youth_education. A topic-specific validator and regression tests now preserve one independent letter plus one explicitly non-independent publisher text, with claim-level locators; the full rerun is pending."
   ],
-  "next_work": "Reconcile pending batches 099–126 against the full canonical index; resolve the eight-source public-metrics/project-state discrepancy; refresh the search index; run test_content_readiness.mjs and answer-quality tests; verify Actions and Pages.",
+  "next_work": "Run full reconciliation for pending batches 099–127 against the canonical corpus, refresh the search index and public-metrics.json, resolve the eight-source project-state/public-metrics discrepancy, run scripts/test_content_readiness.mjs and answer-quality gate, then verify Actions and Pages.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation_and_readiness_retest",
@@ -102,9 +105,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1257,
+        "answer_eligible_unique_sources": 1272,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3402
+        "answer_eligible_propositions": 3425
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -136,41 +139,46 @@
         "123",
         "124",
         "125",
-        "126"
+        "126",
+        "127"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "126",
+        "batch_id": "127",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1246,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3382
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1257,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3402
         },
-        "new_source_identities": 11,
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1272,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3425
+        },
+        "new_source_identities": 15,
         "existing_identities_enriched": 1,
-        "new_response_propositions": 19,
+        "new_response_propositions": 22,
         "existing_response_propositions_added": 1,
-        "total_new_paraphrase_entries": 20
+        "total_new_paraphrase_entries": 23,
+        "independent_witnesses_added": 14,
+        "non_independent_presentations_added": 1,
+        "content_verified_unique_sources_added": 0,
+        "blocked_candidate_count": 3
       },
       "status": "pending_reconciliation"
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "bounded synthesis fix committed; removed an over-specific test assumption about the overall researcher synthesis_scope, which is computed from all selected independent sources, not only the two synthesis-basis items. The photo-completed AID 5019603 remains explicitly non-independent in the synthesis basis and claim locators. Retest pending.",
+      "run_status": "Previous gate exposed a validator gap for the existing study_and_youth_education synthesis: the validator applied the generic two-independent-family/three-claim threshold and stripped a synthesis that correctly uses one independent correspondence plus one explicitly non-independent publisher text completed from a photograph. A topic-specific integrity branch and regression tests have been added; rerun pending.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": "f807ada983a9b525cac4d473d054b50911215859",
       "workflow_run_id": 43949768911,
-      "note": "AID 5019603 is included only as a non-independent publisher-text basis item; the test verifies this flag and the photo limitation. The overall researcher synthesis_scope is computed from all selected independent sources and is not hard-coded to claim_level.",
+      "note": "AID 5019603 remains non-independent and its uninspected photograph is explicitly disclosed. The new validator requires two distinct Evidence Families, at least one independent family, two claim-level cited claims, and the exact publisher-text-not-independent witness status. No source is promoted to Verified.",
       "bulk_reconcile_run_id": null,
       "hourly_run_id": 43949769232
     },
@@ -214,40 +222,47 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "126",
+    "current_batch": "127",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "126",
-      "batch_file": "data/items/content-research-batch-126-2026-11-16.json",
+      "batch_id": "127",
+      "batch_file": "data/items/content-research-batch-127-2026-11-16.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1246,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3382
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1257,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3402
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1272,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3425
+      },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 11,
+      "new_source_identities": 15,
       "existing_identities_enriched": 1,
-      "source_bodies_inspected": 12,
-      "new_response_propositions": 19,
+      "source_bodies_inspected": 16,
+      "source_body_pages_opened": 24,
+      "new_response_propositions": 22,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 20,
+      "total_new_paraphrase_entries": 23,
+      "independent_witnesses_added": 14,
+      "non_independent_presentations_added": 1,
+      "content_verified_unique_sources_added": 0,
+      "same_family_aliases_linked": 5,
       "blocked_candidate_count": 3,
       "crawler_retry": false,
-      "access_control_bypassed": false
+      "access_control_bypassed": false,
+      "pre_addition_index_count": 9122,
+      "pre_addition_index_matches": 0
     },
-    "last_run_note": "Batch 126 added 11 inspected bilingual Hayom Yom source identities (8 Hebrew, 3 Yiddish), 19 source-grounded paraphrases, and one in-place scope enrichment of AID 528819. Three direct routes returned Internal Error; accessible publisher alternatives were inspected in the same run. No Verified promotion. Reconciliation pending.",
+    "last_run_note": "Batch 127 added 14 inspected Hebrew/Yiddish Hayom Yom entries for 1–14 Elul 5703 and one published English translation of Letter No.128, explicitly marked non-independent. Added 22 source-grounded paraphrases and enriched AID 528819 in place with one more proposition. Five parallel pages AIDs 5903–5907 were linked to the same Evidence Families as AIDs 528835–528839. Three direct routes 5900–5902 returned Internal Error; accessible source bodies were used in the same run. Full pre-addition public index scan (9,122 entries) found no matching new AIDs. No Verified promotion. Reconciliation and readiness rerun pending.",
     "last_batch_blocked_count": 3,
-    "last_batch_blocked_reason": "שלוש הפניות הישירות למועמדים 528820–528822 החזירו Internal Error ללא גוף קריא. באותה הפעלה נפתחו 11 עמודים דו-לשוניים נגישים של Chabad.org ונבדקו הקטעים המקוריים בעברית/יידיש; לא נעשה ניסיון חוזר ולא נעקפה בקרת גישה.",
-    "next_work": "Reconcile pending batches 099–126 against the full canonical index; resolve the eight-source public-metrics/project-state discrepancy; refresh the search index; run test_content_readiness.mjs and answer-quality tests; verify Actions and Pages.",
+    "last_batch_blocked_reason": "שלוש הפניות הישירות AID 5900–5902 החזירו Internal Error ללא גוף קריא. לא בוצע ניסיון חוזר ולא נעקפה בקרת גישה; באותה הפעלה נבדקו גופי ערכי היום יום הנגישים AID 528832–528845, לצד מכתב באנגלית AID 5920904 והעשרת AID 528819.",
+    "next_work": "Reconcile pending batches 099–127 against the full canonical index; refresh public-search-index and public-metrics; resolve the eight-source discrepancy; run test_content_readiness.mjs and answer-quality gate; verify Actions and Pages.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -1064,7 +1079,8 @@
       "123",
       "124",
       "125",
-      "126"
+      "126",
+      "127"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
@@ -1485,5 +1501,5 @@
       "reconciliation_attempt_note": "לא נטען מדד בפועל לפני/אחרי. גבול צפוי אחרי batch125 הוא 1,246 / 854 / 3,382; הגבול הצפוי אחרי batch126 הוא 1,257 / 854 / 3,402. המדדים הציבוריים האחרונים נשארים 977 / 878 / 2,950 עד שה-reconciliation יחשב את התוצאה הקנונית."
     }
   },
-  "current_batch": "126"
+  "current_batch": "127"
 }
