@@ -96,9 +96,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1114,
+        "answer_eligible_unique_sources": 1124,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3189
+        "answer_eligible_propositions": 3202
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -119,43 +119,44 @@
         "112",
         "113",
         "114",
-        "115"
+        "115",
+        "116"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "115",
+        "batch_id": "116",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1103,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3177
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1114,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3189
         },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1124,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3202
+        },
         "metrics_after_actual": null,
         "metrics_delta_actual": null,
-        "new_source_identities": 11,
+        "new_source_identities": 10,
         "existing_identities_enriched": 1,
-        "source_bodies_inspected": 12,
+        "source_bodies_inspected": 11,
         "new_response_propositions": 11,
-        "existing_response_propositions_added": 1
+        "existing_response_propositions_added": 2
       },
       "status": "pending_reconciliation"
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_immigrant_child_retrieval_rank_fix",
+      "run_status": "pending_after_education_governance_partial_evidence_retrieval_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Commit 27c51e5 fixed the readFileSync ReferenceError, and reconciliation measured 1,102 answer-eligible unique sources / 854 content-verified unique sources / 3,183 propositions in the runner workspace. Both reconciliation and Answer Quality Gate then failed at the existing educational-influence regression: AID 2278261 was not retained in the top-36 retrieval window. The previous helper referenced s.immigrantChildren without defining it. This patch defines the original-language immigrant-children signal and gives that exact inspected proposition a relevance bonus, while preserving its derived/non-independent family. It also adds core rabbinic-responsibility aliases and separates the multi-source rabbi/yeshivah query from the direct Sicha teacher-student query."
+      "note": "Latest Answer Quality Gate and Hourly Corpus Maintenance stopped at the education-governance regression because AID 5413540 contributes only the correction/foundational subclaims and was not retained. Retrieval now treats it as partial evidence for those subclaims while AID 4929253 remains the management/outcome-evaluation witness; claim-level citations and context boundaries remain required."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
@@ -201,25 +202,26 @@
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "115",
+      "batch_id": "116",
+      "batch_file": "data/items/content-research-batch-116-2026-11-16.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1103,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3177
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1114,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3189
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1124,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3202
+      },
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 11,
+      "new_source_identities": 10,
       "existing_identities_enriched": 1,
-      "source_bodies_inspected": 12,
+      "source_bodies_inspected": 11,
       "new_response_propositions": 11,
-      "existing_response_propositions_added": 1
+      "existing_response_propositions_added": 2
     },
     "last_run_note": "2026-11-16 batch 114: inspected 12 original-language Hebrew/Yiddish Hayom Yom item bodies (AIDs 528661–528672) and enriched existing Sicha identity AID 5959845 with one non-verbatim proposition. All new records remain Parsed; 12 distinct Evidence Families added; full reconciliation and quality-gate validation pending.",
     "last_batch_blocked_count": 1,
@@ -695,7 +697,8 @@
       "112",
       "113",
       "114",
-      "115"
+      "115",
+      "116"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
@@ -780,7 +783,10 @@
         "full_index_scan_pending_reconciliation": true,
         "checked_against": "Exact repository AID searches for 528661–528672; current 1,022-record review queue; recent canonical batch files 106 and 111–113. Full canonical identity/Evidence Family scan remains pending reconciliation."
       }
-    }
+    },
+    "pending": [
+      "116"
+    ]
   },
   "current_batch": "114"
 }
