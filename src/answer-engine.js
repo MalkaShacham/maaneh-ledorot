@@ -1247,18 +1247,22 @@ function supportsJewishHomeSynthesisProposition(p){
  return t.includes('הבית היהודי')||t.includes('בית יהודי')||t.includes('חינוך הילדים')||t.includes('הכנסת השכינה')||t.includes('חנוכת הבית')||t.includes('מזוזה');
 }
 
+function supportsYouthAudienceProposition(p){
+ const t=norm(p);
+ const youthAudience=/(בני הנוער|בני נוער|נוער|צעירים|בחורים|נערים|בני הנעורים)/.test(t)&&/(יהדות|תורה|חינוך|לימוד|הדרכה|חסידות)/.test(t);
+ const gradualPractice=/(תלמיד|נער|צעיר|בחור)/.test(t)&&/(מוכן|מוכנ|יכול|מסוגל|מתאים)/.test(t)&&/(להוסיף|בהדרגה|צעד|שלב|לאט|בהדרגתיות)/.test(t);
+ return youthAudience||gradualPractice;
+}
 function supportsYouthEducationStudyProposition(p){
  const t=norm(p);
  const chavruta=t.includes('חברותא')&&t.includes('לימוד');
- const youthAudience=(t.includes('בני הנוער')||t.includes('בני נוער'))&&(t.includes('פשרות')||t.includes('אמת'));
- const gradualPractice=t.includes('תלמיד')&&t.includes('מוכן')&&t.includes('להוסיף');
- const youth=youthAudience||gradualPractice;
- return chavruta||youth;
+ return chavruta||supportsYouthAudienceProposition(p);
 }
 function buildYouthEducationStudySynthesis(selected){
  const basis=[];
  selected.forEach((e,index)=>{
-  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  const witnessClass=classifyWitness(e);
+  const independent=e._independent_witness!==false&&witnessClass!=='derived';
   const props=arr(e._supporting_propositions).filter(supportsYouthEducationStudyProposition);
   if(!props.length)return;
   const propositions=props.map(p=>{
@@ -1268,12 +1272,14 @@ function buildYouthEducationStudySynthesis(selected){
   basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,
    date:e.date||null,context_status:e.context_status||'unknown',
    provenance:e.witness_provenance||e.source_witness||e.witness_type||null,
-   verification_scope:e.verification_scope||null,propositions});
+   verification_scope:e.verification_scope||null,independent_witness:independent,
+   witness_class:witnessClass,translation_of_evidence_family_id:e.translation_of_evidence_family_id||null,propositions});
  });
- const chavruta=basis.filter(b=>b.propositions.some(p=>norm(p.text).includes('חברותא')));
- const youth=basis.filter(b=>b.propositions.some(p=>{const t=norm(p.text);return ((t.includes('בני הנוער')||t.includes('בני נוער'))&&(t.includes('פשרות')||t.includes('אמת')))||(t.includes('תלמיד')&&t.includes('מוכן')&&t.includes('להוסיף'));}));
+ const chavruta=basis.filter(b=>b.propositions.some(p=>norm(p.text).includes('חברותא')&&norm(p.text).includes('לימוד')));
+ const youth=basis.filter(b=>b.propositions.some(p=>supportsYouthAudienceProposition(p.text)));
  const families=new Set([...chavruta,...youth].map(b=>b.evidence_family_id).filter(Boolean));
- if(!chavruta.length||!youth.length||families.size<2)return null;
+ const independentFamilies=new Set([...chavruta,...youth].filter(b=>b.independent_witness).map(b=>b.evidence_family_id).filter(Boolean));
+ if(!chavruta.length||!youth.length||families.size<2||independentFamilies.size<1)return null;
  const claim=(topic,text,matches)=>{
   const sourceNumbers=[...new Set(matches.map(b=>b.source_number))];
   const sourceLocators=matches.flatMap(b=>b.propositions.map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator));
@@ -1297,10 +1303,12 @@ function buildYouthEducationStudySynthesis(selected){
   label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',
   text:claims.map(c=>c.text).join(' ')+' אלה שני הקשרים שונים — התנהלות הלומד עצמו ושיח של מחנך עם בני נוער; אין להפוך אותם לכלל אחיד שנאמר באיגרת אחת.',
   source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,
-  method:'Claim-level comparison across two distinct, inspected Hebrew correspondence Evidence Families. Each claim has its own source numbers and item-level body locator; the synthesis preserves the difference between personal study guidance and educator-to-youth communication.',
+  method:'Claim-level comparison across two distinct correspondence Evidence Families. Each claim has its own source numbers and item-level body locator; a derived translation may describe its own letter identity but is never counted as an independent corroborating witness.',
+  source_integrity:{distinct_evidence_families:evidenceFamilies.length,independent_evidence_families:independentFamilies.size,derived_presentations:usedBasis.filter(b=>!b.independent_witness).length},
   limits:[
    'הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.',
    'האיגרת על חברותא עוסקת בנמען ובנסיבות לימוד אישיות; האיגרת על בני הנוער עוסקת בהדרכה חינוכית. אלה אינם אותו מקרה ואינם מוכיחים מדיניות אחידה.',
+   'כל תרגום או עיבוד הוא מצגת נגזרת של אותה איגרת ואינו עד עצמאי; הוא נשמר ככזה גם במפת הראיות.',
    'המכתבים הנכנסים וכתבי היד המקוריים לא נבדקו; אחד המקורות הוא פרסום שהושלם על פי צילום, והצילום עצמו לא נבדק.',
    'ההמלצות הן תיעוד היסטורי של מקרים מסוימים ואינן פסיקה או הוראה עדכנית לכל אדם.'
   ]
