@@ -91,24 +91,18 @@
       "actual_after": null,
       "reconciliation_status": "pending_reconciliation",
       "before": {
-        "answer_eligible_unique_sources": 965,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 2929
-      },
-      "expected_after": {
         "answer_eligible_unique_sources": 1051,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3111
       },
+      "expected_after": {
+        "answer_eligible_unique_sources": 1059,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3121
+      },
       "actual_delta": null,
       "reconciliation_variance": null,
       "pending_batches": [
-        "090",
-        "091",
-        "092",
-        "093",
-        "094",
-        "095",
         "099",
         "100",
         "101",
@@ -119,7 +113,8 @@
         "106",
         "107",
         "108",
-        "109"
+        "109",
+        "110"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance."
     },
@@ -175,14 +170,39 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "108",
+    "current_batch": "110",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "098",
-    "last_batch_summary": "Batch 108: ten source bodies inspected (eight Hebrew items and two Yiddish/English presentations); eight existing identities enriched in place with eight source-grounded non-verbatim propositions; two identities rechecked without duplicate claims. No new identities or Evidence Families; all remain Parsed. Two direct Hebrew URLs returned Internal Error, but same-AID Chabad.org fallback pages were opened. Translations were not counted as independent witnesses.",
-    "last_run_note": "Manual source review on 16.11.2026: opened body segments for AIDs 2989153, 2989320, 2989243, 4304434, 5959845, 2988989, 5990037, 5989929, 4736086 and 5430533. Added six Hebrew and two Yiddish-source paraphrases to existing identities with exact locators. Rechecked two records and added no duplicate claims. Two Hebrew direct links failed; same-AID Chabad.org pages with Yiddish text and English translation were used as fallback. No crawler retry, access bypass, full-text copying or Verified promotion.",
-    "last_batch_blocked_count": 2,
-    "last_batch_blocked_reason": "Two direct Hebrew URLs returned Internal Error; same-AID Chabad.org pages were opened as fallback and their Yiddish body text was inspected. No unresolved blocked item remains in this reviewed set.",
-    "next_work": "Reconcile contiguous pending batches 099–108. Expected boundary: 1,051 answer-eligible unique Evidence Families, 854 content-Verified sources and 3,111 propositions; expected actual may retain the measured +1 proposition variance (3,112). Then pass test_content_readiness.mjs, Yiddish/English retrieval, claim-local citations, deep researcher evidence maps, Actions and Pages publication.",
+    "last_completed_batch": "110",
+    "last_batch_summary": {
+      "batch_id": "110",
+      "batch_file": "data/items/content-research-batch-110-2026-11-16.json",
+      "title": "Batch 110 — Hebrew and Yiddish Hayom Yom original-language entry review",
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 9,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 0,
+      "new_response_propositions": 10,
+      "existing_response_propositions_added": 0,
+      "answer_eligible_source_families_added": 8,
+      "content_verified_unique_sources_added": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1051,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3111
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1059,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3121
+      },
+      "metrics_after_actual": null,
+      "blocked_candidate_count": 7,
+      "status": "pending_reconciliation"
+    },
+    "last_run_note": "ב־16.11.2026 נפתחו שמונה ערכי היום יום מקוריים בעברית וביידיש (AIDs 6084–6091) ונוספו עשר פרפרזות מחקריות לא־מילוליות. שבעה נתיבי AID עבריים הפנו לעמודי ניווט; דפי הלימוד היומיים המקבילים סיפקו באותה הפעלה את גוף הערך בשפת המקור. כל שמונה הזהויות נשארו Parsed; אין קידום ל-Verified. תיקון חוקר עמוק שומר כעת locators ברמת טענה.",
+    "last_batch_blocked_count": 7,
+    "last_batch_blocked_reason": "שבעה נתיבי AID עבריים (6084, 6086–6091) הופנו לעמודי ספרייה/ניווט ללא גוף הערך; באותה הפעלה נפתחו דפי הלימוד היומיים המקבילים ונבדק בהם גוף המקור. אין חסם תוכן פתוח באצווה זו.",
+    "next_work": "Reconcile contiguous pending batches 099–110, verify the measured readiness snapshot, run test_content_readiness.mjs and inspect the commit-bound Actions and Pages deployment.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -750,22 +770,25 @@
       "105",
       "106",
       "107",
-      "108"
+      "108",
+      "109",
+      "110"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
-      "batch_id": "109",
-      "batch_file": "data/items/content-research-batch-109-2026-11-16.json",
-      "reviewed_at": "2026-11-16T02:57:53+02:00",
+      "batch_id": "110",
+      "batch_file": "data/items/content-research-batch-110-2026-11-16.json",
+      "reviewed_at": "2026-11-16T03:25:41+02:00",
       "source_bodies_inspected": 8,
-      "existing_identities_enriched": 8,
-      "new_source_identities": 0,
-      "existing_response_propositions_added": 8,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 0,
+      "new_response_propositions": 10,
+      "existing_response_propositions_added": 0,
       "status": "pending_reconciliation",
-      "preliminary_workspace_metrics": {
-        "answer_eligible_unique_sources": 1050,
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1059,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3117
+        "answer_eligible_propositions": 3121
       }
     }
   }
