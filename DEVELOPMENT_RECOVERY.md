@@ -911,3 +911,14 @@ The first full-corpus validation after batch 119 exposed a second stale assertio
 
 
 A subsequent run (16.11.2026) then reached the historical batch-113 assertions and found three remaining pointers to the prior current batch: `lastBatchSummary.batch_id`, `manual_web_review.batch_file`, and `previous_manual_web_review.batch_file`. They still expected batch 118 / 115 despite batch 119 being the current review and batch 118 its immediate predecessor. These current-pointer assertions now expect 119 / 118; the batch-113 reconciliation snapshot itself remains historical and unchanged.
+ 
+## 2026-11-16 — Batch 120: Hebrew/Yiddish daily entries, English letter translations and Sicha enrichment
+
+- Opened and inspected 17 item-level publisher bodies from the dated Hayom Yom sequence: AIDs 528730–528738 and 528740–528747 (14 Hebrew entries and 3 Yiddish entries; AID 528739 was opened only to identify it as a month-navigation page and was excluded).
+- Added two distinct published English letter translations from the Sichos in English collection: Letter No. 1051 (15 Sivan 5711; AID 3906812) and Letter No. 71 (13 Nissan 5703; AID 5920863). Their English bodies were inspected, but the source-language originals were not; both records are explicitly marked as non-independent translated presentations, not original-language witnesses.
+- Enriched existing Sicha AID 2989585 in its original canonical file with three propositions from sections XXIX–XXXIII, lines 434–477, concerning the longing of baalei teshuvah, caution against self-attribution of spiritual achievement, and the responsibility of rabbis and teachers. The same identity, Evidence Family and Parsed status remain; the talk is marked unedited.
+- AID 528725 returned Internal Error. No bypass was attempted; 17 other daily-entry bodies, two English letter translations and the existing Sicha body were inspected in the same run. No crawler retry, full-text copying or Verified promotion was used.
+- Expected batch boundary: 1,156 / 854 / 3,242 before and 1,175 / 854 / 3,270 after (answer-eligible unique sources / content-verified unique sources / answer-eligible propositions). These are chained expected values only; actual counts and family collisions are pending reconciliation of batches 099–120.
+- Added readiness assertions for the new Hebrew/Yiddish entries, non-independent English translations, the three new AID 2989585 locators, and deep-researcher multi-source synthesis across the two letters. Current pointers now expect batch 120 and previous batch 119.
+- No source was promoted to Verified. The public metrics, public search index and Pages are not reported as updated until reconciliation, readiness and quality-gate checks complete.
+
