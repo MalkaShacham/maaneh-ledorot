@@ -212,6 +212,9 @@ for fp in items:
         if response_props and proposition_origin != "editorial_summary_derived":
             entry["proposition_verification"]=x.get("proposition_verification") or prop.get("proposition_verification")
             entry["proposition_source_locator"]=x.get("proposition_source_locator") or prop.get("proposition_source_locator")
+        # Persist the same content-readiness decision used by reconciliation and answer ranking.
+        # Consumers must not infer eligibility from a title, synopsis, or pipeline status.
+        entry["answer_eligible"]=bool(answer_eligible(entry))
         entry["search_text"]=" ".join(flatten_terms([entry["title"],entry["summary"],entry["source_class"],entry["author_role"],entry["author_name"],entry["signatory"],entry["signatory_role"],entry["authorship_status"],entry["date"],entry["language"],entry["original_language"],entry["proposition_language"],entry["publisher_terms"],entry["research_terms"],entry["question_or_problem"],entry["response_propositions"],entry["conditions_or_qualifications"],entry["audience"],entry["aid"],entry["locator"]]))
         all_search_entries.append(entry)
         old=search_entries.get(key)

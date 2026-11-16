@@ -11,6 +11,7 @@ const sourceAID=e=>{
 };
 const readinessMetrics=v=>Object.fromEntries(['answer_eligible_unique_sources','content_verified_unique_sources','answer_eligible_propositions'].map(k=>[k,v?.[k]]));
 const idx=JSON.parse(await readFile(new URL('data/public-search-index.json',root)));
+assert(idx.entries.every(e=>typeof e.answer_eligible==='boolean'),'public search index must expose an explicit boolean answer_eligible decision for every entry');
 const metrics=JSON.parse(await readFile(new URL('data/public-metrics.json',root)));
 const eligible=normalizeEvidenceIntegrity(idx.entries).filter(e=>e.has_content_evidence&&e.response_propositions?.length);
 const families=new Map();

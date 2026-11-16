@@ -1049,3 +1049,10 @@ A small test-fixture refinement removed an over-specific assertion that the enti
 - Expected batch boundary only (not measured): before 1,272 / 854 / 3,425; expected after 1,290 / 854 / 3,449. The 18 new identities and 24 propositions are not yet reflected in a measured public metric. No source was promoted to Verified.
 - The last Answer Quality Gate and Hourly Corpus Maintenance runs stopped at a stale test assertion expecting batch 126 while project state already pointed to batch 127. The readiness checkpoint, historical batch assertions and batch-128 content/alias tests were updated. Reconciliation and a complete readiness rerun remain pending.
 - No automation schedule, audience, permissions or access settings were changed.
+
+
+### 2026-11-16 — explicit answer eligibility in the public index
+
+- The first batch-128 reconciliation attempt computed a workspace-only corpus snapshot, but the readiness suite exposed a pre-existing schema gap: raw `public-search-index.json` entries did not persist the `answer_eligible` boolean even though the reconciliation function computed eligibility for every entry. This caused the batch-086 scoped publisher-synopsis regression to read `undefined`.
+- Updated `scripts/reconcile_metrics.py` to write `answer_eligible: bool(answer_eligible(entry))` for every search-index entry after provenance, proposition verification and locator fields are assembled. Added a readiness assertion that every index entry exposes an explicit boolean. This makes the index decision auditable and prevents consumers from inferring eligibility from titles or pipeline status.
+- The prior reconciliation workspace reported 1,288 answer-eligible unique sources, 854 content-verified unique sources and 3,453 answer-eligible propositions. These are computed but not yet committed/public metrics because the readiness suite failed; they must be remeasured and persisted by the next successful run. No sources were promoted to Verified.

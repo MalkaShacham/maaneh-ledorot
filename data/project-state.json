@@ -184,16 +184,16 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "Previous Answer Quality Gate and Hourly Corpus Maintenance runs failed at a stale readiness assertion expecting batch 126 while project state already pointed to batch 127. The readiness checkpoint and historical assertions have been advanced for batch 128; rerun pending after commit.",
+      "run_status": "Batch 128 source/index reconciliation reached the readiness suite. The suite exposed a pre-existing index-schema gap: raw public-search-index entries omitted the explicit answer_eligible boolean required by the batch-086 scoped publisher-synopsis regression. reconcile_metrics.py now persists the same answer_eligible(entry) decision used by reconciliation, and the test asserts a boolean for every index entry. Rerun pending after this commit.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "evaluated_commit": "ae86f501ff56e12dcbde661abb15fe23d4931747",
-      "workflow_run_id": 43956281987,
+      "evaluated_commit": "02157e441c28ef0a74b2eccea58b941f2d3922c5",
+      "workflow_run_id": 43960476645,
       "note": "AID 5019603 remains non-independent and its uninspected photograph is explicitly disclosed. The new validator requires two distinct Evidence Families, at least one independent family, two claim-level cited claims, and the exact publisher-text-not-independent witness status. No source is promoted to Verified.",
-      "bulk_reconcile_run_id": 43956281763,
-      "hourly_run_id": 43956281828
+      "bulk_reconcile_run_id": 43960239196,
+      "hourly_run_id": 43960476698
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
