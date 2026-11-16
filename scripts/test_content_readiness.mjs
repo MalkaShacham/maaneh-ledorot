@@ -212,6 +212,7 @@ assert.equal(charity749._independent_witness,false);
 assert.equal(charity751._independent_witness,false);
 assert(!queue.records.some(e=>batch082Aids.includes(String(e.aid))),'reviewed batch-082 AIDs must not remain in the content-review queue');
 const educationResponsibilityQuestion='מה כתב הרבי על אחריות תלמידי ישיבות לחינוך ילדים ונוער?';
+assert(!understandQuestion(educationResponsibilityQuestion).topics.includes('הרחבת ישיבה'),'general educational responsibility must not be misclassified as yeshiva enrollment/expansion');
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,educationResponsibilityQuestion,{mode});
  assert(m.answerable, `${mode}: inspected correspondence should support a bounded answer about educational responsibility`);
