@@ -765,3 +765,13 @@ The hourly schedule, repository visibility, audience and permissions remain unch
 - No audience, visibility, permissions or hourly schedule was changed.
 
 - Follow-up correction: batch 105 was still pending in the committed files; the earlier 3,071 figure was a runner-local measurement, not a committed reconciliation. The chain was reconnected using batch 105's expected 3,070 baseline, allowing batches 099–108 to reconcile together. The readiness test now loads acquisition state before any pending-branch assertion and explicitly accepts the measured +1 variance in batches 105–108. The previous test run failed at this ordering/chain issue; do not count it as a passed test.
+
+
+## 2026-11-16 — Batch 109 and retrieval/test repair
+
+- Reopened and inspected eight item-level public source bodies: six Hebrew sicha pages and two Yiddish original-text pages. Added eight non-verbatim, source-grounded paraphrases in place to existing identities AID 2989153, 4304434, 5959845, 2988989, 5990037, 5989929, 4736086 and 5430533. No new source identities or Evidence Families were created; all eight records remain Parsed and no content-Verified status was promoted.
+- Each new proposition has an aligned body locator and was appended to the existing record's response_propositions and response_proposition_locators. The two Yiddish pages were read in Yiddish; their English renderings were treated as derived presentations, not independent witnesses. No full protected text was copied.
+- The batch connects to batch 108's expected baseline of 1,051 answer-eligible families / 854 content-Verified families / 3,111 propositions. Batch 109 expects 1,051 / 854 / 3,119; actual metrics remain pending full-index reconciliation and must not be reported as published until the reconciliation workflow updates the public metrics.
+- Retrieval repair: the Yiddish Hayom Yom question now has a proposition-level topic and a Yiddish-original gate. It requires an inspected proposition containing the truth-seeking, self-examination and movement concepts; title or language metadata alone cannot make the source answerable. Researcher mode must retain claim-to-source locators.
+- Test repair: the latest observed run 43776237717 failed because acquisitionState was declared after its first use; it is moved before all uses. Historical assertions that compared an old batch's state to the current acquisition pointer were removed. Batch 109 and the Yiddish retrieval case are now covered by explicit readiness assertions. Commit-bound Actions and Pages verification are still required.
+- No crawler retry, no access-control bypass, no schedule or permission change, and no automation was created.
