@@ -794,3 +794,10 @@ The hourly schedule, repository visibility, audience and permissions remain unch
 - Batch 110 boundary: **1,051 / 854 / 3,111 → expected 1,059 / 854 / 3,121** (answer-eligible unique Evidence Families / content-Verified sources / distinct propositions). The inherited batch-109 diagnostic variance is retained; actual post-reconciliation values must come from the full-index workflow and are not asserted here.
 - Researcher-mode repair: synthesized claims now retain proposition-level source locators through cited-source filtering; the deep research payload explicitly reports its depth and includes claim-to-source locators. Browser cache-busters were advanced for both the core and validated engine modules.
 - Batches 099–110 require contiguous full-index reconciliation, then the commit-bound `test_content_readiness.mjs`, Actions and Pages checks. No audience, permissions, repository visibility or hourly schedule was changed.
+
+
+### Reconciliation bug repair — 2026-11-16
+
+- The first commit-bound reconciliation attempt after batch 110 failed in `scripts/reconcile_metrics.py` while calculating `last_batch_summary.metrics_delta_actual`. The code iterated over every public-metrics field and attempted `int()` on the explanatory `content_readiness_note` string. This was a reconciliation-code defect, not a source-content or citation failure; no refreshed public metrics were committed by that attempt.
+- The calculation now uses only the three numeric answer-readiness measures: `answer_eligible_unique_sources`, `content_verified_unique_sources`, and `answer_eligible_propositions`. The content-readiness test also verifies that the saved last-batch delta contains exactly those numeric keys and matches the reconciled public metrics.
+- Reconciliation, test completion, and Pages verification remain pending until the follow-up commit's Actions runs finish. The public metrics are still not reported as updated.

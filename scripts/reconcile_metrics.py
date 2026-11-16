@@ -319,9 +319,10 @@ for selected_index, batch_info in enumerate(selected_batches):
     reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_after":snapshot_metrics,"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit),"batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),"existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),"answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),"selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")} ),"non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),"same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),"canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),"items":audit})
     summary=state.setdefault("development_recovery",{}).get("last_batch_summary")
     if isinstance(summary,dict) and str(summary.get("batch_id"))==str(batch_data.get("batch_id")):
-        summary["metrics_after_actual"]=snapshot_metrics
+        readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
+        summary["metrics_after_actual"]={k:snapshot_metrics[k] for k in readiness_keys}
         b=summary.get("metrics_before") or {}
-        summary["metrics_delta_actual"]={k:snapshot_metrics[k]-int(b.get(k,snapshot_metrics[k])) for k in snapshot_metrics}
+        summary["metrics_delta_actual"]={k:snapshot_metrics[k]-int(b.get(k,snapshot_metrics[k])) for k in readiness_keys}
         summary["status"]=batch_data["reconciliation_status"]
     batch_path.write_text(json.dumps(batch_data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 

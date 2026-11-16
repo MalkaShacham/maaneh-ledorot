@@ -23,6 +23,7 @@ const propositionCount=[...families.values()].reduce((n,group)=>n+new Set(group.
 assert.equal(metrics.answer_eligible_propositions,propositionCount,'all distinct propositions across family members must be counted without counting aliases as independent families');
 const queue=JSON.parse(await readFile(new URL('data/content-review-queue.json',root)));
 const acquisitionState=JSON.parse(await readFile(new URL('data/acquisition/latest.json',root),'utf8'));
+const projectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
 const batch073Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-073-2026-11-13.json',root)));
 const batch078Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-078-2026-11-13.json',root)));
 const batch082Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-082-2026-11-14.json',root)));
@@ -1095,6 +1096,12 @@ assert.deepEqual(batch110Actual,readinessMetrics(metrics));
 assert.deepEqual(batch110Actual,{answer_eligible_unique_sources:1058,content_verified_unique_sources:854,answer_eligible_propositions:3127});
 assert.deepEqual(batch110Data.reconciliation_variance,{answer_eligible_unique_sources:-1,content_verified_unique_sources:0,answer_eligible_propositions:6});
 assert.deepEqual(readinessMetrics(metrics),{answer_eligible_unique_sources:1058,content_verified_unique_sources:854,answer_eligible_propositions:3127});
+const lastBatchSummary=projectState.development_recovery.last_batch_summary;
+assert.equal(lastBatchSummary.batch_id,'110');
+assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
+assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
+assert.deepEqual(lastBatchSummary.metrics_delta_actual,{answer_eligible_unique_sources:7,content_verified_unique_sources:0,answer_eligible_propositions:16});
+
 
 assert.equal(acquisitionState.manual_web_review.batch_id,'110');assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-110-2026-11-16.json');
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
