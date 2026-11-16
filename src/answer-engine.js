@@ -685,8 +685,13 @@ export function propositionRelevance(e,u){
  ].filter(g=>u.topics.includes(g.topic));
  if(focusedWitnessGates.length&&!focusedWitnessGates.some(g=>g.ok))return{score:0,support:'insufficient_specific_evidence',reasons:[`No single witness satisfied any requested focused evidence gate: ${focusedWitnessGates.map(g=>g.topic).join(', ')}`]};
  if(u.topics.includes('הרחבת ישיבה')){
-  const explicitRecruitment=arr(e.response_propositions).some(p=>['להרחיב את החדרים','לקלוט תלמידים','תלמידים המבקשים להיכנס','דחיית ילדים המבקשים ללמוד','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
-  if(!explicitRecruitment)return{score:0,support:'insufficient_specific_evidence',reasons:['A yeshiva-enrollment answer requires an inspected proposition with an explicit recruitment/expansion action or target; decline and perseverance alone are not a recruitment plan.']};
+  const props=arr(e.response_propositions);
+  const explicitRecruitment=props.some(p=>['להרחיב את החדרים','לקלוט תלמידים','תלמידים המבקשים להיכנס','דחיית ילדים המבקשים ללמוד','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
+  const crossDimensionQuestion=u.query.includes('הפצת תורה')&&(u.query.includes('תמיכת הציבור')||u.query.includes('תמיכה'));
+  const institutionalExpansion=props.some(p=>['הרחבת החינוך הישיבתי','הרחבת הישיבה','הרחבת החדרים'].some(t=>containsTerm(p,t)));
+  const yeshivaDissemination=props.some(p=>containsTerm(p,'הפצת תורה')&&(containsTerm(p,'תלמידי הישיבות')||containsTerm(p,'ישיבה')||containsTerm(p,'ישיבות')));
+  const publicSupport=props.some(p=>(containsTerm(p,'תומכי הישיבות')||containsTerm(p,'תמיכת הישיבות')||containsTerm(p,'סיוע כספי'))&&(containsTerm(p,'ישיבה')||containsTerm(p,'ישיבות')));
+  if(!explicitRecruitment&&!(crossDimensionQuestion&&(institutionalExpansion||yeshivaDissemination||publicSupport)))return{score:0,support:'insufficient_specific_evidence',reasons:['A narrow yeshiva-enrollment answer requires an inspected proposition with an explicit recruitment/expansion action or target; a broader multi-dimension question may additionally use a distinct proposition directly supporting institutional expansion, Torah dissemination or public support.']};
  }
  if(u.topics.includes('קביעת מזוזה בדירה חדשה')){
   const exactTiming=arr(e.response_propositions).some(p=>containsTerm(p,'מזוזה')&&containsTerm(p,'כניסה')&&(containsTerm(p,'מיד')||containsTerm(p,'יום השלושים')||containsTerm(p,'שלושים')));
