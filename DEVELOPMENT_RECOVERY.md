@@ -991,3 +991,16 @@ The first batch-124 Actions run indexed the new sources and calculated a diagnos
 ### 2026-11-16 follow-up — enrollment regression allowlist
 
 The next readiness run confirmed that the narrow enrollment gate returns only two inspected witnesses: the volume-XIII enrollment letter and AID 4754490, whose inspected Yiddish proposition explicitly recommends expanding rooms to admit students. No broad-only AID 5413024 or 5413540 entered the narrow answer. The test failed because its key allowlist contained only legacy `id:igrot-scan-v13-letter-4-...` keys and omitted the canonical `aid:4754490` key. The assertion now includes that exact canonical key, requires AID 4754490, and explicitly excludes AIDs 5413024 and 5413540 from the narrow query; the separate broad multi-aspect test continues to require AID 5413024. The reconciliation snapshot 1,229 / 854 / 3,362 is still diagnostic only; no public metrics were committed.
+
+
+### 2026-11-16 manual source review — batch 125
+
+- Inspected 15 original-language Hayom Yom bodies, AIDs 528805–528819: six Hebrew and nine Yiddish entries, covering 5–19 Menachem Av 5703.
+- Added 23 non-verbatim, source-grounded response propositions with proposition-level locators, provenance, partial-context scope and attribution limits. No full protected text was copied.
+- Enriched existing AID 5959845 in place with one additional proposition from section 18 (lines 338–343). The same identity and Evidence Family were retained; no duplicate witness was created.
+- AID 528810 direct Hebrew and English routes returned Internal Error. In the same run, a French Chabad.org daily-study page was opened and its original Hebrew/Yiddish body at lines 171–176 was inspected. Only the original-language body was used; the French translation was not counted as an independent witness. No access-control bypass and no crawler retry.
+- Batch totals: 15 new identities, one existing identity enriched, 23 new propositions plus one in-place proposition, 16 source bodies inspected, zero Verified promotions.
+- Expected chain boundary after batch 124: 1,231 / 854 / 3,358; expected after batch 125: 1,246 / 854 / 3,382 (answer-eligible unique Evidence Families / content-verified unique sources / answer-eligible propositions). These are expected values only. The last public metrics still show 977 / 878 / 2,950, while project-state shows 977 / 870 / 2,950; the eight-source discrepancy and pending batches 099–125 require full canonical reconciliation.
+- The connector did not return readable contents for the full public search index, so canonical collision and answer-eligibility checks remain pending reconciliation. The batch was checked against the 1,022-record review queue and recent batches 122–124; no matches were found.
+- No Verified promotion, no crawler retry, no permission/audience change, no duplicate automation, and no change to the hourly schedule. Batch 125 content and readiness assertions are committed on main; full Actions and public-metric verification remain pending.
+
