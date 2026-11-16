@@ -105,9 +105,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1272,
+        "answer_eligible_unique_sources": 1290,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3425
+        "answer_eligible_propositions": 3449
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -140,47 +140,60 @@
         "124",
         "125",
         "126",
-        "127"
+        "127",
+        "128"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "127",
+        "batch_id": "128",
+        "batch_file": "data/items/content-research-batch-128-2026-11-16.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1257,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3402
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1272,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3425
         },
-        "new_source_identities": 15,
-        "existing_identities_enriched": 1,
-        "new_response_propositions": 22,
-        "existing_response_propositions_added": 1,
-        "total_new_paraphrase_entries": 23,
-        "independent_witnesses_added": 14,
-        "non_independent_presentations_added": 1,
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1290,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3449
+        },
+        "metrics_actual_before": null,
+        "metrics_after_actual": null,
+        "metrics_delta_actual": null,
+        "new_source_identities": 18,
+        "existing_identities_enriched": 5,
+        "existing_identities_rechecked": 5,
+        "source_bodies_inspected": 22,
+        "source_body_pages_opened": 23,
+        "new_response_propositions": 24,
+        "existing_response_propositions_added": 0,
+        "total_new_paraphrase_entries": 24,
+        "independent_witnesses_added": 18,
+        "non_independent_presentations_added": 5,
         "content_verified_unique_sources_added": 0,
-        "blocked_candidate_count": 3
+        "same_family_aliases_linked": 5,
+        "blocked_candidate_count": 1,
+        "crawler_retry": false,
+        "access_control_bypassed": false,
+        "pre_addition_index_count": 9122,
+        "pre_addition_index_matches": null
       },
       "status": "pending_reconciliation"
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "Previous gate exposed a validator gap for the existing study_and_youth_education synthesis: the validator applied the generic two-independent-family/three-claim threshold and stripped a synthesis that correctly uses one independent correspondence plus one explicitly non-independent publisher text completed from a photograph. A topic-specific integrity branch and regression tests have been added; rerun pending.",
+      "run_status": "Previous Answer Quality Gate and Hourly Corpus Maintenance runs failed at a stale readiness assertion expecting batch 126 while project state already pointed to batch 127. The readiness checkpoint and historical assertions have been advanced for batch 128; rerun pending after commit.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "evaluated_commit": "f807ada983a9b525cac4d473d054b50911215859",
-      "workflow_run_id": 43949768911,
+      "evaluated_commit": "ae86f501ff56e12dcbde661abb15fe23d4931747",
+      "workflow_run_id": 43956281987,
       "note": "AID 5019603 remains non-independent and its uninspected photograph is explicitly disclosed. The new validator requires two distinct Evidence Families, at least one independent family, two claim-level cited claims, and the exact publisher-text-not-independent witness status. No source is promoted to Verified.",
-      "bulk_reconcile_run_id": null,
-      "hourly_run_id": 43949769232
+      "bulk_reconcile_run_id": 43956281763,
+      "hourly_run_id": 43956281828
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
@@ -222,47 +235,48 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "127",
+    "current_batch": "128",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "127",
-      "batch_file": "data/items/content-research-batch-127-2026-11-16.json",
+      "batch_id": "128",
+      "batch_file": "data/items/content-research-batch-128-2026-11-16.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1257,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3402
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1272,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3425
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1290,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3449
+      },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 15,
-      "existing_identities_enriched": 1,
-      "source_bodies_inspected": 16,
-      "source_body_pages_opened": 24,
-      "new_response_propositions": 22,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 23,
-      "independent_witnesses_added": 14,
-      "non_independent_presentations_added": 1,
+      "new_source_identities": 18,
+      "existing_identities_enriched": 5,
+      "existing_identities_rechecked": 5,
+      "source_bodies_inspected": 22,
+      "source_body_pages_opened": 23,
+      "new_response_propositions": 24,
+      "existing_response_propositions_added": 0,
+      "total_new_paraphrase_entries": 24,
+      "independent_witnesses_added": 18,
+      "non_independent_presentations_added": 5,
       "content_verified_unique_sources_added": 0,
       "same_family_aliases_linked": 5,
-      "blocked_candidate_count": 3,
+      "blocked_candidate_count": 1,
       "crawler_retry": false,
       "access_control_bypassed": false,
       "pre_addition_index_count": 9122,
-      "pre_addition_index_matches": 0
+      "pre_addition_index_matches": null
     },
-    "last_run_note": "Batch 127 added 14 inspected Hebrew/Yiddish Hayom Yom entries for 1–14 Elul 5703 and one published English translation of Letter No.128, explicitly marked non-independent. Added 22 source-grounded paraphrases and enriched AID 528819 in place with one more proposition. Five parallel pages AIDs 5903–5907 were linked to the same Evidence Families as AIDs 528835–528839. Three direct routes 5900–5902 returned Internal Error; accessible source bodies were used in the same run. Full pre-addition public index scan (9,122 entries) found no matching new AIDs. No Verified promotion. Reconciliation and readiness rerun pending.",
-    "last_batch_blocked_count": 3,
-    "last_batch_blocked_reason": "שלוש הפניות הישירות AID 5900–5902 החזירו Internal Error ללא גוף קריא. לא בוצע ניסיון חוזר ולא נעקפה בקרת גישה; באותה הפעלה נבדקו גופי ערכי היום יום הנגישים AID 528832–528845, לצד מכתב באנגלית AID 5920904 והעשרת AID 528819.",
-    "next_work": "Reconcile pending batches 099–127 against the full canonical index; refresh public-search-index and public-metrics; resolve the eight-source discrepancy; run test_content_readiness.mjs and answer-quality gate; verify Actions and Pages.",
+    "last_run_note": "Batch 128 added 18 source-grounded Hayom Yom identities and 24 non-verbatim propositions; five same-family publisher presentations were linked in place. One public route returned Internal Error and an index page was excluded. Reconciliation and readiness retest are pending.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 5900 returned Internal Error. No crawler retry or access bypass; accessible item-level entries AID 528846–528860 and 528862–528864 were inspected in the same run.",
+    "next_work": "Run reconciliation for batches 099–128; verify canonical collisions and answer eligibility; run test_content_readiness.mjs and Answer Quality Gate; confirm public-metrics.json and Pages.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -625,421 +639,28 @@
       "reconciliation_status": "reconciled"
     },
     "last_manual_web_review": {
-      "schema": "maaneh-ledorot-content-research-batch-v1",
-      "batch_id": "126",
-      "batch_file": "data/items/content-research-batch-126-2026-11-16.json",
+      "batch_id": "128",
+      "batch_file": "data/items/content-research-batch-128-2026-11-16.json",
       "generated": "2026-11-16",
-      "reviewed_at": "2026-11-16T22:10:29+02:00",
-      "title": "Batch 126 — 11 inspected bilingual Hayom Yom entries (20–30 Menachem Av 5703), Hebrew/Yiddish original excerpts, and in-place scope enrichment of AID 528819",
+      "reviewed_at": "2026-11-16T23:12:56+02:00",
       "status": "pending_reconciliation",
-      "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 15,
-      "source_bodies_inspected": 12,
-      "source_body_pages_opened": 15,
-      "metadata_only_items_rechecked": 0,
-      "search_extracts_used_as_content": 0,
-      "new_source_identities": 11,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 19,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 20,
-      "answer_eligible_source_families_added": 11,
-      "independent_witnesses_added": 11,
-      "non_independent_presentations_added": 0,
-      "related_same_family_presentations_documented": 1,
-      "content_verified_unique_sources_added": 0,
-      "new_aids": [
-        3316840,
-        3316843,
-        3316846,
-        3316847,
-        3316850,
-        3316852,
-        3316854,
-        3316856,
-        3316858,
-        3316863,
-        3316866
-      ],
-      "enriched_aids": [
-        528819
-      ],
-      "rechecked_aids": [],
-      "blocked_candidate_count": 3,
-      "blocked_candidates": [
-        {
-          "aid": 528820,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/528820/jewish/page.htm",
-          "route": "direct public publisher page open",
-          "reason": "Internal Error; no readable source body was returned.",
-          "handling": "לא בוצע ניסיון חוזר ולא נעקפה בקרת גישה. באותה הפעלה נפתחו עמודים דו-לשוניים נגישים של Chabad.org עם קטע מקורי בעברית או ביידיש, ונבדקו גופי הפרסום עצמם."
-        },
-        {
-          "aid": 528821,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/528821/jewish/page.htm",
-          "route": "direct public publisher page open",
-          "reason": "Internal Error; no readable source body was returned.",
-          "handling": "לא בוצע ניסיון חוזר ולא נעקפה בקרת גישה. באותה הפעלה נפתחו עמודים דו-לשוניים נגישים של Chabad.org עם קטע מקורי בעברית או ביידיש, ונבדקו גופי הפרסום עצמם."
-        },
-        {
-          "aid": 528822,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/528822/jewish/page.htm",
-          "route": "direct public publisher page open",
-          "reason": "Internal Error; no readable source body was returned.",
-          "handling": "לא בוצע ניסיון חוזר ולא נעקפה בקרת גישה. באותה הפעלה נפתחו עמודים דו-לשוניים נגישים של Chabad.org עם קטע מקורי בעברית או ביידיש, ונבדקו גופי הפרסום עצמם."
-        }
-      ],
-      "excluded_candidate_count": 0,
-      "excluded_candidates": [],
-      "fallback_source_attempted": true,
-      "fallback_source_results": {
-        "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-        "accessible_item_level_bodies": 11,
-        "existing_identity_bodies": 1,
-        "body_text_inspected": true,
-        "inspected_aids": [
-          3316840,
-          3316843,
-          3316846,
-          3316847,
-          3316850,
-          3316852,
-          3316854,
-          3316856,
-          3316858,
-          3316863,
-          3316866
-        ],
-        "existing_identity_aids": [
-          528819
-        ],
-        "translated_alternative_page_accessed": 11,
-        "original_language_text_visible_on_alternative_page": true,
-        "translations_counted_as_independent_witnesses": 0,
-        "metadata_only_pages_opened": 0,
-        "notes": "שלוש הפניות ישירות למזהי מועמד 528820–528822 החזירו Internal Error ללא גוף קריא. באותה הפעלה נפתחו 11 עמודים נגישים מאותו מו״ל באוסף Sichos in English, ובהם קטעי מקור בעברית/יידיש לצד תרגום אנגלי; נבדקו רק הקטעים המקוריים בשפתם. נוסף לכך נבדק פרסום מקביל AID 3316836 לצורך העשרת AID 528819. התרגומים וההערות העריכתיות לא נספרו כעדים עצמאיים ולא שימשו בסיס לפרופוזיציות."
-      },
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "scan_only_verification_used": false,
-      "translations_counted_as_independent_witnesses": 0,
+      "new_source_identities": 18,
+      "existing_identities_enriched": 5,
+      "new_response_propositions": 24,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1246,
+        "answer_eligible_unique_sources": 1272,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3382
+        "answer_eligible_propositions": 3425
       },
-      "metrics_before_source": "גבול שרשרת צפוי לאחר batch125 בלבד, אינו מדד שנמדד. public-metrics.json האחרון מציג 977 / 878 / 2,950; project-state.json מציג 977 / 870 / 2,950. השרשרת 099–125 ממתינה ל-reconciliation.",
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1257,
+        "answer_eligible_unique_sources": 1290,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3402
+        "answer_eligible_propositions": 3449
       },
-      "metrics_actual_before": null,
       "metrics_actual_after": null,
-      "reconciliation_variance": null,
-      "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 11,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 20
-      },
-      "metrics_attribution_note": "תוספת צפויה של 11 Evidence Families ו-19 פרופוזיציות חדשות, ועוד פרופוזיציה אחת בהעשרה in-place של AID 528819. לא קודם מקור ל-Verified; המדדים הם גבול צפוי בלבד עד reconciliation.",
-      "language_distribution": {
-        "Hebrew": 8,
-        "Yiddish": 3
-      },
-      "original_language_distribution": {
-        "Hebrew": 8,
-        "Yiddish": 3
-      },
-      "reviewed_body_language_distribution": {
-        "Hebrew": 8,
-        "Yiddish": 3
-      },
-      "source_languages": [
-        "Hebrew",
-        "Yiddish"
-      ],
-      "source_type_distribution": {
-        "bilingual_published_hebrew_hayom_yom_entry": 8,
-        "bilingual_published_yiddish_hayom_yom_entry": 3
-      },
-      "evidence_family_ids": [
-        "hayom-yom-כ-menachem-av-5703",
-        "hayom-yom-כא-menachem-av-5703",
-        "hayom-yom-כב-menachem-av-5703",
-        "hayom-yom-כג-menachem-av-5703",
-        "hayom-yom-כד-menachem-av-5703",
-        "hayom-yom-כה-menachem-av-5703",
-        "hayom-yom-כו-menachem-av-5703",
-        "hayom-yom-כז-menachem-av-5703",
-        "hayom-yom-כח-menachem-av-5703",
-        "hayom-yom-כט-menachem-av-5703",
-        "hayom-yom-ל-menachem-av-5703"
-      ],
-      "same_family_items": [
-        {
-          "aid": 3316836,
-          "canonical_aid": 528819,
-          "evidence_family_id": "hayom-yom-528819-5703",
-          "independent_witness": false,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316836/jewish/19-Menachem-Av.htm",
-          "note": "פרסום דו-לשוני מאוחר של אותו ערך יומי; שימש רק להבהרת היקף המנהג ואינו עד עצמאי."
-        }
-      ],
-      "existing_identity_updates": [
-        {
-          "action": "enriched_existing_identity_in_place",
-          "aid": 528819,
-          "id": "hayom-yom-528819-5703",
-          "canonical_file": "data/items/content-research-batch-125-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-528819-5703",
-          "existing_propositions_before": 2,
-          "propositions_added": 1,
-          "total_propositions_after": 3,
-          "locator": "Chabad.org/TheRebbe.org AID 3316836, original Hebrew passage, line 245.",
-          "locators": [
-            "Chabad.org/TheRebbe.org AID 3316836, original Hebrew passage, line 245."
-          ],
-          "note": "נפתח ונבדק הפרסום הדו-לשוני AID 3316836; נעשה שימוש רק בקטע המקורי בעברית בשורה 245. נוספה פרפרזה המבהירה שההוראות מתוארות כמנהג למי שמניחים ארבעה זוגות תפילין, ולא כחיוב כללי. זהו אותו ערך יומי כמו AID 528819; לא נוצרה זהות חדשה והפרסום המקביל אינו עד עצמאי."
-        }
-      ],
-      "not_promoted_after_inspection": [
-        {
-          "aid": 3316840,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316843,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316846,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316847,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316850,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316852,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316854,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316856,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316858,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316863,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316866,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        }
-      ],
-      "deduplication_check": {
-        "new_aids_unique": true,
-        "new_source_urls_unique": true,
-        "new_evidence_families_unique": true,
-        "unique_new_aid_count": 11,
-        "unique_new_family_count": 11,
-        "same_family_duplicate_count": 0,
-        "duplicate_alias_identities": 0,
-        "translations_counted_as_independent_witnesses": 0,
-        "canonical_identity_collisions": [],
-        "missing_canonical_identities": [],
-        "all_target_identities_answer_eligible": null,
-        "full_index_scan_available": true,
-        "full_index_scan_pending_reconciliation": true,
-        "full_index_scan_completed_at": "2026-11-16",
-        "checked_against": "נסרק public-search-index.json המלא שהופק ב-15.11.2026 (9,122 רשומות) ונבדקו 11 ה-AID החדשים; לא נמצאו התאמות מדויקות. תור הביקורת הנוכחי בן 1,022 רשומות נבדק גם הוא ללא התאמות. האינדקס קדם לאצוות 099–125, ולכן בדיקת זהות קנונית מלאה, alias collisions ואישור כשירות סופיים יושלמו ב-reconciliation."
-      },
-      "note": "נבדקו 11 גופי פרסום דו-לשוניים, מהם 8 עם קטע מקורי בעברית ו-3 עם קטע מקורי ביידיש. נוספו 19 פרפרזות לא-מילוליות והועשרה זהות קיימת אחת בפרופוזיציה נוספת. תרגומים אינם עדים עצמאיים; כל המקורות נשארים Parsed ובהקשר חלקי.",
-      "source_body_review": [
-        {
-          "aid": 3316840,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורה 255",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כ-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316840 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורה 255; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316843,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורות 255–256",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כא-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316843 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורות 255–256; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316846,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורה 256",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כב-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316846 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורה 256; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316847,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורה 255",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כג-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316847 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורה 255; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316850,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Yiddish",
-          "original_language": "Yiddish",
-          "body_locator": "שורות 255–256",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כד-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316850 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Yiddish בשורות שורות 255–256; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316852,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורה 255",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כה-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316852 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורה 255; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316854,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Yiddish",
-          "original_language": "Yiddish",
-          "body_locator": "שורה 255",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כו-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316854 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Yiddish בשורות שורה 255; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316856,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורות 256, 259–261",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כז-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316856 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורות 256, 259–261; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316858,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורות 256–257",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כח-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316858 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורות 256–257; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316863,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Yiddish",
-          "original_language": "Yiddish",
-          "body_locator": "שורה 256",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כט-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316863 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Yiddish בשורות שורה 256; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316866,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורות 256, 260",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-ל-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316866 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורות 256, 260; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 528819,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": true,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "Chabad.org/TheRebbe.org AID 3316836, original Hebrew line 245",
-          "canonical_file": "data/items/content-research-batch-125-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-528819-5703",
-          "verification_scope": "נפתח ונבדק העמוד הדו-לשוני AID 3316836 ביום 16.11.2026; נבדק רק הקטע המקורי בעברית בשורה 245. מדובר בהצגה מאוחרת של אותו ערך AID 528819; לא נוצר עד עצמאי. לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית.",
-          "handling": "הועשרה זהות קיימת בפרופוזיציית היקף אחת; נשמרו אותו AID ואותה Evidence Family."
-        }
-      ],
-      "quality_gate_followup": "ריצות Answer Quality Gate ו-Hourly Corpus Maintenance האחרונות נכשלו על assert ישן שדרש 12 פרופוזיציות ב-AID 5959845, בעוד שהרשומה הקנונית מכילה 13 לאחר העשרות in-place. כל בדיקות האורך הדינמיות עודכנו ל-13; נוספו בדיקות אחזור וסינתזה לאצווה 126. נדרש reconciliation וריצה מלאה מחדש.",
-      "reconciliation_attempt_note": "לא נטען מדד בפועל לפני/אחרי. גבול צפוי אחרי batch125 הוא 1,246 / 854 / 3,382; הגבול הצפוי אחרי batch126 הוא 1,257 / 854 / 3,402. המדדים הציבוריים האחרונים נשארים 977 / 878 / 2,950 עד שה-reconciliation יחשב את התוצאה הקנונית."
+      "blocked_candidate_count": 1,
+      "crawler_retry": false,
+      "access_control_bypassed": false
     },
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
@@ -1080,426 +701,34 @@
       "124",
       "125",
       "126",
-      "127"
+      "127",
+      "128"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
-      "schema": "maaneh-ledorot-content-research-batch-v1",
-      "batch_id": "126",
-      "batch_file": "data/items/content-research-batch-126-2026-11-16.json",
+      "batch_id": "128",
+      "batch_file": "data/items/content-research-batch-128-2026-11-16.json",
       "generated": "2026-11-16",
-      "reviewed_at": "2026-11-16T22:10:29+02:00",
-      "title": "Batch 126 — 11 inspected bilingual Hayom Yom entries (20–30 Menachem Av 5703), Hebrew/Yiddish original excerpts, and in-place scope enrichment of AID 528819",
+      "reviewed_at": "2026-11-16T23:12:56+02:00",
       "status": "pending_reconciliation",
-      "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 15,
-      "source_bodies_inspected": 12,
-      "source_body_pages_opened": 15,
-      "metadata_only_items_rechecked": 0,
-      "search_extracts_used_as_content": 0,
-      "new_source_identities": 11,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 19,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 20,
-      "answer_eligible_source_families_added": 11,
-      "independent_witnesses_added": 11,
-      "non_independent_presentations_added": 0,
-      "related_same_family_presentations_documented": 1,
-      "content_verified_unique_sources_added": 0,
-      "new_aids": [
-        3316840,
-        3316843,
-        3316846,
-        3316847,
-        3316850,
-        3316852,
-        3316854,
-        3316856,
-        3316858,
-        3316863,
-        3316866
-      ],
-      "enriched_aids": [
-        528819
-      ],
-      "rechecked_aids": [],
-      "blocked_candidate_count": 3,
-      "blocked_candidates": [
-        {
-          "aid": 528820,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/528820/jewish/page.htm",
-          "route": "direct public publisher page open",
-          "reason": "Internal Error; no readable source body was returned.",
-          "handling": "לא בוצע ניסיון חוזר ולא נעקפה בקרת גישה. באותה הפעלה נפתחו עמודים דו-לשוניים נגישים של Chabad.org עם קטע מקורי בעברית או ביידיש, ונבדקו גופי הפרסום עצמם."
-        },
-        {
-          "aid": 528821,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/528821/jewish/page.htm",
-          "route": "direct public publisher page open",
-          "reason": "Internal Error; no readable source body was returned.",
-          "handling": "לא בוצע ניסיון חוזר ולא נעקפה בקרת גישה. באותה הפעלה נפתחו עמודים דו-לשוניים נגישים של Chabad.org עם קטע מקורי בעברית או ביידיש, ונבדקו גופי הפרסום עצמם."
-        },
-        {
-          "aid": 528822,
-          "url": "https://www.chabad.org/therebbe/article_cdo/aid/528822/jewish/page.htm",
-          "route": "direct public publisher page open",
-          "reason": "Internal Error; no readable source body was returned.",
-          "handling": "לא בוצע ניסיון חוזר ולא נעקפה בקרת גישה. באותה הפעלה נפתחו עמודים דו-לשוניים נגישים של Chabad.org עם קטע מקורי בעברית או ביידיש, ונבדקו גופי הפרסום עצמם."
-        }
-      ],
-      "excluded_candidate_count": 0,
-      "excluded_candidates": [],
-      "fallback_source_attempted": true,
-      "fallback_source_results": {
-        "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-        "accessible_item_level_bodies": 11,
-        "existing_identity_bodies": 1,
-        "body_text_inspected": true,
-        "inspected_aids": [
-          3316840,
-          3316843,
-          3316846,
-          3316847,
-          3316850,
-          3316852,
-          3316854,
-          3316856,
-          3316858,
-          3316863,
-          3316866
-        ],
-        "existing_identity_aids": [
-          528819
-        ],
-        "translated_alternative_page_accessed": 11,
-        "original_language_text_visible_on_alternative_page": true,
-        "translations_counted_as_independent_witnesses": 0,
-        "metadata_only_pages_opened": 0,
-        "notes": "שלוש הפניות ישירות למזהי מועמד 528820–528822 החזירו Internal Error ללא גוף קריא. באותה הפעלה נפתחו 11 עמודים נגישים מאותו מו״ל באוסף Sichos in English, ובהם קטעי מקור בעברית/יידיש לצד תרגום אנגלי; נבדקו רק הקטעים המקוריים בשפתם. נוסף לכך נבדק פרסום מקביל AID 3316836 לצורך העשרת AID 528819. התרגומים וההערות העריכתיות לא נספרו כעדים עצמאיים ולא שימשו בסיס לפרופוזיציות."
-      },
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "scan_only_verification_used": false,
-      "translations_counted_as_independent_witnesses": 0,
+      "new_source_identities": 18,
+      "existing_identities_enriched": 5,
+      "new_response_propositions": 24,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1246,
+        "answer_eligible_unique_sources": 1272,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3382
+        "answer_eligible_propositions": 3425
       },
-      "metrics_before_source": "גבול שרשרת צפוי לאחר batch125 בלבד, אינו מדד שנמדד. public-metrics.json האחרון מציג 977 / 878 / 2,950; project-state.json מציג 977 / 870 / 2,950. השרשרת 099–125 ממתינה ל-reconciliation.",
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1257,
+        "answer_eligible_unique_sources": 1290,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3402
+        "answer_eligible_propositions": 3449
       },
-      "metrics_actual_before": null,
       "metrics_actual_after": null,
-      "reconciliation_variance": null,
-      "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 11,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 20
-      },
-      "metrics_attribution_note": "תוספת צפויה של 11 Evidence Families ו-19 פרופוזיציות חדשות, ועוד פרופוזיציה אחת בהעשרה in-place של AID 528819. לא קודם מקור ל-Verified; המדדים הם גבול צפוי בלבד עד reconciliation.",
-      "language_distribution": {
-        "Hebrew": 8,
-        "Yiddish": 3
-      },
-      "original_language_distribution": {
-        "Hebrew": 8,
-        "Yiddish": 3
-      },
-      "reviewed_body_language_distribution": {
-        "Hebrew": 8,
-        "Yiddish": 3
-      },
-      "source_languages": [
-        "Hebrew",
-        "Yiddish"
-      ],
-      "source_type_distribution": {
-        "bilingual_published_hebrew_hayom_yom_entry": 8,
-        "bilingual_published_yiddish_hayom_yom_entry": 3
-      },
-      "evidence_family_ids": [
-        "hayom-yom-כ-menachem-av-5703",
-        "hayom-yom-כא-menachem-av-5703",
-        "hayom-yom-כב-menachem-av-5703",
-        "hayom-yom-כג-menachem-av-5703",
-        "hayom-yom-כד-menachem-av-5703",
-        "hayom-yom-כה-menachem-av-5703",
-        "hayom-yom-כו-menachem-av-5703",
-        "hayom-yom-כז-menachem-av-5703",
-        "hayom-yom-כח-menachem-av-5703",
-        "hayom-yom-כט-menachem-av-5703",
-        "hayom-yom-ל-menachem-av-5703"
-      ],
-      "same_family_items": [
-        {
-          "aid": 3316836,
-          "canonical_aid": 528819,
-          "evidence_family_id": "hayom-yom-528819-5703",
-          "independent_witness": false,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316836/jewish/19-Menachem-Av.htm",
-          "note": "פרסום דו-לשוני מאוחר של אותו ערך יומי; שימש רק להבהרת היקף המנהג ואינו עד עצמאי."
-        }
-      ],
-      "existing_identity_updates": [
-        {
-          "action": "enriched_existing_identity_in_place",
-          "aid": 528819,
-          "id": "hayom-yom-528819-5703",
-          "canonical_file": "data/items/content-research-batch-125-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-528819-5703",
-          "existing_propositions_before": 2,
-          "propositions_added": 1,
-          "total_propositions_after": 3,
-          "locator": "Chabad.org/TheRebbe.org AID 3316836, original Hebrew passage, line 245.",
-          "locators": [
-            "Chabad.org/TheRebbe.org AID 3316836, original Hebrew passage, line 245."
-          ],
-          "note": "נפתח ונבדק הפרסום הדו-לשוני AID 3316836; נעשה שימוש רק בקטע המקורי בעברית בשורה 245. נוספה פרפרזה המבהירה שההוראות מתוארות כמנהג למי שמניחים ארבעה זוגות תפילין, ולא כחיוב כללי. זהו אותו ערך יומי כמו AID 528819; לא נוצרה זהות חדשה והפרסום המקביל אינו עד עצמאי."
-        }
-      ],
-      "not_promoted_after_inspection": [
-        {
-          "aid": 3316840,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316843,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316846,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316847,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316850,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316852,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316854,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316856,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316858,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316863,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        },
-        {
-          "aid": 3316866,
-          "status": "Parsed",
-          "reason": "נבדק קטע מקורי בפרסום דו-לשוני מאוחר; לא נבדקו מהדורת 5703 המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי; אין בסיס לקידום ל-Verified."
-        }
-      ],
-      "deduplication_check": {
-        "new_aids_unique": true,
-        "new_source_urls_unique": true,
-        "new_evidence_families_unique": true,
-        "unique_new_aid_count": 11,
-        "unique_new_family_count": 11,
-        "same_family_duplicate_count": 0,
-        "duplicate_alias_identities": 0,
-        "translations_counted_as_independent_witnesses": 0,
-        "canonical_identity_collisions": [],
-        "missing_canonical_identities": [],
-        "all_target_identities_answer_eligible": null,
-        "full_index_scan_available": true,
-        "full_index_scan_pending_reconciliation": true,
-        "full_index_scan_completed_at": "2026-11-16",
-        "checked_against": "נסרק public-search-index.json המלא שהופק ב-15.11.2026 (9,122 רשומות) ונבדקו 11 ה-AID החדשים; לא נמצאו התאמות מדויקות. תור הביקורת הנוכחי בן 1,022 רשומות נבדק גם הוא ללא התאמות. האינדקס קדם לאצוות 099–125, ולכן בדיקת זהות קנונית מלאה, alias collisions ואישור כשירות סופיים יושלמו ב-reconciliation."
-      },
-      "note": "נבדקו 11 גופי פרסום דו-לשוניים, מהם 8 עם קטע מקורי בעברית ו-3 עם קטע מקורי ביידיש. נוספו 19 פרפרזות לא-מילוליות והועשרה זהות קיימת אחת בפרופוזיציה נוספת. תרגומים אינם עדים עצמאיים; כל המקורות נשארים Parsed ובהקשר חלקי.",
-      "source_body_review": [
-        {
-          "aid": 3316840,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורה 255",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כ-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316840 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורה 255; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316843,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורות 255–256",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כא-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316843 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורות 255–256; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316846,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורה 256",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כב-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316846 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורה 256; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316847,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורה 255",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כג-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316847 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורה 255; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316850,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Yiddish",
-          "original_language": "Yiddish",
-          "body_locator": "שורות 255–256",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כד-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316850 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Yiddish בשורות שורות 255–256; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316852,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורה 255",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כה-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316852 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורה 255; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316854,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Yiddish",
-          "original_language": "Yiddish",
-          "body_locator": "שורה 255",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כו-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316854 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Yiddish בשורות שורה 255; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316856,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורות 256, 259–261",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כז-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316856 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורות 256, 259–261; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316858,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורות 256–257",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כח-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316858 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורות 256–257; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316863,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Yiddish",
-          "original_language": "Yiddish",
-          "body_locator": "שורה 256",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-כט-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316863 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Yiddish בשורות שורה 256; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 3316866,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": false,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "שורות 256, 260",
-          "canonical_file": "data/items/content-research-batch-126-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-ל-menachem-av-5703",
-          "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3316866 מתוך Sichos in English Collection ביום 16.11.2026. נבדק רק הקטע המקורי בשפת Hebrew בשורות שורות 256, 260; התרגום האנגלי והקטעים העריכתיים הנלווים אינם משמשים בסיס לפרופוזיציות ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-          "handling": "נפתח ונבדק הקטע המקורי בשפתו; התרגום וההערות העריכתיות לא שימשו בסיס לפרופוזיציות."
-        },
-        {
-          "aid": 528819,
-          "body_text_inspected": true,
-          "inspected_original_language_body": true,
-          "existing_identity": true,
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "body_locator": "Chabad.org/TheRebbe.org AID 3316836, original Hebrew line 245",
-          "canonical_file": "data/items/content-research-batch-125-2026-11-16.json",
-          "evidence_family_id": "hayom-yom-528819-5703",
-          "verification_scope": "נפתח ונבדק העמוד הדו-לשוני AID 3316836 ביום 16.11.2026; נבדק רק הקטע המקורי בעברית בשורה 245. מדובר בהצגה מאוחרת של אותו ערך AID 528819; לא נוצר עד עצמאי. לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית.",
-          "handling": "הועשרה זהות קיימת בפרופוזיציית היקף אחת; נשמרו אותו AID ואותה Evidence Family."
-        }
-      ],
-      "quality_gate_followup": "ריצות Answer Quality Gate ו-Hourly Corpus Maintenance האחרונות נכשלו על assert ישן שדרש 12 פרופוזיציות ב-AID 5959845, בעוד שהרשומה הקנונית מכילה 13 לאחר העשרות in-place. כל בדיקות האורך הדינמיות עודכנו ל-13; נוספו בדיקות אחזור וסינתזה לאצווה 126. נדרש reconciliation וריצה מלאה מחדש.",
-      "reconciliation_attempt_note": "לא נטען מדד בפועל לפני/אחרי. גבול צפוי אחרי batch125 הוא 1,246 / 854 / 3,382; הגבול הצפוי אחרי batch126 הוא 1,257 / 854 / 3,402. המדדים הציבוריים האחרונים נשארים 977 / 878 / 2,950 עד שה-reconciliation יחשב את התוצאה הקנונית."
+      "blocked_candidate_count": 1,
+      "crawler_retry": false,
+      "access_control_bypassed": false
     }
   },
-  "current_batch": "127"
+  "current_batch": "128"
 }
