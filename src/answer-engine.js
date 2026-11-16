@@ -41,7 +41,7 @@ const TOPICS={
  נישואין:['שלום בית','נישוא','חתונ','אשה','marriage','wedding','husband','wife','sholom bayis'],
  'לימוד הלכה':['הלכה','הלכות','קיצור שולחן ערוך','לימוד הלכה','practical halacha','halacha','halachic study'],
  'שיקום לאחר פיגוע':['שיקום','פיגוע','אחרי הפיגוע','לאחר הפיגוע','recovery after attack','attack recovery'],
- 'הרחבת ישיבה':['מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','להגדיל','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים','להקל במידת ההתאמה','yeshiva enrollment','increase yeshiva enrollment'],
+ 'הרחבת ישיבה':['מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','הרחבת החינוך הישיבתי','להרחיב את החדרים','לקלוט תלמידים','תלמידים המבקשים להיכנס','דחיית ילדים המבקשים ללמוד','להגדיל','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים','להקל במידת ההתאמה','yeshiva enrollment','increase yeshiva enrollment'],
  'ל״ג בעומר':['ל״ג בעומר','לג בעומר','מירון','lag baomer','lag b omer'],
  'בית רבקה בראונסוויל':['בית רבקה בבראונסוויל','בתי הספר בית רבקה בבראונסוויל','בראונסוויל','brownsville','east new york beis rivka'],
  'שכחה וחלומות':['שכחה וחלומות','שכחה','חיזוק הזכרון','חלומות מטרידים','שיטות למידה','שיטות לזיכרון','חזרה על פרקי משנה','פרקי משנה בעל פה','תניא בעל פה','לימוד בעל פה','שינון','forgetfulness and dreams','memory and disturbing dreams','memory study methods','memorization techniques','reviewing memorized Mishnah','Mishnah by heart','Tanya by heart'],
@@ -685,7 +685,7 @@ export function propositionRelevance(e,u){
  ].filter(g=>u.topics.includes(g.topic));
  if(focusedWitnessGates.length&&!focusedWitnessGates.some(g=>g.ok))return{score:0,support:'insufficient_specific_evidence',reasons:[`No single witness satisfied any requested focused evidence gate: ${focusedWitnessGates.map(g=>g.topic).join(', ')}`]};
  if(u.topics.includes('הרחבת ישיבה')){
-  const explicitRecruitment=arr(e.response_propositions).some(p=>['לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
+  const explicitRecruitment=arr(e.response_propositions).some(p=>['להרחיב את החדרים','לקלוט תלמידים','תלמידים המבקשים להיכנס','דחיית ילדים המבקשים ללמוד','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים'].some(t=>containsTerm(p,t)));
   if(!explicitRecruitment)return{score:0,support:'insufficient_specific_evidence',reasons:['A yeshiva-enrollment answer requires an inspected proposition with an explicit recruitment/expansion action or target; decline and perseverance alone are not a recruitment plan.']};
  }
  if(u.topics.includes('קביעת מזוזה בדירה חדשה')){
