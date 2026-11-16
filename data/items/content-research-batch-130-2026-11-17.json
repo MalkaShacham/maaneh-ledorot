@@ -4,7 +4,7 @@
   "batch_file": "data/items/content-research-batch-130-2026-11-17.json",
   "generated": "2026-11-17",
   "reviewed_at": "2026-11-17T01:00:00+02:00",
-  "title": "Batch 130 — fifteen original-language Hayom Yom entries (16–30 Tishrei 5704), one English translated letter, one in-place Sicha enrichment and one blocked AID with date-page fallback",
+  "title": "Batch 130 — 14 original-language Hayom Yom AID entries, one non-independent English letter translation, one in-place Sicha enrichment and a blocked AID with non-promoted date-page fallback",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "reviewed_item_count": 18,
@@ -12,14 +12,14 @@
   "source_body_pages_opened": 18,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 16,
+  "new_source_identities": 15,
   "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 24,
+  "new_response_propositions": 23,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 25,
-  "answer_eligible_source_families_added": 16,
-  "independent_witnesses_added": 15,
+  "total_new_paraphrase_entries": 24,
+  "answer_eligible_source_families_added": 15,
+  "independent_witnesses_added": 14,
   "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "new_aids": [
@@ -39,9 +39,7 @@
     528891,
     2277337
   ],
-  "new_source_ids": [
-    "hayom-yom-5704-18-tishrei-date-page-2026-09-29"
-  ],
+  "new_source_ids": [],
   "enriched_aids": [
     5959845
   ],
@@ -83,9 +81,7 @@
       528891,
       2277337
     ],
-    "date_page_identity_ids": [
-      "hayom-yom-5704-18-tishrei-date-page-2026-09-29"
-    ],
+    "date_page_identity_ids": [],
     "existing_identity_aids": [
       5959845
     ],
@@ -93,7 +89,8 @@
       528879
     ],
     "translations_counted_as_independent_witnesses": 0,
-    "note": "נבדקו 14 גופי Hayom Yom עם AID, עמוד יום-יומי חלופי ללא AID, תרגום אנגלי של איגרת 531 והעשרה של גוף שיחה קיים. תרגום האיגרת סומן כלא-עצמאי; העמוד המתוארך לא קושר ל-AID 528879."
+    "note": "נבדקו 14 גופי Hayom Yom מקוריים עם AID, עמוד יומי חלופי ללא AID שנבדק אך לא קודם לזהות כדי למנוע כפילות אפשרית, תרגום אנגלי אחד של איגרת 531 והעשרה של גוף שיחה קיים. תרגום האיגרת סומן כלא-עצמאי; AID 528879 נחסם והחלופה המתוארכת לא קושרה אליו.",
+    "date_page_fallback_promoted": false
   },
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -101,22 +98,22 @@
   "scan_only_verification_used": false,
   "translations_counted_as_independent_witnesses": 0,
   "language_distribution": {
-    "Hebrew": 13,
+    "Hebrew": 12,
     "Yiddish": 2,
     "English": 1
   },
   "original_language_distribution": {
-    "Hebrew": 13,
+    "Hebrew": 12,
     "Yiddish": 2,
     "unknown": 1
   },
   "reviewed_body_language_distribution": {
-    "Hebrew": 14,
+    "Hebrew": 13,
     "Yiddish": 2,
     "English": 1
   },
   "source_type_distribution": {
-    "published_hebrew_hayom_yom_entry": 13,
+    "published_hebrew_hayom_yom_entry": 12,
     "published_yiddish_hayom_yom_entry": 2,
     "published_english_translated_correspondence": 1
   },
@@ -140,7 +137,6 @@
     "hayom-yom-528889-5704",
     "hayom-yom-528890-5704",
     "hayom-yom-528891-5704",
-    "hayom-yom-5704-18-tishrei",
     "igrot-letter-5710-6-tishrei-yehudah-chitrik"
   ],
   "same_family_items": [],
@@ -263,7 +259,7 @@
     "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
     "unique_new_aid_count": 15,
-    "unique_new_family_count": 16,
+    "unique_new_family_count": 15,
     "same_family_duplicate_count": 0,
     "duplicate_alias_identities": 0,
     "translations_counted_as_independent_witnesses": 0,
@@ -280,7 +276,8 @@
       "128",
       "129"
     ],
-    "note": "בדיקת כפילויות מקדימה בלבד; אין לטעון שאין התנגשויות קנוניות לפני סריקת האינדקס המלאה."
+    "note": "בדיקת כפילויות מקדימה בלבד; אין לטעון שאין התנגשויות קנוניות לפני סריקת האינדקס המלאה.",
+    "new_source_identity_count": 15
   },
   "metrics_before": {
     "answer_eligible_unique_sources": 1302,
@@ -289,16 +286,16 @@
   },
   "metrics_before_source": "גבול צפוי אחרי batch 129 בלבד, לא מדידה בפועל. public-metrics.json עדיין 977/878/2950 ו-project-state 977/870/2950; ריצת reconciliation קודמת מדדה workspace 1300/854/3474 אך לא שמרה אותו.",
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1318,
+    "answer_eligible_unique_sources": 1317,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3495
+    "answer_eligible_propositions": 3494
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 16,
+    "answer_eligible_unique_sources": 15,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 25
+    "answer_eligible_propositions": 24
   },
   "reconciliation_variance": null,
   "reconciliation_snapshot_adjustment": null,
@@ -510,9 +507,12 @@
       "existing_identity": false,
       "body_locator": "שורות 170–177",
       "web_source_ref": "turn773210view0",
-      "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-      "evidence_family_id": "hayom-yom-5704-18-tishrei",
-      "verification_scope": "נפתח ונבדק עמוד הלימוד היומי של Chabad.org לתאריך 29.9.2026; גוף הערך המקורי בעברית מופיע בשורות 170–177 ומזהה את הערך כיח תשרי, ב דחוהמ״ס (תש״ד). נתיב AID 528879 החזיר Internal Error; לא נטען שהעמוד לפי תאריך הוא אותו AID, ולכן נשמרה זהות URL-ית ללא AID. לא נבדקו כתב־יד או מהדורה ביקורתית; ההקשר חלקי."
+      "canonical_file": null,
+      "evidence_family_id": null,
+      "verification_scope": "נפתח ונבדק עמוד הלימוד היומי של Chabad.org לתאריך 29.9.2026; גוף הערך המקורי בעברית מופיע בשורות 170–177 ומזהה את הערך כיח תשרי, ב דחוהמ״ס (תש״ד). נתיב AID 528879 החזיר Internal Error; לא נטען שהעמוד לפי תאריך הוא אותו AID, ולכן נשמרה זהות URL-ית ללא AID. לא נבדקו כתב־יד או מהדורה ביקורתית; ההקשר חלקי.",
+      "included_in_corpus": false,
+      "identity_resolution": "not_admitted",
+      "reason": "גוף הערך בעמוד התאריך נבדק כחלופה, אך לא אומת קשר ל-AID 528879. כדי להימנע מיצירת זהות כפולה או משפחת ראיות לא מבוססת, העמוד לא קודם לזהות חדשה."
     },
     {
       "aid": 2277337,
@@ -2060,110 +2060,6 @@
       }
     },
     {
-      "id": "hayom-yom-5704-18-tishrei-date-page-2026-09-29",
-      "canonical_key": "url:https://he.chabad.org/dailystudy/hayomyom.asp?tdate=9%2F29%2F2026",
-      "aid": null,
-      "type": "hayom_yom_entry",
-      "title": "יח תשרי, ב דחוהמ״ס [בחו״ל] — עמוד לימוד יומי מתוארך",
-      "source_class": "Hayom Yom",
-      "source_class_detail": "עמוד לימוד יומי של Chabad.org המכיל את גוף הערך המקורי בעברית; לא יוחס לו AID משום שהנתיב הישיר למועמד AID 528879 החזיר Internal Error.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "collection": "היום יום — תשרי ה׳תש״ד",
-      "date_original": "יום ראשון | יח תשרי, ב דחוהמ״ס [בחו״ל] | (תש״ד)",
-      "date": "יח תשרי, ב דחוהמ״ס [בחו״ל]",
-      "date_precision": "exact_as_publisher",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "source_url": "https://he.chabad.org/dailystudy/hayomyom.asp?tdate=9%2F29%2F2026",
-      "translation_status": "גוף הערך המקורי בעברית נבדק בעמוד הלימוד היומי; לא הוסק AID ולא נספר תרגום כעד.",
-      "summary_researcher": "העמוד היומי מתעד את סדר אמירת ההושענות בהושענא רבה: אומרים את ״אום אני חומה״ ואת ״אדון המושיע״, מקיפים פעם אחת בלבד, אומרים ״הושענא״ בראש ובסוף לפי האותיות שהשליח ציבור אומר בקול, ומתחילים בקול רם באות ס׳ או ע׳ ומשלימים את ההקפה באות ת׳. זהו תיעוד מנהגי הערך כפי שהוצג בעמוד התאריך; לא יוחס AID לפריט משום שנתיב ה-AID הישיר לא היה נגיש.",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "response_propositions": [
-        "העמוד היומי מתעד את סדר אמירת ההושענות בהושענא רבה: אומרים את ״אום אני חומה״ ואת ״אדון המושיע״, מקיפים פעם אחת בלבד, אומרים ״הושענא״ בראש ובסוף לפי האותיות שהשליח ציבור אומר בקול, ומתחילים בקול רם באות ס׳ או ע׳ ומשלימים את ההקפה באות ת׳. זהו תיעוד מנהגי הערך כפי שהוצג בעמוד התאריך; לא יוחס AID לפריט משום שנתיב ה-AID הישיר לא היה נגיש."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org, עמוד לימוד יומי tdate=9/29/2026, גוף הערך בעברית, שורות 175–177."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org, עמוד לימוד יומי tdate=9/29/2026, גוף הערך בעברית, שורות 175–177.",
-      "evidence_family_id": "hayom-yom-5704-18-tishrei",
-      "parent_evidence_family_id": null,
-      "independent_witness": true,
-      "translation_of_evidence_family_id": null,
-      "documented_circumstances": "ערך יום יום מתוארך ליח תשרי תש״ד; נבדק דרך עמוד הלימוד היומי הציבורי של Chabad.org לתאריך 29.9.2026.",
-      "question_or_problem": "העמוד היומי מתעד את סדר אמירת ההושענות בהושענא רבה: אומרים את ״אום אני חומה״ ואת ״אדון המושיע״, מקיפים פעם אחת בלבד, אומרים ״הושענא״ בראש ובסוף לפי האותיות שהשליח ציבור אומר בקול, ומתחילים בקול רם באות ס׳ או ע׳ ומשלימים את ההקפה באות ת׳. זהו תיעוד מנהגי הערך כפי שהוצג בעמוד התאריך; לא יוחס AID לפריט משום שנתיב ה-AID הישיר לא היה נגיש.",
-      "conditions_or_qualifications": [
-        "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-        "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-        "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-        "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-        "לא הועתק טקסט מוגן במלואו.",
-        "הנתיב הישיר למועמד AID 528879 החזיר Internal Error; לא הונח שהעמוד המתוארך הוא אותו AID. זהות הפריט מבוססת על URL מתוארך וגוף הערך הגלוי בלבד."
-      ],
-      "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-      "primary_secondary_status": "עד טקסטואלי של גוף הערך כפי שהוצג בעמוד הלימוד היומי של המו״ל; אין AID מאומת ואין אימות אוטוגרפי.",
-      "witness_type": "published_hebrew_hayom_yom_entry_via_daily_study_page",
-      "relations": [],
-      "identity_note": "זהות URL-ית נפרדת לערך יח תשרי תש״ד; לא יוחס לה AID 528879 ולא נקבע קשר זהות עם הנתיב החסום.",
-      "witness": {
-        "kind": "text",
-        "state": "published_body_inspected",
-        "publisher": "Kehot / Chabad.org",
-        "language": "Hebrew",
-        "scope": "עמוד tdate=9/29/2026, שורות 170–177",
-        "complete_partial": "partial",
-        "notes": "גוף הערך נבדק; ה-AID הישיר לא היה נגיש ולכן לא נוצר שיוך AID."
-      },
-      "provenance": {
-        "authorship_status": "העמוד מציג ערך מתוך האנתולוגיה היום יום; זהות ה-AID לא אומתה.",
-        "signature_status": "לא נבדק אוטוגרף או חתימה.",
-        "source_witness": "Kehot / Chabad.org, עמוד הלימוד היומי tdate=9/29/2026; גוף הערך בעברית נבדק.",
-        "transmission_type": "עמוד לימוד יומי מתוארך המציג את גוף הערך.",
-        "textual_status": "גוף הערך בעברית נבדק בשורות 170–177; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא־מילולית בלבד.",
-        "verification_status": "נפתח ונבדק עמוד הלימוד היומי של Chabad.org לתאריך 29.9.2026; גוף הערך המקורי בעברית מופיע בשורות 170–177 ומזהה את הערך כיח תשרי, ב דחוהמ״ס (תש״ד). נתיב AID 528879 החזיר Internal Error; לא נטען שהעמוד לפי תאריך הוא אותו AID, ולכן נשמרה זהות URL-ית ללא AID. לא נבדקו כתב־יד או מהדורה ביקורתית; ההקשר חלקי.",
-        "source_url": "https://he.chabad.org/dailystudy/hayomyom.asp?tdate=9%2F29%2F2026",
-        "accessed": "2026-11-17"
-      },
-      "witness_provenance": "Kehot / Chabad.org, עמוד הלימוד היומי tdate=9/29/2026; גוף הערך בעברית נבדק.",
-      "verification_scope": "נפתח ונבדק עמוד הלימוד היומי של Chabad.org לתאריך 29.9.2026; גוף הערך המקורי בעברית מופיע בשורות 170–177 ומזהה את הערך כיח תשרי, ב דחוהמ״ס (תש״ד). נתיב AID 528879 החזיר Internal Error; לא נטען שהעמוד לפי תאריך הוא אותו AID, ולכן נשמרה זהות URL-ית ללא AID. לא נבדקו כתב־יד או מהדורה ביקורתית; ההקשר חלקי.",
-      "source_witness": "Kehot / Chabad.org, עמוד הלימוד היומי tdate=9/29/2026; גוף הערך בעברית נבדק.",
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "status": "public_publisher_body_opened",
-        "reuse_notes": "נשמרו קישור ותמצית לא־מילולית בלבד."
-      },
-      "rights_status": "copyrighted-link-only",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "היום יום",
-          "יח תשרי, ב דחוהמ״ס"
-        ],
-        "research_terms": [
-          "הושענא רבה",
-          "הושענות",
-          "אום אני חומה",
-          "אדון המושיע"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "נבדק גוף הערך בעמוד התאריך; לא נגזר תוכן מהכותרת בלבד; לא הוקצה AID.",
-      "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-      "locator": {
-        "publisher": "Kehot / Chabad.org",
-        "source_url": "https://he.chabad.org/dailystudy/hayomyom.asp?tdate=9%2F29%2F2026",
-        "body_locator": "שורות 170–177"
-      }
-    },
-    {
       "id": "chabad-letter-2277337-5710-6-tishrei",
       "canonical_key": "aid:2277337",
       "aid": 2277337,
@@ -2276,5 +2172,5 @@
       }
     }
   ],
-  "note": "נבדקו 15 פריטי Hayom Yom בשפת המקור (14 עם AID ועוד עמוד מתוארך ללא AID), וכן תרגום אנגלי אחד של איגרת 531 והעשרה של שיחה קיימת. נוספו 24 פרופוזיציות חדשות ופרופוזיציה אחת לזהות קיימת. התרגום סומן כלא-עצמאי; AID 528879 נחסם והחלופה המתוארכת נרשמה ללא שיוך AID. כל הזהויות נשארות Parsed ובהקשר חלקי; לא קודם מקור ל-Verified."
+  "note": "נבדקו 14 ערכי Hayom Yom מקוריים עם AID (12 בעברית ו-2 ביידיש), תרגום אנגלי אחד של איגרת 531 שאינו עד עצמאי, וכן גוף עמוד תאריך חלופי שנבדק אך לא קודם משום שלא אומת קשרו ל-AID 528879. נוספו 23 פרופוזיציות חדשות והועשרה זהות AID 5959845 בפרופוזיציה אחת נוספת. כל הזהויות נשארות Parsed ובהקשר חלקי; לא קודם מקור ל-Verified."
 }
