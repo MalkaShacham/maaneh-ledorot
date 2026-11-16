@@ -4079,8 +4079,8 @@ assert(['reconciled','reconciled_with_variance'].includes(batch129Data.reconcili
 assert.deepEqual(readinessMetrics(batch129Data.metrics_actual_after),readinessMetrics(batch130Data.metrics_actual_before));
 assert.deepEqual(readinessMetrics(batch130Data.metrics_actual_after),readinessMetrics(metrics));
  
-// Batch 130: fifteen original-language Hayom Yom entries (14 AID pages plus one
-// date-addressed body without an AID), one non-independent English translation,
+// Batch 130: fourteen original-language Hayom Yom AID entries, one
+// non-independent English translation,
 // and one in-place Sicha enrichment.
 assert.equal(batch130Data.batch_id,'130');assert.equal(batch130Data.batch_file,batch130Path);
 assert.equal(batch130Data.records.length,15);assert.deepEqual(batch130Data.new_aids,batch130Aids);
