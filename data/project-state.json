@@ -147,14 +147,14 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_114_reconciliation",
+      "run_status": "pending_after_immigrant_children_retrieval_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "The latest reconciliation run 43802854595 reached node scripts/test_content_readiness.mjs and failed at line 1247 with ReferenceError: readFileSync is not defined. This commit replaces the undeclared synchronous file read with the already-imported async readFile/root URL pattern, adds batch-114 assertions, and tests multi-source rabbinic-responsibility retrieval in regular and researcher modes. The prior run did not commit regenerated metrics."
+      "note": "Commit 27c51e5 fixed the readFileSync ReferenceError, and reconciliation measured 1,102 answer-eligible unique sources / 854 content-verified unique sources / 3,183 propositions in the runner workspace. Both reconciliation and Answer Quality Gate then failed at the existing educational-influence regression: AID 2278261 was not retained in the top-36 retrieval window. The previous helper referenced s.immigrantChildren without defining it. This patch defines the original-language immigrant-children signal and gives that exact inspected proposition a relevance bonus, while preserving its derived/non-independent family. It also adds core rabbinic-responsibility aliases and separates the multi-source rabbi/yeshivah query from the direct Sicha teacher-student query."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",

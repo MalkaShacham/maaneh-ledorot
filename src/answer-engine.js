@@ -15,7 +15,7 @@ const TOPICS={
  'ניצול הזמן והתגברות על עצלות':['ניצול הזמן','בזבוז זמן','עצלות','מתנת הזמן','זמן ויכולת שכלית','overcome laziness','waste time','gift of time'],
  'ניהול מחשבות והסחת הדעת':['ניהול מחשבות','הסחת דעת','להסיח דעת','מחשבות מטרידות','חזרה לבעיה בבהירות','rumination','dismiss problems from the mind','fresh mind'],
  'השקעה בלימוד מקצוע ובעתיד':['לימוד מקצוע','השקעה בעתיד','השקעה ארוכת טווח','לימוד מקצועי','תכנון עתיד','professional training','investment in future','greater achievement'],
- 'אחריות חינוכית והשפעה על הזולת':['אחריות תלמידי הישיבות','חינוך בני נוער','השפעה על הזולת','לקרב ולחזק','חינוך כשר','בן חכם ובן רשע','spiritual charity','influence others','education of children','השפעה על יהודי אחד','השפעה על אדם אחד','חינוך ילדים יהודים','חינוך ילדי עולים','הצלת ילדים בארץ ישראל','פעולה מעשית ולא דיבור','מעשה ולא דיבור','חינוך והפצת תורה','influence one individual','immigrant children education','practical action in outreach'],
+ 'אחריות חינוכית והשפעה על הזולת':['אחריות תלמידי הישיבות','חינוך בני נוער','השפעה על הזולת','לקרב ולחזק','חינוך כשר','בן חכם ובן רשע','spiritual charity','influence others','education of children','השפעה על יהודי אחד','השפעה על אדם אחד','חינוך ילדים יהודים','חינוך ילדי עולים','הצלת ילדים בארץ ישראל','פעולה מעשית ולא דיבור','מעשה ולא דיבור','חינוך והפצת תורה','influence one individual','immigrant children education','practical action in outreach','אחריות הרב','אחריות רבנית','רבנים','רב ותלמידים','השפעה על תלמידים','זיכוי הרבים','לזכות את הרבים','מזכי הרבים','מחטיאי הרבים','חינוך הציבור','rabbinic responsibility','public spiritual responsibility'],
  'צדקה רוחנית וחינוך':['צדקה רוחנית','צדקה גשמית','לקרב לתורה','חינוך ילדים','spiritual charity','spiritual tzedakah','education of children','yeshivah students'],
  'השפעת היחיד והארת הסביבה':['אדם אחד','יחיד','השפעה על העולם','להאיר את הסביבה','one individual','whole creation','beacon of light'],
  'שמיטה ומטרת החיים':['שמיטה','שנת השמיטה','שבת לה׳','Shemittah','Sabbatical year','Sabbath unto G-d','spiritual goal'],
@@ -1013,13 +1013,14 @@ function educationalInfluenceActionSignals(source){
  const influence=['השפעה','להשפיע','השפיע','influence'].some(t=>body.includes(t));
  const individual=['אדם יחיד','אדם אחד','יהודי אחד','נפש אחת','איש אחד','one person','single person','one jew','single jew','one soul'].some(t=>body.includes(t));
  const children=body.includes('ילדים')&&(body.includes('חינוך')||body.includes('חינוכ')||body.includes('education'));
+ const immigrantChildren=['ילדים עולים','ילדי עולים','ילדים מהגרים','immigrant children','children of immigrants','immigrant-child'].some(t=>body.includes(t));
  const action=['פעולה','מעשה','עשייה','מאמץ','השקעה','פעולה ממשית','לפעול','action','doing','effort'].some(t=>body.includes(t));
  const speech=['דיבור','מילים','speech','words'].some(t=>body.includes(t));
- return{influence,individual,children,action,speech};
+ return{influence,individual,children,immigrantChildren,action,speech};
 }
 function educationalInfluenceActionScore(source){
  const s=educationalInfluenceActionSignals(source);
- return (s.influence?8:0)+(s.individual?24:0)+(s.children?18:0)+(s.action?14:0)+(s.speech?14:0)+(s.influence&&s.individual?8:0);
+ return (s.influence?8:0)+(s.individual?24:0)+(s.children?18:0)+(s.action?14:0)+(s.speech?14:0)+(s.influence&&s.individual?8:0)+(s.immigrantChildren?60:0);
 }
 function supportsEducationalInfluenceActionSource(source){
  const s=educationalInfluenceActionSignals(source);
