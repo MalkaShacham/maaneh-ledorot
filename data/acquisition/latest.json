@@ -34,7 +34,7 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1051,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3119
+      "answer_eligible_propositions": 3111
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -65,7 +65,13 @@
     "language_distribution": {
       "Hebrew": 6,
       "Yiddish": 2
-    }
+    },
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
+    "metrics_attribution_note": "Eight propositions were added in place to canonical records in batches 106 and 107; they are reflected in those earlier-file snapshots. Batch 109 is an audit-only manifest with zero separate boundary delta."
   },
   "previous_manual_web_review": {
     "batch_id": "108",
@@ -2496,7 +2502,7 @@
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 1051,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3119
+        "answer_eligible_propositions": 3111
       },
       "metrics_actual_after": null,
       "reconciliation_variance": null,
@@ -2527,6 +2533,11 @@
       "language_distribution": {
         "Hebrew": 6,
         "Yiddish": 2
+      },
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 0
       }
     }
   ],
@@ -2669,7 +2680,7 @@
     },
     "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
   },
-  "next_action": "Run full-index reconciliation through batch 109, then pass test_content_readiness.mjs, question-specific retrieval, cross-source synthesis, claim-local citations and deep researcher evidence-map checks; verify Actions and Pages.",
+  "next_action": "Fix the Yiddish retrieval TDZ, rerun full-index reconciliation and content-readiness tests, then verify the published metrics and Pages deployment. Preliminary workspace snapshot: 1,050 answer-eligible sources / 854 content-Verified / 3,117 propositions; not yet committed.",
   "last_manual_web_review": {
     "batch_id": "109",
     "batch_file": "data/items/content-research-batch-109-2026-11-16.json",
@@ -2698,7 +2709,7 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1051,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3119
+      "answer_eligible_propositions": 3111
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -2729,6 +2740,12 @@
     "language_distribution": {
       "Hebrew": 6,
       "Yiddish": 2
-    }
+    },
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
+    "metrics_attribution_note": "Eight propositions were added in place to canonical records in batches 106 and 107; they are reflected in those earlier-file snapshots. Batch 109 is an audit-only manifest with zero separate boundary delta."
   }
 }

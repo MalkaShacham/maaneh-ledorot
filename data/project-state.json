@@ -64,7 +64,7 @@
     "Batch 107: 10 new source identities, one in-place Hebrew enrichment, 21 non-verbatim source-grounded propositions; public metrics await full reconciliation.",
     "Full-index reconciliation and content-readiness verification pending through batch 109; no status promotions were made."
   ],
-  "next_work": "Run full-index reconciliation for the contiguous pending chain through batch 109 (expected 1,051 answer-eligible Evidence Families / 854 content-Verified sources / 3,119 propositions). Then pass test_content_readiness.mjs, Yiddish Hayom Yom proposition-level retrieval in regular and researcher modes, multi-source synthesis, claim-local citations, deep researcher evidence maps and workflow-write-safety checks. Verify Actions and the published Pages metrics before reporting completion.",
+  "next_work": "Move yiddishHayomYomQuestion before its first use in buildAnswerModel; rerun full-index reconciliation for pending batches through 109; make test_content_readiness accept measured batch-level variance while enforcing the exact final public snapshot. Preliminary workspace metrics were 1,050 answer-eligible sources / 854 content-Verified / 3,117 propositions, but were not committed because the retrieval test failed. Then verify Actions and Pages.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation",
@@ -98,7 +98,7 @@
       "expected_after": {
         "answer_eligible_unique_sources": 1051,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3119
+        "answer_eligible_propositions": 3111
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -121,22 +121,22 @@
         "108",
         "109"
       ],
-      "baseline_correction": "The old 878 and 870 content-Verified values are stale. Conservative status normalization in run 43755991899 measured 854 content-Verified sources; batches 105–109 keep all newly inspected items Parsed. The current full-chain target is 1,051 answer-eligible Evidence Families / 854 content-Verified sources / 3,119 distinct propositions before measured reconciliation variance."
+      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance."
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_batch_109_reconciliation_and_retrieval_fix",
+      "run_status": "pending_after_yiddish_tdz_fix_and_reconciliation",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Latest observed failures: run 43776237717 stopped at test_content_readiness line 1008 because acquisitionState was declared at line 1234; run 43775266933 failed the Yiddish Hayom Yom retrieval assertion. This commit moves acquisitionState before first use, removes stale historical checks against the current acquisition pointer, adds batch-109 assertions, and adds a proposition-level Yiddish-original retrieval gate. Commit-bound Actions must verify both fixes."
+      "note": "Commit d44457e triggered Actions. Run 43785321364 failed in question-specific retrieval because yiddishHayomYomQuestion was referenced before its const initialization at answer-engine.js:1503. The same preliminary reconciliation measured 1,050/854/3,117; validation failed before public metrics were committed. Move the declaration before first use and update reconciliation assertions to reflect in-place enrichment and measured variance. The previous acquisitionState ReferenceError is fixed."
     },
     "publication": {
-      "status": "pending_full_chain_reconciliation_and_quality_gate",
+      "status": "pending_reconciliation_and_quality_gate",
       "url": "https://malkashacham.github.io/maaneh-ledorot"
     },
     "last_reconciled_at": "2026-11-15"
@@ -761,7 +761,12 @@
       "existing_identities_enriched": 8,
       "new_source_identities": 0,
       "existing_response_propositions_added": 8,
-      "status": "pending_reconciliation"
+      "status": "pending_reconciliation",
+      "preliminary_workspace_metrics": {
+        "answer_eligible_unique_sources": 1050,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3117
+      }
     }
   }
 }

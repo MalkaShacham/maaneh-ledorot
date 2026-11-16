@@ -33,18 +33,18 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3111
   },
-  "metrics_before_source": "Batch 108 expected-after baseline; full-chain reconciliation has not yet published the measured snapshot.",
+  "metrics_before_source": "Batch 108 expected-after baseline. The eight propositions were added in place to canonical records stored in batches 106 and 107, so they appear in those earlier-file snapshots; batch 109 is an audit-only manifest with zero separate boundary delta.",
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1051,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3119
+    "answer_eligible_propositions": 3111
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 0,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 8
+    "answer_eligible_propositions": 0
   },
   "new_aids": [],
   "enriched_aids": [
@@ -314,6 +314,6 @@
   "source_body_recheck": [],
   "duplicate_aliases_linked": [],
   "records": [],
-  "metrics_attribution_note": "אין זהויות או Evidence Families חדשות ואין קידום ל־Verified. נוספו שמונה פרפרזות לא־מילוליות לשמונה זהויות קיימות; מדד המשפחות צפוי להישאר 1,051, ומדד התוכן המאומת להישאר 854. מספר הפרופוזיציות המדויק ייקבע ב־full-index reconciliation.",
-  "reconciliation_notes": "השרשרת מתחברת ל־Batch 108: before 1,051/854/3,111; expected after 1,051/854/3,119. המדד actual_after נשאר null עד reconciliation."
+  "metrics_attribution_note": "Eight non-verbatim propositions were added in place to existing records in batch files 106 and 107. The current reconciliation algorithm reads those canonical files when calculating the earlier batch snapshots; therefore the eight additions are already reflected in the batch-106/107 snapshots and batch 109 is audit-only. No new identity or Evidence Family was created, no Verified promotion occurred, and the measured final snapshot must be taken from full-index reconciliation.",
+  "reconciliation_notes": "The expected boundary remains 1,051/854/3,111 (same as batch 108). A preliminary reconciliation on commit d44457e measured 1,050/854/3,117; the answer-quality gate then failed before validation completed, so these are diagnostic workspace metrics, not yet committed public metrics. The next successful reconciliation must record actual_after and variance."
 }

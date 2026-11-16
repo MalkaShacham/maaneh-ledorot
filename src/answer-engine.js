@@ -1500,6 +1500,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const earlyChildhoodEducationQuestion=isEarlyChildhoodEducationQuestion(understanding.query);
  const educationYouthGuidanceQuestion=isEducationYouthGuidanceQuestion(understanding.query)&&!earlyChildhoodEducationQuestion;
  const teshuvahLevelsQuestion=isTeshuvahLevelsQuestion(understanding.query);
+ const yiddishHayomYomQuestion=isYiddishHayomYomQuestion(understanding.query);
  if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
  if(!usable.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
@@ -1509,7 +1510,6 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const educationInfluenceActionQuestion=understanding.query.includes('השפעה')&&understanding.query.includes('חינוך')&&understanding.query.includes('מעשה')&&understanding.query.includes('דיבור');
  const fordLetterQuestion=understanding.query.toLowerCase().includes('president gerald ford')&&understanding.query.toLowerCase().includes('religious freedom')&&understanding.query.toLowerCase().includes('education');
  const yiddishMelodyQuestion=understanding.query.includes('ניגון')&&understanding.query.includes('רבי אברהם המלאך')&&understanding.query.includes('לכה דודי');
- const yiddishHayomYomQuestion=isYiddishHayomYomQuestion(understanding.query);
  const wellspringsDisseminationQuestion=understanding.query.includes('הפצת המעיינות')&&understanding.query.includes('פנימיות התורה');
  const jewishHomeSynthesisQuestion=understanding.query.includes('הבית היהודי')&&(understanding.query.includes('חנוכת הבית')||understanding.query.includes('מזוזה'));
  const youthEducationStudyQuestion=understanding.query.includes('לימוד בחברותא')&&understanding.query.includes('בני נוער')&&understanding.query.includes('התקדמות הדרגתית');
