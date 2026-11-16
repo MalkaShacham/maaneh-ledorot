@@ -65,12 +65,12 @@
     "Full-index reconciliation and content-readiness verification pending through batch 109; no status promotions were made.",
     "AID 528698: public reader returned Internal Error on 2026-11-16; no body inspected and no bypass attempted."
   ],
-  "next_work": "Reconcile pending batches 099–117, run test_content_readiness.mjs and the answer-quality gate, then verify Actions and live Pages metrics.",
+  "next_work": "Reconcile pending manual batches 099–119, run test_content_readiness.mjs and the answer-quality gate, then verify Actions and live Pages metrics.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation",
     "source": "data/public-metrics.json",
-    "generated": "2026-11-15",
+    "generated": "2026-11-16",
     "reconciliation_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "search_index_refresh_commit": "3a5e27a82ad0a97e358fc9eed6374d3110a0af71",
     "answer_readiness": {
@@ -97,9 +97,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1146,
+        "answer_eligible_unique_sources": 1156,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3229
+        "answer_eligible_propositions": 3242
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -123,29 +123,30 @@
         "115",
         "116",
         "117",
-        "118"
+        "118",
+        "119"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "118",
+        "batch_id": "119",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1135,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3214
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1146,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3229
         },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1156,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3242
+        },
         "metrics_after_actual": null,
         "metrics_delta_actual": null,
-        "new_source_identities": 11,
+        "new_source_identities": 10,
         "existing_identities_enriched": 1,
-        "source_bodies_inspected": 12,
-        "new_response_propositions": 12,
-        "existing_response_propositions_added": 3
+        "source_bodies_inspected": 11,
+        "new_response_propositions": 11,
+        "existing_response_propositions_added": 2
       },
       "status": "pending_reconciliation"
     },
@@ -205,26 +206,26 @@
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "118",
-      "batch_file": "data/items/content-research-batch-118-2026-11-16.json",
+      "batch_id": "119",
+      "batch_file": "data/items/content-research-batch-119-2026-11-16.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1135,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3214
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1146,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3229
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1156,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3242
+      },
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 11,
+      "new_source_identities": 10,
       "existing_identities_enriched": 1,
-      "source_bodies_inspected": 12,
-      "new_response_propositions": 12,
-      "existing_response_propositions_added": 3,
+      "source_bodies_inspected": 11,
+      "new_response_propositions": 11,
+      "existing_response_propositions_added": 2,
       "blocked_candidate_count": 1,
       "crawler_retry": false,
       "access_control_bypassed": false
@@ -785,7 +786,8 @@
       "115",
       "116",
       "117",
-      "118"
+      "118",
+      "119"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
