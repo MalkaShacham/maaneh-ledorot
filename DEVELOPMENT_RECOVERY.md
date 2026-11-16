@@ -922,3 +922,13 @@ A subsequent run (16.11.2026) then reached the historical batch-113 assertions a
 - Added readiness assertions for the new Hebrew/Yiddish entries, non-independent English translations, the three new AID 2989585 locators, and deep-researcher multi-source synthesis across the two letters. Current pointers now expect batch 120 and previous batch 119.
 - No source was promoted to Verified. The public metrics, public search index and Pages are not reported as updated until reconciliation, readiness and quality-gate checks complete.
 
+
+
+## Batch 121 — 16.11.2026, manual publisher-body review
+
+- Inspected 15 original-language dated *Hayom Yom* entries, AID 528748–528762, covering 9–23 Sivan 5703: 10 Hebrew and 5 Yiddish. All 15 public publisher pages opened directly and their item bodies were inspected; no search-result extract was used as source content.
+- Added 18 non-verbatim, source-grounded Hebrew research propositions across 15 new item identities and 15 distinct Evidence Families. All remain Parsed with partial context; no Verified promotion.
+- Enriched the existing Sicha identity AID 2989585 in place with three propositions from sections 34–35, lines 483–504. Its Evidence Family and Parsed status remain unchanged; attributions to David, the Baal Shem Tov and the Previous Rebbe are preserved.
+- No blocked page occurred in this batch; no crawler retry, access-control bypass, full-text reproduction, or scan-only content verification was used.
+- Expected boundary from batch 120: 1,175 answer-eligible unique sources / 854 content-verified sources / 3,270 propositions. Expected after batch 121: 1,190 / 854 / 3,291. These are batch expectations only; actual values remain pending the full canonical reconciliation of batches 099–121.
+- New batch file: `data/items/content-research-batch-121-2026-11-16.json`. Full index identity/Evidence Family scan, `test_content_readiness.mjs`, workflow results and Pages verification are required before reporting actual metrics or publication completion.
