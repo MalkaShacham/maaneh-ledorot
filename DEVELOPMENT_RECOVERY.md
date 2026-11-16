@@ -965,3 +965,8 @@ The first commit-bound reconciliation rebuilt the search index and measured 1,18
 ### 2026-11-16 follow-up — retrieval alias precision
 
 The first batch-123 commit expanded the existing “הרחבת ישיבה” topic with overly generic single-word aliases (including “ישיבה”, “תלמיד” and “חדרים”). The commit-bound readiness run exposed a false-positive topic classification: a separate question about rabbinic responsibility for educating children was incorrectly classified as yeshiva enrollment/expansion, and the regular-mode synthesis lost its required multiple Evidence Families. The broad aliases were removed. The topic now uses phrase-level query aliases and source-language evidence phrases (“הרחבת החינוך הישיבתי”, “קליטת תלמידים נוספים”, “להרחיב את החדרים בבניין”, “לקלוט תלמידים המבקשים להיכנס לישיבה”), preserving the intended AID 4754490 retrieval without using generic terms. A negative regression assertion now ensures the educational-responsibility question does not trigger the yeshiva-expansion topic. Reconciliation and all readiness gates remain pending a fresh run.
+
+
+### 2026-11-16 follow-up — batch file pointer
+
+After narrowing the yeshiva aliases, the readiness run passed the earlier topic-precision check and reached the latest-batch state assertions. It then failed because the batch-123 acquisition summary did not include its `batch_file` pointer. Added the canonical batch path to the batch file, current/last/previous acquisition review summaries and review history, and added an explicit test assertion. The failed run did not commit reconciled public metrics; a fresh run is required.

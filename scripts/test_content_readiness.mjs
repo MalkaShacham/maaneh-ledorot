@@ -3616,6 +3616,7 @@ assert.equal(batch122Data.existing_identity_updates.length,1);assert.equal(batch
 
 // Batch 123: fourteen new original-language daily entries and one in-place enrichment.
 assert.equal(batch123Data.batch_id,'123');
+assert.equal(batch123Data.batch_file,batch123Path);
 assert.equal(batch123Data.records.length,14);
 assert.deepEqual(batch123Data.new_aids,batch123Aids);
 assert.deepEqual(batch123Data.enriched_aids,[528765]);

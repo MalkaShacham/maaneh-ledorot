@@ -65,7 +65,8 @@
     "Full-index reconciliation and content-readiness verification pending through batch 109; no status promotions were made.",
     "AID 528698: public reader returned Internal Error on 2026-11-16; no body inspected and no bypass attempted.",
     "AID 4666220 was rechecked through the public web reader on 2026-11-16 and returned Internal Error without a readable body; no bypass was attempted. Fourteen accessible original-language Hayom Yom bodies and one existing identity were inspected as same-run fallback.",
-    "The first batch-123 reconciliation attempt stopped before commit because generic yeshiva aliases misclassified a separate educational-responsibility question. Phrase-level aliases and a negative regression assertion have been added; a new run is required."
+    "The first batch-123 reconciliation attempt stopped before commit because generic yeshiva aliases misclassified a separate educational-responsibility question. Phrase-level aliases and a negative regression assertion have been added; a new run is required.",
+    "Batch 123's first narrowed-alias readiness run reached the current-batch pointer checks and found manual_web_review.batch_file missing; the batch and acquisition history pointers now include it. Reconciliation did not commit metrics in that failed run."
   ],
   "next_work": "Rerun test_content_readiness.mjs, the answer-quality gate and batch reconciliation after narrowing yeshiva topic aliases; only then verify public metrics and Pages.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
@@ -159,16 +160,16 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "failed_on_education_responsibility_topic_overmatch_after_broad_aliases; narrowed_to_phrase_level",
+      "run_status": "failed_on_missing_batch_file_pointer_in_acquisition_summary; fixed",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "evaluated_commit": "ba2faa36a35da37bd71126b5511c2a87337f4155",
-      "workflow_run_id": 43927615189,
-      "note": "The batch-123 run fixed the prior AID 4754490 retrieval assertion but exposed a false-positive topic classification: generic yeshiva aliases caused an unrelated educational-responsibility question to trigger the expansion topic and lose multiple-family retrieval. Generic single-word aliases were removed; only phrase-level query and source-body terms remain. A negative regression assertion now guards the distinction. Re-run readiness, quality gate and reconciliation before publishing metrics.",
-      "bulk_reconcile_run_id": 43927615421,
-      "hourly_run_id": 43927615350
+      "evaluated_commit": "f90ad74c0c59b7a0c78648cc053a26b8dfbb4e36",
+      "workflow_run_id": 43928056046,
+      "note": "The narrowed phrase-level aliases passed the earlier educational-responsibility topic precision check. The next readiness run reached the current-batch pointer assertions and found acquisitionState.manual_web_review.batch_file missing; batch_file is now included in batch 123 and all current/history acquisition summary pointers, with an explicit regression assertion. Reconciliation and readiness must rerun.",
+      "bulk_reconcile_run_id": null,
+      "hourly_run_id": 43928056045
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
@@ -240,7 +241,7 @@
       "crawler_retry": false,
       "access_control_bypassed": false
     },
-    "last_run_note": "Batch 123: 14 new original-language Hebrew/Yiddish Hayom Yom identities (7–20 Tammuz 5703), 23 non-verbatim propositions, and one in-place enrichment of AID 528765 by splitting a broad proposition into two line-located claims. AID 4666220 returned Internal Error; 14 accessible daily-entry bodies and the existing AID 528765 body were inspected in the same run. All new identities remain Parsed/partial; no Verified promotion. Follow-up: run 43927615189/43927615350/43927615421 exposed an over-broad yeshiva-expansion alias that misclassified a general educational-responsibility question; narrowed to phrase-level aliases and added a negative regression assertion. Metrics were not committed by the failed reconciliation run.",
+    "last_run_note": "Batch 123: 14 new original-language Hebrew/Yiddish Hayom Yom identities (7–20 Tammuz 5703), 23 non-verbatim propositions, and one in-place enrichment of AID 528765 by splitting a broad proposition into two line-located claims. AID 4666220 returned Internal Error; 14 accessible daily-entry bodies and the existing AID 528765 body were inspected in the same run. All new identities remain Parsed/partial; no Verified promotion. Follow-up: run 43927615189/43927615350/43927615421 exposed an over-broad yeshiva-expansion alias that misclassified a general educational-responsibility question; narrowed to phrase-level aliases and added a negative regression assertion. Metrics were not committed by the failed reconciliation run. Follow-up: after narrowing yeshiva aliases, the readiness run passed the prior topic-precision case but failed because batch 123's acquisition summary omitted batch_file; this pointer is now populated and asserted.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 4666220 returned Internal Error with no readable item body; no bypass. Fourteen accessible publisher bodies were inspected as same-run fallback.",
     "next_work": "Reconcile pending manual batches 099–123, run test_content_readiness.mjs and the answer-quality gate, then verify the committed public metrics and live Pages deployment.",
