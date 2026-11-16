@@ -1825,6 +1825,21 @@
     ],
     "batch_file": "data/items/content-research-batch-129-2026-11-16.json",
     "quality_gate_followup": "Answer Quality Gate, Hourly Corpus Maintenance ו-Bulk reconciliation נכשלו בריצה האחרונה על regression שבו AID 318996 לא נשלף בשאלת Living Torah רב-נושאית. הבדיקה מצביעה על זיהוי-יתר של topic ״רופא מצליח וגאווה״ כאשר המילה ״גאווה״ מופיעה ללא הקשר של רופא. הוספנו disambiguation שמחייב הקשר רופא והוספנו assertion ב-understandQuestion; נדרש rerun.",
-    "reconciliation_attempt_note": "גבול צפוי בלבד אחרי batch 128: 1,290/854/3,449; אחרי batch 129 צפוי 1,302/854/3,470. המדדים בפועל לא חושבו. reconciliation מלא חייב לסרוק את האינדקס הקנוני, לאשר שאין התנגשויות, לעדכן metrics ולהריץ readiness."
+    "reconciliation_attempt_note": "ריצת Bulk #476 חישבה ב-workspace 1,300/854/3,474 (9,531 רשומות באינדקס), אך לא פרסמה את המדדים משום ש-test_content_readiness.mjs נעצר על SyntaxError בסוגר חסר ב-assertion של batch129. הסוגר תוקן ב-commit d4474aabd77e1ecf9fdcc9542b66de1df0b81793; disambiguation הורחב ב-commit 0ddd3579c65e26f7edbe1e53dd497c6a20f157f4. נדרשת ריצת reconciliation מלאה חדשה.",
+    "preliminary_workspace_observation": {
+      "workflow_run_id": 43966723478,
+      "run_number": 476,
+      "observed_after": {
+        "answer_eligible_unique_sources": 1300,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3474
+      },
+      "index_entries_total": 9531,
+      "content_evidence_families": 1271,
+      "computed_in_workspace": true,
+      "committed": false,
+      "readiness_failed_due_to_test_syntax_error": true,
+      "reason": "ה-reconciliation חישב את המדדים ב-workspace אך נעצר בבדיקת test_content_readiness.mjs עקב סוגר חסר ב-assertion של batch129; הסוגר תוקן ב-commit d4474aabd77e1ecf9fdcc9542b66de1df0b81793. נדרשת ריצה חדשה על הקוד המתוקן."
+    }
   }
 }
