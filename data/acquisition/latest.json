@@ -1,8 +1,8 @@
 {
   "started_at": "2026-11-16T10:41:57+02:00",
   "attempted": 22,
-  "enriched": 1,
-  "discovered": 19,
+  "enriched": 2,
+  "discovered": 18,
   "blocked": 1,
   "skipped": 1,
   "status": "manual_web_review_pending_reconciliation",
@@ -13,20 +13,20 @@
     "reviewed_at": "2026-11-16T10:41:57+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 19,
-    "source_bodies_inspected": 19,
-    "source_body_pages_opened": 19,
+    "reviewed_item_count": 18,
+    "source_bodies_inspected": 18,
+    "source_body_pages_opened": 18,
     "metadata_only_items_rechecked": 1,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 19,
-    "existing_identities_enriched": 1,
+    "new_source_identities": 18,
+    "existing_identities_enriched": 2,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 25,
+    "new_response_propositions": 23,
     "existing_response_propositions_added": 3,
-    "total_new_paraphrase_entries": 28,
-    "answer_eligible_source_families_added": 19,
+    "total_new_paraphrase_entries": 26,
+    "answer_eligible_source_families_added": 18,
     "independent_witnesses_added": 17,
-    "non_independent_presentations_added": 2,
+    "non_independent_presentations_added": 1,
     "content_verified_unique_sources_added": 0,
     "new_aids": [
       528730,
@@ -46,11 +46,11 @@
       528745,
       528746,
       528747,
-      3906812,
       5920863
     ],
     "enriched_aids": [
-      2989585
+      2989585,
+      3906812
     ],
     "rechecked_aids": [
       528739
@@ -76,8 +76,8 @@
     "fallback_source_attempted": true,
     "fallback_source_results": {
       "publisher": "BeitChabad.com / he.chabad.org; Chabad.org / Sichos in English Collection",
-      "accessible_item_level_bodies": 19,
-      "existing_identity_bodies": 1,
+      "accessible_item_level_bodies": 18,
+      "existing_identity_bodies": 2,
       "body_text_inspected": true,
       "inspected_aids": [
         528730,
@@ -97,14 +97,14 @@
         528745,
         528746,
         528747,
-        3906812,
         5920863
       ],
       "existing_identity_aids": [
-        2989585
+        2989585,
+        3906812
       ],
       "metadata_only_pages_opened": 1,
-      "notes": "AID 528725 החזיר Internal Error. באותה הפעלה נפתחו ונבדקו 17 גופי ערכי היום יום AID 528730–528738 ו-528740–528747, שני גופי תרגום מכתבים באנגלית AID 3906812 ו-5920863, וכן סעיפים כ״ט–ל״ג בשיחה קיימת AID 2989585. AID 528739 זוהה כעמוד ניווט והוחרג. לא נעשה שימוש בתוצאת חיפוש כתוכן, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
+      "notes": "AID 528725 returned Internal Error. No bypass was attempted. In the same run, 17 other dated Hayom Yom bodies and one new English translated letter (AID 5920863) were inspected; existing identities AID 2989585 and AID 3906812 were re-opened and enriched in place. AID 3906812 was already canonical and was not duplicated. AID 528739 was a month-navigation page and was excluded. No crawler was used."
     },
     "crawler_retry": false,
     "access_control_bypassed": false,
@@ -117,31 +117,31 @@
       "answer_eligible_propositions": 3242
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1175,
+      "answer_eligible_unique_sources": 1174,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3270
+      "answer_eligible_propositions": 3268
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 19,
+      "answer_eligible_unique_sources": 18,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 28
+      "answer_eligible_propositions": 26
     },
     "language_distribution": {
       "Hebrew": 14,
       "Yiddish": 3,
-      "English": 2
+      "English": 1
     },
     "original_language_distribution": {
       "Hebrew": 14,
       "Yiddish": 3,
-      "unknown": 2
+      "unknown": 1
     },
     "source_type_distribution": {
       "published_hebrew_hayom_yom_entry": 14,
       "published_yiddish_hayom_yom_entry": 3,
-      "published_english_letter_translation": 2
+      "published_english_letter_translation": 1
     },
     "evidence_family_ids": [
       "hayom-yom-528730-5703",
@@ -161,7 +161,6 @@
       "hayom-yom-528745-5703",
       "hayom-yom-528746-5703",
       "hayom-yom-528747-5703",
-      "igrot-letter-5711-15-sivan-1051",
       "igrot-letter-5703-13-nissan-71"
     ],
     "same_family_items": [],
@@ -182,14 +181,33 @@
         ],
         "locator": "he.chabad.org AID 2989585, גוף השיחה סעיפים כ״ט–ל״ג, שורות 434–477.",
         "note": "נפתחו ונבדקו סעיפים כ״ט–ל״ג. נוספו שלוש פרפרזות על צימאון בעלי תשובה, זהירות מפני ייחוס הצלחה לכוח עצמי, ואחריות רבנים ומורי הוראה. הזהות, Evidence Family והסטטוס Parsed נשמרו; השיחה מסומנת בלתי מוגה."
+      },
+      {
+        "action": "enriched_existing_identity_metadata_and_proposition_locators",
+        "aid": 3906812,
+        "id": "sie-letter-1051-aid-3906812",
+        "canonical_file": "data/items/mixed-authorized-content-2026-11-12-039.json",
+        "evidence_family_id": "letter-no-1051-summer-education",
+        "existing_propositions_before": 3,
+        "propositions_added": 0,
+        "total_propositions_after": 3,
+        "locators_added": 3,
+        "locators": [
+          "Chabad.org AID 3906812, body lines 281–282.",
+          "Chabad.org AID 3906812, body lines 283–284.",
+          "Chabad.org AID 3906812, body line 286."
+        ],
+        "independent_witness": false,
+        "translation_of_evidence_family_id": "letter-no-1051-summer-education",
+        "note": "AID 3906812 already existed in the canonical corpus. The existing three propositions were retained and given exact paragraph-level locators; the published English translation was explicitly marked as non-independent. No new source identity, Evidence Family or proposition was created."
       }
     ],
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
       "new_evidence_families_unique": true,
-      "unique_new_aid_count": 19,
-      "unique_new_family_count": 19,
+      "unique_new_aid_count": 18,
+      "unique_new_family_count": 18,
       "same_family_duplicate_count": 0,
       "duplicate_alias_identities": 0,
       "translations_counted_as_independent_witnesses": 0,
@@ -198,8 +216,10 @@
       "all_target_identities_answer_eligible": null,
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "checked_against": "AIDs 528730–528738 and 528740–528747 were absent from the current review queue and prior batches 116–119; English translation AIDs 3906812 and 5920863 were absent from repository search by AID. Translation family IDs are stable at the underlying dated-letter level and the presentations are marked non-independent. Full canonical-index and Evidence Family scan remains pending reconciliation."
-    }
+      "checked_against": "AIDs 528730–528738 and 528740–528747 were absent from the current review queue and prior batches 116–119; AID 5920863 was not previously canonical. AID 3906812 was found in data/items/mixed-authorized-content-2026-11-12-039.json and is enriched in place, not added as a new identity. AID 2989585 is enriched in its existing canonical file. Full canonical-index and Evidence Family scan remains pending reconciliation."
+    },
+    "existing_identity_bodies_inspected": 2,
+    "existing_identity_body_pages_opened": 2
   },
   "previous_manual_web_review": {
     "batch_id": "119",
@@ -964,7 +984,7 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 120 is a manual public-source inspection, not crawler acquisition. It inspected 17 original-language daily entries and two published English letter translations (non-independent), enriched AID 2989585, recorded blocked AID 528725 and excluded navigation page AID 528739. Full reconciliation and readiness are pending.",
+  "manual_web_review_note": "Batch 120: 18 new inspected source identities (17 Hebrew/Yiddish daily entries and one English translated letter), plus two in-place identity enrichments. AID 3906812 was already canonical and was not duplicated; its three existing propositions received exact locators and explicit translation non-independence metadata. AID 2989585 received three new propositions. Reconciliation and readiness remain pending.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 1146,
     "content_verified_unique_sources": 854,
@@ -4232,20 +4252,20 @@
       "reviewed_at": "2026-11-16T10:41:57+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 19,
-      "source_bodies_inspected": 19,
-      "source_body_pages_opened": 19,
+      "reviewed_item_count": 18,
+      "source_bodies_inspected": 18,
+      "source_body_pages_opened": 18,
       "metadata_only_items_rechecked": 1,
       "search_extracts_used_as_content": 0,
-      "new_source_identities": 19,
-      "existing_identities_enriched": 1,
+      "new_source_identities": 18,
+      "existing_identities_enriched": 2,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 25,
+      "new_response_propositions": 23,
       "existing_response_propositions_added": 3,
-      "total_new_paraphrase_entries": 28,
-      "answer_eligible_source_families_added": 19,
+      "total_new_paraphrase_entries": 26,
+      "answer_eligible_source_families_added": 18,
       "independent_witnesses_added": 17,
-      "non_independent_presentations_added": 2,
+      "non_independent_presentations_added": 1,
       "content_verified_unique_sources_added": 0,
       "new_aids": [
         528730,
@@ -4265,11 +4285,11 @@
         528745,
         528746,
         528747,
-        3906812,
         5920863
       ],
       "enriched_aids": [
-        2989585
+        2989585,
+        3906812
       ],
       "rechecked_aids": [
         528739
@@ -4295,8 +4315,8 @@
       "fallback_source_attempted": true,
       "fallback_source_results": {
         "publisher": "BeitChabad.com / he.chabad.org; Chabad.org / Sichos in English Collection",
-        "accessible_item_level_bodies": 19,
-        "existing_identity_bodies": 1,
+        "accessible_item_level_bodies": 18,
+        "existing_identity_bodies": 2,
         "body_text_inspected": true,
         "inspected_aids": [
           528730,
@@ -4316,14 +4336,14 @@
           528745,
           528746,
           528747,
-          3906812,
           5920863
         ],
         "existing_identity_aids": [
-          2989585
+          2989585,
+          3906812
         ],
         "metadata_only_pages_opened": 1,
-        "notes": "AID 528725 החזיר Internal Error. באותה הפעלה נפתחו ונבדקו 17 גופי ערכי היום יום AID 528730–528738 ו-528740–528747, שני גופי תרגום מכתבים באנגלית AID 3906812 ו-5920863, וכן סעיפים כ״ט–ל״ג בשיחה קיימת AID 2989585. AID 528739 זוהה כעמוד ניווט והוחרג. לא נעשה שימוש בתוצאת חיפוש כתוכן, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
+        "notes": "AID 528725 returned Internal Error. No bypass was attempted. In the same run, 17 other dated Hayom Yom bodies and one new English translated letter (AID 5920863) were inspected; existing identities AID 2989585 and AID 3906812 were re-opened and enriched in place. AID 3906812 was already canonical and was not duplicated. AID 528739 was a month-navigation page and was excluded. No crawler was used."
       },
       "crawler_retry": false,
       "access_control_bypassed": false,
@@ -4336,31 +4356,31 @@
         "answer_eligible_propositions": 3242
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1175,
+        "answer_eligible_unique_sources": 1174,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3270
+        "answer_eligible_propositions": 3268
       },
       "metrics_actual_after": null,
       "reconciliation_variance": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 19,
+        "answer_eligible_unique_sources": 18,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 28
+        "answer_eligible_propositions": 26
       },
       "language_distribution": {
         "Hebrew": 14,
         "Yiddish": 3,
-        "English": 2
+        "English": 1
       },
       "original_language_distribution": {
         "Hebrew": 14,
         "Yiddish": 3,
-        "unknown": 2
+        "unknown": 1
       },
       "source_type_distribution": {
         "published_hebrew_hayom_yom_entry": 14,
         "published_yiddish_hayom_yom_entry": 3,
-        "published_english_letter_translation": 2
+        "published_english_letter_translation": 1
       },
       "evidence_family_ids": [
         "hayom-yom-528730-5703",
@@ -4380,7 +4400,6 @@
         "hayom-yom-528745-5703",
         "hayom-yom-528746-5703",
         "hayom-yom-528747-5703",
-        "igrot-letter-5711-15-sivan-1051",
         "igrot-letter-5703-13-nissan-71"
       ],
       "same_family_items": [],
@@ -4401,14 +4420,33 @@
           ],
           "locator": "he.chabad.org AID 2989585, גוף השיחה סעיפים כ״ט–ל״ג, שורות 434–477.",
           "note": "נפתחו ונבדקו סעיפים כ״ט–ל״ג. נוספו שלוש פרפרזות על צימאון בעלי תשובה, זהירות מפני ייחוס הצלחה לכוח עצמי, ואחריות רבנים ומורי הוראה. הזהות, Evidence Family והסטטוס Parsed נשמרו; השיחה מסומנת בלתי מוגה."
+        },
+        {
+          "action": "enriched_existing_identity_metadata_and_proposition_locators",
+          "aid": 3906812,
+          "id": "sie-letter-1051-aid-3906812",
+          "canonical_file": "data/items/mixed-authorized-content-2026-11-12-039.json",
+          "evidence_family_id": "letter-no-1051-summer-education",
+          "existing_propositions_before": 3,
+          "propositions_added": 0,
+          "total_propositions_after": 3,
+          "locators_added": 3,
+          "locators": [
+            "Chabad.org AID 3906812, body lines 281–282.",
+            "Chabad.org AID 3906812, body lines 283–284.",
+            "Chabad.org AID 3906812, body line 286."
+          ],
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "letter-no-1051-summer-education",
+          "note": "AID 3906812 already existed in the canonical corpus. The existing three propositions were retained and given exact paragraph-level locators; the published English translation was explicitly marked as non-independent. No new source identity, Evidence Family or proposition was created."
         }
       ],
       "deduplication_check": {
         "new_aids_unique": true,
         "new_source_urls_unique": true,
         "new_evidence_families_unique": true,
-        "unique_new_aid_count": 19,
-        "unique_new_family_count": 19,
+        "unique_new_aid_count": 18,
+        "unique_new_family_count": 18,
         "same_family_duplicate_count": 0,
         "duplicate_alias_identities": 0,
         "translations_counted_as_independent_witnesses": 0,
@@ -4417,8 +4455,10 @@
         "all_target_identities_answer_eligible": null,
         "full_index_scan_available": false,
         "full_index_scan_pending_reconciliation": true,
-        "checked_against": "AIDs 528730–528738 and 528740–528747 were absent from the current review queue and prior batches 116–119; English translation AIDs 3906812 and 5920863 were absent from repository search by AID. Translation family IDs are stable at the underlying dated-letter level and the presentations are marked non-independent. Full canonical-index and Evidence Family scan remains pending reconciliation."
-      }
+        "checked_against": "AIDs 528730–528738 and 528740–528747 were absent from the current review queue and prior batches 116–119; AID 5920863 was not previously canonical. AID 3906812 was found in data/items/mixed-authorized-content-2026-11-12-039.json and is enriched in place, not added as a new identity. AID 2989585 is enriched in its existing canonical file. Full canonical-index and Evidence Family scan remains pending reconciliation."
+      },
+      "existing_identity_bodies_inspected": 2,
+      "existing_identity_body_pages_opened": 2
     }
   ],
   "earlier_manual_web_review_12": {
@@ -4568,20 +4608,20 @@
     "reviewed_at": "2026-11-16T10:41:57+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 19,
-    "source_bodies_inspected": 19,
-    "source_body_pages_opened": 19,
+    "reviewed_item_count": 18,
+    "source_bodies_inspected": 18,
+    "source_body_pages_opened": 18,
     "metadata_only_items_rechecked": 1,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 19,
-    "existing_identities_enriched": 1,
+    "new_source_identities": 18,
+    "existing_identities_enriched": 2,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 25,
+    "new_response_propositions": 23,
     "existing_response_propositions_added": 3,
-    "total_new_paraphrase_entries": 28,
-    "answer_eligible_source_families_added": 19,
+    "total_new_paraphrase_entries": 26,
+    "answer_eligible_source_families_added": 18,
     "independent_witnesses_added": 17,
-    "non_independent_presentations_added": 2,
+    "non_independent_presentations_added": 1,
     "content_verified_unique_sources_added": 0,
     "new_aids": [
       528730,
@@ -4601,11 +4641,11 @@
       528745,
       528746,
       528747,
-      3906812,
       5920863
     ],
     "enriched_aids": [
-      2989585
+      2989585,
+      3906812
     ],
     "rechecked_aids": [
       528739
@@ -4631,8 +4671,8 @@
     "fallback_source_attempted": true,
     "fallback_source_results": {
       "publisher": "BeitChabad.com / he.chabad.org; Chabad.org / Sichos in English Collection",
-      "accessible_item_level_bodies": 19,
-      "existing_identity_bodies": 1,
+      "accessible_item_level_bodies": 18,
+      "existing_identity_bodies": 2,
       "body_text_inspected": true,
       "inspected_aids": [
         528730,
@@ -4652,14 +4692,14 @@
         528745,
         528746,
         528747,
-        3906812,
         5920863
       ],
       "existing_identity_aids": [
-        2989585
+        2989585,
+        3906812
       ],
       "metadata_only_pages_opened": 1,
-      "notes": "AID 528725 החזיר Internal Error. באותה הפעלה נפתחו ונבדקו 17 גופי ערכי היום יום AID 528730–528738 ו-528740–528747, שני גופי תרגום מכתבים באנגלית AID 3906812 ו-5920863, וכן סעיפים כ״ט–ל״ג בשיחה קיימת AID 2989585. AID 528739 זוהה כעמוד ניווט והוחרג. לא נעשה שימוש בתוצאת חיפוש כתוכן, לא נעשה ניסיון לעקוף חסימה ולא הופעל crawler."
+      "notes": "AID 528725 returned Internal Error. No bypass was attempted. In the same run, 17 other dated Hayom Yom bodies and one new English translated letter (AID 5920863) were inspected; existing identities AID 2989585 and AID 3906812 were re-opened and enriched in place. AID 3906812 was already canonical and was not duplicated. AID 528739 was a month-navigation page and was excluded. No crawler was used."
     },
     "crawler_retry": false,
     "access_control_bypassed": false,
@@ -4672,31 +4712,31 @@
       "answer_eligible_propositions": 3242
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1175,
+      "answer_eligible_unique_sources": 1174,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3270
+      "answer_eligible_propositions": 3268
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 19,
+      "answer_eligible_unique_sources": 18,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 28
+      "answer_eligible_propositions": 26
     },
     "language_distribution": {
       "Hebrew": 14,
       "Yiddish": 3,
-      "English": 2
+      "English": 1
     },
     "original_language_distribution": {
       "Hebrew": 14,
       "Yiddish": 3,
-      "unknown": 2
+      "unknown": 1
     },
     "source_type_distribution": {
       "published_hebrew_hayom_yom_entry": 14,
       "published_yiddish_hayom_yom_entry": 3,
-      "published_english_letter_translation": 2
+      "published_english_letter_translation": 1
     },
     "evidence_family_ids": [
       "hayom-yom-528730-5703",
@@ -4716,7 +4756,6 @@
       "hayom-yom-528745-5703",
       "hayom-yom-528746-5703",
       "hayom-yom-528747-5703",
-      "igrot-letter-5711-15-sivan-1051",
       "igrot-letter-5703-13-nissan-71"
     ],
     "same_family_items": [],
@@ -4737,14 +4776,33 @@
         ],
         "locator": "he.chabad.org AID 2989585, גוף השיחה סעיפים כ״ט–ל״ג, שורות 434–477.",
         "note": "נפתחו ונבדקו סעיפים כ״ט–ל״ג. נוספו שלוש פרפרזות על צימאון בעלי תשובה, זהירות מפני ייחוס הצלחה לכוח עצמי, ואחריות רבנים ומורי הוראה. הזהות, Evidence Family והסטטוס Parsed נשמרו; השיחה מסומנת בלתי מוגה."
+      },
+      {
+        "action": "enriched_existing_identity_metadata_and_proposition_locators",
+        "aid": 3906812,
+        "id": "sie-letter-1051-aid-3906812",
+        "canonical_file": "data/items/mixed-authorized-content-2026-11-12-039.json",
+        "evidence_family_id": "letter-no-1051-summer-education",
+        "existing_propositions_before": 3,
+        "propositions_added": 0,
+        "total_propositions_after": 3,
+        "locators_added": 3,
+        "locators": [
+          "Chabad.org AID 3906812, body lines 281–282.",
+          "Chabad.org AID 3906812, body lines 283–284.",
+          "Chabad.org AID 3906812, body line 286."
+        ],
+        "independent_witness": false,
+        "translation_of_evidence_family_id": "letter-no-1051-summer-education",
+        "note": "AID 3906812 already existed in the canonical corpus. The existing three propositions were retained and given exact paragraph-level locators; the published English translation was explicitly marked as non-independent. No new source identity, Evidence Family or proposition was created."
       }
     ],
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
       "new_evidence_families_unique": true,
-      "unique_new_aid_count": 19,
-      "unique_new_family_count": 19,
+      "unique_new_aid_count": 18,
+      "unique_new_family_count": 18,
       "same_family_duplicate_count": 0,
       "duplicate_alias_identities": 0,
       "translations_counted_as_independent_witnesses": 0,
@@ -4753,8 +4811,10 @@
       "all_target_identities_answer_eligible": null,
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "checked_against": "AIDs 528730–528738 and 528740–528747 were absent from the current review queue and prior batches 116–119; English translation AIDs 3906812 and 5920863 were absent from repository search by AID. Translation family IDs are stable at the underlying dated-letter level and the presentations are marked non-independent. Full canonical-index and Evidence Family scan remains pending reconciliation."
-    }
+      "checked_against": "AIDs 528730–528738 and 528740–528747 were absent from the current review queue and prior batches 116–119; AID 5920863 was not previously canonical. AID 3906812 was found in data/items/mixed-authorized-content-2026-11-12-039.json and is enriched in place, not added as a new identity. AID 2989585 is enriched in its existing canonical file. Full canonical-index and Evidence Family scan remains pending reconciliation."
+    },
+    "existing_identity_bodies_inspected": 2,
+    "existing_identity_body_pages_opened": 2
   },
   "last_manual_review": {
     "batch_id": "119",
