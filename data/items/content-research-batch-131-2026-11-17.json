@@ -120,7 +120,7 @@
   },
   "evidence_family_ids": [
     "hayom-yom-528893-5704",
-    "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
+    "hayom-yom-shared-discourse-aid528894-528895",
     "hayom-yom-528896-5704",
     "hayom-yom-528897-5704",
     "hayom-yom-528898-5704",
@@ -138,7 +138,7 @@
     {
       "aid": 528895,
       "canonical_aid": 528894,
-      "evidence_family_id": "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
+      "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
       "relationship": "continuation_of_same_discourse"
     }
   ],
@@ -176,7 +176,7 @@
       "identity_resolution": "new_canonical_identity",
       "body_locator": "שורות 172",
       "web_source_ref": "turn234240view1",
-      "evidence_family_id": "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
+      "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
       "notes": "גוף הערך בשפת המקור נפתח ונבדק."
     },
     {
@@ -188,7 +188,7 @@
       "identity_resolution": "new_canonical_identity",
       "body_locator": "שורות 172",
       "web_source_ref": "turn234240view2",
-      "evidence_family_id": "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
+      "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
       "notes": "המשך אותה שיחה ב-AID 528894; לא עד עצמאי נוסף."
     },
     {
@@ -385,7 +385,7 @@
       {
         "aid": 528895,
         "canonical_aid": 528894,
-        "evidence_family_id": "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
+        "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
         "relationship": "continuation_of_same_discourse"
       }
     ],
@@ -564,7 +564,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 528894, גוף הערך Yiddish, שורות 172.",
-      "evidence_family_id": "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
+      "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
       "parent_evidence_family_id": null,
       "independent_witness": true,
       "translation_of_evidence_family_id": null,
@@ -670,7 +670,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 528895, גוף הערך Yiddish, שורות 172.",
-      "evidence_family_id": "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
+      "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
       "parent_evidence_family_id": null,
       "independent_witness": false,
       "translation_of_evidence_family_id": null,
@@ -1935,5 +1935,10 @@
   ],
   "note": "14 גופי ערכי היום יום מקוריים נבדקו; 13 משפחות ראיות חדשות משום ש-AID 528894–528895 הם המשך אותה שיחה. נוספו 19 פרופוזיציות לא-מילוליות והועשרה AID 2989153 בפרופוזיציה אחת. שלושה נתיבים החזירו Internal Error; באותה הפעלה נבדקו 14 גופי מקור חלופיים. AID 528892 הוחרג כעמוד ניווט. כל הזהויות נשארו Parsed ובהקשר חלקי.",
   "reconciliation_trigger_requested_at": "2026-11-17T01:29:03+02:00",
-  "reconciliation_trigger_reason": "Trigger the existing push-based reconciliation workflow after the batch and retrieval/readiness code were committed; no new automation or workflow was created."
+  "reconciliation_trigger_reason": "Trigger the existing push-based reconciliation workflow after the batch and retrieval/readiness code were committed; no new automation or workflow was created.",
+  "family_id_correction": {
+    "previous_value": "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
+    "corrected_value": "hayom-yom-shared-discourse-aid528894-528895",
+    "reason": "AID 528894 dates the cited discourse to Motzaei Shabbat Lech Lecha 5651; AID 528895 explicitly identifies itself as continuation of that same discourse. The family key is neutral and does not encode a possibly incorrect date."
+  }
 }
