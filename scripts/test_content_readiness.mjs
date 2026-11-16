@@ -1927,6 +1927,8 @@ for(const mode of ['regular','researcher']){
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
  assert(m.synthesis&&m.synthesis.topic==='study_and_youth_education');
  assert(m.synthesis.basis.some(b=>String(b.aid)==='5019597')&&m.synthesis.basis.some(b=>String(b.aid)==='5019603'),mode+': both dated correspondence identities must be represented in the synthesis basis');
+ assert.equal(m.synthesis.basis.find(b=>String(b.aid)==='5019597').independent_witness,true,'the Hebrew personal letter remains an inspected independent correspondence witness');
+ assert.equal(m.synthesis.basis.find(b=>String(b.aid)==='5019603').independent_witness,false,'the text completed from a photograph remains a derived, non-independent presentation');
  assert(m.synthesis.source_integrity.distinct_evidence_families>=2&&m.synthesis.source_integrity.independent_evidence_families>=1);
  assert.equal(m.synthesis.source_integrity.derived_presentations,m.synthesis.basis.filter(b=>b.independent_witness===false).length,'derived translations remain explicitly non-independent in the synthesis basis');
  if(mode==='researcher')assert(m.research.evidence_integrity.derived_non_independent>=m.synthesis.source_integrity.derived_presentations,'researcher mode must preserve the derived-presentation count');
