@@ -14,9 +14,9 @@
   "new_source_identities": 15,
   "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 21,
+  "new_response_propositions": 23,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 22,
+  "total_new_paraphrase_entries": 24,
   "answer_eligible_source_families_added": 15,
   "independent_witnesses_added": 15,
   "non_independent_presentations_added": 0,
@@ -100,7 +100,7 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1246,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3380
+    "answer_eligible_propositions": 3382
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
@@ -108,9 +108,9 @@
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 15,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 22
+    "answer_eligible_propositions": 24
   },
-  "metrics_attribution_note": "תוספת צפויה של 15 Evidence Families חדשות ו-21 פרופוזיציות חדשות, ועוד פרופוזיציה אחת בהעשרה in-place של AID 5959845. אין קידום ל-Verified; המספרים הם גבול שרשרת צפוי בלבד עד reconciliation.",
+  "metrics_attribution_note": "תוספת צפויה של 15 Evidence Families חדשות ו-23 פרופוזיציות חדשות, ועוד פרופוזיציה אחת בהעשרה in-place של AID 5959845. אין קידום ל-Verified; המספרים הם גבול שרשרת צפוי בלבד עד reconciliation.",
   "language_distribution": {
     "Hebrew": 6,
     "Yiddish": 9
@@ -259,7 +259,7 @@
     "full_index_scan_pending_reconciliation": true,
     "checked_against": "AIDs 528805–528819 נבדקו מול תור הביקורת בן 1,022 הרשומות ומול רצף אצוות 122–124; לא נמצאו התאמות בתור או בקבצי האצוות האחרונות. public-search-index.json לא הוחזר בתוכן קריא דרך מחבר GitHub ולכן סריקה קנונית מלאה, בדיקת alias collisions ואישור answer eligibility ממתינים ל-reconciliation. AID 528810 משתמש בנתיב חלופי המציג את הטקסט המקורי; התרגום הצרפתי לא נספר כעד."
   },
-  "note": "נבדקו 15 גופי ערכים מקוריים: 6 בעברית ו-9 ביידיש. נוספו 21 פרופוזיציות לא־מילוליות והועשרה זהות קיימת אחת בפרופוזיציה נוספת. כל המקורות החדשים נשארים Parsed ובהקשר חלקי; לא קודם מקור ל-Verified.",
+  "note": "נבדקו 15 גופי ערכים מקוריים: 6 בעברית ו-9 ביידיש. נוספו 23 פרופוזיציות לא־מילוליות והועשרה זהות קיימת אחת בפרופוזיציה נוספת; סך הכול 24 פרפרזות חדשות. כל המקורות החדשים נשארים Parsed ובהקשר חלקי; לא קודם מקור ל-Verified.",
   "source_body_review": [
     {
       "aid": 528805,
@@ -806,7 +806,7 @@
       "date_precision": "exact_as_publisher",
       "language": "Yiddish",
       "original_language": "Yiddish",
-      "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית.",
+      "translation_status": "גוף הערך משלב הוראה בעברית ופתגם ביידיש; שתי הפרפרזות מתייחסות למקטעים בשפתם המקורית.",
       "summary_researcher": "הערך מתעד את אמירת שש הזכירות בכל יום ומביא פתגם המיוחס לאא״ז על מרכזיות אהבת ישראל.",
       "pipeline_status": "Parsed",
       "status": "Parsed",
@@ -838,7 +838,8 @@
         "הערך הוא פריט אנתולוגי מתוארך; לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית.",
         "ייחוסים פנימיים ומסורות המובאים בערך נשמרים כייחוסים; הפרפרזה אינה מייחסת את תוכנם ישירות לרבי.",
         "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד טענות היסטוריות, מסורות, מנהגים או הסברים המופיעים בו.",
-        "נבדקו רק המקטעים המצוינים ב-locators; ההקשר הרחב נשאר חלקי."
+        "נבדקו רק המקטעים המצוינים ב-locators; ההקשר הרחב נשאר חלקי.",
+        "הערך משלב הוראה בעברית ופתגם ביידיש; הייחוס לפתגם נשמר לאא״ז של המחבר, ללא זיהוי נוסף של הדמות."
       ],
       "audience": "קוראי ספר היום יום; לא צוין קהל יעד נוסף.",
       "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות של כתב־יד, אוטוגרף או מסורות המובאות בתוכו.",
@@ -893,7 +894,7 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "נבדק גוף הערך המקורי ב-16.11.2026. Locators ברמת הפרופוזיציה: he.chabad.org AID 528808, גוף הערך ביידיש, שורה 173. he.chabad.org AID 528808, גוף הערך ביידיש, שורה 174. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו. ההקשר חלקי. ייחוסים פנימיים נשמרים.",
+      "notes": "נבדק גוף הערך המקורי ב-16.11.2026. Locators ברמת הפרופוזיציה: he.chabad.org AID 528808, גוף הערך ביידיש, שורה 173. he.chabad.org AID 528808, גוף הערך ביידיש, שורה 174. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו. ההקשר חלקי. ייחוסים פנימיים נשמרים. הערך משלב עברית ויידיש; הייחוס הפנימי לאא״ז נשמר ולא הורחב מעבר לנוסח המקור.",
       "canonical_file": "data/items/content-research-batch-125-2026-11-16.json",
       "locator": {
         "aid": 528808,
