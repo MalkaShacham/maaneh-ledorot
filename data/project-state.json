@@ -155,14 +155,14 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "awaiting_reconciliation_and_readiness_validation_for_batch_121",
+      "run_status": "retry_pending_after_duplicate_test_identifier_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Batch 120 adds 19 source identities (17 original-language daily entries and two non-independent English translated letter presentations) and three in-place propositions to AID 2989585. Current-batch assertions now expect 120/119 and final AID 2989585 proposition count 16. Reconcile pending batches 099–120 and rerun readiness before publication."
+      "note": "Batch 121 adds 16 inspected Hebrew/Yiddish Hayom Yom identities and 20 non-verbatim propositions, plus three in-place propositions in AID 2989585. The first commit-bound test run exposed a duplicate const declaration in test_content_readiness.mjs; the duplicate was renamed and latest-batch assertions now bind to batch 121. Reconcile batches 099–121 and rerun the complete readiness gate before publication."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
@@ -233,7 +233,7 @@
       "crawler_retry": false,
       "access_control_bypassed": false
     },
-    "last_run_note": "Batch 120 inspected 17 dated Hayom Yom bodies (14 Hebrew, 3 Yiddish) and two English translations of dated letters (non-independent presentations), and enriched existing Sicha AID 2989585 in place with three propositions from sections 29–33. AID 528725 was blocked; AID 528739 was a navigation page and excluded. No crawler retry, access-control bypass, full-text copying or Verified promotion. Reconciliation chain 099–120 is pending.",
+    "last_run_note": "Batch 121 source data and provenance are committed. The first reconciliation attempt successfully rebuilt the search index and measured 1,189 answer-eligible unique sources, 854 content-verified unique sources and 3,297 propositions, but validation stopped on a duplicate const declaration in the readiness test. The declaration and latest-batch assertions are being corrected before a new reconciliation commit.",
     "last_batch_blocked_count": 0,
     "last_batch_blocked_reason": "AID 553691 was opened but exposed audio listing only without transcript; it was excluded and 16 accessible Hayom Yom item bodies were inspected as fallback.",
     "next_work": "Reconcile pending manual batches 099–121, then run test_content_readiness.mjs and the answer-quality gate; verify Actions and live Pages metrics.",

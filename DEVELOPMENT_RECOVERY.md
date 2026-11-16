@@ -932,3 +932,8 @@ A subsequent run (16.11.2026) then reached the historical batch-113 assertions a
 - Expected chained boundary after batch 120: answer-eligible unique sources 1,175; content-verified unique sources 854; answer-eligible propositions 3,270. Expected after batch 121: 1,191; 854; 3,293. These are chained expectations only; actual values remain pending full reconciliation of batches 099–121.
 - No new item was promoted to Verified. The anthology entries remain Parsed with partial context; translations, scans and later presentations do not count as independent witnesses.
 - The readiness test now includes batch-121 identity, proposition, provenance, locator, exclusion and deep multi-source synthesis assertions. The batch and state are pending reconciliation; do not report the assertions as passed until a commit-bound Actions result is available.
+
+
+## 2026-11-16 — Batch 121 validation repair
+
+The first commit-bound reconciliation rebuilt the search index and measured 1,189 answer-eligible unique sources, 854 content-verified unique sources and 3,297 propositions. The reconciliation job reached the readiness test but stopped on a duplicate top-level `const educationResponsibilityQuestion` declaration already present in the test file. The second declaration was renamed; repeated latest-batch assertions now target batch 121 and compare the batch-120 actual snapshot to batch-121's actual-before snapshot. These metrics are workflow-log measurements until a successful run commits the generated state and public index.

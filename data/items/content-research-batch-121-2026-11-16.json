@@ -1958,5 +1958,7 @@
       "canonical_file": "data/items/content-research-batch-121-2026-11-16.json",
       "accessed": "2026-11-16T18:04:39+02:00"
     }
-  ]
+  ],
+  "readiness_test_revision": 2,
+  "readiness_test_repair_note": "Initial commit-bound Actions exposed a pre-existing duplicate const declaration in test_content_readiness.mjs. The duplicate was renamed and latest-batch assertions now bind to batch 121; this file change retriggers deterministic reconciliation and validation."
 }
