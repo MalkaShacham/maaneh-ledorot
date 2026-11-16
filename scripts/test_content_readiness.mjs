@@ -1224,7 +1224,7 @@ const letter2989411=idx.entries.find(e=>sourceAID(e)==='2989411');
 assert(letter2989411&&letter2989411.type==='letter'&&letter2989411.response_propositions.length===3);
 assert.equal(letter2989411.evidence_family_id,'letter-5711-5-elul-yeshiva-students-aid2989411');
 const enriched5959845=idx.entries.find(e=>sourceAID(e)==='5959845');
-assert(enriched5959845&&enriched5959845.response_propositions.length===10);
+assert(enriched5959845&&enriched5959845.response_propositions.length===11);
 assert(enriched5959845.response_proposition_locators.some(x=>String(x).includes('214–224')&&String(x).includes('233–244')));
 assert(enriched5959845.response_proposition_locators.some(x=>String(x).includes('246–253')));
 assert.equal(enriched5959845.status,'Parsed');
@@ -1303,7 +1303,7 @@ for(const aid of batch113Aids){
 }
 assert(!idx.entries.some(e=>sourceAID(e)==='528648'&&e.has_content_evidence===true),'AID 528648 is a month index, not an item-level source');
 const enriched5959845Batch113=idx.entries.find(e=>sourceAID(e)==='5959845');
-assert(enriched5959845Batch113&&enriched5959845Batch113.response_propositions.length===10);
+assert(enriched5959845Batch113&&enriched5959845Batch113.response_propositions.length===11);
 assert(enriched5959845Batch113.response_propositions.some(p=>p.includes('לשבור כלים')));
 assert(enriched5959845Batch113.response_propositions.some(p=>p.includes('כבוד אישי')));assert(enriched5959845Batch113.response_propositions.some(p=>p.includes('חלקו האפשרי של הרב')));
 assert(enriched5959845Batch113.response_proposition_locators.some(l=>String(l).includes('246–253')));
@@ -1334,9 +1334,9 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  content_verified_unique_sources:metrics.content_verified_unique_sources-854,
  answer_eligible_propositions:metrics.answer_eligible_propositions-3189
 });
-assert.equal(acquisitionState.manual_web_review.batch_id,'116');
+assert.equal(acquisitionState.manual_web_review.batch_id,'117');
 assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-116-2026-11-16.json');
-assert.equal(acquisitionState.previous_manual_web_review.batch_id,'115');
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'116');
 assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-115-2026-11-16.json');
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
 
@@ -3277,13 +3277,13 @@ assert.deepEqual(batch115Data.metrics_delta_at_batch_boundary,{answer_eligible_u
 assert.equal(batch115Data.existing_identity_updates[0].total_propositions_after,8);
 for(const r of batch115Data.records){assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);assert.equal(r.response_propositions.length,r.response_proposition_locators.length);assert.equal(r.independent_witness,true);assert.equal(r.translation_of_evidence_family_id,null);}
 for(const aid of batch115Aids){const matches=idx.entries.filter(e=>sourceAID(e)===String(aid));assert.equal(matches.length,1,'batch-115 AID '+aid+' must have exactly one canonical identity');const e=matches[0];assert(e.has_content_evidence);assert.equal(e.status,'Parsed');assert.equal(e.canonical_file,batch115Path);assert.equal(e.independent_witness,true);assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope);assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));}
-const enriched5959845Batch115=idx.entries.find(e=>sourceAID(e)==='5959845');assert(enriched5959845Batch115&&enriched5959845Batch115.response_propositions.length===10);assert(enriched5959845Batch115.response_propositions.some(p=>p.includes('חלקו האפשרי של הרב')));assert(enriched5959845Batch115.response_proposition_locators.some(l=>String(l).includes('343–347')));
+const enriched5959845Batch115=idx.entries.find(e=>sourceAID(e)==='5959845');assert(enriched5959845Batch115&&enriched5959845Batch115.response_propositions.length===11);assert(enriched5959845Batch115.response_propositions.some(p=>p.includes('חלקו האפשרי של הרב')));assert(enriched5959845Batch115.response_proposition_locators.some(l=>String(l).includes('343–347')));
 assert.equal(batch115Data.deduplication_check.full_index_scan_available,true);assert.deepEqual(batch115Data.deduplication_check.canonical_identity_collisions,[]);assert.deepEqual(batch115Data.deduplication_check.missing_canonical_identities,[]);assert.equal(batch115Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(['reconciled','reconciled_with_variance'].includes(batch115Data.reconciliation_status));const batch115Actual=readinessMetrics(batch115Data.metrics_actual_after);assert.deepEqual(batch115Actual,readinessMetrics(batch115Data.metrics_expected_after));assert(batch115Data.reconciliation_snapshot_adjustment.excluded_later_in_place_proposition_count>=3,'batch 115 snapshot must exclude later in-place enrichments');
 const audit115=projectState.development_recovery.reconciliation_chain.find(x=>String(x.batch_id)==='115');assert(audit115);assert.deepEqual(batch115Actual,readinessMetrics(audit115.metrics_actual_after));
 assert.deepEqual(batch115Data.reconciliation_variance,{answer_eligible_unique_sources:batch115Actual.answer_eligible_unique_sources-batch115Data.metrics_expected_after.answer_eligible_unique_sources,content_verified_unique_sources:batch115Actual.content_verified_unique_sources-batch115Data.metrics_expected_after.content_verified_unique_sources,answer_eligible_propositions:batch115Actual.answer_eligible_propositions-batch115Data.metrics_expected_after.answer_eligible_propositions});
 
-const enriched5959845Batch114=idx.entries.find(e=>sourceAID(e)==='5959845');assert(enriched5959845Batch114&&enriched5959845Batch114.response_propositions.length===10);assert(enriched5959845Batch114.response_propositions.some(p=>p.includes('כבוד אישי')));assert(enriched5959845Batch114.response_propositions.some(p=>p.includes('חלקו האפשרי של הרב')));assert(enriched5959845Batch114.response_proposition_locators.some(l=>String(l).includes('260–280')));assert(enriched5959845Batch114.response_proposition_locators.some(l=>String(l).includes('343–347')));
+const enriched5959845Batch114=idx.entries.find(e=>sourceAID(e)==='5959845');assert(enriched5959845Batch114&&enriched5959845Batch114.response_propositions.length===11);assert(enriched5959845Batch114.response_propositions.some(p=>p.includes('כבוד אישי')));assert(enriched5959845Batch114.response_propositions.some(p=>p.includes('חלקו האפשרי של הרב')));assert(enriched5959845Batch114.response_proposition_locators.some(l=>String(l).includes('260–280')));assert(enriched5959845Batch114.response_proposition_locators.some(l=>String(l).includes('343–347')));
 assert.equal(batch114Data.deduplication_check.full_index_scan_available,true);assert.deepEqual(batch114Data.deduplication_check.canonical_identity_collisions,[]);assert.deepEqual(batch114Data.deduplication_check.missing_canonical_identities,[]);assert.equal(batch114Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(['reconciled','reconciled_with_variance'].includes(batch114Data.reconciliation_status));const batch114Actual=readinessMetrics(batch114Data.metrics_actual_after);assert(batch114Actual.answer_eligible_unique_sources<metrics.answer_eligible_unique_sources&&batch114Actual.answer_eligible_propositions<metrics.answer_eligible_propositions,'batch 114 snapshot must precede batch 115 additions');
 const audit114=projectState.development_recovery.reconciliation_chain.find(x=>String(x.batch_id)==='114');assert(audit114);assert.deepEqual(batch114Actual,readinessMetrics(audit114.metrics_actual_after));
