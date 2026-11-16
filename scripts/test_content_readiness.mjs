@@ -1225,7 +1225,7 @@ assert(letter2989411&&letter2989411.type==='letter'&&letter2989411.response_prop
 assert.equal(letter2989411.evidence_family_id,'letter-5711-5-elul-yeshiva-students-aid2989411');
 const enriched5959845=idx.entries.find(e=>sourceAID(e)==='5959845');
 assert(enriched5959845&&enriched5959845.response_propositions.length===5);
-assert(enriched5959845.response_proposition_locators.some(x=>String(x).includes('214–224')));
+assert(enriched5959845.response_proposition_locators.some(x=>String(x).includes('214–224')&&String(x).includes('233–244')));
 assert.equal(enriched5959845.status,'Parsed');
 assert.equal(enriched5959845.evidence_family_id,'sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845');
 assert.equal(batch112Data.deduplication_check.full_index_scan_available,true);
