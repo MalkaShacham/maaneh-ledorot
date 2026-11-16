@@ -153,14 +153,14 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_reconciliation_and_readiness_pointer_fix",
+      "run_status": "rerun_after_aid2989585_historical_count_test_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Run 904 on commit 2da4f0e failed at test_content_readiness.mjs line 1805: AID 5413540 was not retained for the education-governance question despite its inspected proposition on Torah-and-mitzvot foundations. The engine now gathers all independent inspected source families that directly support the bounded question before applying the source budget. Reconciliation now excludes later in-place proposition additions from earlier batch snapshots."
+      "note": "The first full-corpus run after batch 119 failed at test_content_readiness.mjs line 1311: final-index assertions for AID 2989585 still expected 11 propositions although the same canonical identity now contains 13 after batches 118–119. Assertions at batch-113, batch-100 and batch-102 checkpoints now expect 13 in the final index while historical batch manifests retain their original 8/11 counts. Blocked AID 528725 is checked for absence of answer-eligible content, not absence of any metadata-only index row. Re-run readiness and quality gate before publication."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",

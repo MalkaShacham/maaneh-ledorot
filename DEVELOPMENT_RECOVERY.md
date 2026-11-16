@@ -903,3 +903,8 @@ Batch 113 is submitted as pending reconciliation. The public metrics and project
 - AID 528725 returned Internal Error; no bypass was attempted. The runner-side HTTP 403 crawler was not retried. No full text was copied and no translation was counted as an independent witness.
 - Reconciliation of batches 099–119 and the content-readiness run are pending this commit.
 - Quality-gate diagnosis: the batch-117 test incorrectly compared its historical after-snapshot to the final corpus metrics, even though batch 118 followed it. The assertion now compares batch 117's after-snapshot with batch 118's before-snapshot; batch 118 is likewise compared with batch 119's before-snapshot. The in-place AID 2989585 assertion now expects the two additional propositions while retaining one canonical identity.
+
+
+### Follow-up quality-gate diagnosis — 16.11.2026
+
+The first full-corpus validation after batch 119 exposed a second stale assertion family: the canonical AID 2989585 item is enriched in place across several batches, so tests that inspect the final search index must expect the current total of 13 propositions, while batch-specific audit records retain their historical counts (8 after the earlier checkpoint, 11 after batch 118, and 13 after batch 119). The failing assertions were at the batch-113, batch-100 and batch-102 test checkpoints. They now expect 13 in the final index; the per-batch historical assertions remain unchanged. The blocked AID 528725 test now checks that it has no answer-eligible content, rather than assuming no metadata-only index record can exist. A new validation run is required before reconciliation can be treated as complete.
