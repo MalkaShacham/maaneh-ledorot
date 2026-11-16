@@ -1128,7 +1128,7 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 124: נבדקו 12 גופי ערכי היום יום בעברית וביידיש ועוד הערת שוליים חדשה בזהות קיימת AID 5959845. שלוש הפניות נחסמו או הציגו summary shell; AID 528800 הוחרג כעמוד ניווט. לא נעשה שימוש בתקציר כתחליף לגוף, לא הופעל crawler ולא קודם מקור ל-Verified. עדכון בדיקת איכות: ההרצה הראשונה נכשלה בבדיקת שאלה צרה על גיוס תלמידים, משום שפרופוזיציית הרחבת חינוך כללית התקבלה כגיוס. שער האיכות הופרד כעת בין גיוס מפורש לבין סינתזה רב־ממדית של הרחבת חינוך, הפצת תורה ותמיכה ציבורית; נדרשת הרצה חוזרת.",
+  "manual_web_review_note": "Batch 124: נבדקו 12 גופי ערכי היום יום בעברית וביידיש ועוד הערת שוליים חדשה בזהות קיימת AID 5959845. שלוש הפניות נחסמו או הציגו summary shell; AID 528800 הוחרג כעמוד ניווט. לא נעשה שימוש בתקציר כתחליף לגוף, לא הופעל crawler ולא קודם מקור ל-Verified. עדכון בדיקת איכות: ההרצה הראשונה נכשלה בבדיקת שאלה צרה על גיוס תלמידים, משום שפרופוזיציית הרחבת חינוך כללית התקבלה כגיוס. שער האיכות הופרד כעת בין גיוס מפורש לבין סינתזה רב־ממדית של הרחבת חינוך, הפצת תורה ותמיכה ציבורית; נדרשת הרצה חוזרת. עדכון: שער האחזור הצר החזיר את שני העדים המתאימים, כולל AID 4754490; הכשל היה allowlist בדיקה שלא כלל את המפתח הקנוני aid:4754490. הבדיקה תוקנה ומוודאת במפורש שהמקורות הכלליים 5413024 ו-5413540 אינם נכנסים לשאלת גיוס צרה.",
   "manual_web_review_current_metrics": {
     "answer_eligible_unique_sources": 1146,
     "content_verified_unique_sources": 854,
@@ -5599,7 +5599,7 @@
     },
     "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
   },
-  "next_action": "Re-run reconciliation for batches 099–124 and the full answer-quality/readiness suite after the narrow-vs-broad yeshiva gate correction; only then publish actual metrics.",
+  "next_action": "Re-run reconciliation for batches 099–124 and the full answer-quality/readiness suite after the corrected AID 4754490 regression allowlist; only then publish actual metrics.",
   "last_manual_web_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
     "batch_id": "124",

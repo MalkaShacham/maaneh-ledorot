@@ -319,8 +319,9 @@ for(const mode of ['regular','researcher']){
   assert(m.answerable,`${mode}: inspected yeshiva-enrollment evidence must answer the query`);
   assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-319'),`${mode}: letter ד׳שיט must support the enrollment answer`);
   assert(m.sources.length<=3,`${mode}: broad education evidence must not flood a specific enrollment-policy answer`);
-  console.log('YESHIVA_ENROLLMENT_SOURCE_DEBUG '+mode+' '+JSON.stringify(m.sources.map(e=>({key:e.key,aid:e.aid,title:e.title,family:e.evidence_family_id,propositions:(e.response_propositions||[]).slice(0,4)}))));
-  assert(m.sources.every(e=>['id:igrot-scan-v13-letter-4-284','id:igrot-scan-v13-letter-4-292','id:igrot-scan-v13-letter-4-319'].includes(e.key)),`${mode}: only inspected enrollment propositions may enter the answer`);
+  assert(m.sources.every(e=>['id:igrot-scan-v13-letter-4-284','id:igrot-scan-v13-letter-4-292','id:igrot-scan-v13-letter-4-319','aid:4754490'].includes(e.key)),`${mode}: only inspected enrollment propositions may enter the answer`);
+  assert(m.sources.some(e=>String(e.aid)==='4754490'),`${mode}: inspected Boston room-expansion/admission letter must remain eligible`);
+  assert(!m.sources.some(e=>['5413024','5413540'].includes(String(e.aid))),`${mode}: general yeshiva expansion/support sources must not enter a narrow recruitment query`);
   assert(!m.sources.some(e=>String(e.aid)==='4812649'),`${mode}: a letter about decline and perseverance must not be mistaken for an explicit recruitment plan`);
   assert(m.claims.every(c=>c.source_numbers.length),`${mode}: every enrollment claim needs a proposition-level citation`);
 }

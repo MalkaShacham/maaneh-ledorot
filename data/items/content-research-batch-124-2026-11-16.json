@@ -1750,14 +1750,14 @@
   ],
   "batch_file": "data/items/content-research-batch-124-2026-11-16.json",
   "quality_gate_followup": {
-    "observed_run_id": 43931998981,
-    "failed_assertion": "scripts/test_content_readiness.mjs:322 — narrow enrollment answer admitted a general yeshiva-education expansion source",
-    "diagnosis": "The gate treated the phrase 'הרחבת החינוך הישיבתי' as explicit recruitment, so AID 5413024 could enter a narrow question asking only how to increase student enrollment.",
-    "correction": "Narrow enrollment now requires an explicit recruitment action/target. AID 5413024 is admitted only when the query also explicitly requests the multi-aspect combination of yeshiva-education expansion, Torah dissemination and public support; this preserves the separate broad synthesis regression.",
-    "status": "correction_committed_pending_retest"
+    "observed_run_id": 43933174845,
+    "failed_assertion": "scripts/test_content_readiness.mjs:322 — the regression allowlist omitted the canonical key aid:4754490",
+    "diagnosis": "After the narrow-vs-broad gate correction, the narrow enrollment query returned exactly two inspected enrollment witnesses: the volume-XIII letter (id:igrot-scan-v13-letter-4-319) and AID 4754490 (key aid:4754490). No general-only AID 5413024 or 5413540 was returned. The failure was a stale test allowlist, not an evidence-retrieval leak.",
+    "correction": "Allowlist now includes aid:4754490, asserts that AID 4754490 is retrieved, and explicitly excludes broad-only AIDs 5413024 and 5413540 from the narrow enrollment answer. The separate broad multi-aspect test still requires AID 5413024.",
+    "status": "regression_allowlist_correction_committed_pending_retest"
   },
   "reconciliation_attempt_note": {
-    "run_id": 43931999045,
+    "run_id": 43932881983,
     "observed_snapshot": {
       "answer_eligible_unique_sources": 1229,
       "content_verified_unique_sources": 854,
@@ -1768,6 +1768,6 @@
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3358
     },
-    "note": "The reconciliation script generated this workspace snapshot, but the workflow stopped at the readiness assertion and did not commit public metrics. Treat the snapshot as diagnostic only until a successful reconciliation run persists metrics_actual_before/after and variance."
+    "note": "Reconciliation reached this workspace snapshot but stopped at the stale readiness-test allowlist. No public-metrics commit was made. Treat the snapshot as diagnostic until the corrected allowlist passes and a successful reconciliation run persists actual before/after values and variance."
   }
 }
