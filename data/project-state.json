@@ -153,14 +153,14 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "rerun_after_aid2989585_historical_count_test_fix",
+      "run_status": "rerun_after_current_batch_pointer_assertion_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "The first full-corpus run after batch 119 failed at test_content_readiness.mjs line 1311: final-index assertions for AID 2989585 still expected 11 propositions although the same canonical identity now contains 13 after batches 118–119. Assertions at batch-113, batch-100 and batch-102 checkpoints now expect 13 in the final index while historical batch manifests retain their original 8/11 counts. Blocked AID 528725 is checked for absence of answer-eligible content, not absence of any metadata-only index row. Re-run readiness and quality gate before publication."
+      "note": "Full-corpus readiness run reached the historical batch-113 block and exposed three stale current-pointer assertions: lastBatchSummary.batch_id, manual_web_review.batch_file and previous_manual_web_review.batch_file still expected 118/115. They now expect current batch 119 and previous batch 118. Historical batch-113 metrics and per-batch audit counts remain unchanged. Re-run readiness and quality gate."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",

@@ -1326,7 +1326,7 @@ assert.deepEqual(batch113Data.reconciliation_variance,{
  answer_eligible_propositions:batch113Actual.answer_eligible_propositions-batch113Data.metrics_expected_after.answer_eligible_propositions
 });
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
-assert.equal(lastBatchSummary.batch_id,'118');
+assert.equal(lastBatchSummary.batch_id,'119');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
 assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
 assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
@@ -1335,9 +1335,9 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
 });
 assert.equal(acquisitionState.manual_web_review.batch_id,'119');
-assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-118-2026-11-16.json');
+assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-119-2026-11-16.json');
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'118');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-115-2026-11-16.json');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-118-2026-11-16.json');
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
