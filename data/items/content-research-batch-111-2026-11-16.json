@@ -6,17 +6,17 @@
   "title": "Batch 111 — Hebrew and Yiddish original-language Hayom Yom entries 12–19 Adar I 5703",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending",
-  "reviewed_item_count": 8,
-  "source_bodies_inspected": 8,
-  "source_body_pages_opened": 8,
+  "reviewed_item_count": 9,
+  "source_bodies_inspected": 9,
+  "source_body_pages_opened": 9,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 8,
-  "existing_identities_enriched": 0,
+  "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
   "new_response_propositions": 10,
-  "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 10,
+  "existing_response_propositions_added": 2,
+  "total_new_paraphrase_entries": 12,
   "answer_eligible_source_families_added": 8,
   "independent_witnesses_added": 8,
   "non_independent_presentations_added": 0,
@@ -37,14 +37,14 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1067,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3131
+    "answer_eligible_propositions": 3133
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 8,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 10
+    "answer_eligible_propositions": 12
   },
   "new_aids": [
     6093,
@@ -56,7 +56,9 @@
     6099,
     6100
   ],
-  "enriched_aids": [],
+  "enriched_aids": [
+    2989153
+  ],
   "rechecked_aids": [],
   "excluded_aids": [],
   "blocked_aids": [],
@@ -94,7 +96,9 @@
     "scan_only_verification_used": 0,
     "checked_against": "GitHub code search for AIDs 6093–6100; current 1,022-record content-review queue; manual batches 001–110; each AID has a distinct publisher item URL. No matching AID was found in the queue or code-search results. Full canonical identity/Evidence Family collision scan remains the reconciliation job's responsibility.",
     "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true
+    "full_index_scan_pending_reconciliation": true,
+    "existing_identity_updates_unique": true,
+    "same_family_memberships": 0
   },
   "blocked_candidates": [],
   "fallback_source_attempted": false,
@@ -178,6 +182,16 @@
       "publisher_item_url": "https://www.chabad.org/therebbe/article_cdo/aid/6100/jewish/Hayom-Yom-19-Adar-I.htm",
       "inspected_original_language_body": true,
       "locator": "Chabad.org Daily Study, 08.03.2026, entry 19 Adar I 5703, Hebrew, lines 277–281."
+    },
+    {
+      "aid": 2989153,
+      "id": "sicha-5713-20-menachem-av-akev-aid2989153",
+      "evidence_family_id": "sicha-5713-20-menachem-av-akev-aid2989153",
+      "language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989153",
+      "inspected_original_language_body": true,
+      "locator": "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 243–256.",
+      "action": "enriched_existing_identity_in_place"
     }
   ],
   "records": [
@@ -929,5 +943,23 @@
       "rights_status": "copyrighted-link-only",
       "canonical_file": "data/items/content-research-batch-111-2026-11-16.json"
     }
-  ]
+  ],
+  "existing_identity_updates": [
+    {
+      "aid": 2989153,
+      "id": "sicha-5713-20-menachem-av-akev-aid2989153",
+      "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+      "evidence_family_id": "sicha-5713-20-menachem-av-akev-aid2989153",
+      "existing_propositions_before": 4,
+      "propositions_added": 2,
+      "total_propositions_after": 6,
+      "locators": [
+        "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 247–256.",
+        "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 243–244."
+      ],
+      "action": "enriched_existing_identity_in_place",
+      "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
+    }
+  ],
+  "metrics_attribution_note": "שמונה ערכי היום יום נפרדים (AIDs 6093–6100) נוספו כמשפחות ראיות חדשות; בנוסף הועשרה זהות קיימת אחת (AID 2989153) בשתי פרפרזות מסעיף ט׳. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation."
 }
