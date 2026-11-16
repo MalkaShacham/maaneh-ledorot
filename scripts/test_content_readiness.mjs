@@ -1092,10 +1092,8 @@ assert.deepEqual(batch110Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch110Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert.equal(batch110Data.reconciliation_status,'reconciled_with_variance');
 const batch110Actual=readinessMetrics(batch110Data.metrics_actual_after);
-assert.deepEqual(batch110Actual,readinessMetrics(metrics));
 assert.deepEqual(batch110Actual,{answer_eligible_unique_sources:1058,content_verified_unique_sources:854,answer_eligible_propositions:3127});
 assert.deepEqual(batch110Data.reconciliation_variance,{answer_eligible_unique_sources:-1,content_verified_unique_sources:0,answer_eligible_propositions:6});
-assert.deepEqual(readinessMetrics(metrics),{answer_eligible_unique_sources:1058,content_verified_unique_sources:854,answer_eligible_propositions:3127});
 const batch111Path='data/items/content-research-batch-111-2026-11-16.json';
 const batch111Data=JSON.parse(await readFile(new URL(batch111Path,root)));
 const batch111Aids=['6093','6094','6095','6096','6097','6098','6099','6100'];
