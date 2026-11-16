@@ -278,6 +278,9 @@ const TOPICS={
 
  'סיום מסכת בט״ו באב':['סיום מסכת בט״ו באב','סיום מסכת תענית בט״ו באב','ט״ו באב וסיום מסכת','15th of Av tractate completion','siyum Taanis 15 Av'],
  'עבודת אלול ותשובה':['עבודת חודש אלול','חשבון נפש באלול','תשובה בחודש אלול','תורה תפילה וצדקה באלול','Elul repentance Torah prayer charity'],
+ 'עבודה בכוח עצמו לעומת הובלה מלמעלה':['עבודה בכוח עצמו','עבודה עצמית','העבודה העצמית','הובלה מלמעלה','נוטלים ביד ומוליכים','own effort','self-generated divine service','guidance from above'],
+ 'סיפורי חסידים כהוראה לחיים':['סיפורי חסידים','סיפור חסידי','סיפורים חסידיים','הוראה בחיים','כל סיפור הוא הוראה בחיים','Chassidic stories as life instruction','character refinement through stories'],
+ 'ריפוי חולי הנפש בתשובה ומעשים טובים':['חולי הנפש','תשובה ומעשים טובים','שתי דרכי העבודה','ריפוי רוחני','spiritual illness','teshuvah and good deeds as spiritual healing'],
  'צדקה רוחנית ביום צום':['צדקה רוחנית ביום צום','הפצת תורה ויהדות ביום צום','שבע מצוות בני נח ביום צום','spiritual charity on fast day','Noahide laws fast day'],
  'צומות יהפכו לשמחה':['צומות יהפכו לשמחה','ימי הצום לעתיד לבוא','צומות בימות המשיח','fast days become festivals','fast days transformed to joy'],
  'י״ט כסלו והפצת חסידות':['י״ט כסלו והפצת חסידות','ברכת שלום בי״ט כסלו','שחרור אדמו״ר הזקן','Yud-Tes Kislev blessing of peace','dissemination of Chassidus'],
