@@ -1,12 +1,127 @@
 {
-  "started_at": "2026-11-12T02:55:07.849366+00:00",
-  "attempted": 0,
-  "enriched": 0,
-  "discovered": 0,
-  "blocked": [],
-  "skipped": 2,
+  "started_at": "2026-11-16T04:58:08+02:00",
+  "attempted": 10,
+  "enriched": 1,
+  "discovered": 9,
+  "blocked": [
+    {
+      "aid": 6105,
+      "url": "https://he.chabad.org/therebbe/article_cdo/aid/6105/jewish/Hayom-Yom-24-Adar-I.htm",
+      "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528641",
+      "reason": "הנתיב העברי הישיר של AID 6105 הופנה לעמוד ספרייה אחר (AID 528641) ולא הציג את ערך כ״ד אדר א׳. באותה הפעלה נפתח דף הלימוד היומי של 13.03.2026 ונבדק בו גוף הערך המקורי ביידיש בשורה 174. דף האנגלית של AID 6105 שימש לאישור זהות הפריט בלבד. לא בוצע crawler retry ולא נעקפה בקרת גישה."
+    }
+  ],
+  "skipped": 0,
   "status": "manual_web_review_pending_reconciliation",
   "manual_web_review": {
+    "batch_id": "112",
+    "batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+    "title": "Batch 112 — Hebrew/Yiddish Hayom Yom entries 20–27 Adar I 5703, a Hebrew letter, and in-place Sicha enrichment",
+    "reviewed_at": "2026-11-16T04:58:08+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending",
+    "reviewed_item_count": 10,
+    "source_bodies_inspected": 10,
+    "source_body_pages_opened": 10,
+    "metadata_only_items_rechecked": 0,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 13,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 14,
+    "answer_eligible_source_families_added": 9,
+    "independent_witnesses_added": 9,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1067,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3133
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1076,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3147
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 6105,
+        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6105/jewish/Hayom-Yom-24-Adar-I.htm",
+        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528641",
+        "reason": "הנתיב העברי הישיר של AID 6105 הופנה לעמוד ספרייה אחר (AID 528641) ולא הציג את ערך כ״ד אדר א׳. באותה הפעלה נפתח דף הלימוד היומי של 13.03.2026 ונבדק בו גוף הערך המקורי ביידיש בשורה 174. דף האנגלית של AID 6105 שימש לאישור זהות הפריט בלבד. לא בוצע crawler retry ולא נעקפה בקרת גישה."
+      }
+    ],
+    "new_aids": [
+      6101,
+      6102,
+      6103,
+      6104,
+      6105,
+      6106,
+      6107,
+      6108,
+      2989411
+    ],
+    "enriched_aids": [
+      5959845
+    ],
+    "rechecked_aids": [],
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "accessible_item_level_bodies": 1,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        6105
+      ],
+      "notes": "החלופה נפתחה באותה הפעלה: דף הלימוד היומי של 13.03.2026 הציג את גוף ערך 24 אדר א׳ ה׳תש״ג ביידיש. שבעת דפי ה-AID האחרים נפתחו ישירות; המכתב והסיחה נפתחו בנפרד. סך הכול נבדקו עשרה גופי מקור."
+    },
+    "translations_counted_as_independent_witnesses": 0,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "language_distribution": {
+      "Hebrew": 6,
+      "Yiddish": 3
+    },
+    "original_language_distribution": {
+      "Hebrew": 6,
+      "Yiddish": 3
+    },
+    "source_type_distribution": {
+      "published_hebrew_hayom_yom_entry": 5,
+      "published_yiddish_hayom_yom_entry": 3,
+      "published_hebrew_letter": 1
+    },
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 9,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 14
+    },
+    "metrics_attribution_note": "תשעה פריטים חדשים: שמונה ערכי היום יום נפרדים (AIDs 6101–6108; חמש עברית ושלוש יידיש) ומכתב עברי אחד (AID 2989411). בנוסף הועשרה אותה זהות של שיחה קיימת (AID 5959845) בפרפרזה אחת מסעיפים ז–ח. תרגום לא נספר כעד עצמאי. AID 6105 נפתח דרך דף הלימוד היומי המקביל לאחר שהנתיב העברי הישיר הופנה לעמוד אחר. כל הרשומות נשארו Parsed; אין קידום ל-Verified. המדדים בפועל ממתינים ל-reconciliation.",
+    "existing_identity_updates": [
+      {
+        "aid": 5959845,
+        "id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+        "evidence_family_id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+        "existing_propositions_before": 4,
+        "propositions_added": 1,
+        "total_propositions_after": 5,
+        "locators": [
+          "he.chabad.org AID 5959845, גוף השיחה סעיפים ז–ח, שורות 214–224."
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "נפתח גוף השיחה העברי AID 5959845, סעיפים ז–ח, שורות 214–224. נוספה פרפרזה על ההבחנה שבשיחה בין תלמידים שלא הבינו מחמת קושי לבין תלמידים שהתרשלו בלימוד. הזהות, משפחת הראיות והסטטוס Parsed נשמרו."
+      }
+    ]
+  },
+  "previous_manual_web_review": {
     "batch_id": "111",
     "batch_file": "data/items/content-research-batch-111-2026-11-16.json",
     "title": "Batch 111 — Hebrew and Yiddish original-language Hayom Yom entries 12–19 Adar I 5703",
@@ -107,134 +222,6 @@
         "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
       }
     ]
-  },
-  "previous_manual_web_review": {
-    "batch_id": "110",
-    "batch_file": "data/items/content-research-batch-110-2026-11-16.json",
-    "title": "Batch 110 — Hebrew and Yiddish Hayom Yom original-language entry review",
-    "reviewed_at": "2026-11-16T03:25:41+02:00",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending",
-    "reviewed_item_count": 8,
-    "source_bodies_inspected": 8,
-    "source_body_pages_opened": 9,
-    "metadata_only_items_rechecked": 0,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 0,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 10,
-    "answer_eligible_source_families_added": 8,
-    "independent_witnesses_added": 8,
-    "non_independent_presentations_added": 0,
-    "content_verified_unique_sources_added": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1051,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3111
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1059,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3121
-    },
-    "metrics_actual_after": null,
-    "reconciliation_variance": null,
-    "new_aids": [
-      6084,
-      6085,
-      6086,
-      6087,
-      6088,
-      6089,
-      6090,
-      6091
-    ],
-    "enriched_aids": [],
-    "rechecked_aids": [],
-    "blocked_candidate_count": 7,
-    "blocked_candidates": [
-      {
-        "aid": 6084,
-        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6084/jewish/Hayom-Yom-3-Adar-I.htm",
-        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528620",
-        "reason": "הנתיב העברי הישיר של AID זה הופנה לעמוד ספרייה/ניווט ללא גוף הערך המקורי. באותה הפעלה נפתח דף הלימוד היומי של אותו תאריך ונבדק בו גוף הערך המקורי בעברית/יידיש. לא בוצע ניסיון crawler חוזר ולא נעקפה בקרת גישה."
-      },
-      {
-        "aid": 6086,
-        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6086/jewish/Hayom-Yom-5-Adar-I.htm",
-        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528622",
-        "reason": "הנתיב העברי הישיר של AID זה הופנה לעמוד ספרייה/ניווט ללא גוף הערך המקורי. באותה הפעלה נפתח דף הלימוד היומי של אותו תאריך ונבדק בו גוף הערך המקורי בעברית/יידיש. לא בוצע ניסיון crawler חוזר ולא נעקפה בקרת גישה."
-      },
-      {
-        "aid": 6087,
-        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6087/jewish/Hayom-Yom-6-Adar-I.htm",
-        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528623",
-        "reason": "הנתיב העברי הישיר של AID זה הופנה לעמוד ספרייה/ניווט ללא גוף הערך המקורי. באותה הפעלה נפתח דף הלימוד היומי של אותו תאריך ונבדק בו גוף הערך המקורי בעברית/יידיש. לא בוצע ניסיון crawler חוזר ולא נעקפה בקרת גישה."
-      },
-      {
-        "aid": 6088,
-        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6088/jewish/Hayom-Yom-7-Adar-I.htm",
-        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528624",
-        "reason": "הנתיב העברי הישיר של AID זה הופנה לעמוד ספרייה/ניווט ללא גוף הערך המקורי. באותה הפעלה נפתח דף הלימוד היומי של אותו תאריך ונבדק בו גוף הערך המקורי בעברית/יידיש. לא בוצע ניסיון crawler חוזר ולא נעקפה בקרת גישה."
-      },
-      {
-        "aid": 6089,
-        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6089/jewish/Hayom-Yom-8-Adar-I.htm",
-        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528625",
-        "reason": "הנתיב העברי הישיר של AID זה הופנה לעמוד ספרייה/ניווט ללא גוף הערך המקורי. באותה הפעלה נפתח דף הלימוד היומי של אותו תאריך ונבדק בו גוף הערך המקורי בעברית/יידיש. לא בוצע ניסיון crawler חוזר ולא נעקפה בקרת גישה."
-      },
-      {
-        "aid": 6090,
-        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6090/jewish/Hayom-Yom-9-Adar-I.htm",
-        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528626",
-        "reason": "הנתיב העברי הישיר של AID זה הופנה לעמוד ספרייה/ניווט ללא גוף הערך המקורי. באותה הפעלה נפתח דף הלימוד היומי של אותו תאריך ונבדק בו גוף הערך המקורי בעברית/יידיש. לא בוצע ניסיון crawler חוזר ולא נעקפה בקרת גישה."
-      },
-      {
-        "aid": 6091,
-        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6091/jewish/Hayom-Yom-10-Adar-I.htm",
-        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528627",
-        "reason": "הנתיב העברי הישיר של AID זה הופנה לעמוד ספרייה/ניווט ללא גוף הערך המקורי. באותה הפעלה נפתח דף הלימוד היומי של אותו תאריך ונבדק בו גוף הערך המקורי בעברית/יידיש. לא בוצע ניסיון crawler חוזר ולא נעקפה בקרת גישה."
-      }
-    ],
-    "fallback_source_attempted": true,
-    "fallback_source_results": {
-      "publisher": "Chabad.org / BeitChabad daily-study pages and Hebrew item page",
-      "accessible_item_level_bodies": 8,
-      "body_text_inspected": true,
-      "inspected_aids": [
-        6084,
-        6085,
-        6086,
-        6087,
-        6088,
-        6089,
-        6090,
-        6091
-      ],
-      "notes": "נפתחו שמונה דפי לימוד יומיים לפי תאריך ונבדקו בהם גופי הערכים בשפת המקור; בנוסף נפתח עמוד AID 6085 ישיר. שבעה נתיבי AID עבריים הופנו לעמודי ספרייה/ניווט ללא גוף הערך, והוחלפו באותה הפעלה בדפי הלימוד היומיים של אותם תאריכים. לא נעשה שימוש בתוצאות חיפוש כתחליף לתוכן."
-    },
-    "translations_counted_as_independent_witnesses": 0,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "language_distribution": {
-      "Hebrew": 5,
-      "Yiddish": 3
-    },
-    "original_language_distribution": {
-      "Hebrew": 5,
-      "Yiddish": 3
-    },
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 8,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 10
-    },
-    "metrics_attribution_note": "שמונה ערכים נפרדים בעלי AID ומשפחת ראיות נפרדים; עשר פרפרזות. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation."
   },
   "earlier_manual_web_review": {
     "batch_id": "093",
@@ -577,9 +564,9 @@
       }
     ]
   },
-  "manual_web_review_note": "Batch 110: eight original-language Hayom Yom entries inspected; full-index reconciliation pending. Public metrics have not yet been updated.",
+  "manual_web_review_note": "נבדקו עשרה גופי מקור: תשעה פריטים חדשים (שמונה ערכי היום יום ומכתב עברי אחד) והעשרה אחת של שיחה קיימת. AID 6105 הופנה לעמוד אחר; נפתח באותה הפעלה דף לימוד יומי חלופי בשפת המקור. כל הפריטים נשארו Parsed.",
   "manual_web_review_current_metrics": null,
-  "last_manual_review_at": "2026-11-16T03:25:41+02:00",
+  "last_manual_review_at": "2026-11-16T04:58:08+02:00",
   "runner_acquisition_policy": {
     "live_crawler_enabled": false,
     "disabled_at": "2026-11-13T18:35:35+02:00",
@@ -2849,6 +2836,114 @@
           "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
         }
       ]
+    },
+    {
+      "batch_id": "112",
+      "batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+      "title": "Batch 112 — Hebrew/Yiddish Hayom Yom entries 20–27 Adar I 5703, a Hebrew letter, and in-place Sicha enrichment",
+      "reviewed_at": "2026-11-16T04:58:08+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending",
+      "reviewed_item_count": 10,
+      "source_bodies_inspected": 10,
+      "source_body_pages_opened": 10,
+      "metadata_only_items_rechecked": 0,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 13,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 14,
+      "answer_eligible_source_families_added": 9,
+      "independent_witnesses_added": 9,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1067,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3133
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1076,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3147
+      },
+      "metrics_actual_after": null,
+      "reconciliation_variance": null,
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 6105,
+          "url": "https://he.chabad.org/therebbe/article_cdo/aid/6105/jewish/Hayom-Yom-24-Adar-I.htm",
+          "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528641",
+          "reason": "הנתיב העברי הישיר של AID 6105 הופנה לעמוד ספרייה אחר (AID 528641) ולא הציג את ערך כ״ד אדר א׳. באותה הפעלה נפתח דף הלימוד היומי של 13.03.2026 ונבדק בו גוף הערך המקורי ביידיש בשורה 174. דף האנגלית של AID 6105 שימש לאישור זהות הפריט בלבד. לא בוצע crawler retry ולא נעקפה בקרת גישה."
+        }
+      ],
+      "new_aids": [
+        6101,
+        6102,
+        6103,
+        6104,
+        6105,
+        6106,
+        6107,
+        6108,
+        2989411
+      ],
+      "enriched_aids": [
+        5959845
+      ],
+      "rechecked_aids": [],
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "accessible_item_level_bodies": 1,
+        "body_text_inspected": true,
+        "inspected_aids": [
+          6105
+        ],
+        "notes": "החלופה נפתחה באותה הפעלה: דף הלימוד היומי של 13.03.2026 הציג את גוף ערך 24 אדר א׳ ה׳תש״ג ביידיש. שבעת דפי ה-AID האחרים נפתחו ישירות; המכתב והסיחה נפתחו בנפרד. סך הכול נבדקו עשרה גופי מקור."
+      },
+      "translations_counted_as_independent_witnesses": 0,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "language_distribution": {
+        "Hebrew": 6,
+        "Yiddish": 3
+      },
+      "original_language_distribution": {
+        "Hebrew": 6,
+        "Yiddish": 3
+      },
+      "source_type_distribution": {
+        "published_hebrew_hayom_yom_entry": 5,
+        "published_yiddish_hayom_yom_entry": 3,
+        "published_hebrew_letter": 1
+      },
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 9,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 14
+      },
+      "metrics_attribution_note": "תשעה פריטים חדשים: שמונה ערכי היום יום נפרדים (AIDs 6101–6108; חמש עברית ושלוש יידיש) ומכתב עברי אחד (AID 2989411). בנוסף הועשרה אותה זהות של שיחה קיימת (AID 5959845) בפרפרזה אחת מסעיפים ז–ח. תרגום לא נספר כעד עצמאי. AID 6105 נפתח דרך דף הלימוד היומי המקביל לאחר שהנתיב העברי הישיר הופנה לעמוד אחר. כל הרשומות נשארו Parsed; אין קידום ל-Verified. המדדים בפועל ממתינים ל-reconciliation.",
+      "existing_identity_updates": [
+        {
+          "aid": 5959845,
+          "id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+          "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+          "evidence_family_id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+          "existing_propositions_before": 4,
+          "propositions_added": 1,
+          "total_propositions_after": 5,
+          "locators": [
+            "he.chabad.org AID 5959845, גוף השיחה סעיפים ז–ח, שורות 214–224."
+          ],
+          "action": "enriched_existing_identity_in_place",
+          "note": "נפתח גוף השיחה העברי AID 5959845, סעיפים ז–ח, שורות 214–224. נוספה פרפרזה על ההבחנה שבשיחה בין תלמידים שלא הבינו מחמת קושי לבין תלמידים שהתרשלו בלימוד. הזהות, משפחת הראיות והסטטוס Parsed נשמרו."
+        }
+      ]
     }
   ],
   "earlier_manual_web_review_12": {
@@ -2990,7 +3085,7 @@
     },
     "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
   },
-  "next_action": "Reconcile contiguous pending batches 099–111, including the in-place enrichment of AID 2989153; validate researcher claim-level locators, then verify commit-bound Actions and Pages.",
+  "next_action": "Reconcile contiguous pending batches 099–112, run test_content_readiness.mjs and the answer-quality gate, then verify GitHub Actions and live Pages metrics.",
   "last_manual_web_review": {
     "batch_id": "111",
     "batch_file": "data/items/content-research-batch-111-2026-11-16.json",
@@ -3090,6 +3185,114 @@
         ],
         "action": "enriched_existing_identity_in_place",
         "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
+      }
+    ]
+  },
+  "last_manual_review": {
+    "batch_id": "112",
+    "batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+    "title": "Batch 112 — Hebrew/Yiddish Hayom Yom entries 20–27 Adar I 5703, a Hebrew letter, and in-place Sicha enrichment",
+    "reviewed_at": "2026-11-16T04:58:08+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending",
+    "reviewed_item_count": 10,
+    "source_bodies_inspected": 10,
+    "source_body_pages_opened": 10,
+    "metadata_only_items_rechecked": 0,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 13,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 14,
+    "answer_eligible_source_families_added": 9,
+    "independent_witnesses_added": 9,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1067,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3133
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1076,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3147
+    },
+    "metrics_actual_after": null,
+    "reconciliation_variance": null,
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 6105,
+        "url": "https://he.chabad.org/therebbe/article_cdo/aid/6105/jewish/Hayom-Yom-24-Adar-I.htm",
+        "redirected_to": "https://he.chabad.org/library/article_cdo/aid/528641",
+        "reason": "הנתיב העברי הישיר של AID 6105 הופנה לעמוד ספרייה אחר (AID 528641) ולא הציג את ערך כ״ד אדר א׳. באותה הפעלה נפתח דף הלימוד היומי של 13.03.2026 ונבדק בו גוף הערך המקורי ביידיש בשורה 174. דף האנגלית של AID 6105 שימש לאישור זהות הפריט בלבד. לא בוצע crawler retry ולא נעקפה בקרת גישה."
+      }
+    ],
+    "new_aids": [
+      6101,
+      6102,
+      6103,
+      6104,
+      6105,
+      6106,
+      6107,
+      6108,
+      2989411
+    ],
+    "enriched_aids": [
+      5959845
+    ],
+    "rechecked_aids": [],
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "accessible_item_level_bodies": 1,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        6105
+      ],
+      "notes": "החלופה נפתחה באותה הפעלה: דף הלימוד היומי של 13.03.2026 הציג את גוף ערך 24 אדר א׳ ה׳תש״ג ביידיש. שבעת דפי ה-AID האחרים נפתחו ישירות; המכתב והסיחה נפתחו בנפרד. סך הכול נבדקו עשרה גופי מקור."
+    },
+    "translations_counted_as_independent_witnesses": 0,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "language_distribution": {
+      "Hebrew": 6,
+      "Yiddish": 3
+    },
+    "original_language_distribution": {
+      "Hebrew": 6,
+      "Yiddish": 3
+    },
+    "source_type_distribution": {
+      "published_hebrew_hayom_yom_entry": 5,
+      "published_yiddish_hayom_yom_entry": 3,
+      "published_hebrew_letter": 1
+    },
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 9,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 14
+    },
+    "metrics_attribution_note": "תשעה פריטים חדשים: שמונה ערכי היום יום נפרדים (AIDs 6101–6108; חמש עברית ושלוש יידיש) ומכתב עברי אחד (AID 2989411). בנוסף הועשרה אותה זהות של שיחה קיימת (AID 5959845) בפרפרזה אחת מסעיפים ז–ח. תרגום לא נספר כעד עצמאי. AID 6105 נפתח דרך דף הלימוד היומי המקביל לאחר שהנתיב העברי הישיר הופנה לעמוד אחר. כל הרשומות נשארו Parsed; אין קידום ל-Verified. המדדים בפועל ממתינים ל-reconciliation.",
+    "existing_identity_updates": [
+      {
+        "aid": 5959845,
+        "id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+        "evidence_family_id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
+        "existing_propositions_before": 4,
+        "propositions_added": 1,
+        "total_propositions_after": 5,
+        "locators": [
+          "he.chabad.org AID 5959845, גוף השיחה סעיפים ז–ח, שורות 214–224."
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "נפתח גוף השיחה העברי AID 5959845, סעיפים ז–ח, שורות 214–224. נוספה פרפרזה על ההבחנה שבשיחה בין תלמידים שלא הבינו מחמת קושי לבין תלמידים שהתרשלו בלימוד. הזהות, משפחת הראיות והסטטוס Parsed נשמרו."
       }
     ]
   }

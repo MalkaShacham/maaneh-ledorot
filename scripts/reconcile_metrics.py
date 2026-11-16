@@ -129,7 +129,16 @@ def candidate_dicts(obj):
     while stack:
         x=stack.pop()
         if isinstance(x,dict):
-            if is_source_record(x) and stable_key(x) and (x.get("title") or x.get("summary_researcher") or x.get("source_url") or isinstance(x.get("provenance"),dict)):out.append(x)
+            # Existing-identity update descriptors carry AID, item id and Evidence Family
+            # for auditability, but they are not additional canonical source records.
+            # Counting them here created false collisions (for example AID 2989153)
+            # and could let an audit descriptor shadow the actual inspected item.
+            audit_descriptor = (
+                x.get("action") == "enriched_existing_identity_in_place"
+                or ("canonical_file" in x and "propositions_added" in x and "total_propositions_after" in x)
+                or ("identity_key" in x and "canonical_records_found" in x)
+            )
+            if not audit_descriptor and is_source_record(x) and stable_key(x) and (x.get("title") or x.get("summary_researcher") or x.get("source_url") or isinstance(x.get("provenance"),dict)):out.append(x)
             for v in x.values():
                 if isinstance(v,(dict,list)):stack.append(v)
         elif isinstance(x,list):stack.extend(x)
