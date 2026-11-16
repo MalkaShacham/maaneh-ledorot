@@ -3304,7 +3304,8 @@ for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries
 const teacherStudentBoundariesQuestion='מה השיחה אומרת על כבוד אישי לעומת אדישות כלפי דברי תורה ומסורות של רבותינו?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,teacherStudentBoundariesQuestion,{mode});assert(m.answerable,mode+': the inspected Sicha must answer the bounded teacher-student question');assert(m.sources.some(e=>sourceAID(e)==='5959845'),mode+': the enriched Sicha must be retrieved');assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': Sicha claims need claim-level citations');if(mode==='researcher')assert(m.research&&m.research.depth==='deep'&&m.research.witnesses.some(w=>String(w.proposition_source_locator||'').includes('260–280')),'researcher mode must expose the new Sicha locator');}
 const enriched5959845Final=idx.entries.find(e=>sourceAID(e)==='5959845');
-assert(enriched5959845Final&&enriched5959845Final.response_propositions.length===12,'AID 5959845 must retain the section-15 propositions and the later section-16 enrichment in the existing identity');
+assert(enriched5959845Final&&enriched5959845Final.response_propositions.length===13,'AID 5959845 must retain the existing propositions and both later in-place enrichments');
+assert(enriched5959845Final.response_proposition_locators.some(l=>String(l).includes('338–343')));
 assert(enriched5959845Final.response_propositions.some(p=>p.includes('בנות צלפחד')&&p.includes('רבי עקיבא')&&p.includes('רבי שמעון')));
 assert(enriched5959845Final.response_propositions.some(p=>p.includes('תשובת המעפילים')&&p.includes('ארץ ישראל')));
 assert(enriched5959845Final.response_proposition_locators.some(l=>String(l).includes('290–305')));
@@ -3837,7 +3838,7 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': inspected love-of-Israel aphorism must answer the query');
  assert(m.sources.some(e=>sourceAID(e)==='528808'),mode+': AID 528808 must support the love-of-Israel query');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every love-of-Israel claim needs proposition-level citations');
- if(mode==='researcher'){assert(m.research&&m.research.evidence_map.length>0&&m.research.witnesses.length===m.sources.length);}
+ if(mode==='researcher'){assert(m.research&&m.research.depth==='deep');assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));assert.equal(m.research.claim_source_map.length,m.claims.length);assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));}
 }
 const fourPairsTefillinQuestion='מהו סדר הנחת ארבעת זוגות התפילין לפי ערך היום יום?';
 for(const mode of ['regular','researcher']){
@@ -3845,7 +3846,7 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': inspected four-pairs tefillin entry must answer the query');
  assert(m.sources.some(e=>sourceAID(e)==='528819'),mode+': AID 528819 must support the tefillin sequence');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every tefillin claim needs proposition-level citations');
- if(mode==='researcher'){assert(m.research&&m.research.evidence_map.length>0&&m.research.witnesses.length===m.sources.length);}
+ if(mode==='researcher'){assert(m.research&&m.research.depth==='deep');assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));assert.equal(m.research.claim_source_map.length,m.claims.length);assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));}
 }
 const katontiEditQuestion='מה מספר היום יום על הוספת ״במדת אמת ליעקב״ לאגרת קטנתי?';
 for(const mode of ['regular','researcher']){
@@ -3853,7 +3854,7 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': inspected Katonti editing tradition must answer the query');
  assert(m.sources.some(e=>sourceAID(e)==='528810'),mode+': AID 528810 must support the Katonti query through its inspected original-language body');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': every Katonti claim needs proposition-level citations');
- if(mode==='researcher'){assert(m.research&&m.research.evidence_map.length>0&&m.research.witnesses.length===m.sources.length);}
+ if(mode==='researcher'){assert(m.research&&m.research.depth==='deep');assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));assert.equal(m.research.claim_source_map.length,m.claims.length);assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length));}
 }
 assert(['reconciled','reconciled_with_variance'].includes(batch125Data.reconciliation_status));
 assert.deepEqual(readinessMetrics(batch123Data.metrics_actual_after),readinessMetrics(batch124Data.metrics_actual_before));
