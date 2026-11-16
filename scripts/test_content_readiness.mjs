@@ -2002,6 +2002,7 @@ assert(queenModel.citation_entailment.every(x=>x.valid)&&queenModel.context_boun
 const multiQuestion='מה מתעדים תקצירי Living Torah על גאווה יהודית, מעשי טוב וחסד והפצת יהדות בסביבה הקרובה?';
 const multiUnderstanding=understandQuestion(multiQuestion);
 assert(!multiUnderstanding.topics.includes('רופא מצליח וגאווה'),'generic Jewish pride must not select the doctor-success topic without a doctor context');
+assert(understandQuestion('מה מתואר על רופא מצליח וגאווה?').topics.includes('רופא מצליח וגאווה'),'explicit doctor context should retain the doctor-success topic');
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,multiQuestion,{mode});
  assert(m.answerable,mode+': multi-source publisher-synopsis query should be answerable within source scope');
