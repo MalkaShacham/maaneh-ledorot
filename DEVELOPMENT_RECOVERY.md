@@ -922,3 +922,13 @@ A subsequent run (16.11.2026) then reached the historical batch-113 assertions a
 - Added readiness assertions for the new Hebrew/Yiddish entries, non-independent English translations, the three new AID 2989585 locators, and deep-researcher multi-source synthesis across the two letters. Current pointers now expect batch 120 and previous batch 119.
 - No source was promoted to Verified. The public metrics, public search index and Pages are not reported as updated until reconciliation, readiness and quality-gate checks complete.
 
+
+
+## 2026-11-16 — Batch 121: inspected Hebrew/Yiddish Hayom Yom entries and Sicha enrichment
+
+- Opened and inspected 16 original-language item bodies, AIDs 528748–528763, covering 9–24 Sivan 5703: 10 Hebrew, 5 Yiddish and 1 mixed Hebrew/Yiddish entry. Added 16 distinct dated-item identities and Evidence Families, with 20 non-verbatim source-grounded propositions and exact body-line locators.
+- Enriched existing Sicha AID 2989585 in place with three propositions from sections 34–35, lines 483–485 and 499–508. The existing identity and Evidence Family remain unchanged; total propositions in that identity are now 19. The report about the Baal Shem Tov remains attributed as a tradition cited by the talk, not an independently inspected witness.
+- AID 553691 (Yechidus, Yiddish) was opened but exposed an audio listing without a readable transcript. It was excluded from content propositions and left in the review queue; 16 accessible Hayom Yom bodies were used as same-run fallback. No audio was played, no access control was bypassed, and the blocked runner crawler was not retried.
+- Expected chained boundary after batch 120: answer-eligible unique sources 1,175; content-verified unique sources 854; answer-eligible propositions 3,270. Expected after batch 121: 1,191; 854; 3,293. These are chained expectations only; actual values remain pending full reconciliation of batches 099–121.
+- No new item was promoted to Verified. The anthology entries remain Parsed with partial context; translations, scans and later presentations do not count as independent witnesses.
+- The readiness test now includes batch-121 identity, proposition, provenance, locator, exclusion and deep multi-source synthesis assertions. The batch and state are pending reconciliation; do not report the assertions as passed until a commit-bound Actions result is available.
