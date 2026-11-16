@@ -1073,3 +1073,15 @@ A small test-fixture refinement removed an over-specific assertion that the enti
 ### Reconciliation retry note — 2026-11-16
 
 Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified unique sources and 3,474 answer-eligible propositions in its workspace (9,531 index entries), but did not commit metrics because the readiness suite stopped on a missing closing parenthesis in the batch-129 queue assertion. Fixed in commit d4474aabd77e1ecf9fdcc9542b66de1df0b81793. The doctor-topic disambiguation and positive/negative regression assertions were expanded in commit 0ddd3579c65e26f7edbe1e53dd497c6a20f157f4. These workspace counts are preliminary observations, not published metrics; a new full reconciliation and readiness pass are required.
+
+## 2026-11-17 — Batch 130: inspected content and retrieval coverage
+
+- Added 16 item identities: 15 original-language Hayom Yom entries (14 public AID pages plus one date-addressed publisher page without an asserted AID) and one published English translation of Letter 531. The English translation is explicitly marked `independent_witness=false` and linked to its own Evidence Family; it is not counted as an independent witness.
+- Added 24 non-verbatim, source-grounded paraphrases with proposition-level locators, provenance, verification scope, context and limitations. Enriched the existing AID 5959845 identity in place with one further proposition from section XXI (lines 376–379); it now contains 14 propositions. Total additions: 25 paraphrase entries.
+- AID 528879's direct public route returned Internal Error. A date-addressed Chabad.org daily-study page was opened in the same run and its Hebrew body was inspected. It was recorded as a URL-based identity without assigning AID 528879; the AID mapping remains unresolved. No crawler retry or access-control bypass was attempted.
+- Checked the 1,022-record review queue and recent batches 127–129 for the new AIDs; no matches were returned. The complete public search index was too large to retrieve through the connector, so canonical collision and missing-identity checks remain pending the repository reconciliation script.
+- All new records remain Parsed with partial context. No source was promoted to Verified. No protected text was copied in full. Translations were not counted as independent witnesses.
+- Added a bounded Hayom Yom Sukkot-customs topic and proposition-level support gate to the answer engine. Readiness tests now require a two-family synthesis for Hoshana Rabbah and Shemini Atzeret, with deep-research claim locators, and assert the non-independent status of the English translation.
+- Expected batch boundary (not yet measured): 1,302 / 854 / 3,470 before; 1,318 / 854 / 3,495 after. Actual before/after values remain null until reconciliation.
+- Updated `project-state.json` and `acquisition/latest.json` to batch 130 and preserved the prior batch-129 pointer. Pending reconciliation now includes batches 099–130.
+- No automation, schedule, audience, or permissions were changed. The existing hourly maintenance workflow remains the only scheduled workflow.
