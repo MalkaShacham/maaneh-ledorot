@@ -286,15 +286,61 @@ for selected_index, batch_info in enumerate(selected_batches):
     # Exclude later manual batches to calculate the actual corpus snapshot immediately
     # after this batch. Use all entries, not only the final deduplicated index.
     later_paths={str(x["path"].relative_to(ROOT)) for x in selected_batches[selected_index+1:]}
+    # Later manual batches may append propositions to an earlier canonical
+    # item file. Exclude those later additions when calculating an earlier
+    # batch's historical snapshot; otherwise the same in-place enrichment is
+    # counted before the batch that actually introduced it.
+    later_in_place_exclusions={}
+    later_batches_with_in_place_updates=[]
+    for later_info in selected_batches[selected_index+1:]:
+        later_data=later_info["data"]
+        later_batch_id=str(later_data.get("batch_id") or "")
+        for update in later_data.get("existing_identity_updates",[]):
+            canonical_file=str(update.get("canonical_file") or "")
+            aid=str(update.get("aid") or "")
+            if not canonical_file or canonical_file in later_paths or not aid: continue
+            before=update.get("existing_propositions_before")
+            after=update.get("total_propositions_after")
+            excluded=set()
+            if isinstance(before,int) and isinstance(after,int) and after>before:
+                excluded.update(range(before,after))
+            else:
+                locators=update.get("locators") or ([update.get("locator")] if update.get("locator") else [])
+                for entry in all_search_entries:
+                    if entry.get("canonical_file")!=canonical_file or str(entry.get("aid") or "")!=aid: continue
+                    entry_locators=entry.get("response_proposition_locators") or []
+                    for locator in locators:
+                        for prop_index,entry_locator in enumerate(entry_locators):
+                            if prop_index not in excluded and str(entry_locator)==str(locator):
+                                excluded.add(prop_index);break
+            if excluded:
+                later_in_place_exclusions.setdefault((canonical_file,aid),set()).update(excluded)
+                later_batches_with_in_place_updates.append(later_batch_id)
     snapshot_by_key={}
     for entry in all_search_entries:
         if entry.get("canonical_file") in later_paths: continue
-        key=entry.get("key")
+        adjusted=entry
+        excluded=later_in_place_exclusions.get((str(entry.get("canonical_file") or ""),str(entry.get("aid") or "")),set())
+        if excluded:
+            adjusted=dict(entry)
+            props=entry.get("response_propositions") or []
+            locators=entry.get("response_proposition_locators") or []
+            keep=[i for i in range(len(props)) if i not in excluded]
+            adjusted["response_propositions"]=[props[i] for i in keep]
+            adjusted["response_proposition_locators"]=[locators[i] for i in keep if i<len(locators)]
+            if not adjusted["response_propositions"]: adjusted["has_content_evidence"]=False
+        key=adjusted.get("key")
         if not key: continue
         old=snapshot_by_key.get(key)
         priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
-        if old is None or priority(entry)>priority(old): snapshot_by_key[key]=entry
+        if old is None or priority(adjusted)>priority(old): snapshot_by_key[key]=adjusted
     snapshot_metrics=summarize(list(snapshot_by_key.values()))
+    batch_data["reconciliation_snapshot_adjustment"]={
+        "excluded_later_in_place_proposition_count":sum(len(v) for v in later_in_place_exclusions.values()),
+        "affected_canonical_identity_count":len(later_in_place_exclusions),
+        "later_batches_with_in_place_updates":sorted(set(later_batches_with_in_place_updates)),
+        "policy":"Historical batch snapshots exclude proposition indices documented by later existing_identity_updates when those updates were written into an earlier canonical file. New later batch files remain excluded by later_paths."
+    }
 
     audit=[]; by_identity={target["key"]:[] for target in target_identities}
     for fp in items:
