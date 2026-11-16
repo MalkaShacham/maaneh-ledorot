@@ -801,3 +801,8 @@ The hourly schedule, repository visibility, audience and permissions remain unch
 - The first commit-bound reconciliation attempt after batch 110 failed in `scripts/reconcile_metrics.py` while calculating `last_batch_summary.metrics_delta_actual`. The code iterated over every public-metrics field and attempted `int()` on the explanatory `content_readiness_note` string. This was a reconciliation-code defect, not a source-content or citation failure; no refreshed public metrics were committed by that attempt.
 - The calculation now uses only the three numeric answer-readiness measures: `answer_eligible_unique_sources`, `content_verified_unique_sources`, and `answer_eligible_propositions`. The content-readiness test also verifies that the saved last-batch delta contains exactly those numeric keys and matches the reconciled public metrics.
 - Reconciliation, test completion, and Pages verification remain pending until the follow-up commit's Actions runs finish. The public metrics are still not reported as updated.
+
+
+### Current-review pointer correction — 2026-11-16
+
+- The historical batch-108 assertion in `test_content_readiness.mjs` was still checking batch 109 as the current manual review. Since batch 110 is now the current review and batch 109 is its predecessor, the assertion now checks `previous_manual_web_review.batch_id === '109'`. The final current-review assertion remains batch 110.

@@ -2853,7 +2853,7 @@ assert(batch107Data.deduplication_check.full_index_scan_available);
 assert.deepEqual(batch107Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch107Data.deduplication_check.missing_canonical_identities,[]);
 assert.equal(batch107Data.deduplication_check.all_target_identities_answer_eligible,true);
-assert.equal(acquisitionState.manual_web_review.batch_id,'109');
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'109');
 assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-109-2026-11-16.json');
 
 const batch108Path='data/items/content-research-batch-108-2026-11-16.json';
