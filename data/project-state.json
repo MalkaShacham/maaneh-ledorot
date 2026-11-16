@@ -163,16 +163,16 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "latest Answer Quality Gate failed at a stale manual_web_review.batch_file assertion (expected batch 124 while acquisition.latest points to batch 126); current and previous batch file assertions corrected to 126/125; retest pending.",
+      "run_status": "latest readiness run passed the repaired acquisition pointers but failed at the study/youth synthesis regression: AID 5019603 is publisher text completed from a photograph and correctly marked independent_witness=false, while the synthesis helper excluded it entirely. The helper now includes this specific inspected publisher text as non-independent with an explicit limitation; it is not counted as an independent witness. Full retest pending.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "evaluated_commit": "bb2f57ffcb0af838f6ed07a124c93b8a1e0dd3d7",
-      "workflow_run_id": 43948984951,
-      "note": "The run passed status normalization, evidence-index generation, question-specific retrieval, answer synthesis, citation integrity, evidence-contract audit and write-safety. test_content_readiness then failed at line 1341 because a historical acquisition path assertion still expected batch 124 while the current pointer is batch 126. Both current/previous path assertions were corrected to 126/125; full retest pending.",
+      "evaluated_commit": "f807ada983a9b525cac4d473d054b50911215859",
+      "workflow_run_id": 43949768911,
+      "note": "Answer Quality Gate reached test_content_readiness after all prior checks. It failed at line 1934 because buildYouthEducationStudySynthesis excluded AID 5019603 (publisher text completed from a photograph, photograph not inspected), leaving no cross-item synthesis. The fix permits only this specific source-text-inspected, non-translation publisher text as a non-independent basis item, records its status in every claim locator, adds an explicit limitation, and keeps researcher synthesis_scope at claim_level because only one independent family remains.",
       "bulk_reconcile_run_id": null,
-      "hourly_run_id": 43948984956
+      "hourly_run_id": 43949769232
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",

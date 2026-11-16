@@ -1934,7 +1934,11 @@ for(const mode of ['regular','researcher']){
  assert(m.synthesis&&m.synthesis.topic==='study_and_youth_education');
  assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote');
  assert(m.synthesis.claims.length>=2&&m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length),mode+': each synthesis claim must carry its own item-level locator');
- const studyClaim=m.synthesis.claims.find(c=>c.topic==='study_with_chavruta');
+
+  const photoCompletedBasis=m.synthesis.basis.find(b=>String(b.aid)==='5019603');
+  assert(photoCompletedBasis&&photoCompletedBasis.independent_witness===false&&photoCompletedBasis.witness_status==='publisher_text_completed_from_photograph_not_independent');
+  assert(m.synthesis.limits.some(x=>x.includes('5019603')&&x.includes('לא-עצמאי')&&x.includes('צילום')));
+  if(mode==='researcher')assert.equal(m.research.synthesis_scope,'claim_level','one non-independent publisher text must not inflate the independent-family count'); const studyClaim=m.synthesis.claims.find(c=>c.topic==='study_with_chavruta');
  const youthClaim=m.synthesis.claims.find(c=>c.topic==='youth_education_and_gradual_practice');
  assert(studyClaim&&studyClaim.source_numbers.some(n=>sourceAID(m.sources[n-1])==='5019597'));
  assert(youthClaim&&youthClaim.source_numbers.some(n=>sourceAID(m.sources[n-1])==='5019603'));

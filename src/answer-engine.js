@@ -1255,8 +1255,10 @@ function supportsYouthEducationStudyProposition(p){
 }
 function buildYouthEducationStudySynthesis(selected){
  const basis=[];
+ const isPhotoCompletedPublisherText=e=>String(e.witness_type||'')==='publisher_text_completed_from_photograph'&&e.independent_witness===false&&!e.translation_of_evidence_family_id&&e.proposition_verification==='source_text_inspected'&&e.has_content_evidence===true;
  selected.forEach((e,index)=>{
-  if(e._independent_witness===false||classifyWitness(e)==='derived')return;
+  const photoText=isPhotoCompletedPublisherText(e);
+  if((e._independent_witness===false||classifyWitness(e)==='derived')&&!photoText)return;
   const props=arr(e._supporting_propositions).filter(supportsYouthEducationStudyProposition);
   if(!props.length)return;
   const propositions=props.map(p=>{
@@ -1266,7 +1268,8 @@ function buildYouthEducationStudySynthesis(selected){
   basis.push({source_number:index+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,
    date:e.date||null,context_status:e.context_status||'unknown',
    provenance:e.witness_provenance||e.source_witness||e.witness_type||null,
-   verification_scope:e.verification_scope||null,propositions});
+   verification_scope:e.verification_scope||null,independent_witness:!photoText,
+   witness_status:photoText?'publisher_text_completed_from_photograph_not_independent':'inspected_published_correspondence_text',witness_type:e.witness_type||null,propositions});
  });
  const chavruta=basis.filter(b=>b.propositions.some(p=>norm(p.text).includes('חברותא')));
  const youth=basis.filter(b=>b.propositions.some(p=>{const t=norm(p.text);return ((t.includes('בני הנוער')||t.includes('בני נוער'))&&(t.includes('פשרות')||t.includes('אמת')))||(t.includes('תלמיד')&&t.includes('מוכן')&&t.includes('להוסיף'));}));
@@ -1274,7 +1277,7 @@ function buildYouthEducationStudySynthesis(selected){
  if(!chavruta.length||!youth.length||families.size<2)return null;
  const claim=(topic,text,matches)=>{
   const sourceNumbers=[...new Set(matches.map(b=>b.source_number))];
-  const sourceLocators=matches.flatMap(b=>b.propositions.map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator));
+  const sourceLocators=matches.flatMap(b=>b.propositions.map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text,independent_witness:b.independent_witness,witness_status:b.witness_status,witness_type:b.witness_type})).filter(x=>x.locator));
   return{topic,text,source_numbers:sourceNumbers,source_locators:sourceLocators};
  };
  const claims=[
@@ -1292,14 +1295,16 @@ function buildYouthEducationStudySynthesis(selected){
  return{
   kind:'cross_family_research_synthesis',topic:'study_and_youth_education',
   attribution:'system_synthesis_not_rebbe_quote',
-  label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',
+  label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי; מקור אחד הוא תמלול מו״ל לא-עצמאי',
+  evidence_quality:'two_distinct_families_one_non_independent_publisher_text',
   text:claims.map(c=>c.text).join(' ')+' אלה שני הקשרים שונים — התנהלות הלומד עצמו ושיח של מחנך עם בני נוער; אין להפוך אותם לכלל אחיד שנאמר באיגרת אחת.',
   source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,
-  method:'Claim-level comparison across two distinct, inspected Hebrew correspondence Evidence Families. Each claim has its own source numbers and item-level body locator; the synthesis preserves the difference between personal study guidance and educator-to-youth communication.',
+  method:'Claim-level comparison across two distinct Hebrew correspondence Evidence Families. Each claim has its own source numbers and item-level body locator. AID 5019597 is a published Hebrew letter text; AID 5019603 is publisher text completed from a photograph that was not inspected. The latter is included only as a non-independent publisher-text witness, never as an independent corroborating witness. The synthesis preserves the difference between personal study guidance and educator-to-youth communication.',
   limits:[
    'הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.',
    'האיגרת על חברותא עוסקת בנמען ובנסיבות לימוד אישיות; האיגרת על בני הנוער עוסקת בהדרכה חינוכית. אלה אינם אותו מקרה ואינם מוכיחים מדיניות אחידה.',
-   'המכתבים הנכנסים וכתבי היד המקוריים לא נבדקו; אחד המקורות הוא פרסום שהושלם על פי צילום, והצילום עצמו לא נבדק.',
+   'AID 5019603 הוא טקסט מו״ל שהושלם על פי צילום; הצילום עצמו לא נבדק. הוא נכלל בסינתזה רק כטקסט מו״ל לא-עצמאי ואינו נספר כעד עצמאי או כאימות אוטוגרפי.',
+   'המכתבים הנכנסים וכתבי היד המקוריים לא נבדקו.',
    'ההמלצות הן תיעוד היסטורי של מקרים מסוימים ואינן פסיקה או הוראה עדכנית לכל אדם.'
   ]
  };
