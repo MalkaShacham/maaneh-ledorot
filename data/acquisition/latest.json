@@ -13,17 +13,17 @@
     "reviewed_at": "2026-11-16T03:55:14+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending",
-    "reviewed_item_count": 8,
-    "source_bodies_inspected": 8,
-    "source_body_pages_opened": 8,
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 9,
+    "source_body_pages_opened": 9,
     "metadata_only_items_rechecked": 0,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 8,
-    "existing_identities_enriched": 0,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
     "new_response_propositions": 10,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 10,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 12,
     "answer_eligible_source_families_added": 8,
     "independent_witnesses_added": 8,
     "non_independent_presentations_added": 0,
@@ -36,7 +36,7 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1067,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3131
+      "answer_eligible_propositions": 3133
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -52,7 +52,9 @@
       6099,
       6100
     ],
-    "enriched_aids": [],
+    "enriched_aids": [
+      2989153
+    ],
     "rechecked_aids": [],
     "fallback_source_attempted": false,
     "fallback_source_results": {
@@ -85,9 +87,26 @@
     "metrics_delta_at_batch_boundary": {
       "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 10
+      "answer_eligible_propositions": 12
     },
-    "metrics_attribution_note": "שמונה ערכי יום יום נפרדים בעלי AID ומשפחת ראיות נפרדים; עשר פרפרזות. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation."
+    "metrics_attribution_note": "שמונה ערכי היום יום נפרדים (AIDs 6093–6100) נוספו כמשפחות ראיות חדשות; בנוסף הועשרה זהות קיימת אחת (AID 2989153) בשתי פרפרזות מסעיף ט׳. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation.",
+    "existing_identity_updates": [
+      {
+        "aid": 2989153,
+        "id": "sicha-5713-20-menachem-av-akev-aid2989153",
+        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+        "evidence_family_id": "sicha-5713-20-menachem-av-akev-aid2989153",
+        "existing_propositions_before": 4,
+        "propositions_added": 2,
+        "total_propositions_after": 6,
+        "locators": [
+          "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 247–256.",
+          "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 243–244."
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
+      }
+    ]
   },
   "previous_manual_web_review": {
     "batch_id": "110",
@@ -2736,17 +2755,17 @@
       "reviewed_at": "2026-11-16T03:55:14+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending",
-      "reviewed_item_count": 8,
-      "source_bodies_inspected": 8,
-      "source_body_pages_opened": 8,
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 9,
+      "source_body_pages_opened": 9,
       "metadata_only_items_rechecked": 0,
       "search_extracts_used_as_content": 0,
       "new_source_identities": 8,
-      "existing_identities_enriched": 0,
+      "existing_identities_enriched": 1,
       "existing_identities_rechecked": 0,
       "new_response_propositions": 10,
-      "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 10,
+      "existing_response_propositions_added": 2,
+      "total_new_paraphrase_entries": 12,
       "answer_eligible_source_families_added": 8,
       "independent_witnesses_added": 8,
       "non_independent_presentations_added": 0,
@@ -2759,7 +2778,7 @@
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 1067,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3131
+        "answer_eligible_propositions": 3133
       },
       "metrics_actual_after": null,
       "reconciliation_variance": null,
@@ -2775,7 +2794,9 @@
         6099,
         6100
       ],
-      "enriched_aids": [],
+      "enriched_aids": [
+        2989153
+      ],
       "rechecked_aids": [],
       "fallback_source_attempted": false,
       "fallback_source_results": {
@@ -2808,9 +2829,26 @@
       "metrics_delta_at_batch_boundary": {
         "answer_eligible_unique_sources": 8,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 10
+        "answer_eligible_propositions": 12
       },
-      "metrics_attribution_note": "שמונה ערכי יום יום נפרדים בעלי AID ומשפחת ראיות נפרדים; עשר פרפרזות. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation."
+      "metrics_attribution_note": "שמונה ערכי היום יום נפרדים (AIDs 6093–6100) נוספו כמשפחות ראיות חדשות; בנוסף הועשרה זהות קיימת אחת (AID 2989153) בשתי פרפרזות מסעיף ט׳. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation.",
+      "existing_identity_updates": [
+        {
+          "aid": 2989153,
+          "id": "sicha-5713-20-menachem-av-akev-aid2989153",
+          "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+          "evidence_family_id": "sicha-5713-20-menachem-av-akev-aid2989153",
+          "existing_propositions_before": 4,
+          "propositions_added": 2,
+          "total_propositions_after": 6,
+          "locators": [
+            "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 247–256.",
+            "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 243–244."
+          ],
+          "action": "enriched_existing_identity_in_place",
+          "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
+        }
+      ]
     }
   ],
   "earlier_manual_web_review_12": {
@@ -2952,7 +2990,7 @@
     },
     "correction": "The eight-family difference in content_verified_unique_sources was present in the canonical corpus and was not created by batches 097–099. No status promotion is included in this run."
   },
-  "next_action": "Reconcile contiguous pending batches 099–111, validate researcher claim-level locators, then verify commit-bound Actions and Pages.",
+  "next_action": "Reconcile contiguous pending batches 099–111, including the in-place enrichment of AID 2989153; validate researcher claim-level locators, then verify commit-bound Actions and Pages.",
   "last_manual_web_review": {
     "batch_id": "111",
     "batch_file": "data/items/content-research-batch-111-2026-11-16.json",
@@ -2960,17 +2998,17 @@
     "reviewed_at": "2026-11-16T03:55:14+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending",
-    "reviewed_item_count": 8,
-    "source_bodies_inspected": 8,
-    "source_body_pages_opened": 8,
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 9,
+    "source_body_pages_opened": 9,
     "metadata_only_items_rechecked": 0,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 8,
-    "existing_identities_enriched": 0,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
     "new_response_propositions": 10,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 10,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 12,
     "answer_eligible_source_families_added": 8,
     "independent_witnesses_added": 8,
     "non_independent_presentations_added": 0,
@@ -2983,7 +3021,7 @@
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1067,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3131
+      "answer_eligible_propositions": 3133
     },
     "metrics_actual_after": null,
     "reconciliation_variance": null,
@@ -2999,7 +3037,9 @@
       6099,
       6100
     ],
-    "enriched_aids": [],
+    "enriched_aids": [
+      2989153
+    ],
     "rechecked_aids": [],
     "fallback_source_attempted": false,
     "fallback_source_results": {
@@ -3032,8 +3072,25 @@
     "metrics_delta_at_batch_boundary": {
       "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 10
+      "answer_eligible_propositions": 12
     },
-    "metrics_attribution_note": "שמונה ערכי יום יום נפרדים בעלי AID ומשפחת ראיות נפרדים; עשר פרפרזות. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation."
+    "metrics_attribution_note": "שמונה ערכי היום יום נפרדים (AIDs 6093–6100) נוספו כמשפחות ראיות חדשות; בנוסף הועשרה זהות קיימת אחת (AID 2989153) בשתי פרפרזות מסעיף ט׳. תרגומים לא נספרו כעדים. המדדים בפועל ממתינים ל-reconciliation.",
+    "existing_identity_updates": [
+      {
+        "aid": 2989153,
+        "id": "sicha-5713-20-menachem-av-akev-aid2989153",
+        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
+        "evidence_family_id": "sicha-5713-20-menachem-av-akev-aid2989153",
+        "existing_propositions_before": 4,
+        "propositions_added": 2,
+        "total_propositions_after": 6,
+        "locators": [
+          "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 247–256.",
+          "he.chabad.org AID 2989153, גוף השיחה סעיף ט׳, שורות 243–244."
+        ],
+        "action": "enriched_existing_identity_in_place",
+        "note": "נפתח גוף השיחה העברי ב־AID 2989153, סעיף ט׳, שורות 243–256. נוספו פרפרזות על לימוד והבנה שכלית כעבודה הנדרשת כעת, ועל הסתייגות מפורשת מדיוקו של סיפור שהובא מהעתקה. הזהות, ה-Evidence Family והסטטוס Parsed נשמרו."
+      }
+    ]
   }
 }
