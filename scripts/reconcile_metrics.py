@@ -26,9 +26,21 @@ def identity_keys(d):
     return list(dict.fromkeys(out))
 
 def is_source_record(d):
-    # Nested provenance/access/taxonomy dictionaries are metadata, not separate source identities.
-    # Count only item-shaped records with a stable item marker.
+    # Nested provenance/access/taxonomy dictionaries and review/audit rows are not
+    # canonical source identities. In particular, source_body_review entries can
+    # repeat an AID and URL for an existing item; indexing them as a second record
+    # creates false canonical_identity_collisions and duplicate search candidates.
     if not isinstance(d,dict): return False
+    audit_row = (
+        d.get("action") == "enriched_existing_identity_in_place"
+        or d.get("existing_identity") is True
+        or d.get("body_text_inspected") is True
+        or d.get("inspected_original_language_body") is True
+        or ("reason" in d and "handling" in d and "aid" in d)
+        or ("canonical_file" in d and "propositions_added" in d and "total_propositions_after" in d)
+        or ("identity_key" in d and "canonical_records_found" in d)
+    )
+    if audit_row: return False
     markers=("id","aid","title","summary_researcher","pipeline_status","source_class","evidence_family_id","response_propositions")
     return any(d.get(k) not in (None,"",[]) for k in markers) or isinstance(d.get("locator"),dict)
 
@@ -135,6 +147,10 @@ def candidate_dicts(obj):
             # and could let an audit descriptor shadow the actual inspected item.
             audit_descriptor = (
                 x.get("action") == "enriched_existing_identity_in_place"
+                or x.get("existing_identity") is True
+                or x.get("body_text_inspected") is True
+                or x.get("inspected_original_language_body") is True
+                or ("reason" in x and "handling" in x and "aid" in x)
                 or ("canonical_file" in x and "propositions_added" in x and "total_propositions_after" in x)
                 or ("identity_key" in x and "canonical_records_found" in x)
             )

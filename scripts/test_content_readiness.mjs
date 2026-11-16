@@ -3306,6 +3306,7 @@ assert(enriched5959845Final.response_proposition_locators.some(l=>String(l).incl
 const batch116Path='data/items/content-research-batch-116-2026-11-16.json';
 const batch116Data=JSON.parse(await readFile(new URL(batch116Path,root),'utf8'));
 const batch116Aids=[528685,528686,528687,528688,528689,528690,528691,528692,528693,528694];
+assert(!idx.entries.some(e=>e.body_text_inspected===true||e.inspected_original_language_body===true||e.existing_identity===true),'source_body_review and existing-identity audit rows must never enter the canonical answer index');
 assert.equal(batch116Data.batch_id,'116');assert.equal(batch116Data.records.length,10);assert.deepEqual(batch116Data.new_aids,batch116Aids);
 assert.deepEqual(batch116Data.enriched_aids,[5959845]);assert.equal(batch116Data.new_source_identities,10);assert.equal(batch116Data.existing_identities_enriched,1);
 assert.equal(batch116Data.new_response_propositions,11);assert.equal(batch116Data.existing_response_propositions_added,2);assert.equal(batch116Data.total_new_paraphrase_entries,13);

@@ -149,14 +149,14 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "pending_after_education_governance_partial_evidence_retrieval_fix",
+      "run_status": "pending_after_audit_row_exclusion_fix",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": null,
       "workflow_run_id": null,
-      "note": "Latest Answer Quality Gate and Hourly Corpus Maintenance stopped at the education-governance regression because AID 5413540 contributes only the correction/foundational subclaims and was not retained. Retrieval now treats it as partial evidence for those subclaims while AID 4929253 remains the management/outcome-evaluation witness; claim-level citations and context boundaries remain required."
+      "note": "Hourly corpus maintenance run 800 completed its deterministic reconciliation step but content-readiness failed because a source_body_review audit row for AID 5959845 in batch 114 was counted as a second canonical source. The same review-row shape can occur in other batches. reconcile_metrics.py now excludes source_body_review and blocked-candidate audit rows from both canonical inventory and answer-index candidate traversal. The education-governance retrieval patch passed question-specific retrieval, synthesis and citation checks; rerun reconciliation and full readiness."
     },
     "publication": {
       "status": "pending_reconciliation_and_quality_gate",
