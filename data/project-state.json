@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -170,52 +170,70 @@
         "144",
         "145",
         "146",
-        "147"
+        "147",
+        "148",
+        "149"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement.",
       "summary": {
-        "batch_id": "147",
-        "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+        "batch_id": "149",
+        "batch_file": "data/items/content-research-batch-149-2026-11-18.json",
         "status": "pending_reconciliation",
-        "metrics_before": null,
-        "metrics_expected_after": null,
+        "metrics_before": {
+          "answer_eligible_unique_sources": 1495,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3823
+        },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1503,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3838
+        },
         "metrics_actual_after": null,
         "new_source_identities": 8,
         "existing_identities_enriched": 1,
         "source_bodies_inspected": 9,
-        "new_response_propositions": 8,
+        "new_response_propositions": 14,
         "existing_response_propositions_added": 1,
-        "total_new_paraphrase_entries": 9,
+        "total_new_paraphrase_entries": 15,
         "answer_eligible_source_families_added": 8,
-        "independent_witnesses_added": 0,
-        "non_independent_presentations_added": 8,
+        "independent_witnesses_added": 8,
+        "non_independent_presentations_added": 0,
         "content_verified_unique_sources_added": 0,
         "blocked_candidate_count": 10,
         "recovered_candidate_count": 0,
         "metrics_delta_at_batch_boundary": {
           "answer_eligible_unique_sources": 8,
           "content_verified_unique_sources": 0,
-          "answer_eligible_propositions": 9
+          "answer_eligible_propositions": 15
         },
         "reconciliation_status": "pending_reconciliation",
-        "reviewed_item_count": 19,
-        "source_body_pages_opened": 9,
+        "reviewed_item_count": 22,
+        "source_body_pages_opened": 12,
         "new_aids": [
-          2465321,
-          2487225,
-          2466894,
-          2499039,
-          2487556,
-          2487457,
-          2504381,
-          2499828
+          2988940,
+          4385713,
+          5959970,
+          4280106,
+          3008908,
+          2989018,
+          2989044,
+          5989796
         ],
         "enriched_aids": [
-          4304431
+          4385534
         ],
         "translations_counted_as_independent_witnesses": 0
       },
-      "status": "pending_reconciliation"
+      "status": "pending_reconciliation",
+      "latest_uncommitted_ci_measurement": {
+        "run_id": 44188237128,
+        "answer_eligible_unique_sources": 1496,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3823,
+        "committed": false,
+        "note": "Hourly run generated this workspace snapshot after batch148 but failed the readiness test; public metrics were not committed. Batch148 expected boundary remains 1495/854/3823, so a +1 family variance is unresolved."
+      }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
@@ -227,19 +245,19 @@
       "commit_binding": true,
       "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
       "workflow_run_id": 44107524723,
-      "note": "The latest saved quality-gate report predates batch 147. The current commit sequence adds eight-event Yechidus synthesis, claim-local citations, deep researcher constraints and readiness regressions; execution remains unverified until Actions returns a run result.",
+      "note": "Batch149 updates the core locator gate and adds a four-family original-Hebrew synthesis; verification awaits new Actions runs.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
-      "status": "pending_run_after_batch_147",
-      "last_failed_run_id": 44107524723,
-      "last_failure": "src/answer-engine.js:1713 — ReferenceError: Cannot access 'wellspringsDisseminationQuestion' before initialization in buildAnswerModel; triggered by scripts/test_question_specificity_gate.mjs."
+      "status": "pending_run_after_batch_149",
+      "last_failed_run_id": 44188237128,
+      "last_failure": "scripts/test_content_readiness.mjs:905 — researcher synthesis included a source number without a claim-level body locator; the core claim synthesizer now excludes propositions without locators and a regression assertion requires locator coverage."
     },
     "publication": {
-      "status": "pending_deploy_after_batch_147",
+      "status": "pending_deploy_after_batch_149",
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
       "last_deployed_commit": "312745ef33bfc3cc453b8b03238cd8d3e8aa9a3b",
-      "note": "A new main push should trigger Pages deployment; no post-batch-147 deployment run or public-page content check has yet been verified."
+      "note": "A push after batch149 should trigger Pages deployment; no post-batch149 deployment has been verified."
     },
     "last_reconciled_at": "2026-11-15",
     "last_generated_index_snapshot": {
@@ -330,55 +348,63 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "147",
+    "current_batch": "149",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "147",
     "last_batch_summary": {
-      "batch_id": "147",
-      "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+      "batch_id": "149",
+      "batch_file": "data/items/content-research-batch-149-2026-11-18.json",
       "status": "pending_reconciliation",
-      "metrics_before": null,
-      "metrics_expected_after": null,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1495,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3823
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1503,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3838
+      },
       "metrics_actual_after": null,
       "new_source_identities": 8,
       "existing_identities_enriched": 1,
       "source_bodies_inspected": 9,
-      "new_response_propositions": 8,
+      "new_response_propositions": 14,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 9,
+      "total_new_paraphrase_entries": 15,
       "answer_eligible_source_families_added": 8,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 8,
+      "independent_witnesses_added": 8,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "blocked_candidate_count": 10,
       "recovered_candidate_count": 0,
       "metrics_delta_at_batch_boundary": {
         "answer_eligible_unique_sources": 8,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 9
+        "answer_eligible_propositions": 15
       },
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 19,
-      "source_body_pages_opened": 9,
+      "reviewed_item_count": 22,
+      "source_body_pages_opened": 12,
       "new_aids": [
-        2465321,
-        2487225,
-        2466894,
-        2499039,
-        2487556,
-        2487457,
-        2504381,
-        2499828
+        2988940,
+        4385713,
+        5959970,
+        4280106,
+        3008908,
+        2989018,
+        2989044,
+        5989796
       ],
       "enriched_aids": [
-        4304431
+        4385534
       ],
       "translations_counted_as_independent_witnesses": 0
     },
-    "last_run_note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion.",
+    "last_run_note": "Batch149 inspected eight new original-Hebrew unedited Sicha bodies and enriched AID 4385534 in place. Ten alternative pages returned HTTP 429; three already-canonical AIDs were excluded. No crawler retry, access-control bypass or Verified promotion. Reconciliation remains pending.",
     "last_batch_blocked_count": 10,
-    "last_batch_blocked_reason": "Ten Hebrew candidate pages returned HTTP 429 from the public reader. No crawler retry or access-control bypass; eight accessible English Yechidus publisher bodies were inspected as same-run fallback.",
-    "next_work": "Run full canonical reconciliation through batch 147; verify AID/URL/Evidence Family collisions, update measured metrics and review queue, execute test_content_readiness.mjs in regular and deep researcher modes, inspect Actions and Pages. Keep the new English presentations non-independent and all records Parsed.",
+    "last_batch_blocked_reason": "Ten Hebrew public-reader routes returned HTTP 429. No retry or bypass; eight other original-Hebrew Sicha bodies and one existing identity were inspected in the same run.",
+    "next_work": "Reconcile the pending chain through batches 148–149; resolve the +1 family variance from the last uncommitted CI snapshot; run test_content_readiness.mjs, answer integrity and question specificity; verify Actions and Pages.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -1659,10 +1685,11 @@
         "attribution": "system_synthesis_not_rebbe_quote"
       },
       "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
-    }
+    },
+    "last_reviewed_batch": "149"
   },
-  "current_batch": "148",
-  "updated_at": "2026-11-17T23:55:38+02:00",
-  "current_batch_file": "data/items/content-research-batch-148-2026-11-17.json",
+  "current_batch": "149",
+  "updated_at": "2026-11-18T00:29:02+02:00",
+  "current_batch_file": "data/items/content-research-batch-149-2026-11-18.json",
   "status": "pending_reconciliation"
 }
