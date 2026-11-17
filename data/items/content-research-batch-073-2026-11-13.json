@@ -10,7 +10,7 @@
   "new_secretariat_document_identities": 1,
   "new_metadata_only_identities": 1,
   "duplicate_alias_identities": 2,
-  "existing_identities_enriched": 2,
+  "existing_identities_enriched": 3,
   "existing_identities_rechecked": 2,
   "existing_identities_canonicalized": 0,
   "new_response_propositions": 31,
@@ -1707,16 +1707,24 @@
       "pipeline_status": "Linked",
       "status": "Linked",
       "canonical_status": "Linked",
-      "verification_status": "Translation text inspected; not an independent witness and not answer-eligible.",
+      "verification_status": "source_text_inspected_on_published_english_translation_only",
       "context_status": "translation_only",
-      "has_content_evidence": false,
-      "response_propositions": [],
-      "proposition_language": "English",
-      "proposition_origin": null,
-      "proposition_verbatim": null,
-      "proposition_verification": null,
-      "proposition_source_locator": null,
-      "response_proposition_locators": [],
+      "has_content_evidence": true,
+      "response_propositions": [
+        "התרגום מציג את היכולת לקיים תורה ומצוות ככוח שניתן לכל יהודי; לפי המכתב, אין דרישה אלוקית שאינה בגדר יכולתו של האדם.",
+        "המכתב מבחין בין אדם שעבורו קיום מצווה קל לבין אדם שנדרש להתגבר על קשיים; הקושי הנוסף מתואר כסימן לכוח נוסף שניתן לו, ולא כהוכחה שאינו יכול לעמוד במשימה.",
+        "התרגום מעודד סבלנות, נחישות ואמונה בהתמודדות עם מכשולים, ומציין שהישועה עשויה להגיע במהירות; אין בכך התחייבות לתוצאה מסוימת במצב אישי."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 284–288.; Chabad.org/TheRebbe.org AID 4096303, English translation body lines 290–291.; Chabad.org/TheRebbe.org AID 4096303, English translation body lines 291–293.",
+      "response_proposition_locators": [
+        "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 284–288.",
+        "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 290–291.",
+        "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 291–293."
+      ],
       "evidence_family_id": "igrot-letter-5737-21-cheshvan-vol32-page48",
       "primary_secondary_status": "Published English translation of a Hebrew letter; translation is a manifestation of the same Evidence Family, not an independent witness.",
       "witness_type": "published_english_translation",
@@ -1724,7 +1732,7 @@
       "parent_evidence_family_id": "igrot-letter-5737-21-cheshvan-vol32-page48",
       "translation_of_evidence_family_id": "igrot-letter-5737-21-cheshvan-vol32-page48",
       "translation_status": "English translation; publisher cites Igrot Kodesh volume 32, page 48. Original Hebrew body not inspected.",
-      "witness_provenance": "Chabad.org English translation AID 4096303; body lines 269–287; explicit bibliographic citation to Igrot Kodesh vol.32 p.48.",
+      "witness_provenance": "Chabad.org English translation AID 4096303; body lines 284–293; publisher cites Igrot Kodesh vol. 32, p. 48; derived translation, not independent.",
       "translation_observations": [
         {
           "text": "The translation presents the capacity to fulfill Torah and mitzvot as something granted to each person; the Creator does not demand an impossible task.",
@@ -1767,18 +1775,18 @@
         }
       ],
       "provenance": {
-        "source_witness": "Chabad.org English translation AID 4096303; body lines 269–287.",
+        "source_witness": "Chabad.org English translation AID 4096303; body lines 284–293; explicit publisher citation to Igrot Kodesh vol. 32, p. 48.",
         "authorship_status": "The publisher presents this as an English translation of a Rebbe letter and explicitly cites Igrot Kodesh volume 32, page 48; original Hebrew not inspected.",
         "signature_status": "No original signature inspected in this run.",
         "transmission_type": "Published English translation of a Hebrew letter.",
-        "textual_status": "English translation body lines 269–287 inspected; original Hebrew source not inspected.",
-        "editorial_scope": "Translation observations only; no full copyrighted text reproduced; not answer-eligible as an independent source.",
-        "verification_status": "Linked translation manifestation; no independent content verification.",
+        "textual_status": "English translation body lines 284–293 inspected; original Hebrew source, manuscript and secretariat copy not inspected.",
+        "editorial_scope": "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 284–288.; Chabad.org/TheRebbe.org AID 4096303, English translation body lines 290–291.; Chabad.org/TheRebbe.org AID 4096303, English translation body lines 291–293.",
+        "verification_status": "source_text_inspected on 2026-11-17; translation text only; original Hebrew not inspected.",
         "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4096303/jewish/A-Person-Is-Given-Strength-to-Overcome-Challenges.htm",
-        "accessed": "2026-11-13",
-        "verification_scope": "נבדק גוף התרגום האנגלי בלבד, AID 4096303, שורות 269–287; בעמוד מצוינת במפורש ההפניה לאגרות קודש כרך ל״ב עמ׳ מ״ח. המקור העברי לא נבדק; התרגום אינו עד עצמאי ואינו כשיר לתשובות כמשפחה עצמאית."
+        "accessed": "2026-11-17",
+        "verification_scope": "Translation body only; not an independent witness and not a separate Evidence Family."
       },
-      "verification_scope": "נבדק גוף התרגום האנגלי בלבד, AID 4096303, שורות 269–287; בעמוד מצוינת במפורש ההפניה לאגרות קודש כרך ל״ב עמ׳ מ״ח. המקור העברי לא נבדק; התרגום אינו עד עצמאי ואינו כשיר לתשובות כמשפחה עצמאית.",
+      "verification_scope": "נבדק גוף התרגום האנגלי של Chabad.org AID 4096303, שורות 284–293. בעמוד מצוינת הפניה מפורשת לאגרות קודש כרך ל״ב עמ׳ מ״ח ולתאריך כ״א חשוון תשל״ז. המקור העברי, כתב יד והעתק מזכירות לא נבדקו. שלוש הפרופוזיציות הן פרפרזות של התרגום בלבד; התרגום נשאר manifestation של אותה Evidence Family ואינו עד עצמאי.",
       "rights_status": "Copyrighted English translation; bounded non-verbatim translation observations only; no full text copied.",
       "access": {
         "access_level": "open",
@@ -1801,9 +1809,10 @@
         }
       ],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "English translation manifestation of the bibliographic identity igrot-kodesh:32:48:21-cheshvan-5737; not an independent witness and not answer-eligible.",
+      "identity_note": "English translation manifestation of the bibliographic identity igrot-kodesh:32:48:21-cheshvan-5737. It now carries three inspected non-verbatim propositions from the English translation only; it remains non-independent and shares one Evidence Family with the metadata-only Hebrew bibliographic identity.",
       "epistemic_level": "translation_manifestation_only",
-      "notes": "Translation body inspected, original Hebrew not inspected; no response propositions added."
+      "notes": "Translation-only item; English body inspected at lines 284–293. Original Hebrew not inspected. Status remains Linked; independent_witness=false; not promoted to Verified.",
+      "summary_researcher": "התרגום מציג את היכולת לקיים תורה ומצוות ככוח שניתן לכל יהודי; לפי המכתב, אין דרישה אלוקית שאינה בגדר יכולתו של האדם. המכתב מבחין בין אדם שעבורו קיום מצווה קל לבין אדם שנדרש להתגבר על קשיים; הקושי הנוסף מתואר כסימן לכוח נוסף שניתן לו, ולא כהוכחה שאינו יכול לעמוד במשימה. התרגום מעודד סבלנות, נחישות ואמונה בהתמודדות עם מכשולים, ומציין שהישועה עשויה להגיע במהירות; אין בכך התחייבות לתוצאה מסוימת במצב אישי."
     }
   ],
   "existing_identity_updates": [
@@ -1826,6 +1835,21 @@
       "new_response_propositions": 0,
       "content_status_preserved": "Verified",
       "note": "Existing AID 4279887 remains the canonical verified letter; AID 4783983 is linked as a same-letter publisher mirror."
+    },
+    {
+      "aid": 4096303,
+      "id": "chabad-english-translation-aid4096303",
+      "canonical_file": "data/items/content-research-batch-073-2026-11-13.json",
+      "evidence_family_id": "igrot-letter-5737-21-cheshvan-vol32-page48",
+      "existing_propositions_before": 0,
+      "propositions_added": 3,
+      "total_propositions_after": 3,
+      "locators": [
+        "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 284–288.",
+        "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 290–291.",
+        "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 291–293."
+      ],
+      "reason": "העשרה in-place של תרגום אנגלי שכבר קושר לזהות הביבליוגרפית העברית; התרגום נשאר לא-עצמאי ואינו משפחת ראיות נוספת."
     }
   ],
   "blocked_candidates": [
