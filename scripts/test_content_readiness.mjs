@@ -1134,7 +1134,7 @@ assert.deepEqual(batch111Data.enriched_aids,[2989153]);
 assert.equal(batch111Data.existing_identity_updates[0].propositions_added,2);
 assert.equal(batch111Data.existing_identity_updates[0].total_propositions_after,6);
 const enriched2989153=idx.entries.find(e=>sourceAID(e)==='2989153');
-assert(enriched2989153&&enriched2989153.has_content_evidence&&enriched2989153.response_propositions.length===7);
+assert(enriched2989153&&enriched2989153.has_content_evidence&&enriched2989153.response_propositions.length===10);
 assert(enriched2989153.response_proposition_locators.some(x=>String(x).includes('שורות 247–256')));
 assert(enriched2989153.response_proposition_locators.some(x=>String(x).includes('שורות 243–244')));
 assert.equal(enriched2989153.status,'Parsed');
@@ -3016,7 +3016,7 @@ for(const aid of batch106Aids){
  assert(!queue.records.some(q=>String(q.aid||'')===aid||String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
 }
 const enriched2989153=idx.entries.find(e=>sourceAID(e)==='2989153');
-assert(enriched2989153&&enriched2989153.response_propositions.length===7,'AID 2989153 must remain one enriched identity with seven inspected propositions');
+assert(enriched2989153&&enriched2989153.response_propositions.length===10,'AID 2989153 must remain one enriched identity with seven inspected propositions');
 assert(enriched2989153.response_proposition_locators.some(l=>String(l).includes('207–210')));assert(enriched2989153.response_proposition_locators.some(l=>String(l).includes('199–203')));assert(enriched2989153.response_proposition_locators.some(l=>String(l).includes('189–191')));
 assert.equal(enriched2989153.evidence_family_id,'sicha-5713-20-menachem-av-akev-aid2989153');
 const enriched5959840=idx.entries.find(e=>sourceAID(e)==='5959840');
@@ -3096,7 +3096,7 @@ assert.equal(batch107Data.existing_identity_updates[0].propositions_added,1);
 assert.equal(batch107Data.existing_identity_updates[0].total_propositions_after,2);
 assert.equal(batch107Data.existing_identity_updates[0].canonical_file,batch106Path);
 const choiceEntry=idx.entries.find(e=>sourceAID(e)==='2989153');
-assert(choiceEntry&&choiceEntry.response_propositions.length===7&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('207–210'))&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('199–203'))&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('189–191'))&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('247–256'))&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('243–244')));
+assert(choiceEntry&&choiceEntry.response_propositions.length===10&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('207–210'))&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('199–203'))&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('189–191'))&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('247–256'))&&choiceEntry.response_proposition_locators.some(l=>String(l).includes('243–244')));
 const choiceQuestion='מה מציעה שיחת עקב תשי״ג לעשות כאשר אדם ניצב בפני שתי דרכי עבודה ואינו יודע במה לבחור?';
 const choiceModel=buildAnswerModel([choiceEntry],choiceQuestion,{mode:'researcher'});
 assert(choiceModel.answerable&&choiceModel.sources.some(e=>sourceAID(e)==='2989153'));
