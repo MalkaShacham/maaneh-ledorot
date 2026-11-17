@@ -105,9 +105,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1386,
+        "answer_eligible_unique_sources": 1396,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3616
+        "answer_eligible_propositions": 3639
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -148,32 +148,32 @@
         "132",
         "133",
         "134",
-        "135"
+        "135",
+        "136"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "135",
-        "batch_file": "data/items/content-research-batch-135-2026-11-17.json",
+        "batch_id": "136",
+        "batch_file": "data/items/content-research-batch-136-2026-11-17.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1375,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3588
-        },
-        "metrics_expected_after": {
-          "answer_eligible_unique_sources": 1386,
+          "answer_eligible_unique_sources": 1384,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3616
         },
-        "new_source_identities": 10,
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1396,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3639
+        },
+        "new_source_identities": 12,
         "existing_identities_enriched": 1,
-        "source_bodies_inspected": 11,
-        "new_response_propositions": 25,
-        "existing_response_propositions_added": 3,
-        "total_new_paraphrase_entries": 28,
-        "answer_eligible_source_families_added": 10,
-        "content_verified_unique_sources_added": 0,
-        "non_independent_presentations_added": 10
+        "source_bodies_inspected": 13,
+        "new_response_propositions": 22,
+        "existing_response_propositions_added": 1,
+        "total_new_paraphrase_entries": 23,
+        "answer_eligible_source_families_added": 12,
+        "content_verified_unique_sources_added": 0
       },
       "status": "pending_reconciliation"
     },
@@ -190,12 +190,12 @@
       "note": "AID 5019603 remains non-independent and its uninspected photograph is explicitly disclosed. The new validator requires two distinct Evidence Families, at least one independent family, two claim-level cited claims, and the exact publisher-text-not-independent witness status. No source is promoted to Verified.",
       "bulk_reconcile_run_id": 43967095108,
       "hourly_run_id": null,
-      "status": "pending_retest_after_batch_135",
+      "status": "pending_retest_after_batch_136",
       "last_failed_run_id": 43983157479,
       "last_failure": null
     },
     "publication": {
-      "status": "pending_deploy_after_batch_135",
+      "status": "pending_deploy_after_batch_136",
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
       "last_deployed_commit": "c49df2b516c391c77235b48beb5d0e1108d441a0"
@@ -236,43 +236,43 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "135",
+    "current_batch": "136",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "135",
+    "last_completed_batch": "136",
     "last_batch_summary": {
-      "batch_id": "135",
-      "batch_file": "data/items/content-research-batch-135-2026-11-17.json",
+      "batch_id": "136",
+      "batch_file": "data/items/content-research-batch-136-2026-11-17.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1375,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3588
-      },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1386,
+        "answer_eligible_unique_sources": 1384,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3616
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1396,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3639
       },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 10,
+      "new_source_identities": 12,
       "existing_identities_enriched": 1,
-      "source_bodies_inspected": 11,
-      "new_response_propositions": 25,
-      "existing_response_propositions_added": 3,
-      "total_new_paraphrase_entries": 28,
-      "answer_eligible_source_families_added": 10,
+      "source_bodies_inspected": 13,
+      "new_response_propositions": 22,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 23,
+      "answer_eligible_source_families_added": 12,
       "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 10,
+      "non_independent_presentations_added": 12,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 15,
-      "excluded_candidate_count": 10
+      "blocked_candidate_count": 1,
+      "excluded_candidate_count": 0
     },
-    "last_run_note": "Batch 135: נבדקו עשרה גופי איגרות אנגליים נגישים AID 4422946, 2281917, 2277173, 5920891, 2277247, 5920893, 2279298, 2281851, 2277371 ו-2281922; נוספו 26 פרפרזות. תרגום קיים AID 4096303 הועשר in-place בשלוש פרופוזיציות, ונשאר לא-עצמאי באותה Evidence Family של זהות ביבליוגרפית עברית. 15 הפניות עבריות AID 528941–528955 החזירו Internal Error; עשרה עמודים AID 4646121, 4646123, 4646126–4646130, 4666265, 4666267, 4666268 הציגו מעטפת ללא גוף והוחרגו. לא הופעל crawler retry ולא נעשתה עקיפת גישה. אפס קידומים ל-Verified; reconciliation ובדיקות מלאות ממתינים.",
-    "last_batch_blocked_count": 15,
-    "last_batch_blocked_reason": "15 עמודים עבריים AID 528941–528955 החזירו Internal Error; עשרה עמודים נוספים הציגו מעטפת/תקציר ללא גוף. באותה הפעלה נפתחו עשרה גופי איגרות אנגליים מלאים והועשרה זהות תרגום קיימת AID 4096303.",
-    "next_work": "Run full canonical reconciliation for pending batches 099–135, verify all AID/URL/Evidence Family collisions, refresh public metrics and the review queue, then run test_content_readiness.mjs and the answer-quality/hourly gates. Inspect the resulting Pages deployment; do not promote translations to independent witnesses or any source to Verified.",
+    "last_run_note": "Batch 136: נבדקו 12 גופי איגרות באנגלית AID 2277145, 2277156, 2277138, 2277150, 2277146, 2277155, 2277159, 2277176, 2277168, 2277130, 2277169 ו-2277148; נוספו 22 פרפרזות. AID 4096303 הועשרה in-place בפרופוזיציה אחת. הנתיב העברי AID 4754257 החזיר 404; באותה הפעלה נבדקו 12 גופי מו״ל באנגלית. תיקון reconciliation: AID 2279298 הוסר כרשומה כפולה מבאצ׳ 135 ושלוש הפרופוזיציות שלו מוזגו בזהות הקיימת בבאצ׳ 107. כל המקורות החדשים Parsed, תרגומים לא-עצמאיים, אפס קידומים ל-Verified.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "קישור עברי AID 4754257 החזיר 404; לא נוצרה ממנו זהות. באותה הפעלה נבדקו 12 גופי איגרות באנגלית והועשרה זהות קיימת.",
+    "next_work": "Run full canonical reconciliation for pending batches 126–136; verify that AID 2279298 exists once in batch 107 and AID 4096303 remains in its original Evidence Family; refresh public metrics and review queue; run test_content_readiness.mjs and the answer-quality/hourly gates; inspect the Pages deployment. Keep all translated letters non-independent and all new sources Parsed. Do not change the hourly schedule, audience or permissions.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -752,7 +752,8 @@
       "Known runner-side HTTP 403 on source-body acquisition remains documented; this run did not retry it and used the public web reader on canonical publisher pages.",
       "AID 528698: public reader returned Internal Error on 2026-11-16; no body inspected and no bypass attempted.",
       "Full reconciliation and test_content_readiness.mjs retest pending after batch 131; last failed quality gate omitted Living Torah synopsis AID 318996, now addressed by query-specific three-category retrieval.",
-      "AID 553672 and legacy routes 5913–5914 were not accessible via public web open; no content inferred and no crawler retry."
+      "AID 553672 and legacy routes 5913–5914 were not accessible via public web open; no content inferred and no crawler retry.",
+      "AID 4754257 Hebrew publisher route returned 404 on 2026-11-17; English item-level fallback AID 2277145 and eleven additional letter bodies were inspected."
     ],
     "pending_reconciliation_batches": [
       "099",
@@ -791,116 +792,366 @@
       "132",
       "133",
       "134",
-      "135"
+      "135",
+      "136"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
-      "batch_id": "131",
-      "batch_file": "data/items/content-research-batch-131-2026-11-17.json",
-      "reviewed_at": "2026-11-17T01:29:03+02:00",
+      "schema": "maaneh-ledorot-content-research-batch-v1",
+      "batch_id": "136",
+      "batch_file": "data/items/content-research-batch-136-2026-11-17.json",
+      "generated": "2026-11-17",
+      "reviewed_at": "2026-11-17T06:26:41+02:00",
+      "title": "Batch 136 — 12 inspected English correspondence letters from Cheshvan 5711, one in-place enrichment, one blocked Hebrew route and bounded five-letter education/outreach comparison",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 19,
-      "source_bodies_inspected": 15,
-      "new_source_identities": 14,
+      "reviewed_item_count": 14,
+      "source_bodies_inspected": 13,
+      "source_body_pages_opened": 14,
+      "new_source_identities": 12,
+      "new_rebbe_letter_identities": 12,
+      "new_secretariat_document_identities": 0,
+      "new_metadata_only_identities": 0,
+      "duplicate_alias_identities": 0,
       "existing_identities_enriched": 1,
-      "new_response_propositions": 19,
+      "existing_identities_rechecked": 0,
+      "existing_identities_canonicalized": 0,
+      "new_response_propositions": 22,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 20,
-      "answer_eligible_source_families_added": 13,
+      "total_new_paraphrase_entries": 23,
+      "answer_eligible_source_families_added": 12,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 12,
       "content_verified_unique_sources_added": 0,
+      "new_talk_identities": 0,
+      "new_translation_manifestations": 12,
+      "translation_observations_added": 0,
+      "language_distribution": {
+        "English": 12
+      },
+      "original_language_distribution": {
+        "unknown": 12
+      },
+      "source_type_distribution": {
+        "published_english_translated_correspondence_letter": 12
+      },
       "new_aids": [
-        528893,
-        528894,
-        528895,
-        528896,
-        528897,
-        528898,
-        528899,
-        528900,
-        528901,
-        528902,
-        528903,
-        528904,
-        528905,
-        528906
+        2277145,
+        2277156,
+        2277138,
+        2277150,
+        2277146,
+        2277155,
+        2277159,
+        2277176,
+        2277168,
+        2277130,
+        2277169,
+        2277148
       ],
       "enriched_aids": [
-        2989153
+        4096303
       ],
-      "blocked_candidate_count": 3,
+      "source_body_review": [
+        {
+          "aid": 2277145,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277145/jewish/The-Role-of-Lubavitch-Chassidim-as-Candles-to-Illuminate.htm",
+          "web_source_ref": "turn250170view0",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277145, English translation body lines 194–196.; Chabad.org/TheRebbe.org AID 2277145, English translation body lines 197–198.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-793-5711-aid2277145",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277156,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277156/jewish/The-Need-for-Coupling-Natural-and-Spiritual-Means-When-Seeking-a-Recovery-from-Illness.htm",
+          "web_source_ref": "turn250170view1",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277156, English translation body lines 194–195.; Chabad.org/TheRebbe.org AID 2277156, English translation body lines 195–196.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-801-5711-aid2277156",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277138,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277138/jewish/The-Interrelation-of-the-Jewish-People-with-Each-Other.htm",
+          "web_source_ref": "turn250170view2",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277138, English translation body lines 196.; Chabad.org/TheRebbe.org AID 2277138, English translation body lines 197.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-789-5711-aid2277138",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277150,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277150/jewish/The-Importance-of-the-Beis-Rivkah-Schools.htm",
+          "web_source_ref": "turn250170view3",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277150, English translation body lines 194–196.; Chabad.org/TheRebbe.org AID 2277150, English translation body lines 196–198.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-797-5711-aid2277150",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277146,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277146/jewish/The-Importance-of-Spreading-the-Torah-Knowledge-One-Possesses-to-Others.htm",
+          "web_source_ref": "turn250170view4",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277146, English translation body lines 195–196.; Chabad.org/TheRebbe.org AID 2277146, English translation body lines 197–198.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-794-5711-aid2277146",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277155,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277155/jewish/The-Importance-of-Outreach-Efforts-in-America.htm",
+          "web_source_ref": "turn250170view5",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277155, English translation body lines 193–197.; Chabad.org/TheRebbe.org AID 2277155, English translation body lines 208–210 (publisher's translator/editorial note).",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-800-5711-aid2277155",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277159,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277159/jewish/The-Importance-of-Not-Being-Embarrassed-When-Talking-About-Taharas-HaMishpachah.htm",
+          "web_source_ref": "turn250170view6",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277159, English translation body lines 195–198.; Chabad.org/TheRebbe.org AID 2277159, English translation body lines 196–199.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-803-5711-aid2277159",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277176,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277176/jewish/The-Importance-of-Devoting-Oneself-to-Outreach-and-Educational-Activities.htm",
+          "web_source_ref": "turn250170view7",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277176, English translation body lines 194–198.; Chabad.org/TheRebbe.org AID 2277176, English translation body lines 199–200.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-812-5711-aid2277176",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277168,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277168/jewish/The-Connection-of-a-Person-to-His-Familys-Roots.htm",
+          "web_source_ref": "turn250170view8",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277168, English translation body lines 196–199.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-808-5711-aid2277168",
+          "proposition_count": 1,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277130,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277130/jewish/The-Authority-of-a-Rabbi-the-Importance-of-the-Torah-Study-of-Young-Children.htm",
+          "web_source_ref": "turn250170view9",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277130, English translation body lines 197–201.; Chabad.org/TheRebbe.org AID 2277130, English translation body lines 201–202.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-786-5711-aid2277130",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277169,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277169/jewish/Reasons-Not-to-Attend-College.htm",
+          "web_source_ref": "turn250170view10",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277169, English translation body lines 195–198.; Chabad.org/TheRebbe.org AID 2277169, English translation body lines 199–201.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-809-5711-aid2277169",
+          "proposition_count": 2,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 2277148,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2277148/jewish/Maintaining-Study-Sessions.htm",
+          "web_source_ref": "turn250170view11",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 2277148, English translation body lines 193–197.",
+          "language": "English",
+          "original_language": "unknown",
+          "witness_type": "published_english_publisher_translation_of_correspondence",
+          "independent_witness": false,
+          "evidence_family_id": "igrot-letter-796-5711-aid2277148",
+          "proposition_count": 1,
+          "context_status": "partial",
+          "note": "נבדק גוף תרגום מו״ל באנגלית במיקומים המצוינים; לא נבדקו המקור העברי/יידי או כתב היד."
+        },
+        {
+          "aid": 4096303,
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4096303/jewish/A-Person-Is-Given-Strength-to-Overcome-Challenges.htm",
+          "web_source_ref": "turn670280view0",
+          "existing_identity": true,
+          "action": "enriched_existing_identity_in_place",
+          "canonical_file": "data/items/content-research-batch-073-2026-11-13.json",
+          "body_text_inspected": true,
+          "source_body_locator": "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 189–190.",
+          "language": "English",
+          "original_language": "unknown",
+          "evidence_family_id": "igrot-letter-5737-21-cheshvan-vol32-page48",
+          "existing_propositions_before": 3,
+          "propositions_added": 1,
+          "total_propositions_after": 4,
+          "note": "העשרה של אותה הצגת תרגום ומשפחת ראיות קיימת; לא נוצר מקור עצמאי."
+        }
+      ],
+      "blocked_candidate_count": 1,
       "blocked_candidates": [
         {
-          "aid": 553672,
-          "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/553672",
-          "status": "Internal Error",
-          "reason": "העמוד הציבורי לא היה נגיש דרך כלי הפתיחה ולא סיפק גוף פרסום קריא."
-        },
-        {
-          "aid": 5913,
-          "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5913",
-          "status": "Internal Error",
-          "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
-        },
-        {
-          "aid": 5914,
-          "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5914",
-          "status": "Internal Error",
-          "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
+          "aid": 4754257,
+          "source_url": "https://he.chabad.org/4754257",
+          "route": "publisher Hebrew-language link from AID 2277145",
+          "web_source_ref": "turn125219view0",
+          "status": "404_not_found",
+          "reason": "הקישור העברי של המו״ל החזיר 404; לא התקבל גוף מקור קריא ולא הוסק ממנו תוכן.",
+          "handling": "לא נעשה retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 12 גופי איגרות באנגלית ממקור המו״ל ונבדקה גם זהות תרגום קיימת."
         }
       ],
-      "excluded_candidate_count": 1,
-      "excluded_candidates": [
-        {
-          "aid": 528892,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528892",
-          "status": "opened_navigation_only",
-          "reason": "עמוד ניווט של חודש חשון ללא גוף ערך יומי עצמאי."
-        }
-      ],
+      "excluded_candidate_count": 0,
+      "excluded_candidates": [],
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "publisher": "Chabad.org/TheRebbe.org",
+        "accessible_item_level_bodies": 12,
+        "existing_identity_bodies": 1,
+        "body_text_inspected": true,
+        "inspected_aids": [
+          2277145,
+          2277156,
+          2277138,
+          2277150,
+          2277146,
+          2277155,
+          2277159,
+          2277176,
+          2277168,
+          2277130,
+          2277169,
+          2277148
+        ],
+        "existing_identity_aids": [
+          4096303
+        ],
+        "blocked_direct_routes": [
+          4754257
+        ],
+        "translations_counted_as_independent_witnesses": 0,
+        "note": "לאחר שהנתיב העברי AID 4754257 החזיר 404, נבדקו 12 גופי איגרות אנגליים מלאים-חלקית והועשרה in-place הצגת תרגום קיימת AID 4096303."
+      },
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "translations_counted_as_independent_witnesses": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1317,
+        "answer_eligible_unique_sources": 1384,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3494
+        "answer_eligible_propositions": 3616
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1330,
+        "answer_eligible_unique_sources": 1396,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3514
+        "answer_eligible_propositions": 3639
       },
       "metrics_actual_before": null,
       "metrics_actual_after": null,
+      "metrics_after_actual": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 13,
+        "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 20
+        "answer_eligible_propositions": 23
       },
       "deduplication_check": {
         "new_aids_unique": true,
-        "unique_new_aid_count": 14,
-        "unique_new_family_count": 13,
-        "new_evidence_families_unique": false,
-        "same_family_relations": [
-          {
-            "aid": 528895,
-            "canonical_aid": 528894,
-            "evidence_family_id": "hayom-yom-discourse-5711-lech-lecha-5651-aid528894",
-            "relationship": "continuation_of_same_discourse"
-          }
-        ],
+        "new_source_urls_unique": true,
+        "new_evidence_families_unique": true,
+        "unique_new_aid_count": 12,
+        "unique_new_family_count": 12,
+        "same_family_duplicate_count": 0,
+        "duplicate_alias_identities": 0,
         "translations_counted_as_independent_witnesses": 0,
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
         "full_index_scan_available": false,
         "full_index_scan_pending_reconciliation": true,
+        "checked_against": "תור הביקורת בן 1,022 הרשומות, 77 קובצי content-research-batch ו-12 קובצי bulk-indexed נבדקו ללא התאמות ל-12 ה-AIDs החדשים; שמות הקבצים העצמאיים נבדקו גם הם. סריקה קנונית מלאה של כל רשומות המקור עדיין ממתינה ל-reconciliation.",
         "review_queue_records": 1022,
         "review_queue_matches": 0,
         "recent_batches_checked": [
-          "130"
+          "055–135"
         ],
-        "note": "AID 528894 ו-AID 528895 חולקים Evidence Family; סריקה קנונית מלאה עדיין ממתינה."
-      }
+        "note": "בדיקת כפילויות מקדימה בלבד; ה-reconciliation יסרוק את כל קובצי המקור ויקבע אם קיימת זהות קנונית נוספת."
+      },
+      "existing_identity_updates": [
+        {
+          "aid": 4096303,
+          "canonical_file": "data/items/content-research-batch-073-2026-11-13.json",
+          "evidence_family_id": "igrot-letter-5737-21-cheshvan-vol32-page48",
+          "existing_propositions_before": 3,
+          "propositions_added": 1,
+          "total_propositions_after": 4,
+          "body_locator": "Chabad.org/TheRebbe.org AID 4096303, English translation body lines 189–190.",
+          "reason": "העשרה in-place של תרגום קיים; אותה Evidence Family של הזהות הביבליוגרפית בעברית, ללא עד עצמאי נוסף."
+        }
+      ],
+      "note": "נבדקו 12 גופי איגרות באנגלית מ-Chabad.org/TheRebbe.org; נוספו 22 פרפרזות לא-מילוליות. AID 4096303 הועשרה in-place בפרופוזיציה אחת. הנתיב העברי AID 4754257 החזיר 404; באותה הפעלה נעשה fallback לגופי המו״ל באנגלית. כל 12 האיגרות הן תרגומים נגזרים, נשארות Parsed ובהקשר חלקי; אפס קידומים ל-Verified."
     },
     "previous_manual_web_review": {
       "schema": "maaneh-ledorot-content-research-batch-v1",
@@ -1152,6 +1403,8 @@
     "current_batch_file": "data/items/content-research-batch-132-2026-11-17.json",
     "status": "pending_reconciliation"
   },
-  "current_batch": "135",
-  "updated_at": "2026-11-17T05:01:42+02:00"
+  "current_batch": "136",
+  "updated_at": "2026-11-17T06:26:41+02:00",
+  "current_batch_file": "data/items/content-research-batch-136-2026-11-17.json",
+  "status": "pending_reconciliation"
 }
