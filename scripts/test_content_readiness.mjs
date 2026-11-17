@@ -4967,7 +4967,42 @@ assert.equal(batch149Data.deduplication_check.full_index_scan_pending_reconcilia
 assert.deepEqual(batch149Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch149Data.deduplication_check.missing_canonical_identities,[]);
 assert.equal(batch149Data.deduplication_check.all_target_identities_answer_eligible,true);
-assert.deepEqual(readinessMetrics(batch149Data.metrics_actual_after),readinessMetrics(metrics));
+
+const batch150Path='data/items/content-research-batch-150-2026-11-18.json';
+const batch150Data=JSON.parse(await readFile(new URL(batch150Path,root),'utf8'));
+assert.equal(batch150Data.records.length,0);
+assert.equal(batch150Data.new_source_identities,0);
+assert.equal(batch150Data.existing_identities_enriched,8);
+assert.equal(batch150Data.source_bodies_inspected,8);
+assert.equal(batch150Data.new_response_propositions,0);
+assert.equal(batch150Data.existing_response_propositions_added,8);
+assert.equal(batch150Data.total_new_paraphrase_entries,8);
+assert.equal(batch150Data.crawler_retry,false);
+assert.equal(batch150Data.access_control_bypassed,false);
+assert.equal(batch150Data.full_text_copied,false);
+assert.equal(batch150Data.scan_only_verification_used,false);
+assert.equal(batch150Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch150Data.existing_identity_updates.length,8);
+for(const u of batch150Data.existing_identity_updates){
+ const e=idx.entries.filter(x=>sourceAID(x)===String(u.aid));
+ assert.equal(e.length,1,'batch-150 AID '+u.aid+' must retain exactly one canonical identity');
+ assert.equal(e[0].canonical_file,batch149Path);
+ assert.equal(e[0].status,'Parsed');
+ assert.equal(e[0].evidence_family_id,u.evidence_family_id);
+ assert.equal(e[0].response_propositions.length,u.total_propositions_after);
+ assert(e[0].response_proposition_locators.includes(u.body_locator));
+ assert.equal(e[0].proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e[0].proposition_verification,'source_text_inspected');
+ assert.equal(e[0].context_status,'partial');
+}
+assert(['reconciled','reconciled_with_variance'].includes(batch150Data.reconciliation_status));
+assert.equal(batch150Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch150Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch150Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch150Data.deduplication_check.missing_canonical_identities,[]);
+assert.deepEqual(readinessMetrics(batch149Data.metrics_actual_after),readinessMetrics(batch150Data.metrics_actual_before));
+assert.deepEqual(readinessMetrics(batch150Data.metrics_actual_after),readinessMetrics(metrics));
+
 const enriched4385534=idx.entries.find(e=>sourceAID(e)==='4385534');
 assert(enriched4385534&&enriched4385534.canonical_file==='data/items/content-research-batch-142-2026-11-17.json');
 assert.equal(enriched4385534.evidence_family_id,'sicha-5726-19-kislev-vayeshev-aid4385534');
