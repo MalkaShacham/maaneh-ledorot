@@ -4983,6 +4983,10 @@ assert.equal(batch150Data.full_text_copied,false);
 assert.equal(batch150Data.scan_only_verification_used,false);
 assert.equal(batch150Data.translations_counted_as_independent_witnesses,0);
 assert.equal(batch150Data.existing_identity_updates.length,8);
+assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('110'),'older pending batch110 must be reconciled');
+assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('150'),'batch150 must be reconciled');
+assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('110'));
+assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('150'));
 for(const u of batch150Data.existing_identity_updates){
  const e=idx.entries.filter(x=>sourceAID(x)===String(u.aid));
  assert.equal(e.length,1,'batch-150 AID '+u.aid+' must retain exactly one canonical identity');
