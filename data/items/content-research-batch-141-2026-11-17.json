@@ -4,7 +4,7 @@
   "batch_file": "data/items/content-research-batch-141-2026-11-17.json",
   "generated": "2026-11-17T14:59:33+02:00",
   "reviewed_at": "2026-11-17T14:59:33+02:00",
-  "title": "Batch 141 — ten inspected Hebrew talk/record bodies and one English letter excerpt; fifteen source-grounded paraphrases; one existing identity provenance enrichment",
+  "title": "Batch 141 — ten new source identities, one English derived letter excerpt and two in-place enrichments; fifteen inspected paraphrases",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "reviewed_item_count": 12,
@@ -12,19 +12,18 @@
   "source_body_pages_opened": 12,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 11,
-  "existing_identities_enriched": 1,
+  "new_source_identities": 10,
+  "existing_identities_enriched": 2,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 15,
-  "existing_response_propositions_added": 0,
+  "new_response_propositions": 13,
+  "existing_response_propositions_added": 2,
   "total_new_paraphrase_entries": 15,
-  "answer_eligible_source_families_added": 11,
-  "independent_witnesses_added": 10,
+  "answer_eligible_source_families_added": 10,
+  "independent_witnesses_added": 9,
   "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "new_aids": [
     2988877,
-    2989555,
     3008872,
     3008877,
     2988883,
@@ -36,7 +35,8 @@
     1244711
   ],
   "enriched_aids": [
-    5071052
+    5071052,
+    2989555
   ],
   "rechecked_aids": [],
   "blocked_candidate_count": 1,
@@ -74,16 +74,16 @@
     "answer_eligible_propositions": 3727
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1446,
+    "answer_eligible_unique_sources": 1445,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3742
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
-  "metrics_note": "שרשרת הגבולות ממשיכה את batch 140: expected boundary 1435 / 854 / 3727 אל 1446 / 854 / 3742. snapshot אבחוני של reconciliation workspace לאחר batch 140 מדד 1432 / 854 / 3727, כלומר פער צפוי של ‎-3 במקורות; ה-actual_before/after וה-variance ייקבעו ב-reconciliation המלא.",
+  "metrics_note": "Corrected after canonical collision discovery: AID 2989555 already existed in batch 101. The duplicate batch-141 record was removed and its two propositions merged into the batch-101 canonical identity. Expected family boundary is 1435 → 1445; 15 propositions remain new at the project level (13 on new identities, two on the existing AID 2989555). The earlier 2026-11-15 search-index snapshot was stale and missed the batch-101 identity.",
   "deduplication_check": {
-    "full_index_scan_available": true,
+    "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
     "index_generated": "2026-11-15",
     "index_entry_count": 9122,
@@ -100,34 +100,27 @@
       2988933,
       1244711
     ],
-    "canonical_identity_collisions": [],
-    "missing_canonical_identities": [],
-    "new_aids_unique": true,
-    "source_urls_unique": true,
-    "evidence_family_ids_unique": true,
-    "recent_batches_checked": [
-      "126",
-      "127",
-      "128",
-      "129",
-      "130",
-      "131",
-      "132",
-      "133",
-      "134",
-      "135",
-      "136",
-      "137",
-      "138",
-      "139",
-      "140"
+    "canonical_identity_collisions": [
+      {
+        "aid": 2989555,
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "duplicate_file": "data/items/content-research-batch-141-2026-11-17.json",
+        "canonical_evidence_family_id": "sicha-5717-bereshit-aid2989555",
+        "duplicate_evidence_family_id": "sicha-5717-shabbat-bereishit-rosh-chodesh-cheshvan-aid2989555",
+        "resolution": "duplicate record removed; two inspected propositions merged into canonical identity",
+        "resolved": true
+      }
     ],
-    "recent_batch_records_checked": 190,
+    "canonical_identity_collisions_resolved": 1,
+    "canonical_identity_collisions_unresolved": 0,
+    "new_aids_unique": false,
+    "source_urls_unique": false,
+    "evidence_family_ids_unique": false,
+    "recent_batches_checked": "055–147: 89 content-research batch files; 12 bulk-indexed files and 40 mixed-authorized-content files also scanned",
     "review_queue_records": 1022,
     "review_queue_matches": 0,
-    "filename_matches": 0,
     "all_target_identities_answer_eligible": null,
-    "note": "נבדק public-search-index.json המלא (9,122 רשומות, 15.11.2026), תור הביקורת בן 1,022 הרשומות וקובצי batch 126–140 (190 רשומות). לא נמצאו התאמות ל-11 ה-AID החדשים. האינדקס קדם לאצוות אלה; canonical post-addition scan ואישור כשירות יבוצעו ב-reconciliation."
+    "note": "The 2026-11-15 public-search-index snapshot was stale and missed AID 2989555, which already existed in batch101. A later canonical-file scan found the same AID/URL again in batch141 under a second Evidence Family ID. The duplicate record was removed and both propositions were merged into the batch101 identity. The large current search-index file could not be read through the connector; final full-index collision and answer-eligibility reconciliation remains pending."
   },
   "source_body_review": [
     {
@@ -158,11 +151,16 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "witness_type": "public_talk_transcript",
-      "evidence_family_id": "sicha-5717-shabbat-bereishit-rosh-chodesh-cheshvan-aid2989555",
+      "evidence_family_id": "sicha-5717-bereshit-aid2989555",
       "independent_witness": true,
       "proposition_count": 2,
       "context_status": "partial",
-      "note": "נבדק גוף תמליל עברי המסומן בלתי מוגה; רק הקטעים המפורטים שימשו לפרפרזות."
+      "note": "נמצא שה-AID כבר קיים ב-batch101. שתי הפרפרזות הועברו לזהות הקנונית; הרשומה הכפולה הוסרה ולא נספרה כמשפחת ראיות נוספת.",
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "identity_key": "aid:2989555",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "canonical_records_found": 1
     },
     {
       "aid": 3008872,
@@ -330,6 +328,17 @@
       "body_locator": "Chabad.org/TheRebbe.org AID 5071052, גוף האיגרת והערת המו״ל, שורות 251–262.",
       "identity_note_enriched": true,
       "reason": "נוספה הערת provenance על הערת המו״ל בשורה 262 המפנה ל׳אגרת ו׳כג׳. יעד ההפניה לא זוהה בוודאות ולכן לא נוצר relation ל-AID אחר; AID 4645984 לא הונח כיעד."
+    },
+    {
+      "aid": 2989555,
+      "id": "sicha-5717-bereshit-aid2989555",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "evidence_family_id": "sicha-5717-bereshit-aid2989555",
+      "existing_propositions_before": 1,
+      "propositions_added": 2,
+      "total_propositions_after": 3,
+      "body_locator": "Chabad.org AID 2989555, גוף השיחה, שורות 177–180 ו-202–217.",
+      "reason": "AID 2989555 was already the canonical identity in batch 101. The batch-141 record used the same AID and publisher URL but a second Evidence Family ID; its two inspected propositions were merged into the existing canonical identity and the duplicate source record was removed. No new source or witness family is counted."
     }
   ],
   "crawler_retry": false,
@@ -365,8 +374,8 @@
     "translations_counted_as_independent_witnesses": 0,
     "notes": "לאחר ש-AID 4666220 החזיר Internal Error, נפתחו ונבדקו 10 תמלילי/רישומי מקור בעברית וקטע מכתב באנגלית. שפת המקור של הקטע האנגלי לא הוכחה ולכן הוא נשאר non-independent. לא נעשה שימוש בתרגום כעד עצמאי."
   },
-  "existing_identity_updates_count": 1,
-  "note": "נבדקו 11 גופי מקור חדשים: עשרה תמלילים/רישומי דברים בעברית וקטע מכתב אחד באנגלית; נוספו 15 פרפרזות מחקריות לא-מילוליות. AID 5071052 הועשרה בהערת provenance על הפניה ביבליוגרפית לא פתורה, ללא יצירת קישור שגוי או הוספת פרופוזיציה. AID 4666220 נחסם ונעשה fallback באותה הפעלה. כל 11 הזהויות החדשות נשארו Parsed; אין Verified promotion.",
+  "existing_identity_updates_count": 2,
+  "note": "נבדקו 11 גופי מקור חדשים ועוד גוף מקור קיים; לאחר סריקת קבצים קנוניים נמצא כי AID 2989555 כבר היה זהות קיימת ב-batch101. הרשומה הכפולה הוסרה ושתי הפרפרזות הועברו לזהות הקנונית. לאחר התיקון: 10 זהויות חדשות, שתי זהויות מועשרות (5071052 ו-2989555), 15 פרפרזות חדשות ברמת הפרויקט; אין Verified promotion.",
   "records": [
     {
       "id": "chabad-sicha-2988877",
@@ -386,36 +395,39 @@
       "collection": "התוועדויות / תורת מנחם — BeitChabad.com / Chabad.org",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2988877",
       "context_status": "partial",
-      "summary_researcher": "השיחה ממסגרת את ההתוועדות כהמשך להתוועדות י׳ שבט, ובהמשך מתארת אחריות מעשית להפצת החסידות ולקירוב יהודים גם במקום שבו חסיד נמצא יחיד. בהמשך השיחה מובא סיפור על הנחת תפילין והשפעה על חולים נוספים, ולאחריו השוואה בין שהות באוניברסיטה לבין שליחות להפצת חסידות; אלה תיאורים בהקשר השיחה, ולא קביעה רפואית או כלל גורף לעזיבת מוסד.",
+      "summary_researcher": "השיחה ממסגרת את ההתוועדות כהמשך להתוועדות י׳ שבט, ובהמשך מתארת אחריות מעשית להפצת החסידות ולקירוב יהודים גם במקום שבו חסיד נמצא יחיד. בהמשך השיחה מובא סיפור על הנחת תפילין והשפעה על חולים נוספים, ולאחריו השוואה בין שהות באוניברסיטה לבין שליחות להפצת חסידות; אלה תיאורים בהקשר השיחה, ולא קביעה רפואית או כלל גורף לעזיבת מוסד. נוסף קטע שנבדק העוסק בקביעות יומית ו-לימוד חסידות.",
       "response_propositions": [
         "השיחה מציגה את ההתוועדות כהמשך להתוועדות י׳ שבט: המאמר שנאמר בהתוועדות הקודמת נחשב כמספק את חלק המאמר, והמפגש הנוכחי נועד להמשך ולסיום באמצעות שיחות נוספות; לכבוד שבת שירה התבקש להוסיף ניגון נוסף.",
         "הקטע מרחיב את אחריות הפצת החסידות גם למי שנמצא בעיר מסוימת כחסיד יחיד: עליו לפעול לקירוב יהודים לחסידות, והשליחות במקום נבחנת גם לפי היכולת להשפיע על סביבתו.",
         "נוסח השיחה מספר על חולה שקיבל ברכה והנחיה להתחיל להניח תפילין; לפי הסיפור, לאחר שהחל בכך הוא החלים, וחולים אחרים למדו מן המקרה והחלו גם הם להניח תפילין. זהו סיפור המובא בשיחה ולא ראיה רפואית ליעילות טיפול.",
-        "הקטע משווה שהות באוניברסיטה שבה נלמדים רעיונות נגד התורה ל'בית חולים ברוחניות', ומציג את שליחות האדם שם כהפצת אור החסידות; ההשוואה מתארת את מטרת השליחות ואינה קובעת כלל גורף לגבי עזיבת מוסד לימודים."
+        "הקטע משווה שהות באוניברסיטה שבה נלמדים רעיונות נגד התורה ל'בית חולים ברוחניות', ומציג את שליחות האדם שם כהפצת אור החסידות; ההשוואה מתארת את מטרת השליחות ואינה קובעת כלל גורף לגבי עזיבת מוסד לימודים.",
+        "השיחה קוראת לקביעות יומית בלימוד חסידות, ולכל הפחות ללימוד שורות אחדות בכל יום; היא ממשילה את הלימוד לטבילה במים המכסים את האדם כולו, כדי להדגיש שהלימוד צריך לחדור את מכלול מציאותו ולא להישאר ידיעה חלקית."
       ],
       "response_proposition_locators": [
         "Chabad.org AID 2988877, גוף השיחה, שורות 175–179.",
         "AID 2988877, שורות 272–277.",
         "Chabad.org AID 2988877, גוף השיחה, שורות 279–282.",
-        "Chabad.org AID 2988877, גוף השיחה, שורות 284–285."
+        "Chabad.org AID 2988877, גוף השיחה, שורות 284–285.",
+        "Chabad.org AID 2988877, גוף השיחה, סעיף כו, שורות 402–411."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 2988877, גוף השיחה, שורות 175–179 ו-272–277. בנוסף נבדקו AID 2988877, גוף השיחה, שורות 279–285.",
+      "proposition_source_locator": "Chabad.org AID 2988877, גוף השיחה, שורות 175–179. | AID 2988877, שורות 272–277. | Chabad.org AID 2988877, גוף השיחה, שורות 279–282. | Chabad.org AID 2988877, גוף השיחה, שורות 284–285. | Chabad.org AID 2988877, גוף השיחה, סעיף כו, שורות 402–411.",
       "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. נבדק מחדש ב-17.11.2026 גם קטע נוסף בגוף AID 2988877, שורות 272–277; הפרפרזה החדשה מוגבלת לקטע זה. הפרסום מסומן בלתי מוגה; ההקלטה והנוסח המוגה לא נבדקו. ב-17.11.2026 נפתח ונבדק גם קטע נוסף בגוף AID 2988877, שורות 279–285; נוספו שתי פרפרזות לא-מילוליות המוגבלות לקטע זה. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
+      "verification_scope": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. נבדק מחדש ב-17.11.2026 גם קטע נוסף בגוף AID 2988877, שורות 272–277; הפרפרזה החדשה מוגבלת לקטע זה. הפרסום מסומן בלתי מוגה; ההקלטה והנוסח המוגה לא נבדקו. ב-17.11.2026 נפתח ונבדק גם קטע נוסף בגוף AID 2988877, שורות 279–285; נוספו שתי פרפרזות לא-מילוליות המוגבלות לקטע זה. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. נבדק מחדש ב-17.11.2026: נבדקו שורות 402–411 בלבד; זו קריאה והדרכה בתוך שיחה, ולא נוסח של פסיקה הלכתית נפרדת. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא הושוו. ההקשר נשאר partial; לא הועתק טקסט מוגן במלואו.",
       "documented_circumstances": "התוועדות שבת שירה, ש״פ בשלח, י״ב שבט תשי״ד; השיחה מציינת במפורש שהיא המשך להתוועדות י׳ שבט.",
       "question_or_problem": "כיצד ממוסגרת ההתוועדות כהמשך לי׳ שבט, ומהי אחריות החסיד להפצת החסידות במקום שבו הוא נמצא?",
       "conditions_or_qualifications": [
         "נבדקה רק פתיחת השיחה בשורות 175–179; אין להסיק מכך על תוכן יתר השיחות או המאמר.",
         "הנוסח מסומן בלתי מוגה; הקלטה או כתב-יד לא נבדקו.",
         "הסיפור על החלמה לאחר הנחת תפילין הוא סיפור המובא בשיחה; אין להציגו כהוכחה רפואית או כהמלצה רפואית.",
-        "ההשוואה לאוניברסיטה מתארת שליחות בהקשר השיחה ואינה הוראה גורפת לעזוב מוסד לימודים."
+        "ההשוואה לאוניברסיטה מתארת שליחות בהקשר השיחה ואינה הוראה גורפת לעזוב מוסד לימודים.",
+        "נבדקו שורות 402–411 בלבד; זו קריאה והדרכה בתוך שיחה, ולא נוסח של פסיקה הלכתית נפרדת."
       ],
       "audience": "משתתפי ההתוועדות וקוראי התמליל.",
       "primary_secondary_status": "Publisher-published Hebrew unedited talk transcript; primary textual witness to the talk as published, while the audio and original stenographic record were not inspected.",
@@ -439,15 +451,15 @@
         "transmission_type": "Publisher-published Hebrew unedited transcript of a public talk, marked בלתי מוגה.",
         "textual_status": "Only the cited body passages were inspected; the page marks the text בלתי מוגה; recording and corrected edition were not inspected. קטע נוסף בשורות 272–277 נפתח ונבדק ב-17.11.2026; לא נבדקו חלקים אחרים של השיחה מעבר למיקומים המתועדים. נבדק גם קטע נוסף בשורות 279–285 ביום 17.11.2026; הפרפרזות מוגבלות לקטעים שנפתחו.",
         "editorial_scope": "Bounded non-verbatim research paraphrases and line locators only; no full protected text reproduced.",
-        "verification_status": "Source body inspected 2026-11-17; Chabad.org AID 2988877, גוף השיחה, שורות 175–179.; context partial. Additional body passage inspected 2026-11-17, lines 272–277. Additional body passage inspected 2026-11-17, lines 279–285; context partial.",
+        "verification_status": "Parsed; source_text_inspected; partial context; additional body passage inspected 2026-11-17.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2988877",
-        "accessed": "2026-11-17"
+        "accessed": "2026-11-17T23:55:38+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "Publisher Hebrew text opened; marked בלתי מוגה; recording not inspected.",
+        "state": "Publisher Hebrew text opened; marked בלתי מוגה; recording not inspected. מקטע גוף נוסף נפתח ונבדק ב-17.11.2026 לפי locator המצורף; הפרסום בלתי מוגה וההקשר נשאר חלקי.",
         "complete_partial": "partial",
-        "notes": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. נבדק גם קטע נוסף בשורות 272–277; context remains partial. נפתח ונבדק קטע נוסף בשורות 279–285 ביום 17.11.2026; הסיפור נשמר כסיפור המובא בשיחה ולא כראיה רפואית."
+        "notes": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. נבדק גם קטע נוסף בשורות 272–277; context remains partial. נפתח ונבדק קטע נוסף בשורות 279–285 ביום 17.11.2026; הסיפור נשמר כסיפור המובא בשיחה ולא כראיה רפואית. No manuscript/recording collation; added one bounded non-verbatim paraphrase from the cited body lines."
       },
       "access": {
         "access_level": "open",
@@ -472,118 +484,18 @@
           "תפילין",
           "שליחות באוניברסיטה",
           "בית חולים ברוחניות",
-          "השפעה על חולים"
+          "השפעה על חולים",
+          "קביעות יומית",
+          "לימוד חסידות",
+          "כמה שורות בכל יום",
+          "לימוד החודר את האדם"
         ],
         "response_case_candidate": true
       },
       "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "המקור נשאר Parsed. נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. אין קידום ל-Verified. Batch 142: one additional non-verbatim proposition added from AID 2988877, lines 272–277; identity and Evidence Family unchanged; status remains Parsed. Batch 143: two additional non-verbatim propositions added from AID 2988877, lines 279–285; identity, Evidence Family and Parsed status unchanged; no Verified promotion.",
+      "notes": "המקור נשאר Parsed. נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. אין קידום ל-Verified. Batch 142: one additional non-verbatim proposition added from AID 2988877, lines 272–277; identity and Evidence Family unchanged; status remains Parsed. Batch 143: two additional non-verbatim propositions added from AID 2988877, lines 279–285; identity, Evidence Family and Parsed status unchanged; no Verified promotion. ב-17.11.2026 נפתח ונבדק קטע נוסף בגוף הפרסום; נוספה פרפרזה לא-מילולית אחת, מוגבלת למיקום המצוין.",
       "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
       "content_enrichment_batch_id": "143",
-      "last_content_enriched_at": "2026-11-17"
-    },
-    {
-      "id": "chabad-sicha-2989555",
-      "canonical_key": "aid:2989555",
-      "aid": 2989555,
-      "title": "שיחת ש״פ בראשית, מבה״ח מרחשון, ה׳תשי״ז",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה בעברית שפורסם בידי BeitChabad.com/Chabad.org ומסומן בלתי מוגה; ההקלטה והנוסח המוגה לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "ש״פ בראשית, מבה״ח מרחשון, ה׳תשי״ז",
-      "date_precision": "calendar_day",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "public_talk_transcript",
-      "collection": "התוועדויות / תורת מנחם — BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989555",
-      "context_status": "partial",
-      "summary_researcher": "השיחה מוסרת שרשרת מסירה של סיפור שבע התורות המיוחסות לבעש״ט: הרבי הריי״צ סיפר ששמע מאביו הרש״ב על אירוע שבו אדמו״ר מהר״ש הביא את הרש״ב להיכל הבעש״ט, ושם נאמרו התורות. זהו דיווח השיחה על מסורת שנמסרה מדור לדור, ולא אימות היסטורי עצמאי של האירוע. השיחה מציגה את הפצת תורת החסידות בידי נשיאי חב״ד כהמשך ל״יפוצו מעיינותיך חוצה״, ומסבירה שלימוד חסידות חב״ד והליכה בהדרכותיה נדרשים בדור הנוכחי הן לשלמות העבודה הרוחנית והן ללימוד התורה ולקיום המצוות.",
-      "response_propositions": [
-        "השיחה מוסרת שרשרת מסירה של סיפור שבע התורות המיוחסות לבעש״ט: הרבי הריי״צ סיפר ששמע מאביו הרש״ב על אירוע שבו אדמו״ר מהר״ש הביא את הרש״ב להיכל הבעש״ט, ושם נאמרו התורות. זהו דיווח השיחה על מסורת שנמסרה מדור לדור, ולא אימות היסטורי עצמאי של האירוע.",
-        "השיחה מציגה את הפצת תורת החסידות בידי נשיאי חב״ד כהמשך ל״יפוצו מעיינותיך חוצה״, ומסבירה שלימוד חסידות חב״ד והליכה בהדרכותיה נדרשים בדור הנוכחי הן לשלמות העבודה הרוחנית והן ללימוד התורה ולקיום המצוות."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org AID 2989555, גוף השיחה, שורות 177–180.",
-        "Chabad.org AID 2989555, גוף השיחה, שורות 202–217."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org AID 2989555, גוף השיחה, שורות 177–180. | Chabad.org AID 2989555, גוף השיחה, שורות 202–217.",
-      "evidence_family_id": "sicha-5717-shabbat-bereishit-rosh-chodesh-cheshvan-aid2989555",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2989555, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial.",
-      "documented_circumstances": "התוועדות א׳ של ש״פ בראשית, מבה״ח מרחשון תשי״ז; הנוסח באתר מסומן בלתי מוגה.",
-      "question_or_problem": "כיצד השיחה מציגה את שרשרת המסירה של שבע התורות ואת תפקיד לימוד החסידות והפצת המעיינות בדור הנוכחי?",
-      "conditions_or_qualifications": [
-        "הסיפור על שבע התורות מובא כשרשרת מסירה כפי שהרבי הריי״צ סיפר; האירוע ההיסטורי עצמו לא אומת בנפרד.",
-        "הקביעה על נחיצות לימוד חסידות חב״ד מדווחת כהוראה והסבר בתוך השיחה ובהקשר הדור הנדון; אין להרחיבה לפסיקה עצמאית מעבר להקשר.",
-        "נבדקו הקטעים בשורות 177–180 ו-202–217 בלבד; ההקלטה והנוסח המוגה לא נבדקו."
-      ],
-      "audience": "משתתפי ההתוועדות וקוראי התמליל.",
-      "primary_secondary_status": "Publisher-published Hebrew unedited talk transcript; primary textual witness to the talk as published, while the audio and original stenographic record were not inspected.",
-      "witness_type": "published_hebrew_unedited_talk_transcript",
-      "witness_provenance": "BeitChabad.com / Chabad.org, AID 2989555, שיחת ש״פ בראשית, מבה״ח מרחשון, ה׳תשי״ז, https://he.chabad.org/library/article_cdo/aid/2989555",
-      "independent_witness": true,
-      "translation_status": "הפרסום מציג נוסח בעברית; לא צוין תרגום והמקור המוגה/הקלטה לא נבדקו.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את השיחה/הרישום לדברי הרבי; ההקלטה או הרישום בן הזמן לא נבדקו בנפרד.",
-      "source_role": "oral_talk_transcript",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "provenance": {
-        "authorship_status": "The publisher attributes the published talk/record to the Rebbe; audio or contemporaneous notes were not independently inspected.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / Chabad.org, AID 2989555, שיחת ש״פ בראשית, מבה״ח מרחשון, ה׳תשי״ז, https://he.chabad.org/library/article_cdo/aid/2989555",
-        "transmission_type": "Publisher-published Hebrew unedited transcript of a public talk, marked בלתי מוגה.",
-        "textual_status": "Only the cited body passages were inspected; the page marks the text בלתי מוגה; recording and corrected edition were not inspected.",
-        "editorial_scope": "Bounded non-verbatim research paraphrases and line locators only; no full protected text reproduced.",
-        "verification_status": "Source body inspected 2026-11-17; Chabad.org AID 2989555, גוף השיחה, שורות 177–180.; Chabad.org AID 2989555, גוף השיחה, שורות 202–217.; context partial.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989555",
-        "accessed": "2026-11-17"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "Publisher Hebrew text opened; marked בלתי מוגה; recording not inspected.",
-        "complete_partial": "partial",
-        "notes": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2989555, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור ופרפרזות מחקריות תחומות בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות נפרדת לפי AID 2989555 ומשפחת ראיות sicha-5717-shabbat-bereishit-rosh-chodesh-cheshvan-aid2989555; כל תרגום או פרסום מקביל עתידי ייבדק כנגזרת של אותה משפחה ולא כעד עצמאי.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת ש״פ בראשית, מבה״ח מרחשון, ה׳תשי״ז"
-        ],
-        "research_terms": [
-          "הבעש״ט",
-          "שבעת התורות",
-          "הפצת המעיינות",
-          "פנימיות התורה",
-          "חסידות חב״ד",
-          "יפוצו מעיינותיך חוצה"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "המקור נשאר Parsed. נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2989555, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. אין קידום ל-Verified.",
-      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
-      "content_enrichment_batch_id": "141",
       "last_content_enriched_at": "2026-11-17"
     },
     {
@@ -1444,7 +1356,7 @@
     }
   ],
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 11,
+    "answer_eligible_unique_sources": 10,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 15
   }

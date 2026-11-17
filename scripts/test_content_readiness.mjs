@@ -884,6 +884,13 @@ const enriched5100487=idx.entries.find(e=>String(e.aid)==='5100487');
 assert(enriched5100487&&enriched5100487.response_propositions.some(p=>p.includes('מאמינים בני מאמינים')),'existing AID 5100487 must retain the newly inspected rational-proof distinction');
 assert(enriched5100487.proposition_source_locator.includes('300–304'),'AID 5100487 must expose the new proposition locator');
 assert.equal(enriched5100487.canonical_file,'data/items/chabad-letter-5100487.json');
+const canonical2989555=idx.entries.find(e=>String(e.aid)==='2989555');
+assert(canonical2989555,'AID 2989555 must remain in the search index after canonical family reconciliation');
+assert.equal(canonical2989555.canonical_file,'data/items/content-research-batch-101-2026-11-15.json','AID 2989555 must resolve to its pre-existing canonical identity, not the removed batch-141 duplicate');
+assert.equal(canonical2989555.evidence_family_id,'sicha-5717-bereshit-aid2989555','AID 2989555 must retain one canonical Evidence Family');
+assert.equal(canonical2989555.response_propositions.length,4,'AID 2989555 must retain the original proposition, two merged batch-141 propositions and the newly inspected Chabad-method proposition');
+assert(canonical2989555.proposition_source_locator.includes('190–193'),'AID 2989555 must expose the newly inspected body locator');
+assert(canonical2989555.response_propositions.some(p=>p.includes('יפוצו מעיינותיך חוצה')&&p.includes('חסידות חב״ד')),'AID 2989555 must expose the inspected dissemination proposition after duplicate merge');
 const disseminationSynthesis='מה כתב הרבי על הפצת המעיינות והפצת פנימיות התורה?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,disseminationSynthesis,{mode});

@@ -76,13 +76,13 @@
     "Batch 143: AID 4666220 and AID 4831188 returned Internal Error through the public reader; no retry or bypass. Twelve accessible Hebrew item bodies and one existing identity were used as same-run fallback.",
     "Reconciliation run 507 measured 1450 / 854 / 3751 in its workspace but stopped before commit: test_question_specificity_gate.mjs exposed a temporal-dead-zone ReferenceError for wellspringsDisseminationQuestion. The snapshot is diagnostic only; public metrics remain unchanged.",
     "AID 4666220 returned Internal Error through the public reader on 2026-11-17; no crawler retry or access-control bypass. Twelve accessible bilingual Hayom Yom pages were inspected as same-run fallback.",
-    "Batch 147: eight English Yechidus publisher presentations have inspected body passages but original-language transcripts/recordings are not collated; all eight remain non-independent and Parsed. Ten Hebrew candidates returned HTTP 429; no crawler retry or bypass. Full canonical reconciliation is still required."
+    "Batch 147: eight English Yechidus publisher presentations have inspected body passages but original-language transcripts/recordings are not collated; all eight remain non-independent and Parsed. Ten Hebrew candidates returned HTTP 429; no crawler retry or bypass. Full canonical reconciliation is still required.",
+    "AID 2989555 duplicate identity discovered across batch101 and batch141; resolved by merging the two inspected propositions into the batch101 canonical Evidence Family and removing the duplicate record. Full post-merge reconciliation remains pending."
   ],
   "next_work": [
-    "Run canonical reconciliation through batch 147; inspect full AID/URL/ID and Evidence Family collisions before accepting any metric change.",
-    "Commit the measured public metrics, search index, project state and regenerated review queue only from the reconciliation workflow.",
-    "Run test_content_readiness.mjs in regular and deep-research modes, including the eight-event Yechidus comparison and nested-attribution enrichment of AID 4304431.",
-    "Inspect Answer Quality Gate, bulk reconciliation, hourly corpus maintenance and Pages deployment runs; verify the public site."
+    "Run full canonical reconciliation after batch148 and the AID 2989555 family merge; inspect AID/URL/ID/Evidence Family collisions and commit only measured public metrics, search index and review queue.",
+    "Run scripts/test_content_readiness.mjs and the Answer Quality Gate in regular and deep-research modes; verify AIDs 4831188, 2989555, 5989777 and 4385753 with claim-level body locators.",
+    "Verify the resulting GitHub Actions runs and GitHub Pages deployment; retain the existing hourly workflow unchanged."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
@@ -254,50 +254,47 @@
     "pending_batches": [
       "145",
       "146",
-      "147"
+      "147",
+      "148"
     ],
     "summary": {
-      "batch_id": "147",
-      "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+      "batch_id": "148",
+      "batch_file": "data/items/content-research-batch-148-2026-11-17.json",
       "status": "pending_reconciliation",
-      "metrics_before": null,
-      "metrics_expected_after": null,
-      "metrics_actual_after": null,
-      "new_source_identities": 8,
-      "existing_identities_enriched": 1,
-      "source_bodies_inspected": 9,
-      "new_response_propositions": 8,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 9,
-      "answer_eligible_source_families_added": 8,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 8,
-      "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 10,
-      "recovered_candidate_count": 0,
-      "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 8,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 9
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1496,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3815
       },
-      "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 19,
-      "source_body_pages_opened": 9,
-      "new_aids": [
-        2465321,
-        2487225,
-        2466894,
-        2499039,
-        2487556,
-        2487457,
-        2504381,
-        2499828
-      ],
-      "enriched_aids": [
-        4304431
-      ],
-      "translations_counted_as_independent_witnesses": 0
-    }
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1495,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3823
+      },
+      "metrics_actual_after": null,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "source_bodies_inspected": 8,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "content_verified_unique_sources_added": 0
+    },
+    "before": {
+      "answer_eligible_unique_sources": 1496,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3815
+    },
+    "expected_after": {
+      "answer_eligible_unique_sources": 1495,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3823
+    },
+    "actual_after": null,
+    "reconciliation_status": "pending_reconciliation",
+    "baseline_correction": " Batch148 correction: CI run 44167373651 measured 1496/854/3815 before duplicate repair. AID 2989555 was present in both batch101 and batch141 under different Evidence Families; the duplicate was merged into the batch101 family. Corrected expected boundary after eight in-place propositions is 1495/854/3823; not yet measured or committed."
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -1664,8 +1661,8 @@
       "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
     }
   },
-  "current_batch": "147",
-  "updated_at": "2026-11-17T21:59:23+02:00",
-  "current_batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+  "current_batch": "148",
+  "updated_at": "2026-11-17T23:55:38+02:00",
+  "current_batch_file": "data/items/content-research-batch-148-2026-11-17.json",
   "status": "pending_reconciliation"
 }

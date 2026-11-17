@@ -1,176 +1,480 @@
 {
-  "started_at": "2026-11-17T21:59:23+02:00",
-  "attempted": 19,
-  "enriched": 1,
-  "discovered": 8,
-  "blocked": 10,
-  "skipped": 0,
+  "started_at": "2026-11-17T23:55:38+02:00",
+  "attempted": 14,
+  "enriched": 8,
+  "discovered": 0,
+  "blocked": 5,
+  "skipped": 1,
   "status": "pending_reconciliation",
   "manual_web_review": {
-    "batch_id": "147",
-    "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
-    "reviewed_at": "2026-11-17T21:59:23+02:00",
+    "schema": "maaneh-ledorot-content-research-batch-v1",
+    "batch_id": "148",
+    "batch_file": "data/items/content-research-batch-148-2026-11-17.json",
+    "generated": "2026-11-17T23:55:38+02:00",
+    "reviewed_at": "2026-11-17T23:55:38+02:00",
+    "title": "Batch 148 — eight in-place enrichments of original Hebrew Sichos; duplicate AID 2989555 merged into its canonical Evidence Family; no new source identities",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 19,
-    "source_bodies_inspected": 9,
-    "source_body_pages_opened": 9,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 1,
+    "reviewed_item_count": 13,
+    "source_bodies_inspected": 8,
+    "source_body_pages_opened": 8,
+    "metadata_only_items_rechecked": 0,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 0,
+    "existing_identities_enriched": 8,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 8,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 9,
-    "answer_eligible_source_families_added": 8,
+    "new_response_propositions": 0,
+    "existing_response_propositions_added": 8,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 0,
     "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 8,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
-    "new_translation_manifestations": 8,
-    "translations_counted_as_independent_witnesses": 0,
-    "new_aids": [
-      2465321,
-      2487225,
-      2466894,
-      2499039,
-      2487556,
-      2487457,
-      2504381,
-      2499828
-    ],
-    "enriched_aids": [
-      4304431
-    ],
-    "blocked_candidate_count": 10,
-    "blocked_candidates": [
-      {
-        "aid": 4313026,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313026",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4313024,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313024",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4313094,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313094",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4313091,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4312996,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312996",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4312999,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312999",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4312984,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312984",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4312992,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312992",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4312997,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312997",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      },
-      {
-        "aid": 4313127,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313127",
-        "status": "HTTP 429 Too Many Requests",
-        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-      }
-    ],
-    "source_languages": [
-      "English"
-    ],
     "language_distribution": {
-      "English": 8,
-      "Hebrew": 1
+      "Hebrew": 8
     },
     "original_language_distribution": {
-      "unknown": 8,
-      "Hebrew": 1
+      "Hebrew": 8
     },
     "proposition_language_distribution": {
-      "Hebrew": 9
+      "Hebrew": 8
     },
-    "source_types": [
-      "Yechidus",
-      "Sichos"
-    ],
     "source_type_distribution": {
-      "Yechidus": 8,
-      "Sichos": 1
+      "Sichos": 8
     },
-    "metrics_before": null,
-    "metrics_expected_after": null,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1496,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3815
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1495,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3823
+    },
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1496,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3815
+    },
     "metrics_actual_after": null,
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 8,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 9
-    },
-    "fallback_source_attempted": true,
+    "metrics_delta_actual": null,
+    "metrics_note": "The failed CI reconciliation run 44167373651 measured 1496 / 854 / 3815 in its workspace before batch148. That snapshot counted AID 2989555 twice under two Evidence Family IDs (batch101 and batch141). This batch merges the duplicate into the pre-existing canonical family (-1 family) and adds eight inspected propositions to existing identities (+8 propositions). Expected boundary 1495 / 854 / 3823 is a calculation, not a measured post-batch result; reconciliation is pending.",
+    "new_aids": [],
+    "enriched_aids": [
+      4385753,
+      2988984,
+      4304359,
+      2989348,
+      4279866,
+      2988983,
+      2989555,
+      2988877
+    ],
+    "rechecked_aids": [],
+    "blocked_candidate_count": 5,
+    "blocked_candidates": [
+      {
+        "aid": 5989777,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/5989777",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות; נבדקו מקורות חלופיים באותה הפעלה."
+      },
+      {
+        "aid": 4280152,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4280152",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות; נבדקו מקורות חלופיים באותה הפעלה."
+      },
+      {
+        "aid": 2989214,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989214",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות; נבדקו מקורות חלופיים באותה הפעלה."
+      },
+      {
+        "aid": 4385534,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4385534",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות; נבדקו מקורות חלופיים באותה הפעלה."
+      },
+      {
+        "aid": 4304399,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4304399",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות; נבדקו מקורות חלופיים באותה הפעלה."
+      }
+    ],
+    "failed_alternate_routes": [
+      {
+        "aid": 2989555,
+        "source_url": "https://www.chabad.org/torah-texts/2989555/page/default.htm",
+        "status": "unavailable via public reader",
+        "handling": "The direct Hebrew publisher route he.chabad.org/library/article_cdo/aid/2989555 opened successfully and was used; no bypass was attempted."
+      }
+    ],
+    "metadata_only_candidate_count": 0,
+    "excluded_candidate_count": 5,
+    "existing_identity_updates": [
+      {
+        "action": "enriched_existing_identity_in_place",
+        "existing_identity": true,
+        "aid": 4385753,
+        "id": "chabad-sicha-4385753",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "evidence_family_id": "sicha-5727-19-kislev-vayeshev-aid4385753",
+        "existing_propositions_before": 2,
+        "propositions_added": 1,
+        "total_propositions_after": 3,
+        "body_locator": "Chabad.org AID 4385753, גוף השיחה, סעיף יד, שורות 305–309.",
+        "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
+      },
+      {
+        "action": "enriched_existing_identity_in_place",
+        "existing_identity": true,
+        "aid": 2988984,
+        "id": "chabad-sicha-2988984",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "evidence_family_id": "sicha-5716-14-tammuz-shabbat-balak-aid2988984",
+        "existing_propositions_before": 1,
+        "propositions_added": 1,
+        "total_propositions_after": 2,
+        "body_locator": "Chabad.org AID 2988984, גוף השיחה, סעיפים ט–י, שורות 254–264.",
+        "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
+      },
+      {
+        "action": "enriched_existing_identity_in_place",
+        "existing_identity": true,
+        "aid": 4304359,
+        "id": "chabad-sicha-4304359",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "evidence_family_id": "sicha-5724-2-cheshvan-shabbat-noach-aid4304359",
+        "existing_propositions_before": 1,
+        "propositions_added": 1,
+        "total_propositions_after": 2,
+        "body_locator": "Chabad.org AID 4304359, גוף השיחה, סעיפים כא–כב, שורות 309–315.",
+        "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
+      },
+      {
+        "action": "enriched_existing_identity_in_place",
+        "existing_identity": true,
+        "aid": 2989348,
+        "id": "chabad-sicha-2989348",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+        "existing_propositions_before": 2,
+        "propositions_added": 1,
+        "total_propositions_after": 3,
+        "body_locator": "Chabad.org AID 2989348, גוף השיחה, סעיפים יא–יג, שורות 248–265.",
+        "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
+      },
+      {
+        "action": "enriched_existing_identity_in_place",
+        "existing_identity": true,
+        "aid": 4279866,
+        "id": "chabad-sicha-4279866",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "evidence_family_id": "sicha-5712-24-tevet-vaera-aid4279866",
+        "existing_propositions_before": 1,
+        "propositions_added": 1,
+        "total_propositions_after": 2,
+        "body_locator": "Chabad.org AID 4279866, גוף השיחה, סעיף א, שורות 174–179.",
+        "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
+      },
+      {
+        "action": "enriched_existing_identity_in_place",
+        "existing_identity": true,
+        "aid": 2988983,
+        "id": "chabad-sicha-2988983",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "evidence_family_id": "sicha-5716-12-tammuz-balak-aid2988983",
+        "existing_propositions_before": 1,
+        "propositions_added": 1,
+        "total_propositions_after": 2,
+        "body_locator": "Chabad.org AID 2988983, גוף השיחה, סעיף כה, שורות 373–384.",
+        "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
+      },
+      {
+        "action": "enriched_existing_identity_in_place",
+        "existing_identity": true,
+        "aid": 2989555,
+        "id": "sicha-5717-bereshit-aid2989555",
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "evidence_family_id": "sicha-5717-bereshit-aid2989555",
+        "existing_propositions_before": 3,
+        "propositions_added": 1,
+        "total_propositions_after": 4,
+        "body_locator": "Chabad.org AID 2989555, גוף השיחה, סעיף ד, שורות 190–193.",
+        "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
+      },
+      {
+        "action": "enriched_existing_identity_in_place",
+        "existing_identity": true,
+        "aid": 2988877,
+        "id": "chabad-sicha-2988877",
+        "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+        "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
+        "existing_propositions_before": 4,
+        "propositions_added": 1,
+        "total_propositions_after": 5,
+        "body_locator": "Chabad.org AID 2988877, גוף השיחה, סעיף כו, שורות 402–411.",
+        "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
+      }
+    ],
+    "existing_identity_updates_count": 8,
+    "source_body_review": [
+      {
+        "aid": 4385753,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4385753",
+        "web_source_ref": "manual_web_body_inspection_2026-11-17",
+        "body_text_inspected": true,
+        "body_page_opened": true,
+        "title_or_metadata_only": false,
+        "source_body_locator": "Chabad.org AID 4385753, גוף השיחה, סעיף יד, שורות 305–309.",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "witness_type": "published_unedited_hebrew_sicha_transcript",
+        "evidence_family_id": "sicha-5727-19-kislev-vayeshev-aid4385753",
+        "independent_witness": true,
+        "proposition_count": 1,
+        "context_status": "partial",
+        "existing_identity": true,
+        "action": "enriched_existing_identity_in_place",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      {
+        "aid": 2988984,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2988984",
+        "web_source_ref": "manual_web_body_inspection_2026-11-17",
+        "body_text_inspected": true,
+        "body_page_opened": true,
+        "title_or_metadata_only": false,
+        "source_body_locator": "Chabad.org AID 2988984, גוף השיחה, סעיפים ט–י, שורות 254–264.",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "witness_type": "published_unedited_hebrew_sicha_transcript",
+        "evidence_family_id": "sicha-5716-14-tammuz-shabbat-balak-aid2988984",
+        "independent_witness": true,
+        "proposition_count": 1,
+        "context_status": "partial",
+        "existing_identity": true,
+        "action": "enriched_existing_identity_in_place",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      {
+        "aid": 4304359,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4304359",
+        "web_source_ref": "manual_web_body_inspection_2026-11-17",
+        "body_text_inspected": true,
+        "body_page_opened": true,
+        "title_or_metadata_only": false,
+        "source_body_locator": "Chabad.org AID 4304359, גוף השיחה, סעיפים כא–כב, שורות 309–315.",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "witness_type": "published_unedited_hebrew_sicha_transcript",
+        "evidence_family_id": "sicha-5724-2-cheshvan-shabbat-noach-aid4304359",
+        "independent_witness": true,
+        "proposition_count": 1,
+        "context_status": "partial",
+        "existing_identity": true,
+        "action": "enriched_existing_identity_in_place",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      {
+        "aid": 2989348,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+        "web_source_ref": "manual_web_body_inspection_2026-11-17",
+        "body_text_inspected": true,
+        "body_page_opened": true,
+        "title_or_metadata_only": false,
+        "source_body_locator": "Chabad.org AID 2989348, גוף השיחה, סעיפים יא–יג, שורות 248–265.",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "witness_type": "published_unedited_hebrew_sicha_transcript",
+        "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+        "independent_witness": true,
+        "proposition_count": 1,
+        "context_status": "partial",
+        "existing_identity": true,
+        "action": "enriched_existing_identity_in_place",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      {
+        "aid": 4279866,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4279866",
+        "web_source_ref": "manual_web_body_inspection_2026-11-17",
+        "body_text_inspected": true,
+        "body_page_opened": true,
+        "title_or_metadata_only": false,
+        "source_body_locator": "Chabad.org AID 4279866, גוף השיחה, סעיף א, שורות 174–179.",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "witness_type": "published_unedited_hebrew_sicha_transcript",
+        "evidence_family_id": "sicha-5712-24-tevet-vaera-aid4279866",
+        "independent_witness": true,
+        "proposition_count": 1,
+        "context_status": "partial",
+        "existing_identity": true,
+        "action": "enriched_existing_identity_in_place",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      {
+        "aid": 2988983,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2988983",
+        "web_source_ref": "manual_web_body_inspection_2026-11-17",
+        "body_text_inspected": true,
+        "body_page_opened": true,
+        "title_or_metadata_only": false,
+        "source_body_locator": "Chabad.org AID 2988983, גוף השיחה, סעיף כה, שורות 373–384.",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "witness_type": "published_unedited_hebrew_sicha_transcript",
+        "evidence_family_id": "sicha-5716-12-tammuz-balak-aid2988983",
+        "independent_witness": true,
+        "proposition_count": 1,
+        "context_status": "partial",
+        "existing_identity": true,
+        "action": "enriched_existing_identity_in_place",
+        "canonical_file": "data/items/content-research-batch-142-2026-11-17.json",
+        "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      {
+        "aid": 2989555,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989555",
+        "web_source_ref": "manual_web_body_inspection_2026-11-17",
+        "body_text_inspected": true,
+        "body_page_opened": true,
+        "title_or_metadata_only": false,
+        "source_body_locator": "Chabad.org AID 2989555, גוף השיחה, סעיף ד, שורות 190–193.",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "witness_type": "published_unedited_hebrew_sicha_transcript",
+        "evidence_family_id": "sicha-5717-bereshit-aid2989555",
+        "independent_witness": true,
+        "proposition_count": 1,
+        "context_status": "partial",
+        "existing_identity": true,
+        "action": "enriched_existing_identity_in_place",
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      {
+        "aid": 2988877,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2988877",
+        "web_source_ref": "manual_web_body_inspection_2026-11-17",
+        "body_text_inspected": true,
+        "body_page_opened": true,
+        "title_or_metadata_only": false,
+        "source_body_locator": "Chabad.org AID 2988877, גוף השיחה, סעיף כו, שורות 402–411.",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "witness_type": "published_unedited_hebrew_sicha_transcript",
+        "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
+        "independent_witness": true,
+        "proposition_count": 1,
+        "context_status": "partial",
+        "existing_identity": true,
+        "action": "enriched_existing_identity_in_place",
+        "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+        "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      }
+    ],
+    "records": [],
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
     "scan_only_verification_used": false,
+    "translations_counted_as_independent_witnesses": 0,
+    "new_translation_manifestations": 0,
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "BeitChabad.com / he.chabad.org",
+      "accessible_item_level_bodies": 8,
+      "existing_identity_bodies": 8,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        4385753,
+        2988984,
+        4304359,
+        2989348,
+        4279866,
+        2988983,
+        2989555,
+        2988877
+      ],
+      "existing_identity_aids": [
+        4385753,
+        2988984,
+        4304359,
+        2989348,
+        4279866,
+        2988983,
+        2989555,
+        2988877
+      ],
+      "blocked_direct_routes": [
+        5989777,
+        4280152,
+        2989214,
+        4385534,
+        4304399
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "חמש הפניות החזירו HTTP 429; באותה הפעלה נפתחו ונבדקו שמונה גופי שיחות עבריים חלופיים. AID 2989555 נפתח בנתיב העברי הישיר לאחר שנתיב Torah Texts חלופי לא היה נגיש."
+    },
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
+      "batch_files_checked": 89,
+      "bulk_indexed_files_checked": 12,
+      "mixed_authorized_files_checked": 40,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
-      "exact_aid_code_search_matches": 0,
-      "new_aids_unique": true,
-      "source_urls_unique": true,
-      "evidence_family_ids_unique": true,
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "all_target_identities_answer_eligible": null
+      "canonical_identity_collisions": [
+        {
+          "aid": 2989555,
+          "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+          "duplicate_file": "data/items/content-research-batch-141-2026-11-17.json",
+          "resolution": "duplicate removed; propositions merged into canonical record",
+          "resolved": true
+        }
+      ],
+      "canonical_identity_collisions_resolved": 1,
+      "canonical_identity_collisions_unresolved_in_scanned_files": 0,
+      "other_enriched_aids_without_matches_in_scanned_files": 7,
+      "note": "The current large public-search-index could not be read through the connector. A file-level scan of 89 content-research batches (055–147), 12 bulk-indexed files and 40 mixed-authorized-content files found one collision: AID 2989555 in batch101 and batch141. It was resolved in this commit. The review queue had no matches for the eight enriched AIDs. Full canonical reconciliation remains pending."
     },
     "retrieval_synthesis": {
-      "topic": "yechidus_peace_and_mission",
-      "status": "implemented_pending_execution",
-      "selected_aids": [
-        2465321,
-        2487225,
-        2466894,
-        2499039,
-        2487556,
-        2487457,
-        2504381,
-        2499828
+      "topic": "wellspringsDisseminationQuestion",
+      "status": "canonical_identity_collision_resolved_pending_retest",
+      "root_cause": "AID 2989555 existed in batch101 and was duplicated in batch141 with a different Evidence Family ID. The search index deduplicates by AID and retained the earlier canonical batch101 record, which lacked the later dissemination propositions. The duplicate was removed and its two inspected propositions merged into the batch101 identity; a further proposition was added from body lines 190–193.",
+      "engine_change": "No answer-engine logic change was required: the existing wellsprings branch already selects up to eight source candidates. The regression was caused by the duplicate canonical identity and family split.",
+      "regular_expected_aids": [
+        4831188,
+        2989555,
+        5989777
       ],
-      "claim_count": 8,
-      "distinct_event_families": 8,
-      "independent_witnesses": 0,
-      "deep_researcher_claim_source_map": true,
+      "researcher_expected_aids": [
+        4831188,
+        2989555,
+        5989777,
+        4385753
+      ],
+      "claim_level_locators": true,
+      "deep_researcher_witness_map": true,
       "attribution": "system_synthesis_not_rebbe_quote"
     },
-    "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": -1,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 8
+    },
+    "note": "שמונה זהויות עבריות קיימות הועשרו בפרפרזה מחקרית אחת כל אחת. לא נוספו זהויות מקור חדשות ולא קודם מקור ל-Verified. נמצאה ותוקנה כפילות AID 2989555 בין batch101 ל-batch141; שתי הפרפרזות מהעותק הכפול מוזגו בזהות הקנונית, ומשפחת הראיות אוחדה. חמש הפניות חלופיות החזירו 429; לא בוצע crawler retry ולא נעקפו בקרות."
   },
   "previous_manual_web_review": {
     "batch_id": "146",
