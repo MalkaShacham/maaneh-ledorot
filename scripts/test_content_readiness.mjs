@@ -4532,3 +4532,96 @@ for(const aid of batch140Aids){
 assert.equal(batch140Data.existing_identity_updates.length,5);
 assert.equal(batch140Data.existing_identity_rechecks.length,2);
 
+
+
+// Batch 144: six distinct general telegrams, four Hebrew talks, one Hebrew letter,
+// and one English testimony carrying a translated Yiddish letter. The latter is
+// a derived presentation, not an independent witness.
+const batch144Path='data/items/content-research-batch-144-2026-11-17.json';
+const batch144Data=JSON.parse(await readFile(new URL(batch144Path,root),'utf8'));
+const batch144Aids=['4280036','4280068','4385646','5959941','5959973','4280027','4304431','4304427','4304341','4304436','2989328','259799'];
+assert.equal(batch144Data.records.length,12);
+assert.deepEqual(batch144Data.new_aids.map(String),batch144Aids);
+assert.equal(batch144Data.new_source_identities,12);
+assert.equal(batch144Data.new_response_propositions,18);
+assert.equal(batch144Data.existing_identities_enriched,2);
+assert.equal(batch144Data.existing_response_propositions_added,2);
+assert.equal(batch144Data.total_new_paraphrase_entries,20);
+assert.equal(batch144Data.content_verified_unique_sources_added,0);
+assert.equal(batch144Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch144Data.crawler_retry,false);
+assert.equal(batch144Data.access_control_bypassed,false);
+assert.equal(batch144Data.full_text_copied,false);
+assert.equal(batch144Data.deduplication_check.full_index_scan_available,false);
+assert.equal(batch144Data.deduplication_check.full_index_scan_pending_reconciliation,true);
+assert.equal(batch144Data.metrics_actual_after,null);
+assert.deepEqual(readinessMetrics(batch144Data.metrics_expected_after),{answer_eligible_unique_sources:1476,content_verified_unique_sources:854,answer_eligible_propositions:3796});
+for(const record of batch144Data.records){
+ assert.equal(record.status,'Parsed');
+ assert.equal(record.has_content_evidence,true);
+ assert.equal(record.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(record.proposition_verbatim,false);
+ assert.equal(record.proposition_verification,'source_text_inspected');
+ assert(record.proposition_source_locator&&record.verification_scope&&record.provenance);
+ assert.equal(record.response_propositions.length,record.response_proposition_locators.length);
+ assert(record.evidence_family_id);
+ const matches=idx.entries.filter(e=>sourceAID(e)===String(record.aid));
+ assert.equal(matches.length,1,'batch-144 AID '+record.aid+' must have exactly one canonical identity after reconciliation');
+ const e=matches[0];
+ assert(e.has_content_evidence);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.canonical_file,batch144Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);
+ assert.equal(e.response_propositions.length,e.response_proposition_locators.length);
+ assert.equal(e.evidence_family_id,record.evidence_family_id);
+ assert.equal(e.independent_witness,record.independent_witness);
+}
+const translatedYiddish259799=idx.entries.find(e=>sourceAID(e)==='259799');
+assert(translatedYiddish259799);
+assert.equal(translatedYiddish259799.language,'English');
+assert.equal(translatedYiddish259799.original_language,'Yiddish');
+assert.equal(translatedYiddish259799.independent_witness,false);
+assert.equal(translatedYiddish259799.translation_of_evidence_family_id,translatedYiddish259799.evidence_family_id);
+for(const [aid,canonicalFile] of [['5478256','data/items/igrot-kodesh-vol3-p372-livelihood-minyan.json'],['2301532','data/items/response-cases-shidduch-001.json']]){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e&&e.has_content_evidence,'existing identity '+aid+' must be enriched in place');
+ assert.equal(e.canonical_file,canonicalFile);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.response_propositions.length,1);
+ assert.equal(e.response_proposition_locators.length,1);
+ assert.equal(e.independent_witness,false);
+ assert.equal(e.translation_of_evidence_family_id,e.evidence_family_id);
+}
+
+const activeFarbrengenQuery='השווה בין המברקים על התוועדויות פעילות לקראת מועדים שונים: מהו הדגש החוזר ומה נאמר על המשכיות הפעילות לאורך השנה?';
+const activeFarbrengenUnderstanding=understandQuestion(activeFarbrengenQuery);
+assert(activeFarbrengenUnderstanding.topics.includes('התוועדויות פעילות והמשכיות לאורך השנה'));
+assert.equal(activeFarbrengenUnderstanding.intent,'pattern');
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,activeFarbrengenQuery,{mode});
+ assert(m.answerable,mode+': active-farbrengen comparison must be supported by multiple dated telegram families');
+ assert.equal(m.synthesis?.kind,'cross_family_research_synthesis');
+ assert.equal(m.synthesis?.topic,'active_farbrengen_messages');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert(m.sources.length>=2);
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
+ assert(m.claims.length>=2);
+ assert(m.claims.every(c=>c.source_numbers.length>0&&c.source_locators.length>0));
+ assert(m.synthesis.claims.length>=2);
+ assert(m.synthesis.claims.every(c=>c.source_numbers.length>0&&c.source_locators.length>0));
+ const yearRoundClaim=m.synthesis.claims.find(c=>c.topic==='year_round_continuity');
+ assert(yearRoundClaim&&yearRoundClaim.source_locators.length===1,'year-round continuation must remain attached only to the telegram that explicitly states it');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.depth==='deep');
+  assert.equal(m.research.synthesis_scope,'cross_family');
+  assert(m.research.evidence_families>=2);
+  assert(m.research.independent_evidence_families>=2);
+  assert(m.research.evidence_integrity.independent_witnesses>=2);
+  assert(m.research.evidence_map.length===m.claims.length);
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length>0));
+  assert(m.research.witnesses.every(w=>w.proposition_locators.length>0));
+ }else assert.equal(m.research,undefined);
+}
