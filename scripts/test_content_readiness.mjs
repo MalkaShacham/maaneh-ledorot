@@ -4346,3 +4346,105 @@ for(const aid of batch137Aids){const matches=idx.entries.filter(e=>sourceAID(e)=
 const enriched5959845Batch137=idx.entries.find(e=>sourceAID(e)==='5959845');assert(enriched5959845Batch137&&enriched5959845Batch137.response_propositions.length===15);assert(enriched5959845Batch137.response_propositions.some(p=>p.includes('עשה לך רב')&&p.includes('קנה לך חבר')));assert(enriched5959845Batch137.response_proposition_locators.some(l=>String(l).includes('319–325')));
 const yechidusQuestion='מה מלמדות שיחות היחידות השונות על אחדות ישראל והשליחות האישית לאחר החזרה הביתה?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,yechidusQuestion,{mode});assert(m.answerable,mode+': five-event Yechidus comparison must be answerable');assert.equal(m.synthesis?.topic,'yechidus_unity_and_mission');assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');assert.equal(m.synthesis?.claims?.length,5);assert.equal(m.synthesis?.evidence_family_ids?.length,5);assert.equal(m.synthesis?.independent_evidence_family_ids?.length,0);assert.equal(m.pattern_synthesis_integrity?.valid,true);assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1&&c.witnesses[0].independent_witness===false));assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert(m.research&&m.research.depth==='deep');assert.equal(m.research.synthesis_scope,'cross_family_derived_case_comparison');assert.equal(m.research.evidence_families,5);assert.equal(m.research.independent_evidence_families,0);assert.equal(m.research.evidence_integrity.derived_non_independent,5);assert(m.research.claim_source_map.every(c=>c.source_locators.length===1));}else assert.equal(m.research,undefined);}
+
+
+// Batch 138: twelve inspected publisher-translated correspondence items.
+// Each letter is its own Evidence Family, but the English rendering is a
+// derived presentation, not an independent witness. AID 553672 remains excluded
+// because the accessible page contains audio links but no transcript.
+const batch138Path='data/items/content-research-batch-138-2026-11-17.json';
+const batch138Data=JSON.parse(await readFile(new URL(batch138Path,root)));
+const batch138Aids=['2277184','2277190','2277193','2277219','2243707','2244140','2244141','2274740','2274827','3905688','3905750','3905762'];
+assert.equal(batch138Data.records.length,12);
+assert.deepEqual(batch138Data.records.map(e=>String(e.aid)),batch138Aids);
+assert.equal(batch138Data.new_source_identities,12);
+assert.equal(batch138Data.new_response_propositions,24);
+assert.equal(batch138Data.total_new_paraphrase_entries,25);
+assert.equal(batch138Data.existing_identities_enriched,1);
+assert.equal(batch138Data.existing_identity_updates[0].aid,2277247);
+assert.equal(batch138Data.existing_identity_updates[0].existing_propositions_before,2);
+assert.equal(batch138Data.existing_identity_updates[0].total_propositions_after,3);
+assert.equal(batch138Data.blocked_candidates[0].aid,553672);
+assert.equal(batch138Data.blocked_candidates[0].status,'publisher_media_page_without_transcript');
+assert(!batch138Data.records.some(e=>String(e.aid)==='553672'));
+assert.equal(batch138Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch138Data.crawler_retry,false);
+assert.equal(batch138Data.access_control_bypassed,false);
+assert.equal(batch138Data.full_text_copied,false);
+for(const r of batch138Data.records){
+ assert.equal(r.status,'Parsed');
+ assert.equal(r.has_content_evidence,true);
+ assert.equal(r.independent_witness,false);
+ assert.equal(r.translation_of_evidence_family_id,r.evidence_family_id);
+ assert.equal(r.original_language,'unknown');
+ assert.equal(r.language,'English');
+ assert.equal(r.proposition_language,'Hebrew');
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(r.proposition_verbatim,false);
+ assert.equal(r.proposition_verification,'source_text_inspected');
+ assert.equal(r.context_status,'partial');
+ assert.equal(r.response_propositions.length,2);
+ assert.equal(r.response_propositions.length,r.response_proposition_locators.length);
+ assert(r.proposition_source_locator&&r.provenance&&r.verification_scope);
+}
+assert.equal(batch138Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch138Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert(Array.isArray(batch138Data.deduplication_check.canonical_identity_collisions));
+assert(Array.isArray(batch138Data.deduplication_check.missing_canonical_identities));
+assert.equal(batch138Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert(['reconciled','reconciled_with_variance'].includes(batch138Data.reconciliation_status));
+assert.deepEqual(readinessMetrics(batch137Data.metrics_actual_after),readinessMetrics(batch138Data.metrics_actual_before));
+assert.deepEqual(readinessMetrics(batch138Data.metrics_actual_after),readinessMetrics(metrics));
+assert.equal(batch138Data.metrics_expected_after.answer_eligible_unique_sources,1420);
+assert.equal(batch138Data.metrics_actual_after.answer_eligible_unique_sources,1420);
+for(const aid of batch138Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);
+ assert.equal(matches.length,1,'batch-138 AID '+aid+' must have exactly one canonical identity');
+ const e=matches[0];
+ assert(e.has_content_evidence);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.canonical_file,batch138Path);
+ assert.equal(e.independent_witness,false);
+ assert.equal(e.translation_of_evidence_family_id,e.evidence_family_id);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verbatim,false);
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert.equal(e.response_propositions.length,2);
+ assert.equal(e.response_propositions.length,e.response_proposition_locators.length);
+}
+const enrichedLetter837=idx.entries.find(e=>sourceAID(e)==='2277247');
+assert(enrichedLetter837&&enrichedLetter837.response_propositions.length===3);
+assert(enrichedLetter837.response_propositions.some(p=>p.includes('פדיון הנפש')&&p.includes('הנמען')));
+assert(enrichedLetter837.response_proposition_locators.some(l=>String(l).includes('283–284')));
+assert(!idx.entries.some(e=>sourceAID(e)==='553672'&&e.has_content_evidence===true));
+
+const yudTesLettersQuestion='מה עולה מארבע איגרות י״ט כסלו תשי״א על הפצת המעיינות, תפקיד מנהיגי הקהילות ותמיכה במוסדות?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,yudTesLettersQuestion,{mode});
+ assert(m.answerable,mode+': four-letter Yud-Tes Kislev comparison must be answerable');
+ assert.equal(m.synthesis?.topic,'yud_tes_kislev_dissemination_letters');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.synthesis?.evidence_quality,'four_distinct_letter_families_all_derived_translations');
+ assert.equal(m.synthesis?.claims?.length,4);
+ assert.equal(m.synthesis?.basis?.length,4);
+ assert.equal(m.synthesis?.evidence_family_ids?.length,4);
+ assert.equal(m.synthesis?.independent_evidence_family_ids?.length,0);
+ assert.deepEqual(m.sources.map(e=>sourceAID(e)),['2277184','2277190','2277193','2277219']);
+ assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,4);
+ assert(m.sources.every(e=>e.independent_witness===false&&e.status==='Parsed'));
+ assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1&&c.witnesses[0].independent_witness===false&&c.text===c.witnesses[0].proposition));
+ assert.equal(m.pattern_synthesis_integrity?.valid,true);
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.depth==='deep');
+  assert.equal(m.research.synthesis_scope,'cross_family_derived_case_comparison');
+  assert.equal(m.research.evidence_families,4);
+  assert.equal(m.research.independent_evidence_families,0);
+  assert.equal(m.research.evidence_integrity.independent_witnesses,0);
+  assert.equal(m.research.evidence_integrity.derived_non_independent,4);
+  assert.equal(m.research.evidence_witnesses.length,4);
+  assert.equal(m.research.evidence_map.length,4);
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length===1&&c.source_locators[0].locator));
+  assert(m.research.synthesis_constraints.rule.includes('not independent witnesses'));
+ }else assert.equal(m.research,undefined);
+}
