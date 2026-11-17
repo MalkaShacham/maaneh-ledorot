@@ -1,9 +1,9 @@
 {
   "started_at": "2026-11-17T18:27:48+02:00",
-  "attempted": 15,
+  "attempted": 16,
   "enriched": 2,
-  "discovered": 12,
-  "blocked": 1,
+  "discovered": 13,
+  "blocked": 0,
   "skipped": 0,
   "status": "pending_reconciliation",
   "manual_web_review": {
@@ -13,21 +13,22 @@
     "reconciliation_status": "pending_reconciliation",
     "reviewed_at": "2026-11-17T18:27:48+02:00",
     "reviewed_item_count": 15,
-    "source_bodies_inspected": 14,
-    "source_body_pages_opened": 15,
-    "new_source_identities": 12,
+    "source_bodies_inspected": 15,
+    "source_body_pages_opened": 16,
+    "new_source_identities": 13,
     "existing_identities_enriched": 2,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 18,
+    "new_response_propositions": 19,
     "existing_response_propositions_added": 2,
-    "total_new_paraphrase_entries": 20,
-    "answer_eligible_source_families_added": 14,
-    "independent_witnesses_added": 11,
+    "total_new_paraphrase_entries": 21,
+    "answer_eligible_source_families_added": 15,
+    "independent_witnesses_added": 12,
     "non_independent_presentations_added": 1,
     "content_verified_unique_sources_added": 0,
     "new_aids": [
       4280036,
       4280068,
+      4280139,
       4385646,
       5959941,
       5959973,
@@ -43,17 +44,8 @@
       5478256,
       2301532
     ],
-    "blocked_candidate_count": 1,
-    "blocked_candidates": [
-      {
-        "aid": 4280139,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4280139",
-        "web_source_ref": "turn448299view5",
-        "status": "non_retryable_open_failure",
-        "reason": "לא הוחזר גוף פרסום קריא דרך הקורא הציבורי.",
-        "handling": "לא נוצרה פרופוזיציה ולא הוסק תוכן מהכותרת. באותה הפעלה נעשה fallback ל-12 גופי מקור חדשים ולשתי זהויות קיימות; ללא crawler retry וללא עקיפת בקרת גישה."
-      }
-    ],
+    "blocked_candidate_count": 0,
+    "blocked_candidates": [],
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
@@ -65,16 +57,16 @@
       "answer_eligible_propositions": 3776
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1476,
+      "answer_eligible_unique_sources": 1477,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3796
+      "answer_eligible_propositions": 3797
     },
     "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 14,
+      "answer_eligible_unique_sources": 15,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 20
+      "answer_eligible_propositions": 21
     },
     "public_metrics_snapshot_before": {
       "generated": "2026-11-15",
@@ -87,7 +79,7 @@
       "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2950
     },
-    "note": "נבדקו 12 גופי מקור חדשים: שישה מברקים, ארבע שיחות, מכתב עברי אחד וקטע מתורגם מיידיש בתוך עדות אישית באנגלית. נוספו 18 פרופוזיציות לא-מילוליות; שתי זהויות קיימות הועשרו בשתי פרופוזיציות נוספות. התרגום היידי אינו עד עצמאי. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
+    "note": "נבדקו 13 גופי מקור חדשים: שבעה מברקים, ארבע שיחות, מכתב עברי אחד וקטע מתורגם מיידיש בתוך עדות אישית באנגלית. נוספו 19 פרופוזיציות לא-מילוליות; שתי זהויות קיימות הועשרו בשתי פרופוזיציות נוספות. התרגום היידי אינו עד עצמאי. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
@@ -96,6 +88,7 @@
       "checked_aids": [
         4280036,
         4280068,
+        4280139,
         4385646,
         5959941,
         5959973,
@@ -124,38 +117,52 @@
       "code_search_matches": 0,
       "all_target_identities_answer_eligible": null,
       "post_addition_canonical_scan_pending": true,
-      "note": "12 ה-AID החדשים לא הופיעו בהיסטוריית הרכישה האחרונה או בתור הביקורת; חיפוש GitHub מדויק לא החזיר התאמות. public-search-index.json לא היה קריא דרך כלי GitHub בהפעלה זו, ולכן אין הצהרה על סריקה קנונית מלאה או היעדר התנגשויות."
+      "note": "בדיקת כפילויות חלקית: 13 ה-AID החדשים אינם מופיעים בהיסטוריית הרכישה האחרונה או בתור הביקורת; חיפוש GitHub מדויק לא החזיר התאמות. public-search-index.json לא היה קריא דרך כלי GitHub בהפעלה זו, ולכן אין הצהרה על סריקה קנונית מלאה או היעדר התנגשויות. סריקת post-addition נדרשת ב-reconciliation."
     },
     "fallback_source_attempted": true,
     "fallback_source_results": {
       "publisher": "BeitChabad.com / Chabad.org",
-      "accessible_item_level_bodies": 12,
+      "accessible_item_level_bodies": 13,
       "existing_identity_bodies": 2,
-      "blocked_direct_routes": [
-        4280139
-      ],
+      "blocked_direct_routes": [],
       "body_text_inspected": true,
       "search_extracts_used_as_content": 0,
       "translations_counted_as_independent_witnesses": 0,
-      "note": "נפתחו גופי הפרסום החלופיים באותה הפעלה; 12 זהויות חדשות ושתי זהויות קיימות. המקור החסום לא שימש לתוכן."
+      "note": "13 גופי מקור חדשים ושתי זהויות קיימות נבדקו. AID 4280139 נכשל בניסיון open ראשון אך נפתח בהצלחה מתוך תוצאת חיפוש ציבורית רגילה; אין חסימה שנותרה באצווה.",
+      "recovered_candidate_aids": [
+        4280139
+      ]
     },
     "language_distribution": {
-      "Hebrew": 11,
+      "Hebrew": 12,
       "English": 1
     },
     "original_language_distribution": {
-      "Hebrew": 11,
+      "Hebrew": 12,
       "Yiddish": 1
     },
     "proposition_language_distribution": {
-      "Hebrew": 18
+      "Hebrew": 19
     },
     "source_type_distribution": {
-      "General Telegrams": 6,
+      "General Telegrams": 7,
       "Sichos": 4,
       "Igrot Kodesh Letters": 1,
       "Translated letter excerpt in testimony": 1
-    }
+    },
+    "recovered_candidate_count": 1,
+    "recovered_candidates": [
+      {
+        "aid": 4280139,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4280139",
+        "first_attempt_status": "non_retryable_open_failure",
+        "alternate_open_ref": "turn157300view0",
+        "outcome": "body_inspected",
+        "locator": "AID 4280139, lines 170–178.",
+        "handling": "העמוד נפתח דרך תוצאת חיפוש ציבורית רגילה; ללא crawler וללא עקיפת בקרת גישה."
+      }
+    ],
+    "excluded_candidate_count": 0
   },
   "previous_manual_web_review": {
     "batch_id": "143",
@@ -3421,21 +3428,22 @@
       "reconciliation_status": "pending_reconciliation",
       "reviewed_at": "2026-11-17T18:27:48+02:00",
       "reviewed_item_count": 15,
-      "source_bodies_inspected": 14,
-      "source_body_pages_opened": 15,
-      "new_source_identities": 12,
+      "source_bodies_inspected": 15,
+      "source_body_pages_opened": 16,
+      "new_source_identities": 13,
       "existing_identities_enriched": 2,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 18,
+      "new_response_propositions": 19,
       "existing_response_propositions_added": 2,
-      "total_new_paraphrase_entries": 20,
-      "answer_eligible_source_families_added": 14,
-      "independent_witnesses_added": 11,
+      "total_new_paraphrase_entries": 21,
+      "answer_eligible_source_families_added": 15,
+      "independent_witnesses_added": 12,
       "non_independent_presentations_added": 1,
       "content_verified_unique_sources_added": 0,
       "new_aids": [
         4280036,
         4280068,
+        4280139,
         4385646,
         5959941,
         5959973,
@@ -3451,17 +3459,8 @@
         5478256,
         2301532
       ],
-      "blocked_candidate_count": 1,
-      "blocked_candidates": [
-        {
-          "aid": 4280139,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280139",
-          "web_source_ref": "turn448299view5",
-          "status": "non_retryable_open_failure",
-          "reason": "לא הוחזר גוף פרסום קריא דרך הקורא הציבורי.",
-          "handling": "לא נוצרה פרופוזיציה ולא הוסק תוכן מהכותרת. באותה הפעלה נעשה fallback ל-12 גופי מקור חדשים ולשתי זהויות קיימות; ללא crawler retry וללא עקיפת בקרת גישה."
-        }
-      ],
+      "blocked_candidate_count": 0,
+      "blocked_candidates": [],
       "crawler_retry": false,
       "access_control_bypassed": false,
       "full_text_copied": false,
@@ -3473,16 +3472,16 @@
         "answer_eligible_propositions": 3776
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1476,
+        "answer_eligible_unique_sources": 1477,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3796
+        "answer_eligible_propositions": 3797
       },
       "metrics_actual_before": null,
       "metrics_actual_after": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 14,
+        "answer_eligible_unique_sources": 15,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 20
+        "answer_eligible_propositions": 21
       },
       "public_metrics_snapshot_before": {
         "generated": "2026-11-15",
@@ -3495,7 +3494,7 @@
         "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2950
       },
-      "note": "נבדקו 12 גופי מקור חדשים: שישה מברקים, ארבע שיחות, מכתב עברי אחד וקטע מתורגם מיידיש בתוך עדות אישית באנגלית. נוספו 18 פרופוזיציות לא-מילוליות; שתי זהויות קיימות הועשרו בשתי פרופוזיציות נוספות. התרגום היידי אינו עד עצמאי. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
+      "note": "נבדקו 13 גופי מקור חדשים: שבעה מברקים, ארבע שיחות, מכתב עברי אחד וקטע מתורגם מיידיש בתוך עדות אישית באנגלית. נוספו 19 פרופוזיציות לא-מילוליות; שתי זהויות קיימות הועשרו בשתי פרופוזיציות נוספות. התרגום היידי אינו עד עצמאי. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_scan_pending_reconciliation": true,
@@ -3504,6 +3503,7 @@
         "checked_aids": [
           4280036,
           4280068,
+          4280139,
           4385646,
           5959941,
           5959973,
@@ -3532,38 +3532,52 @@
         "code_search_matches": 0,
         "all_target_identities_answer_eligible": null,
         "post_addition_canonical_scan_pending": true,
-        "note": "12 ה-AID החדשים לא הופיעו בהיסטוריית הרכישה האחרונה או בתור הביקורת; חיפוש GitHub מדויק לא החזיר התאמות. public-search-index.json לא היה קריא דרך כלי GitHub בהפעלה זו, ולכן אין הצהרה על סריקה קנונית מלאה או היעדר התנגשויות."
+        "note": "בדיקת כפילויות חלקית: 13 ה-AID החדשים אינם מופיעים בהיסטוריית הרכישה האחרונה או בתור הביקורת; חיפוש GitHub מדויק לא החזיר התאמות. public-search-index.json לא היה קריא דרך כלי GitHub בהפעלה זו, ולכן אין הצהרה על סריקה קנונית מלאה או היעדר התנגשויות. סריקת post-addition נדרשת ב-reconciliation."
       },
       "fallback_source_attempted": true,
       "fallback_source_results": {
         "publisher": "BeitChabad.com / Chabad.org",
-        "accessible_item_level_bodies": 12,
+        "accessible_item_level_bodies": 13,
         "existing_identity_bodies": 2,
-        "blocked_direct_routes": [
-          4280139
-        ],
+        "blocked_direct_routes": [],
         "body_text_inspected": true,
         "search_extracts_used_as_content": 0,
         "translations_counted_as_independent_witnesses": 0,
-        "note": "נפתחו גופי הפרסום החלופיים באותה הפעלה; 12 זהויות חדשות ושתי זהויות קיימות. המקור החסום לא שימש לתוכן."
+        "note": "13 גופי מקור חדשים ושתי זהויות קיימות נבדקו. AID 4280139 נכשל בניסיון open ראשון אך נפתח בהצלחה מתוך תוצאת חיפוש ציבורית רגילה; אין חסימה שנותרה באצווה.",
+        "recovered_candidate_aids": [
+          4280139
+        ]
       },
       "language_distribution": {
-        "Hebrew": 11,
+        "Hebrew": 12,
         "English": 1
       },
       "original_language_distribution": {
-        "Hebrew": 11,
+        "Hebrew": 12,
         "Yiddish": 1
       },
       "proposition_language_distribution": {
-        "Hebrew": 18
+        "Hebrew": 19
       },
       "source_type_distribution": {
-        "General Telegrams": 6,
+        "General Telegrams": 7,
         "Sichos": 4,
         "Igrot Kodesh Letters": 1,
         "Translated letter excerpt in testimony": 1
-      }
+      },
+      "recovered_candidate_count": 1,
+      "recovered_candidates": [
+        {
+          "aid": 4280139,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280139",
+          "first_attempt_status": "non_retryable_open_failure",
+          "alternate_open_ref": "turn157300view0",
+          "outcome": "body_inspected",
+          "locator": "AID 4280139, lines 170–178.",
+          "handling": "העמוד נפתח דרך תוצאת חיפוש ציבורית רגילה; ללא crawler וללא עקיפת בקרת גישה."
+        }
+      ],
+      "excluded_candidate_count": 0
     }
   ],
   "manual_web_review_current_metrics": {
@@ -3571,8 +3585,8 @@
     "content_verified_unique_sources": 878,
     "answer_eligible_propositions": 2950
   },
-  "last_run_note": "נבדקו 12 גופי מקור חדשים: שישה מברקים, ארבע שיחות, מכתב עברי אחד וקטע מתורגם מיידיש בתוך עדות אישית באנגלית. נוספו 18 פרופוזיציות לא-מילוליות; שתי זהויות קיימות הועשרו בשתי פרופוזיציות נוספות. התרגום היידי אינו עד עצמאי. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
-  "next_action": "Run canonical reconciliation through batch 144; scan full AID/URL/Evidence Family index; confirm the two in-place enrichments and the 12 new records; measure answer_eligible_unique_sources and proposition counts; run test_content_readiness.mjs and regular/researcher farbrengen comparison; inspect Actions and Pages. Keep all new records Parsed and all translations linked to their parent Evidence Family.",
+  "last_run_note": "נבדקו 13 גופי מקור חדשים: שבעה מברקים, ארבע שיחות, מכתב עברי אחד וקטע מתורגם מיידיש בתוך עדות אישית באנגלית. נוספו 19 פרופוזיציות לא-מילוליות; שתי זהויות קיימות הועשרו בשתי פרופוזיציות נוספות. התרגום היידי אינו עד עצמאי. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
+  "next_action": "Run canonical reconciliation through batch 144; scan full AID/URL/Evidence Family index; confirm the 13 new records and two in-place enrichments; measure answer_eligible_unique_sources and proposition counts; run test_content_readiness.mjs and regular/researcher farbrengen comparison; inspect Actions and Pages. Keep all new records Parsed and all translations linked to their parent Evidence Family.",
   "current_batch_file": "data/items/content-research-batch-144-2026-11-17.json",
   "pending": [
     "141",
