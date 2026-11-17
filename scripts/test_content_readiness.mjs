@@ -373,6 +373,7 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': inspected Talmud Torah support letter must answer a bounded educational-support query');
  assert(m.sources.some(e=>sourceAID(e)==='4929245'&&e.id==='library-igrot-kodesh-v11-3772'),mode+': existing volume-XI bibliographic identity must resolve to public AID 4929245');
  assert(m.sources.length<=2,mode+': generic charity sources must not flood the institutional-support query');
+ assert(!m.sources.some(e=>sourceAID(e)==='4279926'),mode+': general support for kosher educational institutions must not match the specific distressed Talmud Torah case');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': each institutional-support claim needs proposition-level citations');
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid),mode+': institutional-support claims must pass citation and context checks');
  if(mode==='researcher'){
@@ -4448,3 +4449,75 @@ for(const mode of ['regular','researcher']){
   assert(m.research.synthesis_constraints.rule.includes('not independent witnesses'));
  }else assert.equal(m.research,undefined);
 }
+
+const batch139Path='data/items/content-research-batch-139-2026-11-17.json';
+const batch139Data=JSON.parse(await readFile(new URL(batch139Path,root),'utf8'));
+const batch140Path='data/items/content-research-batch-140-2026-11-17.json';
+const batch140Data=JSON.parse(await readFile(new URL(batch140Path,root),'utf8'));
+const batch139Aids=['4279913','4279926','4279851','2989413','2989417','2989565','2989298','2465321','2487556','2513997','2512367','2513225'];
+const batch140Aids=['2989331','2989369','2989411'];
+assert.equal(batch139Data.records.length,12);
+assert.deepEqual(batch139Data.new_aids.map(String),batch139Aids);
+assert.equal(batch139Data.new_source_identities,12);
+assert.equal(batch139Data.new_response_propositions,24);
+assert.equal(batch139Data.existing_response_propositions_added,3);
+assert.equal(batch139Data.total_new_paraphrase_entries,27);
+assert.equal(batch139Data.existing_identity_updates.length,2);
+assert.equal(batch139Data.existing_identity_rechecks.length,3);
+assert(!batch139Data.records.some(r=>String(r.aid)==='2989329'),'duplicate AID 2989329 must not remain as a new identity');
+assert(batch139Data.existing_identity_rechecks.some(r=>String(r.aid)==='2989329'&&r.canonical_file==='data/items/content-research-batch-070-2026-11-13.json'));
+assert.deepEqual(readinessMetrics(batch139Data.metrics_before),readinessMetrics(batch138Data.metrics_expected_after));
+assert.deepEqual(readinessMetrics(batch139Data.metrics_expected_after),{answer_eligible_unique_sources:1432,content_verified_unique_sources:854,answer_eligible_propositions:3716});
+assert.equal(batch139Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch139Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert(Array.isArray(batch139Data.deduplication_check.canonical_identity_collisions));
+assert(Array.isArray(batch139Data.deduplication_check.missing_canonical_identities));
+assert.equal(batch139Data.deduplication_check.all_target_identities_answer_eligible,true);
+const canonical2989329=idx.entries.filter(e=>sourceAID(e)==='2989329');
+assert.equal(canonical2989329.length,1);
+assert.equal(canonical2989329[0].canonical_file,'data/items/content-research-batch-070-2026-11-13.json');
+assert.equal(canonical2989329[0].status,'Verified');
+for(const aid of batch139Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);assert.equal(matches.length,1,'batch-139 AID '+aid+' must have exactly one canonical identity');
+ const e=matches[0];assert(e.has_content_evidence);assert.equal(e.status,'Parsed');assert.equal(e.canonical_file,batch139Path);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);assert.equal(e.response_propositions.length,e.response_proposition_locators.length);
+}
+for(const aid of [4279926,4279851,2989413,2989565,2989298]){
+ const e=idx.entries.find(x=>sourceAID(x)===String(aid));assert(e&&e.response_propositions.length===3,'batch-140 enrichment must be merged in place for AID '+aid);
+ assert.equal(e.canonical_file,batch139Path);assert(e.response_proposition_locators.length===3);
+}
+for(const aid of [4279913,2989417]){
+ const e=idx.entries.find(x=>sourceAID(x)===String(aid));assert(e&&e.response_propositions.length===2,'rechecked identity must not receive a redundant proposition: '+aid);
+}
+assert.equal(batch140Data.records.length,3);
+assert.deepEqual(batch140Data.new_aids.map(String),batch140Aids);
+assert.equal(batch140Data.new_source_identities,3);
+assert.equal(batch140Data.existing_identities_enriched,5);
+assert.equal(batch140Data.existing_identities_rechecked,2);
+assert.equal(batch140Data.new_response_propositions,6);
+assert.equal(batch140Data.existing_response_propositions_added,5);
+assert.equal(batch140Data.total_new_paraphrase_entries,11);
+assert.equal(batch140Data.source_bodies_inspected,10);
+assert.equal(batch140Data.records.reduce((n,r)=>n+r.response_propositions.length,0),6);
+assert.equal(batch140Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch140Data.content_verified_unique_sources_added,0);
+assert.deepEqual(readinessMetrics(batch140Data.metrics_before),readinessMetrics(batch139Data.metrics_expected_after));
+assert.deepEqual(readinessMetrics(batch140Data.metrics_expected_after),{answer_eligible_unique_sources:1435,content_verified_unique_sources:854,answer_eligible_propositions:3727});
+assert.equal(batch140Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch140Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert(Array.isArray(batch140Data.deduplication_check.canonical_identity_collisions));
+assert(Array.isArray(batch140Data.deduplication_check.missing_canonical_identities));
+assert.equal(batch140Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert.deepEqual(readinessMetrics(batch140Data.metrics_actual_before),readinessMetrics(batch139Data.metrics_actual_after));
+assert.deepEqual(readinessMetrics(batch140Data.metrics_actual_after),readinessMetrics(metrics));
+for(const aid of batch140Aids){
+ const matches=idx.entries.filter(e=>sourceAID(e)===aid);assert.equal(matches.length,1,'batch-140 AID '+aid+' must have exactly one canonical identity');
+ const e=matches[0];assert(e.has_content_evidence);assert.equal(e.status,'Parsed');assert.equal(e.canonical_file,batch140Path);
+ assert.equal(e.language,'Hebrew');assert.equal(e.original_language,'Hebrew');assert.equal(e.independent_witness,true);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');
+ assert(e.proposition_source_locator&&e.verification_scope);assert.equal(e.response_propositions.length,2);assert.equal(e.response_propositions.length,e.response_proposition_locators.length);
+}
+assert.equal(batch140Data.existing_identity_updates.length,5);
+assert.equal(batch140Data.existing_identity_rechecks.length,2);
+

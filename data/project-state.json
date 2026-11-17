@@ -36,7 +36,7 @@
     "answer_eligible_propositions": 2950
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
-  "verified_promotions_latest_run": 8,
+  "verified_promotions_latest_run": 0,
   "active_blocks": [
     "No permission for bulk copying of protected corpora; only bounded non-verbatim paraphrases and locators are stored.",
     "Incoming correspondence is absent from many Igrot Kodesh response cases, so context remains Partial where the incoming question is unavailable.",
@@ -106,9 +106,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1420,
+        "answer_eligible_unique_sources": 1435,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3689
+        "answer_eligible_propositions": 3727
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -152,30 +152,32 @@
         "135",
         "136",
         "137",
-        "138"
+        "138",
+        "139",
+        "140"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "136",
-        "batch_file": "data/items/content-research-batch-136-2026-11-17.json",
+        "batch_id": "140",
+        "batch_file": "data/items/content-research-batch-140-2026-11-17.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1384,
+          "answer_eligible_unique_sources": 1432,
           "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3616
+          "answer_eligible_propositions": 3716
         },
         "metrics_expected_after": {
-          "answer_eligible_unique_sources": 1396,
+          "answer_eligible_unique_sources": 1435,
           "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3639
+          "answer_eligible_propositions": 3727
         },
-        "new_source_identities": 12,
-        "existing_identities_enriched": 1,
-        "source_bodies_inspected": 13,
-        "new_response_propositions": 22,
-        "existing_response_propositions_added": 1,
-        "total_new_paraphrase_entries": 23,
-        "answer_eligible_source_families_added": 12,
+        "new_source_identities": 3,
+        "existing_identities_enriched": 5,
+        "source_bodies_inspected": 10,
+        "new_response_propositions": 6,
+        "existing_response_propositions_added": 5,
+        "total_new_paraphrase_entries": 11,
+        "answer_eligible_source_families_added": 3,
         "content_verified_unique_sources_added": 0
       },
       "status": "pending_reconciliation"
@@ -183,7 +185,7 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "Answer Quality Gate run 969 is in progress on commit c49df2b516c391c77235b48beb5d0e1108d441a0. Status normalization, exact-revision index generation, question-specific retrieval, answer synthesis, citation integrity, evidence-contract audit and workflow-write-safety checks have passed; test_content_readiness.mjs is still running.",
+      "run_status": "Prior quality gate failed at the institutional-support query because broad charity evidence entered a specific distressed Talmud Torah query. The answer engine now requires a proposition-level institution + distress/expense match; batch 139/140 and readiness assertions are committed for retest.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
@@ -193,15 +195,15 @@
       "note": "AID 5019603 remains non-independent and its uninspected photograph is explicitly disclosed. The new validator requires two distinct Evidence Families, at least one independent family, two claim-level cited claims, and the exact publisher-text-not-independent witness status. No source is promoted to Verified.",
       "bulk_reconcile_run_id": 43967095108,
       "hourly_run_id": null,
-      "status": "pending_retest_after_batch_136",
-      "last_failed_run_id": 43983157479,
-      "last_failure": null
+      "status": "pending_retest_after_batch_140",
+      "last_failed_run_id": 44064599646,
+      "last_failure": "test_content_readiness.mjs: generic charity evidence flooded the specific institutional-support query; fixed with an explicit inspected-proposition gate."
     },
     "publication": {
-      "status": "pending_deploy_after_batch_136",
+      "status": "pending_deploy_after_batch_140",
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
-      "last_deployed_commit": "c49df2b516c391c77235b48beb5d0e1108d441a0"
+      "last_deployed_commit": "312745ef33bfc3cc453b8b03238cd8d3e8aa9a3b"
     },
     "last_reconciled_at": "2026-11-15",
     "last_generated_index_snapshot": {
@@ -248,74 +250,66 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "138",
+    "current_batch": "140",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "136",
     "last_batch_summary": {
-      "batch_id": "138",
-      "batch_file": "data/items/content-research-batch-138-2026-11-17.json",
+      "batch_id": "140",
+      "batch_file": "data/items/content-research-batch-140-2026-11-17.json",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_at": "2026-11-17T11:03:42+02:00",
-      "reviewed_item_count": 14,
-      "source_bodies_inspected": 13,
-      "source_body_pages_opened": 13,
-      "new_source_identities": 12,
-      "existing_identities_enriched": 1,
-      "new_response_propositions": 24,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 25,
-      "answer_eligible_source_families_added": 12,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 12,
+      "reviewed_at": "2026-11-17T14:29:58+02:00",
+      "reviewed_item_count": 10,
+      "source_bodies_inspected": 10,
+      "source_body_pages_opened": 10,
+      "new_source_identities": 3,
+      "existing_identities_enriched": 5,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions": 6,
+      "existing_response_propositions_added": 5,
+      "total_new_paraphrase_entries": 11,
+      "answer_eligible_source_families_added": 3,
+      "independent_witnesses_added": 3,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 1,
-      "excluded_candidate_count": 1,
       "new_aids": [
-        2277184,
-        2277190,
-        2277193,
-        2277219,
-        2243707,
-        2244140,
-        2244141,
-        2274740,
-        2274827,
-        3905688,
-        3905750,
-        3905762
+        2989331,
+        2989369,
+        2989411
       ],
       "enriched_aids": [
-        2277247
+        4279926,
+        4279851,
+        2989413,
+        2989565,
+        2989298
       ],
-      "blocked_aids": [
-        553672
+      "rechecked_aids": [
+        4279913,
+        2989417
       ],
-      "fallback_source_attempted": true,
+      "blocked_candidate_count": 0,
       "crawler_retry": false,
       "access_control_bypassed": false,
       "full_text_copied": false,
       "translations_counted_as_independent_witnesses": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1408,
+        "answer_eligible_unique_sources": 1432,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3664
+        "answer_eligible_propositions": 3716
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1420,
+        "answer_eligible_unique_sources": 1435,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3689
+        "answer_eligible_propositions": 3727
       },
-      "metrics_actual_before": null,
       "metrics_actual_after": null,
-      "metrics_delta_actual": null,
-      "reconciliation_variance": null,
-      "note": "12 published English correspondence bodies inspected and persisted as 12 distinct letter Evidence Families; 24 Hebrew source-grounded paraphrases added. All are derived non-independent translations. Existing AID 2277247 enriched in place and its claim locator corrected. AID 553672 media-only page excluded. Full-index reconciliation pending."
+      "note": "נבדקו עשרה גופי מקור: שבע זהויות עבריות קיימות נפתחו מחדש ושלוש איגרות עבריות חדשות נבדקו בגוף הפרסום. נוספו שלוש זהויות מקור מקוריות-לשון ו-6 פרופוזיציות; חמש זהויות קיימות הועשרו in-place בחמש פרופוזיציות נוספות; שתי זהויות נבדקו מחדש ללא הוספה. AID 2989331, 2989369 ו-2989411 נותרו Parsed; אין קידום ל-Verified. שנת הדפוס המופיעה כ׳תיש״א׳ בשתי איגרות לא נורמלה. אין העתקה מלאה של טקסט מוגן."
     },
-    "last_run_note": "Batch 138: 12 public English publisher-translation letter bodies inspected and persisted with 24 Hebrew non-verbatim response propositions; AID 2277247 enriched in place and locator corrected; AID 553672 media-only/no transcript excluded. All translations remain Parsed and non-independent. Full-index reconciliation pending.",
-    "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 553672: public Yechidus page contains media and language navigation but no readable transcript; no audio transcription or access bypass. Twelve accessible letter bodies were used as same-run alternatives.",
-    "next_work": "Run canonical reconciliation for pending batches through 138; inspect all AID/URL collisions and Evidence Family relations; compare actual answer-readiness metrics with expected boundary; run test_content_readiness.mjs and verify Actions/Pages. Do not promote translation-only records to Verified.",
+    "last_run_note": "Batch 140: ten Hebrew source bodies inspected (seven existing identities re-opened and three new letters); three new Hebrew letter identities, five in-place enrichments and two non-redundant rechecks. Batch 139 duplicate AID 2989329 removed because it already exists as Verified in batch 070. Institutional-support retrieval now requires a proposition-level distressed Talmud Torah/expense match. Full reconciliation pending.",
+    "last_batch_blocked_count": 0,
+    "last_batch_blocked_reason": "No new blocked route in batch 140. The prior AID 2277247 block remains documented in batch 139; accessible Hebrew sources were inspected instead.",
+    "next_work": "Run canonical reconciliation through batch 140; resolve all AID/URL/ID and Evidence Family collisions (including the already-removed AID 2989329 duplicate); refresh public metrics and review queue; run test_content_readiness.mjs; inspect Actions and Pages. Do not promote Parsed sources to Verified.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -1295,10 +1289,14 @@
       "note": "נבדקו 12 גופי איגרות באנגלית מ-Chabad.org/TheRebbe.org; נוספו 22 פרפרזות לא-מילוליות. AID 4096303 הועשרה in-place בפרופוזיציה אחת. הנתיב העברי AID 4754257 החזיר 404; באותה הפעלה נעשה fallback לגופי המו״ל באנגלית. כל 12 האיגרות הן תרגומים נגזרים, נשארות Parsed ובהקשר חלקי; אפס קידומים ל-Verified."
     },
     "current_batch_file": "data/items/content-research-batch-137-2026-11-17.json",
-    "status": "pending_reconciliation"
+    "status": "pending_reconciliation",
+    "pending": [
+      "139",
+      "140"
+    ]
   },
-  "current_batch": "137",
-  "updated_at": "2026-11-17T06:56:08+02:00",
-  "current_batch_file": "data/items/content-research-batch-137-2026-11-17.json",
+  "current_batch": "140",
+  "updated_at": "2026-11-17T14:29:58+02:00",
+  "current_batch_file": "data/items/content-research-batch-140-2026-11-17.json",
   "status": "pending_reconciliation"
 }

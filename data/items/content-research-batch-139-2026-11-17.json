@@ -2,8 +2,8 @@
   "batch_id": "139",
   "batch_file": "data/items/content-research-batch-139-2026-11-17.json",
   "generated": "2026-11-17T12:00:47+02:00",
-  "reviewed_at": "2026-11-17T12:00:47+02:00",
-  "title": "Batch 139 — Hebrew correspondence and published English Yechidus translations",
+  "reviewed_at": "2026-11-17T14:29:58+02:00",
+  "title": "Batch 139 — deduplicated Hebrew correspondence and published English Yechidus translations",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "reviewed_item_count": 16,
@@ -11,14 +11,14 @@
   "source_body_pages_opened": 15,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 13,
+  "new_source_identities": 12,
   "existing_identities_enriched": 2,
-  "existing_identities_rechecked": 2,
-  "new_response_propositions": 26,
+  "existing_identities_rechecked": 3,
+  "new_response_propositions": 24,
   "existing_response_propositions_added": 3,
-  "total_new_paraphrase_entries": 29,
-  "answer_eligible_source_families_added": 13,
-  "independent_witnesses_added": 8,
+  "total_new_paraphrase_entries": 27,
+  "answer_eligible_source_families_added": 12,
+  "independent_witnesses_added": 7,
   "non_independent_presentations_added": 5,
   "content_verified_unique_sources_added": 0,
   "blocked_candidate_count": 1,
@@ -29,34 +29,29 @@
   "full_text_copied": false,
   "scan_only_verification_used": false,
   "metrics_before": {
-    "answer_eligible_unique_sources": 977,
-    "content_verified_unique_sources": 878,
-    "answer_eligible_propositions": 2950
+    "answer_eligible_unique_sources": 1420,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3689
   },
   "metrics_before_source": "Current public-metrics snapshot at batch construction; reconciliation will calculate the actual baseline across all pending batches.",
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 990,
-    "content_verified_unique_sources": 878,
-    "answer_eligible_propositions": 2979
+    "answer_eligible_unique_sources": 1432,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3716
   },
-  "metrics_actual_before": {
-    "answer_eligible_unique_sources": 977,
-    "content_verified_unique_sources": 878,
-    "answer_eligible_propositions": 2950
-  },
+  "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 13,
+    "answer_eligible_unique_sources": 12,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 29
+    "answer_eligible_propositions": 27
   },
   "reconciliation_variance": null,
   "new_aids": [
     4279913,
     4279926,
     4279851,
-    2989329,
     2989413,
     2989417,
     2989565,
@@ -73,7 +68,8 @@
   ],
   "rechecked_aids": [
     5959845,
-    2989153
+    2989153,
+    2989329
   ],
   "blocked_aids": [
     2277247
@@ -94,7 +90,7 @@
     "Correspondence": 8,
     "Yechidus": 5
   },
-  "new_rebbe_letter_identities": 8,
+  "new_rebbe_letter_identities": 7,
   "new_yechidus_event_identities": 5,
   "new_translation_presentations": 5,
   "new_translation_manifestations": 5,
@@ -103,7 +99,6 @@
     "rebbe-letter-5712-03-tammuz-aid4279913",
     "rebbe-letter-5712-18-elul-aid4279926",
     "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
-    "rebbe-letter-5710-first-day-selichot-aid2989329",
     "rebbe-letter-5711-13-elul-aid2989413",
     "rebbe-letter-5711-tuesday-selichot-aid2989417",
     "rebbe-letter-5717-09-shevat-aid2989565",
@@ -172,7 +167,7 @@
     },
     "review_queue_records": 1022,
     "review_queue_matches": 0,
-    "canonical_identity_collisions": null,
+    "canonical_identity_collisions": [],
     "missing_canonical_identities": null,
     "all_target_identities_answer_eligible": null,
     "new_aids_unique": true,
@@ -180,7 +175,22 @@
     "evidence_family_ids_unique": true,
     "translation_aliases_not_counted_as_independent": true,
     "reconciliation_required": true,
-    "note": "Full canonical identity and Evidence Family reconciliation must be performed by the repository reconciliation workflow before the final unique-source count is reported."
+    "note": "AID 2989329 was found in canonical batch 070 and removed from batch-139 new records. Other target identities remain subject to full-index reconciliation; no duplicate translation is counted as a separate witness.",
+    "unique_new_aid_count": 12,
+    "new_source_url_count": 12,
+    "same_family_duplicate_count": 0,
+    "duplicate_alias_identities": 0,
+    "translations_counted_as_independent_witnesses": 0,
+    "resolved_duplicate_matches": [
+      {
+        "aid": 2989329,
+        "canonical_file": "data/items/content-research-batch-070-2026-11-13.json",
+        "canonical_identity_id": "chabad-letter-2989329",
+        "evidence_family_id": "torat-menachem-letter-5710-yom-rishon-selichot-2989329",
+        "status": "Verified",
+        "handling": "duplicate batch-139 record removed; existing canonical identity retained"
+      }
+    ]
   },
   "blocked_candidates": [
     {
@@ -225,11 +235,20 @@
         "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178.",
         "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185."
       ],
-      "proposition_count": 2,
+      "proposition_count": 3,
       "web_source_refs": [
         "turn668130view1"
       ],
-      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected."
+      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected.",
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "existing_propositions_before": 2,
+      "new_propositions_added": 1,
+      "total_propositions_after": 3,
+      "web_source_ref": "turn382794view1",
+      "reopened_at": "2026-11-17T14:29:58+02:00",
+      "note": "נפתח מחדש ונבדק גוף המקור בעברית; נוספה פרפרזה לא-מילולית אחת. העשרה של הקשר ההשפעה והפנייה למנהיגי קהילות."
     },
     {
       "aid": 4279851,
@@ -243,12 +262,21 @@
         "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188.",
         "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198."
       ],
-      "proposition_count": 2,
+      "proposition_count": 3,
       "web_source_refs": [
         "turn668130view2",
         "turn728123view1"
       ],
-      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected."
+      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected.",
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "existing_propositions_before": 2,
+      "new_propositions_added": 1,
+      "total_propositions_after": 3,
+      "web_source_ref": "turn382794view2",
+      "reopened_at": "2026-11-17T14:29:58+02:00",
+      "note": "נפתח מחדש ונבדק גוף המקור בעברית; נוספה פרפרזה לא-מילולית אחת. העשרה של ממד ההתמדה והכוונת העיסוקים הנלווים."
     },
     {
       "aid": 2989329,
@@ -262,11 +290,19 @@
         "he.chabad.org AID 2989329, גוף המכתב, שורות 165–169.",
         "he.chabad.org AID 2989329, גוף המכתב, שורות 173–176."
       ],
-      "proposition_count": 2,
+      "proposition_count": 3,
       "web_source_refs": [
         "turn728123view0"
       ],
-      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected."
+      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected.",
+      "existing_identity": true,
+      "action": "rechecked_existing_identity_no_new_proposition",
+      "canonical_file": "data/items/content-research-batch-070-2026-11-13.json",
+      "canonical_identity_id": "chabad-letter-2989329",
+      "evidence_family_id": "torat-menachem-letter-5710-yom-rishon-selichot-2989329",
+      "status_remains": "Verified",
+      "new_propositions_added": 0,
+      "note": "AID 2989329 כבר קיים כ-Verified באצווה 070 עם שלוש פרופוזיציות. הרשומה הכפולה הוסרה מאצווה 139; לא נוצרה זהות או משפחת ראיות נוספת."
     },
     {
       "aid": 2989413,
@@ -280,12 +316,21 @@
         "he.chabad.org AID 2989413, גוף המכתב, שורות 170–181.",
         "he.chabad.org AID 2989413, גוף המכתב, שורות 185–192."
       ],
-      "proposition_count": 2,
+      "proposition_count": 3,
       "web_source_refs": [
         "turn668130view3",
         "turn728123view2"
       ],
-      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected."
+      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected.",
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "existing_propositions_before": 2,
+      "new_propositions_added": 1,
+      "total_propositions_after": 3,
+      "web_source_ref": "turn382794view3",
+      "reopened_at": "2026-11-17T14:29:58+02:00",
+      "note": "נפתח מחדש ונבדק גוף המקור בעברית; נוספה פרפרזה לא-מילולית אחת. העשרה של ההקשר המסורתי של ח״י אלול בתוך מכתב על עבודת אלול."
     },
     {
       "aid": 2989417,
@@ -318,11 +363,20 @@
         "he.chabad.org AID 2989565, גוף המכתב, שורות 161–171.",
         "he.chabad.org AID 2989565, גוף המכתב, שורות 171–175."
       ],
-      "proposition_count": 2,
+      "proposition_count": 3,
       "web_source_refs": [
         "turn668130view5"
       ],
-      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected."
+      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected.",
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "existing_propositions_before": 2,
+      "new_propositions_added": 1,
+      "total_propositions_after": 3,
+      "web_source_ref": "turn382794view5",
+      "reopened_at": "2026-11-17T14:29:58+02:00",
+      "note": "נפתח מחדש ונבדק גוף המקור בעברית; נוספה פרפרזה לא-מילולית אחת. העשרת נסיבות הפרסום והקהל המיועד, לא הוספת הוראה כללית."
     },
     {
       "aid": 2989298,
@@ -336,11 +390,20 @@
         "he.chabad.org AID 2989298, קטע המכתב, שורות 174–175.",
         "he.chabad.org AID 2989298, קטע המכתב, שורות 175–178."
       ],
-      "proposition_count": 2,
+      "proposition_count": 3,
       "web_source_refs": [
         "turn668130view6"
       ],
-      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected."
+      "review_note": "Hebrew original-language publisher text inspected; manuscript not inspected.",
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "existing_propositions_before": 2,
+      "new_propositions_added": 1,
+      "total_propositions_after": 3,
+      "web_source_ref": "turn382794view6",
+      "reopened_at": "2026-11-17T14:29:58+02:00",
+      "note": "נפתח מחדש ונבדק גוף המקור בעברית; נוספה פרפרזה לא-מילולית אחת. העשרה של ההבחנה בין עליית ההשפעה לבין הכנת הכלים לקבלתה."
     },
     {
       "aid": 2465321,
@@ -518,6 +581,18 @@
       "body_text_inspected": true,
       "new_propositions_added": 2,
       "status_remains": "Parsed"
+    },
+    {
+      "aid": 2989329,
+      "canonical_file": "data/items/content-research-batch-070-2026-11-13.json",
+      "canonical_identity_id": "chabad-letter-2989329",
+      "evidence_family_id": "torat-menachem-letter-5710-yom-rishon-selichot-2989329",
+      "existing_propositions_before": 3,
+      "new_propositions_added": 0,
+      "total_propositions_after": 3,
+      "status_remains": "Verified",
+      "action": "duplicate_removed_and_existing_identity_retained",
+      "reason": "AID 2989329 was already a Verified Hebrew identity in batch 070; duplicate batch-139 record removed, existing family preserved."
     }
   ],
   "records": [
@@ -647,14 +722,16 @@
       "evidence_family_id": "rebbe-letter-5712-18-elul-aid4279926",
       "response_propositions": [
         "המכתב הכללי לקראת השנה החדשה מציג את מצוות הקהל ככינוס כלל ישראל לשמיעת קבלת מלכות שמים, קבלת עול מצוות ותורה; הוא מדגיש את חינוך הבנים והבנות, ובשנת השמיטה מתאר התעוררות מיוחדת לכך.",
-        "המכתב קורא לרבנים, למנהיגים ולעוסקים בצורכי ציבור לעורר את בני קהילותיהם לתורה וליראת שמים, לתמוך ולחזק מוסדות חינוך כשר ולהביא את הבנים והבנות להתחנך בהם; ההשפעה מתוארת ככזו שצריכה להימשך לאורך השנה."
+        "המכתב קורא לרבנים, למנהיגים ולעוסקים בצורכי ציבור לעורר את בני קהילותיהם לתורה וליראת שמים, לתמוך ולחזק מוסדות חינוך כשר ולהביא את הבנים והבנות להתחנך בהם; ההשפעה מתוארת ככזו שצריכה להימשך לאורך השנה.",
+        "המכתב מבהיר כי השפעה חינוכית אינה נשענת רק על סמכות התפקיד: הדברים צריכים לצאת מן הלב כדי להיכנס אל לב השומעים; הדברים נאמרים בהקשר של קריאה למנהיגי קהילות לעורר לתורה ולחזק מוסדות חינוך."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178.",
-        "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185."
+        "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185.",
+        "he.chabad.org AID 4279926, גוף הפרסום, שורות 179–183."
       ],
-      "proposition_source_locator": "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178. | he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185.",
-      "summary_researcher": "המכתב הכללי לקראת השנה החדשה מציג את מצוות הקהל ככינוס כלל ישראל לשמיעת קבלת מלכות שמים, קבלת עול מצוות ותורה; הוא מדגיש את חינוך הבנים והבנות, ובשנת השמיטה מתאר התעוררות מיוחדת לכך. המכתב קורא לרבנים, למנהיגים ולעוסקים בצורכי ציבור לעורר את בני קהילותיהם לתורה וליראת שמים, לתמוך ולחזק מוסדות חינוך כשר ולהביא את הבנים והבנות להתחנך בהם; ההשפעה מתוארת ככזו שצריכה להימשך לאורך השנה.",
+      "proposition_source_locator": "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178. | he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185. | he.chabad.org AID 4279926, גוף הפרסום, שורות 179–183.",
+      "summary_researcher": "המכתב הכללי לקראת השנה החדשה מציג את מצוות הקהל ככינוס כלל ישראל לשמיעת קבלת מלכות שמים, קבלת עול מצוות ותורה; הוא מדגיש את חינוך הבנים והבנות, ובשנת השמיטה מתאר התעוררות מיוחדת לכך. המכתב קורא לרבנים, למנהיגים ולעוסקים בצורכי ציבור לעורר את בני קהילותיהם לתורה וליראת שמים, לתמוך ולחזק מוסדות חינוך כשר ולהביא את הבנים והבנות להתחנך בהם; ההשפעה מתוארת ככזו שצריכה להימשך לאורך השנה. העשרה של הקשר ההשפעה והפנייה למנהיגי קהילות.",
       "documented_circumstances": "מכתב כללי בעברית שנשלח אל בני ובנות ישראל בכל אתר ואתר לקראת השנה החדשה, ח״י אלול תשי״ב.",
       "question_or_problem": "מה מתועד במכתב זה ביחס לנושא ולנסיבות המצוינים בו?",
       "conditions_or_qualifications": [
@@ -693,15 +770,15 @@
       "audience": "אחינו ואחיותינו, בני ובנות ישראל בכל אתר ואתר.",
       "has_content_evidence": true,
       "rights_status": "copyrighted-link-only; concise non-verbatim research paraphrases, metadata and exact locators only; no protected full text copied.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 4279926, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178. ; he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 4279926, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178. ; he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.\nנפתח מחדש ונבדק ב-2026-11-17 גם הקטע he.chabad.org AID 4279926, גוף הפרסום, שורות 179–183.; הפרופוזיציה הנוספת היא פרפרזה לא-מילולית ומוגבלת להקשר המכתב.",
       "provenance": {
         "authorship_status": "Publisher attribution to Rabbi Menachem Mendel Schneerson; manuscript not inspected.",
         "signature_status": "Printed signature/attribution may appear on the page; autograph not inspected.",
         "source_witness": "he.chabad.org / BeitChabad, AID 4279926, Hebrew publisher body; he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178. | he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185..",
         "transmission_type": "Published Hebrew correspondence text; not a manuscript or secretariat copy.",
         "textual_status": "Selected visible Hebrew body passages inspected; manuscript and independent edition comparison not inspected.",
-        "editorial_scope": "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178. | he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185.",
-        "verification_status": "source_text_inspected on 2026-11-17; selected body passages only; status remains Parsed.",
+        "editorial_scope": "he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178. | he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185. העשרה של הקשר ההשפעה והפנייה למנהיגי קהילות.",
+        "verification_status": "source_text_inspected on 2026-11-17; additional passage שורות 179–183; no autograph inspection.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4279926",
         "accessed": "2026-11-17",
         "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 4279926, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 175–178. ; he.chabad.org AID 4279926, גוף המכתב הכללי, שורות 179–185.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות."
@@ -735,9 +812,9 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected.",
+      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected. הועשר in-place באצווה 140 בפרפרזה נוספת; זהות ומשפחת ראיות לא השתנו.",
       "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
-      "content_enrichment_batch_id": "139",
+      "content_enrichment_batch_id": "140",
       "last_content_enriched_at": "2026-11-17"
     },
     {
@@ -756,14 +833,16 @@
       "evidence_family_id": "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
       "response_propositions": [
         "המכתב מתאר את י״ט כסלו כיום בשורה שבו נגלתה צדקת אדמו״ר הזקן ותורת החסידות, ומצטט במפורש מכתב של אדמו״ר הריי״צ שלפיו לימוד תורת החסידות הוא חובה המוטלת על כלל ישראל ולא עניין של מפלגה מסוימת.",
-        "המכתב מפרט את הפצת המעיינות: לימוד החסידות צריך להגיע גם מחוץ לבית המדרש ובית הכנסת, לא להצטמצם לקבוצות או לסוגי אנשים מסוימים, ולכלול גם את הפשוטים ביותר; הוא מדגיש חיות פנימית וקשר למקור הלימוד."
+        "המכתב מפרט את הפצת המעיינות: לימוד החסידות צריך להגיע גם מחוץ לבית המדרש ובית הכנסת, לא להצטמצם לקבוצות או לסוגי אנשים מסוימים, ולכלול גם את הפשוטים ביותר; הוא מדגיש חיות פנימית וקשר למקור הלימוד.",
+        "הפצת לימוד דברי החסידות מתוארת כהשתדלות מתמשכת שאינה מוגבלת לזמן הלימוד הפורמלי; גם עיסוקים צדדיים אמורים להיות מכוונים להשגת המטרה."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188.",
-        "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198."
+        "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198.",
+        "he.chabad.org AID 4279851, גוף הפרסום, שורות 186–187."
       ],
-      "proposition_source_locator": "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. | he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198.",
-      "summary_researcher": "המכתב מתאר את י״ט כסלו כיום בשורה שבו נגלתה צדקת אדמו״ר הזקן ותורת החסידות, ומצטט במפורש מכתב של אדמו״ר הריי״צ שלפיו לימוד תורת החסידות הוא חובה המוטלת על כלל ישראל ולא עניין של מפלגה מסוימת. המכתב מפרט את הפצת המעיינות: לימוד החסידות צריך להגיע גם מחוץ לבית המדרש ובית הכנסת, לא להצטמצם לקבוצות או לסוגי אנשים מסוימים, ולכלול גם את הפשוטים ביותר; הוא מדגיש חיות פנימית וקשר למקור הלימוד.",
+      "proposition_source_locator": "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. | he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198. | he.chabad.org AID 4279851, גוף הפרסום, שורות 186–187.",
+      "summary_researcher": "המכתב מתאר את י״ט כסלו כיום בשורה שבו נגלתה צדקת אדמו״ר הזקן ותורת החסידות, ומצטט במפורש מכתב של אדמו״ר הריי״צ שלפיו לימוד תורת החסידות הוא חובה המוטלת על כלל ישראל ולא עניין של מפלגה מסוימת. המכתב מפרט את הפצת המעיינות: לימוד החסידות צריך להגיע גם מחוץ לבית המדרש ובית הכנסת, לא להצטמצם לקבוצות או לסוגי אנשים מסוימים, ולכלול גם את הפשוטים ביותר; הוא מדגיש חיות פנימית וקשר למקור הלימוד. העשרה של ממד ההתמדה והכוונת העיסוקים הנלווים.",
       "documented_circumstances": "מכתב כללי בעברית לאנ״ש ולחובבי תורה ומצווה, ערב ראש חודש כסלו תשי״ב; המכתב מצטט במפורש מכתב של אדמו״ר הריי״צ.",
       "question_or_problem": "מה מתועד במכתב זה ביחס לנושא ולנסיבות המצוינים בו?",
       "conditions_or_qualifications": [
@@ -802,15 +881,15 @@
       "audience": "אנ״ש וכל חובבי תורה ומצווה בכל אתר ואתר.",
       "has_content_evidence": true,
       "rights_status": "copyrighted-link-only; concise non-verbatim research paraphrases, metadata and exact locators only; no protected full text copied.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 4279851, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. ; he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 4279851, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. ; he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.\nנפתח מחדש ונבדק ב-2026-11-17 גם הקטע he.chabad.org AID 4279851, גוף הפרסום, שורות 186–187.; הפרופוזיציה הנוספת היא פרפרזה לא-מילולית ומוגבלת להקשר המכתב.",
       "provenance": {
         "authorship_status": "Publisher attribution to Rabbi Menachem Mendel Schneerson; manuscript not inspected.",
         "signature_status": "Printed signature/attribution may appear on the page; autograph not inspected.",
         "source_witness": "he.chabad.org / BeitChabad, AID 4279851, Hebrew publisher body; he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. | he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198..",
         "transmission_type": "Published Hebrew correspondence text; not a manuscript or secretariat copy.",
         "textual_status": "Selected visible Hebrew body passages inspected; manuscript and independent edition comparison not inspected.",
-        "editorial_scope": "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. | he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198.",
-        "verification_status": "source_text_inspected on 2026-11-17; selected body passages only; status remains Parsed.",
+        "editorial_scope": "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. | he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198. העשרה של ממד ההתמדה והכוונת העיסוקים הנלווים.",
+        "verification_status": "source_text_inspected on 2026-11-17; additional passage שורות 186–187; no autograph inspection.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4279851",
         "accessed": "2026-11-17",
         "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 4279851, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. ; he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות."
@@ -845,119 +924,9 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected.",
+      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected. הועשר in-place באצווה 140 בפרפרזה נוספת; זהות ומשפחת ראיות לא השתנו.",
       "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
-      "content_enrichment_batch_id": "139",
-      "last_content_enriched_at": "2026-11-17"
-    },
-    {
-      "id": "rebbe-letter-5710-first-day-selichot-aid2989329",
-      "aid": 2989329,
-      "canonical_key": "aid:2989329",
-      "title": "מכתב, יום ראשון דסליחות, ה׳שי״ת",
-      "date": "First day of Selichot 5710 (1950)",
-      "date_original": "יום ראשון דסליחות, ה׳שי״ת",
-      "event_date": "First day of Selichot 5710 (1950)",
-      "date_precision": "exact",
-      "recipient": "לא צוין נמען אישי בגוף המכתב שנבדק.",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989329",
-      "type": "letter",
-      "collection": "BeitChabad Hebrew correspondence archive",
-      "evidence_family_id": "rebbe-letter-5710-first-day-selichot-aid2989329",
-      "response_propositions": [
-        "המכתב מסביר שראש השנה נקרא ״ראש״ משום שחיות כל ימות השנה כלולה בו בהעלם, ובהמשך נמשכת ממנו לכל יום בנפרד; לכן יש לייקר במיוחד את הזמן בראש השנה ולחבר את עבודת הימים לשאר השנה.",
-        "המכתב מציג את ההתקשרות לנשיא הדור באמצעות לימוד תורתו והליכה בדרכיו כדרך המסייעת לחבר את עבודת ראש השנה להמשך השנה."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org AID 2989329, גוף המכתב, שורות 165–169.",
-        "he.chabad.org AID 2989329, גוף המכתב, שורות 173–176."
-      ],
-      "proposition_source_locator": "he.chabad.org AID 2989329, גוף המכתב, שורות 165–169. | he.chabad.org AID 2989329, גוף המכתב, שורות 173–176.",
-      "summary_researcher": "המכתב מסביר שראש השנה נקרא ״ראש״ משום שחיות כל ימות השנה כלולה בו בהעלם, ובהמשך נמשכת ממנו לכל יום בנפרד; לכן יש לייקר במיוחד את הזמן בראש השנה ולחבר את עבודת הימים לשאר השנה. המכתב מציג את ההתקשרות לנשיא הדור באמצעות לימוד תורתו והליכה בדרכיו כדרך המסייעת לחבר את עבודת ראש השנה להמשך השנה.",
-      "documented_circumstances": "מכתב בעברית מיום ראשון דסליחות ה׳שי״ת; גוף המכתב מתמקד בקשר בין ראש השנה, נשיא הדור והמשך העבודה לאורך השנה.",
-      "question_or_problem": "מה מתועד במכתב זה ביחס לנושא ולנסיבות המצוינים בו?",
-      "conditions_or_qualifications": [
-        "הפרפרזות מוגבלות למיקומים המפורטים בלבד: he.chabad.org AID 2989329, גוף המכתב, שורות 165–169. | he.chabad.org AID 2989329, גוף המכתב, שורות 173–176..",
-        "הנוסח העברי פורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית.",
-        "ההקשר חלקי; אין להסיק מן הקטעים על ביצוע בפועל, תוצאות או מדיניות אחידה מעבר לנסיבות המתועדות.",
-        "לא הועתק טקסט מוגן במלואו; הפרופוזיציות הן פרפרזות לא־מילוליות."
-      ],
-      "source_class": "Correspondence",
-      "source_class_detail": "he.chabad.org / BeitChabad — Hebrew published correspondence body inspected; manuscript not inspected.",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "translation_status": "Original-language Hebrew text as published; no translation used; manuscript and secretariat copy not inspected.",
-      "proposition_language": "Hebrew",
-      "pipeline_status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "source_text_inspected",
-      "status": "Parsed",
-      "context_status": "partial",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "witness_type": "published_hebrew_text_of_rebbe_correspondence",
-      "witness_provenance": "he.chabad.org / BeitChabad, AID 2989329, Hebrew publisher body; he.chabad.org AID 2989329, גוף המכתב, שורות 165–169. | he.chabad.org AID 2989329, גוף המכתב, שורות 173–176..",
-      "primary_secondary_status": "Published original-language Hebrew text; not a manuscript witness and not independently collated against another edition.",
-      "independent_witness": true,
-      "translation_of_evidence_family_id": null,
-      "parent_evidence_family_id": null,
-      "author_role": "author",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "authorship_status": "Publisher presents the item as correspondence of Rabbi Menachem Mendel Schneerson; Hebrew body inspected; manuscript not inspected.",
-      "source_role": "outgoing_letter_by_rebbe",
-      "signatory": null,
-      "signatory_role": "Printed publisher attribution only; autograph/manuscript not inspected.",
-      "publisher": "BeitChabad.com / he.chabad.org",
-      "audience": "לא צוין נמען אישי בגוף המכתב שנבדק.",
-      "has_content_evidence": true,
-      "rights_status": "copyrighted-link-only; concise non-verbatim research paraphrases, metadata and exact locators only; no protected full text copied.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989329, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989329, גוף המכתב, שורות 165–169. ; he.chabad.org AID 2989329, גוף המכתב, שורות 173–176.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.",
-      "provenance": {
-        "authorship_status": "Publisher attribution to Rabbi Menachem Mendel Schneerson; manuscript not inspected.",
-        "signature_status": "Printed signature/attribution may appear on the page; autograph not inspected.",
-        "source_witness": "he.chabad.org / BeitChabad, AID 2989329, Hebrew publisher body; he.chabad.org AID 2989329, גוף המכתב, שורות 165–169. | he.chabad.org AID 2989329, גוף המכתב, שורות 173–176..",
-        "transmission_type": "Published Hebrew correspondence text; not a manuscript or secretariat copy.",
-        "textual_status": "Selected visible Hebrew body passages inspected; manuscript and independent edition comparison not inspected.",
-        "editorial_scope": "he.chabad.org AID 2989329, גוף המכתב, שורות 165–169. | he.chabad.org AID 2989329, גוף המכתב, שורות 173–176.",
-        "verification_status": "source_text_inspected on 2026-11-17; selected body passages only; status remains Parsed.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989329",
-        "accessed": "2026-11-17",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989329, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989329, גוף המכתב, שורות 165–169. ; he.chabad.org AID 2989329, גוף המכתב, שורות 173–176.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות."
-      },
-      "witness": {
-        "kind": "published_hebrew_text_of_rebbe_correspondence",
-        "state": "Published Hebrew body text inspected; manuscript not inspected.",
-        "complete_partial": "partial",
-        "notes": "Original-language text is available on the publisher page, but no manuscript, secretariat copy or independent edition was examined."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only; concise non-verbatim research paraphrases, metadata and exact locators only; no protected full text copied.",
-        "reuse_notes": "Store concise non-verbatim paraphrases, metadata and exact locators only; no full copyrighted text copied."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "One distinct dated Hebrew correspondence item. Any reprint or alternate-language version of this same letter must join this Evidence Family, not create a second identity.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "מכתב, יום ראשון דסליחות, ה׳שי״ת",
-          "מכתב",
-          "Chabad.org"
-        ],
-        "research_terms": [
-          "ראש השנה",
-          "חיות השנה",
-          "התקשרות לנשיא",
-          "לימוד תורתו",
-          "הליכה בדרכיו"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected.",
-      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
-      "content_enrichment_batch_id": "139",
+      "content_enrichment_batch_id": "140",
       "last_content_enriched_at": "2026-11-17"
     },
     {
@@ -976,14 +945,16 @@
       "evidence_family_id": "rebbe-letter-5711-13-elul-aid2989413",
       "response_propositions": [
         "המכתב מגדיר את חודש אלול כחודש של חשבון על השנה שעברה והכנה לשנה הבאה; הוא קושר את ראשי התיבות אלול לתורה, תפילה, גמילות חסדים ותשובה, ומציג את התשובה כיסוד לשלושת הקווים האחרים.",
-        "המכתב מציג את פנימיות התורה ותורת החסידות כדרך להכניס חיות בכל סוגי העבודה, ומייחס לח״י אלול התעוררות שנתית של גילויי הבעש״ט ואדמו״ר הזקן."
+        "המכתב מציג את פנימיות התורה ותורת החסידות כדרך להכניס חיות בכל סוגי העבודה, ומייחס לח״י אלול התעוררות שנתית של גילויי הבעש״ט ואדמו״ר הזקן.",
+        "המכתב מביא בשם אדמו״ר הריי״צ שח״י אלול הוא יום המכניס חיות בחודש אלול; הדברים מוצגים כהקדמה לעבודת החשבון על השנה שעברה ולהכנה לשנה הבאה."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 2989413, גוף המכתב, שורות 170–181.",
-        "he.chabad.org AID 2989413, גוף המכתב, שורות 185–192."
+        "he.chabad.org AID 2989413, גוף המכתב, שורות 185–192.",
+        "he.chabad.org AID 2989413, גוף הפרסום, שורות 174–181."
       ],
-      "proposition_source_locator": "he.chabad.org AID 2989413, גוף המכתב, שורות 170–181. | he.chabad.org AID 2989413, גוף המכתב, שורות 185–192.",
-      "summary_researcher": "המכתב מגדיר את חודש אלול כחודש של חשבון על השנה שעברה והכנה לשנה הבאה; הוא קושר את ראשי התיבות אלול לתורה, תפילה, גמילות חסדים ותשובה, ומציג את התשובה כיסוד לשלושת הקווים האחרים. המכתב מציג את פנימיות התורה ותורת החסידות כדרך להכניס חיות בכל סוגי העבודה, ומייחס לח״י אלול התעוררות שנתית של גילויי הבעש״ט ואדמו״ר הזקן.",
+      "proposition_source_locator": "he.chabad.org AID 2989413, גוף המכתב, שורות 170–181. | he.chabad.org AID 2989413, גוף המכתב, שורות 185–192. | he.chabad.org AID 2989413, גוף הפרסום, שורות 174–181.",
+      "summary_researcher": "המכתב מגדיר את חודש אלול כחודש של חשבון על השנה שעברה והכנה לשנה הבאה; הוא קושר את ראשי התיבות אלול לתורה, תפילה, גמילות חסדים ותשובה, ומציג את התשובה כיסוד לשלושת הקווים האחרים. המכתב מציג את פנימיות התורה ותורת החסידות כדרך להכניס חיות בכל סוגי העבודה, ומייחס לח״י אלול התעוררות שנתית של גילויי הבעש״ט ואדמו״ר הזקן. העשרה של ההקשר המסורתי של ח״י אלול בתוך מכתב על עבודת אלול.",
       "documented_circumstances": "מכתב בעברית מיום י״ג אלול; הכותרת והחתימה בדף המו״ל כותבות ״תיש״א״, והאיות הזה נשמר במטא־נתונים במקום לתקנו בשקט.",
       "question_or_problem": "מה מתועד במכתב זה ביחס לנושא ולנסיבות המצוינים בו?",
       "conditions_or_qualifications": [
@@ -1022,15 +993,15 @@
       "audience": "לא צוין נמען אישי במקטע שנבדק.",
       "has_content_evidence": true,
       "rights_status": "copyrighted-link-only; concise non-verbatim research paraphrases, metadata and exact locators only; no protected full text copied.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989413, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989413, גוף המכתב, שורות 170–181. ; he.chabad.org AID 2989413, גוף המכתב, שורות 185–192.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989413, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989413, גוף המכתב, שורות 170–181. ; he.chabad.org AID 2989413, גוף המכתב, שורות 185–192.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.\nנפתח מחדש ונבדק ב-2026-11-17 גם הקטע he.chabad.org AID 2989413, גוף הפרסום, שורות 174–181.; הפרופוזיציה הנוספת היא פרפרזה לא-מילולית ומוגבלת להקשר המכתב.",
       "provenance": {
         "authorship_status": "Publisher attribution to Rabbi Menachem Mendel Schneerson; manuscript not inspected.",
         "signature_status": "Printed signature/attribution may appear on the page; autograph not inspected.",
         "source_witness": "he.chabad.org / BeitChabad, AID 2989413, Hebrew publisher body; he.chabad.org AID 2989413, גוף המכתב, שורות 170–181. | he.chabad.org AID 2989413, גוף המכתב, שורות 185–192..",
         "transmission_type": "Published Hebrew correspondence text; not a manuscript or secretariat copy.",
         "textual_status": "Selected visible Hebrew body passages inspected; manuscript and independent edition comparison not inspected.",
-        "editorial_scope": "he.chabad.org AID 2989413, גוף המכתב, שורות 170–181. | he.chabad.org AID 2989413, גוף המכתב, שורות 185–192.",
-        "verification_status": "source_text_inspected on 2026-11-17; selected body passages only; status remains Parsed.",
+        "editorial_scope": "he.chabad.org AID 2989413, גוף המכתב, שורות 170–181. | he.chabad.org AID 2989413, גוף המכתב, שורות 185–192. העשרה של ההקשר המסורתי של ח״י אלול בתוך מכתב על עבודת אלול.",
+        "verification_status": "source_text_inspected on 2026-11-17; additional passage שורות 174–181; no autograph inspection.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989413",
         "accessed": "2026-11-17",
         "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989413, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989413, גוף המכתב, שורות 170–181. ; he.chabad.org AID 2989413, גוף המכתב, שורות 185–192.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות."
@@ -1067,9 +1038,9 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected.",
+      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected. הועשר in-place באצווה 140 בפרפרזה נוספת; זהות ומשפחת ראיות לא השתנו.",
       "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
-      "content_enrichment_batch_id": "139",
+      "content_enrichment_batch_id": "140",
       "last_content_enriched_at": "2026-11-17"
     },
     {
@@ -1199,14 +1170,16 @@
       "evidence_family_id": "rebbe-letter-5717-09-shevat-aid2989565",
       "response_propositions": [
         "הנוסח שפורסם כמכתב לאנ״ש לקראת י׳ שבט תשי״ז מבקש שזכות הפעילות סביב יום ההילולא תעמוד לנמען ולבני ביתו בגשמיות וברוחניות.",
-        "המכתב מברך על הצלחה בעבודה ומתאר ציפייה שההעלמות וההסתרים יפחתו, בעוד הטוב, הקדושה והאור יוסיפו עד להפצת המעיינות במלואם."
+        "המכתב מברך על הצלחה בעבודה ומתאר ציפייה שההעלמות וההסתרים יפחתו, בעוד הטוב, הקדושה והאור יוסיפו עד להפצת המעיינות במלואם.",
+        "הפרסום מציג את הטקסט כנוסח מכתב שנשלח לאנ״ש ברחבי תבל לקראת י׳ שבט תשי״ז; היקף הפנייה הוא ציבורי לקהילת אנ״ש, ולא תשובה פרטית לנמען יחיד."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 2989565, גוף המכתב, שורות 161–171.",
-        "he.chabad.org AID 2989565, גוף המכתב, שורות 171–175."
+        "he.chabad.org AID 2989565, גוף המכתב, שורות 171–175.",
+        "he.chabad.org AID 2989565, גוף הפרסום, שורות 161–165."
       ],
-      "proposition_source_locator": "he.chabad.org AID 2989565, גוף המכתב, שורות 161–171. | he.chabad.org AID 2989565, גוף המכתב, שורות 171–175.",
-      "summary_researcher": "הנוסח שפורסם כמכתב לאנ״ש לקראת י׳ שבט תשי״ז מבקש שזכות הפעילות סביב יום ההילולא תעמוד לנמען ולבני ביתו בגשמיות וברוחניות. המכתב מברך על הצלחה בעבודה ומתאר ציפייה שההעלמות וההסתרים יפחתו, בעוד הטוב, הקדושה והאור יוסיפו עד להפצת המעיינות במלואם.",
+      "proposition_source_locator": "he.chabad.org AID 2989565, גוף המכתב, שורות 161–171. | he.chabad.org AID 2989565, גוף המכתב, שורות 171–175. | he.chabad.org AID 2989565, גוף הפרסום, שורות 161–165.",
+      "summary_researcher": "הנוסח שפורסם כמכתב לאנ״ש לקראת י׳ שבט תשי״ז מבקש שזכות הפעילות סביב יום ההילולא תעמוד לנמען ולבני ביתו בגשמיות וברוחניות. המכתב מברך על הצלחה בעבודה ומתאר ציפייה שההעלמות וההסתרים יפחתו, בעוד הטוב, הקדושה והאור יוסיפו עד להפצת המעיינות במלואם. העשרת נסיבות הפרסום והקהל המיועד, לא הוספת הוראה כללית.",
       "documented_circumstances": "נוסח מכתב שפורסם בדף ככזה שנשלח לאנ״ש בכל מרחבי תבל לקראת י׳ שבט תשי״ז; המכתב מתוארך לט׳ שבט.",
       "question_or_problem": "מה מתועד במכתב זה ביחס לנושא ולנסיבות המצוינים בו?",
       "conditions_or_qualifications": [
@@ -1245,15 +1218,15 @@
       "audience": "אנ״ש בכל מרחבי תבל.",
       "has_content_evidence": true,
       "rights_status": "copyrighted-link-only; concise non-verbatim research paraphrases, metadata and exact locators only; no protected full text copied.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989565, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989565, גוף המכתב, שורות 161–171. ; he.chabad.org AID 2989565, גוף המכתב, שורות 171–175.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989565, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989565, גוף המכתב, שורות 161–171. ; he.chabad.org AID 2989565, גוף המכתב, שורות 171–175.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.\nנפתח מחדש ונבדק ב-2026-11-17 גם הקטע he.chabad.org AID 2989565, גוף הפרסום, שורות 161–165.; הפרופוזיציה הנוספת היא פרפרזה לא-מילולית ומוגבלת להקשר המכתב.",
       "provenance": {
         "authorship_status": "Publisher attribution to Rabbi Menachem Mendel Schneerson; manuscript not inspected.",
         "signature_status": "Printed signature/attribution may appear on the page; autograph not inspected.",
         "source_witness": "he.chabad.org / BeitChabad, AID 2989565, Hebrew publisher body; he.chabad.org AID 2989565, גוף המכתב, שורות 161–171. | he.chabad.org AID 2989565, גוף המכתב, שורות 171–175..",
         "transmission_type": "Published Hebrew correspondence text; not a manuscript or secretariat copy.",
         "textual_status": "Selected visible Hebrew body passages inspected; manuscript and independent edition comparison not inspected.",
-        "editorial_scope": "he.chabad.org AID 2989565, גוף המכתב, שורות 161–171. | he.chabad.org AID 2989565, גוף המכתב, שורות 171–175.",
-        "verification_status": "source_text_inspected on 2026-11-17; selected body passages only; status remains Parsed.",
+        "editorial_scope": "he.chabad.org AID 2989565, גוף המכתב, שורות 161–171. | he.chabad.org AID 2989565, גוף המכתב, שורות 171–175. העשרת נסיבות הפרסום והקהל המיועד, לא הוספת הוראה כללית.",
+        "verification_status": "source_text_inspected on 2026-11-17; additional passage שורות 161–165; no autograph inspection.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989565",
         "accessed": "2026-11-17",
         "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989565, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989565, גוף המכתב, שורות 161–171. ; he.chabad.org AID 2989565, גוף המכתב, שורות 171–175.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות."
@@ -1288,9 +1261,9 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected.",
+      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected. הועשר in-place באצווה 140 בפרפרזה נוספת; זהות ומשפחת ראיות לא השתנו.",
       "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
-      "content_enrichment_batch_id": "139",
+      "content_enrichment_batch_id": "140",
       "last_content_enriched_at": "2026-11-17"
     },
     {
@@ -1309,14 +1282,16 @@
       "evidence_family_id": "rebbe-letter-5710-25-adar-aid2989298",
       "response_propositions": [
         "בקטע שפורסם מן המכתב נמנים שני עניינים הקשורים לב׳ ניסן: יום ההילולא של אדמו״ר הרש״ב והיום שבו בנו נעשה נשיא ומנהיג הדור.",
-        "הקטע קושר את עליית ההשפעה של הנשיא משנה לשנה לצורך בזיכוך הכלים של המקושרים אליו, ומורה לחזק את ההתקשרות באמצעות מכתביו, שיחותיו ואמרותיו."
+        "הקטע קושר את עליית ההשפעה של הנשיא משנה לשנה לצורך בזיכוך הכלים של המקושרים אליו, ומורה לחזק את ההתקשרות באמצעות מכתביו, שיחותיו ואמרותיו.",
+        "המכתב מוסיף שהשפעת הנשיא על המקושרים אליו מתעלה משנה לשנה, וכדי שתיקלט בפנימיות נדרש זיכוך של כלי הקבלה של המקושרים."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 2989298, קטע המכתב, שורות 174–175.",
-        "he.chabad.org AID 2989298, קטע המכתב, שורות 175–178."
+        "he.chabad.org AID 2989298, קטע המכתב, שורות 175–178.",
+        "he.chabad.org AID 2989298, גוף הפרסום, שורות 175–178."
       ],
-      "proposition_source_locator": "he.chabad.org AID 2989298, קטע המכתב, שורות 174–175. | he.chabad.org AID 2989298, קטע המכתב, שורות 175–178.",
-      "summary_researcher": "בקטע שפורסם מן המכתב נמנים שני עניינים הקשורים לב׳ ניסן: יום ההילולא של אדמו״ר הרש״ב והיום שבו בנו נעשה נשיא ומנהיג הדור. הקטע קושר את עליית ההשפעה של הנשיא משנה לשנה לצורך בזיכוך הכלים של המקושרים אליו, ומורה לחזק את ההתקשרות באמצעות מכתביו, שיחותיו ואמרותיו.",
+      "proposition_source_locator": "he.chabad.org AID 2989298, קטע המכתב, שורות 174–175. | he.chabad.org AID 2989298, קטע המכתב, שורות 175–178. | he.chabad.org AID 2989298, גוף הפרסום, שורות 175–178.",
+      "summary_researcher": "בקטע שפורסם מן המכתב נמנים שני עניינים הקשורים לב׳ ניסן: יום ההילולא של אדמו״ר הרש״ב והיום שבו בנו נעשה נשיא ומנהיג הדור. הקטע קושר את עליית ההשפעה של הנשיא משנה לשנה לצורך בזיכוך הכלים של המקושרים אליו, ומורה לחזק את ההתקשרות באמצעות מכתביו, שיחותיו ואמרותיו. העשרה של ההבחנה בין עליית ההשפעה לבין הכנת הכלים לקבלתה.",
       "documented_circumstances": "העמוד מציג קטע מכתב המתחיל באליפסיס; תחילת המכתב והנמען אינם נראים במקטע שנבדק. התמציות מוגבלות לקטע הגלוי.",
       "question_or_problem": "מה מתועד במכתב זה ביחס לנושא ולנסיבות המצוינים בו?",
       "conditions_or_qualifications": [
@@ -1355,15 +1330,15 @@
       "audience": "לא צוין נמען אישי במקטע שנבדק.",
       "has_content_evidence": true,
       "rights_status": "copyrighted-link-only; concise non-verbatim research paraphrases, metadata and exact locators only; no protected full text copied.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989298, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989298, קטע המכתב, שורות 174–175. ; he.chabad.org AID 2989298, קטע המכתב, שורות 175–178.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989298, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989298, קטע המכתב, שורות 174–175. ; he.chabad.org AID 2989298, קטע המכתב, שורות 175–178.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות.\nנפתח מחדש ונבדק ב-2026-11-17 גם הקטע he.chabad.org AID 2989298, גוף הפרסום, שורות 175–178.; הפרופוזיציה הנוספת היא פרפרזה לא-מילולית ומוגבלת להקשר המכתב.",
       "provenance": {
         "authorship_status": "Publisher attribution to Rabbi Menachem Mendel Schneerson; manuscript not inspected.",
         "signature_status": "Printed signature/attribution may appear on the page; autograph not inspected.",
         "source_witness": "he.chabad.org / BeitChabad, AID 2989298, Hebrew publisher body; he.chabad.org AID 2989298, קטע המכתב, שורות 174–175. | he.chabad.org AID 2989298, קטע המכתב, שורות 175–178..",
         "transmission_type": "Published Hebrew correspondence text; not a manuscript or secretariat copy.",
         "textual_status": "Selected visible Hebrew body passages inspected; manuscript and independent edition comparison not inspected.",
-        "editorial_scope": "he.chabad.org AID 2989298, קטע המכתב, שורות 174–175. | he.chabad.org AID 2989298, קטע המכתב, שורות 175–178.",
-        "verification_status": "source_text_inspected on 2026-11-17; selected body passages only; status remains Parsed.",
+        "editorial_scope": "he.chabad.org AID 2989298, קטע המכתב, שורות 174–175. | he.chabad.org AID 2989298, קטע המכתב, שורות 175–178. העשרה של ההבחנה בין עליית ההשפעה לבין הכנת הכלים לקבלתה.",
+        "verification_status": "source_text_inspected on 2026-11-17; additional passage שורות 175–178; no autograph inspection.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989298",
         "accessed": "2026-11-17",
         "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב־he.chabad.org / BeitChabad, AID 2989298, ביום 2026-11-17. נבדקו רק המקטעים המצוינים: he.chabad.org AID 2989298, קטע המכתב, שורות 174–175. ; he.chabad.org AID 2989298, קטע המכתב, שורות 175–178.. זהו טקסט עברי שפורסם בידי המו״ל; לא נבדקו כתב־יד, העתק מזכירות או מהדורה ביקורתית. ההקשר חלקי; הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות."
@@ -1398,9 +1373,9 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected.",
+      "notes": "Status remains Parsed; context partial; no Verified promotion. Published Hebrew body inspected; no manuscript/secretariat witness inspected. הועשר in-place באצווה 140 בפרפרזה נוספת; זהות ומשפחת ראיות לא השתנו.",
       "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
-      "content_enrichment_batch_id": "139",
+      "content_enrichment_batch_id": "140",
       "last_content_enriched_at": "2026-11-17"
     },
     {
@@ -1955,5 +1930,6 @@
     }
   ],
   "follow_up_enrichment": [],
-  "follow_up_enrichment_history": []
+  "follow_up_enrichment_history": [],
+  "note": "12 unique new source identities remain after removing duplicate AID 2989329 (already Verified in batch 070); two existing identities were enriched in the original batch; AID 5959845 and AID 2989153 remain in-place enrichments. Five English Yechidus translations remain non-independent. Full reconciliation is pending."
 }
