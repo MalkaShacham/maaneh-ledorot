@@ -4870,6 +4870,7 @@ for(const r of batch147Data.records){
  assert.equal(r.has_content_evidence,true);
  assert.equal(r.independent_witness,false);
  assert.equal(r.translation_of_evidence_family_id,r.evidence_family_id);
+ assert(r.translation_status&&r.translation_status.includes('non-independent'));
  assert.equal(r.proposition_origin,'source_grounded_paraphrase');
  assert.equal(r.proposition_verbatim,false);
  assert.equal(r.proposition_verification,'source_text_inspected');
