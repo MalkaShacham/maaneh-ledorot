@@ -414,7 +414,7 @@
     "note": "לאחר ש-AID 4666220 לא החזיר גוף קריא, נפתחו שנים-עשר עמודי Hayom Yom מתוארכים. נבדקו רק קטעים מקוריים בעברית/יידיש המופיעים בעמודים הדו-לשוניים; תרגומים והערות עריכתיות לא שימשו בסיס לתמציות. בנוסף הועשרה in-place זהות עברית קיימת AID 528832, על בסיס שורה 170; לא נוצרה משפחת ראיות נוספת."
   },
   "existing_identity_updates_count": 1,
-  "note": "נבדקו 12 גופי פרסום דו-לשוניים חדשים ונוצרו 12 פרפרזות מחקריות לא-מילוליות. בנוסף נבדק גוף עברי של זהות קיימת AID 528832 והועשר in-place בפרופוזיציה אחת על שרשרת המסירה; אותה Evidence Family נשמרה. סך הכול 12 זהויות חדשות, זהות קיימת אחת שהועשרה ו-13 פרופוזיציות חדשות או נוספות. הערכים החדשים נשמרו כ-12 משפחות ראיות נפרדות לפי AID ותאריך. התרגום האנגלי בכל עמוד לא נספר כעד עצמאי; ייחוסים פנימיים נשמרו. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
+  "note": "נבדקו 12 גופי פרסום דו-לשוניים חדשים ונוצרו 12 פרפרזות מחקריות לא-מילוליות. בנוסף נבדק גוף עברי של זהות קיימת AID 528832 והועשר in-place בפרופוזיציה אחת על שרשרת המסירה; אותה Evidence Family נשמרה. סך הכול 12 זהויות חדשות, זהות קיימת אחת שהועשרה ו-13 פרופוזיציות חדשות או נוספות. הערכים החדשים נשמרו כ-12 משפחות ראיות נפרדות לפי AID ותאריך. התרגום האנגלי בכל עמוד לא נספר כעד עצמאי; ייחוסים פנימיים נשמרו. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified. Retrieval update: the existing household/influence synthesis now includes AID 3317931 as a second independent influence-family source alongside AID 528897, while retaining the household-study source AID 528896. The validator checks both claim categories and claim-local locators; deep researcher mode exposes the three witnesses and claim_source_map. Runtime verification is pending.",
   "source_body_review_note": "נבדקו 12 עמודי Hayom Yom דו-לשוניים חדשים ועמוד עברי אחד של זהות קיימת. רק הקטעים המקוריים בעברית/יידיש שצוינו ב-locators שימשו לפרופוזיציות; תרגומים והערות עריכתיות לא שימשו בסיס. לא נבדקו מהדורה ראשונה, כתב־יד, אוטוגרף או עדים מקבילים.",
   "recovered_candidate_count": 0,
   "recovered_candidates": [],
@@ -1835,5 +1835,48 @@
         "body_locator": "Chabad.org/TheRebbe.org AID 3315415, original Yiddish excerpt, line 245."
       }
     }
-  ]
+  ],
+  "implementation_commits": {
+    "content": "694611422e7e57b72443f313485a564302b3ff8e",
+    "enrich": "e68054a78c301d9bb88d1ee3d488914996f6b2dc",
+    "retrieval": "cf26603498723d23f2414175fd65b3e0ba74b0a0",
+    "validation": "ee25d9bfc4a8706be77bc1b8cff1b7012dca3f4f",
+    "tests": "c26a5acf5b2be73caaaa9573e55e94941a808be2"
+  },
+  "retrieval_synthesis": {
+    "topic": "hayom_yom_household_and_influence",
+    "status": "implemented_pending_execution",
+    "attribution": "system_synthesis_not_rebbe_quote",
+    "selection_rule": "The answer engine now selects the existing household-study family plus two distinct individual-influence families, prioritizing AID 3317931 and retaining AID 528897; all selections are deduplicated by Evidence Family.",
+    "selected_aids": [
+      528896,
+      528897,
+      3317931
+    ],
+    "claims": [
+      {
+        "topic": "daily_torah_and_household",
+        "source_aids": [
+          528896
+        ],
+        "citation_level": "claim-local item/body locator"
+      },
+      {
+        "topic": "individual_influence",
+        "source_aids": [
+          528897,
+          3317931
+        ],
+        "citation_level": "claim-local item/body locator for each supporting witness"
+      }
+    ],
+    "regular_mode": "two synthesized claims supported by three distinct dated Hayom Yom Evidence Families; no causal or empirical generalization.",
+    "researcher_mode": "deep mode emits witness-level provenance, evidence-family distinctions and a claim_source_map with locators for each claim.",
+    "validation": "patternSynthesisIntegrity now has an explicit household/influence branch checking the two claim types, each source's proposition support, distinct Evidence Families and claim-local locators.",
+    "limitations": [
+      "The synthesis is the system's comparative organization, not a quotation or a summary attributed to the Rebbe.",
+      "The entries are not empirical evidence of educational causality.",
+      "Runtime inclusion of AID 3317931 and passing readiness checks remain unverified until Actions execute."
+    ]
+  }
 }
