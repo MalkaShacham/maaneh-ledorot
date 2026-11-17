@@ -4558,6 +4558,8 @@ assert.equal(batch144Data.metrics_actual_after,null);
 assert.deepEqual(readinessMetrics(batch144Data.metrics_expected_after),{answer_eligible_unique_sources:1476,content_verified_unique_sources:854,answer_eligible_propositions:3796});
 for(const record of batch144Data.records){
  assert.equal(record.status,'Parsed');
+ if(record.independent_witness===true)assert.match(record.primary_secondary_status,/^Primary published text witness:/);
+ else assert.match(record.primary_secondary_status,/secondary|testimony|translated/i);
  assert.equal(record.has_content_evidence,true);
  assert.equal(record.proposition_origin,'source_grounded_paraphrase');
  assert.equal(record.proposition_verbatim,false);
