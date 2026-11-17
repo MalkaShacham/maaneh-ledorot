@@ -245,6 +245,20 @@ def is_pending_batch(data):
 # forever (and readiness tests correctly reject their missing full-index audit).
 selected_batches=[entry for entry in manual_batches if is_pending_batch(entry["data"])]
 
+# Build the all-file identity audit index once. Re-reading and parsing every
+# corpus file for every target identity makes a 50-batch reconciliation
+# quadratic in file I/O and can stall the Actions runner.
+identity_record_index={}
+for fp in items:
+    try: obj=json.loads(fp.read_text(encoding="utf-8"))
+    except Exception: continue
+    if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
+    for x in candidate_dicts(obj):
+        if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
+        record_summary={"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")}
+        for record_key in set(identity_keys(x)):
+            identity_record_index.setdefault(record_key,[]).append(record_summary)
+
 reconciliation_audit_history=[]
 previous_snapshot_metrics=None
 previous_expected_after=None
@@ -355,17 +369,9 @@ for selected_index, batch_info in enumerate(selected_batches):
         "policy":"Historical batch snapshots exclude proposition indices documented by later existing_identity_updates when those updates were written into an earlier canonical file. New later batch files remain excluded by later_paths."
     }
 
-    audit=[]; by_identity={target["key"]:[] for target in target_identities}
-    for fp in items:
-        try: obj=json.loads(fp.read_text(encoding="utf-8"))
-        except Exception: continue
-        if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
-        for x in candidate_dicts(obj):
-            if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
-            for record_key in [key for key in identity_keys(x) if key in by_identity]:
-                by_identity[record_key].append({"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")})
+    audit=[]
     for target in target_identities:
-        selected=snapshot_by_key.get(target["key"]); matches=by_identity[target["key"]]
+        selected=snapshot_by_key.get(target["key"]); matches=identity_record_index.get(target["key"],[])
         family_ids=sorted({r.get("evidence_family_id") for r in matches if r.get("evidence_family_id")})
         same_family_duplicate=len(matches)>1 and len(family_ids)==1 and all(r.get("independent_witness") is False for r in matches)
         identity_collision=len(matches)>1 and not same_family_duplicate
