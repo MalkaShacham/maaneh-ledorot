@@ -215,7 +215,7 @@
       "commit_binding": true,
       "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
       "workflow_run_id": 44107524723,
-      "note": "Batch 145 has been recorded; the push of the new data/items file should trigger Answer Quality Gate and reconciliation workflows. No new run ID, passing test result or commit-bound readiness report is claimed yet. The previous failed run remains historical until a new run is inspected.",
+      "note": "Batch 145 and the retrieval/validator/test updates are committed. No new Actions run ID or combined status is visible yet; test_content_readiness.mjs and canonical reconciliation remain pending. Previous run IDs are historical and are not evidence for this commit.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
       "status": "pending_run_after_batch_145",
@@ -271,6 +271,49 @@
         "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 13
+      },
+      "implementation_commits": {
+        "content": "694611422e7e57b72443f313485a564302b3ff8e",
+        "enrich": "e68054a78c301d9bb88d1ee3d488914996f6b2dc",
+        "retrieval": "cf26603498723d23f2414175fd65b3e0ba74b0a0",
+        "validation": "ee25d9bfc4a8706be77bc1b8cff1b7012dca3f4f",
+        "tests": "c26a5acf5b2be73caaaa9573e55e94941a808be2"
+      },
+      "retrieval_synthesis": {
+        "topic": "hayom_yom_household_and_influence",
+        "status": "implemented_pending_execution",
+        "attribution": "system_synthesis_not_rebbe_quote",
+        "selection_rule": "The answer engine now selects the existing household-study family plus two distinct individual-influence families, prioritizing AID 3317931 and retaining AID 528897; all selections are deduplicated by Evidence Family.",
+        "selected_aids": [
+          528896,
+          528897,
+          3317931
+        ],
+        "claims": [
+          {
+            "topic": "daily_torah_and_household",
+            "source_aids": [
+              528896
+            ],
+            "citation_level": "claim-local item/body locator"
+          },
+          {
+            "topic": "individual_influence",
+            "source_aids": [
+              528897,
+              3317931
+            ],
+            "citation_level": "claim-local item/body locator for each supporting witness"
+          }
+        ],
+        "regular_mode": "two synthesized claims supported by three distinct dated Hayom Yom Evidence Families; no causal or empirical generalization.",
+        "researcher_mode": "deep mode emits witness-level provenance, evidence-family distinctions and a claim_source_map with locators for each claim.",
+        "validation": "patternSynthesisIntegrity now has an explicit household/influence branch checking the two claim types, each source's proposition support, distinct Evidence Families and claim-local locators.",
+        "limitations": [
+          "The synthesis is the system's comparative organization, not a quotation or a summary attributed to the Rebbe.",
+          "The entries are not empirical evidence of educational causality.",
+          "Runtime inclusion of AID 3317931 and passing readiness checks remain unverified until Actions execute."
+        ]
       }
     }
   },
