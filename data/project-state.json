@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-17T01:59:08+02:00",
+  "last_updated": "2026-11-17T02:13:00+02:00",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -105,9 +105,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1345,
+        "answer_eligible_unique_sources": 1346,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3538
+        "answer_eligible_propositions": 3540
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -162,12 +162,12 @@
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3538
         },
-        "new_source_identities": 15,
+        "new_source_identities": 16,
         "existing_identities_enriched": 1,
-        "new_response_propositions": 21,
+        "new_response_propositions": 23,
         "existing_response_propositions_added": 3,
-        "total_new_paraphrase_entries": 24,
-        "answer_eligible_source_families_added": 15,
+        "total_new_paraphrase_entries": 26,
+        "answer_eligible_source_families_added": 16,
         "content_verified_unique_sources_added": 0
       },
       "status": "pending_reconciliation"
@@ -244,21 +244,22 @@
         "answer_eligible_propositions": 3514
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1345,
+        "answer_eligible_unique_sources": 1346,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3538
+        "answer_eligible_propositions": 3540
       },
-      "new_source_identities": 15,
+      "new_source_identities": 16,
       "existing_identities_enriched": 1,
       "source_bodies_inspected": 16,
-      "new_response_propositions": 21,
+      "new_response_propositions": 23,
       "existing_response_propositions_added": 3,
-      "total_new_paraphrase_entries": 24,
-      "answer_eligible_source_families_added": 15,
+      "total_new_paraphrase_entries": 26,
+      "answer_eligible_source_families_added": 16,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 2
+      "blocked_candidate_count": 2,
+      "reviewed_item_count": 19
     },
-    "last_run_note": "2026-11-17 batch 132: 15 original-language Hayom Yom bodies AID 528907–528921 inspected (9 Hebrew, 5 Yiddish, 1 mixed), 21 non-verbatim propositions across 15 new Evidence Families, plus three in-place propositions added to existing Sicha AID 2989153. Two alternate correspondence routes (AID 5071116 and 5071138) redirected to generic shells without body text; fallback bodies were inspected in the same run. Full-index reconciliation and readiness retest pending.",
+    "last_run_note": "2026-11-17 batch 132: 15 original-language Hayom Yom bodies AID 528907–528921 inspected (9 Hebrew, 5 Yiddish, 1 mixed), 21 non-verbatim propositions across 15 new Evidence Families, plus three in-place propositions added to existing Sicha AID 2989153. Two alternate correspondence routes (AID 5071116 and 5071138) redirected to generic shells without body text; fallback bodies were inspected in the same run. Full-index reconciliation and readiness retest pending. נוסף מקור באנגלית מסוג מכתב נכנס, AID 1924127; הוא מתעד את שאלת הכותב בלבד ולא תשובת הרבי. היקף האצווה עודכן ל-16 זהויות חדשות ו-23 פרופוזיציות חדשות.",
     "last_batch_blocked_count": 2,
     "last_batch_blocked_reason": "AID 5071116 and 5071138 redirected to generic Torah Texts shells without an inspectable letter body; no bypass or crawler retry. Fifteen alternative Hayom Yom bodies and one existing Sicha body were inspected in the same run.",
     "next_work": "Reconcile pending batches 099–132; run test_content_readiness.mjs including batch 132 and claim-level thought/prayer/action synthesis; verify full-index collisions, Actions and Pages.",

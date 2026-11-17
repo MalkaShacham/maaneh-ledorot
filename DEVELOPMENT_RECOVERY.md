@@ -1108,3 +1108,10 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - AID 5071116 and 5071138 redirected to generic Torah Texts shells without inspectable letter bodies. No crawler retry or access-control bypass was attempted; the same run used fifteen accessible Hayom Yom bodies and the existing Sicha body as alternatives.
 - Expected batch boundary: 1,330 / 854 / 3,514 before and 1,345 / 854 / 3,538 after (answer-eligible families / content-verified families / answer-eligible propositions). These are expected values only until full-index reconciliation. No source was promoted to Verified.
 - Fixed the stale readiness assertion that still expected batch 130 after project-state had advanced to batch 131; full readiness retest remains pending.
+
+
+## 2026-11-17 — English correspondence added to batch 132
+
+- Added AID 1924127, the English incoming letter by Dr. Robert Wilkes dated 9 August 1979. The inspected body (lines 174–200) records the correspondent's question about Jewish education and community care for children with developmental disabilities and concerns around group homes. The source is explicitly classified as an incoming correspondent's question, not a Rebbe response; no position is attributed to the Rebbe.
+- The editor's note at line 173 was inspected and its terminology qualification is preserved. The original letter, the remaining three correspondence parts and any Rebbe response were not inspected.
+- Batch 132 now contains 16 new identities (9 Hebrew Hayom Yom, 5 Yiddish Hayom Yom, 1 mixed Hebrew/Yiddish Hayom Yom, and 1 English incoming letter), 23 new propositions and three additional propositions in an existing Sicha identity. Expected metrics are 1,346 / 854 / 3,540, pending full-index reconciliation.

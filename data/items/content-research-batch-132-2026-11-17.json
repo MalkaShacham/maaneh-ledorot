@@ -7,16 +7,16 @@
   "title": "Batch 132 — fifteen inspected original-language Hayom Yom entries (15–29 Cheshvan 5704), three in-place Sicha enrichments, two blocked correspondence routes",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
-  "reviewed_item_count": 18,
-  "source_bodies_inspected": 16,
-  "source_body_pages_opened": 18,
-  "new_source_identities": 15,
+  "reviewed_item_count": 19,
+  "source_bodies_inspected": 17,
+  "source_body_pages_opened": 19,
+  "new_source_identities": 16,
   "existing_identities_enriched": 1,
-  "new_response_propositions": 21,
+  "new_response_propositions": 23,
   "existing_response_propositions_added": 3,
-  "total_new_paraphrase_entries": 24,
-  "answer_eligible_source_families_added": 15,
-  "independent_witnesses_added": 15,
+  "total_new_paraphrase_entries": 26,
+  "answer_eligible_source_families_added": 16,
+  "independent_witnesses_added": 16,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
   "new_aids": [
@@ -34,7 +34,8 @@
     528918,
     528919,
     528920,
-    528921
+    528921,
+    1924127
   ],
   "enriched_aids": [
     2989153
@@ -62,7 +63,7 @@
   "fallback_source_attempted": true,
   "fallback_source_results": {
     "publisher": "Kehot / Chabad.org / BeitChabad.com",
-    "accessible_item_level_bodies": 15,
+    "accessible_item_level_bodies": 16,
     "existing_identity_bodies": 1,
     "blocked_alternate_type_routes": 2,
     "body_text_inspected": true,
@@ -91,7 +92,8 @@
       5071138
     ],
     "translations_counted_as_independent_witnesses": 0,
-    "note": "שני נתיבי אגרות הפנו למעטפת ללא גוף איגרת. במקום לחזור עליהם נבדקו 15 גופי ערכי היום יום בשפת המקור והועשרה שיחה קיימת אחת; לא הופעל crawler ולא נעשתה עקיפת גישה."
+    "note": "שני נתיבי אגרות הפנו למעטפת ללא גוף איגרת. במקום לחזור עליהם נבדקו 15 גופי ערכי היום יום בשפת המקור והועשרה שיחה קיימת אחת; לא הופעל crawler ולא נעשתה עקיפת גישה.",
+    "accessible_english_correspondence_bodies": 1
   },
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -101,17 +103,20 @@
   "language_distribution": {
     "Hebrew": 9,
     "Yiddish": 5,
-    "Hebrew/Yiddish": 1
+    "Hebrew/Yiddish": 1,
+    "English": 1
   },
   "original_language_distribution": {
     "Hebrew": 9,
     "Yiddish": 5,
-    "Hebrew/Yiddish": 1
+    "Hebrew/Yiddish": 1,
+    "English": 1
   },
   "source_type_distribution": {
     "published_hebrew_hayom_yom_entry": 9,
     "published_yiddish_hayom_yom_entry": 5,
-    "published_hebrew_yiddish_hayom_yom_entry": 1
+    "published_hebrew_yiddish_hayom_yom_entry": 1,
+    "published_english_incoming_correspondence_letter": 1
   },
   "evidence_family_ids": [
     "hayom-yom-528907-5704",
@@ -128,7 +133,8 @@
     "hayom-yom-528918-5704",
     "hayom-yom-528919-5704",
     "hayom-yom-528920-5704",
-    "hayom-yom-528921-5704"
+    "hayom-yom-528921-5704",
+    "correspondence-1924127-1979-08-09"
   ],
   "same_family_items": [],
   "same_family_relations": [],
@@ -396,14 +402,29 @@
       "identity_resolution": "not_admitted",
       "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן ולא שונתה הזהות הקיימת.",
       "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
+    },
+    {
+      "aid": 1924127,
+      "id": "incoming-letter-1924127-1979-08-09",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1924127/jewish/First-Letter-From-Dr-Robert-Wilkes-to-the-Rebbe.htm",
+      "language": "English",
+      "body_text_inspected": true,
+      "inspected_original_language_body": true,
+      "body_locator": "שורות 174–200; הערת עורך שורה 173",
+      "web_source_ref": "turn553114view0",
+      "included_in_corpus": true,
+      "identity_resolution": "new_canonical_identity",
+      "evidence_family_id": "correspondence-1924127-1979-08-09",
+      "propositions_added": 2,
+      "document_role": "incoming_letter_not_rebbe_response"
     }
   ],
   "deduplication_check": {
     "new_aids_unique": true,
     "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
-    "unique_new_aid_count": 15,
-    "unique_new_family_count": 15,
+    "unique_new_aid_count": 16,
+    "unique_new_family_count": 16,
     "same_family_duplicate_count": 0,
     "duplicate_alias_identities": 0,
     "translations_counted_as_independent_witnesses": 0,
@@ -426,19 +447,19 @@
     "answer_eligible_propositions": 3514
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1345,
+    "answer_eligible_unique_sources": 1346,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3538
+    "answer_eligible_propositions": 3540
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 15,
+    "answer_eligible_unique_sources": 16,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 24
+    "answer_eligible_propositions": 26
   },
   "reconciliation_variance": null,
-  "note": "נבדקו 15 גופי ערכי היום יום המקוריים AID 528907–528921: 9 בעברית, 5 ביידיש וערך אחד משולב עברית/יידיש; 15 משפחות ראיות נפרדות ו-21 פרופוזיציות לא-מילוליות. הועשרה in-place שיחת AID 2989153 בשלוש פרופוזיציות מסעיפים י״א–י״ד. שני נתיבי אגרות AID 5071116 ו-5071138 לא חשפו גוף פרסום; באותה הפעלה נעשה שימוש בגופי היום יום החלופיים ובשיחה קיימת. כל המקורות החדשים נשארו Parsed ובהקשר חלקי; לא קודם מקור ל-Verified.",
+  "note": "נבדקו 15 גופי ערכי היום יום המקוריים AID 528907–528921: 9 בעברית, 5 ביידיש וערך אחד משולב עברית/יידיש; 15 משפחות ראיות נפרדות ו-21 פרופוזיציות לא-מילוליות. הועשרה in-place שיחת AID 2989153 בשלוש פרופוזיציות מסעיפים י״א–י״ד. שני נתיבי אגרות AID 5071116 ו-5071138 לא חשפו גוף פרסום; באותה הפעלה נעשה שימוש בגופי היום יום החלופיים ובשיחה קיימת. כל המקורות החדשים נשארו Parsed ובהקשר חלקי; לא קודם מקור ל-Verified. נוסף מקור באנגלית מסוג מכתב נכנס: AID 1924127, מכתב ד״ר רוברט וילקס מ-9.8.1979. הוא נספר כמקור לשאלת הכותב בלבד, לא כתשובת הרבי. גוף המכתב והערת העורך נבדקו; הפרפרזות אינן משחזרות את המינוח ההיסטורי הפוגעני. לא נבדקו יתר חלקי ההתכתבות או תשובת הרבי.",
   "reconciliation_trigger_requested_at": "2026-11-17T01:59:08+02:00",
   "reconciliation_trigger_reason": "הפעלת reconciliation הקיימת מופעלת על push של data/items; לא נוצר workflow או schedule חדש.",
   "records": [
@@ -2051,6 +2072,120 @@
         "body_locator": "שורות 173–174"
       },
       "web_source_ref": "turn390121view13"
+    },
+    {
+      "id": "incoming-letter-1924127-1979-08-09",
+      "canonical_key": "aid:1924127",
+      "aid": 1924127,
+      "type": "correspondence_letter",
+      "title": "First Letter From Dr. Robert Wilkes to the Rebbe",
+      "source_class": "Correspondence",
+      "source_class_detail": "מכתב נכנס מאת ד״ר רוברט וילקס אל הרבי; מתעד את שאלת הכותב ואת חששותיו, לא תשובה או אמירה של הרבי.",
+      "author": "Dr. Robert Wilkes",
+      "author_role": "correspondent",
+      "recipient": "Rabbi Menachem Mendel Schneerson",
+      "document_role": "incoming_letter",
+      "source_role": "correspondent_question_not_rebbe_answer",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "August 9, 1979",
+      "date": "1979-08-09",
+      "date_precision": "day",
+      "language": "English",
+      "original_language": "English",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1924127/jewish/First-Letter-From-Dr-Robert-Wilkes-to-the-Rebbe.htm",
+      "translation_status": "גוף המכתב המקורי באנגלית נבדק; הפרפרזות נכתבו בעברית. תרגום אינו עד עצמאי.",
+      "summary_researcher": "המכתב מ-9 באוגוסט 1979, מאת העובד הסוציאלי היהודי ד״ר רוברט וילקס, פונה אל הרבי בבקשה לשמוע את עמדתו על טיפול וחינוך של ילדים יהודים עם מוגבלות התפתחותית, ושואל כיצד להבטיח שיוכלו לגדול, להתפתח ולחיות חיים יהודיים. זו שאלת הכותב, לא תשובת הרבי. הכותב מתאר מחלוקת קהילתית סביב פתיחת בתי מגורים קבוצתיים בסביבת המגורים: הוא מונה חששות של שכנים מפגיעה בערך נכסים, ונדליזם או פשיעה, לצד רצון ההורים למסגרת בטוחה ובריאה לילדיהם. הוא מבקש לבחון את הסוגיה מנקודת מבט יהודית; אין במכתב תשובה לשאלה.",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "המכתב מ-9 באוגוסט 1979, מאת העובד הסוציאלי היהודי ד״ר רוברט וילקס, פונה אל הרבי בבקשה לשמוע את עמדתו על טיפול וחינוך של ילדים יהודים עם מוגבלות התפתחותית, ושואל כיצד להבטיח שיוכלו לגדול, להתפתח ולחיות חיים יהודיים. זו שאלת הכותב, לא תשובת הרבי.",
+        "הכותב מתאר מחלוקת קהילתית סביב פתיחת בתי מגורים קבוצתיים בסביבת המגורים: הוא מונה חששות של שכנים מפגיעה בערך נכסים, ונדליזם או פשיעה, לצד רצון ההורים למסגרת בטוחה ובריאה לילדיהם. הוא מבקש לבחון את הסוגיה מנקודת מבט יהודית; אין במכתב תשובה לשאלה."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 1924127, גוף המכתב, שורות 185–187.",
+        "Chabad.org AID 1924127, גוף המכתב, שורות 188–194."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 1924127, גוף המכתב, שורות 185–187. ; Chabad.org AID 1924127, גוף המכתב, שורות 188–194.",
+      "evidence_family_id": "correspondence-1924127-1979-08-09",
+      "parent_evidence_family_id": null,
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "documented_circumstances": "מכתב נכנס ראשון מתוך התכתבות בת ארבעה חלקים, מאת העובד הסוציאלי ד״ר רוברט וילקס אל הרבי, 9 באוגוסט 1979.",
+      "question_or_problem": "המכתב מ-9 באוגוסט 1979, מאת העובד הסוציאלי היהודי ד״ר רוברט וילקס, פונה אל הרבי בבקשה לשמוע את עמדתו על טיפול וחינוך של ילדים יהודים עם מוגבלות התפתחותית, ושואל כיצד להבטיח שיוכלו לגדול, להתפתח ולחיות חיים יהודיים. זו שאלת הכותב, לא תשובת הרבי. הכותב מתאר מחלוקת קהילתית סביב פתיחת בתי מגורים קבוצתיים בסביבת המגורים: הוא מונה חששות של שכנים מפגיעה בערך נכסים, ונדליזם או פשיעה, לצד רצון ההורים למסגרת בטוחה ובריאה לילדיהם. הוא מבקש לבחון את הסוגיה מנקודת מבט יהודית; אין במכתב תשובה לשאלה.",
+      "conditions_or_qualifications": [
+        "המסמך הוא שאלת הכותב לרבי, לא תשובת הרבי ולא ראיה לעמדתו.",
+        "הפרפרזות מתארות את גוף המכתב בשורות 174–200 בלבד; יתר שלושת חלקי ההתכתבות ותשובת הרבי לא נבדקו.",
+        "הערת העורך בשורה 173 מסבירה שהמינוח ההיסטורי בגוף המכתב אינו המינוח שהרבי העדיף; הפרפרזות נמנעות משחזור המינוח הפוגעני.",
+        "השם והתפקיד מודפסים בסוף המכתב; לא נבדקו מסמך פיזי או חתימה מקורית.",
+        "לא הועתק טקסט מוגן במלואו."
+      ],
+      "audience": "הנמען המוצהר הוא הרבי; המסמך מתעד פנייה של איש מקצוע לקהילה ולמנהיגות רוחנית.",
+      "primary_secondary_status": "תעתיק דיגיטלי של מכתב נכנס מאת צד שלישי; מקור ראשוני לשאלות הכותב בלבד, לא לתשובת הרבי.",
+      "witness_type": "published_english_incoming_correspondence_letter",
+      "relations": [],
+      "identity_note": "מכתב נכנס עצמאי; אין למזג אותו עם תשובת הרבי או עם חלקים אחרים בסדרת ההתכתבות ללא זיהוי מסמכי נפרד.",
+      "witness": {
+        "kind": "text",
+        "state": "published_body_inspected",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "language": "English",
+        "scope": "AID 1924127, letter body lines 174–200; editor note line 173",
+        "complete_partial": "partial",
+        "notes": "הגוף המלא של המכתב הראשון נבדק; זו רק חוליה אחת בהתכתבות בת ארבעה חלקים; אין תשובת הרבי בעמוד זה."
+      },
+      "provenance": {
+        "authorship_status": "העמוד מציג את המכתב כמכתב מאת Dr. Robert Wilkes אל הרבי; אין לייחס את תוכנו לרבי.",
+        "signature_status": "שם הכותב ותפקידיו מודפסים בשורות 196–200; חתימה פיזית לא נבדקה.",
+        "source_witness": "Chabad.org / TheRebbe.org, First Letter From Dr. Robert Wilkes to the Rebbe, 9 August 1979, AID 1924127; body lines 174–200; editor note line 173.",
+        "transmission_type": "תעתיק דיגיטלי של מכתב נכנס שפורסם ב-Chabad.org / TheRebbe.org.",
+        "textual_status": "גוף המכתב באנגלית נבדק בשורות 174–200; הערת עורך בשורה 173.",
+        "editorial_scope": "פרפרזות מחקר בעברית של שאלות הכותב וחששותיו בלבד; לא מוצגת תשובה או עמדה של הרבי.",
+        "verification_status": "נפתח ונבדק גוף המכתב באנגלית, שורות 174–200, והערת העורך בשורה 173. זהו מכתב נכנס מאת ד״ר רוברט וילקס אל הרבי, הראשון בסדרת התכתבות בת ארבעה חלקים; הפרופוזיציות מתארות את שאלות הכותב ואת חששותיו בלבד, ואינן תשובת הרבי או עמדה המיוחסת לו. לא נבדקו המכתב הפיזי, המעטפה, יתר חלקי ההתכתבות או תשובת הרבי. הערת העורך מציינת שהמינוח ההיסטורי בגוף המכתב אינו המינוח המועדף על הרבי; הפרפרזות משתמשות במינוח מכבד ועדכני. לא הועתק טקסט מוגן במלואו.",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1924127/jewish/First-Letter-From-Dr-Robert-Wilkes-to-the-Rebbe.htm",
+        "accessed": "2026-11-17"
+      },
+      "witness_provenance": "Chabad.org / TheRebbe.org, First Letter From Dr. Robert Wilkes to the Rebbe, 9 August 1979, AID 1924127; body lines 174–200; editor note line 173.",
+      "verification_scope": "נפתח ונבדק גוף המכתב באנגלית, שורות 174–200, והערת העורך בשורה 173. זהו מכתב נכנס מאת ד״ר רוברט וילקס אל הרבי, הראשון בסדרת התכתבות בת ארבעה חלקים; הפרופוזיציות מתארות את שאלות הכותב ואת חששותיו בלבד, ואינן תשובת הרבי או עמדה המיוחסת לו. לא נבדקו המכתב הפיזי, המעטפה, יתר חלקי ההתכתבות או תשובת הרבי. הערת העורך מציינת שהמינוח ההיסטורי בגוף המכתב אינו המינוח המועדף על הרבי; הפרפרזות משתמשות במינוח מכבד ועדכני. לא הועתק טקסט מוגן במלואו.",
+      "source_witness": "Chabad.org / TheRebbe.org, First Letter From Dr. Robert Wilkes to the Rebbe, 9 August 1979, AID 1924127; body lines 174–200; editor note line 173.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "status": "public_publisher_body_opened",
+        "reuse_notes": "נשמרו קישור ופרפרזות לא-מילוליות בלבד."
+      },
+      "rights_status": "copyrighted-link-only",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Correspondence",
+          "August 9, 1979"
+        ],
+        "research_terms": [
+          "מכתב נכנס",
+          "חינוך יהודי",
+          "טיפול בקהילה",
+          "דיור קבוצתי",
+          "שאלות של איש מקצוע",
+          "התכתבות"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "המקור מתעד את פניית ד״ר רוברט וילקס בלבד. אין להסיק ממנו מה השיב הרבי. נבדקו גוף המכתב והערת העורך; לא נבדקו יתר חלקי ההתכתבות או מסמך פיזי.",
+      "canonical_file": "data/items/content-research-batch-132-2026-11-17.json",
+      "locator": {
+        "publisher": "Chabad.org / TheRebbe.org",
+        "aid": 1924127,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/1924127/jewish/First-Letter-From-Dr-Robert-Wilkes-to-the-Rebbe.htm",
+        "body_locator": "שורות 174–200; הערת עורך שורה 173"
+      },
+      "web_source_ref": "turn553114view0"
     }
   ]
 }
