@@ -96,8 +96,16 @@
     "hayom-yom-25-shvat-aid3315415"
   ],
   "same_family_items": [],
-  "metrics_before": null,
-  "metrics_expected_after": null,
+  "metrics_before": {
+    "answer_eligible_unique_sources": 1477,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3797
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 1489,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3810
+  },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
@@ -112,7 +120,7 @@
     "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2950
   },
-  "metrics_note": "לא נרשם total corpus baseline חדש: המדדים הציבוריים האחרונים הם 977/878/2950, ו-project-state מציג 977/870/2950. גבול האצווה הוא 12 משפחות ראיות ו-12 פרופוזיציות חדשות, ללא תוספת ל-Verified; אין לראות בו מדידה לאחר reconciliation.",
+  "metrics_note": "Planning chain corrected: batch 144 expected 1,477/854/3,797; batch 145 is chained from that boundary and projects 1,489/854/3,810. Reconciliation must calculate actual snapshots; neither boundary is a measured result.",
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 12,
     "content_verified_unique_sources": 0,
