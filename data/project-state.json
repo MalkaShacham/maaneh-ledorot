@@ -245,12 +245,12 @@
       "commit_binding": true,
       "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
       "workflow_run_id": 44107524723,
-      "note": "Rerun Actions after commit e21c9b3; verify test_content_readiness.mjs and test_question_specificity_gate.mjs before treating the batch as reconciled.",
+      "note": "Rerun test_content_readiness.mjs after the wells­prings claim-locator fix; the prior run failed at the dissemination assertion.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
-      "status": "pending_rerun_after_test_fixture_and_assertion_fix",
+      "status": "pending_rerun_after_wellsprings_locator_fix",
       "last_failed_run_id": 44188237128,
-      "last_failure": "The first batch149 run exposed two test-harness defects: a missing closing parenthesis in the new claim-locator assertion, and synthetic question-specificity fixtures without source locators. Both were corrected; the core engine continues to suppress unlocated claims."
+      "last_failure": "The special wells­prings-dissemination addSource path bypassed the generic claim locator filter and created claims with source_numbers but no source_locators. It now skips unlocated propositions and writes source_locators for each displayed source number."
     },
     "publication": {
       "status": "pending_deploy_after_batch_149",

@@ -2117,9 +2117,12 @@ else if(educationGovernanceQuestion){
    if(!proposition)return;
    const sourceNumber=selected.length+1,propIndex=arr(e.response_propositions).findIndex(p=>String(p).trim()===String(proposition).trim());
    const locator=arr(e.response_proposition_locators)[propIndex]||e.proposition_source_locator||e.source_locator||null;
+   // Do not surface a source number unless this exact proposition has a body locator.
+   if(!locator)return;
    const source=markNonIndependent?{...e,independent_witness:false,_independent_witness:false}:e;
+   const sourceLocators=[{source_number:sourceNumber,locator,proposition_text:String(proposition)}];
    selected.push(source);
-   claims.push({topic:'wellsprings_dissemination',text:String(proposition),source_numbers:[sourceNumber],evidence_family_ids:[familyKey(source)],witnesses:[{source_number:sourceNumber,source_id:source.id||source.aid||null,source_title:source.title||null,evidence_family_id:familyKey(source),source_locator:locator,proposition_source_locator:locator,proposition:String(proposition),independent_witness:source.independent_witness!==false}],documented_circumstances:arr(source.documented_circumstances),conditions_or_qualifications:arr(source.conditions_or_qualifications),audiences:arr(source.audience)});
+   claims.push({topic:'wellsprings_dissemination',text:String(proposition),source_numbers:[sourceNumber],evidence_family_ids:[familyKey(source)],source_locators:sourceLocators,witnesses:[{source_number:sourceNumber,source_id:source.id||source.aid||null,source_title:source.title||null,evidence_family_id:familyKey(source),source_locator:locator,proposition_source_locator:locator,proposition:String(proposition),independent_witness:source.independent_witness!==false}],documented_circumstances:arr(source.documented_circumstances),conditions_or_qualifications:arr(source.conditions_or_qualifications),audiences:arr(source.audience)});
   };
   for(const e of candidates.filter(supportsWellspringsDisseminationSource)){
    if(e.independent_witness===true&&selected.filter(x=>x.independent_witness===true).length<4)addSource(e,false);

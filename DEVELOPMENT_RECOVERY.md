@@ -1307,3 +1307,10 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 
 - The first post-commit Actions run exposed a missing parenthesis in the new claim-locator regression assertion and a synthetic test fixture in `test_question_specificity_gate.mjs` that had no source locator. The assertion syntax is corrected; the fixture now supplies an explicit synthetic body locator. This preserves the engine invariant that a displayed claim cannot carry a source number without a locator.
 - No source or status was promoted as a result of these test-harness corrections. The new batch remains pending canonical reconciliation and a clean rerun of both readiness and question-specificity tests.
+
+
+## 2026-11-18 — Claim-locator follow-up for the wells­prings dissemination path
+
+- The next readiness run identified a second, special-case path: `wellspringsDisseminationQuestion` manually appended claims after generic synthesis and omitted the `source_locators` array. This bypassed the generic locator filter.
+- The special path now refuses to append a source when the selected proposition has no body locator and attaches a `source_locators` entry with the same source number for every displayed claim. The regression assertion checks this exact mapping.
+- Reconciliation and full readiness remain pending a fresh Actions run; no metrics or source statuses were promoted.
