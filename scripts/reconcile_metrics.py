@@ -240,21 +240,14 @@ def is_pending_batch(data):
     return (data.get("reconciliation_status") in ("pending","pending_reconciliation")
             or data.get("status") in ("pending","pending_reconciliation"))
 
-selected_batches=[]
-if manual_batches and is_pending_batch(manual_batches[-1]["data"]):
-    selected_batches=[manual_batches[-1]]
-    current=manual_batches[-1]["data"]
-    index=len(manual_batches)-2
-    while index>=0:
-        previous=manual_batches[index]["data"]
-        if not is_pending_batch(previous): break
-        if (previous.get("metrics_expected_after") or {}) != (current.get("metrics_before") or {}): break
-        selected_batches.insert(0,manual_batches[index])
-        current=previous
-        index-=1
+# Reconcile every pending manual batch, not only the contiguous chain ending
+# at the newest batch. Older pending batches can otherwise remain un-audited
+# forever (and readiness tests correctly reject their missing full-index audit).
+selected_batches=[entry for entry in manual_batches if is_pending_batch(entry["data"])]
 
 reconciliation_audit_history=[]
 previous_snapshot_metrics=None
+previous_expected_after=None
 for selected_index, batch_info in enumerate(selected_batches):
     batch_path=batch_info["path"]; batch_data=batch_info["data"]
     batch_label=re.search(r"content-research-batch-(\d+)-",batch_path.name).group(1)
@@ -289,14 +282,16 @@ for selected_index, batch_info in enumerate(selected_batches):
 
     # Exclude later manual batches to calculate the actual corpus snapshot immediately
     # after this batch. Use all entries, not only the final deduplicated index.
-    later_paths={str(x["path"].relative_to(ROOT)) for x in selected_batches[selected_index+1:]}
+    # Exclude every later manual batch file, whether it is pending or was
+    # reconciled previously. Historical snapshots must not include later items.
+    later_manual_infos=[x for x in manual_batches if x["path"]>batch_path]
+    later_paths={str(x["path"].relative_to(ROOT)) for x in later_manual_infos}
     # Later manual batches may append propositions to an earlier canonical
-    # item file. Exclude those later additions when calculating an earlier
-    # batch's historical snapshot; otherwise the same in-place enrichment is
-    # counted before the batch that actually introduced it.
+    # item file. Exclude those later additions even when the later batch was
+    # already reconciled; otherwise an in-place enrichment leaks backward.
     later_in_place_exclusions={}
     later_batches_with_in_place_updates=[]
-    for later_info in selected_batches[selected_index+1:]:
+    for later_info in later_manual_infos:
         later_data=later_info["data"]
         later_batch_id=str(later_data.get("batch_id") or "")
         for update in later_data.get("existing_identity_updates",[]):
@@ -339,12 +334,20 @@ for selected_index, batch_info in enumerate(selected_batches):
         priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
         if old is None or priority(adjusted)>priority(old): snapshot_by_key[key]=adjusted
     snapshot_metrics=summarize(list(snapshot_by_key.values()))
-    actual_before=previous_snapshot_metrics or (batch_data.get("metrics_before") or snapshot_metrics)
+    expected_before=batch_data.get("metrics_before") or {}
+    # Carry forward the prior actual snapshot only when the expected batch
+    # boundaries are contiguous. Across a historical gap, reset to this
+    # batch's recorded baseline rather than inventing continuity.
+    if previous_snapshot_metrics is not None and previous_expected_after==expected_before:
+        actual_before=previous_snapshot_metrics
+    else:
+        actual_before=expected_before or snapshot_metrics
     readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
     batch_data["metrics_actual_before"]={k:int(actual_before.get(k,snapshot_metrics[k])) for k in readiness_keys}
     batch_data["metrics_actual_after"]=snapshot_metrics
     batch_data["metrics_delta_actual"]={k:snapshot_metrics[k]-batch_data["metrics_actual_before"][k] for k in readiness_keys}
     previous_snapshot_metrics=snapshot_metrics
+    previous_expected_after=batch_data.get("metrics_expected_after") or {}
     batch_data["reconciliation_snapshot_adjustment"]={
         "excluded_later_in_place_proposition_count":sum(len(v) for v in later_in_place_exclusions.values()),
         "affected_canonical_identity_count":len(later_in_place_exclusions),
