@@ -1339,9 +1339,9 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
 });
 assert.equal(acquisitionState.manual_web_review.batch_id,'132');
-assert.equal(acquisitionState.manual_web_review.batch_file,batch132Path);
+assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-132-2026-11-17.json');
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'131');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch131Path);
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-131-2026-11-17.json');
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
 assert.equal(acquisitionState.last_manual_web_review.batch_id,'132');assert.equal(acquisitionState.last_manual_review.batch_id,'132');
 for(const id of ['129','130','131'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
