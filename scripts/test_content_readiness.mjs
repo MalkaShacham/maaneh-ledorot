@@ -4199,7 +4199,7 @@ assert.equal(batch132Data.records.reduce((n,r)=>n+r.response_propositions.length
 assert.equal(new Set(batch132Data.records.map(r=>String(r.aid))).size,15);assert.equal(new Set(batch132Data.records.map(r=>r.evidence_family_id)).size,15);
 assert.deepEqual(batch132Data.language_distribution,{Hebrew:9,Yiddish:5,'Hebrew/Yiddish':1,English:1});
 assert.deepEqual(batch132Data.source_type_distribution,{published_hebrew_hayom_yom_entry:9,published_yiddish_hayom_yom_entry:5,published_hebrew_yiddish_hayom_yom_entry:1,published_english_incoming_correspondence_letter:1});
-assert.deepEqual(batch132Data.blocked_candidates.map(x=>x.aid),[5071116,5071138]);assert.equal(batch132Data.fallback_source_attempted,true);
+assert.deepEqual(batch132Data.blocked_candidates.map(x=>x.aid),[528913,816546]);assert.equal(batch132Data.fallback_source_attempted,true);
 assert.equal(batch132Data.fallback_source_results.accessible_item_level_bodies,16);assert.equal(batch132Data.fallback_source_results.existing_identity_bodies,1);assert.equal(batch132Data.fallback_source_results.accessible_english_correspondence_bodies,1);
 assert.equal(batch132Data.crawler_retry,false);assert.equal(batch132Data.access_control_bypassed,false);assert.equal(batch132Data.full_text_copied,false);assert.equal(batch132Data.scan_only_verification_used,false);assert.equal(batch132Data.translations_counted_as_independent_witnesses,0);
 assert.deepEqual(batch132Data.metrics_before,{answer_eligible_unique_sources:1330,content_verified_unique_sources:854,answer_eligible_propositions:3514});
