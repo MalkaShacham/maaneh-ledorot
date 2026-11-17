@@ -1905,7 +1905,11 @@ else if(educationGovernanceQuestion){
  else if(hayomYomHouseholdInfluenceQuestion){
   const household=index.filter(e=>e&&e.has_content_evidence===true&&e.source_class==='Hayom Yom'&&arr(e.response_propositions).some(supportsHayomYomHouseholdStudyProposition)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsHayomYomHouseholdStudyProposition)}));
   const influence=index.filter(e=>e&&e.has_content_evidence===true&&e.source_class==='Hayom Yom'&&arr(e.response_propositions).some(supportsHayomYomIndividualInfluenceProposition)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsHayomYomIndividualInfluenceProposition)}));
-  const chosen=[...household.slice(0,1),...influence.slice(0,1)],families=new Set(chosen.map(familyKey).filter(Boolean));
+  const preferredInfluenceAids=['3317931','528897'];
+  const preferredInfluence=preferredInfluenceAids.map(aid=>influence.find(e=>sourceAIDValue(e)===aid)).filter(Boolean);
+  const influenceByFamily=new Map();
+  for(const e of [...preferredInfluence,...influence]){const k=familyKey(e);if(k&&!influenceByFamily.has(k))influenceByFamily.set(k,e);}
+  const chosen=[...household.slice(0,1),...[...influenceByFamily.values()].slice(0,2)],families=new Set(chosen.map(familyKey).filter(Boolean));
   if(chosen.length<2||families.size<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_household_influence_families',claims:[],sources:chosen,answered_well:[],insufficient_evidence:['לא נמצאו שני ערכי היום יום נפרדים עם תוכן שנבדק.']};
   answerEvidence=chosen;
  }
