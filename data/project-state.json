@@ -163,12 +163,12 @@
         "batch_file": "data/items/content-research-batch-141-2026-11-17.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1432,
+          "answer_eligible_unique_sources": 1435,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3727
         },
         "metrics_expected_after": {
-          "answer_eligible_unique_sources": 1443,
+          "answer_eligible_unique_sources": 1446,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3742
         },
@@ -181,7 +181,12 @@
         "answer_eligible_source_families_added": 11,
         "content_verified_unique_sources_added": 0,
         "independent_witnesses_added": 10,
-        "non_independent_presentations_added": 1
+        "non_independent_presentations_added": 1,
+        "metrics_delta_at_batch_boundary": {
+          "answer_eligible_unique_sources": 11,
+          "content_verified_unique_sources": 0,
+          "answer_eligible_propositions": 15
+        }
       },
       "status": "pending_reconciliation"
     },
@@ -297,17 +302,22 @@
       "full_text_copied": false,
       "translations_counted_as_independent_witnesses": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1432,
+        "answer_eligible_unique_sources": 1435,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3727
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1443,
+        "answer_eligible_unique_sources": 1446,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3742
       },
       "metrics_actual_after": null,
-      "note": "נבדקו 11 גופי מקור חדשים: עשרה תמלילי/רישומי דברים בעברית וקטע מכתב באנגלית ששפת המקור שלו לא הוכחה. נוספו 15 פרפרזות לא-מילוליות; AID 5071052 הועשרה בהערת provenance לא-פתורה. AID 4666220 נחסם ונעשה fallback באותה הפעלה. אין קידום ל-Verified."
+      "note": "נבדקו 11 גופי מקור חדשים: עשרה תמלילי/רישומי דברים בעברית וקטע מכתב באנגלית ששפת המקור שלו לא הוכחה. נוספו 15 פרפרזות לא-מילוליות; AID 5071052 הועשרה בהערת provenance לא-פתורה. AID 4666220 נחסם ונעשה fallback באותה הפעלה. אין קידום ל-Verified.",
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 11,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 15
+      }
     },
     "last_run_note": "Batch 141: 11 new source bodies inspected (10 Hebrew unedited talk/record texts and one English letter excerpt whose original-language status is unknown); 15 source-grounded non-verbatim propositions; one existing AID 5071052 provenance note enriched. AID 4666220 returned Internal Error; eleven accessible bodies were used as same-run fallback. Reconciliation and readiness retest pending.",
     "last_batch_blocked_count": 1,

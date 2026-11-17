@@ -69,19 +69,19 @@
     "Written responses": 1
   },
   "metrics_before": {
-    "answer_eligible_unique_sources": 1432,
+    "answer_eligible_unique_sources": 1435,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3727
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1443,
+    "answer_eligible_unique_sources": 1446,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3742
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
-  "metrics_note": "1432 / 854 / 3727 הוא snapshot אבחוני של reconciliation workspace לאחר batch 140, לא public-metrics committed. מדדי before/after סופיים ייקבעו רק ב-reconciliation.",
+  "metrics_note": "שרשרת הגבולות ממשיכה את batch 140: expected boundary 1435 / 854 / 3727 אל 1446 / 854 / 3742. snapshot אבחוני של reconciliation workspace לאחר batch 140 מדד 1432 / 854 / 3727, כלומר פער צפוי של ‎-3 במקורות; ה-actual_before/after וה-variance ייקבעו ב-reconciliation המלא.",
   "deduplication_check": {
     "full_index_scan_available": true,
     "full_index_scan_pending_reconciliation": true,
@@ -1427,5 +1427,10 @@
       "content_enrichment_batch_id": "141",
       "last_content_enriched_at": "2026-11-17"
     }
-  ]
+  ],
+  "metrics_delta_at_batch_boundary": {
+    "answer_eligible_unique_sources": 11,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 15
+  }
 }
