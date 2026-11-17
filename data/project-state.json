@@ -76,7 +76,12 @@
     "Batch 143: AID 4666220 and AID 4831188 returned Internal Error through the public reader; no retry or bypass. Twelve accessible Hebrew item bodies and one existing identity were used as same-run fallback.",
     "Reconciliation run 507 measured 1450 / 854 / 3751 in its workspace but stopped before commit: test_question_specificity_gate.mjs exposed a temporal-dead-zone ReferenceError for wellspringsDisseminationQuestion. The snapshot is diagnostic only; public metrics remain unchanged."
   ],
-  "next_work": "Run canonical reconciliation through batch 142; inspect AID/URL/ID and Evidence Family collisions; refresh public metrics and review queue; run test_content_readiness.mjs in regular and researcher modes; inspect Actions and Pages. Keep all new identities Parsed and do not promote to Verified.",
+  "next_work": [
+    "Run canonical reconciliation through batch 144 and inspect full AID/URL/Evidence Family collisions.",
+    "Commit measured public metrics and project state only after reconciliation.",
+    "Run test_content_readiness.mjs, including regular and deep-research active-farbrengen synthesis.",
+    "Inspect Answer Quality Gate, hourly maintenance and Pages deployment runs; verify the public site."
+  ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation",
@@ -103,14 +108,14 @@
       "actual_after": null,
       "reconciliation_status": "pending_reconciliation",
       "before": {
-        "answer_eligible_unique_sources": 1051,
+        "answer_eligible_unique_sources": 1450,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3111
+        "answer_eligible_propositions": 3751
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1446,
+        "answer_eligible_unique_sources": 1477,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3742
+        "answer_eligible_propositions": 3797
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -159,36 +164,41 @@
         "140",
         "141",
         "142",
-        "143"
+        "143",
+        "144"
       ],
-      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
+      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement.",
       "summary": {
-        "batch_id": "143",
-        "batch_file": "data/items/content-research-batch-143-2026-11-17.json",
+        "batch_id": "144",
+        "batch_file": "data/items/content-research-batch-144-2026-11-17.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1450,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3751
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1462,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3776
         },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1477,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3797
+        },
         "metrics_actual_after": null,
-        "new_source_identities": 12,
-        "existing_identities_enriched": 1,
-        "source_bodies_inspected": 13,
-        "new_response_propositions": 23,
+        "new_source_identities": 13,
+        "existing_identities_enriched": 2,
+        "source_bodies_inspected": 15,
+        "new_response_propositions": 19,
         "existing_response_propositions_added": 2,
-        "total_new_paraphrase_entries": 25,
-        "answer_eligible_source_families_added": 12,
+        "total_new_paraphrase_entries": 21,
+        "answer_eligible_source_families_added": 15,
+        "independent_witnesses_added": 12,
+        "non_independent_presentations_added": 1,
         "content_verified_unique_sources_added": 0,
+        "blocked_candidate_count": 0,
+        "recovered_candidate_count": 1,
         "metrics_delta_at_batch_boundary": {
-          "answer_eligible_unique_sources": 12,
+          "answer_eligible_unique_sources": 15,
           "content_verified_unique_sources": 0,
-          "answer_eligible_propositions": 25
+          "answer_eligible_propositions": 21
         },
         "reconciliation_status": "pending_reconciliation"
       },
@@ -197,25 +207,26 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "Answer quality gate run 44107524723 failed at test_question_specificity_gate.mjs with ReferenceError: Cannot access 'wellspringsDisseminationQuestion' before initialization. The variable was declared below the early-return guard; batch 143 moves it before that guard. A commit-bound rerun is required.",
+      "run_status": "No new Actions run ID or combined status checks were returned for the batch-144 commits. The prior saved state records a failed Answer Quality Gate run 44107524723 at test_question_specificity_gate.mjs; batch 143 moved the wells- springs variable before the early-return guard, and batch 144 adds active-farbrengen synthesis and readiness tests. Current test execution is not verified.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
       "workflow_run_id": 44107524723,
-      "note": "AID 4666220 remains inaccessible through the public reader; no crawler retry or bypass. Batch 141 adds a Hebrew original-language Sicha source to the wellsprings/inner-Torah synthesis and tests regular and researcher modes with claim-level citations.",
+      "note": "Commit-triggered workflows are configured for source items, answer engine and readiness tests. No success is claimed until a new run ID and saved report are visible.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
-      "status": "pending_retest_after_batch_143",
+      "status": "pending_retest_after_batch_144",
       "last_failed_run_id": 44107524723,
       "last_failure": "src/answer-engine.js:1713 — ReferenceError: Cannot access 'wellspringsDisseminationQuestion' before initialization in buildAnswerModel; triggered by scripts/test_question_specificity_gate.mjs."
     },
     "publication": {
-      "status": "pending_deploy_after_batch_143",
+      "status": "pending_deploy_after_batch_144",
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
-      "last_deployed_commit": "312745ef33bfc3cc453b8b03238cd8d3e8aa9a3b"
+      "last_deployed_commit": "312745ef33bfc3cc453b8b03238cd8d3e8aa9a3b",
+      "note": "No post-batch-144 deployment run ID or public page verification is available yet."
     },
     "last_reconciled_at": "2026-11-15",
     "last_generated_index_snapshot": {
@@ -262,183 +273,64 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "143",
+    "current_batch": "144",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "136",
     "last_batch_summary": {
-      "batch_id": "143",
-      "batch_file": "data/items/content-research-batch-143-2026-11-17.json",
+      "batch_id": "144",
+      "batch_file": "data/items/content-research-batch-144-2026-11-17.json",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_at": "2026-11-17T16:57:52+02:00",
+      "reviewed_at": "2026-11-17T18:27:48+02:00",
       "reviewed_item_count": 15,
-      "source_bodies_inspected": 13,
-      "source_body_pages_opened": 15,
-      "new_source_identities": 12,
-      "existing_identities_enriched": 1,
+      "source_bodies_inspected": 15,
+      "source_body_pages_opened": 16,
+      "new_source_identities": 13,
+      "existing_identities_enriched": 2,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 23,
+      "new_response_propositions": 19,
       "existing_response_propositions_added": 2,
-      "total_new_paraphrase_entries": 25,
-      "answer_eligible_source_families_added": 12,
+      "total_new_paraphrase_entries": 21,
+      "answer_eligible_source_families_added": 15,
       "independent_witnesses_added": 12,
-      "non_independent_presentations_added": 0,
+      "non_independent_presentations_added": 1,
       "content_verified_unique_sources_added": 0,
       "new_aids": [
-        4296226,
-        2989338,
-        3140238,
-        4296171,
-        4296205,
-        4279890,
-        4279847,
-        4279837,
-        4279853,
-        4279839,
-        4279900,
-        4279877
+        4280036,
+        4280068,
+        4280139,
+        4385646,
+        5959941,
+        5959973,
+        4280027,
+        4304431,
+        4304427,
+        4304341,
+        4304436,
+        2989328,
+        259799
       ],
       "enriched_aids": [
-        2988877
+        5478256,
+        2301532
       ],
-      "blocked_candidate_count": 2,
-      "blocked_candidates": [
-        {
-          "aid": 4666220,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-          "web_source_ref": "turn372695view0",
-          "status": "Internal Error / inaccessible via public web reader",
-          "reason": "לא הוחזר גוף פרסום קריא.",
-          "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נבדקו שנים-עשר גופי פרסום עבריים חלופיים נגישים ועוד זהות קיימת להעשרה."
-        },
-        {
-          "aid": 4831188,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4831188",
-          "web_source_ref": "turn372695view1",
-          "status": "Internal Error / inaccessible via public web reader",
-          "reason": "לא הוחזר גוף פרסום קריא.",
-          "handling": "לא בוצע ניסיון crawler ולא נעקפה בקרת גישה. נעשה fallback לשנים-עשר גופי פרסום עבריים אחרים; AID 2988877 נפתח בנפרד לצורך העשרה in-place."
-        }
-      ],
+      "blocked_candidate_count": 0,
+      "recovered_candidate_count": 1,
       "crawler_retry": false,
       "access_control_bypassed": false,
       "full_text_copied": false,
-      "scan_only_verification_used": false,
       "translations_counted_as_independent_witnesses": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1450,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3751
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1462,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3776
       },
-      "metrics_actual_before": {
-        "answer_eligible_unique_sources": 1450,
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1477,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3751
+        "answer_eligible_propositions": 3797
       },
-      "metrics_actual_after": null,
-      "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 12,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 25
-      },
-      "public_metrics_snapshot_before": {
-        "generated": "2026-11-15",
-        "answer_eligible_unique_sources": 977,
-        "content_verified_unique_sources": 878,
-        "answer_eligible_propositions": 2950
-      },
-      "project_state_snapshot_before": {
-        "answer_eligible_unique_sources": 977,
-        "content_verified_unique_sources": 870,
-        "answer_eligible_propositions": 2950
-      },
-      "note": "נבדקו שנים-עשר גופי מקור עבריים חדשים: ארבע שיחות, יחידות אחת ושבעה מכתבים; נוספו 23 פרפרזות לא-מילוליות. זהות קיימת אחת, AID 2988877, הועשרה בשתי פרופוזיציות נוספות; סך התוספות 25. AID 4666220 ו-AID 4831188 החזירו Internal Error; לא בוצע crawler retry או bypass, ובאותה הפעלה נעשה fallback לשנים-עשר גופים נגישים ולהעשרה in-place. כל 12 הזהויות החדשות נשארו Parsed; אין קידום ל-Verified.",
-      "deduplication_check": {
-        "full_index_scan_available": false,
-        "full_index_scan_pending_reconciliation": true,
-        "index_generated": "2026-11-15",
-        "index_entry_count": 9122,
-        "checked_aids": [
-          4296226,
-          2989338,
-          3140238,
-          4296171,
-          4296205,
-          4279890,
-          4279847,
-          4279837,
-          4279853,
-          4279839,
-          4279900,
-          4279877
-        ],
-        "canonical_identity_collisions": null,
-        "missing_canonical_identities": null,
-        "new_aids_unique": true,
-        "source_urls_unique": true,
-        "evidence_family_ids_unique": true,
-        "recent_batches_checked": [
-          "055–142 (84 content-research batch files inspected)"
-        ],
-        "review_queue_records": 1022,
-        "review_queue_matches": 0,
-        "filename_matches": 0,
-        "code_search_matches": 0,
-        "bulk_indexed_files_checked": 12,
-        "bulk_indexed_matches": 0,
-        "all_target_identities_answer_eligible": null,
-        "post_addition_canonical_scan_pending": true,
-        "note": "בוצעה בדיקת מזהי AID מול 84 קובצי content-research-batch (055–142), 12 קובצי bulk-indexed ותור ביקורת בן 1,022 רשומות; לא נמצאו התאמות. קובץ public-search-index המלא גדול מכדי להיקרא בכלי זה; סריקה קנונית מלאה ואישור כשירות ממתינים ל-reconciliation."
-      },
-      "fallback_source_attempted": true,
-      "fallback_source_results": {
-        "publisher": "BeitChabad.com / Chabad.org",
-        "accessible_item_level_bodies": 12,
-        "existing_identity_bodies": 1,
-        "body_text_inspected": true,
-        "inspected_aids": [
-          4296226,
-          2989338,
-          3140238,
-          4296171,
-          4296205,
-          4279890,
-          4279847,
-          4279837,
-          4279853,
-          4279839,
-          4279900,
-          4279877
-        ],
-        "existing_identity_aids": [
-          2988877
-        ],
-        "blocked_direct_routes": [
-          4666220,
-          4831188
-        ],
-        "translations_counted_as_independent_witnesses": 0,
-        "note": "לאחר ששני נתיבי פרסום החזירו Internal Error, נעשה fallback לשנים-עשר גופי פרסום עבריים נגישים ולהעשרה של זהות עברית קיימת; כל המקורות החדשים הם טקסטים בעברית, לא תרגומים."
-      },
-      "language_distribution": {
-        "Hebrew": 13
-      },
-      "original_language_distribution": {
-        "Hebrew": 13
-      },
-      "proposition_language_distribution": {
-        "Hebrew": 25
-      },
-      "source_type_distribution": {
-        "Sichos": 4,
-        "Yechidus": 1,
-        "Written responses": 7
-      }
+      "metrics_actual_after": null
     },
     "last_run_note": "נבדקו שנים-עשר גופי מקור עבריים חדשים: ארבע שיחות, יחידות אחת ושבעה מכתבים; נוספו 23 פרפרזות לא-מילוליות. זהות קיימת אחת, AID 2988877, הועשרה בשתי פרופוזיציות נוספות; סך התוספות 25. AID 4666220 ו-AID 4831188 החזירו Internal Error; לא בוצע crawler retry או bypass, ובאותה הפעלה נעשה fallback לשנים-עשר גופים נגישים ולהעשרה in-place. כל 12 הזהויות החדשות נשארו Parsed; אין קידום ל-Verified.",
     "last_batch_blocked_count": 2,
@@ -1429,8 +1321,8 @@
       "140"
     ]
   },
-  "current_batch": "142",
-  "updated_at": "2026-11-17T16:27:55+02:00",
-  "current_batch_file": "data/items/content-research-batch-142-2026-11-17.json",
+  "current_batch": "144",
+  "updated_at": "2026-11-17T18:27:48+02:00",
+  "current_batch_file": "data/items/content-research-batch-144-2026-11-17.json",
   "status": "pending_reconciliation"
 }
