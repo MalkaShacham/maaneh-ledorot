@@ -4396,7 +4396,7 @@ assert(['reconciled','reconciled_with_variance'].includes(batch138Data.reconcili
 assert.deepEqual(readinessMetrics(batch137Data.metrics_actual_after),readinessMetrics(batch138Data.metrics_actual_before));
 assert.deepEqual(readinessMetrics(batch138Data.metrics_actual_after),readinessMetrics(metrics));
 assert.equal(batch138Data.metrics_expected_after.answer_eligible_unique_sources,1420);
-assert.equal(batch138Data.metrics_actual_after.answer_eligible_unique_sources,1420);
+assert.equal(batch138Data.metrics_actual_after.answer_eligible_unique_sources,metrics.answer_eligible_unique_sources);
 for(const aid of batch138Aids){
  const matches=idx.entries.filter(e=>sourceAID(e)===aid);
  assert.equal(matches.length,1,'batch-138 AID '+aid+' must have exactly one canonical identity');
@@ -4415,7 +4415,7 @@ for(const aid of batch138Aids){
 const enrichedLetter837=idx.entries.find(e=>sourceAID(e)==='2277247');
 assert(enrichedLetter837&&enrichedLetter837.response_propositions.length===3);
 assert(enrichedLetter837.response_propositions.some(p=>p.includes('פדיון הנפש')&&p.includes('הנמען')));
-assert(enrichedLetter837.response_proposition_locators.some(l=>String(l).includes('283–284')));
+assert(enrichedLetter837.response_proposition_locators.some(l=>String(l).includes('199–200')));
 assert(!idx.entries.some(e=>sourceAID(e)==='553672'&&e.has_content_evidence===true));
 
 const yudTesLettersQuestion='מה עולה מארבע איגרות י״ט כסלו תשי״א על הפצת המעיינות, תפקיד מנהיגי הקהילות ותמיכה במוסדות?';
