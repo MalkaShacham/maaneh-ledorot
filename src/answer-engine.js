@@ -1646,7 +1646,7 @@ function buildActiveFarbrengenSynthesis(selected){
  };
  const active=rows.filter(r=>r.props.some(p=>/(?:פעיל|פעילות|שמחה)/.test(norm(p.text))));
  const yearRound=rows.filter(r=>r.props.some(p=>/(?:להמשיכ|כל השנה|throughout the year)/.test(norm(p.text))));
- const content=rows.filter(r=>r.props.some(p=>/(?:לימוד החסידות|הפצת המעיינות|אוצרות טובים)/.test(norm(p.text))));
+ const content=rows.filter(r=>r.props.some(p=>/(?:לימוד החסידות|הפצת המעיינות|אוצרות.{0,6}טובים)/.test(norm(p.text))));
  const claims=[
   claim('active_gathering','במדגם המברקים שנבדק חוזרת קריאה להתוועדות פעילה או שמחה לקראת מועדים חסידיים שונים; זהו דפוס במדגם ולא כלל לכל המברקים.',active),
   claim('year_round_continuity','רק המברק לקראת י״ב–י״ג תמוז תשכ״ו מנסח במפורש המשכיות של ההתוועדויות לאורך השנה כולה.',yearRound),
