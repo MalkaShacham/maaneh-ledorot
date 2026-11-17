@@ -256,13 +256,15 @@
   "blocked_candidate_count": 1,
   "blocked_candidates": [
     {
-      "aid": 4754257,
+      "aid": null,
       "source_url": "https://he.chabad.org/4754257",
       "route": "publisher Hebrew-language link from AID 2277145",
       "web_source_ref": "turn125219view0",
       "status": "404_not_found",
-      "reason": "הקישור העברי של המו״ל החזיר 404; לא התקבל גוף מקור קריא ולא הוסק ממנו תוכן.",
-      "handling": "לא נעשה retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 12 גופי איגרות באנגלית ממקור המו״ל ונבדקה גם זהות תרגום קיימת."
+      "reason": "הקישור העברי של המו״ל בנתיב /4754257 החזיר 404; לא התקבל גוף מקור קריא ולא הוסק ממנו תוכן.",
+      "handling": "לא נעשה retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 12 גופי איגרות באנגלית ממקור המו״ל ונבדקה גם זהות תרגום קיימת.",
+      "route_id": "4754257",
+      "route_label": "Hebrew-language publisher mirror route"
     }
   ],
   "excluded_candidate_count": 0,
@@ -353,7 +355,7 @@
       "reason": "העשרה in-place של תרגום קיים; אותה Evidence Family של הזהות הביבליוגרפית בעברית, ללא עד עצמאי נוסף."
     }
   ],
-  "note": "נבדקו 12 גופי איגרות באנגלית מ-Chabad.org/TheRebbe.org; נוספו 22 פרפרזות לא-מילוליות. AID 4096303 הועשרה in-place בפרופוזיציה אחת. הנתיב העברי AID 4754257 החזיר 404; באותה הפעלה נעשה fallback לגופי המו״ל באנגלית. כל 12 האיגרות הן תרגומים נגזרים, נשארות Parsed ובהקשר חלקי; אפס קידומים ל-Verified.",
+  "note": "נבדקו 12 גופי איגרות באנגלית מ-Chabad.org/TheRebbe.org; נוספו 22 פרפרזות לא-מילוליות. AID 4096303 הועשרה in-place בפרופוזיציה אחת. הנתיב העברי נתיב עברי /4754257 החזיר 404; באותה הפעלה נעשה fallback לגופי המו״ל באנגלית. כל 12 האיגרות הן תרגומים נגזרים, נשארות Parsed ובהקשר חלקי; אפס קידומים ל-Verified.",
   "records": [
     {
       "id": "sichos-in-english-letter-793-aid2277145",

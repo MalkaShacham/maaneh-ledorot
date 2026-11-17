@@ -269,9 +269,9 @@
       "blocked_candidate_count": 1,
       "excluded_candidate_count": 0
     },
-    "last_run_note": "Batch 136: נבדקו 12 גופי איגרות באנגלית AID 2277145, 2277156, 2277138, 2277150, 2277146, 2277155, 2277159, 2277176, 2277168, 2277130, 2277169 ו-2277148; נוספו 22 פרפרזות. AID 4096303 הועשרה in-place בפרופוזיציה אחת. הנתיב העברי AID 4754257 החזיר 404; באותה הפעלה נבדקו 12 גופי מו״ל באנגלית. תיקון reconciliation: AID 2279298 הוסר כרשומה כפולה מבאצ׳ 135 ושלוש הפרופוזיציות שלו מוזגו בזהות הקיימת בבאצ׳ 107. כל המקורות החדשים Parsed, תרגומים לא-עצמאיים, אפס קידומים ל-Verified.",
+    "last_run_note": "Batch 136: נבדקו 12 גופי איגרות באנגלית AID 2277145, 2277156, 2277138, 2277150, 2277146, 2277155, 2277159, 2277176, 2277168, 2277130, 2277169 ו-2277148; נוספו 22 פרפרזות. AID 4096303 הועשרה in-place בפרופוזיציה אחת. הנתיב העברי נתיב עברי /4754257 החזיר 404; באותה הפעלה נבדקו 12 גופי מו״ל באנגלית. תיקון reconciliation: AID 2279298 הוסר כרשומה כפולה מבאצ׳ 135 ושלוש הפרופוזיציות שלו מוזגו בזהות הקיימת בבאצ׳ 107. כל המקורות החדשים Parsed, תרגומים לא-עצמאיים, אפס קידומים ל-Verified.",
     "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "קישור עברי AID 4754257 החזיר 404; לא נוצרה ממנו זהות. באותה הפעלה נבדקו 12 גופי איגרות באנגלית והועשרה זהות קיימת.",
+    "last_batch_blocked_reason": "קישור עברי נתיב עברי /4754257 החזיר 404; לא נוצרה ממנו זהות. באותה הפעלה נבדקו 12 גופי איגרות באנגלית והועשרה זהות קיימת.",
     "next_work": "Run full canonical reconciliation for pending batches 126–136; verify that AID 2279298 exists once in batch 107 and AID 4096303 remains in its original Evidence Family; refresh public metrics and review queue; run test_content_readiness.mjs and the answer-quality/hourly gates; inspect the Pages deployment. Keep all translated letters non-independent and all new sources Parsed. Do not change the hourly schedule, audience or permissions.",
     "last_reconciliation": {
       "batch_id": "089",
@@ -753,7 +753,7 @@
       "AID 528698: public reader returned Internal Error on 2026-11-16; no body inspected and no bypass attempted.",
       "Full reconciliation and test_content_readiness.mjs retest pending after batch 131; last failed quality gate omitted Living Torah synopsis AID 318996, now addressed by query-specific three-category retrieval.",
       "AID 553672 and legacy routes 5913–5914 were not accessible via public web open; no content inferred and no crawler retry.",
-      "AID 4754257 Hebrew publisher route returned 404 on 2026-11-17; English item-level fallback AID 2277145 and eleven additional letter bodies were inspected."
+      "נתיב עברי /4754257 Hebrew publisher route returned 404 on 2026-11-17; English item-level fallback AID 2277145 and eleven additional letter bodies were inspected."
     ],
     "pending_reconciliation_batches": [
       "099",
@@ -1054,13 +1054,15 @@
       "blocked_candidate_count": 1,
       "blocked_candidates": [
         {
-          "aid": 4754257,
+          "aid": null,
           "source_url": "https://he.chabad.org/4754257",
           "route": "publisher Hebrew-language link from AID 2277145",
           "web_source_ref": "turn125219view0",
           "status": "404_not_found",
           "reason": "הקישור העברי של המו״ל החזיר 404; לא התקבל גוף מקור קריא ולא הוסק ממנו תוכן.",
-          "handling": "לא נעשה retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 12 גופי איגרות באנגלית ממקור המו״ל ונבדקה גם זהות תרגום קיימת."
+          "handling": "לא נעשה retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 12 גופי איגרות באנגלית ממקור המו״ל ונבדקה גם זהות תרגום קיימת.",
+          "route_id": "4754257",
+          "route_label": "Hebrew-language publisher mirror route"
         }
       ],
       "excluded_candidate_count": 0,
