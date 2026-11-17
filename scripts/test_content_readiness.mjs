@@ -4615,6 +4615,7 @@ for(const mode of ['regular','researcher']){
  assert.equal(m.synthesis?.topic,'active_farbrengen_messages');
  assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
  assert(m.sources.length>=2);
+ assert(!m.sources.some(e=>sourceAID(e)==='259799'),'translated Yiddish presentation must not be counted as an independent farbrengen witness');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);
  assert(m.claims.length>=2);
  assert(m.claims.every(c=>c.source_numbers.length>0&&c.source_locators.length>0));
@@ -4628,6 +4629,7 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_families>=2);
   assert(m.research.independent_evidence_families>=2);
   assert(m.research.evidence_integrity.independent_witnesses>=2);
+  assert.equal(m.research.evidence_integrity.derived_non_independent,0);
   assert(m.research.evidence_map.length===m.claims.length);
   assert(m.research.claim_source_map.every(c=>c.source_locators.length>0));
   assert(m.research.witnesses.every(w=>w.proposition_locators.length>0));
