@@ -105,9 +105,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1375,
+        "answer_eligible_unique_sources": 1386,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3588
+        "answer_eligible_propositions": 3617
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -147,27 +147,32 @@
         "131",
         "132",
         "133",
-        "134"
+        "134",
+        "135"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "134",
-        "batch_file": "data/items/content-research-batch-134-2026-11-17.json",
+        "batch_id": "135",
+        "batch_file": "data/items/content-research-batch-135-2026-11-17.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1365,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3567
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1375,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3588
         },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1386,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3617
+        },
         "new_source_identities": 10,
         "existing_identities_enriched": 1,
-        "new_response_propositions": 20,
-        "existing_response_propositions_added": 1
+        "source_bodies_inspected": 11,
+        "new_response_propositions": 26,
+        "existing_response_propositions_added": 3,
+        "total_new_paraphrase_entries": 29,
+        "answer_eligible_source_families_added": 11,
+        "content_verified_unique_sources_added": 0
       },
       "status": "pending_reconciliation"
     },
@@ -184,12 +189,12 @@
       "note": "AID 5019603 remains non-independent and its uninspected photograph is explicitly disclosed. The new validator requires two distinct Evidence Families, at least one independent family, two claim-level cited claims, and the exact publisher-text-not-independent witness status. No source is promoted to Verified.",
       "bulk_reconcile_run_id": 43967095108,
       "hourly_run_id": null,
-      "status": "pending_retest_after_batch_133",
+      "status": "pending_retest_after_batch_135",
       "last_failed_run_id": 43983157479,
-      "last_failure": "test_content_readiness.mjs: stale last_batch_summary assertion expected batch 130 while project-state already recorded batch 131; assertion and batch-132 coverage are being corrected."
+      "last_failure": null
     },
     "publication": {
-      "status": "pending_deploy_after_batch_133",
+      "status": "pending_deploy_after_batch_135",
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
       "last_deployed_commit": "c49df2b516c391c77235b48beb5d0e1108d441a0"
@@ -230,22 +235,22 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "133",
+    "current_batch": "135",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "114",
+    "last_completed_batch": "135",
     "last_batch_summary": {
-      "batch_id": "134",
-      "batch_file": "data/items/content-research-batch-134-2026-11-17.json",
+      "batch_id": "135",
+      "batch_file": "data/items/content-research-batch-135-2026-11-17.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1365,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3567
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1375,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3588
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1386,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3617
       },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
@@ -253,15 +258,20 @@
       "new_source_identities": 10,
       "existing_identities_enriched": 1,
       "source_bodies_inspected": 11,
-      "new_response_propositions": 20,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 21,
-      "content_verified_unique_sources_added": 0
+      "new_response_propositions": 26,
+      "existing_response_propositions_added": 3,
+      "total_new_paraphrase_entries": 29,
+      "answer_eligible_source_families_added": 11,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 11,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidate_count": 15,
+      "excluded_candidate_count": 10
     },
-    "last_run_note": "Batch 133: נבדקו 18 גופי היום יום AID 528923–528940, מכתב אנגלי מלא AID 6427690 ושיחה קיימת AID 2989153. נוספו 19 זהויות ו-26 פרפרזות; AID 2989153 הועשרה בפרופוזיציה אחת. AID 4666220 החזיר Internal Error; AID 528922 הוחרג כעמוד ניווט. אפס קידומים ל-Verified; reconciliation ובדיקת readiness ממתינים.",
-    "last_batch_blocked_count": 2,
-    "last_batch_blocked_reason": "בהפעלה זו: עמוד תרגום אנגלי של AID 528913 החזיר Internal Error; עמוד Education Day AID 816546 אותר בחיפוש אך פתיחת גוף העמוד החזירה Internal Error. AID 5071116 ו-5071138 לא נבדקו בהפעלה זו. במקום הנתיבים החסומים נבדקו 16 מקורות חלופיים, כולל מכתב אנגלי מקורי AID 1924127.",
-    "next_work": "Reconcile pending batches 099–133 against the full canonical index; verify collisions and answer eligibility; run test_content_readiness.mjs and answer-quality gates; inspect Actions and Pages.",
+    "last_run_note": "Batch 135: נבדקו עשרה גופי איגרות אנגליים נגישים AID 4422946, 2281917, 2277173, 5920891, 2277247, 5920893, 2279298, 2281851, 2277371 ו-2281922; נוספו 26 פרפרזות. תרגום קיים AID 4096303 הועשר in-place בשלוש פרופוזיציות, ונשאר לא-עצמאי באותה Evidence Family של זהות ביבליוגרפית עברית. 15 הפניות עבריות AID 528941–528955 החזירו Internal Error; עשרה עמודים AID 4646121, 4646123, 4646126–4646130, 4666265, 4666267, 4666268 הציגו מעטפת ללא גוף והוחרגו. לא הופעל crawler retry ולא נעשתה עקיפת גישה. אפס קידומים ל-Verified; reconciliation ובדיקות מלאות ממתינים.",
+    "last_batch_blocked_count": 15,
+    "last_batch_blocked_reason": "15 עמודים עבריים AID 528941–528955 החזירו Internal Error; עשרה עמודים נוספים הציגו מעטפת/תקציר ללא גוף. באותה הפעלה נפתחו עשרה גופי איגרות אנגליים מלאים והועשרה זהות תרגום קיימת AID 4096303.",
+    "next_work": "Run full canonical reconciliation for pending batches 099–135, verify all AID/URL/Evidence Family collisions, refresh public metrics and the review queue, then run test_content_readiness.mjs and the answer-quality/hourly gates. Inspect the resulting Pages deployment; do not promote translations to independent witnesses or any source to Verified.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -1140,6 +1150,6 @@
     "current_batch_file": "data/items/content-research-batch-132-2026-11-17.json",
     "status": "pending_reconciliation"
   },
-  "current_batch": "133",
+  "current_batch": "135",
   "updated_at": "2026-11-17T05:01:42+02:00"
 }
