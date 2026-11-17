@@ -1131,3 +1131,10 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - The Answer Quality Gate and Hourly Corpus Maintenance runs on commit 90c9bca failed at test_content_readiness.mjs line 2102: reconcile_metrics.py emitted witness_provenance but dropped the structured provenance object from search-index entries. The index builder now preserves provenance; regression tests cover the batch-088 contract and the new translation-only corpus.
 - Added a bounded researcher-mode case comparison for four distinct North Africa education letters (AIDs 2277921, 2277937, 2277942 and 2277945). Five claim-level records retain one source locator each. The synthesis is explicitly system-authored, not attributed to the Rebbe; all four witnesses are published translations, so deep mode reports four derived non-independent presentations and zero independent witnesses.
 - Expected boundary only: 1,365 / 854 / 3,567 before; 1,375 / 854 / 3,588 after. Full-index reconciliation and the resulting actual public metric remain pending until the workflow commits its measured result. No source was promoted to Verified, and no schedule, audience or permissions were changed.
+
+
+### 2026-11-17 — North Africa researcher-synthesis validation refinement
+
+- The first commit added the four-letter case comparison and claim-level locators, but the generic synthesis-integrity validator still required two independent witness families. That rule would incorrectly reject a deliberately translation-only case comparison.
+- Added an explicit topic-scoped validation contract for north_africa_education_mission: four distinct letter Evidence Families, zero independent witnesses, five single-source claims, exact proposition entailment, one locator per claim, and explicit translation/implementation limitations. The generic rule for all other topics is unchanged.
+- Bumped the browser module cache version so the public site loads the updated validator.
