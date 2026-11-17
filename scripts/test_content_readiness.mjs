@@ -127,7 +127,7 @@ for(const aid of batch085Aids){
  assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
  assert(e.response_proposition_locators.every(Boolean));
  assert.equal(e.context_status,'partial');
- assert.equal(e.independent_witness,true);
+ assert.equal(e.independent_witness,aid==='2989411'?false:true);
  assert.equal(e.translation_of_evidence_family_id,null);
 }
 assert.equal(batch085Data.records.find(r=>String(r.aid)==='5100749').witness.complete_partial,'partial');
@@ -4501,6 +4501,12 @@ assert.equal(batch140Data.total_new_paraphrase_entries,11);
 assert.equal(batch140Data.source_bodies_inspected,10);
 assert.equal(batch140Data.records.reduce((n,r)=>n+r.response_propositions.length,0),6);
 assert.equal(batch140Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch140Data.independent_witnesses_added,2);
+assert.equal(batch140Data.non_independent_presentations_added,1);
+assert.equal(batch140Data.new_translation_manifestations,1);
+assert.equal(batch140Data.records.filter(r=>r.independent_witness===true).length,2);
+assert.equal(batch140Data.records.find(r=>String(r.aid)==='2989411').independent_witness,false);
+assert.equal(batch140Data.records.find(r=>String(r.aid)==='2989411').translation_of_evidence_family_id,batch140Data.records.find(r=>String(r.aid)==='2989411').evidence_family_id);
 assert.equal(batch140Data.content_verified_unique_sources_added,0);
 assert.deepEqual(readinessMetrics(batch140Data.metrics_before),readinessMetrics(batch139Data.metrics_expected_after));
 assert.deepEqual(readinessMetrics(batch140Data.metrics_expected_after),{answer_eligible_unique_sources:1435,content_verified_unique_sources:854,answer_eligible_propositions:3727});
