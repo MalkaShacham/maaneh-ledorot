@@ -1,729 +1,672 @@
 {
-  "started_at": "2026-11-17T21:01:19+02:00",
-  "attempted": 16,
+  "started_at": "2026-11-17T21:59:23+02:00",
+  "attempted": 19,
   "enriched": 1,
   "discovered": 8,
-  "blocked": 7,
+  "blocked": 10,
   "skipped": 0,
   "status": "pending_reconciliation",
   "manual_web_review": {
-    "batch_id": "146",
-    "batch_file": "data/items/content-research-batch-146-2026-11-17.json",
-    "reviewed_at": "2026-11-17T21:01:19+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
-    "reviewed_item_count": 16,
+    "batch_id": "147",
+    "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+    "reviewed_at": "2026-11-17T21:59:23+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 19,
     "source_bodies_inspected": 9,
     "source_body_pages_opened": 9,
     "new_source_identities": 8,
     "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 10,
+    "new_response_propositions": 8,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 7,
-    "source_languages": [
-      "Hebrew"
-    ],
-    "language_distribution": {
-      "Hebrew": 9
-    },
-    "original_language_distribution": {
-      "Hebrew": 9
-    },
-    "proposition_language_distribution": {
-      "Hebrew": 11
-    },
-    "source_types": [
-      "Sichos",
-      "Maamarim"
-    ],
-    "source_type_distribution": {
-      "Sichos": 8,
-      "Maamarim": 1
-    },
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 8,
+    "content_verified_unique_sources_added": 0,
+    "new_translation_manifestations": 8,
+    "translations_counted_as_independent_witnesses": 0,
     "new_aids": [
-      4304430,
-      4304429,
-      4304360,
-      4304438,
-      4304437,
-      4304414,
-      4304420,
-      4304396
+      2465321,
+      2487225,
+      2466894,
+      2499039,
+      2487556,
+      2487457,
+      2504381,
+      2499828
     ],
     "enriched_aids": [
       4304431
     ],
-    "blocked_candidate_count": 7,
+    "blocked_candidate_count": 10,
     "blocked_candidates": [
       {
-        "aid": 4304352,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304352",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313026,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313026",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304376,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304376",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313024,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313024",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304354,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304354",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313094,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313094",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4312986,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4312986",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313091,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4313130,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4313130",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312996,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312996",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304421,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304421",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312999,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312999",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304415,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304415",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312984,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312984",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4312992,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312992",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4312997,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312997",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4313127,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313127",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       }
     ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "translations_counted_as_independent_witnesses": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1489,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3810
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1496,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3821
-    },
-    "metrics_actual_after": null,
-    "reconciliation_status": "pending_reconciliation",
-    "deduplication_check": {
-      "full_index_scan_available": false,
-      "full_index_scan_pending_reconciliation": true,
-      "index_generated": "2026-11-15",
-      "index_entry_count": 9122,
-      "checked_aids": [
-        4304430,
-        4304429,
-        4304360,
-        4304438,
-        4304437,
-        4304414,
-        4304420,
-        4304396
-      ],
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "new_aids_unique": true,
-      "source_urls_unique": true,
-      "evidence_family_ids_unique": false,
-      "same_family_groups": [
-        {
-          "evidence_family_id": "farbrengen-5724-12-tammuz-yud-tes-event",
-          "aids": [
-            4304430,
-            4304429
-          ],
-          "reason": "Two distinct Hebrew texts from the same Yud-Tes Tammuz 5724 event; one sicha and one maamar. They remain separate item identities but one Evidence Family."
-        }
-      ],
-      "recent_batches_checked": [
-        "data/items/content-research-batch-144-2026-11-17.json (AID 4304431 already present and excluded)",
-        "data/items/content-research-batch-145-2026-11-17.json",
-        "data/content-review-queue.json (1,022 records)",
-        "exact-AID GitHub code search for the eight candidates"
-      ],
-      "recent_batch_records_checked": null,
-      "review_queue_records": 1022,
-      "review_queue_matches": 0,
-      "filename_matches": null,
-      "code_search_matches": 0,
-      "all_target_identities_answer_eligible": null,
-      "post_addition_canonical_scan_pending": true,
-      "note": "Partial duplicate check only: the 1,022-record review queue contains none of these eight AIDs; exact-AID code searches returned no matches; AID 4304431 was deliberately excluded because it is already in batch 144. The 17.6 MB public-search index and full canonical file scan were unavailable through the connector. The 4304429/4304430 pair is explicitly linked to one Evidence Family. Reconciliation must inspect all canonical AID/URL/Evidence Family collisions before counts are accepted."
-    },
-    "method": "Manual public web/search/open inspection of eight item-level Hebrew body passages on Chabad.org / BeitChabad.com. Seven blocked candidates returned HTTP 429 and were replaced in the same run. No runner crawler retry, no access-control bypass, and no full-text copying.",
-    "limitations": [
-      "All eight pages mark the published transcript/maamar בלתי מוגה; no recording, autograph, manuscript or original notes were inspected.",
-      "Only selected passages and line ranges are verified; full-discourse context remains partial.",
-      "AID 4304429 and AID 4304430 are distinct texts from the same event and are linked to one Evidence Family.",
-      "The full public-search index was not available for pre-commit collision scanning; canonical reconciliation remains mandatory.",
-      "AID 4304431 was enriched in place from a newly inspected section (AID 4304431, סעיף ד, שורות 209–217); its item identity and Evidence Family were preserved."
-    ]
-  },
-  "previous_manual_web_review": {
-    "batch_id": "145",
-    "batch_file": "data/items/content-research-batch-145-2026-11-17.json",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_at": "2026-11-17T20:26:26+02:00",
-    "reviewed_item_count": 14,
-    "source_bodies_inspected": 13,
-    "source_body_pages_opened": 14,
-    "new_source_identities": 12,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 12,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 13,
-    "answer_eligible_source_families_added": 12,
-    "independent_witnesses_added": 12,
-    "non_independent_presentations_added": 0,
-    "content_verified_unique_sources_added": 0,
-    "new_translation_manifestations": 12,
-    "new_aids": [
-      3315370,
-      3315386,
-      3315388,
-      3317931,
-      3317985,
-      3318010,
-      3318015,
-      3318017,
-      3318041,
-      3315396,
-      3315412,
-      3315415
+    "source_languages": [
+      "English"
     ],
-    "enriched_aids": [
-      528832
+    "language_distribution": {
+      "English": 8,
+      "Hebrew": 1
+    },
+    "original_language_distribution": {
+      "unknown": 8,
+      "Hebrew": 1
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 9
+    },
+    "source_types": [
+      "Yechidus",
+      "Sichos"
     ],
-    "blocked_candidate_count": 1,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-        "web_source_ref": "turn805695view0",
-        "status": "Internal Error / inaccessible via public web reader",
-        "reason": "הנתיב הישיר לא החזיר גוף פרסום קריא.",
-        "handling": "לא בוצע ניסיון crawler חוזר ולא נעקפו בקרות גישה. באותה הפעלה נעשה fallback לשנים-עשר עמודי Hayom Yom נגישים, ובהם נבדקו קטעים מקוריים בעברית וביידיש."
-      }
-    ],
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "translations_counted_as_independent_witnesses": 0,
+    "source_type_distribution": {
+      "Yechidus": 8,
+      "Sichos": 1
+    },
     "metrics_before": null,
     "metrics_expected_after": null,
-    "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 12,
+      "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 13
+      "answer_eligible_propositions": 9
     },
-    "public_metrics_snapshot_before": {
-      "generated": "2026-11-15",
-      "answer_eligible_unique_sources": 977,
-      "content_verified_unique_sources": 878,
-      "answer_eligible_propositions": 2950
-    },
-    "project_state_snapshot_before": {
-      "answer_eligible_unique_sources": 977,
-      "content_verified_unique_sources": 870,
-      "answer_eligible_propositions": 2950
-    },
-    "note": "נבדקו 12 גופי פרסום דו-לשוניים חדשים ונוצרו 12 פרפרזות מחקריות לא-מילוליות. בנוסף נבדק גוף עברי של זהות קיימת AID 528832 והועשר in-place בפרופוזיציה אחת על חלוקת פרקי התהילים ביום הכיפורים; אותה Evidence Family נשמרה. סך הכול 12 זהויות חדשות, זהות קיימת אחת שהועשרה ו-13 פרופוזיציות חדשות או נוספות. הערכים החדשים נשמרו כ-12 משפחות ראיות נפרדות לפי AID ותאריך. התרגום האנגלי בכל עמוד לא נספר כעד עצמאי; ייחוסים פנימיים נשמרו. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified. Retrieval update: the existing household/influence synthesis now includes AID 3317931 as a second independent influence-family source alongside AID 528897, while retaining the household-study source AID 528896. The validator checks both claim categories and claim-local locators; deep researcher mode exposes the three witnesses and claim_source_map. Runtime verification is pending.",
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "index_generated": "2026-11-15",
-      "index_entry_count": 9122,
-      "checked_aids": [
-        3315370,
-        3315386,
-        3315388,
-        3317931,
-        3317985,
-        3318010,
-        3318015,
-        3318017,
-        3318041,
-        3315396,
-        3315412,
-        3315415,
-        528832
-      ],
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "exact_aid_code_search_matches": 0,
       "new_aids_unique": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
-      "recent_batches_checked": [
-        "data/items/content-research-batch-126-2026-11-16.json",
-        "data/items/content-research-batch-127-2026-11-16.json",
-        "data/items/content-research-batch-144-2026-11-17.json",
-        "data/content-review-queue.json (1,022 records)",
-        "exact-AID GitHub code search for all 12 candidates",
-        "existing canonical identity AID 528832 in batch 127"
-      ],
-      "recent_batch_records_checked": null,
-      "review_queue_records": 1022,
-      "review_queue_matches": 0,
-      "filename_matches": 0,
-      "code_search_matches": 0,
-      "all_target_identities_answer_eligible": null,
-      "post_addition_canonical_scan_pending": true,
-      "note": "בדיקת כפילויות חלקית: כל 12 ה-AID לא נמצאו בתור הביקורת או בחיפוש קוד מדויק; קובץ public-search-index.json הוחזר ריק בכלי GitHub ולכן לא בוצעה סריקה קנונית מלאה. ה-reconciliation חייב לבצע סריקת AID/URL/Evidence Family לפני אישור כשירות.",
-      "existing_identity_update": {
-        "aid": 528832,
-        "canonical_file": "data/items/content-research-batch-127-2026-11-16.json",
-        "evidence_family_id": "hayom-yom-528832-5703",
-        "propositions_added": 1
-      }
-    },
-    "fallback_source_attempted": true,
-    "fallback_source_results": {
-      "publisher": "Kehot / Chabad.org — Sichos in English Collection",
-      "accessible_item_level_bodies": 12,
-      "original_language_excerpts_inspected": 12,
-      "existing_identity_bodies": 1,
-      "body_text_inspected": true,
-      "english_translations_used_as_content": 0,
-      "editorial_commentary_used_as_content": 0,
-      "translations_counted_as_independent_witnesses": 0,
-      "note": "לאחר ש-AID 4666220 לא החזיר גוף קריא, נפתחו שנים-עשר עמודי Hayom Yom מתוארכים. נבדקו רק קטעים מקוריים בעברית/יידיש המופיעים בעמודים הדו-לשוניים; תרגומים והערות עריכתיות לא שימשו בסיס לתמציות. בנוסף הועשרה in-place זהות עברית קיימת AID 528832, על בסיס שורה 170; לא נוצרה משפחת ראיות נוספת."
-    },
-    "excluded_candidate_count": 1,
-    "existing_identity_updates": [
-      {
-        "aid": 528832,
-        "identity_key": "aid:528832",
-        "canonical_file": "data/items/content-research-batch-127-2026-11-16.json",
-        "evidence_family_id": "hayom-yom-528832-5703",
-        "action": "enriched_existing_identity_in_place",
-        "body_text_inspected": true,
-        "propositions_added": 1,
-        "total_propositions_after": 3,
-        "source_locator": "he.chabad.org AID 528832, גוף הערך בעברית, שורה 170.",
-        "reason": "נוספה פרפרזה מחקרית ממוקדת על חלוקת 36 פרקי תהילים בארבעה מועדים ביום הכיפורים, פרט שאינו מפורט בפרופוזיציה הקודמת.",
-        "status_after": "Parsed",
-        "independent_witness": true,
-        "summary": "חלוקת שלושים ושישה פרקי תהילים ביום הכיפורים לארבע קבוצות של תשעה: לפני כל נדרי, לפני השינה, לאחר מוסף ולאחר נעילה."
-      }
-    ],
-    "existing_identity_updates_count": 1,
-    "source_body_review_count": 13,
-    "implementation_commits": {
-      "content": "694611422e7e57b72443f313485a564302b3ff8e",
-      "enrich": "e68054a78c301d9bb88d1ee3d488914996f6b2dc",
-      "retrieval": "cf26603498723d23f2414175fd65b3e0ba74b0a0",
-      "validation": "ee25d9bfc4a8706be77bc1b8cff1b7012dca3f4f",
-      "tests": "c26a5acf5b2be73caaaa9573e55e94941a808be2"
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null
     },
     "retrieval_synthesis": {
-      "topic": "hayom_yom_household_and_influence",
+      "topic": "yechidus_peace_and_mission",
       "status": "implemented_pending_execution",
-      "attribution": "system_synthesis_not_rebbe_quote",
-      "selection_rule": "The answer engine now selects the existing household-study family plus two distinct individual-influence families, prioritizing AID 3317931 and retaining AID 528897; all selections are deduplicated by Evidence Family.",
       "selected_aids": [
-        528896,
-        528897,
-        3317931
+        2465321,
+        2487225,
+        2466894,
+        2499039,
+        2487556,
+        2487457,
+        2504381,
+        2499828
       ],
-      "claims": [
+      "claim_count": 8,
+      "distinct_event_families": 8,
+      "independent_witnesses": 0,
+      "deep_researcher_claim_source_map": true,
+      "attribution": "system_synthesis_not_rebbe_quote"
+    },
+    "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
+  },
+  "previous_manual_web_review": {
+    "batch_id": "146",
+    "batch_file": "data/items/content-research-batch-146-2026-11-17.json",
+    "reviewed_at": "2026-11-17T21:01:19+02:00",
+    "status": "manual_public_body_inspection_pending_reconciliation",
+    "reviewed_item_count": 16,
+    "source_bodies_inspected": 9,
+    "source_body_pages_opened": 9,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 10,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 11,
+    "answer_eligible_source_families_added": 7,
+    "source_languages": [
+      "Hebrew"
+    ],
+    "language_distribution": {
+      "Hebrew": 9
+    },
+    "original_language_distribution": {
+      "Hebrew": 9
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 11
+    },
+    "source_types": [
+      "Sichos",
+      "Maamarim"
+    ],
+    "source_type_distribution": {
+      "Sichos": 8,
+      "Maamarim": 1
+    },
+    "new_aids": [
+      4304430,
+      4304429,
+      4304360,
+      4304438,
+      4304437,
+      4304414,
+      4304420,
+      4304396
+    ],
+    "enriched_aids": [
+      4304431
+    ],
+    "blocked_candidate_count": 7,
+    "blocked_candidates": [
+      {
+        "aid": 4304352,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4304352",
+        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
+        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+      },
+      {
+        "aid": 4304376,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4304376",
+        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
+        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+      },
+      {
+        "aid": 4304354,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4304354",
+        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
+        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+      },
+      {
+        "aid": 4312986,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4312986",
+        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
+        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+      },
+      {
+        "aid": 4313130,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4313130",
+        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
+        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+      },
+      {
+        "aid": 4304421,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4304421",
+        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
+        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+      },
+      {
+        "aid": 4304415,
+        "url": "https://he.chabad.org/library/article_cdo/aid/4304415",
+        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
+        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+      }
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "translations_counted_as_independent_witnesses": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1489,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3810
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1496,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3821
+    },
+    "metrics_actual_after": null,
+    "reconciliation_status": "pending_reconciliation",
+    "deduplication_check": {
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "index_generated": "2026-11-15",
+      "index_entry_count": 9122,
+      "checked_aids": [
+        4304430,
+        4304429,
+        4304360,
+        4304438,
+        4304437,
+        4304414,
+        4304420,
+        4304396
+      ],
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "new_aids_unique": true,
+      "source_urls_unique": true,
+      "evidence_family_ids_unique": false,
+      "same_family_groups": [
         {
-          "topic": "daily_torah_and_household",
-          "source_aids": [
-            528896
+          "evidence_family_id": "farbrengen-5724-12-tammuz-yud-tes-event",
+          "aids": [
+            4304430,
+            4304429
           ],
-          "citation_level": "claim-local item/body locator"
-        },
-        {
-          "topic": "individual_influence",
-          "source_aids": [
-            528897,
-            3317931
-          ],
-          "citation_level": "claim-local item/body locator for each supporting witness"
+          "reason": "Two distinct Hebrew texts from the same Yud-Tes Tammuz 5724 event; one sicha and one maamar. They remain separate item identities but one Evidence Family."
         }
       ],
-      "regular_mode": "two synthesized claims supported by three distinct dated Hayom Yom Evidence Families; no causal or empirical generalization.",
-      "researcher_mode": "deep mode emits witness-level provenance, evidence-family distinctions and a claim_source_map with locators for each claim.",
-      "validation": "patternSynthesisIntegrity now has an explicit household/influence branch checking the two claim types, each source's proposition support, distinct Evidence Families and claim-local locators.",
-      "limitations": [
-        "The synthesis is the system's comparative organization, not a quotation or a summary attributed to the Rebbe.",
-        "The entries are not empirical evidence of educational causality.",
-        "Runtime inclusion of AID 3317931 and passing readiness checks remain unverified until Actions execute."
-      ]
+      "recent_batches_checked": [
+        "data/items/content-research-batch-144-2026-11-17.json (AID 4304431 already present and excluded)",
+        "data/items/content-research-batch-145-2026-11-17.json",
+        "data/content-review-queue.json (1,022 records)",
+        "exact-AID GitHub code search for the eight candidates"
+      ],
+      "recent_batch_records_checked": null,
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "filename_matches": null,
+      "code_search_matches": 0,
+      "all_target_identities_answer_eligible": null,
+      "post_addition_canonical_scan_pending": true,
+      "note": "Partial duplicate check only: the 1,022-record review queue contains none of these eight AIDs; exact-AID code searches returned no matches; AID 4304431 was deliberately excluded because it is already in batch 144. The 17.6 MB public-search index and full canonical file scan were unavailable through the connector. The 4304429/4304430 pair is explicitly linked to one Evidence Family. Reconciliation must inspect all canonical AID/URL/Evidence Family collisions before counts are accepted."
     },
-    "execution_status": {
-      "latest_commit": "10a9565e9a8a1d780dd2ba93f3c770cfea39abbd",
-      "answer_eligible_unique_sources_before": 977,
-      "answer_eligible_unique_sources_after_public_snapshot": 977,
-      "post_batch_reconciliation_measured": false,
-      "public_metrics_generated": "2026-11-15",
-      "project_state_content_verified": 870,
-      "public_metrics_content_verified": 878,
-      "verified_count_discrepancy": 8,
-      "combined_status_checks": [],
-      "new_actions_run_ids": [],
-      "latest_saved_run_log": "2026-11-13",
-      "latest_saved_quality_gate": "2026-11-13",
-      "test_content_readiness_execution": "not_verified",
-      "pages_deployment_after_batch_145": "not_verified",
-      "public_site_check": "Internal Error via public reader",
-      "local_execution": "blocked_by_dns_no_github_clone",
-      "static_syntax_check": {
-        "result": "passed",
-        "files": [
-          "src/answer-engine.js",
-          "src/answer-engine-validated.js",
-          "scripts/test_content_readiness.mjs"
-        ],
-        "method": "V8 parse-only compilation after stripping module import/export wrappers; no test code executed."
-      }
-    },
-    "actions_status": "Static syntax parsing passed for the answer engine, validator and readiness test. No new Actions run ID or combined status checks returned; runtime reconciliation and tests remain pending.",
-    "publication_status": "The public site returned Internal Error through the available reader; no post-batch-145 deployment verified."
+    "method": "Manual public web/search/open inspection of eight item-level Hebrew body passages on Chabad.org / BeitChabad.com. Seven blocked candidates returned HTTP 429 and were replaced in the same run. No runner crawler retry, no access-control bypass, and no full-text copying.",
+    "limitations": [
+      "All eight pages mark the published transcript/maamar בלתי מוגה; no recording, autograph, manuscript or original notes were inspected.",
+      "Only selected passages and line ranges are verified; full-discourse context remains partial.",
+      "AID 4304429 and AID 4304430 are distinct texts from the same event and are linked to one Evidence Family.",
+      "The full public-search index was not available for pre-commit collision scanning; canonical reconciliation remains mandatory.",
+      "AID 4304431 was enriched in place from a newly inspected section (AID 4304431, סעיף ד, שורות 209–217); its item identity and Evidence Family were preserved."
+    ]
   },
   "last_manual_web_review": {
-    "batch_id": "146",
-    "batch_file": "data/items/content-research-batch-146-2026-11-17.json",
-    "reviewed_at": "2026-11-17T21:01:19+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
-    "reviewed_item_count": 16,
+    "batch_id": "147",
+    "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+    "reviewed_at": "2026-11-17T21:59:23+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 19,
     "source_bodies_inspected": 9,
     "source_body_pages_opened": 9,
     "new_source_identities": 8,
     "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 10,
+    "new_response_propositions": 8,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 7,
-    "source_languages": [
-      "Hebrew"
-    ],
-    "language_distribution": {
-      "Hebrew": 9
-    },
-    "original_language_distribution": {
-      "Hebrew": 9
-    },
-    "proposition_language_distribution": {
-      "Hebrew": 11
-    },
-    "source_types": [
-      "Sichos",
-      "Maamarim"
-    ],
-    "source_type_distribution": {
-      "Sichos": 8,
-      "Maamarim": 1
-    },
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 8,
+    "content_verified_unique_sources_added": 0,
+    "new_translation_manifestations": 8,
+    "translations_counted_as_independent_witnesses": 0,
     "new_aids": [
-      4304430,
-      4304429,
-      4304360,
-      4304438,
-      4304437,
-      4304414,
-      4304420,
-      4304396
+      2465321,
+      2487225,
+      2466894,
+      2499039,
+      2487556,
+      2487457,
+      2504381,
+      2499828
     ],
     "enriched_aids": [
       4304431
     ],
-    "blocked_candidate_count": 7,
+    "blocked_candidate_count": 10,
     "blocked_candidates": [
       {
-        "aid": 4304352,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304352",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313026,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313026",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304376,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304376",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313024,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313024",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304354,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304354",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313094,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313094",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4312986,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4312986",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313091,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4313130,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4313130",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312996,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312996",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304421,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304421",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312999,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312999",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304415,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304415",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312984,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312984",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4312992,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312992",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4312997,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312997",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4313127,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313127",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       }
     ],
+    "source_languages": [
+      "English"
+    ],
+    "language_distribution": {
+      "English": 8,
+      "Hebrew": 1
+    },
+    "original_language_distribution": {
+      "unknown": 8,
+      "Hebrew": 1
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 9
+    },
+    "source_types": [
+      "Yechidus",
+      "Sichos"
+    ],
+    "source_type_distribution": {
+      "Yechidus": 8,
+      "Sichos": 1
+    },
+    "metrics_before": null,
+    "metrics_expected_after": null,
+    "metrics_actual_after": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 8,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 9
+    },
+    "fallback_source_attempted": true,
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
     "scan_only_verification_used": false,
-    "translations_counted_as_independent_witnesses": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1489,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3810
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1496,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3821
-    },
-    "metrics_actual_after": null,
-    "reconciliation_status": "pending_reconciliation",
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "index_generated": "2026-11-15",
-      "index_entry_count": 9122,
-      "checked_aids": [
-        4304430,
-        4304429,
-        4304360,
-        4304438,
-        4304437,
-        4304414,
-        4304420,
-        4304396
-      ],
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "new_aids_unique": true,
-      "source_urls_unique": true,
-      "evidence_family_ids_unique": false,
-      "same_family_groups": [
-        {
-          "evidence_family_id": "farbrengen-5724-12-tammuz-yud-tes-event",
-          "aids": [
-            4304430,
-            4304429
-          ],
-          "reason": "Two distinct Hebrew texts from the same Yud-Tes Tammuz 5724 event; one sicha and one maamar. They remain separate item identities but one Evidence Family."
-        }
-      ],
-      "recent_batches_checked": [
-        "data/items/content-research-batch-144-2026-11-17.json (AID 4304431 already present and excluded)",
-        "data/items/content-research-batch-145-2026-11-17.json",
-        "data/content-review-queue.json (1,022 records)",
-        "exact-AID GitHub code search for the eight candidates"
-      ],
-      "recent_batch_records_checked": null,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
-      "filename_matches": null,
-      "code_search_matches": 0,
-      "all_target_identities_answer_eligible": null,
-      "post_addition_canonical_scan_pending": true,
-      "note": "Partial duplicate check only: the 1,022-record review queue contains none of these eight AIDs; exact-AID code searches returned no matches; AID 4304431 was deliberately excluded because it is already in batch 144. The 17.6 MB public-search index and full canonical file scan were unavailable through the connector. The 4304429/4304430 pair is explicitly linked to one Evidence Family. Reconciliation must inspect all canonical AID/URL/Evidence Family collisions before counts are accepted."
+      "exact_aid_code_search_matches": 0,
+      "new_aids_unique": true,
+      "source_urls_unique": true,
+      "evidence_family_ids_unique": true,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null
     },
-    "method": "Manual public web/search/open inspection of eight item-level Hebrew body passages on Chabad.org / BeitChabad.com. Seven blocked candidates returned HTTP 429 and were replaced in the same run. No runner crawler retry, no access-control bypass, and no full-text copying.",
-    "limitations": [
-      "All eight pages mark the published transcript/maamar בלתי מוגה; no recording, autograph, manuscript or original notes were inspected.",
-      "Only selected passages and line ranges are verified; full-discourse context remains partial.",
-      "AID 4304429 and AID 4304430 are distinct texts from the same event and are linked to one Evidence Family.",
-      "The full public-search index was not available for pre-commit collision scanning; canonical reconciliation remains mandatory.",
-      "AID 4304431 was enriched in place from a newly inspected section (AID 4304431, סעיף ד, שורות 209–217); its item identity and Evidence Family were preserved."
-    ]
+    "retrieval_synthesis": {
+      "topic": "yechidus_peace_and_mission",
+      "status": "implemented_pending_execution",
+      "selected_aids": [
+        2465321,
+        2487225,
+        2466894,
+        2499039,
+        2487556,
+        2487457,
+        2504381,
+        2499828
+      ],
+      "claim_count": 8,
+      "distinct_event_families": 8,
+      "independent_witnesses": 0,
+      "deep_researcher_claim_source_map": true,
+      "attribution": "system_synthesis_not_rebbe_quote"
+    },
+    "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
   },
   "last_manual_review": {
-    "batch_id": "146",
-    "batch_file": "data/items/content-research-batch-146-2026-11-17.json",
-    "reviewed_at": "2026-11-17T21:01:19+02:00",
-    "status": "manual_public_body_inspection_pending_reconciliation",
-    "reviewed_item_count": 16,
+    "batch_id": "147",
+    "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+    "reviewed_at": "2026-11-17T21:59:23+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 19,
     "source_bodies_inspected": 9,
     "source_body_pages_opened": 9,
     "new_source_identities": 8,
     "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 10,
+    "new_response_propositions": 8,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 7,
-    "source_languages": [
-      "Hebrew"
-    ],
-    "language_distribution": {
-      "Hebrew": 9
-    },
-    "original_language_distribution": {
-      "Hebrew": 9
-    },
-    "proposition_language_distribution": {
-      "Hebrew": 11
-    },
-    "source_types": [
-      "Sichos",
-      "Maamarim"
-    ],
-    "source_type_distribution": {
-      "Sichos": 8,
-      "Maamarim": 1
-    },
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 8,
+    "content_verified_unique_sources_added": 0,
+    "new_translation_manifestations": 8,
+    "translations_counted_as_independent_witnesses": 0,
     "new_aids": [
-      4304430,
-      4304429,
-      4304360,
-      4304438,
-      4304437,
-      4304414,
-      4304420,
-      4304396
+      2465321,
+      2487225,
+      2466894,
+      2499039,
+      2487556,
+      2487457,
+      2504381,
+      2499828
     ],
     "enriched_aids": [
       4304431
     ],
-    "blocked_candidate_count": 7,
+    "blocked_candidate_count": 10,
     "blocked_candidates": [
       {
-        "aid": 4304352,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304352",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313026,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313026",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304376,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304376",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313024,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313024",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304354,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304354",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313094,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313094",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4312986,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4312986",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4313091,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4313130,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4313130",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312996,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312996",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304421,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304421",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312999,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312999",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       },
       {
-        "aid": 4304415,
-        "url": "https://he.chabad.org/library/article_cdo/aid/4304415",
-        "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-        "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+        "aid": 4312984,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312984",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4312992,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312992",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4312997,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4312997",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+      },
+      {
+        "aid": 4313127,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4313127",
+        "status": "HTTP 429 Too Many Requests",
+        "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
       }
     ],
+    "source_languages": [
+      "English"
+    ],
+    "language_distribution": {
+      "English": 8,
+      "Hebrew": 1
+    },
+    "original_language_distribution": {
+      "unknown": 8,
+      "Hebrew": 1
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 9
+    },
+    "source_types": [
+      "Yechidus",
+      "Sichos"
+    ],
+    "source_type_distribution": {
+      "Yechidus": 8,
+      "Sichos": 1
+    },
+    "metrics_before": null,
+    "metrics_expected_after": null,
+    "metrics_actual_after": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 8,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 9
+    },
+    "fallback_source_attempted": true,
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
     "scan_only_verification_used": false,
-    "translations_counted_as_independent_witnesses": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1489,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3810
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1496,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3821
-    },
-    "metrics_actual_after": null,
-    "reconciliation_status": "pending_reconciliation",
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "index_generated": "2026-11-15",
-      "index_entry_count": 9122,
-      "checked_aids": [
-        4304430,
-        4304429,
-        4304360,
-        4304438,
-        4304437,
-        4304414,
-        4304420,
-        4304396
-      ],
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "new_aids_unique": true,
-      "source_urls_unique": true,
-      "evidence_family_ids_unique": false,
-      "same_family_groups": [
-        {
-          "evidence_family_id": "farbrengen-5724-12-tammuz-yud-tes-event",
-          "aids": [
-            4304430,
-            4304429
-          ],
-          "reason": "Two distinct Hebrew texts from the same Yud-Tes Tammuz 5724 event; one sicha and one maamar. They remain separate item identities but one Evidence Family."
-        }
-      ],
-      "recent_batches_checked": [
-        "data/items/content-research-batch-144-2026-11-17.json (AID 4304431 already present and excluded)",
-        "data/items/content-research-batch-145-2026-11-17.json",
-        "data/content-review-queue.json (1,022 records)",
-        "exact-AID GitHub code search for the eight candidates"
-      ],
-      "recent_batch_records_checked": null,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
-      "filename_matches": null,
-      "code_search_matches": 0,
-      "all_target_identities_answer_eligible": null,
-      "post_addition_canonical_scan_pending": true,
-      "note": "Partial duplicate check only: the 1,022-record review queue contains none of these eight AIDs; exact-AID code searches returned no matches; AID 4304431 was deliberately excluded because it is already in batch 144. The 17.6 MB public-search index and full canonical file scan were unavailable through the connector. The 4304429/4304430 pair is explicitly linked to one Evidence Family. Reconciliation must inspect all canonical AID/URL/Evidence Family collisions before counts are accepted."
+      "exact_aid_code_search_matches": 0,
+      "new_aids_unique": true,
+      "source_urls_unique": true,
+      "evidence_family_ids_unique": true,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null
     },
-    "method": "Manual public web/search/open inspection of eight item-level Hebrew body passages on Chabad.org / BeitChabad.com. Seven blocked candidates returned HTTP 429 and were replaced in the same run. No runner crawler retry, no access-control bypass, and no full-text copying.",
-    "limitations": [
-      "All eight pages mark the published transcript/maamar בלתי מוגה; no recording, autograph, manuscript or original notes were inspected.",
-      "Only selected passages and line ranges are verified; full-discourse context remains partial.",
-      "AID 4304429 and AID 4304430 are distinct texts from the same event and are linked to one Evidence Family.",
-      "The full public-search index was not available for pre-commit collision scanning; canonical reconciliation remains mandatory.",
-      "AID 4304431 was enriched in place from a newly inspected section (AID 4304431, סעיף ד, שורות 209–217); its item identity and Evidence Family were preserved."
-    ]
+    "retrieval_synthesis": {
+      "topic": "yechidus_peace_and_mission",
+      "status": "implemented_pending_execution",
+      "selected_aids": [
+        2465321,
+        2487225,
+        2466894,
+        2499039,
+        2487556,
+        2487457,
+        2504381,
+        2499828
+      ],
+      "claim_count": 8,
+      "distinct_event_families": 8,
+      "independent_witnesses": 0,
+      "deep_researcher_claim_source_map": true,
+      "attribution": "system_synthesis_not_rebbe_quote"
+    },
+    "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
   },
   "manual_web_review_history": [
     {
@@ -4381,6 +4324,172 @@
         "The full public-search index was not available for pre-commit collision scanning; canonical reconciliation remains mandatory.",
         "AID 4304431 was enriched in place from a newly inspected section (AID 4304431, סעיף ד, שורות 209–217); its item identity and Evidence Family were preserved."
       ]
+    },
+    {
+      "batch_id": "147",
+      "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+      "reviewed_at": "2026-11-17T21:59:23+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 19,
+      "source_bodies_inspected": 9,
+      "source_body_pages_opened": 9,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 8,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 9,
+      "answer_eligible_source_families_added": 8,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 8,
+      "content_verified_unique_sources_added": 0,
+      "new_translation_manifestations": 8,
+      "translations_counted_as_independent_witnesses": 0,
+      "new_aids": [
+        2465321,
+        2487225,
+        2466894,
+        2499039,
+        2487556,
+        2487457,
+        2504381,
+        2499828
+      ],
+      "enriched_aids": [
+        4304431
+      ],
+      "blocked_candidate_count": 10,
+      "blocked_candidates": [
+        {
+          "aid": 4313026,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313026",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4313024,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313024",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4313094,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313094",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4313091,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4312996,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312996",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4312999,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312999",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4312984,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312984",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4312992,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312992",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4312997,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312997",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        },
+        {
+          "aid": 4313127,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313127",
+          "status": "HTTP 429 Too Many Requests",
+          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
+        }
+      ],
+      "source_languages": [
+        "English"
+      ],
+      "language_distribution": {
+        "English": 8,
+        "Hebrew": 1
+      },
+      "original_language_distribution": {
+        "unknown": 8,
+        "Hebrew": 1
+      },
+      "proposition_language_distribution": {
+        "Hebrew": 9
+      },
+      "source_types": [
+        "Yechidus",
+        "Sichos"
+      ],
+      "source_type_distribution": {
+        "Yechidus": 8,
+        "Sichos": 1
+      },
+      "metrics_before": null,
+      "metrics_expected_after": null,
+      "metrics_actual_after": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 8,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 9
+      },
+      "fallback_source_attempted": true,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "exact_aid_code_search_matches": 0,
+        "new_aids_unique": true,
+        "source_urls_unique": true,
+        "evidence_family_ids_unique": true,
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "all_target_identities_answer_eligible": null
+      },
+      "retrieval_synthesis": {
+        "topic": "yechidus_peace_and_mission",
+        "status": "implemented_pending_execution",
+        "selected_aids": [
+          2465321,
+          2487225,
+          2466894,
+          2499039,
+          2487556,
+          2487457,
+          2504381,
+          2499828
+        ],
+        "claim_count": 8,
+        "distinct_event_families": 8,
+        "independent_witnesses": 0,
+        "deep_researcher_claim_source_map": true,
+        "attribution": "system_synthesis_not_rebbe_quote"
+      },
+      "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
     }
   ],
   "manual_web_review_current_metrics": {
@@ -4394,16 +4503,13 @@
       "content_verified_unique_sources": 870,
       "answer_eligible_propositions": 2950
     },
-    "expected_after": {
-      "answer_eligible_unique_sources": 1496,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3821
-    },
+    "expected_after": null,
     "actual_after": null,
-    "reconciliation_status": "pending_reconciliation"
+    "reconciliation_status": "pending_reconciliation",
+    "note": "No post-batch metric is measured; the public metrics and project-state snapshots are stale and differ by eight content-verified sources."
   },
-  "last_run_note": "Batch 146: eight new Hebrew item identities in seven Evidence Families, ten new-source paraphrases, plus one in-place enrichment of existing AID 4304431 with a further source-grounded proposition. Seven candidates returned HTTP 429 and were replaced in-run. AID 4304431 remained Parsed and retained its identity/family; no Verified promotion.",
-  "next_action": "Run scripts/reconcile_metrics.py through pending batches 143–146, inspect full AID/URL/Evidence Family collisions, then run node scripts/test_content_readiness.mjs and inspect Actions/Pages.",
-  "current_batch_file": "data/items/content-research-batch-146-2026-11-17.json",
+  "last_run_note": "Batch 147: eight English Yechidus publisher bodies inspected, one existing Hebrew Sicha identity enriched in place, ten Hebrew candidates blocked by HTTP 429; eight new non-independent presentation identities and nine paraphrase entries. No crawler retry, no access bypass, no Verified promotion. Reconciliation pending.",
+  "next_action": "Run the push-triggered full reconciliation through batch 147; inspect full AID/URL/Evidence Family collisions, refresh public metrics and review queue, run test_content_readiness.mjs, then verify Actions and Pages.",
+  "current_batch_file": "data/items/content-research-batch-147-2026-11-17.json",
   "pending": true
 }
