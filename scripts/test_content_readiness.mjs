@@ -4182,13 +4182,24 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable);
  assert(m.sources.some(e=>sourceAID(e)==='528896'));
  assert(m.sources.some(e=>sourceAID(e)==='528897'));
+ assert(m.sources.some(e=>sourceAID(e)==='3317931'),'new original-Hebrew influence entry must enter the existing cross-family synthesis');
  assert.equal(m.synthesis?.topic,'hayom_yom_household_and_influence');
  assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
  assert.equal(m.synthesis?.claims.length,2);
+ const influenceClaim=m.synthesis.claims.find(c=>c.topic==='individual_influence');
+ assert(influenceClaim&&influenceClaim.source_numbers.some(n=>sourceAID(m.sources[n-1])==='3317931'));
+ assert(m.pattern_synthesis_integrity?.valid===true,'household/influence synthesis must pass the explicit witness-level integrity branch');
  assert(m.claims.every(c=>c.source_locators.length));
  assert(m.citation_entailment.every(x=>x.valid));
  assert(m.context_boundary.every(x=>x.valid));
- if(mode==='researcher'){assert.equal(m.research.depth,'deep');assert(m.research.evidence_families>=2);assert(m.research.independent_evidence_families>=2);assert(m.research.claim_source_map.every(c=>c.source_locators.length));}
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert(m.research.evidence_families>=3);
+  assert(m.research.independent_evidence_families>=3);
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length));
+  const influenceSourceNumber=m.sources.findIndex(e=>sourceAID(e)==='3317931')+1;
+  assert(m.research.claim_source_map.find(c=>c.text===influenceClaim.text).source_locators.some(x=>x.source_number===influenceSourceNumber));
+ }
 }
 const livingTorahQ='בשלושת תקצירי Living Torah על גאווה יהודית, מעשי טוב וחסד והפצת יהדות בסביבה הקרובה, מה מתועד בכל תקציר?';
 for(const mode of ['regular','researcher']){
@@ -4649,3 +4660,72 @@ for(const mode of ['regular','researcher']){
   assert(m.research.witnesses.every(w=>w.proposition_locators.length>0));
  }else assert.equal(m.research,undefined);
 }
+
+
+// Batch 145: twelve bilingual Hayom Yom entries with inspected original-language excerpts,
+// plus one in-place enrichment of existing AID 528832. Same-page English renderings are not witnesses.
+const batch145Path='data/items/content-research-batch-145-2026-11-17.json';
+const batch145Data=JSON.parse(await readFile(new URL(batch145Path,root),'utf8'));
+const batch145Aids=['3315370','3315386','3315388','3317931','3317985','3318010','3318015','3318017','3318041','3315396','3315412','3315415'];
+assert.equal(batch145Data.records.length,12);
+assert.deepEqual(batch145Data.new_aids.map(String),batch145Aids);
+assert.equal(batch145Data.new_source_identities,12);
+assert.equal(batch145Data.existing_identities_enriched,1);
+assert.equal(batch145Data.enriched_aids[0],528832);
+assert.equal(batch145Data.new_response_propositions,12);
+assert.equal(batch145Data.existing_response_propositions_added,1);
+assert.equal(batch145Data.total_new_paraphrase_entries,13);
+assert.equal(batch145Data.answer_eligible_source_families_added,12);
+assert.equal(batch145Data.independent_witnesses_added,12);
+assert.equal(batch145Data.non_independent_presentations_added,0);
+assert.equal(batch145Data.content_verified_unique_sources_added,0);
+assert.equal(batch145Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch145Data.blocked_candidates[0].aid,4666220);
+assert.equal(batch145Data.fallback_source_attempted,true);
+assert.equal(batch145Data.crawler_retry,false);
+assert.equal(batch145Data.access_control_bypassed,false);
+assert.equal(batch145Data.full_text_copied,false);
+assert.equal(batch145Data.reviewed_item_count,14);
+assert.equal(batch145Data.source_bodies_inspected,13);
+assert.equal(batch145Data.source_body_pages_opened,14);
+assert.equal(batch145Data.source_body_review.length,13);
+assert.equal(batch145Data.existing_identity_updates.length,1);
+assert.equal(batch145Data.existing_identity_updates[0].aid,528832);
+assert.equal(batch145Data.existing_identity_updates[0].action,'enriched_existing_identity_in_place');
+assert.equal(new Set(batch145Data.records.map(r=>String(r.aid))).size,12);
+assert.equal(new Set(batch145Data.records.map(r=>r.evidence_family_id)).size,12);
+assert.equal(new Set(batch145Data.records.map(r=>r.source_url)).size,12);
+for(const r of batch145Data.records){
+ assert.equal(r.status,'Parsed');
+ assert.equal(r.pipeline_status,'Parsed');
+ assert.equal(r.canonical_status,'Parsed');
+ assert.equal(r.has_content_evidence,true);
+ assert.equal(r.independent_witness,true);
+ assert.equal(r.translation_of_evidence_family_id,null);
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(r.proposition_verbatim,false);
+ assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.provenance&&r.verification_scope);
+ assert.equal(r.context_status,'partial');
+ assert.equal(r.response_propositions.length,1);
+ assert.equal(r.response_propositions.length,r.response_proposition_locators.length);
+ const found=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
+ assert.equal(found.length,1,'batch-145 AID '+r.aid+' must have one canonical identity after reconciliation');
+ assert.equal(found[0].canonical_file,batch145Path);
+ assert.equal(found[0].status,'Parsed');
+}
+const enriched528832=idx.entries.find(e=>sourceAID(e)==='528832');
+assert(enriched528832&&enriched528832.response_propositions.length===3);
+assert(enriched528832.response_propositions.some(p=>p.includes('שרשרת מסירה')&&p.includes('הבעש״ט')));
+assert.equal(enriched528832.evidence_family_id,'hayom-yom-528832-5703');
+assert.equal(enriched528832.canonical_file,'data/items/content-research-batch-127-2026-11-16.json');
+assert.equal(enriched528832.content_enrichment_batch_id,'145');
+assert.equal(enriched528832.response_proposition_locators.length,3);
+assert.equal(batch145Data.translations_counted_as_independent_witnesses,0);
+assert(['reconciled','reconciled_with_variance'].includes(batch145Data.reconciliation_status),'batch 145 must be reconciled before readiness is reported');
+assert.equal(batch145Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch145Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch145Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch145Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch145Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert.deepEqual(readinessMetrics(batch145Data.metrics_actual_after),readinessMetrics(metrics));
