@@ -1324,3 +1324,11 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - Batch150 adds 0 new source identities, enriches 8 existing identities, and adds 8 source-grounded propositions. It does not change answer_eligible_unique_sources or content_verified_unique_sources; expected proposition boundary is 3,846 after carrying forward batch149's expected 3,838. This is a planning boundary, not a measured result. Public metrics remain unchanged pending reconciliation.
 - Added batch150 readiness assertions requiring one canonical AID identity per enriched source, retained Evidence Family IDs, item-level locators, Parsed status, partial context and full-index reconciliation. scripts/test_content_readiness.mjs, reconciliation, commit-bound Actions and Pages deployment remain pending until the workflow reports their results.
 - No schedule, audience, repository permissions or automation count changed. The existing hourly workflow remains untouched.
+
+
+## 2026-11-18 — Reconciliation fix: audit all pending manual batches
+
+- The prior reconciliation selector walked only the contiguous pending chain ending at the newest batch. This left older pending manual batches (including batch110) without a full-index identity audit, while test_content_readiness.mjs correctly required their deduplication state to be reconciled.
+- Updated reconcile_metrics.py to process every pending manual batch. For each historical snapshot it now excludes all later manual-batch files, including already-reconciled later batches, and excludes later in-place proposition additions recorded by existing_identity_updates. It carries forward an actual prior snapshot only when the expected boundaries are contiguous; across a gap it resets to that batch's recorded metrics_before rather than fabricating continuity.
+- Added readiness assertions that both the older batch110 and newest batch150 are removed from the pending ledgers after reconciliation. This closes the specific stale-pending defect without manually changing public metrics.
+- The PR quality gate is rerunning this full reconciliation and test_content_readiness.mjs. No metric increase is claimed until the measured index and the main-branch reconciliation commit are inspected.
