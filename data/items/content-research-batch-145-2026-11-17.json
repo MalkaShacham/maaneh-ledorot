@@ -7,17 +7,17 @@
   "title": "אצווה 145 — שנים־עשר ערכי היום יום בתצוגה דו-לשונית; קטעים מקוריים בעברית וביידיש",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
-  "reviewed_item_count": 13,
-  "source_bodies_inspected": 12,
-  "source_body_pages_opened": 13,
+  "reviewed_item_count": 14,
+  "source_bodies_inspected": 13,
+  "source_body_pages_opened": 14,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 12,
-  "existing_identities_enriched": 0,
+  "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
   "new_response_propositions": 12,
-  "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 12,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 13,
   "answer_eligible_source_families_added": 12,
   "independent_witnesses_added": 12,
   "non_independent_presentations_added": 0,
@@ -37,7 +37,9 @@
     3315412,
     3315415
   ],
-  "enriched_aids": [],
+  "enriched_aids": [
+    528832
+  ],
   "rechecked_aids": [],
   "blocked_candidate_count": 1,
   "blocked_candidates": [
@@ -114,7 +116,7 @@
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 12,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 12
+    "answer_eligible_propositions": 13
   },
   "deduplication_check": {
     "full_index_scan_available": false,
@@ -133,7 +135,8 @@
       3318041,
       3315396,
       3315412,
-      3315415
+      3315415,
+      528832
     ],
     "canonical_identity_collisions": null,
     "missing_canonical_identities": null,
@@ -145,7 +148,8 @@
       "data/items/content-research-batch-127-2026-11-16.json",
       "data/items/content-research-batch-144-2026-11-17.json",
       "data/content-review-queue.json (1,022 records)",
-      "exact-AID GitHub code search for all 12 candidates"
+      "exact-AID GitHub code search for all 12 candidates",
+      "existing canonical identity AID 528832 in batch 127"
     ],
     "recent_batch_records_checked": null,
     "review_queue_records": 1022,
@@ -154,7 +158,13 @@
     "code_search_matches": 0,
     "all_target_identities_answer_eligible": null,
     "post_addition_canonical_scan_pending": true,
-    "note": "בדיקת כפילויות חלקית: כל 12 ה-AID לא נמצאו בתור הביקורת או בחיפוש קוד מדויק; קובץ public-search-index.json הוחזר ריק בכלי GitHub ולכן לא בוצעה סריקה קנונית מלאה. ה-reconciliation חייב לבצע סריקת AID/URL/Evidence Family לפני אישור כשירות."
+    "note": "בדיקת כפילויות חלקית: כל 12 ה-AID לא נמצאו בתור הביקורת או בחיפוש קוד מדויק; קובץ public-search-index.json הוחזר ריק בכלי GitHub ולכן לא בוצעה סריקה קנונית מלאה. ה-reconciliation חייב לבצע סריקת AID/URL/Evidence Family לפני אישור כשירות.",
+    "existing_identity_update": {
+      "aid": 528832,
+      "canonical_file": "data/items/content-research-batch-127-2026-11-16.json",
+      "evidence_family_id": "hayom-yom-528832-5703",
+      "propositions_added": 1
+    }
   },
   "source_body_review": [
     {
@@ -288,9 +298,37 @@
         "Chabad.org/TheRebbe.org AID 3315415, original Yiddish excerpt, line 245."
       ],
       "scope": "נבדק הקטע המקורי בשפת Yiddish בלבד; התרגום האנגלי וההערות העריכתיות לא שימשו בסיס לפרופוזיציה."
+    },
+    {
+      "aid": 528832,
+      "title": "היום יום — א אלול, ר״ח",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/528832",
+      "web_source_ref": "turn391009view0",
+      "result": "existing_identity_body_inspected_and_enriched_in_place",
+      "locators": [
+        "he.chabad.org AID 528832, גוף הערך בעברית, שורה 170."
+      ],
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "scope": "גוף הערך בעברית נפתח ונבדק; נוספה פרפרזה לא-מילולית על שרשרת המסירה המפורשת. אותה זהות ואותה Evidence Family נשמרו."
     }
   ],
-  "existing_identity_updates": [],
+  "existing_identity_updates": [
+    {
+      "aid": 528832,
+      "identity_key": "aid:528832",
+      "canonical_file": "data/items/content-research-batch-127-2026-11-16.json",
+      "evidence_family_id": "hayom-yom-528832-5703",
+      "action": "enriched_existing_identity_in_place",
+      "body_text_inspected": true,
+      "propositions_added": 1,
+      "total_propositions_after": 3,
+      "source_locator": "he.chabad.org AID 528832, גוף הערך בעברית, שורה 170.",
+      "reason": "נוספה פרפרזה מחקרית על שרשרת המסירה המפורשת בגוף הערך; לא נוצרה זהות או משפחת ראיות חדשה.",
+      "status_after": "Parsed",
+      "independent_witness": true
+    }
+  ],
   "not_promoted_after_inspection": [
     {
       "aid": 3315370,
@@ -351,6 +389,11 @@
       "aid": 3315415,
       "status": "Parsed",
       "reason": "בדיקת קטע מקור בפרסום דו-לשוני אינה אימות מהדורה ראשונה, כתב־יד או אוטוגרף; אין קידום ל-Verified."
+    },
+    {
+      "aid": 528832,
+      "status": "Parsed",
+      "reason": "העשרה in-place בלבד; לא נבדקו מהדורה ראשונה או מקורות חיצוניים המאמתים את שרשרת המסירה."
     }
   ],
   "crawler_retry": false,
@@ -363,16 +406,16 @@
     "publisher": "Kehot / Chabad.org — Sichos in English Collection",
     "accessible_item_level_bodies": 12,
     "original_language_excerpts_inspected": 12,
-    "existing_identity_bodies": 0,
+    "existing_identity_bodies": 1,
     "body_text_inspected": true,
     "english_translations_used_as_content": 0,
     "editorial_commentary_used_as_content": 0,
     "translations_counted_as_independent_witnesses": 0,
-    "note": "לאחר ש-AID 4666220 לא החזיר גוף קריא, נפתחו שנים-עשר עמודי Hayom Yom מתוארכים. נבדקו רק קטעים מקוריים בעברית/יידיש המופיעים בעמודים הדו-לשוניים; תרגומים והערות עריכתיות לא שימשו בסיס לתמציות."
+    "note": "לאחר ש-AID 4666220 לא החזיר גוף קריא, נפתחו שנים-עשר עמודי Hayom Yom מתוארכים. נבדקו רק קטעים מקוריים בעברית/יידיש המופיעים בעמודים הדו-לשוניים; תרגומים והערות עריכתיות לא שימשו בסיס לתמציות. בנוסף הועשרה in-place זהות עברית קיימת AID 528832, על בסיס שורה 170; לא נוצרה משפחת ראיות נוספת."
   },
-  "existing_identity_updates_count": 0,
-  "note": "נבדקו 12 גופי פרסום דו-לשוניים ונוצרו 12 פרפרזות מחקריות לא-מילוליות, אחת לכל ערך יומי. הערכים נשמרו כ-12 משפחות ראיות נפרדות לפי AID ותאריך. התרגום האנגלי בכל עמוד לא נספר כעד עצמאי; ייחוסים פנימיים לאדמו״ר הזקן, לצמח צדק, לאדמו״ר הרש״ב ולרבי הריי״צ נשמרו במפורש. כל הרשומות Parsed; אפס קידומים ל-Verified.",
-  "source_body_review_note": "עמודי המקור כוללים קטעים בעברית או ביידיש לצד תרגום אנגלי וקטעי הסבר. רק הקטעים המקוריים המצוינים ב-locators שימשו לפרופוזיציות; לא נבדקו מהדורה ראשונה, כתב־יד, אוטוגרף או עדים מקבילים.",
+  "existing_identity_updates_count": 1,
+  "note": "נבדקו 12 גופי פרסום דו-לשוניים חדשים ונוצרו 12 פרפרזות מחקריות לא-מילוליות. בנוסף נבדק גוף עברי של זהות קיימת AID 528832 והועשר in-place בפרופוזיציה אחת על שרשרת המסירה; אותה Evidence Family נשמרה. סך הכול 12 זהויות חדשות, זהות קיימת אחת שהועשרה ו-13 פרופוזיציות חדשות או נוספות. הערכים החדשים נשמרו כ-12 משפחות ראיות נפרדות לפי AID ותאריך. התרגום האנגלי בכל עמוד לא נספר כעד עצמאי; ייחוסים פנימיים נשמרו. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
+  "source_body_review_note": "נבדקו 12 עמודי Hayom Yom דו-לשוניים חדשים ועמוד עברי אחד של זהות קיימת. רק הקטעים המקוריים בעברית/יידיש שצוינו ב-locators שימשו לפרופוזיציות; תרגומים והערות עריכתיות לא שימשו בסיס. לא נבדקו מהדורה ראשונה, כתב־יד, אוטוגרף או עדים מקבילים.",
   "recovered_candidate_count": 0,
   "recovered_candidates": [],
   "records": [
