@@ -1659,7 +1659,7 @@ function buildYechidusPeaceMissionSynthesis(selected){
  const families=[...new Set(basis.map(b=>b.evidence_family_id).filter(Boolean))];
  if(claims.some(c=>!c)||basis.length!==8||families.length!==8||basis.some(b=>!b.propositions.length||b.propositions.some(p=>!p.source_locator)))return null;
  return{
-  kind:'case_comparison_across_eight_distinct_yechidus_events',topic:'yechidus_peace_and_mission',attribution:'system_synthesis_not_rebbe_quote',
+  kind:'case_comparison_across_distinct_yechidus_events',topic:'yechidus_peace_and_mission',attribution:'system_synthesis_not_rebbe_quote',
   label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',
   source_numbers:selected.map((_,i)=>i+1),evidence_family_ids:families,independent_evidence_family_ids:[],basis,claims,
   evidence_quality:'eight_distinct_yechidus_event_families_all_non_independent_publisher_presentations',
