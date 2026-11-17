@@ -4716,7 +4716,7 @@ for(const r of batch145Data.records){
 }
 const enriched528832=idx.entries.find(e=>sourceAID(e)==='528832');
 assert(enriched528832&&enriched528832.response_propositions.length===3);
-assert(enriched528832.response_propositions.some(p=>p.includes('שרשרת מסירה')&&p.includes('הבעש״ט')));
+assert(enriched528832.response_propositions.some(p=>p.includes('שלושים ושישה פרקי תהילים')&&p.includes('כל נדרי')&&p.includes('לאחר נעילה')));
 assert.equal(enriched528832.evidence_family_id,'hayom-yom-528832-5703');
 assert.equal(enriched528832.canonical_file,'data/items/content-research-batch-127-2026-11-16.json');
 assert.equal(enriched528832.content_enrichment_batch_id,'145');
