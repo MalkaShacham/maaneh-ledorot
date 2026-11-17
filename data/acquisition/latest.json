@@ -1,375 +1,82 @@
 {
-  "started_at": "2026-11-17T01:29:03+02:00",
-  "attempted": 19,
+  "started_at": "2026-11-17T01:59:08+02:00",
+  "attempted": 18,
   "enriched": 1,
-  "discovered": 14,
-  "blocked": 3,
-  "skipped": 1,
-  "status": "manual_public_source_review_completed_pending_reconciliation",
+  "discovered": 15,
+  "blocked": 2,
+  "skipped": 0,
+  "status": "manual_web_review_pending_reconciliation",
   "manual_web_review": {
-    "batch_id": "131",
-    "batch_file": "data/items/content-research-batch-131-2026-11-17.json",
-    "reviewed_at": "2026-11-17T01:29:03+02:00",
+    "batch_id": "132",
+    "batch_file": "data/items/content-research-batch-132-2026-11-17.json",
+    "reviewed_at": "2026-11-17T01:59:08+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 19,
-    "source_bodies_inspected": 15,
-    "new_source_identities": 14,
+    "reviewed_item_count": 18,
+    "source_bodies_inspected": 16,
+    "new_source_identities": 15,
     "existing_identities_enriched": 1,
-    "new_response_propositions": 19,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 20,
-    "answer_eligible_source_families_added": 13,
+    "new_response_propositions": 21,
+    "existing_response_propositions_added": 3,
+    "total_new_paraphrase_entries": 24,
+    "answer_eligible_source_families_added": 15,
     "content_verified_unique_sources_added": 0,
     "new_aids": [
-      528893,
-      528894,
-      528895,
-      528896,
-      528897,
-      528898,
-      528899,
-      528900,
-      528901,
-      528902,
-      528903,
-      528904,
-      528905,
-      528906
+      528907,
+      528908,
+      528909,
+      528910,
+      528911,
+      528912,
+      528913,
+      528914,
+      528915,
+      528916,
+      528917,
+      528918,
+      528919,
+      528920,
+      528921
     ],
     "enriched_aids": [
       2989153
     ],
-    "blocked_candidate_count": 3,
+    "blocked_candidate_count": 2,
     "blocked_candidates": [
       {
-        "aid": 553672,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/553672",
-        "status": "Internal Error",
-        "reason": "העמוד הציבורי לא היה נגיש דרך כלי הפתיחה ולא סיפק גוף פרסום קריא."
+        "aid": 5071116,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071116/jewish/page.htm",
+        "status": "redirected_to_generic_shell",
+        "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן.",
+        "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
       },
       {
-        "aid": 5913,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5913",
-        "status": "Internal Error",
-        "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
-      },
-      {
-        "aid": 5914,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5914",
-        "status": "Internal Error",
-        "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
-      }
-    ],
-    "excluded_candidate_count": 1,
-    "excluded_candidates": [
-      {
-        "aid": 528892,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528892",
-        "status": "opened_navigation_only",
-        "reason": "עמוד ניווט של חודש חשון ללא גוף ערך יומי עצמאי."
-      }
-    ],
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1317,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3494
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1330,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3514
-    },
-    "metrics_actual_before": null,
-    "metrics_actual_after": null,
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 13,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 20
-    },
-    "deduplication_check": {
-      "new_aids_unique": true,
-      "unique_new_aid_count": 14,
-      "unique_new_family_count": 13,
-      "new_evidence_families_unique": false,
-      "same_family_relations": [
-        {
-          "aid": 528895,
-          "canonical_aid": 528894,
-          "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
-          "relationship": "continuation_of_same_discourse"
-        }
-      ],
-      "translations_counted_as_independent_witnesses": 0,
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "all_target_identities_answer_eligible": null,
-      "full_index_scan_available": false,
-      "full_index_scan_pending_reconciliation": true,
-      "review_queue_records": 1022,
-      "review_queue_matches": 0,
-      "recent_batches_checked": [
-        "130"
-      ],
-      "note": "AID 528894 ו-AID 528895 חולקים Evidence Family; סריקה קנונית מלאה עדיין ממתינה."
-    }
-  },
-  "previous_manual_web_review": {
-    "schema": "maaneh-ledorot-content-research-batch-v1",
-    "batch_id": "130",
-    "batch_file": "data/items/content-research-batch-130-2026-11-17.json",
-    "generated": "2026-11-17",
-    "reviewed_at": "2026-11-17T01:00:00+02:00",
-    "title": "Batch 130 — 14 original-language Hayom Yom AID entries, one non-independent English letter translation, one in-place Sicha enrichment and a blocked AID with non-promoted date-page fallback",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 18,
-    "source_bodies_inspected": 17,
-    "source_body_pages_opened": 18,
-    "metadata_only_items_rechecked": 0,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 15,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 23,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 24,
-    "answer_eligible_source_families_added": 15,
-    "independent_witnesses_added": 14,
-    "non_independent_presentations_added": 1,
-    "content_verified_unique_sources_added": 0,
-    "new_aids": [
-      528877,
-      528878,
-      528880,
-      528881,
-      528882,
-      528883,
-      528884,
-      528885,
-      528886,
-      528887,
-      528888,
-      528889,
-      528890,
-      528891,
-      2277337
-    ],
-    "new_source_ids": [],
-    "enriched_aids": [
-      5959845
-    ],
-    "blocked_candidate_count": 1,
-    "blocked_candidates": [
-      {
-        "aid": 528879,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528879",
-        "route": "direct public item-page open",
-        "status": "Internal Error",
-        "reason": "הקורא הציבורי החזיר Internal Error ללא גוף פריט קריא.",
-        "handling": "לא בוצע ניסיון חוזר דרך crawler ולא נעשתה עקיפת גישה. באותה הפעלה נפתח עמוד הלימוד היומי הציבורי לתאריך 29.9.2026; גוף הערך בעברית נבדק ונרשם כפריט URL-י ללא AID. לא נטען שזהו אותו AID."
+        "aid": 5071138,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071138/jewish/page.htm",
+        "status": "redirected_to_generic_shell",
+        "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן ולא שונתה הזהות הקיימת.",
+        "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
       }
     ],
     "excluded_candidate_count": 0,
     "excluded_candidates": [],
-    "fallback_source_attempted": true,
-    "fallback_source_results": {
-      "publisher": "Kehot / Chabad.org; Chabad.org / Sichos in English Collection",
-      "accessible_item_level_bodies": 15,
-      "date_page_fallback_bodies": 1,
-      "existing_identity_bodies": 1,
-      "blocked_direct_routes": 1,
-      "body_text_inspected": true,
-      "inspected_aids": [
-        528877,
-        528878,
-        528880,
-        528881,
-        528882,
-        528883,
-        528884,
-        528885,
-        528886,
-        528887,
-        528888,
-        528889,
-        528890,
-        528891,
-        2277337
-      ],
-      "date_page_identity_ids": [],
-      "existing_identity_aids": [
-        5959845
-      ],
-      "blocked_direct_routes_aids": [
-        528879
-      ],
-      "translations_counted_as_independent_witnesses": 0,
-      "note": "נבדקו 14 גופי Hayom Yom מקוריים עם AID, עמוד יומי חלופי ללא AID שנבדק אך לא קודם לזהות כדי למנוע כפילות אפשרית, תרגום אנגלי אחד של איגרת 531 והעשרה של גוף שיחה קיים. תרגום האיגרת סומן כלא-עצמאי; AID 528879 נחסם והחלופה המתוארכת לא קושרה אליו.",
-      "date_page_fallback_promoted": false
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1330,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3514
     },
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "translations_counted_as_independent_witnesses": 0,
-    "language_distribution": {
-      "Hebrew": 12,
-      "Yiddish": 2,
-      "English": 1
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1345,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3538
     },
-    "original_language_distribution": {
-      "Hebrew": 12,
-      "Yiddish": 2,
-      "unknown": 1
+    "metrics_actual_before": null,
+    "metrics_actual_after": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 15,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 24
     },
-    "reviewed_body_language_distribution": {
-      "Hebrew": 13,
-      "Yiddish": 2,
-      "English": 1
-    },
-    "source_type_distribution": {
-      "published_hebrew_hayom_yom_entry": 12,
-      "published_yiddish_hayom_yom_entry": 2,
-      "published_english_translated_correspondence": 1
-    },
-    "source_languages": [
-      "Hebrew",
-      "Yiddish",
-      "English"
-    ],
-    "evidence_family_ids": [
-      "hayom-yom-528877-5704",
-      "hayom-yom-528878-5704",
-      "hayom-yom-528880-5704",
-      "hayom-yom-528881-5704",
-      "hayom-yom-528882-5704",
-      "hayom-yom-528883-5704",
-      "hayom-yom-528884-5704",
-      "hayom-yom-528885-5704",
-      "hayom-yom-528886-5704",
-      "hayom-yom-528887-5704",
-      "hayom-yom-528888-5704",
-      "hayom-yom-528889-5704",
-      "hayom-yom-528890-5704",
-      "hayom-yom-528891-5704",
-      "igrot-letter-5710-6-tishrei-yehudah-chitrik"
-    ],
-    "same_family_items": [],
-    "existing_identity_updates": [
-      {
-        "aid": 5959845,
-        "id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
-        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
-        "evidence_family_id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
-        "existing_propositions_before": 13,
-        "propositions_added": 1,
-        "total_propositions_after": 14,
-        "locator": "he.chabad.org AID 5959845, גוף השיחה, סעיף כ״א, שורות 376–379.",
-        "locators": [
-          "he.chabad.org AID 5959845, גוף השיחה, סעיף כ״א, שורות 376–379."
-        ],
-        "reason": "העשרה in-place של סעיף כ״א בדימוי הביכורים; לא נוצרה זהות או משפחת ראיות חדשה."
-      }
-    ],
-    "not_promoted_after_inspection": [
-      {
-        "aid": 528877,
-        "id": "hayom-yom-528877-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528878,
-        "id": "hayom-yom-528878-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528880,
-        "id": "hayom-yom-528880-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528881,
-        "id": "hayom-yom-528881-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528882,
-        "id": "hayom-yom-528882-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528883,
-        "id": "hayom-yom-528883-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528884,
-        "id": "hayom-yom-528884-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528885,
-        "id": "hayom-yom-528885-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528886,
-        "id": "hayom-yom-528886-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528887,
-        "id": "hayom-yom-528887-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528888,
-        "id": "hayom-yom-528888-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528889,
-        "id": "hayom-yom-528889-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528890,
-        "id": "hayom-yom-528890-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 528891,
-        "id": "hayom-yom-528891-5704",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": null,
-        "id": "hayom-yom-5704-18-tishrei-date-page-2026-09-29",
-        "status": "Parsed",
-        "reason": "גוף הערך בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי."
-      },
-      {
-        "aid": 2277337,
-        "id": "chabad-letter-2277337-5710-6-tishrei",
-        "status": "Parsed",
-        "reason": "הפריט הוא תרגום אנגלי; המקור בשפתו המקורית לא נבדק, ולכן נשאר Parsed ומסומן כלא-עצמאי."
-      }
-    ],
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
@@ -384,27 +91,225 @@
       "all_target_identities_answer_eligible": null,
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "checked_against": "תור הביקורת בן 1,022 הרשומות נבדק ללא התאמות ל-AID 528877–528891 או 2277337; נבדקו אצוות 127–129 ללא התאמות למזהים אלה. GitHub connector לא החזיר את public-search-index.json המלא בשל גודלו; סריקה קנונית מלאה תתבצע ב-reconciliation.",
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "recent_batches_checked": [
-        "127",
-        "128",
-        "129"
+        "130",
+        "131"
       ],
-      "note": "בדיקת כפילויות מקדימה בלבד; אין לטעון שאין התנגשויות קנוניות לפני סריקת האינדקס המלאה.",
-      "new_source_identity_count": 15
+      "note": "בדיקה מקדימה מול תור הביקורת ושרשרת האצוות הקודמות לא מצאה התאמות; public-search-index.json המלא לא נשלף דרך מחבר GitHub. סריקה קנונית מלאה ממתינה ל-reconciliation; אין לטעון שאין התנגשויות לפני הסריקה."
     },
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "Kehot / Chabad.org / BeitChabad.com",
+      "accessible_item_level_bodies": 15,
+      "existing_identity_bodies": 1,
+      "blocked_alternate_type_routes": 2,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        528907,
+        528908,
+        528909,
+        528910,
+        528911,
+        528912,
+        528913,
+        528914,
+        528915,
+        528916,
+        528917,
+        528918,
+        528919,
+        528920,
+        528921
+      ],
+      "existing_identity_aids": [
+        2989153
+      ],
+      "blocked_direct_routes": [
+        5071116,
+        5071138
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "שני נתיבי אגרות הפנו למעטפת ללא גוף איגרת. במקום לחזור עליהם נבדקו 15 גופי ערכי היום יום בשפת המקור והועשרה שיחה קיימת אחת; לא הופעל crawler ולא נעשתה עקיפת גישה."
+    },
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "translations_counted_as_independent_witnesses": 0
+  },
+  "previous_manual_web_review": {
+    "batch_id": "131",
+    "batch_file": "data/items/content-research-batch-131-2026-11-17.json",
+    "reviewed_at": "2026-11-17T01:29:03+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 19,
+    "source_bodies_inspected": 15,
+    "new_source_identities": 14,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 19,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 20,
+    "answer_eligible_source_families_added": 13,
+    "content_verified_unique_sources_added": 0,
+    "new_aids": [
+      528893,
+      528894,
+      528895,
+      528896,
+      528897,
+      528898,
+      528899,
+      528900,
+      528901,
+      528902,
+      528903,
+      528904,
+      528905,
+      528906
+    ],
+    "enriched_aids": [
+      2989153
+    ],
+    "blocked_candidate_count": 3,
+    "blocked_candidates": [
+      {
+        "aid": 553672,
+        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/553672",
+        "status": "Internal Error",
+        "reason": "העמוד הציבורי לא היה נגיש דרך כלי הפתיחה ולא סיפק גוף פרסום קריא."
+      },
+      {
+        "aid": 5913,
+        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5913",
+        "status": "Internal Error",
+        "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
+      },
+      {
+        "aid": 5914,
+        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5914",
+        "status": "Internal Error",
+        "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
+      }
+    ],
+    "excluded_candidate_count": 1,
+    "excluded_candidates": [
+      {
+        "aid": 528892,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528892",
+        "status": "opened_navigation_only",
+        "reason": "עמוד ניווט של חודש חשון ללא גוף ערך יומי עצמאי."
+      }
+    ],
     "metrics_before": {
-      "answer_eligible_unique_sources": 1302,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3470
-    },
-    "metrics_before_source": "גבול צפוי אחרי batch 129 בלבד, לא מדידה בפועל. public-metrics.json עדיין 977/878/2950 ו-project-state 977/870/2950; ריצת reconciliation קודמת מדדה workspace 1300/854/3474 אך לא שמרה אותו.",
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1317,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3494
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1330,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3514
+    },
+    "metrics_actual_before": null,
+    "metrics_actual_after": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 13,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 20
+    },
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "unique_new_aid_count": 14,
+      "unique_new_family_count": 13,
+      "new_evidence_families_unique": false,
+      "same_family_relations": [
+        {
+          "aid": 528895,
+          "canonical_aid": 528894,
+          "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
+          "relationship": "continuation_of_same_discourse"
+        }
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null,
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "recent_batches_checked": [
+        "130"
+      ],
+      "note": "AID 528894 ו-AID 528895 חולקים Evidence Family; סריקה קנונית מלאה עדיין ממתינה."
+    }
+  },
+  "last_manual_web_review": {
+    "batch_id": "132",
+    "batch_file": "data/items/content-research-batch-132-2026-11-17.json",
+    "reviewed_at": "2026-11-17T01:59:08+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 18,
+    "source_bodies_inspected": 16,
+    "new_source_identities": 15,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 21,
+    "existing_response_propositions_added": 3,
+    "total_new_paraphrase_entries": 24,
+    "answer_eligible_source_families_added": 15,
+    "content_verified_unique_sources_added": 0,
+    "new_aids": [
+      528907,
+      528908,
+      528909,
+      528910,
+      528911,
+      528912,
+      528913,
+      528914,
+      528915,
+      528916,
+      528917,
+      528918,
+      528919,
+      528920,
+      528921
+    ],
+    "enriched_aids": [
+      2989153
+    ],
+    "blocked_candidate_count": 2,
+    "blocked_candidates": [
+      {
+        "aid": 5071116,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071116/jewish/page.htm",
+        "status": "redirected_to_generic_shell",
+        "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן.",
+        "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
+      },
+      {
+        "aid": 5071138,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071138/jewish/page.htm",
+        "status": "redirected_to_generic_shell",
+        "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן ולא שונתה הזהות הקיימת.",
+        "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
+      }
+    ],
+    "excluded_candidate_count": 0,
+    "excluded_candidates": [],
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1330,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3514
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1345,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3538
     },
     "metrics_actual_before": null,
     "metrics_actual_after": null,
@@ -413,1977 +318,14 @@
       "content_verified_unique_sources": 0,
       "answer_eligible_propositions": 24
     },
-    "reconciliation_variance": null,
-    "reconciliation_snapshot_adjustment": null,
-    "source_body_review": [
-      {
-        "aid": 528877,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528877",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–173",
-        "web_source_ref": "turn535043view0",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528877-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 172–173 בשפת המקור Yiddish; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528878,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528878",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–175",
-        "web_source_ref": "turn535043view1",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528878-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 172–175 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528880,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528880",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173",
-        "web_source_ref": "turn535043view2",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528880-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 173 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528881,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528881",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173–174",
-        "web_source_ref": "turn535043view3",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528881-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 173–174 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528882,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528882",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–173",
-        "web_source_ref": "turn535043view4",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528882-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 172–173 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528883,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528883",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–174",
-        "web_source_ref": "turn535043view5",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528883-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 172–174 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528884,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528884",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–173",
-        "web_source_ref": "turn535043view6",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528884-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 172–173 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528885,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528885",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 174–175",
-        "web_source_ref": "turn535043view7",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528885-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 174–175 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528886,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528886",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173–174",
-        "web_source_ref": "turn535043view8",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528886-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 173–174 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528887,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528887",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172",
-        "web_source_ref": "turn535043view9",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528887-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 172 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528888,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528888",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173",
-        "web_source_ref": "turn535043view10",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528888-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 173 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528889,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528889",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173",
-        "web_source_ref": "turn535043view11",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528889-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 173 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528890,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528890",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173–175",
-        "web_source_ref": "turn637328view0",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528890-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 173–175 בשפת המקור Yiddish; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": 528891,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528891",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173",
-        "web_source_ref": "turn535043view13",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "hayom-yom-528891-5704",
-        "verification_scope": "גוף הפרסום הציבורי נפתח ונבדק ביום 2026-11-17; שורות 173 בשפת המקור Hebrew; ההקשר חלקי, ללא בדיקת כתב־יד או מהדורה ביקורתית."
-      },
-      {
-        "aid": null,
-        "id": "hayom-yom-5704-18-tishrei-date-page-2026-09-29",
-        "source_url": "https://he.chabad.org/dailystudy/hayomyom.asp?tdate=9%2F29%2F2026",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 170–177",
-        "web_source_ref": "turn773210view0",
-        "canonical_file": null,
-        "evidence_family_id": null,
-        "verification_scope": "נפתח ונבדק עמוד הלימוד היומי של Chabad.org לתאריך 29.9.2026; גוף הערך המקורי בעברית מופיע בשורות 170–177 ומזהה את הערך כיח תשרי, ב דחוהמ״ס (תש״ד). נתיב AID 528879 החזיר Internal Error; לא נטען שהעמוד לפי תאריך הוא אותו AID, ולכן נשמרה זהות URL-ית ללא AID. לא נבדקו כתב־יד או מהדורה ביקורתית; ההקשר חלקי.",
-        "included_in_corpus": false,
-        "identity_resolution": "not_admitted",
-        "reason": "גוף הערך בעמוד התאריך נבדק כחלופה, אך לא אומת קשר ל-AID 528879. כדי להימנע מיצירת זהות כפולה או משפחת ראיות לא מבוססת, העמוד לא קודם לזהות חדשה."
-      },
-      {
-        "aid": 2277337,
-        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277337/jewish/Torah-study-as-being-both-above-and-yet-relating-to-the-limits-of-time.htm",
-        "language": "English",
-        "original_language": "unknown",
-        "body_text_inspected": true,
-        "inspected_original_language_body": false,
-        "translation_only": true,
-        "independent_witness": false,
-        "existing_identity": false,
-        "body_locator": "lines 272–287",
-        "web_source_ref": "turn887596view0",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "evidence_family_id": "igrot-letter-5710-6-tishrei-yehudah-chitrik",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של AID 2277337 ביום 17.11.2026, שורות 261–287, כולל תאריך האיגרת, הנמען, גוף המכתב והחתימה המודפסת. המו״ל מציין כי מדובר בתרגום לאנגלית מאת Eli Touger מתוך Sichos in English Collection; המקור העברי/יידי, כתב־היד והחתימה המקורית לא נבדקו. הפרופוזיציות מתארות את התרגום בלבד, והפריט מסומן כמצג מתורגם שאינו עד עצמאי."
-      },
-      {
-        "aid": 5959845,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/5959845",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": true,
-        "body_locator": "סעיף כ״א, שורות 376–379",
-        "web_source_ref": "turn849729view0",
-        "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
-        "evidence_family_id": "sicha-5728-shabbat-pinchas-torah-and-practical-work-aid5959845",
-        "verification_scope": "נפתח ונבדק מחדש גוף השיחה AID 5959845, סעיף כ״א, שורות 376–379. נוספה פרפרזה אחת על דימוי הביכורים והבאת המובחר; לא נבדקו כתב־יד או הקלטה."
-      },
-      {
-        "aid": 528879,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528879",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": false,
-        "inspected_original_language_body": false,
-        "existing_identity": false,
-        "status": "Internal Error",
-        "blocked": true,
-        "body_locator": null,
-        "web_source_ref": "turn944986view2",
-        "alternate_source_url": "https://he.chabad.org/dailystudy/hayomyom.asp?tdate=9%2F29%2F2026",
-        "alternate_body_text_inspected": true,
-        "handling": "הנתיב הישיר החזיר Internal Error. נפתח עמוד הלימוד היומי לפי תאריך 29.9.2026 ונבדק גוף הערך בעברית; הוא נרשם בזהות URL-ית ללא AID, ולא נטען שהעמוד הוא AID 528879.",
-        "reason": "נתיב הפרסום הישיר לא החזיר גוף פריט קריא; לא נגזר ממנו תוכן."
-      }
-    ],
-    "records": [
-      {
-        "id": "hayom-yom-528877-5704",
-        "canonical_key": "aid:528877",
-        "aid": 528877,
-        "type": "hayom_yom_entry",
-        "title": "טז תשרי, ב דחג הסוכות",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום שישי | טז תשרי, ב דחג הסוכות [בחו״ל] | (תש״ד)",
-        "date": "טז תשרי, ב דחג הסוכות",
-        "date_precision": "exact_as_publisher",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528877",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מתעד שבקידוש ליל החג אומרים תחילה שהחיינו ואחר כך לישב בסוכה; במנחה אין אומרים הודו אך אומרים פתח אליהו. זו פרפרזה על מנהגי הערך, לא פסיקה עצמאית לכל קהילה. הערך מביא דיווח המיוחס לצמח צדק: בשנת תקס״ט שמע מסבו בפעם השישית את ״ושאבתם מים״ הראשון מתוך לקוטי תורה; הוא קושר את שמחת בית השואבה לגילוי הנבואה שקיבל יונה ולגילוי ״עד אין סוף״, ומסיים בקישור לביאת המשיח. זהו דיווח פנימי המיוחס לצמח צדק, לא עדות עצמאית ולא אמירה ישירה של הרבי.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מתעד שבקידוש ליל החג אומרים תחילה שהחיינו ואחר כך לישב בסוכה; במנחה אין אומרים הודו אך אומרים פתח אליהו. זו פרפרזה על מנהגי הערך, לא פסיקה עצמאית לכל קהילה.",
-          "הערך מביא דיווח המיוחס לצמח צדק: בשנת תקס״ט שמע מסבו בפעם השישית את ״ושאבתם מים״ הראשון מתוך לקוטי תורה; הוא קושר את שמחת בית השואבה לגילוי הנבואה שקיבל יונה ולגילוי ״עד אין סוף״, ומסיים בקישור לביאת המשיח. זהו דיווח פנימי המיוחס לצמח צדק, לא עדות עצמאית ולא אמירה ישירה של הרבי."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528877, גוף הערך Yiddish, שורות 172.",
-          "he.chabad.org AID 528877, גוף הערך Yiddish, שורות 173."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528877, גוף הערך Yiddish, שורות 172. he.chabad.org AID 528877, גוף הערך Yiddish, שורות 173.",
-        "evidence_family_id": "hayom-yom-528877-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום שישי | טז תשרי, ב דחג הסוכות [בחו״ל] | (תש״ד).",
-        "question_or_problem": "הערך מתעד שבקידוש ליל החג אומרים תחילה שהחיינו ואחר כך לישב בסוכה; במנחה אין אומרים הודו אך אומרים פתח אליהו. זו פרפרזה על מנהגי הערך, לא פסיקה עצמאית לכל קהילה. הערך מביא דיווח המיוחס לצמח צדק: בשנת תקס״ט שמע מסבו בפעם השישית את ״ושאבתם מים״ הראשון מתוך לקוטי תורה; הוא קושר את שמחת בית השואבה לגילוי הנבואה שקיבל יונה ולגילוי ״עד אין סוף״, ומסיים בקישור לביאת המשיח. זהו דיווח פנימי המיוחס לצמח צדק, לא עדות עצמאית ולא אמירה ישירה של הרבי.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_yiddish_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528877; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Yiddish",
-          "scope": "AID 528877, שורות 172–173",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528877; גוף הערך Yiddish נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Yiddish נבדק בשורות 172–173; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528877 ביום 2026-11-17; נבדקו רק שורות 172–173 בשפת המקור (Yiddish). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528877",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528877; גוף הערך Yiddish נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528877 ביום 2026-11-17; נבדקו רק שורות 172–173 בשפת המקור (Yiddish). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528877; גוף הערך Yiddish נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "טז תשרי, ב דחג הסוכות"
-          ],
-          "research_terms": [
-            "סוכות",
-            "קידוש",
-            "שהחיינו",
-            "ושאבתם מים",
-            "לקוטי תורה",
-            "שמחת בית השואבה",
-            "הצמח צדק"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528877, גוף הערך Yiddish, שורות 172. he.chabad.org AID 528877, גוף הערך Yiddish, שורות 173. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528877,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528877",
-          "body_locator": "שורות 172–173"
-        }
-      },
-      {
-        "id": "hayom-yom-528878-5704",
-        "canonical_key": "aid:528878",
-        "aid": 528878,
-        "type": "hayom_yom_entry",
-        "title": "יז תשרי, א דחוהמ״ס [בחו״ל]",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום שבת חוהמ״ס | יז תשרי, א דחוהמ״ס [בחו״ל] | (תש״ד)",
-        "date": "יז תשרי, א דחוהמ״ס [בחו״ל]",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528878",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מתאר את עבודת הניסיונות כדרך שבה מתגלה בחינת היחידה שבנפש, ומקשר גילוי זה להתקשרות הנשמה באלוקות ולקיום התורה והמצוות במסירות נפש. בהמשך מתואר כיצד גילוי היחידה עשוי להפוך את היחידה שבנפש הבהמית לאלוקות, להביא חיות פנימית ותענוג בעבודת ה׳, ולהחליש את המשיכה וההנאה מעניינים גשמיים. זהו תיאור רוחני של הערך, לא מדד פסיכולוגי או הוראה כללית.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מתאר את עבודת הניסיונות כדרך שבה מתגלה בחינת היחידה שבנפש, ומקשר גילוי זה להתקשרות הנשמה באלוקות ולקיום התורה והמצוות במסירות נפש.",
-          "בהמשך מתואר כיצד גילוי היחידה עשוי להפוך את היחידה שבנפש הבהמית לאלוקות, להביא חיות פנימית ותענוג בעבודת ה׳, ולהחליש את המשיכה וההנאה מעניינים גשמיים. זהו תיאור רוחני של הערך, לא מדד פסיכולוגי או הוראה כללית."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528878, גוף הערך Hebrew, שורות 175.",
-          "he.chabad.org AID 528878, גוף הערך Hebrew, שורות 175."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528878, גוף הערך Hebrew, שורות 175. he.chabad.org AID 528878, גוף הערך Hebrew, שורות 175.",
-        "evidence_family_id": "hayom-yom-528878-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום שבת חוהמ״ס | יז תשרי, א דחוהמ״ס [בחו״ל] | (תש״ד).",
-        "question_or_problem": "הערך מתאר את עבודת הניסיונות כדרך שבה מתגלה בחינת היחידה שבנפש, ומקשר גילוי זה להתקשרות הנשמה באלוקות ולקיום התורה והמצוות במסירות נפש. בהמשך מתואר כיצד גילוי היחידה עשוי להפוך את היחידה שבנפש הבהמית לאלוקות, להביא חיות פנימית ותענוג בעבודת ה׳, ולהחליש את המשיכה וההנאה מעניינים גשמיים. זהו תיאור רוחני של הערך, לא מדד פסיכולוגי או הוראה כללית.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528878; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528878, שורות 172–175",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528878; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 172–175; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528878 ביום 2026-11-17; נבדקו רק שורות 172–175 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528878",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528878; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528878 ביום 2026-11-17; נבדקו רק שורות 172–175 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528878; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "יז תשרי, א דחוהמ״ס [בחו״ל]"
-          ],
-          "research_terms": [
-            "שבת חול המועד",
-            "ניסיונות",
-            "יחידה שבנפש",
-            "מסירות נפש",
-            "חיות פנימית",
-            "עבודת ה׳"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528878, גוף הערך Hebrew, שורות 175. he.chabad.org AID 528878, גוף הערך Hebrew, שורות 175. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528878,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528878",
-          "body_locator": "שורות 172–175"
-        }
-      },
-      {
-        "id": "hayom-yom-528880-5704",
-        "canonical_key": "aid:528880",
-        "aid": 528880,
-        "type": "hayom_yom_entry",
-        "title": "יט תשרי, ג דחוהמ״ס [בחו״ל]",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום שני | יט תשרי, ג דחוהמ״ס [בחו״ל] | (תש״ד)",
-        "date": "יט תשרי, ג דחוהמ״ס [בחו״ל]",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528880",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מציין שבברכת ״ואת כל מיני תבואתה לטובה״ יש לכוון לתבואה הנצרכת לחיטים למצה ולאתרוג; במקום אחר נזכר גם יין לקידוש. הערך קושר את הכוונה לפרטים אלה לתפילה על תבואה טובה.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מציין שבברכת ״ואת כל מיני תבואתה לטובה״ יש לכוון לתבואה הנצרכת לחיטים למצה ולאתרוג; במקום אחר נזכר גם יין לקידוש. הערך קושר את הכוונה לפרטים אלה לתפילה על תבואה טובה."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528880, גוף הערך Hebrew, שורות 173."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528880, גוף הערך Hebrew, שורות 173.",
-        "evidence_family_id": "hayom-yom-528880-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום שני | יט תשרי, ג דחוהמ״ס [בחו״ל] | (תש״ד).",
-        "question_or_problem": "הערך מציין שבברכת ״ואת כל מיני תבואתה לטובה״ יש לכוון לתבואה הנצרכת לחיטים למצה ולאתרוג; במקום אחר נזכר גם יין לקידוש. הערך קושר את הכוונה לפרטים אלה לתפילה על תבואה טובה.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528880; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528880, שורות 173",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528880; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 173; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528880 ביום 2026-11-17; נבדקו רק שורות 173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528880",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528880; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528880 ביום 2026-11-17; נבדקו רק שורות 173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528880; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "יט תשרי, ג דחוהמ״ס [בחו״ל]"
-          ],
-          "research_terms": [
-            "תפילת שמונה עשרה",
-            "תבואה",
-            "חיטים למצה",
-            "אתרוג",
-            "יין לקידוש"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528880, גוף הערך Hebrew, שורות 173. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528880,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528880",
-          "body_locator": "שורות 173"
-        }
-      },
-      {
-        "id": "hayom-yom-528881-5704",
-        "canonical_key": "aid:528881",
-        "aid": 528881,
-        "type": "hayom_yom_entry",
-        "title": "כ תשרי, ד דחוהמ״ס [בחו״ל]",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום שלישי | כ תשרי, ד דחוהמ״ס [בחו״ל] | (תש״ד)",
-        "date": "כ תשרי, ד דחוהמ״ס [בחו״ל]",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528881",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מציין שבעת נענועי הלולב מגיעים עד החזה, ומקשר את המקום למקום שבו מכים על החזה באמירת אשמנו. הערך מייחס ל״אאמו״ר״ הסבר שלפיו כובד הראש והמרירות שלפני התפילה מאפשרים לאחר מכן התעוררות של המידות בתפילה. הכינוי והייחוס נשמרים כפי שהם בפרסום; אין לזהות את הדובר מעבר לנוסח זה.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מציין שבעת נענועי הלולב מגיעים עד החזה, ומקשר את המקום למקום שבו מכים על החזה באמירת אשמנו.",
-          "הערך מייחס ל״אאמו״ר״ הסבר שלפיו כובד הראש והמרירות שלפני התפילה מאפשרים לאחר מכן התעוררות של המידות בתפילה. הכינוי והייחוס נשמרים כפי שהם בפרסום; אין לזהות את הדובר מעבר לנוסח זה."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528881, גוף הערך Hebrew, שורות 173.",
-          "he.chabad.org AID 528881, גוף הערך Hebrew, שורות 174."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528881, גוף הערך Hebrew, שורות 173. he.chabad.org AID 528881, גוף הערך Hebrew, שורות 174.",
-        "evidence_family_id": "hayom-yom-528881-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום שלישי | כ תשרי, ד דחוהמ״ס [בחו״ל] | (תש״ד).",
-        "question_or_problem": "הערך מציין שבעת נענועי הלולב מגיעים עד החזה, ומקשר את המקום למקום שבו מכים על החזה באמירת אשמנו. הערך מייחס ל״אאמו״ר״ הסבר שלפיו כובד הראש והמרירות שלפני התפילה מאפשרים לאחר מכן התעוררות של המידות בתפילה. הכינוי והייחוס נשמרים כפי שהם בפרסום; אין לזהות את הדובר מעבר לנוסח זה.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528881; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528881, שורות 173–174",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528881; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 173–174; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528881 ביום 2026-11-17; נבדקו רק שורות 173–174 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528881",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528881; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528881 ביום 2026-11-17; נבדקו רק שורות 173–174 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528881; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כ תשרי, ד דחוהמ״ס [בחו״ל]"
-          ],
-          "research_terms": [
-            "נענועים",
-            "אשמנו",
-            "כובד ראש",
-            "התמרמרות",
-            "תפילה",
-            "התפעלות המידות"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528881, גוף הערך Hebrew, שורות 173. he.chabad.org AID 528881, גוף הערך Hebrew, שורות 174. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528881,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528881",
-          "body_locator": "שורות 173–174"
-        }
-      },
-      {
-        "id": "hayom-yom-528882-5704",
-        "canonical_key": "aid:528882",
-        "aid": 528882,
-        "type": "hayom_yom_entry",
-        "title": "כא תשרי, הושענא רבה",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום רביעי | כא תשרי, הושענא רבה | (תש״ד)",
-        "date": "כא תשרי, הושענא רבה",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528882",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מציין שבתיקון ליל הושענא רבה אומרים את פרשת ברכה פעם אחת מקרא; הוא מביא מקרים שבהם ״אאמו״ר״ הורה ליחידים לקרוא אותה עם פירוש רש״י, ומדגיש במפורש שאין זו הוראה לרבים. בערב שמחת תורה קוראים אותה שנים מקרא ואחד תרגום. הערך מתעד מנהגים נוספים להושענא רבה: הסרת שתי הכריכות שעל הלולב לפני הלל, עריכת עירוב תבשילין וטבילת פרוסת המוציא בדבש; הוא מבחין במפורש שהטבילה בדבש אינה נוהגת בשמיני עצרת ובשמחת תורה.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מציין שבתיקון ליל הושענא רבה אומרים את פרשת ברכה פעם אחת מקרא; הוא מביא מקרים שבהם ״אאמו״ר״ הורה ליחידים לקרוא אותה עם פירוש רש״י, ומדגיש במפורש שאין זו הוראה לרבים. בערב שמחת תורה קוראים אותה שנים מקרא ואחד תרגום.",
-          "הערך מתעד מנהגים נוספים להושענא רבה: הסרת שתי הכריכות שעל הלולב לפני הלל, עריכת עירוב תבשילין וטבילת פרוסת המוציא בדבש; הוא מבחין במפורש שהטבילה בדבש אינה נוהגת בשמיני עצרת ובשמחת תורה."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528882, גוף הערך Hebrew, שורות 172.",
-          "he.chabad.org AID 528882, גוף הערך Hebrew, שורות 173."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528882, גוף הערך Hebrew, שורות 172. he.chabad.org AID 528882, גוף הערך Hebrew, שורות 173.",
-        "evidence_family_id": "hayom-yom-528882-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום רביעי | כא תשרי, הושענא רבה | (תש״ד).",
-        "question_or_problem": "הערך מציין שבתיקון ליל הושענא רבה אומרים את פרשת ברכה פעם אחת מקרא; הוא מביא מקרים שבהם ״אאמו״ר״ הורה ליחידים לקרוא אותה עם פירוש רש״י, ומדגיש במפורש שאין זו הוראה לרבים. בערב שמחת תורה קוראים אותה שנים מקרא ואחד תרגום. הערך מתעד מנהגים נוספים להושענא רבה: הסרת שתי הכריכות שעל הלולב לפני הלל, עריכת עירוב תבשילין וטבילת פרוסת המוציא בדבש; הוא מבחין במפורש שהטבילה בדבש אינה נוהגת בשמיני עצרת ובשמחת תורה.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528882; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528882, שורות 172–173",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528882; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 172–173; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528882 ביום 2026-11-17; נבדקו רק שורות 172–173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528882",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528882; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528882 ביום 2026-11-17; נבדקו רק שורות 172–173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528882; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כא תשרי, הושענא רבה"
-          ],
-          "research_terms": [
-            "הושענא רבה",
-            "תיקון ליל הושענא רבה",
-            "פרשת ברכה",
-            "שנים מקרא ואחד תרגום",
-            "לולב",
-            "עירוב תבשילין",
-            "דבש"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528882, גוף הערך Hebrew, שורות 172. he.chabad.org AID 528882, גוף הערך Hebrew, שורות 173. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528882,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528882",
-          "body_locator": "שורות 172–173"
-        }
-      },
-      {
-        "id": "hayom-yom-528883-5704",
-        "canonical_key": "aid:528883",
-        "aid": 528883,
-        "type": "hayom_yom_entry",
-        "title": "כב תשרי, שמיני עצרת [בא״י שמחת תורה]",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום חמישי | כב תשרי, שמיני עצרת [בא״י - שמחת תורה] | (תש״ד)",
-        "date": "כב תשרי, שמיני עצרת [בא״י שמחת תורה]",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528883",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מתעד שבשמיני עצרת מקדשים ואוכלים בסוכה בלילה וביום, עורכים הקפות בלילה ואינם אומרים את נוסח ״יהי רצון״ ביציאה מן הסוכה. הערך משווה בין שמיני עצרת לראש השנה בכוונות ובייחודים: בראש השנה מודגש עניין העלייה והעבודה בתחנונים, בהכנעה ובמרירות; בשמיני עצרת מודגש עניין ההמשכה ועבודת השמחה. זו ההבחנה שמציג הערך, לא תיאור מלא של כל מנהגי שני הימים.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מתעד שבשמיני עצרת מקדשים ואוכלים בסוכה בלילה וביום, עורכים הקפות בלילה ואינם אומרים את נוסח ״יהי רצון״ ביציאה מן הסוכה.",
-          "הערך משווה בין שמיני עצרת לראש השנה בכוונות ובייחודים: בראש השנה מודגש עניין העלייה והעבודה בתחנונים, בהכנעה ובמרירות; בשמיני עצרת מודגש עניין ההמשכה ועבודת השמחה. זו ההבחנה שמציג הערך, לא תיאור מלא של כל מנהגי שני הימים."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528883, גוף הערך Hebrew, שורות 172–173.",
-          "he.chabad.org AID 528883, גוף הערך Hebrew, שורות 174."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528883, גוף הערך Hebrew, שורות 172–173. he.chabad.org AID 528883, גוף הערך Hebrew, שורות 174.",
-        "evidence_family_id": "hayom-yom-528883-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום חמישי | כב תשרי, שמיני עצרת [בא״י - שמחת תורה] | (תש״ד).",
-        "question_or_problem": "הערך מתעד שבשמיני עצרת מקדשים ואוכלים בסוכה בלילה וביום, עורכים הקפות בלילה ואינם אומרים את נוסח ״יהי רצון״ ביציאה מן הסוכה. הערך משווה בין שמיני עצרת לראש השנה בכוונות ובייחודים: בראש השנה מודגש עניין העלייה והעבודה בתחנונים, בהכנעה ובמרירות; בשמיני עצרת מודגש עניין ההמשכה ועבודת השמחה. זו ההבחנה שמציג הערך, לא תיאור מלא של כל מנהגי שני הימים.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528883; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528883, שורות 172–174",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528883; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 172–174; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528883 ביום 2026-11-17; נבדקו רק שורות 172–174 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528883",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528883; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528883 ביום 2026-11-17; נבדקו רק שורות 172–174 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528883; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כב תשרי, שמיני עצרת [בא״י שמחת תורה]"
-          ],
-          "research_terms": [
-            "שמיני עצרת",
-            "סוכה",
-            "הקפות",
-            "ראש השנה",
-            "המשכה",
-            "שמחה"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528883, גוף הערך Hebrew, שורות 172–173. he.chabad.org AID 528883, גוף הערך Hebrew, שורות 174. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528883,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528883",
-          "body_locator": "שורות 172–174"
-        }
-      },
-      {
-        "id": "hayom-yom-528884-5704",
-        "canonical_key": "aid:528884",
-        "aid": 528884,
-        "type": "hayom_yom_entry",
-        "title": "כג תשרי, שמחת תורה [בחו״ל]",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום שישי | כג תשרי, שמחת תורה [בחו״ל] | (תש״ד)",
-        "date": "כג תשרי, שמחת תורה [בחו״ל]",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528884",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מביא בשם רבינו הזקן, שאמר בשמחת תורה תק״מ, הבחנה בין ״עץ חיים היא למחזיקים בה״ לבין ״ותומכיה מאושר״: הראשונים מתוארים כבעלי השגה הלומדים תורה, והשניים כבעלי עבודה העוסקים בתורה; הערך מדמה את תרומת בעלי העבודה לתפקיד הרגל המקיימת את הראש. הייחוס הוא לרבינו הזקן כפי שמובא בערך.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מביא בשם רבינו הזקן, שאמר בשמחת תורה תק״מ, הבחנה בין ״עץ חיים היא למחזיקים בה״ לבין ״ותומכיה מאושר״: הראשונים מתוארים כבעלי השגה הלומדים תורה, והשניים כבעלי עבודה העוסקים בתורה; הערך מדמה את תרומת בעלי העבודה לתפקיד הרגל המקיימת את הראש. הייחוס הוא לרבינו הזקן כפי שמובא בערך."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528884, גוף הערך Hebrew, שורות 173."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528884, גוף הערך Hebrew, שורות 173.",
-        "evidence_family_id": "hayom-yom-528884-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום שישי | כג תשרי, שמחת תורה [בחו״ל] | (תש״ד).",
-        "question_or_problem": "הערך מביא בשם רבינו הזקן, שאמר בשמחת תורה תק״מ, הבחנה בין ״עץ חיים היא למחזיקים בה״ לבין ״ותומכיה מאושר״: הראשונים מתוארים כבעלי השגה הלומדים תורה, והשניים כבעלי עבודה העוסקים בתורה; הערך מדמה את תרומת בעלי העבודה לתפקיד הרגל המקיימת את הראש. הייחוס הוא לרבינו הזקן כפי שמובא בערך.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528884; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528884, שורות 172–173",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528884; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 172–173; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528884 ביום 2026-11-17; נבדקו רק שורות 172–173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528884",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528884; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528884 ביום 2026-11-17; נבדקו רק שורות 172–173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528884; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כג תשרי, שמחת תורה [בחו״ל]"
-          ],
-          "research_terms": [
-            "שמחת תורה",
-            "קריאת התורה",
-            "רבינו הזקן",
-            "עץ חיים",
-            "תומכיה מאושר",
-            "בעלי השגה",
-            "בעלי עבודה"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528884, גוף הערך Hebrew, שורות 173. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528884,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528884",
-          "body_locator": "שורות 172–173"
-        }
-      },
-      {
-        "id": "hayom-yom-528885-5704",
-        "canonical_key": "aid:528885",
-        "aid": 528885,
-        "type": "hayom_yom_entry",
-        "title": "כד תשרי, אסרו חג [בחו״ל]",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "שבת | כד תשרי, אסרו חג [בחו״ל] | (תש״ד)",
-        "date": "כד תשרי, אסרו חג [בחו״ל]",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528885",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מציג התוועדות ציבורית, ובפרט בשבת או במוצאי שבת, כאחד מיסודות דרכי החסידים והחסידות וכפתח למצוות אהבת ישראל. הערך מתאר כי בהתוועדות תובעים מן המשתתפים לשפר הנהגות, לקבוע עתים ללימוד דברי אלוקים חיים וללמוד על מנת לקיים; הוא מסייג את התוכחה כך שלא יהיה בה הלבנת פנים, ומדגיש את אופייה באהבה ובחיבה.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מציג התוועדות ציבורית, ובפרט בשבת או במוצאי שבת, כאחד מיסודות דרכי החסידים והחסידות וכפתח למצוות אהבת ישראל.",
-          "הערך מתאר כי בהתוועדות תובעים מן המשתתפים לשפר הנהגות, לקבוע עתים ללימוד דברי אלוקים חיים וללמוד על מנת לקיים; הוא מסייג את התוכחה כך שלא יהיה בה הלבנת פנים, ומדגיש את אופייה באהבה ובחיבה."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528885, גוף הערך Hebrew, שורות 174.",
-          "he.chabad.org AID 528885, גוף הערך Hebrew, שורות 175."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528885, גוף הערך Hebrew, שורות 174. he.chabad.org AID 528885, גוף הערך Hebrew, שורות 175.",
-        "evidence_family_id": "hayom-yom-528885-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: שבת | כד תשרי, אסרו חג [בחו״ל] | (תש״ד).",
-        "question_or_problem": "הערך מציג התוועדות ציבורית, ובפרט בשבת או במוצאי שבת, כאחד מיסודות דרכי החסידים והחסידות וכפתח למצוות אהבת ישראל. הערך מתאר כי בהתוועדות תובעים מן המשתתפים לשפר הנהגות, לקבוע עתים ללימוד דברי אלוקים חיים וללמוד על מנת לקיים; הוא מסייג את התוכחה כך שלא יהיה בה הלבנת פנים, ומדגיש את אופייה באהבה ובחיבה.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528885; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528885, שורות 174–175",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528885; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 174–175; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528885 ביום 2026-11-17; נבדקו רק שורות 174–175 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528885",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528885; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528885 ביום 2026-11-17; נבדקו רק שורות 174–175 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528885; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כד תשרי, אסרו חג [בחו״ל]"
-          ],
-          "research_terms": [
-            "התוועדות",
-            "פארבריינגען",
-            "אהבת ישראל",
-            "לימוד דא״ח",
-            "תוכחה באהבה",
-            "הלבנת פנים"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528885, גוף הערך Hebrew, שורות 174. he.chabad.org AID 528885, גוף הערך Hebrew, שורות 175. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528885,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528885",
-          "body_locator": "שורות 174–175"
-        }
-      },
-      {
-        "id": "hayom-yom-528886-5704",
-        "canonical_key": "aid:528886",
-        "aid": 528886,
-        "type": "hayom_yom_entry",
-        "title": "כה תשרי",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום ראשון | כה תשרי | (תש״ד)",
-        "date": "כה תשרי",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528886",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מבחין בין עשרה ניגונים המיוחסים לאדמו״ר הזקן כמחברם, לבין ניגונים שיוחסו לתקופת אדמו״ר האמצעי מפני שנוגנו לפניו, אך לא בהכרח חוברו על ידו; הוא מתאר גם קבוצת אברכים שחולקה למנגנים בפה ולמנגנים בכלים.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מבחין בין עשרה ניגונים המיוחסים לאדמו״ר הזקן כמחברם, לבין ניגונים שיוחסו לתקופת אדמו״ר האמצעי מפני שנוגנו לפניו, אך לא בהכרח חוברו על ידו; הוא מתאר גם קבוצת אברכים שחולקה למנגנים בפה ולמנגנים בכלים."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528886, גוף הערך Hebrew, שורות 173–174."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528886, גוף הערך Hebrew, שורות 173–174.",
-        "evidence_family_id": "hayom-yom-528886-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום ראשון | כה תשרי | (תש״ד).",
-        "question_or_problem": "הערך מבחין בין עשרה ניגונים המיוחסים לאדמו״ר הזקן כמחברם, לבין ניגונים שיוחסו לתקופת אדמו״ר האמצעי מפני שנוגנו לפניו, אך לא בהכרח חוברו על ידו; הוא מתאר גם קבוצת אברכים שחולקה למנגנים בפה ולמנגנים בכלים.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528886; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528886, שורות 173–174",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528886; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 173–174; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528886 ביום 2026-11-17; נבדקו רק שורות 173–174 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528886",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528886; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528886 ביום 2026-11-17; נבדקו רק שורות 173–174 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528886; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כה תשרי"
-          ],
-          "research_terms": [
-            "ניגונים",
-            "אדמו״ר הזקן",
-            "אדמו״ר האמצעי",
-            "קאפעלע",
-            "בעלי שיר",
-            "בעלי זמרה"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528886, גוף הערך Hebrew, שורות 173–174. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528886,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528886",
-          "body_locator": "שורות 173–174"
-        }
-      },
-      {
-        "id": "hayom-yom-528887-5704",
-        "canonical_key": "aid:528887",
-        "aid": 528887,
-        "type": "hayom_yom_entry",
-        "title": "כו תשרי",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום שני | כו תשרי | (תש״ד)",
-        "date": "כו תשרי",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528887",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מדווח שאדמו״ר הזקן מביא בשם הבעל שם טוב את פירוש הפסוק ״לעולם ה׳ דברך נצב בשמים״, אף שהרעיון מופיע גם במדרש תהלים ובמקורות נוספים; הערך קושר את הזכירה ליום השני של הבריאה ולכך שח״י אלול, יום הולדת הבעל שם טוב, חל ביום זה. הייחוס לבעל שם טוב דרך אדמו״ר הזקן נשמר.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מדווח שאדמו״ר הזקן מביא בשם הבעל שם טוב את פירוש הפסוק ״לעולם ה׳ דברך נצב בשמים״, אף שהרעיון מופיע גם במדרש תהלים ובמקורות נוספים; הערך קושר את הזכירה ליום השני של הבריאה ולכך שח״י אלול, יום הולדת הבעל שם טוב, חל ביום זה. הייחוס לבעל שם טוב דרך אדמו״ר הזקן נשמר."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528887, גוף הערך Hebrew, שורות 172."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528887, גוף הערך Hebrew, שורות 172.",
-        "evidence_family_id": "hayom-yom-528887-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום שני | כו תשרי | (תש״ד).",
-        "question_or_problem": "הערך מדווח שאדמו״ר הזקן מביא בשם הבעל שם טוב את פירוש הפסוק ״לעולם ה׳ דברך נצב בשמים״, אף שהרעיון מופיע גם במדרש תהלים ובמקורות נוספים; הערך קושר את הזכירה ליום השני של הבריאה ולכך שח״י אלול, יום הולדת הבעל שם טוב, חל ביום זה. הייחוס לבעל שם טוב דרך אדמו״ר הזקן נשמר.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528887; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528887, שורות 172",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528887; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 172; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528887 ביום 2026-11-17; נבדקו רק שורות 172 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528887",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528887; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528887 ביום 2026-11-17; נבדקו רק שורות 172 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528887; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כו תשרי"
-          ],
-          "research_terms": [
-            "לעולם ה׳ דברך נצב בשמים",
-            "אדמו״ר הזקן",
-            "הבעל שם טוב",
-            "מדרש תהלים",
-            "ח״י אלול"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528887, גוף הערך Hebrew, שורות 172. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528887,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528887",
-          "body_locator": "שורות 172"
-        }
-      },
-      {
-        "id": "hayom-yom-528888-5704",
-        "canonical_key": "aid:528888",
-        "aid": 528888,
-        "type": "hayom_yom_entry",
-        "title": "כז תשרי",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום שלישי | כז תשרי | (תש״ד)",
-        "date": "כז תשרי",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528888",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מתאר את התורה והמצוות כמקיפות את חיי האדם מלידה ועד פטירה, ומקשר את הנהגתן לפיתוח שכל בריא, מידות נעלות ויחסים ישרים הן בין אדם למקום והן בין אדם לחברו; הערך מציג זאת כבסיס לחיים מאושרים בגשמיות וברוחניות.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מתאר את התורה והמצוות כמקיפות את חיי האדם מלידה ועד פטירה, ומקשר את הנהגתן לפיתוח שכל בריא, מידות נעלות ויחסים ישרים הן בין אדם למקום והן בין אדם לחברו; הערך מציג זאת כבסיס לחיים מאושרים בגשמיות וברוחניות."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528888, גוף הערך Hebrew, שורות 173."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528888, גוף הערך Hebrew, שורות 173.",
-        "evidence_family_id": "hayom-yom-528888-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום שלישי | כז תשרי | (תש״ד).",
-        "question_or_problem": "הערך מתאר את התורה והמצוות כמקיפות את חיי האדם מלידה ועד פטירה, ומקשר את הנהגתן לפיתוח שכל בריא, מידות נעלות ויחסים ישרים הן בין אדם למקום והן בין אדם לחברו; הערך מציג זאת כבסיס לחיים מאושרים בגשמיות וברוחניות.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528888; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528888, שורות 173",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528888; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 173; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528888 ביום 2026-11-17; נבדקו רק שורות 173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528888",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528888; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528888 ביום 2026-11-17; נבדקו רק שורות 173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528888; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כז תשרי"
-          ],
-          "research_terms": [
-            "תורה ומצוות",
-            "חינוך לאורך החיים",
-            "מידות",
-            "בין אדם לחברו",
-            "חיים מאושרים"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528888, גוף הערך Hebrew, שורות 173. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528888,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528888",
-          "body_locator": "שורות 173"
-        }
-      },
-      {
-        "id": "hayom-yom-528889-5704",
-        "canonical_key": "aid:528889",
-        "aid": 528889,
-        "type": "hayom_yom_entry",
-        "title": "כח תשרי",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום רביעי | כח תשרי | (תש״ד)",
-        "date": "כח תשרי",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528889",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מפרש את הבטחת הגשמים בעתם באמצעות דימוי שלפיו לימוד התורה וקיום המצוות הם כטבעת הקידושין שבה קידש הקב״ה את ישראל והתחייב לזון ולפרנס אותם. זהו הדימוי התיאולוגי של הערך, לא הבטחה כלכלית פרטנית.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מפרש את הבטחת הגשמים בעתם באמצעות דימוי שלפיו לימוד התורה וקיום המצוות הם כטבעת הקידושין שבה קידש הקב״ה את ישראל והתחייב לזון ולפרנס אותם. זהו הדימוי התיאולוגי של הערך, לא הבטחה כלכלית פרטנית."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528889, גוף הערך Hebrew, שורות 173."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528889, גוף הערך Hebrew, שורות 173.",
-        "evidence_family_id": "hayom-yom-528889-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום רביעי | כח תשרי | (תש״ד).",
-        "question_or_problem": "הערך מפרש את הבטחת הגשמים בעתם באמצעות דימוי שלפיו לימוד התורה וקיום המצוות הם כטבעת הקידושין שבה קידש הקב״ה את ישראל והתחייב לזון ולפרנס אותם. זהו הדימוי התיאולוגי של הערך, לא הבטחה כלכלית פרטנית.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528889; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528889, שורות 173",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528889; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 173; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528889 ביום 2026-11-17; נבדקו רק שורות 173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528889",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528889; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528889 ביום 2026-11-17; נבדקו רק שורות 173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528889; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כח תשרי"
-          ],
-          "research_terms": [
-            "אם בחוקותי תלכו",
-            "גשמים בעתם",
-            "תורה ומצוות",
-            "ברית",
-            "פרנסה"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528889, גוף הערך Hebrew, שורות 173. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528889,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528889",
-          "body_locator": "שורות 173"
-        }
-      },
-      {
-        "id": "hayom-yom-528890-5704",
-        "canonical_key": "aid:528890",
-        "aid": 528890,
-        "type": "hayom_yom_entry",
-        "title": "כט תשרי",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום חמישי | כט תשרי | (תש״ד)",
-        "date": "כט תשרי",
-        "date_precision": "exact_as_publisher",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528890",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מספר ביידיש סיפור המיוחס לבעל שם טוב על בעל בית ממעזיבוז׳ שאיים לפגוע ביריבו; לפי הסיפור, תלמידים שעמדו לצד הבעל שם טוב בעיניים עצומות ראו את המעשה כאילו התרחש לנגד עיניהם. זהו סיפור המובא באנתולוגיה, לא אימות היסטורי עצמאי. הערך מסיק מן הסיפור שלכל כוח יש פועל או השפעה, בלבוש חומרי או רוחני; את ההשפעה הרוחנית אפשר לקלוט רק באמצעות תחושות גבוהות ועדינות יותר. זו מסקנת הערך כפי שנוסחה בו, ולא עדות עצמאית לאירוע המתואר.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מספר ביידיש סיפור המיוחס לבעל שם טוב על בעל בית ממעזיבוז׳ שאיים לפגוע ביריבו; לפי הסיפור, תלמידים שעמדו לצד הבעל שם טוב בעיניים עצומות ראו את המעשה כאילו התרחש לנגד עיניהם. זהו סיפור המובא באנתולוגיה, לא אימות היסטורי עצמאי.",
-          "הערך מסיק מן הסיפור שלכל כוח יש פועל או השפעה, בלבוש חומרי או רוחני; את ההשפעה הרוחנית אפשר לקלוט רק באמצעות תחושות גבוהות ועדינות יותר. זו מסקנת הערך כפי שנוסחה בו, ולא עדות עצמאית לאירוע המתואר."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528890, גוף הערך Yiddish, שורות 173–174.",
-          "he.chabad.org AID 528890, גוף הערך Yiddish, שורות 175."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528890, גוף הערך Yiddish, שורות 173–174. he.chabad.org AID 528890, גוף הערך Yiddish, שורות 175.",
-        "evidence_family_id": "hayom-yom-528890-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום חמישי | כט תשרי | (תש״ד).",
-        "question_or_problem": "הערך מספר ביידיש סיפור המיוחס לבעל שם טוב על בעל בית ממעזיבוז׳ שאיים לפגוע ביריבו; לפי הסיפור, תלמידים שעמדו לצד הבעל שם טוב בעיניים עצומות ראו את המעשה כאילו התרחש לנגד עיניהם. זהו סיפור המובא באנתולוגיה, לא אימות היסטורי עצמאי. הערך מסיק מן הסיפור שלכל כוח יש פועל או השפעה, בלבוש חומרי או רוחני; את ההשפעה הרוחנית אפשר לקלוט רק באמצעות תחושות גבוהות ועדינות יותר. זו מסקנת הערך כפי שנוסחה בו, ולא עדות עצמאית לאירוע המתואר.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_yiddish_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528890; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Yiddish",
-          "scope": "AID 528890, שורות 173–175",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528890; גוף הערך Yiddish נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Yiddish נבדק בשורות 173–175; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528890 ביום 2026-11-17; נבדקו רק שורות 173–175 בשפת המקור (Yiddish). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528890",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528890; גוף הערך Yiddish נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528890 ביום 2026-11-17; נבדקו רק שורות 173–175 בשפת המקור (Yiddish). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528890; גוף הערך Yiddish נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "כט תשרי"
-          ],
-          "research_terms": [
-            "הבעל שם טוב",
-            "מעזיבוז׳",
-            "מחלוקת",
-            "כוח רוחני",
-            "לבושים גשמיים",
-            "חושים עדינים"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528890, גוף הערך Yiddish, שורות 173–174. he.chabad.org AID 528890, גוף הערך Yiddish, שורות 175. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528890,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528890",
-          "body_locator": "שורות 173–175"
-        }
-      },
-      {
-        "id": "hayom-yom-528891-5704",
-        "canonical_key": "aid:528891",
-        "aid": 528891,
-        "type": "hayom_yom_entry",
-        "title": "ל תשרי, א דר״ח",
-        "source_class": "Hayom Yom",
-        "source_class_detail": "ערך יומי מתוארך מתוך האנתולוגיה היום יום; גוף הערך בשפת המקור נפתח ונבדק. הייחוסים הפנימיים נשמרים ואינם מיוחסים אוטומטית לרבי.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "היום יום — תשרי ה׳תש״ד",
-        "date_original": "יום שישי | ל תשרי, א דר״ח | (תש״ד)",
-        "date": "ל תשרי, א דר״ח",
-        "date_precision": "exact_as_publisher",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528891",
-        "translation_status": "גוף הערך בשפת המקור נבדק; הפרפרזות הן שכבת מחקר לא־מילולית; תרגומים והצגות מקבילות אינם נספרים כעדים עצמאיים.",
-        "summary_researcher": "הערך מתעד שבאמירת הלל כופלים ״הודו לה׳״ לאחר כל אחד משלושת פסוקי ״יאמר נא״, גם בתפילת יחיד; הוא מציין גם אמירה משולשת של הקטע המתחיל ״ואברהם זקן״.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "הערך מתעד שבאמירת הלל כופלים ״הודו לה׳״ לאחר כל אחד משלושת פסוקי ״יאמר נא״, גם בתפילת יחיד; הוא מציין גם אמירה משולשת של הקטע המתחיל ״ואברהם זקן״."
-        ],
-        "response_proposition_locators": [
-          "he.chabad.org AID 528891, גוף הערך Hebrew, שורות 173."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "he.chabad.org AID 528891, גוף הערך Hebrew, שורות 173.",
-        "evidence_family_id": "hayom-yom-528891-5704",
-        "parent_evidence_family_id": null,
-        "independent_witness": true,
-        "translation_of_evidence_family_id": null,
-        "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום; התאריך כפי שמופיע בפרסום: יום שישי | ל תשרי, א דר״ח | (תש״ד).",
-        "question_or_problem": "הערך מתעד שבאמירת הלל כופלים ״הודו לה׳״ לאחר כל אחד משלושת פסוקי ״יאמר נא״, גם בתפילת יחיד; הוא מציין גם אמירה משולשת של הקטע המתחיל ״ואברהם זקן״.",
-        "conditions_or_qualifications": [
-          "הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים פנימיים.",
-          "לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי ומוגבל למקטעים המצוינים.",
-          "מנהג או מסורת המובאים בערך אינם מוצגים כפסיקה הלכתית כללית ללא מקור הלכתי נוסף.",
-          "ייחוסים לדמויות קודמות נשמרים כפי שמופיעים בפרסום; אין להסיק מהם שהרבי הוא הדובר ההיסטורי או המקור הישיר.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-        "primary_secondary_status": "עד טקסטואלי של הערך האנתולוגי כפי שפורסם; אין בכך אימות עצמאי של מסורות, מנהגים או ייחוסים פנימיים המובאים בתוכו.",
-        "witness_type": "published_hebrew_hayom_yom_entry",
-        "relations": [],
-        "identity_note": "זהות נפרדת לערך היומי AID 528891; תרגומים או הצגות מאוחרות של אותו ערך, אם קיימים, אינם עדים עצמאיים.",
-        "witness": {
-          "kind": "text",
-          "state": "published_body_inspected",
-          "publisher": "Kehot / Chabad.org",
-          "language": "Hebrew",
-          "scope": "AID 528891, שורות 173",
-          "complete_partial": "partial",
-          "notes": "נבדקו רק המקטעים המצוינים; אין בכך אימות אוטוגרפי או אימות עצמאי של מסורות פנימיות."
-        },
-        "provenance": {
-          "authorship_status": "הפרסום מציג את הפריט כערך מתוך האנתולוגיה היום יום; הייחוסים הפנימיים נשמרים כפי שהם. אין אימות עצמאי של מסירה מעבר לפרסום.",
-          "signature_status": "לא נבדק אוטוגרף או חתימה.",
-          "source_witness": "Kehot / Chabad.org, היום יום, AID 528891; גוף הערך Hebrew נבדק.",
-          "transmission_type": "פרסום דיגיטלי של ערך יומי באנתולוגיה היום יום.",
-          "textual_status": "גוף הערך בשפת המקור Hebrew נבדק בשורות 173; ההקשר חלקי.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות בלבד; לא הועתק טקסט מוגן במלואו.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528891 ביום 2026-11-17; נבדקו רק שורות 173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528891",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Kehot / Chabad.org, היום יום, AID 528891; גוף הערך Hebrew נבדק.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי עבור AID 528891 ביום 2026-11-17; נבדקו רק שורות 173 בשפת המקור (Hebrew). לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים; ההקשר חלקי. כל פרופוזיציה היא פרפרזה מחקרית לא־מילולית עם locator ברמת טענה. ייחוסים פנימיים נשמרים ואינם מיוחסים אוטומטית לרבי. לא הועתק טקסט מוגן במלואו.",
-        "source_witness": "Kehot / Chabad.org, היום יום, AID 528891; גוף הערך Hebrew נבדק.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_body_opened",
-          "reuse_notes": "העמוד הציבורי נפתח ונבדק; נשמרו קישור ותמציות לא־מילוליות בלבד."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "היום יום",
-            "ל תשרי, א דר״ח"
-          ],
-          "research_terms": [
-            "הלל",
-            "הודו לה׳",
-            "יאמר נא",
-            "תפילת יחיד",
-            "ואברהם זקן"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "נבדק גוף הערך ב-2026-11-17; locators ברמת פרופוזיציה: he.chabad.org AID 528891, גוף הערך Hebrew, שורות 173. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Kehot / Chabad.org",
-          "aid": 528891,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/528891",
-          "body_locator": "שורות 173"
-        }
-      },
-      {
-        "id": "chabad-letter-2277337-5710-6-tishrei",
-        "canonical_key": "aid:2277337",
-        "aid": 2277337,
-        "type": "letter",
-        "title": "Torah study as being both above, and yet relating to, the limits of time — Letter No. 531",
-        "source_class": "Correspondence",
-        "source_class_detail": "מכתב המוצג בפרסום כמתוך התכתבות הרבי; פרסום באנגלית מתורגם בידי Eli Touger. המקור העברי/יידי לא נבדק.",
-        "pipeline_status": "Parsed",
-        "status": "Parsed",
-        "canonical_status": "Parsed",
-        "collection": "I Will Write It In Their Hearts — Volume 5 / Sichos in English Collection",
-        "date_original": "B״H, 6 Tishrei, 5710",
-        "date": "6 Tishrei 5710",
-        "date_precision": "exact_as_publisher",
-        "language": "English",
-        "original_language": "unknown",
-        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277337/jewish/Torah-study-as-being-both-above-and-yet-relating-to-the-limits-of-time.htm",
-        "translation_status": "Published English translation by Eli Touger; original-language text not inspected; not an independent witness.",
-        "summary_researcher": "התרגום האנגלי של איגרת 531 מתאר שני ממדים בלימוד התורה: ממד שאינו תלוי בזמן, שבו לימוד דיני קרבנות נחשב כלימוד המביא את האדם כאילו הקריב; וממד הקשור לזמן, כגון קריאה ציבורית בתורה ולימוד הלכות החג במועדן. האיגרת מדגישה את חשיבות העיתוי גם בלימוד חסידות וביישומו בחיים. ביחס לעשרת ימי תשובה, התרגום מציג יתרון מיוחד ללימוד חסידות בזמן זה, ומתאר את התקופה כזמן שבו האור מתקרב אל הניצוץ. זו פרפרזה על התרגום האנגלי שפורסם; המקור העברי/יידי לא נבדק.",
-        "context_status": "partial",
-        "has_content_evidence": true,
-        "response_propositions": [
-          "התרגום האנגלי של איגרת 531 מתאר שני ממדים בלימוד התורה: ממד שאינו תלוי בזמן, שבו לימוד דיני קרבנות נחשב כלימוד המביא את האדם כאילו הקריב; וממד הקשור לזמן, כגון קריאה ציבורית בתורה ולימוד הלכות החג במועדן. האיגרת מדגישה את חשיבות העיתוי גם בלימוד חסידות וביישומו בחיים.",
-          "ביחס לעשרת ימי תשובה, התרגום מציג יתרון מיוחד ללימוד חסידות בזמן זה, ומתאר את התקופה כזמן שבו האור מתקרב אל הניצוץ. זו פרפרזה על התרגום האנגלי שפורסם; המקור העברי/יידי לא נבדק."
-        ],
-        "response_proposition_locators": [
-          "Chabad.org AID 2277337, English translation of Letter No. 531, lines 278–283.",
-          "Chabad.org AID 2277337, English translation of Letter No. 531, lines 282–285."
-        ],
-        "proposition_language": "Hebrew",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verbatim": false,
-        "proposition_verification": "source_text_inspected",
-        "proposition_source_locator": "Chabad.org AID 2277337, English translation of Letter No. 531, lines 278–283. Chabad.org AID 2277337, English translation of Letter No. 531, lines 282–285.",
-        "evidence_family_id": "igrot-letter-5710-6-tishrei-yehudah-chitrik",
-        "parent_evidence_family_id": null,
-        "independent_witness": false,
-        "translation_of_evidence_family_id": "igrot-letter-5710-6-tishrei-yehudah-chitrik",
-        "documented_circumstances": "מכתב המוצג כמיועד לר׳ יהודה חיטריק, מיום ו׳ תשרי ה׳תש״י; הפרסום מציין שזהו תרגום אנגלי.",
-        "question_or_problem": "התרגום האנגלי של איגרת 531 מתאר שני ממדים בלימוד התורה: ממד שאינו תלוי בזמן, שבו לימוד דיני קרבנות נחשב כלימוד המביא את האדם כאילו הקריב; וממד הקשור לזמן, כגון קריאה ציבורית בתורה ולימוד הלכות החג במועדן. האיגרת מדגישה את חשיבות העיתוי גם בלימוד חסידות וביישומו בחיים. ביחס לעשרת ימי תשובה, התרגום מציג יתרון מיוחד ללימוד חסידות בזמן זה, ומתאר את התקופה כזמן שבו האור מתקרב אל הניצוץ. זו פרפרזה על התרגום האנגלי שפורסם; המקור העברי/יידי לא נבדק.",
-        "conditions_or_qualifications": [
-          "זהו תרגום אנגלי שפורסם בידי Sichos in English Collection; המתרגם המצוין הוא Eli Touger.",
-          "המקור העברי/יידי, כתב־היד והחתימה המקורית לא נבדקו; אין לספור את התרגום כעד עצמאי.",
-          "הפרפרזות מתארות את תוכן התרגום ואינן מאמתות את הניסוח המקורי.",
-          "ההקשר חלקי ומוגבל לשורות 272–287 בעמוד המו״ל.",
-          "לא הועתק טקסט מוגן במלואו."
-        ],
-        "audience": "הפרסום מזהה את הנמען כר׳ יהודה חיטריק; לא צוין קהל נוסף.",
-        "primary_secondary_status": "תרגום אנגלי של התכתבות המיוחסת לרבי; המקור העברי/יידי לא נבדק. מצג מתורגם שאינו עד עצמאי.",
-        "witness_type": "published_english_translation_of_correspondence",
-        "relations": [
-          {
-            "type": "same_evidence_family",
-            "target_id": "family:igrot-letter-5710-6-tishrei-yehudah-chitrik",
-            "note": "התרגום משויך למשפחת האיגרת ואינו עד עצמאי; המקור בשפתו המקורית טרם אותר ונבדק."
-          }
-        ],
-        "identity_note": "זהות לפרסום האנגלי AID 2277337 בלבד; אין לראות בו עד עצמאי ואין לטעון שהמקור העברי/יידי נבדק.",
-        "witness": {
-          "kind": "text",
-          "state": "published_translation_body_inspected",
-          "publisher": "Chabad.org / Sichos in English Collection",
-          "language": "English",
-          "scope": "AID 2277337, lines 272–287",
-          "complete_partial": "partial",
-          "notes": "Translation by Eli Touger; original-language witness not inspected; independent_witness=false."
-        },
-        "provenance": {
-          "authorship_status": "המו״ל מציג את הפריט כהתכתבות של הרבי ומציין את הנמען ר׳ יהודה חיטריק; מדובר בתרגום אנגלי.",
-          "signature_status": "העמוד מדפיס חתימה בשם Rabbi Menachem Schneerson; לא נבדקו חתימה מקורית או אוטוגרף.",
-          "source_witness": "Chabad.org AID 2277337, I Will Write It In Their Hearts Volume 5; גוף התרגום האנגלי נבדק.",
-          "transmission_type": "פרסום תרגום אנגלי מאת Eli Touger מתוך Sichos in English Collection.",
-          "textual_status": "התרגום האנגלי נבדק בשורות 272–287; המקור העברי/יידי לא נבדק.",
-          "editorial_scope": "פרפרזות מחקר לא־מילוליות של התרגום בלבד; אין העתקה של טקסט מוגן.",
-          "verification_status": "נפתח ונבדק גוף הפרסום הציבורי של AID 2277337 ביום 17.11.2026, שורות 261–287, כולל תאריך האיגרת, הנמען, גוף המכתב והחתימה המודפסת. המו״ל מציין כי מדובר בתרגום לאנגלית מאת Eli Touger מתוך Sichos in English Collection; המקור העברי/יידי, כתב־היד והחתימה המקורית לא נבדקו. הפרופוזיציות מתארות את התרגום בלבד, והפריט מסומן כמצג מתורגם שאינו עד עצמאי.",
-          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277337/jewish/Torah-study-as-being-both-above-and-yet-relating-to-the-limits-of-time.htm",
-          "accessed": "2026-11-17"
-        },
-        "witness_provenance": "Chabad.org / Sichos in English Collection, AID 2277337; English translation by Eli Touger, original-language text not inspected.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי של AID 2277337 ביום 17.11.2026, שורות 261–287, כולל תאריך האיגרת, הנמען, גוף המכתב והחתימה המודפסת. המו״ל מציין כי מדובר בתרגום לאנגלית מאת Eli Touger מתוך Sichos in English Collection; המקור העברי/יידי, כתב־היד והחתימה המקורית לא נבדקו. הפרופוזיציות מתארות את התרגום בלבד, והפריט מסומן כמצג מתורגם שאינו עד עצמאי.",
-        "source_witness": "Chabad.org / Sichos in English Collection, AID 2277337; English translation by Eli Touger.",
-        "access": {
-          "access_level": "open",
-          "rights_status": "copyrighted-link-only",
-          "status": "public_publisher_translation_body_opened",
-          "reuse_notes": "נשמרו קישור ותמציות לא־מילוליות בלבד; אין העתקה של התרגום."
-        },
-        "rights_status": "copyrighted-link-only",
-        "taxonomy": {
-          "publisher_index_terms": [
-            "Letter No. 531",
-            "I Will Write It In Their Hearts — Volume 5"
-          ],
-          "research_terms": [
-            "תורה מעל הזמן",
-            "לימוד תורה בזמנו",
-            "לימוד חסידות",
-            "עשרת ימי תשובה"
-          ],
-          "response_case_candidate": true
-        },
-        "epistemic_level": 1,
-        "notes": "התרגום נבדק בגוף הפרסום; לא יוחס לו מעמד של עד עצמאי. המקור העברי/יידי טרם נבדק.",
-        "canonical_file": "data/items/content-research-batch-130-2026-11-17.json",
-        "locator": {
-          "publisher": "Chabad.org / Sichos in English Collection",
-          "aid": 2277337,
-          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277337/jewish/Torah-study-as-being-both-above-and-yet-relating-to-the-limits-of-time.htm",
-          "body_locator": "lines 272–287"
-        }
-      }
-    ],
-    "note": "נבדקו 14 ערכי Hayom Yom מקוריים עם AID (12 בעברית ו-2 ביידיש), תרגום אנגלי אחד של איגרת 531 שאינו עד עצמאי, וכן גוף עמוד תאריך חלופי שנבדק אך לא קודם משום שלא אומת קשרו ל-AID 528879. נוספו 23 פרופוזיציות חדשות והועשרה זהות AID 5959845 בפרופוזיציה אחת נוספת. כל הזהויות נשארות Parsed ובהקשר חלקי; לא קודם מקור ל-Verified."
-  },
-  "last_manual_web_review": {
-    "batch_id": "131",
-    "batch_file": "data/items/content-research-batch-131-2026-11-17.json",
-    "reviewed_at": "2026-11-17T01:29:03+02:00",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 19,
-    "source_bodies_inspected": 15,
-    "new_source_identities": 14,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 19,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 20,
-    "answer_eligible_source_families_added": 13,
-    "content_verified_unique_sources_added": 0,
-    "new_aids": [
-      528893,
-      528894,
-      528895,
-      528896,
-      528897,
-      528898,
-      528899,
-      528900,
-      528901,
-      528902,
-      528903,
-      528904,
-      528905,
-      528906
-    ],
-    "enriched_aids": [
-      2989153
-    ],
-    "blocked_candidate_count": 3,
-    "blocked_candidates": [
-      {
-        "aid": 553672,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/553672",
-        "status": "Internal Error",
-        "reason": "העמוד הציבורי לא היה נגיש דרך כלי הפתיחה ולא סיפק גוף פרסום קריא."
-      },
-      {
-        "aid": 5913,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5913",
-        "status": "Internal Error",
-        "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
-      },
-      {
-        "aid": 5914,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5914",
-        "status": "Internal Error",
-        "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
-      }
-    ],
-    "excluded_candidate_count": 1,
-    "excluded_candidates": [
-      {
-        "aid": 528892,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528892",
-        "status": "opened_navigation_only",
-        "reason": "עמוד ניווט של חודש חשון ללא גוף ערך יומי עצמאי."
-      }
-    ],
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1317,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3494
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1330,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3514
-    },
-    "metrics_actual_before": null,
-    "metrics_actual_after": null,
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 13,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 20
-    },
     "deduplication_check": {
       "new_aids_unique": true,
-      "unique_new_aid_count": 14,
-      "unique_new_family_count": 13,
-      "new_evidence_families_unique": false,
-      "same_family_relations": [
-        {
-          "aid": 528895,
-          "canonical_aid": 528894,
-          "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
-          "relationship": "continuation_of_same_discourse"
-        }
-      ],
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "unique_new_aid_count": 15,
+      "unique_new_family_count": 15,
+      "same_family_duplicate_count": 0,
+      "duplicate_alias_identities": 0,
       "translations_counted_as_independent_witnesses": 0,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
@@ -2393,105 +335,130 @@
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "recent_batches_checked": [
-        "130"
+        "130",
+        "131"
       ],
-      "note": "AID 528894 ו-AID 528895 חולקים Evidence Family; סריקה קנונית מלאה עדיין ממתינה."
-    }
+      "note": "בדיקה מקדימה מול תור הביקורת ושרשרת האצוות הקודמות לא מצאה התאמות; public-search-index.json המלא לא נשלף דרך מחבר GitHub. סריקה קנונית מלאה ממתינה ל-reconciliation; אין לטעון שאין התנגשויות לפני הסריקה."
+    },
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "Kehot / Chabad.org / BeitChabad.com",
+      "accessible_item_level_bodies": 15,
+      "existing_identity_bodies": 1,
+      "blocked_alternate_type_routes": 2,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        528907,
+        528908,
+        528909,
+        528910,
+        528911,
+        528912,
+        528913,
+        528914,
+        528915,
+        528916,
+        528917,
+        528918,
+        528919,
+        528920,
+        528921
+      ],
+      "existing_identity_aids": [
+        2989153
+      ],
+      "blocked_direct_routes": [
+        5071116,
+        5071138
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "שני נתיבי אגרות הפנו למעטפת ללא גוף איגרת. במקום לחזור עליהם נבדקו 15 גופי ערכי היום יום בשפת המקור והועשרה שיחה קיימת אחת; לא הופעל crawler ולא נעשתה עקיפת גישה."
+    },
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "translations_counted_as_independent_witnesses": 0
   },
   "last_manual_review": {
-    "batch_id": "131",
-    "batch_file": "data/items/content-research-batch-131-2026-11-17.json",
-    "reviewed_at": "2026-11-17T01:29:03+02:00",
+    "batch_id": "132",
+    "batch_file": "data/items/content-research-batch-132-2026-11-17.json",
+    "reviewed_at": "2026-11-17T01:59:08+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 19,
-    "source_bodies_inspected": 15,
-    "new_source_identities": 14,
+    "reviewed_item_count": 18,
+    "source_bodies_inspected": 16,
+    "new_source_identities": 15,
     "existing_identities_enriched": 1,
-    "new_response_propositions": 19,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 20,
-    "answer_eligible_source_families_added": 13,
+    "new_response_propositions": 21,
+    "existing_response_propositions_added": 3,
+    "total_new_paraphrase_entries": 24,
+    "answer_eligible_source_families_added": 15,
     "content_verified_unique_sources_added": 0,
     "new_aids": [
-      528893,
-      528894,
-      528895,
-      528896,
-      528897,
-      528898,
-      528899,
-      528900,
-      528901,
-      528902,
-      528903,
-      528904,
-      528905,
-      528906
+      528907,
+      528908,
+      528909,
+      528910,
+      528911,
+      528912,
+      528913,
+      528914,
+      528915,
+      528916,
+      528917,
+      528918,
+      528919,
+      528920,
+      528921
     ],
     "enriched_aids": [
       2989153
     ],
-    "blocked_candidate_count": 3,
+    "blocked_candidate_count": 2,
     "blocked_candidates": [
       {
-        "aid": 553672,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/553672",
-        "status": "Internal Error",
-        "reason": "העמוד הציבורי לא היה נגיש דרך כלי הפתיחה ולא סיפק גוף פרסום קריא."
+        "aid": 5071116,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071116/jewish/page.htm",
+        "status": "redirected_to_generic_shell",
+        "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן.",
+        "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
       },
       {
-        "aid": 5913,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5913",
-        "status": "Internal Error",
-        "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
-      },
-      {
-        "aid": 5914,
-        "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5914",
-        "status": "Internal Error",
-        "reason": "הנתיב לא נפתח; לא ניתן לקבוע אם מדובר בהצגה מקבילה או בזהות נפרדת."
+        "aid": 5071138,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071138/jewish/page.htm",
+        "status": "redirected_to_generic_shell",
+        "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן ולא שונתה הזהות הקיימת.",
+        "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
       }
     ],
-    "excluded_candidate_count": 1,
-    "excluded_candidates": [
-      {
-        "aid": 528892,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528892",
-        "status": "opened_navigation_only",
-        "reason": "עמוד ניווט של חודש חשון ללא גוף ערך יומי עצמאי."
-      }
-    ],
+    "excluded_candidate_count": 0,
+    "excluded_candidates": [],
     "metrics_before": {
-      "answer_eligible_unique_sources": 1317,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3494
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1330,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3514
     },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1345,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3538
+    },
     "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 13,
+      "answer_eligible_unique_sources": 15,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 20
+      "answer_eligible_propositions": 24
     },
     "deduplication_check": {
       "new_aids_unique": true,
-      "unique_new_aid_count": 14,
-      "unique_new_family_count": 13,
-      "new_evidence_families_unique": false,
-      "same_family_relations": [
-        {
-          "aid": 528895,
-          "canonical_aid": 528894,
-          "evidence_family_id": "hayom-yom-shared-discourse-aid528894-528895",
-          "relationship": "continuation_of_same_discourse"
-        }
-      ],
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "unique_new_aid_count": 15,
+      "unique_new_family_count": 15,
+      "same_family_duplicate_count": 0,
+      "duplicate_alias_identities": 0,
       "translations_counted_as_independent_witnesses": 0,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
@@ -2501,10 +468,50 @@
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "recent_batches_checked": [
-        "130"
+        "130",
+        "131"
       ],
-      "note": "AID 528894 ו-AID 528895 חולקים Evidence Family; סריקה קנונית מלאה עדיין ממתינה."
-    }
+      "note": "בדיקה מקדימה מול תור הביקורת ושרשרת האצוות הקודמות לא מצאה התאמות; public-search-index.json המלא לא נשלף דרך מחבר GitHub. סריקה קנונית מלאה ממתינה ל-reconciliation; אין לטעון שאין התנגשויות לפני הסריקה."
+    },
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "Kehot / Chabad.org / BeitChabad.com",
+      "accessible_item_level_bodies": 15,
+      "existing_identity_bodies": 1,
+      "blocked_alternate_type_routes": 2,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        528907,
+        528908,
+        528909,
+        528910,
+        528911,
+        528912,
+        528913,
+        528914,
+        528915,
+        528916,
+        528917,
+        528918,
+        528919,
+        528920,
+        528921
+      ],
+      "existing_identity_aids": [
+        2989153
+      ],
+      "blocked_direct_routes": [
+        5071116,
+        5071138
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "שני נתיבי אגרות הפנו למעטפת ללא גוף איגרת. במקום לחזור עליהם נבדקו 15 גופי ערכי היום יום בשפת המקור והועשרה שיחה קיימת אחת; לא הופעל crawler ולא נעשתה עקיפת גישה."
+    },
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "translations_counted_as_independent_witnesses": 0
   },
   "manual_web_review_history": [
     {
@@ -3794,7 +1801,144 @@
         ],
         "note": "AID 528894 ו-AID 528895 חולקים Evidence Family; סריקה קנונית מלאה עדיין ממתינה."
       }
+    },
+    {
+      "batch_id": "132",
+      "batch_file": "data/items/content-research-batch-132-2026-11-17.json",
+      "reviewed_at": "2026-11-17T01:59:08+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 18,
+      "source_bodies_inspected": 16,
+      "new_source_identities": 15,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 21,
+      "existing_response_propositions_added": 3,
+      "total_new_paraphrase_entries": 24,
+      "answer_eligible_source_families_added": 15,
+      "content_verified_unique_sources_added": 0,
+      "new_aids": [
+        528907,
+        528908,
+        528909,
+        528910,
+        528911,
+        528912,
+        528913,
+        528914,
+        528915,
+        528916,
+        528917,
+        528918,
+        528919,
+        528920,
+        528921
+      ],
+      "enriched_aids": [
+        2989153
+      ],
+      "blocked_candidate_count": 2,
+      "blocked_candidates": [
+        {
+          "aid": 5071116,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071116/jewish/page.htm",
+          "status": "redirected_to_generic_shell",
+          "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן.",
+          "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
+        },
+        {
+          "aid": 5071138,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071138/jewish/page.htm",
+          "status": "redirected_to_generic_shell",
+          "reason": "הנתיב הופנה לעמוד Torah Texts כללי שהציג מעטפת אתר ללא גוף האיגרת; לא נבדק ממנו תוכן ולא שונתה הזהות הקיימת.",
+          "handling": "לא נעשתה עקיפת גישה; באותה הפעלה נפתחו גופי ערכים יומיים מקוריים והועשרה שיחה קיימת."
+        }
+      ],
+      "excluded_candidate_count": 0,
+      "excluded_candidates": [],
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1330,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3514
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1345,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3538
+      },
+      "metrics_actual_before": null,
+      "metrics_actual_after": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 15,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 24
+      },
+      "deduplication_check": {
+        "new_aids_unique": true,
+        "new_source_urls_unique": true,
+        "new_evidence_families_unique": true,
+        "unique_new_aid_count": 15,
+        "unique_new_family_count": 15,
+        "same_family_duplicate_count": 0,
+        "duplicate_alias_identities": 0,
+        "translations_counted_as_independent_witnesses": 0,
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "all_target_identities_answer_eligible": null,
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "recent_batches_checked": [
+          "130",
+          "131"
+        ],
+        "note": "בדיקה מקדימה מול תור הביקורת ושרשרת האצוות הקודמות לא מצאה התאמות; public-search-index.json המלא לא נשלף דרך מחבר GitHub. סריקה קנונית מלאה ממתינה ל-reconciliation; אין לטעון שאין התנגשויות לפני הסריקה."
+      },
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "publisher": "Kehot / Chabad.org / BeitChabad.com",
+        "accessible_item_level_bodies": 15,
+        "existing_identity_bodies": 1,
+        "blocked_alternate_type_routes": 2,
+        "body_text_inspected": true,
+        "inspected_aids": [
+          528907,
+          528908,
+          528909,
+          528910,
+          528911,
+          528912,
+          528913,
+          528914,
+          528915,
+          528916,
+          528917,
+          528918,
+          528919,
+          528920,
+          528921
+        ],
+        "existing_identity_aids": [
+          2989153
+        ],
+        "blocked_direct_routes": [
+          5071116,
+          5071138
+        ],
+        "translations_counted_as_independent_witnesses": 0,
+        "note": "שני נתיבי אגרות הפנו למעטפת ללא גוף איגרת. במקום לחזור עליהם נבדקו 15 גופי ערכי היום יום בשפת המקור והועשרה שיחה קיימת אחת; לא הופעל crawler ולא נעשתה עקיפת גישה."
+      },
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "translations_counted_as_independent_witnesses": 0
     }
   ],
-  "manual_web_review_current_metrics": null
+  "manual_web_review_current_metrics": {
+    "answer_eligible_unique_sources": 977,
+    "content_verified_unique_sources": 878,
+    "answer_eligible_propositions": 2950
+  }
 }

@@ -1099,3 +1099,12 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - כשל Answer Quality Gate האחרון נבע מהשמטת AID 318996 בשאלה רב-מקורית על תקצירי Living Torah. נוסף אחזור ממוקד לשלושה תקצירי מו״ל נפרדים AID 363474, 490071 ו-318996 עם הפניות ברמת טענה. הם נשארים תקצירים משניים, לא תמלילים עצמאיים; לא נוצרת מהם סינתזה המיוחסת לרבי.
 - נוספה בדיקת סינתזה מוגבלת בין שני ערכי היום יום AID 528896 ו-528897, במצב רגיל ובמצב חוקר עמוק. הסינתזה מסומנת במפורש כסינתזה של המערכת ולא כציטוט של הרבי.
 - reconciliation, בדיקת המוכנות המלאה, Actions ו-Pages עדיין ממתינים. לא שונו לוח הזמנים, הקהל או ההרשאות.
+
+
+## 2026-11-17 — Batch 132 content inspection and retrieval expansion
+
+- Inspected original-language bodies AID 528907–528921 (15 item-level publisher pages): 9 Hebrew, 5 Yiddish, and 1 mixed Hebrew/Yiddish. Added 21 non-verbatim source-grounded propositions with item-level locators, publisher provenance, partial-context scope, and attribution limits. Fifteen distinct dated entries were assigned fifteen Evidence Families; no translation was counted as an independent witness.
+- Enriched existing Sicha AID 2989153 in place with three additional propositions from sections XI, XII and XIV (body lines 271–306). Its identity and Evidence Family remain unchanged; proposition count increased from 7 to 10. The Germany account remains attributed to the Previous Rebbe as presented in the Sicha; yahrzeit customs are not generalized as halachic rulings.
+- AID 5071116 and 5071138 redirected to generic Torah Texts shells without inspectable letter bodies. No crawler retry or access-control bypass was attempted; the same run used fifteen accessible Hayom Yom bodies and the existing Sicha body as alternatives.
+- Expected batch boundary: 1,330 / 854 / 3,514 before and 1,345 / 854 / 3,538 after (answer-eligible families / content-verified families / answer-eligible propositions). These are expected values only until full-index reconciliation. No source was promoted to Verified.
+- Fixed the stale readiness assertion that still expected batch 130 after project-state had advanced to batch 131; full readiness retest remains pending.
