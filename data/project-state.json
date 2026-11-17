@@ -72,7 +72,9 @@
     "Batch 127 adds 14 inspected original-language Hayom Yom entries (AIDs 528832–528845; 13 Hebrew, one Yiddish), one English published translation of Letter 128 (AID 5920904, explicitly non-independent), and an in-place enrichment of AID 528819. Five parallel pages AIDs 5903–5907 are linked to the same Evidence Families as AIDs 528835–528839; direct routes 5900–5902 returned Internal Error and were not bypassed.",
     "Batch 127's pre-addition full public-search-index scan (9,122 entries, generated 2026-11-15) found no matching AIDs for the 15 new identities or five aliases. Post-addition reconciliation, readiness tests, public metrics and deployment verification remain pending; no source was promoted to Verified.",
     "The prior readiness failure revealed that patternSynthesisIntegrity lacked a branch for study_and_youth_education. A topic-specific validator and regression tests now preserve one independent letter plus one explicitly non-independent publisher text, with claim-level locators; the full rerun is pending.",
-    "Batch 138 repair: prior manifest lacked records[], so its 12 inspected English letters were not ingested into the answer index. Complete records and 24 source-grounded Hebrew paraphrases are now present; all 12 remain derived translations/non-independent. AID 553672 remains excluded (media-only, no transcript). Full-index reconciliation through batch 138 is pending."
+    "Batch 138 repair: prior manifest lacked records[], so its 12 inspected English letters were not ingested into the answer index. Complete records and 24 source-grounded Hebrew paraphrases are now present; all 12 remain derived translations/non-independent. AID 553672 remains excluded (media-only, no transcript). Full-index reconciliation through batch 138 is pending.",
+    "Batch 143: AID 4666220 and AID 4831188 returned Internal Error through the public reader; no retry or bypass. Twelve accessible Hebrew item bodies and one existing identity were used as same-run fallback.",
+    "Reconciliation run 507 measured 1450 / 854 / 3751 in its workspace but stopped before commit: test_question_specificity_gate.mjs exposed a temporal-dead-zone ReferenceError for wellspringsDisseminationQuestion. The snapshot is diagnostic only; public metrics remain unchanged."
   ],
   "next_work": "Run canonical reconciliation through batch 142; inspect AID/URL/ID and Evidence Family collisions; refresh public metrics and review queue; run test_content_readiness.mjs in regular and researcher modes; inspect Actions and Pages. Keep all new identities Parsed and do not promote to Verified.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
@@ -155,73 +157,75 @@
         "138",
         "139",
         "140",
-        "141"
+        "141",
+        "142",
+        "143"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "141",
-        "batch_file": "data/items/content-research-batch-141-2026-11-17.json",
+        "batch_id": "143",
+        "batch_file": "data/items/content-research-batch-143-2026-11-17.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1435,
+          "answer_eligible_unique_sources": 1450,
           "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3727
+          "answer_eligible_propositions": 3751
         },
         "metrics_expected_after": {
-          "answer_eligible_unique_sources": 1446,
+          "answer_eligible_unique_sources": 1462,
           "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3742
+          "answer_eligible_propositions": 3776
         },
-        "new_source_identities": 11,
+        "metrics_actual_after": null,
+        "new_source_identities": 12,
         "existing_identities_enriched": 1,
-        "source_bodies_inspected": 12,
-        "new_response_propositions": 15,
-        "existing_response_propositions_added": 0,
-        "total_new_paraphrase_entries": 15,
-        "answer_eligible_source_families_added": 11,
+        "source_bodies_inspected": 13,
+        "new_response_propositions": 23,
+        "existing_response_propositions_added": 2,
+        "total_new_paraphrase_entries": 25,
+        "answer_eligible_source_families_added": 12,
         "content_verified_unique_sources_added": 0,
-        "independent_witnesses_added": 10,
-        "non_independent_presentations_added": 1,
         "metrics_delta_at_batch_boundary": {
-          "answer_eligible_unique_sources": 11,
+          "answer_eligible_unique_sources": 12,
           "content_verified_unique_sources": 0,
-          "answer_eligible_propositions": 15
-        }
+          "answer_eligible_propositions": 25
+        },
+        "reconciliation_status": "pending_reconciliation"
       },
       "status": "pending_reconciliation"
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "Prior quality gate failed at the institutional-support query because broad charity evidence entered a specific distressed Talmud Torah query. The answer engine now requires a proposition-level institution + distress/expense match; batch 139/140 and readiness assertions are committed for retest.",
+      "run_status": "Answer quality gate run 44107524723 failed at test_question_specificity_gate.mjs with ReferenceError: Cannot access 'wellspringsDisseminationQuestion' before initialization. The variable was declared below the early-return guard; batch 143 moves it before that guard. A commit-bound rerun is required.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
-      "evaluated_commit": "c49df2b516c391c77235b48beb5d0e1108d441a0",
-      "workflow_run_id": null,
+      "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
+      "workflow_run_id": 44107524723,
       "note": "AID 4666220 remains inaccessible through the public reader; no crawler retry or bypass. Batch 141 adds a Hebrew original-language Sicha source to the wellsprings/inner-Torah synthesis and tests regular and researcher modes with claim-level citations.",
-      "bulk_reconcile_run_id": 44085620290,
+      "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
-      "status": "pending_retest_after_batch_141",
-      "last_failed_run_id": 44086180024,
-      "last_failure": "test_content_readiness.mjs: dissemination query did not seed the existing Hebrew source families AID 4831188 and 5071052. Added a broad, proposition-grounded topic alias and a third inspected Hebrew source AID 2989555; regression now requires all three Evidence Families."
+      "status": "pending_retest_after_batch_143",
+      "last_failed_run_id": 44107524723,
+      "last_failure": "src/answer-engine.js:1713 — ReferenceError: Cannot access 'wellspringsDisseminationQuestion' before initialization in buildAnswerModel; triggered by scripts/test_question_specificity_gate.mjs."
     },
     "publication": {
-      "status": "pending_deploy_after_batch_141",
+      "status": "pending_deploy_after_batch_143",
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
       "last_deployed_commit": "312745ef33bfc3cc453b8b03238cd8d3e8aa9a3b"
     },
     "last_reconciled_at": "2026-11-15",
     "last_generated_index_snapshot": {
-      "commit_sha": "eccfce0e8544a1fc8a28ee8405a8e33fdb561b5b",
+      "commit_sha": "a7b495f5c7f30b047686815e74b31531f48aa494",
       "measured_in_ci": true,
       "committed": false,
-      "answer_eligible_unique_sources": 1395,
+      "answer_eligible_unique_sources": 1450,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3643,
-      "interpretation": "Generated by reconcile_metrics.py before batch 137; readiness stopped at a stale batch-pointer assertion, so this snapshot was not committed as public metrics."
+      "answer_eligible_propositions": 3751,
+      "interpretation": "Generated by reconciliation run 44107524705 after batch 142. The readiness step failed before commit because answer-engine.js referenced wellspringsDisseminationQuestion before initialization. Diagnostic workspace snapshot only; public metrics were not updated."
     }
   },
   "ux": {
@@ -258,64 +262,89 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "142",
+    "current_batch": "143",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "136",
     "last_batch_summary": {
-      "batch_id": "142",
-      "batch_file": "data/items/content-research-batch-142-2026-11-17.json",
+      "batch_id": "143",
+      "batch_file": "data/items/content-research-batch-143-2026-11-17.json",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_at": "2026-11-17T16:27:55+02:00",
-      "reviewed_item_count": 12,
-      "source_bodies_inspected": 12,
-      "source_body_pages_opened": 12,
-      "new_source_identities": 11,
+      "reviewed_at": "2026-11-17T16:57:52+02:00",
+      "reviewed_item_count": 15,
+      "source_bodies_inspected": 13,
+      "source_body_pages_opened": 15,
+      "new_source_identities": 12,
       "existing_identities_enriched": 1,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 15,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 16,
-      "answer_eligible_source_families_added": 11,
-      "independent_witnesses_added": 11,
+      "new_response_propositions": 23,
+      "existing_response_propositions_added": 2,
+      "total_new_paraphrase_entries": 25,
+      "answer_eligible_source_families_added": 12,
+      "independent_witnesses_added": 12,
       "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "new_aids": [
-        5989777,
-        4385753,
-        4280152,
-        2988984,
-        4304359,
-        2989348,
-        2989214,
-        4385534,
-        4279866,
-        4304399,
-        2988983
+        4296226,
+        2989338,
+        3140238,
+        4296171,
+        4296205,
+        4279890,
+        4279847,
+        4279837,
+        4279853,
+        4279839,
+        4279900,
+        4279877
       ],
       "enriched_aids": [
         2988877
       ],
-      "blocked_candidate_count": 1,
+      "blocked_candidate_count": 2,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+          "web_source_ref": "turn372695view0",
+          "status": "Internal Error / inaccessible via public web reader",
+          "reason": "לא הוחזר גוף פרסום קריא.",
+          "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נבדקו שנים-עשר גופי פרסום עבריים חלופיים נגישים ועוד זהות קיימת להעשרה."
+        },
+        {
+          "aid": 4831188,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4831188",
+          "web_source_ref": "turn372695view1",
+          "status": "Internal Error / inaccessible via public web reader",
+          "reason": "לא הוחזר גוף פרסום קריא.",
+          "handling": "לא בוצע ניסיון crawler ולא נעקפה בקרת גישה. נעשה fallback לשנים-עשר גופי פרסום עבריים אחרים; AID 2988877 נפתח בנפרד לצורך העשרה in-place."
+        }
+      ],
       "crawler_retry": false,
       "access_control_bypassed": false,
       "full_text_copied": false,
+      "scan_only_verification_used": false,
       "translations_counted_as_independent_witnesses": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1446,
+        "answer_eligible_unique_sources": 1450,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3742
+        "answer_eligible_propositions": 3751
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1457,
+        "answer_eligible_unique_sources": 1462,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3758
+        "answer_eligible_propositions": 3776
+      },
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1450,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3751
       },
       "metrics_actual_after": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 11,
+        "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 16
+        "answer_eligible_propositions": 25
       },
       "public_metrics_snapshot_before": {
         "generated": "2026-11-15",
@@ -328,12 +357,93 @@
         "content_verified_unique_sources": 870,
         "answer_eligible_propositions": 2950
       },
-      "note": "נבדקו אחד עשר גופי שיחות עבריים חדשים והוכנו 15 פרפרזות מחקר לא-מילוליות. זהות קיימת אחת, AID 2988877, הועשרה בפרופוזיציה נוספת; סך התוספות באצווה 16. AID 5071052 לא סיפק גוף נגיש בשני הנתיבים הנוכחיים; לא הוסק ממנו תוכן חדש ונעשה fallback באותה הפעלה. כל 11 הזהויות החדשות נשארו Parsed; אין קידום ל-Verified."
+      "note": "נבדקו שנים-עשר גופי מקור עבריים חדשים: ארבע שיחות, יחידות אחת ושבעה מכתבים; נוספו 23 פרפרזות לא-מילוליות. זהות קיימת אחת, AID 2988877, הועשרה בשתי פרופוזיציות נוספות; סך התוספות 25. AID 4666220 ו-AID 4831188 החזירו Internal Error; לא בוצע crawler retry או bypass, ובאותה הפעלה נעשה fallback לשנים-עשר גופים נגישים ולהעשרה in-place. כל 12 הזהויות החדשות נשארו Parsed; אין קידום ל-Verified.",
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "index_generated": "2026-11-15",
+        "index_entry_count": 9122,
+        "checked_aids": [
+          4296226,
+          2989338,
+          3140238,
+          4296171,
+          4296205,
+          4279890,
+          4279847,
+          4279837,
+          4279853,
+          4279839,
+          4279900,
+          4279877
+        ],
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "new_aids_unique": true,
+        "source_urls_unique": true,
+        "evidence_family_ids_unique": true,
+        "recent_batches_checked": [
+          "055–142 (84 content-research batch files inspected)"
+        ],
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "filename_matches": 0,
+        "code_search_matches": 0,
+        "bulk_indexed_files_checked": 12,
+        "bulk_indexed_matches": 0,
+        "all_target_identities_answer_eligible": null,
+        "post_addition_canonical_scan_pending": true,
+        "note": "בוצעה בדיקת מזהי AID מול 84 קובצי content-research-batch (055–142), 12 קובצי bulk-indexed ותור ביקורת בן 1,022 רשומות; לא נמצאו התאמות. קובץ public-search-index המלא גדול מכדי להיקרא בכלי זה; סריקה קנונית מלאה ואישור כשירות ממתינים ל-reconciliation."
+      },
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "publisher": "BeitChabad.com / Chabad.org",
+        "accessible_item_level_bodies": 12,
+        "existing_identity_bodies": 1,
+        "body_text_inspected": true,
+        "inspected_aids": [
+          4296226,
+          2989338,
+          3140238,
+          4296171,
+          4296205,
+          4279890,
+          4279847,
+          4279837,
+          4279853,
+          4279839,
+          4279900,
+          4279877
+        ],
+        "existing_identity_aids": [
+          2988877
+        ],
+        "blocked_direct_routes": [
+          4666220,
+          4831188
+        ],
+        "translations_counted_as_independent_witnesses": 0,
+        "note": "לאחר ששני נתיבי פרסום החזירו Internal Error, נעשה fallback לשנים-עשר גופי פרסום עבריים נגישים ולהעשרה של זהות עברית קיימת; כל המקורות החדשים הם טקסטים בעברית, לא תרגומים."
+      },
+      "language_distribution": {
+        "Hebrew": 13
+      },
+      "original_language_distribution": {
+        "Hebrew": 13
+      },
+      "proposition_language_distribution": {
+        "Hebrew": 25
+      },
+      "source_type_distribution": {
+        "Sichos": 4,
+        "Yechidus": 1,
+        "Written responses": 7
+      }
     },
-    "last_run_note": "Batch 142: eleven new Hebrew Sicha bodies inspected; 15 new source-grounded non-verbatim propositions; existing AID 2988877 enriched in place with one additional proposition. AID 5071052 current English route is a summary shell and Hebrew route returned Internal Error; eleven accessible Hebrew bodies were used as same-run fallback. Reconciliation pending; no Verified promotion.",
-    "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 5071052: current English route redirects to a generic summary shell; Hebrew route returned Internal Error. No new content inferred; eleven accessible Hebrew Sicha bodies used as same-run fallback.",
-    "next_work": "Run canonical reconciliation through batch 142; inspect AID/URL/ID and Evidence Family collisions; refresh public metrics and review queue; run test_content_readiness.mjs in regular and researcher modes; inspect Actions and Pages. Keep all new identities Parsed and do not promote to Verified.",
+    "last_run_note": "נבדקו שנים-עשר גופי מקור עבריים חדשים: ארבע שיחות, יחידות אחת ושבעה מכתבים; נוספו 23 פרפרזות לא-מילוליות. זהות קיימת אחת, AID 2988877, הועשרה בשתי פרופוזיציות נוספות; סך התוספות 25. AID 4666220 ו-AID 4831188 החזירו Internal Error; לא בוצע crawler retry או bypass, ובאותה הפעלה נעשה fallback לשנים-עשר גופים נגישים ולהעשרה in-place. כל 12 הזהויות החדשות נשארו Parsed; אין קידום ל-Verified.",
+    "last_batch_blocked_count": 2,
+    "last_batch_blocked_reason": "AID 4666220 and AID 4831188 returned Internal Error via the public reader; no crawler retry or access bypass. Twelve accessible Hebrew item bodies and one existing identity were inspected as same-run fallback.",
+    "next_work": "Run canonical reconciliation through batch 143; inspect AID/URL/ID and Evidence Family collisions across the full corpus; refresh public metrics and review queue; fix the quality-gate initialization error; run test_content_readiness.mjs in regular and researcher modes; inspect Actions and Pages. Keep all new identities Parsed and do not promote to Verified.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",

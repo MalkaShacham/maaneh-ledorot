@@ -1708,6 +1708,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const cheshvan5711EducationOutreachQuestion=isCheshvan5711EducationOutreachQuestion(understanding.query);
  const yechidusUnityMissionQuestion=isYechidusUnityMissionQuestion(understanding.query);
  const yudTesKislevLettersQuestion=isYudTesKislevLettersQuestion(understanding.query);
+ const wellspringsDisseminationQuestion=understanding.query.includes('הפצת המעיינות')&&understanding.query.includes('פנימיות התורה');
  if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusUnityMissionQuestion||yudTesKislevLettersQuestion)understanding.intent='guidance';
  else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||northAfricaEducationQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
  if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
@@ -1718,7 +1719,6 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const educationInfluenceActionQuestion=understanding.query.includes('השפעה')&&understanding.query.includes('חינוך')&&understanding.query.includes('מעשה')&&understanding.query.includes('דיבור');
  const fordLetterQuestion=understanding.query.toLowerCase().includes('president gerald ford')&&understanding.query.toLowerCase().includes('religious freedom')&&understanding.query.toLowerCase().includes('education');
  const yiddishMelodyQuestion=understanding.query.includes('ניגון')&&understanding.query.includes('רבי אברהם המלאך')&&understanding.query.includes('לכה דודי');
- const wellspringsDisseminationQuestion=understanding.query.includes('הפצת המעיינות')&&understanding.query.includes('פנימיות התורה');
  const jewishHomeSynthesisQuestion=understanding.query.includes('הבית היהודי')&&(understanding.query.includes('חנוכת הבית')||understanding.query.includes('מזוזה'));
  const youthEducationStudyQuestion=understanding.query.includes('לימוד בחברותא')&&understanding.query.includes('בני נוער')&&understanding.query.includes('התקדמות הדרגתית');
   const studyFarmingComparisonQuestion=understanding.topics.includes('קביעות עתים ולימוד בצוותא')&&understanding.topics.includes('תורה ופרנסה במשק חקלאי');
