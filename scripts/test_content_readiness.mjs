@@ -890,7 +890,8 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': inspected dissemination evidence must support a multi-source synthesis');
  assert(m.sources.some(e=>String(e.aid)==='4831188'),mode+': Hebrew source on inner Torah dissemination must be retrieved');
  assert(m.sources.some(e=>String(e.aid)==='5071052'),mode+': Hebrew source on the demand to disseminate the wellsprings must be retrieved');
- assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2,mode+': dissemination synthesis must use independent Evidence Families');
+ assert(m.sources.some(e=>String(e.aid)==='2989555'),mode+': original Hebrew Sicha on Chassidus dissemination must be retrieved');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': dissemination synthesis must use at least three distinct Evidence Families');
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': each synthesized claim must cite its supporting sources');
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher'){
