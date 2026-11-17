@@ -7,6 +7,143 @@
   "skipped": 0,
   "status": "pending_reconciliation",
   "manual_web_review": {
+    "batch_id": "142",
+    "batch_file": "data/items/content-research-batch-142-2026-11-17.json",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_at": "2026-11-17T16:27:55+02:00",
+    "reviewed_item_count": 12,
+    "source_bodies_inspected": 12,
+    "source_body_pages_opened": 12,
+    "new_source_identities": 11,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 15,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 16,
+    "answer_eligible_source_families_added": 11,
+    "independent_witnesses_added": 11,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "new_aids": [
+      5989777,
+      4385753,
+      4280152,
+      2988984,
+      4304359,
+      2989348,
+      2989214,
+      4385534,
+      4279866,
+      4304399,
+      2988983
+    ],
+    "enriched_aids": [
+      2988877
+    ],
+    "blocked_candidate_count": 1,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "translations_counted_as_independent_witnesses": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1446,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3742
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1457,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3758
+    },
+    "metrics_actual_after": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 11,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 16
+    },
+    "public_metrics_snapshot_before": {
+      "generated": "2026-11-15",
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2950
+    },
+    "project_state_snapshot_before": {
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 870,
+      "answer_eligible_propositions": 2950
+    },
+    "note": "נבדקו אחד עשר גופי שיחות עבריים חדשים והוכנו 15 פרפרזות מחקר לא-מילוליות. זהות קיימת אחת, AID 2988877, הועשרה בפרופוזיציה נוספת; סך התוספות באצווה 16. AID 5071052 לא סיפק גוף נגיש בשני הנתיבים הנוכחיים; לא הוסק ממנו תוכן חדש ונעשה fallback באותה הפעלה. כל 11 הזהויות החדשות נשארו Parsed; אין קידום ל-Verified.",
+    "blocked_candidates": [
+      {
+        "aid": 5071052,
+        "identity_existing": true,
+        "blocked_routes": [
+          {
+            "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm",
+            "web_source_ref": "turn531924view0",
+            "status": "redirected_to_generic_summary_shell",
+            "reason": "הנתיב האנגלי מפנה לעמוד Torah Texts כללי ללא גוף האיגרת."
+          },
+          {
+            "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm",
+            "web_source_ref": "turn902404view0",
+            "status": "Internal Error",
+            "reason": "הנתיב העברי לא החזיר גוף פרסום נגיש."
+          }
+        ],
+        "handling": "לא נוצרה פרופוזיציה חדשה מ-AID 5071052 ולא הוסק תוכן מהעמוד הכללי. הרשומה הקנונית ההיסטורית נשמרה; באותה הפעלה נעשה fallback לאחד עשר גופי שיחות עבריים נגישים."
+      }
+    ],
+    "deduplication_check": {
+      "full_index_scan_available": true,
+      "full_index_scan_pending_reconciliation": true,
+      "index_generated": "2026-11-15",
+      "index_entry_count": 9122,
+      "checked_aids": [
+        5989777,
+        4385753,
+        4280152,
+        2988984,
+        4304359,
+        2989348,
+        2989214,
+        4385534,
+        4279866,
+        4304399,
+        2988983
+      ],
+      "canonical_identity_collisions": [],
+      "missing_canonical_identities": [],
+      "new_aids_unique": true,
+      "source_urls_unique": true,
+      "evidence_family_ids_unique": true,
+      "recent_batches_checked": [
+        "126–140 (previous reconciliation note)",
+        "141"
+      ],
+      "recent_batch_records_checked": 201,
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "filename_matches": 0,
+      "code_search_matches": 0,
+      "all_target_identities_answer_eligible": null,
+      "post_addition_canonical_scan_pending": true,
+      "note": "בוצעה סריקה מלאה של public-search-index.json (9,122 רשומות, snapshot מ-15.11.2026), בדיקת 1,022 רשומות תור הביקורת וחיפוש AID ייעודי ב-GitHub; לא נמצאה התאמה לאחד עשר ה-AID החדשים. קובצי batch 126–140 נבדקו בסבב הקודם; batch 141 נבדק בנפרד. סריקה קנונית לאחר ההוספה ואישור כשירות יבוצעו ב-reconciliation."
+    },
+    "language_distribution": {
+      "Hebrew": 11
+    },
+    "original_language_distribution": {
+      "Hebrew": 11
+    },
+    "source_type_distribution": {
+      "Sichos": 11
+    },
+    "metrics_actual_before": null,
+    "metrics_delta_actual": null
+  },
+  "previous_manual_web_review": {
     "batch_id": "141",
     "batch_file": "data/items/content-research-batch-141-2026-11-17.json",
     "status": "pending_reconciliation",
@@ -139,67 +276,8 @@
       "answer_eligible_propositions": 15
     }
   },
-  "previous_manual_web_review": {
-    "batch_id": "140",
-    "batch_file": "data/items/content-research-batch-140-2026-11-17.json",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_at": "2026-11-17T14:29:58+02:00",
-    "reviewed_item_count": 10,
-    "source_bodies_inspected": 10,
-    "source_body_pages_opened": 10,
-    "new_source_identities": 3,
-    "existing_identities_enriched": 5,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 6,
-    "existing_response_propositions_added": 5,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 3,
-    "independent_witnesses_added": 2,
-    "non_independent_presentations_added": 1,
-    "content_verified_unique_sources_added": 0,
-    "new_aids": [
-      2989331,
-      2989369,
-      2989411
-    ],
-    "enriched_aids": [
-      4279926,
-      4279851,
-      2989413,
-      2989565,
-      2989298
-    ],
-    "rechecked_aids": [
-      4279913,
-      2989417
-    ],
-    "blocked_candidate_count": 0,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "translations_counted_as_independent_witnesses": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1432,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3716
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1435,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3727
-    },
-    "metrics_actual_after": null,
-    "note": "נבדקו עשרה גופי מקור: שבע זהויות עבריות קיימות נפתחו מחדש ושלוש איגרות עבריות חדשות נבדקו בגוף הפרסום. נוספו שלוש זהויות מקור מקוריות-לשון ו-6 פרופוזיציות; חמש זהויות קיימות הועשרו in-place בחמש פרופוזיציות נוספות; שתי זהויות נבדקו מחדש ללא הוספה. AID 2989331, 2989369 ו-2989411 נותרו Parsed; אין קידום ל-Verified. שנת הדפוס המופיעה כ׳תיש״א׳ בשתי איגרות לא נורמלה. אין העתקה מלאה של טקסט מוגן.",
-    "new_translation_manifestations": 1,
-    "translation_observations_added": 1,
-    "original_language_distribution": {
-      "Hebrew": 2,
-      "Hebrew/Yiddish parallel (publisher footnote)": 1
-    }
-  },
-  "last_manual_web_review": "141",
-  "last_manual_review": "141",
+  "last_manual_web_review": "142",
+  "last_manual_review": "142",
   "manual_web_review_history": [
     {
       "schema": "maaneh-ledorot-content-research-batch-v1",
@@ -2967,6 +3045,143 @@
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 15
       }
+    },
+    {
+      "batch_id": "142",
+      "batch_file": "data/items/content-research-batch-142-2026-11-17.json",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_at": "2026-11-17T16:27:55+02:00",
+      "reviewed_item_count": 12,
+      "source_bodies_inspected": 12,
+      "source_body_pages_opened": 12,
+      "new_source_identities": 11,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 15,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 16,
+      "answer_eligible_source_families_added": 11,
+      "independent_witnesses_added": 11,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "new_aids": [
+        5989777,
+        4385753,
+        4280152,
+        2988984,
+        4304359,
+        2989348,
+        2989214,
+        4385534,
+        4279866,
+        4304399,
+        2988983
+      ],
+      "enriched_aids": [
+        2988877
+      ],
+      "blocked_candidate_count": 1,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "translations_counted_as_independent_witnesses": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1446,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3742
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1457,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3758
+      },
+      "metrics_actual_after": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 11,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 16
+      },
+      "public_metrics_snapshot_before": {
+        "generated": "2026-11-15",
+        "answer_eligible_unique_sources": 977,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2950
+      },
+      "project_state_snapshot_before": {
+        "answer_eligible_unique_sources": 977,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2950
+      },
+      "note": "נבדקו אחד עשר גופי שיחות עבריים חדשים והוכנו 15 פרפרזות מחקר לא-מילוליות. זהות קיימת אחת, AID 2988877, הועשרה בפרופוזיציה נוספת; סך התוספות באצווה 16. AID 5071052 לא סיפק גוף נגיש בשני הנתיבים הנוכחיים; לא הוסק ממנו תוכן חדש ונעשה fallback באותה הפעלה. כל 11 הזהויות החדשות נשארו Parsed; אין קידום ל-Verified.",
+      "blocked_candidates": [
+        {
+          "aid": 5071052,
+          "identity_existing": true,
+          "blocked_routes": [
+            {
+              "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm",
+              "web_source_ref": "turn531924view0",
+              "status": "redirected_to_generic_summary_shell",
+              "reason": "הנתיב האנגלי מפנה לעמוד Torah Texts כללי ללא גוף האיגרת."
+            },
+            {
+              "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/5071052/jewish/page.htm",
+              "web_source_ref": "turn902404view0",
+              "status": "Internal Error",
+              "reason": "הנתיב העברי לא החזיר גוף פרסום נגיש."
+            }
+          ],
+          "handling": "לא נוצרה פרופוזיציה חדשה מ-AID 5071052 ולא הוסק תוכן מהעמוד הכללי. הרשומה הקנונית ההיסטורית נשמרה; באותה הפעלה נעשה fallback לאחד עשר גופי שיחות עבריים נגישים."
+        }
+      ],
+      "deduplication_check": {
+        "full_index_scan_available": true,
+        "full_index_scan_pending_reconciliation": true,
+        "index_generated": "2026-11-15",
+        "index_entry_count": 9122,
+        "checked_aids": [
+          5989777,
+          4385753,
+          4280152,
+          2988984,
+          4304359,
+          2989348,
+          2989214,
+          4385534,
+          4279866,
+          4304399,
+          2988983
+        ],
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "new_aids_unique": true,
+        "source_urls_unique": true,
+        "evidence_family_ids_unique": true,
+        "recent_batches_checked": [
+          "126–140 (previous reconciliation note)",
+          "141"
+        ],
+        "recent_batch_records_checked": 201,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "filename_matches": 0,
+        "code_search_matches": 0,
+        "all_target_identities_answer_eligible": null,
+        "post_addition_canonical_scan_pending": true,
+        "note": "בוצעה סריקה מלאה של public-search-index.json (9,122 רשומות, snapshot מ-15.11.2026), בדיקת 1,022 רשומות תור הביקורת וחיפוש AID ייעודי ב-GitHub; לא נמצאה התאמה לאחד עשר ה-AID החדשים. קובצי batch 126–140 נבדקו בסבב הקודם; batch 141 נבדק בנפרד. סריקה קנונית לאחר ההוספה ואישור כשירות יבוצעו ב-reconciliation."
+      },
+      "language_distribution": {
+        "Hebrew": 11
+      },
+      "original_language_distribution": {
+        "Hebrew": 11
+      },
+      "source_type_distribution": {
+        "Sichos": 11
+      },
+      "metrics_actual_before": null,
+      "metrics_delta_actual": null
     }
   ],
   "manual_web_review_current_metrics": {
@@ -2974,6 +3189,6 @@
     "content_verified_unique_sources": 878,
     "answer_eligible_propositions": 2950
   },
-  "last_run_note": "Batch 141: 11 new source bodies inspected (10 Hebrew unedited talk/record texts and one English letter excerpt with original-language status unknown); 15 non-verbatim propositions; one existing AID 5071052 provenance note enriched; AID 4666220 blocked and same-run fallback used. No Verified promotion. Reconciliation pending.",
-  "next_action": "Run canonical reconciliation through batch 141; verify the 11 new Evidence Families and AID/URL collisions, refresh public metrics and review queue, run test_content_readiness.mjs, then inspect Actions and Pages. Do not promote Parsed sources to Verified."
+  "last_run_note": "Batch 142: eleven new Hebrew Sicha bodies inspected; 15 source-grounded non-verbatim propositions; one existing AID 2988877 enriched in place with one additional proposition. AID 5071052 current English route redirected to a generic summary shell and Hebrew route returned Internal Error; same-run fallback used eleven accessible Hebrew Sicha bodies. No Verified promotion. Reconciliation and readiness tests pending.",
+  "next_action": "Run canonical reconciliation through batch 142; verify all eleven new Evidence Families and the AID 2988877 in-place enrichment; refresh public metrics and review queue; run test_content_readiness.mjs; inspect Actions and Pages. Do not promote Parsed sources to Verified."
 }

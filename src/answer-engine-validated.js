@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261117-batch138-yud-tes-letters-v1';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261117-batch142-wellsprings-evidence-v1';
 
 const TOPIC_ALIASES={
  'מוח ולב בשיטת חב״ד':['מוח ולב בשיטת חב״ד','מוח ולב','המוח והלב','המוח ללב','מוח שליט על הלב','לשעבד את הלב','השגה שכלית ורגש הלב','mind and heart in Chabad','mind rules the heart'],
@@ -15,6 +15,7 @@ const TOPIC_ALIASES={
  'רציפות לימוד תורה בחופשת הקיץ':['חופשת הקיץ','לימוד תורה בחופשת הקיץ','רציפות לימוד התורה','חינוך יהודי בחופשה','summer vacation Torah study'],
   'חינוך והפצת ספרים במכתבים':['השוואה בין מכתבי הרבי על חינוך והפצת ספרים','מכתבי הרבי על חינוך והפצת ספרים','חינוך והפצת ספרים','חינוך והפצת פרסומים','הפצת ספרים במכתבים','educational publishing letters'],
  'י״ט כסלו והפצת חסידות':['י״ט כסלו והפצת חסידות','איגרות י״ט כסלו','אגרות י״ט כסלו','מכתבים על הפצת המעיינות','מנהיגי קהילות בי״ט כסלו','תמיכה במוסדות חסידיים'],
+ 'הפצת המעיינות ופנימיות התורה':['הפצת המעיינות','הפצת מעיינות','פנימיות התורה','יפוצו מעינותיך חוצה','מעינותיך','תורת החסידות','להביא את המעיינות לחוצה','המעיינות עצמם בחוצה','הפצת החסידות לכל ישראל','spreading the wellsprings','inner Torah'],
  'צדקה רוחנית וחינוך':['צדקה רוחנית','צדקה גשמית','לקרב לתורה','חינוך ילדים','spiritual charity','spiritual tzedakah','education of children','yeshivah students'],
   'השפעת היחיד והארת הסביבה':['אדם אחד','יחיד','השפעה על העולם','להאיר את הסביבה','one individual','whole creation','beacon of light'],
   'שמיטה ומטרת החיים':['שמיטה','שנת השמיטה','שבת לה׳','Shemittah','Sabbatical year','Sabbath unto G-d','spiritual goal'],

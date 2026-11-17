@@ -889,12 +889,16 @@ for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,disseminationSynthesis,{mode});
  assert(m.answerable,mode+': inspected dissemination evidence must support a multi-source synthesis');
  assert(m.sources.some(e=>String(e.aid)==='4831188'),mode+': Hebrew source on inner Torah dissemination must be retrieved');
- assert(m.sources.some(e=>String(e.aid)==='5071052'),mode+': Hebrew source on the demand to disseminate the wellsprings must be retrieved');
+ const legacy5071052=idx.entries.find(e=>String(e.aid)==='5071052');
+ assert(legacy5071052&&legacy5071052.has_content_evidence,'legacy AID 5071052 must remain in the index from its earlier inspected body; current public route is not treated as a new inspection');
+ assert(m.sources.some(e=>String(e.aid)==='5989777'),mode+': newly inspected Hebrew Sicha on bringing the wellsprings to people without a prior connection must be retrieved');
+ if(mode==='researcher')assert(m.sources.some(e=>String(e.aid)==='4385753'),mode+': researcher mode must surface the Hebrew Sicha defining the wellsprings as Chassidus');
  assert(m.sources.some(e=>String(e.aid)==='2989555'),mode+': original Hebrew Sicha on Chassidus dissemination must be retrieved');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': dissemination synthesis must use at least three distinct Evidence Families');
- assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length),mode+': each synthesized claim must cite its supporting sources');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators?.length),mode+': each synthesized claim must carry source numbers and claim-level body locators');
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher'){
+  assert(m.research&&m.research.evidence_map.length>=3&&m.research.witnesses.length===m.sources.length,'researcher mode must expose a witness-level evidence map for the dissemination synthesis');
   const englishTranslations=m.sources.filter(e=>!!e.translation_of_evidence_family_id);
   assert(m.research&&m.research.evidence_map.length>=2&&englishTranslations.length>=2,'researcher mode must preserve two underlying English translation witnesses');
   assert(englishTranslations.every(e=>e.independent_witness===false),'English translations must remain non-independent witnesses');

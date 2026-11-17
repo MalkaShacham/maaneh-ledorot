@@ -32,7 +32,7 @@ const TOPICS={
  'הרצאה ושיחה בענייני חסידות':['הרצאה על חסידות','לדבר עניני חסידות בדרך הרצאה ושיחה','chassidus lecture'],
  'שיעור קונטרס החלצו ברבים':['קונטרס החלצו','שיעור ציבורי בקונטרס החלצו','שיעורים הנלמדים ברבים','לכלול בשיעורים הנלמדים ברבים','לקבוע זמן נוח להשתתפות','להסבירו באופן מובן לכל השומעים','העדר קירוב לבבות','העדר קירוב הלבבות'],
  'תכנון פעילויות חג לקהילה':['תכנית מפורטת לימי השמחה','פעולות צעירי אגודת חב״ד','שמחת בית השואבה'],
- 'הפצת המעיינות ופנימיות התורה':['הפצת המעיינות','הפצת מעיינות','פנימיות התורה','תורת הבעל שם טוב','מעיינות הבעש״ט','יפוצו מעיינותיך חוצה','spreading the wellsprings','dissemination of Chassidus','inner Torah','pnimiyus hatorah'],
+ 'הפצת המעיינות ופנימיות התורה':['הפצת המעיינות','הפצת מעיינות','פנימיות התורה','תורת הבעל שם טוב','מעיינות הבעש״ט','יפוצו מעיינותיך חוצה','מעינותיך','יפוצו מעינותיך חוצה','הפצת תורת החסידות','להביא את המעיינות לחוצה','המעיינות עצמם בחוצה','תורת החסידות לכל ישראל','לימוד חסידות עם מי שאינו חסיד','spreading the wellsprings','dissemination of Chassidus','inner Torah','pnimiyus hatorah','bring the wellsprings outside'],
  'הפצת המעיינות בבתי כנסת':['אמירת דא״ח בבתי הכנסת','אמירת דברי חסידות בבתי כנסת','ארגון אמירת דברי חסידות בבתי כנסת','הפצת המעיינות בבתי הכנסת','spreading Chassidus in synagogues'],
  'חוסר חשק בלימוד':['אין חשק ללימוד','הוספה בתורה ומצוות'],
  'גשמים בשנת השמיטה':['גשמים בשנת שמיטה','ירידת גשמים בשנת השביעית'],
@@ -1091,9 +1091,20 @@ function supportsYiddishMelodySource(source){
 }
 function supportsWellspringsDisseminationProposition(proposition){
  const body=norm(proposition).toLowerCase();
- const hebrew=(body.includes('הפצת')&&(body.includes('מעיינות')||body.includes('פנימיות התורה')||body.includes('תורת הבעל שם')))||(body.includes('פנימיות התורה')&&(body.includes('זוהר')||body.includes('גילוי')));
- const english=['dissemination of the wellsprings','spread the wellsprings','spreading the wellsprings','inner torah','inner dimension of torah','pnimiyus hatorah','hafatzas hamaayanos','baal shem tov'].some(term=>body.includes(term));
+ const hasWellspring=/(?:מעיינות|מעינות|מעיין|מעין|מעינותיך|מעיינותיך)/.test(body);
+ const hasSpread=/(?:הפצת|הפצה|יפוצו|להפיץ|להביא|להגיע)/.test(body);
+ const hasInnerTorah=/(?:פנימיות התורה|תורת החסידות|תורת הבעל שם)/.test(body);
+ const hasOutside=/(?:חוצה|חוץ|כל ישראל|לכל יהודי|כל יהודי|מקומות שבהם)/.test(body);
+ const hebrew=(hasWellspring&&hasSpread)||(hasInnerTorah&&hasOutside&&hasSpread)||(hasInnerTorah&&hasWellspring);
+ const english=['dissemination of the wellsprings','spread the wellsprings','spreading the wellsprings','inner torah','inner dimension of torah','pnimiyus hatorah','hafatzas hamaayanos','baal shem tov','bring the wellsprings outside'].some(term=>body.includes(term));
  return hebrew||english;
+}
+function wellspringsDisseminationEvidenceScore(source){
+ const body=norm(arr(source?.response_propositions).join(' '));
+ return Number(/(?:הפצת|הפצה|יפוצו|להפיץ)/.test(body)&&/(?:מעיינות|מעינות|מעיין|מעין)/.test(body))*8
+  +Number(/(?:פנימיות התורה|תורת החסידות|תורת הבעל שם)/.test(body))*6
+  +Number(/(?:חוצה|חוץ|כל ישראל|לכל יהודי|כל יהודי)/.test(body))*3
+  +Number(/(?:ללמוד|לימוד|מעשה בפועל|פעולה)/.test(body))*2;
 }
 function supportsWellspringsDisseminationSource(source){
  return arr(source?.response_propositions).some(supportsWellspringsDisseminationProposition);
@@ -1699,7 +1710,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const yudTesKislevLettersQuestion=isYudTesKislevLettersQuestion(understanding.query);
  if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusUnityMissionQuestion||yudTesKislevLettersQuestion)understanding.intent='guidance';
  else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||northAfricaEducationQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
- if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
+ if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&(educationGovernanceQuestion?educationGovernanceFamilies.size:families.size)<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const shmittaFruitReferralQuestion=understanding.query.includes('פירות שביעית')&&understanding.query.includes('נכרים')&&understanding.query.includes('גדולי ההוראה');
@@ -1796,7 +1807,18 @@ else if(educationGovernanceQuestion){
  else if(fordLetterQuestion){answerEvidence=usable.filter(e=>supportsFordLetterSource(e));}
  else if(yiddishMelodyQuestion){answerEvidence=usable.filter(e=>supportsYiddishMelodySource(e));}
  else if(yiddishHayomYomQuestion){answerEvidence=usable.filter(e=>supportsYiddishHayomYomSource(e));}
- else if(wellspringsDisseminationQuestion){answerEvidence=usable.filter(e=>supportsWellspringsDisseminationSource(e));}
+ else if(wellspringsDisseminationQuestion){
+  const preferredAids=['4831188','2989555','5989777','4385753','2989214','4279866'];
+  const priority=e=>{const i=preferredAids.indexOf(String(e.aid||''));return i<0?999:i;};
+  const cap=answerMode==='researcher'?4:1,perFamily=new Map();
+  const pool=index.filter(e=>e&&e.has_content_evidence===true&&supportsWellspringsDisseminationSource(e))
+   .map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsWellspringsDisseminationProposition)}))
+   .sort((a,b)=>Number(b.independent_witness===true)-Number(a.independent_witness===true)
+    ||Number(String(b.language||'').toLowerCase().startsWith('he'))-Number(String(a.language||'').toLowerCase().startsWith('he'))
+    ||priority(a)-priority(b)
+    ||wellspringsDisseminationEvidenceScore(b)-wellspringsDisseminationEvidenceScore(a));
+  answerEvidence=pool.filter(e=>{const k=familyKey(e)||String(e.aid||e.id);const n=perFamily.get(k)||0;if(n>=cap)return false;perFamily.set(k,n+1);return true;});
+ }
  else if(jewishHomeSynthesisQuestion){
   const homeIndex=index.filter(e=>String(e.status||'').toLowerCase()==='verified'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&arr(e.response_propositions).some(supportsJewishHomeSynthesisProposition));
   const score=e=>{const t=norm(arr(e.response_propositions).join(' '));return Number(t.includes('הבית היהודי')||t.includes('בית יהודי')||t.includes('חינוך הילדים'))*100+Number(t.includes('חנוכת הבית'))*100+Number(t.includes('מזוזה'))*80;};
@@ -1889,7 +1911,7 @@ else if(educationGovernanceQuestion){
  if(educationInfluenceActionQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsEducationalInfluenceActionSource(b))-Number(supportsEducationalInfluenceActionSource(a)));}
  if(fordLetterQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsFordLetterSource(b))-Number(supportsFordLetterSource(a)));}
  if(yiddishMelodyQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsYiddishMelodySource(b))-Number(supportsYiddishMelodySource(a)));}
- if(wellspringsDisseminationQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(b.independent_witness===true)-Number(a.independent_witness===true)||Number(String(b.language||'').toLowerCase().startsWith('he'))-Number(String(a.language||'').toLowerCase().startsWith('he')));}
+ if(wellspringsDisseminationQuestion){const preferred=['4831188','2989555','5989777','4385753','2989214','4279866'];const rank=e=>{const i=preferred.indexOf(String(e.aid||''));return i<0?999:i;};answerEvidence=answerEvidence.slice().sort((a,b)=>Number(b.independent_witness===true)-Number(a.independent_witness===true)||Number(String(b.language||'').toLowerCase().startsWith('he'))-Number(String(a.language||'').toLowerCase().startsWith('he'))||rank(a)-rank(b)||wellspringsDisseminationEvidenceScore(b)-wellspringsDisseminationEvidenceScore(a));}
  if(lodYeshivaStudyTravelQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsLodYeshivaStudyTravelSource(b))-Number(supportsLodYeshivaStudyTravelSource(a)));}
  if(shmittaFruitReferralQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>Number(supportsShmittaFruitReferralSource(b))-Number(supportsShmittaFruitReferralSource(a)));}
  if(dailyStudyPrayerQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a)||propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score);}

@@ -74,7 +74,7 @@
     "The prior readiness failure revealed that patternSynthesisIntegrity lacked a branch for study_and_youth_education. A topic-specific validator and regression tests now preserve one independent letter plus one explicitly non-independent publisher text, with claim-level locators; the full rerun is pending.",
     "Batch 138 repair: prior manifest lacked records[], so its 12 inspected English letters were not ingested into the answer index. Complete records and 24 source-grounded Hebrew paraphrases are now present; all 12 remain derived translations/non-independent. AID 553672 remains excluded (media-only, no transcript). Full-index reconciliation through batch 138 is pending."
   ],
-  "next_work": "Run canonical reconciliation through batch 141; resolve AID/URL/ID and Evidence Family collisions, refresh public metrics and review queue, run test_content_readiness.mjs in regular and researcher modes, then inspect Actions and Pages. Keep all new sources Parsed until a separate content-verification decision.",
+  "next_work": "Run canonical reconciliation through batch 142; inspect AID/URL/ID and Evidence Family collisions; refresh public metrics and review queue; run test_content_readiness.mjs in regular and researcher modes; inspect Actions and Pages. Keep all new identities Parsed and do not promote to Verified.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation",
@@ -258,15 +258,15 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "141",
+    "current_batch": "142",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "136",
     "last_batch_summary": {
-      "batch_id": "141",
-      "batch_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "batch_id": "142",
+      "batch_file": "data/items/content-research-batch-142-2026-11-17.json",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_at": "2026-11-17T14:59:33+02:00",
+      "reviewed_at": "2026-11-17T16:27:55+02:00",
       "reviewed_item_count": 12,
       "source_bodies_inspected": 12,
       "source_body_pages_opened": 12,
@@ -274,27 +274,27 @@
       "existing_identities_enriched": 1,
       "existing_identities_rechecked": 0,
       "new_response_propositions": 15,
-      "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 15,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 16,
       "answer_eligible_source_families_added": 11,
-      "independent_witnesses_added": 10,
-      "non_independent_presentations_added": 1,
+      "independent_witnesses_added": 11,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "new_aids": [
-        2988877,
-        2989555,
-        3008872,
-        3008877,
-        2988883,
-        4280015,
-        4385701,
-        2989386,
-        4385726,
-        2988933,
-        1244711
+        5989777,
+        4385753,
+        4280152,
+        2988984,
+        4304359,
+        2989348,
+        2989214,
+        4385534,
+        4279866,
+        4304399,
+        2988983
       ],
       "enriched_aids": [
-        5071052
+        2988877
       ],
       "blocked_candidate_count": 1,
       "crawler_retry": false,
@@ -302,27 +302,38 @@
       "full_text_copied": false,
       "translations_counted_as_independent_witnesses": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1435,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3727
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1446,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3742
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1457,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3758
+      },
       "metrics_actual_after": null,
-      "note": "נבדקו 11 גופי מקור חדשים: עשרה תמלילי/רישומי דברים בעברית וקטע מכתב באנגלית ששפת המקור שלו לא הוכחה. נוספו 15 פרפרזות לא-מילוליות; AID 5071052 הועשרה בהערת provenance לא-פתורה. AID 4666220 נחסם ונעשה fallback באותה הפעלה. אין קידום ל-Verified.",
       "metrics_delta_at_batch_boundary": {
         "answer_eligible_unique_sources": 11,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 15
-      }
+        "answer_eligible_propositions": 16
+      },
+      "public_metrics_snapshot_before": {
+        "generated": "2026-11-15",
+        "answer_eligible_unique_sources": 977,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2950
+      },
+      "project_state_snapshot_before": {
+        "answer_eligible_unique_sources": 977,
+        "content_verified_unique_sources": 870,
+        "answer_eligible_propositions": 2950
+      },
+      "note": "נבדקו אחד עשר גופי שיחות עבריים חדשים והוכנו 15 פרפרזות מחקר לא-מילוליות. זהות קיימת אחת, AID 2988877, הועשרה בפרופוזיציה נוספת; סך התוספות באצווה 16. AID 5071052 לא סיפק גוף נגיש בשני הנתיבים הנוכחיים; לא הוסק ממנו תוכן חדש ונעשה fallback באותה הפעלה. כל 11 הזהויות החדשות נשארו Parsed; אין קידום ל-Verified."
     },
-    "last_run_note": "Batch 141: 11 new source bodies inspected (10 Hebrew unedited talk/record texts and one English letter excerpt whose original-language status is unknown); 15 source-grounded non-verbatim propositions; one existing AID 5071052 provenance note enriched. AID 4666220 returned Internal Error; eleven accessible bodies were used as same-run fallback. Reconciliation and readiness retest pending.",
+    "last_run_note": "Batch 142: eleven new Hebrew Sicha bodies inspected; 15 new source-grounded non-verbatim propositions; existing AID 2988877 enriched in place with one additional proposition. AID 5071052 current English route is a summary shell and Hebrew route returned Internal Error; eleven accessible Hebrew bodies were used as same-run fallback. Reconciliation pending; no Verified promotion.",
     "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 returned Internal Error through the public reader; no crawler retry or access bypass. Eleven alternative source bodies were inspected in the same run.",
-    "next_work": "Run canonical reconciliation through batch 141; resolve AID/URL/ID and Evidence Family collisions, refresh public metrics and review queue, run test_content_readiness.mjs in regular and researcher modes, then inspect Actions and Pages. Keep all new sources Parsed until a separate content-verification decision.",
+    "last_batch_blocked_reason": "AID 5071052: current English route redirects to a generic summary shell; Hebrew route returned Internal Error. No new content inferred; eleven accessible Hebrew Sicha bodies used as same-run fallback.",
+    "next_work": "Run canonical reconciliation through batch 142; inspect AID/URL/ID and Evidence Family collisions; refresh public metrics and review queue; run test_content_readiness.mjs in regular and researcher modes; inspect Actions and Pages. Keep all new identities Parsed and do not promote to Verified.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -1308,8 +1319,8 @@
       "140"
     ]
   },
-  "current_batch": "141",
-  "updated_at": "2026-11-17T14:59:33+02:00",
-  "current_batch_file": "data/items/content-research-batch-141-2026-11-17.json",
+  "current_batch": "142",
+  "updated_at": "2026-11-17T16:27:55+02:00",
+  "current_batch_file": "data/items/content-research-batch-142-2026-11-17.json",
   "status": "pending_reconciliation"
 }
