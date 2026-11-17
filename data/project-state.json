@@ -215,7 +215,7 @@
       "commit_binding": true,
       "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
       "workflow_run_id": 44107524723,
-      "note": "Batch 145 and the retrieval/validator/test updates are committed. No new Actions run ID or combined status is visible yet; test_content_readiness.mjs and canonical reconciliation remain pending. Previous run IDs are historical and are not evidence for this commit.",
+      "note": "As of 2026-11-17 after commit 10a9565, get_commit_combined_status returned no checks and no new workflow run ID was available. latest-quality-gate.json and latest run-log remain dated 2026-11-13. test_content_readiness.mjs is updated but not executed in this run.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
       "status": "pending_run_after_batch_145",
@@ -227,7 +227,7 @@
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
       "last_deployed_commit": "312745ef33bfc3cc453b8b03238cd8d3e8aa9a3b",
-      "note": "No post-batch-145 Pages deployment or public-page verification is available yet."
+      "note": "The public site URL returned Internal Error through the available reader; no post-batch-145 deployment run or public content verification is available."
     },
     "last_reconciled_at": "2026-11-15",
     "last_generated_index_snapshot": {
@@ -314,6 +314,24 @@
           "The entries are not empirical evidence of educational causality.",
           "Runtime inclusion of AID 3317931 and passing readiness checks remain unverified until Actions execute."
         ]
+      },
+      "execution_status": {
+        "latest_commit": "10a9565e9a8a1d780dd2ba93f3c770cfea39abbd",
+        "answer_eligible_unique_sources_before": 977,
+        "answer_eligible_unique_sources_after_public_snapshot": 977,
+        "post_batch_reconciliation_measured": false,
+        "public_metrics_generated": "2026-11-15",
+        "project_state_content_verified": 870,
+        "public_metrics_content_verified": 878,
+        "verified_count_discrepancy": 8,
+        "combined_status_checks": [],
+        "new_actions_run_ids": [],
+        "latest_saved_run_log": "2026-11-13",
+        "latest_saved_quality_gate": "2026-11-13",
+        "test_content_readiness_execution": "not_verified",
+        "pages_deployment_after_batch_145": "not_verified",
+        "public_site_check": "Internal Error via public reader",
+        "local_execution": "blocked_by_dns_no_github_clone"
       }
     }
   },
