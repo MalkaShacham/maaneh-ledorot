@@ -4534,7 +4534,7 @@ assert.equal(batch140Data.existing_identity_rechecks.length,2);
 
 
 
-// Batch 144: six distinct general telegrams, four Hebrew talks, one Hebrew letter,
+// Batch 144: seven distinct general telegrams, four Hebrew talks, one Hebrew letter,
 // and one English testimony carrying a translated Yiddish letter. The latter is
 // a derived presentation, not an independent witness.
 const batch144Path='data/items/content-research-batch-144-2026-11-17.json';
