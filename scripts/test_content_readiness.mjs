@@ -4596,7 +4596,7 @@ for(const [aid,canonicalFile] of [['5478256','data/items/igrot-kodesh-vol3-p372-
  assert.equal(e.translation_of_evidence_family_id,e.evidence_family_id);
 }
 
-const activeFarbrengenQuery='השווה בין המברקים על התוועדויות פעילות לקראת מועדים שונים: מהו הדגש החוזר ומה נאמר על המשכיות הפעילות לאורך השנה?';
+const activeFarbrengenQuery='מהו הדפוס החוזר במברקים על התוועדויות פעילות לקראת מועדים שונים, ומה נאמר על המשכיות הפעילות לאורך השנה?';
 const activeFarbrengenUnderstanding=understandQuestion(activeFarbrengenQuery);
 assert(activeFarbrengenUnderstanding.topics.includes('התוועדויות פעילות והמשכיות לאורך השנה'));
 assert.equal(activeFarbrengenUnderstanding.intent,'pattern');
