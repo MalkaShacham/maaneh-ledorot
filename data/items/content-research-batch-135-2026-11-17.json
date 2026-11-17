@@ -18,10 +18,10 @@
   "new_response_propositions": 25,
   "existing_response_propositions_added": 3,
   "total_new_paraphrase_entries": 28,
-  "answer_eligible_source_families_added": 11,
+  "answer_eligible_source_families_added": 10,
   "content_verified_unique_sources_added": 0,
   "independent_witnesses_added": 0,
-  "non_independent_presentations_added": 11,
+  "non_independent_presentations_added": 10,
   "new_talk_identities": 0,
   "new_translation_manifestations": 10,
   "translation_observations_added": 0,
@@ -1548,9 +1548,9 @@
     "answer_eligible_propositions": 3616
   },
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 11,
+    "answer_eligible_unique_sources": 10,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 28
+    "answer_eligible_propositions": 25
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
@@ -1586,7 +1586,7 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3616
   },
-  "metric_note": "המדדים 1,386 / 854 / 3,616 הם גבול צפוי בלבד לפני סריקה קנונית מלאה; אין להציגם כתוצאה ציבורית בפועל.",
+  "metric_note": "הגבול הצפוי לאחר האצווה הוא 1,386 / 854 / 3,616. עשר המשפחות החדשות מוסיפות 10/0/25 בתוך אצווה 135; העשרת AID 4096303 היא עדכון in-place למשפחה קיימת באצווה 073, ולכן צפויה להזיז את ה-before בפועל של האצוות המאוחרות ב-1/0/3. המספרים עדיין ממתינים לסריקה קנונית מלאה.",
   "limits": [
     "כל עשר הזהויות החדשות הן תרגומים אנגליים של איגרות נפרדות; המקור העברי/יידי המקורי לא נבדק, ולכן independent_witness=false.",
     "AID 4096303 הוא תרגום של אגרת שכבר קוטלגה ביבליוגרפית באגרות קודש כרך ל״ב עמ׳ מ״ח; הוא נשאר באותה Evidence Family ולא נספר כעד עצמאי.",
@@ -1640,5 +1640,10 @@
       4666268
     ],
     "full_index_scan_pending": true
+  },
+  "cumulative_expected_delta_from_pre_run_snapshot": {
+    "answer_eligible_unique_sources": 11,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 28
   }
 }
