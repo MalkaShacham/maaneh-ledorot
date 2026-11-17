@@ -245,12 +245,12 @@
       "commit_binding": true,
       "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
       "workflow_run_id": 44107524723,
-      "note": "Batch149 updates the core locator gate and adds a four-family original-Hebrew synthesis; verification awaits new Actions runs.",
+      "note": "Rerun Actions after commit e21c9b3; verify test_content_readiness.mjs and test_question_specificity_gate.mjs before treating the batch as reconciled.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
-      "status": "pending_run_after_batch_149",
+      "status": "pending_rerun_after_test_fixture_and_assertion_fix",
       "last_failed_run_id": 44188237128,
-      "last_failure": "scripts/test_content_readiness.mjs:905 — researcher synthesis included a source number without a claim-level body locator; the core claim synthesizer now excludes propositions without locators and a regression assertion requires locator coverage."
+      "last_failure": "The first batch149 run exposed two test-harness defects: a missing closing parenthesis in the new claim-locator assertion, and synthetic question-specificity fixtures without source locators. Both were corrected; the core engine continues to suppress unlocated claims."
     },
     "publication": {
       "status": "pending_deploy_after_batch_149",

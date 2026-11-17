@@ -1301,3 +1301,9 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - The prior hourly run 44188237128 measured 1,496 / 854 / 3,823 in its uncommitted workspace after batch148, but failed at `scripts/test_content_readiness.mjs:905` because a researcher claim carried a source number without a body locator. The core synthesizer now excludes any proposition lacking a locator before assigning a source number; the regression test requires every displayed source number to have a claim-local locator. The previous batch148 expected boundary 1,495 / 854 / 3,823 still differs by one source family from that uncommitted measurement; do not treat either as the new committed public metric.
 - Batch149 planning boundary: 1,495 / 854 / 3,823 → 1,503 / 854 / 3,838. This is a calculation pending reconciliation, not an observed post-batch count. Public metrics were not edited manually.
 - No full protected text was copied; translations were not counted as independent witnesses; no schedule, automation, audience or permissions were changed.
+
+
+## 2026-11-18 — Batch149 validation follow-up
+
+- The first post-commit Actions run exposed a missing parenthesis in the new claim-locator regression assertion and a synthetic test fixture in `test_question_specificity_gate.mjs` that had no source locator. The assertion syntax is corrected; the fixture now supplies an explicit synthetic body locator. This preserves the engine invariant that a displayed claim cannot carry a source number without a locator.
+- No source or status was promoted as a result of these test-harness corrections. The new batch remains pending canonical reconciliation and a clean rerun of both readiness and question-specificity tests.

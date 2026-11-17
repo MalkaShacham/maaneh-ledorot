@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {buildAnswerModel,propositionRelevance,understandQuestion} from '../src/answer-engine.js';
-const source=(body)=>({has_content_evidence:true,status:'Verified',response_propositions:[body],documented_circumstances:body,source_url:'https://example.org/source'});
+const source=(body)=>({has_content_evidence:true,status:'Verified',response_propositions:[body],response_proposition_locators:[`Synthetic test body locator for: ${body}`],proposition_source_locator:`Synthetic test body locator for: ${body}`,documented_circumstances:body,source_url:'https://example.org/source'});
 const q=understandQuestion('חינוך ילדים קשב');
 assert.equal(propositionRelevance(source('חינוך ילדים והוראה כללית'),q).support,'insufficient_specific_evidence');
 assert.notEqual(propositionRelevance(source('חינוך ילדים קשב והוראה'),q).support,'insufficient_specific_evidence');

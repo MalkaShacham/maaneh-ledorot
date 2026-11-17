@@ -902,7 +902,7 @@ for(const mode of ['regular','researcher']){
  if(mode==='researcher')assert(m.sources.some(e=>String(e.aid)==='4385753'),mode+': researcher mode must surface the Hebrew Sicha defining the wellsprings as Chassidus');
  assert(m.sources.some(e=>String(e.aid)==='2989555'),mode+': original Hebrew Sicha on Chassidus dissemination must be retrieved');
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': dissemination synthesis must use at least three distinct Evidence Families');
- assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators?.length&&c.source_numbers.every(n=>c.source_locators.some(x=>x.source_number===n&&x.locator)),mode+': every displayed source number must have a claim-level body locator');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators?.length&&c.source_numbers.every(n=>c.source_locators.some(x=>x.source_number===n&&x.locator))),mode+': every displayed source number must have a claim-level body locator');
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher'){
   assert(m.research&&m.research.evidence_map.length>=3&&m.research.witnesses.length===m.sources.length,'researcher mode must expose a witness-level evidence map for the dissemination synthesis');
