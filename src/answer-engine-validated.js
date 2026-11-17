@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261117-batch133-hayomyom-mindheart-v1';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261117-batch134-north-africa-v1';
 
 const TOPIC_ALIASES={
  'מוח ולב בשיטת חב״ד':['מוח ולב בשיטת חב״ד','מוח ולב','המוח והלב','המוח ללב','מוח שליט על הלב','לשעבד את הלב','השגה שכלית ורגש הלב','mind and heart in Chabad','mind rules the heart'],
@@ -17,6 +17,7 @@ const TOPIC_ALIASES={
   'השפעת היחיד והארת הסביבה':['אדם אחד','יחיד','השפעה על העולם','להאיר את הסביבה','one individual','whole creation','beacon of light'],
   'שמיטה ומטרת החיים':['שמיטה','שנת השמיטה','שבת לה׳','Shemittah','Sabbatical year','Sabbath unto G-d','spiritual goal'],
   'שליחות חינוכית והתמדה':['שליחות בחינוך','חינוך יהודי','חוסר חיות','התמדה בשליחות','shlichus','Jewish education','vitality'],
+ 'שליחות חינוכית בצפון אפריקה':['שליחות חינוכית בצפון אפריקה','חינוך יהודי בצפון אפריקה','מוסדות חינוך בצפון אפריקה','שליחות בצפון אפריקה','צפון אפריקה','מרוקו','ליפסקר','גורודצקי','North Africa','Morocco','Jewish education in North Africa'],
   'דאגה':['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
   'בריאות':['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
   'מזוזה':['מזוז','mezuzah','mezuza'], 'נשים':['נשים','אשה','אמא','אם המשפחה','woman','women','mother'],

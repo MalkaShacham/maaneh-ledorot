@@ -105,9 +105,9 @@
         "answer_eligible_propositions": 3111
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1365,
+        "answer_eligible_unique_sources": 1375,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3567
+        "answer_eligible_propositions": 3588
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -146,26 +146,27 @@
         "130",
         "131",
         "132",
-        "133"
+        "133",
+        "134"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. Expected boundary remains 1,051/854/3,111. Preliminary full-index workspace output on commit d44457e measured 1,050/854/3,117; this is diagnostic only until the reconciliation commit records the actual snapshot and variance.",
       "summary": {
-        "batch_id": "133",
-        "batch_file": "data/items/content-research-batch-133-2026-11-17.json",
+        "batch_id": "134",
+        "batch_file": "data/items/content-research-batch-134-2026-11-17.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1346,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3540
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1365,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3567
         },
-        "new_source_identities": 19,
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1375,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3588
+        },
+        "new_source_identities": 10,
         "existing_identities_enriched": 1,
-        "new_response_propositions": 26,
+        "new_response_propositions": 20,
         "existing_response_propositions_added": 1
       },
       "status": "pending_reconciliation"
@@ -233,28 +234,28 @@
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "114",
     "last_batch_summary": {
-      "batch_id": "133",
-      "batch_file": "data/items/content-research-batch-133-2026-11-17.json",
+      "batch_id": "134",
+      "batch_file": "data/items/content-research-batch-134-2026-11-17.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1346,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3540
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1365,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3567
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1375,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3588
+      },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
-      "new_source_identities": 19,
+      "new_source_identities": 10,
       "existing_identities_enriched": 1,
-      "source_bodies_inspected": 20,
-      "new_response_propositions": 26,
+      "source_bodies_inspected": 11,
+      "new_response_propositions": 20,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 27,
+      "total_new_paraphrase_entries": 21,
       "content_verified_unique_sources_added": 0
     },
     "last_run_note": "Batch 133: נבדקו 18 גופי היום יום AID 528923–528940, מכתב אנגלי מלא AID 6427690 ושיחה קיימת AID 2989153. נוספו 19 זהויות ו-26 פרפרזות; AID 2989153 הועשרה בפרופוזיציה אחת. AID 4666220 החזיר Internal Error; AID 528922 הוחרג כעמוד ניווט. אפס קידומים ל-Verified; reconciliation ובדיקת readiness ממתינים.",
@@ -777,7 +778,8 @@
       "130",
       "131",
       "132",
-      "133"
+      "133",
+      "134"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
@@ -1135,7 +1137,9 @@
       },
       "note": "נבדקו 12 גופי ערכים מקוריים בעברית וביידיש; נוספו 20 פרפרזות לא-מילוליות. חמש הצגות ישנות AID 5933–5937 קושרו לאותן Evidence Families של AID 528865–528869 ואינן נספרות כעדים עצמאיים. הועשרה AID 528819 בפרופוזיציה נוספת. AID 4666220 החזיר Internal Error; גופי מקור חלופיים נבדקו באותה הפעלה. כל המקורות החדשים נשארים Parsed ובהקשר חלקי; לא קודם מקור ל-Verified."
     },
-    "current_batch_file": "data/items/content-research-batch-132-2026-11-17.json"
+    "current_batch_file": "data/items/content-research-batch-132-2026-11-17.json",
+    "status": "pending_reconciliation"
   },
-  "current_batch": "133"
+  "current_batch": "133",
+  "updated_at": "2026-11-17T05:01:42+02:00"
 }

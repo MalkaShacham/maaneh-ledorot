@@ -7,40 +7,34 @@
   "skipped": 1,
   "status": "manual_web_review_pending_reconciliation",
   "manual_web_review": {
-    "batch_id": "133",
-    "batch_file": "data/items/content-research-batch-133-2026-11-17.json",
-    "reviewed_at": "2026-11-17T04:03:52+02:00",
+    "batch_id": "134",
+    "batch_file": "data/items/content-research-batch-134-2026-11-17.json",
+    "reviewed_at": "2026-11-17T05:01:42+02:00",
     "status": "pending_reconciliation",
-    "reviewed_item_count": 22,
-    "source_bodies_inspected": 20,
-    "new_source_identities": 19,
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 13,
+    "source_bodies_inspected": 11,
+    "new_source_identities": 10,
     "existing_identities_enriched": 1,
-    "new_response_propositions": 26,
+    "new_response_propositions": 20,
     "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 21,
+    "answer_eligible_source_families_added": 10,
     "content_verified_unique_sources_added": 0,
     "new_aids": [
-      528923,
-      528924,
-      528925,
-      528926,
-      528927,
-      528928,
-      528929,
-      528930,
-      528931,
-      528932,
-      528933,
-      528934,
-      528935,
-      528936,
-      528937,
-      528938,
-      528939,
-      528940,
-      6427690
+      2277932,
+      2277929,
+      2277928,
+      2277934,
+      2277937,
+      2277940,
+      2277941,
+      2277942,
+      2277921,
+      2277945
     ],
     "enriched_aids": [
-      2989153
+      6427690
     ],
     "blocked_candidate_count": 1,
     "blocked_candidates": [
@@ -49,37 +43,37 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
         "web_source_ref": "turn991684view0",
         "status": "internal_error_not_accessible",
-        "reason": "ניסיון פתיחה ישיר של עמוד המו״ל החזיר Internal Error; גוף הפרסום אינו נגיש דרך הקורא הציבורי בהפעלה זו.",
-        "handling": "לא הופעל crawler ולא נעשתה עקיפת גישה. באותה הפעלה נבדקו 18 גופי ערכי היום יום AID 528923–528940 ומכתב אנגלי מלא AID 6427690, וכן הועשרה זהות קיימת AID 2989153."
+        "reason": "עמוד המו״ל החזיר Internal Error ולא הציג גוף פרסום קריא.",
+        "handling": "לא בוצע crawler retry או ניסיון לעקוף בקרת גישה; באותה הפעלה נבדקו עשרה גופי איגרות אנגליים נגישים והועשרה זהות AID 6427690."
       }
     ],
     "excluded_candidate_count": 1,
     "excluded_candidates": [
       {
-        "aid": 528922,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528922",
-        "web_source_ref": "turn637387view0",
-        "status": "opened_navigation_only",
-        "reason": "עמוד ניווט א–יח כסלו בלבד; אין בו גוף ערך עצמאי."
+        "aid": 2277935,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277935",
+        "status": "already_canonical_identity",
+        "existing_batch_file": "data/items/content-research-batch-056-2026-11-12.json",
+        "reason": "Letter No. 568 כבר קיימת באצווה 056; לא נוצרה זהות כפולה ולא נספר מקור חדש."
       }
     ],
     "metrics_before": {
-      "answer_eligible_unique_sources": 1346,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3540
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1365,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3567
     },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1375,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3588
+    },
     "metrics_actual_after": null,
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
       "new_evidence_families_unique": true,
-      "unique_new_aid_count": 19,
-      "unique_new_family_count": 19,
+      "unique_new_aid_count": 10,
+      "unique_new_family_count": 10,
       "same_family_duplicate_count": 0,
       "duplicate_alias_identities": 0,
       "translations_counted_as_independent_witnesses": 0,
@@ -88,178 +82,47 @@
       "all_target_identities_answer_eligible": null,
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "note": "בדיקה מול תור הביקורת ואצוות 130–132 לא מצאה התאמות; סריקת האינדקס הקנוני המלא ממתינה ל-reconciliation."
+      "checked_against": "תור הביקורת בן 1,022 הרשומות, אצוות content-research-batch 055–133, ואינדקסי bulk-indexed/mixed-authorized. נמצא AID 2277935 באצווה 056 והוחרג כקיים; לא נמצאו התאמות נוספות בסריקה המקדימה. קבצי פריטים קנוניים נוספים ייסרקו במלואם ב-reconciliation.",
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "recent_batches_checked": [
+        "055-133"
+      ],
+      "note": "בדיקת כפילויות מקדימה בלבד. אין לטעון שאין התנגשויות קנוניות עד לסריקה המלאה של reconciliation.",
+      "new_source_identity_count": 10
     },
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "publisher": "Kehot / Chabad.org / BeitChabad.com",
-      "accessible_item_level_bodies": 19,
+      "publisher": "Chabad.org/TheRebbe.org — Sichos in English Collection",
+      "accessible_item_level_bodies": 10,
       "existing_identity_bodies": 1,
+      "already_canonical_items": 1,
       "body_text_inspected": true,
       "inspected_aids": [
-        528923,
-        528924,
-        528925,
-        528926,
-        528927,
-        528928,
-        528929,
-        528930,
-        528931,
-        528932,
-        528933,
-        528934,
-        528935,
-        528936,
-        528937,
-        528938,
-        528939,
-        528940,
-        6427690
+        2277932,
+        2277929,
+        2277928,
+        2277934,
+        2277937,
+        2277940,
+        2277941,
+        2277942,
+        2277921,
+        2277945,
+        6427690,
+        2277935
       ],
       "existing_identity_aids": [
-        2989153
+        6427690
+      ],
+      "already_canonical_aids": [
+        2277935
       ],
       "blocked_direct_routes": [
         4666220
       ],
-      "excluded_navigation_pages": [
-        528922
-      ],
       "translations_counted_as_independent_witnesses": 0,
-      "note": "לאחר חסימת AID 4666220 נבדקו באותה הפעלה 18 גופי ערכים מקוריים ומכתב יוצא מלא באנגלית; הועשרה שיחה קיימת אחת. לא הופעל crawler ולא נעשתה עקיפת גישה."
-    }
-  },
-  "previous_manual_web_review": {
-    "batch_id": "132",
-    "batch_file": "data/items/content-research-batch-132-2026-11-17.json",
-    "reviewed_at": "2026-11-17T01:59:08+02:00",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 19,
-    "source_bodies_inspected": 17,
-    "new_source_identities": 16,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 23,
-    "existing_response_propositions_added": 3,
-    "total_new_paraphrase_entries": 26,
-    "answer_eligible_source_families_added": 16,
-    "content_verified_unique_sources_added": 0,
-    "new_aids": [
-      528907,
-      528908,
-      528909,
-      528910,
-      528911,
-      528912,
-      528913,
-      528914,
-      528915,
-      528916,
-      528917,
-      528918,
-      528919,
-      528920,
-      528921,
-      1924127
-    ],
-    "enriched_aids": [
-      2989153
-    ],
-    "blocked_candidate_count": 2,
-    "blocked_candidates": [
-      {
-        "aid": 528913,
-        "source_url": "https://www.chabad.org/library/article_cdo/aid/528913/jewish/Day-by-Day.htm",
-        "web_source_ref": "turn834158view0",
-        "status": "internal_error_not_accessible",
-        "reason": "ניסיון לפתוח את עמוד התרגום האנגלי של ערך היום יום החזיר Internal Error; גוף התרגום לא נבדק ולא נספר כעד עצמאי.",
-        "handling": "הערך העברי המקורי AID 528913 נבדק; באותה הפעלה נוסף מקור אנגלי מקורי מסוג מכתב נכנס AID 1924127."
-      },
-      {
-        "aid": 816546,
-        "source_url": null,
-        "web_source_ref": "turn367583search0",
-        "status": "search_result_open_internal_error",
-        "reason": "תוצאת חיפוש ציבורית זיהתה אוסף מסמכים באנגלית על Education Day, אך פתיחת גוף העמוד החזירה Internal Error; לא נבדק תוכן העמוד ולא נגזרו ממנו טענות.",
-        "handling": "נפתח ונבדק במקום זאת מכתב אנגלי מקורי AID 1924127, בלי לייחס את שאלת הכותב לרבי."
-      }
-    ],
-    "excluded_candidate_count": 0,
-    "excluded_candidates": [],
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1330,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3514
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1346,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3540
-    },
-    "metrics_actual_before": null,
-    "metrics_actual_after": null,
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 15,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 24
-    },
-    "deduplication_check": {
-      "new_aids_unique": true,
-      "new_source_urls_unique": true,
-      "new_evidence_families_unique": true,
-      "unique_new_aid_count": 16,
-      "unique_new_family_count": 16,
-      "same_family_duplicate_count": 0,
-      "duplicate_alias_identities": 0,
-      "translations_counted_as_independent_witnesses": 0,
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "all_target_identities_answer_eligible": null,
-      "full_index_scan_available": false,
-      "full_index_scan_pending_reconciliation": true,
-      "review_queue_records": 1022,
-      "review_queue_matches": 0,
-      "recent_batches_checked": [
-        "130",
-        "131"
-      ],
-      "note": "בדיקה מקדימה מול תור הביקורת ושרשרת האצוות הקודמות לא מצאה התאמות; public-search-index.json המלא לא נשלף דרך מחבר GitHub. סריקה קנונית מלאה ממתינה ל-reconciliation; אין לטעון שאין התנגשויות לפני הסריקה."
-    },
-    "fallback_source_attempted": true,
-    "fallback_source_results": {
-      "publisher": "Kehot / Chabad.org / BeitChabad.com",
-      "accessible_item_level_bodies": 16,
-      "existing_identity_bodies": 1,
-      "blocked_alternate_type_routes": 2,
-      "body_text_inspected": true,
-      "inspected_aids": [
-        528907,
-        528908,
-        528909,
-        528910,
-        528911,
-        528912,
-        528913,
-        528914,
-        528915,
-        528916,
-        528917,
-        528918,
-        528919,
-        528920,
-        528921
-      ],
-      "existing_identity_aids": [
-        2989153
-      ],
-      "blocked_direct_routes": [
-        528913,
-        816546
-      ],
-      "translations_counted_as_independent_witnesses": 0,
-      "note": "שני נתיבי אגרות הפנו למעטפת ללא גוף איגרת. במקום לחזור עליהם נבדקו 15 גופי ערכי היום יום בשפת המקור והועשרה שיחה קיימת אחת; לא הופעל crawler ולא נעשתה עקיפת גישה.",
-      "accessible_english_correspondence_bodies": 1
+      "note": "לאחר חסימת AID 4666220 נפתחו עשרה גופי איגרות אנגליים מלאים; AID 2277935 נבדק אך כבר קיים באצווה 056; AID 6427690 הועשר בפסקת סיום נוספת. כל התרגומים סומנו כנגזרים ולא כעדים עצמאיים."
     },
     "crawler_retry": false,
     "access_control_bypassed": false,
@@ -267,53 +130,165 @@
     "scan_only_verification_used": false,
     "translations_counted_as_independent_witnesses": 0,
     "language_distribution": {
-      "Hebrew": 9,
-      "Yiddish": 5,
-      "Hebrew/Yiddish": 1,
-      "English": 1
+      "English": 10
     },
     "source_type_distribution": {
-      "published_hebrew_hayom_yom_entry": 9,
-      "published_yiddish_hayom_yom_entry": 5,
-      "published_hebrew_yiddish_hayom_yom_entry": 1,
-      "published_english_incoming_correspondence_letter": 1
+      "published_english_translated_correspondence_letter": 10
+    }
+  },
+  "previous_manual_web_review": {
+    "batch_id": "133",
+    "batch_file": "data/items/content-research-batch-133-2026-11-17.json",
+    "reviewed_at": "2026-11-17T04:03:52+02:00",
+    "status": "pending_reconciliation",
+    "reviewed_item_count": 22,
+    "source_bodies_inspected": 20,
+    "new_source_identities": 19,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 26,
+    "existing_response_propositions_added": 1,
+    "content_verified_unique_sources_added": 0,
+    "new_aids": [
+      528923,
+      528924,
+      528925,
+      528926,
+      528927,
+      528928,
+      528929,
+      528930,
+      528931,
+      528932,
+      528933,
+      528934,
+      528935,
+      528936,
+      528937,
+      528938,
+      528939,
+      528940,
+      6427690
+    ],
+    "enriched_aids": [
+      2989153
+    ],
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+        "web_source_ref": "turn991684view0",
+        "status": "internal_error_not_accessible",
+        "reason": "ניסיון פתיחה ישיר של עמוד המו״ל החזיר Internal Error; גוף הפרסום אינו נגיש דרך הקורא הציבורי בהפעלה זו.",
+        "handling": "לא הופעל crawler ולא נעשתה עקיפת גישה. באותה הפעלה נבדקו 18 גופי ערכי היום יום AID 528923–528940 ומכתב אנגלי מלא AID 6427690, וכן הועשרה זהות קיימת AID 2989153."
+      }
+    ],
+    "excluded_candidate_count": 1,
+    "excluded_candidates": [
+      {
+        "aid": 528922,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528922",
+        "web_source_ref": "turn637387view0",
+        "status": "opened_navigation_only",
+        "reason": "עמוד ניווט א–יח כסלו בלבד; אין בו גוף ערך עצמאי."
+      }
+    ],
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1346,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3540
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1365,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3567
+    },
+    "metrics_actual_after": null,
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_source_urls_unique": true,
+      "new_evidence_families_unique": true,
+      "unique_new_aid_count": 19,
+      "unique_new_family_count": 19,
+      "same_family_duplicate_count": 0,
+      "duplicate_alias_identities": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null,
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "note": "בדיקה מול תור הביקורת ואצוות 130–132 לא מצאה התאמות; סריקת האינדקס הקנוני המלא ממתינה ל-reconciliation."
+    },
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "publisher": "Kehot / Chabad.org / BeitChabad.com",
+      "accessible_item_level_bodies": 19,
+      "existing_identity_bodies": 1,
+      "body_text_inspected": true,
+      "inspected_aids": [
+        528923,
+        528924,
+        528925,
+        528926,
+        528927,
+        528928,
+        528929,
+        528930,
+        528931,
+        528932,
+        528933,
+        528934,
+        528935,
+        528936,
+        528937,
+        528938,
+        528939,
+        528940,
+        6427690
+      ],
+      "existing_identity_aids": [
+        2989153
+      ],
+      "blocked_direct_routes": [
+        4666220
+      ],
+      "excluded_navigation_pages": [
+        528922
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "לאחר חסימת AID 4666220 נבדקו באותה הפעלה 18 גופי ערכים מקוריים ומכתב יוצא מלא באנגלית; הועשרה שיחה קיימת אחת. לא הופעל crawler ולא נעשתה עקיפת גישה."
     }
   },
   "last_manual_web_review": {
-    "batch_id": "133",
-    "batch_file": "data/items/content-research-batch-133-2026-11-17.json",
-    "reviewed_at": "2026-11-17T04:03:52+02:00",
+    "batch_id": "134",
+    "batch_file": "data/items/content-research-batch-134-2026-11-17.json",
+    "reviewed_at": "2026-11-17T05:01:42+02:00",
     "status": "pending_reconciliation",
-    "reviewed_item_count": 22,
-    "source_bodies_inspected": 20,
-    "new_source_identities": 19,
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 13,
+    "source_bodies_inspected": 11,
+    "new_source_identities": 10,
     "existing_identities_enriched": 1,
-    "new_response_propositions": 26,
+    "new_response_propositions": 20,
     "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 21,
+    "answer_eligible_source_families_added": 10,
     "content_verified_unique_sources_added": 0,
     "new_aids": [
-      528923,
-      528924,
-      528925,
-      528926,
-      528927,
-      528928,
-      528929,
-      528930,
-      528931,
-      528932,
-      528933,
-      528934,
-      528935,
-      528936,
-      528937,
-      528938,
-      528939,
-      528940,
-      6427690
+      2277932,
+      2277929,
+      2277928,
+      2277934,
+      2277937,
+      2277940,
+      2277941,
+      2277942,
+      2277921,
+      2277945
     ],
     "enriched_aids": [
-      2989153
+      6427690
     ],
     "blocked_candidate_count": 1,
     "blocked_candidates": [
@@ -322,37 +297,37 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
         "web_source_ref": "turn991684view0",
         "status": "internal_error_not_accessible",
-        "reason": "ניסיון פתיחה ישיר של עמוד המו״ל החזיר Internal Error; גוף הפרסום אינו נגיש דרך הקורא הציבורי בהפעלה זו.",
-        "handling": "לא הופעל crawler ולא נעשתה עקיפת גישה. באותה הפעלה נבדקו 18 גופי ערכי היום יום AID 528923–528940 ומכתב אנגלי מלא AID 6427690, וכן הועשרה זהות קיימת AID 2989153."
+        "reason": "עמוד המו״ל החזיר Internal Error ולא הציג גוף פרסום קריא.",
+        "handling": "לא בוצע crawler retry או ניסיון לעקוף בקרת גישה; באותה הפעלה נבדקו עשרה גופי איגרות אנגליים נגישים והועשרה זהות AID 6427690."
       }
     ],
     "excluded_candidate_count": 1,
     "excluded_candidates": [
       {
-        "aid": 528922,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528922",
-        "web_source_ref": "turn637387view0",
-        "status": "opened_navigation_only",
-        "reason": "עמוד ניווט א–יח כסלו בלבד; אין בו גוף ערך עצמאי."
+        "aid": 2277935,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277935",
+        "status": "already_canonical_identity",
+        "existing_batch_file": "data/items/content-research-batch-056-2026-11-12.json",
+        "reason": "Letter No. 568 כבר קיימת באצווה 056; לא נוצרה זהות כפולה ולא נספר מקור חדש."
       }
     ],
     "metrics_before": {
-      "answer_eligible_unique_sources": 1346,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3540
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1365,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3567
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1375,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3588
     },
     "metrics_actual_after": null,
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
       "new_evidence_families_unique": true,
-      "unique_new_aid_count": 19,
-      "unique_new_family_count": 19,
+      "unique_new_aid_count": 10,
+      "unique_new_family_count": 10,
       "same_family_duplicate_count": 0,
       "duplicate_alias_identities": 0,
       "translations_counted_as_independent_witnesses": 0,
@@ -361,83 +336,89 @@
       "all_target_identities_answer_eligible": null,
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "note": "בדיקה מול תור הביקורת ואצוות 130–132 לא מצאה התאמות; סריקת האינדקס הקנוני המלא ממתינה ל-reconciliation."
+      "checked_against": "תור הביקורת בן 1,022 הרשומות, אצוות content-research-batch 055–133, ואינדקסי bulk-indexed/mixed-authorized. נמצא AID 2277935 באצווה 056 והוחרג כקיים; לא נמצאו התאמות נוספות בסריקה המקדימה. קבצי פריטים קנוניים נוספים ייסרקו במלואם ב-reconciliation.",
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "recent_batches_checked": [
+        "055-133"
+      ],
+      "note": "בדיקת כפילויות מקדימה בלבד. אין לטעון שאין התנגשויות קנוניות עד לסריקה המלאה של reconciliation.",
+      "new_source_identity_count": 10
     },
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "publisher": "Kehot / Chabad.org / BeitChabad.com",
-      "accessible_item_level_bodies": 19,
+      "publisher": "Chabad.org/TheRebbe.org — Sichos in English Collection",
+      "accessible_item_level_bodies": 10,
       "existing_identity_bodies": 1,
+      "already_canonical_items": 1,
       "body_text_inspected": true,
       "inspected_aids": [
-        528923,
-        528924,
-        528925,
-        528926,
-        528927,
-        528928,
-        528929,
-        528930,
-        528931,
-        528932,
-        528933,
-        528934,
-        528935,
-        528936,
-        528937,
-        528938,
-        528939,
-        528940,
-        6427690
+        2277932,
+        2277929,
+        2277928,
+        2277934,
+        2277937,
+        2277940,
+        2277941,
+        2277942,
+        2277921,
+        2277945,
+        6427690,
+        2277935
       ],
       "existing_identity_aids": [
-        2989153
+        6427690
+      ],
+      "already_canonical_aids": [
+        2277935
       ],
       "blocked_direct_routes": [
         4666220
       ],
-      "excluded_navigation_pages": [
-        528922
-      ],
       "translations_counted_as_independent_witnesses": 0,
-      "note": "לאחר חסימת AID 4666220 נבדקו באותה הפעלה 18 גופי ערכים מקוריים ומכתב יוצא מלא באנגלית; הועשרה שיחה קיימת אחת. לא הופעל crawler ולא נעשתה עקיפת גישה."
+      "note": "לאחר חסימת AID 4666220 נפתחו עשרה גופי איגרות אנגליים מלאים; AID 2277935 נבדק אך כבר קיים באצווה 056; AID 6427690 הועשר בפסקת סיום נוספת. כל התרגומים סומנו כנגזרים ולא כעדים עצמאיים."
+    },
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "translations_counted_as_independent_witnesses": 0,
+    "language_distribution": {
+      "English": 10
+    },
+    "source_type_distribution": {
+      "published_english_translated_correspondence_letter": 10
     }
   },
   "last_manual_review": {
-    "batch_id": "133",
-    "batch_file": "data/items/content-research-batch-133-2026-11-17.json",
-    "reviewed_at": "2026-11-17T04:03:52+02:00",
+    "batch_id": "134",
+    "batch_file": "data/items/content-research-batch-134-2026-11-17.json",
+    "reviewed_at": "2026-11-17T05:01:42+02:00",
     "status": "pending_reconciliation",
-    "reviewed_item_count": 22,
-    "source_bodies_inspected": 20,
-    "new_source_identities": 19,
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 13,
+    "source_bodies_inspected": 11,
+    "new_source_identities": 10,
     "existing_identities_enriched": 1,
-    "new_response_propositions": 26,
+    "new_response_propositions": 20,
     "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 21,
+    "answer_eligible_source_families_added": 10,
     "content_verified_unique_sources_added": 0,
     "new_aids": [
-      528923,
-      528924,
-      528925,
-      528926,
-      528927,
-      528928,
-      528929,
-      528930,
-      528931,
-      528932,
-      528933,
-      528934,
-      528935,
-      528936,
-      528937,
-      528938,
-      528939,
-      528940,
-      6427690
+      2277932,
+      2277929,
+      2277928,
+      2277934,
+      2277937,
+      2277940,
+      2277941,
+      2277942,
+      2277921,
+      2277945
     ],
     "enriched_aids": [
-      2989153
+      6427690
     ],
     "blocked_candidate_count": 1,
     "blocked_candidates": [
@@ -446,37 +427,37 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
         "web_source_ref": "turn991684view0",
         "status": "internal_error_not_accessible",
-        "reason": "ניסיון פתיחה ישיר של עמוד המו״ל החזיר Internal Error; גוף הפרסום אינו נגיש דרך הקורא הציבורי בהפעלה זו.",
-        "handling": "לא הופעל crawler ולא נעשתה עקיפת גישה. באותה הפעלה נבדקו 18 גופי ערכי היום יום AID 528923–528940 ומכתב אנגלי מלא AID 6427690, וכן הועשרה זהות קיימת AID 2989153."
+        "reason": "עמוד המו״ל החזיר Internal Error ולא הציג גוף פרסום קריא.",
+        "handling": "לא בוצע crawler retry או ניסיון לעקוף בקרת גישה; באותה הפעלה נבדקו עשרה גופי איגרות אנגליים נגישים והועשרה זהות AID 6427690."
       }
     ],
     "excluded_candidate_count": 1,
     "excluded_candidates": [
       {
-        "aid": 528922,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528922",
-        "web_source_ref": "turn637387view0",
-        "status": "opened_navigation_only",
-        "reason": "עמוד ניווט א–יח כסלו בלבד; אין בו גוף ערך עצמאי."
+        "aid": 2277935,
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277935",
+        "status": "already_canonical_identity",
+        "existing_batch_file": "data/items/content-research-batch-056-2026-11-12.json",
+        "reason": "Letter No. 568 כבר קיימת באצווה 056; לא נוצרה זהות כפולה ולא נספר מקור חדש."
       }
     ],
     "metrics_before": {
-      "answer_eligible_unique_sources": 1346,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3540
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1365,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3567
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1375,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3588
     },
     "metrics_actual_after": null,
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
       "new_evidence_families_unique": true,
-      "unique_new_aid_count": 19,
-      "unique_new_family_count": 19,
+      "unique_new_aid_count": 10,
+      "unique_new_family_count": 10,
       "same_family_duplicate_count": 0,
       "duplicate_alias_identities": 0,
       "translations_counted_as_independent_witnesses": 0,
@@ -485,46 +466,58 @@
       "all_target_identities_answer_eligible": null,
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "note": "בדיקה מול תור הביקורת ואצוות 130–132 לא מצאה התאמות; סריקת האינדקס הקנוני המלא ממתינה ל-reconciliation."
+      "checked_against": "תור הביקורת בן 1,022 הרשומות, אצוות content-research-batch 055–133, ואינדקסי bulk-indexed/mixed-authorized. נמצא AID 2277935 באצווה 056 והוחרג כקיים; לא נמצאו התאמות נוספות בסריקה המקדימה. קבצי פריטים קנוניים נוספים ייסרקו במלואם ב-reconciliation.",
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "recent_batches_checked": [
+        "055-133"
+      ],
+      "note": "בדיקת כפילויות מקדימה בלבד. אין לטעון שאין התנגשויות קנוניות עד לסריקה המלאה של reconciliation.",
+      "new_source_identity_count": 10
     },
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "publisher": "Kehot / Chabad.org / BeitChabad.com",
-      "accessible_item_level_bodies": 19,
+      "publisher": "Chabad.org/TheRebbe.org — Sichos in English Collection",
+      "accessible_item_level_bodies": 10,
       "existing_identity_bodies": 1,
+      "already_canonical_items": 1,
       "body_text_inspected": true,
       "inspected_aids": [
-        528923,
-        528924,
-        528925,
-        528926,
-        528927,
-        528928,
-        528929,
-        528930,
-        528931,
-        528932,
-        528933,
-        528934,
-        528935,
-        528936,
-        528937,
-        528938,
-        528939,
-        528940,
-        6427690
+        2277932,
+        2277929,
+        2277928,
+        2277934,
+        2277937,
+        2277940,
+        2277941,
+        2277942,
+        2277921,
+        2277945,
+        6427690,
+        2277935
       ],
       "existing_identity_aids": [
-        2989153
+        6427690
+      ],
+      "already_canonical_aids": [
+        2277935
       ],
       "blocked_direct_routes": [
         4666220
       ],
-      "excluded_navigation_pages": [
-        528922
-      ],
       "translations_counted_as_independent_witnesses": 0,
-      "note": "לאחר חסימת AID 4666220 נבדקו באותה הפעלה 18 גופי ערכים מקוריים ומכתב יוצא מלא באנגלית; הועשרה שיחה קיימת אחת. לא הופעל crawler ולא נעשתה עקיפת גישה."
+      "note": "לאחר חסימת AID 4666220 נפתחו עשרה גופי איגרות אנגליים מלאים; AID 2277935 נבדק אך כבר קיים באצווה 056; AID 6427690 הועשר בפסקת סיום נוספת. כל התרגומים סומנו כנגזרים ולא כעדים עצמאיים."
+    },
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "translations_counted_as_independent_witnesses": 0,
+    "language_distribution": {
+      "English": 10
+    },
+    "source_type_distribution": {
+      "published_english_translated_correspondence_letter": 10
     }
   },
   "manual_web_review_history": [
@@ -2087,6 +2080,136 @@
         ],
         "translations_counted_as_independent_witnesses": 0,
         "note": "לאחר חסימת AID 4666220 נבדקו באותה הפעלה 18 גופי ערכים מקוריים ומכתב יוצא מלא באנגלית; הועשרה שיחה קיימת אחת. לא הופעל crawler ולא נעשתה עקיפת גישה."
+      }
+    },
+    {
+      "batch_id": "134",
+      "batch_file": "data/items/content-research-batch-134-2026-11-17.json",
+      "reviewed_at": "2026-11-17T05:01:42+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 13,
+      "source_bodies_inspected": 11,
+      "new_source_identities": 10,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 20,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 21,
+      "answer_eligible_source_families_added": 10,
+      "content_verified_unique_sources_added": 0,
+      "new_aids": [
+        2277932,
+        2277929,
+        2277928,
+        2277934,
+        2277937,
+        2277940,
+        2277941,
+        2277942,
+        2277921,
+        2277945
+      ],
+      "enriched_aids": [
+        6427690
+      ],
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+          "web_source_ref": "turn991684view0",
+          "status": "internal_error_not_accessible",
+          "reason": "עמוד המו״ל החזיר Internal Error ולא הציג גוף פרסום קריא.",
+          "handling": "לא בוצע crawler retry או ניסיון לעקוף בקרת גישה; באותה הפעלה נבדקו עשרה גופי איגרות אנגליים נגישים והועשרה זהות AID 6427690."
+        }
+      ],
+      "excluded_candidate_count": 1,
+      "excluded_candidates": [
+        {
+          "aid": 2277935,
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277935",
+          "status": "already_canonical_identity",
+          "existing_batch_file": "data/items/content-research-batch-056-2026-11-12.json",
+          "reason": "Letter No. 568 כבר קיימת באצווה 056; לא נוצרה זהות כפולה ולא נספר מקור חדש."
+        }
+      ],
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1365,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3567
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1375,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3588
+      },
+      "metrics_actual_after": null,
+      "deduplication_check": {
+        "new_aids_unique": true,
+        "new_source_urls_unique": true,
+        "new_evidence_families_unique": true,
+        "unique_new_aid_count": 10,
+        "unique_new_family_count": 10,
+        "same_family_duplicate_count": 0,
+        "duplicate_alias_identities": 0,
+        "translations_counted_as_independent_witnesses": 0,
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "all_target_identities_answer_eligible": null,
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "checked_against": "תור הביקורת בן 1,022 הרשומות, אצוות content-research-batch 055–133, ואינדקסי bulk-indexed/mixed-authorized. נמצא AID 2277935 באצווה 056 והוחרג כקיים; לא נמצאו התאמות נוספות בסריקה המקדימה. קבצי פריטים קנוניים נוספים ייסרקו במלואם ב-reconciliation.",
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "recent_batches_checked": [
+          "055-133"
+        ],
+        "note": "בדיקת כפילויות מקדימה בלבד. אין לטעון שאין התנגשויות קנוניות עד לסריקה המלאה של reconciliation.",
+        "new_source_identity_count": 10
+      },
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "publisher": "Chabad.org/TheRebbe.org — Sichos in English Collection",
+        "accessible_item_level_bodies": 10,
+        "existing_identity_bodies": 1,
+        "already_canonical_items": 1,
+        "body_text_inspected": true,
+        "inspected_aids": [
+          2277932,
+          2277929,
+          2277928,
+          2277934,
+          2277937,
+          2277940,
+          2277941,
+          2277942,
+          2277921,
+          2277945,
+          6427690,
+          2277935
+        ],
+        "existing_identity_aids": [
+          6427690
+        ],
+        "already_canonical_aids": [
+          2277935
+        ],
+        "blocked_direct_routes": [
+          4666220
+        ],
+        "translations_counted_as_independent_witnesses": 0,
+        "note": "לאחר חסימת AID 4666220 נפתחו עשרה גופי איגרות אנגליים מלאים; AID 2277935 נבדק אך כבר קיים באצווה 056; AID 6427690 הועשר בפסקת סיום נוספת. כל התרגומים סומנו כנגזרים ולא כעדים עצמאיים."
+      },
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "translations_counted_as_independent_witnesses": 0,
+      "language_distribution": {
+        "English": 10
+      },
+      "source_type_distribution": {
+        "published_english_translated_correspondence_letter": 10
       }
     }
   ],
