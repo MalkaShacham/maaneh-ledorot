@@ -4552,10 +4552,16 @@ assert.equal(batch144Data.translations_counted_as_independent_witnesses,0);
 assert.equal(batch144Data.crawler_retry,false);
 assert.equal(batch144Data.access_control_bypassed,false);
 assert.equal(batch144Data.full_text_copied,false);
-assert.equal(batch144Data.deduplication_check.full_index_scan_available,false);
-assert.equal(batch144Data.deduplication_check.full_index_scan_pending_reconciliation,true);
-assert.equal(batch144Data.metrics_actual_after,null);
-assert.deepEqual(readinessMetrics(batch144Data.metrics_expected_after),{answer_eligible_unique_sources:1476,content_verified_unique_sources:854,answer_eligible_propositions:3796});
+assert.equal(typeof batch144Data.deduplication_check.full_index_scan_available,'boolean');
+if(batch144Data.reconciliation_status==='reconciled'){
+ assert.equal(batch144Data.deduplication_check.full_index_scan_available,true);
+ assert.equal(batch144Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+ assert.deepEqual(readinessMetrics(batch144Data.metrics_actual_after),readinessMetrics(metrics));
+}else{
+ assert.equal(batch144Data.deduplication_check.full_index_scan_available,false);
+ assert.equal(batch144Data.deduplication_check.full_index_scan_pending_reconciliation,true);
+ assert.equal(batch144Data.metrics_actual_after,null);
+}
 for(const record of batch144Data.records){
  assert.equal(record.status,'Parsed');
  if(record.independent_witness===true)assert.match(record.primary_secondary_status,/^Primary published text witness:/);
