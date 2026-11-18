@@ -1377,12 +1377,15 @@ assert.deepEqual(batch113Data.reconciliation_variance,{
 const batch162Path='data/items/content-research-batch-162-2026-11-18.json';
 const batch163Path='data/items/content-research-batch-163-2026-11-18.json';
 const batch164Path='data/items/content-research-batch-164-2026-11-18.json';
+const batch165Path='data/items/content-research-batch-165-2026-11-18.json';
+const batch166Path='data/items/content-research-batch-166-2026-11-18.json';
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
-assert.equal(String(projectState.current_batch),'164');
-assert.equal(projectState.current_batch_file,batch164Path);
-assert.equal(String(projectState.development_recovery.current_batch),'164');
-assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'164');
-assert.equal(lastBatchSummary.batch_id,'164');
+assert.equal(String(projectState.current_batch),'166');
+assert.equal(projectState.current_batch_file,batch166Path);
+assert.equal(String(projectState.development_recovery.current_batch),'166');
+assert.equal(projectState.development_recovery.current_batch_file,batch166Path);
+assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'166');
+assert.equal(lastBatchSummary.batch_id,'166');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
 assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
 assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
@@ -1390,13 +1393,13 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  content_verified_unique_sources:metrics.content_verified_unique_sources-lastBatchSummary.metrics_actual_before.content_verified_unique_sources,
  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
 });
-assert.equal(acquisitionState.manual_web_review.batch_id,'164');
-assert.equal(acquisitionState.manual_web_review.batch_file,batch164Path);
-assert.equal(acquisitionState.previous_manual_web_review.batch_id,'163');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch163Path);
+assert.equal(acquisitionState.manual_web_review.batch_id,'166');
+assert.equal(acquisitionState.manual_web_review.batch_file,batch166Path);
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'165');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch165Path);
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
-assert.equal(acquisitionState.last_manual_web_review.batch_id,'164');assert.equal(acquisitionState.last_manual_review.batch_id,'164');
-for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158','159','160','161','162','163'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
+assert.equal(acquisitionState.last_manual_web_review.batch_id,'166');assert.equal(acquisitionState.last_manual_review.batch_id,'166');
+for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158','159','160','161','162','163','164','165','166'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
@@ -6062,5 +6065,60 @@ for(const mode of ['regular','researcher']){
   assert(m.research.evidence_families>=2);
   assert(m.research.claim_source_map.length>0&&m.research.claim_source_map.every(c=>c.source_locators.length>0));
   assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+ }else assert.equal(m.research,undefined);
+}
+
+const batch166Data=JSON.parse(await readFile(new URL(batch166Path,root)));
+const batch166Aids=batch166Data.records.map(r=>String(r.aid));
+assert.equal(batch166Data.records.length,8,'Batch166 must contain eight inspected source identities');
+assert.equal(batch166Data.source_bodies_inspected,8);
+assert.equal(batch166Data.new_source_identities,8);
+assert.equal(batch166Data.existing_identities_enriched,0);
+assert.equal(batch166Data.total_new_paraphrase_entries,8);
+assert.equal(new Set(batch166Aids).size,8);
+assert.equal(new Set(batch166Data.records.map(r=>r.evidence_family_id)).size,8);
+assert(batch166Data.records.every(r=>r.status==='Parsed'&&r.canonical_status==='Parsed'&&r.has_content_evidence===true));
+assert(batch166Data.records.every(r=>r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.provenance?.source_witness&&r.verification_scope));
+assert.equal(batch166Data.records.filter(r=>r.language==='Hebrew'&&r.original_language==='Hebrew').length,8);
+assert.equal(batch166Data.records.filter(r=>r.translation_of_evidence_family_id).length,0);
+assert.equal(batch166Data.records.filter(r=>r.pipeline_status==='Verified').length,0);
+assert.equal(batch166Data.crawler_retry,false);
+assert.equal(batch166Data.access_control_bypassed,false);
+assert.equal(batch166Data.full_text_copied,false);
+assert.equal(batch166Data.blocked_candidate_count,9);
+assert.equal(batch166Data.fallback_source_attempted,true);
+assert.deepEqual(batch166Data.metrics_delta_at_batch_boundary,{answer_eligible_unique_sources:8,content_verified_unique_sources:0,answer_eligible_propositions:8});
+assert.equal(batch166Data.metrics_delta_at_batch_boundary_is_planning_only,true);
+assert.equal(batch166Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch166Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch166Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch166Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch166Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert(['reconciled','reconciled_with_variance'].includes(batch166Data.reconciliation_status));
+assert.deepEqual(readinessMetrics(batch166Data.metrics_actual_after),readinessMetrics(metrics));
+
+const unityPeaceQuestion='מה מתועד על הקשר בין אחדות ישראל, שלום ותורה?';
+const unityPeaceAids=['2989021','5989687','5989700'];
+const unityPeaceIndex=idx.entries.filter(e=>unityPeaceAids.includes(sourceAID(e)));
+assert.equal(unityPeaceIndex.length,3,'the three distinct Hebrew Sicha Evidence Families must be present exactly once');
+assert(unityPeaceIndex.every(e=>e.answer_eligible&&e.has_content_evidence&&e.proposition_source_locator));
+assert.equal(new Set(unityPeaceIndex.map(e=>e.evidence_family_id)).size,3);
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(unityPeaceIndex,unityPeaceQuestion,{mode});
+ assert(m.answerable,mode+': three-family unity/peace synthesis should be answerable');
+ assert.equal(m.sources.length,3);
+ for(const aid of unityPeaceAids)assert(m.sources.some(e=>sourceAID(e)===aid),mode+': source '+aid+' must be retained');
+ assert.equal(m.synthesis?.topic,'unity_peace_and_collective_jewish_life');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.claims.length,3);
+ assert(m.claims.every(c=>c.source_numbers?.length===1&&c.source_locators?.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1&&c.witnesses[0].proposition_source_locator));
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert.equal(m.research.evidence_families,3);
+  assert.equal(m.research.independent_evidence_families,3);
+  assert.equal(m.research.claim_source_map.length,3);
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length===1&&c.source_locators[0].locator));
+  assert(m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert.equal(m.research.pattern_synthesis.topic,'unity_peace_and_collective_jewish_life');
  }else assert.equal(m.research,undefined);
 }
