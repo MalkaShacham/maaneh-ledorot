@@ -2267,7 +2267,7 @@ const reconciliationChain=reconciledProjectState.development_recovery.reconcilia
 const reconciliationChainIds=reconciliationChain.map(x=>String(x.batch_id));
 assert(['099','100','101','102','103','104','105','106','107','108','109','110','111','112'].every(id=>reconciliationChainIds.includes(id)));
 assert(reconciliationChainIds.includes('153'));
-assert(reconciliationChainIds.every(id=>/^\\d{3}$/.test(id)));
+assert(reconciliationChainIds.every(id=>/^\d{3}$/.test(id)));
 const batch099Audit=reconciliationChain.find(x=>String(x.batch_id)==='099');
 const batch100Audit=reconciliationChain.find(x=>String(x.batch_id)==='100');
 const batch101Audit=reconciliationChain.find(x=>String(x.batch_id)==='101');
