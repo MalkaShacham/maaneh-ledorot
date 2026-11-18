@@ -441,7 +441,7 @@
       "blocked_candidate_count": 1,
       "note": "Eight additional Hebrew body passages were inspected and appended in place to eight Batch170 identities. All remain Parsed; no Verified promotion. Exact-head reconciliation pending."
     },
-    "last_run_note": "Batch171: eight additional original-Hebrew body passages inspected and appended in place to eight Batch170 identities. AID 4666220 redirected to a summary shell with a browser gate; eight accessible Hebrew bodies were used as same-run fallback. The readiness test now accounts for historical superseded batches reprocessed by full-index reconciliation. Exact-head gate pending.",
+    "last_run_note": "Batch171 remains pending exact-head reconciliation. Run 44422763891 passed the preceding quality checks and failed at a stale Batch085 status assertion after full-index reconciliation; the test now accepts reconciled_with_variance only with a full-index audit and exact variance arithmetic.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 4666220 redirected to a rewritten Torah Texts summary shell and displayed a browser-compatibility gate; no original letter body was inspectable. It was excluded and eight accessible Hebrew item-level bodies were reviewed in the same run.",
     "next_work": [
@@ -3065,8 +3065,8 @@
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending_after_batch_171",
-    "last_failed_run_id": 44419986934,
-    "last_failure": "Exact-head run 44419986934 failed at test_content_readiness.mjs on a stale Batch084 status assertion: reconciliation reprocessed an audit-incomplete superseded batch and set reconciled_with_variance. The test now accepts a reconciled status only when the superseded_by_batch marker, full-index audit and measured snapshot are present.",
+    "last_failed_run_id": 44422763891,
+    "last_failure": "Run 44422763891 passed index generation, question retrieval, answer synthesis, citation integrity, evidence contract, write-safety and structural quality evaluation, then failed at Batch085's stale status assertion. The full-index reconciliation can legitimately mark an older batch reconciled_with_variance; the test now requires a full-index audit, actual/expected snapshots and exact variance arithmetic.",
     "note": "Batch171 adds eight in-place propositions and a three-family claim-level synthesis. Exact-head reconciliation and readiness must pass before PR #35 is merged.",
     "run_status": "pending_exact_head_batch_171",
     "workflow_run_id": null
