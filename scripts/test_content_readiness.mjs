@@ -2887,7 +2887,7 @@ assert(sameFamilyMaamar.relations.some(r=>r.type==='same_evidence_family'&&r.tar
 const batch102Enriched2989585=idx.entries.find(e=>sourceAID(e)==='2989585');
 assert(enriched2989585&&batch102Enriched2989585.canonical_file==='data/items/content-research-batch-100-2026-11-15.json');
 assert(batch102Enriched2989585.response_propositions.length>=21,'AID 2989585 retains later in-place propositions beyond the Batch102 checkpoint');
-assert.equal(batch102Enriched2989585.response_proposition_locators.length,16);
+assert(batch102Enriched2989585.response_proposition_locators.length>=21,'AID 2989585 retains later proposition locators beyond the Batch102 checkpoint');
 assert(batch102Enriched2989585.response_propositions.some(p=>p.includes('שפלות רוחנית')&&p.includes('מניעות')));
 assert.equal(batch102Enriched2989585.status,'Parsed');
 assert.equal(batch102Data.existing_identity_updates[0].aid,2989585);
