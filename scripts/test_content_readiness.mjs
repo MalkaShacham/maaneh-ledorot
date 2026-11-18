@@ -24,7 +24,7 @@ const propositionCount=[...families.values()].reduce((n,group)=>n+new Set(group.
 assert.equal(metrics.answer_eligible_propositions,propositionCount,'all distinct propositions across family members must be counted without counting aliases as independent families');
 const queue=JSON.parse(await readFile(new URL('data/content-review-queue.json',root)));
 const acquisitionState=JSON.parse(await readFile(new URL('data/acquisition/latest.json',root),'utf8'));
-const projectState=JSON.parse(await readFile(new URL('data/project-reconciledProjectState.json',root),'utf8'));
+const projectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
 const batch073Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-073-2026-11-13.json',root)));
 const batch078Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-078-2026-11-13.json',root)));
 const batch082Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-082-2026-11-14.json',root)));
@@ -2286,7 +2286,7 @@ for(const mode of ['regular','researcher']){
 }
 
 // Historical batch snapshots are intentionally not equal to the final corpus metrics; later batches are excluded by reconcile_metrics.py.
-const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-reconciledProjectState.json',root),'utf8'));
+const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
 const reconciliationChain=reconciledProjectState.development_recovery.reconciliation_chain;
 const reconciliationChainIds=reconciliationChain.map(x=>String(x.batch_id));
 assert(['099','100','101','102','103','104','105','106','107','108','109','110','111','112'].every(id=>reconciliationChainIds.includes(id)));
