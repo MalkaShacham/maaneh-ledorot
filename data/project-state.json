@@ -384,21 +384,21 @@
       "new_source_identities": 0,
       "existing_identities_enriched": 8,
       "existing_identities_rechecked": 0,
-      "source_bodies_inspected": 8,
+      "source_bodies_inspected": 9,
       "new_response_propositions": 0,
       "existing_response_propositions_added": 8,
       "total_new_paraphrase_entries": 8,
       "answer_eligible_source_families_added": 0,
       "content_verified_unique_sources_added": 0,
       "blocked_candidate_count": 1,
-      "excluded_candidate_count": 1,
+      "excluded_candidate_count": 2,
       "metrics_delta_at_batch_boundary": {
         "answer_eligible_unique_sources": 0,
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 8
       },
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 9,
+      "reviewed_item_count": 10,
       "new_aids": [],
       "enriched_aids": [
         2989556,
@@ -412,9 +412,9 @@
       ],
       "rechecked_aids": [],
       "translations_counted_as_independent_witnesses": 0,
-      "note": "Eight existing Hebrew source identities were enriched in place with eight non-verbatim paraphrases grounded in distinct additional body passages. AID 4736086's Yiddish page returned Internal Error; no bypass or crawler retry. An existing Hebrew transcript AID 2988877 was used as same-run fallback. One proposition is explicitly sourced to publisher footnote 109. All source statuses remain Parsed; zero Verified promotions."
+      "note": "Eight existing Hebrew source identities were enriched in place with eight non-verbatim paraphrases grounded in distinct additional body passages. AID 4736086's Yiddish page returned Internal Error; no bypass or crawler retry. An existing Hebrew transcript AID 2988877 was used as same-run fallback. One proposition is explicitly sourced to publisher footnote 109. All source statuses remain Parsed; zero Verified promotions. An English composite chapter AID 2317455 was inspected but excluded from canonical ingestion to avoid conflating two letters under one AID/URL."
     },
-    "last_run_note": "Batch155 content review saved; eight existing source identities enriched. Full reconciliation and readiness remain pending.",
+    "last_run_note": "Batch155 content review saved; eight existing source identities enriched. Full reconciliation and readiness remain pending. An English composite chapter AID 2317455 was inspected but excluded pending subdocument identity mapping.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 4736086 original-language Yiddish page returned Internal Error; no body inspection, crawler retry or access-control bypass. Same-run fallback AID 2988877 was opened.",
     "next_work": "Reconcile batches 099–155 using corrected original canonical_file pointers; pass test_content_readiness.mjs; then merge PR #35 and verify the main-branch metrics and Pages deployment.",
@@ -790,10 +790,10 @@
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
       "review_method": "Manual public web/open inspection of eight existing Hebrew source bodies and distinct additional passages. One original-language Yiddish page (AID 4736086) returned Internal Error and was not inspected; no crawler retry or access-control bypass was attempted. An accessible existing Hebrew transcript (AID 2988877) was opened as same-run fallback. Search-result snippets were not used as proposition evidence. One addition comes from publisher footnote 109 and is explicitly identified as editorial, not as the talk body.",
-      "records_reviewed": 9,
-      "reviewed_item_count": 9,
-      "source_bodies_inspected": 8,
-      "source_body_pages_opened": 8,
+      "records_reviewed": 10,
+      "reviewed_item_count": 10,
+      "source_bodies_inspected": 9,
+      "source_body_pages_opened": 9,
       "metadata_only_items_rechecked": 0,
       "search_extracts_inspected": 0,
       "search_extracts_used_as_content": 0,
@@ -809,13 +809,16 @@
       "content_verified_unique_sources_added": 0,
       "duplicate_alias_identities": 0,
       "source_languages": [
-        "Hebrew"
+        "Hebrew",
+        "English"
       ],
       "language_distribution": {
-        "Hebrew": 8
+        "Hebrew": 8,
+        "English": 1
       },
       "original_language_distribution": {
-        "Hebrew": 8
+        "Hebrew": 8,
+        "English": 1
       },
       "proposition_language_distribution": {
         "Hebrew": 8
@@ -845,7 +848,8 @@
         2989322,
         3008877,
         2988877,
-        4736086
+        4736086,
+        2317455
       ],
       "blocked_candidate_count": 1,
       "blocked_candidates": [
@@ -859,11 +863,15 @@
       ],
       "metadata_only_candidate_count": 0,
       "metadata_only_candidates": [],
-      "excluded_candidate_count": 1,
+      "excluded_candidate_count": 2,
       "excluded_candidates": [
         {
           "aid": 4736086,
           "reason": "The original-language Yiddish page returned Internal Error; no body proposition added. Same-run fallback used an accessible existing Hebrew transcript AID 2988877."
+        },
+        {
+          "aid": 2317455,
+          "reason": "Inspected English-language publisher chapter reproducing two separate letters under one AID/URL. No separate subdocument IDs; excluded to avoid collapsing distinct events into one Evidence Family or creating duplicate AID/URL identities."
         }
       ],
       "translations_added": 0,
@@ -895,7 +903,7 @@
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 8
       },
-      "metrics_note": "metrics_before is the uncommitted CI workspace reconciliation snapshot produced by run 44243454977 after batch154 (1519/854/3887). That run failed later on a stale current-state test pointer; the snapshot is not the public main metric. The expected after boundary 1519/854/3895 is planning only until batch155 reconciliation and readiness pass.",
+      "metrics_note": "metrics_before is the uncommitted CI workspace reconciliation snapshot produced by run 44243454977 after batch154 (1519/854/3887). That run failed later on a stale current-state test pointer; the snapshot is not the public main metric. The expected after boundary 1519/854/3895 is planning only until batch155 reconciliation and readiness pass. An English publisher chapter AID 2317455 was also opened (two distinct letters, lines 274–313) but excluded from canonical ingestion because the shared AID/URL does not provide separate subdocument identities; no English proposition or source identity was counted.",
       "deduplication_check": {
         "new_aids_unique": true,
         "new_source_urls_unique": true,
@@ -923,7 +931,7 @@
         "review_queue_matches": 0,
         "code_search_matches": 0,
         "preflight_exact_aid_search": "All eight AIDs were matched to existing canonical records by their item files and Evidence Family IDs; no new identities were claimed.",
-        "note": "The publisher-footnote proposition for AID 2988877 is part of the same source item and Evidence Family, not an independent witness."
+        "note": "The publisher-footnote proposition for AID 2988877 is part of the same source item and Evidence Family, not an independent witness. AID 2317455 was inspected as an English composite chapter but excluded because two distinct letters share one AID/URL and no separate subdocument identifiers were exposed."
       },
       "source_body_review": [
         {
@@ -952,11 +960,11 @@
         {
           "aid": 2989574,
           "source_url": "https://he.chabad.org/library/article_cdo/aid/2989574",
-          "web_source_ref": "turn634031view1",
+          "web_source_ref": "turn522878view0",
           "body_text_inspected": true,
           "body_page_opened": true,
           "title_or_metadata_only": false,
-          "source_body_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
+          "source_body_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
           "language": "Hebrew",
           "original_language": "Hebrew",
           "witness_type": "published_unedited_hebrew_sicha_transcript",
@@ -970,7 +978,8 @@
           "existing_propositions_before": 2,
           "propositions_added": 1,
           "total_propositions_after": 3,
-          "note": "הפרפרזה מוגבלת להסבר שבסעיפים ד׳–ה׳; אין להסיק ממנה כלל הלכתי על נוסח ברכות."
+          "note": "הפרפרזה מוגבלת להוראה המעשית שבסעיף ז׳; המקור מתאר את תרומת נשי ובנות ישראל לעבודת החינוך בדרך קירוב, ואינו קובע שהאחריות לחינוך מוטלת עליהן בלבד.",
+          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293."
         },
         {
           "aid": 2989023,
@@ -1123,6 +1132,26 @@
           "action": "blocked_source_no_body",
           "canonical_file": "data/items/content-research-batch-107-2026-11-16.json",
           "note": "The public reader returned Internal Error; the Yiddish body could not be inspected in this run. No retry through a crawler and no access-control bypass. An accessible Hebrew transcript, AID 2988877, was opened and inspected as an existing identity in the same run."
+        },
+        {
+          "aid": 2317455,
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/2317455/jewish/Chapter-8-Letters-from-the-Rebbe.htm",
+          "web_source_ref": "turn323934view0",
+          "body_text_inspected": true,
+          "body_page_opened": true,
+          "title_or_metadata_only": false,
+          "source_body_locator": "AID 2317455, letter 1 dated 10 Kislev 5740, lines 274–296; letter 2 dated 6 Teves 5719, lines 298–313.",
+          "language": "English",
+          "original_language": "English",
+          "witness_type": "publisher_compilation_reproducing_letters_described_as_written_in_English",
+          "evidence_family_id": null,
+          "independent_witness": false,
+          "proposition_count": 0,
+          "context_status": "partial",
+          "existing_identity": false,
+          "action": "excluded_composite_publication_pending_family_mapping",
+          "canonical_file": null,
+          "note": "The publisher states that the selected letters were written in English. The page contains two distinct letters under one AID/URL, with different recipients and dates; no separate subdocument identifiers were exposed. Creating one canonical identity would conflate distinct events, while creating two would duplicate the AID/URL. The text was inspected, but no canonical identity or proposition was added pending a defensible subdocument mapping."
         }
       ],
       "existing_identity_updates": [
@@ -1152,13 +1181,13 @@
           "existing_propositions_before": 2,
           "propositions_added": 1,
           "total_propositions_after": 3,
-          "source_body_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
+          "source_body_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
           "proposition_origin": "source_grounded_paraphrase",
           "proposition_verbatim": false,
           "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
-          "web_source_ref": "turn634031view1",
-          "note": "הפרפרזה מוגבלת להסבר שבסעיפים ד׳–ה׳; אין להסיק ממנה כלל הלכתי על נוסח ברכות."
+          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
+          "web_source_ref": "turn522878view0",
+          "note": "הפרפרזה מוגבלת להוראה המעשית שבסעיף ז׳; המקור מתאר את תרומת נשי ובנות ישראל לעבודת החינוך בדרך קירוב, ואינו קובע שהאחריות לחינוך מוטלת עליהן בלבד."
         },
         {
           "aid": 2989023,
@@ -1346,10 +1375,10 @@
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
       "review_method": "Manual public web/open inspection of eight existing Hebrew source bodies and distinct additional passages. One original-language Yiddish page (AID 4736086) returned Internal Error and was not inspected; no crawler retry or access-control bypass was attempted. An accessible existing Hebrew transcript (AID 2988877) was opened as same-run fallback. Search-result snippets were not used as proposition evidence. One addition comes from publisher footnote 109 and is explicitly identified as editorial, not as the talk body.",
-      "records_reviewed": 9,
-      "reviewed_item_count": 9,
-      "source_bodies_inspected": 8,
-      "source_body_pages_opened": 8,
+      "records_reviewed": 10,
+      "reviewed_item_count": 10,
+      "source_bodies_inspected": 9,
+      "source_body_pages_opened": 9,
       "metadata_only_items_rechecked": 0,
       "search_extracts_inspected": 0,
       "search_extracts_used_as_content": 0,
@@ -1365,13 +1394,16 @@
       "content_verified_unique_sources_added": 0,
       "duplicate_alias_identities": 0,
       "source_languages": [
-        "Hebrew"
+        "Hebrew",
+        "English"
       ],
       "language_distribution": {
-        "Hebrew": 8
+        "Hebrew": 8,
+        "English": 1
       },
       "original_language_distribution": {
-        "Hebrew": 8
+        "Hebrew": 8,
+        "English": 1
       },
       "proposition_language_distribution": {
         "Hebrew": 8
@@ -1401,7 +1433,8 @@
         2989322,
         3008877,
         2988877,
-        4736086
+        4736086,
+        2317455
       ],
       "blocked_candidate_count": 1,
       "blocked_candidates": [
@@ -1415,11 +1448,15 @@
       ],
       "metadata_only_candidate_count": 0,
       "metadata_only_candidates": [],
-      "excluded_candidate_count": 1,
+      "excluded_candidate_count": 2,
       "excluded_candidates": [
         {
           "aid": 4736086,
           "reason": "The original-language Yiddish page returned Internal Error; no body proposition added. Same-run fallback used an accessible existing Hebrew transcript AID 2988877."
+        },
+        {
+          "aid": 2317455,
+          "reason": "Inspected English-language publisher chapter reproducing two separate letters under one AID/URL. No separate subdocument IDs; excluded to avoid collapsing distinct events into one Evidence Family or creating duplicate AID/URL identities."
         }
       ],
       "translations_added": 0,
@@ -1451,7 +1488,7 @@
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 8
       },
-      "metrics_note": "metrics_before is the uncommitted CI workspace reconciliation snapshot produced by run 44243454977 after batch154 (1519/854/3887). That run failed later on a stale current-state test pointer; the snapshot is not the public main metric. The expected after boundary 1519/854/3895 is planning only until batch155 reconciliation and readiness pass.",
+      "metrics_note": "metrics_before is the uncommitted CI workspace reconciliation snapshot produced by run 44243454977 after batch154 (1519/854/3887). That run failed later on a stale current-state test pointer; the snapshot is not the public main metric. The expected after boundary 1519/854/3895 is planning only until batch155 reconciliation and readiness pass. An English publisher chapter AID 2317455 was also opened (two distinct letters, lines 274–313) but excluded from canonical ingestion because the shared AID/URL does not provide separate subdocument identities; no English proposition or source identity was counted.",
       "deduplication_check": {
         "new_aids_unique": true,
         "new_source_urls_unique": true,
@@ -1479,7 +1516,7 @@
         "review_queue_matches": 0,
         "code_search_matches": 0,
         "preflight_exact_aid_search": "All eight AIDs were matched to existing canonical records by their item files and Evidence Family IDs; no new identities were claimed.",
-        "note": "The publisher-footnote proposition for AID 2988877 is part of the same source item and Evidence Family, not an independent witness."
+        "note": "The publisher-footnote proposition for AID 2988877 is part of the same source item and Evidence Family, not an independent witness. AID 2317455 was inspected as an English composite chapter but excluded because two distinct letters share one AID/URL and no separate subdocument identifiers were exposed."
       },
       "source_body_review": [
         {
@@ -1508,11 +1545,11 @@
         {
           "aid": 2989574,
           "source_url": "https://he.chabad.org/library/article_cdo/aid/2989574",
-          "web_source_ref": "turn634031view1",
+          "web_source_ref": "turn522878view0",
           "body_text_inspected": true,
           "body_page_opened": true,
           "title_or_metadata_only": false,
-          "source_body_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
+          "source_body_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
           "language": "Hebrew",
           "original_language": "Hebrew",
           "witness_type": "published_unedited_hebrew_sicha_transcript",
@@ -1526,7 +1563,8 @@
           "existing_propositions_before": 2,
           "propositions_added": 1,
           "total_propositions_after": 3,
-          "note": "הפרפרזה מוגבלת להסבר שבסעיפים ד׳–ה׳; אין להסיק ממנה כלל הלכתי על נוסח ברכות."
+          "note": "הפרפרזה מוגבלת להוראה המעשית שבסעיף ז׳; המקור מתאר את תרומת נשי ובנות ישראל לעבודת החינוך בדרך קירוב, ואינו קובע שהאחריות לחינוך מוטלת עליהן בלבד.",
+          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293."
         },
         {
           "aid": 2989023,
@@ -1679,6 +1717,26 @@
           "action": "blocked_source_no_body",
           "canonical_file": "data/items/content-research-batch-107-2026-11-16.json",
           "note": "The public reader returned Internal Error; the Yiddish body could not be inspected in this run. No retry through a crawler and no access-control bypass. An accessible Hebrew transcript, AID 2988877, was opened and inspected as an existing identity in the same run."
+        },
+        {
+          "aid": 2317455,
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/2317455/jewish/Chapter-8-Letters-from-the-Rebbe.htm",
+          "web_source_ref": "turn323934view0",
+          "body_text_inspected": true,
+          "body_page_opened": true,
+          "title_or_metadata_only": false,
+          "source_body_locator": "AID 2317455, letter 1 dated 10 Kislev 5740, lines 274–296; letter 2 dated 6 Teves 5719, lines 298–313.",
+          "language": "English",
+          "original_language": "English",
+          "witness_type": "publisher_compilation_reproducing_letters_described_as_written_in_English",
+          "evidence_family_id": null,
+          "independent_witness": false,
+          "proposition_count": 0,
+          "context_status": "partial",
+          "existing_identity": false,
+          "action": "excluded_composite_publication_pending_family_mapping",
+          "canonical_file": null,
+          "note": "The publisher states that the selected letters were written in English. The page contains two distinct letters under one AID/URL, with different recipients and dates; no separate subdocument identifiers were exposed. Creating one canonical identity would conflate distinct events, while creating two would duplicate the AID/URL. The text was inspected, but no canonical identity or proposition was added pending a defensible subdocument mapping."
         }
       ],
       "existing_identity_updates": [
@@ -1708,13 +1766,13 @@
           "existing_propositions_before": 2,
           "propositions_added": 1,
           "total_propositions_after": 3,
-          "source_body_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
+          "source_body_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
           "proposition_origin": "source_grounded_paraphrase",
           "proposition_verbatim": false,
           "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
-          "web_source_ref": "turn634031view1",
-          "note": "הפרפרזה מוגבלת להסבר שבסעיפים ד׳–ה׳; אין להסיק ממנה כלל הלכתי על נוסח ברכות."
+          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
+          "web_source_ref": "turn522878view0",
+          "note": "הפרפרזה מוגבלת להוראה המעשית שבסעיף ז׳; המקור מתאר את תרומת נשי ובנות ישראל לעבודת החינוך בדרך קירוב, ואינו קובע שהאחריות לחינוך מוטלת עליהן בלבד."
         },
         {
           "aid": 2989023,
@@ -2388,10 +2446,10 @@
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
       "review_method": "Manual public web/open inspection of eight existing Hebrew source bodies and distinct additional passages. One original-language Yiddish page (AID 4736086) returned Internal Error and was not inspected; no crawler retry or access-control bypass was attempted. An accessible existing Hebrew transcript (AID 2988877) was opened as same-run fallback. Search-result snippets were not used as proposition evidence. One addition comes from publisher footnote 109 and is explicitly identified as editorial, not as the talk body.",
-      "records_reviewed": 9,
-      "reviewed_item_count": 9,
-      "source_bodies_inspected": 8,
-      "source_body_pages_opened": 8,
+      "records_reviewed": 10,
+      "reviewed_item_count": 10,
+      "source_bodies_inspected": 9,
+      "source_body_pages_opened": 9,
       "metadata_only_items_rechecked": 0,
       "search_extracts_inspected": 0,
       "search_extracts_used_as_content": 0,
@@ -2407,13 +2465,16 @@
       "content_verified_unique_sources_added": 0,
       "duplicate_alias_identities": 0,
       "source_languages": [
-        "Hebrew"
+        "Hebrew",
+        "English"
       ],
       "language_distribution": {
-        "Hebrew": 8
+        "Hebrew": 8,
+        "English": 1
       },
       "original_language_distribution": {
-        "Hebrew": 8
+        "Hebrew": 8,
+        "English": 1
       },
       "proposition_language_distribution": {
         "Hebrew": 8
@@ -2443,7 +2504,8 @@
         2989322,
         3008877,
         2988877,
-        4736086
+        4736086,
+        2317455
       ],
       "blocked_candidate_count": 1,
       "blocked_candidates": [
@@ -2457,11 +2519,15 @@
       ],
       "metadata_only_candidate_count": 0,
       "metadata_only_candidates": [],
-      "excluded_candidate_count": 1,
+      "excluded_candidate_count": 2,
       "excluded_candidates": [
         {
           "aid": 4736086,
           "reason": "The original-language Yiddish page returned Internal Error; no body proposition added. Same-run fallback used an accessible existing Hebrew transcript AID 2988877."
+        },
+        {
+          "aid": 2317455,
+          "reason": "Inspected English-language publisher chapter reproducing two separate letters under one AID/URL. No separate subdocument IDs; excluded to avoid collapsing distinct events into one Evidence Family or creating duplicate AID/URL identities."
         }
       ],
       "translations_added": 0,
@@ -2493,7 +2559,7 @@
         "content_verified_unique_sources": 0,
         "answer_eligible_propositions": 8
       },
-      "metrics_note": "metrics_before is the uncommitted CI workspace reconciliation snapshot produced by run 44243454977 after batch154 (1519/854/3887). That run failed later on a stale current-state test pointer; the snapshot is not the public main metric. The expected after boundary 1519/854/3895 is planning only until batch155 reconciliation and readiness pass.",
+      "metrics_note": "metrics_before is the uncommitted CI workspace reconciliation snapshot produced by run 44243454977 after batch154 (1519/854/3887). That run failed later on a stale current-state test pointer; the snapshot is not the public main metric. The expected after boundary 1519/854/3895 is planning only until batch155 reconciliation and readiness pass. An English publisher chapter AID 2317455 was also opened (two distinct letters, lines 274–313) but excluded from canonical ingestion because the shared AID/URL does not provide separate subdocument identities; no English proposition or source identity was counted.",
       "deduplication_check": {
         "new_aids_unique": true,
         "new_source_urls_unique": true,
@@ -2521,7 +2587,7 @@
         "review_queue_matches": 0,
         "code_search_matches": 0,
         "preflight_exact_aid_search": "All eight AIDs were matched to existing canonical records by their item files and Evidence Family IDs; no new identities were claimed.",
-        "note": "The publisher-footnote proposition for AID 2988877 is part of the same source item and Evidence Family, not an independent witness."
+        "note": "The publisher-footnote proposition for AID 2988877 is part of the same source item and Evidence Family, not an independent witness. AID 2317455 was inspected as an English composite chapter but excluded because two distinct letters share one AID/URL and no separate subdocument identifiers were exposed."
       },
       "source_body_review": [
         {
@@ -2550,11 +2616,11 @@
         {
           "aid": 2989574,
           "source_url": "https://he.chabad.org/library/article_cdo/aid/2989574",
-          "web_source_ref": "turn634031view1",
+          "web_source_ref": "turn522878view0",
           "body_text_inspected": true,
           "body_page_opened": true,
           "title_or_metadata_only": false,
-          "source_body_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
+          "source_body_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
           "language": "Hebrew",
           "original_language": "Hebrew",
           "witness_type": "published_unedited_hebrew_sicha_transcript",
@@ -2568,7 +2634,8 @@
           "existing_propositions_before": 2,
           "propositions_added": 1,
           "total_propositions_after": 3,
-          "note": "הפרפרזה מוגבלת להסבר שבסעיפים ד׳–ה׳; אין להסיק ממנה כלל הלכתי על נוסח ברכות."
+          "note": "הפרפרזה מוגבלת להוראה המעשית שבסעיף ז׳; המקור מתאר את תרומת נשי ובנות ישראל לעבודת החינוך בדרך קירוב, ואינו קובע שהאחריות לחינוך מוטלת עליהן בלבד.",
+          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293."
         },
         {
           "aid": 2989023,
@@ -2721,6 +2788,26 @@
           "action": "blocked_source_no_body",
           "canonical_file": "data/items/content-research-batch-107-2026-11-16.json",
           "note": "The public reader returned Internal Error; the Yiddish body could not be inspected in this run. No retry through a crawler and no access-control bypass. An accessible Hebrew transcript, AID 2988877, was opened and inspected as an existing identity in the same run."
+        },
+        {
+          "aid": 2317455,
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/2317455/jewish/Chapter-8-Letters-from-the-Rebbe.htm",
+          "web_source_ref": "turn323934view0",
+          "body_text_inspected": true,
+          "body_page_opened": true,
+          "title_or_metadata_only": false,
+          "source_body_locator": "AID 2317455, letter 1 dated 10 Kislev 5740, lines 274–296; letter 2 dated 6 Teves 5719, lines 298–313.",
+          "language": "English",
+          "original_language": "English",
+          "witness_type": "publisher_compilation_reproducing_letters_described_as_written_in_English",
+          "evidence_family_id": null,
+          "independent_witness": false,
+          "proposition_count": 0,
+          "context_status": "partial",
+          "existing_identity": false,
+          "action": "excluded_composite_publication_pending_family_mapping",
+          "canonical_file": null,
+          "note": "The publisher states that the selected letters were written in English. The page contains two distinct letters under one AID/URL, with different recipients and dates; no separate subdocument identifiers were exposed. Creating one canonical identity would conflate distinct events, while creating two would duplicate the AID/URL. The text was inspected, but no canonical identity or proposition was added pending a defensible subdocument mapping."
         }
       ],
       "existing_identity_updates": [
@@ -2750,13 +2837,13 @@
           "existing_propositions_before": 2,
           "propositions_added": 1,
           "total_propositions_after": 3,
-          "source_body_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
+          "source_body_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
           "proposition_origin": "source_grounded_paraphrase",
           "proposition_verbatim": false,
           "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיפים ד׳–ה׳, שורות 269–276.",
-          "web_source_ref": "turn634031view1",
-          "note": "הפרפרזה מוגבלת להסבר שבסעיפים ד׳–ה׳; אין להסיק ממנה כלל הלכתי על נוסח ברכות."
+          "proposition_source_locator": "AID 2989574, גוף השיחה, סעיף ז׳, שורות 285–293.",
+          "web_source_ref": "turn522878view0",
+          "note": "הפרפרזה מוגבלת להוראה המעשית שבסעיף ז׳; המקור מתאר את תרומת נשי ובנות ישראל לעבודת החינוך בדרך קירוב, ואינו קובע שהאחריות לחינוך מוטלת עליהן בלבד."
         },
         {
           "aid": 2989023,
