@@ -1375,6 +1375,10 @@ assert.deepEqual(batch113Data.reconciliation_variance,{
  answer_eligible_propositions:batch113Actual.answer_eligible_propositions-batch113Data.metrics_expected_after.answer_eligible_propositions
 });
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
+assert.equal(String(projectState.current_batch),'162');
+assert.equal(projectState.current_batch_file,batch162Path);
+assert.equal(String(projectState.development_recovery.current_batch),'162');
+assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'162');
 assert.equal(lastBatchSummary.batch_id,'162');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
 assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
