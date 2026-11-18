@@ -1,4 +1,8 @@
 # מענה לדורות — המשך פיתוח לאחר אבחון התקיעות
+- Full-index duplicate reconciliation also exposed several same-AID presentations. Same-AID/same-Evidence-Family records are now classified as duplicate presentations, not separate independent witnesses. The English/SIE presentations for AIDs 3906812, 2514160, 2465321 and 2487556, and the repeated Hebrew letter AID 2989328, were linked to their canonical Evidence Families and marked non-independent.
+- AID 259799 is a multi-document page, not one source item: direct inspection of the public Chabad.org body shows an earlier Yiddish letter in Shevat 5713 (lines 272–276) and a separate later English letter in Iyar 20, 5713 (lines 284–290). The earlier and later letters now have distinct `source_unit_key` values and Evidence Families. The later letter's locator was corrected from 274–279 to 284–290. This prevents the page-level AID from collapsing two distinct letters while still treating the recipient's translation of the Yiddish letter as non-independent.
+- `PROJECT_CANON.md` now defines `source_unit_key`, `source_unit_locator` and `document_unit_label` for pages containing multiple primary documents; `reconcile_metrics.py` uses the unit key as the primary identity boundary when present.
+
 
 אובחן ותוקן ב־13.10.2026. PROJECT_CANON.md ממשיך להיות מקור האמת.
 
