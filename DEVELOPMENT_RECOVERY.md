@@ -1446,3 +1446,8 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - Batch171 planning boundary: 1548 answer-eligible unique sources / 854 content-verified unique sources / 4030 answer-eligible propositions. This is a planned boundary, not a measured result; exact-head reconciliation is pending. Public main metrics remain 977 / 878 / 2950 until a successful merge and post-merge reconciliation.
 - Exact-head run 44419986934 failed at the historical Batch084 status assertion after the reconciler correctly reprocessed an audit-incomplete superseded batch. The readiness test now accepts a reprocessed `reconciled` or `reconciled_with_variance` status only when `superseded_by_batch`, a full-index audit and a measured snapshot are present. Batch170 historical assertions now compare against the Batch171 boundary rather than the current corpus total.
 - PR #35 remains unmerged pending a fresh exact-head Answer Quality Gate. The hourly workflow, audience, repository permissions and access settings are unchanged.
+
+
+### 2026-11-19 — follow-up readiness assertion repair
+
+The first Batch171 exact-head run (44422763891) passed index generation, question-specific retrieval, synthesis, citation integrity, evidence-contract and write-safety checks. It then exposed a second historical assertion: Batch085 may be reprocessed as `reconciled_with_variance` by the full-index reconciler. The readiness test now accepts that state only when a full-index audit and actual/expected snapshots exist and the stored variance equals the arithmetic difference. No corpus status is manually overwritten.
