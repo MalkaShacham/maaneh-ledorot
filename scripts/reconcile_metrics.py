@@ -502,3 +502,6 @@ print("batch_reconciliation_audit",json.dumps({
               "selected_index_entry":{k:x.get("selected_index_entry",{}).get(k) for k in ("present","answer_eligible","evidence_family_id","canonical_file","canonical_status")}}
              for x in audit_state.get("items",[])]
 },ensure_ascii=False))
+
+collision_details=[{"batch_id":x.get("batch_id"),"batch_file":x.get("batch_file"),"identity_key":i.get("identity_key"),"aid":i.get("aid"),"records":i.get("records",[])} for x in reconciliation_audit_history for i in x.get("items",[]) if i.get("canonical_identity_collision")]
+print("canonical_identity_collision_details",json.dumps(collision_details,ensure_ascii=False))
