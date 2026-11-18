@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-19",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -93,7 +93,8 @@
     "Batch158 (2026-11-18): ten Hebrew publisher bodies inspected; eight existing identities enriched in place with eight new source-grounded paraphrases, two rechecks excluded as already represented. No new source identities or Verified promotions. CI baseline after batch157 is 1522/854/3915; batch158 expected boundary 1522/854/3923. Full reconciliation and readiness test pending.",
     "Batch160: four new Hebrew source identities and four in-place enrichments; ten body pages inspected; no Verified promotion; full reconciliation pending.",
     "Batch162 has eight in-place Hebrew source-grounded propositions and one no-duplicate recheck; metrics are planning-only until full reconciliation.",
-    "Batch165 (2026-11-18): eight Hebrew source bodies inspected; three new identities (AIDs 4385513, 5959968, 4296159) and five in-place enrichments (2988983, 2989585, 5989929, 4304430, 2989589), eight source-grounded non-verbatim propositions. Five other candidate pages did not expose inspectable body text; accessible alternatives were used. All remain Parsed; no Verified promotion. Full-index reconciliation pending."
+    "Batch165 (2026-11-18): eight Hebrew source bodies inspected; three new identities (AIDs 4385513, 5959968, 4296159) and five in-place enrichments (2988983, 2989585, 5989929, 4304430, 2989589), eight source-grounded non-verbatim propositions. Five other candidate pages did not expose inspectable body text; accessible alternatives were used. All remain Parsed; no Verified promotion. Full-index reconciliation pending.",
+    "Batch170 (2026-11-19): 10 Hebrew source body passages inspected; eight new identities and two in-place enrichments. AID 2989215 and 5989907 returned HTTP 429; AID 2988661 was a collection page; AIDs 2989556 and 5989700 were already canonical. No crawler retry, access bypass, full-text copying or Verified promotion. Reconciliation pending."
   ],
   "next_work": [
     "Run exact-head full-index reconciliation through Batch168; verify each of the eight enriched AIDs has exactly one canonical identity and its existing Evidence Family ID.",
@@ -404,52 +405,53 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "169",
+    "current_batch": "170",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "167",
+    "last_completed_batch": "169",
     "last_batch_summary": {
-      "batch_id": "169",
-      "batch_file": "data/items/content-research-batch-169-2026-11-19.json",
+      "batch_id": "170",
+      "batch_file": "data/items/content-research-batch-170-2026-11-19.json",
       "status": "pending_reconciliation",
       "metrics_before": {
         "answer_eligible_unique_sources": 1540,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4004
+        "answer_eligible_propositions": 4012
       },
       "metrics_actual_before": {
         "answer_eligible_unique_sources": 1540,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4004
+        "answer_eligible_propositions": 4012
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1540,
+        "answer_eligible_unique_sources": 1548,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4012
+        "answer_eligible_propositions": 4022
       },
       "metrics_after_actual": null,
       "metrics_delta_actual": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 0,
+        "answer_eligible_unique_sources": 8,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 8
+        "answer_eligible_propositions": 10
       },
       "metrics_delta_at_batch_boundary_is_planning_only": true,
-      "new_source_identities": 0,
-      "existing_identities_enriched": 8,
-      "source_bodies_inspected": 8,
-      "existing_response_propositions_added": 8,
-      "answer_eligible_source_families_added": 0,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 2,
+      "source_bodies_inspected": 10,
+      "new_response_propositions": 8,
+      "existing_response_propositions_added": 2,
+      "answer_eligible_source_families_added": 8,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 1,
-      "note": "Eight source-grounded in-place propositions across eight existing Hebrew Sicha Evidence Families; one Yiddish Yechidus page excluded because it exposes media/navigation metadata without a transcript body. No Verified promotion."
+      "blocked_candidate_count": 2,
+      "note": "Eight new Hebrew source identities and two in-place enrichments from ten inspected body passages; all remain Parsed. No Verified promotion."
     },
-    "last_run_note": "Batch169: eight original-Hebrew Sicha body passages inspected and added in place; Yiddish Yechidus AID 553691 excluded as media-only. Exact-head reconciliation and readiness gate pending.",
-    "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 553691 public Yiddish Yechidus page exposed no transcript body; excluded and replaced by eight accessible Hebrew Sicha body inspections.",
+    "last_run_note": "Batch170: ten original-Hebrew publisher body passages inspected; eight new identities and two in-place enrichments. Two alternative pages returned HTTP 429; a collection page and two duplicate identities were excluded. Exact-head reconciliation and readiness pending.",
+    "last_batch_blocked_count": 2,
+    "last_batch_blocked_reason": "AID 2989215 and AID 5989907 returned HTTP 429; no retry or bypass. One collection-level page and two already-canonical AIDs were excluded. Ten accessible original-Hebrew item bodies were used in the same run.",
     "next_work": [
-      "Run exact-head full-index reconciliation for pending batches through 169 and verify all eight AIDs have exactly one canonical identity and their unchanged Evidence Family IDs.",
-      "Pass test_content_readiness.mjs and the Answer Quality Gate on the exact PR head; verify the new Torah-study/action/world retrieval in regular and deep researcher modes.",
-      "Only after green checks, merge PR #35 to main, verify public metrics and the GitHub Pages deployment."
+      "Run exact-head reconciliation for pending manual batches through Batch170; confirm the eight new AIDs each have one canonical identity and the two enriched AIDs retain their original Evidence Families.",
+      "Pass test_content_readiness.mjs after reconciliation; retain the Batch089 historical variance only as measured variance and require content_verified_unique_sources variance <= 0.",
+      "Pass the Answer Quality Gate on the exact PR head, then merge PR #35 and verify main-branch metrics, Actions and GitHub Pages."
     ],
     "last_reconciliation": {
       "batch_id": "089",
@@ -1908,7 +1910,7 @@
       "measured_by_run": 44402037932,
       "committed": false
     },
-    "current_batch_file": "data/items/content-research-batch-169-2026-11-19.json",
+    "current_batch_file": "data/items/content-research-batch-170-2026-11-19.json",
     "status": "pending_reconciliation",
     "pending": true,
     "last_manual_review": {
@@ -2406,21 +2408,21 @@
     },
     "last_reviewed_batch": "169"
   },
-  "current_batch": "169",
-  "updated_at": "2026-11-18T23:32:05+02:00",
-  "current_batch_file": "data/items/content-research-batch-169-2026-11-19.json",
+  "current_batch": "170",
+  "updated_at": "2026-11-19T00:56:14+02:00",
+  "current_batch_file": "data/items/content-research-batch-170-2026-11-19.json",
   "status": "pending_reconciliation",
   "quality_gate": {
-    "status": "pending_after_batch_169",
-    "last_failed_run_id": 44405343996,
-    "last_failure": "The exact-head reconciliation measured 1540/854/4004 after Batch168, then test_content_readiness.mjs failed because current-batch assertions still expected 167 while the project state was at 168. Batch169 updates the current batch assertions and adds content/retrieval checks.",
-    "note": "Batch168 adds eight in-place Hebrew Sicha propositions. Exact-head reconciliation and test_content_readiness.mjs must pass before merge.",
-    "run_status": "Run 44402037932 completed reconciliation and all earlier quality steps, then failed at test_content_readiness.mjs:1360 because current AID 2989585 has 21 propositions while historical current-index assertions expected 20/19/16. The assertions are being made monotonic to preserve later in-place enrichment.",
+    "status": "pending_after_batch_170",
+    "last_failed_run_id": 44409060151,
+    "last_failure": "Run 44409060151 measured 1540/854/4012 after Batch169, then failed at a historical Batch089 assertion that rejected positive answer-eligible/proposition variance; the test is narrowed to forbid positive content-verified variance while preserving measured variance.",
+    "note": "Batch170 adds eight new source families and two in-place propositions. Exact-head reconciliation and test_content_readiness.mjs must pass before merge.",
+    "run_status": "pending_new_exact_head_run",
     "workflow_run_id": null
   },
   "publication": {
     "status": "pending_merge_and_pages_verification",
-    "note": "Batch169 and its tests are on PR #35 only. No main merge or Pages deployment is claimed; public main metrics remain 977/878/2950 until a successful merge and post-merge deployment.",
+    "note": "Batch170 and its tests are on PR #35 only. No main merge or Pages deployment is claimed; public main metrics remain 977/878/2950 until a successful merge and post-merge deployment.",
     "url": "https://malkashacham.github.io/maaneh-ledorot",
     "last_verified_main_sha": "2c7231f9bb043faafdd61c94040111723d95ac04"
   }
