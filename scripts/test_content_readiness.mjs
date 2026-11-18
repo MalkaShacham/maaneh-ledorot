@@ -2300,7 +2300,7 @@ assert.equal(batch100Audit.answer_eligible_selected_count,10);
 assert.equal(batch100Audit.selected_unique_evidence_families,10);
 assert.equal(batch101Audit.answer_eligible_selected_count,15);
 assert.equal(batch101Audit.selected_unique_evidence_families,15);
-assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'157');
+assert.equal(reconciledProjectState.development_recovery.last_reconciliation.batch_id,'159');
 assert(batch105Audit&&batch106ChainAudit);
 assert.equal(batch105Audit.reconciliation_status,'reconciled');
 console.log('BATCH106_CHAIN_AUDIT',JSON.stringify(batch106ChainAudit));
