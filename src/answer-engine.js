@@ -1890,6 +1890,30 @@ function buildPurimEducationInitiativeSynthesis(index){
  return{sources,claims,synthesis};
 }
 
+
+function isTorahDailyLifeAcceptanceQuestion(q){const t=norm(q);return t.includes('בכל דרכיך')&&t.includes('קבלת התורה')&&(t.includes('הבנה מלאה')||t.includes('למיגרס')||t.includes('לעיונא'));}
+function buildTorahDailyLifeAcceptanceSynthesis(index){
+ const specs=[
+  {aid:'2989147',topic:'ordinary_actions_as_service',predicate:p=>{const t=norm(p);return t.includes('בכל דרכיך דעהו')&&t.includes('דבר הרשות')&&t.includes('עבודת הבורא');}},
+  {aid:'2989220',topic:'acceptance_before_full_understanding',predicate:p=>{const t=norm(p);return t.includes('הקדמת נעשה לנשמע')&&t.includes('הבנה')&&t.includes('הרגל');}},
+  {aid:'2989059',topic:'deepening_from_recitation_to_analysis',predicate:p=>{const t=norm(p);return t.includes('למיגרס')&&t.includes('לעיונא')&&t.includes('תורתו');}}
+ ];
+ const sources=[],basis=[],claims=[];
+ for(const spec of specs){
+  const original=index.find(e=>sourceAIDValue(e)===spec.aid);
+  if(!original||original.has_content_evidence!==true||original.proposition_origin!=='source_grounded_paraphrase'||original.proposition_verbatim!==false||original.proposition_verification!=='source_text_inspected'||original.independent_witness===false||original.translation_of_evidence_family_id||original.context_status!=='partial')return null;
+  const proposition=arr(original.response_propositions).find(spec.predicate);if(!proposition)return null;
+  const pi=arr(original.response_propositions).findIndex(p=>String(p).trim()===String(proposition).trim()),locator=arr(original.response_proposition_locators)[pi]||null;if(!locator)return null;
+  const sourceNumber=sources.length+1,e={...original,_supporting_propositions:[String(proposition)],_independent_witness:true};sources.push(e);const family=familyKey(e);
+  basis.push({source_number:sourceNumber,aid:spec.aid,id:e.id||null,evidence_family_id:family,language:e.language||null,context_status:e.context_status||'unknown',independent_witness:true,witness_type:e.witness_type||null,provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,propositions:[{text:String(proposition),source_locator:locator}]});
+  const witness={source_number:sourceNumber,source_id:e.id||e.aid||null,source_title:e.title||null,evidence_family_id:family,source_locator:locator,proposition_source_locator:locator,proposition:String(proposition),independent_witness:true,provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null};
+  claims.push({topic:spec.topic,text:String(proposition),source_numbers:[sourceNumber],evidence_family_ids:[family],source_locators:[{source_number:sourceNumber,locator,proposition_text:String(proposition)}],witnesses:[witness],documented_circumstances:arr(e.documented_circumstances),conditions_or_qualifications:arr(e.conditions_or_qualifications),audiences:arr(e.audience)});
+ }
+ const families=[...new Set(basis.map(b=>b.evidence_family_id).filter(Boolean))];if(sources.length!==3||families.length!==3||claims.length!==3||claims.some(c=>!c.source_locators.length))return null;
+ const synthesis={kind:'cross_family_research_synthesis',topic:'torah_acceptance_daily_life_and_study',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי',text:'שלוש שיחות עבריות נפרדות מציגות היבטים שונים שאפשר להשוות אך לא למזג: שיחה אחת מרחיבה את עבודת ה׳ גם לענייני רשות; שיחה שנייה מתארת קבלה מלאה של התורה גם לפני שההבנה הושלמה; ושיחה שלישית מבחינה בין לימוד למיגרס לבין לימוד לעיונא, שבו התורה נעשית ״תורתו״ של הלומד. זו סינתזה מחקרית של המערכת, לא ציטוט ולא הוראה אחת שנאמרה באותו מעמד.',source_numbers:[1,2,3],evidence_family_ids:families,independent_evidence_family_ids:families,basis,claims,evidence_quality:'three_distinct_original_hebrew_unedited_sicha_event_families',method:'Claim-level comparison across three distinct Hebrew Sicha Evidence Families. Each claim is selected from a separately inspected original-language body passage and carries its own locator, provenance and limitations; the contexts are not merged.',limits:['הניסוח הוא סינתזה מחקרית של המערכת בלבד, לא ציטוט ולא ייחוס מילולי לרבי.','שלוש השיחות עוסקות בהקשרים שונים; אין למזג אותן להוראה אחת או לסדר עבודה אחיד.','כל התמלילים מסומנים בלתי מוגה; נבדקו רק המקטעים והמיקומים המפורטים, ולא הושוו להקלטה, כתב יד או מהדורה מוגהת.','הקטע על ״בכל דרכיך דעהו״ הוא פירוש תיאולוגי ואינו פסיקה פרטנית לכל פעולה; הדיון ב״נעשה ונשמע״ אינו שולל את חשיבות ההבנה; ההבחנה בין למיגרס לעיונא היא עיון בלימוד תורה ולא דירוג גורף של לומדים.']};
+ return{sources,claims,synthesis};
+}
+
 export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
  const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1,limit:36});
@@ -1920,10 +1944,11 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const wellspringsDisseminationQuestion=understanding.query.includes('הפצת המעיינות')&&understanding.query.includes('פנימיות התורה');
  const chassidicPracticeQuestion=isChassidicPracticeQuestion(understanding.query);
  const purimEducationInitiativeQuestion=isPurimEducationInitiativeQuestion(understanding.query);
- if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusPeaceMissionQuestion||yechidusUnityMissionQuestion||yudTesKislevLettersQuestion||chassidicPracticeQuestion||purimEducationInitiativeQuestion)understanding.intent='guidance';
+ const torahDailyLifeAcceptanceQuestion=isTorahDailyLifeAcceptanceQuestion(understanding.query);
+ if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusPeaceMissionQuestion||yechidusUnityMissionQuestion||yudTesKislevLettersQuestion||chassidicPracticeQuestion||purimEducationInitiativeQuestion||torahDailyLifeAcceptanceQuestion)understanding.intent='guidance';
  if(unityPeaceSynthesisQuestion)understanding.intent='guidance';
  else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||northAfricaEducationQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
- if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!youthEducationStudyQuestion&&!purimEducationInitiativeQuestion&&!unityPeaceSynthesisQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
+ if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!youthEducationStudyQuestion&&!purimEducationInitiativeQuestion&&!unityPeaceSynthesisQuestion&&!torahDailyLifeAcceptanceQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&(educationGovernanceQuestion?educationGovernanceFamilies.size:families.size)<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const shmittaFruitReferralQuestion=understanding.query.includes('פירות שביעית')&&understanding.query.includes('נכרים')&&understanding.query.includes('גדולי ההוראה');
@@ -2172,6 +2197,7 @@ else if(educationGovernanceQuestion){
  const retained=retainCitedSources(candidates,synthesized);
  let selected=retained.sources.slice(),claims=retained.claims.slice();
  let forcedSynthesis=null;
+ if(torahDailyLifeAcceptanceQuestion){const daily=buildTorahDailyLifeAcceptanceSynthesis(index);if(!daily)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_torah_daily_life_acceptance_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות שיחות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על עבודת ה׳ בענייני רשות, קבלה לפני הבנה ולימוד לעיונא.']};selected=daily.sources;claims=daily.claims;forcedSynthesis=daily.synthesis;}
  if(purimEducationInitiativeQuestion){const purim=buildPurimEducationInitiativeSynthesis(index);if(!purim)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_purim_education_initiative_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו שתי משפחות ראיות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על פורים תשי״א.']};selected=purim.sources;claims=purim.claims;forcedSynthesis=purim.synthesis;}
  if(chassidicPracticeQuestion){const practice=buildChassidicPracticeSynthesis(index);if(!practice)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_chassidic_practice_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו ארבעה מקורות עבריים נפרדים עם פרופוזיציות ומיקומי גוף התומכים בהשוואה.']};selected=practice.sources;claims=practice.claims;forcedSynthesis=practice.synthesis;}
  if(unityPeaceSynthesisQuestion){const unity=buildUnityPeaceSynthesis(index);if(!unity)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_unity_peace_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על אחדות, שלום ותורה.']};selected=unity.sources;claims=unity.claims;forcedSynthesis=unity.synthesis;}
