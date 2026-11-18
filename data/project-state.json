@@ -83,19 +83,22 @@
       "batch_file": "data/items/content-research-batch-151-2026-11-18.json",
       "status": "pending_reconciliation",
       "source_bodies_inspected": 13,
-      "new_source_identities": 11,
-      "new_response_propositions": 11,
-      "existing_identities_enriched": 1,
-      "existing_response_propositions_added": 1
+      "new_source_identities": 5,
+      "new_response_propositions": 5,
+      "existing_identities_enriched": 4,
+      "existing_response_propositions_added": 4,
+      "existing_identities_rechecked": 4,
+      "total_new_paraphrase_entries": 9
     },
     "Batch158 (2026-11-18): ten Hebrew publisher bodies inspected; eight existing identities enriched in place with eight new source-grounded paraphrases, two rechecks excluded as already represented. No new source identities or Verified promotions. CI baseline after batch157 is 1522/854/3915; batch158 expected boundary 1522/854/3923. Full reconciliation and readiness test pending.",
     "Batch160: four new Hebrew source identities and four in-place enrichments; ten body pages inspected; no Verified promotion; full reconciliation pending.",
-    "Batch162 has eight in-place Hebrew source-grounded propositions and one no-duplicate recheck; metrics are planning-only until full reconciliation."
+    "Batch162 has eight in-place Hebrew source-grounded propositions and one no-duplicate recheck; metrics are planning-only until full reconciliation.",
+    "Batch165 (2026-11-18): eight Hebrew source bodies inspected; three new identities (AIDs 4385513, 5959968, 4296159) and five in-place enrichments (2988983, 2989585, 5989929, 4304430, 2989589), eight source-grounded non-verbatim propositions. Five other candidate pages did not expose inspectable body text; accessible alternatives were used. All remain Parsed; no Verified promotion. Full-index reconciliation pending."
   ],
   "next_work": [
-    "Run deterministic full canonical reconciliation through batch156; verify all eight in-place identities remain unique and their Evidence Family IDs are unchanged.",
-    "Pass scripts/test_content_readiness.mjs, Answer Quality Gate and regular/deep researcher claim-locator assertions on the exact PR head.",
-    "Only after a clean run, merge PR #35, verify public metrics, Actions and GitHub Pages; preserve the existing hourly workflow."
+    "Run deterministic full canonical reconciliation through batch165; confirm AIDs 4385513, 5959968 and 4296159 are unique and the five existing AIDs retain their canonical Evidence Families.",
+    "Pass scripts/test_content_readiness.mjs and the exact-head Answer Quality Gate, including regular/deep researcher claim-locator assertions.",
+    "Only after a clean run, merge PR #35, verify committed public metrics, main Actions and GitHub Pages; preserve the existing hourly workflow."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
@@ -238,7 +241,7 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "Prior run passed status normalization, index generation, question-specific retrieval, synthesis, citation integrity, Evidence Contract and write-safety; test_content_readiness failed at the Batch 088 secretary-letter question. Batch164 includes a targeted topic-scope correction and new source-body enrichments.",
+      "run_status": "Awaiting fresh exact-head Answer Quality Gate after Batch165 and numeric-metric projection fix.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
@@ -248,16 +251,16 @@
       "note": "Batch152 adds two source identities and four in-place enrichments; full reconciliation and test_content_readiness.mjs must pass before metrics are reported.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
-      "status": "pending_after_batch_164",
-      "last_failed_run_id": 44344770265,
-      "last_failure": "Run 44344770265 failed the Batch 088 secretary-letter retrieval assertion because the generic phrase כיסוי הראש activated the specialized indirect-influence topic. The topic scope was narrowed and regression assertions were added; an exact-head rerun is required."
+      "status": "pending_after_batch_165",
+      "last_failed_run_id": 44379054834,
+      "last_failure": "Run 44379054834 failed only at test_content_readiness.mjs:2232 because batch089Data.metrics_actual_after gained an additive content_readiness_note property. The assertion now compares readinessMetrics(...) so all three numeric fields remain exact while descriptive metadata is allowed."
     },
     "publication": {
-      "status": "pending_deploy_after_batch_164",
+      "status": "pending_deploy_after_batch_165",
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
       "last_deployed_commit": "312745ef33bfc3cc453b8b03238cd8d3e8aa9a3b",
-      "note": "No new deployment is claimed until batch164 reconciliation and exact-head readiness pass."
+      "note": "Batch165 and readiness-test compatibility fix are on PR #35. No new Pages deployment is claimed before merge and a successful post-merge deploy."
     },
     "last_reconciled_at": "2026-11-15",
     "last_generated_index_snapshot": {
@@ -283,43 +286,53 @@
       "156",
       "157",
       "160",
-      "161"
+      "161",
+      "162",
+      "163",
+      "164",
+      "165"
     ],
     "summary": {
-      "batch_id": "163",
-      "batch_file": "data/items/content-research-batch-163-2026-11-18.json",
+      "batch_id": "165",
+      "batch_file": "data/items/content-research-batch-165-2026-11-18.json",
       "status": "pending_reconciliation",
       "metrics_before": {
         "answer_eligible_unique_sources": 1530,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3959
+        "answer_eligible_propositions": 3973
       },
       "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1533,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3981
+      },
+      "metrics_actual_before": {
         "answer_eligible_unique_sources": 1530,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3967
+        "answer_eligible_propositions": 3973
       },
       "metrics_actual_after": null,
-      "new_source_identities": 0,
-      "existing_identities_enriched": 8,
+      "metrics_delta_actual": null,
+      "new_source_identities": 3,
+      "existing_identities_enriched": 5,
       "source_bodies_inspected": 8,
-      "new_response_propositions": 0,
-      "existing_response_propositions_added": 8,
+      "new_response_propositions": 3,
+      "existing_response_propositions_added": 5,
       "content_verified_unique_sources_added": 0
     },
     "before": {
-      "answer_eligible_unique_sources": 1519,
+      "answer_eligible_unique_sources": 1530,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3903
+      "answer_eligible_propositions": 3973
     },
     "expected_after": {
-      "answer_eligible_unique_sources": 1522,
+      "answer_eligible_unique_sources": 1533,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3915
+      "answer_eligible_propositions": 3981
     },
     "actual_after": null,
     "reconciliation_status": "pending_reconciliation",
-    "baseline_correction": " Batch148 correction: CI run 44167373651 measured 1496/854/3815 before duplicate repair. AID 2989555 was present in both batch101 and batch141 under different Evidence Families; the duplicate was merged into the batch101 family. Corrected expected boundary after eight in-place propositions is 1495/854/3823; not yet measured or committed."
+    "baseline_correction": " Batch148 correction: CI run 44167373651 measured 1496/854/3815 before duplicate repair. AID 2989555 was present in both batch101 and batch141 under different Evidence Families; the duplicate was merged into the batch101 family. Corrected expected boundary after eight in-place propositions is 1495/854/3823; not yet measured or committed. Batch165 baseline: PR-workspace run 44379054834 measured 1530/854/3973 after Batch164 and before Batch165; this is not public main. Planning boundary after Batch165 is 1533/854/3981, not a measured result."
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -1275,21 +1288,21 @@
     },
     "last_reviewed_batch": "163"
   },
-  "current_batch": "164",
+  "current_batch": "165",
   "updated_at": "2026-11-18",
-  "current_batch_file": "data/items/content-research-batch-164-2026-11-18.json",
+  "current_batch_file": "data/items/content-research-batch-165-2026-11-18.json",
   "status": "pending_reconciliation",
   "quality_gate": {
-    "status": "pending_after_batch_163",
-    "last_failed_run_id": 44334943506,
-    "last_failure": "Run 44334943506 failed at scripts/test_content_readiness.mjs:1379 with ReferenceError: batch162Path was accessed before its later declaration. The declaration is moved before first use; batch163 source and deep-research regression checks are added.",
+    "status": "pending_after_batch_165",
+    "last_failed_run_id": 44379054834,
+    "last_failure": "Run 44379054834 failed only at scripts/test_content_readiness.mjs:2232 because batch089Data.metrics_actual_after includes the additive content_readiness_note property. The assertion now projects the three canonical numeric readiness fields via readinessMetrics(...), preserving exact numeric checks.",
     "note": "Batch163 adds eight in-place source-grounded Hebrew propositions. Reconciliation and full readiness must pass before merge; no public metrics or Verified statuses are changed manually.",
-    "run_status": "Awaiting a fresh exact-head Answer Quality Gate after the TDZ repair and batch163 source additions.",
+    "run_status": "Awaiting a fresh exact-head Answer Quality Gate after Batch165.",
     "workflow_run_id": null
   },
   "publication": {
-    "status": "pending_deploy_after_batch_163",
-    "note": "Batch163 and the readiness TDZ repair are on PR #35. No new Pages deployment is claimed before merge and a successful post-merge deploy.",
+    "status": "pending_deploy_after_batch_165",
+    "note": "No new deployment is claimed until Batch165 reconciliation and exact-head readiness pass, PR #35 is merged, and Pages deployment is verified.",
     "url": "https://malkashacham.github.io/maaneh-ledorot"
   }
 }

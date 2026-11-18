@@ -175,7 +175,7 @@
     "missing_canonical_identities": null,
     "all_target_identities_answer_eligible": null,
     "preflight_exact_aid_search": "No matches for the eleven new AIDs in the review queue, 93 manual batches, 12 bulk-indexed files or repository code-search results. Existing AIDs 2989404 and 4304430 were recognized and handled in-place. The public-search-index blob is 17.6 MB and could not be read through the connector; full reconciliation is still required.",
-    "note": "AID/URL/family uniqueness is established within this batch and preflight-scanned across manual/bulk item files. Full canonical reconciliation must still confirm all eleven new AIDs and update the generated index.",
+    "note": "AID/URL/family uniqueness is established within this batch and preflight-scanned across manual/bulk item files. Full canonical reconciliation must still confirm all eleven new AIDs and update the generated index.\n\nBatch 165 audit found two source_body_review family labels for AIDs 2989588 and 4296226 that differed from their canonical records; both labels are now aligned to the canonical Evidence Families.",
     "unique_new_evidence_families": 5,
     "existing_identity_updates_unique": true,
     "resolved_existing_identity_candidates": [
@@ -192,7 +192,8 @@
       {
         "aid": 4296226,
         "canonical_file": "data/items/content-research-batch-143-2026-11-17.json",
-        "action": "enriched_existing_identity_in_place"
+        "action": "enriched_existing_identity_in_place",
+        "evidence_family_id": "sicha-5723-12-tammuz-thursday-balak-aid4296226"
       },
       {
         "aid": 4280152,
@@ -202,7 +203,8 @@
       {
         "aid": 2989588,
         "canonical_file": "data/items/content-research-batch-099-2026-11-15.json",
-        "action": "existing_identity_rechecked_no_duplicate_proposition"
+        "action": "existing_identity_rechecked_no_duplicate_proposition",
+        "evidence_family_id": "sicha-5717-24-sivan-aid2989588"
       },
       {
         "aid": 2988962,
@@ -273,19 +275,20 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "evidence_family_id": "sicha-4296226-י-ב-תמוז-ה-תשכ-ג",
+      "evidence_family_id": "sicha-5723-12-tammuz-thursday-balak-aid4296226",
       "independent_witness": true,
       "proposition_count": 1,
       "context_status": "partial",
       "existing_identity": true,
       "action": "enriched_existing_identity_in_place",
       "canonical_file": "data/items/content-research-batch-143-2026-11-17.json",
-      "note": "Original Hebrew body passage inspected; one bounded non-verbatim paraphrase; page marked בלתי מוגה.",
+      "note": "Original Hebrew body passage inspected; one bounded non-verbatim paraphrase; page marked בלתי מוגה.\n\nFamily ID aligned to the canonical AID record; no new identity or witness was created.",
       "reinspection_web_source_ref": "turn169331view2",
       "reinspection_at": "2026-11-18T04:43:00+02:00",
       "reinspection_locator": "he.chabad.org AID 4296226, גוף השיחה שורות 177–180.",
       "reinspection_body_text_inspected": true,
-      "propositions_added": 1
+      "propositions_added": 1,
+      "id": "chabad-sicha-4296226"
     },
     {
       "aid": 4279994,
@@ -347,19 +350,20 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "evidence_family_id": "sicha-2989588-כ-ד-סיון-ה-תשי-ז",
+      "evidence_family_id": "sicha-5717-24-sivan-aid2989588",
       "independent_witness": true,
       "proposition_count": 0,
       "context_status": "partial",
       "existing_identity": true,
       "action": "existing_identity_rechecked_no_duplicate_proposition",
       "canonical_file": "data/items/content-research-batch-099-2026-11-15.json",
-      "note": "Original Hebrew body passage inspected; one bounded non-verbatim paraphrase; page marked בלתי מוגה.",
+      "note": "Original Hebrew body passage inspected; one bounded non-verbatim paraphrase; page marked בלתי מוגה.\n\nFamily ID aligned to the canonical AID record; no new identity or witness was created.",
       "reinspection_web_source_ref": "turn169331view5",
       "reinspection_at": "2026-11-18T04:43:00+02:00",
       "reinspection_locator": "he.chabad.org AID 2989588, גוף השיחה שורות 177–182.",
       "reinspection_body_text_inspected": true,
-      "propositions_added": 0
+      "propositions_added": 0,
+      "id": "sicha-5717-24-sivan-aid2989588"
     },
     {
       "aid": 2989161,

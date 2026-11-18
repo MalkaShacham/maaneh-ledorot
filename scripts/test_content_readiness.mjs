@@ -2229,7 +2229,7 @@ assert.equal(new Set(batch089Data.existing_identity_updates.map(x=>x.identity)).
 assert.deepEqual(batch089Data.metrics_expected_after,{answer_eligible_unique_sources:900,content_verified_unique_sources:852,answer_eligible_propositions:2832});
 assert(['reconciled','reconciled_with_variance'].includes(batch089Data.reconciliation_status));
 assert.equal(batch089Data.status,batch089Data.reconciliation_status);
-assert.deepEqual(batch089Data.metrics_actual_after,{
+assert.deepEqual(readinessMetrics(batch089Data.metrics_actual_after),{
  answer_eligible_unique_sources:batch089Data.metrics_expected_after.answer_eligible_unique_sources+batch089Data.reconciliation_variance.answer_eligible_unique_sources,
  content_verified_unique_sources:batch089Data.metrics_expected_after.content_verified_unique_sources+batch089Data.reconciliation_variance.content_verified_unique_sources,
  answer_eligible_propositions:batch089Data.metrics_expected_after.answer_eligible_propositions+batch089Data.reconciliation_variance.answer_eligible_propositions
