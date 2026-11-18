@@ -1357,3 +1357,8 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - The latest PR-workspace baseline before Batch165 is 1,530 / 854 / 3,973 from Answer Quality Gate run 44379054834; this is not public main. The planning boundary after Batch165 is 1,533 / 854 / 3,981, not a measured result. Public main metrics remain 977 / 878 / 2,950 until a successful main-branch reconciliation is committed.
 - The same run's only readiness failure was an additive content_readiness_note field in the historical Batch089 metrics snapshot. test_content_readiness.mjs now compares the three canonical numeric fields through readinessMetrics(...); numeric equality and the conservative-variance guard remain intact.
 - All new and enriched records remain Parsed. No Verified promotion, no translation counted as an independent witness, no full protected text copied, no crawler retry, no access-control bypass, no schedule or permission change.
+## Exact-head verification after Batch 165 commit
+
+- Batch165 and the readiness assertion projection are committed on the PR branch (content commit 12080f1, metadata correction e86d352). The assertion compares the three canonical numeric readiness fields and permits the additive explanatory note without weakening numeric equality.
+- At the time of this entry, no Actions run had yet been created for the new head; the latest run 44379054834 still referred to predecessor 1a63b428 and failed only on the additive historical note field. The new head must be checked independently before merge.
+- Batch165 answer-eligibility growth remains an expected delta only. No actual after-metrics or public deployment is claimed until reconciliation and post-merge publication are verified.
