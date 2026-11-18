@@ -4,7 +4,7 @@
   "batch_file": "data/items/content-research-batch-144-2026-11-17.json",
   "generated": "2026-11-17T18:27:48+02:00",
   "reviewed_at": "2026-11-17T18:27:48+02:00",
-  "title": "אצוות 144 — מברקים, שיחות ומכתב עברי; העשרת שני תיקים קיימים ותרגום יידי נגזר",
+  "title": "אצווה 144 — מברקים, שיחות ומכתב עברי; שני AID כפולים קושרו לזהויות הקנוניות",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "reviewed_item_count": 15,
@@ -12,23 +12,21 @@
   "source_body_pages_opened": 16,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 13,
+  "new_source_identities": 11,
   "existing_identities_enriched": 2,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 19,
+  "new_response_propositions": 17,
   "existing_response_propositions_added": 2,
-  "total_new_paraphrase_entries": 21,
-  "answer_eligible_source_families_added": 15,
-  "independent_witnesses_added": 12,
+  "total_new_paraphrase_entries": 19,
+  "answer_eligible_source_families_added": 13,
+  "independent_witnesses_added": 10,
   "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "new_translation_manifestations": 1,
   "new_aids": [
-    4280036,
     4280068,
     4280139,
     4385646,
-    5959941,
     5959973,
     4280027,
     4304431,
@@ -48,18 +46,18 @@
   "metadata_only_candidate_count": 0,
   "excluded_candidate_count": 0,
   "language_distribution": {
-    "Hebrew": 12,
+    "Hebrew": 10,
     "English": 1
   },
   "original_language_distribution": {
-    "Hebrew": 12,
+    "Hebrew": 10,
     "Yiddish": 1
   },
   "proposition_language_distribution": {
-    "Hebrew": 19
+    "Hebrew": 17
   },
   "source_type_distribution": {
-    "General Telegrams": 7,
+    "General Telegrams": 5,
     "Sichos": 4,
     "Igrot Kodesh Letters": 1,
     "Translated letter excerpt in testimony": 1
@@ -70,9 +68,9 @@
     "answer_eligible_propositions": 3776
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1477,
+    "answer_eligible_unique_sources": 1475,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3797
+    "answer_eligible_propositions": 3795
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
@@ -88,11 +86,11 @@
     "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2950
   },
-  "metrics_note": "1462 / 854 / 3776 הוא גבול תכנון צפוי לאחר batch 143, לא מדידה מאומתת; batch 143 עדיין pending_reconciliation. 1477 / 854 / 3797 הוא גבול צפוי לאחר אצווה 144 בלבד, בכפוף לסריקת Evidence Family ול-reconciliation. מדדי הציבור נשארו 977 / 878 / 2950, והפער של שמונה מקורות מאומתים בין public-metrics ל-project-state נשאר פתוח.",
+  "metrics_note": "The original 13-record batch contained two duplicate AID/URL identities already present in batch105. They are now aliases to the canonical batch105 records and do not add source families or propositions. After deduplication, batch144 contributes 11 new identities, 2 existing-identity enrichments, 13 eligible families and 19 total new paraphrases. The expected boundary 1475/854/3795 is a planning value pending full reconciliation.",
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 15,
+    "answer_eligible_unique_sources": 13,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 21
+    "answer_eligible_propositions": 19
   },
   "deduplication_check": {
     "full_index_scan_available": false,
@@ -100,11 +98,9 @@
     "index_generated": "2026-11-15",
     "index_entry_count": 9122,
     "checked_aids": [
-      4280036,
       4280068,
       4280139,
       4385646,
-      5959941,
       5959973,
       4280027,
       4304431,
@@ -131,7 +127,40 @@
     "code_search_matches": 0,
     "all_target_identities_answer_eligible": null,
     "post_addition_canonical_scan_pending": true,
-    "note": "בדיקת כפילויות חלקית: 13 ה-AID החדשים אינם מופיעים בהיסטוריית הרכישה האחרונה או בתור הביקורת; חיפוש GitHub מדויק לא החזיר התאמות. public-search-index.json לא היה קריא דרך כלי GitHub בהפעלה זו, ולכן אין הצהרה על סריקה קנונית מלאה או היעדר התנגשויות. סריקת post-addition נדרשת ב-reconciliation."
+    "note": "Partial identity audit found two same-AID/same-URL duplicate telegram records (4280036 and 5959941) already canonicalized in batch105. The later batch144 records were removed and linked to the existing Evidence Families. A full index scan is still pending reconciliation.",
+    "duplicate_alias_identities": 2,
+    "duplicate_aliases": [
+      {
+        "action": "duplicate_alias_merged_into_canonical_identity",
+        "existing_identity": true,
+        "aid": 4280036,
+        "alias_id": "telegram-5711-yud-shevat-worldwide-aid4280036",
+        "canonical_id": "telegram-5721-yud-shevat-aid4280036",
+        "canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+        "canonical_evidence_family_id": "telegram-5721-yud-shevat-aid4280036",
+        "duplicate_evidence_family_id": "telegram-יו-ד-שבט-ה-תשכ-א-aid4280036",
+        "duplicate_source_url": "https://he.chabad.org/library/article_cdo/aid/4280036",
+        "relation": "same_aid_same_publisher_url_same_event",
+        "independent_witness": false,
+        "propositions_added": 0,
+        "proposition_handling": "The later paraphrase was semantically redundant with the canonical inspected proposition; no second proposition or witness was counted."
+      },
+      {
+        "action": "duplicate_alias_merged_into_canonical_identity",
+        "existing_identity": true,
+        "aid": 5959941,
+        "alias_id": "telegram-5730-yud-shevat-anniversary-aid5959941",
+        "canonical_id": "telegram-5730-yud-shevat-aid5959941",
+        "canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+        "canonical_evidence_family_id": "telegram-5730-yud-shevat-aid5959941",
+        "duplicate_evidence_family_id": "telegram-יו-ד-שבט-ה-תש-ל-aid5959941",
+        "duplicate_source_url": "https://he.chabad.org/library/article_cdo/aid/5959941",
+        "relation": "same_aid_same_publisher_url_same_event",
+        "independent_witness": false,
+        "propositions_added": 0,
+        "proposition_handling": "The later paraphrase was semantically redundant with the canonical inspected proposition; no second proposition or witness was counted."
+      }
+    ]
   },
   "source_body_review": [
     {
@@ -142,7 +171,14 @@
       "result": "body_inspected",
       "locators": [
         "AID 4280036, גוף המברק והחתימה, שורות 170–180."
-      ]
+      ],
+      "reviewed_aid": 4280036,
+      "reviewed_id": "telegram-5721-yud-shevat-aid4280036",
+      "reviewed_evidence_family_id": "telegram-5721-yud-shevat-aid4280036",
+      "canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+      "included_in_corpus": true,
+      "duplicate_alias_merged": true,
+      "duplicate_alias_note": "Body review is retained as audit metadata; canonical identity remains the batch-105 record in the same Evidence Family."
     },
     {
       "aid": 4280068,
@@ -172,7 +208,14 @@
       "result": "body_inspected",
       "locators": [
         "AID 5959941, גוף המברק והחתימה, שורות 170–180."
-      ]
+      ],
+      "reviewed_aid": 5959941,
+      "reviewed_id": "telegram-5730-yud-shevat-aid5959941",
+      "reviewed_evidence_family_id": "telegram-5730-yud-shevat-aid5959941",
+      "canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+      "included_in_corpus": true,
+      "duplicate_alias_merged": true,
+      "duplicate_alias_note": "Body review is retained as audit metadata; canonical identity remains the batch-105 record in the same Evidence Family."
     },
     {
       "aid": 5959973,
@@ -335,97 +378,8 @@
     ]
   },
   "existing_identity_updates_count": 2,
-  "note": "נבדקו 13 גופי מקור חדשים: שבעה מברקים, ארבע שיחות, מכתב עברי אחד וקטע מתורגם מיידיש בתוך עדות אישית באנגלית. נוספו 19 פרופוזיציות לא-מילוליות; שתי זהויות קיימות הועשרו בשתי פרופוזיציות נוספות. התרגום היידי אינו עד עצמאי. כל הרשומות נשארו Parsed; אפס קידומים ל-Verified.",
+  "note": "שתי רשומות מברק כפולות (AID 4280036 ו-5959941) הוסרו מרשומות המקור של אצווה 144 וקושרו לזהויות הקנוניות באצווה 105. לא נספרו כעדים או כמשפחות ראיות נוספות. סריקת האינדקס המלא עדיין ממתינה.",
   "records": [
-    {
-      "id": "telegram-5711-yud-shevat-worldwide-aid4280036",
-      "canonical_key": "aid:4280036",
-      "aid": 4280036,
-      "title": "נוסח המברק לקראת יו״ד שבט, ה׳תשכ״א",
-      "source_class": "General Telegrams",
-      "source_class_detail": "מברק כללי בעברית המיוחס לרבי, כפי שפורסם ב-BeitChabad.com/Chabad.org; העותק שנשלח בפועל וכתב היד לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "יו״ד שבט, ה׳תשכ״א",
-      "date_precision": "exact_as_published",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "general_telegram",
-      "collection": "Chabad.org / BeitChabad.com",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280036",
-      "context_status": "partial",
-      "summary_researcher": "מברק כללי לאנ״ש לקראת יו״ד שבט, המבקש התוועדות פעילה וניצול מלא של אוצרות רוחניים מדורות קודמים.",
-      "response_propositions": [
-        "המברק לקראת יו״ד שבט קורא לאנ״ש לקיים התוועדות פעילה ולהשתמש במלואם באוצרות הטובים שנמסרו מדורות קודמים."
-      ],
-      "response_proposition_locators": [
-        "AID 4280036, גוף המברק והחתימה, שורות 170–180."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 4280036, גוף המברק והחתימה, שורות 170–180.",
-      "evidence_family_id": "telegram-יו-ד-שבט-ה-תשכ-א-aid4280036",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "documented_circumstances": "מברק כללי לאנ״ש בכל מרחבי תבל לקראת יו״ד שבט, ה׳תשכ״א.",
-      "question_or_problem": "איזו פעולה מבקש המברק לקראת יו״ד שבט?",
-      "conditions_or_qualifications": "נבדק גוף המברק המופיע בעמוד; לא נבדקו רשימת נמענים, עותק השיגור, כתב היד או הקשר ההתוועדות המלא.",
-      "audience": "אנ״ש בכל מרחבי תבל",
-      "primary_secondary_status": "Primary published text witness: Hebrew general telegram as published; dispatch copy and original manuscript were not independently inspected.",
-      "witness_type": "publisher_published_hebrew_general_telegram",
-      "witness_provenance": "BeitChabad.com / Chabad.org AID 4280036, גוף המברק והחתימה.",
-      "independent_witness": true,
-      "translation_status": "הנוסח העברי כפי שפורסם; לא נעשה שימוש בתרגום.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker/author as attributed by publisher",
-      "authorship_status": "המו״ל מייחס את המברק לרבי; בעמוד מופיעה חתימה מודפסת ״מנחם שניאורסאהן״. כתב היד או עותק השיגור לא נבדקו.",
-      "source_role": "public_general_telegram",
-      "signatory": "מנחם שניאורסאהן",
-      "signatory_role": "חתימה מודפסת בעמוד",
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "provenance": {
-        "authorship_status": "המו״ל מייחס את המברק לרבי; בעמוד מופיעה חתימה מודפסת ״מנחם שניאורסאהן״. כתב היד או עותק השיגור לא נבדקו.",
-        "signature_status": "Published page reproduces signature: מנחם שניאורסאהן; original manuscript not inspected.",
-        "source_witness": "BeitChabad.com / Chabad.org AID 4280036, גוף המברק והחתימה.",
-        "transmission_type": "publisher transcription of a signed general telegram",
-        "textual_status": "Hebrew telegram body and printed signature inspected; dispatch copy and manuscript not inspected",
-        "editorial_scope": "full short telegram as published on the page",
-        "verification_status": "source_text_inspected",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4280036",
-        "accessed": "2026-11-17"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "Published Hebrew telegram body and printed signature inspected; original dispatch copy not inspected.",
-        "complete_partial": "complete_as_published",
-        "notes": "הטקסט קצר ומלא כפי שמופיע בעמוד; אין להסיק ממנו פרטי ביצוע, נמענים או הקשר שלא נמסרו."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור ופרפרזות מחקריות תחומות בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות נפרדת לפי AID 4280036 ומשפחת הראיות telegram-יו-ד-שבט-ה-תשכ-א-aid4280036; תרגומים או פרסומים מקבילים של אותו אירוע ישויכו לאותה משפחה ולא ייספרו כעדים עצמאיים.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "נוסח המברק לקראת יו״ד שבט, ה׳תשכ״א"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "המקור נשאר Parsed; התמצית מבוססת רק על נוסח המברק והחתימה המוצגים בעמוד. אין קידום ל-Verified.",
-      "canonical_file": "data/items/content-research-batch-144-2026-11-17.json",
-      "content_enrichment_batch_id": "144",
-      "last_content_enriched_at": "2026-11-17"
-    },
     {
       "id": "telegram-5711-yud-tammuz-worldwide-aid4280068",
       "canonical_key": "aid:4280068",
@@ -703,95 +657,6 @@
       "taxonomy": {
         "publisher_index_terms": [
           "נוסח המברק לקראת י״ב–י״ג תמוז, ה׳תשכ״ו"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "המקור נשאר Parsed; התמצית מבוססת רק על נוסח המברק והחתימה המוצגים בעמוד. אין קידום ל-Verified.",
-      "canonical_file": "data/items/content-research-batch-144-2026-11-17.json",
-      "content_enrichment_batch_id": "144",
-      "last_content_enriched_at": "2026-11-17"
-    },
-    {
-      "id": "telegram-5730-yud-shevat-anniversary-aid5959941",
-      "canonical_key": "aid:5959941",
-      "aid": 5959941,
-      "title": "נוסח המברק לקראת יום ההילולא יו״ד שבט, ה׳תש״ל",
-      "source_class": "General Telegrams",
-      "source_class_detail": "מברק כללי בעברית המיוחס לרבי, כפי שפורסם ב-BeitChabad.com/Chabad.org; העותק שנשלח בפועל וכתב היד לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "יו״ד שבט, ה׳תש״ל",
-      "date_precision": "exact_as_published",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "general_telegram",
-      "collection": "Chabad.org / BeitChabad.com",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/5959941",
-      "context_status": "partial",
-      "summary_researcher": "מברק לקראת יום ההילולא יו״ד שבט תש״ל, עם ברכת שבת שלום ובקשה להתוועדויות פעילות במיוחד; הביטוי ״תקופת העשרים״ נשאר בלתי מפורש.",
-      "response_propositions": [
-        "המברק לקראת יו״ד שבט תש״ל מאחל שבת שלום ומבקש התוועדויות פעילות במיוחד בתקופה המכונה בו ״תקופת העשרים״, תוך הפניה לתוכן מכתב ראש חודש; משמעות הכינוי אינה מוסברת בגוף המברק."
-      ],
-      "response_proposition_locators": [
-        "AID 5959941, גוף המברק והחתימה, שורות 170–180."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 5959941, גוף המברק והחתימה, שורות 170–180.",
-      "evidence_family_id": "telegram-יו-ד-שבט-ה-תש-ל-aid5959941",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "documented_circumstances": "מברק כללי לאנ״ש בכל מרחבי תבל לקראת יו״ד שבט, ה׳תש״ל.",
-      "question_or_problem": "מה מבקש המברק לקראת יום ההילולא ומה נותר לא מפורש בו?",
-      "conditions_or_qualifications": "נבדק גוף המברק המופיע בעמוד; לא נבדקו רשימת נמענים, עותק השיגור, כתב היד או הקשר ההתוועדות המלא.",
-      "audience": "אנ״ש בכל מרחבי תבל",
-      "primary_secondary_status": "Primary published text witness: Hebrew general telegram as published; dispatch copy and original manuscript were not independently inspected.",
-      "witness_type": "publisher_published_hebrew_general_telegram",
-      "witness_provenance": "BeitChabad.com / Chabad.org AID 5959941, גוף המברק והחתימה.",
-      "independent_witness": true,
-      "translation_status": "הנוסח העברי כפי שפורסם; לא נעשה שימוש בתרגום.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker/author as attributed by publisher",
-      "authorship_status": "המו״ל מייחס את המברק לרבי; בעמוד מופיעה חתימה מודפסת ״מנחם שניאורסאהן״. כתב היד או עותק השיגור לא נבדקו.",
-      "source_role": "public_general_telegram",
-      "signatory": "מנחם שניאורסאהן",
-      "signatory_role": "חתימה מודפסת בעמוד",
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "provenance": {
-        "authorship_status": "המו״ל מייחס את המברק לרבי; בעמוד מופיעה חתימה מודפסת ״מנחם שניאורסאהן״. כתב היד או עותק השיגור לא נבדקו.",
-        "signature_status": "Published page reproduces signature: מנחם שניאורסאהן; original manuscript not inspected.",
-        "source_witness": "BeitChabad.com / Chabad.org AID 5959941, גוף המברק והחתימה.",
-        "transmission_type": "publisher transcription of a signed general telegram",
-        "textual_status": "Hebrew telegram body and printed signature inspected; dispatch copy and manuscript not inspected",
-        "editorial_scope": "full short telegram as published on the page",
-        "verification_status": "source_text_inspected",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/5959941",
-        "accessed": "2026-11-17"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "Published Hebrew telegram body and printed signature inspected; original dispatch copy not inspected.",
-        "complete_partial": "complete_as_published",
-        "notes": "הטקסט קצר ומלא כפי שמופיע בעמוד; אין להסיק ממנו פרטי ביצוע, נמענים או הקשר שלא נמסרו."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור ופרפרזות מחקריות תחומות בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות נפרדת לפי AID 5959941 ומשפחת הראיות telegram-יו-ד-שבט-ה-תש-ל-aid5959941; תרגומים או פרסומים מקבילים של אותו אירוע ישויכו לאותה משפחה ולא ייספרו כעדים עצמאיים.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "נוסח המברק לקראת יום ההילולא יו״ד שבט, ה׳תש״ל"
         ],
         "response_case_candidate": true
       },
@@ -1552,6 +1417,39 @@
       "outcome": "body_inspected",
       "locator": "AID 4280139, גוף המברק והחתימה, שורות 170–178.",
       "handling": "העמוד נפתח דרך תוצאת חיפוש ציבורית רגילה. לא נעשה שימוש ב-crawler או בעקיפת בקרת גישה."
+    }
+  ],
+  "duplicate_alias_identities": 2,
+  "duplicate_aliases": [
+    {
+      "action": "duplicate_alias_merged_into_canonical_identity",
+      "existing_identity": true,
+      "aid": 4280036,
+      "alias_id": "telegram-5711-yud-shevat-worldwide-aid4280036",
+      "canonical_id": "telegram-5721-yud-shevat-aid4280036",
+      "canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+      "canonical_evidence_family_id": "telegram-5721-yud-shevat-aid4280036",
+      "duplicate_evidence_family_id": "telegram-יו-ד-שבט-ה-תשכ-א-aid4280036",
+      "duplicate_source_url": "https://he.chabad.org/library/article_cdo/aid/4280036",
+      "relation": "same_aid_same_publisher_url_same_event",
+      "independent_witness": false,
+      "propositions_added": 0,
+      "proposition_handling": "The later paraphrase was semantically redundant with the canonical inspected proposition; no second proposition or witness was counted."
+    },
+    {
+      "action": "duplicate_alias_merged_into_canonical_identity",
+      "existing_identity": true,
+      "aid": 5959941,
+      "alias_id": "telegram-5730-yud-shevat-anniversary-aid5959941",
+      "canonical_id": "telegram-5730-yud-shevat-aid5959941",
+      "canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+      "canonical_evidence_family_id": "telegram-5730-yud-shevat-aid5959941",
+      "duplicate_evidence_family_id": "telegram-יו-ד-שבט-ה-תש-ל-aid5959941",
+      "duplicate_source_url": "https://he.chabad.org/library/article_cdo/aid/5959941",
+      "relation": "same_aid_same_publisher_url_same_event",
+      "independent_witness": false,
+      "propositions_added": 0,
+      "proposition_handling": "The later paraphrase was semantically redundant with the canonical inspected proposition; no second proposition or witness was counted."
     }
   ]
 }
