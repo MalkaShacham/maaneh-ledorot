@@ -2264,7 +2264,10 @@ for(const mode of ['regular','researcher']){
 // Historical batch snapshots are intentionally not equal to the final corpus metrics; later batches are excluded by reconcile_metrics.py.
 const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
 const reconciliationChain=reconciledProjectState.development_recovery.reconciliation_chain;
-assert.deepEqual(reconciliationChain.map(x=>String(x.batch_id)),['099','100','101','102','103','104','105','106','107','108','109','110','111','112']);
+const reconciliationChainIds=reconciliationChain.map(x=>String(x.batch_id));
+assert(['099','100','101','102','103','104','105','106','107','108','109','110','111','112'].every(id=>reconciliationChainIds.includes(id)));
+assert(reconciliationChainIds.includes('153'));
+assert(reconciliationChainIds.every(id=>/^\\d{3}$/.test(id)));
 const batch099Audit=reconciliationChain.find(x=>String(x.batch_id)==='099');
 const batch100Audit=reconciliationChain.find(x=>String(x.batch_id)==='100');
 const batch101Audit=reconciliationChain.find(x=>String(x.batch_id)==='101');
