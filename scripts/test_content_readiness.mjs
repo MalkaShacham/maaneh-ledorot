@@ -5033,3 +5033,35 @@ for(const mode of ['regular','researcher']){
   assert(m.research.claim_source_map.every(c=>c.source_locators.length===1&&c.source_locators[0].locator));
  }else assert.equal(m.research,undefined);
 }
+
+
+// Reconciliation regression: duplicate AID/URL aliases and in-place enrichment audit rows must not become canonical source records.
+const batch144Path='data/items/content-research-batch-144-2026-11-17.json';
+const batch144Data=JSON.parse(await readFile(new URL(batch144Path,root),'utf8'));
+assert.equal(batch144Data.records.length,11);
+assert.equal(batch144Data.new_source_identities,11);
+assert.equal(batch144Data.new_response_propositions,17);
+assert.equal(batch144Data.total_new_paraphrase_entries,19);
+assert.equal(batch144Data.duplicate_alias_identities,2);
+assert.deepEqual(batch144Data.duplicate_aliases.map(x=>String(x.aid)).sort(),['4280036','5959941']);
+assert(!batch144Data.records.some(r=>['4280036','5959941'].includes(String(r.aid))));
+for(const alias of batch144Data.duplicate_aliases){
+ assert.equal(alias.action,'duplicate_alias_merged_into_canonical_identity');
+ assert.equal(alias.independent_witness,false);
+ const found=idx.entries.filter(e=>sourceAID(e)===String(alias.aid));
+ assert.equal(found.length,1,'duplicate alias AID '+alias.aid+' must resolve to one canonical identity');
+ assert.equal(found[0].canonical_file,alias.canonical_file);
+ assert.equal(found[0].id,alias.canonical_id);
+ assert.equal(found[0].evidence_family_id,alias.canonical_evidence_family_id);
+ assert.equal(found[0].status,'Parsed');
+}
+const enrichedAudit=batch105Data.existing_identity_updates.find(x=>String(x.aid)==='2988877');
+assert(enrichedAudit&&String(enrichedAudit.action).startsWith('enriched_existing_identity'));
+const enrichedAuditCanonical=idx.entries.filter(e=>sourceAID(e)==='2988877');
+assert.equal(enrichedAuditCanonical.length,1,'batch-105 in-place enrichment audit descriptor must not create a duplicate AID');
+assert.equal(enrichedAuditCanonical[0].canonical_file,'data/items/content-research-batch-100-2026-11-15.json');
+assert(['reconciled','reconciled_with_variance'].includes(batch144Data.reconciliation_status));
+assert.equal(batch144Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch144Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch144Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch144Data.deduplication_check.missing_canonical_identities,[]);
