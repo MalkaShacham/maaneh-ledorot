@@ -1,10 +1,10 @@
 {
-  "started_at": "2026-11-18T02:24:48+02:00",
+  "started_at": "2026-11-18T04:43:00+02:00",
   "attempted": 19,
-  "enriched": 1,
-  "discovered": 11,
+  "enriched": 4,
+  "discovered": 5,
   "blocked": 5,
-  "skipped": 1,
+  "skipped": 5,
   "status": "pending_reconciliation",
   "manual_web_review": {
     "schema_version": "maaneh-ledorot-content-research-batch-v1",
@@ -24,14 +24,14 @@
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 11,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 11,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 12,
-    "answer_eligible_source_families_added": 11,
-    "independent_witnesses_added": 11,
+    "new_source_identities": 5,
+    "existing_identities_enriched": 4,
+    "existing_identities_rechecked": 4,
+    "new_response_propositions": 5,
+    "existing_response_propositions_added": 4,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 5,
+    "independent_witnesses_added": 5,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "duplicate_alias_identities": 0,
@@ -51,22 +51,22 @@
       "Sichos": 11
     },
     "new_aids": [
-      2989311,
-      5959840,
-      4296226,
       4279994,
-      4280152,
-      2989588,
       2989161,
       3008870,
-      2988962,
       4385877,
       2989319
     ],
     "enriched_aids": [
+      5959840,
+      4296226,
+      4280152,
       2989404
     ],
     "rechecked_aids": [
+      2989311,
+      2989588,
+      2988962,
       4304430
     ],
     "reviewed_aids": [
@@ -137,19 +137,19 @@
       "answer_eligible_propositions": 3846
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1513,
+      "answer_eligible_unique_sources": 1507,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3858
+      "answer_eligible_propositions": 3855
     },
     "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 11,
+      "answer_eligible_unique_sources": 5,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 12
+      "answer_eligible_propositions": 9
     },
-    "metrics_note": "Planning boundary only. Batch150's expected source boundary was shifted down by one after AID 2988877 was consolidated into batch100. Batch151 adds eleven new Evidence Families and one existing-identity proposition. The canonical full-index reconciliation must measure actual before/after values; no public metric was edited manually.",
+    "metrics_note": "Corrected after full preflight: six of the eleven candidate AIDs were already canonical identities (2989311, 5959840, 4296226, 4280152, 2989588, 2988962). Their records were not duplicated. Three distinct propositions were merged into existing identities (5959840, 4296226, 4280152); two passages were rechecked but not added because they repeat existing propositions (2989311, 2989588, 2988962). AID 2989404 was also enriched in place. Five genuinely new Evidence Families remain in this batch. Planning boundary only; full reconciliation must measure actual metrics.",
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
@@ -1580,7 +1580,8 @@
       "verified_promotions": 0,
       "status": "pending_reconciliation",
       "note": "All eleven new batch151 Hebrew Sicha bodies and enriched AID 2989404 were reopened at their cited body locations. Pages are marked בלתי מוגה; only bounded passages were inspected; context remains partial."
-    }
+    },
+    "duplicate_preflight_resolved": true
   },
   "previous_manual_web_review": {
     "schema_version": "maaneh-ledorot-content-research-batch-v1",
@@ -1594,20 +1595,20 @@
     "reconciliation_status": "pending_reconciliation",
     "review_method": "Manual public web/search/open inspection of item-level Hebrew publisher pages. Search results were used only to discover candidates; each included source body was opened and its cited lines inspected directly. Three alternative candidates returned HTTP 429 and were excluded; no crawler retry or access-control bypass.",
     "records_reviewed": 14,
-    "reviewed_item_count": 14,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 33,
+    "reviewed_item_count": 19,
+    "source_bodies_inspected": 13,
+    "source_body_pages_opened": 37,
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 11,
-    "existing_identities_enriched": 0,
-    "existing_identities_rechecked": 0,
-    "new_response_propositions": 11,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 11,
-    "independent_witnesses_added": 11,
+    "new_source_identities": 5,
+    "existing_identities_enriched": 4,
+    "existing_identities_rechecked": 4,
+    "new_response_propositions": 5,
+    "existing_response_propositions_added": 4,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 5,
+    "independent_witnesses_added": 5,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "duplicate_alias_identities": 0,
@@ -1627,20 +1628,24 @@
       "Sichos": 11
     },
     "new_aids": [
-      2989311,
+      4279994,
+      2989161,
+      3008870,
+      4385877,
+      2989319
+    ],
+    "enriched_aids": [
       5959840,
       4296226,
-      4279994,
       4280152,
-      2989588,
-      2989161,
-      4304430,
-      3008870,
-      2988962,
-      4385877
+      2989404
     ],
-    "enriched_aids": [],
-    "rechecked_aids": [],
+    "rechecked_aids": [
+      2989311,
+      2989588,
+      2988962,
+      4304430
+    ],
     "reviewed_aids": [
       2989311,
       5959840,
@@ -1693,19 +1698,19 @@
       "answer_eligible_propositions": 3846
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1513,
+      "answer_eligible_unique_sources": 1507,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3857
+      "answer_eligible_propositions": 3855
     },
     "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 11,
+      "answer_eligible_unique_sources": 5,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 11
+      "answer_eligible_propositions": 9
     },
-    "metrics_note": "Planning boundary only. Batch150's expected boundary was shifted down by one source after the duplicate AID 2988877 was consolidated into batch100. The canonical full-index reconciliation must measure the actual before/after values; no public metric was edited manually.",
+    "metrics_note": "Corrected after full preflight: six of the eleven candidate AIDs were already canonical identities (2989311, 5959840, 4296226, 4280152, 2989588, 2988962). Their records were not duplicated. Three distinct propositions were merged into existing identities (5959840, 4296226, 4280152); two passages were rechecked but not added because they repeat existing propositions (2989311, 2989588, 2988962). AID 2989404 was also enriched in place. Five genuinely new Evidence Families remain in this batch. Planning boundary only; full reconciliation must measure actual metrics.",
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
@@ -2980,7 +2985,8 @@
         "canonical_file": "data/items/content-research-batch-151-2026-11-18.json"
       }
     ],
-    "note": "נבדקו 11 גופי שיחות עבריים מקוריים המסומנים בלתי מוגה. נוספו 11 פרפרזות מחקריות לא־מילוליות עם מיקומי גוף, provenance, היקף אימות, הקשר ומגבלות. כל 11 הזהויות נשארו Parsed; אין קידום ל-Verified. שלוש הפניות חלופיות החזירו HTTP 429 ותועדו כחסומות. בדיקת הכפילויות מלאה עדיין ממתינה ל-reconciliation."
+    "note": "נבדקו 11 גופי שיחות עבריים מקוריים המסומנים בלתי מוגה. נוספו 11 פרפרזות מחקריות לא־מילוליות עם מיקומי גוף, provenance, היקף אימות, הקשר ומגבלות. כל 11 הזהויות נשארו Parsed; אין קידום ל-Verified. שלוש הפניות חלופיות החזירו HTTP 429 ותועדו כחסומות. בדיקת הכפילויות מלאה עדיין ממתינה ל-reconciliation.",
+    "duplicate_preflight_resolved": true
   },
   "last_manual_web_review": {
     "schema_version": "maaneh-ledorot-content-research-batch-v1",
@@ -3000,14 +3006,14 @@
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 11,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 11,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 12,
-    "answer_eligible_source_families_added": 11,
-    "independent_witnesses_added": 11,
+    "new_source_identities": 5,
+    "existing_identities_enriched": 4,
+    "existing_identities_rechecked": 4,
+    "new_response_propositions": 5,
+    "existing_response_propositions_added": 4,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 5,
+    "independent_witnesses_added": 5,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "duplicate_alias_identities": 0,
@@ -3027,22 +3033,22 @@
       "Sichos": 11
     },
     "new_aids": [
-      2989311,
-      5959840,
-      4296226,
       4279994,
-      4280152,
-      2989588,
       2989161,
       3008870,
-      2988962,
       4385877,
       2989319
     ],
     "enriched_aids": [
+      5959840,
+      4296226,
+      4280152,
       2989404
     ],
     "rechecked_aids": [
+      2989311,
+      2989588,
+      2988962,
       4304430
     ],
     "reviewed_aids": [
@@ -3113,19 +3119,19 @@
       "answer_eligible_propositions": 3846
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1513,
+      "answer_eligible_unique_sources": 1507,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3858
+      "answer_eligible_propositions": 3855
     },
     "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 11,
+      "answer_eligible_unique_sources": 5,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 12
+      "answer_eligible_propositions": 9
     },
-    "metrics_note": "Planning boundary only. Batch150's expected source boundary was shifted down by one after AID 2988877 was consolidated into batch100. Batch151 adds eleven new Evidence Families and one existing-identity proposition. The canonical full-index reconciliation must measure actual before/after values; no public metric was edited manually.",
+    "metrics_note": "Corrected after full preflight: six of the eleven candidate AIDs were already canonical identities (2989311, 5959840, 4296226, 4280152, 2989588, 2988962). Their records were not duplicated. Three distinct propositions were merged into existing identities (5959840, 4296226, 4280152); two passages were rechecked but not added because they repeat existing propositions (2989311, 2989588, 2988962). AID 2989404 was also enriched in place. Five genuinely new Evidence Families remain in this batch. Planning boundary only; full reconciliation must measure actual metrics.",
     "deduplication_check": {
       "new_aids_unique": true,
       "new_source_urls_unique": true,
@@ -4480,7 +4486,8 @@
         "status": "secondary_commentary_not_primary_source",
         "reason": "העמוד הוא מאמר משני ולא פרסום מקור של שיחה/איגרת; לא שימש ליצירת פרופוזיציה."
       }
-    ]
+    ],
+    "duplicate_preflight_resolved": true
   },
   "last_manual_review": {
     "schema_version": "maaneh-ledorot-content-research-batch-v1",
@@ -9190,14 +9197,14 @@
       "metadata_only_items_rechecked": 0,
       "search_extracts_inspected": 0,
       "search_extracts_used_as_content": 0,
-      "new_source_identities": 11,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 1,
-      "new_response_propositions": 11,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 12,
-      "answer_eligible_source_families_added": 11,
-      "independent_witnesses_added": 11,
+      "new_source_identities": 5,
+      "existing_identities_enriched": 4,
+      "existing_identities_rechecked": 4,
+      "new_response_propositions": 5,
+      "existing_response_propositions_added": 4,
+      "total_new_paraphrase_entries": 9,
+      "answer_eligible_source_families_added": 5,
+      "independent_witnesses_added": 5,
       "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "duplicate_alias_identities": 0,
@@ -9217,22 +9224,22 @@
         "Sichos": 11
       },
       "new_aids": [
-        2989311,
-        5959840,
-        4296226,
         4279994,
-        4280152,
-        2989588,
         2989161,
         3008870,
-        2988962,
         4385877,
         2989319
       ],
       "enriched_aids": [
+        5959840,
+        4296226,
+        4280152,
         2989404
       ],
       "rechecked_aids": [
+        2989311,
+        2989588,
+        2988962,
         4304430
       ],
       "reviewed_aids": [
@@ -9303,19 +9310,19 @@
         "answer_eligible_propositions": 3846
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1513,
+        "answer_eligible_unique_sources": 1507,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3858
+        "answer_eligible_propositions": 3855
       },
       "metrics_actual_before": null,
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 11,
+        "answer_eligible_unique_sources": 5,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 12
+        "answer_eligible_propositions": 9
       },
-      "metrics_note": "Planning boundary only. Batch150's expected source boundary was shifted down by one after AID 2988877 was consolidated into batch100. Batch151 adds eleven new Evidence Families and one existing-identity proposition. The canonical full-index reconciliation must measure actual before/after values; no public metric was edited manually.",
+      "metrics_note": "Corrected after full preflight: six of the eleven candidate AIDs were already canonical identities (2989311, 5959840, 4296226, 4280152, 2989588, 2988962). Their records were not duplicated. Three distinct propositions were merged into existing identities (5959840, 4296226, 4280152); two passages were rechecked but not added because they repeat existing propositions (2989311, 2989588, 2988962). AID 2989404 was also enriched in place. Five genuinely new Evidence Families remain in this batch. Planning boundary only; full reconciliation must measure actual metrics.",
       "deduplication_check": {
         "new_aids_unique": true,
         "new_source_urls_unique": true,
@@ -10670,7 +10677,8 @@
           "status": "secondary_commentary_not_primary_source",
           "reason": "העמוד הוא מאמר משני ולא פרסום מקור של שיחה/איגרת; לא שימש ליצירת פרופוזיציה."
         }
-      ]
+      ],
+      "duplicate_preflight_resolved": true
     }
   ],
   "manual_web_review_current_metrics": {
