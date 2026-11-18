@@ -32,12 +32,12 @@ def is_source_record(d):
     # creates false canonical_identity_collisions and duplicate search candidates.
     if not isinstance(d,dict): return False
     audit_row = (
-        d.get("action") == "enriched_existing_identity_in_place"
+        str(d.get("action") or "").startswith("enriched_existing_identity") or str(d.get("action") or "").startswith("duplicate_alias_")
         or d.get("existing_identity") is True
         or d.get("body_text_inspected") is True
         or d.get("inspected_original_language_body") is True
         or ("reason" in d and "handling" in d and "aid" in d)
-        or ("canonical_file" in d and "propositions_added" in d and "total_propositions_after" in d)
+        or ("canonical_file" in d and "propositions_added" in d and ("total_propositions_after" in d or "aid" in d))
         or ("identity_key" in d and "canonical_records_found" in d)
     )
     if audit_row: return False
@@ -146,12 +146,12 @@ def candidate_dicts(obj):
             # Counting them here created false collisions (for example AID 2989153)
             # and could let an audit descriptor shadow the actual inspected item.
             audit_descriptor = (
-                x.get("action") == "enriched_existing_identity_in_place"
+                str(x.get("action") or "").startswith("enriched_existing_identity") or str(x.get("action") or "").startswith("duplicate_alias_")
                 or x.get("existing_identity") is True
                 or x.get("body_text_inspected") is True
                 or x.get("inspected_original_language_body") is True
                 or ("reason" in x and "handling" in x and "aid" in x)
-                or ("canonical_file" in x and "propositions_added" in x and "total_propositions_after" in x)
+                or ("canonical_file" in x and "propositions_added" in x and ("total_propositions_after" in x or "aid" in x))
                 or ("identity_key" in x and "canonical_records_found" in x)
             )
             if not audit_descriptor and is_source_record(x) and stable_key(x) and (x.get("title") or x.get("summary_researcher") or x.get("source_url") or isinstance(x.get("provenance"),dict)):out.append(x)
