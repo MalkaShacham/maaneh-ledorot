@@ -5342,11 +5342,11 @@ for(const [aid,file,count,locator] of enriched153){
  assert.equal(e[0].status,'Parsed');
  assert.equal(e[0].has_content_evidence,true);
 }
-const rechecked2989386=idx.entries.filter(x=>sourceAID(x)==='2989386');
-assert.equal(rechecked2989386.length,1);
-assert.equal(rechecked2989386[0].canonical_file,'data/items/content-research-batch-101-2026-11-15.json');
-assert.equal(rechecked2989386[0].evidence_family_id,'report-5711-18-nissan-chol-hamoed-pesach-aid2989386');
-assert.equal(rechecked2989386[0].response_propositions.length,2);
+const batch153Rechecked2989386=idx.entries.filter(x=>sourceAID(x)==='2989386');
+assert.equal(batch153Rechecked2989386.length,1);
+assert.equal(batch153Rechecked2989386[0].canonical_file,'data/items/content-research-batch-101-2026-11-15.json');
+assert.equal(batch153Rechecked2989386[0].evidence_family_id,'report-5711-18-nissan-chol-hamoed-pesach-aid2989386');
+assert.equal(batch153Rechecked2989386[0].response_propositions.length,2);
 const batch141Dedup=JSON.parse(await readFile('data/items/content-research-batch-141-2026-11-17.json','utf8'));
 assert.equal(batch141Dedup.records.some(r=>String(r.aid)==='2989386'),false);
 assert(batch141Dedup.duplicate_aliases.some(r=>String(r.aid)==='2989386'&&r.action==='duplicate_alias_removed_without_new_content'));
