@@ -89,7 +89,8 @@
       "existing_response_propositions_added": 1
     },
     "Batch158 (2026-11-18): ten Hebrew publisher bodies inspected; eight existing identities enriched in place with eight new source-grounded paraphrases, two rechecks excluded as already represented. No new source identities or Verified promotions. CI baseline after batch157 is 1522/854/3915; batch158 expected boundary 1522/854/3923. Full reconciliation and readiness test pending.",
-    "Batch160: four new Hebrew source identities and four in-place enrichments; ten body pages inspected; no Verified promotion; full reconciliation pending."
+    "Batch160: four new Hebrew source identities and four in-place enrichments; ten body pages inspected; no Verified promotion; full reconciliation pending.",
+    "Batch162 has eight in-place Hebrew source-grounded propositions and one no-duplicate recheck; metrics are planning-only until full reconciliation."
   ],
   "next_work": [
     "Run deterministic full canonical reconciliation through batch156; verify all eight in-place identities remain unique and their Evidence Family IDs are unchanged.",
@@ -129,7 +130,7 @@
       "expected_after": {
         "answer_eligible_unique_sources": 1530,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3951
+        "answer_eligible_propositions": 3959
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -196,9 +197,10 @@
         "158",
         "159",
         "160",
-        "161"
+        "161",
+        "162"
       ],
-      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending. Batch 151 corrected after source-body review and canonical AID deduplication: 5 new identities, 4 in-place enrichments, 4 rechecks, 9 new paraphrases; expected planning boundary 1507/854/3855. Actual reconciliation remains pending. Batch152 planning boundary: 1507/854/3855 → 1509/854/3863; this is not a measured result. Batch151 canonical summary is 5 new identities, 4 enrichments, 4 rechecks and 9 paraphrases; latest acquisition metadata has been aligned to the corrected batch manifest. Batch153 correction: AID 2989386's duplicate batch141 record was removed; corrected planning baseline 1510/854/3867 and expected boundary 1518/854/3878 are not measured. PR-head run 44236655981 reported 1511/854/3868 before this duplicate cleanup; its content-readiness test then failed on AID 2989153 expecting 13 instead of 14. Batch157 baseline uses the PR-head CI workspace measurement after batch156 (run 44265320228): 1519/854/3903; this was not committed to main. Expected 1522/854/3915 is planning only pending full reconciliation. Batch158 expected planning boundary 1522/854/3923 (not measured after batch158); batch159 planning boundary 1530/854/3931 after eight new eligible candidate families and eight inspected propositions. The current public main metrics remain 977/878/2950; no metric has been overwritten.",
+      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending. Batch 151 corrected after source-body review and canonical AID deduplication: 5 new identities, 4 in-place enrichments, 4 rechecks, 9 new paraphrases; expected planning boundary 1507/854/3855. Actual reconciliation remains pending. Batch152 planning boundary: 1507/854/3855 → 1509/854/3863; this is not a measured result. Batch151 canonical summary is 5 new identities, 4 enrichments, 4 rechecks and 9 paraphrases; latest acquisition metadata has been aligned to the corrected batch manifest. Batch153 correction: AID 2989386's duplicate batch141 record was removed; corrected planning baseline 1510/854/3867 and expected boundary 1518/854/3878 are not measured. PR-head run 44236655981 reported 1511/854/3868 before this duplicate cleanup; its content-readiness test then failed on AID 2989153 expecting 13 instead of 14. Batch157 baseline uses the PR-head CI workspace measurement after batch156 (run 44265320228): 1519/854/3903; this was not committed to main. Expected 1522/854/3915 is planning only pending full reconciliation. Batch158 expected planning boundary 1522/854/3923 (not measured after batch158); batch159 planning boundary 1530/854/3931 after eight new eligible candidate families and eight inspected propositions. The current public main metrics remain 977/878/2950; no metric has been overwritten. Batch162 planning boundary 1530/854/3951 to 1530/854/3959; this is not a measured post-reconciliation count. No new source identity or Verified promotion.",
       "summary": {
         "batch_id": "161",
         "batch_file": "data/items/content-research-batch-161-2026-11-18.json",
@@ -347,20 +349,20 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "161",
+    "current_batch": "162",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "160",
     "last_batch_summary": {
-      "batch_id": "161",
-      "batch_file": "data/items/content-research-batch-161-2026-11-18.json",
-      "reviewed_at": "2026-11-18T16:03:38+02:00",
+      "batch_id": "162",
+      "batch_file": "data/items/content-research-batch-162-2026-11-18.json",
+      "reviewed_at": "2026-11-18T17:00:58+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 8,
-      "source_bodies_inspected": 8,
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 9,
       "new_source_identities": 0,
       "existing_identities_enriched": 8,
-      "existing_identities_rechecked": 0,
+      "existing_identities_rechecked": 1,
       "new_response_propositions": 0,
       "existing_response_propositions_added": 8,
       "total_new_paraphrase_entries": 8,
@@ -370,35 +372,47 @@
       "content_verified_unique_sources_added": 0,
       "new_aids": [],
       "enriched_aids": [
-        2989372,
         2989373,
-        2989374,
         2988989,
         2988990,
         2989409,
         4304436,
+        2989319,
+        2989556,
+        2988866
+      ],
+      "rechecked_aids": [
         3008863
       ],
-      "rechecked_aids": [],
-      "blocked_candidate_count": 0,
-      "blocked_candidates": [],
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 2987993,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2987993",
+          "reason": "Public reader returned Internal Error; no body inspected; no retry or bypass."
+        }
+      ],
       "metrics_before": {
-        "answer_eligible_unique_sources": 1530,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3943
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1530,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3951
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1530,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3959
+      },
       "metrics_actual_after": null,
-      "note": "Eight existing Hebrew identities enriched in place from eight newly inspected body passages; four duplicate AID presentations linked to shared Evidence Families. All source records remain Parsed; zero Verified promotions."
+      "note": "Eight existing Hebrew Sicha identities were enriched in place with distinct source-grounded paraphrases. AID 3008863 was rechecked and excluded from enrichment because its existing proposition already covers the inspected locator. AID 2987993 was blocked; AID 2988866 was opened as an accessible alternative in the same run and remains non-independent because of its Yiddish editorial parallel. All records remain Parsed; no Verified promotion."
     },
-    "last_run_note": "Batch161 added eight non-verbatim, source-grounded propositions to eight existing Hebrew identities. Four same-AID duplicate presentations were normalized to shared Evidence Families. No new source identity or Verified promotion. Full reconciliation pending.",
-    "last_batch_blocked_count": 0,
-    "last_batch_blocked_reason": null,
-    "next_work": "Complete full-index reconciliation with same-family proposition merging; verify batch161's eight locators and duplicate-family audit; run test_content_readiness.mjs; merge PR #35 only after green checks; then verify Pages deployment.",
+    "last_run_note": "Eight existing Hebrew Sicha identities were enriched in place with distinct source-grounded paraphrases. AID 3008863 was rechecked and excluded from enrichment because its existing proposition already covers the inspected locator. AID 2987993 was blocked; AID 2988866 was opened as an accessible alternative in the same run and remains non-independent because of its Yiddish editorial parallel. All records remain Parsed; no Verified promotion.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 2987993 returned Internal Error through the public reader; it was excluded, and AID 2988866 was opened as an accessible alternative in the same run.",
+    "next_work": [
+      "Run full-index reconciliation for all pending manual batches 099–162; verify the eight in-place updates and the four same-family duplicate presentations from batch161.",
+      "Pass scripts/test_content_readiness.mjs, claim-level citation integrity and the regular/deep researcher comparison test on the exact PR head.",
+      "Only after a clean gate, merge PR #35; then verify committed public metrics, reconciliation Actions and GitHub Pages deployment."
+    ],
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -761,12 +775,57 @@
       "reconciliation_status": "reconciled"
     },
     "last_manual_web_review": {
-      "batch_id": "161",
-      "batch_file": "data/items/content-research-batch-161-2026-11-18.json",
-      "reviewed_at": "2026-11-18T16:03:38+02:00",
+      "batch_id": "162",
+      "batch_file": "data/items/content-research-batch-162-2026-11-18.json",
+      "reviewed_at": "2026-11-18T17:00:58+02:00",
       "status": "pending_reconciliation",
-      "source_bodies_inspected": 8,
-      "existing_identities_enriched": 8
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 9,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 1,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "new_aids": [],
+      "enriched_aids": [
+        2989373,
+        2988989,
+        2988990,
+        2989409,
+        4304436,
+        2989319,
+        2989556,
+        2988866
+      ],
+      "rechecked_aids": [
+        3008863
+      ],
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 2987993,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2987993",
+          "reason": "Public reader returned Internal Error; no body inspected; no retry or bypass."
+        }
+      ],
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1530,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3951
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1530,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3959
+      },
+      "metrics_actual_after": null,
+      "note": "Eight existing Hebrew Sicha identities were enriched in place with distinct source-grounded paraphrases. AID 3008863 was rechecked and excluded from enrichment because its existing proposition already covers the inspected locator. AID 2987993 was blocked; AID 2988866 was opened as an accessible alternative in the same run and remains non-independent because of its Yiddish editorial parallel. All records remain Parsed; no Verified promotion."
     },
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
@@ -781,7 +840,8 @@
       "AID 553672 and legacy routes 5913–5914 were not accessible via public web open; no content inferred and no crawler retry.",
       "נתיב עברי /4754257 Hebrew publisher route returned 404 on 2026-11-17; English item-level fallback AID 2277145 and eleven additional letter bodies were inspected.",
       "Batch 147: eight English publisher Yechidus presentations (original-language witnesses not inspected) were added as non-independent derived presentations in eight provisional event families; ten Hebrew candidate pages returned HTTP 429 and were replaced by accessible English publisher bodies. AID 4304431 was enriched in place with a fourth bounded proposition preserving the Rebbe Rashab → Rebbe Rayatz attribution chain. The new eight-claim synthesis and deep researcher evidence map are implemented but pending execution.",
-      "Batch160 (2026-11-18): ten Hebrew bodies inspected; four new source identities and four canonical in-place enrichments; two rechecks excluded; AID 2987993 blocked and replaced by alternate public sources. All remain Parsed; reconciliation pending."
+      "Batch160 (2026-11-18): ten Hebrew bodies inspected; four new source identities and four canonical in-place enrichments; two rechecks excluded; AID 2987993 blocked and replaced by alternate public sources. All remain Parsed; reconciliation pending.",
+      "Batch162: AID 2987993 public reader returned Internal Error; no crawler retry or access-control bypass. Eight accessible existing Hebrew source identities were enriched; full-index reconciliation remains pending."
     ],
     "pending_reconciliation_batches": [
       "099",
@@ -840,10 +900,64 @@
       "158",
       "159",
       "160",
-      "161"
+      "161",
+      "162"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
+      "batch_id": "162",
+      "batch_file": "data/items/content-research-batch-162-2026-11-18.json",
+      "reviewed_at": "2026-11-18T17:00:58+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 9,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 1,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "new_aids": [],
+      "enriched_aids": [
+        2989373,
+        2988989,
+        2988990,
+        2989409,
+        4304436,
+        2989319,
+        2989556,
+        2988866
+      ],
+      "rechecked_aids": [
+        3008863
+      ],
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 2987993,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2987993",
+          "reason": "Public reader returned Internal Error; no body inspected; no retry or bypass."
+        }
+      ],
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1530,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3951
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1530,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3959
+      },
+      "metrics_actual_after": null,
+      "note": "Eight existing Hebrew Sicha identities were enriched in place with distinct source-grounded paraphrases. AID 3008863 was rechecked and excluded from enrichment because its existing proposition already covers the inspected locator. AID 2987993 was blocked; AID 2988866 was opened as an accessible alternative in the same run and remains non-independent because of its Yiddish editorial parallel. All records remain Parsed; no Verified promotion."
+    },
+    "previous_manual_web_review": {
       "batch_id": "161",
       "batch_file": "data/items/content-research-batch-161-2026-11-18.json",
       "reviewed_at": "2026-11-18T16:03:38+02:00",
@@ -851,39 +965,79 @@
       "source_bodies_inspected": 8,
       "existing_identities_enriched": 8
     },
-    "previous_manual_web_review": {
-      "batch_id": "160",
-      "batch_file": "data/items/content-research-batch-160-2026-11-18.json",
-      "status": "pending_reconciliation"
-    },
-    "current_batch_file": "data/items/content-research-batch-161-2026-11-18.json",
+    "current_batch_file": "data/items/content-research-batch-162-2026-11-18.json",
     "status": "pending_reconciliation",
     "pending": true,
     "last_manual_review": {
-      "batch_id": "161",
-      "batch_file": "data/items/content-research-batch-161-2026-11-18.json",
-      "reviewed_at": "2026-11-18T16:03:38+02:00",
+      "batch_id": "162",
+      "batch_file": "data/items/content-research-batch-162-2026-11-18.json",
+      "reviewed_at": "2026-11-18T17:00:58+02:00",
       "status": "pending_reconciliation",
-      "source_bodies_inspected": 8,
-      "existing_identities_enriched": 8
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 9,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 1,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "new_aids": [],
+      "enriched_aids": [
+        2989373,
+        2988989,
+        2988990,
+        2989409,
+        4304436,
+        2989319,
+        2989556,
+        2988866
+      ],
+      "rechecked_aids": [
+        3008863
+      ],
+      "blocked_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 2987993,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2987993",
+          "reason": "Public reader returned Internal Error; no body inspected; no retry or bypass."
+        }
+      ],
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1530,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3951
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1530,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3959
+      },
+      "metrics_actual_after": null,
+      "note": "Eight existing Hebrew Sicha identities were enriched in place with distinct source-grounded paraphrases. AID 3008863 was rechecked and excluded from enrichment because its existing proposition already covers the inspected locator. AID 2987993 was blocked; AID 2988866 was opened as an accessible alternative in the same run and remains non-independent because of its Yiddish editorial parallel. All records remain Parsed; no Verified promotion."
     },
-    "last_reviewed_batch": "161"
+    "last_reviewed_batch": "162"
   },
-  "current_batch": "160",
-  "updated_at": "2026-11-18",
-  "current_batch_file": "data/items/content-research-batch-160-2026-11-18.json",
+  "current_batch": "162",
+  "updated_at": "2026-11-18T17:00:58+02:00",
+  "current_batch_file": "data/items/content-research-batch-162-2026-11-18.json",
   "status": "pending_reconciliation",
   "quality_gate": {
-    "status": "pending_after_batch_159",
+    "status": "pending_after_batch_162",
     "last_failed_run_id": 44289405287,
     "last_failure": "Previous PR-head gate failed because AID 5019603, a publisher Hebrew text completed from a photograph and explicitly non-independent, was not retained in the youth-education synthesis. Branch commit 2f3477cc adds a topic-specific bounded inclusion with claim-level locators and keeps its non-independent status. A fresh gate is required.",
-    "note": "Batch157 adds three new source identities and seven in-place enrichments. No merge until the full reconciliation and content-readiness gate pass.",
-    "run_status": "Previous PR run failed only in test_content_readiness at the AID 2988877 cumulative assertion; batch157 updates the test and triggers a fresh run.",
+    "note": "Batch162 adds eight in-place source-grounded propositions and a recheck with no duplicate proposition. The recovery document was restored from main after detecting a JSON overwrite on the PR branch. A fresh exact-head Answer Quality Gate and full reconciliation are required before merge.",
+    "run_status": "Awaiting a fresh PR-head run after batch162, canonical record updates, state reconciliation pointers and readiness regression updates.",
     "workflow_run_id": 44289405287
   },
   "publication": {
-    "status": "pending_after_batch_159",
-    "note": "Batch159 and the answer-engine correction are on PR #35. No merge or new Pages deployment is claimed; verify after a clean gate.",
+    "status": "pending_after_batch_162",
+    "note": "Batch162 and the readiness regression are staged on PR #35. No merge or new Pages deployment is claimed; verify after a clean gate.",
     "url": "https://malkashacham.github.io/maaneh-ledorot"
   }
 }
