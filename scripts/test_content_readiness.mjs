@@ -1274,6 +1274,9 @@ assert.equal(enriched5959845.evidence_family_id,'sicha-5728-shabbat-pinchas-tora
 assert.equal(batch112Data.deduplication_check.full_index_scan_available,true);
 assert.deepEqual(batch112Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch112Data.deduplication_check.missing_canonical_identities,[]);
+assert.deepEqual(batch112Data.deduplication_check.missing_at_historical_batch_boundary,[2989411]);
+const batch112LaterCanonical=batch112Data.deduplication_check.resolved_existing_identity_candidates.find(x=>String(x.aid)==='2989411');
+assert(batch112LaterCanonical&&batch112LaterCanonical.canonical_file==='data/items/content-research-batch-140-2026-11-17.json');
 assert.equal(batch112Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(['reconciled','reconciled_with_variance'].includes(batch112Data.reconciliation_status));
 const batch112Actual=readinessMetrics(batch112Data.metrics_actual_after);
