@@ -11,14 +11,14 @@
   "source_body_pages_opened": 10,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 9,
-  "existing_identities_enriched": 1,
+  "new_source_identities": 8,
+  "existing_identities_enriched": 2,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 13,
-  "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 14,
-  "answer_eligible_source_families_added": 9,
-  "independent_witnesses_added": 9,
+  "new_response_propositions": 10,
+  "existing_response_propositions_added": 2,
+  "total_new_paraphrase_entries": 12,
+  "answer_eligible_source_families_added": 8,
+  "independent_witnesses_added": 8,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
   "blocked_candidate_count": 1,
@@ -35,16 +35,16 @@
   },
   "metrics_before_source": "Expected boundary after pending batch 111; not yet reconciled or published.",
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1076,
+    "answer_eligible_unique_sources": 1075,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3147
+    "answer_eligible_propositions": 3145
   },
   "metrics_actual_after": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 9,
+    "answer_eligible_unique_sources": 8,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 14
+    "answer_eligible_propositions": 12
   },
   "new_aids": [
     6101,
@@ -54,11 +54,11 @@
     6105,
     6106,
     6107,
-    6108,
-    2989411
+    6108
   ],
   "enriched_aids": [
-    5959845
+    5959845,
+    2989411
   ],
   "rechecked_aids": [],
   "excluded_aids": [],
@@ -66,17 +66,16 @@
     6105
   ],
   "language_distribution": {
-    "Hebrew": 6,
+    "Hebrew": 5,
     "Yiddish": 3
   },
   "original_language_distribution": {
-    "Hebrew": 6,
+    "Hebrew": 5,
     "Yiddish": 3
   },
   "source_type_distribution": {
     "published_hebrew_hayom_yom_entry": 5,
-    "published_yiddish_hayom_yom_entry": 3,
-    "published_hebrew_letter": 1
+    "published_yiddish_hayom_yom_entry": 3
   },
   "evidence_family_ids": [
     "hayom-yom-20-adar-i-aid6101",
@@ -86,8 +85,7 @@
     "hayom-yom-24-adar-i-aid6105",
     "hayom-yom-25-adar-i-aid6106",
     "hayom-yom-26-adar-i-aid6107",
-    "hayom-yom-27-adar-i-aid6108",
-    "letter-5711-5-elul-yeshiva-students-aid2989411"
+    "hayom-yom-27-adar-i-aid6108"
   ],
   "same_family_items": [],
   "translations_counted_as_independent_witnesses": 0,
@@ -95,15 +93,25 @@
     "new_aids_unique": true,
     "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
-    "unique_new_evidence_families": 9,
+    "unique_new_evidence_families": 8,
     "duplicate_alias_identities": 0,
     "translations_counted_as_independent_witnesses": 0,
     "scan_only_verification_used": 0,
-    "checked_against": "Current 1,022-record content-review queue; all 12 bulk-indexed files; GitHub repository search for AIDs 6101–6108 and 2989411. No matching AID was found in those checks. Full canonical identity/Evidence Family collision scan remains the reconciliation job's responsibility.",
+    "checked_against": "Full reconciliation found that AID 2989411 already existed in batch140 under the same source URL. Its distinct opening blessing proposition was merged into the batch140 canonical record; the duplicate batch112 record was removed. The Yiddish parallel remains non-independent and was not inspected.",
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
     "existing_identity_updates_unique": true,
-    "same_family_memberships": 0
+    "same_family_memberships": 0,
+    "all_target_identities_answer_eligible": null,
+    "canonical_identity_collisions": null,
+    "missing_canonical_identities": null,
+    "resolved_existing_identity_candidates": [
+      {
+        "aid": 2989411,
+        "canonical_file": "data/items/content-research-batch-140-2026-11-17.json",
+        "action": "enriched_existing_identity_in_place"
+      }
+    ]
   },
   "blocked_candidates": [
     {
@@ -196,10 +204,16 @@
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989411",
       "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989411",
       "inspected_original_language_body": true,
-      "locator": "he.chabad.org AID 2989411, גוף המכתב שורות 170–184 והערת פרסום שורה 193.",
+      "locator": "he.chabad.org AID 2989411, כתובת הנמען וגוף המכתב, שורות 170–186.",
       "parallel_yiddish_version_reported": true,
       "parallel_yiddish_version_inspected": false,
-      "parallel_version_independent_witness_counted": false
+      "parallel_version_independent_witness_counted": false,
+      "action": "enriched_existing_identity_in_place",
+      "existing_identity": true,
+      "canonical_file": "data/items/content-research-batch-140-2026-11-17.json",
+      "proposition_count": 1,
+      "propositions_added": 1,
+      "reconciled_to_existing_evidence_family_id": "igrot-letter-elul-05-year-as-printed-aid2989411"
     },
     {
       "aid": 5959845,
@@ -966,106 +980,6 @@
       "rights_status": "copyrighted-link-only",
       "canonical_file": "data/items/content-research-batch-112-2026-11-16.json",
       "title": "היום יום — כ״ז אדר א׳ ה׳תש״ג"
-    },
-    {
-      "id": "letter-5711-5-elul-yeshiva-students-aid2989411",
-      "aid": 2989411,
-      "title": "מכתב, ה׳ אלול, ה׳תשי״א — לתלמידי מוסדות התורה ובני הישיבות",
-      "source_class": "Letters",
-      "source_class_detail": "מכתב עברי מתוארך לתלמידי מוסדות התורה ובני הישיבות לקראת פתיחת זמן הלימודים; העמוד מציג חתימה מודפסת ״מ. שניאורסאהן״ והפניה לפרסום קודם.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "ה׳ אלול ה׳תשי״א",
-      "date": "ה׳ אלול ה׳תשי״א",
-      "date_precision": "calendar_day",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "context_status": "partial",
-      "summary_researcher": "המכתב נשלח לתלמידי מוסדות התורה ובני הישיבות לקראת פתיחת זמן הלימודים. הוא מציג את ימי החופש כהזדמנות לצבירת כוח ולהגברת ההתמדה והחיות בלימוד התורה ובחינוך הכשר, ומציע חשבון על ההנהגה בעבר לקראת השנה החדשה.",
-      "provenance": {
-        "authorship_status": "העמוד מציג מכתב מתוארך ה׳ אלול ה׳תשי״א, הפונה לתלמידי מוסדות התורה ובני הישיבות ומסתיים בחתימה מודפסת ״מ. שניאורסאהן״. לא נבדק אוטוגרף או כתב־יד.",
-        "signature_status": "חתימה מודפסת ״מ. שניאורסאהן״ מופיעה בגוף הפרסום בשורה 184; לא נבדק אוטוגרף.",
-        "source_witness": "he.chabad.org AID 2989411, גוף המכתב שורות 170–184 והערת הפרסום בשורה 193; https://he.chabad.org/library/article_cdo/aid/2989411",
-        "transmission_type": "פרסום דיגיטלי של מכתב עברי עם חתימה מודפסת; לא נבדק המקור הארכיוני.",
-        "textual_status": "גוף המכתב העברי והחתימה המודפסת נפתחו ונבדקו; הערת השוליים מציינת שהמכתב נכתב ונשלח גם ביידיש, אך הנוסח היידי לא נבדק.",
-        "editorial_scope": "נבדקו כתובת הנמען, גוף המכתב והחתימה בשורות 170–184, וכן הערת הפרסום בשורה 193; לא נבדקו אוטוגרף, מהדורה מודפסת או הנוסח היידי המקביל.",
-        "verification_status": "Parsed; source_text_inspected; partial context.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989411",
-        "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989411",
-        "accessed": "2026-11-16T04:58:08+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "גוף המכתב העברי והחתימה המודפסת נפתחו ונבדקו במקטעים המצוינים.",
-        "complete_partial": "partial",
-        "notes": "לא נבדקו אוטוגרף, כתב־יד, עותק ארכיוני או נוסח יידי."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "נשמרו פרפרזות מחקריות לא־מילוליות וקישור למקור; לא הועתק טקסט מוגן במלואו."
-      },
-      "relations": [],
-      "taxonomy": {
-        "publisher_index_terms": [
-          "Letters",
-          "מכתב",
-          "תלמידי מוסדות התורה",
-          "בני הישיבות"
-        ],
-        "research_terms": [
-          "חינוך",
-          "לימוד תורה",
-          "התמדה",
-          "חיות בלימוד",
-          "חשבון הנפש",
-          "פתיחת זמן הלימודים"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־16.11.2026. נפתח ונבדק גוף המכתב העברי ב-he.chabad.org AID 2989411, שורות 170–184, וכן הערת הפרסום בשורה 193. המכתב פונה לתלמידי מוסדות התורה ובני הישיבות ומסתיים בחתימה מודפסת ״מ. שניאורסאהן״. הערת השוליים מציינת שהמכתב נכתב ונשלח גם ביידיש; הנוסח היידי לא נבדק ולכן אינו נספר כעד עצמאי נוסף. לא נבדקו אוטוגרף, כתב־יד, מהדורה מודפסת או נסיבות שליחה מעבר לפרסום. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף המכתב; לא הועתק טקסט מוגן במלואו.",
-      "type": "letter",
-      "collection": "מכתבים — תורת מנחם / תשי״א",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989411",
-      "response_propositions": [
-        "המכתב פונה לתלמידי מוסדות התורה ולבני הישיבות לקראת פתיחת זמן הלימודים, ומברך על הצלחת תחילת השנה ועל הצלחת שנת הלימודים כולה.",
-        "המכתב מציג את ימי החופש כזמן שנועד לאגור כוח ולהוסיף אומץ, כדי להמשיך או להתחיל לימוד תורה וחינוך כשר ביראת שמים בהתמדה ובחיות מוגברות.",
-        "המכתב מבקש מהתלמידים להוציא לפועל שקידה, התמדה וחיות בקניין התורה, ובחודש אלול לערוך חשבון על הנהגות העבר ולהחליט מה ראוי לשנות ולתקן לקראת ההמשך."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org AID 2989411, כתובת הנמען ושורות 170–176.",
-        "he.chabad.org AID 2989411, גוף המכתב, שורות 176–177.",
-        "he.chabad.org AID 2989411, גוף המכתב, שורות 179–180."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 2989411, גוף המכתב, שורות 176–180.",
-      "evidence_family_id": "letter-5711-5-elul-yeshiva-students-aid2989411",
-      "parent_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף המכתב העברי ב-he.chabad.org AID 2989411 ביום 16.11.2026. נבדקו כתובת הנמען ושורות 170–184, ובפרט 176–180; חתימה מודפסת בשורה 184 והערת פרסום בשורה 193. ההקשר חלקי: לא נבדקו אוטוגרף, כתב־יד, מהדורה מודפסת או נסיבות שליחה מחוץ למה שמופיע בעמוד. הערת השוליים מציינת שהמכתב נכתב ונשלח גם ביידיש; הנוסח היידי לא נבדק ולכן אינו נספר כעד עצמאי נוסף. הפרופוזיציות הן פרפרזות לא־מילוליות של גוף המכתב; לא הועתק טקסט מוגן במלואו.",
-      "witness_provenance": "he.chabad.org AID 2989411, גוף המכתב שורות 170–184 והערת הפרסום בשורה 193; https://he.chabad.org/library/article_cdo/aid/2989411",
-      "documented_circumstances": "מכתב מיום ה׳ אלול ה׳תשי״א, ברוקלין, נ.י., המופנה לתלמידי מוסדות התורה ובני הישיבות לקראת תחילת זמן הלימודים.",
-      "question_or_problem": "מה מבקש המכתב מתלמידי מוסדות התורה ובני הישיבות לקראת פתיחת זמן הלימודים וכיצד הוא מציע להתכונן לשנה החדשה?",
-      "conditions_or_qualifications": [
-        "הפרסום מציג חתימה מודפסת; לא נבדק אוטוגרף או עותק ארכיוני.",
-        "נבדק הנוסח העברי בלבד; הערת השוליים מציינת שנכתב ונשלח גם נוסח יידי, אך הוא לא נבדק ולא נספר כעד נוסף.",
-        "ההקשר חלקי; אין להסיק מכך על קבלת המכתב בפועל או על יישום ההנחיות.",
-        "הפרופוזיציות הן פרפרזות לא־מילוליות; לא הועתק טקסט מוגן במלואו."
-      ],
-      "audience": "תלמידי מוסדות התורה בכלל ובני הישיבות בפרט, לפי כתובת המכתב.",
-      "primary_secondary_status": "Publisher's Hebrew letter with printed signature; no autograph, archival original or Yiddish version examined.",
-      "witness_type": "published_hebrew_letter",
-      "translation_status": "נבדק הנוסח העברי בלבד; הערת השוליים מציינת שהמכתב נכתב ונשלח גם ביידיש, אך הנוסח היידי לא נבדק ולא נספר כעד עצמאי.",
-      "independent_witness": true,
-      "translation_of_evidence_family_id": null,
-      "rights_status": "copyrighted-link-only",
-      "canonical_file": "data/items/content-research-batch-112-2026-11-16.json"
     }
   ],
   "existing_identity_updates": [
@@ -1082,7 +996,20 @@
       ],
       "action": "enriched_existing_identity_in_place",
       "note": "נפתח גוף השיחה העברי AID 5959845, סעיפים ז–ח, שורות 214–224 ו־233–244. נוספה פרפרזה על ההבחנה שבשיחה בין תלמידים שלא הבינו מחמת קושי לבין תלמידים שהתרשלו בלימוד. הזהות, משפחת הראיות והסטטוס Parsed נשמרו."
+    },
+    {
+      "aid": 2989411,
+      "id": "igrot-letter-igrot-letter-elul-05-year-as-printed-aid2989411",
+      "canonical_file": "data/items/content-research-batch-140-2026-11-17.json",
+      "evidence_family_id": "igrot-letter-elul-05-year-as-printed-aid2989411",
+      "action": "enriched_existing_identity_in_place",
+      "existing_propositions_before": 2,
+      "propositions_added": 1,
+      "total_propositions_after": 3,
+      "body_locator": "he.chabad.org AID 2989411, כתובת הנמען וגוף המכתב, שורות 170–186.",
+      "reason": "AID 2989411 was already canonical in batch140. The distinct opening blessing passage was merged into the same AID, Hebrew presentation and Evidence Family; the Yiddish parallel noted by the publisher was not inspected and is not counted independently."
     }
   ],
-  "metrics_attribution_note": "תשעה פריטים חדשים: שמונה ערכי היום יום נפרדים (AIDs 6101–6108; חמש עברית ושלוש יידיש) ומכתב עברי אחד (AID 2989411); הערת השוליים מציינת שנכתב ונשלח גם נוסח יידי, שלא נבדק ולא נספר כעד נוסף. בנוסף הועשרה אותה זהות של שיחה קיימת (AID 5959845) בפרפרזה אחת מסעיפים ז–ח. תרגום לא נספר כעד עצמאי. AID 6105 נפתח דרך דף הלימוד היומי המקביל לאחר שהנתיב העברי הישיר הופנה לעמוד אחר. כל הרשומות נשארו Parsed; אין קידום ל-Verified. המדדים בפועל ממתינים ל-reconciliation."
+  "metrics_attribution_note": "תשעה פריטים חדשים: שמונה ערכי היום יום נפרדים (AIDs 6101–6108; חמש עברית ושלוש יידיש) ומכתב עברי אחד (AID 2989411); הערת השוליים מציינת שנכתב ונשלח גם נוסח יידי, שלא נבדק ולא נספר כעד נוסף. בנוסף הועשרה אותה זהות של שיחה קיימת (AID 5959845) בפרפרזה אחת מסעיפים ז–ח. תרגום לא נספר כעד עצמאי. AID 6105 נפתח דרך דף הלימוד היומי המקביל לאחר שהנתיב העברי הישיר הופנה לעמוד אחר. כל הרשומות נשארו Parsed; אין קידום ל-Verified. המדדים בפועל ממתינים ל-reconciliation.",
+  "existing_identity_updates_count": 2
 }
