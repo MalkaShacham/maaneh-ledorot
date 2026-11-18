@@ -2168,9 +2168,9 @@ assert(enriched1875534b&&enriched1875534b.has_content_evidence===true&&enriched1
 assert.equal(enriched1875534b.independent_witness,false);
 assert(enriched1875534b.response_proposition_locators.some(l=>l.includes('288–290')));
 const translated0552=idx.entries.find(e=>String(e.source_url||'').endsWith('/1200710552'));
-assert(translated0552&&translated0552.original_language==='Russian'&&translated0552.status==='Parsed'&&translated0552.independent_witness===false);
+assert(translated0552&&translated0552.original_language==='Russian'&&translated0552.status==='Linked'&&translated0552.type==='translated_presentation_alias'&&translated0552.independent_witness===false);
 const photo0429=idx.entries.find(e=>String(e.source_url||'').endsWith('/1200710429'));
-assert(photo0429&&photo0429.status==='Parsed'&&photo0429.independent_witness===false);
+assert(photo0429&&photo0429.status==='Linked'&&photo0429.type==='duplicate_presentation_alias'&&photo0429.independent_witness===false);
 
 const batch088Queries=[
  ['מה כתב הרבי למחנך על השפעת החינוך לאחר שהתלמידים עוזבים את המסגרת?','chabadlibrary-1200890083'],
