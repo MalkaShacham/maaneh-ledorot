@@ -1375,7 +1375,7 @@ assert.deepEqual(batch113Data.reconciliation_variance,{
  answer_eligible_propositions:batch113Actual.answer_eligible_propositions-batch113Data.metrics_expected_after.answer_eligible_propositions
 });
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
-assert.equal(lastBatchSummary.batch_id,'158');
+assert.equal(lastBatchSummary.batch_id,'159');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
 assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
 assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
@@ -1383,12 +1383,12 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  content_verified_unique_sources:metrics.content_verified_unique_sources-lastBatchSummary.metrics_actual_before.content_verified_unique_sources,
  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
 });
-assert.equal(acquisitionState.manual_web_review.batch_id,'158');
-assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-158-2026-11-18.json');
+assert.equal(acquisitionState.manual_web_review.batch_id,'159');
+assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-159-2026-11-18.json');
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'157');
 assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-157-2026-11-18.json');
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
-assert.equal(acquisitionState.last_manual_web_review.batch_id,'158');assert.equal(acquisitionState.last_manual_review.batch_id,'158');
+assert.equal(acquisitionState.last_manual_web_review.batch_id,'159');assert.equal(acquisitionState.last_manual_review.batch_id,'159');
 for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
@@ -3799,8 +3799,8 @@ assert.equal(projectState.development_recovery.current_batch,'157');
 assert.equal(projectState.development_recovery.last_batch_summary.batch_id,'157');
 assert.deepEqual(readinessMetrics(projectState.development_recovery.last_batch_summary.metrics_after_actual),readinessMetrics(metrics));
 for(const [id,next] of [['124',batch125Data.metrics_actual_before],['125',batch126Data.metrics_actual_before],['126',batch127Data.metrics_actual_before],['127',batch128Data.metrics_actual_before],['128',batch129Data.metrics_actual_before],['129',batch130Data.metrics_actual_before],['130',batch131Data.metrics_actual_before],['131',batch132Data.metrics_actual_before],['132',batch133Data.metrics_actual_before],['133',batch134Data.metrics_actual_before],['134',batch135Data.metrics_actual_before],['135',batch136Data.metrics_actual_before]]){const audit=projectState.development_recovery.reconciliation_chain.find(x=>String(x.batch_id)===id);assert(audit,'missing reconciliation audit for batch '+id);assert.deepEqual(readinessMetrics(audit.metrics_actual_after),readinessMetrics(next));}
-assert.equal(acquisitionState.manual_web_review.batch_id,'158');
-assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-158-2026-11-18.json');
+assert.equal(acquisitionState.manual_web_review.batch_id,'159');
+assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-159-2026-11-18.json');
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'157');
 assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-157-2026-11-18.json');
 assert.equal(acquisitionState.last_manual_web_review.batch_id,'158');
