@@ -128,12 +128,12 @@
       "before": {
         "answer_eligible_unique_sources": 1540,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
+        "answer_eligible_propositions": 4004
       },
       "expected_after": {
         "answer_eligible_unique_sources": 1540,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4004
+        "answer_eligible_propositions": 4012
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -207,7 +207,8 @@
         "165",
         "166",
         "167",
-        "168"
+        "168",
+        "169"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending. Batch 151 corrected after source-body review and canonical AID deduplication: 5 new identities, 4 in-place enrichments, 4 rechecks, 9 new paraphrases; expected planning boundary 1507/854/3855. Actual reconciliation remains pending. Batch152 planning boundary: 1507/854/3855 → 1509/854/3863; this is not a measured result. Batch151 canonical summary is 5 new identities, 4 enrichments, 4 rechecks and 9 paraphrases; latest acquisition metadata has been aligned to the corrected batch manifest. Batch153 correction: AID 2989386's duplicate batch141 record was removed; corrected planning baseline 1510/854/3867 and expected boundary 1518/854/3878 are not measured. PR-head run 44236655981 reported 1511/854/3868 before this duplicate cleanup; its content-readiness test then failed on AID 2989153 expecting 13 instead of 14. Batch157 baseline uses the PR-head CI workspace measurement after batch156 (run 44265320228): 1519/854/3903; this was not committed to main. Expected 1522/854/3915 is planning only pending full reconciliation. Batch158 expected planning boundary 1522/854/3923 (not measured after batch158); batch159 planning boundary 1530/854/3931 after eight new eligible candidate families and eight inspected propositions. The current public main metrics remain 977/878/2950; no metric has been overwritten. Batch162 planning boundary 1530/854/3951 to 1530/854/3959; this is not a measured post-reconciliation count. No new source identity or Verified promotion. Batch164 adds eight in-place propositions to existing Hebrew Sicha identities; planning boundary 1530/854/3967 → 1530/854/3975 is not measured. No source-family or Verified-count increase is expected. Exact-head CI run 44402037932 measured 1540/854/3996 after Batch167 (not committed/public), while Batch167 planning expected 1539/854/3995; +1 source/+1 proposition variance remains unattributed. Batch168 starts from the measured PR-workspace boundary 1540/854/3996; expected 1540/854/4004 is planning only.",
       "summary": {
@@ -360,13 +361,13 @@
     "reconciliation_status": "pending_reconciliation",
     "baseline_correction": " Batch148 correction: CI run 44167373651 measured 1496/854/3815 before duplicate repair. AID 2989555 was present in both batch101 and batch141 under different Evidence Families; the duplicate was merged into the batch101 family. Corrected expected boundary after eight in-place propositions is 1495/854/3823; not yet measured or committed. Batch165 baseline: PR-workspace run 44379054834 measured 1530/854/3973 after Batch164 and before Batch165; this is not public main. Planning boundary after Batch165 is 1533/854/3981, not a measured result.",
     "latest_uncommitted_ci_measurement": {
-      "run_id": 44402037932,
-      "head_sha": "da32e885577456d606d81662c98bd025ab2a3c9e",
+      "run_id": 44405343996,
+      "head_sha": "6718fed1167073a048317cc9cf6c55cac1793301",
       "answer_eligible_unique_sources": 1540,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3996,
+      "answer_eligible_propositions": 4004,
       "committed": false,
-      "note": "reconcile_metrics.py completed on the PR workspace before test_content_readiness.mjs failed at a stale AID 2989585 proposition-count assertion; these are not public main metrics."
+      "note": "Exact-head reconciliation completed before the readiness test failed at a stale batch-167 assertion. This is a measured PR-workspace baseline after Batch168, not public main metrics."
     }
   },
   "ux": {
@@ -403,19 +404,14 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "168",
+    "current_batch": "169",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "167",
     "last_batch_summary": {
-      "batch_id": "168",
-      "batch_file": "data/items/content-research-batch-168-2026-11-18.json",
+      "batch_id": "169",
+      "batch_file": "data/items/content-research-batch-169-2026-11-19.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1540,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 4004
@@ -423,30 +419,37 @@
       "metrics_actual_before": {
         "answer_eligible_unique_sources": 1540,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
+        "answer_eligible_propositions": 4004
       },
-      "metrics_actual_after": null,
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4012
+      },
+      "metrics_after_actual": null,
       "metrics_delta_actual": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "metrics_delta_at_batch_boundary_is_planning_only": true,
       "new_source_identities": 0,
       "existing_identities_enriched": 8,
       "source_bodies_inspected": 8,
       "existing_response_propositions_added": 8,
       "answer_eligible_source_families_added": 0,
       "content_verified_unique_sources_added": 0,
-      "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 0,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 8
-      },
-      "metrics_delta_at_batch_boundary_is_planning_only": true
+      "blocked_candidate_count": 1,
+      "note": "Eight source-grounded in-place propositions across eight existing Hebrew Sicha Evidence Families; one Yiddish Yechidus page excluded because it exposes media/navigation metadata without a transcript body. No Verified promotion."
     },
-    "last_run_note": "Batch168: eight existing Hebrew Sicha identities enriched in place with eight new non-verbatim source-grounded propositions after eight alternate /therebbe routes exposed summary shells. Same-run fallback inspected eight accessible original-Hebrew publisher bodies. No new source identities, Evidence Families, independent witnesses or Verified promotions. Exact-head reconciliation pending.",
-    "last_batch_blocked_count": 8,
-    "last_batch_blocked_reason": "Eight /therebbe routes and their Hebrew library aliases exposed only summary/navigation shells without inspectable body text. They were excluded; eight accessible original-Hebrew Sicha body passages from other public publisher pages were inspected in the same run. No crawler retry or access bypass.",
+    "last_run_note": "Batch169: eight original-Hebrew Sicha body passages inspected and added in place; Yiddish Yechidus AID 553691 excluded as media-only. Exact-head reconciliation and readiness gate pending.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 553691 public Yiddish Yechidus page exposed no transcript body; excluded and replaced by eight accessible Hebrew Sicha body inspections.",
     "next_work": [
-      "Run exact-head full-index reconciliation through Batch168; verify each of the eight enriched AIDs has exactly one canonical identity and its existing Evidence Family ID.",
-      "Pass test_content_readiness.mjs and the Answer Quality Gate on the exact PR head; preserve claim-level citations and deep researcher evidence maps.",
-      "Only after green checks, merge PR #35 to main; then verify main-branch reconciliation, public metrics, Actions and GitHub Pages deployment."
+      "Run exact-head full-index reconciliation for pending batches through 169 and verify all eight AIDs have exactly one canonical identity and their unchanged Evidence Family IDs.",
+      "Pass test_content_readiness.mjs and the Answer Quality Gate on the exact PR head; verify the new Torah-study/action/world retrieval in regular and deep researcher modes.",
+      "Only after green checks, merge PR #35 to main, verify public metrics and the GitHub Pages deployment."
     ],
     "last_reconciliation": {
       "batch_id": "089",
@@ -810,16 +813,56 @@
       "reconciliation_status": "reconciled"
     },
     "last_manual_web_review": {
-      "batch_id": "168",
-      "batch_file": "data/items/content-research-batch-168-2026-11-18.json",
-      "reviewed_at": "2026-11-18T23:32:05+02:00",
+      "batch_id": "169",
+      "batch_file": "data/items/content-research-batch-169-2026-11-19.json",
+      "generated": "2026-11-19T00:01:35+02:00",
+      "reviewed_at": "2026-11-19T00:01:35+02:00",
+      "title": "Eight additional in-place Hebrew Sicha enrichments; Yiddish Yechidus transcript route excluded as media-only",
       "status": "pending_reconciliation",
-      "reviewed_item_count": 16,
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
       "source_bodies_inspected": 8,
-      "source_body_pages_opened": 24,
+      "source_body_pages_opened": 9,
+      "metadata_only_items_rechecked": 1,
+      "search_extracts_inspected": 0,
+      "search_extracts_used_as_content": 0,
       "new_source_identities": 0,
       "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 0,
       "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4004
+      },
+      "metrics_before_source": "Exact-head PR workspace reconciliation in Answer Quality Gate run 44405343996 after Batch168; measured 1540/854/4004 before Batch169, not committed to main and not public metrics.",
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4004
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4012
+      },
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "reconciliation_variance": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "metrics_delta_at_batch_boundary_is_planning_only": true,
+      "metrics_attribution_note": "The baseline 1540/854/4004 is the measured PR-workspace snapshot after Batch168 from run 44405343996; it is not public main. Batch169 adds eight source-grounded paraphrases in place, so no increase in answer_eligible_unique_sources or content_verified_unique_sources is expected.",
+      "new_aids": [],
       "enriched_aids": [
         2989021,
         2989054,
@@ -830,38 +873,437 @@
         5959968,
         4296159
       ],
-      "new_aids": [],
-      "blocked_candidate_count": 8,
+      "rechecked_aids": [],
       "blocked_aids": [
-        4666265,
-        4666267,
-        4666268,
-        4666269,
-        4666270,
-        4666316,
-        4666317,
-        4666318
+        553691
       ],
+      "excluded_aids": [
+        553691
+      ],
+      "language_distribution": {
+        "Hebrew": 8
+      },
+      "original_language_distribution": {
+        "Hebrew": 8
+      },
+      "source_type_distribution": {
+        "Sicha": 8
+      },
+      "evidence_family_ids": [
+        "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+        "sicha-5719-shavuot-day2-aid2989054",
+        "sicha-5719-erev-shavuot-night-aid2989052",
+        "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+        "sicha-5719-20-menachem-av-aid2989062",
+        "sicha-5726-simchat-torah-night-aid4385513",
+        "sicha-5730-lag-baomer-parade-aid5959968",
+        "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159"
+      ],
+      "same_family_items": [],
+      "translations_added": 0,
+      "translations_counted_as_independent_witnesses": 0,
       "fallback_source_attempted": true,
-      "metrics_before": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
+      "fallback_source_results": {
+        "accessible_item_level_bodies": 8,
+        "existing_identity_bodies": 8,
+        "language": "Hebrew",
+        "source": "BeitChabad.com / he.chabad.org public Hebrew Sicha transcripts",
+        "note": "After the Yiddish Yechidus page exposed only media/navigation metadata and no transcript body, eight accessible original-Hebrew Sicha body pages were inspected and used for in-place enrichment."
       },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4004
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "target_identity_matches": 8,
+        "target_identity_duplicates": 0,
+        "selected_unique_evidence_families": 8,
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "all_target_identities_answer_eligible": true,
+        "same_family_items": [],
+        "note": "All eight AIDs were matched to exactly one existing canonical record and their existing Evidence Family IDs before enrichment. The preceding exact-head index audit found all eight answer-eligible; Batch169 changes only proposition content and provenance. Full current-head reconciliation remains pending."
       },
-      "metrics_actual_before": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
-      },
-      "metrics_actual_after": null,
+      "blocked_candidate_count": 1,
+      "metadata_only_candidate_count": 1,
+      "excluded_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "metadata_only_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "excluded_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "source_body_review": [
+        {
+          "item_aid": 2989021,
+          "id": "chabad-sicha-2989021",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989021",
+          "web_source_ref": "turn809833view0",
+          "body_locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך השיחה מביא מסורת בשם הבעש״ט, כפי שנמסרה דרך רבנו הזקן, ר׳ פינחס רייזעס והצמח צדק, וקושרת תמיכה בלומדי תורה, קביעות עתים ושמחה בלימוד לברכה שהדורות הבאים יעסקו בתורה ובמצוות. המחול מתואר כסמל לקירוב שלאחר ריחוק. זהו תיאור של שרשרת מסירה המובאת בשיחה, לא עדות עצמאית שנבדקה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989021; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989021, he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הייחוס הוא שרשרת המסירה כפי שהיא מתוארת בגוף השיחה; לא נבדקו בנפרד המקורות הקודמים בשרשרת, ואין להציג את הפרפרזה כציטוט ישיר של הבעש״ט או כעדות עצמאית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הייחוס הוא שרשרת המסירה כפי שהיא מתוארת בגוף השיחה; לא נבדקו בנפרד המקורות הקודמים בשרשרת, ואין להציג את הפרפרזה כציטוט ישיר של הבעש״ט או כעדות עצמאית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989054,
+          "id": "chabad-sicha-2989054",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-shavuot-day2-aid2989054",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989054",
+          "web_source_ref": "turn809833view1",
+          "body_locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "ההסבר להעדפת היום שלאחר מתן תורה הוא שההתגלות עצמה באה מלמעלה בעוצמה שאינה נקלטת בכלי הנבראים ואף מבטלת את מציאותם; לאחר מכן ניתנת לנבראים אפשרות לפעול מתוך מציאותם ולהפוך את חייהם ואת העולם לכלי ולדירה לאלוקות. מכאן שהעבודה שמלמטה למעלה היא מוקד החביבות. זהו מהלך רעיוני בשיחה ולא קביעה היסטורית על מועד מתן תורה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989054; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989054, he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת את ההבחנה התיאולוגית בשיחה בין גילוי שמלמעלה לעבודה שמלמטה; אין להציג אותה כהכרעה היסטורית בין שיטות התאריך או כטענה אמפירית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת את ההבחנה התיאולוגית בשיחה בין גילוי שמלמעלה לעבודה שמלמטה; אין להציג אותה כהכרעה היסטורית בין שיטות התאריך או כטענה אמפירית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989052,
+          "id": "chabad-sicha-2989052",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-erev-shavuot-night-aid2989052",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989052",
+          "web_source_ref": "turn809833view2",
+          "body_locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בהמשך השיחה, הדיון במושג הסתירה הרוחנית נקשר לגאווה: השיחה מסבירה שהעמדת העצמי במרכז מוצגת כמניעה את השראת האלוקות, ואילו הענווה שנקנית בעבודת הספירה מבטלת את הסתירה; מכאן נבנה גם הסבר לאפשרות של מחילה בדיעבד. המהלך נשען על דרשות ומקורות שהשיחה מזכירה, ואינו הוראה הלכתית בדיני סוטה או ביחסים זוגיים.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989052; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989052, he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הקטע הוא דרשה על מסכת סוטה ועל עבודת המידות; אין להסיק ממנו אבחון פסיכולוגי, הוראה ביחסים זוגיים או פסיקה הלכתית בדיני סוטה. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע הוא דרשה על מסכת סוטה ועל עבודת המידות; אין להסיק ממנו אבחון פסיכולוגי, הוראה ביחסים זוגיים או פסיקה הלכתית בדיני סוטה."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 5989687,
+          "id": "chabad-sicha-5989687",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/5989687",
+          "web_source_ref": "turn809833view3",
+          "body_locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בהמשך השיחה נערכת הבחנה בין קביעת שיוך כהונה, לויה וישראל לפי האב לבין קביעת יהדות הילד לפי האם; היא מייחסת לאם את עיקר עיצוב הבית והחינוך הראשוני, ולאב תפקיד מסייע בהתקדמות הלימודית המאוחרת. יש להציג זאת כמסגרת הנורמטיבית והדרשנית של השיחה, לא כממצא אמפירי או תחליף למקור הלכתי מוסמך.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 5989687; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 5989687, he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת את המסגרת הנורמטיבית והדרשנית של שיחה בלתי מוגה; אין להשתמש בה לבדה לפסיקת מעמד אישי או כראיה אמפירית על חלוקת תפקידי הורים. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת את המסגרת הנורמטיבית והדרשנית של שיחה בלתי מוגה; אין להשתמש בה לבדה לפסיקת מעמד אישי או כראיה אמפירית על חלוקת תפקידי הורים."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989062,
+          "id": "chabad-sicha-2989062",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-20-menachem-av-aid2989062",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989062",
+          "web_source_ref": "turn809833view4",
+          "body_locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "הדיון במשנה האחרונה של מסכת גיטין משמש את השיחה להשוואת התנאים שבהם עולה אפשרות הגירושין בעמדות בית שמאי, בית הלל ור׳ עקיבא; היא מפרשת את בית שמאי כמדגישים מאמץ מרבי לשמירת שלום הבית, ומעמידה מולם את ההרחבה שבעמדות האחרות. בהמשך היא מבחינה בין חן ליופי. זהו ניתוח עיוני של המשנה, לא הנחיה הלכתית למקרה אישי.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989062; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989062, he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הקטע מנתח משנה במסגרת שיחה בלתי מוגה; אין להציגו כפסיקה מעשית או כהמלצה ביחס למקרה זוגי מסוים. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע מנתח משנה במסגרת שיחה בלתי מוגה; אין להציגו כפסיקה מעשית או כהמלצה ביחס למקרה זוגי מסוים."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 4385513,
+          "id": "chabad-sicha-4385513",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5726-simchat-torah-night-aid4385513",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4385513",
+          "web_source_ref": "turn809833view5",
+          "body_locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך השיחה מבחין בין העולם כפי שהוא יכול להתקיים כמרחב שומם לבין עולם שנעשה ראוי למגורי אדם ולדירה לאלוקות באמצעות לימוד התורה; היא קושרת את חיות הלימוד גם לקיום המצוות בפועל ולהנהגה של צדק ויושר. זהו תיאור תיאולוגי של תכלית העולם בשיחה, לא טענה מדעית על היווצרות העולם.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 4385513; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4385513, he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת תפיסה תיאולוגית של השיחה על תכלית העולם ולימוד התורה; אין להציגה כהסבר מדעי לבריאת העולם. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת תפיסה תיאולוגית של השיחה על תכלית העולם ולימוד התורה; אין להציגה כהסבר מדעי לבריאת העולם."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 5959968,
+          "id": "chabad-sicha-5959968",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5730-lag-baomer-parade-aid5959968",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/5959968",
+          "web_source_ref": "turn809833view6",
+          "body_locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בקטע על ״הצדעה ליהדות״ השיחה מבחינה בין קיום תורה ומצוות כעול בלבד לבין יחס של שמחה והכרת ערך האפשרות לקיים את מצוות ה׳; היא קוראת לילדים לא להסתפק בדוגמה האישית אלא להשפיע על חברים, קרובים וילדים אחרים ללמוד ולקיים מצוות. זהו מסר חינוכי של השיחה, לא הבטחה לתוצאה חברתית מדידה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 5959968; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 5959968, he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת קריאה חינוכית לילדים במסגרת שיחת ל״ג בעומר; אין להסיק ממנה תוצאה חברתית מדידה או הוראה כללית שאינה תלויה בהקשר. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת קריאה חינוכית לילדים במסגרת שיחת ל״ג בעומר; אין להסיק ממנה תוצאה חברתית מדידה או הוראה כללית שאינה תלויה בהקשר."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 4296159,
+          "id": "chabad-sicha-4296159",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4296159",
+          "web_source_ref": "turn809833view7",
+          "body_locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך הדיון מבהיר שהעמדת מעלת התורה מעל מצווה שאי אפשר לעשותה בידי אחרים אינה הוראה מעשית לבטל את המצווה; השיחה מציבה זאת במסגרת העבודה הרוחנית, שבה אפשר להחזיק יחד בערכים מנוגדים, ומבחינה בינה לבין הכרעה הלכתית למעשה. הסייג הזה חייב להישמר בכל תשובה הנשענת על הקטע.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 4296159; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4296159, he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; ההבחנה בין המעלה הרוחנית לבין ההכרעה ההלכתית למעשה מפורשת במקטע וחייבת להישמר; אין להסיק היתר לבטל מצווה מעשית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "ההבחנה בין המעלה הרוחנית לבין ההכרעה ההלכתית למעשה מפורשת במקטע וחייבת להישמר; אין להסיק היתר לבטל מצווה מעשית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        }
+      ],
+      "existing_identity_updates": [
+        {
+          "aid": 2989021,
+          "id": "chabad-sicha-2989021",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "proposition": "המשך השיחה מביא מסורת בשם הבעש״ט, כפי שנמסרה דרך רבנו הזקן, ר׳ פינחס רייזעס והצמח צדק, וקושרת תמיכה בלומדי תורה, קביעות עתים ושמחה בלימוד לברכה שהדורות הבאים יעסקו בתורה ובמצוות. המחול מתואר כסמל לקירוב שלאחר ריחוק. זהו תיאור של שרשרת מסירה המובאת בשיחה, לא עדות עצמאית שנבדקה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989054,
+          "id": "chabad-sicha-2989054",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-shavuot-day2-aid2989054",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "proposition": "ההסבר להעדפת היום שלאחר מתן תורה הוא שההתגלות עצמה באה מלמעלה בעוצמה שאינה נקלטת בכלי הנבראים ואף מבטלת את מציאותם; לאחר מכן ניתנת לנבראים אפשרות לפעול מתוך מציאותם ולהפוך את חייהם ואת העולם לכלי ולדירה לאלוקות. מכאן שהעבודה שמלמטה למעלה היא מוקד החביבות. זהו מהלך רעיוני בשיחה ולא קביעה היסטורית על מועד מתן תורה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989052,
+          "id": "chabad-sicha-2989052",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-erev-shavuot-night-aid2989052",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "proposition": "בהמשך השיחה, הדיון במושג הסתירה הרוחנית נקשר לגאווה: השיחה מסבירה שהעמדת העצמי במרכז מוצגת כמניעה את השראת האלוקות, ואילו הענווה שנקנית בעבודת הספירה מבטלת את הסתירה; מכאן נבנה גם הסבר לאפשרות של מחילה בדיעבד. המהלך נשען על דרשות ומקורות שהשיחה מזכירה, ואינו הוראה הלכתית בדיני סוטה או ביחסים זוגיים.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 5989687,
+          "id": "chabad-sicha-5989687",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "proposition": "בהמשך השיחה נערכת הבחנה בין קביעת שיוך כהונה, לויה וישראל לפי האב לבין קביעת יהדות הילד לפי האם; היא מייחסת לאם את עיקר עיצוב הבית והחינוך הראשוני, ולאב תפקיד מסייע בהתקדמות הלימודית המאוחרת. יש להציג זאת כמסגרת הנורמטיבית והדרשנית של השיחה, לא כממצא אמפירי או תחליף למקור הלכתי מוסמך.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989062,
+          "id": "chabad-sicha-2989062",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-20-menachem-av-aid2989062",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "proposition": "הדיון במשנה האחרונה של מסכת גיטין משמש את השיחה להשוואת התנאים שבהם עולה אפשרות הגירושין בעמדות בית שמאי, בית הלל ור׳ עקיבא; היא מפרשת את בית שמאי כמדגישים מאמץ מרבי לשמירת שלום הבית, ומעמידה מולם את ההרחבה שבעמדות האחרות. בהמשך היא מבחינה בין חן ליופי. זהו ניתוח עיוני של המשנה, לא הנחיה הלכתית למקרה אישי.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 4385513,
+          "id": "chabad-sicha-4385513",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5726-simchat-torah-night-aid4385513",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "proposition": "המשך השיחה מבחין בין העולם כפי שהוא יכול להתקיים כמרחב שומם לבין עולם שנעשה ראוי למגורי אדם ולדירה לאלוקות באמצעות לימוד התורה; היא קושרת את חיות הלימוד גם לקיום המצוות בפועל ולהנהגה של צדק ויושר. זהו תיאור תיאולוגי של תכלית העולם בשיחה, לא טענה מדעית על היווצרות העולם.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 5959968,
+          "id": "chabad-sicha-5959968",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5730-lag-baomer-parade-aid5959968",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "proposition": "בקטע על ״הצדעה ליהדות״ השיחה מבחינה בין קיום תורה ומצוות כעול בלבד לבין יחס של שמחה והכרת ערך האפשרות לקיים את מצוות ה׳; היא קוראת לילדים לא להסתפק בדוגמה האישית אלא להשפיע על חברים, קרובים וילדים אחרים ללמוד ולקיים מצוות. זהו מסר חינוכי של השיחה, לא הבטחה לתוצאה חברתית מדידה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 4296159,
+          "id": "chabad-sicha-4296159",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "proposition": "המשך הדיון מבהיר שהעמדת מעלת התורה מעל מצווה שאי אפשר לעשותה בידי אחרים אינה הוראה מעשית לבטל את המצווה; השיחה מציבה זאת במסגרת העבודה הרוחנית, שבה אפשר להחזיק יחד בערכים מנוגדים, ומבחינה בינה לבין הכרעה הלכתית למעשה. הסייג הזה חייב להישמר בכל תשובה הנשענת על הקטע.",
+          "new_independent_witness": false
+        }
+      ],
+      "existing_identity_updates_count": 8,
+      "existing_identity_rechecks": [],
+      "records": [],
       "crawler_retry": false,
       "access_control_bypassed": false,
-      "full_text_copied": false
+      "full_text_copied": false,
+      "scan_only_verification_used": false
     },
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
@@ -943,20 +1385,61 @@
       "165",
       "166",
       "167",
-      "168"
+      "168",
+      "169"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
-      "batch_id": "168",
-      "batch_file": "data/items/content-research-batch-168-2026-11-18.json",
-      "reviewed_at": "2026-11-18T23:32:05+02:00",
+      "batch_id": "169",
+      "batch_file": "data/items/content-research-batch-169-2026-11-19.json",
+      "generated": "2026-11-19T00:01:35+02:00",
+      "reviewed_at": "2026-11-19T00:01:35+02:00",
+      "title": "Eight additional in-place Hebrew Sicha enrichments; Yiddish Yechidus transcript route excluded as media-only",
       "status": "pending_reconciliation",
-      "reviewed_item_count": 16,
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
       "source_bodies_inspected": 8,
-      "source_body_pages_opened": 24,
+      "source_body_pages_opened": 9,
+      "metadata_only_items_rechecked": 1,
+      "search_extracts_inspected": 0,
+      "search_extracts_used_as_content": 0,
       "new_source_identities": 0,
       "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 0,
       "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4004
+      },
+      "metrics_before_source": "Exact-head PR workspace reconciliation in Answer Quality Gate run 44405343996 after Batch168; measured 1540/854/4004 before Batch169, not committed to main and not public metrics.",
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4004
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4012
+      },
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "reconciliation_variance": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "metrics_delta_at_batch_boundary_is_planning_only": true,
+      "metrics_attribution_note": "The baseline 1540/854/4004 is the measured PR-workspace snapshot after Batch168 from run 44405343996; it is not public main. Batch169 adds eight source-grounded paraphrases in place, so no increase in answer_eligible_unique_sources or content_verified_unique_sources is expected.",
+      "new_aids": [],
       "enriched_aids": [
         2989021,
         2989054,
@@ -967,38 +1450,437 @@
         5959968,
         4296159
       ],
-      "new_aids": [],
-      "blocked_candidate_count": 8,
+      "rechecked_aids": [],
       "blocked_aids": [
-        4666265,
-        4666267,
-        4666268,
-        4666269,
-        4666270,
-        4666316,
-        4666317,
-        4666318
+        553691
       ],
+      "excluded_aids": [
+        553691
+      ],
+      "language_distribution": {
+        "Hebrew": 8
+      },
+      "original_language_distribution": {
+        "Hebrew": 8
+      },
+      "source_type_distribution": {
+        "Sicha": 8
+      },
+      "evidence_family_ids": [
+        "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+        "sicha-5719-shavuot-day2-aid2989054",
+        "sicha-5719-erev-shavuot-night-aid2989052",
+        "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+        "sicha-5719-20-menachem-av-aid2989062",
+        "sicha-5726-simchat-torah-night-aid4385513",
+        "sicha-5730-lag-baomer-parade-aid5959968",
+        "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159"
+      ],
+      "same_family_items": [],
+      "translations_added": 0,
+      "translations_counted_as_independent_witnesses": 0,
       "fallback_source_attempted": true,
-      "metrics_before": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
+      "fallback_source_results": {
+        "accessible_item_level_bodies": 8,
+        "existing_identity_bodies": 8,
+        "language": "Hebrew",
+        "source": "BeitChabad.com / he.chabad.org public Hebrew Sicha transcripts",
+        "note": "After the Yiddish Yechidus page exposed only media/navigation metadata and no transcript body, eight accessible original-Hebrew Sicha body pages were inspected and used for in-place enrichment."
       },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4004
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "target_identity_matches": 8,
+        "target_identity_duplicates": 0,
+        "selected_unique_evidence_families": 8,
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "all_target_identities_answer_eligible": true,
+        "same_family_items": [],
+        "note": "All eight AIDs were matched to exactly one existing canonical record and their existing Evidence Family IDs before enrichment. The preceding exact-head index audit found all eight answer-eligible; Batch169 changes only proposition content and provenance. Full current-head reconciliation remains pending."
       },
-      "metrics_actual_before": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
-      },
-      "metrics_actual_after": null,
+      "blocked_candidate_count": 1,
+      "metadata_only_candidate_count": 1,
+      "excluded_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "metadata_only_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "excluded_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "source_body_review": [
+        {
+          "item_aid": 2989021,
+          "id": "chabad-sicha-2989021",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989021",
+          "web_source_ref": "turn809833view0",
+          "body_locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך השיחה מביא מסורת בשם הבעש״ט, כפי שנמסרה דרך רבנו הזקן, ר׳ פינחס רייזעס והצמח צדק, וקושרת תמיכה בלומדי תורה, קביעות עתים ושמחה בלימוד לברכה שהדורות הבאים יעסקו בתורה ובמצוות. המחול מתואר כסמל לקירוב שלאחר ריחוק. זהו תיאור של שרשרת מסירה המובאת בשיחה, לא עדות עצמאית שנבדקה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989021; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989021, he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הייחוס הוא שרשרת המסירה כפי שהיא מתוארת בגוף השיחה; לא נבדקו בנפרד המקורות הקודמים בשרשרת, ואין להציג את הפרפרזה כציטוט ישיר של הבעש״ט או כעדות עצמאית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הייחוס הוא שרשרת המסירה כפי שהיא מתוארת בגוף השיחה; לא נבדקו בנפרד המקורות הקודמים בשרשרת, ואין להציג את הפרפרזה כציטוט ישיר של הבעש״ט או כעדות עצמאית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989054,
+          "id": "chabad-sicha-2989054",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-shavuot-day2-aid2989054",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989054",
+          "web_source_ref": "turn809833view1",
+          "body_locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "ההסבר להעדפת היום שלאחר מתן תורה הוא שההתגלות עצמה באה מלמעלה בעוצמה שאינה נקלטת בכלי הנבראים ואף מבטלת את מציאותם; לאחר מכן ניתנת לנבראים אפשרות לפעול מתוך מציאותם ולהפוך את חייהם ואת העולם לכלי ולדירה לאלוקות. מכאן שהעבודה שמלמטה למעלה היא מוקד החביבות. זהו מהלך רעיוני בשיחה ולא קביעה היסטורית על מועד מתן תורה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989054; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989054, he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת את ההבחנה התיאולוגית בשיחה בין גילוי שמלמעלה לעבודה שמלמטה; אין להציג אותה כהכרעה היסטורית בין שיטות התאריך או כטענה אמפירית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת את ההבחנה התיאולוגית בשיחה בין גילוי שמלמעלה לעבודה שמלמטה; אין להציג אותה כהכרעה היסטורית בין שיטות התאריך או כטענה אמפירית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989052,
+          "id": "chabad-sicha-2989052",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-erev-shavuot-night-aid2989052",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989052",
+          "web_source_ref": "turn809833view2",
+          "body_locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בהמשך השיחה, הדיון במושג הסתירה הרוחנית נקשר לגאווה: השיחה מסבירה שהעמדת העצמי במרכז מוצגת כמניעה את השראת האלוקות, ואילו הענווה שנקנית בעבודת הספירה מבטלת את הסתירה; מכאן נבנה גם הסבר לאפשרות של מחילה בדיעבד. המהלך נשען על דרשות ומקורות שהשיחה מזכירה, ואינו הוראה הלכתית בדיני סוטה או ביחסים זוגיים.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989052; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989052, he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הקטע הוא דרשה על מסכת סוטה ועל עבודת המידות; אין להסיק ממנו אבחון פסיכולוגי, הוראה ביחסים זוגיים או פסיקה הלכתית בדיני סוטה. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע הוא דרשה על מסכת סוטה ועל עבודת המידות; אין להסיק ממנו אבחון פסיכולוגי, הוראה ביחסים זוגיים או פסיקה הלכתית בדיני סוטה."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 5989687,
+          "id": "chabad-sicha-5989687",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/5989687",
+          "web_source_ref": "turn809833view3",
+          "body_locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בהמשך השיחה נערכת הבחנה בין קביעת שיוך כהונה, לויה וישראל לפי האב לבין קביעת יהדות הילד לפי האם; היא מייחסת לאם את עיקר עיצוב הבית והחינוך הראשוני, ולאב תפקיד מסייע בהתקדמות הלימודית המאוחרת. יש להציג זאת כמסגרת הנורמטיבית והדרשנית של השיחה, לא כממצא אמפירי או תחליף למקור הלכתי מוסמך.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 5989687; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 5989687, he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת את המסגרת הנורמטיבית והדרשנית של שיחה בלתי מוגה; אין להשתמש בה לבדה לפסיקת מעמד אישי או כראיה אמפירית על חלוקת תפקידי הורים. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת את המסגרת הנורמטיבית והדרשנית של שיחה בלתי מוגה; אין להשתמש בה לבדה לפסיקת מעמד אישי או כראיה אמפירית על חלוקת תפקידי הורים."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989062,
+          "id": "chabad-sicha-2989062",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-20-menachem-av-aid2989062",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989062",
+          "web_source_ref": "turn809833view4",
+          "body_locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "הדיון במשנה האחרונה של מסכת גיטין משמש את השיחה להשוואת התנאים שבהם עולה אפשרות הגירושין בעמדות בית שמאי, בית הלל ור׳ עקיבא; היא מפרשת את בית שמאי כמדגישים מאמץ מרבי לשמירת שלום הבית, ומעמידה מולם את ההרחבה שבעמדות האחרות. בהמשך היא מבחינה בין חן ליופי. זהו ניתוח עיוני של המשנה, לא הנחיה הלכתית למקרה אישי.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989062; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989062, he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הקטע מנתח משנה במסגרת שיחה בלתי מוגה; אין להציגו כפסיקה מעשית או כהמלצה ביחס למקרה זוגי מסוים. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע מנתח משנה במסגרת שיחה בלתי מוגה; אין להציגו כפסיקה מעשית או כהמלצה ביחס למקרה זוגי מסוים."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 4385513,
+          "id": "chabad-sicha-4385513",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5726-simchat-torah-night-aid4385513",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4385513",
+          "web_source_ref": "turn809833view5",
+          "body_locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך השיחה מבחין בין העולם כפי שהוא יכול להתקיים כמרחב שומם לבין עולם שנעשה ראוי למגורי אדם ולדירה לאלוקות באמצעות לימוד התורה; היא קושרת את חיות הלימוד גם לקיום המצוות בפועל ולהנהגה של צדק ויושר. זהו תיאור תיאולוגי של תכלית העולם בשיחה, לא טענה מדעית על היווצרות העולם.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 4385513; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4385513, he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת תפיסה תיאולוגית של השיחה על תכלית העולם ולימוד התורה; אין להציגה כהסבר מדעי לבריאת העולם. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת תפיסה תיאולוגית של השיחה על תכלית העולם ולימוד התורה; אין להציגה כהסבר מדעי לבריאת העולם."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 5959968,
+          "id": "chabad-sicha-5959968",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5730-lag-baomer-parade-aid5959968",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/5959968",
+          "web_source_ref": "turn809833view6",
+          "body_locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בקטע על ״הצדעה ליהדות״ השיחה מבחינה בין קיום תורה ומצוות כעול בלבד לבין יחס של שמחה והכרת ערך האפשרות לקיים את מצוות ה׳; היא קוראת לילדים לא להסתפק בדוגמה האישית אלא להשפיע על חברים, קרובים וילדים אחרים ללמוד ולקיים מצוות. זהו מסר חינוכי של השיחה, לא הבטחה לתוצאה חברתית מדידה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 5959968; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 5959968, he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת קריאה חינוכית לילדים במסגרת שיחת ל״ג בעומר; אין להסיק ממנה תוצאה חברתית מדידה או הוראה כללית שאינה תלויה בהקשר. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת קריאה חינוכית לילדים במסגרת שיחת ל״ג בעומר; אין להסיק ממנה תוצאה חברתית מדידה או הוראה כללית שאינה תלויה בהקשר."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 4296159,
+          "id": "chabad-sicha-4296159",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4296159",
+          "web_source_ref": "turn809833view7",
+          "body_locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך הדיון מבהיר שהעמדת מעלת התורה מעל מצווה שאי אפשר לעשותה בידי אחרים אינה הוראה מעשית לבטל את המצווה; השיחה מציבה זאת במסגרת העבודה הרוחנית, שבה אפשר להחזיק יחד בערכים מנוגדים, ומבחינה בינה לבין הכרעה הלכתית למעשה. הסייג הזה חייב להישמר בכל תשובה הנשענת על הקטע.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 4296159; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4296159, he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; ההבחנה בין המעלה הרוחנית לבין ההכרעה ההלכתית למעשה מפורשת במקטע וחייבת להישמר; אין להסיק היתר לבטל מצווה מעשית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "ההבחנה בין המעלה הרוחנית לבין ההכרעה ההלכתית למעשה מפורשת במקטע וחייבת להישמר; אין להסיק היתר לבטל מצווה מעשית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        }
+      ],
+      "existing_identity_updates": [
+        {
+          "aid": 2989021,
+          "id": "chabad-sicha-2989021",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "proposition": "המשך השיחה מביא מסורת בשם הבעש״ט, כפי שנמסרה דרך רבנו הזקן, ר׳ פינחס רייזעס והצמח צדק, וקושרת תמיכה בלומדי תורה, קביעות עתים ושמחה בלימוד לברכה שהדורות הבאים יעסקו בתורה ובמצוות. המחול מתואר כסמל לקירוב שלאחר ריחוק. זהו תיאור של שרשרת מסירה המובאת בשיחה, לא עדות עצמאית שנבדקה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989054,
+          "id": "chabad-sicha-2989054",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-shavuot-day2-aid2989054",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "proposition": "ההסבר להעדפת היום שלאחר מתן תורה הוא שההתגלות עצמה באה מלמעלה בעוצמה שאינה נקלטת בכלי הנבראים ואף מבטלת את מציאותם; לאחר מכן ניתנת לנבראים אפשרות לפעול מתוך מציאותם ולהפוך את חייהם ואת העולם לכלי ולדירה לאלוקות. מכאן שהעבודה שמלמטה למעלה היא מוקד החביבות. זהו מהלך רעיוני בשיחה ולא קביעה היסטורית על מועד מתן תורה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989052,
+          "id": "chabad-sicha-2989052",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-erev-shavuot-night-aid2989052",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "proposition": "בהמשך השיחה, הדיון במושג הסתירה הרוחנית נקשר לגאווה: השיחה מסבירה שהעמדת העצמי במרכז מוצגת כמניעה את השראת האלוקות, ואילו הענווה שנקנית בעבודת הספירה מבטלת את הסתירה; מכאן נבנה גם הסבר לאפשרות של מחילה בדיעבד. המהלך נשען על דרשות ומקורות שהשיחה מזכירה, ואינו הוראה הלכתית בדיני סוטה או ביחסים זוגיים.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 5989687,
+          "id": "chabad-sicha-5989687",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "proposition": "בהמשך השיחה נערכת הבחנה בין קביעת שיוך כהונה, לויה וישראל לפי האב לבין קביעת יהדות הילד לפי האם; היא מייחסת לאם את עיקר עיצוב הבית והחינוך הראשוני, ולאב תפקיד מסייע בהתקדמות הלימודית המאוחרת. יש להציג זאת כמסגרת הנורמטיבית והדרשנית של השיחה, לא כממצא אמפירי או תחליף למקור הלכתי מוסמך.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989062,
+          "id": "chabad-sicha-2989062",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-20-menachem-av-aid2989062",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "proposition": "הדיון במשנה האחרונה של מסכת גיטין משמש את השיחה להשוואת התנאים שבהם עולה אפשרות הגירושין בעמדות בית שמאי, בית הלל ור׳ עקיבא; היא מפרשת את בית שמאי כמדגישים מאמץ מרבי לשמירת שלום הבית, ומעמידה מולם את ההרחבה שבעמדות האחרות. בהמשך היא מבחינה בין חן ליופי. זהו ניתוח עיוני של המשנה, לא הנחיה הלכתית למקרה אישי.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 4385513,
+          "id": "chabad-sicha-4385513",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5726-simchat-torah-night-aid4385513",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "proposition": "המשך השיחה מבחין בין העולם כפי שהוא יכול להתקיים כמרחב שומם לבין עולם שנעשה ראוי למגורי אדם ולדירה לאלוקות באמצעות לימוד התורה; היא קושרת את חיות הלימוד גם לקיום המצוות בפועל ולהנהגה של צדק ויושר. זהו תיאור תיאולוגי של תכלית העולם בשיחה, לא טענה מדעית על היווצרות העולם.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 5959968,
+          "id": "chabad-sicha-5959968",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5730-lag-baomer-parade-aid5959968",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "proposition": "בקטע על ״הצדעה ליהדות״ השיחה מבחינה בין קיום תורה ומצוות כעול בלבד לבין יחס של שמחה והכרת ערך האפשרות לקיים את מצוות ה׳; היא קוראת לילדים לא להסתפק בדוגמה האישית אלא להשפיע על חברים, קרובים וילדים אחרים ללמוד ולקיים מצוות. זהו מסר חינוכי של השיחה, לא הבטחה לתוצאה חברתית מדידה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 4296159,
+          "id": "chabad-sicha-4296159",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "proposition": "המשך הדיון מבהיר שהעמדת מעלת התורה מעל מצווה שאי אפשר לעשותה בידי אחרים אינה הוראה מעשית לבטל את המצווה; השיחה מציבה זאת במסגרת העבודה הרוחנית, שבה אפשר להחזיק יחד בערכים מנוגדים, ומבחינה בינה לבין הכרעה הלכתית למעשה. הסייג הזה חייב להישמר בכל תשובה הנשענת על הקטע.",
+          "new_independent_witness": false
+        }
+      ],
+      "existing_identity_updates_count": 8,
+      "existing_identity_rechecks": [],
+      "records": [],
       "crawler_retry": false,
       "access_control_bypassed": false,
-      "full_text_copied": false
+      "full_text_copied": false,
+      "scan_only_verification_used": false
     },
     "previous_manual_web_review": {
       "batch_id": "167",
@@ -1026,20 +1908,60 @@
       "measured_by_run": 44402037932,
       "committed": false
     },
-    "current_batch_file": "data/items/content-research-batch-168-2026-11-18.json",
+    "current_batch_file": "data/items/content-research-batch-169-2026-11-19.json",
     "status": "pending_reconciliation",
     "pending": true,
     "last_manual_review": {
-      "batch_id": "168",
-      "batch_file": "data/items/content-research-batch-168-2026-11-18.json",
-      "reviewed_at": "2026-11-18T23:32:05+02:00",
+      "batch_id": "169",
+      "batch_file": "data/items/content-research-batch-169-2026-11-19.json",
+      "generated": "2026-11-19T00:01:35+02:00",
+      "reviewed_at": "2026-11-19T00:01:35+02:00",
+      "title": "Eight additional in-place Hebrew Sicha enrichments; Yiddish Yechidus transcript route excluded as media-only",
       "status": "pending_reconciliation",
-      "reviewed_item_count": 16,
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
       "source_bodies_inspected": 8,
-      "source_body_pages_opened": 24,
+      "source_body_pages_opened": 9,
+      "metadata_only_items_rechecked": 1,
+      "search_extracts_inspected": 0,
+      "search_extracts_used_as_content": 0,
       "new_source_identities": 0,
       "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 0,
       "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4004
+      },
+      "metrics_before_source": "Exact-head PR workspace reconciliation in Answer Quality Gate run 44405343996 after Batch168; measured 1540/854/4004 before Batch169, not committed to main and not public metrics.",
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4004
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1540,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4012
+      },
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "reconciliation_variance": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "metrics_delta_at_batch_boundary_is_planning_only": true,
+      "metrics_attribution_note": "The baseline 1540/854/4004 is the measured PR-workspace snapshot after Batch168 from run 44405343996; it is not public main. Batch169 adds eight source-grounded paraphrases in place, so no increase in answer_eligible_unique_sources or content_verified_unique_sources is expected.",
+      "new_aids": [],
       "enriched_aids": [
         2989021,
         2989054,
@@ -1050,56 +1972,455 @@
         5959968,
         4296159
       ],
-      "new_aids": [],
-      "blocked_candidate_count": 8,
+      "rechecked_aids": [],
       "blocked_aids": [
-        4666265,
-        4666267,
-        4666268,
-        4666269,
-        4666270,
-        4666316,
-        4666317,
-        4666318
+        553691
       ],
+      "excluded_aids": [
+        553691
+      ],
+      "language_distribution": {
+        "Hebrew": 8
+      },
+      "original_language_distribution": {
+        "Hebrew": 8
+      },
+      "source_type_distribution": {
+        "Sicha": 8
+      },
+      "evidence_family_ids": [
+        "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+        "sicha-5719-shavuot-day2-aid2989054",
+        "sicha-5719-erev-shavuot-night-aid2989052",
+        "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+        "sicha-5719-20-menachem-av-aid2989062",
+        "sicha-5726-simchat-torah-night-aid4385513",
+        "sicha-5730-lag-baomer-parade-aid5959968",
+        "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159"
+      ],
+      "same_family_items": [],
+      "translations_added": 0,
+      "translations_counted_as_independent_witnesses": 0,
       "fallback_source_attempted": true,
-      "metrics_before": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
+      "fallback_source_results": {
+        "accessible_item_level_bodies": 8,
+        "existing_identity_bodies": 8,
+        "language": "Hebrew",
+        "source": "BeitChabad.com / he.chabad.org public Hebrew Sicha transcripts",
+        "note": "After the Yiddish Yechidus page exposed only media/navigation metadata and no transcript body, eight accessible original-Hebrew Sicha body pages were inspected and used for in-place enrichment."
       },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4004
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "target_identity_matches": 8,
+        "target_identity_duplicates": 0,
+        "selected_unique_evidence_families": 8,
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "all_target_identities_answer_eligible": true,
+        "same_family_items": [],
+        "note": "All eight AIDs were matched to exactly one existing canonical record and their existing Evidence Family IDs before enrichment. The preceding exact-head index audit found all eight answer-eligible; Batch169 changes only proposition content and provenance. Full current-head reconciliation remains pending."
       },
-      "metrics_actual_before": {
-        "answer_eligible_unique_sources": 1540,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3996
-      },
-      "metrics_actual_after": null,
+      "blocked_candidate_count": 1,
+      "metadata_only_candidate_count": 1,
+      "excluded_candidate_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "metadata_only_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "excluded_candidates": [
+        {
+          "aid": 553691,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553691/jewish/12-Shevat-5743-Yechidus-Yiddish.htm",
+          "reason": "The public page exposes the Yiddish Yechidus title, publisher attribution and navigation/audio-collection links, but no inspectable Yiddish transcript body or transcript locator. No content proposition can be grounded in this page.",
+          "handling": "Excluded from content evidence without title-based inference or access-control bypass. The same run fell back to eight accessible original-Hebrew Sicha body pages and enriched eight existing canonical identities."
+        }
+      ],
+      "source_body_review": [
+        {
+          "item_aid": 2989021,
+          "id": "chabad-sicha-2989021",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989021",
+          "web_source_ref": "turn809833view0",
+          "body_locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך השיחה מביא מסורת בשם הבעש״ט, כפי שנמסרה דרך רבנו הזקן, ר׳ פינחס רייזעס והצמח צדק, וקושרת תמיכה בלומדי תורה, קביעות עתים ושמחה בלימוד לברכה שהדורות הבאים יעסקו בתורה ובמצוות. המחול מתואר כסמל לקירוב שלאחר ריחוק. זהו תיאור של שרשרת מסירה המובאת בשיחה, לא עדות עצמאית שנבדקה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989021; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989021, he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הייחוס הוא שרשרת המסירה כפי שהיא מתוארת בגוף השיחה; לא נבדקו בנפרד המקורות הקודמים בשרשרת, ואין להציג את הפרפרזה כציטוט ישיר של הבעש״ט או כעדות עצמאית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הייחוס הוא שרשרת המסירה כפי שהיא מתוארת בגוף השיחה; לא נבדקו בנפרד המקורות הקודמים בשרשרת, ואין להציג את הפרפרזה כציטוט ישיר של הבעש״ט או כעדות עצמאית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989054,
+          "id": "chabad-sicha-2989054",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-shavuot-day2-aid2989054",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989054",
+          "web_source_ref": "turn809833view1",
+          "body_locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "ההסבר להעדפת היום שלאחר מתן תורה הוא שההתגלות עצמה באה מלמעלה בעוצמה שאינה נקלטת בכלי הנבראים ואף מבטלת את מציאותם; לאחר מכן ניתנת לנבראים אפשרות לפעול מתוך מציאותם ולהפוך את חייהם ואת העולם לכלי ולדירה לאלוקות. מכאן שהעבודה שמלמטה למעלה היא מוקד החביבות. זהו מהלך רעיוני בשיחה ולא קביעה היסטורית על מועד מתן תורה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989054; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989054, he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת את ההבחנה התיאולוגית בשיחה בין גילוי שמלמעלה לעבודה שמלמטה; אין להציג אותה כהכרעה היסטורית בין שיטות התאריך או כטענה אמפירית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת את ההבחנה התיאולוגית בשיחה בין גילוי שמלמעלה לעבודה שמלמטה; אין להציג אותה כהכרעה היסטורית בין שיטות התאריך או כטענה אמפירית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989052,
+          "id": "chabad-sicha-2989052",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-erev-shavuot-night-aid2989052",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989052",
+          "web_source_ref": "turn809833view2",
+          "body_locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בהמשך השיחה, הדיון במושג הסתירה הרוחנית נקשר לגאווה: השיחה מסבירה שהעמדת העצמי במרכז מוצגת כמניעה את השראת האלוקות, ואילו הענווה שנקנית בעבודת הספירה מבטלת את הסתירה; מכאן נבנה גם הסבר לאפשרות של מחילה בדיעבד. המהלך נשען על דרשות ומקורות שהשיחה מזכירה, ואינו הוראה הלכתית בדיני סוטה או ביחסים זוגיים.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989052; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989052, he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הקטע הוא דרשה על מסכת סוטה ועל עבודת המידות; אין להסיק ממנו אבחון פסיכולוגי, הוראה ביחסים זוגיים או פסיקה הלכתית בדיני סוטה. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע הוא דרשה על מסכת סוטה ועל עבודת המידות; אין להסיק ממנו אבחון פסיכולוגי, הוראה ביחסים זוגיים או פסיקה הלכתית בדיני סוטה."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 5989687,
+          "id": "chabad-sicha-5989687",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/5989687",
+          "web_source_ref": "turn809833view3",
+          "body_locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בהמשך השיחה נערכת הבחנה בין קביעת שיוך כהונה, לויה וישראל לפי האב לבין קביעת יהדות הילד לפי האם; היא מייחסת לאם את עיקר עיצוב הבית והחינוך הראשוני, ולאב תפקיד מסייע בהתקדמות הלימודית המאוחרת. יש להציג זאת כמסגרת הנורמטיבית והדרשנית של השיחה, לא כממצא אמפירי או תחליף למקור הלכתי מוסמך.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 5989687; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 5989687, he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת את המסגרת הנורמטיבית והדרשנית של שיחה בלתי מוגה; אין להשתמש בה לבדה לפסיקת מעמד אישי או כראיה אמפירית על חלוקת תפקידי הורים. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת את המסגרת הנורמטיבית והדרשנית של שיחה בלתי מוגה; אין להשתמש בה לבדה לפסיקת מעמד אישי או כראיה אמפירית על חלוקת תפקידי הורים."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 2989062,
+          "id": "chabad-sicha-2989062",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-20-menachem-av-aid2989062",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989062",
+          "web_source_ref": "turn809833view4",
+          "body_locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "הדיון במשנה האחרונה של מסכת גיטין משמש את השיחה להשוואת התנאים שבהם עולה אפשרות הגירושין בעמדות בית שמאי, בית הלל ור׳ עקיבא; היא מפרשת את בית שמאי כמדגישים מאמץ מרבי לשמירת שלום הבית, ומעמידה מולם את ההרחבה שבעמדות האחרות. בהמשך היא מבחינה בין חן ליופי. זהו ניתוח עיוני של המשנה, לא הנחיה הלכתית למקרה אישי.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989062; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989062, he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הקטע מנתח משנה במסגרת שיחה בלתי מוגה; אין להציגו כפסיקה מעשית או כהמלצה ביחס למקרה זוגי מסוים. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע מנתח משנה במסגרת שיחה בלתי מוגה; אין להציגו כפסיקה מעשית או כהמלצה ביחס למקרה זוגי מסוים."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 4385513,
+          "id": "chabad-sicha-4385513",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5726-simchat-torah-night-aid4385513",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4385513",
+          "web_source_ref": "turn809833view5",
+          "body_locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך השיחה מבחין בין העולם כפי שהוא יכול להתקיים כמרחב שומם לבין עולם שנעשה ראוי למגורי אדם ולדירה לאלוקות באמצעות לימוד התורה; היא קושרת את חיות הלימוד גם לקיום המצוות בפועל ולהנהגה של צדק ויושר. זהו תיאור תיאולוגי של תכלית העולם בשיחה, לא טענה מדעית על היווצרות העולם.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 4385513; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4385513, he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת תפיסה תיאולוגית של השיחה על תכלית העולם ולימוד התורה; אין להציגה כהסבר מדעי לבריאת העולם. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת תפיסה תיאולוגית של השיחה על תכלית העולם ולימוד התורה; אין להציגה כהסבר מדעי לבריאת העולם."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 5959968,
+          "id": "chabad-sicha-5959968",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5730-lag-baomer-parade-aid5959968",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/5959968",
+          "web_source_ref": "turn809833view6",
+          "body_locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "בקטע על ״הצדעה ליהדות״ השיחה מבחינה בין קיום תורה ומצוות כעול בלבד לבין יחס של שמחה והכרת ערך האפשרות לקיים את מצוות ה׳; היא קוראת לילדים לא להסתפק בדוגמה האישית אלא להשפיע על חברים, קרובים וילדים אחרים ללמוד ולקיים מצוות. זהו מסר חינוכי של השיחה, לא הבטחה לתוצאה חברתית מדידה.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 5959968; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 5959968, he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; הפרפרזה מתארת קריאה חינוכית לילדים במסגרת שיחת ל״ג בעומר; אין להסיק ממנה תוצאה חברתית מדידה או הוראה כללית שאינה תלויה בהקשר. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת קריאה חינוכית לילדים במסגרת שיחת ל״ג בעומר; אין להסיק ממנה תוצאה חברתית מדידה או הוראה כללית שאינה תלויה בהקשר."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        },
+        {
+          "item_aid": 4296159,
+          "id": "chabad-sicha-4296159",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159",
+          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4296159",
+          "web_source_ref": "turn809833view7",
+          "body_locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_page_opened": true,
+          "inspected_original_language_body": true,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "המשך הדיון מבהיר שהעמדת מעלת התורה מעל מצווה שאי אפשר לעשותה בידי אחרים אינה הוראה מעשית לבטל את המצווה; השיחה מציבה זאת במסגרת העבודה הרוחנית, שבה אפשר להחזיק יחד בערכים מנוגדים, ומבחינה בינה לבין הכרעה הלכתית למעשה. הסייג הזה חייב להישמר בכל תשובה הנשענת על הקטע.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 4296159; original-language Hebrew publisher transcript marked בלתי מוגה; body passage inspected 2026-11-19.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4296159, he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; ההבחנה בין המעלה הרוחנית לבין ההכרעה ההלכתית למעשה מפורשת במקטע וחייבת להישמר; אין להסיק היתר לבטל מצווה מעשית. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "ההבחנה בין המעלה הרוחנית לבין ההכרעה ההלכתית למעשה מפורשת במקטע וחייבת להישמר; אין להסיק היתר לבטל מצווה מעשית."
+          ],
+          "existing_identity": true,
+          "new_independent_witness": false,
+          "action": "enriched_existing_identity_in_place"
+        }
+      ],
+      "existing_identity_updates": [
+        {
+          "aid": 2989021,
+          "id": "chabad-sicha-2989021",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-simchat-torah-night-before-hakafot-aid2989021",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף ב׳, שורות 193–202.",
+          "proposition": "המשך השיחה מביא מסורת בשם הבעש״ט, כפי שנמסרה דרך רבנו הזקן, ר׳ פינחס רייזעס והצמח צדק, וקושרת תמיכה בלומדי תורה, קביעות עתים ושמחה בלימוד לברכה שהדורות הבאים יעסקו בתורה ובמצוות. המחול מתואר כסמל לקירוב שלאחר ריחוק. זהו תיאור של שרשרת מסירה המובאת בשיחה, לא עדות עצמאית שנבדקה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989054,
+          "id": "chabad-sicha-2989054",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-shavuot-day2-aid2989054",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989054, גוף השיחה, סעיפים ב׳–ג׳, שורות 182–191.",
+          "proposition": "ההסבר להעדפת היום שלאחר מתן תורה הוא שההתגלות עצמה באה מלמעלה בעוצמה שאינה נקלטת בכלי הנבראים ואף מבטלת את מציאותם; לאחר מכן ניתנת לנבראים אפשרות לפעול מתוך מציאותם ולהפוך את חייהם ואת העולם לכלי ולדירה לאלוקות. מכאן שהעבודה שמלמטה למעלה היא מוקד החביבות. זהו מהלך רעיוני בשיחה ולא קביעה היסטורית על מועד מתן תורה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989052,
+          "id": "chabad-sicha-2989052",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-erev-shavuot-night-aid2989052",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים ה׳–ו׳, שורות 201–215.",
+          "proposition": "בהמשך השיחה, הדיון במושג הסתירה הרוחנית נקשר לגאווה: השיחה מסבירה שהעמדת העצמי במרכז מוצגת כמניעה את השראת האלוקות, ואילו הענווה שנקנית בעבודת הספירה מבטלת את הסתירה; מכאן נבנה גם הסבר לאפשרות של מחילה בדיעבד. המהלך נשען על דרשות ומקורות שהשיחה מזכירה, ואינו הוראה הלכתית בדיני סוטה או ביחסים זוגיים.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 5989687,
+          "id": "chabad-sicha-5989687",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5729-rosh-chodesh-sivan-women-aid5989687",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 5989687, גוף השיחה, סעיפים ג׳–ד׳, שורות 198–204.",
+          "proposition": "בהמשך השיחה נערכת הבחנה בין קביעת שיוך כהונה, לויה וישראל לפי האב לבין קביעת יהדות הילד לפי האם; היא מייחסת לאם את עיקר עיצוב הבית והחינוך הראשוני, ולאב תפקיד מסייע בהתקדמות הלימודית המאוחרת. יש להציג זאת כמסגרת הנורמטיבית והדרשנית של השיחה, לא כממצא אמפירי או תחליף למקור הלכתי מוסמך.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 2989062,
+          "id": "chabad-sicha-2989062",
+          "canonical_file": "data/items/content-research-batch-166-2026-11-18.json",
+          "evidence_family_id": "sicha-5719-20-menachem-av-aid2989062",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 2989062, גוף השיחה, סעיף ג׳, שורות 191–200.",
+          "proposition": "הדיון במשנה האחרונה של מסכת גיטין משמש את השיחה להשוואת התנאים שבהם עולה אפשרות הגירושין בעמדות בית שמאי, בית הלל ור׳ עקיבא; היא מפרשת את בית שמאי כמדגישים מאמץ מרבי לשמירת שלום הבית, ומעמידה מולם את ההרחבה שבעמדות האחרות. בהמשך היא מבחינה בין חן ליופי. זהו ניתוח עיוני של המשנה, לא הנחיה הלכתית למקרה אישי.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 4385513,
+          "id": "chabad-sicha-4385513",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5726-simchat-torah-night-aid4385513",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 4385513, גוף השיחה, סעיפים ג׳–ד׳, שורות 190–194.",
+          "proposition": "המשך השיחה מבחין בין העולם כפי שהוא יכול להתקיים כמרחב שומם לבין עולם שנעשה ראוי למגורי אדם ולדירה לאלוקות באמצעות לימוד התורה; היא קושרת את חיות הלימוד גם לקיום המצוות בפועל ולהנהגה של צדק ויושר. זהו תיאור תיאולוגי של תכלית העולם בשיחה, לא טענה מדעית על היווצרות העולם.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 5959968,
+          "id": "chabad-sicha-5959968",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5730-lag-baomer-parade-aid5959968",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 5959968, גוף השיחה, סעיפים ד׳–ה׳, שורות 204–216.",
+          "proposition": "בקטע על ״הצדעה ליהדות״ השיחה מבחינה בין קיום תורה ומצוות כעול בלבד לבין יחס של שמחה והכרת ערך האפשרות לקיים את מצוות ה׳; היא קוראת לילדים לא להסתפק בדוגמה האישית אלא להשפיע על חברים, קרובים וילדים אחרים ללמוד ולקיים מצוות. זהו מסר חינוכי של השיחה, לא הבטחה לתוצאה חברתית מדידה.",
+          "new_independent_witness": false
+        },
+        {
+          "aid": 4296159,
+          "id": "chabad-sicha-4296159",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
+          "evidence_family_id": "sicha-5723-18-tishrei-simchat-beit-hashoeva-aid4296159",
+          "action": "enriched_existing_identity_in_place",
+          "existing_propositions_before": 2,
+          "propositions_added": 1,
+          "total_propositions_after": 3,
+          "locator": "he.chabad.org AID 4296159, גוף השיחה, סעיפים ב׳–ג׳, שורות 195–202.",
+          "proposition": "המשך הדיון מבהיר שהעמדת מעלת התורה מעל מצווה שאי אפשר לעשותה בידי אחרים אינה הוראה מעשית לבטל את המצווה; השיחה מציבה זאת במסגרת העבודה הרוחנית, שבה אפשר להחזיק יחד בערכים מנוגדים, ומבחינה בינה לבין הכרעה הלכתית למעשה. הסייג הזה חייב להישמר בכל תשובה הנשענת על הקטע.",
+          "new_independent_witness": false
+        }
+      ],
+      "existing_identity_updates_count": 8,
+      "existing_identity_rechecks": [],
+      "records": [],
       "crawler_retry": false,
       "access_control_bypassed": false,
-      "full_text_copied": false
+      "full_text_copied": false,
+      "scan_only_verification_used": false
     },
-    "last_reviewed_batch": "168"
+    "last_reviewed_batch": "169"
   },
-  "current_batch": "168",
+  "current_batch": "169",
   "updated_at": "2026-11-18T23:32:05+02:00",
-  "current_batch_file": "data/items/content-research-batch-168-2026-11-18.json",
+  "current_batch_file": "data/items/content-research-batch-169-2026-11-19.json",
   "status": "pending_reconciliation",
   "quality_gate": {
-    "status": "pending_after_batch_168",
-    "last_failed_run_id": 44402037932,
-    "last_failure": "Stale exact-count regression for AID 2989585: current canonical record has 21 propositions after later in-place enrichments; test expected 20 at line 1360 and also had stale 19/16 expectations. Updated current-index assertions to require at least 21 while retaining historical batch-local counts.",
+    "status": "pending_after_batch_169",
+    "last_failed_run_id": 44405343996,
+    "last_failure": "The exact-head reconciliation measured 1540/854/4004 after Batch168, then test_content_readiness.mjs failed because current-batch assertions still expected 167 while the project state was at 168. Batch169 updates the current batch assertions and adds content/retrieval checks.",
     "note": "Batch168 adds eight in-place Hebrew Sicha propositions. Exact-head reconciliation and test_content_readiness.mjs must pass before merge.",
     "run_status": "Run 44402037932 completed reconciliation and all earlier quality steps, then failed at test_content_readiness.mjs:1360 because current AID 2989585 has 21 propositions while historical current-index assertions expected 20/19/16. The assertions are being made monotonic to preserve later in-place enrichment.",
-    "workflow_run_id": 44402037932
+    "workflow_run_id": null
   },
   "publication": {
     "status": "pending_merge_and_pages_verification",
-    "note": "Batch168 is on PR #35 only. No main merge, public-metrics update or Pages deployment is claimed; committed main metrics remain 977/878/2950.",
+    "note": "Batch169 and its tests are on PR #35 only. No main merge or Pages deployment is claimed; public main metrics remain 977/878/2950 until a successful merge and post-merge deployment.",
     "url": "https://malkashacham.github.io/maaneh-ledorot",
     "last_verified_main_sha": "2c7231f9bb043faafdd61c94040111723d95ac04"
   }
