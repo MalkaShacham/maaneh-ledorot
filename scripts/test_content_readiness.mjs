@@ -1154,7 +1154,8 @@ assert.deepEqual(batch111Data.enriched_aids,[2989153]);
 assert.equal(batch111Data.existing_identity_updates[0].propositions_added,2);
 assert.equal(batch111Data.existing_identity_updates[0].total_propositions_after,6);
 const enriched2989153=idx.entries.find(e=>sourceAID(e)==='2989153');
-assert(enriched2989153&&enriched2989153.has_content_evidence&&enriched2989153.response_propositions.length===11);
+// The final corpus includes later in-place additions beyond batch111's historical 4→6 checkpoint.
+assert(enriched2989153&&enriched2989153.has_content_evidence&&enriched2989153.response_propositions.length===13);
 assert(enriched2989153.response_proposition_locators.some(x=>String(x).includes('שורות 247–256')));
 assert(enriched2989153.response_proposition_locators.some(x=>String(x).includes('שורות 243–244')));
 assert.equal(enriched2989153.status,'Parsed');
