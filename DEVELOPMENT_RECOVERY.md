@@ -1358,3 +1358,11 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - Final batch151 totals: 11 new source identities; 1 existing identity enriched (AID 2989404); 1 existing identity rechecked without duplicate content (AID 4304430); 11 new propositions plus 1 additional existing-identity proposition; 12 total new/additional paraphrases. Thirteen distinct source bodies were inspected; 37 body-page opens were made.
 - Five candidate pages were unavailable (four HTTP 429 responses and one reader Internal Error for AID 4666220); one secondary-commentary page (AID 470201) was excluded because it was not a primary source. Eleven accessible new Hebrew source bodies were used; no crawler retry, access-control bypass, full-text reproduction or title/snippet inference occurred.
 - Final planning boundary: 1,502 / 854 / 3,846 before and 1,513 / 854 / 3,858 expected after. These are not measured metrics. The generated public index is 17.6 MB and was not readable through the connector; full reconciliation and test execution remain pending.
+
+
+## 2026-11-18 — PR #35 readiness assertion correction
+
+- PR #35 validation run `44210578435` completed reconciliation and passed status normalization, question-specific retrieval, answer synthesis, citation integrity, evidence-contract and workflow-write-safety checks. It failed only at `test_content_readiness.mjs:1157` because the final-index assertion expected 11 propositions for AID 2989153.
+- The canonical batch106 identity currently contains 13 distinct source-inspected propositions. Batch111's `existing_propositions_before=4` and `total_propositions_after=6` are a historical checkpoint; later in-place enrichments in subsequent batches raised the final canonical record to 13. The index must retain those later propositions rather than truncate them to the batch111 snapshot.
+- Corrected the final-index regression expectation to 13. The batch111 historical audit values remain unchanged. No source status or public metric was manually changed; a new commit-bound quality-gate run is required.
+- Reopened 11 new batch151 Hebrew Sicha bodies and existing AID 2989404 through the public reader, at the exact proposition locators. The current-run reinspection refs and scope are recorded in the batch151 manifest. All remain Parsed; no Verified promotion.
