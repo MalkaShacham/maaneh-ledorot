@@ -445,13 +445,13 @@
       "blocked_candidate_count": 2,
       "note": "Eight new Hebrew source identities and two in-place enrichments from ten inspected body passages; all remain Parsed. No Verified promotion."
     },
-    "last_run_note": "Batch170: ten original-Hebrew publisher body passages inspected; eight new identities and two in-place enrichments. Two alternative pages returned HTTP 429; a collection page and two duplicate identities were excluded. Exact-head reconciliation and readiness pending.",
+    "last_run_note": "Batch170: ten original-Hebrew publisher body passages inspected; eight new identities and two in-place enrichments. Two alternative pages returned HTTP 429; a collection page and two duplicate identities were excluded. Exact-head reconciliation and readiness pending.\n\nMain hourly run 44405963735 failed at Batch110 full-index-audit assertion; reconcile_metrics.py now reprocesses historical batches that lack a full-index audit or measured snapshot, even if their status label says reconciled.",
     "last_batch_blocked_count": 2,
     "last_batch_blocked_reason": "AID 2989215 and AID 5989907 returned HTTP 429; no retry or bypass. One collection-level page and two already-canonical AIDs were excluded. Ten accessible original-Hebrew item bodies were used in the same run.",
     "next_work": [
-      "Run exact-head reconciliation for pending manual batches through Batch170; confirm the eight new AIDs each have one canonical identity and the two enriched AIDs retain their original Evidence Families.",
-      "Pass test_content_readiness.mjs after reconciliation; retain the Batch089 historical variance only as measured variance and require content_verified_unique_sources variance <= 0.",
-      "Pass the Answer Quality Gate on the exact PR head, then merge PR #35 and verify main-branch metrics, Actions and GitHub Pages."
+      "Run exact-head reconciliation for all pending and audit-incomplete historical batches through Batch170; verify Batch110 and all selected batches receive full-index audits and measured snapshots.",
+      "Pass test_content_readiness.mjs, including the Batch089 conservative-variance check and Batch170 source/proposition checks.",
+      "After the exact-head Answer Quality Gate passes, merge PR #35 and verify main metrics, Actions and GitHub Pages."
     ],
     "last_reconciliation": {
       "batch_id": "089",
@@ -2414,10 +2414,10 @@
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending_after_batch_170",
-    "last_failed_run_id": 44409060151,
-    "last_failure": "Run 44409060151 measured 1540/854/4012 after Batch169, then failed at a historical Batch089 assertion that rejected positive answer-eligible/proposition variance; the test is narrowed to forbid positive content-verified variance while preserving measured variance.",
-    "note": "Batch170 adds eight new source families and two in-place propositions. Exact-head reconciliation and test_content_readiness.mjs must pass before merge.",
-    "run_status": "pending_new_exact_head_run",
+    "last_failed_run_id": 44405963735,
+    "last_failure": "Main hourly run 44405963735 failed at Batch110 because a previously labelled reconciled manifest lacked full_index_scan_available=true. Reconciliation selection now includes historical batches missing a full-index audit or measured snapshot, not only pending-labelled batches.",
+    "note": "Batch170 is on PR #35. The reconciliation script now repairs historical manifests that have stale reconciled labels but no full-index audit or measured after-snapshot; exact-head readiness must pass before merge.",
+    "run_status": "pending_reconciliation_fix_run",
     "workflow_run_id": null
   },
   "publication": {

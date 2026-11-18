@@ -1422,3 +1422,10 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - The last measured PR-workspace baseline after Batch169 is 1540 answer-eligible unique sources / 854 content-verified unique sources / 4012 answer-eligible propositions (Answer Quality Gate run 44409060151). Batch170's expected boundary is 1548 / 854 / 4022; this is planning-only until exact-head reconciliation. Main's public metrics remain 977 / 878 / 2950.
 - Run 44409060151 completed reconciliation and earlier quality checks but failed at a historical Batch089 variance assertion. The test now allows explicitly recorded positive answer-eligible/proposition variance while continuing to prohibit positive content-verified variance. Batch169's historical actual-after snapshot is compared with Batch170's measured-before boundary rather than the current corpus total.
 - PR #35 remains open; no main merge or Pages deployment is claimed. The existing hourly workflow, audience, repository permissions and access settings are unchanged.
+
+
+## 2026-11-19 — Historical reconciliation selection fix
+
+- Main hourly run 44405963735 completed deterministic maintenance but failed at the evidence-readiness validation step: Batch110 was labelled reconciled while `deduplication_check.full_index_scan_available` was not true.
+- `scripts/reconcile_metrics.py` now reprocesses not only pending-labelled batches but also historical batches lacking a full-index audit, a measured `metrics_actual_after`, or a reconciled status. This prevents stale reconciliation labels from bypassing the current full-corpus audit.
+- The existing hourly schedule and disabled live crawler remain unchanged. The current PR run is superseded by this reconciliation-selection correction; the next exact-head gate must validate Batch110 through Batch170 before merge.

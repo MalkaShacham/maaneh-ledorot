@@ -251,10 +251,19 @@ def is_pending_batch(data):
     return (data.get("reconciliation_status") in ("pending","pending_reconciliation")
             or data.get("status") in ("pending","pending_reconciliation"))
 
-# Reconcile every pending manual batch, not only the contiguous chain ending
-# at the newest batch. Older pending batches can otherwise remain un-audited
-# forever (and readiness tests correctly reject their missing full-index audit).
-selected_batches=[entry for entry in manual_batches if is_pending_batch(entry["data"])]
+def needs_reconciliation(data):
+    if is_pending_batch(data): return True
+    dedup=data.get("deduplication_check")
+    if not isinstance(dedup,dict) or dedup.get("full_index_scan_available") is not True: return True
+    if dedup.get("full_index_scan_pending_reconciliation") is True: return True
+    if not isinstance(data.get("metrics_actual_after"),dict): return True
+    if data.get("reconciliation_status") not in ("reconciled","reconciled_with_variance"): return True
+    return False
+
+# Reconcile every pending manual batch and every historical batch that lacks
+# a measured snapshot or full-index audit. A stale "reconciled" label alone
+# is not sufficient: readiness requires current canonical-identity checks.
+selected_batches=[entry for entry in manual_batches if needs_reconciliation(entry["data"])]
 
 # Build the all-file identity audit index once. Re-reading and parsing every
 # corpus file for every target identity makes a 50-batch reconciliation
