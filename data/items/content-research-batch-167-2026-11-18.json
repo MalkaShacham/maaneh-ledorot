@@ -66,14 +66,14 @@
   "fallback_source_attempted": false,
   "fallback_source_results": [],
   "metrics_before": {
-    "answer_eligible_unique_sources": 1541,
+    "answer_eligible_unique_sources": 1539,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3989
+    "answer_eligible_propositions": 3987
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1541,
+    "answer_eligible_unique_sources": 1539,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3997
+    "answer_eligible_propositions": 3995
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
@@ -84,7 +84,7 @@
     "answer_eligible_propositions": 8
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "metrics_attribution_note": "The 1541/854/3989 starting boundary is the prior Batch166 planning boundary, not an independently measured metric snapshot. Reconciliation must compute the actual before/after values from the full canonical corpus; no new Evidence Family or Verified source is expected from these in-place enrichments.",
+  "metrics_attribution_note": "The starting boundary is the corrected Batch166 planning boundary after duplicate AIDs 2989022 and 5989700 were excluded from new-source and proposition counts. It remains a planning value until the full canonical reconciliation computes actual before/after metrics.",
   "records": [],
   "existing_identity_updates": [
     {
