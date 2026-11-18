@@ -5366,8 +5366,10 @@ assert.deepEqual(batch153Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch153Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(['reconciled','reconciled_with_variance'].includes(batch153Data.reconciliation_status));
 assert.deepEqual(readinessMetrics(batch153Data.metrics_actual_after),readinessMetrics(metrics));
-assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('153'));\n assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('154'));
-assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('153'));\n assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('154'));
+assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('153'));
+ assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('154'));
+assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('153'));
+ assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('154'));
 assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'154');
 
 
