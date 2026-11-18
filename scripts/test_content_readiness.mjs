@@ -2266,7 +2266,8 @@ const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-sta
 const reconciliationChain=reconciledProjectState.development_recovery.reconciliation_chain;
 const reconciliationChainIds=reconciliationChain.map(x=>String(x.batch_id));
 assert(['099','100','101','102','103','104','105','106','107','108','109','110','111','112'].every(id=>reconciliationChainIds.includes(id)));
-assert(reconciliationChainIds.includes('153'));\nassert(reconciliationChainIds.includes('154'));
+assert(reconciliationChainIds.includes('153'));
+assert(reconciliationChainIds.includes('154'));
 assert(reconciliationChainIds.every(id=>/^\d{3}$/.test(id)));
 const batch099Audit=reconciliationChain.find(x=>String(x.batch_id)==='099');
 const batch100Audit=reconciliationChain.find(x=>String(x.batch_id)==='100');
@@ -5367,7 +5368,7 @@ assert(['reconciled','reconciled_with_variance'].includes(batch153Data.reconcili
 assert.deepEqual(readinessMetrics(batch153Data.metrics_actual_after),readinessMetrics(metrics));
 assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('153'));\n assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('154'));
 assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('153'));\n assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('154'));
-assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'153');
+assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'154');
 
 
 const batch154Path='data/items/content-research-batch-154-2026-11-18.json';
