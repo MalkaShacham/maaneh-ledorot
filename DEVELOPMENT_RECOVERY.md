@@ -1341,3 +1341,13 @@
 - Batch153 counts: 8 new identities, 3 existing identities enriched, 1 recheck, 12 bodies inspected, 11 new/additional paraphrases, 0 Verified promotions. Corrected planning baseline 1510/854/3867 and expected after boundary 1518/854/3878 are not measured. The preceding PR-head reconciliation run 44236655981 reported 1511/854/3868 before the AID 2989386 duplicate cleanup; this was a CI workspace result, not the public main metric.
 - Readiness-test correction: AID 2989153's canonical batch106 record has 14 propositions after batch152, not 13. The regression assertion was corrected to 14, and batch153 assertions were added for eight new identities, three in-place enrichments, one duplicate-free recheck, exact locators and full reconciliation. The prior run failed at this stale count; a new commit-bound run is still required.
 - PR #35 remains open. No merge to main or new Pages publication has been verified. The public main metrics remain unchanged until a passing reconciliation is committed.
+
+ 
+## 2026-11-18 — Batch 154: source-grounded in-place enrichments
+
+- Eight existing Hebrew identities in batch 153 were enriched in place with one additional non-verbatim proposition each: AIDs 2989401, 2989556, 2989574, 2989023, 4279876, 2988946, 2989322 and 2989425. All retain their original canonical file, Evidence Family and Parsed status.
+- The added propositions are grounded in the inspected body ranges recorded in `data/items/content-research-batch-154-2026-11-18.json`; AID 2989425's addition comes specifically from publisher footnote 2 and is not treated as an independent witness.
+- Three archive candidates (AIDs 555044–555046) exposed only title and audio-navigation metadata, without transcript bodies. They were excluded; eight accessible Hebrew body passages were used as the same-run fallback.
+- No new source identities or Evidence Families were added; no Verified promotions; no translation counted as an independent witness; no crawler retry, access-control bypass or full-text copying.
+- The previous Answer Quality Gate run failed at the AID 2988877 assertion because one later in-place proposition had raised the canonical count from eight to nine. The stale assertion was corrected and extended to check the 246–255 locator.
+- Batch 154 is pending full reconciliation. Public metrics were not edited manually; the main-branch public values remain unchanged until the reconciliation workflow and merge complete.
