@@ -12,18 +12,17 @@
   "source_body_pages_opened": 12,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 10,
-  "existing_identities_enriched": 2,
+  "new_source_identities": 9,
+  "existing_identities_enriched": 3,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 13,
-  "existing_response_propositions_added": 2,
+  "new_response_propositions": 12,
+  "existing_response_propositions_added": 3,
   "total_new_paraphrase_entries": 15,
-  "answer_eligible_source_families_added": 10,
-  "independent_witnesses_added": 9,
+  "answer_eligible_source_families_added": 9,
+  "independent_witnesses_added": 8,
   "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "new_aids": [
-    2988877,
     3008872,
     3008877,
     2988883,
@@ -36,7 +35,8 @@
   ],
   "enriched_aids": [
     5071052,
-    2989555
+    2989555,
+    2988877
   ],
   "rechecked_aids": [],
   "blocked_candidate_count": 1,
@@ -53,18 +53,18 @@
   "metadata_only_candidate_count": 0,
   "excluded_candidate_count": 1,
   "language_distribution": {
-    "Hebrew": 10,
+    "Hebrew": 9,
     "English": 1
   },
   "original_language_distribution": {
-    "Hebrew": 10,
+    "Hebrew": 9,
     "unknown": 1
   },
   "proposition_language_distribution": {
     "Hebrew": 15
   },
   "source_type_distribution": {
-    "Sichos": 9,
+    "Sichos": 8,
     "Torat Menachem": 1,
     "Written responses": 1
   },
@@ -74,14 +74,14 @@
     "answer_eligible_propositions": 3727
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1445,
+    "answer_eligible_unique_sources": 1444,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3742
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
-  "metrics_note": "Corrected after canonical collision discovery: AID 2989555 already existed in batch 101. The duplicate batch-141 record was removed and its two propositions merged into the batch-101 canonical identity. Expected family boundary is 1435 → 1445; 15 propositions remain new at the project level (13 on new identities, two on the existing AID 2989555). The earlier 2026-11-15 search-index snapshot was stale and missed the batch-101 identity.",
+  "metrics_note": "After canonical reconciliation, batch141 contributes nine new source identities, three existing-identity enrichments, and fifteen total new paraphrases. AID 2988877 is not a new family: its one original batch141 proposition is an in-place addition to the batch100 canonical identity. AID 2989555 remains an in-place enrichment of batch101. Expected boundary: 1435 → 1444 answer-eligible unique sources; 854 Verified; 3727 → 3742 propositions.",
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
@@ -111,16 +111,16 @@
         "resolved": true
       }
     ],
-    "canonical_identity_collisions_resolved": 1,
+    "canonical_identity_collisions_resolved": 2,
     "canonical_identity_collisions_unresolved": 0,
-    "new_aids_unique": false,
-    "source_urls_unique": false,
-    "evidence_family_ids_unique": false,
+    "new_aids_unique": true,
+    "source_urls_unique": true,
+    "evidence_family_ids_unique": true,
     "recent_batches_checked": "055–147: 89 content-research batch files; 12 bulk-indexed files and 40 mixed-authorized-content files also scanned",
     "review_queue_records": 1022,
     "review_queue_matches": 0,
     "all_target_identities_answer_eligible": null,
-    "note": "The 2026-11-15 public-search-index snapshot was stale and missed AID 2989555, which already existed in batch101. A later canonical-file scan found the same AID/URL again in batch141 under a second Evidence Family ID. The duplicate record was removed and both propositions were merged into the batch101 identity. The large current search-index file could not be read through the connector; final full-index collision and answer-eligibility reconciliation remains pending."
+    "note": "The 2026-11-15 public-search-index snapshot was stale and missed AID 2989555, which already existed in batch101. A later canonical-file scan found the same AID/URL again in batch141 under a second Evidence Family ID. The duplicate record was removed and both propositions were merged into the batch101 identity. The large current search-index file could not be read through the connector; final full-index collision and answer-eligibility reconciliation remains pending. AID 2988877 was also duplicated in batch141 under a second family ID despite matching the existing batch100 AID and publisher URL. The batch141 record was removed; its original proposition was merged into batch100, and batches142, 143 and148 now point to the batch100 canonical identity."
   },
   "source_body_review": [
     {
@@ -134,11 +134,17 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "witness_type": "public_talk_transcript",
-      "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
-      "independent_witness": true,
+      "evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
-      "note": "נבדק גוף תמליל עברי המסומן בלתי מוגה; רק הקטעים המפורטים שימשו לפרפרזות."
+      "note": "The original one-paraphrase batch141 presentation was merged into the earliest canonical batch100 identity for the same AID, URL and talk. No independent witness was added.",
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "reviewed_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "reviewed_evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "duplicate_alias_merged": true
     },
     {
       "aid": 2989555,
@@ -339,6 +345,18 @@
       "total_propositions_after": 3,
       "body_locator": "Chabad.org AID 2989555, גוף השיחה, שורות 177–180 ו-202–217.",
       "reason": "AID 2989555 was already the canonical identity in batch 101. The batch-141 record used the same AID and publisher URL but a second Evidence Family ID; its two inspected propositions were merged into the existing canonical identity and the duplicate source record was removed. No new source or witness family is counted."
+    },
+    {
+      "aid": 2988877,
+      "id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "action": "enriched_existing_identity_in_place",
+      "existing_propositions_before": 3,
+      "propositions_added": 1,
+      "total_propositions_after": 4,
+      "body_locator": "Chabad.org AID 2988877, גוף השיחה, שורות 175–179.",
+      "reason": "The batch141 record duplicated the existing batch100 AID/URL under a second family ID. Its one original proposition was merged into the batch100 canonical identity; the family ID remains unchanged."
     }
   ],
   "crawler_retry": false,
@@ -350,7 +368,7 @@
   "fallback_source_results": {
     "publisher": "Chabad.org / BeitChabad.com / TheRebbe.org",
     "accessible_item_level_bodies": 11,
-    "existing_identity_bodies": 1,
+    "existing_identity_bodies": 2,
     "body_text_inspected": true,
     "inspected_aids": [
       2988877,
@@ -366,7 +384,8 @@
       1244711
     ],
     "existing_identity_aids": [
-      5071052
+      5071052,
+      2988877
     ],
     "blocked_direct_routes": [
       4666220
@@ -374,130 +393,9 @@
     "translations_counted_as_independent_witnesses": 0,
     "notes": "לאחר ש-AID 4666220 החזיר Internal Error, נפתחו ונבדקו 10 תמלילי/רישומי מקור בעברית וקטע מכתב באנגלית. שפת המקור של הקטע האנגלי לא הוכחה ולכן הוא נשאר non-independent. לא נעשה שימוש בתרגום כעד עצמאי."
   },
-  "existing_identity_updates_count": 2,
-  "note": "נבדקו 11 גופי מקור חדשים ועוד גוף מקור קיים; לאחר סריקת קבצים קנוניים נמצא כי AID 2989555 כבר היה זהות קיימת ב-batch101. הרשומה הכפולה הוסרה ושתי הפרפרזות הועברו לזהות הקנונית. לאחר התיקון: 10 זהויות חדשות, שתי זהויות מועשרות (5071052 ו-2989555), 15 פרפרזות חדשות ברמת הפרויקט; אין Verified promotion.",
+  "existing_identity_updates_count": 3,
+  "note": "נבדקו 11 גופי מקור חדשים ועוד גוף מקור קיים. סריקת AID/URL קנונית מצאה ש-AID 2988877 כבר היה זהות קיימת ב-batch100; הרשומה הכפולה ב-batch141 הוסרה והפרופוזיציה המקורית שלה מוזגה ל-batch100. לאחר התיקון: 9 זהויות חדשות, 3 זהויות מועשרות, 15 פרפרזות ברמת הפרויקט. כל המקורות נשארו Parsed; אין קידום ל-Verified.",
   "records": [
-    {
-      "id": "chabad-sicha-2988877",
-      "canonical_key": "aid:2988877",
-      "aid": 2988877,
-      "title": "שיחת ש״פ בשלח, י״ב שבט, ה׳תשי״ד",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה בעברית שפורסם בידי BeitChabad.com/Chabad.org ומסומן בלתי מוגה; ההקלטה והנוסח המוגה לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "י״ב שבט, ה׳תשי״ד",
-      "date_precision": "exact",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "public_talk_transcript",
-      "collection": "התוועדויות / תורת מנחם — BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2988877",
-      "context_status": "partial",
-      "summary_researcher": "השיחה ממסגרת את ההתוועדות כהמשך להתוועדות י׳ שבט, ובהמשך מתארת אחריות מעשית להפצת החסידות ולקירוב יהודים גם במקום שבו חסיד נמצא יחיד. בהמשך השיחה מובא סיפור על הנחת תפילין והשפעה על חולים נוספים, ולאחריו השוואה בין שהות באוניברסיטה לבין שליחות להפצת חסידות; אלה תיאורים בהקשר השיחה, ולא קביעה רפואית או כלל גורף לעזיבת מוסד. נוסף קטע שנבדק העוסק בקביעות יומית ו-לימוד חסידות.",
-      "response_propositions": [
-        "השיחה מציגה את ההתוועדות כהמשך להתוועדות י׳ שבט: המאמר שנאמר בהתוועדות הקודמת נחשב כמספק את חלק המאמר, והמפגש הנוכחי נועד להמשך ולסיום באמצעות שיחות נוספות; לכבוד שבת שירה התבקש להוסיף ניגון נוסף.",
-        "הקטע מרחיב את אחריות הפצת החסידות גם למי שנמצא בעיר מסוימת כחסיד יחיד: עליו לפעול לקירוב יהודים לחסידות, והשליחות במקום נבחנת גם לפי היכולת להשפיע על סביבתו.",
-        "נוסח השיחה מספר על חולה שקיבל ברכה והנחיה להתחיל להניח תפילין; לפי הסיפור, לאחר שהחל בכך הוא החלים, וחולים אחרים למדו מן המקרה והחלו גם הם להניח תפילין. זהו סיפור המובא בשיחה ולא ראיה רפואית ליעילות טיפול.",
-        "הקטע משווה שהות באוניברסיטה שבה נלמדים רעיונות נגד התורה ל'בית חולים ברוחניות', ומציג את שליחות האדם שם כהפצת אור החסידות; ההשוואה מתארת את מטרת השליחות ואינה קובעת כלל גורף לגבי עזיבת מוסד לימודים.",
-        "השיחה קוראת לקביעות יומית בלימוד חסידות, ולכל הפחות ללימוד שורות אחדות בכל יום; היא ממשילה את הלימוד לטבילה במים המכסים את האדם כולו, כדי להדגיש שהלימוד צריך לחדור את מכלול מציאותו ולא להישאר ידיעה חלקית."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org AID 2988877, גוף השיחה, שורות 175–179.",
-        "AID 2988877, שורות 272–277.",
-        "Chabad.org AID 2988877, גוף השיחה, שורות 279–282.",
-        "Chabad.org AID 2988877, גוף השיחה, שורות 284–285.",
-        "Chabad.org AID 2988877, גוף השיחה, סעיף כו, שורות 402–411."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org AID 2988877, גוף השיחה, שורות 175–179. | AID 2988877, שורות 272–277. | Chabad.org AID 2988877, גוף השיחה, שורות 279–282. | Chabad.org AID 2988877, גוף השיחה, שורות 284–285. | Chabad.org AID 2988877, גוף השיחה, סעיף כו, שורות 402–411.",
-      "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. נבדק מחדש ב-17.11.2026 גם קטע נוסף בגוף AID 2988877, שורות 272–277; הפרפרזה החדשה מוגבלת לקטע זה. הפרסום מסומן בלתי מוגה; ההקלטה והנוסח המוגה לא נבדקו. ב-17.11.2026 נפתח ונבדק גם קטע נוסף בגוף AID 2988877, שורות 279–285; נוספו שתי פרפרזות לא-מילוליות המוגבלות לקטע זה. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. נבדק מחדש ב-17.11.2026: נבדקו שורות 402–411 בלבד; זו קריאה והדרכה בתוך שיחה, ולא נוסח של פסיקה הלכתית נפרדת. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא הושוו. ההקשר נשאר partial; לא הועתק טקסט מוגן במלואו.",
-      "documented_circumstances": "התוועדות שבת שירה, ש״פ בשלח, י״ב שבט תשי״ד; השיחה מציינת במפורש שהיא המשך להתוועדות י׳ שבט.",
-      "question_or_problem": "כיצד ממוסגרת ההתוועדות כהמשך לי׳ שבט, ומהי אחריות החסיד להפצת החסידות במקום שבו הוא נמצא?",
-      "conditions_or_qualifications": [
-        "נבדקה רק פתיחת השיחה בשורות 175–179; אין להסיק מכך על תוכן יתר השיחות או המאמר.",
-        "הנוסח מסומן בלתי מוגה; הקלטה או כתב-יד לא נבדקו.",
-        "הסיפור על החלמה לאחר הנחת תפילין הוא סיפור המובא בשיחה; אין להציגו כהוכחה רפואית או כהמלצה רפואית.",
-        "ההשוואה לאוניברסיטה מתארת שליחות בהקשר השיחה ואינה הוראה גורפת לעזוב מוסד לימודים.",
-        "נבדקו שורות 402–411 בלבד; זו קריאה והדרכה בתוך שיחה, ולא נוסח של פסיקה הלכתית נפרדת."
-      ],
-      "audience": "משתתפי ההתוועדות וקוראי התמליל.",
-      "primary_secondary_status": "Publisher-published Hebrew unedited talk transcript; primary textual witness to the talk as published, while the audio and original stenographic record were not inspected.",
-      "witness_type": "published_hebrew_unedited_talk_transcript",
-      "witness_provenance": "BeitChabad.com / Chabad.org, AID 2988877, שיחת ש״פ בשלח, י״ב שבט, ה׳תשי״ד, https://he.chabad.org/library/article_cdo/aid/2988877",
-      "independent_witness": true,
-      "translation_status": "הפרסום מציג נוסח בעברית; לא צוין תרגום והמקור המוגה/הקלטה לא נבדקו.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את השיחה/הרישום לדברי הרבי; ההקלטה או הרישום בן הזמן לא נבדקו בנפרד.",
-      "source_role": "oral_talk_transcript",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "provenance": {
-        "authorship_status": "The publisher attributes the published talk/record to the Rebbe; audio or contemporaneous notes were not independently inspected.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / Chabad.org, AID 2988877, שיחת ש״פ בשלח, י״ב שבט, ה׳תשי״ד, https://he.chabad.org/library/article_cdo/aid/2988877",
-        "transmission_type": "Publisher-published Hebrew unedited transcript of a public talk, marked בלתי מוגה.",
-        "textual_status": "Only the cited body passages were inspected; the page marks the text בלתי מוגה; recording and corrected edition were not inspected. קטע נוסף בשורות 272–277 נפתח ונבדק ב-17.11.2026; לא נבדקו חלקים אחרים של השיחה מעבר למיקומים המתועדים. נבדק גם קטע נוסף בשורות 279–285 ביום 17.11.2026; הפרפרזות מוגבלות לקטעים שנפתחו.",
-        "editorial_scope": "Bounded non-verbatim research paraphrases and line locators only; no full protected text reproduced.",
-        "verification_status": "Parsed; source_text_inspected; partial context; additional body passage inspected 2026-11-17.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2988877",
-        "accessed": "2026-11-17T23:55:38+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "Publisher Hebrew text opened; marked בלתי מוגה; recording not inspected. מקטע גוף נוסף נפתח ונבדק ב-17.11.2026 לפי locator המצורף; הפרסום בלתי מוגה וההקשר נשאר חלקי.",
-        "complete_partial": "partial",
-        "notes": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. נבדק גם קטע נוסף בשורות 272–277; context remains partial. נפתח ונבדק קטע נוסף בשורות 279–285 ביום 17.11.2026; הסיפור נשמר כסיפור המובא בשיחה ולא כראיה רפואית. No manuscript/recording collation; added one bounded non-verbatim paraphrase from the cited body lines."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור ופרפרזות מחקריות תחומות בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות נפרדת לפי AID 2988877 ומשפחת ראיות sicha-5714-12-shevat-shabbat-beshalach-aid2988877; כל תרגום או פרסום מקביל עתידי ייבדק כנגזרת של אותה משפחה ולא כעד עצמאי.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת ש״פ בשלח, י״ב שבט, ה׳תשי״ד"
-        ],
-        "research_terms": [
-          "שבת שירה",
-          "התוועדות י׳ שבט",
-          "ניגון",
-          "המשך התוועדות",
-          "הפצת החסידות",
-          "קירוב יהודים",
-          "אחריות חסיד יחיד",
-          "תפילין",
-          "שליחות באוניברסיטה",
-          "בית חולים ברוחניות",
-          "השפעה על חולים",
-          "קביעות יומית",
-          "לימוד חסידות",
-          "כמה שורות בכל יום",
-          "לימוד החודר את האדם"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "המקור נשאר Parsed. נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2988877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. אין קידום ל-Verified. Batch 142: one additional non-verbatim proposition added from AID 2988877, lines 272–277; identity and Evidence Family unchanged; status remains Parsed. Batch 143: two additional non-verbatim propositions added from AID 2988877, lines 279–285; identity, Evidence Family and Parsed status unchanged; no Verified promotion. ב-17.11.2026 נפתח ונבדק קטע נוסף בגוף הפרסום; נוספה פרפרזה לא-מילולית אחת, מוגבלת למיקום המצוין.",
-      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
-      "content_enrichment_batch_id": "143",
-      "last_content_enriched_at": "2026-11-17"
-    },
     {
       "id": "chabad-sicha-3008872",
       "canonical_key": "aid:3008872",
@@ -1356,8 +1254,24 @@
     }
   ],
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 10,
+    "answer_eligible_unique_sources": 9,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 15
-  }
+  },
+  "duplicate_alias_identities": 1,
+  "duplicate_aliases": [
+    {
+      "aid": 2988877,
+      "id": "chabad-sicha-2988877",
+      "canonical_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "duplicate_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "canonical_evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "duplicate_evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
+      "action": "duplicate_alias_merged_into_canonical_identity",
+      "independent_witness": false,
+      "propositions_moved": 1,
+      "note": "Same publisher AID and URL; merged into the earliest batch100 identity. Later enrichments redirected to the canonical file."
+    }
+  ]
 }

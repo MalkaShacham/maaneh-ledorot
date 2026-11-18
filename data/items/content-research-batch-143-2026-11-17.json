@@ -76,20 +76,16 @@
     "Written responses": 7
   },
   "metrics_before": {
-    "answer_eligible_unique_sources": 1450,
+    "answer_eligible_unique_sources": 1449,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3751
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1462,
+    "answer_eligible_unique_sources": 1461,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3776
   },
-  "metrics_actual_before": {
-    "answer_eligible_unique_sources": 1450,
-    "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3751
-  },
+  "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "metrics_public_snapshot_before": {
@@ -328,29 +324,34 @@
       "web_source_ref": "turn395593view0",
       "existing_identity": true,
       "action": "enriched_existing_identity_in_place",
-      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
       "body_text_inspected": true,
       "source_body_locator": "Chabad.org AID 2988877, גוף השיחה, שורות 279–285.",
       "language": "Hebrew",
       "original_language": "Hebrew",
-      "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
+      "evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
       "existing_propositions_before": 2,
       "propositions_added": 2,
       "total_propositions_after": 4,
       "context_status": "partial",
-      "note": "העשרה של אותה זהות ואותה Evidence Family; שתי פרפרזות חדשות על סיפור תפילין והשליחות באוניברסיטה; אין מקור או עד עצמאי נוסף."
+      "note": "העשרה של אותה זהות ואותה Evidence Family; שתי פרפרזות חדשות על סיפור תפילין והשליחות באוניברסיטה; אין מקור או עד עצמאי נוסף.",
+      "id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "reviewed_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "reviewed_evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "independent_witness": false
     }
   ],
   "existing_identity_updates": [
     {
       "aid": 2988877,
-      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
-      "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
-      "existing_propositions_before": 2,
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "existing_propositions_before": 5,
       "propositions_added": 2,
-      "total_propositions_after": 4,
+      "total_propositions_after": 7,
       "body_locator": "Chabad.org AID 2988877, lines 279–285.",
-      "reason": "העשרה in-place של אותה שיחה: סיפור התפילין וההשפעה על חולים נוספים, ולאחריו ההשוואה לשליחות להפצת חסידות באוניברסיטה. אותה Evidence Family; אין עד עצמאי נוסף."
+      "reason": "העשרה in-place של אותה שיחה: סיפור התפילין וההשפעה על חולים נוספים, ולאחריו ההשוואה לשליחות להפצת חסידות באוניברסיטה. אותה Evidence Family; אין עד עצמאי נוסף.",
+      "id": "sicha-5714-beshalach-12-shevat-aid2988877"
     }
   ],
   "crawler_retry": false,
