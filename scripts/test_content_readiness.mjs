@@ -1395,7 +1395,7 @@ assert.equal(acquisitionState.manual_web_review.batch_file,batch164Path);
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'163');
 assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch163Path);
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
-assert.equal(acquisitionState.last_manual_web_review.batch_id,'163');assert.equal(acquisitionState.last_manual_review.batch_id,'163');
+assert.equal(acquisitionState.last_manual_web_review.batch_id,'164');assert.equal(acquisitionState.last_manual_review.batch_id,'164');
 for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158','159','160','161','162','163'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
@@ -5946,6 +5946,7 @@ for(const mode of ['regular','researcher']){
 
 
 const batch163Data=JSON.parse(await readFile(new URL(batch163Path,root),'utf8'));
+const batch164Data=JSON.parse(await readFile(new URL(batch164Path,root),'utf8'));
 assert.equal(String(batch163Data.batch_id),'163');
 assert.equal(batch163Data.records.length,0);
 assert.equal(batch163Data.new_source_identities,0);
@@ -5984,12 +5985,63 @@ assert.deepEqual(batch163Data.deduplication_check.canonical_identity_collisions,
 assert.deepEqual(batch163Data.deduplication_check.missing_canonical_identities,[]);
 assert.equal(batch163Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(['reconciled','reconciled_with_variance'].includes(batch163Data.reconciliation_status));
-assert.deepEqual(readinessMetrics(batch163Data.metrics_actual_after),readinessMetrics(metrics));
+assert.deepEqual(readinessMetrics(batch163Data.metrics_actual_after),readinessMetrics(batch164Data.metrics_actual_before));
 assert.deepEqual(batch163Data.metrics_delta_actual,{
  answer_eligible_unique_sources:batch163Data.metrics_actual_after.answer_eligible_unique_sources-batch163Data.metrics_actual_before.answer_eligible_unique_sources,
  content_verified_unique_sources:batch163Data.metrics_actual_after.content_verified_unique_sources-batch163Data.metrics_actual_before.content_verified_unique_sources,
  answer_eligible_propositions:batch163Data.metrics_actual_after.answer_eligible_propositions-batch163Data.metrics_actual_before.answer_eligible_propositions
 });
+assert.equal(String(batch164Data.batch_id),'164');
+assert.equal(batch164Data.records.length,0);
+assert.equal(batch164Data.new_source_identities,0);
+assert.equal(batch164Data.existing_identities_enriched,8);
+assert.equal(batch164Data.source_bodies_inspected,8);
+assert.equal(batch164Data.source_body_pages_opened,14);
+assert.equal(batch164Data.reviewed_item_count,17);
+assert.equal(batch164Data.existing_response_propositions_added,8);
+assert.equal(batch164Data.total_new_paraphrase_entries,8);
+assert.equal(batch164Data.blocked_candidate_count,3);
+assert.equal(batch164Data.excluded_candidate_count,6);
+assert.equal(batch164Data.fallback_source_attempted,true);
+assert.equal(batch164Data.crawler_retry,false);
+assert.equal(batch164Data.access_control_bypassed,false);
+assert.equal(batch164Data.full_text_copied,false);
+assert.equal(batch164Data.translations_counted_as_independent_witnesses,0);
+assert.deepEqual(batch164Data.new_aids,[]);
+assert.deepEqual(batch164Data.enriched_aids.map(String),['2988940','4385713','5959970','4280106','3008908','2989018','2989044','5989796']);
+assert.equal(batch164Data.existing_identity_updates.length,8);
+assert.equal(batch164Data.source_body_review.length,8);
+assert(batch164Data.source_body_review.every(r=>r.body_text_inspected===true&&r.source_body_locator&&r.proposition_source_locator&&r.web_source_ref));
+for(const update of batch164Data.existing_identity_updates){
+ const matches=idx.entries.filter(e=>sourceAID(e)===String(update.aid));
+ assert.equal(matches.length,1,'batch164 AID '+update.aid+' must retain one canonical identity');
+ const e=matches[0];
+ assert.equal(e.canonical_file,batch149Path);
+ assert.equal(e.evidence_family_id,update.evidence_family_id);
+ assert.equal(e.status,'Parsed');
+ assert.equal(e.has_content_evidence,true);
+ assert(e.response_propositions.includes(update.proposition));
+ assert(e.response_proposition_locators.includes(update.source_body_locator));
+ assert(e.response_propositions.length>=update.total_propositions_after);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(e.proposition_verification,'source_text_inspected');
+ assert.equal(e.context_status,'partial');
+ assert.equal(e.independent_witness,true);
+}
+assert.equal(batch164Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch164Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch164Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch164Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch164Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert(['reconciled','reconciled_with_variance'].includes(batch164Data.reconciliation_status));
+assert.deepEqual(readinessMetrics(batch164Data.metrics_actual_before),readinessMetrics(batch163Data.metrics_actual_after));
+assert.deepEqual(readinessMetrics(batch164Data.metrics_actual_after),readinessMetrics(metrics));
+assert.deepEqual(batch164Data.metrics_delta_actual,{
+ answer_eligible_unique_sources:batch164Data.metrics_actual_after.answer_eligible_unique_sources-batch164Data.metrics_actual_before.answer_eligible_unique_sources,
+ content_verified_unique_sources:batch164Data.metrics_actual_after.content_verified_unique_sources-batch164Data.metrics_actual_before.content_verified_unique_sources,
+ answer_eligible_propositions:batch164Data.metrics_actual_after.answer_eligible_propositions-batch164Data.metrics_actual_before.answer_eligible_propositions
+});
+
 const torahToilQuestion='מה מתועד על עמל בתורה ועל השפעת לימוד התורה מחוץ לישיבה?';
 const torahToilAids=['5959970','2989044'];
 const torahToilIndex=idx.entries.filter(e=>torahToilAids.includes(sourceAID(e)));
