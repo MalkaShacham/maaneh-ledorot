@@ -150,16 +150,12 @@
   },
   "metrics_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1496,
+    "answer_eligible_unique_sources": 1495,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3815
   },
   "metrics_actual_before": null,
-  "metrics_actual_after": {
-    "answer_eligible_unique_sources": 1496,
-    "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3815
-  },
+  "metrics_actual_after": null,
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 8,
     "content_verified_unique_sources": 0,
@@ -1337,5 +1333,6 @@
   "new_metadata_only_identities": 0,
   "duplicate_alias_identities": 0,
   "metrics_delta_actual": null,
-  "metrics_note": "Measured CI workspace snapshot from failed reconciliation run 44167373651 (2026-11-17 20:20Z): 1496 / 854 / 3815. This snapshot was generated after batch147 but was not committed because test_content_readiness.mjs failed. It includes the duplicate AID 2989555 Evidence Family later resolved in batch148; batch148 uses this as its pre-correction baseline."
+  "metrics_note": "Measured CI workspace snapshot from failed reconciliation run 44167373651 (2026-11-17 20:20Z): 1496 / 854 / 3815. This snapshot was generated after batch147 but was not committed because test_content_readiness.mjs failed. It includes the duplicate AID 2989555 Evidence Family later resolved in batch148; batch148 uses this as its pre-correction baseline.",
+  "metrics_baseline_correction": "One answer-eligible source was removed from the historical chain after AID 2988877 was consolidated into its earliest canonical identity in batch100; all subsequent expected source boundaries are shifted by -1. Reconciliation must recalculate actual snapshots."
 }

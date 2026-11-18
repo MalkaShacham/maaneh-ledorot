@@ -98,12 +98,12 @@
     "Maamarim": 1
   },
   "metrics_before": {
-    "answer_eligible_unique_sources": 1489,
+    "answer_eligible_unique_sources": 1488,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3810
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1496,
+    "answer_eligible_unique_sources": 1495,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3821
   },
@@ -1151,5 +1151,6 @@
       "last_content_enriched_at": "2026-11-17"
     }
   ],
-  "existing_identities_enriched_count": 1
+  "existing_identities_enriched_count": 1,
+  "metrics_baseline_correction": "One answer-eligible source was removed from the historical chain after AID 2988877 was consolidated into its earliest canonical identity in batch100; all subsequent expected source boundaries are shifted by -1. Reconciliation must recalculate actual snapshots."
 }

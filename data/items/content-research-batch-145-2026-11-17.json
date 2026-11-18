@@ -97,12 +97,12 @@
   ],
   "same_family_items": [],
   "metrics_before": {
-    "answer_eligible_unique_sources": 1477,
+    "answer_eligible_unique_sources": 1476,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3797
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1489,
+    "answer_eligible_unique_sources": 1488,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3810
   },
@@ -1887,5 +1887,6 @@
       "The entries are not empirical evidence of educational causality.",
       "Runtime inclusion of AID 3317931 and passing readiness checks remain unverified until Actions execute."
     ]
-  }
+  },
+  "metrics_baseline_correction": "One answer-eligible source was removed from the historical chain after AID 2988877 was consolidated into its earliest canonical identity in batch100; all subsequent expected source boundaries are shifted by -1. Reconciliation must recalculate actual snapshots."
 }

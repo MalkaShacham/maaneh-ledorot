@@ -35,12 +35,12 @@
     "Sichos": 8
   },
   "metrics_before": {
-    "answer_eligible_unique_sources": 1495,
+    "answer_eligible_unique_sources": 1494,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3823
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1503,
+    "answer_eligible_unique_sources": 1502,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3838
   },
@@ -1202,5 +1202,6 @@
       "content_enrichment_batch_id": "150",
       "last_content_enriched_at": "2026-11-18T00:56:23+02:00"
     }
-  ]
+  ],
+  "metrics_baseline_correction": "One answer-eligible source was removed from the historical chain after AID 2988877 was consolidated into its earliest canonical identity in batch100; all subsequent expected source boundaries are shifted by -1. Reconciliation must recalculate actual snapshots."
 }

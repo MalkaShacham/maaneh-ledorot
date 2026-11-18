@@ -63,12 +63,12 @@
     "Translated letter excerpt in testimony": 1
   },
   "metrics_before": {
-    "answer_eligible_unique_sources": 1462,
+    "answer_eligible_unique_sources": 1461,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3776
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1475,
+    "answer_eligible_unique_sources": 1474,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3795
   },
@@ -1451,5 +1451,6 @@
       "propositions_added": 0,
       "proposition_handling": "The later paraphrase was semantically redundant with the canonical inspected proposition; no second proposition or witness was counted."
     }
-  ]
+  ],
+  "metrics_baseline_correction": "One answer-eligible source was removed from the historical chain after AID 2988877 was consolidated into its earliest canonical identity in batch100; all subsequent expected source boundaries are shifted by -1. Reconciliation must recalculate actual snapshots."
 }
