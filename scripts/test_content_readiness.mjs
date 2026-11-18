@@ -1046,7 +1046,7 @@ assert(hayomYomYiddish&&hayomYomYiddish.language==='Yiddish'&&hayomYomYiddish.or
 const englishLetter=idx.entries.find(e=>sourceAID(e)==='2216588');
 assert(englishLetter&&englishLetter.language==='English'&&englishLetter.proposition_language==='English');
 const enrichedSicha=idx.entries.find(e=>sourceAID(e)==='2988877');
-assert(enrichedSicha&&enrichedSicha.response_propositions.length===9&&enrichedSicha.response_proposition_locators.some(x=>x.includes('209–216'))&&enrichedSicha.response_proposition_locators.some(x=>x.includes('402–411'))&&enrichedSicha.response_proposition_locators.some(x=>x.includes('246–255')));
+assert(enrichedSicha&&enrichedSicha.response_propositions.length===10&&enrichedSicha.response_proposition_locators.some(x=>x.includes('209–216'))&&enrichedSicha.response_proposition_locators.some(x=>x.includes('402–411'))&&enrichedSicha.response_proposition_locators.some(x=>x.includes('246–255')));
 for(const aid of batch105Data.new_aids){const e=idx.entries.find(x=>sourceAID(x)===String(aid));assert(e&&e.has_content_evidence,'batch-105 AID '+aid+' must have inspected source body');assert.equal(e.status,'Parsed');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));}
 const hayomQuestion='מהו התוכן של ערך היום יום ביידיש על חיפוש אמת ובדיקה של כל תנועה?';
 const hayomAnalysis=understandQuestion(hayomQuestion);assert(hayomAnalysis.topics.includes('חיפוש אמת ובדיקת תנועה'),'Yiddish Hayom Yom question must map to its proposition-level topic');
