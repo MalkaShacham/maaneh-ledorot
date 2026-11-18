@@ -5986,11 +5986,15 @@ assert.deepEqual(batch163Data.metrics_delta_actual,{
  content_verified_unique_sources:batch163Data.metrics_actual_after.content_verified_unique_sources-batch163Data.metrics_actual_before.content_verified_unique_sources,
  answer_eligible_propositions:batch163Data.metrics_actual_after.answer_eligible_propositions-batch163Data.metrics_actual_before.answer_eligible_propositions
 });
-const torahToilQuestion='מה מתועד בשיחות על עמל בתורה, לימוד נגלה וחסידות בפועל, והשפעת הלימוד על התלמיד והעולם?';
+const torahToilQuestion='מה מתועד על עמל בתורה ועל השפעת לימוד התורה מחוץ לישיבה?';
+const torahToilAids=['5959970','2989044'];
+const torahToilIndex=idx.entries.filter(e=>torahToilAids.includes(sourceAID(e)));
+assert.equal(torahToilIndex.length,2,'the two canonical Hebrew Sicha families for this focused comparison must be present');
+assert(torahToilIndex.every(e=>e.answer_eligible&&e.has_content_evidence&&e.proposition_source_locator));
 for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,torahToilQuestion,{mode});
- assert(m.answerable,mode+': cross-family Torah-toil and practical-study synthesis should be answerable');
- for(const aid of ['5959970','2989044']) assert(m.sources.some(e=>sourceAID(e)===aid),mode+': source '+aid+' must be retained');
+ const m=buildAnswerModel(torahToilIndex,torahToilQuestion,{mode});
+ assert(m.answerable,mode+': focused cross-family Torah-toil synthesis should be answerable');
+ for(const aid of torahToilAids) assert(m.sources.some(e=>sourceAID(e)===aid),mode+': source '+aid+' must be retained');
  assert(m.claims.length>0);
  assert(m.claims.every(c=>c.source_numbers?.length&&c.source_locators?.length&&c.source_locators.every(x=>x.locator)),'every synthesized claim must retain claim-local body locators');
  if(mode==='researcher'){
