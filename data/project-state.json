@@ -409,7 +409,7 @@
       "translations_counted_as_independent_witnesses": 0,
       "note": "Eight existing Hebrew identities enriched in place; three audio archive pages excluded because no transcript body was exposed. No new Evidence Families or Verified promotions."
     },
-    "last_run_note": "Batch154 content review committed to PR #35 branch: eight in-place Hebrew enrichments, eight non-verbatim source-grounded paraphrases, three audio-only archive pages excluded. The latest Answer Quality Gate failure was traced to a stale test expecting eight rather than nine propositions for AID 2988877; the assertion is corrected. Full reconciliation and readiness test pending.",
+    "last_run_note": "Batch154 added eight in-place Hebrew enrichments. The latest readiness run passed reconciliation and all structural gates but exposed a second stale test expectation: AID 5959845 has 16 distinct propositions (including the later section V, lines 200–203), while the regression expected 15. The assertion is corrected; full readiness rerun pending.",
     "last_batch_blocked_count": 0,
     "last_batch_blocked_reason": "No HTTP access block in batch154. Three archive candidates (AIDs 555044–555046) exposed no transcript body and were excluded; eight accessible Hebrew body passages were inspected as fallback.",
     "next_work": "Run full reconciliation for pending batches 145–154; verify AID/Evidence Family uniqueness, run test_content_readiness.mjs and Answer Quality Gate, then merge PR #35 only if all required checks pass and verify GitHub Pages.",

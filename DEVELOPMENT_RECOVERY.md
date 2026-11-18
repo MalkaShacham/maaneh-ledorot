@@ -1351,3 +1351,7 @@
 - No new source identities or Evidence Families were added; no Verified promotions; no translation counted as an independent witness; no crawler retry, access-control bypass or full-text copying.
 - The previous Answer Quality Gate run failed at the AID 2988877 assertion because one later in-place proposition had raised the canonical count from eight to nine. The stale assertion was corrected and extended to check the 246–255 locator.
 - Batch 154 is pending full reconciliation. Public metrics were not edited manually; the main-branch public values remain unchanged until the reconciliation workflow and merge complete.
+
+
+### Readiness follow-up — AID 5959845 assertion
+The next readiness run exposed a stale regression count for AID 5959845. The canonical identity in batch 106 contains 16 distinct propositions, including a later in-place addition at section ה׳, lines 200–203. Two propositions share the broader 181–186 passage locator but summarize different claims; they remain within the same AID and Evidence Family, not separate witnesses. The test now expects 16 and checks the additional locator. No source status or identity was changed.
