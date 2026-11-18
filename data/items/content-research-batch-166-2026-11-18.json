@@ -27,7 +27,7 @@
   "independent_witnesses_added": 6,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
-  "duplicate_alias_identities": 0,
+  "duplicate_alias_identities": 2,
   "source_languages": [
     "Hebrew"
   ],
@@ -632,7 +632,38 @@
   ],
   "existing_identity_updates": [],
   "existing_identity_updates_count": 0,
-  "existing_identity_rechecks": [],
+  "existing_identity_rechecks": [
+    {
+      "aid": 2989022,
+      "id": "sicha-5719-simchat-torah-day-aid2989022",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "evidence_family_id": "sicha-5719-simchat-torah-day-aid2989022",
+      "existing_propositions_before": 2,
+      "duplicate_candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
+      "duplicate_candidate_id": "chabad-sicha-2989022",
+      "duplicate_candidate_evidence_family_id": "sicha-5719-simchat-torah-day-aid2989022",
+      "body_locator": "he.chabad.org AID 2989022, גוף השיחה, סעיף א׳, שורות 175–180.",
+      "proposition_added": false,
+      "existing_identity": true,
+      "action": "duplicate_alias_existing_canonical_recheck_no_new_proposition",
+      "note": "Same AID and same publisher page already exist in canonical batch100. The inspected passage overlaps the existing proposition at lines 175–184; no new proposition or Evidence Family was added."
+    },
+    {
+      "aid": 5989700,
+      "id": "sicha-5729-13-tammuz-aid5989700",
+      "canonical_file": "data/items/content-research-batch-103-2026-11-15.json",
+      "evidence_family_id": "sicha-5729-13-tammuz-aid5989700",
+      "existing_propositions_before": 3,
+      "duplicate_candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
+      "duplicate_candidate_id": "chabad-sicha-5989700",
+      "duplicate_candidate_evidence_family_id": "sicha-5729-yud-gimmel-tammuz-aid5989700",
+      "body_locator": "he.chabad.org AID 5989700, גוף השיחה, סעיפים א׳–ב׳, שורות 177–183.",
+      "proposition_added": false,
+      "existing_identity": true,
+      "action": "duplicate_alias_existing_canonical_recheck_no_new_proposition",
+      "note": "Same AID and same publisher page already exist in canonical batch103. The inspected passage overlaps the existing proposition at lines 177–185; the candidate's different family slug was not retained. No new proposition or Evidence Family was added."
+    }
+  ],
   "duplicate_aliases": [
     {
       "aid": 2989022,
