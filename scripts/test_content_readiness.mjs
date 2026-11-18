@@ -1383,7 +1383,7 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
 assert.equal(acquisitionState.manual_web_review.batch_id,'156');
 assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-156-2026-11-18.json');
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'155');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-154-2026-11-18.json');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-155-2026-11-18.json');
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
 assert.equal(acquisitionState.last_manual_web_review.batch_id,'156');assert.equal(acquisitionState.last_manual_review.batch_id,'156');
 for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
@@ -3795,7 +3795,7 @@ for(const [id,next] of [['124',batch125Data.metrics_actual_before],['125',batch1
 assert.equal(acquisitionState.manual_web_review.batch_id,'156');
 assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-156-2026-11-18.json');
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'155');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-154-2026-11-18.json');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-155-2026-11-18.json');
 assert.equal(acquisitionState.last_manual_web_review.batch_id,'156');
 assert.equal(acquisitionState.last_manual_review.batch_id,'156');
 for(const id of ['126','127','128','129','130','131','132','133','134','135','154','155','156'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
