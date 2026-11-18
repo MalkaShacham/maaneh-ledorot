@@ -254,19 +254,19 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "Pending commit-bound reconciliation and readiness run after batch152.",
+      "run_status": "Latest PR run 44265320228 completed reconciliation and measured 1519/854/3903; retrieval, synthesis, citation integrity, evidence contract and structural quality gate passed. test_content_readiness failed at the cumulative AID 2988877 proposition count: batch156 added one more in-place proposition, so the correct total is 11, not 10. Assertion corrected; a fresh run is required.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
-      "workflow_run_id": 44107524723,
+      "workflow_run_id": 44265320228,
       "note": "Batch152 adds two source identities and four in-place enrichments; full reconciliation and test_content_readiness.mjs must pass before metrics are reported.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
-      "status": "pending_after_batch_152",
-      "last_failed_run_id": 44188237128,
-      "last_failure": "The special wells­prings-dissemination addSource path bypassed the generic claim locator filter and created claims with source_numbers but no source_locators. It now skips unlocated propositions and writes source_locators for each displayed source number."
+      "status": "pending_after_batch_156",
+      "last_failed_run_id": 44265320228,
+      "last_failure": "Stale cumulative AID 2988877 assertion expected 10 after batch156; canonical record contains 11. Corrected to 11."
     },
     "publication": {
       "status": "pending_deploy_after_batch_152",
@@ -2994,11 +2994,11 @@
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending_rerun_after_batch_156",
-    "last_failed_run_id": 44247225683,
-    "last_failure": "Stale cumulative AID 2988877 proposition count in test_content_readiness.mjs; corrected from 9 to 10.",
+    "last_failed_run_id": 44265320228,
+    "last_failure": "Stale cumulative AID 2988877 assertion expected 10 after batch156; canonical record contains 11. Corrected to 11.",
     "note": "Batch155 adds eight in-place propositions; no new identities or Verified promotions. Re-run reconciliation and content readiness before merge.",
-    "run_status": "PR run 44247225683 completed reconciliation in its workspace but failed at the stale AID 2988877 count assertion (expected 9; canonical record has 10). The assertion is corrected; batch156 adds eight further in-place propositions. A fresh commit-bound run is required.",
-    "workflow_run_id": 44247225683
+    "run_status": "Latest PR run 44265320228 completed reconciliation and measured 1519/854/3903; retrieval, synthesis, citation integrity, evidence contract and structural quality gate passed. test_content_readiness failed at the cumulative AID 2988877 proposition count: batch156 added one more in-place proposition, so the correct total is 11, not 10. Assertion corrected; a fresh run is required.",
+    "workflow_run_id": 44265320228
   },
   "publication": {
     "status": "pending_deploy_after_batch_156",
