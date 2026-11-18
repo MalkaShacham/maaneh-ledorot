@@ -1155,7 +1155,7 @@ assert.equal(batch111Data.existing_identity_updates[0].propositions_added,2);
 assert.equal(batch111Data.existing_identity_updates[0].total_propositions_after,6);
 const enriched2989153=idx.entries.find(e=>sourceAID(e)==='2989153');
 // The final corpus includes later in-place additions beyond batch111's historical 4→6 checkpoint.
-assert(enriched2989153&&enriched2989153.has_content_evidence&&enriched2989153.response_propositions.length===13);
+assert(enriched2989153&&enriched2989153.has_content_evidence&&enriched2989153.response_propositions.length===14);
 assert(enriched2989153.response_proposition_locators.some(x=>String(x).includes('שורות 247–256')));
 assert(enriched2989153.response_proposition_locators.some(x=>String(x).includes('שורות 243–244')));
 assert.equal(enriched2989153.status,'Parsed');
@@ -5285,3 +5285,49 @@ for(const mode of ['regular','researcher']){
  assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('152'));
  assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'152');
 }
+
+const batch153Path='data/items/content-research-batch-153-2026-11-18.json';
+const batch153Data=JSON.parse(await readFile(batch153Path,'utf8'));
+assert.equal(String(batch153Data.batch_id),'153');
+assert.equal(batch153Data.records.length,12);
+assert.equal(batch153Data.source_body_review.length,12);
+assert.equal(batch153Data.new_source_identities,12);
+assert.equal(batch153Data.new_response_propositions,12);
+assert.equal(batch153Data.content_verified_unique_sources_added,0);
+assert.equal(batch153Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch153Data.crawler_retry,false);
+assert.equal(batch153Data.access_control_bypassed,false);
+assert.equal(batch153Data.full_text_copied,false);
+assert.equal(batch153Data.scan_only_verification_used,false);
+assert.equal(batch153Data.fallback_source_attempted,true);
+assert.deepEqual(batch153Data.new_aids.map(String),['2988877','2989401','2989386','2989556','2989574','2989023','4279876','3008877','2988946','2989322','2989425','4736086']);
+assert(batch153Data.source_body_review.every(r=>r.body_text_inspected===true&&r.source_body_locator&&r.web_source_ref));
+assert(batch153Data.records.every(r=>r.status==='Parsed'&&r.pipeline_status==='Parsed'&&r.canonical_status==='Parsed'));
+assert(batch153Data.records.every(r=>r.has_content_evidence===true&&r.context_status==='partial'));
+assert(batch153Data.records.every(r=>r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'));
+assert(batch153Data.records.every(r=>r.proposition_source_locator&&r.provenance&&r.verification_scope));
+assert(batch153Data.records.every(r=>r.response_propositions.length===1&&r.response_proposition_locators.length===1));
+assert(batch153Data.records.every(r=>r.response_proposition_locators[0]===r.proposition_source_locator));
+assert.equal(batch153Data.records.filter(r=>r.language==='Yiddish').length,1);
+assert.equal(batch153Data.records.find(r=>String(r.aid)==='4736086').independent_witness,true);
+assert(batch153Data.records.find(r=>String(r.aid)==='4736086').translation_status.includes('אינו נספר כעד עצמאי'));
+for(const r of batch153Data.records){
+ const found=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
+ assert.equal(found.length,1,'batch153 AID '+r.aid+' must have one canonical identity');
+ assert.equal(found[0].canonical_file,batch153Path);
+ assert.equal(found[0].status,'Parsed');
+ assert.equal(found[0].has_content_evidence,true);
+ assert.equal(found[0].response_propositions.length,1);
+ assert.equal(found[0].evidence_family_id,r.evidence_family_id);
+}
+assert.equal(batch153Data.deduplication_check.unique_new_evidence_families,12);
+assert.equal(batch153Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch153Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch153Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch153Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch153Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert(['reconciled','reconciled_with_variance'].includes(batch153Data.reconciliation_status));
+assert.deepEqual(readinessMetrics(batch153Data.metrics_actual_after),readinessMetrics(metrics));
+assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('153'));
+assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('153'));
+assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'153');
