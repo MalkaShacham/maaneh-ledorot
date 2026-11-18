@@ -5378,7 +5378,7 @@ assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).inc
  assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('154'));
 assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('153'));
  assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('154'));
-assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'158');
+assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'159');
 
 
 const batch154Path='data/items/content-research-batch-154-2026-11-18.json';
@@ -5441,9 +5441,9 @@ assert.deepEqual(batch154Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch154Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('154'));
 assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('154'));
-assert.equal(String(state.current_batch),'158');
+assert.equal(String(state.current_batch),'159');
 assert.equal(String(state.development_recovery.current_batch),'159');
-assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'158');
+assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'159');
 assert.equal(String(state.development_recovery.last_reconciliation.batch_id),'159');
 assert.equal(String(acquisitionState.manual_web_review.batch_id),'159');
 assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'158');
@@ -5499,12 +5499,12 @@ assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).inc
 assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('157'));
 assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('155'));assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('156'));
 assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('157'));
-assert.equal(String(state.current_batch),'158');
-assert.equal(String(state.development_recovery.current_batch),'158');
-assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'158');
-assert.equal(String(state.development_recovery.last_reconciliation.batch_id),'158');
-assert.equal(String(acquisitionState.manual_web_review.batch_id),'158');
-assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'157');
+assert.equal(String(state.current_batch),'159');
+assert.equal(String(state.development_recovery.current_batch),'159');
+assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'159');
+assert.equal(String(state.development_recovery.last_reconciliation.batch_id),'159');
+assert.equal(String(acquisitionState.manual_web_review.batch_id),'159');
+assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'158');
 assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='155'));
 
 
@@ -5558,12 +5558,12 @@ assert.deepEqual(batch156Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch156Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('156'));
 assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('156'));
-assert.equal(String(state.current_batch),'158');
-assert.equal(String(state.development_recovery.current_batch),'158');
-assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'158');
-assert.equal(String(state.development_recovery.last_reconciliation.batch_id),'158');
-assert.equal(String(acquisitionState.manual_web_review.batch_id),'158');
-assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'157');
+assert.equal(String(state.current_batch),'159');
+assert.equal(String(state.development_recovery.current_batch),'159');
+assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'159');
+assert.equal(String(state.development_recovery.last_reconciliation.batch_id),'159');
+assert.equal(String(acquisitionState.manual_web_review.batch_id),'159');
+assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'158');
 assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='156'));
 
 assert.equal(String(batch157Data.batch_id),'157');
@@ -5629,11 +5629,11 @@ assert.deepEqual(batch157Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch157Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.map(String).includes('157'));
 assert(!projectState.development_recovery.pending_reconciliation_batches.map(String).includes('157'));
-assert.equal(String(projectState.current_batch),'158');
-assert.equal(String(projectState.development_recovery.current_batch),'158');
-assert.equal(String(projectState.development_recovery.last_batch_summary.batch_id),'158');
-assert.equal(String(acquisitionState.manual_web_review.batch_id),'158');
-assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'157');
+assert.equal(String(projectState.current_batch),'159');
+assert.equal(String(projectState.development_recovery.current_batch),'159');
+assert.equal(String(projectState.development_recovery.last_batch_summary.batch_id),'159');
+assert.equal(String(acquisitionState.manual_web_review.batch_id),'159');
+assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'158');
 assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='158'));
 
 assert.equal(String(batch158Data.batch_id),'158');
@@ -5687,11 +5687,11 @@ assert.deepEqual(batch158Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch158Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.map(String).includes('158'));
 assert(!projectState.development_recovery.pending_reconciliation_batches.map(String).includes('158'));
-assert.equal(String(projectState.current_batch),'158');
-assert.equal(String(projectState.development_recovery.last_batch_summary.batch_id),'158');
-assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'158');
-assert.equal(String(acquisitionState.manual_web_review.batch_id),'158');
-assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'157');
+assert.equal(String(projectState.current_batch),'159');
+assert.equal(String(projectState.development_recovery.last_batch_summary.batch_id),'159');
+assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'159');
+assert.equal(String(acquisitionState.manual_web_review.batch_id),'159');
+assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),'158');
 assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='158'));
 const simchatTorahDanceQuestion='מה המשמעות של הריקוד ברגליים בשמחת תורה ולמי הוא נגיש?';
 for(const mode of ['regular','researcher']){
