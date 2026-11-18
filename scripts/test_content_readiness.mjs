@@ -3793,11 +3793,11 @@ assert.equal(projectState.development_recovery.last_batch_summary.batch_id,'155'
 assert.deepEqual(readinessMetrics(projectState.development_recovery.last_batch_summary.metrics_after_actual),readinessMetrics(metrics));
 for(const [id,next] of [['124',batch125Data.metrics_actual_before],['125',batch126Data.metrics_actual_before],['126',batch127Data.metrics_actual_before],['127',batch128Data.metrics_actual_before],['128',batch129Data.metrics_actual_before],['129',batch130Data.metrics_actual_before],['130',batch131Data.metrics_actual_before],['131',batch132Data.metrics_actual_before],['132',batch133Data.metrics_actual_before],['133',batch134Data.metrics_actual_before],['134',batch135Data.metrics_actual_before],['135',batch136Data.metrics_actual_before]]){const audit=projectState.development_recovery.reconciliation_chain.find(x=>String(x.batch_id)===id);assert(audit,'missing reconciliation audit for batch '+id);assert.deepEqual(readinessMetrics(audit.metrics_actual_after),readinessMetrics(next));}
 assert.equal(acquisitionState.manual_web_review.batch_id,'155');
-assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-154-2026-11-18.json');
+assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-155-2026-11-18.json');
 assert.equal(acquisitionState.previous_manual_web_review.batch_id,'154');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-153-2026-11-18.json');
-assert.equal(acquisitionState.last_manual_web_review.batch_id,'154');
-assert.equal(acquisitionState.last_manual_review.batch_id,'154');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-154-2026-11-18.json');
+assert.equal(acquisitionState.last_manual_web_review.batch_id,'155');
+assert.equal(acquisitionState.last_manual_review.batch_id,'155');
 for(const id of ['126','127','128','129','130','131','132','133','134','135','154','155'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
  
