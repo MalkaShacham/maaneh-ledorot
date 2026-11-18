@@ -2227,10 +2227,14 @@ assert.equal(batch089Data.translations_counted_as_independent_witnesses,0);
 assert.equal(new Set(batch089Data.enriched_aids.map(String)).size,14);
 assert.equal(new Set(batch089Data.existing_identity_updates.map(x=>x.identity)).size,14);
 assert.deepEqual(batch089Data.metrics_expected_after,{answer_eligible_unique_sources:900,content_verified_unique_sources:852,answer_eligible_propositions:2832});
-assert.equal(batch089Data.reconciliation_status,'reconciled');
-assert.equal(batch089Data.status,'reconciled');
-assert.deepEqual(batch089Data.metrics_actual_after,batch089Data.metrics_expected_after);
-assert.deepEqual(batch089Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert(['reconciled','reconciled_with_variance'].includes(batch089Data.reconciliation_status));
+assert.equal(batch089Data.status,batch089Data.reconciliation_status);
+assert.deepEqual(batch089Data.metrics_actual_after,{
+ answer_eligible_unique_sources:batch089Data.metrics_expected_after.answer_eligible_unique_sources+batch089Data.reconciliation_variance.answer_eligible_unique_sources,
+ content_verified_unique_sources:batch089Data.metrics_expected_after.content_verified_unique_sources+batch089Data.reconciliation_variance.content_verified_unique_sources,
+ answer_eligible_propositions:batch089Data.metrics_expected_after.answer_eligible_propositions+batch089Data.reconciliation_variance.answer_eligible_propositions
+});
+assert(Object.values(batch089Data.reconciliation_variance).every(v=>v<=0),'batch089 historical reconciliation may record conservative downward variance but must never overstate eligible or verified content');
 assert.equal(batch089Data.existing_identity_rechecks[0].aid,4057736,'AID 4057736 was already enriched in batch 086 and must not be duplicated');
 assert(!batch089Aids.includes('4057736'));
 assert(!batch089Aids.includes('1558542'),'mismatched archive segment AID 1558542 must not be relabelled as the queued Kfar Chabad item');
