@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-18T02:24:48+02:00",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -77,7 +77,15 @@
     "Reconciliation run 507 measured 1450 / 854 / 3751 in its workspace but stopped before commit: test_question_specificity_gate.mjs exposed a temporal-dead-zone ReferenceError for wellspringsDisseminationQuestion. The snapshot is diagnostic only; public metrics remain unchanged.",
     "AID 4666220 returned Internal Error through the public reader on 2026-11-17; no crawler retry or access-control bypass. Twelve accessible bilingual Hayom Yom pages were inspected as same-run fallback.",
     "Batch 147: eight English Yechidus publisher presentations have inspected body passages but original-language transcripts/recordings are not collated; all eight remain non-independent and Parsed. Ten Hebrew candidates returned HTTP 429; no crawler retry or bypass. Full canonical reconciliation is still required.",
-    "AID 2989555 duplicate identity discovered across batch101 and batch141; resolved by merging the two inspected propositions into the batch101 canonical Evidence Family and removing the duplicate record. Full post-merge reconciliation remains pending."
+    "AID 2989555 duplicate identity discovered across batch101 and batch141; resolved by merging the two inspected propositions into the batch101 canonical Evidence Family and removing the duplicate record. Full post-merge reconciliation remains pending.",
+    {
+      "batch_id": "151",
+      "batch_file": "data/items/content-research-batch-151-2026-11-18.json",
+      "status": "pending_reconciliation",
+      "source_bodies_inspected": 11,
+      "new_source_identities": 11,
+      "new_response_propositions": 11
+    }
   ],
   "next_work": [
     "Run deterministic canonical reconciliation for the contiguous pending batch chain through batch150; verify AID/URL/ID/Evidence Family uniqueness and keep all eight enriched items in their existing families.",
@@ -110,14 +118,14 @@
       "actual_after": null,
       "reconciliation_status": "pending_reconciliation",
       "before": {
-        "answer_eligible_unique_sources": 1503,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3838
-      },
-      "expected_after": {
-        "answer_eligible_unique_sources": 1503,
+        "answer_eligible_unique_sources": 1502,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3846
+      },
+      "expected_after": {
+        "answer_eligible_unique_sources": 1513,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3857
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -173,55 +181,56 @@
         "147",
         "148",
         "149",
-        "150"
+        "150",
+        "151"
       ],
-      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement.",
+      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending.",
       "summary": {
-        "batch_id": "150",
-        "batch_file": "data/items/content-research-batch-150-2026-11-18.json",
+        "batch_id": "151",
+        "batch_file": "data/items/content-research-batch-151-2026-11-18.json",
         "status": "pending_reconciliation",
         "metrics_before": {
-          "answer_eligible_unique_sources": 1503,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3838
-        },
-        "metrics_expected_after": {
-          "answer_eligible_unique_sources": 1503,
+          "answer_eligible_unique_sources": 1502,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3846
         },
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1513,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3857
+        },
         "metrics_actual_after": null,
-        "new_source_identities": 0,
-        "existing_identities_enriched": 8,
-        "source_bodies_inspected": 8,
-        "new_response_propositions": 0,
-        "existing_response_propositions_added": 8,
-        "total_new_paraphrase_entries": 8,
-        "answer_eligible_source_families_added": 0,
-        "independent_witnesses_added": 0,
-        "non_independent_presentations_added": 0,
+        "new_source_identities": 11,
+        "existing_identities_enriched": 0,
+        "source_bodies_inspected": 11,
+        "new_response_propositions": 11,
+        "existing_response_propositions_added": 0,
+        "total_new_paraphrase_entries": 11,
+        "answer_eligible_source_families_added": 11,
         "content_verified_unique_sources_added": 0,
-        "blocked_candidate_count": 23,
-        "recovered_candidate_count": 0,
+        "blocked_candidate_count": 3,
         "metrics_delta_at_batch_boundary": {
-          "answer_eligible_unique_sources": 0,
+          "answer_eligible_unique_sources": 11,
           "content_verified_unique_sources": 0,
-          "answer_eligible_propositions": 8
+          "answer_eligible_propositions": 11
         },
         "reconciliation_status": "pending_reconciliation",
-        "reviewed_item_count": 8,
-        "source_body_pages_opened": 16,
-        "new_aids": [],
-        "enriched_aids": [
-          2988940,
-          4385713,
-          5959970,
-          4280106,
-          3008908,
-          2989018,
-          2989044,
-          5989796
+        "reviewed_item_count": 14,
+        "source_body_pages_opened": 33,
+        "new_aids": [
+          2989311,
+          5959840,
+          4296226,
+          4279994,
+          4280152,
+          2989588,
+          2989161,
+          4304430,
+          3008870,
+          2988962,
+          4385877
         ],
+        "enriched_aids": [],
         "translations_counted_as_independent_witnesses": 0
       },
       "status": "pending_reconciliation",
@@ -347,64 +356,65 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "150",
+    "current_batch": "151",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "147",
     "last_batch_summary": {
-      "batch_id": "150",
-      "batch_file": "data/items/content-research-batch-150-2026-11-18.json",
+      "batch_id": "151",
+      "batch_file": "data/items/content-research-batch-151-2026-11-18.json",
       "status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1503,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3838
-      },
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1503,
+        "answer_eligible_unique_sources": 1502,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3846
       },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1513,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3857
+      },
       "metrics_actual_after": null,
-      "new_source_identities": 0,
-      "existing_identities_enriched": 8,
-      "source_bodies_inspected": 8,
-      "new_response_propositions": 0,
-      "existing_response_propositions_added": 8,
-      "total_new_paraphrase_entries": 8,
-      "answer_eligible_source_families_added": 0,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 0,
+      "new_source_identities": 11,
+      "existing_identities_enriched": 0,
+      "source_bodies_inspected": 11,
+      "new_response_propositions": 11,
+      "existing_response_propositions_added": 0,
+      "total_new_paraphrase_entries": 11,
+      "answer_eligible_source_families_added": 11,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 23,
+      "blocked_candidate_count": 3,
       "recovered_candidate_count": 0,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 0,
+        "answer_eligible_unique_sources": 11,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 8
+        "answer_eligible_propositions": 11
       },
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 8,
-      "source_body_pages_opened": 16,
-      "new_aids": [],
-      "enriched_aids": [
-        2988940,
-        4385713,
-        5959970,
-        4280106,
-        3008908,
-        2989018,
-        2989044,
-        5989796
+      "reviewed_item_count": 14,
+      "source_body_pages_opened": 33,
+      "new_aids": [
+        2989311,
+        5959840,
+        4296226,
+        4279994,
+        4280152,
+        2989588,
+        2989161,
+        4304430,
+        3008870,
+        2988962,
+        4385877
       ],
+      "enriched_aids": [],
       "translations_counted_as_independent_witnesses": 0
     },
-    "last_run_note": "Batch150 inspected eight additional Hebrew Sicha body sections and enriched eight existing AID identities in place; no new identity or Verified promotion. Nineteen alternate publisher candidates were blocked as rewritten summary shells and four routes were inaccessible. Reconciliation is pending.",
-    "last_batch_blocked_count": 23,
-    "last_batch_blocked_reason": "Nineteen candidate pages redirected to rewritten summary shells; four translated-letter routes were inaccessible through the public reader. No crawler retry or access-control bypass.",
+    "last_run_note": "Batch151 inspected eleven Hebrew source bodies and added eleven non-verbatim research paraphrases. Three alternative candidates returned HTTP 429; no crawler retry or access-control bypass. Full-index deduplication and reconciliation are pending.",
+    "last_batch_blocked_count": 3,
+    "last_batch_blocked_reason": "Three alternative public publisher pages returned HTTP 429. They were excluded; eleven accessible Hebrew Sicha bodies were used as same-run fallback.",
     "next_work": [
-      "Run deterministic canonical reconciliation for the contiguous pending batch chain through batch150; verify AID/URL/ID/Evidence Family uniqueness and keep all eight enriched items in their existing families.",
-      "Run scripts/test_content_readiness.mjs, Answer Quality Gate and researcher-mode claim citation checks on the reconciled index; investigate any reconciliation variance before updating public metrics.",
-      "Verify the Pages deployment for the reconciliation commit and check the live public metrics/index; preserve the existing hourly workflow unchanged."
+      "Run deterministic canonical reconciliation through batch151; verify AID, URL, ID and Evidence Family uniqueness, including the AID 2988877 consolidation.",
+      "Run scripts/test_content_readiness.mjs and Answer Quality Gate; investigate every reconciliation variance before committing public metrics.",
+      "Verify the GitHub Pages build/deploy and inspect the live public metrics/index after reconciliation."
     ],
     "last_reconciliation": {
       "batch_id": "089",
@@ -1362,7 +1372,8 @@
       "147",
       "148",
       "149",
-      "150"
+      "150",
+      "151"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
@@ -3261,8 +3272,8 @@
     },
     "last_reviewed_batch": "149"
   },
-  "current_batch": "150",
-  "updated_at": "2026-11-18T00:56:23+02:00",
-  "current_batch_file": "data/items/content-research-batch-150-2026-11-18.json",
+  "current_batch": "151",
+  "updated_at": "2026-11-18T02:24:48+02:00",
+  "current_batch_file": "data/items/content-research-batch-151-2026-11-18.json",
   "status": "pending_reconciliation"
 }
