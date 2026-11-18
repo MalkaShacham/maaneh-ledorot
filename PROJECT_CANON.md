@@ -151,3 +151,12 @@
 - A same-page English rendering or later translation of the same entry is a derived presentation, not an independent witness and not a second Evidence Family.
 - Preserve every embedded attribution to the Alter Rebbe, the Rebbe Rashab, the Rebbe Rayatz, the Maggid, the Baal Shem Tov, or another named figure. A proposition describing an entry is not automatically a direct statement by the Lubavitcher Rebbe.
 - Keep context partial and status Parsed unless the underlying edition, textual history, and relevant context have actually been inspected. Do not promote an anthology excerpt to Verified merely because its page is publicly readable.
+
+
+## Multi-document publisher pages and source-unit identity
+
+A publisher AID or URL does not always identify exactly one primary document. A single page may contain multiple separate letters, documents, or speeches. When the body demonstrates distinct source units within one page, each canonical item MUST carry a stable `source_unit_key`, a precise `source_unit_locator`, and a short `document_unit_label`. These fields are not inferred from a title alone; establish the boundary from inspected body text, dates, language, and document structure.
+
+When `source_unit_key` is present, it is the primary identity key for deduplication and search indexing instead of the page-level AID/URL. Different source units on one page receive different unit keys and, where they are distinct primary documents, distinct Evidence Families. Translations and publisher re-presentations of the same source unit share the same `source_unit_key` and `evidence_family_id`, and MUST NOT be counted as independent witnesses. Use `independent_witness=false` for a translated or duplicate presentation. If the body cannot be inspected well enough to distinguish units, retain the collision as unresolved rather than guessing.
+
+Example: a recipient's published testimony may include an earlier Yiddish letter and a later English letter on the same AID page. The two letters are distinct source units with separate locators and Evidence Families; the English translation of the earlier Yiddish letter is not an independent witness to that earlier letter.
