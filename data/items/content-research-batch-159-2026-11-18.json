@@ -10,11 +10,11 @@
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "review_method": "Manual public web search/open inspection of eight accessible Hebrew source bodies on BeitChabad.com / Chabad.org. Six are unedited Sicha transcripts and two are published event reports. Propositions were written only after opening and inspecting the body at the listed locator; titles and snippets were used only for discovery. All remain Parsed; no Verified promotions. No crawler retry, access-control bypass or full-text reproduction.",
-  "records_reviewed": 8,
-  "reviewed_item_count": 8,
+  "records_reviewed": 14,
+  "reviewed_item_count": 14,
   "source_bodies_inspected": 8,
   "source_body_pages_opened": 8,
-  "metadata_only_items_rechecked": 0,
+  "metadata_only_items_rechecked": 2,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 8,
@@ -24,8 +24,8 @@
   "existing_response_propositions_added": 0,
   "total_new_paraphrase_entries": 8,
   "answer_eligible_source_families_added": 8,
-  "independent_witnesses_added": 6,
-  "non_independent_presentations_added": 2,
+  "independent_witnesses_added": 5,
+  "non_independent_presentations_added": 3,
   "content_verified_unique_sources_added": 0,
   "duplicate_alias_identities": 0,
   "source_languages": [
@@ -35,7 +35,8 @@
     "Hebrew": 8
   },
   "original_language_distribution": {
-    "Hebrew": 8
+    "Hebrew": 5,
+    "unknown": 3
   },
   "proposition_language_distribution": {
     "Hebrew": 8
@@ -132,7 +133,7 @@
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 8
   },
-  "metrics_note": "Baseline is the PR-head planning boundary after batch158 (1522/854/3923), not a committed or public measurement. Batch159 adds eight candidate Evidence Families and eight inspected paraphrases. Exact post-reconciliation counts remain pending.",
+  "metrics_note": "Baseline 1522/854/3923 is the planning boundary after batch158, not a committed/public measurement. Batch159 adds eight candidate Evidence Families and eight inspected paraphrases. Exact post-reconciliation counts remain pending.",
   "deduplication_check": {
     "new_aids_unique": true,
     "new_source_urls_unique": true,
@@ -154,19 +155,19 @@
       "158",
       "159"
     ],
-    "note": "AID code search on main and the current review queue returned no matches for the eight candidate IDs. Full canonical-index and Evidence Family scan remains pending reconciliation; no claim of complete deduplication is made."
+    "note": "AID code search on main and the current review queue returned no matches for the eight candidate IDs. Three records are explicitly non-independent (two published event reports with unidentified recorders and one Hebrew publication whose original spoken language is unestablished). Full canonical-index and Evidence Family scan remains pending reconciliation."
   },
   "source_body_review": [
     {
       "aid": 2989320,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989320",
-      "web_source_ref": null,
+      "web_source_ref": "turn907390view0",
       "body_text_inspected": true,
       "body_page_opened": true,
       "title_or_metadata_only": false,
       "source_body_locator": "AID 2989320, גוף הדיווח, שורות 171–179.",
       "language": "Hebrew",
-      "original_language": "Hebrew",
+      "original_language": "unknown",
       "witness_type": "published_event_report",
       "evidence_family_id": "yechidus-report-5710-12-menachem-av-aid2989320",
       "independent_witness": false,
@@ -184,7 +185,7 @@
     {
       "aid": 2988989,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2988989",
-      "web_source_ref": null,
+      "web_source_ref": "turn643862view3",
       "body_text_inspected": true,
       "body_page_opened": true,
       "title_or_metadata_only": false,
@@ -208,7 +209,7 @@
     {
       "aid": 2988990,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2988990",
-      "web_source_ref": null,
+      "web_source_ref": "turn643862view4",
       "body_text_inspected": true,
       "body_page_opened": true,
       "title_or_metadata_only": false,
@@ -232,7 +233,7 @@
     {
       "aid": 3008863,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/3008863",
-      "web_source_ref": null,
+      "web_source_ref": "turn907390view3",
       "body_text_inspected": true,
       "body_page_opened": true,
       "title_or_metadata_only": false,
@@ -256,7 +257,7 @@
     {
       "aid": 2989409,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989409",
-      "web_source_ref": null,
+      "web_source_ref": "turn643862view5",
       "body_text_inspected": true,
       "body_page_opened": true,
       "title_or_metadata_only": false,
@@ -280,7 +281,7 @@
     {
       "aid": 4304436,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4304436",
-      "web_source_ref": null,
+      "web_source_ref": "turn643862view6",
       "body_text_inspected": true,
       "body_page_opened": true,
       "title_or_metadata_only": false,
@@ -304,16 +305,16 @@
     {
       "aid": 2987993,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2987993",
-      "web_source_ref": null,
+      "web_source_ref": "turn643862view2",
       "body_text_inspected": true,
       "body_page_opened": true,
       "title_or_metadata_only": false,
       "source_body_locator": "AID 2987993, גוף השיחה, סעיפים א׳–ב׳, שורות 245–263.",
       "language": "Hebrew",
-      "original_language": "Hebrew",
-      "witness_type": "published_hebrew_unedited_sicha_transcript",
+      "original_language": "unknown",
+      "witness_type": "published_hebrew_text_original_language_unconfirmed",
       "evidence_family_id": "sicha-5722-monday-reeh-20-menachem-av-aid2987993",
-      "independent_witness": true,
+      "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
       "existing_identity": false,
@@ -328,13 +329,13 @@
     {
       "aid": 2989375,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989375",
-      "web_source_ref": null,
+      "web_source_ref": "turn182864view4",
       "body_text_inspected": true,
       "body_page_opened": true,
       "title_or_metadata_only": false,
       "source_body_locator": "AID 2989375, גוף הדיווח, שורות 171–178.",
       "language": "Hebrew",
-      "original_language": "Hebrew",
+      "original_language": "unknown",
       "witness_type": "published_event_report",
       "evidence_family_id": "farbrengen-report-5711-6-nissan-gemach-aid2989375",
       "independent_witness": false,
@@ -370,7 +371,7 @@
       "date": "י״ב מנחם-אב, ה׳שי״ת",
       "date_precision": "exact_as_published",
       "language": "Hebrew",
-      "original_language": "Hebrew",
+      "original_language": "unknown",
       "context_status": "partial",
       "summary_researcher": "דיווח על מפגש עם תלמידים היוצאים לשליחות המרכז לענייני חינוך; מתועד בו דגש על רצונם של השלוחים, אמירת פרק תהילים ע״א ונשיאת מאמר ותצלום.",
       "provenance": {
@@ -440,7 +441,7 @@
       "audience": "כמה תלמידים היוצאים בשליחות המרכז לענייני חינוך.",
       "primary_secondary_status": "Published event report; one public textual witness to the report, not an independently corroborated contemporaneous record.",
       "witness_type": "published_event_report",
-      "translation_status": "הגוף העברי של הפרסום נבדק; לא צורף תרגום ולא נספר תרגום כעד עצמאי.",
+      "translation_status": "הפרסום שנבדק בעברית; שפת האמירה המקורית או יחס תרגום לא הוכרעו במקור שנפתח. הרשומה אינה נספרת כעד עצמאי.",
       "independent_witness": false,
       "author_name": null,
       "author_role": "Recorder not identified; published report attributes remarks to the Rebbe.",
@@ -976,7 +977,7 @@
       "aid": 2987993,
       "title": "שיחת יום ב׳ פ׳ ראה, כ׳ מנחם-אב, ה׳תשכ״ב",
       "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה בעברית שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
+      "source_class_detail": "תמליל שיחה בעברית שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. שפת האמירה המקורית לא הוכחה בעמוד שנפתח; הרשומה אינה נספרת כעד עצמאי.",
       "pipeline_status": "Parsed",
       "status": "Parsed",
       "canonical_status": "Parsed",
@@ -985,7 +986,7 @@
       "date": "כ׳ מנחם-אב, ה׳תשכ״ב",
       "date_precision": "exact_as_published",
       "language": "Hebrew",
-      "original_language": "Hebrew",
+      "original_language": "unknown",
       "context_status": "partial",
       "summary_researcher": "שיחה בלתי מוגה על השראת השכינה במעמד עשרה מישראל, ובמעלה היתרה של עשרה העוסקים יחד בתורה.",
       "provenance": {
@@ -1053,10 +1054,10 @@
         "הפרפרזה מתארת את ההבחנה כפי שהיא מוצגת בשיחה ואינה קובעת השלכה הלכתית מעבר למקור."
       ],
       "audience": "קהל השיחה וקוראי התמליל.",
-      "primary_secondary_status": "Published Hebrew unedited talk transcript; one textual witness to the talk as published, with audio and contemporaneous notes not independently inspected.",
-      "witness_type": "published_hebrew_unedited_sicha_transcript",
-      "translation_status": "הגוף העברי של הפרסום נבדק; לא צורף תרגום ולא נספר תרגום כעד עצמאי.",
-      "independent_witness": true,
+      "primary_secondary_status": "Published Hebrew transcript; original spoken language and translation status are not established by the inspected page; not counted as an independent witness.",
+      "witness_type": "published_hebrew_text_original_language_unconfirmed",
+      "translation_status": "הפרסום שנבדק בעברית; שפת האמירה המקורית או יחס תרגום לא הוכרעו במקור שנפתח. הרשומה אינה נספרת כעד עצמאי.",
+      "independent_witness": false,
       "author_name": "Rabbi Menachem Mendel Schneerson",
       "author_role": "speaker; publisher-attributed talk transcript",
       "authorship_status": "Publisher-attributed Hebrew talk transcript; recording and contemporaneous notes not inspected.",
@@ -1087,7 +1088,7 @@
       "date": "ו׳ ניסן, ה׳תשי״א",
       "date_precision": "exact_as_published",
       "language": "Hebrew",
-      "original_language": "Hebrew",
+      "original_language": "unknown",
       "context_status": "partial",
       "summary_researcher": "דיווח על דברי הרבי לגבאי גמ״ח התמימים, הכולל סיפור על חסידי הצמח צדק ונתינת הלוואות מתוך הכרה בערך גמילות חסדים.",
       "provenance": {
@@ -1157,7 +1158,7 @@
       "audience": "גבאי הגמ״ח של התמימים, כפי שמצוין בהערת הפרסום.",
       "primary_secondary_status": "Published event report; one public textual witness to the report, not an independently corroborated contemporaneous record.",
       "witness_type": "published_event_report",
-      "translation_status": "הגוף העברי של הפרסום נבדק; לא צורף תרגום ולא נספר תרגום כעד עצמאי.",
+      "translation_status": "הפרסום שנבדק בעברית; שפת האמירה המקורית או יחס תרגום לא הוכרעו במקור שנפתח. הרשומה אינה נספרת כעד עצמאי.",
       "independent_witness": false,
       "author_name": null,
       "author_role": "Recorder not identified; published report attributes remarks to the Rebbe.",
@@ -1175,6 +1176,6 @@
       "content_enrichment_batch_file": "data/items/content-research-batch-159-2026-11-18.json"
     }
   ],
-  "note": "Eight Hebrew source bodies were inspected: six unedited Sicha transcripts and two event reports. The reports are retained as non-independent textual witnesses and are not used to assert a cross-family pattern. Four alternative AIDs returned HTTP 429; two alternative pages exposed only navigation shells. Eight accessible bodies were used as replacements in this same run. No translations counted as independent witnesses; all records remain Parsed.",
+  "note": "Four alternative AIDs returned HTTP 429 and two alternative pages exposed only navigation shells. Eight other accessible Hebrew bodies were opened and inspected. Five Sicha transcripts are treated as independent text witnesses; two event reports and one Hebrew publication with unestablished original language are explicitly non-independent. All records remain Parsed; no Verified promotions.",
   "metrics_baseline_correction": "The 1522/854/3923 baseline is a planning boundary after batches157–158, not an actual or public metric. Reconciliation must compute the exact answer-eligible family count."
 }
