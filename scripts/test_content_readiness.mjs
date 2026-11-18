@@ -1372,7 +1372,7 @@ assert.deepEqual(batch113Data.reconciliation_variance,{
  answer_eligible_propositions:batch113Actual.answer_eligible_propositions-batch113Data.metrics_expected_after.answer_eligible_propositions
 });
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
-assert.equal(lastBatchSummary.batch_id,'137');
+assert.equal(lastBatchSummary.batch_id,'154');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
 assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
 assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
@@ -1380,12 +1380,12 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  content_verified_unique_sources:metrics.content_verified_unique_sources-lastBatchSummary.metrics_actual_before.content_verified_unique_sources,
  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
 });
-assert.equal(acquisitionState.manual_web_review.batch_id,'137');
+assert.equal(acquisitionState.manual_web_review.batch_id,'154');
 assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-137-2026-11-17.json');
-assert.equal(acquisitionState.previous_manual_web_review.batch_id,'136');
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'153');
 assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-136-2026-11-17.json');
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
-assert.equal(acquisitionState.last_manual_web_review.batch_id,'137');assert.equal(acquisitionState.last_manual_review.batch_id,'137');
+assert.equal(acquisitionState.last_manual_web_review.batch_id,'154');assert.equal(acquisitionState.last_manual_review.batch_id,'154');
 for(const id of ['129','130','131','132','133','134','135','136','137'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));

@@ -1355,3 +1355,7 @@
 
 ### Readiness follow-up — AID 5959845 assertion
 The next readiness run exposed a stale regression count for AID 5959845. The canonical identity in batch 106 contains 16 distinct propositions, including a later in-place addition at section ה׳, lines 200–203. Two propositions share the broader 181–186 passage locator but summarize different claims; they remain within the same AID and Evidence Family, not separate witnesses. The test now expects 16 and checks the additional locator. No source status or identity was changed.
+
+
+### Readiness follow-up — latest-state assertions
+A later portion of `test_content_readiness.mjs` still asserted that the current acquisition pointer and last batch summary were 137/136. Those were historical expectations, not immutable batch snapshots. They now assert the current batch 154 and previous batch 153, matching the project-state and acquisition records. No historical batch content or source identity was changed.
