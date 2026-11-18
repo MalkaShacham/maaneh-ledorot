@@ -1324,3 +1324,15 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - Planning boundary only: 1,530 / 854 / 3,951 to 1,530 / 854 / 3,959. This is not a measured result. Public main metrics remain 977 / 878 / 2,950 until full reconciliation is committed.
 - The PR branch's DEVELOPMENT_RECOVERY.md had been overwritten with JSON batch content. It was restored from the canonical main-branch Markdown and this note was appended. Full-index reconciliation and the readiness gate remain pending.
 - The existing hourly workflow, audience and repository permissions were not changed.
+
+
+## 2026-11-18 — Batch 163: eight additional Hebrew source-body enrichments
+
+- Opened and inspected eight distinct public Hebrew source-body passages from existing canonical Sichos: AIDs 2988940, 4385713, 5959970, 4280106, 3008908, 2989018, 2989044 and 5989796. Added eight non-verbatim `source_grounded_paraphrase` propositions in place, each with an exact body locator, provenance, partial-context scope and explicit limitation. The canonical AID and Evidence Family for each item were preserved.
+- The additional material covers annual shared Talmud-study division; the connection between teshuvah, Sukkot unity and Hakhel; toil in Torah as distinct from study solely to know practical law; the necessity of human action alongside empowerment from above; use of time without postponing assigned work; adapting teaching to a recipient's capacity; the outward effect of intensive Torah study; and increased Torah study during Pesach.
+- The AID 5989796 passage is specifically marked by the publisher's footnote as edited by the Rebbe and printed in the additions to Likkutei Sichos, volume 7. That edition was not independently inspected; the proposition is scoped to the publicly displayed passage.
+- Twenty candidate pages were excluded after public inspection: twelve Sicha routes exposed navigation/summary shells, two Igrot routes redirected to rewritten summary shells, four Yechidus pages exposed metadata without transcript text, and two routes returned Internal Error (AIDs 4666220 and 553736). Eight accessible existing Hebrew source bodies were used as same-run fallback. No search snippet or title was used as content.
+- No new source identity, no new Evidence Family, no Verified promotion, no translation counted as an independent witness, no crawler retry, no access-control bypass and no full-text copying.
+- Planning boundary only: 1,530 / 854 / 3,959 to 1,530 / 854 / 3,967. This is not a measured result; public main metrics remain 977 / 878 / 2,950 pending full reconciliation.
+- The current PR-head gate had failed at a temporal-dead-zone reference to `batch162Path` (used before its declaration). The declaration was moved before first use and a batch163 regular/deep-research citation regression was added. A fresh exact-head gate is required.
+- The existing hourly workflow, schedule, audience and repository permissions remain unchanged.
