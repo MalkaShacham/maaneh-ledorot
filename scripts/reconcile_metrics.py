@@ -11,6 +11,17 @@ manifests=sorted((ROOT/"data/staging/manifests").glob("*.json"))
 PIPE=("Verified","Linked","Parsed","Indexed","Discovered")
 def identity_keys(d):
     if not isinstance(d,dict): return []
+    # Some publisher pages contain multiple distinct primary documents (for
+    # example, two separate letters embedded in one recipient testimony).
+    # When a source_unit_key is supplied, it is the canonical identity boundary:
+    # translations of that same unit share the key, while separate documents
+    # on the same AID/URL receive different keys.
+    unit=d.get("source_unit_key") or d.get("document_unit_key")
+    if unit:
+        out=["unit:"+str(unit)]
+        if d.get("staging_stable_key"): out.append(str(d["staging_stable_key"]))
+        if d.get("id"): out.append("id:"+str(d["id"]))
+        return list(dict.fromkeys(out))
     out=[]
     loc=d.get("locator") or {}
     prov=d.get("provenance") or {}
@@ -255,7 +266,7 @@ for fp in items:
     if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
     for x in candidate_dicts(obj):
         if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
-        record_summary={"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")}
+        record_summary={"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"source_unit_key":x.get("source_unit_key"),"source_unit_locator":x.get("source_unit_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")}
         for record_key in set(identity_keys(x)):
             identity_record_index.setdefault(record_key,[]).append(record_summary)
 
@@ -276,8 +287,11 @@ for selected_index, batch_info in enumerate(selected_batches):
             aid=str(record.get("aid") or "")
             add_target(stable,aid if aid else None,record.get("id"))
     for update in batch_data.get("existing_identity_updates",[]):
+        unit=str(update.get("source_unit_key") or update.get("document_unit_key") or "")
         aid=str(update.get("aid") or "")
-        if aid.isdigit():
+        if unit:
+            add_target("unit:"+unit,aid if aid.isdigit() else None,update.get("id"))
+        elif aid.isdigit():
             add_target("aid:"+aid,aid,update.get("id"))
         else:
             identity=str(update.get("identity") or update.get("id") or "")
@@ -291,8 +305,10 @@ for selected_index, batch_info in enumerate(selected_batches):
         if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
         if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
     for recheck in batch_data.get("existing_identity_rechecks",[]):
+        unit=str(recheck.get("source_unit_key") or recheck.get("document_unit_key") or "")
         recheck_aid=str(recheck.get("aid") or "")
-        if recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
+        if unit: add_target("unit:"+unit,recheck_aid if recheck_aid.isdigit() else None,recheck.get("id"))
+        elif recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
 
     # Exclude later manual batches to calculate the actual corpus snapshot immediately
     # after this batch. Use all entries, not only the final deduplicated index.
