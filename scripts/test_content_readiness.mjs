@@ -110,10 +110,14 @@ assert.equal(batch085Data.metrics_before.answer_eligible_unique_sources,837);
 assert.equal(batch085Data.metrics_before.content_verified_unique_sources,834);
 assert.equal(batch085Data.metrics_before.answer_eligible_propositions,2721);
 assert.deepEqual(batch085Data.metrics_expected_after,{answer_eligible_unique_sources:855,content_verified_unique_sources:852,answer_eligible_propositions:2767});
-assert(['pending','reconciled'].includes(batch085Data.reconciliation_status));
+assert(['pending','reconciled','reconciled_with_variance'].includes(batch085Data.reconciliation_status));
 if(batch085Data.reconciliation_status==='reconciled'){
  assert.deepEqual(batch085Data.metrics_actual_after,batch085Data.metrics_expected_after,'batch 085 reconciliation must be checked against its own snapshot, not the later batch 086 metrics');
  assert.deepEqual(batch085Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
+}else if(batch085Data.reconciliation_status==='reconciled_with_variance'){
+ assert.equal(batch085Data.deduplication_check?.full_index_scan_available,true,'variance is accepted only after a full-index audit');
+ assert(batch085Data.metrics_actual_after&&batch085Data.metrics_expected_after);
+ assert.deepEqual(batch085Data.reconciliation_variance,{answer_eligible_unique_sources:batch085Data.metrics_actual_after.answer_eligible_unique_sources-batch085Data.metrics_expected_after.answer_eligible_unique_sources,content_verified_unique_sources:batch085Data.metrics_actual_after.content_verified_unique_sources-batch085Data.metrics_expected_after.content_verified_unique_sources,answer_eligible_propositions:batch085Data.metrics_actual_after.answer_eligible_propositions-batch085Data.metrics_expected_after.answer_eligible_propositions});
 }
 for(const aid of batch085Aids){
  const matches=idx.entries.filter(e=>sourceAID(e)===aid);
