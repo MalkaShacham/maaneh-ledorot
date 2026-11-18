@@ -131,9 +131,9 @@
         "answer_eligible_propositions": 3923
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1541,
+        "answer_eligible_unique_sources": 1539,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3997
+        "answer_eligible_propositions": 3995
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -388,14 +388,14 @@
       "answer_eligible_source_families_added": 0,
       "content_verified_unique_sources_added": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1541,
+        "answer_eligible_unique_sources": 1539,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3989
+        "answer_eligible_propositions": 3987
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1541,
+        "answer_eligible_unique_sources": 1539,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3997
+        "answer_eligible_propositions": 3995
       },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
@@ -1196,7 +1196,7 @@
     "status": "awaiting_batch_167_reconciliation_and_tests",
     "last_failed_run_id": 44386330171,
     "last_failure": "The previous exact-head run stopped at a stale regression assertion expecting 19 propositions for AID 2989585; the canonical item has 20. The test is corrected to the inspected canonical count and extended for Batch167.",
-    "note": "Batch167 adds eight in-place Hebrew source enrichments. Reconcile all pending batches, pass test_content_readiness.mjs and the exact-head Answer Quality Gate before merge.",
+    "note": "Batch166 duplicate AIDs 2989022 and 5989700 were reclassified as existing canonical rechecks, leaving six genuinely new families. Batch167 adds eight in-place propositions. Reconcile all pending batches and pass the exact-head Answer Quality Gate before merge.",
     "run_status": "Awaiting fresh exact-head Answer Quality Gate after Batch167 and full reconciliation.",
     "workflow_run_id": 44399479877
   },
