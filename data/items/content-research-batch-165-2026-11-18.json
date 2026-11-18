@@ -23,7 +23,7 @@
   "new_response_propositions": 3,
   "existing_response_propositions_added": 5,
   "total_new_paraphrase_entries": 8,
-  "answer_eligible_source_families_added": 3,
+  "answer_eligible_source_families_added": null,
   "independent_witnesses_added": 0,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
@@ -126,7 +126,7 @@
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 8
   },
-  "metrics_note": "The before values are a measured PR-workspace reconciliation from Answer Quality Gate run 44379054834 after Batch 164 and before Batch 165; they are not public main metrics. The after values are a planning boundary only, not a measurement. Public main metrics remain 977 / 878 / 2,950 until a successful main-branch reconciliation is committed.",
+  "metrics_note": "The before values are a measured PR-workspace reconciliation from Answer Quality Gate run 44379054834 after Batch 164 and before Batch 165; they are not public main metrics. The after values are a planning boundary only, not a measurement. Public main metrics remain 977 / 878 / 2,950 until a successful main-branch reconciliation is committed. The expected increase of three answer-eligible source families has not yet been confirmed by the index builder; answer_eligible_source_families_added remains null until reconciliation.",
   "deduplication_check": {
     "method": "Exact AID/URL preflight against all 106 manual content-research batch files (055–164), 12 bulk-indexed files and the 1,022-record review queue; existing AIDs were matched to their canonical records and enriched in place.",
     "checked_aids": [
@@ -969,5 +969,7 @@
       "content_enrichment_batch_id": "165",
       "last_content_enriched_at": "2026-11-18T21:23:04+02:00"
     }
-  ]
+  ],
+  "expected_answer_eligible_source_families_added": 3,
+  "metrics_delta_at_batch_boundary_is_planning_only": true
 }
