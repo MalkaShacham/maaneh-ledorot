@@ -12,14 +12,14 @@
   "source_body_pages_opened": 12,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 9,
+  "new_source_identities": 8,
   "existing_identities_enriched": 3,
-  "existing_identities_rechecked": 0,
-  "new_response_propositions": 12,
+  "existing_identities_rechecked": 1,
+  "new_response_propositions": 11,
   "existing_response_propositions_added": 3,
-  "total_new_paraphrase_entries": 15,
-  "answer_eligible_source_families_added": 9,
-  "independent_witnesses_added": 8,
+  "total_new_paraphrase_entries": 14,
+  "answer_eligible_source_families_added": 8,
+  "independent_witnesses_added": 7,
   "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "new_aids": [
@@ -28,7 +28,6 @@
     2988883,
     4280015,
     4385701,
-    2989386,
     4385726,
     2988933,
     1244711
@@ -38,7 +37,9 @@
     2989555,
     2988877
   ],
-  "rechecked_aids": [],
+  "rechecked_aids": [
+    2989386
+  ],
   "blocked_candidate_count": 1,
   "blocked_candidates": [
     {
@@ -53,15 +54,15 @@
   "metadata_only_candidate_count": 0,
   "excluded_candidate_count": 1,
   "language_distribution": {
-    "Hebrew": 9,
+    "Hebrew": 8,
     "English": 1
   },
   "original_language_distribution": {
-    "Hebrew": 9,
+    "Hebrew": 8,
     "unknown": 1
   },
   "proposition_language_distribution": {
-    "Hebrew": 15
+    "Hebrew": 14
   },
   "source_type_distribution": {
     "Sichos": 8,
@@ -74,14 +75,14 @@
     "answer_eligible_propositions": 3727
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1444,
+    "answer_eligible_unique_sources": 1443,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3742
+    "answer_eligible_propositions": 3741
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
-  "metrics_note": "After canonical reconciliation, batch141 contributes nine new source identities, three existing-identity enrichments, and fifteen total new paraphrases. AID 2988877 is not a new family: its one original batch141 proposition is an in-place addition to the batch100 canonical identity. AID 2989555 remains an in-place enrichment of batch101. Expected boundary: 1435 → 1444 answer-eligible unique sources; 854 Verified; 3727 → 3742 propositions.",
+  "metrics_note": "After canonical reconciliation, batch141 contributes nine new source identities, three existing-identity enrichments, and fifteen total new paraphrases. AID 2988877 is not a new family: its one original batch141 proposition is an in-place addition to the batch100 canonical identity. AID 2989555 remains an in-place enrichment of batch101. Expected boundary: 1435 → 1444 answer-eligible unique sources; 854 Verified; 3727 → 3742 propositions. Correction on 2026-11-18: AID 2989386 was a duplicate of the existing batch101 report identity (same AID and URL, proposition repeated). The batch141 duplicate record was removed; the source is retained as a recheck only. Expected boundary reduced by one Evidence Family and one proposition.",
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
@@ -264,11 +265,14 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "witness_type": "recorded_remarks",
-      "evidence_family_id": "torat-menachem-5711-18-nissan-3rd-day-pesach-aid2989386",
-      "independent_witness": true,
-      "proposition_count": 1,
+      "evidence_family_id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+      "independent_witness": false,
+      "proposition_count": 0,
       "context_status": "partial",
-      "note": "נבדק רישום דברים בעברית; אין הקלטה או רישום בן הזמן לאימות נוסף."
+      "note": "AID 2989386 already exists in batch101 under the report-5711-18-nissan-chol-hamoed-pesach-aid2989386 Evidence Family. The batch141 duplicate proposition repeats the same event instruction; the duplicate record was removed and no new proposition was added.",
+      "existing_identity": true,
+      "action": "duplicate_alias_removed_after_existing_identity_recheck",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json"
     },
     {
       "aid": 4385726,
@@ -357,6 +361,17 @@
       "total_propositions_after": 4,
       "body_locator": "Chabad.org AID 2988877, גוף השיחה, שורות 175–179.",
       "reason": "The batch141 record duplicated the existing batch100 AID/URL under a second family ID. Its one original proposition was merged into the batch100 canonical identity; the family ID remains unchanged."
+    },
+    {
+      "batch_id": "153",
+      "aid": 3008877,
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "evidence_family_id": "sicha-5718-19-kislev-vayeshev-aid3008877",
+      "existing_propositions_before": 2,
+      "propositions_added": 1,
+      "total_propositions_after": 3,
+      "body_locator": "Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258.",
+      "reason": "Distinct later passage inspected in-place; the existing AID and Evidence Family are retained."
     }
   ],
   "crawler_retry": false,
@@ -514,22 +529,24 @@
       "summary_researcher": "השיחה מביאה בשם אדמו״ר הריי״צ סיפור על שאלת השר לאדמו״ר הזקן בזמן מאסרו: כיצד ייתכן שהקב״ה שואל את אדם הראשון ״איכה״. לפי הסיפור, אדמו״ר הזקן פירש זאת כשאלה המופנית לאדם בגיל מסוים על תכלית בריאתו, חובותיו ומה שכבר עשה. בהמשך השיחה הסיפור משמש בסיס לחשבון נפש אישי: כל אדם נדרש לבחון את מילוי תפקידו בעולם בהתאם לגילו ולדרגתו; אין זו שאלה אחידה במישור המעשי לכל אדם.",
       "response_propositions": [
         "השיחה מביאה בשם אדמו״ר הריי״צ סיפור על שאלת השר לאדמו״ר הזקן בזמן מאסרו: כיצד ייתכן שהקב״ה שואל את אדם הראשון ״איכה״. לפי הסיפור, אדמו״ר הזקן פירש זאת כשאלה המופנית לאדם בגיל מסוים על תכלית בריאתו, חובותיו ומה שכבר עשה.",
-        "בהמשך השיחה הסיפור משמש בסיס לחשבון נפש אישי: כל אדם נדרש לבחון את מילוי תפקידו בעולם בהתאם לגילו ולדרגתו; אין זו שאלה אחידה במישור המעשי לכל אדם."
+        "בהמשך השיחה הסיפור משמש בסיס לחשבון נפש אישי: כל אדם נדרש לבחון את מילוי תפקידו בעולם בהתאם לגילו ולדרגתו; אין זו שאלה אחידה במישור המעשי לכל אדם.",
+        "המאמר מסביר שזיכוך החומריות יכול להביא את האדם למדרגה שהנשמה לבדה אינה משיגה; הוא מבחין בין שימוש בחמור לסיוע חיצוני אצל אברהם לבין העלאת עניינים אנושיים עצמם אצל משה לאחר מתן תורה."
       ],
       "response_proposition_locators": [
         "Chabad.org AID 3008877, גוף השיחה, שורות 177–185.",
-        "Chabad.org AID 3008877, גוף השיחה, שורות 186–195."
+        "Chabad.org AID 3008877, גוף השיחה, שורות 186–195.",
+        "Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org AID 3008877, גוף השיחה, שורות 177–185. | Chabad.org AID 3008877, גוף השיחה, שורות 186–195.",
+      "proposition_source_locator": "Chabad.org AID 3008877, גוף השיחה, שורות 177–185. | Chabad.org AID 3008877, גוף השיחה, שורות 186–195. | Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258.",
       "evidence_family_id": "sicha-5718-19-kislev-vayeshev-aid3008877",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 3008877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial.",
+      "verification_scope": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 3008877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. נוסף מקטע מקור נבדק ביום 18.11.2026: Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258.. הפרפרזה החדשה מוגבלת למקטע זה בלבד; ההקשר נשאר חלקי.",
       "documented_circumstances": "התוועדות יום חמישי, פרשת וישב, י״ט כסלו תשי״ח.",
       "question_or_problem": "כיצד השיחה מפרשת את שאלת ״איכה״ ומה היא מסיקה ממנה לחשבון נפש אישי?",
       "conditions_or_qualifications": [
@@ -557,17 +574,17 @@
         "signature_status": null,
         "source_witness": "BeitChabad.com / Chabad.org, AID 3008877, שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשח״י, https://he.chabad.org/library/article_cdo/aid/3008877",
         "transmission_type": "Publisher-published Hebrew unedited transcript of a public talk, marked בלתי מוגה.",
-        "textual_status": "Only the cited body passages were inspected; the page marks the text בלתי מוגה; recording and corrected edition were not inspected.",
-        "editorial_scope": "Bounded non-verbatim research paraphrases and line locators only; no full protected text reproduced.",
-        "verification_status": "Source body inspected 2026-11-17; Chabad.org AID 3008877, גוף השיחה, שורות 177–185.; Chabad.org AID 3008877, גוף השיחה, שורות 186–195.; context partial.",
+        "textual_status": "Only the cited body passages were inspected; the page marks the text בלתי מוגה; recording and corrected edition were not inspected. נוסף מקטע מקור נבדק ביום 18.11.2026: Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258.. הפרפרזה החדשה מוגבלת למקטע זה בלבד; ההקשר נשאר חלקי.",
+        "editorial_scope": "Bounded non-verbatim research paraphrases and line locators only; no full protected text reproduced.; Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258.",
+        "verification_status": "Source body inspected 2026-11-17; Chabad.org AID 3008877, גוף השיחה, שורות 177–185.; Chabad.org AID 3008877, גוף השיחה, שורות 186–195.; context partial. Additional source text inspected 2026-11-18: Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/3008877",
-        "accessed": "2026-11-17"
+        "accessed": "2026-11-18T06:26:15+02:00"
       },
       "witness": {
         "kind": "text",
         "state": "Publisher Hebrew text opened; marked בלתי מוגה; recording not inspected.",
         "complete_partial": "partial",
-        "notes": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 3008877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial."
+        "notes": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 3008877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. נוסף מקטע מקור נבדק ביום 18.11.2026: Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258.. הפרפרזה החדשה מוגבלת למקטע זה בלבד; ההקשר נשאר חלקי."
       },
       "access": {
         "access_level": "open",
@@ -585,10 +602,10 @@
         "response_case_candidate": true
       },
       "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "המקור נשאר Parsed. נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 3008877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. אין קידום ל-Verified.",
+      "notes": "המקור נשאר Parsed. נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 3008877, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. אין קידום ל-Verified. נוסף מקטע מקור נבדק ביום 18.11.2026: Chabad.org AID 3008877, גוף השיחה, סעיפים ט׳–י׳, שורות 248–258.. הפרפרזה החדשה מוגבלת למקטע זה בלבד; ההקשר נשאר חלקי.",
       "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
-      "content_enrichment_batch_id": "141",
-      "last_content_enriched_at": "2026-11-17"
+      "content_enrichment_batch_id": "153",
+      "last_content_enriched_at": "2026-11-18T06:26:15+02:00"
     },
     {
       "id": "chabad-sicha-2988883",
@@ -868,101 +885,6 @@
       },
       "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
       "notes": "המקור נשאר Parsed. נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 4385701, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. אין קידום ל-Verified.",
-      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
-      "content_enrichment_batch_id": "141",
-      "last_content_enriched_at": "2026-11-17"
-    },
-    {
-      "id": "chabad-torat-menachem-2989386",
-      "canonical_key": "aid:2989386",
-      "aid": 2989386,
-      "title": "ר״ד יום ג׳, ח״י ניסן, ב׳ דחוה״מ פסח, ה׳תשי״א",
-      "source_class": "Torat Menachem",
-      "source_class_detail": "רישום דברים בעברית שפורסם בידי BeitChabad.com/Chabad.org ומסומן בלתי מוגה; הקלטה או רישום בן הזמן לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "ח״י ניסן, ב׳ דחוה״מ פסח, ה׳תשי״א",
-      "date_precision": "exact",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "recorded_remarks",
-      "collection": "התוועדויות / תורת מנחם — BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989386",
-      "context_status": "partial",
-      "summary_researcher": "ברישום הדברים מחול המועד פסח תשי״א מתועד שהרבי הורה שלא לגבות כסף מהבחורים עבור יין להתוועדות, בנימוק שמן הבחורים יש לדרוש רוחניות ולא גשמיות; הרישום מציין שהוא עצמו נתן כסף ליין וסיפק רשימת שיחה של אדמו״ר הריי״צ ללימוד בהתוועדות.",
-      "response_propositions": [
-        "ברישום הדברים מחול המועד פסח תשי״א מתועד שהרבי הורה שלא לגבות כסף מהבחורים עבור יין להתוועדות, בנימוק שמן הבחורים יש לדרוש רוחניות ולא גשמיות; הרישום מציין שהוא עצמו נתן כסף ליין וסיפק רשימת שיחה של אדמו״ר הריי״צ ללימוד בהתוועדות."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org AID 2989386, גוף הרישום, שורות 168–173."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org AID 2989386, גוף הרישום, שורות 168–173.",
-      "evidence_family_id": "torat-menachem-5711-18-nissan-3rd-day-pesach-aid2989386",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2989386, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial.",
-      "documented_circumstances": "רישום דברים לאחר תפילת מנחה ביום שלישי, ח״י ניסן תשי״א, היום השני של חול המועד פסח.",
-      "question_or_problem": "מה מתעד הרישום על מימון ההתוועדות ועל הדרישות מתלמידי הישיבה?",
-      "conditions_or_qualifications": [
-        "זהו רישום דברים (ר״ד) ולא תמליל מלא; נבדק רק הקטע בשורות 168–173.",
-        "הייחוס הוא לרישום המו״ל של הוראות ומעשים; הקלטה או רישום בן הזמן לא נבדקו.",
-        "הקטע מציין רשימת שיחה של אדמו״ר הריי״צ; תוכן הרשימה עצמה אינו נבדק כאן."
-      ],
-      "audience": "משתתפי ההתוועדות וקוראי התמליל.",
-      "primary_secondary_status": "Publisher-published Hebrew record of remarks and actions; it is a textual record, not an independently inspected audio recording.",
-      "witness_type": "published_hebrew_record_of_remarks_unedited",
-      "witness_provenance": "BeitChabad.com / Chabad.org, AID 2989386, ר״ד יום ג׳, ח״י ניסן, ב׳ דחוה״מ פסח, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989386",
-      "independent_witness": true,
-      "translation_status": "הפרסום מציג נוסח בעברית; לא צוין תרגום והמקור המוגה/הקלטה לא נבדקו.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את השיחה/הרישום לדברי הרבי; ההקלטה או הרישום בן הזמן לא נבדקו בנפרד.",
-      "source_role": "record_of_oral_remarks_and_actions",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "provenance": {
-        "authorship_status": "The publisher attributes the published talk/record to the Rebbe; audio or contemporaneous notes were not independently inspected.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / Chabad.org, AID 2989386, ר״ד יום ג׳, ח״י ניסן, ב׳ דחוה״מ פסח, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989386",
-        "transmission_type": "Publisher-published Hebrew record of oral remarks/actions, marked בלתי מוגה.",
-        "textual_status": "Only the cited body passages were inspected; the page marks the text בלתי מוגה; recording and corrected edition were not inspected.",
-        "editorial_scope": "Bounded non-verbatim research paraphrases and line locators only; no full protected text reproduced.",
-        "verification_status": "Source body inspected 2026-11-17; Chabad.org AID 2989386, גוף הרישום, שורות 168–173.; context partial.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989386",
-        "accessed": "2026-11-17"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "Publisher Hebrew text opened; marked בלתי מוגה; recording not inspected.",
-        "complete_partial": "partial",
-        "notes": "נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2989386, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור ופרפרזות מחקריות תחומות בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות נפרדת לפי AID 2989386 ומשפחת ראיות torat-menachem-5711-18-nissan-3rd-day-pesach-aid2989386; כל תרגום או פרסום מקביל עתידי ייבדק כנגזרת של אותה משפחה ולא כעד עצמאי.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "ר״ד יום ג׳, ח״י ניסן, ב׳ דחוה״מ פסח, ה׳תשי״א"
-        ],
-        "research_terms": [],
-        "response_case_candidate": true
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "המקור נשאר Parsed. נבדקו רק קטעי גוף הפרסום המפורטים במיקומי המקור של AID 2989386, ביום 17.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן לא-מילוליות ומוגבלות לקטעים שנפתחו; context_status=partial. אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
       "content_enrichment_batch_id": "141",
       "last_content_enriched_at": "2026-11-17"
@@ -1254,11 +1176,11 @@
     }
   ],
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 9,
+    "answer_eligible_unique_sources": 8,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 15
+    "answer_eligible_propositions": 14
   },
-  "duplicate_alias_identities": 1,
+  "duplicate_alias_identities": 2,
   "duplicate_aliases": [
     {
       "aid": 2988877,
@@ -1272,6 +1194,31 @@
       "independent_witness": false,
       "propositions_moved": 1,
       "note": "Same publisher AID and URL; merged into the earliest batch100 identity. Later enrichments redirected to the canonical file."
+    },
+    {
+      "aid": 2989386,
+      "id": "chabad-torat-menachem-2989386",
+      "canonical_id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "duplicate_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "canonical_evidence_family_id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+      "duplicate_evidence_family_id": "torat-menachem-5711-18-nissan-3rd-day-pesach-aid2989386",
+      "action": "duplicate_alias_removed_without_new_content",
+      "independent_witness": false,
+      "propositions_moved": 0,
+      "note": "Same publisher AID and URL. The batch141 proposition repeats the canonical batch101 report; no second source identity or Evidence Family is retained."
+    }
+  ],
+  "existing_identity_rechecks": [
+    {
+      "aid": 2989386,
+      "id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "evidence_family_id": "report-5711-18-nissan-chol-hamoed-pesach-aid2989386",
+      "action": "rechecked_existing_identity_without_duplicate_content",
+      "duplicate_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "duplicate_evidence_family_id": "torat-menachem-5711-18-nissan-3rd-day-pesach-aid2989386",
+      "propositions_added": 0
     }
   ]
 }
