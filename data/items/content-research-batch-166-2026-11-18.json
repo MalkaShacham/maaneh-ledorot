@@ -202,7 +202,7 @@
   },
   "metrics_note": "Planning boundary only. Batch165's measured PR-workspace baseline was 1530/854/3973 before batch165; its expected boundary 1533/854/3981 was not measured. Batch166 expects eight additional source families and eight propositions, but the actual delta must be calculated by full canonical reconciliation. Public main metrics remain 977/878/2950 until reconciled values are committed to main.",
   "deduplication_check": {
-    "method": "Six new source identities plus two pre-existing AIDs rechecked against canonical records. Two duplicate candidate records were excluded because their same-page propositions already existed in canonical items; the full index scan remains pending.",
+    "method": "Six genuinely new source identities; two same-AID candidates were rechecked against existing canonical items and excluded because their inspected propositions were already represented. Full-index scan pending.",
     "checked_aids": [
       2989021,
       2989054,
@@ -267,7 +267,9 @@
       "proposition_source_locator": "he.chabad.org AID 2989021, גוף השיחה, סעיף א׳, שורות 175–182.",
       "provenance": "BeitChabad.com / Chabad.org, AID 2989021, שיחת ליל שמחת תורה (קודם הקפות), ה׳תשי״ט — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/2989021",
       "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 2989021, גוף השיחה, סעיף א׳, שורות 175–182., ביום 18.11.2026. העמוד מסומן בלתי מוגה; נבדק רק המקטע המצוין וההקשר הסמוך לו. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה תחומה למהלך המופיע במקטע ואינה פסיקה הלכתית או טענה אמפירית עצמאית. לא הועתק טקסט מוגן במלואו.",
-      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage."
+      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage.",
+      "proposition_added": true,
+      "new_independent_witness": true
     },
     {
       "aid": 2989054,
@@ -298,7 +300,9 @@
       "proposition_source_locator": "he.chabad.org AID 2989054, גוף השיחה, סעיף א׳, שורות 175–179.",
       "provenance": "BeitChabad.com / Chabad.org, AID 2989054, שיחת יום ב׳ דחג השבועות, ה׳תשי״ט — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/2989054",
       "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 2989054, גוף השיחה, סעיף א׳, שורות 175–179., ביום 18.11.2026. העמוד מסומן בלתי מוגה; נבדק רק המקטע המצוין וההקשר הסמוך לו. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה תחומה למהלך המופיע במקטע ואינה פסיקה הלכתית או טענה אמפירית עצמאית. לא הועתק טקסט מוגן במלואו.",
-      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage."
+      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage.",
+      "proposition_added": true,
+      "new_independent_witness": true
     },
     {
       "aid": 2989022,
@@ -332,9 +336,8 @@
       "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage.",
       "new_independent_witness": false,
       "proposition_added": false,
-      "duplicate_candidate_id": "chabad-sicha-2989022",
       "duplicate_candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
-      "duplicate_reason": "Same AID and same source page already represented in canonical identity; the inspected passage overlaps the existing canonical proposition."
+      "duplicate_reason": "Same AID and same source page are already represented in the canonical item; the inspected passage substantially duplicates an existing proposition."
     },
     {
       "aid": 2989052,
@@ -365,7 +368,9 @@
       "proposition_source_locator": "he.chabad.org AID 2989052, גוף השיחה, סעיפים א׳–ב׳, שורות 175–189.",
       "provenance": "BeitChabad.com / Chabad.org, AID 2989052, שיחת ליל ערב חג השבועות, ה׳תשי״ט — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/2989052",
       "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 2989052, גוף השיחה, סעיפים א׳–ב׳, שורות 175–189., ביום 18.11.2026. העמוד מסומן בלתי מוגה; נבדק רק המקטע המצוין וההקשר הסמוך לו. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה תחומה למהלך המופיע במקטע ואינה פסיקה הלכתית או טענה אמפירית עצמאית. לא הועתק טקסט מוגן במלואו.",
-      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage."
+      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage.",
+      "proposition_added": true,
+      "new_independent_witness": true
     },
     {
       "aid": 5959922,
@@ -396,7 +401,9 @@
       "proposition_source_locator": "he.chabad.org AID 5959922, גוף השיחה, סעיפים א׳–ב׳, שורות 177–185.",
       "provenance": "BeitChabad.com / Chabad.org, AID 5959922, שיחת יום שמחת תורה, ה׳תש״ל — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/5959922",
       "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 5959922, גוף השיחה, סעיפים א׳–ב׳, שורות 177–185., ביום 18.11.2026. העמוד מסומן בלתי מוגה; נבדק רק המקטע המצוין וההקשר הסמוך לו. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה תחומה למהלך המופיע במקטע ואינה פסיקה הלכתית או טענה אמפירית עצמאית. לא הועתק טקסט מוגן במלואו. האמירה המצוטטת במקטע מיוחסת במפורש לאדמו״ר הריי״צ; אין לייחס אותה לרבי.",
-      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage."
+      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage.",
+      "proposition_added": true,
+      "new_independent_witness": true
     },
     {
       "aid": 5989687,
@@ -427,7 +434,9 @@
       "proposition_source_locator": "he.chabad.org AID 5989687, גוף השיחה, סעיף א׳, שורות 177–180.",
       "provenance": "BeitChabad.com / Chabad.org, AID 5989687, ראש חודש סיון – לנשי ובנות חב״ד, ה׳תשכ״ט — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/5989687",
       "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 5989687, גוף השיחה, סעיף א׳, שורות 177–180., ביום 18.11.2026. העמוד מסומן בלתי מוגה; נבדק רק המקטע המצוין וההקשר הסמוך לו. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה תחומה למהלך המופיע במקטע ואינה פסיקה הלכתית או טענה אמפירית עצמאית. לא הועתק טקסט מוגן במלואו.",
-      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage."
+      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage.",
+      "proposition_added": true,
+      "new_independent_witness": true
     },
     {
       "aid": 2989062,
@@ -458,7 +467,9 @@
       "proposition_source_locator": "he.chabad.org AID 2989062, גוף השיחה, סעיפים א׳–ב׳, שורות 175–185.",
       "provenance": "BeitChabad.com / Chabad.org, AID 2989062, שיחת כ׳ מנחם־אב, ה׳תשי״ט — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/2989062",
       "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 2989062, גוף השיחה, סעיפים א׳–ב׳, שורות 175–185., ביום 18.11.2026. העמוד מסומן בלתי מוגה; נבדק רק המקטע המצוין וההקשר הסמוך לו. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה תחומה למהלך המופיע במקטע ואינה פסיקה הלכתית או טענה אמפירית עצמאית. לא הועתק טקסט מוגן במלואו.",
-      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage."
+      "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage.",
+      "proposition_added": true,
+      "new_independent_witness": true
     },
     {
       "aid": 5989700,
@@ -492,9 +503,8 @@
       "note": "New Hebrew source identity; remains Parsed; one bounded non-verbatim proposition from the inspected passage.",
       "new_independent_witness": false,
       "proposition_added": false,
-      "duplicate_candidate_id": "chabad-sicha-5989700",
       "duplicate_candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
-      "duplicate_reason": "Same AID and same source page already represented in canonical identity; the inspected passage overlaps the existing canonical proposition."
+      "duplicate_reason": "Same AID and same source page are already represented in the canonical item; the inspected passage substantially duplicates an existing proposition."
     }
   ],
   "fallback_source_attempted": true,
@@ -622,50 +632,21 @@
   ],
   "existing_identity_updates": [],
   "existing_identity_updates_count": 0,
-  "existing_identity_rechecks": [
-    {
-      "aid": 2989022,
-      "id": "sicha-5719-simchat-torah-day-aid2989022",
-      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
-      "evidence_family_id": "sicha-5719-simchat-torah-day-aid2989022",
-      "existing_propositions_before": 2,
-      "duplicate_candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
-      "duplicate_candidate_id": "chabad-sicha-2989022",
-      "duplicate_candidate_evidence_family_id": "sicha-5719-simchat-torah-day-aid2989022",
-      "body_locator": "he.chabad.org AID 2989022, גוף השיחה, סעיף א׳, שורות 175–180.",
-      "proposition_added": false,
-      "action": "duplicate_existing_identity_rechecked_no_new_proposition",
-      "note": "The same AID and source page already exist in the canonical item. The inspected passage overlaps the existing canonical proposition; the duplicate batch record was removed and no extra proposition or Evidence Family was counted."
-    },
-    {
-      "aid": 5989700,
-      "id": "sicha-5729-13-tammuz-aid5989700",
-      "canonical_file": "data/items/content-research-batch-103-2026-11-15.json",
-      "evidence_family_id": "sicha-5729-13-tammuz-aid5989700",
-      "existing_propositions_before": 3,
-      "duplicate_candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
-      "duplicate_candidate_id": "chabad-sicha-5989700",
-      "duplicate_candidate_evidence_family_id": "sicha-5729-yud-gimmel-tammuz-aid5989700",
-      "body_locator": "he.chabad.org AID 5989700, גוף השיחה, סעיפים א׳–ב׳, שורות 177–183.",
-      "proposition_added": false,
-      "action": "duplicate_existing_identity_rechecked_no_new_proposition",
-      "note": "The same AID and source page already exist in the canonical item. The inspected passage overlaps the existing canonical proposition; the duplicate batch record was removed and no extra proposition or Evidence Family was counted."
-    }
-  ],
+  "existing_identity_rechecks": [],
   "duplicate_aliases": [
     {
       "aid": 2989022,
       "candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
       "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
       "evidence_family_id": "sicha-5719-simchat-torah-day-aid2989022",
-      "reason": "same AID and same source page; inspected proposition duplicates the existing canonical passage"
+      "reason": "Same AID/source page; inspected proposition duplicates the canonical passage at lines 175–184."
     },
     {
       "aid": 5989700,
       "candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
       "canonical_file": "data/items/content-research-batch-103-2026-11-15.json",
       "evidence_family_id": "sicha-5729-13-tammuz-aid5989700",
-      "reason": "same AID and same source page; inspected proposition duplicates the existing canonical passage"
+      "reason": "Same AID/source page; inspected proposition duplicates the canonical passage at lines 177–185."
     }
   ],
   "records": [
@@ -1306,15 +1287,15 @@
       "candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
       "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
       "evidence_family_id": "sicha-5719-simchat-torah-day-aid2989022",
-      "reason": "same AID and same source page; inspected proposition duplicates the existing canonical passage"
+      "reason": "Same AID/source page; inspected proposition duplicates the canonical passage at lines 175–184."
     },
     {
       "aid": 5989700,
       "candidate_file": "data/items/content-research-batch-166-2026-11-18.json",
       "canonical_file": "data/items/content-research-batch-103-2026-11-15.json",
       "evidence_family_id": "sicha-5729-13-tammuz-aid5989700",
-      "reason": "same AID and same source page; inspected proposition duplicates the existing canonical passage"
+      "reason": "Same AID/source page; inspected proposition duplicates the canonical passage at lines 177–185."
     }
   ],
-  "metrics_attribution_note": "Planning boundary after Batch165: 1,533 / 854 / 3,981. Two candidate AIDs (2989022 and 5989700) were found already canonical with the same source page and Evidence Family; their duplicate propositions were not added or counted. Six genuinely new Evidence Families and six propositions remain. Expected after: 1,539 / 854 / 3,987. Reconciliation must compute actual values."
+  "metrics_attribution_note": "Planning boundary after Batch165: 1,533 / 854 / 3,981. Two candidate AIDs (2989022 and 5989700) already existed as canonical identities and their inspected propositions duplicated existing content; they were rechecked, not added. Six genuinely new Evidence Families and six propositions remain. Expected after: 1,539 / 854 / 3,987. Actual metrics are determined by full reconciliation."
 }
