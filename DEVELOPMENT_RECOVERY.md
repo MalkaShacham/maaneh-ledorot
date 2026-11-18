@@ -1372,3 +1372,13 @@ A later portion of `test_content_readiness.mjs` still asserted that the current 
 
 
 - Additional language/source-type check: opened the English Chabad.org chapter AID 2317455, which reproduces two separate English letters (10 Kislev 5740 and 6 Teves 5719; lines 274–313). The page uses one AID/URL for both letters and exposes no separate subdocument identifiers. It was inspected but excluded from canonical ingestion: one identity would conflate two distinct correspondents/events, while two identities would duplicate the same AID/URL. No proposition or source identity was counted from this composite chapter.
+
+
+## 2026-11-18 — Batch 156: eight Hebrew source-body enrichments; Yiddish audio listing excluded
+
+- Opened and inspected eight existing original-Hebrew publisher bodies and distinct passages: AIDs 2989556, 2989574, 2989023, 4279876, 2988946, 2989322, 3008877 and 2988877. Added one bounded non-verbatim source-grounded paraphrase to each existing identity, with exact body locators, provenance, `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, partial-context scope and explicit limitations.
+- All eight AIDs retain their existing canonical item files, source URLs, Evidence Family IDs and Parsed status. No new source identity, Evidence Family or independent witness was created; no source was promoted to Verified.
+- AID 553691 (Yiddish Yechidus, 12 Shevat 5743) was opened through the public reader. The page exposes the title and a link to the Sichos Kodesh audio collection, but no transcript/body. It was recorded as metadata-only and excluded from propositions. No crawler retry or access-control bypass; eight readable Hebrew source bodies were inspected as same-run fallback.
+- Batch156 adds eight answer-eligible propositions in existing families only. The preceding PR-head reconciliation run 44247225683 printed 1519/854/3895 in its CI workspace after batch155, then failed at the stale AID 2988877 count assertion. That snapshot is uncommitted and is not the public main metric. Batch156 planning boundary is 1519/854/3903; it must be measured by a clean reconciliation run.
+- The AID 2988877 readiness assertion was corrected from 9 to 10 because the canonical item includes the publisher-footnote proposition added in batch155. Batch156-specific assertions now require one canonical identity per AID, unchanged Evidence Family IDs, exact new locators, Parsed status and deep citation coverage. Full reconciliation and the new test run remain pending.
+- No full protected text was copied; no translation was counted as an independent witness; no schedule, audience, permissions or automation configuration was changed.
