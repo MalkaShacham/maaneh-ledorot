@@ -375,7 +375,7 @@ for selected_index, batch_info in enumerate(selected_batches):
         family_ids=sorted({r.get("evidence_family_id") for r in matches if r.get("evidence_family_id")})
         same_family_duplicate=len(matches)>1 and len(family_ids)==1 and all(r.get("independent_witness") is False for r in matches)
         identity_collision=len(matches)>1 and not same_family_duplicate
-        audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False}})
+        audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False},"current_index_entry":{"present":bool(search_entries.get(target["key"])),"answer_eligible":bool(search_entries.get(target["key"]) and search_entries.get(target["key"]).get("answer_eligible"))}})
     expected=batch_data.get("metrics_expected_after") or {}
     variance={k:snapshot_metrics[k]-int(expected.get(k,snapshot_metrics[k])) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
     batch_data["reconciliation_variance"]=variance
@@ -386,7 +386,8 @@ for selected_index, batch_info in enumerate(selected_batches):
     if isinstance(dedup,dict):
         collisions=[x.get("aid") for x in audit if x.get("canonical_identity_collision")]
         same_family=[{"aid":x.get("aid"),"evidence_family_id":(x.get("matching_evidence_family_ids") or [None])[0],"files":sorted({r.get("file") for r in x.get("records",[]) if r.get("file")})} for x in audit if x.get("same_family_duplicate")]
-        missing=[x.get("aid") for x in audit if not x.get("selected_index_entry",{}).get("present")]
+        missing=[x.get("aid") for x in audit if not x.get("current_index_entry",{}).get("present")]
+        historical_missing=[x.get("aid") for x in audit if not x.get("selected_index_entry",{}).get("present")]
         dedup["same_family_duplicate_presentations"]=same_family
         dedup["full_index_scan_available"]=True
         dedup["full_index_scan_pending_reconciliation"]=False
@@ -394,7 +395,11 @@ for selected_index, batch_info in enumerate(selected_batches):
         dedup["reconciled_identity_count"]=len(audit)
         dedup["canonical_identity_collisions"]=collisions
         dedup["missing_canonical_identities"]=missing
-        dedup["all_target_identities_answer_eligible"]=bool(audit) and all(x.get("selected_index_entry",{}).get("answer_eligible") for x in audit)
+        # Canonical presence/eligibility is measured against the current full corpus.
+        # Historical snapshots may legitimately omit a later-created canonical item
+        # that a prior audit action now points to (for example AID 2989411).
+        dedup["missing_at_historical_batch_boundary"]=historical_missing
+        dedup["all_target_identities_answer_eligible"]=bool(audit) and all(x.get("current_index_entry",{}).get("answer_eligible") for x in audit)
     state.setdefault("development_recovery",{})["last_reconciliation"]={
         "batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"generated":today,
         "batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),
