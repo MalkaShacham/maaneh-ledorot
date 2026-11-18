@@ -125,9 +125,9 @@
         "answer_eligible_propositions": 3846
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1513,
+        "answer_eligible_unique_sources": 1507,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3858
+        "answer_eligible_propositions": 3855
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -186,7 +186,7 @@
         "150",
         "151"
       ],
-      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending.",
+      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending. Batch 151 corrected after source-body review and canonical AID deduplication: 5 new identities, 4 in-place enrichments, 4 rechecks, 9 new paraphrases; expected planning boundary 1507/854/3855. Actual reconciliation remains pending.",
       "summary": {
         "batch_id": "151",
         "batch_file": "data/items/content-research-batch-151-2026-11-18.json",
@@ -197,50 +197,51 @@
           "answer_eligible_propositions": 3846
         },
         "metrics_expected_after": {
-          "answer_eligible_unique_sources": 1513,
+          "answer_eligible_unique_sources": 1507,
           "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3858
+          "answer_eligible_propositions": 3855
         },
         "metrics_actual_after": null,
-        "new_source_identities": 11,
-        "existing_identities_enriched": 1,
-        "existing_identities_rechecked": 1,
+        "new_source_identities": 5,
+        "existing_identities_enriched": 4,
+        "existing_identities_rechecked": 4,
         "source_bodies_inspected": 13,
         "source_body_pages_opened": 37,
-        "new_response_propositions": 11,
-        "existing_response_propositions_added": 1,
-        "total_new_paraphrase_entries": 12,
-        "answer_eligible_source_families_added": 11,
+        "new_response_propositions": 5,
+        "existing_response_propositions_added": 4,
+        "total_new_paraphrase_entries": 9,
+        "answer_eligible_source_families_added": 5,
         "content_verified_unique_sources_added": 0,
         "blocked_candidate_count": 5,
         "excluded_candidate_count": 1,
         "metrics_delta_at_batch_boundary": {
-          "answer_eligible_unique_sources": 11,
+          "answer_eligible_unique_sources": 5,
           "content_verified_unique_sources": 0,
-          "answer_eligible_propositions": 12
+          "answer_eligible_propositions": 9
         },
         "reconciliation_status": "pending_reconciliation",
         "reviewed_item_count": 19,
         "new_aids": [
-          2989311,
-          5959840,
-          4296226,
           4279994,
-          4280152,
-          2989588,
           2989161,
           3008870,
-          2988962,
           4385877,
           2989319
         ],
         "enriched_aids": [
+          5959840,
+          4296226,
+          4280152,
           2989404
         ],
         "rechecked_aids": [
+          2989311,
+          2989588,
+          2988962,
           4304430
         ],
-        "translations_counted_as_independent_witnesses": 0
+        "translations_counted_as_independent_witnesses": 0,
+        "note": "Corrected after canonical AID deduplication: six candidates already existed; three distinct propositions merged into their original identities, three overlapping propositions were not duplicated, and AID 2989404 was enriched in place. Five genuinely new source identities remain."
       },
       "status": "pending_reconciliation",
       "latest_uncommitted_ci_measurement": {
@@ -378,50 +379,51 @@
         "answer_eligible_propositions": 3846
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1513,
+        "answer_eligible_unique_sources": 1507,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3858
+        "answer_eligible_propositions": 3855
       },
       "metrics_actual_after": null,
-      "new_source_identities": 11,
-      "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 1,
+      "new_source_identities": 5,
+      "existing_identities_enriched": 4,
+      "existing_identities_rechecked": 4,
       "source_bodies_inspected": 13,
       "source_body_pages_opened": 37,
-      "new_response_propositions": 11,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 12,
-      "answer_eligible_source_families_added": 11,
+      "new_response_propositions": 5,
+      "existing_response_propositions_added": 4,
+      "total_new_paraphrase_entries": 9,
+      "answer_eligible_source_families_added": 5,
       "content_verified_unique_sources_added": 0,
       "blocked_candidate_count": 5,
       "excluded_candidate_count": 1,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 11,
+        "answer_eligible_unique_sources": 5,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 12
+        "answer_eligible_propositions": 9
       },
       "reconciliation_status": "pending_reconciliation",
       "reviewed_item_count": 19,
       "new_aids": [
-        2989311,
-        5959840,
-        4296226,
         4279994,
-        4280152,
-        2989588,
         2989161,
         3008870,
-        2988962,
         4385877,
         2989319
       ],
       "enriched_aids": [
+        5959840,
+        4296226,
+        4280152,
         2989404
       ],
       "rechecked_aids": [
+        2989311,
+        2989588,
+        2988962,
         4304430
       ],
-      "translations_counted_as_independent_witnesses": 0
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "Corrected after canonical AID deduplication: six candidates already existed; three distinct propositions merged into their original identities, three overlapping propositions were not duplicated, and AID 2989404 was enriched in place. Five genuinely new source identities remain."
     },
     "last_run_note": "Batch151 final audit: eleven new Hebrew sources, one existing identity enriched (AID2989404), one existing identity rechecked without duplicate proposition (AID4304430), twelve new/additional paraphrases. Five candidates returned HTTP 429 or reader error; one secondary article was excluded. Full-index reconciliation pending.",
     "last_batch_blocked_count": 5,
