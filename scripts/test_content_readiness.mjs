@@ -3785,17 +3785,17 @@ assert.deepEqual(readinessMetrics(batch129Data.metrics_actual_after),readinessMe
 assert.deepEqual(readinessMetrics(batch130Data.metrics_actual_after),readinessMetrics(batch131Data.metrics_actual_before));
 assert.deepEqual(readinessMetrics(batch131Data.metrics_actual_after),readinessMetrics(batch132Data.metrics_actual_before));
 for(const b of ['124','125','126','127','128','129','130','131','132','133','134','135']){assert(!projectState.development_recovery.pending_reconciliation_batches.includes(b));assert(!projectState.metrics_integrity.answer_readiness.pending_batches.includes(b));}
-assert.equal(projectState.current_batch,'135');
-assert.equal(projectState.development_recovery.current_batch,'135');
-assert.equal(projectState.development_recovery.last_batch_summary.batch_id,'135');
+assert.equal(projectState.current_batch,'153');
+assert.equal(projectState.development_recovery.current_batch,'153');
+assert.equal(projectState.development_recovery.last_batch_summary.batch_id,'153');
 assert.deepEqual(readinessMetrics(projectState.development_recovery.last_batch_summary.metrics_after_actual),readinessMetrics(metrics));
-for(const [id,next] of [['124',batch125Data.metrics_actual_before],['125',batch126Data.metrics_actual_before],['126',batch127Data.metrics_actual_before],['127',batch128Data.metrics_actual_before],['128',batch129Data.metrics_actual_before],['129',batch130Data.metrics_actual_before],['130',batch131Data.metrics_actual_before],['131',batch132Data.metrics_actual_before],['132',batch133Data.metrics_actual_before],['133',batch134Data.metrics_actual_before],['134',batch135Data.metrics_actual_before],['135',metrics]]){const audit=projectState.development_recovery.reconciliation_chain.find(x=>String(x.batch_id)===id);assert(audit,'missing reconciliation audit for batch '+id);assert.deepEqual(readinessMetrics(audit.metrics_actual_after),readinessMetrics(next));}
-assert.equal(acquisitionState.manual_web_review.batch_id,'135');
-assert.equal(acquisitionState.manual_web_review.batch_file,batch135Path);
-assert.equal(acquisitionState.previous_manual_web_review.batch_id,'134');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch134Path);
-assert.equal(acquisitionState.last_manual_web_review.batch_id,'135');
-assert.equal(acquisitionState.last_manual_review.batch_id,'135');
+for(const [id,next] of [['124',batch125Data.metrics_actual_before],['125',batch126Data.metrics_actual_before],['126',batch127Data.metrics_actual_before],['127',batch128Data.metrics_actual_before],['128',batch129Data.metrics_actual_before],['129',batch130Data.metrics_actual_before],['130',batch131Data.metrics_actual_before],['131',batch132Data.metrics_actual_before],['132',batch133Data.metrics_actual_before],['133',batch134Data.metrics_actual_before],['134',batch135Data.metrics_actual_before],['135',batch136Data.metrics_actual_before]]){const audit=projectState.development_recovery.reconciliation_chain.find(x=>String(x.batch_id)===id);assert(audit,'missing reconciliation audit for batch '+id);assert.deepEqual(readinessMetrics(audit.metrics_actual_after),readinessMetrics(next));}
+assert.equal(acquisitionState.manual_web_review.batch_id,'153');
+assert.equal(acquisitionState.manual_web_review.batch_file,'data/items/content-research-batch-153-2026-11-18.json');
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'152');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,'data/items/content-research-batch-152-2026-11-18.json');
+assert.equal(acquisitionState.last_manual_web_review.batch_id,'153');
+assert.equal(acquisitionState.last_manual_review.batch_id,'153');
 for(const id of ['126','127','128','129','130','131','132','133','134','135'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
  
@@ -5288,7 +5288,7 @@ for(const mode of ['regular','researcher']){
  assert.deepEqual(Object.keys(batch152Data.metrics_actual_after||{}).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources']);
  assert(!state.metrics_integrity.answer_readiness.pending_batches.map(String).includes('152'));
  assert(!state.development_recovery.pending_reconciliation_batches.map(String).includes('152'));
- assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'152');
+ assert.equal(String(state.development_recovery.last_batch_summary.batch_id),'153');
 }
 
 const batch153Path='data/items/content-research-batch-153-2026-11-18.json';
