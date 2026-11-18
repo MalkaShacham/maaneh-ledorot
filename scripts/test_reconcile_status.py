@@ -1,4 +1,5 @@
 from status_normalization import status_of
+from reconciliation_helpers import alias_target_pairs
 
 assert status_of({
     "pipeline_status": "Parsed",
@@ -29,4 +30,13 @@ assert status_of({
     "verification_status": "no content verification was performed"
 }) == "Parsed"
 
-print("Conservative status normalization: 7 checks passed")
+assert alias_target_pairs("aid:1273962") == [("aid:1273962", "1273962", None)]
+assert alias_target_pairs("1273962") == [("aid:1273962", "1273962", None)]
+assert alias_target_pairs({"alias_aid": 5357409, "canonical_aid": 4872269}) == [
+    ("aid:5357409", "5357409", None),
+    ("aid:4872269", "4872269", None),
+]
+assert alias_target_pairs("legacy-source-key") == [("id:legacy-source-key", None, "legacy-source-key")]
+assert alias_target_pairs(None) == []
+
+print("Conservative status and alias normalization: 12 checks passed")

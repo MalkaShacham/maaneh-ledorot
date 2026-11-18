@@ -2,6 +2,7 @@
 import json, pathlib, re, datetime
 from content_readiness import answer_eligible, summarize
 from status_normalization import status_of
+from reconciliation_helpers import alias_target_pairs
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 items=sorted((ROOT/"data/items").glob("*.json"))
 batches=sorted((ROOT/"data/staging/batches").glob("*.json"))
@@ -310,9 +311,8 @@ for selected_index, batch_info in enumerate(selected_batches):
                 item_id=str(update.get("id") or identity)
                 add_target("id:"+item_id,None,item_id)
     for alias in batch_data.get("identity_alias_audit_targets",[]):
-        alias_aid=str(alias.get("alias_aid") or ""); canonical_aid=str(alias.get("canonical_aid") or "")
-        if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
-        if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
+        for stable, alias_aid, item_id in alias_target_pairs(alias):
+            add_target(stable,alias_aid,item_id)
     for recheck in batch_data.get("existing_identity_rechecks",[]):
         unit=str(recheck.get("source_unit_key") or recheck.get("document_unit_key") or "")
         recheck_aid=str(recheck.get("aid") or "")

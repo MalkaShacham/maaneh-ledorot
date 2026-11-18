@@ -94,7 +94,7 @@
     "Batch160: four new Hebrew source identities and four in-place enrichments; ten body pages inspected; no Verified promotion; full reconciliation pending.",
     "Batch162 has eight in-place Hebrew source-grounded propositions and one no-duplicate recheck; metrics are planning-only until full reconciliation.",
     "Batch165 (2026-11-18): eight Hebrew source bodies inspected; three new identities (AIDs 4385513, 5959968, 4296159) and five in-place enrichments (2988983, 2989585, 5989929, 4304430, 2989589), eight source-grounded non-verbatim propositions. Five other candidate pages did not expose inspectable body text; accessible alternatives were used. All remain Parsed; no Verified promotion. Full-index reconciliation pending.",
-    "Batch170 (2026-11-19): 10 Hebrew source body passages inspected; eight new identities and two in-place enrichments. AID 2989215 and 5989907 returned HTTP 429; AID 2988661 was a collection page; AIDs 2989556 and 5989700 were already canonical. No crawler retry, access bypass, full-text copying or Verified promotion. Reconciliation pending."
+    "Batch170 (2026-11-19): 10 Hebrew source body passages inspected; eight new identities and two in-place enrichments. AID 2989215 and 5989907 returned HTTP 429; AID 2988661 was a collection page; AID 5989700 was already canonical; AID 2989556 was opened but not selected for body-level review and is not asserted as a duplicate. No crawler retry, access bypass, full-text copying or Verified promotion. Reconciliation pending."
   ],
   "next_work": [
     "Run exact-head full-index reconciliation through Batch168; verify each of the eight enriched AIDs has exactly one canonical identity and its existing Evidence Family ID.",
@@ -447,7 +447,7 @@
     },
     "last_run_note": "Batch170: ten original-Hebrew publisher body passages inspected; eight new identities and two in-place enrichments. Two alternative pages returned HTTP 429; a collection page and two duplicate identities were excluded. Exact-head reconciliation and readiness pending.\n\nMain hourly run 44405963735 failed at Batch110 full-index-audit assertion; reconcile_metrics.py now reprocesses historical batches that lack a full-index audit or measured snapshot, even if their status label says reconciled.",
     "last_batch_blocked_count": 2,
-    "last_batch_blocked_reason": "AID 2989215 and AID 5989907 returned HTTP 429; no retry or bypass. One collection-level page and two already-canonical AIDs were excluded. Ten accessible original-Hebrew item bodies were used in the same run.",
+    "last_batch_blocked_reason": "AID 2989215 and AID 5989907 returned HTTP 429; no retry or bypass. AID 2988661 was a collection page; AID 5989700 was already canonical; AID 2989556 was opened but not selected for body-level review and is not asserted as a duplicate. Ten accessible item-level Hebrew bodies were used.",
     "next_work": [
       "Run exact-head reconciliation for all pending and audit-incomplete historical batches through Batch170; verify Batch110 and all selected batches receive full-index audits and measured snapshots.",
       "Pass test_content_readiness.mjs, including the Batch089 conservative-variance check and Batch170 source/proposition checks.",
@@ -2414,10 +2414,10 @@
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending_after_batch_170",
-    "last_failed_run_id": 44405963735,
-    "last_failure": "Main hourly run 44405963735 failed at Batch110 because a previously labelled reconciled manifest lacked full_index_scan_available=true. Reconciliation selection now includes historical batches missing a full-index audit or measured snapshot, not only pending-labelled batches.",
-    "note": "Batch170 is on PR #35. The reconciliation script now repairs historical manifests that have stale reconciled labels but no full-index audit or measured after-snapshot; exact-head readiness must pass before merge.",
-    "run_status": "pending_reconciliation_fix_run",
+    "last_failed_run_id": 44419428122,
+    "last_failure": "PR run 44419428122 failed during reconciliation because a legacy identity_alias_audit_targets entry in Batch096 was a string (aid:1273962) while the reconciler assumed every entry was an object. The reconciler now normalizes both legacy string and structured alias targets, with regression tests.",
+    "note": "Batch170 is on PR #35. Reconciliation now includes historical batches lacking full-index audits or measured snapshots and handles legacy string alias targets. Exact-head readiness must pass before merge.",
+    "run_status": "pending_alias_compatibility_fix_run",
     "workflow_run_id": null
   },
   "publication": {
