@@ -373,7 +373,8 @@ for selected_index, batch_info in enumerate(selected_batches):
     for target in target_identities:
         selected=snapshot_by_key.get(target["key"]); matches=identity_record_index.get(target["key"],[])
         family_ids=sorted({r.get("evidence_family_id") for r in matches if r.get("evidence_family_id")})
-        same_family_duplicate=len(matches)>1 and len(family_ids)==1 and all(r.get("independent_witness") is False for r in matches)
+        # A repeated AID/URL that resolves to one Evidence Family is a duplicate presentation, even if an earlier import incorrectly marked both rows independent.
+        same_family_duplicate=len(matches)>1 and len(family_ids)==1
         identity_collision=len(matches)>1 and not same_family_duplicate
         audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False},"current_index_entry":{"present":bool(search_entries.get(target["key"])),"answer_eligible":bool(search_entries.get(target["key"]) and search_entries.get(target["key"]).get("answer_eligible"))}})
     expected=batch_data.get("metrics_expected_after") or {}
