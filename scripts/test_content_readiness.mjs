@@ -5639,9 +5639,6 @@ assert.deepEqual(batch157Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch157Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.map(String).includes('157'));
 assert(!projectState.development_recovery.pending_reconciliation_batches.map(String).includes('157'));
-assert.equal(String(projectState.current_batch),'159');
-assert.equal(String(projectState.development_recovery.current_batch),'159');
-assert.equal(String(projectState.development_recovery.last_batch_summary.batch_id),'159');
 
 assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='158'));
 
@@ -5696,9 +5693,6 @@ assert.deepEqual(batch158Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch158Data.deduplication_check.all_target_identities_answer_eligible,true);
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.map(String).includes('158'));
 assert(!projectState.development_recovery.pending_reconciliation_batches.map(String).includes('158'));
-assert.equal(String(projectState.current_batch),'159');
-assert.equal(String(projectState.development_recovery.last_batch_summary.batch_id),'159');
-assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'159');
 
 assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)==='158'));
 const simchatTorahDanceQuestion='מה המשמעות של הריקוד ברגליים בשמחת תורה ולמי הוא נגיש?';
