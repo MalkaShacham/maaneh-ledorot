@@ -390,6 +390,10 @@ const isIntentFramingTerm=(term,intent)=>{
 export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
  let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
+ // Keep the specialized indirect-influence topic from swallowing ordinary
+ // questions about a head-covering letter. Apply it only when indirect influence
+ // or failed direct persuasion is explicitly asked about.
+ if(topics.includes('כיסוי ראש והשפעה עקיפה')&&!['השפעה עקיפה','בעקיפין','שכנוע ישיר'].some(t=>containsTerm(query,t)))topics=topics.filter(t=>t!=='כיסוי ראש והשפעה עקיפה');
  // Multi-clause Hebrew phrasing can split a topic's canonical phrase (e.g. "תוספת אברכים והרחבת שיעור חסידות"). Treat the conjunction as one specific topic so generic livelihood/business matches cannot leak into the answer.
  if(containsTerm(query,'תוספת אברכים')&&containsTerm(query,'שיעור חסידות'))topics=['הרחבת שיעור חסידות'];
  if(topics.includes('חיפוש אמת ובדיקת תנועה'))topics=topics.filter(t=>t!=='הנהגה בחיי היום יום וקיום מצוות');

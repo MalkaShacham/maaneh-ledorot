@@ -1376,12 +1376,13 @@ assert.deepEqual(batch113Data.reconciliation_variance,{
 });
 const batch162Path='data/items/content-research-batch-162-2026-11-18.json';
 const batch163Path='data/items/content-research-batch-163-2026-11-18.json';
+const batch164Path='data/items/content-research-batch-164-2026-11-18.json';
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
-assert.equal(String(projectState.current_batch),'163');
-assert.equal(projectState.current_batch_file,batch163Path);
-assert.equal(String(projectState.development_recovery.current_batch),'163');
-assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'163');
-assert.equal(lastBatchSummary.batch_id,'163');
+assert.equal(String(projectState.current_batch),'164');
+assert.equal(projectState.current_batch_file,batch164Path);
+assert.equal(String(projectState.development_recovery.current_batch),'164');
+assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'164');
+assert.equal(lastBatchSummary.batch_id,'164');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
 assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
 assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
@@ -1389,13 +1390,13 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  content_verified_unique_sources:metrics.content_verified_unique_sources-lastBatchSummary.metrics_actual_before.content_verified_unique_sources,
  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
 });
-assert.equal(acquisitionState.manual_web_review.batch_id,'163');
-assert.equal(acquisitionState.manual_web_review.batch_file,batch163Path);
-assert.equal(acquisitionState.previous_manual_web_review.batch_id,'162');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch162Path);
+assert.equal(acquisitionState.manual_web_review.batch_id,'164');
+assert.equal(acquisitionState.manual_web_review.batch_file,batch164Path);
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'163');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch163Path);
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
 assert.equal(acquisitionState.last_manual_web_review.batch_id,'163');assert.equal(acquisitionState.last_manual_review.batch_id,'163');
-for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158','159','160','161','162'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
+for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158','159','160','161','162','163'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
@@ -2180,6 +2181,9 @@ const photo0429=idx.entries.find(e=>String(e.source_url||'').endsWith('/12007104
 assert(photo0429&&photo0429.id==='chabad-library-letter-1200710429'&&photo0429.status==='Parsed'&&photo0429.type==='letter'&&photo0429.independent_witness===false&&photo0429.has_content_evidence===true);
 assert.equal(idx.entries.filter(e=>String(e.source_url||'').endsWith('/1200710429')).length,1,'one content-bearing canonical URL entry is exposed; the linked duplicate alias is not a second answer source');
 
+const secretaryHeadCoverQuestion='מה נכתב במכתב המזכירות ח׳שמה על כיסוי הראש לפני החתונה?';
+assert(!understandQuestion(secretaryHeadCoverQuestion).topics.includes('כיסוי ראש והשפעה עקיפה'),'ordinary secretary-letter question must not inherit the indirect-influence topic');
+assert(understandQuestion('כיצד להשפיע בעקיפין על כיסוי הראש כאשר שכנוע ישיר לא מצליח?').topics.includes('כיסוי ראש והשפעה עקיפה'),'explicit indirect-influence question must retain the specialized topic');
 const batch088Queries=[
  ['מה כתב הרבי למחנך על השפעת החינוך לאחר שהתלמידים עוזבים את המסגרת?','chabadlibrary-1200890083'],
  ['מה נכתב במכתב הכללי ביידיש על מאמץ, עשייה והישגים?','chabadlibrary-1200710378'],
@@ -5971,7 +5975,7 @@ for(const update of batch163Data.existing_identity_updates){
  assert.equal(e.has_content_evidence,true);
  assert(e.response_propositions.includes(update.proposition));
  assert(e.response_proposition_locators.includes(update.source_body_locator));
- assert.equal(e.response_propositions.length,update.total_propositions_after);
+ assert(e.response_propositions.length>=update.total_propositions_after,'later batches may add propositions without invalidating the historical batch163 total');
  assert.equal(e.independent_witness,update.independent_witness);
 }
 assert.equal(batch163Data.deduplication_check.full_index_scan_available,true);
