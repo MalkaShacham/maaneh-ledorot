@@ -5266,6 +5266,8 @@ for(const mode of ['regular','researcher']){
   assert.equal(e[0].status,'Parsed');assert.equal(e[0].has_content_evidence,true);
   assert.equal(e[0].proposition_origin,'source_grounded_paraphrase');assert.equal(e[0].proposition_verbatim,false);assert.equal(e[0].proposition_verification,'source_text_inspected');
  }
+ const enriched2989311=idx.entries.find(x=>sourceAID(x)==='2989311');
+ assert.equal(enriched2989311.evidence_family_id,'sicha-5710-rosh-chodesh-sivan-aid2989311');
  const rechecked152=idx.entries.filter(x=>sourceAID(x)==='3008863');
  assert.equal(rechecked152.length,1);assert.equal(rechecked152[0].canonical_file,'data/items/content-research-batch-102-2026-11-15.json');
  assert.equal(rechecked152[0].response_propositions.length,2);assert.equal(rechecked152[0].status,'Parsed');
