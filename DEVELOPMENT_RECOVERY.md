@@ -1451,3 +1451,8 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 ### 2026-11-19 — follow-up readiness assertion repair
 
 The first Batch171 exact-head run (44422763891) passed index generation, question-specific retrieval, synthesis, citation integrity, evidence-contract and write-safety checks. It then exposed a second historical assertion: Batch085 may be reprocessed as `reconciled_with_variance` by the full-index reconciler. The readiness test now accepts that state only when a full-index audit and actual/expected snapshots exist and the stored variance equals the arithmetic difference. No corpus status is manually overwritten.
+
+
+### Reconciliation queue schema note — 2026-11-19
+
+The project-state pending reconciliation list remains a numerically ordered array of string batch IDs. Batch170 and Batch171 are recorded as `170` and `171`; no object-shaped queue entries are introduced.
