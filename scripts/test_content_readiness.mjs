@@ -5077,25 +5077,27 @@ for(const mode of ['regular','researcher']){
 }
 
 
-// Batch 151: eleven original-Hebrew Sicha bodies; one bounded paraphrase per inspected source.
+// Batch 151: five genuinely new Hebrew Sicha identities; six duplicate AIDs merged/rechecked in place.
 {
  const batch151Path='data/items/content-research-batch-151-2026-11-18.json';
  const batch151Data=JSON.parse(await readFile(new URL(batch151Path,root),'utf8'));
- const batch151Aids=['2989311','5959840','4296226','4279994','4280152','2989588','2989161','3008870','2988962','4385877','2989319'];
- assert.equal(batch151Data.records.length,11);
+ const batch151Aids=['4279994','2989161','3008870','4385877','2989319'];
+ assert.equal(batch151Data.records.length,5);
  assert.deepEqual(batch151Data.new_aids.map(String),batch151Aids);
- assert.equal(batch151Data.new_source_identities,11);
- assert.equal(batch151Data.existing_identities_enriched,1);
- assert.equal(batch151Data.existing_identities_rechecked,1);
- assert.equal(batch151Data.existing_response_propositions_added,1);
- assert.equal(batch151Data.existing_identity_updates.length,1);
- assert.deepEqual(batch151Data.enriched_aids.map(String),['2989404']);
- assert.deepEqual(batch151Data.rechecked_aids.map(String),['4304430']);
+ assert.equal(batch151Data.new_source_identities,5);
+ assert.equal(batch151Data.existing_identities_enriched,4);
+ assert.equal(batch151Data.existing_identities_rechecked,4);
+ assert.equal(batch151Data.new_response_propositions,5);
+ assert.equal(batch151Data.existing_response_propositions_added,4);
+ assert.equal(batch151Data.total_new_paraphrase_entries,9);
+ assert.equal(batch151Data.answer_eligible_source_families_added,5);
+ assert.equal(batch151Data.independent_witnesses_added,5);
+ assert.equal(batch151Data.existing_identity_updates.length,4);
+ assert.equal(batch151Data.existing_identity_rechecks.length,4);
+ assert.deepEqual(batch151Data.enriched_aids.map(String),['5959840','4296226','4280152','2989404']);
+ assert.deepEqual(batch151Data.rechecked_aids.map(String),['2989311','2989588','2988962','4304430']);
  assert.equal(batch151Data.source_bodies_inspected,13);
  assert.equal(batch151Data.source_body_pages_opened,37);
- assert.equal(batch151Data.new_response_propositions,11);
- assert.equal(batch151Data.total_new_paraphrase_entries,12);
- assert.equal(batch151Data.content_verified_unique_sources_added,0);
  assert.equal(batch151Data.blocked_candidate_count,5);
  assert.equal(batch151Data.excluded_candidate_count,1);
  assert.equal(batch151Data.crawler_retry,false);
@@ -5103,17 +5105,36 @@ for(const mode of ['regular','researcher']){
  assert.equal(batch151Data.full_text_copied,false);
  assert.equal(batch151Data.scan_only_verification_used,false);
  assert.equal(batch151Data.translations_counted_as_independent_witnesses,0);
- assert.equal(batch151Data.metrics_expected_after.answer_eligible_unique_sources,1513);
- assert.equal(batch151Data.metrics_expected_after.answer_eligible_propositions,3858);
- const enrichedAID2989404=idx.entries.filter(e=>sourceAID(e)==='2989404');
- assert.equal(enrichedAID2989404.length,1);
- assert.equal(enrichedAID2989404[0].canonical_file,'data/items/content-research-batch-101-2026-11-15.json');
- assert.equal(enrichedAID2989404[0].response_propositions.length,3);
- assert(enrichedAID2989404[0].response_proposition_locators.some(x=>x.includes('205–207')));
- const recheckedAID4304430=idx.entries.filter(e=>sourceAID(e)==='4304430');
- assert.equal(recheckedAID4304430.length,1);
- assert.equal(recheckedAID4304430[0].canonical_file,'data/items/content-research-batch-146-2026-11-17.json');
- assert.equal(recheckedAID4304430[0].response_propositions.length,2);
+ assert.deepEqual(batch151Data.metrics_expected_after,{answer_eligible_unique_sources:1507,content_verified_unique_sources:854,answer_eligible_propositions:3855});
+ assert.deepEqual(batch151Data.metrics_delta_at_batch_boundary,{answer_eligible_unique_sources:5,content_verified_unique_sources:0,answer_eligible_propositions:9});
+ const enriched=[
+  ['5959840','data/items/content-research-batch-101-2026-11-15.json',4,'177–182'],
+  ['4296226','data/items/content-research-batch-143-2026-11-17.json',3,'177–180'],
+  ['4280152','data/items/content-research-batch-142-2026-11-17.json',2,'175–176'],
+  ['2989404','data/items/content-research-batch-101-2026-11-15.json',3,'205–207']
+ ];
+ for(const [aid,file,count,locator] of enriched){
+  const e=idx.entries.filter(x=>sourceAID(x)===aid);
+  assert.equal(e.length,1,'enriched batch-151 AID '+aid+' must retain one canonical identity');
+  assert.equal(e[0].canonical_file,file);
+  assert.equal(e[0].response_propositions.length,count);
+  assert(e[0].response_proposition_locators.some(x=>String(x).includes(locator)));
+  assert.equal(e[0].status,'Parsed');
+ }
+ const rechecked=[
+  ['2989311','data/items/content-research-batch-101-2026-11-15.json',2],
+  ['2989588','data/items/content-research-batch-099-2026-11-15.json',3],
+  ['2988962','data/items/content-research-batch-099-2026-11-15.json',2],
+  ['4304430','data/items/content-research-batch-146-2026-11-17.json',2]
+ ];
+ for(const [aid,file,count] of rechecked){
+  const e=idx.entries.filter(x=>sourceAID(x)===aid);
+  assert.equal(e.length,1,'rechecked batch-151 AID '+aid+' must resolve to one existing identity');
+  assert.equal(e[0].canonical_file,file);
+  assert.equal(e[0].response_propositions.length,count,'rechecked identity must not receive a duplicate proposition');
+  assert.equal(e[0].status,'Parsed');
+ }
+ assert.equal(batch151Data.deduplication_check.unique_new_evidence_families,5);
  assert.equal(batch151Data.deduplication_check.full_index_scan_available,true);
  assert.equal(batch151Data.deduplication_check.full_index_scan_pending_reconciliation,false);
  assert.deepEqual(batch151Data.deduplication_check.canonical_identity_collisions,[]);
@@ -5138,7 +5159,6 @@ for(const mode of ['regular','researcher']){
   assert(!queue.records.some(q=>String(q.key||'')==='aid:'+r.aid||String(q.source_url||'').includes('/aid/'+r.aid+'/')));
  }
 }
-
 // AID 2988877: one canonical identity/Evidence Family after merging the batch141 duplicate into batch100.
 {
  const canonical2988877=idx.entries.filter(e=>sourceAID(e)==='2988877');
