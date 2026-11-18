@@ -5243,6 +5243,7 @@ for(const mode of ['regular','researcher']){
   assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
   assert(r.proposition_source_locator&&r.provenance&&r.verification_scope);
   assert.equal(r.response_propositions.length,2);assert.equal(r.response_proposition_locators.length,2);
+  assert(['exact','approximate','range','unknown','calendar_day','recurring_calendar_day_only'].includes(r.date_precision));
   assert.equal(r.response_proposition_locators.join(' | '),r.proposition_source_locator);
   assert.equal(r.independent_witness,String(r.aid)==='5989779');
   const found=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
