@@ -9,19 +9,19 @@
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "review_method": "Manual public web/search/open inspection of item-level Hebrew publisher pages. Search results were used only to discover candidates; each included source body was opened and its cited lines inspected directly. Three alternative candidates returned HTTP 429 and were excluded; no crawler retry or access-control bypass.",
-  "records_reviewed": 14,
-  "reviewed_item_count": 14,
-  "source_bodies_inspected": 11,
-  "source_body_pages_opened": 33,
+  "records_reviewed": 19,
+  "reviewed_item_count": 19,
+  "source_bodies_inspected": 13,
+  "source_body_pages_opened": 37,
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 11,
-  "existing_identities_enriched": 0,
-  "existing_identities_rechecked": 0,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 1,
   "new_response_propositions": 11,
-  "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 11,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 12,
   "answer_eligible_source_families_added": 11,
   "independent_witnesses_added": 11,
   "non_independent_presentations_added": 0,
@@ -37,7 +37,7 @@
     "Hebrew": 11
   },
   "proposition_language_distribution": {
-    "Hebrew": 11
+    "Hebrew": 12
   },
   "source_type_distribution": {
     "Sichos": 11
@@ -50,13 +50,17 @@
     4280152,
     2989588,
     2989161,
-    4304430,
     3008870,
     2988962,
-    4385877
+    4385877,
+    2989319
   ],
-  "enriched_aids": [],
-  "rechecked_aids": [],
+  "enriched_aids": [
+    2989404
+  ],
+  "rechecked_aids": [
+    4304430
+  ],
   "reviewed_aids": [
     2989311,
     5959840,
@@ -65,38 +69,54 @@
     4280152,
     2989588,
     2989161,
-    4304430,
     3008870,
     2988962,
-    4385877
+    4385877,
+    2989319,
+    2989404,
+    4304430
   ],
-  "blocked_candidate_count": 3,
+  "blocked_candidate_count": 5,
   "blocked_candidates": [
     {
       "aid": 5959908,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/5959908",
       "status": "HTTP 429 Too Many Requests",
-      "reason": "הקורא הציבורי החזיר 429 בעת פתיחת גוף הפרסום; לא נעשה ניסיון לעקוף בקרות או להפעיל crawler.",
-      "handling": "הפריט לא שימש לתוכן. באותה הפעלה נפתחו 11 גופי שיחות עבריים חלופיים ונוספו רק פרפרזות המבוססות על השורות שנבדקו."
+      "handling": "Excluded; no retry.",
+      "reason": "גוף הפרסום לא היה נגיש דרך הקורא הציבורי בהפעלה זו; לא נעשה ניסיון לעקוף בקרות גישה."
     },
     {
       "aid": 2989234,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989234",
       "status": "HTTP 429 Too Many Requests",
-      "reason": "הקורא הציבורי החזיר 429 בעת פתיחת גוף הפרסום; לא נעשה ניסיון לעקוף בקרות או להפעיל crawler.",
-      "handling": "הפריט לא שימש לתוכן. באותה הפעלה נפתחו 11 גופי שיחות עבריים חלופיים ונוספו רק פרפרזות המבוססות על השורות שנבדקו."
+      "handling": "Excluded; no retry.",
+      "reason": "גוף הפרסום לא היה נגיש דרך הקורא הציבורי בהפעלה זו; לא נעשה ניסיון לעקוף בקרות גישה."
     },
     {
       "aid": 3008863,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/3008863",
       "status": "HTTP 429 Too Many Requests",
-      "reason": "הקורא הציבורי החזיר 429 בעת פתיחת גוף הפרסום; לא נעשה ניסיון לעקוף בקרות או להפעיל crawler.",
-      "handling": "הפריט לא שימש לתוכן. באותה הפעלה נפתחו 11 גופי שיחות עבריים חלופיים ונוספו רק פרפרזות המבוססות על השורות שנבדקו."
+      "handling": "Excluded; no retry.",
+      "reason": "גוף הפרסום לא היה נגיש דרך הקורא הציבורי בהפעלה זו; לא נעשה ניסיון לעקוף בקרות גישה."
+    },
+    {
+      "aid": 4296209,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4296209",
+      "status": "HTTP 429 Too Many Requests",
+      "handling": "Excluded; no retry.",
+      "reason": "גוף הפרסום לא היה נגיש דרך הקורא הציבורי בהפעלה זו; לא נעשה ניסיון לעקוף בקרות גישה."
+    },
+    {
+      "aid": 4666220,
+      "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+      "status": "reader_internal_error",
+      "handling": "Excluded; no access-control bypass or crawler retry.",
+      "reason": "גוף הפרסום לא היה נגיש דרך הקורא הציבורי בהפעלה זו; לא נעשה ניסיון לעקוף בקרות גישה."
     }
   ],
   "metadata_only_candidate_count": 0,
   "metadata_only_candidates": [],
-  "excluded_candidate_count": 0,
+  "excluded_candidate_count": 1,
   "translations_added": 0,
   "translations_counted_as_independent_witnesses": 0,
   "crawler_retry": false,
@@ -111,7 +131,7 @@
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1513,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3857
+    "answer_eligible_propositions": 3858
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
@@ -119,16 +139,16 @@
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 11,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 11
+    "answer_eligible_propositions": 12
   },
-  "metrics_note": "Planning boundary only. Batch150's expected boundary was shifted down by one source after the duplicate AID 2988877 was consolidated into batch100. The canonical full-index reconciliation must measure the actual before/after values; no public metric was edited manually.",
+  "metrics_note": "Planning boundary only. Batch150's expected source boundary was shifted down by one after AID 2988877 was consolidated into batch100. Batch151 adds eleven new Evidence Families and one existing-identity proposition. The canonical full-index reconciliation must measure actual before/after values; no public metric was edited manually.",
   "deduplication_check": {
     "new_aids_unique": true,
     "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
     "duplicate_alias_identities": 0,
     "translations_counted_as_independent_witnesses": 0,
-    "checked_against": "Exact AID preflight against the 1,022-record content-review queue (no matches) and GitHub repository code-search queries for all eleven AIDs (no matches). The public-search-index file could not be read through the connector; full filesystem reconciliation remains mandatory.",
+    "checked_against": "Exact AID preflight across the 1,022-record review queue, all 93 manual content-research batches and 12 bulk-indexed files. No matches for the eleven new AIDs; AID 2989404 is an existing batch101 identity and AID 4304430 is an existing batch146 identity. Full generated-index reconciliation remains mandatory.",
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
     "index_generated": "2026-11-15",
@@ -141,10 +161,12 @@
       4280152,
       2989588,
       2989161,
-      4304430,
       3008870,
       2988962,
-      4385877
+      4385877,
+      2989319,
+      2989404,
+      4304430
     ],
     "review_queue_records": 1022,
     "review_queue_matches": 0,
@@ -152,8 +174,8 @@
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
     "all_target_identities_answer_eligible": null,
-    "preflight_exact_aid_search": "No exact AID matches in the review queue or repository code-search results; these checks do not replace the full canonical filesystem scan.",
-    "note": "AID/URL/family uniqueness is established within this batch only. Full-index reconciliation must confirm that none of the eleven AIDs already exists elsewhere before metrics are committed."
+    "preflight_exact_aid_search": "No matches for the eleven new AIDs in the review queue, 93 manual batches, 12 bulk-indexed files or repository code-search results. Existing AIDs 2989404 and 4304430 were recognized and handled in-place. The public-search-index blob is 17.6 MB and could not be read through the connector; full reconciliation is still required.",
+    "note": "AID/URL/family uniqueness is established within this batch and preflight-scanned across manual/bulk item files. Full canonical reconciliation must still confirm all eleven new AIDs and update the generated index."
   },
   "source_body_review": [
     {
@@ -307,14 +329,14 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "evidence_family_id": "sicha-4304430-י-ב-תמוז-ה-תשכ-ד",
-      "independent_witness": true,
-      "proposition_count": 1,
+      "evidence_family_id": "farbrengen-5724-12-tammuz-yud-tes-event",
+      "independent_witness": false,
+      "proposition_count": 0,
       "context_status": "partial",
-      "existing_identity": false,
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-151-2026-11-18.json",
-      "note": "Original Hebrew body passage inspected; one bounded non-verbatim paraphrase; page marked בלתי מוגה."
+      "existing_identity": true,
+      "action": "existing_identity_rechecked_no_duplicate_proposition",
+      "canonical_file": "data/items/content-research-batch-146-2026-11-17.json",
+      "note": "AID 4304430 already exists in batch146 with the same source proposition about preserving and publishing stories; no duplicate record or proposition was added."
     },
     {
       "aid": 3008870,
@@ -375,13 +397,56 @@
       "action": "new_identity_created",
       "canonical_file": "data/items/content-research-batch-151-2026-11-18.json",
       "note": "Original Hebrew body passage inspected; one bounded non-verbatim paraphrase; page marked בלתי מוגה."
+    },
+    {
+      "aid": 2989404,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989404",
+      "web_source_ref": "turn517056view0",
+      "body_text_inspected": true,
+      "body_page_opened": true,
+      "title_or_metadata_only": false,
+      "source_body_locator": "he.chabad.org AID 2989404, גוף השיחה שורות 205–207.",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "evidence_family_id": "sicha-5711-yud-beis-tammuz-aid2989404",
+      "independent_witness": false,
+      "proposition_count": 1,
+      "existing_propositions_before": 2,
+      "total_propositions_after": 3,
+      "context_status": "partial",
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "note": "Existing AID in batch101; one new paraphrase added from body lines205–207. Same AID/Evidence Family; no independent witness."
+    },
+    {
+      "aid": 2989319,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989319",
+      "web_source_ref": "turn400402view0",
+      "body_text_inspected": true,
+      "body_page_opened": true,
+      "title_or_metadata_only": false,
+      "source_body_locator": "he.chabad.org AID 2989319, גוף השיחה שורות 247–255.",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "evidence_family_id": "sicha-5710-shabbat-pinchas-aid2989319",
+      "independent_witness": true,
+      "proposition_count": 1,
+      "context_status": "partial",
+      "existing_identity": false,
+      "action": "new_identity_created",
+      "canonical_file": "data/items/content-research-batch-151-2026-11-18.json",
+      "note": "Original Hebrew body passage inspected; one bounded non-verbatim paraphrase; page marked בלתי מוגה."
     }
   ],
   "fallback_source_attempted": true,
   "fallback_source_results": {
     "publisher": "BeitChabad.com / he.chabad.org",
-    "accessible_item_level_bodies": 11,
-    "existing_identity_bodies": 0,
+    "accessible_item_level_bodies": 13,
+    "new_source_bodies": 11,
+    "existing_identity_bodies": 2,
     "body_text_inspected": true,
     "aids": [
       2989311,
@@ -391,18 +456,29 @@
       4280152,
       2989588,
       2989161,
-      4304430,
       3008870,
       2988962,
-      4385877
+      4385877,
+      2989319,
+      2989404,
+      4304430
+    ],
+    "existing_identity_aids": [
+      2989404,
+      4304430
     ],
     "blocked_candidate_aids": [
       5959908,
       2989234,
-      3008863
+      3008863,
+      4296209,
+      4666220
+    ],
+    "excluded_candidate_aids": [
+      470201
     ],
     "search_extracts_used_as_content": 0,
-    "notes": "After three alternative pages returned HTTP 429, eleven distinct Hebrew publisher bodies were opened and inspected in the same run. No content was inferred from titles or snippets; no translation was counted as an independent witness."
+    "notes": "After five blocked public-reader candidates and one secondary-commentary exclusion, eleven new Hebrew publisher bodies plus two existing identities were inspected. One existing identity was enriched with a distinct body passage; one existing source was rechecked and its already-present proposition was not duplicated. No search snippet was used as content."
   },
   "records": [
     {
@@ -1036,96 +1112,6 @@
       "canonical_file": "data/items/content-research-batch-151-2026-11-18.json"
     },
     {
-      "id": "chabad-sicha-4304430",
-      "canonical_key": "aid:4304430",
-      "aid": 4304430,
-      "title": "שיחת יום ב׳ פ׳ בלק, י״ב תמוז, ה׳תשכ״ד",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה בעברית שפורסם ב-BeitChabad.com / Chabad.org; העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "י״ב תמוז, ה׳תשכ״ד",
-      "date": "י״ב תמוז, ה׳תשכ״ד",
-      "date_precision": "exact",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "context_status": "partial",
-      "summary_researcher": "השיחה מתארת אחריות לשמר סיפורים וזיכרונות על מאסרו וגאולתו של אדמו״ר הריי״צ ולהביאם לכתב ולדפוס כדי שיוכלו להגיע לציבור רחב; הבקשה מיוחסת לרצונו של בעל הגאולה.",
-      "provenance": {
-        "authorship_status": "המו״ל מציג את הפריט כשיחת הרבי; ההקלטה והרישום בן הזמן לא נבדקו בנפרד.",
-        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 4304430, גוף שיחה בעברית.",
-        "transmission_type": "פרסום דיגיטלי של תמליל שיחה עברי בלתי מוגה.",
-        "textual_status": "נבדק רק המקטע המצוין במיקום המקור; העמוד מסמן את הנוסח כבלתי מוגה.",
-        "editorial_scope": "he.chabad.org AID 4304430, גוף השיחה שורות 177–178.",
-        "verification_status": "Parsed; source_text_inspected; partial context.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
-        "accessed": "2026-11-18T02:24:48+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "גוף העמוד העברי נפתח ונבדק במיקום המצוין; העמוד מסמן את הנוסח כבלתי מוגה.",
-        "complete_partial": "partial",
-        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה מוגהת; לא נבדק מלוא מהלך ההתוועדות."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "נשמרו פרפרזה מחקרית תחומה ומיקום מקור; לא הועתק טקסט מוגן במלואו."
-      },
-      "relations": [],
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת יום ב׳ פ׳ בלק, י״ב תמוז, ה׳תשכ״ד"
-        ],
-        "research_terms": [
-          "שימור זיכרון",
-          "הדפסת סיפורים",
-          "י״ב תמוז",
-          "הפצת ידע"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "נבדק ידנית ב־18.11.2026. נוספה פרפרזה אחת ממקטע גוף הפרסום המפורט ב-locator; הזהות נשארת Parsed.",
-      "type": "sicha",
-      "collection": "תורת מנחם — התוועדויות",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
-      "response_propositions": [
-        "השיחה מתארת אחריות לשמר סיפורים וזיכרונות על מאסרו וגאולתו של אדמו״ר הריי״צ ולהביאם לכתב ולדפוס כדי שיוכלו להגיע לציבור רחב; הבקשה מיוחסת לרצונו של בעל הגאולה."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org AID 4304430, גוף השיחה שורות 177–178."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 4304430, גוף השיחה שורות 177–178.",
-      "evidence_family_id": "sicha-4304430-י-ב-תמוז-ה-תשכ-ד",
-      "parent_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נבדק גוף הפרסום בעברית, AID 4304430, רק במיקום he.chabad.org AID 4304430, גוף השיחה שורות 177–178.. העמוד מסמן את הנוסח כבלתי מוגה; לא נבדקו הקלטה, כתב־יד, אוטוגרף או נוסח מוגה. ההקשר נשאר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע שנפתח; אין לייחס את ניסוחה לרבי.",
-      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 4304430, גוף שיחה בעברית.",
-      "documented_circumstances": "י״ב תמוז, ה׳תשכ״ד",
-      "question_or_problem": "מה מתבקש ממי שמחזיקים בזיכרונות או במסמכים על מאסר וגאולת הרבי הריי״צ?",
-      "conditions_or_qualifications": [
-        "נבדק רק המקטע במיקום he.chabad.org AID 4304430, גוף השיחה שורות 177–178.; אין להסיק ממנו על יתר השיחה.",
-        "הנוסח מסומן בלתי מוגה; לא נבדקו הקלטה, כתב־יד או נוסח מוגה.",
-        "הפרופוזיציה היא פרפרזה מחקרית ולא ציטוט; אין לייחס ניסוח שנוצר בידי מערכת AI לרבי."
-      ],
-      "audience": "משתתפי התוועדות י״ב תמוז",
-      "primary_secondary_status": "Publisher-published Hebrew unedited Sicha transcript; one public text witness; no recording/manuscript comparison.",
-      "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "translation_status": "Original Hebrew body inspected; no translation counted independently.",
-      "independent_witness": true,
-      "translation_of_evidence_family_id": null,
-      "rights_status": "copyrighted-link-only",
-      "canonical_file": "data/items/content-research-batch-151-2026-11-18.json"
-    },
-    {
       "id": "chabad-sicha-3008870",
       "canonical_key": "aid:3008870",
       "aid": 3008870,
@@ -1394,7 +1380,121 @@
       "translation_of_evidence_family_id": null,
       "rights_status": "copyrighted-link-only",
       "canonical_file": "data/items/content-research-batch-151-2026-11-18.json"
+    },
+    {
+      "id": "chabad-sicha-2989319",
+      "canonical_key": "aid:2989319",
+      "aid": 2989319,
+      "title": "שיחת ש״פ פינחס, מבה״ח מנחם־אב, ה׳שי״ת",
+      "source_class": "Sichos",
+      "source_class_detail": "תמליל שיחה בעברית שפורסם ב-BeitChabad.com / Chabad.org; העמוד מסמן במפורש את הנוסח כבלתי מוגה.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "date_original": "ש״פ פינחס, מבה״ח מנחם־אב, ה׳שי״ת",
+      "date": "ש״פ פינחס, מבה״ח מנחם־אב, ה׳שי״ת",
+      "date_precision": "exact",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "context_status": "partial",
+      "summary_researcher": "השיחה דורשת שלא להסתפק בחיזוק עצמי במסגרת הישיבה או בית המדרש, אלא לצאת לרחוב ולפנות ליהודים כדי לעודדם לקיום מצוות; בד בבד היא מדגישה שהעיסוק בטובת הזולת אינו פוטר את האדם מעבודתו הרוחנית שלו.",
+      "provenance": {
+        "authorship_status": "המו״ל מציג את הפריט כשיחת הרבי; ההקלטה והרישום בן הזמן לא נבדקו בנפרד.",
+        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989319, גוף שיחה בעברית.",
+        "transmission_type": "פרסום דיגיטלי של תמליל שיחה עברי בלתי מוגה.",
+        "textual_status": "נבדק רק המקטע המצוין במיקום המקור; העמוד מסמן את הנוסח כבלתי מוגה.",
+        "editorial_scope": "he.chabad.org AID 2989319, גוף השיחה שורות 247–255.",
+        "verification_status": "Parsed; source_text_inspected; partial context.",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989319",
+        "accessed": "2026-11-18T02:24:48+02:00"
+      },
+      "witness": {
+        "kind": "text",
+        "state": "גוף העמוד העברי נפתח ונבדק במיקום המצוין; העמוד מסמן את הנוסח כבלתי מוגה.",
+        "complete_partial": "partial",
+        "notes": "לא נבדקו הקלטה, כתב־יד, אוטוגרף או מהדורה מוגהת; לא נבדק מלוא מהלך ההתוועדות."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "נשמרו פרפרזה מחקרית תחומה ומיקום מקור; לא הועתק טקסט מוגן במלואו."
+      },
+      "relations": [],
+      "taxonomy": {
+        "publisher_index_terms": [
+          "שיחת ש״פ פינחס, מבה״ח מנחם־אב, ה׳שי״ת"
+        ],
+        "research_terms": [
+          "השפעה על הזולת",
+          "הנחת תפילין",
+          "אחריות אישית",
+          "עבודת האדם עם עצמו"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "נבדק ידנית ב־18.11.2026. נוספה פרפרזה אחת ממקטע גוף הפרסום המפורט ב-locator; הזהות נשארת Parsed.",
+      "type": "sicha",
+      "collection": "תורת מנחם — התוועדויות",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989319",
+      "response_propositions": [
+        "השיחה דורשת שלא להסתפק בחיזוק עצמי במסגרת הישיבה או בית המדרש, אלא לצאת לרחוב ולפנות ליהודים כדי לעודדם לקיום מצוות; בד בבד היא מדגישה שהעיסוק בטובת הזולת אינו פוטר את האדם מעבודתו הרוחנית שלו."
+      ],
+      "response_proposition_locators": [
+        "he.chabad.org AID 2989319, גוף השיחה שורות 247–255."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "he.chabad.org AID 2989319, גוף השיחה שורות 247–255.",
+      "evidence_family_id": "sicha-5710-shabbat-pinchas-aid2989319",
+      "parent_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "נבדק גוף הפרסום בעברית, AID 2989319, רק בשורות 247–255. העמוד מסמן את הנוסח כבלתי מוגה; לא נבדקו הקלטה, כתב־יד, אוטוגרף או נוסח מוגה. ההקשר נשאר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע שנפתח; אין לייחס את ניסוחה לרבי.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 2989319, גוף שיחה בעברית.",
+      "documented_circumstances": "ש״פ פינחס, מבה״ח מנחם־אב, ה׳שי״ת",
+      "question_or_problem": "כיצד מאזנת השיחה בין פעילות להשפעת הזולת לבין עבודת האדם עם עצמו?",
+      "conditions_or_qualifications": [
+        "נבדקו רק שורות 247–255; אין להסיק מהן על יתר השיחה.",
+        "הנוסח מסומן בלתי מוגה; לא נבדקו הקלטה, כתב־יד או נוסח מוגה.",
+        "הפרופוזיציה היא פרפרזה מחקרית ולא ציטוט; אין לייחס ניסוח שנוצר בידי מערכת AI לרבי.",
+        "הדוגמה המפורשת בקטע היא פנייה ליהודי לעידוד הנחת תפילין; אין להרחיב את הדוגמה למעשים שלא נזכרו במקטע."
+      ],
+      "audience": "חסידים ומקיימי תורה ומצוות",
+      "primary_secondary_status": "Publisher-published Hebrew unedited Sicha transcript; one public text witness; no recording/manuscript comparison.",
+      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "translation_status": "Original Hebrew body inspected; no translation counted independently.",
+      "independent_witness": true,
+      "translation_of_evidence_family_id": null,
+      "rights_status": "copyrighted-link-only",
+      "canonical_file": "data/items/content-research-batch-151-2026-11-18.json"
     }
   ],
-  "note": "נבדקו 11 גופי שיחות עבריים מקוריים המסומנים בלתי מוגה. נוספו 11 פרפרזות מחקריות לא־מילוליות עם מיקומי גוף, provenance, היקף אימות, הקשר ומגבלות. כל 11 הזהויות נשארו Parsed; אין קידום ל-Verified. שלוש הפניות חלופיות החזירו HTTP 429 ותועדו כחסומות. בדיקת הכפילויות מלאה עדיין ממתינה ל-reconciliation."
-}
+  "note": "נבדקו 11 גופי מקור חדשים בעברית, הועשרה זהות קיימת אחת (AID 2989404) בפרופוזיציה אחת, וזהות קיימת נוספת (AID 4304430) נבדקה ללא שכפול טענה שכבר קיימת. נוספו 11 זהויות חדשות ו-12 פרופוזיציות חדשות או נוספות. חמש הפניות חסומות ופריט משני אחד הוצאו; כל הזהויות נשארו Parsed. בדיקת האינדקס המלא עדיין ממתינה ל-reconciliation.",
+  "existing_identity_updates": [
+    {
+      "aid": 2989404,
+      "id": "sicha-5711-yud-beis-tammuz-aid2989404",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "evidence_family_id": "sicha-5711-yud-beis-tammuz-aid2989404",
+      "action": "enriched_existing_identity_in_place",
+      "existing_propositions_before": 2,
+      "propositions_added": 1,
+      "total_propositions_after": 3,
+      "body_locator": "he.chabad.org AID 2989404, גוף השיחה שורות 205–207.",
+      "reason": "AID 2989404 is an existing Hebrew unedited Sicha in batch101; one distinct inspected passage was paraphrased and added to the same identity/Evidence Family."
+    }
+  ],
+  "existing_identity_updates_count": 1,
+  "excluded_candidates": [
+    {
+      "aid": 470201,
+      "source_url": "https://he.chabad.org/therebbe/article_cdo/aid/470201/jewish/",
+      "status": "secondary_commentary_not_primary_source",
+      "reason": "העמוד הוא מאמר משני ולא פרסום מקור של שיחה/איגרת; לא שימש ליצירת פרופוזיציה."
+    }
+  ]
+}\n

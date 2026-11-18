@@ -82,9 +82,11 @@
       "batch_id": "151",
       "batch_file": "data/items/content-research-batch-151-2026-11-18.json",
       "status": "pending_reconciliation",
-      "source_bodies_inspected": 11,
+      "source_bodies_inspected": 13,
       "new_source_identities": 11,
-      "new_response_propositions": 11
+      "new_response_propositions": 11,
+      "existing_identities_enriched": 1,
+      "existing_response_propositions_added": 1
     }
   ],
   "next_work": [
@@ -125,7 +127,7 @@
       "expected_after": {
         "answer_eligible_unique_sources": 1513,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3857
+        "answer_eligible_propositions": 3858
       },
       "actual_delta": null,
       "reconciliation_variance": null,
@@ -197,26 +199,28 @@
         "metrics_expected_after": {
           "answer_eligible_unique_sources": 1513,
           "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3857
+          "answer_eligible_propositions": 3858
         },
         "metrics_actual_after": null,
         "new_source_identities": 11,
-        "existing_identities_enriched": 0,
-        "source_bodies_inspected": 11,
+        "existing_identities_enriched": 1,
+        "existing_identities_rechecked": 1,
+        "source_bodies_inspected": 13,
+        "source_body_pages_opened": 37,
         "new_response_propositions": 11,
-        "existing_response_propositions_added": 0,
-        "total_new_paraphrase_entries": 11,
+        "existing_response_propositions_added": 1,
+        "total_new_paraphrase_entries": 12,
         "answer_eligible_source_families_added": 11,
         "content_verified_unique_sources_added": 0,
-        "blocked_candidate_count": 3,
+        "blocked_candidate_count": 5,
+        "excluded_candidate_count": 1,
         "metrics_delta_at_batch_boundary": {
           "answer_eligible_unique_sources": 11,
           "content_verified_unique_sources": 0,
-          "answer_eligible_propositions": 11
+          "answer_eligible_propositions": 12
         },
         "reconciliation_status": "pending_reconciliation",
-        "reviewed_item_count": 14,
-        "source_body_pages_opened": 33,
+        "reviewed_item_count": 19,
         "new_aids": [
           2989311,
           5959840,
@@ -225,12 +229,17 @@
           4280152,
           2989588,
           2989161,
-          4304430,
           3008870,
           2988962,
-          4385877
+          4385877,
+          2989319
         ],
-        "enriched_aids": [],
+        "enriched_aids": [
+          2989404
+        ],
+        "rechecked_aids": [
+          4304430
+        ],
         "translations_counted_as_independent_witnesses": 0
       },
       "status": "pending_reconciliation",
@@ -371,27 +380,28 @@
       "metrics_expected_after": {
         "answer_eligible_unique_sources": 1513,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3857
+        "answer_eligible_propositions": 3858
       },
       "metrics_actual_after": null,
       "new_source_identities": 11,
-      "existing_identities_enriched": 0,
-      "source_bodies_inspected": 11,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 1,
+      "source_bodies_inspected": 13,
+      "source_body_pages_opened": 37,
       "new_response_propositions": 11,
-      "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 11,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 12,
       "answer_eligible_source_families_added": 11,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 3,
-      "recovered_candidate_count": 0,
+      "blocked_candidate_count": 5,
+      "excluded_candidate_count": 1,
       "metrics_delta_at_batch_boundary": {
         "answer_eligible_unique_sources": 11,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 11
+        "answer_eligible_propositions": 12
       },
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 14,
-      "source_body_pages_opened": 33,
+      "reviewed_item_count": 19,
       "new_aids": [
         2989311,
         5959840,
@@ -400,19 +410,24 @@
         4280152,
         2989588,
         2989161,
-        4304430,
         3008870,
         2988962,
-        4385877
+        4385877,
+        2989319
       ],
-      "enriched_aids": [],
+      "enriched_aids": [
+        2989404
+      ],
+      "rechecked_aids": [
+        4304430
+      ],
       "translations_counted_as_independent_witnesses": 0
     },
-    "last_run_note": "Batch151 inspected eleven Hebrew source bodies and added eleven non-verbatim research paraphrases. Three alternative candidates returned HTTP 429; no crawler retry or access-control bypass. Full-index deduplication and reconciliation are pending.",
-    "last_batch_blocked_count": 3,
-    "last_batch_blocked_reason": "Three alternative public publisher pages returned HTTP 429. They were excluded; eleven accessible Hebrew Sicha bodies were used as same-run fallback.",
+    "last_run_note": "Batch151 final audit: eleven new Hebrew sources, one existing identity enriched (AID2989404), one existing identity rechecked without duplicate proposition (AID4304430), twelve new/additional paraphrases. Five candidates returned HTTP 429 or reader error; one secondary article was excluded. Full-index reconciliation pending.",
+    "last_batch_blocked_count": 5,
+    "last_batch_blocked_reason": "Five public-reader candidates were unavailable (four HTTP 429 and AID4666220 internal reader error); no crawler retry or access-control bypass. One secondary commentary page was excluded.",
     "next_work": [
-      "Run deterministic canonical reconciliation through batch151; verify AID, URL, ID and Evidence Family uniqueness, including the AID 2988877 consolidation.",
+      "Run deterministic canonical reconciliation through batch151; verify all eleven new AIDs, the AID2989404 in-place enrichment, AID4304430 recheck and the AID2988877 canonical merge.",
       "Run scripts/test_content_readiness.mjs and Answer Quality Gate; investigate every reconciliation variance before committing public metrics.",
       "Verify the GitHub Pages build/deploy and inspect the live public metrics/index after reconciliation."
     ],
@@ -3276,4 +3291,4 @@
   "updated_at": "2026-11-18T02:24:48+02:00",
   "current_batch_file": "data/items/content-research-batch-151-2026-11-18.json",
   "status": "pending_reconciliation"
-}
+}\n
