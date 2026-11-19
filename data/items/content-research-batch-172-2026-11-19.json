@@ -17,17 +17,17 @@
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 11,
+  "new_source_identities": 9,
   "existing_identities_enriched": 0,
   "existing_identities_rechecked": 1,
-  "new_response_propositions": 11,
+  "new_response_propositions": 10,
   "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 11,
-  "answer_eligible_source_families_added": 11,
-  "independent_witnesses_added": 10,
+  "total_new_paraphrase_entries": 10,
+  "answer_eligible_source_families_added": 9,
+  "independent_witnesses_added": 8,
   "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
-  "duplicate_alias_identities": 1,
+  "duplicate_alias_identities": 3,
   "source_languages": [
     "Hebrew",
     "English"
@@ -53,8 +53,6 @@
     2988906,
     2989234,
     2989237,
-    2989311,
-    4279994,
     4296163,
     4385650,
     4385701,
@@ -127,17 +125,17 @@
   "metrics_before_source": "Planning boundary after corrected Batch171 expected-after; not a measured result. Exact-head reconciliation must carry forward its actual snapshot.",
   "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1558,
+    "answer_eligible_unique_sources": 1556,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4040
+    "answer_eligible_propositions": 4039
   },
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 11,
+    "answer_eligible_unique_sources": 9,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 11
+    "answer_eligible_propositions": 10
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
   "metrics_attribution_note": "Planning increments comprise ten independent original-Hebrew Sicha families plus one additional letter Evidence Family represented only by an English translation. The translation is a non-independent presentation. AID 2988877 was reclassified as a duplicate recheck of the canonical Batch100 identity and contributes no new source family or proposition.",
@@ -145,17 +143,33 @@
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
-    "preflight_candidate_count": 11,
+    "preflight_candidate_count": 9,
     "new_aids_unique": true,
     "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
     "translations_counted_as_independent_witnesses": 0,
-    "canonical_identity_collisions": null,
-    "missing_canonical_identities": null,
+    "canonical_identity_collisions": [],
+    "missing_canonical_identities": [],
     "checked_against": "Current content-review queue (1022 records), exact-AID GitHub repository searches, and available bulk-indexed snapshots dated 2026-09-24, 2026-09-25 and 2026-09-27. This is not a full canonical corpus scan.",
-    "note": "AID 2988877 is already canonical in Batch100 (same publisher AID/URL and canonical Evidence Family); it is excluded as a new identity and retained as a duplicate recheck. Remaining eleven candidates still require full-index reconciliation.",
+    "note": "Batch172 was corrected after direct AID/URL reconciliation: AID 2989311 is a duplicate presentation of canonical Batch101 and its section 175–180 paraphrase overlaps the canonical claim; AID 4279994 is a duplicate presentation of canonical Batch151 and its section 179–199 paraphrase overlaps the canonical claims. Both are excluded from new identities and propositions. AID 2988877 remains a separate duplicate recheck against Batch100. Nine new source families remain; full-index CI reconciliation is still required.",
     "new_ids_unique": true,
-    "all_target_identities_answer_eligible": null
+    "all_target_identities_answer_eligible": null,
+    "target_identity_count": 9,
+    "target_aids": [
+      "259799",
+      "2988879",
+      "2988906",
+      "2989234",
+      "2989237",
+      "4296163",
+      "4385650",
+      "4385701",
+      "5959840"
+    ],
+    "target_identity_matches": 0,
+    "target_identity_duplicates": 0,
+    "selected_unique_evidence_families": 9,
+    "same_family_duplicate_presentations": []
   },
   "source_body_review": [
     {
@@ -254,7 +268,7 @@
     {
       "item_aid": 2989311,
       "id": "chabad-sicha-2989311",
-      "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
       "evidence_family_id": "sicha-5710-rosh-chodesh-sivan-aid2989311",
       "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989311",
       "web_source_ref": "turn701495view3",
@@ -278,9 +292,12 @@
       "conditions_or_qualifications": [
         "הקטע מציג הסבר חסידי על משמעות הבית; אין לקרוא אותו כהגדרה משפטית, כלכלית או חברתית של צורכי דיור."
       ],
-      "existing_identity": false,
-      "new_independent_witness": true,
-      "action": "new_identity_created"
+      "existing_identity": true,
+      "new_independent_witness": false,
+      "action": "duplicate_alias_excluded_existing_canonical_identity",
+      "canonical_id": "sicha-5710-rosh-chodesh-sivan-aid2989311",
+      "duplicate_of_canonical_id": "sicha-5710-rosh-chodesh-sivan-aid2989311",
+      "note": "AID 2989311 already exists in Batch101; the Batch172 candidate paraphrases the same body section 175–180 already covered by the canonical proposition, so it is excluded as a duplicate presentation."
     },
     {
       "item_aid": 2988879,
@@ -378,8 +395,8 @@
     {
       "item_aid": 4279994,
       "id": "chabad-sicha-4279994",
-      "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
-      "evidence_family_id": "sicha-5715-reeh-ellul-aid4279994",
+      "canonical_file": "data/items/content-research-batch-151-2026-11-18.json",
+      "evidence_family_id": "sicha-4279994-ש-פ-ראה-מבה-ח-אלול-ה-תשט-ו",
       "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4279994",
       "web_source_ref": "turn701495view7",
       "body_locator": "he.chabad.org AID 4279994, גוף השיחה, סעיפים ב׳–ד׳, שורות 179–199.",
@@ -402,9 +419,12 @@
       "conditions_or_qualifications": [
         "זהו דיון רוחני על אחריות הלומד; אין לפרש את הביטוי כאילו התורה עצמה נפגמת או כאילו כל לימוד גורם לתוצאה שלילית."
       ],
-      "existing_identity": false,
-      "new_independent_witness": true,
-      "action": "new_identity_created"
+      "existing_identity": true,
+      "new_independent_witness": false,
+      "action": "duplicate_alias_excluded_existing_canonical_identity",
+      "canonical_id": "chabad-sicha-4279994",
+      "duplicate_of_canonical_id": "chabad-sicha-4279994",
+      "note": "AID 4279994 already exists in Batch151; the Batch172 candidate overlaps the canonical sections 179–199 and used a divergent Evidence Family spelling, so it is excluded and linked to the canonical family."
     },
     {
       "item_aid": 4296163,
@@ -542,7 +562,7 @@
       "note": "AID 2988877 already has one canonical identity in Batch100 with the same publisher URL and the Evidence Family shown above. The Batch172 candidate used a divergent family-id spelling and must not be counted as a new identity or proposition. The opened passage is retained only as a duplicate recheck; the canonical Batch100 identity and its eleven existing propositions remain authoritative."
     }
   ],
-  "expected_answer_eligible_source_families_added": 11,
+  "expected_answer_eligible_source_families_added": 9,
   "records": [
     {
       "id": "chabad-sicha-2989237",
@@ -839,105 +859,6 @@
       },
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. הפרפרזה מוגבלת למיקום he.chabad.org AID 5959840, גוף השיחה, סעיף א׳, שורות 177–183.; context_status=partial. אין קידום ל-Verified. הפרפרזה מוגבלת לרקע המתואר בשורות 177–183; אין להסיק ממנה את מלוא ניתוח השיחה או את מסקנתה הסופית.",
-      "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
-      "content_enrichment_batch_id": "172",
-      "last_content_enriched_at": "2026-11-19T01:53:26+02:00"
-    },
-    {
-      "id": "chabad-sicha-2989311",
-      "canonical_key": "aid:2989311",
-      "aid": 2989311,
-      "title": "שיחת ראש-חודש סיון, ה׳שי״ת",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה עברי שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; נבדק רק המקטע המצוין.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "source_text_inspected",
-      "date_original": "ראש-חודש סיון, ה׳שי״ת",
-      "date_precision": "calendar_day",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "public_talk_transcript",
-      "collection": "שיחות ומאמרים / BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989311",
-      "context_status": "partial",
-      "summary_researcher": "דרשת ראש חודש סיון מציגה את הבית לא רק כאחד מצורכי האדם לצד מזון ולבוש, אלא כמרכיב הנוגע לשלמותו האנושית; ההבחנה נבנית בהשוואה בין צורכי הצומח, בעלי החיים והאדם. זו טענה רעיונית־חסידית על משמעות הבית, לא הגדרה משפטית או חברתית.",
-      "response_propositions": [
-        "דרשת ראש חודש סיון מציגה את הבית לא רק כאחד מצורכי האדם לצד מזון ולבוש, אלא כמרכיב הנוגע לשלמותו האנושית; ההבחנה נבנית בהשוואה בין צורכי הצומח, בעלי החיים והאדם. זו טענה רעיונית־חסידית על משמעות הבית, לא הגדרה משפטית או חברתית."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org AID 2989311, גוף השיחה, סעיפים א׳–ב׳, שורות 175–180."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 2989311, גוף השיחה, סעיפים א׳–ב׳, שורות 175–180.",
-      "evidence_family_id": "sicha-5710-rosh-chodesh-sivan-aid2989311",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989311, במיקום he.chabad.org AID 2989311, גוף השיחה, סעיפים א׳–ב׳, שורות 175–180.. נבדקו המקטע המצוין וההקשר הסמוך בלבד. העמוד מסומן בלתי מוגה. ההקלטה, כתב היד, האוטוגרף והרישום בן הזמן לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; context_status=partial. הקטע מציג הסבר חסידי על משמעות הבית; אין לקרוא אותו כהגדרה משפטית, כלכלית או חברתית של צורכי דיור. לא הועתק טקסט מוגן במלואו.",
-      "documented_circumstances": "שיחה לראש חודש סיון ה׳שי״ת העוסקת במשמעות החסידית של מזון, לבוש ובית.",
-      "question_or_problem": "כיצד השיחה מבדילה בין בית לבין מזון ולבוש בהקשר של שלמות האדם?",
-      "conditions_or_qualifications": [
-        "הקטע מציג הסבר חסידי על משמעות הבית; אין לקרוא אותו כהגדרה משפטית, כלכלית או חברתית של צורכי דיור."
-      ],
-      "audience": "קוראי השיחה; בעמוד לא מצוין נמען אישי.",
-      "primary_secondary_status": "Publisher-published Hebrew unedited talk transcript; the recording, contemporaneous notes, autograph and edited edition were not collated.",
-      "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 2989311, שיחת ראש-חודש סיון, ה׳שי״ת, https://he.chabad.org/library/article_cdo/aid/2989311; original Hebrew body passage inspected 2026-11-19.",
-      "independent_witness": true,
-      "translation_status": "הגוף העברי המקורי שפורסם נבדק; לא נוסף תרגום ולא נספר תרגום כעד עצמאי.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, הרישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד.",
-      "source_role": "oral_talk_transcript",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "provenance": {
-        "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, הרישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989311, שיחת ראש-חודש סיון, ה׳שי״ת, https://he.chabad.org/library/article_cdo/aid/2989311; original Hebrew body passage inspected 2026-11-19.",
-        "transmission_type": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
-        "textual_status": "הגוף נפתח ונבדק במיקום he.chabad.org AID 2989311, גוף השיחה, סעיפים א׳–ב׳, שורות 175–180.. הפרסום מסומן בלתי מוגה. לא נבדקו הקלטה, כתב יד, אוטוגרף או רישום בן הזמן; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום המצוין; תוצאות חיפוש שימשו לניווט בלבד ולא כתוכן; לא הועתק גוף הפרסום המלא.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989311",
-        "accessed": "2026-11-19T01:53:26+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "תמליל שיחה עברי שפורסם בידי המו״ל ומסומן בלתי מוגה.",
-        "complete_partial": "partial",
-        "notes": "נבדק רק המיקום he.chabad.org AID 2989311, גוף השיחה, סעיפים א׳–ב׳, שורות 175–180.; לא נבדקו הקלטה, כתב יד, אוטוגרף או מהדורה מודפסת מלאה. הקטע מציג הסבר חסידי על משמעות הבית; אין לקרוא אותו כהגדרה משפטית, כלכלית או חברתית של צורכי דיור."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "נשמרו קישור למקור, פרפרזה מחקרית תחומה ומיקום; לא הועתק גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 2989311 מזהה פריט שיחה נפרד לפי מועדו ופרסומו. תרגום או הדפסה מקבילה של אותו פריט ייקשרו למשפחת הראיות sicha-5710-rosh-chodesh-sivan-aid2989311 ולא ייספרו כעד עצמאי.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת ראש-חודש סיון, ה׳שי״ת"
-        ],
-        "research_terms": [
-          "בית",
-          "מזון",
-          "לבוש",
-          "שלמות האדם",
-          "חסידות"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed. הפרפרזה מוגבלת למיקום he.chabad.org AID 2989311, גוף השיחה, סעיפים א׳–ב׳, שורות 175–180.; context_status=partial. אין קידום ל-Verified. הקטע מציג הסבר חסידי על משמעות הבית; אין לקרוא אותו כהגדרה משפטית, כלכלית או חברתית של צורכי דיור.",
       "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
       "content_enrichment_batch_id": "172",
       "last_content_enriched_at": "2026-11-19T01:53:26+02:00"
@@ -1255,105 +1176,6 @@
       },
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. הפרפרזה מוגבלת למיקום he.chabad.org AID 4385701, גוף השיחה, סעיפים א׳–ב׳, שורות 174–180.; context_status=partial. אין קידום ל-Verified. הפרפרזה משקפת את פירוש השיחה לדברי הרמב״ם והגמרא; אין להציג אותה כהבטחה פרטנית או כפסיקה על תוצאת תשובתו של אדם מסוים.",
-      "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
-      "content_enrichment_batch_id": "172",
-      "last_content_enriched_at": "2026-11-19T01:53:26+02:00"
-    },
-    {
-      "id": "chabad-sicha-4279994",
-      "canonical_key": "aid:4279994",
-      "aid": 4279994,
-      "title": "שיחת ש״פ ראה, מבה״ח אלול, ה׳תשט״ו",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה עברי שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; נבדק רק המקטע המצוין.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "source_text_inspected",
-      "date_original": "שבת פרשת ראה, מבה״ח אלול, ה׳תשט״ו",
-      "date_precision": "calendar_day",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "public_talk_transcript",
-      "collection": "שיחות ומאמרים / BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4279994",
-      "context_status": "partial",
-      "summary_researcher": "בהבחנה בין התורה לבין האדם הלומד, השיחה מסבירה שהאמירה שאין דברי תורה מקבלים טומאה מתייחסת לתורה עצמה, בעוד שלומד התורה נדרש לזהירות יתרה: לימוד בשכל אנושי עלול ליצור תחושת הסתפקות במצבו הקיים אם אינו מלווה בעבודה פנימית. זהו דיון רוחני על אחריות הלומד, לא קביעה שהתורה נפגמת.",
-      "response_propositions": [
-        "בהבחנה בין התורה לבין האדם הלומד, השיחה מסבירה שהאמירה שאין דברי תורה מקבלים טומאה מתייחסת לתורה עצמה, בעוד שלומד התורה נדרש לזהירות יתרה: לימוד בשכל אנושי עלול ליצור תחושת הסתפקות במצבו הקיים אם אינו מלווה בעבודה פנימית. זהו דיון רוחני על אחריות הלומד, לא קביעה שהתורה נפגמת."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org AID 4279994, גוף השיחה, סעיפים ב׳–ד׳, שורות 179–199."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 4279994, גוף השיחה, סעיפים ב׳–ד׳, שורות 179–199.",
-      "evidence_family_id": "sicha-5715-reeh-ellul-aid4279994",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4279994, במיקום he.chabad.org AID 4279994, גוף השיחה, סעיפים ב׳–ד׳, שורות 179–199.. נבדקו המקטע המצוין וההקשר הסמוך בלבד. העמוד מסומן בלתי מוגה. ההקלטה, כתב היד, האוטוגרף והרישום בן הזמן לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; context_status=partial. זהו דיון רוחני על אחריות הלומד; אין לפרש את הביטוי כאילו התורה עצמה נפגמת או כאילו כל לימוד גורם לתוצאה שלילית. לא הועתק טקסט מוגן במלואו.",
-      "documented_circumstances": "שיחת ש״פ ראה מבה״ח אלול ה׳תשט״ו, בהמשך למאמר אני לדודי ודודי לי.",
-      "question_or_problem": "מה ההבחנה שהשיחה עושה בין טהרת התורה לבין מצבו הרוחני של האדם הלומד?",
-      "conditions_or_qualifications": [
-        "זהו דיון רוחני על אחריות הלומד; אין לפרש את הביטוי כאילו התורה עצמה נפגמת או כאילו כל לימוד גורם לתוצאה שלילית."
-      ],
-      "audience": "קוראי השיחה; בעמוד לא מצוין נמען אישי.",
-      "primary_secondary_status": "Publisher-published Hebrew unedited talk transcript; the recording, contemporaneous notes, autograph and edited edition were not collated.",
-      "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 4279994, שיחת ש״פ ראה, מבה״ח אלול, ה׳תשט״ו, https://he.chabad.org/library/article_cdo/aid/4279994; original Hebrew body passage inspected 2026-11-19.",
-      "independent_witness": true,
-      "translation_status": "הגוף העברי המקורי שפורסם נבדק; לא נוסף תרגום ולא נספר תרגום כעד עצמאי.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, הרישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד.",
-      "source_role": "oral_talk_transcript",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "provenance": {
-        "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, הרישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 4279994, שיחת ש״פ ראה, מבה״ח אלול, ה׳תשט״ו, https://he.chabad.org/library/article_cdo/aid/4279994; original Hebrew body passage inspected 2026-11-19.",
-        "transmission_type": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
-        "textual_status": "הגוף נפתח ונבדק במיקום he.chabad.org AID 4279994, גוף השיחה, סעיפים ב׳–ד׳, שורות 179–199.. הפרסום מסומן בלתי מוגה. לא נבדקו הקלטה, כתב יד, אוטוגרף או רישום בן הזמן; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום המצוין; תוצאות חיפוש שימשו לניווט בלבד ולא כתוכן; לא הועתק גוף הפרסום המלא.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4279994",
-        "accessed": "2026-11-19T01:53:26+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "תמליל שיחה עברי שפורסם בידי המו״ל ומסומן בלתי מוגה.",
-        "complete_partial": "partial",
-        "notes": "נבדק רק המיקום he.chabad.org AID 4279994, גוף השיחה, סעיפים ב׳–ד׳, שורות 179–199.; לא נבדקו הקלטה, כתב יד, אוטוגרף או מהדורה מודפסת מלאה. זהו דיון רוחני על אחריות הלומד; אין לפרש את הביטוי כאילו התורה עצמה נפגמת או כאילו כל לימוד גורם לתוצאה שלילית."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "נשמרו קישור למקור, פרפרזה מחקרית תחומה ומיקום; לא הועתק גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 4279994 מזהה פריט שיחה נפרד לפי מועדו ופרסומו. תרגום או הדפסה מקבילה של אותו פריט ייקשרו למשפחת הראיות sicha-5715-reeh-ellul-aid4279994 ולא ייספרו כעד עצמאי.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת ש״פ ראה, מבה״ח אלול, ה׳תשט״ו"
-        ],
-        "research_terms": [
-          "לימוד תורה",
-          "תורה ותפילה",
-          "זהירות הלומד",
-          "עבודת האדם",
-          "חודש אלול"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed. הפרפרזה מוגבלת למיקום he.chabad.org AID 4279994, גוף השיחה, סעיפים ב׳–ד׳, שורות 179–199.; context_status=partial. אין קידום ל-Verified. זהו דיון רוחני על אחריות הלומד; אין לפרש את הביטוי כאילו התורה עצמה נפגמת או כאילו כל לימוד גורם לתוצאה שלילית.",
       "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
       "content_enrichment_batch_id": "172",
       "last_content_enriched_at": "2026-11-19T01:53:26+02:00"
@@ -1677,11 +1499,9 @@
     "chabad-sicha-2989237",
     "chabad-sicha-4385650",
     "chabad-sicha-5959840",
-    "chabad-sicha-2989311",
     "chabad-sicha-2988879",
     "chabad-sicha-2989234",
     "chabad-sicha-4385701",
-    "chabad-sicha-4279994",
     "chabad-sicha-4296163",
     "chabad-sicha-2988906",
     "chabad-letter-5713-shevat-zalmon-jaffe"
@@ -1690,11 +1510,9 @@
     "chabad-sicha-2989237",
     "chabad-sicha-4385650",
     "chabad-sicha-5959840",
-    "chabad-sicha-2989311",
     "chabad-sicha-2988879",
     "chabad-sicha-2989234",
     "chabad-sicha-4385701",
-    "chabad-sicha-4279994",
     "chabad-sicha-4296163",
     "chabad-sicha-2988906",
     "chabad-letter-5713-shevat-zalmon-jaffe"
@@ -1703,18 +1521,18 @@
     "chabad-sicha-2989237",
     "chabad-sicha-4385650",
     "chabad-sicha-5959840",
-    "chabad-sicha-2989311",
     "chabad-sicha-2988879",
     "chabad-sicha-2989234",
     "chabad-sicha-4385701",
-    "chabad-sicha-4279994",
     "chabad-sicha-4296163",
     "chabad-sicha-2988877",
     "chabad-sicha-2988906",
     "chabad-letter-5713-shevat-zalmon-jaffe",
     "AID:4385482",
     "AID:5989925",
-    "Excluded unrelated Yiddish item 4754421"
+    "Excluded unrelated Yiddish item 4754421",
+    "duplicate-alias:aid:2989311->sicha-5710-rosh-chodesh-sivan-aid2989311",
+    "duplicate-alias:aid:4279994->chabad-sicha-4279994"
   ],
   "blocked_item_ids": [],
   "blocked_aids": [
@@ -1740,5 +1558,33 @@
       "note": "AID 2988877 already has one canonical identity in Batch100 with the same publisher URL and the Evidence Family shown above. The Batch172 candidate used a divergent family-id spelling and must not be counted as a new identity or proposition. The opened passage is retained only as a duplicate recheck; the canonical Batch100 identity and its eleven existing propositions remain authoritative."
     }
   ],
-  "note": "Batch172 corrected after exact-head readiness exposed AID 2988877 as already canonical in Batch100. The duplicate candidate was removed from records/source_body_review and retained in duplicate_rechecks; ten Hebrew identities and one non-independent English translation remain. Full-index reconciliation pending."
+  "note": "Batch172 corrected after AID-level duplicate review. Nine new source identities remain (eight original-Hebrew Sicha families and one English translation presentation, which is not an independent witness). AID 2989311 is excluded as a duplicate of canonical Batch101; its reviewed section 175–180 overlaps the existing canonical proposition. AID 4279994 is excluded as a duplicate of canonical Batch151; its reviewed section 179–199 overlaps existing canonical propositions and its divergent family spelling is corrected by linking to the canonical family. AID 2988877 remains a duplicate recheck against Batch100. Corrected planning boundary: 1556 / 854 / 4039; not an actual measurement until full-index reconciliation. No Verified promotion.",
+  "excluded_duplicate_candidate_count": 2,
+  "excluded_duplicate_candidates": [
+    {
+      "aid": 2989311,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989311",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "canonical_id": "sicha-5710-rosh-chodesh-sivan-aid2989311",
+      "evidence_family_id": "sicha-5710-rosh-chodesh-sivan-aid2989311",
+      "action": "excluded_duplicate_existing_identity",
+      "reason": "AID 2989311 already exists in Batch101; the Batch172 candidate paraphrases the same body section 175–180 already covered by the canonical proposition, so it is excluded as a duplicate presentation.",
+      "body_locator": "he.chabad.org AID 2989311, גוף השיחה, סעיפים א׳–ב׳, שורות 175–180.",
+      "proposition_counted": false,
+      "independent_witness": false
+    },
+    {
+      "aid": 4279994,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4279994",
+      "canonical_file": "data/items/content-research-batch-151-2026-11-18.json",
+      "canonical_id": "chabad-sicha-4279994",
+      "evidence_family_id": "sicha-4279994-ש-פ-ראה-מבה-ח-אלול-ה-תשט-ו",
+      "action": "excluded_duplicate_existing_identity",
+      "reason": "AID 4279994 already exists in Batch151; the Batch172 candidate overlaps the canonical sections 179–199 and used a divergent Evidence Family spelling, so it is excluded and linked to the canonical family.",
+      "body_locator": "he.chabad.org AID 4279994, גוף השיחה, סעיפים ב׳–ד׳, שורות 179–199.",
+      "proposition_counted": false,
+      "independent_witness": false
+    }
+  ],
+  "updated_at": "2026-11-19T17:56:03+02:00"
 }
