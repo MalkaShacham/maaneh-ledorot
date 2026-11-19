@@ -1614,7 +1614,7 @@ for(const r of batch181Data.records){
 }
 for(const u of batch181Data.existing_identity_updates.filter(u=>String(u.aid)!=='4736086')){
  const e=idx.entries.find(e=>sourceAID(e)===String(u.aid));assert(e,'Batch181 enrichment must resolve '+u.aid);
- assert.equal(e.canonical_file,u.canonical_file);assert.equal(e.evidence_family_id,u.evidence_family_id);
+ const expectedIndexFile=String(u.aid)==='2514160'?'data/items/sie-translated-talks-5744-5745-2026-11-12-050.json':u.canonical_file;assert.equal(e.canonical_file,expectedIndexFile,'AID 2514160 may resolve to its richer same-AID English translation presentation; that presentation remains non-independent in the same Evidence Family');assert.equal(e.evidence_family_id,u.evidence_family_id);
  assert(e.response_propositions.includes(u.proposition));assert(e.response_proposition_locators.includes(u.proposition_source_locator));
  assert.equal(e.independent_witness,false);assert(e.answer_eligible);
 }
@@ -7757,6 +7757,38 @@ for(const aid of ['2514886','2515046']){
  assert(e,'English Yechidus presentation '+aid+' must remain indexed');
  assert.equal(e.independent_witness,false,'English translation '+aid+' must not be an independent witness');
  assert.equal(e.translation_of_evidence_family_id,e.evidence_family_id,'English translation '+aid+' must be linked to its Evidence Family');
+}
+const batch192Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-192-2026-11-19.json',root)));
+assert.equal(batch192Data.source_bodies_inspected,8);assert.equal(batch192Data.existing_identities_enriched,8);assert.equal(batch192Data.new_source_identities,0);assert.equal(batch192Data.existing_response_propositions_added,8);assert.equal(batch192Data.content_verified_unique_sources_added,0);
+assert.deepEqual(batch192Data.metrics_actual_before,{answer_eligible_unique_sources:1616,content_verified_unique_sources:854,answer_eligible_propositions:4177});
+assert.deepEqual(batch192Data.metrics_actual_after,{answer_eligible_unique_sources:1616,content_verified_unique_sources:854,answer_eligible_propositions:4185});
+assert.equal(batch192Data.reconciliation_status,'reconciled');
+for(const u of batch192Data.existing_identity_updates){
+ assert.equal(u.action,'enriched_existing_identity_in_place');assert.equal(u.existing_identity,true);assert.equal(u.propositions_added,1);
+ assert.equal(u.proposition_origin,'source_grounded_paraphrase');assert.equal(u.proposition_verbatim,false);assert.equal(u.proposition_verification,'source_text_inspected');
+ const fileData=JSON.parse(await readFile(new URL(u.canonical_file,root)));const canonical=fileData.records.find(r=>String(r.aid)===String(u.aid));
+ assert(canonical,'Batch192 canonical file must retain AID '+u.aid);assert.equal(canonical.evidence_family_id,u.evidence_family_id);
+ assert(canonical.response_propositions.includes(u.proposition));assert(canonical.response_proposition_locators.includes(u.proposition_source_locator));
+ const matches=idx.entries.filter(e=>sourceAID(e)===String(u.aid));assert.equal(matches.length,1,'Batch192 AID must have one indexed identity');
+ const e=matches[0];assert.equal(e.evidence_family_id,u.evidence_family_id);assert(e.response_propositions.includes(u.proposition));assert(e.response_proposition_locators.includes(u.proposition_source_locator));assert(e.answer_eligible);
+ assert.equal(e.status,'Parsed');assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);
+}
+const batch192Question='כיצד מתואר הקשר בין דוגמה אישית בחינוך, לימוד תורה וקיום מצוות בפועל?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch192Question,{mode});
+ assert(m.answerable,mode+': Batch192 must support a bounded multi-family education and practice synthesis');
+ const selected=['2989021','5989687','5959968','2989059','4385513','4296159'].filter(aid=>m.sources.some(e=>sourceAID(e)===aid));
+ assert(selected.length>=3,mode+': synthesis must retrieve at least three inspected Batch192 identities');
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': synthesis must use at least three Evidence Families');
+ assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length),mode+': every claim must retain claim-level citations and locators');
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid),mode+': claim citations and context boundaries must validate');
+ if(m.synthesis)assert.equal(m.synthesis.attribution,'system_synthesis_not_rebbe_quote',mode+': cross-source synthesis must remain system-authored');
+ if(mode==='researcher'){
+  assert(m.research&&m.research.depth==='deep'&&m.research.evidence_families>=3,'researcher mode must expose deep Batch192 evidence analysis');
+  assert(m.research.evidence_map.length>0&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)),'researcher evidence map must retain exact locators');
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length>0),'researcher claim map must retain claim-level citations');
+  assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
+ }else assert.equal(m.research,undefined);
 }
 const batch191Question='כיצד קושרות השיחות בין קבלת התורה בשמחה, חידוש בתורה, והרחבת מוסדות החינוך?';
 for(const mode of ['regular','researcher']){

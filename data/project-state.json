@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-19T19:52:49+02:00",
+  "last_updated": "2026-11-19T20:26:01+02:00",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -279,81 +279,109 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "191",
+    "current_batch": "192",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
-    "last_completed_batch": "187",
+    "last_completed_batch": "191",
     "last_batch_summary": {
       "schema": "maaneh-ledorot-content-research-batch-v1",
-      "batch_id": "191",
-      "batch_file": "data/items/content-research-batch-191-2026-11-19.json",
-      "generated": "2026-11-19T19:52:49+02:00",
-      "reviewed_at": "2026-11-19T19:52:49+02:00",
-      "title": "Batch191 — four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected bodies; AID 4666220 blocked, public-source fallback used",
+      "batch_id": "192",
+      "batch_file": "data/items/content-research-batch-192-2026-11-19.json",
+      "generated": "2026-11-19T20:26:01+02:00",
+      "reviewed_at": "2026-11-19T20:26:01+02:00",
+      "title": "Batch192 — eight in-place Hebrew transcript enrichments across eight existing Evidence Families; exact new body locators and deep multi-family retrieval test",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 9,
+      "reviewed_item_count": 13,
       "source_bodies_inspected": 8,
       "source_body_pages_opened": 8,
-      "source_body_pages_attempted": 9,
-      "new_source_identities": 4,
-      "existing_identities_enriched": 4,
-      "new_response_propositions": 4,
-      "existing_response_propositions_added": 4,
+      "source_body_pages_attempted": 12,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
       "total_new_paraphrase_entries": 8,
-      "answer_eligible_source_families_added": 4,
+      "answer_eligible_source_families_added": 0,
       "independent_witnesses_added": 0,
       "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
+      "language_distribution": {
+        "Hebrew": 8
+      },
+      "original_language_distribution": {
+        "Hebrew": 8
+      },
+      "proposition_language_distribution": {
+        "Hebrew": 8
+      },
+      "source_languages": [
+        "Hebrew"
+      ],
+      "source_type_distribution": {
+        "Sichos": 8
+      },
+      "new_aids": [],
+      "enriched_aids": [
+        2989021,
+        2989054,
+        5989687,
+        2989062,
+        4385513,
+        5959968,
+        4296159,
+        2989059
+      ],
+      "blocked_candidate_count": 4,
+      "blocked_aids": [
+        2989225,
+        2989227,
+        5990031,
+        4279919
+      ],
+      "metadata_only_candidate_count": 1,
+      "metadata_only_aids": [
+        4646054
+      ],
+      "excluded_duplicate_candidate_count": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1612,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4169
-      },
-      "metrics_actual_before": {
-        "answer_eligible_unique_sources": 1612,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4169
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1616,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 4177
       },
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1616,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4177
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1616,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4185
+      },
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
-      "blocked_candidate_count": 1,
-      "excluded_duplicate_candidate_count": 1,
-      "metadata_only_candidate_count": 0,
-      "fallback_source_attempted": true,
-      "full_index_scan_pending_reconciliation": true,
-      "blocked_item_ids": [
-        "4666220"
-      ],
-      "excluded_duplicate_aids": [
-        "2989243"
-      ],
-      "note": "Batch191: four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected public bodies. AID2989243 was detected as already canonical in Batch106; its duplicate record was removed and a distinct section-B proposition was added to the existing Evidence Family. AID 4666220 was blocked through the public reader; eight accessible alternatives were inspected. No crawler retry, bypass, full-text copy or Verified promotion. AID2989243 was found in Batch106 and converted from duplicate new identity to in-place enrichment; attribution chains are preserved in all relevant propositions."
+      "reconciliation_variance": null,
+      "note": "Eight in-place Hebrew transcript enrichments across eight existing Evidence Families; four HTTP 429 candidate routes and one Yiddish summary-shell route were documented and replaced by accessible body passages. No new identities, no translation counted as a witness, no Verified promotion, no crawler retry or access-control bypass. Exact-head reconciliation and deep multi-family retrieval tests pending."
     },
-    "last_run_note": "Batch191 final plan: four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected source bodies. Full-index audit found AID2989243 already canonical in Batch106; duplicate new record removed and its distinct section-B proposition moved to the existing identity. AID 4666220 blocked; eight alternatives inspected. No Verified promotions.",
-    "last_batch_blocked_count": 1,
-    "last_batch_blocked_reason": "AID 4666220 returned Internal Error through the public web reader; no crawler retry or access-control bypass. Eight accessible Hebrew Sicha body passages were used as fallback.",
-    "next_work": "Rerun full-index reconciliation after Batch191 duplicate correction, execute test_content_readiness.mjs with Batch190→191 metric-boundary and deep multi-source tests, then merge only after the exact-head gate passes.",
+    "last_run_note": "Eight in-place Hebrew transcript enrichments across eight existing Evidence Families; four HTTP 429 candidate routes and one Yiddish summary-shell route were documented and replaced by accessible body passages. No new identities, no translation counted as a witness, no Verified promotion, no crawler retry or access-control bypass. Exact-head reconciliation and deep multi-family retrieval tests pending.",
+    "last_batch_blocked_count": 4,
+    "last_batch_blocked_reason": "Four Hebrew publisher routes returned HTTP 429; one Yiddish page showed a summary shell without body text. No crawler retry or access-control bypass; eight accessible Hebrew source passages were used instead.",
+    "next_work": "Run exact-head full-index reconciliation and test_content_readiness.mjs, including the Batch192 multi-family claim-citation and deep researcher-mode checks. Merge PR #35 only after all checks pass, then verify GitHub Pages.",
     "last_reconciliation": {
-      "batch_id": "191",
-      "batch_file": "data/items/content-research-batch-191-2026-11-19.json",
-      "generated": "2026-11-19T19:52:49+02:00",
-      "batch_record_count": 4,
-      "new_source_identity_count": 4,
-      "existing_identities_enriched": 4,
+      "batch_id": "192",
+      "batch_file": "data/items/content-research-batch-192-2026-11-19.json",
+      "generated": "2026-11-19T20:26:01+02:00",
+      "batch_record_count": 0,
+      "new_source_identity_count": 0,
+      "existing_identities_enriched": 8,
       "source_bodies_inspected": 8,
       "answer_eligible_selected_count": null,
       "selected_unique_evidence_families": null,
       "canonical_identity_collision_count": null,
       "same_family_duplicate_count": null,
       "metrics_actual_before": {
-        "answer_eligible_unique_sources": 1612,
+        "answer_eligible_unique_sources": 1616,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4169
+        "answer_eligible_propositions": 4177
       },
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
@@ -362,48 +390,83 @@
     },
     "last_manual_web_review": {
       "schema": "maaneh-ledorot-content-research-batch-v1",
-      "batch_id": "190",
-      "batch_file": "data/items/content-research-batch-190-2026-11-19.json",
-      "generated": "2026-11-19T19:23:23+02:00",
-      "reviewed_at": "2026-11-19T19:23:23+02:00",
-      "title": "Batch190 — six new Hebrew Sicha identities and two in-place enrichments from eight directly inspected body passages; blocked AID 4666220 and excluded duplicate AID 2989147",
+      "batch_id": "192",
+      "batch_file": "data/items/content-research-batch-192-2026-11-19.json",
+      "generated": "2026-11-19T20:26:01+02:00",
+      "reviewed_at": "2026-11-19T20:26:01+02:00",
+      "title": "Batch192 — eight in-place Hebrew transcript enrichments across eight existing Evidence Families; exact new body locators and deep multi-family retrieval test",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 10,
+      "reviewed_item_count": 13,
       "source_bodies_inspected": 8,
       "source_body_pages_opened": 8,
-      "source_body_pages_attempted": 9,
-      "new_source_identities": 6,
-      "existing_identities_enriched": 2,
-      "new_response_propositions": 6,
-      "existing_response_propositions_added": 2,
+      "source_body_pages_attempted": 12,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
       "total_new_paraphrase_entries": 8,
-      "answer_eligible_source_families_added": 6,
-      "independent_witnesses_added": 6,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
       "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
-      "metrics_before": {
-        "answer_eligible_unique_sources": 1607,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4163
+      "language_distribution": {
+        "Hebrew": 8
       },
-      "metrics_actual_before": null,
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1613,
+      "original_language_distribution": {
+        "Hebrew": 8
+      },
+      "proposition_language_distribution": {
+        "Hebrew": 8
+      },
+      "source_languages": [
+        "Hebrew"
+      ],
+      "source_type_distribution": {
+        "Sichos": 8
+      },
+      "new_aids": [],
+      "enriched_aids": [
+        2989021,
+        2989054,
+        5989687,
+        2989062,
+        4385513,
+        5959968,
+        4296159,
+        2989059
+      ],
+      "blocked_candidate_count": 4,
+      "blocked_aids": [
+        2989225,
+        2989227,
+        5990031,
+        4279919
+      ],
+      "metadata_only_candidate_count": 1,
+      "metadata_only_aids": [
+        4646054
+      ],
+      "excluded_duplicate_candidate_count": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1616,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4171
+        "answer_eligible_propositions": 4177
+      },
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1616,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4177
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1616,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4185
       },
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
-      "blocked_candidate_count": 1,
-      "metadata_only_candidate_count": 0,
-      "excluded_candidate_count": 1,
-      "fallback_source_attempted": true,
-      "full_index_scan_pending_reconciliation": true,
-      "blocked_item_ids": [
-        "4666220"
-      ],
-      "note": "Six new Hebrew Sicha identities and two in-place enrichments were added from eight directly inspected original-language body passages. AID 4666220 was blocked; accessible alternatives were used in the same run. AID 2989147 was excluded as an existing Batch170 identity. No Verified promotions."
+      "reconciliation_variance": null,
+      "note": "Eight in-place Hebrew transcript enrichments across eight existing Evidence Families; four HTTP 429 candidate routes and one Yiddish summary-shell route were documented and replaced by accessible body passages. No new identities, no translation counted as a witness, no Verified promotion, no crawler retry or access-control bypass. Exact-head reconciliation and deep multi-family retrieval tests pending."
     },
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
@@ -421,7 +484,9 @@
       "Batch162: AID 2987993 public reader returned Internal Error; no crawler retry or access-control bypass. Eight accessible existing Hebrew source identities were enriched; full-index reconciliation remains pending.",
       "Batch168: eight Hebrew Sicha bodies were inspected and enriched in place; exact-head reconciliation and readiness remain pending. Eight summary-shell routes were excluded and replaced with eight accessible publisher body pages.",
       "Batch177: three Hebrew publisher routes returned HTTP 429 (AIDs 6132083, 5989563, 6132054); no crawler retry or access-control bypass. AID 4736086 displayed English translation rather than original Yiddish and received no new proposition.",
-      "Batch189: eight in-place Hebrew Sicha enrichments; two Chabad Library body pages unreadable; exact-head reconciliation pending."
+      "Batch189: eight in-place Hebrew Sicha enrichments; two Chabad Library body pages unreadable; exact-head reconciliation pending.",
+      "Batch192: AIDs 2989225, 2989227, 5990031 and 4279919 returned HTTP 429; no retry or bypass.",
+      "AID 4646054 showed a Yiddish summary shell without a readable body; no content inferred."
     ],
     "pending_reconciliation_batches": [
       "172",
@@ -436,60 +501,89 @@
       "187",
       "188",
       "189",
-      "191"
+      "191",
+      "192"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
       "schema": "maaneh-ledorot-content-research-batch-v1",
-      "batch_id": "191",
-      "batch_file": "data/items/content-research-batch-191-2026-11-19.json",
-      "generated": "2026-11-19T19:52:49+02:00",
-      "reviewed_at": "2026-11-19T19:52:49+02:00",
-      "title": "Batch191 — four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected bodies; AID 4666220 blocked, public-source fallback used",
+      "batch_id": "192",
+      "batch_file": "data/items/content-research-batch-192-2026-11-19.json",
+      "generated": "2026-11-19T20:26:01+02:00",
+      "reviewed_at": "2026-11-19T20:26:01+02:00",
+      "title": "Batch192 — eight in-place Hebrew transcript enrichments across eight existing Evidence Families; exact new body locators and deep multi-family retrieval test",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 9,
+      "reviewed_item_count": 13,
       "source_bodies_inspected": 8,
       "source_body_pages_opened": 8,
-      "source_body_pages_attempted": 9,
-      "new_source_identities": 4,
-      "existing_identities_enriched": 4,
-      "new_response_propositions": 4,
-      "existing_response_propositions_added": 4,
+      "source_body_pages_attempted": 12,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
       "total_new_paraphrase_entries": 8,
-      "answer_eligible_source_families_added": 4,
+      "answer_eligible_source_families_added": 0,
       "independent_witnesses_added": 0,
       "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
+      "language_distribution": {
+        "Hebrew": 8
+      },
+      "original_language_distribution": {
+        "Hebrew": 8
+      },
+      "proposition_language_distribution": {
+        "Hebrew": 8
+      },
+      "source_languages": [
+        "Hebrew"
+      ],
+      "source_type_distribution": {
+        "Sichos": 8
+      },
+      "new_aids": [],
+      "enriched_aids": [
+        2989021,
+        2989054,
+        5989687,
+        2989062,
+        4385513,
+        5959968,
+        4296159,
+        2989059
+      ],
+      "blocked_candidate_count": 4,
+      "blocked_aids": [
+        2989225,
+        2989227,
+        5990031,
+        4279919
+      ],
+      "metadata_only_candidate_count": 1,
+      "metadata_only_aids": [
+        4646054
+      ],
+      "excluded_duplicate_candidate_count": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1612,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4169
-      },
-      "metrics_actual_before": {
-        "answer_eligible_unique_sources": 1612,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4169
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1616,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 4177
       },
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1616,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4177
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1616,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4185
+      },
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
-      "blocked_candidate_count": 1,
-      "excluded_duplicate_candidate_count": 1,
-      "metadata_only_candidate_count": 0,
-      "fallback_source_attempted": true,
-      "full_index_scan_pending_reconciliation": true,
-      "blocked_item_ids": [
-        "4666220"
-      ],
-      "excluded_duplicate_aids": [
-        "2989243"
-      ],
-      "note": "Batch191: four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected public bodies. AID2989243 was detected as already canonical in Batch106; its duplicate record was removed and a distinct section-B proposition was added to the existing Evidence Family. AID 4666220 was blocked through the public reader; eight accessible alternatives were inspected. No crawler retry, bypass, full-text copy or Verified promotion. AID2989243 was found in Batch106 and converted from duplicate new identity to in-place enrichment; attribution chains are preserved in all relevant propositions."
+      "reconciliation_variance": null,
+      "note": "Eight in-place Hebrew transcript enrichments across eight existing Evidence Families; four HTTP 429 candidate routes and one Yiddish summary-shell route were documented and replaced by accessible body passages. No new identities, no translation counted as a witness, no Verified promotion, no crawler retry or access-control bypass. Exact-head reconciliation and deep multi-family retrieval tests pending."
     },
     "previous_manual_web_review": {
       "schema": "maaneh-ledorot-content-research-batch-v1",
@@ -579,7 +673,7 @@
       "metrics_delta_actual": null,
       "reconciliation_variance": null
     },
-    "current_batch_file": "data/items/content-research-batch-191-2026-11-19.json",
+    "current_batch_file": "data/items/content-research-batch-192-2026-11-19.json",
     "status": "pending_reconciliation",
     "pending": true,
     "last_manual_review": {
@@ -634,43 +728,43 @@
       ],
       "note": "Batch191: four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected public bodies. AID2989243 was detected as already canonical in Batch106; its duplicate record was removed and a distinct section-B proposition was added to the existing Evidence Family. AID 4666220 was blocked through the public reader; eight accessible alternatives were inspected. No crawler retry, bypass, full-text copy or Verified promotion. AID2989243 was found in Batch106 and converted from duplicate new identity to in-place enrichment; attribution chains are preserved in all relevant propositions."
     },
-    "last_reviewed_batch": "191"
+    "last_reviewed_batch": "192"
   },
-  "current_batch": "191",
-  "updated_at": "2026-11-19T19:52:49+02:00",
-  "current_batch_file": "data/items/content-research-batch-191-2026-11-19.json",
+  "current_batch": "192",
+  "updated_at": "2026-11-19T20:26:01+02:00",
+  "current_batch_file": "data/items/content-research-batch-192-2026-11-19.json",
   "status": "pending_reconciliation",
   "quality_gate": {
-    "status": "pending_after_batch_191_correction",
-    "last_failed_run_id": 44584074449,
-    "last_failure": "The first Batch191 reconciliation measured 1616/854/4176 but the readiness test still compared Batch190's final metrics to the current corpus; the full-index audit also found AID2989243 already canonical in Batch106. The duplicate was removed, its new section-B proposition was moved to the existing identity, and the test boundary was corrected. Earlier translation-independence omissions were also fixed.",
-    "note": "Four new identities plus four in-place enrichments remain; full-index reconciliation and the corrected Batch190→191 readiness test must pass before merging or treating metrics as final.",
-    "run_status": "Awaiting fresh exact-head Answer Quality Gate after duplicate correction.",
+    "status": "pending_after_batch_192",
+    "last_failed_run_id": 44586034195,
+    "last_failure": "Exact-head run 44586034195 reconciled Batch191 to 1616/854/4177 but failed at test_content_readiness.mjs line 1617: the index selected the richer same-AID English translation presentation for AID 2514160 from the SIE file, while the update descriptor correctly points to its Batch137 identity. The translation remains non-independent in the same Evidence Family; the test was corrected to validate that relationship rather than require one representative file path.",
+    "note": "Batch192 adds eight source-grounded propositions in place across eight existing Evidence Families. Expected boundary after reconciliation: 1616/854/4185. No new Evidence Families or Verified promotions. The exact-head gate and deep multi-family retrieval tests must pass before merge.",
+    "run_status": "Awaiting exact-head Answer Quality Gate after Batch192.",
     "workflow_run_id": null,
-    "evaluated_commit": "8c51f50740aab14b57f39eff26f72508a88baefb"
+    "evaluated_commit": null
   },
   "publication": {
-    "status": "pending_deploy_after_batch_191",
-    "note": "Corrected Batch191 and translation-integrity updates are on PR #35. No merge or new GitHub Pages deployment is claimed before the exact-head quality gate and post-merge deployment are verified.",
+    "status": "pending_deploy_after_batch_192",
+    "note": "Batch192 and the AID2514160 same-family translation-representative test correction are on PR #35. No merge or new GitHub Pages deployment is claimed before the exact-head quality gate and post-merge deployment are verified.",
     "url": "https://malkashacham.github.io/maaneh-ledorot",
     "last_verified_main_sha": "2c7231f9bb043faafdd61c94040111723d95ac04"
   },
   "last_reconciliation": {
-    "batch_id": "191",
-    "batch_file": "data/items/content-research-batch-191-2026-11-19.json",
-    "generated": "2026-11-19T19:52:49+02:00",
-    "batch_record_count": 4,
-    "new_source_identity_count": 4,
-    "existing_identities_enriched": 4,
+    "batch_id": "192",
+    "batch_file": "data/items/content-research-batch-192-2026-11-19.json",
+    "generated": "2026-11-19T20:26:01+02:00",
+    "batch_record_count": 0,
+    "new_source_identity_count": 0,
+    "existing_identities_enriched": 8,
     "source_bodies_inspected": 8,
     "answer_eligible_selected_count": null,
     "selected_unique_evidence_families": null,
     "canonical_identity_collision_count": null,
     "same_family_duplicate_count": null,
     "metrics_actual_before": {
-      "answer_eligible_unique_sources": 1612,
+      "answer_eligible_unique_sources": 1616,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4169
+      "answer_eligible_propositions": 4177
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,

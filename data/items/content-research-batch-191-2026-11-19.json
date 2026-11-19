@@ -5,8 +5,8 @@
   "generated": "2026-11-19T19:52:49+02:00",
   "reviewed_at": "2026-11-19T19:52:49+02:00",
   "title": "Batch191 — four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected bodies; AID 4666220 blocked, public-source fallback used",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending_reconciliation",
+  "status": "reconciled",
+  "reconciliation_status": "reconciled",
   "reviewed_item_count": 9,
   "source_bodies_inspected": 8,
   "source_body_pages_opened": 8,
@@ -187,19 +187,31 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4177
   },
-  "metrics_actual_after": null,
-  "metrics_delta_actual": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 1616,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4177
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 4,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 8
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 4,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 8
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "metrics_note": "Batch191 corrected planning boundary is 1616/854/4177: four new Evidence Families and eight distinct paraphrase entries. The first CI workspace result 1616/854/4176 was produced while a duplicate AID2989243 record existed; that duplicate was removed and its distinct proposition was moved to the existing Batch106 identity. Public main remains 977/878/2950.",
+  "metrics_note": "Exact-head Answer Quality Gate run 44586034195 executed full-index reconciliation after the Batch191 duplicate correction and measured 1616/854/4177, exactly matching the Batch191 expected boundary. The run then failed only in a test assertion that required the Batch181 AID2514160 index representative to use the Batch137 file; the index selected the richer same-AID English translation presentation in the SIE file, which remains non-independent and in the same Evidence Family.",
   "deduplication_check": {
-    "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true,
+    "full_index_scan_available": true,
+    "full_index_scan_pending_reconciliation": false,
     "target_identity_count": 8,
     "target_aids": [
       4313091,
@@ -216,7 +228,7 @@
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "note": "AID 2989243 was found in canonical Batch106. Its duplicate new Batch191 record was removed and the new section-B proposition was redirected to the existing identity in place. Four new identities plus four enriched canonical identities remain. Full-index reconciliation is required to confirm all eight targets and no further collisions."
+    "note": "Exact-head reconciliation run 44586034195 resolved all eight Batch191 target identities; the corrected AID2989243 duplicate was removed and its proposition was added to the existing Batch106 identity. No same-family duplicate presentation or canonical identity collision was reported for Batch191."
   },
   "source_body_review": [
     {
