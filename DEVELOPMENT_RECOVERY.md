@@ -1540,3 +1540,6 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 
 
 - Historical Batch110 was included in the exact-head evidence-index audit during run 44450486958. All eight target AIDs resolved to Parsed, source-text-inspected entries; the stale pending-scan metadata was corrected to record the completed full-index audit. The existing collision and missing-identity arrays remain empty.
+
+
+- Search-index selection now prefers the canonical identity over a same-AID, same-Evidence-Family duplicate presentation when both are answer-eligible and have the same status. This keeps AID 4304430 on its canonical Batch101 record (five propositions) rather than the non-independent Batch146 alias (two propositions); the alias remains linked for provenance and family accounting.

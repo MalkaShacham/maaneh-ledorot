@@ -5251,7 +5251,7 @@ for(const mode of ['regular','researcher']){
   ['2989311','data/items/content-research-batch-101-2026-11-15.json',2],
   ['2989588','data/items/content-research-batch-099-2026-11-15.json',3],
   ['2988962','data/items/content-research-batch-099-2026-11-15.json',2],
-  ['4304430','data/items/content-research-batch-146-2026-11-17.json',2]
+  ['4304430','data/items/content-research-batch-101-2026-11-15.json',5]
  ];
  for(const [aid,file,count] of rechecked){
   const e=idx.entries.filter(x=>sourceAID(x)===aid);
@@ -6803,7 +6803,7 @@ assert.equal(duplicate430.evidence_family_id,'sicha-5724-yud-beis-tammuz-aid4304
 assert.equal(duplicate473.canonical_file,'data/items/content-research-batch-107-2026-11-16.json');
 assert.equal(duplicate473.evidence_family_id,'sicha-5718-06-marcheshvan-lech-lecha-aid4736086');
 const canonical430=idx.entries.filter(e=>sourceAID(e)==='4304430');
-assert.equal(canonical430.length,1);assert.equal(canonical430[0].canonical_file,'data/items/content-research-batch-101-2026-11-15.json');
+assert.equal(canonical430.length,1);assert.equal(canonical430[0].canonical_file,'data/items/content-research-batch-101-2026-11-15.json');assert.equal(canonical430[0].response_propositions.length,5);assert.equal(canonical430[0].independent_witness,true);assert.equal(canonical430[0].duplicate_of_canonical_id,null);
 const canonical473=idx.entries.filter(e=>sourceAID(e)==='4736086');
 assert.equal(canonical473.length,1);assert.equal(canonical473[0].canonical_file,'data/items/content-research-batch-107-2026-11-16.json');
 assert(canonical473[0].response_propositions.length>=5);
