@@ -13,32 +13,32 @@
   "source_body_pages_attempted": 14,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 9,
+  "new_source_identities": 7,
   "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 9,
+  "new_response_propositions": 7,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 10,
-  "answer_eligible_source_families_added": 9,
-  "independent_witnesses_added": 9,
+  "total_new_paraphrase_entries": 8,
+  "answer_eligible_source_families_added": 7,
+  "independent_witnesses_added": 7,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
   "language_distribution": {
     "Hebrew": 6,
-    "Yiddish": 3
+    "Yiddish": 1
   },
   "original_language_distribution": {
     "Hebrew": 6,
-    "Yiddish": 3
+    "Yiddish": 1
   },
   "proposition_language_distribution": {
-    "Hebrew": 10
+    "Hebrew": 8
   },
   "display_language_distribution": {
     "English": 10
   },
   "source_type_distribution": {
-    "Hayom Yom": 9
+    "Hayom Yom": 7
   },
   "metrics_before": {
     "answer_eligible_unique_sources": 1623,
@@ -46,9 +46,9 @@
     "answer_eligible_propositions": 4193
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1632,
+    "answer_eligible_unique_sources": 1628,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4203
+    "answer_eligible_propositions": 4199
   },
   "metrics_actual_before": {
     "answer_eligible_unique_sources": 1623,
@@ -58,19 +58,17 @@
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 9,
+    "answer_eligible_unique_sources": 5,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 10
+    "answer_eligible_propositions": 6
   },
   "metrics_note": "Baseline is the measured exact-head Batch193 PR-workspace snapshot 1623/854/4193. Expected change is nine new dated Hayom Yom Evidence Families and ten non-verbatim propositions (nine new plus one in-place editorial-context enrichment). The AID3316320 English editorial presentation remains in the AID528732 Evidence Family and is not an independent witness. Actual after-boundary awaits full-index reconciliation. No Verified promotion.",
   "new_aids": [
     3315359,
     3315366,
     3315368,
-    3315370,
     3315374,
     3315391,
-    3315415,
     3315237,
     3315238
   ],
@@ -228,21 +226,22 @@
       "language": "Yiddish",
       "original_language": "Yiddish",
       "witness_type": "published_bilingual_hayom_yom_entry_with_original_language_excerpt",
-      "evidence_family_id": "hayom-yom-5-shvat-5703",
+      "evidence_family_id": "hayom-yom-5-shvat-aid3315370",
       "independent_witness": true,
-      "new_independent_witness": true,
-      "proposition_count": 1,
+      "new_independent_witness": false,
+      "proposition_count": 0,
       "context_status": "partial",
-      "existing_identity": false,
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-194-2026-11-19.json",
+      "existing_identity": true,
+      "action": "duplicate_rechecked_no_new_content",
+      "canonical_file": "data/items/content-research-batch-145-2026-11-17.json",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246.",
       "provenance": "Chabad.org / TheRebbe.org, Sichos in English Collection; original-language passage inspected.",
       "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3315370 מתוך Sichos in English Collection ביום 19.11.2026. נבדק רק הקטע המקורי בשפת Yiddish ב-Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246. התרגום האנגלי והקטעים העריכתיים אינם בסיס לפרופוזיציה ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא-מילולית; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-      "note": "נפתח ונבדק גוף הפרסום AID 3315370; נבדק רק הקטע המקורי בשפת Yiddish במיקום המצוין. התרגום האנגלי והערות העריכה אינם עד עצמאי."
+      "note": "Body inspected in Yiddish; exact AID already canonical in Batch145. The existing proposition covers the same content; duplicate Batch194 record removed and no new proposition/family counted.",
+      "new_identity": false,
+      "new_proposition_count": 0
     },
     {
       "aid": 3315374,
@@ -312,21 +311,22 @@
       "language": "Yiddish",
       "original_language": "Yiddish",
       "witness_type": "published_bilingual_hayom_yom_entry_with_original_language_excerpt",
-      "evidence_family_id": "hayom-yom-25-shvat-5703",
+      "evidence_family_id": "hayom-yom-25-shvat-aid3315415",
       "independent_witness": true,
-      "new_independent_witness": true,
-      "proposition_count": 1,
+      "new_independent_witness": false,
+      "proposition_count": 0,
       "context_status": "partial",
-      "existing_identity": false,
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-194-2026-11-19.json",
+      "existing_identity": true,
+      "action": "duplicate_rechecked_no_new_content",
+      "canonical_file": "data/items/content-research-batch-145-2026-11-17.json",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246.",
       "provenance": "Chabad.org / TheRebbe.org, Sichos in English Collection; original-language passage inspected.",
       "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3315415 מתוך Sichos in English Collection ביום 19.11.2026. נבדק רק הקטע המקורי בשפת Yiddish ב-Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246. התרגום האנגלי והקטעים העריכתיים אינם בסיס לפרופוזיציה ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא-מילולית; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-      "note": "נפתח ונבדק גוף הפרסום AID 3315415; נבדק רק הקטע המקורי בשפת Yiddish במיקום המצוין. התרגום האנגלי והערות העריכה אינם עד עצמאי."
+      "note": "Body inspected in Yiddish; exact AID already canonical in Batch145. The existing proposition covers the same content; duplicate Batch194 record removed and no new proposition/family counted.",
+      "new_identity": false,
+      "new_proposition_count": 0
     },
     {
       "aid": 3315237,
@@ -439,7 +439,7 @@
   "existing_identity_updates_count": 1,
   "deduplication_check": {
     "target_identity_count": 10,
-    "target_identity_matches": null,
+    "target_identity_matches": 10,
     "target_identity_duplicates": 0,
     "selected_unique_evidence_families": 10,
     "preflight_default_branch_code_search_matches": 0,
@@ -449,7 +449,9 @@
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
     "same_family_duplicate_presentations": [],
-    "note": "Preflight checks: nine exact-AID default-branch code searches returned no matches and the current content-review queue contained none of the candidate AIDs. These checks do not replace the exact-head full-index scan; reconciliation remains authoritative."
+    "note": "The exact-head audit found two exact-AID duplicates already canonical in Batch145 (3315370 and 3315415); they were removed from new records and reclassified as duplicate rechecks. The seven remaining new records and one in-place enrichment remain subject to full family-level reconciliation.",
+    "family_linkage_audit": [],
+    "family_linkage_count": 0
   },
   "records": [
     {
@@ -807,124 +809,6 @@
       }
     },
     {
-      "id": "hayom-yom-3315370-5703",
-      "canonical_key": "aid:3315370",
-      "aid": 3315370,
-      "type": "hayom_yom_entry",
-      "collection": "היום יום — ה׳תש״ג",
-      "source_class": "Hayom Yom",
-      "source_class_detail": "ערך יומי מתוארך המוצג בעמוד דו-לשוני מאוחר של Chabad.org, באוסף Sichos in English. הקטע המקורי בעברית או ביידיש מופיע לצד תרגום אנגלי ונבדק בשפתו; התרגום וההערות העריכתיות אינם עד עצמאי ואינם בסיס לפרופוזיציות.",
-      "title": "ה׳ שבט",
-      "date_original": "ה׳ שבט | (תש״ג)",
-      "date": "ה׳ שבט ה׳תש״ג",
-      "date_precision": "exact_as_publisher",
-      "language": "Yiddish",
-      "original_language": "Yiddish",
-      "display_language": "English",
-      "translation_status": "הקטע המקורי בשפתו נבדק; תרגום אנגלי מופיע באותו עמוד אך אינו נספר כעד עצמאי.",
-      "summary_researcher": "הערך מעודד להרבות באמירת אותיות התורה — תהילים וחזרה על משניות — בכל זמן ומקום שבו אפשר; התכלית המיוחסת לכך בערך היא חיזוק קיום העולם, הגנה רוחנית וזכייה לגילויים. הערת המקור מפנה לספר המאמרים ביידיש, עמ׳ 92; המהדורה עצמה לא נבדקה.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed; source_text_inspected; partial context.",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315370/jewish/5-Shvat.htm",
-      "response_propositions": [
-        "הערך מעודד להרבות באמירת אותיות התורה — תהילים וחזרה על משניות — בכל זמן ומקום שבו אפשר; התכלית המיוחסת לכך בערך היא חיזוק קיום העולם, הגנה רוחנית וזכייה לגילויים. הערת המקור מפנה לספר המאמרים ביידיש, עמ׳ 92; המהדורה עצמה לא נבדקה."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246.",
-      "response_proposition_provenance": [
-        {
-          "source_aid": 3315370,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315370/jewish/5-Shvat.htm",
-          "original_language": "Yiddish",
-          "presentation_language": "English",
-          "independent_witness": true,
-          "layer": "published_original_language_excerpt"
-        }
-      ],
-      "evidence_family_id": "hayom-yom-5-shvat-5703",
-      "parent_evidence_family_id": null,
-      "independent_witness": true,
-      "translation_of_evidence_family_id": null,
-      "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום לתאריך ה׳ שבט ה׳תש״ג; הקטע המקורי בשפת Yiddish נבדק במיקום המצוין.",
-      "question_or_problem": null,
-      "conditions_or_qualifications": [
-        "נבדק רק הקטע המקורי בשפתו במיקום המצוין; התרגום האנגלי באותו עמוד אינו עד עצמאי.",
-        "הקטעים העריכתיים, הסיפורים וההרחבות שאחרי גוף הערך לא שימשו בסיס לפרופוזיציה.",
-        "לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים.",
-        "ההקשר חלקי; הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים היסטוריים המובאים בו."
-      ],
-      "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-      "primary_secondary_status": "תצוגה דו-לשונית שפורסמה של ערך אנתולוגי מתוארך; הקטע המקורי נבדק, אך לא נבדקו מהדורה מקורית, כתב־יד או אוטוגרף.",
-      "author_name": "Lubavitcher Rebbe (publisher attribution for the anthology compilation)",
-      "author_role": "compiler/editor as identified by the publisher; internal attributions within the entry remain distinct",
-      "signatory": null,
-      "signatory_role": null,
-      "witness_type": "published_bilingual_hayom_yom_entry_with_original_language_excerpt",
-      "relations": [],
-      "identity_note": "זהות לערך היום יום ה׳ שבט ה׳תש״ג. התרגום האנגלי וההערות העריכתיות באותו עמוד אינם עדים עצמאיים; כל הצגה נוספת של אותו ערך תשויך ל-Evidence Family hayom-yom-5-shvat-5703.",
-      "witness": {
-        "kind": "published bilingual dated anthology entry",
-        "state": "original-language body inspected",
-        "publisher": "Chabad.org / TheRebbe.org",
-        "platform": "www.chabad.org",
-        "language": "Yiddish",
-        "scope": "Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246.",
-        "complete_partial": "partial_published_entry",
-        "notes": "נבדק הקטע המקורי בשפתו בלבד; התרגום והערות העריכה אינם עדים עצמאיים. לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית."
-      },
-      "provenance": {
-        "authorship_status": "העמוד מציג את הערך כמתורגם מכתבי הרבי; הקטע המקורי ביידיש נבדק. הערת המקור מפנה לספר המאמרים ביידיש, אך המהדורה עצמה לא נבדקה; אין להרחיב את הייחוס מעבר לתוכן הערך.",
-        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
-        "source_witness": "Chabad.org / TheRebbe.org, Sichos in English Collection, Hayom Yom, AID 3315370, ה׳ שבט ה׳תש״ג; original Yiddish passage inspected.",
-        "transmission_type": "תצוגה דו-לשונית מאוחרת של ערך אנתולוגי מתוארך, הכוללת קטע מקורי בשפתו ותרגום אנגלי.",
-        "textual_status": "הקטע המקורי בשפת Yiddish נפתח ונבדק ב-Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246.; התרגום האנגלי והקטעים העריכתיים לא שימשו בסיס לפרופוזיציה.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית בעברית, עם locator ברמת הטענה; התרגום והערות העריכה אינם עד עצמאי. לא הועתק טקסט מוגן במלואו.",
-        "verification_status": "גוף הפרסום הדו-לשוני נפתח ונבדק ב-19.11.2026; הקטע המקורי בשפתו נבדק; ההקשר חלקי.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315370/jewish/5-Shvat.htm",
-        "accessed": "2026-11-19T21:52:49+02:00",
-        "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3315370 מתוך Sichos in English Collection ביום 19.11.2026. נבדק רק הקטע המקורי בשפת Yiddish ב-Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246. התרגום האנגלי והקטעים העריכתיים אינם בסיס לפרופוזיציה ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא-מילולית; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו."
-      },
-      "witness_provenance": "Chabad.org / TheRebbe.org, Sichos in English Collection, Hayom Yom, AID 3315370, ה׳ שבט ה׳תש״ג; original Yiddish passage inspected.",
-      "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3315370 מתוך Sichos in English Collection ביום 19.11.2026. נבדק רק הקטע המקורי בשפת Yiddish ב-Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246. התרגום האנגלי והקטעים העריכתיים אינם בסיס לפרופוזיציה ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא-מילולית; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-      "source_witness": "Chabad.org / TheRebbe.org, Sichos in English Collection, Hayom Yom, AID 3315370, ה׳ שבט ה׳תש״ג; original Yiddish passage inspected.",
-      "access": {
-        "access_level": "open",
-        "status": "public_publisher_page_opened_and_original_language_body_inspected",
-        "rights_status": "copyrighted-link-only",
-        "full_text_reproduced": false,
-        "reuse_notes": "קישור למקור ופרפרזות לא-מילוליות בלבד; התרגום האנגלי אינו עד עצמאי."
-      },
-      "rights_status": "copyrighted-link-only",
-      "taxonomy": {
-        "research_terms": [
-          "אותיות התורה",
-          "תהילים",
-          "משניות",
-          "חזרה",
-          "לימוד בעל פה"
-        ],
-        "publisher_index_terms": []
-      },
-      "epistemic_level": "source_text_inspected",
-      "notes": "The source page is bilingual; only the original-language passage was used. No full text was copied.",
-      "canonical_file": "data/items/content-research-batch-194-2026-11-19.json",
-      "locator": {
-        "aid": 3315370,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315370/jewish/5-Shvat.htm",
-        "source_body_locator": "Chabad.org/TheRebbe.org AID 3315370, original Yiddish passage, lines 245–246."
-      }
-    },
-    {
       "id": "hayom-yom-3315374-5703",
       "canonical_key": "aid:3315374",
       "aid": 3315374,
@@ -1158,124 +1042,6 @@
         "aid": 3315391,
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315391/jewish/12-Shvat.htm",
         "source_body_locator": "Chabad.org/TheRebbe.org AID 3315391, original Hebrew passage, lines 246–247."
-      }
-    },
-    {
-      "id": "hayom-yom-3315415-5703",
-      "canonical_key": "aid:3315415",
-      "aid": 3315415,
-      "type": "hayom_yom_entry",
-      "collection": "היום יום — ה׳תש״ג",
-      "source_class": "Hayom Yom",
-      "source_class_detail": "ערך יומי מתוארך המוצג בעמוד דו-לשוני מאוחר של Chabad.org, באוסף Sichos in English. הקטע המקורי בעברית או ביידיש מופיע לצד תרגום אנגלי ונבדק בשפתו; התרגום וההערות העריכתיות אינם עד עצמאי ואינם בסיס לפרופוזיציות.",
-      "title": "כ״ה שבט",
-      "date_original": "כ״ה שבט | (תש״ג)",
-      "date": "כ״ה שבט ה׳תש״ג",
-      "date_precision": "exact_as_publisher",
-      "language": "Yiddish",
-      "original_language": "Yiddish",
-      "display_language": "English",
-      "translation_status": "הקטע המקורי בשפתו נבדק; תרגום אנגלי מופיע באותו עמוד אך אינו נספר כעד עצמאי.",
-      "summary_researcher": "הערך מונה שלוש קביעויות לימוד: חומש יומי עם פירוש רש״י לפי סדר העליות לשבת, אמירת תהילים מדי יום, והשלמת ספר תהילים בשבת מברכים; הוא מציג את ההקפדה עליהן כבעלת השפעה על האדם, ילדיו ונכדיו. הסיפור וההערות העריכתיות שאחרי גוף הערך לא שימשו לפרופוזיציה.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed; source_text_inspected; partial context.",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315415/jewish/25-Shvat.htm",
-      "response_propositions": [
-        "הערך מונה שלוש קביעויות לימוד: חומש יומי עם פירוש רש״י לפי סדר העליות לשבת, אמירת תהילים מדי יום, והשלמת ספר תהילים בשבת מברכים; הוא מציג את ההקפדה עליהן כבעלת השפעה על האדם, ילדיו ונכדיו. הסיפור וההערות העריכתיות שאחרי גוף הערך לא שימשו לפרופוזיציה."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246.",
-      "response_proposition_provenance": [
-        {
-          "source_aid": 3315415,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315415/jewish/25-Shvat.htm",
-          "original_language": "Yiddish",
-          "presentation_language": "English",
-          "independent_witness": true,
-          "layer": "published_original_language_excerpt"
-        }
-      ],
-      "evidence_family_id": "hayom-yom-25-shvat-5703",
-      "parent_evidence_family_id": null,
-      "independent_witness": true,
-      "translation_of_evidence_family_id": null,
-      "documented_circumstances": "ערך יומי מתוך האנתולוגיה היום יום לתאריך כ״ה שבט ה׳תש״ג; הקטע המקורי בשפת Yiddish נבדק במיקום המצוין.",
-      "question_or_problem": null,
-      "conditions_or_qualifications": [
-        "נבדק רק הקטע המקורי בשפתו במיקום המצוין; התרגום האנגלי באותו עמוד אינו עד עצמאי.",
-        "הקטעים העריכתיים, הסיפורים וההרחבות שאחרי גוף הערך לא שימשו בסיס לפרופוזיציה.",
-        "לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים.",
-        "ההקשר חלקי; הפרפרזה מתארת את הערך כפי שפורסם ואינה מאמתת בנפרד מסורות או ייחוסים היסטוריים המובאים בו."
-      ],
-      "audience": "קוראי האנתולוגיה היום יום; לא צוין קהל יעד נוסף.",
-      "primary_secondary_status": "תצוגה דו-לשונית שפורסמה של ערך אנתולוגי מתוארך; הקטע המקורי נבדק, אך לא נבדקו מהדורה מקורית, כתב־יד או אוטוגרף.",
-      "author_name": "Lubavitcher Rebbe (publisher attribution for the anthology compilation)",
-      "author_role": "compiler/editor as identified by the publisher; internal attributions within the entry remain distinct",
-      "signatory": null,
-      "signatory_role": null,
-      "witness_type": "published_bilingual_hayom_yom_entry_with_original_language_excerpt",
-      "relations": [],
-      "identity_note": "זהות לערך היום יום כ״ה שבט ה׳תש״ג. התרגום האנגלי וההערות העריכתיות באותו עמוד אינם עדים עצמאיים; כל הצגה נוספת של אותו ערך תשויך ל-Evidence Family hayom-yom-25-shvat-5703.",
-      "witness": {
-        "kind": "published bilingual dated anthology entry",
-        "state": "original-language body inspected",
-        "publisher": "Chabad.org / TheRebbe.org",
-        "platform": "www.chabad.org",
-        "language": "Yiddish",
-        "scope": "Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246.",
-        "complete_partial": "partial_published_entry",
-        "notes": "נבדק הקטע המקורי בשפתו בלבד; התרגום והערות העריכה אינם עדים עצמאיים. לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית."
-      },
-      "provenance": {
-        "authorship_status": "העמוד מציג את הערך כמתורגם מכתבי הרבי; הקטע המקורי ביידיש נבדק. גוף הערך בלבד שימש בסיס; הסיפור וההערות העריכתיות שאחריו לא שימשו לפרופוזיציה.",
-        "signature_status": "לא נבדקו חתימה, אוטוגרף או כתב־יד.",
-        "source_witness": "Chabad.org / TheRebbe.org, Sichos in English Collection, Hayom Yom, AID 3315415, כ״ה שבט ה׳תש״ג; original Yiddish passage inspected.",
-        "transmission_type": "תצוגה דו-לשונית מאוחרת של ערך אנתולוגי מתוארך, הכוללת קטע מקורי בשפתו ותרגום אנגלי.",
-        "textual_status": "הקטע המקורי בשפת Yiddish נפתח ונבדק ב-Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246.; התרגום האנגלי והקטעים העריכתיים לא שימשו בסיס לפרופוזיציה.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית בעברית, עם locator ברמת הטענה; התרגום והערות העריכה אינם עד עצמאי. לא הועתק טקסט מוגן במלואו.",
-        "verification_status": "גוף הפרסום הדו-לשוני נפתח ונבדק ב-19.11.2026; הקטע המקורי בשפתו נבדק; ההקשר חלקי.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315415/jewish/25-Shvat.htm",
-        "accessed": "2026-11-19T21:52:49+02:00",
-        "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3315415 מתוך Sichos in English Collection ביום 19.11.2026. נבדק רק הקטע המקורי בשפת Yiddish ב-Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246. התרגום האנגלי והקטעים העריכתיים אינם בסיס לפרופוזיציה ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא-מילולית; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו."
-      },
-      "witness_provenance": "Chabad.org / TheRebbe.org, Sichos in English Collection, Hayom Yom, AID 3315415, כ״ה שבט ה׳תש״ג; original Yiddish passage inspected.",
-      "verification_scope": "נפתח עמוד Chabad.org/TheRebbe.org AID 3315415 מתוך Sichos in English Collection ביום 19.11.2026. נבדק רק הקטע המקורי בשפת Yiddish ב-Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246. התרגום האנגלי והקטעים העריכתיים אינם בסיס לפרופוזיציה ואינם נספרים כעדים עצמאיים. לא נבדקו מהדורת היום יום המקורית, כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים מקבילים. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא-מילולית; ייחוסים פנימיים נשמרים. לא הועתק טקסט מוגן במלואו.",
-      "source_witness": "Chabad.org / TheRebbe.org, Sichos in English Collection, Hayom Yom, AID 3315415, כ״ה שבט ה׳תש״ג; original Yiddish passage inspected.",
-      "access": {
-        "access_level": "open",
-        "status": "public_publisher_page_opened_and_original_language_body_inspected",
-        "rights_status": "copyrighted-link-only",
-        "full_text_reproduced": false,
-        "reuse_notes": "קישור למקור ופרפרזות לא-מילוליות בלבד; התרגום האנגלי אינו עד עצמאי."
-      },
-      "rights_status": "copyrighted-link-only",
-      "taxonomy": {
-        "research_terms": [
-          "חומש",
-          "רש״י",
-          "תהילים",
-          "שבת מברכים",
-          "חינוך משפחתי"
-        ],
-        "publisher_index_terms": []
-      },
-      "epistemic_level": "source_text_inspected",
-      "notes": "The source page is bilingual; only the original-language passage was used. No full text was copied.",
-      "canonical_file": "data/items/content-research-batch-194-2026-11-19.json",
-      "locator": {
-        "aid": 3315415,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3315415/jewish/25-Shvat.htm",
-        "source_body_locator": "Chabad.org/TheRebbe.org AID 3315415, original Yiddish passage, lines 245–246."
       }
     },
     {
@@ -1514,5 +1280,51 @@
         "source_body_locator": "Chabad.org/TheRebbe.org AID 3315238, original Yiddish passage, lines 255–258."
       }
     }
-  ]
+  ],
+  "metrics_delta_at_batch_boundary_is_planning_only": true,
+  "metrics_delta_planned": {
+    "answer_eligible_unique_sources": 5,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 6
+  },
+  "reconciliation_variance": null,
+  "reconciled_at": null,
+  "duplicate_alias_identities": [
+    {
+      "aid": 3315370,
+      "duplicate_id": "hayom-yom-3315370-5703",
+      "canonical_id": "hayom-yom-5-shvat-aid3315370",
+      "canonical_file": "data/items/content-research-batch-145-2026-11-17.json",
+      "evidence_family_id": "hayom-yom-5-shvat-aid3315370",
+      "duplicate_record_file": "data/items/content-research-batch-194-2026-11-19.json",
+      "handling": "AID already exists in Batch145. The Batch194 paraphrase overlaps the canonical proposition; duplicate identity removed, no additional Evidence Family or proposition counted."
+    },
+    {
+      "aid": 3315415,
+      "duplicate_id": "hayom-yom-3315415-5703",
+      "canonical_id": "hayom-yom-25-shvat-aid3315415",
+      "canonical_file": "data/items/content-research-batch-145-2026-11-17.json",
+      "evidence_family_id": "hayom-yom-25-shvat-aid3315415",
+      "duplicate_record_file": "data/items/content-research-batch-194-2026-11-19.json",
+      "handling": "AID already exists in Batch145. The Batch194 paraphrase overlaps the canonical proposition; duplicate identity removed, no additional Evidence Family or proposition counted."
+    }
+  ],
+  "existing_identity_rechecks": [
+    {
+      "aid": 3315370,
+      "id": "hayom-yom-5-shvat-aid3315370",
+      "canonical_file": "data/items/content-research-batch-145-2026-11-17.json",
+      "evidence_family_id": "hayom-yom-5-shvat-aid3315370",
+      "reason": "Exact-AID full-index reconciliation found an existing canonical Yiddish Hayom Yom entry; the already stored proposition covers the same passage. No new proposition or witness added."
+    },
+    {
+      "aid": 3315415,
+      "id": "hayom-yom-25-shvat-aid3315415",
+      "canonical_file": "data/items/content-research-batch-145-2026-11-17.json",
+      "evidence_family_id": "hayom-yom-25-shvat-aid3315415",
+      "reason": "Exact-AID full-index reconciliation found an existing canonical Yiddish Hayom Yom entry; the already stored proposition covers the same passage. No new proposition or witness added."
+    }
+  ],
+  "existing_identity_rechecks_count": 2,
+  "note": " Correction after exact-head run 44606357972: AID3315370 and AID3315415 were already canonical in Batch145; their overlapping Batch194 records were removed. Corrected actual boundary from that run is 1628/854/4199; exact-head reconciliation will refresh family-linkage audit."
 }
