@@ -1480,3 +1480,13 @@ The project-state pending reconciliation list remains a numerically ordered arra
 - Batch173 planning boundary only: 1,558 / 854 / 4,040 → 1,558 / 854 / 4,048. Exact-head reconciliation must supply measured before/after values and confirm the eight in-place family links.
 - The readiness test now covers the Batch172 duplicate reclassification and Batch173 in-place enrichments, including one-to-one claim locators and unchanged source/Verified counts. A fresh exact-head Answer Quality Gate is required before PR #35 can be merged.
 - Main public metrics remain 977 / 878 / 2,950 until a successful merge and post-merge reconciliation. GitHub Pages publication is not claimed. The hourly workflow, schedule, audience, permissions and access settings remain unchanged.
+
+## 2026-11-19 — Batch174: eight additional in-place source enrichments
+
+- Inspected eight distinct additional passages in original-Hebrew public bodies at he.chabad.org / BeitChabad.com and appended eight bounded, non-verbatim research propositions to existing canonical identities: AIDs 2989059, 4385558, 2989147, 3008930, 3140218, 4279923, 2989220 and 4296226.
+- Every addition records `source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, an exact body locator, provenance, scope, partial-context status and a passage-specific limitation. Existing AIDs and Evidence Family IDs were preserved; no new identity, independent witness or Verified promotion was added.
+- AID 4666220 returned Internal Error through the public reader. It was recorded as blocked; eight accessible Hebrew body passages were used as same-run fallback. No crawler retry, access-control bypass, search-snippet content inference or full-text copying occurred.
+- Batch174 planning boundary is 1,552 / 854 / 4,040 before and 1,552 / 854 / 4,048 expected after. The before snapshot is the PR-workspace measurement from Answer Quality Gate run 44430166602 on commit c3521f264b51fd113a457fc980243d90e86bc6b1; it is not a main/public metric. The after snapshot remains pending exact-head full-index reconciliation.
+- The readiness test was corrected to validate historical reconciliation variance arithmetically rather than requiring every historical batch to remain exactly reconciled after later canonical changes. Batch172/173/174 boundaries are checked sequentially so a historical batch is not compared to the final corpus snapshot.
+- PR #35 remains unmerged until a fresh exact-head Answer Quality Gate, including `test_content_readiness.mjs`, passes. Main metrics and GitHub Pages have not been changed by this PR.
+
