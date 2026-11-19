@@ -4822,7 +4822,7 @@ const enriched4096303=idx.entries.find(e=>sourceAID(e)==='4096303');assert(enric
 const enriched2279298=idx.entries.find(e=>sourceAID(e)==='2279298');assert(enriched2279298&&enriched2279298.has_content_evidence&&enriched2279298.canonical_file==='data/items/content-research-batch-107-2026-11-16.json'&&enriched2279298.response_propositions.length===5&&enriched2279298.independent_witness===false&&enriched2279298.translation_of_evidence_family_id===enriched2279298.evidence_family_id);assert(enriched2279298.response_proposition_locators.some(x=>x.includes('287–297')),'AID 2279298 must be merged into its existing batch-107 identity, not duplicated.');
 const translatedFamilyMembers=idx.entries.filter(e=>e.evidence_family_id===enriched4096303.evidence_family_id);assert(translatedFamilyMembers.some(e=>e.id==='igrot-letter-5737-21-cheshvan-vol32-p48-original'&&!e.has_content_evidence));const answerBearingTranslationMembers=translatedFamilyMembers.filter(e=>e.has_content_evidence&&Array.isArray(e.response_propositions)&&e.response_propositions.length>0);assert.equal(answerBearingTranslationMembers.length,1,'one inspected translation manifestation may carry content once within the existing Evidence Family');assert.equal(answerBearingTranslationMembers[0].independent_witness,false);assert.equal(answerBearingTranslationMembers[0].translation_of_evidence_family_id,enriched4096303.evidence_family_id);
 const educationLettersQ='מה ניתן ללמוד מהשוואה בין מכתבי הרבי על חינוך והפצת ספרים?';assert(understandQuestion(educationLettersQ).topics.includes('חינוך והפצת ספרים במכתבים'));
-for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,educationLettersQ,{mode});assert(m.answerable,'education-letter comparison must be answerable in '+mode+': '+m.reason);assert.equal(m.understanding.intent,'guidance');for(const aid of ['4422946','2277173','5920891','2277371','2277247'])assert(m.sources.some(e=>sourceAID(e)===aid),'missing educational comparison source '+aid);assert.equal(m.synthesis?.topic,'education_publication_letters_comparison');assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');assert.equal(m.synthesis?.claims.length,5);assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));assert(m.claims.every(c=>c.source_locators.length===1));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));assert(m.pattern_synthesis_integrity.valid);if(mode==='researcher'){assert.equal(m.research.depth,'deep');assert.equal(m.research.synthesis_scope,'cross_family_derived_case_comparison');assert.equal(m.research.evidence_families,5);assert.equal(m.research.independent_evidence_families,0);assert.equal(m.research.evidence_integrity.independent_witnesses,0);assert.equal(m.research.evidence_integrity.derived_non_independent,5);assert.equal(m.research.claim_source_map.length,5);assert(m.research.claim_source_map.every(c=>c.source_numbers.length===1));}}
+for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,educationLettersQ,{mode});assert(m.answerable,'education-letter comparison must be answerable in '+mode+': '+m.reason);assert.equal(m.understanding.intent,'guidance');for(const aid of ['4422946','2277173','5920891','2277371','2277247','4243257','4082951'])assert(m.sources.some(e=>sourceAID(e)===aid),'missing educational comparison source '+aid);assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,7);assert.equal(m.synthesis?.topic,'education_publication_letters_comparison');assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');assert.equal(m.synthesis?.basis.length,7);assert.equal(m.synthesis?.claims.length,8);assert.equal(new Set(m.synthesis?.evidence_family_ids||[]).size,7);assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));assert(m.claims.length===8&&m.claims.every(c=>c.source_locators.length===1));assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));assert(m.pattern_synthesis_integrity.valid);if(mode==='researcher'){assert.equal(m.research.depth,'deep');assert.equal(m.research.synthesis_scope,'cross_family_derived_case_comparison');assert.equal(m.research.evidence_families,7);assert.equal(m.research.independent_evidence_families,0);assert.equal(m.research.evidence_integrity.independent_witnesses,0);assert.equal(m.research.evidence_integrity.derived_non_independent,7);assert.equal(m.research.claim_source_map.length,8);assert(m.research.claim_source_map.every(c=>c.source_numbers.length===1));}}
 
 // Batch 136: twelve newly inspected English letter translations, one existing-family enrichment, and a bounded five-letter education/outreach comparison.
 const batch136Aids=[2277145,2277156,2277138,2277150,2277146,2277155,2277159,2277176,2277168,2277130,2277169,2277148];
@@ -8279,3 +8279,45 @@ for(const mode of ['regular','researcher']){
   assert(m.research.citation_entailment.every(x=>x.valid)&&m.research.context_boundary.every(x=>x.valid));
  }else assert.equal(m.research,undefined);
 }
+
+
+// Batch 200: six mixed-genre identities, one in-place letter enrichment, one recheck, and a seven-family/eight-claim education comparison.
+const batch200Path='data/items/content-research-batch-200-2026-11-20.json';
+const batch200Data=JSON.parse(await readFile(new URL(batch200Path,root),'utf8'));
+const batch200Aids=[4243257,1695044,3315331,81572,81567,81936];
+assert.equal(batch200Data.batch_id,'200');assert.equal(batch200Data.batch_file,batch200Path);
+assert.equal(batch200Data.records.length,6);assert.deepEqual(batch200Data.new_aids,batch200Aids);
+assert.equal(batch200Data.new_source_identities,6);assert.equal(batch200Data.existing_identities_enriched,1);
+assert.equal(batch200Data.existing_identities_rechecked,1);assert.equal(batch200Data.source_bodies_inspected,8);
+assert.equal(batch200Data.new_response_propositions,6);assert.equal(batch200Data.existing_response_propositions_added,1);
+assert.equal(batch200Data.total_new_paraphrase_entries,7);assert.equal(batch200Data.content_verified_unique_sources_added,0);
+assert.equal(batch200Data.independent_witnesses_added,1);assert.equal(batch200Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch200Data.crawler_retry,false);assert.equal(batch200Data.access_control_bypassed,false);
+assert.equal(batch200Data.full_text_copied,false);assert.equal(batch200Data.scan_only_verification_used,false);
+assert.equal(batch200Data.blocked_candidate_count,4);assert.equal(batch200Data.source_body_review.filter(x=>x.body_text_inspected&&x.body_page_opened&&!x.title_or_metadata_only).length,8);
+assert.equal(batch200Data.deduplication_check.full_index_scan_available,false);
+assert.equal(batch200Data.deduplication_check.full_index_scan_pending_reconciliation,true);
+assert.equal(batch200Data.metrics_expected_after.answer_eligible_unique_sources,1650);
+assert.equal(batch200Data.metrics_expected_after.content_verified_unique_sources,854);
+assert.equal(batch200Data.metrics_expected_after.answer_eligible_propositions,4237);
+assert(batch200Data.records.every(r=>r.status==='Parsed'&&r.pipeline_status==='Parsed'&&r.canonical_status==='Parsed'&&r.has_content_evidence));
+for(const r of batch200Data.records){assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');assert(r.proposition_source_locator&&r.provenance&&r.verification_scope);assert.equal(r.context_status,'partial');assert.equal(r.response_propositions.length,1);assert.equal(r.response_proposition_locators.length,1);assert.equal(r.response_proposition_metadata.length,1);assert.equal(r.response_proposition_metadata[0].batch_id,'200');assert.equal(r.response_proposition_metadata[0].proposition_verification,'source_text_inspected');assert.equal(r.response_proposition_provenance.length,1);}
+const batch200Sacks=batch200Data.records.find(r=>String(r.aid)==='1695044');
+assert(batch200Sacks&&batch200Sacks.independent_witness===true&&batch200Sacks.primary_secondary_status.includes('First-person'));
+assert(batch200Sacks.response_propositions[0].includes('הרב יונתן זקס')&&batch200Sacks.response_propositions[0].includes('לא תמליל היחידות'));
+const batch200Hayom=batch200Data.records.find(r=>String(r.aid)==='3315331');
+assert(batch200Hayom&&batch200Hayom.original_language==='Yiddish'&&batch200Hayom.independent_witness===false);
+assert(batch200Hayom.response_propositions[0].includes('אדמו״ר הרש״ב')&&batch200Hayom.response_propositions[0].includes('לא לרבי'));
+for(const aid of ['81572','81567','81936']){const r=batch200Data.records.find(x=>String(x.aid)===aid);assert(r&&r.independent_witness===false&&/secondary|adaptation/i.test(r.primary_secondary_status));}
+const new424=idx.entries.filter(e=>sourceAID(e)==='4243257');assert.equal(new424.length,1);assert.equal(new424[0].canonical_file,batch200Path);
+for(const aid of ['1695044','3315331','81572','81567','81936']){const matches=idx.entries.filter(e=>sourceAID(e)===String(aid));assert.equal(matches.length,1,'Batch200 AID '+aid+' must have exactly one canonical indexed identity');assert.equal(matches[0].canonical_file,batch200Path);}
+const enriched408=idx.entries.filter(e=>sourceAID(e)==='4082951');assert.equal(enriched408.length,1);
+assert.equal(enriched408[0].canonical_file,'data/items/content-research-batch-195-2026-11-19.json');
+assert.equal(enriched408[0].response_propositions.length,2);
+assert(enriched408[0].response_proposition_locators.some(x=>x.includes('283–284')));
+assert(enriched408[0].response_proposition_metadata.some(x=>String(x.batch_id)==='200'&&x.proposition_verification==='source_text_inspected'));
+const rechecked442=idx.entries.filter(e=>sourceAID(e)==='4422946');assert.equal(rechecked442.length,1);
+assert.equal(rechecked442[0].canonical_file,'data/items/content-research-batch-135-2026-11-17.json');
+assert.equal(rechecked442[0].response_propositions.length,3);
+assert(batch200Data.existing_identity_updates[0].reason.includes('same AID'));
+assert.equal(batch200Data.existing_identity_updates[0].evidence_family_id,enriched408[0].evidence_family_id);
