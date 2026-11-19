@@ -2,7 +2,7 @@
 import json, pathlib, re, datetime
 from content_readiness import answer_eligible, summarize
 from status_normalization import status_of
-from reconciliation_helpers import alias_target_pairs
+from reconciliation_helpers import alias_target_pairs, has_frozen_metrics_snapshot
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 items=sorted((ROOT/"data/items").glob("*.json"))
 batches=sorted((ROOT/"data/staging/batches").glob("*.json"))
@@ -373,25 +373,33 @@ for selected_index, batch_info in enumerate(selected_batches):
         priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
         if old is None or priority(adjusted)>priority(old): snapshot_by_key[key]=adjusted
     snapshot_metrics=summarize(list(snapshot_by_key.values()))
-    expected_before=batch_data.get("metrics_before") or {}
-    # Carry forward the prior actual snapshot only when the expected batch
-    # boundaries are contiguous. Across a historical gap, reset to this
-    # batch's recorded baseline rather than inventing continuity.
-    if previous_snapshot_metrics is not None and previous_expected_after==expected_before:
-        actual_before=previous_snapshot_metrics
-    else:
-        actual_before=expected_before or snapshot_metrics
     readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
-    batch_data["metrics_actual_before"]={k:int(actual_before.get(k,snapshot_metrics[k])) for k in readiness_keys}
-    batch_data["metrics_actual_after"]=snapshot_metrics
-    batch_data["metrics_delta_actual"]={k:snapshot_metrics[k]-batch_data["metrics_actual_before"][k] for k in readiness_keys}
-    previous_snapshot_metrics=snapshot_metrics
-    previous_expected_after=batch_data.get("metrics_expected_after") or {}
+    frozen_snapshot=has_frozen_metrics_snapshot(batch_data)
+    if frozen_snapshot:
+        # A full-index rescan of an already reconciled batch is audit-only.
+        # Preserve its original batch-boundary metrics instead of replacing
+        # them with a later whole-corpus snapshot.
+        previous_snapshot_metrics={k:int(batch_data["metrics_actual_after"][k]) for k in readiness_keys}
+        previous_expected_after=batch_data.get("metrics_expected_after") or {}
+    else:
+        expected_before=batch_data.get("metrics_before") or {}
+        # Carry forward the prior actual snapshot only when expected batch
+        # boundaries are contiguous. Across a historical gap, reset to the
+        # recorded baseline rather than inventing continuity.
+        if previous_snapshot_metrics is not None and previous_expected_after==expected_before:
+            actual_before=previous_snapshot_metrics
+        else:
+            actual_before=expected_before or snapshot_metrics
+        batch_data["metrics_actual_before"]={k:int(actual_before.get(k,snapshot_metrics[k])) for k in readiness_keys}
+        batch_data["metrics_actual_after"]=snapshot_metrics
+        batch_data["metrics_delta_actual"]={k:snapshot_metrics[k]-batch_data["metrics_actual_before"][k] for k in readiness_keys}
+        previous_snapshot_metrics=snapshot_metrics
+        previous_expected_after=batch_data.get("metrics_expected_after") or {}
     batch_data["reconciliation_snapshot_adjustment"]={
         "excluded_later_in_place_proposition_count":sum(len(v) for v in later_in_place_exclusions.values()),
         "affected_canonical_identity_count":len(later_in_place_exclusions),
         "later_batches_with_in_place_updates":sorted(set(later_batches_with_in_place_updates)),
-        "policy":"Historical batch snapshots exclude proposition indices documented by later existing_identity_updates when those updates were written into an earlier canonical file. New later batch files remain excluded by later_paths."
+        "policy":"Historical batch snapshots exclude proposition indices documented by later existing_identity_updates. New later batch files remain excluded by later_paths. Once a batch has a reconciled actual boundary, subsequent full-index rescans update its deduplication audit only and never replace its historical metrics."
     }
 
     audit=[]
@@ -403,11 +411,13 @@ for selected_index, batch_info in enumerate(selected_batches):
         identity_collision=len(matches)>1 and not same_family_duplicate
         audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False},"current_index_entry":{"present":bool(search_entries.get(target["key"])),"answer_eligible":bool(search_entries.get(target["key"]) and search_entries.get(target["key"]).get("answer_eligible"))}})
     expected=batch_data.get("metrics_expected_after") or {}
-    variance={k:snapshot_metrics[k]-int(expected.get(k,snapshot_metrics[k])) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
+    metric_boundary=batch_data.get("metrics_actual_after") if frozen_snapshot else snapshot_metrics
+    variance={k:int(metric_boundary.get(k,snapshot_metrics[k]))-int(expected.get(k,metric_boundary.get(k,snapshot_metrics[k]))) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
     batch_data["reconciliation_variance"]=variance
     batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
     batch_data["status"]=batch_data["reconciliation_status"]
-    batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    if not frozen_snapshot:
+        batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
     dedup=batch_data.get("deduplication_check")
     if isinstance(dedup,dict):
         collisions=[x.get("aid") for x in audit if x.get("canonical_identity_collision")]
