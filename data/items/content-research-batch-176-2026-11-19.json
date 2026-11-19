@@ -24,8 +24,8 @@
   "existing_response_propositions_added": 0,
   "total_new_paraphrase_entries": 9,
   "answer_eligible_source_families_added": 9,
-  "independent_witnesses_added": 9,
-  "non_independent_presentations_added": 0,
+  "independent_witnesses_added": 8,
+  "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "duplicate_alias_identities": 0,
   "source_languages": [
@@ -37,14 +37,15 @@
     "Yiddish": 1
   },
   "original_language_distribution": {
-    "Hebrew": 8,
-    "Yiddish": 1
+    "Hebrew": 7,
+    "Yiddish": 2
   },
   "proposition_language_distribution": {
     "Hebrew": 9
   },
   "source_type_distribution": {
-    "public_talk_transcript": 8,
+    "public_talk_transcript": 7,
+    "publisher_translation_of_edited_yiddish_sicha_section": 1,
     "edited_sicha_text_excerpt": 1
   },
   "new_aids": [
@@ -102,7 +103,7 @@
       "handling": "לאחר תיעוד החסימה נבדקו באותה הפעלה שמונה גופי שיחה עבריים וקטע מקורי ביידיש ממקור ציבורי נגיש."
     }
   ],
-  "translations_added": 0,
+  "translations_added": 1,
   "translations_counted_as_independent_witnesses": 0,
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -135,7 +136,8 @@
     "preaddition_checks": [
       "All nine candidate AIDs were absent from the current PR tree's canonical item filenames.",
       "Exact-AID GitHub repository code searches returned no matches for all nine candidate AIDs.",
-      "The current content-review queue (1,022 records) contained no exact AID matches."
+      "The current content-review queue (1,022 records) contained no exact AID matches.",
+      "AID 2988859's inspected section is identified by publisher footnote 51 as edited and published in Yiddish; its Hebrew presentation is marked non-independent within the same Evidence Family."
     ],
     "candidate_aids_checked": [
       4279925,
@@ -274,15 +276,17 @@
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2988859",
       "language": "Hebrew",
       "body_text_inspected": true,
-      "inspected_original_language_body": true,
-      "proposition_source_locator": "he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266.",
+      "inspected_original_language_body": false,
+      "proposition_source_locator": "he.chabad.org AID 2988859, סעיף ח׳, שורות 247–255; הערת המו״ל 51, שורות 587–588.",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "provenance": "BeitChabad.com / he.chabad.org, AID 2988859, שיחת ש״פ וישלח, י״ד כסלו, ה׳תשי״ד — יובל העשרים וחמש לנישואי כ״ק אדמו״ר שליט״א, original Hebrew body passage inspected 2026-11-19.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא. הערת המו״ל 51 (שורות 587–588) מציינת שסעיף זה הוגה בידי הרבי ונדפס ביידיש כהקדמה לספר המנהגים ובהוספות ללקו״ש חלק כ״ג. לכן ההצגה העברית של המקטע מסומנת כנגזרת ואינה עד עצמאי.",
       "context_status": "partial",
-      "handling": "new_source_identity"
+      "handling": "new_source_identity",
+      "translation_of_evidence_family_id": "sicha-5714-vayishlach-14-kislev-aid2988859",
+      "independent_witness": false
     },
     {
       "aid": 4736086,
@@ -321,8 +325,8 @@
   ],
   "fallback_source_results": {
     "publisher": "Chabad.org / BeitChabad.com",
-    "accessible_original_language_bodies": 9,
-    "hebrew_bodies": 8,
+    "accessible_original_language_bodies": 8,
+    "hebrew_bodies": 7,
     "yiddish_bodies": 1,
     "body_text_inspected": true,
     "inspected_aids": [
@@ -340,7 +344,8 @@
       554871
     ],
     "translations_counted_as_independent_witnesses": 0,
-    "note": "AID 554871 exposed an audio listing without a transcript. As same-run fallback, eight Hebrew public talk bodies and one edited Yiddish source excerpt were opened and inspected directly. No crawler retry or access-control bypass."
+    "note": "AID 554871 exposed an audio listing without a transcript. As same-run fallback, eight Hebrew public talk bodies and one edited Yiddish source excerpt were opened and inspected directly. No crawler retry or access-control bypass.",
+    "translated_body_presentations": 1
   },
   "existing_identity_updates": [],
   "existing_identity_updates_count": 0,
@@ -378,7 +383,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 4279925, גוף השיחה, סעיף ב׳, שורות 179–187.",
-      "evidence_family_id": "sicha-מבהח-אלול,-התשיב-4279925",
+      "evidence_family_id": "sicha-5712-reeh-before-elul-aid4279925",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
@@ -428,7 +433,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 4279925 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-מבהח-אלול,-התשיב-4279925 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 4279925 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5712-reeh-before-elul-aid4279925 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "שיחת ש״פ ראה, מבה״ח אלול, ה׳תשי״ב"
@@ -487,9 +492,9 @@
       "collection": "שיחות ומאמרים / BeitChabad.com / Chabad.org",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989560",
       "context_status": "partial",
-      "summary_researcher": "הסיפור המובא בשיחה מתאר כיצד החסידים, לאחר שנאסר עליהם להגיע לאדמו״ר הזקן בשבת שלפני י״ט כסלו, הקדימו למסור כספים לשליח ר׳ יעקב מסמיליאן כדי שיוכל להגיע אליו ולנסות לבטל את הגזירה. לפי התמליל, העצה התקבלה והצליחה; השיחה מוסיפה שמאמר ״לשנה הבאה קבעום״ שנאמר אז נקשר לקביעותו הנצחית של י״ט כסלו. זהו תיאור כפי שמובא בשיחה, ולא אימות היסטורי עצמאי של פרטי האירוע.",
+      "summary_researcher": "הסיפור המובא בשיחה מתאר כיצד החסידים, על רקע החריג שנקבע לשבת שלפני י״ט כסלו, אף שהתקנות הכלליות כבר בוטלו, החסידים, הקדימו למסור כספים לשליח ר׳ יעקב מסמיליאן כדי שיוכל להגיע אליו ולנסות לבטל את הגזירה. לפי התמליל, העצה התקבלה והצליחה; השיחה מוסיפה שמאמר ״לשנה הבאה קבעום״ שנאמר אז נקשר לקביעותו הנצחית של י״ט כסלו. זהו תיאור כפי שמובא בשיחה, ולא אימות היסטורי עצמאי של פרטי האירוע.",
       "response_propositions": [
-        "הסיפור המובא בשיחה מתאר כיצד החסידים, לאחר שנאסר עליהם להגיע לאדמו״ר הזקן בשבת שלפני י״ט כסלו, הקדימו למסור כספים לשליח ר׳ יעקב מסמיליאן כדי שיוכל להגיע אליו ולנסות לבטל את הגזירה. לפי התמליל, העצה התקבלה והצליחה; השיחה מוסיפה שמאמר ״לשנה הבאה קבעום״ שנאמר אז נקשר לקביעותו הנצחית של י״ט כסלו. זהו תיאור כפי שמובא בשיחה, ולא אימות היסטורי עצמאי של פרטי האירוע."
+        "הסיפור המובא בשיחה מתאר כיצד החסידים, על רקע החריג שנקבע לשבת שלפני י״ט כסלו, אף שהתקנות הכלליות כבר בוטלו, החסידים, הקדימו למסור כספים לשליח ר׳ יעקב מסמיליאן כדי שיוכל להגיע אליו ולנסות לבטל את הגזירה. לפי התמליל, העצה התקבלה והצליחה; השיחה מוסיפה שמאמר ״לשנה הבאה קבעום״ שנאמר אז נקשר לקביעותו הנצחית של י״ט כסלו. זהו תיאור כפי שמובא בשיחה, ולא אימות היסטורי עצמאי של פרטי האירוע."
       ],
       "response_proposition_locators": [
         "he.chabad.org AID 2989560, גוף השיחה, סעיפים א׳–ב׳, שורות 183–195."
@@ -499,7 +504,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 2989560, גוף השיחה, סעיפים א׳–ב׳, שורות 183–195.",
-      "evidence_family_id": "sicha-כף-כסלו,-התשיז-2989560",
+      "evidence_family_id": "sicha-5717-vayeshev-20-kislev-aid2989560",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
@@ -549,7 +554,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 2989560 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-כף-כסלו,-התשיז-2989560 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 2989560 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5717-vayeshev-20-kislev-aid2989560 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "שיחת ש״פ וישב, כ״ף כסלו, ה׳תשי״ז"
@@ -584,7 +589,8 @@
             "הפרסום מסומן בלתי מוגה; נבדקו השורות המצוינות וההקשר הסמוך בלבד.",
             "אין להציג את הסיפור כאימות היסטורי עצמאי."
           ],
-          "web_source_ref": "turn661935view0"
+          "web_source_ref": "turn661935view0",
+          "proposition": "הסיפור המובא בשיחה מתאר כיצד החסידים, על רקע החריג שנקבע לשבת שלפני י״ט כסלו, אף שהתקנות הכלליות כבר בוטלו, החסידים, הקדימו למסור כספים לשליח ר׳ יעקב מסמיליאן כדי שיוכל להגיע אליו ולנסות לבטל את הגזירה. לפי התמליל, העצה התקבלה והצליחה; השיחה מוסיפה שמאמר ״לשנה הבאה קבעום״ שנאמר אז נקשר לקביעותו הנצחית של י״ט כסלו. זהו תיאור כפי שמובא בשיחה, ולא אימות היסטורי עצמאי של פרטי האירוע."
         }
       ]
     },
@@ -619,7 +625,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 2989195, גוף השיחה, סעיפים א׳–ג׳, שורות 181–197.",
-      "evidence_family_id": "sicha-יג-תשרי,-התשכב-2989195",
+      "evidence_family_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
@@ -669,7 +675,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 2989195 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-יג-תשרי,-התשכב-2989195 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 2989195 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5722-haazinu-13-tishrei-aid2989195 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "שיחת ש״פ האזינו, י״ג תשרי, ה׳תשכ״ב"
@@ -739,7 +745,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 2989574, גוף השיחה, סעיף ב׳, שורות 176–187.",
-      "evidence_family_id": "sicha-ה-ניסן,-התשיז-2989574",
+      "evidence_family_id": "sicha-5717-tahara-5-nissan-aid2989574",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
@@ -789,7 +795,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 2989574 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-ה-ניסן,-התשיז-2989574 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 2989574 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5717-tahara-5-nissan-aid2989574 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "שיחת ש״פ טהרה, ה׳ ניסן, ה׳תשי״ז"
@@ -859,17 +865,18 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189.",
-      "evidence_family_id": "sicha-יב-תמוז,-התשכד-4304430",
+      "evidence_family_id": "sicha-5724-balak-12-tammuz-aid4304430",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 4304430, במיקום he.chabad.org AID 4304430, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. בקשת ההדפסה והסיפור על המאסר מיוחסים בגוף השיחה לאדמו״ר הריי״צ; אין לייחס את דברי הסיפור כאילו נאמרו לראשונה בשיחה זו. ההסבר על השגחה פרטית הוא מהלך השיחה הנוכחית. הפרסום מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 4304430, במיקום he.chabad.org AID 4304430, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. בקשת ההדפסה והסיפור על המאסר מיוחסים בגוף השיחה לאדמו״ר הריי״צ; אין לייחס את דברי הסיפור כאילו נאמרו לראשונה בשיחה זו. ההסבר על השגחה פרטית הוא מהלך השיחה הנוכחית. הפרסום מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא. הערת המו״ל על שרשרת מסירת הסיפור נבדקה לצד גוף השיחה.",
       "documented_circumstances": "שיחת יום ב׳, פרשת בלק, י״ב תמוז ה׳תשכ״ד; התמליל מסומן בלתי מוגה.",
       "question_or_problem": "מה אומרת השיחה על שימור סיפורים ועדויות ועל חיזוק באמונה בהשגחה פרטית?",
       "conditions_or_qualifications": [
         "בקשת ההדפסה והסיפור על המאסר מיוחסים בגוף השיחה לאדמו״ר הריי״צ; אין לייחס את דברי הסיפור כאילו נאמרו לראשונה בשיחה זו.",
         "ההסבר על השגחה פרטית הוא מהלך השיחה הנוכחית.",
-        "הפרסום מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך."
+        "הפרסום מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך.",
+        "הערת המו״ל מציינת את שרשרת המסירה של הסיפור: אדמו״ר הרש״ב סיפר לאדמו״ר הריי״צ, ואדמו״ר הריי״צ סיפר לרבי; הסיפור אינו מוצג כעדות עצמאית של השיחה הנוכחית."
       ],
       "audience": "משתתפי השיחה וקוראי התמליל הציבורי",
       "primary_secondary_status": "Publisher-published Hebrew unedited talk transcript; the recording, manuscript and edited edition were not independently inspected.",
@@ -890,7 +897,7 @@
         "signature_status": null,
         "source_witness": "BeitChabad.com / he.chabad.org, AID 4304430, שיחת יום ב׳ פ׳ בלק, י״ב תמוז, ה׳תשכ״ד, original Hebrew body passage inspected 2026-11-19.",
         "transmission_type": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
-        "textual_status": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 4304430, במיקום he.chabad.org AID 4304430, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. בקשת ההדפסה והסיפור על המאסר מיוחסים בגוף השיחה לאדמו״ר הריי״צ; אין לייחס את דברי הסיפור כאילו נאמרו לראשונה בשיחה זו. ההסבר על השגחה פרטית הוא מהלך השיחה הנוכחית. הפרסום מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא.",
+        "textual_status": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 4304430, במיקום he.chabad.org AID 4304430, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. בקשת ההדפסה והסיפור על המאסר מיוחסים בגוף השיחה לאדמו״ר הריי״צ; אין לייחס את דברי הסיפור כאילו נאמרו לראשונה בשיחה זו. ההסבר על השגחה פרטית הוא מהלך השיחה הנוכחית. הפרסום מסומן בלתי מוגה; נבדקו רק השורות המצוינות וההקשר הסמוך. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא. הערת המו״ל על שרשרת מסירת הסיפור נבדקה לצד גוף השיחה.",
         "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, מיקום מדויק והפניה למקור; לא הועתק גוף הפרסום המלא. תוצאות החיפוש שימשו לניווט בלבד ולא כתוכן ראייתי.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
@@ -909,7 +916,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 4304430 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-יב-תמוז,-התשכד-4304430 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 4304430 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5724-balak-12-tammuz-aid4304430 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "שיחת יום ב׳ פ׳ בלק, י״ב תמוז, ה׳תשכ״ד"
@@ -979,7 +986,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 2988862, גוף השיחה, סעיף א׳, שורות 175–184.",
-      "evidence_family_id": "sicha-כא-כסלו,-התשיד-2988862",
+      "evidence_family_id": "sicha-5714-vayeshev-21-kislev-aid2988862",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
@@ -1028,7 +1035,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 2988862 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-כא-כסלו,-התשיד-2988862 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 2988862 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5714-vayeshev-21-kislev-aid2988862 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "שיחת ש״פ וישב, כ״א כסלו, ה׳תשי״ד"
@@ -1097,7 +1104,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "he.chabad.org AID 4385609, גוף השיחה, סעיפים א׳–ב׳, שורות 175–184.",
-      "evidence_family_id": "sicha-מבהח-אייר,-התשכו-4385609",
+      "evidence_family_id": "sicha-5726-shemini-before-iyar-aid4385609",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
@@ -1146,7 +1153,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 4385609 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-מבהח-אייר,-התשכו-4385609 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 4385609 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5726-shemini-before-iyar-aid4385609 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "שיחת ש״פ שמיני, מבה״ח אייר, ה׳תשכ״ו"
@@ -1190,7 +1197,7 @@
       "aid": 2988859,
       "title": "שיחת ש״פ וישלח, י״ד כסלו, ה׳תשי״ד — יובל העשרים וחמש לנישואי כ״ק אדמו״ר שליט״א",
       "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה עברי שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; נבדק רק המקטע המצוין.",
+      "source_class_detail": "הצגה עברית של סעיף שיחה שהוגה בידי הרבי ופורסם ביידיש כהקדמה לספר המנהגים ובהוספות ללקוטי שיחות חלק כ״ג; נבדקו גוף הסעיף והערת המו״ל.",
       "pipeline_status": "Parsed",
       "status": "Parsed",
       "canonical_status": "Parsed",
@@ -1198,8 +1205,8 @@
       "date_original": "י״ד כסלו, ה׳תשי״ד",
       "date_precision": "exact",
       "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "public_talk_transcript",
+      "original_language": "Yiddish",
+      "type": "publisher_translation_of_edited_yiddish_sicha_section",
       "collection": "שיחות ומאמרים / BeitChabad.com / Chabad.org",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2988859",
       "context_status": "partial",
@@ -1208,30 +1215,31 @@
         "השיחה קובעת כי מנהגים ודרכי חסידות שנחשפו ופורסמו לציבור נועדו להפוך להדרכה מעשית גם עבור מי שנחשף אליהם, ואף לעבור הלאה לאחרים. לצד זאת היא מזהירה שלא להיאחז בהידורים שאינם שייכים לאדם או להפוך את ההידור לעיקר על חשבון העיקר. הקטע עוסק במנהגי חסידות ובאופן קבלתם, ואינו יוצר חיוב הלכתי חדש."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266."
+        "he.chabad.org AID 2988859, סעיף ח׳, שורות 247–255; הערת המו״ל 51, שורות 587–588."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266.",
-      "evidence_family_id": "sicha-יד-כסלו,-התשיד-2988859",
+      "proposition_source_locator": "he.chabad.org AID 2988859, סעיף ח׳, שורות 247–255; הערת המו״ל 51, שורות 587–588.",
+      "evidence_family_id": "sicha-5714-vayishlach-14-kislev-aid2988859",
       "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
+      "translation_of_evidence_family_id": "sicha-5714-vayishlach-14-kislev-aid2988859",
       "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא. הערת המו״ל 51 (שורות 587–588) מציינת שסעיף זה הוגה בידי הרבי ונדפס ביידיש כהקדמה לספר המנהגים ובהוספות ללקו״ש חלק כ״ג. לכן ההצגה העברית של המקטע מסומנת כנגזרת ואינה עד עצמאי.",
       "documented_circumstances": "שיחת שבת פרשת וישלח, י״ד כסלו ה׳תשי״ד, במלאות עשרים וחמש שנה לנישואי הרבי; התמליל מסומן בלתי מוגה.",
       "question_or_problem": "מה אומרת השיחה על הפצת מנהגי חסידות ועל התאמת הידורים ליכולת האדם?",
       "conditions_or_qualifications": [
         "הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך.",
-        "הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה."
+        "הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה.",
+        "הערת המו״ל 51 מציינת שסעיף ח׳ הוגה בידי הרבי ונדפס ביידיש; ההצגה העברית שנבדקה מסומנת כנגזרת, לא כעד עצמאי. המהדורה היידית המודפסת לא נבדקה בנפרד."
       ],
       "audience": "משתתפי השיחה וקוראי התמליל הציבורי",
-      "primary_secondary_status": "Publisher-published Hebrew unedited talk transcript; the recording, manuscript and edited edition were not independently inspected.",
-      "witness_type": "published_unedited_hebrew_sicha_transcript",
+      "primary_secondary_status": "Publisher-hosted Hebrew rendering of a section the publisher identifies as edited by the Rebbe and published in Yiddish in Sefer HaMinhagim and Likkutei Sichos Vol. 23; the Yiddish print edition was not independently inspected.",
+      "witness_type": "publisher_hebrew_translation_of_edited_yiddish_sicha_section",
       "witness_provenance": "BeitChabad.com / he.chabad.org, AID 2988859, שיחת ש״פ וישלח, י״ד כסלו, ה׳תשי״ד — יובל העשרים וחמש לנישואי כ״ק אדמו״ר שליט״א, original Hebrew body passage inspected 2026-11-19.",
-      "independent_witness": true,
-      "translation_status": "Original Hebrew body inspected; no translation was added or counted as an independent witness.",
+      "independent_witness": false,
+      "translation_status": "The inspected section is a Hebrew presentation of an edited Yiddish section; publisher footnote 51 says it was edited by the Rebbe and published in Yiddish. It is a derived presentation, not an independent witness.",
       "author_name": "Rabbi Menachem Mendel Schneerson",
       "author_role": "speaker",
       "authorship_status": "המו״ל מייחס את הטקסט לדברי רבי מנחם מענדל שניאורסון; ההקלטה, כתב היד או עותק בן הזמן לא נבדקו בנפרד.",
@@ -1243,19 +1251,19 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את הטקסט לדברי רבי מנחם מענדל שניאורסון; ההקלטה, כתב היד או עותק בן הזמן לא נבדקו בנפרד.",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2988859, שיחת ש״פ וישלח, י״ד כסלו, ה׳תשי״ד — יובל העשרים וחמש לנישואי כ״ק אדמו״ר שליט״א, original Hebrew body passage inspected 2026-11-19.",
-        "transmission_type": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
-        "textual_status": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, מיקום מדויק והפניה למקור; לא הועתק גוף הפרסום המלא. תוצאות החיפוש שימשו לניווט בלבד ולא כתוכן ראייתי.",
+        "source_witness": "BeitChabad.com AID 2988859, Hebrew presentation of section ח׳; publisher footnote 51 identifies the section as edited and published in Yiddish.",
+        "transmission_type": "Hebrew translation/presentation of an edited Yiddish Sicha section; derived presentation within the same dated event Evidence Family.",
+        "textual_status": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא. הערת המו״ל 51 (שורות 587–588) מציינת שסעיף זה הוגה בידי הרבי ונדפס ביידיש כהקדמה לספר המנהגים ובהוספות ללקו״ש חלק כ״ג. לכן ההצגה העברית של המקטע מסומנת כנגזרת ואינה עד עצמאי.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, מיקום מדויק והפניה למקור; לא הועתק גוף הפרסום המלא. תוצאות החיפוש שימשו לניווט בלבד ולא כתוכן ראייתי. Publisher footnote 51 explicitly identifies the inspected section as edited and published in Yiddish; the Hebrew presentation is treated as derived.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2988859",
         "accessed": "2026-11-19T04:22:25+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
+        "state": "Publisher-hosted Hebrew presentation of a section edited and published in Yiddish; derived presentation, not an independent witness.",
         "complete_partial": "partial",
-        "notes": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא."
+        "notes": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא. הערת המו״ל 51 (שורות 587–588) מציינת שסעיף זה הוגה בידי הרבי ונדפס ביידיש כהקדמה לספר המנהגים ובהוספות ללקו״ש חלק כ״ג. לכן ההצגה העברית של המקטע מסומנת כנגזרת ואינה עד עצמאי."
       },
       "access": {
         "access_level": "open",
@@ -1264,7 +1272,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 2988859 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-יד-כסלו,-התשיד-2988859 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 2988859 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5714-vayishlach-14-kislev-aid2988859 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "שיחת ש״פ וישלח, י״ד כסלו, ה׳תשי״ד — יובל העשרים וחמש לנישואי כ״ק אדמו״ר שליט״א"
@@ -1279,7 +1287,7 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed. לא בוצע קידום ל-Verified. נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא.",
+      "notes": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא. הערת המו״ל 51 (שורות 587–588) מציינת שסעיף זה הוגה בידי הרבי ונדפס ביידיש כהקדמה לספר המנהגים ובהוספות ללקו״ש חלק כ״ג. לכן ההצגה העברית של המקטע מסומנת כנגזרת ואינה עד עצמאי. המקור נשאר Parsed; לא בוצע קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-176-2026-11-19.json",
       "content_enrichment_batch_id": "176",
       "last_content_enriched_at": "2026-11-19T04:22:25+02:00",
@@ -1290,15 +1298,19 @@
           "proposition_origin": "source_grounded_paraphrase",
           "proposition_verbatim": false,
           "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 2988859, שיחת ש״פ וישלח, י״ד כסלו, ה׳תשי״ד — יובל העשרים וחמש לנישואי כ״ק אדמו״ר שליט״א, original Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא.",
+          "proposition_source_locator": "he.chabad.org AID 2988859, סעיף ח׳, שורות 247–255; הערת המו״ל 51, שורות 587–588.",
+          "provenance": "BeitChabad.com AID 2988859, Hebrew presentation of section ח׳; publisher footnote 51 identifies the section as edited and published in Yiddish.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988859, במיקום he.chabad.org AID 2988859, גוף השיחה, סעיפים ח׳–ט׳, שורות 250–266., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו בנפרד. הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך. הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין. לא הועתק גוף הפרסום המלא. הערת המו״ל 51 (שורות 587–588) מציינת שסעיף זה הוגה בידי הרבי ונדפס ביידיש כהקדמה לספר המנהגים ובהוספות ללקו״ש חלק כ״ג. לכן ההצגה העברית של המקטע מסומנת כנגזרת ואינה עד עצמאי.",
           "context_status": "partial",
           "conditions_or_qualifications": [
             "הפרסום מסומן בלתי מוגה; נבדקו סעיפים ח׳–ט׳ והשורות המצוינות בלבד וההקשר הסמוך.",
             "הקטע מדגיש גם הכנה והתאמה; אין להציגו כחיוב הלכתי חדש או כהוראה לאמץ כל הידור ללא הבחנה."
           ],
-          "web_source_ref": "turn936877view0"
+          "web_source_ref": "turn936877view0",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "sicha-5714-vayishlach-14-kislev-aid2988859",
+          "translation_status": "The inspected section is a Hebrew presentation of an edited Yiddish section; publisher footnote 51 says it was edited by the Rebbe and published in Yiddish. It is a derived presentation, not an independent witness.",
+          "proposition_language": "Hebrew"
         }
       ]
     },
@@ -1333,7 +1345,7 @@
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
       "proposition_source_locator": "Chabad.org AID 4736086, Likkutei Sichos Vol. 1, original Yiddish text, section 6, line 278.",
-      "evidence_family_id": "sicha-ו-מרחשון,-התשיח-(6-marcheshvan-5718)-4736086",
+      "evidence_family_id": "sicha-5718-lech-lecha-6-marcheshvan-aid4736086",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
@@ -1383,7 +1395,7 @@
       },
       "relations": [],
       "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 4736086 מזהה פריט שיחה נפרד לפי המועד והפרסום. כל תרגום או פרסום מקביל של אותו אירוע יצורף למשפחת הראיות sicha-ו-מרחשון,-התשיח-(6-marcheshvan-5718)-4736086 ולא ייספר כעד עצמאי.",
+      "identity_note": "AID 4736086 identifies a distinct dated talk or published excerpt. Any translation or parallel presentation of the same event must join Evidence Family sicha-5718-lech-lecha-6-marcheshvan-aid4736086 and must not be counted as an independent witness.",
       "taxonomy": {
         "publisher_index_terms": [
           "Lech Lecha: The Foundation of the Jewish People — Likkutei Sichos, Volume 1 (Yiddish original)"
@@ -1470,5 +1482,5 @@
     554871
   ],
   "duplicate_rechecks": [],
-  "note": "Nine new source identities from distinct dated talks/excerpts: eight original-Hebrew public talk bodies and one original-Yiddish edited Likkutei Sichos excerpt. All nine have bounded non-verbatim propositions with exact body locators, provenance, partial-context scope and limitations. The English translation displayed beside the Yiddish original is not a separate record or independent witness. All remain Parsed; no Verified promotion. One audio-only listing was excluded. Exact-head full-index reconciliation remains pending."
+  "note": "Nine new source presentations from distinct dated talks/excerpts: seven original-Hebrew talk bodies, one original-Yiddish edited Likkutei Sichos excerpt, and one Hebrew presentation of an edited Yiddish section. The latter is explicitly linked to its own Evidence Family as a derived presentation, not an independent witness. The English translation beside the original Yiddish is not a separate record. All nine remain Parsed; no Verified promotion. One audio-only listing was excluded. Full-index reconciliation is pending."
 }
