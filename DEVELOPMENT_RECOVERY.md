@@ -1762,3 +1762,13 @@ Batch192's measured PR-workspace baseline is 1616 / 854 / 4177; the expected pos
 - Expanded retrieval topic terms for family purity, shidduchim, Torah study, tzedakah, educators and Beis Yaakov. Added regular/researcher-mode tests for multi-family synthesis, claim-level citations and exact source locators; deep researcher mode is tested for the new letter families.
 - Batch194 correction: exact-AID records 3315370 and 3315415 were already canonical in Batch145. Their duplicate Batch194 records were removed; no extra family or proposition is counted. The measured pre-Batch195 PR-workspace boundary is 1628 answer-eligible unique sources / 854 content-verified sources / 4199 propositions. Batch195 planning boundary is 1638 / 854 / 4211; it remains pending exact-head reconciliation until the workflow completes.
 - Public main metrics remain 977 / 878 / 2950 until merge and post-merge publication. No audience or permissions were changed; the existing hourly workflow was not duplicated.
+
+
+## 2026-11-19 — Batch197 content enrichment and retrieval specificity repair
+
+- Reviewed 12 public Hebrew source bodies; eight existing Sicha identities received one new bounded, non-verbatim paraphrase each. No new source identity, Evidence Family, independent witness, or Verified promotion was added.
+- New proposition locators: AID 4296216 §ב (182–190); 4385717 §§ב–ג (182–192); 5990028 §ה (202–205); 4385834 §§ב–ג (186–198); 4304376 §§ג–ד (184–190); 4296237 §א (177–183); 4385701 §§ב–ג (181–190); 4304437 §ו (205–210). All are Hebrew publisher-body passages, marked בלתי מוגה, with partial context and no full-text reproduction.
+- Four alternative Chabad.org routes returned HTTP 429 (AIDs 4304407, 4304388, 4304343, 4304418); no crawler retry or access-control bypass was attempted. Four other accessible pages were deferred from identity creation pending a full-corpus duplicate check.
+- Batch197 uses measured PR-workspace baseline 1644/854/4222 from exact-head run 44619135765 after Batch196. Batch196's planning boundary 1642/854/4220 differed by +2/+2; the variance is preserved. Expected after eight in-place propositions: 1644/854/4230.
+- Retrieval specificity was tightened for the question about advancing a mikveh in Miflasim without waiting for peace: the source must contain the Miflasim context and the no-delay proposition, not merely generic mentions of mikveh and peace. Existing claim-level locators and deep researcher mode remain in place and are retested.
+- PR #35 remains unmerged until the exact-head Answer Quality Gate and `test_content_readiness.mjs` pass. The existing hourly schedule and repository audience/permissions are unchanged; no Pages deployment is claimed before post-merge verification.
