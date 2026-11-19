@@ -1397,13 +1397,14 @@ const batch168Path='data/items/content-research-batch-168-2026-11-18.json';
 const batch169Path='data/items/content-research-batch-169-2026-11-19.json';
 const batch170Path='data/items/content-research-batch-170-2026-11-19.json';
 const batch171Path='data/items/content-research-batch-171-2026-11-19.json';
+const batch172Path='data/items/content-research-batch-172-2026-11-19.json';
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
-assert.equal(String(projectState.current_batch),'171');
-assert.equal(projectState.current_batch_file,batch171Path);
-assert.equal(String(projectState.development_recovery.current_batch),'171');
-assert.equal(projectState.development_recovery.current_batch_file,batch171Path);
-assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'171');
-assert.equal(lastBatchSummary.batch_id,'171');
+assert.equal(String(projectState.current_batch),'172');
+assert.equal(projectState.current_batch_file,batch172Path);
+assert.equal(String(projectState.development_recovery.current_batch),'172');
+assert.equal(projectState.development_recovery.current_batch_file,batch172Path);
+assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'172');
+assert.equal(lastBatchSummary.batch_id,'172');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
 assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
 assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
@@ -1411,13 +1412,13 @@ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
  content_verified_unique_sources:metrics.content_verified_unique_sources-lastBatchSummary.metrics_actual_before.content_verified_unique_sources,
  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
 });
-assert.equal(acquisitionState.manual_web_review.batch_id,'171');
-assert.equal(acquisitionState.manual_web_review.batch_file,batch171Path);
-assert.equal(acquisitionState.previous_manual_web_review.batch_id,'170');
-assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch170Path);
+assert.equal(acquisitionState.manual_web_review.batch_id,'172');
+assert.equal(acquisitionState.manual_web_review.batch_file,batch172Path);
+assert.equal(acquisitionState.previous_manual_web_review.batch_id,'171');
+assert.equal(acquisitionState.previous_manual_web_review.batch_file,batch171Path);
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
-assert.equal(acquisitionState.last_manual_web_review.batch_id,'171');assert.equal(acquisitionState.last_manual_review.batch_id,'171');
-for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
+assert.equal(acquisitionState.last_manual_web_review.batch_id,'172');assert.equal(acquisitionState.last_manual_review.batch_id,'172');
+for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
@@ -6258,6 +6259,7 @@ for(const mode of ['regular','researcher']){
 // Hebrew Sicha identities; one Yiddish Yechidus page was excluded as media-only.
 const batch170Data=JSON.parse(await readFile(new URL(batch170Path,root),'utf8'));
 const batch171Data=JSON.parse(await readFile(new URL(batch171Path,root),'utf8'));
+const batch172Data=JSON.parse(await readFile(new URL(batch172Path,root),'utf8'));
 const batch169Data=JSON.parse(await readFile(new URL(batch169Path,root),'utf8'));
 const batch169Aids=['2989021','2989054','2989052','5989687','2989062','4385513','5959968','4296159'];
 assert.equal(batch169Data.batch_id,'169');
@@ -6365,7 +6367,7 @@ assert.deepEqual(batch170Data.enriched_aids,batch170EnrichedAids.map(Number));
 assert.deepEqual(batch170Data.metrics_before,{answer_eligible_unique_sources:1540,content_verified_unique_sources:854,answer_eligible_propositions:4012});
 assert.deepEqual(batch170Data.metrics_expected_after,{answer_eligible_unique_sources:1547,content_verified_unique_sources:854,answer_eligible_propositions:4021});
 assert.deepEqual(readinessMetrics(batch170Data.metrics_actual_before),{answer_eligible_unique_sources:1540,content_verified_unique_sources:854,answer_eligible_propositions:4012});
-assert.deepEqual(readinessMetrics(batch170Data.metrics_actual_after),readinessMetrics(batch171Data.metrics_before));
+assert.deepEqual(readinessMetrics(batch170Data.metrics_actual_after),readinessMetrics(batch171Data.metrics_actual_before));
 const batch170Keys=['answer_eligible_unique_sources','content_verified_unique_sources','answer_eligible_propositions'];
 const batch170Delta=Object.fromEntries(batch170Keys.map(k=>[k,batch170Data.metrics_actual_after[k]-batch170Data.metrics_actual_before[k]]));
 const batch170Variance=Object.fromEntries(batch170Keys.map(k=>[k,batch170Data.metrics_actual_after[k]-batch170Data.metrics_expected_after[k]]));
@@ -6470,6 +6472,8 @@ for(const u of batch171Data.existing_identity_updates){
  assert(e.response_propositions.includes(u.proposition));assert(e.response_proposition_locators.includes(u.locator));
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');
 }
+assert.equal(idx.entries.filter(e=>sourceAID(e)==='2988933').length,1,'AID 2988933 must have one canonical identity after duplicate consolidation');
+const canonical2988933=idx.entries.find(e=>sourceAID(e)==='2988933');assert.equal(canonical2988933.canonical_file,'data/items/content-research-batch-141-2026-11-17.json');assert.equal(canonical2988933.response_propositions.length,2);assert.equal(canonical2988933.evidence_family_id,'sicha-5716-simchat-torah-aid2988933');
 const torahDailyLifeQuestion='מה הקשר בין עבודת ה׳ בענייני הרשות לפי בכל דרכיך דעהו, קבלת התורה גם לפני הבנה מלאה, והמעבר מלימוד למיגרס ללימוד לעיונא?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,torahDailyLifeQuestion,{mode});
@@ -6482,3 +6486,65 @@ for(const mode of ['regular','researcher']){
  assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
  if(mode==='researcher'){assert(m.research&&m.research.depth==='deep');assert.equal(m.research.evidence_families,3);for(const locator of ['185–189','190–196','191–207'])assert(m.research.claim_source_map.some(c=>c.source_locators.some(l=>String(l.locator).includes(locator))));}
 }
+
+
+
+const batch172Aids=['2988877','2988879','2988906','2989234','2989237','2989311','4279994','4296163','4385650','4385701','5959840'];
+assert.equal(batch172Data.batch_id,'172');assert.equal(batch172Data.batch_file,batch172Path);
+assert.equal(batch172Data.records.length,11);assert.equal(batch172Data.new_source_identities,11);
+assert.equal(batch172Data.existing_identities_enriched,0);assert.equal(batch172Data.existing_identities_rechecked,0);
+assert.equal(batch172Data.source_bodies_inspected,11);assert.equal(batch172Data.source_body_pages_opened,13);
+assert.equal(batch172Data.new_response_propositions,11);assert.equal(batch172Data.existing_response_propositions_added,0);
+assert.equal(batch172Data.total_new_paraphrase_entries,11);assert.equal(batch172Data.answer_eligible_source_families_added,11);
+assert.equal(batch172Data.independent_witnesses_added,11);assert.equal(batch172Data.content_verified_unique_sources_added,0);
+assert.deepEqual(batch172Data.new_aids,batch172Aids.map(Number));assert.deepEqual(batch172Data.enriched_aids,[]);
+assert.equal(batch172Data.blocked_candidate_count,2);assert.deepEqual(batch172Data.blocked_candidates.map(x=>Number(x.aid)).sort((a,b)=>a-b),[4385482,5989925]);
+assert.equal(batch172Data.fallback_source_attempted,true);assert.equal(batch172Data.fallback_source_results.accessible_item_level_bodies,11);
+assert.equal(batch172Data.crawler_retry,false);assert.equal(batch172Data.access_control_bypassed,false);
+assert.equal(batch172Data.full_text_copied,false);assert.equal(batch172Data.scan_only_verification_used,false);
+assert.equal(batch172Data.translations_counted_as_independent_witnesses,0);
+assert.deepEqual(batch172Data.metrics_before,{answer_eligible_unique_sources:1547,content_verified_unique_sources:854,answer_eligible_propositions:4029});
+assert.deepEqual(batch172Data.metrics_expected_after,{answer_eligible_unique_sources:1558,content_verified_unique_sources:854,answer_eligible_propositions:4040});
+assert.deepEqual(readinessMetrics(batch172Data.metrics_actual_before),readinessMetrics(batch171Data.metrics_actual_after));
+assert.deepEqual(readinessMetrics(batch172Data.metrics_actual_after),readinessMetrics(metrics));
+const batch172Keys=['answer_eligible_unique_sources','content_verified_unique_sources','answer_eligible_propositions'];
+const batch172Delta=Object.fromEntries(batch172Keys.map(k=>[k,batch172Data.metrics_actual_after[k]-batch172Data.metrics_actual_before[k]]));
+const batch172Variance=Object.fromEntries(batch172Keys.map(k=>[k,batch172Data.metrics_actual_after[k]-batch172Data.metrics_expected_after[k]]));
+assert.deepEqual(batch172Data.metrics_delta_actual,batch172Delta);
+assert.deepEqual(batch172Data.reconciliation_variance,batch172Variance);
+assert.equal(batch172Data.reconciliation_status,Object.values(batch172Variance).every(v=>v===0)?'reconciled':'reconciled_with_variance');
+assert.equal(batch172Data.status,batch172Data.reconciliation_status);
+assert.equal(batch172Delta.answer_eligible_unique_sources,11);
+assert.equal(batch172Delta.content_verified_unique_sources,0);
+assert(batch172Delta.answer_eligible_propositions>=1&&batch172Delta.answer_eligible_propositions<=11);
+assert.equal(batch172Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch172Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.equal(batch172Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert.deepEqual(batch172Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch172Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch172Data.source_body_review.length,11);
+assert(batch172Data.source_body_review.every(r=>r.body_page_opened&&r.body_text_inspected&&r.inspected_original_language_body&&r.title_or_metadata_only===false&&r.existing_identity===false&&r.new_independent_witness===true));
+assert(batch172Data.source_body_review.every(r=>r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'));
+assert(batch172Data.records.every(r=>r.pipeline_status==='Parsed'&&r.status==='Parsed'&&r.has_content_evidence&&r.response_propositions.length===1&&r.response_proposition_locators.length===1&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.provenance.source_witness&&r.verification_scope&&r.context_status==='partial'));
+for(const r of batch172Data.records){
+ const matches=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
+ assert.equal(matches.length,1,'Batch172 AID '+r.aid+' must have exactly one canonical identity');
+ const e=matches[0];assert.equal(e.canonical_file,batch172Path);assert.equal(e.evidence_family_id,r.evidence_family_id);
+ assert.equal(e.status,'Parsed');assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);
+ assert.equal(e.language,'Hebrew');assert.equal(e.original_language,'Hebrew');
+ assert.equal(e.response_propositions.length,1);assert.equal(e.response_proposition_locators.length,1);
+ assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');
+}
+const torahStudyEffortQuestion='כיצד מחברות השיחות בין לימוד תורה בעיון, יגיעה אישית וקיום בפועל?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,torahStudyEffortQuestion,{mode});
+ assert(m.answerable,mode+': three-family Torah study/effort/practice synthesis must be answerable');
+ assert.equal(m.synthesis?.topic,'torah_study_effort_and_practice');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.deepEqual(m.sources.map(e=>String(e.aid)),['2988879','2989234','4296163']);
+ assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,3);assert.equal(m.claims.length,3);
+ assert(m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){assert(m.research&&m.research.depth==='deep');assert.equal(m.research.evidence_families,3);for(const locator of ['179–204','177–185','179–193'])assert(m.research.claim_source_map.some(c=>c.source_locators.some(l=>String(l.locator).includes(locator))));}
+}
+
