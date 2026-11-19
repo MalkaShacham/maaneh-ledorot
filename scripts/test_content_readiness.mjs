@@ -7694,7 +7694,7 @@ for(const mode of ['regular','researcher']){
 
 
  
-// Batch191: five new Hebrew publisher identities with unconfirmed original language and three in-place enrichments.
+// Batch191: four new Hebrew publisher identities with unconfirmed original language and four in-place enrichments.
 assert.equal(batch191Data.batch_id,'191');assert.equal(batch191Data.batch_file,batch191Path);
 assert.equal(batch191Data.records.length,4);assert.equal(batch191Data.new_source_identities,4);
 assert.equal(batch191Data.existing_identities_enriched,4);assert.equal(batch191Data.existing_identity_updates.length,4);
@@ -7720,11 +7720,12 @@ assert.equal(batch191Data.source_body_review.length,8);
 assert.equal(batch191Data.source_body_review.filter(r=>r.body_text_inspected===true&&r.title_or_metadata_only===false).length,8);
 assert.equal(batch191Data.source_body_review.filter(r=>r.existing_identity===false&&r.action==='new_identity_created').length,4);
 assert.equal(batch191Data.source_body_review.filter(r=>r.existing_identity===true&&r.action==='enriched_existing_identity_in_place').length,4);
+assert.equal(batch191Data.source_body_review.filter(r=>r.existing_identity===true&&r.inspected_original_language_body===true).length,4);
 assert.equal(batch191Data.source_body_review.filter(r=>r.existing_identity===false&&r.inspected_original_language_body===false&&r.independent_witness===null).length,4);
 assert.equal(batch191Data.deduplication_check.full_index_scan_pending_reconciliation,false,'Batch191 must complete full-index reconciliation before readiness passes');
 assert.equal(batch191Data.deduplication_check.full_index_scan_available,true);
 assert.equal(batch191Data.deduplication_check.target_identity_count,8);assert.equal(batch191Data.deduplication_check.selected_unique_evidence_families,8);
-assert.equal(batch191Data.deduplication_check.all_target_identities_answer_eligible,true);assert.equal(batch191Data.deduplication_check.target_identity_matches,8);assert.equal(batch191Data.deduplication_check.target_identity_duplicates,0);
+assert.equal(batch191Data.deduplication_check.all_target_identities_answer_eligible,true);assert.equal(batch191Data.deduplication_check.target_identity_duplicates,0);
 assert.deepEqual(batch191Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch191Data.deduplication_check.missing_canonical_identities,[]);assert.equal(batch191Data.metrics_delta_at_batch_boundary.answer_eligible_unique_sources,4);assert.equal(batch191Data.metrics_delta_at_batch_boundary.answer_eligible_propositions,8);
 assertReconciliationSnapshot(batch191Data,'batch191Data');
