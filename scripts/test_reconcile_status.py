@@ -1,5 +1,5 @@
 from status_normalization import status_of
-from reconciliation_helpers import alias_target_pairs
+from reconciliation_helpers import alias_target_pairs, has_frozen_metrics_snapshot
 
 assert status_of({
     "pipeline_status": "Parsed",
@@ -38,5 +38,28 @@ assert alias_target_pairs({"alias_aid": 5357409, "canonical_aid": 4872269}) == [
 ]
 assert alias_target_pairs("legacy-source-key") == [("id:legacy-source-key", None, "legacy-source-key")]
 assert alias_target_pairs(None) == []
+
+assert has_frozen_metrics_snapshot({
+    "reconciliation_status": "reconciled",
+    "metrics_actual_before": {"answer_eligible_unique_sources": 792},
+    "metrics_actual_after": {"answer_eligible_unique_sources": 792},
+}) is True
+assert has_frozen_metrics_snapshot({
+    "reconciliation_status": "reconciled_with_variance",
+    "metrics_actual_before": {"answer_eligible_unique_sources": 792},
+    "metrics_actual_after": {"answer_eligible_unique_sources": 791},
+}) is True
+assert has_frozen_metrics_snapshot({
+    "reconciliation_status": "pending_reconciliation",
+    "metrics_actual_before": {"answer_eligible_unique_sources": 792},
+    "metrics_actual_after": {"answer_eligible_unique_sources": 792},
+}) is False
+assert has_frozen_metrics_snapshot({
+    "reconciliation_status": "reconciled",
+    "metrics_actual_before": {"answer_eligible_unique_sources": 792},
+}) is False
+
+print("Historical snapshot immutability: 4 checks passed")
+
 
 print("Conservative status and alias normalization: 12 checks passed")
