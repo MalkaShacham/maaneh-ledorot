@@ -7,11 +7,11 @@
   "skipped": 0,
   "status": "pending_reconciliation",
   "manual_web_review": {
-    "batch_id": "173",
-    "batch_file": "data/items/content-research-batch-173-2026-11-19.json",
-    "generated": "2026-11-19T02:27:11+02:00",
-    "reviewed_at": "2026-11-19T02:27:11+02:00",
-    "title": "Eight in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
+    "batch_id": "174",
+    "batch_file": "data/items/content-research-batch-174-2026-11-19.json",
+    "generated": "2026-11-19T02:56:58+02:00",
+    "reviewed_at": "2026-11-19T02:56:58+02:00",
+    "title": "Eight additional in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 9,
@@ -31,16 +31,21 @@
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1552,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4040
+    },
+    "metrics_before_source": "Measured by exact-head Answer Quality Gate run 44430166602 on commit c3521f264b51fd113a457fc980243d90e86bc6b1 before Batch174; PR-workspace measurement, not main/public metrics.",
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1552,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 4040
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1552,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 4048
     },
-    "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
@@ -65,84 +70,75 @@
     ],
     "translations_added": 0,
     "translations_counted_as_independent_witnesses": 0,
-    "note": "Eight existing Hebrew source identities were enriched in place with eight additional source-grounded paraphrases. AID 4666220 was inaccessible through the public reader; eight accessible bodies were used as same-run fallback. No new source identity, Evidence Family, independent witness or Verified promotion."
+    "note": "Eight additional non-verbatim Hebrew research propositions were appended to eight existing source identities. No new source identity, Evidence Family, independent witness or Verified promotion. AID 4666220 was inaccessible; eight accessible bodies were used as same-run fallback."
   },
   "previous_manual_web_review": {
-    "batch_id": "172",
-    "batch_file": "data/items/content-research-batch-172-2026-11-19.json",
-    "generated": "2026-11-19T01:53:26+02:00",
-    "reviewed_at": "2026-11-19T01:53:26+02:00",
-    "title": "Corrected Batch172: ten new original-Hebrew Sicha identities plus one non-independent English translation; AID 2988877 duplicate recheck.",
+    "batch_id": "173",
+    "batch_file": "data/items/content-research-batch-173-2026-11-19.json",
+    "generated": "2026-11-19T02:27:11+02:00",
+    "reviewed_at": "2026-11-19T02:27:11+02:00",
+    "title": "Eight in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 15,
-    "source_bodies_inspected": 12,
-    "source_body_pages_opened": 15,
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 8,
+    "source_body_pages_opened": 8,
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 11,
-    "existing_identities_enriched": 0,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 11,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 11,
-    "independent_witnesses_added": 10,
-    "non_independent_presentations_added": 1,
+    "new_source_identities": 0,
+    "existing_identities_enriched": 8,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 0,
+    "existing_response_propositions_added": 8,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 0,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1547,
+      "answer_eligible_unique_sources": 1558,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4029
+      "answer_eligible_propositions": 4040
     },
     "metrics_expected_after": {
       "answer_eligible_unique_sources": 1558,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4040
+      "answer_eligible_propositions": 4048
     },
     "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 11,
+      "answer_eligible_unique_sources": 0,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 11
+      "answer_eligible_propositions": 8
     },
     "metrics_delta_at_batch_boundary_is_planning_only": true,
-    "new_aids": [
-      259799,
-      2988879,
-      2988906,
-      2989234,
-      2989237,
-      2989311,
-      4279994,
-      4296163,
-      4385650,
-      4385701,
-      5959840
-    ],
-    "enriched_aids": [],
-    "rechecked_aids": [
-      2988877
+    "enriched_aids": [
+      2989059,
+      4385558,
+      2989147,
+      3008930,
+      3140218,
+      4279923,
+      2989220,
+      4296226
     ],
     "blocked_aids": [
-      4385482,
-      5989925
+      4666220
     ],
-    "translations_added": 1,
+    "translations_added": 0,
     "translations_counted_as_independent_witnesses": 0,
-    "duplicate_alias_identities": 1,
-    "note": "AID 2988877 was found already canonical in Batch100 and reclassified as a duplicate recheck; ten Hebrew identities and one English translated-letter presentation remain."
+    "note": "Eight existing Hebrew source identities were enriched in place with eight additional source-grounded paraphrases. AID 4666220 was inaccessible through the public reader; eight accessible bodies were used as same-run fallback. No new source identity, Evidence Family, independent witness or Verified promotion."
   },
   "last_manual_web_review": {
-    "batch_id": "173",
-    "batch_file": "data/items/content-research-batch-173-2026-11-19.json",
-    "generated": "2026-11-19T02:27:11+02:00",
-    "reviewed_at": "2026-11-19T02:27:11+02:00",
-    "title": "Eight in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
+    "batch_id": "174",
+    "batch_file": "data/items/content-research-batch-174-2026-11-19.json",
+    "generated": "2026-11-19T02:56:58+02:00",
+    "reviewed_at": "2026-11-19T02:56:58+02:00",
+    "title": "Eight additional in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 9,
@@ -162,16 +158,21 @@
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1552,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4040
+    },
+    "metrics_before_source": "Measured by exact-head Answer Quality Gate run 44430166602 on commit c3521f264b51fd113a457fc980243d90e86bc6b1 before Batch174; PR-workspace measurement, not main/public metrics.",
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1552,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 4040
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1552,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 4048
     },
-    "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
@@ -196,14 +197,14 @@
     ],
     "translations_added": 0,
     "translations_counted_as_independent_witnesses": 0,
-    "note": "Eight existing Hebrew source identities were enriched in place with eight additional source-grounded paraphrases. AID 4666220 was inaccessible through the public reader; eight accessible bodies were used as same-run fallback. No new source identity, Evidence Family, independent witness or Verified promotion."
+    "note": "Eight additional non-verbatim Hebrew research propositions were appended to eight existing source identities. No new source identity, Evidence Family, independent witness or Verified promotion. AID 4666220 was inaccessible; eight accessible bodies were used as same-run fallback."
   },
   "last_manual_review": {
-    "batch_id": "173",
-    "batch_file": "data/items/content-research-batch-173-2026-11-19.json",
-    "generated": "2026-11-19T02:27:11+02:00",
-    "reviewed_at": "2026-11-19T02:27:11+02:00",
-    "title": "Eight in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
+    "batch_id": "174",
+    "batch_file": "data/items/content-research-batch-174-2026-11-19.json",
+    "generated": "2026-11-19T02:56:58+02:00",
+    "reviewed_at": "2026-11-19T02:56:58+02:00",
+    "title": "Eight additional in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 9,
@@ -223,16 +224,21 @@
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1552,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4040
+    },
+    "metrics_before_source": "Measured by exact-head Answer Quality Gate run 44430166602 on commit c3521f264b51fd113a457fc980243d90e86bc6b1 before Batch174; PR-workspace measurement, not main/public metrics.",
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1552,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 4040
     },
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1552,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 4048
     },
-    "metrics_actual_before": null,
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
@@ -257,7 +263,7 @@
     ],
     "translations_added": 0,
     "translations_counted_as_independent_witnesses": 0,
-    "note": "Eight existing Hebrew source identities were enriched in place with eight additional source-grounded paraphrases. AID 4666220 was inaccessible through the public reader; eight accessible bodies were used as same-run fallback. No new source identity, Evidence Family, independent witness or Verified promotion."
+    "note": "Eight additional non-verbatim Hebrew research propositions were appended to eight existing source identities. No new source identity, Evidence Family, independent witness or Verified promotion. AID 4666220 was inaccessible; eight accessible bodies were used as same-run fallback."
   },
   "manual_web_review_history": [
     {
@@ -12397,36 +12403,84 @@
       "translations_added": 0,
       "translations_counted_as_independent_witnesses": 0,
       "note": "Eight existing Hebrew source identities were enriched in place with eight additional source-grounded paraphrases. AID 4666220 was inaccessible through the public reader; eight accessible bodies were used as same-run fallback. No new source identity, Evidence Family, independent witness or Verified promotion."
+    },
+    {
+      "batch_id": "174",
+      "batch_file": "data/items/content-research-batch-174-2026-11-19.json",
+      "generated": "2026-11-19T02:56:58+02:00",
+      "reviewed_at": "2026-11-19T02:56:58+02:00",
+      "title": "Eight additional in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 8,
+      "metadata_only_items_rechecked": 0,
+      "search_extracts_inspected": 0,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1552,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4040
+      },
+      "metrics_before_source": "Measured by exact-head Answer Quality Gate run 44430166602 on commit c3521f264b51fd113a457fc980243d90e86bc6b1 before Batch174; PR-workspace measurement, not main/public metrics.",
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1552,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4040
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1552,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4048
+      },
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "reconciliation_variance": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "metrics_delta_at_batch_boundary_is_planning_only": true,
+      "enriched_aids": [
+        2989059,
+        4385558,
+        2989147,
+        3008930,
+        3140218,
+        4279923,
+        2989220,
+        4296226
+      ],
+      "blocked_aids": [
+        4666220
+      ],
+      "translations_added": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "Eight additional non-verbatim Hebrew research propositions were appended to eight existing source identities. No new source identity, Evidence Family, independent witness or Verified promotion. AID 4666220 was inaccessible; eight accessible bodies were used as same-run fallback."
     }
   ],
   "manual_web_review_current_metrics": {
-    "status": "pending_reconciliation",
-    "answer_eligible_unique_sources": 1558,
+    "answer_eligible_unique_sources": 1552,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4048,
-    "baseline": {
-      "answer_eligible_unique_sources": 1558,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4040
-    },
-    "expected_after": {
-      "answer_eligible_unique_sources": 1558,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4048
-    },
-    "actual_after": null,
-    "planning_only": true,
-    "public_main_snapshot": {
-      "answer_eligible_unique_sources": 977,
-      "content_verified_unique_sources": 878,
-      "answer_eligible_propositions": 2950
-    }
+    "answer_eligible_propositions": 4040
   },
-  "last_run_note": "Batch173: eight original-Hebrew body passages inspected and appended in place to eight existing identities (seven Sichos, one Maamar); AID 4666220 returned Internal Error and was replaced by eight accessible bodies. No new identities, families or Verified promotions. Batch172 AID 2988877 was corrected as a duplicate of Batch100.",
-  "next_action": "Run exact-head full-index reconciliation through Batch173, verify the Batch172 duplicate recheck and eight Batch173 in-place enrichments, pass test_content_readiness.mjs, then merge PR #35 only after a green gate.",
-  "current_batch_file": "data/items/content-research-batch-173-2026-11-19.json",
+  "last_run_note": "Batch174: eight additional distinct Hebrew body passages inspected and appended in place to existing identities AIDs 2989059, 4385558, 2989147, 3008930, 3140218, 4279923, 2989220 and 4296226. AID 4666220 returned Internal Error; eight accessible bodies used as same-run fallback. No new identity, Evidence Family, independent witness or Verified promotion. Exact-head reconciliation and readiness gate pending.",
+  "next_action": "Run exact-head full-index reconciliation for Batch174; verify the eight in-place proposition additions and historical metric variances; pass test_content_readiness.mjs; then merge PR #35 and verify main Actions and GitHub Pages.",
+  "current_batch_file": "data/items/content-research-batch-174-2026-11-19.json",
   "pending": true,
   "tail": "Batch173: eight in-place Hebrew source enrichments; AID 4666220 inaccessible; same-run fallback used. No new identities or Verified promotions. Exact-head reconciliation pending.",
   "next": "Reconcile batches 170–173 and historical audit-incomplete batches; pass readiness and Answer Quality Gate before merge.",
-  "updated_at": "2026-11-19T02:27:11+02:00"
+  "updated_at": "2026-11-19T02:56:58+02:00"
 }
