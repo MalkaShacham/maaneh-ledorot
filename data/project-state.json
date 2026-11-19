@@ -2212,10 +2212,10 @@
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending_exact_head_batch_187",
-    "last_failed_run_id": 44559228460,
-    "last_failure": "Run 44559228460 failed at historical Batch184→185 boundary because the baseline note used comma-formatted 1,587; test helper now normalizes thousands separators. Fresh exact-head gate required.",
-    "note": "Batch187 added; Batch172 duplicate AIDs corrected; a three-family Torah vitality/effort/prayer synthesis and researcher-depth regression added. Awaiting fresh exact-head Answer Quality Gate.",
-    "run_status": "pending_exact_head_batch_186",
+    "last_failed_run_id": 44564465518,
+    "last_failure": "Run 44564465518 failed in test_question_specificity_gate.mjs because two literal backslash-n sequences were inserted into answer-engine.js. Fixed in commit be575483; fresh exact-head gate required for current head.",
+    "note": "Batch187 content and three-family synthesis are committed. Syntax error from literal escaped newlines was corrected in be575483; current exact-head Answer Quality Gate must complete before merge.",
+    "run_status": "pending_exact_head_batch_187",
     "workflow_run_id": null,
     "evaluated_commit": null
   },
