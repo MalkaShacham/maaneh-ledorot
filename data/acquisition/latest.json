@@ -9,126 +9,27 @@
   "status": "pending_reconciliation",
   "manual_web_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
-    "batch_id": "183",
-    "batch_file": "data/items/content-research-batch-183-2026-11-19.json",
-    "generated": "2026-11-19T14:02:27+02:00",
-    "reviewed_at": "2026-11-19T14:02:27+02:00",
-    "title": "Batch183 — eight new original-language Igrot Kodesh letters (seven Hebrew, one Yiddish), one in-place Sicha enrichment, duplicate exclusion and browser-shell fallback",
+    "batch_id": "184",
+    "batch_file": "data/items/content-research-batch-184-2026-11-19.json",
+    "generated": "2026-11-19T15:54:25+02:00",
+    "reviewed_at": "2026-11-19T15:54:25+02:00",
+    "title": "Batch184 — eight in-place Hebrew Sicha enrichments from accessible BeitChabad bodies after eight /therebbe routes returned browser shells; AID 4304430 duplicate presentations linked to one Evidence Family",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 11,
-    "source_bodies_inspected": 10,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 8,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 9,
-    "answer_eligible_source_families_added": 8,
-    "independent_witnesses_added": 8,
-    "non_independent_presentations_added": 0,
-    "content_verified_unique_sources_added": 0,
-    "source_languages": [
-      "Hebrew",
-      "Yiddish"
-    ],
-    "language_distribution": {
-      "Hebrew": 7,
-      "Yiddish": 1
-    },
-    "original_language_distribution": {
-      "Hebrew": 7,
-      "Yiddish": 1
-    },
-    "proposition_language_distribution": {
-      "Hebrew": 9
-    },
-    "source_type_distribution": {
-      "Letters": 8,
-      "Sichos": 1
-    },
-    "new_aids": [
-      4645972,
-      4831491,
-      4646057,
-      5054374,
-      4831547,
-      5413680,
-      4731070,
-      5019667
-    ],
-    "enriched_aids": [
-      2989059
-    ],
-    "blocked_aids": [
-      4666220
-    ],
-    "blocked_candidate_count": 1,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
-        "status": "browser_compatibility_shell_no_body",
-        "reason": "העמוד הפנה ל-/torah-texts/4666220/page/default.htm והציג דרישת דפדפן חדש; לא התקבל גוף מכתב קריא.",
-        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נבדקו שמונה גופי מכתבים אחרים ועוד שני גופים לצורך העשרה ובדיקת כפילות."
-      }
-    ],
-    "excluded_duplicate_candidate_count": 1,
-    "excluded_duplicate_candidates": [
-      {
-        "aid": 4666247,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666247/jewish/page.htm",
-        "canonical_file": "data/items/igrot-kodesh-v2-letter-208-aid-4666247.json",
-        "canonical_id": "igrot-kodesh-v2-letter-208-aid-4666247",
-        "evidence_family_id": "original-letter-aid-4666247",
-        "action": "excluded_duplicate_existing_identity",
-        "reason": "AID 4666247 already exists canonically with three content propositions in the same Evidence Family; the opened publisher page is a parallel presentation of that same letter, so no new identity, Evidence Family or proposition is counted."
-      }
-    ],
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1582,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4103
-    },
-    "metrics_before_source": "Planning baseline from Batch182 metrics_expected_after (1582/854/4103); not a measured main/public snapshot. Exact-head reconciliation is required.",
-    "metrics_actual_before": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1590,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4112
-    },
-    "metrics_actual_after": null,
-    "metrics_delta_actual": null,
-    "reconciliation_variance": null,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "fallback_source_attempted": true,
-    "source_body_pages_opened": 11,
-    "source_body_pages_attempted": 11,
-    "search_extracts_inspected": 11,
-    "search_extracts_used_as_content": 0,
-    "existing_identity_updates_count": 1,
-    "existing_identity_rechecks_count": 0
-  },
-  "previous_manual_web_review": {
-    "schema": "maaneh-ledorot-content-research-batch-v1",
-    "batch_id": "182",
-    "batch_file": "data/items/content-research-batch-182-2026-11-19.json",
-    "generated": "2026-11-19T13:24:13+02:00",
-    "reviewed_at": "2026-11-19T13:24:13+02:00",
-    "title": "Batch182 — eight new original-Hebrew Igrot Kodesh letters; AID 4666220 browser-shell fallback; exact source-body provenance",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 9,
+    "reviewed_item_count": 8,
     "source_bodies_inspected": 8,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 0,
-    "new_response_propositions": 8,
-    "existing_response_propositions_added": 0,
+    "source_body_pages_opened": 16,
+    "source_body_pages_attempted": 16,
+    "search_extracts_inspected": 8,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 0,
+    "existing_identities_enriched": 8,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 0,
+    "existing_response_propositions_added": 8,
     "total_new_paraphrase_entries": 8,
-    "answer_eligible_source_families_added": 8,
-    "independent_witnesses_added": 8,
+    "answer_eligible_source_families_added": 0,
+    "independent_witnesses_added": 0,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "source_languages": [
@@ -144,62 +45,154 @@
       "Hebrew": 8
     },
     "source_type_distribution": {
-      "Letters": 8
+      "Sichos": 8
     },
-    "new_aids": [
-      4731068,
-      5357009,
-      5413030,
-      5357052,
-      5100679,
-      5357571,
-      5413490,
-      5100718
+    "new_aids": [],
+    "enriched_aids": [
+      4304430,
+      2989059,
+      5959968,
+      4296159,
+      2989062,
+      4385513,
+      2989052,
+      2989054
     ],
-    "enriched_aids": [],
+    "rechecked_aids": [],
     "blocked_aids": [
-      4666220
+      4645972,
+      4831491,
+      4646057,
+      5054374,
+      4831547,
+      5413680,
+      4731070,
+      5019667
     ],
-    "blocked_candidate_count": 1,
+    "blocked_candidate_count": 8,
     "blocked_candidates": [
       {
-        "aid": 4666220,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "aid": 4645972,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4645972/jewish/page.htm",
         "status": "browser_compatibility_shell_no_body",
-        "reason": "העמוד הפנה ל-/torah-texts/4666220/page/default.htm והציג הודעת דרישת דפדפן חדש; לא התקבל גוף מכתב קריא.",
-        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נבדקו שמונה גופי מכתבים עבריים אחרים של Kehot/Chabad.org."
+        "reason": "העמוד הפנה למעטפת /torah-texts/4645972/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 4831491,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4831491/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4831491/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 4646057,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4646057/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4646057/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 5054374,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5054374/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/5054374/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 4831547,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4831547/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4831547/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 5413680,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413680/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/5413680/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 4731070,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731070/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4731070/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 5019667,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5019667/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/5019667/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
       }
     ],
+    "duplicate_alias_identities": [
+      {
+        "action": "duplicate_alias_same_evidence_family",
+        "aid": 4304430,
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "alias_file": "data/items/content-research-batch-146-2026-11-17.json",
+        "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+        "independent_witness": false,
+        "counted_as_one_identity": true,
+        "reason": "AID 4304430 is represented in batches 101 and 146 under the same Evidence Family. Batch101 is the canonical identity; batch146 is a Linked non-independent duplicate presentation. The new proposition is stored on the canonical record and not counted twice."
+      }
+    ],
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1587,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4115
+    },
+    "metrics_before_source": "Exact-head PR-workspace reconciliation in Answer Quality Gate run 44523818685 at head 9353e8d1bc7cbbc883ffce3587d7c769293d25a5 measured 1587/854/4115 after Batch183. This is a PR-workspace measurement, not public main. It supersedes Batch183's planning expectation 1590/854/4112.",
+    "metrics_actual_before": null,
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1587,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4123
+    },
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 8
+    },
+    "metrics_delta_at_batch_boundary_is_planning_only": true,
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
     "scan_only_verification_used": false,
     "fallback_source_attempted": true,
-    "fallback_source_results": {
-      "accessible_item_level_bodies": 8,
-      "accessible_original_language_bodies": 8,
-      "publisher": "Kehot Publication Society / Chabad.org",
-      "languages": [
-        "Hebrew"
+    "existing_identity_updates_count": 8,
+    "existing_identity_rechecks_count": 0,
+    "deduplication_check": {
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "target_identity_count": 8,
+      "target_aids": [
+        4304430,
+        2989059,
+        5959968,
+        4296159,
+        2989062,
+        4385513,
+        2989052,
+        2989054
       ],
-      "note": "לאחר ש-AID 4666220 הציג מעטפת תאימות דפדפן ללא גוף מכתב, נפתחו ונבדקו שמונה גופי מכתבים עבריים אחרים מאותו מו״ל."
+      "target_identity_matches": null,
+      "target_identity_duplicates": null,
+      "selected_unique_evidence_families": null,
+      "same_family_duplicate_presentations": [],
+      "canonical_identity_collisions": [],
+      "missing_canonical_identities": [],
+      "all_target_identities_answer_eligible": false,
+      "note": "The eight AIDs are existing canonical identities from batches 146, 165, 166 and 170. AID 4304430 has two same-AID presentations in batches 101 and 146 under one Evidence Family; full-index reconciliation must confirm and retain one family. Exact full-index audit remains pending. AID 4304430 duplicate presentation consolidated: batch101 remains canonical; batch146 is Linked and non-independent; both share one Evidence Family."
     },
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1574,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4095
-    },
-    "metrics_actual_before": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1582,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4103
-    },
-    "metrics_actual_after": null,
-    "metrics_delta_actual": null,
-    "reconciliation_variance": null
+    "note": "Eight existing Hebrew Sicha identities were enriched in place with eight new non-verbatim, source-grounded propositions from newly inspected body passages. No new identity, Evidence Family, independent witness or Verified promotion was added. AID 4304430 has two canonical presentations (batches 101 and 146) but one Evidence Family and is counted once. Eight alternate /therebbe routes returned rewritten browser shells; accessible he.chabad.org body pages were used as same-run fallback. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying. AID 4304430 duplicate presentation consolidated: batch101 remains canonical; batch146 is Linked and non-independent; both share one Evidence Family."
   },
-  "last_manual_web_review": {
+  "previous_manual_web_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
     "batch_id": "183",
     "batch_file": "data/items/content-research-batch-183-2026-11-19.json",
@@ -302,6 +295,191 @@
     "search_extracts_used_as_content": 0,
     "existing_identity_updates_count": 1,
     "existing_identity_rechecks_count": 0
+  },
+  "last_manual_web_review": {
+    "schema": "maaneh-ledorot-content-research-batch-v1",
+    "batch_id": "184",
+    "batch_file": "data/items/content-research-batch-184-2026-11-19.json",
+    "generated": "2026-11-19T15:54:25+02:00",
+    "reviewed_at": "2026-11-19T15:54:25+02:00",
+    "title": "Batch184 — eight in-place Hebrew Sicha enrichments from accessible BeitChabad bodies after eight /therebbe routes returned browser shells; AID 4304430 duplicate presentations linked to one Evidence Family",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 8,
+    "source_bodies_inspected": 8,
+    "source_body_pages_opened": 16,
+    "source_body_pages_attempted": 16,
+    "search_extracts_inspected": 8,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 0,
+    "existing_identities_enriched": 8,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 0,
+    "existing_response_propositions_added": 8,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 0,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "source_languages": [
+      "Hebrew"
+    ],
+    "language_distribution": {
+      "Hebrew": 8
+    },
+    "original_language_distribution": {
+      "Hebrew": 8
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 8
+    },
+    "source_type_distribution": {
+      "Sichos": 8
+    },
+    "new_aids": [],
+    "enriched_aids": [
+      4304430,
+      2989059,
+      5959968,
+      4296159,
+      2989062,
+      4385513,
+      2989052,
+      2989054
+    ],
+    "rechecked_aids": [],
+    "blocked_aids": [
+      4645972,
+      4831491,
+      4646057,
+      5054374,
+      4831547,
+      5413680,
+      4731070,
+      5019667
+    ],
+    "blocked_candidate_count": 8,
+    "blocked_candidates": [
+      {
+        "aid": 4645972,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4645972/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4645972/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 4831491,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4831491/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4831491/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 4646057,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4646057/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4646057/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 5054374,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5054374/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/5054374/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 4831547,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4831547/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4831547/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 5413680,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413680/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/5413680/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 4731070,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731070/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/4731070/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      },
+      {
+        "aid": 5019667,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5019667/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה למעטפת /torah-texts/5019667/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+      }
+    ],
+    "duplicate_alias_identities": [
+      {
+        "action": "duplicate_alias_same_evidence_family",
+        "aid": 4304430,
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "alias_file": "data/items/content-research-batch-146-2026-11-17.json",
+        "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+        "independent_witness": false,
+        "counted_as_one_identity": true,
+        "reason": "AID 4304430 is represented in batches 101 and 146 under the same Evidence Family. Batch101 is the canonical identity; batch146 is a Linked non-independent duplicate presentation. The new proposition is stored on the canonical record and not counted twice."
+      }
+    ],
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1587,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4115
+    },
+    "metrics_before_source": "Exact-head PR-workspace reconciliation in Answer Quality Gate run 44523818685 at head 9353e8d1bc7cbbc883ffce3587d7c769293d25a5 measured 1587/854/4115 after Batch183. This is a PR-workspace measurement, not public main. It supersedes Batch183's planning expectation 1590/854/4112.",
+    "metrics_actual_before": null,
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1587,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4123
+    },
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 8
+    },
+    "metrics_delta_at_batch_boundary_is_planning_only": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "fallback_source_attempted": true,
+    "existing_identity_updates_count": 8,
+    "existing_identity_rechecks_count": 0,
+    "deduplication_check": {
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "target_identity_count": 8,
+      "target_aids": [
+        4304430,
+        2989059,
+        5959968,
+        4296159,
+        2989062,
+        4385513,
+        2989052,
+        2989054
+      ],
+      "target_identity_matches": null,
+      "target_identity_duplicates": null,
+      "selected_unique_evidence_families": null,
+      "same_family_duplicate_presentations": [],
+      "canonical_identity_collisions": [],
+      "missing_canonical_identities": [],
+      "all_target_identities_answer_eligible": false,
+      "note": "The eight AIDs are existing canonical identities from batches 146, 165, 166 and 170. AID 4304430 has two same-AID presentations in batches 101 and 146 under one Evidence Family; full-index reconciliation must confirm and retain one family. Exact full-index audit remains pending. AID 4304430 duplicate presentation consolidated: batch101 remains canonical; batch146 is Linked and non-independent; both share one Evidence Family."
+    },
+    "note": "Eight existing Hebrew Sicha identities were enriched in place with eight new non-verbatim, source-grounded propositions from newly inspected body passages. No new identity, Evidence Family, independent witness or Verified promotion was added. AID 4304430 has two canonical presentations (batches 101 and 146) but one Evidence Family and is counted once. Eight alternate /therebbe routes returned rewritten browser shells; accessible he.chabad.org body pages were used as same-run fallback. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying. AID 4304430 duplicate presentation consolidated: batch101 remains canonical; batch146 is Linked and non-independent; both share one Evidence Family."
   },
   "last_manual_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
@@ -629,16 +807,206 @@
       "batch_id": "183",
       "batch_file": "data/items/content-research-batch-183-2026-11-19.json",
       "generated": "2026-11-19T14:02:27+02:00"
+    },
+    {
+      "schema": "maaneh-ledorot-content-research-batch-v1",
+      "batch_id": "184",
+      "batch_file": "data/items/content-research-batch-184-2026-11-19.json",
+      "generated": "2026-11-19T15:54:25+02:00",
+      "reviewed_at": "2026-11-19T15:54:25+02:00",
+      "title": "Batch184 — eight in-place Hebrew Sicha enrichments from accessible BeitChabad bodies after eight /therebbe routes returned browser shells; AID 4304430 duplicate presentations linked to one Evidence Family",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 8,
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 16,
+      "source_body_pages_attempted": 16,
+      "search_extracts_inspected": 8,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "source_languages": [
+        "Hebrew"
+      ],
+      "language_distribution": {
+        "Hebrew": 8
+      },
+      "original_language_distribution": {
+        "Hebrew": 8
+      },
+      "proposition_language_distribution": {
+        "Hebrew": 8
+      },
+      "source_type_distribution": {
+        "Sichos": 8
+      },
+      "new_aids": [],
+      "enriched_aids": [
+        4304430,
+        2989059,
+        5959968,
+        4296159,
+        2989062,
+        4385513,
+        2989052,
+        2989054
+      ],
+      "rechecked_aids": [],
+      "blocked_aids": [
+        4645972,
+        4831491,
+        4646057,
+        5054374,
+        4831547,
+        5413680,
+        4731070,
+        5019667
+      ],
+      "blocked_candidate_count": 8,
+      "blocked_candidates": [
+        {
+          "aid": 4645972,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4645972/jewish/page.htm",
+          "status": "browser_compatibility_shell_no_body",
+          "reason": "העמוד הפנה למעטפת /torah-texts/4645972/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+          "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+        },
+        {
+          "aid": 4831491,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4831491/jewish/page.htm",
+          "status": "browser_compatibility_shell_no_body",
+          "reason": "העמוד הפנה למעטפת /torah-texts/4831491/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+          "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+        },
+        {
+          "aid": 4646057,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4646057/jewish/page.htm",
+          "status": "browser_compatibility_shell_no_body",
+          "reason": "העמוד הפנה למעטפת /torah-texts/4646057/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+          "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+        },
+        {
+          "aid": 5054374,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5054374/jewish/page.htm",
+          "status": "browser_compatibility_shell_no_body",
+          "reason": "העמוד הפנה למעטפת /torah-texts/5054374/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+          "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+        },
+        {
+          "aid": 4831547,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4831547/jewish/page.htm",
+          "status": "browser_compatibility_shell_no_body",
+          "reason": "העמוד הפנה למעטפת /torah-texts/4831547/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+          "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+        },
+        {
+          "aid": 5413680,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413680/jewish/page.htm",
+          "status": "browser_compatibility_shell_no_body",
+          "reason": "העמוד הפנה למעטפת /torah-texts/5413680/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+          "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+        },
+        {
+          "aid": 4731070,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731070/jewish/page.htm",
+          "status": "browser_compatibility_shell_no_body",
+          "reason": "העמוד הפנה למעטפת /torah-texts/4731070/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+          "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+        },
+        {
+          "aid": 5019667,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5019667/jewish/page.htm",
+          "status": "browser_compatibility_shell_no_body",
+          "reason": "העמוד הפנה למעטפת /torah-texts/5019667/page/default.htm עם דרישת דפדפן חדש; לא התקבל גוף פרסום קריא.",
+          "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נעשה שימוש בגוף עברי נגיש אחר מאותו מו״ל."
+        }
+      ],
+      "duplicate_alias_identities": [
+        {
+          "action": "duplicate_alias_same_evidence_family",
+          "aid": 4304430,
+          "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+          "alias_file": "data/items/content-research-batch-146-2026-11-17.json",
+          "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+          "independent_witness": false,
+          "counted_as_one_identity": true,
+          "reason": "AID 4304430 is represented in batches 101 and 146 under the same Evidence Family. Batch101 is the canonical identity; batch146 is a Linked non-independent duplicate presentation. The new proposition is stored on the canonical record and not counted twice."
+        }
+      ],
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1587,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4115
+      },
+      "metrics_before_source": "Exact-head PR-workspace reconciliation in Answer Quality Gate run 44523818685 at head 9353e8d1bc7cbbc883ffce3587d7c769293d25a5 measured 1587/854/4115 after Batch183. This is a PR-workspace measurement, not public main. It supersedes Batch183's planning expectation 1590/854/4112.",
+      "metrics_actual_before": null,
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1587,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4123
+      },
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "metrics_delta_at_batch_boundary_is_planning_only": true,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "fallback_source_attempted": true,
+      "existing_identity_updates_count": 8,
+      "existing_identity_rechecks_count": 0,
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "target_identity_count": 8,
+        "target_aids": [
+          4304430,
+          2989059,
+          5959968,
+          4296159,
+          2989062,
+          4385513,
+          2989052,
+          2989054
+        ],
+        "target_identity_matches": null,
+        "target_identity_duplicates": null,
+        "selected_unique_evidence_families": null,
+        "same_family_duplicate_presentations": [],
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "all_target_identities_answer_eligible": false,
+        "note": "The eight AIDs are existing canonical identities from batches 146, 165, 166 and 170. AID 4304430 has two same-AID presentations in batches 101 and 146 under one Evidence Family; full-index reconciliation must confirm and retain one family. Exact full-index audit remains pending. AID 4304430 duplicate presentation consolidated: batch101 remains canonical; batch146 is Linked and non-independent; both share one Evidence Family."
+      },
+      "note": "Eight existing Hebrew Sicha identities were enriched in place with eight new non-verbatim, source-grounded propositions from newly inspected body passages. No new identity, Evidence Family, independent witness or Verified promotion was added. AID 4304430 has two canonical presentations (batches 101 and 146) but one Evidence Family and is counted once. Eight alternate /therebbe routes returned rewritten browser shells; accessible he.chabad.org body pages were used as same-run fallback. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying. AID 4304430 duplicate presentation consolidated: batch101 remains canonical; batch146 is Linked and non-independent; both share one Evidence Family."
     }
   ],
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 1582,
+    "answer_eligible_unique_sources": 1587,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4103
+    "answer_eligible_propositions": 4115
   },
   "crawler_retry": false,
   "access_control_bypassed": false,
   "fallback_source_attempted": true,
   "full_text_copied": false,
-  "note": "Batch183: eight new original-language letters (seven Hebrew, one Yiddish), one in-place Sicha enrichment, one canonical duplicate excluded, and AID 4666220 blocked by a browser-compatibility shell. No crawler retry, access-control bypass, full-text copying or Verified promotion."
+  "note": "Batch183: eight new original-language letters (seven Hebrew, one Yiddish), one in-place Sicha enrichment, one canonical duplicate excluded, and AID 4666220 blocked by a browser-compatibility shell. No crawler retry, access-control bypass, full-text copying or Verified promotion.",
+  "current_batch_file": "data/items/content-research-batch-184-2026-11-19.json",
+  "last_reviewed_batch": "184",
+  "pending": true,
+  "last_reviewed_at": "2026-11-19T15:54:25+02:00",
+  "updated_at": "2026-11-19T15:54:25+02:00"
 }
