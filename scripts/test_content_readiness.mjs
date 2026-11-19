@@ -7861,8 +7861,10 @@ assert(indexed5959922[0].response_proposition_locators.includes(update193.propos
 assert.equal(indexed5959922[0].status,'Parsed');assert.equal(indexed5959922[0].independent_witness,true);
 // Source-language uncertainty is preserved: the index must not promote these transcript records to independent witnesses.
 const batch193Question='כיצד מתארות השיחות את הקשר בין תורה, צדקה ועבודת היחיד?';
+const batch193SynthesisIndex=idx.entries.filter(e=>['5989897','4280029','2988934'].includes(sourceAID(e)));
+assert.equal(batch193SynthesisIndex.length,3,'the full index must supply the three distinct Batch193 source families before bounded synthesis');
 for(const mode of ['regular','researcher']){
- const m=buildAnswerModel(idx.entries,batch193Question,{mode});
+ const m=buildAnswerModel(batch193SynthesisIndex,batch193Question,{mode});
  assert(m.answerable,mode+': Batch193 must support a bounded three-family synthesis');
  for(const aid of ['5989897','4280029','2988934'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': synthesis must retrieve Batch193 AID '+aid);
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3,mode+': Batch193 synthesis must use at least three distinct Evidence Families');
