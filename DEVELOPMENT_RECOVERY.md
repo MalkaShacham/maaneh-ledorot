@@ -1782,3 +1782,8 @@ Batch192's measured PR-workspace baseline is 1616 / 854 / 4177; the expected pos
 - נוספה סינתזה מחקרית חדשה על קירוב יהודים כשותפים, ענווה וקבלת אורחים, בשלוש Evidence Families נפרדות (AIDs 4385534, 4385834, 4304437). כל טענה נושאת locator משלה; הסינתזה מסומנת `system_synthesis_not_rebbe_quote` ומבחינה בין ההקשרים.
 - בדיקת אחזור המקווה במפלסים עברה בשני המצבים (regular ו-researcher) בריצה 44625782331. אותה ריצה חשפה חפיפה של נושא כללי ״התמדה בלימוד לצד עבודה והתחייבויות״ בשאלת השוואה בין קביעות עתים לבין עבודה במשק חקלאי; התיקון ממוקד בביטול החפיפה כשהשאלה כוללת את שני הנושאים הספציפיים.
 - PR #35 נשאר פתוח עד מעבר exact-head reconciliation, `test_content_readiness.mjs` ו-Answer Quality Gate. מדדי main הציבוריים ואתר GitHub Pages לא עודכנו בשלב זה; לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
+
+## 2026-11-20 — Batch199 content review (pending exact-head reconciliation)
+
+Eight public source bodies were inspected. Seven existing Hebrew Sicha identities were enriched in place with non-verbatim propositions at new, non-overlapping body locators. One English translation of a Yiddish letter (Chabad.org AID 101219) was added as a non-independent presentation within one Evidence Family; the original Yiddish text and cited printed pages were not inspected. AID 4666220 was not accessible through the web tool; no crawler retry or access-control bypass was attempted, and an accessible alternative was inspected. No record was promoted to Verified. The study/farming comparison display was corrected to expose each requested side as a source-located claim; exact-head tests and metric reconciliation remain pending.
