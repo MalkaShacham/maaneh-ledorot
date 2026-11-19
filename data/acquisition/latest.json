@@ -11,7 +11,7 @@
     "batch_file": "data/items/content-research-batch-172-2026-11-19.json",
     "generated": "2026-11-19T01:53:26+02:00",
     "reviewed_at": "2026-11-19T01:53:26+02:00",
-    "title": "Eleven new original-Hebrew public Sicha bodies inspected and paraphrased; two routes rate-limited; no Verified promotion.",
+    "title": "Twelve source identities/presentations reviewed: eleven original-Hebrew Sichos and one non-independent English translation of a Yiddish personal letter.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 15,
@@ -85,9 +85,7 @@
       4385482,
       5989925
     ],
-    "blocked_item_ids": [
-      "4754421"
-    ],
+    "blocked_item_ids": [],
     "excluded_aids": [
       4385482,
       5989925
@@ -142,7 +140,7 @@
       "existing_identity_bodies": 0,
       "language": "Hebrew",
       "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
+      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The memoir article does not supply or link the original Yiddish text. A separate Yiddish text result was identified as a different letter to Jacques Lipchitz and excluded as unrelated."
     },
     "deduplication_check": {
       "full_index_scan_available": false,
@@ -158,7 +156,7 @@
       "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
       "new_ids_unique": true
     },
-    "blocked_candidate_count": 3,
+    "blocked_candidate_count": 2,
     "blocked_candidates": [
       {
         "aid": 4385482,
@@ -171,12 +169,6 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
         "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
         "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
-      },
-      {
-        "item_id": "4754421",
-        "source_url": "https://www.chabad.org/torah-texts/4754421",
-        "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
-        "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
       }
     ],
     "metadata_only_candidate_count": 0,
@@ -185,15 +177,16 @@
     "excluded_candidates": [
       {
         "aid": 4385482,
-        "reason": "HTTP 429; no inspectable body."
+        "reason": "HTTP 429 Too Many Requests; no body text available; not used."
       },
       {
         "aid": 5989925,
-        "reason": "HTTP 429; no inspectable body."
+        "reason": "HTTP 429 Too Many Requests; no body text available; not used."
       },
       {
         "item_id": "4754421",
-        "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
+        "source_url": "https://www.chabad.org/torah-texts/4754421",
+        "reason": "The search result referred to a different Yiddish letter (to Jacques Lipchitz), not the Zalmon Jaffe letter. The page returned a browser-compatibility message and was excluded as an unrelated identity; no content or relationship inferred."
       }
     ],
     "crawler_retry": false,
@@ -548,7 +541,7 @@
         "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
         "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
         "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
-        "web_source_ref": "turn329084view0",
+        "web_source_ref": "turn443103view0",
         "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
         "language": "English",
         "original_language": "Yiddish",
@@ -563,8 +556,8 @@
         "proposition_verbatim": false,
         "proposition_verification": "source_text_inspected",
         "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
-        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
-        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish body not supplied or linked on this page.",
+        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המאמר אינו מספק או מקשר בעמוד זה את גוף המקור היידי; לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
         "context_status": "partial",
         "conditions_or_qualifications": [
           "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
@@ -574,12 +567,12 @@
         "existing_identity": false,
         "new_independent_witness": false,
         "action": "new_family_translation_presentation_added",
-        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
+        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. The page does not supply or link the original Yiddish body; translation is not an independent witness."
       }
     ],
     "existing_identity_updates": [],
     "existing_identity_updates_count": 0,
-    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. Full-index deduplication and final metrics pending."
+    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. The original Yiddish body was not supplied or linked on the article page. Full-index deduplication and final metrics pending."
   },
   "previous_manual_web_review": {
     "batch_id": "171",
@@ -1140,7 +1133,7 @@
     "batch_file": "data/items/content-research-batch-172-2026-11-19.json",
     "generated": "2026-11-19T01:53:26+02:00",
     "reviewed_at": "2026-11-19T01:53:26+02:00",
-    "title": "Eleven new original-Hebrew public Sicha bodies inspected and paraphrased; two routes rate-limited; no Verified promotion.",
+    "title": "Twelve source identities/presentations reviewed: eleven original-Hebrew Sichos and one non-independent English translation of a Yiddish personal letter.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 15,
@@ -1214,9 +1207,7 @@
       4385482,
       5989925
     ],
-    "blocked_item_ids": [
-      "4754421"
-    ],
+    "blocked_item_ids": [],
     "excluded_aids": [
       4385482,
       5989925
@@ -1271,7 +1262,7 @@
       "existing_identity_bodies": 0,
       "language": "Hebrew",
       "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
+      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The memoir article does not supply or link the original Yiddish text. A separate Yiddish text result was identified as a different letter to Jacques Lipchitz and excluded as unrelated."
     },
     "deduplication_check": {
       "full_index_scan_available": false,
@@ -1287,7 +1278,7 @@
       "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
       "new_ids_unique": true
     },
-    "blocked_candidate_count": 3,
+    "blocked_candidate_count": 2,
     "blocked_candidates": [
       {
         "aid": 4385482,
@@ -1300,12 +1291,6 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
         "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
         "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
-      },
-      {
-        "item_id": "4754421",
-        "source_url": "https://www.chabad.org/torah-texts/4754421",
-        "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
-        "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
       }
     ],
     "metadata_only_candidate_count": 0,
@@ -1314,15 +1299,16 @@
     "excluded_candidates": [
       {
         "aid": 4385482,
-        "reason": "HTTP 429; no inspectable body."
+        "reason": "HTTP 429 Too Many Requests; no body text available; not used."
       },
       {
         "aid": 5989925,
-        "reason": "HTTP 429; no inspectable body."
+        "reason": "HTTP 429 Too Many Requests; no body text available; not used."
       },
       {
         "item_id": "4754421",
-        "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
+        "source_url": "https://www.chabad.org/torah-texts/4754421",
+        "reason": "The search result referred to a different Yiddish letter (to Jacques Lipchitz), not the Zalmon Jaffe letter. The page returned a browser-compatibility message and was excluded as an unrelated identity; no content or relationship inferred."
       }
     ],
     "crawler_retry": false,
@@ -1677,7 +1663,7 @@
         "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
         "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
         "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
-        "web_source_ref": "turn329084view0",
+        "web_source_ref": "turn443103view0",
         "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
         "language": "English",
         "original_language": "Yiddish",
@@ -1692,8 +1678,8 @@
         "proposition_verbatim": false,
         "proposition_verification": "source_text_inspected",
         "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
-        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
-        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish body not supplied or linked on this page.",
+        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המאמר אינו מספק או מקשר בעמוד זה את גוף המקור היידי; לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
         "context_status": "partial",
         "conditions_or_qualifications": [
           "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
@@ -1703,19 +1689,19 @@
         "existing_identity": false,
         "new_independent_witness": false,
         "action": "new_family_translation_presentation_added",
-        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
+        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. The page does not supply or link the original Yiddish body; translation is not an independent witness."
       }
     ],
     "existing_identity_updates": [],
     "existing_identity_updates_count": 0,
-    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. Full-index deduplication and final metrics pending."
+    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. The original Yiddish body was not supplied or linked on the article page. Full-index deduplication and final metrics pending."
   },
   "last_manual_review": {
     "batch_id": "172",
     "batch_file": "data/items/content-research-batch-172-2026-11-19.json",
     "generated": "2026-11-19T01:53:26+02:00",
     "reviewed_at": "2026-11-19T01:53:26+02:00",
-    "title": "Eleven new original-Hebrew public Sicha bodies inspected and paraphrased; two routes rate-limited; no Verified promotion.",
+    "title": "Twelve source identities/presentations reviewed: eleven original-Hebrew Sichos and one non-independent English translation of a Yiddish personal letter.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 15,
@@ -1789,9 +1775,7 @@
       4385482,
       5989925
     ],
-    "blocked_item_ids": [
-      "4754421"
-    ],
+    "blocked_item_ids": [],
     "excluded_aids": [
       4385482,
       5989925
@@ -1846,7 +1830,7 @@
       "existing_identity_bodies": 0,
       "language": "Hebrew",
       "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
+      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The memoir article does not supply or link the original Yiddish text. A separate Yiddish text result was identified as a different letter to Jacques Lipchitz and excluded as unrelated."
     },
     "deduplication_check": {
       "full_index_scan_available": false,
@@ -1862,7 +1846,7 @@
       "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
       "new_ids_unique": true
     },
-    "blocked_candidate_count": 3,
+    "blocked_candidate_count": 2,
     "blocked_candidates": [
       {
         "aid": 4385482,
@@ -1875,12 +1859,6 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
         "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
         "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
-      },
-      {
-        "item_id": "4754421",
-        "source_url": "https://www.chabad.org/torah-texts/4754421",
-        "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
-        "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
       }
     ],
     "metadata_only_candidate_count": 0,
@@ -1889,15 +1867,16 @@
     "excluded_candidates": [
       {
         "aid": 4385482,
-        "reason": "HTTP 429; no inspectable body."
+        "reason": "HTTP 429 Too Many Requests; no body text available; not used."
       },
       {
         "aid": 5989925,
-        "reason": "HTTP 429; no inspectable body."
+        "reason": "HTTP 429 Too Many Requests; no body text available; not used."
       },
       {
         "item_id": "4754421",
-        "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
+        "source_url": "https://www.chabad.org/torah-texts/4754421",
+        "reason": "The search result referred to a different Yiddish letter (to Jacques Lipchitz), not the Zalmon Jaffe letter. The page returned a browser-compatibility message and was excluded as an unrelated identity; no content or relationship inferred."
       }
     ],
     "crawler_retry": false,
@@ -2252,7 +2231,7 @@
         "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
         "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
         "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
-        "web_source_ref": "turn329084view0",
+        "web_source_ref": "turn443103view0",
         "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
         "language": "English",
         "original_language": "Yiddish",
@@ -2267,8 +2246,8 @@
         "proposition_verbatim": false,
         "proposition_verification": "source_text_inspected",
         "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
-        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
-        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish body not supplied or linked on this page.",
+        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המאמר אינו מספק או מקשר בעמוד זה את גוף המקור היידי; לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
         "context_status": "partial",
         "conditions_or_qualifications": [
           "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
@@ -2278,12 +2257,12 @@
         "existing_identity": false,
         "new_independent_witness": false,
         "action": "new_family_translation_presentation_added",
-        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
+        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. The page does not supply or link the original Yiddish body; translation is not an independent witness."
       }
     ],
     "existing_identity_updates": [],
     "existing_identity_updates_count": 0,
-    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. Full-index deduplication and final metrics pending."
+    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. The original Yiddish body was not supplied or linked on the article page. Full-index deduplication and final metrics pending."
   },
   "manual_web_review_history": [
     {
@@ -14298,7 +14277,7 @@
       "batch_file": "data/items/content-research-batch-172-2026-11-19.json",
       "generated": "2026-11-19T01:53:26+02:00",
       "reviewed_at": "2026-11-19T01:53:26+02:00",
-      "title": "Eleven new original-Hebrew public Sicha bodies inspected and paraphrased; two routes rate-limited; no Verified promotion.",
+      "title": "Twelve source identities/presentations reviewed: eleven original-Hebrew Sichos and one non-independent English translation of a Yiddish personal letter.",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
       "reviewed_item_count": 15,
@@ -14372,9 +14351,7 @@
         4385482,
         5989925
       ],
-      "blocked_item_ids": [
-        "4754421"
-      ],
+      "blocked_item_ids": [],
       "excluded_aids": [
         4385482,
         5989925
@@ -14429,7 +14406,7 @@
         "existing_identity_bodies": 0,
         "language": "Hebrew",
         "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-        "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
+        "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The memoir article does not supply or link the original Yiddish text. A separate Yiddish text result was identified as a different letter to Jacques Lipchitz and excluded as unrelated."
       },
       "deduplication_check": {
         "full_index_scan_available": false,
@@ -14445,7 +14422,7 @@
         "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
         "new_ids_unique": true
       },
-      "blocked_candidate_count": 3,
+      "blocked_candidate_count": 2,
       "blocked_candidates": [
         {
           "aid": 4385482,
@@ -14458,12 +14435,6 @@
           "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
           "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
           "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
-        },
-        {
-          "item_id": "4754421",
-          "source_url": "https://www.chabad.org/torah-texts/4754421",
-          "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
-          "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
         }
       ],
       "metadata_only_candidate_count": 0,
@@ -14472,15 +14443,16 @@
       "excluded_candidates": [
         {
           "aid": 4385482,
-          "reason": "HTTP 429; no inspectable body."
+          "reason": "HTTP 429 Too Many Requests; no body text available; not used."
         },
         {
           "aid": 5989925,
-          "reason": "HTTP 429; no inspectable body."
+          "reason": "HTTP 429 Too Many Requests; no body text available; not used."
         },
         {
           "item_id": "4754421",
-          "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
+          "source_url": "https://www.chabad.org/torah-texts/4754421",
+          "reason": "The search result referred to a different Yiddish letter (to Jacques Lipchitz), not the Zalmon Jaffe letter. The page returned a browser-compatibility message and was excluded as an unrelated identity; no content or relationship inferred."
         }
       ],
       "crawler_retry": false,
@@ -14835,7 +14807,7 @@
           "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
           "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
           "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
-          "web_source_ref": "turn329084view0",
+          "web_source_ref": "turn443103view0",
           "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
           "language": "English",
           "original_language": "Yiddish",
@@ -14850,8 +14822,8 @@
           "proposition_verbatim": false,
           "proposition_verification": "source_text_inspected",
           "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
-          "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
-          "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+          "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish body not supplied or linked on this page.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המאמר אינו מספק או מקשר בעמוד זה את גוף המקור היידי; לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
           "context_status": "partial",
           "conditions_or_qualifications": [
             "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
@@ -14861,12 +14833,12 @@
           "existing_identity": false,
           "new_independent_witness": false,
           "action": "new_family_translation_presentation_added",
-          "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
+          "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. The page does not supply or link the original Yiddish body; translation is not an independent witness."
         }
       ],
       "existing_identity_updates": [],
       "existing_identity_updates_count": 0,
-      "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. Full-index deduplication and final metrics pending."
+      "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. The original Yiddish body was not supplied or linked on the article page. Full-index deduplication and final metrics pending."
     }
   ],
   "manual_web_review_current_metrics": {
@@ -14874,7 +14846,7 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4012
   },
-  "last_run_note": "Batch172: 11 Hebrew Sicha bodies and one English translated letter body inspected; translation marked non-independent; three blocked routes documented; no crawler retry or Verified promotion.",
+  "last_run_note": "Batch172: 11 Hebrew Sicha bodies and one English translated letter body inspected; translation marked non-independent; two HTTP 429 blocks documented; an unrelated Yiddish result was excluded; no crawler retry or Verified promotion.",
   "next_action": "Run exact-head full-index reconciliation for Batches170–172, verify the Batch172 AIDs and translated-letter Evidence Family, and pass test_content_readiness.mjs before merge.",
   "current_batch_file": "data/items/content-research-batch-172-2026-11-19.json",
   "pending": true,
