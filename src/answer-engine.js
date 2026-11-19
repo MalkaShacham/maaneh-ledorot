@@ -4,7 +4,7 @@ const STOP=new Set('מה למה מדוע הרבי אמר אומר אומרים �
 const queryToken=s=>{if(!/^[א-ת]+$/.test(s)||STOP.has(s)||s==='מספר')return s;let t=s.replace(/^[ובכלמש]ה(?=.{3,})/,'');if(t===s&&t.length>3&&/^[ובכלמשה]/.test(t))t=t.slice(1);return t;};
 const TOPICS={
  'לימוד חסידות ומעשה בפועל':['לימוד חסידות ומעשה בפועל','חסידות למעשה','קיום המצוות מתוך חיות','הפצת המעיינות כמעשה','practical Chassidus and action'],
- חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','education','child','children','school','teacher','chinuch','קינדער'],
+ חינוך:['חינוך','ילד','ילדים','תלמיד','מורה','מחנך','מחנכת','בית יעקב','education','child','children','school','teacher','chinuch','Beis Yaakov','קינדער'],
  דאגה:['דאג','חרד','חרדה','פחד','בטחון','anxiety','worry','fear','bitachon'],
  בריאות:['בריאות','רפואה','רופא','health','medical','doctor','refuah'],
  מזוזה:['מזוז','mezuzah','mezuza'], נשים:['נשים','אשה','אמא','אם המשפחה','woman','women','mother','פרוי','פרויען'],
@@ -43,7 +43,10 @@ const TOPICS={
  'ידיעה ובחירה חופשית':['ידיעת ה׳','ידיעת השם','ידיעה ובחירה','בחירה חופשית','free choice','divine foreknowledge','foreknowledge'],
  'השגחה פרטית':['השגחה פרטית','השגחה על כל פרט','השגחה על דומם צומח וחי','דומם','צומח','בעלי חיים','divine providence','hashgachah peratis'],
  שליחות:['שליח','שליחות','shliach','shlichus','mission'],
- נישואין:['שלום בית','נישוא','חתונ','אשה','marriage','wedding','husband','wife','sholom bayis'],
+ נישואין:['שלום בית','נישוא','חתונ','שידוך','שידוכים','אשה','marriage','wedding','husband','wife','shidduch','shidduchim','sholom bayis'],
+ 'טהרת המשפחה':['טהרת המשפחה','דיני טהרת המשפחה','טהרה','נדה','מקווה','family purity','taharat hamishpacha','niddah','mikvah'],
+ 'לימוד תורה וקביעות עתים':['לימוד תורה','קביעות עתים לתורה','קביעות עתים','לימוד פנימיות התורה','פנימיות התורה','Torah study','fixed times for Torah study','Torah learning'],
+ צדקה:['צדקה','צדקה רוחנית','צדקה גשמית','מעשר','tzedakah','charity','spiritual charity','material charity'],
  'לימוד הלכה':['הלכה','הלכות','קיצור שולחן ערוך','לימוד הלכה','practical halacha','halacha','halachic study'],
  'שיקום לאחר פיגוע':['שיקום','פיגוע','אחרי הפיגוע','לאחר הפיגוע','recovery after attack','attack recovery'],
  'הרחבת ישיבה':['הרחבת החינוך הישיבתי','קליטת תלמידים נוספים','קליטת תלמידים','לקלוט תלמידים המבקשים להיכנס לישיבה','תלמידים המבקשים להיכנס לישיבה','להרחיב את החדרים בבניין','הרחבת חדרי הישיבה','הרחבת מבנה הישיבה','מספר התלמידים בישיבה','הגדלת מספר התלמידים','ריבוי תלמידים בישיבה','הרחבת הישיבה','להגדיל','לפעול להגדלה ניכרת','הרחבת מספר הלומדים','גיוס המספר הגדול ביותר של תלמידים מתאימים','תוספת של יותר ממאתיים תלמידים','להקל במידת ההתאמה','admission of additional students','admit students to yeshiva','yeshiva building expansion','yeshiva enrollment','increase yeshiva enrollment'],
