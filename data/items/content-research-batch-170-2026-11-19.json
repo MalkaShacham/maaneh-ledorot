@@ -17,17 +17,17 @@
   "metadata_only_items_rechecked": 1,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 8,
+  "new_source_identities": 7,
   "existing_identities_enriched": 2,
-  "existing_identities_rechecked": 0,
-  "new_response_propositions": 8,
+  "existing_identities_rechecked": 1,
+  "new_response_propositions": 7,
   "existing_response_propositions_added": 2,
-  "total_new_paraphrase_entries": 10,
-  "answer_eligible_source_families_added": 8,
-  "independent_witnesses_added": 8,
+  "total_new_paraphrase_entries": 9,
+  "answer_eligible_source_families_added": 7,
+  "independent_witnesses_added": 7,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
-  "duplicate_alias_identities": 0,
+  "duplicate_alias_identities": 1,
   "source_languages": [
     "Hebrew"
   ],
@@ -45,7 +45,6 @@
     "Maamarim": 1
   },
   "new_aids": [
-    2988933,
     2989059,
     2989147,
     2989220,
@@ -58,7 +57,9 @@
     4279876,
     4296226
   ],
-  "rechecked_aids": [],
+  "rechecked_aids": [
+    2988933
+  ],
   "reviewed_aids": [
     2988661,
     2988933,
@@ -132,31 +133,27 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4012
   },
-  "metrics_actual_before": {
-    "answer_eligible_unique_sources": 1540,
-    "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4012
-  },
+  "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1548,
+    "answer_eligible_unique_sources": 1547,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4022
+    "answer_eligible_propositions": 4021
   },
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "reconciliation_variance": null,
-  "metrics_note": "Planning boundary only until exact-head reconciliation measures the full current corpus. Batch169 reconciliation in Answer Quality Gate run 44409060151 measured 1540 / 854 / 4012 after Batch169; that run later failed at a historical Batch089 variance assertion. These are PR-workspace metrics, not public main metrics.",
+  "metrics_note": "Corrected after exact-head audit: AID 2988933 was already canonical in Batch141 with the same Evidence Family. The duplicate Batch170 record was removed; only seven new identities and two in-place enrichments remain. Batch171's additional AID 2988933 proposition is consolidated into Batch141. Final actual metrics are set only by full-index reconciliation.",
   "metrics_before_source": "Answer Quality Gate run 44409060151, scripts/reconcile_metrics.py output after Batch169: 1540 / 854 / 4012. The run did not complete readiness and these figures are not public main metrics.",
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 8,
+    "answer_eligible_unique_sources": 7,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 10
+    "answer_eligible_propositions": 9
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
   "metrics_attribution_note": "Eight new distinct Hebrew source identities add eight Evidence Families and eight propositions; two existing Hebrew identities receive one additional proposition each. All remain Parsed; zero Verified promotions.",
   "deduplication_check": {
-    "full_index_scan_available": true,
-    "full_index_scan_pending_reconciliation": false,
+    "full_index_scan_available": false,
+    "full_index_scan_pending_reconciliation": true,
     "public_search_index_snapshot": "data/public-search-index.json generated 2026-11-15; candidate AID scan combined with all content-research-batch files 150–169 and exact canonical files for AIDs 4296226 and 4279876.",
     "batch_files_checked": "content-research-batch-150 through content-research-batch-169 (20 files); AID 4296226 matched batch143 and AID 4279876 matched batch153.",
     "target_identity_matches": 10,
@@ -167,7 +164,7 @@
     "all_target_identities_answer_eligible": null,
     "same_family_items": [],
     "translations_counted_as_independent_witnesses": 0,
-    "note": "Eight proposed new AIDs were absent from the 2026-11-15 full public-search-index and batch files 150–169. The two enriched AIDs 4296226 and 4279876 each resolve to exactly one existing canonical record with unchanged Evidence Family. AID 5989700 was already represented in the canonical corpus; AID 2989556 was opened but not selected for body-level review, so no duplicate status is asserted. The collection page and two rate-limited routes were excluded. Exact current-head reconciliation remains pending."
+    "note": "The exact-head run found AID 2988933 in both Batch141 and Batch170 under the same Evidence Family. The duplicate Batch170 record has now been removed and its later distinct proposition consolidated into the Batch141 canonical record. The next exact-head full-index reconciliation must verify one canonical AID and no collision."
   },
   "source_body_review": [
     {
@@ -359,7 +356,7 @@
     {
       "item_aid": 2988933,
       "id": "chabad-sicha-2988933",
-      "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
       "evidence_family_id": "sicha-5716-simchat-torah-aid2988933",
       "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2988933",
       "web_source_ref": "turn804157view1",
@@ -383,9 +380,10 @@
       "conditions_or_qualifications": [
         "זהו מהלך רעיוני בשיחה ולא פסיקה הלכתית עצמאית לכל פעולה; נבדקו רק הסעיפים המצוטטים."
       ],
-      "existing_identity": false,
-      "new_independent_witness": true,
-      "action": "new_identity_created"
+      "existing_identity": true,
+      "new_independent_witness": false,
+      "action": "duplicate_alias_recheck",
+      "note": "Exact-head reconciliation found the same AID and Evidence Family already canonical in Batch141. This inspection adds no new identity or proposition; later Batch171 content was consolidated into Batch141."
     },
     {
       "item_aid": 2989220,
@@ -541,7 +539,16 @@
     }
   ],
   "existing_identity_updates_count": 2,
-  "existing_identity_rechecks": [],
+  "existing_identity_rechecks": [
+    {
+      "aid": 2988933,
+      "id": "chabad-sicha-2988933",
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "evidence_family_id": "sicha-5716-simchat-torah-aid2988933",
+      "action": "duplicate_alias_recheck",
+      "note": "Same AID and same Evidence Family already existed in Batch141; duplicate Batch170 record removed. No independent witness or new proposition is counted."
+    }
+  ],
   "expected_answer_eligible_source_families_added": 8,
   "records": [
     {
@@ -1178,111 +1185,6 @@
       "last_content_enriched_at": "2026-11-19T01:23:46+02:00"
     },
     {
-      "id": "chabad-sicha-2988933",
-      "canonical_key": "aid:2988933",
-      "aid": 2988933,
-      "title": "שיחת יום שמחת תורה, ה׳תשט״ז — בלתי מוגה",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה עברי שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; נבדק רק המקטע המצוין.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "source_text_inspected",
-      "date_original": "יום שמחת תורה, ה׳תשט״ז",
-      "date_precision": "calendar_day",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "public_talk_transcript",
-      "collection": "שיחות ומאמרים / BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2988933",
-      "context_status": "partial",
-      "summary_researcher": "הדיון מחלק תחילה את המעשים לחיוב, איסור ורשות, ואז מסביר כי במסגרת הדרישה ״בכל דרכיך דעהו״ אין תחום ניטרלי: פעולה שנעשית מתוך כוונה שתסייע לעבודת ה׳ עשויה להיחשב מצווה, הכשר מצווה או הכנה למצווה; פעולה שנעשית ביודעין ללא תכלית כזו מתוארת במקטע כעניין אסור.",
-      "response_propositions": [
-        "הדיון מחלק תחילה את המעשים לחיוב, איסור ורשות, ואז מסביר כי במסגרת הדרישה ״בכל דרכיך דעהו״ אין תחום ניטרלי: פעולה שנעשית מתוך כוונה שתסייע לעבודת ה׳ עשויה להיחשב מצווה, הכשר מצווה או הכנה למצווה; פעולה שנעשית ביודעין ללא תכלית כזו מתוארת במקטע כעניין אסור.",
-        "בחלק על שמחת בית השואבה השיחה מציבה זה לצד זה את שמחת מי ששמר על עצמו מילדות ואת שמחת בעלי התשובה, ומביאה את שני הקולות כמתכנסים באמירה שמי שלא חטא אשריו ומי שחטא ישוב וימחלו לו. בהמשך היא מקשה מדוע נאמר הדבר מיד לאחר ראש השנה ויום הכיפורים, ומתחילה לקשור זאת לסדר חשבון העוונות בחג הסוכות. זהו מהלך דרשני בתוך דיון על שמחת בית השואבה, לא פסיקה ממצה בדיני תשובה."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org AID 2988933, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189.",
-        "he.chabad.org AID 2988933, גוף השיחה, סעיף ב׳, שורות 195–203."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 2988933, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189.",
-      "evidence_family_id": "sicha-5716-simchat-torah-aid2988933",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988933, he.chabad.org AID 2988933, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. זהו מהלך רעיוני בשיחה ולא פסיקה הלכתית עצמאית לכל פעולה; נבדקו רק הסעיפים המצוטטים. לא הועתק טקסט מוגן במלואו. Additional inspected passage: he.chabad.org AID 2988933, גוף השיחה, סעיף ב׳, שורות 195–203. (2026-11-19); partial context only; no recording, manuscript, autograph or edited-edition collation.",
-      "documented_circumstances": "יום שמחת תורה, ה׳תשט״ז; תמליל שיחה עברי שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; נבדק רק המקטע המצוין.",
-      "question_or_problem": "כיצד השיחה מצמצמת את תחום ה״רשות״ במסגרת העיקרון ״בכל דרכיך דעהו״?",
-      "conditions_or_qualifications": [
-        "זהו מהלך רעיוני בשיחה ולא פסיקה הלכתית עצמאית לכל פעולה; נבדקו רק הסעיפים המצוטטים.",
-        "נבדק רק המקטע המצוין; אין להסיק ממנו על חלקים שלא נפתחו.",
-        "הפרסום מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד, אוטוגרף או נוסח מוגה.",
-        "הפרפרזה אינה ציטוט, ואין לייחס את ניסוחה למערכת או לדברי הרבי.",
-        "הקטע הוא דרשה על שמחת בית השואבה והקשר לחג הסוכות; אין להשתמש בו כפסיקה ממצה בדיני תשובה."
-      ],
-      "audience": "קוראי שיחת שמחת תורה; הקטע עוסק בסיווג פעולות האדם במסגרת עבודת ה׳.",
-      "primary_secondary_status": "Primary publisher-published Hebrew unedited public-talk transcript; no recording, manuscript, autograph or edited edition was collated.",
-      "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "witness_provenance": "BeitChabad.com / Chabad.org, AID 2988933, שיחת יום שמחת תורה, ה׳תשט״ז — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/2988933",
-      "independent_witness": true,
-      "translation_status": "גוף הפרסום העברי המקורי נבדק; לא נבדק תרגום ולא נספר תרגום כעד עצמאי.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את הפרסום לדברי הרבי; ההקלטה, כתב היד והרישום בן הזמן לא נבדקו בנפרד.",
-      "source_role": "oral_talk_transcript",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "provenance": {
-        "authorship_status": "המו״ל מייחס את הפרסום לדברי הרבי; ההקלטה, כתב היד והרישום בן הזמן לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / Chabad.org, AID 2988933, שיחת יום שמחת תורה, ה׳תשט״ז — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/2988933",
-        "transmission_type": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
-        "textual_status": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988933, he.chabad.org AID 2988933, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. זהו מהלך רעיוני בשיחה ולא פסיקה הלכתית עצמאית לכל פעולה; נבדקו רק הסעיפים המצוטטים. לא הועתק טקסט מוגן במלואו. Additional body passage inspected: he.chabad.org AID 2988933, גוף השיחה, סעיף ב׳, שורות 195–203.; bounded non-verbatim paraphrase only.",
-        "editorial_scope": "Two bounded non-verbatim source-grounded research propositions with item-level locators; no full protected text reproduced.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no manuscript, recording or edited-edition collation.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2988933",
-        "accessed": "2026-11-19T01:23:46+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "גוף הפרסום העברי נפתח ונבדק במיקום he.chabad.org AID 2988933, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189.; העמוד מסומן בלתי מוגה או הנחה בלתי מוגה. Additional inspected Hebrew body passage: he.chabad.org AID 2988933, גוף השיחה, סעיף ב׳, שורות 195–203..",
-        "complete_partial": "partial",
-        "notes": "נבדקו רק השורות המצוינות וההקשר הסמוך. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. זהו מהלך רעיוני בשיחה ולא פסיקה הלכתית עצמאית לכל פעולה; נבדקו רק הסעיפים המצוטטים. The additional proposition is limited to the new locator; context remains partial."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור ופרפרזה מחקרית תחומה בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות נפרדת לפי AID 2988933 ומשפחת הראיות sicha-5716-simchat-torah-aid2988933; תרגומים ופרסומים מקבילים ייקשרו לאותה Evidence Family ולא ייספרו כעדים עצמאיים.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת יום שמחת תורה, ה׳תשט״ז — בלתי מוגה"
-        ],
-        "research_terms": [
-          "בכל דרכיך דעהו",
-          "רשות",
-          "מצוות",
-          "כוונה",
-          "שמחת תורה"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed. נבדק רק המקטע המצוין; אין קידום ל-Verified. זהו מהלך רעיוני בשיחה ולא פסיקה הלכתית עצמאית לכל פעולה; נבדקו רק הסעיפים המצוטטים. Batch171 appended one additional source-grounded proposition in place; identity, Evidence Family and Parsed status unchanged.",
-      "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-      "content_enrichment_batch_id": "171",
-      "last_content_enriched_at": "2026-11-19T01:23:46+02:00"
-    },
-    {
       "id": "chabad-sicha-2989220",
       "canonical_key": "aid:2989220",
       "aid": 2989220,
@@ -1388,5 +1290,6 @@
       "content_enrichment_batch_id": "171",
       "last_content_enriched_at": "2026-11-19T01:23:46+02:00"
     }
-  ]
+  ],
+  "reconciled_at": null
 }
