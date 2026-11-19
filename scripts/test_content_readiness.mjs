@@ -3994,7 +3994,8 @@ for(const aid of batch125Aids){
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');
  assert(e.proposition_source_locator&&e.provenance&&e.verification_scope&&e.context_status==='partial');
  assert.equal(e.response_propositions.length,e.response_proposition_locators.length);assert.equal(e.response_propositions.length,u.total_propositions_after);
- assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);
+ if(Number(r.aid)===2988859){assert.equal(e.independent_witness,false);assert.equal(e.translation_of_evidence_family_id,e.evidence_family_id);}
+ else{assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);}
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
 }
 const recovered528810=idx.entries.find(e=>sourceAID(e)==='528810');
@@ -6724,16 +6725,16 @@ assert.equal(batch176Data.source_bodies_inspected,9);assert.equal(batch176Data.s
 assert.equal(batch176Data.metadata_only_items_rechecked,1);
 assert.equal(batch176Data.new_source_identities,9);assert.equal(batch176Data.existing_identities_enriched,0);
 assert.equal(batch176Data.new_response_propositions,9);assert.equal(batch176Data.total_new_paraphrase_entries,9);
-assert.equal(batch176Data.answer_eligible_source_families_added,9);assert.equal(batch176Data.independent_witnesses_added,9);
-assert.equal(batch176Data.non_independent_presentations_added,0);assert.equal(batch176Data.content_verified_unique_sources_added,0);
+assert.equal(batch176Data.answer_eligible_source_families_added,9);assert.equal(batch176Data.independent_witnesses_added,8);
+assert.equal(batch176Data.non_independent_presentations_added,1);assert.equal(batch176Data.content_verified_unique_sources_added,0);
 assert.equal(batch176Data.records.length,9);assert.equal(new Set(batch176Data.records.map(r=>r.aid)).size,9);
 assert.equal(new Set(batch176Data.records.map(r=>r.evidence_family_id)).size,9);
 assert.deepEqual(batch176Data.language_distribution,{Hebrew:8,Yiddish:1});
-assert.deepEqual(batch176Data.original_language_distribution,{Hebrew:8,Yiddish:1});
+assert.deepEqual(batch176Data.original_language_distribution,{Hebrew:7,Yiddish:2});
 assert.deepEqual(batch176Data.proposition_language_distribution,{Hebrew:9});
 assert.equal(batch176Data.blocked_candidate_count,1);assert.equal(Number(batch176Data.blocked_candidates[0].aid),554871);
 assert.equal(batch176Data.fallback_source_attempted,true);
-assert.equal(batch176Data.fallback_source_results.accessible_original_language_bodies,9);
+assert.equal(batch176Data.fallback_source_results.accessible_original_language_bodies,8);
 assert.equal(batch176Data.crawler_retry,false);assert.equal(batch176Data.access_control_bypassed,false);
 assert.equal(batch176Data.full_text_copied,false);assert.equal(batch176Data.scan_only_verification_used,false);
 assert.equal(batch176Data.deduplication_check.full_index_scan_available,true);
@@ -6759,10 +6760,19 @@ assert(batch176Yiddish&&batch176Yiddish.language==='Yiddish'&&batch176Yiddish.or
 assert(batch176Yiddish.translation_status.includes('not counted as an independent witness'));
 assert.equal(batch176Yiddish.independent_witness,true);
 assert.equal(batch176Yiddish.response_proposition_metadata[0].proposition_verification,'source_text_inspected');
+
+const batch176YiddishPresentation=batch176Data.records.find(r=>r.aid===2988859);
+assert(batch176YiddishPresentation&&batch176YiddishPresentation.language==='Hebrew'&&batch176YiddishPresentation.original_language==='Yiddish');
+assert.equal(batch176YiddishPresentation.independent_witness,false);
+assert.equal(batch176YiddishPresentation.translation_of_evidence_family_id,batch176YiddishPresentation.evidence_family_id);
+assert(batch176YiddishPresentation.translation_status.includes('not an independent witness'));
+assert(batch176YiddishPresentation.proposition_source_locator.includes('הערת המו״ל 51'));
+
 assert.equal(batch176Data.records.filter(r=>r.language==='Hebrew').length,8);
 assert(batch176Data.source_body_review.filter(r=>r.body_text_inspected).length===9);
+assert(batch176Data.source_body_review.filter(r=>r.inspected_original_language_body).length===8);
 assert(batch176Data.source_body_review.some(r=>Number(r.aid)===554871&&r.body_text_inspected===false));
-assert.equal(batch176Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch176Data.translations_added,1);assert.equal(batch176Data.translations_counted_as_independent_witnesses,0);
 const batch176DistributionQuestion='מה נאמר על פרסום סיפורים, מנהגי חסידות וחזרה על מאמרים?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch176DistributionQuestion,{mode});
