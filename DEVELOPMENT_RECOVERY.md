@@ -1575,3 +1575,15 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - Preliminary exact-AID review found AIDs 4280029 and 4736086 in their existing canonical records; the seven new AIDs were not found in the review queue or the reviewed recent batch files. A full canonical scan is still pending; older corpus files were not all searched.
 - Planning boundary only: 1568/854/4080 → 1575/854/4090. This is not a measured post-reconciliation count. Public main metrics remain unchanged until merge and post-merge reconciliation.
 - Next gate: exact-head full-index reconciliation and `test_content_readiness.mjs` through Batch180. PR #35 remains unmerged until the complete Answer Quality Gate is green.
+
+
+## 2026-11-19 — Batch181: nine English Yechidus bodies and one Yiddish in-place enrichment
+
+- Opened and inspected nine distinct dated English Yechidus publisher bodies: AIDs 2514886, 2515046, 2514160, 2513225, 2499828, 2511676, 2511792, 2511754 and 2512299. Each contributes one bounded Hebrew research paraphrase with a body-line locator, provenance, partial-context scope and explicit limits.
+- Enriched existing AID 4736086 in place in Batch107 from the Yiddish original, sections יא–יג, lines 355–382. Its existing ID and Evidence Family were retained; the parallel English rendering is not an independent witness.
+- Three Hebrew routes (AIDs 2514886, 2515046 and 2514160) returned Internal Error through the public reader. The corresponding English publisher bodies were inspected in the same run. No crawler retry or access-control bypass was attempted.
+- All nine new English presentations remain Parsed, non-independent and partial-context. No Verified promotion; no full copyrighted text copied.
+- Preliminary exact-AID checks returned no matches in the default-branch code search and no matches in recent batches 175–180. This is not a full canonical scan; full-index identity and Evidence Family reconciliation remains pending.
+- Planning boundary only, carried forward from Batch180 expected boundary: **1,575 / 854 / 4,090 → 1,584 / 854 / 4,100**. These are not measured results. Public main metrics remain **977 / 878 / 2,950** until merge and post-merge reconciliation.
+- test_content_readiness.mjs was extended through Batch181 and now includes a multi-family unity synthesis check in both regular and deep researcher modes, with claim-level citation and derived-translation integrity assertions.
+- PR #35 remains unmerged pending the exact-head Answer Quality Gate. No new main commit or Pages deployment is claimed. The hourly schedule, repository audience and permissions are unchanged.
