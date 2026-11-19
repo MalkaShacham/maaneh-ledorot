@@ -6597,7 +6597,11 @@ for(const r of batch172Data.records){
  assert.equal(e.status,'Parsed');
  if(r.id===batch172LetterId){assert.equal(e.independent_witness,false);assert.equal(e.translation_of_evidence_family_id,e.evidence_family_id);assert.equal(e.language,'English');assert.equal(e.original_language,'Yiddish');}
  else{assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);assert.equal(e.language,'Hebrew');assert.equal(e.original_language,'Hebrew');}
- assert.equal(e.response_propositions.length,1);assert.equal(e.response_proposition_locators.length,1);
+ assert.equal(e.response_propositions.length,2);assert.equal(e.response_proposition_locators.length,2);
+ const batch177Passage=batch177Data.source_body_review.find(x=>String(x.item_aid??x.aid)===String(r.aid));
+ assert(batch177Passage&&batch177Passage.proposition,'Batch177 must retain the in-place second passage audit for AID '+r.aid);
+ assert(e.response_propositions.includes(batch177Passage.proposition),'Batch177 proposition must be present in canonical AID '+r.aid);
+ assert(e.response_proposition_locators.some(l=>String(l).includes(batch177Passage.source_body_locator||batch177Passage.locator)),'Batch177 locator must remain attached to AID '+r.aid);
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');
 }
 const torahStudyEffortQuestion='כיצד מחברות השיחות בין לימוד תורה בעיון, יגיעה אישית וקיום בפועל?';

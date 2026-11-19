@@ -20,9 +20,9 @@
   "new_source_identities": 7,
   "existing_identities_enriched": 0,
   "existing_identities_rechecked": 2,
-  "new_response_propositions": 14,
+  "new_response_propositions": 7,
   "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 14,
+  "total_new_paraphrase_entries": 7,
   "answer_eligible_source_families_added": 7,
   "independent_witnesses_added": 6,
   "non_independent_presentations_added": 1,
@@ -126,7 +126,7 @@
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
   "metrics_attribution_note": "Nine distinct event-level source identities are proposed; all remain Parsed. The full canonical identity and Evidence Family scan must confirm uniqueness before any answer-eligible count is claimed.",
-  "metrics_note": "After full-index collision review, AIDs 4304430 and 4736086 were excluded as duplicate presentations of canonical identities in Batches101 and107. Seven new source identities remain (six independent Hebrew witnesses and one derived Hebrew presentation of an edited Yiddish source); seven new non-verbatim propositions remain. These are planning boundaries until exact-head reconciliation completes.",
+  "metrics_note": "Batch176 introduced seven new source-grounded propositions (one per new identity). Batch177 later added a second, distinct proposition to each of the seven surviving canonical records; the current records therefore contain 14 total propositions, attributed 7 to Batch176 and 7 to Batch177. Two duplicate AIDs were excluded.",
   "deduplication_check": {
     "full_index_scan_available": true,
     "full_index_scan_pending_reconciliation": false,
@@ -1405,5 +1405,6 @@
       "action": "excluded_duplicate_existing_identity",
       "reason": "AID 4736086 is already canonical in Batch107 and was enriched in Batch153. The inspected Yiddish passage overlaps the existing canonical proposition; the same-page English translation is derived and is not a separate witness."
     }
-  ]
+  ],
+  "canonical_response_propositions_after_batch177": 14
 }
