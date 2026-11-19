@@ -1,13 +1,117 @@
 {
   "schema": "maaneh-ledorot-acquisition-latest-v1",
-  "started_at": "2026-11-19T13:24:13+02:00",
-  "attempted": 13,
-  "discovered": 9,
+  "started_at": "2026-11-19T14:02:27+02:00",
+  "attempted": 11,
+  "discovered": 8,
   "enriched": 1,
-  "blocked": 3,
-  "skipped": 0,
+  "blocked": 1,
+  "skipped": 1,
   "status": "pending_reconciliation",
   "manual_web_review": {
+    "schema": "maaneh-ledorot-content-research-batch-v1",
+    "batch_id": "183",
+    "batch_file": "data/items/content-research-batch-183-2026-11-19.json",
+    "generated": "2026-11-19T14:02:27+02:00",
+    "reviewed_at": "2026-11-19T14:02:27+02:00",
+    "title": "Batch183 — eight new original-language Igrot Kodesh letters (seven Hebrew, one Yiddish), one in-place Sicha enrichment, duplicate exclusion and browser-shell fallback",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 11,
+    "source_bodies_inspected": 10,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 1,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 8,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "source_languages": [
+      "Hebrew",
+      "Yiddish"
+    ],
+    "language_distribution": {
+      "Hebrew": 7,
+      "Yiddish": 1
+    },
+    "original_language_distribution": {
+      "Hebrew": 7,
+      "Yiddish": 1
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 9
+    },
+    "source_type_distribution": {
+      "Letters": 8,
+      "Sichos": 1
+    },
+    "new_aids": [
+      4645972,
+      4831491,
+      4646057,
+      5054374,
+      4831547,
+      5413680,
+      4731070,
+      5019667
+    ],
+    "enriched_aids": [
+      2989059
+    ],
+    "blocked_aids": [
+      4666220
+    ],
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה ל-/torah-texts/4666220/page/default.htm והציג דרישת דפדפן חדש; לא התקבל גוף מכתב קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נבדקו שמונה גופי מכתבים אחרים ועוד שני גופים לצורך העשרה ובדיקת כפילות."
+      }
+    ],
+    "excluded_duplicate_candidate_count": 1,
+    "excluded_duplicate_candidates": [
+      {
+        "aid": 4666247,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666247/jewish/page.htm",
+        "canonical_file": "data/items/igrot-kodesh-v2-letter-208-aid-4666247.json",
+        "canonical_id": "igrot-kodesh-v2-letter-208-aid-4666247",
+        "evidence_family_id": "original-letter-aid-4666247",
+        "action": "excluded_duplicate_existing_identity",
+        "reason": "AID 4666247 already exists canonically with three content propositions in the same Evidence Family; the opened publisher page is a parallel presentation of that same letter, so no new identity, Evidence Family or proposition is counted."
+      }
+    ],
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1582,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4103
+    },
+    "metrics_before_source": "Planning baseline from Batch182 metrics_expected_after (1582/854/4103); not a measured main/public snapshot. Exact-head reconciliation is required.",
+    "metrics_actual_before": null,
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1590,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4112
+    },
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "reconciliation_variance": null,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "fallback_source_attempted": true,
+    "source_body_pages_opened": 11,
+    "source_body_pages_attempted": 11,
+    "search_extracts_inspected": 11,
+    "search_extracts_used_as_content": 0,
+    "existing_identity_updates_count": 1,
+    "existing_identity_rechecks_count": 0
+  },
+  "previous_manual_web_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
     "batch_id": "182",
     "batch_file": "data/items/content-research-batch-182-2026-11-19.json",
@@ -95,230 +199,213 @@
     "metrics_delta_actual": null,
     "reconciliation_variance": null
   },
-  "previous_manual_web_review": {
-    "batch_id": "181",
-    "batch_file": "data/items/content-research-batch-181-2026-11-19.json",
-    "generated": "2026-11-19T12:56:43+02:00",
-    "title": "Batch181: nine distinct English Yechidus bodies inspected, three Hebrew routes blocked, and one existing Yiddish Likkutei Sichos identity enriched in place",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
-    "source_bodies_inspected": 10,
-    "new_source_identities": 9,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 9,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 10,
-    "answer_eligible_source_families_added": 9,
-    "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 9,
-    "content_verified_unique_sources_added": 0,
-    "source_languages": [
-      "English",
-      "Yiddish"
-    ],
-    "language_distribution": {
-      "English": 9,
-      "Yiddish": 1
-    },
-    "original_language_distribution": {
-      "unknown": 9,
-      "Yiddish": 1
-    },
-    "proposition_language_distribution": {
-      "Hebrew": 10
-    },
-    "source_type_distribution": {
-      "Yechidus": 9,
-      "Sichos": 1
-    },
-    "new_aids": [
-      2514886,
-      2515046,
-      2514160,
-      2513225,
-      2499828,
-      2511676,
-      2511792,
-      2511754,
-      2512299
-    ],
-    "enriched_aids": [
-      4736086
-    ],
-    "blocked_aids": [
-      2514886,
-      2515046,
-      2514160
-    ],
-    "blocked_candidate_count": 3,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1575,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4090
-    },
-    "metrics_actual_before": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1584,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4100
-    },
-    "metrics_actual_after": null,
-    "metrics_delta_actual": null,
-    "reconciliation_variance": null
-  },
   "last_manual_web_review": {
-    "batch_id": "181",
-    "batch_file": "data/items/content-research-batch-181-2026-11-19.json",
-    "generated": "2026-11-19T12:56:43+02:00",
-    "title": "Batch181: nine distinct English Yechidus bodies inspected, three Hebrew routes blocked, and one existing Yiddish Likkutei Sichos identity enriched in place",
+    "schema": "maaneh-ledorot-content-research-batch-v1",
+    "batch_id": "183",
+    "batch_file": "data/items/content-research-batch-183-2026-11-19.json",
+    "generated": "2026-11-19T14:02:27+02:00",
+    "reviewed_at": "2026-11-19T14:02:27+02:00",
+    "title": "Batch183 — eight new original-language Igrot Kodesh letters (seven Hebrew, one Yiddish), one in-place Sicha enrichment, duplicate exclusion and browser-shell fallback",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
+    "reviewed_item_count": 11,
     "source_bodies_inspected": 10,
-    "new_source_identities": 9,
+    "new_source_identities": 8,
     "existing_identities_enriched": 1,
-    "new_response_propositions": 9,
+    "new_response_propositions": 8,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 10,
-    "answer_eligible_source_families_added": 9,
-    "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 9,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 8,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "source_languages": [
-      "English",
+      "Hebrew",
       "Yiddish"
     ],
     "language_distribution": {
-      "English": 9,
+      "Hebrew": 7,
       "Yiddish": 1
     },
     "original_language_distribution": {
-      "unknown": 9,
+      "Hebrew": 7,
       "Yiddish": 1
     },
     "proposition_language_distribution": {
-      "Hebrew": 10
+      "Hebrew": 9
     },
     "source_type_distribution": {
-      "Yechidus": 9,
+      "Letters": 8,
       "Sichos": 1
     },
     "new_aids": [
-      2514886,
-      2515046,
-      2514160,
-      2513225,
-      2499828,
-      2511676,
-      2511792,
-      2511754,
-      2512299
+      4645972,
+      4831491,
+      4646057,
+      5054374,
+      4831547,
+      5413680,
+      4731070,
+      5019667
     ],
     "enriched_aids": [
-      4736086
+      2989059
     ],
     "blocked_aids": [
-      2514886,
-      2515046,
-      2514160
+      4666220
     ],
-    "blocked_candidate_count": 3,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה ל-/torah-texts/4666220/page/default.htm והציג דרישת דפדפן חדש; לא התקבל גוף מכתב קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נבדקו שמונה גופי מכתבים אחרים ועוד שני גופים לצורך העשרה ובדיקת כפילות."
+      }
+    ],
+    "excluded_duplicate_candidate_count": 1,
+    "excluded_duplicate_candidates": [
+      {
+        "aid": 4666247,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666247/jewish/page.htm",
+        "canonical_file": "data/items/igrot-kodesh-v2-letter-208-aid-4666247.json",
+        "canonical_id": "igrot-kodesh-v2-letter-208-aid-4666247",
+        "evidence_family_id": "original-letter-aid-4666247",
+        "action": "excluded_duplicate_existing_identity",
+        "reason": "AID 4666247 already exists canonically with three content propositions in the same Evidence Family; the opened publisher page is a parallel presentation of that same letter, so no new identity, Evidence Family or proposition is counted."
+      }
+    ],
     "metrics_before": {
-      "answer_eligible_unique_sources": 1575,
+      "answer_eligible_unique_sources": 1582,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4090
+      "answer_eligible_propositions": 4103
     },
+    "metrics_before_source": "Planning baseline from Batch182 metrics_expected_after (1582/854/4103); not a measured main/public snapshot. Exact-head reconciliation is required.",
     "metrics_actual_before": null,
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1584,
+      "answer_eligible_unique_sources": 1590,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4100
+      "answer_eligible_propositions": 4112
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
-    "reconciliation_variance": null
+    "reconciliation_variance": null,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "fallback_source_attempted": true,
+    "source_body_pages_opened": 11,
+    "source_body_pages_attempted": 11,
+    "search_extracts_inspected": 11,
+    "search_extracts_used_as_content": 0,
+    "existing_identity_updates_count": 1,
+    "existing_identity_rechecks_count": 0
   },
   "last_manual_review": {
-    "batch_id": "181",
-    "batch_file": "data/items/content-research-batch-181-2026-11-19.json",
-    "generated": "2026-11-19T12:56:43+02:00",
-    "title": "Batch181: nine distinct English Yechidus bodies inspected, three Hebrew routes blocked, and one existing Yiddish Likkutei Sichos identity enriched in place",
+    "schema": "maaneh-ledorot-content-research-batch-v1",
+    "batch_id": "183",
+    "batch_file": "data/items/content-research-batch-183-2026-11-19.json",
+    "generated": "2026-11-19T14:02:27+02:00",
+    "reviewed_at": "2026-11-19T14:02:27+02:00",
+    "title": "Batch183 — eight new original-language Igrot Kodesh letters (seven Hebrew, one Yiddish), one in-place Sicha enrichment, duplicate exclusion and browser-shell fallback",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
+    "reviewed_item_count": 11,
     "source_bodies_inspected": 10,
-    "new_source_identities": 9,
+    "new_source_identities": 8,
     "existing_identities_enriched": 1,
-    "new_response_propositions": 9,
+    "new_response_propositions": 8,
     "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 10,
-    "answer_eligible_source_families_added": 9,
-    "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 9,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 8,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "source_languages": [
-      "English",
+      "Hebrew",
       "Yiddish"
     ],
     "language_distribution": {
-      "English": 9,
+      "Hebrew": 7,
       "Yiddish": 1
     },
     "original_language_distribution": {
-      "unknown": 9,
+      "Hebrew": 7,
       "Yiddish": 1
     },
     "proposition_language_distribution": {
-      "Hebrew": 10
+      "Hebrew": 9
     },
     "source_type_distribution": {
-      "Yechidus": 9,
+      "Letters": 8,
       "Sichos": 1
     },
     "new_aids": [
-      2514886,
-      2515046,
-      2514160,
-      2513225,
-      2499828,
-      2511676,
-      2511792,
-      2511754,
-      2512299
+      4645972,
+      4831491,
+      4646057,
+      5054374,
+      4831547,
+      5413680,
+      4731070,
+      5019667
     ],
     "enriched_aids": [
-      4736086
+      2989059
     ],
     "blocked_aids": [
-      2514886,
-      2515046,
-      2514160
+      4666220
     ],
-    "blocked_candidate_count": 3,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה ל-/torah-texts/4666220/page/default.htm והציג דרישת דפדפן חדש; לא התקבל גוף מכתב קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נבדקו שמונה גופי מכתבים אחרים ועוד שני גופים לצורך העשרה ובדיקת כפילות."
+      }
+    ],
+    "excluded_duplicate_candidate_count": 1,
+    "excluded_duplicate_candidates": [
+      {
+        "aid": 4666247,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666247/jewish/page.htm",
+        "canonical_file": "data/items/igrot-kodesh-v2-letter-208-aid-4666247.json",
+        "canonical_id": "igrot-kodesh-v2-letter-208-aid-4666247",
+        "evidence_family_id": "original-letter-aid-4666247",
+        "action": "excluded_duplicate_existing_identity",
+        "reason": "AID 4666247 already exists canonically with three content propositions in the same Evidence Family; the opened publisher page is a parallel presentation of that same letter, so no new identity, Evidence Family or proposition is counted."
+      }
+    ],
     "metrics_before": {
-      "answer_eligible_unique_sources": 1575,
+      "answer_eligible_unique_sources": 1582,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4090
+      "answer_eligible_propositions": 4103
     },
+    "metrics_before_source": "Planning baseline from Batch182 metrics_expected_after (1582/854/4103); not a measured main/public snapshot. Exact-head reconciliation is required.",
     "metrics_actual_before": null,
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1584,
+      "answer_eligible_unique_sources": 1590,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4100
+      "answer_eligible_propositions": 4112
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
-    "reconciliation_variance": null
+    "reconciliation_variance": null,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "fallback_source_attempted": true,
+    "source_body_pages_opened": 11,
+    "source_body_pages_attempted": 11,
+    "search_extracts_inspected": 11,
+    "search_extracts_used_as_content": 0,
+    "existing_identity_updates_count": 1,
+    "existing_identity_rechecks_count": 0
   },
   "manual_web_review_history": [
     {
@@ -532,16 +619,21 @@
     {
       "batch_id": "181",
       "batch_file": "data/items/content-research-batch-181-2026-11-19.json"
+    },
+    {
+      "batch_id": "183",
+      "batch_file": "data/items/content-research-batch-183-2026-11-19.json",
+      "generated": "2026-11-19T14:02:27+02:00"
     }
   ],
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 1574,
+    "answer_eligible_unique_sources": 1582,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4095
+    "answer_eligible_propositions": 4103
   },
   "crawler_retry": false,
   "access_control_bypassed": false,
   "fallback_source_attempted": true,
   "full_text_copied": false,
-  "note": "Manual public-web review. Nine English Yechidus publisher bodies and one additional Yiddish original passage were inspected. Three Hebrew item routes returned Internal Error; English public bodies were used as same-run fallback. The GitHub-hosted Chabad crawler remains disabled after permanent 403; no bypass or retry."
+  "note": "Batch183: eight new original-language letters (seven Hebrew, one Yiddish), one in-place Sicha enrichment, one canonical duplicate excluded, and AID 4666220 blocked by a browser-compatibility shell. No crawler retry, access-control bypass, full-text copying or Verified promotion."
 }

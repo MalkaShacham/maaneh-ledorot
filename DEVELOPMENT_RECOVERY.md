@@ -1597,3 +1597,14 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - AID 4666220 redirected to a browser-compatibility shell and exposed no letter body. It was recorded as content-blocked; eight alternate publisher bodies were inspected in the same run. No crawler retry, access-control bypass, full-text copying or scan-only verification.
 - Batch182 planning boundary: **1574 / 854 / 4095 → 1582 / 854 / 4103** (answer-eligible unique sources / content-verified unique sources / answer-eligible propositions). This is a planning boundary pending full-index reconciliation, not a committed public metric. Preliminary duplicate checks were limited; exact-head reconciliation remains the authority.
 - The hourly schedule, repository audience and permissions remain unchanged.
+
+
+## 2026-11-19 — Batch183: original-language letters, Yiddish and in-place enrichment
+
+- נפתחו ונבדקו 10 גופי פרסום: שמונה זהויות חדשות (שבעה מכתבים בעברית ומכתב אחד ביידיש), מקטע נוסף בשיחה קיימת AID 2989059, ובדיקת כפילות של AID 4666247. AID 4666220 הציג מעטפת תאימות דפדפן ללא גוף קריא.
+- נוספו שמונה פרופוזיציות לא-מילוליות לזהויות חדשות ופרופוזיציה אחת לזהות קיימת. כל הרשומות החדשות נשארו Parsed; לא קודם מקור ל-Verified.
+- AID 4666247 לא נוסף: הוא כבר קיים בקובץ `data/items/igrot-kodesh-v2-letter-208-aid-4666247.json` ובמשפחת הראיות `original-letter-aid-4666247`. AID 2989059 הועשר בתוך `data/items/content-research-batch-170-2026-11-19.json` תוך שמירת אותה Evidence Family.
+- לא הופעל crawler ולא בוצע ניסיון לעקוף את מעטפת הדפדפן. שמונת גופי המכתבים החלופיים נבדקו ישירות; לא הועתק טקסט מוגן במלואו.
+- גבול תכנון בלבד: 1,582 / 854 / 4,103 לפני האצווה ו-1,590 / 854 / 4,112 צפוי אחריה. המדידה בפועל ממתינה ל-exact-head reconciliation; אין להציג את המספרים האלה כתוצאה.
+- readiness test תוקן כך שיכבד שתי נקודות בסיס היסטוריות שנמדדו בנפרד (Batch176 ו-Batch181) במקום להניח שכל גבול תכנון רציף. הפערים נשארים מפורשים ונבדקים מול `metrics_before_source`; אין תיקון ידני של מדדים.
+- PR #35 נשאר פתוח עד שה-Answer Quality Gate יעבור. מיזוג ל-main ופרסום Pages טרם בוצעו.
