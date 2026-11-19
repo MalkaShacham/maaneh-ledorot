@@ -1534,8 +1534,8 @@ assertReconciliationSnapshot(batch183Data,'batch183Data');
 for(const r of batch183Data.records){
  assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.source_class,'Letters');
  assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);
- assert.equal(r.proposition_verification,'source_text_inspected');assert.equal(r.response_propositions.length,batch188EnrichedAids.has(String(r.aid))?2:1);
- assert.equal(r.response_proposition_locators.length,batch188EnrichedAids.has(String(r.aid))?2:1);assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial');
+ assert.equal(r.proposition_verification,'source_text_inspected');assert.equal(r.response_propositions.length,1);
+ assert.equal(r.response_proposition_locators.length,1);assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial');
  const matches=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
  assert.equal(matches.length,1,'Batch183 AID '+r.aid+' must have exactly one canonical indexed identity');
  assert.equal(matches[0].canonical_file,batch183Path);assert(matches[0].answer_eligible);
@@ -7519,8 +7519,8 @@ const batch188EnrichedAids=new Set(['2989349','2989337','2988901','2989336','298
 for(const r of batch188Data.records){
  assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');
  assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);
- assert.equal(r.proposition_verification,'source_text_inspected');assert.equal(r.response_propositions.length,1);
- assert.equal(r.response_proposition_locators.length,1);assert(r.proposition_source_locator&&r.verification_scope&&r.context_status==='partial');
+ assert.equal(r.proposition_verification,'source_text_inspected');assert.equal(r.response_propositions.length,batch188EnrichedAids.has(String(r.aid))?2:1);
+ assert.equal(r.response_proposition_locators.length,batch188EnrichedAids.has(String(r.aid))?2:1);assert(r.proposition_source_locator&&r.verification_scope&&r.context_status==='partial');
  assert.equal(r.independent_witness,true);assert(r.has_content_evidence);
  const matches=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
  assert.equal(matches.length,1,'Batch188 AID '+r.aid+' must resolve to exactly one canonical identity');
