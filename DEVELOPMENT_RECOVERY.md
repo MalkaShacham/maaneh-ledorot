@@ -1690,3 +1690,20 @@ Batch189 expected boundary: 1,607 answer-eligible Evidence Families / 854 conten
 - נוספה סינתזה מחקרית בשלוש משפחות ראיות נפרדות: עבודה יומית בעשרת ימי תשובה (AID 2989102), אהבת ישראל כהכנה למתן תורה (AID 2988901), ושמחה גלויה לצד דיון לכף זכות (AID 2989144). הסינתזה מסומנת במפורש כעיבוד המערכת ולא כציטוט או ייחוס מילולי לרבי; כל טענה שומרת locator נפרד. נוספו בדיקות regular ו-deep researcher.
 - גבול התכנון לאחר Batch190: **1,607 / 854 / 4,163 → 1,613 / 854 / 4,171**. אלה ערכי תכנון בלבד עד reconciliation מדוד; מדדי main הציבוריים לא נערכו ידנית.
 - תוקנה הערת baseline היסטורית Batch183→184 כך שתסביר את מדידת 1,587 ואת איחוד ההצגה הכפולה שהביא לבסיס 1,586. PR #35 נשאר פתוח עד מעבר ה-Answer Quality Gate; לא בוצעו שינויי קהל, הרשאות או לוח זמנים.
+
+
+## Batch191 — 2026-11-19: eight inspected body passages
+
+Batch191 adds five new Hebrew publisher-transcript identities (AIDs 4313091, 4385634, 5989807, 4296179, 2989243) and enriches three existing canonical identities in place (AIDs 5959970, 2989059, 4304414). Eight source bodies were opened and inspected at the item-level locators recorded in `data/items/content-research-batch-191-2026-11-19.json`. Each addition is a non-verbatim `source_grounded_paraphrase` with `source_text_inspected`, exact locator, provenance, partial-context boundary and qualifications. The three existing Evidence Families were retained.
+
+The five new publisher pages expose Hebrew text but do not establish the original spoken language. Their `original_language` is therefore `unknown` and `independent_witness` is null; they are not credited as independent witnesses. No translation was counted as an independent witness. The five records remain Parsed; no Verified promotion was made. The AID 4296179 proposition preserves the attribution chain to a prior letter quoting the Rebbe Rashab; the cited letter itself was not inspected. The AID 2989243 paraphrase is not a personal halachic instruction. No full protected text was copied.
+
+AID 4666220 remained inaccessible through the public web reader. The block was recorded and eight alternative publisher bodies were inspected in the same run. No crawler retry or access-control bypass was used.
+
+### Reconciliation baseline and quality gate
+
+The prior exact-head Answer Quality Gate run 44580349175 measured the PR workspace after Batch190 at 1612 answer-eligible unique sources / 854 content-verified unique sources / 4169 answer-eligible propositions. Batch190's planning boundary was 1613 / 854 / 4171, leaving a measured variance of -1 source family and -2 propositions. Batch191 uses the measured 1612 / 854 / 4169 baseline; its planning boundary is 1617 / 854 / 4177 and is not an actual result until reconciliation. Public main metrics remain 977 / 878 / 2950 and were not edited.
+
+The same failed gate exposed two English Yechidus translation records in `data/items/sie-translated-talks-5744-5745-2026-11-12-050.json` without an explicit `independent_witness=false`. Batch191 corrects both records and links each translation to its own Evidence Family. The translation is not an independent witness. A fresh exact-head full-index reconciliation and `test_content_readiness.mjs` run are required before merge or deployment.
+
+The current branch is PR #35. The hourly workflow remains unchanged; no duplicate automation, audience change or permission change was made.
