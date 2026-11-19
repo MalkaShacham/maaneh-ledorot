@@ -1679,3 +1679,14 @@ Eight non-overlapping passages were inspected directly in the original Hebrew bo
 Two alternative Chabad Library pages (1500390039 and 1200820110) returned no readable lines through the public reader. Their search extracts were excluded from content; the same run fell back to eight accessible Hebrew Sicha bodies. No crawler retry, access-control bypass, full-text copying or scan-only content verification occurred.
 
 Batch189 expected boundary: 1,607 answer-eligible Evidence Families / 854 content-verified families / 4,163 distinct propositions, from the Batch188 expected boundary 1,607 / 854 / 4,155. These are planning values until exact-head reconciliation. The preceding Answer Quality Gate run 44571275898 passed normalization, index generation, retrieval, synthesis, citation integrity, evidence-contract and write-safety checks, but failed at the content-readiness step; Batch189 adds explicit current-batch, historical-boundary, in-place-enrichment and deep-researcher citation assertions. No public-main metric is changed by this pending branch work.
+
+
+## 2026-11-19 — Batch190: six new Hebrew Sicha identities and two in-place enrichments
+
+- נפתחו ונבדקו ישירות שמונה מקטעים בגופי פרסום עבריים מקוריים: שש זהויות חדשות (AIDs 2989102, 2988909, 2989138, 2989127, 2989144, 2988884) ושתי העשרות לא חופפות בזהויות הקנוניות AID 2988901 ו-AID 2989337 בקובץ Batch188. נוספו שמונה פרפרזות מחקר לא-מילוליות עם `source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, מיקום גוף, provenance, היקף אימות, הקשר חלקי ומגבלות. כל המקורות נשארו Parsed; אין קידומי Verified.
+- AID 4666220 ניסה להיפתח דרך קורא הפרסומים הציבורי והחזיר Internal Error ללא גוף קריא. החסימה תועדה; לא הופעל crawler, לא נעשה retry ולא נעקפו בקרות גישה. באותה הפעלה נבדקו שמונה גופי פרסום חלופיים נגישים.
+- AID 2989147 הוצא כמועמד כפול: הזהות הקנונית קיימת ב-Batch170 תחת Evidence Family `sicha-5713-12-tammuz-thursday-balak-aid2989147`. לא נוצרה זהות או משפחת ראיות נוספת.
+- סריקת כפילויות מקדימה בדקה אצוות מחקר 55–189, קובצי bulk-indexed ותור הבדיקה; שש הזהויות החדשות לא נמצאו בהם. GitHub code search החזיר אפס התאמות אך סימן את תוצאותיו כ-incomplete. לכן בדיקת הייחודיות המלאה נשארת pending עד full-index reconciliation.
+- נוספה סינתזה מחקרית בשלוש משפחות ראיות נפרדות: עבודה יומית בעשרת ימי תשובה (AID 2989102), אהבת ישראל כהכנה למתן תורה (AID 2988901), ושמחה גלויה לצד דיון לכף זכות (AID 2989144). הסינתזה מסומנת במפורש כעיבוד המערכת ולא כציטוט או ייחוס מילולי לרבי; כל טענה שומרת locator נפרד. נוספו בדיקות regular ו-deep researcher.
+- גבול התכנון לאחר Batch190: **1,607 / 854 / 4,163 → 1,613 / 854 / 4,171**. אלה ערכי תכנון בלבד עד reconciliation מדוד; מדדי main הציבוריים לא נערכו ידנית.
+- תוקנה הערת baseline היסטורית Batch183→184 כך שתסביר את מדידת 1,587 ואת איחוד ההצגה הכפולה שהביא לבסיס 1,586. PR #35 נשאר פתוח עד מעבר ה-Answer Quality Gate; לא בוצעו שינויי קהל, הרשאות או לוח זמנים.
