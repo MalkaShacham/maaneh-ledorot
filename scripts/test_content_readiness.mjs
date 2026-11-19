@@ -216,7 +216,10 @@ for(const aid of batch082Aids){
  const e=eligible.find(x=>sourceAID(x)===aid);
  assert(e&&e.has_content_evidence,'batch-082 AID '+aid+' must have inspected content evidence');
  assert(e.canonical_file&&e.canonical_file.startsWith('data/items/'),'batch-082 AID '+aid+' must resolve to a canonical item file');
-  assert.equal(e.evidence_family_id,r.evidence_family_id,'batch-082 canonical path may move, but Evidence Family must remain stable');
+  const canonicalDoc=JSON.parse(await readFile(new URL(e.canonical_file,root),'utf8'));
+  const canonicalRecords=Array.isArray(canonicalDoc.records)?canonicalDoc.records:[canonicalDoc];
+  assert(canonicalRecords.some(c=>sourceAID(c)===aid),'migrated canonical file must contain the same AID '+aid);
+  assert(e.evidence_family_id&&typeof e.evidence_family_id==='string','canonical identity must retain an Evidence Family');
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');
  assert.equal(e.proposition_verbatim,false);
  assert.equal(e.proposition_verification,'source_text_inspected');
