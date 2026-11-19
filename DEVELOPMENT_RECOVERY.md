@@ -1660,3 +1660,13 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - Batch172 duplicate audit corrected: AID 2989311 is a duplicate presentation of canonical Batch101; AID 4279994 is a duplicate presentation of canonical Batch151. Both were removed from Batch172 new records and linked to their canonical Evidence Families; the Batch172 planning boundary is now 1556 / 854 / 4039. AID 2988877 remains a separate duplicate recheck.
 - Added a three-family synthesis for Torah learning with vitality/Yirat Shamayim (AID 4279980), continued effort because Torah is unbounded (AID 4296148), and prayer before learning (AID 4279994). The synthesis is explicitly system-authored, not a Rebbe quote; claim-level locators are preserved in regular and deep researcher modes.
 - Batch187 planning boundary: 1593 / 854 / 4136 → 1598 / 854 / 4144. This is not an actual final measurement; full-index reconciliation and the exact-head `test_content_readiness.mjs` gate are pending. Public main metrics remain 977 / 878 / 2950 until merge and post-merge reconciliation. PR #35 remains unmerged; Pages publication not yet confirmed.
+
+
+## 2026-11-19 — Batch188: ten new Hebrew source identities and one in-place enrichment
+
+- נפתחו ונבדקו 12 גופי פרסום עבריים: עשר זהויות חדשות (תשע שיחות ורשומת ר״ד אחת) ומקטע נוסף לא חופף בזהות הקיימת AID 2989059. נוספו 11 פרפרזות מחקר לא-מילוליות עם מיקום ברמת סעיף/שורות, provenance, היקף אימות, הקשר חלקי ומגבלות. לא נוצרה זהות חדשה ל-AID 2989059; נשמרו הקובץ הקנוני Batch170 ומשפחת הראיות הקיימת.
+- AID 2989335 נפתח ונקרא אך הוחרג: גוף המכתב והעמוד שנבדקו לא ביססו מחבר או חותם, ולכן לא נוצרה פרופוזיציה ולא יוחס תוכן לרבי.
+- ניסיון להוסיף עד יידי מקורי: Chabad.org Torah Texts 4754421 הציג הודעת תאימות דפדפן ללא גוף מכתב; נתיב yi.chabad.org לא היה נגיש בכלי הציבורי. לא הוסקה תמצית ולא נוצרה פרופוזיציה. מאמר אנגלי משני שאיתר את המכתב שימש לניווט בלבד ולא נספר כעד עצמאי. באותה הפעלה בוצעה חלופה ממשית: עשרה גופי שיחות עבריים נגישים נבדקו ונוספו.
+- בדיקת כפילויות מקדימה: עשרת ה-AIDs החדשים נבדקו מול GitHub code search ב-main, כל קובצי אצוות התוכן ששונו ב-PR #35 בטווח 70–187 ותור הבדיקה הנוכחי; לא נמצאה התאמת AID. AID 2989059 זוהה בזהותו הקנונית ב-Batch170 והועשר במקומו. סריקת canonical מלאה תבוצע ב-reconcile_metrics.py בריצת ה-CI.
+- בסיס תכנון Batch188: **1,598 / 854 / 4,144 → 1,608 / 854 / 4,155**. הבסיס 1,598 / 854 / 4,144 נמדד ב-PR workspace בריצת CI 44564897783 לאחר Batch187, אך אינו מדד ציבורי ב-main. הגבול לאחר Batch188 הוא תכנון בלבד עד reconciliation מלא.
+- לא הועתק טקסט מוגן במלואו, לא הופעל crawler חסום, לא נעקפו בקרות גישה ולא קודם מקור ל-Verified. PR #35 נשאר פתוח עד מעבר test_content_readiness.mjs; מדדי main הציבוריים נשארים 977 / 878 / 2,950 עד מיזוג ו-reconciliation בפרסום.
