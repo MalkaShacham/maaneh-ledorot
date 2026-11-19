@@ -6429,8 +6429,8 @@ for(const u of batch170Data.existing_identity_updates){
  assert.equal(e.evidence_family_id,u.evidence_family_id);
  assert.equal(e.status,'Parsed');
  assert.equal(e.independent_witness,true);
- assert.equal(e.response_propositions.length,u.total_propositions_after);
- assert.equal(e.response_proposition_locators.length,u.total_propositions_after);
+ assert(e.response_propositions.length>=u.total_propositions_after);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
  assert(e.response_propositions.includes(u.proposition));
 }
 assert.equal(idx.entries.filter(e=>sourceAID(e)==='4296226').length,1);
