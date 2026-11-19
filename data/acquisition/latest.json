@@ -7,260 +7,122 @@
   "skipped": 1,
   "status": "pending_reconciliation",
   "manual_web_review": {
-    "batch_id": "177",
-    "batch_file": "data/items/content-research-batch-177-2026-11-19.json",
-    "generated": "2026-11-19T05:01:28+02:00",
-    "reviewed_at": "2026-11-19T05:01:28+02:00",
-    "title": "Seven additional Hebrew body passages enriched in place across seven existing Sicha identities; AID 4304430 was rechecked and excluded as duplicate canonical content.",
+    "batch_id": "178",
+    "batch_file": "data/items/content-research-batch-178-2026-11-19.json",
+    "generated": "2026-11-19T07:31:07+02:00",
+    "reviewed_at": "2026-11-19T07:31:07+02:00",
+    "title": "Batch178: eight distinct dated Yechidus texts inspected in the published English Sichos in English Collection; three Hebrew/Yiddish/French audio-only listings excluded",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
+    "reviewed_item_count": 11,
     "source_bodies_inspected": 8,
-    "source_body_pages_opened": 9,
-    "metadata_only_items_rechecked": 1,
-    "search_extracts_inspected": 9,
+    "source_body_pages_opened": 11,
+    "metadata_only_items_rechecked": 3,
+    "search_extracts_inspected": 8,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 0,
-    "existing_identities_enriched": 7,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 0,
-    "existing_response_propositions_added": 7,
-    "total_new_paraphrase_entries": 7,
-    "answer_eligible_source_families_added": 0,
-    "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 0,
-    "content_verified_unique_sources_added": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1559,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4063
-    },
-    "metrics_before_source": "Corrected Batch176 planning boundary after excluding duplicate AIDs 4304430 and 4736086; exact-head reconciliation must measure the contiguous 175–177 chain.",
-    "metrics_actual_before": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1559,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4070
-    },
-    "metrics_actual_after": null,
-    "metrics_delta_actual": null,
-    "reconciliation_variance": null,
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 0,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 7
-    },
-    "metrics_delta_at_batch_boundary_is_planning_only": true,
-    "new_aids": [],
-    "enriched_aids": [
-      4279925,
-      2989560,
-      2989195,
-      2989574,
-      2988862,
-      4385609,
-      2988859
-    ],
-    "blocked_aids": [
-      6132083,
-      5989563,
-      6132054
-    ],
-    "blocked_candidate_count": 3,
-    "blocked_candidates": [
-      {
-        "aid": 6132083,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/6132083",
-        "status": "http_429",
-        "reason": "הקורא הציבורי החזיר HTTP 429 בעת פתיחת גוף הפרסום; לא נבדק תוכן.",
-        "handling": "החסימה תועדה ובאותה הפעלה נבדקו גופי פרסום עבריים חלופיים."
-      },
-      {
-        "aid": 5989563,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/5989563",
-        "status": "http_429",
-        "reason": "הקורא הציבורי החזיר HTTP 429 בעת פתיחת גוף הפרסום; לא נבדק תוכן.",
-        "handling": "החסימה תועדה ובאותה הפעלה נבדקו גופי פרסום עבריים חלופיים."
-      },
-      {
-        "aid": 6132054,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/6132054",
-        "status": "http_429",
-        "reason": "הקורא הציבורי החזיר HTTP 429 בעת פתיחת גוף הפרסום; לא נבדק תוכן.",
-        "handling": "החסימה תועדה ובאותה הפעלה נבדקו גופי פרסום עבריים חלופיים."
-      }
-    ],
-    "translations_added": 0,
-    "translations_counted_as_independent_witnesses": 0,
-    "note": "Seven non-overlapping Hebrew body propositions remain as in-place enrichments to seven existing Batch176 identities. AID 4304430 was re-opened, but its inspected passage is already represented in the canonical AID 4304430 identity in Batch101; it is recorded as a recheck, not a new enrichment. Three alternate pages returned HTTP 429 and were documented; a Yiddish page exposed only English translation and was not used as independent evidence. No new identity, Evidence Family, independent witness, translation witness or Verified promotion. No crawler retry, access-control bypass, search-snippet inference or full-text copying.",
-    "records_reviewed": 12,
-    "rechecked_aids": [
-      4304430
-    ],
-    "duplicate_alias_identities": 0,
-    "excluded_duplicate_candidate_count": 1,
-    "excluded_duplicate_candidates": [
-      {
-        "aid": 4304430,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
-        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
-        "canonical_id": "sicha-5724-yud-beis-tammuz-aid4304430",
-        "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
-        "independent_witness": false,
-        "action": "excluded_duplicate_existing_identity",
-        "reason": "AID 4304430 is already canonical in Batch101; the re-opened passage overlaps existing canonical propositions, so the Batch177 candidate was not added again."
-      }
-    ],
-    "deduplication_check": {
-      "full_index_scan_available": true,
-      "full_index_scan_pending_reconciliation": false,
-      "target_identity_count": 7,
-      "target_aids": [
-        4279925,
-        2989560,
-        2989195,
-        2989574,
-        2988862,
-        4385609,
-        2988859
-      ],
-      "target_identity_matches": 7,
-      "target_identity_duplicates": 0,
-      "selected_unique_evidence_families": 7,
-      "same_family_duplicate_presentations": [],
-      "canonical_identity_collisions": [],
-      "missing_canonical_identities": [],
-      "note": "Seven existing canonical identities were enriched. AID 4304430 was rechecked but excluded because its substantive passage is already in the canonical Batch101 identity."
-    }
-  },
-  "previous_manual_web_review": {
-    "batch_id": "176",
-    "batch_file": "data/items/content-research-batch-176-2026-11-19.json",
-    "generated": "2026-11-19T04:22:25+02:00",
-    "reviewed_at": "2026-11-19T04:22:25+02:00",
-    "title": "Batch176: nine new original-language Sicha source identities, eight Hebrew and one edited Yiddish excerpt",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 10,
-    "source_bodies_inspected": 9,
-    "source_body_pages_opened": 10,
-    "metadata_only_items_rechecked": 1,
-    "search_extracts_inspected": 0,
-    "search_extracts_used_as_content": 0,
-    "new_source_identities": 7,
+    "new_source_identities": 8,
     "existing_identities_enriched": 0,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 7,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
     "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 7,
-    "answer_eligible_source_families_added": 7,
-    "independent_witnesses_added": 6,
-    "non_independent_presentations_added": 1,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 8,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1552,
+      "answer_eligible_unique_sources": 1557,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4056
+      "answer_eligible_propositions": 4069
     },
-    "metrics_before_source": "Batch175 expected boundary after eight in-place propositions; exact-head reconciliation must measure the corrected 175–177 chain.",
-    "metrics_actual_before": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1559,
+    "metrics_before_source": "Exact-head PR CI run 44456969090 measured 1557/854/4069 after Batch177 reconciliation, before the readiness test stopped on a stale Batch082 canonical-file assertion. This is a PR-workspace measurement, not public main.",
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1557,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4063
+      "answer_eligible_propositions": 4069
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1565,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4077
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 7,
+      "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 7
+      "answer_eligible_propositions": 8
     },
     "metrics_delta_at_batch_boundary_is_planning_only": true,
     "new_aids": [
-      4279925,
-      2989560,
-      2989195,
-      2989574,
-      2988862,
-      4385609,
-      2988859
+      2497688,
+      2511619,
+      2506495,
+      2505782,
+      2506320,
+      2511596,
+      2498908,
+      2512367
     ],
     "enriched_aids": [],
+    "rechecked_aids": [],
     "blocked_aids": [
-      554871
+      553508,
+      553257,
+      553643
     ],
-    "blocked_candidate_count": 1,
+    "blocked_candidate_count": 3,
     "blocked_candidates": [
       {
-        "aid": 554871,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/554871/jewish/25-Tishrei-5750-Sicha.htm",
+        "aid": 553508,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553508/jewish/9-Sivan-5742-Yechidus-Hebrew.htm",
         "status": "metadata_only_audio_listing",
-        "reason": "העמוד נפתח אך הציג כותרת, קישור לאוסף Sichos Kodesh Audio וניווט לשנים; לא נמצא תמליל או גוף שיחה כתוב. לא נגזרה ממנו פרופוזיציה.",
-        "handling": "לאחר תיעוד החסימה נבדקו באותה הפעלה שמונה גופי שיחה עבריים וקטע מקורי ביידיש ממקור ציבורי נגיש."
-      }
-    ],
-    "translations_added": 1,
-    "translations_counted_as_independent_witnesses": 0,
-    "note": "Nine new source presentations from distinct dated talks/excerpts: seven original-Hebrew talk bodies, one original-Yiddish edited Likkutei Sichos excerpt, and one Hebrew presentation of an edited Yiddish section. The latter is explicitly linked to its own Evidence Family as a derived presentation, not an independent witness. The English translation beside the original Yiddish is not a separate record. All nine remain Parsed; no Verified promotion. One audio-only listing was excluded. Full-index reconciliation is pending.",
-    "original_language_distribution": {
-      "Hebrew": 7,
-      "Yiddish": 2
-    },
-    "records_reviewed": 10,
-    "rechecked_aids": [],
-    "duplicate_alias_identities": 2,
-    "excluded_duplicate_candidate_count": 2,
-    "excluded_duplicate_candidates": [
-      {
-        "aid": 4304430,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
-        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
-        "canonical_id": "sicha-5724-yud-beis-tammuz-aid4304430",
-        "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
-        "independent_witness": false,
-        "action": "excluded_duplicate_existing_identity",
-        "reason": "AID 4304430 is already canonical in Batch101 (and a linked non-independent presentation exists in Batch146). The inspected Batch176 passages overlap propositions already present in the canonical identity; no additional identity, Evidence Family or proposition is counted."
+        "reason": "נפתח גוף העמוד. הוא מציג כותרת Yechidus בעברית, קישורי Next/Previous ורשימת הקלטות בשפות שונות, אך לא תמליל או גוף שיחה כתוב. לא הופקה ממנו פרופוזיציה.",
+        "handling": "נרשם כמקור עברי חסום לתוכן; באותה הפעלה נבדקו שמונה גופי טקסט אנגליים נגישים."
       },
       {
-        "aid": 4736086,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4736086/jewish/Lech-Lecha-The-Foundation-of-the-Jewish-People.htm",
-        "canonical_file": "data/items/content-research-batch-107-2026-11-16.json",
-        "canonical_id": "sicha-5718-06-marcheshvan-lech-lecha-aid4736086",
-        "evidence_family_id": "sicha-5718-06-marcheshvan-lech-lecha-aid4736086",
-        "independent_witness": false,
-        "action": "excluded_duplicate_existing_identity",
-        "reason": "AID 4736086 is already canonical in Batch107 and was enriched in Batch153. The inspected Yiddish passage overlaps the existing canonical proposition; the same-page English translation is derived and is not a separate witness."
+        "aid": 553257,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553257/jewish/13-Tammuz-5741-Yechidus-Skolyer-Rebbe.htm",
+        "status": "metadata_only_audio_listing",
+        "reason": "נפתח עמוד בארכיון Sichos Kodesh Audio המציג פרטי אירוע וקישורי ניווט בלבד; אין תמליל כתוב נגיש.",
+        "handling": "נרשם כמקור חסום לתוכן; לא נגזרה פרופוזיציה מכותרת או מרשומת אודיו."
+      },
+      {
+        "aid": 553643,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553643/jewish/25-Tishrei-5743-Yechidus-French.htm",
+        "status": "metadata_only_audio_listing",
+        "reason": "נפתח עמוד Yechidus בצרפתית בארכיון האודיו. הוא מציג קישורי שפה ורשימת הקלטות, ללא תמליל או גוף טקסט.",
+        "handling": "נרשם כמקור חסום לתוכן; באותה הפעלה נעשה שימוש בגופי פרסום אנגליים נגישים."
       }
     ],
+    "translations_added": 8,
+    "translations_counted_as_independent_witnesses": 0,
+    "note": "Eight distinct public English Yechidus text bodies were opened and inspected. Each contributes one bounded Hebrew research paraphrase with exact page-line locator, provenance, scope, partial context and limits. All eight are published English renderings; no original Hebrew/Yiddish text, recording or printed original was inspected, so all are marked independent_witness=false and translations_counted_as_independent_witnesses=0. Three alternative Hebrew/Yiddish/French Yechidus pages (AIDs 553508, 553257, 553643) were opened but contained audio listings/metadata only; they were excluded and recorded. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying. Full-index deduplication and reconciliation remain pending.",
     "deduplication_check": {
-      "full_index_scan_available": true,
-      "full_index_scan_pending_reconciliation": false,
-      "target_identity_count": 7,
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "target_identity_count": 8,
       "target_aids": [
-        4279925,
-        2989560,
-        2989195,
-        2989574,
-        2988862,
-        4385609,
-        2988859
+        2497688,
+        2511619,
+        2506495,
+        2505782,
+        2506320,
+        2511596,
+        2498908,
+        2512367
       ],
-      "target_identity_matches": 7,
+      "target_identity_matches": 0,
       "target_identity_duplicates": 0,
-      "selected_unique_evidence_families": 7,
-      "same_family_items": [],
+      "selected_unique_evidence_families": 8,
+      "same_family_duplicate_presentations": [],
       "canonical_identity_collisions": [],
       "missing_canonical_identities": [],
-      "all_target_identities_answer_eligible": true,
-      "translations_counted_as_independent_witnesses": 0,
-      "note": "Exact-head full-index audit in run 44450672113 identified two existing AID collisions (4304430→Batch101; 4736086→Batch107). Both duplicate presentations were removed from records and retained only in the exclusion audit. The next exact-head run must confirm the corrected index."
-    },
-    "canonical_response_propositions_after_batch177": 14,
-    "metrics_note": "Batch176 introduced seven new source-grounded propositions (one per new identity). Batch177 later added a second, distinct proposition to each of the seven surviving canonical records; the current records therefore contain 14 total propositions, attributed 7 to Batch176 and 7 to Batch177. Two duplicate AIDs were excluded."
+      "note": "Preliminary duplicate checks found no matches in the current content-review queue, GitHub code search, or PR-branch content batches 147–177. This is not a substitute for the full canonical-index reconciliation; final uniqueness remains pending CI."
+    }
   },
-  "last_manual_web_review": {
+  "previous_manual_web_review": {
     "batch_id": "177",
     "batch_file": "data/items/content-research-batch-177-2026-11-19.json",
     "generated": "2026-11-19T05:01:28+02:00",
@@ -275,26 +137,30 @@
     "search_extracts_inspected": 9,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 0,
-    "existing_identities_enriched": 7,
-    "existing_identities_rechecked": 1,
+    "existing_identities_enriched": 5,
+    "existing_identities_rechecked": 3,
     "new_response_propositions": 0,
-    "existing_response_propositions_added": 7,
-    "total_new_paraphrase_entries": 7,
+    "existing_response_propositions_added": 5,
+    "total_new_paraphrase_entries": 5,
     "answer_eligible_source_families_added": 0,
     "independent_witnesses_added": 0,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1559,
+      "answer_eligible_unique_sources": 1557,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4063
+      "answer_eligible_propositions": 4064
     },
-    "metrics_before_source": "Corrected Batch176 planning boundary after excluding duplicate AIDs 4304430 and 4736086; exact-head reconciliation must measure the contiguous 175–177 chain.",
-    "metrics_actual_before": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1559,
+    "metrics_before_source": "Corrected Batch176 boundary after removing duplicate AIDs 2989195 and 2989574; exact-head CI run 44456969090 measured 1557/854/4064 after Batch176.",
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1557,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4070
+      "answer_eligible_propositions": 4064
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1557,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4069
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
@@ -302,18 +168,21 @@
     "metrics_delta_at_batch_boundary": {
       "answer_eligible_unique_sources": 0,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 7
+      "answer_eligible_propositions": 5
     },
     "metrics_delta_at_batch_boundary_is_planning_only": true,
     "new_aids": [],
     "enriched_aids": [
       4279925,
       2989560,
-      2989195,
-      2989574,
       2988862,
       4385609,
       2988859
+    ],
+    "rechecked_aids": [
+      4304430,
+      2989195,
+      2989574
     ],
     "blocked_aids": [
       6132083,
@@ -346,13 +215,8 @@
     ],
     "translations_added": 0,
     "translations_counted_as_independent_witnesses": 0,
-    "note": "Seven non-overlapping Hebrew body propositions remain as in-place enrichments to seven existing Batch176 identities. AID 4304430 was re-opened, but its inspected passage is already represented in the canonical AID 4304430 identity in Batch101; it is recorded as a recheck, not a new enrichment. Three alternate pages returned HTTP 429 and were documented; a Yiddish page exposed only English translation and was not used as independent evidence. No new identity, Evidence Family, independent witness, translation witness or Verified promotion. No crawler retry, access-control bypass, search-snippet inference or full-text copying.",
-    "records_reviewed": 12,
-    "rechecked_aids": [
-      4304430
-    ],
-    "duplicate_alias_identities": 0,
-    "excluded_duplicate_candidate_count": 1,
+    "note": "Five non-overlapping Hebrew body propositions remain as in-place enrichments to five surviving Batch176 identities. Two of the seven candidate updates (AIDs 2989195 and 2989574) were excluded because their content overlaps canonical propositions in Batch101 and Batch153. AID 4304430 was rechecked and excluded. Three alternative pages returned HTTP 429; the Yiddish page exposed only an English translation and was not promoted. No Verified promotion.",
+    "excluded_duplicate_candidate_count": 3,
     "excluded_duplicate_candidates": [
       {
         "aid": 4304430,
@@ -363,155 +227,278 @@
         "independent_witness": false,
         "action": "excluded_duplicate_existing_identity",
         "reason": "AID 4304430 is already canonical in Batch101; the re-opened passage overlaps existing canonical propositions, so the Batch177 candidate was not added again."
+      },
+      {
+        "aid": 2989195,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989195",
+        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+        "canonical_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+        "evidence_family_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+        "independent_witness": false,
+        "action": "excluded_duplicate_existing_identity",
+        "reason": "Batch177 re-opened this existing AID, but the candidate proposition repeats the substantive content already represented in the canonical Evidence Family; no additional proposition counted."
+      },
+      {
+        "aid": 2989574,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989574",
+        "canonical_file": "data/items/content-research-batch-153-2026-11-18.json",
+        "canonical_id": "chabad-sicha-2989574",
+        "evidence_family_id": "sicha-5717-tahara-5-nissan-aid2989574",
+        "independent_witness": false,
+        "action": "excluded_duplicate_existing_identity",
+        "reason": "Batch177 re-opened this existing AID, but the candidate proposition repeats the substantive content already represented in the canonical Evidence Family; no additional proposition counted."
       }
     ],
     "deduplication_check": {
-      "full_index_scan_available": true,
-      "full_index_scan_pending_reconciliation": false,
-      "target_identity_count": 7,
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "target_identity_count": 5,
       "target_aids": [
         4279925,
         2989560,
-        2989195,
-        2989574,
         2988862,
         4385609,
         2988859
       ],
-      "target_identity_matches": 7,
+      "target_identity_matches": 5,
       "target_identity_duplicates": 0,
-      "selected_unique_evidence_families": 7,
+      "selected_unique_evidence_families": 5,
       "same_family_duplicate_presentations": [],
       "canonical_identity_collisions": [],
       "missing_canonical_identities": [],
-      "note": "Seven existing canonical identities were enriched. AID 4304430 was rechecked but excluded because its substantive passage is already in the canonical Batch101 identity."
+      "note": "The seven candidate enrichments were reduced to five after comparison with existing canonical propositions. Full-index reconciliation on the corrected exact PR head is pending."
+    }
+  },
+  "last_manual_web_review": {
+    "batch_id": "178",
+    "batch_file": "data/items/content-research-batch-178-2026-11-19.json",
+    "generated": "2026-11-19T07:31:07+02:00",
+    "reviewed_at": "2026-11-19T07:31:07+02:00",
+    "title": "Batch178: eight distinct dated Yechidus texts inspected in the published English Sichos in English Collection; three Hebrew/Yiddish/French audio-only listings excluded",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 11,
+    "source_bodies_inspected": 8,
+    "source_body_pages_opened": 11,
+    "metadata_only_items_rechecked": 3,
+    "search_extracts_inspected": 8,
+    "search_extracts_used_as_content": 0,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 8,
+    "content_verified_unique_sources_added": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1557,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4069
+    },
+    "metrics_before_source": "Exact-head PR CI run 44456969090 measured 1557/854/4069 after Batch177 reconciliation, before the readiness test stopped on a stale Batch082 canonical-file assertion. This is a PR-workspace measurement, not public main.",
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1557,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4069
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1565,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4077
+    },
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "reconciliation_variance": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 8,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 8
+    },
+    "metrics_delta_at_batch_boundary_is_planning_only": true,
+    "new_aids": [
+      2497688,
+      2511619,
+      2506495,
+      2505782,
+      2506320,
+      2511596,
+      2498908,
+      2512367
+    ],
+    "enriched_aids": [],
+    "rechecked_aids": [],
+    "blocked_aids": [
+      553508,
+      553257,
+      553643
+    ],
+    "blocked_candidate_count": 3,
+    "blocked_candidates": [
+      {
+        "aid": 553508,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553508/jewish/9-Sivan-5742-Yechidus-Hebrew.htm",
+        "status": "metadata_only_audio_listing",
+        "reason": "נפתח גוף העמוד. הוא מציג כותרת Yechidus בעברית, קישורי Next/Previous ורשימת הקלטות בשפות שונות, אך לא תמליל או גוף שיחה כתוב. לא הופקה ממנו פרופוזיציה.",
+        "handling": "נרשם כמקור עברי חסום לתוכן; באותה הפעלה נבדקו שמונה גופי טקסט אנגליים נגישים."
+      },
+      {
+        "aid": 553257,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553257/jewish/13-Tammuz-5741-Yechidus-Skolyer-Rebbe.htm",
+        "status": "metadata_only_audio_listing",
+        "reason": "נפתח עמוד בארכיון Sichos Kodesh Audio המציג פרטי אירוע וקישורי ניווט בלבד; אין תמליל כתוב נגיש.",
+        "handling": "נרשם כמקור חסום לתוכן; לא נגזרה פרופוזיציה מכותרת או מרשומת אודיו."
+      },
+      {
+        "aid": 553643,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553643/jewish/25-Tishrei-5743-Yechidus-French.htm",
+        "status": "metadata_only_audio_listing",
+        "reason": "נפתח עמוד Yechidus בצרפתית בארכיון האודיו. הוא מציג קישורי שפה ורשימת הקלטות, ללא תמליל או גוף טקסט.",
+        "handling": "נרשם כמקור חסום לתוכן; באותה הפעלה נעשה שימוש בגופי פרסום אנגליים נגישים."
+      }
+    ],
+    "translations_added": 8,
+    "translations_counted_as_independent_witnesses": 0,
+    "note": "Eight distinct public English Yechidus text bodies were opened and inspected. Each contributes one bounded Hebrew research paraphrase with exact page-line locator, provenance, scope, partial context and limits. All eight are published English renderings; no original Hebrew/Yiddish text, recording or printed original was inspected, so all are marked independent_witness=false and translations_counted_as_independent_witnesses=0. Three alternative Hebrew/Yiddish/French Yechidus pages (AIDs 553508, 553257, 553643) were opened but contained audio listings/metadata only; they were excluded and recorded. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying. Full-index deduplication and reconciliation remain pending.",
+    "deduplication_check": {
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "target_identity_count": 8,
+      "target_aids": [
+        2497688,
+        2511619,
+        2506495,
+        2505782,
+        2506320,
+        2511596,
+        2498908,
+        2512367
+      ],
+      "target_identity_matches": 0,
+      "target_identity_duplicates": 0,
+      "selected_unique_evidence_families": 8,
+      "same_family_duplicate_presentations": [],
+      "canonical_identity_collisions": [],
+      "missing_canonical_identities": [],
+      "note": "Preliminary duplicate checks found no matches in the current content-review queue, GitHub code search, or PR-branch content batches 147–177. This is not a substitute for the full canonical-index reconciliation; final uniqueness remains pending CI."
     }
   },
   "last_manual_review": {
-    "batch_id": "177",
-    "batch_file": "data/items/content-research-batch-177-2026-11-19.json",
-    "generated": "2026-11-19T05:01:28+02:00",
-    "reviewed_at": "2026-11-19T05:01:28+02:00",
-    "title": "Seven additional Hebrew body passages enriched in place across seven existing Sicha identities; AID 4304430 was rechecked and excluded as duplicate canonical content.",
+    "batch_id": "178",
+    "batch_file": "data/items/content-research-batch-178-2026-11-19.json",
+    "generated": "2026-11-19T07:31:07+02:00",
+    "reviewed_at": "2026-11-19T07:31:07+02:00",
+    "title": "Batch178: eight distinct dated Yechidus texts inspected in the published English Sichos in English Collection; three Hebrew/Yiddish/French audio-only listings excluded",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
+    "reviewed_item_count": 11,
     "source_bodies_inspected": 8,
-    "source_body_pages_opened": 9,
-    "metadata_only_items_rechecked": 1,
-    "search_extracts_inspected": 9,
+    "source_body_pages_opened": 11,
+    "metadata_only_items_rechecked": 3,
+    "search_extracts_inspected": 8,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 0,
-    "existing_identities_enriched": 7,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 0,
-    "existing_response_propositions_added": 7,
-    "total_new_paraphrase_entries": 7,
-    "answer_eligible_source_families_added": 0,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 8,
     "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 0,
+    "non_independent_presentations_added": 8,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1559,
+      "answer_eligible_unique_sources": 1557,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4063
+      "answer_eligible_propositions": 4069
     },
-    "metrics_before_source": "Corrected Batch176 planning boundary after excluding duplicate AIDs 4304430 and 4736086; exact-head reconciliation must measure the contiguous 175–177 chain.",
-    "metrics_actual_before": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1559,
+    "metrics_before_source": "Exact-head PR CI run 44456969090 measured 1557/854/4069 after Batch177 reconciliation, before the readiness test stopped on a stale Batch082 canonical-file assertion. This is a PR-workspace measurement, not public main.",
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1557,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4070
+      "answer_eligible_propositions": 4069
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1565,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4077
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 0,
+      "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 7
+      "answer_eligible_propositions": 8
     },
     "metrics_delta_at_batch_boundary_is_planning_only": true,
-    "new_aids": [],
-    "enriched_aids": [
-      4279925,
-      2989560,
-      2989195,
-      2989574,
-      2988862,
-      4385609,
-      2988859
+    "new_aids": [
+      2497688,
+      2511619,
+      2506495,
+      2505782,
+      2506320,
+      2511596,
+      2498908,
+      2512367
     ],
+    "enriched_aids": [],
+    "rechecked_aids": [],
     "blocked_aids": [
-      6132083,
-      5989563,
-      6132054
+      553508,
+      553257,
+      553643
     ],
     "blocked_candidate_count": 3,
     "blocked_candidates": [
       {
-        "aid": 6132083,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/6132083",
-        "status": "http_429",
-        "reason": "הקורא הציבורי החזיר HTTP 429 בעת פתיחת גוף הפרסום; לא נבדק תוכן.",
-        "handling": "החסימה תועדה ובאותה הפעלה נבדקו גופי פרסום עבריים חלופיים."
+        "aid": 553508,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553508/jewish/9-Sivan-5742-Yechidus-Hebrew.htm",
+        "status": "metadata_only_audio_listing",
+        "reason": "נפתח גוף העמוד. הוא מציג כותרת Yechidus בעברית, קישורי Next/Previous ורשימת הקלטות בשפות שונות, אך לא תמליל או גוף שיחה כתוב. לא הופקה ממנו פרופוזיציה.",
+        "handling": "נרשם כמקור עברי חסום לתוכן; באותה הפעלה נבדקו שמונה גופי טקסט אנגליים נגישים."
       },
       {
-        "aid": 5989563,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/5989563",
-        "status": "http_429",
-        "reason": "הקורא הציבורי החזיר HTTP 429 בעת פתיחת גוף הפרסום; לא נבדק תוכן.",
-        "handling": "החסימה תועדה ובאותה הפעלה נבדקו גופי פרסום עבריים חלופיים."
+        "aid": 553257,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553257/jewish/13-Tammuz-5741-Yechidus-Skolyer-Rebbe.htm",
+        "status": "metadata_only_audio_listing",
+        "reason": "נפתח עמוד בארכיון Sichos Kodesh Audio המציג פרטי אירוע וקישורי ניווט בלבד; אין תמליל כתוב נגיש.",
+        "handling": "נרשם כמקור חסום לתוכן; לא נגזרה פרופוזיציה מכותרת או מרשומת אודיו."
       },
       {
-        "aid": 6132054,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/6132054",
-        "status": "http_429",
-        "reason": "הקורא הציבורי החזיר HTTP 429 בעת פתיחת גוף הפרסום; לא נבדק תוכן.",
-        "handling": "החסימה תועדה ובאותה הפעלה נבדקו גופי פרסום עבריים חלופיים."
+        "aid": 553643,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553643/jewish/25-Tishrei-5743-Yechidus-French.htm",
+        "status": "metadata_only_audio_listing",
+        "reason": "נפתח עמוד Yechidus בצרפתית בארכיון האודיו. הוא מציג קישורי שפה ורשימת הקלטות, ללא תמליל או גוף טקסט.",
+        "handling": "נרשם כמקור חסום לתוכן; באותה הפעלה נעשה שימוש בגופי פרסום אנגליים נגישים."
       }
     ],
-    "translations_added": 0,
+    "translations_added": 8,
     "translations_counted_as_independent_witnesses": 0,
-    "note": "Seven non-overlapping Hebrew body propositions remain as in-place enrichments to seven existing Batch176 identities. AID 4304430 was re-opened, but its inspected passage is already represented in the canonical AID 4304430 identity in Batch101; it is recorded as a recheck, not a new enrichment. Three alternate pages returned HTTP 429 and were documented; a Yiddish page exposed only English translation and was not used as independent evidence. No new identity, Evidence Family, independent witness, translation witness or Verified promotion. No crawler retry, access-control bypass, search-snippet inference or full-text copying.",
-    "records_reviewed": 12,
-    "rechecked_aids": [
-      4304430
-    ],
-    "duplicate_alias_identities": 0,
-    "excluded_duplicate_candidate_count": 1,
-    "excluded_duplicate_candidates": [
-      {
-        "aid": 4304430,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
-        "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
-        "canonical_id": "sicha-5724-yud-beis-tammuz-aid4304430",
-        "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
-        "independent_witness": false,
-        "action": "excluded_duplicate_existing_identity",
-        "reason": "AID 4304430 is already canonical in Batch101; the re-opened passage overlaps existing canonical propositions, so the Batch177 candidate was not added again."
-      }
-    ],
+    "note": "Eight distinct public English Yechidus text bodies were opened and inspected. Each contributes one bounded Hebrew research paraphrase with exact page-line locator, provenance, scope, partial context and limits. All eight are published English renderings; no original Hebrew/Yiddish text, recording or printed original was inspected, so all are marked independent_witness=false and translations_counted_as_independent_witnesses=0. Three alternative Hebrew/Yiddish/French Yechidus pages (AIDs 553508, 553257, 553643) were opened but contained audio listings/metadata only; they were excluded and recorded. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying. Full-index deduplication and reconciliation remain pending.",
     "deduplication_check": {
-      "full_index_scan_available": true,
-      "full_index_scan_pending_reconciliation": false,
-      "target_identity_count": 7,
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "target_identity_count": 8,
       "target_aids": [
-        4279925,
-        2989560,
-        2989195,
-        2989574,
-        2988862,
-        4385609,
-        2988859
+        2497688,
+        2511619,
+        2506495,
+        2505782,
+        2506320,
+        2511596,
+        2498908,
+        2512367
       ],
-      "target_identity_matches": 7,
+      "target_identity_matches": 0,
       "target_identity_duplicates": 0,
-      "selected_unique_evidence_families": 7,
+      "selected_unique_evidence_families": 8,
       "same_family_duplicate_presentations": [],
       "canonical_identity_collisions": [],
       "missing_canonical_identities": [],
-      "note": "Seven existing canonical identities were enriched. AID 4304430 was rechecked but excluded because its substantive passage is already in the canonical Batch101 identity."
+      "note": "Preliminary duplicate checks found no matches in the current content-review queue, GitHub code search, or PR-branch content batches 147–177. This is not a substitute for the full canonical-index reconciliation; final uniqueness remains pending CI."
     }
   },
   "manual_web_review_history": [
@@ -12767,7 +12754,7 @@
       "batch_file": "data/items/content-research-batch-176-2026-11-19.json",
       "generated": "2026-11-19T04:22:25+02:00",
       "reviewed_at": "2026-11-19T04:22:25+02:00",
-      "title": "Batch176: nine new original-language Sicha source identities, eight Hebrew and one edited Yiddish excerpt",
+      "title": "Batch176 corrected: five new source identities after excluding two further canonical AID duplicates",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
       "reviewed_item_count": 10,
@@ -12776,42 +12763,44 @@
       "metadata_only_items_rechecked": 1,
       "search_extracts_inspected": 0,
       "search_extracts_used_as_content": 0,
-      "new_source_identities": 7,
+      "new_source_identities": 5,
       "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 2,
-      "new_response_propositions": 7,
+      "existing_identities_rechecked": 3,
+      "new_response_propositions": 5,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 7,
-      "answer_eligible_source_families_added": 7,
-      "independent_witnesses_added": 6,
+      "total_new_paraphrase_entries": 5,
+      "answer_eligible_source_families_added": 5,
+      "independent_witnesses_added": 4,
       "non_independent_presentations_added": 1,
       "content_verified_unique_sources_added": 0,
       "metrics_before": {
         "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4056
+        "answer_eligible_propositions": 4059
       },
-      "metrics_before_source": "Batch175 expected boundary after eight in-place propositions; exact-head reconciliation must measure the corrected 175–177 chain.",
-      "metrics_actual_before": null,
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1559,
+      "metrics_before_source": "Exact-head CI run 44456969090 measured Batch175 after-boundary at 1552/854/4059. The previous Batch176 plan overstated two already-canonical AIDs (2989195 and 2989574).",
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4063
+        "answer_eligible_propositions": 4059
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1557,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4064
       },
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
       "reconciliation_variance": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 7,
+        "answer_eligible_unique_sources": 5,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 7
+        "answer_eligible_propositions": 5
       },
       "metrics_delta_at_batch_boundary_is_planning_only": true,
       "new_aids": [
         4279925,
         2989560,
-        2989195,
-        2989574,
         2988862,
         4385609,
         2988859
@@ -12832,15 +12821,19 @@
       ],
       "translations_added": 1,
       "translations_counted_as_independent_witnesses": 0,
-      "note": "Nine new source presentations from distinct dated talks/excerpts: seven original-Hebrew talk bodies, one original-Yiddish edited Likkutei Sichos excerpt, and one Hebrew presentation of an edited Yiddish section. The latter is explicitly linked to its own Evidence Family as a derived presentation, not an independent witness. The English translation beside the original Yiddish is not a separate record. All nine remain Parsed; no Verified promotion. One audio-only listing was excluded. Full-index reconciliation is pending.",
+      "note": "Five genuinely new source presentations remain after full-index collision review. AIDs 2989195 and 2989574 already exist canonically in Batch101 and Batch153; their inspected passages overlap existing propositions and are retained only in the duplicate audit. AIDs 4304430 and 4736086 also remain excluded duplicates. One audio-only listing was blocked. No Verified promotion.",
       "original_language_distribution": {
         "Hebrew": 7,
         "Yiddish": 2
       },
       "records_reviewed": 10,
-      "rechecked_aids": [],
+      "rechecked_aids": [
+        2989195,
+        2989574,
+        4736086
+      ],
       "duplicate_alias_identities": 2,
-      "excluded_duplicate_candidate_count": 2,
+      "excluded_duplicate_candidate_count": 4,
       "excluded_duplicate_candidates": [
         {
           "aid": 4304430,
@@ -12861,30 +12854,48 @@
           "independent_witness": false,
           "action": "excluded_duplicate_existing_identity",
           "reason": "AID 4736086 is already canonical in Batch107 and was enriched in Batch153. The inspected Yiddish passage overlaps the existing canonical proposition; the same-page English translation is derived and is not a separate witness."
+        },
+        {
+          "aid": 2989195,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989195",
+          "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+          "canonical_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+          "evidence_family_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+          "independent_witness": false,
+          "action": "excluded_duplicate_existing_identity",
+          "reason": "AID 2989195 is already canonical in Batch101. The inspected Batch176 passage overlaps the existing story/teaching propositions; no second identity, Evidence Family or proposition is counted."
+        },
+        {
+          "aid": 2989574,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989574",
+          "canonical_file": "data/items/content-research-batch-153-2026-11-18.json",
+          "canonical_id": "chabad-sicha-2989574",
+          "evidence_family_id": "sicha-5717-tahara-5-nissan-aid2989574",
+          "independent_witness": false,
+          "action": "excluded_duplicate_existing_identity",
+          "reason": "AID 2989574 is already canonical in Batch153. The inspected Batch176 passage overlaps the existing explanation of voice, speech and parable; no second identity, Evidence Family or proposition is counted."
         }
       ],
       "deduplication_check": {
-        "full_index_scan_available": true,
-        "full_index_scan_pending_reconciliation": false,
-        "target_identity_count": 7,
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "target_identity_count": 5,
         "target_aids": [
           4279925,
           2989560,
-          2989195,
-          2989574,
           2988862,
           4385609,
           2988859
         ],
-        "target_identity_matches": 7,
+        "target_identity_matches": 5,
         "target_identity_duplicates": 0,
-        "selected_unique_evidence_families": 7,
-        "same_family_items": [],
+        "selected_unique_evidence_families": 5,
+        "same_family_duplicate_presentations": [],
         "canonical_identity_collisions": [],
         "missing_canonical_identities": [],
         "all_target_identities_answer_eligible": true,
         "translations_counted_as_independent_witnesses": 0,
-        "note": "Exact-head full-index audit in run 44450672113 identified two existing AID collisions (4304430→Batch101; 4736086→Batch107). Both duplicate presentations were removed from records and retained only in the exclusion audit. The next exact-head run must confirm the corrected index."
+        "note": "AIDs 2989195 and 2989574 were found in prior canonical batches and removed from the new-identity set. Full-index reconciliation on the corrected exact PR head is pending."
       },
       "canonical_response_propositions_after_batch177": 14,
       "metrics_note": "Batch176 introduced seven new source-grounded propositions (one per new identity). Batch177 later added a second, distinct proposition to each of the seven surviving canonical records; the current records therefore contain 14 total propositions, attributed 7 to Batch176 and 7 to Batch177. Two duplicate AIDs were excluded."
@@ -12904,26 +12915,30 @@
       "search_extracts_inspected": 9,
       "search_extracts_used_as_content": 0,
       "new_source_identities": 0,
-      "existing_identities_enriched": 7,
-      "existing_identities_rechecked": 1,
+      "existing_identities_enriched": 5,
+      "existing_identities_rechecked": 3,
       "new_response_propositions": 0,
-      "existing_response_propositions_added": 7,
-      "total_new_paraphrase_entries": 7,
+      "existing_response_propositions_added": 5,
+      "total_new_paraphrase_entries": 5,
       "answer_eligible_source_families_added": 0,
       "independent_witnesses_added": 0,
       "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1559,
+        "answer_eligible_unique_sources": 1557,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4063
+        "answer_eligible_propositions": 4064
       },
-      "metrics_before_source": "Corrected Batch176 planning boundary after excluding duplicate AIDs 4304430 and 4736086; exact-head reconciliation must measure the contiguous 175–177 chain.",
-      "metrics_actual_before": null,
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1559,
+      "metrics_before_source": "Corrected Batch176 boundary after removing duplicate AIDs 2989195 and 2989574; exact-head CI run 44456969090 measured 1557/854/4064 after Batch176.",
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1557,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4070
+        "answer_eligible_propositions": 4064
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1557,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4069
       },
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
@@ -12931,15 +12946,13 @@
       "metrics_delta_at_batch_boundary": {
         "answer_eligible_unique_sources": 0,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 7
+        "answer_eligible_propositions": 5
       },
       "metrics_delta_at_batch_boundary_is_planning_only": true,
       "new_aids": [],
       "enriched_aids": [
         4279925,
         2989560,
-        2989195,
-        2989574,
         2988862,
         4385609,
         2988859
@@ -12975,13 +12988,15 @@
       ],
       "translations_added": 0,
       "translations_counted_as_independent_witnesses": 0,
-      "note": "Seven non-overlapping Hebrew body propositions remain as in-place enrichments to seven existing Batch176 identities. AID 4304430 was re-opened, but its inspected passage is already represented in the canonical AID 4304430 identity in Batch101; it is recorded as a recheck, not a new enrichment. Three alternate pages returned HTTP 429 and were documented; a Yiddish page exposed only English translation and was not used as independent evidence. No new identity, Evidence Family, independent witness, translation witness or Verified promotion. No crawler retry, access-control bypass, search-snippet inference or full-text copying.",
+      "note": "Five non-overlapping Hebrew body propositions remain as in-place enrichments to five surviving Batch176 identities. Two of the seven candidate updates (AIDs 2989195 and 2989574) were excluded because their content overlaps canonical propositions in Batch101 and Batch153. AID 4304430 was rechecked and excluded. Three alternative pages returned HTTP 429; the Yiddish page exposed only an English translation and was not promoted. No Verified promotion.",
       "records_reviewed": 12,
       "rechecked_aids": [
-        4304430
+        4304430,
+        2989195,
+        2989574
       ],
       "duplicate_alias_identities": 0,
-      "excluded_duplicate_candidate_count": 1,
+      "excluded_duplicate_candidate_count": 3,
       "excluded_duplicate_candidates": [
         {
           "aid": 4304430,
@@ -12992,41 +13007,176 @@
           "independent_witness": false,
           "action": "excluded_duplicate_existing_identity",
           "reason": "AID 4304430 is already canonical in Batch101; the re-opened passage overlaps existing canonical propositions, so the Batch177 candidate was not added again."
+        },
+        {
+          "aid": 2989195,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989195",
+          "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+          "canonical_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+          "evidence_family_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+          "independent_witness": false,
+          "action": "excluded_duplicate_existing_identity",
+          "reason": "Batch177 re-opened this existing AID, but the candidate proposition repeats the substantive content already represented in the canonical Evidence Family; no additional proposition counted."
+        },
+        {
+          "aid": 2989574,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989574",
+          "canonical_file": "data/items/content-research-batch-153-2026-11-18.json",
+          "canonical_id": "chabad-sicha-2989574",
+          "evidence_family_id": "sicha-5717-tahara-5-nissan-aid2989574",
+          "independent_witness": false,
+          "action": "excluded_duplicate_existing_identity",
+          "reason": "Batch177 re-opened this existing AID, but the candidate proposition repeats the substantive content already represented in the canonical Evidence Family; no additional proposition counted."
         }
       ],
       "deduplication_check": {
-        "full_index_scan_available": true,
-        "full_index_scan_pending_reconciliation": false,
-        "target_identity_count": 7,
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "target_identity_count": 5,
         "target_aids": [
           4279925,
           2989560,
-          2989195,
-          2989574,
           2988862,
           4385609,
           2988859
         ],
-        "target_identity_matches": 7,
+        "target_identity_matches": 5,
         "target_identity_duplicates": 0,
-        "selected_unique_evidence_families": 7,
+        "selected_unique_evidence_families": 5,
         "same_family_duplicate_presentations": [],
         "canonical_identity_collisions": [],
         "missing_canonical_identities": [],
-        "note": "Seven existing canonical identities were enriched. AID 4304430 was rechecked but excluded because its substantive passage is already in the canonical Batch101 identity."
+        "note": "The seven candidate enrichments were reduced to five after comparison with existing canonical propositions. Full-index reconciliation on the corrected exact PR head is pending."
+      }
+    },
+    {
+      "batch_id": "178",
+      "batch_file": "data/items/content-research-batch-178-2026-11-19.json",
+      "generated": "2026-11-19T07:31:07+02:00",
+      "reviewed_at": "2026-11-19T07:31:07+02:00",
+      "title": "Batch178: eight distinct dated Yechidus texts inspected in the published English Sichos in English Collection; three Hebrew/Yiddish/French audio-only listings excluded",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 11,
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 11,
+      "metadata_only_items_rechecked": 3,
+      "search_extracts_inspected": 8,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 0,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 8,
+      "existing_response_propositions_added": 0,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 8,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 8,
+      "content_verified_unique_sources_added": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1557,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4069
+      },
+      "metrics_before_source": "Exact-head PR CI run 44456969090 measured 1557/854/4069 after Batch177 reconciliation, before the readiness test stopped on a stale Batch082 canonical-file assertion. This is a PR-workspace measurement, not public main.",
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1557,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4069
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1565,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4077
+      },
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "reconciliation_variance": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 8,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "metrics_delta_at_batch_boundary_is_planning_only": true,
+      "new_aids": [
+        2497688,
+        2511619,
+        2506495,
+        2505782,
+        2506320,
+        2511596,
+        2498908,
+        2512367
+      ],
+      "enriched_aids": [],
+      "rechecked_aids": [],
+      "blocked_aids": [
+        553508,
+        553257,
+        553643
+      ],
+      "blocked_candidate_count": 3,
+      "blocked_candidates": [
+        {
+          "aid": 553508,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553508/jewish/9-Sivan-5742-Yechidus-Hebrew.htm",
+          "status": "metadata_only_audio_listing",
+          "reason": "נפתח גוף העמוד. הוא מציג כותרת Yechidus בעברית, קישורי Next/Previous ורשימת הקלטות בשפות שונות, אך לא תמליל או גוף שיחה כתוב. לא הופקה ממנו פרופוזיציה.",
+          "handling": "נרשם כמקור עברי חסום לתוכן; באותה הפעלה נבדקו שמונה גופי טקסט אנגליים נגישים."
+        },
+        {
+          "aid": 553257,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553257/jewish/13-Tammuz-5741-Yechidus-Skolyer-Rebbe.htm",
+          "status": "metadata_only_audio_listing",
+          "reason": "נפתח עמוד בארכיון Sichos Kodesh Audio המציג פרטי אירוע וקישורי ניווט בלבד; אין תמליל כתוב נגיש.",
+          "handling": "נרשם כמקור חסום לתוכן; לא נגזרה פרופוזיציה מכותרת או מרשומת אודיו."
+        },
+        {
+          "aid": 553643,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553643/jewish/25-Tishrei-5743-Yechidus-French.htm",
+          "status": "metadata_only_audio_listing",
+          "reason": "נפתח עמוד Yechidus בצרפתית בארכיון האודיו. הוא מציג קישורי שפה ורשימת הקלטות, ללא תמליל או גוף טקסט.",
+          "handling": "נרשם כמקור חסום לתוכן; באותה הפעלה נעשה שימוש בגופי פרסום אנגליים נגישים."
+        }
+      ],
+      "translations_added": 8,
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "Eight distinct public English Yechidus text bodies were opened and inspected. Each contributes one bounded Hebrew research paraphrase with exact page-line locator, provenance, scope, partial context and limits. All eight are published English renderings; no original Hebrew/Yiddish text, recording or printed original was inspected, so all are marked independent_witness=false and translations_counted_as_independent_witnesses=0. Three alternative Hebrew/Yiddish/French Yechidus pages (AIDs 553508, 553257, 553643) were opened but contained audio listings/metadata only; they were excluded and recorded. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying. Full-index deduplication and reconciliation remain pending.",
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "target_identity_count": 8,
+        "target_aids": [
+          2497688,
+          2511619,
+          2506495,
+          2505782,
+          2506320,
+          2511596,
+          2498908,
+          2512367
+        ],
+        "target_identity_matches": 0,
+        "target_identity_duplicates": 0,
+        "selected_unique_evidence_families": 8,
+        "same_family_duplicate_presentations": [],
+        "canonical_identity_collisions": [],
+        "missing_canonical_identities": [],
+        "note": "Preliminary duplicate checks found no matches in the current content-review queue, GitHub code search, or PR-branch content batches 147–177. This is not a substitute for the full canonical-index reconciliation; final uniqueness remains pending CI."
       }
     }
   ],
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 1552,
+    "answer_eligible_unique_sources": 1557,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4048
+    "answer_eligible_propositions": 4069
   },
-  "last_run_note": "Eight additional non-verbatim Hebrew propositions were added to eight existing Batch176 identities at non-overlapping body locators. Three alternate pages returned HTTP 429 and were documented; a Yiddish page displayed only English translation and was not used as independent evidence. No new identity, Evidence Family, independent witness, translation witness or Verified promotion. No crawler retry, access-control bypass, search-snippet inference or full-text copying.",
-  "next_action": "Run scripts/reconcile_metrics.py on the exact PR head for batches175–177, confirm full-index uniqueness and measured answer-readiness metrics, pass test_content_readiness.mjs, then merge PR #35 and verify post-merge Actions and Pages.",
-  "current_batch_file": "data/items/content-research-batch-177-2026-11-19.json",
+  "last_run_note": "Batch178 inspected eight public English Yechidus text bodies and added eight non-verbatim Hebrew research propositions. Three Hebrew/Yiddish/French audio-only pages were documented and excluded. No crawler retry, access bypass, full-text copying or Verified promotion.",
+  "next_action": "Run exact-head reconciliation and test_content_readiness.mjs through Batch178; only after all checks pass, merge PR #35 and verify the Pages deployment.",
+  "current_batch_file": "data/items/content-research-batch-178-2026-11-19.json",
   "pending": true,
   "tail": "Batch177: eight additional non-overlapping original-Hebrew passages enriched in place in eight Batch176 identities; three HTTP 429 blocks documented; no crawler retry or Verified promotion. Exact-head reconciliation pending.",
   "next": "Reconcile batches175–177 against the full canonical index, verify all target AIDs and Evidence Families, run test_content_readiness.mjs, then merge only after the complete quality gate passes.",
-  "updated_at": "2026-11-19T05:01:28+02:00"
+  "updated_at": "2026-11-19T07:31:07+02:00",
+  "manual_web_review_current_metrics_note": "Measured in PR-workspace exact-head CI run 44456969090 after Batch177; not committed or public main metrics."
 }
