@@ -44,7 +44,7 @@ def is_source_record(d):
     # creates false canonical_identity_collisions and duplicate search candidates.
     if not isinstance(d,dict): return False
     audit_row = (
-        str(d.get("action") or "").startswith("enriched_existing_identity") or str(d.get("action") or "").startswith("duplicate_alias_")
+        str(d.get("action") or "").startswith(("enriched_existing_identity","duplicate_alias_","excluded_duplicate_"))
         or d.get("existing_identity") is True
         or d.get("body_text_inspected") is True
         or d.get("inspected_original_language_body") is True
