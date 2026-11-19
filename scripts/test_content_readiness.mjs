@@ -1493,6 +1493,8 @@ assert.equal(batch183Data.crawler_retry,false);assert.equal(batch183Data.access_
 assert.equal(batch183Data.full_text_copied,false);assert.equal(batch183Data.scan_only_verification_used,false);
 assert.equal(batch183Data.fallback_source_attempted,true);
 assert.equal(batch183Data.source_body_review.filter(r=>r.body_text_inspected===true).length,10);
+assert.equal(batch183Data.source_body_review.filter(r=>r.inspected_original_language_body===true).length,10);
+assert(batch183Data.records.some(r=>String(r.aid)==='5019667'&&r.language==='Yiddish'&&r.original_language==='Yiddish'),'Batch183 must retain the original Yiddish witness as Yiddish');
 assert.equal(batch183Data.source_body_review.filter(r=>r.existing_identity===false&&r.action==='new_identity_created').length,8);
 assert.equal(batch183Data.source_body_review.filter(r=>r.existing_identity===true&&r.action==='enriched_existing_identity_in_place').length,1);
 assert.equal(batch183Data.deduplication_check.full_index_scan_pending_reconciliation,false,'Batch183 must complete exact full-index reconciliation before readiness passes');
