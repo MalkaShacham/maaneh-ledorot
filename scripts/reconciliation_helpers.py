@@ -25,3 +25,14 @@ def alias_target_pairs(alias):
         if identity:
             pairs.append(("id:" + identity, None, identity))
     return pairs
+
+
+def has_frozen_metrics_snapshot(batch_data):
+    """True when a batch already has a reconciled, immutable metrics boundary."""
+    if not isinstance(batch_data, dict):
+        return False
+    return (
+        batch_data.get("reconciliation_status") in ("reconciled", "reconciled_with_variance")
+        and isinstance(batch_data.get("metrics_actual_before"), dict)
+        and isinstance(batch_data.get("metrics_actual_after"), dict)
+    )
