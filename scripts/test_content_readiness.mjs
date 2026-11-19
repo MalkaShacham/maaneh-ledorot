@@ -6718,7 +6718,7 @@ for(const u of batch175Data.existing_identity_updates){
 }
 assert.equal(batch175Data.enriched_aids.length,8);assert.equal(new Set(batch175Data.enriched_aids).size,8);
 
-// Batch176: nine new original-language identities (eight Hebrew, one Yiddish), no Verified promotion.
+// Batch176: nine source presentations (seven original-Hebrew, one original-Yiddish, one derived Hebrew rendering of an edited Yiddish section); no Verified promotion.
 assert.equal(batch176Data.batch_id,'176');assert.equal(batch176Data.batch_file,batch176Path);
 assert.equal(batch176Data.reviewed_item_count,10);assert.equal(batch176Data.records_reviewed,10);
 assert.equal(batch176Data.source_bodies_inspected,9);assert.equal(batch176Data.source_body_pages_opened,10);
@@ -6751,7 +6751,8 @@ for(const r of batch176Data.records){
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);
  assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator);
  assert(e.verification_scope&&e.witness_provenance);assert.equal(e.context_status,'partial');
- assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);
+ if(Number(r.aid)===2988859){assert.equal(e.independent_witness,false);assert.equal(e.translation_of_evidence_family_id,e.evidence_family_id);}
+ else{assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);}
  assert.equal(e.response_propositions.length,1);assert.equal(e.response_proposition_locators.length,1);
  assert.equal(e.response_propositions.length,e.response_proposition_locators.length);
 }
@@ -6769,6 +6770,8 @@ assert(batch176YiddishPresentation.translation_status.includes('not an independe
 assert(batch176YiddishPresentation.proposition_source_locator.includes('הערת המו״ל 51'));
 
 assert.equal(batch176Data.records.filter(r=>r.language==='Hebrew').length,8);
+assert.equal(batch176Data.records.filter(r=>r.original_language==='Hebrew').length,7);
+assert.equal(batch176Data.records.filter(r=>r.original_language==='Yiddish').length,2);
 assert(batch176Data.source_body_review.filter(r=>r.body_text_inspected).length===9);
 assert(batch176Data.source_body_review.filter(r=>r.inspected_original_language_body).length===8);
 assert(batch176Data.source_body_review.some(r=>Number(r.aid)===554871&&r.body_text_inspected===false));
