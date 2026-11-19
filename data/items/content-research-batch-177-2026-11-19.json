@@ -6,7 +6,7 @@
   "generated": "2026-11-19T05:01:28+02:00",
   "generated_at": "2026-11-19T05:01:28+02:00",
   "reviewed_at": "2026-11-19T05:01:28+02:00",
-  "title": "Eight additional original-Hebrew body passages enriched in place across eight existing Sicha identities.",
+  "title": "Seven additional Hebrew body passages enriched in place across seven existing Sicha identities; AID 4304430 was rechecked and excluded as duplicate canonical content.",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "review_method": "Direct public publisher body inspection using web open; each new passage was checked at a non-overlapping locator in the original Hebrew body. Search results were used for navigation only, never as content evidence.",
@@ -18,11 +18,11 @@
   "search_extracts_inspected": 9,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 0,
-  "existing_identities_enriched": 8,
+  "existing_identities_enriched": 7,
   "existing_identities_rechecked": 1,
   "new_response_propositions": 0,
-  "existing_response_propositions_added": 8,
-  "total_new_paraphrase_entries": 8,
+  "existing_response_propositions_added": 7,
+  "total_new_paraphrase_entries": 7,
   "answer_eligible_source_families_added": 0,
   "independent_witnesses_added": 0,
   "non_independent_presentations_added": 0,
@@ -49,13 +49,12 @@
     2989560,
     2989195,
     2989574,
-    4304430,
     2988862,
     4385609,
     2988859
   ],
   "rechecked_aids": [
-    4736086
+    4304430
   ],
   "reviewed_aids": [
     4279925,
@@ -113,16 +112,16 @@
   "full_text_copied": false,
   "scan_only_verification_used": false,
   "metrics_before": {
-    "answer_eligible_unique_sources": 1561,
+    "answer_eligible_unique_sources": 1559,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4065
+    "answer_eligible_propositions": 4063
   },
-  "metrics_before_source": "Planning boundary only: Batch176 expected after. Exact-head reconciliation must measure Batch175–177 as a contiguous chain; no current metric is claimed from this boundary.",
+  "metrics_before_source": "Corrected Batch176 planning boundary after excluding duplicate AIDs 4304430 and 4736086; exact-head reconciliation must measure the contiguous 175–177 chain.",
   "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1561,
+    "answer_eligible_unique_sources": 1559,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4073
+    "answer_eligible_propositions": 4070
   },
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
@@ -130,28 +129,30 @@
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 0,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 8
+    "answer_eligible_propositions": 7
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
   "metrics_attribution_note": "Eight new propositions enrich eight existing canonical identities and Evidence Families. No new source identity, family, independent witness or Verified item is expected. The exact before/after metrics remain pending full-index reconciliation.",
   "deduplication_check": {
-    "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true,
-    "target_identity_count": 8,
+    "full_index_scan_available": true,
+    "full_index_scan_pending_reconciliation": false,
+    "target_identity_count": 7,
     "target_aids": [
       4279925,
       2989560,
       2989195,
       2989574,
-      4304430,
       2988862,
       4385609,
       2988859
     ],
+    "target_identity_matches": 7,
+    "target_identity_duplicates": 0,
+    "selected_unique_evidence_families": 7,
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "note": "All eight updates point to existing Batch176 canonical records and retain their existing Evidence Family IDs. A complete corpus-wide identity scan is still required before the batch can be marked reconciled."
+    "note": "Seven existing canonical identities were enriched. AID 4304430 was rechecked but excluded because its substantive passage is already in the canonical Batch101 identity."
   },
   "source_body_review": [
     {
@@ -292,9 +293,9 @@
     },
     {
       "item_aid": 4304430,
-      "id": "chabad-sicha-4304430",
-      "canonical_file": "data/items/content-research-batch-176-2026-11-19.json",
-      "evidence_family_id": "sicha-5724-balak-12-tammuz-aid4304430",
+      "id": "sicha-5724-yud-beis-tammuz-aid4304430",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
       "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
       "web_source_ref": "turn186995view4",
       "body_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–204.",
@@ -316,13 +317,16 @@
       "context_status": "partial",
       "existing_identity": true,
       "new_independent_witness": false,
-      "action": "enriched_existing_identity_in_place",
+      "action": "rechecked_existing_identity_no_new_proposition",
       "locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–204.",
       "source_body_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–204.",
       "conditions_or_qualifications": [
         "יש להבחין בין הסיפור שהשיחה מביאה בשם אדמו״ר הריי״צ לבין ההסבר העיוני של הרבי בשיחה הנוכחית."
       ],
-      "note": "Original Hebrew body passage opened and inspected; locator is distinct from the previously recorded Batch176 passage."
+      "note": "Original Hebrew body passage opened and inspected; locator is distinct from the previously recorded Batch176 passage. Rechecked against canonical Batch101 identity; no additional proposition counted.",
+      "independent_witness": false,
+      "proposition_count": 0,
+      "proposition_not_added_reason": "The inspected Rosh Hashanah/hashgacha passage is already represented in the canonical AID 4304430 propositions in Batch101; no duplicate proposition was added."
     },
     {
       "item_aid": 2988862,
@@ -548,33 +552,6 @@
       "note": "Existing canonical identity and Evidence Family retained. A distinct, non-overlapping original-Hebrew body passage was inspected and added in place; no new witness or Verified promotion."
     },
     {
-      "aid": 4304430,
-      "id": "chabad-sicha-4304430",
-      "canonical_file": "data/items/content-research-batch-176-2026-11-19.json",
-      "evidence_family_id": "sicha-5724-balak-12-tammuz-aid4304430",
-      "action": "enriched_existing_identity_in_place",
-      "existing_propositions_before": 1,
-      "propositions_added": 1,
-      "total_propositions_after": 2,
-      "source_body_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–204.",
-      "locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–204.",
-      "body_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–204.",
-      "proposition": "הקטע מסביר את התועלת שבהזכרת ההשגחה הפרטית במאמרי ראש השנה: דיבור מפורש של עניין תורני בראש השנה מתואר כמעניק חיות והשפעה מתמשכת על כלל ימי השנה, בדומה לראש שמזרים חיות לאיברי הגוף. ההסבר שייך למהלך העיוני של השיחה ואינו תיעוד עצמאי של המאורעות הקשורים למאסר.",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–204.",
-      "web_source_ref": "turn186995view4",
-      "new_independent_witness": false,
-      "provenance": "BeitChabad.com / he.chabad.org; original Hebrew body inspected on 2026-11-19.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 4304430, במיקום he.chabad.org AID 4304430, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–204., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. התמליל מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו בנפרד. יש להבחין בין הסיפור שהשיחה מביאה בשם אדמו״ר הריי״צ לבין ההסבר העיוני של הרבי בשיחה הנוכחית. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום; לא הועתק גוף הפרסום המלא.",
-      "context_status": "partial",
-      "conditions_or_qualifications": [
-        "יש להבחין בין הסיפור שהשיחה מביאה בשם אדמו״ר הריי״צ לבין ההסבר העיוני של הרבי בשיחה הנוכחית."
-      ],
-      "note": "Existing canonical identity and Evidence Family retained. A distinct, non-overlapping original-Hebrew body passage was inspected and added in place; no new witness or Verified promotion."
-    },
-    {
       "aid": 2988862,
       "id": "chabad-sicha-2988862",
       "canonical_file": "data/items/content-research-batch-176-2026-11-19.json",
@@ -656,7 +633,7 @@
       "note": "Existing canonical identity and Evidence Family retained. A distinct, non-overlapping original-Hebrew body passage was inspected and added in place; no new witness or Verified promotion."
     }
   ],
-  "existing_identity_updates_count": 8,
+  "existing_identity_updates_count": 7,
   "existing_identity_rechecks": [
     {
       "aid": 4736086,
@@ -721,6 +698,19 @@
   "excluded_item_ids": [
     "chabad-sicha-4736086"
   ],
-  "note": "Eight additional non-verbatim, source-grounded Hebrew propositions were added to eight existing Batch176 identities at distinct, non-overlapping body locators. Three alternate pages returned HTTP 429 and were documented; a Yiddish source page displayed only English translation and was not used as independent evidence. No new source identity, Evidence Family, independent witness, translation witness or Verified promotion. No crawler retry, access-control bypass, search-snippet inference or full-text copying.",
-  "records": []
+  "note": "Seven non-overlapping Hebrew body propositions remain as in-place enrichments to seven existing Batch176 identities. AID 4304430 was re-opened, but its inspected passage is already represented in the canonical AID 4304430 identity in Batch101; it is recorded as a recheck, not a new enrichment. Three alternate pages returned HTTP 429 and were documented; a Yiddish page exposed only English translation and was not used as independent evidence. No new identity, Evidence Family, independent witness, translation witness or Verified promotion. No crawler retry, access-control bypass, search-snippet inference or full-text copying.",
+  "records": [],
+  "excluded_duplicate_candidate_count": 1,
+  "excluded_duplicate_candidates": [
+    {
+      "aid": 4304430,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "canonical_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+      "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+      "independent_witness": false,
+      "action": "excluded_duplicate_existing_identity",
+      "reason": "AID 4304430 is already canonical in Batch101; the re-opened passage overlaps existing canonical propositions, so the Batch177 candidate was not added again."
+    }
+  ]
 }

@@ -1527,3 +1527,13 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - Batch177 is stored at `data/items/content-research-batch-177-2026-11-19.json`; its eight existing-identity updates point to the canonical records in Batch176. A full-index scan and measured metrics are still pending.
 - The exact-head readiness test was updated to reconcile the contiguous Batch175–177 chain, require one canonical index identity per target AID, and compare the final metrics to Batch177 rather than Batch176. The prior test expected Batch176 to be the latest reconciled batch while its source snapshot was still pending; that stale expectation has been replaced with a Batch177 boundary.
 - PR #35 remains unmerged until the exact-head Answer Quality Gate, including `test_content_readiness.mjs`, passes. Main/public metrics and GitHub Pages have not been changed by this branch update.
+
+
+
+## 2026-11-19 — Exact-head duplicate correction for Batches 176–177
+
+- Answer Quality Gate run 44450672113 exposed two AID collisions in Batch176. AID 4304430 was already canonical in Batch101 (with a linked non-independent presentation in Batch146); the Batch176 propositions overlapped the existing canonical propositions. AID 4736086 was already canonical in Batch107 and had been enriched in Batch153; the inspected Yiddish passage overlapped existing content. Neither duplicate is a new identity, Evidence Family or proposition.
+- Both duplicate presentations were removed from Batch176 `records[]` and retained in `excluded_duplicate_candidates` with their canonical file, identity and Evidence Family. Batch176 now contains seven new identities and seven propositions: six independent Hebrew witnesses and one derived Hebrew presentation of an edited Yiddish source. No translation is counted as an independent witness.
+- Batch177's AID 4304430 recheck was also excluded from enrichment counts because its passage is already represented in Batch101. Seven genuine in-place enrichments remain; one recheck is retained in the audit trail.
+- Corrected planning boundary after Batches175–177: **1,559 answer-eligible unique sources / 854 content-verified unique sources / 4,070 answer-eligible propositions**. This is not a measured result; exact-head reconciliation and readiness must confirm it. Public main metrics are unchanged until merge.
+- No Verified promotion, crawler retry, access-control bypass, full-text copying, schedule change or permission/audience change.
