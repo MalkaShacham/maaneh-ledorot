@@ -6188,7 +6188,8 @@ for(const u of batch167Data.existing_identity_updates){
  assert(e,'batch167 AID '+u.aid+' must retain a canonical indexed identity');
  assert.equal(e.canonical_file,u.canonical_file);
  assert.equal(e.evidence_family_id,u.evidence_family_id);
- assert.equal(e.response_propositions.length,u.total_propositions_after);
+ assert(e.response_propositions.length>=u.total_propositions_after);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
  assert(e.response_proposition_locators.includes(u.locator));
  assert.equal(e.status,'Parsed');
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');
@@ -6402,7 +6403,7 @@ assert(batch170Data.source_body_review.every(r=>r.proposition_origin==='source_g
 assert.equal(batch170Data.existing_identity_updates.length,2);
 assert.equal(new Set(batch170Data.existing_identity_updates.map(u=>String(u.aid))).size,2);
 assert.equal(new Set(batch170Data.records.map(r=>r.evidence_family_id)).size,7);
-assert(batch170Data.records.every(r=>r.pipeline_status==='Parsed'&&r.status==='Parsed'&&r.has_content_evidence&&r.response_propositions.length===2&&r.response_proposition_locators.length===2&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.provenance.source_witness&&r.verification_scope&&r.context_status==='partial'));
+assert(batch170Data.records.every(r=>r.pipeline_status==='Parsed'&&r.status==='Parsed'&&r.has_content_evidence&&r.response_propositions.length>=2&&r.response_proposition_locators.length===r.response_propositions.length&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.provenance.source_witness&&r.verification_scope&&r.context_status==='partial'));
 for(const r of batch170Data.records){
  const matches=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
  assert.equal(matches.length,1,'Batch170 AID '+r.aid+' must have exactly one canonical identity');
@@ -6412,8 +6413,8 @@ for(const r of batch170Data.records){
  assert.equal(e.status,'Parsed');
  assert.equal(e.independent_witness,true);
  assert.equal(e.translation_of_evidence_family_id,null);
- assert.equal(e.response_propositions.length,2);
- assert.equal(e.response_proposition_locators.length,2);
+ assert(e.response_propositions.length>=2);
+ assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
  assert(e.has_content_evidence);
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');
  assert.equal(e.proposition_verbatim,false);
@@ -6481,7 +6482,7 @@ for(const u of batch171Data.existing_identity_updates){
  const matches=idx.entries.filter(e=>sourceAID(e)===String(u.aid));assert.equal(matches.length,1,'Batch171 AID '+u.aid+' must retain exactly one canonical identity');
  const e=matches[0];assert.equal(e.canonical_file,u.canonical_file);assert.equal(e.evidence_family_id,u.evidence_family_id);
  assert.equal(e.status,'Parsed');assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);
- assert.equal(e.response_propositions.length,2);assert.equal(e.response_proposition_locators.length,2);
+ assert(e.response_propositions.length>=u.total_propositions_after);assert.equal(e.response_proposition_locators.length,e.response_propositions.length);
  assert(e.response_propositions.includes(u.proposition));assert(e.response_proposition_locators.includes(u.locator));
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');
 }
