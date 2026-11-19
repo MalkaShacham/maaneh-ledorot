@@ -196,7 +196,7 @@
     "answer_eligible_propositions": 8
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "metrics_note": "Batch191 expected boundary is planning only until exact-head reconciliation. Public main metrics remain 977/878/2950; no public metrics were edited. Five new publication identities have unknown original spoken language and are not credited as independent witnesses; full-index reconciliation may merge parallel presentations into existing Evidence Families.",
+  "metrics_note": "Batch191 planning boundary after duplicate correction is 1616/854/4177: four new Evidence Families and eight distinct paraphrase entries. The prior CI workspace measured 1616/854/4176 while the duplicate AID2989243 record was present; its duplicate was removed and its proposition was moved to the existing canonical identity. Public main remains 977/878/2950.",
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
@@ -223,12 +223,12 @@
     {
       "aid": 4313091,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
-      "web_source_ref": "turn857045view0",
+      "web_source_ref": "turn755787view0",
       "body_page_opened": true,
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "source_body_locator": "AID 4313091, גוף השיחה, סעיפים ב׳–ד׳, שורות 186–198.",
+      "source_body_locator": "he.chabad.org AID 4313091, גוף השיחה, סעיפים א׳–ד׳, שורות 177–198.",
       "language": "Hebrew",
       "original_language": "unknown",
       "witness_type": "published_unedited_hebrew_sicha_transcript",
@@ -238,17 +238,17 @@
       "existing_identity": false,
       "action": "new_identity_created",
       "canonical_file": "data/items/content-research-batch-191-2026-11-19.json",
-      "note": "נבדק גוף הפרסום העברי; שפת ההרצאה המקורית אינה מצוינת בעמוד."
+      "note": "נבדק גוף השיחה בסעיפים א׳–ד׳; הפרפרזה משמרת את הברכה המיוחסת לרבי הריי״צ ואת ההפניה לגמרא ביבמות."
     },
     {
       "aid": 4385634,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4385634",
-      "web_source_ref": "turn320152view1",
+      "web_source_ref": "turn586840view0",
       "body_page_opened": true,
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "source_body_locator": "AID 4385634, גוף השיחה, סעיף א׳, שורות 171–175.",
+      "source_body_locator": "he.chabad.org AID 4385634, גוף השיחה, סעיף א׳, שורות 171–177.",
       "language": "Hebrew",
       "original_language": "unknown",
       "witness_type": "published_unedited_hebrew_sicha_transcript",
@@ -258,7 +258,7 @@
       "existing_identity": false,
       "action": "new_identity_created",
       "canonical_file": "data/items/content-research-batch-191-2026-11-19.json",
-      "note": "נבדק גוף הפרסום העברי; שפת ההרצאה המקורית אינה מצוינת בעמוד."
+      "note": "הפרפרזה משמרת את הייחוס לבעש״ט ולאריז״ל כפי שהם מובאים בגוף השיחה."
     },
     {
       "aid": 5989807,
@@ -303,7 +303,7 @@
     {
       "aid": 2989243,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2989243",
-      "web_source_ref": "turn880603view0",
+      "web_source_ref": "turn759260view0",
       "body_page_opened": true,
       "body_text_inspected": true,
       "inspected_original_language_body": true,
@@ -318,13 +318,13 @@
       "existing_identity": true,
       "action": "enriched_existing_identity_in_place",
       "canonical_file": "data/items/content-research-batch-106-2026-11-16.json",
-      "note": "ה-AID כבר היה זהות קנונית ב-Batch106; לא נוצרה זהות חדשה. נוספה פרופוזיציה נפרדת מסעיף ב׳, המתארת את שני תפקידי הגדרים והסייגים.",
+      "note": "ה-AID כבר היה זהות קנונית ב-Batch106; לא נוצרה זהות חדשה. נוספה פרופוזיציה נפרדת מסעיף ב׳, המתארת את שני תפקידי הגדרים והסייגים שתיקנו חז״ל.",
       "evidence_family_id": "sicha-5722-matot-masei-vows-and-restraint-aid2989243"
     },
     {
       "aid": 5959970,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/5959970",
-      "web_source_ref": "turn320152view5",
+      "web_source_ref": "turn474086view0",
       "body_page_opened": true,
       "body_text_inspected": true,
       "inspected_original_language_body": true,
@@ -339,7 +339,7 @@
       "existing_identity": true,
       "action": "enriched_existing_identity_in_place",
       "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
-      "note": "הועשרה זהות קיימת במקטע נפרד; נשמרה משפחת הראיות הקיימת."
+      "note": "הפרפרזה משמרת את ההפניות לרש״י ולרבי עקיבא המובאות בגוף השיחה."
     },
     {
       "aid": 2989059,
@@ -364,7 +364,7 @@
     {
       "aid": 4304414,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4304414",
-      "web_source_ref": "turn922115view1",
+      "web_source_ref": "turn309483view0",
       "body_page_opened": true,
       "body_text_inspected": true,
       "inspected_original_language_body": true,
@@ -379,7 +379,7 @@
       "existing_identity": true,
       "action": "enriched_existing_identity_in_place",
       "canonical_file": "data/items/content-research-batch-146-2026-11-17.json",
-      "note": "הועשרה זהות קיימת במקטע נפרד; נשמרה משפחת הראיות הקיימת."
+      "note": "הפרפרזה משמרת את ההפניות לזוהר ולמאמר חז״ל על חידושי תלמיד ותיק."
     }
   ],
   "existing_identity_updates": [
@@ -454,14 +454,14 @@
       "propositions_added": 1,
       "total_propositions_after": 3,
       "body_locator": "AID 2989243, גוף השיחה, סעיף ב׳, שורות 182–183.",
-      "proposition": "בהמשך לדיון בנדרים, השיחה מפרטת שני תפקידים לגדרים ולסייגים: להרחיק את האדם מהתעסקות יתר בחושך ולמנוע את כניסת ה״שונא״, ובמקביל להמשיך אור אלוקי נעלה יותר שמחזק את צד הקדושה. ביחס לנדרים היא מוסיפה שהפרישות אינה רק הגנה מפני ירידה, אלא גם אמצעי להמשכת קדושה וכוח להתמודדות.",
+      "proposition": "בהמשך לדיון בנדרים, השיחה מתארת את הגדרים והסייגים שתיקנו חז״ל כשתי פעולות משלימות: להרחיק מהתעסקות יתר בחושך ולמנוע מן ה״שונא״ לנהל מלחמה נגד הקדושה, ובמקביל להמשיך אור אלוקי נעלה יותר. ביחס לנדרים היא מוסיפה שהם אינם רק אמצעי הגנה מפני ירידה, אלא גם דרך להמשכת קדושה שמעניקה כוח להתמודדות.",
       "proposition_source_locator": "AID 2989243, גוף השיחה, סעיף ב׳, שורות 182–183.",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "verification_scope": "נפתח ונבדק גוף הפרסום העברי, סעיף ב׳, שורות 182–183 בלבד. התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה. ההקשר חלקי; אין לראות בדברים הנחיה הלכתית אישית.",
+      "verification_scope": "נבדק סעיף ב׳, שורות 182–183. השיחה מתארת את שני תפקידי הגדרים והסייגים שתיקנו חז״ל ואת תפקיד הנדרים בהמשכת קדושה. ההקשר חלקי; התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
       "context_status": "partial",
-      "web_source_ref": "turn880603view0",
+      "web_source_ref": "turn759260view0",
       "reason": "AID 2989243 already exists canonically in Batch106. The duplicate Batch191 identity was removed and the distinct section-B proposition was redirected to the existing canonical identity and Evidence Family."
     }
   ],
@@ -496,7 +496,7 @@
       "answer_eligible_propositions": 2950
     }
   },
-  "note": "Batch191: four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected public bodies. AID2989243 was detected as already canonical in Batch106; its duplicate record was removed and a distinct section-B proposition was added to the existing Evidence Family. AID 4666220 was blocked through the public reader; eight accessible alternatives were inspected. No crawler retry, bypass, full-text copy or Verified promotion.",
+  "note": "Batch191: four new Hebrew publisher-transcript identities and four in-place enrichments from eight inspected public bodies. AID2989243 was detected as already canonical in Batch106; its duplicate record was removed and a distinct section-B proposition was added to the existing Evidence Family. AID 4666220 was blocked through the public reader; eight accessible alternatives were inspected. No crawler retry, bypass, full-text copy or Verified promotion. AID2989243 was found in Batch106 and converted from duplicate new identity to in-place enrichment; attribution chains are preserved in all relevant propositions.",
   "records": [
     {
       "id": "chabad-sicha-4313091",
@@ -596,7 +596,7 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed. נוספה פרפרזה מחקרית לא-מילולית מגוף הפרסום שנבדק; שפת המקור המדוברת אינה ידועה; אין קידום ל-Verified. Attribution preserved: the opening blessing is attributed in the transcript to the Rebbe Rayatz; the conversion analogy is cited from the Gemara in Yevamot.",
+      "notes": "המקור נשאר Parsed. נוספה פרפרזה מחקרית לא-מילולית מגוף הפרסום שנבדק; שפת המקור המדוברת אינה ידועה; אין קידום ל-Verified. Attribution preserved: the opening blessing is attributed in the transcript to the Rebbe Rayatz; the conversion analogy is cited from the Gemara in Yevamot. Attribution preserved: the opening blessing is attributed in the transcript to the Rebbe Rayatz; the conversion analogy is cited from the Gemara in Yevamot.",
       "canonical_file": "data/items/content-research-batch-191-2026-11-19.json",
       "content_enrichment_batch_id": "191",
       "last_content_enriched_at": "2026-11-19T19:52:49+02:00",
@@ -719,7 +719,7 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed. נוספה פרפרזה מחקרית לא-מילולית מגוף הפרסום שנבדק; שפת המקור המדוברת אינה ידועה; אין קידום ל-Verified. Attribution preserved: the interpretation of the Mishnah is attributed to the Baal Shem Tov and the explanation of 'נזכרים ונעשים' to the Ari.",
+      "notes": "המקור נשאר Parsed. נוספה פרפרזה מחקרית לא-מילולית מגוף הפרסום שנבדק; שפת המקור המדוברת אינה ידועה; אין קידום ל-Verified. Attribution preserved: the interpretation of the Mishnah is attributed to the Baal Shem Tov and the explanation of 'נזכרים ונעשים' to the Ari. Attribution preserved: the interpretation of the Mishnah is attributed to the Baal Shem Tov and the explanation of 'נזכרים ונעשים' to the Ari.",
       "canonical_file": "data/items/content-research-batch-191-2026-11-19.json",
       "content_enrichment_batch_id": "191",
       "last_content_enriched_at": "2026-11-19T19:52:49+02:00",
