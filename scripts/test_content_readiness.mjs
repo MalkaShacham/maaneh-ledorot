@@ -1423,7 +1423,7 @@ assert.equal(String(projectState.current_batch),'175');
 assert.equal(projectState.current_batch_file,batch175Path);
 assert.equal(String(projectState.development_recovery.current_batch),'175');
 assert.equal(projectState.development_recovery.current_batch_file,batch175Path);
-assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'174');
+assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'175');
 assert.equal(lastBatchSummary.batch_id,'175');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual||lastBatchSummary.metrics_expected_after),readinessMetrics(metrics));
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_actual_before),readinessMetrics(batch175Data.metrics_actual_before));
