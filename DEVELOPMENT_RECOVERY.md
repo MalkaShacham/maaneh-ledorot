@@ -1751,3 +1751,14 @@ Batch192's measured PR-workspace baseline is 1616 / 854 / 4177; the expected pos
 - גבול תכנון לפי מדידת Batch193: **1,623 / 854 / 4,193 → 1,632 / 854 / 4,203** (answer-eligible Evidence Families / content-Verified Evidence Families / propositions). הערך אחרי הוא יעד עד reconciliation בפועל, לא מדידה.
 - נוספה בדיקת regression לשתי Evidence Families נפרדות על אמירת תהילים בציבור וחלוקת תהילים יומית, במצב regular ובמצב deep researcher, עם claim-level locators, citation entailment ו-context boundaries.
 - PR #35 נשאר פתוח עד מעבר exact-head Answer Quality Gate ו-`test_content_readiness.mjs`. מדדי main הציבוריים ו-GitHub Pages טרם השתנו. לוח הזמנים השעתי, הקהל וההרשאות נשארו ללא שינוי.
+
+
+## 2026-11-19 — Batch195: English letters, two enrichments, retrieval coverage
+
+- Added 10 new letter-level source identities from publicly accessible Chabad.org / TheRebbe.org English publisher bodies. Each is Parsed, has one bounded non-verbatim Hebrew research proposition, an exact body locator and provenance. The English presentations are marked non-independent; original-language witnesses were not inspected and no Verified status was promoted.
+- Enriched two existing identities in place: AID 2278254 (a question about tzedakah at night, without inventing a final ruling) and AID 2276666 (the opening's Rosh Hashanah self-review and tzedakah context).
+- Synchronized the already-counted Batch181 proposition for AID 2514160 into the same-AID English presentation selected by the index. This is a same-family presentation repair, not a new identity, witness or proposition.
+- Inspected 13 text-bearing source bodies (10 new, 2 enrichments, 1 presentation repair). Eight Yechidus pages were opened but contained no readable transcript; AID 4666220 returned Internal Error. No crawler retry or access-control bypass was used; accessible public letter pages were used as fallback.
+- Expanded retrieval topic terms for family purity, shidduchim, Torah study, tzedakah, educators and Beis Yaakov. Added regular/researcher-mode tests for multi-family synthesis, claim-level citations and exact source locators; deep researcher mode is tested for the new letter families.
+- Batch194 correction: exact-AID records 3315370 and 3315415 were already canonical in Batch145. Their duplicate Batch194 records were removed; no extra family or proposition is counted. The measured pre-Batch195 PR-workspace boundary is 1628 answer-eligible unique sources / 854 content-verified sources / 4199 propositions. Batch195 planning boundary is 1638 / 854 / 4211; it remains pending exact-head reconciliation until the workflow completes.
+- Public main metrics remain 977 / 878 / 2950 until merge and post-merge publication. No audience or permissions were changed; the existing hourly workflow was not duplicated.
