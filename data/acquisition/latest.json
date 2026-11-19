@@ -1,6 +1,6 @@
 {
   "schema": "maaneh-ledorot-acquisition-latest-v1",
-  "started_at": "2026-11-19T12:56:43+02:00",
+  "started_at": "2026-11-19T13:24:13+02:00",
   "attempted": 13,
   "discovered": 9,
   "enriched": 1,
@@ -8,6 +8,94 @@
   "skipped": 0,
   "status": "pending_reconciliation",
   "manual_web_review": {
+    "schema": "maaneh-ledorot-content-research-batch-v1",
+    "batch_id": "182",
+    "batch_file": "data/items/content-research-batch-182-2026-11-19.json",
+    "generated": "2026-11-19T13:24:13+02:00",
+    "reviewed_at": "2026-11-19T13:24:13+02:00",
+    "title": "Batch182 — eight new original-Hebrew Igrot Kodesh letters; AID 4666220 browser-shell fallback; exact source-body provenance",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 8,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 8,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "source_languages": [
+      "Hebrew"
+    ],
+    "language_distribution": {
+      "Hebrew": 8
+    },
+    "original_language_distribution": {
+      "Hebrew": 8
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 8
+    },
+    "source_type_distribution": {
+      "Letters": 8
+    },
+    "new_aids": [
+      4731068,
+      5357009,
+      5413030,
+      5357052,
+      5100679,
+      5357571,
+      5413490,
+      5100718
+    ],
+    "enriched_aids": [],
+    "blocked_aids": [
+      4666220
+    ],
+    "blocked_candidate_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+        "status": "browser_compatibility_shell_no_body",
+        "reason": "העמוד הפנה ל-/torah-texts/4666220/page/default.htm והציג הודעת דרישת דפדפן חדש; לא התקבל גוף מכתב קריא.",
+        "handling": "נרשם כחסום לתוכן; לא בוצע ניסיון לעקוף את דרישת הדפדפן או להריץ crawler. באותה הפעלה נבדקו שמונה גופי מכתבים עבריים אחרים של Kehot/Chabad.org."
+      }
+    ],
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "accessible_item_level_bodies": 8,
+      "accessible_original_language_bodies": 8,
+      "publisher": "Kehot Publication Society / Chabad.org",
+      "languages": [
+        "Hebrew"
+      ],
+      "note": "לאחר ש-AID 4666220 הציג מעטפת תאימות דפדפן ללא גוף מכתב, נפתחו ונבדקו שמונה גופי מכתבים עבריים אחרים מאותו מו״ל."
+    },
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1574,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4095
+    },
+    "metrics_actual_before": null,
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1582,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4103
+    },
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "reconciliation_variance": null
+  },
+  "previous_manual_web_review": {
     "batch_id": "181",
     "batch_file": "data/items/content-research-batch-181-2026-11-19.json",
     "generated": "2026-11-19T12:56:43+02:00",
@@ -81,24 +169,6 @@
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null
-  },
-  "previous_manual_web_review": {
-    "batch_id": "180",
-    "batch_file": "data/items/content-research-batch-180-2026-11-19.json",
-    "generated": "2026-11-19T09:58:26+02:00",
-    "title": "Batch180: six new Hebrew Sichos, one secondary English memoir, and two in-place enrichments including a Yiddish original",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "metrics_actual_before": null,
-    "metrics_actual_after": null,
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1575,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4090
-    },
-    "metrics_delta_actual": null,
-    "new_source_identities": 7,
-    "existing_identities_enriched": 2
   },
   "last_manual_web_review": {
     "batch_id": "181",
@@ -464,7 +534,11 @@
       "batch_file": "data/items/content-research-batch-181-2026-11-19.json"
     }
   ],
-  "manual_web_review_current_metrics": null,
+  "manual_web_review_current_metrics": {
+    "answer_eligible_unique_sources": 1574,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4095
+  },
   "crawler_retry": false,
   "access_control_bypassed": false,
   "fallback_source_attempted": true,
