@@ -18,16 +18,16 @@
   "search_extracts_inspected": 9,
   "search_extracts_used_as_content": 0,
   "new_source_identities": 0,
-  "existing_identities_enriched": 7,
-  "existing_identities_rechecked": 1,
+  "existing_identities_enriched": 5,
+  "existing_identities_rechecked": 3,
   "new_response_propositions": 0,
-  "existing_response_propositions_added": 7,
-  "total_new_paraphrase_entries": 7,
+  "existing_response_propositions_added": 5,
+  "total_new_paraphrase_entries": 5,
   "answer_eligible_source_families_added": 0,
   "independent_witnesses_added": 0,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
-  "duplicate_alias_identities": 0,
+  "duplicate_alias_identities": 3,
   "source_languages": [
     "Hebrew"
   ],
@@ -47,14 +47,14 @@
   "enriched_aids": [
     4279925,
     2989560,
-    2989195,
-    2989574,
     2988862,
     4385609,
     2988859
   ],
   "rechecked_aids": [
-    4304430
+    4304430,
+    2989195,
+    2989574
   ],
   "reviewed_aids": [
     4279925,
@@ -112,16 +112,20 @@
   "full_text_copied": false,
   "scan_only_verification_used": false,
   "metrics_before": {
-    "answer_eligible_unique_sources": 1559,
+    "answer_eligible_unique_sources": 1557,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4063
+    "answer_eligible_propositions": 4064
   },
-  "metrics_before_source": "Corrected Batch176 planning boundary after excluding duplicate AIDs 4304430 and 4736086; exact-head reconciliation must measure the contiguous 175–177 chain.",
-  "metrics_actual_before": null,
-  "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1559,
+  "metrics_before_source": "Corrected Batch176 boundary after removing duplicate AIDs 2989195 and 2989574; exact-head CI run 44456969090 measured 1557/854/4064 after Batch176.",
+  "metrics_actual_before": {
+    "answer_eligible_unique_sources": 1557,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4070
+    "answer_eligible_propositions": 4064
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 1557,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4069
   },
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
@@ -129,30 +133,28 @@
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 0,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 7
+    "answer_eligible_propositions": 5
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "metrics_attribution_note": "Eight new propositions enrich eight existing canonical identities and Evidence Families. No new source identity, family, independent witness or Verified item is expected. The exact before/after metrics remain pending full-index reconciliation.",
+  "metrics_attribution_note": "Five distinct propositions enrich five existing canonical Batch176 identities. Two additional candidate updates (AIDs 2989195 and 2989574) were excluded because the substantive content already exists in their canonical Evidence Families. AID 4304430 was also rechecked and excluded. No new identity, family, independent witness or Verified item.",
   "deduplication_check": {
-    "full_index_scan_available": true,
-    "full_index_scan_pending_reconciliation": false,
-    "target_identity_count": 7,
+    "full_index_scan_available": false,
+    "full_index_scan_pending_reconciliation": true,
+    "target_identity_count": 5,
     "target_aids": [
       4279925,
       2989560,
-      2989195,
-      2989574,
       2988862,
       4385609,
       2988859
     ],
-    "target_identity_matches": 7,
+    "target_identity_matches": 5,
     "target_identity_duplicates": 0,
-    "selected_unique_evidence_families": 7,
+    "selected_unique_evidence_families": 5,
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "note": "Seven existing canonical identities were enriched. AID 4304430 was rechecked but excluded because its substantive passage is already in the canonical Batch101 identity."
+    "note": "The seven candidate enrichments were reduced to five after comparison with existing canonical propositions. Full-index reconciliation on the corrected exact PR head is pending."
   },
   "source_body_review": [
     {
@@ -498,60 +500,6 @@
       "note": "Existing canonical identity and Evidence Family retained. A distinct, non-overlapping original-Hebrew body passage was inspected and added in place; no new witness or Verified promotion."
     },
     {
-      "aid": 2989195,
-      "id": "chabad-sicha-2989195",
-      "canonical_file": "data/items/content-research-batch-176-2026-11-19.json",
-      "evidence_family_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
-      "action": "enriched_existing_identity_in_place",
-      "existing_propositions_before": 1,
-      "propositions_added": 1,
-      "total_propositions_after": 2,
-      "source_body_locator": "he.chabad.org AID 2989195, גוף השיחה, סעיף ג׳, שורות 198–200.",
-      "locator": "he.chabad.org AID 2989195, גוף השיחה, סעיף ג׳, שורות 198–200.",
-      "body_locator": "he.chabad.org AID 2989195, גוף השיחה, סעיף ג׳, שורות 198–200.",
-      "proposition": "השיחה מנסחת הוראה מן הסיפור על אדמו״ר מהר״ש: פעולה טובה שהאדם עושה לעצמו יכולה להשפיע על העולם, אך אין להסתפק בכך; זיכוך העולם צריך להיעשות גם באמצעות השפעה ישירה על הזולת, ובכך נמשכת תוספת אור גם למשפיע. זהו ניסוח רעיוני של השיחה, לא אימות היסטורי עצמאי של הסיפור.",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 2989195, גוף השיחה, סעיף ג׳, שורות 198–200.",
-      "web_source_ref": "turn154264view0",
-      "new_independent_witness": false,
-      "provenance": "BeitChabad.com / he.chabad.org; original Hebrew body inspected on 2026-11-19.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989195, במיקום he.chabad.org AID 2989195, גוף השיחה, סעיף ג׳, שורות 198–200., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. התמליל מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו בנפרד. הפרופוזיציה מסכמת את ההוראה שהשיחה עצמה מפיקה מן הסיפור; היא אינה עדות עצמאית לפרטי הסיפור ההיסטורי. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום; לא הועתק גוף הפרסום המלא.",
-      "context_status": "partial",
-      "conditions_or_qualifications": [
-        "הפרופוזיציה מסכמת את ההוראה שהשיחה עצמה מפיקה מן הסיפור; היא אינה עדות עצמאית לפרטי הסיפור ההיסטורי."
-      ],
-      "note": "Existing canonical identity and Evidence Family retained. A distinct, non-overlapping original-Hebrew body passage was inspected and added in place; no new witness or Verified promotion."
-    },
-    {
-      "aid": 2989574,
-      "id": "chabad-sicha-2989574",
-      "canonical_file": "data/items/content-research-batch-176-2026-11-19.json",
-      "evidence_family_id": "sicha-5717-tahara-5-nissan-aid2989574",
-      "action": "enriched_existing_identity_in_place",
-      "existing_propositions_before": 1,
-      "propositions_added": 1,
-      "total_propositions_after": 2,
-      "source_body_locator": "he.chabad.org AID 2989574, גוף השיחה, סעיף ב׳, שורות 189–195.",
-      "locator": "he.chabad.org AID 2989574, גוף השיחה, סעיף ב׳, שורות 189–195.",
-      "body_locator": "he.chabad.org AID 2989574, גוף השיחה, סעיף ב׳, שורות 189–195.",
-      "proposition": "השיחה מסבירה שקול הדיבור הוא שלב הגילוי לזולת לאחר שהאדם יודע את התוכן ומעבד כיצד להתאימו למקבל. באמצעות הדיבור ניתן לגלות לא רק מידע שכלי אלא גם ממדים פנימיים יותר של הנפש, והקשר שנוצר אצל השומע חורג מקליטת מידע חיצונית בלבד. זהו ביאור מושגי בתוך השיחה.",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 2989574, גוף השיחה, סעיף ב׳, שורות 189–195.",
-      "web_source_ref": "turn186995view3",
-      "new_independent_witness": false,
-      "provenance": "BeitChabad.com / he.chabad.org; original Hebrew body inspected on 2026-11-19.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989574, במיקום he.chabad.org AID 2989574, גוף השיחה, סעיף ב׳, שורות 189–195., ביום 19.11.2026. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. התמליל מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו בנפרד. הקטע מציג תפיסה חסידית-עיונית של דיבור והשפעה; אין להציגו כממצא פסיכולוגי או מדעי. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום; לא הועתק גוף הפרסום המלא.",
-      "context_status": "partial",
-      "conditions_or_qualifications": [
-        "הקטע מציג תפיסה חסידית-עיונית של דיבור והשפעה; אין להציגו כממצא פסיכולוגי או מדעי."
-      ],
-      "note": "Existing canonical identity and Evidence Family retained. A distinct, non-overlapping original-Hebrew body passage was inspected and added in place; no new witness or Verified promotion."
-    },
-    {
       "aid": 2988862,
       "id": "chabad-sicha-2988862",
       "canonical_file": "data/items/content-research-batch-176-2026-11-19.json",
@@ -633,16 +581,49 @@
       "note": "Existing canonical identity and Evidence Family retained. A distinct, non-overlapping original-Hebrew body passage was inspected and added in place; no new witness or Verified promotion."
     }
   ],
-  "existing_identity_updates_count": 7,
+  "existing_identity_updates_count": 5,
   "existing_identity_rechecks": [
     {
-      "aid": 4736086,
-      "id": "chabad-sicha-4736086",
-      "action": "original_language_recheck_not_promoted",
+      "aid": 4304430,
+      "id": "sicha-5724-yud-beis-tammuz-aid4304430",
+      "action": "excluded_duplicate_existing_identity",
+      "existing_identity": true,
       "body_page_opened": true,
       "body_text_inspected": true,
-      "inspected_original_language_body": false,
-      "reason": "The public reader displayed the English translation, not the original Yiddish text; no new proposition was added."
+      "inspected_original_language_body": true,
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "canonical_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+      "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+      "proposition_count": 0,
+      "reason": "AID 4304430 was re-opened; the inspected passage is already represented in the canonical Batch101 identity."
+    },
+    {
+      "aid": 2989195,
+      "id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+      "action": "excluded_duplicate_existing_identity",
+      "existing_identity": true,
+      "body_page_opened": true,
+      "body_text_inspected": true,
+      "inspected_original_language_body": true,
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "canonical_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+      "evidence_family_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+      "proposition_count": 0,
+      "reason": "Candidate proposition overlaps the existing canonical proposition; no new proposition counted."
+    },
+    {
+      "aid": 2989574,
+      "id": "chabad-sicha-2989574",
+      "action": "excluded_duplicate_existing_identity",
+      "existing_identity": true,
+      "body_page_opened": true,
+      "body_text_inspected": true,
+      "inspected_original_language_body": true,
+      "canonical_file": "data/items/content-research-batch-153-2026-11-18.json",
+      "canonical_id": "chabad-sicha-2989574",
+      "evidence_family_id": "sicha-5717-tahara-5-nissan-aid2989574",
+      "proposition_count": 0,
+      "reason": "Candidate proposition overlaps the existing canonical proposition; no new proposition counted."
     }
   ],
   "expected_answer_eligible_source_families_added": 0,
@@ -698,9 +679,9 @@
   "excluded_item_ids": [
     "chabad-sicha-4736086"
   ],
-  "note": "Seven non-overlapping Hebrew body propositions remain as in-place enrichments to seven existing Batch176 identities. AID 4304430 was re-opened, but its inspected passage is already represented in the canonical AID 4304430 identity in Batch101; it is recorded as a recheck, not a new enrichment. Three alternate pages returned HTTP 429 and were documented; a Yiddish page exposed only English translation and was not used as independent evidence. No new identity, Evidence Family, independent witness, translation witness or Verified promotion. No crawler retry, access-control bypass, search-snippet inference or full-text copying.",
+  "note": "Five non-overlapping Hebrew body propositions remain as in-place enrichments to five surviving Batch176 identities. Two of the seven candidate updates (AIDs 2989195 and 2989574) were excluded because their content overlaps canonical propositions in Batch101 and Batch153. AID 4304430 was rechecked and excluded. Three alternative pages returned HTTP 429; the Yiddish page exposed only an English translation and was not promoted. No Verified promotion.",
   "records": [],
-  "excluded_duplicate_candidate_count": 1,
+  "excluded_duplicate_candidate_count": 3,
   "excluded_duplicate_candidates": [
     {
       "aid": 4304430,
@@ -711,6 +692,26 @@
       "independent_witness": false,
       "action": "excluded_duplicate_existing_identity",
       "reason": "AID 4304430 is already canonical in Batch101; the re-opened passage overlaps existing canonical propositions, so the Batch177 candidate was not added again."
+    },
+    {
+      "aid": 2989195,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989195",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "canonical_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+      "evidence_family_id": "sicha-5722-haazinu-13-tishrei-aid2989195",
+      "independent_witness": false,
+      "action": "excluded_duplicate_existing_identity",
+      "reason": "Batch177 re-opened this existing AID, but the candidate proposition repeats the substantive content already represented in the canonical Evidence Family; no additional proposition counted."
+    },
+    {
+      "aid": 2989574,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989574",
+      "canonical_file": "data/items/content-research-batch-153-2026-11-18.json",
+      "canonical_id": "chabad-sicha-2989574",
+      "evidence_family_id": "sicha-5717-tahara-5-nissan-aid2989574",
+      "independent_witness": false,
+      "action": "excluded_duplicate_existing_identity",
+      "reason": "Batch177 re-opened this existing AID, but the candidate proposition repeats the substantive content already represented in the canonical Evidence Family; no additional proposition counted."
     }
   ]
 }
