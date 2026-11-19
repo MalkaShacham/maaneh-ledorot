@@ -2745,6 +2745,7 @@
       "AID 4646054 showed a Yiddish summary shell without a readable body; no content inferred.",
       "Batch196: six candidate new Hebrew Sicha identities and two in-place enrichments; seven 429 blocks documented; full-index dedup and measured reconciliation pending.",
       "Full-index audit found duplicate AID4385701 rows in Batch172 and Batch193; both propositions were merged into Batch141 and duplicate records removed. Re-run exact-head reconciliation for batches172,193,196.",
+      "Full-index audit found duplicate AID4385701 rows in Batch172 and Batch193; both propositions were merged into Batch141 and duplicate records removed. Re-run exact-head reconciliation for batches172,193,196.",
       "Full-index audit found duplicate AID4385701 rows in Batch172 and Batch193; both propositions were merged into Batch141 and duplicate records removed. Re-run exact-head reconciliation for batches172,193,196."
     ],
     "pending_reconciliation_batches": [
@@ -5790,7 +5791,7 @@
     "status": "pending_after_AID4385701_duplicate_repair",
     "last_failed_run_id": 44590809620,
     "last_failure": "The Batch192 exact-head run reached index generation and failed on a stale test assertion that expected current_batch=191 while project-state already pointed to Batch192. Batch193 updates the state and extends exact-head checks through Batch193.",
-    "note": "The previous CI run detected duplicate AID4385701 families in Batch172 and Batch193. They were consolidated into Batch141; a new full-index reconciliation and content readiness run is required.",
+    "note": "The previous exact-head CI run detected duplicate AID4385701 families in Batch172 and Batch193. They were consolidated into Batch141; a new full-index reconciliation and content readiness run is required.",
     "run_status": "Awaiting fresh exact-head Answer Quality Gate after AID4385701 duplicate repair.",
     "workflow_run_id": null,
     "evaluated_commit": null
