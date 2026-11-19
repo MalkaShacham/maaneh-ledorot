@@ -7277,7 +7277,7 @@ for(const update of batch184Data.existing_identity_updates){
  assert(e.response_propositions.includes(update.proposition),'Batch184 AID '+update.aid+' must expose the new in-place proposition');
  assert(e.response_proposition_locators.includes(update.proposition_source_locator),'Batch184 AID '+update.aid+' must expose the new body locator');
 }
-const batch184Question='מה מתארות השיחות על הרבצת תורה, פנייה לפנימיות הנוער והשפעה חינוכית על ילדים והורים?';
+const batch184Question='מה מתארות השיחות על הרחבת לימוד התורה ברבים, ריכוז בעת לימוד והשפעה חינוכית על ילדים והורים?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch184Question,{mode});
  assert(m.answerable,mode+': Batch184 Hebrew Sicha enrichments must support a bounded multi-family answer');
