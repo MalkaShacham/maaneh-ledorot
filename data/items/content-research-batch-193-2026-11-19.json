@@ -5,21 +5,21 @@
   "generated": "2026-11-19T20:55:59+02:00",
   "reviewed_at": "2026-11-19T20:55:59+02:00",
   "title": "Batch193 — seven new Hebrew Sicha identities and one in-place enrichment from eight directly inspected public body passages",
-  "status": "reconciled",
-  "reconciliation_status": "reconciled",
+  "status": "pending_reconciliation",
+  "reconciliation_status": "pending_reconciliation",
   "reviewed_item_count": 11,
   "source_bodies_inspected": 8,
   "source_body_pages_opened": 8,
   "source_body_pages_attempted": 11,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 7,
-  "existing_identities_enriched": 1,
+  "new_source_identities": 6,
+  "existing_identities_enriched": 2,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 7,
-  "existing_response_propositions_added": 1,
+  "new_response_propositions": 6,
+  "existing_response_propositions_added": 2,
   "total_new_paraphrase_entries": 8,
-  "answer_eligible_source_families_added": 7,
+  "answer_eligible_source_families_added": 6,
   "independent_witnesses_added": 0,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
@@ -41,12 +41,12 @@
     4280029,
     2988934,
     5989705,
-    4385701,
     4385630,
     5989766
   ],
   "enriched_aids": [
-    5959922
+    "5959922",
+    "4385701"
   ],
   "rechecked_aids": [],
   "blocked_candidate_count": 3,
@@ -76,7 +76,7 @@
     }
   ],
   "metadata_only_candidate_count": 0,
-  "excluded_duplicate_candidate_count": 0,
+  "excluded_duplicate_candidate_count": 1,
   "excluded_candidate_count": 0,
   "fallback_source_attempted": true,
   "crawler_retry": false,
@@ -85,37 +85,25 @@
   "scan_only_verification_used": false,
   "translations_counted_as_independent_witnesses": 0,
   "metrics_before": {
-    "answer_eligible_unique_sources": 1616,
+    "answer_eligible_unique_sources": 1615,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4185
   },
   "metrics_actual_before": {
-    "answer_eligible_unique_sources": 1616,
+    "answer_eligible_unique_sources": 1615,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4185
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1623,
+    "answer_eligible_unique_sources": 1621,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4193
   },
-  "metrics_actual_after": {
-    "answer_eligible_unique_sources": 1623,
-    "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4193
-  },
-  "metrics_delta_actual": {
-    "answer_eligible_unique_sources": 7,
-    "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 8
-  },
-  "reconciliation_variance": {
-    "answer_eligible_unique_sources": 0,
-    "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 0
-  },
+  "metrics_actual_after": null,
+  "metrics_delta_actual": null,
+  "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 7,
+    "answer_eligible_unique_sources": 6,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 8
   },
@@ -212,14 +200,17 @@
       "language": "Hebrew",
       "original_language": "unknown",
       "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "evidence_family_id": "sicha-5727-vav-tishrei-aid4385701",
+      "evidence_family_id": "sicha-5727-06-tishrei-aid4385701",
       "independent_witness": null,
       "proposition_count": 1,
       "context_status": "partial",
-      "existing_identity": false,
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-193-2026-11-19.json",
-      "note": "גוף פרסום עברי נפתח ונבדק ישירות; הפרסום מסומן בלתי מוגה. שפת ההרצאה המקורית אינה מבוססת בעמוד; נוספה פרפרזה לא-מילולית אחת עם locator מדויק. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "note": "AID4385701 is already canonical in Batch141; this distinct proposition is preserved in the canonical Evidence Family, not counted as a new source identity.",
+      "new_independent_witness": false,
+      "duplicate_of_canonical_id": "chabad-sicha-4385701",
+      "duplicate_identity_merged": true
     },
     {
       "aid": 4385630,
@@ -763,125 +754,6 @@
       ]
     },
     {
-      "id": "chabad-sicha-4385701",
-      "canonical_key": "aid:4385701",
-      "aid": 4385701,
-      "title": "שיחת יום ג׳, וא״ו תשרי, ה׳תשכ״ז — בלתי מוגה",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה שפורסם בעברית בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; שפת ההרצאה המקורית אינה מבוססת בעמוד. נבדק רק המקטע המצוין וההקשר הסמוך.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "source_text_inspected",
-      "date_original": "וא״ו תשרי, ה׳תשכ״ז",
-      "date_precision": "exact_as_published",
-      "language": "Hebrew",
-      "original_language": "unknown",
-      "type": "public_talk_transcript",
-      "collection": "שיחות והתוועדויות / BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4385701",
-      "context_status": "partial",
-      "summary_researcher": "השיחה מפרשת את תיאור התשובה כ״יפה״ בשני מובנים: תועלת, משום שהיא מתקנת את העבר ומכוונת את העתיד; ויופי, משום שהיא מקרבת את האדם לקב״ה. בעשרת ימי תשובה, המתוארים כזמן שבו הקב״ה ״בהמצאו״, השיחה מדגישה את הקרבה ואת האפשרות שהתשובה תחדור לפנימיות האדם.",
-      "response_propositions": [
-        "השיחה מפרשת את תיאור התשובה כ״יפה״ בשני מובנים: תועלת, משום שהיא מתקנת את העבר ומכוונת את העתיד; ויופי, משום שהיא מקרבת את האדם לקב״ה. בעשרת ימי תשובה, המתוארים כזמן שבו הקב״ה ״בהמצאו״, השיחה מדגישה את הקרבה ואת האפשרות שהתשובה תחדור לפנימיות האדם."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260.",
-      "evidence_family_id": "sicha-5727-vav-tishrei-aid4385701",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4385701, במיקום he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד, אוטוגרף או נוסח מוגה. שפת ההרצאה המקורית אינה מבוססת בעמוד ולכן original_language=unknown. הפרפרזה לא-מילולית ומוגבלת למיקום; לא הועתק גוף הפרסום המלא.",
-      "documented_circumstances": "וא״ו תשרי, ה׳תשכ״ז",
-      "question_or_problem": "כיצד השיחה מפרשת את התשובה כיפה ואת ייחודם של עשרת ימי תשובה?",
-      "conditions_or_qualifications": [
-        "העמוד מסומן בלתי מוגה; לא נבדקו הקלטה, רישום בן הזמן, כתב יד או נוסח מוגה.",
-        "שפת ההרצאה המקורית אינה מצוינת בעמוד; אין לקבוע שהיא עברית על סמך שפת התמליל.",
-        "הפרפרזה מוגבלת למקטע ולמיקום שצוינו; אין להשלים ממנה את יתר השיחה."
-      ],
-      "audience": "קהל ההתוועדות וקוראי התמליל.",
-      "primary_secondary_status": "Published Hebrew transcript marked בלתי מוגה; primary textual witness to the talk as published, but original spoken language is not established and no recording, contemporaneous notes, autograph or corrected edition was collated.",
-      "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "witness_provenance": "BeitChabad.com / he.chabad.org AID 4385701, שיחת יום ג׳, וא״ו תשרי, ה׳תשכ״ז — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/4385701; body passage opened and inspected 2026-11-19.",
-      "independent_witness": null,
-      "translation_status": "The published body is Hebrew; the original spoken language is not established. No translation is counted as an independent witness.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד.",
-      "source_role": "oral_talk_transcript",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "provenance": {
-        "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org AID 4385701, שיחת יום ג׳, וא״ו תשרי, ה׳תשכ״ז — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/4385701; body passage opened and inspected 2026-11-19.",
-        "transmission_type": "Publisher-published Hebrew unedited public-talk transcript; original spoken language not established from the inspected page.",
-        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו רק he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260.. לא נבדקו הקלטה, רישום בן הזמן, כתב יד, אוטוגרף או נוסח מוגה.",
-        "editorial_scope": "One bounded non-verbatim research paraphrase with a claim-level body locator; no full protected text copied.",
-        "verification_status": "Parsed; source_text_inspected; partial context; original spoken language unknown; no Verified promotion.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4385701",
-        "accessed": "2026-11-19T20:55:59+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "Publisher-published Hebrew unedited transcript; original spoken language unknown.",
-        "complete_partial": "partial",
-        "notes": "נבדק רק he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260.; לא נבדקו הקלטה, כתב יד או מהדורה אחרת. העמוד מסומן בלתי מוגה."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור, פרפרזה מחקרית תחומה ומיקום בלבד; לא הועתק גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 4385701 מזהה פרסום של אירוע שיחה מסוים. אם יאותר נוסח מקביל בשפה אחרת, הקלטה או מהדורה נוספת של אותו אירוע, יש לקשרם ל-Evidence Family sicha-5727-vav-tishrei-aid4385701; תרגום או הצגה מקבילה אינם עד עצמאי נוסף.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת יום ג׳, וא״ו תשרי, ה׳תשכ״ז — בלתי מוגה"
-        ],
-        "research_terms": [
-          "תשובה",
-          "עשרת ימי תשובה",
-          "קרבת ה׳",
-          "פנימיות הנפש"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed. נוספה פרפרזה מחקרית לא-מילולית מגוף הפרסום שנבדק ישירות; original_language נשאר unknown; אין קידום ל-Verified.",
-      "canonical_file": "data/items/content-research-batch-193-2026-11-19.json",
-      "content_enrichment_batch_id": "193",
-      "last_content_enriched_at": "2026-11-19T20:55:59+02:00",
-      "response_proposition_metadata": [
-        {
-          "proposition_index": 0,
-          "batch_id": "193",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260.",
-          "provenance": "BeitChabad.com / he.chabad.org AID 4385701, שיחת יום ג׳, וא״ו תשרי, ה׳תשכ״ז — בלתי מוגה, https://he.chabad.org/library/article_cdo/aid/4385701; body passage opened and inspected 2026-11-19.",
-          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4385701, במיקום he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד, אוטוגרף או נוסח מוגה. שפת ההרצאה המקורית אינה מבוססת בעמוד ולכן original_language=unknown. הפרפרזה לא-מילולית ומוגבלת למיקום; לא הועתק גוף הפרסום המלא.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "העמוד מסומן בלתי מוגה; לא נבדקו הקלטה, רישום בן הזמן, כתב יד או נוסח מוגה.",
-            "שפת ההרצאה המקורית אינה מבוססת בעמוד.",
-            "הפרפרזה מוגבלת למקטע ולמיקום שצוינו."
-          ],
-          "web_source_ref": "turn739548view6"
-        }
-      ]
-    },
-    {
       "id": "chabad-sicha-4385630",
       "canonical_key": "aid:4385630",
       "aid": 4385630,
@@ -1149,9 +1021,27 @@
       ],
       "web_source_ref": "turn739548view9",
       "reason": "A non-overlapping Hebrew body passage was added to the existing AID 5959922 identity; the canonical file and Evidence Family were retained."
+    },
+    {
+      "action": "enriched_existing_identity_in_place",
+      "existing_identity": true,
+      "aid": 4385701,
+      "id": "chabad-sicha-4385701",
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "evidence_family_id": "sicha-5727-06-tishrei-aid4385701",
+      "existing_propositions_before": 2,
+      "propositions_added": 1,
+      "total_propositions_after": 3,
+      "proposition": "השיחה מפרשת את תיאור התשובה כ״יפה״ בשני מובנים: תועלת, משום שהיא מתקנת את העבר ומכוונת את העתיד; ויופי, משום שהיא מקרבת את האדם לקב״ה. בעשרת ימי תשובה, המתוארים כזמן שבו הקב״ה ״בהמצאו״, השיחה מדגישה את הקרבה ואת האפשרות שהתשובה תחדור לפנימיות האדם.",
+      "proposition_source_locator": "he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "propositions_merged_from_duplicate_record": 1,
+      "reason": "Same AID and same public talk event; proposition preserved in the Batch141 canonical identity, not counted as a new source family."
     }
   ],
-  "existing_identity_updates_count": 1,
+  "existing_identity_updates_count": 2,
   "deduplication_check": {
     "full_index_scan_available": true,
     "full_index_scan_pending_reconciliation": false,
@@ -1161,7 +1051,8 @@
     "target_identity_duplicates": 0,
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "same_family_duplicate_presentations": []
+    "same_family_duplicate_presentations": [],
+    "preflight_index_entries_checked": 9938
   },
   "preflight_deduplication": {
     "current_pr_batches_scanned": "150–192",
@@ -1183,5 +1074,32 @@
       "handling": "לא נעשה שימוש בסריקה לאימות תוכן; נבדקו גופי פרסום טקסטואליים נגישים במקום."
     }
   ],
-  "note": "שבע זהויות חדשות בעברית ועוד העשרה אחת in place. כל שבע הזהויות החדשות הן תמלילי פרסום עבריים בלתי מוגהים ששפת ההרצאה המקורית בהם אינה מבוססת; לכן independent_witness נשאר null ולא נספרו עדים עצמאיים. AID 5959922 הועשר במקטע לא חופף באותה Evidence Family. שלושה נתיבים החזירו HTTP 429; לא בוצע crawler retry או עקיפת גישה, ונבדקו מקורות חלופיים באותה הפעלה. אין קידום Verified."
+  "note": "שבע זהויות חדשות בעברית ועוד העשרה אחת in place. כל שבע הזהויות החדשות הן תמלילי פרסום עבריים בלתי מוגהים ששפת ההרצאה המקורית בהם אינה מבוססת; לכן independent_witness נשאר null ולא נספרו עדים עצמאיים. AID 5959922 הועשר במקטע לא חופף באותה Evidence Family. שלושה נתיבים החזירו HTTP 429; לא בוצע crawler retry או עקיפת גישה, ונבדקו מקורות חלופיים באותה הפעלה. אין קידום Verified. Duplicate AID4385701 consolidated into Batch141; no additional source family is counted.",
+  "duplicate_repairs": [
+    {
+      "aid": 4385701,
+      "duplicate_batch_id": "193",
+      "duplicate_file": "data/items/content-research-batch-193-2026-11-19.json",
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "canonical_id": "chabad-sicha-4385701",
+      "canonical_evidence_family_id": "sicha-5727-06-tishrei-aid4385701",
+      "old_duplicate_evidence_family_id": "sicha-5727-vav-tishrei-aid4385701",
+      "proposition_moved": "השיחה מפרשת את תיאור התשובה כ״יפה״ בשני מובנים: תועלת, משום שהיא מתקנת את העבר ומכוונת את העתיד; ויופי, משום שהיא מקרבת את האדם לקב״ה. בעשרת ימי תשובה, המתוארים כזמן שבו הקב״ה ״בהמצאו״, השיחה מדגישה את הקרבה ואת האפשרות שהתשובה תחדור לפנימיות האדם.",
+      "proposition_source_locator": "he.chabad.org AID 4385701, גוף השיחה, סעיפים יא׳–יב׳, שורות 244–260.",
+      "duplicate_record_removed_from_records": true,
+      "source_family_delta": -1,
+      "proposition_delta": 0
+    }
+  ],
+  "excluded_duplicate_candidates": [
+    {
+      "aid": 4385701,
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
+      "duplicate_of_canonical_id": "chabad-sicha-4385701",
+      "handling": "Same AID and same event; duplicate row removed and its distinct proposition merged into the Batch141 canonical Evidence Family."
+    }
+  ],
+  "duplicate_alias_identities": 1,
+  "metrics_after_actual": null,
+  "metrics_note": "AID4385701 was a duplicate Evidence Family. Its distinct proposition was merged into Batch141; this batch's new-family count was reduced by one. Full-index reconciliation must recompute actual boundaries."
 }
