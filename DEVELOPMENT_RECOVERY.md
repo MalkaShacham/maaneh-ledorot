@@ -1537,3 +1537,6 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - Batch177's AID 4304430 recheck was also excluded from enrichment counts because its passage is already represented in Batch101. Seven genuine in-place enrichments remain; one recheck is retained in the audit trail.
 - Corrected planning boundary after Batches175–177: **1,559 answer-eligible unique sources / 854 content-verified unique sources / 4,070 answer-eligible propositions**. This is not a measured result; exact-head reconciliation and readiness must confirm it. Public main metrics are unchanged until merge.
 - No Verified promotion, crawler retry, access-control bypass, full-text copying, schedule change or permission/audience change.
+
+
+- Historical Batch110 was included in the exact-head evidence-index audit during run 44450486958. All eight target AIDs resolved to Parsed, source-text-inspected entries; the stale pending-scan metadata was corrected to record the completed full-index audit. The existing collision and missing-identity arrays remain empty.

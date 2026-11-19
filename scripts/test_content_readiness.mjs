@@ -6788,7 +6788,11 @@ for(const r of batch176Data.records){
  assert(e.verification_scope&&e.witness_provenance);assert.equal(e.context_status,'partial');
  if(Number(r.aid)===2988859){assert.equal(e.independent_witness,false);assert.equal(e.translation_of_evidence_family_id,e.evidence_family_id);}
  else{assert.equal(e.independent_witness,true);assert.equal(e.translation_of_evidence_family_id,null);}
- assert.equal(e.response_propositions.length,1);assert.equal(e.response_proposition_locators.length,1);
+ assert.equal(e.response_propositions.length,2);assert.equal(e.response_proposition_locators.length,2);
+ const batch177Passage=batch177Data.source_body_review.find(x=>String(x.item_aid??x.aid)===String(r.aid));
+ assert(batch177Passage&&batch177Passage.proposition,'Batch177 must retain the in-place second passage audit for AID '+r.aid);
+ assert(e.response_propositions.includes(batch177Passage.proposition),'Batch177 proposition must be present in canonical AID '+r.aid);
+ assert(e.response_proposition_locators.some(l=>String(l).includes(batch177Passage.source_body_locator||batch177Passage.locator)),'Batch177 locator must remain attached to AID '+r.aid);
  assert.equal(e.response_propositions.length,e.response_proposition_locators.length);
 }
 assert(!batch176Data.records.some(r=>['4304430','4736086'].includes(String(r.aid))));
