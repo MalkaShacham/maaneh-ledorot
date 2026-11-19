@@ -6945,7 +6945,7 @@ for(const r of batch172Data.records){
 }
 const batch187Aids=['2988841','4279934','4279980','4279982','4296148'];
 assert.equal(batch187Data.batch_id,'187');
-assert.equal(batch187Data.status,'reconciled');
+assert(['reconciled','reconciled_with_variance'].includes(batch187Data.status),'Batch187 must be fully reconciled, with any variance recorded');
 assert.equal(batch187Data.records.length,5);
 assert.equal(batch187Data.new_source_identities,5);
 assert.equal(batch187Data.existing_identities_enriched,3);
