@@ -18,15 +18,15 @@
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 9,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 3,
-  "existing_identities_enriched": 7,
+  "new_source_identities": 2,
+  "existing_identities_enriched": 8,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 3,
-  "existing_response_propositions_added": 7,
+  "new_response_propositions": 2,
+  "existing_response_propositions_added": 8,
   "total_new_paraphrase_entries": 10,
-  "answer_eligible_source_families_added": 3,
+  "answer_eligible_source_families_added": 2,
   "independent_witnesses_added": 0,
-  "non_independent_presentations_added": 3,
+  "non_independent_presentations_added": 2,
   "content_verified_unique_sources_added": 0,
   "source_languages": [
     "English",
@@ -44,25 +44,22 @@
     "Hebrew": 10
   },
   "source_type_distribution": {
-    "Yechidus": 9,
-    "Sichos": 1
+    "Yechidus": 2,
+    "Existing Yechidus enrichment": 1
   },
   "original_languages": [
     "unknown",
     "Yiddish"
   ],
   "new_aids": [
-    2514160,
     2511792,
     2511754
   ],
   "new_ids": [
-    "yechidus-5744-16-tammuz-aid2514160",
     "yechidus-5746-26-nissan-aid2511792",
     "yechidus-5746-16-adar-ii-aid2511754"
   ],
   "new_source_ids": [
-    "yechidus-5744-16-tammuz-aid2514160",
     "yechidus-5746-26-nissan-aid2511792",
     "yechidus-5746-16-adar-ii-aid2511754"
   ],
@@ -73,7 +70,8 @@
     2499828,
     2511676,
     2512299,
-    4736086
+    4736086,
+    2514160
   ],
   "rechecked_aids": [],
   "reviewed_aids": [
@@ -210,6 +208,16 @@
       "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
       "evidence_family_id": "yechidus-eve-25-nissan-5744",
       "reason": "Full-index reconciliation found the same AID and Evidence Family in an earlier canonical file; the inspected proposition was merged into that identity and no duplicate source record remains."
+    },
+    {
+      "aid": 2514160,
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "duplicate_file": "data/items/content-research-batch-181-2026-11-19.json",
+      "canonical_evidence_family_id": "yechidus-event-aid2514160",
+      "duplicate_evidence_family_id": "yechidus-5744-16-tammuz-aid2514160",
+      "relation": "same AID and same English publisher translation of one dated Yechidus event",
+      "action": "duplicate_record_removed_and_proposition_merged_into_canonical_identity",
+      "independent_witness": false
     }
   ],
   "excluded_duplicate_candidate_count": 6,
@@ -322,9 +330,30 @@
       "total_propositions_after": 7,
       "body_locator": "Chabad.org AID 4736086, גוף השיחה היידי, סעיפים יא–יג, שורות 355–382.",
       "reason": "One bounded non-verbatim research paraphrase was added from the inspected original Yiddish body; the existing identity and Evidence Family were retained. The parallel English translation is not an independent witness."
+    },
+    {
+      "aid": 2514160,
+      "id": "yechidus-5744-16-tammuz-aid2514160",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2514160",
+      "existing_propositions_before": 2,
+      "propositions_added": 1,
+      "total_propositions_after": 3,
+      "proposition": "הפרסום מבחין בין פרידה גופנית לבין אחדות הנשמות והמחשבות שנמשכת גם כשהמשתתפים חוזרים למקומות שונים. הוא מציג את הצדקה כשליחות משותפת היוצרת שלום ואחדות, ומחבר אותה להמשך הפצת תורה ומצוות ומעשי חסד במקום מגוריו של כל אדם.",
+      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2514160, גוף הפרסום האנגלי, סעיף 1, שורות 245–250.",
+      "locators": [
+        "Chabad.org / TheRebbe.org AID 2514160, גוף הפרסום האנגלי, סעיף 1, שורות 245–250."
+      ],
+      "action": "enriched_existing_identity_in_place",
+      "new_independent_witness": false,
+      "independent_witness_added": false,
+      "provenance": "Chabad.org / TheRebbe.org AID 2514160, English publisher body inspected 2026-11-19; same dated Yechidus event and same Evidence Family as Batch137.",
+      "verification_scope": "ב-19.11.2026 נבדק גוף הפרסום האנגלי של Chabad.org / TheRebbe.org, AID 2514160, בשורות 245–250. נבדק המקטע וההקשר הסמוך בלבד; context_status=partial. זהו נוסח אנגלי שפורסם של אותו אירוע יחידות שכבר מיוצג ב-Batch137; שפת המקור, תמליל מקורי והקלטה לא נבדקו. הפרפרזה מוסיפה את ממד הצדקה והפצת תורה, מצוות וחסד לשליחות המשותפת; אין לראות בה עד עצמאי נוסף. לא הועתק גוף הפרסום המלא.",
+      "context_status": "partial",
+      "reason": "AID 2514160 already exists in Batch137 as the same English publisher translation and same dated Yechidus event. The duplicate Batch181 record had a different family slug; it was removed as a second identity, and its non-overlapping proposition was merged into the canonical Batch137 identity. Translation remains non-independent."
     }
   ],
-  "existing_identity_updates_count": 7,
+  "existing_identity_updates_count": 8,
   "existing_identity_rechecks": [],
   "existing_identity_rechecks_count": 0,
   "reviewed_item_refs": [
@@ -389,7 +418,7 @@
   ],
   "blocked_item_ids": [],
   "excluded_item_ids": [],
-  "translations_added": 3,
+  "translations_added": 2,
   "translations_counted_as_independent_witnesses": 0,
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -403,7 +432,7 @@
   "metrics_before_source": "Exact-head Batch180 full-index reconciliation measured 1571/854/4085. Six Batch181 English AIDs were already represented in canonical files and their new paraphrases were moved in-place; only three distinct Yechidus event families remain new.",
   "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1574,
+    "answer_eligible_unique_sources": 1573,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4095
   },
@@ -411,35 +440,27 @@
   "metrics_delta_actual": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 3,
+    "answer_eligible_unique_sources": 2,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 10
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "expected_answer_eligible_source_families_added": 3,
+  "expected_answer_eligible_source_families_added": 2,
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
-    "target_identity_count": 10,
+    "target_identity_count": 2,
     "target_aids": [
-      2514886,
-      2515046,
-      2514160,
-      2513225,
-      2499828,
-      2511676,
       2511792,
-      2511754,
-      2512299,
-      4736086
+      2511754
     ],
-    "target_identity_matches": 7,
+    "target_identity_matches": 0,
     "target_identity_duplicates": 0,
-    "selected_unique_evidence_families": 10,
+    "selected_unique_evidence_families": 2,
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "note": "Six AIDs were found in earlier canonical records during full-index reconciliation and their new inspected propositions were merged in place. Three AIDs remain new identities. AID 4736086 is an in-place Yiddish-source enrichment. The next exact-head scan must confirm one canonical record per AID and no family collisions."
+    "note": "AID 2514160 was a duplicate English presentation of the existing Batch137 Yechidus identity and was merged in place. Full-index reconciliation pending after this correction."
   },
   "fallback_source_attempted": true,
   "failed_alternate_routes": [
@@ -603,8 +624,8 @@
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "existing_identity": false,
-      "new_identity": true,
+      "existing_identity": true,
+      "new_identity": false,
       "new_independent_witness": false,
       "proposition": "הפרסום מבחין בין פרידה גופנית לבין אחדות הנשמות והמחשבות שנמשכת גם כשהמשתתפים חוזרים למקומות שונים. הוא מציג את הצדקה כשליחות משותפת היוצרת שלום ואחדות, ומחבר אותה להמשך הפצת תורה ומצוות ומעשי חסד במקום מגוריו של כל אדם.",
       "proposition_origin": "source_grounded_paraphrase",
@@ -615,13 +636,13 @@
       "language": "English",
       "original_language": "unknown",
       "witness_type": "published_english_translation",
-      "evidence_family_id": "yechidus-5744-16-tammuz-aid2514160",
+      "evidence_family_id": "yechidus-event-aid2514160",
       "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "note": "גוף הפרסום האנגלי נפתח ונבדק ישירות. שפת המקור והקלטה לא נבדקו; זהו פרסום מתורגם ולא עד עצמאי."
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "note": "Same AID and same English publisher translation already represented in Batch137; duplicate record removed and this proposition merged into the canonical identity. Translation remains non-independent."
     },
     {
       "aid": 2513225,
@@ -826,100 +847,6 @@
   ],
   "records": [
     {
-      "id": "yechidus-5744-16-tammuz-aid2514160",
-      "aid": 2514160,
-      "title": "Yechidus, 16th Day of Tammuz, 5744 (1984)",
-      "source_class": "Yechidus",
-      "source_class_detail": "יחידות מתוארכת בפרסום האנגלי של Sichos in English Collection; שפת המקור והעד המקורי לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "16th Day of Tammuz, 5744 (1984)",
-      "date": null,
-      "date_precision": "exact",
-      "language": "English",
-      "original_language": "unknown",
-      "context_status": "partial",
-      "summary_researcher": "היחידות מתארת את הפרידה כגופנית בלבד ואת האחדות הרוחנית כממשיכה; נתינת צדקה והפצת תורה, מצוות וחסד במקום המגורים הופכות את המרחק למסגרת של שליחות משותפת.",
-      "provenance": {
-        "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "Chabad.org / TheRebbe.org AID 2514160, Yechidus, 16th Day of Tammuz, 5744 (1984); public English body opened and inspected.",
-        "transmission_type": "Published English rendering in the Sichos in English Collection; original-language transcript or recording not inspected.",
-        "textual_status": "נבדק גוף הפרסום האנגלי במיקום Chabad.org / TheRebbe.org AID 2514160, גוף הפרסום האנגלי, סעיף 1, שורות 245–250.; נבדקו המקטע וההקשר הסמוך בלבד. אין בכך אימות של נוסח המקור או של שלמות היחידות.",
-        "editorial_scope": "Bounded non-verbatim research paraphrase from the inspected English body passage; no full-text reproduction.",
-        "verification_status": "source_text_inspected; published English rendering; partial context; original-language witness not inspected.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2514160/jewish/Yechidus-16th-Day-of-Tammuz-5744-1984.htm",
-        "accessed": "2026-11-19T12:56:43+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "public English body opened and inspected",
-        "complete_partial": "partial",
-        "notes": "העמוד מציג פרסום אנגלי מתוארך במסגרת Sichos in English Collection. לא נבדקו תמליל בשפת המקור, הקלטה, כתב־יד או מהדורה מודפסת."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "Link and bounded paraphrase only. Do not reproduce the copyrighted body text."
-      },
-      "relations": [],
-      "taxonomy": {
-        "source_type": "Yechidus",
-        "publisher_collection": "Sichos in English Collection",
-        "topics": [
-          "אילו פעולות מקומיות מוצגות כהמשך מעשי של אחדות לאחר פרידה?"
-        ],
-        "source_language": "English",
-        "proposition_language": "Hebrew"
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־19.11.2026. נפתח גוף הפרסום של AID 2514160; נבדקו רק השורות המצוינות ב-locator. העמוד מציג נוסח אנגלי שפורסם; שפת המקור, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית ולא ציטוט; לא הועתק גוף הפרסום המלא.",
-      "type": "published_english_yechidus_text",
-      "collection": "Sichos in English Collection",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2514160/jewish/Yechidus-16th-Day-of-Tammuz-5744-1984.htm",
-      "response_propositions": [
-        "הפרסום מבחין בין פרידה גופנית לבין אחדות הנשמות והמחשבות שנמשכת גם כשהמשתתפים חוזרים למקומות שונים. הוא מציג את הצדקה כשליחות משותפת היוצרת שלום ואחדות, ומחבר אותה להמשך הפצת תורה ומצוות ומעשי חסד במקום מגוריו של כל אדם."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org / TheRebbe.org AID 2514160, גוף הפרסום האנגלי, סעיף 1, שורות 245–250."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2514160, גוף הפרסום האנגלי, סעיף 1, שורות 245–250.",
-      "evidence_family_id": "yechidus-5744-16-tammuz-aid2514160",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "yechidus-5744-16-tammuz-aid2514160",
-      "has_content_evidence": true,
-      "verification_scope": "ב־19.11.2026 נפתח ונבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2514160. נבדק רק המקטע Chabad.org / TheRebbe.org AID 2514160, גוף הפרסום האנגלי, סעיף 1, שורות 245–250.. זהו נוסח אנגלי שפורסם; שפת המקור, תמליל עברי או יידי, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע המסומן, ולא ציטוט או ניסוח המערכת המיוחס לרבי. context_status=partial; אין להכליל מעבר להקשר המצוין. לא הועתק גוף הפרסום המלא.",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 2514160, Yechidus, 16th Day of Tammuz, 5744 (1984); English body inspected.",
-      "documented_circumstances": "Yechidus, 16th Day of Tammuz, 5744 (1984)",
-      "question_or_problem": "אילו פעולות מקומיות מוצגות כהמשך מעשי של אחדות לאחר פרידה?",
-      "conditions_or_qualifications": [
-        "הטקסט הוא נוסח אנגלי שפורסם; שפת המקור לא נבדקה.",
-        "נבדקו רק המקטע המצוין וההקשר הסמוך; context_status=partial.",
-        "אין לראות בפרפרזה ניסוח מילולי של הרבי או עדות עצמאית נוספת מעבר לאירוע המתואר."
-      ],
-      "audience": "משתתפי יחידות; הפרטים המלאים על הקהל לא אומתו מן המקטע.",
-      "primary_secondary_status": "Published English rendering of a dated Yechidus; original-language witness not inspected; derived non-independent presentation.",
-      "witness_type": "published_english_translation",
-      "translation_status": "English text published in Sichos in English Collection; original Hebrew/Yiddish text and recording not inspected; non-independent presentation.",
-      "independent_witness": false,
-      "author_name": "Rabbi Menachem M. Schneerson",
-      "author_role": "Speaker attributed by publisher; original language not inspected.",
-      "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-      "source_role": "published_english_yechidus_translation",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-      "rights_status": "copyrighted-link-only",
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
-    },
-    {
       "id": "yechidus-5746-26-nissan-aid2511792",
       "aid": 2511792,
       "title": "Yechidus, 26th Day of Nissan, 5746 (1986)",
@@ -1108,11 +1035,12 @@
       "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
     }
   ],
-  "note": "Nine distinct dated English Yechidus pages were inspected as published translations; none is counted as an independent witness. One existing Yiddish original identity (AID 4736086) was enriched in place from sections יא–יג. Three Hebrew routes returned Internal Error; their English published bodies were inspected in the same run. All new records remain Parsed and context partial; no Verified promotion. Correction 2026-11-19: exact-head reconciliation found six AIDs already canonical in earlier files (2514886, 2515046, 2513225, 2499828, 2511676, 2512299). Their inspected English paraphrases were moved into the existing canonical records. No duplicate source identities remain; only AIDs 2514160, 2511792 and 2511754 are new. AID 4736086 remains an in-place Yiddish enrichment. No Verified promotions.",
+  "note": "Nine distinct dated English Yechidus pages were inspected as published translations; none is counted as an independent witness. One existing Yiddish original identity (AID 4736086) was enriched in place from sections יא–יג. Three Hebrew routes returned Internal Error; their English published bodies were inspected in the same run. All new records remain Parsed and context partial; no Verified promotion. Correction 2026-11-19: exact-head reconciliation found six AIDs already canonical in earlier files (2514886, 2515046, 2513225, 2499828, 2511676, 2512299). Their inspected English paraphrases were moved into the existing canonical records. No duplicate source identities remain; only AIDs 2514160, 2511792 and 2511754 are new. AID 4736086 remains an in-place Yiddish enrichment. No Verified promotions. Deduplication correction: AID 2514160 was not a new identity; its additional proposition was merged into the existing Batch137 identity under Evidence Family yechidus-event-aid2514160. New unique identities reduced from 3 to 2; the English translation is not counted as an independent witness.",
   "limitations": [
     "The nine English presentations are translations; original-language transcripts and recordings were not inspected, and translations are not independent witnesses.",
     "Only the specified passages and adjacent context were inspected; no full Yechidus context, manuscript or recording was examined.",
     "Three Hebrew routes (AIDs 2514886, 2515046, 2514160) returned Internal Error; no bypass or crawler retry was attempted.",
-    "Full canonical identity and Evidence Family reconciliation remains pending; expected metrics are planning values only."
+    "Full canonical identity and Evidence Family reconciliation remains pending; expected metrics are planning values only.",
+    "AID 2514160 was found twice under different family slugs in Batch137 and Batch181; the Batch181 duplicate record was removed and its non-overlapping proposition merged into the canonical Batch137 identity."
   ]
 }
