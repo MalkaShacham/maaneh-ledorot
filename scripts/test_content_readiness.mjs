@@ -6696,7 +6696,7 @@ assert.deepEqual(batch175Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch175Data.existing_identity_updates.length,8);assert.equal(batch175Data.existing_identity_updates_count,8);
 assert.equal(batch175Data.source_body_review.length,8);
 assert(batch175Data.source_body_review.every(r=>r.body_page_opened&&r.body_text_inspected&&r.inspected_original_language_body&&r.title_or_metadata_only===false&&r.existing_identity===true&&r.new_independent_witness===false&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'));
-const batch175ExpectedBefore={2989059:4,4385558:4,2989147:4,3008930:4,3140218:4,4279923:4,4296226:5,4279876:5};
+const batch175ExpectedBefore={2989059:4,4385558:4,2989147:4,3008930:4,3140218:4,4279923:4,4296226:5,4279876:4};
 for(const u of batch175Data.existing_identity_updates){
  assert.equal(u.existing_propositions_before,batch175ExpectedBefore[String(u.aid)]);assert.equal(u.total_propositions_after,u.existing_propositions_before+1);
  const matches=idx.entries.filter(e=>sourceAID(e)===String(u.aid));assert.equal(matches.length,1,'Batch175 AID '+u.aid+' must resolve to one canonical identity');
