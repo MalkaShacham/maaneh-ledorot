@@ -1772,3 +1772,13 @@ Batch192's measured PR-workspace baseline is 1616 / 854 / 4177; the expected pos
 - Batch197 uses measured PR-workspace baseline 1644/854/4222 from exact-head run 44619135765 after Batch196. Batch196's planning boundary 1642/854/4220 differed by +2/+2; the variance is preserved. Expected after eight in-place propositions: 1644/854/4230.
 - Retrieval specificity was tightened for the question about advancing a mikveh in Miflasim without waiting for peace: the source must contain the Miflasim context and the no-delay proposition, not merely generic mentions of mikveh and peace. Existing claim-level locators and deep researcher mode remain in place and are retested.
 - PR #35 remains unmerged until the exact-head Answer Quality Gate and `test_content_readiness.mjs` pass. The existing hourly schedule and repository audience/permissions are unchanged; no Pages deployment is claimed before post-merge verification.
+
+
+## 2026-11-20 — Batch198: eight in-place Hebrew source enrichments and claim-level synthesis
+
+- נפתחו ונבדקו שמונה מקטעים בגופי פרסום עבריים ציבוריים ב-BeitChabad.com/Chabad.org; הועשרו שמונה זהויות קיימות in place (AIDs 4296216, 4385717, 5990028, 4385834, 4304376, 4385701, 4304437, 4385534). נוספה פרפרזה לא-מילולית אחת לכל זהות עם `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, locator מדויק, provenance, היקף אימות, context partial ומגבלות.
+- לא נוספו זהויות או Evidence Families, לא נספר תרגום כעד עצמאי, ולא קודם מקור ל-Verified. הגבול שנמדד לאחר Batch197 הוא 1644 / 854 / 4230; הגבול הצפוי לאחר Batch198 הוא 1644 / 854 / 4238 עד reconciliation חדש.
+- שלושה נתיבי פרסום חלופיים החזירו HTTP 429 (AIDs 4385593, 2989619, 3008918); לא בוצע retry ולא נעקפו בקרות גישה. AID 4296237 הוחרג ככיסוי חופף שכבר קיים; AID 3140027 נפתח אך הושהה עד בדיקת זהות מלאה.
+- נוספה סינתזה מחקרית חדשה על קירוב יהודים כשותפים, ענווה וקבלת אורחים, בשלוש Evidence Families נפרדות (AIDs 4385534, 4385834, 4304437). כל טענה נושאת locator משלה; הסינתזה מסומנת `system_synthesis_not_rebbe_quote` ומבחינה בין ההקשרים.
+- בדיקת אחזור המקווה במפלסים עברה בשני המצבים (regular ו-researcher) בריצה 44625782331. אותה ריצה חשפה חפיפה של נושא כללי ״התמדה בלימוד לצד עבודה והתחייבויות״ בשאלת השוואה בין קביעות עתים לבין עבודה במשק חקלאי; התיקון ממוקד בביטול החפיפה כשהשאלה כוללת את שני הנושאים הספציפיים.
+- PR #35 נשאר פתוח עד מעבר exact-head reconciliation, `test_content_readiness.mjs` ו-Answer Quality Gate. מדדי main הציבוריים ואתר GitHub Pages לא עודכנו בשלב זה; לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
