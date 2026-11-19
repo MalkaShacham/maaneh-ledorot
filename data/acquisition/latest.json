@@ -6,7 +6,7 @@
   "enriched": 1,
   "blocked": 3,
   "skipped": 0,
-  "status": "pending_reconciliation",
+  "status": "reconciled",
   "manual_web_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
     "batch_id": "193",
@@ -14,8 +14,8 @@
     "generated": "2026-11-19T20:55:59+02:00",
     "reviewed_at": "2026-11-19T20:55:59+02:00",
     "title": "Batch193 — seven new Hebrew Sicha identities and one in-place enrichment from eight directly inspected public body passages",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
+    "status": "reconciled",
+    "reconciliation_status": "reconciled",
     "reviewed_item_count": 11,
     "source_bodies_inspected": 8,
     "source_body_pages_opened": 8,
@@ -75,10 +75,26 @@
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 4193
     },
-    "metrics_actual_after": null,
-    "metrics_after_actual": null,
-    "metrics_delta_actual": null,
-    "reconciliation_variance": null,
+    "metrics_actual_after": {
+      "answer_eligible_unique_sources": 1623,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4193
+    },
+    "metrics_after_actual": {
+      "answer_eligible_unique_sources": 1623,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4193
+    },
+    "metrics_delta_actual": {
+      "answer_eligible_unique_sources": 7,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 8
+    },
+    "reconciliation_variance": {
+      "answer_eligible_unique_sources": 0,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 0
+    },
     "note": "שבע זהויות חדשות בעברית ועוד העשרה אחת in place. כל שבע הזהויות החדשות הן תמלילי פרסום עבריים בלתי מוגהים ששפת ההרצאה המקורית בהם אינה מבוססת; לכן original_language=unknown ו-independent_witness=null. AID 5959922 הועשר במקטע לא חופף באותה Evidence Family. שלושה נתיבים החזירו HTTP 429; לא בוצע crawler retry או עקיפת גישה, ונבדקו מקורות חלופיים באותה הפעלה. אין קידום Verified. גבול המדדים 1616/854/4185→1623/854/4193 הוא תכנון PR-workspace עד exact-head reconciliation.",
     "metadata_only_items_rechecked": 0,
     "search_extracts_used_as_content": 0,
@@ -180,7 +196,13 @@
         "status": "Public reader unavailable",
         "handling": "No scan-only content verification; alternate publisher text bodies used."
       }
-    ]
+    ],
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 7,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 8
+    },
+    "metrics_delta_at_batch_boundary_is_planning_only": false
   },
   "previous_manual_web_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
