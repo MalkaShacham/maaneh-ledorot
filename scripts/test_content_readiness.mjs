@@ -23,7 +23,7 @@ assert(idx.entries.every(e=>typeof e.answer_eligible==='boolean'),'public search
 const metrics=JSON.parse(await readFile(new URL('data/public-metrics.json',root)));
 const recentBatchReconciliation={};
 for(const id of ['168','169','170','171','172','173','174']){
- const path='data/items/content-research-batch-'+id+'-'+(id==='168'||id==='169'?'2026-11-18':'2026-11-19')+'.json';
+ const path='data/items/content-research-batch-'+id+'-'+(id==='168'?'2026-11-18':'2026-11-19')+'.json';
  const b=JSON.parse(await readFile(new URL(path,root),'utf8'));
  recentBatchReconciliation[id]={metrics_actual_before:b.metrics_actual_before,metrics_actual_after:b.metrics_actual_after,metrics_expected_after:b.metrics_expected_after,metrics_delta_actual:b.metrics_delta_actual,reconciliation_variance:b.reconciliation_variance,reconciliation_status:b.reconciliation_status,same_family_duplicate_presentations:b.deduplication_check?.same_family_duplicate_presentations||[]};
 }
