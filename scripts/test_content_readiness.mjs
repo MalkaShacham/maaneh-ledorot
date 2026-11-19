@@ -1827,7 +1827,7 @@ assert.equal(acquisitionState.last_manual_web_review.batch_id,'197');
 assert.equal(acquisitionState.last_manual_review.batch_id,'197');
 for(const id of ['168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.some(x=>['175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197'].includes(String(x))));
-assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196'].includes(String(x))));
+assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197'].includes(String(x))));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
@@ -8190,6 +8190,7 @@ const canonical4304437=batch146ForBatch196.records.find(r=>String(r.aid)==='4304
 assert.equal(canonical4304437.response_propositions.length,4);
 assert.equal(canonical4304437.response_proposition_locators.length,4);
 assert.equal(canonical4304437.response_proposition_metadata.length,4);
+assert.equal(canonical4304437.response_proposition_metadata[3].batch_id,'197');
 assert(!batch172ForDedup.records.some(r=>String(r.aid)==='4385701'));
 assert(!batch193ForDedup.records.some(r=>String(r.aid)==='4385701'));
 assert.equal(batch172ForDedup.duplicate_repairs[0].canonical_file,'data/items/content-research-batch-141-2026-11-17.json');
