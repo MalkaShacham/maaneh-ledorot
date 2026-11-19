@@ -148,12 +148,12 @@
     {
       "action": "duplicate_alias_same_evidence_family",
       "aid": 4304430,
-      "canonical_file": "data/items/content-research-batch-146-2026-11-17.json",
-      "alias_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "alias_file": "data/items/content-research-batch-146-2026-11-17.json",
       "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
       "independent_witness": false,
       "counted_as_one_identity": true,
-      "reason": "Exact-head full-index audit in Answer Quality Gate run 44523818685 found two presentations of AID 4304430 in batches 101 and 146 with the same Evidence Family. They are one source identity, not two independent witnesses."
+      "reason": "AID 4304430 is represented in batches 101 and 146 under the same Evidence Family. Batch101 is the canonical identity; batch146 is a Linked non-independent duplicate presentation. The new proposition is stored on the canonical record and not counted twice."
     }
   ],
   "identity_alias_audit_targets": [
@@ -168,11 +168,11 @@
       "existing_identity": true,
       "aid": 4304430,
       "id": "sicha-5724-12-tammuz-yom-b-blek-aid4304430",
-      "canonical_file": "data/items/content-research-batch-146-2026-11-17.json",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
       "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
-      "existing_propositions_before": 2,
+      "existing_propositions_before": 5,
       "propositions_added": 1,
-      "total_propositions_after": 3,
+      "total_propositions_after": 6,
       "body_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.",
       "proposition": "הקטע מבחין בין לימוד תורה של יחיד או קבוצה לבין הרבצת תורה ברוב עם, ומתאר את הרחבת מעגל הלומדים כמשימה מתמשכת: גם לאחר לימוד עם רבים, כל עוד אפשר לצרף עוד יהודי ללימוד, העבודה טרם מוצתה. זהו מסר חינוכי־רוחני על הרחבת ההשפעה, לא מכסה כמותית או חובה ארגונית מדידה.",
       "proposition_source_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.",
@@ -476,7 +476,7 @@
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
     "all_target_identities_answer_eligible": false,
-    "note": "The eight AIDs are existing canonical identities from batches 146, 165, 166 and 170. AID 4304430 has two same-AID presentations in batches 101 and 146 under one Evidence Family; full-index reconciliation must confirm and retain one family. Exact full-index audit remains pending."
+    "note": "The eight AIDs are existing canonical identities from batches 146, 165, 166 and 170. AID 4304430 has two same-AID presentations in batches 101 and 146 under one Evidence Family; full-index reconciliation must confirm and retain one family. Exact full-index audit remains pending. AID 4304430 duplicate presentation consolidated: batch101 remains canonical; batch146 is Linked and non-independent; both share one Evidence Family."
   },
   "fallback_source_attempted": true,
   "fallback_source_results": {
@@ -566,7 +566,7 @@
       "context_status": "partial",
       "existing_identity": true,
       "action": "enriched_existing_identity_in_place",
-      "canonical_file": "data/items/content-research-batch-146-2026-11-17.json",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
       "proposition": "הקטע מבחין בין לימוד תורה של יחיד או קבוצה לבין הרבצת תורה ברוב עם, ומתאר את הרחבת מעגל הלומדים כמשימה מתמשכת: גם לאחר לימוד עם רבים, כל עוד אפשר לצרף עוד יהודי ללימוד, העבודה טרם מוצתה. זהו מסר חינוכי־רוחני על הרחבת ההשפעה, לא מכסה כמותית או חובה ארגונית מדידה.",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
@@ -813,7 +813,7 @@
     }
   ],
   "records": [],
-  "note": "Eight existing Hebrew Sicha identities were enriched in place with eight new non-verbatim, source-grounded propositions from newly inspected body passages. No new identity, Evidence Family, independent witness or Verified promotion was added. AID 4304430 has two canonical presentations (batches 101 and 146) but one Evidence Family and is counted once. Eight alternate /therebbe routes returned rewritten browser shells; accessible he.chabad.org body pages were used as same-run fallback. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying.",
+  "note": "Eight existing Hebrew Sicha identities were enriched in place with eight new non-verbatim, source-grounded propositions from newly inspected body passages. No new identity, Evidence Family, independent witness or Verified promotion was added. AID 4304430 has two canonical presentations (batches 101 and 146) but one Evidence Family and is counted once. Eight alternate /therebbe routes returned rewritten browser shells; accessible he.chabad.org body pages were used as same-run fallback. No crawler retry, access-control bypass, search-snippet inference, scan-only verification or full-text copying. AID 4304430 duplicate presentation consolidated: batch101 remains canonical; batch146 is Linked and non-independent; both share one Evidence Family.",
   "limitations": [
     "All eight pages are publisher-published Hebrew talk transcripts marked בלתי מוגה; no recording, manuscript, autograph or edited edition was collated.",
     "Context remains partial for all eight passages; each paraphrase is limited to its locator and adjacent context.",
