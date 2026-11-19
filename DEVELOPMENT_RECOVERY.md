@@ -1727,3 +1727,15 @@ Four alternative Hebrew routes (AIDs 2989225, 2989227, 5990031 and 4279919) retu
 Exact-head Answer Quality Gate run 44586034195 measured Batch191 at 1616 answer-eligible unique sources / 854 content-verified unique sources / 4177 answer-eligible propositions, exactly matching its expected boundary. The run then failed in a test assertion for AID 2514160: the index selected the richer same-AID English publisher translation presentation in the SIE collection file, while the in-place update descriptor correctly points to the Batch137 identity. Both presentations belong to the same Evidence Family and the English presentation is explicitly non-independent. The test now checks this same-family, non-independent representative instead of requiring one physical file path.
 
 Batch192's measured PR-workspace baseline is 1616 / 854 / 4177; the expected post-batch boundary is 1616 / 854 / 4185. This is a planning boundary until the exact-head reconciliation completes. Public main metrics remain unchanged until merge and publication. PR #35 remains the existing integration path; the hourly workflow, audience and permissions are unchanged.
+
+
+## 2026-11-19 — Batch193: seven new Hebrew Sicha identities and one in-place enrichment
+
+- נפתחו ונבדקו ישירות שמונה גופי פרסום עבריים ציבוריים ב-BeitChabad.com / he.chabad.org. נוספו שבע זהויות חדשות: AIDs 5989897, 4280029, 2988934, 5989705, 4385701, 4385630 ו-5989766. כל אחת קיבלה פרפרזה מחקרית לא-מילולית עם locator ברמת גוף/סעיף/שורות, provenance, היקף אימות, הקשר חלקי ומגבלות.
+- הועשרה in place זהות קיימת אחת: AID 5959922 ב-Batch166, במקטע לא חופף לשורות 177–185 שכבר נבדקו; נשמרו ה-AID ומשפחת הראיות. נוספו שמונה פרפרזות בסך הכול.
+- שבעת הפרסומים החדשים הם תמלילים עבריים המסומנים בלתי מוגה; העמודים אינם מבססים את שפת ההרצאה המקורית. לכן original_language=unknown ו-independent_witness=null; לא נספר עד עצמאי ולא בוצע קידום ל-Verified.
+- שלושה נתיבים חלופיים החזירו HTTP 429: AIDs 4296216, 5959979 ו-5989984. לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; באותה הפעלה נבדקו שמונה גופי פרסום חלופיים נגישים. לא נעשה שימוש בסריקה כתחליף לבדיקת תוכן ולא הועתק גוף מוגן במלואו.
+- preflight dedup בדק את אצוות PR 150–192, את תור הבדיקה ואת GitHub code search בענף ברירת המחדל; לא נמצאה התאמה לשבע הזהויות החדשות. תוצאת האינדקס המדויקת נבדקת ב-Answer Quality Gate: לכל AID נדרשת זהות קנונית יחידה ו-Evidence Family ייחודית.
+- גבול PR-workspace מתוכנן: 1,616 / 854 / 4,185 → 1,623 / 854 / 4,193 (answer-eligible Evidence Families / content-Verified Evidence Families / answer-eligible propositions). זו עדיין אינה מדידה סופית; נדרשת ריצת exact-head. מדדי main הציבוריים נשארים snapshot קודם עד מיזוג ו-reconciliation בענף main.
+- נוספה בדיקת סינתזה מרובת מקורות לשאלה על תורה, צדקה ועבודת היחיד, במצב regular ובמצב deep researcher, עם הפניות ברמת טענה, בדיקת entailment וגבולות הקשר.
+- PR #35 נשאר מסלול האינטגרציה הקיים; ממתין לריצת exact-head Answer Quality Gate ולפרסום מחדש אחרי merge. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
