@@ -471,6 +471,7 @@ for(const mode of ['regular','researcher']){
 const mikvehPeaceQuestion='האם צריך להמתין לשלום לפני שמקדמים בניית מקווה?';
 for(const mode of ['regular','researcher']){
   const m=buildAnswerModel(idx.entries,mikvehPeaceQuestion,{mode});
+  console.log('MIKVEH_DEBUG',mode,JSON.stringify({sources:m.sources.map(e=>({key:e.key,aid:e.aid,title:e.title,response_propositions:e.response_propositions,response_proposition_locators:e.response_proposition_locators,question_or_problem:e.question_or_problem,conditions_or_qualifications:e.conditions_or_qualifications}))}));
   assert(m.answerable,`${mode}: inspected mikveh-and-peace evidence must answer the query`);
   assert(m.sources.some(e=>e.key==='id:igrot-scan-v13-letter-4-348'),`${mode}: letter ד׳שמח must support the mikveh-and-peace answer`);
   assert(m.sources.length===1,`${mode}: generic mikveh or dispute evidence must not enter the specific answer`);
