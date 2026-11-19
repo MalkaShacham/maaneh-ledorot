@@ -14,21 +14,21 @@
     "title": "Eleven new original-Hebrew public Sicha bodies inspected and paraphrased; two routes rate-limited; no Verified promotion.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 13,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 13,
+    "reviewed_item_count": 15,
+    "source_bodies_inspected": 12,
+    "source_body_pages_opened": 15,
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 11,
+    "new_source_identities": 12,
     "existing_identities_enriched": 0,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 11,
+    "new_response_propositions": 12,
     "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 11,
+    "total_new_paraphrase_entries": 12,
+    "answer_eligible_source_families_added": 12,
     "independent_witnesses_added": 11,
-    "non_independent_presentations_added": 0,
+    "non_independent_presentations_added": 1,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
       "answer_eligible_unique_sources": 1547,
@@ -38,20 +38,21 @@
     "metrics_before_source": "Planning boundary after corrected Batch171 expected-after; not a measured result. Exact-head reconciliation must carry forward its actual snapshot.",
     "metrics_actual_before": null,
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1559,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4040
+      "answer_eligible_propositions": 4041
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 11,
+      "answer_eligible_unique_sources": 12,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 11
+      "answer_eligible_propositions": 12
     },
     "metrics_delta_at_batch_boundary_is_planning_only": true,
     "new_aids": [
+      259799,
       2988877,
       2988879,
       2988906,
@@ -64,24 +65,50 @@
       4385701,
       5959840
     ],
+    "new_ids": [
+      "chabad-sicha-2989237",
+      "chabad-sicha-4385650",
+      "chabad-sicha-5959840",
+      "chabad-sicha-2989311",
+      "chabad-sicha-2988879",
+      "chabad-sicha-2989234",
+      "chabad-sicha-4385701",
+      "chabad-sicha-4279994",
+      "chabad-sicha-4296163",
+      "chabad-sicha-2988877",
+      "chabad-sicha-2988906",
+      "chabad-letter-5713-shevat-zalmon-jaffe"
+    ],
     "enriched_aids": [],
     "rechecked_aids": [],
     "blocked_aids": [
       4385482,
       5989925
     ],
+    "blocked_item_ids": [
+      "4754421"
+    ],
     "excluded_aids": [
       4385482,
       5989925
     ],
+    "excluded_item_ids": [
+      "4754421"
+    ],
     "language_distribution": {
-      "Hebrew": 11
+      "Hebrew": 11,
+      "English": 1
     },
     "original_language_distribution": {
-      "Hebrew": 11
+      "Hebrew": 11,
+      "Yiddish": 1
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 12
     },
     "source_type_distribution": {
-      "Sichos": 11
+      "Sichos": 11,
+      "Letters": 1
     },
     "evidence_family_ids": [
       "sicha-5722-26-sivan-shelach-aid2989237",
@@ -94,24 +121,33 @@
       "sicha-5715-reeh-ellul-aid4279994",
       "sicha-5723-simchat-torah-aid4296163",
       "sicha-5714-12-shevat-beshalach-aid2988877",
-      "sicha-5714-matos-menashe-av-aid2988906"
+      "sicha-5714-matos-menashe-av-aid2988906",
+      "letter-5713-shevat-zalmon-jaffe-rebbe"
     ],
-    "same_family_items": [],
-    "translations_added": 0,
+    "same_family_items": [
+      {
+        "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+        "language": "English",
+        "original_language": "Yiddish",
+        "independent_witness": false,
+        "translation_of_evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe"
+      }
+    ],
+    "translations_added": 1,
     "translations_counted_as_independent_witnesses": 0,
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "accessible_item_level_bodies": 11,
+      "accessible_item_level_bodies": 12,
       "new_identity_bodies": 11,
       "existing_identity_bodies": 0,
       "language": "Hebrew",
       "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-      "note": "After two item-page routes returned HTTP 429, eleven other original-Hebrew item-level bodies were opened and inspected in the same run. Search results were used only for navigation."
+      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
     },
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "preflight_candidate_count": 11,
+      "preflight_candidate_count": 12,
       "new_aids_unique": true,
       "new_source_urls_unique": true,
       "new_evidence_families_unique": true,
@@ -119,9 +155,10 @@
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "checked_against": "Current content-review queue (1022 records), exact-AID GitHub repository searches, and available bulk-indexed snapshots dated 2026-09-24, 2026-09-25 and 2026-09-27. This is not a full canonical corpus scan.",
-      "note": "No candidate AID appeared in the current review queue or the checked bulk-index snapshots. Older canonical content-research batches were not fully scanned before writing; the exact-head full-index reconciliation is authoritative and may reclassify any collision."
+      "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
+      "new_ids_unique": true
     },
-    "blocked_candidate_count": 2,
+    "blocked_candidate_count": 3,
     "blocked_candidates": [
       {
         "aid": 4385482,
@@ -134,11 +171,17 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
         "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
         "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
+      },
+      {
+        "item_id": "4754421",
+        "source_url": "https://www.chabad.org/torah-texts/4754421",
+        "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
+        "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
       }
     ],
     "metadata_only_candidate_count": 0,
     "metadata_only_candidates": [],
-    "excluded_candidate_count": 2,
+    "excluded_candidate_count": 3,
     "excluded_candidates": [
       {
         "aid": 4385482,
@@ -147,6 +190,10 @@
       {
         "aid": 5989925,
         "reason": "HTTP 429; no inspectable body."
+      },
+      {
+        "item_id": "4754421",
+        "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
       }
     ],
     "crawler_retry": false,
@@ -494,11 +541,45 @@
         "existing_identity": false,
         "new_independent_witness": true,
         "action": "new_identity_created"
+      },
+      {
+        "item_aid": 259799,
+        "id": "chabad-letter-5713-shevat-zalmon-jaffe",
+        "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
+        "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+        "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+        "web_source_ref": "turn329084view0",
+        "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+        "language": "English",
+        "original_language": "Yiddish",
+        "witness_type": "translated_letter_excerpt",
+        "body_page_opened": true,
+        "inspected_original_language_body": false,
+        "body_text_inspected": true,
+        "title_or_metadata_only": false,
+        "proposition": "על פי התרגום האנגלי שמציג זלמן יפה, המכתב הראשון שקיבל מהרבי מעודד אותו להגדיל את נתינת הצדקה מיד, בלי להמתין לשיפור בהצלחת העסק, ולתת מעט יותר ממעשר; ההסבר במכתב נשען על האמון בהבטחת הקב״ה למי שנותן צדקה. זו פרפרזה של תרגום אנגלי שהובא במאמר זיכרונות, ולא בדיקה של המקור היידי.",
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
+        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+        "context_status": "partial",
+        "conditions_or_qualifications": [
+          "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
+          "התרגום הוא מצג נגזר אחד של אותו מכתב ואינו עד עצמאי; אם יימצא המקור היידי יש לקשרו לאותה Evidence Family.",
+          "העצה מתועדת בהקשר אישי של מכתב לזלמן יפה; אין להציג אותה כהנחיה פיננסית או הלכתית כללית לכל אדם."
+        ],
+        "existing_identity": false,
+        "new_independent_witness": false,
+        "action": "new_family_translation_presentation_added",
+        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
       }
     ],
     "existing_identity_updates": [],
     "existing_identity_updates_count": 0,
-    "note": "All 11 new records remain Parsed. Full-index deduplication and final answer-eligibility counts are pending."
+    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. Full-index deduplication and final metrics pending."
   },
   "previous_manual_web_review": {
     "batch_id": "171",
@@ -1062,21 +1143,21 @@
     "title": "Eleven new original-Hebrew public Sicha bodies inspected and paraphrased; two routes rate-limited; no Verified promotion.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 13,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 13,
+    "reviewed_item_count": 15,
+    "source_bodies_inspected": 12,
+    "source_body_pages_opened": 15,
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 11,
+    "new_source_identities": 12,
     "existing_identities_enriched": 0,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 11,
+    "new_response_propositions": 12,
     "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 11,
+    "total_new_paraphrase_entries": 12,
+    "answer_eligible_source_families_added": 12,
     "independent_witnesses_added": 11,
-    "non_independent_presentations_added": 0,
+    "non_independent_presentations_added": 1,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
       "answer_eligible_unique_sources": 1547,
@@ -1086,20 +1167,21 @@
     "metrics_before_source": "Planning boundary after corrected Batch171 expected-after; not a measured result. Exact-head reconciliation must carry forward its actual snapshot.",
     "metrics_actual_before": null,
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1559,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4040
+      "answer_eligible_propositions": 4041
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 11,
+      "answer_eligible_unique_sources": 12,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 11
+      "answer_eligible_propositions": 12
     },
     "metrics_delta_at_batch_boundary_is_planning_only": true,
     "new_aids": [
+      259799,
       2988877,
       2988879,
       2988906,
@@ -1112,24 +1194,50 @@
       4385701,
       5959840
     ],
+    "new_ids": [
+      "chabad-sicha-2989237",
+      "chabad-sicha-4385650",
+      "chabad-sicha-5959840",
+      "chabad-sicha-2989311",
+      "chabad-sicha-2988879",
+      "chabad-sicha-2989234",
+      "chabad-sicha-4385701",
+      "chabad-sicha-4279994",
+      "chabad-sicha-4296163",
+      "chabad-sicha-2988877",
+      "chabad-sicha-2988906",
+      "chabad-letter-5713-shevat-zalmon-jaffe"
+    ],
     "enriched_aids": [],
     "rechecked_aids": [],
     "blocked_aids": [
       4385482,
       5989925
     ],
+    "blocked_item_ids": [
+      "4754421"
+    ],
     "excluded_aids": [
       4385482,
       5989925
     ],
+    "excluded_item_ids": [
+      "4754421"
+    ],
     "language_distribution": {
-      "Hebrew": 11
+      "Hebrew": 11,
+      "English": 1
     },
     "original_language_distribution": {
-      "Hebrew": 11
+      "Hebrew": 11,
+      "Yiddish": 1
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 12
     },
     "source_type_distribution": {
-      "Sichos": 11
+      "Sichos": 11,
+      "Letters": 1
     },
     "evidence_family_ids": [
       "sicha-5722-26-sivan-shelach-aid2989237",
@@ -1142,24 +1250,33 @@
       "sicha-5715-reeh-ellul-aid4279994",
       "sicha-5723-simchat-torah-aid4296163",
       "sicha-5714-12-shevat-beshalach-aid2988877",
-      "sicha-5714-matos-menashe-av-aid2988906"
+      "sicha-5714-matos-menashe-av-aid2988906",
+      "letter-5713-shevat-zalmon-jaffe-rebbe"
     ],
-    "same_family_items": [],
-    "translations_added": 0,
+    "same_family_items": [
+      {
+        "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+        "language": "English",
+        "original_language": "Yiddish",
+        "independent_witness": false,
+        "translation_of_evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe"
+      }
+    ],
+    "translations_added": 1,
     "translations_counted_as_independent_witnesses": 0,
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "accessible_item_level_bodies": 11,
+      "accessible_item_level_bodies": 12,
       "new_identity_bodies": 11,
       "existing_identity_bodies": 0,
       "language": "Hebrew",
       "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-      "note": "After two item-page routes returned HTTP 429, eleven other original-Hebrew item-level bodies were opened and inspected in the same run. Search results were used only for navigation."
+      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
     },
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "preflight_candidate_count": 11,
+      "preflight_candidate_count": 12,
       "new_aids_unique": true,
       "new_source_urls_unique": true,
       "new_evidence_families_unique": true,
@@ -1167,9 +1284,10 @@
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "checked_against": "Current content-review queue (1022 records), exact-AID GitHub repository searches, and available bulk-indexed snapshots dated 2026-09-24, 2026-09-25 and 2026-09-27. This is not a full canonical corpus scan.",
-      "note": "No candidate AID appeared in the current review queue or the checked bulk-index snapshots. Older canonical content-research batches were not fully scanned before writing; the exact-head full-index reconciliation is authoritative and may reclassify any collision."
+      "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
+      "new_ids_unique": true
     },
-    "blocked_candidate_count": 2,
+    "blocked_candidate_count": 3,
     "blocked_candidates": [
       {
         "aid": 4385482,
@@ -1182,11 +1300,17 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
         "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
         "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
+      },
+      {
+        "item_id": "4754421",
+        "source_url": "https://www.chabad.org/torah-texts/4754421",
+        "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
+        "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
       }
     ],
     "metadata_only_candidate_count": 0,
     "metadata_only_candidates": [],
-    "excluded_candidate_count": 2,
+    "excluded_candidate_count": 3,
     "excluded_candidates": [
       {
         "aid": 4385482,
@@ -1195,6 +1319,10 @@
       {
         "aid": 5989925,
         "reason": "HTTP 429; no inspectable body."
+      },
+      {
+        "item_id": "4754421",
+        "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
       }
     ],
     "crawler_retry": false,
@@ -1542,11 +1670,45 @@
         "existing_identity": false,
         "new_independent_witness": true,
         "action": "new_identity_created"
+      },
+      {
+        "item_aid": 259799,
+        "id": "chabad-letter-5713-shevat-zalmon-jaffe",
+        "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
+        "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+        "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+        "web_source_ref": "turn329084view0",
+        "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+        "language": "English",
+        "original_language": "Yiddish",
+        "witness_type": "translated_letter_excerpt",
+        "body_page_opened": true,
+        "inspected_original_language_body": false,
+        "body_text_inspected": true,
+        "title_or_metadata_only": false,
+        "proposition": "על פי התרגום האנגלי שמציג זלמן יפה, המכתב הראשון שקיבל מהרבי מעודד אותו להגדיל את נתינת הצדקה מיד, בלי להמתין לשיפור בהצלחת העסק, ולתת מעט יותר ממעשר; ההסבר במכתב נשען על האמון בהבטחת הקב״ה למי שנותן צדקה. זו פרפרזה של תרגום אנגלי שהובא במאמר זיכרונות, ולא בדיקה של המקור היידי.",
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
+        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+        "context_status": "partial",
+        "conditions_or_qualifications": [
+          "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
+          "התרגום הוא מצג נגזר אחד של אותו מכתב ואינו עד עצמאי; אם יימצא המקור היידי יש לקשרו לאותה Evidence Family.",
+          "העצה מתועדת בהקשר אישי של מכתב לזלמן יפה; אין להציג אותה כהנחיה פיננסית או הלכתית כללית לכל אדם."
+        ],
+        "existing_identity": false,
+        "new_independent_witness": false,
+        "action": "new_family_translation_presentation_added",
+        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
       }
     ],
     "existing_identity_updates": [],
     "existing_identity_updates_count": 0,
-    "note": "All 11 new records remain Parsed. Full-index deduplication and final answer-eligibility counts are pending."
+    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. Full-index deduplication and final metrics pending."
   },
   "last_manual_review": {
     "batch_id": "172",
@@ -1556,21 +1718,21 @@
     "title": "Eleven new original-Hebrew public Sicha bodies inspected and paraphrased; two routes rate-limited; no Verified promotion.",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 13,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 13,
+    "reviewed_item_count": 15,
+    "source_bodies_inspected": 12,
+    "source_body_pages_opened": 15,
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 0,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 11,
+    "new_source_identities": 12,
     "existing_identities_enriched": 0,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 11,
+    "new_response_propositions": 12,
     "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 11,
+    "total_new_paraphrase_entries": 12,
+    "answer_eligible_source_families_added": 12,
     "independent_witnesses_added": 11,
-    "non_independent_presentations_added": 0,
+    "non_independent_presentations_added": 1,
     "content_verified_unique_sources_added": 0,
     "metrics_before": {
       "answer_eligible_unique_sources": 1547,
@@ -1580,20 +1742,21 @@
     "metrics_before_source": "Planning boundary after corrected Batch171 expected-after; not a measured result. Exact-head reconciliation must carry forward its actual snapshot.",
     "metrics_actual_before": null,
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1558,
+      "answer_eligible_unique_sources": 1559,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4040
+      "answer_eligible_propositions": 4041
     },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 11,
+      "answer_eligible_unique_sources": 12,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 11
+      "answer_eligible_propositions": 12
     },
     "metrics_delta_at_batch_boundary_is_planning_only": true,
     "new_aids": [
+      259799,
       2988877,
       2988879,
       2988906,
@@ -1606,24 +1769,50 @@
       4385701,
       5959840
     ],
+    "new_ids": [
+      "chabad-sicha-2989237",
+      "chabad-sicha-4385650",
+      "chabad-sicha-5959840",
+      "chabad-sicha-2989311",
+      "chabad-sicha-2988879",
+      "chabad-sicha-2989234",
+      "chabad-sicha-4385701",
+      "chabad-sicha-4279994",
+      "chabad-sicha-4296163",
+      "chabad-sicha-2988877",
+      "chabad-sicha-2988906",
+      "chabad-letter-5713-shevat-zalmon-jaffe"
+    ],
     "enriched_aids": [],
     "rechecked_aids": [],
     "blocked_aids": [
       4385482,
       5989925
     ],
+    "blocked_item_ids": [
+      "4754421"
+    ],
     "excluded_aids": [
       4385482,
       5989925
     ],
+    "excluded_item_ids": [
+      "4754421"
+    ],
     "language_distribution": {
-      "Hebrew": 11
+      "Hebrew": 11,
+      "English": 1
     },
     "original_language_distribution": {
-      "Hebrew": 11
+      "Hebrew": 11,
+      "Yiddish": 1
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 12
     },
     "source_type_distribution": {
-      "Sichos": 11
+      "Sichos": 11,
+      "Letters": 1
     },
     "evidence_family_ids": [
       "sicha-5722-26-sivan-shelach-aid2989237",
@@ -1636,24 +1825,33 @@
       "sicha-5715-reeh-ellul-aid4279994",
       "sicha-5723-simchat-torah-aid4296163",
       "sicha-5714-12-shevat-beshalach-aid2988877",
-      "sicha-5714-matos-menashe-av-aid2988906"
+      "sicha-5714-matos-menashe-av-aid2988906",
+      "letter-5713-shevat-zalmon-jaffe-rebbe"
     ],
-    "same_family_items": [],
-    "translations_added": 0,
+    "same_family_items": [
+      {
+        "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+        "language": "English",
+        "original_language": "Yiddish",
+        "independent_witness": false,
+        "translation_of_evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe"
+      }
+    ],
+    "translations_added": 1,
     "translations_counted_as_independent_witnesses": 0,
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "accessible_item_level_bodies": 11,
+      "accessible_item_level_bodies": 12,
       "new_identity_bodies": 11,
       "existing_identity_bodies": 0,
       "language": "Hebrew",
       "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-      "note": "After two item-page routes returned HTTP 429, eleven other original-Hebrew item-level bodies were opened and inspected in the same run. Search results were used only for navigation."
+      "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
     },
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "preflight_candidate_count": 11,
+      "preflight_candidate_count": 12,
       "new_aids_unique": true,
       "new_source_urls_unique": true,
       "new_evidence_families_unique": true,
@@ -1661,9 +1859,10 @@
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "checked_against": "Current content-review queue (1022 records), exact-AID GitHub repository searches, and available bulk-indexed snapshots dated 2026-09-24, 2026-09-25 and 2026-09-27. This is not a full canonical corpus scan.",
-      "note": "No candidate AID appeared in the current review queue or the checked bulk-index snapshots. Older canonical content-research batches were not fully scanned before writing; the exact-head full-index reconciliation is authoritative and may reclassify any collision."
+      "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
+      "new_ids_unique": true
     },
-    "blocked_candidate_count": 2,
+    "blocked_candidate_count": 3,
     "blocked_candidates": [
       {
         "aid": 4385482,
@@ -1676,11 +1875,17 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
         "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
         "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
+      },
+      {
+        "item_id": "4754421",
+        "source_url": "https://www.chabad.org/torah-texts/4754421",
+        "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
+        "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
       }
     ],
     "metadata_only_candidate_count": 0,
     "metadata_only_candidates": [],
-    "excluded_candidate_count": 2,
+    "excluded_candidate_count": 3,
     "excluded_candidates": [
       {
         "aid": 4385482,
@@ -1689,6 +1894,10 @@
       {
         "aid": 5989925,
         "reason": "HTTP 429; no inspectable body."
+      },
+      {
+        "item_id": "4754421",
+        "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
       }
     ],
     "crawler_retry": false,
@@ -2036,11 +2245,45 @@
         "existing_identity": false,
         "new_independent_witness": true,
         "action": "new_identity_created"
+      },
+      {
+        "item_aid": 259799,
+        "id": "chabad-letter-5713-shevat-zalmon-jaffe",
+        "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
+        "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+        "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+        "web_source_ref": "turn329084view0",
+        "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+        "language": "English",
+        "original_language": "Yiddish",
+        "witness_type": "translated_letter_excerpt",
+        "body_page_opened": true,
+        "inspected_original_language_body": false,
+        "body_text_inspected": true,
+        "title_or_metadata_only": false,
+        "proposition": "על פי התרגום האנגלי שמציג זלמן יפה, המכתב הראשון שקיבל מהרבי מעודד אותו להגדיל את נתינת הצדקה מיד, בלי להמתין לשיפור בהצלחת העסק, ולתת מעט יותר ממעשר; ההסבר במכתב נשען על האמון בהבטחת הקב״ה למי שנותן צדקה. זו פרפרזה של תרגום אנגלי שהובא במאמר זיכרונות, ולא בדיקה של המקור היידי.",
+        "proposition_language": "Hebrew",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verbatim": false,
+        "proposition_verification": "source_text_inspected",
+        "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+        "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
+        "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+        "context_status": "partial",
+        "conditions_or_qualifications": [
+          "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
+          "התרגום הוא מצג נגזר אחד של אותו מכתב ואינו עד עצמאי; אם יימצא המקור היידי יש לקשרו לאותה Evidence Family.",
+          "העצה מתועדת בהקשר אישי של מכתב לזלמן יפה; אין להציג אותה כהנחיה פיננסית או הלכתית כללית לכל אדם."
+        ],
+        "existing_identity": false,
+        "new_independent_witness": false,
+        "action": "new_family_translation_presentation_added",
+        "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
       }
     ],
     "existing_identity_updates": [],
     "existing_identity_updates_count": 0,
-    "note": "All 11 new records remain Parsed. Full-index deduplication and final answer-eligibility counts are pending."
+    "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. Full-index deduplication and final metrics pending."
   },
   "manual_web_review_history": [
     {
@@ -14058,21 +14301,21 @@
       "title": "Eleven new original-Hebrew public Sicha bodies inspected and paraphrased; two routes rate-limited; no Verified promotion.",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 13,
-      "source_bodies_inspected": 11,
-      "source_body_pages_opened": 13,
+      "reviewed_item_count": 15,
+      "source_bodies_inspected": 12,
+      "source_body_pages_opened": 15,
       "metadata_only_items_rechecked": 0,
       "search_extracts_inspected": 0,
       "search_extracts_used_as_content": 0,
-      "new_source_identities": 11,
+      "new_source_identities": 12,
       "existing_identities_enriched": 0,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 11,
+      "new_response_propositions": 12,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 11,
-      "answer_eligible_source_families_added": 11,
+      "total_new_paraphrase_entries": 12,
+      "answer_eligible_source_families_added": 12,
       "independent_witnesses_added": 11,
-      "non_independent_presentations_added": 0,
+      "non_independent_presentations_added": 1,
       "content_verified_unique_sources_added": 0,
       "metrics_before": {
         "answer_eligible_unique_sources": 1547,
@@ -14082,20 +14325,21 @@
       "metrics_before_source": "Planning boundary after corrected Batch171 expected-after; not a measured result. Exact-head reconciliation must carry forward its actual snapshot.",
       "metrics_actual_before": null,
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1558,
+        "answer_eligible_unique_sources": 1559,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4040
+        "answer_eligible_propositions": 4041
       },
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
       "reconciliation_variance": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 11,
+        "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 11
+        "answer_eligible_propositions": 12
       },
       "metrics_delta_at_batch_boundary_is_planning_only": true,
       "new_aids": [
+        259799,
         2988877,
         2988879,
         2988906,
@@ -14108,24 +14352,50 @@
         4385701,
         5959840
       ],
+      "new_ids": [
+        "chabad-sicha-2989237",
+        "chabad-sicha-4385650",
+        "chabad-sicha-5959840",
+        "chabad-sicha-2989311",
+        "chabad-sicha-2988879",
+        "chabad-sicha-2989234",
+        "chabad-sicha-4385701",
+        "chabad-sicha-4279994",
+        "chabad-sicha-4296163",
+        "chabad-sicha-2988877",
+        "chabad-sicha-2988906",
+        "chabad-letter-5713-shevat-zalmon-jaffe"
+      ],
       "enriched_aids": [],
       "rechecked_aids": [],
       "blocked_aids": [
         4385482,
         5989925
       ],
+      "blocked_item_ids": [
+        "4754421"
+      ],
       "excluded_aids": [
         4385482,
         5989925
       ],
+      "excluded_item_ids": [
+        "4754421"
+      ],
       "language_distribution": {
-        "Hebrew": 11
+        "Hebrew": 11,
+        "English": 1
       },
       "original_language_distribution": {
-        "Hebrew": 11
+        "Hebrew": 11,
+        "Yiddish": 1
+      },
+      "proposition_language_distribution": {
+        "Hebrew": 12
       },
       "source_type_distribution": {
-        "Sichos": 11
+        "Sichos": 11,
+        "Letters": 1
       },
       "evidence_family_ids": [
         "sicha-5722-26-sivan-shelach-aid2989237",
@@ -14138,24 +14408,33 @@
         "sicha-5715-reeh-ellul-aid4279994",
         "sicha-5723-simchat-torah-aid4296163",
         "sicha-5714-12-shevat-beshalach-aid2988877",
-        "sicha-5714-matos-menashe-av-aid2988906"
+        "sicha-5714-matos-menashe-av-aid2988906",
+        "letter-5713-shevat-zalmon-jaffe-rebbe"
       ],
-      "same_family_items": [],
-      "translations_added": 0,
+      "same_family_items": [
+        {
+          "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+          "language": "English",
+          "original_language": "Yiddish",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe"
+        }
+      ],
+      "translations_added": 1,
       "translations_counted_as_independent_witnesses": 0,
       "fallback_source_attempted": true,
       "fallback_source_results": {
-        "accessible_item_level_bodies": 11,
+        "accessible_item_level_bodies": 12,
         "new_identity_bodies": 11,
         "existing_identity_bodies": 0,
         "language": "Hebrew",
         "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-        "note": "After two item-page routes returned HTTP 429, eleven other original-Hebrew item-level bodies were opened and inspected in the same run. Search results were used only for navigation."
+        "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
       },
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_scan_pending_reconciliation": true,
-        "preflight_candidate_count": 11,
+        "preflight_candidate_count": 12,
         "new_aids_unique": true,
         "new_source_urls_unique": true,
         "new_evidence_families_unique": true,
@@ -14163,9 +14442,10 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "checked_against": "Current content-review queue (1022 records), exact-AID GitHub repository searches, and available bulk-indexed snapshots dated 2026-09-24, 2026-09-25 and 2026-09-27. This is not a full canonical corpus scan.",
-        "note": "No candidate AID appeared in the current review queue or the checked bulk-index snapshots. Older canonical content-research batches were not fully scanned before writing; the exact-head full-index reconciliation is authoritative and may reclassify any collision."
+        "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
+        "new_ids_unique": true
       },
-      "blocked_candidate_count": 2,
+      "blocked_candidate_count": 3,
       "blocked_candidates": [
         {
           "aid": 4385482,
@@ -14178,11 +14458,17 @@
           "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
           "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
           "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
+        },
+        {
+          "item_id": "4754421",
+          "source_url": "https://www.chabad.org/torah-texts/4754421",
+          "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
+          "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
         }
       ],
       "metadata_only_candidate_count": 0,
       "metadata_only_candidates": [],
-      "excluded_candidate_count": 2,
+      "excluded_candidate_count": 3,
       "excluded_candidates": [
         {
           "aid": 4385482,
@@ -14191,6 +14477,10 @@
         {
           "aid": 5989925,
           "reason": "HTTP 429; no inspectable body."
+        },
+        {
+          "item_id": "4754421",
+          "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
         }
       ],
       "crawler_retry": false,
@@ -14538,11 +14828,45 @@
           "existing_identity": false,
           "new_independent_witness": true,
           "action": "new_identity_created"
+        },
+        {
+          "item_aid": 259799,
+          "id": "chabad-letter-5713-shevat-zalmon-jaffe",
+          "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
+          "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+          "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+          "web_source_ref": "turn329084view0",
+          "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+          "language": "English",
+          "original_language": "Yiddish",
+          "witness_type": "translated_letter_excerpt",
+          "body_page_opened": true,
+          "inspected_original_language_body": false,
+          "body_text_inspected": true,
+          "title_or_metadata_only": false,
+          "proposition": "על פי התרגום האנגלי שמציג זלמן יפה, המכתב הראשון שקיבל מהרבי מעודד אותו להגדיל את נתינת הצדקה מיד, בלי להמתין לשיפור בהצלחת העסק, ולתת מעט יותר ממעשר; ההסבר במכתב נשען על האמון בהבטחת הקב״ה למי שנותן צדקה. זו פרפרזה של תרגום אנגלי שהובא במאמר זיכרונות, ולא בדיקה של המקור היידי.",
+          "proposition_language": "Hebrew",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+          "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
+            "התרגום הוא מצג נגזר אחד של אותו מכתב ואינו עד עצמאי; אם יימצא המקור היידי יש לקשרו לאותה Evidence Family.",
+            "העצה מתועדת בהקשר אישי של מכתב לזלמן יפה; אין להציג אותה כהנחיה פיננסית או הלכתית כללית לכל אדם."
+          ],
+          "existing_identity": false,
+          "new_independent_witness": false,
+          "action": "new_family_translation_presentation_added",
+          "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
         }
       ],
       "existing_identity_updates": [],
       "existing_identity_updates_count": 0,
-      "note": "All 11 new records remain Parsed. Full-index deduplication and final answer-eligibility counts are pending."
+      "note": "Twelve source identities/presentations are recorded. Eleven are original-Hebrew independent Sicha witnesses; one is an English translation of a Yiddish letter and is explicitly non-independent. Full-index deduplication and final metrics pending."
     }
   ],
   "manual_web_review_current_metrics": {
@@ -14550,8 +14874,8 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4012
   },
-  "last_run_note": "Batch172: 11 Hebrew source bodies inspected and paraphrased; two HTTP 429 blocks documented and replaced by accessible source bodies in the same run. No crawler retry or Verified promotion.",
-  "next_action": "Run exact-head full-index reconciliation for Batches170–172 and pass test_content_readiness.mjs before merging PR #35; then verify main metrics, Actions and GitHub Pages.",
+  "last_run_note": "Batch172: 11 Hebrew Sicha bodies and one English translated letter body inspected; translation marked non-independent; three blocked routes documented; no crawler retry or Verified promotion.",
+  "next_action": "Run exact-head full-index reconciliation for Batches170–172, verify the Batch172 AIDs and translated-letter Evidence Family, and pass test_content_readiness.mjs before merge.",
   "current_batch_file": "data/items/content-research-batch-172-2026-11-19.json",
   "pending": true,
   "tail": "Batch170: ten original-Hebrew body passages inspected; eight new identities and two in-place enrichments; two publisher pages returned HTTP 429, one collection page and two duplicate existing AIDs excluded. No crawler retry, access bypass, full-text copying or Verified promotion. Exact-head reconciliation and readiness pending.",
