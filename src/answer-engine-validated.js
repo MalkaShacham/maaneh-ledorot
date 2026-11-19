@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261118-batch164-headcover-topic-scope-v1';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261119-batch175-capacity-synthesis-v1';
 
 const TOPIC_ALIASES={
  'מוח ולב בשיטת חב״ד':['מוח ולב בשיטת חב״ד','מוח ולב','המוח והלב','המוח ללב','מוח שליט על הלב','לשעבד את הלב','השגה שכלית ורגש הלב','mind and heart in Chabad','mind rules the heart'],
@@ -310,6 +310,7 @@ const TOPIC_ALIASES={
   'שלוש בארות יצחק ושלושת בתי המקדש':['שלוש בארות יצחק','חפירת הבארות של יצחק','עשק שטנה ורחובות','שלושת בתי המקדש','מעשה אבות סימן לבנים'],
   'מהות החסידות ונקודת העצם':['מהות החסידות','נקודת העצם של החסידות','החסידות נקודה אחת','שינוי טבע המידות','לפנים משורת הדין','התעוררות העולם מתרדמה'],
   'אחדות מתוך שונות והשלמה הדדית':['אחדות מתוך שונות','אחדות שאינה מוחקת את הייחוד','אחדות ישראל לגוף אחד שלם','חלקים מובחנים וחשובים בפני עצמם','השפעה והשלמה בין חלקים','ייחוד של כל חלק בתוך הכלל']
+  'זהירות במצווה, יכולת וסיוע מלמעלה':['זהירות מיוחדת במצווה','זהיר טפי','הידורי מצווה לפי יכולת','יכולת האדם','כוח מלמעלה','אתערותא דלעילא'],
 };
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);

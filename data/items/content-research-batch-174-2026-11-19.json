@@ -7,8 +7,8 @@
   "generated_at": "2026-11-19T02:56:58+02:00",
   "reviewed_at": "2026-11-19T02:56:58+02:00",
   "title": "Eight additional in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending_reconciliation",
+  "status": "reconciled",
+  "reconciliation_status": "reconciled",
   "review_method": "Manual public web open inspection of distinct original-Hebrew publisher-body passages at he.chabad.org / BeitChabad.com. Search results were used only for navigation; propositions derive from opened body text, not titles or snippets.",
   "records_reviewed": 9,
   "reviewed_item_count": 9,
@@ -101,9 +101,21 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4048
   },
-  "metrics_actual_after": null,
-  "metrics_delta_actual": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 1552,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4048
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 8
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 0,
     "content_verified_unique_sources": 0,
@@ -631,5 +643,9 @@
     4666220
   ],
   "excluded_item_ids": [],
-  "note": "Eight existing Hebrew source identities were enriched in place with eight additional non-verbatim propositions from distinct inspected body passages. AID 4666220 was inaccessible through the public reader; eight accessible Hebrew bodies were used as same-run fallback. No new source identity, Evidence Family, independent witness or Verified promotion."
+  "note": "Eight existing Hebrew source identities were enriched in place with eight additional non-verbatim propositions from distinct inspected body passages. AID 4666220 was inaccessible through the public reader; eight accessible Hebrew bodies were used as same-run fallback. No new source identity, Evidence Family, independent witness or Verified promotion.",
+  "reconciled_at": "2026-11-19T03:20:08+02:00",
+  "reconciliation_run_id": 44436032237,
+  "reconciliation_head_sha": "d3ec257a31f5a857b7abc20db9f190a33cb40cf8",
+  "reconciliation_note": "Exact-head reconciliation completed successfully and measured the expected in-place delta. The subsequent readiness test failed on a temporal-dead-zone assertion in test_content_readiness.mjs, not on reconciliation."
 }

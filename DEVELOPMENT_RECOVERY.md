@@ -1490,3 +1490,14 @@ The project-state pending reconciliation list remains a numerically ordered arra
 - The readiness test was corrected to validate historical reconciliation variance arithmetically rather than requiring every historical batch to remain exactly reconciled after later canonical changes. Batch172/173/174 boundaries are checked sequentially so a historical batch is not compared to the final corpus snapshot.
 - PR #35 remains unmerged until a fresh exact-head Answer Quality Gate, including `test_content_readiness.mjs`, passes. Main metrics and GitHub Pages have not been changed by this PR.
 
+
+
+## 2026-11-19 — Batch175: source-body enrichment and readiness-gate repair
+
+The exact-head Answer Quality Gate run `44436032237` completed reconciliation after Batch174 and measured `answer_eligible_unique_sources=1552`, `content_verified_unique_sources=854`, and `answer_eligible_propositions=4048` in the PR workspace. The run then failed in `scripts/test_content_readiness.mjs:1426` with `ReferenceError: Cannot access 'batch174Data' before initialization`; this is a test-ordering defect (temporal dead zone), not a content-reconciliation failure. The declaration is moved before its first use, and the current-batch assertions are advanced to Batch175.
+
+Batch175 adds eight non-verbatim, source-grounded Hebrew propositions to eight existing canonical identities: AIDs 2989059, 4385558, 2989147, 3008930, 3140218, 4279923, 4296226, and 4279876. Each passage was opened in the original Hebrew body, checked at a non-overlapping locator, and recorded with provenance, scope, partial-context limits, and conditions. Seven are Sichos and one is a Maamar. No new identity, Evidence Family, independent witness, translation witness, or Verified promotion was added. The planning boundary is 1552/854/4056; it remains unmeasured until the next exact-head reconciliation.
+
+Nine other public-reader paths (AIDs 554871, 555023, 555044, 555045, 555070, 555071, 555072, 555082, 555084) returned Internal Error. They were documented as blocked; no proposition was created from their titles or metadata. Eight accessible Hebrew source bodies were used as same-run fallback. The blocked `acquire_source_content.py` crawler was not retried and no access control was bypassed.
+
+The answer engine gains a three-family comparison for the relationship between special care in one mitzvah, adapting hiddurim to a person's capacity, and the concept of empowerment from above. It is explicitly labelled as system synthesis, not a Rebbe quotation; each claim retains its own body locator and the researcher mode exposes the deep evidence map. Public `data/public-metrics.json` remains unchanged until merge and post-merge reconciliation.
