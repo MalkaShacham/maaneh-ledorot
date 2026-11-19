@@ -6915,7 +6915,7 @@ assert.equal(batch172HebrewReviews.length,10);
 assert.equal(batch172HebrewReviews.filter(r=>r.existing_identity===false&&r.new_independent_witness===true).length,8);
 assert.equal(batch172HebrewReviews.filter(r=>r.existing_identity===true&&r.new_independent_witness===false&&r.action==='duplicate_alias_excluded_existing_canonical_identity').length,2);
 for(const [aid,canonicalFile,canonicalId] of [['2989311','data/items/content-research-batch-101-2026-11-15.json','sicha-5710-rosh-chodesh-sivan-aid2989311'],['4279994','data/items/content-research-batch-151-2026-11-18.json','chabad-sicha-4279994']]){
- const review=batch172Data.source_body_review.find(r=>String(r.aid)===aid);
+ const review=batch172Data.source_body_review.find(r=>String(r.item_aid??r.aid)===aid);
  assert(review,'Batch172 duplicate review must be retained for AID '+aid);
  assert.equal(review.existing_identity,true);
  assert.equal(review.new_independent_witness,false);
