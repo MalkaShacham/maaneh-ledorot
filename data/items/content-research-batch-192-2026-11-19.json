@@ -5,8 +5,8 @@
   "generated": "2026-11-19T20:26:01+02:00",
   "reviewed_at": "2026-11-19T20:26:01+02:00",
   "title": "Batch192 — eight in-place Hebrew transcript enrichments across eight existing Evidence Families; exact new body locators and deep multi-family retrieval test",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending_reconciliation",
+  "status": "reconciled",
+  "reconciliation_status": "reconciled",
   "reviewed_item_count": 13,
   "source_bodies_inspected": 8,
   "source_body_pages_opened": 8,
@@ -152,9 +152,21 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4185
   },
-  "metrics_actual_after": null,
-  "metrics_delta_actual": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 1616,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4185
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 8
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 0,
     "content_verified_unique_sources": 0,
@@ -571,6 +583,6 @@
     "last_updated": "2026-11-19T19:52:49+02:00",
     "status": "pending_reconciliation"
   },
-  "note": "Batch192: eight in-place Hebrew Sicha enrichments across eight existing Evidence Families; four HTTP 429 candidate routes and one Yiddish summary-shell route were documented and replaced by accessible body passages. No new identities, no translation counted as a witness, no Verified promotion, no crawler retry or access-control bypass. Exact-head reconciliation and deep multi-family retrieval tests pending.",
+  "note": "Batch192: eight in-place Hebrew Sicha enrichments across eight existing Evidence Families; four HTTP 429 candidate routes and one Yiddish summary-shell route were documented and replaced by accessible body passages. No new identities, no translation counted as a witness, no Verified promotion, no crawler retry or access-control bypass. Exact-head reconciliation and deep multi-family retrieval tests pending. Exact-head generated-index boundary expected at 1616/854/4185; test must confirm this reconciliation.",
   "records": []
 }
