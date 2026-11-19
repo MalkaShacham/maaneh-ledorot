@@ -17,39 +17,38 @@
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 12,
+  "new_source_identities": 11,
   "existing_identities_enriched": 0,
-  "existing_identities_rechecked": 0,
-  "new_response_propositions": 12,
+  "existing_identities_rechecked": 1,
+  "new_response_propositions": 11,
   "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 12,
-  "answer_eligible_source_families_added": 12,
-  "independent_witnesses_added": 11,
+  "total_new_paraphrase_entries": 11,
+  "answer_eligible_source_families_added": 11,
+  "independent_witnesses_added": 10,
   "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
-  "duplicate_alias_identities": 0,
+  "duplicate_alias_identities": 1,
   "source_languages": [
     "Hebrew",
     "English"
   ],
   "language_distribution": {
-    "Hebrew": 11,
+    "Hebrew": 10,
     "English": 1
   },
   "original_language_distribution": {
-    "Hebrew": 11,
+    "Hebrew": 10,
     "Yiddish": 1
   },
   "proposition_language_distribution": {
     "Hebrew": 12
   },
   "source_type_distribution": {
-    "Sichos": 11,
+    "Sichos": 10,
     "Letters": 1
   },
   "new_aids": [
     259799,
-    2988877,
     2988879,
     2988906,
     2989234,
@@ -62,7 +61,9 @@
     5959840
   ],
   "enriched_aids": [],
-  "rechecked_aids": [],
+  "rechecked_aids": [
+    2988877
+  ],
   "reviewed_aids": [
     259799,
     2988877,
@@ -126,25 +127,25 @@
   "metrics_before_source": "Planning boundary after corrected Batch171 expected-after; not a measured result. Exact-head reconciliation must carry forward its actual snapshot.",
   "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1559,
+    "answer_eligible_unique_sources": 1558,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4041
+    "answer_eligible_propositions": 4040
   },
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 12,
+    "answer_eligible_unique_sources": 11,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 12
+    "answer_eligible_propositions": 11
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "metrics_attribution_note": "Planning increments comprise eleven independent Hebrew Sicha source families plus one additional letter Evidence Family represented only by an English translation. That translation is a non-independent presentation, not an extra witness. Full-index reconciliation may reclassify any pre-existing identity.",
-  "metrics_note": "Twelve source identities/presentations were added: eleven original-Hebrew Sicha witnesses and one English translation of a Yiddish letter. The translated letter is explicitly non-independent; no Verified status was promoted.",
+  "metrics_attribution_note": "Planning increments comprise ten independent original-Hebrew Sicha families plus one additional letter Evidence Family represented only by an English translation. The translation is a non-independent presentation. AID 2988877 was reclassified as a duplicate recheck of the canonical Batch100 identity and contributes no new source family or proposition.",
+  "metrics_note": "Eleven new answer-eligible source identities/presentations remain: ten original-Hebrew Sicha witnesses and one English translation of a Yiddish letter. AID 2988877 is an existing Batch100 identity, retained only as a duplicate recheck. No Verified status was promoted.",
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
-    "preflight_candidate_count": 12,
+    "preflight_candidate_count": 11,
     "new_aids_unique": true,
     "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
@@ -152,8 +153,9 @@
     "canonical_identity_collisions": null,
     "missing_canonical_identities": null,
     "checked_against": "Current content-review queue (1022 records), exact-AID GitHub repository searches, and available bulk-indexed snapshots dated 2026-09-24, 2026-09-25 and 2026-09-27. This is not a full canonical corpus scan.",
-    "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
-    "new_ids_unique": true
+    "note": "AID 2988877 is already canonical in Batch100 (same publisher AID/URL and canonical Evidence Family); it is excluded as a new identity and retained as a duplicate recheck. Remaining eleven candidates still require full-index reconciliation.",
+    "new_ids_unique": true,
+    "all_target_identities_answer_eligible": null
   },
   "source_body_review": [
     {
@@ -436,37 +438,6 @@
       "action": "new_identity_created"
     },
     {
-      "item_aid": 2988877,
-      "id": "chabad-sicha-2988877",
-      "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
-      "evidence_family_id": "sicha-5714-12-shevat-beshalach-aid2988877",
-      "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2988877",
-      "web_source_ref": "turn701495view9",
-      "body_locator": "he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "body_page_opened": true,
-      "inspected_original_language_body": true,
-      "body_text_inspected": true,
-      "title_or_metadata_only": false,
-      "proposition": "בחלק העוסק בבריאות הגוף, השיחה דוחה את הרעיון שהזנחת הבריאות יכולה להיות מוצדקת בשם קדושה, ומציגה שמירה על גוף בריא ושלם כאמצעי לעבודת הנשמה ולקיום רצון ה׳. הדברים מובאים כעיקרון חסידי־ערכי ולא כהנחיה רפואית פרטנית.",
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.",
-      "provenance": "BeitChabad.com / he.chabad.org, AID 2988877; original Hebrew body inspected 2026-11-19.",
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988877, במיקום he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.. נבדקו המקטע המצוין וההקשר הסמוך בלבד. העמוד מסומן בלתי מוגה. ההקלטה, כתב היד, האוטוגרף והרישום בן הזמן לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; context_status=partial. זהו עיקרון חסידי־ערכי על שמירת הגוף; אין לראות בו אבחון, טיפול או הנחיה רפואית פרטנית. לא הועתק טקסט מוגן במלואו.",
-      "context_status": "partial",
-      "conditions_or_qualifications": [
-        "זהו עיקרון חסידי־ערכי על שמירת הגוף; אין לראות בו אבחון, טיפול או הנחיה רפואית פרטנית."
-      ],
-      "existing_identity": false,
-      "new_independent_witness": true,
-      "action": "new_identity_created"
-    },
-    {
       "item_aid": 2988906,
       "id": "chabad-sicha-2988906",
       "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
@@ -555,7 +526,22 @@
   },
   "existing_identity_updates": [],
   "existing_identity_updates_count": 0,
-  "existing_identity_rechecks": [],
+  "existing_identity_rechecks": [
+    {
+      "aid": 2988877,
+      "id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "candidate_evidence_family_id": "sicha-5714-12-shevat-beshalach-aid2988877",
+      "action": "duplicate_recheck_excluded",
+      "existing_identity": true,
+      "new_independent_witness": false,
+      "new_response_proposition": false,
+      "body_locator": "he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.",
+      "existing_propositions": 11,
+      "note": "AID 2988877 already has one canonical identity in Batch100 with the same publisher URL and the Evidence Family shown above. The Batch172 candidate used a divergent family-id spelling and must not be counted as a new identity or proposition. The opened passage is retained only as a duplicate recheck; the canonical Batch100 identity and its eleven existing propositions remain authoritative."
+    }
+  ],
   "expected_answer_eligible_source_families_added": 11,
   "records": [
     {
@@ -1453,105 +1439,6 @@
       "last_content_enriched_at": "2026-11-19T01:53:26+02:00"
     },
     {
-      "id": "chabad-sicha-2988877",
-      "canonical_key": "aid:2988877",
-      "aid": 2988877,
-      "title": "שיחת ש״פ בשלח, י״ב שבט, ה׳תשי״ד",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה עברי שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; נבדק רק המקטע המצוין.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "source_text_inspected",
-      "date_original": "שבת פרשת בשלח, י״ב שבט, ה׳תשי״ד",
-      "date_precision": "calendar_day",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "public_talk_transcript",
-      "collection": "שיחות ומאמרים / BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2988877",
-      "context_status": "partial",
-      "summary_researcher": "בחלק העוסק בבריאות הגוף, השיחה דוחה את הרעיון שהזנחת הבריאות יכולה להיות מוצדקת בשם קדושה, ומציגה שמירה על גוף בריא ושלם כאמצעי לעבודת הנשמה ולקיום רצון ה׳. הדברים מובאים כעיקרון חסידי־ערכי ולא כהנחיה רפואית פרטנית.",
-      "response_propositions": [
-        "בחלק העוסק בבריאות הגוף, השיחה דוחה את הרעיון שהזנחת הבריאות יכולה להיות מוצדקת בשם קדושה, ומציגה שמירה על גוף בריא ושלם כאמצעי לעבודת הנשמה ולקיום רצון ה׳. הדברים מובאים כעיקרון חסידי־ערכי ולא כהנחיה רפואית פרטנית."
-      ],
-      "response_proposition_locators": [
-        "he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.",
-      "evidence_family_id": "sicha-5714-12-shevat-beshalach-aid2988877",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988877, במיקום he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.. נבדקו המקטע המצוין וההקשר הסמוך בלבד. העמוד מסומן בלתי מוגה. ההקלטה, כתב היד, האוטוגרף והרישום בן הזמן לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; context_status=partial. זהו עיקרון חסידי־ערכי על שמירת הגוף; אין לראות בו אבחון, טיפול או הנחיה רפואית פרטנית. לא הועתק טקסט מוגן במלואו.",
-      "documented_circumstances": "שיחת ש״פ בשלח ה׳תשי״ד, בחלק העוסק בגוף האדם וביחס שבין הנשמה לגוף.",
-      "question_or_problem": "איזו הוראה ביחס לשמירת בריאות הגוף מפיקה השיחה מן הדיון במעלת הגוף?",
-      "conditions_or_qualifications": [
-        "זהו עיקרון חסידי־ערכי על שמירת הגוף; אין לראות בו אבחון, טיפול או הנחיה רפואית פרטנית."
-      ],
-      "audience": "קוראי השיחה; בעמוד לא מצוין נמען אישי.",
-      "primary_secondary_status": "Publisher-published Hebrew unedited talk transcript; the recording, contemporaneous notes, autograph and edited edition were not collated.",
-      "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 2988877, שיחת ש״פ בשלח, י״ב שבט, ה׳תשי״ד, https://he.chabad.org/library/article_cdo/aid/2988877; original Hebrew body passage inspected 2026-11-19.",
-      "independent_witness": true,
-      "translation_status": "הגוף העברי המקורי שפורסם נבדק; לא נוסף תרגום ולא נספר תרגום כעד עצמאי.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, הרישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד.",
-      "source_role": "oral_talk_transcript",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "provenance": {
-        "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, הרישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2988877, שיחת ש״פ בשלח, י״ב שבט, ה׳תשי״ד, https://he.chabad.org/library/article_cdo/aid/2988877; original Hebrew body passage inspected 2026-11-19.",
-        "transmission_type": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
-        "textual_status": "הגוף נפתח ונבדק במיקום he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.. הפרסום מסומן בלתי מוגה. לא נבדקו הקלטה, כתב יד, אוטוגרף או רישום בן הזמן; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום המצוין; תוצאות חיפוש שימשו לניווט בלבד ולא כתוכן; לא הועתק גוף הפרסום המלא.",
-        "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2988877",
-        "accessed": "2026-11-19T01:53:26+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "תמליל שיחה עברי שפורסם בידי המו״ל ומסומן בלתי מוגה.",
-        "complete_partial": "partial",
-        "notes": "נבדק רק המיקום he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.; לא נבדקו הקלטה, כתב יד, אוטוגרף או מהדורה מודפסת מלאה. זהו עיקרון חסידי־ערכי על שמירת הגוף; אין לראות בו אבחון, טיפול או הנחיה רפואית פרטנית."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "נשמרו קישור למקור, פרפרזה מחקרית תחומה ומיקום; לא הועתק גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "AID 2988877 מזהה פריט שיחה נפרד לפי מועדו ופרסומו. תרגום או הדפסה מקבילה של אותו פריט ייקשרו למשפחת הראיות sicha-5714-12-shevat-beshalach-aid2988877 ולא ייספרו כעד עצמאי.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת ש״פ בשלח, י״ב שבט, ה׳תשי״ד"
-        ],
-        "research_terms": [
-          "בריאות הגוף",
-          "נשמה וגוף",
-          "קדושה",
-          "עבודת ה׳",
-          "רמב״ם"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed. הפרפרזה מוגבלת למיקום he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.; context_status=partial. אין קידום ל-Verified. זהו עיקרון חסידי־ערכי על שמירת הגוף; אין לראות בו אבחון, טיפול או הנחיה רפואית פרטנית.",
-      "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
-      "content_enrichment_batch_id": "172",
-      "last_content_enriched_at": "2026-11-19T01:53:26+02:00"
-    },
-    {
       "id": "chabad-sicha-2988906",
       "canonical_key": "aid:2988906",
       "aid": 2988906,
@@ -1777,7 +1664,6 @@
     "chabad-sicha-4385701",
     "chabad-sicha-4279994",
     "chabad-sicha-4296163",
-    "chabad-sicha-2988877",
     "chabad-sicha-2988906",
     "chabad-letter-5713-shevat-zalmon-jaffe"
   ],
@@ -1791,7 +1677,6 @@
     "chabad-sicha-4385701",
     "chabad-sicha-4279994",
     "chabad-sicha-4296163",
-    "chabad-sicha-2988877",
     "chabad-sicha-2988906",
     "chabad-letter-5713-shevat-zalmon-jaffe"
   ],
@@ -1819,5 +1704,22 @@
   ],
   "excluded_item_ids": [
     "4754421"
-  ]
+  ],
+  "duplicate_rechecks": [
+    {
+      "aid": 2988877,
+      "id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "candidate_evidence_family_id": "sicha-5714-12-shevat-beshalach-aid2988877",
+      "action": "duplicate_recheck_excluded",
+      "existing_identity": true,
+      "new_independent_witness": false,
+      "new_response_proposition": false,
+      "body_locator": "he.chabad.org AID 2988877, גוף השיחה, סעיפים ו׳–ז׳, שורות 215–225.",
+      "existing_propositions": 11,
+      "note": "AID 2988877 already has one canonical identity in Batch100 with the same publisher URL and the Evidence Family shown above. The Batch172 candidate used a divergent family-id spelling and must not be counted as a new identity or proposition. The opened passage is retained only as a duplicate recheck; the canonical Batch100 identity and its eleven existing propositions remain authoritative."
+    }
+  ],
+  "note": "Batch172 corrected after exact-head readiness exposed AID 2988877 as already canonical in Batch100. The duplicate candidate was removed from records/source_body_review and retained in duplicate_rechecks; ten Hebrew identities and one non-independent English translation remain. Full-index reconciliation pending."
 }
