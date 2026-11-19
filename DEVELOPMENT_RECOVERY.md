@@ -1619,3 +1619,15 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - Exact-head PR-workspace baseline from Answer Quality Gate run 44523818685: 1,587 answer-eligible unique sources / 854 content-verified unique sources / 4,115 propositions. Batch184 expects 1,587 / 854 / 4,123 after eight in-place propositions; this is planning only until reconciliation.
 - Readiness-test correction: when a prior batch's measured actual-after differs from its expected-after, the next batch baseline is checked against the prior expected boundary; each batch's measured variance is validated independently. This avoids treating a recorded reconciliation variance as an unrecorded new batch delta.
 - PR #35 remains open pending a fresh exact-head Answer Quality Gate. No main merge or Pages deployment is claimed until the gate passes.
+
+
+## 2026-11-19 — Batch186: eight in-place Hebrew Sicha enrichments
+
+- Opened and inspected eight non-overlapping original-Hebrew passages from eight public BeitChabad.com / he.chabad.org Sicha bodies: AIDs 3140221, 4279862, 2988861, 2988879, 2988855, 2988876, 2988887 and 2988862. Seven identities originated in Batch185; AID 2988862 is the existing canonical identity in Batch176.
+- Added eight non-verbatim, source-grounded research propositions to existing records. Each carries `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, a claim-level body locator, provenance, partial-context scope and explicit limitations. No new identity, Evidence Family, independent witness or Verified promotion was added.
+- AID 4666220 redirected to a browser-compatibility/Torah Texts shell requiring a newer browser, with no readable letter body. It was recorded as blocked; eight alternative original-Hebrew source bodies were inspected in the same run. No crawler retry, access-control bypass, scan-only verification or full-text copying.
+- The eight AIDs resolve to eight existing canonical identities and distinct Evidence Families. The preflight check found no new identity collisions; the full-index audit remains pending exact-head reconciliation.
+- Batch186 planning boundary: **1,594 / 854 / 4,129 → 1,594 / 854 / 4,137** (answer-eligible unique sources / content-verified unique sources / answer-eligible propositions). These are planning values derived from Batch185's expected boundary, not measured or public metrics. No Verified count changes.
+- Extended `test_content_readiness.mjs` through Batch186, corrected contiguous historical snapshot chaining, and added a three-Evidence-Family Torah-learning/youth-education/Chassidic-dissemination regression in regular and deep researcher modes.
+- The prior exact-head run 44554020367 reached the measured readiness phase and stopped at a stale current-batch assertion (expected 184 while the state was 185). The new commit triggers a fresh exact-head run; no new gate result is claimed yet.
+- PR #35 remains open pending the fresh Answer Quality Gate and post-merge Pages verification. The hourly schedule, repository audience and permissions are unchanged.
