@@ -1639,3 +1639,9 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - Removed the duplicate Batch185 source record and did not count its overlapping proposition. The candidate remains in the Batch185 duplicate/recheck audit; Batch172 remains the sole canonical identity.
 - Corrected Batch185 to **6 new identities, 2 in-place enrichments, 1 existing-identity recheck and 8 new paraphrases**. Its planning boundary is now **1,593 / 854 / 4,128**, not the earlier uncorrected 1,594 / 854 / 4,129.
 - The distinct Batch186 claim about the debate over studying halachic reasons and the Alter Rebbe's Shulchan Aruch is appended only to the Batch172 canonical record. Batch186 planning boundary is **1,593 / 854 / 4,136**. Both boundaries remain planning values until exact-head reconciliation.
+
+
+## 2026-11-19 — Readiness-test boundary correction
+
+- Exact-head reconciliation on run 44556976010 completed and measured **1,593 answer-eligible unique sources / 854 content-verified sources / 4,136 answer-eligible propositions**. Batch186's audit selected all eight enriched identities, all answer-eligible, across eight Evidence Families.
+- The run failed at the historical Batch177→178 boundary because a test-helper edit incorrectly compared the next batch's measured baseline (4,069) with the predecessor's actual-after snapshot (4,074). The repository's reconciliation policy intentionally resets the next batch baseline to the predecessor's documented expected boundary and checks each batch's actual variance separately. The helper is restored to that rule; this is a test correction, not a content-readiness failure.

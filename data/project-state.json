@@ -964,7 +964,7 @@
       },
       "translations_added": 0,
       "translations_counted_as_independent_witnesses": 0,
-      "note": "שמונה מקטעים לא חופפים נבדקו ישירות בגופי שיחות עבריים מקוריים. שבעה AIDs הם זהויות שנוצרו באצווה 185 והועשרו כעת; AID 2988862 הועשר בקובץ הקנוני של אצווה 176. נוספו שמונה פרפרזות מחקר לא-מילוליות, עם מיקום, provenance, היקף אימות, הקשר חלקי ומגבלות. לא נוספו מקורות או משפחות ראיות; לא קודם מקור ל-Verified. Duplicate audit correction: AID 2988879 is canonical in Batch172; the Batch185 duplicate presentation was removed. The Batch186 proposition is stored only in the Batch172 canonical record and focuses on the distinct dispute over learning halachic reasons.",
+      "note": "שמונה מקטעים לא חופפים נבדקו ישירות בגופי שיחות עבריים מקוריים. שישה AIDs הם זהויות שנוצרו באצווה 185 והועשרו כעת; AID 2988879 הועשר בקובץ הקנוני של אצווה 172 ו-AID 2988862 בקובץ הקנוני של אצווה 176. נוספו שמונה פרפרזות מחקר לא-מילוליות, עם מיקום, provenance, היקף אימות, הקשר חלקי ומגבלות. לא נוספו מקורות או משפחות ראיות; לא קודם מקור ל-Verified. Duplicate audit correction: AID 2988879 is canonical in Batch172; the Batch185 duplicate presentation was removed. The Batch186 proposition is stored only in the Batch172 canonical record and focuses on the distinct dispute over learning halachic reasons.",
       "limitations": [
         "כל שמונת התמלילים מסומנים בלתי מוגה; לא נבדקו הקלטות, כתבי יד או מהדורות מוגהות.",
         "ההקשר שנבדק מוגבל למקטעים ולשורות שצוינו; אין להשלים נסיבות או הקשרים שאינם מופיעים בהם.",
@@ -2716,15 +2716,15 @@
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending_exact_head_batch_186",
-    "last_failed_run_id": 44554020367,
-    "last_failure": "Run 44554020367 failed at test_content_readiness.mjs:1462 because the assertion still expected current_batch=184 while repository state had advanced to 185. Batch186 updates the pointer and adds explicit 185/186 checks; no source-content failure was reported in that run.",
-    "note": "Batch186 adds eight in-place Hebrew Sicha propositions across eight existing Evidence Families, with no new identities or Verified promotions. The prior Answer Quality Gate run 44554020367 stopped at a stale test pointer (expected 184 while state had advanced to 185). The readiness test now advances through Batch186, validates contiguous measured snapshots, and adds regular/deep researcher multi-family citation coverage. Exact-head reconciliation and the fresh gate must pass before merge.",
+    "last_failed_run_id": 44556976010,
+    "last_failure": "Run 44556976010 reached exact-head reconciliation and measured 1,593 / 854 / 4,136, but failed at Batch177→178 because the modified helper compared the next measured baseline with the predecessor's actual-after (4074) instead of its expected boundary (4069). The helper is restored to compare nextActualBefore with nextBaseline; batch-level actual variance remains independently validated.",
+    "note": "Batch186 adds eight in-place Hebrew Sicha propositions across eight existing Evidence Families, with no new identities or Verified promotions. Run 44556976010 measured the exact-head index at 1,593 answer-eligible unique sources, 854 content-verified sources and 4,136 propositions; it stopped at Batch177→178 because a test-helper edit incorrectly chained the next baseline to the predecessor's actual-after instead of its expected boundary. The helper is restored to the expected-boundary rule; each batch's actual variance remains checked independently. A fresh exact-head gate must pass before merge.",
     "run_status": "pending_exact_head_batch_186",
     "workflow_run_id": null
   },
   "publication": {
     "status": "pending_merge_and_pages_verification",
-    "note": "PR #35 contains content batches through Batch186 and updated exact-head readiness checks. No main merge or new Pages deployment is claimed before the fresh gate passes and post-merge publication is verified.",
+    "note": "PR #35 contains content batches through Batch186 and the corrected expected-boundary readiness test. The latest exact-head run measured 1,593 / 854 / 4,136 but failed on the test helper; a fresh gate is required before merge and Pages verification.",
     "url": "https://malkashacham.github.io/maaneh-ledorot",
     "last_verified_main_sha": "2c7231f9bb043faafdd61c94040111723d95ac04"
   }

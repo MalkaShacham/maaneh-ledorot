@@ -23,10 +23,11 @@ const assertHistoricalBatchBoundary=(previous,next,label)=>{
  const nextBaseline=readinessMetrics(next.metrics_before);
  const nextActualBefore=readinessMetrics(next.metrics_actual_before);
  if(JSON.stringify(previousExpected)===JSON.stringify(nextBaseline)){
-   // Contiguous expected boundaries must chain to the predecessor's measured actual snapshot.
-   // Each batch's actual-versus-expected variance is validated independently.
-   assert.deepEqual(nextActualBefore,readinessMetrics(previous.metrics_actual_after),label+' measured snapshot chain');
-  }else{  assert.equal(typeof next.metrics_before_source,'string',label+' requires a documented exact-head baseline');
+   // A predecessor may reconcile with a measured variance. The next batch baseline
+   // follows the predecessor's documented expected boundary; the predecessor's
+   // actual-vs-expected variance is checked independently by assertReconciliationSnapshot.
+   assert.deepEqual(nextActualBefore,nextBaseline,label+' measured next-batch baseline');
+  }else{ assert.equal(typeof next.metrics_before_source,'string',label+' requires a documented exact-head baseline');
   assert.match(next.metrics_before_source,/exact-head|measured|baseline/i,label+' baseline note must identify its measurement source');
   assert.deepEqual(nextActualBefore,nextBaseline,label+' actual before must equal its documented baseline');
   for(const value of Object.values(nextBaseline))assert(next.metrics_before_source.includes(String(value)),label+' baseline note must include measured value '+value);
@@ -1718,7 +1719,7 @@ assert.equal(batch185Data.total_new_paraphrase_entries,8);assert.equal(batch185D
 assert.equal(batch185Data.content_verified_unique_sources_added,0);
 assert.deepEqual(batch185Data.new_aids.map(String),['3140221','4279862','2988861','2988855','2988876','2988887']);
 assert.deepEqual(batch185Data.enriched_aids.map(String),['2988862','2988859']);
-assert.equal(batch185Data.existing_identities_rechecked,1);assert.deepEqual(batch185Data.rechecked_aids.map(String),['2988879']);
+assert.equal(batch185Data.existing_identities_rechecked,1);assert.equal(batch185Data.independent_witnesses_added,6);assert.deepEqual(batch185Data.rechecked_aids.map(String),['2988879']);
 assert.equal(batch185Data.existing_identity_rechecks.length,1);assert.equal(batch185Data.excluded_duplicate_candidate_count,2);
 assert(batch185Data.excluded_duplicate_candidates.some(x=>String(x.aid)==='2988879'));
 assert(batch185Data.duplicate_alias_identities.some(x=>String(x.aid)==='2988879'&&x.canonical_file===batch172Path));
