@@ -1670,3 +1670,12 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - בדיקת כפילויות מקדימה: עשרת ה-AIDs החדשים נבדקו מול GitHub code search ב-main, כל קובצי אצוות התוכן ששונו ב-PR #35 בטווח 70–187 ותור הבדיקה הנוכחי; לא נמצאה התאמת AID. AID 2989059 זוהה בזהותו הקנונית ב-Batch170 והועשר במקומו. סריקת canonical מלאה תבוצע ב-reconcile_metrics.py בריצת ה-CI.
 - בסיס תכנון Batch188: **1,598 / 854 / 4,144 → 1,608 / 854 / 4,155**. הבסיס 1,598 / 854 / 4,144 נמדד ב-PR workspace בריצת CI 44564897783 לאחר Batch187, אך אינו מדד ציבורי ב-main. הגבול לאחר Batch188 הוא תכנון בלבד עד reconciliation מלא.
 - לא הועתק טקסט מוגן במלואו, לא הופעל crawler חסום, לא נעקפו בקרות גישה ולא קודם מקור ל-Verified. PR #35 נשאר פתוח עד מעבר test_content_readiness.mjs; מדדי main הציבוריים נשארים 977 / 878 / 2,950 עד מיזוג ו-reconciliation בפרסום.
+
+
+## Batch 189 — 19 November 2026
+
+Eight non-overlapping passages were inspected directly in the original Hebrew bodies of eight existing Sicha identities (AIDs 2989349, 2989337, 2988901, 2989336, 2989341, 2989342, 2989339 and 2989398). Eight non-verbatim, source-grounded propositions were added in place with exact section/line locators, provenance, partial-context boundaries and item-specific qualifications. The canonical AIDs, files and Evidence Families were retained; no new source identity, independent witness or Verified promotion was added.
+
+Two alternative Chabad Library pages (1500390039 and 1200820110) returned no readable lines through the public reader. Their search extracts were excluded from content; the same run fell back to eight accessible Hebrew Sicha bodies. No crawler retry, access-control bypass, full-text copying or scan-only content verification occurred.
+
+Batch189 expected boundary: 1,607 answer-eligible Evidence Families / 854 content-verified families / 4,163 distinct propositions, from the Batch188 expected boundary 1,607 / 854 / 4,155. These are planning values until exact-head reconciliation. The preceding Answer Quality Gate run 44571275898 passed normalization, index generation, retrieval, synthesis, citation integrity, evidence-contract and write-safety checks, but failed at the content-readiness step; Batch189 adds explicit current-batch, historical-boundary, in-place-enrichment and deep-researcher citation assertions. No public-main metric is changed by this pending branch work.

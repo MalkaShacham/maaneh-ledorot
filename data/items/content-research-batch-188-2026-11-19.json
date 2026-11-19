@@ -117,18 +117,14 @@
   "translations_added": 0,
   "translations_counted_as_independent_witnesses": 0,
   "metrics_before": {
-    "answer_eligible_unique_sources": 1598,
+    "answer_eligible_unique_sources": 1597,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4144
   },
-  "metrics_before_source": "Exact-head PR CI run 44564897783 ran reconcile_metrics.py and measured 1,598 / 854 / 4,144 after Batch187 before the readiness test stopped at a stale Batch186 state-pointer assertion. This is a PR-workspace measurement, not public main.",
-  "metrics_actual_before": {
-    "answer_eligible_unique_sources": 1598,
-    "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4144
-  },
+  "metrics_before_source": "Exact-head PR branch after duplicate consolidation of AID 2514160: expected Batch187 boundary 1,598/854/4,144 is reduced by one duplicate Evidence Family to 1,597/854/4,144. Batch188 exact-head reconciliation will measure the corrected baseline; this is not a public-main metric.",
+  "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1608,
+    "answer_eligible_unique_sources": 1607,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4155
   },
@@ -196,7 +192,7 @@
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "note": "Preflight checked the ten AIDs against GitHub code search on main, all PR-changed content-research batch files 70–187, and the current content-review queue; no canonical AID match was found. AID 2989059 was resolved to its existing canonical identity in Batch170 and enriched in place. Full-index reconciliation remains pending exact-head CI."
+    "note": "AID 2514160 duplicate consolidation shifts the exact-head baseline down by one Evidence Family. Batch188 and subsequent in-place enrichments are pending full-index reconciliation."
   },
   "existing_identity_updates_count": 1,
   "existing_identity_rechecks_count": 0,
@@ -276,10 +272,12 @@
       "context_status": "partial",
       "summary_researcher": "השיחה מסבירה שהשבת מספקת חיות וכוח לכל ימי השבוע: יום המוקדש לתורה ולתפילה מעניק יכולת לברר ולהעלות גם את ענייני הרשות של ימי החול לקדושה. זהו ביאור רעיוני על תפקיד השבת בעבודת השבוע, ולא הוראה הלכתית חדשה.",
       "response_propositions": [
-        "השיחה מסבירה שהשבת מספקת חיות וכוח לכל ימי השבוע: יום המוקדש לתורה ולתפילה מעניק יכולת לברר ולהעלות גם את ענייני הרשות של ימי החול לקדושה. זהו ביאור רעיוני על תפקיד השבת בעבודת השבוע, ולא הוראה הלכתית חדשה."
+        "השיחה מסבירה שהשבת מספקת חיות וכוח לכל ימי השבוע: יום המוקדש לתורה ולתפילה מעניק יכולת לברר ולהעלות גם את ענייני הרשות של ימי החול לקדושה. זהו ביאור רעיוני על תפקיד השבת בעבודת השבוע, ולא הוראה הלכתית חדשה.",
+        "השיחה מציגה את המעשה כעיקר החיוב בקיום המצווה ומבחינה בינו לבין הכוונה: כוונה ללא מעשה אינה משלימה את קיום המצווה, ואילו מעשה ללא כוונה עדיין מקיים את החיוב, אף שחסר בו ממד הכוונה. בהמשך מובאת תורת הבעש״ט שיש לעבוד עם הגוף ולבררו, ולא לשבור אותו בסיגופים. זהו ביאור חסידי על עבודת הגוף והמצווה, לא פסיקה פרטנית ולא המלצה רפואית."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2989349, גוף השיחה, סעיף ב׳, שורות 182–189."
+        "he.chabad.org AID 2989349, גוף השיחה, סעיף ב׳, שורות 182–189.",
+        "he.chabad.org AID 2989349, גוף השיחה, סעיף ג׳, שורות 195–198."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -290,11 +288,12 @@
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989349, במיקום he.chabad.org AID 2989349, גוף השיחה, סעיף ב׳, שורות 182–189. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיף ב׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989349, במיקום he.chabad.org AID 2989349, גוף השיחה, סעיף ב׳, שורות 182–189. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיף ב׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא. בנוסף, ב-19.11.2026 נבדק מקטע לא חופף: ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989349, במיקום he.chabad.org AID 2989349, גוף השיחה, סעיף ג׳, שורות 195–198.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "ש״פ וישב, מבה״ח טבת, ה׳תשי״א",
       "question_or_problem": "כיצד השבת מעניקה כוח לעבודה בענייני הרשות של ימי החול?",
       "conditions_or_qualifications": [
-        "הקטע מציג ביאור חסידי על תפקיד השבת; אין להסיק ממנו חיוב הלכתי חדש או פירוט של כל עבודה יומיומית."
+        "הקטע מציג ביאור חסידי על תפקיד השבת; אין להסיק ממנו חיוב הלכתי חדש או פירוט של כל עבודה יומיומית.",
+        "הניסוח מתאר את מהלך השיחה; אין להסיק ממנו היתר לבטל כוונה, פסיקה פרטנית או הנחיה רפואית ביחס לגוף."
       ],
       "audience": "קהל ההתוועדות של שבת מברכים טבת.",
       "primary_secondary_status": "Publisher-published Hebrew public-talk transcript; העמוד מסומן בלתי מוגה; נבדקו סעיף ב׳ והשורות המצוינות בלבד. No recording, contemporaneous notes, autograph or alternate edition was collated.",
@@ -313,13 +312,13 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד. ",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989349, שיחת ש״פ וישב, מבה״ח טבת, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989349; גוף הפרסום העברי נבדק ישירות ב-19.11.2026.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989349, שיחת ש״פ וישב, מבה״ח טבת, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989349; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
         "transmission_type": "Publisher-published Hebrew public-talk transcript",
-        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיף ב׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא.",
+        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיף ב׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי. העמוד מסומן בלתי מוגה.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא. נוספה פרפרזה שנייה, לא-מילולית, על he.chabad.org AID 2989349, גוף השיחה, סעיף ג׳, שורות 195–198.; לא הועתק גוף הפרסום.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989349",
-        "accessed": "2026-11-19T18:29:22+02:00"
+        "accessed": "2026-11-19T18:55:51+02:00"
       },
       "witness": {
         "kind": "text",
@@ -352,8 +351,8 @@
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. נוספה פרפרזה אחת מתוך גוף עברי שנבדק ישירות; אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-188-2026-11-19.json",
-      "content_enrichment_batch_id": "188",
-      "last_content_enriched_at": "2026-11-19T18:29:22+02:00",
+      "content_enrichment_batch_id": "189",
+      "last_content_enriched_at": "2026-11-19T18:55:51+02:00",
       "response_proposition_metadata": [
         {
           "proposition_index": 0,
@@ -367,6 +366,21 @@
           "context_status": "partial",
           "conditions_or_qualifications": [
             "הקטע מציג ביאור חסידי על תפקיד השבת; אין להסיק ממנו חיוב הלכתי חדש או פירוט של כל עבודה יומיומית."
+          ],
+          "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989349"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "189",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989349, גוף השיחה, סעיף ג׳, שורות 195–198.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989349, שיחת ש״פ וישב, מבה״ח טבת, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989349; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989349, במיקום he.chabad.org AID 2989349, גוף השיחה, סעיף ג׳, שורות 195–198.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הניסוח מתאר את מהלך השיחה; אין להסיק ממנו היתר לבטל כוונה, פסיקה פרטנית או הנחיה רפואית ביחס לגוף."
           ],
           "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989349"
         }
@@ -393,10 +407,12 @@
       "context_status": "partial",
       "summary_researcher": "השיחה מדגישה שגם כאשר למצווה יש טעם או רמז, יסוד קיומה הוא ציווי ה׳; קיום מתוך קבלת עול שומר על עיקר המצווה ועל הקשר עם מצווה המצוות, ולא רק על מימוש ההסבר השכלי שלה.",
       "response_propositions": [
-        "השיחה מדגישה שגם כאשר למצווה יש טעם או רמז, יסוד קיומה הוא ציווי ה׳; קיום מתוך קבלת עול שומר על עיקר המצווה ועל הקשר עם מצווה המצוות, ולא רק על מימוש ההסבר השכלי שלה."
+        "השיחה מדגישה שגם כאשר למצווה יש טעם או רמז, יסוד קיומה הוא ציווי ה׳; קיום מתוך קבלת עול שומר על עיקר המצווה ועל הקשר עם מצווה המצוות, ולא רק על מימוש ההסבר השכלי שלה.",
+        "השיחה מרחיבה את קבלת העול גם לפתיחת היום והשנה: התחלת העבודה בחודש תשרי מתוך קבלת עול, בדומה לאמירת ״מודה אני״ בתחילת היום, מוצגת כהכנה שמעצבת את המשך העבודה לאורך השנה, גם בתחומי הבנה והשגה. זהו תיאור של מבנה העבודה הרוחנית בשיחה, לא הוראה ליטורגית חדשה."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2989337, גוף השיחה, סעיף א׳, שורות 175–182."
+        "he.chabad.org AID 2989337, גוף השיחה, סעיף א׳, שורות 175–182.",
+        "he.chabad.org AID 2989337, גוף השיחה, סעיף ב׳, שורות 187–190."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -407,11 +423,12 @@
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989337, במיקום he.chabad.org AID 2989337, גוף השיחה, סעיף א׳, שורות 175–182. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיף א׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989337, במיקום he.chabad.org AID 2989337, גוף השיחה, סעיף א׳, שורות 175–182. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיף א׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא. בנוסף, ב-19.11.2026 נבדק מקטע לא חופף: ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989337, במיקום he.chabad.org AID 2989337, גוף השיחה, סעיף ב׳, שורות 187–190.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "שבת חול המועד סוכות, ה׳תשי״א",
       "question_or_problem": "מהו היסוד לקיום מצווה גם כאשר יש לה טעם שכלי?",
       "conditions_or_qualifications": [
-        "הדיון עוסק בעקרון קיום המצוות מתוך קבלת עול; אין זו פסיקה חדשה ביחס למצווה מסוימת."
+        "הדיון עוסק בעקרון קיום המצוות מתוך קבלת עול; אין זו פסיקה חדשה ביחס למצווה מסוימת.",
+        "הקטע עוסק במבנה העבודה הרוחנית; אין להסיק ממנו שינוי בסדר התפילה או בהלכה."
       ],
       "audience": "קהל ההתוועדות בשבת חול המועד סוכות.",
       "primary_secondary_status": "Publisher-published Hebrew public-talk transcript; העמוד מסומן בלתי מוגה; נבדקו סעיף א׳ והשורות המצוינות בלבד. No recording, contemporaneous notes, autograph or alternate edition was collated.",
@@ -430,13 +447,13 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד. ",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989337, שיחת שבת חול המועד סוכות, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989337; גוף הפרסום העברי נבדק ישירות ב-19.11.2026.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989337, שיחת שבת חול המועד סוכות, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989337; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
         "transmission_type": "Publisher-published Hebrew public-talk transcript",
-        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיף א׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא.",
+        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיף א׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי. העמוד מסומן בלתי מוגה.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא. נוספה פרפרזה שנייה, לא-מילולית, על he.chabad.org AID 2989337, גוף השיחה, סעיף ב׳, שורות 187–190.; לא הועתק גוף הפרסום.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989337",
-        "accessed": "2026-11-19T18:29:22+02:00"
+        "accessed": "2026-11-19T18:55:51+02:00"
       },
       "witness": {
         "kind": "text",
@@ -468,8 +485,8 @@
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. נוספה פרפרזה אחת מתוך גוף עברי שנבדק ישירות; אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-188-2026-11-19.json",
-      "content_enrichment_batch_id": "188",
-      "last_content_enriched_at": "2026-11-19T18:29:22+02:00",
+      "content_enrichment_batch_id": "189",
+      "last_content_enriched_at": "2026-11-19T18:55:51+02:00",
       "response_proposition_metadata": [
         {
           "proposition_index": 0,
@@ -483,6 +500,21 @@
           "context_status": "partial",
           "conditions_or_qualifications": [
             "הדיון עוסק בעקרון קיום המצוות מתוך קבלת עול; אין זו פסיקה חדשה ביחס למצווה מסוימת."
+          ],
+          "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989337"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "189",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989337, גוף השיחה, סעיף ב׳, שורות 187–190.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989337, שיחת שבת חול המועד סוכות, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989337; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989337, במיקום he.chabad.org AID 2989337, גוף השיחה, סעיף ב׳, שורות 187–190.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע עוסק במבנה העבודה הרוחנית; אין להסיק ממנו שינוי בסדר התפילה או בהלכה."
           ],
           "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989337"
         }
@@ -625,10 +657,12 @@
       "context_status": "partial",
       "summary_researcher": "השיחה מיישבת את דרישת היראה במתן תורה עם מאמר הזוהר המדגיש אהבה: היראה הרצויה מתוארת ככזו הנכללת באהבה ונובעת ממנה. כך הקשר למתן תורה אינו מוצג כהתרחקות מפוחדת בלבד, אלא כעמידה של כבוד וקרבה יחד.",
       "response_propositions": [
-        "השיחה מיישבת את דרישת היראה במתן תורה עם מאמר הזוהר המדגיש אהבה: היראה הרצויה מתוארת ככזו הנכללת באהבה ונובעת ממנה. כך הקשר למתן תורה אינו מוצג כהתרחקות מפוחדת בלבד, אלא כעמידה של כבוד וקרבה יחד."
+        "השיחה מיישבת את דרישת היראה במתן תורה עם מאמר הזוהר המדגיש אהבה: היראה הרצויה מתוארת ככזו הנכללת באהבה ונובעת ממנה. כך הקשר למתן תורה אינו מוצג כהתרחקות מפוחדת בלבד, אלא כעמידה של כבוד וקרבה יחד.",
+        "הדיון מיישם את היראה הנובעת מאהבה על קיום המצוות: אהבת ה׳ מביאה להיזהר מאיסורים כדי שלא להיפרד ממנו; במסגרת הביאור החסידי שבשיחה, שמירת לא־תעשה מתוך אהבה מקבלת גם משמעות של המשכה רוחנית. זהו מהלך עיוני במקורות, לא טענה פסיכולוגית אמפירית או פסיקה פרטנית."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2988901, גוף השיחה, סעיפים ב׳–ג׳, שורות 180–187."
+        "he.chabad.org AID 2988901, גוף השיחה, סעיפים ב׳–ג׳, שורות 180–187.",
+        "he.chabad.org AID 2988901, גוף השיחה, סעיפים ג׳–ד׳, שורות 192–200."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -639,11 +673,12 @@
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988901, במיקום he.chabad.org AID 2988901, גוף השיחה, סעיפים ב׳–ג׳, שורות 180–187. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיפים ב׳–ג׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988901, במיקום he.chabad.org AID 2988901, גוף השיחה, סעיפים ב׳–ג׳, שורות 180–187. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיפים ב׳–ג׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא. בנוסף, ב-19.11.2026 נבדק מקטע לא חופף: ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988901, במיקום he.chabad.org AID 2988901, גוף השיחה, סעיפים ג׳–ד׳, שורות 192–200.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "יום ב׳ דחג השבועות, ה׳תשי״ד",
       "question_or_problem": "כיצד השיחה מיישבת בין יראה במתן תורה לבין אהבה?",
       "conditions_or_qualifications": [
-        "זהו מהלך עיוני־חסידי המיישב מקורות; אין להציגו כטענה פסיכולוגית אמפירית או כהגדרה ממצה של כל סוגי היראה."
+        "זהו מהלך עיוני־חסידי המיישב מקורות; אין להציגו כטענה פסיכולוגית אמפירית או כהגדרה ממצה של כל סוגי היראה.",
+        "ההמשכה הרוחנית מוצגת במסגרת הביאור החסידי של השיחה; אין להסיק מכך ממצא אמפירי."
       ],
       "audience": "קהל ההתוועדות ביום השני של חג השבועות.",
       "primary_secondary_status": "Publisher-published Hebrew public-talk transcript; העמוד מסומן בלתי מוגה; נבדקו סעיפים ב׳–ג׳ והשורות המצוינות בלבד. No recording, contemporaneous notes, autograph or alternate edition was collated.",
@@ -662,13 +697,13 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד. ",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2988901, שיחת יום ב׳ דחג השבועות, ה׳תשי״ד, https://he.chabad.org/library/article_cdo/aid/2988901; גוף הפרסום העברי נבדק ישירות ב-19.11.2026.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2988901, שיחת יום ב׳ דחג השבועות, ה׳תשי״ד, https://he.chabad.org/library/article_cdo/aid/2988901; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
         "transmission_type": "Publisher-published Hebrew public-talk transcript",
-        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיפים ב׳–ג׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא.",
+        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיפים ב׳–ג׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי. העמוד מסומן בלתי מוגה.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא. נוספה פרפרזה שנייה, לא-מילולית, על he.chabad.org AID 2988901, גוף השיחה, סעיפים ג׳–ד׳, שורות 192–200.; לא הועתק גוף הפרסום.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2988901",
-        "accessed": "2026-11-19T18:29:22+02:00"
+        "accessed": "2026-11-19T18:55:51+02:00"
       },
       "witness": {
         "kind": "text",
@@ -700,8 +735,8 @@
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. נוספה פרפרזה אחת מתוך גוף עברי שנבדק ישירות; אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-188-2026-11-19.json",
-      "content_enrichment_batch_id": "188",
-      "last_content_enriched_at": "2026-11-19T18:29:22+02:00",
+      "content_enrichment_batch_id": "189",
+      "last_content_enriched_at": "2026-11-19T18:55:51+02:00",
       "response_proposition_metadata": [
         {
           "proposition_index": 0,
@@ -715,6 +750,21 @@
           "context_status": "partial",
           "conditions_or_qualifications": [
             "זהו מהלך עיוני־חסידי המיישב מקורות; אין להציגו כטענה פסיכולוגית אמפירית או כהגדרה ממצה של כל סוגי היראה."
+          ],
+          "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2988901"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "189",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2988901, גוף השיחה, סעיפים ג׳–ד׳, שורות 192–200.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2988901, שיחת יום ב׳ דחג השבועות, ה׳תשי״ד, https://he.chabad.org/library/article_cdo/aid/2988901; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988901, במיקום he.chabad.org AID 2988901, גוף השיחה, סעיפים ג׳–ד׳, שורות 192–200.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "ההמשכה הרוחנית מוצגת במסגרת הביאור החסידי של השיחה; אין להסיק מכך ממצא אמפירי."
           ],
           "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2988901"
         }
@@ -741,10 +791,12 @@
       "context_status": "partial",
       "summary_researcher": "במשל חומת התורה, השיחה מציגה את התורה כמסגרת שמגינה ומעצבת את חיי האדם, אך אינה מצדיקה הסתגרות: יש לפתוח את שעריה, לצאת אל מי שנמצאים ״בשדה״ ולקרבם באהבה, תוך שמירה על גבולות ההשפעה הנכנסת.",
       "response_propositions": [
-        "במשל חומת התורה, השיחה מציגה את התורה כמסגרת שמגינה ומעצבת את חיי האדם, אך אינה מצדיקה הסתגרות: יש לפתוח את שעריה, לצאת אל מי שנמצאים ״בשדה״ ולקרבם באהבה, תוך שמירה על גבולות ההשפעה הנכנסת."
+        "במשל חומת התורה, השיחה מציגה את התורה כמסגרת שמגינה ומעצבת את חיי האדם, אך אינה מצדיקה הסתגרות: יש לפתוח את שעריה, לצאת אל מי שנמצאים ״בשדה״ ולקרבם באהבה, תוך שמירה על גבולות ההשפעה הנכנסת.",
+        "בהמשך, השיחה מזהירה שלימוד תורה עלול לעורר תחושת עליונות כאשר הוא נקשר לכבוד, למעמד או לניצחון על הזולת; היא מציבה מולו לימוד מתוך ביטול, לשם התורה כחכמתו ורצונו של הקב״ה. ההקשר המיידי הוא דיון בתלמידי ישיבות ובשבחים שנשמעו עליהם בתקשורת."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2989336, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–205."
+        "he.chabad.org AID 2989336, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–205.",
+        "he.chabad.org AID 2989336, גוף השיחה, סעיפים ה׳–ו׳, שורות 213–220."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -755,11 +807,12 @@
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989336, במיקום he.chabad.org AID 2989336, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–205. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיפים ג׳–ד׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989336, במיקום he.chabad.org AID 2989336, גוף השיחה, סעיפים ג׳–ד׳, שורות 191–205. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיפים ג׳–ד׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא. בנוסף, ב-19.11.2026 נבדק מקטע לא חופף: ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989336, במיקום he.chabad.org AID 2989336, גוף השיחה, סעיפים ה׳–ו׳, שורות 213–220.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "מוצאי יום א׳ דחול המועד סוכות, שמחת בית השואבה, ה׳תשי״א",
       "question_or_problem": "כיצד משלבת השיחה שמירה על מסגרת התורה עם יציאה להשפעה על מי שמחוץ לה?",
       "conditions_or_qualifications": [
-        "המשל נאמר בהקשר של תלמידי ישיבות ושליחות; הוא אינו הוראה להיחשף ללא הבחנה לכל השפעה."
+        "המשל נאמר בהקשר של תלמידי ישיבות ושליחות; הוא אינו הוראה להיחשף ללא הבחנה לכל השפעה.",
+        "הדוגמה קשורה לתלמידי ישיבות ולהקשר התקשורתי המתואר; אין להכליל על כל תלמיד או על כל פרסום."
       ],
       "audience": "קהל שמחת בית השואבה, ובפרט תלמידי הישיבות הנזכרים בשיחה.",
       "primary_secondary_status": "Publisher-published Hebrew public-talk transcript; העמוד מסומן בלתי מוגה; נבדקו סעיפים ג׳–ד׳ והשורות המצוינות בלבד. No recording, contemporaneous notes, autograph or alternate edition was collated.",
@@ -778,13 +831,13 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד. ",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989336, שיחת מוצאי יום א׳ דחול המועד סוכות, שמחת בית השואבה, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989336; גוף הפרסום העברי נבדק ישירות ב-19.11.2026.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989336, שיחת מוצאי יום א׳ דחול המועד סוכות, שמחת בית השואבה, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989336; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
         "transmission_type": "Publisher-published Hebrew public-talk transcript",
-        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיפים ג׳–ד׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא.",
+        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיפים ג׳–ד׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי. העמוד מסומן בלתי מוגה.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא. נוספה פרפרזה שנייה, לא-מילולית, על he.chabad.org AID 2989336, גוף השיחה, סעיפים ה׳–ו׳, שורות 213–220.; לא הועתק גוף הפרסום.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989336",
-        "accessed": "2026-11-19T18:29:22+02:00"
+        "accessed": "2026-11-19T18:55:51+02:00"
       },
       "witness": {
         "kind": "text",
@@ -817,8 +870,8 @@
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. נוספה פרפרזה אחת מתוך גוף עברי שנבדק ישירות; אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-188-2026-11-19.json",
-      "content_enrichment_batch_id": "188",
-      "last_content_enriched_at": "2026-11-19T18:29:22+02:00",
+      "content_enrichment_batch_id": "189",
+      "last_content_enriched_at": "2026-11-19T18:55:51+02:00",
       "response_proposition_metadata": [
         {
           "proposition_index": 0,
@@ -832,6 +885,21 @@
           "context_status": "partial",
           "conditions_or_qualifications": [
             "המשל נאמר בהקשר של תלמידי ישיבות ושליחות; הוא אינו הוראה להיחשף ללא הבחנה לכל השפעה."
+          ],
+          "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989336"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "189",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989336, גוף השיחה, סעיפים ה׳–ו׳, שורות 213–220.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989336, שיחת מוצאי יום א׳ דחול המועד סוכות, שמחת בית השואבה, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989336; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989336, במיקום he.chabad.org AID 2989336, גוף השיחה, סעיפים ה׳–ו׳, שורות 213–220.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הדוגמה קשורה לתלמידי ישיבות ולהקשר התקשורתי המתואר; אין להכליל על כל תלמיד או על כל פרסום."
           ],
           "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989336"
         }
@@ -858,10 +926,12 @@
       "context_status": "partial",
       "summary_researcher": "השיחה מפרשת את שבת בראשית כהמשך וכהשלמה לימי השמחה של תשרי: ״השלמה״ היא תיקון מה שלא נעשה כראוי, ו״תוספת״ היא הוספה גם לאחר שהחובה כבר קוימה. היא קושרת את תוספת האור לתורה שבה גנוז האור שלעתיד לבוא.",
       "response_propositions": [
-        "השיחה מפרשת את שבת בראשית כהמשך וכהשלמה לימי השמחה של תשרי: ״השלמה״ היא תיקון מה שלא נעשה כראוי, ו״תוספת״ היא הוספה גם לאחר שהחובה כבר קוימה. היא קושרת את תוספת האור לתורה שבה גנוז האור שלעתיד לבוא."
+        "השיחה מפרשת את שבת בראשית כהמשך וכהשלמה לימי השמחה של תשרי: ״השלמה״ היא תיקון מה שלא נעשה כראוי, ו״תוספת״ היא הוספה גם לאחר שהחובה כבר קוימה. היא קושרת את תוספת האור לתורה שבה גנוז האור שלעתיד לבוא.",
+        "במאמר מוסגר, השיחה מפרשת את הסיפור על הבעש״ט שכתב לגיסו על אירוע לפני שהתרחש באמצעות תפיסת זמן בעולם רוחני נעלה וביטול מציאותו העצמית של הצדיק; היא מוסיפה שהאור הגנוז לעתיד לבוא קשור בפנימיות התורה. זהו הסבר תיאולוגי שהשיחה מציעה לסיפור, לא אימות היסטורי עצמאי של האירוע."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2989341, גוף השיחה, סעיפים ב׳–ג׳, שורות 177–184."
+        "he.chabad.org AID 2989341, גוף השיחה, סעיפים ב׳–ג׳, שורות 177–184.",
+        "he.chabad.org AID 2989341, גוף השיחה, סעיפים ד׳–ה׳, שורות 191–201."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -872,11 +942,13 @@
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989341, במיקום he.chabad.org AID 2989341, גוף השיחה, סעיפים ב׳–ג׳, שורות 177–184. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989341, במיקום he.chabad.org AID 2989341, גוף השיחה, סעיפים ב׳–ג׳, שורות 177–184. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא. בנוסף, ב-19.11.2026 נבדק מקטע לא חופף: ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989341, במיקום he.chabad.org AID 2989341, גוף השיחה, סעיפים ד׳–ה׳, שורות 191–201.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "שבת בראשית, מבה״ח מרחשון, ה׳תשי״א",
       "question_or_problem": "מה תפקידה של שבת בראשית ביחס לימי השמחה של חודש תשרי?",
       "conditions_or_qualifications": [
-        "בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד. הביאור הוא רעיוני ואינו הבטחה לתוצאה עתידית מסוימת."
+        "בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד. הביאור הוא רעיוני ואינו הבטחה לתוצאה עתידית מסוימת.",
+        "הסיפור מובא בשיחה ומפורש בה; לא נבדק תיעוד היסטורי עצמאי.",
+        "בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד."
       ],
       "audience": "קהל ההתוועדות בשבת בראשית.",
       "primary_secondary_status": "Publisher-published Hebrew public-talk transcript; בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. No recording, contemporaneous notes, autograph or alternate edition was collated.",
@@ -895,13 +967,13 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד. ",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989341, שיחת שבת בראשית, מבה״ח מרחשון, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989341; גוף הפרסום העברי נבדק ישירות ב-19.11.2026.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989341, שיחת שבת בראשית, מבה״ח מרחשון, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989341; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
         "transmission_type": "Publisher-published Hebrew public-talk transcript",
-        "textual_status": "בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. נבדק רק המקטע המצוין; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא.",
+        "textual_status": "בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. נבדק רק המקטע המצוין; ההקשר חלקי. מצב העריכה לא אומת בנפרד.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא. נוספה פרפרזה שנייה, לא-מילולית, על he.chabad.org AID 2989341, גוף השיחה, סעיפים ד׳–ה׳, שורות 191–201.; לא הועתק גוף הפרסום.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989341",
-        "accessed": "2026-11-19T18:29:22+02:00"
+        "accessed": "2026-11-19T18:55:51+02:00"
       },
       "witness": {
         "kind": "text",
@@ -933,8 +1005,8 @@
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. נוספה פרפרזה אחת מתוך גוף עברי שנבדק ישירות; אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-188-2026-11-19.json",
-      "content_enrichment_batch_id": "188",
-      "last_content_enriched_at": "2026-11-19T18:29:22+02:00",
+      "content_enrichment_batch_id": "189",
+      "last_content_enriched_at": "2026-11-19T18:55:51+02:00",
       "response_proposition_metadata": [
         {
           "proposition_index": 0,
@@ -948,6 +1020,22 @@
           "context_status": "partial",
           "conditions_or_qualifications": [
             "בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד. הביאור הוא רעיוני ואינו הבטחה לתוצאה עתידית מסוימת."
+          ],
+          "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989341"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "189",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989341, גוף השיחה, סעיפים ד׳–ה׳, שורות 191–201.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989341, שיחת שבת בראשית, מבה״ח מרחשון, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989341; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989341, במיקום he.chabad.org AID 2989341, גוף השיחה, סעיפים ד׳–ה׳, שורות 191–201.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הסיפור מובא בשיחה ומפורש בה; לא נבדק תיעוד היסטורי עצמאי.",
+            "בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד."
           ],
           "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989341"
         }
@@ -974,10 +1062,12 @@
       "context_status": "partial",
       "summary_researcher": "השיחה מביאה מסורת בשם אדמו״ר הזקן, שנמסרה דרך המהרי״ל, שלפיה ״לחיות עם הזמן״ פירושו לחיות עם פרשת השבוע. היא מיישמת זאת על פרשת לך־לך ועל ירושת כוח המסירות נפש מאברהם, ומציינת שהירושה נוגעת גם לגרים; זהו דיווח על מסורת חסידית ולא ייחוס של האמרה ישירות לרבי.",
       "response_propositions": [
-        "השיחה מביאה מסורת בשם אדמו״ר הזקן, שנמסרה דרך המהרי״ל, שלפיה ״לחיות עם הזמן״ פירושו לחיות עם פרשת השבוע. היא מיישמת זאת על פרשת לך־לך ועל ירושת כוח המסירות נפש מאברהם, ומציינת שהירושה נוגעת גם לגרים; זהו דיווח על מסורת חסידית ולא ייחוס של האמרה ישירות לרבי."
+        "השיחה מביאה מסורת בשם אדמו״ר הזקן, שנמסרה דרך המהרי״ל, שלפיה ״לחיות עם הזמן״ פירושו לחיות עם פרשת השבוע. היא מיישמת זאת על פרשת לך־לך ועל ירושת כוח המסירות נפש מאברהם, ומציינת שהירושה נוגעת גם לגרים; זהו דיווח על מסורת חסידית ולא ייחוס של האמרה ישירות לרבי.",
+        "הדיון במילת אברהם מבחין בין מדרגות שהושגו בעבודה עצמית לבין הארה עליונה שמגיעה כמתנה מלמעלה; תפקיד האדם מתואר כהסרת המניעה והכנת התנאים לקבלתה, ולא כהפקת אותה הארה בכוחו שלו. זהו ביאור חסידי במילה, לא הנחיה רפואית או הוראה מעשית פרטנית."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2989342, גוף השיחה, סעיף א׳, שורות 172–176."
+        "he.chabad.org AID 2989342, גוף השיחה, סעיף א׳, שורות 172–176.",
+        "he.chabad.org AID 2989342, גוף השיחה, סעיף ב׳, שורות 185–187."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -988,11 +1078,13 @@
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989342, במיקום he.chabad.org AID 2989342, גוף השיחה, סעיף א׳, שורות 172–176. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989342, במיקום he.chabad.org AID 2989342, גוף השיחה, סעיף א׳, שורות 172–176. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא. בנוסף, ב-19.11.2026 נבדק מקטע לא חופף: ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989342, במיקום he.chabad.org AID 2989342, גוף השיחה, סעיף ב׳, שורות 185–187.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "ש״פ לך־לך, יו״ד מרחשון, ה׳תשי״א",
       "question_or_problem": "מה פירוש הביטוי ״לחיות עם הזמן״ כפי שהוא מובא בשיחה?",
       "conditions_or_qualifications": [
-        "האמרה מיוחסת בשיחה לאדמו״ר הזקן דרך המהרי״ל ומובאת על יסוד סיפור של אדמו״ר הריי״צ; אין לייחס את ניסוחה ישירות לרבי."
+        "האמרה מיוחסת בשיחה לאדמו״ר הזקן דרך המהרי״ל ומובאת על יסוד סיפור של אדמו״ר הריי״צ; אין לייחס את ניסוחה ישירות לרבי.",
+        "הדיון הוא פרשני על מצוות מילה; אין להסיק ממנו הוראות רפואיות או הלכתיות פרטניות.",
+        "בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד."
       ],
       "audience": "קהל ההתוועדות בשבת פרשת לך־לך.",
       "primary_secondary_status": "Publisher-published Hebrew public-talk transcript; בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. No recording, contemporaneous notes, autograph or alternate edition was collated.",
@@ -1011,13 +1103,13 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד. ",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989342, שיחת ש״פ לך־לך, יו״ד מרחשון, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989342; גוף הפרסום העברי נבדק ישירות ב-19.11.2026.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989342, שיחת ש״פ לך־לך, יו״ד מרחשון, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989342; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
         "transmission_type": "Publisher-published Hebrew public-talk transcript",
-        "textual_status": "בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. נבדק רק המקטע המצוין; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא.",
+        "textual_status": "בכותרת הגלויה של העמוד לא מופיע סימון ״בלתי מוגה״; לא הושוותה מהדורה אחרת ולא נבדק תיעוד הקלטה. נבדק רק המקטע המצוין; ההקשר חלקי. מצב העריכה לא אומת בנפרד.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא. נוספה פרפרזה שנייה, לא-מילולית, על he.chabad.org AID 2989342, גוף השיחה, סעיף ב׳, שורות 185–187.; לא הועתק גוף הפרסום.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989342",
-        "accessed": "2026-11-19T18:29:22+02:00"
+        "accessed": "2026-11-19T18:55:51+02:00"
       },
       "witness": {
         "kind": "text",
@@ -1049,8 +1141,8 @@
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. נוספה פרפרזה אחת מתוך גוף עברי שנבדק ישירות; אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-188-2026-11-19.json",
-      "content_enrichment_batch_id": "188",
-      "last_content_enriched_at": "2026-11-19T18:29:22+02:00",
+      "content_enrichment_batch_id": "189",
+      "last_content_enriched_at": "2026-11-19T18:55:51+02:00",
       "response_proposition_metadata": [
         {
           "proposition_index": 0,
@@ -1064,6 +1156,22 @@
           "context_status": "partial",
           "conditions_or_qualifications": [
             "האמרה מיוחסת בשיחה לאדמו״ר הזקן דרך המהרי״ל ומובאת על יסוד סיפור של אדמו״ר הריי״צ; אין לייחס את ניסוחה ישירות לרבי."
+          ],
+          "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989342"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "189",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989342, גוף השיחה, סעיף ב׳, שורות 185–187.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989342, שיחת ש״פ לך־לך, יו״ד מרחשון, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989342; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989342, במיקום he.chabad.org AID 2989342, גוף השיחה, סעיף ב׳, שורות 185–187.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הדיון הוא פרשני על מצוות מילה; אין להסיק ממנו הוראות רפואיות או הלכתיות פרטניות.",
+            "בכותרת הגלויה לא מופיע סימון ״בלתי מוגה״; מצב העריכה לא אומת בנפרד."
           ],
           "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989342"
         }
@@ -1090,10 +1198,12 @@
       "context_status": "partial",
       "summary_researcher": "השיחה מבחינה בין עבודת הקדושה של מועדי תשרי לבין תחילת העבודה בענייני העולם לאחר שמחת תורה. היא מתארת את ההתקשרות לרבי כמקור כוח להמשך העבודה היומיומית במשך השנה; זהו מסגור אמוני של השיחה, לא תיאור אמפירי של השפעה.",
       "response_propositions": [
-        "השיחה מבחינה בין עבודת הקדושה של מועדי תשרי לבין תחילת העבודה בענייני העולם לאחר שמחת תורה. היא מתארת את ההתקשרות לרבי כמקור כוח להמשך העבודה היומיומית במשך השנה; זהו מסגור אמוני של השיחה, לא תיאור אמפירי של השפעה."
+        "השיחה מבחינה בין עבודת הקדושה של מועדי תשרי לבין תחילת העבודה בענייני העולם לאחר שמחת תורה. היא מתארת את ההתקשרות לרבי כמקור כוח להמשך העבודה היומיומית במשך השנה; זהו מסגור אמוני של השיחה, לא תיאור אמפירי של השפעה.",
+        "בחלק המתעד ברכות לשלוחים, השיחה מדווחת על שליחת שלוחים גם ל״ערי השדה״ כדי לפעול בשליחות במקומות המתוארים בה כמרוחקים מבחינה רוחנית; בהמשך מתועדת פנייה למחנך להגדיל את מספר תלמידיו ומחונכיו. זהו תיאור של אירועים מסוימים בהתוועדות, לא יעד מספרי כללי."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2989339, גוף השיחה, סעיפים א׳–ב׳, שורות 177–193."
+        "he.chabad.org AID 2989339, גוף השיחה, סעיפים א׳–ב׳, שורות 177–193.",
+        "he.chabad.org AID 2989339, גוף השיחה, סעיפים ד׳–ו׳, שורות 207–219."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -1104,11 +1214,12 @@
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989339, במיקום he.chabad.org AID 2989339, גוף השיחה, סעיפים א׳–ב׳, שורות 177–193. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיפים א׳–ב׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989339, במיקום he.chabad.org AID 2989339, גוף השיחה, סעיפים א׳–ב׳, שורות 177–193. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדקו סעיפים א׳–ב׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא. בנוסף, ב-19.11.2026 נבדק מקטע לא חופף: ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989339, במיקום he.chabad.org AID 2989339, גוף השיחה, סעיפים ד׳–ו׳, שורות 207–219.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "יום שמחת תורה, ה׳תשי״א",
       "question_or_problem": "כיצד מתארת השיחה את המעבר מעבודת מועדי תשרי לעבודה בענייני העולם?",
       "conditions_or_qualifications": [
-        "הדברים מוצגים במסגרת רעיונית של השיחה על ״ויעקב הלך לדרכו״; אין להציגם כתיאור אמפירי של מנגנון השפעה."
+        "הדברים מוצגים במסגרת רעיונית של השיחה על ״ויעקב הלך לדרכו״; אין להציגם כתיאור אמפירי של מנגנון השפעה.",
+        "הקטע מתעד דברים באירוע מסוים; אין להסיק ממנו מספר יעד קבוע או מדיניות כללית."
       ],
       "audience": "קהל ההתוועדות ביום שמחת תורה.",
       "primary_secondary_status": "Publisher-published Hebrew public-talk transcript; העמוד מסומן בלתי מוגה; נבדקו סעיפים א׳–ב׳ והשורות המצוינות בלבד. No recording, contemporaneous notes, autograph or alternate edition was collated.",
@@ -1127,13 +1238,13 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד. ",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989339, שיחת יום שמחת תורה, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989339; גוף הפרסום העברי נבדק ישירות ב-19.11.2026.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989339, שיחת יום שמחת תורה, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989339; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
         "transmission_type": "Publisher-published Hebrew public-talk transcript",
-        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיפים א׳–ב׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא.",
+        "textual_status": "העמוד מסומן בלתי מוגה; נבדקו סעיפים א׳–ב׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי. העמוד מסומן בלתי מוגה.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא. נוספה פרפרזה שנייה, לא-מילולית, על he.chabad.org AID 2989339, גוף השיחה, סעיפים ד׳–ו׳, שורות 207–219.; לא הועתק גוף הפרסום.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989339",
-        "accessed": "2026-11-19T18:29:22+02:00"
+        "accessed": "2026-11-19T18:55:51+02:00"
       },
       "witness": {
         "kind": "text",
@@ -1165,8 +1276,8 @@
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. נוספה פרפרזה אחת מתוך גוף עברי שנבדק ישירות; אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-188-2026-11-19.json",
-      "content_enrichment_batch_id": "188",
-      "last_content_enriched_at": "2026-11-19T18:29:22+02:00",
+      "content_enrichment_batch_id": "189",
+      "last_content_enriched_at": "2026-11-19T18:55:51+02:00",
       "response_proposition_metadata": [
         {
           "proposition_index": 0,
@@ -1180,6 +1291,21 @@
           "context_status": "partial",
           "conditions_or_qualifications": [
             "הדברים מוצגים במסגרת רעיונית של השיחה על ״ויעקב הלך לדרכו״; אין להציגם כתיאור אמפירי של מנגנון השפעה."
+          ],
+          "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989339"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "189",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989339, גוף השיחה, סעיפים ד׳–ו׳, שורות 207–219.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989339, שיחת יום שמחת תורה, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989339; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989339, במיקום he.chabad.org AID 2989339, גוף השיחה, סעיפים ד׳–ו׳, שורות 207–219.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע מתעד דברים באירוע מסוים; אין להסיק ממנו מספר יעד קבוע או מדיניות כללית."
           ],
           "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989339"
         }
@@ -1206,10 +1332,12 @@
       "context_status": "partial",
       "summary_researcher": "השיחה מציגה את מתן תורה כחיבור שביטל את ההפרדה הקודמת בין עליונים לתחתונים: התחתונים יכולים לעלות והעליונים לרדת. החיבור, לפי ההסבר, נובע ממדרגה שלמעלה משתי הקטגוריות; זהו ביאור תיאולוגי ולא הכרעה הלכתית על מועד מתן תורה.",
       "response_propositions": [
-        "השיחה מציגה את מתן תורה כחיבור שביטל את ההפרדה הקודמת בין עליונים לתחתונים: התחתונים יכולים לעלות והעליונים לרדת. החיבור, לפי ההסבר, נובע ממדרגה שלמעלה משתי הקטגוריות; זהו ביאור תיאולוגי ולא הכרעה הלכתית על מועד מתן תורה."
+        "השיחה מציגה את מתן תורה כחיבור שביטל את ההפרדה הקודמת בין עליונים לתחתונים: התחתונים יכולים לעלות והעליונים לרדת. החיבור, לפי ההסבר, נובע ממדרגה שלמעלה משתי הקטגוריות; זהו ביאור תיאולוגי ולא הכרעה הלכתית על מועד מתן תורה.",
+        "השיחה מדגישה שמתן תורה מתחדש בכל שנה בחג השבועות: אף שהתורה כבר קיימת וירדה קודם לכן לעולם הנבראים, החג מתואר כהמשכה חדשה מלמעלה. זהו ביאור רעיוני על חידוש מתן תורה בזמן החג, לא שינוי בנוסח התורה או במועד ההלכתי."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 2989398, גוף השיחה, סעיף ב׳, שורות 179–182."
+        "he.chabad.org AID 2989398, גוף השיחה, סעיף ב׳, שורות 179–182.",
+        "he.chabad.org AID 2989398, גוף השיחה, סעיף ג׳, שורות 189–192."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
@@ -1220,11 +1348,12 @@
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989398, במיקום he.chabad.org AID 2989398, גוף השיחה, סעיף ב׳, שורות 179–182. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדק סעיף ב׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989398, במיקום he.chabad.org AID 2989398, גוף השיחה, סעיף ב׳, שורות 179–182. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה; נבדק סעיף ב׳ והשורות המצוינות בלבד. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למיקום המצוין; לא הועתק גוף הפרסום המלא. בנוסף, ב-19.11.2026 נבדק מקטע לא חופף: ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989398, במיקום he.chabad.org AID 2989398, גוף השיחה, סעיף ג׳, שורות 189–192.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "ליל ב׳ דחג השבועות, ה׳תשי״א",
       "question_or_problem": "מהו החידוש הרעיוני של מתן תורה ביחס לעליונים ולתחתונים?",
       "conditions_or_qualifications": [
-        "הפרופוזיציה מסכמת את ההסבר התיאולוגי בסעיף ב׳ בלבד; אין להסיק ממנה הכרעה הלכתית עצמאית במחלוקת על מועד מתן תורה."
+        "הפרופוזיציה מסכמת את ההסבר התיאולוגי בסעיף ב׳ בלבד; אין להסיק ממנה הכרעה הלכתית עצמאית במחלוקת על מועד מתן תורה.",
+        "הקטע הוא הסבר תיאולוגי על חידוש מתן תורה; אינו הכרעה במחלוקת על היום שבו ניתנו עשרת הדברות."
       ],
       "audience": "קהל ההתוועדות בליל היום השני של חג השבועות.",
       "primary_secondary_status": "Publisher-published Hebrew public-talk transcript; העמוד מסומן בלתי מוגה; נבדק סעיף ב׳ והשורות המצוינות בלבד. No recording, contemporaneous notes, autograph or alternate edition was collated.",
@@ -1243,13 +1372,13 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את התמליל לדברי הרבי; ההקלטה, רישום בן הזמן, כתב היד והנוסח המוגה לא נבדקו בנפרד. ",
         "signature_status": null,
-        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989398, שיחת ליל ב׳ דחג השבועות, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989398; גוף הפרסום העברי נבדק ישירות ב-19.11.2026.",
+        "source_witness": "BeitChabad.com / he.chabad.org, AID 2989398, שיחת ליל ב׳ דחג השבועות, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989398; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
         "transmission_type": "Publisher-published Hebrew public-talk transcript",
-        "textual_status": "העמוד מסומן בלתי מוגה; נבדק סעיף ב׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי.",
-        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא.",
+        "textual_status": "העמוד מסומן בלתי מוגה; נבדק סעיף ב׳ והשורות המצוינות בלבד. נבדק רק המקטע המצוין; ההקשר חלקי. העמוד מסומן בלתי מוגה.",
+        "editorial_scope": "פרפרזה מחקרית לא-מילולית אחת, תחומה למקטע ולמיקום; לא הועתק גוף הפרסום המלא. נוספה פרפרזה שנייה, לא-מילולית, על he.chabad.org AID 2989398, גוף השיחה, סעיף ג׳, שורות 189–192.; לא הועתק גוף הפרסום.",
         "verification_status": "Parsed; source_text_inspected; partial context; no Verified promotion.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2989398",
-        "accessed": "2026-11-19T18:29:22+02:00"
+        "accessed": "2026-11-19T18:55:51+02:00"
       },
       "witness": {
         "kind": "text",
@@ -1281,8 +1410,8 @@
       "epistemic_level": 1,
       "notes": "המקור נשאר Parsed. נוספה פרפרזה אחת מתוך גוף עברי שנבדק ישירות; אין קידום ל-Verified.",
       "canonical_file": "data/items/content-research-batch-188-2026-11-19.json",
-      "content_enrichment_batch_id": "188",
-      "last_content_enriched_at": "2026-11-19T18:29:22+02:00",
+      "content_enrichment_batch_id": "189",
+      "last_content_enriched_at": "2026-11-19T18:55:51+02:00",
       "response_proposition_metadata": [
         {
           "proposition_index": 0,
@@ -1296,6 +1425,21 @@
           "context_status": "partial",
           "conditions_or_qualifications": [
             "הפרופוזיציה מסכמת את ההסבר התיאולוגי בסעיף ב׳ בלבד; אין להסיק ממנה הכרעה הלכתית עצמאית במחלוקת על מועד מתן תורה."
+          ],
+          "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989398"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "189",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989398, גוף השיחה, סעיף ג׳, שורות 189–192.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 2989398, שיחת ליל ב׳ דחג השבועות, ה׳תשי״א, https://he.chabad.org/library/article_cdo/aid/2989398; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "ב-19.11.2026 נפתח ונבדק ישירות גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989398, במיקום he.chabad.org AID 2989398, גוף השיחה, סעיף ג׳, שורות 189–192.. נבדקו המקטע המצוין וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן בלתי מוגה. לא נבדקו הקלטה, רישום בן הזמן, כתב יד או מהדורה אחרת. הפרפרזה לא-מילולית ומוגבלת למיקום המצוין; לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הקטע הוא הסבר תיאולוגי על חידוש מתן תורה; אינו הכרעה במחלוקת על היום שבו ניתנו עשרת הדברות."
           ],
           "web_source_ref": "https://he.chabad.org/library/article_cdo/aid/2989398"
         }
