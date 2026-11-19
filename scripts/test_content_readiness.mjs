@@ -53,13 +53,13 @@ console.log('RECENT_BATCH_RECONCILIATION '+JSON.stringify(recentBatchReconciliat
 const eligible=normalizeEvidenceIntegrity(idx.entries).filter(e=>e.has_content_evidence&&e.response_propositions?.length);
 const families=new Map();
 for(const e of eligible){const key=String(e.evidence_family_id||e.aid||e.source_url||e.key);if(!families.has(key))families.set(key,[]);families.get(key).push(e);}
+const contentVerifiedFamilies=[...families.values()].filter(group=>group.some(e=>(e.canonical_status||e.status)==='Verified')).length;
+console.log('CONTENT_READINESS_ACTUAL_METRICS '+JSON.stringify({answer_eligible_unique_sources:families.size,content_verified_unique_sources:contentVerifiedFamilies,answer_eligible_propositions:propositionCount,declared:readinessMetrics(metrics)}));
 assert.equal(metrics.answer_eligible_unique_sources,families.size,'dashboard must count unique Evidence Families');
 assert.equal(metrics.content_verified_unique_sources,[...families.values()].filter(group=>group.some(e=>(e.canonical_status||e.status)==='Verified')).length,'content-verified metric must require at least one usable inspected Verified member per family');
 assert(metrics.content_verified_unique_sources<=metrics.answer_eligible_unique_sources,'content-verified families are a subset of answer-eligible families');
 const propositionKey=(e,p)=>[String(p).normalize('NFC').trim().replace(/\\s+/g,' ').toLocaleLowerCase(),String(e.documented_circumstances||'').normalize('NFC').trim(),String(e.conditions_or_qualifications||'').normalize('NFC').trim(),String(e.audience||'').normalize('NFC').trim()].join('|');
 const propositionCount=[...families.values()].reduce((n,group)=>n+new Set(group.flatMap(e=>(e.response_propositions||[]).map(p=>propositionKey(e,p)))).size,0);
-const contentVerifiedFamilies=[...families.values()].filter(group=>group.some(e=>(e.canonical_status||e.status)==='Verified')).length;
-console.log('CONTENT_READINESS_ACTUAL_METRICS '+JSON.stringify({answer_eligible_unique_sources:families.size,content_verified_unique_sources:contentVerifiedFamilies,answer_eligible_propositions:propositionCount,declared:readinessMetrics(metrics)}));
 assert.equal(metrics.answer_eligible_propositions,propositionCount,'all distinct propositions across family members must be counted without counting aliases as independent families');
 const queue=JSON.parse(await readFile(new URL('data/content-review-queue.json',root)));
 const acquisitionState=JSON.parse(await readFile(new URL('data/acquisition/latest.json',root),'utf8'));
