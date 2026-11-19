@@ -8159,9 +8159,9 @@ for(const r of batch196Data.records){
  assert.equal(matches[0].response_propositions[0],r.response_propositions[0]);
  assert.equal(matches[0].response_proposition_locators[0],r.proposition_source_locator);
 }
-const batch141Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-141-2026-11-17.json',root),'utf8'));
-const batch146Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-146-2026-11-17.json',root),'utf8'));
-for(const [canonical,update] of [[batch141Data.records.find(r=>String(r.aid)==='4385701'),batch196Data.existing_identity_updates.find(u=>String(u.aid)==='4385701')],[batch146Data.records.find(r=>String(r.aid)==='4304437'),batch196Data.existing_identity_updates.find(u=>String(u.aid)==='4304437')]]){
+const batch141ForBatch196=JSON.parse(await readFile(new URL('data/items/content-research-batch-141-2026-11-17.json',root),'utf8'));
+const batch146ForBatch196=JSON.parse(await readFile(new URL('data/items/content-research-batch-146-2026-11-17.json',root),'utf8'));
+for(const [canonical,update] of [[batch141ForBatch196.records.find(r=>String(r.aid)==='4385701'),batch196Data.existing_identity_updates.find(u=>String(u.aid)==='4385701')],[batch146ForBatch196.records.find(r=>String(r.aid)==='4304437'),batch196Data.existing_identity_updates.find(u=>String(u.aid)==='4304437')]]){
  assert(canonical&&update);assert(canonical.response_propositions.includes(update.proposition));
  assert(canonical.response_proposition_locators.includes(update.proposition_source_locator));
  const indexed=idx.entries.find(e=>sourceAID(e)===String(update.aid));
