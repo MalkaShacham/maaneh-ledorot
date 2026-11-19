@@ -3370,7 +3370,7 @@ for(const r of batch107Data.records){
  assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);
  assert.equal(r.proposition_verification,'source_text_inspected');assert.equal(r.proposition_language,'Hebrew');
  assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
- const expectedPropCount=['4736086','5430533'].includes(String(r.aid))?4:2;
+ const expectedPropCount=String(r.aid)==='4736086'?7:(String(r.aid)==='5430533'?4:2);
  assert(r.response_propositions.length===expectedPropCount&&r.response_propositions.length===r.response_proposition_locators.length);
 }
 for(const aid of batch107Aids){
@@ -7049,7 +7049,7 @@ assert.equal(canonical4280029[0].response_propositions.length,2);assert(canonica
 assert.equal(canonical4280029[0].response_proposition_locators.length,2);
 const canonical4736086=idx.entries.filter(e=>sourceAID(e)==='4736086');
 assert.equal(canonical4736086.length,1);assert.equal(canonical4736086[0].canonical_file,'data/items/content-research-batch-107-2026-11-16.json');
-assert.equal(canonical4736086[0].response_propositions.length,6);assert(canonical4736086[0].response_propositions.includes(batch180Data.existing_identity_updates.find(u=>String(u.aid)==='4736086').proposition));
+assert.equal(canonical4736086[0].response_propositions.length,7);assert(canonical4736086[0].response_propositions.includes(batch180Data.existing_identity_updates.find(u=>String(u.aid)==='4736086').proposition));assert(canonical4736086[0].response_propositions.some(p=>p.includes('סיפורי התורה אינם תיעוד היסטורי בלבד')));
 assert.equal(canonical4736086[0].independent_witness,true);assert.equal(canonical4736086[0].language,'Yiddish');
 for(const r of batch180Data.records){
  assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.proposition_origin,'source_grounded_paraphrase');
