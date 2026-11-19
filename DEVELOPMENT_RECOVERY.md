@@ -1565,3 +1565,13 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - Three Hebrew item routes for AIDs 2513564, 2513855 and 2515477 returned Internal Error. The English publisher bodies were used as same-run fallback; no access-control bypass or crawler retry was attempted. Search results were used only for discovery, never as content evidence.
 - Batch179 planning boundary from the measured Batch178 snapshot is **1,568 / 854 / 4,080**. This is not a measured post-Batch179 result; exact-head reconciliation and `test_content_readiness.mjs` are pending.
 - PR #35 remains unmerged; public main metrics remain 977 / 878 / 2,950. No new main commit or Pages deployment is claimed. The existing hourly schedule, repository audience and permissions are unchanged.
+
+
+## 2026-11-19 — Batch180: Hebrew source additions, Yiddish enrichment, and a secondary memoir
+
+- Opened and inspected nine public source-body units: six new original-Hebrew Sichos (AIDs 5959907, 4296168, 2989222, 5959959, 5989922, 4279947), one English memoir excerpt (AID 259799), and two in-place enrichments (AID 4280029 in Batch100; AID 4736086 in Batch107, including a directly inspected Yiddish passage).
+- Added eight propositions to seven new identities and two additional propositions to existing identities: ten non-verbatim, source-grounded propositions in total. The memoir record is explicitly secondary; its first letter is an author's English translation of a Yiddish letter, and neither original letter was inspected. The Yiddish/English parallel on AID 4736086 remains one Evidence Family, not two witnesses.
+- Three alternative routes (AIDs 5959980, 4313081, 5990021) returned HTTP 429. They were recorded as blocked; accessible public bodies were used as same-run fallback. No crawler retry, access-control bypass, full-text copying, or Verified promotion.
+- Preliminary exact-AID review found AIDs 4280029 and 4736086 in their existing canonical records; the seven new AIDs were not found in the review queue or the reviewed recent batch files. A full canonical scan is still pending; older corpus files were not all searched.
+- Planning boundary only: 1568/854/4080 → 1575/854/4090. This is not a measured post-reconciliation count. Public main metrics remain unchanged until merge and post-merge reconciliation.
+- Next gate: exact-head full-index reconciliation and `test_content_readiness.mjs` through Batch180. PR #35 remains unmerged until the complete Answer Quality Gate is green.
