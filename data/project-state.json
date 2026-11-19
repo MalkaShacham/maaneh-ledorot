@@ -123,23 +123,24 @@
         "answer_eligible_propositions": 2709
       },
       "actual_after": null,
-      "reconciliation_status": "pending",
+      "reconciliation_status": "pending_reconciliation",
       "before": {
-        "answer_eligible_unique_sources": 1560,
+        "answer_eligible_unique_sources": 1574,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4072
+        "answer_eligible_propositions": 4095
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1575,
+        "answer_eligible_unique_sources": 1582,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4090
+        "answer_eligible_propositions": 4103
       },
       "actual_delta": null,
       "reconciliation_variance": null,
       "pending_batches": [
         "179",
         "180",
-        "181"
+        "181",
+        "182"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending. Batch 151 corrected after source-body review and canonical AID deduplication: 5 new identities, 4 in-place enrichments, 4 rechecks, 9 new paraphrases; expected planning boundary 1507/854/3855. Actual reconciliation remains pending. Batch152 planning boundary: 1507/854/3855 → 1509/854/3863; this is not a measured result. Batch151 canonical summary is 5 new identities, 4 enrichments, 4 rechecks and 9 paraphrases; latest acquisition metadata has been aligned to the corrected batch manifest. Batch153 correction: AID 2989386's duplicate batch141 record was removed; corrected planning baseline 1510/854/3867 and expected boundary 1518/854/3878 are not measured. PR-head run 44236655981 reported 1511/854/3868 before this duplicate cleanup; its content-readiness test then failed on AID 2989153 expecting 13 instead of 14. Batch157 baseline uses the PR-head CI workspace measurement after batch156 (run 44265320228): 1519/854/3903; this was not committed to main. Expected 1522/854/3915 is planning only pending full reconciliation. Batch158 expected planning boundary 1522/854/3923 (not measured after batch158); batch159 planning boundary 1530/854/3931 after eight new eligible candidate families and eight inspected propositions. The current public main metrics remain 977/878/2950; no metric has been overwritten. Batch162 planning boundary 1530/854/3951 to 1530/854/3959; this is not a measured post-reconciliation count. No new source identity or Verified promotion. Batch164 adds eight in-place propositions to existing Hebrew Sicha identities; planning boundary 1530/854/3967 → 1530/854/3975 is not measured. No source-family or Verified-count increase is expected. Exact-head CI run 44402037932 measured 1540/854/3996 after Batch167 (not committed/public), while Batch167 planning expected 1539/854/3995; +1 source/+1 proposition variance remains unattributed. Batch168 starts from the measured PR-workspace boundary 1540/854/3996; expected 1540/854/4004 is planning only. Batch172 correction: AID 2988877 already exists in Batch100 and was moved to duplicate_rechecks, reducing Batch172's planned new identities/families/propositions by one. Batch173 adds eight in-place propositions to existing identities only; planned source count remains 1558 and planned propositions become 4048. All figures are planning boundaries pending exact-head reconciliation. Batch174 begins from the measured PR-workspace snapshot 1552/854/4040 from run 44430166602; expected 1552/854/4048 after eight in-place propositions is pending exact-head reconciliation. Batch174 exact-head run 44436032237 measured 1552/854/4048; readiness failed only on a temporal-dead-zone test defect. Batch175 expected 1552/854/4056 is planning only until the next exact-head reconciliation. Public main metrics remain unchanged. Exact-head run 44456969090 measured 1557/854/4069 after corrected Batch177 on the PR workspace; the readiness test stopped at a stale Batch082 canonical-file assertion. Batch176/177 duplicate AIDs 2989195 and 2989574 were reclassified as existing canonical identities; corrected expected after Batch177 is 1557/854/4069. Batch178 adds eight distinct English Yechidus text presentations as non-independent translations; expected after Batch178 is 1565/854/4077 pending exact-head reconciliation. Public main remains 977/878/2950 until merge. Exact-head run 44468523825 reconciled corrected Batch178 at 1560/854/4072 in the PR workspace. The earlier Batch178 plan overstated five AIDs already canonical in Batch137/139 (2511619, 2506495, 2506320, 2498908, 2512367); those overlapping entries were excluded. Batch179 adds eight newly checked event families and eight propositions; expected PR-workspace boundary 1568/854/4080 is pending exact-head reconciliation. Public main metrics remain 977/878/2950.",
       "summary": {
@@ -273,7 +274,12 @@
         "answer_eligible_propositions": 8
       },
       "metrics_delta_at_batch_boundary_is_planning_only": true,
-      "metrics_before_source": "Measured PR-workspace reconciliation in Answer Quality Gate run 44402037932 on predecessor head da32e885577456d606d81662c98bd025ab2a3c9e; not committed to main and not public metrics."
+      "metrics_before_source": "Measured PR-workspace reconciliation in Answer Quality Gate run 44402037932 on predecessor head da32e885577456d606d81662c98bd025ab2a3c9e; not committed to main and not public metrics.",
+      "actual_before": {
+        "answer_eligible_unique_sources": 1574,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4095
+      }
     },
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
@@ -360,7 +366,7 @@
     },
     "actual_after": null,
     "reconciliation_status": "pending",
-    "baseline_correction": " Batch148 correction: CI run 44167373651 measured 1496/854/3815 before duplicate repair. AID 2989555 was present in both batch101 and batch141 under different Evidence Families; the duplicate was merged into the batch101 family. Corrected expected boundary after eight in-place propositions is 1495/854/3823; not yet measured or committed. Batch165 baseline: PR-workspace run 44379054834 measured 1530/854/3973 after Batch164 and before Batch165; this is not public main. Planning boundary after Batch165 is 1533/854/3981, not a measured result. Batch176 planning boundary: Batch174 measured 1552/854/4048; Batch175 adds eight in-place propositions (expected 1552/854/4056); Batch176 adds nine new source identities and nine propositions (expected 1561/854/4065). Batch175/176 actuals remain pending exact-head reconciliation; no Verified promotions.",
+    "baseline_correction": " Batch148 correction: CI run 44167373651 measured 1496/854/3815 before duplicate repair. AID 2989555 was present in both batch101 and batch141 under different Evidence Families; the duplicate was merged into the batch101 family. Corrected expected boundary after eight in-place propositions is 1495/854/3823; not yet measured or committed. Batch165 baseline: PR-workspace run 44379054834 measured 1530/854/3973 after Batch164 and before Batch165; this is not public main. Planning boundary after Batch165 is 1533/854/3981, not a measured result. Batch176 planning boundary: Batch174 measured 1552/854/4048; Batch175 adds eight in-place propositions (expected 1552/854/4056); Batch176 adds nine new source identities and nine propositions (expected 1561/854/4065). Batch175/176 actuals remain pending exact-head reconciliation; no Verified promotions. Batch181 exact-head audit found six duplicate AIDs and moved their propositions into canonical identities; reconciliation snapshot selection now uses the same witness priority as the public search index. Batch182 planning baseline 1574/854/4095 → 1582/854/4103 is not a measured public count.",
     "latest_uncommitted_ci_measurement": {
       "run_id": 44405343996,
       "head_sha": "6718fed1167073a048317cc9cf6c55cac1793301",
@@ -407,58 +413,53 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "181",
+    "current_batch": "182",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "180",
     "last_batch_summary": {
-      "batch_id": "181",
-      "batch_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "generated": "2026-11-19T12:56:43+02:00",
-      "title": "Batch181: nine distinct English Yechidus bodies inspected, three Hebrew routes blocked, and one existing Yiddish Likkutei Sichos identity enriched in place",
+      "batch_id": "182",
+      "batch_file": "data/items/content-research-batch-182-2026-11-19.json",
+      "generated": "2026-11-19T13:24:13+02:00",
+      "title": "Batch182 — eight new original-Hebrew Igrot Kodesh letters; AID 4666220 browser-shell fallback; exact source-body provenance",
       "status": "pending_reconciliation",
-      "reviewed_item_count": 12,
-      "source_bodies_inspected": 10,
-      "new_source_identities": 9,
-      "new_response_propositions": 9,
-      "existing_identities_enriched": 1,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 10,
-      "answer_eligible_source_families_added": 9,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 9,
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 8,
+      "new_source_identities": 8,
+      "new_response_propositions": 8,
+      "existing_identities_enriched": 0,
+      "existing_response_propositions_added": 0,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 8,
+      "independent_witnesses_added": 8,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "source_languages": [
-        "English",
-        "Yiddish"
+        "Hebrew"
       ],
       "original_languages": [
-        "unknown",
-        "Yiddish"
+        "Hebrew"
       ],
-      "blocked_candidate_count": 3,
+      "blocked_candidate_count": 1,
       "new_aids": [
-        2514886,
-        2515046,
-        2514160,
-        2513225,
-        2499828,
-        2511676,
-        2511792,
-        2511754,
-        2512299
+        4731068,
+        5357009,
+        5413030,
+        5357052,
+        5100679,
+        5357571,
+        5413490,
+        5100718
       ],
-      "enriched_aids": [
-        4736086
-      ],
+      "enriched_aids": [],
       "metrics_before": {
-        "answer_eligible_unique_sources": 1575,
+        "answer_eligible_unique_sources": 1574,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4090
+        "answer_eligible_propositions": 4095
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1584,
+        "answer_eligible_unique_sources": 1582,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4100
+        "answer_eligible_propositions": 4103
       },
       "metrics_actual_before": null,
       "metrics_after_actual": null,
@@ -469,31 +470,21 @@
     "last_batch_blocked_reason": "Hebrew item-level routes for AIDs 2514886, 2515046 and 2514160 returned Internal Error. No bypass or crawler retry; corresponding accessible English publisher bodies were inspected in the same run.",
     "next_work": "Run exact-head reconciliation and test_content_readiness.mjs through Batch181. Review any full-index duplicate findings; merge PR #35 only after the complete Answer Quality Gate is green, then verify post-merge Actions and GitHub Pages.",
     "last_reconciliation": {
-      "batch_id": "181",
-      "batch_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "run_id": null,
-      "head_sha": null,
-      "reconciliation_status": "pending_reconciliation",
+      "batch_id": "182",
+      "batch_file": "data/items/content-research-batch-182-2026-11-19.json",
+      "generated": "2026-11-19",
+      "batch_record_count": 8,
+      "new_source_identity_count": 8,
+      "existing_identities_enriched": 0,
+      "source_bodies_inspected": 8,
+      "answer_eligible_selected_count": null,
+      "selected_unique_evidence_families": null,
       "metrics_actual_before": null,
       "metrics_actual_after": null,
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1584,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4100
-      },
       "metrics_delta_actual": null,
       "reconciliation_variance": null,
-      "answer_eligible_selected_count": 0,
-      "selected_unique_evidence_families": 9,
-      "same_family_duplicate_presentations": [],
-      "canonical_identity_collisions": [],
-      "missing_canonical_identities": [],
-      "note": "Nine distinct dated English Yechidus presentations and one Yiddish in-place enrichment; full canonical identity reconciliation is pending.",
-      "metrics_before": {
-        "answer_eligible_unique_sources": 1575,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4090
-      }
+      "reconciliation_status": "pending_reconciliation",
+      "items": []
     },
     "last_manual_web_review": {
       "batch_id": "181",
@@ -569,7 +560,8 @@
     "pending_reconciliation_batches": [
       "179",
       "180",
-      "181"
+      "181",
+      "182"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
@@ -1089,7 +1081,7 @@
       "note": "Corrected after exact-head reconciliation run 44468523825. Five candidate AIDs (2511619, 2506495, 2506320, 2498908, 2512367) were already canonical in batches 137/139 and their inspected passages overlap existing propositions; they remain only in the duplicate audit. Three new dated English Yechidus presentations remain (AIDs 2497688, 2505782, 2511596), each with one bounded Hebrew paraphrase. All are non-independent English renderings; no original-language transcript, recording or print witness was inspected. Three alternate Hebrew/Yiddish/French pages remain metadata/audio-only exclusions. No Verified promotion, crawler retry, access-control bypass, search-snippet inference or full-text copying.",
       "excluded_duplicate_candidate_count": 5
     },
-    "current_batch_file": "data/items/content-research-batch-181-2026-11-19.json",
+    "current_batch_file": "data/items/content-research-batch-182-2026-11-19.json",
     "status": "pending_reconciliation",
     "pending": true,
     "last_manual_review": {
@@ -1148,9 +1140,9 @@
     },
     "last_reviewed_batch": "179"
   },
-  "current_batch": "181",
+  "current_batch": "182",
   "updated_at": "2026-11-19T09:58:26+02:00",
-  "current_batch_file": "data/items/content-research-batch-181-2026-11-19.json",
+  "current_batch_file": "data/items/content-research-batch-182-2026-11-19.json",
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending_exact_head_batch_181",
