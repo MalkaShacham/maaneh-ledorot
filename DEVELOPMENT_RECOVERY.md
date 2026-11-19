@@ -1739,3 +1739,15 @@ Batch192's measured PR-workspace baseline is 1616 / 854 / 4177; the expected pos
 - גבול PR-workspace מתוכנן: 1,616 / 854 / 4,185 → 1,623 / 854 / 4,193 (answer-eligible Evidence Families / content-Verified Evidence Families / answer-eligible propositions). זו עדיין אינה מדידה סופית; נדרשת ריצת exact-head. מדדי main הציבוריים נשארים snapshot קודם עד מיזוג ו-reconciliation בענף main.
 - נוספה בדיקת סינתזה מרובת מקורות לשאלה על תורה, צדקה ועבודת היחיד, במצב regular ובמצב deep researcher, עם הפניות ברמת טענה, בדיקת entailment וגבולות הקשר.
 - PR #35 נשאר מסלול האינטגרציה הקיים; ממתין לריצת exact-head Answer Quality Gate ולפרסום מחדש אחרי merge. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
+
+## 2026-11-19 — Batch194: nine bilingual Hayom Yom entries and one same-family enrichment
+
+- נפתחו ונבדקו תשעה עמודי Hayom Yom ציבוריים ב-Chabad.org / TheRebbe.org מתוך Sichos in English Collection; בכל אחד נבדק הקטע המקורי בעברית או ביידיש ולא נעשה שימוש בקטע התרגום כעד עצמאי. התפלגות שפת המקור: שש עברית ושלוש יידיש.
+- נוספו תשע זהויות מתוארכות חדשות (AIDs 3315359, 3315366, 3315368, 3315370, 3315374, 3315391, 3315415, 3315237, 3315238), עם תשע פרפרזות מחקר לא-מילוליות, locators ברמת גוף, provenance, verification scope, הקשר חלקי ומגבלות. כולן נשארו Parsed.
+- הועשרה זהות קיימת אחת in place: AID 528732, באמצעות הערת עריכה אנגלית בעמוד AID 3316320. ההצגה האנגלית נשארה באותה Evidence Family; היא מסומנת non-independent ואינה נספרת כעד נוסף. הפרופוזיציה מתארת את שכבת העריכה בלבד, לא את גוף הערך המקורי.
+- ארבעה מועמדים עבריים החזירו HTTP 429: AIDs 5959899, 4280077, 2989280, 2989629. לא בוצע retry לעמודים החסומים או ל-crawler; באותה הפעלה עברנו לעשרה גופי פרסום נגישים (תשעה קטעי מקור ועוד שכבת עריכה נגזרת אחת). לא נעקפו בקרות גישה ולא הועתק טקסט מלא.
+- בדיקת כפילויות מקדימה: תשעה חיפושי AID ב-code search של main ותור הבדיקה לא החזירו התאמות. זו אינה סריקת canonical מלאה; exact-head full-index reconciliation עדיין נדרש. אין קידום Verified.
+- גבול תכנון לפי מדידת Batch193: **1,623 / 854 / 4,193 → 1,632 / 854 / 4,203** (answer-eligible Evidence Families / content-Verified Evidence Families / propositions). הערך אחרי הוא יעד עד reconciliation בפועל, לא מדידה.
+- נוספה בדיקת regression לשתי Evidence Families נפרדות על אמירת תהילים בציבור וחלוקת תהילים יומית, במצב regular ובמצב deep researcher, עם claim-level locators, citation entailment ו-context boundaries.
+- PR #35 נשאר פתוח עד מעבר exact-head Answer Quality Gate ו-`test_content_readiness.mjs`. מדדי main הציבוריים ו-GitHub Pages טרם השתנו. לוח הזמנים השעתי, הקהל וההרשאות נשארו ללא שינוי.
