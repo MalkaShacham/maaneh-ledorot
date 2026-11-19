@@ -1112,9 +1112,11 @@ const diasporaQuestion='כיצד שני המקורות מתארים את תפק�
 const diasporaModel=buildAnswerModel(idx.entries,diasporaQuestion,{mode:'researcher'});
 assert(diasporaModel.answerable&&diasporaModel.sources.some(e=>sourceAID(e)==='4280038')&&diasporaModel.sources.some(e=>sourceAID(e)==='4304375'));
 assert(new Set(diasporaModel.sources.map(e=>e.evidence_family_id)).size>=2);
-assert(diasporaModel.claims.length>0&&diasporaModel.claims.every(c=>c.source_numbers.length));
+assert(diasporaModel.claims.length>0&&diasporaModel.claims.every(c=>c.source_numbers.length&&c.source_locators.length),'diaspora comparison must retain claim-level locators');
 assert(diasporaModel.citation_entailment.every(x=>x.valid)&&diasporaModel.context_boundary.every(x=>x.valid));
+assert(diasporaModel.research&&diasporaModel.research.depth==='deep'&&diasporaModel.research.evidence_families>=2);
 assert(diasporaModel.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+assert(diasporaModel.research.citation_entailment.every(x=>x.valid)&&diasporaModel.research.context_boundary.every(x=>x.valid));
 
 const batch110Path='data/items/content-research-batch-110-2026-11-16.json';
 const batch110Data=JSON.parse(await readFile(new URL(batch110Path,root)));
