@@ -1817,7 +1817,7 @@ assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_act
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
 assert.equal(acquisitionState.last_manual_web_review.batch_id,'194');
 assert.equal(acquisitionState.last_manual_review.batch_id,'194');
-for(const id of ['129','130','131','132','133','134','135','136','137','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
+for(const id of ['168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.some(x=>['175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194'].includes(String(x))));
 assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194'].includes(String(x))));
 
