@@ -6,7 +6,7 @@
   "generated": "2026-11-19T12:56:43+02:00",
   "generated_at": "2026-11-19T12:56:43+02:00",
   "reviewed_at": "2026-11-19T12:56:43+02:00",
-  "title": "Batch181: nine distinct English Yechidus bodies inspected, three Hebrew routes blocked, and one existing Yiddish Likkutei Sichos identity enriched in place",
+  "title": "Batch181 corrected after full-index audit: three new English Yechidus families and seven in-place enrichments (six duplicate AIDs merged into canonical identities; one Yiddish Sicha enrichment)",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "review_method": "Manual public web search/open; direct English body passages inspected. Search extracts used for discovery only, never as content evidence.",
@@ -18,15 +18,15 @@
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 9,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 9,
-  "existing_identities_enriched": 1,
+  "new_source_identities": 3,
+  "existing_identities_enriched": 7,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 9,
-  "existing_response_propositions_added": 1,
+  "new_response_propositions": 3,
+  "existing_response_propositions_added": 7,
   "total_new_paraphrase_entries": 10,
-  "answer_eligible_source_families_added": 9,
+  "answer_eligible_source_families_added": 3,
   "independent_witnesses_added": 0,
-  "non_independent_presentations_added": 9,
+  "non_independent_presentations_added": 3,
   "content_verified_unique_sources_added": 0,
   "source_languages": [
     "English",
@@ -52,39 +52,27 @@
     "Yiddish"
   ],
   "new_aids": [
+    2514160,
+    2511792,
+    2511754
+  ],
+  "new_ids": [
+    "yechidus-5744-16-tammuz-aid2514160",
+    "yechidus-5746-26-nissan-aid2511792",
+    "yechidus-5746-16-adar-ii-aid2511754"
+  ],
+  "new_source_ids": [
+    "yechidus-5744-16-tammuz-aid2514160",
+    "yechidus-5746-26-nissan-aid2511792",
+    "yechidus-5746-16-adar-ii-aid2511754"
+  ],
+  "enriched_aids": [
     2514886,
     2515046,
-    2514160,
     2513225,
     2499828,
     2511676,
-    2511792,
-    2511754,
-    2512299
-  ],
-  "new_ids": [
-    "yechidus-5744-eve-11-sivan-aid2514886",
-    "yechidus-5744-eve-25-nissan-aid2515046",
-    "yechidus-5744-16-tammuz-aid2514160",
-    "yechidus-5745-25-nissan-aid2513225",
-    "yechidus-5750-eve-following-28-nissan-aid2499828",
-    "yechidus-5746-eve-13-shvat-aid2511676",
-    "yechidus-5746-26-nissan-aid2511792",
-    "yechidus-5746-16-adar-ii-aid2511754",
-    "yechidus-5746-26-tishrei-aid2512299"
-  ],
-  "new_source_ids": [
-    "yechidus-5744-eve-11-sivan-aid2514886",
-    "yechidus-5744-eve-25-nissan-aid2515046",
-    "yechidus-5744-16-tammuz-aid2514160",
-    "yechidus-5745-25-nissan-aid2513225",
-    "yechidus-5750-eve-following-28-nissan-aid2499828",
-    "yechidus-5746-eve-13-shvat-aid2511676",
-    "yechidus-5746-26-nissan-aid2511792",
-    "yechidus-5746-16-adar-ii-aid2511754",
-    "yechidus-5746-26-tishrei-aid2512299"
-  ],
-  "enriched_aids": [
+    2512299,
     4736086
   ],
   "rechecked_aids": [],
@@ -129,11 +117,199 @@
       "handling": "באותה הפעלה נפתח ונבדק הגוף האנגלי המקביל ב-AID 2514160; הוא נשאר פרסום מתורגם ולא עד עצמאי."
     }
   ],
-  "excluded_candidates": [],
-  "excluded_candidate_count": 0,
-  "duplicate_alias_identities": 0,
-  "excluded_duplicate_candidate_count": 0,
+  "excluded_candidates": [
+    {
+      "aid": "2499828",
+      "canonical_file": "data/items/content-research-batch-147-2026-11-17.json",
+      "handling": "Existing canonical identity; new body proposition merged in place; no additional source family counted."
+    },
+    {
+      "aid": "2511676",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "handling": "Existing canonical identity; new body proposition merged in place; no additional source family counted."
+    },
+    {
+      "aid": "2512299",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "handling": "Existing canonical identity; new body proposition merged in place; no additional source family counted."
+    },
+    {
+      "aid": "2513225",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "handling": "Existing canonical identity; new body proposition merged in place; no additional source family counted."
+    },
+    {
+      "aid": "2514886",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "handling": "Existing canonical identity; new body proposition merged in place; no additional source family counted."
+    },
+    {
+      "aid": "2515046",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "handling": "Existing canonical identity; new body proposition merged in place; no additional source family counted."
+    }
+  ],
+  "excluded_candidate_count": 6,
+  "duplicate_alias_identities": [
+    {
+      "action": "duplicate_alias_merged_in_place",
+      "existing_identity": true,
+      "aid": "2499828",
+      "id": "yechidus-event-aid2499828",
+      "canonical_id": "yechidus-event-aid2499828",
+      "canonical_file": "data/items/content-research-batch-147-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2499828",
+      "reason": "Full-index reconciliation found the same AID and Evidence Family in an earlier canonical file; the inspected proposition was merged into that identity and no duplicate source record remains."
+    },
+    {
+      "action": "duplicate_alias_merged_in_place",
+      "existing_identity": true,
+      "aid": "2511676",
+      "id": "yechidus-5746-eve-13-shvat-aid2511676",
+      "canonical_id": "yechidus-5746-eve-13-shvat-aid2511676",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2511676",
+      "reason": "Full-index reconciliation found the same AID and Evidence Family in an earlier canonical file; the inspected proposition was merged into that identity and no duplicate source record remains."
+    },
+    {
+      "action": "duplicate_alias_merged_in_place",
+      "existing_identity": true,
+      "aid": "2512299",
+      "id": "yechidus-5746-26-tishrei-aid2512299",
+      "canonical_id": "yechidus-5746-26-tishrei-aid2512299",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2512299",
+      "reason": "Full-index reconciliation found the same AID and Evidence Family in an earlier canonical file; the inspected proposition was merged into that identity and no duplicate source record remains."
+    },
+    {
+      "action": "duplicate_alias_merged_in_place",
+      "existing_identity": true,
+      "aid": "2513225",
+      "id": "yechidus-5745-25-nissan-aid2513225",
+      "canonical_id": "yechidus-5745-25-nissan-aid2513225",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "evidence_family_id": "yechidus-5745-25-nissan-aid2513225",
+      "reason": "Full-index reconciliation found the same AID and Evidence Family in an earlier canonical file; the inspected proposition was merged into that identity and no duplicate source record remains."
+    },
+    {
+      "action": "duplicate_alias_merged_in_place",
+      "existing_identity": true,
+      "aid": "2514886",
+      "id": "sie-talk-yechidus-11-sivan-5744-aid-2514886",
+      "canonical_id": "sie-talk-yechidus-11-sivan-5744-aid-2514886",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "evidence_family_id": "yechidus-eve-11-sivan-5744",
+      "reason": "Full-index reconciliation found the same AID and Evidence Family in an earlier canonical file; the inspected proposition was merged into that identity and no duplicate source record remains."
+    },
+    {
+      "action": "duplicate_alias_merged_in_place",
+      "existing_identity": true,
+      "aid": "2515046",
+      "id": "sie-talk-yechidus-25-nissan-5744-aid-2515046",
+      "canonical_id": "sie-talk-yechidus-25-nissan-5744-aid-2515046",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "evidence_family_id": "yechidus-eve-25-nissan-5744",
+      "reason": "Full-index reconciliation found the same AID and Evidence Family in an earlier canonical file; the inspected proposition was merged into that identity and no duplicate source record remains."
+    }
+  ],
+  "excluded_duplicate_candidate_count": 6,
   "existing_identity_updates": [
+    {
+      "aid": "2499828",
+      "id": "yechidus-event-aid2499828",
+      "canonical_file": "data/items/content-research-batch-147-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2499828",
+      "existing_propositions_before": 1,
+      "total_propositions_after": 2,
+      "propositions_added": 1,
+      "proposition": "הפרסום מציג את ברכת השלום כברכה הניתנת לכל יהודי, ללא תלות במעמדו בעבודת התורה והמצוות. הוא מציב את אהבת ישראל כיסוד היחסים בין יהודים וכעיקרון המקיף את התורה כולה, ומקשר את חיי האדם בכללותם לקשר עם האל האחד והתורה האחת.",
+      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2499828, גוף הפרסום האנגלי, סעיפים 1–3, שורות 245–251.",
+      "locators": [
+        "Chabad.org / TheRebbe.org AID 2499828, גוף הפרסום האנגלי, סעיפים 1–3, שורות 245–251."
+      ],
+      "action": "enriched_existing_identity_in_place",
+      "new_independent_witness": false
+    },
+    {
+      "aid": "2511676",
+      "id": "yechidus-5746-eve-13-shvat-aid2511676",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2511676",
+      "existing_propositions_before": 2,
+      "total_propositions_after": 3,
+      "propositions_added": 1,
+      "proposition": "הפרסום קושר את אחדות ישראל למקור הנשמות המשותף ולאחדות הקב״ה והתורה. עם החזרה לעיסוקים ולמקומות שונים, המשתתפים אמורים לשאת עמם אהבת ישראל המתבטאת בדאגה פעילה ובפעולה לטובת יהודים אחרים, בעניינים גשמיים ובייחוד רוחניים.",
+      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2511676, גוף הפרסום האנגלי, סעיפים 1–2, שורות 245–257.",
+      "locators": [
+        "Chabad.org / TheRebbe.org AID 2511676, גוף הפרסום האנגלי, סעיפים 1–2, שורות 245–257."
+      ],
+      "action": "enriched_existing_identity_in_place",
+      "new_independent_witness": false
+    },
+    {
+      "aid": "2512299",
+      "id": "yechidus-5746-26-tishrei-aid2512299",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2512299",
+      "existing_propositions_before": 2,
+      "total_propositions_after": 3,
+      "propositions_added": 1,
+      "proposition": "הפרסום מציג את אחדות ישראל ככוללת נשים וגברים, צעירים ומבוגרים ואף תינוקות, ומשתרעת על פני הדורות למרות פיזור גאוגרפי. הוא מתאר מפגש בין יהודים מרקעים וממקומות שונים כהזדמנות להעשרה הדדית, שבה כל אחד תורם מתכונותיו ומקרב את האחר לשלמות ולאחדות.",
+      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2512299, גוף הפרסום האנגלי, סעיפים 1–2, שורות 246–257.",
+      "locators": [
+        "Chabad.org / TheRebbe.org AID 2512299, גוף הפרסום האנגלי, סעיפים 1–2, שורות 246–257."
+      ],
+      "action": "enriched_existing_identity_in_place",
+      "new_independent_witness": false
+    },
+    {
+      "aid": "2513225",
+      "id": "yechidus-5745-25-nissan-aid2513225",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "evidence_family_id": "yechidus-5745-25-nissan-aid2513225",
+      "existing_propositions_before": 2,
+      "total_propositions_after": 3,
+      "propositions_added": 1,
+      "proposition": "הפרסום מציג את מטרת העם היהודי כגילוי אלוקות בעולם והבאת אחדות ה׳ אל תוך המציאות באמצעות התורה והמעשים היומיומיים. הוא קושר את השליחות להתנהגות שאינה מאמצת מנהגים המתנגדים לתורה, ומזכיר ברכות הנוגעות לילדים, לבריאות ולפרנסה.",
+      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2513225, גוף הפרסום האנגלי, סעיפים 1–2, שורות 247–252.",
+      "locators": [
+        "Chabad.org / TheRebbe.org AID 2513225, גוף הפרסום האנגלי, סעיפים 1–2, שורות 247–252."
+      ],
+      "action": "enriched_existing_identity_in_place",
+      "new_independent_witness": false
+    },
+    {
+      "aid": "2514886",
+      "id": "sie-talk-yechidus-11-sivan-5744-aid-2514886",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "evidence_family_id": "yechidus-eve-11-sivan-5744",
+      "existing_propositions_before": 7,
+      "total_propositions_after": 8,
+      "propositions_added": 1,
+      "proposition": "הפרסום מציג את לימודו של אותו עניין הלכתי לפני פרידה כאמצעי לשימור הקשר בין יהודים גם לאחר שכל אחד שב לביתו. הוא קושר את האחדות למטרה המשותפת של הפיכת העולם כולו למקום משכן לקב״ה, ומציג את המרחק הפיזי כמשני ביחס למטרה זו.",
+      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2514886, גוף הפרסום האנגלי, סעיף 1, שורות 255–259.",
+      "locators": [
+        "Chabad.org / TheRebbe.org AID 2514886, גוף הפרסום האנגלי, סעיף 1, שורות 255–259."
+      ],
+      "action": "enriched_existing_identity_in_place",
+      "new_independent_witness": false
+    },
+    {
+      "aid": "2515046",
+      "id": "sie-talk-yechidus-25-nissan-5744-aid-2515046",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "evidence_family_id": "yechidus-eve-25-nissan-5744",
+      "existing_propositions_before": 2,
+      "total_propositions_after": 3,
+      "propositions_added": 1,
+      "proposition": "הפרסום מדגיש שההשפעה שנרכשה בתקופה של תפילה, לימוד, צדקה והחלטות טובות יחד אינה אמורה להיחלש עם הפרידה. החוזרים לביתם מתוארים כשליחים הנושאים עמם את הכוחות שקיבלו מן הקבוצה כדי להמשיך במשימת הארת העולם.",
+      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2515046, גוף הפרסום האנגלי, פסקאות הפתיחה, שורות 245–249.",
+      "locators": [
+        "Chabad.org / TheRebbe.org AID 2515046, גוף הפרסום האנגלי, פסקאות הפתיחה, שורות 245–249."
+      ],
+      "action": "enriched_existing_identity_in_place",
+      "new_independent_witness": false
+    },
     {
       "action": "enriched_existing_identity_in_place",
       "existing_identity": true,
@@ -148,17 +324,23 @@
       "reason": "One bounded non-verbatim research paraphrase was added from the inspected original Yiddish body; the existing identity and Evidence Family were retained. The parallel English translation is not an independent witness."
     }
   ],
-  "existing_identity_updates_count": 1,
+  "existing_identity_updates_count": 7,
   "existing_identity_rechecks": [],
   "existing_identity_rechecks_count": 0,
   "reviewed_item_refs": [
     {
       "aid": 2514886,
-      "web_source_ref": "turn448308view0"
+      "web_source_ref": "turn448308view0",
+      "action": "existing_identity_enriched_in_place",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "evidence_family_id": "yechidus-eve-11-sivan-5744"
     },
     {
       "aid": 2515046,
-      "web_source_ref": "turn448308view1"
+      "web_source_ref": "turn448308view1",
+      "action": "existing_identity_enriched_in_place",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "evidence_family_id": "yechidus-eve-25-nissan-5744"
     },
     {
       "aid": 2514160,
@@ -166,15 +348,24 @@
     },
     {
       "aid": 2513225,
-      "web_source_ref": "turn448308view3"
+      "web_source_ref": "turn448308view3",
+      "action": "existing_identity_enriched_in_place",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "evidence_family_id": "yechidus-5745-25-nissan-aid2513225"
     },
     {
       "aid": 2499828,
-      "web_source_ref": "turn448308view4"
+      "web_source_ref": "turn448308view4",
+      "action": "existing_identity_enriched_in_place",
+      "canonical_file": "data/items/content-research-batch-147-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2499828"
     },
     {
       "aid": 2511676,
-      "web_source_ref": "turn570785view0"
+      "web_source_ref": "turn570785view0",
+      "action": "existing_identity_enriched_in_place",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2511676"
     },
     {
       "aid": 2511792,
@@ -186,7 +377,10 @@
     },
     {
       "aid": 2512299,
-      "web_source_ref": "turn570785view3"
+      "web_source_ref": "turn570785view3",
+      "action": "existing_identity_enriched_in_place",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "evidence_family_id": "yechidus-event-aid2512299"
     },
     {
       "aid": 4736086,
@@ -195,38 +389,38 @@
   ],
   "blocked_item_ids": [],
   "excluded_item_ids": [],
-  "translations_added": 9,
+  "translations_added": 3,
   "translations_counted_as_independent_witnesses": 0,
   "crawler_retry": false,
   "access_control_bypassed": false,
   "full_text_copied": false,
   "scan_only_verification_used": false,
   "metrics_before": {
-    "answer_eligible_unique_sources": 1575,
+    "answer_eligible_unique_sources": 1571,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4090
+    "answer_eligible_propositions": 4085
   },
-  "metrics_before_source": "Planning baseline from Batch180 expected boundary 1575/854/4090; no exact-head full reconciliation after Batch180 was available at review time.",
+  "metrics_before_source": "Exact-head Batch180 full-index reconciliation measured 1571/854/4085. Six Batch181 English AIDs were already represented in canonical files and their new paraphrases were moved in-place; only three distinct Yechidus event families remain new.",
   "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1584,
+    "answer_eligible_unique_sources": 1574,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4100
+    "answer_eligible_propositions": 4095
   },
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 9,
+    "answer_eligible_unique_sources": 3,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 10
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "expected_answer_eligible_source_families_added": 9,
+  "expected_answer_eligible_source_families_added": 3,
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
-    "target_identity_count": 9,
+    "target_identity_count": 10,
     "target_aids": [
       2514886,
       2515046,
@@ -236,20 +430,16 @@
       2511676,
       2511792,
       2511754,
-      2512299
+      2512299,
+      4736086
     ],
-    "target_identity_matches": 0,
+    "target_identity_matches": 7,
     "target_identity_duplicates": 0,
-    "selected_unique_evidence_families": 9,
+    "selected_unique_evidence_families": 10,
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
-    "preliminary_checks": {
-      "github_code_search_hits": 0,
-      "recent_batch_range_checked": "175–180",
-      "recent_batch_matches": 0
-    },
-    "note": "Preliminary GitHub code searches returned no exact AID matches in the default branch, and batches 175–180 contain none of these AIDs. This is not a full canonical JSON scan; the full item-level deduplication and Evidence Family reconciliation remains pending. Do not treat the nine candidate identities as finally unique until exact-head reconciliation completes."
+    "note": "Six AIDs were found in earlier canonical records during full-index reconciliation and their new inspected propositions were merged in place. Three AIDs remain new identities. AID 4736086 is an in-place Yiddish-source enrichment. The next exact-head scan must confirm one canonical record per AID and no family collisions."
   },
   "fallback_source_attempted": true,
   "failed_alternate_routes": [
@@ -355,7 +545,7 @@
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "existing_identity": false,
+      "existing_identity": true,
       "new_identity": true,
       "new_independent_witness": false,
       "proposition": "הפרסום מציג את לימודו של אותו עניין הלכתי לפני פרידה כאמצעי לשימור הקשר בין יהודים גם לאחר שכל אחד שב לביתו. הוא קושר את האחדות למטרה המשותפת של הפיכת העולם כולו למקום משכן לקב״ה, ומציג את המרחק הפיזי כמשני ביחס למטרה זו.",
@@ -367,13 +557,14 @@
       "language": "English",
       "original_language": "unknown",
       "witness_type": "published_english_translation",
-      "evidence_family_id": "yechidus-5744-eve-11-sivan-aid2514886",
+      "evidence_family_id": "yechidus-eve-11-sivan-5744",
       "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "note": "גוף הפרסום האנגלי נפתח ונבדק ישירות. שפת המקור והקלטה לא נבדקו; זהו פרסום מתורגם ולא עד עצמאי."
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "note": "The English publisher body was inspected. Full-index reconciliation found this AID already canonical; the new paraphrase was merged into that identity. English presentation is not an independent witness.",
+      "original_language_text_inspected": false
     },
     {
       "aid": 2515046,
@@ -383,7 +574,7 @@
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "existing_identity": false,
+      "existing_identity": true,
       "new_identity": true,
       "new_independent_witness": false,
       "proposition": "הפרסום מדגיש שההשפעה שנרכשה בתקופה של תפילה, לימוד, צדקה והחלטות טובות יחד אינה אמורה להיחלש עם הפרידה. החוזרים לביתם מתוארים כשליחים הנושאים עמם את הכוחות שקיבלו מן הקבוצה כדי להמשיך במשימת הארת העולם.",
@@ -395,13 +586,14 @@
       "language": "English",
       "original_language": "unknown",
       "witness_type": "published_english_translation",
-      "evidence_family_id": "yechidus-5744-eve-25-nissan-aid2515046",
+      "evidence_family_id": "yechidus-eve-25-nissan-5744",
       "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "note": "גוף הפרסום האנגלי נפתח ונבדק ישירות. שפת המקור והקלטה לא נבדקו; זהו פרסום מתורגם ולא עד עצמאי."
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+      "note": "The English publisher body was inspected. Full-index reconciliation found this AID already canonical; the new paraphrase was merged into that identity. English presentation is not an independent witness.",
+      "original_language_text_inspected": false
     },
     {
       "aid": 2514160,
@@ -439,7 +631,7 @@
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "existing_identity": false,
+      "existing_identity": true,
       "new_identity": true,
       "new_independent_witness": false,
       "proposition": "הפרסום מציג את מטרת העם היהודי כגילוי אלוקות בעולם והבאת אחדות ה׳ אל תוך המציאות באמצעות התורה והמעשים היומיומיים. הוא קושר את השליחות להתנהגות שאינה מאמצת מנהגים המתנגדים לתורה, ומזכיר ברכות הנוגעות לילדים, לבריאות ולפרנסה.",
@@ -455,9 +647,10 @@
       "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "note": "גוף הפרסום האנגלי נפתח ונבדק ישירות. שפת המקור והקלטה לא נבדקו; זהו פרסום מתורגם ולא עד עצמאי."
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-139-2026-11-17.json",
+      "note": "The English publisher body was inspected. Full-index reconciliation found this AID already canonical; the new paraphrase was merged into that identity. English presentation is not an independent witness.",
+      "original_language_text_inspected": false
     },
     {
       "aid": 2499828,
@@ -467,7 +660,7 @@
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "existing_identity": false,
+      "existing_identity": true,
       "new_identity": true,
       "new_independent_witness": false,
       "proposition": "הפרסום מציג את ברכת השלום כברכה הניתנת לכל יהודי, ללא תלות במעמדו בעבודת התורה והמצוות. הוא מציב את אהבת ישראל כיסוד היחסים בין יהודים וכעיקרון המקיף את התורה כולה, ומקשר את חיי האדם בכללותם לקשר עם האל האחד והתורה האחת.",
@@ -479,13 +672,14 @@
       "language": "English",
       "original_language": "unknown",
       "witness_type": "published_english_translation",
-      "evidence_family_id": "yechidus-5750-eve-following-28-nissan-aid2499828",
+      "evidence_family_id": "yechidus-event-aid2499828",
       "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "note": "גוף הפרסום האנגלי נפתח ונבדק ישירות. שפת המקור והקלטה לא נבדקו; זהו פרסום מתורגם ולא עד עצמאי."
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-147-2026-11-17.json",
+      "note": "The English publisher body was inspected. Full-index reconciliation found this AID already canonical; the new paraphrase was merged into that identity. English presentation is not an independent witness.",
+      "original_language_text_inspected": false
     },
     {
       "aid": 2511676,
@@ -495,7 +689,7 @@
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "existing_identity": false,
+      "existing_identity": true,
       "new_identity": true,
       "new_independent_witness": false,
       "proposition": "הפרסום קושר את אחדות ישראל למקור הנשמות המשותף ולאחדות הקב״ה והתורה. עם החזרה לעיסוקים ולמקומות שונים, המשתתפים אמורים לשאת עמם אהבת ישראל המתבטאת בדאגה פעילה ובפעולה לטובת יהודים אחרים, בעניינים גשמיים ובייחוד רוחניים.",
@@ -507,13 +701,14 @@
       "language": "English",
       "original_language": "unknown",
       "witness_type": "published_english_translation",
-      "evidence_family_id": "yechidus-5746-eve-13-shvat-aid2511676",
+      "evidence_family_id": "yechidus-event-aid2511676",
       "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "note": "גוף הפרסום האנגלי נפתח ונבדק ישירות. שפת המקור והקלטה לא נבדקו; זהו פרסום מתורגם ולא עד עצמאי."
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "note": "The English publisher body was inspected. Full-index reconciliation found this AID already canonical; the new paraphrase was merged into that identity. English presentation is not an independent witness.",
+      "original_language_text_inspected": false
     },
     {
       "aid": 2511792,
@@ -579,7 +774,7 @@
       "body_text_inspected": true,
       "inspected_original_language_body": false,
       "title_or_metadata_only": false,
-      "existing_identity": false,
+      "existing_identity": true,
       "new_identity": true,
       "new_independent_witness": false,
       "proposition": "הפרסום מציג את אחדות ישראל ככוללת נשים וגברים, צעירים ומבוגרים ואף תינוקות, ומשתרעת על פני הדורות למרות פיזור גאוגרפי. הוא מתאר מפגש בין יהודים מרקעים וממקומות שונים כהזדמנות להעשרה הדדית, שבה כל אחד תורם מתכונותיו ומקרב את האחר לשלמות ולאחדות.",
@@ -591,13 +786,14 @@
       "language": "English",
       "original_language": "unknown",
       "witness_type": "published_english_translation",
-      "evidence_family_id": "yechidus-5746-26-tishrei-aid2512299",
+      "evidence_family_id": "yechidus-event-aid2512299",
       "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-181-2026-11-19.json",
-      "note": "גוף הפרסום האנגלי נפתח ונבדק ישירות. שפת המקור והקלטה לא נבדקו; זהו פרסום מתורגם ולא עד עצמאי."
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-137-2026-11-17.json",
+      "note": "The English publisher body was inspected. Full-index reconciliation found this AID already canonical; the new paraphrase was merged into that identity. English presentation is not an independent witness.",
+      "original_language_text_inspected": false
     },
     {
       "aid": 4736086,
@@ -629,194 +825,6 @@
     }
   ],
   "records": [
-    {
-      "id": "yechidus-5744-eve-11-sivan-aid2514886",
-      "aid": 2514886,
-      "title": "Yechidus, Eve of 11th of Sivan, 5744 (1984)",
-      "source_class": "Yechidus",
-      "source_class_detail": "יחידות מתוארכת בפרסום האנגלי של Sichos in English Collection; שפת המקור והעד המקורי לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "Eve of 11th of Sivan, 5744 (1984)",
-      "date": null,
-      "date_precision": "exact",
-      "language": "English",
-      "original_language": "unknown",
-      "context_status": "partial",
-      "summary_researcher": "היחידות מציעה להיפרד מתוך לימוד משותף של עניין הלכתי, כדי שהקשר בין המשתתפים יימשך גם כשכל אחד שב לביתו; ההבדלים האישיים והמרחק הגאוגרפי משניים לעומת השליחות המשותפת.",
-      "provenance": {
-        "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "Chabad.org / TheRebbe.org AID 2514886, Yechidus, Eve of 11th of Sivan, 5744 (1984); public English body opened and inspected.",
-        "transmission_type": "Published English rendering in the Sichos in English Collection; original-language transcript or recording not inspected.",
-        "textual_status": "נבדק גוף הפרסום האנגלי במיקום Chabad.org / TheRebbe.org AID 2514886, גוף הפרסום האנגלי, סעיף 1, שורות 255–259.; נבדקו המקטע וההקשר הסמוך בלבד. אין בכך אימות של נוסח המקור או של שלמות היחידות.",
-        "editorial_scope": "Bounded non-verbatim research paraphrase from the inspected English body passage; no full-text reproduction.",
-        "verification_status": "source_text_inspected; published English rendering; partial context; original-language witness not inspected.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2514886/jewish/Yechidus-Eve-of-11th-of-Sivan-5744-1984.htm",
-        "accessed": "2026-11-19T12:56:43+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "public English body opened and inspected",
-        "complete_partial": "partial",
-        "notes": "העמוד מציג פרסום אנגלי מתוארך במסגרת Sichos in English Collection. לא נבדקו תמליל בשפת המקור, הקלטה, כתב־יד או מהדורה מודפסת."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "Link and bounded paraphrase only. Do not reproduce the copyrighted body text."
-      },
-      "relations": [],
-      "taxonomy": {
-        "source_type": "Yechidus",
-        "publisher_collection": "Sichos in English Collection",
-        "topics": [
-          "כיצד לימוד הלכה משותף לפני פרידה משמר אחדות בין יהודים?"
-        ],
-        "source_language": "English",
-        "proposition_language": "Hebrew"
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־19.11.2026. נפתח גוף הפרסום של AID 2514886; נבדקו רק השורות המצוינות ב-locator. העמוד מציג נוסח אנגלי שפורסם; שפת המקור, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית ולא ציטוט; לא הועתק גוף הפרסום המלא.",
-      "type": "published_english_yechidus_text",
-      "collection": "Sichos in English Collection",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2514886/jewish/Yechidus-Eve-of-11th-of-Sivan-5744-1984.htm",
-      "response_propositions": [
-        "הפרסום מציג את לימודו של אותו עניין הלכתי לפני פרידה כאמצעי לשימור הקשר בין יהודים גם לאחר שכל אחד שב לביתו. הוא קושר את האחדות למטרה המשותפת של הפיכת העולם כולו למקום משכן לקב״ה, ומציג את המרחק הפיזי כמשני ביחס למטרה זו."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org / TheRebbe.org AID 2514886, גוף הפרסום האנגלי, סעיף 1, שורות 255–259."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2514886, גוף הפרסום האנגלי, סעיף 1, שורות 255–259.",
-      "evidence_family_id": "yechidus-5744-eve-11-sivan-aid2514886",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "yechidus-5744-eve-11-sivan-aid2514886",
-      "has_content_evidence": true,
-      "verification_scope": "ב־19.11.2026 נפתח ונבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2514886. נבדק רק המקטע Chabad.org / TheRebbe.org AID 2514886, גוף הפרסום האנגלי, סעיף 1, שורות 255–259.. זהו נוסח אנגלי שפורסם; שפת המקור, תמליל עברי או יידי, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע המסומן, ולא ציטוט או ניסוח המערכת המיוחס לרבי. context_status=partial; אין להכליל מעבר להקשר המצוין. לא הועתק גוף הפרסום המלא.",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 2514886, Yechidus, Eve of 11th of Sivan, 5744 (1984); English body inspected.",
-      "documented_circumstances": "Yechidus, Eve of 11th of Sivan, 5744 (1984)",
-      "question_or_problem": "כיצד לימוד הלכה משותף לפני פרידה משמר אחדות בין יהודים?",
-      "conditions_or_qualifications": [
-        "הטקסט הוא נוסח אנגלי שפורסם; שפת המקור לא נבדקה.",
-        "נבדקו רק המקטע המצוין וההקשר הסמוך; context_status=partial.",
-        "אין לראות בפרפרזה ניסוח מילולי של הרבי או עדות עצמאית נוספת מעבר לאירוע המתואר."
-      ],
-      "audience": "משתתפי יחידות מתוארכת; פרטי הקהל המלאים לא אומתו מן המקטע.",
-      "primary_secondary_status": "Published English rendering of a dated Yechidus; original-language witness not inspected; derived non-independent presentation.",
-      "witness_type": "published_english_translation",
-      "translation_status": "English text published in Sichos in English Collection; original Hebrew/Yiddish text and recording not inspected; non-independent presentation.",
-      "independent_witness": false,
-      "author_name": "Rabbi Menachem M. Schneerson",
-      "author_role": "Speaker attributed by publisher; original language not inspected.",
-      "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-      "source_role": "published_english_yechidus_translation",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-      "rights_status": "copyrighted-link-only",
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
-    },
-    {
-      "id": "yechidus-5744-eve-25-nissan-aid2515046",
-      "aid": 2515046,
-      "title": "Yechidus, Eve of 25th of Nissan, 5744 (1984)",
-      "source_class": "Yechidus",
-      "source_class_detail": "יחידות מתוארכת בפרסום האנגלי של Sichos in English Collection; שפת המקור והעד המקורי לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "Eve of 25th of Nissan, 5744 (1984)",
-      "date": null,
-      "date_precision": "exact",
-      "language": "English",
-      "original_language": "unknown",
-      "context_status": "partial",
-      "summary_researcher": "היחידות מדגישה שהשפעת שהות משותפת בתפילה, לימוד, צדקה והחלטות טובות צריכה להימשך לאחר החזרה הביתה; כל משתתף שב כשליח הנושא את הכוחות שקיבל כדי להאיר את סביבתו.",
-      "provenance": {
-        "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "Chabad.org / TheRebbe.org AID 2515046, Yechidus, Eve of 25th of Nissan, 5744 (1984); public English body opened and inspected.",
-        "transmission_type": "Published English rendering in the Sichos in English Collection; original-language transcript or recording not inspected.",
-        "textual_status": "נבדק גוף הפרסום האנגלי במיקום Chabad.org / TheRebbe.org AID 2515046, גוף הפרסום האנגלי, פסקאות הפתיחה, שורות 245–249.; נבדקו המקטע וההקשר הסמוך בלבד. אין בכך אימות של נוסח המקור או של שלמות היחידות.",
-        "editorial_scope": "Bounded non-verbatim research paraphrase from the inspected English body passage; no full-text reproduction.",
-        "verification_status": "source_text_inspected; published English rendering; partial context; original-language witness not inspected.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2515046/jewish/Yechidus-Eve-of-25th-of-Nissan-5744-1984.htm",
-        "accessed": "2026-11-19T12:56:43+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "public English body opened and inspected",
-        "complete_partial": "partial",
-        "notes": "העמוד מציג פרסום אנגלי מתוארך במסגרת Sichos in English Collection. לא נבדקו תמליל בשפת המקור, הקלטה, כתב־יד או מהדורה מודפסת."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "Link and bounded paraphrase only. Do not reproduce the copyrighted body text."
-      },
-      "relations": [],
-      "taxonomy": {
-        "source_type": "Yechidus",
-        "publisher_collection": "Sichos in English Collection",
-        "topics": [
-          "כיצד אמורה להימשך השפעתה של התכנסות רוחנית לאחר שהמשתתפים חוזרים לביתם?"
-        ],
-        "source_language": "English",
-        "proposition_language": "Hebrew"
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־19.11.2026. נפתח גוף הפרסום של AID 2515046; נבדקו רק השורות המצוינות ב-locator. העמוד מציג נוסח אנגלי שפורסם; שפת המקור, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית ולא ציטוט; לא הועתק גוף הפרסום המלא.",
-      "type": "published_english_yechidus_text",
-      "collection": "Sichos in English Collection",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2515046/jewish/Yechidus-Eve-of-25th-of-Nissan-5744-1984.htm",
-      "response_propositions": [
-        "הפרסום מדגיש שההשפעה שנרכשה בתקופה של תפילה, לימוד, צדקה והחלטות טובות יחד אינה אמורה להיחלש עם הפרידה. החוזרים לביתם מתוארים כשליחים הנושאים עמם את הכוחות שקיבלו מן הקבוצה כדי להמשיך במשימת הארת העולם."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org / TheRebbe.org AID 2515046, גוף הפרסום האנגלי, פסקאות הפתיחה, שורות 245–249."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2515046, גוף הפרסום האנגלי, פסקאות הפתיחה, שורות 245–249.",
-      "evidence_family_id": "yechidus-5744-eve-25-nissan-aid2515046",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "yechidus-5744-eve-25-nissan-aid2515046",
-      "has_content_evidence": true,
-      "verification_scope": "ב־19.11.2026 נפתח ונבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2515046. נבדק רק המקטע Chabad.org / TheRebbe.org AID 2515046, גוף הפרסום האנגלי, פסקאות הפתיחה, שורות 245–249.. זהו נוסח אנגלי שפורסם; שפת המקור, תמליל עברי או יידי, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע המסומן, ולא ציטוט או ניסוח המערכת המיוחס לרבי. context_status=partial; אין להכליל מעבר להקשר המצוין. לא הועתק גוף הפרסום המלא.",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 2515046, Yechidus, Eve of 25th of Nissan, 5744 (1984); English body inspected.",
-      "documented_circumstances": "Yechidus, Eve of 25th of Nissan, 5744 (1984)",
-      "question_or_problem": "כיצד אמורה להימשך השפעתה של התכנסות רוחנית לאחר שהמשתתפים חוזרים לביתם?",
-      "conditions_or_qualifications": [
-        "הטקסט הוא נוסח אנגלי שפורסם; שפת המקור לא נבדקה.",
-        "נבדקו רק המקטע המצוין וההקשר הסמוך; context_status=partial.",
-        "אין לראות בפרפרזה ניסוח מילולי של הרבי או עדות עצמאית נוספת מעבר לאירוע המתואר."
-      ],
-      "audience": "משתתפי יחידות לאחר חג הפסח; הרכב המשתתפים לא אומת מעבר למקטע.",
-      "primary_secondary_status": "Published English rendering of a dated Yechidus; original-language witness not inspected; derived non-independent presentation.",
-      "witness_type": "published_english_translation",
-      "translation_status": "English text published in Sichos in English Collection; original Hebrew/Yiddish text and recording not inspected; non-independent presentation.",
-      "independent_witness": false,
-      "author_name": "Rabbi Menachem M. Schneerson",
-      "author_role": "Speaker attributed by publisher; original language not inspected.",
-      "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-      "source_role": "published_english_yechidus_translation",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-      "rights_status": "copyrighted-link-only",
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
-    },
     {
       "id": "yechidus-5744-16-tammuz-aid2514160",
       "aid": 2514160,
@@ -896,288 +904,6 @@
         "אין לראות בפרפרזה ניסוח מילולי של הרבי או עדות עצמאית נוספת מעבר לאירוע המתואר."
       ],
       "audience": "משתתפי יחידות; הפרטים המלאים על הקהל לא אומתו מן המקטע.",
-      "primary_secondary_status": "Published English rendering of a dated Yechidus; original-language witness not inspected; derived non-independent presentation.",
-      "witness_type": "published_english_translation",
-      "translation_status": "English text published in Sichos in English Collection; original Hebrew/Yiddish text and recording not inspected; non-independent presentation.",
-      "independent_witness": false,
-      "author_name": "Rabbi Menachem M. Schneerson",
-      "author_role": "Speaker attributed by publisher; original language not inspected.",
-      "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-      "source_role": "published_english_yechidus_translation",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-      "rights_status": "copyrighted-link-only",
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
-    },
-    {
-      "id": "yechidus-5745-25-nissan-aid2513225",
-      "aid": 2513225,
-      "title": "Yechidus, 25th Day of Nissan, 5745 (1985)",
-      "source_class": "Yechidus",
-      "source_class_detail": "יחידות מתוארכת בפרסום האנגלי של Sichos in English Collection; שפת המקור והעד המקורי לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "25th Day of Nissan, 5745 (1985)",
-      "date": null,
-      "date_precision": "exact",
-      "language": "English",
-      "original_language": "unknown",
-      "context_status": "partial",
-      "summary_researcher": "היחידות מתארת את שליחות ישראל כהבאת אחדות ה׳ לעולם באמצעות התורה וההתנהגות היומיומית; היא קושרת זאת גם לעמידה מול מנהגים המתנגדים לתורה ולברכות מעשיות בחיי המשפחה.",
-      "provenance": {
-        "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "Chabad.org / TheRebbe.org AID 2513225, Yechidus, 25th Day of Nissan, 5745 (1985); public English body opened and inspected.",
-        "transmission_type": "Published English rendering in the Sichos in English Collection; original-language transcript or recording not inspected.",
-        "textual_status": "נבדק גוף הפרסום האנגלי במיקום Chabad.org / TheRebbe.org AID 2513225, גוף הפרסום האנגלי, סעיפים 1–2, שורות 247–252.; נבדקו המקטע וההקשר הסמוך בלבד. אין בכך אימות של נוסח המקור או של שלמות היחידות.",
-        "editorial_scope": "Bounded non-verbatim research paraphrase from the inspected English body passage; no full-text reproduction.",
-        "verification_status": "source_text_inspected; published English rendering; partial context; original-language witness not inspected.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2513225/jewish/Yechidus-25th-Day-of-Nissan-5745-1985.htm",
-        "accessed": "2026-11-19T12:56:43+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "public English body opened and inspected",
-        "complete_partial": "partial",
-        "notes": "העמוד מציג פרסום אנגלי מתוארך במסגרת Sichos in English Collection. לא נבדקו תמליל בשפת המקור, הקלטה, כתב־יד או מהדורה מודפסת."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "Link and bounded paraphrase only. Do not reproduce the copyrighted body text."
-      },
-      "relations": [],
-      "taxonomy": {
-        "source_type": "Yechidus",
-        "publisher_collection": "Sichos in English Collection",
-        "topics": [
-          "כיצד מתארת היחידות את שליחות ישראל ואת הקשר בין תורה להתנהגות בעולם?"
-        ],
-        "source_language": "English",
-        "proposition_language": "Hebrew"
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־19.11.2026. נפתח גוף הפרסום של AID 2513225; נבדקו רק השורות המצוינות ב-locator. העמוד מציג נוסח אנגלי שפורסם; שפת המקור, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית ולא ציטוט; לא הועתק גוף הפרסום המלא.",
-      "type": "published_english_yechidus_text",
-      "collection": "Sichos in English Collection",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2513225/jewish/Yechidus-25th-Day-of-Nissan-5745-1985.htm",
-      "response_propositions": [
-        "הפרסום מציג את מטרת העם היהודי כגילוי אלוקות בעולם והבאת אחדות ה׳ אל תוך המציאות באמצעות התורה והמעשים היומיומיים. הוא קושר את השליחות להתנהגות שאינה מאמצת מנהגים המתנגדים לתורה, ומזכיר ברכות הנוגעות לילדים, לבריאות ולפרנסה."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org / TheRebbe.org AID 2513225, גוף הפרסום האנגלי, סעיפים 1–2, שורות 247–252."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2513225, גוף הפרסום האנגלי, סעיפים 1–2, שורות 247–252.",
-      "evidence_family_id": "yechidus-5745-25-nissan-aid2513225",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "yechidus-5745-25-nissan-aid2513225",
-      "has_content_evidence": true,
-      "verification_scope": "ב־19.11.2026 נפתח ונבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2513225. נבדק רק המקטע Chabad.org / TheRebbe.org AID 2513225, גוף הפרסום האנגלי, סעיפים 1–2, שורות 247–252.. זהו נוסח אנגלי שפורסם; שפת המקור, תמליל עברי או יידי, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע המסומן, ולא ציטוט או ניסוח המערכת המיוחס לרבי. context_status=partial; אין להכליל מעבר להקשר המצוין. לא הועתק גוף הפרסום המלא.",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 2513225, Yechidus, 25th Day of Nissan, 5745 (1985); English body inspected.",
-      "documented_circumstances": "Yechidus, 25th Day of Nissan, 5745 (1985)",
-      "question_or_problem": "כיצד מתארת היחידות את שליחות ישראל ואת הקשר בין תורה להתנהגות בעולם?",
-      "conditions_or_qualifications": [
-        "הטקסט הוא נוסח אנגלי שפורסם; שפת המקור לא נבדקה.",
-        "נבדקו רק המקטע המצוין וההקשר הסמוך; context_status=partial.",
-        "אין לראות בפרפרזה ניסוח מילולי של הרבי או עדות עצמאית נוספת מעבר לאירוע המתואר."
-      ],
-      "audience": "אורחים שהגיעו לחג הפסח 5745, לפי כותרת המשנה בפרסום.",
-      "primary_secondary_status": "Published English rendering of a dated Yechidus; original-language witness not inspected; derived non-independent presentation.",
-      "witness_type": "published_english_translation",
-      "translation_status": "English text published in Sichos in English Collection; original Hebrew/Yiddish text and recording not inspected; non-independent presentation.",
-      "independent_witness": false,
-      "author_name": "Rabbi Menachem M. Schneerson",
-      "author_role": "Speaker attributed by publisher; original language not inspected.",
-      "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-      "source_role": "published_english_yechidus_translation",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-      "rights_status": "copyrighted-link-only",
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
-    },
-    {
-      "id": "yechidus-5750-eve-following-28-nissan-aid2499828",
-      "aid": 2499828,
-      "title": "Yechidus, Eve Following the 28th of Nissan, 5750 (1990)",
-      "source_class": "Yechidus",
-      "source_class_detail": "יחידות מתוארכת בפרסום האנגלי של Sichos in English Collection; שפת המקור והעד המקורי לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "Eve Following the 28th of Nissan, 5750 (1990)",
-      "date": null,
-      "date_precision": "exact",
-      "language": "English",
-      "original_language": "unknown",
-      "context_status": "partial",
-      "summary_researcher": "היחידות מציבה את ברכת 'שלום עליכם' ואת אהבת ישראל כבסיס ליחסים בין יהודים מכל רמה; הקשר לאל אחד ולתורה אחת מוצג כמקור החיות של כלל החיים, לא רק של המצוות.",
-      "provenance": {
-        "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "Chabad.org / TheRebbe.org AID 2499828, Yechidus, Eve Following the 28th of Nissan, 5750 (1990); public English body opened and inspected.",
-        "transmission_type": "Published English rendering in the Sichos in English Collection; original-language transcript or recording not inspected.",
-        "textual_status": "נבדק גוף הפרסום האנגלי במיקום Chabad.org / TheRebbe.org AID 2499828, גוף הפרסום האנגלי, סעיפים 1–3, שורות 245–251.; נבדקו המקטע וההקשר הסמוך בלבד. אין בכך אימות של נוסח המקור או של שלמות היחידות.",
-        "editorial_scope": "Bounded non-verbatim research paraphrase from the inspected English body passage; no full-text reproduction.",
-        "verification_status": "source_text_inspected; published English rendering; partial context; original-language witness not inspected.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2499828/jewish/Yechidus-Eve-Following-the-28th-of-Nissan-5750-1990.htm",
-        "accessed": "2026-11-19T12:56:43+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "public English body opened and inspected",
-        "complete_partial": "partial",
-        "notes": "העמוד מציג פרסום אנגלי מתוארך במסגרת Sichos in English Collection. לא נבדקו תמליל בשפת המקור, הקלטה, כתב־יד או מהדורה מודפסת."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "Link and bounded paraphrase only. Do not reproduce the copyrighted body text."
-      },
-      "relations": [],
-      "taxonomy": {
-        "source_type": "Yechidus",
-        "publisher_collection": "Sichos in English Collection",
-        "topics": [
-          "כיצד מוצגת אהבת ישראל כבסיס לשלום וכעיקרון המקיף את חיי האדם?"
-        ],
-        "source_language": "English",
-        "proposition_language": "Hebrew"
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־19.11.2026. נפתח גוף הפרסום של AID 2499828; נבדקו רק השורות המצוינות ב-locator. העמוד מציג נוסח אנגלי שפורסם; שפת המקור, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית ולא ציטוט; לא הועתק גוף הפרסום המלא.",
-      "type": "published_english_yechidus_text",
-      "collection": "Sichos in English Collection",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2499828/jewish/Yechidus-Eve-Following-the-28th-of-Nissan-5750-1990.htm",
-      "response_propositions": [
-        "הפרסום מציג את ברכת השלום כברכה הניתנת לכל יהודי, ללא תלות במעמדו בעבודת התורה והמצוות. הוא מציב את אהבת ישראל כיסוד היחסים בין יהודים וכעיקרון המקיף את התורה כולה, ומקשר את חיי האדם בכללותם לקשר עם האל האחד והתורה האחת."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org / TheRebbe.org AID 2499828, גוף הפרסום האנגלי, סעיפים 1–3, שורות 245–251."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2499828, גוף הפרסום האנגלי, סעיפים 1–3, שורות 245–251.",
-      "evidence_family_id": "yechidus-5750-eve-following-28-nissan-aid2499828",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "yechidus-5750-eve-following-28-nissan-aid2499828",
-      "has_content_evidence": true,
-      "verification_scope": "ב־19.11.2026 נפתח ונבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2499828. נבדק רק המקטע Chabad.org / TheRebbe.org AID 2499828, גוף הפרסום האנגלי, סעיפים 1–3, שורות 245–251.. זהו נוסח אנגלי שפורסם; שפת המקור, תמליל עברי או יידי, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע המסומן, ולא ציטוט או ניסוח המערכת המיוחס לרבי. context_status=partial; אין להכליל מעבר להקשר המצוין. לא הועתק גוף הפרסום המלא.",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 2499828, Yechidus, Eve Following the 28th of Nissan, 5750 (1990); English body inspected.",
-      "documented_circumstances": "Yechidus, Eve Following the 28th of Nissan, 5750 (1990)",
-      "question_or_problem": "כיצד מוצגת אהבת ישראל כבסיס לשלום וכעיקרון המקיף את חיי האדם?",
-      "conditions_or_qualifications": [
-        "הטקסט הוא נוסח אנגלי שפורסם; שפת המקור לא נבדקה.",
-        "נבדקו רק המקטע המצוין וההקשר הסמוך; context_status=partial.",
-        "אין לראות בפרפרזה ניסוח מילולי של הרבי או עדות עצמאית נוספת מעבר לאירוע המתואר."
-      ],
-      "audience": "האנשים שנאספו ליחידות, גברים נשים וילדים לפי המקטע.",
-      "primary_secondary_status": "Published English rendering of a dated Yechidus; original-language witness not inspected; derived non-independent presentation.",
-      "witness_type": "published_english_translation",
-      "translation_status": "English text published in Sichos in English Collection; original Hebrew/Yiddish text and recording not inspected; non-independent presentation.",
-      "independent_witness": false,
-      "author_name": "Rabbi Menachem M. Schneerson",
-      "author_role": "Speaker attributed by publisher; original language not inspected.",
-      "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-      "source_role": "published_english_yechidus_translation",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-      "rights_status": "copyrighted-link-only",
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
-    },
-    {
-      "id": "yechidus-5746-eve-13-shvat-aid2511676",
-      "aid": 2511676,
-      "title": "Yechidus, Eve of the 13th of Shvat, 5746 (1986)",
-      "source_class": "Yechidus",
-      "source_class_detail": "יחידות מתוארכת בפרסום האנגלי של Sichos in English Collection; שפת המקור והעד המקורי לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "Eve of the 13th of Shvat, 5746 (1986)",
-      "date": null,
-      "date_precision": "exact",
-      "language": "English",
-      "original_language": "unknown",
-      "context_status": "partial",
-      "summary_researcher": "היחידות מדגישה את המשך האחדות גם לאחר פיזור גאוגרפי: הקשר בין יהודים נובע ממקור נשמתם המשותף, ועל כל אדם לשאת לביתו ולעיסוקיו דאגה פעילה לצרכים הגשמיים והרוחניים של יהודים אחרים.",
-      "provenance": {
-        "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "Chabad.org / TheRebbe.org AID 2511676, Yechidus, Eve of the 13th of Shvat, 5746 (1986); public English body opened and inspected.",
-        "transmission_type": "Published English rendering in the Sichos in English Collection; original-language transcript or recording not inspected.",
-        "textual_status": "נבדק גוף הפרסום האנגלי במיקום Chabad.org / TheRebbe.org AID 2511676, גוף הפרסום האנגלי, סעיפים 1–2, שורות 245–257.; נבדקו המקטע וההקשר הסמוך בלבד. אין בכך אימות של נוסח המקור או של שלמות היחידות.",
-        "editorial_scope": "Bounded non-verbatim research paraphrase from the inspected English body passage; no full-text reproduction.",
-        "verification_status": "source_text_inspected; published English rendering; partial context; original-language witness not inspected.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2511676/jewish/Yechidus-Eve-of-the-13th-of-Shvat-5746-1986.htm",
-        "accessed": "2026-11-19T12:56:43+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "public English body opened and inspected",
-        "complete_partial": "partial",
-        "notes": "העמוד מציג פרסום אנגלי מתוארך במסגרת Sichos in English Collection. לא נבדקו תמליל בשפת המקור, הקלטה, כתב־יד או מהדורה מודפסת."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "Link and bounded paraphrase only. Do not reproduce the copyrighted body text."
-      },
-      "relations": [],
-      "taxonomy": {
-        "source_type": "Yechidus",
-        "publisher_collection": "Sichos in English Collection",
-        "topics": [
-          "כיצד מתבטאת אחדות ישראל לאחר שהמשתתפים חוזרים לעיסוקיהם ולמקומותיהם?"
-        ],
-        "source_language": "English",
-        "proposition_language": "Hebrew"
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־19.11.2026. נפתח גוף הפרסום של AID 2511676; נבדקו רק השורות המצוינות ב-locator. העמוד מציג נוסח אנגלי שפורסם; שפת המקור, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית ולא ציטוט; לא הועתק גוף הפרסום המלא.",
-      "type": "published_english_yechidus_text",
-      "collection": "Sichos in English Collection",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2511676/jewish/Yechidus-Eve-of-the-13th-of-Shvat-5746-1986.htm",
-      "response_propositions": [
-        "הפרסום קושר את אחדות ישראל למקור הנשמות המשותף ולאחדות הקב״ה והתורה. עם החזרה לעיסוקים ולמקומות שונים, המשתתפים אמורים לשאת עמם אהבת ישראל המתבטאת בדאגה פעילה ובפעולה לטובת יהודים אחרים, בעניינים גשמיים ובייחוד רוחניים."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org / TheRebbe.org AID 2511676, גוף הפרסום האנגלי, סעיפים 1–2, שורות 245–257."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2511676, גוף הפרסום האנגלי, סעיפים 1–2, שורות 245–257.",
-      "evidence_family_id": "yechidus-5746-eve-13-shvat-aid2511676",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "yechidus-5746-eve-13-shvat-aid2511676",
-      "has_content_evidence": true,
-      "verification_scope": "ב־19.11.2026 נפתח ונבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2511676. נבדק רק המקטע Chabad.org / TheRebbe.org AID 2511676, גוף הפרסום האנגלי, סעיפים 1–2, שורות 245–257.. זהו נוסח אנגלי שפורסם; שפת המקור, תמליל עברי או יידי, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע המסומן, ולא ציטוט או ניסוח המערכת המיוחס לרבי. context_status=partial; אין להכליל מעבר להקשר המצוין. לא הועתק גוף הפרסום המלא.",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 2511676, Yechidus, Eve of the 13th of Shvat, 5746 (1986); English body inspected.",
-      "documented_circumstances": "Yechidus, Eve of the 13th of Shvat, 5746 (1986)",
-      "question_or_problem": "כיצד מתבטאת אחדות ישראל לאחר שהמשתתפים חוזרים לעיסוקיהם ולמקומותיהם?",
-      "conditions_or_qualifications": [
-        "הטקסט הוא נוסח אנגלי שפורסם; שפת המקור לא נבדקה.",
-        "נבדקו רק המקטע המצוין וההקשר הסמוך; context_status=partial.",
-        "אין לראות בפרפרזה ניסוח מילולי של הרבי או עדות עצמאית נוספת מעבר לאירוע המתואר."
-      ],
-      "audience": "משתתפי יחידות סביב היארצייט של הרבי הקודם; פרטי הקהל המלאים לא אומתו.",
       "primary_secondary_status": "Published English rendering of a dated Yechidus; original-language witness not inspected; derived non-independent presentation.",
       "witness_type": "published_english_translation",
       "translation_status": "English text published in Sichos in English Collection; original Hebrew/Yiddish text and recording not inspected; non-independent presentation.",
@@ -1380,103 +1106,9 @@
       "rights_status": "copyrighted-link-only",
       "duplicate_or_parallel_relations": [],
       "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
-    },
-    {
-      "id": "yechidus-5746-26-tishrei-aid2512299",
-      "aid": 2512299,
-      "title": "Yechidus, 26th Day of Tishrei, 5746 (1986)",
-      "source_class": "Yechidus",
-      "source_class_detail": "יחידות מתוארכת בפרסום האנגלי של Sichos in English Collection; שפת המקור והעד המקורי לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "date_original": "26th Day of Tishrei, 5746 (1986)",
-      "date": null,
-      "date_precision": "exact",
-      "language": "English",
-      "original_language": "unknown",
-      "context_status": "partial",
-      "summary_researcher": "היחידות מתארת את אחדות ישראל ככוללת את כל הגילים והמגדרים ואת כל הדורות, גם כשהם מפוזרים גאוגרפית; מפגש בין אנשים מרקעים שונים מאפשר העשרה הדדית שמקרבת לשלמות ולאחדות.",
-      "provenance": {
-        "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-        "signature_status": null,
-        "source_witness": "Chabad.org / TheRebbe.org AID 2512299, Yechidus, 26th Day of Tishrei, 5746 (1986); public English body opened and inspected.",
-        "transmission_type": "Published English rendering in the Sichos in English Collection; original-language transcript or recording not inspected.",
-        "textual_status": "נבדק גוף הפרסום האנגלי במיקום Chabad.org / TheRebbe.org AID 2512299, גוף הפרסום האנגלי, סעיפים 1–2, שורות 246–257.; נבדקו המקטע וההקשר הסמוך בלבד. אין בכך אימות של נוסח המקור או של שלמות היחידות.",
-        "editorial_scope": "Bounded non-verbatim research paraphrase from the inspected English body passage; no full-text reproduction.",
-        "verification_status": "source_text_inspected; published English rendering; partial context; original-language witness not inspected.",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2512299/jewish/Yechidus-26th-Day-of-Tishrei-5746-1986.htm",
-        "accessed": "2026-11-19T12:56:43+02:00"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "public English body opened and inspected",
-        "complete_partial": "partial",
-        "notes": "העמוד מציג פרסום אנגלי מתוארך במסגרת Sichos in English Collection. לא נבדקו תמליל בשפת המקור, הקלטה, כתב־יד או מהדורה מודפסת."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "Link and bounded paraphrase only. Do not reproduce the copyrighted body text."
-      },
-      "relations": [],
-      "taxonomy": {
-        "source_type": "Yechidus",
-        "publisher_collection": "Sichos in English Collection",
-        "topics": [
-          "כיצד המפגש בין יהודים מרקעים שונים תורם לאחדות ולהעשרה הדדית?"
-        ],
-        "source_language": "English",
-        "proposition_language": "Hebrew"
-      },
-      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "נבדק ידנית דרך קורא האינטרנט הציבורי ב־19.11.2026. נפתח גוף הפרסום של AID 2512299; נבדקו רק השורות המצוינות ב-locator. העמוד מציג נוסח אנגלי שפורסם; שפת המקור, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. ההקשר חלקי. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית ולא ציטוט; לא הועתק גוף הפרסום המלא.",
-      "type": "published_english_yechidus_text",
-      "collection": "Sichos in English Collection",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2512299/jewish/Yechidus-26th-Day-of-Tishrei-5746-1986.htm",
-      "response_propositions": [
-        "הפרסום מציג את אחדות ישראל ככוללת נשים וגברים, צעירים ומבוגרים ואף תינוקות, ומשתרעת על פני הדורות למרות פיזור גאוגרפי. הוא מתאר מפגש בין יהודים מרקעים וממקומות שונים כהזדמנות להעשרה הדדית, שבה כל אחד תורם מתכונותיו ומקרב את האחר לשלמות ולאחדות."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org / TheRebbe.org AID 2512299, גוף הפרסום האנגלי, סעיפים 1–2, שורות 246–257."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2512299, גוף הפרסום האנגלי, סעיפים 1–2, שורות 246–257.",
-      "evidence_family_id": "yechidus-5746-26-tishrei-aid2512299",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "yechidus-5746-26-tishrei-aid2512299",
-      "has_content_evidence": true,
-      "verification_scope": "ב־19.11.2026 נפתח ונבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2512299. נבדק רק המקטע Chabad.org / TheRebbe.org AID 2512299, גוף הפרסום האנגלי, סעיפים 1–2, שורות 246–257.. זהו נוסח אנגלי שפורסם; שפת המקור, תמליל עברי או יידי, הקלטה, כתב־יד ומהדורת מקור לא נבדקו בנפרד. הפרופוזיציה היא פרפרזה מחקרית לא־מילולית של המקטע המסומן, ולא ציטוט או ניסוח המערכת המיוחס לרבי. context_status=partial; אין להכליל מעבר להקשר המצוין. לא הועתק גוף הפרסום המלא.",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 2512299, Yechidus, 26th Day of Tishrei, 5746 (1986); English body inspected.",
-      "documented_circumstances": "Yechidus, 26th Day of Tishrei, 5746 (1986)",
-      "question_or_problem": "כיצד המפגש בין יהודים מרקעים שונים תורם לאחדות ולהעשרה הדדית?",
-      "conditions_or_qualifications": [
-        "הטקסט הוא נוסח אנגלי שפורסם; שפת המקור לא נבדקה.",
-        "נבדקו רק המקטע המצוין וההקשר הסמוך; context_status=partial.",
-        "אין לראות בפרפרזה ניסוח מילולי של הרבי או עדות עצמאית נוספת מעבר לאירוע המתואר."
-      ],
-      "audience": "משתתפי יחידות לפני חזרתם למקומותיהם; פרטי הקהל המלאים לא אומתו.",
-      "primary_secondary_status": "Published English rendering of a dated Yechidus; original-language witness not inspected; derived non-independent presentation.",
-      "witness_type": "published_english_translation",
-      "translation_status": "English text published in Sichos in English Collection; original Hebrew/Yiddish text and recording not inspected; non-independent presentation.",
-      "independent_witness": false,
-      "author_name": "Rabbi Menachem M. Schneerson",
-      "author_role": "Speaker attributed by publisher; original language not inspected.",
-      "authorship_status": "Chabad.org / TheRebbe.org מציג את הפרסום כחלק מ-Sichos in English Collection ומייחס אותו לכתבי ושיחות הרבי; שפת המקור והעד המקורי לא נבדקו בנפרד.",
-      "source_role": "published_english_yechidus_translation",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Chabad.org / TheRebbe.org — Sichos in English Collection",
-      "rights_status": "copyrighted-link-only",
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "Distinct dated event. Any original-language transcript, audio or alternate-language presentation of this same event must be linked to this Evidence Family and not counted as an independent witness."
     }
   ],
-  "note": "Nine distinct dated English Yechidus pages were inspected as published translations; none is counted as an independent witness. One existing Yiddish original identity (AID 4736086) was enriched in place from sections יא–יג. Three Hebrew routes returned Internal Error; their English published bodies were inspected in the same run. All new records remain Parsed and context partial; no Verified promotion.",
+  "note": "Nine distinct dated English Yechidus pages were inspected as published translations; none is counted as an independent witness. One existing Yiddish original identity (AID 4736086) was enriched in place from sections יא–יג. Three Hebrew routes returned Internal Error; their English published bodies were inspected in the same run. All new records remain Parsed and context partial; no Verified promotion. Correction 2026-11-19: exact-head reconciliation found six AIDs already canonical in earlier files (2514886, 2515046, 2513225, 2499828, 2511676, 2512299). Their inspected English paraphrases were moved into the existing canonical records. No duplicate source identities remain; only AIDs 2514160, 2511792 and 2511754 are new. AID 4736086 remains an in-place Yiddish enrichment. No Verified promotions.",
   "limitations": [
     "The nine English presentations are translations; original-language transcripts and recordings were not inspected, and translations are not independent witnesses.",
     "Only the specified passages and adjacent context were inspected; no full Yechidus context, manuscript or recording was examined.",
