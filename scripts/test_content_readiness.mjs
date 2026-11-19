@@ -6776,12 +6776,12 @@ assert(batch176Data.source_body_review.filter(r=>r.body_text_inspected).length==
 assert(batch176Data.source_body_review.filter(r=>r.inspected_original_language_body).length===8);
 assert(batch176Data.source_body_review.some(r=>Number(r.aid)===554871&&r.body_text_inspected===false));
 assert.equal(batch176Data.translations_added,1);assert.equal(batch176Data.translations_counted_as_independent_witnesses,0);
-const batch176DistributionQuestion='מה נאמר על פרסום סיפורים, מנהגי חסידות וחזרה על מאמרים?';
+const batch176DistributionQuestion='מה נאמר על השפעה לציבור, יחידות וחזרה על מאמרים?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch176DistributionQuestion,{mode});
  assert(m.answerable,mode+': source-grounded synthesis on publication, Chassidic customs and repeated maamarim must be answerable');
  assert(m.sources.some(e=>sourceAID(e)==='4304430'));
- assert(m.sources.some(e=>sourceAID(e)==='2988859'));
+ assert(m.sources.some(e=>sourceAID(e)==='2989195'));
  assert(m.sources.some(e=>sourceAID(e)==='2988862'));
  assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3);
  assert(m.claims.length>0&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
