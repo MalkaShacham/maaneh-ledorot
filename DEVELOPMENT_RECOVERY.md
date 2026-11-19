@@ -1608,3 +1608,14 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - גבול תכנון בלבד: 1,582 / 854 / 4,103 לפני האצווה ו-1,590 / 854 / 4,112 צפוי אחריה. המדידה בפועל ממתינה ל-exact-head reconciliation; אין להציג את המספרים האלה כתוצאה.
 - readiness test תוקן כך שיכבד שתי נקודות בסיס היסטוריות שנמדדו בנפרד (Batch176 ו-Batch181) במקום להניח שכל גבול תכנון רציף. הפערים נשארים מפורשים ונבדקים מול `metrics_before_source`; אין תיקון ידני של מדדים.
 - PR #35 נשאר פתוח עד שה-Answer Quality Gate יעבור. מיזוג ל-main ופרסום Pages טרם בוצעו.
+
+## 2026-11-19 — Batch184: eight Hebrew Sicha enrichments
+
+- Opened and inspected eight original-Hebrew bodies from BeitChabad.com / he.chabad.org, adding eight bounded, non-verbatim source-grounded propositions to existing identities AIDs 4304430, 2989059, 5959968, 4296159, 2989062, 4385513, 2989052 and 2989054.
+- Each canonical record now carries a new response_proposition_metadata entry with proposition_origin=source_grounded_paraphrase, proposition_verbatim=false, proposition_verification=source_text_inspected, exact proposition_source_locator, provenance, partial-context scope and limitations. No complete copyrighted text was copied.
+- Eight /therebbe publisher routes (AIDs 4645972, 4831491, 4646057, 5054374, 4831547, 5413680, 4731070 and 5019667) redirected to browser-compatibility summary shells without readable bodies. They were recorded as blocked; the same run used eight accessible Hebrew body pages from the /library/article_cdo/aid/ route. No crawler retry or access-control bypass.
+- No new source identities, Evidence Families, independent witnesses or Verified promotions. All eight records remain Parsed.
+- Full-index review found two presentations of AID 4304430 in batches 101 and 146. Batch101 remains canonical; batch146 is marked Linked/non-independent and both are tied to sicha-5724-yud-beis-tammuz-aid4304430. The proposition is stored on the canonical record and is counted once.
+- Exact-head PR-workspace baseline from Answer Quality Gate run 44523818685: 1,587 answer-eligible unique sources / 854 content-verified unique sources / 4,115 propositions. Batch184 expects 1,587 / 854 / 4,123 after eight in-place propositions; this is planning only until reconciliation.
+- Readiness-test correction: when a prior batch's measured actual-after differs from its expected-after, the next batch baseline is checked against the prior expected boundary; each batch's measured variance is validated independently. This avoids treating a recorded reconciliation variance as an unrecorded new batch delta.
+- PR #35 remains open pending a fresh exact-head Answer Quality Gate. No main merge or Pages deployment is claimed until the gate passes.
