@@ -128,12 +128,12 @@
       "actual_after": null,
       "reconciliation_status": "pending",
       "before": {
-        "answer_eligible_unique_sources": 1547,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4029
+        "answer_eligible_propositions": 4040
       },
       "expected_after": {
-        "answer_eligible_unique_sources": 1558,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 4048
       },
@@ -214,9 +214,10 @@
         "170",
         "171",
         "172",
-        "173"
+        "173",
+        "174"
       ],
-      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending. Batch 151 corrected after source-body review and canonical AID deduplication: 5 new identities, 4 in-place enrichments, 4 rechecks, 9 new paraphrases; expected planning boundary 1507/854/3855. Actual reconciliation remains pending. Batch152 planning boundary: 1507/854/3855 → 1509/854/3863; this is not a measured result. Batch151 canonical summary is 5 new identities, 4 enrichments, 4 rechecks and 9 paraphrases; latest acquisition metadata has been aligned to the corrected batch manifest. Batch153 correction: AID 2989386's duplicate batch141 record was removed; corrected planning baseline 1510/854/3867 and expected boundary 1518/854/3878 are not measured. PR-head run 44236655981 reported 1511/854/3868 before this duplicate cleanup; its content-readiness test then failed on AID 2989153 expecting 13 instead of 14. Batch157 baseline uses the PR-head CI workspace measurement after batch156 (run 44265320228): 1519/854/3903; this was not committed to main. Expected 1522/854/3915 is planning only pending full reconciliation. Batch158 expected planning boundary 1522/854/3923 (not measured after batch158); batch159 planning boundary 1530/854/3931 after eight new eligible candidate families and eight inspected propositions. The current public main metrics remain 977/878/2950; no metric has been overwritten. Batch162 planning boundary 1530/854/3951 to 1530/854/3959; this is not a measured post-reconciliation count. No new source identity or Verified promotion. Batch164 adds eight in-place propositions to existing Hebrew Sicha identities; planning boundary 1530/854/3967 → 1530/854/3975 is not measured. No source-family or Verified-count increase is expected. Exact-head CI run 44402037932 measured 1540/854/3996 after Batch167 (not committed/public), while Batch167 planning expected 1539/854/3995; +1 source/+1 proposition variance remains unattributed. Batch168 starts from the measured PR-workspace boundary 1540/854/3996; expected 1540/854/4004 is planning only. Batch172 correction: AID 2988877 already exists in Batch100 and was moved to duplicate_rechecks, reducing Batch172's planned new identities/families/propositions by one. Batch173 adds eight in-place propositions to existing identities only; planned source count remains 1558 and planned propositions become 4048. All figures are planning boundaries pending exact-head reconciliation.",
+      "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement. Canonical AID 2988877 duplicate consolidated into batch100 on 2026-11-18; expected source boundaries from batch141 onward shifted down by one. Batch151 planning boundary is 1502/854/3846 → 1513/854/3857; actual measurement remains pending. Batch 151 corrected after source-body review and canonical AID deduplication: 5 new identities, 4 in-place enrichments, 4 rechecks, 9 new paraphrases; expected planning boundary 1507/854/3855. Actual reconciliation remains pending. Batch152 planning boundary: 1507/854/3855 → 1509/854/3863; this is not a measured result. Batch151 canonical summary is 5 new identities, 4 enrichments, 4 rechecks and 9 paraphrases; latest acquisition metadata has been aligned to the corrected batch manifest. Batch153 correction: AID 2989386's duplicate batch141 record was removed; corrected planning baseline 1510/854/3867 and expected boundary 1518/854/3878 are not measured. PR-head run 44236655981 reported 1511/854/3868 before this duplicate cleanup; its content-readiness test then failed on AID 2989153 expecting 13 instead of 14. Batch157 baseline uses the PR-head CI workspace measurement after batch156 (run 44265320228): 1519/854/3903; this was not committed to main. Expected 1522/854/3915 is planning only pending full reconciliation. Batch158 expected planning boundary 1522/854/3923 (not measured after batch158); batch159 planning boundary 1530/854/3931 after eight new eligible candidate families and eight inspected propositions. The current public main metrics remain 977/878/2950; no metric has been overwritten. Batch162 planning boundary 1530/854/3951 to 1530/854/3959; this is not a measured post-reconciliation count. No new source identity or Verified promotion. Batch164 adds eight in-place propositions to existing Hebrew Sicha identities; planning boundary 1530/854/3967 → 1530/854/3975 is not measured. No source-family or Verified-count increase is expected. Exact-head CI run 44402037932 measured 1540/854/3996 after Batch167 (not committed/public), while Batch167 planning expected 1539/854/3995; +1 source/+1 proposition variance remains unattributed. Batch168 starts from the measured PR-workspace boundary 1540/854/3996; expected 1540/854/4004 is planning only. Batch172 correction: AID 2988877 already exists in Batch100 and was moved to duplicate_rechecks, reducing Batch172's planned new identities/families/propositions by one. Batch173 adds eight in-place propositions to existing identities only; planned source count remains 1558 and planned propositions become 4048. All figures are planning boundaries pending exact-head reconciliation. Batch174 begins from the measured PR-workspace snapshot 1552/854/4040 from run 44430166602; expected 1552/854/4048 after eight in-place propositions is pending exact-head reconciliation.",
       "summary": {
         "batch_id": "168",
         "batch_file": "data/items/content-research-batch-168-2026-11-18.json",
@@ -410,22 +411,26 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "173",
+    "current_batch": "174",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "170",
     "last_batch_summary": {
-      "batch_id": "173",
-      "batch_file": "data/items/content-research-batch-173-2026-11-19.json",
+      "batch_id": "174",
+      "batch_file": "data/items/content-research-batch-174-2026-11-19.json",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
       "metrics_before": {
-        "answer_eligible_unique_sources": 1558,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 4040
       },
-      "metrics_actual_before": null,
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1552,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4040
+      },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1558,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 4048
       },
@@ -440,22 +445,20 @@
       "new_source_identities": 0,
       "existing_identities_enriched": 8,
       "source_bodies_inspected": 8,
-      "new_response_propositions": 0,
       "existing_response_propositions_added": 8,
       "answer_eligible_source_families_added": 0,
       "independent_witnesses_added": 0,
       "non_independent_presentations_added": 0,
-      "translations_added": 0,
       "content_verified_unique_sources_added": 0,
       "blocked_candidate_count": 1,
-      "note": "Eight in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 was inaccessible, and eight accessible original-Hebrew bodies were used as same-run fallback. No new identity or Verified promotion."
+      "note": "Eight additional non-verbatim Hebrew research propositions were appended to eight existing source identities. No new source identity, Evidence Family, independent witness or Verified promotion. AID 4666220 was inaccessible; eight accessible bodies were used as same-run fallback."
     },
-    "last_run_note": "Batch172: 11 original-Hebrew Sicha bodies plus one English translation of a Yiddish personal letter inspected; 12 non-verbatim propositions recorded. The translation is non-independent. Two Hebrew routes returned HTTP 429; an unrelated Yiddish result was excluded. No Verified promotion. Full-index reconciliation pending.",
-    "last_batch_blocked_count": 2,
-    "last_batch_blocked_reason": "Two public Hebrew item pages returned HTTP 429; no body text used. A separate Yiddish text result was identified as a different letter to Jacques Lipchitz and excluded as unrelated. Eleven Hebrew bodies and one English translated body were inspected.",
+    "last_run_note": "Batch174: eight additional distinct Hebrew body passages inspected and appended in place to existing identities AIDs 2989059, 4385558, 2989147, 3008930, 3140218, 4279923, 2989220 and 4296226. AID 4666220 returned Internal Error; eight accessible bodies used as same-run fallback. No new identity, Evidence Family, independent witness or Verified promotion. Exact-head reconciliation and readiness gate pending.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 4666220 returned Internal Error through the public reader; eight accessible original-Hebrew bodies were inspected as same-run fallback.",
     "next_work": [
-      "Run exact-head full-index reconciliation for Batches170–172; verify the AID2988933 duplicate has one canonical Batch141 identity and check all eleven Batch172 AIDs against the complete corpus.",
-      "Pass test_content_readiness.mjs, including historical variance arithmetic, corrected Batch170/171 identity routing, and Batch172 body-locator checks.",
+      "Run exact-head full-index reconciliation for Batches168–174; verify the eight Batch174 identities, proposition locators and historical variance arithmetic.",
+      "Pass test_content_readiness.mjs, including Batch172→173→174 metric boundaries and claim-level citation checks.",
       "After the exact-head Answer Quality Gate is green, merge PR #35; then verify main metrics, Actions and GitHub Pages."
     ],
     "last_reconciliation": {
@@ -820,42 +823,70 @@
       "reconciliation_status": "reconciled"
     },
     "last_manual_web_review": {
-      "batch_id": "172",
-      "batch_file": "data/items/content-research-batch-172-2026-11-19.json",
+      "batch_id": "174",
+      "batch_file": "data/items/content-research-batch-174-2026-11-19.json",
+      "generated": "2026-11-19T02:56:58+02:00",
+      "reviewed_at": "2026-11-19T02:56:58+02:00",
+      "title": "Eight additional in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 8,
+      "metadata_only_items_rechecked": 0,
+      "search_extracts_inspected": 0,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1547,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4029
+        "answer_eligible_propositions": 4040
       },
-      "metrics_actual_before": null,
+      "metrics_before_source": "Measured by exact-head Answer Quality Gate run 44430166602 on commit c3521f264b51fd113a457fc980243d90e86bc6b1 before Batch174; PR-workspace measurement, not main/public metrics.",
+      "metrics_actual_before": {
+        "answer_eligible_unique_sources": 1552,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4040
+      },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1559,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4041
+        "answer_eligible_propositions": 4048
       },
-      "metrics_after_actual": null,
+      "metrics_actual_after": null,
       "metrics_delta_actual": null,
+      "reconciliation_variance": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 12,
+        "answer_eligible_unique_sources": 0,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 12
+        "answer_eligible_propositions": 8
       },
       "metrics_delta_at_batch_boundary_is_planning_only": true,
-      "new_source_identities": 12,
-      "existing_identities_enriched": 0,
-      "source_bodies_inspected": 12,
-      "new_response_propositions": 12,
-      "existing_response_propositions_added": 0,
-      "answer_eligible_source_families_added": 12,
-      "independent_witnesses_added": 11,
-      "non_independent_presentations_added": 1,
-      "translations_added": 1,
+      "enriched_aids": [
+        2989059,
+        4385558,
+        2989147,
+        3008930,
+        3140218,
+        4279923,
+        2989220,
+        4296226
+      ],
+      "blocked_aids": [
+        4666220
+      ],
+      "translations_added": 0,
       "translations_counted_as_independent_witnesses": 0,
-      "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 2,
-      "note": "Eleven original-Hebrew Sicha bodies plus one English translation of a Yiddish personal letter inspected. The translation is a non-independent presentation; the original Yiddish viewer was blocked. Full-index reconciliation pending."
+      "note": "Eight additional non-verbatim Hebrew research propositions were appended to eight existing source identities. No new source identity, Evidence Family, independent witness or Verified promotion. AID 4666220 was inaccessible; eight accessible bodies were used as same-run fallback."
     },
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
@@ -941,568 +972,138 @@
       "169",
       "170",
       "171",
-      "172"
+      "172",
+      "174"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
-      "batch_id": "172",
-      "batch_file": "data/items/content-research-batch-172-2026-11-19.json",
+      "batch_id": "174",
+      "batch_file": "data/items/content-research-batch-174-2026-11-19.json",
+      "generated": "2026-11-19T02:56:58+02:00",
+      "reviewed_at": "2026-11-19T02:56:58+02:00",
+      "title": "Eight additional in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "metrics_before": {
-        "answer_eligible_unique_sources": 1547,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4029
-      },
-      "metrics_actual_before": null,
-      "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1559,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4041
-      },
-      "metrics_after_actual": null,
-      "metrics_delta_actual": null,
-      "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 12,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 12
-      },
-      "metrics_delta_at_batch_boundary_is_planning_only": true,
-      "new_source_identities": 12,
-      "existing_identities_enriched": 0,
-      "source_bodies_inspected": 12,
-      "new_response_propositions": 12,
-      "existing_response_propositions_added": 0,
-      "answer_eligible_source_families_added": 12,
-      "independent_witnesses_added": 11,
-      "non_independent_presentations_added": 1,
-      "translations_added": 1,
-      "translations_counted_as_independent_witnesses": 0,
-      "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 2,
-      "note": "Eleven original-Hebrew Sicha bodies plus one English translation of a Yiddish personal letter inspected. The translation is a non-independent presentation; the original Yiddish viewer was blocked. Full-index reconciliation pending."
-    },
-    "previous_manual_web_review": {
-      "batch_id": "170",
-      "batch_file": "data/items/content-research-batch-170-2026-11-19.json",
-      "generated": "2026-11-19T00:56:14+02:00",
-      "reviewed_at": "2026-11-19T00:56:14+02:00",
-      "title": "Ten inspected original-Hebrew source passages: eight new identities and two in-place enrichments",
-      "status": "pending_reconciliation",
-      "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 15,
-      "source_bodies_inspected": 10,
-      "source_body_pages_opened": 13,
-      "metadata_only_items_rechecked": 1,
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 8,
+      "metadata_only_items_rechecked": 0,
       "search_extracts_inspected": 0,
       "search_extracts_used_as_content": 0,
-      "new_source_identities": 8,
-      "existing_identities_enriched": 2,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 8,
-      "existing_response_propositions_added": 2,
-      "total_new_paraphrase_entries": 10,
-      "answer_eligible_source_families_added": 8,
-      "independent_witnesses_added": 8,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
       "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1540,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4012
+        "answer_eligible_propositions": 4040
       },
-      "metrics_before_source": "Answer Quality Gate run 44409060151, scripts/reconcile_metrics.py output after Batch169: 1540 / 854 / 4012. The run did not complete readiness and these figures are not public main metrics.",
+      "metrics_before_source": "Measured by exact-head Answer Quality Gate run 44430166602 on commit c3521f264b51fd113a457fc980243d90e86bc6b1 before Batch174; PR-workspace measurement, not main/public metrics.",
       "metrics_actual_before": {
-        "answer_eligible_unique_sources": 1540,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4012
+        "answer_eligible_propositions": 4040
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1548,
+        "answer_eligible_unique_sources": 1552,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4022
+        "answer_eligible_propositions": 4048
       },
       "metrics_actual_after": null,
       "metrics_delta_actual": null,
       "reconciliation_variance": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 8,
+        "answer_eligible_unique_sources": 0,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 10
+        "answer_eligible_propositions": 8
       },
       "metrics_delta_at_batch_boundary_is_planning_only": true,
-      "new_aids": [
-        2988933,
+      "enriched_aids": [
         2989059,
+        4385558,
         2989147,
-        2989220,
         3008930,
         3140218,
         4279923,
-        4385558
-      ],
-      "enriched_aids": [
-        4279876,
+        2989220,
         4296226
       ],
-      "rechecked_aids": [],
       "blocked_aids": [
-        2989215,
-        5989907
+        4666220
       ],
-      "excluded_aids": [
-        2989556,
-        5989700,
-        2988661
-      ],
-      "language_distribution": {
-        "Hebrew": 10
-      },
-      "original_language_distribution": {
-        "Hebrew": 10
-      },
-      "source_type_distribution": {
-        "Sicha": 9,
-        "Maamarim": 1
-      },
-      "evidence_family_ids": [
-        "sicha-5719-13-tammuz-pinchass-aid2989059",
-        "sicha-5726-yud-shevat-day2-beshalach-aid4385558",
-        "sicha-5713-12-tammuz-thursday-balak-aid2989147",
-        "maamar-5718-basi-legani-yud-shevat-maamar2-aid3008930",
-        "sicha-5752-7-tishrei-machane-israel-aid3140218",
-        "sicha-5712-20-menachem-av-aid4279923",
-        "sicha-5716-simchat-torah-aid2988933",
-        "sicha-5722-purim-aid2989220",
-        "sicha-5723-12-tammuz-thursday-balak-aid4296226",
-        "sicha-5712-mishpatim-shekalim-aid4279876"
-      ],
-      "same_family_items": [],
       "translations_added": 0,
       "translations_counted_as_independent_witnesses": 0,
-      "fallback_source_attempted": true,
-      "fallback_source_results": {
-        "accessible_item_level_bodies": 10,
-        "new_identity_bodies": 8,
-        "existing_identity_bodies": 2,
-        "language": "Hebrew",
-        "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha and Maamar bodies",
-        "note": "After AID 2989215 and AID 5989907 returned HTTP 429, and duplicate/collection candidates were excluded, eight new item-level bodies and two existing canonical bodies were inspected in the same run."
-      },
-      "deduplication_check": {
-        "full_index_scan_available": true,
-        "full_index_scan_pending_reconciliation": false,
-        "public_search_index_snapshot": "data/public-search-index.json generated 2026-11-15; candidate AID scan combined with all content-research-batch files 150–169 and exact canonical files for AIDs 4296226 and 4279876.",
-        "batch_files_checked": "content-research-batch-150 through content-research-batch-169 (20 files); AID 4296226 matched batch143 and AID 4279876 matched batch153.",
-        "target_identity_matches": 10,
-        "target_identity_duplicates": 0,
-        "selected_unique_evidence_families": 10,
-        "canonical_identity_collisions": [],
-        "missing_canonical_identities": [],
-        "all_target_identities_answer_eligible": null,
-        "same_family_items": [],
-        "translations_counted_as_independent_witnesses": 0,
-        "note": "Eight proposed new AIDs were absent from the 2026-11-15 full public-search-index and batch files 150–169. The two enriched AIDs 4296226 and 4279876 each resolve to exactly one existing canonical record with unchanged Evidence Family. AID 5989700 was already represented in the canonical corpus; AID 2989556 was opened but not selected for body-level review, so no duplicate status is asserted. The collection page and two rate-limited routes were excluded. Exact current-head reconciliation remains pending."
-      },
-      "blocked_candidate_count": 2,
-      "blocked_candidates": [
-        {
-          "aid": 2989215,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989215",
-          "reason": "HTTP 429 Too Many Requests when opening the public publisher page; no body text inspected.",
-          "handling": "Excluded from content evidence; no retry or access-control bypass. Eight new and two existing accessible Hebrew item bodies were inspected as same-run fallback."
-        },
-        {
-          "aid": 5989907,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/5989907",
-          "reason": "HTTP 429 Too Many Requests when opening the public publisher page; no body text inspected.",
-          "handling": "Excluded from content evidence; no retry or access-control bypass. Eight new and two existing accessible Hebrew item bodies were inspected as same-run fallback."
-        }
-      ],
-      "metadata_only_candidate_count": 1,
-      "metadata_only_candidates": [
-        {
-          "aid": 2988661,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/2988661",
-          "reason": "Collection-level page for the 5711 farbrengens; not an item-level talk body. No proposition was inferred from the collection title or summary.",
-          "handling": "Excluded as a non-item navigation/collection page."
-        }
-      ],
-      "excluded_candidate_count": 3,
-      "excluded_candidates": [
-        {
-          "aid": 2989556,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989556",
-          "reason": "Candidate page was opened, but this item was not selected for body-level content review in Batch170; no proposition or canonical identity was created by this batch. Its corpus identity status is not asserted here.",
-          "handling": "Excluded from this batch's new-identity and proposition counts; candidate remains unadjudicated and may be reviewed in a later batch."
-        },
-        {
-          "aid": 5989700,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/5989700",
-          "reason": "Existing canonical identity already added in batch 166; not counted again.",
-          "handling": "Excluded from this batch to avoid duplicate identity; no proposition added."
-        },
-        {
-          "aid": 2988661,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/2988661",
-          "reason": "Collection-level page for the 5711 farbrengens; not an item-level talk body. No proposition was inferred from the collection title or summary.",
-          "handling": "Excluded as a non-item navigation/collection page."
-        }
-      ],
-      "source_body_review": [
-        {
-          "item_aid": 2989059,
-          "id": "chabad-sicha-2989059",
-          "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-          "evidence_family_id": "sicha-5719-13-tammuz-pinchass-aid2989059",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989059",
-          "web_source_ref": "turn804157view6",
-          "body_locator": "he.chabad.org AID 2989059, גוף השיחה, סעיפים א׳–ב׳, שורות 181–186.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מתעד דברים שהרבי מייחס לאדמו״ר הריי״צ: שמחת י״ב–י״ג תמוז מוצגת כשמחה על הצלת התורה, ומתוכה נגזרת דרישה ללימוד תורה ללא פשרות ולהקפדה שמחנכים ומורים יקיימו תורה ומצוות בפועל. הקטע מציג את הנהגתו האישית של המחנך כחלק מתוכן החינוך, ולא רק כאמצעי להעברת ידע.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 2989059, גוף השיחה, סעיפים א׳–ב׳, שורות 181–186.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 2989059; original-language Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989059, he.chabad.org AID 2989059, גוף השיחה, סעיפים א׳–ב׳, שורות 181–186., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. הפרופוזיציה מתארת דברים המיוחסים לאדמו״ר הריי״צ כפי שהם מובאים בגוף שיחת הרבי; אין לייחסה כהוראה עצמאית שנאמרה במקור זה ללא שרשרת המסירה. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הפרופוזיציה מתארת דברים המיוחסים לאדמו״ר הריי״צ כפי שהם מובאים בגוף שיחת הרבי; אין לייחסה כהוראה עצמאית שנאמרה במקור זה ללא שרשרת המסירה."
-          ],
-          "existing_identity": false,
-          "new_independent_witness": true,
-          "action": "new_identity_created"
-        },
-        {
-          "item_aid": 4385558,
-          "id": "chabad-sicha-4385558",
-          "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-          "evidence_family_id": "sicha-5726-yud-shevat-day2-beshalach-aid4385558",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4385558",
-          "web_source_ref": "turn804157view3",
-          "body_locator": "he.chabad.org AID 4385558, גוף השיחה, סעיף א׳, שורות 175–178.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מביא את פירוש הבעש״ט ללשון המשנה כפי שנמסר דרך דברי אדמו״ר הריי״צ, ומסביר מנגנון של חשבון מוסרי: תחילה האדם מתבקש לשפוט מקרה של אדם אחר לפי אמות המידה שלו, ולאחר מכן אותו קנה מידה מוחל על מעשיו שלו. כך מוסבר גם סדר המילים ״דין״ ואחר כך ״חשבון״.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 4385558, גוף השיחה, סעיף א׳, שורות 175–178.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 4385558; original-language Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4385558, he.chabad.org AID 4385558, גוף השיחה, סעיף א׳, שורות 175–178., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. הייחוס לבעש״ט מובא בשרשרת מסירה דרך אדמו״ר הריי״צ; לא נבדק מקור קדום עצמאי של דברי הבעש״ט. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הייחוס לבעש״ט מובא בשרשרת מסירה דרך אדמו״ר הריי״צ; לא נבדק מקור קדום עצמאי של דברי הבעש״ט."
-          ],
-          "existing_identity": false,
-          "new_independent_witness": true,
-          "action": "new_identity_created"
-        },
-        {
-          "item_aid": 2989147,
-          "id": "chabad-sicha-2989147",
-          "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-          "evidence_family_id": "sicha-5713-12-tammuz-thursday-balak-aid2989147",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989147",
-          "web_source_ref": "turn452469view4",
-          "body_locator": "he.chabad.org AID 2989147, גוף השיחה, סעיפים א׳–ב׳, שורות 175–179.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מגדיר ״מחשבה זרה״ לא בהכרח כמחשבה פסולה מצד תוכנה, אלא כמחשבה שאינה שייכת לעיסוק הנוכחי או לזמנו; גם מחשבה טובה ונעלית עלולה להפריע כאשר היא מופיעה במקום שאינו מתאים. ההסבר נאמר בהקשר של סדר ההתוועדות ואמירת מאמר בתחילתה.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 2989147, גוף השיחה, סעיפים א׳–ב׳, שורות 175–179.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 2989147; original-language Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989147, he.chabad.org AID 2989147, גוף השיחה, סעיפים א׳–ב׳, שורות 175–179., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. הפרופוזיציה מוגבלת להבחנה המושגית ולהקשר ההתוועדות המתואר במקטע; אין להסיק ממנה כלל פסיכולוגי או הלכתי גורף. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הפרופוזיציה מוגבלת להבחנה המושגית ולהקשר ההתוועדות המתואר במקטע; אין להסיק ממנה כלל פסיכולוגי או הלכתי גורף."
-          ],
-          "existing_identity": false,
-          "new_independent_witness": true,
-          "action": "new_identity_created"
-        },
-        {
-          "item_aid": 3008930,
-          "id": "chabad-maamar-3008930",
-          "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-          "evidence_family_id": "maamar-5718-basi-legani-yud-shevat-maamar2-aid3008930",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/3008930",
-          "web_source_ref": "turn452469view5",
-          "body_locator": "he.chabad.org AID 3008930, גוף המאמר, סעיפים ד׳–ה׳, שורות 194–198.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_maamar_hanacha",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מציג את הרווח מעסקי מסחר כאמצעי לקיום צדקה, גמילות חסדים ומצוות נוספות, וכן לפינוי המוח והלב ללימוד תורה ולתפילה. הוא קושר את יושר העסק להכרה שתכליתו עבודת ה׳, ומזהיר מפני שקיעה מלאה בדאגות הפרנסה הפוגעת בריכוז הרוחני.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 3008930, גוף המאמר, סעיפים ד׳–ה׳, שורות 194–198.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 3008930; original-language Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 3008930, he.chabad.org AID 3008930, גוף המאמר, סעיפים ד׳–ה׳, שורות 194–198., ביום 19.11.2026. הנחה למאמר, המסומנת הנחה בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. זהו ניסוח מתוך הנחה בלתי מוגה למאמר; אין לראות בו הבטחה לתוצאה כלכלית, ייעוץ פיננסי או פסיקה הלכתית מלאה. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "זהו ניסוח מתוך הנחה בלתי מוגה למאמר; אין לראות בו הבטחה לתוצאה כלכלית, ייעוץ פיננסי או פסיקה הלכתית מלאה."
-          ],
-          "existing_identity": false,
-          "new_independent_witness": true,
-          "action": "new_identity_created"
-        },
-        {
-          "item_aid": 3140218,
-          "id": "chabad-sicha-3140218",
-          "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-          "evidence_family_id": "sicha-5752-7-tishrei-machane-israel-aid3140218",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/3140218",
-          "web_source_ref": "turn804157view4",
-          "body_locator": "he.chabad.org AID 3140218, גוף השיחה, סעיפים ג׳–ד׳, שורות 186–190.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מציע להפוך את דחף התחרות בין בעלי עסקים לשותפות שמביאה תועלת לשני הצדדים, ומבסס זאת על אהבת ישראל ועל הרצון בהצלחת הזולת כפי שאדם רוצה בהצלחת עצמו. השותפות מתוארת כהתאחדות מעשית של אינטרסים וכ״איש אחד בלב אחד״, ולא כתחרות שמטרתה להזיק.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 3140218, גוף השיחה, סעיפים ג׳–ד׳, שורות 186–190.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 3140218; original-language Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 3140218, he.chabad.org AID 3140218, גוף השיחה, סעיפים ג׳–ד׳, שורות 186–190., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. הפרופוזיציה מתארת את המסגרת האתית-תיאולוגית שבשיחה; אין להציגה כייעוץ משפטי או עסקי, או כהוכחה אמפירית להצלחת שותפויות. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הפרופוזיציה מתארת את המסגרת האתית-תיאולוגית שבשיחה; אין להציגה כייעוץ משפטי או עסקי, או כהוכחה אמפירית להצלחת שותפויות."
-          ],
-          "existing_identity": false,
-          "new_independent_witness": true,
-          "action": "new_identity_created"
-        },
-        {
-          "item_aid": 4279923,
-          "id": "chabad-sicha-4279923",
-          "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-          "evidence_family_id": "sicha-5712-20-menachem-av-aid4279923",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4279923",
-          "web_source_ref": "turn804157view5",
-          "body_locator": "he.chabad.org AID 4279923, גוף השיחה, סעיף י״ב, שורות 283–291.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מבחין בין יציאה הדרגתית של תלמיד ישיבה לעולם הפרנסה לבין מעבר חד לאחר שהותו בישיבה עד סמוך ליציאה; במסגרת המודל הרוחני של השיחה, המעבר החד נועד לשמר את חיות הלימוד ואת היכולת לחזור אליו גם בתוך העיסוק העסקי. הדברים נקשרים להישענות על הקב״ה בפרנסה.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 4279923, גוף השיחה, סעיף י״ב, שורות 283–291.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 4279923; original-language Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4279923, he.chabad.org AID 4279923, גוף השיחה, סעיף י״ב, שורות 283–291., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. זהו מודל רוחני המוצג בשיחה בהקשר מסוים; אין להציגו כהמלצה תעסוקתית או כלכלית כללית לכל אדם. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "זהו מודל רוחני המוצג בשיחה בהקשר מסוים; אין להציגו כהמלצה תעסוקתית או כלכלית כללית לכל אדם."
-          ],
-          "existing_identity": false,
-          "new_independent_witness": true,
-          "action": "new_identity_created"
-        },
-        {
-          "item_aid": 2988933,
-          "id": "chabad-sicha-2988933",
-          "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-          "evidence_family_id": "sicha-5716-simchat-torah-aid2988933",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2988933",
-          "web_source_ref": "turn804157view1",
-          "body_locator": "he.chabad.org AID 2988933, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הדיון מחלק תחילה את המעשים לחיוב, איסור ורשות, ואז מסביר כי במסגרת הדרישה ״בכל דרכיך דעהו״ אין תחום ניטרלי: פעולה שנעשית מתוך כוונה שתסייע לעבודת ה׳ עשויה להיחשב מצווה, הכשר מצווה או הכנה למצווה; פעולה שנעשית ביודעין ללא תכלית כזו מתוארת במקטע כעניין אסור.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 2988933, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 2988933; original-language Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2988933, he.chabad.org AID 2988933, גוף השיחה, סעיפים א׳–ב׳, שורות 178–189., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. זהו מהלך רעיוני בשיחה ולא פסיקה הלכתית עצמאית לכל פעולה; נבדקו רק הסעיפים המצוטטים. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "זהו מהלך רעיוני בשיחה ולא פסיקה הלכתית עצמאית לכל פעולה; נבדקו רק הסעיפים המצוטטים."
-          ],
-          "existing_identity": false,
-          "new_independent_witness": true,
-          "action": "new_identity_created"
-        },
-        {
-          "item_aid": 2989220,
-          "id": "chabad-sicha-2989220",
-          "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
-          "evidence_family_id": "sicha-5722-purim-aid2989220",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2989220",
-          "web_source_ref": "turn804157view2",
-          "body_locator": "he.chabad.org AID 2989220, גוף השיחה, סעיפים ס״ב, שורות 779–785.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מבקר סדר עדיפויות חינוכי שבו הישגים בלימודי חול ובמבחנים זוכים לפרסום ולשבח, בעוד ידיעת דפי גמרא וקיום מצוות אינם זוכים להכרה דומה. השיחה רואה בהיפוך סדרי ההערכה פגיעה אפשרית ביסודות החינוך הכשר, במסגרת ביקורתה על נורמות מסוימות בישיבות.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 2989220, גוף השיחה, סעיפים ס״ב, שורות 779–785.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 2989220; original-language Hebrew body passage inspected 2026-11-19.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 2989220, he.chabad.org AID 2989220, גוף השיחה, סעיפים ס״ב, שורות 779–785., ביום 19.11.2026. תמליל שיחה, המסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד, האוטוגרף והנוסח המוגה לא נבדקו. הפרפרזה היא תמצית מחקר לא-מילולית התחומה למקטע המצוין; context_status=partial. הקטע הוא ביקורת פולמוסית בהקשר חינוכי מסוים; אין להכליל ממנו תיאור עובדתי על כל הישיבות או על כל מסגרת לימודים. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הקטע הוא ביקורת פולמוסית בהקשר חינוכי מסוים; אין להכליל ממנו תיאור עובדתי על כל הישיבות או על כל מסגרת לימודים."
-          ],
-          "existing_identity": false,
-          "new_independent_witness": true,
-          "action": "new_identity_created"
-        },
-        {
-          "item_aid": 4296226,
-          "id": "chabad-sicha-4296226",
-          "canonical_file": "data/items/content-research-batch-143-2026-11-17.json",
-          "evidence_family_id": "sicha-5723-12-tammuz-thursday-balak-aid4296226",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4296226",
-          "web_source_ref": "turn782008view0",
-          "body_locator": "he.chabad.org AID 4296226, גוף השיחה, סעיף ח׳, שורות 248–252.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מזהיר שהאווירה של המדינה והסביבה עשויה להשפיע על האדם גם בלי שיחוש בכך, בניגוד למזון וללבוש שניתן לבדוק במישרין; משום שהשפעת ה״אויר״ אינה מוחשית, נדרשת זהירות מיוחדת שהסביבה הרוחנית תהיה קשורה למחויבות הפנימית של הנשמה.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 4296226, גוף השיחה, סעיף ח׳, שורות 248–252.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 4296226; original-language Hebrew body passage inspected 2026-11-19; existing canonical identity retained.",
-          "verification_scope": "נפתח ונבדק מחדש גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4296226, he.chabad.org AID 4296226, גוף השיחה, סעיף ח׳, שורות 248–252., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה מתארת את המהלך הרוחני-תיאולוגי של השיחה על השפעת הסביבה; אין להציגה כטענה אמפירית או כמיון גורף של אנשים או מדינות. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הפרפרזה מתארת את המהלך הרוחני-תיאולוגי של השיחה על השפעת הסביבה; אין להציגה כטענה אמפירית או כמיון גורף של אנשים או מדינות."
-          ],
-          "existing_identity": true,
-          "new_independent_witness": false,
-          "action": "enriched_existing_identity_in_place"
-        },
-        {
-          "item_aid": 4279876,
-          "id": "chabad-sicha-4279876",
-          "canonical_file": "data/items/content-research-batch-153-2026-11-18.json",
-          "evidence_family_id": "sicha-5712-mishpatim-shekalim-aid4279876",
-          "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/4279876",
-          "web_source_ref": "turn804157view0",
-          "body_locator": "he.chabad.org AID 4279876, גוף השיחה, סעיף ב׳, שורות 178–186.",
-          "language": "Hebrew",
-          "original_language": "Hebrew",
-          "witness_type": "published_unedited_hebrew_sicha_transcript",
-          "body_page_opened": true,
-          "inspected_original_language_body": true,
-          "body_text_inspected": true,
-          "title_or_metadata_only": false,
-          "proposition": "הקטע מתאר עבודה פנימית המתחילה בהתעוררות שכלית ומתבטאת לאחר מכן ברגש הלב, לצד דרישה להתמיד במילוי השליחות בלי להסתפק בהישגים שכבר הושגו; לשאלה כיצד דרישה גבוהה כזו אפשרית לכל אדם, השיחה משיבה שהיכולת ניתנת לו מלמעלה.",
-          "proposition_language": "Hebrew",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 4279876, גוף השיחה, סעיף ב׳, שורות 178–186.",
-          "provenance": "BeitChabad.com / he.chabad.org, AID 4279876; original-language Hebrew body passage inspected 2026-11-19; existing canonical identity retained.",
-          "verification_scope": "נפתח ונבדק מחדש גוף הפרסום העברי הציבורי ב-BeitChabad.com / he.chabad.org, AID 4279876, he.chabad.org AID 4279876, גוף השיחה, סעיף ב׳, שורות 178–186., ביום 19.11.2026. העמוד מסומן בלתי מוגה; נבדקו רק המיקום המצוין וההקשר הסמוך. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. זהו הסבר תיאולוגי על כוחות הניתנים מלמעלה, ולא מדד פסיכולוגי או הבטחה שכל אדם יחווה אותה יכולת באותו אופן. לא הועתק טקסט מוגן במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "זהו הסבר תיאולוגי על כוחות הניתנים מלמעלה, ולא מדד פסיכולוגי או הבטחה שכל אדם יחווה אותה יכולת באותו אופן."
-          ],
-          "existing_identity": true,
-          "new_independent_witness": false,
-          "action": "enriched_existing_identity_in_place"
-        }
-      ],
-      "existing_identity_updates": [
-        {
-          "aid": 4296226,
-          "id": "chabad-sicha-4296226",
-          "canonical_file": "data/items/content-research-batch-143-2026-11-17.json",
-          "evidence_family_id": "sicha-5723-12-tammuz-thursday-balak-aid4296226",
-          "action": "enriched_existing_identity_in_place",
-          "existing_propositions_before": 3,
-          "propositions_added": 1,
-          "total_propositions_after": 4,
-          "source_body_locator": "he.chabad.org AID 4296226, גוף השיחה, סעיף ח׳, שורות 248–252.",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 4296226, גוף השיחה, סעיף ח׳, שורות 248–252.",
-          "proposition": "הקטע מזהיר שהאווירה של המדינה והסביבה עשויה להשפיע על האדם גם בלי שיחוש בכך, בניגוד למזון וללבוש שניתן לבדוק במישרין; משום שהשפעת ה״אויר״ אינה מוחשית, נדרשת זהירות מיוחדת שהסביבה הרוחנית תהיה קשורה למחויבות הפנימית של הנשמה.",
-          "web_source_ref": "turn782008view0",
-          "note": "Existing AID and Evidence Family retained; new passage inspected and appended in place; no Verified promotion."
-        },
-        {
-          "aid": 4279876,
-          "id": "chabad-sicha-4279876",
-          "canonical_file": "data/items/content-research-batch-153-2026-11-18.json",
-          "evidence_family_id": "sicha-5712-mishpatim-shekalim-aid4279876",
-          "action": "enriched_existing_identity_in_place",
-          "existing_propositions_before": 4,
-          "propositions_added": 1,
-          "total_propositions_after": 5,
-          "source_body_locator": "he.chabad.org AID 4279876, גוף השיחה, סעיף ב׳, שורות 178–186.",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "he.chabad.org AID 4279876, גוף השיחה, סעיף ב׳, שורות 178–186.",
-          "proposition": "הקטע מתאר עבודה פנימית המתחילה בהתעוררות שכלית ומתבטאת לאחר מכן ברגש הלב, לצד דרישה להתמיד במילוי השליחות בלי להסתפק בהישגים שכבר הושגו; לשאלה כיצד דרישה גבוהה כזו אפשרית לכל אדם, השיחה משיבה שהיכולת ניתנת לו מלמעלה.",
-          "web_source_ref": "turn804157view0",
-          "note": "Existing AID and Evidence Family retained; new passage inspected and appended in place; no Verified promotion."
-        }
-      ],
-      "existing_identity_updates_count": 2,
-      "note": "Eight new source identities and two in-place enrichments from inspected Hebrew body passages. One existing canonical AID, one unselected candidate, one collection page and two rate-limited routes were excluded. No Verified promotion. Exact-head reconciliation pending."
+      "note": "Eight additional non-verbatim Hebrew research propositions were appended to eight existing source identities. No new source identity, Evidence Family, independent witness or Verified promotion. AID 4666220 was inaccessible; eight accessible bodies were used as same-run fallback."
     },
-    "current_batch_file": "data/items/content-research-batch-173-2026-11-19.json",
+    "previous_manual_web_review": {
+      "batch_id": "173",
+      "batch_file": "data/items/content-research-batch-173-2026-11-19.json",
+      "generated": "2026-11-19T02:27:11+02:00",
+      "reviewed_at": "2026-11-19T02:27:11+02:00",
+      "title": "Eight in-place Hebrew source enrichments across seven Sichos and one Maamar; AID 4666220 blocked and replaced by accessible bodies.",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 8,
+      "metadata_only_items_rechecked": 0,
+      "search_extracts_inspected": 0,
+      "search_extracts_used_as_content": 0,
+      "new_source_identities": 0,
+      "existing_identities_enriched": 8,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 0,
+      "existing_response_propositions_added": 8,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 0,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1558,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4040
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1558,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 4048
+      },
+      "metrics_actual_before": null,
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "reconciliation_variance": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 0,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "metrics_delta_at_batch_boundary_is_planning_only": true,
+      "enriched_aids": [
+        2989059,
+        4385558,
+        2989147,
+        3008930,
+        3140218,
+        4279923,
+        2989220,
+        4296226
+      ],
+      "blocked_aids": [
+        4666220
+      ],
+      "translations_added": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "note": "Eight existing Hebrew source identities were enriched in place with eight additional source-grounded paraphrases. AID 4666220 was inaccessible through the public reader; eight accessible bodies were used as same-run fallback. No new source identity, Evidence Family, independent witness or Verified promotion."
+    },
+    "current_batch_file": "data/items/content-research-batch-174-2026-11-19.json",
     "status": "pending_reconciliation",
     "pending": true,
     "last_manual_review": {
@@ -2061,21 +1662,21 @@
     },
     "last_reviewed_batch": "171"
   },
-  "current_batch": "173",
-  "updated_at": "2026-11-19T02:27:11+02:00",
-  "current_batch_file": "data/items/content-research-batch-173-2026-11-19.json",
+  "current_batch": "174",
+  "updated_at": "2026-11-19T02:56:58+02:00",
+  "current_batch_file": "data/items/content-research-batch-174-2026-11-19.json",
   "status": "pending_reconciliation",
   "quality_gate": {
-    "status": "pending_after_batch_173",
-    "last_failed_run_id": 44427907501,
-    "last_failure": "Exact-head run failed because AID 2988877 was present both in Batch100 and as a new Batch172 identity. Batch172 now records it as a duplicate recheck; Batch173 adds eight in-place Hebrew propositions.",
+    "status": "pending_after_batch_174",
+    "last_failed_run_id": 44430166602,
+    "last_failure": "Run 44430166602 failed on a stale historical reconciliation-status assertion; test_content_readiness.mjs now validates measured variance and Batch174 boundaries.",
     "note": "Run a fresh exact-head reconciliation and readiness gate before merge.",
-    "run_status": "pending_exact_head_batch_173",
+    "run_status": "pending_exact_head_batch_174",
     "workflow_run_id": null
   },
   "publication": {
     "status": "pending_merge_and_pages_verification",
-    "note": "Batch173 and the Batch172 duplicate correction are on PR #35 only. No main merge or Pages deployment is claimed before a green exact-head gate and post-merge deployment.",
+    "note": "Batch174 and prior corrections are on PR #35 only. No main merge or Pages deployment is claimed before a green exact-head gate and post-merge deployment.",
     "url": "https://malkashacham.github.io/maaneh-ledorot",
     "last_verified_main_sha": "2c7231f9bb043faafdd61c94040111723d95ac04"
   }
