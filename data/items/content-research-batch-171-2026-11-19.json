@@ -112,15 +112,15 @@
   "full_text_copied": false,
   "scan_only_verification_used": false,
   "metrics_before": {
-    "answer_eligible_unique_sources": 1548,
+    "answer_eligible_unique_sources": 1547,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4022
+    "answer_eligible_propositions": 4021
   },
   "metrics_before_source": "Planning boundary from Batch170 metrics_expected_after; exact-head reconciliation pending. These are not public main metrics.",
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1548,
+    "answer_eligible_unique_sources": 1547,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4030
+    "answer_eligible_propositions": 4029
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
@@ -132,7 +132,7 @@
     "answer_eligible_propositions": 8
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "metrics_note": "Eight in-place propositions are expected to add eight answer-eligible proposition entries without adding source identities, Evidence Families or Verified identities. Exact full-index reconciliation must confirm the boundary.",
+  "metrics_note": "Planning boundary follows Batch170's corrected seven-new-identity count and removal of duplicate AID 2988933. Exact actual metrics and proposition deduplication are determined by full-index reconciliation.",
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
@@ -144,13 +144,13 @@
     "all_target_identities_answer_eligible": true,
     "same_family_items": [],
     "translations_counted_as_independent_witnesses": 0,
-    "note": "Each of the eight AIDs resolves to one existing Batch170 canonical record and one unchanged Evidence Family. Full-corpus scan and final eligibility audit remain pending."
+    "note": "AID 2988933 now resolves to the sole canonical Batch141 record; the Batch170 duplicate was removed and Batch171's distinct proposition was consolidated into Batch141. Full-corpus reconciliation must confirm all eight enriched identities."
   },
   "source_body_review": [
     {
       "item_aid": 2988933,
       "id": "chabad-sicha-2988933",
-      "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
       "evidence_family_id": "sicha-5716-simchat-torah-aid2988933",
       "publisher_item_url": "https://he.chabad.org/library/article_cdo/aid/2988933",
       "web_source_ref": "turn781677view0",
@@ -176,7 +176,8 @@
       ],
       "existing_identity": true,
       "new_independent_witness": false,
-      "action": "enriched_existing_identity_in_place"
+      "action": "enriched_existing_identity_in_place",
+      "note": "Existing AID 2988933 and Evidence Family from Batch141 retained; distinct additional body passage inspected and appended in place. No duplicate identity or Verified promotion."
     },
     {
       "item_aid": 2989059,
@@ -400,7 +401,7 @@
     {
       "aid": 2988933,
       "id": "chabad-sicha-2988933",
-      "canonical_file": "data/items/content-research-batch-170-2026-11-19.json",
+      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
       "evidence_family_id": "sicha-5716-simchat-torah-aid2988933",
       "action": "enriched_existing_identity_in_place",
       "existing_propositions_before": 1,
@@ -415,7 +416,7 @@
       "proposition_source_locator": "he.chabad.org AID 2988933, גוף השיחה, סעיף ב׳, שורות 195–203.",
       "web_source_ref": "turn781677view0",
       "new_independent_witness": false,
-      "note": "Existing AID and Evidence Family retained; a distinct additional body passage was inspected and appended in place; no Verified promotion."
+      "note": "Existing AID and Evidence Family retained. The duplicate Batch170 presentation was removed after full-index audit; this additional proposition is consolidated into the original Batch141 canonical record."
     },
     {
       "aid": 2989059,
@@ -560,5 +561,6 @@
   ],
   "existing_identity_updates_count": 8,
   "records": [],
-  "note": "All eight new propositions are non-verbatim Hebrew research paraphrases from inspected original-language publisher bodies. All eight identities remain Parsed; no promotion to Verified."
+  "note": "All eight new propositions are non-verbatim Hebrew research paraphrases from inspected original-language publisher bodies. All eight identities remain Parsed; no promotion to Verified.",
+  "reconciled_at": null
 }
