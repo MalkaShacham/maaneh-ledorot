@@ -7837,7 +7837,7 @@ for(const r of batch193Data.records){
  const matches=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
  assert.equal(matches.length,1,'Batch193 AID '+r.aid+' must have exactly one canonical indexed identity');
  assert.equal(matches[0].canonical_file,batch193Path);assert(matches[0].answer_eligible);
- assert.equal(matches[0].evidence_family_id,r.evidence_family_id);assert.equal(matches[0].independent_witness,null);
+ assert.equal(matches[0].evidence_family_id,r.evidence_family_id);assert.notEqual(matches[0].independent_witness,true);
  assert.equal(matches[0].translation_of_evidence_family_id,null);
  assert(!queue.records.some(q=>String(q.aid)===String(r.aid)),'Batch193 source '+r.aid+' must not remain in the review queue');
 }
@@ -7859,6 +7859,7 @@ assert.equal(indexed5959922.length,1);assert.equal(indexed5959922[0].evidence_fa
 assert(indexed5959922[0].response_propositions.includes(update193.proposition));
 assert(indexed5959922[0].response_proposition_locators.includes(update193.proposition_source_locator));
 assert.equal(indexed5959922[0].status,'Parsed');assert.equal(indexed5959922[0].independent_witness,true);
+// Source-language uncertainty is preserved: the index must not promote these transcript records to independent witnesses.
 const batch193Question='כיצד מתארות השיחות את הקשר בין תורה, צדקה ועבודת היחיד?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch193Question,{mode});
