@@ -10,40 +10,45 @@
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "review_method": "Manual public web search/open inspection of original Hebrew item-level Chabad.org / BeitChabad.com talk bodies. Search extracts were used only to locate pages; all propositions derive from opened body passages.",
-  "records_reviewed": 13,
-  "reviewed_item_count": 13,
-  "source_bodies_inspected": 11,
-  "source_body_pages_opened": 13,
+  "records_reviewed": 15,
+  "reviewed_item_count": 15,
+  "source_bodies_inspected": 12,
+  "source_body_pages_opened": 15,
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 11,
+  "new_source_identities": 12,
   "existing_identities_enriched": 0,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 11,
+  "new_response_propositions": 12,
   "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 11,
-  "answer_eligible_source_families_added": 11,
+  "total_new_paraphrase_entries": 12,
+  "answer_eligible_source_families_added": 12,
   "independent_witnesses_added": 11,
-  "non_independent_presentations_added": 0,
+  "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "duplicate_alias_identities": 0,
   "source_languages": [
-    "Hebrew"
+    "Hebrew",
+    "English"
   ],
   "language_distribution": {
-    "Hebrew": 11
+    "Hebrew": 11,
+    "English": 1
   },
   "original_language_distribution": {
-    "Hebrew": 11
+    "Hebrew": 11,
+    "Yiddish": 1
   },
   "proposition_language_distribution": {
-    "Hebrew": 11
+    "Hebrew": 12
   },
   "source_type_distribution": {
-    "Sichos": 11
+    "Sichos": 11,
+    "Letters": 1
   },
   "new_aids": [
+    259799,
     2988877,
     2988879,
     2988906,
@@ -59,6 +64,7 @@
   "enriched_aids": [],
   "rechecked_aids": [],
   "reviewed_aids": [
+    259799,
     2988877,
     2988879,
     2988906,
@@ -73,7 +79,7 @@
     5959840,
     5989925
   ],
-  "blocked_candidate_count": 2,
+  "blocked_candidate_count": 3,
   "blocked_candidates": [
     {
       "aid": 4385482,
@@ -86,11 +92,17 @@
       "source_url": "https://he.chabad.org/library/article_cdo/aid/5989925",
       "reason": "HTTP 429 Too Many Requests while opening the public item page; no body text was available, so no proposition was created.",
       "handling": "Recorded as blocked; no crawler retry or access-control bypass. Other accessible item-level Hebrew pages were inspected in the same run."
+    },
+    {
+      "item_id": "4754421",
+      "source_url": "https://www.chabad.org/torah-texts/4754421",
+      "reason": "Torah Texts viewer displayed only a browser-compatibility message (“needs a newer browser”); no original Yiddish body text was available.",
+      "handling": "Recorded as blocked. No browser workaround, client-side bypass or alternative access method was attempted; the English translation was inspected as a derivative presentation only."
     }
   ],
   "metadata_only_candidate_count": 0,
   "metadata_only_candidates": [],
-  "excluded_candidate_count": 2,
+  "excluded_candidate_count": 3,
   "excluded_candidates": [
     {
       "aid": 4385482,
@@ -99,9 +111,13 @@
     {
       "aid": 5989925,
       "reason": "HTTP 429; no inspectable body."
+    },
+    {
+      "item_id": "4754421",
+      "reason": "Original Yiddish text not accessible in the Torah Texts viewer; no content inferred from metadata or the memoir article's bibliographic note."
     }
   ],
-  "translations_added": 0,
+  "translations_added": 1,
   "translations_counted_as_independent_witnesses": 0,
   "crawler_retry": false,
   "access_control_bypassed": false,
@@ -115,25 +131,25 @@
   "metrics_before_source": "Planning boundary after corrected Batch171 expected-after; not a measured result. Exact-head reconciliation must carry forward its actual snapshot.",
   "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1558,
+    "answer_eligible_unique_sources": 1559,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4040
+    "answer_eligible_propositions": 4041
   },
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "reconciliation_variance": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 11,
+    "answer_eligible_unique_sources": 12,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 11
+    "answer_eligible_propositions": 12
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "metrics_attribution_note": "The +11 source/+11 proposition boundary is a planning estimate. Final unique Evidence Family and proposition counts must be calculated by the full canonical index; no Verified increase is expected.",
-  "metrics_note": "All 11 source records remain Parsed. The 11 expected family increments are provisional until full-index reconciliation checks older canonical batches for AID collisions and same-family duplicates.",
+  "metrics_attribution_note": "Planning increments comprise eleven independent Hebrew Sicha source families plus one additional letter Evidence Family represented only by an English translation. That translation is a non-independent presentation, not an extra witness. Full-index reconciliation may reclassify any pre-existing identity.",
+  "metrics_note": "Twelve source identities/presentations were added: eleven original-Hebrew Sicha witnesses and one English translation of a Yiddish letter. The translated letter is explicitly non-independent; no Verified status was promoted.",
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
-    "preflight_candidate_count": 11,
+    "preflight_candidate_count": 12,
     "new_aids_unique": true,
     "new_source_urls_unique": true,
     "new_evidence_families_unique": true,
@@ -141,7 +157,8 @@
     "canonical_identity_collisions": null,
     "missing_canonical_identities": null,
     "checked_against": "Current content-review queue (1022 records), exact-AID GitHub repository searches, and available bulk-indexed snapshots dated 2026-09-24, 2026-09-25 and 2026-09-27. This is not a full canonical corpus scan.",
-    "note": "No candidate AID appeared in the current review queue or the checked bulk-index snapshots. Older canonical content-research batches were not fully scanned before writing; the exact-head full-index reconciliation is authoritative and may reclassify any collision."
+    "note": "Preflight checked the review queue, exact-AID repository search and available bulk-index snapshots. It did not scan every historical canonical batch. Full-index reconciliation must verify all eleven Hebrew AIDs and the new letter Evidence Family; the English translation remains non-independent.",
+    "new_ids_unique": true
   },
   "source_body_review": [
     {
@@ -484,6 +501,40 @@
       "existing_identity": false,
       "new_independent_witness": true,
       "action": "new_identity_created"
+    },
+    {
+      "item_aid": 259799,
+      "id": "chabad-letter-5713-shevat-zalmon-jaffe",
+      "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
+      "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+      "publisher_item_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+      "web_source_ref": "turn329084view0",
+      "body_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+      "language": "English",
+      "original_language": "Yiddish",
+      "witness_type": "translated_letter_excerpt",
+      "body_page_opened": true,
+      "inspected_original_language_body": false,
+      "body_text_inspected": true,
+      "title_or_metadata_only": false,
+      "proposition": "על פי התרגום האנגלי שמציג זלמן יפה, המכתב הראשון שקיבל מהרבי מעודד אותו להגדיל את נתינת הצדקה מיד, בלי להמתין לשיפור בהצלחת העסק, ולתת מעט יותר ממעשר; ההסבר במכתב נשען על האמון בהבטחת הקב״ה למי שנותן צדקה. זו פרפרזה של תרגום אנגלי שהובא במאמר זיכרונות, ולא בדיקה של המקור היידי.",
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+      "provenance": "Chabad.org AID 259799, memoir article by Zalmon Jaffe; English translation at lines 272–276; original Yiddish not inspected.",
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
+        "התרגום הוא מצג נגזר אחד של אותו מכתב ואינו עד עצמאי; אם יימצא המקור היידי יש לקשרו לאותה Evidence Family.",
+        "העצה מתועדת בהקשר אישי של מכתב לזלמן יפה; אין להציג אותה כהנחיה פיננסית או הלכתית כללית לכל אדם."
+      ],
+      "existing_identity": false,
+      "new_independent_witness": false,
+      "action": "new_family_translation_presentation_added",
+      "note": "Article author explicitly identifies this as his English translation of a Yiddish letter. Original Yiddish viewer at /torah-texts/4754421 returned only a browser compatibility message; translation is not an independent witness."
     }
   ],
   "fallback_source_attempted": true,
@@ -500,12 +551,12 @@
     }
   ],
   "fallback_source_results": {
-    "accessible_item_level_bodies": 11,
+    "accessible_item_level_bodies": 12,
     "new_identity_bodies": 11,
     "existing_identity_bodies": 0,
     "language": "Hebrew",
     "source": "BeitChabad.com / he.chabad.org original-Hebrew public Sicha body pages",
-    "note": "After two item-page routes returned HTTP 429, eleven other original-Hebrew item-level bodies were opened and inspected in the same run. Search results were used only for navigation."
+    "note": "Eleven original-Hebrew Sicha bodies and one English translation of a Yiddish personal letter were inspected. The original Yiddish viewer remained inaccessible; the English translation is marked non-independent."
   },
   "existing_identity_updates": [],
   "existing_identity_updates_count": 0,
@@ -1603,6 +1654,181 @@
       "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
       "content_enrichment_batch_id": "172",
       "last_content_enriched_at": "2026-11-19T01:53:26+02:00"
+    },
+    {
+      "id": "chabad-letter-5713-shevat-zalmon-jaffe",
+      "aid": 259799,
+      "publisher_item_aid": 259799,
+      "canonical_key": "letter:zalmon-jaffe:5713-shevat:first",
+      "title": "מכתב אישי לזלמן יפה, שבט ה׳תשי״ג — תרגום אנגלי של מקור יידי",
+      "source_class": "Letters",
+      "source_class_detail": "מכתב אישי שנכתב במקור ביידיש; מאמר זיכרונות ב-Chabad.org מציג תרגום אנגלי של המחבר זלמן יפה. המקור היידי לא נבדק.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "date_original": "שבט ה׳תשי״ג (ינואר 1953)",
+      "date_precision": "month",
+      "language": "English",
+      "original_language": "Yiddish",
+      "type": "translated_personal_letter_excerpt",
+      "collection": "My Encounter with the Rebbe / Chabad.org",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+      "context_status": "partial",
+      "summary_researcher": "על פי התרגום האנגלי שמציג זלמן יפה, המכתב הראשון שקיבל מהרבי מעודד אותו להגדיל את נתינת הצדקה מיד, בלי להמתין לשיפור בהצלחת העסק, ולתת מעט יותר ממעשר; ההסבר במכתב נשען על האמון בהבטחת הקב״ה למי שנותן צדקה. זו פרפרזה של תרגום אנגלי שהובא במאמר זיכרונות, ולא בדיקה של המקור היידי.",
+      "response_propositions": [
+        "על פי התרגום האנגלי שמציג זלמן יפה, המכתב הראשון שקיבל מהרבי מעודד אותו להגדיל את נתינת הצדקה מיד, בלי להמתין לשיפור בהצלחת העסק, ולתת מעט יותר ממעשר; ההסבר במכתב נשען על האמון בהבטחת הקב״ה למי שנותן צדקה. זו פרפרזה של תרגום אנגלי שהובא במאמר זיכרונות, ולא בדיקה של המקור היידי."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”"
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+      "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+      "has_content_evidence": true,
+      "verification_scope": "ב-19.11.2026 נפתח ונבדק גוף התרגום האנגלי במאמר Chabad.org AID 259799, שורות 272–276. המאמר מציין שהמכתב הראשון לזלמן יפה נכתב ביידיש ומציג את תרגומו של המחבר. המקור היידי לא נפתח: דף Torah Texts /torah-texts/4754421 הציג הודעת תאימות דפדפן בלבד, ללא גוף הטקסט. לא נבדקו כתב היד, חתימה, תרגום חלופי או נוסח יידי. הפרפרזה בעברית נגזרה מהתרגום האנגלי בלבד; התרגום הוא מצג נגזר אחד ואינו עד עצמאי.",
+      "documented_circumstances": "מכתב אישי ראשון שזלמן יפה מספר שקיבל מהרבי במהלך שבט ה׳תשי״ג (ינואר 1953); המאמר מציין שהמכתב נכתב ביידיש ומביא את תרגומו.",
+      "question_or_problem": "איזו עצה נתן המכתב הראשון ביחס לנתינת צדקה ולהמתנה להצלחה עסקית?",
+      "conditions_or_qualifications": [
+        "המקור היידי לא נבדק; נבדק רק התרגום האנגלי שהמחבר זלמן יפה מציג במאמר.",
+        "התרגום הוא מצג נגזר אחד של אותו מכתב ואינו עד עצמאי; אם יימצא המקור היידי יש לקשרו לאותה Evidence Family.",
+        "העצה מתועדת בהקשר אישי של מכתב לזלמן יפה; אין להציג אותה כהנחיה פיננסית או הלכתית כללית לכל אדם."
+      ],
+      "audience": "זלמן יפה, נמען המכתב; קוראי מאמר הזיכרונות.",
+      "primary_secondary_status": "Primary personal letter represented only by the recipient's published English translation in a memoir article. The original Yiddish text was not inspected in this run; this is a derived presentation, not an independent witness.",
+      "witness_type": "translated_letter_excerpt",
+      "witness_provenance": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, by Zalmon Jaffe; lines 272–276 contain the author's English translation of a letter he says was written in Yiddish.",
+      "independent_witness": false,
+      "translation_status": "English translation of a Yiddish original; derivative presentation; not an independent witness; original Yiddish body inaccessible in this run.",
+      "author_name": "Rabbi Menachem Mendel Schneerson",
+      "author_role": "letter_writer",
+      "authorship_status": "The memoir article identifies the sender as the Rebbe and says the first personal letter to Zalmon Jaffe was written in Yiddish; original manuscript and signature were not inspected.",
+      "source_role": "personal_letter_translated_in_memoir",
+      "signatory": null,
+      "signatory_role": null,
+      "publisher": "Chabad.org / PCL Publishing",
+      "rights_status": "copyrighted-link-only",
+      "provenance": {
+        "authorship_status": "Article identifies the sender as the Rebbe and states that the letter was written in Yiddish; no original signature or manuscript inspected.",
+        "signature_status": null,
+        "source_witness": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, by Zalmon Jaffe; English translation at lines 272–276.",
+        "transmission_type": "English translation of a Yiddish personal letter reproduced in a first-person memoir article; the article author states that it is his translation.",
+        "textual_status": "Only the English translation at lines 272–276 was inspected. The linked original Yiddish text at Chabad.org/torah-texts/4754421 returned a browser-compatibility message and no body text; no manuscript or signature inspected.",
+        "editorial_scope": "One bounded Hebrew paraphrase of the article author's English translation. The surrounding memoir narrative is not treated as part of the letter. The translation is not an independent witness.",
+        "verification_status": "Parsed; translated body text inspected; original-language body not inspected; no Verified promotion.",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+        "accessed": "2026-11-19T01:53:26+02:00"
+      },
+      "witness": {
+        "kind": "translated_text",
+        "state": "English translation embedded in a memoir article; original Yiddish body not inspected.",
+        "complete_partial": "partial",
+        "notes": "The article author says “Following is my translation” at lines 272–273. The Yiddish original was not accessible in this run. This is one derivative presentation of a single letter, not an independent witness."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Only a short non-verbatim research paraphrase and exact locator are stored; no full letter copied."
+      },
+      "relations": [
+        {
+          "type": "translation_of",
+          "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+          "source_url": "https://www.chabad.org/torah-texts/4754421",
+          "note": "Original Yiddish letter identified by the memoir article but not accessible in this run."
+        }
+      ],
+      "duplicate_or_parallel_relations": [
+        {
+          "relation": "non_independent_translation_presentation",
+          "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+          "language": "English",
+          "original_language": "Yiddish",
+          "independent_witness": false
+        }
+      ],
+      "identity_note": "This is one English translated presentation of a single Yiddish personal letter. Any future Yiddish original or further translation must be linked to this same Evidence Family and not counted as an independent witness.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "Direct Correspondence with the Rebbe",
+          "Personal letter to Zalmon Jaffe"
+        ],
+        "research_terms": [
+          "צדקה",
+          "מעשר",
+          "פרנסה",
+          "עסקים",
+          "מכתב אישי",
+          "תרגום מיידיש"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "The record preserves the letter identity through an attributed English translation only. Original Yiddish body not inspected; independent_witness=false; no Verified promotion.",
+      "canonical_file": "data/items/content-research-batch-172-2026-11-19.json",
+      "content_enrichment_batch_id": "172",
+      "last_content_enriched_at": "2026-11-19T01:53:26+02:00"
     }
+  ],
+  "original_languages": [
+    "Hebrew",
+    "Yiddish"
+  ],
+  "new_ids": [
+    "chabad-sicha-2989237",
+    "chabad-sicha-4385650",
+    "chabad-sicha-5959840",
+    "chabad-sicha-2989311",
+    "chabad-sicha-2988879",
+    "chabad-sicha-2989234",
+    "chabad-sicha-4385701",
+    "chabad-sicha-4279994",
+    "chabad-sicha-4296163",
+    "chabad-sicha-2988877",
+    "chabad-sicha-2988906",
+    "chabad-letter-5713-shevat-zalmon-jaffe"
+  ],
+  "new_source_ids": [
+    "chabad-sicha-2989237",
+    "chabad-sicha-4385650",
+    "chabad-sicha-5959840",
+    "chabad-sicha-2989311",
+    "chabad-sicha-2988879",
+    "chabad-sicha-2989234",
+    "chabad-sicha-4385701",
+    "chabad-sicha-4279994",
+    "chabad-sicha-4296163",
+    "chabad-sicha-2988877",
+    "chabad-sicha-2988906",
+    "chabad-letter-5713-shevat-zalmon-jaffe"
+  ],
+  "reviewed_item_refs": [
+    "chabad-sicha-2989237",
+    "chabad-sicha-4385650",
+    "chabad-sicha-5959840",
+    "chabad-sicha-2989311",
+    "chabad-sicha-2988879",
+    "chabad-sicha-2989234",
+    "chabad-sicha-4385701",
+    "chabad-sicha-4279994",
+    "chabad-sicha-4296163",
+    "chabad-sicha-2988877",
+    "chabad-sicha-2988906",
+    "chabad-letter-5713-shevat-zalmon-jaffe",
+    "AID:4385482",
+    "AID:5989925",
+    "TorahTexts:4754421"
+  ],
+  "blocked_item_ids": [
+    "4754421"
+  ],
+  "blocked_aids": [
+    4385482,
+    5989925
   ]
 }
