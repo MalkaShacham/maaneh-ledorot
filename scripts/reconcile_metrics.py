@@ -373,7 +373,14 @@ for selected_index, batch_info in enumerate(selected_batches):
         key=adjusted.get("key")
         if not key: continue
         old=snapshot_by_key.get(key)
-        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
+        # Use the same deterministic witness-selection order as search_entries.
+        # Otherwise historical batch snapshots can undercount propositions when
+        # duplicate AIDs exist in multiple files and the search index selects the
+        # richer canonical presentation.
+        def is_duplicate_presentation(e):
+            duplicate_status=str(e.get("duplicate_identity_status") or "").lower()
+            return bool(e.get("duplicate_of_canonical_id")) or "duplicate" in duplicate_status
+        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0),not is_duplicate_presentation(e),e.get("independent_witness") is True,not bool(e.get("translation_of_evidence_family_id")),len(e.get("response_propositions") or []))
         if old is None or priority(adjusted)>priority(old): snapshot_by_key[key]=adjusted
     snapshot_metrics=summarize(list(snapshot_by_key.values()))
     readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
