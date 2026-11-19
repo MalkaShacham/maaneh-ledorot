@@ -1711,13 +1711,18 @@ for(const [batch,label] of [[batch175Data,'Batch175'],[batch176Data,'Batch176'],
  assert.deepEqual(batch.deduplication_check.missing_canonical_identities,[],label+' must have no missing canonical identities');
 }
 assert.equal(batch185Data.batch_id,'185');assert.equal(batch185Data.batch_file,batch185Path);
-assert.equal(batch185Data.new_source_identities,7);assert.equal(batch185Data.records.length,7);
+assert.equal(batch185Data.new_source_identities,6);assert.equal(batch185Data.records.length,6);
 assert.equal(batch185Data.existing_identities_enriched,2);assert.equal(batch185Data.existing_identity_updates.length,2);
-assert.equal(batch185Data.new_response_propositions,7);assert.equal(batch185Data.existing_response_propositions_added,2);
-assert.equal(batch185Data.total_new_paraphrase_entries,9);assert.equal(batch185Data.answer_eligible_source_families_added,7);
+assert.equal(batch185Data.new_response_propositions,6);assert.equal(batch185Data.existing_response_propositions_added,2);
+assert.equal(batch185Data.total_new_paraphrase_entries,8);assert.equal(batch185Data.answer_eligible_source_families_added,6);
 assert.equal(batch185Data.content_verified_unique_sources_added,0);
-assert.deepEqual(batch185Data.new_aids.map(String),['3140221','4279862','2988861','2988879','2988855','2988876','2988887']);
+assert.deepEqual(batch185Data.new_aids.map(String),['3140221','4279862','2988861','2988855','2988876','2988887']);
 assert.deepEqual(batch185Data.enriched_aids.map(String),['2988862','2988859']);
+assert.equal(batch185Data.existing_identities_rechecked,1);assert.deepEqual(batch185Data.rechecked_aids.map(String),['2988879']);
+assert.equal(batch185Data.existing_identity_rechecks.length,1);assert.equal(batch185Data.excluded_duplicate_candidate_count,2);
+assert(batch185Data.excluded_duplicate_candidates.some(x=>String(x.aid)==='2988879'));
+assert(batch185Data.duplicate_alias_identities.some(x=>String(x.aid)==='2988879'&&x.canonical_file===batch172Path));
+assert.deepEqual(batch185Data.metrics_expected_after,{answer_eligible_unique_sources:1593,content_verified_unique_sources:854,answer_eligible_propositions:4128});
 assert.equal(batch185Data.source_bodies_inspected,9);assert.equal(batch185Data.blocked_candidate_count,1);
 assert.deepEqual(batch185Data.blocked_aids.map(String),['3140215']);
 assert.equal(batch185Data.crawler_retry,false);assert.equal(batch185Data.access_control_bypassed,false);
@@ -1727,6 +1732,7 @@ assert.equal(batch186Data.new_source_identities,0);assert.equal(batch186Data.rec
 assert.equal(batch186Data.existing_identities_enriched,8);assert.equal(batch186Data.existing_identity_updates.length,8);
 assert.equal(batch186Data.new_response_propositions,0);assert.equal(batch186Data.existing_response_propositions_added,8);
 assert.equal(batch186Data.total_new_paraphrase_entries,8);assert.equal(batch186Data.answer_eligible_source_families_added,0);
+assert.deepEqual(batch186Data.metrics_expected_after,{answer_eligible_unique_sources:1593,content_verified_unique_sources:854,answer_eligible_propositions:4136});
 assert.equal(batch186Data.independent_witnesses_added,0);assert.equal(batch186Data.non_independent_presentations_added,0);
 assert.equal(batch186Data.content_verified_unique_sources_added,0);
 assert.deepEqual(batch186Data.enriched_aids.map(String),['3140221','4279862','2988861','2988879','2988855','2988876','2988887','2988862']);
@@ -1749,6 +1755,7 @@ assert.deepEqual(batch186Data.deduplication_check.missing_canonical_identities,[
 assert.equal(batch186Data.source_body_review.length,8);
 assert(batch186Data.source_body_review.every(r=>r.body_page_opened&&r.body_text_inspected&&r.inspected_original_language_body===true&&r.title_or_metadata_only===false&&r.existing_identity===true&&r.action==='enriched_existing_identity_in_place'&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'));
 assertReconciliationSnapshot(batch186Data,'batch186Data');
+assert.equal(batch186Data.existing_identity_updates.find(u=>String(u.aid)==='2988879').canonical_file,batch172Path);
 for(const u of batch186Data.existing_identity_updates){
  const e=idx.entries.find(e=>sourceAID(e)===String(u.aid));
  assert(e&&e.answer_eligible,'Batch186 enrichment must resolve to an answer-eligible identity '+u.aid);

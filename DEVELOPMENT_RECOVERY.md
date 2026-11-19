@@ -1631,3 +1631,11 @@ A second inspection of the publisher footnote for AID 2988859 (footnote 51, line
 - Extended `test_content_readiness.mjs` through Batch186, corrected contiguous historical snapshot chaining, and added a three-Evidence-Family Torah-learning/youth-education/Chassidic-dissemination regression in regular and deep researcher modes.
 - The prior exact-head run 44554020367 reached the measured readiness phase and stopped at a stale current-batch assertion (expected 184 while the state was 185). The new commit triggers a fresh exact-head run; no new gate result is claimed yet.
 - PR #35 remains open pending the fresh Answer Quality Gate and post-merge Pages verification. The hourly schedule, repository audience and permissions are unchanged.
+
+
+## 2026-11-19 — Batch185 exact-AID duplicate correction
+
+- Exact-head identity review found that AID 2988879 was already represented canonically in `data/items/content-research-batch-172-2026-11-19.json` under Evidence Family `sicha-5714-vayakhel-adar-sheni-aid2988879`. The Batch185 candidate was a second presentation of the same event, and its paraphrase overlapped the canonical Batch172 locator (lines 179–204).
+- Removed the duplicate Batch185 source record and did not count its overlapping proposition. The candidate remains in the Batch185 duplicate/recheck audit; Batch172 remains the sole canonical identity.
+- Corrected Batch185 to **6 new identities, 2 in-place enrichments, 1 existing-identity recheck and 8 new paraphrases**. Its planning boundary is now **1,593 / 854 / 4,128**, not the earlier uncorrected 1,594 / 854 / 4,129.
+- The distinct Batch186 claim about the debate over studying halachic reasons and the Alter Rebbe's Shulchan Aruch is appended only to the Batch172 canonical record. Batch186 planning boundary is **1,593 / 854 / 4,136**. Both boundaries remain planning values until exact-head reconciliation.
