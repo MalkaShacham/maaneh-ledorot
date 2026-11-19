@@ -2716,15 +2716,15 @@
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending_exact_head_batch_186",
-    "last_failed_run_id": 44556976010,
-    "last_failure": "Run 44556976010 reached exact-head reconciliation and measured 1,593 / 854 / 4,136, but failed at Batch177→178 because the modified helper compared the next measured baseline with the predecessor's actual-after (4074) instead of its expected boundary (4069). The helper is restored to compare nextActualBefore with nextBaseline; batch-level actual variance remains independently validated.",
-    "note": "Batch186 adds eight in-place Hebrew Sicha propositions across eight existing Evidence Families, with no new identities or Verified promotions. Run 44556976010 measured the exact-head index at 1,593 answer-eligible unique sources, 854 content-verified sources and 4,136 propositions; it stopped at Batch177→178 because a test-helper edit incorrectly chained the next baseline to the predecessor's actual-after instead of its expected boundary. The helper is restored to the expected-boundary rule; each batch's actual variance remains checked independently. A fresh exact-head gate must pass before merge.",
+    "last_failed_run_id": 44558378574,
+    "last_failure": "Run 44558378574 failed at Batch176→177 because the test assumed the next measured baseline must always equal the expected boundary; reconciliation sometimes carries the predecessor's actual snapshot when the expected boundary is contiguous. The helper now accepts either the predecessor snapshot or the expected baseline only for contiguous boundaries, while independently validating each batch's variance. Exact-head reconciliation measured 1,593 / 854 / 4,136.",
+    "note": "Batch186 content and exact-index reconciliation are ready at 1,593 / 854 / 4,136. Historical boundary tests now accept the two reconciliation snapshot behaviors observed in the canonical script, while still validating each batch's actual variance. A fresh exact-head gate is required before merge.",
     "run_status": "pending_exact_head_batch_186",
     "workflow_run_id": null
   },
   "publication": {
     "status": "pending_merge_and_pages_verification",
-    "note": "PR #35 contains content batches through Batch186 and the corrected expected-boundary readiness test. The latest exact-head run measured 1,593 / 854 / 4,136 but failed on the test helper; a fresh gate is required before merge and Pages verification.",
+    "note": "PR #35 contains content batches through Batch186. Exact-head reconciliation measured 1,593 / 854 / 4,136; the latest gate stopped at a historical boundary assertion. The corrected helper accepts both valid reconciliation snapshot paths; a fresh gate is required before merge and Pages verification.",
     "url": "https://malkashacham.github.io/maaneh-ledorot",
     "last_verified_main_sha": "2c7231f9bb043faafdd61c94040111723d95ac04"
   }

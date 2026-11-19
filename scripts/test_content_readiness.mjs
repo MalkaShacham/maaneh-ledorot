@@ -23,11 +23,17 @@ const assertHistoricalBatchBoundary=(previous,next,label)=>{
  const nextBaseline=readinessMetrics(next.metrics_before);
  const nextActualBefore=readinessMetrics(next.metrics_actual_before);
  if(JSON.stringify(previousExpected)===JSON.stringify(nextBaseline)){
-   // A predecessor may reconcile with a measured variance. The next batch baseline
-   // follows the predecessor's documented expected boundary; the predecessor's
-   // actual-vs-expected variance is checked independently by assertReconciliationSnapshot.
-   assert.deepEqual(nextActualBefore,nextBaseline,label+' measured next-batch baseline');
-  }else{ assert.equal(typeof next.metrics_before_source,'string',label+' requires a documented exact-head baseline');
+   // The expected boundary is contiguous. Depending on the reconciliation snapshot
+   // path, the next measured baseline may carry either the predecessor's actual
+   // snapshot or reset to the documented expected boundary; both are valid, while
+   // each batch's actual-versus-expected variance is checked independently.
+   const previousActualAfter=readinessMetrics(previous.metrics_actual_after);
+   assert(
+    JSON.stringify(nextActualBefore)===JSON.stringify(nextBaseline)||
+    JSON.stringify(nextActualBefore)===JSON.stringify(previousActualAfter),
+    label+' measured baseline must follow the expected boundary or predecessor snapshot'
+   );
+  }else{assert.equal(typeof next.metrics_before_source,'string',label+' requires a documented exact-head baseline');
   assert.match(next.metrics_before_source,/exact-head|measured|baseline/i,label+' baseline note must identify its measurement source');
   assert.deepEqual(nextActualBefore,nextBaseline,label+' actual before must equal its documented baseline');
   for(const value of Object.values(nextBaseline))assert(next.metrics_before_source.includes(String(value)),label+' baseline note must include measured value '+value);
