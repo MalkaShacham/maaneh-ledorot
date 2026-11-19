@@ -8205,7 +8205,8 @@ assert.equal(batch197Data.source_bodies_inspected,12);assert.equal(batch197Data.
 assert.equal(batch197Data.new_response_propositions,0);assert.equal(batch197Data.existing_response_propositions_added,8);
 assert.equal(batch197Data.total_new_paraphrase_entries,8);assert.equal(batch197Data.answer_eligible_source_families_added,0);
 assert.equal(batch197Data.independent_witnesses_added,0);assert.equal(batch197Data.content_verified_unique_sources_added,0);
-assert.equal(batch197Data.blocked_candidate_count,4);assert.equal(batch197Data.deferred_candidate_count,4);
+assert.equal(batch197Data.blocked_candidate_count,5);
+assert(batch197Data.blocked_candidates.some(x=>String(x.aid)==='4666220'&&String(x.status).includes('inaccessible')));assert.equal(batch197Data.deferred_candidate_count,4);
 assert.equal(batch197Data.crawler_retry,false);assert.equal(batch197Data.access_control_bypassed,false);
 assert.equal(batch197Data.full_text_copied,false);assert.equal(batch197Data.scan_only_verification_used,false);
 assert.equal(batch197Data.metrics_before.answer_eligible_unique_sources,1644);

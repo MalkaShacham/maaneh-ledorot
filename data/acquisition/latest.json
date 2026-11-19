@@ -1,10 +1,10 @@
 {
   "schema": "maaneh-ledorot-acquisition-latest-v1",
   "started_at": "2026-11-19T23:31:46+02:00",
-  "attempted": 16,
+  "attempted": 17,
   "discovered": 0,
   "enriched": 8,
-  "blocked": 4,
+  "blocked": 5,
   "skipped": 4,
   "status": "pending_reconciliation",
   "manual_web_review": {
@@ -16,10 +16,10 @@
     "title": "Batch197 — eight in-place Hebrew Sicha enrichments from inspected publisher bodies; no new identities; precise retrieval gate",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 16,
+    "reviewed_item_count": 17,
     "source_bodies_inspected": 12,
     "source_body_pages_opened": 12,
-    "source_body_pages_attempted": 16,
+    "source_body_pages_attempted": 17,
     "metadata_only_items_rechecked": 0,
     "search_extracts_used_as_content": 0,
     "new_source_identities": 0,
@@ -374,7 +374,7 @@
         "note": "גוף הפרסום נפתח ונבדק; נוספה פרפרזה תחומה למיקום המצוין. התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
       }
     ],
-    "blocked_candidate_count": 4,
+    "blocked_candidate_count": 5,
     "blocked_candidates": [
       {
         "aid": 4304407,
@@ -399,6 +399,12 @@
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4304418",
         "status": "HTTP 429 Too Many Requests",
         "handling": "עמוד המקור הציבורי החזיר 429 בכלי הגלישה; לא בוצע retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נבדקו מקטעים חלופיים נגישים."
+      },
+      {
+        "aid": 4666220,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+        "status": "Web tool internal error / page inaccessible",
+        "handling": "העמוד לא היה נגיש בכלי הגלישה בהפעלה זו; לא נעשה ניסיון crawler ולא נעקפו בקרות. נשמרה ההבחנה בין רשומת הסריקה הקיימת לבין בדיקת גוף ציבורי שלא הצליחה; נעשה שימוש במקורות חלופיים נגישים באותה הפעלה."
       }
     ],
     "excluded_duplicate_candidate_count": 0,
@@ -9307,7 +9313,7 @@
   "access_control_bypassed": false,
   "fallback_source_attempted": true,
   "full_text_copied": false,
-  "note": "שמונה זהויות הועשרו במקומן באמצעות פרפרזות מחקריות לא-מילוליות. ארבעה נתיבים החזירו 429; ארבעה עמודים נגישים נדחו מהוספה עד לבדיקת זהות מלאה. אין retry ל-crawler, עקיפת גישה, העתקת טקסט מלא או קידום ל-Verified.",
+  "note": "שמונה זהויות הועשרו במקומן באמצעות פרפרזות מחקריות לא-מילוליות. ארבעה נתיבים החזירו 429; ארבעה עמודים נגישים נדחו מהוספה עד לבדיקת זהות מלאה. אין retry ל-crawler, עקיפת גישה, העתקת טקסט מלא או קידום ל-Verified. AID 4666220 was also inaccessible through the current web reader; no crawler retry or access bypass was attempted.",
   "current_batch_file": "data/items/content-research-batch-197-2026-11-19.json",
   "last_reviewed_batch": "197",
   "pending": true,
@@ -9337,6 +9343,12 @@
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4304418",
       "status": "HTTP 429 Too Many Requests",
       "handling": "עמוד המקור הציבורי החזיר 429 בכלי הגלישה; לא בוצע retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נבדקו מקטעים חלופיים נגישים."
+    },
+    {
+      "aid": 4666220,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+      "status": "Web tool internal error / page inaccessible",
+      "handling": "העמוד לא היה נגיש בכלי הגלישה בהפעלה זו; לא נעשה ניסיון crawler ולא נעקפו בקרות. נשמרה ההבחנה בין רשומת הסריקה הקיימת לבין בדיקת גוף ציבורי שלא הצליחה; נעשה שימוש במקורות חלופיים נגישים באותה הפעלה."
     }
   ],
   "new_source_identities": 6,
