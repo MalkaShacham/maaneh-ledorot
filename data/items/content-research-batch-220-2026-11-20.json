@@ -6,8 +6,8 @@
   "generated_at": "2026-11-20T23:02:24+02:00",
   "reviewed_at": "2026-11-20T23:02:24+02:00",
   "title": "Batch220 — 12 unique new source families, two in-place enrichments, and three duplicate candidates reconciled",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending_reconciliation",
+  "status": "reconciled_with_variance",
+  "reconciliation_status": "reconciled_with_variance",
   "review_method": "manual_public_web_source_body_inspection",
   "reviewed_item_count": 32,
   "source_bodies_inspected": 17,
@@ -30,23 +30,19 @@
   "non_independent_presentations_added": 3,
   "content_verified_unique_sources_added": 0,
   "source_languages": [
-    "Hebrew",
-    "Yiddish"
+    "Hebrew"
   ],
   "language_distribution": {
-    "Hebrew": 14,
-    "Yiddish": 1
+    "Hebrew": 12
   },
   "original_language_distribution": {
-    "Hebrew": 14,
-    "Yiddish": 1
+    "Hebrew": 12
   },
   "proposition_language_distribution": {
-    "Hebrew": 17
+    "Hebrew": 14
   },
   "source_type_distribution": {
-    "Igrot Kodesh": 14,
-    "Hayom Yom": 1,
+    "Igrot Kodesh": 12,
     "Sicha": 2
   },
   "new_aids": [
@@ -149,12 +145,28 @@
     "content_verified_unique_sources": 862,
     "answer_eligible_propositions": 4451
   },
-  "metrics_actual_after": null,
-  "metrics_after_actual": null,
-  "metrics_delta_actual": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 1738,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4455
+  },
+  "metrics_after_actual": {
+    "answer_eligible_unique_sources": 1738,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4455
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 12,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 18
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 4
+  },
   "metrics_before_source": "Answer Quality Gate run 44814113576 at exact PR head 3fa3a8701c9575f9af945d2c825598a31a6fe254 measured 1726/862/4437 after Batch218/219 reconciliation. Batch220 counts are a projection until the new exact-head reconciliation.",
-  "metrics_note": "לאחר בדיקת האינדקס המלא נמצאו שלושה מועמדים כפולים: AID 4731005 כבר באינדקס, AID 4830985 קיים ב-Batch078, ו-AID 3316719 קיים ב-Batch097. שלושתם הוצאו מספירת מקורות חדשים וקושרו ל-Evidence Family הקיים. לכן 12 מקורות חדשים ושתי העשרות קיימות נותנים יעד מדוד 1738/862/4451; אין קידום ל-Verified.",
+  "metrics_note": "Full-index reconciliation excluded three duplicate candidates (AIDs 4731005, 4830985 and 3316719), leaving 12 new Evidence Families and two in-place enrichments. Exact-head run 44824437555 measured 1738/862/4455 versus expected 1738/862/4451; the +4 proposition variance is preserved for audit. No Verified promotion.",
   "blocked_candidate_count": 15,
   "blocked_candidates": [
     {
@@ -754,7 +766,8 @@
       "Batch097 canonical record for AID3316719",
       "Batch220 candidate records"
     ],
-    "note": "AID 4731005 already exists in the public index; AID 4830985 and AID 3316719 already exist in canonical batches. The English rendering of AID3316719 is a translation of the Yiddish entry, not an independent witness."
+    "note": "AID 4731005 already exists in the public index; AID 4830985 and AID 3316719 already exist in canonical batches. The English rendering of AID3316719 is a translation of the Yiddish entry, not an independent witness.",
+    "full_index_scan_pending_reconciliation": false
   },
   "retrieval_synthesis": {
     "topic": "letter_study_practice_routines",
@@ -788,7 +801,7 @@
       "אין להסיק מן הסינתזה ייחוס מילולי לרבי או מדידה של השפעה בפועל."
     ]
   },
-  "note": "Batch220: 15 new source identities (14 Hebrew Igrot Kodesh letters and one original-language Yiddish Hayom Yom entry) plus two in-place enrichments of existing Hebrew Sicha families. Seventeen public source bodies were inspected. The Yiddish entry quotes the Rashab; attribution is preserved and its English translation is not counted as an independent witness. Fifteen other candidate routes exposed generic compatibility shells; AID 4666220 also failed on the alternate Hebrew route. No crawler retry, access bypass, full-text copying, scan-only verification, translation-as-independent-witness, or Verified promotion. Reconciliation review identified and linked three duplicate candidates (AIDs 4731005, 4830985, 3316719); they are excluded from new-source and independent-witness counts.",
+  "note": "Batch220: 12 unique Hebrew Igrot Kodesh source families and two in-place Hebrew Sicha enrichments; 17 source bodies were inspected. Full-index reconciliation excluded three duplicate candidates (AIDs 4731005, 4830985, 3316719), linking each to its existing Evidence Family; the Yiddish AID3316719 English rendering was not counted as an independent witness. Run 44824437555 measured 1738/862/4455 versus expected 1738/862/4451; +4 propositions variance remains explicitly recorded. No Verified promotion.",
   "records": [
     {
       "id": "chabad-letter-5100231",
@@ -2761,5 +2774,6 @@
       "independent_witness": false,
       "reason": "אותו AID ואותו ערך יידיש כבר קיימים ב-Batch097 עם התמציות הרלוונטיות. האנגלית המופיעה באותו עמוד היא תרגום של אותו מקור יידיש ואינה עד עצמאי."
     }
-  ]
+  ],
+  "metrics_actual_after_source": "Answer Quality Gate run 44824437555 generated the full PR-head index and printed CONTENT_READINESS_ACTUAL_METRICS 1738/862/4455. The run then failed on a stale test assertion expecting 15 records rather than the reconciled 12. The measured index counts are retained; the +4 proposition variance is not silently normalized."
 }
