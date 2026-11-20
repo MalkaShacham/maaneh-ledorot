@@ -883,6 +883,7 @@ const batch066Cross='השוו בין קביעות עתים ולימוד בצוו
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch066Cross,{mode});
  assert(!m.understanding.topics.includes('לימוד וחינוך — חברותא והתקדמות הדרגתית'),mode+': the broad overlapping topic must be suppressed when both specific comparison sides are present');
+ assert(!m.understanding.topics.includes('התמדה בלימוד לצד עבודה והתחייבויות'),mode+': suppress the broad study/work topic when the specific farming comparison side is present');
  assert.equal(m.comparative_coverage?.missing_topics?.length,0,mode+': both requested comparison sides must be represented in displayed claims');
  assert.equal(m.pattern_synthesis_integrity?.valid,true,mode+': cross-family synthesis must pass claim/family/locator integrity');
  assert(m.answerable,mode+': two-family study/farming comparison must be answerable');
