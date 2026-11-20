@@ -315,7 +315,8 @@ const TOPIC_ALIASES={
 const norm=s=>String(s||'').toLowerCase().replace(/[?.,!״׳:'"()\[\]]/g,' ').replace(/\s+/g,' ').trim();
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
 const propositionText=e=>norm(arr(e?._supporting_propositions).concat(arr(e?.response_propositions)).join(' '));
-const topicSupported=(claims,topic)=>{const aliases=TOPIC_ALIASES[topic]||[topic];return claims.some(claim=>{const body=norm(claim?.text);return aliases.some(a=>body.includes(norm(a)));});};
+const CLAIM_TOPIC_TO_REQUESTED_TOPICS=Object.freeze({study_routine:['קביעות עתים ולימוד בצוותא'],farming_and_torah:['תורה ופרנסה במשק חקלאי']});
+const topicSupported=(claims,topic)=>{const aliases=TOPIC_ALIASES[topic]||[topic];return claims.some(claim=>{const body=norm(claim?.text);const tagMatches=(CLAIM_TOPIC_TO_REQUESTED_TOPICS[claim?.topic]||[]).includes(topic);return tagMatches||aliases.some(a=>body.includes(norm(a)));});};
 const isDerived=e=>{const s=norm([e?.primary_secondary_status,e?.source_class,e?.witness_type].join(' ')).replace(/no translation notice|translation not indicated|original language not independently established|not a translation/g,'');return /translation|תרגום|translated|derived|copy of original|transcribed copy|transcription of (?:a )?copy|העתק של|מעתק/.test(s);};
 // An index entry establishes the letter's identity/locator, not what the Rebbe said.
 const isLocatorOnly=e=>/bibliographic_locator_verified_only|identity\/locator|bibliographic identity|index[- ]first|metadata[_ -]and[_ -]locator[_ -]only/.test(norm([e?.context_status,e?.verification_scope,e?.rights_status].join(' ')));
