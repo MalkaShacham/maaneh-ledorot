@@ -1530,8 +1530,6 @@ const batch214Path='data/items/content-research-batch-214-2026-11-20.json';
 const batch214Data=JSON.parse(await readFile(new URL(batch214Path,root),'utf8'));
 const batch215Path='data/items/content-research-batch-215-2026-11-20.json';
 const batch215Data=JSON.parse(await readFile(new URL(batch215Path,root),'utf8'));
-const batch190Path='data/items/content-research-batch-190-2026-11-19.json';
-const batch190Data=JSON.parse(await readFile(new URL(batch190Path,root),'utf8'));
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
 assert.equal(String(projectState.current_batch),'215');
 assert.equal(projectState.current_batch_file,batch215Path);
