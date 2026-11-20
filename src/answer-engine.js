@@ -1915,6 +1915,10 @@ function isPracticalInstructionSynthesisQuestion(q){
  const t=norm(q);
  return t.includes('מעבר מלימוד למעשה')&&t.includes('דיבור בהתוועדות')&&t.includes('סיפורי רבותינו')&&(t.includes('השלמת מצווה')||t.includes('השלמת מצוה'));
 }
+function isLetterStudyPracticeSynthesisQuestion(q){
+ const t=norm(q);
+ return (t.includes('איגרות')||t.includes('אגרות')||t.includes('מכתבים'))&&(t.includes('לימוד חסידות')||t.includes('תורת החסידות'))&&(t.includes('חברים')||t.includes('חברותא'))&&(t.includes('למעשה')||t.includes('קביעות'));
+}
 function isChassidicPracticeQuestion(q){
  const t=norm(q);
  return (t.includes('לימוד חסידות')||t.includes('תורת החסידות'))&&
@@ -1953,7 +1957,7 @@ function buildPracticalInstructionSynthesis(index){
  const specs=[
   {aid:'5989562',topic:'communal_speech_shared_understanding',predicate:p=>p.includes('אמירת מטרת ההתכנסות בקול')&&p.includes('הבנה משותפת')},
   {aid:'4304354',topic:'stories_as_practical_instruction',predicate:p=>p.includes('סיפורי רבותינו נשיאינו')&&p.includes('הוראה לעבודת האדם')},
-  {aid:'4385893',topic:'completion_of_started_mitzvah',predicate:p=>p.includes('התחלת במצוה')&&p.includes('הפצת המעיינות')&&p.includes('אחריות להשלמתה')}
+  {aid:'4385893',topic:'completion_of_started_mitzvah',predicate:p=>(p.includes('התחלת במצוה')||p.includes('התחיל במלאכת מצווה'))&&p.includes('הפצת המעיינות')&&(p.includes('אחריות להשלמתה')||p.includes('גמור אותה'))}
  ];
  const sources=[],basis=[],claims=[];
  for(const spec of specs){
@@ -1973,6 +1977,37 @@ function buildPracticalInstructionSynthesis(index){
  const families=[...new Set(basis.map(b=>b.evidence_family_id).filter(Boolean))];
  if(sources.length!==3||families.length!==3||claims.length!==3)return null;
  const synthesis={kind:'cross_family_research_synthesis',topic:'practical_instruction_from_gathering_stories_and_mitzvot',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי',text:'שלוש שיחות עבריות מאירועים שונים מציגות שלושה מנגנונים נפרדים של מעבר מהתעוררות לעשייה: דיבור פומבי בהתוועדות יוצר שפה והבנה משותפת; סיפור של רבותינו נקרא כהוראה לעבודת האדם; והתחלה של מצווה או שליחות מחייבת השלמה. אין מדובר בכלל אחד שנאמר באותו מעמד, אלא בהשוואה תחומה בין שלושה הקשרים.',source_numbers:[1,2,3],evidence_family_ids:families,independent_evidence_family_ids:families,basis,claims,evidence_quality:'three_distinct_original_hebrew_sicha_event_families_one_edited_excerpt',method:'Claim-level comparison across three distinct dated original-Hebrew Sicha Evidence Families. Each claim is tied to one inspected body locator. The AID 4385893 completion-of-mitzvah passage is explicitly marked as edited and printed in Likkutei Sichos XIX; the AID 4304354 story is attributed in the text to the Previous Rebbe.',limits:['הניסוח הוא סינתזה של המערכת בלבד; אין זה ציטוט או ייחוס מילולי לרבי.','שלוש השיחות עוסקות באירועים ובהקשרים שונים; אין למזג אותן להוראה אחת שנאמרה באותו מעמד.','AID 4385893, שורות 195–203, מסומן כמוגה ונדפס בלקוטי שיחות חלק י״ט עמ׳ 94 ואילך; אין להחיל סטטוס זה על כל גוף העמוד.','ב-AID 4304354 הסיפור עצמו מיוחס לאדמו״ר הקודם; השיחה המאוחרת מפיקה ממנו הוראה.','כל המקורות נבדקו חלקית בלבד; לא נבדקו הקלטות, כתבי יד או מהדורות מוגהות נוספות.']};
+ return{sources,claims,synthesis};
+}
+
+function buildLetterStudyPracticeSynthesis(index){
+ const specs=[
+  {aid:'4831517',topic:'daily_torah_and_chassidus_study',predicate:p=>p.includes('קביעות עתים')&&p.includes('תהילים')&&p.includes('תניא')},
+  {aid:'4950656',topic:'individualized_chassidus_study_schedule',predicate:p=>p.includes('פעמיים ביממה')&&p.includes('פעם ביום')&&p.includes('פעם בלילה')},
+  {aid:'4928992',topic:'peer_learning_leads_to_practice',predicate:p=>p.includes('חברים ללימוד')&&p.includes('לידי מעשה')},
+  {aid:'5357404',topic:'practical_teaching_and_weekly_chassidus',predicate:p=>p.includes('שיעור ערב לחיילים')&&p.includes('במהלך השבוע')},
+  {aid:'5054485',topic:'expand_peer_learning_and_influence',predicate:p=>p.includes('מעגל המשתתפים')&&p.includes('בהתאם להבנתם')}
+ ];
+ const sources=[],basis=[],claims=[];
+ for(const spec of specs){
+  const original=index.find(e=>sourceAIDValue(e)===spec.aid);
+  if(!original||original.has_content_evidence!==true||original.independent_witness===false||original.translation_of_evidence_family_id)return null;
+  const propositions=arr(original.response_propositions),pi=propositions.findIndex(p=>spec.predicate(norm(String(p))));
+  if(pi<0)return null;
+  const proposition=propositions[pi],metadata=arr(original.response_proposition_metadata)[pi]||{};
+  if((metadata.proposition_origin||original.proposition_origin)!=='source_grounded_paraphrase'||(metadata.proposition_verification||original.proposition_verification)!=='source_text_inspected')return null;
+  const locator=arr(original.response_proposition_locators)[pi]||metadata.proposition_source_locator||original.proposition_source_locator||null;
+  if(!locator)return null;
+  const family=familyKey(original);if(!family)return null;
+  const sourceNumber=sources.length+1,e={...original,_supporting_propositions:[String(proposition)],_independent_witness:true};
+  sources.push(e);
+  basis.push({source_number:sourceNumber,aid:spec.aid,id:e.id||null,evidence_family_id:family,language:e.language||null,context_status:e.context_status||'unknown',independent_witness:true,translation_status:e.translation_status||null,witness_type:e.witness_type||null,provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:metadata.verification_scope||e.verification_scope||null,primary_secondary_status:e.primary_secondary_status||null,propositions:[{text:String(proposition),source_locator:locator}]});
+  const witness={source_number,source_id:e.id||e.aid||null,source_title:e.title||null,evidence_family_id:family,source_locator:locator,proposition_source_locator:locator,proposition:String(proposition),independent_witness:true,provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:metadata.verification_scope||e.verification_scope||null};
+  claims.push({topic:spec.topic,text:String(proposition),source_numbers:[sourceNumber],evidence_family_ids:[family],source_locators:[{source_number:sourceNumber,locator,proposition_text:String(proposition)}],witnesses:[witness],documented_circumstances:arr(e.documented_circumstances),conditions_or_qualifications:arr(e.conditions_or_qualifications),audiences:arr(e.audience)});
+ }
+ const families=[...new Set(basis.map(b=>b.evidence_family_id).filter(Boolean))];
+ if(sources.length!==5||families.length!==5||claims.length!==5)return null;
+ const synthesis={kind:'cross_family_research_synthesis',topic:'letter_study_practice_routines',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי',text:'חמש איגרות עבריות נפרדות מציגות דרכי עבודה משלימות אך לא אחידות: קביעות בשיעורי נגלה וחסידות לצד שיעורי תהילים, חומש ותניא; התאמת סדרי לימוד לתנאי האדם והיוועצות בזקני אנ״ש; לימוד עם חברים והפיכתו למעשה; הוראת הלכות יומיומיות וחיזוק לימוד החסידות גם במהלך השבוע; והרחבת מעגל הלומדים באמצעות השפעה המותאמת להבנת החברים. אלה מכתבים לנמענים שונים ובנסיבות שונות, ולכן אין להציגם כתוכנית אחת או כהוראה שנאמרה באותו מעמד.',source_numbers:[1,2,3,4,5],evidence_family_ids:families,independent_evidence_family_ids:families,basis,claims,evidence_quality:'five_distinct_original_hebrew_letter_evidence_families_one_inspected_paraphrase_per_letter',method:'Claim-level comparison across five distinct dated Hebrew published letters. Each claim is tied to one inspected body locator. No translated presentation is counted as an independent witness; AID 5357404 is explicitly identified as a secretariat copy.',limits:['הניסוח הוא סינתזה של המערכת בלבד; אין זה ציטוט או ייחוס מילולי לרבי.','חמש האיגרות נכתבו לנמענים שונים ובתאריכים שונים; אין להציגן כתוכנית אחת או כהוראה שנאמרה באותו מעמד.','AID 5357404 מסומן כהעתק המזכירות; AIDs 4928933 ו-5054485 כוללים חתימת מזכיר בשם הרבי.','לא נבדקו אוטוגרפים או המכתבים הנכנסים; ההקשר חלקי.','אין להסיק מן הסינתזה מדידה של השפעה בפועל או כלל אחיד לכל אדם.']};
  return{sources,claims,synthesis};
 }
 
@@ -2224,16 +2259,17 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const torahDailyPracticeQuestion=isTorahDailyPracticeSynthesisQuestion(understanding.query);
  const chassidicPracticeQuestion=isChassidicPracticeQuestion(understanding.query);
  const practicalInstructionSynthesisQuestion=isPracticalInstructionSynthesisQuestion(understanding.query);
+ const letterStudyPracticeSynthesisQuestion=isLetterStudyPracticeSynthesisQuestion(understanding.query);
  const purimEducationInitiativeQuestion=isPurimEducationInitiativeQuestion(understanding.query);
  const torahDailyLifeAcceptanceQuestion=isTorahDailyLifeAcceptanceQuestion(understanding.query);
   const torahStudyEffortPracticeQuestion=isTorahStudyEffortPracticeQuestion(understanding.query);
   const torahLearningVitalityQuestion=isTorahLearningVitalityQuestion(understanding.query);
   const mitzvahCareCapacityQuestion=isMitzvahCareCapacityQuestion(understanding.query);
   const dailyLifeLoveJoyQuestion=isDailyLifeLoveJoyQuestion(understanding.query);
- if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusPeaceMissionQuestion||yechidusUnityMissionQuestion||yudTesKislevLettersQuestion||torahDailyPracticeQuestion||chassidicPracticeQuestion||purimEducationInitiativeQuestion||torahDailyLifeAcceptanceQuestion||torahStudyEffortPracticeQuestion||torahLearningVitalityQuestion||mitzvahCareCapacityQuestion||dailyLifeLoveJoyQuestion||practicalInstructionSynthesisQuestion||educationFormationQuestion||learningToActionQuestion)understanding.intent='guidance';
+ if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusPeaceMissionQuestion||yechidusUnityMissionQuestion||yudTesKislevLettersQuestion||torahDailyPracticeQuestion||chassidicPracticeQuestion||purimEducationInitiativeQuestion||torahDailyLifeAcceptanceQuestion||torahStudyEffortPracticeQuestion||torahLearningVitalityQuestion||mitzvahCareCapacityQuestion||dailyLifeLoveJoyQuestion||practicalInstructionSynthesisQuestion||letterStudyPracticeSynthesisQuestion||educationFormationQuestion||learningToActionQuestion)understanding.intent='guidance';
  if(unityPeaceSynthesisQuestion)understanding.intent='guidance';
  else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||northAfricaEducationQuestion||educationFormationQuestion||learningToActionQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
- if(!usable.length&&!torahDailyPracticeQuestion&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!youthEducationStudyQuestion&&!purimEducationInitiativeQuestion&&!unityPeaceSynthesisQuestion&&!torahDailyLifeAcceptanceQuestion&&!torahStudyEffortPracticeQuestion&&!torahLearningVitalityQuestion&&!mitzvahCareCapacityQuestion&&!dailyLifeLoveJoyQuestion&&!practicalInstructionSynthesisQuestion&&!educationFormationQuestion&&!learningToActionQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
+ if(!usable.length&&!torahDailyPracticeQuestion&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!youthEducationStudyQuestion&&!purimEducationInitiativeQuestion&&!unityPeaceSynthesisQuestion&&!torahDailyLifeAcceptanceQuestion&&!torahStudyEffortPracticeQuestion&&!torahLearningVitalityQuestion&&!mitzvahCareCapacityQuestion&&!dailyLifeLoveJoyQuestion&&!practicalInstructionSynthesisQuestion&&!letterStudyPracticeSynthesisQuestion&&!educationFormationQuestion&&!learningToActionQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&(educationGovernanceQuestion?educationGovernanceFamilies.size:families.size)<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const shmittaFruitReferralQuestion=understanding.query.includes('פירות שביעית')&&understanding.query.includes('נכרים')&&understanding.query.includes('גדולי ההוראה');
@@ -2514,6 +2550,7 @@ else if(educationGovernanceQuestion){
  if(torahDailyPracticeQuestion){const torahDailyPractice=buildTorahDailyPracticeSynthesis(index);if(!torahDailyPractice)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_torah_daily_practice_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות ראיות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על הוראה מעשית בחיי היום יום.']};selected=torahDailyPractice.sources;claims=torahDailyPractice.claims;forcedSynthesis=torahDailyPractice.synthesis;}
  if(chassidicPracticeQuestion){const practice=buildChassidicPracticeSynthesis(index);if(!practice)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_chassidic_practice_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו ארבעה מקורות עבריים נפרדים עם פרופוזיציות ומיקומי גוף התומכים בהשוואה.']};selected=practice.sources;claims=practice.claims;forcedSynthesis=practice.synthesis;}
  if(practicalInstructionSynthesisQuestion){const practical=buildPracticalInstructionSynthesis(index);if(!practical)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_practical_instruction_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות שיחות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על דיבור בהתוועדות, סיפורי רבותינו והשלמת מצווה.']};selected=practical.sources;claims=practical.claims;forcedSynthesis=practical.synthesis;}
+ if(letterStudyPracticeSynthesisQuestion){const letterPractice=buildLetterStudyPracticeSynthesis(index);if(!letterPractice)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_letter_study_practice_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות איגרות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על קביעות, לימוד עם חברים והפיכת הלימוד למעשה.']};selected=letterPractice.sources;claims=letterPractice.claims;forcedSynthesis=letterPractice.synthesis;}
  if(unityPeaceSynthesisQuestion){const unity=buildUnityPeaceSynthesis(index);if(!unity)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_unity_peace_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על אחדות, שלום ותורה.']};selected=unity.sources;claims=unity.claims;forcedSynthesis=unity.synthesis;}
  if(northAfricaEducationQuestion){const northAfricaSynthesis=buildNorthAfricaEducationSynthesis(candidates);if(!northAfricaSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_north_africa_claim_evidence',claims:[],sources:candidates,answered_well:[],insufficient_evidence:['לא נמצאו מיקומי מקור ברמת טענה לכל חלקי ההשוואה.']};selected=candidates.slice();claims=northAfricaSynthesis.claims;}
  if(educationPublicationLettersQuestion){const educationSynthesis=buildEducationPublicationLettersSynthesis(candidates);if(!educationSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_education_publication_claim_evidence',claims:[],sources:candidates,answered_well:[],insufficient_evidence:['לא נמצאו מיקומי מקור ברמת טענה לכל חמשת המקרים.']};selected=candidates.slice();claims=educationSynthesis.claims;}
