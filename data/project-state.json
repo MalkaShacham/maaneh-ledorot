@@ -88,7 +88,7 @@
     "Batch203: seven new original-language Hayom Yom entries and one in-place enrichment of the existing Rebbe Rayatz letter #1081 identity; nine bodies inspected; 15 paraphrases; AID4666220 body unavailable; exact-head reconciliation pending.",
     "Batch204 (2026-11-20): seven proposed new Hebrew identities (four Sichos, three Maamarim) and one in-place enrichment of AID3008908; eight public source bodies inspected; 15 non-verbatim propositions; eight alternate candidates returned HTTP429; six known duplicate AIDs excluded; no Verified promotion. PR-workspace baseline after Batch203 is 1670/854/4290; expected after Batch204 1677/854/4305 is planning only pending full-index reconciliation.",
     "Batch204 full-index audit found AID2989589 twice. Its Batch204 presentation and two repeated propositions were removed; the canonical Batch101 identity and four existing propositions remain. Corrected measured PR-workspace boundary: 1676/854/4303.",
-    "Batch205: 12 new Hebrew publisher identities and one in-place enrichment of AID3008908; 13 source bodies inspected and 13 non-verbatim propositions prepared. AID5959858 was recovered through the public web reader after an earlier HTTP429; no crawler retry or access-control bypass. Full-index reconciliation and readiness gate pending."
+    "Batch205: 11 new source presentations (10 independent Hebrew witnesses and one non-independent Hebrew presentation of a Yiddish-edited Sicha), one in-place enrichment of AID3008908 and one AID2988862 recheck with no new proposition; 13 bodies inspected."
   ],
   "next_work": "Run full-index reconciliation for pending batches 200–205, validate Batch204/205 identity and proposition boundaries, run test_content_readiness.mjs and the full Actions suite, then merge PR #35 and verify GitHub Pages deployment.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
@@ -306,21 +306,21 @@
       "reconciliation_status": "pending_reconciliation",
       "reviewed_item_count": 13,
       "source_bodies_inspected": 13,
-      "new_source_identities": 12,
+      "new_source_identities": 11,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 12,
+      "existing_identities_rechecked": 1,
+      "new_response_propositions": 11,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 13,
+      "total_new_paraphrase_entries": 12,
       "metrics_before": {
         "answer_eligible_unique_sources": 1676,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 4303
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1688,
+        "answer_eligible_unique_sources": 1687,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 4316
+        "answer_eligible_propositions": 4315
       },
       "metrics_actual_before": {
         "answer_eligible_unique_sources": 1676,
@@ -330,7 +330,7 @@
       "metrics_actual_after": null,
       "metrics_delta_actual": null
     },
-    "last_run_note": "2026-11-20: Batch204 duplicate AID2989589 removed after full-index audit; corrected actual 1676/854/4303. Batch205 adds twelve Hebrew identities and one existing identity enrichment; exact-head reconciliation pending.",
+    "last_run_note": "2026-11-20: Batch204 duplicate AID2989589 removed after full-index audit; corrected actual 1676/854/4303. Batch205 includes 11 source presentations (10 independent Hebrew witnesses, one non-independent Hebrew presentation of a Yiddish-edited source), one in-place enrichment and one recheck; 13 bodies inspected; expected 1687/854/4315 pending reconciliation.",
     "last_batch_blocked_count": 0,
     "last_batch_blocked_reason": "No source body was blocked in Batch205; AID5959858, previously HTTP429, opened through the public web reader.",
     "next_work": "Run full-index reconciliation for pending batches 200–205, validate Batch204/205 identity and proposition boundaries, run test_content_readiness.mjs and the full Actions suite, then merge PR #35 and verify GitHub Pages deployment.",
@@ -1126,7 +1126,7 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4253
   },
-  "current_counts_note": "ה-current_counts המבניים הם snapshot של main האחרון; מדד התוכן המדוד במרחב PR לאחר Batch203 הוא 1670/854/4290 (run 44653927132), לא מדד ציבורי. Batch204 צפוי 1677/854/4305, תכנון בלבד עד reconciliation מלא. PR-head exact-head reconciliation after corrected Batch204 measured 1676/854/4303; Batch205 planning boundary 1688/854/4316 is not yet measured or public.",
+  "current_counts_note": "ה-current_counts המבניים הם snapshot של main האחרון; מדד התוכן המדוד במרחב PR לאחר Batch203 הוא 1670/854/4290 (run 44653927132), לא מדד ציבורי. Batch204 צפוי 1677/854/4305, תכנון בלבד עד reconciliation מלא. PR-head exact-head reconciliation after corrected Batch204 measured 1676/854/4303; Batch205 planning boundary 1688/854/4316 is not yet measured or public. Batch205 corrected to 11 new source presentations (10 independent witnesses and one non-independent Hebrew presentation of a Yiddish-edited source), one in-place enrichment and one existing-identity recheck; expected 1687/854/4315 pending exact-head reconciliation.",
   "planning_counts_after_batch201": {
     "answer_eligible_unique_sources": 1653,
     "content_verified_unique_sources": 854,
@@ -1148,8 +1148,8 @@
     "answer_eligible_propositions": 4303
   },
   "planning_counts_after_batch205": {
-    "answer_eligible_unique_sources": 1688,
+    "answer_eligible_unique_sources": 1687,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4316
+    "answer_eligible_propositions": 4315
   }
 }
