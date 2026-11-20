@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-20T06:56:21+02:00",
+  "last_updated": "2026-11-20T07:53:06+02:00",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -90,7 +90,8 @@
     "Batch204 full-index audit found AID2989589 twice. Its Batch204 presentation and two repeated propositions were removed; the canonical Batch101 identity and four existing propositions remain. Corrected measured PR-workspace boundary: 1676/854/4303.",
     "Exact-head CI reconciliation on 2026-11-20 (run 44667377305, commit c3c1ca) measured Batch205 at 1683 answer-eligible Evidence Families / 854 content-verified families / 4311 propositions. Batch205 expected 1687/854/4315; actual variance was -4 families and -4 propositions. No Verified promotion.",
     "Batch206 (2026-11-20): ten publisher bodies inspected; nine new English translation/adaptation presentations across eight Evidence Families, including AID2538132 linked to the same family as AID2538131; one in-place enrichment of AID2507215. All nine new presentations are non-independent; no Verified promotion. AID4666220 returned Internal Error in the public web reader; no crawler retry or access-control bypass. Full-index reconciliation and answer-quality gate pending.",
-    "Answer-quality regression on PR head c3c1ca: test_content_readiness.mjs failed because the study-routine/farming comparison could lose one side after generic claim pruning. The engine now rebuilds both topic claims and the synthesis from the pre-pruning topic-ranked evidence set; exact-head CI rerun required."
+    "Answer-quality regression on PR head c3c1ca: test_content_readiness.mjs failed because the study-routine/farming comparison could lose one side after generic claim pruning. The engine now rebuilds both topic claims and the synthesis from the pre-pruning topic-ranked evidence set; exact-head CI rerun required.",
+    "Batch 208 (2026-11-20): 12 Hebrew publisher bodies inspected (7 new source identities, 5 in-place enrichments); 12 bounded non-verbatim source-grounded propositions added. AID 4296163 duplicate same-AID record in Batch172 linked to the canonical Batch100 Evidence Family; no second witness counted. AID 4666220 remained inaccessible through the public reader (Internal Error); no crawler retry or access-control bypass; 12 accessible alternatives inspected. AID 5959805 was metadata/index-only and excluded; known duplicate AID 2989555 excluded. No Verified promotion. Baseline from exact-head CI run 44679832748: 1691 / 854 / 4329; expected after duplicate-family collapse (-1) and seven new families: 1697 / 854 / 4341, pending full reconciliation. Retrieval fix removes the generic source-budget truncation after both explicit comparison sides were selected; PR-bound test result pending."
   ],
   "next_work": "Run full-index reconciliation for pending batches 200–205, validate Batch204/205 identity and proposition boundaries, run test_content_readiness.mjs and the full Actions suite, then merge PR #35 and verify GitHub Pages deployment.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
@@ -1192,7 +1193,7 @@
       }
     ]
   },
-  "current_batch": 207,
+  "current_batch": 208,
   "updated_at": "2026-11-20T06:56:21+02:00",
   "current_batch_file": "data/items/content-research-batch-207-2026-11-20.json",
   "status": "pending_reconciliation",
