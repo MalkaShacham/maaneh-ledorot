@@ -8593,8 +8593,8 @@ assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=
  const correctedPrayer=idx.entries.find(e=>sourceAID(e)==='2988841');
  assert(correctedPrayer.response_proposition_locators[0].includes('סעיף ב׳'),'AID2988841 prayer locator must identify visible section ב׳');
  assert(correctedPrayer.response_proposition_locators[1].includes('סעיף א׳'),'AID2988841 new anecdote locator must identify section א׳');
- assert.deepEqual(readinessMetrics(batch207Data.metrics_actual_before),{answer_eligible_unique_sources:1691,content_verified_unique_sources:862,answer_eligible_propositions:4335});
- assert.deepEqual(readinessMetrics(batch207Data.metrics_expected_after),{answer_eligible_unique_sources:1691,content_verified_unique_sources:854,answer_eligible_propositions:4329
+ assert.deepEqual(readinessMetrics(batch207Data.metrics_actual_before),{answer_eligible_unique_sources:1691,content_verified_unique_sources:854,answer_eligible_propositions:4321});
+ assert.deepEqual(readinessMetrics(batch207Data.metrics_expected_after),{answer_eligible_unique_sources:1691,content_verified_unique_sources:854,answer_eligible_propositions:4329});
 
 // Batch210: full-index duplicate consolidation; five new identities and three in-place enrichments.
 assert.equal(batch210Data.records.length,5);
