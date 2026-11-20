@@ -1941,3 +1941,15 @@ The exact-head audit also exposed a reconciliation bug: legacy Batch209 existing
 - Updated the practical-instruction matcher to recognize the source-grounded wording 'התחיל במלאכת מצווה' as well as the existing wording. The intended three-source synthesis remains explicitly system-authored, with separate claim-level locators and deep researcher evidence mapping; it is not attributed to the Rebbe as a quotation.
 - Batch217 adds eight propositions to existing identities: zero new source identities, zero new Evidence Families, zero Verified promotions. Actual before-boundary is 1719 / 862 / 4410; planning expected after is 1724 / 862 / 4424. The expected actual result from eight in-place enrichments is 1719 / 862 / 4418, but this remains pending exact-head reconciliation until the quality gate completes.
 - No crawler retry, access-control bypass, full-text copying, scan-only verification, translation counted as an independent witness, schedule change, audience change, permission change or duplicate automation. The two media-only items remain in the review queue.
+
+
+## 2026-11-20 — Batch218: inspected Hebrew discourse and English correspondence
+
+- נפתחו ונבדקו 11 גופי פרסום ציבוריים: עשר זהויות חדשות — שמונה פרסומים בעברית (שבע שיחות ומאמר אחד) ושני מכתבים באנגלית — והעשרה אחת בתוך הזהות הקיימת AID 5989562 בקובץ הקנוני Batch102.
+- AIDs חדשים: 5959839, 5989575, 5989780, 2989207, 4385753, 6132056, 3140064, 5989553, 4212080, 7484120. נוספו עשר פרפרזות מחקר חדשות ועוד פרפרזה אחת לזהות הקיימת. כל הפרפרזות לא-מילוליות, עם מיקום גוף, provenance, היקף אימות, הקשר ומגבלות. כל הרשומות נשארו Parsed; לא קודם מקור ל-Verified.
+- AID 4666220 החזיר Internal Error; AID 5989654 החזיר HTTP 429. תועדו החסימות ונפתחו מקורות חלופיים באותה הפעלה. לא בוצע retry של crawler, לא נעקפו בקרות גישה, לא הועתק טקסט מלא ולא נספר תרגום כעד עצמאי.
+- בדיקת AID/URL ממוקדת וחיפוש GitHub ותור הבדיקה לא החזירו התאמות לעשרת המועמדים החדשים. קובץ האינדקס המלא לא היה זמין לקריאה בכלי; full-index reconciliation נשאר חובה לפני אישור ייחודיות סופית.
+- נוסף ב-`src/answer-engine.js` מסלול סינתזה תחום `education_formation_and_guidance` לשמונה משפחות שונות, עם מפת טענות ומיקומי מקור; מצב `researcher/deep` שומר על ההבחנה בין שיחות, מכתבים וסיפור המובא בשיחה מאוחרת. הסינתזה מסומנת במפורש כעבודת המערכת ולא כציטוט או ייחוס לרבי.
+- תוקן כשל בדיקת Batch213: ספירת הפרופוזיציות המצטברת (18) הושוותה בטעות ל-10 הפרופוזיציות שנוספו באותה אצווה. הבדיקה סופרת כעת רק רשומות metadata עם `batch_id=213`. נוספו בדיקות Batch218 ותרחיש אחזור דו-מצבי.
+- baseline הנוכחי בקובץ המדדים בענף: 1,719 / 862 / 4,418. הצפי האריתמטי אחרי Batch218 הוא 1,729 / 862 / 4,429, אך זהו תכנון בלבד עד exact-head reconciliation. לא נרשמה תוצאת after כאילו נמדדה.
+- PR #35 עודכן; מיזוג ל-`main` ופרסום Pages ממתינים לתוצאות Actions ול-full-index reconciliation.
