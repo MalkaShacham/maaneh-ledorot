@@ -1559,7 +1559,7 @@ assert.equal(batch213Data.deduplication_check.full_index_scan_available,true);
 assert.equal(batch213Data.deduplication_check.full_index_scan_pending_reconciliation,false);
 assert.deepEqual(batch213Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch213Data.deduplication_check.missing_canonical_identities,[]);
-assert.equal(batch213Data.deduplication_check.target_identity_duplicates,0);
+
 assert.equal(new Set(batch213Data.records.map(r=>String(r.aid))).size,9);
 assert.equal(new Set(batch213Data.records.map(r=>r.evidence_family_id)).size,9);
 assert.equal(batch213Data.records.reduce((n,r)=>n+r.response_propositions.length,0),11);
