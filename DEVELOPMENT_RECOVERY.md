@@ -1823,3 +1823,14 @@ Eight public source bodies were inspected. Seven existing Hebrew Sicha identitie
 - Reconciliation hardening for Batch203: later in-place updates are now matched by source_unit_key or canonical id when the existing item has no publisher AID. This prevents the two letter #1081 propositions from leaking into the historical Batch202 boundary.
 
 - Reconciliation keying is identity-safe: later in-place updates are indexed by source-unit, canonical ID, and AID aliases, then applied only to the matching canonical record. The affected-identity count is deduplicated across aliases.
+
+
+## 2026-11-20 — Batch 204: Hebrew Sichos and Maamarim, plus retrieval regression repair
+
+- Opened and inspected eight public Hebrew source bodies from BeitChabad.com/Chabad.org: seven new candidate identities (AIDs 2988954, 2989610, 3140065, 3139998, 2989157, 2989129, 2989589) and one additional passage in existing AID 3008908. The seven new candidates comprise four Sichos and three Maamarim. All remain Parsed with partial context; no Verified promotion was made.
+- Added fourteen non-verbatim, source-grounded propositions to the seven new records and one additional proposition to AID 3008908 in its existing canonical file. Every proposition is marked source_grounded_paraphrase / proposition_verbatim=false / source_text_inspected, with a body locator, provenance, verification scope and limitations. No full protected text was copied.
+- Eight other public candidates returned HTTP 429 (AIDs 5959858, 5959841, 5959847, 5959849, 5959839, 4385658, 4385570, 4385546). No runner-side crawler retry or access-control bypass was attempted; eight accessible alternative bodies were reviewed in the same run.
+- Six duplicate candidates were excluded after finding existing canonical records in Batches 165, 187, 188, 191, 193 and 196. The preflight scan covered PR batches 149–203 and exact-AID main-branch code search, but was not a full scan of all earlier canonical files. Full-index deduplication remains pending.
+- Exact-head Answer Quality Gate run 44653927132 measured the Batch203 PR-workspace boundary at 1670/854/4290 (answer-eligible unique Evidence Families / content-verified unique families / propositions). This is not public main. Batch204's expected 1677/854/4305 is a planning boundary only until full-index reconciliation.
+- Retrieval repair: when one inspected proposition matches both comparison predicates, the displayed claim builder now retains both topic tags rather than forcing a single side. A regression assertion checks both sides. Code commit: aedd42c34b7b17ed673ea29ee3ffd72a7e8f7f82; test commit: d69c8f351f6a45dc113fde28a305bfe9fa2972fc. Exact-head rerun is pending.
+- Public metrics and GitHub Pages were not changed in this batch. PR #35 remains unmerged until all required checks pass. The existing hourly schedule, audience and permissions were not changed.
