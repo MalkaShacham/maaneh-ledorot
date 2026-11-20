@@ -1843,3 +1843,14 @@ Eight public source bodies were inspected. Seven existing Hebrew Sicha identitie
 - AID 5959858, previously returned as HTTP 429 in Batch204, was opened through the public web reader on 2026-11-20. No crawler retry or access-control bypass was used.
 - The comparison coverage defect was traced to `comparativeCoverage` matching claim text but ignoring explicit claim-topic tags. `study_routine` and `farming_and_torah` tags are now mapped to their requested topics; the regression test remains in the content-readiness suite.
 - Batch205's corrected 1687 / 854 / 4315 boundary is planning only until exact-head full-index reconciliation and the readiness gate complete. AID 2988862 was not duplicated because its proposed proposition already exists in Batch176.
+
+## 2026-11-20 — Batch205 reconciliation and Batch206 content review
+
+The exact-head Answer Quality Gate run 44667377305 on commit c3c1ca rebuilt the evidence index and measured 1,683 answer-eligible Evidence Families, 854 content-verified families and 4,311 answer-eligible propositions after Batch205. Batch205's expected boundary was 1,687 / 854 / 4,315; the measured variance was −4 families and −4 propositions. No source was promoted to Verified.
+
+Batch206 inspected ten public Chabad.org publisher bodies. Nine new English translation/adaptation presentations were added across eight event Evidence Families; AID 2538132 is an adapted presentation of the same 19 Kislev 5742 address as AID 2538131 and is linked to that same family, not counted as an independent witness. One additional non-verbatim proposition was appended in place to canonical AID 2507215 in Batch137. All nine new presentations are marked non-independent because the publisher labels them as free translations/adaptations and the original-language witnesses were not inspected. No Verified promotion was made.
+
+AID 4666220 again returned Internal Error through the public web reader. No crawler retry or access-control bypass was attempted; the ten inspected bodies were used as same-run fallback. Preflight scanned 147 content-research-batch files and three bulk-indexed files; it found AID 2507215 in Batch137 and no exact-AID match for the nine new presentations. The full 577-file canonical item set still requires reconciliation.
+
+The exact-head Answer Quality Gate had failed at test_content_readiness.mjs line 887: the study-routine/farming comparison could lose one requested side after generic claim pruning. The engine now rebuilds both topic claims and its bounded synthesis from the pre-pruning topic-ranked evidence set. The existing regression test must pass on the new exact head before merge. Batch206's expected boundary is 1,691 / 854 / 4,321, but this is a planning value only until full-index reconciliation.
+

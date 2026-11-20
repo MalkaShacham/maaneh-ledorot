@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-20T05:02:12+02:00",
+  "last_updated": "2026-11-20T05:59:13+02:00",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -20,20 +20,20 @@
     "promotion_queue_physical_records": 526,
     "promotion_queue_already_canonical": 526,
     "promotion_ready_records": 0,
-    "canonical_json_files": 471,
-    "canonical_unique_item_keys": 9280,
+    "canonical_json_files": 577,
+    "canonical_unique_item_keys": 10080,
     "evidence_family_files": 56,
-    "verified_unique_item_keys": 7830,
+    "verified_unique_item_keys": 7755,
     "status_counts_unique_keys": {
-      "Verified": 7830,
-      "Linked": 15,
-      "Parsed": 94,
-      "Indexed": 1136,
-      "Discovered": 3
+      "Verified": 7755,
+      "Linked": 53,
+      "Parsed": 826,
+      "Indexed": 1147,
+      "Discovered": 4
     },
-    "answer_eligible_unique_sources": 1644,
+    "answer_eligible_unique_sources": 1683,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4230
+    "answer_eligible_propositions": 4311
   },
   "counting_note": "Physical repository reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. Evidence-family files are counted separately. Public metrics and search index are regenerated after relevant pushes.",
   "verified_promotions_latest_run": 0,
@@ -88,7 +88,9 @@
     "Batch203: seven new original-language Hayom Yom entries and one in-place enrichment of the existing Rebbe Rayatz letter #1081 identity; nine bodies inspected; 15 paraphrases; AID4666220 body unavailable; exact-head reconciliation pending.",
     "Batch204 (2026-11-20): seven proposed new Hebrew identities (four Sichos, three Maamarim) and one in-place enrichment of AID3008908; eight public source bodies inspected; 15 non-verbatim propositions; eight alternate candidates returned HTTP429; six known duplicate AIDs excluded; no Verified promotion. PR-workspace baseline after Batch203 is 1670/854/4290; expected after Batch204 1677/854/4305 is planning only pending full-index reconciliation.",
     "Batch204 full-index audit found AID2989589 twice. Its Batch204 presentation and two repeated propositions were removed; the canonical Batch101 identity and four existing propositions remain. Corrected measured PR-workspace boundary: 1676/854/4303.",
-    "Batch205: 11 new source presentations (10 independent Hebrew witnesses and one non-independent Hebrew presentation of a Yiddish-edited Sicha), one in-place enrichment of AID3008908 and one AID2988862 recheck with no new proposition; 13 bodies inspected."
+    "Exact-head CI reconciliation on 2026-11-20 (run 44667377305, commit c3c1ca) measured Batch205 at 1683 answer-eligible Evidence Families / 854 content-verified families / 4311 propositions. Batch205 expected 1687/854/4315; actual variance was -4 families and -4 propositions. No Verified promotion.",
+    "Batch206 (2026-11-20): ten publisher bodies inspected; nine new English translation/adaptation presentations across eight Evidence Families, including AID2538132 linked to the same family as AID2538131; one in-place enrichment of AID2507215. All nine new presentations are non-independent; no Verified promotion. AID4666220 returned Internal Error in the public web reader; no crawler retry or access-control bypass. Full-index reconciliation and answer-quality gate pending.",
+    "Answer-quality regression on PR head c3c1ca: test_content_readiness.mjs failed because the study-routine/farming comparison could lose one side after generic claim pruning. The engine now rebuilds both topic claims and the synthesis from the pre-pruning topic-ranked evidence set; exact-head CI rerun required."
   ],
   "next_work": "Run full-index reconciliation for pending batches 200–205, validate Batch204/205 identity and proposition boundaries, run test_content_readiness.mjs and the full Actions suite, then merge PR #35 and verify GitHub Pages deployment.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
