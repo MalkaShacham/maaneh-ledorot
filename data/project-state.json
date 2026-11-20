@@ -92,7 +92,8 @@
     "Batch206 (2026-11-20): ten publisher bodies inspected; nine new English translation/adaptation presentations across eight Evidence Families, including AID2538132 linked to the same family as AID2538131; one in-place enrichment of AID2507215. All nine new presentations are non-independent; no Verified promotion. AID4666220 returned Internal Error in the public web reader; no crawler retry or access-control bypass. Full-index reconciliation and answer-quality gate pending.",
     "Answer-quality regression on PR head c3c1ca: test_content_readiness.mjs failed because the study-routine/farming comparison could lose one side after generic claim pruning. The engine now rebuilds both topic claims and the synthesis from the pre-pruning topic-ranked evidence set; exact-head CI rerun required.",
     "Batch 208 (2026-11-20): 12 Hebrew publisher bodies inspected (7 new source identities, 5 in-place enrichments); 12 bounded non-verbatim source-grounded propositions added. AID 4296163 duplicate same-AID record in Batch172 linked to the canonical Batch100 Evidence Family; no second witness counted. AID 4666220 remained inaccessible through the public reader (Internal Error); no crawler retry or access-control bypass; 12 accessible alternatives inspected. AID 5959805 was metadata/index-only and excluded; known duplicate AID 2989555 excluded. No Verified promotion. Baseline from exact-head CI run 44679832748: 1691 / 854 / 4329; expected after duplicate-family collapse (-1) and seven new families: 1697 / 854 / 4341, pending full reconciliation. Retrieval fix removes the generic source-budget truncation after both explicit comparison sides were selected; PR-bound test result pending.",
-    "Batch214 contains eight English first-person memoir articles by the same narrator (Zalmon Jaffe), each tied to a distinct event; do not count them as independent corroboration of one another. Full-index reconciliation is pending."
+    "Batch214 contains eight English first-person memoir articles by the same narrator (Zalmon Jaffe), each tied to a distinct event; do not count them as independent corroboration of one another. Full-index reconciliation is pending.",
+    "Full-index reconciliation run 44766924596 surfaced 41 historical AID/URL collision groups across older batches. They require event-level source inspection and Evidence Family reconciliation; the raw answer_eligible_unique_sources metric is not a globally deduplicated source count until classified."
   ],
   "next_work": "Run exact full-index reconciliation across Batches207–213; run scripts/test_content_readiness.mjs and the answer-quality gate; merge PR #35 only after all checks pass; then verify the GitHub Pages deployment.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
@@ -2301,5 +2302,11 @@
     "answer_eligible_unique_sources": 1720,
     "content_verified_unique_sources": 862,
     "answer_eligible_propositions": 4396
+  },
+  "identity_collision_audit": {
+    "path": "data/audits/identity-collision-audit-2026-11-20.json",
+    "source_workflow_run_id": 44766924596,
+    "collision_group_count": 41,
+    "status": "pending_manual_event_level_review"
   }
 }

@@ -1570,9 +1570,9 @@ assert.equal(new Set(batch213Data.records.map(r=>String(r.aid))).size,8);assert.
 assert.equal(batch213Data.records.reduce((n,r)=>n+r.response_propositions.length,0),10);
 assert.equal(batch213Data.records.every(r=>r.status==='Parsed'&&r.has_content_evidence&&r.independent_witness===true&&r.response_propositions.every((p,i)=>r.response_proposition_locators[i]&&r.response_proposition_metadata[i]?.proposition_verification==='source_text_inspected')),true);
 assert.equal(batch213Data.records.some(r=>Number(r.aid)===4280037),false);
-assert.equal(batch213Data.existing_identity_updates[0].aid,5989562);assert.equal(batch213Data.existing_identity_updates[0].canonical_file,batch102Path);
+assert.equal(batch213Data.existing_identity_updates[0].aid,5989562);assert.equal(batch213Data.existing_identity_updates[0].canonical_file,'data/items/content-research-batch-102-2026-11-15.json');
 const enriched5989562=idx.entries.find(e=>sourceAID(e)==='5989562');assert(enriched5989562&&enriched5989562.response_propositions.length>=4);
-assert.equal(enriched5989562.canonical_file,batch102Path);assert(enriched5989562.response_propositions.some(p=>p.includes('דימוי של אדם קטן הניצב על כתפי ענק')));
+assert.equal(enriched5989562.canonical_file,'data/items/content-research-batch-102-2026-11-15.json');assert(enriched5989562.response_propositions.some(p=>p.includes('דימוי של אדם קטן הניצב על כתפי ענק')));
 assert(enriched5989562.response_proposition_locators.length===enriched5989562.response_propositions.length);
 assert(enriched5989562.response_proposition_metadata.some(m=>String(m.batch_id)==='213'&&m.proposition_source_locator.includes('שורות 218–220')));
 assert.equal(enriched5989562.evidence_family_id,'sicha-5728-19-kislev-aid5989562');
