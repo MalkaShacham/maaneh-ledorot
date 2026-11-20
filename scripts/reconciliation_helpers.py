@@ -36,3 +36,21 @@ def has_frozen_metrics_snapshot(batch_data):
         and isinstance(batch_data.get("metrics_actual_before"), dict)
         and isinstance(batch_data.get("metrics_actual_after"), dict)
     )
+
+
+def is_audit_descriptor(d):
+    """True for review/update descriptors that must not become canonical source records."""
+    if not isinstance(d, dict):
+        return False
+    action = str(d.get("action") or "")
+    return (
+        action.startswith(("enriched_existing_identity", "duplicate_alias_", "excluded_duplicate_"))
+        or d.get("existing_identity") is True
+        or d.get("body_text_inspected") is True
+        or d.get("inspected_original_language_body") is True
+        or ("reason" in d and "handling" in d and "aid" in d)
+        or ("canonical_file" in d and "propositions_added" in d and ("total_propositions_after" in d or "aid" in d))
+        # Batch209 used the legacy audit shape canonical/locator/section/prop/limit.
+        or ("canonical" in d and "locator" in d and "section" in d and "prop" in d and "limit" in d and "aid" in d and "evidence_family_id" in d)
+        or ("identity_key" in d and "canonical_records_found" in d)
+    )
