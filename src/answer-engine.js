@@ -2044,6 +2044,47 @@ function buildTorahDailyPracticeSynthesis(index){
  return{sources,claims,synthesis};
 }
 
+
+function isSukkotCollectiveInnerServiceQuestion(q){
+ const t=norm(q);
+ return t.includes('סוכות')&&(t.includes('הקהל')||t.includes('שמחת בית השואבה')||t.includes('בית מקדש קטן')||t.includes('עבודת היום יום')||t.includes('עבודה בימות החול'));
+}
+function buildSukkotCollectiveInnerServiceSynthesis(index){
+ const specs=[
+  {aid:'4385713',topic:'hakhel_gathers_all_israel',predicate:p=>{const t=norm(p);return t.includes('מעמד הקהל')&&t.includes('אנשים נשים ילדים')&&t.includes('אחדות');}},
+  {aid:'2989019',topic:'inner_sanctuary_with_nested_attribution',predicate:p=>{const t=norm(p);return t.includes('בית מקדש קטן')&&t.includes('הרבי הקודם')&&t.includes('הרשב');}},
+  {aid:'2989018',topic:'festival_elevation_to_weekday_service',predicate:p=>{const t=norm(p);return t.includes('לאחר יום הכיפורים')&&t.includes('ימי החול')&&t.includes('עיקר העבודה');}}
+ ];
+ const sources=[],basis=[],claims=[];
+ for(const spec of specs){
+  const original=index.find(e=>sourceAIDValue(e)===spec.aid);
+  if(!original||original.has_content_evidence!==true||original.proposition_origin!=='source_grounded_paraphrase'||original.proposition_verification!=='source_text_inspected'||original.proposition_verbatim!==false||original.independent_witness===false||original.translation_of_evidence_family_id)return null;
+  const proposition=arr(original.response_propositions).find(p=>spec.predicate(String(p)));
+  if(!proposition)return null;
+  const pi=arr(original.response_propositions).findIndex(p=>String(p).trim()===String(proposition).trim());
+  const locator=arr(original.response_proposition_locators)[pi]||original.proposition_source_locator||null;
+  if(!locator)return null;
+  const sourceNumber=sources.length+1,e={...original,_supporting_propositions:[String(proposition)],_independent_witness:true};
+  sources.push(e);
+  const family=familyKey(e);
+  const provenance=e.witness_provenance||e.source_witness||e.witness_type||null;
+  const meta=arr(e.response_proposition_provenance).find(x=>x.proposition_index===pi+1)||arr(e.response_proposition_metadata).find(x=>x.proposition_index===pi+1)||null;
+  const verificationScope=meta?.verification_scope||e.verification_scope||null;
+  basis.push({source_number:sourceNumber,aid:spec.aid,id:e.id||null,evidence_family_id:family,language:e.language||null,context_status:e.context_status||'unknown',independent_witness:true,witness_type:e.witness_type||null,provenance,verification_scope:verificationScope,propositions:[{text:String(proposition),source_locator:locator}]});
+  const witness={source_number:sourceNumber,source_id:e.id||e.aid||null,source_title:e.title||null,evidence_family_id:family,source_locator:locator,proposition_source_locator:locator,proposition:String(proposition),independent_witness:true,provenance,verification_scope:verificationScope};
+  claims.push({topic:spec.topic,text:String(proposition),source_numbers:[sourceNumber],evidence_family_ids:[family],source_locators:[{source_number:sourceNumber,locator,proposition_text:String(proposition)}],witnesses:[witness],documented_circumstances:arr(e.documented_circumstances),conditions_or_qualifications:arr(e.conditions_or_qualifications),audiences:arr(e.audience)});
+ }
+ const families=[...new Set(basis.map(b=>b.evidence_family_id).filter(Boolean))];
+ if(sources.length!==3||families.length!==3||claims.length!==3||claims.some(c=>!c.source_locators.length))return null;
+ const synthesis={kind:'cross_family_research_synthesis',topic:'sukkot_collective_gathering_inner_service',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי',
+  text:'שלוש השיחות מציגות שלושה ממדים נפרדים של עבודת סוכות והמשכיותה: מעמד הקהל ככינוס המאחד את כלל ישראל סביב תורה; הדימוי של ״בית מקדש קטן״ בלב היהודי, המובא בשיחה בשרשרת ייחוס לרבי הקודם בשם אביו; והמעבר מהתעלות החגים לעבודה המעשית המתמשכת בימות החול. אלה מקורות מתקופות וממעמדים שונים, ולא אמירה אחת או תכנית אחידה.',
+  source_numbers:[1,2,3],evidence_family_ids:families,independent_evidence_family_ids:families,basis,claims,
+  evidence_quality:'three_distinct_original_hebrew_unedited_sicha_event_families',
+  method:'Claim-level comparison across three distinct Sukkot-related Hebrew unedited Sicha transcripts. Each claim is tied to one inspected body passage with its own locator, provenance, scope and limitations; dates and event contexts are kept separate.',
+  limits:['הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.','שלוש השיחות הן אירועים ותאריכים נפרדים; אין למזג אותן לאמירה אחת או לתוכנית אחידה.','הדימוי של ״בית מקדש קטן״ מובא בשיחה בשרשרת ייחוס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו לרבי מליובאוויטש כציטוט ישיר.','כל התמלילים מסומנים בלתי מוגה; נבדקו רק המקטעים והמיקומים המפורטים, ולא הושוו להקלטה, כתב יד או נוסח מוגה.','הפרופוזיציות מתארות מהלכים רעיוניים בתוך השיחות; אין להציג אותן כמדידה אמפירית של אחדות או של עבודה יומיומית.']};
+ return{sources,claims,synthesis};
+}
+
 function isUnityPeaceSynthesisQuestion(q){
  const t=norm(q);
  return t.includes('אחדות')&&t.includes('שלום')&&(t.includes('תורה')||t.includes('ישראל'));
@@ -2255,6 +2296,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const activeFarbrengenQuestion=understanding.topics.includes('התוועדויות פעילות והמשכיות לאורך השנה');
   const communityUnityHospitalityQuestion=understanding.query.includes('אורחים')&&understanding.query.includes('אחדות');
  const unityPeaceSynthesisQuestion=isUnityPeaceSynthesisQuestion(understanding.query);
+ const sukkotCollectiveInnerServiceQuestion=isSukkotCollectiveInnerServiceQuestion(understanding.query);
  const wellspringsDisseminationQuestion=understanding.query.includes('הפצת המעיינות')&&understanding.query.includes('פנימיות התורה');
  const torahDailyPracticeQuestion=isTorahDailyPracticeSynthesisQuestion(understanding.query);
  const chassidicPracticeQuestion=isChassidicPracticeQuestion(understanding.query);
@@ -2267,9 +2309,9 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
   const mitzvahCareCapacityQuestion=isMitzvahCareCapacityQuestion(understanding.query);
   const dailyLifeLoveJoyQuestion=isDailyLifeLoveJoyQuestion(understanding.query);
  if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusPeaceMissionQuestion||yechidusUnityMissionQuestion||yudTesKislevLettersQuestion||torahDailyPracticeQuestion||chassidicPracticeQuestion||purimEducationInitiativeQuestion||torahDailyLifeAcceptanceQuestion||torahStudyEffortPracticeQuestion||torahLearningVitalityQuestion||mitzvahCareCapacityQuestion||dailyLifeLoveJoyQuestion||practicalInstructionSynthesisQuestion||letterStudyPracticeSynthesisQuestion||educationFormationQuestion||learningToActionQuestion)understanding.intent='guidance';
- if(unityPeaceSynthesisQuestion)understanding.intent='guidance';
+ if(unityPeaceSynthesisQuestion||sukkotCollectiveInnerServiceQuestion)understanding.intent='guidance';
  else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||northAfricaEducationQuestion||educationFormationQuestion||learningToActionQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
- if(!usable.length&&!torahDailyPracticeQuestion&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!youthEducationStudyQuestion&&!purimEducationInitiativeQuestion&&!unityPeaceSynthesisQuestion&&!torahDailyLifeAcceptanceQuestion&&!torahStudyEffortPracticeQuestion&&!torahLearningVitalityQuestion&&!mitzvahCareCapacityQuestion&&!dailyLifeLoveJoyQuestion&&!practicalInstructionSynthesisQuestion&&!letterStudyPracticeSynthesisQuestion&&!educationFormationQuestion&&!learningToActionQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
+ if(!usable.length&&!torahDailyPracticeQuestion&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!youthEducationStudyQuestion&&!purimEducationInitiativeQuestion&&!unityPeaceSynthesisQuestion&&!torahDailyLifeAcceptanceQuestion&&!torahStudyEffortPracticeQuestion&&!torahLearningVitalityQuestion&&!mitzvahCareCapacityQuestion&&!dailyLifeLoveJoyQuestion&&!practicalInstructionSynthesisQuestion&&!letterStudyPracticeSynthesisQuestion&&!educationFormationQuestion&&!learningToActionQuestion&&!sukkotCollectiveInnerServiceQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&(educationGovernanceQuestion?educationGovernanceFamilies.size:families.size)<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const shmittaFruitReferralQuestion=understanding.query.includes('פירות שביעית')&&understanding.query.includes('נכרים')&&understanding.query.includes('גדולי ההוראה');
@@ -2552,6 +2594,7 @@ else if(educationGovernanceQuestion){
  if(practicalInstructionSynthesisQuestion){const practical=buildPracticalInstructionSynthesis(index);if(!practical)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_practical_instruction_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות שיחות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על דיבור בהתוועדות, סיפורי רבותינו והשלמת מצווה.']};selected=practical.sources;claims=practical.claims;forcedSynthesis=practical.synthesis;}
  if(letterStudyPracticeSynthesisQuestion){const letterPractice=buildLetterStudyPracticeSynthesis(index);if(!letterPractice)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_letter_study_practice_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות איגרות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על קביעות, לימוד עם חברים והפיכת הלימוד למעשה.']};selected=letterPractice.sources;claims=letterPractice.claims;forcedSynthesis=letterPractice.synthesis;}
  if(unityPeaceSynthesisQuestion){const unity=buildUnityPeaceSynthesis(index);if(!unity)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_unity_peace_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות ראיות עבריות נפרדות עם פרופוזיציות ומיקומי גוף על אחדות, שלום ותורה.']};selected=unity.sources;claims=unity.claims;forcedSynthesis=unity.synthesis;}
+ if(sukkotCollectiveInnerServiceQuestion){const sukkot=buildSukkotCollectiveInnerServiceSynthesis(index);if(!sukkot)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_sukkot_collective_inner_service_claim_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:['לא נמצאו שלוש משפחות שיחות עבריות נפרדות עם פרופוזיציות שנבדקו ומיקומי גוף על הקהל, המקדש הפנימי והעבודה היומיומית.']};selected=sukkot.sources;claims=sukkot.claims;forcedSynthesis=sukkot.synthesis;}
  if(northAfricaEducationQuestion){const northAfricaSynthesis=buildNorthAfricaEducationSynthesis(candidates);if(!northAfricaSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_north_africa_claim_evidence',claims:[],sources:candidates,answered_well:[],insufficient_evidence:['לא נמצאו מיקומי מקור ברמת טענה לכל חלקי ההשוואה.']};selected=candidates.slice();claims=northAfricaSynthesis.claims;}
  if(educationPublicationLettersQuestion){const educationSynthesis=buildEducationPublicationLettersSynthesis(candidates);if(!educationSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_education_publication_claim_evidence',claims:[],sources:candidates,answered_well:[],insufficient_evidence:['לא נמצאו מיקומי מקור ברמת טענה לכל חמשת המקרים.']};selected=candidates.slice();claims=educationSynthesis.claims;}
  if(yudTesKislevLettersQuestion){const yudTesSynthesis=buildYudTesKislevLettersSynthesis(candidates);if(!yudTesSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_yud_tes_kislev_claim_evidence',claims:[],sources:candidates,answered_well:[],insufficient_evidence:['לא נמצאו מיקומי מקור ברמת טענה לכל ארבע האיגרות.']};selected=candidates.slice();claims=yudTesSynthesis.claims;}
