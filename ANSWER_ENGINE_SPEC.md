@@ -117,3 +117,8 @@ For a query classified as **עקירת שיניים וחוות דעת**, a candi
 ## Deep researcher claim-source map
 
 Researcher mode returns both an evidence map and an explicit claim-source map. Each claim-source entry includes the claim number/text, supporting source numbers, Evidence Family IDs and proposition-level body locators. This is a navigation map for claim verification, not a substitute for checking the cited passage or its context.
+
+
+## Batch171 — claim-level synthesis: Torah, daily action and study depth
+
+A narrowly gated comparison is available when a question explicitly connects **בכל דרכיך דעהו**, acceptance of Torah before full comprehension, and the transition from **למיגרס** to **לעיונא**. It requires three distinct original-Hebrew Evidence Families (AIDs 2989147, 2989220 and 2989059), each with an inspected body proposition and its own locator. The engine emits three separately sourced claims and a system-authored synthesis labelled as neither a quotation nor an attribution to the Rebbe. The synthesis preserves the separate dates and contexts, partial-context limits, the distinction between acceptance-before-understanding and rejecting understanding, and the non-halakhic scope of the everyday-action passage. Researcher mode exposes the three-family evidence map and claim-level source locators; translations are not counted as independent witnesses.

@@ -35,20 +35,16 @@
     "Sichos": 8
   },
   "metrics_before": {
-    "answer_eligible_unique_sources": 1496,
+    "answer_eligible_unique_sources": 1495,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3815
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1495,
+    "answer_eligible_unique_sources": 1494,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3823
   },
-  "metrics_actual_before": {
-    "answer_eligible_unique_sources": 1496,
-    "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 3815
-  },
+  "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "metrics_note": "The failed CI reconciliation run 44167373651 measured 1496 / 854 / 3815 in its workspace before batch148. That snapshot counted AID 2989555 twice under two Evidence Family IDs (batch101 and batch141). This batch merges the duplicate into the pre-existing canonical family (-1 family) and adds eight inspected propositions to existing identities (+8 propositions). Expected boundary 1495 / 854 / 3823 is a calculation, not a measured post-batch result; reconciliation is pending.",
@@ -203,12 +199,12 @@
       "action": "enriched_existing_identity_in_place",
       "existing_identity": true,
       "aid": 2988877,
-      "id": "chabad-sicha-2988877",
-      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
-      "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
-      "existing_propositions_before": 4,
+      "id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "existing_propositions_before": 7,
       "propositions_added": 1,
-      "total_propositions_after": 5,
+      "total_propositions_after": 8,
       "body_locator": "Chabad.org AID 2988877, גוף השיחה, סעיף כו, שורות 402–411.",
       "reason": "One bounded non-verbatim Hebrew research paraphrase was added from the inspected original-language publisher body; the existing identity and Evidence Family were retained."
     }
@@ -366,14 +362,17 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "witness_type": "published_unedited_hebrew_sicha_transcript",
-      "evidence_family_id": "sicha-5714-12-shevat-shabbat-beshalach-aid2988877",
-      "independent_witness": true,
+      "evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "independent_witness": false,
       "proposition_count": 1,
       "context_status": "partial",
       "existing_identity": true,
       "action": "enriched_existing_identity_in_place",
-      "canonical_file": "data/items/content-research-batch-141-2026-11-17.json",
-      "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      "canonical_file": "data/items/content-research-batch-100-2026-11-15.json",
+      "note": "נפתח ונבדק גוף פרסום עברי המסומן בלתי מוגה; נוספה פרפרזה אחת המוגבלת לשורות המצוינות. לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+      "id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "reviewed_id": "sicha-5714-beshalach-12-shevat-aid2988877",
+      "reviewed_evidence_family_id": "sicha-5714-beshalach-12-shevat-aid2988877"
     }
   ],
   "records": [],
