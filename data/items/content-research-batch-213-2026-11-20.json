@@ -9,39 +9,39 @@
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "review_method": "manual_public_web_source_body_inspection",
-  "reviewed_item_count": 15,
-  "source_bodies_inspected": 8,
-  "source_body_pages_opened": 8,
-  "source_body_pages_attempted": 15,
-  "candidate_pages_opened": 15,
+  "reviewed_item_count": 17,
+  "source_bodies_inspected": 10,
+  "source_body_pages_opened": 10,
+  "source_body_pages_attempted": 17,
+  "candidate_pages_opened": 17,
   "candidate_pages_blocked": 7,
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 20,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 8,
-  "existing_identities_enriched": 0,
+  "new_source_identities": 9,
+  "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 10,
-  "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 10,
+  "new_response_propositions": 11,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 12,
   "answer_eligible_source_families_added": 0,
-  "independent_witnesses_added": 8,
+  "independent_witnesses_added": 9,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
   "source_languages": [
     "Hebrew"
   ],
   "language_distribution": {
-    "Hebrew": 8
+    "Hebrew": 9
   },
   "original_language_distribution": {
-    "Hebrew": 8
+    "Hebrew": 9
   },
   "proposition_language_distribution": {
-    "Hebrew": 10
+    "Hebrew": 12
   },
   "source_type_distribution": {
-    "Sicha": 5,
+    "Sicha": 6,
     "Maamar": 3
   },
   "new_aids": [
@@ -52,7 +52,8 @@
     5959838,
     4280063,
     4385893,
-    4385774
+    4385774,
+    4304354
   ],
   "new_ids": [
     "chabad-hebrew-3008940",
@@ -62,7 +63,8 @@
     "chabad-hebrew-5959838",
     "chabad-hebrew-4280063",
     "chabad-hebrew-4385893",
-    "chabad-hebrew-4385774"
+    "chabad-hebrew-4385774",
+    "chabad-hebrew-4304354"
   ],
   "new_source_ids": [
     "chabad-hebrew-3008940",
@@ -72,10 +74,15 @@
     "chabad-hebrew-5959838",
     "chabad-hebrew-4280063",
     "chabad-hebrew-4385893",
-    "chabad-hebrew-4385774"
+    "chabad-hebrew-4385774",
+    "chabad-hebrew-4304354"
   ],
-  "enriched_aids": [],
-  "enriched_ids": [],
+  "enriched_aids": [
+    5989562
+  ],
+  "enriched_ids": [
+    "sicha-5728-19-kislev-aid5989562"
+  ],
   "rechecked_aids": [],
   "reviewed_aids": [
     3008940,
@@ -86,6 +93,8 @@
     4280063,
     4385893,
     4385774,
+    4304354,
+    5989562,
     5959829,
     4280057,
     4280067,
@@ -101,15 +110,15 @@
   },
   "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1712,
+    "answer_eligible_unique_sources": 1713,
     "content_verified_unique_sources": 862,
-    "answer_eligible_propositions": 4387
+    "answer_eligible_propositions": 4389
   },
   "metrics_actual_after": null,
   "metrics_after_actual": null,
   "metrics_delta_actual": null,
   "metrics_before_source": "Batch212 expected boundary 1704/862/4377; planning only, not a measured post-reconciliation snapshot.",
-  "metrics_note": "Planning only. Eight candidate source identities and ten propositions were added; exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
+  "metrics_note": "Planning only. Nine candidate source identities and one in-place enrichment produced eleven new-source propositions and one existing-identity proposition. Exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
   "blocked_candidate_count": 7,
   "blocked_candidates": [
     {
@@ -155,7 +164,7 @@
       "reason": "העמוד לא נפתח בקורא המקורות והחזיר 429. לא בוצע crawler retry או ניסיון לעקוף בקרת גישה; נבדקו מקורות חלופיים נגישים באותה הפעלה."
     }
   ],
-  "excluded_duplicate_candidate_count": 12,
+  "excluded_duplicate_candidate_count": 11,
   "excluded_duplicate_candidates": [
     {
       "aid": 5989562,
@@ -164,13 +173,6 @@
         "152"
       ],
       "reason": "אותו AID כבר מופיע בשתי אצוות PR; הוחרג ולא נוצרה זהות נוספת."
-    },
-    {
-      "aid": 4304354,
-      "existing_batches": [
-        "146"
-      ],
-      "reason": "כבר קיים באצווה 146; הוחרג."
     },
     {
       "aid": 2989207,
@@ -301,6 +303,18 @@
       "status": "body_opened_and_inspected",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4385774",
       "web_source_ref": "turn158795view8"
+    },
+    {
+      "aid": 4304354,
+      "status": "body_opened_and_inspected",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4304354",
+      "web_source_ref": "turn300467view0"
+    },
+    {
+      "aid": 5989562,
+      "status": "existing_identity_body_reopened_and_inspected",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/5989562",
+      "web_source_ref": "turn943685view0"
     }
   ],
   "failed_alternate_routes": [
@@ -323,7 +337,8 @@
       5959838,
       4280063,
       4385893,
-      4385774
+      4385774,
+      4304354
     ],
     "blocked_aids": [
       5959829,
@@ -336,7 +351,6 @@
     ],
     "excluded_duplicate_aids": [
       5989562,
-      4304354,
       2989207,
       5959839,
       5959841,
@@ -347,10 +361,26 @@
       4304341,
       4304360,
       4304438
+    ],
+    "enriched_aids": [
+      5989562
     ]
   },
-  "existing_identity_updates": [],
-  "existing_identity_updates_count": 0,
+  "existing_identity_updates": [
+    {
+      "aid": 5989562,
+      "id": "sicha-5728-19-kislev-aid5989562",
+      "canonical_file": "data/items/content-research-batch-102-2026-11-15.json",
+      "evidence_family_id": "sicha-5728-19-kislev-aid5989562",
+      "action": "enriched_existing_identity_in_place",
+      "existing_propositions_before": 3,
+      "propositions_added": 1,
+      "total_propositions_after": 4,
+      "body_locator": "he.chabad.org AID 5989562, גוף השיחה סעיף ד׳, שורות 218–220.",
+      "reason": "A distinct passage uses the 'dwarf on a giant's shoulders' image to explain how later generations continue and complete work built by earlier leaders; this was added to the existing identity, not counted as a new witness."
+    }
+  ],
+  "existing_identity_updates_count": 1,
   "existing_identity_rechecks": [],
   "source_body_review": [
     {
@@ -522,12 +552,55 @@
       "proposition_count": 1,
       "context_status": "partial",
       "action": "candidate_new_identity_pending_full_index_reconciliation"
+    },
+    {
+      "aid": 4304354,
+      "title": "שיחת יום שמחת תורה, ה'תשכ\"ד",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4304354",
+      "web_source_ref": "turn300467view0",
+      "body_opened": true,
+      "content_inspected": true,
+      "metadata_only": false,
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_type": "Sicha",
+      "source_label": "בלתי מוגה",
+      "source_body_locator": [
+        "Chabad.org AID 4304354, גוף השיחה, סעיפים ד׳–ה׳, שורות 195–199."
+      ],
+      "evidence_family_id": "sicha-5724-simchat-torah-aid4304354",
+      "independent_witness": true,
+      "proposition_count": 1,
+      "context_status": "partial",
+      "action": "candidate_new_identity_pending_full_index_reconciliation"
+    },
+    {
+      "aid": 5989562,
+      "title": "י״ט כסלו, ה׳תשכ״ח",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/5989562",
+      "web_source_ref": "turn943685view0",
+      "body_opened": true,
+      "content_inspected": true,
+      "metadata_only": false,
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_type": "Sicha",
+      "source_label": "בלתי מוגה",
+      "source_body_locator": [
+        "he.chabad.org AID 5989562, גוף השיחה סעיף ד׳, שורות 218–220."
+      ],
+      "evidence_family_id": "sicha-5728-19-kislev-aid5989562",
+      "independent_witness": true,
+      "proposition_count": 1,
+      "context_status": "partial",
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-102-2026-11-15.json"
     }
   ],
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
-    "target_identity_count": 8,
+    "target_identity_count": 9,
     "target_identity_matches": null,
     "target_identity_duplicates": null,
     "selected_unique_evidence_families": null,
@@ -542,23 +615,20 @@
       5959838,
       4280063,
       4385893,
-      4385774
+      4385774,
+      4304354
     ],
-    "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches), and bulk-indexed-2026-09-24-001 (no AID matches). Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned in this run; no final uniqueness claim is made until CI reconciliation."
+    "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches for the nine new candidates), and bulk-indexed-2026-09-24-001 (no AID matches). Existing AID 5989562 resolved to canonical Batch102 and was enriched in place. Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned; no final uniqueness claim is made until CI reconciliation.",
+    "target_existing_identity_enrichment_count": 1
   },
   "retrieval_synthesis": {
     "topic": "practical_instruction_from_gathering_stories_and_mitzvot",
     "test_question": "כיצד מקורות שונים מתארים מעבר מלימוד למעשה דרך דיבור בהתוועדות, סיפורי רבותינו והשלמת מצווה שהתחלנו?",
     "mode": "researcher",
     "source_aids": [
-      3008940,
-      4280037,
-      5959890,
-      4280001,
-      5959838,
-      4280063,
-      4385893,
-      4385774
+      5989562,
+      4304354,
+      4385893
     ],
     "claim_topics": [
       "communal_speech_shared_understanding",
@@ -569,7 +639,8 @@
     "limits": [
       "הסינתזה מחברת שלוש טענות משלוש משפחות ראיות נפרדות בלבד; אין זו הוראה אחת שנאמרה באותו מעמד.",
       "הקטע באצווה 4385893 בשורות 195–203 מסומן כמוגה; יש לשמר את ההבחנה בינו לבין יתר גוף העמוד הבלתי מוגה.",
-      "כל המקטעים חלקיים; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים נוספים."
+      "כל המקטעים חלקיים; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים נוספים.",
+      "AID 5989562 is an existing canonical identity enriched in place; its prior propositions were not counted as new identities."
     ]
   },
   "records": [
@@ -1850,7 +1921,158 @@
           "transmission_type": "published_hebrew_unedited_sicha_transcript"
         }
       ]
+    },
+    {
+      "id": "chabad-hebrew-4304354",
+      "canonical_key": "aid:4304354",
+      "aid": 4304354,
+      "title": "שיחת יום שמחת תורה, ה'תשכ\"ד",
+      "source_class": "Sicha",
+      "source_class_detail": "שיחה בעברית שפורסמה ב-Chabad.org; העמוד מסומן ״בלתי מוגה״. נבדק קטע מוגבל בגוף השיחה; לא נבדקו הקלטה, אוטוגרף או כתב יד.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "date_original": "יום שמחת תורה, ה'תשכ\"ד",
+      "date": "יום שמחת תורה, ה'תשכ\"ד",
+      "date_precision": "exact",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "translation_status": "Original Hebrew publisher text; no translation was added or counted as an independent witness.",
+      "type": "sicha",
+      "collection": "תורת מנחם / ועד הנחות בלה״ק / Chabad.org",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4304354",
+      "context_status": "partial",
+      "summary_researcher": "השיחה קובעת שסיפורי רבותינו נשיאינו אינם רק אנקדוטות נעימות; יש ללמוד אותם כהוראה לעבודת האדם. הסיפור המסוים מסופר בשיחה מפי האדמו״ר הקודם ומובא כדי להפיק ממנו הוראה מעשית; אין לייחס את הסיפור עצמו לדובר השיחה.",
+      "response_propositions": [
+        "השיחה קובעת שסיפורי רבותינו נשיאינו אינם רק אנקדוטות נעימות; יש ללמוד אותם כהוראה לעבודת האדם. הסיפור המסוים מסופר בשיחה מפי האדמו״ר הקודם ומובא כדי להפיק ממנו הוראה מעשית; אין לייחס את הסיפור עצמו לדובר השיחה."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 4304354, גוף השיחה, סעיפים ד׳–ה׳, שורות 195–199."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 4304354, גוף השיחה, סעיפים ד׳–ה׳, שורות 195–199.",
+      "response_proposition_provenance": [
+        {
+          "proposition": "השיחה קובעת שסיפורי רבותינו נשיאינו אינם רק אנקדוטות נעימות; יש ללמוד אותם כהוראה לעבודת האדם. הסיפור המסוים מסופר בשיחה מפי האדמו״ר הקודם ומובא כדי להפיק ממנו הוראה מעשית; אין לייחס את הסיפור עצמו לדובר השיחה.",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 4304354, גוף השיחה, סעיפים ד׳–ה׳, שורות 195–199.",
+          "provenance": "Chabad.org / ועד הנחות בלה״ק, AID 4304354; גוף הפרסום העברי נפתח ונבדק ב-20.11.2026.",
+          "verification_scope": "נבדקו שורות 195–199 בלבד; העמוד מסומן ״בלתי מוגה״; הקשר חלקי; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הסיפור המסוים מסופר מפי האדמו״ר הקודם בשמחת תורה תש״ד; אין לייחס את הסיפור עצמו לדובר השיחה.",
+            "העמוד מסומן ״בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+            "הפרפרזה מוגבלת להצהרה על תפקידם של סיפורי רבותינו ולהקשר המיידי; אין להסיק ממנה שכל סיפור מחייב יישום זהה."
+          ],
+          "source_witness": "Chabad.org AID 4304354",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304354",
+          "accessed": "2026-11-20",
+          "web_source_ref": "turn300467view0",
+          "independent_witness": true,
+          "transmission_type": "published_hebrew_unedited_sicha_transcript"
+        }
+      ],
+      "provenance": {
+        "authorship_status": "המו״ל מציג את הפרסום כשיחת הרבי; הסיפור המצוטט בקטע מסופר במפורש מפי האדמו״ר הקודם. העמוד מסומן ״בלתי מוגה״.",
+        "signature_status": null,
+        "source_witness": "Chabad.org AID 4304354, גוף השיחה בעברית",
+        "transmission_type": "published_hebrew_unedited_sicha_transcript",
+        "textual_status": "נפתח גוף השיחה ונבדקו שורות 195–199; העמוד מסומן ״בלתי מוגה״. לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+        "editorial_scope": "פרפרזה מחקרית אחת, תחומה לשורות 195–199; לא הועתק גוף הפרסום המלא.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4304354",
+        "accessed": "2026-11-20",
+        "web_source_ref": "turn300467view0",
+        "verification_scope": "נבדקו שורות 195–199 בלבד; context_status=partial."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Publisher-published Hebrew unedited Sicha text; story in the passage is explicitly narrated by the Previous Rebbe.",
+        "complete_partial": "partial",
+        "notes": "נבדקו שורות 195–199 בלבד; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "קישור ופרפרזה מחקרית תחומה בלבד; אין להעתיק את גוף השיחה המלא."
+      },
+      "evidence_family_id": "sicha-5724-simchat-torah-aid4304354",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "ב-20.11.2026 נפתח ונבדק גוף הפרסום העברי באתר Chabad.org, AID 4304354, סעיפים ד׳–ה׳, שורות 195–199. נבדקה ההצהרה שסיפורי רבותינו הם הוראה בעבודה וההקשר הסמוך; context_status=partial. הסיפור עצמו מיוחס לאדמו״ר הקודם. לא נבדקו הקלטה, אוטוגרף או כתב יד; לא הועתק גוף הפרסום המלא.",
+      "documented_circumstances": "יום שמחת תורה, ה׳תשכ״ד; הקטע דן בסיפור שסיפר האדמו״ר הקודם בשמחת תורה תש״ד.",
+      "question_or_problem": "מהו התפקיד של סיפורי רבותינו נשיאינו בעבודת האדם לפי השיחה?",
+      "conditions_or_qualifications": [
+        "הסיפור המסוים מסופר מפי האדמו״ר הקודם בשמחת תורה תש״ד; אין לייחס את הסיפור עצמו לדובר השיחה.",
+        "העמוד מסומן ״בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+        "הפרפרזה מוגבלת להצהרה על תפקידם של סיפורי רבותינו ולהקשר המיידי; אין להסיק ממנה שכל סיפור מחייב יישום זהה."
+      ],
+      "audience": null,
+      "primary_secondary_status": "Publisher-published Hebrew unedited Sicha text; the story is attributed within the text to the Previous Rebbe; no recording/manuscript comparison.",
+      "witness_type": "published_hebrew_unedited_sicha_transcript",
+      "witness_provenance": "Chabad.org / ועד הנחות בלה״ק, AID 4304354, גוף הפרסום בעברית; נפתח ונבדק ב-20.11.2026.",
+      "independent_witness": true,
+      "author_name": "Rabbi Menachem Mendel Schneerson",
+      "author_role": "speaker",
+      "authorship_status": "Publisher attribution to Rabbi Menachem Mendel Schneerson; the story in the inspected passage is attributed to the Previous Rebbe.",
+      "source_role": "publisher_published_discourse_text",
+      "signatory": null,
+      "signatory_role": null,
+      "publisher": "Chabad.org / Vaad Hanachos BeLashon Hakodesh",
+      "rights_status": "copyrighted-link-only",
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "זהות חדשה מועמדת; הייחודיות הסופית כפופה ל-reconciliation מול האינדקס הקנוני המלא. כל תרגום או הדפסה חוזרת של אותה שיחה יקושרו לאותה Evidence Family.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "שיחת יום שמחת תורה, ה׳תשכ״ד"
+        ],
+        "research_terms": [
+          "סיפורי רבותינו נשיאינו",
+          "הוראה בעבודתנו",
+          "עבודת האדם",
+          "לימוד מסיפור"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": 1,
+      "notes": "המקור נשאר Parsed; אין קידום ל-Verified. נבדקו רק שורות 195–199 וההקשר הסמוך.",
+      "canonical_file": "data/items/content-research-batch-213-2026-11-20.json",
+      "content_enrichment_batch_id": "213",
+      "last_content_enriched_at": "2026-11-20T17:02:38+02:00",
+      "response_proposition_metadata": [
+        {
+          "proposition_index": 1,
+          "batch_id": "213",
+          "proposition": "השיחה קובעת שסיפורי רבותינו נשיאינו אינם רק אנקדוטות נעימות; יש ללמוד אותם כהוראה לעבודת האדם. הסיפור המסוים מסופר בשיחה מפי האדמו״ר הקודם ומובא כדי להפיק ממנו הוראה מעשית; אין לייחס את הסיפור עצמו לדובר השיחה.",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 4304354, גוף השיחה, סעיפים ד׳–ה׳, שורות 195–199.",
+          "provenance": "Chabad.org / ועד הנחות בלה״ק, AID 4304354; גוף הפרסום העברי נפתח ונבדק ב-20.11.2026.",
+          "verification_scope": "נבדקו שורות 195–199 בלבד; context_status=partial; הסיפור מיוחס לאדמו״ר הקודם; לא נבדקו הקלטה או כתב יד.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הסיפור המסוים מסופר מפי האדמו״ר הקודם בשמחת תורה תש״ד; אין לייחס את הסיפור עצמו לדובר השיחה.",
+            "העמוד מסומן ״בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+            "הפרפרזה מוגבלת להצהרה על תפקידם של סיפורי רבותינו ולהקשר המיידי; אין להסיק ממנה שכל סיפור מחייב יישום זהה."
+          ],
+          "source_witness": "Chabad.org AID 4304354",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304354",
+          "accessed": "2026-11-20",
+          "web_source_ref": "turn300467view0",
+          "independent_witness": true,
+          "transmission_type": "published_hebrew_unedited_sicha_transcript"
+        }
+      ]
     }
   ],
-  "note": "Eight Hebrew source bodies were opened and inspected. Ten bounded, non-verbatim propositions were added across eight candidate identities. Seven rate-limited pages were documented and replaced with accessible alternatives. Twelve duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
+  "note": "Nine Hebrew source bodies were opened and inspected, including one existing identity enriched in place. Nine candidate new identities and one existing identity were handled; eleven new-source propositions and one in-place proposition were added. Seven rate-limited pages were documented and replaced with accessible alternatives. Eleven duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
 }
