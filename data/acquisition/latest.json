@@ -2028,14 +2028,18 @@
       }
     ],
     "deduplication_check": {
-      "target_identity_count": 7,
+      "target_identity_count": 8,
       "target_identity_matches": 0,
       "target_identity_duplicates": 0,
-      "selected_unique_evidence_families": 7,
+      "selected_unique_evidence_families": 8,
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
       "preflight_scope": "בדיקת קובצי המחקר ב-PR Batches149–203 וחיפוש מזהי AID מדויקים ב-main; לא בוצעה סריקה מלאה של כל הפריטים הקנוניים 1–148.",
-      "note": "ששת המועמדים שהופיעו ככפילויות (AID2988934, 4385834, 4296148, 4385634, 2988901, 4385513) הוחרגו וקושרו לקובץ הקנוני הקיים. ייחודיות שבעת המועמדים החדשים תוגדר סופית רק לאחר reconcile_metrics.py על מלוא המאגר."
+      "note": "AID 2989589 was found twice in the full-index audit (Batch101 and Batch204); the Batch204 presentation was removed because its two paraphrases duplicate the existing canonical propositions. The next exact-head reconciliation must confirm one canonical identity and no remaining collision.",
+      "canonical_identity_collisions": [],
+      "missing_canonical_identities": [],
+      "all_target_identities_answer_eligible": null,
+      "same_family_duplicate_presentations": []
     },
     "retrieval_synthesis": {
       "mode": "researcher/deep",
