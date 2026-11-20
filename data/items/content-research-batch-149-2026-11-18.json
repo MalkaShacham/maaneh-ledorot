@@ -40,14 +40,14 @@
     "answer_eligible_propositions": 3823
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1503,
+    "answer_eligible_unique_sources": 1504,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3838
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
-  "metrics_note": "The chain baseline is batch148's expected boundary 1495/854/3823, not the committed public-metrics snapshot. The latest failed hourly CI workspace reported 1496/854/3823 after batch148; this leaves a +1 source-family variance unresolved. Batch149's expected boundary adds eight new Evidence Families and fifteen distinct paraphrase entries; reconciliation must measure the actual result. No metric was edited manually.",
+  "metrics_note": "The initial plan expected 1503 answer-eligible unique sources after batch149. The first full-index CI snapshot measured 1504, while content-verified sources remained 854 and propositions 3838. The one-source planning difference is preserved in metrics_expected_after_original and metrics_planning_variance; the reconciliation boundary is aligned to the measured 1504 so batch150 can be reconciled sequentially. This is a planning-boundary correction, not a Verified promotion.",
   "new_aids": [
     2988940,
     4385713,
@@ -368,7 +368,7 @@
     "note": "Preflight exact-AID scan covered content-research batches 055–148 and 12 bulk-indexed files; none of the eight candidate AIDs matched those files. The review queue had no matches. The large generated public-search-index could not be read through the connector, so full-index uniqueness and answer eligibility remain pending canonical reconciliation."
   },
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 8,
+    "answer_eligible_unique_sources": 9,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 15
   },
@@ -392,28 +392,35 @@
       "collection": "שיחות והתוועדויות / BeitChabad.com / Chabad.org",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/2988940",
       "context_status": "partial",
-      "summary_researcher": "השיחה מתארת את לימוד תורת החסידות לא רק כעיסוק לימודי אלא כגורם שאמור להשפיע על קיום המצוות במחשבה, בדיבור ובמעשה בחיי היום־יום, ולהוסיף בו חיות.",
+      "summary_researcher": "השיחה מתארת את לימוד תורת החסידות כגורם שאמור להוסיף חיות בקיום המצוות בחיי היום־יום. בהמשך היא מבחינה בין אור נפש פשוט לבין חיות המתלבשת בגוף לפי איבריו, מיישמת הבחנה זו על חיות כללית ומיוחדת שבמעשה המצוות, ומסבירה שחיות זו משנה גם את איכות המעשה ומפעילה את כלל כוחות הנפש.",
       "response_propositions": [
-        "השיחה מתארת את לימוד תורת החסידות לא רק כעיסוק לימודי אלא כגורם שאמור להשפיע על קיום המצוות במחשבה, בדיבור ובמעשה בחיי היום־יום, ולהוסיף בו חיות."
+        "השיחה מתארת את לימוד תורת החסידות לא רק כעיסוק לימודי אלא כגורם שאמור להשפיע על קיום המצוות במחשבה, בדיבור ובמעשה בחיי היום־יום, ולהוסיף בו חיות.",
+        "בהמשך השיחה נבחנת ההבחנה בין אור הנפש הפשוט, שאינו משתנה לפי הכלי, לבין חיות הנפש המתלבשת בגוף ומתחלקת לפי מבנה האיברים; ההבחנה משמשת לפרש את הצירוף ״אור וחיות נפשנו״ שבאיגרת אדמו״ר הרש״ב.",
+        "השיחה מיישמת את ההבחנה על קיום המצוות: היא מבדילה בין חיות כללית הנובעת מעצם קיום ציווי ה׳ לבין חיות מיוחדת הנובעת מתוכנה של כל מצווה; לפי ההסבר, תורת החסידות אמורה להוסיף את שני הממדים.",
+        "השיחה קושרת חיות בקיום המצוות לשינוי במעשה עצמו: מעבר לביצוע כדי לצאת ידי חובה, החיות אמורה להביא להידור, למעורבות של השכל והרגש ולכך שכל כוחות הנפש יהיו מכוונים למעשה המצווה."
       ],
       "response_proposition_locators": [
-        "AID 2988940, גוף השיחה, סעיף א, שורות 176–179."
+        "AID 2988940, גוף השיחה, סעיף א, שורות 176–179.",
+        "AID 2988940, גוף השיחה, סעיף ב, שורות 180–197.",
+        "AID 2988940, גוף השיחה, סעיף ג, שורות 199–205.",
+        "AID 2988940, גוף השיחה, סעיף ד, שורות 207–211."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 2988940, גוף השיחה, סעיף א, שורות 176–179.",
+      "proposition_source_locator": "AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211.",
       "evidence_family_id": "sicha-5716-19-kislev-shabbat-vayeshev-aid2988940",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2988940, במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179., ביום 18.11.2026. הפרסום מסומן בלתי מוגה; נבדקו רק הקטעים המצוינים. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן תמציות מחקר לא-מילוליות של הקטעים שנפתחו בלבד; context_status=partial. לא הועתק טקסט מוגן במלואו.",
+      "verification_scope": "נבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2988940, במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211., ביום 21.11.2026. הפרסום מסומן בלתי מוגה; נבדקו רק הקטעים המצוינים. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן תמציות מחקר לא-מילוליות של הקטעים שנפתחו בלבד; context_status=partial. לא הועתק טקסט מוגן במלואו.",
       "documented_circumstances": "י״ט כסלו, ה׳תשט״ז; הפרסום מסומן בלתי מוגה.",
       "question_or_problem": "כיצד קושרת השיחה את לימוד החסידות לקיום המצוות בחיי היום־יום?",
       "conditions_or_qualifications": [
-        "נבדקו רק קטעי גוף הפרסום במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179.; אין להסיק מהם על חלקים שלא נפתחו.",
+        "נבדקו רק קטעי גוף הפרסום במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211.; אין להסיק מהם על חלקים שלא נפתחו.",
         "הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
+        "הקטעים בסעיפים ב–ג מפרשים איגרת קודמת של אדמו״ר הרש״ב; ההבחנות המובאות כאן הן הסבר השיחה ולא ציטוט ישיר של נוסח האיגרת.",
         "המקורות וההפניות המצוטטים בתוך השיחה לא נבדקו בנפרד, אלא אם נכללו במפורש בקטע שנפתח."
       ],
       "audience": "קהל ההתוועדות וקוראי התמליל.",
@@ -436,17 +443,19 @@
         "signature_status": null,
         "source_witness": "BeitChabad.com / Chabad.org, AID 2988940, שיחת יום א' פ' וישב, י״ט כסלו, ה׳תשט״ז, https://he.chabad.org/library/article_cdo/aid/2988940",
         "transmission_type": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
-        "textual_status": "הפרסום מסומן בלתי מוגה. נבדקו רק המקטעים המצוינים: AID 2988940, גוף השיחה, סעיף א, שורות 176–179.; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
+        "textual_status": "הפרסום מסומן בלתי מוגה. נבדקו רק המקטעים המצוינים: AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211.; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
         "editorial_scope": "Bounded non-verbatim research paraphrases and body locators only; no full protected text reproduced.",
-        "verification_status": "Source body inspected 2026-11-18; AID 2988940, גוף השיחה, סעיף א, שורות 176–179.; context partial.",
+        "verification_status": "Source body inspected 2026-11-21; AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211.; context partial.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/2988940",
-        "accessed": "2026-11-18"
+        "accessed": "2026-11-21",
+        "verification_scope": "נבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2988940, במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211., ביום 21.11.2026. הפרסום מסומן בלתי מוגה; נבדקו רק הקטעים המצוינים. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן תמציות מחקר לא-מילוליות של הקטעים שנפתחו בלבד; context_status=partial. לא הועתק טקסט מוגן במלואו.",
+        "source_body_locator": "AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211."
       },
       "witness": {
         "kind": "text",
         "state": "Publisher Hebrew text opened; marked בלתי מוגה; recording and corrected edition not inspected.",
         "complete_partial": "partial",
-        "notes": "נבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2988940, במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179., ביום 18.11.2026. הפרסום מסומן בלתי מוגה; נבדקו רק הקטעים המצוינים. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן תמציות מחקר לא-מילוליות של הקטעים שנפתחו בלבד; context_status=partial. לא הועתק טקסט מוגן במלואו."
+        "notes": "נבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2988940, במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211., ביום 21.11.2026. הפרסום מסומן בלתי מוגה; נבדקו רק הקטעים המצוינים. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן תמציות מחקר לא-מילוליות של הקטעים שנפתחו בלבד; context_status=partial. לא הועתק טקסט מוגן במלואו."
       },
       "access": {
         "access_level": "open",
@@ -469,10 +478,10 @@
         "response_case_candidate": true
       },
       "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
-      "notes": "המקור נשאר Parsed. נבדקו רק הקטעים המצוינים; אין קידום ל-Verified. נבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2988940, במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179., ביום 18.11.2026. הפרסום מסומן בלתי מוגה; נבדקו רק הקטעים המצוינים. ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן תמציות מחקר לא-מילוליות של הקטעים שנפתחו בלבד; context_status=partial. לא הועתק טקסט מוגן במלואו.",
+      "notes": "המקור נשאר Parsed. נבדקו רק הקטעים המצוינים; אין קידום ל-Verified. נבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2988940, במיקומים AID 2988940, גוף השיחה, סעיף א, שורות 176–179. | AID 2988940, גוף השיחה, סעיף ב, שורות 180–197. | AID 2988940, גוף השיחה, סעיף ג, שורות 199–205. | AID 2988940, גוף השיחה, סעיף ד, שורות 207–211., ביום 21.11.2026. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזות הן תמציות מחקר לא-מילוליות בלבד; context_status=partial. לא הועתק טקסט מוגן במלואו.",
       "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
       "content_enrichment_batch_id": "149",
-      "last_content_enriched_at": "2026-11-18"
+      "last_content_enriched_at": "2026-11-21"
     },
     {
       "id": "chabad-sicha-4385713",
@@ -1186,5 +1195,15 @@
       "content_enrichment_batch_id": "149",
       "last_content_enriched_at": "2026-11-18"
     }
-  ]
+  ],
+  "metrics_expected_after_original": {
+    "answer_eligible_unique_sources": 1503,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3838
+  },
+  "metrics_planning_variance": {
+    "answer_eligible_unique_sources": 1,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  }
 }

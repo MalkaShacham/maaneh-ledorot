@@ -117,3 +117,8 @@ For a query classified as **עקירת שיניים וחוות דעת**, a candi
 ## Deep researcher claim-source map
 
 Researcher mode returns both an evidence map and an explicit claim-source map. Each claim-source entry includes the claim number/text, supporting source numbers, Evidence Family IDs and proposition-level body locators. This is a navigation map for claim verification, not a substitute for checking the cited passage or its context.
+
+
+## 6. Bounded Yechidus continuity comparison
+
+The `yechidus_gathering_continuity` topic is a case comparison across eight separate dated Yechidus events, not a unified statement or a general teaching attributed to the Rebbe. The eight selected items are English publisher presentations; their original-language witnesses were not inspected, so all eight remain derived and non-independent. Each claim must retain its own inspected body locator and Evidence Family. Regular mode may present the bounded comparison with claim-level citations; researcher mode must expose `depth=deep`, eight Evidence Families, zero independent witnesses, eight derived non-independent presentations, and a claim-source map. Translations do not corroborate one another and must never be counted as independent witnesses.
