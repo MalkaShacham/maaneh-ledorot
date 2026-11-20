@@ -1457,7 +1457,7 @@ function buildEducationYouthGuidanceSynthesis(selected){
 function buildEducationFormationSynthesis(index){
  const specs=[
   {aid:'5959839',topic:'early_childhood_start',predicate:p=>p.includes('תחילת החינוך')&&p.includes('ילד')&&p.includes('קליטה פנימית')},
-  {aid:'5989575',topic:'gradual_habituation',predicate:p=>p.includes('הרגלה הדרגתית')&&p.includes('לא בבת אחת')},
+  {aid:'5989575',topic:'gradual_habituation',predicate:p=>p.includes('הרגלה הדרגתית')&&p.includes('בבת אחת')},
   {aid:'2989207',topic:'integrated_curriculum',predicate:p=>p.includes('תומכי תמימים')&&p.includes('נגלה')&&p.includes('חסידות')},
   {aid:'4212080',topic:'individual_student_study_guidance',predicate:p=>p.includes('תלמיד ישיבה')&&p.includes('מאמץ')&&p.includes('תהילים')},
   {aid:'7484120',topic:'friendly_child_guidance',predicate:p=>p.includes('ידידותי')&&p.includes('מצוות יומיומיות')&&p.includes('ילד')},
