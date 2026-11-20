@@ -137,7 +137,7 @@
     "answer_eligible_propositions": -6
   },
   "metrics_before_source": "Exact-head measured CONTENT_READINESS_ACTUAL_METRICS from Answer Quality Gate run 44768093059 after Batch214: 1719/862/4399. The checked-in project-state and public-metrics files were stale and are not used as this baseline.",
-  "metrics_note": "Measured by exact-head reconciliation in Answer Quality Gate run 44781658927 after Batch215: 1719/862/4402. Expected boundary was 1724/862/4408; variance -5/0/-6. The run then failed because project-state still declared Batch214.",
+  "metrics_note": "Exact-head Answer Quality Gate run 44781658927 measured after Batch215: 1719/862/4402. Expected 1724/862/4408; variance -5/0/-6. Five proposed new identities did not add distinct answer-eligible Evidence Families; three new propositions were counted. No Verified promotion.",
   "blocked_candidate_count": 8,
   "blocked_candidates": [
     {
@@ -635,12 +635,12 @@
     }
   ],
   "deduplication_check": {
-    "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true,
-    "target_identity_count": 5,
-    "target_identity_matches": null,
-    "target_identity_duplicates": null,
-    "selected_unique_evidence_families": null,
+    "full_index_scan_available": true,
+    "full_index_scan_pending_reconciliation": false,
+    "target_identity_count": 8,
+    "target_identity_matches": 8,
+    "target_identity_duplicates": 0,
+    "selected_unique_evidence_families": 8,
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
