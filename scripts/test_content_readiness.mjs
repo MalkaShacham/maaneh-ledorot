@@ -8647,4 +8647,3 @@ for(const u of batch211Data.existing_identity_updates){
  const sourceRecord=canonicalDataByFile[u.canonical_file].records.find(r=>sourceAID(r)===String(u.aid));
  assert(sourceRecord.response_proposition_metadata.some(m=>String(m.batch_id)==='211'&&m.proposition_source_locator===u.proposition_source_locator));
 }
-});
