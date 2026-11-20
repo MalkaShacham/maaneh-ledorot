@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-20T01:53:11+02:00",
+  "last_updated": "2026-11-20T02:26:34+02:00",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -72,9 +72,21 @@
     "Batch196 (2026-11-19): six new Hebrew Sicha candidate identities and two in-place enrichments from eight inspected body passages. Seven alternate pages returned HTTP 429; no crawler retry or access-control bypass. Full-index deduplication and exact-head reconciliation remain pending; no Verified promotions.",
     "Batch198 (2026-11-20): eight Hebrew publisher bodies inspected and eight existing Sicha identities enriched in place (AIDs 4296216, 4385717, 5990028, 4385834, 4304376, 4385701, 4304437, 4385534). No new identities, Evidence Families, independent witnesses or Verified promotions. Exact-head baseline after Batch197 measured 1644/854/4230; expected after Batch198 1644/854/4238 pending reconciliation. Three candidate routes returned HTTP 429; no retry or bypass. AID4296237 excluded as already covered; AID3140027 deferred pending canonical identity check. PR #35 remains unmerged; main metrics and Pages unchanged.",
     "Batch200 (2026-11-20): six candidate identities (AIDs 4243257, 1695044, 3315331, 81572, 81567, 81936), one in-place enrichment (4082951), one recheck (4422946); eight public source bodies inspected, four Hebrew routes returned HTTP429. New translations/adaptations and testimony are explicitly marked non-independent/secondary; no Verified promotion. Full-index reconciliation pending.",
-    "Batch201 (2026-11-20): eight public source bodies inspected; two new candidate identities (AIDs 3316265, 3315470) and six in-place enrichments (4243257, 1695044, 3315331, 81572, 81567, 3315370). AID3315370 was already canonical in Batch145 and was enriched there, not duplicated. AID4666220 returned Internal Error; no crawler retry or access bypass. Nine non-verbatim propositions; no Verified promotion. Full-index dedup and reconciliation pending."
+    "Batch201 (2026-11-20): eight public source bodies inspected; two new candidate identities (AIDs 3316265, 3315470) and six in-place enrichments (4243257, 1695044, 3315331, 81572, 81567, 3315370). AID3315370 was already canonical in Batch145 and was enriched there, not duplicated. AID4666220 returned Internal Error; no crawler retry or access bypass. Nine non-verbatim propositions; no Verified promotion. Full-index dedup and reconciliation pending.",
+    {
+      "batch_id": "202",
+      "batch_file": "data/items/content-research-batch-202-2026-11-20.json",
+      "status": "pending_reconciliation",
+      "source_bodies_inspected": 10,
+      "new_source_identities": 9,
+      "new_response_propositions": 12,
+      "existing_identities_enriched": 1,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 13,
+      "note": "AID4666220 returned Internal Error through the public web reader; no crawler retry or access bypass. Nine alternative original-language Hayom Yom bodies and one new passage in the existing Rabbi Sacks testimony were inspected. Full-index deduplication and exact-head reconciliation remain pending; no Verified promotion."
+    }
   ],
-  "next_work": "Run full-index reconciliation across Batches198–201 and all canonical identities; resolve duplicate AIDs and same-family presentations; regenerate the search index; run scripts/test_content_readiness.mjs and the Answer Quality Gate on the exact PR head. Merge PR #35 only if all required checks pass, then verify post-merge public metrics, Actions and GitHub Pages. Preserve the existing hourly schedule and repository visibility.",
+  "next_work": "Run full-index reconciliation across Batches198–202 and all canonical identities; resolve duplicate AIDs and same-family presentations; regenerate the search index; run scripts/test_content_readiness.mjs and the Answer Quality Gate on the exact PR head. Merge PR #35 only if all required checks pass, then verify post-merge public metrics, Actions and GitHub Pages. Preserve the existing hourly schedule and repository visibility.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation",
@@ -235,7 +247,13 @@
       },
       "reconciliation_status": "pending_reconciliation"
     },
-    "public_main_metrics_unchanged": true
+    "public_main_metrics_unchanged": true,
+    "last_manual_review_batch": "202",
+    "expected_after_batch_202": {
+      "answer_eligible_unique_sources": 1662,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4275
+    }
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
