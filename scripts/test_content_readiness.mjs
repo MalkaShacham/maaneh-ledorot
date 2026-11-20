@@ -8645,7 +8645,7 @@ assert(enriched3008908&&enriched3008908.response_propositions.length===7);
 assert.equal(enriched3008908.canonical_file,'data/items/content-research-batch-149-2026-11-18.json');
 assert.equal(enriched3008908.evidence_family_id,'sicha-5718-12-tammuz-day2-balak-aid3008908');
 assert.equal(enriched3008908.status,'Parsed');
-assert.equal(projectState.development_recovery.last_reconciliation_pending,batch218Data.metrics_actual_after===null);
+assert.equal(projectState.development_recovery.last_reconciliation_pending,batch219Data.metrics_actual_after===null);
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.some(x=>['200','201','202','203','204','205','206','207','208','209','210','211'].includes(String(x))));
 assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['200','201','202','203','204','205','206','207','208','209','210','211'].includes(String(x))));
  
