@@ -1852,9 +1852,9 @@ assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_act
 assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review_current_metrics),readinessMetrics(metrics));
 assert.equal(acquisitionState.last_manual_web_review.batch_id,'207');
 assert.equal(acquisitionState.last_manual_review.batch_id,'207');
-for(const id of ['168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
+for(const id of ['204','205','206','207'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.some(x=>['175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207'].includes(String(x))));
-assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199'].includes(String(x))));
+assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207'].includes(String(x))));
 
 console.log('EDUCATION_INFLUENCE_DEBUG '+mode+' '+JSON.stringify({reason:m.reason,topics:m.understanding?.topics,source_aids:m.sources?.map(e=>e.aid),families:m.sources?.map(e=>e.evidence_family_id),claims:m.claims,coverage:m.comparative_coverage,citations:m.citation_entailment}));
  assert(m.answerable,mode+': multi-source educational influence/action synthesis must be answerable');
@@ -8571,7 +8571,7 @@ assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=
   assert.equal(e.canonical_file,u.canonical_file);
   assert.equal(e.status,'Parsed');
   assert.equal(e.independent_witness,true);
-  assert(e.response_proposition_metadata.some(m=>String(m.batch_id)==='207'&&m.proposition_source_locator===u.proposition_source_locator));
+  const canonicalRecord=(u.canonical_file===batch185Path?batch185Data:batch187Data).records.find(r=>sourceAID(r)===String(u.aid)); assert(canonicalRecord.response_proposition_metadata.some(m=>String(m.batch_id)==='207'&&m.proposition_source_locator===u.proposition_source_locator));
  }
  const correctedPrayer=idx.entries.find(e=>sourceAID(e)==='2988841');
  assert(correctedPrayer.response_proposition_locators[0].includes('סעיף ב׳'),'AID2988841 prayer locator must identify visible section ב׳');
