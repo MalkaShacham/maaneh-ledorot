@@ -456,7 +456,7 @@ export function understandQuestion(q){
  if(topics.includes('לימוד בישיבה ופרנסה בעתיד'))topics=topics.filter(t=>t!=='פרנסה');
  if(topics.includes('שאלות הלכתיות והפניה לסמכות מקומית'))topics=topics.filter(t=>!['מזוזה','לימוד הלכה'].includes(t));
  if(topics.includes('קביעות עתים ולימוד בצוותא'))topics=topics.filter(t=>!['חינוך','לימוד חסידות'].includes(t));
- if(topics.includes('קביעות עתים ולימוד בצוותא')&&topics.includes('תורה ופרנסה במשק חקלאי'))topics=topics.filter(t=>t!=='לימוד וחינוך — חברותא והתקדמות הדרגתית');
+ if(topics.includes('קביעות עתים ולימוד בצוותא')&&topics.includes('תורה ופרנסה במשק חקלאי'))topics=topics.filter(t=>!['לימוד וחינוך — חברותא והתקדמות הדרגתית','התמדה בלימוד לצד עבודה והתחייבויות'].includes(t));
  if(topics.includes('לימוד וחינוך — חברותא והתקדמות הדרגתית'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('תיקון אישי והפצת המעיינות'))topics=topics.filter(t=>t!=='שליחות');
  if(topics.includes('חינוך תלמידים בימי שמחה'))topics=topics.filter(t=>t!=='חינוך');
