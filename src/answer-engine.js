@@ -1493,9 +1493,12 @@ function buildStudyFarmingDisplayedClaims(selected){
    const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());
    const locator=arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null;
    if(!locator)continue;
-   const topic=supportsStudyRoutineComparison(p)?'study_routine':'farming_and_torah';
    const sourceNumber=index+1;
-   claims.push({claim_number:claims.length+1,topic,text:String(p),source_numbers:[sourceNumber],evidence_family_ids:[familyKey(e)],source_locators:[{source_number:sourceNumber,locator,proposition_text:String(p)}],witnesses:[{source_number:sourceNumber,source_id:e.id||e.aid||null,source_title:e.title||null,evidence_family_id:familyKey(e),source_locator:locator,proposition_source_locator:locator,proposition:String(p),independent_witness:e._independent_witness!==false&&classifyWitness(e)!=='derived'}],documented_circumstances:arr(e.documented_circumstances),conditions_or_qualifications:arr(e.conditions_or_qualifications),audiences:arr(e.audience)});
+   const addClaim=topic=>claims.push({claim_number:claims.length+1,topic,text:String(p),source_numbers:[sourceNumber],evidence_family_ids:[familyKey(e)],source_locators:[{source_number:sourceNumber,locator,proposition_text:String(p)}],witnesses:[{source_number:sourceNumber,source_id:e.id||e.aid||null,source_title:e.title||null,evidence_family_id:familyKey(e),source_locator:locator,proposition_source_locator:locator,proposition:String(p),independent_witness:e._independent_witness!==false&&classifyWitness(e)!=='derived'}],documented_circumstances:arr(e.documented_circumstances),conditions_or_qualifications:arr(e.conditions_or_qualifications),audiences:arr(e.audience)});
+   // A single inspected proposition may support both comparison dimensions.
+   // Preserve both explicit claim tags instead of forcing it into one side.
+   if(supportsStudyRoutineComparison(p))addClaim('study_routine');
+   if(supportsFarmingStudyComparison(p))addClaim('farming_and_torah');
   }
  });
  return claims;
