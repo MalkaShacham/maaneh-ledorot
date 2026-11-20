@@ -1834,3 +1834,12 @@ Eight public source bodies were inspected. Seven existing Hebrew Sicha identitie
 - Exact-head Answer Quality Gate run 44653927132 measured the Batch203 PR-workspace boundary at 1670/854/4290 (answer-eligible unique Evidence Families / content-verified unique families / propositions). This is not public main. Batch204's expected 1677/854/4305 is a planning boundary only until full-index reconciliation.
 - Retrieval repair: when one inspected proposition matches both comparison predicates, the displayed claim builder now retains both topic tags rather than forcing a single side. A regression assertion checks both sides. Code commit: aedd42c34b7b17ed673ea29ee3ffd72a7e8f7f82; test commit: d69c8f351f6a45dc113fde28a305bfe9fa2972fc. Exact-head rerun is pending.
 - Public metrics and GitHub Pages were not changed in this batch. PR #35 remains unmerged until all required checks pass. The existing hourly schedule, audience and permissions were not changed.
+
+
+## 2026-11-20 — Batch204 reconciliation and Batch205 content review
+
+- Full-index audit of Batch204 found AID 2989589 twice. The Batch204 presentation was removed because the canonical Batch101 record already contained the same four propositions; its two repeated candidate paraphrases were not added. The corrected Batch204 boundary is the measured PR-workspace snapshot 1676 / 854 / 4303: six new families, one in-place enrichment, one duplicate identity rechecked, no Verified promotion.
+- Batch205 inspected twelve new Hebrew publisher bodies (eleven Sichos and one general letter) and one additional passage in existing Sicha AID 3008908. Twelve new Evidence Families and thirteen bounded non-verbatim propositions are prepared; all new identities remain Parsed with partial context.
+- AID 5959858, previously returned as HTTP 429 in Batch204, was opened through the public web reader on 2026-11-20. No crawler retry or access-control bypass was used.
+- The comparison coverage defect was traced to `comparativeCoverage` matching claim text but ignoring explicit claim-topic tags. `study_routine` and `farming_and_torah` tags are now mapped to their requested topics; the regression test remains in the content-readiness suite.
+- Batch205's 1688 / 854 / 4316 boundary is planning only until exact-head full-index reconciliation and the readiness gate complete.
