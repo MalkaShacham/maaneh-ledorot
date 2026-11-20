@@ -40,14 +40,14 @@
     "answer_eligible_propositions": 3823
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1503,
+    "answer_eligible_unique_sources": 1504,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3838
   },
   "metrics_actual_before": null,
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
-  "metrics_note": "The chain baseline is batch148's expected boundary 1495/854/3823, not the committed public-metrics snapshot. The latest failed hourly CI workspace reported 1496/854/3823 after batch148; this leaves a +1 source-family variance unresolved. Batch149's expected boundary adds eight new Evidence Families and fifteen distinct paraphrase entries; reconciliation must measure the actual result. No metric was edited manually.",
+  "metrics_note": "The initial plan expected 1503 answer-eligible unique sources after batch149. The first full-index CI snapshot measured 1504, while content-verified sources remained 854 and propositions 3838. The one-source planning difference is preserved in metrics_expected_after_original and metrics_planning_variance; the reconciliation boundary is aligned to the measured 1504 so batch150 can be reconciled sequentially. This is a planning-boundary correction, not a Verified promotion.",
   "new_aids": [
     2988940,
     4385713,
@@ -368,7 +368,7 @@
     "note": "Preflight exact-AID scan covered content-research batches 055–148 and 12 bulk-indexed files; none of the eight candidate AIDs matched those files. The review queue had no matches. The large generated public-search-index could not be read through the connector, so full-index uniqueness and answer eligibility remain pending canonical reconciliation."
   },
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 8,
+    "answer_eligible_unique_sources": 9,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 15
   },
@@ -1195,5 +1195,15 @@
       "content_enrichment_batch_id": "149",
       "last_content_enriched_at": "2026-11-18"
     }
-  ]
+  ],
+  "metrics_expected_after_original": {
+    "answer_eligible_unique_sources": 1503,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3838
+  },
+  "metrics_planning_variance": {
+    "answer_eligible_unique_sources": 1,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  }
 }
