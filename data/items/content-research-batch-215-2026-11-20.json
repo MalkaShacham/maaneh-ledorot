@@ -6,8 +6,8 @@
   "generated_at": "2026-11-20T18:58:19+02:00",
   "reviewed_at": "2026-11-20T18:58:19+02:00",
   "title": "Batch 215 — five new Hebrew source identities, three in-place Sicha enrichments, one recheck; free translations deferred and eight summary-shell routes blocked",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending_reconciliation",
+  "status": "reconciled_with_variance",
+  "reconciliation_status": "reconciled_with_variance",
   "review_method": "manual_public_web_source_body_inspection",
   "reviewed_item_count": 19,
   "source_bodies_inspected": 11,
@@ -116,12 +116,28 @@
     "content_verified_unique_sources": 862,
     "answer_eligible_propositions": 4408
   },
-  "metrics_actual_after": null,
-  "metrics_after_actual": null,
-  "metrics_delta_actual": null,
-  "reconciliation_variance": null,
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 1719,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4402
+  },
+  "metrics_after_actual": {
+    "answer_eligible_unique_sources": 1719,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4402
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 3
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": -5,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": -6
+  },
   "metrics_before_source": "Exact-head measured CONTENT_READINESS_ACTUAL_METRICS from Answer Quality Gate run 44768093059 after Batch214: 1719/862/4399. The checked-in project-state and public-metrics files were stale and are not used as this baseline.",
-  "metrics_note": "Planning only: expected 5 additional answer-eligible unique Evidence Families and 9 propositions if all five new candidates survive full-index identity and family reconciliation. Actual counts will be set by exact-head reconciliation. No Verified promotion.",
+  "metrics_note": "Measured by exact-head reconciliation in Answer Quality Gate run 44781658927 after Batch215: 1719/862/4402. Expected boundary was 1724/862/4408; variance -5/0/-6. The run then failed because project-state still declared Batch214.",
   "blocked_candidate_count": 8,
   "blocked_candidates": [
     {

@@ -1530,15 +1530,17 @@ const batch214Path='data/items/content-research-batch-214-2026-11-20.json';
 const batch214Data=JSON.parse(await readFile(new URL(batch214Path,root),'utf8'));
 const batch215Path='data/items/content-research-batch-215-2026-11-20.json';
 const batch215Data=JSON.parse(await readFile(new URL(batch215Path,root),'utf8'));
+const batch216Path='data/items/content-research-batch-216-2026-11-20.json';
+const batch216Data=JSON.parse(await readFile(new URL(batch216Path,root),'utf8'));
 const lastBatchSummary=projectState.development_recovery.last_batch_summary;
-assert.equal(String(projectState.current_batch),'215');
-assert.equal(projectState.current_batch_file,batch215Path);
-assert.equal(String(projectState.development_recovery.current_batch),'215');
-assert.equal(projectState.development_recovery.current_batch_file,batch215Path);
-assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'215');
-assert.equal(lastBatchSummary.batch_id,'215');
-assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_actual_before),readinessMetrics(batch215Data.metrics_actual_before));
-if(lastBatchSummary.metrics_after_actual){assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));}else{assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_expected_after),readinessMetrics(metrics));}
+assert.equal(String(projectState.current_batch),'216');
+assert.equal(projectState.current_batch_file,batch216Path);
+assert.equal(String(projectState.development_recovery.current_batch),'216');
+assert.equal(projectState.development_recovery.current_batch_file,batch216Path);
+assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'216');
+assert.equal(lastBatchSummary.batch_id,'216');
+assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_actual_before),readinessMetrics(batch216Data.metrics_actual_before));
+if(lastBatchSummary.metrics_after_actual){assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));}else{assert.equal(lastBatchSummary.status,'pending_reconciliation');assert.equal(batch216Data.metrics_actual_after,null);console.log('CONTENT_READINESS_PENDING_RECONCILIATION',JSON.stringify(readinessMetrics(metrics)));}
 assert.equal(batch212Data.records.length,8);
 assert.equal(batch212Data.new_source_identities,8);
 assert.equal(batch212Data.new_response_propositions,8);
@@ -1589,7 +1591,7 @@ assert.equal(batch214Data.original_language_distribution.English,8);assert.equal
 assert.equal(batch214Data.independent_witnesses_added,8);assert.equal(batch214Data.non_independent_presentations_added,0);assert.equal(batch214Data.content_verified_unique_sources_added,0);
 assert.equal(new Set(batch214Data.records.map(r=>String(r.aid))).size,8);assert.equal(new Set(batch214Data.records.map(r=>r.evidence_family_id)).size,8);
 assert.equal(new Set(batch214Data.records.map(r=>r.source_url)).size,8);assert.equal(new Set(batch214Data.records.map(r=>r.author_name)).size,1);
-assert.equal(batch214Data.records.every(r=>r.author_name==='Zalmon Jaffe'&&r.source_class==='Testimonies'&&r.status==='Parsed'&&r.pipeline_status==='Parsed'&&r.canonical_status==='Parsed'&&r.has_content_evidence&&r.context_status==='partial'&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.response_propositions.length===1&&r.response_proposition_locators.length===1&&r.response_proposition_metadata[0]?.proposition_verification==='source_text_inspected'&&r.primary_secondary_status.includes('Secondary first-person memoir')&&r.rights_status==='copyrighted-link-only'&&r.epistemic_level===2),true);
+assert.equal(batch214Data.records.every(r=>r.author_name==='Zalmon Jaffe'&&r.source_class==='Testimonies'&&r.status==='Parsed'&&r.pipeline_status==='Parsed'&&r.canonical_status==='Parsed'&&r.has_content_evidence&&r.context_status==='partial'&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.response_propositions.length===2&&r.response_proposition_locators.length===2&&r.response_proposition_metadata.length===2&&r.response_proposition_metadata[0]?.proposition_verification==='source_text_inspected'&&String(r.response_proposition_metadata[1]?.batch_id)==='216'&&r.response_proposition_metadata[1]?.proposition_verification==='source_text_inspected'&&r.primary_secondary_status.includes('Secondary first-person memoir')&&r.rights_status==='copyrighted-link-only'&&r.epistemic_level===2),true);
 assert(batch214Data.retrieval_synthesis.limits.some(x=>x.includes('אותו מחבר')));assert.equal(batch214Data.crawler_retry,false);assert.equal(batch214Data.access_control_bypassed,false);
 assert.equal(batch214Data.full_text_copied,false);assert.equal(batch214Data.scan_only_verification_used,false);
 assert.deepEqual(batch214Data.metrics_expected_after,{answer_eligible_unique_sources:1720,content_verified_unique_sources:862,answer_eligible_propositions:4396});
@@ -6521,7 +6523,7 @@ assert(['reconciled','reconciled_with_variance'].includes(batch162Data.reconcili
  assert.deepEqual(readinessMetrics(batch205Data.metrics_actual_after),readinessMetrics(batch206Data.metrics_actual_before));
  assert.deepEqual(readinessMetrics(batch206Data.metrics_actual_after),readinessMetrics(batch207Data.metrics_actual_before));
 
-assert.equal(projectState.development_recovery.last_reconciliation_pending,false);
+assert.equal(projectState.development_recovery.last_reconciliation_pending,!Boolean(batch216Data.metrics_actual_after));
 assert(!projectState.development_recovery.pending_reconciliation_batches.map(String).includes('162'));
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.map(String).includes('162'));
 
@@ -8325,7 +8327,7 @@ assert(shidduch.claims.every(c=>c.source_numbers.length&&c.source_locators.lengt
 const purityEntries=idx.entries.filter(e=>sourceAID(e)==='4082961');
 const purity=buildAnswerModel(purityEntries,'מה נאמר במכתב על טהרת המשפחה?',{mode:'regular'});
 assert(purity.answerable&&purity.sources.some(e=>sourceAID(e)==='4082961'));
-assert.deepEqual(readinessMetrics(metrics),readinessMetrics(batch214Data.metrics_actual_after));
+if(batch216Data.metrics_actual_after){assert.deepEqual(readinessMetrics(metrics),readinessMetrics(batch216Data.metrics_actual_after));}else{assert.equal(batch216Data.reconciliation_status,'pending_reconciliation');}
 
 
 
@@ -8720,7 +8722,8 @@ assert.deepEqual(readinessMetrics(batch208Data.metrics_actual_after),readinessMe
 assert.deepEqual(readinessMetrics(batch209Data.metrics_actual_after),readinessMetrics(batch210Data.metrics_actual_before));
 assert.deepEqual(readinessMetrics(batch210Data.metrics_actual_after),readinessMetrics(batch211Data.metrics_actual_before));
 assert.deepEqual(readinessMetrics(batch214Data.metrics_actual_after),readinessMetrics(batch215Data.metrics_actual_before));
-assert.deepEqual(readinessMetrics(batch215Data.metrics_actual_after),readinessMetrics(metrics));
+assert.deepEqual(readinessMetrics(batch215Data.metrics_actual_after),readinessMetrics(batch216Data.metrics_actual_before));
+assertHistoricalBatchBoundary(batch215Data,batch216Data,'Batch215→216');
 assert.deepEqual(readinessMetrics(projectState.current_counts),readinessMetrics(metrics));
 assert.equal(projectState.development_recovery.last_reconciliation_pending,false);
 assert.deepEqual(batch207Data.deduplication_check.same_family_duplicate_presentations,[],'legacy Batch209 update descriptors must not be indexed as duplicate source records');
@@ -8775,3 +8778,60 @@ for(const u of batch211Data.existing_identity_updates){
  assert.deepEqual(readinessMetrics(batch215Data.metrics_actual_after),readinessMetrics(metrics));
 
 }
+
+assert.equal(batch216Data.batch_id,'216');assert.equal(batch216Data.batch_file,batch216Path);
+assert.equal(batch216Data.records.length,0);assert.equal(batch216Data.new_source_identities,0);
+assert.equal(batch216Data.existing_identities_enriched,8);assert.equal(batch216Data.existing_identity_updates.length,8);
+assert.equal(batch216Data.new_response_propositions,0);assert.equal(batch216Data.existing_response_propositions_added,8);
+assert.equal(batch216Data.total_new_paraphrase_entries,8);assert.equal(batch216Data.source_bodies_inspected,8);
+assert.equal(batch216Data.source_body_review.filter(x=>x.body_text_inspected===true).length,8);
+assert.equal(batch216Data.source_body_review.filter(x=>x.metadata_only===true).length,12);
+assert.equal(batch216Data.blocked_candidate_count,12);assert.equal(batch216Data.metadata_only_candidate_count,12);
+assert.equal(batch216Data.fallback_source_attempted,true);assert.equal(batch216Data.crawler_retry,false);
+assert.equal(batch216Data.access_control_bypassed,false);assert.equal(batch216Data.full_text_copied,false);
+assert.equal(batch216Data.scan_only_verification_used,false);assert.equal(batch216Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch216Data.answer_eligible_source_families_added,0);assert.equal(batch216Data.content_verified_unique_sources_added,0);
+assert.equal(batch216Data.independent_witnesses_added,0);
+assert.equal(new Set(batch216Data.enriched_aids.map(String)).size,8);
+assert.equal(new Set(batch216Data.existing_identity_updates.map(x=>x.evidence_family_id)).size,8);
+assert(batch216Data.source_body_review.filter(x=>x.body_text_inspected).every(x=>x.author_name==='Zalmon Jaffe'&&x.context_status==='partial'));
+for(const u of batch216Data.existing_identity_updates){
+ const matches=idx.entries.filter(e=>sourceAID(e)===String(u.aid));
+ assert.equal(matches.length,1,'Batch216 AID '+u.aid+' must resolve to exactly one canonical identity');
+ const e=matches[0];
+ assert.equal(e.canonical_file,u.canonical_file);assert.equal(e.evidence_family_id,u.evidence_family_id);
+ assert.equal(e.status,'Parsed');assert.equal(e.context_status,'partial');assert.equal(e.source_class,'Testimonies');
+ assert.equal(e.author_name,'Zalmon Jaffe');assert(e.primary_secondary_status.includes('Secondary first-person memoir'));
+ assert.equal(e.response_propositions.length,2);assert.equal(e.response_proposition_locators.length,2);
+ assert(e.response_propositions.includes(u.proposition));
+ assert(e.response_proposition_metadata.some(m=>String(m.batch_id)==='216'&&m.proposition_origin==='source_grounded_paraphrase'&&m.proposition_verbatim===false&&m.proposition_verification==='source_text_inspected'&&m.proposition_source_locator===u.proposition_source_locator&&m.context_status==='partial'));
+}
+assert.equal(batch216Data.retrieval_synthesis.attribution,'system_synthesis_not_rebbe_quote');
+assert(batch216Data.retrieval_synthesis.limits.some(x=>x.includes('אותו מחבר')));
+if(batch216Data.metrics_actual_after){
+ assertReconciliationSnapshot(batch216Data,'batch216Data');
+ assert.deepEqual(readinessMetrics(batch216Data.metrics_actual_after),readinessMetrics(metrics));
+ assert.equal(batch216Data.deduplication_check.full_index_scan_available,true);
+ assert.equal(batch216Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+}else{
+ assert.equal(batch216Data.reconciliation_status,'pending_reconciliation');
+ assert.equal(batch216Data.deduplication_check.full_index_scan_pending_reconciliation,true);
+ console.log('CONTENT_READINESS_BATCH216_PENDING',JSON.stringify({actual_metrics:readinessMetrics(metrics),baseline:readinessMetrics(batch216Data.metrics_actual_before)}));
+}
+const jaffeMemoirQuestion='מה מתארים זיכרונות זלמון יפה על שימוש חיובי במשאבים גשמיים, שמחה בתקופות קשות, התקדמות מתמדת וענווה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,jaffeMemoirQuestion,{mode});
+ assert(m.answerable,mode+': inspected Jaffe memoir propositions should be retrievable');
+ assert(m.claims.length>=3,mode+': memoir retrieval should expose multiple claims');
+ assert(m.claims.every(c=>c.source_numbers.length>0&&c.source_locators.length>0&&c.source_locators.every(x=>x.locator)));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=3);
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert(m.research.claim_source_map.length>=3&&m.research.claim_source_map.every(c=>c.source_locators.length>0));
+  assert(m.research.evidence_witnesses.filter(w=>w.author_name==='Zalmon Jaffe').length>=3);
+  assert(m.research.evidence_integrity.same_author_groups.some(g=>g.author==='Zalmon Jaffe'&&g.count>=3));
+  assert(m.research.synthesis_constraints.author_dependence_note.includes('אינם עדים בלתי תלויים'));
+ }else assert.equal(m.research,undefined);
+}
+
