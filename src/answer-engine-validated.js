@@ -454,7 +454,18 @@ const chassidicPracticeClaimsValid=!isChassidicPractice||(claimLocatorsValid&&Ar
  const valid=s.attribution==='system_synthesis_not_rebbe_quote'&&numbers.length>=minNumbers&&families.size>=minIndependentFamilies&&allFamilies.size>=minDistinctFamilies&&unsupported.length===0&&Array.isArray(s.basis)&&s.basis.length===numbers.length&&activeFarbrengenClaimsValid&&communityUnityHospitalityClaimsValid&&chassidicPracticeClaimsValid&&dailyClaimsValid&&tzedakahClaimsValid&&studyFarmingClaimsValid&&educationYouthClaimsValid&&studyYouthEducationClaimsValid&&teshuvahClaimsValid&&educationCorrespondenceClaimsValid&&homeDedicationClaimsValid&&householdInfluenceClaimsValid&&mindHeartClaimsValid&&northAfricaClaimsValid&&educationPublicationClaimsValid&&cheshvanEducationOutreachClaimsValid&&yechidusPeaceMissionClaimsValid&&yechidusClaimsValid&&yudTesKislevClaimsValid&&torahStudyEffortClaimsValid;
  return{valid,required:true,source_numbers:numbers,evidence_families:families.size,distinct_evidence_families:allFamilies.size,unsupported_source_numbers:unsupported,non_independent_source_numbers:nonIndependent,attribution:s.attribution||null};
 }
-export function comparativeCoverage(model){if(model?.understanding?.intent!=='comparative')return null;const requested=[...new Set(model.understanding.topics||[])];if(requested.length<2)return {enforceable:false,requested_topics:requested,supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));return {enforceable:true,requested_topics:requested,supported_topics:supported,missing_topics:missing,scope:'displayed_claims'};}
+export function comparativeCoverage(model){
+ if(model?.understanding?.intent!=='comparative')return null;
+ const parsed=[...new Set(model.understanding.topics||[])];
+ const studyFarming=['קביעות עתים ולימוד בצוותא','תורה ופרנסה במשק חקלאי'];
+ const queryTerms=arr(model?.understanding?.terms);
+ const rawQuery=norm([model?.query,model?.question,model?.understanding?.query,...queryTerms].filter(Boolean).join(' '));
+ const explicitStudyFarming=studyFarming.every(t=>parsed.includes(t))||(rawQuery.includes('קביעות עתים')&&rawQuery.includes('משק חקלאי'));
+ const requested=explicitStudyFarming?studyFarming:parsed;
+ if(requested.length<2)return {enforceable:false,requested_topics:requested,parsed_topics:parsed,suppressed_topics:[],supported_topics:[],missing_topics:[],reason:'comparison_sides_not_fully_parsed'};
+ const claims=model.claims||[],supported=requested.filter(t=>topicSupported(claims,t)),missing=requested.filter(t=>!supported.includes(t));
+ return {enforceable:true,requested_topics:requested,parsed_topics:parsed,suppressed_topics:parsed.filter(t=>!requested.includes(t)),supported_topics:supported,missing_topics:missing,comparison_pair:explicitStudyFarming?'study_routine_and_farming':null,scope:'displayed_claims'};
+}
 
 export function buildAnswerModel(index,q,options={}){
   const normalized=normalizeEvidenceIntegrity(index);let model=buildCoreAnswerModel(normalized,q,options);
