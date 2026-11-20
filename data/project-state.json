@@ -213,9 +213,9 @@
       "answer_eligible_propositions": 4377
     },
     "expected_after": {
-      "answer_eligible_unique_sources": 1712,
+      "answer_eligible_unique_sources": 1713,
       "content_verified_unique_sources": 862,
-      "answer_eligible_propositions": 4387
+      "answer_eligible_propositions": 4389
     },
     "actual_after": null,
     "reconciliation_status": "pending_reconciliation",
@@ -235,11 +235,11 @@
     "latest_manual_batch": {
       "batch_id": "213",
       "batch_file": "data/items/content-research-batch-213-2026-11-20.json",
-      "source_bodies_inspected": 8,
-      "new_source_identities": 8,
-      "existing_identities_enriched": 0,
-      "new_response_propositions": 10,
-      "existing_response_propositions_added": 0,
+      "source_bodies_inspected": 10,
+      "new_source_identities": 9,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 11,
+      "existing_response_propositions_added": 1,
       "blocked_candidate_count": 7,
       "excluded_duplicate_candidate_count": 12,
       "metrics_before": {
@@ -248,9 +248,9 @@
         "answer_eligible_propositions": 4377
       },
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1712,
+        "answer_eligible_unique_sources": 1713,
         "content_verified_unique_sources": 862,
-        "answer_eligible_propositions": 4387
+        "answer_eligible_propositions": 4389
       },
       "reconciliation_status": "pending_reconciliation"
     },
@@ -263,9 +263,9 @@
     },
     "baseline_source": "Exact-head Answer Quality Gate run 44653927132 measured 1670/854/4290 after Batch203 in the PR workspace; not public main.",
     "expected_after_batch_213": {
-      "answer_eligible_unique_sources": 1712,
+      "answer_eligible_unique_sources": 1713,
       "content_verified_unique_sources": 862,
-      "answer_eligible_propositions": 4387
+      "answer_eligible_propositions": 4389
     },
     "before_source": "Batch212 expected boundary 1704/862/4377; planning only, not measured after Batch212."
   },
@@ -306,8 +306,31 @@
     "current_batch": 213,
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "210",
-    "last_batch_summary": "Batch213: 8 Hebrew source bodies inspected; 8 candidate identities and 10 non-verbatim propositions; 7 rate-limited pages replaced; 12 duplicate AIDs excluded.",
-    "last_run_note": "No crawler retry or access-control bypass. Eight accessible Hebrew Sicha/Maamar bodies were inspected; exact uniqueness and actual metrics remain pending full-index reconciliation.",
+    "last_batch_summary": {
+      "batch_id": "213",
+      "batch_file": "data/items/content-research-batch-213-2026-11-20.json",
+      "metrics_actual_before": null,
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1713,
+        "content_verified_unique_sources": 862,
+        "answer_eligible_propositions": 4389
+      },
+      "metrics_after_actual": null,
+      "metrics_delta_actual": null,
+      "status": "pending_reconciliation",
+      "new_source_identities": 9,
+      "existing_identities_enriched": 1,
+      "source_bodies_inspected": 10,
+      "new_response_propositions": 11,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 12,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1704,
+        "content_verified_unique_sources": 862,
+        "answer_eligible_propositions": 4377
+      }
+    },
+    "last_run_note": "Batch213: ten Hebrew source bodies inspected, including one in-place enrichment; nine candidate new identities and twelve total new propositions. Seven 429 routes were replaced; full-index reconciliation pending.",
     "last_batch_blocked_count": 7,
     "last_batch_blocked_reason": "Seven public page routes returned HTTP 429 in the web reader; accessible alternative Hebrew discourse bodies were inspected in the same run.",
     "next_work": "Run exact full-index reconciliation across Batches207–213; run scripts/test_content_readiness.mjs and the answer-quality gate; merge PR #35 only after all checks pass; then verify the GitHub Pages deployment.",
@@ -1253,7 +1276,7 @@
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4253
   },
-  "current_counts_note": "Current PR-workspace planning boundary is Batch212 expected 1704/862/4377; Batch213 expected 1712/862/4387 is planning only pending exact-head reconciliation. Public main remains 977/878/2950.",
+  "current_counts_note": "Current PR-workspace planning boundary is Batch212 expected 1704/862/4377; Batch213 expected 1713/862/4389 is planning only pending exact-head reconciliation. Public main remains 977/878/2950.",
   "planning_counts_after_batch201": {
     "answer_eligible_unique_sources": 1653,
     "content_verified_unique_sources": 854,
@@ -2035,8 +2058,8 @@
     }
   },
   "planning_counts_after_batch_213": {
-    "answer_eligible_unique_sources": 1712,
+    "answer_eligible_unique_sources": 1713,
     "content_verified_unique_sources": 862,
-    "answer_eligible_propositions": 4387
+    "answer_eligible_propositions": 4389
   }
 }
