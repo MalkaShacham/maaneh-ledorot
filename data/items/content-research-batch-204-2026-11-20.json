@@ -5,34 +5,34 @@
   "generated": "2026-11-20T03:57:06+02:00",
   "reviewed_at": "2026-11-20T03:57:06+02:00",
   "title": "Batch 204 — four original Hebrew Sichos, three Hebrew Maamarim, and one in-place Sicha enrichment; eight inspected bodies and fifteen non-verbatim propositions",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending_reconciliation",
+  "status": "reconciled",
+  "reconciliation_status": "reconciled",
   "reviewed_item_count": 16,
   "source_bodies_inspected": 8,
   "source_body_pages_opened": 8,
   "metadata_only_items_rechecked": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 7,
+  "new_source_identities": 6,
   "existing_identities_enriched": 1,
-  "existing_identities_rechecked": 0,
-  "new_response_propositions": 14,
+  "existing_identities_rechecked": 1,
+  "new_response_propositions": 12,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 15,
-  "answer_eligible_source_families_added": 7,
-  "independent_witnesses_added": 7,
+  "total_new_paraphrase_entries": 13,
+  "answer_eligible_source_families_added": 6,
+  "independent_witnesses_added": 6,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
   "language_distribution": {
-    "Hebrew": 7
+    "Hebrew": 6
   },
   "original_language_distribution": {
-    "Hebrew": 7
+    "Hebrew": 6
   },
   "proposition_language_distribution": {
-    "Hebrew": 15
+    "Hebrew": 13
   },
   "source_type_distribution": {
-    "Sichos": 4,
+    "Sichos": 3,
     "Maamarim": 3
   },
   "metrics_before": {
@@ -41,22 +41,33 @@
     "answer_eligible_propositions": 4290
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1677,
+    "answer_eligible_unique_sources": 1676,
     "content_verified_unique_sources": 854,
-    "answer_eligible_propositions": 4305
+    "answer_eligible_propositions": 4303
   },
-  "metrics_actual_before": null,
-  "metrics_actual_after": null,
-  "metrics_delta_actual": null,
-  "metrics_note": "Exact-head Answer Quality Gate run 44653927132 reconciled Batch203 in the PR workspace at 1670/854/4290 before the readiness assertion failed on the study/farming comparison display. This is a measured PR-workspace baseline, not public main. Batch204 adds seven proposed new Evidence Families and fifteen inspected paraphrases; 1677/854/4305 is a planning boundary only until full-index reconciliation. No Verified promotion.",
+  "metrics_actual_before": {
+    "answer_eligible_unique_sources": 1670,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4290
+  },
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 1676,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4303
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 6,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 13
+  },
+  "metrics_note": "Exact-head CI run 44658752315 measured 1676/854/4303 after Batch204. Its full-index audit found AID 2989589 twice: Batch101 already held the canonical Hebrew talk and four propositions, while Batch204 repeated two of those propositions under a different family label. The duplicate Batch204 record was removed; the corrected expected boundary is 1676/854/4303, matching the measured workspace snapshot. Six new Evidence Families and one in-place enrichment remain; no Verified promotion.",
   "new_aids": [
     2988954,
     2989610,
     3140065,
     3139998,
     2989157,
-    2989129,
-    2989589
+    2989129
   ],
   "enriched_aids": [
     3008908
@@ -64,7 +75,9 @@
   "enriched_ids": [
     "chabad-sicha-3008908"
   ],
-  "rechecked_aids": [],
+  "rechecked_aids": [
+    2989589
+  ],
   "blocked_candidate_count": 8,
   "blocked_candidates": [
     {
@@ -116,7 +129,7 @@
       "handling": "עמוד המקור לא נפתח דרך הקורא הציבורי. לא בוצע retry ל-crawler ולא נעשה ניסיון לעקוף בקרת גישה; נבחרו מקורות חלופיים נגישים באותה הפעלה."
     }
   ],
-  "excluded_duplicate_candidate_count": 6,
+  "excluded_duplicate_candidate_count": 7,
   "excluded_duplicate_candidates": [
     {
       "aid": 2988934,
@@ -147,6 +160,11 @@
       "aid": 4385513,
       "canonical_file": "data/items/content-research-batch-165-2026-11-18.json",
       "handling": "הזהות כבר קיימת ב-Batch165; לא נוצרה רשומה נוספת."
+    },
+    {
+      "aid": 2989589,
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "handling": "AID 2989589 כבר קיים ב-Batch101 באותה שיחה ובאותה Evidence Family; שתי הפרפרזות שהוצעו ב-Batch204 חופפות לתמציות הקיימות. רשומת Batch204 הוסרה, לא נוספו פרופוזיציות ולא נוצרה משפחת ראיות נוספת."
     }
   ],
   "deferred_candidate_count": 0,
@@ -158,7 +176,7 @@
   "scan_only_verification_used": false,
   "failed_alternate_routes": [],
   "metadata_only_candidate_count": 0,
-  "excluded_candidate_count": 14,
+  "excluded_candidate_count": 15,
   "existing_identity_updates": [
     {
       "action": "enriched_existing_identity_in_place",
@@ -307,14 +325,14 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "witness_type": "published_hebrew_unedited_talk_transcript",
-      "evidence_family_id": "sicha-5717-24-sivan-children-summer-break-aid2989589",
-      "independent_witness": true,
-      "proposition_count": 2,
+      "evidence_family_id": "sicha-5717-24-sivan-children-aid2989589",
+      "independent_witness": false,
+      "proposition_count": 0,
       "context_status": "partial",
-      "existing_identity": false,
-      "action": "new_identity_created",
-      "canonical_file": "data/items/content-research-batch-204-2026-11-20.json",
-      "note": "העמוד נפתח וגוף השיחה נבדק; ההקשר מזהה שיחה לילדים שבאו מערי השדה. לא נבדקו הקלטה, כתב־יד או נוסח מוגה."
+      "existing_identity": true,
+      "action": "duplicate_presentation_excluded",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "note": "AID 2989589 כבר קיים ב-Batch101; שתי הפרפרזות שנוספו למועמד Batch204 חופפות לתמציות הקיימות. הרשומה הוסרה ולא נוספה טענה או משפחת ראיות."
     },
     {
       "aid": 3008908,
@@ -338,14 +356,18 @@
     }
   ],
   "deduplication_check": {
-    "target_identity_count": 7,
+    "target_identity_count": 8,
     "target_identity_matches": 0,
     "target_identity_duplicates": 0,
-    "selected_unique_evidence_families": 7,
+    "selected_unique_evidence_families": 8,
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
     "preflight_scope": "בדיקת קובצי המחקר ב-PR Batches149–203 וחיפוש מזהי AID מדויקים ב-main; לא בוצעה סריקה מלאה של כל הפריטים הקנוניים 1–148.",
-    "note": "ששת המועמדים שהופיעו ככפילויות (AID2988934, 4385834, 4296148, 4385634, 2988901, 4385513) הוחרגו וקושרו לקובץ הקנוני הקיים. ייחודיות שבעת המועמדים החדשים תוגדר סופית רק לאחר reconcile_metrics.py על מלוא המאגר."
+    "note": "AID 2989589 was found twice in the full-index audit (Batch101 and Batch204); the Batch204 presentation was removed because its two paraphrases duplicate the existing canonical propositions. The next exact-head reconciliation must confirm one canonical identity and no remaining collision.",
+    "canonical_identity_collisions": [],
+    "missing_canonical_identities": [],
+    "all_target_identities_answer_eligible": null,
+    "same_family_duplicate_presentations": []
   },
   "retrieval_synthesis": {
     "mode": "researcher/deep",
@@ -974,111 +996,23 @@
       "canonical_file": "data/items/content-research-batch-204-2026-11-20.json",
       "content_enrichment_batch_id": "204",
       "last_content_enriched_at": "2026-11-20T03:57:06+02:00"
-    },
-    {
-      "id": "chabad-sicha-2989589",
-      "canonical_key": "aid:2989589",
-      "aid": 2989589,
-      "title": "שיחת יום א׳, כ״ד סיון, ה׳תשי״ז",
-      "source_class": "Sichos",
-      "source_class_detail": "תמליל שיחה בעברית שפורסם בידי BeitChabad.com/Chabad.org ומסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "כ״ד סיון, ה׳תשי״ז",
-      "date_precision": "exact",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "type": "public_talk_transcript",
-      "collection": "שיחות והתוועדויות / BeitChabad.com / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989589",
-      "context_status": "partial",
-      "summary_researcher": "השיחה לילדים מתייחסת לחופשת הקיץ כהכנה להמשך הלימודים, ומציגה דרכים לשמר למידה והשפעה חינוכית גם בזמן החופשה.",
-      "response_propositions": [
-        "השיחה לילדים מציגה את חופשת הקיץ כהפוגה שמטרתה להכין להמשך הלימוד, ולא כוויתור על הלימודים; המנוחה מתוארת כאמצעי לחזרה ביתר חשק והצלחה.",
-        "כדי לשמר רצף חינוכי בחופשה, השיחה מציעה להקדיש זמן קצר ללימוד מדי יום, להוסיף בהדרגה עניינים חדשים, ולהשפיע על חברים חדשים ללמוד תורה ולקיים מצוות."
-      ],
-      "response_proposition_locators": [
-        "AID 2989589, גוף השיחה, סעיף א׳, שורות 177–185.",
-        "AID 2989589, גוף השיחה, סעיף ב׳, שורות 187–192."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 2989589, גוף השיחה, סעיף א׳, שורות 177–185. | AID 2989589, גוף השיחה, סעיף ב׳, שורות 187–192.",
-      "evidence_family_id": "sicha-5717-24-sivan-children-summer-break-aid2989589",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2989589, במיקומים AID 2989589, גוף השיחה, סעיף א׳, שורות 177–185. | AID 2989589, גוף השיחה, סעיף ב׳, שורות 187–192.. העמוד מסומן ״בלתי מוגה״ ומציין שהשיחה נאמרה לילדים שבאו מערי השדה; נבדקו סעיפים א׳–ב׳ בלבד. נבדקו רק המקטעים המצוינים; ההקשר נשאר חלקי. לא נבדקו כתב־יד, הקלטה או מהדורה ביקורתית, ככל שאינם זמינים בעמוד. הפרפרזות הן תמציות מחקר לא-מילוליות של המקטעים שנפתחו בלבד. לא הועתק טקסט מוגן במלואו.",
-      "documented_circumstances": "יום א׳, כ״ד סיון, ה׳תשי״ז; השיחה נאמרה לילדים שבאו מערי השדה, בחדרו הק׳; תמליל בלתי מוגה.",
-      "question_or_problem": "כיצד השיחה מתייחסת לחופשת הקיץ ומה היא מציעה לעשות במהלכה?",
-      "conditions_or_qualifications": [
-        "הפרפרזות מוגבלות למקטעי גוף הפרסום המצוינים; אין להסיק מהן על חלקים שלא נפתחו.",
-        "העמוד מסומן ״בלתי מוגה״ ומציין שהשיחה נאמרה לילדים שבאו מערי השדה; נבדקו סעיפים א׳–ב׳ בלבד.",
-        "ההקשר ההיסטורי והנסיבות שקדמו לאמירה לא נבדקו במקורות חיצוניים.",
-        "אין לייחס למערכת או לפרפרזה מעמד של ציטוט מילולי או של סינתזה שנאמרה בידי הרבי."
-      ],
-      "audience": "ילדים שבאו מערי השדה וקוראי התמליל.",
-      "primary_secondary_status": "Primary publisher-attributed Hebrew unedited talk transcript; audio, contemporaneous notes and corrected edition not independently inspected.",
-      "witness_type": "published_hebrew_unedited_talk_transcript",
-      "witness_provenance": "BeitChabad.com / Chabad.org, AID 2989589, שיחת יום א׳, כ״ד סיון, ה׳תשי״ז, https://he.chabad.org/library/article_cdo/aid/2989589",
-      "independent_witness": true,
-      "translation_status": "הפרסום שנבדק הוא בעברית. תרגומים או פרסומים מקבילים, אם יימצאו, ייקשרו לאותה Evidence Family ולא ייספרו כעדים עצמאיים.",
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "המו״ל מייחס את הפרסום לדברי הרבי; לא נבדקו בנפרד הקלטה, כתב־יד או רישום בן הזמן.",
-      "source_role": "oral_talk_transcript",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "BeitChabad.com / Chabad.org",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "provenance": {
-        "authorship_status": "The publisher attributes the published Hebrew text to Rabbi Menachem Mendel Schneerson; no recording or manuscript was independently inspected.",
-        "signature_status": null,
-        "source_witness": "BeitChabad.com / Chabad.org, AID 2989589, שיחת יום א׳, כ״ד סיון, ה׳תשי״ז, https://he.chabad.org/library/article_cdo/aid/2989589",
-        "transmission_type": "Publisher-published Hebrew unedited talk transcript, marked בלתי מוגה; the page identifies the audience as children visiting from outlying towns.",
-        "textual_status": "נפתח ונבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2989589, במיקומים AID 2989589, גוף השיחה, סעיף א׳, שורות 177–185. | AID 2989589, גוף השיחה, סעיף ב׳, שורות 187–192.. העמוד מסומן ״בלתי מוגה״ ומציין שהשיחה נאמרה לילדים שבאו מערי השדה; נבדקו סעיפים א׳–ב׳ בלבד. נבדקו רק המקטעים המצוינים; ההקשר נשאר חלקי. לא נבדקו כתב־יד, הקלטה או מהדורה ביקורתית, ככל שאינם זמינים בעמוד. הפרפרזות הן תמציות מחקר לא-מילוליות של המקטעים שנפתחו בלבד. לא הועתק טקסט מוגן במלואו.",
-        "editorial_scope": "Two bounded non-verbatim research paraphrases with item-level body locators; no full protected text reproduced.",
-        "verification_status": "source_text_inspected",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989589",
-        "accessed": "2026-11-20"
-      },
-      "witness": {
-        "kind": "text",
-        "state": "העמוד מסומן ״בלתי מוגה״ ומציין שהשיחה נאמרה לילדים שבאו מערי השדה; נבדקו סעיפים א׳–ב׳ בלבד.",
-        "complete_partial": "partial",
-        "notes": "נפתח ונבדק גוף הפרסום העברי ב-BeitChabad.com/Chabad.org, AID 2989589, במיקומים AID 2989589, גוף השיחה, סעיף א׳, שורות 177–185. | AID 2989589, גוף השיחה, סעיף ב׳, שורות 187–192.. העמוד מסומן ״בלתי מוגה״ ומציין שהשיחה נאמרה לילדים שבאו מערי השדה; נבדקו סעיפים א׳–ב׳ בלבד. נבדקו רק המקטעים המצוינים; ההקשר נשאר חלקי. לא נבדקו כתב־יד, הקלטה או מהדורה ביקורתית, ככל שאינם זמינים בעמוד. הפרפרזות הן תמציות מחקר לא-מילוליות של המקטעים שנפתחו בלבד. לא הועתק טקסט מוגן במלואו."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור ופרפרזות מחקריות תחומות בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות מקור נפרדת לפי AID 2989589 ומשפחת הראיות sicha-5717-24-sivan-children-summer-break-aid2989589. תרגום או הדפסה חוזרת של אותו מסמך ייקשרו לאותה Evidence Family ולא ייחשבו עד עצמאי נוסף.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "שיחת יום א׳, כ״ד סיון, ה׳תשי״ז"
-        ],
-        "research_terms": [
-          "חינוך ילדים",
-          "חופשת קיץ",
-          "רצף לימודי",
-          "לימוד תורה בחופשה",
-          "השפעה על חברים"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed; אין קידום ל-Verified. נבדקו רק המקטעים המצוינים; ההקשר חלקי. העמוד מסומן ״בלתי מוגה״ ומציין שהשיחה נאמרה לילדים שבאו מערי השדה; נבדקו סעיפים א׳–ב׳ בלבד. לא הועתק טקסט מוגן במלואו.",
-      "canonical_file": "data/items/content-research-batch-204-2026-11-20.json",
-      "content_enrichment_batch_id": "204",
-      "last_content_enriched_at": "2026-11-20T03:57:06+02:00"
     }
   ],
-  "note": "Batch204: שבעה פריטי מקור חדשים מוצעים (ארבע שיחות ושלושה מאמרים) והעשרה אחת של שיחה קיימת. נבדקו שמונה גופי פרסום בעברית והתווספו 15 פרפרזות לא-מילוליות. שמונה מועמדים חלופיים החזירו HTTP429; לא בוצע crawler retry ולא נעקפו בקרות גישה. שישה מזהים נוספים הוחרגו ככפילויות שכבר קיימות. כל שבע הזהויות החדשות נשארות Parsed, context partial; אין קידום ל-Verified. מדד 1677/854/4305 הוא תכנון בלבד עד full-index reconciliation."
+  "note": "Batch204 corrected after full-index audit: six new Hebrew source identities (three Sichos and three Maamarim), one in-place enrichment of AID3008908, and one existing AID2989589 rechecked but excluded because it duplicated the canonical Batch101 identity and propositions. Eight bodies were inspected; 13 non-verbatim paraphrase entries remain. The corrected exact-head measured boundary is 1676/854/4303. No Verified promotion.",
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 0
+  },
+  "reconciled_at": "2026-11-20T05:02:12+02:00",
+  "existing_identity_rechecks": [
+    {
+      "aid": 2989589,
+      "id": "sicha-5717-24-sivan-children-aid2989589",
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json",
+      "evidence_family_id": "sicha-5717-24-sivan-children-aid2989589",
+      "action": "existing_identity_rechecked_no_new_proposition",
+      "reason": "Same AID and same published Hebrew talk already have four source-grounded propositions in Batch101; the two Batch204 candidates duplicate the existing propositions and were not added."
+    }
+  ]
 }
