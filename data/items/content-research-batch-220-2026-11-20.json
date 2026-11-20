@@ -5,7 +5,7 @@
   "generated": "2026-11-20",
   "generated_at": "2026-11-20T23:02:24+02:00",
   "reviewed_at": "2026-11-20T23:02:24+02:00",
-  "title": "Batch220 — 15 new Hebrew/Yiddish source identities and two in-place Hebrew Sicha enrichments",
+  "title": "Batch220 — 12 unique new source families, two in-place enrichments, and three duplicate candidates reconciled",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "review_method": "manual_public_web_source_body_inspection",
@@ -18,16 +18,16 @@
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 0,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 15,
+  "new_source_identities": 12,
   "existing_identities_enriched": 2,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 15,
+  "new_response_propositions": 12,
   "existing_response_propositions_added": 2,
-  "total_new_paraphrase_entries": 17,
-  "answer_eligible_source_families_added": 0,
-  "expected_answer_eligible_source_families_added": 15,
-  "independent_witnesses_added": 15,
-  "non_independent_presentations_added": 0,
+  "total_new_paraphrase_entries": 14,
+  "answer_eligible_source_families_added": 12,
+  "expected_answer_eligible_source_families_added": 12,
+  "independent_witnesses_added": 12,
+  "non_independent_presentations_added": 3,
   "content_verified_unique_sources_added": 0,
   "source_languages": [
     "Hebrew",
@@ -50,9 +50,7 @@
     "Sicha": 2
   },
   "new_aids": [
-    4731005,
     5100231,
-    4830985,
     4831517,
     4872065,
     4928933,
@@ -63,13 +61,10 @@
     4928992,
     4950597,
     4783929,
-    4929136,
-    3316719
+    4929136
   ],
   "new_ids": [
-    "chabad-letter-4731005",
     "chabad-letter-5100231",
-    "chabad-letter-4830985",
     "chabad-letter-4831517",
     "chabad-letter-4872065",
     "chabad-letter-4928933",
@@ -80,13 +75,10 @@
     "chabad-letter-4928992",
     "chabad-letter-4950597",
     "chabad-letter-4783929",
-    "chabad-letter-4929136",
-    "hayom-yom-22-tammuz-aid3316719"
+    "chabad-letter-4929136"
   ],
   "new_source_ids": [
-    "chabad-letter-4731005",
     "chabad-letter-5100231",
-    "chabad-letter-4830985",
     "chabad-letter-4831517",
     "chabad-letter-4872065",
     "chabad-letter-4928933",
@@ -97,8 +89,7 @@
     "chabad-letter-4928992",
     "chabad-letter-4950597",
     "chabad-letter-4783929",
-    "chabad-letter-4929136",
-    "hayom-yom-22-tammuz-aid3316719"
+    "chabad-letter-4929136"
   ],
   "enriched_aids": [
     5959839,
@@ -154,16 +145,16 @@
     "answer_eligible_propositions": 4437
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1741,
+    "answer_eligible_unique_sources": 1738,
     "content_verified_unique_sources": 862,
-    "answer_eligible_propositions": 4454
+    "answer_eligible_propositions": 4451
   },
   "metrics_actual_after": null,
   "metrics_after_actual": null,
   "metrics_delta_actual": null,
   "reconciliation_variance": null,
   "metrics_before_source": "Answer Quality Gate run 44814113576 at exact PR head 3fa3a8701c9575f9af945d2c825598a31a6fe254 measured 1726/862/4437 after Batch218/219 reconciliation. Batch220 counts are a projection until the new exact-head reconciliation.",
-  "metrics_note": "Expected after-counts 1741/862/4454 assume 15 distinct Evidence Families and two additional propositions in existing families. Planning only; no Verified promotion. Full generated-index reconciliation remains required.",
+  "metrics_note": "לאחר בדיקת האינדקס המלא נמצאו שלושה מועמדים כפולים: AID 4731005 כבר באינדקס, AID 4830985 קיים ב-Batch078, ו-AID 3316719 קיים ב-Batch097. שלושתם הוצאו מספירת מקורות חדשים וקושרו ל-Evidence Family הקיים. לכן 12 מקורות חדשים ושתי העשרות קיימות נותנים יעד מדוד 1738/862/4451; אין קידום ל-Verified.",
   "blocked_candidate_count": 15,
   "blocked_candidates": [
     {
@@ -257,8 +248,30 @@
       "reason": "העמוד ב-www.chabad.org הציג מעטפת ללא גוף; הנתיב החלופי he.chabad.org/library/article_cdo/aid/4666220 החזיר Internal Error. לא נעשה ניסיון עקיפה או crawler retry. באותה הפעלה נפתחו 17 גופי פרסום חלופיים."
     }
   ],
-  "excluded_duplicate_candidate_count": 0,
-  "excluded_duplicate_candidates": [],
+  "excluded_duplicate_candidate_count": 3,
+  "excluded_duplicate_candidates": [
+    {
+      "aid": 4731005,
+      "canonical_id": "chabad-letter-4731005",
+      "canonical_file": "data/public-search-index.json",
+      "family": "igrot-letter-5710-21-tammuz-aid4731005",
+      "reason": "AID 4731005 כבר מופיע באינדקס הציבורי כ-chabad-letter-4731005 באותה Evidence Family; התמצית ב-Batch220 חופפת לתמציות הקיימות בשורות 252–258 ולכן אינה מקור או פרופוזיציה עצמאיים."
+    },
+    {
+      "aid": 4830985,
+      "canonical_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+      "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+      "family": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+      "reason": "אותו AID ואותו גוף פרסום כבר קיימים ברשומה הקנונית ב-Batch078; התמצית החדשה חופפת לאותו מקטע ולכן הוסרה כמועמד כפול."
+    },
+    {
+      "aid": 3316719,
+      "canonical_id": "hayom-yom-tammuz-22-aid3316719",
+      "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
+      "family": "hayom-yom-tammuz-22-aid3316719",
+      "reason": "אותו AID ואותו ערך יידיש כבר קיימים ב-Batch097 עם התמציות הרלוונטיות. האנגלית המופיעה באותו עמוד היא תרגום של אותו מקור יידיש ואינה עד עצמאי."
+    }
+  ],
   "deferred_candidate_count": 0,
   "deferred_candidates": [],
   "excluded_candidate_count": 0,
@@ -294,14 +307,19 @@
       "metadata_only": false,
       "existing_identity": false,
       "action": "new_source_identity",
-      "canonical_file": "data/items/content-research-batch-220-2026-11-20.json",
+      "canonical_file": "data/public-search-index.json",
       "evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
       "source_body_locator": "Chabad.org AID 4731005, גוף האיגרת, שורות 252–258.",
       "context_status": "partial",
       "proposition_verification": "source_text_inspected",
       "propositions_added": 1,
-      "independent_witness": true,
-      "page_label": "published Hebrew body"
+      "independent_witness": false,
+      "page_label": "published Hebrew body",
+      "identity_decision": "excluded_duplicate",
+      "canonical_identity_id": "chabad-letter-4731005",
+      "canonical_evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
+      "proposition_added": false,
+      "duplicate_reason": "AID 4731005 כבר מופיע באינדקס הציבורי כ-chabad-letter-4731005 באותה Evidence Family; התמצית ב-Batch220 חופפת לתמציות הקיימות בשורות 252–258 ולכן אינה מקור או פרופוזיציה עצמאיים."
     },
     {
       "aid": 5100231,
@@ -338,14 +356,19 @@
       "metadata_only": false,
       "existing_identity": false,
       "action": "new_source_identity",
-      "canonical_file": "data/items/content-research-batch-220-2026-11-20.json",
+      "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
       "evidence_family_id": "igrot-letter-5713-26-marheshvan-aid4830985",
       "source_body_locator": "Chabad.org AID 4830985, גוף האיגרת, שורות 293–294.",
       "context_status": "partial",
       "proposition_verification": "source_text_inspected",
       "propositions_added": 1,
-      "independent_witness": true,
-      "page_label": "published Hebrew body"
+      "independent_witness": false,
+      "page_label": "published Hebrew body",
+      "identity_decision": "excluded_duplicate",
+      "canonical_identity_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+      "canonical_evidence_family_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+      "proposition_added": false,
+      "duplicate_reason": "אותו AID ואותו גוף פרסום כבר קיימים ברשומה הקנונית ב-Batch078; התמצית החדשה חופפת לאותו מקטע ולכן הוסרה כמועמד כפול."
     },
     {
       "aid": 4831517,
@@ -602,14 +625,19 @@
       "metadata_only": false,
       "existing_identity": false,
       "action": "new_source_identity",
-      "canonical_file": "data/items/content-research-batch-220-2026-11-20.json",
+      "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
       "evidence_family_id": "hayom-yom-22-tammuz-yiddish-aid3316719",
       "source_body_locator": "Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255.",
       "context_status": "partial",
       "proposition_verification": "source_text_inspected",
       "propositions_added": 1,
-      "independent_witness": true,
-      "page_label": "original Yiddish Hayom Yom entry; English translation excluded"
+      "independent_witness": false,
+      "page_label": "original Yiddish Hayom Yom entry; English translation excluded",
+      "identity_decision": "excluded_duplicate",
+      "canonical_identity_id": "hayom-yom-tammuz-22-aid3316719",
+      "canonical_evidence_family_id": "hayom-yom-tammuz-22-aid3316719",
+      "proposition_added": false,
+      "duplicate_reason": "אותו AID ואותו ערך יידיש כבר קיימים ב-Batch097 עם התמציות הרלוונטיות. האנגלית המופיעה באותו עמוד היא תרגום של אותו מקור יידיש ואינה עד עצמאי."
     },
     {
       "aid": 5959839,
@@ -690,23 +718,43 @@
   ],
   "existing_identity_rechecks": [],
   "deduplication_check": {
-    "method": "targeted_AID_URL_Evidence_Family_checks",
-    "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true,
+    "method": "full_public_index_and_canonical_batch_review",
+    "full_index_scan_available": true,
     "target_identity_count": 15,
-    "target_identity_matches": 0,
-    "target_identity_duplicates": 0,
-    "selected_unique_evidence_families": 15,
-    "canonical_identity_collisions": [],
+    "target_identity_matches": 3,
+    "target_identity_duplicates": 3,
+    "selected_unique_evidence_families": 12,
+    "canonical_identity_collisions": [
+      {
+        "aid": 4731005,
+        "canonical_id": "chabad-letter-4731005",
+        "canonical_file": "data/public-search-index.json",
+        "family": "igrot-letter-5710-21-tammuz-aid4731005",
+        "reason": "AID 4731005 כבר מופיע באינדקס הציבורי כ-chabad-letter-4731005 באותה Evidence Family; התמצית ב-Batch220 חופפת לתמציות הקיימות בשורות 252–258 ולכן אינה מקור או פרופוזיציה עצמאיים."
+      },
+      {
+        "aid": 4830985,
+        "canonical_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+        "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+        "family": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+        "reason": "אותו AID ואותו גוף פרסום כבר קיימים ברשומה הקנונית ב-Batch078; התמצית החדשה חופפת לאותו מקטע ולכן הוסרה כמועמד כפול."
+      },
+      {
+        "aid": 3316719,
+        "canonical_id": "hayom-yom-tammuz-22-aid3316719",
+        "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
+        "family": "hayom-yom-tammuz-22-aid3316719",
+        "reason": "אותו AID ואותו ערך יידיש כבר קיימים ב-Batch097 עם התמציות הרלוונטיות. האנגלית המופיעה באותו עמוד היא תרגום של אותו מקור יידיש ואינה עד עצמאי."
+      }
+    ],
     "missing_canonical_identities": [],
     "checked_against": [
-      "GitHub main code search: exact AID queries returned no code matches for the 15 candidates.",
-      "Main and PR-head Git trees: no AID-specific canonical paths for the 15 candidates.",
-      "Main and PR-head content-review-queue: no candidate AID matches.",
-      "All 12 main bulk-indexed item files: no candidate AID matches.",
-      "PR #35 patch: no candidate AID matches."
+      "data/public-search-index.json fetched as GitHub blob",
+      "Batch078 canonical record for AID4830985",
+      "Batch097 canonical record for AID3316719",
+      "Batch220 candidate records"
     ],
-    "note": "Targeted checks are not a substitute for full generated-index reconciliation. The connector could not retrieve the complete generated search index; Actions must reconcile every AID/URL/Evidence Family before uniqueness is final."
+    "note": "AID 4731005 already exists in the public index; AID 4830985 and AID 3316719 already exist in canonical batches. The English rendering of AID3316719 is a translation of the Yiddish entry, not an independent witness."
   },
   "retrieval_synthesis": {
     "topic": "letter_study_practice_routines",
@@ -740,167 +788,8 @@
       "אין להסיק מן הסינתזה ייחוס מילולי לרבי או מדידה של השפעה בפועל."
     ]
   },
-  "note": "Batch220: 15 new source identities (14 Hebrew Igrot Kodesh letters and one original-language Yiddish Hayom Yom entry) plus two in-place enrichments of existing Hebrew Sicha families. Seventeen public source bodies were inspected. The Yiddish entry quotes the Rashab; attribution is preserved and its English translation is not counted as an independent witness. Fifteen other candidate routes exposed generic compatibility shells; AID 4666220 also failed on the alternate Hebrew route. No crawler retry, access bypass, full-text copying, scan-only verification, translation-as-independent-witness, or Verified promotion.",
+  "note": "Batch220: 15 new source identities (14 Hebrew Igrot Kodesh letters and one original-language Yiddish Hayom Yom entry) plus two in-place enrichments of existing Hebrew Sicha families. Seventeen public source bodies were inspected. The Yiddish entry quotes the Rashab; attribution is preserved and its English translation is not counted as an independent witness. Fifteen other candidate routes exposed generic compatibility shells; AID 4666220 also failed on the alternate Hebrew route. No crawler retry, access bypass, full-text copying, scan-only verification, translation-as-independent-witness, or Verified promotion. Reconciliation review identified and linked three duplicate candidates (AIDs 4731005, 4830985, 3316719); they are excluded from new-source and independent-witness counts.",
   "records": [
-    {
-      "id": "chabad-letter-4731005",
-      "canonical_key": "aid:4731005",
-      "aid": 4731005,
-      "title": "מכתב תרמו",
-      "source_class": "Igrot Kodesh",
-      "source_class_detail": "איגרת עברית מתוך אגרות קודש, פורסמה באתר Chabad.org / TheRebbe.org מטעם Kehot; נבדק גוף הפרסום במקטע המצוין בלבד.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "כ״א תמוז, השי״ת",
-      "date": "כ״א תמוז, השי״ת",
-      "date_precision": "exact_as_publisher_displayed",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "translation_status": "Original Hebrew publisher text inspected; no translation was added or counted as an independent witness.",
-      "type": "letter",
-      "collection": "אגרות קודש — Kehot Publication Society",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731005/jewish/page.htm",
-      "context_status": "partial",
-      "summary_researcher": "האיגרת מאחלת לנמען ולמשפחתו שהשהות במקום מרגוע תועיל לבריאות הגוף, ומסיקה מכך שיש לנצל את ימי החופש גם לחיזוק הנשמה: להוסיף שיעור לימוד מיוחד ולחפש הזדמנויות לעורר נופשים אחרים לתורה, עבודה וגמילות חסדים, כל אחד לפי מצבו. ההנחיה ניתנת בהקשר של חופשה ובריאות, ולא כתחליף למנוחה.",
-      "response_propositions": [
-        "האיגרת מאחלת לנמען ולמשפחתו שהשהות במקום מרגוע תועיל לבריאות הגוף, ומסיקה מכך שיש לנצל את ימי החופש גם לחיזוק הנשמה: להוסיף שיעור לימוד מיוחד ולחפש הזדמנויות לעורר נופשים אחרים לתורה, עבודה וגמילות חסדים, כל אחד לפי מצבו. ההנחיה ניתנת בהקשר של חופשה ובריאות, ולא כתחליף למנוחה."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org AID 4731005, גוף האיגרת, שורות 252–258."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org AID 4731005, גוף האיגרת, שורות 252–258.",
-      "response_proposition_provenance": [
-        {
-          "proposition_index": 1,
-          "batch_id": "220",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "Chabad.org AID 4731005, גוף האיגרת, שורות 252–258.",
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731005/jewish/page.htm",
-          "source_aid": 4731005,
-          "original_language": "Hebrew",
-          "presentation_language": "Hebrew",
-          "evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
-          "independent_witness": true,
-          "provenance": "Chabad.org / TheRebbe.org AID 4731005; Chabad.org AID 4731005, גוף האיגרת, שורות 252–258. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org AID 4731005, גוף האיגרת, שורות 252–258. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. לא נבדקו אוטוגרף, כתב יד או המכתב הנכנס; לא הועתק גוף הפרסום המלא. ההקשר חלקי.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הפרפרזה נשענת על גוף האיגרת במקטע המצוין בלבד.",
-            "הדימוי לבריאות הגוף והנשמה הוא הקשר דתי-חינוכי; אין להציגו כהנחיה רפואית או כתחליף לטיפול רפואי.",
-            "העמוד מציין שהאיגרת נשלחה לכמה נמענים ובטווח תאריכים; אין להניח שכל עותק זהה בכל פרט."
-          ],
-          "proposition": "האיגרת מאחלת לנמען ולמשפחתו שהשהות במקום מרגוע תועיל לבריאות הגוף, ומסיקה מכך שיש לנצל את ימי החופש גם לחיזוק הנשמה: להוסיף שיעור לימוד מיוחד ולחפש הזדמנויות לעורר נופשים אחרים לתורה, עבודה וגמילות חסדים, כל אחד לפי מצבו. ההנחיה ניתנת בהקשר של חופשה ובריאות, ולא כתחליף למנוחה.",
-          "source_locator": "Chabad.org AID 4731005, גוף האיגרת, שורות 252–258."
-        }
-      ],
-      "provenance": {
-        "authorship_status": "המו״ל מציג את האיגרת כמכתב של רבי מנחם מענדל שניאורסון; בעמוד מופיעה חתימת מ. שניאורסאהן, והמו״ל מציין שהטקסט הושלם על פי צילום האיגרת.",
-        "signature_status": "מ. שניאורסאהן; חתימה מודפסת; המו״ל מציין שהאיגרת הושלמה על פי צילום, אך הצילום עצמו לא נבדק.",
-        "source_witness": "Chabad.org / TheRebbe.org AID 4731005; Chabad.org AID 4731005, גוף האיגרת, שורות 252–258. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-        "transmission_type": "published_letter_text_completed_from_publisher_referenced_photograph",
-        "textual_status": "גוף האיגרת העברי נבדק במיקום המצוין; המכתב הנכנס והמקור הפיזי לא נבדקו.",
-        "editorial_scope": "פרפרזה מחקרית אחת, לא-מילולית, עם מיקום גוף תחום; אין העתקה מלאה של טקסט מוגן.",
-        "verification_status": "source_text_inspected",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731005/jewish/page.htm",
-        "accessed": "2026-11-20T23:02:24+02:00",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org AID 4731005, גוף האיגרת, שורות 252–258. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. לא נבדקו אוטוגרף, כתב יד או המכתב הנכנס; לא הועתק גוף הפרסום המלא. ההקשר חלקי."
-      },
-      "witness": {
-        "kind": "published Hebrew correspondence",
-        "state": "original-language body passage inspected",
-        "publisher": "Kehot Publication Society",
-        "platform": "Chabad.org / TheRebbe.org",
-        "language": "Hebrew",
-        "scope": "Chabad.org AID 4731005, גוף האיגרת, שורות 252–258.",
-        "complete_partial": "partial_published_body",
-        "notes": "נבדק רק המקטע המצוין; לא נבדקו כתב יד, אוטוגרף או המכתב הנכנס."
-      },
-      "access": {
-        "access_level": "open",
-        "status": "public_publisher_page_opened_and_original_language_body_inspected",
-        "rights_status": "copyrighted-link-only",
-        "full_text_reproduced": false,
-        "reuse_notes": "קישור למקור ופרפרזה מחקרית לא-מילולית בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org AID 4731005, גוף האיגרת, שורות 252–258. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. לא נבדקו אוטוגרף, כתב יד או המכתב הנכנס; לא הועתק גוף הפרסום המלא. ההקשר חלקי.",
-      "documented_circumstances": "מכתב לנמען פרטי ולמשפחתו בעת שהות במקום מרגוע; בעמוד מצוין שהאיגרת נשלחה לכמה נמענים בתאריכים כ״א תמוז עד ד׳ מנחם אב.",
-      "question_or_problem": "עדכון על שהות הנמען ומשפחתו במקום מרגוע; המכתב הנכנס המלא אינו מוצג.",
-      "conditions_or_qualifications": [
-        "הפרפרזה נשענת על גוף האיגרת במקטע המצוין בלבד.",
-        "הדימוי לבריאות הגוף והנשמה הוא הקשר דתי-חינוכי; אין להציגו כהנחיה רפואית או כתחליף לטיפול רפואי.",
-        "העמוד מציין שהאיגרת נשלחה לכמה נמענים ובטווח תאריכים; אין להניח שכל עותק זהה בכל פרט."
-      ],
-      "audience": "נמען פרטי ובני משפחתו; השם מופיע בראשי תיבות במקטע.",
-      "primary_secondary_status": "טקסט איגרת שפורסם בידי Kehot; העמוד מציין השלמה על פי צילום האיגרת. הצילום עצמו, אוטוגרף ומהדורה ביקורתית לא נבדקו.",
-      "witness_type": "published_hebrew_correspondence_text",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 4731005; Chabad.org AID 4731005, גוף האיגרת, שורות 252–258. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-      "independent_witness": true,
-      "author_name": "Rabbi Menachem Mendel Schneerson (publisher attribution)",
-      "author_role": "author (publisher-attributed)",
-      "authorship_status": "המו״ל מציג את האיגרת כמכתב של רבי מנחם מענדל שניאורסון; בעמוד מופיעה חתימת מ. שניאורסאהן, והמו״ל מציין שהטקסט הושלם על פי צילום האיגרת.",
-      "source_role": "published_correspondence_text",
-      "signatory": "מ. שניאורסאהן",
-      "signatory_role": "חתימה מודפסת; המו״ל מציין שהאיגרת הושלמה על פי צילום, אך הצילום עצמו לא נבדק.",
-      "publisher": "Kehot Publication Society",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "בדיקות AID/URL ממוקדות לא מצאו התאמה קנונית קיימת. כל תרגום או הדפסה מקבילה של אותה איגרת יצורפו לאותה Evidence Family; full-index reconciliation נדרש לפני אישור ייחודיות סופי.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "מכתב תרמו",
-          "Igrot Kodesh"
-        ],
-        "research_terms": [
-          "חופשה",
-          "בריאות הגוף והנשמה",
-          "שיעור לימוד",
-          "תורה עבודה וגמילות חסדים"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "Parsed only; no Verified promotion. רק המקטע המצוין נבדק; אין העתקה מלאה של הטקסט.",
-      "canonical_file": "data/items/content-research-batch-220-2026-11-20.json",
-      "content_enrichment_batch_id": "220",
-      "last_content_enriched_at": "2026-11-20T23:02:24+02:00",
-      "response_proposition_metadata": [
-        {
-          "proposition_index": 1,
-          "batch_id": "220",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "Chabad.org AID 4731005, גוף האיגרת, שורות 252–258.",
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731005/jewish/page.htm",
-          "source_aid": 4731005,
-          "original_language": "Hebrew",
-          "presentation_language": "Hebrew",
-          "evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
-          "independent_witness": true,
-          "provenance": "Chabad.org / TheRebbe.org AID 4731005; Chabad.org AID 4731005, גוף האיגרת, שורות 252–258. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org AID 4731005, גוף האיגרת, שורות 252–258. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. לא נבדקו אוטוגרף, כתב יד או המכתב הנכנס; לא הועתק גוף הפרסום המלא. ההקשר חלקי.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הפרפרזה נשענת על גוף האיגרת במקטע המצוין בלבד.",
-            "הדימוי לבריאות הגוף והנשמה הוא הקשר דתי-חינוכי; אין להציגו כהנחיה רפואית או כתחליף לטיפול רפואי.",
-            "העמוד מציין שהאיגרת נשלחה לכמה נמענים ובטווח תאריכים; אין להניח שכל עותק זהה בכל פרט."
-          ]
-        }
-      ]
-    },
     {
       "id": "chabad-letter-5100231",
       "canonical_key": "aid:5100231",
@@ -1053,162 +942,6 @@
           "conditions_or_qualifications": [
             "הדיון עוסק בשאלה תיאולוגית מסוימת על העולם הבא; אין להציגו כעמדה הלכתית מוסכמת ללא מקורות נוספים.",
             "הפרפרזה מוגבלת למענה המפורסם; המכתב הנכנס אינו מובא במלואו."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "chabad-letter-4830985",
-      "canonical_key": "aid:4830985",
-      "aid": 4830985,
-      "title": "מכתב א׳תתקיז",
-      "source_class": "Igrot Kodesh",
-      "source_class_detail": "איגרת עברית מתוך אגרות קודש, פורסמה באתר Chabad.org / TheRebbe.org מטעם Kehot; נבדק גוף הפרסום במקטע המצוין בלבד.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "כ״ו מ״ח, תשי״ג",
-      "date": "כ״ו מ״ח, תשי״ג",
-      "date_precision": "exact_as_publisher_displayed",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "translation_status": "Original Hebrew publisher text inspected; no translation was added or counted as an independent witness.",
-      "type": "letter",
-      "collection": "אגרות קודש — Kehot Publication Society",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4830985/jewish/page.htm",
-      "context_status": "partial",
-      "summary_researcher": "האיגרת מציגה רפואה רוחנית בשני אופנים: תיקון המצב מכאן ולהבא, או עקירת הדבר משורשו. היא קושרת בין בריאות הנפש של האדם הישראלי לבין תורה ומצוות, ומתארת עבודה מאהבה כדרך שבה לא נשאר רושם מן המצב הרוחני הקודם. זהו דיון תיאולוגי במונחי רפואה, לא הנחיה רפואית.",
-      "response_propositions": [
-        "האיגרת מציגה רפואה רוחנית בשני אופנים: תיקון המצב מכאן ולהבא, או עקירת הדבר משורשו. היא קושרת בין בריאות הנפש של האדם הישראלי לבין תורה ומצוות, ומתארת עבודה מאהבה כדרך שבה לא נשאר רושם מן המצב הרוחני הקודם. זהו דיון תיאולוגי במונחי רפואה, לא הנחיה רפואית."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org AID 4830985, גוף האיגרת, שורות 293–294."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org AID 4830985, גוף האיגרת, שורות 293–294.",
-      "response_proposition_provenance": [
-        {
-          "proposition_index": 1,
-          "batch_id": "220",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "Chabad.org AID 4830985, גוף האיגרת, שורות 293–294.",
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4830985/jewish/page.htm",
-          "source_aid": 4830985,
-          "original_language": "Hebrew",
-          "presentation_language": "Hebrew",
-          "evidence_family_id": "igrot-letter-5713-26-marheshvan-aid4830985",
-          "independent_witness": true,
-          "provenance": "Chabad.org / TheRebbe.org AID 4830985; Chabad.org AID 4830985, גוף האיגרת, שורות 293–294. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org AID 4830985, גוף האיגרת, שורות 293–294. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. לא נבדקו אוטוגרף, כתב יד או המכתב הנכנס; לא הועתק גוף הפרסום המלא. ההקשר חלקי.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הדימוי הרפואי הוא רעיוני-תיאולוגי; אין להציגו כהנחיה רפואית או פסיכולוגית.",
-            "המקטע שנבדק חלקי ואינו כולל את מלוא המכתב הנכנס או ההמשך."
-          ],
-          "proposition": "האיגרת מציגה רפואה רוחנית בשני אופנים: תיקון המצב מכאן ולהבא, או עקירת הדבר משורשו. היא קושרת בין בריאות הנפש של האדם הישראלי לבין תורה ומצוות, ומתארת עבודה מאהבה כדרך שבה לא נשאר רושם מן המצב הרוחני הקודם. זהו דיון תיאולוגי במונחי רפואה, לא הנחיה רפואית.",
-          "source_locator": "Chabad.org AID 4830985, גוף האיגרת, שורות 293–294."
-        }
-      ],
-      "provenance": {
-        "authorship_status": "המו״ל מציג את האיגרת כמכתב של רבי מנחם מענדל שניאורסון; לא נבדקו אוטוגרף או העתק מזכירות.",
-        "signature_status": "לא נבדקה חתימה או אוטוגרף במקטע.",
-        "source_witness": "Chabad.org / TheRebbe.org AID 4830985; Chabad.org AID 4830985, גוף האיגרת, שורות 293–294. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-        "transmission_type": "published_hebrew_correspondence_text",
-        "textual_status": "גוף האיגרת העברי נבדק במיקום המצוין; המכתב הנכנס והמקור הפיזי לא נבדקו.",
-        "editorial_scope": "פרפרזה מחקרית אחת, לא-מילולית, עם מיקום גוף תחום; אין העתקה מלאה של טקסט מוגן.",
-        "verification_status": "source_text_inspected",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4830985/jewish/page.htm",
-        "accessed": "2026-11-20T23:02:24+02:00",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org AID 4830985, גוף האיגרת, שורות 293–294. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. לא נבדקו אוטוגרף, כתב יד או המכתב הנכנס; לא הועתק גוף הפרסום המלא. ההקשר חלקי."
-      },
-      "witness": {
-        "kind": "published Hebrew correspondence",
-        "state": "original-language body passage inspected",
-        "publisher": "Kehot Publication Society",
-        "platform": "Chabad.org / TheRebbe.org",
-        "language": "Hebrew",
-        "scope": "Chabad.org AID 4830985, גוף האיגרת, שורות 293–294.",
-        "complete_partial": "partial_published_body",
-        "notes": "נבדק רק המקטע המצוין; לא נבדקו כתב יד, אוטוגרף או המכתב הנכנס."
-      },
-      "access": {
-        "access_level": "open",
-        "status": "public_publisher_page_opened_and_original_language_body_inspected",
-        "rights_status": "copyrighted-link-only",
-        "full_text_reproduced": false,
-        "reuse_notes": "קישור למקור ופרפרזה מחקרית לא-מילולית בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "evidence_family_id": "igrot-letter-5713-26-marheshvan-aid4830985",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org AID 4830985, גוף האיגרת, שורות 293–294. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. לא נבדקו אוטוגרף, כתב יד או המכתב הנכנס; לא הועתק גוף הפרסום המלא. ההקשר חלקי.",
-      "documented_circumstances": "מענה באיגרת העוסקת במושגי תיקון ורפואה רוחנית; המכתב הנכנס אינו מוצג במקטע שנבדק.",
-      "question_or_problem": "דיון בשני אופנים של תיקון רוחני ובהקבלה בין בריאות הגוף לבריאות הנפש.",
-      "conditions_or_qualifications": [
-        "הדימוי הרפואי הוא רעיוני-תיאולוגי; אין להציגו כהנחיה רפואית או פסיכולוגית.",
-        "המקטע שנבדק חלקי ואינו כולל את מלוא המכתב הנכנס או ההמשך."
-      ],
-      "audience": "נמען פרטי; שמו אינו מופיע במקטע שנבדק.",
-      "primary_secondary_status": "טקסט איגרת עברי שפורסם בידי Kehot; כתב יד, אוטוגרף והעתק מזכירות לא נבדקו.",
-      "witness_type": "published_hebrew_correspondence_text",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 4830985; Chabad.org AID 4830985, גוף האיגרת, שורות 293–294. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-      "independent_witness": true,
-      "author_name": "Rabbi Menachem Mendel Schneerson (publisher attribution)",
-      "author_role": "author (publisher-attributed)",
-      "authorship_status": "המו״ל מציג את האיגרת כמכתב של רבי מנחם מענדל שניאורסון; לא נבדקו אוטוגרף או העתק מזכירות.",
-      "source_role": "published_correspondence_text",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Kehot Publication Society",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "בדיקות AID/URL ממוקדות לא מצאו התאמה קנונית קיימת. כל תרגום או הדפסה מקבילה של אותה איגרת יצורפו לאותה Evidence Family; full-index reconciliation נדרש לפני אישור ייחודיות סופי.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "מכתב א׳תתקיז",
-          "Igrot Kodesh"
-        ],
-        "research_terms": [
-          "תשובה",
-          "אהבה ויראה",
-          "רפואה רוחנית",
-          "תורה ומצוות"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "Parsed only; no Verified promotion. רק המקטע המצוין נבדק; אין העתקה מלאה של הטקסט.",
-      "canonical_file": "data/items/content-research-batch-220-2026-11-20.json",
-      "content_enrichment_batch_id": "220",
-      "last_content_enriched_at": "2026-11-20T23:02:24+02:00",
-      "response_proposition_metadata": [
-        {
-          "proposition_index": 1,
-          "batch_id": "220",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "Chabad.org AID 4830985, גוף האיגרת, שורות 293–294.",
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4830985/jewish/page.htm",
-          "source_aid": 4830985,
-          "original_language": "Hebrew",
-          "presentation_language": "Hebrew",
-          "evidence_family_id": "igrot-letter-5713-26-marheshvan-aid4830985",
-          "independent_witness": true,
-          "provenance": "Chabad.org / TheRebbe.org AID 4830985; Chabad.org AID 4830985, גוף האיגרת, שורות 293–294. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org AID 4830985, גוף האיגרת, שורות 293–294. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. לא נבדקו אוטוגרף, כתב יד או המכתב הנכנס; לא הועתק גוף הפרסום המלא. ההקשר חלקי.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הדימוי הרפואי הוא רעיוני-תיאולוגי; אין להציגו כהנחיה רפואית או פסיכולוגית.",
-            "המקטע שנבדק חלקי ואינו כולל את מלוא המכתב הנכנס או ההמשך."
           ]
         }
       ]
@@ -2963,169 +2696,70 @@
           ]
         }
       ]
-    },
-    {
-      "id": "hayom-yom-22-tammuz-aid3316719",
-      "canonical_key": "aid:3316719",
-      "aid": 3316719,
-      "title": "22 Tammuz",
-      "source_class": "Hayom Yom",
-      "source_class_detail": "ערך יומי מתוך האנתולוגיה היום יום; בעמוד הדו-לשוני נבדק הקטע המקורי ביידיש בלבד, והתרגום האנגלי וההערות העריכתיות אינם עדים עצמאיים.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "22 Tammuz",
-      "date": "22 Tammuz",
-      "date_precision": "recurring_calendar_day_only",
-      "language": "Yiddish",
-      "original_language": "Yiddish",
-      "translation_status": "הקטע המקורי ביידיש נבדק בעמוד; התרגום האנגלי באותו עמוד הוא הצגה נגזרת ואינו נספר כעד עצמאי או כמשפחת ראיות נוספת.",
-      "type": "hayom_yom_entry",
-      "collection": "היום יום — Chabad.org / TheRebbe.org, Sichos in English Collection",
-      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316719/jewish/22-Tammuz.htm",
-      "context_status": "partial",
-      "summary_researcher": "ערך היום-יום לכ״ב תמוז מצטט אמירה של הרבי הרש״ב: הוראה חסידית מבהירה את המחשבה ומנקה את הלב; הנהגה חסידית טובה מאירה את הבית; וניגון חסידי מחזק תקווה וביטחון ומביא שמחה. האמירה מיוחסת במפורש לרבי הרש״ב בתוך הערך, ולכן אינה מובאת כאן כדברי הרבי מליובאוויטש.",
-      "response_propositions": [
-        "ערך היום-יום לכ״ב תמוז מצטט אמירה של הרבי הרש״ב: הוראה חסידית מבהירה את המחשבה ומנקה את הלב; הנהגה חסידית טובה מאירה את הבית; וניגון חסידי מחזק תקווה וביטחון ומביא שמחה. האמירה מיוחסת במפורש לרבי הרש״ב בתוך הערך, ולכן אינה מובאת כאן כדברי הרבי מליובאוויטש."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255.",
-      "response_proposition_provenance": [
-        {
-          "proposition_index": 1,
-          "batch_id": "220",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255.",
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316719/jewish/22-Tammuz.htm",
-          "source_aid": 3316719,
-          "original_language": "Yiddish",
-          "presentation_language": "Yiddish original entry",
-          "evidence_family_id": "hayom-yom-22-tammuz-yiddish-aid3316719",
-          "independent_witness": true,
-          "provenance": "Chabad.org / TheRebbe.org AID 3316719; Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. נבדק הטקסט המקורי ביידיש בלבד; התרגום האנגלי וההערות העריכתיות באותו עמוד לא שימשו בסיס לפרופוזיציה ולא נספרו כעדים עצמאיים. ההקשר חלקי.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "האמירה מיוחסת במפורש בתוך הערך לאביו של המחבר, הרבי הרש״ב; אין לייחס אותה לרבי מליובאוויטש.",
-            "הפרפרזה מבוססת על שורת המקור ביידיש בלבד; התרגום האנגלי באותו עמוד אינו עד עצמאי.",
-            "לא נבדקו מהדורת היום יום המקורית, כתב יד או אוטוגרף; ההקשר חלקי."
-          ],
-          "proposition": "ערך היום-יום לכ״ב תמוז מצטט אמירה של הרבי הרש״ב: הוראה חסידית מבהירה את המחשבה ומנקה את הלב; הנהגה חסידית טובה מאירה את הבית; וניגון חסידי מחזק תקווה וביטחון ומביא שמחה. האמירה מיוחסת במפורש לרבי הרש״ב בתוך הערך, ולכן אינה מובאת כאן כדברי הרבי מליובאוויטש.",
-          "source_locator": "Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255."
-        }
-      ],
-      "provenance": {
-        "authorship_status": "המו״ל מציג את הערך כחלק מהיום יום שנערך בידי הרבי; האמירה המצוטטת מיוחסת במפורש לאביו, הרבי הרש״ב, ואין לייחסה לרבי עצמו.",
-        "signature_status": "הערך מצטט את הרבי הרש״ב; אין חתימה או אוטוגרף בעמוד.",
-        "source_witness": "Chabad.org / TheRebbe.org AID 3316719; Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-        "transmission_type": "published_bilingual_hayom_yom_entry_with_original_language_excerpt",
-        "textual_status": "הקטע המקורי ביידיש נבדק; התרגום האנגלי וההערות העריכתיות לא שימשו בסיס לפרופוזיציה.",
-        "editorial_scope": "פרפרזה מחקרית אחת, לא-מילולית, עם מיקום גוף תחום; אין העתקה מלאה של טקסט מוגן.",
-        "verification_status": "source_text_inspected",
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316719/jewish/22-Tammuz.htm",
-        "accessed": "2026-11-20T23:02:24+02:00",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. נבדק הטקסט המקורי ביידיש בלבד; התרגום האנגלי וההערות העריכתיות באותו עמוד לא שימשו בסיס לפרופוזיציה ולא נספרו כעדים עצמאיים. ההקשר חלקי."
-      },
-      "witness": {
-        "kind": "published bilingual dated anthology entry",
-        "state": "original-language body passage inspected",
-        "publisher": "Kehot / Chabad.org (Sichos in English Collection)",
-        "platform": "Chabad.org / TheRebbe.org",
-        "language": "Yiddish",
-        "scope": "Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255.",
-        "complete_partial": "partial_published_body",
-        "notes": "נבדק רק הקטע המקורי ביידיש; התרגום האנגלי אינו עד עצמאי. האמירה מיוחסת לרבי הרש״ב."
-      },
-      "access": {
-        "access_level": "open",
-        "status": "public_publisher_page_opened_and_original_language_body_inspected",
-        "rights_status": "copyrighted-link-only",
-        "full_text_reproduced": false,
-        "reuse_notes": "קישור למקור ופרפרזה מחקרית לא-מילולית בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "evidence_family_id": "hayom-yom-22-tammuz-yiddish-aid3316719",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. נבדק הטקסט המקורי ביידיש בלבד; התרגום האנגלי וההערות העריכתיות באותו עמוד לא שימשו בסיס לפרופוזיציה ולא נספרו כעדים עצמאיים. ההקשר חלקי.",
-      "documented_circumstances": "ערך יומי לכ״ב תמוז באנתולוגיה היום יום; העמוד מציג את הטקסט המקורי ביידיש לצד תרגום אנגלי והערות מערכת.",
-      "question_or_problem": "מהם שלושת האמצעים שהערך מייחס להם השפעה על המחשבה, הבית והתקווה?",
-      "conditions_or_qualifications": [
-        "האמירה מיוחסת במפורש בתוך הערך לאביו של המחבר, הרבי הרש״ב; אין לייחס אותה לרבי מליובאוויטש.",
-        "הפרפרזה מבוססת על שורת המקור ביידיש בלבד; התרגום האנגלי באותו עמוד אינו עד עצמאי.",
-        "לא נבדקו מהדורת היום יום המקורית, כתב יד או אוטוגרף; ההקשר חלקי."
-      ],
-      "audience": "קוראי האנתולוגיה היום יום.",
-      "primary_secondary_status": "ערך יומי דו-לשוני מאוחר; הקטע המקורי ביידיש נבדק. התרגום האנגלי אינו עד נוסף; מהדורה ראשונה ואוטוגרף לא נבדקו.",
-      "witness_type": "published_bilingual_hayom_yom_entry_with_original_language_excerpt",
-      "witness_provenance": "Chabad.org / TheRebbe.org AID 3316719; Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-      "independent_witness": true,
-      "author_name": "Rabbi Menachem Mendel Schneerson (compiler); quoted speaker Rabbi Sholom Dovber Schneersohn (Rashab)",
-      "author_role": "compiler/editor of the Hayom Yom anthology; internal attribution preserved",
-      "authorship_status": "המו״ל מציג את הערך כחלק מהיום יום שנערך בידי הרבי; האמירה המצוטטת מיוחסת במפורש לאביו, הרבי הרש״ב, ואין לייחסה לרבי עצמו.",
-      "source_role": "published_hayom_yom_anthology_entry",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Kehot / Chabad.org (Sichos in English Collection)",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות לערך היום יום לכ״ב תמוז, AID 3316719. כל תרגום או תצוגה מקבילה של אותו ערך יצורפו לאותה Evidence Family; האמירה המצוטטת נשארת מיוחסת לרבי הרש״ב.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "22 Tammuz",
-          "Hayom Yom"
-        ],
-        "research_terms": [
-          "היום יום",
-          "יידיש",
-          "הוראה חסידית",
-          "הנהגה טובה",
-          "ניגון",
-          "רבי הרש״ב"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "Parsed only; no Verified promotion. רק המקטע המצוין נבדק; אין העתקה מלאה של הטקסט.",
-      "canonical_file": "data/items/content-research-batch-220-2026-11-20.json",
-      "content_enrichment_batch_id": "220",
-      "last_content_enriched_at": "2026-11-20T23:02:24+02:00",
-      "response_proposition_metadata": [
-        {
-          "proposition_index": 1,
-          "batch_id": "220",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255.",
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316719/jewish/22-Tammuz.htm",
-          "source_aid": 3316719,
-          "original_language": "Yiddish",
-          "presentation_language": "Yiddish original entry",
-          "evidence_family_id": "hayom-yom-22-tammuz-yiddish-aid3316719",
-          "independent_witness": true,
-          "provenance": "Chabad.org / TheRebbe.org AID 3316719; Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
-          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי ביום 20.11.2026. Chabad.org/TheRebbe.org AID 3316719, original Yiddish entry, line 255. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. נבדק הטקסט המקורי ביידיש בלבד; התרגום האנגלי וההערות העריכתיות באותו עמוד לא שימשו בסיס לפרופוזיציה ולא נספרו כעדים עצמאיים. ההקשר חלקי.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "האמירה מיוחסת במפורש בתוך הערך לאביו של המחבר, הרבי הרש״ב; אין לייחס אותה לרבי מליובאוויטש.",
-            "הפרפרזה מבוססת על שורת המקור ביידיש בלבד; התרגום האנגלי באותו עמוד אינו עד עצמאי.",
-            "לא נבדקו מהדורת היום יום המקורית, כתב יד או אוטוגרף; ההקשר חלקי."
-          ]
-        }
-      ]
     }
   ],
-  "duplicate_aliases_linked": [],
-  "reconciliation_actions": []
+  "duplicate_aliases_linked": [
+    {
+      "aid": 4731005,
+      "duplicate_candidate_id": "chabad-letter-4731005",
+      "canonical_id": "chabad-letter-4731005",
+      "canonical_file": "data/public-search-index.json",
+      "evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
+      "relation": "same_evidence_family",
+      "independent_witness": false,
+      "proposition_added": false,
+      "reason": "AID 4731005 כבר מופיע באינדקס הציבורי כ-chabad-letter-4731005 באותה Evidence Family; התמצית ב-Batch220 חופפת לתמציות הקיימות בשורות 252–258 ולכן אינה מקור או פרופוזיציה עצמאיים."
+    },
+    {
+      "aid": 4830985,
+      "duplicate_candidate_id": "chabad-letter-4830985",
+      "canonical_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+      "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+      "evidence_family_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+      "relation": "same_evidence_family",
+      "independent_witness": false,
+      "proposition_added": false,
+      "reason": "אותו AID ואותו גוף פרסום כבר קיימים ברשומה הקנונית ב-Batch078; התמצית החדשה חופפת לאותו מקטע ולכן הוסרה כמועמד כפול."
+    },
+    {
+      "aid": 3316719,
+      "duplicate_candidate_id": "hayom-yom-22-tammuz-aid3316719",
+      "canonical_id": "hayom-yom-tammuz-22-aid3316719",
+      "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
+      "evidence_family_id": "hayom-yom-tammuz-22-aid3316719",
+      "relation": "same_evidence_family",
+      "independent_witness": false,
+      "proposition_added": false,
+      "reason": "אותו AID ואותו ערך יידיש כבר קיימים ב-Batch097 עם התמציות הרלוונטיות. האנגלית המופיעה באותו עמוד היא תרגום של אותו מקור יידיש ואינה עד עצמאי."
+    }
+  ],
+  "reconciliation_actions": [
+    {
+      "action": "exclude_duplicate_candidate_and_link_existing_family",
+      "aid": 4731005,
+      "canonical_id": "chabad-letter-4731005",
+      "canonical_file": "data/public-search-index.json",
+      "evidence_family_id": "igrot-letter-5710-21-tammuz-aid4731005",
+      "independent_witness": false,
+      "reason": "AID 4731005 כבר מופיע באינדקס הציבורי כ-chabad-letter-4731005 באותה Evidence Family; התמצית ב-Batch220 חופפת לתמציות הקיימות בשורות 252–258 ולכן אינה מקור או פרופוזיציה עצמאיים."
+    },
+    {
+      "action": "exclude_duplicate_candidate_and_link_existing_family",
+      "aid": 4830985,
+      "canonical_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+      "canonical_file": "data/items/content-research-batch-078-2026-11-13.json",
+      "evidence_family_id": "igrot-letter-excerpt-5713-26-marheshvan-aid4830985",
+      "independent_witness": false,
+      "reason": "אותו AID ואותו גוף פרסום כבר קיימים ברשומה הקנונית ב-Batch078; התמצית החדשה חופפת לאותו מקטע ולכן הוסרה כמועמד כפול."
+    },
+    {
+      "action": "exclude_duplicate_candidate_and_link_existing_family",
+      "aid": 3316719,
+      "canonical_id": "hayom-yom-tammuz-22-aid3316719",
+      "canonical_file": "data/items/content-research-batch-097-2026-11-15.json",
+      "evidence_family_id": "hayom-yom-tammuz-22-aid3316719",
+      "independent_witness": false,
+      "reason": "אותו AID ואותו ערך יידיש כבר קיימים ב-Batch097 עם התמציות הרלוונטיות. האנגלית המופיעה באותו עמוד היא תרגום של אותו מקור יידיש ואינה עד עצמאי."
+    }
+  ]
 }
