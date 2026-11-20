@@ -2305,9 +2305,9 @@ else if(educationGovernanceQuestion){
    .filter(e=>e&&String(e.status||'').toLowerCase()==='verified'&&e.answer_eligible===true&&e.has_content_evidence===true&&supportsStudyFarmingComparisonSource(e))
    .map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(p=>supportsStudyRoutineComparison(p)||supportsFarmingStudyComparison(p))}))
    .filter(e=>e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived')
-   .map(e=>({e,relevance:propositionRelevance(e,understanding)}))
-   .filter(x=>x.relevance.support==='direct_support'&&x.relevance.score>=6)
-   .sort((a,b)=>b.relevance.score-a.relevance.score)
+   .map(e=>({e,relevance:propositionRelevance(e,understanding),topic_coverage:Number(e._supporting_propositions.some(supportsStudyRoutineComparison))+Number(e._supporting_propositions.some(supportsFarmingStudyComparison))}))
+   // Explicit topic predicates above are the evidence gate; generic relevance is only a ranking signal.
+   .sort((a,b)=>b.topic_coverage-a.topic_coverage||b.relevance.score-a.relevance.score)
    .map(x=>x.e);
   const byFamily=new Map();
   for(const e of rankedComparison){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
