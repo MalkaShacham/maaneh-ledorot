@@ -5,7 +5,7 @@
   "generated": "2026-11-20",
   "generated_at": "2026-11-20T17:02:38+02:00",
   "reviewed_at": "2026-11-20T17:02:38+02:00",
-  "title": "Batch 213 — eight body-inspected original-Hebrew Sicha/Maamar identities with ten bounded propositions; rate-limited candidates replaced and duplicates excluded",
+  "title": "Batch 213 — eight new body-inspected Hebrew Sicha/Maamar identities plus one in-place enrichment; duplicate AID 4280037 excluded",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
   "review_method": "manual_public_web_source_body_inspection",
@@ -18,14 +18,14 @@
   "metadata_only_items_rechecked": 0,
   "search_extracts_inspected": 20,
   "search_extracts_used_as_content": 0,
-  "new_source_identities": 9,
+  "new_source_identities": 8,
   "existing_identities_enriched": 1,
-  "existing_identities_rechecked": 0,
-  "new_response_propositions": 11,
+  "existing_identities_rechecked": 1,
+  "new_response_propositions": 10,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 12,
+  "total_new_paraphrase_entries": 11,
   "answer_eligible_source_families_added": 0,
-  "independent_witnesses_added": 9,
+  "independent_witnesses_added": 8,
   "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
   "source_languages": [
@@ -41,12 +41,11 @@
     "Hebrew": 12
   },
   "source_type_distribution": {
-    "Sicha": 6,
-    "Maamar": 3
+    "Maamar": 2,
+    "Sicha": 6
   },
   "new_aids": [
     3008940,
-    4280037,
     5959890,
     4280001,
     5959838,
@@ -57,7 +56,6 @@
   ],
   "new_ids": [
     "chabad-hebrew-3008940",
-    "chabad-hebrew-4280037",
     "chabad-hebrew-5959890",
     "chabad-hebrew-4280001",
     "chabad-hebrew-5959838",
@@ -68,7 +66,6 @@
   ],
   "new_source_ids": [
     "chabad-hebrew-3008940",
-    "chabad-hebrew-4280037",
     "chabad-hebrew-5959890",
     "chabad-hebrew-4280001",
     "chabad-hebrew-5959838",
@@ -83,7 +80,9 @@
   "enriched_ids": [
     "sicha-5728-19-kislev-aid5989562"
   ],
-  "rechecked_aids": [],
+  "rechecked_aids": [
+    4280037
+  ],
   "reviewed_aids": [
     3008940,
     4280037,
@@ -110,15 +109,15 @@
   },
   "metrics_actual_before": null,
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1713,
+    "answer_eligible_unique_sources": 1712,
     "content_verified_unique_sources": 862,
-    "answer_eligible_propositions": 4389
+    "answer_eligible_propositions": 4388
   },
   "metrics_actual_after": null,
   "metrics_after_actual": null,
   "metrics_delta_actual": null,
   "metrics_before_source": "Batch212 expected boundary 1704/862/4377; planning only, not a measured post-reconciliation snapshot.",
-  "metrics_note": "Planning only. Nine candidate source identities and one in-place enrichment produced eleven new-source propositions and one existing-identity proposition. Exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
+  "metrics_note": "Planning only after duplicate reconciliation: eight new candidate identities, ten new source-grounded propositions, and one in-place proposition for AID 5989562. AID 4280037 was already canonical in Batch105 and its overlapping candidate paraphrase was excluded. Exact unique-family contribution and actual metrics await full-index reconciliation; no Verified promotion.",
   "blocked_candidate_count": 7,
   "blocked_candidates": [
     {
@@ -178,7 +177,7 @@
       "action": "blocked_candidate"
     }
   ],
-  "excluded_duplicate_candidate_count": 11,
+  "excluded_duplicate_candidate_count": 12,
   "excluded_duplicate_candidates": [
     {
       "aid": 5989562,
@@ -259,6 +258,15 @@
         "146"
       ],
       "reason": "כבר קיים באצווה 146; הוחרג."
+    },
+    {
+      "aid": 4280037,
+      "existing_batches": [
+        "105"
+      ],
+      "existing_canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
+      "reason": "אותו AID ואותו URL כבר קיימים בזהות הקנונית של Batch105. הפרפרזה החדשה חופפת לתמציות שכבר קיימות; לא נוצרה זהות או משפחת ראיות נוספת."
     }
   ],
   "deferred_candidate_count": 0,
@@ -365,7 +373,6 @@
   "candidate_triage": {
     "selected_aids": [
       3008940,
-      4280037,
       5959890,
       4280001,
       5959838,
@@ -394,7 +401,8 @@
       4385857,
       4304341,
       4304360,
-      4304438
+      4304438,
+      4280037
     ],
     "enriched_aids": [
       5989562
@@ -415,7 +423,19 @@
     }
   ],
   "existing_identity_updates_count": 1,
-  "existing_identity_rechecks": [],
+  "existing_identity_rechecks": [
+    {
+      "aid": 4280037,
+      "id": "maamar-5721-11-shevat-basi-legani-aid4280037",
+      "canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+      "evidence_family_id": "maamar-5721-11-shevat-beshalach-friday-night-aid4280037",
+      "action": "existing_identity_rechecked_no_new_proposition",
+      "existing_propositions_before": 2,
+      "propositions_added": 0,
+      "body_locator": "Chabad.org AID 4280037, גוף המאמר, שורות 175–176.",
+      "reason": "AID 4280037 and its source URL already exist in Batch105. The candidate paraphrase overlaps the two existing propositions and was excluded rather than counted as a new source or enrichment."
+    }
+  ],
   "source_body_review": [
     {
       "aid": 3008940,
@@ -454,12 +474,14 @@
       "source_body_locator": [
         "Chabad.org AID 4280037, גוף המאמר, שורות 175–176."
       ],
-      "evidence_family_id": "maamar-5721-shevat-11-bati-legani-aid4280037",
-      "independent_witness": true,
-      "proposition_count": 1,
+      "evidence_family_id": "maamar-5721-11-shevat-beshalach-friday-night-aid4280037",
+      "independent_witness": false,
+      "proposition_count": 0,
       "context_status": "partial",
-      "action": "candidate_new_identity_pending_full_index_reconciliation",
-      "body_text_inspected": true
+      "action": "duplicate_existing_identity_excluded",
+      "body_text_inspected": true,
+      "canonical_file": "data/items/content-research-batch-105-2026-11-15.json",
+      "reason": "Same AID and source URL already canonical in Batch105; candidate paraphrase was redundant and not added."
     },
     {
       "aid": 5959890,
@@ -644,7 +666,7 @@
   "deduplication_check": {
     "full_index_scan_available": false,
     "full_index_scan_pending_reconciliation": true,
-    "target_identity_count": 9,
+    "target_identity_count": 8,
     "target_identity_matches": null,
     "target_identity_duplicates": null,
     "selected_unique_evidence_families": null,
@@ -653,7 +675,6 @@
     "missing_canonical_identities": [],
     "target_aids": [
       3008940,
-      4280037,
       5959890,
       4280001,
       5959838,
@@ -662,8 +683,9 @@
       4385774,
       4304354
     ],
-    "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches for the nine new candidates), and bulk-indexed-2026-09-24-001 (no AID matches). Existing AID 5989562 resolved to canonical Batch102 and was enriched in place. Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned; no final uniqueness claim is made until CI reconciliation.",
-    "target_existing_identity_enrichment_count": 1
+    "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches for the nine new candidates), and bulk-indexed-2026-09-24-001 (no AID matches). Existing AID 5989562 resolved to canonical Batch102 and was enriched in place. Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned; no final uniqueness claim is made until CI reconciliation. Additional exact AID/URL audit: AID 4280037 matched the existing Batch105 canonical item at the same Chabad.org URL; removed from new records and logged as an in-place recheck. AID 4304354 remains a new candidate because Batch146 contains only a blocked-candidate audit row, not a canonical record.",
+    "target_existing_identity_enrichment_count": 1,
+    "target_existing_identity_recheck_count": 1
   },
   "retrieval_synthesis": {
     "topic": "practical_instruction_from_gathering_stories_and_mitzvot",
@@ -831,154 +853,6 @@
           "source_url": "https://he.chabad.org/library/article_cdo/aid/3008940",
           "accessed": "2026-11-20",
           "web_source_ref": "turn158795view1",
-          "independent_witness": true,
-          "transmission_type": "published_hebrew_maamar_hanacha"
-        }
-      ]
-    },
-    {
-      "id": "chabad-hebrew-4280037",
-      "canonical_key": "aid:4280037",
-      "aid": 4280037,
-      "title": "באתי לגני, ליל ש\"ק פ' בשלח, י\"א שבט, אחרי קבלת שבת, ה'תשכ\"א",
-      "source_class": "Maamar",
-      "source_class_detail": "מאמר בעברית שפורסם ב-Chabad.org בידי ועד הנחות בלה״ק; העמוד מסומן ״הנחה בלתי מוגה״. נבדקו מקטעי גוף מוגבלים בלבד; לא נבדקו הקלטה, אוטוגרף או כתב יד.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
-      "date_original": "י\"א שבט, ה'תשכ\"א",
-      "date": "י\"א שבט, ה'תשכ\"א",
-      "date_precision": "exact",
-      "language": "Hebrew",
-      "original_language": "Hebrew",
-      "translation_status": "Original Hebrew publisher text; no translation was added or counted as an independent witness.",
-      "type": "maamar",
-      "collection": "תורת מנחם / ועד הנחות בלה״ק / Chabad.org",
-      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
-      "context_status": "partial",
-      "summary_researcher": "המאמר קורא את ״ושכנתי בתוכם״ כעבודת השראת השכינה בתוך כל יחיד מישראל, ומקשר את העבודה האישית להפיכת הכוחות והנטיות החומריים לעבודת קדושה וליצירת דירה בתחתונים. זו מסגרת תיאולוגית של המאמר, לא תיאור של תוצאה אמפירית.",
-      "response_propositions": [
-        "המאמר קורא את ״ושכנתי בתוכם״ כעבודת השראת השכינה בתוך כל יחיד מישראל, ומקשר את העבודה האישית להפיכת הכוחות והנטיות החומריים לעבודת קדושה וליצירת דירה בתחתונים. זו מסגרת תיאולוגית של המאמר, לא תיאור של תוצאה אמפירית."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org AID 4280037, גוף המאמר, שורות 175–176."
-      ],
-      "proposition_language": "Hebrew",
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "Chabad.org AID 4280037, גוף המאמר, שורות 175–176.",
-      "response_proposition_provenance": [
-        {
-          "proposition": "המאמר קורא את ״ושכנתי בתוכם״ כעבודת השראת השכינה בתוך כל יחיד מישראל, ומקשר את העבודה האישית להפיכת הכוחות והנטיות החומריים לעבודת קדושה וליצירת דירה בתחתונים. זו מסגרת תיאולוגית של המאמר, לא תיאור של תוצאה אמפירית.",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "Chabad.org AID 4280037, גוף המאמר, שורות 175–176.",
-          "provenance": "Chabad.org / ועד הנחות בלה״ק, AID 4280037; גוף הפרסום העברי נפתח ונבדק ב-20.11.2026.",
-          "verification_scope": "ב-20.11.2026 נפתח ונבדק גוף הפרסום העברי באתר Chabad.org, AID 4280037, שורות 175–176.. נבדקו המקטעים וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן ״הנחה בלתי מוגה״. לא נבדקו הקלטה, אוטוגרף או כתב יד; לא הועתק גוף הפרסום במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הפרפרזה מתארת את ההסבר החסידי שבקטע, ולא טענה אמפירית על שינוי שנמדד אצל אדם מסוים.",
-            "העמוד מסומן ״הנחה בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
-          ],
-          "source_witness": "Chabad.org AID 4280037",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
-          "accessed": "2026-11-20",
-          "web_source_ref": "turn158795view2",
-          "independent_witness": true,
-          "transmission_type": "published_hebrew_maamar_hanacha"
-        }
-      ],
-      "provenance": {
-        "authorship_status": "המו״ל מציג את הפרסום כמאמר של רבי מנחם מענדל שניאורסון; העמוד מסומן ״הנחה בלתי מוגה״. לא נבדקו הקלטה, אוטוגרף או כתב יד בנפרד.",
-        "signature_status": null,
-        "source_witness": "Chabad.org AID 4280037, גוף עברי שפורסם בידי ועד הנחות בלה״ק",
-        "transmission_type": "published_hebrew_maamar_hanacha",
-        "textual_status": "ב-20.11.2026 נפתח ונבדק גוף הפרסום העברי באתר Chabad.org, AID 4280037, שורות 175–176.. נבדקו המקטעים וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן ״הנחה בלתי מוגה״. לא נבדקו הקלטה, אוטוגרף או כתב יד; לא הועתק גוף הפרסום במלואו.",
-        "editorial_scope": "1 פרפרזות מחקר לא-מילוליות ממקטעים תחומים; אין העתקה של גוף הפרסום המלא.",
-        "verification_status": "source_text_inspected",
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
-        "accessed": "2026-11-20",
-        "web_source_ref": "turn158795view2",
-        "verification_scope": "ב-20.11.2026 נפתח ונבדק גוף הפרסום העברי באתר Chabad.org, AID 4280037, שורות 175–176.. נבדקו המקטעים וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן ״הנחה בלתי מוגה״. לא נבדקו הקלטה, אוטוגרף או כתב יד; לא הועתק גוף הפרסום במלואו."
-      },
-      "witness": {
-        "kind": "text",
-        "state": "Publisher-published Hebrew maamar text; page label: הנחה בלתי מוגה; no recording or manuscript independently inspected.",
-        "complete_partial": "partial",
-        "notes": "ב-20.11.2026 נפתח ונבדק גוף הפרסום העברי באתר Chabad.org, AID 4280037, שורות 175–176.. נבדקו המקטעים וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן ״הנחה בלתי מוגה״. לא נבדקו הקלטה, אוטוגרף או כתב יד; לא הועתק גוף הפרסום במלואו."
-      },
-      "access": {
-        "access_level": "open",
-        "rights_status": "copyrighted-link-only",
-        "reuse_notes": "קישור למקור ופרפרזה מחקרית תחומה בלבד; אין להעתיק את גוף הפרסום המלא."
-      },
-      "evidence_family_id": "maamar-5721-shevat-11-bati-legani-aid4280037",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": null,
-      "has_content_evidence": true,
-      "verification_scope": "ב-20.11.2026 נפתח ונבדק גוף הפרסום העברי באתר Chabad.org, AID 4280037, שורות 175–176.. נבדקו המקטעים וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן ״הנחה בלתי מוגה״. לא נבדקו הקלטה, אוטוגרף או כתב יד; לא הועתק גוף הפרסום במלואו.",
-      "documented_circumstances": "י\"א שבט, ה'תשכ\"א",
-      "question_or_problem": "כיצד המאמר מתאר את השראת השכינה בתוך היחיד ואת הקשר לעבודתו?",
-      "conditions_or_qualifications": [
-        "הפרפרזה מתארת את ההסבר החסידי שבקטע, ולא טענה אמפירית על שינוי שנמדד אצל אדם מסוים.",
-        "העמוד מסומן ״הנחה בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
-      ],
-      "audience": null,
-      "primary_secondary_status": "Publisher-published Hebrew maamar text, marked הנחה בלתי מוגה; selected body passages inspected, no independent recording or manuscript witness inspected.",
-      "witness_type": "published_hebrew_maamar_hanacha",
-      "witness_provenance": "Chabad.org / ועד הנחות בלה״ק, AID 4280037; גוף הפרסום העברי נפתח ונבדק ב-20.11.2026.",
-      "independent_witness": true,
-      "author_name": "Rabbi Menachem Mendel Schneerson",
-      "author_role": "speaker",
-      "authorship_status": "Publisher attribution to Rabbi Menachem Mendel Schneerson; page marked הנחה בלתי מוגה; no independent recording or manuscript inspected.",
-      "source_role": "publisher_published_discourse_text",
-      "signatory": null,
-      "signatory_role": null,
-      "publisher": "Chabad.org / Vaad Hanachos BeLashon Hakodesh",
-      "rights_status": "copyrighted-link-only",
-      "verification_status": "source_text_inspected",
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות המועמדת נשארת כפופה ל-reconciliation מול האינדקס הקנוני המלא. כל תרגום או הדפסה חוזרת של אותו אירוע יקושרו לאותה Evidence Family ולא ייספרו כעד עצמאי נוסף.",
-      "taxonomy": {
-        "publisher_index_terms": [
-          "באתי לגני, ליל ש\"ק פ' בשלח, י\"א שבט, אחרי קבלת שבת, ה'תשכ\"א"
-        ],
-        "research_terms": [
-          "באתי לגני",
-          "השראת השכינה",
-          "עבודת היחיד",
-          "דירה בתחתונים"
-        ],
-        "response_case_candidate": true
-      },
-      "epistemic_level": 1,
-      "notes": "המקור נשאר Parsed; אין קידום ל-Verified. נבדקו רק המקטעים והמיקומים המפורטים; הייחודיות הסופית ממתינה ל-reconciliation מלא.",
-      "canonical_file": "data/items/content-research-batch-213-2026-11-20.json",
-      "content_enrichment_batch_id": "213",
-      "last_content_enriched_at": "2026-11-20T17:02:38+02:00",
-      "response_proposition_metadata": [
-        {
-          "proposition_index": 1,
-          "batch_id": "213",
-          "proposition": "המאמר קורא את ״ושכנתי בתוכם״ כעבודת השראת השכינה בתוך כל יחיד מישראל, ומקשר את העבודה האישית להפיכת הכוחות והנטיות החומריים לעבודת קדושה וליצירת דירה בתחתונים. זו מסגרת תיאולוגית של המאמר, לא תיאור של תוצאה אמפירית.",
-          "proposition_origin": "source_grounded_paraphrase",
-          "proposition_verbatim": false,
-          "proposition_verification": "source_text_inspected",
-          "proposition_source_locator": "Chabad.org AID 4280037, גוף המאמר, שורות 175–176.",
-          "provenance": "Chabad.org / ועד הנחות בלה״ק, AID 4280037; גוף הפרסום העברי נפתח ונבדק ב-20.11.2026.",
-          "verification_scope": "ב-20.11.2026 נפתח ונבדק גוף הפרסום העברי באתר Chabad.org, AID 4280037, שורות 175–176.. נבדקו המקטעים וההקשר הסמוך בלבד; context_status=partial. העמוד מסומן ״הנחה בלתי מוגה״. לא נבדקו הקלטה, אוטוגרף או כתב יד; לא הועתק גוף הפרסום במלואו.",
-          "context_status": "partial",
-          "conditions_or_qualifications": [
-            "הפרפרזה מתארת את ההסבר החסידי שבקטע, ולא טענה אמפירית על שינוי שנמדד אצל אדם מסוים.",
-            "העמוד מסומן ״הנחה בלתי מוגה״; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
-          ],
-          "source_witness": "Chabad.org AID 4280037",
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280037",
-          "accessed": "2026-11-20",
-          "web_source_ref": "turn158795view2",
           "independent_witness": true,
           "transmission_type": "published_hebrew_maamar_hanacha"
         }
@@ -2118,5 +1992,6 @@
       ]
     }
   ],
-  "note": "Nine Hebrew source bodies were opened and inspected, including one existing identity enriched in place. Nine candidate new identities and one existing identity were handled; eleven new-source propositions and one in-place proposition were added. Seven rate-limited pages were documented and replaced with accessible alternatives. Eleven duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
+  "note": "Eight new Hebrew source identities remain, with ten non-verbatim propositions; AID 5989562 was enriched in place. AID 4280037 was rechecked and excluded as an already-canonical Batch105 identity because the candidate proposition was redundant. Seven HTTP 429 pages were documented and replaced with accessible source bodies. No crawler retry, access-control bypass, full-text copying, scan-only verification, or Verified promotion. Full-index reconciliation remains required.",
+  "reconciliation_variance": null
 }
