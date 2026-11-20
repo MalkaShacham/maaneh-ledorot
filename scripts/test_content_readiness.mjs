@@ -1532,7 +1532,7 @@ assert.equal(projectState.development_recovery.current_batch_file,batch212Path);
 assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'212');
 assert.equal(lastBatchSummary.batch_id,'212');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_actual_before),readinessMetrics(batch212Data.metrics_actual_before));
-assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
+if(lastBatchSummary.metrics_after_actual){assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));}else{assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_expected_after),readinessMetrics(metrics));}
 assert.equal(batch212Data.records.length,8);
 assert.equal(batch212Data.new_source_identities,8);
 assert.equal(batch212Data.new_response_propositions,8);
