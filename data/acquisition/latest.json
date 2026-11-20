@@ -17,39 +17,39 @@
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "review_method": "manual_public_web_source_body_inspection",
-    "reviewed_item_count": 15,
-    "source_bodies_inspected": 8,
-    "source_body_pages_opened": 8,
-    "source_body_pages_attempted": 15,
-    "candidate_pages_opened": 15,
+    "reviewed_item_count": 17,
+    "source_bodies_inspected": 10,
+    "source_body_pages_opened": 10,
+    "source_body_pages_attempted": 17,
+    "candidate_pages_opened": 17,
     "candidate_pages_blocked": 7,
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 20,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 0,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 10,
+    "new_response_propositions": 11,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 12,
     "answer_eligible_source_families_added": 0,
-    "independent_witnesses_added": 8,
+    "independent_witnesses_added": 9,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "source_languages": [
       "Hebrew"
     ],
     "language_distribution": {
-      "Hebrew": 8
+      "Hebrew": 9
     },
     "original_language_distribution": {
-      "Hebrew": 8
+      "Hebrew": 9
     },
     "proposition_language_distribution": {
-      "Hebrew": 10
+      "Hebrew": 12
     },
     "source_type_distribution": {
-      "Sicha": 5,
+      "Sicha": 6,
       "Maamar": 3
     },
     "new_aids": [
@@ -60,7 +60,8 @@
       5959838,
       4280063,
       4385893,
-      4385774
+      4385774,
+      4304354
     ],
     "new_ids": [
       "chabad-hebrew-3008940",
@@ -70,7 +71,8 @@
       "chabad-hebrew-5959838",
       "chabad-hebrew-4280063",
       "chabad-hebrew-4385893",
-      "chabad-hebrew-4385774"
+      "chabad-hebrew-4385774",
+      "chabad-hebrew-4304354"
     ],
     "new_source_ids": [
       "chabad-hebrew-3008940",
@@ -80,10 +82,15 @@
       "chabad-hebrew-5959838",
       "chabad-hebrew-4280063",
       "chabad-hebrew-4385893",
-      "chabad-hebrew-4385774"
+      "chabad-hebrew-4385774",
+      "chabad-hebrew-4304354"
     ],
-    "enriched_aids": [],
-    "enriched_ids": [],
+    "enriched_aids": [
+      5989562
+    ],
+    "enriched_ids": [
+      "sicha-5728-19-kislev-aid5989562"
+    ],
     "rechecked_aids": [],
     "reviewed_aids": [
       3008940,
@@ -94,6 +101,8 @@
       4280063,
       4385893,
       4385774,
+      4304354,
+      5989562,
       5959829,
       4280057,
       4280067,
@@ -109,15 +118,15 @@
     },
     "metrics_actual_before": null,
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1712,
+      "answer_eligible_unique_sources": 1713,
       "content_verified_unique_sources": 862,
-      "answer_eligible_propositions": 4387
+      "answer_eligible_propositions": 4389
     },
     "metrics_actual_after": null,
     "metrics_after_actual": null,
     "metrics_delta_actual": null,
     "metrics_before_source": "Batch212 expected boundary 1704/862/4377; planning only, not a measured post-reconciliation snapshot.",
-    "metrics_note": "Planning only. Eight candidate source identities and ten propositions were added; exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
+    "metrics_note": "Planning only. Nine candidate source identities and one in-place enrichment produced eleven new-source propositions and one existing-identity proposition. Exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
     "blocked_candidate_count": 7,
     "blocked_candidates": [
       {
@@ -163,7 +172,7 @@
         "reason": "העמוד לא נפתח בקורא המקורות והחזיר 429. לא בוצע crawler retry או ניסיון לעקוף בקרת גישה; נבדקו מקורות חלופיים נגישים באותה הפעלה."
       }
     ],
-    "excluded_duplicate_candidate_count": 12,
+    "excluded_duplicate_candidate_count": 11,
     "excluded_duplicate_candidates": [
       {
         "aid": 5989562,
@@ -172,13 +181,6 @@
           "152"
         ],
         "reason": "אותו AID כבר מופיע בשתי אצוות PR; הוחרג ולא נוצרה זהות נוספת."
-      },
-      {
-        "aid": 4304354,
-        "existing_batches": [
-          "146"
-        ],
-        "reason": "כבר קיים באצווה 146; הוחרג."
       },
       {
         "aid": 2989207,
@@ -272,13 +274,26 @@
     ],
     "metadata_only_candidate_count": 0,
     "metadata_only_candidates": [],
-    "existing_identity_updates": [],
-    "existing_identity_updates_count": 0,
+    "existing_identity_updates": [
+      {
+        "aid": 5989562,
+        "id": "sicha-5728-19-kislev-aid5989562",
+        "canonical_file": "data/items/content-research-batch-102-2026-11-15.json",
+        "evidence_family_id": "sicha-5728-19-kislev-aid5989562",
+        "action": "enriched_existing_identity_in_place",
+        "existing_propositions_before": 3,
+        "propositions_added": 1,
+        "total_propositions_after": 4,
+        "body_locator": "he.chabad.org AID 5989562, גוף השיחה סעיף ד׳, שורות 218–220.",
+        "reason": "A distinct passage uses the 'dwarf on a giant's shoulders' image to explain how later generations continue and complete work built by earlier leaders; this was added to the existing identity, not counted as a new witness."
+      }
+    ],
+    "existing_identity_updates_count": 1,
     "existing_identity_rechecks": [],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "target_identity_count": 8,
+      "target_identity_count": 9,
       "target_identity_matches": null,
       "target_identity_duplicates": null,
       "selected_unique_evidence_families": null,
@@ -293,23 +308,20 @@
         5959838,
         4280063,
         4385893,
-        4385774
+        4385774,
+        4304354
       ],
-      "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches), and bulk-indexed-2026-09-24-001 (no AID matches). Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned in this run; no final uniqueness claim is made until CI reconciliation."
+      "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches for the nine new candidates), and bulk-indexed-2026-09-24-001 (no AID matches). Existing AID 5989562 resolved to canonical Batch102 and was enriched in place. Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned; no final uniqueness claim is made until CI reconciliation.",
+      "target_existing_identity_enrichment_count": 1
     },
     "retrieval_synthesis": {
       "topic": "practical_instruction_from_gathering_stories_and_mitzvot",
       "test_question": "כיצד מקורות שונים מתארים מעבר מלימוד למעשה דרך דיבור בהתוועדות, סיפורי רבותינו והשלמת מצווה שהתחלנו?",
       "mode": "researcher",
       "source_aids": [
-        3008940,
-        4280037,
-        5959890,
-        4280001,
-        5959838,
-        4280063,
-        4385893,
-        4385774
+        5989562,
+        4304354,
+        4385893
       ],
       "claim_topics": [
         "communal_speech_shared_understanding",
@@ -320,10 +332,11 @@
       "limits": [
         "הסינתזה מחברת שלוש טענות משלוש משפחות ראיות נפרדות בלבד; אין זו הוראה אחת שנאמרה באותו מעמד.",
         "הקטע באצווה 4385893 בשורות 195–203 מסומן כמוגה; יש לשמר את ההבחנה בינו לבין יתר גוף העמוד הבלתי מוגה.",
-        "כל המקטעים חלקיים; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים נוספים."
+        "כל המקטעים חלקיים; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים נוספים.",
+        "AID 5989562 is an existing canonical identity enriched in place; its prior propositions were not counted as new identities."
       ]
     },
-    "note": "Eight Hebrew source bodies were opened and inspected. Ten bounded, non-verbatim propositions were added across eight candidate identities. Seven rate-limited pages were documented and replaced with accessible alternatives. Twelve duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
+    "note": "Nine Hebrew source bodies were opened and inspected, including one existing identity enriched in place. Nine candidate new identities and one existing identity were handled; eleven new-source propositions and one in-place proposition were added. Seven rate-limited pages were documented and replaced with accessible alternatives. Eleven duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
   },
   "previous_manual_web_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
@@ -409,39 +422,39 @@
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "review_method": "manual_public_web_source_body_inspection",
-    "reviewed_item_count": 15,
-    "source_bodies_inspected": 8,
-    "source_body_pages_opened": 8,
-    "source_body_pages_attempted": 15,
-    "candidate_pages_opened": 15,
+    "reviewed_item_count": 17,
+    "source_bodies_inspected": 10,
+    "source_body_pages_opened": 10,
+    "source_body_pages_attempted": 17,
+    "candidate_pages_opened": 17,
     "candidate_pages_blocked": 7,
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 20,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 0,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 10,
+    "new_response_propositions": 11,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 12,
     "answer_eligible_source_families_added": 0,
-    "independent_witnesses_added": 8,
+    "independent_witnesses_added": 9,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "source_languages": [
       "Hebrew"
     ],
     "language_distribution": {
-      "Hebrew": 8
+      "Hebrew": 9
     },
     "original_language_distribution": {
-      "Hebrew": 8
+      "Hebrew": 9
     },
     "proposition_language_distribution": {
-      "Hebrew": 10
+      "Hebrew": 12
     },
     "source_type_distribution": {
-      "Sicha": 5,
+      "Sicha": 6,
       "Maamar": 3
     },
     "new_aids": [
@@ -452,7 +465,8 @@
       5959838,
       4280063,
       4385893,
-      4385774
+      4385774,
+      4304354
     ],
     "new_ids": [
       "chabad-hebrew-3008940",
@@ -462,7 +476,8 @@
       "chabad-hebrew-5959838",
       "chabad-hebrew-4280063",
       "chabad-hebrew-4385893",
-      "chabad-hebrew-4385774"
+      "chabad-hebrew-4385774",
+      "chabad-hebrew-4304354"
     ],
     "new_source_ids": [
       "chabad-hebrew-3008940",
@@ -472,10 +487,15 @@
       "chabad-hebrew-5959838",
       "chabad-hebrew-4280063",
       "chabad-hebrew-4385893",
-      "chabad-hebrew-4385774"
+      "chabad-hebrew-4385774",
+      "chabad-hebrew-4304354"
     ],
-    "enriched_aids": [],
-    "enriched_ids": [],
+    "enriched_aids": [
+      5989562
+    ],
+    "enriched_ids": [
+      "sicha-5728-19-kislev-aid5989562"
+    ],
     "rechecked_aids": [],
     "reviewed_aids": [
       3008940,
@@ -486,6 +506,8 @@
       4280063,
       4385893,
       4385774,
+      4304354,
+      5989562,
       5959829,
       4280057,
       4280067,
@@ -501,15 +523,15 @@
     },
     "metrics_actual_before": null,
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1712,
+      "answer_eligible_unique_sources": 1713,
       "content_verified_unique_sources": 862,
-      "answer_eligible_propositions": 4387
+      "answer_eligible_propositions": 4389
     },
     "metrics_actual_after": null,
     "metrics_after_actual": null,
     "metrics_delta_actual": null,
     "metrics_before_source": "Batch212 expected boundary 1704/862/4377; planning only, not a measured post-reconciliation snapshot.",
-    "metrics_note": "Planning only. Eight candidate source identities and ten propositions were added; exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
+    "metrics_note": "Planning only. Nine candidate source identities and one in-place enrichment produced eleven new-source propositions and one existing-identity proposition. Exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
     "blocked_candidate_count": 7,
     "blocked_candidates": [
       {
@@ -555,7 +577,7 @@
         "reason": "העמוד לא נפתח בקורא המקורות והחזיר 429. לא בוצע crawler retry או ניסיון לעקוף בקרת גישה; נבדקו מקורות חלופיים נגישים באותה הפעלה."
       }
     ],
-    "excluded_duplicate_candidate_count": 12,
+    "excluded_duplicate_candidate_count": 11,
     "excluded_duplicate_candidates": [
       {
         "aid": 5989562,
@@ -564,13 +586,6 @@
           "152"
         ],
         "reason": "אותו AID כבר מופיע בשתי אצוות PR; הוחרג ולא נוצרה זהות נוספת."
-      },
-      {
-        "aid": 4304354,
-        "existing_batches": [
-          "146"
-        ],
-        "reason": "כבר קיים באצווה 146; הוחרג."
       },
       {
         "aid": 2989207,
@@ -664,13 +679,26 @@
     ],
     "metadata_only_candidate_count": 0,
     "metadata_only_candidates": [],
-    "existing_identity_updates": [],
-    "existing_identity_updates_count": 0,
+    "existing_identity_updates": [
+      {
+        "aid": 5989562,
+        "id": "sicha-5728-19-kislev-aid5989562",
+        "canonical_file": "data/items/content-research-batch-102-2026-11-15.json",
+        "evidence_family_id": "sicha-5728-19-kislev-aid5989562",
+        "action": "enriched_existing_identity_in_place",
+        "existing_propositions_before": 3,
+        "propositions_added": 1,
+        "total_propositions_after": 4,
+        "body_locator": "he.chabad.org AID 5989562, גוף השיחה סעיף ד׳, שורות 218–220.",
+        "reason": "A distinct passage uses the 'dwarf on a giant's shoulders' image to explain how later generations continue and complete work built by earlier leaders; this was added to the existing identity, not counted as a new witness."
+      }
+    ],
+    "existing_identity_updates_count": 1,
     "existing_identity_rechecks": [],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "target_identity_count": 8,
+      "target_identity_count": 9,
       "target_identity_matches": null,
       "target_identity_duplicates": null,
       "selected_unique_evidence_families": null,
@@ -685,23 +713,20 @@
         5959838,
         4280063,
         4385893,
-        4385774
+        4385774,
+        4304354
       ],
-      "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches), and bulk-indexed-2026-09-24-001 (no AID matches). Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned in this run; no final uniqueness claim is made until CI reconciliation."
+      "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches for the nine new candidates), and bulk-indexed-2026-09-24-001 (no AID matches). Existing AID 5989562 resolved to canonical Batch102 and was enriched in place. Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned; no final uniqueness claim is made until CI reconciliation.",
+      "target_existing_identity_enrichment_count": 1
     },
     "retrieval_synthesis": {
       "topic": "practical_instruction_from_gathering_stories_and_mitzvot",
       "test_question": "כיצד מקורות שונים מתארים מעבר מלימוד למעשה דרך דיבור בהתוועדות, סיפורי רבותינו והשלמת מצווה שהתחלנו?",
       "mode": "researcher",
       "source_aids": [
-        3008940,
-        4280037,
-        5959890,
-        4280001,
-        5959838,
-        4280063,
-        4385893,
-        4385774
+        5989562,
+        4304354,
+        4385893
       ],
       "claim_topics": [
         "communal_speech_shared_understanding",
@@ -712,10 +737,11 @@
       "limits": [
         "הסינתזה מחברת שלוש טענות משלוש משפחות ראיות נפרדות בלבד; אין זו הוראה אחת שנאמרה באותו מעמד.",
         "הקטע באצווה 4385893 בשורות 195–203 מסומן כמוגה; יש לשמר את ההבחנה בינו לבין יתר גוף העמוד הבלתי מוגה.",
-        "כל המקטעים חלקיים; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים נוספים."
+        "כל המקטעים חלקיים; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים נוספים.",
+        "AID 5989562 is an existing canonical identity enriched in place; its prior propositions were not counted as new identities."
       ]
     },
-    "note": "Eight Hebrew source bodies were opened and inspected. Ten bounded, non-verbatim propositions were added across eight candidate identities. Seven rate-limited pages were documented and replaced with accessible alternatives. Twelve duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
+    "note": "Nine Hebrew source bodies were opened and inspected, including one existing identity enriched in place. Nine candidate new identities and one existing identity were handled; eleven new-source propositions and one in-place proposition were added. Seven rate-limited pages were documented and replaced with accessible alternatives. Eleven duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
   },
   "last_manual_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
@@ -728,39 +754,39 @@
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "review_method": "manual_public_web_source_body_inspection",
-    "reviewed_item_count": 15,
-    "source_bodies_inspected": 8,
-    "source_body_pages_opened": 8,
-    "source_body_pages_attempted": 15,
-    "candidate_pages_opened": 15,
+    "reviewed_item_count": 17,
+    "source_bodies_inspected": 10,
+    "source_body_pages_opened": 10,
+    "source_body_pages_attempted": 17,
+    "candidate_pages_opened": 17,
     "candidate_pages_blocked": 7,
     "metadata_only_items_rechecked": 0,
     "search_extracts_inspected": 20,
     "search_extracts_used_as_content": 0,
-    "new_source_identities": 8,
-    "existing_identities_enriched": 0,
+    "new_source_identities": 9,
+    "existing_identities_enriched": 1,
     "existing_identities_rechecked": 0,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 10,
+    "new_response_propositions": 11,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 12,
     "answer_eligible_source_families_added": 0,
-    "independent_witnesses_added": 8,
+    "independent_witnesses_added": 9,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "source_languages": [
       "Hebrew"
     ],
     "language_distribution": {
-      "Hebrew": 8
+      "Hebrew": 9
     },
     "original_language_distribution": {
-      "Hebrew": 8
+      "Hebrew": 9
     },
     "proposition_language_distribution": {
-      "Hebrew": 10
+      "Hebrew": 12
     },
     "source_type_distribution": {
-      "Sicha": 5,
+      "Sicha": 6,
       "Maamar": 3
     },
     "new_aids": [
@@ -771,7 +797,8 @@
       5959838,
       4280063,
       4385893,
-      4385774
+      4385774,
+      4304354
     ],
     "new_ids": [
       "chabad-hebrew-3008940",
@@ -781,7 +808,8 @@
       "chabad-hebrew-5959838",
       "chabad-hebrew-4280063",
       "chabad-hebrew-4385893",
-      "chabad-hebrew-4385774"
+      "chabad-hebrew-4385774",
+      "chabad-hebrew-4304354"
     ],
     "new_source_ids": [
       "chabad-hebrew-3008940",
@@ -791,10 +819,15 @@
       "chabad-hebrew-5959838",
       "chabad-hebrew-4280063",
       "chabad-hebrew-4385893",
-      "chabad-hebrew-4385774"
+      "chabad-hebrew-4385774",
+      "chabad-hebrew-4304354"
     ],
-    "enriched_aids": [],
-    "enriched_ids": [],
+    "enriched_aids": [
+      5989562
+    ],
+    "enriched_ids": [
+      "sicha-5728-19-kislev-aid5989562"
+    ],
     "rechecked_aids": [],
     "reviewed_aids": [
       3008940,
@@ -805,6 +838,8 @@
       4280063,
       4385893,
       4385774,
+      4304354,
+      5989562,
       5959829,
       4280057,
       4280067,
@@ -820,15 +855,15 @@
     },
     "metrics_actual_before": null,
     "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1712,
+      "answer_eligible_unique_sources": 1713,
       "content_verified_unique_sources": 862,
-      "answer_eligible_propositions": 4387
+      "answer_eligible_propositions": 4389
     },
     "metrics_actual_after": null,
     "metrics_after_actual": null,
     "metrics_delta_actual": null,
     "metrics_before_source": "Batch212 expected boundary 1704/862/4377; planning only, not a measured post-reconciliation snapshot.",
-    "metrics_note": "Planning only. Eight candidate source identities and ten propositions were added; exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
+    "metrics_note": "Planning only. Nine candidate source identities and one in-place enrichment produced eleven new-source propositions and one existing-identity proposition. Exact unique-source contribution is not claimed until full canonical-index reconciliation. No Verified promotion; public main metrics remain 977/878/2950.",
     "blocked_candidate_count": 7,
     "blocked_candidates": [
       {
@@ -874,7 +909,7 @@
         "reason": "העמוד לא נפתח בקורא המקורות והחזיר 429. לא בוצע crawler retry או ניסיון לעקוף בקרת גישה; נבדקו מקורות חלופיים נגישים באותה הפעלה."
       }
     ],
-    "excluded_duplicate_candidate_count": 12,
+    "excluded_duplicate_candidate_count": 11,
     "excluded_duplicate_candidates": [
       {
         "aid": 5989562,
@@ -883,13 +918,6 @@
           "152"
         ],
         "reason": "אותו AID כבר מופיע בשתי אצוות PR; הוחרג ולא נוצרה זהות נוספת."
-      },
-      {
-        "aid": 4304354,
-        "existing_batches": [
-          "146"
-        ],
-        "reason": "כבר קיים באצווה 146; הוחרג."
       },
       {
         "aid": 2989207,
@@ -983,13 +1011,26 @@
     ],
     "metadata_only_candidate_count": 0,
     "metadata_only_candidates": [],
-    "existing_identity_updates": [],
-    "existing_identity_updates_count": 0,
+    "existing_identity_updates": [
+      {
+        "aid": 5989562,
+        "id": "sicha-5728-19-kislev-aid5989562",
+        "canonical_file": "data/items/content-research-batch-102-2026-11-15.json",
+        "evidence_family_id": "sicha-5728-19-kislev-aid5989562",
+        "action": "enriched_existing_identity_in_place",
+        "existing_propositions_before": 3,
+        "propositions_added": 1,
+        "total_propositions_after": 4,
+        "body_locator": "he.chabad.org AID 5989562, גוף השיחה סעיף ד׳, שורות 218–220.",
+        "reason": "A distinct passage uses the 'dwarf on a giant's shoulders' image to explain how later generations continue and complete work built by earlier leaders; this was added to the existing identity, not counted as a new witness."
+      }
+    ],
+    "existing_identity_updates_count": 1,
     "existing_identity_rechecks": [],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
-      "target_identity_count": 8,
+      "target_identity_count": 9,
       "target_identity_matches": null,
       "target_identity_duplicates": null,
       "selected_unique_evidence_families": null,
@@ -1004,23 +1045,20 @@
         5959838,
         4280063,
         4385893,
-        4385774
+        4385774,
+        4304354
       ],
-      "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches), and bulk-indexed-2026-09-24-001 (no AID matches). Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned in this run; no final uniqueness claim is made until CI reconciliation."
+      "checked_against": "Reviewed PR-branch batch files 137–212, the current content-review queue (no AID matches for the nine new candidates), and bulk-indexed-2026-09-24-001 (no AID matches). Existing AID 5989562 resolved to canonical Batch102 and was enriched in place. Files before batch137 and the generated full canonical public-search-index were not exhaustively scanned; no final uniqueness claim is made until CI reconciliation.",
+      "target_existing_identity_enrichment_count": 1
     },
     "retrieval_synthesis": {
       "topic": "practical_instruction_from_gathering_stories_and_mitzvot",
       "test_question": "כיצד מקורות שונים מתארים מעבר מלימוד למעשה דרך דיבור בהתוועדות, סיפורי רבותינו והשלמת מצווה שהתחלנו?",
       "mode": "researcher",
       "source_aids": [
-        3008940,
-        4280037,
-        5959890,
-        4280001,
-        5959838,
-        4280063,
-        4385893,
-        4385774
+        5989562,
+        4304354,
+        4385893
       ],
       "claim_topics": [
         "communal_speech_shared_understanding",
@@ -1031,15 +1069,16 @@
       "limits": [
         "הסינתזה מחברת שלוש טענות משלוש משפחות ראיות נפרדות בלבד; אין זו הוראה אחת שנאמרה באותו מעמד.",
         "הקטע באצווה 4385893 בשורות 195–203 מסומן כמוגה; יש לשמר את ההבחנה בינו לבין יתר גוף העמוד הבלתי מוגה.",
-        "כל המקטעים חלקיים; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים נוספים."
+        "כל המקטעים חלקיים; לא נבדקו הקלטות, כתבי יד או נוסחים מוגהים נוספים.",
+        "AID 5989562 is an existing canonical identity enriched in place; its prior propositions were not counted as new identities."
       ]
     },
-    "note": "Eight Hebrew source bodies were opened and inspected. Ten bounded, non-verbatim propositions were added across eight candidate identities. Seven rate-limited pages were documented and replaced with accessible alternatives. Twelve duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
+    "note": "Nine Hebrew source bodies were opened and inspected, including one existing identity enriched in place. Nine candidate new identities and one existing identity were handled; eleven new-source propositions and one in-place proposition were added. Seven rate-limited pages were documented and replaced with accessible alternatives. Eleven duplicate/overlapping AIDs were excluded. Full-index uniqueness and actual metrics remain pending; no Verified promotion and no public metric edit."
   },
   "manual_web_review_current_metrics": {
-    "answer_eligible_unique_sources": 1712,
+    "answer_eligible_unique_sources": 1713,
     "content_verified_unique_sources": 862,
-    "answer_eligible_propositions": 4387
+    "answer_eligible_propositions": 4389
   },
   "manual_web_review_history": [
     {
@@ -6969,17 +7008,19 @@
       "batch_id": "213",
       "batch_file": "data/items/content-research-batch-213-2026-11-20.json",
       "reviewed_at": "2026-11-20T17:02:38+02:00",
-      "source_bodies_inspected": 8,
-      "new_source_identities": 8,
-      "new_response_propositions": 10,
+      "source_bodies_inspected": 10,
+      "new_source_identities": 9,
+      "new_response_propositions": 11,
       "blocked_candidate_count": 7,
-      "excluded_duplicate_candidate_count": 12,
+      "excluded_duplicate_candidate_count": 11,
       "metrics_expected_after": {
-        "answer_eligible_unique_sources": 1712,
+        "answer_eligible_unique_sources": 1713,
         "content_verified_unique_sources": 862,
-        "answer_eligible_propositions": 4387
+        "answer_eligible_propositions": 4389
       },
-      "reconciliation_status": "pending_reconciliation"
+      "reconciliation_status": "pending_reconciliation",
+      "existing_identities_enriched": 1,
+      "existing_response_propositions_added": 1
     }
   ],
   "manual_web_review_current_metrics_planning_only": true
