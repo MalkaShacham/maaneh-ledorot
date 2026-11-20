@@ -335,6 +335,7 @@ for selected_index, batch_info in enumerate(selected_batches):
     # item file. Exclude those later additions even when the later batch was
     # already reconciled; otherwise an in-place enrichment leaks backward.
     later_in_place_exclusions={}
+    later_in_place_exclusion_aliases={}
     later_batches_with_in_place_updates=[]
     for later_info in later_manual_infos:
         later_data=later_info["data"]
@@ -344,7 +345,11 @@ for selected_index, batch_info in enumerate(selected_batches):
             aid=str(update.get("aid") or "")
             unit=str(update.get("source_unit_key") or update.get("document_unit_key") or "")
             item_id=str(update.get("id") or "")
-            if not canonical_file or canonical_file in later_paths or not (aid or unit or item_id): continue
+            update_keys=[]
+            if unit: update_keys.append("unit:"+unit)
+            if item_id: update_keys.append("id:"+item_id)
+            if aid: update_keys.append("aid:"+aid)
+            if not canonical_file or canonical_file in later_paths or not update_keys: continue
             before=update.get("existing_propositions_before")
             after=update.get("total_propositions_after")
             excluded=set()
@@ -354,21 +359,34 @@ for selected_index, batch_info in enumerate(selected_batches):
                 locators=update.get("proposition_source_locators") or update.get("locators") or ([update.get("proposition_source_locator") or update.get("locator")] if (update.get("proposition_source_locator") or update.get("locator")) else [])
                 for entry in all_search_entries:
                     if entry.get("canonical_file")!=canonical_file: continue
-                    identity_match=(aid and str(entry.get("aid") or "")==aid) or (unit and str(entry.get("source_unit_key") or "")==unit) or (item_id and str(entry.get("id") or "")==item_id)
-                    if not identity_match: continue
+                    entry_keys=[]
+                    if entry.get("source_unit_key") or entry.get("document_unit_key"): entry_keys.append("unit:"+str(entry.get("source_unit_key") or entry.get("document_unit_key")))
+                    if entry.get("id"): entry_keys.append("id:"+str(entry.get("id")))
+                    if entry.get("aid"): entry_keys.append("aid:"+str(entry.get("aid")))
+                    if not set(update_keys).intersection(entry_keys): continue
                     entry_locators=entry.get("response_proposition_locators") or []
                     for locator in locators:
                         for prop_index,entry_locator in enumerate(entry_locators):
                             if prop_index not in excluded and str(entry_locator)==str(locator):
                                 excluded.add(prop_index);break
             if excluded:
-                later_in_place_exclusions.setdefault((canonical_file,aid),set()).update(excluded)
+                primary_key=update_keys[0]
+                for alias in update_keys:
+                    later_in_place_exclusion_aliases[(canonical_file,alias)]=primary_key
+                later_in_place_exclusions.setdefault((canonical_file,primary_key),set()).update(excluded)
                 later_batches_with_in_place_updates.append(later_batch_id)
     snapshot_by_key={}
     for entry in all_search_entries:
         if entry.get("canonical_file") in later_paths: continue
         adjusted=entry
-        excluded=later_in_place_exclusions.get((str(entry.get("canonical_file") or ""),str(entry.get("aid") or "")),set())
+        entry_keys=[]
+        if entry.get("source_unit_key") or entry.get("document_unit_key"): entry_keys.append("unit:"+str(entry.get("source_unit_key") or entry.get("document_unit_key")))
+        if entry.get("id"): entry_keys.append("id:"+str(entry.get("id")))
+        if entry.get("aid"): entry_keys.append("aid:"+str(entry.get("aid")))
+        primary_keys={later_in_place_exclusion_aliases.get((str(entry.get("canonical_file") or ""),key)) for key in entry_keys}
+        excluded=set()
+        for primary_key in primary_keys:
+            if primary_key: excluded.update(later_in_place_exclusions.get((str(entry.get("canonical_file") or ""),primary_key),set()))
         if excluded:
             adjusted=dict(entry)
             props=entry.get("response_propositions") or []

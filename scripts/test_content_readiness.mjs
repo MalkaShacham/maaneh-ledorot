@@ -8378,7 +8378,7 @@ assert.equal(batch203Data.source_body_review.length,9);assert(batch203Data.sourc
 assert.equal(batch203Data.blocked_candidate_count,1);assert(batch203Data.blocked_candidates.some(x=>String(x.aid)==='4666220'));
 assert.equal(batch203Data.crawler_retry,false);assert.equal(batch203Data.access_control_bypassed,false);assert.equal(batch203Data.full_text_copied,false);
 assert(['reconciled','reconciled_with_variance'].includes(batch202Data.reconciliation_status));
-assert(batch202Data.reconciliation_snapshot_adjustment.excluded_later_in_place_proposition_count>=2,'Batch202 snapshot must exclude Batch203 letter propositions matched by source_unit_key/id');
+assert.equal(batch202Data.reconciliation_snapshot_adjustment.excluded_later_in_place_proposition_count,2,'Batch202 snapshot must exclude exactly the two Batch203 letter propositions');assert.equal(batch202Data.reconciliation_snapshot_adjustment.affected_canonical_identity_count,1,'source_unit_key/id aliases must resolve to one canonical identity, not every no-AID record in the library file');
 assert.deepEqual(readinessMetrics(batch202Data.metrics_actual_after),readinessMetrics(batch203Data.metrics_actual_before));
 assert(['reconciled','reconciled_with_variance'].includes(batch203Data.reconciliation_status));
 assert.deepEqual(batch203Data.deduplication_check.canonical_identity_collisions,[]);

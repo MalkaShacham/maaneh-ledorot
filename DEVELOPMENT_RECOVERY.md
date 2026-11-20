@@ -1821,3 +1821,5 @@ Eight public source bodies were inspected. Seven existing Hebrew Sicha identitie
 - Exact-head run 44646978167 מדד 1,662 / 854 / 4,275 אחרי Batch202 במרחב העבודה לפני כשל assertion; זה אינו מדד main ציבורי. הגבול הצפוי אחרי Batch203 הוא 1,670 / 854 / 4,290, תכנון בלבד עד reconciliation. אין קידום Verified. PR #35 נשאר פתוח עד מעבר test_content_readiness.mjs ו-Answer Quality Gate; מדדי main ו-GitHub Pages טרם עודכנו. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
 
 - Reconciliation hardening for Batch203: later in-place updates are now matched by source_unit_key or canonical id when the existing item has no publisher AID. This prevents the two letter #1081 propositions from leaking into the historical Batch202 boundary.
+
+- Reconciliation keying is identity-safe: later in-place updates are indexed by source-unit, canonical ID, and AID aliases, then applied only to the matching canonical record. The affected-identity count is deduplicated across aliases.
