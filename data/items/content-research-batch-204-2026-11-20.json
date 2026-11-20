@@ -5,8 +5,8 @@
   "generated": "2026-11-20T03:57:06+02:00",
   "reviewed_at": "2026-11-20T03:57:06+02:00",
   "title": "Batch 204 — four original Hebrew Sichos, three Hebrew Maamarim, and one in-place Sicha enrichment; eight inspected bodies and fifteen non-verbatim propositions",
-  "status": "reconciled",
-  "reconciliation_status": "reconciled",
+  "status": "pending_reconciliation",
+  "reconciliation_status": "pending_reconciliation",
   "reviewed_item_count": 16,
   "source_bodies_inspected": 8,
   "source_body_pages_opened": 8,
@@ -60,7 +60,7 @@
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 13
   },
-  "metrics_note": "Exact-head CI run 44658752315 measured 1676/854/4303 after Batch204. Its full-index audit found AID 2989589 twice: Batch101 already held the canonical Hebrew talk and four propositions, while Batch204 repeated two of those propositions under a different family label. The duplicate Batch204 record was removed; the corrected expected boundary is 1676/854/4303, matching the measured workspace snapshot. Six new Evidence Families and one in-place enrichment remain; no Verified promotion.",
+  "metrics_note": "Exact-head CI run 44658752315 measured 1676/854/4303 after Batch204. Its full-index audit found AID 2989589 twice: Batch101 already held the canonical Hebrew talk and four propositions, while Batch204 repeated two of those propositions under a different family label. The duplicate Batch204 record was removed; the corrected expected boundary is 1676/854/4303, matching the measured workspace snapshot. Six new Evidence Families and one in-place enrichment remain; no Verified promotion. The metric boundary is measured and corrected, but the deduplication audit is intentionally marked pending so the current exact-head workflow re-runs the full-index identity scan after the duplicate record removal.",
   "new_aids": [
     2988954,
     2989610,
