@@ -1556,12 +1556,12 @@ assertHistoricalBatchBoundary(batch198Data,batch199Data,'Batch198→199');
 assert.deepEqual(readinessMetrics(batch198Data.metrics_actual_after),readinessMetrics(batch199Data.metrics_actual_before));
 assertHistoricalBatchBoundary(batch204Data,batch205Data,'Batch204→205');
 assert.deepEqual(readinessMetrics(batch204Data.metrics_actual_after),readinessMetrics(batch205Data.metrics_actual_before));
-const lastBatchMeasuredDelta={
- answer_eligible_unique_sources:metrics.answer_eligible_unique_sources-batch204Data.metrics_actual_after.answer_eligible_unique_sources,
- content_verified_unique_sources:metrics.content_verified_unique_sources-batch204Data.metrics_actual_after.content_verified_unique_sources,
- answer_eligible_propositions:metrics.answer_eligible_propositions-batch204Data.metrics_actual_after.answer_eligible_propositions
+const batch205MeasuredDelta={
+ answer_eligible_unique_sources:batch205Data.metrics_actual_after.answer_eligible_unique_sources-batch205Data.metrics_actual_before.answer_eligible_unique_sources,
+ content_verified_unique_sources:batch205Data.metrics_actual_after.content_verified_unique_sources-batch205Data.metrics_actual_before.content_verified_unique_sources,
+ answer_eligible_propositions:batch205Data.metrics_actual_after.answer_eligible_propositions-batch205Data.metrics_actual_before.answer_eligible_propositions
  };
- assert.deepEqual(lastBatchMeasuredDelta,batch205Data.metrics_delta_actual);
+ assert.deepEqual(batch205MeasuredDelta,batch205Data.metrics_delta_actual);
 
 assert.equal(batch183Data.batch_id,'183');assert.equal(batch183Data.batch_file,batch183Path);
 assert.equal(batch183Data.new_source_identities,8);assert.equal(batch183Data.records.length,8);
