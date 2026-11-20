@@ -1193,20 +1193,20 @@
       }
     ]
   },
-  "current_batch": 208,
-  "updated_at": "2026-11-20T09:04:06+02:00",
-  "current_batch_file": "data/items/content-research-batch-208-2026-11-20.json",
+  "current_batch": 209,
+  "updated_at": "2026-11-20T09:32:09+02:00",
+  "current_batch_file": "data/items/content-research-batch-209-2026-11-20.json",
   "status": "pending_reconciliation",
   "quality_gate": {
     "status": "pending",
-    "last_failed_run_id": 44686805212,
-    "last_failure": "Exact-head run 44686805212 reconciled Batch207 at 1691 / 854 / 4335, then failed at test_content_readiness.mjs line 887. The specific defect is a later comparisonSelection slice to queryBudget.sources=1 after the earlier side-specific selection had already chosen two distinct Evidence Families. The patch preserves at least two sources for the explicit two-sided comparison; exact-head rerun pending.",
-    "note": "Batch208 adds eight in-place Hebrew propositions. Comparison display now retains at least two distinct source families when the two explicit comparison sides have already been selected; the regression test requires both side tags, locators and family separation.",
-    "run_status": "Awaiting exact-head Answer Quality Gate after Batch208 and comparison-budget fix.",
-    "workflow_run_id": 44686805212,
-    "evaluated_commit": "1bc928e5a8aa4a6526916a06fc20e568280b9e2b",
+    "last_failed_run_id": 44694493043,
+    "last_failure": "Exact-head run 44694493043 reconciled Batch207 and measured 1691 / 854 / 4343 including Batch208, then failed at test_content_readiness.mjs line 887 on the study/farming comparison coverage assertion. The earlier source-budget slice patch did not resolve the failure; diagnostic output is being added before another exact-head run.",
+    "note": "Batch209 adds eight inspected Hebrew propositions in place across eight existing Sicha Evidence Families. No new identities, no independent witnesses, and no Verified promotions. The study/farming comparison regression remains unresolved pending exact diagnostic.",
+    "run_status": "Awaiting exact-head rerun after comparison diagnostic and Batch209 reconciliation.",
+    "workflow_run_id": 44694493043,
+    "evaluated_commit": "aa8f1e66a4dbb1e70b61f133fb39428aa00de09b",
     "latest_saved_report_passed": null,
-    "last_run_id": 44686805212
+    "last_run_id": 44694493043
   },
   "publication": {
     "status": "pending",
@@ -1244,13 +1244,13 @@
     },
     "same_family_duplicate_presentations": []
   },
-  "summary": "Batch208 adds eight source-grounded, non-verbatim Hebrew propositions in place to eight existing Sicha Evidence Families. A previously HTTP429-limited AID5990035 page was reopened and inspected but deferred pending full identity collision audit. No new family, independent witness or Verified promotion. Exact-head readiness rerun pending.",
+  "summary": "Batch209 adds eight distinct source-grounded, non-verbatim Hebrew propositions in place to eight existing Sicha Evidence Families. Eight metadata-only English transcript routes were documented and replaced with readable Hebrew body pages. No new source identities, no new independent witnesses, and no Verified promotion. Exact-head content readiness remains blocked by the study/farming comparison test failure.",
   "planning_counts_after_batch200": {
     "answer_eligible_unique_sources": 1651,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4253
   },
-  "current_counts_note": "ה-current_counts המבניים הם snapshot של main האחרון; מדד התוכן המדוד במרחב PR לאחר Batch203 הוא 1670/854/4290 (run 44653927132), לא מדד ציבורי. Batch204 צפוי 1677/854/4305, תכנון בלבד עד reconciliation מלא. PR-head exact-head reconciliation after corrected Batch204 measured 1676/854/4303; Batch205 planning boundary 1688/854/4316 is not yet measured or public. Batch205 corrected to 11 new source presentations (10 independent witnesses and one non-independent Hebrew presentation of a Yiddish-edited source), one in-place enrichment and one existing-identity recheck; expected 1687/854/4315 pending exact-head reconciliation. Latest PR workspace: exact-head run 44686805212 measured 1691 / 854 / 4335 after Batch207; Batch208 expected 1691 / 854 / 4343 pending exact-head reconciliation. Main/public metrics remain 977 / 878 / 2950.",
+  "current_counts_note": "ה-current_counts המבניים הם snapshot של main האחרון; מדד התוכן המדוד במרחב PR לאחר Batch203 הוא 1670/854/4290 (run 44653927132), לא מדד ציבורי. Batch204 צפוי 1677/854/4305, תכנון בלבד עד reconciliation מלא. PR-head exact-head reconciliation after corrected Batch204 measured 1676/854/4303; Batch205 planning boundary 1688/854/4316 is not yet measured or public. Batch205 corrected to 11 new source presentations (10 independent witnesses and one non-independent Hebrew presentation of a Yiddish-edited source), one in-place enrichment and one existing-identity recheck; expected 1687/854/4315 pending exact-head reconciliation. Latest PR workspace: exact-head run 44686805212 measured 1691 / 854 / 4335 after Batch207; Batch208 expected 1691 / 854 / 4343 pending exact-head reconciliation. Main/public metrics remain 977 / 878 / 2950. Batch209: eight additional in-place Hebrew propositions; expected 1691 / 854 / 4351 is planning only pending exact-head reconciliation.",
   "planning_counts_after_batch201": {
     "answer_eligible_unique_sources": 1653,
     "content_verified_unique_sources": 854,
@@ -1277,17 +1277,28 @@
     "answer_eligible_propositions": 4315
   },
   "pending": [
-    "208"
+    "208",
+    "209"
   ],
   "last_manual_review": {
     "schema": "maaneh-ledorot-content-research-batch-v1",
-    "batch_id": "208",
-    "batch_file": "data/items/content-research-batch-208-2026-11-20.json",
-    "title": "Batch 208 — eight in-place original-Hebrew Sicha enrichments across eight existing Evidence Families; one previously rate-limited source recovered and deferred pending identity audit",
+    "batch_id": "209",
+    "batch_file": "data/items/content-research-batch-209-2026-11-20.json",
+    "generated": "2026-11-20T09:32:09+02:00",
+    "reviewed_at": "2026-11-20T09:32:09+02:00",
+    "title": "Batch 209 — eight additional in-place Hebrew Sicha enrichments across eight existing Evidence Families",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 9,
-    "source_bodies_inspected": 9,
+    "review_method": "manual_public_web_source_body_inspection",
+    "reviewed_item_count": 16,
+    "source_bodies_inspected": 8,
+    "source_body_pages_opened": 8,
+    "source_body_pages_attempted": 16,
+    "candidate_pages_opened": 8,
+    "candidate_pages_blocked": 8,
+    "metadata_only_items_rechecked": 0,
+    "search_extracts_inspected": 0,
+    "search_extracts_used_as_content": 0,
     "new_source_identities": 0,
     "existing_identities_enriched": 8,
     "existing_identities_rechecked": 0,
@@ -1298,38 +1309,65 @@
     "independent_witnesses_added": 0,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
+    "source_languages": [
+      "Hebrew"
+    ],
+    "language_distribution": {
+      "Hebrew": 8
+    },
+    "original_language_distribution": {
+      "Hebrew": 8
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 8
+    },
+    "source_type_distribution": {
+      "Sichos": 8
+    },
+    "new_aids": [],
+    "enriched_aids": [
+      3140221,
+      2988861,
+      2988855,
+      2988876,
+      2988887,
+      4279982,
+      4279980,
+      2988841
+    ],
+    "rechecked_aids": [],
     "metrics_before": {
-      "answer_eligible_unique_sources": 1691,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4335
-    },
-    "metrics_actual_before": {
-      "answer_eligible_unique_sources": 1691,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 4335
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1691,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 4343
     },
+    "metrics_actual_before": {
+      "answer_eligible_unique_sources": 1691,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4343
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1691,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 4351
+    },
     "metrics_actual_after": null,
     "metrics_delta_actual": null,
-    "blocked_candidate_count": 0,
+    "blocked_candidate_count": 8,
     "excluded_duplicate_candidate_count": 0,
-    "deferred_candidate_count": 1,
+    "deferred_candidate_count": 0,
     "content_languages": [
       "Hebrew"
     ]
   },
-  "last_reviewed_batch": "208",
+  "last_reviewed_batch": "209",
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 0,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 8
   },
   "metrics_delta_at_batch_boundary_is_planning_only": true,
-  "metrics_before_source": "Exact-head run 44686805212 measured 1691 / 854 / 4335 after Batch207 (expected 1691 / 854 / 4329; +6 proposition variance). This is PR workspace only, not public main. Batch208 expected 1691 / 854 / 4343 pending exact-head reconciliation.",
+  "metrics_before_source": "Exact-head run 44694493043 measured 1691 / 854 / 4343 after Batch208. Batch209 expected 1691 / 854 / 4351 pending exact-head reconciliation. PR workspace only; public main remains 977 / 878 / 2950.",
   "planning_counts_after_batch206": {
     "answer_eligible_unique_sources": 1691,
     "content_verified_unique_sources": 854,
@@ -1344,5 +1382,10 @@
     "answer_eligible_unique_sources": 1691,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 4343
+  },
+  "planning_counts_after_batch209": {
+    "answer_eligible_unique_sources": 1691,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4351
   }
 }
