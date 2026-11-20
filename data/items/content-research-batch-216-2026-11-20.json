@@ -6,8 +6,8 @@
   "generated_at": "2026-11-20T19:25:35+02:00",
   "reviewed_at": "2026-11-20T19:25:35+02:00",
   "title": "Batch216 — eight in-place English memoir enrichments; twelve audio/media pages retained as metadata-only",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending_reconciliation",
+  "status": "reconciled_with_variance",
+  "reconciliation_status": "reconciled_with_variance",
   "review_method": "manual_public_web_source_body_inspection",
   "reviewed_item_count": 20,
   "source_bodies_inspected": 8,
@@ -104,12 +104,28 @@
     "content_verified_unique_sources": 862,
     "answer_eligible_propositions": 4416
   },
-  "metrics_actual_after": null,
-  "metrics_after_actual": null,
-  "metrics_delta_actual": null,
-  "reconciliation_variance": null,
-  "metrics_before_source": "Batch215 expected boundary 1724/862/4408; exact-head measured after Batch215 in Answer Quality Gate run 44781658927: 1719/862/4402. PR workspace, not main.",
-  "metrics_note": "Planning only: eight existing answer-eligible memoir identities enriched in place; no new Evidence Family expected and answer-eligible propositions expected to increase by eight. Exact post-Batch216 metrics await reconciliation.",
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 1719,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4410
+  },
+  "metrics_after_actual": {
+    "answer_eligible_unique_sources": 1719,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4410
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 0,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 8
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": -5,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": -6
+  },
+  "metrics_before_source": "Exact-head Answer Quality Gate run 44781658927 measured after Batch215: 1719/862/4402; the same value is Batch216's actual before-boundary. The planning boundary 1724/862/4408 is retained separately.",
+  "metrics_note": "Exact-head Answer Quality Gate run 44786251820 measured after Batch216: 1719/862/4410. Eight in-place memoir propositions were counted; no new Evidence Family or Verified source was added. Expected planning boundary 1724/862/4416; variance -5/0/-6.",
   "blocked_candidate_count": 12,
   "blocked_candidates": [
     {
@@ -1097,12 +1113,12 @@
     }
   ],
   "deduplication_check": {
-    "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true,
+    "full_index_scan_available": true,
+    "full_index_scan_pending_reconciliation": false,
     "target_identity_count": 8,
-    "target_identity_matches": null,
-    "target_identity_duplicates": null,
-    "selected_unique_evidence_families": null,
+    "target_identity_matches": 8,
+    "target_identity_duplicates": 0,
+    "selected_unique_evidence_families": 8,
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
@@ -1116,7 +1132,7 @@
       260084,
       259862
     ],
-    "checked_against": "Eight existing Batch214 canonical records and their Evidence Family IDs; exact full-index scan pending current PR-head quality gate."
+    "checked_against": "Exact-head Answer Quality Gate run 44786251820 generated the full canonical index; all eight AIDs resolve to their existing Batch214 canonical identities and eight distinct event-level Evidence Families. Historical collision groups remain separately documented."
   },
   "retrieval_synthesis": {
     "topic": "jaffe_memoir_multi_event_retrieval",
