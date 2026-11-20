@@ -1,0 +1,841 @@
+{
+  "schema": "maaneh-ledorot-content-research-batch-v1",
+  "batch_id": "221",
+  "batch_file": "data/items/content-research-batch-221-2026-11-20.json",
+  "generated": "2026-11-20",
+  "generated_at": "2026-11-20T23:59:44+02:00",
+  "reviewed_at": "2026-11-20T23:59:44+02:00",
+  "title": "Batch221 — two new Hebrew Sicha/Maamar identities and seven in-place Hebrew Sicha enrichments; ten source bodies inspected",
+  "status": "pending_reconciliation",
+  "reconciliation_status": "pending_reconciliation",
+  "review_method": "manual_public_web_source_body_inspection",
+  "reviewed_item_count": 14,
+  "source_bodies_inspected": 10,
+  "source_body_pages_opened": 14,
+  "source_body_pages_attempted": 14,
+  "candidate_pages_opened": 14,
+  "candidate_pages_blocked": 4,
+  "metadata_only_items_rechecked": 3,
+  "search_extracts_inspected": 0,
+  "search_extracts_used_as_content": 0,
+  "new_source_identities": 2,
+  "existing_identities_enriched": 7,
+  "existing_identities_rechecked": 1,
+  "new_response_propositions": 2,
+  "existing_response_propositions_added": 7,
+  "total_new_paraphrase_entries": 9,
+  "answer_eligible_source_families_added": 0,
+  "expected_answer_eligible_source_families_added": 2,
+  "independent_witnesses_added": 2,
+  "non_independent_presentations_added": 0,
+  "content_verified_unique_sources_added": 0,
+  "source_languages": [
+    "Hebrew"
+  ],
+  "language_distribution": {
+    "Hebrew": 10
+  },
+  "original_language_distribution": {
+    "Hebrew": 10
+  },
+  "proposition_language_distribution": {
+    "Hebrew": 9
+  },
+  "source_type_distribution": {
+    "Sicha": 9,
+    "Maamar": 1
+  },
+  "new_aids": [
+    2989019,
+    2989004
+  ],
+  "new_ids": [
+    "chabad-sicha-2989019",
+    "chabad-maamar-2989004"
+  ],
+  "new_source_ids": [
+    "chabad-sicha-2989019",
+    "chabad-maamar-2989004"
+  ],
+  "enriched_aids": [
+    2988940,
+    4385713,
+    5959970,
+    4280106,
+    3008908,
+    2989018,
+    5989796
+  ],
+  "enriched_ids": [
+    "chabad-sicha-2988940",
+    "chabad-sicha-4385713",
+    "chabad-sicha-5959970",
+    "chabad-sicha-4280106",
+    "chabad-sicha-3008908",
+    "chabad-sicha-2989018",
+    "chabad-sicha-5989796"
+  ],
+  "rechecked_aids": [
+    2989044
+  ],
+  "reviewed_aids": [
+    2988940,
+    4385713,
+    5959970,
+    4280106,
+    3008908,
+    2989018,
+    2989044,
+    5989796,
+    2989019,
+    2989004,
+    4666220,
+    553692,
+    553737,
+    553674
+  ],
+  "metrics_before": {
+    "answer_eligible_unique_sources": 1738,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4455
+  },
+  "metrics_actual_before": {
+    "answer_eligible_unique_sources": 1738,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4455
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 1740,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4464
+  },
+  "metrics_actual_after": null,
+  "metrics_after_actual": null,
+  "metrics_delta_actual": null,
+  "reconciliation_variance": null,
+  "metrics_before_source": "Exact-head Answer Quality Gate run 44824437555 generated the full PR-workspace index after Batch220 and measured 1738/862/4455. That run failed on a stale Batch220 assertion (12 !== 15), after the metrics were emitted. This is a PR-workspace baseline, not a public-main metric.",
+  "metrics_note": "Planning only: two new Hebrew Evidence Family candidates and seven in-place propositions. Full-index duplicate reconciliation for AIDs 2989019 and 2989004 is pending; no Verified promotion.",
+  "blocked_candidate_count": 4,
+  "blocked_candidates": [
+    {
+      "aid": 4666220,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+      "status": "internal_error_after_alternate_route",
+      "reason": "The www route exposed a compatibility shell and the alternate Hebrew route returned Internal Error; no retry or bypass."
+    },
+    {
+      "aid": 553692,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553692/jewish/12-Shevat-5743-Yechidus-Hebrew.htm",
+      "status": "audio_metadata_only_no_transcript",
+      "reason": "Public page exposed audio metadata only; no transcript/body inspected; no content inferred from title."
+    },
+    {
+      "aid": 553737,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553737/jewish/24-Nissan-5743-Yechidus-Yiddish.htm",
+      "status": "audio_metadata_only_no_transcript",
+      "reason": "Public page exposed audio metadata only; no Yiddish transcript/body inspected; no content inferred from title."
+    },
+    {
+      "aid": 553674,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/553674/jewish/21-Kislev-5743-Yechidus-Bar-Mitzva.htm",
+      "status": "audio_metadata_only_no_transcript",
+      "reason": "Public page exposed audio metadata only; no transcript/body inspected; no content inferred from title."
+    }
+  ],
+  "excluded_duplicate_candidate_count": 0,
+  "excluded_duplicate_candidates": [],
+  "deferred_candidate_count": 0,
+  "deferred_candidates": [],
+  "excluded_candidate_count": 0,
+  "fallback_source_attempted": true,
+  "crawler_retry": false,
+  "access_control_bypassed": false,
+  "full_text_copied": false,
+  "scan_only_verification_used": false,
+  "translations_counted_as_independent_witnesses": 0,
+  "failed_alternate_routes": [
+    {
+      "aid": 4666220,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+      "status": "internal_error",
+      "reason": "www.chabad.org exposed a compatibility shell and the alternate Hebrew route returned Internal Error; no bypass or retry."
+    }
+  ],
+  "metadata_only_candidate_count": 3,
+  "metadata_only_candidates": [
+    553692,
+    553737,
+    553674
+  ],
+  "existing_identity_updates_count": 7,
+  "existing_identity_rechecks_count": 1,
+  "source_body_review": [
+    {
+      "aid": 2988940,
+      "id": "chabad-sicha-2988940",
+      "title": "שיחת יום א' פ' וישב, י״ט כסלו, ה׳תשט״ז",
+      "source_class": "Sichos",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2988940",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5716-19-kislev-shabbat-vayeshev-aid2988940",
+      "source_body_locator": "AID 2988940, גוף השיחה, שורות 232–239.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew Sicha body"
+    },
+    {
+      "aid": 4385713,
+      "id": "chabad-sicha-4385713",
+      "title": "שיחת יום ב' דחג הסוכות, ה׳תשכ״ז",
+      "source_class": "Sichos",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4385713",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5727-day2-sukkot-aid4385713",
+      "source_body_locator": "AID 4385713, גוף השיחה, שורות 226–230.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew Sicha body"
+    },
+    {
+      "aid": 5959970,
+      "id": "chabad-sicha-5959970",
+      "title": "שיחת ש״פ בחוקותי, מבה״ח סיון, ה׳תש״ל",
+      "source_class": "Sichos",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/5959970",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5730-bechukotai-meyarch-sivan-aid5959970",
+      "source_body_locator": "AID 5959970, גוף השיחה, שורות 233–240.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew Sicha body"
+    },
+    {
+      "aid": 4280106,
+      "id": "chabad-sicha-4280106",
+      "title": "שיחת י״ט כסלו, ה׳תש״כ",
+      "source_class": "Sichos",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4280106",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5720-19-kislev-aid4280106",
+      "source_body_locator": "AID 4280106, גוף השיחה, שורות 200–201.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew Sicha body"
+    },
+    {
+      "aid": 3008908,
+      "id": "chabad-sicha-3008908",
+      "title": "שיחת יום ב׳ פ׳ בלק, י״ב תמוז, ה׳תשח״י",
+      "source_class": "Sichos",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/3008908",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5718-12-tammuz-day2-balak-aid3008908",
+      "source_body_locator": "AID 3008908, גוף השיחה, שורות 285–296.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew Sicha body"
+    },
+    {
+      "aid": 2989018,
+      "id": "chabad-sicha-2989018",
+      "title": "שיחת יום ב׳ דחג הסוכות, ה׳תשי״ט",
+      "source_class": "Sichos",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989018",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5719-day2-sukkot-aid2989018",
+      "source_body_locator": "AID 2989018, גוף השיחה, שורות 237–243.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew Sicha body"
+    },
+    {
+      "aid": 5989796,
+      "id": "chabad-sicha-5989796",
+      "title": "שיחת י״א ניסן, ה׳תשל״א",
+      "source_class": "Sichos",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/5989796",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": true,
+      "action": "enriched_existing_identity_in_place",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5731-11-nissan-aid5989796",
+      "source_body_locator": "AID 5989796, גוף השיחה, שורות 211–215.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew Sicha body"
+    },
+    {
+      "aid": 2989044,
+      "id": "chabad-sicha-2989044",
+      "title": "משיחת ש״פ קדושים, בדר״ח אייר, ה׳תשי״ט",
+      "source_class": "Sichos",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989044",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": true,
+      "action": "rechecked_existing_identity_no_new_proposition",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5719-shabbat-kedoshim-rosh-chodesh-iyar-aid2989044",
+      "source_body_locator": "AID 2989044, גוף השיחה, שורות 177–241.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 0,
+      "independent_witness": true,
+      "page_label": "published Hebrew Sicha body",
+      "note": "The inspected sections are already covered by existing propositions; no duplicate was added."
+    },
+    {
+      "aid": 2989019,
+      "id": "chabad-sicha-2989019",
+      "title": "שיחת אור ליום ב׳ דחוה״מ סוכות, ח״י תשרי, שמחת בית השואבה, ה׳תשי״ט",
+      "source_class": "Sicha",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989019",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": false,
+      "action": "new_source_identity",
+      "canonical_file": "data/items/content-research-batch-221-2026-11-20.json",
+      "evidence_family_id": "sicha-5719-18-tishrei-simchat-beit-hashoeva-aid2989019",
+      "source_body_locator": "Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew body",
+      "identity_decision": "new_candidate_pending_full_index_reconciliation"
+    },
+    {
+      "aid": 2989004,
+      "id": "chabad-maamar-2989004",
+      "title": "בכ״ה בכסלו, ש״פ וישב, שבת חנוכה, מבה״ח טבת, ה׳תשט״ז — הנחה בלתי מוגה",
+      "source_class": "Maamar",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989004",
+      "body_text_inspected": true,
+      "metadata_only": false,
+      "existing_identity": false,
+      "action": "new_source_identity",
+      "canonical_file": "data/items/content-research-batch-221-2026-11-20.json",
+      "evidence_family_id": "maamar-5716-25-kislev-chanukah-aid2989004",
+      "source_body_locator": "Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.",
+      "context_status": "partial",
+      "proposition_verification": "source_text_inspected",
+      "propositions_added": 1,
+      "independent_witness": true,
+      "page_label": "published Hebrew body",
+      "identity_decision": "new_candidate_pending_full_index_reconciliation"
+    }
+  ],
+  "existing_identity_updates": [
+    {
+      "aid": 2988940,
+      "evidence_family_id": "sicha-5716-19-kislev-shabbat-vayeshev-aid2988940",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "propositions_added": 1,
+      "proposition": "השיחה ממליצה שגם מי שמסוגל ללמוד את כל הש״ס לבדו ישתתף בחלוקה הציבורית: הלימוד המשותף מאפשר להיעזר במומחיות של משתתפים במסכתות שונות ומחזק את השלמת הש״ס כמעשה קהילתי. ההמלצה מובאת בהקשר של חלוקת הש״ס בי״ט כסלו, ולא כטענה שכל משתתף לומד בפועל את כל המסכתות.",
+      "proposition_source_locator": "AID 2988940, גוף השיחה, שורות 232–239.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected"
+    },
+    {
+      "aid": 4385713,
+      "evidence_family_id": "sicha-5727-day2-sukkot-aid4385713",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "propositions_added": 1,
+      "proposition": "השיחה מציגה את מעמד הקהל כאירוע המאחד את כלל ישראל — אנשים, נשים, ילדים, עבדים וגרים — סביב המלך והתורה, ומדגישה כי תכליתו אינה רק שמיעת דברי תורה אלא חיזוק האחדות והיראה. זהו פירוש רעיוני למעמד הקהל בתוך השיחה, לא תיאור היסטורי של אירוע מסוים.",
+      "proposition_source_locator": "AID 4385713, גוף השיחה, שורות 226–230.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected"
+    },
+    {
+      "aid": 5959970,
+      "evidence_family_id": "sicha-5730-bechukotai-meyarch-sivan-aid5959970",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "propositions_added": 1,
+      "proposition": "השיחה מבחינה בין לימוד הנדרש כדי לדעת כיצד לנהוג בפועל לבין עיון מעמיק יותר בתורה; היא מתארת את ההתקדמות ביניהם כתהליך מדורג, ולא כבחירה שמבטלת אחד מן הממדים. הפרפרזה מוגבלת להבחנה שהשיחה מציגה ואינה קובעת מסלול לימוד אחיד לכל לומד.",
+      "proposition_source_locator": "AID 5959970, גוף השיחה, שורות 233–240.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected"
+    },
+    {
+      "aid": 4280106,
+      "evidence_family_id": "sicha-5720-19-kislev-aid4280106",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "propositions_added": 1,
+      "proposition": "השיחה מחילה את העיקרון של ניצול הזמן והכוחות גם על רכושו של אדם: חפץ או אמצעי שהגיעו לידיו נתפסים כהזדמנות למלא את שליחותו ולהעלות את הפוטנציאל הרוחני שבהם, ולא כרכוש מנותק מתפקידו. זו הנמקה תיאולוגית בתוך השיחה, לא כלל משפטי על בעלות.",
+      "proposition_source_locator": "AID 4280106, גוף השיחה, שורות 200–201.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected"
+    },
+    {
+      "aid": 3008908,
+      "evidence_family_id": "sicha-5718-12-tammuz-day2-balak-aid3008908",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "propositions_added": 1,
+      "proposition": "השיחה מתארת את עבודת ההכנה לגאולה כחלקו של כל אדם: עליו לפרוץ את המגבלות האישיות ולכוון את הכוחות העומדים לרשותו למילוי שליחותו. אין כאן הבטחה שכל אדם יפעל באותה דרך או תיאור של מדד אמפירי להתקדמות.",
+      "proposition_source_locator": "AID 3008908, גוף השיחה, שורות 285–296.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected"
+    },
+    {
+      "aid": 2989018,
+      "evidence_family_id": "sicha-5719-day2-sukkot-aid2989018",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "propositions_added": 1,
+      "proposition": "השיחה מדגישה שהעבודה לאחר יום הכיפורים ובימי החול קשה יותר מן ההתעלות המורגשת ביום הכיפורים, ולכן אין להסתפק ברגעי שיא רוחניים: עיקר העבודה הוא ההתמדה בפרטים המעשיים של עבודת ה׳ לאורך השנה. זהו דגש רעיוני של השיחה, לא מדד אמפירי לקושי.",
+      "proposition_source_locator": "AID 2989018, גוף השיחה, שורות 237–243.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected"
+    },
+    {
+      "aid": 5989796,
+      "evidence_family_id": "sicha-5731-11-nissan-aid5989796",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "propositions_added": 1,
+      "proposition": "השיחה מסיימת בתפילה שהגאולה תהיה ניכרת גם במציאות הגשמית, ומקשרת את העבודה המתוארת קודם לכן לציפייה למימוש הגאולה בפועל. מדובר בלשון תפילה וסיום של השיחה, לא בפסיקה או בהבטחה לתאריך מסוים.",
+      "proposition_source_locator": "AID 5989796, גוף השיחה, שורות 211–215.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected"
+    }
+  ],
+  "existing_identity_rechecks": [
+    {
+      "aid": 2989044,
+      "id": "chabad-sicha-2989044",
+      "canonical_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "evidence_family_id": "sicha-5719-shabbat-kedoshim-rosh-chodesh-iyar-aid2989044",
+      "action": "rechecked_existing_identity_no_new_proposition",
+      "existing_propositions_before": 5,
+      "propositions_added": 0,
+      "note": "The inspected sections are already covered by existing propositions; no duplicate was added."
+    }
+  ],
+  "deduplication_check": {
+    "method": "targeted_AID_URL_Evidence_Family_checks",
+    "full_index_scan_available": false,
+    "full_index_scan_pending_reconciliation": true,
+    "target_identity_count": 2,
+    "target_identity_matches": 0,
+    "target_identity_duplicates": 0,
+    "selected_unique_evidence_families": 2,
+    "canonical_identity_collisions": [],
+    "missing_canonical_identities": [],
+    "checked_against": [
+      "GitHub code search exact AID queries for 2989019 and 2989004 returned no matches.",
+      "data/content-review-queue.json contains no exact AID matches.",
+      "Batch149 and Batch220 candidate records contain no exact AID or Evidence Family matches.",
+      "The connector did not return the generated public-search-index blob; exact-head Actions must complete the full-index check."
+    ],
+    "note": "Targeted preflight only; full generated-index reconciliation is pending. Neither candidate is counted as a confirmed new answer-eligible family until the full index is checked."
+  },
+  "retrieval_synthesis": {
+    "topic": "sukkot_collective_gathering_inner_service",
+    "status": "implemented_in_answer_engine",
+    "question_pattern": "מה הקשר בין סוכות, מעמד הקהל, בית מקדש קטן והעבודה בימות החול?",
+    "source_aids": [
+      4385713,
+      2989019,
+      2989018
+    ],
+    "evidence_family_ids": [
+      "sicha-5727-day2-sukkot-aid4385713",
+      "sicha-5719-18-tishrei-simchat-beit-hashoeva-aid2989019",
+      "sicha-5719-day2-sukkot-aid2989018"
+    ],
+    "claim_level_locators": true,
+    "modes": [
+      "regular",
+      "researcher"
+    ],
+    "researcher_depth": "deep",
+    "attribution": "system_synthesis_not_rebbe_quote",
+    "limits": [
+      "The synthesis is system-authored, not a Rebbe quotation.",
+      "The three talks are distinct dates and events; they are not one unified statement.",
+      "The small-sanctuary saying is attributed in the Sicha to the Previous Rebbe in the name of the Rashab; it is not presented as a direct Rebbe quotation.",
+      "Only the listed body passages were inspected; no recording, manuscript or edited edition was checked.",
+      "The propositions describe ideas in the texts, not empirical measurements."
+    ]
+  },
+  "note": "Batch221: ten public Hebrew source bodies inspected; two new source candidates (one Sicha and one Maamar), seven in-place Sicha enrichments, and one recheck with no duplicate proposition. Four candidate routes were blocked (AID4666220 and three audio-only Yechidus pages). Accessible alternative bodies were used. No crawler retry, access bypass, full-text copying, scan-only verification, translation-as-independent-witness, or Verified promotion.",
+  "duplicate_aliases_linked": [],
+  "reconciliation_actions": [],
+  "records": [
+    {
+      "id": "chabad-sicha-2989019",
+      "canonical_key": "aid:2989019",
+      "aid": 2989019,
+      "title": "שיחת אור ליום ב׳ דחוה״מ סוכות, ח״י תשרי, שמחת בית השואבה, ה׳תשי״ט",
+      "source_class": "Sicha",
+      "source_class_detail": "תמליל שיחה בעברית שפורסם בידי BeitChabad.com / Chabad.org ומסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "date_original": "אור ליום ב׳ דחוה״מ סוכות, ח״י תשרי, ה׳תשי״ט",
+      "date": "אור ליום ב׳ דחוה״מ סוכות, ח״י תשרי, ה׳תשי״ט",
+      "date_precision": "exact_as_published",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "translation_status": "Original Hebrew publisher text inspected; no translation was counted as an independent witness.",
+      "type": "public_talk_transcript",
+      "collection": "שיחות והתוועדויות / BeitChabad.com / Chabad.org",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989019",
+      "context_status": "partial",
+      "summary_researcher": "השיחה מביאה פתגם שהרבי הקודם סיפר בשם אביו, הרבי הרש״ב: ״ושכנתי בתוכם״ מתפרש כיצירת ״בית מקדש קטן״ בלבו של כל יהודי. בהמשך השיחה מתואר שהרושם הפנימי של המקדש אינו מתבטל עם חורבנו. יש לשמור על שרשרת הייחוס שבגוף השיחה: הפתגם מובא בשם הרבי הקודם בשם אביו, ולא כציטוט ישיר של הרבי מליובאוויטש.",
+      "response_propositions": [
+        "השיחה מביאה פתגם שהרבי הקודם סיפר בשם אביו, הרבי הרש״ב: ״ושכנתי בתוכם״ מתפרש כיצירת ״בית מקדש קטן״ בלבו של כל יהודי. בהמשך השיחה מתואר שהרושם הפנימי של המקדש אינו מתבטל עם חורבנו. יש לשמור על שרשרת הייחוס שבגוף השיחה: הפתגם מובא בשם הרבי הקודם בשם אביו, ולא כציטוט ישיר של הרבי מליובאוויטש."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.",
+      "response_proposition_provenance": [
+        {
+          "proposition_index": 1,
+          "batch_id": "221",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989019",
+          "source_aid": 2989019,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "sicha-5719-18-tishrei-simchat-beit-hashoeva-aid2989019",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org AID 2989019; Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי בעברית ביום 20.11.2026. Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. ההקשר חלקי. הפתגם המצוטט מובא בשיחה בשרשרת ייחוס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו כרעיון מקורי של הרבי מליובאוויטש. לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפתגם עצמו מיוחס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו כציטוט מקורי של הרבי מליובאוויטש.",
+            "הפרפרזה מוגבלת לשורות 183–190; ההקשר חלקי; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
+            "הפרסום מסומן בלתי מוגה; לא נבדקה מהדורה מוגהת או עדות עצמאית נוספת.",
+            "אין להציג את הדימוי כתיאור היסטורי או כטענה אמפירית."
+          ],
+          "proposition": "השיחה מביאה פתגם שהרבי הקודם סיפר בשם אביו, הרבי הרש״ב: ״ושכנתי בתוכם״ מתפרש כיצירת ״בית מקדש קטן״ בלבו של כל יהודי. בהמשך השיחה מתואר שהרושם הפנימי של המקדש אינו מתבטל עם חורבנו. יש לשמור על שרשרת הייחוס שבגוף השיחה: הפתגם מובא בשם הרבי הקודם בשם אביו, ולא כציטוט ישיר של הרבי מליובאוויטש.",
+          "source_locator": "Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190."
+        }
+      ],
+      "evidence_family_id": "sicha-5719-18-tishrei-simchat-beit-hashoeva-aid2989019",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי בעברית ביום 20.11.2026. Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. ההקשר חלקי. הפתגם המצוטט מובא בשיחה בשרשרת ייחוס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו כרעיון מקורי של הרבי מליובאוויטש. לא הועתק גוף הפרסום המלא.",
+      "documented_circumstances": "שיחת שמחת בית השואבה, אור ליום ב׳ דחוה״מ סוכות, ח״י תשרי ה׳תשי״ט.",
+      "question_or_problem": "מה מתועד בשיחה על המקדש הפנימי בכל יהודי ועל שרשרת הייחוס של הפתגם?",
+      "conditions_or_qualifications": [
+        "הפתגם עצמו מיוחס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו כציטוט מקורי של הרבי מליובאוויטש.",
+        "הפרפרזה מוגבלת לשורות 183–190; ההקשר חלקי; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
+        "הפרסום מסומן בלתי מוגה; לא נבדקה מהדורה מוגהת או עדות עצמאית נוספת.",
+        "אין להציג את הדימוי כתיאור היסטורי או כטענה אמפירית."
+      ],
+      "audience": "קהל ההתוועדות וקוראי הפרסום.",
+      "primary_secondary_status": "Published Hebrew unedited Sicha transcript; primary textual witness to the talk as published, while audio and contemporaneous notes were not independently inspected.",
+      "witness_type": "published_hebrew_unedited_talk_transcript",
+      "witness_provenance": "BeitChabad.com / Chabad.org AID 2989019; Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
+      "independent_witness": true,
+      "author_name": "Rabbi Menachem Mendel Schneerson; the quoted saying is attributed to the Previous Rebbe in the name of the Rashab",
+      "author_role": "speaker; nested attribution preserved",
+      "authorship_status": "The publisher attributes the talk transcript to the Rebbe; the specific saying in the inspected passage is reported as the Previous Rebbe's, in his father's name. The recording and contemporaneous notes were not independently inspected.",
+      "source_role": "oral_talk_transcript",
+      "signatory": null,
+      "signatory_role": null,
+      "publisher": "BeitChabad.com / Chabad.org",
+      "rights_status": "copyrighted-link-only",
+      "verification_status": "source_text_inspected",
+      "provenance": {
+        "authorship_status": "The publisher attributes the talk transcript to the Rebbe; the specific saying in the inspected passage is reported as the Previous Rebbe's, in his father's name. The recording and contemporaneous notes were not independently inspected.",
+        "signature_status": null,
+        "source_witness": "BeitChabad.com / Chabad.org AID 2989019; Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
+        "transmission_type": "Publisher-published Hebrew unedited public-talk transcript, marked בלתי מוגה.",
+        "textual_status": "הפרסום נפתח ונבדק במקטע Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.. הפתגם המצוטט מובא בשיחה בשרשרת ייחוס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו כרעיון מקורי של הרבי מליובאוויטש.",
+        "editorial_scope": "פרפרזה מחקרית אחת, לא-מילולית, עם מיקום גוף תחום: Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.; אין העתקה מלאה של טקסט מוגן.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989019",
+        "accessed": "2026-11-20T23:59:44+02:00",
+        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי בעברית ביום 20.11.2026. Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. ההקשר חלקי. הפתגם המצוטט מובא בשיחה בשרשרת ייחוס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו כרעיון מקורי של הרבי מליובאוויטש. לא הועתק גוף הפרסום המלא."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Publisher Hebrew text opened; marked בלתי מוגה; recording and corrected edition not inspected.",
+        "complete_partial": "partial",
+        "notes": "נבדק רק המקטע המצוין: Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190. ההקשר חלקי; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "full_text_reproduced": false,
+        "reuse_notes": "קישור למקור ופרפרזה מחקרית לא-מילולית בלבד; אין להעתיק את גוף הפרסום המלא."
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "זהות נפרדת לפי AID 2989019 ומשפחת הראיות sicha-5719-18-tishrei-simchat-beit-hashoeva-aid2989019; כל תרגום או פרסום מקביל ייבדק כנגזרת של אותה Evidence Family ולא כעד עצמאי.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "שיחת אור ליום ב׳ דחוה״מ סוכות, ח״י תשרי, שמחת בית השואבה, ה׳תשי״ט"
+        ],
+        "research_terms": [
+          "סוכות",
+          "שמחת בית השואבה",
+          "בית מקדש קטן",
+          "השראה פנימית",
+          "שרשרת ייחוס"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
+      "notes": "Parsed only; no Verified promotion. Only the cited public body passage was inspected; no manuscript, recording or corrected edition was examined.",
+      "canonical_file": "data/items/content-research-batch-221-2026-11-20.json",
+      "content_enrichment_batch_id": "221",
+      "last_content_enriched_at": "2026-11-20T23:59:44+02:00",
+      "response_proposition_metadata": [
+        {
+          "proposition_index": 1,
+          "batch_id": "221",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989019",
+          "source_aid": 2989019,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "sicha-5719-18-tishrei-simchat-beit-hashoeva-aid2989019",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org AID 2989019; Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190.. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי בעברית ביום 20.11.2026. Chabad.org AID 2989019, גוף השיחה, סעיפים ב׳–ג׳, שורות 183–190. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. ההקשר חלקי. הפתגם המצוטט מובא בשיחה בשרשרת ייחוס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו כרעיון מקורי של הרבי מליובאוויטש. לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפתגם עצמו מיוחס לרבי הקודם בשם אביו, הרבי הרש״ב; אין לייחסו כציטוט מקורי של הרבי מליובאוויטש.",
+            "הפרפרזה מוגבלת לשורות 183–190; ההקשר חלקי; ההקלטה, כתב היד והנוסח המוגה לא נבדקו.",
+            "הפרסום מסומן בלתי מוגה; לא נבדקה מהדורה מוגהת או עדות עצמאית נוספת.",
+            "אין להציג את הדימוי כתיאור היסטורי או כטענה אמפירית."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chabad-maamar-2989004",
+      "canonical_key": "aid:2989004",
+      "aid": 2989004,
+      "title": "בכ״ה בכסלו, ש״פ וישב, שבת חנוכה, מבה״ח טבת, ה׳תשט״ז — הנחה בלתי מוגה",
+      "source_class": "Maamar",
+      "source_class_detail": "הנחה בעברית שפורסמה בידי BeitChabad.com / Chabad.org ומסומנת הנחה בלתי מוגה; כתב היד, ההקלטה והנוסח המוגה לא נבדקו.",
+      "pipeline_status": "Parsed",
+      "status": "Parsed",
+      "canonical_status": "Parsed",
+      "date_original": "כ״ה בכסלו, ש״פ וישב, שבת חנוכה, מבה״ח טבת, ה׳תשט״ז",
+      "date": "כ״ה בכסלו, ש״פ וישב, שבת חנוכה, מבה״ח טבת, ה׳תשט״ז",
+      "date_precision": "exact_as_published",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "translation_status": "Original Hebrew publisher text inspected; no translation was counted as an independent witness.",
+      "type": "maamar_transcript",
+      "collection": "מאמרים / BeitChabad.com / Chabad.org",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/2989004",
+      "context_status": "partial",
+      "summary_researcher": "המאמר מפרש את שבעת נרות המנורה כמשל לשבע המידות שבנפש. הוא מבחין בין השפעת אור החכמה על בירור המידות לבין עבודת הקטורת, המתייחסת ללבושי המחשבה, הדיבור והמעשה; ההבחנה מוצגת כמהלך רעיוני של המאמר ולא כטענה פסיכולוגית או מדעית.",
+      "response_propositions": [
+        "המאמר מפרש את שבעת נרות המנורה כמשל לשבע המידות שבנפש. הוא מבחין בין השפעת אור החכמה על בירור המידות לבין עבודת הקטורת, המתייחסת ללבושי המחשבה, הדיבור והמעשה; ההבחנה מוצגת כמהלך רעיוני של המאמר ולא כטענה פסיכולוגית או מדעית."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183."
+      ],
+      "proposition_language": "Hebrew",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_source_locator": "Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.",
+      "response_proposition_provenance": [
+        {
+          "proposition_index": 1,
+          "batch_id": "221",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989004",
+          "source_aid": 2989004,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "maamar-5716-25-kislev-chanukah-aid2989004",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org AID 2989004; Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי בעברית ביום 20.11.2026. Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. ההקשר חלקי. הפרסום מסומן הנחה בלתי מוגה; המקטע שנבדק אינו מאפשר לקבוע את נוסח המאמר המוגה או את מלוא ההקשר. לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הטקסט מסומן הנחה בלתי מוגה; לא נבדקו כתב יד, הקלטה או נוסח מוגה.",
+            "הפרפרזה מוגבלת למקטע 176–183; ההקשר חלקי.",
+            "אין להציג את ההבחנה כמודל פסיכולוגי או מדעי."
+          ],
+          "proposition": "המאמר מפרש את שבעת נרות המנורה כמשל לשבע המידות שבנפש. הוא מבחין בין השפעת אור החכמה על בירור המידות לבין עבודת הקטורת, המתייחסת ללבושי המחשבה, הדיבור והמעשה; ההבחנה מוצגת כמהלך רעיוני של המאמר ולא כטענה פסיכולוגית או מדעית.",
+          "source_locator": "Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183."
+        }
+      ],
+      "evidence_family_id": "maamar-5716-25-kislev-chanukah-aid2989004",
+      "parent_evidence_family_id": null,
+      "translation_of_evidence_family_id": null,
+      "has_content_evidence": true,
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי בעברית ביום 20.11.2026. Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. ההקשר חלקי. הפרסום מסומן הנחה בלתי מוגה; המקטע שנבדק אינו מאפשר לקבוע את נוסח המאמר המוגה או את מלוא ההקשר. לא הועתק גוף הפרסום המלא.",
+      "documented_circumstances": "מאמר לשבת חנוכה, כ״ה בכסלו, ש״פ וישב, ה׳תשט״ז; הפרסום מסומן הנחה בלתי מוגה.",
+      "question_or_problem": "כיצד המאמר מקשר בין נרות המנורה, שבע המידות ועבודת הקטורת?",
+      "conditions_or_qualifications": [
+        "הטקסט מסומן הנחה בלתי מוגה; לא נבדקו כתב יד, הקלטה או נוסח מוגה.",
+        "הפרפרזה מוגבלת למקטע 176–183; ההקשר חלקי.",
+        "אין להציג את ההבחנה כמודל פסיכולוגי או מדעי."
+      ],
+      "audience": "קהל ההתוועדות וקוראי הפרסום.",
+      "primary_secondary_status": "Published Hebrew unedited maamar note; the text is marked הנחה בלתי מוגה and was not compared with the original note or recording.",
+      "witness_type": "published_hebrew_unedited_maamar_note",
+      "witness_provenance": "BeitChabad.com / Chabad.org AID 2989004; Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
+      "independent_witness": true,
+      "author_name": "Rabbi Menachem Mendel Schneerson",
+      "author_role": "speaker",
+      "authorship_status": "The publisher attributes the maamar note to the Rebbe; the note is marked unedited and was not compared with original notes or a recording.",
+      "source_role": "maamar_transcript",
+      "signatory": null,
+      "signatory_role": null,
+      "publisher": "BeitChabad.com / Chabad.org",
+      "rights_status": "copyrighted-link-only",
+      "verification_status": "source_text_inspected",
+      "provenance": {
+        "authorship_status": "The publisher attributes the maamar note to the Rebbe; the note is marked unedited and was not compared with original notes or a recording.",
+        "signature_status": null,
+        "source_witness": "BeitChabad.com / Chabad.org AID 2989004; Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
+        "transmission_type": "Publisher-published Hebrew maamar note, explicitly marked הנחה בלתי מוגה.",
+        "textual_status": "הפרסום נפתח ונבדק במקטע Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.. הפרסום מסומן הנחה בלתי מוגה; המקטע שנבדק אינו מאפשר לקבוע את נוסח המאמר המוגה או את מלוא ההקשר.",
+        "editorial_scope": "פרפרזה מחקרית אחת, לא-מילולית, עם מיקום גוף תחום: Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.; אין העתקה מלאה של טקסט מוגן.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/2989004",
+        "accessed": "2026-11-20T23:59:44+02:00",
+        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי בעברית ביום 20.11.2026. Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. ההקשר חלקי. הפרסום מסומן הנחה בלתי מוגה; המקטע שנבדק אינו מאפשר לקבוע את נוסח המאמר המוגה או את מלוא ההקשר. לא הועתק גוף הפרסום המלא."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Publisher Hebrew maamar note opened; marked הנחה בלתי מוגה; original notes and recording not inspected.",
+        "complete_partial": "partial",
+        "notes": "נבדק רק המקטע המצוין: Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183. ההקשר חלקי; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+      },
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "full_text_reproduced": false,
+        "reuse_notes": "קישור למקור ופרפרזה מחקרית לא-מילולית בלבד; אין להעתיק את גוף הפרסום המלא."
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "identity_note": "זהות נפרדת לפי AID 2989004 ומשפחת הראיות maamar-5716-25-kislev-chanukah-aid2989004; כל תרגום או פרסום מקביל ייבדק כנגזרת של אותה Evidence Family ולא כעד עצמאי.",
+      "taxonomy": {
+        "publisher_index_terms": [
+          "בכ״ה בכסלו, ש״פ וישב, שבת חנוכה, מבה״ח טבת, ה׳תשט״ז — הנחה בלתי מוגה"
+        ],
+        "research_terms": [
+          "חנוכה",
+          "מנורה",
+          "שבע המידות",
+          "קטורת",
+          "לבושי הנפש"
+        ],
+        "response_case_candidate": true
+      },
+      "epistemic_level": "source_text_inspected_nonverbatim_paraphrase",
+      "notes": "Parsed only; no Verified promotion. Only the cited public body passage was inspected; no manuscript, recording or corrected edition was examined.",
+      "canonical_file": "data/items/content-research-batch-221-2026-11-20.json",
+      "content_enrichment_batch_id": "221",
+      "last_content_enriched_at": "2026-11-20T23:59:44+02:00",
+      "response_proposition_metadata": [
+        {
+          "proposition_index": 1,
+          "batch_id": "221",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989004",
+          "source_aid": 2989004,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "maamar-5716-25-kislev-chanukah-aid2989004",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org AID 2989004; Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183.. גוף הפרסום נפתח ונבדק ב-20.11.2026.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי בעברית ביום 20.11.2026. Chabad.org AID 2989004, גוף המאמר, סעיפים ב׳–ג׳, שורות 176–183. הפרפרזה מחקרית ולא-מילולית ומוגבלת למקטע המצוין בלבד. ההקשר חלקי. הפרסום מסומן הנחה בלתי מוגה; המקטע שנבדק אינו מאפשר לקבוע את נוסח המאמר המוגה או את מלוא ההקשר. לא הועתק גוף הפרסום המלא.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הטקסט מסומן הנחה בלתי מוגה; לא נבדקו כתב יד, הקלטה או נוסח מוגה.",
+            "הפרפרזה מוגבלת למקטע 176–183; ההקשר חלקי.",
+            "אין להציג את ההבחנה כמודל פסיכולוגי או מדעי."
+          ]
+        }
+      ]
+    }
+  ]
+}
