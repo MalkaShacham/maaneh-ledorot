@@ -1541,7 +1541,7 @@ assert.equal(String(projectState.current_batch),'218');
 assert.equal(projectState.current_batch_file,batch218Path);
 assert.equal(String(projectState.development_recovery.current_batch),'218');
 assert.equal(projectState.development_recovery.current_batch_file,batch218Path);
-assert.equal(String(projectState.development_recovery.last_reconciliation.batch_id),'218');
+assert.equal(String(projectState.last_reconciliation.batch_id),'218');
 assert.equal(lastBatchSummary.batch_id,'218');
 assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_actual_before),readinessMetrics(batch218Data.metrics_actual_before));
 if(lastBatchSummary.metrics_after_actual){assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));}else{assert.equal(lastBatchSummary.status,'pending_reconciliation');assert.equal(batch218Data.metrics_actual_after,null);console.log('CONTENT_READINESS_PENDING_RECONCILIATION',JSON.stringify(readinessMetrics(metrics)));}
