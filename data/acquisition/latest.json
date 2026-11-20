@@ -455,10 +455,10 @@
       "target_identity_count": 10,
       "target_identity_matches": null,
       "target_identity_duplicates": null,
-      "selected_unique_evidence_families": 10,
-      "same_family_duplicate_presentations": [],
-      "canonical_identity_collisions": [],
-      "missing_canonical_identities": [],
+      "selected_unique_evidence_families": null,
+      "same_family_duplicate_presentations": null,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
       "target_aids": [
         5959839,
         5989575,
@@ -471,7 +471,20 @@
         4212080,
         7484120
       ],
-      "checked_against": "Targeted exact-AID GitHub code search and data/content-review-queue.json returned no matches for the ten proposed new AIDs. The full public-search-index.json exceeded the fetch response limit, so no complete canonical scan is claimed; exact-head reconciliation remains required."
+      "checked_against": "Targeted exact-AID GitHub code search and data/content-review-queue.json returned no matches for the ten proposed new AIDs. The full public-search-index.json exceeded the fetch response limit, so no complete canonical scan is claimed; exact-head reconciliation remains required.",
+      "proposed_distinct_evidence_family_ids": [
+        "sicha-5728-behaalotcha-19-sivan-aid5959839",
+        "sicha-5728-vayakhel-pekudei-parashat-parah-aid5989575",
+        "sicha-5731-vayeshev-21-kislev-aid5989780",
+        "sicha-5722-yud-tes-kislev-aid2989207",
+        "sicha-5727-yud-tes-kislev-aid4385753",
+        "sicha-5734-yud-tes-kislev-aid6132056",
+        "maamar-5738-shalom-rav-lohavay-toratecha-aid3140064",
+        "sicha-5728-simchat-torah-night-aid5989553",
+        "pastoral-letter-5718-3-shevat-yeshiva-student-aid4212080",
+        "pastoral-letter-5721-12-tammuz-sholom-simon-aid7484120"
+      ],
+      "note": "The ten proposed IDs and family labels are distinct within this batch, but the full canonical index was not read in this run; cross-corpus duplicate and alias results are unknown until exact-head reconciliation."
     },
     "retrieval_synthesis": {
       "status": "implemented_pending_ci",
