@@ -8353,4 +8353,35 @@ assert(new5470.response_proposition_provenance.every(p=>p.independent_witness===
 assert.equal(batch201Data.records.every(r=>r.status==='Parsed'&&r.pipeline_status==='Parsed'&&r.canonical_status==='Parsed'&&r.has_content_evidence),true);
 const batch201EarlyQuestion='מה מתועד באיגרות ובערכי היום יום על חינוך ילדים צעירים, חינוך עברי, דיבור בכיתה, מטרות החינוך, מעורבות תלמידים, לימוד תורה בעל פה ובחירת מסגרת חינוכית?';
 for(const mode of ['regular','researcher']){const m=buildAnswerModel(idx.entries,batch201EarlyQuestion,{mode});assert(m.answerable,mode+': expanded early-childhood comparison should be answerable');assert.equal(m.synthesis?.topic,'education_correspondence_comparison');assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');assert.equal(m.synthesis?.claims.length,12);assert(m.synthesis.basis.length>=14);assert(new Set(m.synthesis.evidence_family_ids).size>=14);assert(m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length&&c.source_locators.every(x=>x.locator)));assert(m.pattern_synthesis_integrity?.valid===true);assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));if(mode==='researcher'){assert.equal(m.research.depth,'deep');assert(m.research.claim_source_map.length>=12&&m.research.claim_source_map.every(c=>c.source_locators.length));assert(m.research.evidence_integrity.derived_non_independent>=10);assert(m.research.evidence_witnesses.find(w=>String(w.aid)==='3315370').independent_witness===false);assert(m.research.evidence_witnesses.find(w=>String(w.aid)==='3315470').independent_witness===false);assert(m.research.evidence_witnesses.find(w=>String(w.aid)==='3316265').independent_witness===true);}else assert.equal(m.research,undefined);}
+ 
+// Batch 203: original-language Hayom Yom additions and in-place enrichment of a non-AID letter identity.
+// The source_unit_key/id fallback must keep later in-place propositions out of earlier batch snapshots.
+const batch202Path='data/items/content-research-batch-202-2026-11-20.json';
+const batch203Path='data/items/content-research-batch-203-2026-11-20.json';
+const batch202Data=JSON.parse(await readFile(new URL(batch202Path,root),'utf8'));
+const batch203Data=JSON.parse(await readFile(new URL(batch203Path,root),'utf8'));
+assert.equal(batch203Data.batch_id,'203');assert.equal(batch203Data.records.length,7);
+assert.deepEqual(batch203Data.new_aids,[3315240,3315244,3315246,3315249,3315342,3316183,3317477]);
+assert.equal(batch203Data.new_source_identities,7);assert.equal(batch203Data.existing_identities_enriched,1);
+assert.equal(batch203Data.new_response_propositions,13);assert.equal(batch203Data.existing_response_propositions_added,2);
+assert.equal(batch203Data.total_new_paraphrase_entries,15);assert.equal(batch203Data.content_verified_unique_sources_added,0);
+assert.equal(batch203Data.existing_identity_updates[0].id,'library-igrot-kodesh-v4-1081');
+assert.equal(batch203Data.existing_identity_updates[0].source_unit_key,'igrot-rayatz-v4-letter-1081');
+assert.equal(batch203Data.existing_identity_updates[0].propositions_added,2);
+assert.equal(batch203Data.existing_identity_updates[0].canonical_file,'data/items/library-igrot-kodesh-v4-index-verified-2026-10-04-001.json');
+assert.equal(batch203Data.records.reduce((n,r)=>n+r.response_propositions.length,0),13);
+for(const r of batch203Data.records){assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);assert.equal(r.response_propositions.length,r.response_proposition_locators.length);assert.equal(r.independent_witness,true);}
+const letter1081=idx.entries.find(e=>e.id==='library-igrot-kodesh-v4-1081');
+assert(letter1081&&letter1081.has_content_evidence&&letter1081.status==='Parsed'&&letter1081.response_propositions.length===2);
+assert.equal(letter1081.independent_witness,false);assert.equal(letter1081.evidence_family_id,'igrot-rayatz-v4-letter-1081');
+assert.equal(batch203Data.source_body_review.length,9);assert(batch203Data.source_body_review.every(x=>x.body_page_opened&&x.body_text_inspected&&!x.title_or_metadata_only&&x.context_status==='partial'));
+assert.equal(batch203Data.blocked_candidate_count,1);assert(batch203Data.blocked_candidates.some(x=>String(x.aid)==='4666220'));
+assert.equal(batch203Data.crawler_retry,false);assert.equal(batch203Data.access_control_bypassed,false);assert.equal(batch203Data.full_text_copied,false);
+assert(['reconciled','reconciled_with_variance'].includes(batch202Data.reconciliation_status));
+assert(batch202Data.reconciliation_snapshot_adjustment.excluded_later_in_place_proposition_count>=2,'Batch202 snapshot must exclude Batch203 letter propositions matched by source_unit_key/id');
+assert.deepEqual(readinessMetrics(batch202Data.metrics_actual_after),readinessMetrics(batch203Data.metrics_actual_before));
+assert(['reconciled','reconciled_with_variance'].includes(batch203Data.reconciliation_status));
+assert.deepEqual(batch203Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch203Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch203Data.deduplication_check.all_target_identities_answer_eligible,true);
 

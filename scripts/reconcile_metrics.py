@@ -342,16 +342,20 @@ for selected_index, batch_info in enumerate(selected_batches):
         for update in later_data.get("existing_identity_updates",[]):
             canonical_file=str(update.get("canonical_file") or "")
             aid=str(update.get("aid") or "")
-            if not canonical_file or canonical_file in later_paths or not aid: continue
+            unit=str(update.get("source_unit_key") or update.get("document_unit_key") or "")
+            item_id=str(update.get("id") or "")
+            if not canonical_file or canonical_file in later_paths or not (aid or unit or item_id): continue
             before=update.get("existing_propositions_before")
             after=update.get("total_propositions_after")
             excluded=set()
             if isinstance(before,int) and isinstance(after,int) and after>before:
                 excluded.update(range(before,after))
             else:
-                locators=update.get("locators") or ([update.get("locator")] if update.get("locator") else [])
+                locators=update.get("proposition_source_locators") or update.get("locators") or ([update.get("proposition_source_locator") or update.get("locator")] if (update.get("proposition_source_locator") or update.get("locator")) else [])
                 for entry in all_search_entries:
-                    if entry.get("canonical_file")!=canonical_file or str(entry.get("aid") or "")!=aid: continue
+                    if entry.get("canonical_file")!=canonical_file: continue
+                    identity_match=(aid and str(entry.get("aid") or "")==aid) or (unit and str(entry.get("source_unit_key") or "")==unit) or (item_id and str(entry.get("id") or "")==item_id)
+                    if not identity_match: continue
                     entry_locators=entry.get("response_proposition_locators") or []
                     for locator in locators:
                         for prop_index,entry_locator in enumerate(entry_locators):
