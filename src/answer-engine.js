@@ -2297,7 +2297,27 @@ else if(educationGovernanceQuestion){
   if(missing.length)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_teshuvah_level_families',claims:[],sources:[...byCategory.values()],answered_well:[],insufficient_evidence:['לא נמצאו שתי משפחות איגרות נפרדות: הבחנה מפורשת בין תשובה תתאה ותשובה עילאה ותיאור נפרד של רצף מדרגות תשובה. חסר: '+missing.join(', ')]};
   answerEvidence=requiredCategories.map(category=>byCategory.get(category));
  }
- else if(studyFarmingComparisonQuestion){answerEvidence=usable.filter(supportsStudyFarmingComparisonSource).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(p=>supportsStudyRoutineComparison(p)||supportsFarmingStudyComparison(p))}));const byFamily=new Map();for(const e of answerEvidence){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}answerEvidence=[...byFamily.values()].slice(0,6);}
+ else if(studyFarmingComparisonQuestion){
+  const rankedComparison=index
+   .filter(e=>e&&String(e.status||'').toLowerCase()==='verified'&&e.answer_eligible===true&&e.has_content_evidence===true&&supportsStudyFarmingComparisonSource(e))
+   .map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(p=>supportsStudyRoutineComparison(p)||supportsFarmingStudyComparison(p))}))
+   .filter(e=>e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id&&classifyWitness(e)!=='derived')
+   .map(e=>({e,relevance:propositionRelevance(e,understanding)}))
+   .filter(x=>x.relevance.support==='direct_support'&&x.relevance.score>=6)
+   .sort((a,b)=>b.relevance.score-a.relevance.score)
+   .map(x=>x.e);
+  const byFamily=new Map();
+  for(const e of rankedComparison){const k=familyKey(e);if(k&&!byFamily.has(k))byFamily.set(k,e);}
+  const distinct=[...byFamily.values()];
+  const hasSide=(e,predicate)=>!!e&&arr(e._supporting_propositions).some(predicate);
+  const studyCandidate=distinct.find(e=>String(e.aid||'')==='5019408'&&hasSide(e,supportsStudyRoutineComparison))||distinct.find(e=>hasSide(e,supportsStudyRoutineComparison));
+  const studyFamily=studyCandidate?familyKey(studyCandidate):null;
+  const farmingCandidate=distinct.find(e=>String(e.aid||'')==='5054281'&&hasSide(e,supportsFarmingStudyComparison)&&familyKey(e)!==studyFamily)||distinct.find(e=>hasSide(e,supportsFarmingStudyComparison)&&familyKey(e)!==studyFamily);
+  const selectedByFamily=new Map();
+  for(const e of [studyCandidate,farmingCandidate,...distinct]){const k=familyKey(e);if(k&&!selectedByFamily.has(k))selectedByFamily.set(k,e);}
+  if(!studyCandidate||!farmingCandidate)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_study_farming_comparison_families',claims:[],sources:[...selectedByFamily.values()],answered_well:[],insufficient_evidence:['לא נמצאו שתי משפחות ראיות עצמאיות: אחת על קביעות עתים ולימוד בצוותא ואחת על חקלאים ובעלי משק.']};
+  answerEvidence=[...selectedByFamily.values()].slice(0,6);
+ }
   else if(lodYeshivaStudyTravelQuestion){answerEvidence=usable.filter(e=>supportsLodYeshivaStudyTravelSource(e));}
  else if(shmittaFruitReferralQuestion){answerEvidence=usable.filter(e=>supportsShmittaFruitReferralSource(e));}
  else if(hayomYomHouseholdInfluenceQuestion){
