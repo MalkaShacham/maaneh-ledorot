@@ -1798,3 +1798,14 @@ Eight public source bodies were inspected. Seven existing Hebrew Sicha identitie
 - ההשוואה המחקרית על מכתבי חינוך והפצת ספרים הורחבה לשבע משפחות איגרות נפרדות ושמונה טענות ממוקמות. שתי טענות מאיגרת 4422946 נשארות באותה משפחת ראיות. הסינתזה מסומנת system_synthesis_not_rebbe_quote; מצב researcher נבדק בקוד ובבדיקות, אך הריצה המדויקת עדיין ממתינה ל-Actions.
 - גבול התכנון אחרי Batch199 הוא 1,645 / 854 / 4,246; אחרי Batch200 הוא 1,651 / 854 / 4,253. אלה ערכי תכנון בלבד, לא מדידה. Batches198–200 ממתינים ל-full-index reconciliation; לא קודם מקור ל-Verified. מדדי main הציבוריים נשארו 977 / 878 / 2,950 ולא עודכנו.
 - PR #35 לא מוזג ולא נטען שפורסם. יש להריץ exact-head reconciliation, `scripts/test_content_readiness.mjs` ו-Answer Quality Gate; למזג רק לאחר שכל הבדיקות הנדרשות עוברות, ולאמת לאחר מכן את מדדי main ואת GitHub Pages. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
+## 2026-11-20 — Batch201: bilingual Hayom Yom, six in-place enrichments and proposition-level synthesis (pending reconciliation)
+
+- נפתחו ונבדקו שמונה גופי פרסום ציבוריים ב-Chabad.org / TheRebbe.org: שתי זהויות מועמדות חדשות (AIDs 3316265 ו-3315470) ושש העשרות in-place (AIDs 4243257, 1695044, 3315331, 81572, 81567, 3315370). נוספו תשע פרפרזות לא-מילוליות עם locator ברמת טענה, provenance, היקף אימות, context partial ומגבלות.
+- AID3315370 כבר היה זהות קנונית ב-Batch145. לא נוצרה רשומה נוספת: נוספה באותה זהות ובאותה Evidence Family פרופוזיציה נפרדת מהמדור האנגלי העריכתי “Living as a Chassid”; היא מסומנת proposition-level non-independent ואינה מוצגת כחלק מן הערך היידי המקורי.
+- AID3316265 כולל קטע מקור בעברית/יידיש לצד תרגום אנגלי; המקור הראשון/כתב־היד לא נבדקו. AID3315470 מביא ביידיש אמרה המיוחסת לאדמו״ר הרש״ב ומוסיף מדור הסבר אנגלי נפרד; לא נבדקו תמליל בן הזמן או עד עצמאי מן ההתוועדות. דברי הרש״ב וההערה העריכתית אינם מיוחסים לרבי.
+- AID4666220 החזיר Internal Error דרך הקורא הציבורי. לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; שמונה גופי פרסום חלופיים נגישים נבדקו באותה הפעלה.
+- הרחבת האחזור: ההשוואה על חינוך ילדים כוללת כעת 14 משפחות פריט ו-12 קטגוריות/טענות ממוקמות. הוספנו בדיקת independence ברמת proposition כדי שקטע עריכתי באותו עמוד דו-לשוני לא ייחשב לעד עצמאי רק מפני שלרשומה הקנונית יש גם קטע מקור בשפתו. מצב regular ו-deep researcher נבדקים עם claim-level locators, citation entailment ו-context boundaries.
+- גבול התכנון אחרי Batch201 הוא 1653 / 854 / 4262; זה אינו נתון מדוד. המדידה האחרונה המדויקת היא 1644 / 854 / 4230 אחרי Batch197; Batches198–201 ממתינים ל-full-index reconciliation. public main metrics נשארו 977 / 878 / 2950. לא קודם מקור ל-Verified.
+- PR #35 נשאר פתוח עד מעבר exact-head reconciliation, `scripts/test_content_readiness.mjs` ו-Answer Quality Gate. אין טענה לפרסום Pages לפני merge ובדיקת deployment. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
