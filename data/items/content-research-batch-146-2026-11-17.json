@@ -55,7 +55,8 @@
       "aid": 4304354,
       "url": "https://he.chabad.org/library/article_cdo/aid/4304354",
       "reason": "HTTP 429 Too Many Requests from the public page reader; no item-level body was available in this run.",
-      "handling": "Excluded from content propositions. No crawler retry or access-control bypass; same-run fallback inspected eight other accessible Hebrew source bodies."
+      "handling": "blocked_candidate",
+      "action": "blocked_candidate"
     },
     {
       "aid": 4312986,
@@ -98,12 +99,12 @@
     "Maamarim": 1
   },
   "metrics_before": {
-    "answer_eligible_unique_sources": 1489,
+    "answer_eligible_unique_sources": 1488,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3810
   },
   "metrics_expected_after": {
-    "answer_eligible_unique_sources": 1496,
+    "answer_eligible_unique_sources": 1495,
     "content_verified_unique_sources": 854,
     "answer_eligible_propositions": 3821
   },
@@ -369,9 +370,9 @@
       "title": "שיחת יום ב' פ' בלק, י\"ב תמוז, ה'תשכ\"ד",
       "source_class": "Sichos",
       "source_class_detail": "שיחה בעברית, תמליל מו״ל המסומן בלתי מוגה; ההקלטה ורשימות המקור לא נבדקו.",
-      "pipeline_status": "Parsed",
-      "status": "Parsed",
-      "canonical_status": "Parsed",
+      "pipeline_status": "Linked",
+      "status": "Linked",
+      "canonical_status": "Linked",
       "date_original": "י״ב תמוז ה׳תשכ״ד",
       "date": "י״ב תמוז ה׳תשכ״ד",
       "date_precision": "exact",
@@ -382,19 +383,19 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את הפרסום לרבי; העמוד מסמן את הטקסט כבלתי מוגה. לא נבדקו הקלטה, כתב יד או רשימות מקור.",
         "signature_status": null,
-        "source_witness": "Chabad.org / BeitChabad.com AID 4304430, גוף הפרסום העברי והכותרת.",
+        "source_witness": "Chabad.org / BeitChabad.com AID 4304430, גוף הפרסום העברי והכותרת.\n\nAdditional Hebrew body passage inspected 2026-11-19: he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.",
         "transmission_type": "publisher transcription of an unedited Hebrew sicha",
-        "textual_status": "תמליל עברי שפורסם ומסומן בלתי מוגה; נבדקו רק הקטעים והמיקומים המפורטים.",
-        "editorial_scope": "נבדקו סעיפים א–ב, שורות 177–192 בגוף הפרסום. לא נבדקו יתר חלקי השיחה, הקלטה, רשימות מקור או כתבי יד.",
-        "verification_status": "source_text_inspected",
+        "textual_status": "תמליל עברי שפורסם ומסומן בלתי מוגה; נבדקו רק הקטעים והמיקומים המפורטים.\n\nAdditional passage inspected in the publisher transcript on 2026-11-19 at he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.; the transcript is marked בלתי מוגה and was not collated with a recording, manuscript or corrected edition.",
+        "editorial_scope": "נבדקו סעיפים א–ב, שורות 177–192 בגוף הפרסום. לא נבדקו יתר חלקי השיחה, הקלטה, רשימות מקור או כתבי יד.\n\nAdditional bounded non-verbatim paraphrase from he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.; no full protected text copied.",
+        "verification_status": "source_text_inspected\n\nsource_text_inspected; partial context; additional body passage inspected 2026-11-19 at he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360..",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
-        "accessed": "2026-11-17"
+        "accessed": "2026-11-19"
       },
       "witness": {
         "kind": "text",
-        "state": "תמליל עברי פומבי המסומן בלתי מוגה; קטעים מוגדרים בגוף הפרסום נבדקו; הקלטה וכתב יד לא נבדקו.",
+        "state": "תמליל עברי פומבי המסומן בלתי מוגה; קטעים מוגדרים בגוף הפרסום נבדקו; הקלטה וכתב יד לא נבדקו.\n\nAdditional original-Hebrew body passage inspected 2026-11-19: he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.; publisher transcript marked בלתי מוגה.",
         "complete_partial": "partial",
-        "notes": "הפרופוזיציות מוגבלות לשורות המצוינות; אין להסיק מן הקטעים את מלוא ההקשר או את נוסח המקור המוגה."
+        "notes": "הפרופוזיציות מוגבלות לשורות המצוינות; אין להסיק מן הקטעים את מלוא ההקשר או את נוסח המקור המוגה.\n\nNo recording, manuscript, autograph or corrected edition was collated for this additional passage."
       },
       "access": {
         "access_level": "open",
@@ -416,40 +417,44 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "הזהות נשארת Parsed. תמציות לא-מילוליות מבוססות רק על הקטעים שנפתחו בגוף הפרסום; אין קידום ל-Verified.",
+      "notes": "הזהות נשארת Parsed. תמציות לא-מילוליות מבוססות רק על הקטעים שנפתחו בגוף הפרסום; אין קידום ל-Verified.\n\nBatch184 appended one source-grounded non-verbatim proposition from he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.; the same AID and Evidence Family were retained. Source remains Parsed; no Verified promotion.",
       "type": "sicha",
       "collection": "Chabad.org / BeitChabad.com — Hebrew Torat Menachem / Sichos",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4304430",
       "response_propositions": [
         "השיחה מביאה את רצון הרבי הריי״צ שסיפורים ועניינים הקשורים למאסר ולגאולה יועלו על הכתב ויודפסו לתועלת הציבור, ומציינת שמי שזוכרים אותם או מחזיקים בהם בכתב מתבקשים לסייע באיסופם ובהדפסתם.",
-        "ההסבר בשיחה מציג את האמונה בהשגחה פרטית כבסיס לביטחון גם כאשר התוצאה אינה נראית אפשרית בדרך הטבע, בהקשר של סכנה רחבה ליהדות, תורה ומצוות."
+        "ההסבר בשיחה מציג את האמונה בהשגחה פרטית כבסיס לביטחון גם כאשר התוצאה אינה נראית אפשרית בדרך הטבע, בהקשר של סכנה רחבה ליהדות, תורה ומצוות.",
+        "הקטע מבחין בין לימוד תורה של יחיד או קבוצה לבין הרבצת תורה ברוב עם, ומתאר את הרחבת מעגל הלומדים כמשימה מתמשכת: גם לאחר לימוד עם רבים, כל עוד אפשר לצרף עוד יהודי ללימוד, העבודה טרם מוצתה. זהו מסר חינוכי־רוחני על הרחבת ההשפעה, לא מכסה כמותית או חובה ארגונית מדידה."
       ],
       "response_proposition_locators": [
         "AID 4304430, סעיפים א–ב, שורות 177–183.",
-        "AID 4304430, סעיף ב, שורות 185–192."
+        "AID 4304430, סעיף ב, שורות 185–192.",
+        "he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 4304430, סעיפים א–ב, שורות 177–183. ; AID 4304430, סעיף ב, שורות 185–192.",
-      "evidence_family_id": "farbrengen-5724-12-tammuz-yud-tes-event",
-      "parent_evidence_family_id": null,
+      "proposition_source_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.",
+      "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+      "parent_evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נבדקו סעיפים א–ב, שורות 177–192 בגוף הפרסום. לא נבדקו יתר חלקי השיחה, הקלטה, רשימות מקור או כתבי יד.",
+      "verification_scope": "נבדקו סעיפים א–ב, שורות 177–192 בגוף הפרסום. לא נבדקו יתר חלקי השיחה, הקלטה, רשימות מקור או כתבי יד.\n\nנוסף ב-Batch184: נפתח ונבדק גוף הפרסום העברי, he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.; נבדקו רק המקטע וההקשר הסמוך. התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד, אוטוגרף או נוסח מוגה. context_status=partial. לא הועתק גוף הפרסום המלא.",
       "documented_circumstances": "שיחה ביום ב׳, פרשת בלק, י״ב תמוז תשכ״ד; הקטעים שנבדקו עוסקים בפרסום סיפורי המאסר והגאולה ובהשגחה פרטית.",
       "question_or_problem": "מה נאמר בשיחה על תיעוד והפצת סיפורים היסטוריים ועל ההשגחה הפרטית?",
       "conditions_or_qualifications": [
         "הבקשה המתוארת נוגעת לסיפורים ולעניינים הקשורים למאסר ולגאולת הרבי הריי״צ; אין להכליל ממנה מדיניות עריכה לכל סוגי המקורות.",
         "הנוסח באתר מסומן בלתי מוגה; לא הושווה להקלטה או לכתב יד.",
-        "הפרופוזיציות מתארות את תוכן השיחה, לרבות דברים המובאים בשם הרבי הריי״צ, ואינן מייחסות את כל התוכן לדובר אחד."
+        "הפרופוזיציות מתארות את תוכן השיחה, לרבות דברים המובאים בשם הרבי הריי״צ, ואינן מייחסות את כל התוכן לדובר אחד.",
+        "הפרפרזה מוגבלת לסעיפים יח׳–יט׳; אין להסיק ממנה מכסה כמותית או חובה ארגונית מוגדרת.",
+        "התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
       ],
       "audience": "אנ״ש ומי שברשותם זיכרונות או מסמכים הקשורים למאסר ולגאולה, כפי שמתואר בקטע.",
       "primary_secondary_status": "Primary published Hebrew text witness; publisher transcript marked בלתי מוגה; not collated with audio, manuscript or original notes.",
       "witness_type": "publisher_published_hebrew_unedited_sicha_transcript",
-      "witness_provenance": "Chabad.org / BeitChabad.com AID 4304430; selected body passages inspected at AID 4304430, סעיפים א–ב, שורות 177–183. ; AID 4304430, סעיף ב, שורות 185–192..",
-      "independent_witness": true,
+      "witness_provenance": "Chabad.org / BeitChabad.com AID 4304430; selected body passages inspected at AID 4304430, סעיפים א–ב, שורות 177–183. ; AID 4304430, סעיף ב, שורות 185–192..\n\nAdditional original-Hebrew body passage inspected 2026-11-19: he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.",
+      "independent_witness": false,
       "translation_status": "הטקסט העברי המקורי כפי שפורסם נבדק; לא נעשה שימוש בתרגום.",
       "rights_status": "copyrighted-link-only",
       "publisher": "Chabad.org / BeitChabad.com",
@@ -457,10 +462,47 @@
       "author_role": "speaker/author as attributed by publisher",
       "authorship_status": "המו״ל מייחס את המאמר/השיחה לרבי; הטקסט מסומן בלתי מוגה; לא בוצעה קולציה מול הקלטה או כתב יד.",
       "source_role": "public_sicha_transcript",
-      "duplicate_or_parallel_relations": [],
-      "identity_note": "זהות נפרדת לפי AID ותאריך הפרסום; מהדורות/הקלטות של אותו אירוע ישויכו לאותה Evidence Family ולא ייספרו כמשפחות עצמאיות.",
-      "content_enrichment_batch_id": "146",
-      "last_content_enriched_at": "2026-11-17"
+      "duplicate_or_parallel_relations": [
+        {
+          "relation": "same_evidence_family",
+          "canonical_aid": 4304430,
+          "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+          "note": "אותו AID ואותו גוף שיחת י״ב תמוז תשכ״ד; שני רישומי התוכן מאוחדים תחת אותה Evidence Family."
+        },
+        {
+          "relation": "same_evidence_family",
+          "target_file": "data/items/content-research-batch-101-2026-11-15.json",
+          "target_aid": 4304430,
+          "evidence_family_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+          "independent_witness": false,
+          "note": "Same AID appears in batches 101 and 146; retain one Evidence Family and count once."
+        }
+      ],
+      "identity_note": "זהות נפרדת לפי AID ותאריך הפרסום; מהדורות/הקלטות של אותו אירוע ישויכו לאותה Evidence Family ולא ייספרו כמשפחות עצמאיות. אותו AID ואותו גוף שיחת י״ב תמוז תשכ״ד; שני רישומי התוכן מאוחדים תחת אותה Evidence Family. Duplicate presentation of canonical AID 4304430 in batch101; same Evidence Family, not an independent witness.",
+      "content_enrichment_batch_id": "184",
+      "last_content_enriched_at": "2026-11-19T15:54:25+02:00",
+      "duplicate_of_canonical_id": "sicha-5724-yud-beis-tammuz-aid4304430",
+      "duplicate_identity_status": "same_aid_same_evidence_family_duplicate_presentation",
+      "duplicate_reason": "The same AID and Evidence Family are already represented by the canonical AID 4304430 item in batch101; this presentation is not an independent witness.",
+      "response_proposition_metadata": [
+        {
+          "proposition_index": 2,
+          "batch_id": "184",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.",
+          "provenance": "BeitChabad.com / he.chabad.org; original Hebrew body inspected on 2026-11-19.",
+          "verification_scope": "נבדק גוף הפרסום העברי ב-BeitChabad.com / he.chabad.org, AID 4304430, he.chabad.org AID 4304430, גוף השיחה, סעיפים יח׳–יט׳, שורות 347–360.. נבדקו רק המקטע וההקשר הסמוך. הפרסום מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד, אוטוגרף או נוסח מוגה. context_status=partial. לא הועתק טקסט מוגן במלואו.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מוגבלת לסעיפים יח׳–יט׳; אין להסיק ממנה מכסה כמותית או חובה ארגונית מוגדרת.",
+            "התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+          ],
+          "web_source_ref": "turn813108view0"
+        }
+      ],
+      "canonical_file": "data/items/content-research-batch-101-2026-11-15.json"
     },
     {
       "id": "maamar-5724-12-tammuz-hashem-nafshenu-aid4304429",
@@ -779,23 +821,24 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "השיחה עוסקת בהוראות לאורחים ולתושבי המקום, בשליחות לפרסם אלוקות במקום שאליו מגיעים ובשמירת כבודו וניקיונו של בית הכנסת.",
+      "summary_researcher": "השיחה עוסקת בהוראות לאורחים ולתושבי המקום, בשליחות לפרסם אלוקות במקום שאליו מגיעים ובשמירת כבודו וניקיונו של בית הכנסת. הפתיחה מדגישה שהוראת התורה נצחית ושיש לחיות עם הזמן; את ״וישבת״ היא מפרשת כהמשכה בהתיישבות ובכלים.",
       "provenance": {
         "authorship_status": "המו״ל מייחס את הפרסום לרבי; העמוד מסמן את הטקסט כבלתי מוגה. לא נבדקו הקלטה, כתב יד או רשימות מקור.",
         "signature_status": null,
         "source_witness": "Chabad.org / BeitChabad.com AID 4304437, גוף הפרסום העברי והכותרת.",
         "transmission_type": "publisher transcription of an unedited Hebrew sicha",
-        "textual_status": "תמליל עברי שפורסם ומסומן בלתי מוגה; נבדקו רק הקטעים והמיקומים המפורטים.",
-        "editorial_scope": "נבדקו סעיפים א–ג, שורות 175–190. לא נבדקו יתר חלקי השיחה.",
-        "verification_status": "source_text_inspected",
+        "textual_status": "תמליל עברי שפורסם ומסומן בלתי מוגה; נבדקו רק הקטעים והמיקומים המפורטים. נבדק קטע נוסף: AID 4304437, גוף השיחה, סעיף א, שורות 175–178.. בנוסף נבדק AID 4304437, גוף השיחה, סעיף ו, שורות 205–210.. בנוסף נבדק AID 4304437, גוף השיחה, סעיף ד, שורות 192–197..",
+        "editorial_scope": "Bounded non-verbatim research paraphrases with separate source locators; no full protected text copied.",
+        "verification_status": "Source body inspected 2026-11-20; added AID 4304437, גוף השיחה, סעיף ד, שורות 192–197.; context partial.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
-        "accessed": "2026-11-17"
+        "accessed": "2026-11-20"
       },
       "witness": {
         "kind": "text",
         "state": "תמליל עברי פומבי המסומן בלתי מוגה; קטעים מוגדרים בגוף הפרסום נבדקו; הקלטה וכתב יד לא נבדקו.",
         "complete_partial": "partial",
-        "notes": "הפרופוזיציות מוגבלות לשורות המצוינות; אין להסיק מן הקטעים את מלוא ההקשר או את נוסח המקור המוגה."
+        "notes": "הפרופוזיציות מוגבלות לשורות המצוינות; אין להסיק מן הקטעים את מלוא ההקשר או את נוסח המקור המוגה. נבדק קטע נוסף: AID 4304437, גוף השיחה, סעיף א, שורות 175–178.. נוסף מקטע גוף נפרד שנפתח ונבדק ב-19.11.2026; ללא קידום ל-Verified.",
+        "scope": "AID 4304437, סעיפים א–ב, שורות 175–184. | AID 4304437, סעיף ג, שורות 185–190. | AID 4304437, גוף השיחה, סעיף א, שורות 175–178. | AID 4304437, גוף השיחה, סעיף ו, שורות 205–210."
       },
       "access": {
         "access_level": "open",
@@ -817,34 +860,42 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "הזהות נשארת Parsed. תמציות לא-מילוליות מבוססות רק על הקטעים שנפתחו בגוף הפרסום; אין קידום ל-Verified.",
+      "notes": "הזהות נשארת Parsed. תמציות לא-מילוליות מבוססות רק על הקטעים שנפתחו בגוף הפרסום; אין קידום ל-Verified. הועשרה ב-19.11.2026 בפרפרזה לא-מילולית נוספת ממקטע גוף נפרד: AID 4304437, גוף השיחה, סעיף א, שורות 175–178.; נשמרו ה-AID ומשפחת הראיות, ללא קידום ל-Verified. Batch197: נוספה פרפרזה לא-מילולית נוספת ממקטע גוף שנפתח ונבדק; נשמרו ה-AID ומשפחת הראיות; אין קידום ל-Verified. Batch198: נוספה פרפרזה מחקרית לא-מילולית ממקטע גוף נוסף שנפתח ונבדק; אותה זהות ואותה Evidence Family נשמרו.",
       "type": "sicha",
       "collection": "Chabad.org / BeitChabad.com — Hebrew Torat Menachem / Sichos",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
       "response_propositions": [
         "הקטע מתאר את הגעת היהודי למקום חדש כשליחות לפרסם שם אלוקות; הוא מבקש מן האורחים לנצל זמן פנוי ללימוד תורה ומן התושבים לקבלם בסבר פנים יפות.",
-        "בהקשר של בית הכנסת של כ״ק מו״ח אדמו״ר, השיחה דורשת לשמור על ניקיון וכבוד המקום ולנקות את השולחנות בהקדם לאחר התוועדות."
+        "בהקשר של בית הכנסת של כ״ק מו״ח אדמו״ר, השיחה דורשת לשמור על ניקיון וכבוד המקום ולנקות את השולחנות בהקדם לאחר התוועדות.",
+        "השיחה מציגה את פסוקי פתיחת פרשת כי תבוא כהוראה נצחית ומביאה את ההדרכה ״לחיות עם הזמן״; היא מפרשת את ״וישבת״ כהמשכה של אור אלוקי בהתיישבות ובכלים, ולא כהתעוררות רגעית בלבד.",
+        "בחלק העוסק בברכות ובקללות, השיחה מסבירה שבכל יהודי קיימות שתי הבחינות — נפש אלוקית ונפש בהמית — ובהתאם לכך שני אופני עבודה: מצד הנפש האלוקית הדגש הוא על ״עשה טוב״, ומצד הנפש הבהמית על ״סור מרע״. השיחה מזהירה שלא לערבב בין אופני העבודה הללו.",
+        "בתגובה לבקשת אורח ברכה ליהודי רוסיה שיצאו משם, השיחה מדגישה שיש לפרט במפורש את הבקשה ליציאה ״במהרה בימינו״ ולא להשאיר את לוח הזמנים עמום; ההתייחסות כוללת גם את בני המשפחה והרכוש במסגרת התקווה ליציאה מן המיצר אל המרחב."
       ],
       "response_proposition_locators": [
         "AID 4304437, סעיפים א–ב, שורות 175–184.",
-        "AID 4304437, סעיף ג, שורות 185–190."
+        "AID 4304437, סעיף ג, שורות 185–190.",
+        "AID 4304437, גוף השיחה, סעיף א, שורות 175–178.",
+        "AID 4304437, גוף השיחה, סעיף ו, שורות 205–210.",
+        "AID 4304437, גוף השיחה, סעיף ד, שורות 192–197."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 4304437, סעיפים א–ב, שורות 175–184. ; AID 4304437, סעיף ג, שורות 185–190.",
+      "proposition_source_locator": "AID 4304437, סעיפים א–ב, שורות 175–184. | AID 4304437, סעיף ג, שורות 185–190. | AID 4304437, גוף השיחה, סעיף א, שורות 175–178. | AID 4304437, גוף השיחה, סעיף ו, שורות 205–210. | AID 4304437, גוף השיחה, סעיף ד, שורות 192–197.",
       "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נבדקו סעיפים א–ג, שורות 175–190. לא נבדקו יתר חלקי השיחה.",
+      "verification_scope": "נבדקו סעיפים א–ג, שורות 175–190. לא נבדקו יתר חלקי השיחה. נבדק מחדש ב-19.11.2026 קטע נוסף: AID 4304437, גוף השיחה, סעיף א, שורות 175–178.. הפרפרזה הנוספת מוגבלת לקטע זה; ההקשר נשאר חלקי והפרסום מסומן בלתי מוגה. נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 4304437, ביום 19.11.2026. נבדק AID 4304437, גוף השיחה, סעיף ו, שורות 205–210.; ההקשר הסמוך נבדק. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה מוגבלת למקטע המצוין; context_status=partial. לא הועתק טקסט מוגן במלואו. נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 4304437, ביום 20.11.2026. נבדק AID 4304437, גוף השיחה, סעיף ד, שורות 192–197.; נבדק ההקשר הסמוך הדרוש להבנת המקטע. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה מוגבלת למקטע המצוין; context_status=partial. לא הועתק טקסט מוגן במלואו.",
       "documented_circumstances": "שיחה בשבת פרשת תבוא, כ״א אלול תשכ״ד; הקטעים שנבדקו עוסקים באורחים, בתושבי המקום ובקדושת בית הכנסת.",
       "question_or_problem": "מה מתועד בשיחה לגבי אחריות האורחים, המארחים ושמירת בית הכנסת?",
       "conditions_or_qualifications": [
         "ההנחיה לניקיון מתייחסת בהקשר המפורש לבית הכנסת של כ״ק מו״ח אדמו״ר; אין להחיל את כל פרטי ההקשר אוטומטית על כל בית כנסת.",
         "הפרופוזיציות מוגבלות לקטעים שנבדקו; לא נבדקה השיחה המלאה.",
-        "התמליל מסומן בלתי מוגה; לא הושווה להקלטה או לרשימות מקור."
+        "התמליל מסומן בלתי מוגה; לא הושווה להקלטה או לרשימות מקור.",
+        "נבדקו רק שורות 175–178; ההקשר חלקי והתמליל מסומן בלתי מוגה. ההעשרה אינה מחליפה את שתי הפרופוזיציות הקיימות על שליחות וכבוד בית הכנסת.",
+        "הקטע הוא חלק ממהלך עיוני על פסוקי הברכות והקללות; אין להציג את החלוקה כהוראה הלכתית עצמאית."
       ],
       "audience": "אורחים ותושבי המקום; בהמשך הקטע נזכרים גם תלמידי הישיבה, המשגיחים והמשפיעים.",
       "primary_secondary_status": "Primary published Hebrew text witness; publisher transcript marked בלתי מוגה; not collated with audio, manuscript or original notes.",
@@ -860,8 +911,161 @@
       "source_role": "public_sicha_transcript",
       "duplicate_or_parallel_relations": [],
       "identity_note": "זהות נפרדת לפי AID ותאריך הפרסום; מהדורות/הקלטות של אותו אירוע ישויכו לאותה Evidence Family ולא ייספרו כמשפחות עצמאיות.",
-      "content_enrichment_batch_id": "146",
-      "last_content_enriched_at": "2026-11-17"
+      "content_enrichment_batch_id": "198",
+      "last_content_enriched_at": "2026-11-20T00:01:37+02:00",
+      "response_proposition_provenance": [
+        {
+          "proposition": "הקטע מתאר את הגעת היהודי למקום חדש כשליחות לפרסם שם אלוקות; הוא מבקש מן האורחים לנצל זמן פנוי ללימוד תורה ומן התושבים לקבלם בסבר פנים יפות.",
+          "source_aid": 4304437,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_locator": "AID 4304437, סעיפים א–ב, שורות 175–184.",
+          "presentation_language": "Hebrew",
+          "original_language": "Hebrew",
+          "independent_witness": true,
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected"
+        },
+        {
+          "proposition": "בהקשר של בית הכנסת של כ״ק מו״ח אדמו״ר, השיחה דורשת לשמור על ניקיון וכבוד המקום ולנקות את השולחנות בהקדם לאחר התוועדות.",
+          "source_aid": 4304437,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_locator": "AID 4304437, סעיף ג, שורות 185–190.",
+          "presentation_language": "Hebrew",
+          "original_language": "Hebrew",
+          "independent_witness": true,
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected"
+        },
+        {
+          "proposition": "השיחה מציגה את פסוקי פתיחת פרשת כי תבוא כהוראה נצחית ומביאה את ההדרכה ״לחיות עם הזמן״; היא מפרשת את ״וישבת״ כהמשכה של אור אלוקי בהתיישבות ובכלים, ולא כהתעוררות רגעית בלבד.",
+          "source_aid": 4304437,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_locator": "AID 4304437, גוף השיחה, סעיף א, שורות 175–178.",
+          "presentation_language": "Hebrew",
+          "original_language": "Hebrew",
+          "independent_witness": true,
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected"
+        },
+        {
+          "proposition": "בחלק העוסק בברכות ובקללות, השיחה מסבירה שבכל יהודי קיימות שתי הבחינות — נפש אלוקית ונפש בהמית — ובהתאם לכך שני אופני עבודה: מצד הנפש האלוקית הדגש הוא על ״עשה טוב״, ומצד הנפש הבהמית על ״סור מרע״. השיחה מזהירה שלא לערבב בין אופני העבודה הללו.",
+          "source_aid": 4304437,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_locator": "AID 4304437, גוף השיחה, סעיף ו, שורות 205–210.",
+          "presentation_language": "Hebrew",
+          "original_language": "Hebrew",
+          "independent_witness": true,
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "provenance": "BeitChabad.com / Chabad.org, AID 4304437, שיחת ש\"פ תבוא, כ\"א אלול, ה'תשכ\"ד, https://he.chabad.org/library/article_cdo/aid/4304437"
+        },
+        {
+          "proposition": "בתגובה לבקשת אורח ברכה ליהודי רוסיה שיצאו משם, השיחה מדגישה שיש לפרט במפורש את הבקשה ליציאה ״במהרה בימינו״ ולא להשאיר את לוח הזמנים עמום; ההתייחסות כוללת גם את בני המשפחה והרכוש במסגרת התקווה ליציאה מן המיצר אל המרחב.",
+          "source_aid": 4304437,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_locator": "AID 4304437, גוף השיחה, סעיף ד, שורות 192–197.",
+          "presentation_language": "Hebrew",
+          "original_language": "Hebrew",
+          "independent_witness": true,
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "provenance": "BeitChabad.com / Chabad.org, AID 4304437, שיחת ש\"פ תבוא, כ\"א אלול, ה'תשכ\"ד, https://he.chabad.org/library/article_cdo/aid/4304437",
+          "context_status": "partial",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי הציבורי ב-BeitChabad.com/Chabad.org, AID 4304437, ביום 20.11.2026. נבדק AID 4304437, גוף השיחה, סעיף ד, שורות 192–197.; נבדק ההקשר הסמוך הדרוש להבנת המקטע. הפרסום מסומן בלתי מוגה; ההקלטה, כתב היד והנוסח המוגה לא נבדקו. הפרפרזה מוגבלת למקטע המצוין; context_status=partial. לא הועתק טקסט מוגן במלואו.",
+          "limits": [
+            "תמליל עברי בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+            "הפרפרזה מוגבלת למיקום הגוף המפורט ואינה קובעת הוראה הלכתית מעבר להקשר."
+          ]
+        }
+      ],
+      "verification_status": "source_text_inspected Additional public body passage inspected 2026-11-19: AID 4304437, גוף השיחה, סעיף א, שורות 175–178..",
+      "response_proposition_metadata": [
+        {
+          "proposition_index": 0,
+          "batch_id": "196",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4304437, סעיפים א–ב, שורות 175–184.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_aid": 4304437,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org, AID 4304437, שיחת ש\"פ תבוא, כ\"א אלול, ה'תשכ\"ד, https://he.chabad.org/library/article_cdo/aid/4304437"
+        },
+        {
+          "proposition_index": 1,
+          "batch_id": "196",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4304437, סעיף ג, שורות 185–190.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_aid": 4304437,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org, AID 4304437, שיחת ש\"פ תבוא, כ\"א אלול, ה'תשכ\"ד, https://he.chabad.org/library/article_cdo/aid/4304437"
+        },
+        {
+          "proposition_index": 2,
+          "batch_id": "196",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4304437, גוף השיחה, סעיף א, שורות 175–178.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_aid": 4304437,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org, AID 4304437, שיחת ש\"פ תבוא, כ\"א אלול, ה'תשכ\"ד, https://he.chabad.org/library/article_cdo/aid/4304437"
+        },
+        {
+          "proposition_index": 3,
+          "batch_id": "197",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4304437, גוף השיחה, סעיף ו, שורות 205–210.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_aid": 4304437,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org, AID 4304437, שיחת ש\"פ תבוא, כ\"א אלול, ה'תשכ\"ד, https://he.chabad.org/library/article_cdo/aid/4304437"
+        },
+        {
+          "proposition_index": 4,
+          "batch_id": "198",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4304437, גוף השיחה, סעיף ד, שורות 192–197.",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304437",
+          "source_aid": 4304437,
+          "original_language": "Hebrew",
+          "presentation_language": "Hebrew",
+          "evidence_family_id": "sicha-5724-21-elul-ki-tavo-aid4304437",
+          "independent_witness": true,
+          "provenance": "BeitChabad.com / Chabad.org, AID 4304437, שיחת ש\"פ תבוא, כ\"א אלול, ה'תשכ\"ד, https://he.chabad.org/library/article_cdo/aid/4304437"
+        }
+      ]
     },
     {
       "id": "sicha-5724-shavuot-day-2-aid4304414",
@@ -883,19 +1087,19 @@
       "provenance": {
         "authorship_status": "המו״ל מייחס את הפרסום לרבי; העמוד מסמן את הטקסט כבלתי מוגה. לא נבדקו הקלטה, כתב יד או רשימות מקור.",
         "signature_status": null,
-        "source_witness": "Chabad.org / BeitChabad.com AID 4304414, גוף הפרסום העברי והכותרת.",
+        "source_witness": "Chabad.org / BeitChabad.com AID 4304414, גוף הפרסום העברי והכותרת.\n\nAdditional Hebrew publisher body passage inspected 2026-11-19: AID 4304414, he.chabad.org AID 4304414, גוף השיחה, סעיף ב׳, שורות 192–197.\n\nBatch191 body passage inspected 2026-11-19: he.chabad.org AID 4304414, גוף השיחה, סעיף ב׳, שורות 192–197.\nBatch208 inspected body: he.chabad.org AID 4304414, גוף השיחה, סעיף ד׳, שורות 206–209.",
         "transmission_type": "publisher transcription of an unedited Hebrew sicha",
-        "textual_status": "תמליל עברי שפורסם ומסומן בלתי מוגה; נבדקו רק הקטעים והמיקומים המפורטים.",
-        "editorial_scope": "נבדק סעיף א, שורות 177–183. לא נבדקו יתר חלקי השיחה.",
-        "verification_status": "source_text_inspected",
+        "textual_status": "תמליל עברי שפורסם ומסומן בלתי מוגה; נבדקו רק הקטעים והמיקומים המפורטים.\n\nBatch191: נפתח ונבדק גוף הפרסום העברי, סעיף ב׳, שורות 192–197 בלבד. התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה. ההקשר חלקי; הפרפרזה מתארת את המהלך הרעיוני של השיחה ואינה פוסקת כיצד יש לחדש הלכה למעשה.\n\nBatch191: נבדק סעיף ב׳, שורות 192–197. השיחה מביאה את לשון הזוהר ״לאפשא לה״ ואת מאמר חז״ל על חידושי תלמיד ותיק. ההקשר חלקי; התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה.\nBatch208: only the bounded passage at he.chabad.org AID 4304414, גוף השיחה, סעיף ד׳, שורות 206–209. was inspected; publisher marks the transcript בלתי מוגה; no recording, manuscript, autograph or critical edition was checked.",
+        "editorial_scope": "נבדק סעיף א, שורות 177–183. לא נבדקו יתר חלקי השיחה.\n\nAdditional bounded non-verbatim proposition appended in place in Batch191; no full protected text copied.\n\nAdditional bounded non-verbatim proposition; no full protected text copied.\nBatch208 adds one non-verbatim research paraphrase bounded to he.chabad.org AID 4304414, גוף השיחה, סעיף ד׳, שורות 206–209.; no full protected text copied.",
+        "verification_status": "Parsed; source_text_inspected; partial context; Batch208 additional passage inspected.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4304414",
-        "accessed": "2026-11-17"
+        "accessed": "2026-11-20T07:53:06+02:00"
       },
       "witness": {
         "kind": "text",
-        "state": "תמליל עברי פומבי המסומן בלתי מוגה; קטעים מוגדרים בגוף הפרסום נבדקו; הקלטה וכתב יד לא נבדקו.",
+        "state": "תמליל עברי פומבי המסומן בלתי מוגה; קטעים מוגדרים בגוף הפרסום נבדקו; הקלטה וכתב יד לא נבדקו. Batch208: additional bounded Hebrew body passage inspected at he.chabad.org AID 4304414, גוף השיחה, סעיף ד׳, שורות 206–209..",
         "complete_partial": "partial",
-        "notes": "הפרופוזיציות מוגבלות לשורות המצוינות; אין להסיק מן הקטעים את מלוא ההקשר או את נוסח המקור המוגה."
+        "notes": "הפרופוזיציות מוגבלות לשורות המצוינות; אין להסיק מן הקטעים את מלוא ההקשר או את נוסח המקור המוגה.\n\nBatch191: additional body passage inspected at he.chabad.org AID 4304414, גוף השיחה, סעיף ב׳, שורות 192–197.\n\nBatch191: body passage inspected at he.chabad.org AID 4304414, גוף השיחה, סעיף ב׳, שורות 192–197."
       },
       "access": {
         "access_level": "open",
@@ -916,31 +1120,40 @@
         "response_case_candidate": true
       },
       "epistemic_level": 1,
-      "notes": "הזהות נשארת Parsed. תמציות לא-מילוליות מבוססות רק על הקטעים שנפתחו בגוף הפרסום; אין קידום ל-Verified.",
+      "notes": "הזהות נשארת Parsed. תמציות לא-מילוליות מבוססות רק על הקטעים שנפתחו בגוף הפרסום; אין קידום ל-Verified.\n\nBatch191 added one bounded non-verbatim source-grounded proposition in place; canonical identity and Evidence Family retained; status remains Parsed.\n\nBatch191: source-grounded proposition added or refined in place; canonical identity and Evidence Family retained; status remains Parsed. Batch208: added one bounded non-verbatim Hebrew research paraphrase; status remains Parsed; no Verified promotion.",
       "type": "sicha",
       "collection": "Chabad.org / BeitChabad.com — Hebrew Torat Menachem / Sichos",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4304414",
       "response_propositions": [
-        "השיחה מציגה את חג השבועות כחתונה בשני מובנים קשורים: הקשר בין הקב״ה לישראל והקשר בין ישראל לתורה; משל המדרש מדגיש את רצון הקב״ה לדור עם ישראל בכל מקום שהם הולכים."
+        "השיחה מציגה את חג השבועות כחתונה בשני מובנים קשורים: הקשר בין הקב״ה לישראל והקשר בין ישראל לתורה; משל המדרש מדגיש את רצון הקב״ה לדור עם ישראל בכל מקום שהם הולכים.",
+        "השיחה מסבירה שלאחר שלב קבלת התורה והעמל בה, על הלומד גם לחדש בתורה: היא מביאה את לשון הזוהר ״לאפשא לה״ ואת מאמר חז״ל על מה שתלמיד ותיק עתיד לחדש, ומדגישה שזהו חיוב המוטל על כל אחד מישראל. מן החידוש בתורה נמשכת גם פעולה של חידוש בעולם, שתכליתה עשיית דירה בתחתונים.",
+        "בקטע המסכם את הדיון בחג השבועות, השיחה קוראת לכל אחד לקבל על עצמו להוסיף בעמל התורה ולהתחיל את ההוספה מיד במוצאי החג, ולא לדחות אותה ליום המחרת."
       ],
       "response_proposition_locators": [
-        "AID 4304414, סעיף א, שורות 177–183."
+        "AID 4304414, סעיף א, שורות 177–183.",
+        "he.chabad.org AID 4304414, גוף השיחה, סעיף ב׳, שורות 192–197.",
+        "he.chabad.org AID 4304414, גוף השיחה, סעיף ד׳, שורות 206–209."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 4304414, סעיף א, שורות 177–183.",
+      "proposition_source_locator": "AID 4304414, סעיף א, שורות 177–183. | he.chabad.org AID 4304414, גוף השיחה, סעיף ב׳, שורות 192–197. | he.chabad.org AID 4304414, גוף השיחה, סעיף ד׳, שורות 206–209.",
       "evidence_family_id": "sicha-5724-shavuot-day-2-aid4304414",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נבדק סעיף א, שורות 177–183. לא נבדקו יתר חלקי השיחה.",
+      "verification_scope": "נבדק סעיף א, שורות 177–183. לא נבדקו יתר חלקי השיחה.\n\nBatch191: נפתח ונבדק גוף הפרסום העברי, סעיף ב׳, שורות 192–197 בלבד. התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה. ההקשר חלקי; הפרפרזה מתארת את המהלך הרעיוני של השיחה ואינה פוסקת כיצד יש לחדש הלכה למעשה.\n\nBatch191: נבדק סעיף ב׳, שורות 192–197. השיחה מביאה את לשון הזוהר ״לאפשא לה״ ואת מאמר חז״ל על חידושי תלמיד ותיק. ההקשר חלקי; התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה. \nBatch208: נפתח ונבדק גוף הפרסום העברי, סעיף ד׳, שורות 206–209. התמליל מסומן בלתי מוגה; ההקשר חלקי; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
       "documented_circumstances": "שיחת יום ב׳ דחג השבועות תשכ״ד; לפי התמליל נאמרה בסעודה לאחר נטילת ידיים.",
       "question_or_problem": "כיצד השיחה מתארת את שני ממדי ״חתונת״ חג השבועות?",
       "conditions_or_qualifications": [
         "הפרופוזיציה מוגבלת לפתיחת השיחה ולמשל המצוטט; אין להסיק מכך את מלוא הדיון בחג השבועות.",
-        "התמליל מסומן בלתי מוגה; לא הושווה להקלטה או לרשימות מקור."
+        "התמליל מסומן בלתי מוגה; לא הושווה להקלטה או לרשימות מקור.",
+        "הפרפרזה מוגבלת לסעיף ב׳, שורות 192–197; אין להסיק ממנה כללים הלכתיים מפורטים על חידוש בתורה.",
+        "התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+        "הפרפרזה מתארת את המהלך הרעיוני ואינה קובעת כללים הלכתיים מפורטים לחידוש בתורה.",
+        "התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+        "זו הנחיה המופיעה בשיחת חג השבועות; אין להציג אותה כפסק הלכה מפורט לכל מצב."
       ],
       "audience": "משתתפי סעודת חג השבועות; התמליל מציין נטילת ידיים לסעודה לפני פתיחת השיחה.",
       "primary_secondary_status": "Primary published Hebrew text witness; publisher transcript marked בלתי מוגה; not collated with audio, manuscript or original notes.",
@@ -956,8 +1169,42 @@
       "source_role": "public_sicha_transcript",
       "duplicate_or_parallel_relations": [],
       "identity_note": "זהות נפרדת לפי AID ותאריך הפרסום; מהדורות/הקלטות של אותו אירוע ישויכו לאותה Evidence Family ולא ייספרו כמשפחות עצמאיות.",
-      "content_enrichment_batch_id": "146",
-      "last_content_enriched_at": "2026-11-17"
+      "content_enrichment_batch_id": "208",
+      "last_content_enriched_at": "2026-11-20T07:53:06+02:00",
+      "response_proposition_metadata": [
+        {
+          "proposition_index": 1,
+          "batch_id": "191",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4304414, גוף השיחה, סעיף ב׳, שורות 192–197.",
+          "provenance": "BeitChabad.com / he.chabad.org AID 4304414; גוף הפרסום העברי נפתח ונבדק ישירות ב-19.11.2026.",
+          "verification_scope": "נבדק סעיף ב׳, שורות 192–197. השיחה מביאה את לשון הזוהר ״לאפשא לה״ ואת מאמר חז״ל על חידושי תלמיד ותיק. ההקשר חלקי; התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "הפרפרזה מתארת את המהלך הרעיוני ואינה קובעת כללים הלכתיים מפורטים לחידוש בתורה.",
+            "התמליל מסומן בלתי מוגה; לא נבדקו הקלטה, כתב יד או נוסח מוגה."
+          ],
+          "web_source_ref": "turn309483view0"
+        },
+        {
+          "proposition_index": 2,
+          "batch_id": "208",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4304414, גוף השיחה, סעיף ד׳, שורות 206–209.",
+          "provenance": "BeitChabad.com / he.chabad.org, AID 4304414; body lines 206–209 inspected 2026-11-20.",
+          "verification_scope": "נפתח ונבדק גוף הפרסום העברי, סעיף ד׳, שורות 206–209. התמליל מסומן בלתי מוגה; ההקשר חלקי; לא נבדקו הקלטה, כתב יד או נוסח מוגה.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "זו הנחיה המופיעה בשיחת חג השבועות; אין להציג אותה כפסק הלכה מפורט לכל מצב."
+          ],
+          "web_source_ref": "turn815873view1"
+        }
+      ],
+      "content_enrichment_batch_file": "data/items/content-research-batch-208-2026-11-20.json"
     },
     {
       "id": "sicha-5724-shlach-shabbat-aid4304420",
@@ -975,7 +1222,7 @@
       "language": "Hebrew",
       "original_language": "Hebrew",
       "context_status": "partial",
-      "summary_researcher": "הקטע מתאר את השבת כתנועה של עלייה ותענוג, את השפעתה על ימי החול ואת שייכותה לכל יהודי בכל זמן ומקום.",
+      "summary_researcher": "הקטע מתאר את השבת כתנועה של עלייה ותענוג, את השפעתה על ימי החול ואת שייכותה לכל יהודי בכל זמן ומקום. נוסף ביאור השיחה על קרבת העם למשה כמרכיב במדרגת המרגלים ובשליחותם.",
       "provenance": {
         "authorship_status": "המו״ל מייחס את הפרסום לרבי; העמוד מסמן את הטקסט כבלתי מוגה. לא נבדקו הקלטה, כתב יד או רשימות מקור.",
         "signature_status": null,
@@ -985,7 +1232,19 @@
         "editorial_scope": "נבדקו סעיפים א–ב, שורות 175–182. לא נבדק המשך השיחה.",
         "verification_status": "source_text_inspected",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4304420",
-        "accessed": "2026-11-17"
+        "accessed": "2026-11-17",
+        "additional_content_inspections": [
+          {
+            "batch_id": "221",
+            "source_locator": "he.chabad.org, AID 4304420, גוף השיחה, סעיפים ד׳–ה׳, שורות 203–206.",
+            "web_source_ref": "turn501487view0",
+            "inspected_at": "2026-11-20T23:30:00+02:00",
+            "scope": "נפתח ונבדק גוף השיחה בעברית ב-AID 4304420, שורות 194–206; התמצית נשענת על שורות 203–206 בלבד. לא נבדקו הקלטה, כתב יד או מקורות פרשניים נוספים.",
+            "limitations": [
+              "זהו הסבר חסידי לסיפור המרגלים בהקשר השיחה, ולא תיאור היסטורי עצמאי או הוראה כללית לכל מצב של קירבה למנהיג."
+            ]
+          }
+        ]
       },
       "witness": {
         "kind": "text",
@@ -1017,31 +1276,34 @@
       "collection": "Chabad.org / BeitChabad.com — Hebrew Torat Menachem / Sichos",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/4304420",
       "response_propositions": [
-        "הקטע מתאר את השבת בשני כיוונים משלימים — עליית הבריאה מלמטה למעלה ותענוג הנמשך מלמעלה למטה — ומציין שהשפעת השבת נמשכת גם לימי החול ושעניינה שייך לכל יהודי בכל זמן ומקום."
+        "הקטע מתאר את השבת בשני כיוונים משלימים — עליית הבריאה מלמטה למעלה ותענוג הנמשך מלמעלה למטה — ומציין שהשפעת השבת נמשכת גם לימי החול ושעניינה שייך לכל יהודי בכל זמן ומקום.",
+        "בביאור סיפור המרגלים, השיחה מתארת את קרבת בני ישראל למשה כמצב רוחני נעלה: אילו המרגלים היו נשארים באותה קרבה, היו יכולים למלא את שליחותם כראוי. הדברים מוצגים כקריאה פרשנית של השיחה לסיפור המקראי; הקטע אינו קובע כלל היסטורי או הלכתי כללי על הנהגה."
       ],
       "response_proposition_locators": [
-        "AID 4304420, סעיפים א–ב, שורות 175–182."
+        "AID 4304420, סעיפים א–ב, שורות 175–182.",
+        "he.chabad.org, AID 4304420, גוף השיחה, סעיפים ד׳–ה׳, שורות 203–206."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "AID 4304420, סעיפים א–ב, שורות 175–182.",
+      "proposition_source_locator": "he.chabad.org, AID 4304420, גוף השיחה, סעיפים ד׳–ה׳, שורות 203–206.",
       "evidence_family_id": "sicha-5724-shlach-shabbat-aid4304420",
       "parent_evidence_family_id": null,
       "translation_of_evidence_family_id": null,
       "has_content_evidence": true,
-      "verification_scope": "נבדקו סעיפים א–ב, שורות 175–182. לא נבדק המשך השיחה.",
+      "verification_scope": "נבדקו סעיפים א–ב, שורות 175–182. לא נבדק המשך השיחה. בנוסף: נפתח ונבדק גוף השיחה בעברית ב-AID 4304420, שורות 194–206; התמצית נשענת על שורות 203–206 בלבד. לא נבדקו הקלטה, כתב יד או מקורות פרשניים נוספים.",
       "documented_circumstances": "שיחה בשבת פרשת שלח, מברכים חודש תמוז, תשכ״ד.",
       "question_or_problem": "אילו ממדים של שבת מתוארים בפתיחת השיחה?",
       "conditions_or_qualifications": [
         "הפרופוזיציה מוגבלת לקטע הפותח; אין להסיק ממנו את מלוא הדיון בהלכות שבת.",
-        "התמליל מסומן בלתי מוגה; לא הושווה להקלטה או לרשימות מקור."
+        "התמליל מסומן בלתי מוגה; לא הושווה להקלטה או לרשימות מקור.",
+        "זהו הסבר חסידי לסיפור המרגלים בהקשר השיחה, ולא תיאור היסטורי עצמאי או הוראה כללית לכל מצב של קירבה למנהיג."
       ],
       "audience": "קוראי השיחה; בקטע שנבדק לא צוין קהל ייעודי.",
       "primary_secondary_status": "Primary published Hebrew text witness; publisher transcript marked בלתי מוגה; not collated with audio, manuscript or original notes.",
       "witness_type": "publisher_published_hebrew_unedited_sicha_transcript",
-      "witness_provenance": "Chabad.org / BeitChabad.com AID 4304420; selected body passages inspected at AID 4304420, סעיפים א–ב, שורות 175–182..",
+      "witness_provenance": "Chabad.org / BeitChabad.com AID 4304420; selected body passages inspected at AID 4304420, סעיפים א–ב, שורות 175–182.. נבדק גם he.chabad.org, AID 4304420, גוף השיחה, סעיפים ד׳–ה׳, שורות 203–206.; נפתח ונבדק גוף השיחה בעברית ב-AID 4304420, שורות 194–206; התמצית נשענת על שורות 203–206 בלבד. לא נבדקו הקלטה, כתב יד או מקורות פרשניים נוספים.",
       "independent_witness": true,
       "translation_status": "הטקסט העברי המקורי כפי שפורסם נבדק; לא נעשה שימוש בתרגום.",
       "rights_status": "copyrighted-link-only",
@@ -1052,8 +1314,69 @@
       "source_role": "public_sicha_transcript",
       "duplicate_or_parallel_relations": [],
       "identity_note": "זהות נפרדת לפי AID ותאריך הפרסום; מהדורות/הקלטות של אותו אירוע ישויכו לאותה Evidence Family ולא ייספרו כמשפחות עצמאיות.",
-      "content_enrichment_batch_id": "146",
-      "last_content_enriched_at": "2026-11-17"
+      "content_enrichment_batch_id": "221",
+      "last_content_enriched_at": "2026-11-20T23:30:00+02:00",
+      "response_proposition_metadata": [
+        {
+          "proposition_index": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org, AID 4304420, גוף השיחה, סעיפים ד׳–ה׳, שורות 203–206.",
+          "proposition_language": "Hebrew",
+          "batch_id": "221",
+          "web_source_ref": "turn501487view0",
+          "verification_scope": "נפתח ונבדק גוף השיחה בעברית ב-AID 4304420, שורות 194–206; התמצית נשענת על שורות 203–206 בלבד. לא נבדקו הקלטה, כתב יד או מקורות פרשניים נוספים.",
+          "context_status": "partial",
+          "conditions_or_qualifications": [
+            "זהו הסבר חסידי לסיפור המרגלים בהקשר השיחה, ולא תיאור היסטורי עצמאי או הוראה כללית לכל מצב של קירבה למנהיג."
+          ],
+          "provenance": {
+            "source_url": "https://he.chabad.org/library/article_cdo/aid/4304420",
+            "publisher": "Chabad.org",
+            "access_method": "web search/open",
+            "source_aid": "4304420",
+            "source_locator": "he.chabad.org, AID 4304420, גוף השיחה, סעיפים ד׳–ה׳, שורות 203–206.",
+            "inspected_at": "2026-11-20T23:30:00+02:00",
+            "scope": "נפתח ונבדק גוף השיחה בעברית ב-AID 4304420, שורות 194–206; התמצית נשענת על שורות 203–206 בלבד. לא נבדקו הקלטה, כתב יד או מקורות פרשניים נוספים.",
+            "limitations": [
+              "זהו הסבר חסידי לסיפור המרגלים בהקשר השיחה, ולא תיאור היסטורי עצמאי או הוראה כללית לכל מצב של קירבה למנהיג."
+            ]
+          }
+        }
+      ],
+      "response_proposition_provenance": [
+        {
+          "proposition_index": 1,
+          "proposition": "בביאור סיפור המרגלים, השיחה מתארת את קרבת בני ישראל למשה כמצב רוחני נעלה: אילו המרגלים היו נשארים באותה קרבה, היו יכולים למלא את שליחותם כראוי. הדברים מוצגים כקריאה פרשנית של השיחה לסיפור המקראי; הקטע אינו קובע כלל היסטורי או הלכתי כללי על הנהגה.",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verbatim": false,
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org, AID 4304420, גוף השיחה, סעיפים ד׳–ה׳, שורות 203–206.",
+          "source_aid": "4304420",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4304420",
+          "evidence_family_id": "sicha-5724-shlach-shabbat-aid4304420",
+          "original_language": "Hebrew",
+          "publisher": "Chabad.org",
+          "web_source_ref": "turn501487view0",
+          "inspected_at": "2026-11-20T23:30:00+02:00",
+          "verification_scope": "נפתח ונבדק גוף השיחה בעברית ב-AID 4304420, שורות 194–206; התמצית נשענת על שורות 203–206 בלבד. לא נבדקו הקלטה, כתב יד או מקורות פרשניים נוספים.",
+          "context_status": "partial",
+          "limitations": [
+            "זהו הסבר חסידי לסיפור המרגלים בהקשר השיחה, ולא תיאור היסטורי עצמאי או הוראה כללית לכל מצב של קירבה למנהיג."
+          ]
+        }
+      ],
+      "content_enrichment_history": [
+        {
+          "batch_id": "221",
+          "date": "2026-11-20",
+          "proposition_added": true,
+          "locator": "he.chabad.org, AID 4304420, גוף השיחה, סעיפים ד׳–ה׳, שורות 203–206.",
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected"
+        }
+      ]
     },
     {
       "id": "sicha-5724-08-nissan-shabbat-hagadol-aid4304396",
@@ -1151,5 +1474,6 @@
       "last_content_enriched_at": "2026-11-17"
     }
   ],
-  "existing_identities_enriched_count": 1
+  "existing_identities_enriched_count": 1,
+  "metrics_baseline_correction": "One answer-eligible source was removed from the historical chain after AID 2988877 was consolidated into its earliest canonical identity in batch100; all subsequent expected source boundaries are shifted by -1. Reconciliation must recalculate actual snapshots."
 }

@@ -117,3 +117,13 @@ For a query classified as **עקירת שיניים וחוות דעת**, a candi
 ## Deep researcher claim-source map
 
 Researcher mode returns both an evidence map and an explicit claim-source map. Each claim-source entry includes the claim number/text, supporting source numbers, Evidence Family IDs and proposition-level body locators. This is a navigation map for claim verification, not a substitute for checking the cited passage or its context.
+
+
+## Batch171 — claim-level synthesis: Torah, daily action and study depth
+
+A narrowly gated comparison is available when a question explicitly connects **בכל דרכיך דעהו**, acceptance of Torah before full comprehension, and the transition from **למיגרס** to **לעיונא**. It requires three distinct original-Hebrew Evidence Families (AIDs 2989147, 2989220 and 2989059), each with an inspected body proposition and its own locator. The engine emits three separately sourced claims and a system-authored synthesis labelled as neither a quotation nor an attribution to the Rebbe. The synthesis preserves the separate dates and contexts, partial-context limits, the distinction between acceptance-before-understanding and rejecting understanding, and the non-halakhic scope of the everyday-action passage. Researcher mode exposes the three-family evidence map and claim-level source locators; translations are not counted as independent witnesses.
+
+
+## Batch221 — Sukkot collective gathering, inner sanctuary and daily service
+
+A narrow cross-family route is available for questions that connect Sukkot, Hakhel, the inner-sanctuary image and weekday service. It requires three distinct Hebrew Sicha Evidence Families (AIDs 4385713, 2989019 and 2989018), each with a source-grounded non-verbatim proposition, exact body locator, provenance and context limits. The three claims remain separate: Hakhel and the gathering of all Israel; the “small sanctuary” saying, whose internal attribution to the Previous Rebbe in the name of the Rashab must be preserved; and the transition from festival elevation to weekday work. The synthesis is system-authored, not a Rebbe quotation or a single unified instruction. Regular mode returns claim-local citations; researcher mode returns a deep evidence map and claim-source map. All three transcripts are unedited and only the listed body passages were inspected.

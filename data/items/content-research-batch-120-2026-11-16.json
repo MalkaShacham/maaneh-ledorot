@@ -726,16 +726,18 @@
       "context_status": "partial",
       "has_content_evidence": true,
       "response_propositions": [
-        "הערך מתאר היעדר עבודה בתפילה כתחילת תהליך של התרופפות: תחושת היובש והקור גוברת, קיום מצוות מתוך הרגל נעשה כבד, מופיעים חיפזון ואובדן טעם בלימוד, ובהמשך נפגעת גם היכולת להשפיע על הזולת. זהו רצף רעיוני שבערך ולא אבחון קליני."
+        "הערך מתאר היעדר עבודה בתפילה כתחילת תהליך של התרופפות: תחושת היובש והקור גוברת, קיום מצוות מתוך הרגל נעשה כבד, מופיעים חיפזון ואובדן טעם בלימוד, ובהמשך נפגעת גם היכולת להשפיע על הזולת. זהו רצף רעיוני שבערך ולא אבחון קליני.",
+        "במדור העריכתי האנגלי ״Living as a Chassid״ מובא משל המיוחס לרבי: אדם הקרוב ליעדו אך נעצר מושווה לאדם הרחוק יותר שממשיך להתקדם; לפי ההערה, ההתקדמות העקבית עשויה להביא את השני ליעד תחילה. זהו תוכן של שכבת העריכה במהדורה האנגלית, לא גוף ערך היום יום המקורי ולא עד עצמאי; הייחוס לרבי הוא כפי שמדווחת המהדורה ולא אומת מול מקור נוסף."
       ],
       "response_proposition_locators": [
-        "he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173."
+        "he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.",
+        "Chabad.org/TheRebbe.org AID 3316320, English publisher editorial section “Living as a Chassid”, lines 251–254; secondary editorial layer, not the original Hayom Yom entry."
       ],
       "proposition_language": "Hebrew",
       "proposition_origin": "source_grounded_paraphrase",
       "proposition_verbatim": false,
       "proposition_verification": "source_text_inspected",
-      "proposition_source_locator": "he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.",
+      "proposition_source_locator": "he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173. | Chabad.org/TheRebbe.org AID 3316320, English publisher editorial section “Living as a Chassid”, lines 251–254; secondary editorial layer, not the original Hayom Yom entry.",
       "evidence_family_id": "hayom-yom-528732-5703",
       "parent_evidence_family_id": null,
       "independent_witness": true,
@@ -745,13 +747,23 @@
       "conditions_or_qualifications": [
         "נבדק רק הפרסום המתוארך המסוים; לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית.",
         "כאשר הערך מביא מסורת, חזיון או דברים המיוחסים לדמות קודמת, הפרפרזה שומרת על שרשרת הייחוס ואינה מציגה אותם כעדות עצמאית או כאמירה ישירה של הרבי.",
-        "הפרפרזה נכתבה בעברית על בסיס גוף ערך ביידיש/עברית-יידיש; אין לראות בה עד תרגומי עצמאי."
+        "הפרפרזה נכתבה בעברית על בסיס גוף ערך ביידיש/עברית-יידיש; אין לראות בה עד תרגומי עצמאי.",
+        "הפרופוזיציה הנוספת נשענת על מדור עריכתי באנגלית בעמוד AID 3316320, לא על גוף הערך המקורי; ההצגה נגזרת מאותה Evidence Family ואינה עד עצמאי. הייחוס לרבי הוא כפי שמדווחת המהדורה ולא אומת מול מקור נוסף."
       ],
       "audience": "קוראי ספר היום יום; לא צוין קהל יעד נוסף.",
       "primary_secondary_status": "עד ראשוני לפריט כפי שפורסם באנתולוגיה מתוארכת; אין בכך אימות של אוטוגרף או של כתב־יד, והפרפרזה אינה עד עצמאי נוסף.",
       "witness_type": "published_yiddish_hayom_yom_entry",
-      "relations": [],
-      "identity_note": "זהות פריט נפרדת לערך כ״ג אייר ה׳תש״ג; כל הדפסה, סריקה או תרגום של אותו ערך ייקשרו ל-Evidence Family hayom-yom-528732-5703. תרגום אינו עד עצמאי.",
+      "relations": [
+        {
+          "relation_type": "same_evidence_family_derived_presentation",
+          "target_aid": 3316320,
+          "target_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316320/jewish/23-Iyar.htm",
+          "evidence_family_id": "hayom-yom-528732-5703",
+          "independent_witness": false,
+          "layer": "publisher_editorial_commentary"
+        }
+      ],
+      "identity_note": "זהות פריט נפרדת לערך כ״ג אייר ה׳תש״ג; כל הדפסה, סריקה או תרגום של אותו ערך ייקשרו ל-Evidence Family hayom-yom-528732-5703. תרגום אינו עד עצמאי. ההצגה האנגלית AID 3316320 היא הצגה נגזרת של אותו ערך; ההערה העריכתית שנבדקה אינה עד עצמאי.",
       "witness": {
         "kind": "published dated anthology entry",
         "state": "publisher body inspected",
@@ -760,7 +772,7 @@
         "language": "Yiddish",
         "scope": "he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.",
         "complete_partial": "partial_published_entry",
-        "notes": "נבדק גוף הערך המסוים בלבד; לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית. הפרפרזה אינה עד תרגומי עצמאי."
+        "notes": "נבדק גוף הערך המסוים בלבד; לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית. הפרפרזה אינה עד תרגומי עצמאי. AID 3316320 הוא הצגה אנגלית נגזרת מאותה משפחת ראיות; שכבת העריכה אינה עד עצמאי."
       },
       "provenance": {
         "authorship_status": "העמוד מציג ערך מתוך האנתולוגיה היום יום. הפרפרזה מתארת את הערך כפי שפורסם; אין להסיק שכל אמירה בו נאמרה ישירות בידי הרבי. ייחוסים מפורשים לדמויות אחרות, לבני משפחה או למסורת קודמת נשמרים.",
@@ -768,15 +780,25 @@
         "source_witness": "BeitChabad.com / he.chabad.org, AID 528732, היום יום, כ״ג אייר ה׳תש״ג; he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.",
         "transmission_type": "תצוגה דיגיטלית של ערך אנתולוגי מתוארך בשפת המקור (Yiddish).",
         "textual_status": "he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.",
-        "editorial_scope": "פרפרזות מחקריות לא־מילוליות ומיקומי מקור ברמת פרופוזיציה; לא הועתק טקסט מוגן במלואו.",
+        "editorial_scope": "פרפרזות מחקריות לא־מילוליות ומיקומי מקור ברמת פרופוזיציה; לא הועתק טקסט מוגן במלואו. פרופוזיציה נוספת אחת נשענת על שכבת העריכה האנגלית AID 3316320, מסומנת כנגזרת ולא כעד עצמאי.",
         "verification_status": "גוף הערך הציבורי נפתח ונבדק ביום 16.11.2026; ההקשר חלקי.",
         "source_url": "https://he.chabad.org/library/article_cdo/aid/528732",
         "accessed": "2026-11-16T10:41:57+02:00",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי המקורי ב-he.chabad.org AID 528732 ביום 16.11.2026. נבדק רק הערך היומי המתוארך המסוים; locator: he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.. לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים עצמאיים המאמתים מסורות, מנהגים או זיכרונות היסטוריים. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף הערך בשפת המקור. ייחוסים פנימיים לדמויות אחרות ולמסורות קודמות נשמרים ואינם הופכים לאמירה ישירה של הרבי. לא הועתק טקסט מוגן במלואו. ההקשר נשאר חלקי."
+        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי המקורי ב-he.chabad.org AID 528732 ביום 16.11.2026. נבדק רק הערך היומי המתוארך המסוים; locator: he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.. לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים עצמאיים המאמתים מסורות, מנהגים או זיכרונות היסטוריים. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף הערך בשפת המקור. ייחוסים פנימיים לדמויות אחרות ולמסורות קודמות נשמרים ואינם הופכים לאמירה ישירה של הרבי. לא הועתק טקסט מוגן במלואו. ההקשר נשאר חלקי. נפתח גם AID 3316320; נבדק רק מדור העריכה באנגלית בשורות 251–254, שאינו גוף הערך המקורי ואינו עד עצמאי.",
+        "related_presentations": [
+          {
+            "aid": 3316320,
+            "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316320/jewish/23-Iyar.htm",
+            "evidence_family_id": "hayom-yom-528732-5703",
+            "independent_witness": false,
+            "layer": "publisher_editorial_commentary",
+            "locator": "Chabad.org/TheRebbe.org AID 3316320, English publisher editorial section “Living as a Chassid”, lines 251–254; secondary editorial layer, not the original Hayom Yom entry."
+          }
+        ]
       },
-      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 528732, היום יום, כ״ג אייר ה׳תש״ג; he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי המקורי ב-he.chabad.org AID 528732 ביום 16.11.2026. נבדק רק הערך היומי המתוארך המסוים; locator: he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.. לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים עצמאיים המאמתים מסורות, מנהגים או זיכרונות היסטוריים. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף הערך בשפת המקור. ייחוסים פנימיים לדמויות אחרות ולמסורות קודמות נשמרים ואינם הופכים לאמירה ישירה של הרבי. לא הועתק טקסט מוגן במלואו. ההקשר נשאר חלקי.",
-      "source_witness": "BeitChabad.com / he.chabad.org, AID 528732, היום יום, כ״ג אייר ה׳תש״ג; he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.",
+      "witness_provenance": "BeitChabad.com / he.chabad.org, AID 528732, היום יום, כ״ג אייר ה׳תש״ג; he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173. Related derived editorial presentation: AID 3316320, not an independent witness.",
+      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי המקורי ב-he.chabad.org AID 528732 ביום 16.11.2026. נבדק רק הערך היומי המתוארך המסוים; locator: he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.. לא נבדקו כתב־יד, אוטוגרף, מהדורה ביקורתית או עדים עצמאיים המאמתים מסורות, מנהגים או זיכרונות היסטוריים. הפרופוזיציות הן פרפרזות מחקריות לא־מילוליות של גוף הערך בשפת המקור. ייחוסים פנימיים לדמויות אחרות ולמסורות קודמות נשמרים ואינם הופכים לאמירה ישירה של הרבי. לא הועתק טקסט מוגן במלואו. ההקשר נשאר חלקי. נפתח גם AID 3316320; נבדק רק מדור העריכה באנגלית בשורות 251–254, שאינו גוף הערך המקורי ואינו עד עצמאי.",
+      "source_witness": "BeitChabad.com / he.chabad.org, AID 528732, היום יום, כ״ג אייר ה׳תש״ג; he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173. Related derived editorial presentation: AID 3316320, not an independent witness.",
       "source_url": "https://he.chabad.org/library/article_cdo/aid/528732",
       "access": {
         "access_level": "open",
@@ -802,7 +824,27 @@
       "epistemic_level": 1,
       "notes": "גוף הערך המקורי נפתח ונבדק ב-16.11.2026. Locators ברמת הפרופוזיציה: he.chabad.org AID 528732, גוף הערך המשולב עברית/יידיש, שורה 173.. לא נגזר תוכן מכותרת או ממפתח; לא הועתק טקסט מוגן במלואו. הפרפרזה בעברית היא שכבת מחקר בלבד ואינה עד תרגומי עצמאי.",
       "canonical_file": "data/items/content-research-batch-120-2026-11-16.json",
-      "accessed": "2026-11-16T10:41:57+02:00"
+      "accessed": "2026-11-16T10:41:57+02:00",
+      "response_proposition_provenance": [
+        {
+          "source_aid": 528732,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528732",
+          "original_language": "Yiddish",
+          "presentation_language": "Yiddish",
+          "independent_witness": true,
+          "layer": "original_language_entry"
+        },
+        {
+          "source_aid": 3316320,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/3316320/jewish/23-Iyar.htm",
+          "original_language": "Yiddish",
+          "presentation_language": "English",
+          "independent_witness": false,
+          "evidence_family_id": "hayom-yom-528732-5703",
+          "layer": "publisher_editorial_commentary",
+          "attribution_status": "publisher_attributed_to_Rebbe_not_independently_verified"
+        }
+      ]
     },
     {
       "id": "hayom-yom-528733-5703",
@@ -2316,7 +2358,10 @@
       },
       "epistemic_level": 1,
       "notes": "גוף התרגום האנגלי נפתח ונבדק ב-16.11.2026. Locator: Chabad.org AID 3906812, גוף התרגום האנגלי, שורות 272–287.. המקור בשפתו המקורית לא נבדק; התרגום אינו עד עצמאי. לא נגזר תוכן מכותרת בלבד ולא הועתק טקסט מוגן במלואו.",
-      "canonical_file": "data/items/content-research-batch-120-2026-11-16.json"
+      "canonical_file": "data/items/content-research-batch-120-2026-11-16.json",
+      "source_unit_key": "aid3906812-letter-1051-15-sivan-5711",
+      "source_unit_locator": "Chabad.org AID 3906812, Letter No. 1051, dated 15 Sivan 5711; English publisher translation, paragraphs 272–287.",
+      "document_unit_label": "Letter No. 1051 — 15 Sivan 5711"
     },
     {
       "id": "igrot-letter-5703-13-nissan-71-aid5920863",

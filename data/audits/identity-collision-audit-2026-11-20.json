@@ -1,0 +1,2751 @@
+{
+  "schema": "identity-collision-audit-v1",
+  "generated_at": "2026-11-20T17:30:00+02:00",
+  "source_workflow_run_id": 44766924596,
+  "source_head_sha": "43634b769efd1787fac8b3488814816e8433ca25",
+  "collision_group_count": 41,
+  "status": "pending_manual_event_level_review",
+  "counting_warning": "The 41 groups are AID/URL identity collisions found by the full-index reconciliation audit. They are not all automatically proven to be the same event-level Evidence Family. Review source bodies and event scope before merging families; translations and duplicate presentations must not count as independent witnesses.",
+  "resolution_policy": [
+    "Same AID and same URL for the same document: preserve one canonical identity and one Evidence Family; move nonredundant inspected propositions into that identity in place.",
+    "Translations and later editions of the same source: join the original Evidence Family and set independent_witness=false; do not count as independent evidence.",
+    "If one AID page contains genuinely distinct events, keep event-level Evidence Families only when body evidence and locators support the distinction; do not infer from titles.",
+    "A scanned key or index entry verifies identity/location only, not content."
+  ],
+  "groups": [
+    {
+      "batch_id": "2026-11-12-content-batch-055",
+      "identity_key": "aid:2513564",
+      "aid": 2513564,
+      "files": [
+        "data/items/content-research-batch-055-2026-11-12.json",
+        "data/items/content-research-batch-179-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "yechidus-eve-17-shevat-5745",
+        "yechidus-5745-eve-17-shevat-aid2513564"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-055-2026-11-12.json",
+          "id": "sie-talk-yechidus-eve-17-shevat-5745-aid-2513564",
+          "aid": 2513564,
+          "title": "Yechidus, Eve of 17th of Shevat, 5745 (1985)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2513564/jewish/Yechidus-Eve-of-17th-of-Shevat-5745-1985.htm",
+          "evidence_family_id": "yechidus-eve-17-shevat-5745",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "English",
+          "status": "Verified",
+          "has_content_evidence": false,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org aid 2513564, visible body lines 246–255; Chabad.org/TheRebbe.org aid 2513564, visible body lines 256–258",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-179-2026-11-19.json",
+          "id": "yechidus-5745-eve-17-shevat-aid2513564",
+          "aid": 2513564,
+          "title": "Yechidus, Eve of 17th of Shevat, 5745 (1985)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2513564/jewish/Yechidus-Eve-of-17th-of-Shevat-5745-1985.htm",
+          "evidence_family_id": "yechidus-5745-eve-17-shevat-aid2513564",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "yechidus-5745-eve-17-shevat-aid2513564",
+          "witness_type": "published_english_translation",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2513564, גוף הפרסום, סעיפים 1–2, שורות 246–252.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "2026-11-12-content-batch-057",
+      "identity_key": "aid:5357571",
+      "aid": 5357571,
+      "files": [
+        "data/items/content-research-batch-057-2026-11-12.json",
+        "data/items/content-research-batch-182-2026-11-19.json",
+        "data/items/content-research-batch-212-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+        "igrot-5720-12-tishrei-aid5357571",
+        "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-057-2026-11-12.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש - מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357571, body lines 244–257; selected visible Hebrew body passages inspected on 2026-11-12.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5720-12-tishrei-aid5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב, י״ב תשרי ה׳תש״כ",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-5720-12-tishrei-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף המכתב, שורות 244–251.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-212-2026-11-20.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_correspondence_text",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף האיגרת, שורות 246–255.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "068",
+      "identity_key": "url:https://www.chabadlibrary.org/books/1200710552",
+      "aid": null,
+      "files": [
+        "data/items/content-research-batch-068-2026-11-13.json",
+        "data/items/content-research-batch-088-2026-11-15.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+        "igrot-kodesh-v27-y-tkmd-aid1200710552"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-068-2026-11-13.json",
+          "id": "chabad-library-letter-1200710552",
+          "aid": null,
+          "title": "אגרות קודש – כרך כז – י'תקמד",
+          "source_url": "https://www.chabadlibrary.org/books/1200710552",
+          "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "witness_type": "published_translation_excerpt",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "ספריית ליובאוויטש /books/1200710552, מכתב י'תקמד; קטע גוף גלוי בתוצאת החיפוש, מן הסימון [תרגום חפשי] ועד הפסקה על שיעורי חת״ת; נבדק 2026-11-13.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabadlibrary-1200710552",
+          "aid": null,
+          "title": "איגרת י׳תקמד — קביעות בתורה והשפעה על הסביבה",
+          "source_url": "https://www.chabadlibrary.org/books/1200710552",
+          "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "witness_type": "translation_alias",
+          "language": "Hebrew",
+          "status": "Linked",
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": "not_independently_promoted",
+          "proposition_source_locator": null,
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabad-library-letter-1200710552",
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabadlibrary.org/books/1200710552",
+          "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": null,
+          "proposition_source_locator": null,
+          "context_status": null
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabadlibrary-1200710552",
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabadlibrary.org/books/1200710552",
+          "evidence_family_id": "igrot-kodesh-v27-y-tkmd-aid1200710552",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": null,
+          "proposition_source_locator": null,
+          "context_status": null
+        }
+      ]
+    },
+    {
+      "batch_id": "068",
+      "identity_key": "url:https://www.chabadlibrary.org/books/1200710429",
+      "aid": null,
+      "files": [
+        "data/items/content-research-batch-068-2026-11-13.json",
+        "data/items/content-research-batch-088-2026-11-15.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+        "igrot-kodesh-v27-y-tka-aid1200710429"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-068-2026-11-13.json",
+          "id": "chabad-library-letter-1200710429",
+          "aid": null,
+          "title": "אגרות קודש – כרך כז – י'תכא",
+          "source_url": "https://www.chabadlibrary.org/books/1200710429",
+          "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_transcription_completed_from_photo",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "ספריית ליובאוויטש /books/1200710429, מכתב י'תכא; הקטע הגלוי על המשך הפרסומים, הפצת התורה ועידוד המצוות, ולאחריו ההתייחסות לימי הגאולה י״ב–י״ג תמוז; נבדק 2026-11-13.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabadlibrary-1200710429",
+          "aid": null,
+          "title": "איגרת י׳תכא — פרסום והפצת תורה",
+          "source_url": "https://www.chabadlibrary.org/books/1200710429",
+          "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "duplicate_alias_completed_from_photo",
+          "language": "Hebrew",
+          "status": "Linked",
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": "not_independently_promoted",
+          "proposition_source_locator": null,
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabad-library-letter-1200710429",
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabadlibrary.org/books/1200710429",
+          "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": null,
+          "proposition_source_locator": null,
+          "context_status": null
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabadlibrary-1200710429",
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabadlibrary.org/books/1200710429",
+          "evidence_family_id": "igrot-kodesh-v27-y-tka-aid1200710429",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": null,
+          "proposition_source_locator": null,
+          "context_status": null
+        }
+      ]
+    },
+    {
+      "batch_id": "069",
+      "identity_key": "aid:2514917",
+      "aid": 2514917,
+      "files": [
+        "data/items/content-research-batch-069-2026-11-13.json",
+        "data/items/sie-translated-talks-5744-volume21-2026-11-12-051.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5744-23-sivan-korach-2514917",
+        "shabbos-korach-23-sivan-5744"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-069-2026-11-13.json",
+          "id": "chabad-sicha-2514917",
+          "aid": 2514917,
+          "title": "Shabbos Parshas Korach, 23rd Day of Sivan 5744 (1984)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2514917/jewish/Shabbos-Parshas-Korach-23rd-Day-of-Sivan-5744-1984.htm",
+          "evidence_family_id": "sicha-5744-23-sivan-korach-2514917",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "sicha-5744-23-sivan-korach-2514917",
+          "witness_type": "published_english_rendering",
+          "language": "English",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 2514917, lines 255–258.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/sie-translated-talks-5744-volume21-2026-11-12-051.json",
+          "id": "sie-talk-korach-23-sivan-5744-aid-2514917",
+          "aid": 2514917,
+          "title": "Shabbos Parshas Korach, 23rd Day of Sivan, 5744 (1984)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2514917/jewish/Shabbos-Parshas-Korach-23rd-Day-of-Sivan-5744-1984.htm",
+          "evidence_family_id": "shabbos-korach-23-sivan-5744",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "English",
+          "status": "Verified",
+          "has_content_evidence": false,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org aid 2514917, visible body lines 255–260; Chabad.org/TheRebbe.org aid 2514917, visible body lines 261–266",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "2026-11-13-content-batch-075",
+      "identity_key": "aid:5357571",
+      "aid": 5357571,
+      "files": [
+        "data/items/content-research-batch-057-2026-11-12.json",
+        "data/items/content-research-batch-182-2026-11-19.json",
+        "data/items/content-research-batch-212-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+        "igrot-5720-12-tishrei-aid5357571",
+        "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-057-2026-11-12.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש - מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357571, body lines 244–257; selected visible Hebrew body passages inspected on 2026-11-12.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5720-12-tishrei-aid5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב, י״ב תשרי ה׳תש״כ",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-5720-12-tishrei-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף המכתב, שורות 244–251.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-212-2026-11-20.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_correspondence_text",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף האיגרת, שורות 246–255.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "2026-11-13-content-batch-077",
+      "identity_key": "aid:5357571",
+      "aid": 5357571,
+      "files": [
+        "data/items/content-research-batch-057-2026-11-12.json",
+        "data/items/content-research-batch-182-2026-11-19.json",
+        "data/items/content-research-batch-212-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+        "igrot-5720-12-tishrei-aid5357571",
+        "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-057-2026-11-12.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש - מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357571, body lines 244–257; selected visible Hebrew body passages inspected on 2026-11-12.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5720-12-tishrei-aid5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב, י״ב תשרי ה׳תש״כ",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-5720-12-tishrei-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף המכתב, שורות 244–251.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-212-2026-11-20.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_correspondence_text",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף האיגרת, שורות 246–255.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "079",
+      "identity_key": "aid:5357571",
+      "aid": 5357571,
+      "files": [
+        "data/items/content-research-batch-057-2026-11-12.json",
+        "data/items/content-research-batch-182-2026-11-19.json",
+        "data/items/content-research-batch-212-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+        "igrot-5720-12-tishrei-aid5357571",
+        "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-057-2026-11-12.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש - מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357571, body lines 244–257; selected visible Hebrew body passages inspected on 2026-11-12.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5720-12-tishrei-aid5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב, י״ב תשרי ה׳תש״כ",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-5720-12-tishrei-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף המכתב, שורות 244–251.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-212-2026-11-20.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_correspondence_text",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף האיגרת, שורות 246–255.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "083",
+      "identity_key": "aid:5413490",
+      "aid": 5413490,
+      "files": [
+        "data/items/content-research-batch-083-2026-11-14.json",
+        "data/items/content-research-batch-182-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5724-15-tevet-letter-chtashmab-aid5413490",
+        "igrot-5724-15-tevet-aid5413490"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-083-2026-11-14.json",
+          "id": "chabad-letter-5413490",
+          "aid": 5413490,
+          "title": "אגרות קודש — מכתב ח׳תשמב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413490/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5724-15-tevet-letter-chtashmab-aid5413490",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_text",
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5413490, שורות 244–269, גוף המענה 250–266 והערות 269.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5724-15-tevet-aid5413490",
+          "aid": 5413490,
+          "title": "אגרות קודש — מכתב ח׳תשמב, ט״ו טבת ה׳תשכ״ד",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413490/jewish/page.htm",
+          "evidence_family_id": "igrot-5724-15-tevet-aid5413490",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5413490, גוף המכתב, שורות 250–269.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "085",
+      "identity_key": "aid:5357009",
+      "aid": 5357009,
+      "files": [
+        "data/items/content-research-batch-085-2026-11-14.json",
+        "data/items/content-research-batch-182-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5721-24-iyar-z-tarmah-aid5357009",
+        "igrot-5721-24-iyar-aid5357009"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-085-2026-11-14.json",
+          "id": "chabad-letter-5357009",
+          "aid": 5357009,
+          "title": "אגרות קודש - מכתב ז’תרמה",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357009/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5721-24-iyar-z-tarmah-aid5357009",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_text",
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5357009, שורות 244–261, גוף המכתב 250–261.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5721-24-iyar-aid5357009",
+          "aid": 5357009,
+          "title": "אגרות קודש — מכתב ז׳תרמה, כ״ד אייר ה׳תשכ״א",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357009/jewish/page.htm",
+          "evidence_family_id": "igrot-5721-24-iyar-aid5357009",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357009, גוף המכתב, שורות 250–257.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "088",
+      "identity_key": "url:https://www.chabadlibrary.org/books/1200710429",
+      "aid": null,
+      "files": [
+        "data/items/content-research-batch-068-2026-11-13.json",
+        "data/items/content-research-batch-088-2026-11-15.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+        "igrot-kodesh-v27-y-tka-aid1200710429"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-068-2026-11-13.json",
+          "id": "chabad-library-letter-1200710429",
+          "aid": null,
+          "title": "אגרות קודש – כרך כז – י'תכא",
+          "source_url": "https://www.chabadlibrary.org/books/1200710429",
+          "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_transcription_completed_from_photo",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "ספריית ליובאוויטש /books/1200710429, מכתב י'תכא; הקטע הגלוי על המשך הפרסומים, הפצת התורה ועידוד המצוות, ולאחריו ההתייחסות לימי הגאולה י״ב–י״ג תמוז; נבדק 2026-11-13.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabadlibrary-1200710429",
+          "aid": null,
+          "title": "איגרת י׳תכא — פרסום והפצת תורה",
+          "source_url": "https://www.chabadlibrary.org/books/1200710429",
+          "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "duplicate_alias_completed_from_photo",
+          "language": "Hebrew",
+          "status": "Linked",
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": "not_independently_promoted",
+          "proposition_source_locator": null,
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabad-library-letter-1200710429",
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabadlibrary.org/books/1200710429",
+          "evidence_family_id": "igrot-letter-5732-3-tammuz-yaakov-rosenthal-yitkha",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": null,
+          "proposition_source_locator": null,
+          "context_status": null
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabadlibrary-1200710429",
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabadlibrary.org/books/1200710429",
+          "evidence_family_id": "igrot-kodesh-v27-y-tka-aid1200710429",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": null,
+          "proposition_source_locator": null,
+          "context_status": null
+        }
+      ]
+    },
+    {
+      "batch_id": "088",
+      "identity_key": "url:https://www.chabadlibrary.org/books/1200710552",
+      "aid": null,
+      "files": [
+        "data/items/content-research-batch-068-2026-11-13.json",
+        "data/items/content-research-batch-088-2026-11-15.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+        "igrot-kodesh-v27-y-tkmd-aid1200710552"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-068-2026-11-13.json",
+          "id": "chabad-library-letter-1200710552",
+          "aid": null,
+          "title": "אגרות קודש – כרך כז – י'תקמד",
+          "source_url": "https://www.chabadlibrary.org/books/1200710552",
+          "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "witness_type": "published_translation_excerpt",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "ספריית ליובאוויטש /books/1200710552, מכתב י'תקמד; קטע גוף גלוי בתוצאת החיפוש, מן הסימון [תרגום חפשי] ועד הפסקה על שיעורי חת״ת; נבדק 2026-11-13.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabadlibrary-1200710552",
+          "aid": null,
+          "title": "איגרת י׳תקמד — קביעות בתורה והשפעה על הסביבה",
+          "source_url": "https://www.chabadlibrary.org/books/1200710552",
+          "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "witness_type": "translation_alias",
+          "language": "Hebrew",
+          "status": "Linked",
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": "not_independently_promoted",
+          "proposition_source_locator": null,
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabad-library-letter-1200710552",
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabadlibrary.org/books/1200710552",
+          "evidence_family_id": "igrot-letter-5732-5-nissan-shimon-russian-letter-yitkama",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": null,
+          "proposition_source_locator": null,
+          "context_status": null
+        },
+        {
+          "file": "data/items/content-research-batch-088-2026-11-15.json",
+          "id": "chabadlibrary-1200710552",
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabadlibrary.org/books/1200710552",
+          "evidence_family_id": "igrot-kodesh-v27-y-tkmd-aid1200710552",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": null,
+          "proposition_verification": null,
+          "proposition_source_locator": null,
+          "context_status": null
+        }
+      ]
+    },
+    {
+      "batch_id": "100",
+      "identity_key": "aid:4280029",
+      "aid": 4280029,
+      "files": [
+        "data/items/content-research-batch-100-2026-11-15.json",
+        "data/items/content-research-batch-193-2026-11-19.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5721-yud-tes-kislev-aid4280029",
+        "sicha-5721-19-kislev-vayeshev-aid4280029",
+        "sicha-5721-19-kislev-yud-tes-sicha-aid4280029"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-100-2026-11-15.json",
+          "id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פרשת וישב, י״ט כסלו ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ד׳, שורות 202–211.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-193-2026-11-19.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-vayeshev-aid4280029",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ח׳, שורות 248–259.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-yud-tes-sicha-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4280029, גוף השיחה, סעיפים א׳–ב׳, שורות 177–189.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "101",
+      "identity_key": "aid:2989348",
+      "aid": 2989348,
+      "files": [
+        "data/items/content-research-batch-101-2026-11-15.json",
+        "data/items/content-research-batch-142-2026-11-17.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5711-yud-tes-kislev-aid2989348",
+        "sicha-5711-19-kislev-yud-tes-aid2989348"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-101-2026-11-15.json",
+          "id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989348, גוף השיחה שורות 174–181.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-142-2026-11-17.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י\"ט כסלו, ה'תשי\"א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, שורות 183–190. | AID 2989348, שורות 203–208. | Chabad.org AID 2989348, גוף השיחה, סעיפים יא–יג, שורות 248–265.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-19-kislev-yud-tes-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, גוף השיחה, סעיף א׳, שורות 174–178.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "102",
+      "identity_key": "aid:2989237",
+      "aid": 2989237,
+      "files": [
+        "data/items/content-research-batch-102-2026-11-15.json",
+        "data/items/content-research-batch-172-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5722-26-sivan-aid2989237",
+        "sicha-5722-26-sivan-shelach-aid2989237"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-102-2026-11-15.json",
+          "id": "sicha-5722-26-sivan-aid2989237",
+          "aid": 2989237,
+          "title": "שיחת יום ה׳ פ׳ שלח, כ״ו סיון, ה׳תשכ״ב — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989237",
+          "evidence_family_id": "sicha-5722-26-sivan-aid2989237",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989237, גוף השיחה שורות 167–168.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-172-2026-11-19.json",
+          "id": "chabad-sicha-2989237",
+          "aid": 2989237,
+          "title": "שיחת יום ה׳ פ׳ שלח, כ״ו סיון, ה׳תשכ״ב",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989237",
+          "evidence_family_id": "sicha-5722-26-sivan-shelach-aid2989237",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989237, גוף השיחה, סעיפים א׳–ג׳, שורות 176–186.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "102",
+      "identity_key": "aid:4385757",
+      "aid": 4385757,
+      "files": [
+        "data/items/content-research-batch-102-2026-11-15.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5727-20-kislev-aid4385757",
+        "sicha-5727-20-kislev-vayeshev-aid4385757"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-102-2026-11-15.json",
+          "id": "sicha-5727-20-kislev-aid4385757",
+          "aid": 4385757,
+          "title": "שיחת ש״פ וישב, כ׳ כסלו, ה׳תשכ״ז — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4385757",
+          "evidence_family_id": "sicha-5727-20-kislev-aid4385757",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4385757, גוף השיחה שורות 166–168.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-4385757",
+          "aid": 4385757,
+          "title": "שיחת ש״פ וישב, כ״ף כסלו, ה׳תשכ״ז",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4385757",
+          "evidence_family_id": "sicha-5727-20-kislev-vayeshev-aid4385757",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4385757, גוף השיחה, סעיפים א׳–ב׳, שורות 175–185.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "130",
+      "identity_key": "aid:2277337",
+      "aid": 2277337,
+      "files": [
+        "data/items/content-research-batch-130-2026-11-17.json",
+        "data/items/content-research-batch-195-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5710-6-tishrei-yehudah-chitrik",
+        "igrot-letter-5710-6-tishrei-torah-study-time-aid2277337"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-130-2026-11-17.json",
+          "id": "chabad-letter-2277337-5710-6-tishrei",
+          "aid": 2277337,
+          "title": "Torah study as being both above, and yet relating to, the limits of time — Letter No. 531",
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277337/jewish/Torah-study-as-being-both-above-and-yet-relating-to-the-limits-of-time.htm",
+          "evidence_family_id": "igrot-letter-5710-6-tishrei-yehudah-chitrik",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "igrot-letter-5710-6-tishrei-yehudah-chitrik",
+          "witness_type": "published_english_translation_of_correspondence",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 2277337, English translation of Letter No. 531, lines 278–283. Chabad.org AID 2277337, English translation of Letter No. 531, lines 282–285.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-195-2026-11-19.json",
+          "id": null,
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277337/jewish/Torah-study-as-being-both-above-and-yet-relating-to-the-limits-of-time.htm",
+          "evidence_family_id": "igrot-letter-5710-6-tishrei-torah-study-time-aid2277337",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": null,
+          "context_status": null
+        }
+      ]
+    },
+    {
+      "batch_id": "139",
+      "identity_key": "aid:4279851",
+      "aid": 4279851,
+      "files": [
+        "data/items/content-research-batch-139-2026-11-17.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+        "igrot-general-letter-5712-erev-rosh-chodesh-kislev-aid4279851"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-139-2026-11-17.json",
+          "id": "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "aid": 4279851,
+          "title": "מכתב כללי, ערב ראש חודש כסלו, ה׳תשי״ב",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4279851",
+          "evidence_family_id": "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_text_of_rebbe_correspondence",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. | he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198. | he.chabad.org AID 4279851, גוף הפרסום, שורות 186–187.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-letter-4279851",
+          "aid": 4279851,
+          "title": "מכתב כללי, ערב ר״ח כסלו, ה׳תשי״ב",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4279851",
+          "evidence_family_id": "igrot-general-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_general_letter",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4279851, גוף המכתב, שורות 186–188.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "140",
+      "identity_key": "aid:4279851",
+      "aid": 4279851,
+      "files": [
+        "data/items/content-research-batch-139-2026-11-17.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+        "igrot-general-letter-5712-erev-rosh-chodesh-kislev-aid4279851"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-139-2026-11-17.json",
+          "id": "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "aid": 4279851,
+          "title": "מכתב כללי, ערב ראש חודש כסלו, ה׳תשי״ב",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4279851",
+          "evidence_family_id": "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_text_of_rebbe_correspondence",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. | he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198. | he.chabad.org AID 4279851, גוף הפרסום, שורות 186–187.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-letter-4279851",
+          "aid": 4279851,
+          "title": "מכתב כללי, ערב ר״ח כסלו, ה׳תשי״ב",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4279851",
+          "evidence_family_id": "igrot-general-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_general_letter",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4279851, גוף המכתב, שורות 186–188.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "142",
+      "identity_key": "aid:2989348",
+      "aid": 2989348,
+      "files": [
+        "data/items/content-research-batch-101-2026-11-15.json",
+        "data/items/content-research-batch-142-2026-11-17.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5711-yud-tes-kislev-aid2989348",
+        "sicha-5711-19-kislev-yud-tes-aid2989348"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-101-2026-11-15.json",
+          "id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989348, גוף השיחה שורות 174–181.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-142-2026-11-17.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י\"ט כסלו, ה'תשי\"א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, שורות 183–190. | AID 2989348, שורות 203–208. | Chabad.org AID 2989348, גוף השיחה, סעיפים יא–יג, שורות 248–265.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-19-kislev-yud-tes-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, גוף השיחה, סעיף א׳, שורות 174–178.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "148",
+      "identity_key": "aid:2989348",
+      "aid": 2989348,
+      "files": [
+        "data/items/content-research-batch-101-2026-11-15.json",
+        "data/items/content-research-batch-142-2026-11-17.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5711-yud-tes-kislev-aid2989348",
+        "sicha-5711-19-kislev-yud-tes-aid2989348"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-101-2026-11-15.json",
+          "id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989348, גוף השיחה שורות 174–181.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-142-2026-11-17.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י\"ט כסלו, ה'תשי\"א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, שורות 183–190. | AID 2989348, שורות 203–208. | Chabad.org AID 2989348, גוף השיחה, סעיפים יא–יג, שורות 248–265.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-19-kislev-yud-tes-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, גוף השיחה, סעיף א׳, שורות 174–178.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "161",
+      "identity_key": "aid:2989348",
+      "aid": 2989348,
+      "files": [
+        "data/items/content-research-batch-101-2026-11-15.json",
+        "data/items/content-research-batch-142-2026-11-17.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5711-yud-tes-kislev-aid2989348",
+        "sicha-5711-19-kislev-yud-tes-aid2989348"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-101-2026-11-15.json",
+          "id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989348, גוף השיחה שורות 174–181.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-142-2026-11-17.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י\"ט כסלו, ה'תשי\"א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, שורות 183–190. | AID 2989348, שורות 203–208. | Chabad.org AID 2989348, גוף השיחה, סעיפים יא–יג, שורות 248–265.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-19-kislev-yud-tes-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, גוף השיחה, סעיף א׳, שורות 174–178.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "172",
+      "identity_key": "aid:2989237",
+      "aid": 2989237,
+      "files": [
+        "data/items/content-research-batch-102-2026-11-15.json",
+        "data/items/content-research-batch-172-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5722-26-sivan-aid2989237",
+        "sicha-5722-26-sivan-shelach-aid2989237"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-102-2026-11-15.json",
+          "id": "sicha-5722-26-sivan-aid2989237",
+          "aid": 2989237,
+          "title": "שיחת יום ה׳ פ׳ שלח, כ״ו סיון, ה׳תשכ״ב — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989237",
+          "evidence_family_id": "sicha-5722-26-sivan-aid2989237",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989237, גוף השיחה שורות 167–168.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-172-2026-11-19.json",
+          "id": "chabad-sicha-2989237",
+          "aid": 2989237,
+          "title": "שיחת יום ה׳ פ׳ שלח, כ״ו סיון, ה׳תשכ״ב",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989237",
+          "evidence_family_id": "sicha-5722-26-sivan-shelach-aid2989237",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989237, גוף השיחה, סעיפים א׳–ג׳, שורות 176–186.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "172",
+      "identity_key": "aid:259799",
+      "aid": 259799,
+      "files": [
+        "data/items/content-research-batch-172-2026-11-19.json",
+        "data/items/content-research-batch-180-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "letter-5713-shevat-zalmon-jaffe-rebbe",
+        "memoir-zalmon-jaffe-direct-correspondence-aid259799"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-172-2026-11-19.json",
+          "id": "chabad-letter-5713-shevat-zalmon-jaffe",
+          "aid": 259799,
+          "title": "מכתב אישי לזלמן יפה, שבט ה׳תשי״ג — תרגום אנגלי של מקור יידי",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+          "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+          "witness_type": "translated_letter_excerpt",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-180-2026-11-19.json",
+          "id": "memoir-zalmon-jaffe-direct-correspondence-aid259799",
+          "aid": 259799,
+          "title": "Direct Correspondence with the Rebbe — Zalmon Jaffe memoir excerpt",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm",
+          "evidence_family_id": "memoir-zalmon-jaffe-direct-correspondence-aid259799",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_memoir_quoting_correspondence",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 259799, גוף המאמר מאת Zalmon Jaffe, שורות 272–276; המחבר מציין שהמכתב הראשון נכתב ביידיש ומציג את תרגומו. | Chabad.org AID 259799, גוף המאמר מאת Zalmon Jaffe, שורות 284–290; המכתב השני מוצג ככתוב באנגלית.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "179",
+      "identity_key": "aid:2513564",
+      "aid": 2513564,
+      "files": [
+        "data/items/content-research-batch-055-2026-11-12.json",
+        "data/items/content-research-batch-179-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "yechidus-eve-17-shevat-5745",
+        "yechidus-5745-eve-17-shevat-aid2513564"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-055-2026-11-12.json",
+          "id": "sie-talk-yechidus-eve-17-shevat-5745-aid-2513564",
+          "aid": 2513564,
+          "title": "Yechidus, Eve of 17th of Shevat, 5745 (1985)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2513564/jewish/Yechidus-Eve-of-17th-of-Shevat-5745-1985.htm",
+          "evidence_family_id": "yechidus-eve-17-shevat-5745",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "English",
+          "status": "Verified",
+          "has_content_evidence": false,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org aid 2513564, visible body lines 246–255; Chabad.org/TheRebbe.org aid 2513564, visible body lines 256–258",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-179-2026-11-19.json",
+          "id": "yechidus-5745-eve-17-shevat-aid2513564",
+          "aid": 2513564,
+          "title": "Yechidus, Eve of 17th of Shevat, 5745 (1985)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2513564/jewish/Yechidus-Eve-of-17th-of-Shevat-5745-1985.htm",
+          "evidence_family_id": "yechidus-5745-eve-17-shevat-aid2513564",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "yechidus-5745-eve-17-shevat-aid2513564",
+          "witness_type": "published_english_translation",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2513564, גוף הפרסום, סעיפים 1–2, שורות 246–252.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "179",
+      "identity_key": "aid:2515477",
+      "aid": 2515477,
+      "files": [
+        "data/items/content-research-batch-179-2026-11-19.json",
+        "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json"
+      ],
+      "evidence_family_ids": [
+        "yechidus-5744-eve-13-shevat-aid2515477",
+        "yechidus-eve-13-shevat-5744"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-179-2026-11-19.json",
+          "id": "yechidus-5744-eve-13-shevat-aid2515477",
+          "aid": 2515477,
+          "title": "Yechidus, Eve of 13th of Shevat, 5744 (1984)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2515477/jewish/Yechidus-Eve-of-13th-of-Shevat-5744-1984.htm",
+          "evidence_family_id": "yechidus-5744-eve-13-shevat-aid2515477",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "yechidus-5744-eve-13-shevat-aid2515477",
+          "witness_type": "published_english_translation",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2515477, גוף הפרסום, סעיפים 1–2, שורות 255–260.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+          "id": "sie-talk-yechidus-13-shevat-5744-aid-2515477",
+          "aid": 2515477,
+          "title": "Yechidus, Eve of 13th of Shevat, 5744 (1984)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2515477/jewish/Yechidus-Eve-of-13th-of-Shevat-5744-1984.htm",
+          "evidence_family_id": "yechidus-eve-13-shevat-5744",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "English",
+          "status": "Verified",
+          "has_content_evidence": false,
+          "proposition_count": 6,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org aid 2515477, visible body lines 248–254; Chabad.org/TheRebbe.org aid 2515477, visible body lines 256–260; Chabad.org/TheRebbe.org aid 2515477, visible body lines 249–250; Chabad.org/TheRebbe.org aid 2515477, visible body lines 272–280; Chabad.org/TheRebbe.org aid 2515477, visible body lines 288–291; Chabad.org/TheRebbe.org aid 2515477, visible body lines 295–297",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "179",
+      "identity_key": "aid:2515007",
+      "aid": 2515007,
+      "files": [
+        "data/items/content-research-batch-179-2026-11-19.json",
+        "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json"
+      ],
+      "evidence_family_ids": [
+        "yechidus-5744-eve-17-adar-ii-aid2515007",
+        "yechidus-eve-17-adar-ii-5744"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-179-2026-11-19.json",
+          "id": "yechidus-5744-eve-17-adar-ii-aid2515007",
+          "aid": 2515007,
+          "title": "Yechidus, Eve of 17th of Adar II, 5744 (1984)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2515007/jewish/Yechidus-Eve-of-17th-of-Adar-II-5744-1984.htm",
+          "evidence_family_id": "yechidus-5744-eve-17-adar-ii-aid2515007",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "yechidus-5744-eve-17-adar-ii-aid2515007",
+          "witness_type": "published_english_translation",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org / TheRebbe.org AID 2515007, גוף הפרסום, סעיף 1, שורות 255–260.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/sie-translated-talks-5744-5745-2026-11-12-050.json",
+          "id": "sie-talk-yechidus-17-adar-ii-5744-aid-2515007",
+          "aid": 2515007,
+          "title": "Yechidus, Eve of 17th of Adar II, 5744 (1984)",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2515007/jewish/Yechidus-Eve-of-17th-of-Adar-II-5744-1984.htm",
+          "evidence_family_id": "yechidus-eve-17-adar-ii-5744",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "English",
+          "status": "Verified",
+          "has_content_evidence": false,
+          "proposition_count": 7,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org aid 2515007, visible body lines 289–291; Chabad.org/TheRebbe.org aid 2515007, visible body lines 292–294; Chabad.org/TheRebbe.org aid 2515007, visible body lines 299–302; Chabad.org/TheRebbe.org aid 2515007, visible body lines 316–319; Chabad.org/TheRebbe.org aid 2515007, visible body lines 303–310; Chabad.org/TheRebbe.org aid 2515007, visible body lines 296–297; Chabad.org/TheRebbe.org aid 2515007, visible body lines 301–303",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "180",
+      "identity_key": "aid:259799",
+      "aid": 259799,
+      "files": [
+        "data/items/content-research-batch-172-2026-11-19.json",
+        "data/items/content-research-batch-180-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "letter-5713-shevat-zalmon-jaffe-rebbe",
+        "memoir-zalmon-jaffe-direct-correspondence-aid259799"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-172-2026-11-19.json",
+          "id": "chabad-letter-5713-shevat-zalmon-jaffe",
+          "aid": 259799,
+          "title": "מכתב אישי לזלמן יפה, שבט ה׳תשי״ג — תרגום אנגלי של מקור יידי",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm#letter-shevat-5713",
+          "evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "letter-5713-shevat-zalmon-jaffe-rebbe",
+          "witness_type": "translated_letter_excerpt",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 259799, “Direct Correspondence with the Rebbe”, translated first-letter body, lines 272–276; article author explicitly says “Following is my translation.”",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-180-2026-11-19.json",
+          "id": "memoir-zalmon-jaffe-direct-correspondence-aid259799",
+          "aid": 259799,
+          "title": "Direct Correspondence with the Rebbe — Zalmon Jaffe memoir excerpt",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/259799/jewish/Direct-Correspondence-with-the-Rebbe.htm",
+          "evidence_family_id": "memoir-zalmon-jaffe-direct-correspondence-aid259799",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_memoir_quoting_correspondence",
+          "language": "English",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 259799, גוף המאמר מאת Zalmon Jaffe, שורות 272–276; המחבר מציין שהמכתב הראשון נכתב ביידיש ומציג את תרגומו. | Chabad.org AID 259799, גוף המאמר מאת Zalmon Jaffe, שורות 284–290; המכתב השני מוצג ככתוב באנגלית.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "180",
+      "identity_key": "aid:4280029",
+      "aid": 4280029,
+      "files": [
+        "data/items/content-research-batch-100-2026-11-15.json",
+        "data/items/content-research-batch-193-2026-11-19.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5721-yud-tes-kislev-aid4280029",
+        "sicha-5721-19-kislev-vayeshev-aid4280029",
+        "sicha-5721-19-kislev-yud-tes-sicha-aid4280029"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-100-2026-11-15.json",
+          "id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פרשת וישב, י״ט כסלו ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ד׳, שורות 202–211.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-193-2026-11-19.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-vayeshev-aid4280029",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ח׳, שורות 248–259.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-yud-tes-sicha-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4280029, גוף השיחה, סעיפים א׳–ב׳, שורות 177–189.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "182",
+      "identity_key": "aid:5357009",
+      "aid": 5357009,
+      "files": [
+        "data/items/content-research-batch-085-2026-11-14.json",
+        "data/items/content-research-batch-182-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5721-24-iyar-z-tarmah-aid5357009",
+        "igrot-5721-24-iyar-aid5357009"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-085-2026-11-14.json",
+          "id": "chabad-letter-5357009",
+          "aid": 5357009,
+          "title": "אגרות קודש - מכתב ז’תרמה",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357009/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5721-24-iyar-z-tarmah-aid5357009",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_text",
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5357009, שורות 244–261, גוף המכתב 250–261.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5721-24-iyar-aid5357009",
+          "aid": 5357009,
+          "title": "אגרות קודש — מכתב ז׳תרמה, כ״ד אייר ה׳תשכ״א",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357009/jewish/page.htm",
+          "evidence_family_id": "igrot-5721-24-iyar-aid5357009",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357009, גוף המכתב, שורות 250–257.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "182",
+      "identity_key": "aid:5357571",
+      "aid": 5357571,
+      "files": [
+        "data/items/content-research-batch-057-2026-11-12.json",
+        "data/items/content-research-batch-182-2026-11-19.json",
+        "data/items/content-research-batch-212-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+        "igrot-5720-12-tishrei-aid5357571",
+        "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-057-2026-11-12.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש - מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357571, body lines 244–257; selected visible Hebrew body passages inspected on 2026-11-12.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5720-12-tishrei-aid5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב, י״ב תשרי ה׳תש״כ",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-5720-12-tishrei-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף המכתב, שורות 244–251.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-212-2026-11-20.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_correspondence_text",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף האיגרת, שורות 246–255.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "182",
+      "identity_key": "aid:5413490",
+      "aid": 5413490,
+      "files": [
+        "data/items/content-research-batch-083-2026-11-14.json",
+        "data/items/content-research-batch-182-2026-11-19.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5724-15-tevet-letter-chtashmab-aid5413490",
+        "igrot-5724-15-tevet-aid5413490"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-083-2026-11-14.json",
+          "id": "chabad-letter-5413490",
+          "aid": 5413490,
+          "title": "אגרות קודש — מכתב ח׳תשמב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413490/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5724-15-tevet-letter-chtashmab-aid5413490",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_text",
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, AID 5413490, שורות 244–269, גוף המענה 250–266 והערות 269.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5724-15-tevet-aid5413490",
+          "aid": 5413490,
+          "title": "אגרות קודש — מכתב ח׳תשמב, ט״ו טבת ה׳תשכ״ד",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5413490/jewish/page.htm",
+          "evidence_family_id": "igrot-5724-15-tevet-aid5413490",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5413490, גוף המכתב, שורות 250–269.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "193",
+      "identity_key": "aid:4280029",
+      "aid": 4280029,
+      "files": [
+        "data/items/content-research-batch-100-2026-11-15.json",
+        "data/items/content-research-batch-193-2026-11-19.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5721-yud-tes-kislev-aid4280029",
+        "sicha-5721-19-kislev-vayeshev-aid4280029",
+        "sicha-5721-19-kislev-yud-tes-sicha-aid4280029"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-100-2026-11-15.json",
+          "id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פרשת וישב, י״ט כסלו ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ד׳, שורות 202–211.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-193-2026-11-19.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-vayeshev-aid4280029",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ח׳, שורות 248–259.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-yud-tes-sicha-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4280029, גוף השיחה, סעיפים א׳–ב׳, שורות 177–189.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "201",
+      "identity_key": "aid:4243257",
+      "aid": 4243257,
+      "files": [
+        "data/items/content-research-batch-200-2026-11-20.json",
+        "data/items/mixed-authorized-content-2026-11-12-040.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5735-24-kislev-education-foundation-aid4243257",
+        "igrot-kodesh-v30-p60-girl-education-shabbat-candle"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-200-2026-11-20.json",
+          "id": null,
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4243257/jewish/Education-Is-More-Than-a-Preparation.htm",
+          "evidence_family_id": "igrot-letter-5735-24-kislev-education-foundation-aid4243257",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org AID 4243257, published English letter body lines 189–191.",
+          "context_status": null
+        },
+        {
+          "file": "data/items/content-research-batch-200-2026-11-20.json",
+          "id": null,
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4243257/jewish/Education-Is-More-Than-a-Preparation.htm",
+          "evidence_family_id": "igrot-letter-5735-24-kislev-education-foundation-aid4243257",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org AID 4243257, body lines 273–275.",
+          "context_status": null
+        },
+        {
+          "file": "data/items/content-research-batch-200-2026-11-20.json",
+          "id": null,
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4243257/jewish/Education-Is-More-Than-a-Preparation.htm",
+          "evidence_family_id": "igrot-letter-5735-24-kislev-education-foundation-aid4243257",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": null,
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-200-2026-11-20.json",
+          "id": null,
+          "aid": null,
+          "title": null,
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4243257/jewish/Education-Is-More-Than-a-Preparation.htm",
+          "evidence_family_id": "igrot-letter-5735-24-kislev-education-foundation-aid4243257",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": null,
+          "status": null,
+          "has_content_evidence": false,
+          "proposition_count": 0,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": null,
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/mixed-authorized-content-2026-11-12-040.json",
+          "id": "chabad-letter-excerpt-aid-4243257",
+          "aid": null,
+          "title": "Education Is More Than a Preparation",
+          "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/4243257/jewish/Education-Is-More-Than-a-Preparation.htm",
+          "evidence_family_id": "igrot-kodesh-v30-p60-girl-education-shabbat-candle",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "English",
+          "status": "Verified",
+          "has_content_evidence": false,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org aid 4243257, excerpt body lines 267–278; cites Igros Kodesh vol. XXX p. 60",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "205",
+      "identity_key": "aid:4280029",
+      "aid": 4280029,
+      "files": [
+        "data/items/content-research-batch-100-2026-11-15.json",
+        "data/items/content-research-batch-193-2026-11-19.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5721-yud-tes-kislev-aid4280029",
+        "sicha-5721-19-kislev-vayeshev-aid4280029",
+        "sicha-5721-19-kislev-yud-tes-sicha-aid4280029"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-100-2026-11-15.json",
+          "id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פרשת וישב, י״ט כסלו ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ד׳, שורות 202–211.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-193-2026-11-19.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-vayeshev-aid4280029",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ח׳, שורות 248–259.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-yud-tes-sicha-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4280029, גוף השיחה, סעיפים א׳–ב׳, שורות 177–189.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "205",
+      "identity_key": "aid:4279851",
+      "aid": 4279851,
+      "files": [
+        "data/items/content-research-batch-139-2026-11-17.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+        "igrot-general-letter-5712-erev-rosh-chodesh-kislev-aid4279851"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-139-2026-11-17.json",
+          "id": "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "aid": 4279851,
+          "title": "מכתב כללי, ערב ראש חודש כסלו, ה׳תשי״ב",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4279851",
+          "evidence_family_id": "rebbe-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_text_of_rebbe_correspondence",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 186–188. | he.chabad.org AID 4279851, גוף המכתב הכללי, שורות 191–198. | he.chabad.org AID 4279851, גוף הפרסום, שורות 186–187.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-letter-4279851",
+          "aid": 4279851,
+          "title": "מכתב כללי, ערב ר״ח כסלו, ה׳תשי״ב",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4279851",
+          "evidence_family_id": "igrot-general-letter-5712-erev-rosh-chodesh-kislev-aid4279851",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_general_letter",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4279851, גוף המכתב, שורות 186–188.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "205",
+      "identity_key": "aid:4385757",
+      "aid": 4385757,
+      "files": [
+        "data/items/content-research-batch-102-2026-11-15.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5727-20-kislev-aid4385757",
+        "sicha-5727-20-kislev-vayeshev-aid4385757"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-102-2026-11-15.json",
+          "id": "sicha-5727-20-kislev-aid4385757",
+          "aid": 4385757,
+          "title": "שיחת ש״פ וישב, כ׳ כסלו, ה׳תשכ״ז — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4385757",
+          "evidence_family_id": "sicha-5727-20-kislev-aid4385757",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4385757, גוף השיחה שורות 166–168.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-4385757",
+          "aid": 4385757,
+          "title": "שיחת ש״פ וישב, כ״ף כסלו, ה׳תשכ״ז",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4385757",
+          "evidence_family_id": "sicha-5727-20-kislev-vayeshev-aid4385757",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4385757, גוף השיחה, סעיפים א׳–ב׳, שורות 175–185.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "205",
+      "identity_key": "aid:2989348",
+      "aid": 2989348,
+      "files": [
+        "data/items/content-research-batch-101-2026-11-15.json",
+        "data/items/content-research-batch-142-2026-11-17.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5711-yud-tes-kislev-aid2989348",
+        "sicha-5711-19-kislev-yud-tes-aid2989348"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-101-2026-11-15.json",
+          "id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 2,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 2989348, גוף השיחה שורות 174–181.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-142-2026-11-17.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י\"ט כסלו, ה'תשי\"א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-yud-tes-kislev-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 3,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, שורות 183–190. | AID 2989348, שורות 203–208. | Chabad.org AID 2989348, גוף השיחה, סעיפים יא–יג, שורות 248–265.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-2989348",
+          "aid": 2989348,
+          "title": "שיחת י״ט כסלו, ה׳תשי״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/2989348",
+          "evidence_family_id": "sicha-5711-19-kislev-yud-tes-aid2989348",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 2989348, גוף השיחה, סעיף א׳, שורות 174–178.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "210",
+      "identity_key": "aid:4280029",
+      "aid": 4280029,
+      "files": [
+        "data/items/content-research-batch-100-2026-11-15.json",
+        "data/items/content-research-batch-193-2026-11-19.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5721-yud-tes-kislev-aid4280029",
+        "sicha-5721-19-kislev-vayeshev-aid4280029",
+        "sicha-5721-19-kislev-yud-tes-sicha-aid4280029"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-100-2026-11-15.json",
+          "id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פרשת וישב, י״ט כסלו ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ד׳, שורות 202–211.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-193-2026-11-19.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-vayeshev-aid4280029",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ח׳, שורות 248–259.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-yud-tes-sicha-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4280029, גוף השיחה, סעיפים א׳–ב׳, שורות 177–189.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "211",
+      "identity_key": "aid:4280029",
+      "aid": 4280029,
+      "files": [
+        "data/items/content-research-batch-100-2026-11-15.json",
+        "data/items/content-research-batch-193-2026-11-19.json",
+        "data/items/content-research-batch-205-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "sicha-5721-yud-tes-kislev-aid4280029",
+        "sicha-5721-19-kislev-vayeshev-aid4280029",
+        "sicha-5721-19-kislev-yud-tes-sicha-aid4280029"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-100-2026-11-15.json",
+          "id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פרשת וישב, י״ט כסלו ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-yud-tes-kislev-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ד׳, שורות 202–211.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-193-2026-11-19.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א — בלתי מוגה",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-vayeshev-aid4280029",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_unedited_hebrew_sicha_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "he.chabad.org AID 4280029, גוף השיחה, סעיף ח׳, שורות 248–259.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-205-2026-11-20.json",
+          "id": "chabad-sicha-4280029",
+          "aid": 4280029,
+          "title": "שיחת יום ה׳ פ׳ וישב, י״ט כסלו, ה׳תשכ״א",
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4280029",
+          "evidence_family_id": "sicha-5721-19-kislev-yud-tes-sicha-aid4280029",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_unedited_talk_transcript",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "AID 4280029, גוף השיחה, סעיפים א׳–ב׳, שורות 177–189.",
+          "context_status": "partial"
+        }
+      ]
+    },
+    {
+      "batch_id": "212",
+      "identity_key": "aid:5357571",
+      "aid": 5357571,
+      "files": [
+        "data/items/content-research-batch-057-2026-11-12.json",
+        "data/items/content-research-batch-182-2026-11-19.json",
+        "data/items/content-research-batch-212-2026-11-20.json"
+      ],
+      "evidence_family_ids": [
+        "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+        "igrot-5720-12-tishrei-aid5357571",
+        "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571"
+      ],
+      "records": [
+        {
+          "file": "data/items/content-research-batch-057-2026-11-12.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש - מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-letter-het-rav-aid5357571",
+          "independent_witness": null,
+          "translation_of_evidence_family_id": null,
+          "witness_type": null,
+          "language": "Hebrew",
+          "status": "Verified",
+          "has_content_evidence": true,
+          "proposition_count": 4,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org/TheRebbe.org, aid 5357571, body lines 244–257; selected visible Hebrew body passages inspected on 2026-11-12.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-182-2026-11-19.json",
+          "id": "igrot-letter-5720-12-tishrei-aid5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב, י״ב תשרי ה׳תש״כ",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-5720-12-tishrei-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_letter_transcription",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף המכתב, שורות 244–251.",
+          "context_status": "partial"
+        },
+        {
+          "file": "data/items/content-research-batch-212-2026-11-20.json",
+          "id": "chabad-letter-5357571",
+          "aid": 5357571,
+          "title": "אגרות קודש — מכתב ח׳רב",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5357571/jewish/page.htm",
+          "evidence_family_id": "igrot-letter-5720-12-tishrei-chet-reish-bet-aid5357571",
+          "independent_witness": true,
+          "translation_of_evidence_family_id": null,
+          "witness_type": "published_hebrew_correspondence_text",
+          "language": "Hebrew",
+          "status": "Parsed",
+          "has_content_evidence": true,
+          "proposition_count": 1,
+          "proposition_origin": "source_grounded_paraphrase",
+          "proposition_verification": "source_text_inspected",
+          "proposition_source_locator": "Chabad.org AID 5357571, גוף האיגרת, שורות 246–255.",
+          "context_status": "partial"
+        }
+      ]
+    }
+  ]
+}

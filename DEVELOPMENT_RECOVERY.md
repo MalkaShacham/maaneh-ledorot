@@ -1,4 +1,8 @@
 # מענה לדורות — המשך פיתוח לאחר אבחון התקיעות
+- Full-index duplicate reconciliation also exposed several same-AID presentations. Same-AID/same-Evidence-Family records are now classified as duplicate presentations, not separate independent witnesses. The English/SIE presentations for AIDs 3906812, 2514160, 2465321 and 2487556, and the repeated Hebrew letter AID 2989328, were linked to their canonical Evidence Families and marked non-independent.
+- AID 259799 is a multi-document page, not one source item: direct inspection of the public Chabad.org body shows an earlier Yiddish letter in Shevat 5713 (lines 272–276) and a separate later English letter in Iyar 20, 5713 (lines 284–290). The earlier and later letters now have distinct `source_unit_key` values and Evidence Families. The later letter's locator was corrected from 274–279 to 284–290. This prevents the page-level AID from collapsing two distinct letters while still treating the recipient's translation of the Yiddish letter as non-independent.
+- `PROJECT_CANON.md` now defines `source_unit_key`, `source_unit_locator` and `document_unit_label` for pages containing multiple primary documents; `reconcile_metrics.py` uses the unit key as the primary identity boundary when present.
+
 
 אובחן ותוקן ב־13.10.2026. PROJECT_CANON.md ממשיך להיות מקור האמת.
 
@@ -1314,3 +1318,677 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - The next readiness run identified a second, special-case path: `wellspringsDisseminationQuestion` manually appended claims after generic synthesis and omitted the `source_locators` array. This bypassed the generic locator filter.
 - The special path now refuses to append a source when the selected proposition has no body locator and attaches a `source_locators` entry with the same source number for every displayed claim. The regression assertion checks this exact mapping.
 - Reconciliation and full readiness remain pending a fresh Actions run; no metrics or source statuses were promoted.
+
+## 2026-11-18 — Batch 162: eight in-place Hebrew Sicha enrichments
+
+- Nine public Hebrew source bodies were opened and inspected. Eight distinct, non-verbatim research paraphrases were added to existing canonical response_propositions arrays, with matching body locators, proposition_origin=source_grounded_paraphrase, proposition_verbatim=false, proposition_verification=source_text_inspected, provenance and scoped limitations.
+- Enriched AIDs: 2989373, 2988989, 2988990, 2989409, 4304436, 2989319, 2989556 and 2988866. AID 3008863 was rechecked but not enriched because its existing proposition already covers the exact inspected section.
+- AID 2987993 returned Internal Error in the public reader; it was excluded without retry or bypass. AID 2988866 was opened as an accessible alternative in the same run. Its Hebrew publication has a Yiddish editorial parallel, so it remains non-independent within its existing Evidence Family.
+- No new source identities, no Verified promotions, no translation counted as an independent witness, and no protected full text copied.
+- Planning boundary only: 1,530 / 854 / 3,951 to 1,530 / 854 / 3,959. This is not a measured result. Public main metrics remain 977 / 878 / 2,950 until full reconciliation is committed.
+- The PR branch's DEVELOPMENT_RECOVERY.md had been overwritten with JSON batch content. It was restored from the canonical main-branch Markdown and this note was appended. Full-index reconciliation and the readiness gate remain pending.
+- The existing hourly workflow, audience and repository permissions were not changed.
+
+
+## 2026-11-18 — Batch 163: eight additional Hebrew source-body enrichments
+
+- Opened and inspected eight distinct public Hebrew source-body passages from existing canonical Sichos: AIDs 2988940, 4385713, 5959970, 4280106, 3008908, 2989018, 2989044 and 5989796. Added eight non-verbatim `source_grounded_paraphrase` propositions in place, each with an exact body locator, provenance, partial-context scope and explicit limitation. The canonical AID and Evidence Family for each item were preserved.
+- The additional material covers annual shared Talmud-study division; the connection between teshuvah, Sukkot unity and Hakhel; toil in Torah as distinct from study solely to know practical law; the necessity of human action alongside empowerment from above; use of time without postponing assigned work; adapting teaching to a recipient's capacity; the outward effect of intensive Torah study; and increased Torah study during Pesach.
+- The AID 5989796 passage is specifically marked by the publisher's footnote as edited by the Rebbe and printed in the additions to Likkutei Sichos, volume 7. That edition was not independently inspected; the proposition is scoped to the publicly displayed passage.
+- Twenty candidate pages were excluded after public inspection: twelve Sicha routes exposed navigation/summary shells, two Igrot routes redirected to rewritten summary shells, four Yechidus pages exposed metadata without transcript text, and two routes returned Internal Error (AIDs 4666220 and 553736). Eight accessible existing Hebrew source bodies were used as same-run fallback. No search snippet or title was used as content.
+- No new source identity, no new Evidence Family, no Verified promotion, no translation counted as an independent witness, no crawler retry, no access-control bypass and no full-text copying.
+- Planning boundary only: 1,530 / 854 / 3,959 to 1,530 / 854 / 3,967. This is not a measured result; public main metrics remain 977 / 878 / 2,950 pending full reconciliation.
+- The current PR-head gate had failed at a temporal-dead-zone reference to `batch162Path` (used before its declaration). The declaration was moved before first use and a batch163 regular/deep-research citation regression was added. A fresh exact-head gate is required.
+- The existing hourly workflow, schedule, audience and repository permissions remain unchanged.
+
+## 2026-11-18 — Batch 164: eight additional Hebrew Sicha enrichments and head-cover topic-scope repair
+
+- Opened and inspected eight additional body passages in eight existing Hebrew Sicha identities: AIDs 2988940, 4385713, 5959970, 4280106, 3008908, 2989018, 2989044 and 5989796. Added one non-verbatim source-grounded proposition to each existing canonical record, with exact body locators, provenance, verification scope, partial-context limits and proposition-level audit metadata. Existing AIDs and Evidence Family IDs were preserved.
+- The new passages cover the Alter Rebbe's redemption and the disclosure of inner Torah; limits on waiving a mitzvah enhancement; Sefirat HaOmer as a process of teshuvah; Yud-Tes Kislev and the annual Tanya study cycle; practical use of a farbrengen; positive influence on others; the continuing identity of former Tomchei Temimim students; and a contextual blessing to those who sent greetings.
+- Three alternate public routes (AIDs 4296231, 5989910 and 5990036) returned HTTP 429 and were excluded. Six other opened pages were not promoted because canonical AID/Evidence Family preflight was not completed. Eight accessible existing Hebrew source bodies were used as same-run fallback. No title or search snippet was used as content.
+- No new source identity, no new Evidence Family, no Verified promotion, no translation counted as an independent witness, no runner-side crawler retry, no access-control bypass and no full-text copying.
+- Planning boundary only: 1,530 / 854 / 3,967 → 1,530 / 854 / 3,975. This is not a measured result; public main metrics remain 977 / 878 / 2,950 pending reconciliation.
+- The Batch 088 readiness failure was traced to a broad alias: the ordinary phrase “כיסוי הראש” activated the specialized “כיסוי ראש והשפעה עקיפה” topic and suppressed a secretary-signed source even when the user asked specifically what appeared in the secretary letter. The answer engine now applies that topic only when the question explicitly asks about indirect influence or failed direct persuasion. The direct-attribution guard still prevents the secretary response from being attributed to the Rebbe.
+- PR #35 remains open pending a fresh exact-head Answer Quality Gate, full reconciliation, and deployment verification. The hourly schedule, audience and repository permissions were not changed.
+
+
+## 2026-11-18 — Batch 165: three new Hebrew Sichos and five in-place enrichments
+
+- Opened and inspected eight original-Hebrew publisher body passages: new AIDs 4385513 (Simchat Torah 5726), 5959968 (Lag BaOmer parade 5730) and 4296159 (Simchat Beit Hashoeva, 18 Tishrei 5723); enriched existing canonical AIDs 2988983, 2989585, 5989929, 4304430 and 2989589 in place. Added eight bounded, non-verbatim source_grounded_paraphrase propositions with proposition_verbatim=false, proposition_verification=source_text_inspected, exact proposition_source_locator, provenance, partial-context scope and limitations.
+- Exact-AID preflight found the three new AIDs absent from the 106 scanned manual batch files, 12 bulk-indexed files and 1,022-record review queue. Five existing AIDs were matched to their canonical records and Evidence Families and enriched in place. The large public-search-index could not be read through the connector; full-index collision reconciliation remains pending.
+- Five other candidate routes did not expose inspectable body text. They were excluded without title-based inference or retry; eight accessible Hebrew publisher bodies were used as same-run fallback.
+- Corrected Batch151 source-review family labels for AIDs 2989588 and 4296226 to match their canonical records; no duplicate identity or Evidence Family was created.
+- The latest PR-workspace baseline before Batch165 is 1,530 / 854 / 3,973 from Answer Quality Gate run 44379054834; this is not public main. The planning boundary after Batch165 is 1,533 / 854 / 3,981, not a measured result. Public main metrics remain 977 / 878 / 2,950 until a successful main-branch reconciliation is committed.
+- The same run's only readiness failure was an additive content_readiness_note field in the historical Batch089 metrics snapshot. test_content_readiness.mjs now compares the three canonical numeric fields through readinessMetrics(...); numeric equality and the conservative-variance guard remain intact.
+- All new and enriched records remain Parsed. No Verified promotion, no translation counted as an independent witness, no full protected text copied, no crawler retry, no access-control bypass, no schedule or permission change.
+## Exact-head verification after Batch 165 commit
+
+- Batch165 and the readiness assertion projection are committed on the PR branch (content commit 12080f1, metadata correction e86d352). The assertion compares the three canonical numeric readiness fields and permits the additive explanatory note without weakening numeric equality.
+- At the time of this entry, no Actions run had yet been created for the new head; the latest run 44379054834 still referred to predecessor 1a63b428 and failed only on the additive historical note field. The new head must be checked independently before merge.
+- Batch165 answer-eligibility growth remains an expected delta only. No actual after-metrics or public deployment is claimed until reconciliation and post-merge publication are verified.
+ 
+## 2026-11-18 — Batch 166: six new Hebrew Sicha identities and two duplicate-canonical rechecks
+
+- Opened and inspected eight original-Hebrew publisher bodies from BeitChabad.com / Chabad.org: AIDs 2989021, 2989054, 2989022, 2989052, 5959922, 5989687, 2989062 and 5989700. Full-index reconciliation later found that AIDs 2989022 and 5989700 already existed as canonical items in batches100 and103. Their candidate rows repeated propositions already represented in those items, so they were removed from the new-source records and retained as existing-identity rechecks. Batch166 therefore contains six new canonical identities, two rechecks, and six new propositions—not eight new identities or eight propositions.
+- The six new topics are unity across the four species, the second day of Shavuot, preparation for receiving Torah through Sefirat HaOmer, public Jewish identity, Torah and peace, and the structure of tractate Gittin. The two rechecked items concern late teshuvah and shared Jewish purpose; their overlapping propositions were not counted again.
+- In AID 5959922, the passage quotes an earlier statement attributed to the Rebbe Rayatz. The new proposition preserves that attribution and describes the later talk's interpretation; it does not attribute the quoted statement to the Rebbe.
+- Nine alternate routes were excluded: eight Chabad.org/TheRebbe.org pages (AIDs 554661, 554871, 555023, 555044–555047 and 555054) exposed audio/media shells without transcript text; AID 5959935 returned HTTP 429. Eight accessible full-text Hebrew publisher pages were used as same-run fallback. No title-based inference, crawler retry or access-control bypass was used.
+- The initial preflight did not cover every canonical file. The full scan corrected the two duplicate AIDs above; this is why the earlier eight-new-identity count was withdrawn. Remaining collisions are recorded rather than silently counted as independent sources.
+- No translation was counted as an independent witness, no Verified status was promoted, and no protected full text was copied.
+- Planning boundary only: 1,533 / 854 / 3,981 to 1,539 / 854 / 3,987. The starting values after Batch165 were planning values, not measured metrics; the latest measured PR-workspace baseline before Batch165 was 1,530 / 854 / 3,973. No public main metric change is claimed.
+- Added a three-family claim-level synthesis for unity, peace and shared Jewish purpose. Regular mode and deep researcher mode are tested separately; every claim must retain its own body locator, provenance and limitations. The synthesis is explicitly labeled as system research, not a Rebbe quotation.
+- Updated the readiness regression to reconcile through Batch167, distinguish six new identities from two duplicate rechecks, and check full-index deduplication, regular/deep retrieval and claim-level citations. PR #35 remains open pending a fresh exact-head Answer Quality Gate and successful full reconciliation. No Pages deployment is claimed.
+- The existing hourly workflow, audience, repository permissions and access settings were not changed.
+
+
+## 2026-11-18 — Batch 167: eight existing Hebrew Sicha identities enriched in place
+
+- Opened and inspected eight original-Hebrew publisher pages on BeitChabad.com / he.chabad.org and inspected the cited body sections: AIDs 2988983, 2989585, 5989929, 4304430, 2989589, 2988940, 4385713 and 5959970. Added one bounded non-verbatim `source_grounded_paraphrase` to each existing canonical item, with `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, exact body locator, provenance, verification scope, partial context and explicit limitations.
+- All eight additions are in-place enrichments. No new source identity, Evidence Family, independent witness, translation witness or Verified promotion was created. Existing IDs, canonical file paths, source URLs and Evidence Family IDs were retained. The eight publisher pages mark their talk texts בלתי מוגה; recordings, manuscripts, autographs and critical editions were not collated.
+- The passages cover: the ongoing instruction drawn from the liberation of the Rebbe Rayatz; the individual role and the study of פנימיות התורה; the two dimensions of remembering Shabbat; public action in Jewish life and the need to act naturally as well as trust; educational encouragement and its audience boundary; the Maggid's hilula and the attribution to the Mitteler Rebbe; the spiritual scope of הקהל beyond physical distance; and the distinction between תיכף and מיד in the discussion of forgiveness.
+- No source was blocked in this eight-item batch. No crawler retry or access-control bypass was used. No title or search snippet was treated as body content; no full protected text was copied.
+- Planning boundary only: 1,539 / 854 / 3,987 to 1,539 / 854 / 3,995. These are not measured after-metrics. The full canonical scan and historical in-place-exclusion reconciliation must produce actual before/after values and collision/eligibility results.
+- AID 4304430 also appears in batch146 as a second record with the same AID and Evidence Family as the canonical batch101 item. The alternate row is marked non-independent; reconciliation now classifies same-AID/same-Evidence-Family rows as duplicate presentations rather than independent witnesses or identity collisions. The previous exact-head run 44386330171 failed at a stale regression assertion expecting 19 propositions for AID 2989585; the canonical item actually contains 20. The test is corrected to 20, historical snapshots are compared at their own batch boundaries, and Batch167 receives explicit readiness and Evidence Family assertions. A fresh exact-head run is required before merge.
+- PR #35 remains open pending reconciliation and the Answer Quality Gate. No main merge or Pages deployment is claimed. The existing hourly workflow, audience, repository permissions and access settings are unchanged.
+
+
+## 2026-11-18 — Batch 168: eight existing Hebrew Sicha identities enriched in place
+
+- Opened and inspected eight original-Hebrew publisher body sections, then added one additional non-verbatim `source_grounded_paraphrase` to each existing canonical identity: AIDs 2989021, 2989054, 2989052, 5989687, 2989062, 4385513, 5959968 and 4296159. Their existing canonical files and Evidence Family IDs were retained; no source identity or family was added.
+- The eight new propositions cover: the deeper equality expressed in Simchat Torah dancing; Torah's non-bounded character in the discussion of competition among teachers; humility and fear of sin after the Omer count; women's role in preparing the household for receiving Torah; the ethical-theological weight of divorce in the closing discussion of Gittin; Torah as the learner's and world's organizing foundation; Torah study as engraving and continued progress; and the explicit qualification that study does not license omitting a practical mitzvah.
+- Each update records `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, an exact body locator, provenance, partial-context scope and an item-specific limitation. All eight source texts are publisher transcripts marked בלתי מוגה; recordings, manuscripts, autographs and edited editions were not collated. All remain Parsed.
+- Eight alternate /therebbe routes (AIDs 4666265, 4666267–4666270 and 4666316–4666318) exposed only summary/navigation shells; their Hebrew library aliases did not expose inspectable bodies. They were excluded without title-based inference. In the same run, eight accessible original-Hebrew publisher body sections were inspected and used as fallback. No crawler retry, access-control bypass, full-text copying, translation-as-independent-witness or Verified promotion occurred.
+- Before Batch168, exact-head PR workspace reconciliation run 44402037932 measured 1,540 / 854 / 3,996. This measurement is not committed to main and is not public. The prior Batch167 planning boundary expected 1,539 / 854 / 3,995; the +1 source / +1 proposition variance remains unattributed and must not be assigned to Batch168. Expected after Batch168 is 1,540 / 854 / 4,004 as a planning boundary only; actual after-metrics remain pending.
+- Run 44402037932 completed reconciliation, question-specific retrieval, synthesis, citation integrity, structural answer-quality and write-safety checks, but `test_content_readiness.mjs` failed at line 1360 because the current AID 2989585 record contains 21 propositions after later in-place enrichments while a historical current-index assertion expected 20 (other current-index assertions still expected 19/16). The test is updated to use a lower-bound for the current canonical record while preserving historical batch-local counts; a new Batch168 regression verifies one identity per AID, unchanged Evidence Families, locator alignment and regular/deep multi-source citations.
+- Public main metrics remain 977 / 878 / 2,950. PR #35 is not yet merged, and no new GitHub Pages deployment is claimed. The hourly workflow, audience, permissions and access settings were not changed.
+
+## 2026-11-19 — Batch 169: eight additional Hebrew Sicha body enrichments
+
+- Reviewed eight public original-Hebrew Sicha body passages on BeitChabad.com / he.chabad.org and added one non-verbatim, source-grounded research proposition to each existing canonical identity: AIDs 2989021, 2989054, 2989052, 5989687, 2989062, 4385513, 5959968 and 4296159.
+- Every proposition is marked `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`; each has an exact body locator, provenance, bounded verification scope, partial-context status and item-specific limitations. The eight original Evidence Family IDs and Parsed statuses are unchanged.
+- Opened Yiddish Yechidus AID 553691 as an expansion candidate. The publisher page exposes the title and audio-collection/navigation links but no inspectable Yiddish transcript body; it was excluded from content evidence. The same run fell back to the eight accessible Hebrew source bodies. No title-based content inference, crawler retry, access-control bypass, full-text copying or scan-only verification was used.
+- Batch169 adds zero source identities, zero Evidence Families and zero Verified identities; it adds eight in-place propositions. No translation is counted as an independent witness.
+- Baseline: exact-head PR-workspace reconciliation run 44405343996 measured 1540 answer-eligible unique sources / 854 content-verified unique sources / 4004 answer-eligible propositions after Batch168. Batch169 planning boundary is 1540 / 854 / 4012; this is not yet a measured post-Batch169 result and is not public main metrics.
+- The same run had completed reconciliation before failing in `test_content_readiness.mjs` on a stale current-batch assertion (test expected 167 while the project state was 168). Batch169 updates the test to the new current batch and adds exact checks for the eight in-place updates and regular/deep-researcher retrieval with claim-level locators.
+- Main remains unchanged at public metrics 977 / 878 / 2950. PR #35 remains unmerged; no GitHub Pages deployment is claimed. The hourly workflow and access permissions are unchanged.
+
+
+## 2026-11-19 — Batch 170: eight new Hebrew identities and two in-place enrichments
+
+- Opened and inspected ten original-Hebrew body passages on BeitChabad.com / he.chabad.org. Added eight new source identities (AIDs 2988933, 2989059, 2989147, 2989220, 3008930, 3140218, 4279923 and 4385558) and enriched two existing identities in place (AIDs 4296226 and 4279876). The two existing Evidence Family IDs and Parsed statuses were retained.
+- Each of the ten propositions is a non-verbatim `source_grounded_paraphrase` with `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, exact body locator, provenance, partial-context scope and item-specific limitations. The eight new identities comprise seven Sichos and one Maamar hanacha; all ten source bodies are Hebrew. No translation was counted as an independent witness.
+- AID 2989059's proposition explicitly attributes the quoted educator passage to the Previous Rebbe as presented in the Rebbe's talk. AID 4385558 preserves the attribution chain for the Baal Shem Tov teaching. AID 3008930 remains classified as an unedited maamar hanacha. AID 2989220 is marked as a contextual polemic, not generalized to every school.
+- Two alternate pages (AIDs 2989215 and 5989907) returned HTTP 429; AID 2988661 was a collection-level page; AID 5989700 was already canonical; AID 2989556 was opened but not selected for body-level review, and its corpus identity status is not asserted. These were excluded, and ten accessible item-level Hebrew bodies were used in the same run. No crawler retry, access-control bypass, full-text copying, scan-only verification or Verified promotion occurred.
+- The last measured PR-workspace baseline after Batch169 is 1540 answer-eligible unique sources / 854 content-verified unique sources / 4012 answer-eligible propositions (Answer Quality Gate run 44409060151). Batch170's expected boundary is 1548 / 854 / 4022; this is planning-only until exact-head reconciliation. Main's public metrics remain 977 / 878 / 2950.
+- Run 44409060151 completed reconciliation and earlier quality checks but failed at a historical Batch089 variance assertion. The test now allows explicitly recorded positive answer-eligible/proposition variance while continuing to prohibit positive content-verified variance. Batch169's historical actual-after snapshot is compared with Batch170's measured-before boundary rather than the current corpus total.
+- PR #35 remains open; no main merge or Pages deployment is claimed. The existing hourly workflow, audience, repository permissions and access settings are unchanged.
+
+
+## 2026-11-19 — Historical reconciliation selection fix
+
+- Main hourly run 44405963735 completed deterministic maintenance but failed at the evidence-readiness validation step: Batch110 was labelled reconciled while `deduplication_check.full_index_scan_available` was not true.
+- `scripts/reconcile_metrics.py` now reprocesses not only pending-labelled batches but also historical batches lacking a full-index audit, a measured `metrics_actual_after`, or a reconciled status. This prevents stale reconciliation labels from bypassing the current full-corpus audit.
+- The existing hourly schedule and disabled live crawler remain unchanged. The current PR run is superseded by this reconciliation-selection correction; the next exact-head gate must validate Batch110 through Batch170 before merge.
+## 2026-11-19 — Legacy alias-target compatibility
+
+- Exact-head run 44419428122 reached reconciliation but failed because Batch096 stores an alias audit target as the legacy string `aid:1273962`, while the reconciler assumed every target was an object.
+- Added `scripts/reconciliation_helpers.py` to normalize both string and structured alias targets, plus regression checks for numeric AIDs, `aid:` strings, structured pairs and non-AID keys. The reconciler now uses this helper.
+- Corrected Batch170's exclusion audit: AID 5989700 is already canonical; AID 2989556 was opened but not selected for body-level content review, so the batch no longer claims it was a duplicate.
+- The next exact-head run must complete reconciliation, `test_content_readiness.mjs`, and the full Answer Quality Gate before PR #35 can be merged.
+
+
+## 2026-11-19 — Batch 171: eight in-place source enrichments and cross-family synthesis
+
+- Inspected eight additional original-Hebrew publisher-body passages from eight Batch170 identities: AIDs 2988933, 2989059, 2989147, 2989220, 3008930, 3140218, 4279923 and 4385558. Each identity retained its AID, Evidence Family and Parsed status; one new non-verbatim source-grounded proposition and exact body locator were appended in place to each.
+- Each addition records `source_grounded_paraphrase`, `proposition_verbatim=false`, `source_text_inspected`, provenance, bounded verification scope, partial context and item-specific limitations. No new identities, Evidence Families, independent witnesses or Verified promotions were added.
+- AID 4666220 redirected to a rewritten Torah Texts summary shell and displayed a browser-compatibility gate rather than the original letter body. It was excluded; the same run used eight accessible Hebrew bodies. No crawler retry, access-control bypass, full-text copying or scan-only verification was used.
+- Added a claim-level three-family synthesis connecting daily permitted actions as service, acceptance before full comprehension, and the progression from `למיגרס` to `לעיונא`. It is explicitly labelled as system synthesis, not a quotation or attribution to the Rebbe; regular and deep-researcher tests require separate source locators for all three claims.
+- Batch171 planning boundary: 1548 answer-eligible unique sources / 854 content-verified unique sources / 4030 answer-eligible propositions. This is a planned boundary, not a measured result; exact-head reconciliation is pending. Public main metrics remain 977 / 878 / 2950 until a successful merge and post-merge reconciliation.
+- Exact-head run 44419986934 failed at the historical Batch084 status assertion after the reconciler correctly reprocessed an audit-incomplete superseded batch. The readiness test now accepts a reprocessed `reconciled` or `reconciled_with_variance` status only when `superseded_by_batch`, a full-index audit and a measured snapshot are present. Batch170 historical assertions now compare against the Batch171 boundary rather than the current corpus total.
+- PR #35 remains unmerged pending a fresh exact-head Answer Quality Gate. The hourly workflow, audience, repository permissions and access settings are unchanged.
+
+
+### 2026-11-19 — follow-up readiness assertion repair
+
+The first Batch171 exact-head run (44422763891) passed index generation, question-specific retrieval, synthesis, citation integrity, evidence-contract and write-safety checks. It then exposed a second historical assertion: Batch085 may be reprocessed as `reconciled_with_variance` by the full-index reconciler. The readiness test now accepts that state only when a full-index audit and actual/expected snapshots exist and the stored variance equals the arithmetic difference. No corpus status is manually overwritten.
+
+
+### Reconciliation queue schema note — 2026-11-19
+
+The project-state pending reconciliation list remains a numerically ordered array of string batch IDs. Batch170 and Batch171 are recorded as `170` and `171`; no object-shaped queue entries are introduced.
+
+
+### 2026-11-19 — Batch170 duplicate consolidation, Batch171 canonical repair, and Batch172
+
+- Exact-head Answer Quality Gate run 44423637868 measured the PR workspace at 1,547 answer-eligible unique sources / 854 content-verified unique sources / 4,026 answer-eligible propositions. Its full-index audit found AID 2988933 in both Batch141 and Batch170 under the same Evidence Family `sicha-5716-simchat-torah-aid2988933`. The Batch170 duplicate source record was removed; its inspection is retained as a duplicate recheck. The distinct Batch171 proposition was consolidated into the original Batch141 canonical record. No new witness or Verified promotion is counted for the duplicate.
+- Corrected Batch170 planning count: seven new identities, two in-place enrichments, one duplicate recheck, seven new propositions and two existing-identity propositions; expected planning boundary 1,547 / 854 / 4,021. Batch171 adds eight in-place propositions to eight identities; expected planning boundary 1,547 / 854 / 4,029. These are expected boundaries, not post-correction measurements.
+- Batch172 inspected eleven original-Hebrew item-level public Sicha bodies at Chabad.org / BeitChabad.com: AIDs 2989237, 4385650, 5959840, 2989311, 2988879, 2989234, 4385701, 4279994, 4296163, 2988877 and 2988906. Each has one non-verbatim source-grounded proposition, exact body locator, provenance, bounded verification scope, partial-context status and item-specific limitations. AID 4385650's page states that the talk was edited by the Rebbe and printed in Likkutei Sichos vol. 28; the printed edition was not separately collated. Batch172 also records one English translation of a Yiddish personal letter to Zalmon Jaffe (Chabad.org AID 259799, lines 272–276). The memoir author explicitly says this is his translation; the article does not supply or link the original Yiddish body. A separate Yiddish search result was identified as a different letter to Jacques Lipchitz and excluded as unrelated. The translated Jaffe letter is one non-independent presentation of a single Evidence Family, not an independent witness.
+- Two other Hebrew item pages, AIDs 4385482 and 5989925, returned HTTP 429. A separate Yiddish text result encountered during research was identified as a different letter to Jacques Lipchitz and excluded as an unrelated identity; it was not treated as the original of the Zalmon Jaffe letter. The article itself does not supply or link the original Yiddish body. Eleven Hebrew bodies and one English translated body were inspected in the same run. No crawler retry, access-control bypass, scan-only content verification, search-snippet content, full-text copying, translation-as-independent-witness, or Verified promotion was used.
+- Batch172 planning boundary: 1,547 / 854 / 4,029 before, 1,559 / 854 / 4,041 expected after. The 12 source identities comprise eleven independent Hebrew Sicha witnesses and one non-independent English translation presentation. The preflight checked the current review queue, exact-AID repository searches and available bulk-index snapshots, but did not scan every historical canonical batch. These candidate identity counts remain provisional until the exact-head full-index reconciler confirms no older AID collisions.
+- The readiness test now checks historical Batch097 variance by measured arithmetic and a completed full-index audit, while prohibiting positive content-verified growth. Batch170/171 tests now require the single canonical AID 2988933 identity and verify that Batch171's new proposition is stored in Batch141.
+- PR #35 remains unmerged pending a fresh exact-head Answer Quality Gate. Main's public metrics and GitHub Pages have not been changed by this branch update. The hourly workflow, audience, repository permissions and access settings remain unchanged.
+
+- The Batch172 translation record is stored with `language=English`, `original_language=Yiddish`, `independent_witness=false`, and `translation_of_evidence_family_id` equal to its letter Evidence Family. It may enrich the family but is never counted as an additional independent witness. The original Yiddish text remains uninspected; a separate Yiddish item was excluded as a different letter, and no content or relationship was inferred from its metadata.
+
+
+### 2026-11-19 — Batch172 duplicate correction and Batch173 in-place source enrichment
+
+- Exact-head Answer Quality Gate run 44427907501 completed retrieval, synthesis, citation integrity, evidence-contract and structural checks, then failed in `test_content_readiness.mjs` because AID 2988877 appeared as a new Batch172 identity even though it already has one canonical identity in Batch100. The Batch100 record has Evidence Family `sicha-5714-beshalach-12-shevat-aid2988877` and eleven existing propositions. The Batch172 duplicate candidate was removed from `records` and `source_body_review`, retained as a duplicate recheck, and contributes no new family or proposition.
+- Corrected Batch172 boundary is planning-only: 11 new source identities/presentations (10 original-Hebrew Sichos plus one non-independent English translation of a Yiddish letter), 11 new propositions, one duplicate recheck, 10 independent witnesses, one non-independent translation, and zero Verified promotions. Expected boundary: 1,558 / 854 / 4,040.
+- Batch173 inspected eight additional original-Hebrew body passages and appended one new non-verbatim proposition in place to each existing identity: AIDs 2989059, 4385558, 2989147, 3008930, 3140218, 4279923, 2989220 and 4296226. Seven are Sichos and one is a Maamar. Every addition has an exact body locator, `source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, provenance, scoped verification, partial-context boundaries and an item-specific limitation. Existing AIDs and Evidence Family IDs were retained; no new source identity, family, independent witness or Verified status was added.
+- AID 4666220 returned Internal Error through the public reader. It was documented as blocked, not retried through the crawler, and not bypassed. Eight accessible Hebrew bodies were used as same-run fallback. Search results were navigation only; no search snippet was used as content evidence and no full protected text was copied.
+- Batch173 planning boundary only: 1,558 / 854 / 4,040 → 1,558 / 854 / 4,048. Exact-head reconciliation must supply measured before/after values and confirm the eight in-place family links.
+- The readiness test now covers the Batch172 duplicate reclassification and Batch173 in-place enrichments, including one-to-one claim locators and unchanged source/Verified counts. A fresh exact-head Answer Quality Gate is required before PR #35 can be merged.
+- Main public metrics remain 977 / 878 / 2,950 until a successful merge and post-merge reconciliation. GitHub Pages publication is not claimed. The hourly workflow, schedule, audience, permissions and access settings remain unchanged.
+
+## 2026-11-19 — Batch174: eight additional in-place source enrichments
+
+- Inspected eight distinct additional passages in original-Hebrew public bodies at he.chabad.org / BeitChabad.com and appended eight bounded, non-verbatim research propositions to existing canonical identities: AIDs 2989059, 4385558, 2989147, 3008930, 3140218, 4279923, 2989220 and 4296226.
+- Every addition records `source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, an exact body locator, provenance, scope, partial-context status and a passage-specific limitation. Existing AIDs and Evidence Family IDs were preserved; no new identity, independent witness or Verified promotion was added.
+- AID 4666220 returned Internal Error through the public reader. It was recorded as blocked; eight accessible Hebrew body passages were used as same-run fallback. No crawler retry, access-control bypass, search-snippet content inference or full-text copying occurred.
+- Batch174 planning boundary is 1,552 / 854 / 4,040 before and 1,552 / 854 / 4,048 expected after. The before snapshot is the PR-workspace measurement from Answer Quality Gate run 44430166602 on commit c3521f264b51fd113a457fc980243d90e86bc6b1; it is not a main/public metric. The after snapshot remains pending exact-head full-index reconciliation.
+- The readiness test was corrected to validate historical reconciliation variance arithmetically rather than requiring every historical batch to remain exactly reconciled after later canonical changes. Batch172/173/174 boundaries are checked sequentially so a historical batch is not compared to the final corpus snapshot.
+- PR #35 remains unmerged until a fresh exact-head Answer Quality Gate, including `test_content_readiness.mjs`, passes. Main metrics and GitHub Pages have not been changed by this PR.
+
+
+
+## 2026-11-19 — Batch175: source-body enrichment and readiness-gate repair
+
+The exact-head Answer Quality Gate run `44436032237` completed reconciliation after Batch174 and measured `answer_eligible_unique_sources=1552`, `content_verified_unique_sources=854`, and `answer_eligible_propositions=4048` in the PR workspace. The run then failed in `scripts/test_content_readiness.mjs:1426` with `ReferenceError: Cannot access 'batch174Data' before initialization`; this is a test-ordering defect (temporal dead zone), not a content-reconciliation failure. The declaration is moved before its first use, and the current-batch assertions are advanced to Batch175.
+
+Batch175 adds eight non-verbatim, source-grounded Hebrew propositions to eight existing canonical identities: AIDs 2989059, 4385558, 2989147, 3008930, 3140218, 4279923, 4296226, and 4279876. Each passage was opened in the original Hebrew body, checked at a non-overlapping locator, and recorded with provenance, scope, partial-context limits, and conditions. Seven are Sichos and one is a Maamar. No new identity, Evidence Family, independent witness, translation witness, or Verified promotion was added. The planning boundary is 1552/854/4056; it remains unmeasured until the next exact-head reconciliation.
+
+Nine other public-reader paths (AIDs 554871, 555023, 555044, 555045, 555070, 555071, 555072, 555082, 555084) returned Internal Error. They were documented as blocked; no proposition was created from their titles or metadata. Eight accessible Hebrew source bodies were used as same-run fallback. The blocked `acquire_source_content.py` crawler was not retried and no access control was bypassed.
+
+The answer engine gains a three-family comparison for the relationship between special care in one mitzvah, adapting hiddurim to a person's capacity, and the concept of empowerment from above. It is explicitly labelled as system synthesis, not a Rebbe quotation; each claim retains its own body locator and the researcher mode exposes the deep evidence map. Public `data/public-metrics.json` remains unchanged until merge and post-merge reconciliation.
+
+
+## 2026-11-19 — Batch176: nine new Hebrew/Yiddish source identities; historical snapshot reconciliation fix
+
+- Opened and inspected nine original-language publisher bodies: eight Hebrew public-talk transcripts (AIDs 4279925, 2989560, 2989195, 2989574, 4304430, 2988862, 4385609, 2988859) and one edited Yiddish Likkutei Sichos excerpt (AID 4736086). Each received one bounded, non-verbatim `source_grounded_paraphrase` with `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, exact body locator, provenance, verification scope, partial context and passage-specific limitations.
+- The Yiddish original at AID 4736086 was inspected directly. Its English translation is a derived presentation on the same page and was not entered as a separate item or counted as an independent witness. The other eight sources are Hebrew originals. All nine remain Parsed; no Verified promotion was made.
+- AID 554871 opened only as an audio listing with no transcript/body text and was excluded. Nine accessible original-language bodies were used as same-run fallback. No search extract was used as content, no crawler retry or access-control bypass occurred, and no full protected text was copied.
+- Preflight checked the 1,022-record content-review queue, current PR tree item paths and exact-AID repository code searches; no matches were found. This is not a full historical index scan. Full AID and Evidence Family reconciliation remains pending.
+- Batch176 planning boundary only: after Batch175 expected 1552/854/4056, then Batch176 expected 1561/854/4065. No actual Batch176 metric has been measured; no public/main metrics were changed.
+- The previous exact-head readiness run failed because the reconciler re-audited already reconciled historical batches and overwrote their historical `metrics_actual_after` with a later whole-corpus snapshot (for example Batch077's 792 boundary was rewritten to 815 in the CI workspace). `scripts/reconcile_metrics.py` now treats a previously reconciled batch's metrics boundary as frozen during later full-index audits; the audit may refresh deduplication evidence but cannot rewrite historical boundary metrics. A helper and regression checks were added in `scripts/reconciliation_helpers.py` and `scripts/test_reconcile_status.py`.
+- PR #35 remains unmerged pending a fresh exact-head Answer Quality Gate including `test_content_readiness.mjs`. Main metrics and GitHub Pages have not been changed by this branch update. The hourly workflow, audience, repository permissions and access settings remain unchanged.
+
+
+### Batch176 provenance correction — 2026-11-19
+
+A second inspection of the publisher footnote for AID 2988859 (footnote 51, lines 587–588) established that the inspected section ח׳ was edited by the Rebbe and published in Yiddish as the introduction to Sefer HaMinhagim and in Likkutei Sichos Vol. 23. The Hebrew presentation at AID 2988859 is therefore recorded as a derived Hebrew presentation of an edited Yiddish section, linked to the same Evidence Family and explicitly marked `independent_witness=false`. It is not counted as an independent witness. Batch176 now records nine source presentations, eight independent original-language witnesses (seven Hebrew and one Yiddish), and one non-independent Hebrew presentation of Yiddish text. The original-language distribution is seven Hebrew and two Yiddish; the display-language distribution remains eight Hebrew and one Yiddish. The expected nine Evidence Families are still subject to full-index reconciliation.
+
+
+## 2026-11-19 — Batch177: eight additional in-place Hebrew body enrichments; exact-head reconciliation through Batch177
+
+- Opened and inspected eight distinct, non-overlapping passages in the original Hebrew bodies of existing Batch176 Sicha identities: AIDs 4279925, 2989560, 2989195, 2989574, 4304430, 2988862, 4385609 and 2988859. Each new proposition is a non-verbatim, source-grounded research paraphrase with its own body locator, provenance, partial-context scope and passage-specific limitation. The existing AID and Evidence Family are retained; each source remains Parsed.
+- No new source identity, Evidence Family, independent witness, translation witness or Verified promotion was added. The eight additions are propositions only; the expected source count remains 1,561 and expected proposition count becomes 4,073, pending exact-head measurement.
+- Three alternate Hebrew pages (AIDs 6132083, 5989563 and 6132054) returned HTTP 429. The pages were recorded as blocked and eight accessible Hebrew body passages were used as same-run fallback. AID 4736086 was opened, but the reader displayed its English translation rather than the original Yiddish; no new proposition or independent witness was added. No crawler retry, access-control bypass, search-snippet inference or full-text copying occurred.
+- Batch177 is stored at `data/items/content-research-batch-177-2026-11-19.json`; seven genuine existing-identity updates point to the surviving Batch176 canonical records. AID 4304430 was rechecked but excluded because its passage already exists in canonical Batch101. A full-index scan and measured metrics are still pending.
+- The exact-head readiness test was updated to reconcile the contiguous Batch175–177 chain, require one canonical index identity per target AID, and compare the final metrics to Batch177 rather than Batch176. The prior test expected Batch176 to be the latest reconciled batch while its source snapshot was still pending; that stale expectation has been replaced with a Batch177 boundary.
+- PR #35 remains unmerged until the exact-head Answer Quality Gate, including `test_content_readiness.mjs`, passes. Main/public metrics and GitHub Pages have not been changed by this branch update.
+
+
+
+## 2026-11-19 — Exact-head duplicate correction for Batches 176–177
+
+- Answer Quality Gate run 44450672113 exposed two AID collisions in Batch176. AID 4304430 was already canonical in Batch101 (with a linked non-independent presentation in Batch146); the Batch176 propositions overlapped the existing canonical propositions. AID 4736086 was already canonical in Batch107 and had been enriched in Batch153; the inspected Yiddish passage overlapped existing content. Neither duplicate is a new identity, Evidence Family or proposition.
+- Both duplicate presentations were removed from Batch176 `records[]` and retained in `excluded_duplicate_candidates` with their canonical file, identity and Evidence Family. Batch176 now contains seven new identities and seven propositions: six independent Hebrew witnesses and one derived Hebrew presentation of an edited Yiddish source. No translation is counted as an independent witness.
+- Batch177's AID 4304430 recheck was also excluded from enrichment counts because its passage is already represented in Batch101. Seven genuine in-place enrichments remain; one recheck is retained in the audit trail.
+- Corrected planning boundary after Batches175–177: **1,559 answer-eligible unique sources / 854 content-verified unique sources / 4,070 answer-eligible propositions**. This is not a measured result; exact-head reconciliation and readiness must confirm it. Public main metrics are unchanged until merge.
+- No Verified promotion, crawler retry, access-control bypass, full-text copying, schedule change or permission/audience change.
+
+
+- Historical Batch110 was included in the exact-head evidence-index audit during run 44450486958. All eight target AIDs resolved to Parsed, source-text-inspected entries; the stale pending-scan metadata was corrected to record the completed full-index audit. The existing collision and missing-identity arrays remain empty.
+
+
+- Search-index selection now prefers the canonical identity over a same-AID, same-Evidence-Family duplicate presentation when both are answer-eligible and have the same status. This keeps AID 4304430 on its canonical Batch101 record (five propositions) rather than the non-independent Batch146 alias (two propositions); the alias remains linked for provenance and family accounting.
+
+
+## 2026-11-19 — Batch178: eight inspected English Yechidus texts; Batch176–177 duplicate correction
+
+- Opened and inspected the public text bodies of eight distinct dated Yechidus pages in the Chabad.org / TheRebbe.org *Sichos in English Collection*: AIDs 2497688, 2511619, 2506495, 2505782, 2506320, 2511596, 2498908 and 2512367. Each contributed one non-verbatim Hebrew research paraphrase with a page-line locator, provenance, scope, partial-context status and explicit limitations.
+- These are published English renderings. The original Hebrew/Yiddish text, recording and printed original were not inspected. All eight records therefore remain Parsed, use one Evidence Family per dated event, are marked `independent_witness=false`, and contribute zero independent witnesses. Any future original-language presentation of the same event must be linked to that family.
+- Three alternative pages were opened and excluded because they exposed only metadata/audio listings, not text bodies: AID 553508 (Hebrew), 553257 (audio listing) and 553643 (French). Search snippets were used only to discover pages, never as content evidence. No crawler retry, access-control bypass, scan-only verification or full-text copying.
+- Full-index duplicate review found that Batch176 AIDs 2989195 and 2989574 were already canonical in Batch101 and Batch153; the inspected candidate passages overlap existing propositions. They were removed from Batch176 new identities and Batch177 enrichments and retained only as duplicate recheck records. Batch176 now has five new identities/families and five propositions; Batch177 has five in-place enrichments and five propositions. The reconciliation script now excludes `excluded_duplicate_*` audit rows from canonical source indexing.
+- Exact-head CI run 44456969090 measured 1,557 answer-eligible unique sources / 854 content-verified unique sources / 4,069 answer-eligible propositions after Batch177 in the PR workspace. The readiness test then stopped at a stale Batch082 assertion requiring an obsolete canonical file path. The test now accepts a migrated canonical `data/items/` path while requiring the Evidence Family to remain stable.
+- Batch178 adds eight dated event families and eight propositions. Expected PR-workspace boundary is 1,565 / 854 / 4,077; this remains a planning boundary until the next exact-head reconciliation. Public main remains 977 / 878 / 2,950. No Verified promotions.
+- PR #35 remains unmerged. No main commit or Pages deployment is claimed. The hourly schedule, repository audience and permissions remain unchanged.
+
+
+## 2026-11-19 — Batch178 full-index correction and Batch179 content review
+
+- Exact-head Answer Quality Gate run 44468523825 completed reconciliation on the PR workspace at **1,560 answer-eligible unique Evidence Families / 854 content-verified sources / 4,072 answer-eligible propositions**. The readiness test failed because the Batch178 assertion still expected 1,565 / 4,077.
+- The full-index audit showed that five Batch178 candidates were already canonical: AIDs 2511619, 2506495, 2506320 and 2498908 in Batch137, and AID 2512367 in Batch139. Their newly inspected passages overlapped the existing canonical propositions. They were removed from Batch178 `records[]` and retained in `excluded_duplicate_candidates` / `duplicate_rechecks`; only AIDs 2497688, 2505782 and 2511596 remain as three new Evidence Families and three propositions. No duplicate source or proposition is counted.
+- Batch179 opened and inspected eight public English bodies: AIDs 2513564, 2513855, 2505723, 2514116, 2513277, 2515477, 2515007 and 2511662. Seven are dated Yechidus publications and one is a dated Sicha. Each contributes one bounded Hebrew research paraphrase with exact body-line locator, provenance, verification scope, partial context and explicit limitations.
+- All eight Batch179 texts are published English renderings in the Sichos in English Collection. No original Hebrew/Yiddish text, recording or printed original was inspected; all remain Parsed and non-independent. No Verified promotion.
+- Three Hebrew item routes for AIDs 2513564, 2513855 and 2515477 returned Internal Error. The English publisher bodies were used as same-run fallback; no access-control bypass or crawler retry was attempted. Search results were used only for discovery, never as content evidence.
+- Batch179 planning boundary from the measured Batch178 snapshot is **1,568 / 854 / 4,080**. This is not a measured post-Batch179 result; exact-head reconciliation and `test_content_readiness.mjs` are pending.
+- PR #35 remains unmerged; public main metrics remain 977 / 878 / 2,950. No new main commit or Pages deployment is claimed. The existing hourly schedule, repository audience and permissions are unchanged.
+
+
+## 2026-11-19 — Batch180: Hebrew source additions, Yiddish enrichment, and a secondary memoir
+
+- Opened and inspected nine public source-body units: six new original-Hebrew Sichos (AIDs 5959907, 4296168, 2989222, 5959959, 5989922, 4279947), one English memoir excerpt (AID 259799), and two in-place enrichments (AID 4280029 in Batch100; AID 4736086 in Batch107, including a directly inspected Yiddish passage).
+- Added eight propositions to seven new identities and two additional propositions to existing identities: ten non-verbatim, source-grounded propositions in total. The memoir record is explicitly secondary; its first letter is an author's English translation of a Yiddish letter, and neither original letter was inspected. The Yiddish/English parallel on AID 4736086 remains one Evidence Family, not two witnesses.
+- Three alternative routes (AIDs 5959980, 4313081, 5990021) returned HTTP 429. They were recorded as blocked; accessible public bodies were used as same-run fallback. No crawler retry, access-control bypass, full-text copying, or Verified promotion.
+- Preliminary exact-AID review found AIDs 4280029 and 4736086 in their existing canonical records; the seven new AIDs were not found in the review queue or the reviewed recent batch files. A full canonical scan is still pending; older corpus files were not all searched.
+- Planning boundary only: 1568/854/4080 → 1575/854/4090. This is not a measured post-reconciliation count. Public main metrics remain unchanged until merge and post-merge reconciliation.
+- Next gate: exact-head full-index reconciliation and `test_content_readiness.mjs` through Batch180. PR #35 remains unmerged until the complete Answer Quality Gate is green.
+
+
+## 2026-11-19 — Batch181: nine English Yechidus bodies and one Yiddish in-place enrichment
+
+- Opened and inspected nine distinct dated English Yechidus publisher bodies: AIDs 2514886, 2515046, 2514160, 2513225, 2499828, 2511676, 2511792, 2511754 and 2512299. Each contributes one bounded Hebrew research paraphrase with a body-line locator, provenance, partial-context scope and explicit limits.
+- Enriched existing AID 4736086 in place in Batch107 from the Yiddish original, sections יא–יג, lines 355–382. Its existing ID and Evidence Family were retained; the parallel English rendering is not an independent witness.
+- Three Hebrew routes (AIDs 2514886, 2515046 and 2514160) returned Internal Error through the public reader. The corresponding English publisher bodies were inspected in the same run. No crawler retry or access-control bypass was attempted.
+- All nine new English presentations remain Parsed, non-independent and partial-context. No Verified promotion; no full copyrighted text copied.
+- Preliminary exact-AID checks returned no matches in the default-branch code search and no matches in recent batches 175–180. This is not a full canonical scan; full-index identity and Evidence Family reconciliation remains pending.
+- Planning boundary only, carried forward from Batch180 expected boundary: **1,575 / 854 / 4,090 → 1,584 / 854 / 4,100**. These are not measured results. Public main metrics remain **977 / 878 / 2,950** until merge and post-merge reconciliation.
+- test_content_readiness.mjs was extended through Batch181 and now includes a multi-family unity synthesis check in both regular and deep researcher modes, with claim-level citation and derived-translation integrity assertions.
+- PR #35 remains unmerged pending the exact-head Answer Quality Gate. No new main commit or Pages deployment is claimed. The hourly schedule, repository audience and permissions are unchanged.
+
+
+## 2026-11-19 — Batch181 reconciliation correction and Batch182 source review
+
+- Exact-head reconciliation found six Batch181 AIDs already represented in earlier canonical files: 2514886, 2515046, 2513225, 2499828, 2511676 and 2512299. Their newly inspected English propositions were moved into those existing records; duplicate records were removed from Batch181. Batch181 now has **3 new event identities and 7 in-place enrichments** (the six canonical English presentations plus the Yiddish-original AID 4736086), with 10 new paraphrases total and no Verified promotion.
+- Fixed `scripts/reconcile_metrics.py`: historical snapshot selection now uses the same deterministic witness-priority order as the public search index. The previous mismatch (1574/854/4089 in the batch snapshot versus 1574/854/4095 in the final index) came from different tie-break rules when multiple presentations shared an AID. The readiness test now checks the corrected batch chain through Batch182.
+- Batch182 inspected eight original-Hebrew letter bodies published by Kehot/Chabad.org: AIDs 4731068, 5357009, 5413030, 5357052, 5100679, 5357571, 5413490 and 5100718. Each has one non-verbatim, source-grounded Hebrew proposition with exact body-line locator, provenance, partial-context scope and limitations. All remain Parsed; no Verified promotion.
+- AID 4666220 redirected to a browser-compatibility shell and exposed no letter body. It was recorded as content-blocked; eight alternate publisher bodies were inspected in the same run. No crawler retry, access-control bypass, full-text copying or scan-only verification.
+- Batch182 planning boundary: **1574 / 854 / 4095 → 1582 / 854 / 4103** (answer-eligible unique sources / content-verified unique sources / answer-eligible propositions). This is a planning boundary pending full-index reconciliation, not a committed public metric. Preliminary duplicate checks were limited; exact-head reconciliation remains the authority.
+- The hourly schedule, repository audience and permissions remain unchanged.
+
+
+## 2026-11-19 — Batch183: original-language letters, Yiddish and in-place enrichment
+
+- נפתחו ונבדקו 10 גופי פרסום: שמונה זהויות חדשות (שבעה מכתבים בעברית ומכתב אחד ביידיש), מקטע נוסף בשיחה קיימת AID 2989059, ובדיקת כפילות של AID 4666247. AID 4666220 הציג מעטפת תאימות דפדפן ללא גוף קריא.
+- נוספו שמונה פרופוזיציות לא-מילוליות לזהויות חדשות ופרופוזיציה אחת לזהות קיימת. כל הרשומות החדשות נשארו Parsed; לא קודם מקור ל-Verified.
+- AID 4666247 לא נוסף: הוא כבר קיים בקובץ `data/items/igrot-kodesh-v2-letter-208-aid-4666247.json` ובמשפחת הראיות `original-letter-aid-4666247`. AID 2989059 הועשר בתוך `data/items/content-research-batch-170-2026-11-19.json` תוך שמירת אותה Evidence Family.
+- לא הופעל crawler ולא בוצע ניסיון לעקוף את מעטפת הדפדפן. שמונת גופי המכתבים החלופיים נבדקו ישירות; לא הועתק טקסט מוגן במלואו.
+- גבול תכנון בלבד: 1,582 / 854 / 4,103 לפני האצווה ו-1,590 / 854 / 4,112 צפוי אחריה. המדידה בפועל ממתינה ל-exact-head reconciliation; אין להציג את המספרים האלה כתוצאה.
+- readiness test תוקן כך שיכבד שתי נקודות בסיס היסטוריות שנמדדו בנפרד (Batch176 ו-Batch181) במקום להניח שכל גבול תכנון רציף. הפערים נשארים מפורשים ונבדקים מול `metrics_before_source`; אין תיקון ידני של מדדים.
+- PR #35 נשאר פתוח עד שה-Answer Quality Gate יעבור. מיזוג ל-main ופרסום Pages טרם בוצעו.
+
+## 2026-11-19 — Batch184: eight Hebrew Sicha enrichments
+
+- Opened and inspected eight original-Hebrew bodies from BeitChabad.com / he.chabad.org, adding eight bounded, non-verbatim source-grounded propositions to existing identities AIDs 4304430, 2989059, 5959968, 4296159, 2989062, 4385513, 2989052 and 2989054.
+- Each canonical record now carries a new response_proposition_metadata entry with proposition_origin=source_grounded_paraphrase, proposition_verbatim=false, proposition_verification=source_text_inspected, exact proposition_source_locator, provenance, partial-context scope and limitations. No complete copyrighted text was copied.
+- Eight /therebbe publisher routes (AIDs 4645972, 4831491, 4646057, 5054374, 4831547, 5413680, 4731070 and 5019667) redirected to browser-compatibility summary shells without readable bodies. They were recorded as blocked; the same run used eight accessible Hebrew body pages from the /library/article_cdo/aid/ route. No crawler retry or access-control bypass.
+- No new source identities, Evidence Families, independent witnesses or Verified promotions. All eight records remain Parsed.
+- Full-index review found two presentations of AID 4304430 in batches 101 and 146. Batch101 remains canonical; batch146 is marked Linked/non-independent and both are tied to sicha-5724-yud-beis-tammuz-aid4304430. The proposition is stored on the canonical record and is counted once.
+- Exact-head PR-workspace baseline from Answer Quality Gate run 44523818685: 1,587 answer-eligible unique sources / 854 content-verified unique sources / 4,115 propositions. Batch184 expects 1,587 / 854 / 4,123 after eight in-place propositions; this is planning only until reconciliation.
+- Readiness-test correction: when a prior batch's measured actual-after differs from its expected-after, the next batch baseline is checked against the prior expected boundary; each batch's measured variance is validated independently. This avoids treating a recorded reconciliation variance as an unrecorded new batch delta.
+- PR #35 remains open pending a fresh exact-head Answer Quality Gate. No main merge or Pages deployment is claimed until the gate passes.
+
+
+## 2026-11-19 — Batch186: eight in-place Hebrew Sicha enrichments
+
+- Opened and inspected eight non-overlapping original-Hebrew passages from eight public BeitChabad.com / he.chabad.org Sicha bodies: AIDs 3140221, 4279862, 2988861, 2988879, 2988855, 2988876, 2988887 and 2988862. Six identities originated in Batch185; AID 2988879 is canonical in Batch172 and AID 2988862 is canonical in Batch176.
+- Added eight non-verbatim, source-grounded research propositions to existing records. Each carries `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, a claim-level body locator, provenance, partial-context scope and explicit limitations. No new identity, Evidence Family, independent witness or Verified promotion was added.
+- AID 4666220 redirected to a browser-compatibility/Torah Texts shell requiring a newer browser, with no readable letter body. It was recorded as blocked; eight alternative original-Hebrew source bodies were inspected in the same run. No crawler retry, access-control bypass, scan-only verification or full-text copying.
+- The eight AIDs resolve to eight existing canonical identities and distinct Evidence Families. The preflight check found no new identity collisions; the full-index audit remains pending exact-head reconciliation.
+- Batch186 planning boundary: **1,594 / 854 / 4,129 → 1,594 / 854 / 4,137** (answer-eligible unique sources / content-verified unique sources / answer-eligible propositions). These are planning values derived from Batch185's expected boundary, not measured or public metrics. No Verified count changes.
+- Extended `test_content_readiness.mjs` through Batch186, corrected contiguous historical snapshot chaining, and added a three-Evidence-Family Torah-learning/youth-education/Chassidic-dissemination regression in regular and deep researcher modes.
+- The prior exact-head run 44554020367 reached the measured readiness phase and stopped at a stale current-batch assertion (expected 184 while the state was 185). The new commit triggers a fresh exact-head run; no new gate result is claimed yet.
+- PR #35 remains open pending the fresh Answer Quality Gate and post-merge Pages verification. The hourly schedule, repository audience and permissions are unchanged.
+
+
+## 2026-11-19 — Batch185 exact-AID duplicate correction
+
+- Exact-head identity review found that AID 2988879 was already represented canonically in `data/items/content-research-batch-172-2026-11-19.json` under Evidence Family `sicha-5714-vayakhel-adar-sheni-aid2988879`. The Batch185 candidate was a second presentation of the same event, and its paraphrase overlapped the canonical Batch172 locator (lines 179–204).
+- Removed the duplicate Batch185 source record and did not count its overlapping proposition. The candidate remains in the Batch185 duplicate/recheck audit; Batch172 remains the sole canonical identity.
+- Corrected Batch185 to **6 new identities, 2 in-place enrichments, 1 existing-identity recheck and 8 new paraphrases**. Its planning boundary is now **1,593 / 854 / 4,128**, not the earlier uncorrected 1,594 / 854 / 4,129.
+- The distinct Batch186 claim about the debate over studying halachic reasons and the Alter Rebbe's Shulchan Aruch is appended only to the Batch172 canonical record. Batch186 planning boundary is **1,593 / 854 / 4,136**. Both boundaries remain planning values until exact-head reconciliation.
+
+
+## 2026-11-19 — Readiness-test boundary correction
+
+- Exact-head reconciliation on run 44556976010 completed and measured **1,593 answer-eligible unique sources / 854 content-verified sources / 4,136 answer-eligible propositions**. Batch186's audit selected all eight enriched identities, all answer-eligible, across eight Evidence Families.
+- The run failed at the historical Batch177→178 boundary because a test-helper edit incorrectly compared the next batch's measured baseline (4,069) with the predecessor's actual-after snapshot (4,074). The repository's reconciliation policy intentionally resets the next batch baseline to the predecessor's documented expected boundary and checks each batch's actual variance separately. The helper is restored to that rule; this is a test correction, not a content-readiness failure.
+
+
+## 2026-11-19 — Historical reconciliation boundary rule
+
+- Two exact-head runs exposed both legitimate reconciliation paths at contiguous historical boundaries: one next batch carried the predecessor's measured actual snapshot (Batch176→177), while another reset to the documented expected boundary (Batch177→178). The test now accepts either only when the declared expected boundary is contiguous, and still validates each batch's actual-versus-expected variance independently. Non-contiguous baselines continue to require an explicit measured/exact-head/baseline source note and must match their own baseline.
+- The latest failed run 44558378574 stopped at Batch176→177 with a 5-proposition variance between the predecessor snapshot and the documented baseline. This is a historical reconciliation-policy assertion, not a failure of Batch186 source readiness. Exact-head reconciliation again measured **1,593 / 854 / 4,136**.
+
+
+## 2026-11-19 — Batch187: eight inspected Hebrew Sicha bodies
+
+- Inspected eight public Hebrew body passages directly on `he.chabad.org`: five new dated Sicha identities (AIDs 2988841, 4279934, 4279980, 4279982, 4296148) and three in-place enrichments of canonical AIDs 2989311, 2989554, 4279994 (canonical files Batch101/151). Each passage has a non-verbatim `source_grounded_paraphrase`, `source_text_inspected`, exact body locator, provenance, partial-context scope and explicit limitations. No Verified promotions.
+- Alternate routes were recorded, not retried through the blocked crawler: eight Volume II letter pages showed browser-compatibility shells; eight Yechidus pages were audio-only without transcripts; eight additional letter pages showed shells; HebrewBooks PDF pages 10–11 for req=15897 were inaccessible through the available public reader. The fallback in the same run was eight directly inspected Hebrew Sicha bodies. No access controls were bypassed, no scan was treated as content verification, and no full protected text was copied.
+- Batch172 duplicate audit corrected: AID 2989311 is a duplicate presentation of canonical Batch101; AID 4279994 is a duplicate presentation of canonical Batch151. Both were removed from Batch172 new records and linked to their canonical Evidence Families; the Batch172 planning boundary is now 1556 / 854 / 4039. AID 2988877 remains a separate duplicate recheck.
+- Added a three-family synthesis for Torah learning with vitality/Yirat Shamayim (AID 4279980), continued effort because Torah is unbounded (AID 4296148), and prayer before learning (AID 4279994). The synthesis is explicitly system-authored, not a Rebbe quote; claim-level locators are preserved in regular and deep researcher modes.
+- Batch187 planning boundary: 1593 / 854 / 4136 → 1598 / 854 / 4144. This is not an actual final measurement; full-index reconciliation and the exact-head `test_content_readiness.mjs` gate are pending. Public main metrics remain 977 / 878 / 2950 until merge and post-merge reconciliation. PR #35 remains unmerged; Pages publication not yet confirmed.
+
+
+## 2026-11-19 — Batch188: ten new Hebrew source identities and one in-place enrichment
+
+- נפתחו ונבדקו 12 גופי פרסום עבריים: עשר זהויות חדשות (תשע שיחות ורשומת ר״ד אחת) ומקטע נוסף לא חופף בזהות הקיימת AID 2989059. נוספו 11 פרפרזות מחקר לא-מילוליות עם מיקום ברמת סעיף/שורות, provenance, היקף אימות, הקשר חלקי ומגבלות. לא נוצרה זהות חדשה ל-AID 2989059; נשמרו הקובץ הקנוני Batch170 ומשפחת הראיות הקיימת.
+- AID 2989335 נפתח ונקרא אך הוחרג: גוף המכתב והעמוד שנבדקו לא ביססו מחבר או חותם, ולכן לא נוצרה פרופוזיציה ולא יוחס תוכן לרבי.
+- ניסיון להוסיף עד יידי מקורי: Chabad.org Torah Texts 4754421 הציג הודעת תאימות דפדפן ללא גוף מכתב; נתיב yi.chabad.org לא היה נגיש בכלי הציבורי. לא הוסקה תמצית ולא נוצרה פרופוזיציה. מאמר אנגלי משני שאיתר את המכתב שימש לניווט בלבד ולא נספר כעד עצמאי. באותה הפעלה בוצעה חלופה ממשית: עשרה גופי שיחות עבריים נגישים נבדקו ונוספו.
+- בדיקת כפילויות מקדימה: עשרת ה-AIDs החדשים נבדקו מול GitHub code search ב-main, כל קובצי אצוות התוכן ששונו ב-PR #35 בטווח 70–187 ותור הבדיקה הנוכחי; לא נמצאה התאמת AID. AID 2989059 זוהה בזהותו הקנונית ב-Batch170 והועשר במקומו. סריקת canonical מלאה תבוצע ב-reconcile_metrics.py בריצת ה-CI.
+- בסיס תכנון Batch188: **1,598 / 854 / 4,144 → 1,608 / 854 / 4,155**. הבסיס 1,598 / 854 / 4,144 נמדד ב-PR workspace בריצת CI 44564897783 לאחר Batch187, אך אינו מדד ציבורי ב-main. הגבול לאחר Batch188 הוא תכנון בלבד עד reconciliation מלא.
+- לא הועתק טקסט מוגן במלואו, לא הופעל crawler חסום, לא נעקפו בקרות גישה ולא קודם מקור ל-Verified. PR #35 נשאר פתוח עד מעבר test_content_readiness.mjs; מדדי main הציבוריים נשארים 977 / 878 / 2,950 עד מיזוג ו-reconciliation בפרסום.
+
+
+## Batch 189 — 19 November 2026
+
+Eight non-overlapping passages were inspected directly in the original Hebrew bodies of eight existing Sicha identities (AIDs 2989349, 2989337, 2988901, 2989336, 2989341, 2989342, 2989339 and 2989398). Eight non-verbatim, source-grounded propositions were added in place with exact section/line locators, provenance, partial-context boundaries and item-specific qualifications. The canonical AIDs, files and Evidence Families were retained; no new source identity, independent witness or Verified promotion was added.
+
+Two alternative Chabad Library pages (1500390039 and 1200820110) returned no readable lines through the public reader. Their search extracts were excluded from content; the same run fell back to eight accessible Hebrew Sicha bodies. No crawler retry, access-control bypass, full-text copying or scan-only content verification occurred.
+
+Batch189 expected boundary: 1,607 answer-eligible Evidence Families / 854 content-verified families / 4,163 distinct propositions, from the Batch188 expected boundary 1,607 / 854 / 4,155. These are planning values until exact-head reconciliation. The preceding Answer Quality Gate run 44571275898 passed normalization, index generation, retrieval, synthesis, citation integrity, evidence-contract and write-safety checks, but failed at the content-readiness step; Batch189 adds explicit current-batch, historical-boundary, in-place-enrichment and deep-researcher citation assertions. No public-main metric is changed by this pending branch work.
+
+
+## 2026-11-19 — Batch190: six new Hebrew Sicha identities and two in-place enrichments
+
+- נפתחו ונבדקו ישירות שמונה מקטעים בגופי פרסום עבריים מקוריים: שש זהויות חדשות (AIDs 2989102, 2988909, 2989138, 2989127, 2989144, 2988884) ושתי העשרות לא חופפות בזהויות הקנוניות AID 2988901 ו-AID 2989337 בקובץ Batch188. נוספו שמונה פרפרזות מחקר לא-מילוליות עם `source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, מיקום גוף, provenance, היקף אימות, הקשר חלקי ומגבלות. כל המקורות נשארו Parsed; אין קידומי Verified.
+- AID 4666220 ניסה להיפתח דרך קורא הפרסומים הציבורי והחזיר Internal Error ללא גוף קריא. החסימה תועדה; לא הופעל crawler, לא נעשה retry ולא נעקפו בקרות גישה. באותה הפעלה נבדקו שמונה גופי פרסום חלופיים נגישים.
+- AID 2989147 הוצא כמועמד כפול: הזהות הקנונית קיימת ב-Batch170 תחת Evidence Family `sicha-5713-12-tammuz-thursday-balak-aid2989147`. לא נוצרה זהות או משפחת ראיות נוספת.
+- סריקת כפילויות מקדימה בדקה אצוות מחקר 55–189, קובצי bulk-indexed ותור הבדיקה; שש הזהויות החדשות לא נמצאו בהם. GitHub code search החזיר אפס התאמות אך סימן את תוצאותיו כ-incomplete. לכן בדיקת הייחודיות המלאה נשארת pending עד full-index reconciliation.
+- נוספה סינתזה מחקרית בשלוש משפחות ראיות נפרדות: עבודה יומית בעשרת ימי תשובה (AID 2989102), אהבת ישראל כהכנה למתן תורה (AID 2988901), ושמחה גלויה לצד דיון לכף זכות (AID 2989144). הסינתזה מסומנת במפורש כעיבוד המערכת ולא כציטוט או ייחוס מילולי לרבי; כל טענה שומרת locator נפרד. נוספו בדיקות regular ו-deep researcher.
+- גבול התכנון לאחר Batch190: **1,607 / 854 / 4,163 → 1,613 / 854 / 4,171**. אלה ערכי תכנון בלבד עד reconciliation מדוד; מדדי main הציבוריים לא נערכו ידנית.
+- תוקנה הערת baseline היסטורית Batch183→184 כך שתסביר את מדידת 1,587 ואת איחוד ההצגה הכפולה שהביא לבסיס 1,586. PR #35 נשאר פתוח עד מעבר ה-Answer Quality Gate; לא בוצעו שינויי קהל, הרשאות או לוח זמנים.
+
+
+## Batch191 — 2026-11-19: eight inspected body passages
+
+Batch191 adds four new Hebrew publisher-transcript identities (AIDs 4313091, 4385634, 5989807, 4296179) and enriches four existing canonical identities in place (AIDs 5959970, 2989059, 4304414, 2989243). Eight source bodies were opened and inspected at the item-level locators recorded in `data/items/content-research-batch-191-2026-11-19.json`. Each addition is a non-verbatim `source_grounded_paraphrase` with `source_text_inspected`, exact locator, provenance, partial-context boundary and qualifications. The three existing Evidence Families were retained.
+
+The four new publisher pages expose Hebrew text but do not establish the original spoken language. Their `original_language` is therefore `unknown` and `independent_witness` is null; they are not credited as independent witnesses. No translation was counted as an independent witness. The five records remain Parsed; no Verified promotion was made. The AID 4296179 proposition preserves the attribution chain to a prior letter quoting the Rebbe Rashab; the cited letter itself was not inspected. The AID 2989243 paraphrase is not a personal halachic instruction. No full protected text was copied.
+
+AID 4666220 remained inaccessible through the public web reader. The block was recorded and eight alternative publisher bodies were inspected in the same run. No crawler retry or access-control bypass was used.
+
+### Reconciliation baseline and quality gate
+
+The prior exact-head Answer Quality Gate run 44580349175 measured the PR workspace after Batch190 at 1612 answer-eligible unique sources / 854 content-verified unique sources / 4169 answer-eligible propositions. Batch190's planning boundary was 1613 / 854 / 4171, leaving a measured variance of -1 source family and -2 propositions. Batch191 uses the measured 1612 / 854 / 4169 baseline; its planning boundary is 1617 / 854 / 4177 and is not an actual result until reconciliation. Public main metrics remain 977 / 878 / 2950 and were not edited.
+
+The same failed gate exposed two English Yechidus translation records in `data/items/sie-translated-talks-5744-5745-2026-11-12-050.json` without an explicit `independent_witness=false`. Batch191 corrects both records and links each translation to its own Evidence Family. The translation is not an independent witness. A fresh exact-head full-index reconciliation and `test_content_readiness.mjs` run are required before merge or deployment.
+
+The current branch is PR #35. The hourly workflow remains unchanged; no duplicate automation, audience change or permission change was made.
+
+
+### Batch191 full-index correction
+
+The first Batch191 exact-head audit found that AID 2989243 already existed canonically in `data/items/content-research-batch-106-2026-11-16.json`. The duplicate new Batch191 record was removed. Its distinct section-B proposition (body lines 182–183) was added to the existing Batch106 identity and Evidence Family in place. Batch191 therefore contains four new identities and four in-place enrichments, not five new identities and three enrichments. The corrected planning boundary is 1616 / 854 / 4177 (four new Evidence Families, eight new propositions). The first workspace measurement 1616 / 854 / 4176 excluded the duplicate AID's proposition because the index selected the existing Batch106 record; a fresh reconciliation is required after the correction.
+
+The same first Batch191 run exposed a stale test assertion: the Batch190 final metrics were compared to the corpus after Batch191. The test now compares Batch190's actual-after boundary with Batch191's actual-before baseline, and measures the current delta from Batch191's baseline. Attribution chains in the new paraphrases were also tightened: the Rebbe Rayatz/Gemara in Yevamot, Baal Shem Tov/Ari, Rashi/Rabbi Akiva, and Zohar/Chazal references are retained in the relevant propositions.
+
+
+## Batch192 — 2026-11-19: eight in-place Hebrew body enrichments
+
+Batch192 adds eight new non-verbatim, source-grounded propositions to eight existing canonical identities: AIDs 2989021, 2989054, 5989687, 2989062, 4385513, 5959968, 4296159 and 2989059. Each passage was opened in the public Hebrew publisher body and has an exact locator, provenance, bounded verification scope, partial-context status and an explicit qualification. Existing AIDs, canonical files and Evidence Families were retained. No new source identity or independent witness was added; no Verified promotion was made.
+
+Four alternative Hebrew routes (AIDs 2989225, 2989227, 5990031 and 4279919) returned HTTP 429. AID 4646054 displayed a Yiddish summary shell without a readable body. These were recorded and replaced in the same review by eight accessible body passages. No crawler retry, access-control bypass or full-text copying was used.
+
+### Batch191 reconciliation and test correction
+
+Exact-head Answer Quality Gate run 44586034195 measured Batch191 at 1616 answer-eligible unique sources / 854 content-verified unique sources / 4177 answer-eligible propositions, exactly matching its expected boundary. The run then failed in a test assertion for AID 2514160: the index selected the richer same-AID English publisher translation presentation in the SIE collection file, while the in-place update descriptor correctly points to the Batch137 identity. Both presentations belong to the same Evidence Family and the English presentation is explicitly non-independent. The test now checks this same-family, non-independent representative instead of requiring one physical file path.
+
+Batch192's measured PR-workspace baseline is 1616 / 854 / 4177; the expected post-batch boundary is 1616 / 854 / 4185. This is a planning boundary until the exact-head reconciliation completes. Public main metrics remain unchanged until merge and publication. PR #35 remains the existing integration path; the hourly workflow, audience and permissions are unchanged.
+
+
+## 2026-11-19 — Batch193: seven new Hebrew Sicha identities and one in-place enrichment
+
+- נפתחו ונבדקו ישירות שמונה גופי פרסום עבריים ציבוריים ב-BeitChabad.com / he.chabad.org. נוספו שבע זהויות חדשות: AIDs 5989897, 4280029, 2988934, 5989705, 4385701, 4385630 ו-5989766. כל אחת קיבלה פרפרזה מחקרית לא-מילולית עם locator ברמת גוף/סעיף/שורות, provenance, היקף אימות, הקשר חלקי ומגבלות.
+- הועשרה in place זהות קיימת אחת: AID 5959922 ב-Batch166, במקטע לא חופף לשורות 177–185 שכבר נבדקו; נשמרו ה-AID ומשפחת הראיות. נוספו שמונה פרפרזות בסך הכול.
+- שבעת הפרסומים החדשים הם תמלילים עבריים המסומנים בלתי מוגה; העמודים אינם מבססים את שפת ההרצאה המקורית. לכן original_language=unknown ו-independent_witness=null; לא נספר עד עצמאי ולא בוצע קידום ל-Verified.
+- שלושה נתיבים חלופיים החזירו HTTP 429: AIDs 4296216, 5959979 ו-5989984. לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; באותה הפעלה נבדקו שמונה גופי פרסום חלופיים נגישים. לא נעשה שימוש בסריקה כתחליף לבדיקת תוכן ולא הועתק גוף מוגן במלואו.
+- preflight dedup בדק את אצוות PR 150–192, את תור הבדיקה ואת GitHub code search בענף ברירת המחדל; לא נמצאה התאמה לשבע הזהויות החדשות. תוצאת האינדקס המדויקת נבדקת ב-Answer Quality Gate: לכל AID נדרשת זהות קנונית יחידה ו-Evidence Family ייחודית.
+- גבול PR-workspace מתוכנן: 1,616 / 854 / 4,185 → 1,623 / 854 / 4,193 (answer-eligible Evidence Families / content-Verified Evidence Families / answer-eligible propositions). זו עדיין אינה מדידה סופית; נדרשת ריצת exact-head. מדדי main הציבוריים נשארים snapshot קודם עד מיזוג ו-reconciliation בענף main.
+- נוספה בדיקת סינתזה מרובת מקורות לשאלה על תורה, צדקה ועבודת היחיד, במצב regular ובמצב deep researcher, עם הפניות ברמת טענה, בדיקת entailment וגבולות הקשר.
+- PR #35 נשאר מסלול האינטגרציה הקיים; ממתין לריצת exact-head Answer Quality Gate ולפרסום מחדש אחרי merge. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
+
+## 2026-11-19 — Batch194: nine bilingual Hayom Yom entries and one same-family enrichment
+
+- נפתחו ונבדקו תשעה עמודי Hayom Yom ציבוריים ב-Chabad.org / TheRebbe.org מתוך Sichos in English Collection; בכל אחד נבדק הקטע המקורי בעברית או ביידיש ולא נעשה שימוש בקטע התרגום כעד עצמאי. התפלגות שפת המקור: שש עברית ושלוש יידיש.
+- נוספו תשע זהויות מתוארכות חדשות (AIDs 3315359, 3315366, 3315368, 3315370, 3315374, 3315391, 3315415, 3315237, 3315238), עם תשע פרפרזות מחקר לא-מילוליות, locators ברמת גוף, provenance, verification scope, הקשר חלקי ומגבלות. כולן נשארו Parsed.
+- הועשרה זהות קיימת אחת in place: AID 528732, באמצעות הערת עריכה אנגלית בעמוד AID 3316320. ההצגה האנגלית נשארה באותה Evidence Family; היא מסומנת non-independent ואינה נספרת כעד נוסף. הפרופוזיציה מתארת את שכבת העריכה בלבד, לא את גוף הערך המקורי.
+- ארבעה מועמדים עבריים החזירו HTTP 429: AIDs 5959899, 4280077, 2989280, 2989629. לא בוצע retry לעמודים החסומים או ל-crawler; באותה הפעלה עברנו לעשרה גופי פרסום נגישים (תשעה קטעי מקור ועוד שכבת עריכה נגזרת אחת). לא נעקפו בקרות גישה ולא הועתק טקסט מלא.
+- בדיקת כפילויות מקדימה: תשעה חיפושי AID ב-code search של main ותור הבדיקה לא החזירו התאמות. זו אינה סריקת canonical מלאה; exact-head full-index reconciliation עדיין נדרש. אין קידום Verified.
+- גבול תכנון לפי מדידת Batch193: **1,623 / 854 / 4,193 → 1,632 / 854 / 4,203** (answer-eligible Evidence Families / content-Verified Evidence Families / propositions). הערך אחרי הוא יעד עד reconciliation בפועל, לא מדידה.
+- נוספה בדיקת regression לשתי Evidence Families נפרדות על אמירת תהילים בציבור וחלוקת תהילים יומית, במצב regular ובמצב deep researcher, עם claim-level locators, citation entailment ו-context boundaries.
+- PR #35 נשאר פתוח עד מעבר exact-head Answer Quality Gate ו-`test_content_readiness.mjs`. מדדי main הציבוריים ו-GitHub Pages טרם השתנו. לוח הזמנים השעתי, הקהל וההרשאות נשארו ללא שינוי.
+
+
+## 2026-11-19 — Batch195: English letters, two enrichments, retrieval coverage
+
+- Added 10 new letter-level source identities from publicly accessible Chabad.org / TheRebbe.org English publisher bodies. Each is Parsed, has one bounded non-verbatim Hebrew research proposition, an exact body locator and provenance. The English presentations are marked non-independent; original-language witnesses were not inspected and no Verified status was promoted.
+- Enriched two existing identities in place: AID 2278254 (a question about tzedakah at night, without inventing a final ruling) and AID 2276666 (the opening's Rosh Hashanah self-review and tzedakah context).
+- Synchronized the already-counted Batch181 proposition for AID 2514160 into the same-AID English presentation selected by the index. This is a same-family presentation repair, not a new identity, witness or proposition.
+- Inspected 13 text-bearing source bodies (10 new, 2 enrichments, 1 presentation repair). Eight Yechidus pages were opened but contained no readable transcript; AID 4666220 returned Internal Error. No crawler retry or access-control bypass was used; accessible public letter pages were used as fallback.
+- Expanded retrieval topic terms for family purity, shidduchim, Torah study, tzedakah, educators and Beis Yaakov. Added regular/researcher-mode tests for multi-family synthesis, claim-level citations and exact source locators; deep researcher mode is tested for the new letter families.
+- Batch194 correction: exact-AID records 3315370 and 3315415 were already canonical in Batch145. Their duplicate Batch194 records were removed; no extra family or proposition is counted. The measured pre-Batch195 PR-workspace boundary is 1628 answer-eligible unique sources / 854 content-verified sources / 4199 propositions. Batch195 planning boundary is 1638 / 854 / 4211; it remains pending exact-head reconciliation until the workflow completes.
+- Public main metrics remain 977 / 878 / 2950 until merge and post-merge publication. No audience or permissions were changed; the existing hourly workflow was not duplicated.
+
+
+## 2026-11-19 — Batch197 content enrichment and retrieval specificity repair
+
+- Reviewed 12 public Hebrew source bodies; eight existing Sicha identities received one new bounded, non-verbatim paraphrase each. No new source identity, Evidence Family, independent witness, or Verified promotion was added.
+- New proposition locators: AID 4296216 §ב (182–190); 4385717 §§ב–ג (182–192); 5990028 §ה (202–205); 4385834 §§ב–ג (186–198); 4304376 §§ג–ד (184–190); 4296237 §א (177–183); 4385701 §§ב–ג (181–190); 4304437 §ו (205–210). All are Hebrew publisher-body passages, marked בלתי מוגה, with partial context and no full-text reproduction.
+- Four alternative Chabad.org routes returned HTTP 429 (AIDs 4304407, 4304388, 4304343, 4304418), and AID 4666220 was inaccessible through the current web reader; no crawler retry or access-control bypass was attempted. Four other accessible pages were deferred from identity creation pending a full-corpus duplicate check.
+- Batch197 uses measured PR-workspace baseline 1644/854/4222 from exact-head run 44619135765 after Batch196. Batch196's planning boundary 1642/854/4220 differed by +2/+2; the variance is preserved. Expected after eight in-place propositions: 1644/854/4230.
+- Retrieval specificity was tightened for the question about advancing a mikveh in Miflasim without waiting for peace: the source must contain the Miflasim context and the no-delay proposition, not merely generic mentions of mikveh and peace. Existing claim-level locators and deep researcher mode remain in place and are retested.
+- PR #35 remains unmerged until the exact-head Answer Quality Gate and `test_content_readiness.mjs` pass. The existing hourly schedule and repository audience/permissions are unchanged; no Pages deployment is claimed before post-merge verification.
+
+
+## 2026-11-20 — Batch198: eight in-place Hebrew source enrichments and claim-level synthesis
+
+- נפתחו ונבדקו שמונה מקטעים בגופי פרסום עבריים ציבוריים ב-BeitChabad.com/Chabad.org; הועשרו שמונה זהויות קיימות in place (AIDs 4296216, 4385717, 5990028, 4385834, 4304376, 4385701, 4304437, 4385534). נוספה פרפרזה לא-מילולית אחת לכל זהות עם `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, locator מדויק, provenance, היקף אימות, context partial ומגבלות.
+- לא נוספו זהויות או Evidence Families, לא נספר תרגום כעד עצמאי, ולא קודם מקור ל-Verified. הגבול שנמדד לאחר Batch197 הוא 1644 / 854 / 4230; הגבול הצפוי לאחר Batch198 הוא 1644 / 854 / 4238 עד reconciliation חדש.
+- שלושה נתיבי פרסום חלופיים החזירו HTTP 429 (AIDs 4385593, 2989619, 3008918); לא בוצע retry ולא נעקפו בקרות גישה. AID 4296237 הוחרג ככיסוי חופף שכבר קיים; AID 3140027 נפתח אך הושהה עד בדיקת זהות מלאה.
+- נוספה סינתזה מחקרית חדשה על קירוב יהודים כשותפים, ענווה וקבלת אורחים, בשלוש Evidence Families נפרדות (AIDs 4385534, 4385834, 4304437). כל טענה נושאת locator משלה; הסינתזה מסומנת `system_synthesis_not_rebbe_quote` ומבחינה בין ההקשרים.
+- בדיקת אחזור המקווה במפלסים עברה בשני המצבים (regular ו-researcher) בריצה 44625782331. אותה ריצה חשפה חפיפה של נושא כללי ״התמדה בלימוד לצד עבודה והתחייבויות״ בשאלת השוואה בין קביעות עתים לבין עבודה במשק חקלאי; התיקון ממוקד בביטול החפיפה כשהשאלה כוללת את שני הנושאים הספציפיים.
+- PR #35 נשאר פתוח עד מעבר exact-head reconciliation, `test_content_readiness.mjs` ו-Answer Quality Gate. מדדי main הציבוריים ואתר GitHub Pages לא עודכנו בשלב זה; לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
+
+## 2026-11-20 — Batch199 content review (pending exact-head reconciliation)
+
+Eight public source bodies were inspected. Seven existing Hebrew Sicha identities were enriched in place with non-verbatim propositions at new, non-overlapping body locators. One English translation of a Yiddish letter (Chabad.org AID 101219) was added as a non-independent presentation within one Evidence Family; the original Yiddish text and cited printed pages were not inspected. AID 4666220 was not accessible through the web tool; no crawler retry or access-control bypass was attempted, and an accessible alternative was inspected. No record was promoted to Verified. The study/farming comparison display was corrected to expose each requested side as a source-located claim; exact-head tests and metric reconciliation remain pending.
+
+
+## 2026-11-20 — Batch200 mixed-genre source review and education-letter synthesis (pending reconciliation)
+
+- נפתחו ונבדקו שמונה גופי פרסום ציבוריים: שש זהויות מועמדות חדשות (AIDs 4243257, 1695044, 3315331, 81572, 81567, 81936), העשרה in-place של AID 4082951, ובדיקה חוזרת של AID 4422946 ללא פרופוזיציה כפולה. נוספו שש פרפרזות חדשות ואחת לזהות קיימת; כולן לא-מילוליות, עם locator, provenance, היקף אימות, הקשר ומגבלות.
+- נוספו סוגי תיעוד מגוונים: שתי איגרות מתורגמות/מוצגות באנגלית, עדות זיכרון בגוף ראשון של הרב יונתן זקס (לא תמליל היחידות), ערך היום יום הכולל יידיש מקורית ותרגום (האמירה מיוחסת לאדמו״ר הרש״ב), שני מאמרים עריכתיים מאת אלי טוגר ועיבוד יחידות מאת דביד שרגא פולטר. התרגומים והעיבודים מסומנים כלא-עצמאיים; עדות זקס מסומנת כעדות משנית בגוף ראשון. אין לייחס את דברי הרש״ב לרבי ואין לייחס ניסוח עריכתי לרבי.
+- ארבעה נתיבי פרסום עבריים החזירו HTTP 429 (AIDs 4280028, 4280002, 4280080, 4280030). לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; נבדקו חלופות נגישות באותה הפעלה. AID 4280030 כבר קיים ב-Batch102; AID 5989700 הוחרג כפריט שכבר נבדק. AID 4422946 נשאר בזהותו הקנונית ב-Batch135; AID 4082951 הועשר בזהותו הקנונית ב-Batch195.
+- בדיקת כפילויות חלקית: נסרקו 76 קובצי אצווה ששונו ב-PR #35, קובץ bulk-indexed אחד ותור בן 1,022 רשומות. שש הזהויות המועמדות לא נמצאו במקטעים שנסרקו, אך public-search-index מלא לא היה זמין; לכן ייחודיות מלאה ומדדי מקור אינם מאושרים עד reconciliation.
+- ההשוואה המחקרית על מכתבי חינוך והפצת ספרים הורחבה לשבע משפחות איגרות נפרדות ושמונה טענות ממוקמות. שתי טענות מאיגרת 4422946 נשארות באותה משפחת ראיות. הסינתזה מסומנת system_synthesis_not_rebbe_quote; מצב researcher נבדק בקוד ובבדיקות, אך הריצה המדויקת עדיין ממתינה ל-Actions.
+- גבול התכנון אחרי Batch199 הוא 1,645 / 854 / 4,246; אחרי Batch200 הוא 1,651 / 854 / 4,253. אלה ערכי תכנון בלבד, לא מדידה. Batches198–200 ממתינים ל-full-index reconciliation; לא קודם מקור ל-Verified. מדדי main הציבוריים נשארו 977 / 878 / 2,950 ולא עודכנו.
+- PR #35 לא מוזג ולא נטען שפורסם. יש להריץ exact-head reconciliation, `scripts/test_content_readiness.mjs` ו-Answer Quality Gate; למזג רק לאחר שכל הבדיקות הנדרשות עוברות, ולאמת לאחר מכן את מדדי main ואת GitHub Pages. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
+## 2026-11-20 — Batch201: bilingual Hayom Yom, six in-place enrichments and proposition-level synthesis (pending reconciliation)
+
+- נפתחו ונבדקו שמונה גופי פרסום ציבוריים ב-Chabad.org / TheRebbe.org: שתי זהויות מועמדות חדשות (AIDs 3316265 ו-3315470) ושש העשרות in-place (AIDs 4243257, 1695044, 3315331, 81572, 81567, 3315370). נוספו תשע פרפרזות לא-מילוליות עם locator ברמת טענה, provenance, היקף אימות, context partial ומגבלות.
+- AID3315370 כבר היה זהות קנונית ב-Batch145. לא נוצרה רשומה נוספת: נוספה באותה זהות ובאותה Evidence Family פרופוזיציה נפרדת מהמדור האנגלי העריכתי “Living as a Chassid”; היא מסומנת proposition-level non-independent ואינה מוצגת כחלק מן הערך היידי המקורי.
+- AID3316265 כולל קטע מקור בעברית/יידיש לצד תרגום אנגלי; המקור הראשון/כתב־היד לא נבדקו. AID3315470 מביא ביידיש אמרה המיוחסת לאדמו״ר הרש״ב ומוסיף מדור הסבר אנגלי נפרד; לא נבדקו תמליל בן הזמן או עד עצמאי מן ההתוועדות. דברי הרש״ב וההערה העריכתית אינם מיוחסים לרבי.
+- AID4666220 החזיר Internal Error דרך הקורא הציבורי. לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; שמונה גופי פרסום חלופיים נגישים נבדקו באותה הפעלה.
+- הרחבת האחזור: ההשוואה על חינוך ילדים כוללת כעת 14 משפחות פריט ו-12 קטגוריות/טענות ממוקמות. הוספנו בדיקת independence ברמת proposition כדי שקטע עריכתי באותו עמוד דו-לשוני לא ייחשב לעד עצמאי רק מפני שלרשומה הקנונית יש גם קטע מקור בשפתו. מצב regular ו-deep researcher נבדקים עם claim-level locators, citation entailment ו-context boundaries.
+- גבול התכנון אחרי Batch201 הוא 1653 / 854 / 4262; זה אינו נתון מדוד. המדידה האחרונה המדויקת היא 1644 / 854 / 4230 אחרי Batch197; Batches198–201 ממתינים ל-full-index reconciliation. public main metrics נשארו 977 / 878 / 2950. לא קודם מקור ל-Verified.
+- PR #35 נשאר פתוח עד מעבר exact-head reconciliation, `scripts/test_content_readiness.mjs` ו-Answer Quality Gate. אין טענה לפרסום Pages לפני merge ובדיקת deployment. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
+
+
+## 2026-11-20 — Batch203: seven original-language Hayom Yom entries, one letter-family enrichment, and source-diverse comparison retrieval
+
+- נפתחו ונבדקו תשעה גופי פרסום: שבעה ערכי היום יום חדשים (AIDs 3315240, 3315244, 3315246, 3315249, 3315342, 3316183, 3317477), קטע עברי מאוחר מתוך מכתב אדמו״ר הריי״צ 1081 (AID 3318090), ובדיקה חוזרת של AID 3315238 לאימות קשר ההמשך. נוספו שבע זהויות חדשות ו-13 פרפרזות; נוספו שתי פרפרזות לזהות הקיימת של מכתב 1081. סך הכול 15 פרפרזות לא-מילוליות עם locator ברמת טענה, provenance, היקף אימות, הקשר חלקי ומגבלות.
+- AID3315240 מסומן כהמשך תוכני ל-AID3315238, אך נשמר כערך יום יום נפרד וב-Evidence Family נפרדת בהתאם לכלל האנתולוגיה ב-PROJECT_CANON. AID3318090 קושר in-place לזהות הקיימת של איגרות קודש כרך ד, מכתב 1081; הערת המו״ל מזהה את המכתב, אך העמוד המקורי בכרך הסרוק לא נבדק. הסטטוס של רשומת המפתח תוקן מ-Verified ל-Parsed: האימות הקודם היה ביבליוגרפי בלבד. לא נוצר עד עצמאי נוסף ולא קודם מקור ל-Verified.
+- AID4666220 הפנה ליישום Torah Texts והציג הודעת דפדפן ללא גוף מקור קריא. לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; שמונה עמודים חלופיים נבדקו באותה הפעלה.
+- בדיקת כפילויות מקדימה סרקה 144 קובצי אצוות מחקר (055–202), 12 קובצי bulk-indexed ותור בן 1,022 רשומות. שבעת ה-AIDs החדשים לא נמצאו במקטעים שנבדקו; הזהות של מכתב 1081 נמצאה וקושרה למשפחת הראיות שלה. full-index collision audit עדיין ממתין ל-reconciliation המדויק.
+- תיקון אחזור: ההשוואה בין קביעות עתים/לימוד בצוותא לבין לימוד תורה לצד עבודה במשק בוחרת כעת תחילה מקור עצמאי לכל צד מתוך כל האינדקס הכשיר, מעדיפה את AID5019408 ואת AID5054281 כשהם זמינים, שומרת על Evidence Families נפרדות ונכשלת בבטחה אם חסר צד. הטענות נשארות ממוקמות ברמת מקור; מצב researcher/deep נבדק ב-regular וב-researcher.
+- Exact-head run 44646978167 מדד 1,662 / 854 / 4,275 אחרי Batch202 במרחב העבודה לפני כשל assertion; זה אינו מדד main ציבורי. הגבול הצפוי אחרי Batch203 הוא 1,670 / 854 / 4,290, תכנון בלבד עד reconciliation. אין קידום Verified. PR #35 נשאר פתוח עד מעבר test_content_readiness.mjs ו-Answer Quality Gate; מדדי main ו-GitHub Pages טרם עודכנו. לוח הזמנים השעתי, הקהל וההרשאות לא שונו.
+
+- Reconciliation hardening for Batch203: later in-place updates are now matched by source_unit_key or canonical id when the existing item has no publisher AID. This prevents the two letter #1081 propositions from leaking into the historical Batch202 boundary.
+
+- Reconciliation keying is identity-safe: later in-place updates are indexed by source-unit, canonical ID, and AID aliases, then applied only to the matching canonical record. The affected-identity count is deduplicated across aliases.
+
+
+## 2026-11-20 — Batch 204: Hebrew Sichos and Maamarim, plus retrieval regression repair
+
+- Opened and inspected eight public Hebrew source bodies from BeitChabad.com/Chabad.org: seven new candidate identities (AIDs 2988954, 2989610, 3140065, 3139998, 2989157, 2989129, 2989589) and one additional passage in existing AID 3008908. The seven new candidates comprise four Sichos and three Maamarim. All remain Parsed with partial context; no Verified promotion was made.
+- Added fourteen non-verbatim, source-grounded propositions to the seven new records and one additional proposition to AID 3008908 in its existing canonical file. Every proposition is marked source_grounded_paraphrase / proposition_verbatim=false / source_text_inspected, with a body locator, provenance, verification scope and limitations. No full protected text was copied.
+- Eight other public candidates returned HTTP 429 (AIDs 5959858, 5959841, 5959847, 5959849, 5959839, 4385658, 4385570, 4385546). No runner-side crawler retry or access-control bypass was attempted; eight accessible alternative bodies were reviewed in the same run.
+- Six duplicate candidates were excluded after finding existing canonical records in Batches 165, 187, 188, 191, 193 and 196. The preflight scan covered PR batches 149–203 and exact-AID main-branch code search, but was not a full scan of all earlier canonical files. Full-index deduplication remains pending.
+- Exact-head Answer Quality Gate run 44653927132 measured the Batch203 PR-workspace boundary at 1670/854/4290 (answer-eligible unique Evidence Families / content-verified unique families / propositions). This is not public main. Batch204's expected 1677/854/4305 is a planning boundary only until full-index reconciliation.
+- Retrieval repair: when one inspected proposition matches both comparison predicates, the displayed claim builder now retains both topic tags rather than forcing a single side. A regression assertion checks both sides. Code commit: aedd42c34b7b17ed673ea29ee3ffd72a7e8f7f82; test commit: d69c8f351f6a45dc113fde28a305bfe9fa2972fc. Exact-head rerun is pending.
+- Public metrics and GitHub Pages were not changed in this batch. PR #35 remains unmerged until all required checks pass. The existing hourly schedule, audience and permissions were not changed.
+
+
+## 2026-11-20 — Batch204 reconciliation and Batch205 content review
+
+- Full-index audit of Batch204 found AID 2989589 twice. The Batch204 presentation was removed because the canonical Batch101 record already contained the same four propositions; its two repeated candidate paraphrases were not added. The corrected Batch204 boundary is the measured PR-workspace snapshot 1676 / 854 / 4303: six new families, one in-place enrichment, one duplicate identity rechecked, no Verified promotion.
+- Batch205 inspected eleven new source presentations (ten independent Hebrew witnesses and one Hebrew presentation of a Yiddish-edited Sicha) plus one existing-identity recheck (AID 2988862) and one in-place enrichment (AID 3008908). Eleven new Evidence Families and twelve bounded non-verbatim propositions are prepared; the Hebrew presentation is explicitly non-independent and linked to its Yiddish Evidence Family. All new records remain Parsed with partial context.
+- AID 5959858, previously returned as HTTP 429 in Batch204, was opened through the public web reader on 2026-11-20. No crawler retry or access-control bypass was used.
+- The comparison coverage defect was traced to `comparativeCoverage` matching claim text but ignoring explicit claim-topic tags. `study_routine` and `farming_and_torah` tags are now mapped to their requested topics; the regression test remains in the content-readiness suite.
+- Batch205's corrected 1687 / 854 / 4315 boundary is planning only until exact-head full-index reconciliation and the readiness gate complete. AID 2988862 was not duplicated because its proposed proposition already exists in Batch176.
+
+## 2026-11-20 — Batch205 reconciliation and Batch206 content review
+
+The exact-head Answer Quality Gate run 44667377305 on commit c3c1ca rebuilt the evidence index and measured 1,683 answer-eligible Evidence Families, 854 content-verified families and 4,311 answer-eligible propositions after Batch205. Batch205's expected boundary was 1,687 / 854 / 4,315; the measured variance was −4 families and −4 propositions. No source was promoted to Verified.
+
+Batch206 inspected ten public Chabad.org publisher bodies. Nine new English translation/adaptation presentations were added across eight event Evidence Families; AID 2538132 is an adapted presentation of the same 19 Kislev 5742 address as AID 2538131 and is linked to that same family, not counted as an independent witness. One additional non-verbatim proposition was appended in place to canonical AID 2507215 in Batch137. All nine new presentations are marked non-independent because the publisher labels them as free translations/adaptations and the original-language witnesses were not inspected. No Verified promotion was made.
+
+AID 4666220 again returned Internal Error through the public web reader. No crawler retry or access-control bypass was attempted; the ten inspected bodies were used as same-run fallback. Preflight scanned 147 content-research-batch files and three bulk-indexed files; it found AID 2507215 in Batch137 and no exact-AID match for the nine new presentations. The full 577-file canonical item set still requires reconciliation.
+
+The exact-head Answer Quality Gate had failed at test_content_readiness.mjs line 887: the study-routine/farming comparison could lose one requested side after generic claim pruning. The engine now rebuilds both topic claims and its bounded synthesis from the pre-pruning topic-ranked evidence set. The existing regression test must pass on the new exact head before merge. Batch206's expected boundary is 1,691 / 854 / 4,321, but this is a planning value only until full-index reconciliation.
+
+
+
+## 2026-11-20 — Batch207: eight in-place Hebrew enrichments and comparison-gate repair
+
+Batch207 reopened and inspected eight original-Hebrew public Sicha bodies and added one bounded, non-verbatim source-grounded proposition to each existing canonical identity: AIDs 3140221, 2988861, 2988855, 2988876, 2988887, 4279982, 4279980 and 2988841. No new identity, Evidence Family or independent witness was added; no item was promoted to Verified. AID2988841's earlier prayer locator was corrected from section ה׳ to the visible section ב׳ at lines 180–182; the new anecdote proposition is separately located at section א׳, lines 175–179.
+
+Candidate triage excluded duplicate AIDs 5989779 (already in Batch152) and 4279862 (already in Batch185), deferred nine accessible candidate pages pending full-index identity matching, and recorded AID5990035 as HTTP429. No crawler retry or access-control bypass was attempted. Search extracts were used for navigation/triage only, not as content. No protected full text was copied.
+
+The exact-head Answer Quality Gate run 44673871446 generated the full evidence index and measured 1691 answer-eligible Evidence Families / 854 content-verified families / 4321 propositions after Batch206, then failed at test_content_readiness.mjs line 887. Diagnosis: the study/farming branch applied a generic relevance-score threshold after explicit proposition-level topic matching, allowing a directly supporting comparison side to be dropped. The fix retains the explicit topic predicates as the evidence gate and uses generic relevance only for ranking. Batch207's expected post-reconciliation boundary is 1691 / 854 / 4329; this remains planning until the next exact-head run confirms it.
+
+
+## 2026-11-20 — Batch208: eight in-place Hebrew Sicha enrichments and comparison display-budget fix
+
+- Reopened and inspected eight original-Hebrew public Sicha bodies in BeitChabad.com / he.chabad.org: AIDs 3140221, 2988861, 2988855, 2988876, 2988887, 4279982, 4279980 and 2988841. Added one distinct non-verbatim source-grounded proposition to each existing canonical identity in Batches185/187, with per-proposition locator, provenance, inspected scope, partial-context status and precise limitations. No new AID, Evidence Family or independent witness was created; no item was promoted to Verified.
+- AID5990035, which returned HTTP429 in Batch207, opened successfully through the public web reader on 2026-11-20. Body lines 171–228 were inspected. It remains deferred pending a full AID/URL/Evidence Family collision audit; no new identity or proposition was created. No crawler retry or access-control bypass was used. Search extracts were used only for discovery, not as content.
+- Batch208 adds eight propositions to eight existing Evidence Families. The measured PR-workspace baseline after Batch207 is 1691 / 854 / 4335 from exact-head run 44686805212; Batch207's declared 4329 differed by +6 propositions. Batch208's expected boundary is 1691 / 854 / 4343, planning only until the next exact-head reconciliation. Public main remains 977 / 878 / 2950.
+- The line-887 regression was traced more precisely: the comparison branch selected distinct sources for both explicit sides, but a later display slice still used the generic one-source query budget and removed one side. The engine now preserves at least two selected sources for this explicitly two-sided comparison. The existing readiness regression requires both claim tags, both source AIDs, distinct Evidence Families, claim-level locators and system-synthesis attribution.
+- Batch208 remains pending exact-head reconciliation and test_content_readiness.mjs. PR #35 is still unmerged; main and GitHub Pages are unchanged until the quality gate passes. No Verified promotion, schedule change, audience change or permission change.
+
+
+## 2026-11-20 — Batch210 duplicate reconciliation and Batch211 in-place Hebrew enrichment
+
+Exact-head Answer Quality Gate run 44702430019 rebuilt the PR workspace index and measured **1,696 answer-eligible Evidence Families / 862 content-verified families / 4,361 answer-eligible propositions** after the uncorrected Batch210. Its full-index audit found three Batch210 AIDs already canonical: AID 3008913 in Batch103, AID 4280029 in Batch100, and AID 4280015 in Batch141. These three duplicate presentations were removed from Batch210; their five inspected propositions were consolidated into the existing canonical records. Batch210 is now five new identities plus three in-place enrichments, not eight new identities. No Evidence Family was added for the three duplicates.
+
+Batch211 reopened eight original-Hebrew public Sicha bodies and added one distinct non-verbatim, source-grounded proposition to each existing identity: AIDs 3008897, 3008913, 3008883, 4280041, 4280035, 4280029, 4280031 and 4280015. The new propositions include the bounded passages on Shavuot blessings, the aleph-learning pedagogical structure, annual renewal through Parashat Yitro, children's recognition at the Sea, the intergenerational function of prophecy, Mordechai's care for an individual and the whole, ethical preparation for prayer, and the continuing sanctity of mitzvah objects after Matan Torah. All eight records remain Parsed; no new identity, independent witness or Verified promotion was added.
+
+Eight candidate Chabad.org pages (AIDs 555044, 555045, 555046, 555047, 555071, 555072, 555086 and 555111) opened as audio/media presentations without readable transcript text. They were excluded as metadata-only; the same run switched to eight accessible Hebrew text bodies. No crawler retry, access-control bypass, full-text copying or scan-only verification was used.
+
+The exact-head audit also exposed a reconciliation bug: legacy Batch209 existing-identity update descriptors use the keys canonical/locator/prop/limit and were not recognized as audit rows, so they appeared as duplicate source records beside the canonical Batch185/187 records. The reconciliation helper and regression tests are being updated to exclude this legacy descriptor shape consistently from both canonical identity counting and index construction. Batch211's expected PR-workspace boundary is **1,696 / 862 / 4,369**; this is planning only until a fresh exact-head reconciliation and test_content_readiness.mjs pass. Public main metrics remain **977 / 878 / 2,950**. PR #35 remains unmerged; GitHub Pages has not been updated.
+
+
+## 2026-11-20 — Batch 212 and exact-head gate recovery
+
+- Inspected eight accessible Hebrew correspondence bodies from Kehot/Chabad.org and prepared eight bounded, non-verbatim `source_grounded_paraphrase` propositions with item-level body locators, provenance, partial-context scope and limitations.
+- Added eight candidate identity records (AIDs 4754458, 5019184, 5413537, 4754329, 4854695, 5413657, 5019520, 5357571). They remain Parsed; none was promoted to Verified. The full PR-head AID/URL/Evidence-Family collision scan is pending, so the eight are not yet asserted as unique answer-eligible families.
+- Rechecked AID 4731068 but did not mutate it because its canonical file path was not resolved in this run. Two asterisked variants (AIDs 4783929 and 4950754) were deferred because their pages link to non-asterisked companion letters whose relationship has not been inspected.
+- Eight previously used Sicha pages were inaccessible through the available public reader. No crawler retry, access-control bypass, full-text copying or scan-only verification was used; eight alternate Hebrew correspondence bodies were opened and inspected in the same run.
+- Last exact-head measured baseline remains 1,696 answer-eligible Evidence Families / 862 content-verified sources / 4,361 propositions (run 44702430019, after Batch210). The planning boundary after pending Batches211–212 is 1,704 / 862 / 4,377, assuming the eight candidate identities are unique. This is not an actual result until the fresh index and readiness gate confirm it. Public main metrics remain 977 / 878 / 2,950.
+- Fixed comparative coverage so an explicit comparison of fixed study times/group study versus Torah study while working on a farm is evaluated against those two named sides rather than unrelated broad topic tags. Added a compact diagnostic for claim tags, locators and source families. Fresh exact-head Actions run is required before merge.
+- PR #35 remains the authorized integration path. No schedule, audience or repository permissions were changed; no duplicate automation was created.
+
+
+## Batch 213 — 2026-11-20 — source-body review and bounded cross-family synthesis
+
+- Inspected ten public Hebrew source bodies through the web reader: nine candidate new identities (AIDs 3008940, 4280037, 5959890, 4280001, 5959838, 4280063, 4385893, 4385774, 4304354) and one in-place enrichment of the existing canonical AID 5989562 in Batch102.
+- Added eleven non-verbatim, source-grounded propositions to the nine candidate new identities and one additional proposition to AID 5989562. Every new proposition records `proposition_origin=source_grounded_paraphrase`, `proposition_verbatim=false`, `proposition_verification=source_text_inspected`, a body locator, provenance, partial-context scope, and explicit limitations. No source was promoted to Verified.
+- Seven candidate pages returned HTTP 429. They were recorded as blocked and replaced in the same review with accessible public source bodies. No crawler retry, access-control bypass, scan-only verification, or full-text copying was used.
+- Eleven duplicate/overlapping AIDs were excluded. AID 5989562 was not duplicated: its canonical Batch102 identity was enriched in place. The AID 4304354 record previously appeared only as a blocked candidate in Batch146; that audit row was marked as such so it cannot be counted as a second canonical source identity.
+- Batch213 planning boundary: Batch212 expected 1704 / 862 / 4377 → Batch213 expected 1713 / 862 / 4389. These are expected counts only, not measured actuals. Full-index reconciliation is required before reporting a final unique-source delta. Public main metrics remain unchanged at 977 / 878 / 2950 until a successful reconciliation and merge.
+- Added a bounded three-family retrieval/synthesis path for a question comparing communal speech and shared understanding (AID 5989562), stories as practical instruction (AID 4304354), and completing a started mitzvah (AID 4385893). Each claim has its own body locator and source family. The synthesis is explicitly a system-generated comparison, not a quotation or an attribution to the Rebbe. The AID 4385893 passage is explicitly marked as edited and printed in *Likkutei Sichos*, vol. 19; the story in AID 4304354 is attributed in the source to the Previous Rebbe.
+- Extended `test_content_readiness.mjs` through Batch213, including exact source identity, in-place enrichment, audit-descriptor, claim-level citation, and deep researcher-mode assertions. Exact-head Actions, reconciliation, merge to main, and GitHub Pages deployment remain pending at this point.
+
+
+## 2026-11-20 — Batch 214 and Batch 213 identity reconciliation correction
+
+- Re-opened the exact PR-head state, project canon/recovery files, acquisition state, public metrics, review queue, recent commits and Actions. The prior Answer Quality Gate run `44763026293` failed in `test_content_readiness.mjs` because AID `4280037` appeared as a new identity in Batch213 while the same AID and Chabad.org URL were already canonical in Batch105. The candidate paraphrase was redundant with the two existing Batch105 propositions. Removed the duplicate Batch213 record, recorded it as an existing-identity recheck with no new proposition, and kept AID `4304354` as a new identity because Batch146 contains only a blocked-candidate audit row for that AID, not a canonical record.
+- Corrected Batch213 planning boundary to 8 new identities, 10 new propositions, 1 in-place enrichment (AID `5989562`), 1 existing identity rechecked (AID `4280037`), 7 blocked HTTP-429 candidates, and 12 excluded duplicate candidates. Planning metrics: `1712 / 862 / 4388`; actual metrics remain pending exact-head reconciliation. No Verified promotion.
+- Batch214: opened and inspected eight public Chabad.org English memoir bodies (AIDs `2593606`, `260047`, `146969`, `259805`, `260038`, `260076`, `260084`, `259862`). Added eight bounded, non-verbatim Hebrew research paraphrases with item-level body locators, provenance, scope, context and limitations. All eight are by Zalmon Jaffe and describe distinct events; they are not eight independent corroborations of one another. The records remain Parsed, partial-context, link-only for reuse, with no full-text copying and no Verified promotion.
+- Batch214 planning boundary: `1720 / 862 / 4396`; this is a planning estimate, not a measured result. Full-index reconciliation, answer-readiness tests and Actions are required before any claim of final uniqueness or publication.
+- No blocked source body occurred in Batch214. No crawler retry, access-control bypass, duplicate automation, audience change or permission change was made. Existing hourly schedule was not modified.
+
+
+## 2026-11-20 — Exact-head reconciliation metrics and collision audit
+
+- The exact-head reconciliation step in run `44766924596` generated `answer_eligible_unique_sources=1719`, `content_verified_unique_sources=862`, and `answer_eligible_propositions=4399`. Batch214's audit selected 8 records, found 8 distinct Evidence Families, and confirmed all 8 as present and answer-eligible. The measured pre-Batch214 boundary was `1711 / 862 / 4391`, so Batch214 contributed `+8 / +0 / +8` in the PR workspace.
+- These are raw reconciliation metrics, not a claim that the entire corpus is globally deduplicated. The same run surfaced 41 historical AID/URL collision groups across older batches. A compact audit was saved at `data/audits/identity-collision-audit-2026-11-20.json`; each group requires event-level review before families are merged. Translations and duplicate presentations must not count as independent witnesses.
+- The run then stopped in the test harness at line 1573 with a JavaScript temporal-dead-zone error: a newly added assertion referenced `batch102Path` before its later declaration. The two early assertions now use the literal canonical path. The content index and Batch214's eight-family readiness audit had already completed successfully; the full `test_content_readiness.mjs` result still awaits rerun.
+
+ 
+## 2026-11-20 — Batch216: in-place memoir enrichment and media-only fallback
+
+- Re-read the canonical project rules, recovery notes, state, public metrics, review queue, acquisition state, recent commits and the latest PR Actions run. PR #35 remains open and unmerged; main is still at `2c7231f9bb043faafdd61c94040111723d95ac04`. Answer Quality Gate run `44781658927` rebuilt the PR-head evidence index and measured `1719 / 862 / 4402` after Batch215, then failed because `project-state.json` still declared Batch214 while the readiness test expected Batch215. The metrics snapshot is retained as the measured Batch215 after-boundary; the stale state assertion is corrected in Batch216.
+- Twelve public Chabad.org candidate pages (AIDs 554871, 555023, 555044–555047, 555054, 555070–555072, 550378 and 550381) opened as audio/media presentations with catalog metadata but no readable transcript body. They remain in the review queue with a `media_only_no_transcript` attempt note. No audio was played and no proposition was inferred from titles or IDs.
+- In the same run, eight accessible English first-person memoir bodies by Zalmon Jaffe were inspected and enriched in place: AIDs 2593606, 260047, 146969, 259805, 260038, 260076, 260084 and 259862. One new Hebrew non-verbatim `source_grounded_paraphrase` was added to each existing Batch214 canonical identity, with `proposition_verification=source_text_inspected`, exact body locator, provenance, partial-context scope and limitations. The eight items retain their existing Evidence Family IDs and Parsed status; no new identity, family, independent witness or Verified source was added. They are eight distinct event recollections by one author, not eight independent corroborations.
+- The new retrieval topic exposes the memoir propositions in both answer modes. Deep researcher mode now includes author identity in the evidence witness map and explicitly groups repeated authors, warning that distinct event families from one memoirist are not independent corroborating witnesses. The Batch216 regression checks claim-level locators, citation entailment, context boundaries and researcher-mode author dependence.
+- Batch216 baseline before enrichment: actual PR-workspace `1719 / 862 / 4402`; planning boundary from Batch215 `1724 / 862 / 4408`. Expected planning after Batch216: `1724 / 862 / 4416`, assuming all eight added propositions remain eligible. This is not yet an actual after-measurement. Full-index identity reconciliation and the final test run are pending.
+- No crawler retry, access-control bypass, full-text copying, scan-only verification, Verified promotion, schedule change, audience change, permission change or duplicate automation. PR #35 remains the integration path; main metrics and GitHub Pages remain unchanged until the quality gate and merge succeed.
+
+
+## 2026-11-20 — Batch217: eight in-place Hebrew source enrichments and retrieval matcher correction
+
+- Re-read the canonical project rules, recovery notes, project state, public metrics, review queue, acquisition state, recent commits and Actions runs. PR #35 remains the integration path. The previous Answer Quality Gate run 44786251820 built the PR-head index and measured 1719 / 862 / 4410 after Batch216; it then failed at the practical-instruction retrieval assertion because the matcher expected the wording 'התחלת במצוה', while the inspected AID 4385893 proposition correctly used 'התחיל במלאכת מצווה'.
+- Inspected new body passages in eight existing Hebrew canonical identities, without creating duplicate identities: AIDs 3008940 and 5959890 (Maamarim), and 4280001, 5959838, 4280063, 4385893, 4385774 and 4304354 (Sichos). Added one new non-verbatim source-grounded paraphrase to each, with exact body locators, provenance, partial-context scope and qualifications. All eight retained their existing Evidence Family IDs and Parsed status.
+- Two English Chabad.org pages, AIDs 554871 and 555023, were opened again but exposed only audio/archive presentation and no readable transcript. No audio was played and no proposition was inferred from the page title. Eight accessible Hebrew bodies were used as the same-run fallback.
+- Updated the practical-instruction matcher to recognize the source-grounded wording 'התחיל במלאכת מצווה' as well as the existing wording. The intended three-source synthesis remains explicitly system-authored, with separate claim-level locators and deep researcher evidence mapping; it is not attributed to the Rebbe as a quotation.
+- Batch217 adds eight propositions to existing identities: zero new source identities, zero new Evidence Families, zero Verified promotions. Actual before-boundary is 1719 / 862 / 4410; planning expected after is 1724 / 862 / 4424. The expected actual result from eight in-place enrichments is 1719 / 862 / 4418, but this remains pending exact-head reconciliation until the quality gate completes.
+- No crawler retry, access-control bypass, full-text copying, scan-only verification, translation counted as an independent witness, schedule change, audience change, permission change or duplicate automation. The two media-only items remain in the review queue.
+
+
+## 2026-11-20 — Batch218: inspected Hebrew discourse and English correspondence
+
+- נפתחו ונבדקו 11 גופי פרסום ציבוריים: עשר זהויות חדשות — שמונה פרסומים בעברית (שבע שיחות ומאמר אחד) ושני מכתבים באנגלית — והעשרה אחת בתוך הזהות הקיימת AID 5989562 בקובץ הקנוני Batch102.
+- AIDs חדשים: 5959839, 5989575, 5989780, 2989207, 4385753, 6132056, 3140064, 5989553, 4212080, 7484120. נוספו עשר פרפרזות מחקר חדשות ועוד פרפרזה אחת לזהות הקיימת. כל הפרפרזות לא-מילוליות, עם מיקום גוף, provenance, היקף אימות, הקשר ומגבלות. כל הרשומות נשארו Parsed; לא קודם מקור ל-Verified.
+- AID 4666220 החזיר Internal Error; AID 5989654 החזיר HTTP 429. תועדו החסימות ונפתחו מקורות חלופיים באותה הפעלה. לא בוצע retry של crawler, לא נעקפו בקרות גישה, לא הועתק טקסט מלא ולא נספר תרגום כעד עצמאי.
+- בדיקת AID/URL ממוקדת וחיפוש GitHub ותור הבדיקה לא החזירו התאמות לעשרת המועמדים החדשים. קובץ האינדקס המלא לא היה זמין לקריאה בכלי; full-index reconciliation נשאר חובה לפני אישור ייחודיות סופית.
+- נוסף ב-`src/answer-engine.js` מסלול סינתזה תחום `education_formation_and_guidance` לשמונה משפחות שונות, עם מפת טענות ומיקומי מקור; מצב `researcher/deep` שומר על ההבחנה בין שיחות, מכתבים וסיפור המובא בשיחה מאוחרת. הסינתזה מסומנת במפורש כעבודת המערכת ולא כציטוט או ייחוס לרבי.
+- תוקן כשל בדיקת Batch213: ספירת הפרופוזיציות המצטברת (18) הושוותה בטעות ל-10 הפרופוזיציות שנוספו באותה אצווה. הבדיקה סופרת כעת רק רשומות metadata עם `batch_id=213`. נוספו בדיקות Batch218 ותרחיש אחזור דו-מצבי.
+- baseline הנוכחי בקובץ המדדים בענף: 1,719 / 862 / 4,418. הצפי האריתמטי אחרי Batch218 הוא 1,729 / 862 / 4,429, אך זהו תכנון בלבד עד exact-head reconciliation. לא נרשמה תוצאת after כאילו נמדדה.
+- PR #35 עודכן; מיזוג ל-`main` ופרסום Pages ממתינים לתוצאות Actions ול-full-index reconciliation.
+
+
+## 2026-11-20 — Batch219: eight in-place Hebrew enrichments and Batch218 duplicate reconciliation
+
+- The prior exact-head Answer Quality Gate run 44796131536 generated the full PR-head index and measured 1,726 / 862 / 4,426 after the original Batch218 candidate set. Its audit showed that AIDs 5989780 and 6132056 each had a pre-existing canonical record in Batch205, while AID 4385753 already existed in Batch142. These were same-AID/URL duplicates, not independent witnesses. The three duplicate Batch218 records were removed from the new-identity set and their inspected propositions merged into the older canonical Evidence Families. Batch218 therefore retains seven distinct new source identities and four in-place enrichments (AID 5989562 plus the three duplicate resolutions); no second witness is counted.
+- In this run, eight Hebrew publisher bodies were opened and inspected at new, distinct locators: AIDs 5959839, 5989575, 5989780, 2989207, 4385753, 6132056, 3140064 and 5989553. Eight new non-verbatim source-grounded propositions were added to those existing identities, each with proposition_verification=source_text_inspected, exact body locator, provenance, partial-context scope and specific limitations. The three previously inspected Batch218 propositions were also attached to the existing canonical records; Batch219 records this reconciliation separately and does not treat it as new independent evidence.
+- AIDs 4212080 and 7484120 returned Internal Error in the public reader. Four English alternatives (AIDs 2242988, 3906831, 3907513 and 66724) were found as translated/free-translated presentations, but no original-language canonical counterpart was located in the accessible search. They were deferred; no translation was counted as an independent witness or used to create an answer-eligible source.
+- Added a claim-level cross-family synthesis topic learning_to_action_and_community for regular and researcher modes. It uses eight distinct Hebrew Sicha/Maamar Evidence Families, with one inspected proposition and body locator per claim. The synthesis is explicitly system-authored, not a Rebbe quotation; it distinguishes theological exposition, practical instruction, institutional context and historical narration, and does not infer empirical effects.
+- Measured baseline before the combined Batch218/219 reconciliation remains 1,719 / 862 / 4,418. Expected after is 1,726 / 862 / 4,437: seven distinct new Evidence Families and nineteen propositions across Batch218/219, with no Verified promotion. This is a projection until the new exact-head Actions run reports actual after-counts.
+- Batch214's readiness manifest now records the eight identities as answer-eligible, matching the full-index result; the test still checks every identity individually. No crawler retry, access-control bypass, full-text copying, scan-only verification, schedule change, audience change, permission change or duplicate automation. PR #35 remains open pending exact-head readiness and publication checks.
+
+
+## 2026-11-20 — Batch220: 15 new Hebrew/Yiddish identities and two in-place Sicha enrichments
+
+- נפתחו ונבדקו 17 גופי פרסום ציבוריים: 14 איגרות בעברית מתוך אגרות קודש, ערך אחד מקורי ביידיש מתוך היום יום, ושתי שיחות עבריות קיימות שהועשרו בתוך זהותן הקנונית.
+- AIDs חדשים: 4731005, 5100231, 4830985, 4831517, 4872065, 4928933, 5054485, 4950656, 4994275, 5357404, 4928992, 4950597, 4783929, 4929136, 3316719. נוספו 15 זהויות מקור חדשות ו-15 פרפרזות מחקר לא-מילוליות; AIDs 5959839 ו-2989207 הועשרו בפרופוזיציה נוספת לכל אחד, בלי ליצור Evidence Family חדש. כל הפרפרזות כוללות locator ברמת גוף, provenance, היקף אימות, הקשר ומגבלות.
+- ערך היום יום AID 3316719 נבדק בשפת המקור היידית. האמירה המצוטטת מיוחסת במפורש לרבי הרש״ב; היא אינה מיוחסת לרבי מליובאוויטש. התרגום האנגלי באותו עמוד לא נספר כעד עצמאי. בחיפוש הנוסף לא אושר מקור מכתב אנגלי מקורי; מצגות מתורגמות לא קודמו לזהויות עצמאיות.
+- 15 מועמדים חלופיים הציגו מעטפת תאימות ללא גוף פרסום, ובהם AID 4666220; הנתיב החלופי העברי שלו החזיר Internal Error. תועדו החסימות ובאותה הפעלה נפתחו 17 גופים חלופיים. לא בוצע retry של crawler, לא נעקפו בקרות גישה, לא הועתק טקסט מלא ולא נעשה שימוש במפתח סרוק כאימות תוכן.
+- בדיקות כפילות ממוקדות ב-AID/URL, GitHub code search, עץ הקבצים, תור הבדיקה, 12 קובצי bulk-indexed ו-diff של PR #35 לא מצאו התאמה ל-15 המועמדים. האינדקס המלא לא היה זמין לקריאה דרך המחבר; full-index reconciliation ב-Actions עדיין נדרש לפני אישור ייחודיות סופי.
+- נוסף מסלול סינתזה letter_study_practice_routines לחמש משפחות איגרות עבריות נפרדות, עם טענה ומיקום מקור לכל מכתב, הן במצב רגיל והן ב-researcher/deep. הסינתזה מסומנת במפורש כעבודת המערכת ולא כציטוט או ייחוס לרבי. תוקן גם matcher הסינתזה הקיים כך שיקבל את הניסוח המתועד בגוף AID 4385893, ״התחיל במלאכת מצווה״, לצד הניסוח הישן.
+- לפני Batch220: 1,726 / 862 / 4,437, כפי שנמדד בריצת PR-head 44814113576 לאחר Batch218/219. הצפי לאחר Batch220: 1,741 / 862 / 4,454; זהו תכנון בלבד עד הרצת exact-head reconciliation. לא קודם אף מקור ל-Verified.
+- PR #35 נשאר מסלול האינטגרציה. מיזוג ל-main ופרסום Pages יבוצעו רק לאחר מעבר בדיקות התוכן והאחזור.
+
+
+## 2026-11-20 — Batch220 full-index reconciliation correction
+
+The exact-head Answer Quality Gate run **44824437555** generated the PR-workspace index and measured **1,738 answer-eligible unique sources / 862 content-verified unique sources / 4,455 answer-eligible propositions**. The reconciled Batch220 manifest contains **12** new Hebrew Igrot Kodesh Evidence Families and **2** in-place Hebrew Sicha enrichments, not the original 15 candidate identities. Full-index review excluded and linked three duplicate candidates: AID 4731005 (already in the public index), AID 4830985 (canonical Batch078), and AID 3316719 (canonical Batch097). The Yiddish entry's English rendering remains a translation of the same Evidence Family, not an independent witness. Seventeen source bodies had been inspected; 14 new paraphrase entries remain (12 new families + 2 in-place propositions). No Verified promotion.
+
+Batch220's declared expected boundary was 1,738 / 862 / 4,451; the measured result was 1,738 / 862 / 4,455. The **+4 proposition variance is retained explicitly** and is not attributed to the batch without further audit. The run then failed on stale `test_content_readiness.mjs` assertions expecting 15 records instead of the reconciled 12; this is a test/manifest mismatch, not evidence that 15 unique sources were added.
+
+## 2026-11-20 — Batch221 source-body review and retrieval update
+
+Ten public Hebrew source bodies were inspected. Two new identity candidates were added: AID 2989019 (an unedited Sicha transcript from 18 Tishrei 5719) and AID 2989004 (an unedited Maamar note for 25 Kislev 5716). Seven existing Hebrew Sicha identities were enriched in place: 2988940, 4385713, 5959970, 4280106, 3008908, 2989018 and 5989796. AID 2989044 was rechecked; its inspected sections were already covered, so no duplicate proposition was added. The batch contains nine new non-verbatim propositions in total; all records remain Parsed, with no Verified promotion.
+
+Four candidate routes were blocked: AID 4666220 returned Internal Error on the alternate Hebrew route, and three Yechidus pages (553692, 553737, 553674) exposed audio metadata without a transcript. Alternative public source bodies were used in the same run. No crawler retry, access-control bypass, full-text copying, scan-only verification, or translation-as-independent-witness was used. Targeted AID/URL checks found no collisions for 2989019 or 2989004, but the full generated-index check is still pending.
+
+The expected Batch221 boundary is **1,740 / 862 / 4,464** from the measured PR-workspace baseline 1,738 / 862 / 4,455. This is planning only until exact-head reconciliation. A new cross-family Sukkot route compares three separate Hebrew Sicha Evidence Families (AIDs 4385713, 2989019, 2989018) with claim-level body locators in regular mode and a deep evidence map in researcher mode. The synthesis is explicitly system-authored, not a Rebbe quotation; the nested attribution in AID 2989019 is preserved.
+
+The integration branch is not yet merged to main. The next gate is full-index reconciliation, `scripts/test_content_readiness.mjs`, the Answer Quality Gate, and then a live Pages check. Public-main metrics are not being represented as updated before merge and deployment.

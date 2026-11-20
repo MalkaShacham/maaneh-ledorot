@@ -2,6 +2,7 @@
 import json, pathlib, re, datetime
 from content_readiness import answer_eligible, summarize
 from status_normalization import status_of
+from reconciliation_helpers import alias_target_pairs, has_frozen_metrics_snapshot, is_audit_descriptor
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 items=sorted((ROOT/"data/items").glob("*.json"))
 batches=sorted((ROOT/"data/staging/batches").glob("*.json"))
@@ -11,6 +12,17 @@ manifests=sorted((ROOT/"data/staging/manifests").glob("*.json"))
 PIPE=("Verified","Linked","Parsed","Indexed","Discovered")
 def identity_keys(d):
     if not isinstance(d,dict): return []
+    # Some publisher pages contain multiple distinct primary documents (for
+    # example, two separate letters embedded in one recipient testimony).
+    # When a source_unit_key is supplied, it is the canonical identity boundary:
+    # translations of that same unit share the key, while separate documents
+    # on the same AID/URL receive different keys.
+    unit=d.get("source_unit_key") or d.get("document_unit_key")
+    if unit:
+        out=["unit:"+str(unit)]
+        if d.get("staging_stable_key"): out.append(str(d["staging_stable_key"]))
+        if d.get("id"): out.append("id:"+str(d["id"]))
+        return list(dict.fromkeys(out))
     out=[]
     loc=d.get("locator") or {}
     prov=d.get("provenance") or {}
@@ -31,16 +43,7 @@ def is_source_record(d):
     # repeat an AID and URL for an existing item; indexing them as a second record
     # creates false canonical_identity_collisions and duplicate search candidates.
     if not isinstance(d,dict): return False
-    audit_row = (
-        d.get("action") == "enriched_existing_identity_in_place"
-        or d.get("existing_identity") is True
-        or d.get("body_text_inspected") is True
-        or d.get("inspected_original_language_body") is True
-        or ("reason" in d and "handling" in d and "aid" in d)
-        or ("canonical_file" in d and "propositions_added" in d and "total_propositions_after" in d)
-        or ("identity_key" in d and "canonical_records_found" in d)
-    )
-    if audit_row: return False
+    if is_audit_descriptor(d): return False
     markers=("id","aid","title","summary_researcher","pipeline_status","source_class","evidence_family_id","response_propositions")
     return any(d.get(k) not in (None,"",[]) for k in markers) or isinstance(d.get("locator"),dict)
 
@@ -145,16 +148,7 @@ def candidate_dicts(obj):
             # for auditability, but they are not additional canonical source records.
             # Counting them here created false collisions (for example AID 2989153)
             # and could let an audit descriptor shadow the actual inspected item.
-            audit_descriptor = (
-                x.get("action") == "enriched_existing_identity_in_place"
-                or x.get("existing_identity") is True
-                or x.get("body_text_inspected") is True
-                or x.get("inspected_original_language_body") is True
-                or ("reason" in x and "handling" in x and "aid" in x)
-                or ("canonical_file" in x and "propositions_added" in x and "total_propositions_after" in x)
-                or ("identity_key" in x and "canonical_records_found" in x)
-            )
-            if not audit_descriptor and is_source_record(x) and stable_key(x) and (x.get("title") or x.get("summary_researcher") or x.get("source_url") or isinstance(x.get("provenance"),dict)):out.append(x)
+            if not is_audit_descriptor(x) and is_source_record(x) and stable_key(x) and (x.get("title") or x.get("summary_researcher") or x.get("source_url") or isinstance(x.get("provenance"),dict)):out.append(x)
             for v in x.values():
                 if isinstance(v,(dict,list)):stack.append(v)
         elif isinstance(x,list):stack.extend(x)
@@ -208,7 +202,7 @@ for fp in items:
             if not verification_scope: integrity_issues.append("verified_content_missing_scope")
             if not witness_provenance: integrity_issues.append("verified_content_missing_witness_provenance")
             if integrity_issues: search_status="Linked"
-        entry={"key":key,"id":x.get("id"),"title":x.get("title") or x.get("id") or key,"summary":summary,"source_class":x.get("source_class") or x.get("collection") or x.get("type"),"type":x.get("type") or prop.get("type"),"collection":x.get("collection") or prop.get("collection"),"original_language":x.get("original_language") or prop.get("original_language"),"translation_status":x.get("translation_status") or prop.get("translation_status"),"independent_witness":x.get("independent_witness") if "independent_witness" in x else prop.get("independent_witness"),"parent_evidence_family_id":x.get("parent_evidence_family_id") or prop.get("parent_evidence_family_id"),"translation_of_evidence_family_id":x.get("translation_of_evidence_family_id") or prop.get("translation_of_evidence_family_id"),"witness_type":x.get("witness_type") or prop.get("witness_type"),"status":search_status,"canonical_status":st or x.get("pipeline_status") or x.get("verification_status") or "unknown","context_status":context_status,"context_status_raw":raw_context if str(raw_context).lower()!=context_status else None,"date":x.get("date_original") or x.get("event_date") or x.get("event_date_hebrew"),"date_precision":x.get("date_precision") or prop.get("date_precision"),"language":x.get("language") or "unknown","proposition_language":x.get("proposition_language") or prop.get("proposition_language"),"source_url":source_url,"aid":aid_value,"locator":loc or x.get("locator"),"rights_status":x.get("rights_status") or access.get("rights_status"),"publisher_terms":tax.get("publisher_index_terms") or [],"research_terms":tax.get("research_terms") or [],"relations":x.get("relations") if isinstance(x.get("relations"),list) else [],"canonical_file":str(fp.relative_to(ROOT)),"documented_circumstances":x.get("documented_circumstances") or prop.get("documented_circumstances"),"question_or_problem":x.get("question_or_problem") or prop.get("question_or_problem"),"response_propositions":response_props,"response_proposition_locators":x.get("response_proposition_locators") or prop.get("response_proposition_locators") or [],"conditions_or_qualifications":x.get("conditions_or_qualifications") or prop.get("conditions_or_qualifications") or [],"audience":x.get("audience") or prop.get("audience"),"verification_scope":verification_scope,"witness_provenance":witness_provenance,"provenance":prov or None,"evidence_family_id":x.get("evidence_family_id") or prop.get("evidence_family_id"),"primary_secondary_status":x.get("primary_secondary_status") or prop.get("primary_secondary_status"),"author_role":x.get("author_role") or prop.get("author_role"),"author_name":x.get("author_name") or prop.get("author_name"),"signatory":x.get("signatory") or prop.get("signatory"),"signatory_role":x.get("signatory_role") or prop.get("signatory_role"),"authorship_status":x.get("authorship_status") or prov.get("authorship_status"),"has_content_evidence":bool(response_props) and explicit_content_flag is not False,"proposition_origin":proposition_origin,"proposition_verbatim":proposition_verbatim,"evidence_integrity_issues":integrity_issues}
+        entry={"key":key,"id":x.get("id"),"title":x.get("title") or x.get("id") or key,"summary":summary,"source_class":x.get("source_class") or x.get("collection") or x.get("type"),"type":x.get("type") or prop.get("type"),"collection":x.get("collection") or prop.get("collection"),"original_language":x.get("original_language") or prop.get("original_language"),"translation_status":x.get("translation_status") or prop.get("translation_status"),"independent_witness":x.get("independent_witness") if "independent_witness" in x else prop.get("independent_witness"),"duplicate_of_canonical_id":x.get("duplicate_of_canonical_id") or prop.get("duplicate_of_canonical_id"),"duplicate_identity_status":x.get("duplicate_identity_status") or prop.get("duplicate_identity_status"),"parent_evidence_family_id":x.get("parent_evidence_family_id") or prop.get("parent_evidence_family_id"),"translation_of_evidence_family_id":x.get("translation_of_evidence_family_id") or prop.get("translation_of_evidence_family_id"),"witness_type":x.get("witness_type") or prop.get("witness_type"),"status":search_status,"canonical_status":st or x.get("pipeline_status") or x.get("verification_status") or "unknown","context_status":context_status,"context_status_raw":raw_context if str(raw_context).lower()!=context_status else None,"date":x.get("date_original") or x.get("event_date") or x.get("event_date_hebrew"),"date_precision":x.get("date_precision") or prop.get("date_precision"),"language":x.get("language") or "unknown","proposition_language":x.get("proposition_language") or prop.get("proposition_language"),"source_url":source_url,"aid":aid_value,"locator":loc or x.get("locator"),"rights_status":x.get("rights_status") or access.get("rights_status"),"publisher_terms":tax.get("publisher_index_terms") or [],"research_terms":tax.get("research_terms") or [],"relations":x.get("relations") if isinstance(x.get("relations"),list) else [],"canonical_file":str(fp.relative_to(ROOT)),"documented_circumstances":x.get("documented_circumstances") or prop.get("documented_circumstances"),"question_or_problem":x.get("question_or_problem") or prop.get("question_or_problem"),"response_propositions":response_props,"response_proposition_metadata":x.get("response_proposition_metadata") or prop.get("response_proposition_metadata") or [],"response_proposition_provenance":x.get("response_proposition_provenance") or prop.get("response_proposition_provenance") or [],"response_proposition_locators":x.get("response_proposition_locators") or prop.get("response_proposition_locators") or [],"conditions_or_qualifications":x.get("conditions_or_qualifications") or prop.get("conditions_or_qualifications") or [],"audience":x.get("audience") or prop.get("audience"),"verification_scope":verification_scope,"witness_provenance":witness_provenance,"provenance":prov or None,"evidence_family_id":x.get("evidence_family_id") or prop.get("evidence_family_id"),"primary_secondary_status":x.get("primary_secondary_status") or prop.get("primary_secondary_status"),"author_role":x.get("author_role") or prop.get("author_role"),"author_name":x.get("author_name") or prop.get("author_name"),"signatory":x.get("signatory") or prop.get("signatory"),"signatory_role":x.get("signatory_role") or prop.get("signatory_role"),"authorship_status":x.get("authorship_status") or prov.get("authorship_status"),"has_content_evidence":bool(response_props) and explicit_content_flag is not False,"proposition_origin":proposition_origin,"proposition_verbatim":proposition_verbatim,"evidence_integrity_issues":integrity_issues}
         if response_props and proposition_origin != "editorial_summary_derived":
             entry["proposition_verification"]=x.get("proposition_verification") or prop.get("proposition_verification")
             entry["proposition_source_locator"]=x.get("proposition_source_locator") or prop.get("proposition_source_locator")
@@ -220,7 +214,10 @@ for fp in items:
         old=search_entries.get(key)
         # Prefer inspected answer evidence over a duplicate catalog-only record.
         # Keep the entire witness together; never mix propositions/context fields.
-        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
+        def is_duplicate_presentation(e):
+            duplicate_status=str(e.get("duplicate_identity_status") or "").lower()
+            return bool(e.get("duplicate_of_canonical_id")) or "duplicate" in duplicate_status
+        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0),not is_duplicate_presentation(e),e.get("independent_witness") is True,not bool(e.get("translation_of_evidence_family_id")),len(e.get("response_propositions") or []))
         if old is None or priority(entry)>priority(old):search_entries[key]=entry
 search_index={"generated":today,"count":len(search_entries),"entries":sorted(search_entries.values(),key=lambda e:(0 if e.get("status")=="Verified" else 1,str(e.get("date") or ""),str(e.get("title") or "")))}
 # This generated index is shipped to browsers; compact JSON cuts repository and
@@ -240,21 +237,40 @@ def is_pending_batch(data):
     return (data.get("reconciliation_status") in ("pending","pending_reconciliation")
             or data.get("status") in ("pending","pending_reconciliation"))
 
-selected_batches=[]
-if manual_batches and is_pending_batch(manual_batches[-1]["data"]):
-    selected_batches=[manual_batches[-1]]
-    current=manual_batches[-1]["data"]
-    index=len(manual_batches)-2
-    while index>=0:
-        previous=manual_batches[index]["data"]
-        if not is_pending_batch(previous): break
-        if (previous.get("metrics_expected_after") or {}) != (current.get("metrics_before") or {}): break
-        selected_batches.insert(0,manual_batches[index])
-        current=previous
-        index-=1
+def needs_reconciliation(data):
+    if is_pending_batch(data): return True
+    dedup=data.get("deduplication_check")
+    if not isinstance(dedup,dict) or dedup.get("full_index_scan_available") is not True: return True
+    if dedup.get("full_index_scan_pending_reconciliation") is True: return True
+    if not isinstance(data.get("metrics_actual_after"),dict): return True
+    if data.get("reconciliation_status") not in ("reconciled","reconciled_with_variance"): return True
+    return False
+
+# Reconcile every pending manual batch and every historical batch that lacks
+# a measured snapshot or full-index audit. A stale "reconciled" label alone
+# is not sufficient: readiness requires current canonical-identity checks.
+selected_batches=[entry for entry in manual_batches if needs_reconciliation(entry["data"])]
+
+# Build the all-file identity audit index once. Re-reading and parsing every
+# corpus file for every target identity makes a 50-batch reconciliation
+# quadratic in file I/O and can stall the Actions runner.
+identity_record_index={}
+family_record_index={}
+for fp in items:
+    try: obj=json.loads(fp.read_text(encoding="utf-8"))
+    except Exception: continue
+    if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
+    for x in candidate_dicts(obj):
+        if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
+        record_summary={"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"aid":x.get("aid"),"title":x.get("title"),"source_url":x.get("source_url"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"translation_of_evidence_family_id":x.get("translation_of_evidence_family_id"),"witness_type":x.get("witness_type"),"language":x.get("language"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"source_unit_key":x.get("source_unit_key"),"source_unit_locator":x.get("source_unit_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")}
+        for record_key in set(identity_keys(x)):
+            identity_record_index.setdefault(record_key,[]).append(record_summary)
+        family_id=x.get("evidence_family_id")
+        if family_id: family_record_index.setdefault(str(family_id),[]).append(record_summary)
 
 reconciliation_audit_history=[]
 previous_snapshot_metrics=None
+previous_expected_after=None
 for selected_index, batch_info in enumerate(selected_batches):
     batch_path=batch_info["path"]; batch_data=batch_info["data"]
     batch_label=re.search(r"content-research-batch-(\d+)-",batch_path.name).group(1)
@@ -269,8 +285,11 @@ for selected_index, batch_info in enumerate(selected_batches):
             aid=str(record.get("aid") or "")
             add_target(stable,aid if aid else None,record.get("id"))
     for update in batch_data.get("existing_identity_updates",[]):
+        unit=str(update.get("source_unit_key") or update.get("document_unit_key") or "")
         aid=str(update.get("aid") or "")
-        if aid.isdigit():
+        if unit:
+            add_target("unit:"+unit,aid if aid.isdigit() else None,update.get("id"))
+        elif aid.isdigit():
             add_target("aid:"+aid,aid,update.get("id"))
         else:
             identity=str(update.get("identity") or update.get("id") or "")
@@ -280,51 +299,76 @@ for selected_index, batch_info in enumerate(selected_batches):
                 item_id=str(update.get("id") or identity)
                 add_target("id:"+item_id,None,item_id)
     for alias in batch_data.get("identity_alias_audit_targets",[]):
-        alias_aid=str(alias.get("alias_aid") or ""); canonical_aid=str(alias.get("canonical_aid") or "")
-        if alias_aid.isdigit(): add_target("aid:"+alias_aid,alias_aid,None)
-        if canonical_aid.isdigit(): add_target("aid:"+canonical_aid,canonical_aid,None)
+        for stable, alias_aid, item_id in alias_target_pairs(alias):
+            add_target(stable,alias_aid,item_id)
     for recheck in batch_data.get("existing_identity_rechecks",[]):
+        unit=str(recheck.get("source_unit_key") or recheck.get("document_unit_key") or "")
         recheck_aid=str(recheck.get("aid") or "")
-        if recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
+        if unit: add_target("unit:"+unit,recheck_aid if recheck_aid.isdigit() else None,recheck.get("id"))
+        elif recheck_aid.isdigit(): add_target("aid:"+recheck_aid,recheck_aid,recheck.get("id"))
 
     # Exclude later manual batches to calculate the actual corpus snapshot immediately
     # after this batch. Use all entries, not only the final deduplicated index.
-    later_paths={str(x["path"].relative_to(ROOT)) for x in selected_batches[selected_index+1:]}
+    # Exclude every later manual batch file, whether it is pending or was
+    # reconciled previously. Historical snapshots must not include later items.
+    later_manual_infos=[x for x in manual_batches if x["path"]>batch_path]
+    later_paths={str(x["path"].relative_to(ROOT)) for x in later_manual_infos}
     # Later manual batches may append propositions to an earlier canonical
-    # item file. Exclude those later additions when calculating an earlier
-    # batch's historical snapshot; otherwise the same in-place enrichment is
-    # counted before the batch that actually introduced it.
+    # item file. Exclude those later additions even when the later batch was
+    # already reconciled; otherwise an in-place enrichment leaks backward.
     later_in_place_exclusions={}
+    later_in_place_exclusion_aliases={}
     later_batches_with_in_place_updates=[]
-    for later_info in selected_batches[selected_index+1:]:
+    for later_info in later_manual_infos:
         later_data=later_info["data"]
         later_batch_id=str(later_data.get("batch_id") or "")
         for update in later_data.get("existing_identity_updates",[]):
             canonical_file=str(update.get("canonical_file") or "")
             aid=str(update.get("aid") or "")
-            if not canonical_file or canonical_file in later_paths or not aid: continue
+            unit=str(update.get("source_unit_key") or update.get("document_unit_key") or "")
+            item_id=str(update.get("id") or "")
+            update_keys=[]
+            if unit: update_keys.append("unit:"+unit)
+            if item_id: update_keys.append("id:"+item_id)
+            if aid: update_keys.append("aid:"+aid)
+            if not canonical_file or canonical_file in later_paths or not update_keys: continue
             before=update.get("existing_propositions_before")
             after=update.get("total_propositions_after")
             excluded=set()
             if isinstance(before,int) and isinstance(after,int) and after>before:
                 excluded.update(range(before,after))
             else:
-                locators=update.get("locators") or ([update.get("locator")] if update.get("locator") else [])
+                locators=update.get("proposition_source_locators") or update.get("locators") or ([update.get("proposition_source_locator") or update.get("locator")] if (update.get("proposition_source_locator") or update.get("locator")) else [])
                 for entry in all_search_entries:
-                    if entry.get("canonical_file")!=canonical_file or str(entry.get("aid") or "")!=aid: continue
+                    if entry.get("canonical_file")!=canonical_file: continue
+                    entry_keys=[]
+                    if entry.get("source_unit_key") or entry.get("document_unit_key"): entry_keys.append("unit:"+str(entry.get("source_unit_key") or entry.get("document_unit_key")))
+                    if entry.get("id"): entry_keys.append("id:"+str(entry.get("id")))
+                    if entry.get("aid"): entry_keys.append("aid:"+str(entry.get("aid")))
+                    if not set(update_keys).intersection(entry_keys): continue
                     entry_locators=entry.get("response_proposition_locators") or []
                     for locator in locators:
                         for prop_index,entry_locator in enumerate(entry_locators):
                             if prop_index not in excluded and str(entry_locator)==str(locator):
                                 excluded.add(prop_index);break
             if excluded:
-                later_in_place_exclusions.setdefault((canonical_file,aid),set()).update(excluded)
+                primary_key=update_keys[0]
+                for alias in update_keys:
+                    later_in_place_exclusion_aliases[(canonical_file,alias)]=primary_key
+                later_in_place_exclusions.setdefault((canonical_file,primary_key),set()).update(excluded)
                 later_batches_with_in_place_updates.append(later_batch_id)
     snapshot_by_key={}
     for entry in all_search_entries:
         if entry.get("canonical_file") in later_paths: continue
         adjusted=entry
-        excluded=later_in_place_exclusions.get((str(entry.get("canonical_file") or ""),str(entry.get("aid") or "")),set())
+        entry_keys=[]
+        if entry.get("source_unit_key") or entry.get("document_unit_key"): entry_keys.append("unit:"+str(entry.get("source_unit_key") or entry.get("document_unit_key")))
+        if entry.get("id"): entry_keys.append("id:"+str(entry.get("id")))
+        if entry.get("aid"): entry_keys.append("aid:"+str(entry.get("aid")))
+        primary_keys={later_in_place_exclusion_aliases.get((str(entry.get("canonical_file") or ""),key)) for key in entry_keys}
+        excluded=set()
+        for primary_key in primary_keys:
+            if primary_key: excluded.update(later_in_place_exclusions.get((str(entry.get("canonical_file") or ""),primary_key),set()))
         if excluded:
             adjusted=dict(entry)
             props=entry.get("response_propositions") or []
@@ -336,56 +380,90 @@ for selected_index, batch_info in enumerate(selected_batches):
         key=adjusted.get("key")
         if not key: continue
         old=snapshot_by_key.get(key)
-        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
+        # Use the same deterministic witness-selection order as search_entries.
+        # Otherwise historical batch snapshots can undercount propositions when
+        # duplicate AIDs exist in multiple files and the search index selects the
+        # richer canonical presentation.
+        def is_duplicate_presentation(e):
+            duplicate_status=str(e.get("duplicate_identity_status") or "").lower()
+            return bool(e.get("duplicate_of_canonical_id")) or "duplicate" in duplicate_status
+        priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0),not is_duplicate_presentation(e),e.get("independent_witness") is True,not bool(e.get("translation_of_evidence_family_id")),len(e.get("response_propositions") or []))
         if old is None or priority(adjusted)>priority(old): snapshot_by_key[key]=adjusted
     snapshot_metrics=summarize(list(snapshot_by_key.values()))
-    actual_before=previous_snapshot_metrics or (batch_data.get("metrics_before") or snapshot_metrics)
     readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
-    batch_data["metrics_actual_before"]={k:int(actual_before.get(k,snapshot_metrics[k])) for k in readiness_keys}
-    batch_data["metrics_actual_after"]=snapshot_metrics
-    batch_data["metrics_delta_actual"]={k:snapshot_metrics[k]-batch_data["metrics_actual_before"][k] for k in readiness_keys}
-    previous_snapshot_metrics=snapshot_metrics
+    frozen_snapshot=has_frozen_metrics_snapshot(batch_data)
+    if frozen_snapshot:
+        # A full-index rescan of an already reconciled batch is audit-only.
+        # Preserve its original batch-boundary metrics instead of replacing
+        # them with a later whole-corpus snapshot.
+        previous_snapshot_metrics={k:int(batch_data["metrics_actual_after"][k]) for k in readiness_keys}
+        previous_expected_after=batch_data.get("metrics_expected_after") or {}
+    else:
+        expected_before=batch_data.get("metrics_before") or {}
+        # Carry forward the prior actual snapshot only when expected batch
+        # boundaries are contiguous. Across a historical gap, reset to the
+        # recorded baseline rather than inventing continuity.
+        if previous_snapshot_metrics is not None and previous_expected_after==expected_before:
+            actual_before=previous_snapshot_metrics
+        else:
+            actual_before=expected_before or snapshot_metrics
+        batch_data["metrics_actual_before"]={k:int(actual_before.get(k,snapshot_metrics[k])) for k in readiness_keys}
+        batch_data["metrics_actual_after"]=snapshot_metrics
+        batch_data["metrics_delta_actual"]={k:snapshot_metrics[k]-batch_data["metrics_actual_before"][k] for k in readiness_keys}
+        previous_snapshot_metrics=snapshot_metrics
+        previous_expected_after=batch_data.get("metrics_expected_after") or {}
     batch_data["reconciliation_snapshot_adjustment"]={
         "excluded_later_in_place_proposition_count":sum(len(v) for v in later_in_place_exclusions.values()),
         "affected_canonical_identity_count":len(later_in_place_exclusions),
         "later_batches_with_in_place_updates":sorted(set(later_batches_with_in_place_updates)),
-        "policy":"Historical batch snapshots exclude proposition indices documented by later existing_identity_updates when those updates were written into an earlier canonical file. New later batch files remain excluded by later_paths."
+        "policy":"Historical batch snapshots exclude proposition indices documented by later existing_identity_updates. New later batch files remain excluded by later_paths. Once a batch has a reconciled actual boundary, subsequent full-index rescans update its deduplication audit only and never replace its historical metrics."
     }
 
-    audit=[]; by_identity={target["key"]:[] for target in target_identities}
-    for fp in items:
-        try: obj=json.loads(fp.read_text(encoding="utf-8"))
-        except Exception: continue
-        if "evidence-family" in fp.name or (isinstance(obj,dict) and str(obj.get("type","")).lower()=="evidencefamily"): continue
-        for x in candidate_dicts(obj):
-            if not isinstance(x,dict) or not (x.get("id") or x.get("evidence_family_id")): continue
-            for record_key in [key for key in identity_keys(x) if key in by_identity]:
-                by_identity[record_key].append({"file":str(fp.relative_to(ROOT)),"id":x.get("id"),"evidence_family_id":x.get("evidence_family_id"),"independent_witness":x.get("independent_witness"),"status":status_of(x),"has_content_evidence":bool(x.get("has_content_evidence")),"proposition_count":len(x.get("response_propositions") or []),"proposition_origin":x.get("proposition_origin"),"proposition_verification":x.get("proposition_verification"),"proposition_source_locator":x.get("proposition_source_locator"),"verification_scope":x.get("verification_scope") or ((x.get("provenance") or {}).get("verification_scope") if isinstance(x.get("provenance"),dict) else None),"context_status":x.get("context_status")})
+    audit=[]
     for target in target_identities:
-        selected=snapshot_by_key.get(target["key"]); matches=by_identity[target["key"]]
+        selected=snapshot_by_key.get(target["key"]); matches=identity_record_index.get(target["key"],[])
         family_ids=sorted({r.get("evidence_family_id") for r in matches if r.get("evidence_family_id")})
-        same_family_duplicate=len(matches)>1 and len(family_ids)==1 and all(r.get("independent_witness") is False for r in matches)
+        # A repeated AID/URL that resolves to one Evidence Family is a duplicate presentation, even if an earlier import incorrectly marked both rows independent.
+        same_family_duplicate=len(matches)>1 and len(family_ids)==1
         identity_collision=len(matches)>1 and not same_family_duplicate
-        audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False}})
+        selected_family=selected.get("evidence_family_id") if selected else None
+        family_matches=family_record_index.get(str(selected_family),[]) if selected_family else []
+        family_aids=sorted({str(r.get("aid")) for r in family_matches if r.get("aid") is not None})
+        family_linkage={"evidence_family_id":selected_family,"member_aids":family_aids,"member_files":sorted({r.get("file") for r in family_matches if r.get("file")}),"member_witness_types":sorted({str(r.get("witness_type")) for r in family_matches if r.get("witness_type")}),"independent_witness_values":sorted({str(r.get("independent_witness")) for r in family_matches if r.get("independent_witness") is not None}),"member_count":len(family_matches)} if selected_family and len(family_aids)>1 else None
+        audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"family_linkage":family_linkage,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False},"current_index_entry":{"present":bool(search_entries.get(target["key"])),"answer_eligible":bool(search_entries.get(target["key"]) and search_entries.get(target["key"]).get("answer_eligible"))}})
     expected=batch_data.get("metrics_expected_after") or {}
-    variance={k:snapshot_metrics[k]-int(expected.get(k,snapshot_metrics[k])) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
+    metric_boundary=batch_data.get("metrics_actual_after") if frozen_snapshot else snapshot_metrics
+    variance={k:int(metric_boundary.get(k,snapshot_metrics[k]))-int(expected.get(k,metric_boundary.get(k,snapshot_metrics[k]))) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
     batch_data["reconciliation_variance"]=variance
     batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
     batch_data["status"]=batch_data["reconciliation_status"]
-    batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
+    if not frozen_snapshot:
+        batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
     dedup=batch_data.get("deduplication_check")
     if isinstance(dedup,dict):
         collisions=[x.get("aid") for x in audit if x.get("canonical_identity_collision")]
         same_family=[{"aid":x.get("aid"),"evidence_family_id":(x.get("matching_evidence_family_ids") or [None])[0],"files":sorted({r.get("file") for r in x.get("records",[]) if r.get("file")})} for x in audit if x.get("same_family_duplicate")]
-        missing=[x.get("aid") for x in audit if not x.get("selected_index_entry",{}).get("present")]
+        missing=[x.get("aid") for x in audit if not x.get("current_index_entry",{}).get("present")]
+        historical_missing=[x.get("aid") for x in audit if not x.get("selected_index_entry",{}).get("present")]
         dedup["same_family_duplicate_presentations"]=same_family
+        family_linkage={}
+        for item in audit:
+            link=item.get("family_linkage")
+            if link and link.get("evidence_family_id"):
+                family_linkage[str(link["evidence_family_id"])]=link
+        dedup["family_linkage_audit"]=list(family_linkage.values())
+        dedup["family_linkage_count"]=len(family_linkage)
         dedup["full_index_scan_available"]=True
         dedup["full_index_scan_pending_reconciliation"]=False
         dedup["full_index_scan_completed_at"]=today
         dedup["reconciled_identity_count"]=len(audit)
         dedup["canonical_identity_collisions"]=collisions
         dedup["missing_canonical_identities"]=missing
-        dedup["all_target_identities_answer_eligible"]=bool(audit) and all(x.get("selected_index_entry",{}).get("answer_eligible") for x in audit)
+        # Canonical presence/eligibility is measured against the current full corpus.
+        # Historical snapshots may legitimately omit a later-created canonical item
+        # that a prior audit action now points to (for example AID 2989411).
+        dedup["missing_at_historical_batch_boundary"]=historical_missing
+        dedup["all_target_identities_answer_eligible"]=bool(audit) and all(x.get("current_index_entry",{}).get("answer_eligible") for x in audit)
     state.setdefault("development_recovery",{})["last_reconciliation"]={
         "batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"generated":today,
         "batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),
@@ -396,7 +474,7 @@ for selected_index, batch_info in enumerate(selected_batches):
         "same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),
         "canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),
         "metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"items":audit}
-    reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit),"batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),"existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),"answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),"selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")} ),"non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),"same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),"canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),"items":audit})
+    reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit),"batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),"existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),"answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),"selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")} ),"family_linkage_count":len({str(x.get("family_linkage",{}).get("evidence_family_id")) for x in audit if x.get("family_linkage")} ),"family_linkage_audit":[x["family_linkage"] for x in audit if x.get("family_linkage")],"non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),"same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),"family_linkage_count":len({str(x.get("family_linkage",{}).get("evidence_family_id")) for x in audit if x.get("family_linkage")}),"family_linkage_audit":[x["family_linkage"] for x in audit if x.get("family_linkage")],"canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),"items":audit})
     summary=state.setdefault("development_recovery",{}).get("last_batch_summary")
     if isinstance(summary,dict) and str(summary.get("batch_id"))==str(batch_data.get("batch_id")):
         readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
@@ -493,3 +571,6 @@ print("batch_reconciliation_audit",json.dumps({
               "selected_index_entry":{k:x.get("selected_index_entry",{}).get(k) for k in ("present","answer_eligible","evidence_family_id","canonical_file","canonical_status")}}
              for x in audit_state.get("items",[])]
 },ensure_ascii=False))
+
+collision_details=[{"batch_id":x.get("batch_id"),"batch_file":x.get("batch_file"),"identity_key":i.get("identity_key"),"aid":i.get("aid"),"records":i.get("records",[])} for x in reconciliation_audit_history for i in x.get("items",[]) if i.get("canonical_identity_collision")]
+print("canonical_identity_collision_details",json.dumps(collision_details,ensure_ascii=False))
