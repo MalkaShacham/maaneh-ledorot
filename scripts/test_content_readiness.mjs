@@ -8643,7 +8643,7 @@ assert(enriched3008908&&enriched3008908.response_propositions.length===7);
 assert.equal(enriched3008908.canonical_file,'data/items/content-research-batch-149-2026-11-18.json');
 assert.equal(enriched3008908.evidence_family_id,'sicha-5718-12-tammuz-day2-balak-aid3008908');
 assert.equal(enriched3008908.status,'Parsed');
-assert.equal(projectState.development_recovery.last_reconciliation_pending,batch217Data.metrics_actual_after===null);
+assert.equal(projectState.development_recovery.last_reconciliation_pending,batch218Data.metrics_actual_after===null);
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.some(x=>['200','201','202','203','204','205','206','207','208','209','210','211'].includes(String(x))));
 assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['200','201','202','203','204','205','206','207','208','209','210','211'].includes(String(x))));
  
@@ -8733,7 +8733,11 @@ assert.deepEqual(readinessMetrics(batch210Data.metrics_actual_after),readinessMe
 assert.deepEqual(readinessMetrics(batch214Data.metrics_actual_after),readinessMetrics(batch215Data.metrics_actual_before));
 assert.deepEqual(readinessMetrics(batch215Data.metrics_actual_after),readinessMetrics(batch216Data.metrics_actual_before));
 assertHistoricalBatchBoundary(batch215Data,batch216Data,'Batch215→216');
-assert.deepEqual(readinessMetrics(projectState.current_counts),readinessMetrics(metrics));
+if(projectState.last_reconciliation_pending===true){
+ assert.deepEqual(readinessMetrics(projectState.current_counts),readinessMetrics(projectState.last_reconciliation.metrics_actual_before),'pending project state must retain its measured before snapshot');
+}else{
+ assert.deepEqual(readinessMetrics(projectState.current_counts),readinessMetrics(metrics));
+}
 assert.equal(projectState.development_recovery.last_reconciliation_pending,batch217Data.metrics_actual_after===null);
 assert.deepEqual(batch207Data.deduplication_check.same_family_duplicate_presentations,[],'legacy Batch209 update descriptors must not be indexed as duplicate source records');
 const canonicalDataByFile={
