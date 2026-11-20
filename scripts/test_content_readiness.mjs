@@ -1551,6 +1551,8 @@ assert.equal(batch213Data.existing_identities_enriched,1);assert.equal(batch213D
 assert.equal(batch213Data.new_response_propositions,11);assert.equal(batch213Data.existing_response_propositions_added,1);
 assert.equal(batch213Data.total_new_paraphrase_entries,12);assert.equal(batch213Data.source_bodies_inspected,10);
 assert.equal(batch213Data.source_body_review.length,10);assert.equal(batch213Data.blocked_candidate_count,7);
+assert(batch213Data.source_body_review.every(x=>x.body_text_inspected===true));assert(batch213Data.blocked_candidates.every(x=>x.handling==='blocked_candidate'));
+assert.equal(batch213Data.records.filter(r=>r.source_class==='Sicha').length,6);assert.equal(batch213Data.records.filter(r=>r.source_class==='Maamar').length,3);
 assert.equal(batch213Data.excluded_duplicate_candidate_count,11);assert.equal(batch213Data.fallback_source_attempted,true);
 assert.equal(batch213Data.crawler_retry,false);assert.equal(batch213Data.access_control_bypassed,false);
 assert.equal(batch213Data.full_text_copied,false);assert.equal(batch213Data.scan_only_verification_used,false);
@@ -1559,6 +1561,7 @@ assert.equal(batch213Data.deduplication_check.full_index_scan_available,true);
 assert.equal(batch213Data.deduplication_check.full_index_scan_pending_reconciliation,false);
 assert.deepEqual(batch213Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch213Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch213Data.deduplication_check.all_target_identities_answer_eligible,true);
 
 assert.equal(new Set(batch213Data.records.map(r=>String(r.aid))).size,9);
 assert.equal(new Set(batch213Data.records.map(r=>r.evidence_family_id)).size,9);
