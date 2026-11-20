@@ -8578,4 +8578,3 @@ assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=
  assert(correctedPrayer.response_proposition_locators[1].includes('סעיף א׳'),'AID2988841 new anecdote locator must identify section א׳');
  assert.deepEqual(readinessMetrics(batch207Data.metrics_actual_before),{answer_eligible_unique_sources:1691,content_verified_unique_sources:854,answer_eligible_propositions:4321});
  assert.deepEqual(readinessMetrics(batch207Data.metrics_expected_after),{answer_eligible_unique_sources:1691,content_verified_unique_sources:854,answer_eligible_propositions:4329});
-\n
