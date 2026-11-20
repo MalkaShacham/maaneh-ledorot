@@ -8895,8 +8895,8 @@ assert.deepEqual(readinessMetrics(batch218Data.metrics_expected_after),{answer_e
 assert.equal(batch218Data.deduplication_check.full_index_scan_available,false);
 assert.equal(batch218Data.deduplication_check.full_index_scan_pending_reconciliation,true);
 assert.equal(batch218Data.deduplication_check.target_identity_count,10);
-assert.deepEqual(batch218Data.deduplication_check.canonical_identity_collisions,[]);
-assert.deepEqual(batch218Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch218Data.deduplication_check.canonical_identity_collisions,null);
+assert.equal(batch218Data.deduplication_check.missing_canonical_identities,null);
 assert.equal(new Set(batch218Data.records.map(r=>String(r.aid))).size,10);
 assert.equal(new Set(batch218Data.records.map(r=>r.evidence_family_id)).size,10);
 assert(batch218Data.records.every(r=>r.status==='Parsed'&&r.pipeline_status==='Parsed'&&r.canonical_status==='Parsed'&&r.has_content_evidence===true&&r.independent_witness===true&&r.response_propositions.length===1&&r.response_proposition_locators.length===1&&r.response_proposition_metadata.length===1&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.response_proposition_provenance.length===1&&r.response_proposition_metadata[0].provenance&&r.response_proposition_metadata[0].verification_scope&&r.response_proposition_metadata[0].context_status==='partial'));
