@@ -1854,3 +1854,12 @@ AID 4666220 again returned Internal Error through the public web reader. No craw
 
 The exact-head Answer Quality Gate had failed at test_content_readiness.mjs line 887: the study-routine/farming comparison could lose one requested side after generic claim pruning. The engine now rebuilds both topic claims and its bounded synthesis from the pre-pruning topic-ranked evidence set. The existing regression test must pass on the new exact head before merge. Batch206's expected boundary is 1,691 / 854 / 4,321, but this is a planning value only until full-index reconciliation.
 
+
+
+## 2026-11-20 — Batch207: eight in-place Hebrew enrichments and comparison-gate repair
+
+Batch207 reopened and inspected eight original-Hebrew public Sicha bodies and added one bounded, non-verbatim source-grounded proposition to each existing canonical identity: AIDs 3140221, 2988861, 2988855, 2988876, 2988887, 4279982, 4279980 and 2988841. No new identity, Evidence Family or independent witness was added; no item was promoted to Verified. AID2988841's earlier prayer locator was corrected from section ה׳ to the visible section ב׳ at lines 180–182; the new anecdote proposition is separately located at section א׳, lines 175–179.
+
+Candidate triage excluded duplicate AIDs 5989779 (already in Batch152) and 4279862 (already in Batch185), deferred nine accessible candidate pages pending full-index identity matching, and recorded AID5990035 as HTTP429. No crawler retry or access-control bypass was attempted. Search extracts were used for navigation/triage only, not as content. No protected full text was copied.
+
+The exact-head Answer Quality Gate run 44673871446 generated the full evidence index and measured 1691 answer-eligible Evidence Families / 854 content-verified families / 4321 propositions after Batch206, then failed at test_content_readiness.mjs line 887. Diagnosis: the study/farming branch applied a generic relevance-score threshold after explicit proposition-level topic matching, allowing a directly supporting comparison side to be dropped. The fix retains the explicit topic predicates as the evidence gate and uses generic relevance only for ranking. Batch207's expected post-reconciliation boundary is 1691 / 854 / 4329; this remains planning until the next exact-head run confirms it.
