@@ -4936,6 +4936,8 @@ for(const mode of ['regular','researcher']){
 
 const batch149Path='data/items/content-research-batch-149-2026-11-18.json';
 const batch149Data=JSON.parse(await readFile(new URL(batch149Path,root),'utf8'));
+const batch150Path='data/items/content-research-batch-150-2026-11-21.json';
+const batch150Data=JSON.parse(await readFile(new URL(batch150Path,root),'utf8'));
 const batch149Aids=['2988940','4385713','5959970','4280106','3008908','2989018','2989044','5989796'];
 assert.equal(batch149Data.records.length,8);assert.deepEqual(batch149Data.new_aids.map(String),batch149Aids);
 assert.equal(batch149Data.new_source_identities,8);assert.equal(batch149Data.existing_identities_enriched,1);
@@ -4967,7 +4969,7 @@ assert.equal(batch149Data.deduplication_check.full_index_scan_pending_reconcilia
 assert.deepEqual(batch149Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch149Data.deduplication_check.missing_canonical_identities,[]);
 assert.equal(batch149Data.deduplication_check.all_target_identities_answer_eligible,true);
-assert.deepEqual(readinessMetrics(batch149Data.metrics_actual_after),readinessMetrics(metrics));
+assert.deepEqual(readinessMetrics(batch149Data.metrics_actual_after),readinessMetrics(batch150Data.metrics_actual_before));
 const enriched4385534=idx.entries.find(e=>sourceAID(e)==='4385534');
 assert(enriched4385534&&enriched4385534.canonical_file==='data/items/content-research-batch-142-2026-11-17.json');
 assert.equal(enriched4385534.evidence_family_id,'sicha-5726-19-kislev-vayeshev-aid4385534');
@@ -4994,3 +4996,103 @@ for(const mode of ['regular','researcher']){
   assert(m.research.claim_source_map.every(c=>c.source_locators.length===1&&c.source_locators[0].locator));
  }else assert.equal(m.research,undefined);
 }
+
+
+const batch150Aids=['2989195','2988877','4280031','2989386','2989423','2989424','2511792','2497614','2515007','2515046','2497688','2487577','2512367','2513225','2515477'];
+assert.equal(batch150Data.records.length,15);assert.deepEqual(batch150Data.new_aids.map(String),batch150Aids);
+assert.equal(batch150Data.new_source_identities,15);assert.equal(batch150Data.existing_identities_enriched,1);
+assert.equal(batch150Data.new_response_propositions,22);assert.equal(batch150Data.existing_response_propositions_added,3);
+assert.equal(batch150Data.total_new_paraphrase_entries,25);assert.equal(batch150Data.source_bodies_inspected,16);
+assert.equal(batch150Data.source_body_pages_opened,16);assert.equal(batch150Data.reviewed_item_count,16);
+assert.equal(batch150Data.answer_eligible_source_families_added,15);assert.equal(batch150Data.independent_witnesses_added,6);
+assert.equal(batch150Data.non_independent_presentations_added,9);assert.equal(batch150Data.content_verified_unique_sources_added,0);
+assert.equal(batch150Data.translations_counted_as_independent_witnesses,0);
+assert.deepEqual(batch150Data.language_distribution,{Hebrew:6,English:9});
+assert.deepEqual(batch150Data.source_type_distribution,{'Sichos':3,'Farbrengen Reports':1,'Private Yechidus Notes':2,'Yechidus':9});
+assert.equal(batch150Data.blocked_candidate_count,1);assert.equal(batch150Data.fallback_source_attempted,true);
+assert.equal(batch150Data.crawler_retry,false);assert.equal(batch150Data.access_control_bypassed,false);
+assert.equal(batch150Data.full_text_copied,false);assert.equal(batch150Data.scan_only_verification_used,false);
+assert.equal(batch150Data.blocked_candidates[0].aid,4666220);
+assert(batch150Data.blocked_candidates[0].status.includes('Internal Error'));
+assert.deepEqual(batch150Data.excluded_duplicate_candidates.map(x=>x.aid),[2487225,2487556,2504381]);
+assert.equal(batch150Data.existing_identity_updates.length,1);
+assert.equal(batch150Data.existing_identity_updates[0].aid,2988940);
+assert.equal(batch150Data.existing_identity_updates[0].existing_propositions_before,1);
+assert.equal(batch150Data.existing_identity_updates[0].propositions_added,3);
+assert.equal(batch150Data.existing_identity_updates[0].total_propositions_after,4);
+assert.equal(batch150Data.source_body_review.length,16);
+assert(batch150Data.source_body_review.every(x=>x.body_text_inspected&&x.body_page_opened&&!x.title_or_metadata_only&&x.source_body_locator));
+assert.equal(batch150Data.source_body_review.filter(x=>x.existing_identity).length,1);
+assert.equal(batch150Data.source_body_review.filter(x=>!x.existing_identity).length,15);
+assert.equal(new Set(batch150Data.records.map(r=>String(r.aid))).size,15);
+assert.equal(new Set(batch150Data.records.map(r=>r.evidence_family_id)).size,15);
+assert.equal(new Set(batch150Data.records.map(r=>r.source_url)).size,15);
+for(const r of batch150Data.records){
+ assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');
+ assert.equal(r.has_content_evidence,true);assert.equal(r.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.provenance&&r.verification_scope);
+ assert.equal(r.context_status,'partial');assert(r.response_propositions.length>=1);
+ assert.equal(r.response_propositions.length,r.response_proposition_locators.length);
+ assert(r.response_proposition_locators.every(x=>x&&x.includes('AID '+r.aid)));
+ assert.notEqual(r.status,'Verified');
+ const found=idx.entries.filter(e=>sourceAID(e)===String(r.aid));
+ assert.equal(found.length,1,'batch-150 AID '+r.aid+' must have one canonical identity after reconciliation');
+ assert.equal(found[0].canonical_file,batch150Path);assert.equal(found[0].status,'Parsed');assert.equal(found[0].has_content_evidence,true);
+ assert.equal(found[0].evidence_family_id,r.evidence_family_id);
+ assert(!queue.records.some(q=>String(q.aid||'')===String(r.aid)),'batch-150 AID '+r.aid+' must not remain in the review queue');
+ if(r.language==='English'){
+  assert.equal(r.independent_witness,false);assert.equal(r.translation_of_evidence_family_id,r.evidence_family_id);
+  assert.equal(r.original_language,'unknown');assert(r.translation_status.includes('non-independent'));
+ }else{
+  assert.equal(r.language,'Hebrew');assert.equal(r.original_language,'Hebrew');
+  assert.equal(r.independent_witness,true);assert.equal(r.translation_of_evidence_family_id,null);
+ }
+}
+const enriched2988940=idx.entries.find(e=>sourceAID(e)==='2988940');
+assert(enriched2988940&&enriched2988940.canonical_file==='data/items/content-research-batch-149-2026-11-18.json');
+assert.equal(enriched2988940.evidence_family_id,'sicha-5716-19-kislev-shabbat-vayeshev-aid2988940');
+assert.equal(enriched2988940.response_propositions.length,4);
+assert(enriched2988940.response_proposition_locators.some(x=>x.includes('180–197')));
+assert(enriched2988940.response_proposition_locators.some(x=>x.includes('199–205')));
+assert(enriched2988940.response_proposition_locators.some(x=>x.includes('207–211')));
+assert(['reconciled','reconciled_with_variance'].includes(batch150Data.reconciliation_status),'batch150 must be reconciled before readiness is reported');
+assert.equal(batch150Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch150Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch150Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch150Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch150Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert.equal(batch150Data.deduplication_check.translations_counted_as_independent_witnesses,0);
+assert.deepEqual(readinessMetrics(batch150Data.metrics_expected_after),{answer_eligible_unique_sources:1518,content_verified_unique_sources:854,answer_eligible_propositions:3863});
+assert.deepEqual(readinessMetrics(batch150Data.metrics_actual_before),readinessMetrics(batch149Data.metrics_actual_after));
+assert.deepEqual(readinessMetrics(batch150Data.metrics_actual_after),readinessMetrics(metrics));
+assert.equal(batch150Data.metrics_delta_actual.answer_eligible_unique_sources,15);
+assert.equal(batch150Data.metrics_delta_actual.content_verified_unique_sources,0);
+assert.equal(batch150Data.metrics_delta_actual.answer_eligible_propositions,25);
+const yechidusContinuityQuestion='מה מלמדות שמונה יחידות נפרדות על אחדות והמשכיות לאחר פרידה?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,yechidusContinuityQuestion,{mode});
+ assert(m.answerable,mode+': eight distinct dated Yechidus event families must support the bounded continuity synthesis');
+ assert.equal(m.synthesis?.topic,'yechidus_gathering_continuity');
+ assert.equal(m.synthesis?.kind,'case_comparison_across_distinct_yechidus_events');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.synthesis?.evidence_quality,'eight_distinct_yechidus_event_families_all_non_independent_publisher_presentations');
+ assert.equal(m.sources.length,8);
+ assert.deepEqual(m.sources.map(e=>String(e.aid)),['2511792','2497614','2515007','2515046','2497688','2487577','2512367','2513225']);
+ assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,8);
+ assert(m.sources.every(e=>e.independent_witness===false&&e.translation_of_evidence_family_id===e.evidence_family_id));
+ assert.equal(m.synthesis.evidence_family_ids.length,8);assert.equal(m.synthesis.independent_evidence_family_ids.length,0);
+ assert.equal(m.synthesis.claims.length,8);
+ assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1&&c.witnesses[0].independent_witness===false));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ assert.equal(m.pattern_synthesis_integrity.valid,true);
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');assert.equal(m.research.synthesis_scope,'cross_family_derived_case_comparison');
+  assert.equal(m.research.evidence_families,8);assert.equal(m.research.independent_evidence_families,0);
+  assert.equal(m.research.evidence_integrity.derived_non_independent,8);
+  assert.equal(m.research.evidence_map.length,8);assert.equal(m.research.claim_source_map.length,8);
+  assert(m.research.claim_source_map.every(c=>c.source_locators.length===1&&c.source_locators[0].locator));
+  assert(m.research.synthesis_constraints.rule.includes('eight distinct dated Yechidus'));
+ }else assert.equal(m.research,undefined);
+}
+
