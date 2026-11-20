@@ -6,8 +6,8 @@
   "generated_at": "2026-11-20T17:30:00+02:00",
   "reviewed_at": "2026-11-20T17:30:00+02:00",
   "title": "Batch 214 — eight inspected English first-person memoir testimonies; eight distinct events, one narrator, bounded non-verbatim paraphrases",
-  "status": "pending_reconciliation",
-  "reconciliation_status": "pending_reconciliation",
+  "status": "reconciled_with_variance",
+  "reconciliation_status": "reconciled_with_variance",
   "review_method": "manual_public_web_source_body_inspection",
   "reviewed_item_count": 8,
   "source_bodies_inspected": 8,
@@ -91,18 +91,38 @@
     "content_verified_unique_sources": 862,
     "answer_eligible_propositions": 4388
   },
-  "metrics_actual_before": null,
+  "metrics_actual_before": {
+    "answer_eligible_unique_sources": 1711,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4391
+  },
   "metrics_expected_after": {
     "answer_eligible_unique_sources": 1720,
     "content_verified_unique_sources": 862,
     "answer_eligible_propositions": 4396
   },
-  "metrics_actual_after": null,
-  "metrics_after_actual": null,
-  "metrics_delta_actual": null,
-  "reconciliation_variance": null,
-  "metrics_before_source": "Batch213 corrected expected boundary 1712/862/4388; planning only until exact-head full-index reconciliation.",
-  "metrics_note": "Planning only: eight distinct event-level memoir identities and eight bounded paraphrases. All eight are by the same narrator, Zalmon Jaffe; they are not eight independent corroborations of one another. Actual unique-family contribution and metrics await full-index reconciliation.",
+  "metrics_actual_after": {
+    "answer_eligible_unique_sources": 1719,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4399
+  },
+  "metrics_after_actual": {
+    "answer_eligible_unique_sources": 1719,
+    "content_verified_unique_sources": 862,
+    "answer_eligible_propositions": 4399
+  },
+  "metrics_delta_actual": {
+    "answer_eligible_unique_sources": 8,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 8
+  },
+  "reconciliation_variance": {
+    "answer_eligible_unique_sources": -1,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 3
+  },
+  "metrics_before_source": "Exact-head PR-workspace baseline recorded in DEVELOPMENT_RECOVERY.md before Batch214: 1711/862/4391; after Batch214: 1719/862/4399. Planning boundary remains 1712/862/4388 → 1720/862/4396.",
+  "metrics_note": "Measured PR-workspace after Batch214: 1719/862/4399; expected 1720/862/4396; variance -1/0/+3. Eight distinct Evidence Families were checked as present and answer-eligible. No Verified promotion.",
   "blocked_candidate_count": 0,
   "blocked_candidates": [],
   "excluded_duplicate_candidate_count": 0,
@@ -140,12 +160,12 @@
     "rechecked_aids": []
   },
   "deduplication_check": {
-    "full_index_scan_available": false,
-    "full_index_scan_pending_reconciliation": true,
+    "full_index_scan_available": true,
+    "full_index_scan_pending_reconciliation": false,
     "target_identity_count": 8,
-    "target_identity_matches": null,
-    "target_identity_duplicates": null,
-    "selected_unique_evidence_families": null,
+    "target_identity_matches": 8,
+    "target_identity_duplicates": 0,
+    "selected_unique_evidence_families": 8,
     "same_family_duplicate_presentations": [],
     "canonical_identity_collisions": [],
     "missing_canonical_identities": [],
