@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-15",
+  "generated": "2026-11-20",
   "external_inventory_mapped_minimum": 25906,
   "staging_batch_files": 203,
   "staging_manifest_files": 83,
@@ -7,20 +7,20 @@
   "promotion_queue_physical_records": 526,
   "promotion_queue_already_canonical": 526,
   "promotion_ready_records": 0,
-  "canonical_json_files": 471,
-  "canonical_unique_item_keys": 9280,
+  "canonical_json_files": 577,
+  "canonical_unique_item_keys": 10080,
   "evidence_family_files": 56,
   "status_counts_unique_keys": {
-    "Verified": 7830,
-    "Linked": 15,
-    "Parsed": 94,
-    "Indexed": 1136,
-    "Discovered": 3
+    "Verified": 7755,
+    "Linked": 53,
+    "Parsed": 826,
+    "Indexed": 1147,
+    "Discovered": 4
   },
-  "verified_unique_item_keys": 7830,
+  "verified_unique_item_keys": 7755,
   "counting_note": "Automated filesystem reconciliation. Unique item counts deduplicate by AID, then source URL, then ID. promotion_ready_records excludes stale staging queue flags whose stable item key already exists in canonical. Evidence-family files are counted separately.",
-  "answer_eligible_unique_sources": 977,
-  "content_verified_unique_sources": 878,
-  "answer_eligible_propositions": 2950,
-  "content_readiness_note": "Unique sources are Evidence Families; distinct inspected propositions are aggregated across their member items. Bibliographic verification and editorial summaries do not count. Content-verified sources require an existing Verified pipeline status; no new Verified status is created by manual source-body review."
+  "answer_eligible_unique_sources": 1719,
+  "content_verified_unique_sources": 862,
+  "answer_eligible_propositions": 4418,
+  "content_readiness_note": "PR-workspace snapshot after Batch217; exact-head reconciliation is pending. Unique sources are Evidence Families; inspected propositions are counted once across family members. Bibliographic verification, titles, publisher summaries and scan-only identity checks do not count as content. Batch217 added eight non-verbatim inspected propositions to existing Parsed identities; no new Evidence Family or Verified source was added."
 }
