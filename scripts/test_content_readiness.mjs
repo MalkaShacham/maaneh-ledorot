@@ -8775,7 +8775,7 @@ for(const u of batch211Data.existing_identity_updates){
   assert.equal(matches[0].response_proposition_metadata.length,r.response_proposition_metadata.length);
  }
  assert.deepEqual(readinessMetrics(batch214Data.metrics_actual_after),readinessMetrics(batch215Data.metrics_actual_before));
- assert.deepEqual(readinessMetrics(batch215Data.metrics_actual_after),readinessMetrics(metrics));
+ assert.deepEqual(readinessMetrics(batch215Data.metrics_actual_after),readinessMetrics(batch216Data.metrics_actual_before));
 
 }
 
