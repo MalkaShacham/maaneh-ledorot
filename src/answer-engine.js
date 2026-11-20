@@ -2456,7 +2456,9 @@ else if(educationGovernanceQuestion){
  }
  if(studyFarmingComparisonQuestion){
   // Build both comparison sides from the topic-ranked evidence set before generic claim pruning.
-  const comparisonSelection=answerEvidence.slice(0,queryBudget.sources);
+  // The comparison-specific branch has already selected distinct families for both explicit sides.
+  // Do not let the generic one-source display budget erase one side of that comparison.
+  const comparisonSelection=answerEvidence.slice(0,Math.max(queryBudget.sources,2));
   const comparisonClaims=buildStudyFarmingDisplayedClaims(comparisonSelection);
   const comparisonTopics=new Set(comparisonClaims.map(c=>c.topic));
   const comparisonSynthesis=buildStudyFarmingSynthesis(comparisonSelection);
