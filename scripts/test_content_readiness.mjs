@@ -6360,6 +6360,62 @@ assert.equal(batch162Data.metrics_actual_after.answer_eligible_unique_sources-ba
 assert.equal(batch162Data.metrics_actual_after.content_verified_unique_sources-batch162Data.metrics_actual_before.content_verified_unique_sources,0);
 assert.equal(batch162Data.metrics_actual_after.answer_eligible_propositions-batch162Data.metrics_actual_before.answer_eligible_propositions,8);
 assert(['reconciled','reconciled_with_variance'].includes(batch162Data.reconciliation_status));
+
+ // Batch206: nine non-independent English publisher presentations across eight Evidence Families,
+ // one same-family adaptation, one in-place enrichment, and one blocked route with same-run fallback.
+ const batch206Path='data/items/content-research-batch-206-2026-11-20.json';
+ const batch206Data=JSON.parse(await readFile(new URL(batch206Path,root),'utf8'));
+ assert.equal(batch206Data.batch_id,'206');
+ assert.equal(batch206Data.records.length,9);
+ assert.deepEqual(batch206Data.new_aids,[2504469,2512093,2538131,2604182,2507217,2507219,2512104,2538132,2604187]);
+ assert.equal(batch206Data.new_source_identities,9);
+ assert.equal(batch206Data.answer_eligible_source_families_added,8);
+ assert.equal(batch206Data.non_independent_presentations_added,9);
+ assert.equal(batch206Data.independent_witnesses_added,0);
+ assert.equal(batch206Data.existing_identities_enriched,1);
+ assert.equal(batch206Data.existing_identity_updates.length,1);
+ assert.equal(batch206Data.existing_identity_updates[0].aid,2507215);
+ assert.equal(batch206Data.existing_identity_updates[0].canonical_file,'data/items/content-research-batch-137-2026-11-17.json');
+ assert.equal(batch206Data.existing_identity_updates[0].propositions_added,1);
+ assert.equal(batch206Data.new_response_propositions,9);
+ assert.equal(batch206Data.existing_response_propositions_added,1);
+ assert.equal(batch206Data.total_new_paraphrase_entries,10);
+ assert.equal(batch206Data.source_bodies_inspected,10);
+ assert.equal(batch206Data.source_body_pages_opened,10);
+ assert.equal(batch206Data.source_body_review.length,10);
+ assert(batch206Data.source_body_review.every(x=>x.body_page_opened&&x.body_text_inspected&&!x.title_or_metadata_only&&x.context_status==='partial'));
+ assert.equal(batch206Data.source_body_review.filter(x=>x.action==='new_identity_created').length,8);
+ assert.equal(batch206Data.source_body_review.filter(x=>x.action==='new_same_family_adaptation_created').length,1);
+ assert.equal(batch206Data.source_body_review.filter(x=>x.action==='enriched_existing_identity_in_place').length,1);
+ assert.equal(batch206Data.records.reduce((n,r)=>n+r.response_propositions.length,0),9);
+ for(const r of batch206Data.records){
+  assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');
+  assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
+  assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
+  assert.equal(r.response_propositions.length,r.response_proposition_locators.length);
+  assert.equal(r.independent_witness,false);
+  assert.equal(r.translation_of_evidence_family_id,r.evidence_family_id);
+ }
+ const batch206ByAid=new Map(batch206Data.records.map(r=>[String(r.aid),r]));
+ assert.equal(batch206ByAid.get('2538131').evidence_family_id,batch206ByAid.get('2538132').evidence_family_id);
+ const new206Entries=batch206Data.new_aids.map(a=>idx.entries.filter(e=>sourceAID(e)===String(a)));
+ assert(new206Entries.every(group=>group.length===1),'each Batch206 AID must resolve to exactly one canonical index entry');
+ assert(new206Entries.every(group=>group[0].answer_eligible&&group[0].has_content_evidence&&group[0].status==='Parsed'));
+ assert.equal(new Set(new206Entries.map(group=>group[0].evidence_family_id)).size,8,'Batch206 adds eight event Evidence Families; the AID2538132 adaptation shares the AID2538131 family');
+ assert.equal(new206Entries.filter(group=>group[0].independent_witness===true).length,0);
+ const enriched2507215=idx.entries.find(e=>sourceAID(e)==='2507215');
+ assert(enriched2507215&&enriched2507215.response_propositions.length===3);
+ assert.equal(enriched2507215.canonical_file,'data/items/content-research-batch-137-2026-11-17.json');
+ assert.equal(enriched2507215.status,'Parsed');
+ assert.equal(enriched2507215.independent_witness,false);
+ assert.equal(batch206Data.blocked_candidate_count,1);
+ assert(batch206Data.blocked_candidates.some(x=>String(x.aid)==='4666220'));
+ assert.equal(batch206Data.fallback_source_attempted,true);
+ assert.equal(batch206Data.crawler_retry,false);assert.equal(batch206Data.access_control_bypassed,false);assert.equal(batch206Data.full_text_copied,false);assert.equal(batch206Data.scan_only_verification_used,false);
+ assertReconciliationSnapshot(batch206Data,'batch206Data');
+ assert.deepEqual(readinessMetrics(batch205Data.metrics_actual_after),readinessMetrics(batch206Data.metrics_actual_before));
+ assert.deepEqual(readinessMetrics(batch206Data.metrics_actual_after),readinessMetrics(projectState.current_counts));
+
 assert.equal(projectState.development_recovery.last_reconciliation_pending,false);
 assert(!projectState.development_recovery.pending_reconciliation_batches.map(String).includes('162'));
 assert(!projectState.metrics_integrity.answer_readiness.pending_batches.map(String).includes('162'));
@@ -8472,5 +8528,5 @@ assert.equal(enriched3008908.canonical_file,'data/items/content-research-batch-1
 assert.equal(enriched3008908.evidence_family_id,'sicha-5718-12-tammuz-day2-balak-aid3008908');
 assert.equal(enriched3008908.status,'Parsed');
 assert.equal(projectState.development_recovery.last_reconciliation_pending,false);
-assert(!projectState.metrics_integrity.answer_readiness.pending_batches.some(x=>['200','201','202','203','204','205'].includes(String(x))));
-assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['200','201','202','203','204','205'].includes(String(x))));
+assert(!projectState.metrics_integrity.answer_readiness.pending_batches.some(x=>['200','201','202','203','204','205','206'].includes(String(x))));
+assert(!projectState.development_recovery.pending_reconciliation_batches.some(x=>['200','201','202','203','204','205','206'].includes(String(x))));
