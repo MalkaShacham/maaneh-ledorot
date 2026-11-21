@@ -9,15 +9,15 @@
   "reviewed_item_count": 16,
   "source_bodies_inspected": 16,
   "source_body_pages_opened": 16,
-  "new_source_identities": 16,
+  "new_source_identities": 15,
   "existing_identities_enriched": 0,
-  "existing_identities_rechecked": 0,
-  "new_response_propositions": 19,
+  "existing_identities_rechecked": 1,
+  "new_response_propositions": 17,
   "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 19,
-  "answer_eligible_source_families_added": 16,
+  "total_new_paraphrase_entries": 17,
+  "answer_eligible_source_families_added": 15,
   "independent_witnesses_added": 15,
-  "non_independent_presentations_added": 1,
+  "non_independent_presentations_added": 0,
   "content_verified_unique_sources_added": 0,
   "content_verified_unique_sources_downgraded": 0,
   "content_verified_unique_sources_net_change": 0,
@@ -29,9 +29,10 @@
   "metrics_actual_after": null,
   "metrics_delta_actual": null,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 16,
+    "answer_eligible_unique_sources": 15,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 19
+    "answer_eligible_propositions": 17,
+    "note": "Corrected after cross-batch exact-AID reconciliation: 15 new dated Hayom Yom Evidence Families; AID 5920875 was already canonical in batch 107 and is a recheck only. No new identity or proposition was added for that translated letter."
   },
   "new_aids": [
     528587,
@@ -48,8 +49,7 @@
     528600,
     528601,
     528602,
-    528603,
-    5920875
+    528603
   ],
   "enriched_aids": [],
   "staging_candidate_aids": [],
@@ -164,7 +164,12 @@
     "recent_manual_batch_range": "150–161",
     "review_queue_records": 1022,
     "review_queue_matches": [],
-    "note": "הקובץ data/public-search-index.json לא הוחזר בכלי GitHub (תוכן ריק), ולכן לא נטען כאילו בוצעה סריקה מלאה. חיפוש קוד ממוקד לכל 16 ה-AID לא החזיר התאמות; נבדקו 12 אצוות 150–161 ותור בדיקה בן 1,022 פריטים ללא התאמות. סריקה קנונית מלאה לאחר ההוספה עדיין נדרשת ב-reconciliation."
+    "note": "הקובץ data/public-search-index.json לא הוחזר בכלי GitHub (תוכן ריק), ולכן לא נטען כאילו בוצעה סריקה מלאה. חיפוש קוד ממוקד לכל 16 ה-AID לא החזיר התאמות; נבדקו 12 אצוות 150–161 ותור בדיקה בן 1,022 פריטים ללא התאמות. סריקה קנונית מלאה לאחר ההוספה עדיין נדרשת ב-reconciliation.",
+    "known_missed_existing_identity": {
+      "aid": 5920875,
+      "canonical_file": "data/items/content-research-batch-107-2026-11-16.json",
+      "reason": "The bounded exact-AID search and recent-batch window did not cover the older batch 107 record; this was found during cross-batch review."
+    }
   },
   "deduplication_check": {
     "full_index_scan_available": false,
@@ -172,8 +177,12 @@
     "full_index_generated": null,
     "code_search_exact_aid_queries": 16,
     "code_search_matches": [],
-    "candidate_aids_found": [],
-    "existing_aids_found": [],
+    "candidate_aids_found": [
+      5920875
+    ],
+    "existing_aids_found": [
+      5920875
+    ],
     "new_aids_unique_within_checked_scope": true,
     "source_urls_unique": true,
     "evidence_family_ids_unique": true,
@@ -187,7 +196,7 @@
     "canonical_identity_collisions": null,
     "missing_canonical_identities": null,
     "all_target_identities_answer_eligible": null,
-    "note": "בדיקת קדם-הוספה מוגבלת: 16 חיפושי AID ממוקדים ב-GitHub ללא התאמות, 12 אצוות ידניות 150–161 ותור בדיקה בן 1,022 פריטים ללא התאמות. הקובץ public-search-index.json לא הוחזר בכלי זה ולכן אין לטעון לסריקת אינדקס מלאה; בדיקת הזהויות הקנוניות תושלם ב-reconciliation. Source page references were corrected to the exact inspected web-open results; the English Letter No. 92 is classified as correspondence, not as an Igrot Kodesh volume record."
+    "note": "Post-review exact cross-batch identity check found AID 5920875 already canonical in batch 107. It was removed from this batch's new records and retained as a recheck only; its two existing propositions already cover the inspected passages. The remaining 15 new AIDs were not matched in the bounded checks. Full canonical post-addition reconciliation remains pending."
   },
   "source_body_review": [
     {
@@ -422,13 +431,16 @@
       "original_language": "unknown",
       "body_text_inspected": true,
       "inspected_original_language_body": false,
-      "existing_identity": false,
+      "existing_identity": true,
       "body_locator": "281–286 ו-287–292",
       "web_source_ref": "turn863527view3",
-      "canonical_file": "data/items/content-research-batch-162-2026-11-21.json",
-      "evidence_family_id": "chabad-letter-92-aid-5920875",
+      "canonical_file": "data/items/content-research-batch-107-2026-11-16.json",
+      "evidence_family_id": "letter-5703-10-menachem-av-92-katz-aid5920875",
       "independent_witness": false,
-      "inspection_method": "public_web_open_body"
+      "inspection_method": "public_web_open_body",
+      "existing_identity_recheck": true,
+      "propositions_added": 0,
+      "note": "The exact AID and publisher URL already occur in batch 107. The English body was re-opened and inspected, but its propositions duplicate the existing canonical translation record; no new proposition, identity, witness or Evidence Family was added."
     }
   ],
   "retrieval_synthesis": {
@@ -2311,137 +2323,26 @@
       "epistemic_level": 1,
       "search_text": "היום יום י״ז שבט תש״ג, שבת שירה ערך יומי ביידיש על מנהג שבת שירה ועל מסורת מסירת מאמר חסידי. מה מתעד הערך על מנהג שבת שירה ועל שרשרת מסירת המאמר? הערך מציין מנהג לאכול קאשע שחורה בשבת שירה. הערך מספר שרשרת מסירה על מאמר ״ראו כי ה׳״: הצמח צדק סיפר שאדמו״ר הזקן אמרו בשבת שירה תקס״ה; בהמשך מסופר שהמגיד במזריטש סיפר על אמירת הבעל שם טוב בשבת שירה תקי״ו ועל מסירה מאוחרת יותר שבה הבעל שם טוב אמר את המאמר למגיד עם ביאור, והמגיד אמרו לפני אדמו״ר הזקן. הצמח צדק מסכם שכל אחד משלושת רבותיו אמר את המאמר בסגנונו. שבת שירה קאשע שחורה ראו כי ה׳ הצמח צדק המגיד ממזריטש הבעל שם טוב",
       "web_source_ref": "turn234939view3"
-    },
-    {
-      "key": "aid:5920875",
-      "id": "chabad-letter-92-aid-5920875",
-      "aid": 5920875,
-      "title": "Publishing the Previous Rebbe’s sichos; the importance of initiatives toward outreach — Letter No. 92",
-      "type": "letter_translation",
-      "source_class": "Correspondence (English translation)",
-      "source_class_detail": "published English translation of a dated letter; translator identified by publisher; original-language witness not inspected",
-      "collection": "Sichos in English Collection — Letter No. 92",
-      "publisher": "Chabad.org / Sichos in English",
-      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920875/jewish/Publishing-the-Previous-Rebbes-sichos-the-importance-of-initiatives-toward-outreach.htm",
-      "date": "10 Menachem Av 5703 (י׳ מנחם אב תש״ג)",
-      "date_precision": "calendar_day",
-      "date_source": "publisher body",
-      "language": "English",
-      "original_language": "unknown",
-      "proposition_language": "Hebrew",
-      "witness_type": "published_english_translation_of_correspondence",
-      "status": "Parsed",
-      "pipeline_status": "Parsed",
-      "canonical_status": "Parsed",
-      "verification_status": "Parsed",
-      "context_status": "partial",
-      "has_content_evidence": true,
-      "independent_witness": false,
-      "independent_witness_scope": "Published English translation only; not independent of the original-language letter; no original-language witness inspected.",
-      "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "chabad-letter-92-aid-5920875",
-      "translation_status": "Publisher identifies an English translation by Eli Touger; the original-language text was not inspected. This presentation belongs to one correspondence Evidence Family and is not an independent witness.",
-      "evidence_family_id": "chabad-letter-92-aid-5920875",
-      "primary_secondary_status": "Publisher-published English translation of a letter attributed by the publisher to the Lubavitcher Rebbe; no original-language source or autograph inspected.",
-      "authorship_status": "The publisher identifies the text as correspondence of the Lubavitcher Rebbe and identifies Eli Touger as translator; the original-language manuscript and autograph were not inspected.",
-      "author_role": "publisher translation; letter attributed by publisher to the Rebbe",
-      "signature_status": "Printed sign-off appears in the publication; autograph not inspected.",
-      "documented_circumstances": "מכתב מס׳ 92 מתוך Sichos in English Collection, המתוארך לי׳ מנחם אב תש״ג ומופנה לר׳ יעקב כץ בשיקגו.",
-      "question_or_problem": "מה מתעד מכתב 92 על מימון הדפסת שיחות ועל הפצתן?",
-      "audience": "Readers of the published English correspondence translation.",
-      "response_propositions": [
-        "במכתב מס׳ 92, המופנה לר׳ יעקב כץ ומתוארך לי׳ מנחם אב תש״ג, הכותב מאשר קבלת תרומות שנועדו לכסות את הוצאות הדפסת שיחות חותנו מחג הפסח, ומציין שלאחר קבלת תרומה נוספת נשלחו הטקסטים לדפוס.",
-        "המכתב משבח את השתתפות הנמען במימון פרסום השיחות ומקשר את הנגשת ספרי הלימוד לזכות הרבים ללמוד תורה ולעורר עבודת ה׳ ומעשי חסד; הוא מציג תמיכה כזו גם כביטוי לאהבת ישראל ולצדקה."
-      ],
-      "response_proposition_locators": [
-        "Chabad.org AID 5920875, translated letter body lines 281–286.",
-        "Chabad.org AID 5920875, translated letter body lines 287–292."
-      ],
-      "proposition_source_locator": "Chabad.org AID 5920875, translated letter body lines 281–286.",
-      "proposition_locators": [
-        "Chabad.org AID 5920875, translated letter body lines 281–286.",
-        "Chabad.org AID 5920875, translated letter body lines 287–292."
-      ],
-      "proposition_origin": "source_grounded_paraphrase",
-      "proposition_verbatim": false,
-      "proposition_verification": "source_text_inspected",
-      "summary_researcher": "במכתב מס׳ 92, המופנה לר׳ יעקב כץ ומתוארך לי׳ מנחם אב תש״ג, הכותב מאשר קבלת תרומות שנועדו לכסות את הוצאות הדפסת שיחות חותנו מחג הפסח, ומציין שלאחר קבלת תרומה נוספת נשלחו הטקסטים לדפוס. המכתב משבח את השתתפות הנמען במימון פרסום השיחות ומקשר את הנגשת ספרי הלימוד לזכות הרבים ללמוד תורה ולעורר עבודת ה׳ ומעשי חסד; הוא מציג תמיכה כזו גם כביטוי לאהבת ישראל ולצדקה.",
-      "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי באנגלית ב-Chabad.org, AID 5920875, ביום 2026-11-21; נבדקו רק שורות 281–292 בגוף המכתב. זהו תרגום שפורסם בידי Sichos in English ונזקף לתרגום אלי טוגר; המקור העברי או היידי, אוטוגרף, העתק מזכירות, מסמכים כספיים וההקשר הנכנס לא נבדקו. הפרפרזות לא-מילוליות ומוגבלות לנוסח האנגלי הנגיש. ההקשר חלקי, והתרגום אינו עד עצמאי לנוסח המקורי.",
-      "witness_provenance": "Chabad.org, Sichos in English Collection, Letter No. 92, AID 5920875; published English translation by Eli Touger; body lines 281–292 inspected.",
-      "source_witness": "Chabad.org, Sichos in English Collection, Letter No. 92, AID 5920875; published English translation by Eli Touger; body lines 281–292 inspected.",
-      "provenance": {
-        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920875/jewish/Publishing-the-Previous-Rebbes-sichos-the-importance-of-initiatives-toward-outreach.htm",
-        "publisher": "Chabad.org / Sichos in English",
-        "source_witness": "Chabad.org, Sichos in English Collection, Letter No. 92, AID 5920875; published English translation by Eli Touger; body lines 281–292 inspected.",
-        "verification_scope": "נפתח ונבדק גוף הפרסום הציבורי באנגלית ב-Chabad.org, AID 5920875, ביום 2026-11-21; נבדקו רק שורות 281–292 בגוף המכתב. זהו תרגום שפורסם בידי Sichos in English ונזקף לתרגום אלי טוגר; המקור העברי או היידי, אוטוגרף, העתק מזכירות, מסמכים כספיים וההקשר הנכנס לא נבדקו. הפרפרזות לא-מילוליות ומוגבלות לנוסח האנגלי הנגיש. ההקשר חלקי, והתרגום אינו עד עצמאי לנוסח המקורי.",
-        "textual_status": "Published English translation; original-language text not inspected.",
-        "authorship_status": "Publisher attribution to the Rebbe; translator identified as Eli Touger; autograph not inspected.",
-        "accessed_at": "2026-11-21",
-        "proposition_origin": "source_grounded_paraphrase",
-        "proposition_verification": "source_text_inspected",
-        "rights_status": "copyrighted-link-only; non-verbatim research paraphrase and locator only",
-        "web_source_ref": "turn863527view3"
-      },
-      "source_locators": [
-        {
-          "source_number": 1,
-          "locator": "Chabad.org AID 5920875, translated letter body lines 281–286.",
-          "proposition_text": "במכתב מס׳ 92, המופנה לר׳ יעקב כץ ומתוארך לי׳ מנחם אב תש״ג, הכותב מאשר קבלת תרומות שנועדו לכסות את הוצאות הדפסת שיחות חותנו מחג הפסח, ומציין שלאחר קבלת תרומה נוספת נשלחו הטקסטים לדפוס."
-        },
-        {
-          "source_number": 2,
-          "locator": "Chabad.org AID 5920875, translated letter body lines 287–292.",
-          "proposition_text": "המכתב משבח את השתתפות הנמען במימון פרסום השיחות ומקשר את הנגשת ספרי הלימוד לזכות הרבים ללמוד תורה ולעורר עבודת ה׳ ומעשי חסד; הוא מציג תמיכה כזו גם כביטוי לאהבת ישראל ולצדקה."
-        }
-      ],
-      "locator": {
-        "publisher": "Chabad.org / Sichos in English",
-        "aid": 5920875,
-        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920875/jewish/Publishing-the-Previous-Rebbes-sichos-the-importance-of-initiatives-toward-outreach.htm",
-        "body_locator": [
-          "Chabad.org AID 5920875, translated letter body lines 281–286.",
-          "Chabad.org AID 5920875, translated letter body lines 287–292."
-        ],
-        "date": "10 Menachem Av 5703 (י׳ מנחם אב תש״ג)",
-        "web_source_ref": "turn863527view3"
-      },
-      "rights_status": "copyrighted-link-only; non-verbatim research paraphrases and body locators only; no full text copied",
-      "access": {
-        "access_status": "public_publisher_body_opened",
-        "accessed_at": "2026-11-21",
-        "source_language_body_inspected": false,
-        "body_locator": [
-          "Chabad.org AID 5920875, translated letter body lines 281–286.",
-          "Chabad.org AID 5920875, translated letter body lines 287–292."
-        ],
-        "full_text_copied": false,
-        "web_source_ref": "turn863527view3"
-      },
-      "proposition_scope": "Only the inspected lines of the published English translation; original-language context unavailable; partial context.",
-      "conditions_or_qualifications": [
-        "נבדק רק נוסח אנגלי שפורסם בתרגום אלי טוגר; המקור העברי או היידי לא נבדק.",
-        "הפרסום מציג את המכתב כהתכתבות של הרבי, אך לא נבדקו אוטוגרף, העתק מזכירות או כתב היד המקורי.",
-        "ההקשר הנכנס והמסמכים הכספיים לא נבדקו; אין להסיק מן המכתב לבדו את היקף ההדפסה בפועל מעבר למה שנכתב בו."
-      ],
-      "publisher_terms": [
-        "Sichos in English",
-        "Letter No. 92",
-        "10 Menachem Av 5703"
-      ],
-      "research_terms": [
-        "מכתב 92",
-        "ר׳ יעקב כץ",
-        "הדפסת שיחות",
-        "תרומה",
-        "הפצת תורה",
-        "אהבת ישראל",
-        "צדקה"
-      ],
-      "relations": [],
-      "epistemic_level": 1,
-      "search_text": "Publishing the Previous Rebbe’s sichos; the importance of initiatives toward outreach — Letter No. 92 מכתב מס׳ 92 מתוך Sichos in English Collection, המתוארך לי׳ מנחם אב תש״ג ומופנה לר׳ יעקב כץ בשיקגו. מה מתעד מכתב 92 על מימון הדפסת שיחות ועל הפצתן? במכתב מס׳ 92, המופנה לר׳ יעקב כץ ומתוארך לי׳ מנחם אב תש״ג, הכותב מאשר קבלת תרומות שנועדו לכסות את הוצאות הדפסת שיחות חותנו מחג הפסח, ומציין שלאחר קבלת תרומה נוספת נשלחו הטקסטים לדפוס. המכתב משבח את השתתפות הנמען במימון פרסום השיחות ומקשר את הנגשת ספרי הלימוד לזכות הרבים ללמוד תורה ולעורר עבודת ה׳ ומעשי חסד; הוא מציג תמיכה כזו גם כביטוי לאהבת ישראל ולצדקה. מכתב 92 ר׳ יעקב כץ הדפסת שיחות תרומה הפצת תורה אהבת ישראל צדקה",
-      "web_source_ref": "turn863527view3"
     }
   ],
-  "existing_identity_updates": []
+  "existing_identity_updates": [],
+  "rechecked_aids": [
+    5920875
+  ],
+  "existing_identity_rechecks": [
+    {
+      "aid": 5920875,
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920875/jewish/Publishing-the-Previous-Rebbes-sichos-the-importance-of-initiatives-toward-outreach.htm",
+      "canonical_file": "data/items/content-research-batch-107-2026-11-16.json",
+      "evidence_family_id": "letter-5703-10-menachem-av-92-katz-aid5920875",
+      "body_text_inspected": true,
+      "body_locator": "281–286 ו-287–292",
+      "existing_propositions": 2,
+      "propositions_added": 0,
+      "status_after": "Parsed",
+      "independent_witness": false,
+      "note": "Existing translated Letter No. 92 was re-opened. The two candidate paraphrases overlapped the two existing source-grounded propositions; no duplicate proposition or translation witness was created."
+    }
+  ],
+  "note": "Batch 162 corrected after cross-batch deduplication: 15 new original-language Hayom Yom identities and 17 non-verbatim propositions; AID 5920875 was already present in batch 107, was re-opened as a recheck only, and generated no new identity or proposition. Five access failures and one navigation page remain documented; no crawler retry, bypass, full-text copying or Verified promotion. Reconciliation remains pending."
 }
