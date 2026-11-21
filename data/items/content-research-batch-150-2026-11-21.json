@@ -1329,7 +1329,7 @@
   ],
   "retrieval_synthesis": {
     "topic": "institutional_education_and_public_influence",
-    "status": "implemented_pending_execution",
+    "status": "implemented_local_simulation_passed_pending_ci",
     "attribution": "system_synthesis_not_rebbe_quote",
     "selected_aids": [
       4872325,
@@ -1376,8 +1376,32 @@
     "answer_eligible_propositions_after": null,
     "combined_status_checks": [],
     "new_actions_run_ids": [],
-    "test_content_readiness_execution": "pending",
+    "test_content_readiness_execution": "pending_repository_workflow",
     "pages_deployment_after_batch_150": "pending",
-    "public_site_check": "not verified in this run"
+    "public_site_check": "not verified in this run",
+    "local_synthesis_simulation": {
+      "regular_mode_passed": true,
+      "researcher_mode_passed": true,
+      "source_count": 10,
+      "claim_count": 10,
+      "independent_evidence_families": 10,
+      "claim_level_body_locators": 10,
+      "citation_entailment_passed": true,
+      "context_boundaries_passed": true,
+      "pattern_synthesis_integrity_passed": true,
+      "scope": "in-memory simulation against batch150 records; not the repository-wide test suite"
+    }
+  },
+  "local_synthesis_simulation": {
+    "regular_mode_passed": true,
+    "researcher_mode_passed": true,
+    "source_count": 10,
+    "claim_count": 10,
+    "independent_evidence_families": 10,
+    "claim_level_body_locators": 10,
+    "citation_entailment_passed": true,
+    "context_boundaries_passed": true,
+    "pattern_synthesis_integrity_passed": true,
+    "scope": "in-memory simulation against batch150 records; not the repository-wide test suite"
   }
 }
