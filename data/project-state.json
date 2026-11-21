@@ -90,7 +90,7 @@
     "Batch160 adds 13 inspected Hayom Yom entries (6 Hebrew, 3 Yiddish, 4 bilingual) and 15 source-grounded paraphrases; all remain Parsed. Full post-addition canonical reconciliation is pending.",
     "Batch160 also enriches existing AID 528552 in place within its original Hayom Yom Evidence Family: one additional body-grounded proposition on Chanukah lighting order; no duplicate identity created."
   ],
-  "next_work": "Reconcile pending batches contiguously through 165; complete canonical AID/Evidence Family deduplication; run test_content_readiness.mjs and the five-family regular/researcher citation checks; inspect Actions and Pages. Keep translated presentations non-independent and all new records Parsed.",
+  "next_work": "Reconcile pending batches contiguously through 165; verify AID 6101/6108 single-family translation links and AID 4666220 identity; run test_content_readiness.mjs and the five-family regular/researcher citation checks; inspect Actions and Pages.",
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
     "status": "pending_reconciliation",
@@ -1652,15 +1652,15 @@
       "reviewed_item_count": 17,
       "source_bodies_inspected": 14,
       "source_body_pages_opened": 14,
-      "new_source_identities": 14,
-      "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 16,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 2,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions": 14,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 16,
-      "answer_eligible_source_families_added": 14,
+      "total_new_paraphrase_entries": 14,
+      "answer_eligible_source_families_added": 12,
       "independent_witnesses_added": 12,
-      "non_independent_presentations_added": 2,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "blocked_candidate_count": 3,
       "recovered_candidate_count": 1,
@@ -1682,11 +1682,12 @@
         528643,
         528645,
         528646,
-        6101,
-        6108,
         4666220
       ],
-      "enriched_aids": [],
+      "enriched_aids": [
+        6101,
+        6108
+      ],
       "staging_candidate_aids": [],
       "translations_counted_as_independent_witnesses": 0,
       "crawler_retry": false,
@@ -1694,19 +1695,19 @@
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 14,
+        "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 16,
-        "note": "Expected contribution from 14 distinct source families, including two non-independent English translations; not measured after-metrics."
+        "answer_eligible_propositions": 14,
+        "note": "Expected contribution from 12 new source families; two existing AID identities were enriched only with translation/parallel-language metadata and add no new family or propositions. Not measured after-metrics."
       },
       "local_content_delta": {
-        "new_source_identities": 14,
-        "new_evidence_families": 14,
-        "new_response_propositions": 16,
-        "existing_identities_enriched": 0,
+        "new_source_identities": 12,
+        "new_evidence_families": 12,
+        "new_response_propositions": 14,
+        "existing_identities_enriched": 2,
         "existing_response_propositions_added": 0,
         "verified_promotions": 0,
-        "note": "One additional published Hebrew letter body was found through an alternate public PDF for AID 4666220; canonical full-index reconciliation remains pending."
+        "note": "AIDs 6101 and 6108 are existing batch-112 identities; their English translations were reviewed but not added as duplicate records. AID 4666220 is a new published Hebrew letter identity with a public PDF body."
       },
       "source_body_review": [
         {
@@ -1875,40 +1876,6 @@
           "inspection_method": "public_web_open_body"
         },
         {
-          "aid": 6101,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
-          "language": "English",
-          "original_language": "unknown",
-          "body_text_inspected": true,
-          "inspected_original_language_body": false,
-          "existing_identity": false,
-          "body_locator": "Chabad.org AID 6101, גוף התרגום האנגלי החופשי, שורה 250.",
-          "web_source_ref": "turn764819view0",
-          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
-          "evidence_family_id": "hayom-yom-528637-5703",
-          "independent_witness": false,
-          "inspection_method": "public_web_open_translated_body",
-          "translation_of_evidence_family_id": "hayom-yom-528637-5703",
-          "original_language_source_aid": 528637
-        },
-        {
-          "aid": 6108,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
-          "language": "English",
-          "original_language": "unknown",
-          "body_text_inspected": true,
-          "inspected_original_language_body": false,
-          "existing_identity": false,
-          "body_locator": "Chabad.org AID 6108, גוף התרגום האנגלי החופשי, שורה 250.",
-          "web_source_ref": "turn764819view1",
-          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
-          "evidence_family_id": "hayom-yom-528644-5703",
-          "independent_witness": false,
-          "inspection_method": "public_web_open_translated_body",
-          "translation_of_evidence_family_id": "hayom-yom-528644-5703",
-          "original_language_source_aid": 528644
-        },
-        {
           "aid": 4666220,
           "source_url": "https://media.col.org.il/files/uploads/original/2018/11/15420312915be987bbe0411296837.pdf",
           "publisher_page_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
@@ -1968,44 +1935,35 @@
           528643,
           528645,
           528646,
-          6101,
-          6108,
           4666220
         ],
         "original_language_body_inspected": 12,
         "english_translation_bodies_inspected": 2,
+        "existing_translation_presentations_rechecked": 2,
         "non_independent_translation_presentations": 2,
+        "new_translation_presentations_added": 0,
         "same_edition_pdf_presentations": 1,
         "body_text_inspected": true,
-        "note": "שני גופי המקור העברי AID 528637 ו-528644 לא נפתחו; נבדקו תרגומים אנגליים נגזרים. AID 4666220 הפנה למסך ללא גוף, אך גוף המכתב נמצא ונפתח ב-PDF ציבורי חלופי."
+        "note": "AID 528637/528644 Hebrew pages remained blocked. Their same-dated entries already exist as AIDs 6101/6108 in batch 112; English presentations were inspected and linked to those existing identities, not added as new records. AID 4666220 body was found in an alternate public PDF."
       },
       "excluded_candidates": [],
-      "translation_source_links": [
-        {
-          "aid": 6101,
-          "original_language_aid": 528637,
-          "evidence_family_id": "hayom-yom-528637-5703",
-          "status": "derived_free_translation_not_independent"
-        },
-        {
-          "aid": 6108,
-          "original_language_aid": 528644,
-          "evidence_family_id": "hayom-yom-528644-5703",
-          "status": "derived_free_translation_not_independent"
-        }
-      ],
+      "translation_source_links": [],
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_entries": null,
         "full_index_generated": null,
-        "code_search_exact_aid_queries": 14,
+        "code_search_exact_aid_queries": 12,
         "code_search_matches": [],
         "candidate_aids_found": [],
-        "existing_aids_found": [],
+        "existing_aids_found": [
+          6101,
+          6108
+        ],
         "new_aids_unique_within_checked_scope": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
         "canonical_bulk_files_checked": 12,
+        "canonical_bulk_records_checked": 1328,
         "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
@@ -2016,8 +1974,7 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
-        "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ב-GitHub ללא התאמות; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation.",
-        "canonical_bulk_records_checked": 1328
+        "note": "בדיקת קדם-הוספה מוגבלת: 12 AID חדשים נבדקו בחיפוש GitHub; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות ותור הבדיקה בן 1,022 פריטים נבדקו ללא התאמה. AIDs 6101 ו-6108 נמצאו כקיימים באצווה 112 ולכן הועשרו במקומם. public-search-index.json לא הוחזר; סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
       },
       "pre_addition_full_index_scan": {
         "available": false,
@@ -2030,8 +1987,12 @@
         "recent_manual_batch_record_rows_checked": 29,
         "review_queue_records": 1022,
         "review_queue_matches": 0,
-        "exact_aid_queries": 14,
-        "exact_aid_matches": []
+        "exact_aid_queries": 12,
+        "exact_aid_matches": [],
+        "existing_aids_found": [
+          6101,
+          6108
+        ]
       },
       "reconciliation_identity_integrity": {
         "passed": null,
@@ -2044,8 +2005,7 @@
       "language_distribution": {
         "Hebrew": 9,
         "Yiddish": 1,
-        "Hebrew and Yiddish": 2,
-        "English": 2
+        "Hebrew and Yiddish": 2
       },
       "reviewed_body_language_distribution": {
         "Hebrew": 9,
@@ -2054,10 +2014,10 @@
         "English": 2
       },
       "proposition_language_distribution": {
-        "Hebrew": 16
+        "Hebrew": 14
       },
       "source_type_distribution": {
-        "Hayom Yom": 13,
+        "Hayom Yom": 11,
         "Letters": 1
       },
       "quality_gate_followup": {
@@ -2069,12 +2029,67 @@
         ],
         "status": "pending"
       },
+      "non_independent_presentations_reviewed": 2,
+      "existing_identity_updates": [
+        {
+          "aid": 6101,
+          "existing_batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "evidence_family_id": "hayom-yom-20-adar-i-aid6101",
+          "update_type": "English free-translation and Hebrew parallel-page metadata linked in place",
+          "translation_body_inspected": true,
+          "parallel_hebrew_aid": 528637,
+          "parallel_hebrew_body_inspected": false,
+          "response_propositions_added": 0,
+          "new_evidence_family_added": 0,
+          "independent_witness_added": 0
+        },
+        {
+          "aid": 6108,
+          "existing_batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "evidence_family_id": "hayom-yom-27-adar-i-aid6108",
+          "update_type": "English free-translation and Hebrew parallel-page metadata linked in place",
+          "translation_body_inspected": true,
+          "parallel_hebrew_aid": 528644,
+          "parallel_hebrew_body_inspected": false,
+          "response_propositions_added": 0,
+          "new_evidence_family_added": 0,
+          "independent_witness_added": 0
+        }
+      ],
+      "translation_presentations_reviewed": [
+        {
+          "aid": 6101,
+          "canonical_record_batch": "112",
+          "canonical_record_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "language": "English",
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
+          "body_inspected": true,
+          "web_source_ref": "turn764819view0",
+          "independent_witness": false,
+          "new_identity_added": false,
+          "new_propositions_added": 0,
+          "evidence_family_id": "hayom-yom-20-adar-i-aid6101"
+        },
+        {
+          "aid": 6108,
+          "canonical_record_batch": "112",
+          "canonical_record_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "language": "English",
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
+          "body_inspected": true,
+          "web_source_ref": "turn764819view1",
+          "independent_witness": false,
+          "new_identity_added": false,
+          "new_propositions_added": 0,
+          "evidence_family_id": "hayom-yom-27-adar-i-aid6108"
+        }
+      ],
       "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
     },
-    "last_run_note": "Batch 165: 11 original-language Hayom Yom entries, two English free translations, and one published Hebrew letter body for AID 4666220 inspected. Two daily-entry originals and the AID page shell were blocked; the letter body was found in an alternate public PDF. No crawler retry, no access bypass, no Verified promotion. Reconciliation and content readiness pending.",
+    "last_run_note": "Batch 165: 12 new identities (11 Hayom Yom entries and one published Hebrew letter body for AID 4666220), two existing identities (AID 6101 and 6108) enriched with non-independent English-translation and parallel-page metadata, 14 new source-grounded propositions, zero Verified promotions. Full reconciliation pending.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 4666220 returned Internal Error in the public web reader; no crawler retry or access-control bypass. Fifteen alternative original-language daily entries and one existing identity were inspected.",
-    "next_work": "Reconcile pending batches contiguously through 165; complete canonical AID/Evidence Family deduplication; run test_content_readiness.mjs and the five-family regular/researcher citation checks; inspect Actions and Pages. Keep translated presentations non-independent and all new records Parsed.",
+    "next_work": "Reconcile pending batches contiguously through 165; verify AID 6101/6108 single-family translation links and AID 4666220 identity; run test_content_readiness.mjs and the five-family regular/researcher citation checks; inspect Actions and Pages.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -2447,15 +2462,15 @@
       "reviewed_item_count": 17,
       "source_bodies_inspected": 14,
       "source_body_pages_opened": 14,
-      "new_source_identities": 14,
-      "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 16,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 2,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions": 14,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 16,
-      "answer_eligible_source_families_added": 14,
+      "total_new_paraphrase_entries": 14,
+      "answer_eligible_source_families_added": 12,
       "independent_witnesses_added": 12,
-      "non_independent_presentations_added": 2,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "blocked_candidate_count": 3,
       "recovered_candidate_count": 1,
@@ -2477,11 +2492,12 @@
         528643,
         528645,
         528646,
-        6101,
-        6108,
         4666220
       ],
-      "enriched_aids": [],
+      "enriched_aids": [
+        6101,
+        6108
+      ],
       "staging_candidate_aids": [],
       "translations_counted_as_independent_witnesses": 0,
       "crawler_retry": false,
@@ -2489,19 +2505,19 @@
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 14,
+        "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 16,
-        "note": "Expected contribution from 14 distinct source families, including two non-independent English translations; not measured after-metrics."
+        "answer_eligible_propositions": 14,
+        "note": "Expected contribution from 12 new source families; two existing AID identities were enriched only with translation/parallel-language metadata and add no new family or propositions. Not measured after-metrics."
       },
       "local_content_delta": {
-        "new_source_identities": 14,
-        "new_evidence_families": 14,
-        "new_response_propositions": 16,
-        "existing_identities_enriched": 0,
+        "new_source_identities": 12,
+        "new_evidence_families": 12,
+        "new_response_propositions": 14,
+        "existing_identities_enriched": 2,
         "existing_response_propositions_added": 0,
         "verified_promotions": 0,
-        "note": "One additional published Hebrew letter body was found through an alternate public PDF for AID 4666220; canonical full-index reconciliation remains pending."
+        "note": "AIDs 6101 and 6108 are existing batch-112 identities; their English translations were reviewed but not added as duplicate records. AID 4666220 is a new published Hebrew letter identity with a public PDF body."
       },
       "source_body_review": [
         {
@@ -2670,40 +2686,6 @@
           "inspection_method": "public_web_open_body"
         },
         {
-          "aid": 6101,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
-          "language": "English",
-          "original_language": "unknown",
-          "body_text_inspected": true,
-          "inspected_original_language_body": false,
-          "existing_identity": false,
-          "body_locator": "Chabad.org AID 6101, גוף התרגום האנגלי החופשי, שורה 250.",
-          "web_source_ref": "turn764819view0",
-          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
-          "evidence_family_id": "hayom-yom-528637-5703",
-          "independent_witness": false,
-          "inspection_method": "public_web_open_translated_body",
-          "translation_of_evidence_family_id": "hayom-yom-528637-5703",
-          "original_language_source_aid": 528637
-        },
-        {
-          "aid": 6108,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
-          "language": "English",
-          "original_language": "unknown",
-          "body_text_inspected": true,
-          "inspected_original_language_body": false,
-          "existing_identity": false,
-          "body_locator": "Chabad.org AID 6108, גוף התרגום האנגלי החופשי, שורה 250.",
-          "web_source_ref": "turn764819view1",
-          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
-          "evidence_family_id": "hayom-yom-528644-5703",
-          "independent_witness": false,
-          "inspection_method": "public_web_open_translated_body",
-          "translation_of_evidence_family_id": "hayom-yom-528644-5703",
-          "original_language_source_aid": 528644
-        },
-        {
           "aid": 4666220,
           "source_url": "https://media.col.org.il/files/uploads/original/2018/11/15420312915be987bbe0411296837.pdf",
           "publisher_page_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
@@ -2763,44 +2745,35 @@
           528643,
           528645,
           528646,
-          6101,
-          6108,
           4666220
         ],
         "original_language_body_inspected": 12,
         "english_translation_bodies_inspected": 2,
+        "existing_translation_presentations_rechecked": 2,
         "non_independent_translation_presentations": 2,
+        "new_translation_presentations_added": 0,
         "same_edition_pdf_presentations": 1,
         "body_text_inspected": true,
-        "note": "שני גופי המקור העברי AID 528637 ו-528644 לא נפתחו; נבדקו תרגומים אנגליים נגזרים. AID 4666220 הפנה למסך ללא גוף, אך גוף המכתב נמצא ונפתח ב-PDF ציבורי חלופי."
+        "note": "AID 528637/528644 Hebrew pages remained blocked. Their same-dated entries already exist as AIDs 6101/6108 in batch 112; English presentations were inspected and linked to those existing identities, not added as new records. AID 4666220 body was found in an alternate public PDF."
       },
       "excluded_candidates": [],
-      "translation_source_links": [
-        {
-          "aid": 6101,
-          "original_language_aid": 528637,
-          "evidence_family_id": "hayom-yom-528637-5703",
-          "status": "derived_free_translation_not_independent"
-        },
-        {
-          "aid": 6108,
-          "original_language_aid": 528644,
-          "evidence_family_id": "hayom-yom-528644-5703",
-          "status": "derived_free_translation_not_independent"
-        }
-      ],
+      "translation_source_links": [],
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_entries": null,
         "full_index_generated": null,
-        "code_search_exact_aid_queries": 14,
+        "code_search_exact_aid_queries": 12,
         "code_search_matches": [],
         "candidate_aids_found": [],
-        "existing_aids_found": [],
+        "existing_aids_found": [
+          6101,
+          6108
+        ],
         "new_aids_unique_within_checked_scope": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
         "canonical_bulk_files_checked": 12,
+        "canonical_bulk_records_checked": 1328,
         "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
@@ -2811,8 +2784,7 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
-        "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ב-GitHub ללא התאמות; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation.",
-        "canonical_bulk_records_checked": 1328
+        "note": "בדיקת קדם-הוספה מוגבלת: 12 AID חדשים נבדקו בחיפוש GitHub; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות ותור הבדיקה בן 1,022 פריטים נבדקו ללא התאמה. AIDs 6101 ו-6108 נמצאו כקיימים באצווה 112 ולכן הועשרו במקומם. public-search-index.json לא הוחזר; סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
       },
       "pre_addition_full_index_scan": {
         "available": false,
@@ -2825,8 +2797,12 @@
         "recent_manual_batch_record_rows_checked": 29,
         "review_queue_records": 1022,
         "review_queue_matches": 0,
-        "exact_aid_queries": 14,
-        "exact_aid_matches": []
+        "exact_aid_queries": 12,
+        "exact_aid_matches": [],
+        "existing_aids_found": [
+          6101,
+          6108
+        ]
       },
       "reconciliation_identity_integrity": {
         "passed": null,
@@ -2839,8 +2815,7 @@
       "language_distribution": {
         "Hebrew": 9,
         "Yiddish": 1,
-        "Hebrew and Yiddish": 2,
-        "English": 2
+        "Hebrew and Yiddish": 2
       },
       "reviewed_body_language_distribution": {
         "Hebrew": 9,
@@ -2849,10 +2824,10 @@
         "English": 2
       },
       "proposition_language_distribution": {
-        "Hebrew": 16
+        "Hebrew": 14
       },
       "source_type_distribution": {
-        "Hayom Yom": 13,
+        "Hayom Yom": 11,
         "Letters": 1
       },
       "quality_gate_followup": {
@@ -2864,6 +2839,61 @@
         ],
         "status": "pending"
       },
+      "non_independent_presentations_reviewed": 2,
+      "existing_identity_updates": [
+        {
+          "aid": 6101,
+          "existing_batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "evidence_family_id": "hayom-yom-20-adar-i-aid6101",
+          "update_type": "English free-translation and Hebrew parallel-page metadata linked in place",
+          "translation_body_inspected": true,
+          "parallel_hebrew_aid": 528637,
+          "parallel_hebrew_body_inspected": false,
+          "response_propositions_added": 0,
+          "new_evidence_family_added": 0,
+          "independent_witness_added": 0
+        },
+        {
+          "aid": 6108,
+          "existing_batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "evidence_family_id": "hayom-yom-27-adar-i-aid6108",
+          "update_type": "English free-translation and Hebrew parallel-page metadata linked in place",
+          "translation_body_inspected": true,
+          "parallel_hebrew_aid": 528644,
+          "parallel_hebrew_body_inspected": false,
+          "response_propositions_added": 0,
+          "new_evidence_family_added": 0,
+          "independent_witness_added": 0
+        }
+      ],
+      "translation_presentations_reviewed": [
+        {
+          "aid": 6101,
+          "canonical_record_batch": "112",
+          "canonical_record_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "language": "English",
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
+          "body_inspected": true,
+          "web_source_ref": "turn764819view0",
+          "independent_witness": false,
+          "new_identity_added": false,
+          "new_propositions_added": 0,
+          "evidence_family_id": "hayom-yom-20-adar-i-aid6101"
+        },
+        {
+          "aid": 6108,
+          "canonical_record_batch": "112",
+          "canonical_record_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "language": "English",
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
+          "body_inspected": true,
+          "web_source_ref": "turn764819view1",
+          "independent_witness": false,
+          "new_identity_added": false,
+          "new_propositions_added": 0,
+          "evidence_family_id": "hayom-yom-27-adar-i-aid6108"
+        }
+      ],
       "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
     },
     "active_blocks": [
@@ -2961,15 +2991,15 @@
       "reviewed_item_count": 17,
       "source_bodies_inspected": 14,
       "source_body_pages_opened": 14,
-      "new_source_identities": 14,
-      "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 16,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 2,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions": 14,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 16,
-      "answer_eligible_source_families_added": 14,
+      "total_new_paraphrase_entries": 14,
+      "answer_eligible_source_families_added": 12,
       "independent_witnesses_added": 12,
-      "non_independent_presentations_added": 2,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "blocked_candidate_count": 3,
       "recovered_candidate_count": 1,
@@ -2991,11 +3021,12 @@
         528643,
         528645,
         528646,
-        6101,
-        6108,
         4666220
       ],
-      "enriched_aids": [],
+      "enriched_aids": [
+        6101,
+        6108
+      ],
       "staging_candidate_aids": [],
       "translations_counted_as_independent_witnesses": 0,
       "crawler_retry": false,
@@ -3003,19 +3034,19 @@
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 14,
+        "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 16,
-        "note": "Expected contribution from 14 distinct source families, including two non-independent English translations; not measured after-metrics."
+        "answer_eligible_propositions": 14,
+        "note": "Expected contribution from 12 new source families; two existing AID identities were enriched only with translation/parallel-language metadata and add no new family or propositions. Not measured after-metrics."
       },
       "local_content_delta": {
-        "new_source_identities": 14,
-        "new_evidence_families": 14,
-        "new_response_propositions": 16,
-        "existing_identities_enriched": 0,
+        "new_source_identities": 12,
+        "new_evidence_families": 12,
+        "new_response_propositions": 14,
+        "existing_identities_enriched": 2,
         "existing_response_propositions_added": 0,
         "verified_promotions": 0,
-        "note": "One additional published Hebrew letter body was found through an alternate public PDF for AID 4666220; canonical full-index reconciliation remains pending."
+        "note": "AIDs 6101 and 6108 are existing batch-112 identities; their English translations were reviewed but not added as duplicate records. AID 4666220 is a new published Hebrew letter identity with a public PDF body."
       },
       "source_body_review": [
         {
@@ -3184,40 +3215,6 @@
           "inspection_method": "public_web_open_body"
         },
         {
-          "aid": 6101,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
-          "language": "English",
-          "original_language": "unknown",
-          "body_text_inspected": true,
-          "inspected_original_language_body": false,
-          "existing_identity": false,
-          "body_locator": "Chabad.org AID 6101, גוף התרגום האנגלי החופשי, שורה 250.",
-          "web_source_ref": "turn764819view0",
-          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
-          "evidence_family_id": "hayom-yom-528637-5703",
-          "independent_witness": false,
-          "inspection_method": "public_web_open_translated_body",
-          "translation_of_evidence_family_id": "hayom-yom-528637-5703",
-          "original_language_source_aid": 528637
-        },
-        {
-          "aid": 6108,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
-          "language": "English",
-          "original_language": "unknown",
-          "body_text_inspected": true,
-          "inspected_original_language_body": false,
-          "existing_identity": false,
-          "body_locator": "Chabad.org AID 6108, גוף התרגום האנגלי החופשי, שורה 250.",
-          "web_source_ref": "turn764819view1",
-          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
-          "evidence_family_id": "hayom-yom-528644-5703",
-          "independent_witness": false,
-          "inspection_method": "public_web_open_translated_body",
-          "translation_of_evidence_family_id": "hayom-yom-528644-5703",
-          "original_language_source_aid": 528644
-        },
-        {
           "aid": 4666220,
           "source_url": "https://media.col.org.il/files/uploads/original/2018/11/15420312915be987bbe0411296837.pdf",
           "publisher_page_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
@@ -3277,44 +3274,35 @@
           528643,
           528645,
           528646,
-          6101,
-          6108,
           4666220
         ],
         "original_language_body_inspected": 12,
         "english_translation_bodies_inspected": 2,
+        "existing_translation_presentations_rechecked": 2,
         "non_independent_translation_presentations": 2,
+        "new_translation_presentations_added": 0,
         "same_edition_pdf_presentations": 1,
         "body_text_inspected": true,
-        "note": "שני גופי המקור העברי AID 528637 ו-528644 לא נפתחו; נבדקו תרגומים אנגליים נגזרים. AID 4666220 הפנה למסך ללא גוף, אך גוף המכתב נמצא ונפתח ב-PDF ציבורי חלופי."
+        "note": "AID 528637/528644 Hebrew pages remained blocked. Their same-dated entries already exist as AIDs 6101/6108 in batch 112; English presentations were inspected and linked to those existing identities, not added as new records. AID 4666220 body was found in an alternate public PDF."
       },
       "excluded_candidates": [],
-      "translation_source_links": [
-        {
-          "aid": 6101,
-          "original_language_aid": 528637,
-          "evidence_family_id": "hayom-yom-528637-5703",
-          "status": "derived_free_translation_not_independent"
-        },
-        {
-          "aid": 6108,
-          "original_language_aid": 528644,
-          "evidence_family_id": "hayom-yom-528644-5703",
-          "status": "derived_free_translation_not_independent"
-        }
-      ],
+      "translation_source_links": [],
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_entries": null,
         "full_index_generated": null,
-        "code_search_exact_aid_queries": 14,
+        "code_search_exact_aid_queries": 12,
         "code_search_matches": [],
         "candidate_aids_found": [],
-        "existing_aids_found": [],
+        "existing_aids_found": [
+          6101,
+          6108
+        ],
         "new_aids_unique_within_checked_scope": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
         "canonical_bulk_files_checked": 12,
+        "canonical_bulk_records_checked": 1328,
         "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
@@ -3325,8 +3313,7 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
-        "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ב-GitHub ללא התאמות; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation.",
-        "canonical_bulk_records_checked": 1328
+        "note": "בדיקת קדם-הוספה מוגבלת: 12 AID חדשים נבדקו בחיפוש GitHub; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות ותור הבדיקה בן 1,022 פריטים נבדקו ללא התאמה. AIDs 6101 ו-6108 נמצאו כקיימים באצווה 112 ולכן הועשרו במקומם. public-search-index.json לא הוחזר; סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
       },
       "pre_addition_full_index_scan": {
         "available": false,
@@ -3339,8 +3326,12 @@
         "recent_manual_batch_record_rows_checked": 29,
         "review_queue_records": 1022,
         "review_queue_matches": 0,
-        "exact_aid_queries": 14,
-        "exact_aid_matches": []
+        "exact_aid_queries": 12,
+        "exact_aid_matches": [],
+        "existing_aids_found": [
+          6101,
+          6108
+        ]
       },
       "reconciliation_identity_integrity": {
         "passed": null,
@@ -3353,8 +3344,7 @@
       "language_distribution": {
         "Hebrew": 9,
         "Yiddish": 1,
-        "Hebrew and Yiddish": 2,
-        "English": 2
+        "Hebrew and Yiddish": 2
       },
       "reviewed_body_language_distribution": {
         "Hebrew": 9,
@@ -3363,10 +3353,10 @@
         "English": 2
       },
       "proposition_language_distribution": {
-        "Hebrew": 16
+        "Hebrew": 14
       },
       "source_type_distribution": {
-        "Hayom Yom": 13,
+        "Hayom Yom": 11,
         "Letters": 1
       },
       "quality_gate_followup": {
@@ -3378,6 +3368,61 @@
         ],
         "status": "pending"
       },
+      "non_independent_presentations_reviewed": 2,
+      "existing_identity_updates": [
+        {
+          "aid": 6101,
+          "existing_batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "evidence_family_id": "hayom-yom-20-adar-i-aid6101",
+          "update_type": "English free-translation and Hebrew parallel-page metadata linked in place",
+          "translation_body_inspected": true,
+          "parallel_hebrew_aid": 528637,
+          "parallel_hebrew_body_inspected": false,
+          "response_propositions_added": 0,
+          "new_evidence_family_added": 0,
+          "independent_witness_added": 0
+        },
+        {
+          "aid": 6108,
+          "existing_batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "evidence_family_id": "hayom-yom-27-adar-i-aid6108",
+          "update_type": "English free-translation and Hebrew parallel-page metadata linked in place",
+          "translation_body_inspected": true,
+          "parallel_hebrew_aid": 528644,
+          "parallel_hebrew_body_inspected": false,
+          "response_propositions_added": 0,
+          "new_evidence_family_added": 0,
+          "independent_witness_added": 0
+        }
+      ],
+      "translation_presentations_reviewed": [
+        {
+          "aid": 6101,
+          "canonical_record_batch": "112",
+          "canonical_record_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "language": "English",
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
+          "body_inspected": true,
+          "web_source_ref": "turn764819view0",
+          "independent_witness": false,
+          "new_identity_added": false,
+          "new_propositions_added": 0,
+          "evidence_family_id": "hayom-yom-20-adar-i-aid6101"
+        },
+        {
+          "aid": 6108,
+          "canonical_record_batch": "112",
+          "canonical_record_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "language": "English",
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
+          "body_inspected": true,
+          "web_source_ref": "turn764819view1",
+          "independent_witness": false,
+          "new_identity_added": false,
+          "new_propositions_added": 0,
+          "evidence_family_id": "hayom-yom-27-adar-i-aid6108"
+        }
+      ],
       "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
     },
     "previous_manual_web_review": {
@@ -3925,15 +3970,15 @@
       "reviewed_item_count": 17,
       "source_bodies_inspected": 14,
       "source_body_pages_opened": 14,
-      "new_source_identities": 14,
-      "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 16,
+      "new_source_identities": 12,
+      "existing_identities_enriched": 2,
+      "existing_identities_rechecked": 2,
+      "new_response_propositions": 14,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 16,
-      "answer_eligible_source_families_added": 14,
+      "total_new_paraphrase_entries": 14,
+      "answer_eligible_source_families_added": 12,
       "independent_witnesses_added": 12,
-      "non_independent_presentations_added": 2,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
       "blocked_candidate_count": 3,
       "recovered_candidate_count": 1,
@@ -3955,11 +4000,12 @@
         528643,
         528645,
         528646,
-        6101,
-        6108,
         4666220
       ],
-      "enriched_aids": [],
+      "enriched_aids": [
+        6101,
+        6108
+      ],
       "staging_candidate_aids": [],
       "translations_counted_as_independent_witnesses": 0,
       "crawler_retry": false,
@@ -3967,19 +4013,19 @@
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 14,
+        "answer_eligible_unique_sources": 12,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 16,
-        "note": "Expected contribution from 14 distinct source families, including two non-independent English translations; not measured after-metrics."
+        "answer_eligible_propositions": 14,
+        "note": "Expected contribution from 12 new source families; two existing AID identities were enriched only with translation/parallel-language metadata and add no new family or propositions. Not measured after-metrics."
       },
       "local_content_delta": {
-        "new_source_identities": 14,
-        "new_evidence_families": 14,
-        "new_response_propositions": 16,
-        "existing_identities_enriched": 0,
+        "new_source_identities": 12,
+        "new_evidence_families": 12,
+        "new_response_propositions": 14,
+        "existing_identities_enriched": 2,
         "existing_response_propositions_added": 0,
         "verified_promotions": 0,
-        "note": "One additional published Hebrew letter body was found through an alternate public PDF for AID 4666220; canonical full-index reconciliation remains pending."
+        "note": "AIDs 6101 and 6108 are existing batch-112 identities; their English translations were reviewed but not added as duplicate records. AID 4666220 is a new published Hebrew letter identity with a public PDF body."
       },
       "source_body_review": [
         {
@@ -4148,40 +4194,6 @@
           "inspection_method": "public_web_open_body"
         },
         {
-          "aid": 6101,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
-          "language": "English",
-          "original_language": "unknown",
-          "body_text_inspected": true,
-          "inspected_original_language_body": false,
-          "existing_identity": false,
-          "body_locator": "Chabad.org AID 6101, גוף התרגום האנגלי החופשי, שורה 250.",
-          "web_source_ref": "turn764819view0",
-          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
-          "evidence_family_id": "hayom-yom-528637-5703",
-          "independent_witness": false,
-          "inspection_method": "public_web_open_translated_body",
-          "translation_of_evidence_family_id": "hayom-yom-528637-5703",
-          "original_language_source_aid": 528637
-        },
-        {
-          "aid": 6108,
-          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
-          "language": "English",
-          "original_language": "unknown",
-          "body_text_inspected": true,
-          "inspected_original_language_body": false,
-          "existing_identity": false,
-          "body_locator": "Chabad.org AID 6108, גוף התרגום האנגלי החופשי, שורה 250.",
-          "web_source_ref": "turn764819view1",
-          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
-          "evidence_family_id": "hayom-yom-528644-5703",
-          "independent_witness": false,
-          "inspection_method": "public_web_open_translated_body",
-          "translation_of_evidence_family_id": "hayom-yom-528644-5703",
-          "original_language_source_aid": 528644
-        },
-        {
           "aid": 4666220,
           "source_url": "https://media.col.org.il/files/uploads/original/2018/11/15420312915be987bbe0411296837.pdf",
           "publisher_page_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
@@ -4241,44 +4253,35 @@
           528643,
           528645,
           528646,
-          6101,
-          6108,
           4666220
         ],
         "original_language_body_inspected": 12,
         "english_translation_bodies_inspected": 2,
+        "existing_translation_presentations_rechecked": 2,
         "non_independent_translation_presentations": 2,
+        "new_translation_presentations_added": 0,
         "same_edition_pdf_presentations": 1,
         "body_text_inspected": true,
-        "note": "שני גופי המקור העברי AID 528637 ו-528644 לא נפתחו; נבדקו תרגומים אנגליים נגזרים. AID 4666220 הפנה למסך ללא גוף, אך גוף המכתב נמצא ונפתח ב-PDF ציבורי חלופי."
+        "note": "AID 528637/528644 Hebrew pages remained blocked. Their same-dated entries already exist as AIDs 6101/6108 in batch 112; English presentations were inspected and linked to those existing identities, not added as new records. AID 4666220 body was found in an alternate public PDF."
       },
       "excluded_candidates": [],
-      "translation_source_links": [
-        {
-          "aid": 6101,
-          "original_language_aid": 528637,
-          "evidence_family_id": "hayom-yom-528637-5703",
-          "status": "derived_free_translation_not_independent"
-        },
-        {
-          "aid": 6108,
-          "original_language_aid": 528644,
-          "evidence_family_id": "hayom-yom-528644-5703",
-          "status": "derived_free_translation_not_independent"
-        }
-      ],
+      "translation_source_links": [],
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_entries": null,
         "full_index_generated": null,
-        "code_search_exact_aid_queries": 14,
+        "code_search_exact_aid_queries": 12,
         "code_search_matches": [],
         "candidate_aids_found": [],
-        "existing_aids_found": [],
+        "existing_aids_found": [
+          6101,
+          6108
+        ],
         "new_aids_unique_within_checked_scope": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
         "canonical_bulk_files_checked": 12,
+        "canonical_bulk_records_checked": 1328,
         "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
@@ -4289,8 +4292,7 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
-        "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ב-GitHub ללא התאמות; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation.",
-        "canonical_bulk_records_checked": 1328
+        "note": "בדיקת קדם-הוספה מוגבלת: 12 AID חדשים נבדקו בחיפוש GitHub; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות ותור הבדיקה בן 1,022 פריטים נבדקו ללא התאמה. AIDs 6101 ו-6108 נמצאו כקיימים באצווה 112 ולכן הועשרו במקומם. public-search-index.json לא הוחזר; סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
       },
       "pre_addition_full_index_scan": {
         "available": false,
@@ -4303,8 +4305,12 @@
         "recent_manual_batch_record_rows_checked": 29,
         "review_queue_records": 1022,
         "review_queue_matches": 0,
-        "exact_aid_queries": 14,
-        "exact_aid_matches": []
+        "exact_aid_queries": 12,
+        "exact_aid_matches": [],
+        "existing_aids_found": [
+          6101,
+          6108
+        ]
       },
       "reconciliation_identity_integrity": {
         "passed": null,
@@ -4317,8 +4323,7 @@
       "language_distribution": {
         "Hebrew": 9,
         "Yiddish": 1,
-        "Hebrew and Yiddish": 2,
-        "English": 2
+        "Hebrew and Yiddish": 2
       },
       "reviewed_body_language_distribution": {
         "Hebrew": 9,
@@ -4327,10 +4332,10 @@
         "English": 2
       },
       "proposition_language_distribution": {
-        "Hebrew": 16
+        "Hebrew": 14
       },
       "source_type_distribution": {
-        "Hayom Yom": 13,
+        "Hayom Yom": 11,
         "Letters": 1
       },
       "quality_gate_followup": {
@@ -4342,6 +4347,61 @@
         ],
         "status": "pending"
       },
+      "non_independent_presentations_reviewed": 2,
+      "existing_identity_updates": [
+        {
+          "aid": 6101,
+          "existing_batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "evidence_family_id": "hayom-yom-20-adar-i-aid6101",
+          "update_type": "English free-translation and Hebrew parallel-page metadata linked in place",
+          "translation_body_inspected": true,
+          "parallel_hebrew_aid": 528637,
+          "parallel_hebrew_body_inspected": false,
+          "response_propositions_added": 0,
+          "new_evidence_family_added": 0,
+          "independent_witness_added": 0
+        },
+        {
+          "aid": 6108,
+          "existing_batch_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "evidence_family_id": "hayom-yom-27-adar-i-aid6108",
+          "update_type": "English free-translation and Hebrew parallel-page metadata linked in place",
+          "translation_body_inspected": true,
+          "parallel_hebrew_aid": 528644,
+          "parallel_hebrew_body_inspected": false,
+          "response_propositions_added": 0,
+          "new_evidence_family_added": 0,
+          "independent_witness_added": 0
+        }
+      ],
+      "translation_presentations_reviewed": [
+        {
+          "aid": 6101,
+          "canonical_record_batch": "112",
+          "canonical_record_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "language": "English",
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
+          "body_inspected": true,
+          "web_source_ref": "turn764819view0",
+          "independent_witness": false,
+          "new_identity_added": false,
+          "new_propositions_added": 0,
+          "evidence_family_id": "hayom-yom-20-adar-i-aid6101"
+        },
+        {
+          "aid": 6108,
+          "canonical_record_batch": "112",
+          "canonical_record_file": "data/items/content-research-batch-112-2026-11-16.json",
+          "language": "English",
+          "url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
+          "body_inspected": true,
+          "web_source_ref": "turn764819view1",
+          "independent_witness": false,
+          "new_identity_added": false,
+          "new_propositions_added": 0,
+          "evidence_family_id": "hayom-yom-27-adar-i-aid6108"
+        }
+      ],
       "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
     },
     "last_reviewed_batch": "165",
@@ -5158,5 +5218,5 @@
     "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
   },
   "pending": true,
-  "last_run_note": "Batch 165: 11 original-language Hayom Yom entries, two English free translations, and one published Hebrew letter body for AID 4666220 inspected. Two daily-entry originals and the AID page shell were blocked; the letter body was found in an alternate public PDF. No crawler retry, no access bypass, no Verified promotion. Reconciliation and content readiness pending."
+  "last_run_note": "Batch 165: 12 new identities (11 Hayom Yom entries and one published Hebrew letter body for AID 4666220), two existing identities (AID 6101 and 6108) enriched with non-independent English-translation and parallel-page metadata, 14 new source-grounded propositions, zero Verified promotions. Full reconciliation pending."
 }
