@@ -392,7 +392,7 @@ function supportsTzedakahSynthesisProposition(p){
 }
 function hayomYomPrayerVitalitySupport(p){
  const t=norm(p);
- return (t.includes('תהילים')&&t.includes('בתי כנסת')&&t.includes('אהבת ישראל'))
+ return (t.includes('תהילים')&&(t.includes('בית כנסת')||t.includes('בתי כנסת'))&&t.includes('אהבת ישראל'))
   ||(t.includes('מודה אני')&&t.includes('טומאות')&&t.includes('שלם'))
   ||(t.includes('השכל וההתפעלות')&&t.includes('שאיפה')&&t.includes('עבודה'))
   ||(t.includes('אהבתם')&&t.includes('התקשרותם')&&(t.includes('כחות פנימים')||(t.includes('כוחות')&&t.includes('פנימיים'))))
@@ -474,7 +474,7 @@ const institutionalEducationSpecs=[
  const dailyWorkSpecs=[{topic:'everyday_service',predicate:p=>dailyWorkSupport(p)&&norm(p).includes('חיפוש אמת')},{topic:'ahavat_yisrael',predicate:p=>dailyWorkSupport(p)&&norm(p).includes('אהבת ישראל')},{topic:'sanctifying_place',predicate:p=>dailyWorkSupport(p)&&norm(p).includes('לזכות ולטהר')},{topic:'education_and_support',predicate:p=>dailyWorkSupport(p)&&norm(p).includes('פרנסת בני ביתו')},{topic:'general_prayer_intention',predicate:p=>dailyWorkSupport(p)&&norm(p).includes('כוונה כללית')}];
  const dailyWorkClaimsValid=!isHayomYomDailyWork||(claimLocatorsValid&&Array.isArray(s.basis)&&s.basis.length===5&&s.basis.every(b=>b.independent_witness===true&&Array.isArray(b.propositions)&&b.propositions.length===1&&b.propositions.every(p=>p.source_locator))&&new Set(arr(s.evidence_family_ids)).size===5&&new Set(arr(s.independent_evidence_family_ids)).size===5&&Array.isArray(s.claims)&&s.claims.length===5&&dailyWorkSpecs.every(spec=>{const c=arr(s.claims).find(x=>x.topic===spec.topic);return!!c&&c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.source_numbers.every(n=>{const e=sources[n-1];return!!e&&e._independent_witness!==false&&!isDerived(e)&&arr(e.response_propositions).some(spec.predicate)&&c.source_locators.some(x=>x.source_number===n&&x.locator);});})&&s.evidence_quality==='five_distinct_hayom_yom_entries_not_archival_corroboration'&&String(s.method||'').includes('not independent archival corroboration')&&arr(s.limits).some(x=>norm(x).includes('אינה ציטוט')));
  const prayerVitalitySpecs=[
-  {topic:'communal_psalms',predicate:p=>{const t=norm(p);return t.includes('תהילים')&&t.includes('בתי כנסת')&&t.includes('אהבת ישראל');}},
+  {topic:'communal_psalms',predicate:p=>{const t=norm(p);return t.includes('תהילים')&&(t.includes('בית כנסת')||t.includes('בתי כנסת'))&&t.includes('אהבת ישראל');}},
   {topic:'modeh_ani_before_washing',predicate:p=>{const t=norm(p);return t.includes('מודה אני')&&t.includes('טומאות')&&t.includes('שלם');}},
   {topic:'mind_heart_practical_work',predicate:p=>{const t=norm(p);return t.includes('השכל וההתפעלות')&&t.includes('שאיפה')&&t.includes('עבודה');}},
   {topic:'contemplative_connection',predicate:p=>{const t=norm(p);return t.includes('אהבתם')&&t.includes('התקשרותם')&&(t.includes('כחות פנימים')||(t.includes('כוחות')&&t.includes('פנימיים')));}},

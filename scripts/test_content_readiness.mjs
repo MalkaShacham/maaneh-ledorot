@@ -2336,6 +2336,8 @@ assert.equal(batch162Data.reconciliation_identity_integrity.all_target_identitie
 assert(['reconciled','reconciled_with_variance'].includes(batch162Data.reconciliation_status));
 assert(batch162Data.metrics_actual_after,'batch162 must retain measured canonical after-metrics');
 const prayerVitalityQuestion='מה מתעדים ערכי היום יום על תפילה, חיות פנימית, שילוב מוח ולב ועבודה מעשית?';
+const communalPsalmsEntry=idx.entries.find(e=>sourceAID(e)==='528587');
+assert(communalPsalmsEntry&&communalPsalmsEntry.response_propositions.some(p=>p.includes('בכל בית כנסת')),'AID 528587 paraphrase must preserve the singular body wording');
 const contemplativePrayerEntry=idx.entries.find(e=>sourceAID(e)==='528600');
 assert(contemplativePrayerEntry&&contemplativePrayerEntry.response_propositions.some(p=>p.includes('הכוחות הפנימיים')),'AID 528600 paraphrase must preserve the body-supported Hebrew morphology');
 for(const mode of ['regular','researcher']){
