@@ -414,7 +414,7 @@ function patternSynthesisIntegrity(model){
 const institutionalEducationSpecs=[
   {topic:'individual_influence_and_public_benefit',predicate:p=>norm(p).includes('השפעה')&&norm(p).includes('ישיבה בלוד')},
   {topic:'community_coordination_and_morale',predicate:p=>norm(p).includes('כפר חב')&&norm(p).includes('נפילת רוח')},
-  {topic:'public_learning_materials_and_lag_baomer',predicate:p=>norm(p).includes('לג בעומר')&&norm(p).includes('לזכות')},
+  {topic:'public_learning_materials_and_lag_baomer',predicate:p=>norm(p).includes('ל ג בעומר')&&norm(p).includes('לזכות')},
   {topic:'institutional_support_and_child_education',predicate:p=>norm(p).includes('מוסדות ליובאוויטש')&&norm(p).includes('מצב כספי')},
   {topic:'detailed_learning_and_foundational_values',predicate:p=>norm(p).includes('צעירי אגודת חב')&&norm(p).includes('אחיזה בפרטים')},
   {topic:'personal_study_effort_and_peer_influence',predicate:p=>norm(p).includes('מאמץ')&&norm(p).includes('להשפיע על חברים')},
