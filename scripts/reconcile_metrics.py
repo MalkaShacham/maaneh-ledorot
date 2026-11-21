@@ -240,6 +240,12 @@ for fp in manual_batch_paths:
     if isinstance(data,dict): manual_batches.append({"path":fp,"data":data})
 
 def is_pending_batch(data):
+    # Historical batches explicitly marked as outside the active contiguous
+    # reconciliation chain remain pending. A partial preflight must never be
+    # rewritten as a completed full-index scan merely because later runs can
+    # inspect the current corpus.
+    if data.get("reconciliation_excluded") is True:
+        return False
     return (data.get("reconciliation_status") in ("pending","pending_reconciliation")
             or data.get("status") in ("pending","pending_reconciliation"))
 

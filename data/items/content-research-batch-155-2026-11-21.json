@@ -1,0 +1,1977 @@
+{
+  "schema": "maaneh-ledorot-content-research-batch-v1",
+  "batch_id": "155",
+  "batch_number": 155,
+  "batch_file": "data/items/content-research-batch-155-2026-11-21.json",
+  "reviewed_at": "2026-11-21T11:23:32+02:00",
+  "reviewed_by": "manual public web/search/open source-body inspection",
+  "purpose": "Add source-grounded, non-verbatim research propositions from accessible public correspondence and a Hebrew secondary adaptation; enrich two existing identities in place; preserve Evidence Family and witness distinctions.",
+  "status": "pending_reconciliation",
+  "reconciliation_status": "pending_reconciliation",
+  "reviewed_item_count": 26,
+  "source_bodies_inspected": 13,
+  "source_body_pages_opened": 13,
+  "new_source_identities": 12,
+  "existing_identities_enriched": 2,
+  "existing_identities_rechecked": 0,
+  "new_response_propositions": 24,
+  "existing_response_propositions_added": 2,
+  "total_new_paraphrase_entries": 26,
+  "answer_eligible_source_families_added": 11,
+  "independent_witnesses_added": 1,
+  "independent_witness_groups_added": 1,
+  "same_author_testimony_records": 1,
+  "non_independent_presentations_added": 11,
+  "content_verified_unique_sources_added": 0,
+  "blocked_candidate_count": 13,
+  "recovered_candidate_count": 0,
+  "metrics_before": {
+    "answer_eligible_unique_sources": 1550,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3918
+  },
+  "metrics_before_source": "Measured output from Actions run 44872588578 (commit 5d15f8cfc42ed36e273a7a85bdb95134ff5d9603), after batch154. The reconciliation step completed and emitted 1550/854/3918, but the workflow failed at the historical batch110 partial-preflight test before committing the generated metrics. This is a measured workspace baseline, not the current committed public-metrics snapshot.",
+  "public_metrics_snapshot_before": {
+    "generated": "2026-11-15",
+    "answer_eligible_unique_sources": 977,
+    "content_verified_unique_sources": 878,
+    "answer_eligible_propositions": 2950
+  },
+  "metrics_expected_after": {
+    "answer_eligible_unique_sources": 1561,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3944
+  },
+  "metrics_expected_after_source": "Projection only: +11 unique Evidence Families, +0 Verified sources, +24 new source propositions and +2 in-place propositions; not measured.",
+  "metrics_actual_after": null,
+  "metrics_delta_at_batch_boundary": {
+    "answer_eligible_unique_sources": 11,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 26
+  },
+  "local_batch_delta": {
+    "answer_eligible_unique_sources": 11,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 26
+  },
+  "new_aids": [
+    2279284,
+    2279261,
+    2278362,
+    2278361,
+    3906843,
+    2277081,
+    2278150,
+    2277998,
+    5920906,
+    2377430,
+    3137281
+  ],
+  "new_identity_keys": [
+    "aid:2279284",
+    "aid:2279261",
+    "aid:2278362",
+    "aid:2278361",
+    "aid:3906843",
+    "aid:2277081",
+    "aid:2278150",
+    "aid:2277998",
+    "aid:5920906",
+    "aid:2377430#component:recipient-testimony",
+    "aid:2377430#component:yiddish-letter-excerpt",
+    "aid:3137281"
+  ],
+  "enriched_aids": [
+    3907531,
+    5920864
+  ],
+  "rechecked_aids": [],
+  "translations_counted_as_independent_witnesses": 0,
+  "blocked_aids": [
+    4666220,
+    4730911,
+    4730912,
+    4730820,
+    5100036,
+    5100145,
+    4731115,
+    4731108,
+    4730804,
+    4731062,
+    4731068,
+    4731075,
+    4731033
+  ],
+  "blocked_candidates": [
+    {
+      "candidate_key": "aid:4666220",
+      "aid": 4666220,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "פתיחה ישירה בכלי העיון החזירה Internal Error ולא גוף פרסום קריא.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4730911",
+      "aid": 4730911,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4730911/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4730912",
+      "aid": 4730912,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4730912/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4730820",
+      "aid": 4730820,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4730820/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:5100036",
+      "aid": 5100036,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100036/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:5100145",
+      "aid": 5100145,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100145/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4731115",
+      "aid": 4731115,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731115/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4731108",
+      "aid": 4731108,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731108/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4730804",
+      "aid": 4730804,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4730804/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4731062",
+      "aid": 4731062,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731062/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4731068",
+      "aid": 4731068,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731068/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4731075",
+      "aid": 4731075,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731075/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    },
+    {
+      "candidate_key": "aid:4731033",
+      "aid": 4731033,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731033/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+      "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+    }
+  ],
+  "fallback_source_attempted": true,
+  "fallback_source_results": {
+    "accessible_item_level_bodies": 13,
+    "inspected_aids": [
+      2279284,
+      2279261,
+      2278362,
+      5920864,
+      3907531,
+      2278361,
+      3906843,
+      2277081,
+      2278150,
+      2277998,
+      5920906,
+      2377430,
+      3137281
+    ],
+    "body_text_inspected": true,
+    "note": "After the blocked Hebrew AID and 12 shell-only pages, the same run switched to accessible Chabad.org English correspondence pages and one Hebrew secondary adaptation; 13 public item-level bodies were inspected."
+  },
+  "crawler_retry": false,
+  "access_control_bypassed": false,
+  "full_text_copied": false,
+  "scan_only_verification_used": false,
+  "source_body_review": [
+    {
+      "candidate_key": "aid:2279284",
+      "title": "The value of sending photographs of the chassidim to the Rebbe — Letter No. 508",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2279284/jewish/The-value-of-sending-photographs-of-the-chassidim-to-the-Rebbe.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2279284, body lines 279–281."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2279284, ביום 21.11.2026, במיקומים Chabad.org AID 2279284, body lines 279–279.; Chabad.org AID 2279284, body lines 280–280.; Chabad.org AID 2279284, body lines 281–281.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:2279261",
+      "title": "The need for outreach activities — Letter No. 500",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2279261/jewish/The-need-for-outreach-activities.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2279261, body lines 319–321."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2279261, ביום 21.11.2026, במיקומים Chabad.org AID 2279261, body lines 319–320.; Chabad.org AID 2279261, body lines 321–321.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:2278362",
+      "title": "Blessings for health — Letter No. 697",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278362/jewish/Blessings-for-health.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2278362, body lines 277–280."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278362, ביום 21.11.2026, במיקומים Chabad.org AID 2278362, body lines 277–279.; Chabad.org AID 2278362, body lines 280–280.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:5920864",
+      "title": "The importance of educating Jewish children",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920864/jewish/The-importance-of-educating-Jewish-children.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 5920864, body lines 193–200."
+      ],
+      "context_status": "partial",
+      "source_type": "existing_publisher_translation_enrichment",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–316. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי והנמען אינם זמינים בעמוד; האימות חל על התרגום המפורסם. תוספת שנבדקה ב-21.11.2026: AID 5920864, body lines 193–200; נוספה פרפרזה ממוקדת על שלושת ההקשרים ועל יבמות קי״ד ע״א. המקור הוא תרגום אנגלי; אין שינוי בסטטוס Verified.",
+      "existing_identity": true,
+      "existing_propositions_before": 2,
+      "propositions_added": 1,
+      "total_propositions_after": 3
+    },
+    {
+      "candidate_key": "aid:3907531",
+      "title": "Blessings for Opening a New Business — Letter No. 1105",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3907531/jewish/Blessings-for-opening-a-new-business.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 3907531, body lines 285–286."
+      ],
+      "context_status": "partial",
+      "source_type": "existing_publisher_translation_enrichment",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "Complete visible translation inspected; original letter, business plan and outcomes not inspected. תוספת שנבדקה ב-21.11.2026: AID 3907531, body lines 285–286; נוספה פרפרזה נפרדת על ההתוועדויות בי״ב–י״ג תמוז. המקור הוא תרגום אנגלי; אין שינוי בסטטוס Verified.",
+      "existing_identity": true,
+      "existing_propositions_before": 3,
+      "propositions_added": 1,
+      "total_propositions_after": 4
+    },
+    {
+      "candidate_key": "aid:2278361",
+      "title": "Blessings and guidance for a boy's recovery — Letter No. 696",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278361/jewish/Blessings-and-guidance-for-a-boys-recovery.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2278361, body lines 277–279."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278361, ביום 21.11.2026, במיקומים Chabad.org AID 2278361, body lines 277–277.; Chabad.org AID 2278361, body lines 278–279.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:3906843",
+      "title": "The value of a positive attitude; the importance of one's physical health — Letter No. 1061",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3906843/jewish/The-value-of-a-positive-attitude-the-importance-of-ones-physical-health.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 3906843, body lines 289–293."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 3906843, ביום 21.11.2026, במיקומים Chabad.org AID 3906843, body lines 289–290.; Chabad.org AID 3906843, body lines 291–293.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:2277081",
+      "title": "New Year's Blessings — Letter No. 772",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277081/jewish/New-Years-Blessings.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2277081, body lines 319–323."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2277081, ביום 21.11.2026, במיקומים Chabad.org AID 2277081, body lines 319–319.; Chabad.org AID 2277081, body lines 320–322.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:2278150",
+      "title": "Blessings for physical health — Letter No. 606",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278150/jewish/Blessings-for-physical-health.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2278150, body lines 277–280."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278150, ביום 21.11.2026, במיקומים Chabad.org AID 2278150, body lines 279–279.; Chabad.org AID 2278150, body lines 280–280.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:2277998",
+      "title": "Blessings for health — Letter No. 594",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277998/jewish/Blessings-for-health.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2277998, body lines 276–284."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2277998, ביום 21.11.2026, במיקומים Chabad.org AID 2277998, body lines 276–276.; Chabad.org AID 2277998, body lines 282–284.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:5920906",
+      "title": "Sending packages to the Rebbe's parents in Russia — Letter No. 130",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920906/jewish/Sending-packages-to-the-Rebbes-parents-in-Russia.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 5920906, body lines 278–282."
+      ],
+      "context_status": "partial",
+      "source_type": "publisher_english_translation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 5920906, ביום 21.11.2026, במיקומים Chabad.org AID 5920906, body lines 278–279.; Chabad.org AID 5920906, body lines 280–282.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+    },
+    {
+      "candidate_key": "aid:2377430",
+      "title": "The Rebbe's Letter Carried Me through Korea — recipient testimony",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2377430/jewish/The-Rebbes-Letter-Carried-Me-through-Korea.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2377430, body lines 249–269."
+      ],
+      "context_status": "partial",
+      "source_type": "mixed_recipient_testimony_and_translated_letter_excerpt",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2377430, ביום 21.11.2026, במיקומים Chabad.org AID 2377430, body lines 249–253.; Chabad.org AID 2377430, body lines 267–269.. נבדקה עדות רטרוספקטיבית של מקבל המכתב; לא נבדקו מסמכי צבא, הקלטה מלאה, תמליל גולמי או עדויות מקבילות. הפרופוזיציות מתארות את זיכרונו של המספר ואינן מאמתות סיבתיות או טענה על תוצאה על-טבעית. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו. נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2377430, ביום 21.11.2026, במיקומים Chabad.org AID 2377430, body lines 254–265.. העמוד מציג את הקטע כתרגום ממכתב שנכתב ביידיש. קישור לסריקת המכתב המקורי מופיע בעמוד אך הסריקה לא נפתחה; כתב היד והנוסח היידי לא נבדקו. התרגום אינו עד עצמאי נוסף. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "new_source_identities_added": 2,
+      "new_response_propositions_added": 3,
+      "component_witness_status": [
+        {
+          "document_component_id": "recipient-testimony",
+          "independent_witness": true,
+          "witness_group_id": "bernard-cytryn-korea-war-testimony"
+        },
+        {
+          "document_component_id": "yiddish-letter-excerpt",
+          "independent_witness": false,
+          "translation_of_evidence_family_id": "korea-war-letter-and-recipient-testimony-bernard-cytryn-aid2377430"
+        }
+      ]
+    },
+    {
+      "candidate_key": "aid:3137281",
+      "title": "מה כתב הרבי למנהל בית חולים? — עיבוד עברי של איגרת לפרופ׳ מרדכי שני",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/3137281",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "BeitChabad.com AID 3137281, Hebrew body lines 138–141 and 146–159."
+      ],
+      "context_status": "partial",
+      "source_type": "hebrew_secondary_editorial_adaptation",
+      "witness_group_id": null,
+      "independent_witness": false,
+      "verification_scope": "נבדק גוף הכתבה העברית ב-BeitChabad.com, AID 3137281, ביום 21.11.2026, במיקומים BeitChabad.com AID 3137281, Hebrew body lines 138–141.; BeitChabad.com AID 3137281, Hebrew body lines 146–159.. העמוד מסמן את עצמו כ״מעובד מדבריו״ וכ״עיבוד חופשי״; איגרת המקור, כתב היד והמהדורה המקורית לא נבדקו. התמציות מתארות את הדיווח והעיבוד של הכתבה בלבד, ולא נוסח ישיר או מלא של דברי הרבי. לא הועתק טקסט מוגן במלואו."
+    }
+  ],
+  "existing_identity_updates": [
+    {
+      "aid": 3907531,
+      "canonical_file": "data/items/mixed-authorized-content-2026-11-12-039.json",
+      "existing_propositions_before": 3,
+      "propositions_added": 1,
+      "total_propositions_after": 4,
+      "locator": "Chabad.org AID 3907531, body lines 285–286.",
+      "status_after": "Verified",
+      "evidence_family_id": "letter-no-1105-opening-wholesale-business",
+      "note": "In-place enrichment from the public English translation; status remains Verified; no new source identity or independent witness."
+    },
+    {
+      "aid": 5920864,
+      "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+      "existing_propositions_before": 2,
+      "propositions_added": 1,
+      "total_propositions_after": 3,
+      "locator": "Chabad.org AID 5920864, body lines 193–200.",
+      "status_after": "Verified",
+      "evidence_family_id": "igrot-letter-5703-8-iyar-letter72-aid5920864",
+      "note": "In-place enrichment from the public English translation; status remains Verified; no new source identity or independent witness."
+    }
+  ],
+  "existing_identity_rechecks": [],
+  "records": [
+    {
+      "id": "chabad-letter-2279284",
+      "aid": 2279284,
+      "canonical_key": "aid:2279284",
+      "title": "The value of sending photographs of the chassidim to the Rebbe — Letter No. 508",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2279284/jewish/The-value-of-sending-photographs-of-the-chassidim-to-the-Rebbe.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "25 Tammuz, 5709",
+      "date_precision": "day_as_published",
+      "audience": "The recipient's name was not released by the publisher.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5709-25-tammuz-letter508-aid2279284",
+      "evidence_family_id": "igrot-letter-5709-25-tammuz-letter508-aid2279284",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The letter responds to an earlier inquiry about publications and a correspondence concerning photographs; the full incoming letter is not available in the inspected page.",
+      "documented_circumstances": "The published translation describes arrangements for publications sent to Eretz Yisrael, publication funding for a series of maamarim, and a discussion of a letter concerning photographs.",
+      "response_propositions": [
+        "המכתב מציין שפרסומים נשלחו לארץ ישראל באמצעות ר׳ אברהם פריז, וכי בידיו קטלוג של פרסומי חב״ד ושל ספרים הזמינים למכירה.",
+        "לגבי סדרת המאמרים ״בשעה שהקדימו״ לשנת תרע״ב, הכותב מציין שיש רשות לפרסמה אך יש להעמיד מראש את האמצעים הכספיים, לפחות בחלקם, משום שהיקף המכירות הצפוי מוגבל.",
+        "בנוגע למכתב על הצילומים, הכותב אומר שהעתיק אותו במכתב לר׳ הנדל הבלין ומבהיר שלא היה שולח אותו אילו לא שיקף את הוראות הרבי; הוא מציין את ר׳ חודקוב בהקשר של אמינות הדברים."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2279284, body lines 279–279.",
+        "Chabad.org AID 2279284, body lines 280–280.",
+        "Chabad.org AID 2279284, body lines 281–281."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2279284, body lines 279–279.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2279284, ביום 21.11.2026, במיקומים Chabad.org AID 2279284, body lines 279–279.; Chabad.org AID 2279284, body lines 280–280.; Chabad.org AID 2279284, body lines 281–281.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "שם הנמען אינו מפורסם בעמוד.",
+        "הטקסט שנבדק הוא תרגום אנגלי; המקור והמסמכים הנלווים לא נבדקו.",
+        "הפרפרזה אינה מכריעה בשאלת ההלכה של צילום; היא מתעדת רק את הקטעים שפורסמו."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "The value of sending photographs of the chassidim to the Rebbe — Letter No. 508",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2279284/jewish/The-value-of-sending-photographs-of-the-chassidim-to-the-Rebbe.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2279284, ביום 21.11.2026, במיקומים Chabad.org AID 2279284, body lines 279–279.; Chabad.org AID 2279284, body lines 280–280.; Chabad.org AID 2279284, body lines 281–281.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-2279261",
+      "aid": 2279261,
+      "canonical_key": "aid:2279261",
+      "title": "The need for outreach activities — Letter No. 500",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2279261/jewish/The-need-for-outreach-activities.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "4 Tammuz, 5709",
+      "date_precision": "day_as_published",
+      "audience": "R. Mordechai HaKohen Perlow, described by the publisher as an active member of the chassidic brotherhood.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5709-4-tammuz-letter500-aid2279261",
+      "evidence_family_id": "igrot-letter-5709-4-tammuz-letter500-aid2279261",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The recipient had ordered materials; the letter addresses distribution of educational materials and the division between the wider community and the chassidic brotherhood.",
+      "documented_circumstances": "The translation lists three enclosures and then discusses responsibility for strengthening communal unity.",
+      "response_propositions": [
+        "המכתב מפרט שלושה מסמכים מצורפים — קונטרס לחג הגאולה ושתי פניות ארגוניות — ומקשר אותם לשלושה צירי עשייה: תורה, עבודת ה׳ וגמילות חסדים; הנמען מתבקש להפיץ אותם לציבור בדרך המתאימה.",
+        "בהמשך מתואר פיצול בין הציבור הרחב לבין חברי חוג החסידים, והאחריות לתיקון המצב מוצגת כפעולה של קירוב הציבור הרחב אל חוג החסידים."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2279261, body lines 319–320.",
+        "Chabad.org AID 2279261, body lines 321–321."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2279261, body lines 319–320.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2279261, ביום 21.11.2026, במיקומים Chabad.org AID 2279261, body lines 319–320.; Chabad.org AID 2279261, body lines 321–321.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "העמוד מתאר את הנמען ואת המסמכים המצורפים; מכתבו המקורי של הנמען לא נבדק.",
+        "התרגום האנגלי אינו עד עצמאי נוסף."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "The need for outreach activities — Letter No. 500",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2279261/jewish/The-need-for-outreach-activities.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2279261, ביום 21.11.2026, במיקומים Chabad.org AID 2279261, body lines 319–320.; Chabad.org AID 2279261, body lines 321–321.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-2278362",
+      "aid": 2278362,
+      "canonical_key": "aid:2278362",
+      "title": "Blessings for health — Letter No. 697",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278362/jewish/Blessings-for-health.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "27 Menachem Av, 5710",
+      "date_precision": "day_as_published",
+      "audience": "The recipient's identity was not released by the publisher.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5710-27-menachem-av-letter697-aid2278362",
+      "evidence_family_id": "igrot-letter-5710-27-menachem-av-letter697-aid2278362",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The recipient reported improved health and supplied information about study schedules and school curricula.",
+      "documented_circumstances": "The letter connects the report of improved health with fixed study times, farbrengens and educational institutions.",
+      "response_propositions": [
+        "הכותב מברך על הדיווח בדבר שיפור בריאות הנמען ומציג את בריאות הגוף היהודי כעניין של קדושה, תוך עידוד להמשך התקדמות.",
+        "המכתב מודה על עדכון בדבר זמני לימוד קבועים של חסידות והתוועדויות, וכן על תכנית הלימודים בבתי הספר בית שרה ובית רבקה; הוא מבקש שתלמידות הנוסעות לארצות הברית יקבלו את כתובת Merkos L’Inyonei Chinuch."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2278362, body lines 277–279.",
+        "Chabad.org AID 2278362, body lines 280–280."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2278362, body lines 277–279.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278362, ביום 21.11.2026, במיקומים Chabad.org AID 2278362, body lines 277–279.; Chabad.org AID 2278362, body lines 280–280.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "זהות הנמען לא פורסמה.",
+        "הדברים מתעדים מכתב היסטורי מסוים ואינם הנחיה רפואית עכשווית."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "Blessings for health — Letter No. 697",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278362/jewish/Blessings-for-health.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278362, ביום 21.11.2026, במיקומים Chabad.org AID 2278362, body lines 277–279.; Chabad.org AID 2278362, body lines 280–280.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-2278361",
+      "aid": 2278361,
+      "canonical_key": "aid:2278361",
+      "title": "Blessings and guidance for a boy's recovery — Letter No. 696",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278361/jewish/Blessings-and-guidance-for-a-boys-recovery.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "26 Menachem Av, 5710",
+      "date_precision": "day_as_published",
+      "audience": "A parent or guardian of a boy; the recipient's identity was not released.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5710-26-menachem-av-letter696-aid2278361",
+      "evidence_family_id": "igrot-letter-5710-26-menachem-av-letter696-aid2278361",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The letter responds to a report of a boy's improving health and addresses age-appropriate religious conversation and communal encouragement.",
+      "documented_circumstances": "The published translation reports a health update, guidance about speaking with the boy, and thanks for efforts that led others to recite a chapter of Tehillim.",
+      "response_propositions": [
+        "המכתב מביע שמחה על שיפור בבריאותו של ילד ומצפה לעדכון על המשך ההחלמה עד לחזרה מלאה לבריאות.",
+        "ההורה מתבקש לדבר עם הילד, בהתאם לגילו, על נשיא הדור הקודם ועל השפעתו של צדיק גם לאחר פטירתו; בהמשך ניתנת תודה על מאמצים שהביאו רבים להתחיל לומר את פרק ע״א בתהילים."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2278361, body lines 277–277.",
+        "Chabad.org AID 2278361, body lines 278–279."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2278361, body lines 277–277.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278361, ביום 21.11.2026, במיקומים Chabad.org AID 2278361, body lines 277–277.; Chabad.org AID 2278361, body lines 278–279.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "הנמען והילד אינם מזוהים בעמוד.",
+        "האמור הוא תוכן איגרת היסטורית ולא תחליף לייעוץ רפואי או חינוכי מקצועי."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "Blessings and guidance for a boy's recovery — Letter No. 696",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278361/jewish/Blessings-and-guidance-for-a-boys-recovery.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278361, ביום 21.11.2026, במיקומים Chabad.org AID 2278361, body lines 277–277.; Chabad.org AID 2278361, body lines 278–279.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-3906843",
+      "aid": 3906843,
+      "canonical_key": "aid:3906843",
+      "title": "The value of a positive attitude; the importance of one's physical health — Letter No. 1061",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3906843/jewish/The-value-of-a-positive-attitude-the-importance-of-ones-physical-health.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "22 Sivan, 5711",
+      "date_precision": "day_as_published",
+      "audience": "The recipient's name was not released; the letter also refers to her husband.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5711-22-sivan-letter1061-aid3906843",
+      "evidence_family_id": "igrot-letter-5711-22-sivan-letter1061-aid3906843",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The recipient reported a safe journey and described feeling broken-spirited; the response addresses emotional state and physical health.",
+      "documented_circumstances": "The letter distinguishes spiritual humility from a harmful state of despondency and invokes Rambam's Hilchot De'ot 4:1.",
+      "response_propositions": [
+        "המכתב מבחין בין ״לב נשבר״ במובן רוחני לבין מצב של שברון רוח; הוא מציין שמצב נפשי כזה עלול לפגוע בבריאות ובעצבים ולגרום לאדם לחוות אירועים בעוצמה קשה יותר.",
+        "הכותב מנמק את חשיבות השמירה על הגוף בכך שהגוף נועד לאפשר קיום תורה ומצוות, ומפנה לרמב״ם, הלכות דעות ד׳:א׳, המתאר שמירת גוף בריא כחלק מדרכי ה׳."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 3906843, body lines 289–290.",
+        "Chabad.org AID 3906843, body lines 291–293."
+      ],
+      "proposition_source_locator": "Chabad.org AID 3906843, body lines 289–290.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 3906843, ביום 21.11.2026, במיקומים Chabad.org AID 3906843, body lines 289–290.; Chabad.org AID 3906843, body lines 291–293.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "הנמען ובעלה אינם מזוהים בעמוד.",
+        "זהו מכתב דתי-היסטורי; אין להשתמש בו כתחליף לאבחון או לטיפול רפואי או נפשי."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "The value of a positive attitude; the importance of one's physical health — Letter No. 1061",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3906843/jewish/The-value-of-a-positive-attitude-the-importance-of-ones-physical-health.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 3906843, ביום 21.11.2026, במיקומים Chabad.org AID 3906843, body lines 289–290.; Chabad.org AID 3906843, body lines 291–293.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-2277081",
+      "aid": 2277081,
+      "canonical_key": "aid:2277081",
+      "title": "New Year's Blessings — Letter No. 772",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277081/jewish/New-Years-Blessings.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "6 Tishrei, 5711",
+      "date_precision": "day_as_published",
+      "audience": "R. Moshe Zev Chaitovsky.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5711-6-tishrei-letter772-aid2277081",
+      "evidence_family_id": "igrot-letter-5711-6-tishrei-letter772-aid2277081",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The recipient had described a business he planned to begin after Yom Kippur; the letter also recommends devotional and study practices.",
+      "documented_circumstances": "The translation connects a blessing for a new business with daily Tehillim and a fixed study time.",
+      "response_propositions": [
+        "המכתב מברך את הנמען לקראת פתיחת עסק חדש ומציג את ההצלחה החומרית כמשאב שאפשר להפוך לעשייה רוחנית.",
+        "הנמען מתבקש להוסיף במשך שלושה חודשים אמירת פרק ע״א בתהילים בכל יום, וכן לבקש מר׳ דוד אדלמן לקבוע עמו זמן לימוד קבוע בתורת הרבי."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2277081, body lines 319–319.",
+        "Chabad.org AID 2277081, body lines 320–322."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2277081, body lines 319–319.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2277081, ביום 21.11.2026, במיקומים Chabad.org AID 2277081, body lines 319–319.; Chabad.org AID 2277081, body lines 320–322.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "ההמלצות מתועדות באיגרת מסוימת ואינן הוראה כללית לכל אדם.",
+        "המספור ״712״ בתצוגת העמוד כולל סימון הערת שוליים; ההערה מבהירה שהכוונה לפרק הקשור לשנות חייו של הרבי הריי״צ."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "New Year's Blessings — Letter No. 772",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277081/jewish/New-Years-Blessings.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2277081, ביום 21.11.2026, במיקומים Chabad.org AID 2277081, body lines 319–319.; Chabad.org AID 2277081, body lines 320–322.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-2278150",
+      "aid": 2278150,
+      "canonical_key": "aid:2278150",
+      "title": "Blessings for physical health — Letter No. 606",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278150/jewish/Blessings-for-physical-health.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "17 Iyar, 5710",
+      "date_precision": "day_as_published",
+      "audience": "A woman whose name was not released by the publisher.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5710-17-iyar-letter606-aid2278150",
+      "evidence_family_id": "igrot-letter-5710-17-iyar-letter606-aid2278150",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The recipient reported a visit to a doctor; the letter addresses following medical instructions within a religious framework.",
+      "documented_circumstances": "The translation mentions the doctor's instructions, prescribed means and the role of mitzvot and good deeds in the letter's religious framing.",
+      "response_propositions": [
+        "המכתב מציין שהנמענת ביקרה אצל רופא ומניח שהיא פועלת לפי הוראותיו.",
+        "הכותב מתאר את הרופא ואת האמצעים שהוא רושם כשליחים שבאמצעותם עשויה לבוא הרפואה, ובאותה מסגרת דתית מציג מצוות ומעשים טובים כמקור רוחני לבריאות ולכוח."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2278150, body lines 279–279.",
+        "Chabad.org AID 2278150, body lines 280–280."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2278150, body lines 279–279.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278150, ביום 21.11.2026, במיקומים Chabad.org AID 2278150, body lines 279–279.; Chabad.org AID 2278150, body lines 280–280.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "השם של הנמענת לא פורסם.",
+        "זהו תיעוד של איגרת היסטורית ולא ייעוץ רפואי; יש לפעול לפי הנחיות אנשי רפואה מוסמכים."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "Blessings for physical health — Letter No. 606",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278150/jewish/Blessings-for-physical-health.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278150, ביום 21.11.2026, במיקומים Chabad.org AID 2278150, body lines 279–279.; Chabad.org AID 2278150, body lines 280–280.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-2277998",
+      "aid": 2277998,
+      "canonical_key": "aid:2277998",
+      "title": "Blessings for health — Letter No. 594",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277998/jewish/Blessings-for-health.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "7 Iyar, 5710",
+      "date_precision": "day_as_published",
+      "audience": "Rabbi Shneur Zalman Duchman, described as an active member of the chassidic brotherhood.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5710-7-iyar-letter594-aid2277998",
+      "evidence_family_id": "igrot-letter-5710-7-iyar-letter594-aid2277998",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The recipient asked that a pan be read and had consulted expert doctors; the letter also asks him to distribute a pamphlet and continue sending memoirs.",
+      "documented_circumstances": "The letter records the Rebbe's response to the request, a mention of the recipient's name in the private chamber, and practical requests about dissemination and memoirs.",
+      "response_propositions": [
+        "המכתב מציין שהרבי קרא פ״נ עבור הנמען בעת ביקורו בציון חותנו, והזכיר את שמו גם בחדרו הפרטי; באותו קטע נאמר שהנמען התייעץ עם רופאים מומחים.",
+        "המכתב מציין כי צורפה חוברת חדשה ומבקש להפיצה בציבור, וכן מבקש מן הנמען לחדש את משלוח זיכרונותיו."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2277998, body lines 276–276.",
+        "Chabad.org AID 2277998, body lines 282–284."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2277998, body lines 276–276.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2277998, ביום 21.11.2026, במיקומים Chabad.org AID 2277998, body lines 276–276.; Chabad.org AID 2277998, body lines 282–284.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "הנמען מזוהה בעמוד, אך הפ״נ עצמו והמסמכים הנלווים לא נבדקו.",
+        "הפרפרזה אינה מסיקה אם החוברת הופצה בפועל או אם נשלחו זיכרונות נוספים."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "Blessings for health — Letter No. 594",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277998/jewish/Blessings-for-health.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2277998, ביום 21.11.2026, במיקומים Chabad.org AID 2277998, body lines 276–276.; Chabad.org AID 2277998, body lines 282–284.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-5920906",
+      "aid": 5920906,
+      "canonical_key": "aid:5920906",
+      "title": "Sending packages to the Rebbe's parents in Russia — Letter No. 130",
+      "type": "letter",
+      "source_class": "publisher_translation_of_correspondence",
+      "source_class_detail": "Chabad.org / TheRebbe.org, Sichos in English Collection; published English translation attributed to Eli Touger",
+      "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920906/jewish/Sending-packages-to-the-Rebbes-parents-in-Russia.htm",
+      "publisher": "Chabad.org / TheRebbe.org",
+      "collection": "Sichos in English Collection",
+      "language": "English",
+      "original_language": "unknown",
+      "date_original": "9 Shvat, 5704",
+      "date_precision": "day_as_published",
+      "audience": "R. Chayim Yosef Rosenbloom, identified by the publisher as a distinguished elder chassid.",
+      "author_name": "Rabbi Menachem M. Schneerson",
+      "author_role": "publisher-attributed author of correspondence",
+      "authorship_status": "Chabad.org identifies the item as correspondence of the Lubavitcher Rebbe; the autograph and original-language edition were not inspected.",
+      "source_role": "publisher_english_translation",
+      "primary_secondary_status": "Non-independent publisher translation of one underlying letter; not an additional independent witness.",
+      "witness_type": "publisher_translation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-5704-9-shvat-letter130-aid5920906",
+      "evidence_family_id": "igrot-letter-5704-9-shvat-letter130-aid5920906",
+      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or other translation must be linked to the same Evidence Family and must not be counted as an independent witness.",
+      "question_or_problem": "The correspondence concerns packages sent to the Rebbe's parents in Russia and requests confirmation of their receipt and circumstances.",
+      "documented_circumstances": "The letter refers to a $150 transfer included in a previous $500 sum and asks whether the packages arrived and what information is available about the parents.",
+      "response_propositions": [
+        "המכתב מתייחס להעברת 150 דולר לנמען כחלק מסכום של 500 דולר שנשלח קודם לכן באמצעות הרבי הקודם, בהקשר של שליחת חבילות להורי הרבי ברוסיה.",
+        "הכותב מבקש עדכון אם החבילות הגיעו להורים ומה ידוע על מצבם, ומציין שטרם קיבל תשובה אף שממכתב אחר עולה שהחבילות נשלחו."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 5920906, body lines 278–279.",
+        "Chabad.org AID 5920906, body lines 280–282."
+      ],
+      "proposition_source_locator": "Chabad.org AID 5920906, body lines 278–279.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 5920906, ביום 21.11.2026, במיקומים Chabad.org AID 5920906, body lines 278–279.; Chabad.org AID 5920906, body lines 280–282.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "העמוד מציג את התרגום האנגלי בלבד; תכתובות הטלגרף והמסמכים הכספיים לא נבדקו.",
+        "אין להסיק מהאיגרת לבדה את גורל החבילות או את מצב ההורים בפועל."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim research paraphrase and locator",
+      "provenance": {
+        "source_name": "Sending packages to the Rebbe's parents in Russia — Letter No. 130",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920906/jewish/Sending-packages-to-the-Rebbes-parents-in-Russia.htm",
+        "publisher": "Chabad.org / TheRebbe.org",
+        "collection": "Sichos in English Collection",
+        "accessed": "2026-11-21",
+        "publication_type": "published English translation of correspondence",
+        "translator": "Eli Touger (publisher attribution)",
+        "authorship_status": "Publisher attribution; autograph not inspected.",
+        "transmission_type": "Published English translation; original-language text not inspected.",
+        "original_language_body_inspected": false,
+        "textual_status": "Only the cited English body segments were inspected.",
+        "verification_status": "source_text_inspected; source-grounded non-verbatim paraphrases; context partial; translation not an independent witness.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 5920906, ביום 21.11.2026, במיקומים Chabad.org AID 5920906, body lines 278–279.; Chabad.org AID 5920906, body lines 280–282.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "rights_status": "No full protected text copied."
+      },
+      "notes": "Status remains Parsed. This is a translated presentation, not an independent original-language witness.",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-testimony-bernard-cytryn-korea-aid2377430",
+      "aid": 2377430,
+      "document_component_id": "recipient-testimony",
+      "canonical_key": "aid:2377430#component:recipient-testimony",
+      "title": "The Rebbe's Letter Carried Me through Korea — recipient testimony",
+      "type": "testimony",
+      "source_class": "published_first_person_recipient_testimony",
+      "source_class_detail": "Chabad.org published first-person account by the recipient; the page also contains a separate translated letter excerpt",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2377430/jewish/The-Rebbes-Letter-Carried-Me-through-Korea.htm",
+      "publisher": "Chabad.org",
+      "language": "English",
+      "original_language": "English",
+      "date_original": "Not stated in the inspected body",
+      "date_precision": "unknown_in_inspected_body",
+      "audience": "Bernard Cytryn, identified by the publisher as a Jewish soldier serving in Korea.",
+      "author_name": "Bernard Cytryn (testimony narrator)",
+      "author_role": "recipient and first-person witness",
+      "authorship_status": "The page presents the account as the recipient's first-person recollection; the underlying recording and raw transcript were not inspected.",
+      "source_role": "recipient_testimony",
+      "primary_secondary_status": "First-person retrospective testimony; independent for the narrator's recollection, not an independent textual witness to the embedded translated letter.",
+      "witness_type": "published_first_person_recipient_testimony",
+      "independent_witness": true,
+      "witness_group_id": "bernard-cytryn-korea-war-testimony",
+      "translation_of_evidence_family_id": null,
+      "evidence_family_id": "korea-war-letter-and-recipient-testimony-bernard-cytryn-aid2377430",
+      "identity_note": "This component records the recipient's retrospective testimony. The embedded English rendering of the Yiddish letter is represented separately under the same Evidence Family and is not counted as an independent witness.",
+      "question_or_problem": "The narrator recounts a meeting before deployment and a later letter received while serving in Korea.",
+      "documented_circumstances": "The account describes a pre-deployment meeting, religious guidance, a letter received in Korea and the narrator's recollection of the letter's emotional effect.",
+      "response_propositions": [
+        "בעדותו מספר Cytryn כי לפני יציאתו לקוריאה הרבי ביקש ממנו להקפיד על הנחת תפילין ותפילה מדי יום, ולעודד חיילים יהודים נוספים לעשות זאת.",
+        "המספר מתאר את המכתב שקיבל בקוריאה כאוצר אישי ומספר שקרא אותו שוב ושוב ושמצא בו תקווה ואומץ בעת פחד; זו עדות אישית בדיעבד ולא אימות עצמאי של נסיבות הלחימה או של סיבת הישרדותו."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2377430, body line 253.",
+        "Chabad.org AID 2377430, body lines 267–269."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2377430, body line 253.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2377430, ביום 21.11.2026, במיקומים Chabad.org AID 2377430, body lines 249–253.; Chabad.org AID 2377430, body lines 267–269.. נבדקה עדות רטרוספקטיבית של מקבל המכתב; לא נבדקו מסמכי צבא, הקלטה מלאה, תמליל גולמי או עדויות מקבילות. הפרופוזיציות מתארות את זיכרונו של המספר ואינן מאמתות סיבתיות או טענה על תוצאה על-טבעית. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "העדות רטרוספקטיבית; לא נבדקו הקלטה מלאה, תמליל גולמי, מסמכי שירות או עדויות מקבילות.",
+        "האמונה האישית של המספר בדבר הישרדותו נשמרת כעדות שלו בלבד ואינה מוצגת כעובדה סיבתית מאומתת.",
+        "הקטע המתורגם של המכתב הוא רכיב נפרד ואינו עד עצמאי נוסף."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase",
+      "provenance": {
+        "source_name": "The Rebbe's Letter Carried Me through Korea",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2377430/jewish/The-Rebbes-Letter-Carried-Me-through-Korea.htm",
+        "publisher": "Chabad.org",
+        "accessed": "2026-11-21",
+        "publication_type": "published first-person recipient testimony",
+        "source_witness": "Recipient's retrospective account in the public article body.",
+        "transmission_type": "Published English testimony; raw recording and transcript not inspected.",
+        "textual_status": "Body lines 249–253 and 267–269 inspected.",
+        "verification_status": "source_text_inspected; testimony is first-person but retrospective; context partial.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2377430, ביום 21.11.2026, במיקומים Chabad.org AID 2377430, body lines 249–253.; Chabad.org AID 2377430, body lines 267–269.. נבדקה עדות רטרוספקטיבית של מקבל המכתב; לא נבדקו מסמכי צבא, הקלטה מלאה, תמליל גולמי או עדויות מקבילות. הפרופוזיציות מתארות את זיכרונו של המספר ואינן מאמתות סיבתיות או טענה על תוצאה על-טבעית. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "original_letter_image_linked_but_not_inspected": true
+      },
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "chabad-letter-excerpt-bernard-cytryn-korea-aid2377430",
+      "aid": 2377430,
+      "document_component_id": "yiddish-letter-excerpt",
+      "canonical_key": "aid:2377430#component:yiddish-letter-excerpt",
+      "title": "Yiddish letter excerpt to Bernard Cytryn in Korea — published English translation",
+      "type": "letter_excerpt",
+      "source_class": "publisher_translated_letter_excerpt",
+      "source_class_detail": "English excerpt identified by the publisher as a translation from a Yiddish letter; original scan linked but not inspected",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2377430/jewish/The-Rebbes-Letter-Carried-Me-through-Korea.htm",
+      "publisher": "Chabad.org",
+      "language": "English",
+      "original_language": "Yiddish",
+      "date_original": "Not stated in the inspected body",
+      "date_precision": "unknown_in_inspected_body",
+      "audience": "Bernard Cytryn, a Jewish soldier serving in Korea.",
+      "author_name": "Rabbi Menachem M. Schneerson (publisher attribution)",
+      "author_role": "publisher-attributed author of the underlying letter",
+      "authorship_status": "The article presents the excerpt as a letter from the Rebbe; original scan and autograph were not inspected.",
+      "source_role": "publisher_translation_excerpt",
+      "primary_secondary_status": "Non-independent English translation excerpt of a Yiddish letter; not an additional independent witness.",
+      "witness_type": "publisher_translated_excerpt",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_status": "Published English translation excerpt from a Yiddish letter; original image linked but not inspected; not counted as independent witness.",
+      "translation_of_evidence_family_id": "korea-war-letter-and-recipient-testimony-bernard-cytryn-aid2377430",
+      "evidence_family_id": "korea-war-letter-and-recipient-testimony-bernard-cytryn-aid2377430",
+      "identity_note": "This is the translated letter excerpt embedded in the testimony page. It shares an Evidence Family with the recipient testimony; translation is not an independent witness.",
+      "question_or_problem": "The excerpt asks the soldier to report on his health, tefillin and Jewish activity, including the Passover Seder and holiday prayer arrangements.",
+      "documented_circumstances": "The excerpt addresses a Jewish soldier serving in Korea and asks about religious life and the welfare of fellow Jewish servicemen.",
+      "response_propositions": [
+        "בקטע המובא כתרגום ממכתב ביידיש מתבקש החייל לעדכן על בריאותו, הנחת תפילין ופעילות יהודית, וכן למסור כיצד נערכו הסדר ותפילות החג והאם היה מניין; בהמשך הוא מתבקש לעודד את חבריו לחזק את ביטחונם בה׳ ואת ידידיו היהודים להניח תפילין."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2377430, body lines 254–265."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2377430, body lines 254–265.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2377430, ביום 21.11.2026, במיקומים Chabad.org AID 2377430, body lines 254–265.. העמוד מציג את הקטע כתרגום ממכתב שנכתב ביידיש. קישור לסריקת המכתב המקורי מופיע בעמוד אך הסריקה לא נפתחה; כתב היד והנוסח היידי לא נבדקו. התרגום אינו עד עצמאי נוסף. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "הקטע הוא תרגום אנגלי חלקי של מכתב ביידיש; הסריקה המקורית לא נבדקה.",
+        "אין לראות בתרגום עד עצמאי או כתחליף למכתב המלא.",
+        "העמוד אינו מספק את מכתב הפונה או את התכתובת המלאה."
+      ],
+      "has_content_evidence": true,
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase",
+      "provenance": {
+        "source_name": "The Rebbe's Letter Carried Me through Korea",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2377430/jewish/The-Rebbes-Letter-Carried-Me-through-Korea.htm",
+        "publisher": "Chabad.org",
+        "accessed": "2026-11-21",
+        "publication_type": "publisher-translated excerpt embedded in recipient testimony",
+        "source_witness": "Public English translation excerpt identified as a Yiddish letter.",
+        "transmission_type": "English translation excerpt; original Yiddish scan linked but not inspected.",
+        "textual_status": "Body lines 254–265 inspected; original-language body not inspected.",
+        "verification_status": "source_text_inspected for the published English excerpt only; non-independent translation; context partial.",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2377430, ביום 21.11.2026, במיקומים Chabad.org AID 2377430, body lines 254–265.. העמוד מציג את הקטע כתרגום ממכתב שנכתב ביידיש. קישור לסריקת המכתב המקורי מופיע בעמוד אך הסריקה לא נפתחה; כתב היד והנוסח היידי לא נבדקו. התרגום אינו עד עצמאי נוסף. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "original_letter_image_linked_but_not_inspected": true
+      },
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    },
+    {
+      "id": "hebrew-editorial-adaptation-hospital-renaming-aid3137281",
+      "aid": 3137281,
+      "canonical_key": "aid:3137281",
+      "title": "מה כתב הרבי למנהל בית חולים? — עיבוד עברי של איגרת לפרופ׳ מרדכי שני",
+      "type": "secondary_publication",
+      "source_class": "hebrew_secondary_editorial_adaptation",
+      "source_class_detail": "BeitChabad.com Hebrew article explicitly labelled as an adaptation/free rendering of a 1977 letter",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/3137281",
+      "publisher": "BeitChabad.com / Chabad.org Media Center",
+      "language": "Hebrew",
+      "original_language": "unknown",
+      "date_original": "1977 (year as reported by the article)",
+      "date_precision": "year_only_as_published",
+      "audience": "Prof. Mordechai Shani, then director of Sheba Medical Center, as reported by the article.",
+      "author_name": "Editorial author not identified in the inspected page",
+      "author_role": "publisher editorial adaptation",
+      "authorship_status": "The page explicitly labels the material as an adaptation; it is not a direct transcript of the underlying letter.",
+      "source_role": "secondary_editorial_adaptation",
+      "primary_secondary_status": "Secondary editorial adaptation of one underlying letter; not an independent witness and not a primary text.",
+      "witness_type": "publisher_adaptation",
+      "independent_witness": false,
+      "witness_group_id": null,
+      "translation_of_evidence_family_id": null,
+      "parent_evidence_family_id": "hospital-renaming-letter-1977-prof-mordechai-shani",
+      "evidence_family_id": "hospital-renaming-letter-1977-prof-mordechai-shani",
+      "identity_note": "This is a Hebrew editorial adaptation of a reported 1977 letter to Prof. Mordechai Shani. Any later direct letter, original-language text or scan must be linked to this same Evidence Family; this adaptation is not an independent witness.",
+      "question_or_problem": "The article presents the letter's proposal to use a healing-oriented name for the hospital and discusses its intended effect on staff and patients.",
+      "documented_circumstances": "The article reports that the letter was addressed to Prof. Mordechai Shani and summarizes the proposed change from 'בית חולים' to 'בית רפואה'.",
+      "response_propositions": [
+        "הכתבה מדווחת שהאיגרת נכתבה לפרופ׳ מרדכי שני, אז מנהל המרכז הרפואי שיבא, ושהיא נפתחה בברכה להצלחת המוסד להביא רפואה שלמה למטופלים.",
+        "העיבוד מציג את ההצעה להשתמש בשם ״בית רפואה״ במקום ״בית חולים״ כאמצעי למקד את הצוות והמטופלים בתכלית הריפוי; זהו סיכום עריכתי של הכתבה ולא בדיקה של נוסח האיגרת המלא."
+      ],
+      "response_proposition_locators": [
+        "BeitChabad.com AID 3137281, Hebrew body lines 138–141.",
+        "BeitChabad.com AID 3137281, Hebrew body lines 146–159."
+      ],
+      "proposition_source_locator": "BeitChabad.com AID 3137281, Hebrew body lines 138–141.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "proposition_language": "Hebrew",
+      "verification_scope": "נבדק גוף הכתבה העברית ב-BeitChabad.com, AID 3137281, ביום 21.11.2026, במיקומים BeitChabad.com AID 3137281, Hebrew body lines 138–141.; BeitChabad.com AID 3137281, Hebrew body lines 146–159.. העמוד מסמן את עצמו כ״מעובד מדבריו״ וכ״עיבוד חופשי״; איגרת המקור, כתב היד והמהדורה המקורית לא נבדקו. התמציות מתארות את הדיווח והעיבוד של הכתבה בלבד, ולא נוסח ישיר או מלא של דברי הרבי. לא הועתק טקסט מוגן במלואו.",
+      "context_status": "partial",
+      "conditions_or_qualifications": [
+        "הכתבה מסומנת במפורש כעיבוד חופשי ולא כתמלול.",
+        "האיגרת המקורית והמקור הארכיוני לא נבדקו.",
+        "אין לייחס את ניסוחי העיבוד ישירות לרבי או להציגם כציטוט."
+      ],
+      "has_content_evidence": true,
+      "direct_rebbe_attribution_allowed": false,
+      "answer_scope": "secondary_reporting_only",
+      "rights_status": "copyrighted-link-only; bounded non-verbatim paraphrase",
+      "provenance": {
+        "source_name": "מה כתב הרבי למנהל בית חולים?",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/3137281",
+        "publisher": "BeitChabad.com / Chabad.org Media Center",
+        "accessed": "2026-11-21",
+        "publication_type": "Hebrew editorial adaptation",
+        "source_witness": "Public Hebrew article; explicitly marked as adaptation/free rendering.",
+        "transmission_type": "Secondary editorial adaptation; underlying letter not inspected.",
+        "textual_status": "Hebrew body lines 138–141 and 146–159 inspected.",
+        "verification_status": "source_text_inspected for the article only; not a primary letter witness; context partial.",
+        "verification_scope": "נבדק גוף הכתבה העברית ב-BeitChabad.com, AID 3137281, ביום 21.11.2026, במיקומים BeitChabad.com AID 3137281, Hebrew body lines 138–141.; BeitChabad.com AID 3137281, Hebrew body lines 146–159.. העמוד מסמן את עצמו כ״מעובד מדבריו״ וכ״עיבוד חופשי״; איגרת המקור, כתב היד והמהדורה המקורית לא נבדקו. התמציות מתארות את הדיווח והעיבוד של הכתבה בלבד, ולא נוסח ישיר או מלא של דברי הרבי. לא הועתק טקסט מוגן במלואו.",
+        "direct_rebbe_attribution_allowed": false
+      },
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "content_enrichment_batch_id": "155",
+      "content_enriched_at": "2026-11-21",
+      "canonical_file": "data/items/content-research-batch-155-2026-11-21.json"
+    }
+  ],
+  "deduplication_check": {
+    "new_aids_unique": true,
+    "new_identity_keys_unique": true,
+    "new_source_urls_unique": false,
+    "duplicate_source_url_explained": true,
+    "source_url_collision_count": 1,
+    "source_url_collision_details": [
+      {
+        "aid": 2377430,
+        "document_component_ids": [
+          "recipient-testimony",
+          "yiddish-letter-excerpt"
+        ],
+        "same_evidence_family": true,
+        "reason": "Two distinct document components on one public page; not duplicate independent witnesses."
+      }
+    ],
+    "new_evidence_families_unique": true,
+    "unique_new_evidence_families": 11,
+    "same_family_memberships": 1,
+    "duplicate_alias_identities": 0,
+    "translations_counted_as_independent_witnesses": 0,
+    "pre_reconciliation_scan": {
+      "canonical_public_search_index_entries_scanned": 9794,
+      "review_queue_records_scanned": 1022,
+      "matching_aids_found": [
+        3907531,
+        5920864
+      ],
+      "matching_source_urls_found": [
+        "https://www.chabad.org/therebbe/letters/default_cdo/aid/3907531/jewish/Blessings-for-opening-a-new-business.htm",
+        "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920864/jewish/The-importance-of-educating-Jewish-children.htm"
+      ],
+      "candidate_aids_absent": [
+        2279284,
+        2279261,
+        2278362,
+        2278361,
+        3906843,
+        2277081,
+        2278150,
+        2277998,
+        5920906,
+        2377430,
+        3137281
+      ],
+      "note": "The complete committed public-search-index.json blob and the current review queue were searched for all candidate AIDs and source URLs. Two existing AIDs were enriched in place; all eleven new AIDs were absent. AID 2377430 is split into two component identities under one Evidence Family."
+    },
+    "full_index_scan_available": true,
+    "full_index_scan_pending_reconciliation": true,
+    "canonical_identity_collisions": [],
+    "missing_canonical_identities": [],
+    "all_target_identities_answer_eligible": false
+  },
+  "retrieval_synthesis": {
+    "current_engine_pattern": "cross_family_practical_guidance_letters",
+    "current_engine_pattern_status": "existing",
+    "claim_level_source_locators": "already tested in regular and deep researcher modes by test_content_readiness.mjs",
+    "deep_researcher_mode": "already present; evidence map retains proposition_source_locator per witness",
+    "batch155_integration": "New sources will enter the public retrieval index after reconciliation. No new curated synthesis pattern was added in this batch.",
+    "attribution_boundary": "Translations and the Hebrew editorial adaptation remain non-independent presentations; the Korea recipient's first-person recollection is labelled as testimony. No system-generated inference is attributed to the Rebbe."
+  },
+  "language_distribution": {
+    "English": 11,
+    "Hebrew": 1
+  },
+  "original_language_distribution": {
+    "unknown": 10,
+    "English": 1,
+    "Yiddish": 1
+  },
+  "source_type_distribution": {
+    "publisher_translation": 9,
+    "recipient_testimony": 1,
+    "translated_letter_excerpt": 1,
+    "secondary_editorial_adaptation": 1
+  },
+  "proposition_language_distribution": {
+    "Hebrew": 24
+  },
+  "source_body_review_note": "13 גופי פרסום נבדקו בפועל: תשע איגרות מתורגמות, שני רכיבים נפרדים מתוך עדות אחת, עיבוד עברי משני אחד, ושתי זהויות קיימות שהועשרו במקומן. תרגומים ועיבודים אינם נספרים כעדים עצמאיים.",
+  "blocked_note": "הגישה הישירה ל-AID 4666220 נכשלה ב-Internal Error, ו-12 דפי AID נוספים הציגו shell ללא גוף פרסום קריא. במקום לחזור על crawler חסום, נבדקו 13 גופי פרסום חלופיים נגישים.",
+  "notes": "No new Verified status was created. Two existing Verified identities were enriched in place. All new correspondence translations and the Hebrew adaptation remain Parsed and non-independent; the recipient's testimony is independent only for the narrator's own recollection, not for the translated letter text.",
+  "review_summary": {
+    "batch_id": "155",
+    "batch_file": "data/items/content-research-batch-155-2026-11-21.json",
+    "reviewed_at": "2026-11-21T11:23:32+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 26,
+    "source_bodies_inspected": 13,
+    "source_body_pages_opened": 13,
+    "new_source_identities": 12,
+    "existing_identities_enriched": 2,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 24,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 26,
+    "answer_eligible_source_families_added": 11,
+    "independent_witnesses_added": 1,
+    "independent_witness_groups_added": 1,
+    "same_author_testimony_records": 1,
+    "non_independent_presentations_added": 11,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 13,
+    "recovered_candidate_count": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1550,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3918
+    },
+    "metrics_before_source": "Measured output from Actions run 44872588578 (commit 5d15f8cfc42ed36e273a7a85bdb95134ff5d9603), after batch154. The reconciliation step completed and emitted 1550/854/3918, but the workflow failed at the historical batch110 partial-preflight test before committing the generated metrics. This is a measured workspace baseline, not the current committed public-metrics snapshot.",
+    "public_metrics_snapshot_before": {
+      "generated": "2026-11-15",
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2950
+    },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1561,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3944
+    },
+    "metrics_expected_after_source": "Projection only: +11 unique Evidence Families, +0 Verified sources, +24 new source propositions and +2 in-place propositions; not measured.",
+    "metrics_actual_after": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 11,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 26
+    },
+    "local_batch_delta": {
+      "answer_eligible_unique_sources": 11,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 26
+    },
+    "new_aids": [
+      2279284,
+      2279261,
+      2278362,
+      2278361,
+      3906843,
+      2277081,
+      2278150,
+      2277998,
+      5920906,
+      2377430,
+      3137281
+    ],
+    "enriched_aids": [
+      3907531,
+      5920864
+    ],
+    "rechecked_aids": [],
+    "translations_counted_as_independent_witnesses": 0,
+    "blocked_candidates": [
+      {
+        "candidate_key": "aid:4666220",
+        "aid": 4666220,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "פתיחה ישירה בכלי העיון החזירה Internal Error ולא גוף פרסום קריא.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4730911",
+        "aid": 4730911,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4730911/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4730912",
+        "aid": 4730912,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4730912/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4730820",
+        "aid": 4730820,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4730820/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:5100036",
+        "aid": 5100036,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100036/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:5100145",
+        "aid": 5100145,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/5100145/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4731115",
+        "aid": 4731115,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731115/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4731108",
+        "aid": 4731108,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731108/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4730804",
+        "aid": 4730804,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4730804/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4731062",
+        "aid": 4731062,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731062/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4731068",
+        "aid": 4731068,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731068/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4731075",
+        "aid": 4731075,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731075/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      },
+      {
+        "candidate_key": "aid:4731033",
+        "aid": 4731033,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4731033/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הדף נפתח אך הוצג shell/מסך ניווט ללא גוף האיגרת; לא התקבל טקסט מקור קריא לבדיקה.",
+        "handling": "לא נוצרה פרפרזה ולא נעשה retry ל-crawler; לא נעקפו בקרות גישה. באותה הפעלה עברתי למקורות חלופיים נגישים ונבדקו 13 גופי פרסום."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "accessible_item_level_bodies": 13,
+      "inspected_aids": [
+        2279284,
+        2279261,
+        2278362,
+        5920864,
+        3907531,
+        2278361,
+        3906843,
+        2277081,
+        2278150,
+        2277998,
+        5920906,
+        2377430,
+        3137281
+      ],
+      "body_text_inspected": true,
+      "note": "After the blocked Hebrew AID and 12 shell-only pages, the same run switched to accessible Chabad.org English correspondence pages and one Hebrew secondary adaptation; 13 public item-level bodies were inspected."
+    },
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "source_body_review": [
+      {
+        "candidate_key": "aid:2279284",
+        "title": "The value of sending photographs of the chassidim to the Rebbe — Letter No. 508",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2279284/jewish/The-value-of-sending-photographs-of-the-chassidim-to-the-Rebbe.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2279284, body lines 279–281."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2279284, ביום 21.11.2026, במיקומים Chabad.org AID 2279284, body lines 279–279.; Chabad.org AID 2279284, body lines 280–280.; Chabad.org AID 2279284, body lines 281–281.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:2279261",
+        "title": "The need for outreach activities — Letter No. 500",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2279261/jewish/The-need-for-outreach-activities.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2279261, body lines 319–321."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2279261, ביום 21.11.2026, במיקומים Chabad.org AID 2279261, body lines 319–320.; Chabad.org AID 2279261, body lines 321–321.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:2278362",
+        "title": "Blessings for health — Letter No. 697",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278362/jewish/Blessings-for-health.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2278362, body lines 277–280."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278362, ביום 21.11.2026, במיקומים Chabad.org AID 2278362, body lines 277–279.; Chabad.org AID 2278362, body lines 280–280.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:5920864",
+        "title": "The importance of educating Jewish children",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920864/jewish/The-importance-of-educating-Jewish-children.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 5920864, body lines 193–200."
+        ],
+        "context_status": "partial",
+        "source_type": "existing_publisher_translation_enrichment",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום האנגלי ב-Chabad.org/TheRebbe.org ביום 14.11.2026, בטווח 261–316. האימות חל על הטקסט האנגלי המפורסם בלבד; זהו תרגום שפורסם ואינו עד עצמאי נוסף; הנוסח המקורי לא נבדק. הנוסח המקורי והנמען אינם זמינים בעמוד; האימות חל על התרגום המפורסם. תוספת שנבדקה ב-21.11.2026: AID 5920864, body lines 193–200; נוספה פרפרזה ממוקדת על שלושת ההקשרים ועל יבמות קי״ד ע״א. המקור הוא תרגום אנגלי; אין שינוי בסטטוס Verified.",
+        "existing_identity": true,
+        "existing_propositions_before": 2,
+        "propositions_added": 1,
+        "total_propositions_after": 3
+      },
+      {
+        "candidate_key": "aid:3907531",
+        "title": "Blessings for Opening a New Business — Letter No. 1105",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3907531/jewish/Blessings-for-opening-a-new-business.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 3907531, body lines 285–286."
+        ],
+        "context_status": "partial",
+        "source_type": "existing_publisher_translation_enrichment",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "Complete visible translation inspected; original letter, business plan and outcomes not inspected. תוספת שנבדקה ב-21.11.2026: AID 3907531, body lines 285–286; נוספה פרפרזה נפרדת על ההתוועדויות בי״ב–י״ג תמוז. המקור הוא תרגום אנגלי; אין שינוי בסטטוס Verified.",
+        "existing_identity": true,
+        "existing_propositions_before": 3,
+        "propositions_added": 1,
+        "total_propositions_after": 4
+      },
+      {
+        "candidate_key": "aid:2278361",
+        "title": "Blessings and guidance for a boy's recovery — Letter No. 696",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278361/jewish/Blessings-and-guidance-for-a-boys-recovery.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2278361, body lines 277–279."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278361, ביום 21.11.2026, במיקומים Chabad.org AID 2278361, body lines 277–277.; Chabad.org AID 2278361, body lines 278–279.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:3906843",
+        "title": "The value of a positive attitude; the importance of one's physical health — Letter No. 1061",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/3906843/jewish/The-value-of-a-positive-attitude-the-importance-of-ones-physical-health.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 3906843, body lines 289–293."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 3906843, ביום 21.11.2026, במיקומים Chabad.org AID 3906843, body lines 289–290.; Chabad.org AID 3906843, body lines 291–293.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:2277081",
+        "title": "New Year's Blessings — Letter No. 772",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277081/jewish/New-Years-Blessings.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2277081, body lines 319–323."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2277081, ביום 21.11.2026, במיקומים Chabad.org AID 2277081, body lines 319–319.; Chabad.org AID 2277081, body lines 320–322.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:2278150",
+        "title": "Blessings for physical health — Letter No. 606",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2278150/jewish/Blessings-for-physical-health.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2278150, body lines 277–280."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2278150, ביום 21.11.2026, במיקומים Chabad.org AID 2278150, body lines 279–279.; Chabad.org AID 2278150, body lines 280–280.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:2277998",
+        "title": "Blessings for health — Letter No. 594",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/2277998/jewish/Blessings-for-health.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2277998, body lines 276–284."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2277998, ביום 21.11.2026, במיקומים Chabad.org AID 2277998, body lines 276–276.; Chabad.org AID 2277998, body lines 282–284.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:5920906",
+        "title": "Sending packages to the Rebbe's parents in Russia — Letter No. 130",
+        "source_url": "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920906/jewish/Sending-packages-to-the-Rebbes-parents-in-Russia.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 5920906, body lines 278–282."
+        ],
+        "context_status": "partial",
+        "source_type": "publisher_english_translation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 5920906, ביום 21.11.2026, במיקומים Chabad.org AID 5920906, body lines 278–279.; Chabad.org AID 5920906, body lines 280–282.. העמוד מזהה את הפריט כתרגום אנגלי של Eli Touger. הנוסח המקורי בעברית או ביידיש, כתב היד, מכתב הפונה ותיק ההתכתבות לא נבדקו; התרגום אינו עד עצמאי נוסף. אין להסיק תוצאות או נסיבות שאינן מופיעות בקטעים שנבדקו. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו."
+      },
+      {
+        "candidate_key": "aid:2377430",
+        "title": "The Rebbe's Letter Carried Me through Korea — recipient testimony",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2377430/jewish/The-Rebbes-Letter-Carried-Me-through-Korea.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2377430, body lines 249–269."
+        ],
+        "context_status": "partial",
+        "source_type": "mixed_recipient_testimony_and_translated_letter_excerpt",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2377430, ביום 21.11.2026, במיקומים Chabad.org AID 2377430, body lines 249–253.; Chabad.org AID 2377430, body lines 267–269.. נבדקה עדות רטרוספקטיבית של מקבל המכתב; לא נבדקו מסמכי צבא, הקלטה מלאה, תמליל גולמי או עדויות מקבילות. הפרופוזיציות מתארות את זיכרונו של המספר ואינן מאמתות סיבתיות או טענה על תוצאה על-טבעית. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו. נבדק גוף הפרסום הציבורי ב-Chabad.org / TheRebbe.org, AID 2377430, ביום 21.11.2026, במיקומים Chabad.org AID 2377430, body lines 254–265.. העמוד מציג את הקטע כתרגום ממכתב שנכתב ביידיש. קישור לסריקת המכתב המקורי מופיע בעמוד אך הסריקה לא נפתחה; כתב היד והנוסח היידי לא נבדקו. התרגום אינו עד עצמאי נוסף. התמציות הן פרפרזות מחקריות לא-מילוליות של הקטעים שנפתחו; לא הועתק טקסט מוגן במלואו.",
+        "new_source_identities_added": 2,
+        "new_response_propositions_added": 3,
+        "component_witness_status": [
+          {
+            "document_component_id": "recipient-testimony",
+            "independent_witness": true,
+            "witness_group_id": "bernard-cytryn-korea-war-testimony"
+          },
+          {
+            "document_component_id": "yiddish-letter-excerpt",
+            "independent_witness": false,
+            "translation_of_evidence_family_id": "korea-war-letter-and-recipient-testimony-bernard-cytryn-aid2377430"
+          }
+        ]
+      },
+      {
+        "candidate_key": "aid:3137281",
+        "title": "מה כתב הרבי למנהל בית חולים? — עיבוד עברי של איגרת לפרופ׳ מרדכי שני",
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/3137281",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "BeitChabad.com AID 3137281, Hebrew body lines 138–141 and 146–159."
+        ],
+        "context_status": "partial",
+        "source_type": "hebrew_secondary_editorial_adaptation",
+        "witness_group_id": null,
+        "independent_witness": false,
+        "verification_scope": "נבדק גוף הכתבה העברית ב-BeitChabad.com, AID 3137281, ביום 21.11.2026, במיקומים BeitChabad.com AID 3137281, Hebrew body lines 138–141.; BeitChabad.com AID 3137281, Hebrew body lines 146–159.. העמוד מסמן את עצמו כ״מעובד מדבריו״ וכ״עיבוד חופשי״; איגרת המקור, כתב היד והמהדורה המקורית לא נבדקו. התמציות מתארות את הדיווח והעיבוד של הכתבה בלבד, ולא נוסח ישיר או מלא של דברי הרבי. לא הועתק טקסט מוגן במלואו."
+      }
+    ],
+    "existing_identity_updates": [
+      {
+        "aid": 3907531,
+        "canonical_file": "data/items/mixed-authorized-content-2026-11-12-039.json",
+        "existing_propositions_before": 3,
+        "propositions_added": 1,
+        "total_propositions_after": 4,
+        "locator": "Chabad.org AID 3907531, body lines 285–286.",
+        "status_after": "Verified",
+        "evidence_family_id": "letter-no-1105-opening-wholesale-business",
+        "note": "In-place enrichment from the public English translation; status remains Verified; no new source identity or independent witness."
+      },
+      {
+        "aid": 5920864,
+        "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+        "existing_propositions_before": 2,
+        "propositions_added": 1,
+        "total_propositions_after": 3,
+        "locator": "Chabad.org AID 5920864, body lines 193–200.",
+        "status_after": "Verified",
+        "evidence_family_id": "igrot-letter-5703-8-iyar-letter72-aid5920864",
+        "note": "In-place enrichment from the public English translation; status remains Verified; no new source identity or independent witness."
+      }
+    ],
+    "existing_identity_rechecks": [],
+    "deduplication_check": {
+      "new_aids_unique": true,
+      "new_identity_keys_unique": true,
+      "new_source_urls_unique": false,
+      "duplicate_source_url_explained": true,
+      "source_url_collision_count": 1,
+      "source_url_collision_details": [
+        {
+          "aid": 2377430,
+          "document_component_ids": [
+            "recipient-testimony",
+            "yiddish-letter-excerpt"
+          ],
+          "same_evidence_family": true,
+          "reason": "Two distinct document components on one public page; not duplicate independent witnesses."
+        }
+      ],
+      "new_evidence_families_unique": true,
+      "unique_new_evidence_families": 11,
+      "same_family_memberships": 1,
+      "duplicate_alias_identities": 0,
+      "translations_counted_as_independent_witnesses": 0,
+      "pre_reconciliation_scan": {
+        "canonical_public_search_index_entries_scanned": 9794,
+        "review_queue_records_scanned": 1022,
+        "matching_aids_found": [
+          3907531,
+          5920864
+        ],
+        "matching_source_urls_found": [
+          "https://www.chabad.org/therebbe/letters/default_cdo/aid/3907531/jewish/Blessings-for-opening-a-new-business.htm",
+          "https://www.chabad.org/therebbe/letters/default_cdo/aid/5920864/jewish/The-importance-of-educating-Jewish-children.htm"
+        ],
+        "candidate_aids_absent": [
+          2279284,
+          2279261,
+          2278362,
+          2278361,
+          3906843,
+          2277081,
+          2278150,
+          2277998,
+          5920906,
+          2377430,
+          3137281
+        ],
+        "note": "The complete committed public-search-index.json blob and the current review queue were searched for all candidate AIDs and source URLs. Two existing AIDs were enriched in place; all eleven new AIDs were absent. AID 2377430 is split into two component identities under one Evidence Family."
+      },
+      "full_index_scan_available": true,
+      "full_index_scan_pending_reconciliation": true,
+      "canonical_identity_collisions": [],
+      "missing_canonical_identities": [],
+      "all_target_identities_answer_eligible": false
+    },
+    "retrieval_synthesis": {
+      "current_engine_pattern": "cross_family_practical_guidance_letters",
+      "current_engine_pattern_status": "existing",
+      "claim_level_source_locators": "already tested in regular and deep researcher modes by test_content_readiness.mjs",
+      "deep_researcher_mode": "already present; evidence map retains proposition_source_locator per witness",
+      "batch155_integration": "New sources will enter the public retrieval index after reconciliation. No new curated synthesis pattern was added in this batch.",
+      "attribution_boundary": "Translations and the Hebrew editorial adaptation remain non-independent presentations; the Korea recipient's first-person recollection is labelled as testimony. No system-generated inference is attributed to the Rebbe."
+    },
+    "language_distribution": {
+      "English": 11,
+      "Hebrew": 1
+    },
+    "source_type_distribution": {
+      "publisher_translation": 9,
+      "recipient_testimony": 1,
+      "translated_letter_excerpt": 1,
+      "secondary_editorial_adaptation": 1
+    },
+    "notes": "No new Verified status was created. Two existing Verified identities were enriched in place. All new correspondence translations and the Hebrew adaptation remain Parsed and non-independent; the recipient's testimony is independent only for the narrator's own recollection, not for the translated letter text."
+  }
+}
