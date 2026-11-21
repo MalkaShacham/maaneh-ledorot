@@ -1,558 +1,30 @@
 {
-  "started_at": "2026-11-22T00:30:35+02:00",
-  "attempted": 18,
-  "enriched": 1,
-  "discovered": 14,
+  "started_at": "2026-11-22T01:04:04+02:00",
+  "attempted": 15,
+  "enriched": 0,
+  "discovered": 13,
   "blocked": 2,
-  "skipped": 1,
+  "skipped": 0,
   "status": "manual_content_review_complete_pending_reconciliation",
   "manual_web_review": {
     "schema": "content-research-batch-v1",
-    "batch_id": "164",
+    "batch_id": "165",
     "batch_date": "2026-11-22",
-    "reviewed_at": "2026-11-22T00:30:35+02:00",
-    "title": "Batch 164 — fifteen original-language Adar I Hayom Yom entries and one in-place enrichment",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 16,
-    "source_bodies_inspected": 16,
-    "source_body_pages_opened": 16,
-    "new_source_identities": 15,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 18,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 19,
-    "answer_eligible_source_families_added": 15,
-    "independent_witnesses_added": 15,
-    "non_independent_presentations_added": 0,
-    "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
-    "recovered_candidate_count": 0,
-    "metrics_before": null,
-    "metrics_expected_after": null,
-    "metrics_actual_before": null,
-    "metrics_actual_after": null,
-    "metrics_delta_actual": null,
-    "reconciliation_variance": null,
-    "new_aids": [
-      528619,
-      528620,
-      528621,
-      528622,
-      528623,
-      528624,
-      528625,
-      528626,
-      528627,
-      528628,
-      528629,
-      528630,
-      528631,
-      528632,
-      528633
-    ],
-    "enriched_aids": [
-      528545
-    ],
-    "staging_candidate_aids": [],
-    "translations_counted_as_independent_witnesses": 0,
-    "crawler_retry": false,
-    "access_control_bypassed": false,
-    "full_text_copied": false,
-    "scan_only_verification_used": false,
-    "metrics_delta_at_batch_boundary": null,
-    "local_content_delta": {
-      "new_source_identities": 15,
-      "new_evidence_families": 15,
-      "new_response_propositions": 18,
-      "existing_identities_enriched": 1,
-      "existing_response_propositions_added": 1,
-      "verified_promotions": 0,
-      "note": "Reviewed batch counts, not reconciled after-metrics."
-    },
-    "existing_identity_updates": [
-      {
-        "aid": 528545,
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "before": 5,
-        "after": 6,
-        "existing_propositions_before": 5,
-        "total_propositions_after": 6,
-        "propositions_added": 1,
-        "source_body_locator": "he.chabad.org AID 528545, גוף הערך בעברית, שורה 168.",
-        "proposition": "בקטע המצוטט ממכתב אביו של המלקט נאמר כי הן עבודת התפילה והתורה והמצוות והן ענייני העולם הנחוצים לקיום הגוף צריכים להיעשות בכוונה אמיתית לשם שמים; הייחוס נשאר למכתב המצוטט ולא לאמירה עצמאית של המלקט."
-      }
-    ],
-    "existing_identity_rechecks": [
-      {
-        "aid": 528545,
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "body_locator": "שורה 168",
-        "web_source_ref": "turn463733view0",
-        "recheck_status": "inspected_and_enriched"
-      }
-    ],
-    "source_body_review": [
-      {
-        "aid": 528619,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528619",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–174",
-        "web_source_ref": "turn711333view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528619-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528620,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528620",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn711333view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528620-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528621,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528621",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528621-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528622,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528622",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528622-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528623,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528623",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 172",
-        "web_source_ref": "turn661053view2",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528623-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528624,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528624",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view3",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528624-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528625,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528625",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–173",
-        "web_source_ref": "turn303510view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528625-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528626,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528626",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view5",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528626-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528627,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528627",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173–175",
-        "web_source_ref": "turn661053view6",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528627-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528628,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528628",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view7",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528628-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528629,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528629",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view8",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528629-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528630,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528630",
-        "language": "Hebrew and Yiddish",
-        "original_language": "Hebrew and Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173–174",
-        "web_source_ref": "turn661053view9",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528630-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528631,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528631",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 174",
-        "web_source_ref": "turn661053view10",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528631-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528632,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528632",
-        "language": "Hebrew and Yiddish",
-        "original_language": "Hebrew and Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 169–176",
-        "web_source_ref": "turn303510view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528632-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528633,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528633",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn303510view2",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528633-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528545,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528545",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": true,
-        "body_locator": "שורה 168; גוף הערך נפתח מחדש",
-        "web_source_ref": "turn463733view0",
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body_in_place_enrichment"
-      }
-    ],
-    "blocked_candidates": [
-      {
-        "candidate_key": "aid:4666220",
-        "aid": 4666220,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-        "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "פתיחה ישירה בכלי העיון החזירה Internal Error; גוף הפרסום לא נפתח.",
-        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 15 גופי ערכים חלופיים בעברית/יידיש ועוד גוף קיים לצורך העשרה."
-      }
-    ],
-    "fallback_source_attempted": true,
-    "fallback_source_results": {
-      "accessible_item_level_bodies": 16,
-      "inspected_aids": [
-        528619,
-        528620,
-        528621,
-        528622,
-        528623,
-        528624,
-        528625,
-        528626,
-        528627,
-        528628,
-        528629,
-        528630,
-        528631,
-        528632,
-        528633,
-        528545
-      ],
-      "original_language_body_inspected": 16,
-      "translation_bodies_inspected": 0,
-      "body_text_inspected": true,
-      "note": "לאחר חסימת AID 4666220 נפתחו 15 גופי ערכים יומיים חדשים בעברית, ביידיש ובשילוב השפות; בנוסף נפתח מחדש AID 528545 והועשר באותה משפחת ראיות. לא נעשה שימוש ב-crawler."
-    },
-    "excluded_candidates": [],
-    "translation_source_links": [],
-    "deduplication_check": {
-      "full_index_scan_available": false,
-      "full_index_entries": null,
-      "full_index_generated": null,
-      "code_search_exact_aid_queries": 15,
-      "code_search_matches": [],
-      "candidate_aids_found": [],
-      "existing_aids_found": [
-        528545
-      ],
-      "new_aids_unique_within_checked_scope": true,
-      "source_urls_unique": true,
-      "evidence_family_ids_unique": true,
-      "canonical_bulk_files_checked": 0,
-      "canonical_bulk_matches": null,
-      "recent_manual_batch_files_checked": 0,
-      "recent_manual_batch_range": "not independently scanned in this run",
-      "recent_manual_batch_record_rows_checked": 0,
-      "review_queue_records": 1022,
-      "review_queue_matches": 0,
-      "post_addition_canonical_scan_pending": true,
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "all_target_identities_answer_eligible": null,
-      "note": "בדיקת קדם-הוספה מוגבלת: 15 חיפושי AID ממוקדים ב-GitHub ללא התאמות; תור הבדיקה בן 1,022 פריטים ללא התאמות; AID 528545 זוהה כזהות קיימת והועשר במקומו. public-search-index.json לא הוחזר בכלי זה בשל גודלו, ולא נסרקו מחדש קובצי האינדקס הקנוניים; סריקת זהויות מלאה נותרה ל-reconciliation."
-    },
-    "pre_addition_full_index_scan": {
-      "available": false,
-      "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
-      "recent_manual_batch_files_checked": 0,
-      "review_queue_records": 1022,
-      "review_queue_matches": 0,
-      "exact_aid_queries": 15,
-      "exact_aid_matches": []
-    },
-    "reconciliation_identity_integrity": {
-      "passed": null,
-      "full_index_scan_completed": false,
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "all_target_identities_answer_eligible": null,
-      "status": "pending_reconciliation"
-    },
-    "retrieval_synthesis": {
-      "kind": "cross_family_research_synthesis",
-      "topic": "hayom_yom_adar_i_inner_work_community_and_prayer",
-      "attribution": "system_synthesis_not_rebbe_quote",
-      "label": "סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי",
-      "synthesis_scope": "Bounded comparison across five distinct dated Hayom Yom entries in the same annual anthology; they are separate entries and internal attributions, not one speech, one speaker, or independent archival corroboration.",
-      "source_count": 5,
-      "distinct_evidence_families": 5,
-      "independent_entry_families": 5,
-      "event_corroboration_claimed": false,
-      "claim_count": 5,
-      "claim_level_source_locators": 5,
-      "regular_mode": "להציג חמש טענות נפרדות, כל אחת עם מיקום גוף משלה ועם הייחוס הפנימי של הערך; אין לאחד את הערכים להוראה אחת.",
-      "researcher_mode": "deep; five item-level source mappings, claim-source map, original-language body locators, provenance, partial context, embedded attribution boundaries and non-corroboration limits.",
-      "method": "Claim-level comparison across five distinct dated Hayom Yom entry Evidence Families: inner work, love of Israel, individual mission, general prayer intention, and support of religious life. Each claim is mapped to one inspected original-language body proposition and locator. The entries are not independent archival corroboration.",
-      "evidence_quality": "five_distinct_dated_hayom_yom_entries_not_archival_corroboration",
-      "claims": [
-        {
-          "claim_id": "inner_work",
-          "claim": "ערך ב׳ אדר א׳ מציג עבודת אמת כבדיקה פנימית מתמשכת ומראה שגם פעולות יומיומיות קטנות בכוונה עשויות להיחשב עבודה; לצד זאת הוא מציין את הצורך ביגיעה בלימוד ובהבנה.",
-          "source_aids": [
-            528619
-          ],
-          "source_locators": [
-            {
-              "aid": 528619,
-              "locator": "Chabad.org AID 528619, גוף הערך הציבורי, שורות 172–174."
-            }
-          ]
-        },
-        {
-          "claim_id": "ahavat_yisrael",
-          "claim": "ערך ג׳ אדר א׳ מביא בשם אדמו״ר הזקן אהבת ישראל גם כלפי יהודי שלא פגש, וביתר שאת כלפי חבר בקהילתו.",
-          "source_aids": [
-            528620
-          ],
-          "source_locators": [
-            {
-              "aid": 528620,
-              "locator": "Chabad.org AID 528620, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "individual_mission",
-          "claim": "ערך ז׳ אדר א׳ מתאר כל יהודי כשליח שנדרש להאיר את העולם בתורה ובעבודה באמצעות מצוות מעשיות והטמעת מידות טובות.",
-          "source_aids": [
-            528624
-          ],
-          "source_locators": [
-            {
-              "aid": 528624,
-              "locator": "Chabad.org AID 528624, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "general_prayer_intention",
-          "claim": "ערך י״א אדר א׳ מציג כוונה כללית בתפילה כאפשרות למי שאינו מסוגל לזכור את הכוונות הפרטיות; זהו תיאור הערך ולא פסיקה עצמאית.",
-          "source_aids": [
-            528628
-          ],
-          "source_locators": [
-            {
-              "aid": 528628,
-              "locator": "Chabad.org AID 528628, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "supporting_religion",
-          "claim": "ערך י״ב אדר א׳ מפרש את ״מתן אדם״ כהקדשת האדם עצמו לפעילות התומכת בהחזקת הדת, ומתאר את הרחבת האפשרויות כתוצאה המובאת בפסוק ובפירוש הערך.",
-          "source_aids": [
-            528629
-          ],
-          "source_locators": [
-            {
-              "aid": 528629,
-              "locator": "Chabad.org AID 528629, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        }
-      ],
-      "limits": [
-        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס של מסקנה לרבי.",
-        "חמשת הערכים הם פריטים מתוארכים נפרדים; הייחוסים הפנימיים נשמרים לכל ערך ואין למזג אותם לדובר אחד.",
-        "ההשוואה אינה אימות ארכיוני עצמאי של המסורות, המנהגים או ההסברים המתוארים.",
-        "ההקשר חלקי; לא נבדקו כתבי יד, אוטוגרפים, מהדורות ביקורתיות או עדים מקבילים.",
-        "תיאור מנהג אינו פסיקה הלכתית כללית; תרגום או הצגה מקבילה אינם עד עצמאי נוסף."
-      ]
-    },
-    "language_distribution": {
-      "Hebrew": 9,
-      "Yiddish": 4,
-      "Hebrew and Yiddish": 2
-    },
-    "reviewed_body_language_distribution": {
-      "Hebrew": 10,
-      "Yiddish": 4,
-      "Hebrew and Yiddish": 2
-    },
-    "proposition_language_distribution": {
-      "Hebrew": 19
-    },
-    "source_type_distribution": {
-      "Hayom Yom": 15
-    },
-    "quality_gate_followup": {
-      "required": [
-        "canonical identity reconciliation",
-        "test_content_readiness.mjs",
-        "five-family regular retrieval",
-        "five-family deep researcher citation map",
-        "GitHub Actions and Pages verification"
-      ],
-      "status": "pending"
-    }
-  },
-  "previous_manual_web_review": {
-    "batch_id": "163",
-    "batch_file": "data/items/content-research-batch-163-2026-11-21.json",
-    "reviewed_at": "2026-11-21T21:01:50+02:00",
+    "reviewed_at": "2026-11-22T01:04:04+02:00",
+    "title": "Batch 165 — eleven original-language Adar I entries and two English free-translation presentations",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 15,
-    "source_bodies_inspected": 15,
-    "source_body_pages_opened": 15,
-    "new_source_identities": 14,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 17,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 18,
-    "answer_eligible_source_families_added": 14,
-    "independent_witnesses_added": 12,
+    "source_bodies_inspected": 13,
+    "source_body_pages_opened": 13,
+    "new_source_identities": 13,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 14,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 14,
+    "answer_eligible_source_families_added": 13,
+    "independent_witnesses_added": 11,
     "non_independent_presentations_added": 2,
     "content_verified_unique_sources_added": 0,
     "blocked_candidate_count": 2,
@@ -564,24 +36,21 @@
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "new_aids": [
-      528604,
-      528605,
-      528606,
-      528607,
-      528609,
-      528610,
-      528612,
-      528613,
-      528614,
-      528615,
-      528616,
-      528618,
-      6072,
-      6075
+      528634,
+      528635,
+      528636,
+      528638,
+      528639,
+      528640,
+      528641,
+      528642,
+      528643,
+      528645,
+      528646,
+      6101,
+      6108
     ],
-    "enriched_aids": [
-      528545
-    ],
+    "enriched_aids": [],
     "staging_candidate_aids": [],
     "translations_counted_as_independent_witnesses": 0,
     "crawler_retry": false,
@@ -589,452 +58,903 @@
     "full_text_copied": false,
     "scan_only_verification_used": false,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 14,
+      "answer_eligible_unique_sources": 13,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 18,
-      "note": "Expected batch additions only; not a measured after count."
+      "answer_eligible_propositions": 14,
+      "note": "Expected contribution from 13 distinct dated-entry Evidence Families, including two non-independent English translations of two other dated entries; not measured after-metrics."
     },
-    "blocked_candidates": [
+    "local_content_delta": {
+      "new_source_identities": 13,
+      "new_evidence_families": 13,
+      "new_response_propositions": 14,
+      "existing_identities_enriched": 0,
+      "existing_response_propositions_added": 0,
+      "verified_promotions": 0,
+      "note": "Reviewed batch counts only; full canonical reconciliation and measured after-metrics pending."
+    },
+    "source_body_review": [
       {
-        "candidate_key": "aid:528608",
-        "aid": 528608,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528608",
-        "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
-        "handling": "בוצע חיפוש חלופי ונפתח תרגום חופשי באנגלית AID 6072; התרגום נשמר כמצגת לא-עצמאית של אותה Evidence Family, ללא טענה שנבדק המקור העברי."
+        "aid": 528634,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528634",
+        "language": "Yiddish",
+        "original_language": "Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528634, גוף הערך ביידיש, שורות 172–173.",
+        "web_source_ref": "turn955540view0",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528634-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
       },
       {
-        "candidate_key": "aid:528611",
-        "aid": 528611,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528611",
+        "aid": 528635,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528635",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528635, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view1",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528635-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528636,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528636",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528636, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view2",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528636-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528638,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528638",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528638, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view3",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528638-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528639,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528639",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528639, גוף הערך בעברית, שורה 173. ; Chabad.org AID 528639, גוף הערך בעברית, שורה 174.",
+        "web_source_ref": "turn955540view4",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528639-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528640,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528640",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528640, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view5",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528640-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528641,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528641",
+        "language": "Hebrew and Yiddish",
+        "original_language": "Hebrew and Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528641, גוף הערך המשולב בעברית וביידיש, שורה 172.",
+        "web_source_ref": "turn955540view6",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528641-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528642,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528642",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528642, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view7",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528642-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528643,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528643",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528643, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view8",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528643-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528645,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528645",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528645, גוף הערך בעברית, שורה 172.",
+        "web_source_ref": "turn955540view9",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528645-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528646,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528646",
+        "language": "Hebrew and Yiddish",
+        "original_language": "Hebrew and Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528646, גוף הערך בעברית וביידיש, שורה 175.",
+        "web_source_ref": "turn955540view10",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528646-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 6101,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
+        "language": "English",
+        "original_language": "unknown",
+        "body_text_inspected": true,
+        "inspected_original_language_body": false,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 6101, גוף התרגום האנגלי החופשי, שורה 250.",
+        "web_source_ref": "turn764819view0",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528637-5703",
+        "independent_witness": false,
+        "inspection_method": "public_web_open_translated_body",
+        "translation_of_evidence_family_id": "hayom-yom-528637-5703",
+        "original_language_source_aid": 528637
+      },
+      {
+        "aid": 6108,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
+        "language": "English",
+        "original_language": "unknown",
+        "body_text_inspected": true,
+        "inspected_original_language_body": false,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 6108, גוף התרגום האנגלי החופשי, שורה 250.",
+        "web_source_ref": "turn764819view1",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528644-5703",
+        "independent_witness": false,
+        "inspection_method": "public_web_open_translated_body",
+        "translation_of_evidence_family_id": "hayom-yom-528644-5703",
+        "original_language_source_aid": 528644
+      }
+    ],
+    "blocked_candidates": [
+      {
+        "candidate_key": "aid:528637",
+        "aid": 528637,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528637",
         "status": "public_reader_body_unavailable_via_web_tool",
         "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
-        "handling": "בוצע חיפוש חלופי ונפתח תרגום חופשי באנגלית AID 6075; התרגום נשמר כמצגת לא-עצמאית של אותה Evidence Family, ללא טענה שנבדק המקור העברי."
+        "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6101. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+      },
+      {
+        "candidate_key": "aid:528644",
+        "aid": 528644,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528644",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
+        "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6108. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
       }
     ],
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "accessible_item_level_bodies": 14,
+      "accessible_item_level_bodies": 13,
       "inspected_aids": [
-        528604,
-        528605,
-        528606,
-        528607,
-        528609,
-        528610,
-        528612,
-        528613,
-        528614,
-        528615,
-        528616,
-        528618,
-        6072,
-        6075
+        528634,
+        528635,
+        528636,
+        528638,
+        528639,
+        528640,
+        528641,
+        528642,
+        528643,
+        528645,
+        528646,
+        6101,
+        6108
       ],
-      "original_language_body_inspected": 12,
+      "original_language_body_inspected": 11,
       "english_translation_bodies_inspected": 2,
       "non_independent_translation_presentations": 2,
       "body_text_inspected": true,
-      "note": "נבדקו 12 גופי ערכים בעברית/יידיש/דו-לשוני ועוד שני תרגומים חופשיים באנגלית. AID 528608 ו-528611 לא נפתחו בעברית; AID 6072 ו-6075 נבדקו כתרגומים בלבד ולא נספרו כעדים עצמאיים."
+      "note": "לאחר חסימת AID 528637 ו-AID 528644 נפתחו באותה הפעלה שני תרגומים אנגליים חופשיים של אותם ערכים. הם מספקים תוכן נגזר בלבד, אינם עדים עצמאיים ואינם מאמתים את הנוסח העברי."
     },
-    "excluded_candidates": [
+    "excluded_candidates": [],
+    "translation_source_links": [
       {
-        "aid": 528617,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528617",
-        "reason": "עמוד אינדקס/ניווט של חודש אדר א׳ ולא ערך יומי מתוארך עם גוף תוכן; נפתח לזיהוי בלבד והוחרג."
+        "aid": 6101,
+        "original_language_aid": 528637,
+        "evidence_family_id": "hayom-yom-528637-5703",
+        "status": "derived_free_translation_not_independent"
+      },
+      {
+        "aid": 6108,
+        "original_language_aid": 528644,
+        "evidence_family_id": "hayom-yom-528644-5703",
+        "status": "derived_free_translation_not_independent"
       }
     ],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_entries": null,
       "full_index_generated": null,
-      "code_search_exact_aid_queries": 14,
+      "code_search_exact_aid_queries": 13,
       "code_search_matches": [],
       "candidate_aids_found": [],
-      "existing_aids_found": [
-        528545
-      ],
+      "existing_aids_found": [],
       "new_aids_unique_within_checked_scope": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_bulk_files_checked": 0,
       "canonical_bulk_matches": null,
-      "recent_manual_batch_files_checked": 13,
-      "recent_manual_batch_range": "150–162",
-      "recent_manual_batch_record_rows_checked": 121,
+      "recent_manual_batch_files_checked": 2,
+      "recent_manual_batch_range": "163–164",
+      "recent_manual_batch_record_rows_checked": 29,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "post_addition_canonical_scan_pending": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ללא התאמות בקוד; 13 אצוות ידניות 150–162 ובהן 121 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים לא כלל התאמות. AID 528545 זוהה כזהות קיימת והועשר במקומו. public-search-index.json לא הוחזר בשל גודלו, ולכן אין לטעון לסריקת אינדקס מלאה; סריקה קנונית מלאה נותרה ל-reconciliation."
+      "note": "בדיקת קדם-הוספה מוגבלת: 13 חיפושי AID ממוקדים ב-GitHub ללא התאמות; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
     },
-    "source_body_review": [
-      {
-        "aid": 528604,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528604",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 173",
-        "web_source_ref": "turn146653view0",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528604-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528605,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528605",
-        "language": "Hebrew and Yiddish",
-        "original_language": "Hebrew and Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 172",
-        "web_source_ref": "turn146653view1",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528605-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528606,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528606",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn146653view2",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528606-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528607,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528607",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn146653view3",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528607-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528609,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528609",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–173",
-        "web_source_ref": "turn414203view0",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528609-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528610,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528610",
-        "language": "Hebrew and Yiddish",
-        "original_language": "Hebrew and Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 169–176",
-        "web_source_ref": "turn414203view1",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528610-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528612,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528612",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn414203view2",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528612-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528613,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528613",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn414203view3",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528613-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528614,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528614",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–173",
-        "web_source_ref": "turn257852view0",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528614-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528615,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528615",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn257852view1",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528615-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528616,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528616",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn257852view2",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528616-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 528618,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528618",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 170–172",
-        "web_source_ref": "turn257852view3",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528618-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body",
-        "original_source_aid": null
-      },
-      {
-        "aid": 6072,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6072/jewish/Hayom-Yom-Shevat-22.htm",
-        "language": "English",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": false,
-        "existing_identity": false,
-        "body_locator": "body line 260",
-        "web_source_ref": "turn305966view0",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528608-5703",
-        "independent_witness": false,
-        "inspection_method": "public_web_open_body_translation",
-        "original_source_aid": 528608
-      },
-      {
-        "aid": 6075,
-        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6075/jewish/Hayom-Yom-Shevat-25.htm",
-        "language": "English",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": false,
-        "existing_identity": false,
-        "body_locator": "body line 260",
-        "web_source_ref": "turn305966view1",
-        "canonical_file": "data/items/content-research-batch-163-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528611-5703",
-        "independent_witness": false,
-        "inspection_method": "public_web_open_body_translation",
-        "original_source_aid": 528611
-      },
-      {
-        "aid": 528545,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528545",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": true,
-        "body_locator": "שורה 175",
-        "web_source_ref": "turn360470view0",
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      }
-    ],
-    "retrieval_synthesis": {
-      "kind": "cross_family_research_synthesis",
-      "topic": "hayom_yom_education_love_body_refinement_and_soul_work",
-      "attribution": "system_synthesis_not_rebbe_quote",
-      "label": "סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי",
-      "synthesis_scope": "bounded comparison across five distinct dated Hayom Yom entry Evidence Families; not one speech, one speaker, or independent archival corroboration",
-      "source_count": 5,
-      "distinct_evidence_families": 5,
-      "independent_entry_families": 5,
-      "event_corroboration_claimed": false,
-      "claim_count": 5,
-      "claim_level_source_locators": 5,
-      "regular_mode": "להציג חמש טענות נפרדות, כל אחת עם מיקום גוף משלה ועם הייחוס הפנימי של הערך; אין לאחד את הערכים להוראה אחת.",
-      "researcher_mode": "deep; five item-level source mappings, claim-source map, original-language body locators, provenance, partial context, embedded attribution boundaries and non-corroboration limits.",
-      "method": "Claim-level comparison across five distinct dated Hayom Yom entry Evidence Families: women's educational/community responsibility, love as a connective force in Chassidic service, body refinement rather than ascetic breaking, the distinct roles of Rashi study in Chumash and Gemara, and the soul's general and particular work. Each claim has one inspected proposition and its own original-language body locator.",
-      "evidence_quality": "five_distinct_dated_hayom_yom_entries_not_archival_corroboration",
-      "claims": [
-        {
-          "claim_id": "women_education",
-          "claim": "ערך כ״א שבט מציג את נשי ובנות החסידים כמי שנדרשות להוביל חיזוק של חיי היהדות, ובפרט טהרת המשפחה, ולארגן מסגרת בנות לחיזוק הדרכה וחינוך.",
-          "source_aids": [
-            528607
-          ],
-          "source_locators": [
-            {
-              "aid": 528607,
-              "locator": "he.chabad.org AID 528607, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "chassidic_love",
-          "claim": "ערך כ״ו שבט מתאר אהבה ככוח החיים בעבודת החסידות וכחוט מקשר בין חסידים ובין רבי לחסידים, ללא מחיצות של מקום וזמן.",
-          "source_aids": [
-            528612
-          ],
-          "source_locators": [
-            {
-              "aid": 528612,
-              "locator": "he.chabad.org AID 528612, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "body_refinement",
-          "claim": "ערך כ״ח שבט מביא תורה המיוחסת לבעל שם טוב ומעדיף בירור וזיכוך הגוף באמצעות תורה ומצוות על פני סיגופים לשבירת החומריות.",
-          "source_aids": [
-            528614
-          ],
-          "source_locators": [
-            {
-              "aid": 528614,
-              "locator": "he.chabad.org AID 528614, גוף הערך הציבורי, שורות 172–173."
-            }
-          ]
-        },
-        {
-          "claim_id": "rashi_mind_heart",
-          "claim": "ערך כ״ט שבט מביא בשם אדמו״ר הזקן הבחנה שלפיה רש״י על חומש פותח את הלב ומגלה אהבה ויראה, ואילו רש״י על גמרא פותח את המוח ומגלה שכל.",
-          "source_aids": [
-            528615
-          ],
-          "source_locators": [
-            {
-              "aid": 528615,
-              "locator": "he.chabad.org AID 528615, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "soul_general_particular_work",
-          "claim": "ערך א׳ אדר א׳ מבחין בין מלאכה כללית של הנשמה — הגברת הצורה על החומר והארת העולם בתורה ובמצוות — לבין עבודה פרטית במוחין ובמידות לפי טבעה ועניינה.",
-          "source_aids": [
-            528618
-          ],
-          "source_locators": [
-            {
-              "aid": 528618,
-              "locator": "he.chabad.org AID 528618, גוף הערך הציבורי, שורות 170–172."
-            }
-          ]
-        }
-      ],
-      "limits": [
-        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס של מסקנה לרבי.",
-        "חמשת הערכים הם פריטים מתוארכים נפרדים; הייחוסים הפנימיים נשמרים לכל ערך ואין למזג אותם לדובר אחד.",
-        "ההשוואה אינה אימות ארכיוני עצמאי של המנהגים, הסיפורים או המסורות המתוארים.",
-        "ההקשר חלקי; לא נבדקו כתבי יד, אוטוגרפים, מהדורות ביקורתיות או עדים מקבילים.",
-        "שני התרגומים האנגליים שנבדקו באצווה הם מצגות לא-עצמאיות של ערכים בעברית; לא נבדק גוף המקור העברי שלהם."
-      ]
+    "pre_addition_full_index_scan": {
+      "available": false,
+      "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
+      "recent_manual_batch_files_checked": 2,
+      "recent_manual_batch_range": "163–164",
+      "recent_manual_batch_record_rows_checked": 29,
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "exact_aid_queries": 13,
+      "exact_aid_matches": []
+    },
+    "reconciliation_identity_integrity": {
+      "passed": null,
+      "full_index_scan_completed": false,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null,
+      "status": "pending_reconciliation"
     },
     "language_distribution": {
-      "Hebrew": 7,
-      "Yiddish": 3,
+      "Hebrew": 8,
+      "Yiddish": 1,
       "Hebrew and Yiddish": 2,
       "English": 2
     },
+    "reviewed_body_language_distribution": {
+      "Hebrew": 8,
+      "Yiddish": 1,
+      "Hebrew and Yiddish": 2,
+      "English": 2
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 14
+    },
     "source_type_distribution": {
-      "Hayom Yom": 12,
-      "Hayom Yom (English translation)": 2
-    }
+      "Hayom Yom": 13
+    },
+    "quality_gate_followup": {
+      "required": [
+        "full canonical identity/Evidence Family reconciliation",
+        "test_content_readiness.mjs",
+        "claim-level retrieval and deep researcher citation checks",
+        "GitHub Actions and Pages verification"
+      ],
+      "status": "pending"
+    },
+    "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
+  },
+  "previous_manual_web_review": {
+    "schema": "content-research-batch-v1",
+    "batch_id": "164",
+    "batch_date": "2026-11-22",
+    "reviewed_at": "2026-11-22T00:30:35+02:00",
+    "title": "Batch 164 — fifteen original-language Adar I Hayom Yom entries and one in-place enrichment",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 16,
+    "source_bodies_inspected": 16,
+    "source_body_pages_opened": 16,
+    "new_source_identities": 15,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 1,
+    "new_response_propositions": 18,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 19,
+    "answer_eligible_source_families_added": 15,
+    "independent_witnesses_added": 15,
+    "non_independent_presentations_added": 0,
+    "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 1,
+    "recovered_candidate_count": 0,
+    "metrics_before": null,
+    "metrics_expected_after": null,
+    "metrics_actual_before": null,
+    "metrics_actual_after": null,
+    "metrics_delta_actual": null,
+    "reconciliation_variance": null,
+    "new_aids": [
+      528619,
+      528620,
+      528621,
+      528622,
+      528623,
+      528624,
+      528625,
+      528626,
+      528627,
+      528628,
+      528629,
+      528630,
+      528631,
+      528632,
+      528633
+    ],
+    "enriched_aids": [
+      528545
+    ],
+    "staging_candidate_aids": [],
+    "translations_counted_as_independent_witnesses": 0,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "metrics_delta_at_batch_boundary": null,
+    "local_content_delta": {
+      "new_source_identities": 15,
+      "new_evidence_families": 15,
+      "new_response_propositions": 18,
+      "existing_identities_enriched": 1,
+      "existing_response_propositions_added": 1,
+      "verified_promotions": 0,
+      "note": "Reviewed batch counts, not reconciled after-metrics."
+    },
+    "existing_identity_updates": [
+      {
+        "aid": 528545,
+        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
+        "evidence_family_id": "hayom-yom-528545-5703",
+        "before": 5,
+        "after": 6,
+        "existing_propositions_before": 5,
+        "total_propositions_after": 6,
+        "propositions_added": 1,
+        "source_body_locator": "he.chabad.org AID 528545, גוף הערך בעברית, שורה 168.",
+        "proposition": "בקטע המצוטט ממכתב אביו של המלקט נאמר כי הן עבודת התפילה והתורה והמצוות והן ענייני העולם הנחוצים לקיום הגוף צריכים להיעשות בכוונה אמיתית לשם שמים; הייחוס נשאר למכתב המצוטט ולא לאמירה עצמאית של המלקט."
+      }
+    ],
+    "existing_identity_rechecks": [
+      {
+        "aid": 528545,
+        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
+        "evidence_family_id": "hayom-yom-528545-5703",
+        "body_locator": "שורה 168",
+        "web_source_ref": "turn463733view0",
+        "recheck_status": "inspected_and_enriched"
+      }
+    ],
+    "source_body_review": [
+      {
+        "aid": 528619,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528619",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורות 172–174",
+        "web_source_ref": "turn711333view0",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528619-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528620,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528620",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 173",
+        "web_source_ref": "turn711333view1",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528620-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528621,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528621",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 173",
+        "web_source_ref": "turn661053view0",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528621-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528622,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528622",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 173",
+        "web_source_ref": "turn661053view1",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528622-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528623,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528623",
+        "language": "Yiddish",
+        "original_language": "Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 172",
+        "web_source_ref": "turn661053view2",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528623-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528624,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528624",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 173",
+        "web_source_ref": "turn661053view3",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528624-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528625,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528625",
+        "language": "Yiddish",
+        "original_language": "Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורות 172–173",
+        "web_source_ref": "turn303510view0",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528625-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528626,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528626",
+        "language": "Yiddish",
+        "original_language": "Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 173",
+        "web_source_ref": "turn661053view5",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528626-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528627,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528627",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורות 173–175",
+        "web_source_ref": "turn661053view6",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528627-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528628,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528628",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 173",
+        "web_source_ref": "turn661053view7",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528628-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528629,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528629",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 173",
+        "web_source_ref": "turn661053view8",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528629-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528630,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528630",
+        "language": "Hebrew and Yiddish",
+        "original_language": "Hebrew and Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורות 173–174",
+        "web_source_ref": "turn661053view9",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528630-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528631,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528631",
+        "language": "Yiddish",
+        "original_language": "Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 174",
+        "web_source_ref": "turn661053view10",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528631-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528632,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528632",
+        "language": "Hebrew and Yiddish",
+        "original_language": "Hebrew and Yiddish",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורות 169–176",
+        "web_source_ref": "turn303510view1",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528632-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528633,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528633",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "שורה 173",
+        "web_source_ref": "turn303510view2",
+        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528633-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528545,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528545",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": true,
+        "body_locator": "שורה 168; גוף הערך נפתח מחדש",
+        "web_source_ref": "turn463733view0",
+        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
+        "evidence_family_id": "hayom-yom-528545-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body_in_place_enrichment"
+      }
+    ],
+    "blocked_candidates": [
+      {
+        "candidate_key": "aid:4666220",
+        "aid": 4666220,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "פתיחה ישירה בכלי העיון החזירה Internal Error; גוף הפרסום לא נפתח.",
+        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 15 גופי ערכים חלופיים בעברית/יידיש ועוד גוף קיים לצורך העשרה."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "fallback_source_results": {
+      "accessible_item_level_bodies": 16,
+      "inspected_aids": [
+        528619,
+        528620,
+        528621,
+        528622,
+        528623,
+        528624,
+        528625,
+        528626,
+        528627,
+        528628,
+        528629,
+        528630,
+        528631,
+        528632,
+        528633,
+        528545
+      ],
+      "original_language_body_inspected": 16,
+      "translation_bodies_inspected": 0,
+      "body_text_inspected": true,
+      "note": "לאחר חסימת AID 4666220 נפתחו 15 גופי ערכים יומיים חדשים בעברית, ביידיש ובשילוב השפות; בנוסף נפתח מחדש AID 528545 והועשר באותה משפחת ראיות. לא נעשה שימוש ב-crawler."
+    },
+    "excluded_candidates": [],
+    "translation_source_links": [],
+    "deduplication_check": {
+      "full_index_scan_available": false,
+      "full_index_entries": null,
+      "full_index_generated": null,
+      "code_search_exact_aid_queries": 15,
+      "code_search_matches": [],
+      "candidate_aids_found": [],
+      "existing_aids_found": [
+        528545
+      ],
+      "new_aids_unique_within_checked_scope": true,
+      "source_urls_unique": true,
+      "evidence_family_ids_unique": true,
+      "canonical_bulk_files_checked": 0,
+      "canonical_bulk_matches": null,
+      "recent_manual_batch_files_checked": 0,
+      "recent_manual_batch_range": "not independently scanned in this run",
+      "recent_manual_batch_record_rows_checked": 0,
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "post_addition_canonical_scan_pending": true,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null,
+      "note": "בדיקת קדם-הוספה מוגבלת: 15 חיפושי AID ממוקדים ב-GitHub ללא התאמות; תור הבדיקה בן 1,022 פריטים ללא התאמות; AID 528545 זוהה כזהות קיימת והועשר במקומו. public-search-index.json לא הוחזר בכלי זה בשל גודלו, ולא נסרקו מחדש קובצי האינדקס הקנוניים; סריקת זהויות מלאה נותרה ל-reconciliation."
+    },
+    "pre_addition_full_index_scan": {
+      "available": false,
+      "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
+      "recent_manual_batch_files_checked": 0,
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "exact_aid_queries": 15,
+      "exact_aid_matches": []
+    },
+    "reconciliation_identity_integrity": {
+      "passed": null,
+      "full_index_scan_completed": false,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null,
+      "status": "pending_reconciliation"
+    },
+    "retrieval_synthesis": {
+      "kind": "cross_family_research_synthesis",
+      "topic": "hayom_yom_adar_i_inner_work_community_and_prayer",
+      "attribution": "system_synthesis_not_rebbe_quote",
+      "label": "סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי",
+      "synthesis_scope": "Bounded comparison across five distinct dated Hayom Yom entries in the same annual anthology; they are separate entries and internal attributions, not one speech, one speaker, or independent archival corroboration.",
+      "source_count": 5,
+      "distinct_evidence_families": 5,
+      "independent_entry_families": 5,
+      "event_corroboration_claimed": false,
+      "claim_count": 5,
+      "claim_level_source_locators": 5,
+      "regular_mode": "להציג חמש טענות נפרדות, כל אחת עם מיקום גוף משלה ועם הייחוס הפנימי של הערך; אין לאחד את הערכים להוראה אחת.",
+      "researcher_mode": "deep; five item-level source mappings, claim-source map, original-language body locators, provenance, partial context, embedded attribution boundaries and non-corroboration limits.",
+      "method": "Claim-level comparison across five distinct dated Hayom Yom entry Evidence Families: inner work, love of Israel, individual mission, general prayer intention, and support of religious life. Each claim is mapped to one inspected original-language body proposition and locator. The entries are not independent archival corroboration.",
+      "evidence_quality": "five_distinct_dated_hayom_yom_entries_not_archival_corroboration",
+      "claims": [
+        {
+          "claim_id": "inner_work",
+          "claim": "ערך ב׳ אדר א׳ מציג עבודת אמת כבדיקה פנימית מתמשכת ומראה שגם פעולות יומיומיות קטנות בכוונה עשויות להיחשב עבודה; לצד זאת הוא מציין את הצורך ביגיעה בלימוד ובהבנה.",
+          "source_aids": [
+            528619
+          ],
+          "source_locators": [
+            {
+              "aid": 528619,
+              "locator": "Chabad.org AID 528619, גוף הערך הציבורי, שורות 172–174."
+            }
+          ]
+        },
+        {
+          "claim_id": "ahavat_yisrael",
+          "claim": "ערך ג׳ אדר א׳ מביא בשם אדמו״ר הזקן אהבת ישראל גם כלפי יהודי שלא פגש, וביתר שאת כלפי חבר בקהילתו.",
+          "source_aids": [
+            528620
+          ],
+          "source_locators": [
+            {
+              "aid": 528620,
+              "locator": "Chabad.org AID 528620, גוף הערך הציבורי, שורה 173."
+            }
+          ]
+        },
+        {
+          "claim_id": "individual_mission",
+          "claim": "ערך ז׳ אדר א׳ מתאר כל יהודי כשליח שנדרש להאיר את העולם בתורה ובעבודה באמצעות מצוות מעשיות והטמעת מידות טובות.",
+          "source_aids": [
+            528624
+          ],
+          "source_locators": [
+            {
+              "aid": 528624,
+              "locator": "Chabad.org AID 528624, גוף הערך הציבורי, שורה 173."
+            }
+          ]
+        },
+        {
+          "claim_id": "general_prayer_intention",
+          "claim": "ערך י״א אדר א׳ מציג כוונה כללית בתפילה כאפשרות למי שאינו מסוגל לזכור את הכוונות הפרטיות; זהו תיאור הערך ולא פסיקה עצמאית.",
+          "source_aids": [
+            528628
+          ],
+          "source_locators": [
+            {
+              "aid": 528628,
+              "locator": "Chabad.org AID 528628, גוף הערך הציבורי, שורה 173."
+            }
+          ]
+        },
+        {
+          "claim_id": "supporting_religion",
+          "claim": "ערך י״ב אדר א׳ מפרש את ״מתן אדם״ כהקדשת האדם עצמו לפעילות התומכת בהחזקת הדת, ומתאר את הרחבת האפשרויות כתוצאה המובאת בפסוק ובפירוש הערך.",
+          "source_aids": [
+            528629
+          ],
+          "source_locators": [
+            {
+              "aid": 528629,
+              "locator": "Chabad.org AID 528629, גוף הערך הציבורי, שורה 173."
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס של מסקנה לרבי.",
+        "חמשת הערכים הם פריטים מתוארכים נפרדים; הייחוסים הפנימיים נשמרים לכל ערך ואין למזג אותם לדובר אחד.",
+        "ההשוואה אינה אימות ארכיוני עצמאי של המסורות, המנהגים או ההסברים המתוארים.",
+        "ההקשר חלקי; לא נבדקו כתבי יד, אוטוגרפים, מהדורות ביקורתיות או עדים מקבילים.",
+        "תיאור מנהג אינו פסיקה הלכתית כללית; תרגום או הצגה מקבילה אינם עד עצמאי נוסף."
+      ]
+    },
+    "language_distribution": {
+      "Hebrew": 9,
+      "Yiddish": 4,
+      "Hebrew and Yiddish": 2
+    },
+    "reviewed_body_language_distribution": {
+      "Hebrew": 10,
+      "Yiddish": 4,
+      "Hebrew and Yiddish": 2
+    },
+    "proposition_language_distribution": {
+      "Hebrew": 19
+    },
+    "source_type_distribution": {
+      "Hayom Yom": 15
+    },
+    "quality_gate_followup": {
+      "required": [
+        "canonical identity reconciliation",
+        "test_content_readiness.mjs",
+        "five-family regular retrieval",
+        "five-family deep researcher citation map",
+        "GitHub Actions and Pages verification"
+      ],
+      "status": "pending"
+    },
+    "batch_file": "data/items/content-research-batch-164-2026-11-22.json"
   },
   "last_manual_web_review": {
     "schema": "content-research-batch-v1",
-    "batch_id": "164",
+    "batch_id": "165",
     "batch_date": "2026-11-22",
-    "reviewed_at": "2026-11-22T00:30:35+02:00",
-    "title": "Batch 164 — fifteen original-language Adar I Hayom Yom entries and one in-place enrichment",
+    "reviewed_at": "2026-11-22T01:04:04+02:00",
+    "title": "Batch 165 — eleven original-language Adar I entries and two English free-translation presentations",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 16,
-    "source_bodies_inspected": 16,
-    "source_body_pages_opened": 16,
-    "new_source_identities": 15,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 18,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 19,
-    "answer_eligible_source_families_added": 15,
-    "independent_witnesses_added": 15,
-    "non_independent_presentations_added": 0,
+    "reviewed_item_count": 15,
+    "source_bodies_inspected": 13,
+    "source_body_pages_opened": 13,
+    "new_source_identities": 13,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 14,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 14,
+    "answer_eligible_source_families_added": 13,
+    "independent_witnesses_added": 11,
+    "non_independent_presentations_added": 2,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
+    "blocked_candidate_count": 2,
     "recovered_candidate_count": 0,
     "metrics_before": null,
     "metrics_expected_after": null,
@@ -1043,378 +963,333 @@
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "new_aids": [
-      528619,
-      528620,
-      528621,
-      528622,
-      528623,
-      528624,
-      528625,
-      528626,
-      528627,
-      528628,
-      528629,
-      528630,
-      528631,
-      528632,
-      528633
+      528634,
+      528635,
+      528636,
+      528638,
+      528639,
+      528640,
+      528641,
+      528642,
+      528643,
+      528645,
+      528646,
+      6101,
+      6108
     ],
-    "enriched_aids": [
-      528545
-    ],
+    "enriched_aids": [],
     "staging_candidate_aids": [],
     "translations_counted_as_independent_witnesses": 0,
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
     "scan_only_verification_used": false,
-    "metrics_delta_at_batch_boundary": null,
-    "local_content_delta": {
-      "new_source_identities": 15,
-      "new_evidence_families": 15,
-      "new_response_propositions": 18,
-      "existing_identities_enriched": 1,
-      "existing_response_propositions_added": 1,
-      "verified_promotions": 0,
-      "note": "Reviewed batch counts, not reconciled after-metrics."
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 13,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 14,
+      "note": "Expected contribution from 13 distinct dated-entry Evidence Families, including two non-independent English translations of two other dated entries; not measured after-metrics."
     },
-    "existing_identity_updates": [
-      {
-        "aid": 528545,
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "before": 5,
-        "after": 6,
-        "existing_propositions_before": 5,
-        "total_propositions_after": 6,
-        "propositions_added": 1,
-        "source_body_locator": "he.chabad.org AID 528545, גוף הערך בעברית, שורה 168.",
-        "proposition": "בקטע המצוטט ממכתב אביו של המלקט נאמר כי הן עבודת התפילה והתורה והמצוות והן ענייני העולם הנחוצים לקיום הגוף צריכים להיעשות בכוונה אמיתית לשם שמים; הייחוס נשאר למכתב המצוטט ולא לאמירה עצמאית של המלקט."
-      }
-    ],
-    "existing_identity_rechecks": [
-      {
-        "aid": 528545,
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "body_locator": "שורה 168",
-        "web_source_ref": "turn463733view0",
-        "recheck_status": "inspected_and_enriched"
-      }
-    ],
+    "local_content_delta": {
+      "new_source_identities": 13,
+      "new_evidence_families": 13,
+      "new_response_propositions": 14,
+      "existing_identities_enriched": 0,
+      "existing_response_propositions_added": 0,
+      "verified_promotions": 0,
+      "note": "Reviewed batch counts only; full canonical reconciliation and measured after-metrics pending."
+    },
     "source_body_review": [
       {
-        "aid": 528619,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528619",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–174",
-        "web_source_ref": "turn711333view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528619-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528620,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528620",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn711333view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528620-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528621,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528621",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528621-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528622,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528622",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528622-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528623,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528623",
+        "aid": 528634,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528634",
         "language": "Yiddish",
         "original_language": "Yiddish",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 172",
-        "web_source_ref": "turn661053view2",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528623-5703",
+        "body_locator": "Chabad.org AID 528634, גוף הערך ביידיש, שורות 172–173.",
+        "web_source_ref": "turn955540view0",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528634-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528624,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528624",
+        "aid": 528635,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528635",
         "language": "Hebrew",
         "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view3",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528624-5703",
+        "body_locator": "Chabad.org AID 528635, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view1",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528635-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528625,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528625",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–173",
-        "web_source_ref": "turn303510view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528625-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528626,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528626",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view5",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528626-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528627,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528627",
+        "aid": 528636,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528636",
         "language": "Hebrew",
         "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורות 173–175",
-        "web_source_ref": "turn661053view6",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528627-5703",
+        "body_locator": "Chabad.org AID 528636, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view2",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528636-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528628,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528628",
+        "aid": 528638,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528638",
         "language": "Hebrew",
         "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view7",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528628-5703",
+        "body_locator": "Chabad.org AID 528638, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view3",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528638-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528629,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528629",
+        "aid": 528639,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528639",
         "language": "Hebrew",
         "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view8",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528629-5703",
+        "body_locator": "Chabad.org AID 528639, גוף הערך בעברית, שורה 173. ; Chabad.org AID 528639, גוף הערך בעברית, שורה 174.",
+        "web_source_ref": "turn955540view4",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528639-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528630,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528630",
+        "aid": 528640,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528640",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528640, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view5",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528640-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528641,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528641",
         "language": "Hebrew and Yiddish",
         "original_language": "Hebrew and Yiddish",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורות 173–174",
-        "web_source_ref": "turn661053view9",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528630-5703",
+        "body_locator": "Chabad.org AID 528641, גוף הערך המשולב בעברית וביידיש, שורה 172.",
+        "web_source_ref": "turn955540view6",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528641-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528631,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528631",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
+        "aid": 528642,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528642",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 174",
-        "web_source_ref": "turn661053view10",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528631-5703",
+        "body_locator": "Chabad.org AID 528642, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view7",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528642-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528632,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528632",
+        "aid": 528643,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528643",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528643, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view8",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528643-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528645,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528645",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528645, גוף הערך בעברית, שורה 172.",
+        "web_source_ref": "turn955540view9",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528645-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528646,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528646",
         "language": "Hebrew and Yiddish",
         "original_language": "Hebrew and Yiddish",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורות 169–176",
-        "web_source_ref": "turn303510view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528632-5703",
+        "body_locator": "Chabad.org AID 528646, גוף הערך בעברית וביידיש, שורה 175.",
+        "web_source_ref": "turn955540view10",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528646-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528633,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528633",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
+        "aid": 6101,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
+        "language": "English",
+        "original_language": "unknown",
         "body_text_inspected": true,
-        "inspected_original_language_body": true,
+        "inspected_original_language_body": false,
         "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn303510view2",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528633-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
+        "body_locator": "Chabad.org AID 6101, גוף התרגום האנגלי החופשי, שורה 250.",
+        "web_source_ref": "turn764819view0",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528637-5703",
+        "independent_witness": false,
+        "inspection_method": "public_web_open_translated_body",
+        "translation_of_evidence_family_id": "hayom-yom-528637-5703",
+        "original_language_source_aid": 528637
       },
       {
-        "aid": 528545,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528545",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
+        "aid": 6108,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
+        "language": "English",
+        "original_language": "unknown",
         "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": true,
-        "body_locator": "שורה 168; גוף הערך נפתח מחדש",
-        "web_source_ref": "turn463733view0",
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body_in_place_enrichment"
+        "inspected_original_language_body": false,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 6108, גוף התרגום האנגלי החופשי, שורה 250.",
+        "web_source_ref": "turn764819view1",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528644-5703",
+        "independent_witness": false,
+        "inspection_method": "public_web_open_translated_body",
+        "translation_of_evidence_family_id": "hayom-yom-528644-5703",
+        "original_language_source_aid": 528644
       }
     ],
     "blocked_candidates": [
       {
-        "candidate_key": "aid:4666220",
-        "aid": 4666220,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+        "candidate_key": "aid:528637",
+        "aid": 528637,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528637",
         "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "פתיחה ישירה בכלי העיון החזירה Internal Error; גוף הפרסום לא נפתח.",
-        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 15 גופי ערכים חלופיים בעברית/יידיש ועוד גוף קיים לצורך העשרה."
+        "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
+        "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6101. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+      },
+      {
+        "candidate_key": "aid:528644",
+        "aid": 528644,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528644",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
+        "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6108. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
       }
     ],
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "accessible_item_level_bodies": 16,
+      "accessible_item_level_bodies": 13,
       "inspected_aids": [
-        528619,
-        528620,
-        528621,
-        528622,
-        528623,
-        528624,
-        528625,
-        528626,
-        528627,
-        528628,
-        528629,
-        528630,
-        528631,
-        528632,
-        528633,
-        528545
+        528634,
+        528635,
+        528636,
+        528638,
+        528639,
+        528640,
+        528641,
+        528642,
+        528643,
+        528645,
+        528646,
+        6101,
+        6108
       ],
-      "original_language_body_inspected": 16,
-      "translation_bodies_inspected": 0,
+      "original_language_body_inspected": 11,
+      "english_translation_bodies_inspected": 2,
+      "non_independent_translation_presentations": 2,
       "body_text_inspected": true,
-      "note": "לאחר חסימת AID 4666220 נפתחו 15 גופי ערכים יומיים חדשים בעברית, ביידיש ובשילוב השפות; בנוסף נפתח מחדש AID 528545 והועשר באותה משפחת ראיות. לא נעשה שימוש ב-crawler."
+      "note": "לאחר חסימת AID 528637 ו-AID 528644 נפתחו באותה הפעלה שני תרגומים אנגליים חופשיים של אותם ערכים. הם מספקים תוכן נגזר בלבד, אינם עדים עצמאיים ואינם מאמתים את הנוסח העברי."
     },
     "excluded_candidates": [],
-    "translation_source_links": [],
+    "translation_source_links": [
+      {
+        "aid": 6101,
+        "original_language_aid": 528637,
+        "evidence_family_id": "hayom-yom-528637-5703",
+        "status": "derived_free_translation_not_independent"
+      },
+      {
+        "aid": 6108,
+        "original_language_aid": 528644,
+        "evidence_family_id": "hayom-yom-528644-5703",
+        "status": "derived_free_translation_not_independent"
+      }
+    ],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_entries": null,
       "full_index_generated": null,
-      "code_search_exact_aid_queries": 15,
+      "code_search_exact_aid_queries": 13,
       "code_search_matches": [],
       "candidate_aids_found": [],
-      "existing_aids_found": [
-        528545
-      ],
+      "existing_aids_found": [],
       "new_aids_unique_within_checked_scope": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_bulk_files_checked": 0,
       "canonical_bulk_matches": null,
-      "recent_manual_batch_files_checked": 0,
-      "recent_manual_batch_range": "not independently scanned in this run",
-      "recent_manual_batch_record_rows_checked": 0,
+      "recent_manual_batch_files_checked": 2,
+      "recent_manual_batch_range": "163–164",
+      "recent_manual_batch_record_rows_checked": 29,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "post_addition_canonical_scan_pending": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "note": "בדיקת קדם-הוספה מוגבלת: 15 חיפושי AID ממוקדים ב-GitHub ללא התאמות; תור הבדיקה בן 1,022 פריטים ללא התאמות; AID 528545 זוהה כזהות קיימת והועשר במקומו. public-search-index.json לא הוחזר בכלי זה בשל גודלו, ולא נסרקו מחדש קובצי האינדקס הקנוניים; סריקת זהויות מלאה נותרה ל-reconciliation."
+      "note": "בדיקת קדם-הוספה מוגבלת: 13 חיפושי AID ממוקדים ב-GitHub ללא התאמות; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
     },
     "pre_addition_full_index_scan": {
       "available": false,
       "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
-      "recent_manual_batch_files_checked": 0,
+      "recent_manual_batch_files_checked": 2,
+      "recent_manual_batch_range": "163–164",
+      "recent_manual_batch_record_rows_checked": 29,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
-      "exact_aid_queries": 15,
+      "exact_aid_queries": 13,
       "exact_aid_matches": []
     },
     "reconciliation_identity_integrity": {
@@ -1425,146 +1300,57 @@
       "all_target_identities_answer_eligible": null,
       "status": "pending_reconciliation"
     },
-    "retrieval_synthesis": {
-      "kind": "cross_family_research_synthesis",
-      "topic": "hayom_yom_adar_i_inner_work_community_and_prayer",
-      "attribution": "system_synthesis_not_rebbe_quote",
-      "label": "סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי",
-      "synthesis_scope": "Bounded comparison across five distinct dated Hayom Yom entries in the same annual anthology; they are separate entries and internal attributions, not one speech, one speaker, or independent archival corroboration.",
-      "source_count": 5,
-      "distinct_evidence_families": 5,
-      "independent_entry_families": 5,
-      "event_corroboration_claimed": false,
-      "claim_count": 5,
-      "claim_level_source_locators": 5,
-      "regular_mode": "להציג חמש טענות נפרדות, כל אחת עם מיקום גוף משלה ועם הייחוס הפנימי של הערך; אין לאחד את הערכים להוראה אחת.",
-      "researcher_mode": "deep; five item-level source mappings, claim-source map, original-language body locators, provenance, partial context, embedded attribution boundaries and non-corroboration limits.",
-      "method": "Claim-level comparison across five distinct dated Hayom Yom entry Evidence Families: inner work, love of Israel, individual mission, general prayer intention, and support of religious life. Each claim is mapped to one inspected original-language body proposition and locator. The entries are not independent archival corroboration.",
-      "evidence_quality": "five_distinct_dated_hayom_yom_entries_not_archival_corroboration",
-      "claims": [
-        {
-          "claim_id": "inner_work",
-          "claim": "ערך ב׳ אדר א׳ מציג עבודת אמת כבדיקה פנימית מתמשכת ומראה שגם פעולות יומיומיות קטנות בכוונה עשויות להיחשב עבודה; לצד זאת הוא מציין את הצורך ביגיעה בלימוד ובהבנה.",
-          "source_aids": [
-            528619
-          ],
-          "source_locators": [
-            {
-              "aid": 528619,
-              "locator": "Chabad.org AID 528619, גוף הערך הציבורי, שורות 172–174."
-            }
-          ]
-        },
-        {
-          "claim_id": "ahavat_yisrael",
-          "claim": "ערך ג׳ אדר א׳ מביא בשם אדמו״ר הזקן אהבת ישראל גם כלפי יהודי שלא פגש, וביתר שאת כלפי חבר בקהילתו.",
-          "source_aids": [
-            528620
-          ],
-          "source_locators": [
-            {
-              "aid": 528620,
-              "locator": "Chabad.org AID 528620, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "individual_mission",
-          "claim": "ערך ז׳ אדר א׳ מתאר כל יהודי כשליח שנדרש להאיר את העולם בתורה ובעבודה באמצעות מצוות מעשיות והטמעת מידות טובות.",
-          "source_aids": [
-            528624
-          ],
-          "source_locators": [
-            {
-              "aid": 528624,
-              "locator": "Chabad.org AID 528624, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "general_prayer_intention",
-          "claim": "ערך י״א אדר א׳ מציג כוונה כללית בתפילה כאפשרות למי שאינו מסוגל לזכור את הכוונות הפרטיות; זהו תיאור הערך ולא פסיקה עצמאית.",
-          "source_aids": [
-            528628
-          ],
-          "source_locators": [
-            {
-              "aid": 528628,
-              "locator": "Chabad.org AID 528628, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "supporting_religion",
-          "claim": "ערך י״ב אדר א׳ מפרש את ״מתן אדם״ כהקדשת האדם עצמו לפעילות התומכת בהחזקת הדת, ומתאר את הרחבת האפשרויות כתוצאה המובאת בפסוק ובפירוש הערך.",
-          "source_aids": [
-            528629
-          ],
-          "source_locators": [
-            {
-              "aid": 528629,
-              "locator": "Chabad.org AID 528629, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        }
-      ],
-      "limits": [
-        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס של מסקנה לרבי.",
-        "חמשת הערכים הם פריטים מתוארכים נפרדים; הייחוסים הפנימיים נשמרים לכל ערך ואין למזג אותם לדובר אחד.",
-        "ההשוואה אינה אימות ארכיוני עצמאי של המסורות, המנהגים או ההסברים המתוארים.",
-        "ההקשר חלקי; לא נבדקו כתבי יד, אוטוגרפים, מהדורות ביקורתיות או עדים מקבילים.",
-        "תיאור מנהג אינו פסיקה הלכתית כללית; תרגום או הצגה מקבילה אינם עד עצמאי נוסף."
-      ]
-    },
     "language_distribution": {
-      "Hebrew": 9,
-      "Yiddish": 4,
-      "Hebrew and Yiddish": 2
+      "Hebrew": 8,
+      "Yiddish": 1,
+      "Hebrew and Yiddish": 2,
+      "English": 2
     },
     "reviewed_body_language_distribution": {
-      "Hebrew": 10,
-      "Yiddish": 4,
-      "Hebrew and Yiddish": 2
+      "Hebrew": 8,
+      "Yiddish": 1,
+      "Hebrew and Yiddish": 2,
+      "English": 2
     },
     "proposition_language_distribution": {
-      "Hebrew": 19
+      "Hebrew": 14
     },
     "source_type_distribution": {
-      "Hayom Yom": 15
+      "Hayom Yom": 13
     },
     "quality_gate_followup": {
       "required": [
-        "canonical identity reconciliation",
+        "full canonical identity/Evidence Family reconciliation",
         "test_content_readiness.mjs",
-        "five-family regular retrieval",
-        "five-family deep researcher citation map",
+        "claim-level retrieval and deep researcher citation checks",
         "GitHub Actions and Pages verification"
       ],
       "status": "pending"
-    }
+    },
+    "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
   },
   "last_manual_review": {
     "schema": "content-research-batch-v1",
-    "batch_id": "164",
+    "batch_id": "165",
     "batch_date": "2026-11-22",
-    "reviewed_at": "2026-11-22T00:30:35+02:00",
-    "title": "Batch 164 — fifteen original-language Adar I Hayom Yom entries and one in-place enrichment",
+    "reviewed_at": "2026-11-22T01:04:04+02:00",
+    "title": "Batch 165 — eleven original-language Adar I entries and two English free-translation presentations",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 16,
-    "source_bodies_inspected": 16,
-    "source_body_pages_opened": 16,
-    "new_source_identities": 15,
-    "existing_identities_enriched": 1,
-    "existing_identities_rechecked": 1,
-    "new_response_propositions": 18,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 19,
-    "answer_eligible_source_families_added": 15,
-    "independent_witnesses_added": 15,
-    "non_independent_presentations_added": 0,
+    "reviewed_item_count": 15,
+    "source_bodies_inspected": 13,
+    "source_body_pages_opened": 13,
+    "new_source_identities": 13,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 14,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 14,
+    "answer_eligible_source_families_added": 13,
+    "independent_witnesses_added": 11,
+    "non_independent_presentations_added": 2,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
+    "blocked_candidate_count": 2,
     "recovered_candidate_count": 0,
     "metrics_before": null,
     "metrics_expected_after": null,
@@ -1573,378 +1359,333 @@
     "metrics_delta_actual": null,
     "reconciliation_variance": null,
     "new_aids": [
-      528619,
-      528620,
-      528621,
-      528622,
-      528623,
-      528624,
-      528625,
-      528626,
-      528627,
-      528628,
-      528629,
-      528630,
-      528631,
-      528632,
-      528633
+      528634,
+      528635,
+      528636,
+      528638,
+      528639,
+      528640,
+      528641,
+      528642,
+      528643,
+      528645,
+      528646,
+      6101,
+      6108
     ],
-    "enriched_aids": [
-      528545
-    ],
+    "enriched_aids": [],
     "staging_candidate_aids": [],
     "translations_counted_as_independent_witnesses": 0,
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
     "scan_only_verification_used": false,
-    "metrics_delta_at_batch_boundary": null,
-    "local_content_delta": {
-      "new_source_identities": 15,
-      "new_evidence_families": 15,
-      "new_response_propositions": 18,
-      "existing_identities_enriched": 1,
-      "existing_response_propositions_added": 1,
-      "verified_promotions": 0,
-      "note": "Reviewed batch counts, not reconciled after-metrics."
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 13,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 14,
+      "note": "Expected contribution from 13 distinct dated-entry Evidence Families, including two non-independent English translations of two other dated entries; not measured after-metrics."
     },
-    "existing_identity_updates": [
-      {
-        "aid": 528545,
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "before": 5,
-        "after": 6,
-        "existing_propositions_before": 5,
-        "total_propositions_after": 6,
-        "propositions_added": 1,
-        "source_body_locator": "he.chabad.org AID 528545, גוף הערך בעברית, שורה 168.",
-        "proposition": "בקטע המצוטט ממכתב אביו של המלקט נאמר כי הן עבודת התפילה והתורה והמצוות והן ענייני העולם הנחוצים לקיום הגוף צריכים להיעשות בכוונה אמיתית לשם שמים; הייחוס נשאר למכתב המצוטט ולא לאמירה עצמאית של המלקט."
-      }
-    ],
-    "existing_identity_rechecks": [
-      {
-        "aid": 528545,
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "body_locator": "שורה 168",
-        "web_source_ref": "turn463733view0",
-        "recheck_status": "inspected_and_enriched"
-      }
-    ],
+    "local_content_delta": {
+      "new_source_identities": 13,
+      "new_evidence_families": 13,
+      "new_response_propositions": 14,
+      "existing_identities_enriched": 0,
+      "existing_response_propositions_added": 0,
+      "verified_promotions": 0,
+      "note": "Reviewed batch counts only; full canonical reconciliation and measured after-metrics pending."
+    },
     "source_body_review": [
       {
-        "aid": 528619,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528619",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–174",
-        "web_source_ref": "turn711333view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528619-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528620,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528620",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn711333view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528620-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528621,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528621",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528621-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528622,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528622",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528622-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528623,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528623",
+        "aid": 528634,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528634",
         "language": "Yiddish",
         "original_language": "Yiddish",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 172",
-        "web_source_ref": "turn661053view2",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528623-5703",
+        "body_locator": "Chabad.org AID 528634, גוף הערך ביידיש, שורות 172–173.",
+        "web_source_ref": "turn955540view0",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528634-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528624,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528624",
+        "aid": 528635,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528635",
         "language": "Hebrew",
         "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view3",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528624-5703",
+        "body_locator": "Chabad.org AID 528635, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view1",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528635-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528625,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528625",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורות 172–173",
-        "web_source_ref": "turn303510view0",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528625-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528626,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528626",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
-        "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view5",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528626-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
-      },
-      {
-        "aid": 528627,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528627",
+        "aid": 528636,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528636",
         "language": "Hebrew",
         "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורות 173–175",
-        "web_source_ref": "turn661053view6",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528627-5703",
+        "body_locator": "Chabad.org AID 528636, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view2",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528636-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528628,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528628",
+        "aid": 528638,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528638",
         "language": "Hebrew",
         "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view7",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528628-5703",
+        "body_locator": "Chabad.org AID 528638, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view3",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528638-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528629,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528629",
+        "aid": 528639,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528639",
         "language": "Hebrew",
         "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn661053view8",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528629-5703",
+        "body_locator": "Chabad.org AID 528639, גוף הערך בעברית, שורה 173. ; Chabad.org AID 528639, גוף הערך בעברית, שורה 174.",
+        "web_source_ref": "turn955540view4",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528639-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528630,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528630",
+        "aid": 528640,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528640",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528640, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view5",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528640-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528641,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528641",
         "language": "Hebrew and Yiddish",
         "original_language": "Hebrew and Yiddish",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורות 173–174",
-        "web_source_ref": "turn661053view9",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528630-5703",
+        "body_locator": "Chabad.org AID 528641, גוף הערך המשולב בעברית וביידיש, שורה 172.",
+        "web_source_ref": "turn955540view6",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528641-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528631,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528631",
-        "language": "Yiddish",
-        "original_language": "Yiddish",
+        "aid": 528642,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528642",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורה 174",
-        "web_source_ref": "turn661053view10",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528631-5703",
+        "body_locator": "Chabad.org AID 528642, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view7",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528642-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528632,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528632",
+        "aid": 528643,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528643",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528643, גוף הערך בעברית, שורה 173.",
+        "web_source_ref": "turn955540view8",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528643-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528645,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528645",
+        "language": "Hebrew",
+        "original_language": "Hebrew",
+        "body_text_inspected": true,
+        "inspected_original_language_body": true,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 528645, גוף הערך בעברית, שורה 172.",
+        "web_source_ref": "turn955540view9",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528645-5703",
+        "independent_witness": true,
+        "inspection_method": "public_web_open_body"
+      },
+      {
+        "aid": 528646,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528646",
         "language": "Hebrew and Yiddish",
         "original_language": "Hebrew and Yiddish",
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "שורות 169–176",
-        "web_source_ref": "turn303510view1",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528632-5703",
+        "body_locator": "Chabad.org AID 528646, גוף הערך בעברית וביידיש, שורה 175.",
+        "web_source_ref": "turn955540view10",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528646-5703",
         "independent_witness": true,
         "inspection_method": "public_web_open_body"
       },
       {
-        "aid": 528633,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528633",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
+        "aid": 6101,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
+        "language": "English",
+        "original_language": "unknown",
         "body_text_inspected": true,
-        "inspected_original_language_body": true,
+        "inspected_original_language_body": false,
         "existing_identity": false,
-        "body_locator": "שורה 173",
-        "web_source_ref": "turn303510view2",
-        "canonical_file": "data/items/content-research-batch-164-2026-11-22.json",
-        "evidence_family_id": "hayom-yom-528633-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body"
+        "body_locator": "Chabad.org AID 6101, גוף התרגום האנגלי החופשי, שורה 250.",
+        "web_source_ref": "turn764819view0",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528637-5703",
+        "independent_witness": false,
+        "inspection_method": "public_web_open_translated_body",
+        "translation_of_evidence_family_id": "hayom-yom-528637-5703",
+        "original_language_source_aid": 528637
       },
       {
-        "aid": 528545,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/528545",
-        "language": "Hebrew",
-        "original_language": "Hebrew",
+        "aid": 6108,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
+        "language": "English",
+        "original_language": "unknown",
         "body_text_inspected": true,
-        "inspected_original_language_body": true,
-        "existing_identity": true,
-        "body_locator": "שורה 168; גוף הערך נפתח מחדש",
-        "web_source_ref": "turn463733view0",
-        "canonical_file": "data/items/content-research-batch-157-2026-11-21.json",
-        "evidence_family_id": "hayom-yom-528545-5703",
-        "independent_witness": true,
-        "inspection_method": "public_web_open_body_in_place_enrichment"
+        "inspected_original_language_body": false,
+        "existing_identity": false,
+        "body_locator": "Chabad.org AID 6108, גוף התרגום האנגלי החופשי, שורה 250.",
+        "web_source_ref": "turn764819view1",
+        "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+        "evidence_family_id": "hayom-yom-528644-5703",
+        "independent_witness": false,
+        "inspection_method": "public_web_open_translated_body",
+        "translation_of_evidence_family_id": "hayom-yom-528644-5703",
+        "original_language_source_aid": 528644
       }
     ],
     "blocked_candidates": [
       {
-        "candidate_key": "aid:4666220",
-        "aid": 4666220,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+        "candidate_key": "aid:528637",
+        "aid": 528637,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528637",
         "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "פתיחה ישירה בכלי העיון החזירה Internal Error; גוף הפרסום לא נפתח.",
-        "handling": "לא בוצע retry ל-crawler ולא נעקפו בקרות גישה. באותה הפעלה נפתחו 15 גופי ערכים חלופיים בעברית/יידיש ועוד גוף קיים לצורך העשרה."
+        "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
+        "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6101. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+      },
+      {
+        "candidate_key": "aid:528644",
+        "aid": 528644,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/528644",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
+        "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6108. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
       }
     ],
     "fallback_source_attempted": true,
     "fallback_source_results": {
-      "accessible_item_level_bodies": 16,
+      "accessible_item_level_bodies": 13,
       "inspected_aids": [
-        528619,
-        528620,
-        528621,
-        528622,
-        528623,
-        528624,
-        528625,
-        528626,
-        528627,
-        528628,
-        528629,
-        528630,
-        528631,
-        528632,
-        528633,
-        528545
+        528634,
+        528635,
+        528636,
+        528638,
+        528639,
+        528640,
+        528641,
+        528642,
+        528643,
+        528645,
+        528646,
+        6101,
+        6108
       ],
-      "original_language_body_inspected": 16,
-      "translation_bodies_inspected": 0,
+      "original_language_body_inspected": 11,
+      "english_translation_bodies_inspected": 2,
+      "non_independent_translation_presentations": 2,
       "body_text_inspected": true,
-      "note": "לאחר חסימת AID 4666220 נפתחו 15 גופי ערכים יומיים חדשים בעברית, ביידיש ובשילוב השפות; בנוסף נפתח מחדש AID 528545 והועשר באותה משפחת ראיות. לא נעשה שימוש ב-crawler."
+      "note": "לאחר חסימת AID 528637 ו-AID 528644 נפתחו באותה הפעלה שני תרגומים אנגליים חופשיים של אותם ערכים. הם מספקים תוכן נגזר בלבד, אינם עדים עצמאיים ואינם מאמתים את הנוסח העברי."
     },
     "excluded_candidates": [],
-    "translation_source_links": [],
+    "translation_source_links": [
+      {
+        "aid": 6101,
+        "original_language_aid": 528637,
+        "evidence_family_id": "hayom-yom-528637-5703",
+        "status": "derived_free_translation_not_independent"
+      },
+      {
+        "aid": 6108,
+        "original_language_aid": 528644,
+        "evidence_family_id": "hayom-yom-528644-5703",
+        "status": "derived_free_translation_not_independent"
+      }
+    ],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_entries": null,
       "full_index_generated": null,
-      "code_search_exact_aid_queries": 15,
+      "code_search_exact_aid_queries": 13,
       "code_search_matches": [],
       "candidate_aids_found": [],
-      "existing_aids_found": [
-        528545
-      ],
+      "existing_aids_found": [],
       "new_aids_unique_within_checked_scope": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_bulk_files_checked": 0,
       "canonical_bulk_matches": null,
-      "recent_manual_batch_files_checked": 0,
-      "recent_manual_batch_range": "not independently scanned in this run",
-      "recent_manual_batch_record_rows_checked": 0,
+      "recent_manual_batch_files_checked": 2,
+      "recent_manual_batch_range": "163–164",
+      "recent_manual_batch_record_rows_checked": 29,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "post_addition_canonical_scan_pending": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "note": "בדיקת קדם-הוספה מוגבלת: 15 חיפושי AID ממוקדים ב-GitHub ללא התאמות; תור הבדיקה בן 1,022 פריטים ללא התאמות; AID 528545 זוהה כזהות קיימת והועשר במקומו. public-search-index.json לא הוחזר בכלי זה בשל גודלו, ולא נסרקו מחדש קובצי האינדקס הקנוניים; סריקת זהויות מלאה נותרה ל-reconciliation."
+      "note": "בדיקת קדם-הוספה מוגבלת: 13 חיפושי AID ממוקדים ב-GitHub ללא התאמות; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
     },
     "pre_addition_full_index_scan": {
       "available": false,
       "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
-      "recent_manual_batch_files_checked": 0,
+      "recent_manual_batch_files_checked": 2,
+      "recent_manual_batch_range": "163–164",
+      "recent_manual_batch_record_rows_checked": 29,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
-      "exact_aid_queries": 15,
+      "exact_aid_queries": 13,
       "exact_aid_matches": []
     },
     "reconciliation_identity_integrity": {
@@ -1955,123 +1696,34 @@
       "all_target_identities_answer_eligible": null,
       "status": "pending_reconciliation"
     },
-    "retrieval_synthesis": {
-      "kind": "cross_family_research_synthesis",
-      "topic": "hayom_yom_adar_i_inner_work_community_and_prayer",
-      "attribution": "system_synthesis_not_rebbe_quote",
-      "label": "סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי",
-      "synthesis_scope": "Bounded comparison across five distinct dated Hayom Yom entries in the same annual anthology; they are separate entries and internal attributions, not one speech, one speaker, or independent archival corroboration.",
-      "source_count": 5,
-      "distinct_evidence_families": 5,
-      "independent_entry_families": 5,
-      "event_corroboration_claimed": false,
-      "claim_count": 5,
-      "claim_level_source_locators": 5,
-      "regular_mode": "להציג חמש טענות נפרדות, כל אחת עם מיקום גוף משלה ועם הייחוס הפנימי של הערך; אין לאחד את הערכים להוראה אחת.",
-      "researcher_mode": "deep; five item-level source mappings, claim-source map, original-language body locators, provenance, partial context, embedded attribution boundaries and non-corroboration limits.",
-      "method": "Claim-level comparison across five distinct dated Hayom Yom entry Evidence Families: inner work, love of Israel, individual mission, general prayer intention, and support of religious life. Each claim is mapped to one inspected original-language body proposition and locator. The entries are not independent archival corroboration.",
-      "evidence_quality": "five_distinct_dated_hayom_yom_entries_not_archival_corroboration",
-      "claims": [
-        {
-          "claim_id": "inner_work",
-          "claim": "ערך ב׳ אדר א׳ מציג עבודת אמת כבדיקה פנימית מתמשכת ומראה שגם פעולות יומיומיות קטנות בכוונה עשויות להיחשב עבודה; לצד זאת הוא מציין את הצורך ביגיעה בלימוד ובהבנה.",
-          "source_aids": [
-            528619
-          ],
-          "source_locators": [
-            {
-              "aid": 528619,
-              "locator": "Chabad.org AID 528619, גוף הערך הציבורי, שורות 172–174."
-            }
-          ]
-        },
-        {
-          "claim_id": "ahavat_yisrael",
-          "claim": "ערך ג׳ אדר א׳ מביא בשם אדמו״ר הזקן אהבת ישראל גם כלפי יהודי שלא פגש, וביתר שאת כלפי חבר בקהילתו.",
-          "source_aids": [
-            528620
-          ],
-          "source_locators": [
-            {
-              "aid": 528620,
-              "locator": "Chabad.org AID 528620, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "individual_mission",
-          "claim": "ערך ז׳ אדר א׳ מתאר כל יהודי כשליח שנדרש להאיר את העולם בתורה ובעבודה באמצעות מצוות מעשיות והטמעת מידות טובות.",
-          "source_aids": [
-            528624
-          ],
-          "source_locators": [
-            {
-              "aid": 528624,
-              "locator": "Chabad.org AID 528624, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "general_prayer_intention",
-          "claim": "ערך י״א אדר א׳ מציג כוונה כללית בתפילה כאפשרות למי שאינו מסוגל לזכור את הכוונות הפרטיות; זהו תיאור הערך ולא פסיקה עצמאית.",
-          "source_aids": [
-            528628
-          ],
-          "source_locators": [
-            {
-              "aid": 528628,
-              "locator": "Chabad.org AID 528628, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        },
-        {
-          "claim_id": "supporting_religion",
-          "claim": "ערך י״ב אדר א׳ מפרש את ״מתן אדם״ כהקדשת האדם עצמו לפעילות התומכת בהחזקת הדת, ומתאר את הרחבת האפשרויות כתוצאה המובאת בפסוק ובפירוש הערך.",
-          "source_aids": [
-            528629
-          ],
-          "source_locators": [
-            {
-              "aid": 528629,
-              "locator": "Chabad.org AID 528629, גוף הערך הציבורי, שורה 173."
-            }
-          ]
-        }
-      ],
-      "limits": [
-        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס של מסקנה לרבי.",
-        "חמשת הערכים הם פריטים מתוארכים נפרדים; הייחוסים הפנימיים נשמרים לכל ערך ואין למזג אותם לדובר אחד.",
-        "ההשוואה אינה אימות ארכיוני עצמאי של המסורות, המנהגים או ההסברים המתוארים.",
-        "ההקשר חלקי; לא נבדקו כתבי יד, אוטוגרפים, מהדורות ביקורתיות או עדים מקבילים.",
-        "תיאור מנהג אינו פסיקה הלכתית כללית; תרגום או הצגה מקבילה אינם עד עצמאי נוסף."
-      ]
-    },
     "language_distribution": {
-      "Hebrew": 9,
-      "Yiddish": 4,
-      "Hebrew and Yiddish": 2
+      "Hebrew": 8,
+      "Yiddish": 1,
+      "Hebrew and Yiddish": 2,
+      "English": 2
     },
     "reviewed_body_language_distribution": {
-      "Hebrew": 10,
-      "Yiddish": 4,
-      "Hebrew and Yiddish": 2
+      "Hebrew": 8,
+      "Yiddish": 1,
+      "Hebrew and Yiddish": 2,
+      "English": 2
     },
     "proposition_language_distribution": {
-      "Hebrew": 19
+      "Hebrew": 14
     },
     "source_type_distribution": {
-      "Hayom Yom": 15
+      "Hayom Yom": 13
     },
     "quality_gate_followup": {
       "required": [
-        "canonical identity reconciliation",
+        "full canonical identity/Evidence Family reconciliation",
         "test_content_readiness.mjs",
-        "five-family regular retrieval",
-        "five-family deep researcher citation map",
+        "claim-level retrieval and deep researcher citation checks",
         "GitHub Actions and Pages verification"
       ],
       "status": "pending"
-    }
+    },
+    "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
   },
   "manual_web_review_history": [
     {
@@ -10997,7 +10649,404 @@
           "GitHub Actions and Pages verification"
         ],
         "status": "pending"
-      }
+      },
+      "batch_file": "data/items/content-research-batch-164-2026-11-22.json"
+    },
+    {
+      "schema": "content-research-batch-v1",
+      "batch_id": "165",
+      "batch_date": "2026-11-22",
+      "reviewed_at": "2026-11-22T01:04:04+02:00",
+      "title": "Batch 165 — eleven original-language Adar I entries and two English free-translation presentations",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 15,
+      "source_bodies_inspected": 13,
+      "source_body_pages_opened": 13,
+      "new_source_identities": 13,
+      "existing_identities_enriched": 0,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 14,
+      "existing_response_propositions_added": 0,
+      "total_new_paraphrase_entries": 14,
+      "answer_eligible_source_families_added": 13,
+      "independent_witnesses_added": 11,
+      "non_independent_presentations_added": 2,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidate_count": 2,
+      "recovered_candidate_count": 0,
+      "metrics_before": null,
+      "metrics_expected_after": null,
+      "metrics_actual_before": null,
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "reconciliation_variance": null,
+      "new_aids": [
+        528634,
+        528635,
+        528636,
+        528638,
+        528639,
+        528640,
+        528641,
+        528642,
+        528643,
+        528645,
+        528646,
+        6101,
+        6108
+      ],
+      "enriched_aids": [],
+      "staging_candidate_aids": [],
+      "translations_counted_as_independent_witnesses": 0,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 13,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 14,
+        "note": "Expected contribution from 13 distinct dated-entry Evidence Families, including two non-independent English translations of two other dated entries; not measured after-metrics."
+      },
+      "local_content_delta": {
+        "new_source_identities": 13,
+        "new_evidence_families": 13,
+        "new_response_propositions": 14,
+        "existing_identities_enriched": 0,
+        "existing_response_propositions_added": 0,
+        "verified_promotions": 0,
+        "note": "Reviewed batch counts only; full canonical reconciliation and measured after-metrics pending."
+      },
+      "source_body_review": [
+        {
+          "aid": 528634,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528634",
+          "language": "Yiddish",
+          "original_language": "Yiddish",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528634, גוף הערך ביידיש, שורות 172–173.",
+          "web_source_ref": "turn955540view0",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528634-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528635,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528635",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528635, גוף הערך בעברית, שורה 173.",
+          "web_source_ref": "turn955540view1",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528635-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528636,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528636",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528636, גוף הערך בעברית, שורה 173.",
+          "web_source_ref": "turn955540view2",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528636-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528638,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528638",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528638, גוף הערך בעברית, שורה 173.",
+          "web_source_ref": "turn955540view3",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528638-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528639,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528639",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528639, גוף הערך בעברית, שורה 173. ; Chabad.org AID 528639, גוף הערך בעברית, שורה 174.",
+          "web_source_ref": "turn955540view4",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528639-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528640,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528640",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528640, גוף הערך בעברית, שורה 173.",
+          "web_source_ref": "turn955540view5",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528640-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528641,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528641",
+          "language": "Hebrew and Yiddish",
+          "original_language": "Hebrew and Yiddish",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528641, גוף הערך המשולב בעברית וביידיש, שורה 172.",
+          "web_source_ref": "turn955540view6",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528641-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528642,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528642",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528642, גוף הערך בעברית, שורה 173.",
+          "web_source_ref": "turn955540view7",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528642-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528643,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528643",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528643, גוף הערך בעברית, שורה 173.",
+          "web_source_ref": "turn955540view8",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528643-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528645,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528645",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528645, גוף הערך בעברית, שורה 172.",
+          "web_source_ref": "turn955540view9",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528645-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 528646,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528646",
+          "language": "Hebrew and Yiddish",
+          "original_language": "Hebrew and Yiddish",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 528646, גוף הערך בעברית וביידיש, שורה 175.",
+          "web_source_ref": "turn955540view10",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528646-5703",
+          "independent_witness": true,
+          "inspection_method": "public_web_open_body"
+        },
+        {
+          "aid": 6101,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6101/jewish/Hayom-Yom-20-Adar-I.htm",
+          "language": "English",
+          "original_language": "unknown",
+          "body_text_inspected": true,
+          "inspected_original_language_body": false,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 6101, גוף התרגום האנגלי החופשי, שורה 250.",
+          "web_source_ref": "turn764819view0",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528637-5703",
+          "independent_witness": false,
+          "inspection_method": "public_web_open_translated_body",
+          "translation_of_evidence_family_id": "hayom-yom-528637-5703",
+          "original_language_source_aid": 528637
+        },
+        {
+          "aid": 6108,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/6108/jewish/Hayom-Yom-27-Adar-I.htm",
+          "language": "English",
+          "original_language": "unknown",
+          "body_text_inspected": true,
+          "inspected_original_language_body": false,
+          "existing_identity": false,
+          "body_locator": "Chabad.org AID 6108, גוף התרגום האנגלי החופשי, שורה 250.",
+          "web_source_ref": "turn764819view1",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "hayom-yom-528644-5703",
+          "independent_witness": false,
+          "inspection_method": "public_web_open_translated_body",
+          "translation_of_evidence_family_id": "hayom-yom-528644-5703",
+          "original_language_source_aid": 528644
+        }
+      ],
+      "blocked_candidates": [
+        {
+          "candidate_key": "aid:528637",
+          "aid": 528637,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528637",
+          "status": "public_reader_body_unavailable_via_web_tool",
+          "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
+          "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6101. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+        },
+        {
+          "candidate_key": "aid:528644",
+          "aid": 528644,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/528644",
+          "status": "public_reader_body_unavailable_via_web_tool",
+          "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
+          "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6108. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+        }
+      ],
+      "fallback_source_attempted": true,
+      "fallback_source_results": {
+        "accessible_item_level_bodies": 13,
+        "inspected_aids": [
+          528634,
+          528635,
+          528636,
+          528638,
+          528639,
+          528640,
+          528641,
+          528642,
+          528643,
+          528645,
+          528646,
+          6101,
+          6108
+        ],
+        "original_language_body_inspected": 11,
+        "english_translation_bodies_inspected": 2,
+        "non_independent_translation_presentations": 2,
+        "body_text_inspected": true,
+        "note": "לאחר חסימת AID 528637 ו-AID 528644 נפתחו באותה הפעלה שני תרגומים אנגליים חופשיים של אותם ערכים. הם מספקים תוכן נגזר בלבד, אינם עדים עצמאיים ואינם מאמתים את הנוסח העברי."
+      },
+      "excluded_candidates": [],
+      "translation_source_links": [
+        {
+          "aid": 6101,
+          "original_language_aid": 528637,
+          "evidence_family_id": "hayom-yom-528637-5703",
+          "status": "derived_free_translation_not_independent"
+        },
+        {
+          "aid": 6108,
+          "original_language_aid": 528644,
+          "evidence_family_id": "hayom-yom-528644-5703",
+          "status": "derived_free_translation_not_independent"
+        }
+      ],
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_entries": null,
+        "full_index_generated": null,
+        "code_search_exact_aid_queries": 13,
+        "code_search_matches": [],
+        "candidate_aids_found": [],
+        "existing_aids_found": [],
+        "new_aids_unique_within_checked_scope": true,
+        "source_urls_unique": true,
+        "evidence_family_ids_unique": true,
+        "canonical_bulk_files_checked": 0,
+        "canonical_bulk_matches": null,
+        "recent_manual_batch_files_checked": 2,
+        "recent_manual_batch_range": "163–164",
+        "recent_manual_batch_record_rows_checked": 29,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "post_addition_canonical_scan_pending": true,
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "all_target_identities_answer_eligible": null,
+        "note": "בדיקת קדם-הוספה מוגבלת: 13 חיפושי AID ממוקדים ב-GitHub ללא התאמות; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
+      },
+      "pre_addition_full_index_scan": {
+        "available": false,
+        "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
+        "recent_manual_batch_files_checked": 2,
+        "recent_manual_batch_range": "163–164",
+        "recent_manual_batch_record_rows_checked": 29,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "exact_aid_queries": 13,
+        "exact_aid_matches": []
+      },
+      "reconciliation_identity_integrity": {
+        "passed": null,
+        "full_index_scan_completed": false,
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "all_target_identities_answer_eligible": null,
+        "status": "pending_reconciliation"
+      },
+      "language_distribution": {
+        "Hebrew": 8,
+        "Yiddish": 1,
+        "Hebrew and Yiddish": 2,
+        "English": 2
+      },
+      "reviewed_body_language_distribution": {
+        "Hebrew": 8,
+        "Yiddish": 1,
+        "Hebrew and Yiddish": 2,
+        "English": 2
+      },
+      "proposition_language_distribution": {
+        "Hebrew": 14
+      },
+      "source_type_distribution": {
+        "Hayom Yom": 13
+      },
+      "quality_gate_followup": {
+        "required": [
+          "full canonical identity/Evidence Family reconciliation",
+          "test_content_readiness.mjs",
+          "claim-level retrieval and deep researcher citation checks",
+          "GitHub Actions and Pages verification"
+        ],
+        "status": "pending"
+      },
+      "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
     }
   ],
   "manual_web_review_current_metrics": {
@@ -11005,12 +11054,12 @@
     "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2950
   },
-  "last_run_note": "Batch164: נפתחו ונבדקו 15 גופי ערכי היום יום חדשים בעברית/יידיש/דו-לשוני ועוד גוף AID 528545 להעשרה קיימת. נוספו 15 זהויות ב-15 משפחות ו-18 פרפרזות חדשות; AID 528545 הועשר במקומו בפרופוזיציה שישית. AID 4666220 חסום בכלי העיון; באותה הפעלה נפתחו מקורות חלופיים. אין Verified חדש; reconciliation ומדדי after ממתינים.",
-  "next_action": "Reconcile pending batches through 164 contiguously; complete the canonical identity/Evidence Family audit; run test_content_readiness.mjs, the five-family Adar I regular/researcher retrieval tests, and inspect Actions and Pages. Keep all new entries Parsed; do not promote to Verified without separate qualifying evidence.",
-  "current_batch_file": "data/items/content-research-batch-164-2026-11-22.json",
+  "last_run_note": "Batch 165 reviewed 11 original-language Hayom Yom bodies and two English free translations as non-independent presentations; two Hebrew pages remained blocked, no crawler retry, no Verified promotions. Full reconciliation pending.",
+  "next_action": "Run contiguous full-index reconciliation through batch 165, then content-readiness and researcher citation tests; keep translated presentations non-independent.",
+  "current_batch_file": "data/items/content-research-batch-165-2026-11-22.json",
   "pending": true,
-  "last_reviewed_batch": "164",
-  "manual_web_review_current_metrics_note": "Last committed project-state baseline before this batch: 977/870/2950. This is not an after measurement. Public metrics remain dated 2026-11-15 and current reconciliation is pending; no projected count is published.",
+  "last_reviewed_batch": "165",
+  "manual_web_review_current_metrics_note": "Metrics remain the last committed snapshot until full canonical reconciliation through batch 165 completes.",
   "workflow_followup": {
     "commit": null,
     "observed_at": "2026-11-22T00:30:35+02:00",
