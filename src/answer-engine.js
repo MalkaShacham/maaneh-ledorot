@@ -581,6 +581,13 @@ export function propositionRelevance(e,u){
   if(!yiddishOriginal||!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['the question requires an inspected proposition from a Yiddish original, not a title or translated presentation']};
   return{score:56,support:'direct_support',reasons:['Yiddish original has an inspected proposition on truth-seeking and examining each movement'],supportingProps};
  }
+ if(u.topics.includes('מנהגי חנוכה ושבת מברכים בערכי היום יום')){
+  const hayomYomSource=e?.type==='hayom_yom_entry'||norm(e?.source_class).includes('hayom yom');
+  const supportingProps=arr(e.response_propositions).filter(p=>supportsHayomYomChanukahLightingProposition(p)||supportsHayomYomShabbatMevorchimProposition(p));
+  if(!hayomYomSource||!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['השליפה דורשת פרופוזיציה שנבדקה בגוף ערך יום יום על הדלקת נרות חנוכה או על סדר שבת מברכים.']};
+  const categories=supportingProps.map(p=>supportsHayomYomChanukahLightingProposition(p)?'chanukah_lighting_custom':'shabbat_mevorchim_gathering');
+  return{score:54,support:'direct_support',reasons:['הפרופוזיציה שנבדקה תומכת באחד משני תתי-הנושאים המבוקשים; ההשוואה תישען על שתי משפחות ראיות נפרדות.'],supportingProps,categories};
+ }
    if(isHayomYomSukkotCustomsQuestion(u.query)){
    const hayomYomSource=e?.type==='hayom_yom_entry'||norm(e?.source_class).includes('hayom yom');
    const supportingProps=arr(e.response_propositions).filter(supportsHayomYomSukkotCustomsProposition);
