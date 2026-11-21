@@ -1352,3 +1352,5 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - לא הועתק טקסט מוגן במלואו, לא קודם מקור ל-Verified, ולא שונו לוח הזמנים, האוטומציה, הקהל או ההרשאות.
 
 - לצורך רציפות שרשרת reconciliation, `batch152.metrics_before` הותאם לגבול התכנון `batch151.metrics_expected_after` (1516 / 854 / 3858), ו-`metrics_expected_after` של batch152 הוא 1524 / 854 / 3868. אלה גבולות תכנון בלבד, לא מדדים מדודים. מדד ה-workspace המדוד האחרון נשאר 1496 / 854 / 3823 אחרי batch148; snapshot public metrics נשאר 977 / 878 / 2950 עד reconciliation מוצלח.
+
+- Reconciliation-chain repair: batch147 had a missing metrics_before boundary. It is now set to batch146.metrics_expected_after (1496 / 854 / 3821), allowing the pending chain 145–152 to be reconciled contiguously. This is a planning boundary, not a measured metric.
