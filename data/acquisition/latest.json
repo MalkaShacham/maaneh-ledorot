@@ -10340,17 +10340,17 @@
     "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2950
   },
-  "last_run_note": "Batch163: נבדקו 12 גופי ערכים יומיים בעברית/יידיש/דו-לשוני ושני תרגומים חופשיים באנגלית; הועשר AID 528545 במקומו. נוספו 14 מצגות פריט ב-14 משפחות (12 עדים עצמאיים ו-2 תרגומים לא-עצמאיים), 17 פרפרזות חדשות ופרפרזה אחת לזהות קיימת. AID 528608 ו-528611 נחסמו בעברית; נבדקו תרגומים חלופיים AID 6072 ו-6075 ולא נספרו כעדים עצמאיים. AID 528617 הוחרג כעמוד ניווט. אין Verified חדש; reconciliation ובדיקות ממתינים.",
-  "next_action": "Run canonical reconciliation for pending batches 162–163; verify all 14 new family presentations and AID 528545 in-place enrichment, measure answer_eligible_unique_sources before/after, run test_content_readiness.mjs and inspect Actions and Pages.",
+  "last_run_note": "Batch163: נבדקו 12 גופי ערכים יומיים בעברית/יידיש/דו-לשוני ושני תרגומים חופשיים באנגלית; הועשר AID 528545 במקומו. נוספו 14 מצגות פריט ב-14 משפחות (12 עדים עצמאיים ו-2 תרגומים לא-עצמאיים), 17 פרפרזות חדשות ופרפרזה אחת לזהות קיימת. AID 528608 ו-528611 נחסמו בעברית; נבדקו תרגומים חלופיים AID 6072 ו-6075 ולא נספרו כעדים עצמאיים. AID 528617 הוחרג כעמוד ניווט. אין Verified חדש; reconciliation ובדיקות ממתינים. PR #39 merged to main (3cf772a7e1ad9f009e65ed9593a2f0e02ce5ec2e); Actions and reconciliation have not yet produced a visible run/result.",
+  "next_action": "Inspect GitHub Actions after the main push; reconcile pending batches 162–163; run test_content_readiness.mjs and verify Pages. Do not publish after metrics until canonical reconciliation has completed.",
   "current_batch_file": "data/items/content-research-batch-163-2026-11-21.json",
   "pending": true,
   "last_reviewed_batch": "163",
   "manual_web_review_current_metrics_note": "הצילום האחרון ב-project-state.json לפני reconciliation של אצוות 162–163 הוא 977 מקורות כשירים, 870 מקורות Verified ו-2,950 פרופוזיציות. זהו baseline אחרון, לא after. public-metrics.json מתוארך ל-15.11.2026 ומציג 977 / 878 / 2,950; אי-ההתאמה ב-Verified נשמרת לתיקון ב-reconciliation.",
   "workflow_followup": {
-    "commit": null,
-    "observed_at": "2026-11-21T21:01:50+02:00",
-    "status": "awaiting_pr_checks_merge_and_actions",
+    "commit": "3cf772a7e1ad9f009e65ed9593a2f0e02ce5ec2e",
+    "observed_at": "2026-11-21T19:15:12+00:00",
+    "status": "merged_waiting_for_actions_and_reconciliation",
     "runs": {},
-    "note": "Batch163 is staged on a review branch. Reconciliation must complete the full canonical identity scan, answer-eligibility checks, readiness tests and publication checks before actual after metrics are reported."
+    "note": "PR #39 was merged to main at commit 3cf772a7e1ad9f009e65ed9593a2f0e02ce5ec2e. At this check, GitHub combined status and workflow-run lookup returned no runs/checks for the merge commit; project-state.json, public-metrics.json and run-logs/latest.json remain unchanged, so no after-metrics or test pass is claimed. Pages could not be independently opened by the web reader."
   }
 }
