@@ -5437,13 +5437,15 @@ assert.equal(batch156Data.translations_counted_as_independent_witnesses,0);
 assert.equal(batch156Data.records.length,8);
 assert.equal(new Set(batch156Data.records.map(r=>String(r.aid))).size,8);
 assert.equal(new Set(batch156Data.records.map(r=>r.evidence_family_id)).size,8);
+assert.equal(batch156Data.records.reduce((n,r)=>n+r.response_propositions.length,0),23);
 assert(batch156Data.blocked_candidates.some(x=>String(x.aid)==='4666220'));
 assert(batch156Data.excluded_candidates.some(x=>String(x.aid)==='827413'));
 for(const r of batch156Data.records){
  assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');
  assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
  assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
- assert.equal(r.response_propositions.length,2);assert.equal(r.response_propositions.length,r.response_proposition_locators.length);
+ const expectedBatch156Props={'2277173':3,'3907042':3,'3905775':2,'2022588':3,'2278280':4,'1923078':3,'2076262':3,'1889610':2};
+ assert.equal(r.response_propositions.length,expectedBatch156Props[String(r.aid)]);assert.equal(r.response_propositions.length,r.response_proposition_locators.length);
  assert(r.response_proposition_locators.every(Boolean));assert.equal(r.independent_witness,false);
 }
 const enriched2282999=JSON.parse(await readFile(new URL('data/items/chabad-letter-2282999.json',root),'utf8'));

@@ -1386,3 +1386,6 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - The failed Actions run exposed a state-cursor mismatch: `acquisition/latest.json` pointed to batch 156 while `development_recovery.last_batch_summary` still pointed to batch 155. The readiness test failed at `scripts/test_content_readiness.mjs:1358` on that stale batch ID, after the retrieval and citation checks had passed. The recovery summary/cursor and batch-156 test expectations were aligned to batch 156; the next Actions run must still confirm the fix.
 - The batch-156 researcher regression continues to exercise multi-family education retrieval, proposition-level locators, deep evidence mapping, citation entailment and context boundaries. The synthesis remains system-authored; no AI inference is attributed to the Rebbe.
 - Public metrics, queue and reconciliation audit are not marked current until the Actions reconciliation and readiness checks complete.
+
+
+- Follow-up test-fixture correction: the batch-156 regression now checks the per-AID proposition counts (3, 3, 2, 3, 4, 3, 3, 2) rather than the former uniform two-proposition expectation. The corpus records were already updated; this change aligns the assertion with the eight inspected source bodies and preserves the per-proposition locator-length check.
