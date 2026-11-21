@@ -1489,7 +1489,7 @@ assert.equal(existing4666220.proposition_origin,'source_grounded_paraphrase');
 assert.equal(existing4666220.proposition_verification,'source_text_inspected');
 assert.equal(existing4666220.context_status,'partial');
 assert.equal(batch096Data.reconciliation_status,'reconciled');
-assert.deepEqual(batch096Data.metrics_expected_after,{answer_eligible_unique_sources:948,content_verified_unique_sources:870,answer_eligible_propositions:2806});
+assert.deepEqual(batch096Data.metrics_expected_after,{answer_eligible_unique_sources:948,content_verified_unique_sources:870,answer_eligible_propositions:2906});
 assert.deepEqual(batch096Data.metrics_actual_after,batch096Data.metrics_expected_after);
 assert.deepEqual(batch096Data.reconciliation_variance,{answer_eligible_unique_sources:0,content_verified_unique_sources:0,answer_eligible_propositions:0});
 
@@ -5409,4 +5409,55 @@ if(['reconciled','reconciled_with_variance'].includes(batch155Data.reconciliatio
  assert(batch155DoctorModel.context_boundary.every(x=>x.valid));
  assert(batch155DoctorModel.research&&batch155DoctorModel.research.evidence_map.length>0);
  assert(batch155DoctorModel.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+}
+
+
+// Batch 156: eight newly inspected publisher letters, one in-place enrichment,
+// one blocked public-reader candidate, and one secondary adaptation excluded.
+const batch156Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-156-2026-11-21.json',root),'utf8'));
+assert.equal(batch156Data.batch_id,'156');
+assert.equal(batch156Data.source_bodies_inspected,9);
+assert.equal(batch156Data.new_source_identities,8);
+assert.equal(batch156Data.existing_identities_enriched,1);
+assert.equal(batch156Data.new_response_propositions,16);
+assert.equal(batch156Data.existing_response_propositions_added,3);
+assert.equal(batch156Data.content_verified_unique_sources_added,0);
+assert.equal(batch156Data.crawler_retry,false);
+assert.equal(batch156Data.access_control_bypassed,false);
+assert.equal(batch156Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch156Data.records.length,8);
+assert.equal(new Set(batch156Data.records.map(r=>String(r.aid))).size,8);
+assert.equal(new Set(batch156Data.records.map(r=>r.evidence_family_id)).size,8);
+assert(batch156Data.blocked_candidates.some(x=>String(x.aid)==='4666220'));
+assert(batch156Data.excluded_candidates.some(x=>String(x.aid)==='827413'));
+for(const r of batch156Data.records){
+ assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
+ assert.equal(r.response_propositions.length,2);assert.equal(r.response_propositions.length,r.response_proposition_locators.length);
+ assert(r.response_proposition_locators.every(Boolean));assert.equal(r.independent_witness,false);
+}
+const enriched2282999=JSON.parse(await readFile(new URL('data/items/chabad-letter-2282999.json',root),'utf8'));
+assert.equal(enriched2282999.pipeline_status,'Verified');assert.equal(enriched2282999.response_propositions.length,6);
+assert(enriched2282999.response_proposition_locators.some(l=>String(l).includes('310–314')));
+assert(enriched2282999.response_proposition_locators.some(l=>String(l).includes('307–316')));
+assert(enriched2282999.response_proposition_locators.some(l=>String(l).includes('299–305')));
+assert.equal(batch156Data.reconciliation_status==='pending_reconciliation'||['reconciled','reconciled_with_variance'].includes(batch156Data.reconciliation_status),true);
+if(['reconciled','reconciled_with_variance'].includes(batch156Data.reconciliation_status)){
+ assert(batch156Data.metrics_actual_after&&batch156Data.reconciliation_variance);
+ assert.equal(batch156Data.deduplication_check.full_index_scan_available,true);
+ assert.deepEqual(batch156Data.deduplication_check.canonical_identity_collisions,[]);
+ assert.deepEqual(batch156Data.deduplication_check.missing_canonical_identities,[]);
+ const indexedBatch156=idx.entries.filter(e=>batch156Data.records.some(r=>sourceAID(e)===String(r.aid)&&e.evidence_family_id===r.evidence_family_id));
+ assert.equal(indexedBatch156.length,8);assert(indexedBatch156.every(e=>e.answer_eligible));
+ assert.equal(new Set(indexedBatch156.map(e=>e.evidence_family_id)).size,8);
+ const batch156Question='מה מתועד באיגרות על חינוך בקהילה, ביקורי מורים בבתים ואחריות ההורים?';
+ const batch156Model=buildAnswerModel(idx.entries,batch156Question,{mode:'researcher'});
+ const batch156ModelAids=new Set(batch156Model.sources.map(sourceAID));
+ assert(batch156Model.answerable);
+ assert([2277173,1889610,2076262,1923078].filter(a=>batch156ModelAids.has(String(a))).length>=2);
+ assert(batch156Model.claims.length>0&&batch156Model.claims.every(c=>c.source_numbers.length));
+ assert(batch156Model.citation_entailment.every(x=>x.valid));assert(batch156Model.context_boundary.every(x=>x.valid));
+ assert(batch156Model.research&&batch156Model.research.evidence_map.length>=2);
+ assert(batch156Model.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
 }

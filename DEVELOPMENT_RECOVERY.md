@@ -1364,3 +1364,14 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - Added the `cross_family_practical_guidance_letters` route to the core and validated answer engines. It emits claim-local source locators, preserves the 10/3 independence split, marks the synthesis as system-authored rather than a Rebbe quotation, and exposes deep researcher evidence maps. Added regular/researcher regression checks.
 - Corrected the historical batch110 test: batch110 is outside the latest contiguous reconciliation chain, has only a partial preflight, and must remain `pending` with null `metrics_actual_after` and null variance. The test must not fabricate a completed reconciliation for it.
 - Batch153's planning boundary is 1,536 answer-eligible families / 854 content-verified families / 3,893 propositions. This is a projection, not a measurement. The prior CI workspace baseline (after batch148) is 1,496 / 854 / 3,823 and was not committed. Canonical reconciliation and post-addition full-index deduplication remain pending until the updated Actions run completes.
+
+
+## 2026-11-21 — Batch 156 public-body review
+
+- Inspected 9 item-level public correspondence bodies: eight previously absent AIDs (2277173, 3907042, 3905775, 2022588, 2278280, 1923078, 2076262, 1889610) and an in-place reinspection/enrichment of existing AID 2282999.
+- Added 16 bounded Hebrew research paraphrases to the eight new records and 3 English paraphrases to the existing AID 2282999 record. All new identities remain Parsed; no Verified promotion and no independent witness was added.
+- AID 4666220 returned Internal Error in the public reader. No crawler retry or access-control bypass was attempted; nine alternative item-level bodies were inspected. AID 827413 was excluded because the publisher page is an editorial adaptation, not an independent letter witness.
+- Deduplication scanned the 9,122-entry committed public search index, the 1,022-record review queue, and pending batches 153–155. AID 2282999 matched an existing identity and was enriched in place; the eight new AIDs were absent. Translations were not counted as independent witnesses.
+- Batch 156 projection is 1,569 answer-eligible unique sources / 854 content-verified sources / 3,963 answer-eligible propositions from the batch155 projected boundary 1,561 / 854 / 3,944. These are projections only until canonical reconciliation commits.
+- Corrected the stale batch096 test expectation for proposition count (2,806 → 2,906) to match the recorded batch096 boundary; added a researcher-mode cross-family regression check with claim-level locators.
+- Reconciliation, content-readiness tests and Pages publication are pending the Actions run triggered by this commit.
