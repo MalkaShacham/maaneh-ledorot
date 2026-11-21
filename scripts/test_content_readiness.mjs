@@ -5474,3 +5474,58 @@ if(['reconciled','reconciled_with_variance'].includes(batch156Data.reconciliatio
  assert(batch156Model.research.depth==='deep');
  assert(batch156Model.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
 }
+
+
+// Batch 157: eight original-language Hebrew/Yiddish Hayom Yom entries, eight same-family English translations,
+// one blocked candidate, and a claim-level deep-researcher synthesis across two distinct entries.
+const batch157Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-157-2026-11-21.json',root),'utf8'));
+const batch157Aids=[528545,528546,528547,528548,528549,528550,528551,528552];
+assert.equal(batch157Data.batch_id,'157');assert.equal(batch157Data.records.length,8);assert.deepEqual(batch157Data.new_aids,batch157Aids);
+assert.equal(batch157Data.source_bodies_inspected,8);assert.equal(batch157Data.source_body_pages_opened,16);assert.equal(batch157Data.reviewed_item_count,16);
+assert.equal(batch157Data.new_source_identities,8);assert.equal(batch157Data.new_response_propositions,12);assert.equal(batch157Data.total_new_paraphrase_entries,12);
+assert.equal(batch157Data.answer_eligible_source_families_added,8);assert.equal(batch157Data.independent_witnesses_added,8);assert.equal(batch157Data.non_independent_presentations_added,8);
+assert.equal(batch157Data.content_verified_unique_sources_added,0);assert.equal(batch157Data.same_family_items.length,8);
+assert.equal(batch157Data.translations_counted_as_independent_witnesses,0);assert.equal(batch157Data.fallback_source_attempted,true);
+assert.deepEqual(batch157Data.blocked_candidates.map(x=>x.aid),[4666220]);
+assert.equal(batch157Data.crawler_retry,false);assert.equal(batch157Data.access_control_bypassed,false);assert.equal(batch157Data.full_text_copied,false);assert.equal(batch157Data.scan_only_verification_used,false);
+assert.equal(batch157Data.language_distribution.Hebrew,5);assert.equal(batch157Data.language_distribution.Yiddish,3);
+assert.equal(batch157Data.source_type_distribution.published_hebrew_hayom_yom_entry,5);assert.equal(batch157Data.source_type_distribution.published_yiddish_hayom_yom_entry,3);
+assert.equal(batch157Data.records.reduce((n,r)=>n+r.response_propositions.length,0),12);
+assert.equal(new Set(batch157Data.records.map(r=>String(r.aid))).size,8);assert.equal(new Set(batch157Data.records.map(r=>r.evidence_family_id)).size,8);
+for(const r of batch157Data.records){
+ assert.equal(r.source_class,'Hayom Yom');assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
+ assert.equal(r.response_propositions.length,r.response_proposition_locators.length);assert(r.response_proposition_locators.every(Boolean));
+ assert.equal(r.independent_witness,true);assert.equal(r.translation_of_evidence_family_id,null);assert(['Hebrew','Yiddish'].includes(r.language));
+}
+for(const alias of batch157Data.same_family_items){
+ const canonical=batch157Data.records.find(r=>String(r.aid)===String(alias.canonical_aid));assert(canonical&&canonical.evidence_family_id===alias.evidence_family_id);
+ assert.equal(alias.independent_witness,false);assert(canonical.relations.some(r=>r.type==='same_evidence_family'&&r.target_id==='aid:'+alias.aid));
+ const aliasMatches=idx.entries.filter(e=>sourceAID(e)===String(alias.aid));assert(aliasMatches.every(e=>e.evidence_family_id===alias.evidence_family_id&&e.independent_witness===false));
+}
+assert(['reconciled','reconciled_with_variance'].includes(batch157Data.reconciliation_status));
+assert(batch157Data.metrics_actual_after&&batch157Data.reconciliation_variance);
+assert.equal(batch157Data.deduplication_check.full_index_scan_available,true);assert.equal(batch157Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch157Data.deduplication_check.canonical_identity_collisions,[]);assert.deepEqual(batch157Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch157Data.deduplication_check.all_target_identities_answer_eligible,true);
+const indexedBatch157=idx.entries.filter(e=>batch157Aids.includes(Number(sourceAID(e))));
+assert.equal(indexedBatch157.length,8);assert(indexedBatch157.every(e=>e.answer_eligible&&e.canonical_file==='data/items/content-research-batch-157-2026-11-21.json'));
+assert.equal(new Set(indexedBatch157.map(e=>e.evidence_family_id)).size,8);
+for(const aid of batch157Aids){const e=indexedBatch157.find(x=>sourceAID(x)===String(aid));assert(e);assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.verification_scope);assert.equal(e.status,'Parsed');}
+const batch157Question='מה מתועד בערכי היום יום על מנהגי חנוכה ושבת מברכים?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch157Question,{mode});assert(m.answerable,mode+': two distinct Hayom Yom families must support Chanukah and Shabbat Mevorchim comparison');
+ assert(m.sources.some(e=>sourceAID(e)==='528551'));assert(m.sources.some(e=>sourceAID(e)==='528552'));
+ assert(new Set(m.sources.map(e=>e.evidence_family_id)).size>=2);assert.equal(m.synthesis?.topic,'hayom_yom_chanukah_and_shabbat_mevorchim');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');assert.equal(m.synthesis?.claims.length,2);
+ assert(m.synthesis.claims.every(c=>c.source_numbers.length&&c.source_locators.length&&c.source_locators.every(x=>x.locator)));
+ assert(m.claims.length>=2&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));assert.equal(m.pattern_synthesis_integrity?.valid,true);
+ if(mode==='researcher'){
+  assert(m.research&&m.research.depth==='deep');assert(m.research.evidence_families>=2);assert(m.research.independent_evidence_families>=2);
+  assert(m.research.evidence_map.length>=2&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert.equal(m.research.claim_source_map.length,m.claims.length);assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length&&c.source_locators.every(x=>x.locator)));
+  assert(m.research.synthesis_constraints.rule.includes('not independent witnesses'));
+ }else assert.equal(m.research,undefined);
+}
