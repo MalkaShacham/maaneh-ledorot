@@ -2327,10 +2327,14 @@ assert.equal(batch162ExistingLetter.canonical_file,batch107CanonicalPath);
 assert.equal(batch162ExistingLetter.evidence_family_id,'letter-5703-10-menachem-av-92-katz-aid5920875');
 assert.equal(batch162ExistingLetter.status,'Parsed');
 assert.equal(batch162ExistingLetter.response_propositions.length,2);
-assert.equal(batch162Data.deduplication_check.full_index_scan_available,false);
-assert.equal(batch162Data.deduplication_check.post_addition_canonical_scan_pending,true);
-assert.equal(batch162Data.reconciliation_status,'pending_reconciliation');
-assert.equal(batch162Data.metrics_actual_after,null);
+assert.equal(batch162Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch162Data.deduplication_check.post_addition_canonical_scan_pending,false);
+assert.equal(batch162Data.reconciliation_identity_integrity.passed,true);
+assert.equal(batch162Data.reconciliation_identity_integrity.canonical_identity_collisions.length,0);
+assert.equal(batch162Data.reconciliation_identity_integrity.missing_canonical_identities.length,0);
+assert.equal(batch162Data.reconciliation_identity_integrity.all_target_identities_answer_eligible,true);
+assert(['reconciled','reconciled_with_variance'].includes(batch162Data.reconciliation_status));
+assert(batch162Data.metrics_actual_after,'batch162 must retain measured canonical after-metrics');
 const prayerVitalityQuestion='מה מתעדים ערכי היום יום על תפילה, חיות פנימית, שילוב מוח ולב ועבודה מעשית?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,prayerVitalityQuestion,{mode});
@@ -2401,10 +2405,14 @@ assert.equal(batch163Data.deduplication_check.recent_manual_batch_files_checked,
 assert.equal(batch163Data.deduplication_check.recent_manual_batch_record_rows_checked,121);
 assert.equal(batch163Data.deduplication_check.review_queue_records,1022);
 assert.equal(batch163Data.deduplication_check.review_queue_matches,0);
-assert.equal(batch163Data.deduplication_check.full_index_scan_available,false);
-assert.equal(batch163Data.deduplication_check.post_addition_canonical_scan_pending,true);
-assert.equal(batch163Data.reconciliation_status,'pending_reconciliation');
-assert.equal(batch163Data.metrics_actual_after,null,'batch163 static file has no measured after-metrics; CI-generated index is checked below');
+assert.equal(batch163Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch163Data.deduplication_check.post_addition_canonical_scan_pending,false);
+assert.equal(batch163Data.reconciliation_identity_integrity.passed,true);
+assert.equal(batch163Data.reconciliation_identity_integrity.canonical_identity_collisions.length,0);
+assert.equal(batch163Data.reconciliation_identity_integrity.missing_canonical_identities.length,0);
+assert.equal(batch163Data.reconciliation_identity_integrity.all_target_identities_answer_eligible,true);
+assert(['reconciled','reconciled_with_variance'].includes(batch163Data.reconciliation_status));
+assert(batch163Data.metrics_actual_after,'batch163 must retain measured canonical after-metrics');
 const indexedBatch163=idx.entries.filter(e=>batch163Aids.includes(String(sourceAID(e))));
 assert.equal(indexedBatch163.length,14);
 assert(indexedBatch163.every(e=>e.answer_eligible&&e.canonical_file===batch163Path));
@@ -2483,7 +2491,7 @@ for(const r of batch164Data.records){const aid=String(r.aid),e=idx.entries.find(
 const enriched596=idx.entries.find(e=>sourceAID(e)==='528596'),enriched610=idx.entries.find(e=>sourceAID(e)==='528610');
 assert(enriched596&&enriched610,'batch164 in-place enrichments must remain in the original indexed identities');assert.equal(enriched596.canonical_file,batch162Path);assert.equal(enriched596.response_propositions.length,2);assert.equal(enriched610.canonical_file,batch163Path);assert.equal(enriched610.response_propositions.length,3);
 assert.equal(batch164Data.existing_identity_updates.length,2);assert.equal(batch164Data.existing_identity_updates.find(x=>String(x.aid)==='528596').evidence_family_id,enriched596.evidence_family_id);assert.equal(batch164Data.existing_identity_updates.find(x=>String(x.aid)==='528610').evidence_family_id,enriched610.evidence_family_id);
-assert.equal(batch164Data.deduplication_check.full_index_scan_available,false);assert.equal(batch164Data.deduplication_check.post_addition_canonical_scan_pending,true);assert.equal(batch164Data.reconciliation_status,'pending_reconciliation');assert.equal(batch164Data.metrics_actual_after,null,'batch164 static file has no measured after-metrics; CI-generated index is checked below');
+assert.equal(batch164Data.deduplication_check.full_index_scan_available,true);assert.equal(batch164Data.deduplication_check.post_addition_canonical_scan_pending,false);assert.equal(batch164Data.reconciliation_identity_integrity.passed,true);assert.equal(batch164Data.reconciliation_identity_integrity.canonical_identity_collisions.length,0);assert.equal(batch164Data.reconciliation_identity_integrity.missing_canonical_identities.length,0);assert.equal(batch164Data.reconciliation_identity_integrity.all_target_identities_answer_eligible,true);assert(['reconciled','reconciled_with_variance'].includes(batch164Data.reconciliation_status));assert(batch164Data.metrics_actual_after,'batch164 must retain measured canonical after-metrics');
 const dailyWorkQuestion='מה מתעדים ערכי היום יום על עבודה יומיומית, אהבת ישראל, חינוך ותפילה?';
 assert(understandQuestion(dailyWorkQuestion).topics.includes('ערכי היום יום: עבודה יומיומית, אהבת ישראל, חינוך ותפילה'));
 for(const mode of ['regular','researcher']){
