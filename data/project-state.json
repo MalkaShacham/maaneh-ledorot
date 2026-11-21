@@ -87,7 +87,8 @@
       "detail": "Corrected historical batch110 assertion at scripts/test_content_readiness.mjs:1113; prior run 44850216338 failed there."
     },
     "Batch159 (2026-11-21): nine original-language Hayom Yom entries (AIDs 528553–528562 excluding navigation AID 528556), fourteen non-verbatim propositions, all Parsed; no Verified promotion. AID4666220 remained inaccessible (Internal Error); no crawler retry or access bypass. Pre-addition dedup checked the 9,122-entry 2026-11-15 index, 22 recent batch files 137–158 (193 record rows), and 1,022 review-queue records; post-addition canonical reconciliation remains pending.",
-    "Batch160 adds 13 inspected Hayom Yom entries (6 Hebrew, 3 Yiddish, 4 bilingual) and 15 source-grounded paraphrases; all remain Parsed. Full post-addition canonical reconciliation is pending."
+    "Batch160 adds 13 inspected Hayom Yom entries (6 Hebrew, 3 Yiddish, 4 bilingual) and 15 source-grounded paraphrases; all remain Parsed. Full post-addition canonical reconciliation is pending.",
+    "Batch160 also enriches existing AID 528552 in place within its original Hayom Yom Evidence Family: one additional body-grounded proposition on Chanukah lighting order; no duplicate identity created."
   ],
   "next_work": [
     "Run one contiguous canonical reconciliation across pending batches 150–160 and use measured metrics_actual_before/after; no projections or fabricated zero variance.",
@@ -1460,15 +1461,15 @@
       "reviewed_at": "2026-11-21T19:25:31+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 13,
-      "source_bodies_inspected": 13,
-      "source_body_pages_opened": 13,
+      "reviewed_item_count": 14,
+      "source_bodies_inspected": 14,
+      "source_body_pages_opened": 14,
       "new_source_identities": 13,
-      "existing_identities_enriched": 0,
-      "existing_identities_rechecked": 0,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 1,
       "new_response_propositions": 15,
-      "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 15,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 16,
       "answer_eligible_source_families_added": 13,
       "independent_witnesses_added": 13,
       "non_independent_presentations_added": 0,
@@ -1495,11 +1496,18 @@
         528574,
         528575
       ],
-      "enriched_aids": [],
+      "enriched_aids": [
+        528552
+      ],
       "crawler_retry": false,
       "access_control_bypassed": false,
       "full_text_copied": false,
-      "scan_only_verification_used": false
+      "scan_only_verification_used": false,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 13,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 16
+      }
     },
     "last_run_note": "Batch159 committed in 43c884df. Initial Answer quality and Hourly Actions failed at reconciliation because a projectionless batch path left an undefined local variance; follow-up fix committed separately. No after metrics or new Verified promotion are published yet.",
     "last_batch_blocked_count": 1,
@@ -3058,15 +3066,15 @@
     "reviewed_at": "2026-11-21T19:25:31+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 13,
-    "source_bodies_inspected": 13,
-    "source_body_pages_opened": 13,
+    "reviewed_item_count": 14,
+    "source_bodies_inspected": 14,
+    "source_body_pages_opened": 14,
     "new_source_identities": 13,
-    "existing_identities_enriched": 0,
-    "existing_identities_rechecked": 0,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 1,
     "new_response_propositions": 15,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 15,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 16,
     "answer_eligible_source_families_added": 13,
     "independent_witnesses_added": 13,
     "non_independent_presentations_added": 0,
@@ -3093,11 +3101,18 @@
       528574,
       528575
     ],
-    "enriched_aids": [],
+    "enriched_aids": [
+      528552
+    ],
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
-    "scan_only_verification_used": false
+    "scan_only_verification_used": false,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 13,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 16
+    }
   },
   "last_reviewed_batch": "160",
   "last_manual_review": {
@@ -3106,15 +3121,15 @@
     "reviewed_at": "2026-11-21T19:25:31+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 13,
-    "source_bodies_inspected": 13,
-    "source_body_pages_opened": 13,
+    "reviewed_item_count": 14,
+    "source_bodies_inspected": 14,
+    "source_body_pages_opened": 14,
     "new_source_identities": 13,
-    "existing_identities_enriched": 0,
-    "existing_identities_rechecked": 0,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 1,
     "new_response_propositions": 15,
-    "existing_response_propositions_added": 0,
-    "total_new_paraphrase_entries": 15,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 16,
     "answer_eligible_source_families_added": 13,
     "independent_witnesses_added": 13,
     "non_independent_presentations_added": 0,
@@ -3141,12 +3156,19 @@
       528574,
       528575
     ],
-    "enriched_aids": [],
+    "enriched_aids": [
+      528552
+    ],
     "crawler_retry": false,
     "access_control_bypassed": false,
     "full_text_copied": false,
-    "scan_only_verification_used": false
+    "scan_only_verification_used": false,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 13,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 16
+    }
   },
   "pending": true,
-  "last_run_note": "Batch160: 13 inspected original-language Hayom Yom bodies and 15 non-verbatim source-grounded propositions; no Verified promotion. Full canonical reconciliation and readiness tests are pending."
+  "last_run_note": "Batch160: 13 new source identities plus one in-place enrichment of AID 528552; 14 bodies inspected and 16 non-verbatim source-grounded propositions. No Verified promotion. Full canonical reconciliation and readiness tests are pending."
 }
