@@ -1440,3 +1440,10 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - תיקון אחזור: בבדיקת CI זוהה שהשאלה על תוכן מכתב המזכירות ח׳שמה בכיסוי ראש לפני החתונה סווגה בטעות גם כ״השפעה עקיפה״ וגם כ״הכתבה מילה במילה״. נוספה הבחנה ייעודית לשידוך/לפני החתונה, תוך שמירת חסימת ייחוס ישיר לרבי כאשר השאלה שואלת מה כתב הרבי. נוסף גם נושא אחזור תחום לשלוש משפחות יום יום על פירוש התפילה, אווירה של תורה ומצוות ולימוד יומי עם רש״י.
 - מדדי before/after לא נכתבו כתחזית. המדידה הקודמת שנשמרה בפרויקט (977 / 870 / 2,950) היא צילום מצב קודם, לא מדד אחרי האצווה. batches 150–160 יימדדו בשרשרת reconciliation רציפה; לא תיווצר שונות אפסית מלאכותית בהיעדר projection.
 - נדרש להריץ test_content_readiness.mjs, בדיקות integrity, reconciliation, Actions ו-GitHub Pages. אין לטעון Pass או פרסום תוכן חדש עד לסיום הריצות ולבדיקת מדדים בפועל.
+
+
+### Reconciliation correction — canonical records versus audit rows
+
+The first post-batch-160 reconciliation exposed a data-contract issue: canonical source records in batch160 had been given audit-only flags `body_text_inspected`, `original_language_body_inspected`, and `inspection_method`. The reconciliation collector intentionally excludes such audit descriptors, so the 13 new AIDs appeared in the search index but not in the canonical identity scan. These flags now remain only in `source_body_review`; canonical records retain their source-grounded propositions, provenance, and locators without audit-row flags. The existing-identity update for AID 528552 now includes `propositions_added=1`, `existing_propositions_before=2`, and `total_propositions_after=3`, so historical snapshots exclude the later proposition correctly.
+
+The same run also showed that batch089's historical projection (900 / 852 / 2,832) does not equal the measured canonical snapshot. The readiness test now checks the exact arithmetic of the recorded variance and the corresponding `reconciled_with_variance` status; it no longer demands a fabricated zero variance. The measured snapshot and discrepancy remain visible.
