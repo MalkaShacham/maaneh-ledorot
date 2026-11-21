@@ -1502,3 +1502,10 @@ The same run also showed that batch089's historical projection (900 / 852 / 2,83
 - Added a five-family Adar I retrieval/synthesis route with claim-level source locators and a deep researcher evidence map. The synthesis is explicitly system-authored, not a Rebbe quotation or attribution; each dated entry and its internal attribution remain separate.
 - Metrics: the last committed project-state baseline remains 977 answer-eligible unique sources / 870 content-verified unique sources / 2,950 propositions. The public-metrics snapshot is still dated 2026-11-15 (977 / 878 / 2,950). No after count is reported; batch deltas are not reconciled metrics.
 - Required follow-up: reconcile batches 157–164 contiguously, scan canonical identity/Evidence Family collisions, run `test_content_readiness.mjs`, inspect Actions and verify Pages. Do not promote any new entry to Verified without separate qualifying evidence.
+
+ 
+## Reconciliation follow-up — duplicate AID family links and readiness syntax repair (2026-11-22)
+
+The first batch164 push generated the evidence index and measured a CI workspace state of 1,652 answer-eligible unique sources, 854 content-verified unique sources and 4,076 answer-eligible propositions. These figures were not committed because `test_content_readiness.mjs` could not load `src/answer-engine.js`: the new `buildAnswerModel` export was missing its opening function brace.
+
+The full-index audit also exposed three duplicate-AID records whose Evidence Family IDs differed despite identical publisher AIDs/URLs: AID 5920864 (Letter 72), AID 2277173 (Letter 811) and AID 5920875 (Letter 92). The translated/parallel presentations have been linked to the pre-existing canonical Evidence Family IDs; they remain non-independent and no extra source family is counted. The function brace has been restored. A fresh reconciliation and readiness run is required before any after-metrics or test pass can be reported.

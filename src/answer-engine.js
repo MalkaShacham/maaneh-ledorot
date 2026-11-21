@@ -2197,7 +2197,7 @@ function buildHayomYomAdarICommunitySynthesis(selected){
  return{kind:'cross_family_research_synthesis',topic:'hayom_yom_adar_i_inner_work_community_and_prayer',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי',text:claims.map(c=>c.text).join(' ')+' ההשוואה מחברת חמישה ערכים מתוארכים נפרדים; אין לייחס את הסינתזה לדובר אחד או להציג אותה כהוראה אחידה.',source_numbers:numbers,evidence_family_ids:families,independent_evidence_family_ids:independent,basis,claims,evidence_quality:'five_distinct_dated_hayom_yom_entries_not_archival_corroboration',method:'Claim-level comparison across five distinct dated Hayom Yom entry Evidence Families. Each claim has one inspected proposition and its own original-language body locator; the entries are not independent archival corroboration.',limits:['הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס של מסקנה לרבי.','חמשת הערכים הם פריטים מתוארכים נפרדים; הייחוסים הפנימיים נשמרים לכל ערך ואין למזג אותם לדובר אחד.','ההשוואה אינה אימות ארכיוני עצמאי של המסורות, המנהגים או ההסברים המתוארים.','ההקשר חלקי; לא נבדקו כתבי יד, אוטוגרפים, מהדורות ביקורתיות או עדים מקבילים.','תיאור מנהג אינו פסיקה הלכתית כללית; תרגום או הצגה מקבילה אינם עד עצמאי נוסף.']};
 }
 
-export function buildAnswerModel(index,q,{mode='regular'}={})
+export function buildAnswerModel(index,q,{mode='regular'}={}){
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
  const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1,limit:36});
  const educationGovernanceQuestion=isEducationGovernanceQuestion(understanding.query);

@@ -484,7 +484,7 @@
       "primary_secondary_status": "Publisher-hosted English presentation of one underlying letter; not an additional independent witness; original manuscript and incoming correspondence not inspected.",
       "witness_type": "publisher_translation",
       "independent_witness": false,
-      "translation_status": "Published English translation by Eli Touger; original-language witness not inspected; not counted as an independent witness.",
+      "translation_status": "Published English translation of the same underlying Letter No. 811 as AID 2277173 in batch135; same Evidence Family, not an independent witness.",
       "author_name": "Rabbi Menachem M. Schneerson",
       "author_role": "publisher_attributed_author",
       "authorship_status": "המו״ל מציג את הפרסום כאיגרת של רבי מנחם מענדל שניאורסאהן; כתב היד והנוסח המקורי לא נבדקו.",
@@ -520,12 +520,27 @@
         "rights_status": "copyrighted-link-only",
         "reuse_notes": "Publisher link and bounded non-verbatim research paraphrases only; no protected full text stored."
       },
-      "relations": [],
-      "duplicate_or_parallel_relations": [],
-      "evidence_family_id": "igrot-letter-5711-28-marcheshvan-letter811-aid2277173",
+      "relations": [
+        {
+          "type": "same_evidence_family",
+          "target_aid": 2277173,
+          "target_file": "data/items/content-research-batch-135-2026-11-17.json",
+          "evidence_family_id": "igrot-letter-811-28-marcheshvan-5711-aid2277173",
+          "note": "Same AID and publisher URL; one underlying Letter 811; translation presentation is non-independent."
+        }
+      ],
+      "duplicate_or_parallel_relations": [
+        {
+          "type": "same_evidence_family",
+          "target_aid": 2277173,
+          "target_file": "data/items/content-research-batch-135-2026-11-17.json",
+          "evidence_family_id": "igrot-letter-811-28-marcheshvan-5711-aid2277173"
+        }
+      ],
+      "evidence_family_id": "igrot-letter-811-28-marcheshvan-5711-aid2277173",
       "parent_evidence_family_id": null,
-      "translation_of_evidence_family_id": "igrot-letter-5711-28-marcheshvan-letter811-aid2277173",
-      "identity_note": "This AID represents one underlying letter. Any original-language edition, scan, reprint or translation should be linked to this same Evidence Family and not counted as an additional independent witness.",
+      "translation_of_evidence_family_id": "igrot-letter-811-28-marcheshvan-5711-aid2277173",
+      "identity_note": "Same publisher AID and URL as the existing Letter 811 presentation in batch135; linked to its Evidence Family. No second source identity or independent witness is created.",
       "taxonomy": {
         "publisher_index_terms": [
           "Chassid with Long History of Involvement with the Rebbe Rayatz; Blessings & Directives for Educational Work He was Involved — Letter No. 811"

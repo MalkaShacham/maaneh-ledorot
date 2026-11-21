@@ -2210,11 +2210,34 @@
   },
   "reconciliation_identity_integrity": {
     "passed": null,
-    "full_index_scan_completed": false,
-    "canonical_identity_collisions": null,
+    "full_index_scan_completed": true,
+    "canonical_identity_collisions": 3,
     "missing_canonical_identities": null,
     "all_target_identities_answer_eligible": null,
-    "status": "pending_reconciliation"
+    "status": "three_duplicate_aid_family_links_corrected_pending_post_fix_reconciliation",
+    "pre_fix_collisions": [
+      {
+        "aid": 5920864,
+        "canonical_file": "data/items/content-research-batch-082-2026-11-14.json",
+        "duplicate_file": "data/items/mixed-authorized-content-2026-11-12-040.json",
+        "canonical_evidence_family_id": "igrot-letter-5703-8-iyar-letter72-aid5920864",
+        "resolution": "duplicate translated presentation linked to the canonical Letter 72 Evidence Family"
+      },
+      {
+        "aid": 2277173,
+        "canonical_file": "data/items/content-research-batch-135-2026-11-17.json",
+        "duplicate_file": "data/items/content-research-batch-156-2026-11-21.json",
+        "canonical_evidence_family_id": "igrot-letter-811-28-marcheshvan-5711-aid2277173",
+        "resolution": "duplicate translated presentation linked to the canonical Letter 811 Evidence Family"
+      },
+      {
+        "aid": 5920875,
+        "canonical_file": "data/items/content-research-batch-107-2026-11-16.json",
+        "duplicate_file": "data/items/content-research-batch-162-2026-11-21.json",
+        "canonical_evidence_family_id": "letter-5703-10-menachem-av-92-katz-aid5920875",
+        "resolution": "duplicate translated presentation linked to the canonical Letter 92 Evidence Family"
+      }
+    ]
   },
   "retrieval_synthesis": {
     "kind": "cross_family_research_synthesis",
@@ -2333,5 +2356,18 @@
       "GitHub Actions and Pages verification"
     ],
     "status": "pending"
+  },
+  "post_addition_reconciliation": {
+    "run_id": 44957917289,
+    "measured_at": "2026-11-21T22:40:44Z",
+    "full_index_entries": 9900,
+    "answer_eligible_unique_sources": 1652,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 4076,
+    "committed": false,
+    "quality_gate_status": "failed_before_readiness_due_answer_engine_syntax_error",
+    "duplicate_family_collisions_detected": 3,
+    "duplicate_family_links_corrected_in_followup": true,
+    "post_fix_reconciliation_pending": true
   }
 }
