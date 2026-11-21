@@ -5064,3 +5064,80 @@ for(const mode of ['regular','researcher']){
   assert(m.research.claim_source_map.every(c=>c.source_locators.length===1&&c.source_locators[0].locator));
  }else assert.equal(m.research,undefined);
 }
+
+
+// Batch 151: ten-event Yechidus synthesis, including three new families and six in-place enrichments.
+const batch151Path='data/items/content-research-batch-151-2026-11-21.json';
+const batch151Data=JSON.parse(await readFile(new URL(batch151Path,root),'utf8'));
+const batch151Aids=['2505782','2505723','2505757'];
+const batch151SynthesisAids=['2498908','2515477','2515046','2487225','2505782','2505723','2505757','2511676','2511619','2512367'];
+assert.equal(batch151Data.records.length,3);
+assert.deepEqual(batch151Data.new_aids.map(String),batch151Aids);
+assert.equal(batch151Data.new_source_identities,3);
+assert.equal(batch151Data.existing_identities_enriched,6);
+assert.equal(batch151Data.existing_identities_rechecked,2);
+assert.equal(batch151Data.new_response_propositions,3);
+assert.equal(batch151Data.existing_response_propositions_added,6);
+assert.equal(batch151Data.total_new_paraphrase_entries,9);
+assert.equal(batch151Data.source_bodies_inspected,11);
+assert.equal(batch151Data.source_body_pages_opened,11);
+assert.equal(batch151Data.answer_eligible_source_families_added,3);
+assert.equal(batch151Data.independent_witnesses_added,0);
+assert.equal(batch151Data.non_independent_presentations_added,3);
+assert.equal(batch151Data.content_verified_unique_sources_added,0);
+assert.equal(batch151Data.translations_counted_as_independent_witnesses,0);
+assert.equal(batch151Data.blocked_candidate_count,1);
+assert.equal(batch151Data.fallback_source_attempted,true);
+assert.equal(batch151Data.crawler_retry,false);
+assert.equal(batch151Data.access_control_bypassed,false);
+assert.equal(batch151Data.full_text_copied,false);
+assert.equal(batch151Data.scan_only_verification_used,false);
+assert.equal(batch151Data.source_body_review.length,11);
+assert.equal(batch151Data.existing_identity_updates.length,6);
+assert.equal(batch151Data.existing_identity_rechecks.length,2);
+assert.equal(batch151Data.deduplication_check.full_index_scan_pending_reconciliation,true);
+assert.deepEqual(batch151Data.retrieval_synthesis.source_aids.map(String),batch151SynthesisAids);
+assert(batch151Data.records.every(r=>r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.independent_witness===false&&r.status==='Parsed'));
+for(const aid of batch151SynthesisAids){
+ const e=idx.entries.find(x=>String(x.aid)===aid);
+ assert(e,'batch151 Yechidus identity must be in the canonical index: '+aid);
+ assert.equal(e.independent_witness,false,'translated Yechidus must not count as an independent witness: '+aid);
+ assert(e.response_propositions?.length>0,'Yechidus identity must carry inspected content: '+aid);
+}
+for(const aid of ['2487225','2515477','2515046','2511676','2511619','2512367']){
+ const e=idx.entries.find(x=>String(x.aid)===aid);
+ assert(e,'enriched Yechidus identity must remain canonical: '+aid);
+ assert((e.response_proposition_locators||[]).length>=(aid==='2487225'?2:3),'enriched identity must retain claim-level locators: '+aid);
+}
+const batch151Question='מה מלמדות שיחות היחידות על אחדות, שליחות והמשך הפעולה לאחר המפגש?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch151Question,{mode});
+ assert(m.answerable,mode+': ten distinct Yechidus event families must support a bounded unity/mission comparison');
+ assert.equal(m.synthesis?.topic,'yechidus_unity_and_mission');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.sources.length,10);
+ assert.deepEqual(m.sources.map(e=>String(e.aid)),batch151SynthesisAids);
+ assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,10);
+ assert(m.sources.every(e=>e.independent_witness===false));
+ assert.equal(m.synthesis.claims.length,10);
+ assert.equal(m.synthesis.evidence_family_ids.length,10);
+ assert.equal(m.synthesis.independent_evidence_family_ids.length,0);
+ assert(m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
+ assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.witnesses?.length===1&&c.witnesses[0].independent_witness===false));
+ assert.equal(m.pattern_synthesis_integrity.valid,true);
+ assert(m.citation_entailment.every(x=>x.valid));
+ assert(m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');
+  assert.equal(m.research.synthesis_scope,'cross_family_derived_case_comparison');
+  assert.equal(m.research.evidence_families,10);
+  assert.equal(m.research.independent_evidence_families,0);
+  assert.equal(m.research.evidence_integrity.independent_witnesses,0);
+  assert.equal(m.research.evidence_integrity.derived_non_independent,10);
+  assert.equal(m.research.evidence_witnesses.length,10);
+  assert(m.research.evidence_witnesses.every(w=>w.independent_witness===false));
+  assert.equal(m.research.claim_source_map.length,10);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
+  assert.equal(m.research.pattern_synthesis_integrity.valid,true);
+ }else assert.equal(m.research,undefined);
+}

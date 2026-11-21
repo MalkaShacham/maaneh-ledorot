@@ -1326,3 +1326,14 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - Batch boundary planning is 1,503 → 1,513 answer-eligible unique sources, 854 → 854 content-verified unique sources, and 3,838 → 3,849 propositions. These are expected values chained from batch149, not measured results. The committed public metrics remain the older 977 / 878 / 2,950 snapshot; no post-batch150 metric is claimed until reconciliation runs.
 - This batch added Hebrew correspondence only. No English or Yiddish translation was counted as an independent witness; no full protected text was copied. The existing hourly schedule, audience and permissions were not changed. Reconciliation, runtime tests, Actions and Pages verification remain pending until the branch is merged.
 
+
+
+## 2026-11-21 — Batch 151: Yechidus content and claim-level synthesis
+
+- נבדקו בפועל 11 גופי פרסום נגישים של יחידויות באנגלית, במיקומי גוף מפורשים; נוספו 3 זהויות אירוע חדשות במצב Parsed, הועשרו 6 זהויות קיימות במקומן ונבדקו מחדש 2 זהויות ללא פרפרזה כפולה.
+- נוספו 3 פרפרזות למקורות החדשים ו-6 פרפרזות למקורות קיימים. כל התרגומים מסומנים כנגזרות שאינן עדים עצמאיים; לא נוסף עד עצמאי ולא קודם מקור ל-Verified.
+- AID 4666220 לא החזיר גוף ציבורי קריא בכלי העיון. לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; באותה הפעלה נבדקו דפי Yechidus חלופיים נגישים.
+- אחזור היחידויות הורחב לסינתזה בת עשר משפחות אירוע נפרדות עם מיקום מקור לכל טענה. מצב חוקר עמוק משמר עשרה מיפויי טענה–מקור, provenance, גבולות הקשר וסיווג מפורש של עדים נגזרים. הסינתזה מסומנת כיצירת המערכת, לא כציטוט או מסקנה המיוחסת לרבי.
+- בדיקות רגרסיה נוספו ל-`test_content_readiness.mjs` עבור מצב רגיל ומצב חוקר עמוק. הרצה בפועל של הבדיקות ממתינה ל-Actions לאחר ה-commit.
+- גבול התכנון הרציף הוא 1513/854/3849 לפני batch 151 ו-1516/854/3858 אחריו; אלה אינם מדדים בפועל. המדדים הציבוריים עדיין 977/878/2950 מ-15.11.2026. Reconciliation ופרסום המדידה בפועל נותרו פתוחים.
+- לא שונו לוח הזמנים השעתי, הקהל או ההרשאות.
