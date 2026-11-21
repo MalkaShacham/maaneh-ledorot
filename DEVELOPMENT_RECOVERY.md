@@ -1389,3 +1389,14 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 
 
 - Follow-up test-fixture correction: the batch-156 regression now checks the per-AID proposition counts (3, 3, 2, 3, 4, 3, 3, 2) rather than the former uniform two-proposition expectation. The corpus records were already updated; this change aligns the assertion with the eight inspected source bodies and preserves the per-proposition locator-length check.
+
+
+## 2026-11-21 — Batch 157: ערכי היום יום בכסלו י״ט–כ״ו
+
+- נבדקו שמונה גופי ערכים בשפת המקור: חמישה בעברית ושלושה ביידיש, AID 528545–528552. נוספו 12 פרפרזות מחקריות לא־מילוליות עם locator לכל טענה, provenance, היקף אימות, הקשר חלקי ומגבלות.
+- נפתחו גם ההצגות האנגליות AID 6009–6016. כל אחת קושרה לאותה Evidence Family של הערך העברי/יידי; שמונה התרגומים אינם זהויות או עדים עצמאיים נוספים.
+- AID 4666220 לא נפתח בכלי העיון (Internal Error). לא בוצע retry ל-crawler ולא נעקפו בקרות; באותה הפעלה עברתי לשמונה גופי הערכים הנגישים.
+- נוספו 8 זהויות ומשפחות ראיות; 0 זהויות קיימות הועשרו; 0 מקורות קודמו ל-Verified. כל שמונה הרשומות נשארו Parsed.
+- מדדים צפויים בלבד: 1,569 / 854 / 3,971 לפני האצווה; 1,577 / 854 / 3,983 אחריה. אלה תחזיות המבוססות על batch156.metrics_expected_after, לא מדידה. public-metrics.json יעודכן רק לאחר reconciliation מלא.
+- בדיקת הכפילויות המקדימה חלקית: תור הבדיקה ו-AID-ים מדויקים נבדקו; public-search-index.json המלא לא היה זמין דרך חיבור GitHub. נדרשת סריקה קנונית מלאה ב-reconciliation workflow.
+- נדרש להריץ test_content_readiness.mjs ולוודא אחזור רב־מקורי, הפניות ברמת טענה ומצב researcher עמוק לפני הצגת הצלחה.
