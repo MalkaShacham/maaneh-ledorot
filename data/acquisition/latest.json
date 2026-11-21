@@ -7,547 +7,687 @@
   "skipped": 3,
   "status": "manual_web_review_completed_pending_reconciliation",
   "manual_web_review": {
-    "batch_id": "151",
-    "batch_file": "data/items/content-research-batch-151-2026-11-21.json",
-    "reviewed_at": "2026-11-21T02:59:07+02:00",
+    "batch_id": "152",
+    "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+    "reviewed_at": "2026-11-21T03:26:44+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "new_source_identities": 3,
-    "existing_identities_enriched": 6,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 3,
-    "existing_response_propositions_added": 6,
-    "total_new_paraphrase_entries": 9,
-    "answer_eligible_source_families_added": 3,
+    "reviewed_item_count": 16,
+    "source_bodies_inspected": 8,
+    "source_body_pages_opened": 8,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 8,
     "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 3,
+    "non_independent_presentations_added": 8,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
-    "recovered_candidate_count": 0,
+    "blocked_candidate_count": 8,
+    "recovered_candidate_count": 8,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1513,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3849
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1516,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3858
     },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1524,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3866
+    },
+    "metrics_actual_before": null,
     "metrics_actual_after": null,
+    "metrics_delta_actual": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 3,
+      "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 9
+      "answer_eligible_propositions": 8
     },
     "new_aids": [
-      2505782,
-      2505723,
-      2505757
+      528545,
+      528546,
+      528547,
+      528548,
+      528549,
+      528550,
+      528551,
+      528552
     ],
-    "enriched_aids": [
-      2487225,
-      2515477,
-      2515046,
-      2511676,
-      2511619,
-      2512367
-    ],
-    "rechecked_aids": [
-      2498908,
-      2515007
-    ],
+    "enriched_aids": [],
+    "rechecked_aids": [],
     "translations_counted_as_independent_witnesses": 0,
     "blocked_candidates": [
       {
-        "aid": 4666220,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-        "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "הנתיב הציבורי הישיר לא החזיר גוף פרסום קריא בכלי העיון; לא ניתן היה לבדוק את גוף המקור.",
-        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה. באותה הפעלה בוצעה חלופה: נפתחו ונבדקו 10 גופי פרסום נגישים של יחידויות באנגלית, לצד העשרת זהויות קיימות."
+        "aid": 554871,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/554871/jewish/25-Tishrei-5750-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555023,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555023/jewish/15-Iyar-5751-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555030,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555030/jewish/15-Sivan-5751-Sicha-missing-beg-and-end.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555044,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555044/jewish/13-Menachem-Av-5751-Sicha-1-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555045,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555045/jewish/13-Menachem-Av-5751-Sicha-2-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555046,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555046/jewish/13-Menachem-Av-5751-Sicha-3-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555047,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555047/jewish/13-Menachem-Av-5751-Sicha-4-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555054,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555054/jewish/15-Elul-5751-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
       }
     ],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
       "candidate_aids_found": [],
-      "existing_aids_found": [
-        2498908,
-        2511676,
-        2511619,
-        2512367,
-        2515477,
-        2515046,
-        2515007,
-        2487225
-      ],
+      "existing_aids_found": [],
       "new_aids_unique": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "recent_manual_batch_files_checked": 92,
-      "recent_manual_batch_range": "055–150, all available content-research batch files",
-      "bulk_indexed_files_checked": 5,
-      "bulk_indexed_files_unavailable": 7,
+      "repository_tree_paths_scanned": 999,
+      "pathnames_with_target_aids": 0,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
+      "exact_github_code_search_queries": 8,
+      "exact_github_code_search_matches": 0,
+      "manual_batch_content_scan_completed": false,
+      "full_index_scan_pending": true,
       "post_addition_canonical_scan_pending": true,
-      "note": "Preflight: all 92 available manual content-research batches 055–150 were checked for the three proposed new AIDs; none appeared. Seven of the ten Yechidus pages were found in existing canonical batches/bulk records and are being enriched or rechecked in place. Eight existing AIDs are not new identities. The 1,022-item review queue had no matches for the three new AIDs. Full canonical identity scan remains pending reconciliation."
+      "note": "בדיקת קדם: שמונה חיפושי קוד מדויקים ל-AID 528545–528552 לא החזירו התאמות; שמונת ה-AID לא הופיעו בשמות הנתיבים בעץ המאגר; תור הביקורת בן 1,022 הרשומות לא הכיל התאמות. ניסיון לסרוק את כל קובצי התוכן חרג ממגבלת קריאות הכלי ולא הושלם. לכן אין לטעון שבוצעה סריקה קנונית מלאה; reconciliation.py חייב לבצע את בדיקת ה-AID, URL ו-Evidence Family הסופית."
     },
     "retrieval_synthesis": {
-      "topic": "yechidus_unity_and_mission",
+      "topic": "hayom_yom_kislev_calendar_practices",
+      "status": "implemented_pending_ci",
       "attribution": "system_synthesis_not_rebbe_quote",
       "synthesis_scope": "cross_family_derived_case_comparison",
-      "source_count": 10,
-      "distinct_evidence_families": 10,
+      "source_count": 8,
+      "distinct_evidence_families": 8,
       "independent_evidence_families": 0,
-      "derived_non_independent_presentations": 10,
-      "claim_count": 10,
-      "claim_level_source_locators": 10,
-      "regular_mode": "10 claims / 10 source families",
-      "researcher_mode": "deep; 10 claim-source mappings, witness-level provenance and context boundaries",
+      "derived_non_independent_presentations": 8,
+      "claim_count": 8,
+      "claim_level_source_locators": 8,
+      "regular_mode": "8 dated entries, 8 separate claims and 8 claim-local body locators; no single unified instruction is asserted.",
+      "researcher_mode": "deep; 8 distinct dated entry identities, 8 claim-source mappings, witness-level provenance, source language, attribution boundaries and 0 independent witnesses.",
+      "validation": "patternSynthesisIntegrity requires eight distinct dated entry families, eight source-local claims/locators, 0 independent witnesses and explicit anthology limitations.",
       "claim_topics": [
-        "mission_in_providence_place",
-        "individual_action_overcomes_environmental_barriers",
-        "shared_mission_carried_home",
-        "torah_study_and_tzedakah_in_practice",
-        "torah_guides_daily_life_and_world",
-        "unity_within_difference",
-        "unity_and_practical_tzedakah_after_departure",
-        "ahavat_yisrael_in_practical_care",
-        "unity_across_diverse_roles",
-        "mutual_support_after_separation"
-      ],
-      "text": "בעשר יחידויות מתאריכים שונים מופיעים היבטים נבדלים של אחדות ואחריות לאחר המפגש: מימוש שליחות במקום שנקבע בהשגחה פרטית; יכולת היחיד לפעול למרות חסמים; נשיאת כוח הקבוצה חזרה למקום המגורים; חיבור לימוד התורה והצדקה למעשה; הכוונת חיי היום־יום על פי התורה; אחדות בתוך שונות; צדקה לאחר פרידה; אהבת ישראל מעשית; אחדות בתוך ריבוי תפקידים; וסיוע הדדי גם במרחק. זו סינתזה מחקרית של המערכת, לא אמירה אחת ולא מסקנה המיוחסת לרבי.",
-      "limits": [
-        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
-        "כל עשרת המקורות הם הצגות מו״ל באנגלית; המקור בשפתו המקורית והקלטות לא נבדקו, והם אינם עדים עצמאיים.",
-        "היחידויות הן אירועים נפרדים; אין למזג אותן לשיחה אחת או לכלל אחיד.",
-        "נבדקו רק הקטעים והמיקומים שצוינו; ההקשר המלא של כל אירוע חלקי.",
-        "תיאור כוונה, קריאה לפעולה או אפשרות רוחנית אינו ראיה לכך שהפעולה בוצעה או שהשיגה תוצאה."
+        "yud_tes_kislev_and_day_customs",
+        "tanya_printing_history",
+        "mishna_and_chassidus_study_routine",
+        "daily_tehillim_practice",
+        "shabbat_preparation_from_wednesday",
+        "thursday_night_chassidus_preparation",
+        "chanukah_lighting_custom",
+        "shabbat_mevarchim_tehillim_and_farbrengen"
       ],
       "source_aids": [
-        2498908,
-        2515477,
-        2515046,
-        2487225,
-        2505782,
-        2505723,
-        2505757,
-        2511676,
-        2511619,
-        2512367
+        528545,
+        528546,
+        528547,
+        528548,
+        528549,
+        528550,
+        528551,
+        528552
+      ],
+      "text": "שמונת הערכים שנבדקו בין י״ט לכ״ו בכסלו עוסקים בנושאים שונים: משמעות י״ט כסלו ומנהגיו; היסטוריית הדפסת התניא; לימוד משניות וחסידות; אמירת תהילים; הכנה לשבת; לימוד חסידות בליל חמישי; מנהגי הדלקת נרות חנוכה; ושבת מברכים והתוועדות. זו מפת תוכן של ערכים נפרדים באותה אנתולוגיה, לא הוראה אחידה ולא אמירה אחת המיוחסת לרבי.",
+      "limits": [
+        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+        "כל שמונת הפריטים הם ערכים מאותה אנתולוגיה; הם אינם עדים עצמאיים או חיזוקים בלתי תלויים זה לזה.",
+        "ערך י״ט כסלו כולל ייחוסים פנימיים למכתב ״אאמו״ר״ ולמכתב אדמו״ר הזקן; זהות ״אאמו״ר״ לא הוכרעה.",
+        "ערך כ״ב כסלו מייחס את המנהג ל״תקנות כ״ק אדמו״ר שליט״א״; זהות התואר לא הוכרעה.",
+        "ערך כ״ג כסלו מייחס את הדברים לשיחות ״אאזמו״ר״ מאלול תרל״ה; זהות האדם לא הוכרעה.",
+        "ערך כ״ד כסלו מסומן כהמשך לכ״ג כסלו; אין לראות בשני הערכים עדים עצמאיים לאותו רצף.",
+        "ערך כ״ה כסלו מייחס את המנהג ל״אאמו״ר״; זהות האדם לא הוכרעה.",
+        "לא נבדקו המקורות המוקדמים, כתבי־יד, אוטוגרפים, הקלטות או מהדורות ביקורתיות; ההקשר חלקי.",
+        "לא הועתק טקסט מוגן במלואו; נשמרו פרפרזות ומיקומי גוף בלבד."
       ]
     },
-    "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
+    "note": "נבדקו שמונה גופי ערכים מקוריים בעברית וביידיש (AIDs 528545–528552), נוספו שמונה פרפרזות לא־מילוליות ושמונה זהויות ערך יומי נפרדות. שמונה עמודי מדיה באנגלית לא סיפקו תמליל קריא ונפסלו; בוצע fallback באותה הפעלה. אפס Verified, אפס עדים עצמאיים חדשים. סריקה קנונית מלאה ומדידת metrics ממתינות ל-reconciliation."
   },
   "previous_manual_web_review": {
-    "batch_id": "150",
-    "batch_file": "data/items/content-research-batch-150-2026-11-21.json",
-    "reviewed_at": "2026-11-21T01:58:48+02:00",
+    "batch_id": "151",
+    "batch_file": "data/items/content-research-batch-151-2026-11-21.json",
+    "reviewed_at": "2026-11-21T02:59:07+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 12,
     "source_bodies_inspected": 11,
     "source_body_pages_opened": 11,
-    "new_source_identities": 10,
-    "existing_identities_enriched": 1,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 10,
-    "independent_witnesses_added": 10,
-    "non_independent_presentations_added": 0,
+    "new_source_identities": 3,
+    "existing_identities_enriched": 6,
+    "existing_identities_rechecked": 2,
+    "new_response_propositions": 3,
+    "existing_response_propositions_added": 6,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 3,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 3,
     "content_verified_unique_sources_added": 0,
     "blocked_candidate_count": 1,
     "recovered_candidate_count": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1503,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3838
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1513,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3849
     },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1516,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3858
+    },
     "metrics_actual_after": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 10,
+      "answer_eligible_unique_sources": 3,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 11
+      "answer_eligible_propositions": 9
     },
     "new_aids": [
-      4872325,
-      4994205,
-      4730828,
-      5287503,
-      4928852,
-      5357433,
-      4929082,
-      5100419,
-      5357411,
-      5357099
+      2505782,
+      2505723,
+      2505757
     ],
     "enriched_aids": [
-      2988940
+      2487225,
+      2515477,
+      2515046,
+      2511676,
+      2511619,
+      2512367
+    ],
+    "rechecked_aids": [
+      2498908,
+      2515007
     ],
     "translations_counted_as_independent_witnesses": 0,
     "blocked_candidates": [
       {
         "aid": 4666220,
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-        "status": "public_reader_body_unavailable",
-        "reason": "הנתיב העברי הישיר לא החזיר גוף פרסום קריא; הנתיב המקביל באנגלית הציג מעטפת/תקציר ללא גוף המקור.",
-        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה; באותה הפעלה נפתחו עשרה גופי איגרות עבריים אחרים."
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הנתיב הציבורי הישיר לא החזיר גוף פרסום קריא בכלי העיון; לא ניתן היה לבדוק את גוף המקור.",
+        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה. באותה הפעלה בוצעה חלופה: נפתחו ונבדקו 10 גופי פרסום נגישים של יחידויות באנגלית, לצד העשרת זהויות קיימות."
       }
     ],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
       "candidate_aids_found": [],
+      "existing_aids_found": [
+        2498908,
+        2511676,
+        2511619,
+        2512367,
+        2515477,
+        2515046,
+        2515007,
+        2487225
+      ],
       "new_aids_unique": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "recent_manual_batch_files_checked": 23,
-      "recent_manual_batch_range": "127–149",
-      "bulk_indexed_files_checked": 6,
-      "bulk_indexed_files_unavailable": 6,
+      "recent_manual_batch_files_checked": 92,
+      "recent_manual_batch_range": "055–150, all available content-research batch files",
+      "bulk_indexed_files_checked": 5,
+      "bulk_indexed_files_unavailable": 7,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "post_addition_canonical_scan_pending": true,
-      "note": "Preflight בלבד: לא נמצאו התאמות ל-10 ה-AID החדשים ב-23 קובצי הביקורת האחרונים, בששת קובצי bulk-indexed שהיו נגישים או בתור הביקורת בן 1,022 הרשומות. שישה קובצי bulk-indexed נוספים וקובצי batch ישנים יותר לא נסרקו; חיפוש הקוד אינו כיסוי מלא. סריקה קנונית מלאה ממתינה ל-reconciliation."
+      "note": "Preflight: all 92 available manual content-research batches 055–150 were checked for the three proposed new AIDs; none appeared. Seven of the ten Yechidus pages were found in existing canonical batches/bulk records and are being enriched or rechecked in place. Eight existing AIDs are not new identities. The 1,022-item review queue had no matches for the three new AIDs. Full canonical identity scan remains pending reconciliation."
     },
     "retrieval_synthesis": {
-      "topic": "institutional_education_and_public_influence",
-      "status": "implemented_local_simulation_passed_pending_ci",
+      "topic": "yechidus_unity_and_mission",
       "attribution": "system_synthesis_not_rebbe_quote",
-      "selected_aids": [
-        4872325,
-        4994205,
-        4730828,
-        5287503,
-        4928852,
-        5357433,
-        4929082,
-        5100419,
-        5357411,
-        5357099
-      ],
-      "claim_count": 10,
+      "synthesis_scope": "cross_family_derived_case_comparison",
+      "source_count": 10,
       "distinct_evidence_families": 10,
-      "independent_witnesses": 10,
-      "regular_mode": "עשר טענות תחומות, כל אחת נשענת על איגרת עברית אחת ומיקום גוף מדויק; הסינתזה אינה מוצגת כמדיניות אחידה.",
-      "researcher_mode": "deep mode exposes ten separate Evidence Families, witness provenance, context boundaries and a claim_source_map with one body locator per claim.",
-      "validation": "patternSynthesisIntegrity checks ten claim topics, source numbers, independent families, body locators and non-quotation attribution in regular and researcher modes.",
-      "limitations": [
-        "האיגרות נכתבו בתאריכים שונים לנמענים שונים; הקישור ביניהן הוא סינתזה מחקרית ולא אותה Evidence Family.",
-        "ההקשר חלקי; לא נבדקו אוטוגרפים, עותקי מזכירות או מהדורות מקבילות.",
-        "תיאור תכנון או בקשה לסיוע אינו הוכחה לביצוע בפועל.",
-        "AID 5357099 מסתיים בנוסח בשם הרבי; אין לייחס לו חתימה אישית."
+      "independent_evidence_families": 0,
+      "derived_non_independent_presentations": 10,
+      "claim_count": 10,
+      "claim_level_source_locators": 10,
+      "regular_mode": "10 claims / 10 source families",
+      "researcher_mode": "deep; 10 claim-source mappings, witness-level provenance and context boundaries",
+      "claim_topics": [
+        "mission_in_providence_place",
+        "individual_action_overcomes_environmental_barriers",
+        "shared_mission_carried_home",
+        "torah_study_and_tzedakah_in_practice",
+        "torah_guides_daily_life_and_world",
+        "unity_within_difference",
+        "unity_and_practical_tzedakah_after_departure",
+        "ahavat_yisrael_in_practical_care",
+        "unity_across_diverse_roles",
+        "mutual_support_after_separation"
+      ],
+      "text": "בעשר יחידויות מתאריכים שונים מופיעים היבטים נבדלים של אחדות ואחריות לאחר המפגש: מימוש שליחות במקום שנקבע בהשגחה פרטית; יכולת היחיד לפעול למרות חסמים; נשיאת כוח הקבוצה חזרה למקום המגורים; חיבור לימוד התורה והצדקה למעשה; הכוונת חיי היום־יום על פי התורה; אחדות בתוך שונות; צדקה לאחר פרידה; אהבת ישראל מעשית; אחדות בתוך ריבוי תפקידים; וסיוע הדדי גם במרחק. זו סינתזה מחקרית של המערכת, לא אמירה אחת ולא מסקנה המיוחסת לרבי.",
+      "limits": [
+        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+        "כל עשרת המקורות הם הצגות מו״ל באנגלית; המקור בשפתו המקורית והקלטות לא נבדקו, והם אינם עדים עצמאיים.",
+        "היחידויות הן אירועים נפרדים; אין למזג אותן לשיחה אחת או לכלל אחיד.",
+        "נבדקו רק הקטעים והמיקומים שצוינו; ההקשר המלא של כל אירוע חלקי.",
+        "תיאור כוונה, קריאה לפעולה או אפשרות רוחנית אינו ראיה לכך שהפעולה בוצעה או שהשיגה תוצאה."
+      ],
+      "source_aids": [
+        2498908,
+        2515477,
+        2515046,
+        2487225,
+        2505782,
+        2505723,
+        2505757,
+        2511676,
+        2511619,
+        2512367
       ]
     },
-    "note": "נבדקו עשרה גופי איגרות עבריים חדשים והועשרה in-place שיחה עברית קיימת AID 2988940. AID 4666220 לא החזיר גוף קריא; בוצע fallback לעשרה פרסומים נגישים. כל הרשומות Parsed; אפס קידומים ל-Verified. סריקה קנונית מלאה ומדידה בפועל עדיין ממתינות.",
-    "local_synthesis_simulation": {
-      "regular_mode_passed": true,
-      "researcher_mode_passed": true,
-      "source_count": 10,
-      "claim_count": 10,
-      "independent_evidence_families": 10,
-      "claim_level_body_locators": 10,
-      "citation_entailment_passed": true,
-      "context_boundaries_passed": true,
-      "pattern_synthesis_integrity_passed": true,
-      "scope": "in-memory simulation against batch150 records; not the repository-wide test suite"
-    }
+    "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
   },
   "last_manual_web_review": {
-    "batch_id": "151",
-    "batch_file": "data/items/content-research-batch-151-2026-11-21.json",
-    "reviewed_at": "2026-11-21T02:59:07+02:00",
+    "batch_id": "152",
+    "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+    "reviewed_at": "2026-11-21T03:26:44+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "new_source_identities": 3,
-    "existing_identities_enriched": 6,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 3,
-    "existing_response_propositions_added": 6,
-    "total_new_paraphrase_entries": 9,
-    "answer_eligible_source_families_added": 3,
+    "reviewed_item_count": 16,
+    "source_bodies_inspected": 8,
+    "source_body_pages_opened": 8,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 8,
     "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 3,
+    "non_independent_presentations_added": 8,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
-    "recovered_candidate_count": 0,
+    "blocked_candidate_count": 8,
+    "recovered_candidate_count": 8,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1513,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3849
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1516,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3858
     },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1524,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3866
+    },
+    "metrics_actual_before": null,
     "metrics_actual_after": null,
+    "metrics_delta_actual": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 3,
+      "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 9
+      "answer_eligible_propositions": 8
     },
     "new_aids": [
-      2505782,
-      2505723,
-      2505757
+      528545,
+      528546,
+      528547,
+      528548,
+      528549,
+      528550,
+      528551,
+      528552
     ],
-    "enriched_aids": [
-      2487225,
-      2515477,
-      2515046,
-      2511676,
-      2511619,
-      2512367
-    ],
-    "rechecked_aids": [
-      2498908,
-      2515007
-    ],
+    "enriched_aids": [],
+    "rechecked_aids": [],
     "translations_counted_as_independent_witnesses": 0,
     "blocked_candidates": [
       {
-        "aid": 4666220,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-        "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "הנתיב הציבורי הישיר לא החזיר גוף פרסום קריא בכלי העיון; לא ניתן היה לבדוק את גוף המקור.",
-        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה. באותה הפעלה בוצעה חלופה: נפתחו ונבדקו 10 גופי פרסום נגישים של יחידויות באנגלית, לצד העשרת זהויות קיימות."
+        "aid": 554871,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/554871/jewish/25-Tishrei-5750-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555023,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555023/jewish/15-Iyar-5751-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555030,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555030/jewish/15-Sivan-5751-Sicha-missing-beg-and-end.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555044,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555044/jewish/13-Menachem-Av-5751-Sicha-1-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555045,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555045/jewish/13-Menachem-Av-5751-Sicha-2-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555046,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555046/jewish/13-Menachem-Av-5751-Sicha-3-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555047,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555047/jewish/13-Menachem-Av-5751-Sicha-4-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555054,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555054/jewish/15-Elul-5751-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
       }
     ],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
       "candidate_aids_found": [],
-      "existing_aids_found": [
-        2498908,
-        2511676,
-        2511619,
-        2512367,
-        2515477,
-        2515046,
-        2515007,
-        2487225
-      ],
+      "existing_aids_found": [],
       "new_aids_unique": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "recent_manual_batch_files_checked": 92,
-      "recent_manual_batch_range": "055–150, all available content-research batch files",
-      "bulk_indexed_files_checked": 5,
-      "bulk_indexed_files_unavailable": 7,
+      "repository_tree_paths_scanned": 999,
+      "pathnames_with_target_aids": 0,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
+      "exact_github_code_search_queries": 8,
+      "exact_github_code_search_matches": 0,
+      "manual_batch_content_scan_completed": false,
+      "full_index_scan_pending": true,
       "post_addition_canonical_scan_pending": true,
-      "note": "Preflight: all 92 available manual content-research batches 055–150 were checked for the three proposed new AIDs; none appeared. Seven of the ten Yechidus pages were found in existing canonical batches/bulk records and are being enriched or rechecked in place. Eight existing AIDs are not new identities. The 1,022-item review queue had no matches for the three new AIDs. Full canonical identity scan remains pending reconciliation."
+      "note": "בדיקת קדם: שמונה חיפושי קוד מדויקים ל-AID 528545–528552 לא החזירו התאמות; שמונת ה-AID לא הופיעו בשמות הנתיבים בעץ המאגר; תור הביקורת בן 1,022 הרשומות לא הכיל התאמות. ניסיון לסרוק את כל קובצי התוכן חרג ממגבלת קריאות הכלי ולא הושלם. לכן אין לטעון שבוצעה סריקה קנונית מלאה; reconciliation.py חייב לבצע את בדיקת ה-AID, URL ו-Evidence Family הסופית."
     },
     "retrieval_synthesis": {
-      "topic": "yechidus_unity_and_mission",
+      "topic": "hayom_yom_kislev_calendar_practices",
+      "status": "implemented_pending_ci",
       "attribution": "system_synthesis_not_rebbe_quote",
       "synthesis_scope": "cross_family_derived_case_comparison",
-      "source_count": 10,
-      "distinct_evidence_families": 10,
+      "source_count": 8,
+      "distinct_evidence_families": 8,
       "independent_evidence_families": 0,
-      "derived_non_independent_presentations": 10,
-      "claim_count": 10,
-      "claim_level_source_locators": 10,
-      "regular_mode": "10 claims / 10 source families",
-      "researcher_mode": "deep; 10 claim-source mappings, witness-level provenance and context boundaries",
+      "derived_non_independent_presentations": 8,
+      "claim_count": 8,
+      "claim_level_source_locators": 8,
+      "regular_mode": "8 dated entries, 8 separate claims and 8 claim-local body locators; no single unified instruction is asserted.",
+      "researcher_mode": "deep; 8 distinct dated entry identities, 8 claim-source mappings, witness-level provenance, source language, attribution boundaries and 0 independent witnesses.",
+      "validation": "patternSynthesisIntegrity requires eight distinct dated entry families, eight source-local claims/locators, 0 independent witnesses and explicit anthology limitations.",
       "claim_topics": [
-        "mission_in_providence_place",
-        "individual_action_overcomes_environmental_barriers",
-        "shared_mission_carried_home",
-        "torah_study_and_tzedakah_in_practice",
-        "torah_guides_daily_life_and_world",
-        "unity_within_difference",
-        "unity_and_practical_tzedakah_after_departure",
-        "ahavat_yisrael_in_practical_care",
-        "unity_across_diverse_roles",
-        "mutual_support_after_separation"
-      ],
-      "text": "בעשר יחידויות מתאריכים שונים מופיעים היבטים נבדלים של אחדות ואחריות לאחר המפגש: מימוש שליחות במקום שנקבע בהשגחה פרטית; יכולת היחיד לפעול למרות חסמים; נשיאת כוח הקבוצה חזרה למקום המגורים; חיבור לימוד התורה והצדקה למעשה; הכוונת חיי היום־יום על פי התורה; אחדות בתוך שונות; צדקה לאחר פרידה; אהבת ישראל מעשית; אחדות בתוך ריבוי תפקידים; וסיוע הדדי גם במרחק. זו סינתזה מחקרית של המערכת, לא אמירה אחת ולא מסקנה המיוחסת לרבי.",
-      "limits": [
-        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
-        "כל עשרת המקורות הם הצגות מו״ל באנגלית; המקור בשפתו המקורית והקלטות לא נבדקו, והם אינם עדים עצמאיים.",
-        "היחידויות הן אירועים נפרדים; אין למזג אותן לשיחה אחת או לכלל אחיד.",
-        "נבדקו רק הקטעים והמיקומים שצוינו; ההקשר המלא של כל אירוע חלקי.",
-        "תיאור כוונה, קריאה לפעולה או אפשרות רוחנית אינו ראיה לכך שהפעולה בוצעה או שהשיגה תוצאה."
+        "yud_tes_kislev_and_day_customs",
+        "tanya_printing_history",
+        "mishna_and_chassidus_study_routine",
+        "daily_tehillim_practice",
+        "shabbat_preparation_from_wednesday",
+        "thursday_night_chassidus_preparation",
+        "chanukah_lighting_custom",
+        "shabbat_mevarchim_tehillim_and_farbrengen"
       ],
       "source_aids": [
-        2498908,
-        2515477,
-        2515046,
-        2487225,
-        2505782,
-        2505723,
-        2505757,
-        2511676,
-        2511619,
-        2512367
+        528545,
+        528546,
+        528547,
+        528548,
+        528549,
+        528550,
+        528551,
+        528552
+      ],
+      "text": "שמונת הערכים שנבדקו בין י״ט לכ״ו בכסלו עוסקים בנושאים שונים: משמעות י״ט כסלו ומנהגיו; היסטוריית הדפסת התניא; לימוד משניות וחסידות; אמירת תהילים; הכנה לשבת; לימוד חסידות בליל חמישי; מנהגי הדלקת נרות חנוכה; ושבת מברכים והתוועדות. זו מפת תוכן של ערכים נפרדים באותה אנתולוגיה, לא הוראה אחידה ולא אמירה אחת המיוחסת לרבי.",
+      "limits": [
+        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+        "כל שמונת הפריטים הם ערכים מאותה אנתולוגיה; הם אינם עדים עצמאיים או חיזוקים בלתי תלויים זה לזה.",
+        "ערך י״ט כסלו כולל ייחוסים פנימיים למכתב ״אאמו״ר״ ולמכתב אדמו״ר הזקן; זהות ״אאמו״ר״ לא הוכרעה.",
+        "ערך כ״ב כסלו מייחס את המנהג ל״תקנות כ״ק אדמו״ר שליט״א״; זהות התואר לא הוכרעה.",
+        "ערך כ״ג כסלו מייחס את הדברים לשיחות ״אאזמו״ר״ מאלול תרל״ה; זהות האדם לא הוכרעה.",
+        "ערך כ״ד כסלו מסומן כהמשך לכ״ג כסלו; אין לראות בשני הערכים עדים עצמאיים לאותו רצף.",
+        "ערך כ״ה כסלו מייחס את המנהג ל״אאמו״ר״; זהות האדם לא הוכרעה.",
+        "לא נבדקו המקורות המוקדמים, כתבי־יד, אוטוגרפים, הקלטות או מהדורות ביקורתיות; ההקשר חלקי.",
+        "לא הועתק טקסט מוגן במלואו; נשמרו פרפרזות ומיקומי גוף בלבד."
       ]
     },
-    "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
+    "note": "נבדקו שמונה גופי ערכים מקוריים בעברית וביידיש (AIDs 528545–528552), נוספו שמונה פרפרזות לא־מילוליות ושמונה זהויות ערך יומי נפרדות. שמונה עמודי מדיה באנגלית לא סיפקו תמליל קריא ונפסלו; בוצע fallback באותה הפעלה. אפס Verified, אפס עדים עצמאיים חדשים. סריקה קנונית מלאה ומדידת metrics ממתינות ל-reconciliation."
   },
   "last_manual_review": {
-    "batch_id": "151",
-    "batch_file": "data/items/content-research-batch-151-2026-11-21.json",
-    "reviewed_at": "2026-11-21T02:59:07+02:00",
+    "batch_id": "152",
+    "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+    "reviewed_at": "2026-11-21T03:26:44+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "new_source_identities": 3,
-    "existing_identities_enriched": 6,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 3,
-    "existing_response_propositions_added": 6,
-    "total_new_paraphrase_entries": 9,
-    "answer_eligible_source_families_added": 3,
+    "reviewed_item_count": 16,
+    "source_bodies_inspected": 8,
+    "source_body_pages_opened": 8,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 0,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 0,
+    "total_new_paraphrase_entries": 8,
+    "answer_eligible_source_families_added": 8,
     "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 3,
+    "non_independent_presentations_added": 8,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
-    "recovered_candidate_count": 0,
+    "blocked_candidate_count": 8,
+    "recovered_candidate_count": 8,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1513,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3849
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1516,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3858
     },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1524,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3866
+    },
+    "metrics_actual_before": null,
     "metrics_actual_after": null,
+    "metrics_delta_actual": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 3,
+      "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 9
+      "answer_eligible_propositions": 8
     },
     "new_aids": [
-      2505782,
-      2505723,
-      2505757
+      528545,
+      528546,
+      528547,
+      528548,
+      528549,
+      528550,
+      528551,
+      528552
     ],
-    "enriched_aids": [
-      2487225,
-      2515477,
-      2515046,
-      2511676,
-      2511619,
-      2512367
-    ],
-    "rechecked_aids": [
-      2498908,
-      2515007
-    ],
+    "enriched_aids": [],
+    "rechecked_aids": [],
     "translations_counted_as_independent_witnesses": 0,
     "blocked_candidates": [
       {
-        "aid": 4666220,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-        "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "הנתיב הציבורי הישיר לא החזיר גוף פרסום קריא בכלי העיון; לא ניתן היה לבדוק את גוף המקור.",
-        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה. באותה הפעלה בוצעה חלופה: נפתחו ונבדקו 10 גופי פרסום נגישים של יחידויות באנגלית, לצד העשרת זהויות קיימות."
+        "aid": 554871,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/554871/jewish/25-Tishrei-5750-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555023,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555023/jewish/15-Iyar-5751-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555030,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555030/jewish/15-Sivan-5751-Sicha-missing-beg-and-end.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555044,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555044/jewish/13-Menachem-Av-5751-Sicha-1-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555045,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555045/jewish/13-Menachem-Av-5751-Sicha-2-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555046,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555046/jewish/13-Menachem-Av-5751-Sicha-3-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555047,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555047/jewish/13-Menachem-Av-5751-Sicha-4-Day-Camps.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+      },
+      {
+        "aid": 555054,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555054/jewish/15-Elul-5751-Sicha.htm",
+        "status": "media_only_no_inspectable_text_body",
+        "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+        "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
       }
     ],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
       "candidate_aids_found": [],
-      "existing_aids_found": [
-        2498908,
-        2511676,
-        2511619,
-        2512367,
-        2515477,
-        2515046,
-        2515007,
-        2487225
-      ],
+      "existing_aids_found": [],
       "new_aids_unique": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "recent_manual_batch_files_checked": 92,
-      "recent_manual_batch_range": "055–150, all available content-research batch files",
-      "bulk_indexed_files_checked": 5,
-      "bulk_indexed_files_unavailable": 7,
+      "repository_tree_paths_scanned": 999,
+      "pathnames_with_target_aids": 0,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
+      "exact_github_code_search_queries": 8,
+      "exact_github_code_search_matches": 0,
+      "manual_batch_content_scan_completed": false,
+      "full_index_scan_pending": true,
       "post_addition_canonical_scan_pending": true,
-      "note": "Preflight: all 92 available manual content-research batches 055–150 were checked for the three proposed new AIDs; none appeared. Seven of the ten Yechidus pages were found in existing canonical batches/bulk records and are being enriched or rechecked in place. Eight existing AIDs are not new identities. The 1,022-item review queue had no matches for the three new AIDs. Full canonical identity scan remains pending reconciliation."
+      "note": "בדיקת קדם: שמונה חיפושי קוד מדויקים ל-AID 528545–528552 לא החזירו התאמות; שמונת ה-AID לא הופיעו בשמות הנתיבים בעץ המאגר; תור הביקורת בן 1,022 הרשומות לא הכיל התאמות. ניסיון לסרוק את כל קובצי התוכן חרג ממגבלת קריאות הכלי ולא הושלם. לכן אין לטעון שבוצעה סריקה קנונית מלאה; reconciliation.py חייב לבצע את בדיקת ה-AID, URL ו-Evidence Family הסופית."
     },
     "retrieval_synthesis": {
-      "topic": "yechidus_unity_and_mission",
+      "topic": "hayom_yom_kislev_calendar_practices",
+      "status": "implemented_pending_ci",
       "attribution": "system_synthesis_not_rebbe_quote",
       "synthesis_scope": "cross_family_derived_case_comparison",
-      "source_count": 10,
-      "distinct_evidence_families": 10,
+      "source_count": 8,
+      "distinct_evidence_families": 8,
       "independent_evidence_families": 0,
-      "derived_non_independent_presentations": 10,
-      "claim_count": 10,
-      "claim_level_source_locators": 10,
-      "regular_mode": "10 claims / 10 source families",
-      "researcher_mode": "deep; 10 claim-source mappings, witness-level provenance and context boundaries",
+      "derived_non_independent_presentations": 8,
+      "claim_count": 8,
+      "claim_level_source_locators": 8,
+      "regular_mode": "8 dated entries, 8 separate claims and 8 claim-local body locators; no single unified instruction is asserted.",
+      "researcher_mode": "deep; 8 distinct dated entry identities, 8 claim-source mappings, witness-level provenance, source language, attribution boundaries and 0 independent witnesses.",
+      "validation": "patternSynthesisIntegrity requires eight distinct dated entry families, eight source-local claims/locators, 0 independent witnesses and explicit anthology limitations.",
       "claim_topics": [
-        "mission_in_providence_place",
-        "individual_action_overcomes_environmental_barriers",
-        "shared_mission_carried_home",
-        "torah_study_and_tzedakah_in_practice",
-        "torah_guides_daily_life_and_world",
-        "unity_within_difference",
-        "unity_and_practical_tzedakah_after_departure",
-        "ahavat_yisrael_in_practical_care",
-        "unity_across_diverse_roles",
-        "mutual_support_after_separation"
-      ],
-      "text": "בעשר יחידויות מתאריכים שונים מופיעים היבטים נבדלים של אחדות ואחריות לאחר המפגש: מימוש שליחות במקום שנקבע בהשגחה פרטית; יכולת היחיד לפעול למרות חסמים; נשיאת כוח הקבוצה חזרה למקום המגורים; חיבור לימוד התורה והצדקה למעשה; הכוונת חיי היום־יום על פי התורה; אחדות בתוך שונות; צדקה לאחר פרידה; אהבת ישראל מעשית; אחדות בתוך ריבוי תפקידים; וסיוע הדדי גם במרחק. זו סינתזה מחקרית של המערכת, לא אמירה אחת ולא מסקנה המיוחסת לרבי.",
-      "limits": [
-        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
-        "כל עשרת המקורות הם הצגות מו״ל באנגלית; המקור בשפתו המקורית והקלטות לא נבדקו, והם אינם עדים עצמאיים.",
-        "היחידויות הן אירועים נפרדים; אין למזג אותן לשיחה אחת או לכלל אחיד.",
-        "נבדקו רק הקטעים והמיקומים שצוינו; ההקשר המלא של כל אירוע חלקי.",
-        "תיאור כוונה, קריאה לפעולה או אפשרות רוחנית אינו ראיה לכך שהפעולה בוצעה או שהשיגה תוצאה."
+        "yud_tes_kislev_and_day_customs",
+        "tanya_printing_history",
+        "mishna_and_chassidus_study_routine",
+        "daily_tehillim_practice",
+        "shabbat_preparation_from_wednesday",
+        "thursday_night_chassidus_preparation",
+        "chanukah_lighting_custom",
+        "shabbat_mevarchim_tehillim_and_farbrengen"
       ],
       "source_aids": [
-        2498908,
-        2515477,
-        2515046,
-        2487225,
-        2505782,
-        2505723,
-        2505757,
-        2511676,
-        2511619,
-        2512367
+        528545,
+        528546,
+        528547,
+        528548,
+        528549,
+        528550,
+        528551,
+        528552
+      ],
+      "text": "שמונת הערכים שנבדקו בין י״ט לכ״ו בכסלו עוסקים בנושאים שונים: משמעות י״ט כסלו ומנהגיו; היסטוריית הדפסת התניא; לימוד משניות וחסידות; אמירת תהילים; הכנה לשבת; לימוד חסידות בליל חמישי; מנהגי הדלקת נרות חנוכה; ושבת מברכים והתוועדות. זו מפת תוכן של ערכים נפרדים באותה אנתולוגיה, לא הוראה אחידה ולא אמירה אחת המיוחסת לרבי.",
+      "limits": [
+        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+        "כל שמונת הפריטים הם ערכים מאותה אנתולוגיה; הם אינם עדים עצמאיים או חיזוקים בלתי תלויים זה לזה.",
+        "ערך י״ט כסלו כולל ייחוסים פנימיים למכתב ״אאמו״ר״ ולמכתב אדמו״ר הזקן; זהות ״אאמו״ר״ לא הוכרעה.",
+        "ערך כ״ב כסלו מייחס את המנהג ל״תקנות כ״ק אדמו״ר שליט״א״; זהות התואר לא הוכרעה.",
+        "ערך כ״ג כסלו מייחס את הדברים לשיחות ״אאזמו״ר״ מאלול תרל״ה; זהות האדם לא הוכרעה.",
+        "ערך כ״ד כסלו מסומן כהמשך לכ״ג כסלו; אין לראות בשני הערכים עדים עצמאיים לאותו רצף.",
+        "ערך כ״ה כסלו מייחס את המנהג ל״אאמו״ר״; זהות האדם לא הוכרעה.",
+        "לא נבדקו המקורות המוקדמים, כתבי־יד, אוטוגרפים, הקלטות או מהדורות ביקורתיות; ההקשר חלקי.",
+        "לא הועתק טקסט מוגן במלואו; נשמרו פרפרזות ומיקומי גוף בלבד."
       ]
     },
-    "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
+    "note": "נבדקו שמונה גופי ערכים מקוריים בעברית וביידיש (AIDs 528545–528552), נוספו שמונה פרפרזות לא־מילוליות ושמונה זהויות ערך יומי נפרדות. שמונה עמודי מדיה באנגלית לא סיפקו תמליל קריא ונפסלו; בוצע fallback באותה הפעלה. אפס Verified, אפס עדים עצמאיים חדשים. סריקה קנונית מלאה ומדידת metrics ממתינות ל-reconciliation."
   },
   "manual_web_review_history": [
     {
@@ -4467,19 +4607,200 @@
         ]
       },
       "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
+    },
+    {
+      "batch_id": "152",
+      "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+      "reviewed_at": "2026-11-21T03:26:44+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 16,
+      "source_bodies_inspected": 8,
+      "source_body_pages_opened": 8,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 0,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 8,
+      "existing_response_propositions_added": 0,
+      "total_new_paraphrase_entries": 8,
+      "answer_eligible_source_families_added": 8,
+      "independent_witnesses_added": 0,
+      "non_independent_presentations_added": 8,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidate_count": 8,
+      "recovered_candidate_count": 8,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1516,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3858
+      },
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1524,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3866
+      },
+      "metrics_actual_before": null,
+      "metrics_actual_after": null,
+      "metrics_delta_actual": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 8,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 8
+      },
+      "new_aids": [
+        528545,
+        528546,
+        528547,
+        528548,
+        528549,
+        528550,
+        528551,
+        528552
+      ],
+      "enriched_aids": [],
+      "rechecked_aids": [],
+      "translations_counted_as_independent_witnesses": 0,
+      "blocked_candidates": [
+        {
+          "aid": 554871,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/554871/jewish/25-Tishrei-5750-Sicha.htm",
+          "status": "media_only_no_inspectable_text_body",
+          "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+          "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+        },
+        {
+          "aid": 555023,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555023/jewish/15-Iyar-5751-Sicha.htm",
+          "status": "media_only_no_inspectable_text_body",
+          "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+          "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+        },
+        {
+          "aid": 555030,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555030/jewish/15-Sivan-5751-Sicha-missing-beg-and-end.htm",
+          "status": "media_only_no_inspectable_text_body",
+          "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+          "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+        },
+        {
+          "aid": 555044,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555044/jewish/13-Menachem-Av-5751-Sicha-1-Day-Camps.htm",
+          "status": "media_only_no_inspectable_text_body",
+          "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+          "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+        },
+        {
+          "aid": 555045,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555045/jewish/13-Menachem-Av-5751-Sicha-2-Day-Camps.htm",
+          "status": "media_only_no_inspectable_text_body",
+          "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+          "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+        },
+        {
+          "aid": 555046,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555046/jewish/13-Menachem-Av-5751-Sicha-3-Day-Camps.htm",
+          "status": "media_only_no_inspectable_text_body",
+          "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+          "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+        },
+        {
+          "aid": 555047,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555047/jewish/13-Menachem-Av-5751-Sicha-4-Day-Camps.htm",
+          "status": "media_only_no_inspectable_text_body",
+          "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+          "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+        },
+        {
+          "aid": 555054,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/555054/jewish/15-Elul-5751-Sicha.htm",
+          "status": "media_only_no_inspectable_text_body",
+          "reason": "העמוד שנפתח הציג רישום/נגן מדיה ללא גוף תמליל קריא בטווח שנבדק.",
+          "handling": "לא נוצרה פרופוזיציה מהכותרת או מהקלטה שלא נבדקה. הפריט הוצא מאצוות התוכן; באותה הפעלה נעשה fallback לשמונה ערכי Hayom Yom בעברית וביידיש שגופם נפתח."
+        }
+      ],
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "candidate_aids_found": [],
+        "existing_aids_found": [],
+        "new_aids_unique": true,
+        "source_urls_unique": true,
+        "evidence_family_ids_unique": true,
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "all_target_identities_answer_eligible": null,
+        "repository_tree_paths_scanned": 999,
+        "pathnames_with_target_aids": 0,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "exact_github_code_search_queries": 8,
+        "exact_github_code_search_matches": 0,
+        "manual_batch_content_scan_completed": false,
+        "full_index_scan_pending": true,
+        "post_addition_canonical_scan_pending": true,
+        "note": "בדיקת קדם: שמונה חיפושי קוד מדויקים ל-AID 528545–528552 לא החזירו התאמות; שמונת ה-AID לא הופיעו בשמות הנתיבים בעץ המאגר; תור הביקורת בן 1,022 הרשומות לא הכיל התאמות. ניסיון לסרוק את כל קובצי התוכן חרג ממגבלת קריאות הכלי ולא הושלם. לכן אין לטעון שבוצעה סריקה קנונית מלאה; reconciliation.py חייב לבצע את בדיקת ה-AID, URL ו-Evidence Family הסופית."
+      },
+      "retrieval_synthesis": {
+        "topic": "hayom_yom_kislev_calendar_practices",
+        "status": "implemented_pending_ci",
+        "attribution": "system_synthesis_not_rebbe_quote",
+        "synthesis_scope": "cross_family_derived_case_comparison",
+        "source_count": 8,
+        "distinct_evidence_families": 8,
+        "independent_evidence_families": 0,
+        "derived_non_independent_presentations": 8,
+        "claim_count": 8,
+        "claim_level_source_locators": 8,
+        "regular_mode": "8 dated entries, 8 separate claims and 8 claim-local body locators; no single unified instruction is asserted.",
+        "researcher_mode": "deep; 8 distinct dated entry identities, 8 claim-source mappings, witness-level provenance, source language, attribution boundaries and 0 independent witnesses.",
+        "validation": "patternSynthesisIntegrity requires eight distinct dated entry families, eight source-local claims/locators, 0 independent witnesses and explicit anthology limitations.",
+        "claim_topics": [
+          "yud_tes_kislev_and_day_customs",
+          "tanya_printing_history",
+          "mishna_and_chassidus_study_routine",
+          "daily_tehillim_practice",
+          "shabbat_preparation_from_wednesday",
+          "thursday_night_chassidus_preparation",
+          "chanukah_lighting_custom",
+          "shabbat_mevarchim_tehillim_and_farbrengen"
+        ],
+        "source_aids": [
+          528545,
+          528546,
+          528547,
+          528548,
+          528549,
+          528550,
+          528551,
+          528552
+        ],
+        "text": "שמונת הערכים שנבדקו בין י״ט לכ״ו בכסלו עוסקים בנושאים שונים: משמעות י״ט כסלו ומנהגיו; היסטוריית הדפסת התניא; לימוד משניות וחסידות; אמירת תהילים; הכנה לשבת; לימוד חסידות בליל חמישי; מנהגי הדלקת נרות חנוכה; ושבת מברכים והתוועדות. זו מפת תוכן של ערכים נפרדים באותה אנתולוגיה, לא הוראה אחידה ולא אמירה אחת המיוחסת לרבי.",
+        "limits": [
+          "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+          "כל שמונת הפריטים הם ערכים מאותה אנתולוגיה; הם אינם עדים עצמאיים או חיזוקים בלתי תלויים זה לזה.",
+          "ערך י״ט כסלו כולל ייחוסים פנימיים למכתב ״אאמו״ר״ ולמכתב אדמו״ר הזקן; זהות ״אאמו״ר״ לא הוכרעה.",
+          "ערך כ״ב כסלו מייחס את המנהג ל״תקנות כ״ק אדמו״ר שליט״א״; זהות התואר לא הוכרעה.",
+          "ערך כ״ג כסלו מייחס את הדברים לשיחות ״אאזמו״ר״ מאלול תרל״ה; זהות האדם לא הוכרעה.",
+          "ערך כ״ד כסלו מסומן כהמשך לכ״ג כסלו; אין לראות בשני הערכים עדים עצמאיים לאותו רצף.",
+          "ערך כ״ה כסלו מייחס את המנהג ל״אאמו״ר״; זהות האדם לא הוכרעה.",
+          "לא נבדקו המקורות המוקדמים, כתבי־יד, אוטוגרפים, הקלטות או מהדורות ביקורתיות; ההקשר חלקי.",
+          "לא הועתק טקסט מוגן במלואו; נשמרו פרפרזות ומיקומי גוף בלבד."
+        ]
+      },
+      "note": "נבדקו שמונה גופי ערכים מקוריים בעברית וביידיש (AIDs 528545–528552), נוספו שמונה פרפרזות לא־מילוליות ושמונה זהויות ערך יומי נפרדות. שמונה עמודי מדיה באנגלית לא סיפקו תמליל קריא ונפסלו; בוצע fallback באותה הפעלה. אפס Verified, אפס עדים עצמאיים חדשים. סריקה קנונית מלאה ומדידת metrics ממתינות ל-reconciliation."
     }
   ],
   "manual_web_review_current_metrics": {
     "status": "pending_reconciliation",
     "baseline": {
-      "answer_eligible_unique_sources": 1513,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3849
-    },
-    "expected_after": {
       "answer_eligible_unique_sources": 1516,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3858
+    },
+    "expected_after": {
+      "answer_eligible_unique_sources": 1524,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3866
     },
     "public_metrics_snapshot": {
       "answer_eligible_unique_sources": 977,
@@ -4488,18 +4809,18 @@
       "generated": "2026-11-15"
     },
     "last_uncommitted_ci_workspace": {
-      "run_id": 44188237128,
-      "answer_eligible_unique_sources": 1496,
+      "run_id": 44849779297,
+      "answer_eligible_unique_sources": 1517,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3823,
+      "answer_eligible_propositions": 3858,
       "committed": false,
-      "note": "Hourly run generated this workspace snapshot after batch148 but failed the readiness test; public metrics were not committed. Batch148 expected boundary remains 1495/854/3823, so a +1 family variance is unresolved."
+      "note": "Reconciliation workspace measured 1517/854/3858, but both reconciliation and answer-quality workflows failed the stale batch-110 readiness assertion at scripts/test_content_readiness.mjs line 1113; no metrics or batch updates were committed."
     },
-    "note": "המספרים 1513/854/3849 ו-1516/854/3858 הם גבולות תכנון רציפים של batch 150–151 בלבד, לא מדידה. צילום המדדים הציבורי עדיין 977/878/2950 מ-15.11.2026. המדידה בפועל תתבצע לאחר reconciliation."
+    "note": "The committed public snapshot remains 977/878/2950 from 2026-11-15. The 1516/854/3858 and 1524/854/3866 figures are sequential planning boundaries, not actual measurements."
   },
-  "last_run_note": "Batch 151 completed manual public-body inspection of 11 Yechidus pages: 3 new identities, 6 in-place enrichments, 2 rechecks; AID 4666220 unavailable, no crawler retry, alternate publisher pages inspected. Reconciliation pending.",
-  "next_action": "Reconcile contiguous pending manual batches 147–151; run test_content_readiness.mjs and verify Actions/Pages before reporting actual readiness metrics.",
-  "current_batch_file": "data/items/content-research-batch-151-2026-11-21.json",
+  "last_run_note": "Batch152: eight original-language Hebrew/Yiddish Hayom Yom bodies inspected and paraphrased; eight media-only Sicha pages lacked readable transcript text and were excluded. No crawler retry, access bypass, full-text copy, independent-witness inflation or Verified promotion. Reconciliation remains pending because the prior workflow failed a stale batch-110 assertion; test is being corrected.",
+  "next_action": "Reconcile the contiguous pending batch chain through 152; run test_content_readiness.mjs and answer-integrity/question-specificity checks; verify Actions and Pages. Older non-contiguous pending batches remain explicitly unresolved.",
+  "current_batch_file": "data/items/content-research-batch-152-2026-11-21.json",
   "pending": true,
-  "last_reviewed_batch": "151"
+  "last_reviewed_batch": "152"
 }
