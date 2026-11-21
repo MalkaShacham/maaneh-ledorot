@@ -299,10 +299,10 @@
     "independent_entry_families": 5,
     "event_corroboration_claimed": false,
     "claim_count": 5,
-    "claim_level_source_locators": 5,
+    "claim_level_source_locators": 6,
     "regular_mode": "מענה תמציתי יכול להציג עד חמש טענות נפרדות, כל אחת עם מיקום גוף המקור שלה; אין לאחד את התיאורים לפסק או למנהג אחיד.",
     "researcher_mode": "deep; five item-level source mappings with original-language body locators, provenance, partial context, entry identity and limitations; translations do not add corroboration.",
-    "method": "Bounded claim map across five distinct dated Hayom Yom entries: a family Chanukah gathering, the anthology's account of Greek-era religious pressure, the entry's framing of the Greek conflict, a first-of-Tevet prayer order, and the report about the Alter Rebbe's second imprisonment. The system synthesis describes the entries; it does not verify the historical events or infer a single doctrine.",
+    "method": "Claim-level map across five distinct original-language Hayom Yom entry families. The prayer-order claim is supported by two separately located propositions from AID 528557; all other claims have their own body locator. The entries are separate anthology texts, not independent archival corroboration of the historical events.",
     "claims": [
       {
         "claim_id": "second_imprisonment",
@@ -352,7 +352,11 @@
         "source_locators": [
           {
             "aid": 528557,
-            "locator": "he.chabad.org AID 528557, body line 171."
+            "locator": "he.chabad.org AID 528557, body line 171 — Hallel blessing formula."
+          },
+          {
+            "aid": 528557,
+            "locator": "he.chabad.org AID 528557, body line 171 — tefillin before Musaf and daily lessons after prayer."
           }
         ]
       },
@@ -1342,5 +1346,5 @@
   ],
   "batch_file": "data/items/content-research-batch-159-2026-11-21.json",
   "note": "נוספו תשע זהויות ערך יומי לאחר בדיקת גוף המקור, כולל קידום מועמד AID 528553 מה-staging לאחר סריקת קדם-כפילות משולבת. כל הרשומות Parsed; אין קידום Verified. המדדים המצטברים ממתינים ל-reconciliation הקנוני.",
-  "quality_gate_followup": "Add a claim-level multi-source Hayom Yom Chanukah overview regression in regular and deep researcher modes; require five distinct entry families, five claim-local body locators, valid citation entailment and explicit system-synthesis attribution."
+  "quality_gate_followup": "Add a claim-level multi-source Hayom Yom Chanukah overview regression in regular and deep researcher modes; require five distinct entry families, five claims and six claim-local body locators, valid citation entailment and explicit system-synthesis attribution."
 }

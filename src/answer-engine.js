@@ -1498,7 +1498,7 @@ function supportsHayomYomGreekDivinityProposition(p){
  const t=norm(p);return t.includes('מאבק היוונים')&&t.includes('האלוקות')&&t.includes('תורה')&&t.includes('מצוות');
 }
 function supportsHayomYomRoshChodeshRitualProposition(p){
- const t=norm(p);return t.includes('הלל')&&t.includes('תפילין')&&t.includes('מוסף');
+ const t=norm(p);return t.includes('הלל')||(t.includes('תפילין')&&t.includes('מוסף'));
 }
 function buildHayomYomChanukahOverviewSynthesis(selected){
  const specs=[
@@ -1518,7 +1518,7 @@ function buildHayomYomChanukahOverviewSynthesis(selected){
  const claims=specs.map(s=>{const rows=basis.filter(b=>b.propositions.some(p=>s.predicate(p.text)));return{topic:s.topic,text:s.text,source_numbers:[...new Set(rows.map(b=>b.source_number))],evidence_family_ids:[...new Set(rows.map(b=>b.evidence_family_id).filter(Boolean))],source_locators:rows.flatMap(b=>b.propositions.filter(p=>s.predicate(p.text)).map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator))};});
  const sourceNumbers=[...new Set(claims.flatMap(c=>c.source_numbers))],used=basis.filter(b=>sourceNumbers.includes(b.source_number));
  const evidenceFamilies=[...new Set(used.map(b=>b.evidence_family_id).filter(Boolean))],independentFamilies=[...new Set(used.filter(b=>b.independent_witness).map(b=>b.evidence_family_id).filter(Boolean))];
- if(claims.some(c=>c.source_numbers.length!==1||c.source_locators.length!==1)||evidenceFamilies.length!==5)return null;
+ if(claims.some(c=>c.source_numbers.length!==1||!c.source_locators.length)||evidenceFamilies.length!==5)return null;
  return{kind:'cross_family_research_synthesis',topic:'hayom_yom_chanukah_practices_and_religious_identity',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:claims.map(c=>c.text).join(' ')+' אלה חמישה ערכים יומיים נפרדים; ההשוואה מתארת את נושאי הערכים ואינה מאמתת עצמאית את האירועים ההיסטוריים או יוצרת הוראה אחידה.',source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,independent_evidence_family_ids:independentFamilies,basis:used,claims,method:'Claim-level map across five distinct original-language Hayom Yom entry families. Each claim is linked to one inspected proposition and its own body locator. The entries are separate anthology texts, not independent archival corroboration of the historical events.',evidence_quality:'five_distinct_hayom_yom_entries_not_historical_corroboration',limits:['הניסוח הוא סינתזה מחקרית של המערכת בלבד, לא ציטוט ולא ייחוס של אמירה מסכמת לרבי.','הערכים הם פריטים נפרדים באנתולוגיה; הם אינם עדים ארכיוניים עצמאיים לאירועים ההיסטוריים המתוארים ואינם מאמתים אותם.','אין להסיק מהערכים פסיקה הלכתית כללית או מנהג מחייב לכל קהילה.','נבדקו רק המקטעים המצוינים; לא נבדקו מהדורת דפוס, כתב־יד, אוטוגרף או מהדורה ביקורתית.','תרגומים לאותה משפחת ראיות אינם עדים עצמאיים נוספים.']};
 }
 function supportsHayomYomChanukahLightingProposition(p){
@@ -2287,7 +2287,7 @@ else if(educationGovernanceQuestion){
    {topic:'rosh_chodesh_prayer_order',predicate:supportsHayomYomRoshChodeshRitualProposition}
   ];
   const byTopic=new Map();
-  for(const e of primary)for(const p of arr(e.response_propositions))for(const spec of required)if(!byTopic.has(spec.topic)&&spec.predicate(p))byTopic.set(spec.topic,{...e,_supporting_propositions:[p]});
+  for(const e of primary)for(const spec of required)if(!byTopic.has(spec.topic)){const props=arr(e.response_propositions).filter(spec.predicate);if(props.length)byTopic.set(spec.topic,{...e,_supporting_propositions:props});}
   const missing=required.filter(spec=>!byTopic.has(spec.topic)).map(spec=>spec.topic),chosen=required.map(spec=>byTopic.get(spec.topic)).filter(Boolean);
   if(missing.length||new Set(chosen.map(familyKey).filter(Boolean)).size!==5)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_chanukah_overview_families',claims:[],sources:chosen,answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות ערכי יום יום נפרדות עם פרופוזיציות גוף תומכות. חסר: '+missing.join(', ')]};
   answerEvidence=chosen;
@@ -2364,7 +2364,7 @@ else if(educationGovernanceQuestion){
  if(hayomYomChanukahOverviewQuestion){
   selected=answerEvidence.slice(0,5);
   const topics=['second_imprisonment','domestic_chanukah_gathering','greek_era_practices','greek_conflict_and_divinity','rosh_chodesh_prayer_order'];
-  claims=selected.map((e,i)=>locatedClaim(e,i,topics[i],arr(e._supporting_propositions)[0]));
+  claims=selected.flatMap((e,i)=>arr(e._supporting_propositions).map(p=>locatedClaim(e,i,topics[i],p)));
   forcedSynthesis=buildHayomYomChanukahOverviewSynthesis(selected);
   if(!forcedSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_chanukah_overview_locators',claims:[],sources:selected,answered_well:[],insufficient_evidence:['לא נמצאו מיקומי גוף מקור נפרדים לכל חמש טענות ההשוואה.']};
  }
