@@ -1520,3 +1520,9 @@ The same run also showed that batch089's historical projection (900 / 852 / 2,83
 - A second predicate audit against the stored AID 528587 paraphrase found the singular publisher wording "בכל בית כנסת"; the integrity validator now accepts singular and plural forms. Added a regression assertion. This changes no source text, evidence-family count or metrics.
 
 - The same singular/plural mismatch was present in the synthesis builder predicate for communal Psalms (AID 528587: "בכל בית כנסת"). Updated the builder as well as the integrity validator to accept singular and plural publisher wording; the existing regression test also requires the singular paraphrase and the five-source answer.
+
+
+### 2026-11-22 — Reconciliation-test correction and body-refinement integrity
+
+- The next full content-readiness run (44955829761) passed question-specific retrieval, answer synthesis, citation integrity, the answer-engine evidence-contract audit and workflow-write safety. It then exposed a stale batch-163 test expectation: the review contains 13 original-language body inspections, not 12, because the 12 new original-language entries are joined by the in-place original-language recheck of existing AID 528545. The two English presentations remain non-independent. Updated the expected count to 13 with the exact accounting.
+- The next batch-163 real-corpus test exercises a five-family body-refinement synthesis (AIDs 528607, 528612, 528614, 528615 and 528618). Added an explicit support predicate and integrity validator requiring five distinct dated entry families, one inspected locator per claim, one source per claim, and no translation substitution. Added regression assertions for the integrity result. No new source identities, propositions or Verified records were added by this code repair.

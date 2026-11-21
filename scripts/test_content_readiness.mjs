@@ -2392,7 +2392,7 @@ assert.equal(new Set(batch163Data.records.map(r=>r.evidence_family_id)).size,14)
 assert.equal(batch163Data.records.reduce((n,r)=>n+r.response_propositions.length,0),18,'batch163 includes one later in-place proposition on AID 528610; its batch-boundary count remains 17');
 assert.equal(batch163Data.source_body_review.length,15);
 assert.equal(batch163Data.source_body_review.filter(x=>x.body_text_inspected).length,15);
-assert.equal(batch163Data.source_body_review.filter(x=>x.inspected_original_language_body).length,12);
+assert.equal(batch163Data.source_body_review.filter(x=>x.inspected_original_language_body).length,13,'12 new original-language bodies plus the existing AID 528545 rechecked in its original language');
 assert.equal(batch163Data.source_body_review.filter(x=>x.language==='English').length,2);
 assert.equal(batch163Data.source_body_review.filter(x=>x.existing_identity).length,1);
 assert(batch163Data.source_body_review.every(x=>x.web_source_ref&&x.body_locator));
@@ -2433,6 +2433,10 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': five-family Hayom Yom education/love/body/soul synthesis must be answerable');
  assert.deepEqual(m.sources.map(e=>sourceAID(e)),['528607','528612','528614','528615','528618']);
  assert.equal(m.synthesis?.topic,'hayom_yom_education_love_body_refinement_and_soul_work');
+  assert.equal(m.synthesis?.basis.length,5);
+  assert.equal(m.pattern_synthesis_integrity?.valid,true,mode+': body-refinement synthesis must pass cross-family integrity');
+  assert.equal(m.pattern_synthesis_integrity?.evidence_families,5);
+  assert.equal(m.pattern_synthesis_integrity?.distinct_evidence_families,5);
  assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
  assert.equal(m.synthesis?.claims.length,5);
  assert.equal(m.synthesis?.evidence_family_ids.length,5);
