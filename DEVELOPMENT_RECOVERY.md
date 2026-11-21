@@ -1492,6 +1492,14 @@ The same run also showed that batch089's historical projection (900 / 852 / 2,83
 - Last measured pre-reconciliation baseline from project-state.json: 977 answer-eligible unique sources, 870 content-verified unique sources, and 2,950 answer-eligible propositions. These are not after metrics for batches 162–163. Reconciliation and `test_content_readiness.mjs` must establish the measured after state; no new source is promoted to Verified.
 
 
+## 2026-11-21 — Reconciliation cursor repair after quality-gate failure
+
+- The first Answer quality gate for the batch 163 merge completed all structural, retrieval, synthesis, citation, evidence-contract, and workflow-write-safety steps successfully.
+- `test_content_readiness.mjs` then failed at the recovery-cursor assertion: `acquisition.latest.json` correctly identified batch 163, while `project-state.json` still had `current_batch` and `last_batch_summary` set to batch 162. The failure was a stale project-state cursor, not a content proposition or citation failure.
+- This follow-up aligns `project-state.json` with batch 163 before rerunning the canonical reconciliation. It does not alter measured counts, promote any source, or invent an after metric.
+- The batch 163 AID 528612 paraphrase now preserves the source's wording "רוח החיים" more closely; source-body web references were refreshed to the direct body-open results. AID 528545's additional inspection is also recorded in its provenance verification status.
+
+
 ## 2026-11-21 — Batch 164: אדר א׳, מכתב עברי ושיחה מתורגמת
 
 - נפתחו ונבדקו 14 גופי פרסום ציבוריים: 12 ערכי יום יום מתוארכים באדר א׳ (7 בעברית, 3 ביידיש ו-2 מעורבים עברית/יידיש), מכתב עברי AID 2989329 ושיחה באנגלית AID 4422565. השיחה האנגלית מסומנת במפורש בידי המו״ל כתרגום חופשי; שפת המקור, תמליל או הקלטה לא נבדקו והיא נשארת הצגה לא-עצמאית. המכתב העברי נושא חתימה מודפסת; אוטוגרף או העתק מזכירות לא נבדקו.
