@@ -2,7 +2,7 @@
   "project": "מענה לדורות",
   "visual_space": "וחי בהם",
   "canonical_since": "2026-09-17",
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-21",
   "source_of_truth": "PROJECT_CANON.md",
   "operating_model": "verification-surge plus answer-quality surge: evidence-grounded answering is top product priority while promotion/verification backlog continues",
   "pipeline": [
@@ -80,9 +80,9 @@
     "AID 2989555 duplicate identity discovered across batch101 and batch141; resolved by merging the two inspected propositions into the batch101 canonical Evidence Family and removing the duplicate record. Full post-merge reconciliation remains pending."
   ],
   "next_work": [
-    "Run full canonical reconciliation after batch148 and the AID 2989555 family merge; inspect AID/URL/ID/Evidence Family collisions and commit only measured public metrics, search index and review queue.",
-    "Run scripts/test_content_readiness.mjs and the Answer Quality Gate in regular and deep-research modes; verify AIDs 4831188, 2989555, 5989777 and 4385753 with claim-level body locators.",
-    "Verify the resulting GitHub Actions runs and GitHub Pages deployment; retain the existing hourly workflow unchanged."
+    "Run canonical reconciliation across pending batches 148–150 and verify AID, URL and Evidence Family deduplication.",
+    "Run test_content_readiness.mjs and regular/researcher answer-integrity checks for the ten-family education synthesis.",
+    "Verify Actions and GitHub Pages deployment; publish actual before/after metrics only after reconciliation."
   ],
   "epistemic_rule": "No AI inference, reconstruction, or missing context may be represented as the Rebbe's words.",
   "metrics_integrity": {
@@ -1709,8 +1709,8 @@
     },
     "last_reviewed_batch": "150"
   },
-  "current_batch": "149",
-  "updated_at": "2026-11-18T00:29:02+02:00",
-  "current_batch_file": "data/items/content-research-batch-149-2026-11-18.json",
+  "current_batch": "150",
+  "updated_at": "2026-11-21",
+  "current_batch_file": "data/items/content-research-batch-150-2026-11-21.json",
   "status": "pending_reconciliation"
 }
