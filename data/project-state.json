@@ -172,58 +172,120 @@
         "146",
         "147",
         "148",
-        "149"
+        "149",
+        "150"
       ],
       "baseline_correction": "Batch 109 is an audit-only manifest because its eight paraphrases were added in place to batch-106/107 canonical records. The latest measured pre-batch-143 CI workspace snapshot was 1,450/854/3,751 (not committed). Planning boundaries: after batch 143 1,462/854/3,776; after batch 144 1,477/854/3,797. Neither boundary is an actual post-reconciliation measurement.",
       "summary": {
-        "batch_id": "149",
-        "batch_file": "data/items/content-research-batch-149-2026-11-18.json",
+        "batch_id": "150",
+        "batch_file": "data/items/content-research-batch-150-2026-11-21.json",
+        "reviewed_at": "2026-11-21T01:58:48+02:00",
         "status": "pending_reconciliation",
+        "reconciliation_status": "pending_reconciliation",
+        "reviewed_item_count": 12,
+        "source_bodies_inspected": 11,
+        "source_body_pages_opened": 11,
+        "new_source_identities": 10,
+        "existing_identities_enriched": 1,
+        "new_response_propositions": 10,
+        "existing_response_propositions_added": 1,
+        "total_new_paraphrase_entries": 11,
+        "answer_eligible_source_families_added": 10,
+        "independent_witnesses_added": 10,
+        "non_independent_presentations_added": 0,
+        "content_verified_unique_sources_added": 0,
+        "blocked_candidate_count": 1,
+        "recovered_candidate_count": 0,
         "metrics_before": {
-          "answer_eligible_unique_sources": 1495,
-          "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3823
-        },
-        "metrics_expected_after": {
           "answer_eligible_unique_sources": 1503,
           "content_verified_unique_sources": 854,
           "answer_eligible_propositions": 3838
         },
-        "metrics_actual_after": null,
-        "new_source_identities": 8,
-        "existing_identities_enriched": 1,
-        "source_bodies_inspected": 9,
-        "new_response_propositions": 14,
-        "existing_response_propositions_added": 1,
-        "total_new_paraphrase_entries": 15,
-        "answer_eligible_source_families_added": 8,
-        "independent_witnesses_added": 8,
-        "non_independent_presentations_added": 0,
-        "content_verified_unique_sources_added": 0,
-        "blocked_candidate_count": 10,
-        "recovered_candidate_count": 0,
-        "metrics_delta_at_batch_boundary": {
-          "answer_eligible_unique_sources": 8,
-          "content_verified_unique_sources": 0,
-          "answer_eligible_propositions": 15
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1513,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3849
         },
-        "reconciliation_status": "pending_reconciliation",
-        "reviewed_item_count": 22,
-        "source_body_pages_opened": 12,
+        "metrics_actual_after": null,
+        "metrics_delta_at_batch_boundary": {
+          "answer_eligible_unique_sources": 10,
+          "content_verified_unique_sources": 0,
+          "answer_eligible_propositions": 11
+        },
         "new_aids": [
-          2988940,
-          4385713,
-          5959970,
-          4280106,
-          3008908,
-          2989018,
-          2989044,
-          5989796
+          4872325,
+          4994205,
+          4730828,
+          5287503,
+          4928852,
+          5357433,
+          4929082,
+          5100419,
+          5357411,
+          5357099
         ],
         "enriched_aids": [
-          4385534
+          2988940
         ],
-        "translations_counted_as_independent_witnesses": 0
+        "translations_counted_as_independent_witnesses": 0,
+        "blocked_candidates": [
+          {
+            "aid": 4666220,
+            "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+            "status": "public_reader_body_unavailable",
+            "reason": "הנתיב העברי הישיר לא החזיר גוף פרסום קריא; הנתיב המקביל באנגלית הציג מעטפת/תקציר ללא גוף המקור.",
+            "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה; באותה הפעלה נפתחו עשרה גופי איגרות עבריים אחרים."
+          }
+        ],
+        "deduplication_check": {
+          "full_index_scan_available": false,
+          "full_index_scan_pending_reconciliation": true,
+          "candidate_aids_found": [],
+          "new_aids_unique": true,
+          "source_urls_unique": true,
+          "evidence_family_ids_unique": true,
+          "canonical_identity_collisions": null,
+          "missing_canonical_identities": null,
+          "all_target_identities_answer_eligible": null,
+          "recent_manual_batch_files_checked": 23,
+          "recent_manual_batch_range": "127–149",
+          "bulk_indexed_files_checked": 6,
+          "bulk_indexed_files_unavailable": 6,
+          "review_queue_records": 1022,
+          "review_queue_matches": 0,
+          "post_addition_canonical_scan_pending": true,
+          "note": "Preflight בלבד: לא נמצאו התאמות ל-10 ה-AID החדשים ב-23 קובצי הביקורת האחרונים, בששת קובצי bulk-indexed שהיו נגישים או בתור הביקורת בן 1,022 הרשומות. שישה קובצי bulk-indexed נוספים וקובצי batch ישנים יותר לא נסרקו; חיפוש הקוד אינו כיסוי מלא. סריקה קנונית מלאה ממתינה ל-reconciliation."
+        },
+        "retrieval_synthesis": {
+          "topic": "institutional_education_and_public_influence",
+          "status": "implemented_pending_execution",
+          "attribution": "system_synthesis_not_rebbe_quote",
+          "selected_aids": [
+            4872325,
+            4994205,
+            4730828,
+            5287503,
+            4928852,
+            5357433,
+            4929082,
+            5100419,
+            5357411,
+            5357099
+          ],
+          "claim_count": 10,
+          "distinct_evidence_families": 10,
+          "independent_witnesses": 10,
+          "regular_mode": "עשר טענות תחומות, כל אחת נשענת על איגרת עברית אחת ומיקום גוף מדויק; הסינתזה אינה מוצגת כמדיניות אחידה.",
+          "researcher_mode": "deep mode exposes ten separate Evidence Families, witness provenance, context boundaries and a claim_source_map with one body locator per claim.",
+          "validation": "patternSynthesisIntegrity checks ten claim topics, source numbers, independent families, body locators and non-quotation attribution in regular and researcher modes.",
+          "limitations": [
+            "האיגרות נכתבו בתאריכים שונים לנמענים שונים; הקישור ביניהן הוא סינתזה מחקרית ולא אותה Evidence Family.",
+            "ההקשר חלקי; לא נבדקו אוטוגרפים, עותקי מזכירות או מהדורות מקבילות.",
+            "תיאור תכנון או בקשה לסיוע אינו הוכחה לביצוע בפועל.",
+            "AID 5357099 מסתיים בנוסח בשם הרבי; אין לייחס לו חתימה אישית."
+          ]
+        },
+        "note": "נבדקו עשרה גופי איגרות עבריים חדשים והועשרה in-place שיחה עברית קיימת AID 2988940. AID 4666220 לא החזיר גוף קריא; בוצע fallback לעשרה פרסומים נגישים. כל הרשומות Parsed; אפס קידומים ל-Verified. סריקה קנונית מלאה ומדידה בפועל עדיין ממתינות."
       },
       "status": "pending_reconciliation",
       "latest_uncommitted_ci_measurement": {
@@ -238,26 +300,26 @@
     "quality_gate": {
       "workflow": ".github/workflows/answer-quality-gate.yml",
       "trigger": "push to main on source items, answer engine and readiness tests",
-      "run_status": "The batch-147 push will trigger the answer-quality and reconciliation workflows; no new run result has yet been verified.",
+      "run_status": "Batch150 changes are staged on a branch; answer-quality gate will run after merge to main.",
       "latest_saved_report": "data/evaluation/latest-quality-gate.json",
       "latest_saved_report_passed": null,
       "latest_saved_report_regression_cases": null,
       "commit_binding": true,
       "evaluated_commit": "a7b495f5c7f30b047686815e74b31531f48aa494",
       "workflow_run_id": 44107524723,
-      "note": "Rerun test_content_readiness.mjs after the wells­prings claim-locator fix; the prior run failed at the dissemination assertion.",
+      "note": "Batch150 adds ten inspected Hebrew correspondence families, one in-place Sicha enrichment, and a ten-family claim-level synthesis. Runtime checks are not yet executed.",
       "bulk_reconcile_run_id": 44107524705,
       "hourly_run_id": 44086180030,
-      "status": "pending_rerun_after_wellsprings_locator_fix",
+      "status": "pending_rerun_after_batch150_merge",
       "last_failed_run_id": 44188237128,
       "last_failure": "The special wells­prings-dissemination addSource path bypassed the generic claim locator filter and created claims with source_numbers but no source_locators. It now skips unlocated propositions and writes source_locators for each displayed source number."
     },
     "publication": {
-      "status": "pending_deploy_after_batch_149",
+      "status": "pending_deploy_after_batch150",
       "url": "https://malkashacham.github.io/maaneh-ledorot",
       "last_deployment_run_id": 43967095817,
       "last_deployed_commit": "312745ef33bfc3cc453b8b03238cd8d3e8aa9a3b",
-      "note": "A push after batch149 should trigger Pages deployment; no post-batch149 deployment has been verified."
+      "note": "Pages deployment must be checked after the batch150 merge; no deployment is claimed yet."
     },
     "last_reconciled_at": "2026-11-15",
     "last_generated_index_snapshot": {
@@ -348,63 +410,124 @@
     "stalled_runs_2026_10_06_to_12": 170,
     "primary_bottleneck": "Bibliographic identities are not inspected content; maintenance had no acquisition step and no content inspection.",
     "content_review_queue": "data/content-review-queue.json",
-    "current_batch": "149",
+    "current_batch": "150",
     "required_agent_action": "Inspect 8–15 or more public source bodies per run; prioritize original-language Hebrew/Yiddish and distinct documentary classes; enrich identities in place; deduplicate by AID/URL/ID and Evidence Family; keep translations and derived copies non-independent; preserve claim-level locators and deep researcher evidence maps.",
     "last_completed_batch": "147",
     "last_batch_summary": {
-      "batch_id": "149",
-      "batch_file": "data/items/content-research-batch-149-2026-11-18.json",
+      "batch_id": "150",
+      "batch_file": "data/items/content-research-batch-150-2026-11-21.json",
+      "reviewed_at": "2026-11-21T01:58:48+02:00",
       "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 12,
+      "source_bodies_inspected": 11,
+      "source_body_pages_opened": 11,
+      "new_source_identities": 10,
+      "existing_identities_enriched": 1,
+      "new_response_propositions": 10,
+      "existing_response_propositions_added": 1,
+      "total_new_paraphrase_entries": 11,
+      "answer_eligible_source_families_added": 10,
+      "independent_witnesses_added": 10,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidate_count": 1,
+      "recovered_candidate_count": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1495,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3823
-      },
-      "metrics_expected_after": {
         "answer_eligible_unique_sources": 1503,
         "content_verified_unique_sources": 854,
         "answer_eligible_propositions": 3838
       },
-      "metrics_actual_after": null,
-      "new_source_identities": 8,
-      "existing_identities_enriched": 1,
-      "source_bodies_inspected": 9,
-      "new_response_propositions": 14,
-      "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 15,
-      "answer_eligible_source_families_added": 8,
-      "independent_witnesses_added": 8,
-      "non_independent_presentations_added": 0,
-      "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 10,
-      "recovered_candidate_count": 0,
-      "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 8,
-        "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 15
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1513,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3849
       },
-      "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 22,
-      "source_body_pages_opened": 12,
+      "metrics_actual_after": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 10,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 11
+      },
       "new_aids": [
-        2988940,
-        4385713,
-        5959970,
-        4280106,
-        3008908,
-        2989018,
-        2989044,
-        5989796
+        4872325,
+        4994205,
+        4730828,
+        5287503,
+        4928852,
+        5357433,
+        4929082,
+        5100419,
+        5357411,
+        5357099
       ],
       "enriched_aids": [
-        4385534
+        2988940
       ],
-      "translations_counted_as_independent_witnesses": 0
+      "translations_counted_as_independent_witnesses": 0,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+          "status": "public_reader_body_unavailable",
+          "reason": "הנתיב העברי הישיר לא החזיר גוף פרסום קריא; הנתיב המקביל באנגלית הציג מעטפת/תקציר ללא גוף המקור.",
+          "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה; באותה הפעלה נפתחו עשרה גופי איגרות עבריים אחרים."
+        }
+      ],
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "candidate_aids_found": [],
+        "new_aids_unique": true,
+        "source_urls_unique": true,
+        "evidence_family_ids_unique": true,
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "all_target_identities_answer_eligible": null,
+        "recent_manual_batch_files_checked": 23,
+        "recent_manual_batch_range": "127–149",
+        "bulk_indexed_files_checked": 6,
+        "bulk_indexed_files_unavailable": 6,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "post_addition_canonical_scan_pending": true,
+        "note": "Preflight בלבד: לא נמצאו התאמות ל-10 ה-AID החדשים ב-23 קובצי הביקורת האחרונים, בששת קובצי bulk-indexed שהיו נגישים או בתור הביקורת בן 1,022 הרשומות. שישה קובצי bulk-indexed נוספים וקובצי batch ישנים יותר לא נסרקו; חיפוש הקוד אינו כיסוי מלא. סריקה קנונית מלאה ממתינה ל-reconciliation."
+      },
+      "retrieval_synthesis": {
+        "topic": "institutional_education_and_public_influence",
+        "status": "implemented_pending_execution",
+        "attribution": "system_synthesis_not_rebbe_quote",
+        "selected_aids": [
+          4872325,
+          4994205,
+          4730828,
+          5287503,
+          4928852,
+          5357433,
+          4929082,
+          5100419,
+          5357411,
+          5357099
+        ],
+        "claim_count": 10,
+        "distinct_evidence_families": 10,
+        "independent_witnesses": 10,
+        "regular_mode": "עשר טענות תחומות, כל אחת נשענת על איגרת עברית אחת ומיקום גוף מדויק; הסינתזה אינה מוצגת כמדיניות אחידה.",
+        "researcher_mode": "deep mode exposes ten separate Evidence Families, witness provenance, context boundaries and a claim_source_map with one body locator per claim.",
+        "validation": "patternSynthesisIntegrity checks ten claim topics, source numbers, independent families, body locators and non-quotation attribution in regular and researcher modes.",
+        "limitations": [
+          "האיגרות נכתבו בתאריכים שונים לנמענים שונים; הקישור ביניהן הוא סינתזה מחקרית ולא אותה Evidence Family.",
+          "ההקשר חלקי; לא נבדקו אוטוגרפים, עותקי מזכירות או מהדורות מקבילות.",
+          "תיאור תכנון או בקשה לסיוע אינו הוכחה לביצוע בפועל.",
+          "AID 5357099 מסתיים בנוסח בשם הרבי; אין לייחס לו חתימה אישית."
+        ]
+      },
+      "note": "נבדקו עשרה גופי איגרות עבריים חדשים והועשרה in-place שיחה עברית קיימת AID 2988940. AID 4666220 לא החזיר גוף קריא; בוצע fallback לעשרה פרסומים נגישים. כל הרשומות Parsed; אפס קידומים ל-Verified. סריקה קנונית מלאה ומדידה בפועל עדיין ממתינות."
     },
-    "last_run_note": "Batch149 inspected eight new original-Hebrew unedited Sicha bodies and enriched AID 4385534 in place. Ten alternative pages returned HTTP 429; three already-canonical AIDs were excluded. No crawler retry, access-control bypass or Verified promotion. Reconciliation remains pending.",
-    "last_batch_blocked_count": 10,
-    "last_batch_blocked_reason": "Ten Hebrew public-reader routes returned HTTP 429. No retry or bypass; eight other original-Hebrew Sicha bodies and one existing identity were inspected in the same run.",
-    "next_work": "Reconcile the pending chain through batches 148–149; resolve the +1 family variance from the last uncommitted CI snapshot; run test_content_readiness.mjs, answer integrity and question specificity; verify Actions and Pages.",
+    "last_run_note": "Batch150: ten inspected Hebrew correspondence bodies, one in-place enrichment of AID 2988940, eleven new non-verbatim propositions, and one blocked AID 4666220 route. No crawler retry, access-control bypass, full-text copy or Verified promotion. Canonical reconciliation and runtime tests are pending.",
+    "last_batch_blocked_count": 1,
+    "last_batch_blocked_reason": "AID 4666220 did not return readable publisher body text through the public reader; no crawler retry or access-control bypass. Ten other Hebrew publisher bodies were inspected in the same run as fallback.",
+    "next_work": "Reconcile pending batches 148–150; scan canonical AID/URL/Evidence Family identities; run test_content_readiness.mjs and answer-integrity/question-specificity checks; verify Actions and Pages. Do not promote any new item to Verified.",
     "last_reconciliation": {
       "batch_id": "089",
       "batch_file": "data/items/content-research-batch-089-2026-11-15.json",
@@ -767,170 +890,115 @@
       "reconciliation_status": "reconciled"
     },
     "last_manual_web_review": {
-      "batch_id": "147",
-      "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
-      "reviewed_at": "2026-11-17T21:59:23+02:00",
+      "batch_id": "150",
+      "batch_file": "data/items/content-research-batch-150-2026-11-21.json",
+      "reviewed_at": "2026-11-21T01:58:48+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 19,
-      "source_bodies_inspected": 9,
-      "source_body_pages_opened": 9,
-      "new_source_identities": 8,
+      "reviewed_item_count": 12,
+      "source_bodies_inspected": 11,
+      "source_body_pages_opened": 11,
+      "new_source_identities": 10,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 8,
+      "new_response_propositions": 10,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 9,
-      "answer_eligible_source_families_added": 8,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 8,
+      "total_new_paraphrase_entries": 11,
+      "answer_eligible_source_families_added": 10,
+      "independent_witnesses_added": 10,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
-      "new_translation_manifestations": 8,
-      "translations_counted_as_independent_witnesses": 0,
-      "new_aids": [
-        2465321,
-        2487225,
-        2466894,
-        2499039,
-        2487556,
-        2487457,
-        2504381,
-        2499828
-      ],
-      "enriched_aids": [
-        4304431
-      ],
-      "blocked_candidate_count": 10,
-      "blocked_candidates": [
-        {
-          "aid": 4313026,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313026",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313024,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313024",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313094,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313094",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313091,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312996,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312996",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312999,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312999",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312984,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312984",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312992,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312992",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312997,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312997",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313127,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313127",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        }
-      ],
-      "source_languages": [
-        "English"
-      ],
-      "language_distribution": {
-        "English": 8,
-        "Hebrew": 1
+      "blocked_candidate_count": 1,
+      "recovered_candidate_count": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1503,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3838
       },
-      "original_language_distribution": {
-        "unknown": 8,
-        "Hebrew": 1
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1513,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3849
       },
-      "proposition_language_distribution": {
-        "Hebrew": 9
-      },
-      "source_types": [
-        "Yechidus",
-        "Sichos"
-      ],
-      "source_type_distribution": {
-        "Yechidus": 8,
-        "Sichos": 1
-      },
-      "metrics_before": null,
-      "metrics_expected_after": null,
       "metrics_actual_after": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 8,
+        "answer_eligible_unique_sources": 10,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 9
+        "answer_eligible_propositions": 11
       },
-      "fallback_source_attempted": true,
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "scan_only_verification_used": false,
+      "new_aids": [
+        4872325,
+        4994205,
+        4730828,
+        5287503,
+        4928852,
+        5357433,
+        4929082,
+        5100419,
+        5357411,
+        5357099
+      ],
+      "enriched_aids": [
+        2988940
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+          "status": "public_reader_body_unavailable",
+          "reason": "הנתיב העברי הישיר לא החזיר גוף פרסום קריא; הנתיב המקביל באנגלית הציג מעטפת/תקציר ללא גוף המקור.",
+          "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה; באותה הפעלה נפתחו עשרה גופי איגרות עבריים אחרים."
+        }
+      ],
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_scan_pending_reconciliation": true,
-        "review_queue_records": 1022,
-        "review_queue_matches": 0,
-        "exact_aid_code_search_matches": 0,
+        "candidate_aids_found": [],
         "new_aids_unique": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
-        "all_target_identities_answer_eligible": null
+        "all_target_identities_answer_eligible": null,
+        "recent_manual_batch_files_checked": 23,
+        "recent_manual_batch_range": "127–149",
+        "bulk_indexed_files_checked": 6,
+        "bulk_indexed_files_unavailable": 6,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "post_addition_canonical_scan_pending": true,
+        "note": "Preflight בלבד: לא נמצאו התאמות ל-10 ה-AID החדשים ב-23 קובצי הביקורת האחרונים, בששת קובצי bulk-indexed שהיו נגישים או בתור הביקורת בן 1,022 הרשומות. שישה קובצי bulk-indexed נוספים וקובצי batch ישנים יותר לא נסרקו; חיפוש הקוד אינו כיסוי מלא. סריקה קנונית מלאה ממתינה ל-reconciliation."
       },
       "retrieval_synthesis": {
-        "topic": "yechidus_peace_and_mission",
+        "topic": "institutional_education_and_public_influence",
         "status": "implemented_pending_execution",
+        "attribution": "system_synthesis_not_rebbe_quote",
         "selected_aids": [
-          2465321,
-          2487225,
-          2466894,
-          2499039,
-          2487556,
-          2487457,
-          2504381,
-          2499828
+          4872325,
+          4994205,
+          4730828,
+          5287503,
+          4928852,
+          5357433,
+          4929082,
+          5100419,
+          5357411,
+          5357099
         ],
-        "claim_count": 8,
-        "distinct_event_families": 8,
-        "independent_witnesses": 0,
-        "deep_researcher_claim_source_map": true,
-        "attribution": "system_synthesis_not_rebbe_quote"
+        "claim_count": 10,
+        "distinct_evidence_families": 10,
+        "independent_witnesses": 10,
+        "regular_mode": "עשר טענות תחומות, כל אחת נשענת על איגרת עברית אחת ומיקום גוף מדויק; הסינתזה אינה מוצגת כמדיניות אחידה.",
+        "researcher_mode": "deep mode exposes ten separate Evidence Families, witness provenance, context boundaries and a claim_source_map with one body locator per claim.",
+        "validation": "patternSynthesisIntegrity checks ten claim topics, source numbers, independent families, body locators and non-quotation attribution in regular and researcher modes.",
+        "limitations": [
+          "האיגרות נכתבו בתאריכים שונים לנמענים שונים; הקישור ביניהן הוא סינתזה מחקרית ולא אותה Evidence Family.",
+          "ההקשר חלקי; לא נבדקו אוטוגרפים, עותקי מזכירות או מהדורות מקבילות.",
+          "תיאור תכנון או בקשה לסיוע אינו הוכחה לביצוע בפועל.",
+          "AID 5357099 מסתיים בנוסח בשם הרבי; אין לייחס לו חתימה אישית."
+        ]
       },
-      "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
+      "note": "נבדקו עשרה גופי איגרות עבריים חדשים והועשרה in-place שיחה עברית קיימת AID 2988940. AID 4666220 לא החזיר גוף קריא; בוצע fallback לעשרה פרסומים נגישים. כל הרשומות Parsed; אפס קידומים ל-Verified. סריקה קנונית מלאה ומדידה בפועל עדיין ממתינות."
     },
     "active_blocks": [
       "Yechidus AIDs 553691, 553692, 553737, 553738, 553736, 553672, 553673 and 553690: metadata/player only; no transcript body inspected.",
@@ -989,174 +1057,122 @@
       "138",
       "145",
       "146",
-      "147"
+      "147",
+      "148",
+      "149",
+      "150"
     ],
     "last_reconciliation_pending": true,
     "latest_manual_web_review": {
-      "batch_id": "147",
-      "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
-      "reviewed_at": "2026-11-17T21:59:23+02:00",
+      "batch_id": "150",
+      "batch_file": "data/items/content-research-batch-150-2026-11-21.json",
+      "reviewed_at": "2026-11-21T01:58:48+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 19,
-      "source_bodies_inspected": 9,
-      "source_body_pages_opened": 9,
-      "new_source_identities": 8,
+      "reviewed_item_count": 12,
+      "source_bodies_inspected": 11,
+      "source_body_pages_opened": 11,
+      "new_source_identities": 10,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 8,
+      "new_response_propositions": 10,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 9,
-      "answer_eligible_source_families_added": 8,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 8,
+      "total_new_paraphrase_entries": 11,
+      "answer_eligible_source_families_added": 10,
+      "independent_witnesses_added": 10,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
-      "new_translation_manifestations": 8,
-      "translations_counted_as_independent_witnesses": 0,
-      "new_aids": [
-        2465321,
-        2487225,
-        2466894,
-        2499039,
-        2487556,
-        2487457,
-        2504381,
-        2499828
-      ],
-      "enriched_aids": [
-        4304431
-      ],
-      "blocked_candidate_count": 10,
-      "blocked_candidates": [
-        {
-          "aid": 4313026,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313026",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313024,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313024",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313094,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313094",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313091,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312996,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312996",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312999,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312999",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312984,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312984",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312992,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312992",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312997,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312997",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313127,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313127",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        }
-      ],
-      "source_languages": [
-        "English"
-      ],
-      "language_distribution": {
-        "English": 8,
-        "Hebrew": 1
+      "blocked_candidate_count": 1,
+      "recovered_candidate_count": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1503,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3838
       },
-      "original_language_distribution": {
-        "unknown": 8,
-        "Hebrew": 1
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1513,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3849
       },
-      "proposition_language_distribution": {
-        "Hebrew": 9
-      },
-      "source_types": [
-        "Yechidus",
-        "Sichos"
-      ],
-      "source_type_distribution": {
-        "Yechidus": 8,
-        "Sichos": 1
-      },
-      "metrics_before": null,
-      "metrics_expected_after": null,
       "metrics_actual_after": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 8,
+        "answer_eligible_unique_sources": 10,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 9
+        "answer_eligible_propositions": 11
       },
-      "fallback_source_attempted": true,
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "scan_only_verification_used": false,
+      "new_aids": [
+        4872325,
+        4994205,
+        4730828,
+        5287503,
+        4928852,
+        5357433,
+        4929082,
+        5100419,
+        5357411,
+        5357099
+      ],
+      "enriched_aids": [
+        2988940
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+          "status": "public_reader_body_unavailable",
+          "reason": "הנתיב העברי הישיר לא החזיר גוף פרסום קריא; הנתיב המקביל באנגלית הציג מעטפת/תקציר ללא גוף המקור.",
+          "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה; באותה הפעלה נפתחו עשרה גופי איגרות עבריים אחרים."
+        }
+      ],
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_scan_pending_reconciliation": true,
-        "review_queue_records": 1022,
-        "review_queue_matches": 0,
-        "exact_aid_code_search_matches": 0,
+        "candidate_aids_found": [],
         "new_aids_unique": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
-        "all_target_identities_answer_eligible": null
+        "all_target_identities_answer_eligible": null,
+        "recent_manual_batch_files_checked": 23,
+        "recent_manual_batch_range": "127–149",
+        "bulk_indexed_files_checked": 6,
+        "bulk_indexed_files_unavailable": 6,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "post_addition_canonical_scan_pending": true,
+        "note": "Preflight בלבד: לא נמצאו התאמות ל-10 ה-AID החדשים ב-23 קובצי הביקורת האחרונים, בששת קובצי bulk-indexed שהיו נגישים או בתור הביקורת בן 1,022 הרשומות. שישה קובצי bulk-indexed נוספים וקובצי batch ישנים יותר לא נסרקו; חיפוש הקוד אינו כיסוי מלא. סריקה קנונית מלאה ממתינה ל-reconciliation."
       },
       "retrieval_synthesis": {
-        "topic": "yechidus_peace_and_mission",
+        "topic": "institutional_education_and_public_influence",
         "status": "implemented_pending_execution",
+        "attribution": "system_synthesis_not_rebbe_quote",
         "selected_aids": [
-          2465321,
-          2487225,
-          2466894,
-          2499039,
-          2487556,
-          2487457,
-          2504381,
-          2499828
+          4872325,
+          4994205,
+          4730828,
+          5287503,
+          4928852,
+          5357433,
+          4929082,
+          5100419,
+          5357411,
+          5357099
         ],
-        "claim_count": 8,
-        "distinct_event_families": 8,
-        "independent_witnesses": 0,
-        "deep_researcher_claim_source_map": true,
-        "attribution": "system_synthesis_not_rebbe_quote"
+        "claim_count": 10,
+        "distinct_evidence_families": 10,
+        "independent_witnesses": 10,
+        "regular_mode": "עשר טענות תחומות, כל אחת נשענת על איגרת עברית אחת ומיקום גוף מדויק; הסינתזה אינה מוצגת כמדיניות אחידה.",
+        "researcher_mode": "deep mode exposes ten separate Evidence Families, witness provenance, context boundaries and a claim_source_map with one body locator per claim.",
+        "validation": "patternSynthesisIntegrity checks ten claim topics, source numbers, independent families, body locators and non-quotation attribution in regular and researcher modes.",
+        "limitations": [
+          "האיגרות נכתבו בתאריכים שונים לנמענים שונים; הקישור ביניהן הוא סינתזה מחקרית ולא אותה Evidence Family.",
+          "ההקשר חלקי; לא נבדקו אוטוגרפים, עותקי מזכירות או מהדורות מקבילות.",
+          "תיאור תכנון או בקשה לסיוע אינו הוכחה לביצוע בפועל.",
+          "AID 5357099 מסתיים בנוסח בשם הרבי; אין לייחס לו חתימה אישית."
+        ]
       },
-      "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
+      "note": "נבדקו עשרה גופי איגרות עבריים חדשים והועשרה in-place שיחה עברית קיימת AID 2988940. AID 4666220 לא החזיר גוף קריא; בוצע fallback לעשרה פרסומים נגישים. כל הרשומות Parsed; אפס קידומים ל-Verified. סריקה קנונית מלאה ומדידה בפועל עדיין ממתינות."
     },
     "previous_manual_web_review": {
       "schema": "maaneh-ledorot-content-research-batch-v1",
@@ -1517,176 +1533,121 @@
       ],
       "note": "נבדקו 12 גופי איגרות באנגלית מ-Chabad.org/TheRebbe.org; נוספו 22 פרפרזות לא-מילוליות. AID 4096303 הועשרה in-place בפרופוזיציה אחת. הנתיב העברי AID 4754257 החזיר 404; באותה הפעלה נעשה fallback לגופי המו״ל באנגלית. כל 12 האיגרות הן תרגומים נגזרים, נשארות Parsed ובהקשר חלקי; אפס קידומים ל-Verified."
     },
-    "current_batch_file": "data/items/content-research-batch-147-2026-11-17.json",
+    "current_batch_file": "data/items/content-research-batch-150-2026-11-21.json",
     "status": "pending_reconciliation",
     "pending": true,
     "last_manual_review": {
-      "batch_id": "147",
-      "batch_file": "data/items/content-research-batch-147-2026-11-17.json",
-      "reviewed_at": "2026-11-17T21:59:23+02:00",
+      "batch_id": "150",
+      "batch_file": "data/items/content-research-batch-150-2026-11-21.json",
+      "reviewed_at": "2026-11-21T01:58:48+02:00",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 19,
-      "source_bodies_inspected": 9,
-      "source_body_pages_opened": 9,
-      "new_source_identities": 8,
+      "reviewed_item_count": 12,
+      "source_bodies_inspected": 11,
+      "source_body_pages_opened": 11,
+      "new_source_identities": 10,
       "existing_identities_enriched": 1,
-      "existing_identities_rechecked": 0,
-      "new_response_propositions": 8,
+      "new_response_propositions": 10,
       "existing_response_propositions_added": 1,
-      "total_new_paraphrase_entries": 9,
-      "answer_eligible_source_families_added": 8,
-      "independent_witnesses_added": 0,
-      "non_independent_presentations_added": 8,
+      "total_new_paraphrase_entries": 11,
+      "answer_eligible_source_families_added": 10,
+      "independent_witnesses_added": 10,
+      "non_independent_presentations_added": 0,
       "content_verified_unique_sources_added": 0,
-      "new_translation_manifestations": 8,
-      "translations_counted_as_independent_witnesses": 0,
-      "new_aids": [
-        2465321,
-        2487225,
-        2466894,
-        2499039,
-        2487556,
-        2487457,
-        2504381,
-        2499828
-      ],
-      "enriched_aids": [
-        4304431
-      ],
-      "blocked_candidate_count": 10,
-      "blocked_candidates": [
-        {
-          "aid": 4313026,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313026",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313024,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313024",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313094,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313094",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313091,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313091",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312996,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312996",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312999,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312999",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312984,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312984",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312992,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312992",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4312997,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4312997",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        },
-        {
-          "aid": 4313127,
-          "source_url": "https://he.chabad.org/library/article_cdo/aid/4313127",
-          "status": "HTTP 429 Too Many Requests",
-          "handling": "No crawler retry or access-control bypass; search snippets were not used as content evidence. Same-run fallback inspected eight accessible English Yechidus publisher bodies."
-        }
-      ],
-      "source_languages": [
-        "English"
-      ],
-      "language_distribution": {
-        "English": 8,
-        "Hebrew": 1
+      "blocked_candidate_count": 1,
+      "recovered_candidate_count": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1503,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3838
       },
-      "original_language_distribution": {
-        "unknown": 8,
-        "Hebrew": 1
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1513,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3849
       },
-      "proposition_language_distribution": {
-        "Hebrew": 9
-      },
-      "source_types": [
-        "Yechidus",
-        "Sichos"
-      ],
-      "source_type_distribution": {
-        "Yechidus": 8,
-        "Sichos": 1
-      },
-      "metrics_before": null,
-      "metrics_expected_after": null,
       "metrics_actual_after": null,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 8,
+        "answer_eligible_unique_sources": 10,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 9
+        "answer_eligible_propositions": 11
       },
-      "fallback_source_attempted": true,
-      "crawler_retry": false,
-      "access_control_bypassed": false,
-      "full_text_copied": false,
-      "scan_only_verification_used": false,
+      "new_aids": [
+        4872325,
+        4994205,
+        4730828,
+        5287503,
+        4928852,
+        5357433,
+        4929082,
+        5100419,
+        5357411,
+        5357099
+      ],
+      "enriched_aids": [
+        2988940
+      ],
+      "translations_counted_as_independent_witnesses": 0,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+          "status": "public_reader_body_unavailable",
+          "reason": "הנתיב העברי הישיר לא החזיר גוף פרסום קריא; הנתיב המקביל באנגלית הציג מעטפת/תקציר ללא גוף המקור.",
+          "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה; באותה הפעלה נפתחו עשרה גופי איגרות עבריים אחרים."
+        }
+      ],
       "deduplication_check": {
         "full_index_scan_available": false,
         "full_index_scan_pending_reconciliation": true,
-        "review_queue_records": 1022,
-        "review_queue_matches": 0,
-        "exact_aid_code_search_matches": 0,
+        "candidate_aids_found": [],
         "new_aids_unique": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
-        "all_target_identities_answer_eligible": null
+        "all_target_identities_answer_eligible": null,
+        "recent_manual_batch_files_checked": 23,
+        "recent_manual_batch_range": "127–149",
+        "bulk_indexed_files_checked": 6,
+        "bulk_indexed_files_unavailable": 6,
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "post_addition_canonical_scan_pending": true,
+        "note": "Preflight בלבד: לא נמצאו התאמות ל-10 ה-AID החדשים ב-23 קובצי הביקורת האחרונים, בששת קובצי bulk-indexed שהיו נגישים או בתור הביקורת בן 1,022 הרשומות. שישה קובצי bulk-indexed נוספים וקובצי batch ישנים יותר לא נסרקו; חיפוש הקוד אינו כיסוי מלא. סריקה קנונית מלאה ממתינה ל-reconciliation."
       },
       "retrieval_synthesis": {
-        "topic": "yechidus_peace_and_mission",
+        "topic": "institutional_education_and_public_influence",
         "status": "implemented_pending_execution",
+        "attribution": "system_synthesis_not_rebbe_quote",
         "selected_aids": [
-          2465321,
-          2487225,
-          2466894,
-          2499039,
-          2487556,
-          2487457,
-          2504381,
-          2499828
+          4872325,
+          4994205,
+          4730828,
+          5287503,
+          4928852,
+          5357433,
+          4929082,
+          5100419,
+          5357411,
+          5357099
         ],
-        "claim_count": 8,
-        "distinct_event_families": 8,
-        "independent_witnesses": 0,
-        "deep_researcher_claim_source_map": true,
-        "attribution": "system_synthesis_not_rebbe_quote"
+        "claim_count": 10,
+        "distinct_evidence_families": 10,
+        "independent_witnesses": 10,
+        "regular_mode": "עשר טענות תחומות, כל אחת נשענת על איגרת עברית אחת ומיקום גוף מדויק; הסינתזה אינה מוצגת כמדיניות אחידה.",
+        "researcher_mode": "deep mode exposes ten separate Evidence Families, witness provenance, context boundaries and a claim_source_map with one body locator per claim.",
+        "validation": "patternSynthesisIntegrity checks ten claim topics, source numbers, independent families, body locators and non-quotation attribution in regular and researcher modes.",
+        "limitations": [
+          "האיגרות נכתבו בתאריכים שונים לנמענים שונים; הקישור ביניהן הוא סינתזה מחקרית ולא אותה Evidence Family.",
+          "ההקשר חלקי; לא נבדקו אוטוגרפים, עותקי מזכירות או מהדורות מקבילות.",
+          "תיאור תכנון או בקשה לסיוע אינו הוכחה לביצוע בפועל.",
+          "AID 5357099 מסתיים בנוסח בשם הרבי; אין לייחס לו חתימה אישית."
+        ]
       },
-      "note": "Eight English publisher Yechidus bodies were inspected; ten Hebrew candidates returned HTTP 429. AID 4304431 was enriched in place with a fourth bounded proposition whose nested attribution is Rebbe Rashab through the Rebbe Rayatz. No Verified promotion."
+      "note": "נבדקו עשרה גופי איגרות עבריים חדשים והועשרה in-place שיחה עברית קיימת AID 2988940. AID 4666220 לא החזיר גוף קריא; בוצע fallback לעשרה פרסומים נגישים. כל הרשומות Parsed; אפס קידומים ל-Verified. סריקה קנונית מלאה ומדידה בפועל עדיין ממתינות."
     },
-    "last_reviewed_batch": "149"
+    "last_reviewed_batch": "150"
   },
   "current_batch": "149",
   "updated_at": "2026-11-18T00:29:02+02:00",
