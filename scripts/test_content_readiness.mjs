@@ -1366,20 +1366,28 @@ const lastBatchSummary=projectState.development_recovery.last_batch_summary;
 assert.equal(String(lastBatchSummary.batch_id),currentReviewBatchId);
 assert.equal(String(lastBatchSummary.batch_file),String(acquisitionState.manual_web_review.batch_file));
 assert.equal(String(projectState.development_recovery.current_batch),String(projectState.current_batch));
-assert.equal(String(projectState.development_recovery.last_completed_batch),currentReviewBatchId);
-assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
-assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
-assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
- answer_eligible_unique_sources:metrics.answer_eligible_unique_sources-lastBatchSummary.metrics_actual_before.answer_eligible_unique_sources,
- content_verified_unique_sources:metrics.content_verified_unique_sources-lastBatchSummary.metrics_actual_before.content_verified_unique_sources,
- answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
-});
+const currentBatchReconciled=['reconciled','reconciled_with_variance'].includes(String(acquisitionState.manual_web_review.reconciliation_status||acquisitionState.manual_web_review.status));
+if(currentBatchReconciled){
+ assert.equal(String(projectState.development_recovery.last_completed_batch),currentReviewBatchId);
+ assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_after_actual),readinessMetrics(metrics));
+ assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
+ assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
+  answer_eligible_unique_sources:metrics.answer_eligible_unique_sources-lastBatchSummary.metrics_actual_before.answer_eligible_unique_sources,
+  content_verified_unique_sources:metrics.content_verified_unique_sources-lastBatchSummary.metrics_actual_before.content_verified_unique_sources,
+  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
+ });
+ assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
+}else{
+ assert.equal(String(lastBatchSummary.reconciliation_status||lastBatchSummary.status),'pending_reconciliation');
+ assert(lastBatchSummary.metrics_after_actual==null);
+ assert(lastBatchSummary.metrics_delta_actual==null);
+ assert(acquisitionState.manual_web_review.metrics_actual_after==null);
+}
 assert.equal(String(acquisitionState.manual_web_review.batch_id),currentReviewBatchId);
 assert(String(acquisitionState.manual_web_review.batch_file).includes('content-research-batch-'+currentReviewBatchId.padStart(3,'0')+'-'));
 assert.equal(String(acquisitionState.previous_manual_web_review.batch_id),previousReviewBatchId);
 assert(String(acquisitionState.previous_manual_web_review.batch_file).includes('content-research-batch-'+previousReviewBatchId.padStart(3,'0')+'-'));
 assert.equal(Number(currentReviewBatchId)-Number(previousReviewBatchId),1);
-assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
 assert.equal(String(acquisitionState.last_manual_web_review.batch_id),currentReviewBatchId);assert.equal(String(acquisitionState.last_manual_review.batch_id),currentReviewBatchId);
 for(const id of ['129','130','131','132','133','134','135','136','137'])assert(acquisitionState.manual_web_review_history.some(x=>String(x.batch_id)===id));
 
