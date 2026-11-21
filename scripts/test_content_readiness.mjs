@@ -2486,37 +2486,41 @@ for(const mode of ['regular','researcher']){
 }
  
 
- // Batch 165: eleven original-language entries and two non-independent English free translations.
- const batch165Aids=[528634,528635,528636,528638,528639,528640,528641,528642,528643,528645,528646,6101,6108];
- assert.equal(batch165Data.batch_id,'165');assert.equal(batch165Data.records.length,13);assert.deepEqual(batch165Data.new_aids,batch165Aids);
- assert.equal(batch165Data.reviewed_item_count,15);assert.equal(batch165Data.source_bodies_inspected,13);assert.equal(batch165Data.source_body_pages_opened,13);
- assert.equal(batch165Data.new_source_identities,13);assert.equal(batch165Data.new_response_propositions,14);assert.equal(batch165Data.total_new_paraphrase_entries,14);
- assert.equal(batch165Data.answer_eligible_source_families_added,13);assert.equal(batch165Data.independent_witnesses_added,11);assert.equal(batch165Data.non_independent_presentations_added,2);
+
+ // Batch 165: eleven original-language Hayom Yom entries, two non-independent translations, and one published Hebrew letter PDF.
+ const batch165Aids=[528634,528635,528636,528638,528639,528640,528641,528642,528643,528645,528646,6101,6108,4666220];
+ assert.equal(batch165Data.batch_id,'165');assert.equal(batch165Data.records.length,14);assert.deepEqual(batch165Data.new_aids,batch165Aids);
+ assert.equal(batch165Data.reviewed_item_count,17);assert.equal(batch165Data.source_bodies_inspected,14);assert.equal(batch165Data.source_body_pages_opened,14);
+ assert.equal(batch165Data.new_source_identities,14);assert.equal(batch165Data.new_response_propositions,16);assert.equal(batch165Data.total_new_paraphrase_entries,16);
+ assert.equal(batch165Data.answer_eligible_source_families_added,14);assert.equal(batch165Data.independent_witnesses_added,12);assert.equal(batch165Data.non_independent_presentations_added,2);
  assert.equal(batch165Data.content_verified_unique_sources_added,0);assert.equal(batch165Data.translations_counted_as_independent_witnesses,0);
- assert.deepEqual(batch165Data.language_distribution,{Hebrew:8,Yiddish:1,"Hebrew and Yiddish":2,English:2});
- assert.equal(batch165Data.records.reduce((n,r)=>n+r.response_propositions.length,0),14);
- assert.deepEqual(batch165Data.blocked_candidates.map(x=>x.aid),[528637,528644]);assert.equal(batch165Data.fallback_source_attempted,true);
- assert.equal(batch165Data.fallback_source_results.accessible_item_level_bodies,13);
- assert.equal(batch165Data.fallback_source_results.original_language_body_inspected,11);
+ assert.deepEqual(batch165Data.language_distribution,{Hebrew:9,Yiddish:1,"Hebrew and Yiddish":2,English:2});
+ assert.deepEqual(batch165Data.source_type_distribution,{"Hayom Yom":13,"Letters":1});
+ assert.equal(batch165Data.records.reduce((n,r)=>n+r.response_propositions.length,0),16);
+ assert.deepEqual(batch165Data.blocked_candidates.map(x=>x.aid),[528637,528644,4666220]);assert.equal(batch165Data.fallback_source_attempted,true);
+ assert.equal(batch165Data.fallback_source_results.accessible_item_level_bodies,14);
+ assert.equal(batch165Data.fallback_source_results.original_language_body_inspected,12);
  assert.equal(batch165Data.fallback_source_results.english_translation_bodies_inspected,2);
  assert.equal(batch165Data.crawler_retry,false);assert.equal(batch165Data.access_control_bypassed,false);assert.equal(batch165Data.full_text_copied,false);assert.equal(batch165Data.scan_only_verification_used,false);
  assert.equal(batch165Data.metrics_actual_after,null);assert.equal(batch165Data.metrics_expected_after,null);
- assert.equal(batch165Data.deduplication_check.code_search_exact_aid_queries,13);assert.deepEqual(batch165Data.deduplication_check.code_search_matches,[]);
+ assert.equal(batch165Data.deduplication_check.code_search_exact_aid_queries,14);assert.deepEqual(batch165Data.deduplication_check.code_search_matches,[]);
  assert.equal(batch165Data.deduplication_check.review_queue_records,1022);assert.equal(batch165Data.deduplication_check.review_queue_matches,0);
+ assert.equal(batch165Data.deduplication_check.canonical_bulk_files_checked,12);assert.equal(batch165Data.deduplication_check.canonical_bulk_records_checked,1328);assert.equal(batch165Data.deduplication_check.canonical_bulk_matches,0);
  assert.equal(batch165Data.deduplication_check.full_index_scan_available,false);assert.equal(batch165Data.deduplication_check.post_addition_canonical_scan_pending,true);
  for(const r of batch165Data.records){
-  assert.equal(r.source_class,'Hayom Yom');assert.equal(r.type,'hayom_yom_entry');assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');
+  assert(["Hayom Yom","Letters"].includes(r.source_class));assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');
   assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
   assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
   assert.equal(r.response_propositions.length,r.response_proposition_locators.length);assert(r.response_proposition_locators.every(Boolean));
   if(r.independent_witness===false){assert.equal(r.translation_of_evidence_family_id,r.evidence_family_id);assert.equal(r.access.source_language_body_inspected,false);assert(r.verification_scope.includes('לא נפתח')||r.verification_scope.includes('לא נבדק'));}
   else assert.equal(r.translation_of_evidence_family_id,null);
  }
- assert.equal(new Set(batch165Data.records.map(r=>r.evidence_family_id)).size,13);
+ assert.equal(new Set(batch165Data.records.map(r=>r.evidence_family_id)).size,14);
  const indexedBatch165=idx.entries.filter(e=>batch165Aids.includes(Number(sourceAID(e))));
- assert.equal(indexedBatch165.length,13);assert(indexedBatch165.every(e=>e.answer_eligible&&e.canonical_file===batch165Path));
- assert.equal(new Set(indexedBatch165.map(e=>e.evidence_family_id)).size,13);
+ assert.equal(indexedBatch165.length,14);assert(indexedBatch165.every(e=>e.answer_eligible&&e.canonical_file==='data/items/content-research-batch-165-2026-11-22.json'));
+ assert.equal(new Set(indexedBatch165.map(e=>e.evidence_family_id)).size,14);
  assert.equal(indexedBatch165.filter(e=>e.independent_witness===false).length,2);
+ assert(batch165Data.source_body_review.some(x=>x.aid===4666220&&x.body_text_inspected&&x.inspection_method==='public_pdf_open_text_extraction'));
 
 const reconciledProjectState=JSON.parse(await readFile(new URL('data/project-state.json',root),'utf8'));
 const reconciliationChain=reconciledProjectState.development_recovery.reconciliation_chain;

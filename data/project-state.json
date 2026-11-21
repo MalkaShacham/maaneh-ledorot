@@ -1649,21 +1649,21 @@
       "title": "Batch 165 — eleven original-language Adar I entries and two English free-translation presentations",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 15,
-      "source_bodies_inspected": 13,
-      "source_body_pages_opened": 13,
-      "new_source_identities": 13,
+      "reviewed_item_count": 17,
+      "source_bodies_inspected": 14,
+      "source_body_pages_opened": 14,
+      "new_source_identities": 14,
       "existing_identities_enriched": 0,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 14,
+      "new_response_propositions": 16,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 14,
-      "answer_eligible_source_families_added": 13,
-      "independent_witnesses_added": 11,
+      "total_new_paraphrase_entries": 16,
+      "answer_eligible_source_families_added": 14,
+      "independent_witnesses_added": 12,
       "non_independent_presentations_added": 2,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 2,
-      "recovered_candidate_count": 0,
+      "blocked_candidate_count": 3,
+      "recovered_candidate_count": 1,
       "metrics_before": null,
       "metrics_expected_after": null,
       "metrics_actual_before": null,
@@ -1683,7 +1683,8 @@
         528645,
         528646,
         6101,
-        6108
+        6108,
+        4666220
       ],
       "enriched_aids": [],
       "staging_candidate_aids": [],
@@ -1693,19 +1694,19 @@
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 13,
+        "answer_eligible_unique_sources": 14,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 14,
-        "note": "Expected contribution from 13 distinct dated-entry Evidence Families, including two non-independent English translations of two other dated entries; not measured after-metrics."
+        "answer_eligible_propositions": 16,
+        "note": "Expected contribution from 14 distinct source families, including two non-independent English translations; not measured after-metrics."
       },
       "local_content_delta": {
-        "new_source_identities": 13,
-        "new_evidence_families": 13,
-        "new_response_propositions": 14,
+        "new_source_identities": 14,
+        "new_evidence_families": 14,
+        "new_response_propositions": 16,
         "existing_identities_enriched": 0,
         "existing_response_propositions_added": 0,
         "verified_promotions": 0,
-        "note": "Reviewed batch counts only; full canonical reconciliation and measured after-metrics pending."
+        "note": "One additional published Hebrew letter body was found through an alternate public PDF for AID 4666220; canonical full-index reconciliation remains pending."
       },
       "source_body_review": [
         {
@@ -1906,6 +1907,24 @@
           "inspection_method": "public_web_open_translated_body",
           "translation_of_evidence_family_id": "hayom-yom-528644-5703",
           "original_language_source_aid": 528644
+        },
+        {
+          "aid": 4666220,
+          "source_url": "https://media.col.org.il/files/uploads/original/2018/11/15420312915be987bbe0411296837.pdf",
+          "publisher_page_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "publisher_page_body_accessible": false,
+          "alternate_published_volume_body_accessible": true,
+          "body_locator": "PDF lines 5805–5813, letter marker קפא; printed date context lines 5834–5835.",
+          "web_source_ref": "turn222275view0",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "igrot-kodesh-kaf-aleph-aid4666220",
+          "independent_witness": true,
+          "inspection_method": "public_pdf_open_text_extraction"
         }
       ],
       "blocked_candidates": [
@@ -1924,11 +1943,19 @@
           "status": "public_reader_body_unavailable_via_web_tool",
           "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
           "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6108. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+        },
+        {
+          "candidate_key": "aid:4666220",
+          "aid": 4666220,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "status": "publisher_reader_redirected_to_shell",
+          "reason": "פתיחת עמוד AID 4666220 הפנתה למסך Torah Texts ללא גוף האיגרת.",
+          "handling": "באותה הפעלה נפתח PDF ציבורי חלופי של אגרות קודש, שבו נבדקו סימן קפא ושורות 5805–5813. הפרסום החלופי הוא סריקה דיגיטלית של מהדורה מודפסת, לא עד עצמאי נוסף; הפרופוזיציות מסומנות בהתאם."
         }
       ],
       "fallback_source_attempted": true,
       "fallback_source_results": {
-        "accessible_item_level_bodies": 13,
+        "accessible_item_level_bodies": 14,
         "inspected_aids": [
           528634,
           528635,
@@ -1942,13 +1969,15 @@
           528645,
           528646,
           6101,
-          6108
+          6108,
+          4666220
         ],
-        "original_language_body_inspected": 11,
+        "original_language_body_inspected": 12,
         "english_translation_bodies_inspected": 2,
         "non_independent_translation_presentations": 2,
+        "same_edition_pdf_presentations": 1,
         "body_text_inspected": true,
-        "note": "לאחר חסימת AID 528637 ו-AID 528644 נפתחו באותה הפעלה שני תרגומים אנגליים חופשיים של אותם ערכים. הם מספקים תוכן נגזר בלבד, אינם עדים עצמאיים ואינם מאמתים את הנוסח העברי."
+        "note": "שני גופי המקור העברי AID 528637 ו-528644 לא נפתחו; נבדקו תרגומים אנגליים נגזרים. AID 4666220 הפנה למסך ללא גוף, אך גוף המכתב נמצא ונפתח ב-PDF ציבורי חלופי."
       },
       "excluded_candidates": [],
       "translation_source_links": [
@@ -1969,15 +1998,15 @@
         "full_index_scan_available": false,
         "full_index_entries": null,
         "full_index_generated": null,
-        "code_search_exact_aid_queries": 13,
+        "code_search_exact_aid_queries": 14,
         "code_search_matches": [],
         "candidate_aids_found": [],
         "existing_aids_found": [],
         "new_aids_unique_within_checked_scope": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
-        "canonical_bulk_files_checked": 0,
-        "canonical_bulk_matches": null,
+        "canonical_bulk_files_checked": 12,
+        "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
         "recent_manual_batch_record_rows_checked": 29,
@@ -1987,17 +2016,21 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
-        "note": "בדיקת קדם-הוספה מוגבלת: 13 חיפושי AID ממוקדים ב-GitHub ללא התאמות; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
+        "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ב-GitHub ללא התאמות; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation.",
+        "canonical_bulk_records_checked": 1328
       },
       "pre_addition_full_index_scan": {
         "available": false,
-        "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
+        "reason": "public-search-index.json was not returned by the GitHub file reader; all 12 available bulk-indexed files (1,328 records), recent batches 163–164 (29 records), and the 1,022-record review queue were checked.",
+        "canonical_bulk_files_checked": 12,
+        "canonical_bulk_records_checked": 1328,
+        "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
         "recent_manual_batch_record_rows_checked": 29,
         "review_queue_records": 1022,
         "review_queue_matches": 0,
-        "exact_aid_queries": 13,
+        "exact_aid_queries": 14,
         "exact_aid_matches": []
       },
       "reconciliation_identity_integrity": {
@@ -2009,22 +2042,23 @@
         "status": "pending_reconciliation"
       },
       "language_distribution": {
-        "Hebrew": 8,
+        "Hebrew": 9,
         "Yiddish": 1,
         "Hebrew and Yiddish": 2,
         "English": 2
       },
       "reviewed_body_language_distribution": {
-        "Hebrew": 8,
+        "Hebrew": 9,
         "Yiddish": 1,
         "Hebrew and Yiddish": 2,
         "English": 2
       },
       "proposition_language_distribution": {
-        "Hebrew": 14
+        "Hebrew": 16
       },
       "source_type_distribution": {
-        "Hayom Yom": 13
+        "Hayom Yom": 13,
+        "Letters": 1
       },
       "quality_gate_followup": {
         "required": [
@@ -2037,7 +2071,7 @@
       },
       "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
     },
-    "last_run_note": "Batch 165: 11 original-language dated entries and two English free translations inspected; two Hebrew originals were inaccessible but alternatives were inspected in the same run. No crawler retry, no access bypass, no Verified promotion. Reconciliation and content readiness pending.",
+    "last_run_note": "Batch 165: 11 original-language Hayom Yom entries, two English free translations, and one published Hebrew letter body for AID 4666220 inspected. Two daily-entry originals and the AID page shell were blocked; the letter body was found in an alternate public PDF. No crawler retry, no access bypass, no Verified promotion. Reconciliation and content readiness pending.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 4666220 returned Internal Error in the public web reader; no crawler retry or access-control bypass. Fifteen alternative original-language daily entries and one existing identity were inspected.",
     "next_work": "Reconcile pending batches contiguously through 165; complete canonical AID/Evidence Family deduplication; run test_content_readiness.mjs and the five-family regular/researcher citation checks; inspect Actions and Pages. Keep translated presentations non-independent and all new records Parsed.",
@@ -2410,21 +2444,21 @@
       "title": "Batch 165 — eleven original-language Adar I entries and two English free-translation presentations",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 15,
-      "source_bodies_inspected": 13,
-      "source_body_pages_opened": 13,
-      "new_source_identities": 13,
+      "reviewed_item_count": 17,
+      "source_bodies_inspected": 14,
+      "source_body_pages_opened": 14,
+      "new_source_identities": 14,
       "existing_identities_enriched": 0,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 14,
+      "new_response_propositions": 16,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 14,
-      "answer_eligible_source_families_added": 13,
-      "independent_witnesses_added": 11,
+      "total_new_paraphrase_entries": 16,
+      "answer_eligible_source_families_added": 14,
+      "independent_witnesses_added": 12,
       "non_independent_presentations_added": 2,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 2,
-      "recovered_candidate_count": 0,
+      "blocked_candidate_count": 3,
+      "recovered_candidate_count": 1,
       "metrics_before": null,
       "metrics_expected_after": null,
       "metrics_actual_before": null,
@@ -2444,7 +2478,8 @@
         528645,
         528646,
         6101,
-        6108
+        6108,
+        4666220
       ],
       "enriched_aids": [],
       "staging_candidate_aids": [],
@@ -2454,19 +2489,19 @@
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 13,
+        "answer_eligible_unique_sources": 14,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 14,
-        "note": "Expected contribution from 13 distinct dated-entry Evidence Families, including two non-independent English translations of two other dated entries; not measured after-metrics."
+        "answer_eligible_propositions": 16,
+        "note": "Expected contribution from 14 distinct source families, including two non-independent English translations; not measured after-metrics."
       },
       "local_content_delta": {
-        "new_source_identities": 13,
-        "new_evidence_families": 13,
-        "new_response_propositions": 14,
+        "new_source_identities": 14,
+        "new_evidence_families": 14,
+        "new_response_propositions": 16,
         "existing_identities_enriched": 0,
         "existing_response_propositions_added": 0,
         "verified_promotions": 0,
-        "note": "Reviewed batch counts only; full canonical reconciliation and measured after-metrics pending."
+        "note": "One additional published Hebrew letter body was found through an alternate public PDF for AID 4666220; canonical full-index reconciliation remains pending."
       },
       "source_body_review": [
         {
@@ -2667,6 +2702,24 @@
           "inspection_method": "public_web_open_translated_body",
           "translation_of_evidence_family_id": "hayom-yom-528644-5703",
           "original_language_source_aid": 528644
+        },
+        {
+          "aid": 4666220,
+          "source_url": "https://media.col.org.il/files/uploads/original/2018/11/15420312915be987bbe0411296837.pdf",
+          "publisher_page_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "publisher_page_body_accessible": false,
+          "alternate_published_volume_body_accessible": true,
+          "body_locator": "PDF lines 5805–5813, letter marker קפא; printed date context lines 5834–5835.",
+          "web_source_ref": "turn222275view0",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "igrot-kodesh-kaf-aleph-aid4666220",
+          "independent_witness": true,
+          "inspection_method": "public_pdf_open_text_extraction"
         }
       ],
       "blocked_candidates": [
@@ -2685,11 +2738,19 @@
           "status": "public_reader_body_unavailable_via_web_tool",
           "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
           "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6108. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+        },
+        {
+          "candidate_key": "aid:4666220",
+          "aid": 4666220,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "status": "publisher_reader_redirected_to_shell",
+          "reason": "פתיחת עמוד AID 4666220 הפנתה למסך Torah Texts ללא גוף האיגרת.",
+          "handling": "באותה הפעלה נפתח PDF ציבורי חלופי של אגרות קודש, שבו נבדקו סימן קפא ושורות 5805–5813. הפרסום החלופי הוא סריקה דיגיטלית של מהדורה מודפסת, לא עד עצמאי נוסף; הפרופוזיציות מסומנות בהתאם."
         }
       ],
       "fallback_source_attempted": true,
       "fallback_source_results": {
-        "accessible_item_level_bodies": 13,
+        "accessible_item_level_bodies": 14,
         "inspected_aids": [
           528634,
           528635,
@@ -2703,13 +2764,15 @@
           528645,
           528646,
           6101,
-          6108
+          6108,
+          4666220
         ],
-        "original_language_body_inspected": 11,
+        "original_language_body_inspected": 12,
         "english_translation_bodies_inspected": 2,
         "non_independent_translation_presentations": 2,
+        "same_edition_pdf_presentations": 1,
         "body_text_inspected": true,
-        "note": "לאחר חסימת AID 528637 ו-AID 528644 נפתחו באותה הפעלה שני תרגומים אנגליים חופשיים של אותם ערכים. הם מספקים תוכן נגזר בלבד, אינם עדים עצמאיים ואינם מאמתים את הנוסח העברי."
+        "note": "שני גופי המקור העברי AID 528637 ו-528644 לא נפתחו; נבדקו תרגומים אנגליים נגזרים. AID 4666220 הפנה למסך ללא גוף, אך גוף המכתב נמצא ונפתח ב-PDF ציבורי חלופי."
       },
       "excluded_candidates": [],
       "translation_source_links": [
@@ -2730,15 +2793,15 @@
         "full_index_scan_available": false,
         "full_index_entries": null,
         "full_index_generated": null,
-        "code_search_exact_aid_queries": 13,
+        "code_search_exact_aid_queries": 14,
         "code_search_matches": [],
         "candidate_aids_found": [],
         "existing_aids_found": [],
         "new_aids_unique_within_checked_scope": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
-        "canonical_bulk_files_checked": 0,
-        "canonical_bulk_matches": null,
+        "canonical_bulk_files_checked": 12,
+        "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
         "recent_manual_batch_record_rows_checked": 29,
@@ -2748,17 +2811,21 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
-        "note": "בדיקת קדם-הוספה מוגבלת: 13 חיפושי AID ממוקדים ב-GitHub ללא התאמות; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
+        "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ב-GitHub ללא התאמות; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation.",
+        "canonical_bulk_records_checked": 1328
       },
       "pre_addition_full_index_scan": {
         "available": false,
-        "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
+        "reason": "public-search-index.json was not returned by the GitHub file reader; all 12 available bulk-indexed files (1,328 records), recent batches 163–164 (29 records), and the 1,022-record review queue were checked.",
+        "canonical_bulk_files_checked": 12,
+        "canonical_bulk_records_checked": 1328,
+        "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
         "recent_manual_batch_record_rows_checked": 29,
         "review_queue_records": 1022,
         "review_queue_matches": 0,
-        "exact_aid_queries": 13,
+        "exact_aid_queries": 14,
         "exact_aid_matches": []
       },
       "reconciliation_identity_integrity": {
@@ -2770,22 +2837,23 @@
         "status": "pending_reconciliation"
       },
       "language_distribution": {
-        "Hebrew": 8,
+        "Hebrew": 9,
         "Yiddish": 1,
         "Hebrew and Yiddish": 2,
         "English": 2
       },
       "reviewed_body_language_distribution": {
-        "Hebrew": 8,
+        "Hebrew": 9,
         "Yiddish": 1,
         "Hebrew and Yiddish": 2,
         "English": 2
       },
       "proposition_language_distribution": {
-        "Hebrew": 14
+        "Hebrew": 16
       },
       "source_type_distribution": {
-        "Hayom Yom": 13
+        "Hayom Yom": 13,
+        "Letters": 1
       },
       "quality_gate_followup": {
         "required": [
@@ -2890,21 +2958,21 @@
       "title": "Batch 165 — eleven original-language Adar I entries and two English free-translation presentations",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 15,
-      "source_bodies_inspected": 13,
-      "source_body_pages_opened": 13,
-      "new_source_identities": 13,
+      "reviewed_item_count": 17,
+      "source_bodies_inspected": 14,
+      "source_body_pages_opened": 14,
+      "new_source_identities": 14,
       "existing_identities_enriched": 0,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 14,
+      "new_response_propositions": 16,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 14,
-      "answer_eligible_source_families_added": 13,
-      "independent_witnesses_added": 11,
+      "total_new_paraphrase_entries": 16,
+      "answer_eligible_source_families_added": 14,
+      "independent_witnesses_added": 12,
       "non_independent_presentations_added": 2,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 2,
-      "recovered_candidate_count": 0,
+      "blocked_candidate_count": 3,
+      "recovered_candidate_count": 1,
       "metrics_before": null,
       "metrics_expected_after": null,
       "metrics_actual_before": null,
@@ -2924,7 +2992,8 @@
         528645,
         528646,
         6101,
-        6108
+        6108,
+        4666220
       ],
       "enriched_aids": [],
       "staging_candidate_aids": [],
@@ -2934,19 +3003,19 @@
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 13,
+        "answer_eligible_unique_sources": 14,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 14,
-        "note": "Expected contribution from 13 distinct dated-entry Evidence Families, including two non-independent English translations of two other dated entries; not measured after-metrics."
+        "answer_eligible_propositions": 16,
+        "note": "Expected contribution from 14 distinct source families, including two non-independent English translations; not measured after-metrics."
       },
       "local_content_delta": {
-        "new_source_identities": 13,
-        "new_evidence_families": 13,
-        "new_response_propositions": 14,
+        "new_source_identities": 14,
+        "new_evidence_families": 14,
+        "new_response_propositions": 16,
         "existing_identities_enriched": 0,
         "existing_response_propositions_added": 0,
         "verified_promotions": 0,
-        "note": "Reviewed batch counts only; full canonical reconciliation and measured after-metrics pending."
+        "note": "One additional published Hebrew letter body was found through an alternate public PDF for AID 4666220; canonical full-index reconciliation remains pending."
       },
       "source_body_review": [
         {
@@ -3147,6 +3216,24 @@
           "inspection_method": "public_web_open_translated_body",
           "translation_of_evidence_family_id": "hayom-yom-528644-5703",
           "original_language_source_aid": 528644
+        },
+        {
+          "aid": 4666220,
+          "source_url": "https://media.col.org.il/files/uploads/original/2018/11/15420312915be987bbe0411296837.pdf",
+          "publisher_page_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "publisher_page_body_accessible": false,
+          "alternate_published_volume_body_accessible": true,
+          "body_locator": "PDF lines 5805–5813, letter marker קפא; printed date context lines 5834–5835.",
+          "web_source_ref": "turn222275view0",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "igrot-kodesh-kaf-aleph-aid4666220",
+          "independent_witness": true,
+          "inspection_method": "public_pdf_open_text_extraction"
         }
       ],
       "blocked_candidates": [
@@ -3165,11 +3252,19 @@
           "status": "public_reader_body_unavailable_via_web_tool",
           "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
           "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6108. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+        },
+        {
+          "candidate_key": "aid:4666220",
+          "aid": 4666220,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "status": "publisher_reader_redirected_to_shell",
+          "reason": "פתיחת עמוד AID 4666220 הפנתה למסך Torah Texts ללא גוף האיגרת.",
+          "handling": "באותה הפעלה נפתח PDF ציבורי חלופי של אגרות קודש, שבו נבדקו סימן קפא ושורות 5805–5813. הפרסום החלופי הוא סריקה דיגיטלית של מהדורה מודפסת, לא עד עצמאי נוסף; הפרופוזיציות מסומנות בהתאם."
         }
       ],
       "fallback_source_attempted": true,
       "fallback_source_results": {
-        "accessible_item_level_bodies": 13,
+        "accessible_item_level_bodies": 14,
         "inspected_aids": [
           528634,
           528635,
@@ -3183,13 +3278,15 @@
           528645,
           528646,
           6101,
-          6108
+          6108,
+          4666220
         ],
-        "original_language_body_inspected": 11,
+        "original_language_body_inspected": 12,
         "english_translation_bodies_inspected": 2,
         "non_independent_translation_presentations": 2,
+        "same_edition_pdf_presentations": 1,
         "body_text_inspected": true,
-        "note": "לאחר חסימת AID 528637 ו-AID 528644 נפתחו באותה הפעלה שני תרגומים אנגליים חופשיים של אותם ערכים. הם מספקים תוכן נגזר בלבד, אינם עדים עצמאיים ואינם מאמתים את הנוסח העברי."
+        "note": "שני גופי המקור העברי AID 528637 ו-528644 לא נפתחו; נבדקו תרגומים אנגליים נגזרים. AID 4666220 הפנה למסך ללא גוף, אך גוף המכתב נמצא ונפתח ב-PDF ציבורי חלופי."
       },
       "excluded_candidates": [],
       "translation_source_links": [
@@ -3210,15 +3307,15 @@
         "full_index_scan_available": false,
         "full_index_entries": null,
         "full_index_generated": null,
-        "code_search_exact_aid_queries": 13,
+        "code_search_exact_aid_queries": 14,
         "code_search_matches": [],
         "candidate_aids_found": [],
         "existing_aids_found": [],
         "new_aids_unique_within_checked_scope": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
-        "canonical_bulk_files_checked": 0,
-        "canonical_bulk_matches": null,
+        "canonical_bulk_files_checked": 12,
+        "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
         "recent_manual_batch_record_rows_checked": 29,
@@ -3228,17 +3325,21 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
-        "note": "בדיקת קדם-הוספה מוגבלת: 13 חיפושי AID ממוקדים ב-GitHub ללא התאמות; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
+        "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ב-GitHub ללא התאמות; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation.",
+        "canonical_bulk_records_checked": 1328
       },
       "pre_addition_full_index_scan": {
         "available": false,
-        "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
+        "reason": "public-search-index.json was not returned by the GitHub file reader; all 12 available bulk-indexed files (1,328 records), recent batches 163–164 (29 records), and the 1,022-record review queue were checked.",
+        "canonical_bulk_files_checked": 12,
+        "canonical_bulk_records_checked": 1328,
+        "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
         "recent_manual_batch_record_rows_checked": 29,
         "review_queue_records": 1022,
         "review_queue_matches": 0,
-        "exact_aid_queries": 13,
+        "exact_aid_queries": 14,
         "exact_aid_matches": []
       },
       "reconciliation_identity_integrity": {
@@ -3250,22 +3351,23 @@
         "status": "pending_reconciliation"
       },
       "language_distribution": {
-        "Hebrew": 8,
+        "Hebrew": 9,
         "Yiddish": 1,
         "Hebrew and Yiddish": 2,
         "English": 2
       },
       "reviewed_body_language_distribution": {
-        "Hebrew": 8,
+        "Hebrew": 9,
         "Yiddish": 1,
         "Hebrew and Yiddish": 2,
         "English": 2
       },
       "proposition_language_distribution": {
-        "Hebrew": 14
+        "Hebrew": 16
       },
       "source_type_distribution": {
-        "Hayom Yom": 13
+        "Hayom Yom": 13,
+        "Letters": 1
       },
       "quality_gate_followup": {
         "required": [
@@ -3820,21 +3922,21 @@
       "title": "Batch 165 — eleven original-language Adar I entries and two English free-translation presentations",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
-      "reviewed_item_count": 15,
-      "source_bodies_inspected": 13,
-      "source_body_pages_opened": 13,
-      "new_source_identities": 13,
+      "reviewed_item_count": 17,
+      "source_bodies_inspected": 14,
+      "source_body_pages_opened": 14,
+      "new_source_identities": 14,
       "existing_identities_enriched": 0,
       "existing_identities_rechecked": 0,
-      "new_response_propositions": 14,
+      "new_response_propositions": 16,
       "existing_response_propositions_added": 0,
-      "total_new_paraphrase_entries": 14,
-      "answer_eligible_source_families_added": 13,
-      "independent_witnesses_added": 11,
+      "total_new_paraphrase_entries": 16,
+      "answer_eligible_source_families_added": 14,
+      "independent_witnesses_added": 12,
       "non_independent_presentations_added": 2,
       "content_verified_unique_sources_added": 0,
-      "blocked_candidate_count": 2,
-      "recovered_candidate_count": 0,
+      "blocked_candidate_count": 3,
+      "recovered_candidate_count": 1,
       "metrics_before": null,
       "metrics_expected_after": null,
       "metrics_actual_before": null,
@@ -3854,7 +3956,8 @@
         528645,
         528646,
         6101,
-        6108
+        6108,
+        4666220
       ],
       "enriched_aids": [],
       "staging_candidate_aids": [],
@@ -3864,19 +3967,19 @@
       "full_text_copied": false,
       "scan_only_verification_used": false,
       "metrics_delta_at_batch_boundary": {
-        "answer_eligible_unique_sources": 13,
+        "answer_eligible_unique_sources": 14,
         "content_verified_unique_sources": 0,
-        "answer_eligible_propositions": 14,
-        "note": "Expected contribution from 13 distinct dated-entry Evidence Families, including two non-independent English translations of two other dated entries; not measured after-metrics."
+        "answer_eligible_propositions": 16,
+        "note": "Expected contribution from 14 distinct source families, including two non-independent English translations; not measured after-metrics."
       },
       "local_content_delta": {
-        "new_source_identities": 13,
-        "new_evidence_families": 13,
-        "new_response_propositions": 14,
+        "new_source_identities": 14,
+        "new_evidence_families": 14,
+        "new_response_propositions": 16,
         "existing_identities_enriched": 0,
         "existing_response_propositions_added": 0,
         "verified_promotions": 0,
-        "note": "Reviewed batch counts only; full canonical reconciliation and measured after-metrics pending."
+        "note": "One additional published Hebrew letter body was found through an alternate public PDF for AID 4666220; canonical full-index reconciliation remains pending."
       },
       "source_body_review": [
         {
@@ -4077,6 +4180,24 @@
           "inspection_method": "public_web_open_translated_body",
           "translation_of_evidence_family_id": "hayom-yom-528644-5703",
           "original_language_source_aid": 528644
+        },
+        {
+          "aid": 4666220,
+          "source_url": "https://media.col.org.il/files/uploads/original/2018/11/15420312915be987bbe0411296837.pdf",
+          "publisher_page_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "language": "Hebrew",
+          "original_language": "Hebrew",
+          "body_text_inspected": true,
+          "inspected_original_language_body": true,
+          "existing_identity": false,
+          "publisher_page_body_accessible": false,
+          "alternate_published_volume_body_accessible": true,
+          "body_locator": "PDF lines 5805–5813, letter marker קפא; printed date context lines 5834–5835.",
+          "web_source_ref": "turn222275view0",
+          "canonical_file": "data/items/content-research-batch-165-2026-11-22.json",
+          "evidence_family_id": "igrot-kodesh-kaf-aleph-aid4666220",
+          "independent_witness": true,
+          "inspection_method": "public_pdf_open_text_extraction"
         }
       ],
       "blocked_candidates": [
@@ -4095,11 +4216,19 @@
           "status": "public_reader_body_unavailable_via_web_tool",
           "reason": "פתיחה ישירה של גוף הערך העברי החזירה Internal Error.",
           "handling": "בוצע חיפוש חלופי באותו פרסום; נפתח התרגום האנגלי החופשי AID 6108. התרגום נרשם כמצגת נגזרת לא-עצמאית של אותה Evidence Family; המקור העברי נשאר חסום ולא נחשב נבדק."
+        },
+        {
+          "candidate_key": "aid:4666220",
+          "aid": 4666220,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4666220/jewish/page.htm",
+          "status": "publisher_reader_redirected_to_shell",
+          "reason": "פתיחת עמוד AID 4666220 הפנתה למסך Torah Texts ללא גוף האיגרת.",
+          "handling": "באותה הפעלה נפתח PDF ציבורי חלופי של אגרות קודש, שבו נבדקו סימן קפא ושורות 5805–5813. הפרסום החלופי הוא סריקה דיגיטלית של מהדורה מודפסת, לא עד עצמאי נוסף; הפרופוזיציות מסומנות בהתאם."
         }
       ],
       "fallback_source_attempted": true,
       "fallback_source_results": {
-        "accessible_item_level_bodies": 13,
+        "accessible_item_level_bodies": 14,
         "inspected_aids": [
           528634,
           528635,
@@ -4113,13 +4242,15 @@
           528645,
           528646,
           6101,
-          6108
+          6108,
+          4666220
         ],
-        "original_language_body_inspected": 11,
+        "original_language_body_inspected": 12,
         "english_translation_bodies_inspected": 2,
         "non_independent_translation_presentations": 2,
+        "same_edition_pdf_presentations": 1,
         "body_text_inspected": true,
-        "note": "לאחר חסימת AID 528637 ו-AID 528644 נפתחו באותה הפעלה שני תרגומים אנגליים חופשיים של אותם ערכים. הם מספקים תוכן נגזר בלבד, אינם עדים עצמאיים ואינם מאמתים את הנוסח העברי."
+        "note": "שני גופי המקור העברי AID 528637 ו-528644 לא נפתחו; נבדקו תרגומים אנגליים נגזרים. AID 4666220 הפנה למסך ללא גוף, אך גוף המכתב נמצא ונפתח ב-PDF ציבורי חלופי."
       },
       "excluded_candidates": [],
       "translation_source_links": [
@@ -4140,15 +4271,15 @@
         "full_index_scan_available": false,
         "full_index_entries": null,
         "full_index_generated": null,
-        "code_search_exact_aid_queries": 13,
+        "code_search_exact_aid_queries": 14,
         "code_search_matches": [],
         "candidate_aids_found": [],
         "existing_aids_found": [],
         "new_aids_unique_within_checked_scope": true,
         "source_urls_unique": true,
         "evidence_family_ids_unique": true,
-        "canonical_bulk_files_checked": 0,
-        "canonical_bulk_matches": null,
+        "canonical_bulk_files_checked": 12,
+        "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
         "recent_manual_batch_record_rows_checked": 29,
@@ -4158,17 +4289,21 @@
         "canonical_identity_collisions": null,
         "missing_canonical_identities": null,
         "all_target_identities_answer_eligible": null,
-        "note": "בדיקת קדם-הוספה מוגבלת: 13 חיפושי AID ממוקדים ב-GitHub ללא התאמות; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation."
+        "note": "בדיקת קדם-הוספה מוגבלת: 14 חיפושי AID ממוקדים ב-GitHub ללא התאמות; 12 קובצי bulk-indexed ובהם 1,328 רשומות נבדקו ללא התאמה; שתי האצוות הידניות האחרונות 163–164 ובהן 29 רשומות נבדקו; תור הבדיקה בן 1,022 פריטים ללא התאמות. public-search-index.json לא הוחזר בכלי GitHub בשל גודלו, ולכן לא נטענה סריקה מלאה. סריקת האינדקס הקנוני לאחר ההוספה נותרה ל-reconciliation.",
+        "canonical_bulk_records_checked": 1328
       },
       "pre_addition_full_index_scan": {
         "available": false,
-        "reason": "The large public-search-index.json file was not returned by the GitHub file reader; full canonical scan is delegated to reconciliation.",
+        "reason": "public-search-index.json was not returned by the GitHub file reader; all 12 available bulk-indexed files (1,328 records), recent batches 163–164 (29 records), and the 1,022-record review queue were checked.",
+        "canonical_bulk_files_checked": 12,
+        "canonical_bulk_records_checked": 1328,
+        "canonical_bulk_matches": 0,
         "recent_manual_batch_files_checked": 2,
         "recent_manual_batch_range": "163–164",
         "recent_manual_batch_record_rows_checked": 29,
         "review_queue_records": 1022,
         "review_queue_matches": 0,
-        "exact_aid_queries": 13,
+        "exact_aid_queries": 14,
         "exact_aid_matches": []
       },
       "reconciliation_identity_integrity": {
@@ -4180,22 +4315,23 @@
         "status": "pending_reconciliation"
       },
       "language_distribution": {
-        "Hebrew": 8,
+        "Hebrew": 9,
         "Yiddish": 1,
         "Hebrew and Yiddish": 2,
         "English": 2
       },
       "reviewed_body_language_distribution": {
-        "Hebrew": 8,
+        "Hebrew": 9,
         "Yiddish": 1,
         "Hebrew and Yiddish": 2,
         "English": 2
       },
       "proposition_language_distribution": {
-        "Hebrew": 14
+        "Hebrew": 16
       },
       "source_type_distribution": {
-        "Hayom Yom": 13
+        "Hayom Yom": 13,
+        "Letters": 1
       },
       "quality_gate_followup": {
         "required": [
@@ -5022,5 +5158,5 @@
     "batch_file": "data/items/content-research-batch-165-2026-11-22.json"
   },
   "pending": true,
-  "last_run_note": "Batch 165 added 13 dated-entry identities (11 original-language bodies and two non-independent English translations), 14 non-verbatim source-grounded propositions; no Verified promotions. Full canonical reconciliation pending."
+  "last_run_note": "Batch 165: 11 original-language Hayom Yom entries, two English free translations, and one published Hebrew letter body for AID 4666220 inspected. Two daily-entry originals and the AID page shell were blocked; the letter body was found in an alternate public PDF. No crawler retry, no access bypass, no Verified promotion. Reconciliation and content readiness pending."
 }
