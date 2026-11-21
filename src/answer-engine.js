@@ -2162,7 +2162,42 @@ function buildHayomYomPrayerVitalitySynthesis(selected){
  return{kind:'cross_family_research_synthesis',topic:'hayom_yom_prayer_vitality_community_practice',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי',text:claims.map(c=>c.text).join(' ')+' ההשוואה מחברת חמישה ערכים מתוארכים נפרדים; אין לייחס את הסינתזה לדובר אחד או להציג אותה כהוראה אחידה.',source_numbers:numbers,evidence_family_ids:families,independent_evidence_family_ids:independent,basis:used,claims,method:'Claim-level comparison across five distinct dated Hayom Yom entry Evidence Families. Each claim has one inspected proposition and its own original-language body locator; the entries are not independent archival corroboration of the reported practices or histories.',evidence_quality:'five_distinct_dated_hayom_yom_entries_not_archival_corroboration',limits:['הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס של מסקנה לרבי.','חמשת הערכים הם פריטים נפרדים; הייחוסים הפנימיים נשמרים לכל ערך ואינם מתמזגים לדובר אחד.','ההשוואה אינה אימות ארכיוני עצמאי של המנהגים או המסורות המתוארים.','ההקשר חלקי; לא נבדקו כתבי יד, אוטוגרפים, מהדורות ביקורתיות או עדים מקבילים.','תרגום או הצגה מקבילה אינם עד עצמאי נוסף.']};
 }
 
-export function buildAnswerModel(index,q,{mode='regular'}={}){
+
+function hayomYomAdarICommunityPredicate(topic,p){
+ const t=norm(p);
+ if(topic==='inner_work')return t.includes('עבודת האמת')&&t.includes('פעולות יומיומיות')&&t.includes('כוונה אמיתית');
+ if(topic==='ahavat_yisrael')return t.includes('אהבת ישראל')&&t.includes('מעולם לא ראה');
+ if(topic==='individual_mission')return t.includes('כל יהודי כשליח')&&t.includes('מצוות מעשיות')&&t.includes('מידות טובות');
+ if(topic==='general_prayer_intention')return t.includes('כוונה כללית')&&t.includes('כוונות הפרטיות')&&t.includes('תפילה');
+ if(topic==='supporting_religion')return t.includes('מתן אדם')&&t.includes('החזקת הדת');
+ return false;
+}
+function buildHayomYomAdarICommunitySynthesis(selected){
+ const specs=[
+  {topic:'inner_work',predicate:p=>hayomYomAdarICommunityPredicate('inner_work',p),text:'ערך ב׳ אדר א׳ מציג עבודת אמת כבדיקה פנימית מתמשכת ומראה שגם פעולות יומיומיות קטנות בכוונה עשויות להיחשב עבודה; לצד זאת הוא מציין את הצורך ביגיעה בלימוד ובהבנה.'},
+  {topic:'ahavat_yisrael',predicate:p=>hayomYomAdarICommunityPredicate('ahavat_yisrael',p),text:'ערך ג׳ אדר א׳ מביא בשם אדמו״ר הזקן אהבת ישראל גם כלפי יהודי שלא פגש, וביתר שאת כלפי חבר בקהילתו.'},
+  {topic:'individual_mission',predicate:p=>hayomYomAdarICommunityPredicate('individual_mission',p),text:'ערך ז׳ אדר א׳ מתאר כל יהודי כשליח שנדרש להאיר את העולם בתורה ובעבודה באמצעות מצוות מעשיות והטמעת מידות טובות.'},
+  {topic:'general_prayer_intention',predicate:p=>hayomYomAdarICommunityPredicate('general_prayer_intention',p),text:'ערך י״א אדר א׳ מציג כוונה כללית בתפילה כאפשרות למי שאינו מסוגל לזכור את הכוונות הפרטיות; זהו תיאור הערך ולא פסיקה עצמאית.'},
+  {topic:'supporting_religion',predicate:p=>hayomYomAdarICommunityPredicate('supporting_religion',p),text:'ערך י״ב אדר א׳ מפרש את ״מתן אדם״ כהקדשת האדם עצמו לפעילות התומכת בהחזקת הדת, ומתאר את הרחבת האפשרויות כתוצאה המובאת בפסוק ובפירוש הערך.'}
+ ];
+ const basis=[];
+ selected.forEach((e,i)=>{
+  const propositions=arr(e._supporting_propositions).filter(p=>specs.some(s=>s.predicate(p))).map(p=>{
+   const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());
+   return{text:String(p),source_locator:arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null};
+  });
+  if(propositions.length)basis.push({source_number:i+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,language:e.language||null,context_status:e.context_status||'partial',independent_witness:e.independent_witness!==false,provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,propositions});
+ });
+ const claims=specs.map(s=>{
+  const rows=basis.filter(b=>b.propositions.some(p=>s.predicate(p.text)));
+  return{topic:s.topic,text:s.text,source_numbers:[...new Set(rows.map(b=>b.source_number))],evidence_family_ids:[...new Set(rows.map(b=>b.evidence_family_id).filter(Boolean))],source_locators:rows.flatMap(b=>b.propositions.filter(p=>s.predicate(p.text)).map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator))};
+ });
+ const numbers=[...new Set(claims.flatMap(c=>c.source_numbers))],used=basis.filter(b=>numbers.includes(b.source_number)),families=[...new Set(used.map(b=>b.evidence_family_id).filter(Boolean))],independent=[...new Set(used.filter(b=>b.independent_witness).map(b=>b.evidence_family_id).filter(Boolean))];
+ if(claims.some(c=>c.source_numbers.length!==1||c.source_locators.length!==1)||families.length!==5||independent.length!==5)return null;
+ return{kind:'cross_family_research_synthesis',topic:'hayom_yom_adar_i_inner_work_community_and_prayer',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס מילולי לרבי',text:claims.map(c=>c.text).join(' ')+' ההשוואה מחברת חמישה ערכים מתוארכים נפרדים; אין לייחס את הסינתזה לדובר אחד או להציג אותה כהוראה אחידה.',source_numbers:numbers,evidence_family_ids:families,independent_evidence_family_ids:independent,basis,claims,evidence_quality:'five_distinct_dated_hayom_yom_entries_not_archival_corroboration',method:'Claim-level comparison across five distinct dated Hayom Yom entry Evidence Families. Each claim has one inspected proposition and its own original-language body locator; the entries are not independent archival corroboration.',limits:['הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס של מסקנה לרבי.','חמשת הערכים הם פריטים מתוארכים נפרדים; הייחוסים הפנימיים נשמרים לכל ערך ואין למזג אותם לדובר אחד.','ההשוואה אינה אימות ארכיוני עצמאי של המסורות, המנהגים או ההסברים המתוארים.','ההקשר חלקי; לא נבדקו כתבי יד, אוטוגרפים, מהדורות ביקורתיות או עדים מקבילים.','תיאור מנהג אינו פסיקה הלכתית כללית; תרגום או הצגה מקבילה אינם עד עצמאי נוסף.']};
+}
+
+export function buildAnswerModel(index,q,{mode='regular'}={})
  const answerMode=mode==='researcher'?'researcher':'regular',presentation=presentationFor(answerMode),budget=MODE_BUDGETS[answerMode];
  const{understanding,hits}=retrieveEvidence(index,q,{maxPerFamily:answerMode==='researcher'?4:1,limit:36});
  const educationGovernanceQuestion=isEducationGovernanceQuestion(understanding.query);
@@ -2181,6 +2216,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const hayomYomMindHeartQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('מוח ולב בשיטת חב״ד');
  const hayomYomPrayerVitalityQuestion=understanding.query.includes('היום יום')&&understanding.query.includes('תפילה')&&understanding.query.includes('חיות')&&(understanding.query.includes('מוח ולב')||understanding.query.includes('עבודה מעשית'));
  const hayomYomBodyRefinementQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('היום יום: חינוך, אהבת חסידים, זיכוך הגוף ותפקיד הנשמה');
+ const hayomYomAdarICommunityQuestion=understanding.query.includes('היום יום')&&understanding.query.includes('אדר א')&&(understanding.query.includes('עבודה פנימית')||understanding.query.includes('אהבת ישראל')||understanding.query.includes('שליחות')||understanding.query.includes('תפילה')||understanding.query.includes('צדקה'));
   const hayomYomChanukahShabbatQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('מנהגי חנוכה ושבת מברכים בערכי היום יום');
  const hayomYomChanukahOverviewQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('ערכי היום יום על חנוכה');
  const northAfricaEducationQuestion=isNorthAfricaEducationQuestion(understanding.query);
@@ -2196,9 +2232,9 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const chassidicPracticeQuestion=isChassidicPracticeQuestion(understanding.query);
  const institutionalEducationQuestion=isInstitutionalEducationQuestion(understanding.query);
  const practicalGuidanceLettersQuestion=isPracticalGuidanceLettersQuestion(understanding.query);
- if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusPeaceMissionQuestion||yechidusUnityMissionQuestion||jaffeMemoirSynthesisQuestion||yudTesKislevLettersQuestion||chassidicPracticeQuestion||institutionalEducationQuestion||practicalGuidanceLettersQuestion||livingTorahIntegrityQuestion||hayomYomPrayerVitalityQuestion||hayomYomBodyRefinementQuestion)understanding.intent='guidance';
- else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||livingTorahIntegrityQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||hayomYomChanukahShabbatQuestion||hayomYomChanukahOverviewQuestion||northAfricaEducationQuestion||hayomYomPrayerVitalityQuestion||hayomYomBodyRefinementQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
- if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!jaffeMemoirSynthesisQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!institutionalEducationQuestion&&!practicalGuidanceLettersQuestion&&!livingTorahIntegrityQuestion&&!hayomYomChanukahOverviewQuestion&&!hayomYomPrayerVitalityQuestion&&!hayomYomBodyRefinementQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
+ if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusPeaceMissionQuestion||yechidusUnityMissionQuestion||jaffeMemoirSynthesisQuestion||yudTesKislevLettersQuestion||chassidicPracticeQuestion||institutionalEducationQuestion||practicalGuidanceLettersQuestion||livingTorahIntegrityQuestion||hayomYomPrayerVitalityQuestion||hayomYomBodyRefinementQuestion||hayomYomAdarICommunityQuestion)understanding.intent='guidance';
+ else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||livingTorahIntegrityQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||hayomYomChanukahShabbatQuestion||hayomYomChanukahOverviewQuestion||northAfricaEducationQuestion||hayomYomPrayerVitalityQuestion||hayomYomBodyRefinementQuestion||hayomYomAdarICommunityQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
+ if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!jaffeMemoirSynthesisQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!institutionalEducationQuestion&&!practicalGuidanceLettersQuestion&&!livingTorahIntegrityQuestion&&!hayomYomChanukahOverviewQuestion&&!hayomYomPrayerVitalityQuestion&&!hayomYomBodyRefinementQuestion&&!hayomYomAdarICommunityQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&(educationGovernanceQuestion?educationGovernanceFamilies.size:families.size)<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const shmittaFruitReferralQuestion=understanding.query.includes('פירות שביעית')&&understanding.query.includes('נכרים')&&understanding.query.includes('גדולי ההוראה');
@@ -2325,6 +2361,16 @@ else if(hayomYomPrayerVitalityQuestion){
   return e&&p?{...e,_supporting_propositions:[p]}:null;
  });
  if(chosen.some(e=>!e)||new Set(chosen.map(familyKey)).size!==5)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_prayer_vitality_families',claims:[],sources:chosen.filter(Boolean),answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות ערכי יום יום נפרדות עם פרופוזיציות שנבדקו ומיקומי גוף: תהילים בציבור, מודה אני, חיבור שכל והתפעלות, מחשבה על מקושרים והתלהבות בתורה ובתפילה.']};
+ answerEvidence=chosen;
+}
+else if(hayomYomAdarICommunityQuestion){
+ const specs=[{aid:'528619',topic:'inner_work'},{aid:'528620',topic:'ahavat_yisrael'},{aid:'528624',topic:'individual_mission'},{aid:'528628',topic:'general_prayer_intention'},{aid:'528629',topic:'supporting_religion'}];
+ const chosen=specs.map(spec=>{
+  const e=index.find(x=>String(sourceAIDValue(x))===spec.aid&&x.has_content_evidence===true&&x.source_class==='Hayom Yom'&&x.independent_witness===true&&!x.translation_of_evidence_family_id&&x.proposition_origin==='source_grounded_paraphrase'&&x.proposition_verbatim===false&&x.proposition_verification==='source_text_inspected');
+  const p=e&&arr(e.response_propositions).find(x=>hayomYomAdarICommunityPredicate(spec.topic,x));
+  return e&&p?{...e,_supporting_propositions:[p]}:null;
+ });
+ if(chosen.some(e=>!e)||new Set(chosen.map(familyKey)).size!==5)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_adar_i_community_families',claims:[],sources:chosen.filter(Boolean),answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות של ערכי יום יום נפרדים באדר א׳ עם פרופוזיציות שנבדקו ומיקומי גוף על עבודה פנימית, אהבת ישראל, שליחות, תפילה ותמיכה בהחזקת הדת.']};
  answerEvidence=chosen;
 }
 else if(hayomYomBodyRefinementQuestion){
@@ -2536,6 +2582,13 @@ else if(educationGovernanceQuestion){
   claims=selected.map((e,i)=>locatedClaim(e,i,topics[i],arr(e._supporting_propositions)[0]));
   forcedSynthesis=buildHayomYomBodyRefinementSynthesis(selected);
   if(!forcedSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_body_refinement_claim_locators',claims:[],sources:selected,answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות ערכי יום יום נפרדות עם פרופוזיציות ומיקומי גוף נפרדים.']};
+ }
+ if(hayomYomAdarICommunityQuestion){
+  selected=answerEvidence.slice(0,5);
+  const topics=['inner_work','ahavat_yisrael','individual_mission','general_prayer_intention','supporting_religion'];
+  claims=selected.map((e,i)=>locatedClaim(e,i,topics[i],arr(e._supporting_propositions)[0]));
+  forcedSynthesis=buildHayomYomAdarICommunitySynthesis(selected);
+  if(!forcedSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_adar_i_claim_locators',claims:[],sources:selected,answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות ערכי יום יום נפרדות עם מיקומי גוף נפרדים לכל טענה.']};
  }
  if(dailyStudyPrayerQuestion){
   const signatures=new Set(selected.map(dailyRoutineSignature).filter(s=>s!=='other'));
