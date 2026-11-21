@@ -1500,3 +1500,11 @@ The same run also showed that batch089's historical projection (900 / 852 / 2,83
 - Added a five-family question-specific retrieval pattern for daily work, Ahavat Yisrael, education and prayer. Each claim is tied to one inspected proposition and one body locator; the deep researcher test requires a five-family evidence map and explicit context limits. The synthesis is system-authored, not a Rebbe quotation or unified directive.
 - Pre-addition deduplication was bounded: 13 exact AID searches, seven recent manual batch files 157–163 (70 records), and the 1,022-record review queue showed no match for the 13 new AIDs. The large public index was not returned by the file reader, so no full pre-addition index scan is claimed. Full canonical post-addition reconciliation is pending.
 - All 13 new identities and both enriched identities remain Parsed; zero Verified promotions. No full text was copied. The batch-boundary delta (+13 Evidence Families, +17 propositions, +0 Verified) is an expected contribution only, not an after metric.
+
+
+### 2026-11-21 — Cross-batch deduplication correction for Batch 162
+
+- AID 5920875 (English Letter No. 92) was already a canonical source in `data/items/content-research-batch-107-2026-11-16.json`, with the same publisher URL and Evidence Family `letter-5703-10-menachem-av-92-katz-aid5920875`. The bounded Batch 162 pre-addition check did not cover batch 107; its earlier claim that all 16 candidates were new was therefore too broad.
+- Removed AID 5920875 from Batch 162's `records` and `new_aids`. Its public English body was re-opened, but the two candidate paraphrases overlapped the two existing canonical propositions, so the review is recorded as one existing-identity recheck with zero propositions added. The translation remains non-independent.
+- Corrected Batch 162 to 15 new identities, 17 new propositions, one existing-identity recheck, zero new Verified sources, and a +15 expected family contribution. These are batch-boundary contributions only; they are not measured after-metrics.
+- Updated `test_content_readiness.mjs` to require the AID 5920875 canonical mapping to batch 107 and to preserve the fact that full reconciliation is pending. The pre-addition full-index scan remains explicitly unavailable; no complete scan is claimed.
