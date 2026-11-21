@@ -1490,3 +1490,11 @@ The same run also showed that batch089's historical projection (900 / 852 / 2,83
 - Pre-addition deduplication was bounded: exact AID searches, manual batches 150–162 (121 record rows), and the 1,022-record review queue were checked. The large public-search-index file was not returned by the GitHub file reader; the full canonical post-addition scan remains the responsibility of reconciliation. AID 528608 and 528611 remain blocked as Hebrew originals; the accessible English translations are recorded only as non-independent presentations.
 - Added a bounded five-family retrieval topic `hayom_yom_education_love_body_refinement_and_soul_work` with five claim-local locators, separate internal attribution boundaries, and deep researcher evidence mapping. The synthesis is explicitly system-authored, not a Rebbe quotation or unified directive.
 - Last measured pre-reconciliation baseline from project-state.json: 977 answer-eligible unique sources, 870 content-verified unique sources, and 2,950 answer-eligible propositions. These are not after metrics for batches 162–163. Reconciliation and `test_content_readiness.mjs` must establish the measured after state; no new source is promoted to Verified.
+
+
+## 2026-11-21 — Reconciliation cursor repair after quality-gate failure
+
+- The first Answer quality gate for the batch 163 merge completed all structural, retrieval, synthesis, citation, evidence-contract, and workflow-write-safety steps successfully.
+- `test_content_readiness.mjs` then failed at the recovery-cursor assertion: `acquisition.latest.json` correctly identified batch 163, while `project-state.json` still had `current_batch` and `last_batch_summary` set to batch 162. The failure was a stale project-state cursor, not a content proposition or citation failure.
+- This follow-up aligns `project-state.json` with batch 163 before rerunning the canonical reconciliation. It does not alter measured counts, promote any source, or invent an after metric.
+- The batch 163 AID 528612 paraphrase now preserves the source's wording "רוח החיים" more closely; source-body web references were refreshed to the direct body-open results. AID 528545's additional inspection is also recorded in its provenance verification status.
