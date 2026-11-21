@@ -5238,7 +5238,7 @@ for(const mode of ['regular','researcher']){
  assert(m.answerable,mode+': thirteen distinct correspondence families must support bounded practical-guidance synthesis');
  assert.equal(m.synthesis?.topic,'cross_family_practical_guidance_letters');assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
  assert.equal(m.sources.length,13);assert.deepEqual(m.sources.map(e=>String(e.aid)),batch153SynthesisAids);
- assert.equal(new Set(m.sources.map(e=>e.evidence_family_id).size,13);
+ assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,13);
  assert.equal(m.synthesis.claims.length,13);assert.equal(m.synthesis.evidence_family_ids.length,13);assert.equal(m.synthesis.independent_evidence_family_ids.length,10);
  assert(m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1));
  assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1));
