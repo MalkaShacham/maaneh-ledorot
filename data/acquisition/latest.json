@@ -8232,10 +8232,36 @@
     "content_verified_unique_sources": 870,
     "answer_eligible_propositions": 2950
   },
-  "last_run_note": "Batch 159: nine original-language Hayom Yom item bodies inspected (six Hebrew, two Yiddish, one bilingual); nine new canonical identities including AID 528553 promoted from staging after pre-addition dedup checks; fourteen bounded non-verbatim propositions. AID 4666220 returned Internal Error; no crawler retry or access bypass. AID 528556 was excluded as a navigation/index page. Full canonical reconciliation and measured metrics remain pending.",
+  "last_run_note": "Batch 159: nine original-language Hayom Yom item bodies inspected (six Hebrew, two Yiddish, one bilingual); nine new canonical identities including AID 528553 promoted from staging after pre-addition dedup checks; fourteen bounded non-verbatim propositions. AID 4666220 returned Internal Error; no crawler retry or access bypass. AID 528556 was excluded as a navigation/index page. Full canonical reconciliation and measured metrics remain pending. First CI attempt on commit 43c884d failed in reconcile_metrics.py because the projectionless branch left a local variance undefined in audit-history serialization. Fixed in follow-up code commit; no post-batch metrics were published. Awaiting retry.",
   "next_action": "Run the full contiguous reconciliation for batches 153–159; verify identity collisions, measured answer-readiness metrics, test_content_readiness.mjs and the five-family deep researcher synthesis; then inspect Actions and Pages.",
   "current_batch_file": "data/items/content-research-batch-159-2026-11-21.json",
   "pending": true,
   "last_reviewed_batch": "159",
-  "manual_web_review_current_metrics_note": "These are the last committed project-state counts (updated 2026-11-21T14:16:47+02:00), not current post-batch metrics. The public-metrics snapshot from 2026-11-15 differs by eight Verified sources. Batches 153–159 await full reconciliation; no projection is presented as an actual result."
+  "manual_web_review_current_metrics_note": "These are the last committed project-state counts (updated 2026-11-21T14:16:47+02:00), not current post-batch metrics. The public-metrics snapshot from 2026-11-15 differs by eight Verified sources. Batches 153–159 await full reconciliation; no projection is presented as an actual result.",
+  "workflow_followup": {
+    "commit": "43c884dfcb99be7bf9d144d0b79a9984451fe9e3",
+    "observed_at": "2026-11-21T19:08:00+02:00",
+    "runs": {
+      "answer_quality_gate": {
+        "run_id": 44928259771,
+        "conclusion": "failure"
+      },
+      "hourly_corpus_maintenance": {
+        "run_id": 44928259765,
+        "conclusion": "failure"
+      },
+      "bulk_ingest_reconcile": {
+        "run_id": 44928259739,
+        "status": "in_progress"
+      },
+      "pages": {
+        "run_id": 44928259312,
+        "status": "in_progress"
+      }
+    },
+    "failure": "NameError: variance is not defined in scripts/reconcile_metrics.py after adding projectionless-batch handling.",
+    "fix": "Serialize batch_data.reconciliation_variance and compute state-level measured before/after from the previous batch snapshot; do not manufacture zero variance.",
+    "metrics_after": null,
+    "publication": "Pages build still running; no independent content publication confirmation yet."
+  }
 }

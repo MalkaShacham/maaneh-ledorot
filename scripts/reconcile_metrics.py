@@ -442,8 +442,8 @@ for selected_index, batch_info in enumerate(selected_batches):
         "non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),
         "same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),
         "canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),
-        "metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"items":audit}
-    reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":variance,"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit),"batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),"existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),"answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),"selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")} ),"non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),"same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),"canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),"items":audit})
+        "metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":batch_data.get("reconciliation_variance"),"reconciliation_status":batch_data["reconciliation_status"],"items":audit}
+    reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":batch_data.get("reconciliation_variance"),"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit),"batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),"existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),"answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),"selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")} ),"non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),"same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),"canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),"items":audit})
     summary=state.setdefault("development_recovery",{}).get("last_batch_summary")
     if isinstance(summary,dict) and str(summary.get("batch_id"))==str(batch_data.get("batch_id")):
         readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
@@ -488,16 +488,31 @@ state["current_counts"].update({k:out[k] for k in
 if isinstance(state.get("metrics_integrity"),dict):
     integrity=state["metrics_integrity"]
     readiness=integrity.setdefault("answer_readiness",{})
-    before=readiness.get("before") or {}
     actual={k:out[k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
     readiness["actual_after"]=actual
-    actual_before=readiness.get("actual_before") or before
-    readiness["actual_delta"]={k:actual[k]-int(actual_before.get(k,actual[k])) for k in actual}
-    expected=readiness.get("expected_after") or {}
-    readiness["reconciliation_variance"]={k:actual[k]-int(expected.get(k,actual[k])) for k in actual}
     if selected_batches:
-        batch_integrity_ok=all(x["data"].get("reconciliation_status")=="reconciled" for x in selected_batches)
-        readiness["reconciliation_status"]="reconciled" if all(v==0 for v in readiness["reconciliation_variance"].values()) and batch_integrity_ok else "reconciled_with_variance"
+        latest_batch_data=selected_batches[-1]["data"]
+        actual_before=latest_batch_data.get("metrics_actual_before")
+        readiness["actual_before"]=actual_before
+        readiness["actual_delta"]=latest_batch_data.get("metrics_delta_actual")
+        if isinstance(actual_before,dict):
+            readiness["before"]=actual_before
+            integrity["before"]=actual_before
+        batch_integrity_ok=all(x["data"].get("reconciliation_identity_integrity",{}).get("passed",False) for x in selected_batches)
+        expected=readiness.get("expected_after")
+        if isinstance(expected,dict) and expected:
+            variance={k:actual[k]-int(expected.get(k,actual[k])) for k in actual}
+            readiness["reconciliation_variance"]=variance
+            readiness["reconciliation_comparison_status"]="compared_to_projection"
+            readiness["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) and batch_integrity_ok else "reconciled_with_variance"
+        else:
+            readiness["reconciliation_variance"]=None
+            readiness["reconciliation_comparison_status"]="not_applicable_no_projection"
+            readiness["reconciliation_status"]="reconciled" if batch_integrity_ok else "reconciled_with_variance"
+        integrity["actual_after"]=actual
+        integrity["expected_after"]=readiness.get("expected_after")
+        integrity["reconciliation_variance"]=readiness.get("reconciliation_variance")
+        integrity["reconciliation_status"]=readiness["reconciliation_status"]
         integrity["status"]="reconciled_pending_commit" if readiness["reconciliation_status"]=="reconciled" else "reconciled_with_variance_pending_commit"
         integrity["last_reconciled_at"]=today
 

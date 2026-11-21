@@ -1797,7 +1797,7 @@
         ]
       }
     },
-    "last_run_note": "Batch 159: nine original-language Hayom Yom item bodies inspected (six Hebrew, two Yiddish, one bilingual); nine new canonical identities including AID 528553 promoted from staging after pre-addition dedup checks; fourteen bounded non-verbatim propositions. AID 4666220 returned Internal Error; no crawler retry or access bypass. AID 528556 was excluded as a navigation/index page. Full canonical reconciliation and measured metrics remain pending.",
+    "last_run_note": "Batch159 committed in 43c884df. Initial Answer quality and Hourly Actions failed at reconciliation because a projectionless batch path left an undefined local variance; follow-up fix committed separately. No after metrics or new Verified promotion are published yet.",
     "last_batch_blocked_count": 1,
     "last_batch_blocked_reason": "AID 4666220 returned Internal Error through the public reader; no crawler retry or access-control bypass. Nine alternate item-level Hayom Yom bodies were inspected in the same run.",
     "next_work": "Reconcile pending batches 153–159 contiguously with measured before/after metrics; do not treat projections as actual. Run test_content_readiness.mjs and verify the five-family Chanukah synthesis in deep researcher mode, then inspect Actions and Pages.",
@@ -3329,17 +3329,11 @@
     },
     "last_reviewed_batch": "159",
     "last_failed_reconciliation_run": {
-      "run_id": 44872588578,
-      "job_id": 136750197802,
-      "head_sha": "5d15f8cfc42ed36e273a7a85bdb95134ff5d9603",
-      "measured_workspace_after_batch154": {
-        "answer_eligible_unique_sources": 1550,
-        "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3918
-      },
-      "workflow_conclusion": "failure",
-      "failing_assertion": "batch110 partial preflight must remain full_index_scan_available=false and pending",
-      "note": "The reconciliation step completed, but the workflow did not commit generated metrics because test_content_readiness.mjs failed on the historical batch110 preflight assertion."
+      "run_id": 44928259771,
+      "head_sha": "43c884dfcb99be7bf9d144d0b79a9984451fe9e3",
+      "failure": "NameError: variance is not defined in scripts/reconcile_metrics.py after projectionless batch handling",
+      "step": "Generate evidence index for this exact source revision",
+      "follow_up_fix": "serialize batch_data.reconciliation_variance and avoid zero variance when no projection"
     },
     "reconciliation_exclusions": [
       {
@@ -3350,7 +3344,7 @@
     ]
   },
   "current_batch": "159",
-  "updated_at": "2026-11-21T18:52:02+02:00",
+  "updated_at": "2026-11-21T19:08:00+02:00",
   "current_batch_file": "data/items/content-research-batch-159-2026-11-21.json",
   "status": "pending_reconciliation",
   "last_manual_web_review": {
@@ -4044,5 +4038,6 @@
       ]
     }
   },
-  "pending": true
+  "pending": true,
+  "last_run_note": "Batch159 committed in 43c884df. Initial Answer quality and Hourly Actions failed at reconciliation because a projectionless batch path left an undefined local variance; follow-up fix committed separately. No after metrics or new Verified promotion are published yet."
 }

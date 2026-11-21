@@ -1416,3 +1416,12 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - מדדי ה-project-state האחרונים שנשמרו לפני האצווה הם 977 answer-eligible / 870 content-verified / 2,950 propositions (snapshot מ-2026-11-21 14:16). public-metrics.json עדיין מציג snapshot מ-2026-11-15 עם 977 / 878 / 2,950. אלה נתוני עבר, לא מדדי אחרי. המדידה האחרונה ב-CI לאחר batch154 הייתה 1,550 / 854 / 3,918 אך לא committed. אין להציג את תחזיות batches 153–158 כמדידה.
 - Full reconciliation של batches 153–159, test_content_readiness.mjs, Actions ופרסום Pages עדיין ממתינים להרצה שתופעל בעקבות ה-commit. אין לטעון Pass או פרסום תוכן חדש עד שהריצות יסתיימו.
 
+
+
+## 2026-11-21 — Reconciliation runner correction after Batch 159 commit
+
+- Commit 43c884df triggered Answer quality gate, Hourly corpus maintenance, Bulk ingest/reconcile and Pages.
+- The first two jobs reached the reconciliation step and failed with a NameError: the new projectionless-batch path intentionally left variance undefined, but the audit-history serializer still referenced the local variable. The source-index generation and subsequent content tests were therefore skipped; the hourly job could not publish answer metrics because the reconciliation script stopped before producing them.
+- Corrected the audit-history serialization to read batch_data.reconciliation_variance, which is either a measured projection comparison or null when no forecast exists.
+- Corrected state-level reconciliation to use the latest batch's measured metrics_actual_before, metrics_actual_after and metrics_delta_actual; when no expected projection exists, the comparison is explicitly not applicable rather than a fabricated zero variance. The first pending chain batch keeps metrics_actual_before=null because no measured pre-chain snapshot exists.
+- This is a code correction only; it does not change the source batch, promote any source to Verified, or alter the hourly schedule. The retry is pending the follow-up commit.
