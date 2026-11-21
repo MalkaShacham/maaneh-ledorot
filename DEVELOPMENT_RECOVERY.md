@@ -1427,3 +1427,16 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - This is a code correction only; it does not change the source batch, promote any source to Verified, or alter the hourly schedule. The retry is pending the follow-up commit.
 
 - Follow-up refinement: the prayer-order claim in the five-family Chanukah synthesis now cites both the Hallel proposition and the separate tefillin-before-Musaf/daily-lessons proposition from AID 528557. The synthesis therefore contains five claims with six claim-local body locators; regular mode exposes both source propositions and researcher mode maps both locators.
+
+
+## 2026-11-21 — Batch 160: י״ט–ז׳ טבת תש״ג, ערכי היום יום בעברית וביידיש
+
+- נפתחו ונבדקו 13 גופי ערכים מתוארכים ב-BeitChabad.com / Chabad.org: שישה בעברית, שלושה ביידיש וארבעה דו־לשוניים. נוספו 13 זהויות AID 528563–528575, כולן במשפחות Evidence נפרדות, ו-15 פרפרזות מחקריות לא־מילוליות עם locator נפרד לכל טענה.
+- נושאי האצווה כוללים חינוך לפירוש התפילה ובחינה חודשית, מטפורת האוויר הרוחני ותרגול אותיות תורה, מנהגי תפילה, מענה המיוחס לצמח צדק, אמונה ותמימות, סיפורים ומסורות, ליל ניטל, ומסורת לימוד יומי של פרשת השבוע עם רש״י.
+- בכל פריט נשמרו הייחוס וההקשר הפנימיים של הערך. אין לייחס כל אמירה ישירות לרבי, ואין לראות בערכים עדים ארכיוניים עצמאיים לאירועים או למסורות שהם מספרים. כל 13 הזהויות נשארו Parsed; לא נוסף Verified.
+- AID 4666220 החזיר Internal Error בכלי העיון. לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; באותה הפעלה נפתחו 13 גופי ערך חלופיים.
+- קדם-בדיקת הכפילויות בדקה את צילום האינדקס הציבורי מ-2026-11-15 (9,122 רשומות), את batches 137–159 (23 קבצים, 202 שורות רשומה לפי בדיקות batch159 והסריקה החוזרת 149–159), ואת 1,022 רשומות תור הבדיקה. לא נמצאה התאמה ל-AID 528563–528575. צילום האינדקס ישן; reconciliation חייב להשלים סריקה קנונית מלאה לאחר ההוספה.
+- נוסף claim map תחום של חמש טענות על אוריינות תפילה, סביבה רוחנית, אמונה ושכל, רושם מפגש ולימוד יומי. לכל טענה locator משלה; הסינתזה מסומנת system_synthesis_not_rebbe_quote. מצב researcher מוגדר deep ואמור להציג מפת ראיות ומפת מקור לכל טענה, בלי לספור תרגומים כעדים עצמאיים.
+- תיקון אחזור: בבדיקת CI זוהה שהשאלה על תוכן מכתב המזכירות ח׳שמה בכיסוי ראש לפני החתונה סווגה בטעות גם כ״השפעה עקיפה״ וגם כ״הכתבה מילה במילה״. נוספה הבחנה ייעודית לשידוך/לפני החתונה, תוך שמירת חסימת ייחוס ישיר לרבי כאשר השאלה שואלת מה כתב הרבי. נוסף גם נושא אחזור תחום לשלוש משפחות יום יום על פירוש התפילה, אווירה של תורה ומצוות ולימוד יומי עם רש״י.
+- מדדי before/after לא נכתבו כתחזית. המדידה הקודמת שנשמרה בפרויקט (977 / 870 / 2,950) היא צילום מצב קודם, לא מדד אחרי האצווה. batches 150–160 יימדדו בשרשרת reconciliation רציפה; לא תיווצר שונות אפסית מלאכותית בהיעדר projection.
+- נדרש להריץ test_content_readiness.mjs, בדיקות integrity, reconciliation, Actions ו-GitHub Pages. אין לטעון Pass או פרסום תוכן חדש עד לסיום הריצות ולבדיקת מדדים בפועל.

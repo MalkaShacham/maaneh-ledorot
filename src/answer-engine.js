@@ -121,7 +121,9 @@ const TOPICS={
  'קדימות מקווה לבית כנסת כפר חבד':['מה קודם בכפר חב״ד בית הטבילה או בית הכנסת','בית הטבילה או בית הכנסת','להקדים בית טבילה לבית כנסת בכפר חב״ד','קדימות מקווה לבית כנסת בכפר חב״ד','בית הטבילה ובית הכנסת בכפר חב״ד','קדימות על פני בית הכנסת','kfar chabad mikveh priority synagogue'],
  'תעניות פרטיות':['תעניות שאדם מוסיף מדעתו','תעניות פרטיות','הוספת תעניות','private fasts','self-imposed fasts'],
  'ריכוז בתפילה וקביעות תורה':['מה הקשר בין קושי להתרכז בתפילה לבין קביעות בלימוד תורה','קושי להתרכז בתפילה','קשה להתרכז בתפילה','ריכוז בתפילה וקביעות תורה','ריכוז בתפילה','קביעות בלימוד תורה','קביעות בלימוד תורה ושמירת מצוות','prayer concentration fixed torah study'],
- 'חתימת מזכירות והכתבה':['מכתב שנחתם בידי המזכירות','חתימת המזכירות','נחתם בידי המזכירות','הכתבה מילה במילה','secretariat signature word for word dictation'],
+ 'כיסוי ראש בהקשר של שידוך והכנה לנישואין':['כיסוי הראש לפני החתונה','כיסוי ראש לפני החתונה','כיסוי ראש בהקשר של שידוך','כיסוי ראש בשידוך','head covering before marriage'],
+  'היום יום: חינוך, אווירה רוחנית וקביעות לימוד':['מה מתועד בערכי היום יום על חינוך, אווירה של תורה ומצוות וקביעות בלימוד','פירוש מילות התפילה למלמדים','אוויר של תורה ומצוות','טהרת האוויר','לימוד יומי של פרשת השבוע עם רש״י','Hayom Yom education spiritual atmosphere daily Chumash Rashi'],
+  'חתימת מזכירות והכתבה':['מכתב שנחתם בידי המזכירות','חתימת המזכירות','נחתם בידי המזכירות','הכתבה מילה במילה','secretariat signature word for word dictation'],
  'הידוק תפילין מול יישור בתים':['מה קודם בתפילין של ראש הידוק במקום או יישור הבתים','הידוק תפילין או יישור הבתים','הידוק תפילין של ראש','אצבעים על אצבעים','יישור הבתים בתפילין','tefillin tightness box alignment'],
  'השפעה על חבר שהתרחק':['חבר ילדות שהתרחק','להשפיע על חבר שהתרחק','חבר שהתרחק מהסביבה החרדית','התייעצות עם אנשים מקומיים','help childhood friend return judaism'],
  'מחנה קיץ ללא לימודי חול':['למה מחנה קיץ מתאים במיוחד לחינוך כשאין לימודי חול','מחנה קיץ ללא לימודי חול','למה מחנה קיץ מתאים לחינוך','מחנה קיץ יראת שמים','לימודי החול אינם מסיחים','summer camp without secular studies'],
@@ -446,6 +448,8 @@ export function understandQuestion(q){
  if(topics.includes('מסחר ולימוד יום שלם'))topics=topics.filter(t=>t!=='פרנסה');
  if(topics.includes('שותפות והרחבת עסק'))topics=topics.filter(t=>t!=='פרנסה');
  if(topics.includes('חיפוש שידוך בדרכי תורה'))topics=topics.filter(t=>t!=='נישואין');
+  if(topics.includes('כיסוי ראש בהקשר של שידוך והכנה לנישואין')){topics=topics.filter(t=>!['כיסוי ראש והשפעה עקיפה','נישואין'].includes(t));if(!containsTerm(query,'הכתבה')&&!containsTerm(query,'מילה במילה'))topics=topics.filter(t=>t!=='חתימת מזכירות והכתבה');}
+  if(topics.includes('היום יום: חינוך, אווירה רוחנית וקביעות לימוד'))topics=topics.filter(t=>t!=='חינוך');
  if(topics.includes('תורה ופרנסה במשק חקלאי'))topics=topics.filter(t=>t!=='פרנסה');
  if(topics.includes('לימוד בישיבה ופרנסה בעתיד'))topics=topics.filter(t=>t!=='פרנסה');
  if(topics.includes('שאלות הלכתיות והפניה לסמכות מקומית'))topics=topics.filter(t=>!['מזוזה','לימוד הלכה'].includes(t));
@@ -523,6 +527,7 @@ function evidenceText(e){return norm([text(e.response_propositions),text(e.quest
 function isYiddishHayomYomQuestion(query){const q=norm(query);return q.includes('היום יום')&&q.includes('יידיש')&&q.includes('אמת')&&q.includes('תנועה');}
 function supportsYiddishHayomYomProposition(proposition){const t=norm(proposition);const truth=/(?:אמת|האמת|truth)/.test(t),search=/(?:חיפוש|לחפש|לברר|בירור|search|seek)/.test(t),examination=/(?:בדיקה|בדיקת|לבחון|בחינה|בחינת|בדוק|examine|scrutin)/.test(t),movement=/(?:תנועה|תנועות|פעולה|פעולות|מעשה|מעשים|movement|action)/.test(t);return truth&&search&&examination&&movement;}
 function supportsYiddishHayomYomSource(e){return String(e?.language||'').toLowerCase()==='yiddish'&&String(e?.original_language||'').toLowerCase()==='yiddish'&&e?.has_content_evidence===true&&e?.independent_witness!==false&&!e?.translation_of_evidence_family_id&&arr(e?.response_propositions).some(supportsYiddishHayomYomProposition);}
+function supportsHayomYomEducationPracticeProposition(p){const t=norm(p);return (containsTerm(t,'פירוש')&&containsTerm(t,'תפילה')&&containsTerm(t,'מלמדים'))||(containsTerm(t,'תורה ומצוות')&&containsTerm(t,'אוויר'))||(containsTerm(t,'טהרת האוויר')&&containsTerm(t,'אותיות תורה'))||(containsTerm(t,'פרשת השבוע')&&containsTerm(t,'רש״י')&&containsTerm(t,'מדי יום'));}
 function supportsActiveFarbrengenProposition(p){const t=norm(p);return /(?:התוועד|farbrengen)/.test(t)&&/(?:פעיל|פעילות|ממשי|להמשיכ|כל השנה|active|throughout the year|practical)/.test(t);}
 function supportsStudyRoutineComparison(p){const t=norm(p);return ['זמני לימוד','קביעות עתים','ללמוד יחד עם אדם נוסף','לימוד יחד עם חבר','לימוד בצוותא'].some(term=>containsTerm(t,term));}
 function supportsFarmingStudyComparison(p){const t=norm(p);return ['חקלאים ובעלי משק','עבודה במשק חקלאי','לימוד תורה לצד עבודה במשק','לימוד תורה במשק','עוסק בחקלאות ולומד תורה'].some(term=>containsTerm(t,term));}
@@ -582,7 +587,22 @@ export function propositionRelevance(e,u){
   if(!yiddishOriginal||!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['the question requires an inspected proposition from a Yiddish original, not a title or translated presentation']};
   return{score:56,support:'direct_support',reasons:['Yiddish original has an inspected proposition on truth-seeking and examining each movement'],supportingProps};
  }
- if(u.topics.includes('מנהגי חנוכה ושבת מברכים בערכי היום יום')){
+ if(u.topics.includes('היום יום: חינוך, אווירה רוחנית וקביעות לימוד')){
+   const hayomYomSource=e?.type==='hayom_yom_entry'||norm(e?.source_class).includes('hayom yom');
+   const supportingProps=arr(e.response_propositions).filter(supportsHayomYomEducationPracticeProposition);
+   if(!hayomYomSource||!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['the comparison requires an inspected Hayom Yom proposition about prayer literacy, Torah-and-mitzvot atmosphere, or daily Chumash/Rashi study']};
+   return{score:42,support:'direct_support',reasons:['inspected Hayom Yom entry directly supports one of the requested education, spiritual-atmosphere, or daily-study claims'],supportingProps};
+  }
+  if(u.topics.includes('כיסוי ראש בהקשר של שידוך והכנה לנישואין')){
+   const props=arr(e.response_propositions);
+   const shidduchHead=props.filter(p=>containsTerm(p,'כיסוי ראש')&&containsTerm(p,'שידוך'));
+   const beforeWedding=props.filter(p=>containsTerm(p,'לפני החתונה')&&containsTerm(p,'הנהגה'));
+   if(!shidduchHead.length||!beforeWedding.length)return{score:0,support:'insufficient_specific_evidence',reasons:['the inspected source must contain both the shidduch/head-covering context and the before-wedding context']};
+   const supportingProps=[...new Set([...shidduchHead,...beforeWedding])];
+   const gate=intentEvidenceGate(e,u);if(gate)return{score:0,support:'insufficient_intent_evidence',reasons:[gate]};
+   return{score:38,support:'direct_support',reasons:['the inspected secretariat document directly addresses head covering in a shidduch and the before-wedding context; attribution remains at the document level'],supportingProps};
+  }
+  if(u.topics.includes('מנהגי חנוכה ושבת מברכים בערכי היום יום')){
   const hayomYomSource=e?.type==='hayom_yom_entry'||norm(e?.source_class).includes('hayom yom');
   const supportingProps=arr(e.response_propositions).filter(p=>supportsHayomYomChanukahLightingProposition(p)||supportsHayomYomShabbatMevorchimProposition(p));
   if(!hayomYomSource||!supportingProps.length)return{score:0,support:'insufficient_specific_evidence',reasons:['השליפה דורשת פרופוזיציה שנבדקה בגוף ערך יום יום על הדלקת נרות חנוכה או על סדר שבת מברכים.']};

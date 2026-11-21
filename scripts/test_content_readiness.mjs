@@ -5589,3 +5589,55 @@ for(const mode of ['regular','researcher']){
  }else assert.equal(m.research,undefined);
 }
 
+
+// Batch 160: thirteen original-language Hayom Yom bodies; fifteen bounded non-verbatim propositions.
+const batch160Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-160-2026-11-21.json',root),'utf8'));
+const batch160Aids=Array.from({length:13},(_,i)=>528563+i);
+assert.equal(batch160Data.batch_id,'160');assert.equal(batch160Data.records.length,13);assert.deepEqual(batch160Data.new_aids,batch160Aids);
+assert.equal(batch160Data.source_bodies_inspected,13);assert.equal(batch160Data.source_body_pages_opened,13);assert.equal(batch160Data.new_source_identities,13);
+assert.equal(batch160Data.new_response_propositions,15);assert.equal(batch160Data.total_new_paraphrase_entries,15);assert.equal(batch160Data.answer_eligible_source_families_added,13);
+assert.equal(batch160Data.independent_witnesses_added,13);assert.equal(batch160Data.content_verified_unique_sources_added,0);assert.equal(batch160Data.translations_counted_as_independent_witnesses,0);
+assert.deepEqual(batch160Data.blocked_candidates.map(x=>x.aid),[4666220]);assert.equal(batch160Data.fallback_source_attempted,true);
+assert.equal(batch160Data.crawler_retry,false);assert.equal(batch160Data.access_control_bypassed,false);assert.equal(batch160Data.full_text_copied,false);assert.equal(batch160Data.scan_only_verification_used,false);
+assert.deepEqual(batch160Data.language_distribution,{"Hebrew":6,"Yiddish":3,"Hebrew and Yiddish":4});
+assert.equal(batch160Data.records.reduce((n,r)=>n+r.response_propositions.length,0),15);
+assert.equal(new Set(batch160Data.records.map(r=>String(r.aid))).size,13);assert.equal(new Set(batch160Data.records.map(r=>r.evidence_family_id)).size,13);
+for(const r of batch160Data.records){
+ assert.equal(r.source_class,'Hayom Yom');assert.equal(r.type,'hayom_yom_entry');assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
+ assert.equal(r.response_propositions.length,r.response_proposition_locators.length);assert(r.response_proposition_locators.every(Boolean));
+ assert.equal(r.independent_witness,true);assert.equal(r.translation_of_evidence_family_id,null);
+ assert(['Hebrew','Yiddish','Hebrew and Yiddish'].includes(r.language));
+}
+assert.equal(batch160Data.retrieval_synthesis.attribution,'system_synthesis_not_rebbe_quote');
+assert.equal(batch160Data.retrieval_synthesis.claim_count,5);assert.equal(batch160Data.retrieval_synthesis.claim_level_source_locators,5);
+assert.equal(new Set(batch160Data.retrieval_synthesis.evidence_family_ids).size,5);
+assert(batch160Data.retrieval_synthesis.claims.every(c=>c.source_aids.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
+assert.equal(batch160Data.pre_addition_full_index_scan.entries,9122);
+assert.equal(batch160Data.deduplication_check.recent_manual_batch_files_checked,23);
+assert.equal(batch160Data.deduplication_check.recent_manual_batch_record_rows_checked,202);
+assert.equal(batch160Data.deduplication_check.review_queue_records,1022);assert.equal(batch160Data.deduplication_check.review_queue_matches,0);
+assert(['reconciled','reconciled_with_variance'].includes(batch160Data.reconciliation_status));
+assert(batch160Data.metrics_actual_before&&batch160Data.metrics_actual_after&&batch160Data.metrics_delta_actual);
+assert.equal(batch160Data.reconciliation_variance,null);assert.equal(batch160Data.reconciliation_comparison_status,'not_applicable_no_projection');
+assert.equal(batch160Data.deduplication_check.full_index_scan_available,true);assert.equal(batch160Data.deduplication_check.full_index_scan_pending_reconciliation,false);
+assert.deepEqual(batch160Data.deduplication_check.canonical_identity_collisions,[]);assert.deepEqual(batch160Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch160Data.deduplication_check.all_target_identities_answer_eligible,true);
+const indexedBatch160=idx.entries.filter(e=>batch160Aids.includes(Number(sourceAID(e))));
+assert.equal(indexedBatch160.length,13);assert(indexedBatch160.every(e=>e.answer_eligible&&e.canonical_file==='data/items/content-research-batch-160-2026-11-21.json'));
+assert.equal(new Set(indexedBatch160.map(e=>e.evidence_family_id)).size,13);
+const batch160Question='מה מתועד בערכי היום יום על חינוך, אווירה של תורה ומצוות וקביעות בלימוד חומש עם רש״י?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch160Question,{mode});
+ assert(m.answerable,mode+': inspected Hayom Yom entries must support the bounded education/spiritual-atmosphere/daily-study comparison');
+ for(const aid of ['528564','528567','528575'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': expected distinct dated entry '+aid);
+ assert(m.claims.length>=3&&m.claims.every(c=>c.source_numbers.length&&c.source_locators.length&&c.source_locators.every(x=>x.locator)));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));
+ if(mode==='researcher'){
+  assert(m.research&&m.research.depth==='deep');assert(m.research.evidence_families>=3);
+  assert(m.research.evidence_map.length>=3&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert.equal(m.research.claim_source_map.length,m.claims.length);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length&&c.source_locators.every(x=>x.locator)));
+ }else assert.equal(m.research,undefined);
+}
