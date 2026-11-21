@@ -274,7 +274,7 @@ if pending_chain:
     selected_batches.extend(pending_chain)
 
 manual_batch_positions={str(info["path"]):i for i,info in enumerate(manual_batches)}
-reconciliation_audit_history=[]
+reconciliation_audit_history=list((state.get('development_recovery') or {}).get('reconciliation_chain') or [])
 previous_snapshot_metrics=None
 for selected_index, batch_info in enumerate(selected_batches):
     if selected_index in selected_chain_starts:
@@ -423,6 +423,7 @@ for selected_index, batch_info in enumerate(selected_batches):
         dedup["same_family_duplicate_presentations"]=same_family
         dedup["full_index_scan_available"]=True
         dedup["full_index_scan_pending_reconciliation"]=False
+        dedup["post_addition_canonical_scan_pending"]=False
         dedup["full_index_scan_completed_at"]=today
         dedup["reconciled_identity_count"]=len(audit)
         dedup["canonical_identity_collisions"]=collisions
@@ -443,7 +444,10 @@ for selected_index, batch_info in enumerate(selected_batches):
         "same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),
         "canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),
         "metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":batch_data.get("reconciliation_variance"),"reconciliation_status":batch_data["reconciliation_status"],"items":audit}
-    reconciliation_audit_history.append({"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":batch_data.get("reconciliation_variance"),"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit),"batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),"existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),"answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),"selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")} ),"non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),"same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),"canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),"items":audit})
+    audit_history_entry={"batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"metrics_actual_before":batch_data["metrics_actual_before"],"metrics_actual_after":snapshot_metrics,"metrics_delta_actual":batch_data["metrics_delta_actual"],"reconciliation_variance":batch_data.get("reconciliation_variance"),"reconciliation_status":batch_data["reconciliation_status"],"identity_count":len(audit),"batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),"existing_identities_enriched":batch_data.get("existing_identities_enriched"),"source_bodies_inspected":batch_data.get("source_bodies_inspected"),"answer_eligible_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible")),"selected_unique_evidence_families":len({x["selected_index_entry"].get("evidence_family_id") for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("evidence_family_id")} ),"non_independent_selected_count":sum(1 for x in audit if x["selected_index_entry"].get("answer_eligible") and x["selected_index_entry"].get("independent_witness") is False),"same_family_duplicate_count":sum(1 for x in audit if x.get("same_family_duplicate")),"canonical_identity_collision_count":sum(1 for x in audit if x.get("canonical_identity_collision")),"items":audit}
+    existing_history_index=next((i for i,x in enumerate(reconciliation_audit_history) if str(x.get("batch_id"))==str(audit_history_entry["batch_id"])),None)
+    if existing_history_index is None: reconciliation_audit_history.append(audit_history_entry)
+    else: reconciliation_audit_history[existing_history_index]=audit_history_entry
     summary=state.setdefault("development_recovery",{}).get("last_batch_summary")
     if isinstance(summary,dict) and str(summary.get("batch_id"))==str(batch_data.get("batch_id")):
         readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
@@ -463,11 +467,10 @@ if selected_batches:
     if isinstance(last_data.get("metrics_expected_after"),dict):
         readiness_state["expected_after"]={k:last_data["metrics_expected_after"][k] for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions") if k in last_data["metrics_expected_after"]}
     state.setdefault("development_recovery",{})["reconciliation_chain"]=reconciliation_audit_history
-    reconciled_ids={str(x["data"].get("batch_id")) for x in selected_batches}
-    readiness_state["pending_batches"]=[str(x) for x in readiness_state.get("pending_batches",[]) if str(x) not in reconciled_ids]
-    dev_pending=state.setdefault("development_recovery",{}).get("pending_reconciliation_batches",[])
-    state["development_recovery"]["pending_reconciliation_batches"]=[str(x) for x in dev_pending if str(x) not in reconciled_ids]
-    state["development_recovery"]["last_reconciliation_pending"]=bool(state["development_recovery"]["pending_reconciliation_batches"] or readiness_state.get("pending_batches"))
+    remaining_pending_ids=[str(info["data"].get("batch_id")) for info in manual_batches if is_pending_batch(info["data"])]
+    readiness_state["pending_batches"]=remaining_pending_ids
+    state.setdefault("development_recovery",{})["pending_reconciliation_batches"]=remaining_pending_ids
+    state["development_recovery"]["last_reconciliation_pending"]=bool(remaining_pending_ids)
     # Keep the recovery cursor aligned with the repository's actual current batch.
     # The last completed batch is the newest batch whose full identity audit ran.
     dev_state=state.setdefault("development_recovery",{})
