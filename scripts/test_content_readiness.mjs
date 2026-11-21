@@ -5162,6 +5162,7 @@ assert(batch152Data.records.every(r=>r.source_class==='Testimonies'&&r.type==='t
 assert(batch152Data.records.every(r=>r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.response_propositions.length===1&&r.response_proposition_locators.length===1));
 assert(batch152Data.records.every(r=>r.witness_group_id==='zalmon-jaffe-memoir-series'&&r.independent_witness===true&&r.provenance?.source_url===r.source_url&&r.verification_scope&&r.access?.rights_status==='copyrighted-link-only'));
 assert(batch152Data.records.slice(1).every(r=>r.relations.some(x=>x.type==='researcher/model_link'&&x.target_id==='yechidus-testimony-aid260062')));
+for(const aid of batch152Aids){const e=idx.entries.find(x=>String(x.aid)===aid);assert(e,'batch152 testimony must be in canonical index: '+aid);assert.equal(e.witness_group_id,'zalmon-jaffe-memoir-series','search index must preserve shared witness group: '+aid);}
 const enriched2505782=idx.entries.find(e=>sourceAID(e)==='2505782');
 assert(enriched2505782&&enriched2505782.canonical_file===batch151Path);assert.equal(enriched2505782.evidence_family_id,'yechidus-event-aid2505782');assert.equal(enriched2505782.independent_witness,false);
 assert.equal(enriched2505782.response_propositions.length,3);assert.equal(enriched2505782.response_proposition_locators.length,3);
