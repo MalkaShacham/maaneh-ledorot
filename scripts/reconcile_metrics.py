@@ -227,8 +227,9 @@ search_index={"generated":today,"count":len(search_entries),"entries":sorted(sea
 # deployment transfer size without changing any record or field.
 (ROOT/"data/public-search-index.json").write_text(json.dumps(search_index,ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf-8")
 
-# Reconcile the contiguous pending manual-batch chain ending at the newest batch.
-# This prevents a later manual review from leaving the immediately preceding batch pending.
+# Reconcile every pending contiguous manual-batch chain, not only the newest chain.
+# Older pending chains can be separated from the latest chain by already-reconciled
+# batches; they still need their own historical snapshots and full identity audits.
 manual_batch_paths=sorted(fp for fp in items if re.fullmatch(r"content-research-batch-\d{3}-\d{4}-\d{2}-\d{2}\.json",fp.name))
 manual_batches=[]
 for fp in manual_batch_paths:
@@ -241,21 +242,35 @@ def is_pending_batch(data):
             or data.get("status") in ("pending","pending_reconciliation"))
 
 selected_batches=[]
-if manual_batches and is_pending_batch(manual_batches[-1]["data"]):
-    selected_batches=[manual_batches[-1]]
-    current=manual_batches[-1]["data"]
-    index=len(manual_batches)-2
-    while index>=0:
-        previous=manual_batches[index]["data"]
-        if not is_pending_batch(previous): break
-        if (previous.get("metrics_expected_after") or {}) != (current.get("metrics_before") or {}): break
-        selected_batches.insert(0,manual_batches[index])
-        current=previous
-        index-=1
+selected_chain_starts=set()
+pending_chain=[]
+for info in manual_batches:
+    data=info["data"]
+    if not is_pending_batch(data):
+        if pending_chain:
+            selected_chain_starts.add(len(selected_batches))
+            selected_batches.extend(pending_chain)
+            pending_chain=[]
+        continue
+    if pending_chain:
+        previous=pending_chain[-1]["data"]
+        if (previous.get("metrics_expected_after") or {}) != (data.get("metrics_before") or {}):
+            selected_chain_starts.add(len(selected_batches))
+            selected_batches.extend(pending_chain)
+            pending_chain=[]
+    if not pending_chain:
+        selected_chain_starts.add(len(selected_batches))
+    pending_chain.append(info)
+if pending_chain:
+    selected_chain_starts.add(len(selected_batches))
+    selected_batches.extend(pending_chain)
 
+manual_batch_positions={str(info["path"]):i for i,info in enumerate(manual_batches)}
 reconciliation_audit_history=[]
 previous_snapshot_metrics=None
 for selected_index, batch_info in enumerate(selected_batches):
+    if selected_index in selected_chain_starts:
+        previous_snapshot_metrics=None
     batch_path=batch_info["path"]; batch_data=batch_info["data"]
     batch_label=re.search(r"content-research-batch-(\d+)-",batch_path.name).group(1)
     target_identities=[]
@@ -289,14 +304,14 @@ for selected_index, batch_info in enumerate(selected_batches):
 
     # Exclude later manual batches to calculate the actual corpus snapshot immediately
     # after this batch. Use all entries, not only the final deduplicated index.
-    later_paths={str(x["path"].relative_to(ROOT)) for x in selected_batches[selected_index+1:]}
-    # Later manual batches may append propositions to an earlier canonical
-    # item file. Exclude those later additions when calculating an earlier
-    # batch's historical snapshot; otherwise the same in-place enrichment is
-    # counted before the batch that actually introduced it.
+    manual_index=manual_batch_positions[str(batch_path)]
+    later_infos=manual_batches[manual_index+1:]
+    later_paths={str(x["path"].relative_to(ROOT)) for x in later_infos}
+    # Exclude every later manual batch, including batches already reconciled in
+    # another chain. Later in-place updates must not leak into this snapshot.
     later_in_place_exclusions={}
     later_batches_with_in_place_updates=[]
-    for later_info in selected_batches[selected_index+1:]:
+    for later_info in later_infos:
         later_data=later_info["data"]
         later_batch_id=str(later_data.get("batch_id") or "")
         for update in later_data.get("existing_identity_updates",[]):
@@ -349,7 +364,7 @@ for selected_index, batch_info in enumerate(selected_batches):
         "excluded_later_in_place_proposition_count":sum(len(v) for v in later_in_place_exclusions.values()),
         "affected_canonical_identity_count":len(later_in_place_exclusions),
         "later_batches_with_in_place_updates":sorted(set(later_batches_with_in_place_updates)),
-        "policy":"Historical batch snapshots exclude proposition indices documented by later existing_identity_updates when those updates were written into an earlier canonical file. New later batch files remain excluded by later_paths."
+        "policy":"Historical batch snapshots exclude all later manual batch files and proposition indices documented by later existing_identity_updates, including later batches that were already reconciled in a separate chain."
     }
 
     audit=[]; by_identity={target["key"]:[] for target in target_identities}
