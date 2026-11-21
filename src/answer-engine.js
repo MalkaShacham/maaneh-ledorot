@@ -2136,7 +2136,7 @@ function hayomYomPrayerVitalityPredicate(topic,p){
  if(topic==='communal_psalms')return t.includes('תהילים')&&t.includes('בתי כנסת')&&t.includes('אהבת ישראל');
  if(topic==='modeh_ani_before_washing')return t.includes('מודה אני')&&t.includes('טומאות')&&t.includes('שלם');
  if(topic==='mind_heart_practical_work')return t.includes('השכל וההתפעלות')&&t.includes('שאיפה')&&t.includes('עבודה');
- if(topic==='contemplative_connection')return t.includes('אהבתם')&&t.includes('התקשרותם')&&(t.includes('כחות פנימים')||t.includes('כוחות פנימיים'));
+ if(topic==='contemplative_connection')return t.includes('אהבתם')&&t.includes('התקשרותם')&&(t.includes('כחות פנימים')||(t.includes('כוחות')&&t.includes('פנימיים')));
  if(topic==='prayer_and_torah_enthusiasm')return t.includes('התלהבות הלב')&&(t.includes('תורה ותפלה')||t.includes('תורה ותפילה'));
  return false;
 }

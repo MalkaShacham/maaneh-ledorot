@@ -2336,14 +2336,20 @@ assert.equal(batch162Data.reconciliation_identity_integrity.all_target_identitie
 assert(['reconciled','reconciled_with_variance'].includes(batch162Data.reconciliation_status));
 assert(batch162Data.metrics_actual_after,'batch162 must retain measured canonical after-metrics');
 const prayerVitalityQuestion='מה מתעדים ערכי היום יום על תפילה, חיות פנימית, שילוב מוח ולב ועבודה מעשית?';
+const contemplativePrayerEntry=idx.entries.find(e=>sourceAID(e)==='528600');
+assert(contemplativePrayerEntry&&contemplativePrayerEntry.response_propositions.some(p=>p.includes('הכוחות הפנימיים')),'AID 528600 paraphrase must preserve the body-supported Hebrew morphology');
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,prayerVitalityQuestion,{mode});
- assert(m.answerable,mode+': five-family Hayom Yom prayer/vitality synthesis must be answerable');
+ assert(m.answerable,mode+': five-family Hayom Yom prayer/vitality synthesis must be answerable; reason='+m.reason+'; integrity='+JSON.stringify(m.pattern_synthesis_integrity));
  assert.deepEqual(m.sources.map(e=>sourceAID(e)),['528587','528597','528598','528600','528602']);
  assert.equal(m.synthesis?.topic,'hayom_yom_prayer_vitality_community_practice');
  assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
  assert.equal(m.synthesis?.claims.length,5);
  assert.equal(m.synthesis?.evidence_family_ids.length,5);
+ assert.equal(m.synthesis?.basis.length,5);
+ assert.equal(m.pattern_synthesis_integrity?.valid,true,mode+': prayer/vitality synthesis must pass cross-family integrity');
+ assert.equal(m.pattern_synthesis_integrity?.evidence_families,5);
+ assert.equal(m.pattern_synthesis_integrity?.distinct_evidence_families,5);
  assert(m.claims.length===5&&m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1));
  assert(m.citation_entailment.every(x=>x.valid),mode+': every claim must be entailed by its own item-level proposition');
  assert(m.context_boundary.every(x=>x.valid),mode+': each entry context must remain separate');
@@ -2354,6 +2360,7 @@ for(const mode of ['regular','researcher']){
   assert.equal(m.research.claim_source_map.length,5);
   assert(m.research.evidence_map.every(c=>c.witnesses.length===1&&c.witnesses[0].proposition_source_locator));
   assert.equal(m.research.pattern_synthesis.topic,'hayom_yom_prayer_vitality_community_practice');
+  assert(m.research.synthesis_constraints.rule.includes('five distinct dated Hayom Yom entry families'));
  }else assert.equal(m.research,undefined);
 }
 
