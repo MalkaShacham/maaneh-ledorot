@@ -2133,7 +2133,7 @@ function buildHayomYomBodyRefinementSynthesis(selected){
 }
 function hayomYomPrayerVitalityPredicate(topic,p){
  const t=norm(p);
- if(topic==='communal_psalms')return t.includes('תהילים')&&t.includes('בתי כנסת')&&t.includes('אהבת ישראל');
+ if(topic==='communal_psalms')return t.includes('תהילים')&&(t.includes('בית כנסת')||t.includes('בתי כנסת'))&&t.includes('אהבת ישראל');
  if(topic==='modeh_ani_before_washing')return t.includes('מודה אני')&&t.includes('טומאות')&&t.includes('שלם');
  if(topic==='mind_heart_practical_work')return t.includes('השכל וההתפעלות')&&t.includes('שאיפה')&&t.includes('עבודה');
  if(topic==='contemplative_connection')return t.includes('אהבתם')&&t.includes('התקשרותם')&&(t.includes('כחות פנימים')||(t.includes('כוחות')&&t.includes('פנימיים')));

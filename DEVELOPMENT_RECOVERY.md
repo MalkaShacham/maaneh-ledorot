@@ -1518,3 +1518,5 @@ The same run also showed that batch089's historical projection (900 / 852 / 2,83
 - Added test assertions for the five-family integrity result, claim-level citations, and researcher-mode constraints. This fixes a real retrieval/validation mismatch; it does not add sources, propositions, or Verified records. Batch 164 remains 13 new identities, two in-place enrichments, 15 new propositions and two existing-identity propositions; full reconciliation remains pending until the main-branch workflows commit measured after-metrics.
 
 - A second predicate audit against the stored AID 528587 paraphrase found the singular publisher wording "בכל בית כנסת"; the integrity validator now accepts singular and plural forms. Added a regression assertion. This changes no source text, evidence-family count or metrics.
+
+- The same singular/plural mismatch was present in the synthesis builder predicate for communal Psalms (AID 528587: "בכל בית כנסת"). Updated the builder as well as the integrity validator to accept singular and plural publisher wording; the existing regression test also requires the singular paraphrase and the five-source answer.
