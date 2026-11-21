@@ -421,6 +421,17 @@ if selected_batches:
     dev_pending=state.setdefault("development_recovery",{}).get("pending_reconciliation_batches",[])
     state["development_recovery"]["pending_reconciliation_batches"]=[str(x) for x in dev_pending if str(x) not in reconciled_ids]
     state["development_recovery"]["last_reconciliation_pending"]=bool(state["development_recovery"]["pending_reconciliation_batches"] or readiness_state.get("pending_batches"))
+    # Keep the recovery cursor aligned with the repository's actual current batch.
+    # The last completed batch is the newest batch whose full identity audit ran.
+    dev_state=state.setdefault("development_recovery",{})
+    if state.get("current_batch") is not None:
+        dev_state["current_batch"]=str(state["current_batch"])
+    if state.get("current_batch_file"):
+        dev_state["current_batch_file"]=state["current_batch_file"]
+    if selected_batches:
+        latest_selected=selected_batches[-1]
+        dev_state["last_completed_batch"]=str(latest_selected["data"].get("batch_id") or "")
+        dev_state["last_completed_batch_file"]=str(latest_selected["path"].relative_to(ROOT))
 
 print("search_index_count",len(search_entries))
 out.update(summarize(search_index["entries"]))
