@@ -1114,9 +1114,10 @@ assert.equal(batch110Data.deduplication_check.full_index_scan_available,false,'b
 assert.deepEqual(batch110Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch110Data.deduplication_check.missing_canonical_identities,[]);
 assert.equal(batch110Data.deduplication_check.all_target_identities_answer_eligible,false,'batch110 target eligibility remains unconfirmed until canonical reconciliation');
-assert(['reconciled','reconciled_with_variance'].includes(batch110Data.reconciliation_status));
-const batch110Actual=readinessMetrics(batch110Data.metrics_actual_after);
-assert.deepEqual(batch110Data.reconciliation_variance,{answer_eligible_unique_sources:batch110Actual.answer_eligible_unique_sources-batch110Data.metrics_expected_after.answer_eligible_unique_sources,content_verified_unique_sources:batch110Actual.content_verified_unique_sources-batch110Data.metrics_expected_after.content_verified_unique_sources,answer_eligible_propositions:batch110Actual.answer_eligible_propositions-batch110Data.metrics_expected_after.answer_eligible_propositions});
+assert.equal(batch110Data.status,'pending_reconciliation','batch110 is a historical partial-preflight record outside the latest contiguous reconciliation chain');
+assert.equal(batch110Data.reconciliation_status,'pending','do not mark an older non-contiguous batch reconciled');
+assert.equal(batch110Data.metrics_actual_after,null,'no measured after-boundary is recorded for this historical batch');
+assert.equal(batch110Data.reconciliation_variance,null,'do not invent a reconciliation variance for an unreconciled historical batch');
 const batch111Path='data/items/content-research-batch-111-2026-11-16.json';
 const batch111Data=JSON.parse(await readFile(new URL(batch111Path,root)));
 const batch111Aids=['6093','6094','6095','6096','6097','6098','6099','6100'];
@@ -5183,5 +5184,72 @@ for(const mode of ['regular','researcher']){
   assert.equal(m.research.evidence_integrity.same_witness_group_additional_records,7);assert.equal(m.research.evidence_integrity.derived_non_independent,0);
   assert.deepEqual(m.research.witness_group_ids,['zalmon-jaffe-memoir-series']);assert.equal(m.research.evidence_map.length,8);assert.equal(m.research.claim_source_map.length,8);
   assert(m.research.claim_source_map.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
+ }else assert.equal(m.research,undefined);
+}
+
+ 
+// Batch 153: twelve new correspondence identities, one in-place enrichment, and 13 claim-local sources.
+const batch153Path='data/items/content-research-batch-153-2026-11-21.json';
+const batch153Data=JSON.parse(await readFile(new URL(batch153Path,root),'utf8'));
+const batch153Aids=['1915051','4421667','2231227','1916313','1897847','1277','4264343','2216519','1950150','2022585','2201421','821778'];
+const batch153SynthesisAids=[...batch153Aids,'2022582'];
+assert.equal(batch153Data.records.length,12);assert.deepEqual(batch153Data.new_aids.map(String),batch153Aids);
+assert.equal(batch153Data.reviewed_item_count,15);assert.equal(batch153Data.source_bodies_inspected,13);assert.equal(batch153Data.source_body_pages_opened,13);
+assert.equal(batch153Data.new_source_identities,12);assert.equal(batch153Data.existing_identities_enriched,1);assert.equal(batch153Data.existing_identities_rechecked,0);
+assert.equal(batch153Data.new_response_propositions,24);assert.equal(batch153Data.existing_response_propositions_added,1);assert.equal(batch153Data.total_new_paraphrase_entries,25);
+assert.equal(batch153Data.answer_eligible_source_families_added,12);assert.equal(batch153Data.independent_witnesses_added,9);assert.equal(batch153Data.independent_witness_groups_added,9);assert.equal(batch153Data.non_independent_presentations_added,3);
+assert.equal(batch153Data.content_verified_unique_sources_added,0);assert.equal(batch153Data.translations_counted_as_independent_witnesses,0);assert.equal(batch153Data.blocked_candidate_count,2);
+assert.equal(batch153Data.fallback_source_attempted,true);assert.equal(batch153Data.fallback_source_results.accessible_item_level_bodies,12);assert.equal(batch153Data.fallback_source_results.body_text_inspected,true);
+assert.equal(batch153Data.crawler_retry,false);assert.equal(batch153Data.access_control_bypassed,false);assert.equal(batch153Data.full_text_copied,false);assert.equal(batch153Data.scan_only_verification_used,false);
+assert.equal(batch153Data.source_body_review.length,12);assert(batch153Data.source_body_review.every(x=>x.body_text_inspected===true&&x.source_grounded_paraphrase_added===true&&x.context_status==='partial'));
+assert.equal(batch153Data.existing_identity_updates.length,1);assert.equal(batch153Data.existing_identity_updates[0].canonical_file,'data/items/chabad-letter-2022582.json');assert.equal(batch153Data.existing_identity_updates[0].propositions_added,1);assert.equal(batch153Data.existing_identity_updates[0].total_propositions_after,5);
+assert.deepEqual(batch153Data.retrieval_synthesis.source_aids.map(String),batch153SynthesisAids);
+assert.equal(batch153Data.retrieval_synthesis.source_count,13);assert.equal(batch153Data.retrieval_synthesis.distinct_evidence_families,13);assert.equal(batch153Data.retrieval_synthesis.independent_evidence_families,10);assert.equal(batch153Data.retrieval_synthesis.independent_witness_groups,10);assert.equal(batch153Data.retrieval_synthesis.derived_non_independent_presentations,3);assert.equal(batch153Data.retrieval_synthesis.claim_count,13);assert.equal(batch153Data.retrieval_synthesis.claim_level_source_locators,13);
+assert(batch153Data.records.every(r=>r.status==='Parsed'&&r.pipeline_status==='Parsed'&&r.canonical_status==='Parsed'&&r.context_status==='partial'&&r.has_content_evidence===true));
+assert(batch153Data.records.every(r=>r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.response_propositions.length===r.response_proposition_locators.length&&r.response_proposition_locators.every(Boolean)));
+assert.equal(batch153Data.records.filter(r=>r.independent_witness===true).length,9);
+assert.equal(batch153Data.records.filter(r=>r.independent_witness===false).length,3);
+assert.deepEqual(batch153Data.records.filter(r=>r.independent_witness===false).map(r=>String(r.aid)).sort(),['1915051','2201421','4264343']);
+assert(batch153Data.blocked_candidates.some(x=>String(x.aid)==='4666220'));
+assert(batch153Data.blocked_candidates.some(x=>String(x.aid)==='2487225'));
+assert(batch153Data.blocked_candidates.every(x=>x.status==='public_reader_body_unavailable_via_web_tool'));
+assert.equal(batch153Data.reconciliation_status,'reconciled_with_variance');
+assert.deepEqual(readinessMetrics(batch153Data.metrics_actual_after),{answer_eligible_unique_sources:1537,content_verified_unique_sources:854,answer_eligible_propositions:3893});
+assert.deepEqual(batch153Data.reconciliation_variance,{answer_eligible_unique_sources:1,content_verified_unique_sources:0,answer_eligible_propositions:0});
+assert.equal(batch153Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch153Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert.deepEqual(batch153Data.deduplication_check.canonical_identity_collisions,[]);
+assert.deepEqual(batch153Data.deduplication_check.missing_canonical_identities,[]);
+assert.equal(batch153Data.deduplication_check.post_addition_canonical_scan_pending,false);
+const enriched2022582=idx.entries.find(e=>sourceAID(e)==='2022582');
+assert(enriched2022582&&enriched2022582.canonical_file==='data/items/chabad-letter-2022582.json');
+assert.equal(enriched2022582.status,'Verified');assert.equal(enriched2022582.evidence_family_id,'chabad-letter-2022582');
+assert.equal(enriched2022582.response_propositions.length,5);assert.equal(enriched2022582.response_proposition_locators.length,5);
+assert(enriched2022582.response_proposition_locators[4].includes('body lines 274–275'));
+assert(batch153Data.existing_identity_updates.some(x=>String(x.aid)==='2022582'&&x.propositions_added===1&&x.total_propositions_after===5&&x.status_after==='Verified'));
+for(const aid of batch153Aids){
+ const e=idx.entries.find(x=>sourceAID(x)===aid);
+ assert(e,'batch153 correspondence identity must be in the canonical index: '+aid);
+ assert.equal(e.status,'Parsed');assert.equal(e.context_status,'partial');assert.equal(e.has_content_evidence,true);
+}
+const practicalGuidanceQuestion='מה אפשר ללמוד מן האיגרות על חינוך, תקשורת עם פונים, תמיכה במוסדות, בריאות וסיוע מעשי? הצג כל טענה עם מקור ומיקום גוף.';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,practicalGuidanceQuestion,{mode});
+ assert(m.answerable,mode+': thirteen distinct correspondence families must support bounded practical-guidance synthesis');
+ assert.equal(m.synthesis?.topic,'cross_family_practical_guidance_letters');assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.sources.length,13);assert.deepEqual(m.sources.map(e=>String(e.aid)),batch153SynthesisAids);
+ assert.equal(new Set(m.sources.map(e=>e.evidence_family_id).size,13);
+ assert.equal(m.synthesis.claims.length,13);assert.equal(m.synthesis.evidence_family_ids.length,13);assert.equal(m.synthesis.independent_evidence_family_ids.length,10);
+ assert(m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1));
+ assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1));
+ assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));assert.equal(m.pattern_synthesis_integrity.valid,true);
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');assert.equal(m.research.synthesis_scope,'cross_family_derived_case_comparison');
+  assert.equal(m.research.evidence_families,13);assert.equal(m.research.independent_evidence_families,10);
+  assert.equal(m.research.evidence_integrity.independent_witnesses,10);assert.equal(m.research.evidence_integrity.derived_non_independent,3);
+  assert.equal(m.research.evidence_witnesses.length,13);assert.equal(m.research.evidence_witnesses.filter(w=>w.independent_witness===false).length,3);
+  assert.equal(m.research.evidence_map.length,13);assert.equal(m.research.claim_source_map.length,13);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
+  assert.equal(m.research.pattern_synthesis_integrity.valid,true);
  }else assert.equal(m.research,undefined);
 }
