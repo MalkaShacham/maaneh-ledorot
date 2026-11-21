@@ -3895,7 +3895,7 @@
     ]
   },
   "current_batch": "164",
-  "updated_at": "2026-11-21T22:26:29+02:00",
+  "updated_at": "2026-11-21T23:29:36+02:00",
   "current_batch_file": "data/items/content-research-batch-164-2026-11-21.json",
   "status": "manual_content_review_complete_pending_reconciliation",
   "last_manual_web_review": {
@@ -4650,5 +4650,5 @@
     "excluded_candidates": []
   },
   "pending": true,
-  "last_run_note": "Batch 164: 13 original-language Hebrew/Yiddish Hayom Yom entries inspected; 2 existing dated entries enriched in place; 15 new identity propositions plus 2 in-place propositions. AID 4666220 returned Internal Error; fallback to 13 accessible entries. No crawler retry, access bypass, full-text copying or Verified promotion. Full canonical deduplication and measured metrics remain pending reconciliation."
+  "last_run_note": "Batch 164: 13 original-language Hebrew/Yiddish Hayom Yom entries inspected; 2 existing dated identities enriched in place; 15 new identity propositions plus 2 in-place propositions. AID 4666220 returned Internal Error; fallback to 13 accessible entries. No crawler retry, access bypass, full-text copying or Verified promotion. Cross-batch dedup correction to batch 162: AID 5920875 was already canonical in batch 107, removed from batch 162 new identities and retained as a recheck only; no duplicate proposition or Evidence Family. Full reconciliation and measured after-metrics remain pending; committed baseline remains 977/870/2950."
 }
