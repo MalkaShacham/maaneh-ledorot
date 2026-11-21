@@ -32,7 +32,7 @@ def is_source_record(d):
     # creates false canonical_identity_collisions and duplicate search candidates.
     if not isinstance(d,dict): return False
     audit_row = (
-        d.get("action") == "enriched_existing_identity_in_place"
+        str(d.get("action") or "").startswith("enriched_existing_identity")
         or d.get("existing_identity") is True
         or d.get("body_text_inspected") is True
         or d.get("inspected_original_language_body") is True
@@ -391,6 +391,9 @@ for selected_index, batch_info in enumerate(selected_batches):
     dedup=batch_data.get("deduplication_check")
     if isinstance(dedup,dict):
         collisions=[x.get("aid") for x in audit if x.get("canonical_identity_collision")]
+        collision_details=[{"aid":x.get("aid"),"records":[{"file":r.get("file"),"id":r.get("id"),"status":r.get("status"),"evidence_family_id":r.get("evidence_family_id")} for r in x.get("records",[])]} for x in audit if x.get("canonical_identity_collision")]
+        dedup["canonical_identity_collision_details"]=collision_details
+        print("canonical_identity_collision_details",json.dumps(collision_details,ensure_ascii=False))
         same_family=[{"aid":x.get("aid"),"evidence_family_id":(x.get("matching_evidence_family_ids") or [None])[0],"files":sorted({r.get("file") for r in x.get("records",[]) if r.get("file")})} for x in audit if x.get("same_family_duplicate")]
         missing=[x.get("aid") for x in audit if not x.get("selected_index_entry",{}).get("present")]
         dedup["same_family_duplicate_presentations"]=same_family
