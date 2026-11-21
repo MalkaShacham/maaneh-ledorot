@@ -2415,7 +2415,7 @@ for(const mode of ['regular','researcher']){
   assert.equal(m.research.independent_evidence_families,5);
   assert.equal(m.research.claim_source_map.length,5);
   assert(m.research.evidence_map.length===5&&m.research.evidence_map.every(c=>c.witnesses.length===1&&c.witnesses[0].proposition_source_locator));
-  assert(m.research.synthesis_constraints.rule.includes('not independent archival corroboration'));
+  assert(m.synthesis.method.includes('not independent archival corroboration'));
   assert.equal(m.research.pattern_synthesis.topic,'hayom_yom_education_love_body_refinement_and_soul_work');
  }else assert.equal(m.research,undefined);
 }

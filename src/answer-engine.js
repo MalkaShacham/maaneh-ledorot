@@ -2165,7 +2165,7 @@ function buildHayomYomPrayerVitalitySynthesis(selected){
 
 function hayomYomAdarICommunityPredicate(topic,p){
  const t=norm(p);
- if(topic==='inner_work')return t.includes('עבודת האמת')&&t.includes('פעולות יומיומיות')&&t.includes('כוונה אמיתית');
+ if(topic==='inner_work')return t.includes('עבודת האמת')&&t.includes('ברכה בכוונה')&&t.includes('כוונה אמיתית');
  if(topic==='ahavat_yisrael')return t.includes('אהבת ישראל')&&t.includes('מעולם לא ראה');
  if(topic==='individual_mission')return t.includes('כל יהודי כשליח')&&t.includes('מצוות מעשיות')&&t.includes('מידות טובות');
  if(topic==='general_prayer_intention')return t.includes('כוונה כללית')&&t.includes('כוונות הפרטיות')&&t.includes('תפילה');
