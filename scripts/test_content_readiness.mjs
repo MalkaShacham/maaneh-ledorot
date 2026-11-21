@@ -2280,7 +2280,7 @@ assert.equal(batch161Data.source_body_review.length,10);assert(batch161Data.sour
 for(const r of batch161Data.records){const aid=String(r.aid),e=idx.entries.find(x=>sourceAID(x)===aid);assert(e&&e.has_content_evidence,'batch161 AID '+aid+' must appear as answer-eligible after reconciliation');assert.equal(e.canonical_file,batch161Path);assert.equal(e.status,'Parsed');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.proposition_source_locator.includes('AID '+aid));assert.equal(e.response_proposition_locators.length,e.response_propositions.length);assert.equal(e.independent_witness,true);assert.equal(e.evidence_family_id,r.evidence_family_id);assert(!Object.hasOwn(r,'body_text_inspected')&&!Object.hasOwn(r,'inspection_method'),'audit-only inspection flags belong in source_body_review, not canonical source records');}
 assert(['reconciled','reconciled_with_variance'].includes(batch161Data.reconciliation_status),'batch161 must have completed canonical reconciliation before readiness passes');assert(batch161Data.metrics_actual_before&&batch161Data.metrics_actual_after,'batch161 must retain measured canonical before/after metrics');
 
-const batch107Path='data/items/content-research-batch-107-2026-11-16.json';
+const batch107CanonicalPath='data/items/content-research-batch-107-2026-11-16.json';
 const batch162Aids=batch162Data.new_aids.map(String);
 assert.equal(batch162Data.records.length,15);
 assert.equal(batch162Data.reviewed_item_count,16);
@@ -2312,18 +2312,18 @@ assert.equal(batch162Data.source_body_review.filter(x=>x.language==='English').l
 assert.equal(batch162Data.source_body_review.filter(x=>x.inspected_original_language_body).length,15);
 const batch162ExistingLetterReview=batch162Data.source_body_review.find(r=>String(r.aid)==='5920875');
 assert(batch162ExistingLetterReview&&batch162ExistingLetterReview.existing_identity===true);
-assert.equal(batch162ExistingLetterReview.canonical_file,batch107Path);
+assert.equal(batch162ExistingLetterReview.canonical_file,batch107CanonicalPath);
 assert.equal(batch162ExistingLetterReview.evidence_family_id,'letter-5703-10-menachem-av-92-katz-aid5920875');
 assert.equal(batch162ExistingLetterReview.independent_witness,false);
 assert.equal(batch162ExistingLetterReview.propositions_added,0);
 assert.equal(batch162Data.existing_identity_rechecks.length,1);
-assert.equal(batch162Data.existing_identity_rechecks[0].canonical_file,batch107Path);
+assert.equal(batch162Data.existing_identity_rechecks[0].canonical_file,batch107CanonicalPath);
 assert.equal(batch162Data.existing_identity_rechecks[0].propositions_added,0);
 assert(batch162Data.records.every(r=>r.status==='Parsed'&&r.context_status==='partial'&&r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.response_proposition_locators.length===r.response_propositions.length));
 for(const r of batch162Data.records){const aid=String(r.aid),e=idx.entries.find(x=>sourceAID(x)===aid);assert(e&&e.has_content_evidence,'batch162 AID '+aid+' must appear as answer-eligible after reconciliation');assert.equal(e.canonical_file,batch162Path);assert.equal(e.status,'Parsed');assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');assert(e.proposition_source_locator&&e.proposition_source_locator.includes('AID '+aid));assert.equal(e.response_proposition_locators.length,e.response_propositions.length);assert.equal(e.evidence_family_id,r.evidence_family_id);}
 const batch162ExistingLetter=idx.entries.find(e=>sourceAID(e)==='5920875');
 assert(batch162ExistingLetter&&batch162ExistingLetter.independent_witness===false);
-assert.equal(batch162ExistingLetter.canonical_file,batch107Path);
+assert.equal(batch162ExistingLetter.canonical_file,batch107CanonicalPath);
 assert.equal(batch162ExistingLetter.evidence_family_id,'letter-5703-10-menachem-av-92-katz-aid5920875');
 assert.equal(batch162ExistingLetter.status,'Parsed');
 assert.equal(batch162ExistingLetter.response_propositions.length,2);
