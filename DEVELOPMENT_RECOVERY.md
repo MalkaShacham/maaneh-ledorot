@@ -1400,3 +1400,5 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 - מדדים צפויים בלבד: 1,569 / 854 / 3,971 לפני האצווה; 1,577 / 854 / 3,983 אחריה. אלה תחזיות המבוססות על batch156.metrics_expected_after, לא מדידה. public-metrics.json יעודכן רק לאחר reconciliation מלא.
 - בדיקת הכפילויות המקדימה חלקית: תור הבדיקה ו-AID-ים מדויקים נבדקו; public-search-index.json המלא לא היה זמין דרך חיבור GitHub. נדרשת סריקה קנונית מלאה ב-reconciliation workflow.
 - נדרש להריץ test_content_readiness.mjs ולוודא אחזור רב־מקורי, הפניות ברמת טענה ומצב researcher עמוק לפני הצגת הצלחה.
+
+- השלמת בדיקת כפילויות לפני הוספת Batch 157: נפתח blob מלא של `data/public-search-index.json` ונבדקו כל 9,122 הרשומות (צילום מצב 2026-11-15); לא נמצאה התאמה ל-AID 528545–528552 או ל-AID 6009–6016. נדרשת עדיין סריקה קנונית לאחר ההוספה.
