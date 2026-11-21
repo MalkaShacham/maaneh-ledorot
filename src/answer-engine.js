@@ -40,6 +40,7 @@ const TOPICS={
  'גשמים בשנת השמיטה':['גשמים בשנת שמיטה','ירידת גשמים בשנת השביעית'],
  'שבת וראש חודש כמקורות ברכה':['ערב שבת וערב ראש חודש','ברכה בשבת ובראש חודש','שבת מברכים','מחר חודש','ערב ראש חודש שחל בשבת','ערב ר״ח שחל בשבת','ברכת החודש','מתברכין כולהו יומין','הימים שלאחר השבת מתברכים','ימים שלאחר השבת','Shabbat Mevorchim','Erev Rosh Chodesh','days following Shabbat are blessed','blessing for the new month','preparation for Rosh Chodesh'],
  'מנהגי חנוכה ושבת מברכים בערכי היום יום':['מנהגי חנוכה ושבת מברכים בערכי היום יום','מנהגי חנוכה','הדלקת נרות חנוכה','נר חנוכה','שבת מברכים','אמירת תהילים בשבת מברכים','Chanukah lighting and Shabbat Mevorchim'],
+ 'ערכי היום יום על חנוכה':['ערכי היום יום על חנוכה','מה מתועד בערכי היום יום על חנוכה','חנוכה בספר היום יום','ערכים יומיים על חנוכה','Hayom Yom Chanukah entries'],
  'לימוד נגלה ופנימיות התורה':['תורת הנגלה ופנימיות התורה','לימוד נגלה ופנימיות'],
  'ברכה ליום נישואין':['שנת השלושים ליום החתונה','יום הנישואין השלושים'],
  'ידיעה ובחירה חופשית':['ידיעת ה׳','ידיעת השם','ידיעה ובחירה','בחירה חופשית','free choice','divine foreknowledge','foreknowledge'],
@@ -1484,6 +1485,42 @@ function buildStudyFarmingSynthesis(selected){
  if(evidenceFamilies.length<2)return null;
  return{kind:'cross_family_research_synthesis',topic:'study_routine_and_farming',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:claims.map(c=>c.text).join(' ')+' ההשוואה מחברת שני מענים אישיים שונים: חזרה ללימוד לאחר הפסק, ושילוב לימוד תורה עם עבודה במשק. אין להפוך אותם לכלל אחיד או לפסיקה תעסוקתית.',source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,basis:usedBasis,claims,method:'Claim-level comparison across two distinct inspected Hebrew correspondence Evidence Families. Each claim carries its own source numbers, item-level body locator, provenance and verification scope.',limits:['הניסוח הוא סינתזה מחקרית של המערכת ואינו ציטוט או ייחוס מילולי לרבי.','האיגרת על קביעות הלימוד היא מענה אישי לאחר הפסק בלימוד; האיגרת על המשק היא מענה אישי לשאלה על עיסוק חקלאי.','מכתבי הנמענים וכתבי היד המקוריים לא נבדקו; באחד הפריטים הערת המו״ל מציינת השלמה על פי העתק המזכירות.','אין להסיק מן המקרים כלל תעסוקתי או הלכתי עדכני.']};
 }
+function supportsHayomYomSecondImprisonmentProposition(p){
+ const t=norm(p);return t.includes('מאסרו השני')&&t.includes('נר השלישי')&&t.includes('חנוכה');
+}
+function supportsHayomYomDomesticChanukahProposition(p){
+ const t=norm(p);return t.includes('התוועדות')&&t.includes('חנוכה')&&(t.includes('כלותיו')||t.includes('דמי חנוכה')||t.includes('לאטקעס'));
+}
+function supportsHayomYomGreekEraProposition(p){
+ const t=norm(p);return t.includes('היוונים')&&t.includes('תרבות יוון')&&t.includes('חילול שבת')&&t.includes('מצוות');
+}
+function supportsHayomYomGreekDivinityProposition(p){
+ const t=norm(p);return t.includes('מאבק היוונים')&&t.includes('האלוקות')&&t.includes('תורה')&&t.includes('מצוות');
+}
+function supportsHayomYomRoshChodeshRitualProposition(p){
+ const t=norm(p);return t.includes('הלל')&&t.includes('תפילין')&&t.includes('מוסף');
+}
+function buildHayomYomChanukahOverviewSynthesis(selected){
+ const specs=[
+  {topic:'second_imprisonment',predicate:supportsHayomYomSecondImprisonmentProposition,text:'ערך כ״ז כסלו מתעד את מאסרו השני של אדמו״ר הזקן בשנת תקס״א ואת יציאתו לחירות בנר השלישי של חנוכה.'},
+  {topic:'domestic_chanukah_gathering',predicate:supportsHayomYomDomesticChanukahProposition,text:'ערך כ״ח כסלו מתאר התוועדות משפחתית בחנוכה אצל הצמח צדק ומסירת דמי חנוכה בליל הנר הרביעי או החמישי.'},
+  {topic:'greek_era_practices',predicate:supportsHayomYomGreekEraProposition,text:'ערך כ״ט כסלו מונה דפוסי התבוללות והפרת מצוות בתקופת היוונים, ומציג תשובה ומסירות נפש כחלק מסיפור נס חנוכה.'},
+  {topic:'greek_conflict_and_divinity',predicate:supportsHayomYomGreekDivinityProposition,text:'ערך ב׳ טבת מתאר את המאבק היווני כניסיון לנתק את התורה והמצוות מההכרה במקורן האלוקי.'},
+  {topic:'rosh_chodesh_prayer_order',predicate:supportsHayomYomRoshChodeshRitualProposition,text:'ערך א׳ טבת מתעד את נוסח ברכת ההלל, הנחת תפילין לפני מוסף ולימוד השיעורים לאחר התפילה.'}
+ ];
+ const basis=[];
+ selected.forEach((e,i)=>{
+  const props=arr(e._supporting_propositions).filter(p=>specs.some(s=>s.predicate(p)));
+  if(!props.length)return;
+  const propositions=props.map(p=>{const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim());return{text:String(p),source_locator:arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null};});
+  basis.push({source_number:i+1,aid:e.aid||null,evidence_family_id:familyKey(e)||null,language:e.language||null,context_status:e.context_status||'unknown',independent_witness:e._independent_witness!==false,provenance:e.witness_provenance||e.source_witness||e.witness_type||null,verification_scope:e.verification_scope||null,propositions});
+ });
+ const claims=specs.map(s=>{const rows=basis.filter(b=>b.propositions.some(p=>s.predicate(p.text)));return{topic:s.topic,text:s.text,source_numbers:[...new Set(rows.map(b=>b.source_number))],evidence_family_ids:[...new Set(rows.map(b=>b.evidence_family_id).filter(Boolean))],source_locators:rows.flatMap(b=>b.propositions.filter(p=>s.predicate(p.text)).map(p=>({source_number:b.source_number,locator:p.source_locator,proposition_text:p.text})).filter(x=>x.locator))};});
+ const sourceNumbers=[...new Set(claims.flatMap(c=>c.source_numbers))],used=basis.filter(b=>sourceNumbers.includes(b.source_number));
+ const evidenceFamilies=[...new Set(used.map(b=>b.evidence_family_id).filter(Boolean))],independentFamilies=[...new Set(used.filter(b=>b.independent_witness).map(b=>b.evidence_family_id).filter(Boolean))];
+ if(claims.some(c=>c.source_numbers.length!==1||c.source_locators.length!==1)||evidenceFamilies.length!==5)return null;
+ return{kind:'cross_family_research_synthesis',topic:'hayom_yom_chanukah_practices_and_religious_identity',attribution:'system_synthesis_not_rebbe_quote',label:'סינתזה מחקרית של המערכת — לא ציטוט ולא ייחוס לרבי',text:claims.map(c=>c.text).join(' ')+' אלה חמישה ערכים יומיים נפרדים; ההשוואה מתארת את נושאי הערכים ואינה מאמתת עצמאית את האירועים ההיסטוריים או יוצרת הוראה אחידה.',source_numbers:sourceNumbers,evidence_family_ids:evidenceFamilies,independent_evidence_family_ids:independentFamilies,basis:used,claims,method:'Claim-level map across five distinct original-language Hayom Yom entry families. Each claim is linked to one inspected proposition and its own body locator. The entries are separate anthology texts, not independent archival corroboration of the historical events.',evidence_quality:'five_distinct_hayom_yom_entries_not_historical_corroboration',limits:['הניסוח הוא סינתזה מחקרית של המערכת בלבד, לא ציטוט ולא ייחוס של אמירה מסכמת לרבי.','הערכים הם פריטים נפרדים באנתולוגיה; הם אינם עדים ארכיוניים עצמאיים לאירועים ההיסטוריים המתוארים ואינם מאמתים אותם.','אין להסיק מהערכים פסיקה הלכתית כללית או מנהג מחייב לכל קהילה.','נבדקו רק המקטעים המצוינים; לא נבדקו מהדורת דפוס, כתב־יד, אוטוגרף או מהדורה ביקורתית.','תרגומים לאותה משפחת ראיות אינם עדים עצמאיים נוספים.']};
+}
 function supportsHayomYomChanukahLightingProposition(p){
  const t=norm(p);
  return t.includes('נרות חנוכה')&&t.includes('מנחה')&&(t.includes('הנרות הללו')||t.includes('חמישים דקות'));
@@ -2034,6 +2071,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const hayomYomThoughtPrayerActionQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('מחשבה תפילה ועבודה מעשית');
  const hayomYomMindHeartQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('מוח ולב בשיטת חב״ד');
   const hayomYomChanukahShabbatQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('מנהגי חנוכה ושבת מברכים בערכי היום יום');
+ const hayomYomChanukahOverviewQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('ערכי היום יום על חנוכה');
  const northAfricaEducationQuestion=isNorthAfricaEducationQuestion(understanding.query);
  const educationPublicationLettersQuestion=isEducationPublicationLettersQuestion(understanding.query);
  const cheshvan5711EducationOutreachQuestion=isCheshvan5711EducationOutreachQuestion(understanding.query);
@@ -2048,8 +2086,8 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const institutionalEducationQuestion=isInstitutionalEducationQuestion(understanding.query);
  const practicalGuidanceLettersQuestion=isPracticalGuidanceLettersQuestion(understanding.query);
  if(educationPublicationLettersQuestion||cheshvan5711EducationOutreachQuestion||yechidusPeaceMissionQuestion||yechidusUnityMissionQuestion||jaffeMemoirSynthesisQuestion||yudTesKislevLettersQuestion||chassidicPracticeQuestion||institutionalEducationQuestion||practicalGuidanceLettersQuestion)understanding.intent='guidance';
- else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||hayomYomChanukahShabbatQuestion||northAfricaEducationQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
- if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!jaffeMemoirSynthesisQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!institutionalEducationQuestion&&!practicalGuidanceLettersQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
+ else if((tzedakahSynthesisQuestion||educationYouthGuidanceQuestion||earlyChildhoodEducationQuestion||teshuvahLevelsQuestion||yiddishHayomYomQuestion||livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||hayomYomChanukahShabbatQuestion||hayomYomChanukahOverviewQuestion||northAfricaEducationQuestion)&&understanding.intent==='pattern')understanding.intent='guidance';
+ if(!usable.length&&!educationPublicationLettersQuestion&&!cheshvan5711EducationOutreachQuestion&&!yechidusUnityMissionQuestion&&!jaffeMemoirSynthesisQuestion&&!yudTesKislevLettersQuestion&&!wellspringsDisseminationQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!institutionalEducationQuestion&&!practicalGuidanceLettersQuestion&&!hayomYomChanukahOverviewQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_evidence',claims:[],sources:[],answered_well:[],insufficient_evidence:[q]};
  if(understanding.intent==='pattern'&&(educationGovernanceQuestion?educationGovernanceFamilies.size:families.size)<2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'single_evidence_family',claims:[],sources:usable.slice(0,2),answered_well:[],insufficient_evidence:['אין שתי משפחות ראיות עצמאיות לאחר dedup']};
  const dailyStudyPrayerQuestion=understanding.query.includes('סדרי לימוד ותפילה')&&understanding.query.includes('חיי היום יום');
  const shmittaFruitReferralQuestion=understanding.query.includes('פירות שביעית')&&understanding.query.includes('נכרים')&&understanding.query.includes('גדולי ההוראה');
@@ -2065,7 +2103,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  let answerEvidence=usable;
  if(dailyStudyPrayerQuestion)understanding.intent='pattern';
  if(yiddishHayomYomQuestion)understanding.intent='guidance';
- if(livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||hayomYomChanukahShabbatQuestion)understanding.intent='guidance';
+ if(livingTorahMultiTopicQuestion||hayomYomHouseholdInfluenceQuestion||hayomYomThoughtPrayerActionQuestion||hayomYomMindHeartQuestion||hayomYomChanukahShabbatQuestion||hayomYomChanukahOverviewQuestion)understanding.intent='guidance';
  if(jewishHomeSynthesisQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(youthEducationStudyQuestion&&understanding.intent==='pattern')understanding.intent='guidance';
  if(tzedakahSynthesisQuestion){
@@ -2239,6 +2277,21 @@ else if(educationGovernanceQuestion){
   if(chosen.length!==2||new Set(chosen.map(familyKey)).size!==2)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_chanukah_shabbat_families',claims:[],sources:chosen,answered_well:[],insufficient_evidence:['לא נמצאו שני ערכי יום יום נפרדים עם גוף מקור שנבדק: אחד על מנהגי הדלקת נרות חנוכה ואחד על סדר שבת מברכים.']};
   answerEvidence=chosen;
  }
+ else if(hayomYomChanukahOverviewQuestion){
+  const primary=index.filter(e=>e&&e.has_content_evidence===true&&e.source_class==='Hayom Yom'&&e.independent_witness!==false&&e._independent_witness!==false&&!e.translation_of_evidence_family_id);
+  const required=[
+   {topic:'second_imprisonment',predicate:supportsHayomYomSecondImprisonmentProposition},
+   {topic:'domestic_chanukah_gathering',predicate:supportsHayomYomDomesticChanukahProposition},
+   {topic:'greek_era_practices',predicate:supportsHayomYomGreekEraProposition},
+   {topic:'greek_conflict_and_divinity',predicate:supportsHayomYomGreekDivinityProposition},
+   {topic:'rosh_chodesh_prayer_order',predicate:supportsHayomYomRoshChodeshRitualProposition}
+  ];
+  const byTopic=new Map();
+  for(const e of primary)for(const p of arr(e.response_propositions))for(const spec of required)if(!byTopic.has(spec.topic)&&spec.predicate(p))byTopic.set(spec.topic,{...e,_supporting_propositions:[p]});
+  const missing=required.filter(spec=>!byTopic.has(spec.topic)).map(spec=>spec.topic),chosen=required.map(spec=>byTopic.get(spec.topic)).filter(Boolean);
+  if(missing.length||new Set(chosen.map(familyKey).filter(Boolean)).size!==5)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_chanukah_overview_families',claims:[],sources:chosen,answered_well:[],insufficient_evidence:['לא נמצאו חמש משפחות ערכי יום יום נפרדות עם פרופוזיציות גוף תומכות. חסר: '+missing.join(', ')]};
+  answerEvidence=chosen;
+ }
  else if(hayomYomHouseholdInfluenceQuestion){
   const household=index.filter(e=>e&&e.has_content_evidence===true&&e.source_class==='Hayom Yom'&&arr(e.response_propositions).some(supportsHayomYomHouseholdStudyProposition)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsHayomYomHouseholdStudyProposition)}));
   const influence=index.filter(e=>e&&e.has_content_evidence===true&&e.source_class==='Hayom Yom'&&arr(e.response_propositions).some(supportsHayomYomIndividualInfluenceProposition)).map(e=>({...e,_supporting_propositions:arr(e.response_propositions).filter(supportsHayomYomIndividualInfluenceProposition)}));
@@ -2294,7 +2347,7 @@ else if(educationGovernanceQuestion){
  if(dailyStudyPrayerQuestion){answerEvidence=answerEvidence.slice().sort((a,b)=>dailyRoutinePracticeCount(b)-dailyRoutinePracticeCount(a)||propositionRelevance(b,understanding).score-propositionRelevance(a,understanding).score);}
  const queryBudget=practicalGuidanceLettersQuestion?{...budget,sources:Math.max(budget.sources,13),claims:Math.max(budget.claims,13)}:jaffeMemoirSynthesisQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:institutionalEducationQuestion?{...budget,sources:Math.max(budget.sources,10),claims:Math.max(budget.claims,10)}:yechidusPeaceMissionQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:yudTesKislevLettersQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:yechidusUnityMissionQuestion?{...budget,sources:Math.max(budget.sources,10),claims:Math.max(budget.claims,10)}:communityUnityHospitalityQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:chassidicPracticeQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}: educationPublicationLettersQuestion?{...budget,sources:Math.max(budget.sources,5),claims:Math.max(budget.claims,5)}:northAfricaEducationQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,5)}:hayomYomChanukahShabbatQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:hayomYomMindHeartQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:hayomYomThoughtPrayerActionQuestion?{...budget,sources:Math.max(budget.sources,3),claims:Math.max(budget.claims,3)}:livingTorahMultiTopicQuestion?{...budget,sources:Math.max(budget.sources,3),claims:Math.max(budget.claims,3)}:hayomYomHouseholdInfluenceQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:educationGovernanceQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:earlyChildhoodEducationQuestion?{...budget,sources:Math.max(budget.sources,12),claims:Math.max(budget.claims,12)}:teshuvahLevelsQuestion?{...budget,sources:Math.max(budget.sources,2),claims:Math.max(budget.claims,2)}:educationYouthGuidanceQuestion?{...budget,sources:Math.max(budget.sources,3),claims:Math.max(budget.claims,3)}:jewishHomeSynthesisQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:educationInfluenceActionQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:fordLetterQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:yiddishMelodyQuestion?{...budget,sources:Math.max(budget.sources,4),claims:Math.max(budget.claims,4)}:wellspringsDisseminationQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:studyFarmingComparisonQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:lodYeshivaStudyTravelQuestion?{...budget,sources:Math.max(budget.sources,6),claims:Math.max(budget.claims,6)}:shmittaFruitReferralQuestion?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:dailyStudyPrayerQuestion?{...budget,sources:Math.max(budget.sources,20),claims:Math.max(budget.claims,20)}:(yeshivaQuestion||humanMissionQuestion||shabbatRoshChodeshQuestion||niglehPnimiyusQuestion||anniversaryBlessingQuestion||businessSynagogueQuestion||tzedakahSynthesisQuestion||educationInfluenceActionQuestion)?{...budget,sources:Math.max(budget.sources,8),claims:Math.max(budget.claims,8)}:budget;
  const candidates=dailyStudyPrayerQuestion?prioritizeDailyRoutineCandidates(answerEvidence,queryBudget.sources):answerEvidence.slice(0,queryBudget.sources),synthesized=synthesizeClaims(candidates,understanding,queryBudget.claims),initialCoverage=coverageFor(candidates,understanding);
- if(!synthesized.length&&!northAfricaEducationQuestion&&!educationPublicationLettersQuestion&&!livingTorahMultiTopicQuestion&&!hayomYomHouseholdInfluenceQuestion&&!hayomYomThoughtPrayerActionQuestion&&!hayomYomMindHeartQuestion&&!hayomYomChanukahShabbatQuestion&&!yechidusPeaceMissionQuestion&&!yechidusUnityMissionQuestion&&!jaffeMemoirSynthesisQuestion&&!yudTesKislevLettersQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!institutionalEducationQuestion&&!practicalGuidanceLettersQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
+ if(!synthesized.length&&!northAfricaEducationQuestion&&!educationPublicationLettersQuestion&&!livingTorahMultiTopicQuestion&&!hayomYomHouseholdInfluenceQuestion&&!hayomYomThoughtPrayerActionQuestion&&!hayomYomMindHeartQuestion&&!hayomYomChanukahShabbatQuestion&&!hayomYomChanukahOverviewQuestion&&!yechidusPeaceMissionQuestion&&!yechidusUnityMissionQuestion&&!jaffeMemoirSynthesisQuestion&&!yudTesKislevLettersQuestion&&!communityUnityHospitalityQuestion&&!chassidicPracticeQuestion&&!institutionalEducationQuestion&&!practicalGuidanceLettersQuestion)return{mode:answerMode,presentation,understanding,answerable:false,reason:'no_entailed_propositions',claims:[],sources:candidates,answered_well:initialCoverage.covered,insufficient_evidence:[...initialCoverage.missing,q]};
  const retained=retainCitedSources(candidates,synthesized);
  let selected=retained.sources.slice(),claims=retained.claims.slice();
  let forcedSynthesis=null;
@@ -2308,6 +2361,13 @@ else if(educationGovernanceQuestion){
  if(yechidusUnityMissionQuestion){const yechidusSynthesis=buildYechidusUnityMissionSynthesis(candidates);if(!yechidusSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_yechidus_unity_mission_claim_evidence',claims:[],sources:candidates,answered_well:[],insufficient_evidence:['לא נמצאו מיקומי מקור ברמת טענה לכל עשרת האירועים.']};selected=candidates.slice();claims=yechidusSynthesis.claims;}
   if(jaffeMemoirSynthesisQuestion){const memoir=buildJaffeMemoirSynthesis(answerEvidence);if(!memoir)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_jaffe_memoir_claim_evidence',claims:[],sources:answerEvidence,answered_well:[],insufficient_evidence:['לא נמצאו שמונה פרופוזיציות ממואר נפרדות עם מיקומי גוף מקור, או שקבוצת העדות המשותפת אינה שלמה.']};selected=memoir.sources;claims=memoir.claims;forcedSynthesis=memoir.synthesis;}
  const locatedClaim=(e,i,topic,p)=>{const pi=arr(e.response_propositions).findIndex(x=>String(x).trim()===String(p).trim()),loc=arr(e.response_proposition_locators)[pi]||e.proposition_source_locator||null;return{topic,text:String(p),source_numbers:[i+1],evidence_family_ids:[familyKey(e)],source_locators:loc?[{source_number:i+1,locator:loc,proposition_text:String(p)}]:[],witnesses:loc?[{source_number:i+1,source_id:e.id||e.aid||null,evidence_family_id:familyKey(e),source_locator:loc,proposition_source_locator:loc,proposition:String(p),independent_witness:e.independent_witness!==false&&e._independent_witness!==false}]:[],documented_circumstances:arr(e.documented_circumstances),conditions_or_qualifications:arr(e.conditions_or_qualifications),audiences:arr(e.audience)};};
+ if(hayomYomChanukahOverviewQuestion){
+  selected=answerEvidence.slice(0,5);
+  const topics=['second_imprisonment','domestic_chanukah_gathering','greek_era_practices','greek_conflict_and_divinity','rosh_chodesh_prayer_order'];
+  claims=selected.map((e,i)=>locatedClaim(e,i,topics[i],arr(e._supporting_propositions)[0]));
+  forcedSynthesis=buildHayomYomChanukahOverviewSynthesis(selected);
+  if(!forcedSynthesis)return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_hayom_yom_chanukah_overview_locators',claims:[],sources:selected,answered_well:[],insufficient_evidence:['לא נמצאו מיקומי גוף מקור נפרדים לכל חמש טענות ההשוואה.']};
+ }
  if(hayomYomChanukahShabbatQuestion){
   selected=answerEvidence.slice(0,2);
   claims=selected.map((e,i)=>locatedClaim(e,i,i===0?'chanukah_lighting_custom':'shabbat_mevorchim_gathering',arr(e._supporting_propositions)[0]));

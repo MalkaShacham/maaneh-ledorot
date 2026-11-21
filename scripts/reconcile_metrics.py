@@ -362,11 +362,18 @@ for selected_index, batch_info in enumerate(selected_batches):
         priority=lambda e:(bool(answer_eligible(e)),rank.get(e.get("status"),0))
         if old is None or priority(adjusted)>priority(old): snapshot_by_key[key]=adjusted
     snapshot_metrics=summarize(list(snapshot_by_key.values()))
-    actual_before=previous_snapshot_metrics or (batch_data.get("metrics_before") or snapshot_metrics)
     readiness_keys=("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")
-    batch_data["metrics_actual_before"]={k:int(actual_before.get(k,snapshot_metrics[k])) for k in readiness_keys}
+    if previous_snapshot_metrics is None:
+        # The first pending batch has no measured pre-chain snapshot. Its planning
+        # boundary may be a forecast, so never relabel it as an actual baseline.
+        batch_data["metrics_actual_before"]=None
+        batch_data["metrics_actual_before_status"]="not_measured_at_start_of_pending_chain"
+        batch_data["metrics_delta_actual"]=None
+    else:
+        batch_data["metrics_actual_before"]={k:int(previous_snapshot_metrics[k]) for k in readiness_keys}
+        batch_data["metrics_actual_before_status"]="previous_batch_measured_snapshot"
+        batch_data["metrics_delta_actual"]={k:snapshot_metrics[k]-batch_data["metrics_actual_before"][k] for k in readiness_keys}
     batch_data["metrics_actual_after"]=snapshot_metrics
-    batch_data["metrics_delta_actual"]={k:snapshot_metrics[k]-batch_data["metrics_actual_before"][k] for k in readiness_keys}
     previous_snapshot_metrics=snapshot_metrics
     batch_data["reconciliation_snapshot_adjustment"]={
         "excluded_later_in_place_proposition_count":sum(len(v) for v in later_in_place_exclusions.values()),
@@ -390,10 +397,19 @@ for selected_index, batch_info in enumerate(selected_batches):
         same_family_duplicate=len(matches)>1 and len(family_ids)==1
         identity_collision=len(matches)>1 and not same_family_duplicate
         audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False}})
-    expected=batch_data.get("metrics_expected_after") or {}
-    variance={k:snapshot_metrics[k]-int(expected.get(k,snapshot_metrics[k])) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
-    batch_data["reconciliation_variance"]=variance
-    batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
+    expected=batch_data.get("metrics_expected_after")
+    if isinstance(expected,dict) and expected:
+        variance={k:snapshot_metrics[k]-int(expected.get(k,snapshot_metrics[k])) for k in ("answer_eligible_unique_sources","content_verified_unique_sources","answer_eligible_propositions")}
+        batch_data["reconciliation_variance"]=variance
+        batch_data["reconciliation_comparison_status"]="compared_to_projection"
+        batch_data["reconciliation_status"]="reconciled" if all(v==0 for v in variance.values()) else "reconciled_with_variance"
+    else:
+        # A batch without a forecast is still fully reconcilable: report measured before/after
+        # counts, but do not manufacture a zero variance against an empty expectation.
+        batch_data["reconciliation_variance"]=None
+        batch_data["reconciliation_comparison_status"]="not_applicable_no_projection"
+        batch_data["reconciliation_note"]="Canonical metrics were measured directly; no post-batch projection was stored, so projection variance is not applicable."
+        batch_data["reconciliation_status"]="reconciled"
     batch_data["status"]=batch_data["reconciliation_status"]
     batch_data["reconciled_at"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
     dedup=batch_data.get("deduplication_check")

@@ -8,8 +8,8 @@
   "source_url": "https://he.chabad.org/library/article_cdo/aid/528553",
   "source_line_or_locator": "Chabad.org AID 528553, Hebrew publisher body lines 162–174; proposition locator lines 173–174.",
   "ingested_at": "2026-11-21T17:01:44+02:00",
-  "collection_status": "dedup-candidate",
-  "verification_status": "witness-pending",
+  "collection_status": "promoted_to_canonical",
+  "verification_status": "source_text_inspected",
   "context_status": "partial",
   "rights_status": "link-only",
   "raw_metadata": {
@@ -55,7 +55,11 @@
           "The item is not promoted to the canonical corpus until full AID/URL/Evidence Family deduplication is completed."
         ]
       }
-    ]
+    ],
+    "canonical_file": "data/items/content-research-batch-159-2026-11-21.json",
+    "canonical_status": "Parsed",
+    "pipeline_status": "Parsed",
+    "status": "Parsed"
   },
   "duplicate_candidates": [],
   "taxonomy_candidates": [
@@ -67,8 +71,10 @@
   ],
   "response_case_candidate": false,
   "promotion_blockers": [
-    "Full canonical deduplication against the complete public-search index and all canonical item files remains pending; the full index was too large to inspect through the available connector.",
-    "Print edition, manuscript and autograph were not inspected; retain a partial-context Parsed status if later promoted."
+    "ההקשר נשאר partial: לא נבדקו מהדורת הדפוס, כתב־יד, אוטוגרף או עד ארכיוני עצמאי; לכן הרשומה נשארת Parsed ולא Verified."
   ],
-  "notes": "Public Hebrew body was inspected directly. AID 528553 was checked against the current batch-157 file, the review queue and the 12 bulk-indexed inventory files; it was absent from those subsets. Because the full canonical search index and all earlier content batches were not exhaustively scanned, this record remains a dedup-candidate in staging and is not counted as a new canonical identity or answer-eligible source."
+  "notes": "גוף הפרסום הציבורי נפתח ונבדק מחדש ב-2026-11-21 (שורות 162–174). קדם-כפילות בדק את snapshot האינדקס המלא מ-15.11 (9,122 רשומות), 22 קובצי batch בטווח 137–158 ותור בדיקה בן 1,022 רשומות; AID 528553 לא נמצא. הרשומה קודמה ל-canonical batch159 כ-Parsed בלבד. reconciliation חייב להשלים סריקה קנונית לאחר ההוספה; אין קידום Verified.",
+  "canonical_status": "Parsed",
+  "canonical_file": "data/items/content-research-batch-159-2026-11-21.json",
+  "promoted_at": "2026-11-21T18:52:02+02:00"
 }
