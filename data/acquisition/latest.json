@@ -1,553 +1,990 @@
 {
-  "started_at": "2026-11-18T00:29:02+02:00",
-  "attempted": 22,
+  "started_at": "2026-11-21T03:55:57+02:00",
+  "attempted": 11,
   "enriched": 1,
   "discovered": 8,
-  "blocked": 10,
-  "skipped": 3,
+  "blocked": 2,
+  "skipped": 0,
   "status": "manual_web_review_completed_pending_reconciliation",
   "manual_web_review": {
-    "batch_id": "151",
-    "batch_file": "data/items/content-research-batch-151-2026-11-21.json",
-    "reviewed_at": "2026-11-21T02:59:07+02:00",
+    "batch_id": "152",
+    "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+    "reviewed_at": "2026-11-21T03:55:57+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "new_source_identities": 3,
-    "existing_identities_enriched": 6,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 3,
-    "existing_response_propositions_added": 6,
-    "total_new_paraphrase_entries": 9,
-    "answer_eligible_source_families_added": 3,
-    "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 3,
-    "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
-    "recovered_candidate_count": 0,
-    "metrics_before": {
-      "answer_eligible_unique_sources": 1513,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3849
-    },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1516,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3858
-    },
-    "metrics_actual_after": null,
-    "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 3,
-      "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 9
-    },
-    "new_aids": [
-      2505782,
-      2505723,
-      2505757
-    ],
-    "enriched_aids": [
-      2487225,
-      2515477,
-      2515046,
-      2511676,
-      2511619,
-      2512367
-    ],
-    "rechecked_aids": [
-      2498908,
-      2515007
-    ],
-    "translations_counted_as_independent_witnesses": 0,
-    "blocked_candidates": [
-      {
-        "aid": 4666220,
-        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-        "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "הנתיב הציבורי הישיר לא החזיר גוף פרסום קריא בכלי העיון; לא ניתן היה לבדוק את גוף המקור.",
-        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה. באותה הפעלה בוצעה חלופה: נפתחו ונבדקו 10 גופי פרסום נגישים של יחידויות באנגלית, לצד העשרת זהויות קיימות."
-      }
-    ],
-    "deduplication_check": {
-      "full_index_scan_available": false,
-      "full_index_scan_pending_reconciliation": true,
-      "candidate_aids_found": [],
-      "existing_aids_found": [
-        2498908,
-        2511676,
-        2511619,
-        2512367,
-        2515477,
-        2515046,
-        2515007,
-        2487225
-      ],
-      "new_aids_unique": true,
-      "source_urls_unique": true,
-      "evidence_family_ids_unique": true,
-      "canonical_identity_collisions": null,
-      "missing_canonical_identities": null,
-      "all_target_identities_answer_eligible": null,
-      "recent_manual_batch_files_checked": 92,
-      "recent_manual_batch_range": "055–150, all available content-research batch files",
-      "bulk_indexed_files_checked": 5,
-      "bulk_indexed_files_unavailable": 7,
-      "review_queue_records": 1022,
-      "review_queue_matches": 0,
-      "post_addition_canonical_scan_pending": true,
-      "note": "Preflight: all 92 available manual content-research batches 055–150 were checked for the three proposed new AIDs; none appeared. Seven of the ten Yechidus pages were found in existing canonical batches/bulk records and are being enriched or rechecked in place. Eight existing AIDs are not new identities. The 1,022-item review queue had no matches for the three new AIDs. Full canonical identity scan remains pending reconciliation."
-    },
-    "retrieval_synthesis": {
-      "topic": "yechidus_unity_and_mission",
-      "attribution": "system_synthesis_not_rebbe_quote",
-      "synthesis_scope": "cross_family_derived_case_comparison",
-      "source_count": 10,
-      "distinct_evidence_families": 10,
-      "independent_evidence_families": 0,
-      "derived_non_independent_presentations": 10,
-      "claim_count": 10,
-      "claim_level_source_locators": 10,
-      "regular_mode": "10 claims / 10 source families",
-      "researcher_mode": "deep; 10 claim-source mappings, witness-level provenance and context boundaries",
-      "claim_topics": [
-        "mission_in_providence_place",
-        "individual_action_overcomes_environmental_barriers",
-        "shared_mission_carried_home",
-        "torah_study_and_tzedakah_in_practice",
-        "torah_guides_daily_life_and_world",
-        "unity_within_difference",
-        "unity_and_practical_tzedakah_after_departure",
-        "ahavat_yisrael_in_practical_care",
-        "unity_across_diverse_roles",
-        "mutual_support_after_separation"
-      ],
-      "text": "בעשר יחידויות מתאריכים שונים מופיעים היבטים נבדלים של אחדות ואחריות לאחר המפגש: מימוש שליחות במקום שנקבע בהשגחה פרטית; יכולת היחיד לפעול למרות חסמים; נשיאת כוח הקבוצה חזרה למקום המגורים; חיבור לימוד התורה והצדקה למעשה; הכוונת חיי היום־יום על פי התורה; אחדות בתוך שונות; צדקה לאחר פרידה; אהבת ישראל מעשית; אחדות בתוך ריבוי תפקידים; וסיוע הדדי גם במרחק. זו סינתזה מחקרית של המערכת, לא אמירה אחת ולא מסקנה המיוחסת לרבי.",
-      "limits": [
-        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
-        "כל עשרת המקורות הם הצגות מו״ל באנגלית; המקור בשפתו המקורית והקלטות לא נבדקו, והם אינם עדים עצמאיים.",
-        "היחידויות הן אירועים נפרדים; אין למזג אותן לשיחה אחת או לכלל אחיד.",
-        "נבדקו רק הקטעים והמיקומים שצוינו; ההקשר המלא של כל אירוע חלקי.",
-        "תיאור כוונה, קריאה לפעולה או אפשרות רוחנית אינו ראיה לכך שהפעולה בוצעה או שהשיגה תוצאה."
-      ],
-      "source_aids": [
-        2498908,
-        2515477,
-        2515046,
-        2487225,
-        2505782,
-        2505723,
-        2505757,
-        2511676,
-        2511619,
-        2512367
-      ]
-    },
-    "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
-  },
-  "previous_manual_web_review": {
-    "batch_id": "150",
-    "batch_file": "data/items/content-research-batch-150-2026-11-21.json",
-    "reviewed_at": "2026-11-21T01:58:48+02:00",
-    "status": "pending_reconciliation",
-    "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "new_source_identities": 10,
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 9,
+    "source_body_pages_opened": 9,
+    "new_source_identities": 8,
     "existing_identities_enriched": 1,
-    "new_response_propositions": 10,
-    "existing_response_propositions_added": 1,
-    "total_new_paraphrase_entries": 11,
-    "answer_eligible_source_families_added": 10,
-    "independent_witnesses_added": 10,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 10,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 1,
+    "independent_witness_groups_added": 1,
+    "same_author_testimony_records": 8,
     "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
+    "blocked_candidate_count": 2,
+    "recovered_candidate_count": 0,
+    "metrics_before": {
+      "answer_eligible_unique_sources": 1496,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3823,
+      "measured_in_uncommitted_ci_workspace_after_batch148": true
+    },
+    "metrics_before_source": "Latest measured CI workspace snapshot after batch148 (run 44188237128); uncommitted and not the current public metric.",
+    "public_metrics_snapshot_before": {
+      "generated": "2026-11-15",
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2950
+    },
+    "metrics_expected_after": null,
+    "metrics_actual_after": null,
+    "metrics_delta_at_batch_boundary": {
+      "answer_eligible_unique_sources": 8,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 10
+    },
+    "local_batch_delta": {
+      "answer_eligible_unique_sources": 8,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 10
+    },
+    "new_aids": [
+      260062,
+      2593500,
+      1026221,
+      260037,
+      2593531,
+      260093,
+      2593601,
+      2593412
+    ],
+    "enriched_aids": [
+      2505782
+    ],
+    "rechecked_aids": [],
+    "translations_counted_as_independent_witnesses": 0,
+    "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+    "shared_witness_group_count": 1,
+    "blocked_candidates": [
+      {
+        "aid": 4666220,
+        "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "פתיחה ישירה החזירה Internal Error; לא התקבל גוף פרסום קריא.",
+        "handling": "לא בוצע crawler retry ולא נעקפו בקרות; נבדקו שמונה דפי ממואר נגישים והועשרה זהות קיימת."
+      },
+      {
+        "aid": 2487225,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2487225/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "שתי וריאציות של הנתיב החזירו Internal Error.",
+        "handling": "לא נוצרה פרפרזה ולא שונה סטטוס; כחלופה הועשר AID2505782 הנגיש, תוך שמירת משפחתו."
+      }
+    ],
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "source_body_review": [
+      {
+        "candidate_key": "aid:260062",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260062/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260062, body lines 289–291."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260062, lines 289–291, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593500",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593500/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593500, body lines 268–275."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593500, lines 268–275, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:1026221",
+        "title": "Our Audience with the Rebbe — Fourth Installment",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1026221/jewish/Our-Audience-with-the-Rebbe.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 1026221, body lines 257–273."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 1026221, lines 257–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:260037",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260037/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260037, body lines 269–277."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260037, lines 269–277, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593531",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593531/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593531, body lines 282–292."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593531, lines 282–292, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:260093",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260093/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260093, body lines 278–284."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260093, lines 278–284, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593601",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593601/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593601, body lines 270–273."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593601, lines 270–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593412",
+        "title": "Farewell Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593412/jewish/Farewell-Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593412, body lines 263–289."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593412, lines 263–289, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      }
+    ],
+    "existing_identity_updates": [
+      {
+        "aid": 2505782,
+        "canonical_file": "data/items/content-research-batch-151-2026-11-21.json",
+        "existing_propositions_before": 1,
+        "propositions_added": 2,
+        "total_propositions_after": 3,
+        "locator": "Chabad.org/TheRebbe.org AID 2505782, body lines 261–265 (publisher English translation). ; Chabad.org/TheRebbe.org AID 2505782, body lines 268–271 (publisher English translation).",
+        "reason": "נוספו שתי פרפרזות מקטעי בר/בת מצווה וחתנים/כלות; נשמרו AID, זהות ומשפחת ראיות.",
+        "identity_key": "aid:2505782",
+        "action": "enriched_existing_identity_in_place",
+        "body_text_inspected": true,
+        "status_after": "Parsed",
+        "independent_witness": false
+      }
+    ],
+    "existing_identity_rechecks": [],
+    "deduplication_check": {
+      "full_index_scan_available": false,
+      "full_index_scan_pending_reconciliation": true,
+      "candidate_aids_found": [],
+      "existing_aids_found": [],
+      "new_aids_unique_within_checked_scope": true,
+      "source_urls_unique": true,
+      "evidence_family_ids_unique": true,
+      "canonical_identity_collisions": null,
+      "missing_canonical_identities": null,
+      "all_target_identities_answer_eligible": null,
+      "recent_manual_batch_files_checked": 3,
+      "recent_manual_batch_range": "149–151",
+      "review_queue_records": 1022,
+      "review_queue_matches": 0,
+      "post_addition_canonical_scan_pending": true,
+      "note": "נבדקו שמונת ה-AID מול 1,022 רשומות תור הבדיקה ומול batches 149–151; לא נמצאה התאמה. לא בוצעה סריקה מלאה של כל הקבצים הקנוניים או batches 055–148 בריצה זו; הייחודיות זמנית עד reconciliation. שמונת האירועים הם של אותו מחבר ואינם שמונה עדים בלתי תלויים לטענה משותפת."
+    },
+    "retrieval_synthesis": {
+      "topic": "jaffe_memoir_practical_guidance",
+      "attribution": "system_synthesis_not_rebbe_quote",
+      "synthesis_scope": "cross_family_derived_case_comparison",
+      "source_count": 8,
+      "distinct_evidence_families": 8,
+      "independent_evidence_families": 1,
+      "independent_witness_groups": 1,
+      "derived_non_independent_presentations": 0,
+      "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+      "claim_count": 8,
+      "claim_level_source_locators": 8,
+      "regular_mode": "8 claims / 8 event families; one shared memoirist witness group",
+      "researcher_mode": "deep; 8 claim-source mappings, 8 event families, one witness group, witness provenance and partial-context boundaries",
+      "claim_topics": [
+        "medical_case_reporting",
+        "audience_scheduling_and_workload",
+        "bar_mitzvah_charity_and_education",
+        "correspondence_response_practice",
+        "family_visit_and_children_studies",
+        "encouraging_youth_torah_learning",
+        "personal_health_attention",
+        "summer_vacation_child_education"
+      ],
+      "text": "שמונה קטעים נפרדים ביומנו שפורסם של זלמן יפה מתעדים היבטים שונים של יחידות והדרכה אישית: הכנת מידע לפני בקשת ברכה, התאמת סדרי קבלת הקהל לעומס, צדקה וחינוך במפגש עם נערה, מענה להתכתבות, התאמת ביקור משפחתי ללימודי ילדים, עידוד לימוד של נכד צעיר, התעניינות בבריאות וחינוך ילדים בחופשה. זו השוואה מחקרית בין אירועים שונים, לא אמירה אחת ולא מדיניות אחידה המיוחסת לרבי.",
+      "limits": [
+        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+        "כל שמונת הפרסומים הם מאותו מחבר ומאותה סדרת ממואר; שמונה Evidence Families של אירועים נפרדים אך קבוצת עדות אחת, לא שמונה עדים עצמאיים לטענה משותפת.",
+        "המקור הוא עדות ממואר באנגלית, לא תמליל בן הזמן, הקלטה או כתב יד; הנוסח המיוחס לרבי לא אומת מילה במילה.",
+        "ההקשר חלקי; נבדקו רק מיקומי הגוף שצוינו. אין להסיק מכל מקרה הוראה קבועה או מדיניות לכל התקופות.",
+        "אין להסיק מהתיאור שהפעולה הושלמה או שהושגה תוצאה מעבר למה שמספר המחבר."
+      ],
+      "source_aids": [
+        260062,
+        2593500,
+        1026221,
+        260037,
+        2593531,
+        260093,
+        2593601,
+        2593412
+      ]
+    },
+    "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה."
+  },
+  "previous_manual_web_review": {
+    "batch_id": "151",
+    "batch_file": "data/items/content-research-batch-151-2026-11-21.json",
+    "reviewed_at": "2026-11-21T02:59:07+02:00",
+    "status": "pending_reconciliation",
+    "reconciliation_status": "pending_reconciliation",
+    "reviewed_item_count": 12,
+    "source_bodies_inspected": 11,
+    "source_body_pages_opened": 11,
+    "new_source_identities": 3,
+    "existing_identities_enriched": 6,
+    "existing_identities_rechecked": 2,
+    "new_response_propositions": 3,
+    "existing_response_propositions_added": 6,
+    "total_new_paraphrase_entries": 9,
+    "answer_eligible_source_families_added": 3,
+    "independent_witnesses_added": 0,
+    "non_independent_presentations_added": 3,
+    "content_verified_unique_sources_added": 0,
     "blocked_candidate_count": 1,
     "recovered_candidate_count": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1503,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3838
-    },
-    "metrics_expected_after": {
       "answer_eligible_unique_sources": 1513,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3849
     },
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1516,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3858
+    },
     "metrics_actual_after": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 10,
+      "answer_eligible_unique_sources": 3,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 11
+      "answer_eligible_propositions": 9
     },
     "new_aids": [
-      4872325,
-      4994205,
-      4730828,
-      5287503,
-      4928852,
-      5357433,
-      4929082,
-      5100419,
-      5357411,
-      5357099
+      2505782,
+      2505723,
+      2505757
     ],
     "enriched_aids": [
-      2988940
+      2487225,
+      2515477,
+      2515046,
+      2511676,
+      2511619,
+      2512367
+    ],
+    "rechecked_aids": [
+      2498908,
+      2515007
     ],
     "translations_counted_as_independent_witnesses": 0,
     "blocked_candidates": [
       {
         "aid": 4666220,
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
-        "status": "public_reader_body_unavailable",
-        "reason": "הנתיב העברי הישיר לא החזיר גוף פרסום קריא; הנתיב המקביל באנגלית הציג מעטפת/תקציר ללא גוף המקור.",
-        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה; באותה הפעלה נפתחו עשרה גופי איגרות עבריים אחרים."
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "הנתיב הציבורי הישיר לא החזיר גוף פרסום קריא בכלי העיון; לא ניתן היה לבדוק את גוף המקור.",
+        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה. באותה הפעלה בוצעה חלופה: נפתחו ונבדקו 10 גופי פרסום נגישים של יחידויות באנגלית, לצד העשרת זהויות קיימות."
       }
     ],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
       "candidate_aids_found": [],
+      "existing_aids_found": [
+        2498908,
+        2511676,
+        2511619,
+        2512367,
+        2515477,
+        2515046,
+        2515007,
+        2487225
+      ],
       "new_aids_unique": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "recent_manual_batch_files_checked": 23,
-      "recent_manual_batch_range": "127–149",
-      "bulk_indexed_files_checked": 6,
-      "bulk_indexed_files_unavailable": 6,
+      "recent_manual_batch_files_checked": 92,
+      "recent_manual_batch_range": "055–150, all available content-research batch files",
+      "bulk_indexed_files_checked": 5,
+      "bulk_indexed_files_unavailable": 7,
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "post_addition_canonical_scan_pending": true,
-      "note": "Preflight בלבד: לא נמצאו התאמות ל-10 ה-AID החדשים ב-23 קובצי הביקורת האחרונים, בששת קובצי bulk-indexed שהיו נגישים או בתור הביקורת בן 1,022 הרשומות. שישה קובצי bulk-indexed נוספים וקובצי batch ישנים יותר לא נסרקו; חיפוש הקוד אינו כיסוי מלא. סריקה קנונית מלאה ממתינה ל-reconciliation."
+      "note": "Preflight: all 92 available manual content-research batches 055–150 were checked for the three proposed new AIDs; none appeared. Seven of the ten Yechidus pages were found in existing canonical batches/bulk records and are being enriched or rechecked in place. Eight existing AIDs are not new identities. The 1,022-item review queue had no matches for the three new AIDs. Full canonical identity scan remains pending reconciliation."
     },
     "retrieval_synthesis": {
-      "topic": "institutional_education_and_public_influence",
-      "status": "implemented_local_simulation_passed_pending_ci",
+      "topic": "yechidus_unity_and_mission",
       "attribution": "system_synthesis_not_rebbe_quote",
-      "selected_aids": [
-        4872325,
-        4994205,
-        4730828,
-        5287503,
-        4928852,
-        5357433,
-        4929082,
-        5100419,
-        5357411,
-        5357099
-      ],
-      "claim_count": 10,
+      "synthesis_scope": "cross_family_derived_case_comparison",
+      "source_count": 10,
       "distinct_evidence_families": 10,
-      "independent_witnesses": 10,
-      "regular_mode": "עשר טענות תחומות, כל אחת נשענת על איגרת עברית אחת ומיקום גוף מדויק; הסינתזה אינה מוצגת כמדיניות אחידה.",
-      "researcher_mode": "deep mode exposes ten separate Evidence Families, witness provenance, context boundaries and a claim_source_map with one body locator per claim.",
-      "validation": "patternSynthesisIntegrity checks ten claim topics, source numbers, independent families, body locators and non-quotation attribution in regular and researcher modes.",
-      "limitations": [
-        "האיגרות נכתבו בתאריכים שונים לנמענים שונים; הקישור ביניהן הוא סינתזה מחקרית ולא אותה Evidence Family.",
-        "ההקשר חלקי; לא נבדקו אוטוגרפים, עותקי מזכירות או מהדורות מקבילות.",
-        "תיאור תכנון או בקשה לסיוע אינו הוכחה לביצוע בפועל.",
-        "AID 5357099 מסתיים בנוסח בשם הרבי; אין לייחס לו חתימה אישית."
+      "independent_evidence_families": 0,
+      "derived_non_independent_presentations": 10,
+      "claim_count": 10,
+      "claim_level_source_locators": 10,
+      "regular_mode": "10 claims / 10 source families",
+      "researcher_mode": "deep; 10 claim-source mappings, witness-level provenance and context boundaries",
+      "claim_topics": [
+        "mission_in_providence_place",
+        "individual_action_overcomes_environmental_barriers",
+        "shared_mission_carried_home",
+        "torah_study_and_tzedakah_in_practice",
+        "torah_guides_daily_life_and_world",
+        "unity_within_difference",
+        "unity_and_practical_tzedakah_after_departure",
+        "ahavat_yisrael_in_practical_care",
+        "unity_across_diverse_roles",
+        "mutual_support_after_separation"
+      ],
+      "text": "בעשר יחידויות מתאריכים שונים מופיעים היבטים נבדלים של אחדות ואחריות לאחר המפגש: מימוש שליחות במקום שנקבע בהשגחה פרטית; יכולת היחיד לפעול למרות חסמים; נשיאת כוח הקבוצה חזרה למקום המגורים; חיבור לימוד התורה והצדקה למעשה; הכוונת חיי היום־יום על פי התורה; אחדות בתוך שונות; צדקה לאחר פרידה; אהבת ישראל מעשית; אחדות בתוך ריבוי תפקידים; וסיוע הדדי גם במרחק. זו סינתזה מחקרית של המערכת, לא אמירה אחת ולא מסקנה המיוחסת לרבי.",
+      "limits": [
+        "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+        "כל עשרת המקורות הם הצגות מו״ל באנגלית; המקור בשפתו המקורית והקלטות לא נבדקו, והם אינם עדים עצמאיים.",
+        "היחידויות הן אירועים נפרדים; אין למזג אותן לשיחה אחת או לכלל אחיד.",
+        "נבדקו רק הקטעים והמיקומים שצוינו; ההקשר המלא של כל אירוע חלקי.",
+        "תיאור כוונה, קריאה לפעולה או אפשרות רוחנית אינו ראיה לכך שהפעולה בוצעה או שהשיגה תוצאה."
+      ],
+      "source_aids": [
+        2498908,
+        2515477,
+        2515046,
+        2487225,
+        2505782,
+        2505723,
+        2505757,
+        2511676,
+        2511619,
+        2512367
       ]
     },
-    "note": "נבדקו עשרה גופי איגרות עבריים חדשים והועשרה in-place שיחה עברית קיימת AID 2988940. AID 4666220 לא החזיר גוף קריא; בוצע fallback לעשרה פרסומים נגישים. כל הרשומות Parsed; אפס קידומים ל-Verified. סריקה קנונית מלאה ומדידה בפועל עדיין ממתינות.",
-    "local_synthesis_simulation": {
-      "regular_mode_passed": true,
-      "researcher_mode_passed": true,
-      "source_count": 10,
-      "claim_count": 10,
-      "independent_evidence_families": 10,
-      "claim_level_body_locators": 10,
-      "citation_entailment_passed": true,
-      "context_boundaries_passed": true,
-      "pattern_synthesis_integrity_passed": true,
-      "scope": "in-memory simulation against batch150 records; not the repository-wide test suite"
-    }
+    "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
   },
   "last_manual_web_review": {
-    "batch_id": "151",
-    "batch_file": "data/items/content-research-batch-151-2026-11-21.json",
-    "reviewed_at": "2026-11-21T02:59:07+02:00",
+    "batch_id": "152",
+    "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+    "reviewed_at": "2026-11-21T03:55:57+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "new_source_identities": 3,
-    "existing_identities_enriched": 6,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 3,
-    "existing_response_propositions_added": 6,
-    "total_new_paraphrase_entries": 9,
-    "answer_eligible_source_families_added": 3,
-    "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 3,
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 9,
+    "source_body_pages_opened": 9,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 10,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 1,
+    "independent_witness_groups_added": 1,
+    "same_author_testimony_records": 8,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
+    "blocked_candidate_count": 2,
     "recovered_candidate_count": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1513,
+      "answer_eligible_unique_sources": 1496,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3849
+      "answer_eligible_propositions": 3823,
+      "measured_in_uncommitted_ci_workspace_after_batch148": true
     },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1516,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3858
+    "metrics_before_source": "Latest measured CI workspace snapshot after batch148 (run 44188237128); uncommitted and not the current public metric.",
+    "public_metrics_snapshot_before": {
+      "generated": "2026-11-15",
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2950
     },
+    "metrics_expected_after": null,
     "metrics_actual_after": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 3,
+      "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 9
+      "answer_eligible_propositions": 10
+    },
+    "local_batch_delta": {
+      "answer_eligible_unique_sources": 8,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 10
     },
     "new_aids": [
-      2505782,
-      2505723,
-      2505757
+      260062,
+      2593500,
+      1026221,
+      260037,
+      2593531,
+      260093,
+      2593601,
+      2593412
     ],
     "enriched_aids": [
-      2487225,
-      2515477,
-      2515046,
-      2511676,
-      2511619,
-      2512367
+      2505782
     ],
-    "rechecked_aids": [
-      2498908,
-      2515007
-    ],
+    "rechecked_aids": [],
     "translations_counted_as_independent_witnesses": 0,
+    "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+    "shared_witness_group_count": 1,
     "blocked_candidates": [
       {
         "aid": 4666220,
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
         "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "הנתיב הציבורי הישיר לא החזיר גוף פרסום קריא בכלי העיון; לא ניתן היה לבדוק את גוף המקור.",
-        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה. באותה הפעלה בוצעה חלופה: נפתחו ונבדקו 10 גופי פרסום נגישים של יחידויות באנגלית, לצד העשרת זהויות קיימות."
+        "reason": "פתיחה ישירה החזירה Internal Error; לא התקבל גוף פרסום קריא.",
+        "handling": "לא בוצע crawler retry ולא נעקפו בקרות; נבדקו שמונה דפי ממואר נגישים והועשרה זהות קיימת."
+      },
+      {
+        "aid": 2487225,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2487225/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "שתי וריאציות של הנתיב החזירו Internal Error.",
+        "handling": "לא נוצרה פרפרזה ולא שונה סטטוס; כחלופה הועשר AID2505782 הנגיש, תוך שמירת משפחתו."
       }
     ],
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "source_body_review": [
+      {
+        "candidate_key": "aid:260062",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260062/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260062, body lines 289–291."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260062, lines 289–291, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593500",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593500/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593500, body lines 268–275."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593500, lines 268–275, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:1026221",
+        "title": "Our Audience with the Rebbe — Fourth Installment",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1026221/jewish/Our-Audience-with-the-Rebbe.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 1026221, body lines 257–273."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 1026221, lines 257–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:260037",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260037/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260037, body lines 269–277."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260037, lines 269–277, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593531",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593531/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593531, body lines 282–292."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593531, lines 282–292, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:260093",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260093/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260093, body lines 278–284."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260093, lines 278–284, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593601",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593601/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593601, body lines 270–273."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593601, lines 270–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593412",
+        "title": "Farewell Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593412/jewish/Farewell-Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593412, body lines 263–289."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593412, lines 263–289, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      }
+    ],
+    "existing_identity_updates": [
+      {
+        "aid": 2505782,
+        "canonical_file": "data/items/content-research-batch-151-2026-11-21.json",
+        "existing_propositions_before": 1,
+        "propositions_added": 2,
+        "total_propositions_after": 3,
+        "locator": "Chabad.org/TheRebbe.org AID 2505782, body lines 261–265 (publisher English translation). ; Chabad.org/TheRebbe.org AID 2505782, body lines 268–271 (publisher English translation).",
+        "reason": "נוספו שתי פרפרזות מקטעי בר/בת מצווה וחתנים/כלות; נשמרו AID, זהות ומשפחת ראיות.",
+        "identity_key": "aid:2505782",
+        "action": "enriched_existing_identity_in_place",
+        "body_text_inspected": true,
+        "status_after": "Parsed",
+        "independent_witness": false
+      }
+    ],
+    "existing_identity_rechecks": [],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
       "candidate_aids_found": [],
-      "existing_aids_found": [
-        2498908,
-        2511676,
-        2511619,
-        2512367,
-        2515477,
-        2515046,
-        2515007,
-        2487225
-      ],
-      "new_aids_unique": true,
+      "existing_aids_found": [],
+      "new_aids_unique_within_checked_scope": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "recent_manual_batch_files_checked": 92,
-      "recent_manual_batch_range": "055–150, all available content-research batch files",
-      "bulk_indexed_files_checked": 5,
-      "bulk_indexed_files_unavailable": 7,
+      "recent_manual_batch_files_checked": 3,
+      "recent_manual_batch_range": "149–151",
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "post_addition_canonical_scan_pending": true,
-      "note": "Preflight: all 92 available manual content-research batches 055–150 were checked for the three proposed new AIDs; none appeared. Seven of the ten Yechidus pages were found in existing canonical batches/bulk records and are being enriched or rechecked in place. Eight existing AIDs are not new identities. The 1,022-item review queue had no matches for the three new AIDs. Full canonical identity scan remains pending reconciliation."
+      "note": "נבדקו שמונת ה-AID מול 1,022 רשומות תור הבדיקה ומול batches 149–151; לא נמצאה התאמה. לא בוצעה סריקה מלאה של כל הקבצים הקנוניים או batches 055–148 בריצה זו; הייחודיות זמנית עד reconciliation. שמונת האירועים הם של אותו מחבר ואינם שמונה עדים בלתי תלויים לטענה משותפת."
     },
     "retrieval_synthesis": {
-      "topic": "yechidus_unity_and_mission",
+      "topic": "jaffe_memoir_practical_guidance",
       "attribution": "system_synthesis_not_rebbe_quote",
       "synthesis_scope": "cross_family_derived_case_comparison",
-      "source_count": 10,
-      "distinct_evidence_families": 10,
-      "independent_evidence_families": 0,
-      "derived_non_independent_presentations": 10,
-      "claim_count": 10,
-      "claim_level_source_locators": 10,
-      "regular_mode": "10 claims / 10 source families",
-      "researcher_mode": "deep; 10 claim-source mappings, witness-level provenance and context boundaries",
+      "source_count": 8,
+      "distinct_evidence_families": 8,
+      "independent_evidence_families": 1,
+      "independent_witness_groups": 1,
+      "derived_non_independent_presentations": 0,
+      "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+      "claim_count": 8,
+      "claim_level_source_locators": 8,
+      "regular_mode": "8 claims / 8 event families; one shared memoirist witness group",
+      "researcher_mode": "deep; 8 claim-source mappings, 8 event families, one witness group, witness provenance and partial-context boundaries",
       "claim_topics": [
-        "mission_in_providence_place",
-        "individual_action_overcomes_environmental_barriers",
-        "shared_mission_carried_home",
-        "torah_study_and_tzedakah_in_practice",
-        "torah_guides_daily_life_and_world",
-        "unity_within_difference",
-        "unity_and_practical_tzedakah_after_departure",
-        "ahavat_yisrael_in_practical_care",
-        "unity_across_diverse_roles",
-        "mutual_support_after_separation"
+        "medical_case_reporting",
+        "audience_scheduling_and_workload",
+        "bar_mitzvah_charity_and_education",
+        "correspondence_response_practice",
+        "family_visit_and_children_studies",
+        "encouraging_youth_torah_learning",
+        "personal_health_attention",
+        "summer_vacation_child_education"
       ],
-      "text": "בעשר יחידויות מתאריכים שונים מופיעים היבטים נבדלים של אחדות ואחריות לאחר המפגש: מימוש שליחות במקום שנקבע בהשגחה פרטית; יכולת היחיד לפעול למרות חסמים; נשיאת כוח הקבוצה חזרה למקום המגורים; חיבור לימוד התורה והצדקה למעשה; הכוונת חיי היום־יום על פי התורה; אחדות בתוך שונות; צדקה לאחר פרידה; אהבת ישראל מעשית; אחדות בתוך ריבוי תפקידים; וסיוע הדדי גם במרחק. זו סינתזה מחקרית של המערכת, לא אמירה אחת ולא מסקנה המיוחסת לרבי.",
+      "text": "שמונה קטעים נפרדים ביומנו שפורסם של זלמן יפה מתעדים היבטים שונים של יחידות והדרכה אישית: הכנת מידע לפני בקשת ברכה, התאמת סדרי קבלת הקהל לעומס, צדקה וחינוך במפגש עם נערה, מענה להתכתבות, התאמת ביקור משפחתי ללימודי ילדים, עידוד לימוד של נכד צעיר, התעניינות בבריאות וחינוך ילדים בחופשה. זו השוואה מחקרית בין אירועים שונים, לא אמירה אחת ולא מדיניות אחידה המיוחסת לרבי.",
       "limits": [
         "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
-        "כל עשרת המקורות הם הצגות מו״ל באנגלית; המקור בשפתו המקורית והקלטות לא נבדקו, והם אינם עדים עצמאיים.",
-        "היחידויות הן אירועים נפרדים; אין למזג אותן לשיחה אחת או לכלל אחיד.",
-        "נבדקו רק הקטעים והמיקומים שצוינו; ההקשר המלא של כל אירוע חלקי.",
-        "תיאור כוונה, קריאה לפעולה או אפשרות רוחנית אינו ראיה לכך שהפעולה בוצעה או שהשיגה תוצאה."
+        "כל שמונת הפרסומים הם מאותו מחבר ומאותה סדרת ממואר; שמונה Evidence Families של אירועים נפרדים אך קבוצת עדות אחת, לא שמונה עדים עצמאיים לטענה משותפת.",
+        "המקור הוא עדות ממואר באנגלית, לא תמליל בן הזמן, הקלטה או כתב יד; הנוסח המיוחס לרבי לא אומת מילה במילה.",
+        "ההקשר חלקי; נבדקו רק מיקומי הגוף שצוינו. אין להסיק מכל מקרה הוראה קבועה או מדיניות לכל התקופות.",
+        "אין להסיק מהתיאור שהפעולה הושלמה או שהושגה תוצאה מעבר למה שמספר המחבר."
       ],
       "source_aids": [
-        2498908,
-        2515477,
-        2515046,
-        2487225,
-        2505782,
-        2505723,
-        2505757,
-        2511676,
-        2511619,
-        2512367
+        260062,
+        2593500,
+        1026221,
+        260037,
+        2593531,
+        260093,
+        2593601,
+        2593412
       ]
     },
-    "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
+    "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה."
   },
   "last_manual_review": {
-    "batch_id": "151",
-    "batch_file": "data/items/content-research-batch-151-2026-11-21.json",
-    "reviewed_at": "2026-11-21T02:59:07+02:00",
+    "batch_id": "152",
+    "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+    "reviewed_at": "2026-11-21T03:55:57+02:00",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
-    "reviewed_item_count": 12,
-    "source_bodies_inspected": 11,
-    "source_body_pages_opened": 11,
-    "new_source_identities": 3,
-    "existing_identities_enriched": 6,
-    "existing_identities_rechecked": 2,
-    "new_response_propositions": 3,
-    "existing_response_propositions_added": 6,
-    "total_new_paraphrase_entries": 9,
-    "answer_eligible_source_families_added": 3,
-    "independent_witnesses_added": 0,
-    "non_independent_presentations_added": 3,
+    "reviewed_item_count": 9,
+    "source_bodies_inspected": 9,
+    "source_body_pages_opened": 9,
+    "new_source_identities": 8,
+    "existing_identities_enriched": 1,
+    "existing_identities_rechecked": 0,
+    "new_response_propositions": 8,
+    "existing_response_propositions_added": 2,
+    "total_new_paraphrase_entries": 10,
+    "answer_eligible_source_families_added": 8,
+    "independent_witnesses_added": 1,
+    "independent_witness_groups_added": 1,
+    "same_author_testimony_records": 8,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
-    "blocked_candidate_count": 1,
+    "blocked_candidate_count": 2,
     "recovered_candidate_count": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1513,
+      "answer_eligible_unique_sources": 1496,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3849
+      "answer_eligible_propositions": 3823,
+      "measured_in_uncommitted_ci_workspace_after_batch148": true
     },
-    "metrics_expected_after": {
-      "answer_eligible_unique_sources": 1516,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3858
+    "metrics_before_source": "Latest measured CI workspace snapshot after batch148 (run 44188237128); uncommitted and not the current public metric.",
+    "public_metrics_snapshot_before": {
+      "generated": "2026-11-15",
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2950
     },
+    "metrics_expected_after": null,
     "metrics_actual_after": null,
     "metrics_delta_at_batch_boundary": {
-      "answer_eligible_unique_sources": 3,
+      "answer_eligible_unique_sources": 8,
       "content_verified_unique_sources": 0,
-      "answer_eligible_propositions": 9
+      "answer_eligible_propositions": 10
+    },
+    "local_batch_delta": {
+      "answer_eligible_unique_sources": 8,
+      "content_verified_unique_sources": 0,
+      "answer_eligible_propositions": 10
     },
     "new_aids": [
-      2505782,
-      2505723,
-      2505757
+      260062,
+      2593500,
+      1026221,
+      260037,
+      2593531,
+      260093,
+      2593601,
+      2593412
     ],
     "enriched_aids": [
-      2487225,
-      2515477,
-      2515046,
-      2511676,
-      2511619,
-      2512367
+      2505782
     ],
-    "rechecked_aids": [
-      2498908,
-      2515007
-    ],
+    "rechecked_aids": [],
     "translations_counted_as_independent_witnesses": 0,
+    "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+    "shared_witness_group_count": 1,
     "blocked_candidates": [
       {
         "aid": 4666220,
         "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
         "status": "public_reader_body_unavailable_via_web_tool",
-        "reason": "הנתיב הציבורי הישיר לא החזיר גוף פרסום קריא בכלי העיון; לא ניתן היה לבדוק את גוף המקור.",
-        "handling": "לא בוצע crawler retry ולא נעקפו בקרות גישה. באותה הפעלה בוצעה חלופה: נפתחו ונבדקו 10 גופי פרסום נגישים של יחידויות באנגלית, לצד העשרת זהויות קיימות."
+        "reason": "פתיחה ישירה החזירה Internal Error; לא התקבל גוף פרסום קריא.",
+        "handling": "לא בוצע crawler retry ולא נעקפו בקרות; נבדקו שמונה דפי ממואר נגישים והועשרה זהות קיימת."
+      },
+      {
+        "aid": 2487225,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2487225/jewish/page.htm",
+        "status": "public_reader_body_unavailable_via_web_tool",
+        "reason": "שתי וריאציות של הנתיב החזירו Internal Error.",
+        "handling": "לא נוצרה פרפרזה ולא שונה סטטוס; כחלופה הועשר AID2505782 הנגיש, תוך שמירת משפחתו."
       }
     ],
+    "fallback_source_attempted": true,
+    "crawler_retry": false,
+    "access_control_bypassed": false,
+    "full_text_copied": false,
+    "scan_only_verification_used": false,
+    "source_body_review": [
+      {
+        "candidate_key": "aid:260062",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260062/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260062, body lines 289–291."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260062, lines 289–291, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593500",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593500/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593500, body lines 268–275."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593500, lines 268–275, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:1026221",
+        "title": "Our Audience with the Rebbe — Fourth Installment",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1026221/jewish/Our-Audience-with-the-Rebbe.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 1026221, body lines 257–273."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 1026221, lines 257–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:260037",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260037/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260037, body lines 269–277."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260037, lines 269–277, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593531",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593531/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593531, body lines 282–292."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593531, lines 282–292, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:260093",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260093/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 260093, body lines 278–284."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260093, lines 278–284, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593601",
+        "title": "Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593601/jewish/Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593601, body lines 270–273."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593601, lines 270–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      },
+      {
+        "candidate_key": "aid:2593412",
+        "title": "Farewell Yechidus — Zalmon Jaffe memoir",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593412/jewish/Farewell-Yechidus.htm",
+        "body_text_inspected": true,
+        "source_grounded_paraphrase_added": true,
+        "body_locators": [
+          "Chabad.org AID 2593412, body lines 263–289."
+        ],
+        "context_status": "partial",
+        "source_type": "published first-person memoir testimony",
+        "witness_group_id": "zalmon-jaffe-memoir-series",
+        "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593412, lines 263–289, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+      }
+    ],
+    "existing_identity_updates": [
+      {
+        "aid": 2505782,
+        "canonical_file": "data/items/content-research-batch-151-2026-11-21.json",
+        "existing_propositions_before": 1,
+        "propositions_added": 2,
+        "total_propositions_after": 3,
+        "locator": "Chabad.org/TheRebbe.org AID 2505782, body lines 261–265 (publisher English translation). ; Chabad.org/TheRebbe.org AID 2505782, body lines 268–271 (publisher English translation).",
+        "reason": "נוספו שתי פרפרזות מקטעי בר/בת מצווה וחתנים/כלות; נשמרו AID, זהות ומשפחת ראיות.",
+        "identity_key": "aid:2505782",
+        "action": "enriched_existing_identity_in_place",
+        "body_text_inspected": true,
+        "status_after": "Parsed",
+        "independent_witness": false
+      }
+    ],
+    "existing_identity_rechecks": [],
     "deduplication_check": {
       "full_index_scan_available": false,
       "full_index_scan_pending_reconciliation": true,
       "candidate_aids_found": [],
-      "existing_aids_found": [
-        2498908,
-        2511676,
-        2511619,
-        2512367,
-        2515477,
-        2515046,
-        2515007,
-        2487225
-      ],
-      "new_aids_unique": true,
+      "existing_aids_found": [],
+      "new_aids_unique_within_checked_scope": true,
       "source_urls_unique": true,
       "evidence_family_ids_unique": true,
       "canonical_identity_collisions": null,
       "missing_canonical_identities": null,
       "all_target_identities_answer_eligible": null,
-      "recent_manual_batch_files_checked": 92,
-      "recent_manual_batch_range": "055–150, all available content-research batch files",
-      "bulk_indexed_files_checked": 5,
-      "bulk_indexed_files_unavailable": 7,
+      "recent_manual_batch_files_checked": 3,
+      "recent_manual_batch_range": "149–151",
       "review_queue_records": 1022,
       "review_queue_matches": 0,
       "post_addition_canonical_scan_pending": true,
-      "note": "Preflight: all 92 available manual content-research batches 055–150 were checked for the three proposed new AIDs; none appeared. Seven of the ten Yechidus pages were found in existing canonical batches/bulk records and are being enriched or rechecked in place. Eight existing AIDs are not new identities. The 1,022-item review queue had no matches for the three new AIDs. Full canonical identity scan remains pending reconciliation."
+      "note": "נבדקו שמונת ה-AID מול 1,022 רשומות תור הבדיקה ומול batches 149–151; לא נמצאה התאמה. לא בוצעה סריקה מלאה של כל הקבצים הקנוניים או batches 055–148 בריצה זו; הייחודיות זמנית עד reconciliation. שמונת האירועים הם של אותו מחבר ואינם שמונה עדים בלתי תלויים לטענה משותפת."
     },
     "retrieval_synthesis": {
-      "topic": "yechidus_unity_and_mission",
+      "topic": "jaffe_memoir_practical_guidance",
       "attribution": "system_synthesis_not_rebbe_quote",
       "synthesis_scope": "cross_family_derived_case_comparison",
-      "source_count": 10,
-      "distinct_evidence_families": 10,
-      "independent_evidence_families": 0,
-      "derived_non_independent_presentations": 10,
-      "claim_count": 10,
-      "claim_level_source_locators": 10,
-      "regular_mode": "10 claims / 10 source families",
-      "researcher_mode": "deep; 10 claim-source mappings, witness-level provenance and context boundaries",
+      "source_count": 8,
+      "distinct_evidence_families": 8,
+      "independent_evidence_families": 1,
+      "independent_witness_groups": 1,
+      "derived_non_independent_presentations": 0,
+      "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+      "claim_count": 8,
+      "claim_level_source_locators": 8,
+      "regular_mode": "8 claims / 8 event families; one shared memoirist witness group",
+      "researcher_mode": "deep; 8 claim-source mappings, 8 event families, one witness group, witness provenance and partial-context boundaries",
       "claim_topics": [
-        "mission_in_providence_place",
-        "individual_action_overcomes_environmental_barriers",
-        "shared_mission_carried_home",
-        "torah_study_and_tzedakah_in_practice",
-        "torah_guides_daily_life_and_world",
-        "unity_within_difference",
-        "unity_and_practical_tzedakah_after_departure",
-        "ahavat_yisrael_in_practical_care",
-        "unity_across_diverse_roles",
-        "mutual_support_after_separation"
+        "medical_case_reporting",
+        "audience_scheduling_and_workload",
+        "bar_mitzvah_charity_and_education",
+        "correspondence_response_practice",
+        "family_visit_and_children_studies",
+        "encouraging_youth_torah_learning",
+        "personal_health_attention",
+        "summer_vacation_child_education"
       ],
-      "text": "בעשר יחידויות מתאריכים שונים מופיעים היבטים נבדלים של אחדות ואחריות לאחר המפגש: מימוש שליחות במקום שנקבע בהשגחה פרטית; יכולת היחיד לפעול למרות חסמים; נשיאת כוח הקבוצה חזרה למקום המגורים; חיבור לימוד התורה והצדקה למעשה; הכוונת חיי היום־יום על פי התורה; אחדות בתוך שונות; צדקה לאחר פרידה; אהבת ישראל מעשית; אחדות בתוך ריבוי תפקידים; וסיוע הדדי גם במרחק. זו סינתזה מחקרית של המערכת, לא אמירה אחת ולא מסקנה המיוחסת לרבי.",
+      "text": "שמונה קטעים נפרדים ביומנו שפורסם של זלמן יפה מתעדים היבטים שונים של יחידות והדרכה אישית: הכנת מידע לפני בקשת ברכה, התאמת סדרי קבלת הקהל לעומס, צדקה וחינוך במפגש עם נערה, מענה להתכתבות, התאמת ביקור משפחתי ללימודי ילדים, עידוד לימוד של נכד צעיר, התעניינות בבריאות וחינוך ילדים בחופשה. זו השוואה מחקרית בין אירועים שונים, לא אמירה אחת ולא מדיניות אחידה המיוחסת לרבי.",
       "limits": [
         "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
-        "כל עשרת המקורות הם הצגות מו״ל באנגלית; המקור בשפתו המקורית והקלטות לא נבדקו, והם אינם עדים עצמאיים.",
-        "היחידויות הן אירועים נפרדים; אין למזג אותן לשיחה אחת או לכלל אחיד.",
-        "נבדקו רק הקטעים והמיקומים שצוינו; ההקשר המלא של כל אירוע חלקי.",
-        "תיאור כוונה, קריאה לפעולה או אפשרות רוחנית אינו ראיה לכך שהפעולה בוצעה או שהשיגה תוצאה."
+        "כל שמונת הפרסומים הם מאותו מחבר ומאותה סדרת ממואר; שמונה Evidence Families של אירועים נפרדים אך קבוצת עדות אחת, לא שמונה עדים עצמאיים לטענה משותפת.",
+        "המקור הוא עדות ממואר באנגלית, לא תמליל בן הזמן, הקלטה או כתב יד; הנוסח המיוחס לרבי לא אומת מילה במילה.",
+        "ההקשר חלקי; נבדקו רק מיקומי הגוף שצוינו. אין להסיק מכל מקרה הוראה קבועה או מדיניות לכל התקופות.",
+        "אין להסיק מהתיאור שהפעולה הושלמה או שהושגה תוצאה מעבר למה שמספר המחבר."
       ],
       "source_aids": [
-        2498908,
-        2515477,
-        2515046,
-        2487225,
-        2505782,
-        2505723,
-        2505757,
-        2511676,
-        2511619,
-        2512367
+        260062,
+        2593500,
+        1026221,
+        260037,
+        2593531,
+        260093,
+        2593601,
+        2593412
       ]
     },
-    "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
+    "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה."
   },
   "manual_web_review_history": [
     {
@@ -4467,39 +4904,306 @@
         ]
       },
       "note": "Three new Parsed Yechidus event identities; six existing identities enriched in place; two existing identities rechecked. Seven translation-derived presentations remain non-independent; no new independent witness and no Verified promotion. Actual counts await canonical reconciliation."
+    },
+    {
+      "batch_id": "152",
+      "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+      "reviewed_at": "2026-11-21T03:55:57+02:00",
+      "status": "pending_reconciliation",
+      "reconciliation_status": "pending_reconciliation",
+      "reviewed_item_count": 9,
+      "source_bodies_inspected": 9,
+      "source_body_pages_opened": 9,
+      "new_source_identities": 8,
+      "existing_identities_enriched": 1,
+      "existing_identities_rechecked": 0,
+      "new_response_propositions": 8,
+      "existing_response_propositions_added": 2,
+      "total_new_paraphrase_entries": 10,
+      "answer_eligible_source_families_added": 8,
+      "independent_witnesses_added": 1,
+      "independent_witness_groups_added": 1,
+      "same_author_testimony_records": 8,
+      "non_independent_presentations_added": 0,
+      "content_verified_unique_sources_added": 0,
+      "blocked_candidate_count": 2,
+      "recovered_candidate_count": 0,
+      "metrics_before": {
+        "answer_eligible_unique_sources": 1496,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3823,
+        "measured_in_uncommitted_ci_workspace_after_batch148": true
+      },
+      "metrics_before_source": "Latest measured CI workspace snapshot after batch148 (run 44188237128); uncommitted and not the current public metric.",
+      "public_metrics_snapshot_before": {
+        "generated": "2026-11-15",
+        "answer_eligible_unique_sources": 977,
+        "content_verified_unique_sources": 878,
+        "answer_eligible_propositions": 2950
+      },
+      "metrics_expected_after": null,
+      "metrics_actual_after": null,
+      "metrics_delta_at_batch_boundary": {
+        "answer_eligible_unique_sources": 8,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 10
+      },
+      "local_batch_delta": {
+        "answer_eligible_unique_sources": 8,
+        "content_verified_unique_sources": 0,
+        "answer_eligible_propositions": 10
+      },
+      "new_aids": [
+        260062,
+        2593500,
+        1026221,
+        260037,
+        2593531,
+        260093,
+        2593601,
+        2593412
+      ],
+      "enriched_aids": [
+        2505782
+      ],
+      "rechecked_aids": [],
+      "translations_counted_as_independent_witnesses": 0,
+      "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+      "shared_witness_group_count": 1,
+      "blocked_candidates": [
+        {
+          "aid": 4666220,
+          "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+          "status": "public_reader_body_unavailable_via_web_tool",
+          "reason": "פתיחה ישירה החזירה Internal Error; לא התקבל גוף פרסום קריא.",
+          "handling": "לא בוצע crawler retry ולא נעקפו בקרות; נבדקו שמונה דפי ממואר נגישים והועשרה זהות קיימת."
+        },
+        {
+          "aid": 2487225,
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2487225/jewish/page.htm",
+          "status": "public_reader_body_unavailable_via_web_tool",
+          "reason": "שתי וריאציות של הנתיב החזירו Internal Error.",
+          "handling": "לא נוצרה פרפרזה ולא שונה סטטוס; כחלופה הועשר AID2505782 הנגיש, תוך שמירת משפחתו."
+        }
+      ],
+      "fallback_source_attempted": true,
+      "crawler_retry": false,
+      "access_control_bypassed": false,
+      "full_text_copied": false,
+      "scan_only_verification_used": false,
+      "source_body_review": [
+        {
+          "candidate_key": "aid:260062",
+          "title": "Yechidus — Zalmon Jaffe memoir",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/260062/jewish/Yechidus.htm",
+          "body_text_inspected": true,
+          "source_grounded_paraphrase_added": true,
+          "body_locators": [
+            "Chabad.org AID 260062, body lines 289–291."
+          ],
+          "context_status": "partial",
+          "source_type": "published first-person memoir testimony",
+          "witness_group_id": "zalmon-jaffe-memoir-series",
+          "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260062, lines 289–291, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+        },
+        {
+          "candidate_key": "aid:2593500",
+          "title": "Yechidus — Zalmon Jaffe memoir",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/2593500/jewish/Yechidus.htm",
+          "body_text_inspected": true,
+          "source_grounded_paraphrase_added": true,
+          "body_locators": [
+            "Chabad.org AID 2593500, body lines 268–275."
+          ],
+          "context_status": "partial",
+          "source_type": "published first-person memoir testimony",
+          "witness_group_id": "zalmon-jaffe-memoir-series",
+          "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593500, lines 268–275, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+        },
+        {
+          "candidate_key": "aid:1026221",
+          "title": "Our Audience with the Rebbe — Fourth Installment",
+          "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1026221/jewish/Our-Audience-with-the-Rebbe.htm",
+          "body_text_inspected": true,
+          "source_grounded_paraphrase_added": true,
+          "body_locators": [
+            "Chabad.org AID 1026221, body lines 257–273."
+          ],
+          "context_status": "partial",
+          "source_type": "published first-person memoir testimony",
+          "witness_group_id": "zalmon-jaffe-memoir-series",
+          "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 1026221, lines 257–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+        },
+        {
+          "candidate_key": "aid:260037",
+          "title": "Yechidus — Zalmon Jaffe memoir",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/260037/jewish/Yechidus.htm",
+          "body_text_inspected": true,
+          "source_grounded_paraphrase_added": true,
+          "body_locators": [
+            "Chabad.org AID 260037, body lines 269–277."
+          ],
+          "context_status": "partial",
+          "source_type": "published first-person memoir testimony",
+          "witness_group_id": "zalmon-jaffe-memoir-series",
+          "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260037, lines 269–277, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+        },
+        {
+          "candidate_key": "aid:2593531",
+          "title": "Yechidus — Zalmon Jaffe memoir",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/2593531/jewish/Yechidus.htm",
+          "body_text_inspected": true,
+          "source_grounded_paraphrase_added": true,
+          "body_locators": [
+            "Chabad.org AID 2593531, body lines 282–292."
+          ],
+          "context_status": "partial",
+          "source_type": "published first-person memoir testimony",
+          "witness_group_id": "zalmon-jaffe-memoir-series",
+          "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593531, lines 282–292, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+        },
+        {
+          "candidate_key": "aid:260093",
+          "title": "Yechidus — Zalmon Jaffe memoir",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/260093/jewish/Yechidus.htm",
+          "body_text_inspected": true,
+          "source_grounded_paraphrase_added": true,
+          "body_locators": [
+            "Chabad.org AID 260093, body lines 278–284."
+          ],
+          "context_status": "partial",
+          "source_type": "published first-person memoir testimony",
+          "witness_group_id": "zalmon-jaffe-memoir-series",
+          "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260093, lines 278–284, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+        },
+        {
+          "candidate_key": "aid:2593601",
+          "title": "Yechidus — Zalmon Jaffe memoir",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/2593601/jewish/Yechidus.htm",
+          "body_text_inspected": true,
+          "source_grounded_paraphrase_added": true,
+          "body_locators": [
+            "Chabad.org AID 2593601, body lines 270–273."
+          ],
+          "context_status": "partial",
+          "source_type": "published first-person memoir testimony",
+          "witness_group_id": "zalmon-jaffe-memoir-series",
+          "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593601, lines 270–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+        },
+        {
+          "candidate_key": "aid:2593412",
+          "title": "Farewell Yechidus — Zalmon Jaffe memoir",
+          "source_url": "https://www.chabad.org/library/article_cdo/aid/2593412/jewish/Farewell-Yechidus.htm",
+          "body_text_inspected": true,
+          "source_grounded_paraphrase_added": true,
+          "body_locators": [
+            "Chabad.org AID 2593412, body lines 263–289."
+          ],
+          "context_status": "partial",
+          "source_type": "published first-person memoir testimony",
+          "witness_group_id": "zalmon-jaffe-memoir-series",
+          "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593412, lines 263–289, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+        }
+      ],
+      "existing_identity_updates": [
+        {
+          "aid": 2505782,
+          "canonical_file": "data/items/content-research-batch-151-2026-11-21.json",
+          "existing_propositions_before": 1,
+          "propositions_added": 2,
+          "total_propositions_after": 3,
+          "locator": "Chabad.org/TheRebbe.org AID 2505782, body lines 261–265 (publisher English translation). ; Chabad.org/TheRebbe.org AID 2505782, body lines 268–271 (publisher English translation).",
+          "reason": "נוספו שתי פרפרזות מקטעי בר/בת מצווה וחתנים/כלות; נשמרו AID, זהות ומשפחת ראיות.",
+          "identity_key": "aid:2505782",
+          "action": "enriched_existing_identity_in_place",
+          "body_text_inspected": true,
+          "status_after": "Parsed",
+          "independent_witness": false
+        }
+      ],
+      "existing_identity_rechecks": [],
+      "deduplication_check": {
+        "full_index_scan_available": false,
+        "full_index_scan_pending_reconciliation": true,
+        "candidate_aids_found": [],
+        "existing_aids_found": [],
+        "new_aids_unique_within_checked_scope": true,
+        "source_urls_unique": true,
+        "evidence_family_ids_unique": true,
+        "canonical_identity_collisions": null,
+        "missing_canonical_identities": null,
+        "all_target_identities_answer_eligible": null,
+        "recent_manual_batch_files_checked": 3,
+        "recent_manual_batch_range": "149–151",
+        "review_queue_records": 1022,
+        "review_queue_matches": 0,
+        "post_addition_canonical_scan_pending": true,
+        "note": "נבדקו שמונת ה-AID מול 1,022 רשומות תור הבדיקה ומול batches 149–151; לא נמצאה התאמה. לא בוצעה סריקה מלאה של כל הקבצים הקנוניים או batches 055–148 בריצה זו; הייחודיות זמנית עד reconciliation. שמונת האירועים הם של אותו מחבר ואינם שמונה עדים בלתי תלויים לטענה משותפת."
+      },
+      "retrieval_synthesis": {
+        "topic": "jaffe_memoir_practical_guidance",
+        "attribution": "system_synthesis_not_rebbe_quote",
+        "synthesis_scope": "cross_family_derived_case_comparison",
+        "source_count": 8,
+        "distinct_evidence_families": 8,
+        "independent_evidence_families": 1,
+        "independent_witness_groups": 1,
+        "derived_non_independent_presentations": 0,
+        "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+        "claim_count": 8,
+        "claim_level_source_locators": 8,
+        "regular_mode": "8 claims / 8 event families; one shared memoirist witness group",
+        "researcher_mode": "deep; 8 claim-source mappings, 8 event families, one witness group, witness provenance and partial-context boundaries",
+        "claim_topics": [
+          "medical_case_reporting",
+          "audience_scheduling_and_workload",
+          "bar_mitzvah_charity_and_education",
+          "correspondence_response_practice",
+          "family_visit_and_children_studies",
+          "encouraging_youth_torah_learning",
+          "personal_health_attention",
+          "summer_vacation_child_education"
+        ],
+        "text": "שמונה קטעים נפרדים ביומנו שפורסם של זלמן יפה מתעדים היבטים שונים של יחידות והדרכה אישית: הכנת מידע לפני בקשת ברכה, התאמת סדרי קבלת הקהל לעומס, צדקה וחינוך במפגש עם נערה, מענה להתכתבות, התאמת ביקור משפחתי ללימודי ילדים, עידוד לימוד של נכד צעיר, התעניינות בבריאות וחינוך ילדים בחופשה. זו השוואה מחקרית בין אירועים שונים, לא אמירה אחת ולא מדיניות אחידה המיוחסת לרבי.",
+        "limits": [
+          "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+          "כל שמונת הפרסומים הם מאותו מחבר ומאותה סדרת ממואר; שמונה Evidence Families של אירועים נפרדים אך קבוצת עדות אחת, לא שמונה עדים עצמאיים לטענה משותפת.",
+          "המקור הוא עדות ממואר באנגלית, לא תמליל בן הזמן, הקלטה או כתב יד; הנוסח המיוחס לרבי לא אומת מילה במילה.",
+          "ההקשר חלקי; נבדקו רק מיקומי הגוף שצוינו. אין להסיק מכל מקרה הוראה קבועה או מדיניות לכל התקופות.",
+          "אין להסיק מהתיאור שהפעולה הושלמה או שהושגה תוצאה מעבר למה שמספר המחבר."
+        ],
+        "source_aids": [
+          260062,
+          2593500,
+          1026221,
+          260037,
+          2593531,
+          260093,
+          2593601,
+          2593412
+        ]
+      },
+      "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה."
     }
   ],
   "manual_web_review_current_metrics": {
-    "status": "pending_reconciliation",
-    "baseline": {
-      "answer_eligible_unique_sources": 1513,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3849
-    },
-    "expected_after": {
-      "answer_eligible_unique_sources": 1516,
-      "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3858
-    },
-    "public_metrics_snapshot": {
-      "answer_eligible_unique_sources": 977,
-      "content_verified_unique_sources": 878,
-      "answer_eligible_propositions": 2950,
-      "generated": "2026-11-15"
-    },
-    "last_uncommitted_ci_workspace": {
-      "run_id": 44188237128,
+    "last_measured_ci_workspace_baseline": {
       "answer_eligible_unique_sources": 1496,
       "content_verified_unique_sources": 854,
       "answer_eligible_propositions": 3823,
-      "committed": false,
-      "note": "Hourly run generated this workspace snapshot after batch148 but failed the readiness test; public metrics were not committed. Batch148 expected boundary remains 1495/854/3823, so a +1 family variance is unresolved."
+      "measured_in_uncommitted_ci_workspace_after_batch148": true
     },
-    "note": "המספרים 1513/854/3849 ו-1516/854/3858 הם גבולות תכנון רציפים של batch 150–151 בלבד, לא מדידה. צילום המדדים הציבורי עדיין 977/878/2950 מ-15.11.2026. המדידה בפועל תתבצע לאחר reconciliation."
+    "public_metrics_snapshot_before": {
+      "generated": "2026-11-15",
+      "answer_eligible_unique_sources": 977,
+      "content_verified_unique_sources": 878,
+      "answer_eligible_propositions": 2950
+    },
+    "actual_after": null
   },
-  "last_run_note": "Batch 151 completed manual public-body inspection of 11 Yechidus pages: 3 new identities, 6 in-place enrichments, 2 rechecks; AID 4666220 unavailable, no crawler retry, alternate publisher pages inspected. Reconciliation pending.",
-  "next_action": "Reconcile contiguous pending manual batches 147–151; run test_content_readiness.mjs and verify Actions/Pages before reporting actual readiness metrics.",
-  "current_batch_file": "data/items/content-research-batch-151-2026-11-21.json",
+  "last_run_note": "בדיקת גוף מקור ידנית בשמונה פרסומי ממואר נגישים והעשרה אחת של זהות קיימת. AID 4666220 ו-AID 2487225 נחסמו בכלי העיון; לא נעשה retry ל-crawler ולא נעקפו בקרות. reconciliation ממתין לתיקון assertion היסטורי ב-test_content_readiness.mjs.",
+  "next_action": "Run canonical reconciliation and test_content_readiness.mjs, then inspect Actions and Pages. Do not treat planning metrics as measured.",
+  "current_batch_file": "data/items/content-research-batch-152-2026-11-21.json",
   "pending": true,
-  "last_reviewed_batch": "151"
+  "last_reviewed_batch": "152"
 }

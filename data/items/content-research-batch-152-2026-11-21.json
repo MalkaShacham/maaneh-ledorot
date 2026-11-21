@@ -1,0 +1,1108 @@
+{
+  "batch_id": "152",
+  "batch_file": "data/items/content-research-batch-152-2026-11-21.json",
+  "reviewed_at": "2026-11-21T03:55:57+02:00",
+  "status": "pending_reconciliation",
+  "reconciliation_status": "pending_reconciliation",
+  "reviewed_item_count": 9,
+  "source_bodies_inspected": 9,
+  "source_body_pages_opened": 9,
+  "new_source_identities": 8,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 0,
+  "new_response_propositions": 8,
+  "existing_response_propositions_added": 2,
+  "total_new_paraphrase_entries": 10,
+  "answer_eligible_source_families_added": 8,
+  "independent_witnesses_added": 1,
+  "independent_witness_groups_added": 1,
+  "same_author_testimony_records": 8,
+  "non_independent_presentations_added": 0,
+  "content_verified_unique_sources_added": 0,
+  "blocked_candidate_count": 2,
+  "recovered_candidate_count": 0,
+  "metrics_before": {
+    "answer_eligible_unique_sources": 1496,
+    "content_verified_unique_sources": 854,
+    "answer_eligible_propositions": 3823,
+    "measured_in_uncommitted_ci_workspace_after_batch148": true
+  },
+  "metrics_before_source": "Latest measured CI workspace snapshot after batch148 (run 44188237128); uncommitted and not the current public metric.",
+  "public_metrics_snapshot_before": {
+    "generated": "2026-11-15",
+    "answer_eligible_unique_sources": 977,
+    "content_verified_unique_sources": 878,
+    "answer_eligible_propositions": 2950
+  },
+  "metrics_expected_after": null,
+  "metrics_actual_after": null,
+  "metrics_delta_at_batch_boundary": {
+    "answer_eligible_unique_sources": 8,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 10
+  },
+  "local_batch_delta": {
+    "answer_eligible_unique_sources": 8,
+    "content_verified_unique_sources": 0,
+    "answer_eligible_propositions": 10
+  },
+  "new_aids": [
+    260062,
+    2593500,
+    1026221,
+    260037,
+    2593531,
+    260093,
+    2593601,
+    2593412
+  ],
+  "enriched_aids": [
+    2505782
+  ],
+  "rechecked_aids": [],
+  "translations_counted_as_independent_witnesses": 0,
+  "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+  "shared_witness_group_count": 1,
+  "blocked_candidates": [
+    {
+      "aid": 4666220,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/4666220",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "פתיחה ישירה החזירה Internal Error; לא התקבל גוף פרסום קריא.",
+      "handling": "לא בוצע crawler retry ולא נעקפו בקרות; נבדקו שמונה דפי ממואר נגישים והועשרה זהות קיימת."
+    },
+    {
+      "aid": 2487225,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/2487225/jewish/page.htm",
+      "status": "public_reader_body_unavailable_via_web_tool",
+      "reason": "שתי וריאציות של הנתיב החזירו Internal Error.",
+      "handling": "לא נוצרה פרפרזה ולא שונה סטטוס; כחלופה הועשר AID2505782 הנגיש, תוך שמירת משפחתו."
+    }
+  ],
+  "fallback_source_attempted": true,
+  "crawler_retry": false,
+  "access_control_bypassed": false,
+  "full_text_copied": false,
+  "scan_only_verification_used": false,
+  "source_body_review": [
+    {
+      "candidate_key": "aid:260062",
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/260062/jewish/Yechidus.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 260062, body lines 289–291."
+      ],
+      "context_status": "partial",
+      "source_type": "published first-person memoir testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260062, lines 289–291, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+    },
+    {
+      "candidate_key": "aid:2593500",
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/2593500/jewish/Yechidus.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2593500, body lines 268–275."
+      ],
+      "context_status": "partial",
+      "source_type": "published first-person memoir testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593500, lines 268–275, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+    },
+    {
+      "candidate_key": "aid:1026221",
+      "title": "Our Audience with the Rebbe — Fourth Installment",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1026221/jewish/Our-Audience-with-the-Rebbe.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 1026221, body lines 257–273."
+      ],
+      "context_status": "partial",
+      "source_type": "published first-person memoir testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 1026221, lines 257–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+    },
+    {
+      "candidate_key": "aid:260037",
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/260037/jewish/Yechidus.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 260037, body lines 269–277."
+      ],
+      "context_status": "partial",
+      "source_type": "published first-person memoir testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260037, lines 269–277, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+    },
+    {
+      "candidate_key": "aid:2593531",
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/2593531/jewish/Yechidus.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2593531, body lines 282–292."
+      ],
+      "context_status": "partial",
+      "source_type": "published first-person memoir testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593531, lines 282–292, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+    },
+    {
+      "candidate_key": "aid:260093",
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/260093/jewish/Yechidus.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 260093, body lines 278–284."
+      ],
+      "context_status": "partial",
+      "source_type": "published first-person memoir testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260093, lines 278–284, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+    },
+    {
+      "candidate_key": "aid:2593601",
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/2593601/jewish/Yechidus.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2593601, body lines 270–273."
+      ],
+      "context_status": "partial",
+      "source_type": "published first-person memoir testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593601, lines 270–273, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+    },
+    {
+      "candidate_key": "aid:2593412",
+      "title": "Farewell Yechidus — Zalmon Jaffe memoir",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/2593412/jewish/Farewell-Yechidus.htm",
+      "body_text_inspected": true,
+      "source_grounded_paraphrase_added": true,
+      "body_locators": [
+        "Chabad.org AID 2593412, body lines 263–289."
+      ],
+      "context_status": "partial",
+      "source_type": "published first-person memoir testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593412, lines 263–289, ביום 21.11.2026. נבדק רק הקטע המצוין; היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו."
+    }
+  ],
+  "existing_identity_updates": [
+    {
+      "aid": 2505782,
+      "canonical_file": "data/items/content-research-batch-151-2026-11-21.json",
+      "existing_propositions_before": 1,
+      "propositions_added": 2,
+      "total_propositions_after": 3,
+      "locator": "Chabad.org/TheRebbe.org AID 2505782, body lines 261–265 (publisher English translation). ; Chabad.org/TheRebbe.org AID 2505782, body lines 268–271 (publisher English translation).",
+      "reason": "נוספו שתי פרפרזות מקטעי בר/בת מצווה וחתנים/כלות; נשמרו AID, זהות ומשפחת ראיות.",
+      "identity_key": "aid:2505782",
+      "action": "enriched_existing_identity_in_place",
+      "body_text_inspected": true,
+      "status_after": "Parsed",
+      "independent_witness": false
+    }
+  ],
+  "existing_identity_rechecks": [],
+  "deduplication_check": {
+    "full_index_scan_available": false,
+    "full_index_scan_pending_reconciliation": true,
+    "candidate_aids_found": [],
+    "existing_aids_found": [],
+    "new_aids_unique_within_checked_scope": true,
+    "source_urls_unique": true,
+    "evidence_family_ids_unique": true,
+    "canonical_identity_collisions": null,
+    "missing_canonical_identities": null,
+    "all_target_identities_answer_eligible": null,
+    "recent_manual_batch_files_checked": 3,
+    "recent_manual_batch_range": "149–151",
+    "review_queue_records": 1022,
+    "review_queue_matches": 0,
+    "post_addition_canonical_scan_pending": true,
+    "note": "נבדקו שמונת ה-AID מול 1,022 רשומות תור הבדיקה ומול batches 149–151; לא נמצאה התאמה. לא בוצעה סריקה מלאה של כל הקבצים הקנוניים או batches 055–148 בריצה זו; הייחודיות זמנית עד reconciliation. שמונת האירועים הם של אותו מחבר ואינם שמונה עדים בלתי תלויים לטענה משותפת."
+  },
+  "retrieval_synthesis": {
+    "topic": "jaffe_memoir_practical_guidance",
+    "attribution": "system_synthesis_not_rebbe_quote",
+    "synthesis_scope": "cross_family_derived_case_comparison",
+    "source_count": 8,
+    "distinct_evidence_families": 8,
+    "independent_evidence_families": 1,
+    "independent_witness_groups": 1,
+    "derived_non_independent_presentations": 0,
+    "shared_witness_group_id": "zalmon-jaffe-memoir-series",
+    "claim_count": 8,
+    "claim_level_source_locators": 8,
+    "regular_mode": "8 claims / 8 event families; one shared memoirist witness group",
+    "researcher_mode": "deep; 8 claim-source mappings, 8 event families, one witness group, witness provenance and partial-context boundaries",
+    "claim_topics": [
+      "medical_case_reporting",
+      "audience_scheduling_and_workload",
+      "bar_mitzvah_charity_and_education",
+      "correspondence_response_practice",
+      "family_visit_and_children_studies",
+      "encouraging_youth_torah_learning",
+      "personal_health_attention",
+      "summer_vacation_child_education"
+    ],
+    "text": "שמונה קטעים נפרדים ביומנו שפורסם של זלמן יפה מתעדים היבטים שונים של יחידות והדרכה אישית: הכנת מידע לפני בקשת ברכה, התאמת סדרי קבלת הקהל לעומס, צדקה וחינוך במפגש עם נערה, מענה להתכתבות, התאמת ביקור משפחתי ללימודי ילדים, עידוד לימוד של נכד צעיר, התעניינות בבריאות וחינוך ילדים בחופשה. זו השוואה מחקרית בין אירועים שונים, לא אמירה אחת ולא מדיניות אחידה המיוחסת לרבי.",
+    "limits": [
+      "הסינתזה נכתבה בידי המערכת ואינה ציטוט או ייחוס מילולי לרבי.",
+      "כל שמונת הפרסומים הם מאותו מחבר ומאותה סדרת ממואר; שמונה Evidence Families של אירועים נפרדים אך קבוצת עדות אחת, לא שמונה עדים עצמאיים לטענה משותפת.",
+      "המקור הוא עדות ממואר באנגלית, לא תמליל בן הזמן, הקלטה או כתב יד; הנוסח המיוחס לרבי לא אומת מילה במילה.",
+      "ההקשר חלקי; נבדקו רק מיקומי הגוף שצוינו. אין להסיק מכל מקרה הוראה קבועה או מדיניות לכל התקופות.",
+      "אין להסיק מהתיאור שהפעולה הושלמה או שהושגה תוצאה מעבר למה שמספר המחבר."
+    ],
+    "source_aids": [
+      260062,
+      2593500,
+      1026221,
+      260037,
+      2593531,
+      260093,
+      2593601,
+      2593412
+    ]
+  },
+  "records": [
+    {
+      "id": "yechidus-testimony-aid260062",
+      "aid": 260062,
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_class": "Testimonies",
+      "source_class_detail": "Published first-person memoir/diary excerpt by Zalmon Jaffe; secondary testimony, not an original transcript or recording.",
+      "type": "testimony",
+      "collection": "My Encounter with the Rebbe — published memoir series; Chabad.org excerpt",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/260062/jewish/Yechidus.htm",
+      "date_original": null,
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "Hebrew",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "בעדותו מתאר זלמן יפה שכאשר הוא מבקש ברכה עבור חולה, ראוי למסור לרבי תמונה מלאה של התסמינים, אבחנת הרופאים והטיפול המוצע; אין מדובר בהמלצה רפואית או בהוראה טיפולית."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 260062, body lines 289–291."
+      ],
+      "proposition_source_locator": "Chabad.org AID 260062, body lines 289–291.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "evidence_family_id": "yechidus-testimony-aid260062",
+      "witness_type": "first_person_published_memoir_testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "independent_witness": true,
+      "primary_secondary_status": "secondary first-person memoir testimony; reported dialogue attributed by the author; not a contemporaneous transcript or recording",
+      "witness_provenance": "Zalmon Jaffe's first-person published memoir excerpt. All eight records in this batch share the same author/series witness group. The underlying diary manuscript and any recording were not inspected.",
+      "provenance": {
+        "authorship_status": "Chabad.org attributes the excerpt to Zalmon Jaffe and identifies it as part of his published diary series; the underlying diary manuscript was not inspected.",
+        "signature_status": "Not applicable to a published memoir excerpt; no original diary signature or contemporaneous record inspected.",
+        "source_witness": "Zalmon Jaffe, first-person memoir account, Chabad.org AID 260062.",
+        "transmission_type": "Published memoir excerpt; not an independent transcript, recording, or original-language source.",
+        "textual_status": "Only Chabad.org AID 260062, body lines 289–291, was inspected; the complete memoir, original diary manuscript and any audio were not inspected.",
+        "editorial_scope": "Paraphrase limited to cited body lines; no inference from title or metadata; no full text copied.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260062/jewish/Yechidus.htm",
+        "accessed": "2026-11-21"
+      },
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260062, lines 289–291, ביום 21.11.2026. זהו קטע ממואר/יומן שפורסם באנגלית מאת זלמן יפה; נבדקו רק השורות המצוינות. לא נבדקו היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת או עדויות מקבילות. הנוסח המיוחס לרבי נשמר כעדות המחבר ולא כאימות מילולי עצמאי.",
+      "documented_circumstances": [
+        "יפה מתאר בקשת ברכה עבור אדם חולה והצורך למסור פרטים רפואיים מלאים."
+      ],
+      "question_or_problem": "מה מתאר יפה על מסירת מידע רפואי בעת בקשת ברכה?",
+      "conditions_or_qualifications": [
+        "כל שמונת הפריטים נכתבו בידי אותו מחבר ובאותה סדרת ממואר; הם מתעדים אירועים נפרדים אך אינם שמונה עדים עצמאיים לטענה משותפת.",
+        "הקטע חלקי; היומן המקורי, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו.",
+        "הדברים המיוחסים לרבי מובאים לפי זיכרון המחבר ואינם מאומתים מילולית.",
+        "אין להכליל מקרה יחיד להוראה קבועה או למדיניות לכל התקופות."
+      ],
+      "audience": "Readers of the published memoir excerpt; the full attendee list was not inspected.",
+      "taxonomy": {
+        "publisher_index": [
+          "My Encounter with the Rebbe",
+          "Yechidus",
+          "Chabad.org"
+        ],
+        "research_taxonomy": [
+          "יחידות",
+          "עדות ממואר",
+          "הדרכה אישית",
+          "medical_case_reporting"
+        ],
+        "research_terms": [
+          "זלמן יפה",
+          "יחידות",
+          "medical_case_reporting"
+        ]
+      },
+      "rights_status": "Copyrighted memoir excerpt; link and metadata only; do not reproduce full text.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Use metadata, short body locators and non-verbatim paraphrases only; no full-text copying."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Published English memoir excerpt; specified body lines inspected.",
+        "complete_partial": "partial",
+        "original_language_witness": "not inspected",
+        "recording": "not inspected",
+        "notes": "One author and one memoir series across eight separate event records; not independent corroboration of a shared claim."
+      },
+      "relations": [],
+      "duplicate_or_parallel_relations": [],
+      "epistemic_level": 1,
+      "notes": "Parsed from inspected Chabad.org body passage only. One of eight distinct event records by the same memoirist; shared witness_group_id prevents treating them as eight independent corroborating witnesses. No Verified promotion.",
+      "content_enrichment_batch_id": "152",
+      "last_content_enriched_at": "2026-11-21"
+    },
+    {
+      "id": "yechidus-testimony-aid2593500",
+      "aid": 2593500,
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_class": "Testimonies",
+      "source_class_detail": "Published first-person memoir/diary excerpt by Zalmon Jaffe; secondary testimony, not an original transcript or recording.",
+      "type": "testimony",
+      "collection": "My Encounter with the Rebbe — published memoir series; Chabad.org excerpt",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/2593500/jewish/Yechidus.htm",
+      "date_original": null,
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "Hebrew",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "לפי תיאורו של זלמן יפה, בתקופה המתוארת הונהגה הגשת נושאים מראש ליחידות, ובמקביל הושעו יחידויות שגרתיות סביב יום הולדת, סוף היריון ולפני ברית; הוא מציג זאת כתגובה לעומס חריג, ולא ככלל קבוע לכל התקופות."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2593500, body lines 268–275."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2593500, body lines 268–275.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "evidence_family_id": "yechidus-testimony-aid2593500",
+      "witness_type": "first_person_published_memoir_testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "independent_witness": true,
+      "primary_secondary_status": "secondary first-person memoir testimony; reported dialogue attributed by the author; not a contemporaneous transcript or recording",
+      "witness_provenance": "Zalmon Jaffe's first-person published memoir excerpt. All eight records in this batch share the same author/series witness group. The underlying diary manuscript and any recording were not inspected.",
+      "provenance": {
+        "authorship_status": "Chabad.org attributes the excerpt to Zalmon Jaffe and identifies it as part of his published diary series; the underlying diary manuscript was not inspected.",
+        "signature_status": "Not applicable to a published memoir excerpt; no original diary signature or contemporaneous record inspected.",
+        "source_witness": "Zalmon Jaffe, first-person memoir account, Chabad.org AID 2593500.",
+        "transmission_type": "Published memoir excerpt; not an independent transcript, recording, or original-language source.",
+        "textual_status": "Only Chabad.org AID 2593500, body lines 268–275, was inspected; the complete memoir, original diary manuscript and any audio were not inspected.",
+        "editorial_scope": "Paraphrase limited to cited body lines; no inference from title or metadata; no full text copied.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593500/jewish/Yechidus.htm",
+        "accessed": "2026-11-21"
+      },
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593500, lines 268–275, ביום 21.11.2026. זהו קטע ממואר/יומן שפורסם באנגלית מאת זלמן יפה; נבדקו רק השורות המצוינות. לא נבדקו היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת או עדויות מקבילות. הנוסח המיוחס לרבי נשמר כעדות המחבר ולא כאימות מילולי עצמאי.",
+      "documented_circumstances": [
+        "תיאור סדרי קבלת קהל והיחידות בתקופה שבה עומס הפגישות היה חריג."
+      ],
+      "question_or_problem": "כיצד תוארו שינויי סדרי היחידות בתקופה זו?",
+      "conditions_or_qualifications": [
+        "כל שמונת הפריטים נכתבו בידי אותו מחבר ובאותה סדרת ממואר; הם מתעדים אירועים נפרדים אך אינם שמונה עדים עצמאיים לטענה משותפת.",
+        "הקטע חלקי; היומן המקורי, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו.",
+        "הדברים המיוחסים לרבי מובאים לפי זיכרון המחבר ואינם מאומתים מילולית.",
+        "אין להכליל מקרה יחיד להוראה קבועה או למדיניות לכל התקופות."
+      ],
+      "audience": "Readers of the published memoir excerpt; the full attendee list was not inspected.",
+      "taxonomy": {
+        "publisher_index": [
+          "My Encounter with the Rebbe",
+          "Yechidus",
+          "Chabad.org"
+        ],
+        "research_taxonomy": [
+          "יחידות",
+          "עדות ממואר",
+          "הדרכה אישית",
+          "audience_scheduling_and_workload"
+        ],
+        "research_terms": [
+          "זלמן יפה",
+          "יחידות",
+          "audience_scheduling_and_workload"
+        ]
+      },
+      "rights_status": "Copyrighted memoir excerpt; link and metadata only; do not reproduce full text.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Use metadata, short body locators and non-verbatim paraphrases only; no full-text copying."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Published English memoir excerpt; specified body lines inspected.",
+        "complete_partial": "partial",
+        "original_language_witness": "not inspected",
+        "recording": "not inspected",
+        "notes": "One author and one memoir series across eight separate event records; not independent corroboration of a shared claim."
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "yechidus-testimony-aid260062",
+          "basis": "Same author and memoir series; distinct event and separate Evidence Family; does not merge event families or establish independent corroboration."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "epistemic_level": 1,
+      "notes": "Parsed from inspected Chabad.org body passage only. One of eight distinct event records by the same memoirist; shared witness_group_id prevents treating them as eight independent corroborating witnesses. No Verified promotion.",
+      "content_enrichment_batch_id": "152",
+      "last_content_enriched_at": "2026-11-21"
+    },
+    {
+      "id": "yechidus-testimony-aid1026221",
+      "aid": 1026221,
+      "title": "Our Audience with the Rebbe — Fourth Installment",
+      "source_class": "Testimonies",
+      "source_class_detail": "Published first-person memoir/diary excerpt by Zalmon Jaffe; secondary testimony, not an original transcript or recording.",
+      "type": "testimony",
+      "collection": "My Encounter with the Rebbe — published memoir series; Chabad.org excerpt",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1026221/jewish/Our-Audience-with-the-Rebbe.htm",
+      "date_original": null,
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "Hebrew",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "במפגש המתואר עם נכדתו לקראת בת־מצווה, הרבי חילק את המתנה בין צדקה לפני הדלקת נרות שבת לבין תמיכה בחינוך יהודי, וביקש שיימסרו פרטי הנערה כדי שישלח לה סידור חתום; זו עדות על מפגש מסוים ולא כלל לכל טקסי בת־מצווה."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 1026221, body lines 257–273."
+      ],
+      "proposition_source_locator": "Chabad.org AID 1026221, body lines 257–273.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "evidence_family_id": "yechidus-testimony-aid1026221",
+      "witness_type": "first_person_published_memoir_testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "independent_witness": true,
+      "primary_secondary_status": "secondary first-person memoir testimony; reported dialogue attributed by the author; not a contemporaneous transcript or recording",
+      "witness_provenance": "Zalmon Jaffe's first-person published memoir excerpt. All eight records in this batch share the same author/series witness group. The underlying diary manuscript and any recording were not inspected.",
+      "provenance": {
+        "authorship_status": "Chabad.org attributes the excerpt to Zalmon Jaffe and identifies it as part of his published diary series; the underlying diary manuscript was not inspected.",
+        "signature_status": "Not applicable to a published memoir excerpt; no original diary signature or contemporaneous record inspected.",
+        "source_witness": "Zalmon Jaffe, first-person memoir account, Chabad.org AID 1026221.",
+        "transmission_type": "Published memoir excerpt; not an independent transcript, recording, or original-language source.",
+        "textual_status": "Only Chabad.org AID 1026221, body lines 257–273, was inspected; the complete memoir, original diary manuscript and any audio were not inspected.",
+        "editorial_scope": "Paraphrase limited to cited body lines; no inference from title or metadata; no full text copied.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/1026221/jewish/Our-Audience-with-the-Rebbe.htm",
+        "accessed": "2026-11-21"
+      },
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 1026221, lines 257–273, ביום 21.11.2026. זהו קטע ממואר/יומן שפורסם באנגלית מאת זלמן יפה; נבדקו רק השורות המצוינות. לא נבדקו היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת או עדויות מקבילות. הנוסח המיוחס לרבי נשמר כעדות המחבר ולא כאימות מילולי עצמאי.",
+      "documented_circumstances": [
+        "יחידות משפחתית שבה נכדה בת שתים־עשרה קיבלה ברכה והנחיה אישית."
+      ],
+      "question_or_problem": "איזו הנחיה מעשית נמסרה לנערה במפגש המתואר?",
+      "conditions_or_qualifications": [
+        "כל שמונת הפריטים נכתבו בידי אותו מחבר ובאותה סדרת ממואר; הם מתעדים אירועים נפרדים אך אינם שמונה עדים עצמאיים לטענה משותפת.",
+        "הקטע חלקי; היומן המקורי, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו.",
+        "הדברים המיוחסים לרבי מובאים לפי זיכרון המחבר ואינם מאומתים מילולית.",
+        "אין להכליל מקרה יחיד להוראה קבועה או למדיניות לכל התקופות."
+      ],
+      "audience": "Readers of the published memoir excerpt; the full attendee list was not inspected.",
+      "taxonomy": {
+        "publisher_index": [
+          "My Encounter with the Rebbe",
+          "Yechidus",
+          "Chabad.org"
+        ],
+        "research_taxonomy": [
+          "יחידות",
+          "עדות ממואר",
+          "הדרכה אישית",
+          "bar_mitzvah_charity_and_education"
+        ],
+        "research_terms": [
+          "זלמן יפה",
+          "יחידות",
+          "bar_mitzvah_charity_and_education"
+        ]
+      },
+      "rights_status": "Copyrighted memoir excerpt; link and metadata only; do not reproduce full text.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Use metadata, short body locators and non-verbatim paraphrases only; no full-text copying."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Published English memoir excerpt; specified body lines inspected.",
+        "complete_partial": "partial",
+        "original_language_witness": "not inspected",
+        "recording": "not inspected",
+        "notes": "One author and one memoir series across eight separate event records; not independent corroboration of a shared claim."
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "yechidus-testimony-aid260062",
+          "basis": "Same author and memoir series; distinct event and separate Evidence Family; does not merge event families or establish independent corroboration."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "epistemic_level": 1,
+      "notes": "Parsed from inspected Chabad.org body passage only. One of eight distinct event records by the same memoirist; shared witness_group_id prevents treating them as eight independent corroborating witnesses. No Verified promotion.",
+      "content_enrichment_batch_id": "152",
+      "last_content_enriched_at": "2026-11-21"
+    },
+    {
+      "id": "yechidus-testimony-aid260037",
+      "aid": 260037,
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_class": "Testimonies",
+      "source_class_detail": "Published first-person memoir/diary excerpt by Zalmon Jaffe; secondary testimony, not an original transcript or recording.",
+      "type": "testimony",
+      "collection": "My Encounter with the Rebbe — published memoir series; Chabad.org excerpt",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/260037/jewish/Yechidus.htm",
+      "date_original": "Monday, 9 Sivan (May 26; year not stated in inspected passage)",
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "Hebrew",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "יפה מספר שהרבי חיפש נוסח תשובה למכתבים שיוכל לענות לפונים ובו בזמן להיות מקובל גם עליו עצמו; העדות מתארת שיקול בניהול התכתבות עמוסה, ולא קובעת נוסח מחייב לכל פנייה."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 260037, body lines 269–277."
+      ],
+      "proposition_source_locator": "Chabad.org AID 260037, body lines 269–277.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "evidence_family_id": "yechidus-testimony-aid260037",
+      "witness_type": "first_person_published_memoir_testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "independent_witness": true,
+      "primary_secondary_status": "secondary first-person memoir testimony; reported dialogue attributed by the author; not a contemporaneous transcript or recording",
+      "witness_provenance": "Zalmon Jaffe's first-person published memoir excerpt. All eight records in this batch share the same author/series witness group. The underlying diary manuscript and any recording were not inspected.",
+      "provenance": {
+        "authorship_status": "Chabad.org attributes the excerpt to Zalmon Jaffe and identifies it as part of his published diary series; the underlying diary manuscript was not inspected.",
+        "signature_status": "Not applicable to a published memoir excerpt; no original diary signature or contemporaneous record inspected.",
+        "source_witness": "Zalmon Jaffe, first-person memoir account, Chabad.org AID 260037.",
+        "transmission_type": "Published memoir excerpt; not an independent transcript, recording, or original-language source.",
+        "textual_status": "Only Chabad.org AID 260037, body lines 269–277, was inspected; the complete memoir, original diary manuscript and any audio were not inspected.",
+        "editorial_scope": "Paraphrase limited to cited body lines; no inference from title or metadata; no full text copied.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260037/jewish/Yechidus.htm",
+        "accessed": "2026-11-21"
+      },
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260037, lines 269–277, ביום 21.11.2026. זהו קטע ממואר/יומן שפורסם באנגלית מאת זלמן יפה; נבדקו רק השורות המצוינות. לא נבדקו היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת או עדויות מקבילות. הנוסח המיוחס לרבי נשמר כעדות המחבר ולא כאימות מילולי עצמאי.",
+      "documented_circumstances": [
+        "יחידות שבה נדונו פניות, מכתבים, ענייני קהילה ומשפחה."
+      ],
+      "question_or_problem": "מה מתאר יפה על אופן ההתייחסות למכתבים שלא נענו?",
+      "conditions_or_qualifications": [
+        "כל שמונת הפריטים נכתבו בידי אותו מחבר ובאותה סדרת ממואר; הם מתעדים אירועים נפרדים אך אינם שמונה עדים עצמאיים לטענה משותפת.",
+        "הקטע חלקי; היומן המקורי, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו.",
+        "הדברים המיוחסים לרבי מובאים לפי זיכרון המחבר ואינם מאומתים מילולית.",
+        "אין להכליל מקרה יחיד להוראה קבועה או למדיניות לכל התקופות."
+      ],
+      "audience": "Readers of the published memoir excerpt; the full attendee list was not inspected.",
+      "taxonomy": {
+        "publisher_index": [
+          "My Encounter with the Rebbe",
+          "Yechidus",
+          "Chabad.org"
+        ],
+        "research_taxonomy": [
+          "יחידות",
+          "עדות ממואר",
+          "הדרכה אישית",
+          "correspondence_response_practice"
+        ],
+        "research_terms": [
+          "זלמן יפה",
+          "יחידות",
+          "correspondence_response_practice"
+        ]
+      },
+      "rights_status": "Copyrighted memoir excerpt; link and metadata only; do not reproduce full text.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Use metadata, short body locators and non-verbatim paraphrases only; no full-text copying."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Published English memoir excerpt; specified body lines inspected.",
+        "complete_partial": "partial",
+        "original_language_witness": "not inspected",
+        "recording": "not inspected",
+        "notes": "One author and one memoir series across eight separate event records; not independent corroboration of a shared claim."
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "yechidus-testimony-aid260062",
+          "basis": "Same author and memoir series; distinct event and separate Evidence Family; does not merge event families or establish independent corroboration."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "epistemic_level": 1,
+      "notes": "Parsed from inspected Chabad.org body passage only. One of eight distinct event records by the same memoirist; shared witness_group_id prevents treating them as eight independent corroborating witnesses. No Verified promotion.",
+      "content_enrichment_batch_id": "152",
+      "last_content_enriched_at": "2026-11-21"
+    },
+    {
+      "id": "yechidus-testimony-aid2593531",
+      "aid": 2593531,
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_class": "Testimonies",
+      "source_class_detail": "Published first-person memoir/diary excerpt by Zalmon Jaffe; secondary testimony, not an original transcript or recording.",
+      "type": "testimony",
+      "collection": "My Encounter with the Rebbe — published memoir series; Chabad.org excerpt",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/2593531/jewish/Yechidus.htm",
+      "date_original": "Sunday night, 14 Shevat (January 26; year not stated in inspected passage)",
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "Hebrew",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "יפה מתאר כי הרבי אישר את הגעת משפחת בתו לשבועות עם שמונת ילדיה, תוך תנאי מפורש שהביקור לא יפריע ללימודי הילדים; זהו תנאי שנמסר בהקשר של אותה נסיעה."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2593531, body lines 282–292."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2593531, body lines 282–292.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "evidence_family_id": "yechidus-testimony-aid2593531",
+      "witness_type": "first_person_published_memoir_testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "independent_witness": true,
+      "primary_secondary_status": "secondary first-person memoir testimony; reported dialogue attributed by the author; not a contemporaneous transcript or recording",
+      "witness_provenance": "Zalmon Jaffe's first-person published memoir excerpt. All eight records in this batch share the same author/series witness group. The underlying diary manuscript and any recording were not inspected.",
+      "provenance": {
+        "authorship_status": "Chabad.org attributes the excerpt to Zalmon Jaffe and identifies it as part of his published diary series; the underlying diary manuscript was not inspected.",
+        "signature_status": "Not applicable to a published memoir excerpt; no original diary signature or contemporaneous record inspected.",
+        "source_witness": "Zalmon Jaffe, first-person memoir account, Chabad.org AID 2593531.",
+        "transmission_type": "Published memoir excerpt; not an independent transcript, recording, or original-language source.",
+        "textual_status": "Only Chabad.org AID 2593531, body lines 282–292, was inspected; the complete memoir, original diary manuscript and any audio were not inspected.",
+        "editorial_scope": "Paraphrase limited to cited body lines; no inference from title or metadata; no full text copied.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593531/jewish/Yechidus.htm",
+        "accessed": "2026-11-21"
+      },
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593531, lines 282–292, ביום 21.11.2026. זהו קטע ממואר/יומן שפורסם באנגלית מאת זלמן יפה; נבדקו רק השורות המצוינות. לא נבדקו היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת או עדויות מקבילות. הנוסח המיוחס לרבי נשמר כעדות המחבר ולא כאימות מילולי עצמאי.",
+      "documented_circumstances": [
+        "בירור כוונת הזמנה משפחתית לקראת ביקור בשבועות והשלכותיה על לימודי הילדים."
+      ],
+      "question_or_problem": "איזה תנאי הוצמד להזמנת המשפחה לביקור?",
+      "conditions_or_qualifications": [
+        "כל שמונת הפריטים נכתבו בידי אותו מחבר ובאותה סדרת ממואר; הם מתעדים אירועים נפרדים אך אינם שמונה עדים עצמאיים לטענה משותפת.",
+        "הקטע חלקי; היומן המקורי, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו.",
+        "הדברים המיוחסים לרבי מובאים לפי זיכרון המחבר ואינם מאומתים מילולית.",
+        "אין להכליל מקרה יחיד להוראה קבועה או למדיניות לכל התקופות."
+      ],
+      "audience": "Readers of the published memoir excerpt; the full attendee list was not inspected.",
+      "taxonomy": {
+        "publisher_index": [
+          "My Encounter with the Rebbe",
+          "Yechidus",
+          "Chabad.org"
+        ],
+        "research_taxonomy": [
+          "יחידות",
+          "עדות ממואר",
+          "הדרכה אישית",
+          "family_visit_and_children_studies"
+        ],
+        "research_terms": [
+          "זלמן יפה",
+          "יחידות",
+          "family_visit_and_children_studies"
+        ]
+      },
+      "rights_status": "Copyrighted memoir excerpt; link and metadata only; do not reproduce full text.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Use metadata, short body locators and non-verbatim paraphrases only; no full-text copying."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Published English memoir excerpt; specified body lines inspected.",
+        "complete_partial": "partial",
+        "original_language_witness": "not inspected",
+        "recording": "not inspected",
+        "notes": "One author and one memoir series across eight separate event records; not independent corroboration of a shared claim."
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "yechidus-testimony-aid260062",
+          "basis": "Same author and memoir series; distinct event and separate Evidence Family; does not merge event families or establish independent corroboration."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "epistemic_level": 1,
+      "notes": "Parsed from inspected Chabad.org body passage only. One of eight distinct event records by the same memoirist; shared witness_group_id prevents treating them as eight independent corroborating witnesses. No Verified promotion.",
+      "content_enrichment_batch_id": "152",
+      "last_content_enriched_at": "2026-11-21"
+    },
+    {
+      "id": "yechidus-testimony-aid260093",
+      "aid": 260093,
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_class": "Testimonies",
+      "source_class_detail": "Published first-person memoir/diary excerpt by Zalmon Jaffe; secondary testimony, not an original transcript or recording.",
+      "type": "testimony",
+      "collection": "My Encounter with the Rebbe — published memoir series; Chabad.org excerpt",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/260093/jewish/Yechidus.htm",
+      "date_original": "Wednesday night, 11 Sivan (May 24; year not stated in inspected passage)",
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "Hebrew",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "לפי זיכרונו של יפה, הרבי עודד להביא לברוקלין את נכדו יוסי, שלמד משנה וגמרא, והמשפחה אכן הביאה אותו ואת אחיו לביקור בשבועות שלאחר מכן; התיאור הוא של מקרה משפחתי מסוים."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 260093, body lines 278–284."
+      ],
+      "proposition_source_locator": "Chabad.org AID 260093, body lines 278–284.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "evidence_family_id": "yechidus-testimony-aid260093",
+      "witness_type": "first_person_published_memoir_testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "independent_witness": true,
+      "primary_secondary_status": "secondary first-person memoir testimony; reported dialogue attributed by the author; not a contemporaneous transcript or recording",
+      "witness_provenance": "Zalmon Jaffe's first-person published memoir excerpt. All eight records in this batch share the same author/series witness group. The underlying diary manuscript and any recording were not inspected.",
+      "provenance": {
+        "authorship_status": "Chabad.org attributes the excerpt to Zalmon Jaffe and identifies it as part of his published diary series; the underlying diary manuscript was not inspected.",
+        "signature_status": "Not applicable to a published memoir excerpt; no original diary signature or contemporaneous record inspected.",
+        "source_witness": "Zalmon Jaffe, first-person memoir account, Chabad.org AID 260093.",
+        "transmission_type": "Published memoir excerpt; not an independent transcript, recording, or original-language source.",
+        "textual_status": "Only Chabad.org AID 260093, body lines 278–284, was inspected; the complete memoir, original diary manuscript and any audio were not inspected.",
+        "editorial_scope": "Paraphrase limited to cited body lines; no inference from title or metadata; no full text copied.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/260093/jewish/Yechidus.htm",
+        "accessed": "2026-11-21"
+      },
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 260093, lines 278–284, ביום 21.11.2026. זהו קטע ממואר/יומן שפורסם באנגלית מאת זלמן יפה; נבדקו רק השורות המצוינות. לא נבדקו היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת או עדויות מקבילות. הנוסח המיוחס לרבי נשמר כעדות המחבר ולא כאימות מילולי עצמאי.",
+      "documented_circumstances": [
+        "יחידות משפחתית שבה נדונו ענייני המשפחה, הקהילה והבאת נכדים ללימוד."
+      ],
+      "question_or_problem": "כיצד מתואר עידוד ללימוד תורה של נכד צעיר?",
+      "conditions_or_qualifications": [
+        "כל שמונת הפריטים נכתבו בידי אותו מחבר ובאותה סדרת ממואר; הם מתעדים אירועים נפרדים אך אינם שמונה עדים עצמאיים לטענה משותפת.",
+        "הקטע חלקי; היומן המקורי, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו.",
+        "הדברים המיוחסים לרבי מובאים לפי זיכרון המחבר ואינם מאומתים מילולית.",
+        "אין להכליל מקרה יחיד להוראה קבועה או למדיניות לכל התקופות."
+      ],
+      "audience": "Readers of the published memoir excerpt; the full attendee list was not inspected.",
+      "taxonomy": {
+        "publisher_index": [
+          "My Encounter with the Rebbe",
+          "Yechidus",
+          "Chabad.org"
+        ],
+        "research_taxonomy": [
+          "יחידות",
+          "עדות ממואר",
+          "הדרכה אישית",
+          "encouraging_youth_torah_learning"
+        ],
+        "research_terms": [
+          "זלמן יפה",
+          "יחידות",
+          "encouraging_youth_torah_learning"
+        ]
+      },
+      "rights_status": "Copyrighted memoir excerpt; link and metadata only; do not reproduce full text.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Use metadata, short body locators and non-verbatim paraphrases only; no full-text copying."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Published English memoir excerpt; specified body lines inspected.",
+        "complete_partial": "partial",
+        "original_language_witness": "not inspected",
+        "recording": "not inspected",
+        "notes": "One author and one memoir series across eight separate event records; not independent corroboration of a shared claim."
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "yechidus-testimony-aid260062",
+          "basis": "Same author and memoir series; distinct event and separate Evidence Family; does not merge event families or establish independent corroboration."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "epistemic_level": 1,
+      "notes": "Parsed from inspected Chabad.org body passage only. One of eight distinct event records by the same memoirist; shared witness_group_id prevents treating them as eight independent corroborating witnesses. No Verified promotion.",
+      "content_enrichment_batch_id": "152",
+      "last_content_enriched_at": "2026-11-21"
+    },
+    {
+      "id": "yechidus-testimony-aid2593601",
+      "aid": 2593601,
+      "title": "Yechidus — Zalmon Jaffe memoir",
+      "source_class": "Testimonies",
+      "source_class_detail": "Published first-person memoir/diary excerpt by Zalmon Jaffe; secondary testimony, not an original transcript or recording.",
+      "type": "testimony",
+      "collection": "My Encounter with the Rebbe — published memoir series; Chabad.org excerpt",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/2593601/jewish/Yechidus.htm",
+      "date_original": "Sivan 16 (June 14; year not stated in inspected passage)",
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "Hebrew",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "יפה מספר כי ביחידות הרבי התעניין בהחלמת רעייתו לאחר ניתוח, שאל על בדיקה רפואית ועל מקור ההמלצה לתזונה; העדות מתעדת התעניינות אישית, אך אינה כוללת אבחון או הנחיה רפואית."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2593601, body lines 270–273."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2593601, body lines 270–273.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "evidence_family_id": "yechidus-testimony-aid2593601",
+      "witness_type": "first_person_published_memoir_testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "independent_witness": true,
+      "primary_secondary_status": "secondary first-person memoir testimony; reported dialogue attributed by the author; not a contemporaneous transcript or recording",
+      "witness_provenance": "Zalmon Jaffe's first-person published memoir excerpt. All eight records in this batch share the same author/series witness group. The underlying diary manuscript and any recording were not inspected.",
+      "provenance": {
+        "authorship_status": "Chabad.org attributes the excerpt to Zalmon Jaffe and identifies it as part of his published diary series; the underlying diary manuscript was not inspected.",
+        "signature_status": "Not applicable to a published memoir excerpt; no original diary signature or contemporaneous record inspected.",
+        "source_witness": "Zalmon Jaffe, first-person memoir account, Chabad.org AID 2593601.",
+        "transmission_type": "Published memoir excerpt; not an independent transcript, recording, or original-language source.",
+        "textual_status": "Only Chabad.org AID 2593601, body lines 270–273, was inspected; the complete memoir, original diary manuscript and any audio were not inspected.",
+        "editorial_scope": "Paraphrase limited to cited body lines; no inference from title or metadata; no full text copied.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593601/jewish/Yechidus.htm",
+        "accessed": "2026-11-21"
+      },
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593601, lines 270–273, ביום 21.11.2026. זהו קטע ממואר/יומן שפורסם באנגלית מאת זלמן יפה; נבדקו רק השורות המצוינות. לא נבדקו היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת או עדויות מקבילות. הנוסח המיוחס לרבי נשמר כעדות המחבר ולא כאימות מילולי עצמאי.",
+      "documented_circumstances": [
+        "יחידות שבה השתתפו יפה ורעייתו, לאחר ניתוח שעברה."
+      ],
+      "question_or_problem": "מה מתאר יפה על ההתעניינות במצבה הבריאותי של רעייתו?",
+      "conditions_or_qualifications": [
+        "כל שמונת הפריטים נכתבו בידי אותו מחבר ובאותה סדרת ממואר; הם מתעדים אירועים נפרדים אך אינם שמונה עדים עצמאיים לטענה משותפת.",
+        "הקטע חלקי; היומן המקורי, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו.",
+        "הדברים המיוחסים לרבי מובאים לפי זיכרון המחבר ואינם מאומתים מילולית.",
+        "אין להכליל מקרה יחיד להוראה קבועה או למדיניות לכל התקופות."
+      ],
+      "audience": "Readers of the published memoir excerpt; the full attendee list was not inspected.",
+      "taxonomy": {
+        "publisher_index": [
+          "My Encounter with the Rebbe",
+          "Yechidus",
+          "Chabad.org"
+        ],
+        "research_taxonomy": [
+          "יחידות",
+          "עדות ממואר",
+          "הדרכה אישית",
+          "personal_health_attention"
+        ],
+        "research_terms": [
+          "זלמן יפה",
+          "יחידות",
+          "personal_health_attention"
+        ]
+      },
+      "rights_status": "Copyrighted memoir excerpt; link and metadata only; do not reproduce full text.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Use metadata, short body locators and non-verbatim paraphrases only; no full-text copying."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Published English memoir excerpt; specified body lines inspected.",
+        "complete_partial": "partial",
+        "original_language_witness": "not inspected",
+        "recording": "not inspected",
+        "notes": "One author and one memoir series across eight separate event records; not independent corroboration of a shared claim."
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "yechidus-testimony-aid260062",
+          "basis": "Same author and memoir series; distinct event and separate Evidence Family; does not merge event families or establish independent corroboration."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "epistemic_level": 1,
+      "notes": "Parsed from inspected Chabad.org body passage only. One of eight distinct event records by the same memoirist; shared witness_group_id prevents treating them as eight independent corroborating witnesses. No Verified promotion.",
+      "content_enrichment_batch_id": "152",
+      "last_content_enriched_at": "2026-11-21"
+    },
+    {
+      "id": "yechidus-testimony-aid2593412",
+      "aid": 2593412,
+      "title": "Farewell Yechidus — Zalmon Jaffe memoir",
+      "source_class": "Testimonies",
+      "source_class_detail": "Published first-person memoir/diary excerpt by Zalmon Jaffe; secondary testimony, not an original transcript or recording.",
+      "type": "testimony",
+      "collection": "My Encounter with the Rebbe — published memoir series; Chabad.org excerpt",
+      "source_url": "https://www.chabad.org/library/article_cdo/aid/2593412/jewish/Farewell-Yechidus.htm",
+      "date_original": "Monday, 11 Sivan (June 11; year not stated in inspected passage)",
+      "date_precision": "unknown",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "Hebrew",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "source_text_inspected",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "response_propositions": [
+        "בפרידת הקבוצה, יפה מתאר שהרבי חזר על חשיבות לימוד עם ילדים בחופשת הקיץ והדגיש שכל יום חשוב, ואף עודד לפעול לקליטת ילדים ללימוד בזמן החופשה; זהו דיווח על שיחה והנחיה בהקשר מסוים."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 2593412, body lines 263–289."
+      ],
+      "proposition_source_locator": "Chabad.org AID 2593412, body lines 263–289.",
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "evidence_family_id": "yechidus-testimony-aid2593412",
+      "witness_type": "first_person_published_memoir_testimony",
+      "witness_group_id": "zalmon-jaffe-memoir-series",
+      "independent_witness": true,
+      "primary_secondary_status": "secondary first-person memoir testimony; reported dialogue attributed by the author; not a contemporaneous transcript or recording",
+      "witness_provenance": "Zalmon Jaffe's first-person published memoir excerpt. All eight records in this batch share the same author/series witness group. The underlying diary manuscript and any recording were not inspected.",
+      "provenance": {
+        "authorship_status": "Chabad.org attributes the excerpt to Zalmon Jaffe and identifies it as part of his published diary series; the underlying diary manuscript was not inspected.",
+        "signature_status": "Not applicable to a published memoir excerpt; no original diary signature or contemporaneous record inspected.",
+        "source_witness": "Zalmon Jaffe, first-person memoir account, Chabad.org AID 2593412.",
+        "transmission_type": "Published memoir excerpt; not an independent transcript, recording, or original-language source.",
+        "textual_status": "Only Chabad.org AID 2593412, body lines 263–289, was inspected; the complete memoir, original diary manuscript and any audio were not inspected.",
+        "editorial_scope": "Paraphrase limited to cited body lines; no inference from title or metadata; no full text copied.",
+        "verification_status": "source_text_inspected",
+        "source_url": "https://www.chabad.org/library/article_cdo/aid/2593412/jewish/Farewell-Yechidus.htm",
+        "accessed": "2026-11-21"
+      },
+      "verification_scope": "נבדק גוף הפרסום הציבורי ב-Chabad.org, AID 2593412, lines 263–289, ביום 21.11.2026. זהו קטע ממואר/יומן שפורסם באנגלית מאת זלמן יפה; נבדקו רק השורות המצוינות. לא נבדקו היומן המקורי, כתב יד, הקלטה, תמליל בזמן אמת או עדויות מקבילות. הנוסח המיוחס לרבי נשמר כעדות המחבר ולא כאימות מילולי עצמאי.",
+      "documented_circumstances": [
+        "שיחת פרידה לפני נסיעה חזרה לאנגליה, שבה נדונו חינוך ילדים וחופשת הקיץ."
+      ],
+      "question_or_problem": "מה מתאר יפה על לימוד ילדים בחופשת הקיץ?",
+      "conditions_or_qualifications": [
+        "כל שמונת הפריטים נכתבו בידי אותו מחבר ובאותה סדרת ממואר; הם מתעדים אירועים נפרדים אך אינם שמונה עדים עצמאיים לטענה משותפת.",
+        "הקטע חלקי; היומן המקורי, הקלטה, תמליל בזמן אמת ועדויות מקבילות לא נבדקו.",
+        "הדברים המיוחסים לרבי מובאים לפי זיכרון המחבר ואינם מאומתים מילולית.",
+        "אין להכליל מקרה יחיד להוראה קבועה או למדיניות לכל התקופות."
+      ],
+      "audience": "Readers of the published memoir excerpt; the full attendee list was not inspected.",
+      "taxonomy": {
+        "publisher_index": [
+          "My Encounter with the Rebbe",
+          "Yechidus",
+          "Chabad.org"
+        ],
+        "research_taxonomy": [
+          "יחידות",
+          "עדות ממואר",
+          "הדרכה אישית",
+          "summer_vacation_child_education"
+        ],
+        "research_terms": [
+          "זלמן יפה",
+          "יחידות",
+          "summer_vacation_child_education"
+        ]
+      },
+      "rights_status": "Copyrighted memoir excerpt; link and metadata only; do not reproduce full text.",
+      "access": {
+        "access_level": "open",
+        "rights_status": "copyrighted-link-only",
+        "reuse_notes": "Use metadata, short body locators and non-verbatim paraphrases only; no full-text copying."
+      },
+      "witness": {
+        "kind": "text",
+        "state": "Published English memoir excerpt; specified body lines inspected.",
+        "complete_partial": "partial",
+        "original_language_witness": "not inspected",
+        "recording": "not inspected",
+        "notes": "One author and one memoir series across eight separate event records; not independent corroboration of a shared claim."
+      },
+      "relations": [
+        {
+          "type": "researcher/model_link",
+          "target_id": "yechidus-testimony-aid260062",
+          "basis": "Same author and memoir series; distinct event and separate Evidence Family; does not merge event families or establish independent corroboration."
+        }
+      ],
+      "duplicate_or_parallel_relations": [],
+      "epistemic_level": 1,
+      "notes": "Parsed from inspected Chabad.org body passage only. One of eight distinct event records by the same memoirist; shared witness_group_id prevents treating them as eight independent corroborating witnesses. No Verified promotion.",
+      "content_enrichment_batch_id": "152",
+      "last_content_enriched_at": "2026-11-21"
+    }
+  ],
+  "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה."
+}

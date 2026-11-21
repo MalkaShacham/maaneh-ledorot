@@ -1110,10 +1110,10 @@ for(const aid of batch110Aids){
  assert.equal(e.proposition_origin,'source_grounded_paraphrase');assert.equal(e.proposition_verbatim,false);assert.equal(e.proposition_verification,'source_text_inspected');
  assert(!queue.records.some(q=>String(q.key||'')==='aid:'+aid||String(q.source_url||'').includes('/aid/'+aid+'/')));
 }
-assert.equal(batch110Data.deduplication_check.full_index_scan_available,true);
+assert.equal(batch110Data.deduplication_check.full_index_scan_available,false,'batch110 records only a partial preflight; the test must not claim a full index scan');
 assert.deepEqual(batch110Data.deduplication_check.canonical_identity_collisions,[]);
 assert.deepEqual(batch110Data.deduplication_check.missing_canonical_identities,[]);
-assert.equal(batch110Data.deduplication_check.all_target_identities_answer_eligible,true);
+assert.equal(batch110Data.deduplication_check.all_target_identities_answer_eligible,false,'batch110 target eligibility remains unconfirmed until canonical reconciliation');
 assert(['reconciled','reconciled_with_variance'].includes(batch110Data.reconciliation_status));
 const batch110Actual=readinessMetrics(batch110Data.metrics_actual_after);
 assert.deepEqual(batch110Data.reconciliation_variance,{answer_eligible_unique_sources:batch110Actual.answer_eligible_unique_sources-batch110Data.metrics_expected_after.answer_eligible_unique_sources,content_verified_unique_sources:batch110Actual.content_verified_unique_sources-batch110Data.metrics_expected_after.content_verified_unique_sources,answer_eligible_propositions:batch110Actual.answer_eligible_propositions-batch110Data.metrics_expected_after.answer_eligible_propositions});
@@ -5139,5 +5139,48 @@ for(const mode of ['regular','researcher']){
   assert.equal(m.research.claim_source_map.length,10);
   assert(m.research.claim_source_map.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
   assert.equal(m.research.pattern_synthesis_integrity.valid,true);
+ }else assert.equal(m.research,undefined);
+}
+
+ 
+// Batch 152: eight distinct first-person memoir event families, one shared witness group, and one in-place translation enrichment.
+const batch152Path='data/items/content-research-batch-152-2026-11-21.json';
+const batch152Data=JSON.parse(await readFile(new URL(batch152Path,root),'utf8'));
+const batch152Aids=['260062','2593500','1026221','260037','2593531','260093','2593601','2593412'];
+assert.equal(batch152Data.records.length,8);assert.deepEqual(batch152Data.new_aids.map(String),batch152Aids);
+assert.equal(batch152Data.reviewed_item_count,9);assert.equal(batch152Data.source_bodies_inspected,9);assert.equal(batch152Data.source_body_pages_opened,9);
+assert.equal(batch152Data.new_source_identities,8);assert.equal(batch152Data.existing_identities_enriched,1);assert.equal(batch152Data.existing_identities_rechecked,0);
+assert.equal(batch152Data.new_response_propositions,8);assert.equal(batch152Data.existing_response_propositions_added,2);assert.equal(batch152Data.total_new_paraphrase_entries,10);
+assert.equal(batch152Data.answer_eligible_source_families_added,8);assert.equal(batch152Data.independent_witnesses_added,1);assert.equal(batch152Data.independent_witness_groups_added,1);assert.equal(batch152Data.same_author_testimony_records,8);
+assert.equal(batch152Data.content_verified_unique_sources_added,0);assert.equal(batch152Data.translations_counted_as_independent_witnesses,0);assert.equal(batch152Data.blocked_candidate_count,2);
+assert.equal(batch152Data.fallback_source_attempted,true);assert.equal(batch152Data.crawler_retry,false);assert.equal(batch152Data.access_control_bypassed,false);assert.equal(batch152Data.full_text_copied,false);assert.equal(batch152Data.scan_only_verification_used,false);
+assert.equal(batch152Data.source_body_review.length,8);assert.equal(batch152Data.existing_identity_updates.length,1);
+assert.equal(batch152Data.deduplication_check.full_index_scan_available,false);assert.equal(batch152Data.deduplication_check.full_index_scan_pending_reconciliation,true);assert.equal(batch152Data.deduplication_check.review_queue_matches,0);
+assert.equal(batch152Data.reconciliation_status,'pending_reconciliation');assert.equal(batch152Data.metrics_actual_after,null);
+assert.equal(new Set(batch152Data.records.map(r=>r.aid)).size,8);assert.equal(new Set(batch152Data.records.map(r=>r.source_url)).size,8);assert.equal(new Set(batch152Data.records.map(r=>r.evidence_family_id)).size,8);
+assert(batch152Data.records.every(r=>r.source_class==='Testimonies'&&r.type==='testimony'&&r.status==='Parsed'&&r.pipeline_status==='Parsed'&&r.canonical_status==='Parsed'&&r.context_status==='partial'&&r.has_content_evidence===true));
+assert(batch152Data.records.every(r=>r.proposition_origin==='source_grounded_paraphrase'&&r.proposition_verbatim===false&&r.proposition_verification==='source_text_inspected'&&r.proposition_source_locator&&r.response_propositions.length===1&&r.response_proposition_locators.length===1));
+assert(batch152Data.records.every(r=>r.witness_group_id==='zalmon-jaffe-memoir-series'&&r.independent_witness===true&&r.provenance?.source_url===r.source_url&&r.verification_scope&&r.access?.rights_status==='copyrighted-link-only'));
+assert(batch152Data.records.slice(1).every(r=>r.relations.some(x=>x.type==='researcher/model_link'&&x.target_id==='yechidus-testimony-aid260062')));
+const enriched2505782=idx.entries.find(e=>sourceAID(e)==='2505782');
+assert(enriched2505782&&enriched2505782.canonical_file===batch151Path);assert.equal(enriched2505782.evidence_family_id,'yechidus-event-aid2505782');assert.equal(enriched2505782.independent_witness,false);
+assert.equal(enriched2505782.response_propositions.length,3);assert.equal(enriched2505782.response_proposition_locators.length,3);
+assert(enriched2505782.response_proposition_locators.some(x=>x.includes('body lines 261–265')));assert(enriched2505782.response_proposition_locators.some(x=>x.includes('body lines 268–271')));
+assert(batch152Data.existing_identity_updates.some(x=>String(x.aid)==='2505782'&&x.canonical_file===batch151Path&&x.propositions_added===2&&x.total_propositions_after===3));
+const jaffeQuestion='מה אפשר ללמוד מעדויות היחידות של זלמן יפה על הדרכה אישית, חינוך, צדקה וניהול עומס?';
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,jaffeQuestion,{mode});
+ assert(m.answerable,mode+': eight inspected Jaffe memoir event families must support a bounded case comparison');
+ assert.equal(m.synthesis?.topic,'jaffe_memoir_practical_guidance');assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.sources.length,8);assert.deepEqual(m.sources.map(e=>String(e.aid)),batch152Aids);assert.equal(new Set(m.sources.map(e=>e.evidence_family_id)).size,8);
+ assert.deepEqual(m.synthesis.independent_evidence_family_ids,[]);assert.deepEqual(m.synthesis.independent_witness_group_ids,['zalmon-jaffe-memoir-series']);
+ assert.equal(m.claims.length,8);assert(m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator&&c.witnesses?.length===1&&c.witnesses[0].witness_group_id==='zalmon-jaffe-memoir-series'));
+ assert(m.citation_entailment.every(x=>x.valid));assert(m.context_boundary.every(x=>x.valid));assert.equal(m.pattern_synthesis_integrity.valid,true);
+ if(mode==='researcher'){
+  assert.equal(m.research.depth,'deep');assert.equal(m.research.synthesis_scope,'cross_family_derived_case_comparison');assert.equal(m.research.evidence_families,8);
+  assert.equal(m.research.independent_evidence_families,1);assert.equal(m.research.independent_witness_groups,1);assert.equal(m.research.evidence_integrity.independent_witnesses,1);
+  assert.equal(m.research.evidence_integrity.same_witness_group_additional_records,7);assert.equal(m.research.evidence_integrity.derived_non_independent,0);
+  assert.deepEqual(m.research.witness_group_ids,['zalmon-jaffe-memoir-series']);assert.equal(m.research.evidence_map.length,8);assert.equal(m.research.claim_source_map.length,8);
+  assert(m.research.claim_source_map.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
  }else assert.equal(m.research,undefined);
 }
