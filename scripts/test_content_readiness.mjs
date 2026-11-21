@@ -5260,3 +5260,42 @@ for(const mode of ['regular','researcher']){
   assert.equal(m.research.pattern_synthesis_integrity.valid,true);
  }else assert.equal(m.research,undefined);
 }
+
+
+// Batch 154: twelve directly inspected Hebrew/Yiddish correspondence pages.
+// Each proposition is a non-verbatim, source-grounded paraphrase with its own locator.
+const batch154Path='data/items/content-research-batch-154-2026-11-21.json';
+const batch154Data=JSON.parse(await readFile(new URL(batch154Path,root),'utf8'));
+assert.equal(batch154Data.records.length,12);
+assert.equal(new Set(batch154Data.records.map(r=>String(r.aid))).size,12);
+assert.equal(new Set(batch154Data.records.map(r=>r.evidence_family_id)).size,12);
+assert.equal(batch154Data.new_source_identities,12);
+assert.equal(batch154Data.new_response_propositions,24);
+assert.equal(batch154Data.blocked_candidate_count,8);
+assert.equal(batch154Data.fallback_source_attempted,true);
+assert.equal(batch154Data.crawler_retry,false);
+assert.equal(batch154Data.access_control_bypassed,false);
+assert.equal(batch154Data.content_verified_unique_sources_added,0);
+assert.equal(batch154Data.records.filter(r=>r.independent_witness===false).length,12);
+for(const r of batch154Data.records){
+ assert.equal(r.status,'Parsed');
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(r.proposition_verbatim,false);
+ assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.verification_scope&&r.provenance);
+ assert.equal(r.response_propositions.length,2);
+ assert.equal(r.response_proposition_locators.length,2);
+ assert(r.response_proposition_locators.every(Boolean));
+ const entry=idx.entries.find(e=>sourceAID(e)===String(r.aid)&&e.evidence_family_id===r.evidence_family_id);
+ assert(entry,'batch-154 AID '+r.aid+' must have a canonical search-index entry');
+ assert.equal(entry.answer_eligible,true,'batch-154 AID '+r.aid+' must be answer eligible from inspected propositions');
+ assert.equal(entry.proposition_origin,'source_grounded_paraphrase');
+ assert.equal(entry.proposition_verbatim,false);
+ assert.equal(entry.proposition_verification,'source_text_inspected');
+ assert(entry.proposition_source_locator&&entry.verification_scope);
+}
+const component098=JSON.parse(await readFile(new URL('data/items/content-research-batch-098-2026-11-15.json',root),'utf8')).records.find(r=>String(r.aid)==='259799');
+const component144=JSON.parse(await readFile(new URL('data/items/content-research-batch-144-2026-11-17.json',root),'utf8')).records.find(r=>String(r.aid)==='259799');
+assert(component098.document_component_id&&component144.document_component_id);
+assert.notEqual(component098.document_component_id,component144.document_component_id,'distinct letters embedded in one publisher page must retain distinct document components');
+assert.notEqual(component098.evidence_family_id,component144.evidence_family_id,'distinct letters on one page are not collapsed into one Evidence Family');

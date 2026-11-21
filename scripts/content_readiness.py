@@ -37,8 +37,9 @@ def summarize(entries):
             match = re.search(r"/aid/(\d+)(?:/|$)", str(e.get("source_url")))
             if match:
                 aid = match.group(1)
+        component = e.get("document_component_id") or e.get("source_component_id")
         if aid:
-            return "aid:" + str(aid)
+            return "aid:" + str(aid) + (("#component:" + str(component)) if component else "")
         return str(e.get("source_url") or e.get("key"))
     families = {}
     for entry in usable:

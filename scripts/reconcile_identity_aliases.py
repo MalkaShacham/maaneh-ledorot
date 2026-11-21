@@ -8,8 +8,10 @@ def keys(d):
     out=set(); loc=d.get('locator') or {}; prov=d.get('provenance') or {}
     aid=d.get('aid') or (loc.get('aid') if isinstance(loc,dict) else None)
     url=d.get('source_url') or (prov.get('source_url') if isinstance(prov,dict) else None)
-    if aid: out.add('aid:'+str(aid))
-    if url: out.add('url:'+str(url))
+    component=d.get('document_component_id') or d.get('source_component_id')
+    suffix=('#component:'+str(component)) if component else ''
+    if aid: out.add('aid:'+str(aid)+suffix)
+    if url: out.add('url:'+str(url)+suffix)
     if d.get('staging_stable_key'): out.add(str(d['staging_stable_key']))
     if d.get('id'): out.add('id:'+str(d['id']))
     return out

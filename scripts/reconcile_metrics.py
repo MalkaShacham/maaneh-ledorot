@@ -19,8 +19,10 @@ def identity_keys(d):
     if not aid and url:
         match=re.search(r"/aid/(\d+)(?:/|$)",str(url))
         if match: aid=match.group(1)
-    if aid: out.append("aid:"+str(aid))
-    if url: out.append("url:"+str(url))
+    component=d.get("document_component_id") or d.get("source_component_id")
+    suffix=("#component:"+str(component)) if component else ""
+    if aid: out.append("aid:"+str(aid)+suffix)
+    if url: out.append("url:"+str(url)+suffix)
     if d.get("staging_stable_key"): out.append(str(d["staging_stable_key"]))
     if d.get("id"): out.append("id:"+str(d["id"]))
     return list(dict.fromkeys(out))
@@ -41,7 +43,7 @@ def is_source_record(d):
         or ("identity_key" in d and "canonical_records_found" in d)
     )
     if audit_row: return False
-    markers=("id","aid","title","summary_researcher","pipeline_status","source_class","evidence_family_id","response_propositions")
+    markers=("id","aid","title","summary_researcher","pipeline_status","source_class","response_propositions")
     return any(d.get(k) not in (None,"",[]) for k in markers) or isinstance(d.get("locator"),dict)
 
 def stable_key(d):
@@ -379,7 +381,7 @@ for selected_index, batch_info in enumerate(selected_batches):
     for target in target_identities:
         selected=snapshot_by_key.get(target["key"]); matches=by_identity[target["key"]]
         family_ids=sorted({r.get("evidence_family_id") for r in matches if r.get("evidence_family_id")})
-        same_family_duplicate=len(matches)>1 and len(family_ids)==1 and all(r.get("independent_witness") is False for r in matches)
+        same_family_duplicate=len(matches)>1 and len(family_ids)==1
         identity_collision=len(matches)>1 and not same_family_duplicate
         audit.append({"identity_key":target["key"],"aid":int(target["aid"]) if target.get("aid") and str(target["aid"]).isdigit() else None,"id":target.get("id"),"canonical_records_found":len(matches),"matching_evidence_family_ids":family_ids,"same_family_duplicate":same_family_duplicate,"canonical_identity_collision":identity_collision,"records":matches,"selected_index_entry":{"present":bool(selected),"answer_eligible":bool(selected and answer_eligible(selected)),"status":selected.get("status") if selected else None,"evidence_family_id":selected.get("evidence_family_id") if selected else None,"canonical_file":selected.get("canonical_file") if selected else None,"proposition_count":len(selected.get("response_propositions") or []) if selected else 0,"proposition_source_locator":selected.get("proposition_source_locator") if selected else None,"independent_witness":selected.get("independent_witness") if selected else None} if selected else {"present":False}})
     expected=batch_data.get("metrics_expected_after") or {}
@@ -404,6 +406,11 @@ for selected_index, batch_info in enumerate(selected_batches):
         dedup["canonical_identity_collisions"]=collisions
         dedup["missing_canonical_identities"]=missing
         dedup["all_target_identities_answer_eligible"]=bool(audit) and all(x.get("selected_index_entry",{}).get("answer_eligible") for x in audit)
+        identity_integrity_ok=(not collisions and not missing and dedup["all_target_identities_answer_eligible"])
+        batch_data["reconciliation_identity_integrity"]={"canonical_identity_collisions":collisions,"missing_canonical_identities":missing,"all_target_identities_answer_eligible":dedup["all_target_identities_answer_eligible"],"passed":identity_integrity_ok}
+        if not identity_integrity_ok:
+            batch_data["reconciliation_status"]="reconciled_with_variance"
+            batch_data["status"]="reconciled_with_variance"
     state.setdefault("development_recovery",{})["last_reconciliation"]={
         "batch_id":batch_data.get("batch_id") or batch_label,"batch_file":str(batch_path.relative_to(ROOT)),"generated":today,
         "batch_record_count":len(target_identities),"new_source_identity_count":batch_data.get("new_source_identities"),
@@ -467,7 +474,8 @@ if isinstance(state.get("metrics_integrity"),dict):
     expected=readiness.get("expected_after") or {}
     readiness["reconciliation_variance"]={k:actual[k]-int(expected.get(k,actual[k])) for k in actual}
     if selected_batches:
-        readiness["reconciliation_status"]="reconciled" if all(v==0 for v in readiness["reconciliation_variance"].values()) else "reconciled_with_variance"
+        batch_integrity_ok=all(x["data"].get("reconciliation_status")=="reconciled" for x in selected_batches)
+        readiness["reconciliation_status"]="reconciled" if all(v==0 for v in readiness["reconciliation_variance"].values()) and batch_integrity_ok else "reconciled_with_variance"
         integrity["status"]="reconciled_pending_commit" if readiness["reconciliation_status"]=="reconciled" else "reconciled_with_variance_pending_commit"
         integrity["last_reconciled_at"]=today
 
