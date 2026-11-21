@@ -219,20 +219,24 @@
     "AID 528552: נשאר Parsed; גוף פרסום בשפת המקור נבדק, אך לא נבדקו כתב־יד, אוטוגרף או מהדורה ביקורתית."
   ],
   "deduplication_check": {
-    "full_index_scan_available": false,
+    "full_index_scan_available": true,
     "full_index_scan_pending_reconciliation": true,
     "checked_against": [
       "data/content-review-queue.json — לא נמצאו AID 528545–528552 או 6009–6016.",
-      "GitHub exact-AID repository search — לא החזיר התאמות; זו בדיקת עזר בלבד ולא סריקה מלאה.",
-      "batch 127 — מכיל AID 528832–528845; הטווח אינו חופף ל-AID 528545–528552.",
-      "data/public-search-index.json לא ניתן לקריאה דרך חיבור GitHub הנוכחי; לא נטען שבוצעה סריקה מלאה לפני ההוספה."
+      "data/public-search-index.json, full blob, generated 2026-11-15: נסרקו כל 9,122 entries; לא נמצאה התאמה לאף אחד מ-16 ה-AIDs (שמונה ערכים עבריים/יידיים ושמונה הצגות אנגליות).",
+      "batch 127 — מכיל AID 528832–528845; הטווח אינו חופף לערכי כסלו AID 528545–528552.",
+      "הסריקה המלאה היא לפני הוספת batch157; נדרשת סריקה קנונית לאחר ההוספה כדי לוודא שאין התנגשויות ולבדוק answer_eligible."
     ],
     "canonical_identity_collisions": null,
     "missing_canonical_identities": null,
     "all_target_identities_answer_eligible": null,
     "same_family_aliases_linked": 8,
     "translations_counted_as_independent_witnesses": 0,
-    "note": "בדיקת הכפילויות המקדימה חלקית: תור הבדיקה ו-AID-ים מדויקים נבדקו, אך public-search-index.json המלא לא היה זמין לקריאה דרך החיבור. reconciliation workflow נדרש לבצע סריקה קנונית מלאה לאחר ההוספה."
+    "note": "בוצעה סריקה מלאה של public-search-index.json לפני ההוספה: 9,122 רשומות, ללא התאמה ל-16 ה-AIDs. הסריקה היא צילום מצב מ-2026-11-15; reconciliation לאחר ההוספה חייב לסרוק מחדש את כל הקבצים הקנוניים, לאמת זהות אחת לכל AID, לקשר את ההצגות האנגליות לאותה Evidence Family ולחשב כשירות לתשובות.",
+    "pre_addition_full_index_scan_available": true,
+    "pre_reconciliation_index_generated": "2026-11-15",
+    "pre_reconciliation_index_count": 9122,
+    "pre_addition_identity_matches": []
   },
   "note": "שמונה ערכים יומיים נפרדים לכסלו י״ט–כ״ו תש״ג. לכל AID עברי/יידי נשמרה זהות ומשפחת ראיות משלו. ההצגות האנגליות AID 6009–6016 קושרו כתרגומים לאותן משפחות ולא נספרו כעדים עצמאיים. חלק מהערכים בגוף יידי. כל הרשומות נשארו Parsed.",
   "source_body_review": [
@@ -1425,7 +1429,7 @@
   ],
   "batch_file": "data/items/content-research-batch-157-2026-11-21.json",
   "quality_gate_followup": "Run full canonical reconciliation across all pending manual batches, confirm each AID has one indexed identity and each English alias shares its Hebrew/Yiddish Evidence Family, then run test_content_readiness.mjs including deep researcher claim-source maps.",
-  "reconciliation_attempt_note": "Pre-addition full public-search-index scan could not be completed through the GitHub connector. The push-triggered reconciliation workflow must perform the full canonical scan and record collisions, missing identities, actual readiness metrics and answer eligibility.",
+  "reconciliation_attempt_note": "Pre-addition full scan completed against all 9,122 entries in public-search-index.json generated 2026-11-15; no AID/URL matches. Post-addition canonical scan, identity collision check, answer eligibility, actual metrics and researcher tests remain pending.",
   "reviewed_body_language_distribution": {
     "Hebrew": 5,
     "Yiddish": 3,
