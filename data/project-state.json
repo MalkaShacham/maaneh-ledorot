@@ -210,19 +210,22 @@
         "blocked_candidate_count": 2,
         "recovered_candidate_count": 0,
         "metrics_before": {
-          "answer_eligible_unique_sources": 1496,
+          "answer_eligible_unique_sources": 1516,
           "content_verified_unique_sources": 854,
-          "answer_eligible_propositions": 3823,
-          "measured_in_uncommitted_ci_workspace_after_batch148": true
+          "answer_eligible_propositions": 3858
         },
-        "metrics_before_source": "Latest measured CI workspace snapshot after batch148 (run 44188237128); uncommitted and not the current public metric.",
+        "metrics_before_source": "Contiguous planning boundary copied from batch151.metrics_expected_after so reconcile_metrics.py can reconcile the pending batch chain. This is not a measured public metric.",
         "public_metrics_snapshot_before": {
           "generated": "2026-11-15",
           "answer_eligible_unique_sources": 977,
           "content_verified_unique_sources": 878,
           "answer_eligible_propositions": 2950
         },
-        "metrics_expected_after": null,
+        "metrics_expected_after": {
+          "answer_eligible_unique_sources": 1524,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3868
+        },
         "metrics_actual_after": null,
         "metrics_delta_at_batch_boundary": {
           "answer_eligible_unique_sources": 8,
@@ -464,7 +467,16 @@
             2593412
           ]
         },
-        "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה."
+        "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה.",
+        "metrics_expected_after_source": "Planning projection from batch152 local delta (+8 answer-eligible families, +0 Verified, +10 paraphrases); not measured.",
+        "last_measured_ci_workspace_baseline": {
+          "answer_eligible_unique_sources": 1496,
+          "content_verified_unique_sources": 854,
+          "answer_eligible_propositions": 3823,
+          "run_id": 44188237128,
+          "after_batch": 148,
+          "committed": false
+        }
       },
       "status": "pending_reconciliation",
       "latest_uncommitted_ci_measurement": {
@@ -545,19 +557,22 @@
       "blocked_candidate_count": 2,
       "recovered_candidate_count": 0,
       "metrics_before": {
-        "answer_eligible_unique_sources": 1496,
+        "answer_eligible_unique_sources": 1516,
         "content_verified_unique_sources": 854,
-        "answer_eligible_propositions": 3823,
-        "measured_in_uncommitted_ci_workspace_after_batch148": true
+        "answer_eligible_propositions": 3858
       },
-      "metrics_before_source": "Latest measured CI workspace snapshot after batch148 (run 44188237128); uncommitted and not the current public metric.",
+      "metrics_before_source": "Contiguous planning boundary copied from batch151.metrics_expected_after so reconcile_metrics.py can reconcile the pending batch chain. This is not a measured public metric.",
       "public_metrics_snapshot_before": {
         "generated": "2026-11-15",
         "answer_eligible_unique_sources": 977,
         "content_verified_unique_sources": 878,
         "answer_eligible_propositions": 2950
       },
-      "metrics_expected_after": null,
+      "metrics_expected_after": {
+        "answer_eligible_unique_sources": 1524,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3868
+      },
       "metrics_actual_after": null,
       "metrics_delta_at_batch_boundary": {
         "answer_eligible_unique_sources": 8,
@@ -799,7 +814,16 @@
           2593412
         ]
       },
-      "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה."
+      "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה.",
+      "metrics_expected_after_source": "Planning projection from batch152 local delta (+8 answer-eligible families, +0 Verified, +10 paraphrases); not measured.",
+      "last_measured_ci_workspace_baseline": {
+        "answer_eligible_unique_sources": 1496,
+        "content_verified_unique_sources": 854,
+        "answer_eligible_propositions": 3823,
+        "run_id": 44188237128,
+        "after_batch": 148,
+        "committed": false
+      }
     },
     "before": {
       "answer_eligible_unique_sources": 1513,
@@ -813,7 +837,15 @@
     },
     "actual_after": null,
     "reconciliation_status": "pending_reconciliation",
-    "baseline_correction": "Batch 151 chains from batch150's expected boundary 1513/854/3849 to a planning boundary of 1516/854/3858. These are not actual metrics. Reconciliation must calculate the measured result across pending batches 147–151 and resolve any historical variance."
+    "baseline_correction": "Batch 151 chains from batch150's expected boundary 1513/854/3849 to a planning boundary of 1516/854/3858. These are not actual metrics. Reconciliation must calculate the measured result across pending batches 147–151 and resolve any historical variance.",
+    "last_measured_ci_workspace_baseline": {
+      "answer_eligible_unique_sources": 1496,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3823,
+      "run_id": 44188237128,
+      "after_batch": 148,
+      "committed": false
+    }
   },
   "ux": {
     "principles": "UX_PRINCIPLES.md",
@@ -2164,19 +2196,22 @@
     "blocked_candidate_count": 2,
     "recovered_candidate_count": 0,
     "metrics_before": {
-      "answer_eligible_unique_sources": 1496,
+      "answer_eligible_unique_sources": 1516,
       "content_verified_unique_sources": 854,
-      "answer_eligible_propositions": 3823,
-      "measured_in_uncommitted_ci_workspace_after_batch148": true
+      "answer_eligible_propositions": 3858
     },
-    "metrics_before_source": "Latest measured CI workspace snapshot after batch148 (run 44188237128); uncommitted and not the current public metric.",
+    "metrics_before_source": "Contiguous planning boundary copied from batch151.metrics_expected_after so reconcile_metrics.py can reconcile the pending batch chain. This is not a measured public metric.",
     "public_metrics_snapshot_before": {
       "generated": "2026-11-15",
       "answer_eligible_unique_sources": 977,
       "content_verified_unique_sources": 878,
       "answer_eligible_propositions": 2950
     },
-    "metrics_expected_after": null,
+    "metrics_expected_after": {
+      "answer_eligible_unique_sources": 1524,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3868
+    },
     "metrics_actual_after": null,
     "metrics_delta_at_batch_boundary": {
       "answer_eligible_unique_sources": 8,
@@ -2418,6 +2453,15 @@
         2593412
       ]
     },
-    "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה."
+    "note": "נוספו שמונה זהויות עדות ממואר Parsed; הועשרה זהות תרגום קיימת אחת במקומה; לא נוסף Verified ולא הועתק טקסט מוגן. ספירת זהויות זמנית עד סריקת זהויות קנונית מלאה.",
+    "metrics_expected_after_source": "Planning projection from batch152 local delta (+8 answer-eligible families, +0 Verified, +10 paraphrases); not measured.",
+    "last_measured_ci_workspace_baseline": {
+      "answer_eligible_unique_sources": 1496,
+      "content_verified_unique_sources": 854,
+      "answer_eligible_propositions": 3823,
+      "run_id": 44188237128,
+      "after_batch": 148,
+      "committed": false
+    }
   }
 }
