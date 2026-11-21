@@ -1447,3 +1447,21 @@ Bulk run 476 computed 1,300 answer-eligible unique sources, 854 content-verified
 The first post-batch-160 reconciliation exposed a data-contract issue: canonical source records in batch160 had been given audit-only flags `body_text_inspected`, `original_language_body_inspected`, and `inspection_method`. The reconciliation collector intentionally excludes such audit descriptors, so the 13 new AIDs appeared in the search index but not in the canonical identity scan. These flags now remain only in `source_body_review`; canonical records retain their source-grounded propositions, provenance, and locators without audit-row flags. The existing-identity update for AID 528552 now includes `propositions_added=1`, `existing_propositions_before=2`, and `total_propositions_after=3`, so historical snapshots exclude the later proposition correctly.
 
 The same run also showed that batch089's historical projection (900 / 852 / 2,832) does not equal the measured canonical snapshot. The readiness test now checks the exact arithmetic of the recorded variance and the corresponding `reconciled_with_variance` status; it no longer demands a fabricated zero variance. The measured snapshot and discrepancy remain visible.
+
+
+## 2026-11-21 — Batch 161: כ׳–כ״ט טבת תש״ג, עשרה ערכים בעברית וביידיש
+
+- נפתחו ונבדקו ישירות עשרה גופי ערך מתוארכים ב-BeitChabad.com / Chabad.org: שבעה ביידיש ושלושה בעברית (AID 528576–528585). נוספו עשר זהויות חדשות בעשר משפחות Evidence של ערכים יומיים נפרדים, ועשר פרפרזות מחקריות לא-מילוליות עם locators ברמת גוף. לא הועשרו זהויות קיימות ולא קודם מקור ל-Verified.
+- נושאי האצווה: לימוד משותף ועבודת ה׳; מסורת על מים כסימן ברכה; אחריות לחינוך ילדים; מעבר מאנחה לפעולה; ההבחנה בין דרכי החסידות לחסידות; יציאת מצרים ומגבלות העולם; הפסקה בברכת ולמלשינים; העלאת גשמיות לרוחניות; הערה ביבליוגרפית על ספר החקירה; אור תורה ועבודה שבלב.
+- כל ייחוס פנימי נשמר כפי שהוא מופיע בערך (למשל אדמו״ר האמצעי, הצמח צדק, אדמו״ר הזקן או ״אבי״ של המספר). אין לייחס אמירה לרבי ללא ייחוס מפורש בגוף המקור. ארבעה מקרים נבחרים תועדו ב-claim map מוגבל, עם locator נפרד לכל טענה והצהרה מפורשת שהסינתזה היא של המערכת.
+- AID 4666220 החזיר Internal Error בכלי העיון. לא בוצע retry ל-crawler ולא נעקפו בקרות גישה; באותה הפעלה נפתחו ונבדקו עשרה גופי ערך חלופיים.
+- בדיקת כפילויות לפני הוספה: 12 קובצי bulk-indexed קנוניים, 11 קובצי batch בטווח 150–160 (95 רשומות records), ותור בדיקה בן 1,022 פריטים; לא נמצאה התאמה ל-AID 528576–528585. צילום האינדקס הציבורי בן 9,122 הרשומות מתאריך 15.11.2026 הוא היסטורי; סריקה קנונית לאחר ההוספה נדרשת ב-reconciliation.
+- מדדי before/after לא נרשמו כתחזית. ה-snapshot המחויב 977 / 870 / 2,950 וה-public metrics מ-15.11 (977 / 878 / 2,950) קודמים לבאצ'ים 153–161 ואינם baseline עדכני. אין לקדם Verified על סמך בדיקת גוף יחיד.
+- נדרש reconciliation רציף, test_content_readiness.mjs, בדיקת Actions ו-GitHub Pages לפני דיווח על מדדים או פרסום.
+
+## 2026-11-21 — תיקון אחזור: השוואת שני תקצירי Living Torah
+
+- הרצות answer-quality ו-hourly maintenance 44931848127 ו-44931848103 נכשלו ב-test_content_readiness.mjs:2238: החיפוש הכללי לא שמר בתוצאות את AID 4469446 עבור שאלה שביקשה במפורש להשוות את תקציר שלמה גזית (AID 281313) עם תקציר שלמות הארץ/העם/התורה (AID 4469446).
+- נוספה הבחנה צרה לשאלה הזו: בחירת שני פריטי המו״ל לפי AID ותנאי תוכן מפורשים, שתי טענות נפרדות עם locator מקומי לכל אחת, שתי משפחות פריט נפרדות אך שני witnesses לא-עצמאיים (תקצירי מו״ל, לא תמלילים). הסינתזה מסומנת system_synthesis_not_rebbe_quote; אין ייחוס של מסקנת המערכת לרבי ואין הסקה של הנחיה מדינית עכשווית.
+- בדיקת המוכנות הורחבה לאמת את topic, היעדר משפחות עצמאיות, מספרי המקורות, ה-locators והעובדה ששני המקורות נשארים תקצירי מו״ל לא-עצמאיים. מצב researcher חייב להציג מפת טענות/מקורות ומגבלות.
+- תיקון הקוד והאצווה החדשה הועלו יחד ל-main. תוצאות CI, reconciliation ומדדים לאחר ההוספה עדיין ממתינות; אין לטעון Pass או מדד after לפני שהריצות יסתיימו.
