@@ -2098,7 +2098,7 @@ function buildLivingTorahIntegritySynthesis(sources){
 function hayomYomBodyRefinementPredicate(topic,p){
  const t=norm(p);
  if(topic==='women_education')return t.includes('נשי ובנות')&&t.includes('טהרת המשפחה')&&t.includes('חברת בנות')&&t.includes('חינוך');
- if(topic==='chassidic_love')return t.includes('אהבה')&&t.includes('כוח החיים')&&t.includes('חסידים')&&t.includes('רבי');
+ if(topic==='chassidic_love')return t.includes('אהבה')&&t.includes('רוח החיים')&&t.includes('חסידים')&&t.includes('רבי');
  if(topic==='body_refinement')return t.includes('הגוף')&&t.includes('תורה ומצוות')&&t.includes('סיגופים')&&t.includes('זיכוך');
  if(topic==='rashi_mind_heart')return t.includes('רש״י')&&t.includes('חומש')&&t.includes('גמרא')&&t.includes('פותח את הלב')&&t.includes('פותח את המוח');
  if(topic==='soul_general_particular')return t.includes('ירידת הנשמה')&&t.includes('מלאכה כללית')&&t.includes('עבודה פרטית')&&t.includes('מוחין')&&t.includes('מידות');
@@ -2107,7 +2107,7 @@ function hayomYomBodyRefinementPredicate(topic,p){
 function buildHayomYomBodyRefinementSynthesis(selected){
  const specs=[
   {aid:'528607',topic:'women_education',predicate:p=>hayomYomBodyRefinementPredicate('women_education',p),text:'ערך כ״א שבט מציג את נשי ובנות החסידים כמי שנדרשות להוביל חיזוק של חיי היהדות, ובפרט טהרת המשפחה, ולארגן מסגרת בנות לחיזוק הדרכה וחינוך.'},
-  {aid:'528612',topic:'chassidic_love',predicate:p=>hayomYomBodyRefinementPredicate('chassidic_love',p),text:'ערך כ״ו שבט מתאר אהבה ככוח החיים בעבודת החסידות וכחוט מקשר בין חסידים ובין רבי לחסידים, ללא מחיצות של מקום וזמן.'},
+  {aid:'528612',topic:'chassidic_love',predicate:p=>hayomYomBodyRefinementPredicate('chassidic_love',p),text:'ערך כ״ו שבט מתאר אהבה כרוח החיים בעבודת החסידות וכחוט מקשר בין חסידים ובין רבי לחסידים, ללא מחיצות של מקום וזמן.'},
   {aid:'528614',topic:'body_refinement',predicate:p=>hayomYomBodyRefinementPredicate('body_refinement',p),text:'ערך כ״ח שבט מביא תורה המיוחסת לבעל שם טוב ומעדיף בירור וזיכוך הגוף באמצעות תורה ומצוות על פני סיגופים לשבירת החומריות.'},
   {aid:'528615',topic:'rashi_mind_heart',predicate:p=>hayomYomBodyRefinementPredicate('rashi_mind_heart',p),text:'ערך כ״ט שבט מביא בשם אדמו״ר הזקן הבחנה שלפיה רש״י על חומש פותח את הלב ומגלה אהבה ויראה, ואילו רש״י על גמרא פותח את המוח ומגלה שכל.'},
   {aid:'528618',topic:'soul_general_particular',predicate:p=>hayomYomBodyRefinementPredicate('soul_general_particular',p),text:'ערך א׳ אדר א׳ מבחין בין מלאכה כללית של הנשמה — הגברת הצורה על החומר והארת העולם בתורה ובמצוות — לבין עבודה פרטית במוחין ובמידות לפי טבעה ועניינה.'}
