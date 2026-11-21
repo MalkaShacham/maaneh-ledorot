@@ -2143,7 +2143,7 @@ assert(marginal088&&marginal088.type==='marginal_response'&&marginal088.independ
 const copy088=idx.entries.find(e=>e.id==='chabadlibrary-1200980070');
 assert(copy088&&copy088.independent_witness===false&&/copy/i.test(copy088.primary_secondary_status||''));
 const direct5412963=idx.entries.find(e=>sourceAID(e)==='5412963');
-assert(direct5412963&&direct5412963.status==='Verified'&&direct5412963.proposition_source_locator.includes('244–249'));
+assert(direct5412963&&direct5412963.status==='Verified'&&Array.isArray(direct5412963.response_proposition_locators)&&direct5412963.response_proposition_locators.some(l=>l.includes('245–249')),'AID 5412963 must retain its item-level body locator after the proposition was split into bounded ranges');
 const secretariat088=idx.entries.find(e=>sourceAID(e)==='5413093');
 assert(secretariat088&&secretariat088.type==='secretariat_letter'&&secretariat088.author_role==='secretariat');
 assert.match(secretariat088.primary_secondary_status,/not a direct Rebbe-authored letter/);
