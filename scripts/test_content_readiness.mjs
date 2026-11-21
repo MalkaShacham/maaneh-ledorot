@@ -2249,7 +2249,7 @@ assert.equal(new Set(batch089Aids.map(a=>idx.entries.find(e=>sourceAID(e)===a).e
 const batch089MultiSourceQuery='מה מתעדים שני תקצירי Living Torah על שיחתו של שלמה גזית בנוגע למסירת חלקים מארץ ישראל ועל שלמות הארץ, שלמות העם ושלמות התורה?';
 for(const mode of ['regular','researcher']){
  const m=buildAnswerModel(idx.entries,batch089MultiSourceQuery,{mode});
- assert(m.answerable,mode+': batch-089 multi-item synopsis retrieval must remain answerable as separate cases');
+ assert(m.answerable,mode+': batch-089 multi-item synopsis retrieval must remain answerable as separate cases; reason='+m.reason+' intent='+m.understanding?.intent);
  assert(m.sources.some(e=>sourceAID(e)==='281313'),mode+': expected Shlomo Gazit item-level source');
  assert(m.sources.some(e=>sourceAID(e)==='4469446'),mode+': expected integrity-of-land/people/Torah item-level source');
  assert.equal(m.synthesis?.topic,'living_torah_integrity_comparison',mode+': bounded comparison topic');

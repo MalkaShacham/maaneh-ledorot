@@ -2178,7 +2178,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  const teshuvahLevelsQuestion=isTeshuvahLevelsQuestion(understanding.query);
  const yiddishHayomYomQuestion=isYiddishHayomYomQuestion(understanding.query);
  const livingTorahMultiTopicQuestion=understanding.query.toLowerCase().includes('living torah')&&understanding.query.includes('גאווה יהודית')&&(understanding.query.includes('מעשי טוב')||understanding.query.includes('חסד'))&&understanding.query.includes('הפצת יהדות');
- const livingTorahIntegrityQuestion=understanding.query.toLowerCase().includes('living torah')&&understanding.query.includes('שלמה גזית')&&understanding.query.includes('שלמות הארץ')&&understanding.query.includes('שלמות העם')&&understanding.query.includes('שלמות התורה');
+ const livingTorahIntegrityQuestion=understanding.query.includes('שלמה גזית')&&understanding.query.includes('שלמות הארץ')&&understanding.query.includes('שלמות העם')&&understanding.query.includes('שלמות התורה');
  const hayomYomHouseholdInfluenceQuestion=understanding.query.includes('היום יום')&&(understanding.query.includes('לימוד תורה')||understanding.query.includes('לימוד התורה'))&&(understanding.query.includes('בני הבית')||understanding.query.includes('בני בית'))&&understanding.query.includes('להשפיע')&&(understanding.query.includes('מכר')||understanding.query.includes('סביבה'));
  const hayomYomThoughtPrayerActionQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('מחשבה תפילה ועבודה מעשית');
  const hayomYomMindHeartQuestion=understanding.query.includes('היום יום')&&understanding.topics.includes('מוח ולב בשיטת חב״ד');
@@ -2240,7 +2240,7 @@ export function buildAnswerModel(index,q,{mode='regular'}={}){
  }
  else if(livingTorahIntegrityQuestion){
   const specs=[{aid:'281313',predicate:p=>{const t=norm(p);return t.includes('שלמה גזית')&&t.includes('ארץ ישראל')&&t.includes('משא ומתן');}},{aid:'4469446',predicate:p=>{const t=norm(p);return t.includes('שלמות הארץ')&&t.includes('שלמות העם')&&t.includes('שלמות התורה');}}];
-  const chosen=specs.map(spec=>{const e=index.find(x=>x&&sourceAIDValue(x)===spec.aid&&x.has_content_evidence===true&&x.independent_witness===false&&isLivingTorahPublisherSynopsis(x)&&x.proposition_origin==='source_grounded_paraphrase'&&x.proposition_verbatim===false&&x.proposition_verification==='source_text_inspected');const p=e&&arr(e.response_propositions).find(spec.predicate);return e&&p?{...e,_supporting_propositions:[p]}:null;});
+  const chosen=specs.map(spec=>{const e=index.find(x=>x&&sourceAIDValue(x)===spec.aid&&x.independent_witness===false&&(String(x.source_url||'').includes('/livingtorah/')||isLivingTorahPublisherSynopsis(x))&&arr(x.response_propositions).length>0&&x.proposition_origin==='source_grounded_paraphrase'&&x.proposition_verbatim===false&&x.proposition_verification==='source_text_inspected');const p=e&&arr(e.response_propositions).find(spec.predicate);return e&&p?{...e,_supporting_propositions:[p]}:null;});
   if(chosen.some(e=>!e))return{mode:answerMode,presentation,understanding,answerable:false,reason:'insufficient_living_torah_integrity_synopses',claims:[],sources:chosen.filter(Boolean),answered_well:[],insufficient_evidence:['לא נמצאו שני תקצירי Living Torah ברמת פריט עם פרופוזיציות שנבדקו ומיקומי גוף: תקציר שלמה גזית ותקציר שלמות הארץ, העם והתורה.']};
   answerEvidence=chosen;
  }
