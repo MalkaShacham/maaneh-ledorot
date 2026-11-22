@@ -6119,8 +6119,8 @@ assert.equal(batch168Update.aid,4422924);assert.equal(batch168Update.canonical_f
 assert.equal(batch168Update.existing_propositions_before,2);assert.equal(batch168Update.total_propositions_after,3);
 const enriched4422924=idx.entries.find(e=>sourceAID(e)==='4422924');
 assert(enriched4422924);assert.equal(enriched4422924.response_propositions.length,3);
-assert.equal(enriched4422924.independent_witness,false);
-assert.equal(enriched4422924.translation_of_evidence_family_id,enriched4422924.evidence_family_id);
+assert.equal(enriched4422924.independent_witness,true);
+assert.equal(enriched4422924.translation_of_evidence_family_id,null);assert(enriched4422924.independent_witness_scope.includes('not independent archival corroboration'));
 assert(enriched4422924.response_propositions[2].includes('good news'));
 assert.equal(batch168Data.retrieval_synthesis.topic,'hayom_yom_daily_life_study_and_work');
 assert.equal(batch168Data.retrieval_synthesis.attribution,'system_synthesis_not_rebbe_quote');
