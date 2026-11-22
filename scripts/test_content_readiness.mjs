@@ -1372,7 +1372,7 @@ if(currentBatchReconciled){
  assert.deepEqual(lastBatchSummary.metrics_delta_actual,{
   answer_eligible_unique_sources:metrics.answer_eligible_unique_sources-lastBatchSummary.metrics_actual_before.answer_eligible_unique_sources,
   content_verified_unique_sources:metrics.content_verified_unique_sources-lastBatchSummary.metrics_actual_before.content_verified_unique_sources,
-  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_before.answer_eligible_propositions
+  answer_eligible_propositions:metrics.answer_eligible_propositions-lastBatchSummary.metrics_actual_before.answer_eligible_propositions
  });
  assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
 }else{
