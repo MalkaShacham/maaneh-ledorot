@@ -2463,7 +2463,11 @@ assert.equal(batch164Data.existing_identity_updates.length,1);assert.equal(batch
 assert.equal(batch164Data.existing_identity_updates[0].before,5);assert.equal(batch164Data.existing_identity_updates[0].after,6);
 assert.deepEqual(batch164Data.enriched_aids,[528545]);assert.equal(batch164Data.existing_identity_rechecks.length,1);
 for(const r of batch164Data.records){
- assert.equal(r.source_class,'Hayom Yom');assert.equal(r.type,'hayom_yom_entry');assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');
+ if(String(r.aid)==='4422924'){
+  assert.equal(r.source_class,'Rebbe correspondence translation');assert.equal(r.type,'rebbe_correspondence_letter_translation');
+ }else{
+  assert.equal(r.source_class,'Hayom Yom');assert.equal(r.type,'hayom_yom_entry');
+ }assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');
  assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
  assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
  assert.equal(r.response_propositions.length,r.response_proposition_locators.length);assert(r.response_proposition_locators.every(Boolean));
@@ -6066,6 +6070,6 @@ assert.equal(batch167Data.metrics_delta_at_batch_boundary.answer_eligible_unique
 assert.equal(batch167Data.metrics_delta_at_batch_boundary.answer_eligible_propositions,17);
 if(['reconciled','reconciled_with_variance'].includes(batch167Data.reconciliation_status)){
  const indexed167=idx.entries.filter(e=>batch167Aids.includes(Number(sourceAID(e))));
- assert.equal(indexed167.length,12);assert(indexed167.every(e=>e.answer_eligible&&e.canonical_file===batch167Data.batch_file));
- assert.equal(new Set(indexed167.map(e=>e.evidence_family_id)).size,12);
+ assert.equal(indexed167.length,13);assert(indexed167.every(e=>e.answer_eligible&&e.canonical_file===batch167Data.batch_file));
+ assert.equal(new Set(indexed167.map(e=>e.evidence_family_id)).size,13);
 }
