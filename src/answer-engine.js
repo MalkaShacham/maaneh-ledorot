@@ -418,8 +418,9 @@ const lexicalForms=word=>{
 const topicAliasMatches=(query,alias)=>{
  if(containsTerm(query,alias))return true;
  const aliasWords=norm(alias).split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
- if(aliasWords.length<2)return false;
  const queryWords=norm(query).split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
+ if(aliasWords.length===1)return queryWords.some(x=>[...lexicalForms(x),...conceptOf(x)].includes(aliasWords[0]));
+ if(aliasWords.length<2)return false;
  const qForms=new Set(queryWords.flatMap(x=>[...lexicalForms(x),...conceptOf(x)]));
  let matched=0;
  for(const word of aliasWords)if([...lexicalForms(word),...conceptOf(word)].some(x=>qForms.has(x)))matched++;
