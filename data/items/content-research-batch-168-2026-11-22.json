@@ -6,15 +6,15 @@
   "title": "Batch 168 — eleven new identities (ten Hebrew/mixed Hebrew-Yiddish Hayom Yom entries and one English published correspondence item)",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
-  "reviewed_item_count": 13,
-  "source_bodies_inspected": 11,
-  "source_body_pages_opened": 11,
+  "reviewed_item_count": 14,
+  "source_bodies_inspected": 12,
+  "source_body_pages_opened": 12,
   "new_source_identities": 11,
-  "existing_identities_enriched": 0,
-  "existing_identities_rechecked": 0,
+  "existing_identities_enriched": 1,
+  "existing_identities_rechecked": 1,
   "new_response_propositions": 16,
-  "existing_response_propositions_added": 0,
-  "total_new_paraphrase_entries": 16,
+  "existing_response_propositions_added": 1,
+  "total_new_paraphrase_entries": 17,
   "answer_eligible_source_families_added": 11,
   "independent_witnesses_added": 11,
   "non_independent_presentations_added": 0,
@@ -40,7 +40,9 @@
     528684,
     2216588
   ],
-  "enriched_aids": [],
+  "enriched_aids": [
+    528659
+  ],
   "staging_candidate_aids": [],
   "translations_counted_as_independent_witnesses": 0,
   "crawler_retry": false,
@@ -50,19 +52,40 @@
   "metrics_delta_at_batch_boundary": {
     "answer_eligible_unique_sources": 11,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 16,
-    "note": "Expected local contribution only: 11 distinct published source identities / Evidence Families and 16 non-verbatim source-grounded propositions. This is not a reconciled after-count."
+    "answer_eligible_propositions": 17,
+    "note": "Expected local contribution only: 11 new distinct source identities / Evidence Families, 16 propositions on new identities, and one in-place proposition enrichment to existing AID 528659 (17 new paraphrase entries total). This is not a reconciled after-count."
   },
   "local_content_delta": {
     "new_source_identities": 11,
     "new_evidence_families": 11,
     "new_response_propositions": 16,
-    "existing_identities_enriched": 0,
-    "existing_response_propositions_added": 0,
+    "existing_identities_enriched": 1,
+    "existing_response_propositions_added": 1,
+    "total_new_paraphrase_entries": 17,
     "verified_promotions": 0,
-    "note": "Ten dated Hayom Yom bodies and one English published correspondence body were opened and inspected. No existing identity was enriched in this batch and no source was promoted to Verified."
+    "note": "Ten dated Hayom Yom bodies and one English published correspondence body were opened and inspected; one existing Hebrew Hayom Yom identity (AID 528659) was re-opened and its two-part statement atomized into separate spiritual-root and practical-application propositions. No source was promoted to Verified."
   },
   "source_body_review": [
+    {
+      "aid": 528659,
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/528659",
+      "language": "Hebrew",
+      "original_language": "Hebrew",
+      "body_text_inspected": true,
+      "inspected_original_language_body": true,
+      "published_body_language_inspected": true,
+      "existing_identity": true,
+      "new_identity": false,
+      "existing_propositions_before": 2,
+      "total_propositions_after": 3,
+      "new_propositions_added": 1,
+      "body_locator": "Chabad.org AID 528659, גוף הערך בעברית, שורה 173.",
+      "web_source_ref": "turn517710view0",
+      "canonical_file": "data/items/content-research-batch-166-2026-11-22.json",
+      "evidence_family_id": "hayom-yom-528659-5703",
+      "independent_witness": true,
+      "inspection_method": "public_web_open_body_in_place_enrichment"
+    },
     {
       "aid": 528674,
       "source_url": "https://he.chabad.org/library/article_cdo/aid/528674",
@@ -257,7 +280,7 @@
   ],
   "fallback_source_attempted": true,
   "fallback_source_results": {
-    "accessible_item_level_bodies": 11,
+    "accessible_item_level_bodies": 12,
     "inspected_aids": [
       528674,
       528675,
@@ -269,10 +292,11 @@
       528682,
       528683,
       528684,
-      2216588
+      2216588,
+      528659
     ],
-    "original_language_body_inspected": 10,
-    "published_body_language_inspected": 11,
+    "original_language_body_inspected": 11,
+    "published_body_language_inspected": 12,
     "english_correspondence_body_inspected": 1,
     "alternate_same_item_body_opened": false,
     "alternate_source_attempted": true,
@@ -299,8 +323,12 @@
     "full_index_generated": null,
     "code_search_exact_aid_queries": 11,
     "code_search_matches": [],
-    "candidate_aids_found": [],
-    "existing_aids_found": [],
+    "candidate_aids_found": [
+      528659
+    ],
+    "existing_aids_found": [
+      528659
+    ],
     "new_aids_unique_within_checked_scope": true,
     "source_urls_unique": true,
     "evidence_family_ids_unique": true,
@@ -327,10 +355,11 @@
       528682,
       528683,
       528684,
-      2216588
+      2216588,
+      528659
     ],
     "exact_aid_matches": [],
-    "note": "בדיקת קדם-הוספה מוגבלת: 11 חיפושי AID מדויקים ב-GitHub ללא התאמות; 11 אצוות ידניות 157–167 ובהן 123 רשומות ללא התאמות; תור בדיקה בן 1,022 פריטים ללא התאמות. לא נסרקו מחדש קובצי bulk-index או public-search-index המלא; נדרשת סריקה קנונית לאחר ההוספה."
+    "note": "Bounded pre-addition check: 11 exact AID searches for new identities returned no matches; AID 528659 was separately located as the existing canonical identity in batch 166 and re-opened for in-place enrichment; manual batches 157–167 (123 records) and the 1,022-record review queue were checked with no collisions for the 11 new AIDs. The full public search index and bulk-index corpus were not scanned in this run; post-addition canonical reconciliation remains required."
   },
   "pre_addition_full_index_scan": {
     "available": false,
@@ -352,8 +381,10 @@
       528682,
       528683,
       528684,
-      2216588
-    ]
+      2216588,
+      528659
+    ],
+    "note": "The 11 new AIDs were absent from exact repository searches, recent manual batches 157–167 and the 1,022-record review queue. AID 528659 was found intentionally in batch 166 as the existing identity being enriched. The full public-search-index and bulk-index corpus were not scanned in this run."
   },
   "reconciliation_identity_integrity": {
     "passed": null,
@@ -611,7 +642,7 @@
   },
   "reviewed_body_language_distribution": {
     "English": 1,
-    "Hebrew": 7,
+    "Hebrew": 8,
     "Hebrew and Yiddish": 3
   },
   "proposition_language_distribution": {
@@ -624,6 +655,7 @@
   },
   "quality_gate_followup": {
     "required": [
+      "verify in-place enrichment of existing AID 528659 remains in its original Evidence Family",
       "full canonical AID/Evidence Family reconciliation for batches 142–168",
       "test_content_readiness.mjs including batch 168 identity, proposition, and synthesis checks",
       "regular and deep researcher route tests for nissan_daily_life_and_work",
@@ -632,8 +664,35 @@
     "status": "pending"
   },
   "batch_file": "data/items/content-research-batch-168-2026-11-22.json",
-  "existing_identity_updates": [],
-  "existing_identity_rechecks": [],
+  "existing_identity_updates": [
+    {
+      "aid": 528659,
+      "id": "hayom-yom-aid-528659",
+      "canonical_file": "data/items/content-research-batch-166-2026-11-22.json",
+      "evidence_family_id": "hayom-yom-528659-5703",
+      "existing_propositions_before": 2,
+      "total_propositions_after": 3,
+      "proposition_indices_added": [
+        2
+      ],
+      "locators": [
+        "Chabad.org AID 528659, גוף הערך בעברית, שורה 173."
+      ],
+      "locator": "Chabad.org AID 528659, גוף הערך בעברית, שורה 173.",
+      "added_propositions": [
+        "הערך מציג כמרכיב שני את הבנת ההלכה בעבודת האדם: איתור האופן שבו דין התורה מתבטא בהנהגת האדם בחיי העולם הזה."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "source_url": "https://he.chabad.org/library/article_cdo/aid/528659",
+      "web_source_ref": "turn517710view0",
+      "provenance": "Existing Hebrew Hayom Yom body re-opened on 2026-11-22; line 173 inspected. The original two-dimensional summary was atomized into separate spiritual-root and practical-avodah propositions; no new Evidence Family and no independent witness added."
+    }
+  ],
+  "existing_identity_rechecks": [
+    528659
+  ],
   "non_independent_presentations_reviewed": 0,
   "translation_presentations_reviewed": 0,
   "translation_presentations": [],
@@ -2075,5 +2134,9 @@
       "web_source_ref": "turn302866view0",
       "canonical_file": "data/items/content-research-batch-168-2026-11-22.json"
     }
-  ]
+  ],
+  "reviewed_source_type_distribution": {
+    "Hayom Yom": 11,
+    "Rebbe correspondence letter": 1
+  }
 }
