@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261122-batch168-nissan-daily-life-v1';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261122-paraphrase-routing-v3';
 
 const TOPIC_ALIASES={
  'מוח ולב בשיטת חב״ד':['מוח ולב בשיטת חב״ד','מוח ולב','המוח והלב','המוח ללב','מוח שליט על הלב','לשעבד את הלב','השגה שכלית ורגש הלב','mind and heart in Chabad','mind rules the heart'],
