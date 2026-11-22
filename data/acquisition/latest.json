@@ -11,7 +11,7 @@
     "batch_id": "167",
     "batch_date": "2026-11-22",
     "reviewed_at": "2026-11-22T03:01:06+02:00",
-    "title": "Batch 167 — thirteen new identities (12 Hebrew/Yiddish Hayom Yom entries and one English correspondence translation), one in-place enrichment",
+    "title": "Batch 167 — thirteen new identities (12 Hebrew/Yiddish Hayom Yom entries and one English correspondence item), one in-place enrichment",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 16,
@@ -24,8 +24,8 @@
     "existing_response_propositions_added": 1,
     "total_new_paraphrase_entries": 17,
     "answer_eligible_source_families_added": 13,
-    "independent_witnesses_added": 12,
-    "non_independent_presentations_added": 1,
+    "independent_witnesses_added": 13,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "blocked_candidate_count": 1,
     "recovered_candidate_count": 0,
@@ -72,7 +72,7 @@
       "existing_identities_enriched": 1,
       "existing_response_propositions_added": 1,
       "verified_promotions": 0,
-      "note": "Twelve original-language Hayom Yom bodies and one English publisher translation of a Rebbe correspondence item were inspected; AID 528659 was enriched in place. The English translation is not an independent witness. No source was promoted to Verified."
+      "note": "Twelve original-language Hayom Yom bodies and one English publisher-published correspondence body were inspected; AID 528659 was enriched in place. The English page is not labelled as a translation; manuscript language was not independently verified. No source was promoted to Verified."
     },
     "source_body_review": [
       {
@@ -188,8 +188,8 @@
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "Chabad.org AID 528668, גוף הערך בעברית, שורות 174–175.",
-        "web_source_ref": "turn448574view0",
+        "body_locator": "Chabad.org AID 528668, גוף הערך בעברית, שורה 174. ; Chabad.org AID 528668, גוף הערך בעברית, שורה 175.",
+        "web_source_ref": "turn201974view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528668-5703",
         "independent_witness": true,
@@ -204,7 +204,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528669, גוף הערך בעברית, שורה 172.",
-        "web_source_ref": "turn448574view1",
+        "web_source_ref": "turn613389view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528669-5703",
         "independent_witness": true,
@@ -219,7 +219,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528670, גוף הערך בעברית, שורה 173.",
-        "web_source_ref": "turn336925view0",
+        "web_source_ref": "turn674498view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528670-5703",
         "independent_witness": true,
@@ -234,7 +234,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528671, גוף הערך ביידיש, שורה 173.",
-        "web_source_ref": "turn336925view1",
+        "web_source_ref": "turn674498view1",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528671-5703",
         "independent_witness": true,
@@ -249,7 +249,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528672, גוף הערך בעברית, שורה 173.",
-        "web_source_ref": "turn352804view0",
+        "web_source_ref": "turn932215view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528672-5703",
         "independent_witness": true,
@@ -274,18 +274,19 @@
         "aid": 4422924,
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4422924/jewish/The-Joy-of-Learning.htm",
         "language": "English",
-        "original_language": "unknown",
+        "original_language": "English as published; manuscript language not independently verified",
         "body_text_inspected": true,
         "inspected_original_language_body": false,
-        "translation_body_inspected": true,
+        "translation_body_inspected": false,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 4422924, English publisher translation, lines 256–257. ; Chabad.org AID 4422924, English publisher translation, lines 258–262.",
         "web_source_ref": "turn684220view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "independent_witness": false,
-        "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "inspection_method": "public_web_open_translated_correspondence_body"
+        "independent_witness": true,
+        "translation_of_evidence_family_id": null,
+        "inspection_method": "public_web_open_published_correspondence_body",
+        "published_body_language_inspected": true
       }
     ],
     "blocked_candidates": [
@@ -324,7 +325,8 @@
       "false_match_candidates_excluded": 1,
       "non_independent_presentations_added": 0,
       "note": "AID 4666220 לא חשף את גוף האיגרת. מועמד PDF ציבורי עם סימון דומה נבדק אך לא הוכח קשר זהות ל-AID ולכן הוצא. באותה הפעלה נפתחו 12 גופי היום יום מקוריים בעברית וביידיש.",
-      "translation_body_inspected": 1
+      "published_body_language_inspected": 13,
+      "english_correspondence_body_inspected": 1
     },
     "excluded_candidates": [
       {
@@ -444,7 +446,7 @@
     },
     "source_type_distribution": {
       "Hayom Yom": 12,
-      "Rebbe correspondence translation": 1
+      "Rebbe correspondence letter": 1
     },
     "quality_gate_followup": {
       "required": [
@@ -478,20 +480,9 @@
         "note": "Added a distinct elaboration of the entry's description of a halacha's spiritual root in the sefirot and levels of each world; same AID and Evidence Family, not a new source."
       }
     ],
-    "non_independent_presentations_reviewed": 1,
-    "translation_presentations_reviewed": 1,
-    "translation_presentations": [
-      {
-        "aid": 4422924,
-        "language": "English",
-        "original_language": "unknown",
-        "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "independent_witness": false,
-        "original_language_source_found": false,
-        "web_source_ref": "turn684220view0"
-      }
-    ]
+    "non_independent_presentations_reviewed": 0,
+    "translation_presentations_reviewed": 0,
+    "translation_presentations": []
   },
   "previous_manual_web_review": {
     "schema": "content-research-batch-v1",
@@ -1090,7 +1081,7 @@
     "batch_id": "167",
     "batch_date": "2026-11-22",
     "reviewed_at": "2026-11-22T03:01:06+02:00",
-    "title": "Batch 167 — thirteen new identities (12 Hebrew/Yiddish Hayom Yom entries and one English correspondence translation), one in-place enrichment",
+    "title": "Batch 167 — thirteen new identities (12 Hebrew/Yiddish Hayom Yom entries and one English correspondence item), one in-place enrichment",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 16,
@@ -1103,8 +1094,8 @@
     "existing_response_propositions_added": 1,
     "total_new_paraphrase_entries": 17,
     "answer_eligible_source_families_added": 13,
-    "independent_witnesses_added": 12,
-    "non_independent_presentations_added": 1,
+    "independent_witnesses_added": 13,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "blocked_candidate_count": 1,
     "recovered_candidate_count": 0,
@@ -1151,7 +1142,7 @@
       "existing_identities_enriched": 1,
       "existing_response_propositions_added": 1,
       "verified_promotions": 0,
-      "note": "Twelve original-language Hayom Yom bodies and one English publisher translation of a Rebbe correspondence item were inspected; AID 528659 was enriched in place. The English translation is not an independent witness. No source was promoted to Verified."
+      "note": "Twelve original-language Hayom Yom bodies and one English publisher-published correspondence body were inspected; AID 528659 was enriched in place. The English page is not labelled as a translation; manuscript language was not independently verified. No source was promoted to Verified."
     },
     "source_body_review": [
       {
@@ -1267,8 +1258,8 @@
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "Chabad.org AID 528668, גוף הערך בעברית, שורות 174–175.",
-        "web_source_ref": "turn448574view0",
+        "body_locator": "Chabad.org AID 528668, גוף הערך בעברית, שורה 174. ; Chabad.org AID 528668, גוף הערך בעברית, שורה 175.",
+        "web_source_ref": "turn201974view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528668-5703",
         "independent_witness": true,
@@ -1283,7 +1274,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528669, גוף הערך בעברית, שורה 172.",
-        "web_source_ref": "turn448574view1",
+        "web_source_ref": "turn613389view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528669-5703",
         "independent_witness": true,
@@ -1298,7 +1289,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528670, גוף הערך בעברית, שורה 173.",
-        "web_source_ref": "turn336925view0",
+        "web_source_ref": "turn674498view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528670-5703",
         "independent_witness": true,
@@ -1313,7 +1304,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528671, גוף הערך ביידיש, שורה 173.",
-        "web_source_ref": "turn336925view1",
+        "web_source_ref": "turn674498view1",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528671-5703",
         "independent_witness": true,
@@ -1328,7 +1319,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528672, גוף הערך בעברית, שורה 173.",
-        "web_source_ref": "turn352804view0",
+        "web_source_ref": "turn932215view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528672-5703",
         "independent_witness": true,
@@ -1353,18 +1344,19 @@
         "aid": 4422924,
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4422924/jewish/The-Joy-of-Learning.htm",
         "language": "English",
-        "original_language": "unknown",
+        "original_language": "English as published; manuscript language not independently verified",
         "body_text_inspected": true,
         "inspected_original_language_body": false,
-        "translation_body_inspected": true,
+        "translation_body_inspected": false,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 4422924, English publisher translation, lines 256–257. ; Chabad.org AID 4422924, English publisher translation, lines 258–262.",
         "web_source_ref": "turn684220view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "independent_witness": false,
-        "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "inspection_method": "public_web_open_translated_correspondence_body"
+        "independent_witness": true,
+        "translation_of_evidence_family_id": null,
+        "inspection_method": "public_web_open_published_correspondence_body",
+        "published_body_language_inspected": true
       }
     ],
     "blocked_candidates": [
@@ -1403,7 +1395,8 @@
       "false_match_candidates_excluded": 1,
       "non_independent_presentations_added": 0,
       "note": "AID 4666220 לא חשף את גוף האיגרת. מועמד PDF ציבורי עם סימון דומה נבדק אך לא הוכח קשר זהות ל-AID ולכן הוצא. באותה הפעלה נפתחו 12 גופי היום יום מקוריים בעברית וביידיש.",
-      "translation_body_inspected": 1
+      "published_body_language_inspected": 13,
+      "english_correspondence_body_inspected": 1
     },
     "excluded_candidates": [
       {
@@ -1523,7 +1516,7 @@
     },
     "source_type_distribution": {
       "Hayom Yom": 12,
-      "Rebbe correspondence translation": 1
+      "Rebbe correspondence letter": 1
     },
     "quality_gate_followup": {
       "required": [
@@ -1557,27 +1550,16 @@
         "note": "Added a distinct elaboration of the entry's description of a halacha's spiritual root in the sefirot and levels of each world; same AID and Evidence Family, not a new source."
       }
     ],
-    "non_independent_presentations_reviewed": 1,
-    "translation_presentations_reviewed": 1,
-    "translation_presentations": [
-      {
-        "aid": 4422924,
-        "language": "English",
-        "original_language": "unknown",
-        "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "independent_witness": false,
-        "original_language_source_found": false,
-        "web_source_ref": "turn684220view0"
-      }
-    ]
+    "non_independent_presentations_reviewed": 0,
+    "translation_presentations_reviewed": 0,
+    "translation_presentations": []
   },
   "last_manual_review": {
     "schema": "content-research-batch-v1",
     "batch_id": "167",
     "batch_date": "2026-11-22",
     "reviewed_at": "2026-11-22T03:01:06+02:00",
-    "title": "Batch 167 — thirteen new identities (12 Hebrew/Yiddish Hayom Yom entries and one English correspondence translation), one in-place enrichment",
+    "title": "Batch 167 — thirteen new identities (12 Hebrew/Yiddish Hayom Yom entries and one English correspondence item), one in-place enrichment",
     "status": "pending_reconciliation",
     "reconciliation_status": "pending_reconciliation",
     "reviewed_item_count": 16,
@@ -1590,8 +1572,8 @@
     "existing_response_propositions_added": 1,
     "total_new_paraphrase_entries": 17,
     "answer_eligible_source_families_added": 13,
-    "independent_witnesses_added": 12,
-    "non_independent_presentations_added": 1,
+    "independent_witnesses_added": 13,
+    "non_independent_presentations_added": 0,
     "content_verified_unique_sources_added": 0,
     "blocked_candidate_count": 1,
     "recovered_candidate_count": 0,
@@ -1638,7 +1620,7 @@
       "existing_identities_enriched": 1,
       "existing_response_propositions_added": 1,
       "verified_promotions": 0,
-      "note": "Twelve original-language Hayom Yom bodies and one English publisher translation of a Rebbe correspondence item were inspected; AID 528659 was enriched in place. The English translation is not an independent witness. No source was promoted to Verified."
+      "note": "Twelve original-language Hayom Yom bodies and one English publisher-published correspondence body were inspected; AID 528659 was enriched in place. The English page is not labelled as a translation; manuscript language was not independently verified. No source was promoted to Verified."
     },
     "source_body_review": [
       {
@@ -1754,8 +1736,8 @@
         "body_text_inspected": true,
         "inspected_original_language_body": true,
         "existing_identity": false,
-        "body_locator": "Chabad.org AID 528668, גוף הערך בעברית, שורות 174–175.",
-        "web_source_ref": "turn448574view0",
+        "body_locator": "Chabad.org AID 528668, גוף הערך בעברית, שורה 174. ; Chabad.org AID 528668, גוף הערך בעברית, שורה 175.",
+        "web_source_ref": "turn201974view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528668-5703",
         "independent_witness": true,
@@ -1770,7 +1752,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528669, גוף הערך בעברית, שורה 172.",
-        "web_source_ref": "turn448574view1",
+        "web_source_ref": "turn613389view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528669-5703",
         "independent_witness": true,
@@ -1785,7 +1767,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528670, גוף הערך בעברית, שורה 173.",
-        "web_source_ref": "turn336925view0",
+        "web_source_ref": "turn674498view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528670-5703",
         "independent_witness": true,
@@ -1800,7 +1782,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528671, גוף הערך ביידיש, שורה 173.",
-        "web_source_ref": "turn336925view1",
+        "web_source_ref": "turn674498view1",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528671-5703",
         "independent_witness": true,
@@ -1815,7 +1797,7 @@
         "inspected_original_language_body": true,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 528672, גוף הערך בעברית, שורה 173.",
-        "web_source_ref": "turn352804view0",
+        "web_source_ref": "turn932215view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "hayom-yom-528672-5703",
         "independent_witness": true,
@@ -1840,18 +1822,19 @@
         "aid": 4422924,
         "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4422924/jewish/The-Joy-of-Learning.htm",
         "language": "English",
-        "original_language": "unknown",
+        "original_language": "English as published; manuscript language not independently verified",
         "body_text_inspected": true,
         "inspected_original_language_body": false,
-        "translation_body_inspected": true,
+        "translation_body_inspected": false,
         "existing_identity": false,
         "body_locator": "Chabad.org AID 4422924, English publisher translation, lines 256–257. ; Chabad.org AID 4422924, English publisher translation, lines 258–262.",
         "web_source_ref": "turn684220view0",
         "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
         "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "independent_witness": false,
-        "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "inspection_method": "public_web_open_translated_correspondence_body"
+        "independent_witness": true,
+        "translation_of_evidence_family_id": null,
+        "inspection_method": "public_web_open_published_correspondence_body",
+        "published_body_language_inspected": true
       }
     ],
     "blocked_candidates": [
@@ -1890,7 +1873,8 @@
       "false_match_candidates_excluded": 1,
       "non_independent_presentations_added": 0,
       "note": "AID 4666220 לא חשף את גוף האיגרת. מועמד PDF ציבורי עם סימון דומה נבדק אך לא הוכח קשר זהות ל-AID ולכן הוצא. באותה הפעלה נפתחו 12 גופי היום יום מקוריים בעברית וביידיש.",
-      "translation_body_inspected": 1
+      "published_body_language_inspected": 13,
+      "english_correspondence_body_inspected": 1
     },
     "excluded_candidates": [
       {
@@ -2010,7 +1994,7 @@
     },
     "source_type_distribution": {
       "Hayom Yom": 12,
-      "Rebbe correspondence translation": 1
+      "Rebbe correspondence letter": 1
     },
     "quality_gate_followup": {
       "required": [
@@ -2044,20 +2028,9 @@
         "note": "Added a distinct elaboration of the entry's description of a halacha's spiritual root in the sefirot and levels of each world; same AID and Evidence Family, not a new source."
       }
     ],
-    "non_independent_presentations_reviewed": 1,
-    "translation_presentations_reviewed": 1,
-    "translation_presentations": [
-      {
-        "aid": 4422924,
-        "language": "English",
-        "original_language": "unknown",
-        "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
-        "independent_witness": false,
-        "original_language_source_found": false,
-        "web_source_ref": "turn684220view0"
-      }
-    ]
+    "non_independent_presentations_reviewed": 0,
+    "translation_presentations_reviewed": 0,
+    "translation_presentations": []
   },
   "manual_web_review_history": [
     {
@@ -12028,7 +12001,7 @@
       "batch_file": "data/items/content-research-batch-167-2026-11-22.json",
       "batch_date": "2026-11-22",
       "reviewed_at": "2026-11-22T03:01:06+02:00",
-      "title": "Batch 167 — thirteen new identities (12 Hebrew/Yiddish Hayom Yom entries and one English correspondence translation), one in-place enrichment",
+      "title": "Batch 167 — thirteen new identities (12 Hebrew/Yiddish Hayom Yom entries and one English correspondence item), one in-place enrichment",
       "status": "pending_reconciliation",
       "reconciliation_status": "pending_reconciliation",
       "reviewed_item_count": 16,
@@ -12060,9 +12033,9 @@
       "enriched_aids": [
         528659
       ],
-      "independent_witnesses_added": 12,
-      "non_independent_presentations_added": 1,
-      "translation_presentations_reviewed": 1
+      "independent_witnesses_added": 13,
+      "non_independent_presentations_added": 0,
+      "translation_presentations_reviewed": 0
     }
   ],
   "manual_web_review_current_metrics": {
