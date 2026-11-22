@@ -6017,7 +6017,7 @@ for(const mode of ['regular','researcher']){
 }
 
  
-// Batch 167: twelve original-language Adar II entries, one English correspondence translation, and one in-place enrichment.
+// Batch 167: twelve original-language Adar II entries, one English published correspondence item, and one in-place enrichment.
 const batch167Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-167-2026-11-22.json',root),'utf8'));
 const batch167Aids=[4422924,528661,528662,528663,528664,528665,528666,528667,528668,528669,528670,528671,528672];
 assert.equal(batch167Data.batch_id,'167');assert.equal(batch167Data.records.length,13);assert.deepEqual(batch167Data.new_aids,batch167Aids);
