@@ -6,18 +6,18 @@
   "title": "Batch 167 — twelve original-language Adar II Hayom Yom entries, one in-place enrichment, and retrieval regression repair",
   "status": "pending_reconciliation",
   "reconciliation_status": "pending_reconciliation",
-  "reviewed_item_count": 15,
-  "source_bodies_inspected": 13,
-  "source_body_pages_opened": 13,
-  "new_source_identities": 12,
+  "reviewed_item_count": 16,
+  "source_bodies_inspected": 14,
+  "source_body_pages_opened": 14,
+  "new_source_identities": 13,
   "existing_identities_enriched": 1,
   "existing_identities_rechecked": 0,
-  "new_response_propositions": 14,
+  "new_response_propositions": 16,
   "existing_response_propositions_added": 1,
-  "total_new_paraphrase_entries": 15,
-  "answer_eligible_source_families_added": 12,
+  "total_new_paraphrase_entries": 17,
+  "answer_eligible_source_families_added": 13,
   "independent_witnesses_added": 12,
-  "non_independent_presentations_added": 0,
+  "non_independent_presentations_added": 1,
   "content_verified_unique_sources_added": 0,
   "blocked_candidate_count": 1,
   "recovered_candidate_count": 0,
@@ -39,7 +39,8 @@
     528669,
     528670,
     528671,
-    528672
+    528672,
+    4422924
   ],
   "enriched_aids": [
     528659
@@ -51,19 +52,19 @@
   "full_text_copied": false,
   "scan_only_verification_used": false,
   "metrics_delta_at_batch_boundary": {
-    "answer_eligible_unique_sources": 12,
+    "answer_eligible_unique_sources": 13,
     "content_verified_unique_sources": 0,
-    "answer_eligible_propositions": 15,
-    "note": "Expected local contribution: 12 new dated-entry Evidence Families, 14 new propositions, and one in-place proposition added to an existing identity. This is a batch delta, not reconciled after-metrics."
+    "answer_eligible_propositions": 17,
+    "note": "Expected local contribution: 13 new Evidence Families, including one publisher English translation presentation that is explicitly non-independent; 16 new propositions and one in-place proposition added to an existing identity. This is a batch delta, not reconciled after-metrics."
   },
   "local_content_delta": {
-    "new_source_identities": 12,
-    "new_evidence_families": 12,
-    "new_response_propositions": 14,
+    "new_source_identities": 13,
+    "new_evidence_families": 13,
+    "new_response_propositions": 16,
     "existing_identities_enriched": 1,
     "existing_response_propositions_added": 1,
     "verified_promotions": 0,
-    "note": "Twelve original-language public Hayom Yom bodies were inspected; AID 528659 was enriched in place with one additional non-verbatim proposition. No source was promoted to Verified."
+    "note": "Twelve original-language Hayom Yom bodies and one English publisher translation of a Rebbe correspondence item were inspected; AID 528659 was enriched in place. The English translation is not an independent witness. No source was promoted to Verified."
   },
   "source_body_review": [
     {
@@ -260,6 +261,23 @@
       "evidence_family_id": "hayom-yom-528659-5703",
       "independent_witness": true,
       "inspection_method": "public_web_open_body_in_place_enrichment"
+    },
+    {
+      "aid": 4422924,
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4422924/jewish/The-Joy-of-Learning.htm",
+      "language": "English",
+      "original_language": "unknown",
+      "body_text_inspected": true,
+      "inspected_original_language_body": false,
+      "translation_body_inspected": true,
+      "existing_identity": false,
+      "body_locator": "Chabad.org AID 4422924, English publisher translation, lines 256–257. ; Chabad.org AID 4422924, English publisher translation, lines 258–262.",
+      "web_source_ref": "turn684220view0",
+      "canonical_file": "data/items/content-research-batch-167-2026-11-22.json",
+      "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
+      "independent_witness": false,
+      "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
+      "inspection_method": "public_web_open_translated_correspondence_body"
     }
   ],
   "blocked_candidates": [
@@ -275,8 +293,9 @@
   ],
   "fallback_source_attempted": true,
   "fallback_source_results": {
-    "accessible_item_level_bodies": 12,
+    "accessible_item_level_bodies": 13,
     "inspected_aids": [
+      4422924,
       528661,
       528662,
       528663,
@@ -296,7 +315,8 @@
     "alternate_pdf_candidates": 1,
     "false_match_candidates_excluded": 1,
     "non_independent_presentations_added": 0,
-    "note": "AID 4666220 לא חשף את גוף האיגרת. מועמד PDF ציבורי עם סימון דומה נבדק אך לא הוכח קשר זהות ל-AID ולכן הוצא. באותה הפעלה נפתחו 12 גופי היום יום מקוריים בעברית וביידיש."
+    "note": "AID 4666220 לא חשף את גוף האיגרת. מועמד PDF ציבורי עם סימון דומה נבדק אך לא הוכח קשר זהות ל-AID ולכן הוצא. באותה הפעלה נפתחו 12 גופי היום יום מקוריים בעברית וביידיש.",
+    "translation_body_inspected": 1
   },
   "excluded_candidates": [
     {
@@ -312,7 +332,7 @@
     "full_index_scan_available": false,
     "full_index_entries": null,
     "full_index_generated": null,
-    "code_search_exact_aid_queries": 0,
+    "code_search_exact_aid_queries": 1,
     "code_search_matches": [],
     "candidate_aids_found": [],
     "existing_aids_found": [],
@@ -331,11 +351,27 @@
     "canonical_identity_collisions": null,
     "missing_canonical_identities": null,
     "all_target_identities_answer_eligible": null,
-    "note": "בדיקת קדם-הוספה מוגבלת: 12 קובצי bulk-indexed ובהם 1,328 רשומות, עשר אצוות ידניות 157–166 ובהן 110 רשומות, ותור בדיקה בן 1,022 פריטים — ללא התאמות ל-AID 528661–528672. קובץ public-search-index המלא לא נסרק מחדש; נדרשת סריקה קנונית לאחר ההוספה."
+    "note": "בדיקת קדם-הוספה מוגבלת: 12 קובצי bulk-indexed ובהם 1,328 רשומות, עשר אצוות ידניות 157–166 ובהן 110 רשומות, ותור בדיקה בן 1,022 פריטים — ללא התאמות ל-AID 4422924 או 528661–528672; חיפוש repository מדויק ל-AID 4422924 לא החזיר התאמה. קובץ public-search-index המלא לא נסרק מחדש; נדרשת סריקה קנונית לאחר ההוספה.",
+    "target_aids_checked": [
+      528661,
+      528662,
+      528663,
+      528664,
+      528665,
+      528666,
+      528667,
+      528668,
+      528669,
+      528670,
+      528671,
+      528672,
+      4422924
+    ],
+    "exact_aid_search_matches": 0
   },
   "pre_addition_full_index_scan": {
     "available": false,
-    "reason": "The complete public-search-index.json was not scanned; bounded checks covered 12 bulk-indexed files, ten recent manual batches, and the full review queue.",
+    "reason": "The complete public-search-index.json was not scanned; bounded checks covered 12 bulk-indexed files, ten recent manual batches, the full review queue, and one exact repository search for AID 4422924.",
     "canonical_bulk_files_checked": 12,
     "canonical_bulk_records_checked": 1328,
     "recent_manual_batch_files_checked": 10,
@@ -343,8 +379,23 @@
     "recent_manual_batch_record_rows_checked": 110,
     "review_queue_records": 1022,
     "review_queue_matches": 0,
-    "exact_aid_queries": 0,
-    "exact_aid_matches": []
+    "exact_aid_queries": 1,
+    "exact_aid_matches": [],
+    "target_aids_checked": [
+      528661,
+      528662,
+      528663,
+      528664,
+      528665,
+      528666,
+      528667,
+      528668,
+      528669,
+      528670,
+      528671,
+      528672,
+      4422924
+    ]
   },
   "reconciliation_identity_integrity": {
     "passed": null,
@@ -370,18 +421,22 @@
     "claim_level_source_locators": 2
   },
   "language_distribution": {
+    "English": 1,
     "Hebrew": 9,
     "Yiddish": 3
   },
   "reviewed_body_language_distribution": {
+    "English": 1,
     "Hebrew": 9,
     "Yiddish": 3
   },
   "proposition_language_distribution": {
+    "English": 2,
     "Hebrew": 15
   },
   "source_type_distribution": {
-    "Hayom Yom": 12
+    "Hayom Yom": 12,
+    "Rebbe correspondence translation": 1
   },
   "quality_gate_followup": {
     "required": [
@@ -415,8 +470,8 @@
       "note": "Added a distinct elaboration of the entry's description of a halacha's spiritual root in the sefirot and levels of each world; same AID and Evidence Family, not a new source."
     }
   ],
-  "non_independent_presentations_reviewed": 0,
-  "translation_presentations_reviewed": 0,
+  "non_independent_presentations_reviewed": 1,
+  "translation_presentations_reviewed": 1,
   "records": [
     {
       "key": "aid:528661",
@@ -1891,6 +1946,158 @@
       "search_text": "היום יום כ״ד אדר ב׳ תש״ג ערך המתעד הנחיה להתבונן בשמות הנוצרים מראשי התיבות של אנא בכוח בלי לבטאם. מהי ההנחיה המתועדת בערך ביחס לשמות שבאנא בכוח? הערך מנחה שבאמירת אנא בכוח יש לראות או לצייר במחשבה את השמות הנוצרים מראשי התיבות, אך לא לבטא אותם בפה. אנא בכוח ראשי תיבות שמות התבוננות הגייה",
       "web_source_ref": "turn932215view0",
       "canonical_file": "data/items/content-research-batch-167-2026-11-22.json"
+    },
+    {
+      "key": "aid:4422924",
+      "id": "rebbe-letter-aid-4422924",
+      "aid": 4422924,
+      "title": "The Joy of Learning — Letter of 28 Nissan 5712",
+      "type": "rebbe_correspondence_letter_translation",
+      "source_class": "Rebbe correspondence translation",
+      "source_class_detail": "publisher English translation of correspondence; original-language text not inspected",
+      "collection": "Letters from the Rebbe — publisher English translation",
+      "publisher": "Chabad.org",
+      "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4422924/jewish/The-Joy-of-Learning.htm",
+      "date": "28 Nissan 5712 (April 23, 1952)",
+      "date_precision": "day",
+      "date_source": "publisher body",
+      "language": "English",
+      "original_language": "unknown",
+      "proposition_language": "English",
+      "witness_type": "publisher_translation_of_correspondence",
+      "status": "Parsed",
+      "pipeline_status": "Parsed",
+      "canonical_status": "Parsed",
+      "verification_status": "Parsed",
+      "context_status": "partial",
+      "has_content_evidence": true,
+      "independent_witness": false,
+      "independent_witness_scope": "A translated publisher presentation of one correspondence item; not an independent witness. The original-language text was not inspected.",
+      "parent_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
+      "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
+      "translation_status": "English publisher translation; original-language source was not located or inspected in this run.",
+      "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
+      "primary_secondary_status": "Publisher English translation of Rebbe correspondence; derived presentation; original-language source not inspected.",
+      "authorship_status": "Chabad.org identifies the page as correspondence by the Rebbe; the original-language letter and any autograph were not inspected.",
+      "author_role": "Correspondence by the Rebbe, as identified by the publisher; English translation.",
+      "signature_status": "No autograph inspected.",
+      "documented_circumstances": "English publisher page titled The Joy of Learning; correspondence dated 28 Nissan 5712 (April 23, 1952), addressing a student's difficulty keeping up with class.",
+      "question_or_problem": "A student reports difficulty keeping up with class and seeks guidance on study progress.",
+      "audience": "student",
+      "response_propositions": [
+        "The letter responds to a student who reports difficulty keeping up with class; it notes that the student's letter does not make the cause clear and urges reflection, while presenting progress in study as largely within the student's own hands.",
+        "The letter frames Torah study and fulfillment of the laws as a route to spiritual and material happiness, and advises approaching study willingly and eagerly rather than as a burden."
+      ],
+      "response_proposition_locators": [
+        "Chabad.org AID 4422924, English publisher translation, lines 256–257.",
+        "Chabad.org AID 4422924, English publisher translation, lines 258–262."
+      ],
+      "proposition_source_locator": "Chabad.org AID 4422924, English publisher translation, lines 256–257.",
+      "proposition_locators": [
+        "Chabad.org AID 4422924, English publisher translation, lines 256–257.",
+        "Chabad.org AID 4422924, English publisher translation, lines 258–262."
+      ],
+      "proposition_origin": "source_grounded_paraphrase",
+      "proposition_verbatim": false,
+      "proposition_verification": "source_text_inspected",
+      "summary_researcher": "The letter responds to a student who reports difficulty keeping up with class; it notes that the student's letter does not make the cause clear and urges reflection, while presenting progress in study as largely within the student's own hands. The letter frames Torah study and fulfillment of the laws as a route to spiritual and material happiness, and advises approaching study willingly and eagerly rather than as a burden.",
+      "verification_scope": "נפתח גוף התרגום האנגלי הציבורי ב-Chabad.org, שורות 246–265; הפרופוזיציות נשענות על שורות 256–262 בלבד. שפת המקור אינה ידועה ולא נבדק טקסט עברי/יידי מקורי או אוטוגרף. מדובר במצגת תרגום אחת של איגרת, לא בעד עצמאי. ההקשר חלקי והייחוס נשמר כפי שמציג המו״ל.",
+      "witness_provenance": "Chabad.org, The Joy of Learning, AID 4422924; English publisher translation body inspected at lines 246–265.",
+      "source_witness": "Chabad.org, The Joy of Learning, AID 4422924; English publisher translation body inspected at lines 246–265.",
+      "provenance": {
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4422924/jewish/The-Joy-of-Learning.htm",
+        "publisher": "Chabad.org",
+        "source_witness": "Chabad.org, The Joy of Learning, AID 4422924; English publisher translation body inspected at lines 246–265.",
+        "verification_scope": "נפתח גוף התרגום האנגלי הציבורי ב-Chabad.org, שורות 246–265; הפרופוזיציות נשענות על שורות 256–262 בלבד. שפת המקור אינה ידועה ולא נבדק טקסט עברי/יידי מקורי או אוטוגרף. מדובר במצגת תרגום אחת של איגרת, לא בעד עצמאי. ההקשר חלקי והייחוס נשמר כפי שמציג המו״ל.",
+        "textual_status": "English publisher translation body inspected; original-language text not inspected.",
+        "authorship_status": "Publisher attribution only; no autograph or original-language publication inspected.",
+        "accessed_at": "2026-11-22",
+        "proposition_origin": "source_grounded_paraphrase",
+        "proposition_verification": "source_text_inspected",
+        "rights_status": "copyrighted-link-only; non-verbatim research paraphrases and body locators only; no full text copied",
+        "web_source_ref": "turn684220view0",
+        "original_language_body_inspected": false,
+        "translation_body_inspected": true,
+        "translation_note": "English publisher translation; original-language source not located or inspected."
+      },
+      "source_locators": [
+        {
+          "source_number": 1,
+          "locator": "Chabad.org AID 4422924, English publisher translation, lines 256–257.",
+          "proposition_text": "The letter responds to a student who reports difficulty keeping up with class; it notes that the student's letter does not make the cause clear and urges reflection, while presenting progress in study as largely within the student's own hands."
+        },
+        {
+          "source_number": 1,
+          "locator": "Chabad.org AID 4422924, English publisher translation, lines 258–262.",
+          "proposition_text": "The letter frames Torah study and fulfillment of the laws as a route to spiritual and material happiness, and advises approaching study willingly and eagerly rather than as a burden."
+        }
+      ],
+      "locator": {
+        "publisher": "Chabad.org",
+        "aid": 4422924,
+        "source_url": "https://www.chabad.org/therebbe/article_cdo/aid/4422924/jewish/The-Joy-of-Learning.htm",
+        "body_locator": [
+          "Chabad.org AID 4422924, English publisher translation, lines 256–257.",
+          "Chabad.org AID 4422924, English publisher translation, lines 258–262."
+        ],
+        "date": "28 Nissan 5712 (April 23, 1952)",
+        "web_source_ref": "turn684220view0"
+      },
+      "rights_status": "copyrighted-link-only; non-verbatim research paraphrases and body locators only; no full text copied",
+      "access": {
+        "access_status": "public_publisher_translation_body_opened",
+        "accessed_at": "2026-11-22",
+        "source_language_body_inspected": false,
+        "translation_body_inspected": true,
+        "body_locator": [
+          "Chabad.org AID 4422924, English publisher translation, lines 256–257.",
+          "Chabad.org AID 4422924, English publisher translation, lines 258–262."
+        ],
+        "full_text_copied": false,
+        "web_source_ref": "turn684220view0"
+      },
+      "proposition_scope": "English translation only, lines 256–262; partial context; original-language text not inspected.",
+      "conditions_or_qualifications": [
+        "This is a publisher English translation; the original-language text and its publication history were not inspected.",
+        "The page's attribution to correspondence by the Rebbe is preserved as the publisher presents it; this translated presentation is not an independent witness."
+      ],
+      "publisher_terms": [
+        "The Joy of Learning",
+        "Correspondence by the Rebbe",
+        "28th of Nissan 5712"
+      ],
+      "research_terms": [
+        "study difficulty",
+        "student progress",
+        "Torah study",
+        "fulfillment of Dinim",
+        "spiritual happiness",
+        "material happiness",
+        "correspondence"
+      ],
+      "relations": [
+        {
+          "relation_type": "translation_presentation_of",
+          "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
+          "independent_witness": false
+        }
+      ],
+      "epistemic_level": 1,
+      "search_text": "The Joy of Learning 28 Nissan 5712 student difficulty keeping up with class progress in study Torah study Dinim spiritual and material happiness willingly eagerly rather than a burden.",
+      "web_source_ref": "turn684220view0",
+      "canonical_file": "data/items/content-research-batch-167-2026-11-22.json"
+    }
+  ],
+  "translation_presentations": [
+    {
+      "aid": 4422924,
+      "language": "English",
+      "original_language": "unknown",
+      "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
+      "translation_of_evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
+      "independent_witness": false,
+      "original_language_source_found": false,
+      "web_source_ref": "turn684220view0"
     }
   ]
 }

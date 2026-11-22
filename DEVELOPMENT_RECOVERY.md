@@ -1545,3 +1545,10 @@ The full-index audit also exposed three duplicate-AID records whose Evidence Fam
 - Fixed Living Torah retrieval selection: the engine now filters all AID-matched publisher-synopsis candidates by the actual supporting proposition before selecting, preventing a duplicate AID record without the required proposition from shadowing the matching record. Claim-level locators and non-independent synopsis status remain required.
 - Fixed readiness semantics so a current batch marked pending reconciliation is not incorrectly required to equal last_completed_batch. The test now checks the last reconciled boundary while metrics_actual_after is null; after reconciliation it checks measured before/after values.
 - Batch 167 remains pending reconciliation. No Verified promotion; no after-metrics claimed. Public baseline before this batch: answer_eligible_unique_sources=977, content_verified_unique_sources=870, answer_eligible_propositions=2,950.
+
+ 
+### Batch 167 amendment — English correspondence translation
+
+- Added AID 4422924, *The Joy of Learning*, a public English publisher translation of correspondence dated 28 Nissan 5712 (April 23, 1952). The full page body was opened; two non-verbatim propositions were grounded in lines 256–262. The original-language text was not located or inspected, so the record is explicitly marked as a translated, non-independent presentation in its own Evidence Family; it is not counted as an independent witness.
+- Revised batch 167 totals: 13 new identities (12 Hebrew/Yiddish Hayom Yom entries plus one English correspondence translation), 16 new propositions, one existing identity enriched (AID 528659) with one additional proposition, 17 new paraphrase entries overall, 12 independent dated-entry witnesses, one non-independent translation presentation, and zero Verified promotions.
+- Deduplication checks also covered AID 4422924: no match in the 12 bulk-indexed files (1,328 records), manual batches 157–166 (110 records), or the 1,022-item review queue; one exact repository search returned no match. The complete public search index remains unscanned pending canonical reconciliation.
