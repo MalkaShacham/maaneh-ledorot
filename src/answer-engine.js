@@ -2203,9 +2203,9 @@ function nissanDailyLifeCategory(p){
  if(t.includes('חיי המשפחה')&&t.includes('הנהגת הבית')&&t.includes('חינוך'))return 'family_home';
  if(t.includes('רצוא בלי שוב')&&t.includes('מעשה בפועל'))return 'spiritual_to_action';
  if(t.includes('גשמיות')&&t.includes('רוחניות')&&t.includes('חובת'))return 'material_to_spiritual';
- if(t.includes('חומש')&&t.includes('משניות')&&t.includes('גמרא')&&t.includes('בעל פה'))return 'daily_study_schedule';
- if(t.includes('בעלי עסקים')&&t.includes('העבודה עם עצמו')&&t.includes('העבודה עם זולתו'))return 'business_owner_work';
- if(t.includes('ממעטים בחקירות')&&t.includes('עובדים בסדר')&&t.includes('תוקף'))return 'orderly_torah_work';
+ if(t.includes('חומש')&&t.includes('משנה')&&t.includes('גמרא')&&t.includes('בעל פה'))return 'daily_study_schedule';
+ if(t.includes('בעלי עסקים')&&t.includes('העבודה עם עצמו')&&t.includes('העבודה עם הזולת'))return 'business_owner_work';
+ if(t.includes('חקירות')&&t.includes('עבודה בסדר')&&t.includes('תוקף'))return 'orderly_torah_work';
  if(t.includes('english')&&t.includes('yiddish')&&t.includes('content')&&t.includes('audience'))return 'language_accessibility';
  return null;
 }
