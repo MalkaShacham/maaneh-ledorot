@@ -1366,6 +1366,7 @@ assert.equal(String(lastBatchSummary.batch_file),String(acquisitionState.manual_
 assert.equal(String(projectState.development_recovery.current_batch),String(projectState.current_batch));
 const currentBatchReconciled=['reconciled','reconciled_with_variance'].includes(lastBatchSummary.reconciliation_status||lastBatchSummary.status);
 if(currentBatchReconciled){
+ assert(!projectState.metrics_integrity.answer_readiness.pending_batches.includes(currentReviewBatchId));
  assert.equal(String(projectState.development_recovery.last_completed_batch),currentReviewBatchId);
  assert.deepEqual(readinessMetrics(lastBatchSummary.metrics_actual_after),readinessMetrics(metrics));
  assert.deepEqual(Object.keys(lastBatchSummary.metrics_delta_actual).sort(),['answer_eligible_propositions','answer_eligible_unique_sources','content_verified_unique_sources'].sort());
@@ -1376,6 +1377,7 @@ if(currentBatchReconciled){
  });
  assert.deepEqual(readinessMetrics(acquisitionState.manual_web_review.metrics_actual_after),readinessMetrics(metrics));
 }else{
+ assert(projectState.metrics_integrity.answer_readiness.pending_batches.includes(currentReviewBatchId));
  assert.equal(lastBatchSummary.status,'pending_reconciliation');
  assert.equal(lastBatchSummary.reconciliation_status,'pending_reconciliation');
  assert.equal(lastBatchSummary.metrics_actual_after,null);
