@@ -380,9 +380,9 @@ const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return fa
 // Conservative cross-language paraphrase routing. This layer only broadens topic discovery;
 // the inspected-proposition, relevance, source-family and claim-citation gates remain authoritative.
 const QUERY_CONCEPTS=[
- ['חרדה','חרד','פחד','חשש','דאגה','לחץ','anxiety','fear','worry','concern'],
- ['קושי','קשיים','אתגר','אתגרים','מכשול','מכשולים','בעיה','בעיות','difficulty','challenge','obstacle','problem'],
- ['פרנסה','להתפרנס','משכורת','הכנסה','עבודה','livelihood','income','salary','employment'],
+ ['חרדה','חרד','פחד','חשש','דאגה','לחץ','להירגע','לחץ נפשי','anxiety','fear','worry','concern','stress'],
+ ['קושי','קשיים','קשה','קשים','קשות','אתגר','אתגרים','מכשול','מכשולים','בעיה','בעיות','התמודדות','להתמודד','מתמודד','מתמודדת','התגברות','להתגבר','מתגבר','difficulty','challenge','obstacle','problem','cope','overcome'],
+ ['פרנסה','להתפרנס','לפרנס','מתפרנס','משכורת','הכנסה','עבודה','livelihood','income','salary','employment','support a family'],
  ['חינוך','לחנך','ילד','ילדים','תלמיד','תלמידים','מורה','הוראה','education','educate','child','student','teacher'],
  ['תפילה','להתפלל','תפילות','prayer','pray'],
  ['לימוד','ללמוד','לימודים','תורה','חסידות','study','learning','learn','torah','chassidus'],
