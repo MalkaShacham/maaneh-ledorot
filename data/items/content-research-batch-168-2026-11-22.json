@@ -53,7 +53,7 @@
     "answer_eligible_unique_sources": 11,
     "content_verified_unique_sources": 0,
     "answer_eligible_propositions": 18,
-    "note": "Expected local contribution only; not a reconciled after-measurement. The existing AID 4422924 enrichment adds one proposition to its existing non-independent family and does not add a source family."
+    "note": "Expected local contribution only; not a reconciled after-measurement. The existing AID 4422924 enrichment adds one proposition to its existing published-correspondence Evidence Family and does not add a new source identity or family."
   },
   "local_content_delta": {
     "new_source_identities": 11,
@@ -62,7 +62,7 @@
     "existing_identities_enriched": 1,
     "existing_response_propositions_added": 1,
     "verified_promotions": 0,
-    "note": "Eleven original-language Hebrew/Hebrew-Yiddish Hayom Yom bodies were inspected; one existing English publisher correspondence item was enriched in place. One English free translation of the blocked 25 Adar II Hebrew entry was inspected but not canonicalized or counted as an independent witness."
+    "note": "Eleven original-language Hebrew/Hebrew-Yiddish Hayom Yom bodies were inspected; one existing English publisher correspondence item was enriched in place. One English free translation of the blocked 25 Adar II Hebrew entry was inspected as a non-independent presentation only and was not canonicalized or counted as a separate witness."
   },
   "source_body_review": [
     {
@@ -234,7 +234,9 @@
       "web_source_ref": "turn641268view0",
       "canonical_action": "enriched_existing_identity_in_place",
       "propositions_added": 1,
-      "verification": "source_text_inspected"
+      "verification": "source_text_inspected",
+      "independent_witness": true,
+      "independent_witness_scope": "Distinct correspondence item as published; not independent archival corroboration of the published text; original manuscript not inspected."
     },
     {
       "aid": 6137,
@@ -594,12 +596,13 @@
       "existing_propositions_before": 2,
       "total_propositions_after": 3,
       "new_propositions_added": 1,
-      "independent_witness": false,
+      "independent_witness": true,
       "evidence_family_id": "rebbe-letter-4422924-5712-nissan-28",
       "action": "enriched_existing_identity_in_place",
       "locator": "Chabad.org AID 4422924, English publisher body, line 262.",
       "web_source_ref": "turn641268view0",
-      "note": "The existing English publisher correspondence item remains non-independent and within its existing Evidence Family; no new family or witness was created."
+      "note": "The existing English publisher correspondence item remains a distinct correspondence item as published, but not independent archival corroboration. The added proposition stays in its existing Evidence Family; no new identity or family was created.",
+      "independent_witness_scope": "Distinct correspondence item as published; not independent archival corroboration of the published text; original manuscript not inspected."
     }
   ],
   "non_independent_presentations_reviewed": [
