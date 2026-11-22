@@ -6049,7 +6049,7 @@ for(const r of batch167Data.records){
  assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
  assert.equal(r.response_propositions.length,r.response_proposition_locators.length);assert(r.response_proposition_locators.every(Boolean));
  if(String(r.aid)==='4422924'){
-  assert.equal(r.independent_witness,false);assert.equal(r.translation_of_evidence_family_id,r.evidence_family_id);
+  assert.equal(r.independent_witness,true);assert.equal(r.translation_of_evidence_family_id,null);
   assert.equal(r.language,'English');assert(r.original_language.startsWith('English as published'));assert.equal(r.witness_type,'publisher_correspondence_transcription');
  }else{
   assert.equal(r.independent_witness,true);assert.equal(r.translation_of_evidence_family_id,null);
@@ -6138,6 +6138,7 @@ for(const mode of ['regular','researcher']){
  for(const aid of ['528674','528675','528677','528681','528682','528684','2216588'])assert(m.sources.some(e=>sourceAID(e)===aid),mode+': Nissan daily-life synthesis must retain AID '+aid);
  assert.equal(m.synthesis?.topic,'nissan_daily_life_and_work');
  assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');
+ assert.equal(m.pattern_synthesis_integrity?.valid,true);
  assert.equal(m.synthesis?.claims.length,7);
  assert.equal(new Set(m.synthesis.evidence_family_ids).size,7);
  assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
