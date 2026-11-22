@@ -4,7 +4,7 @@
    translations from being counted as independent witnesses/families.
    Citation validation is claim-local: a citation may support only a proposition
    actually present in that witness, and contextual fields may not leak across witnesses. */
-import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261122-batch166-adar-ii-study-action-v1';
+import {buildAnswerModel as buildCoreAnswerModel,supportsDifficultyPattern} from './answer-engine.js?v=20261122-batch166-adar-ii-study-action-v2';
 
 const TOPIC_ALIASES={
  'מוח ולב בשיטת חב״ד':['מוח ולב בשיטת חב״ד','מוח ולב','המוח והלב','המוח ללב','מוח שליט על הלב','לשעבד את הלב','השגה שכלית ורגש הלב','mind and heart in Chabad','mind rules the heart'],
@@ -417,9 +417,9 @@ function patternSynthesisIntegrity(model){
  const adarIISpecs=[
   {aid:'528650',topic:'prepared_field',predicate:p=>{const t=norm(p);return t.includes('ברכה')&&t.includes('שדה')&&t.includes('חרושה')&&t.includes('זרועה');}},
   {aid:'528653',topic:'three_modes',predicate:p=>{const t=norm(p);return t.includes('לימוד הנגלה')&&t.includes('לימוד החסידות')&&t.includes('עבודה בפועל');}},
-  {aid:'528655',topic:'torah_on_street',predicate:p=>{const t=norm(p);return t.includes('דברי תורה')&&t.includes('ברחוב')&&t.includes('מחשבה');}},
+  {aid:'528655',topic:'torah_on_street',predicate:p=>{const t=norm(p);return t.includes('דברי תורה')&&t.includes('ברחוב')&&t.includes('מחשבת');}},
   {aid:'528656',topic:'action_over_sigh',predicate:p=>{const t=norm(p);return t.includes('פעולה אחת')&&t.includes('אנחות')&&t.includes('עבודה בפועל');}},
-  {aid:'528659',topic:'halacha_spiritual_and_practical',predicate:p=>{const t=norm(p);return t.includes('שורש')&&t.includes('חיי העולם הזה')&&t.includes('הלכה');}}
+  {aid:'528659',topic:'halacha_spiritual_and_practical',predicate:p=>{const t=norm(p);return t.includes('שורש')&&t.includes('עולם הזה')&&t.includes('הלכה');}}
  ];
  const hayomYomAdarIIStudyActionSupport=p=>adarIISpecs.some(spec=>spec.predicate(p));
 
