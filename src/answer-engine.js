@@ -377,6 +377,54 @@ const negationSignature=s=>contentWords(s).some(x=>NEGATION.has(x));
 // `fear` incorrectly match `G-d-fearing`. Hebrew aliases intentionally include
 // productive stems (for example דאג), so Hebrew keeps conservative substring matching.
 const containsTerm=(body,term)=>{const b=norm(body),t=norm(term);if(!t)return false;if(t==='אהבת ה')return ` ${b} `.includes(' אהבת ה ');if(t==='נשים')return b.split(/\s+/).includes(t);if(/[a-z]/i.test(t)){if(t.includes(' '))return ` ${b} `.includes(` ${t} `);return b.split(/\s+/).includes(t);}return b.includes(t);};
+// Conservative cross-language paraphrase routing. This layer only broadens topic discovery;
+// the inspected-proposition, relevance, source-family and claim-citation gates remain authoritative.
+const QUERY_CONCEPTS=[
+ ['חרדה','חרד','פחד','חשש','דאגה','לחץ','anxiety','fear','worry','concern'],
+ ['קושי','קשיים','אתגר','אתגרים','מכשול','מכשולים','בעיה','בעיות','difficulty','challenge','obstacle','problem'],
+ ['פרנסה','להתפרנס','משכורת','הכנסה','עבודה','livelihood','income','salary','employment'],
+ ['חינוך','לחנך','ילד','ילדים','תלמיד','תלמידים','מורה','הוראה','education','educate','child','student','teacher'],
+ ['תפילה','להתפלל','תפילות','prayer','pray'],
+ ['לימוד','ללמוד','לימודים','תורה','חסידות','study','learning','learn','torah','chassidus'],
+ ['עצבות','עצוב','דיכאון','מרה שחורה','ייאוש','sadness','depression','despair'],
+ ['שמחה','שמח','אושר','joy','happiness'],
+ ['נישואין','נישואים','חתונה','זוגיות','שלום בית','בעל','אישה','marriage','wedding','spouse','husband','wife'],
+ ['בריאות','חולי','מחלה','רפואה','טיפול','רופא','health','illness','disease','medical','treatment','doctor'],
+ ['צדקה','תרומה','תרומות','נתינה','מעשר','חומש','charity','donation','giving'],
+ ['שליחות','שליח','הפצה','השפעה','קירוב','outreach','mission','influence','dissemination'],
+ ['זמן','עצלות','דחיינות','בזבוז','ניצול','time','laziness','procrastination'],
+ ['אמונה','ביטחון','בטחון','השגחה','trust','faith','providence'],
+ ['החלטה','התלבטות','בחירה','להחליט','decision','choice','decide'],
+ ['כעס','מריבה','סכסוך','מחלוקת','conflict','anger','dispute'],
+ ['כבוד','הערכה','יחס','respect','esteem','attitude'],
+ ['עבודה','משרה','קריירה','עסק','מקצוע','job','career','business','profession'],
+ ['שבת','שמירת שבת','shabbat','sabbath'],
+ ['בית','משפחה','הורים','הורה','home','family','parent'],
+ ['הלכה','הלכות','פסיקה','פסק','דין','halacha','halachic','ruling'],
+ ['זיכרון','זכרון','שכחה','לשכוח','memory','forgetfulness','forget'],
+ ['רופא','רופאה','רופאים','מומחה','מומחים','physician','doctor','specialist']
+];
+const conceptOf=word=>{const w=norm(word);for(const group of QUERY_CONCEPTS)if(group.some(x=>norm(x)===w))return group.map(norm);return [w];};
+const lexicalForms=word=>{
+ const w=norm(word),forms=new Set([w]);
+ if(/[א-ת]/.test(w)){
+  const irregular={'קשיים':'קושי','בעיות':'בעיה','ילדים':'ילד','תלמידים':'תלמיד','מורים':'מורה','הורים':'הורה','רופאים':'רופא','נישואים':'נישואין','זכרון':'זיכרון'};
+  if(irregular[w])forms.add(irregular[w]);
+  for(const suffix of ['יות','יים','ים','ות'])if(w.length>suffix.length+2&&w.endsWith(suffix))forms.add(w.slice(0,-suffix.length));
+  for(const prefix of ['וה','וב','וכ','ול','ומ','מש','מה','ב','כ','ל','מ','ש','ו','ה'])if(w.length>prefix.length+2&&w.startsWith(prefix))forms.add(w.slice(prefix.length));
+ }
+ return [...forms];
+};
+const topicAliasMatches=(query,alias)=>{
+ if(containsTerm(query,alias))return true;
+ const aliasWords=norm(alias).split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
+ if(aliasWords.length<2)return false;
+ const queryWords=norm(query).split(/\s+/).filter(x=>x.length>1&&!STOP.has(x));
+ const qForms=new Set(queryWords.flatMap(x=>[...lexicalForms(x),...conceptOf(x)]));
+ let matched=0;
+ for(const word of aliasWords)if([...lexicalForms(word),...conceptOf(word)].some(x=>qForms.has(x)))matched++;
+ return matched>=Math.max(2,Math.ceil(aliasWords.length*0.67));
+};
 // Intent markers describe the requested analysis, not facts that must occur in a
 // source proposition. Keeping `pattern`/`דפוס` as a content qualifier made every
 // pattern question fail even when multiple independent evidence families existed.
@@ -395,7 +443,7 @@ const isIntentFramingTerm=(term,intent)=>{
 
 export function understandQuestion(q){
  const original=String(q||''),query=norm(original);
- let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>containsTerm(query,v))).map(([k])=>k);
+ let topics=Object.entries(TOPICS).filter(([,vs])=>vs.some(v=>topicAliasMatches(query,v))).map(([k])=>k);
  // Multi-clause Hebrew phrasing can split a topic's canonical phrase (e.g. "תוספת אברכים והרחבת שיעור חסידות"). Treat the conjunction as one specific topic so generic livelihood/business matches cannot leak into the answer.
  if(containsTerm(query,'תוספת אברכים')&&containsTerm(query,'שיעור חסידות'))topics=['הרחבת שיעור חסידות'];
  if(topics.includes('חיפוש אמת ובדיקת תנועה'))topics=topics.filter(t=>t!=='הנהגה בחיי היום יום וקיום מצוות');
