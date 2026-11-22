@@ -2167,9 +2167,9 @@ function hayomYomAdarIIStudyActionPredicate(topic,p){
  const t=norm(p);
  if(topic==='prepared_field')return t.includes('ברכה')&&t.includes('שדה')&&t.includes('חרושה')&&t.includes('זרועה');
  if(topic==='three_modes')return t.includes('לימוד הנגלה')&&t.includes('לימוד החסידות')&&t.includes('עבודה בפועל');
- if(topic==='torah_on_street')return t.includes('דברי תורה')&&t.includes('ברחוב')&&t.includes('מחשבה');
+ if(topic==='torah_on_street')return t.includes('דברי תורה')&&t.includes('ברחוב')&&t.includes('מחשבת');
  if(topic==='action_over_sigh')return t.includes('פעולה אחת')&&t.includes('אנחות')&&t.includes('עבודה בפועל');
- if(topic==='halacha_spiritual_and_practical')return t.includes('שורש')&&t.includes('חיי העולם הזה')&&t.includes('הלכה');
+ if(topic==='halacha_spiritual_and_practical')return t.includes('שורש')&&t.includes('עולם הזה')&&t.includes('הלכה');
  return false;
 }
 function buildHayomYomAdarIIStudyActionSynthesis(selected){
