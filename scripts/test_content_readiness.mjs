@@ -5928,3 +5928,61 @@ for(const mode of ['regular','researcher']){
   assert(m.research.claim_source_map.every(c=>c.source_numbers.length&&c.source_locators.length&&c.source_locators.every(x=>x.locator)));
  }else assert.equal(m.research,undefined);
 }
+
+
+// Batch 166: thirteen original-language Adar II Hayom Yom bodies and a five-family claim-level synthesis.
+const batch166Data=JSON.parse(await readFile(new URL('data/items/content-research-batch-166-2026-11-22.json',root),'utf8'));
+const batch166Aids=[528647,528649,528650,528651,528652,528653,528654,528655,528656,528657,528658,528659,528660];
+assert.equal(batch166Data.batch_id,'166');assert.equal(batch166Data.records.length,13);assert.deepEqual(batch166Data.new_aids,batch166Aids);
+assert.equal(batch166Data.reviewed_item_count,17);assert.equal(batch166Data.source_bodies_inspected,13);assert.equal(batch166Data.source_body_pages_opened,13);
+assert.equal(batch166Data.new_source_identities,13);assert.equal(batch166Data.existing_identities_enriched,0);assert.equal(batch166Data.new_response_propositions,15);assert.equal(batch166Data.total_new_paraphrase_entries,15);
+assert.equal(batch166Data.answer_eligible_source_families_added,13);assert.equal(batch166Data.independent_witnesses_added,13);assert.equal(batch166Data.non_independent_presentations_added,0);
+assert.equal(batch166Data.content_verified_unique_sources_added,0);assert.equal(batch166Data.translations_counted_as_independent_witnesses,0);
+assert.deepEqual(batch166Data.language_distribution,{Hebrew:7,Yiddish:5,'Hebrew and Yiddish':1});
+assert.deepEqual(batch166Data.blocked_candidates.map(x=>x.aid),[550377,550379,550381]);assert.equal(batch166Data.excluded_candidates[0].aid,528648);
+assert.equal(batch166Data.fallback_source_attempted,true);assert.equal(batch166Data.fallback_source_results.accessible_item_level_bodies,13);
+assert.equal(batch166Data.fallback_source_results.full_transcript_bodies_opened,0);assert.equal(batch166Data.crawler_retry,false);
+assert.equal(batch166Data.access_control_bypassed,false);assert.equal(batch166Data.full_text_copied,false);assert.equal(batch166Data.scan_only_verification_used,false);
+assert.equal(batch166Data.metrics_actual_after,null);assert.equal(batch166Data.metrics_expected_after,null);
+assert.equal(batch166Data.deduplication_check.code_search_exact_aid_queries,13);assert.deepEqual(batch166Data.deduplication_check.code_search_matches,[]);
+assert.equal(batch166Data.deduplication_check.review_queue_records,1022);assert.equal(batch166Data.deduplication_check.review_queue_matches,0);
+assert.equal(batch166Data.deduplication_check.recent_manual_batch_files_checked,2);assert.equal(batch166Data.deduplication_check.recent_manual_batch_record_rows_checked,27);
+assert.equal(batch166Data.deduplication_check.full_index_scan_available,false);assert.equal(batch166Data.deduplication_check.post_addition_canonical_scan_pending,true);
+assert.equal(new Set(batch166Data.records.map(r=>String(r.aid))).size,13);assert.equal(new Set(batch166Data.records.map(r=>r.evidence_family_id)).size,13);
+assert.equal(batch166Data.records.reduce((n,r)=>n+r.response_propositions.length,0),15);
+for(const r of batch166Data.records){
+ assert.equal(r.source_class,'Hayom Yom');assert.equal(r.type,'hayom_yom_entry');
+ assert.equal(r.status,'Parsed');assert.equal(r.pipeline_status,'Parsed');assert.equal(r.canonical_status,'Parsed');
+ assert.equal(r.proposition_origin,'source_grounded_paraphrase');assert.equal(r.proposition_verbatim,false);assert.equal(r.proposition_verification,'source_text_inspected');
+ assert(r.proposition_source_locator&&r.provenance&&r.verification_scope&&r.context_status==='partial'&&r.has_content_evidence);
+ assert.equal(r.response_propositions.length,r.response_proposition_locators.length);assert(r.response_proposition_locators.every(Boolean));
+ assert.equal(r.independent_witness,true);assert.equal(r.translation_of_evidence_family_id,null);
+ assert(['Hebrew','Yiddish','Hebrew and Yiddish'].includes(r.language));
+}
+assert.equal(batch166Data.retrieval_synthesis.topic,'hayom_yom_adar_ii_study_and_practical_action');
+assert.equal(batch166Data.retrieval_synthesis.attribution,'system_synthesis_not_rebbe_quote');
+assert.equal(batch166Data.retrieval_synthesis.claim_count,5);assert.equal(batch166Data.retrieval_synthesis.claim_level_source_locators,5);
+assert.equal(new Set(batch166Data.retrieval_synthesis.claims.flatMap(c=>c.source_aids)).size,5);
+assert(batch166Data.retrieval_synthesis.claims.every(c=>c.source_aids.length===1&&c.source_locators.length===1&&c.source_locators[0].locator));
+const indexedBatch166=idx.entries.filter(e=>batch166Aids.includes(Number(sourceAID(e))));
+assert.equal(indexedBatch166.length,13);assert(indexedBatch166.every(e=>e.answer_eligible&&e.canonical_file==='data/items/content-research-batch-166-2026-11-22.json'));
+assert.equal(new Set(indexedBatch166.map(e=>e.evidence_family_id)).size,13);
+const batch166Question='מה מתועד בערכי היום יום באדר ב׳ על הקשר בין הכנה, לימוד ועבודה מעשית?';
+const batch166SynthesisAids=['528650','528653','528655','528656','528659'];
+for(const mode of ['regular','researcher']){
+ const m=buildAnswerModel(idx.entries,batch166Question,{mode});
+ assert(m.answerable,mode+': five inspected Adar II Hayom Yom families must support the bounded preparation/study/action synthesis');
+ assert(batch166SynthesisAids.every(aid=>m.sources.some(e=>sourceAID(e)===aid)));
+ assert.equal(m.synthesis?.topic,'hayom_yom_adar_ii_study_and_practical_action');
+ assert.equal(m.synthesis?.attribution,'system_synthesis_not_rebbe_quote');assert.equal(m.synthesis?.claims.length,5);
+ assert.equal(new Set(m.synthesis.evidence_family_ids).size,5);assert.equal(m.synthesis.basis.length,5);
+ assert(m.synthesis.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators.every(x=>x.locator)&&c.witnesses?.length===1&&c.witnesses[0].independent_witness===true));
+ assert.equal(m.claims.length,5);assert(m.claims.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators.every(x=>x.locator)));
+ assert(m.citation_entailment.every(x=>x.valid)&&m.context_boundary.every(x=>x.valid));assert.equal(m.pattern_synthesis_integrity?.valid,true);
+ if(mode==='researcher'){
+  assert(m.research&&m.research.depth==='deep');assert(m.research.evidence_families>=5);assert(m.research.independent_evidence_families>=5);
+  assert(m.research.evidence_map.length>=5&&m.research.evidence_map.every(c=>c.witnesses.every(w=>w.proposition_source_locator)));
+  assert.equal(m.research.claim_source_map.length,5);assert(m.research.claim_source_map.every(c=>c.source_numbers.length===1&&c.source_locators.length===1&&c.source_locators.every(x=>x.locator)));
+  assert(m.research.synthesis_constraints.rule.includes('not independent archival corroboration'));
+ }else assert.equal(m.research,undefined);
+}
